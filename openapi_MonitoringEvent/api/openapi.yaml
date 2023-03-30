@@ -1,0 +1,5005 @@
+openapi: 3.0.0
+info:
+  description: "API for Monitoring Event.  \n© 2022, 3GPP Organizational Partners\
+    \ (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: 3gpp-monitoring-event
+  version: 1.2.1
+externalDocs:
+  description: 3GPP TS 29.122 V17.7.0 T8 reference point for Northbound APIs
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.122/
+servers:
+- url: "{apiRoot}/3gpp-monitoring-event/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+paths:
+  /{scsAsId}/subscriptions:
+    get:
+      operationId: FetchAllMonitoringEventSubscriptions
+      parameters:
+      - description: Identifier of the SCS/AS
+        explode: false
+        in: path
+        name: scsAsId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - content:
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/IpAddr'
+              minItems: 1
+              type: array
+        description: The IP address(es) of the requested UE(s).
+        in: query
+        name: ip-addrs
+        required: false
+      - description: The IPv4 address domain identifier. The attribute may only be
+          provided if IPv4 address is included in the ip-addrs query parameter.
+        explode: true
+        in: query
+        name: ip-domain
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: The MAC address(es) of the requested UE(s).
+        explode: true
+        in: query
+        name: mac-addrs
+        required: false
+        schema:
+          items:
+            $ref: '#/components/schemas/MacAddr48'
+          minItems: 1
+          type: array
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                description: Monitoring event subscriptions
+                items:
+                  $ref: '#/components/schemas/MonitoringEventSubscription'
+                minItems: 0
+                type: array
+          description: OK (Successful get all or queried active subscriptions for
+            the SCS/AS)
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Acceptable
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Read all or queried active subscriptions for the SCS/AS.
+      tags:
+      - Monitoring Event Subscriptions
+    post:
+      callbacks:
+        notificationDestination:
+          '{request.body#/notificationDestination}':
+            post:
+              operationId: notificationDestination_request_bodyNotificationDestinationPost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/MonitoringNotification'
+                required: true
+              responses:
+                "204":
+                  description: No Content (successful notification)
+                "307":
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: An alternative URI of the resource.
+                      required: true
+                      schema:
+                        type: string
+                "308":
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: An alternative URI of the resource.
+                      required: true
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+        UserConsentRevocationNotif:
+          '{request.body#/revocationNotifUri}':
+            post:
+              operationId: userConsentRevocationNotif_request_bodyRevocationNotifUriPost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/ConsentRevocNotif'
+                required: true
+              responses:
+                "204":
+                  description: No Content (successful notification).
+                "307":
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: An alternative URI of the resource.
+                      required: true
+                      schema:
+                        type: string
+                "308":
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: An alternative URI of the resource.
+                      required: true
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+      operationId: CreateMonitoringEventSubscription
+      parameters:
+      - description: Identifier of the SCS/AS
+        explode: false
+        in: path
+        name: scsAsId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitoringEventSubscription'
+        description: Subscription for notification about monitoring event
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitoringEventSubscription'
+          description: Created (Successful creation of subscription)
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "200":
+          content:
+            application/json:
+              schema:
+                oneOf:
+                - $ref: '#/components/schemas/MonitoringEventReport'
+                - $ref: '#/components/schemas/MonitoringEventReports'
+          description: The operation is successful and immediate report is included.
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Creates a new subscription resource for monitoring event notification.
+      tags:
+      - Monitoring Event Subscriptions
+  /{scsAsId}/subscriptions/{subscriptionId}:
+    delete:
+      operationId: DeleteIndMonitoringEventSubscription
+      parameters:
+      - description: Identifier of the SCS/AS
+        explode: false
+        in: path
+        name: scsAsId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Identifier of the subscription resource
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content (Successful deletion of the existing subscription)
+        "200":
+          content:
+            application/json:
+              schema:
+                description: "The subscription was terminated successfully, the monitoring\
+                  \ event report(s) shall be included if received."
+                items:
+                  $ref: '#/components/schemas/MonitoringEventReport'
+                minItems: 1
+                type: array
+          description: OK (Successful deletion of the existing subscription)
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Deletes an already existing monitoring event subscription.
+      tags:
+      - Individual Monitoring Event Subscription
+    get:
+      operationId: FetchIndMonitoringEventSubscription
+      parameters:
+      - description: Identifier of the SCS/AS
+        explode: false
+        in: path
+        name: scsAsId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Identifier of the subscription resource
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitoringEventSubscription'
+          description: OK (Successful get the active subscription)
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Acceptable
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Read an active subscriptions for the SCS/AS and the subscription Id.
+      tags:
+      - Individual Monitoring Event Subscription
+    patch:
+      operationId: ModifyIndMonitoringEventSubscription
+      parameters:
+      - description: Identifier of the SCS/AS.
+        explode: false
+        in: path
+        name: scsAsId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Identifier of the subscription resource.
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/PatchItem'
+              minItems: 1
+              type: array
+        description: This is used for PATCH request for partial cancellation and/or
+          partial addition of certain UE(s) within an active group.
+        required: true
+      responses:
+        "204":
+          description: The resource was modified successfully.
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Modifies an existing subscription of monitoring event.
+      tags:
+      - Individual Monitoring Event Subscription
+    put:
+      operationId: UpdateIndMonitoringEventSubscription
+      parameters:
+      - description: Identifier of the SCS/AS
+        explode: false
+        in: path
+        name: scsAsId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Identifier of the subscription resource
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitoringEventSubscription'
+        description: Parameters to update/replace the existing subscription
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitoringEventSubscription'
+          description: OK (Successful update of the subscription)
+        "204":
+          description: No Content (Successful update of the subscription)
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Updates/replaces an existing subscription resource.
+      tags:
+      - Individual Monitoring Event Subscription
+components:
+  responses:
+    "307":
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "308":
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "406":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Acceptable
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+  schemas:
+    MonitoringEventSubscription:
+      anyOf:
+      - required:
+        - maximumNumberOfReports
+      - required:
+        - monitorExpireTime
+      description: Represents a subscription to event(s) monitoring.
+      example:
+        locQoS:
+          responseTime: null
+          verticalRequested: true
+          hAccuracy: 0.7386282
+          vAccuracy: 0.123151354
+          minorLocQoses:
+          - hAccuracy: 0.10246457
+            vAccuracy: 0.14894159
+          - hAccuracy: 0.10246457
+            vAccuracy: 0.14894159
+          lcsQosClass: null
+        maximumResponseTime: 0
+        addnMonTypes:
+        - null
+        - null
+        locationType: null
+        accuracy: null
+        linearDistance: 4146
+        requestTestNotification: true
+        supportedGADShapes:
+        - null
+        - null
+        svcId: svcId
+        locationArea5G:
+          geographicAreas:
+          - null
+          - null
+          nwAreaInfo:
+            ncgis:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tais:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            gRanNodeIds:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ecgis:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          civicAddresses:
+          - POBOX: POBOX
+            usageRules: usageRules
+            country: country
+            PRD: PRD
+            PLC: PLC
+            HNO: HNO
+            PRM: PRM
+            HNS: HNS
+            FLR: FLR
+            A1: A1
+            A2: A2
+            A3: A3
+            A4: A4
+            STS: STS
+            A5: A5
+            A6: A6
+            RDSEC: RDSEC
+            providedBy: providedBy
+            LOC: LOC
+            UNIT: UNIT
+            SEAT: SEAT
+            POD: POD
+            RDBR: RDBR
+            method: method
+            LMK: LMK
+            POM: POM
+            ADDCODE: ADDCODE
+            RD: RD
+            PC: PC
+            PCN: PCN
+            NAM: NAM
+            BLD: BLD
+            ROOM: ROOM
+            RDSUBBR: RDSUBBR
+          - POBOX: POBOX
+            usageRules: usageRules
+            country: country
+            PRD: PRD
+            PLC: PLC
+            HNO: HNO
+            PRM: PRM
+            HNS: HNS
+            FLR: FLR
+            A1: A1
+            A2: A2
+            A3: A3
+            A4: A4
+            STS: STS
+            A5: A5
+            A6: A6
+            RDSEC: RDSEC
+            providedBy: providedBy
+            LOC: LOC
+            UNIT: UNIT
+            SEAT: SEAT
+            POD: POD
+            RDBR: RDBR
+            method: method
+            LMK: LMK
+            POM: POM
+            ADDCODE: ADDCODE
+            RD: RD
+            PC: PC
+            PCN: PCN
+            NAM: NAM
+            BLD: BLD
+            ROOM: ROOM
+            RDSUBBR: RDSUBBR
+        ipv4Addr: ipv4Addr
+        locationArea:
+          cellIds:
+          - cellIds
+          - cellIds
+          geographicAreas:
+          - null
+          - null
+          civicAddresses:
+          - POBOX: POBOX
+            usageRules: usageRules
+            country: country
+            PRD: PRD
+            PLC: PLC
+            HNO: HNO
+            PRM: PRM
+            HNS: HNS
+            FLR: FLR
+            A1: A1
+            A2: A2
+            A3: A3
+            A4: A4
+            STS: STS
+            A5: A5
+            A6: A6
+            RDSEC: RDSEC
+            providedBy: providedBy
+            LOC: LOC
+            UNIT: UNIT
+            SEAT: SEAT
+            POD: POD
+            RDBR: RDBR
+            method: method
+            LMK: LMK
+            POM: POM
+            ADDCODE: ADDCODE
+            RD: RD
+            PC: PC
+            PCN: PCN
+            NAM: NAM
+            BLD: BLD
+            ROOM: ROOM
+            RDSUBBR: RDSUBBR
+          - POBOX: POBOX
+            usageRules: usageRules
+            country: country
+            PRD: PRD
+            PLC: PLC
+            HNO: HNO
+            PRM: PRM
+            HNS: HNS
+            FLR: FLR
+            A1: A1
+            A2: A2
+            A3: A3
+            A4: A4
+            STS: STS
+            A5: A5
+            A6: A6
+            RDSEC: RDSEC
+            providedBy: providedBy
+            LOC: LOC
+            UNIT: UNIT
+            SEAT: SEAT
+            POD: POD
+            RDBR: RDBR
+            method: method
+            LMK: LMK
+            POM: POM
+            ADDCODE: ADDCODE
+            RD: RD
+            PC: PC
+            PCN: PCN
+            NAM: NAM
+            BLD: BLD
+            ROOM: ROOM
+            RDSUBBR: RDSUBBR
+          enodeBIds:
+          - enodeBIds
+          - enodeBIds
+          routingAreaIds:
+          - routingAreaIds
+          - routingAreaIds
+          trackingAreaIds:
+          - trackingAreaIds
+          - trackingAreaIds
+        dnn: dnn
+        monitorExpireTime: 2000-01-23T04:56:07.000+00:00
+        idleStatusIndication: true
+        plmnIndication: true
+        externalGroupId: externalGroupId
+        nsRepFormat: null
+        addedExternalIds:
+        - null
+        - null
+        monitoringType: null
+        tgtNsThreshold:
+          numericValNumUes: 6
+          percValueNumUes: 67
+          percValueNumPduSess: 33
+          numericValNumPduSess: 5
+        uavPolicy:
+          uavMoveInd: true
+          revokeInd: true
+        suggestedNumberOfDlPackets: 0
+        subType: null
+        maximumLatency: 0
+        notificationDestination: notificationDestination
+        dddStati:
+        - null
+        - null
+        monitoringEventReport:
+          locationInfo:
+            ldrType: null
+            geographicArea: null
+            qosFulfilInd: null
+            achievedQos:
+              hAccuracy: 0.10246457
+              vAccuracy: 0.14894159
+            twanId: twanId
+            ageOfLocationInfo: 0
+            enodeBId: enodeBId
+            cellId: cellId
+            routingAreaId: routingAreaId
+            positionMethod: null
+            ueVelocity: null
+            civicAddress:
+              POBOX: POBOX
+              usageRules: usageRules
+              country: country
+              PRD: PRD
+              PLC: PLC
+              HNO: HNO
+              PRM: PRM
+              HNS: HNS
+              FLR: FLR
+              A1: A1
+              A2: A2
+              A3: A3
+              A4: A4
+              STS: STS
+              A5: A5
+              A6: A6
+              RDSEC: RDSEC
+              providedBy: providedBy
+              LOC: LOC
+              UNIT: UNIT
+              SEAT: SEAT
+              POD: POD
+              RDBR: RDBR
+              method: method
+              LMK: LMK
+              POM: POM
+              ADDCODE: ADDCODE
+              RD: RD
+              PC: PC
+              PCN: PCN
+              NAM: NAM
+              BLD: BLD
+              ROOM: ROOM
+              RDSUBBR: RDSUBBR
+            plmnId: plmnId
+            trackingAreaId: trackingAreaId
+          afServiceId: afServiceId
+          dddStatus: null
+          maxWaitTime: 2000-01-23T04:56:07.000+00:00
+          externalId: externalId
+          maxUEAvailabilityTime: 2000-01-23T04:56:07.000+00:00
+          failureCause:
+            causeType: 3
+            s1ApCause: 2
+            smCause: 6
+            ranapCause: 1
+            gmmCause: 6
+            bssgpCause: 6
+            ranNasCause: ranNasCause
+          pdnConnInfoList:
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          uavPresInd: true
+          idleStatusInfo:
+            periodicAUTimer: 0
+            edrxCycleLength: 0.5025005
+            activeTime: 0
+            suggestedNumberOfDlPackets: 0
+            idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+          monitoringType: null
+          nSStatusInfo:
+            reachedNumUes:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+            reachedNumPduSess:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+          lossOfConnectReason: 8
+          uePerLocationReport:
+            externalIds:
+            - null
+            - null
+            msisdns:
+            - null
+            - null
+            ueCount: 0
+            servLevelDevIds:
+            - servLevelDevIds
+            - servLevelDevIds
+          locFailureCause: null
+          roamingStatus: true
+          eventTime: 2000-01-23T04:56:07.000+00:00
+          dddTrafDescriptor:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+            macAddr: macAddr
+          apiCaps:
+          - apiName: apiName
+            suppFeat: suppFeat
+          - apiName: apiName
+            suppFeat: suppFeat
+          imeiChange: null
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          msisdn: msisdn
+          reachabilityType: null
+          servLevelDevId: servLevelDevId
+        afServiceId: afServiceId
+        supportedFeatures: supportedFeatures
+        ueMacAddr: ueMacAddr
+        excludedExternalIds:
+        - null
+        - null
+        websockNotifConfig:
+          requestWebsocketUri: true
+          websocketUri: websocketUri
+        reportingLocEstInd: true
+        samplingInterval: 0
+        maximumDetectionTime: 0
+        immediateRep: true
+        maxAgeOfLocEst: 22435
+        codeWord: codeWord
+        velocityRequested: null
+        msisdn: msisdn
+        reachabilityType: null
+        dddTraDescriptors:
+        - ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          portNumber: 0
+          macAddr: macAddr
+        - ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          portNumber: 0
+          macAddr: macAddr
+        ldrType: null
+        minimumReportInterval: 0
+        maximumNumberOfReports: 1
+        snssai:
+          sd: sd
+          sst: 78
+        excludedMsisdns:
+        - null
+        - null
+        addExtGroupId:
+        - null
+        - null
+        associationType: null
+        externalId: externalId
+        repPeriod: 0
+        mtcProviderId: mtcProviderId
+        maxRptExpireIntvl: 0
+        ipv6Addr: ipv6Addr
+        locTimeWindow:
+          startTime: 2000-01-23T04:56:07.000+00:00
+          stopTime: 2000-01-23T04:56:07.000+00:00
+        addnMonEventReports:
+        - locationInfo:
+            ldrType: null
+            geographicArea: null
+            qosFulfilInd: null
+            achievedQos:
+              hAccuracy: 0.10246457
+              vAccuracy: 0.14894159
+            twanId: twanId
+            ageOfLocationInfo: 0
+            enodeBId: enodeBId
+            cellId: cellId
+            routingAreaId: routingAreaId
+            positionMethod: null
+            ueVelocity: null
+            civicAddress:
+              POBOX: POBOX
+              usageRules: usageRules
+              country: country
+              PRD: PRD
+              PLC: PLC
+              HNO: HNO
+              PRM: PRM
+              HNS: HNS
+              FLR: FLR
+              A1: A1
+              A2: A2
+              A3: A3
+              A4: A4
+              STS: STS
+              A5: A5
+              A6: A6
+              RDSEC: RDSEC
+              providedBy: providedBy
+              LOC: LOC
+              UNIT: UNIT
+              SEAT: SEAT
+              POD: POD
+              RDBR: RDBR
+              method: method
+              LMK: LMK
+              POM: POM
+              ADDCODE: ADDCODE
+              RD: RD
+              PC: PC
+              PCN: PCN
+              NAM: NAM
+              BLD: BLD
+              ROOM: ROOM
+              RDSUBBR: RDSUBBR
+            plmnId: plmnId
+            trackingAreaId: trackingAreaId
+          afServiceId: afServiceId
+          dddStatus: null
+          maxWaitTime: 2000-01-23T04:56:07.000+00:00
+          externalId: externalId
+          maxUEAvailabilityTime: 2000-01-23T04:56:07.000+00:00
+          failureCause:
+            causeType: 3
+            s1ApCause: 2
+            smCause: 6
+            ranapCause: 1
+            gmmCause: 6
+            bssgpCause: 6
+            ranNasCause: ranNasCause
+          pdnConnInfoList:
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          uavPresInd: true
+          idleStatusInfo:
+            periodicAUTimer: 0
+            edrxCycleLength: 0.5025005
+            activeTime: 0
+            suggestedNumberOfDlPackets: 0
+            idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+          monitoringType: null
+          nSStatusInfo:
+            reachedNumUes:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+            reachedNumPduSess:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+          lossOfConnectReason: 8
+          uePerLocationReport:
+            externalIds:
+            - null
+            - null
+            msisdns:
+            - null
+            - null
+            ueCount: 0
+            servLevelDevIds:
+            - servLevelDevIds
+            - servLevelDevIds
+          locFailureCause: null
+          roamingStatus: true
+          eventTime: 2000-01-23T04:56:07.000+00:00
+          dddTrafDescriptor:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+            macAddr: macAddr
+          apiCaps:
+          - apiName: apiName
+            suppFeat: suppFeat
+          - apiName: apiName
+            suppFeat: suppFeat
+          imeiChange: null
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          msisdn: msisdn
+          reachabilityType: null
+          servLevelDevId: servLevelDevId
+        - locationInfo:
+            ldrType: null
+            geographicArea: null
+            qosFulfilInd: null
+            achievedQos:
+              hAccuracy: 0.10246457
+              vAccuracy: 0.14894159
+            twanId: twanId
+            ageOfLocationInfo: 0
+            enodeBId: enodeBId
+            cellId: cellId
+            routingAreaId: routingAreaId
+            positionMethod: null
+            ueVelocity: null
+            civicAddress:
+              POBOX: POBOX
+              usageRules: usageRules
+              country: country
+              PRD: PRD
+              PLC: PLC
+              HNO: HNO
+              PRM: PRM
+              HNS: HNS
+              FLR: FLR
+              A1: A1
+              A2: A2
+              A3: A3
+              A4: A4
+              STS: STS
+              A5: A5
+              A6: A6
+              RDSEC: RDSEC
+              providedBy: providedBy
+              LOC: LOC
+              UNIT: UNIT
+              SEAT: SEAT
+              POD: POD
+              RDBR: RDBR
+              method: method
+              LMK: LMK
+              POM: POM
+              ADDCODE: ADDCODE
+              RD: RD
+              PC: PC
+              PCN: PCN
+              NAM: NAM
+              BLD: BLD
+              ROOM: ROOM
+              RDSUBBR: RDSUBBR
+            plmnId: plmnId
+            trackingAreaId: trackingAreaId
+          afServiceId: afServiceId
+          dddStatus: null
+          maxWaitTime: 2000-01-23T04:56:07.000+00:00
+          externalId: externalId
+          maxUEAvailabilityTime: 2000-01-23T04:56:07.000+00:00
+          failureCause:
+            causeType: 3
+            s1ApCause: 2
+            smCause: 6
+            ranapCause: 1
+            gmmCause: 6
+            bssgpCause: 6
+            ranNasCause: ranNasCause
+          pdnConnInfoList:
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          uavPresInd: true
+          idleStatusInfo:
+            periodicAUTimer: 0
+            edrxCycleLength: 0.5025005
+            activeTime: 0
+            suggestedNumberOfDlPackets: 0
+            idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+          monitoringType: null
+          nSStatusInfo:
+            reachedNumUes:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+            reachedNumPduSess:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+          lossOfConnectReason: 8
+          uePerLocationReport:
+            externalIds:
+            - null
+            - null
+            msisdns:
+            - null
+            - null
+            ueCount: 0
+            servLevelDevIds:
+            - servLevelDevIds
+            - servLevelDevIds
+          locFailureCause: null
+          roamingStatus: true
+          eventTime: 2000-01-23T04:56:07.000+00:00
+          dddTrafDescriptor:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+            macAddr: macAddr
+          apiCaps:
+          - apiName: apiName
+            suppFeat: suppFeat
+          - apiName: apiName
+            suppFeat: suppFeat
+          imeiChange: null
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          msisdn: msisdn
+          reachabilityType: null
+          servLevelDevId: servLevelDevId
+        ueIpAddr:
+          ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          ipv6Prefix: 2001:db8:abcd:12::0/64
+        sesEstInd: true
+        revocationNotifUri: revocationNotifUri
+        self: self
+        groupReportGuardTime: 0
+        addedMsisdns:
+        - null
+        - null
+        apiNames:
+        - apiNames
+        - apiNames
+      properties:
+        self:
+          description: string formatted according to IETF RFC 3986 identifying a referenced
+            resource.
+          type: string
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        mtcProviderId:
+          description: Identifies the MTC Service Provider and/or MTC Application.
+          type: string
+        externalId:
+          description: string containing a local identifier followed by "@" and a
+            domain identifier. Both the local identifier and the domain identifier
+            shall be encoded as strings that do not contain any "@" characters. See
+            Clause 4.6.2 of 3GPP TS 23.682 for more information.
+          type: string
+        msisdn:
+          description: string formatted according to clause 3.3 of 3GPP TS 23.003
+            that describes an MSISDN.
+          type: string
+        addedExternalIds:
+          description: Indicates the added external Identifier(s) within the active
+            group.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        addedMsisdns:
+          description: Indicates the added MSISDN(s) within the active group.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        excludedExternalIds:
+          description: Indicates cancellation of the external Identifier(s) within
+            the active group.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        excludedMsisdns:
+          description: Indicates cancellation of the MSISDN(s) within the active group.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        externalGroupId:
+          description: string containing a local identifier followed by "@" and a
+            domain identifier. Both the local identifier and the domain identifier
+            shall be encoded as strings that do not contain any "@" characters. See
+            Clauses 4.6.2 and 4.6.3 of 3GPP TS 23.682 for more information.
+          type: string
+        addExtGroupId:
+          items:
+            $ref: '#/components/schemas/ExternalGroupId'
+          minItems: 2
+          type: array
+        ipv4Addr:
+          description: string identifying a Ipv4 address formatted in the "dotted
+            decimal" notation as defined in IETF RFC 1166.
+          type: string
+        ipv6Addr:
+          description: string identifying a Ipv6 address formatted according to clause
+            4 in IETF RFC 5952. The mixed Ipv4 Ipv6 notation according to clause 5
+            of IETF RFC 5952 shall not be used.
+          type: string
+        dnn:
+          description: |
+            String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+          type: string
+        notificationDestination:
+          description: string formatted according to IETF RFC 3986 identifying a referenced
+            resource.
+          type: string
+        requestTestNotification:
+          description: Set to true by the SCS/AS to request the SCEF to send a test
+            notification as defined in clause 5.2.5.3. Set to false or omitted otherwise.
+          type: boolean
+        websockNotifConfig:
+          $ref: '#/components/schemas/WebsockNotifConfig'
+        monitoringType:
+          $ref: '#/components/schemas/MonitoringType'
+        maximumNumberOfReports:
+          description: "Identifies the maximum number of event reports to be generated\
+            \ by the HSS, MME/SGSN as specified in clause 5.6.0 of 3GPP TS 23.682."
+          minimum: 1
+          type: integer
+        monitorExpireTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        repPeriod:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        groupReportGuardTime:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        maximumDetectionTime:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        reachabilityType:
+          $ref: '#/components/schemas/ReachabilityType'
+        maximumLatency:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        maximumResponseTime:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        suggestedNumberOfDlPackets:
+          description: "If \"monitoringType\" is \"UE_REACHABILITY\", this parameter\
+            \ may be included to identify the number of packets that the serving gateway\
+            \ shall buffer in case that the UE is not reachable."
+          minimum: 0
+          type: integer
+        idleStatusIndication:
+          description: "If \"monitoringType\" is set to \"UE_REACHABILITY\" or \"\
+            AVAILABILITY_AFTER_DDN_FAILURE\", this parameter may be included to indicate\
+            \ the notification of when a UE, for which PSM is enabled, transitions\
+            \ into idle mode. \"true\"  indicates enabling of notification; \"false\"\
+            \  indicate no need to notify. Default value is \"false\"."
+          type: boolean
+        locationType:
+          $ref: '#/components/schemas/LocationType'
+        accuracy:
+          $ref: '#/components/schemas/Accuracy'
+        minimumReportInterval:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        maxRptExpireIntvl:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        samplingInterval:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        reportingLocEstInd:
+          description: Indicates whether to request the location estimate for event
+            reporting.
+          type: boolean
+        linearDistance:
+          description: Minimum straight line distance moved by a UE to trigger a motion
+            event report.
+          maximum: 10000
+          minimum: 1
+          type: integer
+        locQoS:
+          $ref: '#/components/schemas/LocationQoS'
+        svcId:
+          description: Contains the service identity
+          type: string
+        ldrType:
+          $ref: '#/components/schemas/LdrType'
+        velocityRequested:
+          $ref: '#/components/schemas/VelocityRequested'
+        maxAgeOfLocEst:
+          description: Indicates value of the age of the location estimate.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        locTimeWindow:
+          $ref: '#/components/schemas/TimeWindow'
+        supportedGADShapes:
+          items:
+            $ref: '#/components/schemas/SupportedGADShapes'
+          type: array
+        codeWord:
+          description: Contains the codeword
+          type: string
+        associationType:
+          $ref: '#/components/schemas/AssociationType'
+        plmnIndication:
+          description: "If \"monitoringType\" is \"ROAMING_STATUS\", this parameter\
+            \ may be included to indicate the notification of UE's Serving PLMN ID.\
+            \ Value \"true\" indicates enabling of notification; \"false\" indicates\
+            \ disabling of notification. Default value is \"false\"."
+          type: boolean
+        locationArea:
+          $ref: '#/components/schemas/LocationArea'
+        locationArea5G:
+          $ref: '#/components/schemas/LocationArea5G'
+        dddTraDescriptors:
+          items:
+            $ref: '#/components/schemas/DddTrafficDescriptor'
+          minItems: 1
+          type: array
+        dddStati:
+          items:
+            $ref: '#/components/schemas/DlDataDeliveryStatus'
+          minItems: 1
+          type: array
+        apiNames:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        monitoringEventReport:
+          $ref: '#/components/schemas/MonitoringEventReport'
+        snssai:
+          $ref: '#/components/schemas/Snssai'
+        tgtNsThreshold:
+          $ref: '#/components/schemas/SACInfo'
+        nsRepFormat:
+          $ref: '#/components/schemas/SACRepFormat'
+        afServiceId:
+          type: string
+        immediateRep:
+          type: boolean
+        uavPolicy:
+          $ref: '#/components/schemas/UavPolicy'
+        sesEstInd:
+          description: Set to true by the SCS/AS so that only UAV's with "PDU session
+            established for DNN(s) subject to aerial service" are to be listed in
+            the Event report. Set to false or omitted otherwise.
+          type: boolean
+        subType:
+          $ref: '#/components/schemas/SubType'
+        addnMonTypes:
+          items:
+            $ref: '#/components/schemas/MonitoringType'
+          type: array
+        addnMonEventReports:
+          items:
+            $ref: '#/components/schemas/MonitoringEventReport'
+          type: array
+        ueIpAddr:
+          $ref: '#/components/schemas/IpAddr'
+        ueMacAddr:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+        revocationNotifUri:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+      required:
+      - monitoringType
+      - notificationDestination
+      type: object
+    MonitoringNotification:
+      description: Represents an event monitoring notification.
+      example:
+        cancelInd: true
+        cancelExternalIds:
+        - null
+        - null
+        monitoringEventReports:
+        - locationInfo:
+            ldrType: null
+            geographicArea: null
+            qosFulfilInd: null
+            achievedQos:
+              hAccuracy: 0.10246457
+              vAccuracy: 0.14894159
+            twanId: twanId
+            ageOfLocationInfo: 0
+            enodeBId: enodeBId
+            cellId: cellId
+            routingAreaId: routingAreaId
+            positionMethod: null
+            ueVelocity: null
+            civicAddress:
+              POBOX: POBOX
+              usageRules: usageRules
+              country: country
+              PRD: PRD
+              PLC: PLC
+              HNO: HNO
+              PRM: PRM
+              HNS: HNS
+              FLR: FLR
+              A1: A1
+              A2: A2
+              A3: A3
+              A4: A4
+              STS: STS
+              A5: A5
+              A6: A6
+              RDSEC: RDSEC
+              providedBy: providedBy
+              LOC: LOC
+              UNIT: UNIT
+              SEAT: SEAT
+              POD: POD
+              RDBR: RDBR
+              method: method
+              LMK: LMK
+              POM: POM
+              ADDCODE: ADDCODE
+              RD: RD
+              PC: PC
+              PCN: PCN
+              NAM: NAM
+              BLD: BLD
+              ROOM: ROOM
+              RDSUBBR: RDSUBBR
+            plmnId: plmnId
+            trackingAreaId: trackingAreaId
+          afServiceId: afServiceId
+          dddStatus: null
+          maxWaitTime: 2000-01-23T04:56:07.000+00:00
+          externalId: externalId
+          maxUEAvailabilityTime: 2000-01-23T04:56:07.000+00:00
+          failureCause:
+            causeType: 3
+            s1ApCause: 2
+            smCause: 6
+            ranapCause: 1
+            gmmCause: 6
+            bssgpCause: 6
+            ranNasCause: ranNasCause
+          pdnConnInfoList:
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          uavPresInd: true
+          idleStatusInfo:
+            periodicAUTimer: 0
+            edrxCycleLength: 0.5025005
+            activeTime: 0
+            suggestedNumberOfDlPackets: 0
+            idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+          monitoringType: null
+          nSStatusInfo:
+            reachedNumUes:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+            reachedNumPduSess:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+          lossOfConnectReason: 8
+          uePerLocationReport:
+            externalIds:
+            - null
+            - null
+            msisdns:
+            - null
+            - null
+            ueCount: 0
+            servLevelDevIds:
+            - servLevelDevIds
+            - servLevelDevIds
+          locFailureCause: null
+          roamingStatus: true
+          eventTime: 2000-01-23T04:56:07.000+00:00
+          dddTrafDescriptor:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+            macAddr: macAddr
+          apiCaps:
+          - apiName: apiName
+            suppFeat: suppFeat
+          - apiName: apiName
+            suppFeat: suppFeat
+          imeiChange: null
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          msisdn: msisdn
+          reachabilityType: null
+          servLevelDevId: servLevelDevId
+        - locationInfo:
+            ldrType: null
+            geographicArea: null
+            qosFulfilInd: null
+            achievedQos:
+              hAccuracy: 0.10246457
+              vAccuracy: 0.14894159
+            twanId: twanId
+            ageOfLocationInfo: 0
+            enodeBId: enodeBId
+            cellId: cellId
+            routingAreaId: routingAreaId
+            positionMethod: null
+            ueVelocity: null
+            civicAddress:
+              POBOX: POBOX
+              usageRules: usageRules
+              country: country
+              PRD: PRD
+              PLC: PLC
+              HNO: HNO
+              PRM: PRM
+              HNS: HNS
+              FLR: FLR
+              A1: A1
+              A2: A2
+              A3: A3
+              A4: A4
+              STS: STS
+              A5: A5
+              A6: A6
+              RDSEC: RDSEC
+              providedBy: providedBy
+              LOC: LOC
+              UNIT: UNIT
+              SEAT: SEAT
+              POD: POD
+              RDBR: RDBR
+              method: method
+              LMK: LMK
+              POM: POM
+              ADDCODE: ADDCODE
+              RD: RD
+              PC: PC
+              PCN: PCN
+              NAM: NAM
+              BLD: BLD
+              ROOM: ROOM
+              RDSUBBR: RDSUBBR
+            plmnId: plmnId
+            trackingAreaId: trackingAreaId
+          afServiceId: afServiceId
+          dddStatus: null
+          maxWaitTime: 2000-01-23T04:56:07.000+00:00
+          externalId: externalId
+          maxUEAvailabilityTime: 2000-01-23T04:56:07.000+00:00
+          failureCause:
+            causeType: 3
+            s1ApCause: 2
+            smCause: 6
+            ranapCause: 1
+            gmmCause: 6
+            bssgpCause: 6
+            ranNasCause: ranNasCause
+          pdnConnInfoList:
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          - pdnType: null
+            interfaceInd: null
+            ipv6Addrs:
+            - null
+            - null
+            ipv4Addr: ipv4Addr
+            macAddrs:
+            - null
+            - null
+            apn: apn
+            status: null
+          uavPresInd: true
+          idleStatusInfo:
+            periodicAUTimer: 0
+            edrxCycleLength: 0.5025005
+            activeTime: 0
+            suggestedNumberOfDlPackets: 0
+            idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+          monitoringType: null
+          nSStatusInfo:
+            reachedNumUes:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+            reachedNumPduSess:
+              numericValNumUes: 6
+              percValueNumUes: 67
+              percValueNumPduSess: 33
+              numericValNumPduSess: 5
+          lossOfConnectReason: 8
+          uePerLocationReport:
+            externalIds:
+            - null
+            - null
+            msisdns:
+            - null
+            - null
+            ueCount: 0
+            servLevelDevIds:
+            - servLevelDevIds
+            - servLevelDevIds
+          locFailureCause: null
+          roamingStatus: true
+          eventTime: 2000-01-23T04:56:07.000+00:00
+          dddTrafDescriptor:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+            macAddr: macAddr
+          apiCaps:
+          - apiName: apiName
+            suppFeat: suppFeat
+          - apiName: apiName
+            suppFeat: suppFeat
+          imeiChange: null
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          msisdn: msisdn
+          reachabilityType: null
+          servLevelDevId: servLevelDevId
+        appliedParam:
+          maximumDetectionTime: 0
+          maximumResponseTime: 0
+          externalIds:
+          - null
+          - null
+          msisdns:
+          - null
+          - null
+          maximumLatency: 0
+        subscription: subscription
+        configResults:
+        - resultReason: null
+          externalIds:
+          - null
+          - null
+          msisdns:
+          - null
+          - null
+        - resultReason: null
+          externalIds:
+          - null
+          - null
+          msisdns:
+          - null
+          - null
+        addedMsisdns:
+        - null
+        - null
+        addedExternalIds:
+        - null
+        - null
+        cancelMsisdns:
+        - null
+        - null
+      properties:
+        subscription:
+          description: string formatted according to IETF RFC 3986 identifying a referenced
+            resource.
+          type: string
+        configResults:
+          description: Each element identifies a notification of grouping configuration
+            result.
+          items:
+            $ref: '#/components/schemas/ConfigResult'
+          minItems: 1
+          type: array
+        monitoringEventReports:
+          description: Monitoring event reports.
+          items:
+            $ref: '#/components/schemas/MonitoringEventReport'
+          minItems: 1
+          type: array
+        addedExternalIds:
+          description: Identifies the added external Identifier(s) within the active
+            group via the "externalGroupId" attribute within the MonitoringEventSubscription
+            data type.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        addedMsisdns:
+          description: Identifies the added MSISDN(s) within the active group via
+            the "externalGroupId" attribute within the MonitoringEventSubscription
+            data type.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        cancelExternalIds:
+          description: Identifies the cancelled external Identifier(s) within the
+            active group via the "externalGroupId" attribute within the MonitoringEventSubscription
+            data type.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        cancelMsisdns:
+          description: Identifies the cancelled MSISDN(s) within the active group
+            via the "externalGroupId" attribute within the MonitoringEventSubscription
+            data type.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        cancelInd:
+          description: |
+            Indicates whether to request to cancel the corresponding monitoring subscription. Set to false or omitted otherwise.
+          type: boolean
+        appliedParam:
+          $ref: '#/components/schemas/AppliedParameterConfiguration'
+      required:
+      - subscription
+      type: object
+    MonitoringEventReport:
+      description: Represents an event monitoring report.
+      example:
+        locationInfo:
+          ldrType: null
+          geographicArea: null
+          qosFulfilInd: null
+          achievedQos:
+            hAccuracy: 0.10246457
+            vAccuracy: 0.14894159
+          twanId: twanId
+          ageOfLocationInfo: 0
+          enodeBId: enodeBId
+          cellId: cellId
+          routingAreaId: routingAreaId
+          positionMethod: null
+          ueVelocity: null
+          civicAddress:
+            POBOX: POBOX
+            usageRules: usageRules
+            country: country
+            PRD: PRD
+            PLC: PLC
+            HNO: HNO
+            PRM: PRM
+            HNS: HNS
+            FLR: FLR
+            A1: A1
+            A2: A2
+            A3: A3
+            A4: A4
+            STS: STS
+            A5: A5
+            A6: A6
+            RDSEC: RDSEC
+            providedBy: providedBy
+            LOC: LOC
+            UNIT: UNIT
+            SEAT: SEAT
+            POD: POD
+            RDBR: RDBR
+            method: method
+            LMK: LMK
+            POM: POM
+            ADDCODE: ADDCODE
+            RD: RD
+            PC: PC
+            PCN: PCN
+            NAM: NAM
+            BLD: BLD
+            ROOM: ROOM
+            RDSUBBR: RDSUBBR
+          plmnId: plmnId
+          trackingAreaId: trackingAreaId
+        afServiceId: afServiceId
+        dddStatus: null
+        maxWaitTime: 2000-01-23T04:56:07.000+00:00
+        externalId: externalId
+        maxUEAvailabilityTime: 2000-01-23T04:56:07.000+00:00
+        failureCause:
+          causeType: 3
+          s1ApCause: 2
+          smCause: 6
+          ranapCause: 1
+          gmmCause: 6
+          bssgpCause: 6
+          ranNasCause: ranNasCause
+        pdnConnInfoList:
+        - pdnType: null
+          interfaceInd: null
+          ipv6Addrs:
+          - null
+          - null
+          ipv4Addr: ipv4Addr
+          macAddrs:
+          - null
+          - null
+          apn: apn
+          status: null
+        - pdnType: null
+          interfaceInd: null
+          ipv6Addrs:
+          - null
+          - null
+          ipv4Addr: ipv4Addr
+          macAddrs:
+          - null
+          - null
+          apn: apn
+          status: null
+        uavPresInd: true
+        idleStatusInfo:
+          periodicAUTimer: 0
+          edrxCycleLength: 0.5025005
+          activeTime: 0
+          suggestedNumberOfDlPackets: 0
+          idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+        monitoringType: null
+        nSStatusInfo:
+          reachedNumUes:
+            numericValNumUes: 6
+            percValueNumUes: 67
+            percValueNumPduSess: 33
+            numericValNumPduSess: 5
+          reachedNumPduSess:
+            numericValNumUes: 6
+            percValueNumUes: 67
+            percValueNumPduSess: 33
+            numericValNumPduSess: 5
+        lossOfConnectReason: 8
+        uePerLocationReport:
+          externalIds:
+          - null
+          - null
+          msisdns:
+          - null
+          - null
+          ueCount: 0
+          servLevelDevIds:
+          - servLevelDevIds
+          - servLevelDevIds
+        locFailureCause: null
+        roamingStatus: true
+        eventTime: 2000-01-23T04:56:07.000+00:00
+        dddTrafDescriptor:
+          ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          portNumber: 0
+          macAddr: macAddr
+        apiCaps:
+        - apiName: apiName
+          suppFeat: suppFeat
+        - apiName: apiName
+          suppFeat: suppFeat
+        imeiChange: null
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        msisdn: msisdn
+        reachabilityType: null
+        servLevelDevId: servLevelDevId
+      properties:
+        imeiChange:
+          $ref: '#/components/schemas/AssociationType'
+        externalId:
+          description: string containing a local identifier followed by "@" and a
+            domain identifier. Both the local identifier and the domain identifier
+            shall be encoded as strings that do not contain any "@" characters. See
+            Clause 4.6.2 of 3GPP TS 23.682 for more information.
+          type: string
+        idleStatusInfo:
+          $ref: '#/components/schemas/IdleStatusInfo'
+        locationInfo:
+          $ref: '#/components/schemas/LocationInfo'
+        locFailureCause:
+          $ref: '#/components/schemas/LocationFailureCause'
+        lossOfConnectReason:
+          description: "If \"monitoringType\" is \"LOSS_OF_CONNECTIVITY\", this parameter\
+            \ shall be included if available to identify the reason why loss of connectivity\
+            \ is reported. Refer to 3GPP TS 29.336 clause 8.4.58."
+          type: integer
+        maxUEAvailabilityTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        msisdn:
+          description: string formatted according to clause 3.3 of 3GPP TS 23.003
+            that describes an MSISDN.
+          type: string
+        monitoringType:
+          $ref: '#/components/schemas/MonitoringType'
+        uePerLocationReport:
+          $ref: '#/components/schemas/UePerLocationReport'
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        reachabilityType:
+          $ref: '#/components/schemas/ReachabilityType'
+        roamingStatus:
+          description: "If \"monitoringType\" is \"ROAMING_STATUS\", this parameter\
+            \ shall be set to \"true\" if the UE is on roaming status. Set to false\
+            \ or omitted otherwise."
+          type: boolean
+        failureCause:
+          $ref: '#/components/schemas/FailureCause'
+        eventTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        pdnConnInfoList:
+          items:
+            $ref: '#/components/schemas/PdnConnectionInformation'
+          minItems: 1
+          type: array
+        dddStatus:
+          $ref: '#/components/schemas/DlDataDeliveryStatus'
+        dddTrafDescriptor:
+          $ref: '#/components/schemas/DddTrafficDescriptor'
+        maxWaitTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        apiCaps:
+          items:
+            $ref: '#/components/schemas/ApiCapabilityInfo'
+          minItems: 0
+          type: array
+        nSStatusInfo:
+          $ref: '#/components/schemas/SACEventStatus'
+        afServiceId:
+          type: string
+        servLevelDevId:
+          description: "If \"monitoringType\" is \"AREA_OF_INTEREST\", this parameter\
+            \ may be included to identify the UAV."
+          type: string
+        uavPresInd:
+          description: "If \"monitoringType\" is \"AREA_OF_INTEREST\", this parameter\
+            \ shall be set to true if the specified UAV is in the monitoring area.\
+            \ Set to false or omitted otherwise."
+          type: boolean
+      required:
+      - monitoringType
+      type: object
+    MonitoringEventReports:
+      description: Represents a set of event monitoring reports.
+      properties:
+        monitoringEventReports:
+          items:
+            $ref: '#/components/schemas/MonitoringEventReport'
+          minItems: 1
+          type: array
+      required:
+      - monitoringEventReports
+      type: object
+    IdleStatusInfo:
+      description: Represents the information relevant to when the UE transitions
+        into idle mode.
+      example:
+        periodicAUTimer: 0
+        edrxCycleLength: 0.5025005
+        activeTime: 0
+        suggestedNumberOfDlPackets: 0
+        idleStatusTimestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        activeTime:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        edrxCycleLength:
+          format: float
+          minimum: 0
+          type: number
+        suggestedNumberOfDlPackets:
+          description: Identifies the number of packets shall be buffered in the serving
+            gateway. It shall be present if the idle status indication is requested
+            by the SCS/AS with "idleStatusIndication" in the "monitoringEventSubscription"
+            sets to "true".
+          minimum: 0
+          type: integer
+        idleStatusTimestamp:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        periodicAUTimer:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+      type: object
+    UePerLocationReport:
+      description: Represents the number of UEs found at the indicated location.
+      example:
+        externalIds:
+        - null
+        - null
+        msisdns:
+        - null
+        - null
+        ueCount: 0
+        servLevelDevIds:
+        - servLevelDevIds
+        - servLevelDevIds
+      properties:
+        ueCount:
+          description: Identifies the number of UEs.
+          minimum: 0
+          type: integer
+        externalIds:
+          description: Each element uniquely identifies a user.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        msisdns:
+          description: Each element identifies the MS internal PSTN/ISDN number allocated
+            for a UE.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        servLevelDevIds:
+          description: Each element uniquely identifies a UAV.
+          items:
+            type: string
+          minItems: 1
+          type: array
+      required:
+      - ueCount
+      type: object
+    LocationInfo:
+      description: Represents the user location information.
+      example:
+        ldrType: null
+        geographicArea: null
+        qosFulfilInd: null
+        achievedQos:
+          hAccuracy: 0.10246457
+          vAccuracy: 0.14894159
+        twanId: twanId
+        ageOfLocationInfo: 0
+        enodeBId: enodeBId
+        cellId: cellId
+        routingAreaId: routingAreaId
+        positionMethod: null
+        ueVelocity: null
+        civicAddress:
+          POBOX: POBOX
+          usageRules: usageRules
+          country: country
+          PRD: PRD
+          PLC: PLC
+          HNO: HNO
+          PRM: PRM
+          HNS: HNS
+          FLR: FLR
+          A1: A1
+          A2: A2
+          A3: A3
+          A4: A4
+          STS: STS
+          A5: A5
+          A6: A6
+          RDSEC: RDSEC
+          providedBy: providedBy
+          LOC: LOC
+          UNIT: UNIT
+          SEAT: SEAT
+          POD: POD
+          RDBR: RDBR
+          method: method
+          LMK: LMK
+          POM: POM
+          ADDCODE: ADDCODE
+          RD: RD
+          PC: PC
+          PCN: PCN
+          NAM: NAM
+          BLD: BLD
+          ROOM: ROOM
+          RDSUBBR: RDSUBBR
+        plmnId: plmnId
+        trackingAreaId: trackingAreaId
+      properties:
+        ageOfLocationInfo:
+          description: Unsigned integer identifying a period of time in units of minutes.
+          format: int32
+          minimum: 0
+          type: integer
+        cellId:
+          description: Indicates the Cell Global Identification of the user which
+            identifies the cell the UE is registered.
+          type: string
+        enodeBId:
+          description: Indicates the eNodeB in which the UE is currently located.
+          type: string
+        routingAreaId:
+          description: Identifies the Routing Area Identity of the user where the
+            UE is located.
+          type: string
+        trackingAreaId:
+          description: Identifies the Tracking Area Identity of the user where the
+            UE is located.
+          type: string
+        plmnId:
+          description: Identifies the PLMN Identity of the user where the UE is located.
+          type: string
+        twanId:
+          description: Identifies the TWAN Identity of the user where the UE is located.
+          type: string
+        geographicArea:
+          $ref: '#/components/schemas/GeographicArea'
+        civicAddress:
+          $ref: '#/components/schemas/CivicAddress'
+        positionMethod:
+          $ref: '#/components/schemas/PositioningMethod'
+        qosFulfilInd:
+          $ref: '#/components/schemas/AccuracyFulfilmentIndicator'
+        ueVelocity:
+          $ref: '#/components/schemas/VelocityEstimate'
+        ldrType:
+          $ref: '#/components/schemas/LdrType'
+        achievedQos:
+          $ref: '#/components/schemas/MinorLocationQoS'
+      type: object
+    FailureCause:
+      description: Represents the reason of communication failure.
+      example:
+        causeType: 3
+        s1ApCause: 2
+        smCause: 6
+        ranapCause: 1
+        gmmCause: 6
+        bssgpCause: 6
+        ranNasCause: ranNasCause
+      properties:
+        bssgpCause:
+          description: Identifies a non-transparent copy of the BSSGP cause code.
+            Refer to 3GPP TS 29.128.
+          type: integer
+        causeType:
+          description: Identify the type of the S1AP-Cause. Refer to 3GPP TS 29.128.
+          type: integer
+        gmmCause:
+          description: Identifies a non-transparent copy of the GMM cause code. Refer
+            to 3GPP TS 29.128.
+          type: integer
+        ranapCause:
+          description: Identifies a non-transparent copy of the RANAP cause code.
+            Refer to 3GPP TS 29.128.
+          type: integer
+        ranNasCause:
+          description: "Indicates RAN and/or NAS release cause code information, TWAN\
+            \ release cause code information or untrusted WLAN release cause code\
+            \ information. Refer to 3GPP TS 29.214."
+          type: string
+        s1ApCause:
+          description: Identifies a non-transparent copy of the S1AP cause code. Refer
+            to 3GPP TS 29.128.
+          type: integer
+        smCause:
+          description: Identifies a non-transparent copy of the SM cause code. Refer
+            to 3GPP TS 29.128.
+          type: integer
+      type: object
+    PdnConnectionInformation:
+      description: Represents the PDN connection information of the UE.
+      example:
+        pdnType: null
+        interfaceInd: null
+        ipv6Addrs:
+        - null
+        - null
+        ipv4Addr: ipv4Addr
+        macAddrs:
+        - null
+        - null
+        apn: apn
+        status: null
+      properties:
+        status:
+          $ref: '#/components/schemas/PdnConnectionStatus'
+        apn:
+          description: "Identify the APN, it is depending on the SCEF local configuration\
+            \ whether or not this attribute is sent to the SCS/AS."
+          type: string
+        pdnType:
+          $ref: '#/components/schemas/PdnType'
+        interfaceInd:
+          $ref: '#/components/schemas/InterfaceIndication'
+        ipv4Addr:
+          description: string identifying a Ipv4 address formatted in the "dotted
+            decimal" notation as defined in IETF RFC 1166.
+          type: string
+        ipv6Addrs:
+          items:
+            $ref: '#/components/schemas/Ipv6Addr_1'
+          minItems: 1
+          type: array
+        macAddrs:
+          items:
+            $ref: '#/components/schemas/MacAddr48'
+          minItems: 1
+          type: array
+      required:
+      - pdnType
+      - status
+      type: object
+    AppliedParameterConfiguration:
+      description: Represents the parameter configuration applied in the network.
+      example:
+        maximumDetectionTime: 0
+        maximumResponseTime: 0
+        externalIds:
+        - null
+        - null
+        msisdns:
+        - null
+        - null
+        maximumLatency: 0
+      properties:
+        externalIds:
+          description: Each element uniquely identifies a user.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        msisdns:
+          description: Each element identifies the MS internal PSTN/ISDN number allocated
+            for a UE.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        maximumLatency:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        maximumResponseTime:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+        maximumDetectionTime:
+          description: Unsigned integer identifying a period of time in units of seconds.
+          minimum: 0
+          type: integer
+      type: object
+    ApiCapabilityInfo:
+      description: Represents the availability information of supported API.
+      example:
+        apiName: apiName
+        suppFeat: suppFeat
+      properties:
+        apiName:
+          type: string
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - apiName
+      - suppFeat
+      type: object
+    UavPolicy:
+      description: Represents the policy information included in the UAV presence
+        monitoring request.
+      example:
+        uavMoveInd: true
+        revokeInd: true
+      properties:
+        uavMoveInd:
+          type: boolean
+        revokeInd:
+          type: boolean
+      required:
+      - revokeInd
+      - uavMoveInd
+      type: object
+    ConsentRevocNotif:
+      description: |
+        Represents the user consent revocation information conveyed in a user consent revocation notification.
+      example:
+        consentsRevoked:
+        - externalId: externalId
+          msisdn: msisdn
+          ucPurpose: null
+        - externalId: externalId
+          msisdn: msisdn
+          ucPurpose: null
+        subscriptionId: subscriptionId
+      properties:
+        subscriptionId:
+          type: string
+        consentsRevoked:
+          items:
+            $ref: '#/components/schemas/ConsentRevoked'
+          minItems: 1
+          type: array
+      required:
+      - consentsRevoked
+      - subscriptionId
+      type: object
+    ConsentRevoked:
+      description: Represents the information related to a revoked user consent.
+      example:
+        externalId: externalId
+        msisdn: msisdn
+        ucPurpose: null
+      oneOf:
+      - required:
+        - externalId
+      - required:
+        - msisdn
+      properties:
+        ucPurpose:
+          $ref: '#/components/schemas/UcPurpose'
+        externalId:
+          description: string containing a local identifier followed by "@" and a
+            domain identifier. Both the local identifier and the domain identifier
+            shall be encoded as strings that do not contain any "@" characters. See
+            Clause 4.6.2 of 3GPP TS 23.682 for more information.
+          type: string
+        msisdn:
+          description: string formatted according to clause 3.3 of 3GPP TS 23.003
+            that describes an MSISDN.
+          type: string
+      required:
+      - ucPurpose
+      type: object
+    MonitoringType:
+      anyOf:
+      - enum:
+        - LOSS_OF_CONNECTIVITY
+        - UE_REACHABILITY
+        - LOCATION_REPORTING
+        - CHANGE_OF_IMSI_IMEI_ASSOCIATION
+        - ROAMING_STATUS
+        - COMMUNICATION_FAILURE
+        - AVAILABILITY_AFTER_DDN_FAILURE
+        - NUMBER_OF_UES_IN_AN_AREA
+        - PDN_CONNECTIVITY_STATUS
+        - DOWNLINK_DATA_DELIVERY_STATUS
+        - API_SUPPORT_CAPABILITY
+        - NUM_OF_REGD_UES
+        - NUM_OF_ESTD_PDU_SESSIONS
+        - AREA_OF_INTEREST
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - LOSS_OF_CONNECTIVITY: The SCS/AS requests to be notified when the 3GPP network detects that the UE is no longer reachable for signalling or user plane communication - UE_REACHABILITY: The SCS/AS requests to be notified when the UE becomes reachable for sending either SMS or downlink data to the UE - LOCATION_REPORTING: The SCS/AS requests to be notified of the current location or the last known location of the UE - CHANGE_OF_IMSI_IMEI_ASSOCIATION: The SCS/AS requests to be notified when the association of an ME (IMEI(SV)) that uses a specific subscription (IMSI) is changed - ROAMING_STATUS: The SCS/AS queries the UE's current roaming status and requests to get notified when the status changes - COMMUNICATION_FAILURE: The SCS/AS requests to be notified of communication failure events - AVAILABILITY_AFTER_DDN_FAILURE: The SCS/AS requests to be notified when the UE has become available after a DDN failure - NUMBER_OF_UES_IN_AN_AREA: The SCS/AS requests to be notified the number of UEs in a given geographic area - PDN_CONNECTIVITY_STATUS: The SCS/AS requests to be notified when the 3GPP network detects that the UE’s PDN connection is set up or torn down - DOWNLINK_DATA_DELIVERY_STATUS: The AF requests to be notified when the 3GPP network detects that the downlink data delivery status is changed. - API_SUPPORT_CAPABILITY: The SCS/AS requests to be notified of the availability of support of service APIs. - NUM_OF_REGD_UES: The AF requests to be notified of the current number of registered UEs for a network slice. - NUM_OF_ESTD_PDU_SESSIONS: The AF requests to be notified of the current number of established PDU Sessions for a network slice. - AREA_OF_INTEREST: The SCS/AS requests to be notified when the UAV moves in or out of the geographic area.
+    ReachabilityType:
+      anyOf:
+      - enum:
+        - SMS
+        - DATA
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - SMS : The SCS/AS requests to be notified when the UE becomes reachable for sending SMS to the UE - DATA: The SCS/AS requests to be notified when the UE becomes reachable for sending downlink data to the UE
+    LocationType:
+      anyOf:
+      - enum:
+        - CURRENT_LOCATION
+        - LAST_KNOWN_LOCATION
+        - CURRENT_OR_LAST_KNOWN_LOCATION
+        - INITIAL_LOCATION
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - CURRENT_LOCATION: The SCS/AS requests to be notified for current location - LAST_KNOWN_LOCATION: The SCS/AS requests to be notified for last known location - CURRENT_OR_LAST_KNOWN_LOCATION: The AF requests the current or last known location - INITIAL_LOCATION: The AF requests the initial location
+    AssociationType:
+      anyOf:
+      - enum:
+        - IMEI
+        - IMEISV
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - IMEI: The value shall be used when the change of IMSI-IMEI association shall be detected - IMEISV: The value shall be used when the change of IMSI-IMEISV association shall be detected
+    Accuracy:
+      anyOf:
+      - enum:
+        - CGI_ECGI
+        - ENODEB
+        - TA_RA
+        - PLMN
+        - TWAN_ID
+        - GEO_AREA
+        - CIVIC_ADDR
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - CGI_ECGI: The SCS/AS requests to be notified using cell level location accuracy. - ENODEB: The SCS/AS requests to be notified using eNodeB level location accuracy. - TA_RA: The SCS/AS requests to be notified using TA/RA level location accuracy. - PLMN: The SCS/AS requests to be notified using PLMN level location accuracy. - TWAN_ID: The SCS/AS requests to be notified using TWAN identifier level location accuracy. - GEO_AREA: The SCS/AS requests to be notified using the geographical area accuracy. - CIVIC_ADDR: The SCS/AS requests to be notified using the civic address accuracy.
+    PdnConnectionStatus:
+      anyOf:
+      - enum:
+        - CREATED
+        - RELEASED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - CREATED: The PDN connection is created. - RELEASED: The PDN connection is released.
+    PdnType:
+      anyOf:
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - NON_IP
+        - ETHERNET
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - IPV4: PDN connection of IPv4 type. - IPV6: PDN connection of IPv6 type. - IPV4V6: PDN connection of IPv4v6 type. - NON_IP: PDN connection of non-IP type. - ETHERNET: PDN connection of Ethernet type.
+    InterfaceIndication:
+      anyOf:
+      - enum:
+        - EXPOSURE_FUNCTION
+        - PDN_GATEWAY
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - EXPOSURE_FUNCTION: SCEF is used for the PDN connection towards the SCS/AS. - PDN_GATEWAY: PDN gateway is used for the PDN connection towards the SCS/AS.
+    LocationFailureCause:
+      anyOf:
+      - enum:
+        - POSITIONING_DENIED
+        - UNSUPPORTED_BY_UE
+        - NOT_REGISTED_UE
+        - UNSPECIFIED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        This string Indicates the location positioning failure cause. Possible values are - POSITIONING_DENIED: Positioning is denied. - UNSUPPORTED_BY_UE: Positioning is not supported by UE. - NOT_REGISTED_UE: UE is not registered. - UNSPECIFIED: Unspecified.
+    SubType:
+      anyOf:
+      - enum:
+        - AERIAL_UE
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - AERIAL_UE: The UE has Aerial subscription.
+    SACRepFormat:
+      anyOf:
+      - enum:
+        - NUMERICAL
+        - PERCENTAGE
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: Indicates the NSAC reporting format.
+    IpAddr:
+      description: Contains an IP adresse.
+      example:
+        ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+        ipv4Addr: 198.51.100.1
+        ipv6Prefix: 2001:db8:abcd:12::0/64
+      oneOf:
+      - required:
+        - ipv4Addr
+      - required:
+        - ipv6Addr
+      - required:
+        - ipv6Prefix
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        ipv6Prefix:
+          $ref: '#/components/schemas/Ipv6Prefix'
+      type: object
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Ipv6Prefix:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))(\\\
+          /(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))(\\\
+          /.+)$"
+      description: |
+        String identifying an IPv6 address prefix formatted according to clause 4 of RFC 5952. IPv6Prefix data type may contain an individual /128 IPv6 address.
+      example: 2001:db8:abcd:12::0/64
+      type: string
+    MacAddr48:
+      description: |
+        String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+      pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+      type: string
+    ProblemDetails:
+      description: Represents additional information and details on an error response.
+      properties:
+        type:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        title:
+          description: "A short, human-readable summary of the problem type. It should\
+            \ not change from occurrence to occurrence of the problem."
+          type: string
+        status:
+          description: The HTTP status code for this occurrence of the problem.
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        cause:
+          description: "A machine-readable application error cause specific to this\
+            \ occurrence of the problem. This IE should be present and provide application-related\
+            \ error information, if available."
+          type: string
+        invalidParams:
+          description: "Description of invalid parameters, for a request rejected\
+            \ due to invalid parameters."
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    Uri:
+      description: string providing an URI formatted according to IETF RFC 3986.
+      type: string
+    InvalidParam:
+      description: "Represents the description of invalid parameters, for a request\
+        \ rejected due to invalid parameters."
+      properties:
+        param:
+          description: "Attribute's name encoded as a JSON Pointer, or header's name."
+          type: string
+        reason:
+          description: "A human-readable reason, e.g. \"must be a positive integer\"\
+            ."
+          type: string
+      required:
+      - param
+      type: object
+    PatchItem:
+      description: it contains information on data to be changed.
+      example:
+        op: null
+        path: path
+        from: from
+        value: ""
+      properties:
+        op:
+          $ref: '#/components/schemas/PatchOperation'
+        path:
+          description: |
+            contains a JSON pointer value (as defined in IETF RFC 6901) that references a location of a resource on which the patch operation shall be performed.
+          type: string
+        from:
+          description: |
+            indicates the path of the source JSON element (according to JSON Pointer syntax) being moved or copied to the location indicated by the "path" attribute.
+          type: string
+        value: {}
+      required:
+      - op
+      - path
+      type: object
+    PatchOperation:
+      anyOf:
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
+      - type: string
+      description: Operations as defined in IETF RFC 6902.
+    Link:
+      description: string formatted according to IETF RFC 3986 identifying a referenced
+        resource.
+      type: string
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    ExternalId:
+      description: string containing a local identifier followed by "@" and a domain
+        identifier. Both the local identifier and the domain identifier shall be encoded
+        as strings that do not contain any "@" characters. See Clause 4.6.2 of 3GPP
+        TS 23.682 for more information.
+      type: string
+    Msisdn:
+      description: string formatted according to clause 3.3 of 3GPP TS 23.003 that
+        describes an MSISDN.
+      type: string
+    ExternalGroupId:
+      description: string containing a local identifier followed by "@" and a domain
+        identifier. Both the local identifier and the domain identifier shall be encoded
+        as strings that do not contain any "@" characters. See Clauses 4.6.2 and 4.6.3
+        of 3GPP TS 23.682 for more information.
+      type: string
+    Ipv4Addr_1:
+      description: string identifying a Ipv4 address formatted in the "dotted decimal"
+        notation as defined in IETF RFC 1166.
+      type: string
+    Ipv6Addr_1:
+      description: string identifying a Ipv6 address formatted according to clause
+        4 in IETF RFC 5952. The mixed Ipv4 Ipv6 notation according to clause 5 of
+        IETF RFC 5952 shall not be used.
+      type: string
+    Dnn:
+      description: |
+        String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+      type: string
+    WebsockNotifConfig:
+      description: Represents the configuration information for the delivery of notifications
+        over Websockets.
+      example:
+        requestWebsocketUri: true
+        websocketUri: websocketUri
+      properties:
+        websocketUri:
+          description: string formatted according to IETF RFC 3986 identifying a referenced
+            resource.
+          type: string
+        requestWebsocketUri:
+          description: Set by the SCS/AS to indicate that the Websocket delivery is
+            requested.
+          type: boolean
+      type: object
+    DateTime:
+      description: string with format "date-time" as defined in OpenAPI.
+      format: date-time
+      type: string
+    DurationSec:
+      description: Unsigned integer identifying a period of time in units of seconds.
+      minimum: 0
+      type: integer
+    LinearDistance:
+      description: Minimum straight line distance moved by a UE to trigger a motion
+        event report.
+      maximum: 10000
+      minimum: 1
+      type: integer
+    LocationQoS:
+      description: QoS of Location request.
+      example:
+        responseTime: null
+        verticalRequested: true
+        hAccuracy: 0.7386282
+        vAccuracy: 0.123151354
+        minorLocQoses:
+        - hAccuracy: 0.10246457
+          vAccuracy: 0.14894159
+        - hAccuracy: 0.10246457
+          vAccuracy: 0.14894159
+        lcsQosClass: null
+      properties:
+        hAccuracy:
+          description: Indicates value of accuracy.
+          format: float
+          minimum: 0
+          type: number
+        vAccuracy:
+          description: Indicates value of accuracy.
+          format: float
+          minimum: 0
+          type: number
+        verticalRequested:
+          type: boolean
+        responseTime:
+          $ref: '#/components/schemas/ResponseTime'
+        minorLocQoses:
+          items:
+            $ref: '#/components/schemas/MinorLocationQoS'
+          maxItems: 2
+          minItems: 1
+          type: array
+        lcsQosClass:
+          $ref: '#/components/schemas/LcsQosClass'
+      type: object
+    Accuracy_1:
+      description: Indicates value of accuracy.
+      format: float
+      minimum: 0
+      type: number
+    ResponseTime:
+      anyOf:
+      - enum:
+        - LOW_DELAY
+        - DELAY_TOLERANT
+        - NO_DELAY
+        type: string
+      - type: string
+      description: Indicates acceptable delay of location request.
+    MinorLocationQoS:
+      description: Contain Minor Location QoS.
+      example:
+        hAccuracy: 0.10246457
+        vAccuracy: 0.14894159
+      properties:
+        hAccuracy:
+          description: Indicates value of accuracy.
+          format: float
+          minimum: 0
+          type: number
+        vAccuracy:
+          description: Indicates value of accuracy.
+          format: float
+          minimum: 0
+          type: number
+      type: object
+    LcsQosClass:
+      anyOf:
+      - enum:
+        - BEST_EFFORT
+        - ASSURED
+        - MULTIPLE_QOS
+        type: string
+      - type: string
+      description: Specifies LCS QoS class.
+    ServiceIdentity:
+      description: Contains the service identity
+      type: string
+    LdrType:
+      anyOf:
+      - enum:
+        - UE_AVAILABLE
+        - PERIODIC
+        - ENTERING_INTO_AREA
+        - LEAVING_FROM_AREA
+        - BEING_INSIDE_AREA
+        - MOTION
+        type: string
+      - type: string
+      description: Indicates LDR types.
+    VelocityRequested:
+      anyOf:
+      - enum:
+        - VELOCITY_IS_NOT_REQUESTED
+        - VELOCITY_IS_REQUESTED
+        type: string
+      - type: string
+      description: Indicates velocity requirement.
+    AgeOfLocationEstimate:
+      description: Indicates value of the age of the location estimate.
+      maximum: 32767
+      minimum: 0
+      type: integer
+    TimeWindow:
+      description: Represents a time window identified by a start time and a stop
+        time.
+      example:
+        startTime: 2000-01-23T04:56:07.000+00:00
+        stopTime: 2000-01-23T04:56:07.000+00:00
+      properties:
+        startTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        stopTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+      required:
+      - startTime
+      - stopTime
+      type: object
+    SupportedGADShapes:
+      anyOf:
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
+      - type: string
+      description: Indicates supported GAD shapes.
+    CodeWord:
+      description: Contains the codeword
+      type: string
+    LocationArea:
+      description: Represents a user location area.
+      example:
+        cellIds:
+        - cellIds
+        - cellIds
+        geographicAreas:
+        - null
+        - null
+        civicAddresses:
+        - POBOX: POBOX
+          usageRules: usageRules
+          country: country
+          PRD: PRD
+          PLC: PLC
+          HNO: HNO
+          PRM: PRM
+          HNS: HNS
+          FLR: FLR
+          A1: A1
+          A2: A2
+          A3: A3
+          A4: A4
+          STS: STS
+          A5: A5
+          A6: A6
+          RDSEC: RDSEC
+          providedBy: providedBy
+          LOC: LOC
+          UNIT: UNIT
+          SEAT: SEAT
+          POD: POD
+          RDBR: RDBR
+          method: method
+          LMK: LMK
+          POM: POM
+          ADDCODE: ADDCODE
+          RD: RD
+          PC: PC
+          PCN: PCN
+          NAM: NAM
+          BLD: BLD
+          ROOM: ROOM
+          RDSUBBR: RDSUBBR
+        - POBOX: POBOX
+          usageRules: usageRules
+          country: country
+          PRD: PRD
+          PLC: PLC
+          HNO: HNO
+          PRM: PRM
+          HNS: HNS
+          FLR: FLR
+          A1: A1
+          A2: A2
+          A3: A3
+          A4: A4
+          STS: STS
+          A5: A5
+          A6: A6
+          RDSEC: RDSEC
+          providedBy: providedBy
+          LOC: LOC
+          UNIT: UNIT
+          SEAT: SEAT
+          POD: POD
+          RDBR: RDBR
+          method: method
+          LMK: LMK
+          POM: POM
+          ADDCODE: ADDCODE
+          RD: RD
+          PC: PC
+          PCN: PCN
+          NAM: NAM
+          BLD: BLD
+          ROOM: ROOM
+          RDSUBBR: RDSUBBR
+        enodeBIds:
+        - enodeBIds
+        - enodeBIds
+        routingAreaIds:
+        - routingAreaIds
+        - routingAreaIds
+        trackingAreaIds:
+        - trackingAreaIds
+        - trackingAreaIds
+      properties:
+        cellIds:
+          description: Indicates a list of Cell Global Identities of the user which
+            identifies the cell the UE is registered.
+          items:
+            type: string
+          minItems: 1
+          type: array
+        enodeBIds:
+          description: Indicates a list of eNodeB identities in which the UE is currently
+            located.
+          items:
+            type: string
+          minItems: 1
+          type: array
+        routingAreaIds:
+          description: Identifies a list of Routing Area Identities of the user where
+            the UE is located.
+          items:
+            type: string
+          minItems: 1
+          type: array
+        trackingAreaIds:
+          description: Identifies a list of Tracking Area Identities of the user where
+            the UE is located.
+          items:
+            type: string
+          minItems: 1
+          type: array
+        geographicAreas:
+          description: Identifies a list of geographic area of the user where the
+            UE is located.
+          items:
+            $ref: '#/components/schemas/GeographicArea'
+          minItems: 1
+          type: array
+        civicAddresses:
+          description: Identifies a list of civic addresses of the user where the
+            UE is located.
+          items:
+            $ref: '#/components/schemas/CivicAddress'
+          minItems: 1
+          type: array
+      type: object
+    LocationArea5G:
+      description: Represents a user location area when the UE is attached to 5G.
+      example:
+        geographicAreas:
+        - null
+        - null
+        nwAreaInfo:
+          ncgis:
+          - nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          - nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          tais:
+          - tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          - tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          gRanNodeIds:
+          - eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 29
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          - eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 29
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ecgis:
+          - eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          - eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+        civicAddresses:
+        - POBOX: POBOX
+          usageRules: usageRules
+          country: country
+          PRD: PRD
+          PLC: PLC
+          HNO: HNO
+          PRM: PRM
+          HNS: HNS
+          FLR: FLR
+          A1: A1
+          A2: A2
+          A3: A3
+          A4: A4
+          STS: STS
+          A5: A5
+          A6: A6
+          RDSEC: RDSEC
+          providedBy: providedBy
+          LOC: LOC
+          UNIT: UNIT
+          SEAT: SEAT
+          POD: POD
+          RDBR: RDBR
+          method: method
+          LMK: LMK
+          POM: POM
+          ADDCODE: ADDCODE
+          RD: RD
+          PC: PC
+          PCN: PCN
+          NAM: NAM
+          BLD: BLD
+          ROOM: ROOM
+          RDSUBBR: RDSUBBR
+        - POBOX: POBOX
+          usageRules: usageRules
+          country: country
+          PRD: PRD
+          PLC: PLC
+          HNO: HNO
+          PRM: PRM
+          HNS: HNS
+          FLR: FLR
+          A1: A1
+          A2: A2
+          A3: A3
+          A4: A4
+          STS: STS
+          A5: A5
+          A6: A6
+          RDSEC: RDSEC
+          providedBy: providedBy
+          LOC: LOC
+          UNIT: UNIT
+          SEAT: SEAT
+          POD: POD
+          RDBR: RDBR
+          method: method
+          LMK: LMK
+          POM: POM
+          ADDCODE: ADDCODE
+          RD: RD
+          PC: PC
+          PCN: PCN
+          NAM: NAM
+          BLD: BLD
+          ROOM: ROOM
+          RDSUBBR: RDSUBBR
+      properties:
+        geographicAreas:
+          description: Identifies a list of geographic area of the user where the
+            UE is located.
+          items:
+            $ref: '#/components/schemas/GeographicArea'
+          minItems: 0
+          type: array
+        civicAddresses:
+          description: Identifies a list of civic addresses of the user where the
+            UE is located.
+          items:
+            $ref: '#/components/schemas/CivicAddress'
+          minItems: 0
+          type: array
+        nwAreaInfo:
+          $ref: '#/components/schemas/NetworkAreaInfo'
+      type: object
+    DddTrafficDescriptor:
+      description: Contains a Traffic Descriptor.
+      example:
+        ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+        ipv4Addr: 198.51.100.1
+        portNumber: 0
+        macAddr: macAddr
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        macAddr:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+      type: object
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    DlDataDeliveryStatus:
+      anyOf:
+      - enum:
+        - BUFFERED
+        - TRANSMITTED
+        - DISCARDED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - BUFFERED: The first downlink data is buffered with extended buffering matching the
+          source of the downlink traffic.
+        - TRANSMITTED: The first downlink data matching the source of the downlink traffic is
+          transmitted after previous buffering or discarding of corresponding packet(s) because
+          the UE of the PDU Session becomes ACTIVE, and buffered data can be delivered to UE.
+        - DISCARDED: The first downlink data matching the source of the downlink traffic is
+          discarded because the Extended Buffering time, as determined by the SMF, expires or
+          the amount of downlink data to be buffered is exceeded.
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      example:
+        sd: sd
+        sst: 78
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    SACInfo:
+      description: |
+        Represents threshold(s) to control the triggering of network slice reporting notifications or the information contained in the network slice reporting notification.
+      example:
+        numericValNumUes: 6
+        percValueNumUes: 67
+        percValueNumPduSess: 33
+        numericValNumPduSess: 5
+      properties:
+        numericValNumUes:
+          type: integer
+        numericValNumPduSess:
+          type: integer
+        percValueNumUes:
+          maximum: 100
+          minimum: 0
+          type: integer
+        percValueNumPduSess:
+          maximum: 100
+          minimum: 0
+          type: integer
+      type: object
+    ConfigResult:
+      description: Represents one configuration processing result for a group's members.
+      example:
+        resultReason: null
+        externalIds:
+        - null
+        - null
+        msisdns:
+        - null
+        - null
+      oneOf:
+      - required:
+        - externalIds
+      - required:
+        - msisdns
+      properties:
+        externalIds:
+          description: Each element indicates an external identifier of the UE.
+          items:
+            $ref: '#/components/schemas/ExternalId'
+          minItems: 1
+          type: array
+        msisdns:
+          description: Each element identifies the MS internal PSTN/ISDN number allocated
+            for the UE.
+          items:
+            $ref: '#/components/schemas/Msisdn'
+          minItems: 1
+          type: array
+        resultReason:
+          $ref: '#/components/schemas/ResultReason'
+      required:
+      - resultReason
+      type: object
+    ResultReason:
+      anyOf:
+      - enum:
+        - ROAMING_NOT_ALLOWED
+        - OTHER_REASON
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - ROAMING_NOT_ALLOWED: Identifies the configuration parameters are not allowed by roaming agreement.
+        - OTHER_REASON: Identifies the configuration parameters are not configured due to other reason.
+    PlmnId:
+      description: Represents the identifier of a PLMN.
+      example:
+        mnc: mnc
+        mcc: mcc
+      properties:
+        mcc:
+          description: "String encoding a Mobile Country Code part of the PLMN, comprising\
+            \ 3 digits, as defined in 3GPP TS 38.413."
+          type: string
+        mnc:
+          description: "String encoding a Mobile Network Code part of the PLMN, comprising\
+            \ 2 or 3 digits, as defined in 3GPP TS 38.413."
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "String encoding a Mobile Country Code part of the PLMN, comprising\
+        \ 3 digits, as defined in 3GPP TS 38.413."
+      type: string
+    Mnc:
+      description: "String encoding a Mobile Network Code part of the PLMN, comprising\
+        \ 2 or 3 digits, as defined in 3GPP TS 38.413."
+      type: string
+    SACEventStatus:
+      description: |
+        Contains the network slice status information in terms of the current number of UEs registered  with a network slice, the current number of PDU Sessions established on a network slice or both.
+      example:
+        reachedNumUes:
+          numericValNumUes: 6
+          percValueNumUes: 67
+          percValueNumPduSess: 33
+          numericValNumPduSess: 5
+        reachedNumPduSess:
+          numericValNumUes: 6
+          percValueNumUes: 67
+          percValueNumPduSess: 33
+          numericValNumPduSess: 5
+      properties:
+        reachedNumUes:
+          $ref: '#/components/schemas/SACInfo'
+        reachedNumPduSess:
+          $ref: '#/components/schemas/SACInfo'
+      type: object
+    DurationMin:
+      description: Unsigned integer identifying a period of time in units of minutes.
+      format: int32
+      minimum: 0
+      type: integer
+    GeographicArea:
+      anyOf:
+      - $ref: '#/components/schemas/Point'
+      - $ref: '#/components/schemas/PointUncertaintyCircle'
+      - $ref: '#/components/schemas/PointUncertaintyEllipse'
+      - $ref: '#/components/schemas/Polygon'
+      - $ref: '#/components/schemas/PointAltitude'
+      - $ref: '#/components/schemas/PointAltitudeUncertainty'
+      - $ref: '#/components/schemas/EllipsoidArc'
+      description: Geographic area specified by different shape.
+    Point:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Point_allOf'
+      description: Ellipsoid Point.
+    GADShape:
+      description: Common base type for GAD shapes.
+      discriminator:
+        mapping:
+          POINT: '#/components/schemas/Point'
+          POINT_UNCERTAINTY_CIRCLE: '#/components/schemas/PointUncertaintyCircle'
+          POINT_UNCERTAINTY_ELLIPSE: '#/components/schemas/PointUncertaintyEllipse'
+          POLYGON: '#/components/schemas/Polygon'
+          POINT_ALTITUDE: '#/components/schemas/PointAltitude'
+          POINT_ALTITUDE_UNCERTAINTY: '#/components/schemas/PointAltitudeUncertainty'
+          ELLIPSOID_ARC: '#/components/schemas/EllipsoidArc'
+          LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE: '#/components/schemas/Local2dPointUncertaintyEllipse'
+          LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID: '#/components/schemas/Local3dPointUncertaintyEllipsoid'
+        propertyName: shape
+      properties:
+        shape:
+          $ref: '#/components/schemas/SupportedGADShapes'
+      required:
+      - shape
+      type: object
+    PointUncertaintyCircle:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointUncertaintyCircle_allOf'
+      description: Ellipsoid point with uncertainty circle.
+    GeographicalCoordinates:
+      description: Geographical coordinates.
+      properties:
+        lon:
+          format: double
+          maximum: 180
+          minimum: -180
+          type: number
+        lat:
+          format: double
+          maximum: 90
+          minimum: -90
+          type: number
+      required:
+      - lat
+      - lon
+      type: object
+    Uncertainty:
+      description: Indicates value of uncertainty.
+      format: float
+      minimum: 0
+      type: number
+    PointUncertaintyEllipse:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointUncertaintyEllipse_allOf'
+      description: Ellipsoid point with uncertainty ellipse.
+    UncertaintyEllipse:
+      description: Ellipse with uncertainty.
+      properties:
+        semiMajor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        semiMinor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        orientationMajor:
+          description: Indicates value of orientation angle.
+          maximum: 180
+          minimum: 0
+          type: integer
+      required:
+      - orientationMajor
+      - semiMajor
+      - semiMinor
+      type: object
+    Orientation:
+      description: Indicates value of orientation angle.
+      maximum: 180
+      minimum: 0
+      type: integer
+    Confidence:
+      description: Indicates value of confidence.
+      maximum: 100
+      minimum: 0
+      type: integer
+    Polygon:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Polygon_allOf'
+      description: Polygon.
+    PointList:
+      description: List of points.
+      items:
+        $ref: '#/components/schemas/GeographicalCoordinates'
+      maxItems: 15
+      minItems: 3
+      type: array
+    PointAltitude:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointAltitude_allOf'
+      description: Ellipsoid point with altitude.
+    Altitude:
+      description: Indicates value of altitude.
+      format: double
+      maximum: 32767
+      minimum: -32767
+      type: number
+    PointAltitudeUncertainty:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointAltitudeUncertainty_allOf'
+      description: Ellipsoid point with altitude and uncertainty ellipsoid.
+    EllipsoidArc:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/EllipsoidArc_allOf'
+      description: Ellipsoid Arc.
+    InnerRadius:
+      description: Indicates value of the inner radius.
+      format: int32
+      maximum: 327675
+      minimum: 0
+      type: integer
+    Angle:
+      description: Indicates value of angle.
+      maximum: 360
+      minimum: 0
+      type: integer
+    Local2dPointUncertaintyEllipse:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Local2dPointUncertaintyEllipse_allOf'
+      description: Local 2D point with uncertainty ellipse
+    LocalOrigin:
+      description: Indicates a Local origin in a reference system
+      properties:
+        coordinateId:
+          type: string
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+      type: object
+    RelativeCartesianLocation:
+      description: Relative Cartesian Location
+      properties:
+        x:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        "y":
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        z:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+      required:
+      - x
+      - "y"
+      type: object
+    Local3dPointUncertaintyEllipsoid:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Local3dPointUncertaintyEllipsoid_allOf'
+      description: Local 3D point with uncertainty ellipsoid
+    UncertaintyEllipsoid:
+      description: Ellipsoid with uncertainty
+      properties:
+        semiMajor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        semiMinor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        vertical:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        orientationMajor:
+          description: Indicates value of orientation angle.
+          maximum: 180
+          minimum: 0
+          type: integer
+      required:
+      - orientationMajor
+      - semiMajor
+      - semiMinor
+      - vertical
+      type: object
+    CivicAddress:
+      description: Indicates a Civic address.
+      example:
+        POBOX: POBOX
+        usageRules: usageRules
+        country: country
+        PRD: PRD
+        PLC: PLC
+        HNO: HNO
+        PRM: PRM
+        HNS: HNS
+        FLR: FLR
+        A1: A1
+        A2: A2
+        A3: A3
+        A4: A4
+        STS: STS
+        A5: A5
+        A6: A6
+        RDSEC: RDSEC
+        providedBy: providedBy
+        LOC: LOC
+        UNIT: UNIT
+        SEAT: SEAT
+        POD: POD
+        RDBR: RDBR
+        method: method
+        LMK: LMK
+        POM: POM
+        ADDCODE: ADDCODE
+        RD: RD
+        PC: PC
+        PCN: PCN
+        NAM: NAM
+        BLD: BLD
+        ROOM: ROOM
+        RDSUBBR: RDSUBBR
+      properties:
+        country:
+          type: string
+        A1:
+          type: string
+        A2:
+          type: string
+        A3:
+          type: string
+        A4:
+          type: string
+        A5:
+          type: string
+        A6:
+          type: string
+        PRD:
+          type: string
+        POD:
+          type: string
+        STS:
+          type: string
+        HNO:
+          type: string
+        HNS:
+          type: string
+        LMK:
+          type: string
+        LOC:
+          type: string
+        NAM:
+          type: string
+        PC:
+          type: string
+        BLD:
+          type: string
+        UNIT:
+          type: string
+        FLR:
+          type: string
+        ROOM:
+          type: string
+        PLC:
+          type: string
+        PCN:
+          type: string
+        POBOX:
+          type: string
+        ADDCODE:
+          type: string
+        SEAT:
+          type: string
+        RD:
+          type: string
+        RDSEC:
+          type: string
+        RDBR:
+          type: string
+        RDSUBBR:
+          type: string
+        PRM:
+          type: string
+        POM:
+          type: string
+        usageRules:
+          type: string
+        method:
+          type: string
+        providedBy:
+          type: string
+      type: object
+    PositioningMethod:
+      anyOf:
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
+      - type: string
+      description: Indicates supported positioning methods.
+    AccuracyFulfilmentIndicator:
+      anyOf:
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
+      - type: string
+      description: Indicates fulfilment of requested accuracy.
+    VelocityEstimate:
+      description: Velocity estimate.
+      oneOf:
+      - $ref: '#/components/schemas/HorizontalVelocity'
+      - $ref: '#/components/schemas/HorizontalWithVerticalVelocity'
+      - $ref: '#/components/schemas/HorizontalVelocityWithUncertainty'
+      - $ref: '#/components/schemas/HorizontalWithVerticalVelocityAndUncertainty'
+    HorizontalVelocity:
+      description: Horizontal velocity.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+      required:
+      - bearing
+      - hSpeed
+      type: object
+    HorizontalSpeed:
+      description: Indicates value of horizontal speed.
+      format: float
+      maximum: 2047
+      minimum: 0
+      type: number
+    HorizontalWithVerticalVelocity:
+      description: Horizontal and vertical velocity.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        vSpeed:
+          description: Indicates value of vertical speed.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+        vDirection:
+          $ref: '#/components/schemas/VerticalDirection'
+      required:
+      - bearing
+      - hSpeed
+      - vDirection
+      - vSpeed
+      type: object
+    VerticalSpeed:
+      description: Indicates value of vertical speed.
+      format: float
+      maximum: 255
+      minimum: 0
+      type: number
+    VerticalDirection:
+      description: Indicates direction of vertical speed.
+      enum:
+      - UPWARD
+      - DOWNWARD
+      type: string
+    HorizontalVelocityWithUncertainty:
+      description: Horizontal velocity with speed uncertainty.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        hUncertainty:
+          description: Indicates value of speed uncertainty.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+      required:
+      - bearing
+      - hSpeed
+      - hUncertainty
+      type: object
+    SpeedUncertainty:
+      description: Indicates value of speed uncertainty.
+      format: float
+      maximum: 255
+      minimum: 0
+      type: number
+    HorizontalWithVerticalVelocityAndUncertainty:
+      description: Horizontal and vertical velocity with speed uncertainty.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        vSpeed:
+          description: Indicates value of vertical speed.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+        vDirection:
+          $ref: '#/components/schemas/VerticalDirection'
+        hUncertainty:
+          description: Indicates value of speed uncertainty.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+        vUncertainty:
+          description: Indicates value of speed uncertainty.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+      required:
+      - bearing
+      - hSpeed
+      - hUncertainty
+      - vDirection
+      - vSpeed
+      - vUncertainty
+      type: object
+    UcPurpose:
+      anyOf:
+      - enum:
+        - ANALYTICS
+        - MODEL_TRAINING
+        - NW_CAP_EXPOSURE
+        - EDGEAPP_UE_LOCATION
+        type: string
+      - type: string
+      description: Indicates the purpose of the user consent.
+    NetworkAreaInfo:
+      description: |
+        Describes a network area information in which the NF service consumer requests the number of UEs.
+      example:
+        ncgis:
+        - nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        - nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        tais:
+        - tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        - tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        gRanNodeIds:
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 29
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 29
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        ecgis:
+        - eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        - eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+      properties:
+        ecgis:
+          description: Contains a list of E-UTRA cell identities.
+          items:
+            $ref: '#/components/schemas/Ecgi'
+          minItems: 1
+          type: array
+        ncgis:
+          description: Contains a list of NR cell identities.
+          items:
+            $ref: '#/components/schemas/Ncgi'
+          minItems: 1
+          type: array
+        gRanNodeIds:
+          description: Contains a list of NG RAN nodes.
+          items:
+            $ref: '#/components/schemas/GlobalRanNodeId'
+          minItems: 1
+          type: array
+        tais:
+          description: Contains a list of tracking area identities.
+          items:
+            $ref: '#/components/schemas/Tai'
+          minItems: 1
+          type: array
+      type: object
+    Float:
+      description: string with format 'float' as defined in OpenAPI.
+      format: float
+      type: number
+    Ecgi:
+      description: "Contains the ECGI (E-UTRAN Cell Global Identity), as described\
+        \ in 3GPP 23.003"
+      example:
+        eutraCellId: eutraCellId
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId_1'
+        eutraCellId:
+          description: "28-bit string identifying an E-UTRA Cell Id as specified in\
+            \ clause 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each\
+            \ character in the string shall take a  value of \"0\" to \"9\", \"a\"\
+            \ to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most  significant\
+            \ character representing the 4 most significant bits of the Cell Id shall\
+            \ appear  first in the string, and the character representing the 4 least\
+            \ significant bit of the  Cell Id shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]{7}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - eutraCellId
+      - plmnId
+      type: object
+    PlmnId_1:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      example:
+        mnc: mnc
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc_1:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc_1:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    EutraCellId:
+      description: "28-bit string identifying an E-UTRA Cell Id as specified in clause\
+        \ 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each character\
+        \ in the string shall take a  value of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most  significant character representing\
+        \ the 4 most significant bits of the Cell Id shall appear  first in the string,\
+        \ and the character representing the 4 least significant bit of the  Cell\
+        \ Id shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]{7}$"
+      type: string
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    Ncgi:
+      description: "Contains the NCGI (NR Cell Global Identity), as described in 3GPP\
+        \ 23.003"
+      example:
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        nrCellId: nrCellId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId_1'
+        nrCellId:
+          description: "36-bit string identifying an NR Cell Id as specified in clause\
+            \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+            \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant character\
+            \  representing the 4 most significant bits of the Cell Id shall appear\
+            \ first in the string, and  the character representing the 4 least significant\
+            \ bit of the Cell Id shall appear last in the  string. \n"
+          pattern: "^[A-Fa-f0-9]{9}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - nrCellId
+      - plmnId
+      type: object
+    NrCellId:
+      description: "36-bit string identifying an NR Cell Id as specified in clause\
+        \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+        \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant character  representing\
+        \ the 4 most significant bits of the Cell Id shall appear first in the string,\
+        \ and  the character representing the 4 least significant bit of the Cell\
+        \ Id shall appear last in the  string. \n"
+      pattern: "^[A-Fa-f0-9]{9}$"
+      type: string
+    GlobalRanNodeId:
+      description: |
+        One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present.
+      example:
+        eNbId: eNbId
+        wagfId: wagfId
+        tngfId: tngfId
+        gNbId:
+          bitLength: 29
+          gNBValue: gNBValue
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        n3IwfId: n3IwfId
+        ngeNbId: SMacroNGeNB-34B89
+      oneOf:
+      - required:
+        - n3IwfId
+      - required:
+        - gNbId
+      - required:
+        - ngeNbId
+      - required:
+        - wagfId
+      - required:
+        - tngfId
+      - required:
+        - eNbId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId_1'
+        n3IwfId:
+          description: "This represents the identifier of the N3IWF ID as specified\
+            \ in clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ N3IWF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the N3IWF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        gNbId:
+          $ref: '#/components/schemas/GNbId'
+        ngeNbId:
+          description: "This represents the identifier of the ng-eNB ID as specified\
+            \ in clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall\
+            \ be encoded in hexadecimal representation.  Each character in the string\
+            \ shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"\
+            F\" and  shall represent 4 bits. The padding 0 shall be added to make\
+            \ multiple nibbles, so the most  significant character representing the\
+            \ padding 0 if required together with the 4 most  significant bits of\
+            \ the ng-eNB ID shall appear first in the string, and the character  representing\
+            \ the 4 least significant bit of the ng-eNB ID (to form a nibble) shall\
+            \ appear last  in the string. \n"
+          example: SMacroNGeNB-34B89
+          pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+          type: string
+        wagfId:
+          description: "This represents the identifier of the W-AGF ID as specified\
+            \ in clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ W-AGF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the W-AGF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        tngfId:
+          description: "This represents the identifier of the TNGF ID as specified\
+            \ in clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation.\
+            \ Each character in the string shall take a value of \"0\" to \"9\", \"\
+            a\"  to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+            \ character representing the  4 most significant bits of the TNGF ID shall\
+            \ appear first in the string, and the character  representing the 4 least\
+            \ significant bit of the TNGF ID shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+        eNbId:
+          description: |
+            This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+          pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+          type: string
+      required:
+      - plmnId
+      type: object
+    N3IwfId:
+      description: "This represents the identifier of the N3IWF ID as specified in\
+        \ clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation. Each character\
+        \ in the string shall take a value  of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant  character representing\
+        \ the 4 most significant bits of the N3IWF ID shall appear first in the  string,\
+        \ and the character representing the 4 least significant bit of the N3IWF\
+        \ ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    GNbId:
+      description: Provides the G-NB identifier.
+      example:
+        bitLength: 29
+        gNBValue: gNBValue
+      properties:
+        bitLength:
+          description: |
+            Unsigned integer representing the bit length of the gNB ID as defined in clause 9.3.1.6 of 3GPP TS 38.413 [11], within the range 22 to 32.
+          maximum: 32
+          minimum: 22
+          type: integer
+        gNBValue:
+          description: |
+            This represents the identifier of the gNB. The value of the gNB ID shall be encoded in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The padding 0 shall be added to make multiple nibbles,  the most significant character representing the padding 0 if required together with the 4 most significant bits of the gNB ID shall appear first in the string, and the character representing the 4 least significant bit of the gNB ID shall appear last in the string.
+          pattern: "^[A-Fa-f0-9]{6,8}$"
+          type: string
+      required:
+      - bitLength
+      - gNBValue
+      type: object
+    NgeNbId:
+      description: "This represents the identifier of the ng-eNB ID as specified in\
+        \ clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall be encoded\
+        \ in hexadecimal representation.  Each character in the string shall take\
+        \ a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and  shall represent\
+        \ 4 bits. The padding 0 shall be added to make multiple nibbles, so the most\
+        \  significant character representing the padding 0 if required together with\
+        \ the 4 most  significant bits of the ng-eNB ID shall appear first in the\
+        \ string, and the character  representing the 4 least significant bit of the\
+        \ ng-eNB ID (to form a nibble) shall appear last  in the string. \n"
+      example: SMacroNGeNB-34B89
+      pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+      type: string
+    WAgfId:
+      description: "This represents the identifier of the W-AGF ID as specified in\
+        \ clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation. Each\
+        \ character in the string shall take a value  of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \  character representing the 4 most significant bits of the W-AGF ID shall\
+        \ appear first in the  string, and the character representing the 4 least\
+        \ significant bit of the W-AGF ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    TngfId:
+      description: "This represents the identifier of the TNGF ID as specified in\
+        \ clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation. Each\
+        \ character in the string shall take a value of \"0\" to \"9\", \"a\"  to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the  4 most significant bits of the TNGF ID shall\
+        \ appear first in the string, and the character  representing the 4 least\
+        \ significant bit of the TNGF ID shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    ENbId:
+      description: |
+        This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+      pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+      type: string
+    Tai:
+      description: Contains the tracking area identity as described in 3GPP 23.003
+      example:
+        tac: tac
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId_1'
+        tac:
+          description: "2 or 3-octet string identifying a tracking area code as specified\
+            \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation.\
+            \ Each character in the string shall  take a value of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant character representing the 4 most significant bits of the\
+            \ TAC shall  appear first in the string, and the character representing\
+            \ the 4 least significant bit  of the TAC shall appear last in the string.\
+            \ \n"
+          pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - plmnId
+      - tac
+      type: object
+    Tac:
+      description: "2 or 3-octet string identifying a tracking area code as specified\
+        \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation. Each\
+        \ character in the string shall  take a value of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the 4 most significant bits of the TAC shall  appear\
+        \ first in the string, and the character representing the 4 least significant\
+        \ bit  of the TAC shall appear last in the string. \n"
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+    Point_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+      required:
+      - point
+      type: object
+      example: null
+    PointUncertaintyCircle_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        uncertainty:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+      required:
+      - point
+      - uncertainty
+      type: object
+      example: null
+    PointUncertaintyEllipse_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        uncertaintyEllipse:
+          $ref: '#/components/schemas/UncertaintyEllipse'
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - point
+      - uncertaintyEllipse
+      type: object
+      example: null
+    Polygon_allOf:
+      properties:
+        pointList:
+          description: List of points.
+          items:
+            $ref: '#/components/schemas/GeographicalCoordinates'
+          maxItems: 15
+          minItems: 3
+          type: array
+      required:
+      - pointList
+      type: object
+      example: null
+    PointAltitude_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        altitude:
+          description: Indicates value of altitude.
+          format: double
+          maximum: 32767
+          minimum: -32767
+          type: number
+      required:
+      - altitude
+      - point
+      type: object
+      example: null
+    PointAltitudeUncertainty_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        altitude:
+          description: Indicates value of altitude.
+          format: double
+          maximum: 32767
+          minimum: -32767
+          type: number
+        uncertaintyEllipse:
+          $ref: '#/components/schemas/UncertaintyEllipse'
+        uncertaintyAltitude:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - altitude
+      - confidence
+      - point
+      - uncertaintyAltitude
+      - uncertaintyEllipse
+      type: object
+      example: null
+    EllipsoidArc_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        innerRadius:
+          description: Indicates value of the inner radius.
+          format: int32
+          maximum: 327675
+          minimum: 0
+          type: integer
+        uncertaintyRadius:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        offsetAngle:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        includedAngle:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - includedAngle
+      - innerRadius
+      - offsetAngle
+      - point
+      - uncertaintyRadius
+      type: object
+      example: null
+    Local2dPointUncertaintyEllipse_allOf:
+      properties:
+        localOrigin:
+          $ref: '#/components/schemas/LocalOrigin'
+        point:
+          $ref: '#/components/schemas/RelativeCartesianLocation'
+        uncertaintyEllipse:
+          $ref: '#/components/schemas/UncertaintyEllipse'
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - localOrigin
+      - point
+      - uncertaintyEllipse
+      type: object
+      example: null
+    Local3dPointUncertaintyEllipsoid_allOf:
+      properties:
+        localOrigin:
+          $ref: '#/components/schemas/LocalOrigin'
+        point:
+          $ref: '#/components/schemas/RelativeCartesianLocation'
+        uncertaintyEllipsoid:
+          $ref: '#/components/schemas/UncertaintyEllipsoid'
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - localOrigin
+      - point
+      - uncertaintyEllipsoid
+      type: object
+      example: null
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: "{tokenUrl}"
+      type: oauth2

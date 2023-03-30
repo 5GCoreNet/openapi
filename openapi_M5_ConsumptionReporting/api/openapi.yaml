@@ -1,0 +1,208 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M5 Consumption Reporting API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M5_ConsumptionReporting
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m5/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Media Session Handling (M5) APIs: Consumption\
+    \ Reporting"
+  name: M5_ConsumptionReporting
+paths:
+  /consumption-reporting/{aspId}:
+    post:
+      operationId: submitConsumptionReport
+      parameters:
+      - description: See 3GPP TS 26.512 clause 11.3.2.
+        explode: false
+        in: path
+        name: aspId
+        required: true
+        schema:
+          $ref: '#/components/schemas/AspId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsumptionReport'
+        description: A Consumption Report
+        required: true
+      responses:
+        "204":
+          description: Consumption Report Accepted
+        "400":
+          description: Bad Request
+        "415":
+          description: Unsupported Media Type
+      summary: Submit a Consumption Report
+components:
+  schemas:
+    ConsumptionReport:
+      description: A representation of a Consumption Report.
+      example:
+        reportingClientId: reportingClientId
+        consumptionReportingUnits:
+        - duration: 6
+          mediaEndpointAddress:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 5248
+          mediaConsumed: mediaConsumed
+          startTime: 2000-01-23T04:56:07.000+00:00
+          locations:
+          - locationIdentifierType: null
+            location: location
+          - locationIdentifierType: null
+            location: location
+        - duration: 6
+          mediaEndpointAddress:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 5248
+          mediaConsumed: mediaConsumed
+          startTime: 2000-01-23T04:56:07.000+00:00
+          locations:
+          - locationIdentifierType: null
+            location: location
+          - locationIdentifierType: null
+            location: location
+        mediaPlayerEntry: mediaPlayerEntry
+      properties:
+        mediaPlayerEntry:
+          type: string
+        reportingClientId:
+          type: string
+        consumptionReportingUnits:
+          items:
+            $ref: '#/components/schemas/ConsumptionReportingUnit'
+          type: array
+      required:
+      - consumptionReportingUnits
+      - mediaPlayerEntry
+      - reportingClientId
+      type: object
+    ConsumptionReportingUnit:
+      description: A Consumption Reporting Unit.
+      example:
+        duration: 6
+        mediaEndpointAddress:
+          ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          portNumber: 5248
+        mediaConsumed: mediaConsumed
+        startTime: 2000-01-23T04:56:07.000+00:00
+        locations:
+        - locationIdentifierType: null
+          location: location
+        - locationIdentifierType: null
+          location: location
+      properties:
+        mediaConsumed:
+          type: string
+        mediaEndpointAddress:
+          $ref: '#/components/schemas/EndpointAddress'
+        startTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        duration:
+          description: indicating a time in seconds.
+          type: integer
+        locations:
+          items:
+            $ref: '#/components/schemas/TypedLocation'
+          minItems: 1
+          type: array
+      required:
+      - duration
+      - mediaConsumed
+      - startTime
+      type: object
+    AspId:
+      description: Contains an identity of an application service provider.
+      type: string
+    EndpointAddress:
+      example:
+        ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+        ipv4Addr: 198.51.100.1
+        portNumber: 5248
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: Integer where the allowed values correspond to the value range
+            of an unsigned 16-bit integer.
+          maximum: 65535
+          minimum: 0
+          type: integer
+      required:
+      - portNumber
+      type: object
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    DurationSec:
+      description: indicating a time in seconds.
+      type: integer
+    TypedLocation:
+      example:
+        locationIdentifierType: null
+        location: location
+      properties:
+        locationIdentifierType:
+          $ref: '#/components/schemas/CellIdentifierType'
+        location:
+          type: string
+      required:
+      - location
+      - locationIdentifierType
+      type: object
+    CellIdentifierType:
+      anyOf:
+      - enum:
+        - CGI
+        - ECGI
+        - NCGI
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Uint16:
+      description: Integer where the allowed values correspond to the value range
+        of an unsigned 16-bit integer.
+      maximum: 65535
+      minimum: 0
+      type: integer

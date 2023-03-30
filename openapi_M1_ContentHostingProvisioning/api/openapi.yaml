@@ -1,0 +1,551 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Content Hosting Provisioning API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_ContentHostingProvisioning
+  version: 2.1.0
+externalDocs:
+  description: TS 26.512 V17.3.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Content Hosting Provisioning"
+  name: M1_ContentHostingProvisioning
+paths:
+  /provisioning-sessions/{provisioningSessionId}/content-hosting-configuration:
+    delete:
+      operationId: destroyContentHostingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "204":
+          description: Destroyed Content Hosting Configuration
+        "404":
+          description: Not Found
+      summary: Destroy the current Content Hosting Configuration of the specified
+        Provisioning Session
+    get:
+      operationId: retrieveContentHostingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentHostingConfiguration'
+          description: Success
+        "404":
+          description: Not Found
+      summary: Retrieve the Content Hosting Configuration of the specified Provisioning
+        Session
+    patch:
+      operationId: patchContentHostingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ContentHostingConfiguration'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ContentHostingConfiguration'
+        description: A JSON representation of a Content Hosting Configuration
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentHostingConfiguration'
+          description: Patched Content Hosting Configuration
+        "404":
+          description: Not Found
+      summary: Patch the Content Hosting Configuration for the specified Provisioning
+        Session
+    post:
+      operationId: createContentHostingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContentHostingConfiguration'
+        description: A JSON representation of a Content Hosting Configuration
+        required: true
+      responses:
+        "201":
+          description: Content Hosting Configuration Created
+          headers:
+            Location:
+              description: URL of the newly created Content Hosting Configuration
+                (same as request URL).
+              explode: false
+              required: true
+              schema:
+                $ref: '#/components/schemas/Url'
+              style: simple
+      summary: Create (and optionally upload) the Content Hosting Configuration for
+        the specified Provisioning Session
+    put:
+      operationId: updateContentHostingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContentHostingConfiguration'
+        description: A JSON representation of a Content Hosting Configuration
+        required: true
+      responses:
+        "204":
+          description: Updated Content Hosting Configuration
+        "404":
+          description: Not Found
+      summary: Update the Content Hosting Configuration for the specified Provisioning
+        Session
+  /provisioning-sessions/{provisioningSessionId}/content-hosting-configuration/purge:
+    post:
+      operationId: purgeContentHostingCache
+      parameters:
+      - description: A unique identifier of the Provisioning
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/purgeContentHostingCache_request'
+        description: The regular expression pattern for resources to purge from the
+          cache
+        required: true
+      responses:
+        "200":
+          description: Content Purged
+      summary: Purge the content of the cache for the Content Hosting Configuration
+        of the specified Provisioning Session
+components:
+  schemas:
+    IngestConfiguration:
+      description: A configuration for content ingest.
+      example:
+        pull: true
+        protocol: protocol
+        baseURL: https://openapi-generator.tech
+      properties:
+        pull:
+          type: boolean
+        protocol:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        baseURL:
+          description: "Uniform Resource Locator, comforming with the URI Generic\
+            \ Syntax specified in IETF RFC 3986."
+          format: uri
+          type: string
+      type: object
+    PathRewriteRule:
+      description: A rule to manipulate URL paths.
+      example:
+        requestPathPattern: requestPathPattern
+        mappedPath: mappedPath
+      properties:
+        requestPathPattern:
+          type: string
+        mappedPath:
+          type: string
+      required:
+      - mappedPath
+      - requestPathPattern
+      type: object
+    CachingConfiguration:
+      description: A content caching configuration.
+      example:
+        cachingDirectives:
+          noCache: true
+          maxAge: 6
+          statusCodeFilters:
+          - 0
+          - 0
+        urlPatternFilter: urlPatternFilter
+      properties:
+        urlPatternFilter:
+          type: string
+        cachingDirectives:
+          $ref: '#/components/schemas/CachingConfiguration_cachingDirectives'
+      required:
+      - urlPatternFilter
+      type: object
+    DistributionConfiguration:
+      description: A content distribution configuration.
+      example:
+        baseURL: https://openapi-generator.tech
+        canonicalDomainName: canonicalDomainName
+        geoFencing:
+          locators:
+          - locators
+          - locators
+          locatorType: locatorType
+        supplementaryDistributionNetworks:
+        - distributionNetworkType: null
+          distributionMode: null
+        - distributionNetworkType: null
+          distributionMode: null
+        certificateId: certificateId
+        domainNameAlias: domainNameAlias
+        contentPreparationTemplateId: contentPreparationTemplateId
+        urlSignature:
+          tokenName: tokenName
+          passphrase: passphrase
+          tokenExpiryName: tokenExpiryName
+          urlPattern: urlPattern
+          passphraseName: passphraseName
+          ipAddressName: ipAddressName
+          useIPAddress: true
+        pathRewriteRules:
+        - requestPathPattern: requestPathPattern
+          mappedPath: mappedPath
+        - requestPathPattern: requestPathPattern
+          mappedPath: mappedPath
+        cachingConfigurations:
+        - cachingDirectives:
+            noCache: true
+            maxAge: 6
+            statusCodeFilters:
+            - 0
+            - 0
+          urlPatternFilter: urlPatternFilter
+        - cachingDirectives:
+            noCache: true
+            maxAge: 6
+            statusCodeFilters:
+            - 0
+            - 0
+          urlPatternFilter: urlPatternFilter
+      properties:
+        contentPreparationTemplateId:
+          description: String chosen by the 5GMS AF to serve as an identifier in a
+            resource URI.
+          type: string
+        canonicalDomainName:
+          type: string
+        domainNameAlias:
+          type: string
+        baseURL:
+          description: "Uniform Resource Locator, comforming with the URI Generic\
+            \ Syntax specified in IETF RFC 3986."
+          format: uri
+          type: string
+        pathRewriteRules:
+          items:
+            $ref: '#/components/schemas/PathRewriteRule'
+          type: array
+        cachingConfigurations:
+          items:
+            $ref: '#/components/schemas/CachingConfiguration'
+          type: array
+        geoFencing:
+          $ref: '#/components/schemas/DistributionConfiguration_geoFencing'
+        urlSignature:
+          $ref: '#/components/schemas/DistributionConfiguration_urlSignature'
+        certificateId:
+          description: String chosen by the 5GMS AF to serve as an identifier in a
+            resource URI.
+          type: string
+        supplementaryDistributionNetworks:
+          items:
+            $ref: '#/components/schemas/DistributionConfiguration_supplementaryDistributionNetworks_inner'
+          type: array
+      type: object
+    ContentHostingConfiguration:
+      description: A representation of a Content Hosting Configuration resource.
+      example:
+        name: name
+        entryPointPath: https://openapi-generator.tech
+        ingestConfiguration:
+          pull: true
+          protocol: protocol
+          baseURL: https://openapi-generator.tech
+        distributionConfigurations:
+        - baseURL: https://openapi-generator.tech
+          canonicalDomainName: canonicalDomainName
+          geoFencing:
+            locators:
+            - locators
+            - locators
+            locatorType: locatorType
+          supplementaryDistributionNetworks:
+          - distributionNetworkType: null
+            distributionMode: null
+          - distributionNetworkType: null
+            distributionMode: null
+          certificateId: certificateId
+          domainNameAlias: domainNameAlias
+          contentPreparationTemplateId: contentPreparationTemplateId
+          urlSignature:
+            tokenName: tokenName
+            passphrase: passphrase
+            tokenExpiryName: tokenExpiryName
+            urlPattern: urlPattern
+            passphraseName: passphraseName
+            ipAddressName: ipAddressName
+            useIPAddress: true
+          pathRewriteRules:
+          - requestPathPattern: requestPathPattern
+            mappedPath: mappedPath
+          - requestPathPattern: requestPathPattern
+            mappedPath: mappedPath
+          cachingConfigurations:
+          - cachingDirectives:
+              noCache: true
+              maxAge: 6
+              statusCodeFilters:
+              - 0
+              - 0
+            urlPatternFilter: urlPatternFilter
+          - cachingDirectives:
+              noCache: true
+              maxAge: 6
+              statusCodeFilters:
+              - 0
+              - 0
+            urlPatternFilter: urlPatternFilter
+        - baseURL: https://openapi-generator.tech
+          canonicalDomainName: canonicalDomainName
+          geoFencing:
+            locators:
+            - locators
+            - locators
+            locatorType: locatorType
+          supplementaryDistributionNetworks:
+          - distributionNetworkType: null
+            distributionMode: null
+          - distributionNetworkType: null
+            distributionMode: null
+          certificateId: certificateId
+          domainNameAlias: domainNameAlias
+          contentPreparationTemplateId: contentPreparationTemplateId
+          urlSignature:
+            tokenName: tokenName
+            passphrase: passphrase
+            tokenExpiryName: tokenExpiryName
+            urlPattern: urlPattern
+            passphraseName: passphraseName
+            ipAddressName: ipAddressName
+            useIPAddress: true
+          pathRewriteRules:
+          - requestPathPattern: requestPathPattern
+            mappedPath: mappedPath
+          - requestPathPattern: requestPathPattern
+            mappedPath: mappedPath
+          cachingConfigurations:
+          - cachingDirectives:
+              noCache: true
+              maxAge: 6
+              statusCodeFilters:
+              - 0
+              - 0
+            urlPatternFilter: urlPatternFilter
+          - cachingDirectives:
+              noCache: true
+              maxAge: 6
+              statusCodeFilters:
+              - 0
+              - 0
+            urlPatternFilter: urlPatternFilter
+      properties:
+        name:
+          type: string
+        entryPointPath:
+          description: "Uniform Resource Locator, comforming with the URI Generic\
+            \ Syntax specified in IETF RFC 3986."
+          format: uri
+          type: string
+        ingestConfiguration:
+          $ref: '#/components/schemas/IngestConfiguration'
+        distributionConfigurations:
+          items:
+            $ref: '#/components/schemas/DistributionConfiguration'
+          type: array
+      required:
+      - distributionConfigurations
+      - ingestConfiguration
+      - name
+      type: object
+    DistributionNetworkType:
+      anyOf:
+      - enum:
+        - NETWORK_EMBMS
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: Type of distribution network.
+    DistributionMode:
+      anyOf:
+      - enum:
+        - MODE_EXCLUSIVE
+        - MODE_HYBRID
+        - MODE_DYNAMIC
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: Mode of content distribution.
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    purgeContentHostingCache_request:
+      properties:
+        pattern:
+          description: Keyword
+          type: string
+        value:
+          description: The regular expression
+          type: string
+    CachingConfiguration_cachingDirectives:
+      example:
+        noCache: true
+        maxAge: 6
+        statusCodeFilters:
+        - 0
+        - 0
+      properties:
+        statusCodeFilters:
+          items:
+            type: integer
+          type: array
+        noCache:
+          type: boolean
+        maxAge:
+          format: int32
+          type: integer
+      required:
+      - noCache
+      type: object
+    DistributionConfiguration_geoFencing:
+      example:
+        locators:
+        - locators
+        - locators
+        locatorType: locatorType
+      properties:
+        locatorType:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        locators:
+          items:
+            description: Format of individual locators depends on the locatorType.
+            type: string
+          minItems: 1
+          type: array
+      required:
+      - locatorType
+      - locators
+      type: object
+    DistributionConfiguration_urlSignature:
+      example:
+        tokenName: tokenName
+        passphrase: passphrase
+        tokenExpiryName: tokenExpiryName
+        urlPattern: urlPattern
+        passphraseName: passphraseName
+        ipAddressName: ipAddressName
+        useIPAddress: true
+      properties:
+        urlPattern:
+          type: string
+        tokenName:
+          type: string
+        passphraseName:
+          type: string
+        passphrase:
+          type: string
+        tokenExpiryName:
+          type: string
+        useIPAddress:
+          type: boolean
+        ipAddressName:
+          type: string
+      required:
+      - passphrase
+      - passphraseName
+      - tokenExpiryName
+      - tokenName
+      - urlPattern
+      - useIPAddress
+      type: object
+    DistributionConfiguration_supplementaryDistributionNetworks_inner:
+      description: A duple tying a type of supplementary distribution network to its
+        distribution mode.
+      example:
+        distributionNetworkType: null
+        distributionMode: null
+      properties:
+        distributionNetworkType:
+          $ref: '#/components/schemas/DistributionNetworkType'
+        distributionMode:
+          $ref: '#/components/schemas/DistributionMode'
+      required:
+      - distributionMode
+      - distributionNetworkType
+      type: object

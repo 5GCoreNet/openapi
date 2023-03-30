@@ -1,0 +1,106 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Content Protocols Discovery API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_ContentProtocolsDiscovery
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Content Protocols Discovery"
+  name: M1_ContentDiscovery
+paths:
+  /provisioning-sessions/{provisioningSessionId}/protocols:
+    get:
+      operationId: retrieveContentProtocols
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ContentProtocols'
+          description: Success
+      summary: Retrieve the set of Content Protocols supported by the specified Provisioning
+        Session
+components:
+  schemas:
+    ContentProtocolDescriptor:
+      description: A descriptor describing a content protocol.
+      example:
+        termIdentifier: termIdentifier
+        descriptionLocator: https://openapi-generator.tech
+      properties:
+        termIdentifier:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        descriptionLocator:
+          description: "Uniform Resource Locator, comforming with the URI Generic\
+            \ Syntax specified in IETF RFC 3986."
+          format: uri
+          type: string
+      required:
+      - termIdentifier
+      type: object
+    ContentProtocols:
+      description: A representation of the Content Protocols resource.
+      example:
+        uplinkEgestProtocols:
+        - termIdentifier: termIdentifier
+          descriptionLocator: https://openapi-generator.tech
+        - termIdentifier: termIdentifier
+          descriptionLocator: https://openapi-generator.tech
+        geoFencingLocatorTypes:
+        - null
+        - null
+        downlinkIngestProtocols:
+        - termIdentifier: termIdentifier
+          descriptionLocator: https://openapi-generator.tech
+        - termIdentifier: termIdentifier
+          descriptionLocator: https://openapi-generator.tech
+      properties:
+        downlinkIngestProtocols:
+          items:
+            $ref: '#/components/schemas/ContentProtocolDescriptor'
+          minItems: 1
+          type: array
+        uplinkEgestProtocols:
+          items:
+            $ref: '#/components/schemas/ContentProtocolDescriptor'
+          minItems: 1
+          type: array
+        geoFencingLocatorTypes:
+          items:
+            $ref: '#/components/schemas/Uri'
+          minItems: 1
+          type: array
+      type: object
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string

@@ -1,0 +1,110 @@
+openapi: 3.0.1
+info:
+  description: "OAS 3.0.1 specification of the MDA Report © 2020, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved."
+  title: MDA Report
+  version: 17.2.0
+externalDocs:
+  description: 3GPP TS 28.104; MDA Report
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.104/
+servers:
+- url: /
+paths: {}
+components:
+  schemas:
+    MDAOutputs:
+      properties:
+        mDAType:
+          type: string
+        mdaOutputList:
+          items:
+            $ref: '#/components/schemas/MDAOutputEntry'
+          type: array
+        mDARequestRef:
+          type: string
+      type: object
+    MDAOutputEntry:
+      properties:
+        mDAOutputIEName:
+          type: string
+        mdaOutputIEValue: {}
+        analyticsWindow:
+          $ref: '#/components/schemas/TimeWindow'
+        confidenceDegree:
+          format: float
+          type: number
+      type: object
+    TimeWindow:
+      properties:
+        mDAOutputStartTime:
+          format: date-time
+          type: string
+        mDAOutputEndTime:
+          format: date-time
+          type: string
+      type: object
+    MDAReport:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/MDAReport_allOf'
+    Dn:
+      type: string
+    DateTime:
+      format: date-time
+      type: string
+    Top:
+      properties:
+        id:
+          nullable: true
+          type: string
+        objectClass:
+          type: string
+        objectInstance:
+          type: string
+        VsDataContainer:
+          items:
+            $ref: '#/components/schemas/VsDataContainer-Single'
+          type: array
+      required:
+      - id
+      type: object
+    VsDataContainer-Multiple:
+      items:
+        $ref: '#/components/schemas/VsDataContainer-Single'
+      type: array
+    VsDataContainer-Single:
+      properties:
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/VsDataContainer_Single_attributes'
+        VsDataContainer:
+          items:
+            $ref: '#/components/schemas/VsDataContainer-Single'
+          type: array
+      type: object
+    MDAReport_allOf_attributes_allOf:
+      properties:
+        mDAReportID:
+          type: string
+        mDAOutputs:
+          $ref: '#/components/schemas/MDAOutputs'
+      type: object
+    MDAReport_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/MDAReport_allOf_attributes_allOf'
+    MDAReport_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/MDAReport_allOf_attributes'
+      type: object
+      example: null
+    VsDataContainer_Single_attributes:
+      properties:
+        vsDataType:
+          type: string
+        vsDataFormatVersion:
+          type: string
+        vsData:
+          nullable: true
+      type: object

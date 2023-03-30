@@ -1,0 +1,193 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Content Preparation Templates Provisioning API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_ContentPreparationTemplatesProvisioning
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Content Preparation Templates\
+    \ Provisioning"
+  name: M1_ContentPreparationTemplatesProvisioning
+paths:
+  /provisioning-sessions/{provisioningSessionId}/content-preparation-templates:
+    post:
+      operationId: createContentPreparationTemplate
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+        description: A Content Preparation Template of any type
+        required: true
+      responses:
+        "201":
+          description: Content Preparation Template Created
+          headers:
+            Location:
+              description: URL of the newly created Content Preparation Template.
+              explode: false
+              required: true
+              schema:
+                $ref: '#/components/schemas/Url'
+              style: simple
+      summary: Create (and optionally upload) a new Content Preparation Template for
+        the specified Provisioning Session
+  /provisioning-sessions/{provisioningSessionId}/content-preparation-templates/{contentPreparationTemplateId}:
+    delete:
+      operationId: destroyContentPreparationTemplate
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of an existing Content Preparation Template.
+        explode: false
+        in: path
+        name: contentPreparationTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "204":
+          description: Destroyed Content Preparation Template
+        "404":
+          description: Not Found
+      summary: Destroy the specified Content Preparation Template of the specified
+        Provisioning Session
+    get:
+      operationId: retrieveContentPreparationTemplate
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of an existing Content Preparation Template.
+        explode: false
+        in: path
+        name: contentPreparationTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: Success
+      summary: Retrieve the specified Content Preparation Template of the specified
+        Provisioning Session
+    patch:
+      operationId: patchContentPreparationTemplate
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of an existing Content Preparation Template.
+        explode: false
+        in: path
+        name: contentPreparationTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              type: string
+          application/json-patch+json:
+            schema:
+              type: string
+        description: A Content Preparation Template patch of any type
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                type: string
+          description: Patched Content Preparation Templates
+        "404":
+          description: Not Found
+      summary: Patch the specified Content Preparation Template for the specified
+        Provisioning Session
+    put:
+      operationId: updateContentPreparationTemplate
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of an existing Content Preparation Template.
+        explode: false
+        in: path
+        name: contentPreparationTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+        description: A Content Preparation Template of any type
+        required: true
+      responses:
+        "204":
+          description: Updated Content Preparation Template
+        "404":
+          description: Not Found
+      summary: Update the specified Content Preparation Template for the specified
+        Provisioning Session
+components:
+  schemas:
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string

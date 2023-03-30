@@ -1,0 +1,4858 @@
+openapi: 3.0.0
+info:
+  description: "MFAF 3GPP DCCF Adaptor (3DA) Data Management Service.  \n© 2022, 3GPP\
+    \ Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights\
+    \ reserved.\n"
+  title: Nmfaf_3daDataManagement
+  version: 1.1.0-alpha.1
+externalDocs:
+  description: 3GPP TS 29.576 V18.0.0; 5G System; Messaging Framework Adaptor Services;
+    Stage 3.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.576/
+servers:
+- url: "{apiRoot}/nmfaf-3dadatamanagement/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501.
+security:
+- oAuth2ClientCredentials:
+  - nmfaf-3dadatamanagement
+- {}
+paths:
+  /configurations:
+    post:
+      operationId: CreateMFAFConfiguration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MfafConfiguration'
+        description: |
+          Contains the information for the creation of a new Individual MFAF Configuration resource.
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MfafConfiguration'
+          description: Successful creation of new Individual MFAF Configuration resource.
+          headers:
+            Location:
+              description: |
+                Contains the URI of the newly created resource, according to the structure {apiRoot}/nmfaf-3dadatamanagement/<apiVersion>/configurations/{transRefId}
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Creates a new Individual MFAF Configuration resource.
+      tags:
+      - MFAF Configuration(Collection)
+  /configurations/{transRefId}:
+    delete:
+      operationId: DeleteMFAFConfiguration
+      parameters:
+      - description: Unique identifier of the individual MFAF Configurations resource.
+        explode: false
+        in: path
+        name: transRefId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: |
+            No Content. The Individual MFAF Configuration resource matching the transRefId was deleted.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Deletes an existing Individual MFAF Configuration resource.
+      tags:
+      - Individual MFAF Configuration (Document)
+    put:
+      operationId: UpdateMFAFConfiguration
+      parameters:
+      - description: Unique identifier of the individual MFAF Configurations resource.
+        explode: false
+        in: path
+        name: transRefId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MfafConfiguration'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MfafConfiguration'
+          description: The updated MFAF Configuration resource is returned.
+        "204":
+          description: The Individual MFAF Configuration resource was modified successfully.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "501":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Implemented
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Updates an existing Individual MFAF Configuration resource.
+      tags:
+      - Individual MFAF Configuration (Document)
+components:
+  responses:
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "502":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad Gateway
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "307":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: Identifier of target NF (service) instance towards which the
+            request is redirected
+          schema:
+            type: string
+    "308":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: |
+            'Identifier of target NF (service) instance towards which the request is redirected'
+          schema:
+            type: string
+    "501":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Implemented
+  schemas:
+    MfafConfiguration:
+      description: Represents an Individual MFAF Configuration.
+      example:
+        messageConfigurations:
+        - multiProcInstructs:
+          - eventId:
+              udmEvent: null
+              nrfEvent: null
+              nefEvent: null
+              sacEvent:
+                eventFilter:
+                - sd: sd
+                  sst: 143
+                - sd: sd
+                  sst: 143
+                notifThreshold:
+                  numericValNumUes: 7
+                  percValueNumUes: 36
+                  percValueNumPduSess: 20
+                  numericValNumPduSess: 9
+                eventTrigger: null
+                notificationPeriod: 2
+                eventType: null
+                immediateFlag: false
+              nwdafEvent: null
+              amfEvent: null
+              afEvent: null
+              smfEvent: null
+            procInterval: 4
+            paramProcInstructs:
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+          - eventId:
+              udmEvent: null
+              nrfEvent: null
+              nefEvent: null
+              sacEvent:
+                eventFilter:
+                - sd: sd
+                  sst: 143
+                - sd: sd
+                  sst: 143
+                notifThreshold:
+                  numericValNumUes: 7
+                  percValueNumUes: 36
+                  percValueNumPduSess: 20
+                  numericValNumPduSess: 9
+                eventTrigger: null
+                notificationPeriod: 2
+                eventType: null
+                immediateFlag: false
+              nwdafEvent: null
+              amfEvent: null
+              afEvent: null
+              smfEvent: null
+            procInterval: 4
+            paramProcInstructs:
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+          mfafNotiInfo:
+            mfafCorreId: mfafCorreId
+            mfafNotifUri: mfafNotifUri
+          notificationURI: notificationURI
+          procInstruct:
+            eventId:
+              udmEvent: null
+              nrfEvent: null
+              nefEvent: null
+              sacEvent:
+                eventFilter:
+                - sd: sd
+                  sst: 143
+                - sd: sd
+                  sst: 143
+                notifThreshold:
+                  numericValNumUes: 7
+                  percValueNumUes: 36
+                  percValueNumPduSess: 20
+                  numericValNumPduSess: 9
+                eventTrigger: null
+                notificationPeriod: 2
+                eventType: null
+                immediateFlag: false
+              nwdafEvent: null
+              amfEvent: null
+              afEvent: null
+              smfEvent: null
+            procInterval: 4
+            paramProcInstructs:
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+          formatInstruct:
+            consTrigNotif: true
+            reportingOptions:
+              notifyPeriod: 0
+              maxClubbedNotif: 0
+              depEventSubId: depEventSubId
+              notifyWindow:
+                startTime: 2000-01-23T04:56:07.000+00:00
+                stopTime: 2000-01-23T04:56:07.000+00:00
+              minClubbedNotif: 0
+              notifyPeriodInc: 6
+          correId: correId
+          adrfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          suppFeat: suppFeat
+        - multiProcInstructs:
+          - eventId:
+              udmEvent: null
+              nrfEvent: null
+              nefEvent: null
+              sacEvent:
+                eventFilter:
+                - sd: sd
+                  sst: 143
+                - sd: sd
+                  sst: 143
+                notifThreshold:
+                  numericValNumUes: 7
+                  percValueNumUes: 36
+                  percValueNumPduSess: 20
+                  numericValNumPduSess: 9
+                eventTrigger: null
+                notificationPeriod: 2
+                eventType: null
+                immediateFlag: false
+              nwdafEvent: null
+              amfEvent: null
+              afEvent: null
+              smfEvent: null
+            procInterval: 4
+            paramProcInstructs:
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+          - eventId:
+              udmEvent: null
+              nrfEvent: null
+              nefEvent: null
+              sacEvent:
+                eventFilter:
+                - sd: sd
+                  sst: 143
+                - sd: sd
+                  sst: 143
+                notifThreshold:
+                  numericValNumUes: 7
+                  percValueNumUes: 36
+                  percValueNumPduSess: 20
+                  numericValNumPduSess: 9
+                eventTrigger: null
+                notificationPeriod: 2
+                eventType: null
+                immediateFlag: false
+              nwdafEvent: null
+              amfEvent: null
+              afEvent: null
+              smfEvent: null
+            procInterval: 4
+            paramProcInstructs:
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+          mfafNotiInfo:
+            mfafCorreId: mfafCorreId
+            mfafNotifUri: mfafNotifUri
+          notificationURI: notificationURI
+          procInstruct:
+            eventId:
+              udmEvent: null
+              nrfEvent: null
+              nefEvent: null
+              sacEvent:
+                eventFilter:
+                - sd: sd
+                  sst: 143
+                - sd: sd
+                  sst: 143
+                notifThreshold:
+                  numericValNumUes: 7
+                  percValueNumUes: 36
+                  percValueNumPduSess: 20
+                  numericValNumPduSess: 9
+                eventTrigger: null
+                notificationPeriod: 2
+                eventType: null
+                immediateFlag: false
+              nwdafEvent: null
+              amfEvent: null
+              afEvent: null
+              smfEvent: null
+            procInterval: 4
+            paramProcInstructs:
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+            - aggrLevel: null
+              supis:
+              - null
+              - null
+              values:
+              - ""
+              - ""
+              name: name
+              areas:
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              - ncgis:
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                - nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  nrCellId: nrCellId
+                tais:
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - tac: tac
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                gRanNodeIds:
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                - eNbId: eNbId
+                  wagfId: wagfId
+                  tngfId: tngfId
+                  gNbId:
+                    bitLength: 29
+                    gNBValue: gNBValue
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                  n3IwfId: n3IwfId
+                  ngeNbId: SMacroNGeNB-34B89
+                ecgis:
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+                - eutraCellId: eutraCellId
+                  nid: nid
+                  plmnId:
+                    mnc: mnc
+                    mcc: mcc
+              sumAttrs:
+              - null
+              - null
+          formatInstruct:
+            consTrigNotif: true
+            reportingOptions:
+              notifyPeriod: 0
+              maxClubbedNotif: 0
+              depEventSubId: depEventSubId
+              notifyWindow:
+                startTime: 2000-01-23T04:56:07.000+00:00
+                stopTime: 2000-01-23T04:56:07.000+00:00
+              minClubbedNotif: 0
+              notifyPeriodInc: 6
+          correId: correId
+          adrfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          suppFeat: suppFeat
+      properties:
+        messageConfigurations:
+          description: The configuration of the MFAF for mapping data or analytics.
+          items:
+            $ref: '#/components/schemas/MessageConfiguration'
+          minItems: 1
+          type: array
+      required:
+      - messageConfigurations
+      type: object
+    MessageConfiguration:
+      description: Represents the message configuration.
+      example:
+        multiProcInstructs:
+        - eventId:
+            udmEvent: null
+            nrfEvent: null
+            nefEvent: null
+            sacEvent:
+              eventFilter:
+              - sd: sd
+                sst: 143
+              - sd: sd
+                sst: 143
+              notifThreshold:
+                numericValNumUes: 7
+                percValueNumUes: 36
+                percValueNumPduSess: 20
+                numericValNumPduSess: 9
+              eventTrigger: null
+              notificationPeriod: 2
+              eventType: null
+              immediateFlag: false
+            nwdafEvent: null
+            amfEvent: null
+            afEvent: null
+            smfEvent: null
+          procInterval: 4
+          paramProcInstructs:
+          - aggrLevel: null
+            supis:
+            - null
+            - null
+            values:
+            - ""
+            - ""
+            name: name
+            areas:
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            sumAttrs:
+            - null
+            - null
+          - aggrLevel: null
+            supis:
+            - null
+            - null
+            values:
+            - ""
+            - ""
+            name: name
+            areas:
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            sumAttrs:
+            - null
+            - null
+        - eventId:
+            udmEvent: null
+            nrfEvent: null
+            nefEvent: null
+            sacEvent:
+              eventFilter:
+              - sd: sd
+                sst: 143
+              - sd: sd
+                sst: 143
+              notifThreshold:
+                numericValNumUes: 7
+                percValueNumUes: 36
+                percValueNumPduSess: 20
+                numericValNumPduSess: 9
+              eventTrigger: null
+              notificationPeriod: 2
+              eventType: null
+              immediateFlag: false
+            nwdafEvent: null
+            amfEvent: null
+            afEvent: null
+            smfEvent: null
+          procInterval: 4
+          paramProcInstructs:
+          - aggrLevel: null
+            supis:
+            - null
+            - null
+            values:
+            - ""
+            - ""
+            name: name
+            areas:
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            sumAttrs:
+            - null
+            - null
+          - aggrLevel: null
+            supis:
+            - null
+            - null
+            values:
+            - ""
+            - ""
+            name: name
+            areas:
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            sumAttrs:
+            - null
+            - null
+        mfafNotiInfo:
+          mfafCorreId: mfafCorreId
+          mfafNotifUri: mfafNotifUri
+        notificationURI: notificationURI
+        procInstruct:
+          eventId:
+            udmEvent: null
+            nrfEvent: null
+            nefEvent: null
+            sacEvent:
+              eventFilter:
+              - sd: sd
+                sst: 143
+              - sd: sd
+                sst: 143
+              notifThreshold:
+                numericValNumUes: 7
+                percValueNumUes: 36
+                percValueNumPduSess: 20
+                numericValNumPduSess: 9
+              eventTrigger: null
+              notificationPeriod: 2
+              eventType: null
+              immediateFlag: false
+            nwdafEvent: null
+            amfEvent: null
+            afEvent: null
+            smfEvent: null
+          procInterval: 4
+          paramProcInstructs:
+          - aggrLevel: null
+            supis:
+            - null
+            - null
+            values:
+            - ""
+            - ""
+            name: name
+            areas:
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            sumAttrs:
+            - null
+            - null
+          - aggrLevel: null
+            supis:
+            - null
+            - null
+            values:
+            - ""
+            - ""
+            name: name
+            areas:
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            - ncgis:
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              - nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tais:
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              gRanNodeIds:
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              - eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 29
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ecgis:
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              - eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            sumAttrs:
+            - null
+            - null
+        formatInstruct:
+          consTrigNotif: true
+          reportingOptions:
+            notifyPeriod: 0
+            maxClubbedNotif: 0
+            depEventSubId: depEventSubId
+            notifyWindow:
+              startTime: 2000-01-23T04:56:07.000+00:00
+              stopTime: 2000-01-23T04:56:07.000+00:00
+            minClubbedNotif: 0
+            notifyPeriodInc: 6
+        correId: correId
+        adrfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        suppFeat: suppFeat
+      properties:
+        correId:
+          description: |
+            If the configuration is used for mapping analytics or data collection, representing the Analytics Consumer Notification Correlation ID or Data Consumer Notification Correlation ID.
+          type: string
+        formatInstruct:
+          $ref: '#/components/schemas/FormattingInstruction'
+        mfafNotiInfo:
+          $ref: '#/components/schemas/MfafNotiInfo'
+        notificationURI:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        procInstruct:
+          $ref: '#/components/schemas/ProcessingInstruction'
+        multiProcInstructs:
+          description: Processing instructions to be used for sending event notifications.
+          items:
+            $ref: '#/components/schemas/ProcessingInstruction'
+          minItems: 1
+          type: array
+        adrfId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - correId
+      - notificationURI
+      type: object
+    MfafNotiInfo:
+      description: |
+        The MFAF notification information. It shall be provided in a response message if it had not been provided in the respective request message.
+      example:
+        mfafCorreId: mfafCorreId
+        mfafNotifUri: mfafNotifUri
+      properties:
+        mfafNotifUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        mfafCorreId:
+          type: string
+      required:
+      - mfafCorreId
+      - mfafNotifUri
+      type: object
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    RedirectResponse:
+      description: |
+        The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP.
+      properties:
+        cause:
+          type: string
+        targetScp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        targetSepp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      type: object
+    FormattingInstruction:
+      description: Contains data or analytics formatting instructions.
+      example:
+        consTrigNotif: true
+        reportingOptions:
+          notifyPeriod: 0
+          maxClubbedNotif: 0
+          depEventSubId: depEventSubId
+          notifyWindow:
+            startTime: 2000-01-23T04:56:07.000+00:00
+            stopTime: 2000-01-23T04:56:07.000+00:00
+          minClubbedNotif: 0
+          notifyPeriodInc: 6
+      properties:
+        consTrigNotif:
+          description: |
+            Indicates that notifications shall be buffered until the NF service consumer requests their delivery.
+          type: boolean
+        reportingOptions:
+          $ref: '#/components/schemas/ReportingOptions'
+      type: object
+    ReportingOptions:
+      description: Represents reporting options for processed notifications.
+      example:
+        notifyPeriod: 0
+        maxClubbedNotif: 0
+        depEventSubId: depEventSubId
+        notifyWindow:
+          startTime: 2000-01-23T04:56:07.000+00:00
+          stopTime: 2000-01-23T04:56:07.000+00:00
+        minClubbedNotif: 0
+        notifyPeriodInc: 6
+      oneOf:
+      - required:
+        - notifyWindow
+      - required:
+        - notifyPeriod
+      - required:
+        - notifyPeriodInc
+      - required:
+        - depEventSubId
+      properties:
+        notifyWindow:
+          $ref: '#/components/schemas/TimeWindow'
+        notifyPeriod:
+          description: indicating a time in seconds.
+          type: integer
+        notifyPeriodInc:
+          description: indicating a time in seconds.
+          type: integer
+        depEventSubId:
+          description: |
+            Notifications for the present subscription are sent only upon occurrence of events of the subscription with identifier that matches this attribute.
+          type: string
+        minClubbedNotif:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        maxClubbedNotif:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      type: object
+    ProcessingInstruction:
+      description: Contains instructions related to the processing of notifications.
+      example:
+        eventId:
+          udmEvent: null
+          nrfEvent: null
+          nefEvent: null
+          sacEvent:
+            eventFilter:
+            - sd: sd
+              sst: 143
+            - sd: sd
+              sst: 143
+            notifThreshold:
+              numericValNumUes: 7
+              percValueNumUes: 36
+              percValueNumPduSess: 20
+              numericValNumPduSess: 9
+            eventTrigger: null
+            notificationPeriod: 2
+            eventType: null
+            immediateFlag: false
+          nwdafEvent: null
+          amfEvent: null
+          afEvent: null
+          smfEvent: null
+        procInterval: 4
+        paramProcInstructs:
+        - aggrLevel: null
+          supis:
+          - null
+          - null
+          values:
+          - ""
+          - ""
+          name: name
+          areas:
+          - ncgis:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tais:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            gRanNodeIds:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ecgis:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          - ncgis:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tais:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            gRanNodeIds:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ecgis:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          sumAttrs:
+          - null
+          - null
+        - aggrLevel: null
+          supis:
+          - null
+          - null
+          values:
+          - ""
+          - ""
+          name: name
+          areas:
+          - ncgis:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tais:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            gRanNodeIds:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ecgis:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          - ncgis:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tais:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            gRanNodeIds:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 29
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ecgis:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          sumAttrs:
+          - null
+          - null
+      properties:
+        eventId:
+          $ref: '#/components/schemas/DccfEvent'
+        procInterval:
+          description: indicating a time in seconds.
+          type: integer
+        paramProcInstructs:
+          description: |
+            List of event parameter names, and for each event parameter name, respective event parameter values and sets of the attributes to be used in the summarized reports.
+          items:
+            $ref: '#/components/schemas/ParameterProcessingInstruction'
+          minItems: 1
+          type: array
+      required:
+      - eventId
+      - procInterval
+      type: object
+    DccfEvent:
+      description: |
+        Identifies the (event exposure or analytics) event that the processing instructions  shall apply to. Contains all event IDs related to DCCF.
+      example:
+        udmEvent: null
+        nrfEvent: null
+        nefEvent: null
+        sacEvent:
+          eventFilter:
+          - sd: sd
+            sst: 143
+          - sd: sd
+            sst: 143
+          notifThreshold:
+            numericValNumUes: 7
+            percValueNumUes: 36
+            percValueNumPduSess: 20
+            numericValNumPduSess: 9
+          eventTrigger: null
+          notificationPeriod: 2
+          eventType: null
+          immediateFlag: false
+        nwdafEvent: null
+        amfEvent: null
+        afEvent: null
+        smfEvent: null
+      oneOf:
+      - required:
+        - nwdafEvent
+      - required:
+        - smfEvent
+      - required:
+        - amfEvent
+      - required:
+        - nefEvent
+      - required:
+        - afEvent
+      - required:
+        - sacEvent
+      - required:
+        - nrfEvent
+      - required:
+        - udmEvent
+      properties:
+        nwdafEvent:
+          $ref: '#/components/schemas/NwdafEvent'
+        smfEvent:
+          $ref: '#/components/schemas/SmfEvent'
+        amfEvent:
+          $ref: '#/components/schemas/AmfEventType'
+        nefEvent:
+          $ref: '#/components/schemas/NefEvent'
+        udmEvent:
+          $ref: '#/components/schemas/EventType'
+        afEvent:
+          $ref: '#/components/schemas/AfEvent'
+        sacEvent:
+          $ref: '#/components/schemas/SACEvent'
+        nrfEvent:
+          $ref: '#/components/schemas/NotificationEventType'
+      type: object
+    ParameterProcessingInstruction:
+      description: |
+        Contains an event parameter name and the respective event parameter values and sets of attributes to be used in summarized reports.
+      example:
+        aggrLevel: null
+        supis:
+        - null
+        - null
+        values:
+        - ""
+        - ""
+        name: name
+        areas:
+        - ncgis:
+          - nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          - nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          tais:
+          - tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          - tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          gRanNodeIds:
+          - eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 29
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          - eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 29
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ecgis:
+          - eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          - eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+        - ncgis:
+          - nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          - nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          tais:
+          - tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          - tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          gRanNodeIds:
+          - eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 29
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          - eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 29
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ecgis:
+          - eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          - eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+        sumAttrs:
+        - null
+        - null
+      properties:
+        name:
+          description: |
+            A JSON pointer value that references an attribute within the notification object to which the processing instruction is applied.
+          type: string
+        values:
+          description: A list of values for the attribute identified by the name attribute.
+          items: {}
+          minItems: 1
+          type: array
+        sumAttrs:
+          description: Attributes requested to be used in the summarized reports.
+          items:
+            $ref: '#/components/schemas/SummarizationAttribute'
+          minItems: 1
+          type: array
+        aggrLevel:
+          $ref: '#/components/schemas/AggregationLevel'
+        supis:
+          description: Indicates the UEs for which processed reports are requested.
+          items:
+            $ref: '#/components/schemas/Supi'
+          minItems: 1
+          type: array
+        areas:
+          description: Indicates the Areas of Interest for which processed reports
+            are requested.
+          items:
+            $ref: '#/components/schemas/NetworkAreaInfo'
+          minItems: 1
+          type: array
+      required:
+      - name
+      - sumAttrs
+      - values
+      type: object
+    SummarizationAttribute:
+      anyOf:
+      - enum:
+        - SPACING
+        - DURATION
+        - OCCURRENCES
+        - AVG_VAR
+        - FREQ_VAL
+        - MIN_MAX
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - SPACING: Average and variance of the time interval separating two consecutive occurrences of the same event and parameter value, or periodicity for periodic reporting.
+        - DURATION: Average and variance of the time for which the parameter value applies.
+        - OCCURRENCES: Number of countable occurrences for the parameter.
+        - AVG_VAR: Average and variance of the parameter.
+        - FREQ_VAL: Most and least frequent values.
+        - MIN_MAX: Maximum and minimum parameter values.
+    AggregationLevel:
+      anyOf:
+      - enum:
+        - UE
+        - AOI
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - UE: Indicates that the summarized reports shall be provided per UE.
+        - AOI: Indicates that the summarized reports shall be provided per Area of Interest.
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    TimeWindow:
+      description: Represents a time window identified by a start time and a stop
+        time.
+      example:
+        startTime: 2000-01-23T04:56:07.000+00:00
+        stopTime: 2000-01-23T04:56:07.000+00:00
+      properties:
+        startTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+        stopTime:
+          description: string with format "date-time" as defined in OpenAPI.
+          format: date-time
+          type: string
+      required:
+      - startTime
+      - stopTime
+      type: object
+    DateTime:
+      description: string with format "date-time" as defined in OpenAPI.
+      format: date-time
+      type: string
+    DurationSec:
+      description: indicating a time in seconds.
+      type: integer
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    NwdafEvent:
+      anyOf:
+      - enum:
+        - SLICE_LOAD_LEVEL
+        - NETWORK_PERFORMANCE
+        - NF_LOAD
+        - SERVICE_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMMUNICATION
+        - QOS_SUSTAINABILITY
+        - ABNORMAL_BEHAVIOUR
+        - USER_DATA_CONGESTION
+        - NSI_LOAD_LEVEL
+        - DN_PERFORMANCE
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_PERFORMANCE
+        - SM_CONGESTION
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: "Possible values are:\n- SLICE_LOAD_LEVEL: Indicates that the event\
+        \ subscribed is load level information of Network Slice  \n- NETWORK_PERFORMANCE:\
+        \ Indicates that the event subscribed is network performance information.\
+        \  \n- NF_LOAD: Indicates that the event subscribed is load level and status\
+        \ of one or several Network Functions.  \n- SERVICE_EXPERIENCE: Indicates\
+        \ that the event subscribed is service experience.  \n- UE_MOBILITY: Indicates\
+        \ that the event subscribed is UE mobility information.  \n- UE_COMMUNICATION:\
+        \ Indicates that the event subscribed is UE communication information.  \n\
+        - QOS_SUSTAINABILITY: Indicates that the event subscribed is QoS sustainability.\
+        \  \n- ABNORMAL_BEHAVIOUR: Indicates that the event subscribed is abnormal\
+        \ behaviour.  \n- USER_DATA_CONGESTION: Indicates that the event subscribed\
+        \ is user data congestion information.  \n- NSI_LOAD_LEVEL: Indicates that\
+        \ the event subscribed is load level information of Network Slice and the\
+        \ optionally associated Network Slice Instance  \n- DN_PERFORMANCE: Indicates\
+        \ that the event subscribed is DN performance information.  \n- DISPERSION:\
+        \ Indicates that the event subscribed is dispersion information.  \n- RED_TRANS_EXP:\
+        \ Indicates that the event subscribed is redundant transmission experience.\
+        \  \n- WLAN_PERFORMANCE: Indicates that the event subscribed is WLAN performance.\
+        \  \n- SM_CONGESTION: Indicates the Session Management Congestion Control\
+        \ Experience information for specific DNN and/or S-NSSAI.\n"
+    SmfEvent:
+      anyOf:
+      - enum:
+        - AC_TY_CH
+        - UP_PATH_CH
+        - PDU_SES_REL
+        - PLMN_CH
+        - UE_IP_CH
+        - RAT_TY_CH
+        - DDDS
+        - COMM_FAIL
+        - PDU_SES_EST
+        - QFI_ALLOC
+        - QOS_MON
+        - SMCC_EXP
+        - DISPERSION
+        - RED_TRANS_EXP
+        - WLAN_INFO
+        - UPF_INFO
+        - UP_STATUS_INFO
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - AC_TY_CH: Access Type Change
+        - UP_PATH_CH: UP Path Change
+        - PDU_SES_REL: PDU Session Release
+        - PLMN_CH: PLMN Change
+        - UE_IP_CH: UE IP address change
+        - RAT_TY_CH: RAT Type Change
+        - DDDS: Downlink data delivery status
+        - COMM_FAIL: Communication Failure
+        - PDU_SES_EST: PDU Session Establishment
+        - QFI_ALLOC: QFI allocation
+        - QOS_MON: QoS Monitoring
+        - SMCC_EXP: SM congestion control experience for PDU Session
+        - DISPERSION: Session Management transaction dispersion
+        - RED_TRANS_EXP: Redundant transmission experience for PDU Session
+        - WLAN_INFO: WLAN information on PDU session for which Access Type is NON_3GPP_ACCESS and
+          RAT Type is TRUSTED_WLAN
+        - UPF_INFO: The UPF information, including the UPF ID/address/FQDN information.
+        - UP_STATUS_INFO: The User Plane status information.
+    AmfEventType:
+      anyOf:
+      - enum:
+        - LOCATION_REPORT
+        - PRESENCE_IN_AOI_REPORT
+        - TIMEZONE_REPORT
+        - ACCESS_TYPE_REPORT
+        - REGISTRATION_STATE_REPORT
+        - CONNECTIVITY_STATE_REPORT
+        - REACHABILITY_REPORT
+        - COMMUNICATION_FAILURE_REPORT
+        - UES_IN_AREA_REPORT
+        - SUBSCRIPTION_ID_CHANGE
+        - SUBSCRIPTION_ID_ADDITION
+        - SUBSCRIPTION_TERMINATION
+        - LOSS_OF_CONNECTIVITY
+        - 5GS_USER_STATE_REPORT
+        - AVAILABILITY_AFTER_DDN_FAILURE
+        - TYPE_ALLOCATION_CODE_REPORT
+        - FREQUENT_MOBILITY_REGISTRATION_REPORT
+        - SNSSAI_TA_MAPPING_REPORT
+        - UE_LOCATION_TRENDS
+        - UE_ACCESS_BEHAVIOR_TRENDS
+        - UE_MM_TRANSACTION_REPORT
+        type: string
+      - type: string
+      description: Describes the supported event types of Namf_EventExposure Service
+    NefEvent:
+      anyOf:
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: Represents Network Exposure Events.
+    EventType:
+      anyOf:
+      - enum:
+        - LOSS_OF_CONNECTIVITY
+        - UE_REACHABILITY_FOR_DATA
+        - UE_REACHABILITY_FOR_SMS
+        - LOCATION_REPORTING
+        - CHANGE_OF_SUPI_PEI_ASSOCIATION
+        - ROAMING_STATUS
+        - COMMUNICATION_FAILURE
+        - AVAILABILITY_AFTER_DDN_FAILURE
+        - CN_TYPE_CHANGE
+        - DL_DATA_DELIVERY_STATUS
+        - PDN_CONNECTIVITY_STATUS
+        - UE_CONNECTION_MANAGEMENT_STATE
+        - ACCESS_TYPE_REPORT
+        - REGISTRATION_STATE_REPORT
+        - CONNECTIVITY_STATE_REPORT
+        - TYPE_ALLOCATION_CODE_REPORT
+        - FREQUENT_MOBILITY_REGISTRATION_REPORT
+        - PDU_SES_REL
+        - PDU_SES_EST
+        - UE_MEMORY_AVAILABLE_FOR_SMS
+        type: string
+      - type: string
+    AfEvent:
+      anyOf:
+      - enum:
+        - SVC_EXPERIENCE
+        - UE_MOBILITY
+        - UE_COMM
+        - EXCEPTIONS
+        - USER_DATA_CONGESTION
+        - PERF_DATA
+        - DISPERSION
+        - COLLECTIVE_BEHAVIOUR
+        - MS_QOE_METRICS
+        - MS_CONSUMPTION
+        - MS_NET_ASSIST_INVOCATION
+        - MS_DYN_POLICY_INVOCATION
+        - MS_ACCESS_ACTIVITY
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: Represents Application Events.
+    SACEvent:
+      description: Describes an event to be subscribed
+      example:
+        eventFilter:
+        - sd: sd
+          sst: 143
+        - sd: sd
+          sst: 143
+        notifThreshold:
+          numericValNumUes: 7
+          percValueNumUes: 36
+          percValueNumPduSess: 20
+          numericValNumPduSess: 9
+        eventTrigger: null
+        notificationPeriod: 2
+        eventType: null
+        immediateFlag: false
+      properties:
+        eventType:
+          $ref: '#/components/schemas/SACEventType'
+        eventTrigger:
+          $ref: '#/components/schemas/SACEventTrigger'
+        eventFilter:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        notificationPeriod:
+          description: indicating a time in seconds.
+          type: integer
+        notifThreshold:
+          $ref: '#/components/schemas/SACInfo'
+        immediateFlag:
+          default: false
+          type: boolean
+      required:
+      - eventFilter
+      - eventType
+      type: object
+    SACEventType:
+      anyOf:
+      - enum:
+        - NUM_OF_REGD_UES
+        - NUM_OF_ESTD_PDU_SESSIONS
+        type: string
+      - type: string
+      description: Describes the supported event types
+    SACEventTrigger:
+      anyOf:
+      - enum:
+        - THRESHOLD
+        - PERIODIC
+        type: string
+      - type: string
+      description: Describes how NSACF should generate the report for the event
+    NotificationEventType:
+      anyOf:
+      - enum:
+        - NF_REGISTERED
+        - NF_DEREGISTERED
+        - NF_PROFILE_CHANGED
+        type: string
+      - type: string
+      description: Types of events sent in notifications from NRF to subscribed NF
+        Instances
+    Supi:
+      description: "String identifying a Supi that shall contain either an IMSI, a\
+        \ network specific identifier,\na Global Cable Identifier (GCI) or a Global\
+        \ Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS 23.003. It\
+        \ shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\", where <imsi>\
+        \ shall be formatted according to clause 2.2\n   of 3GPP TS 23.003 that describes\
+        \ an IMSI.\n - for a network specific identifier \"nai-<nai>, where <nai>\
+        \ shall be formatted\n   according to clause 28.7.2 of 3GPP TS 23.003 that\
+        \ describes an NAI.\n - for a GCI \"gci-<gci>\", where <gci> shall be formatted\
+        \ according to clause 28.15.2\n   of 3GPP TS 23.003.\n - for a GLI \"gli-<gli>\"\
+        , where <gli> shall be formatted according to clause 28.16.2 of\n   3GPP TS\
+        \ 23.003.To enable that the value is used as part of an URI, the string shall\n\
+        \   only contain characters allowed according to the \"lower-with-hyphen\"\
+        \ naming convention\n   defined in 3GPP TS 29.501.\n"
+      pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+      type: string
+    NetworkAreaInfo:
+      description: |
+        Describes a network area information in which the NF service consumer requests the number of UEs.
+      example:
+        ncgis:
+        - nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        - nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        tais:
+        - tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        - tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        gRanNodeIds:
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 29
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 29
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        ecgis:
+        - eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        - eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+      properties:
+        ecgis:
+          description: Contains a list of E-UTRA cell identities.
+          items:
+            $ref: '#/components/schemas/Ecgi'
+          minItems: 1
+          type: array
+        ncgis:
+          description: Contains a list of NR cell identities.
+          items:
+            $ref: '#/components/schemas/Ncgi'
+          minItems: 1
+          type: array
+        gRanNodeIds:
+          description: Contains a list of NG RAN nodes.
+          items:
+            $ref: '#/components/schemas/GlobalRanNodeId'
+          minItems: 1
+          type: array
+        tais:
+          description: Contains a list of tracking area identities.
+          items:
+            $ref: '#/components/schemas/Tai'
+          minItems: 1
+          type: array
+      type: object
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      example:
+        mnc: mnc
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      example:
+        sd: sd
+        sst: 143
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string
+    SACInfo:
+      description: |
+        Represents threshold(s) to control the triggering of network slice reporting notifications or the information contained in the network slice reporting notification.
+      example:
+        numericValNumUes: 7
+        percValueNumUes: 36
+        percValueNumPduSess: 20
+        numericValNumPduSess: 9
+      properties:
+        numericValNumUes:
+          type: integer
+        numericValNumPduSess:
+          type: integer
+        percValueNumUes:
+          maximum: 100
+          minimum: 0
+          type: integer
+        percValueNumPduSess:
+          maximum: 100
+          minimum: 0
+          type: integer
+      type: object
+    Ecgi:
+      description: "Contains the ECGI (E-UTRAN Cell Global Identity), as described\
+        \ in 3GPP 23.003"
+      example:
+        eutraCellId: eutraCellId
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        eutraCellId:
+          description: "28-bit string identifying an E-UTRA Cell Id as specified in\
+            \ clause 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each\
+            \ character in the string shall take a  value of \"0\" to \"9\", \"a\"\
+            \ to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most  significant\
+            \ character representing the 4 most significant bits of the Cell Id shall\
+            \ appear  first in the string, and the character representing the 4 least\
+            \ significant bit of the  Cell Id shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]{7}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - eutraCellId
+      - plmnId
+      type: object
+    EutraCellId:
+      description: "28-bit string identifying an E-UTRA Cell Id as specified in clause\
+        \ 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each character\
+        \ in the string shall take a  value of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most  significant character representing\
+        \ the 4 most significant bits of the Cell Id shall appear  first in the string,\
+        \ and the character representing the 4 least significant bit of the  Cell\
+        \ Id shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]{7}$"
+      type: string
+    Ncgi:
+      description: "Contains the NCGI (NR Cell Global Identity), as described in 3GPP\
+        \ 23.003"
+      example:
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        nrCellId: nrCellId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        nrCellId:
+          description: "36-bit string identifying an NR Cell Id as specified in clause\
+            \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+            \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant character\
+            \  representing the 4 most significant bits of the Cell Id shall appear\
+            \ first in the string, and  the character representing the 4 least significant\
+            \ bit of the Cell Id shall appear last in the  string. \n"
+          pattern: "^[A-Fa-f0-9]{9}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - nrCellId
+      - plmnId
+      type: object
+    NrCellId:
+      description: "36-bit string identifying an NR Cell Id as specified in clause\
+        \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+        \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant character  representing\
+        \ the 4 most significant bits of the Cell Id shall appear first in the string,\
+        \ and  the character representing the 4 least significant bit of the Cell\
+        \ Id shall appear last in the  string. \n"
+      pattern: "^[A-Fa-f0-9]{9}$"
+      type: string
+    GlobalRanNodeId:
+      description: |
+        One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present.
+      example:
+        eNbId: eNbId
+        wagfId: wagfId
+        tngfId: tngfId
+        gNbId:
+          bitLength: 29
+          gNBValue: gNBValue
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        n3IwfId: n3IwfId
+        ngeNbId: SMacroNGeNB-34B89
+      oneOf:
+      - required:
+        - n3IwfId
+      - required:
+        - gNbId
+      - required:
+        - ngeNbId
+      - required:
+        - wagfId
+      - required:
+        - tngfId
+      - required:
+        - eNbId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        n3IwfId:
+          description: "This represents the identifier of the N3IWF ID as specified\
+            \ in clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ N3IWF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the N3IWF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        gNbId:
+          $ref: '#/components/schemas/GNbId'
+        ngeNbId:
+          description: "This represents the identifier of the ng-eNB ID as specified\
+            \ in clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall\
+            \ be encoded in hexadecimal representation.  Each character in the string\
+            \ shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"\
+            F\" and  shall represent 4 bits. The padding 0 shall be added to make\
+            \ multiple nibbles, so the most  significant character representing the\
+            \ padding 0 if required together with the 4 most  significant bits of\
+            \ the ng-eNB ID shall appear first in the string, and the character  representing\
+            \ the 4 least significant bit of the ng-eNB ID (to form a nibble) shall\
+            \ appear last  in the string. \n"
+          example: SMacroNGeNB-34B89
+          pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+          type: string
+        wagfId:
+          description: "This represents the identifier of the W-AGF ID as specified\
+            \ in clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ W-AGF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the W-AGF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        tngfId:
+          description: "This represents the identifier of the TNGF ID as specified\
+            \ in clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation.\
+            \ Each character in the string shall take a value of \"0\" to \"9\", \"\
+            a\"  to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+            \ character representing the  4 most significant bits of the TNGF ID shall\
+            \ appear first in the string, and the character  representing the 4 least\
+            \ significant bit of the TNGF ID shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+        eNbId:
+          description: |
+            This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+          pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+          type: string
+      required:
+      - plmnId
+      type: object
+    N3IwfId:
+      description: "This represents the identifier of the N3IWF ID as specified in\
+        \ clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation. Each character\
+        \ in the string shall take a value  of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant  character representing\
+        \ the 4 most significant bits of the N3IWF ID shall appear first in the  string,\
+        \ and the character representing the 4 least significant bit of the N3IWF\
+        \ ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    GNbId:
+      description: Provides the G-NB identifier.
+      example:
+        bitLength: 29
+        gNBValue: gNBValue
+      properties:
+        bitLength:
+          description: |
+            Unsigned integer representing the bit length of the gNB ID as defined in clause 9.3.1.6 of 3GPP TS 38.413 [11], within the range 22 to 32.
+          maximum: 32
+          minimum: 22
+          type: integer
+        gNBValue:
+          description: |
+            This represents the identifier of the gNB. The value of the gNB ID shall be encoded in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The padding 0 shall be added to make multiple nibbles,  the most significant character representing the padding 0 if required together with the 4 most significant bits of the gNB ID shall appear first in the string, and the character representing the 4 least significant bit of the gNB ID shall appear last in the string.
+          pattern: "^[A-Fa-f0-9]{6,8}$"
+          type: string
+      required:
+      - bitLength
+      - gNBValue
+      type: object
+    NgeNbId:
+      description: "This represents the identifier of the ng-eNB ID as specified in\
+        \ clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall be encoded\
+        \ in hexadecimal representation.  Each character in the string shall take\
+        \ a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and  shall represent\
+        \ 4 bits. The padding 0 shall be added to make multiple nibbles, so the most\
+        \  significant character representing the padding 0 if required together with\
+        \ the 4 most  significant bits of the ng-eNB ID shall appear first in the\
+        \ string, and the character  representing the 4 least significant bit of the\
+        \ ng-eNB ID (to form a nibble) shall appear last  in the string. \n"
+      example: SMacroNGeNB-34B89
+      pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+      type: string
+    WAgfId:
+      description: "This represents the identifier of the W-AGF ID as specified in\
+        \ clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation. Each\
+        \ character in the string shall take a value  of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \  character representing the 4 most significant bits of the W-AGF ID shall\
+        \ appear first in the  string, and the character representing the 4 least\
+        \ significant bit of the W-AGF ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    TngfId:
+      description: "This represents the identifier of the TNGF ID as specified in\
+        \ clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation. Each\
+        \ character in the string shall take a value of \"0\" to \"9\", \"a\"  to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the  4 most significant bits of the TNGF ID shall\
+        \ appear first in the string, and the character  representing the 4 least\
+        \ significant bit of the TNGF ID shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    ENbId:
+      description: |
+        This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+      pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+      type: string
+    Tai:
+      description: Contains the tracking area identity as described in 3GPP 23.003
+      example:
+        tac: tac
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        tac:
+          description: "2 or 3-octet string identifying a tracking area code as specified\
+            \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation.\
+            \ Each character in the string shall  take a value of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant character representing the 4 most significant bits of the\
+            \ TAC shall  appear first in the string, and the character representing\
+            \ the 4 least significant bit  of the TAC shall appear last in the string.\
+            \ \n"
+          pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - plmnId
+      - tac
+      type: object
+    Tac:
+      description: "2 or 3-octet string identifying a tracking area code as specified\
+        \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation. Each\
+        \ character in the string shall  take a value of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the 4 most significant bits of the TAC shall  appear\
+        \ first in the string, and the character representing the 4 least significant\
+        \ bit  of the TAC shall appear last in the string. \n"
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            nmfaf-3dadatamanagement: Access to the nmfaf-3dadatamanagement API
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

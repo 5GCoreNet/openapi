@@ -1,0 +1,314 @@
+openapi: 3.0.0
+info:
+  description: "API for NIDD Configuration Trigger.  \n© 2022, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: 3gpp-nidd-configuration-trigger
+  version: 1.1.1
+externalDocs:
+  description: |
+    3GPP TS 29.522 V17.7.0; 5G System; Network Exposure Function Northbound APIs.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/
+servers:
+- url: "{apiRoot}"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+paths:
+  /:
+    post:
+      operationId: NiddConfigurationTrigger
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NiddConfigurationTrigger'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NiddConfigurationTriggerReply'
+          description: Success
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+components:
+  responses:
+    "307":
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "308":
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+  schemas:
+    NiddConfigurationTrigger:
+      description: Represents a NIDD configuration trigger.
+      example:
+        nefId: nefId
+        afId: afId
+        suppFeat: suppFeat
+        gpsi: gpsi
+      properties:
+        afId:
+          description: Identifies the trigger receiving entity.
+          type: string
+        nefId:
+          description: Identifies the trigger sending entity.
+          type: string
+        gpsi:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - afId
+      - gpsi
+      - nefId
+      - suppFeat
+      type: object
+    NiddConfigurationTriggerReply:
+      description: Represents a reply to a NIDD configuration trigger.
+      example:
+        suppFeat: suppFeat
+      properties:
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - suppFeat
+      type: object
+    ProblemDetails:
+      description: Represents additional information and details on an error response.
+      properties:
+        type:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        title:
+          description: "A short, human-readable summary of the problem type. It should\
+            \ not change from occurrence to occurrence of the problem."
+          type: string
+        status:
+          description: The HTTP status code for this occurrence of the problem.
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        cause:
+          description: "A machine-readable application error cause specific to this\
+            \ occurrence of the problem. This IE should be present and provide application-related\
+            \ error information, if available."
+          type: string
+        invalidParams:
+          description: "Description of invalid parameters, for a request rejected\
+            \ due to invalid parameters."
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    Uri:
+      description: string providing an URI formatted according to IETF RFC 3986.
+      type: string
+    InvalidParam:
+      description: "Represents the description of invalid parameters, for a request\
+        \ rejected due to invalid parameters."
+      properties:
+        param:
+          description: "Attribute's name encoded as a JSON Pointer, or header's name."
+          type: string
+        reason:
+          description: "A human-readable reason, e.g. \"must be a positive integer\"\
+            ."
+          type: string
+      required:
+      - param
+      type: object
+    Gpsi:
+      description: "String identifying a Gpsi shall contain either an External Id\
+        \ or an MSISDN.  It shall be formatted as follows -External Identifier= \"\
+        extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2\
+        \ of 3GPP TS 23.003 that describes an  External Identifier. \n"
+      pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+      type: string
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: "{tokenUrl}"
+      type: oauth2

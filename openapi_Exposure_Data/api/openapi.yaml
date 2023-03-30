@@ -1,0 +1,3614 @@
+openapi: 3.0.0
+info:
+  description: "The API version is defined in 3GPP TS 29.504  \n© 2022, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: Unified Data Repository Service API file for structured data for exposure
+  version: "-"
+externalDocs:
+  description: |
+    3GPP TS 29.519 V18.0.0; 5G System; Usage of the Unified Data Repository Service for Policy Data, Application Data and Structured Data for Exposure.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.519/
+servers:
+- url: /
+paths:
+  /exposure-data/{ueId}/access-and-mobility-data:
+    delete:
+      operationId: DeleteAccessAndMobilityData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      responses:
+        "204":
+          description: "Upon success, an empty response body shall be returned"
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:access-and-mobility-data:modify
+      summary: Deletes the access and mobility exposure data for a UE
+      tags:
+      - AccessAndMobilityData
+    get:
+      operationId: QueryAccessAndMobilityData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: Supported Features
+        explode: true
+        in: query
+        name: supp-feat
+        required: false
+        schema:
+          $ref: '#/components/schemas/SupportedFeatures'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessAndMobilityData'
+          description: The response body contains the access and mobility data
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          description: 406 Not Acceptable
+        "414":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: URI Too Long
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:access-and-mobility-data:read
+      summary: Retrieves the access and mobility exposure data for a UE
+      tags:
+      - AccessAndMobilityData
+    patch:
+      operationId: UpdateAccessAndMobilityData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/AccessAndMobilityData'
+        required: true
+      responses:
+        "204":
+          description: |
+            Successful case. The resource has been successfully updated and no additional content is to be sent in the response message.
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:access-and-mobility-data:modify
+      summary: Updates the access and mobility exposure data for a UE
+      tags:
+      - AccessAndMobilityData
+    put:
+      operationId: CreateOrReplaceAccessAndMobilityData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccessAndMobilityData'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessAndMobilityData'
+          description: |
+            Successful case. The resource has been successfully created and a response body containing a representation of the access and mobility data shall be returned.
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessAndMobilityData'
+          description: |
+            Successful case. The resource has been successfully updated and a response body containing a representation of the access and mobility data shall be returned.
+        "204":
+          description: Successful case. The resource has been successfully updated
+            and no additional content is to be sent in the response message.
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:access-and-mobility-data:create
+      summary: Creates and updates the access and mobility exposure data for a UE
+      tags:
+      - AccessAndMobilityData
+  /exposure-data/{ueId}/session-management-data/{pduSessionId}:
+    delete:
+      operationId: DeleteSessionManagementData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: PDU session id
+        explode: false
+        in: path
+        name: pduSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/PduSessionId'
+        style: simple
+      responses:
+        "204":
+          description: "Upon success, an empty response body shall be returned"
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:session-management-data:modify
+      summary: Deletes the session management data for a UE and for an individual
+        PDU session
+      tags:
+      - PduSessionManagementData
+    get:
+      operationId: QuerySessionManagementData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: PDU session id
+        explode: false
+        in: path
+        name: pduSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/PduSessionId'
+        style: simple
+      - description: IPv4 Address of the UE
+        explode: true
+        in: query
+        name: ipv4-addr
+        required: false
+        schema:
+          $ref: '#/components/schemas/Ipv4Addr'
+        style: form
+      - description: IPv6 Address Prefix of the UE
+        explode: true
+        in: query
+        name: ipv6-prefix
+        required: false
+        schema:
+          $ref: '#/components/schemas/Ipv6Prefix'
+        style: form
+      - description: DNN of the UE
+        explode: true
+        in: query
+        name: dnn
+        required: false
+        schema:
+          $ref: '#/components/schemas/Dnn'
+        style: form
+      - description: attributes to be retrieved
+        explode: true
+        in: query
+        name: fields
+        required: false
+        schema:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        style: form
+      - description: Supported Features
+        explode: true
+        in: query
+        name: supp-feat
+        required: false
+        schema:
+          $ref: '#/components/schemas/SupportedFeatures'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PduSessionManagementData'
+          description: The response body contains the session management data
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          description: 406 Not Acceptable
+        "414":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: URI Too Long
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:session-management-data:read
+      summary: Retrieves the session management data for a UE and for an individual
+        PDU session
+      tags:
+      - PduSessionManagementData
+    put:
+      operationId: CreateOrReplaceSessionManagementData
+      parameters:
+      - description: UE id
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: PDU session id
+        explode: false
+        in: path
+        name: pduSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/PduSessionId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PduSessionManagementData'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PduSessionManagementData'
+          description: |
+            Successful case. The resource has been successfully created and a response body containing a representation of the session management data shall be returned.
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PduSessionManagementData'
+          description: |
+            Successful case. The resource has been successfully updated and a response body containing a representation of the session management data shall be returned.
+        "204":
+          description: |
+            Successful case. The resource has been successfully updated and no additional content is to be sent in the response message.
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:session-management-data:create
+      summary: Creates and updates the session management data for a UE and for an
+        individual PDU session
+      tags:
+      - PduSessionManagementData
+  /exposure-data/subs-to-notify:
+    post:
+      callbacks:
+        exposureDataChangeNotification:
+          '{$request.body#/notificationUri}':
+            post:
+              operationId: exposureDataChangeNotification_Post
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      items:
+                        $ref: '#/components/schemas/ExposureDataChangeNotification'
+                      minItems: 1
+                      type: array
+                required: true
+              responses:
+                "204":
+                  description: "No Content, Notification was successful"
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+      operationId: CreateIndividualExposureDataSubscription
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExposureDataSubscription'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExposureDataSubscription'
+          description: Created
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:subs-to-notify:create
+      summary: Create a subscription to receive notification of exposure data changes
+      tags:
+      - ExposureDataSubscriptions (Collection)
+  /exposure-data/subs-to-notify/{subId}:
+    delete:
+      operationId: DeleteIndividualExposureDataSubscription
+      parameters:
+      - description: Subscription id
+        explode: false
+        in: path
+        name: subId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Resource was successfully deleted.
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:subs-to-notify:modify
+      summary: Deletes the individual Exposure Data subscription
+      tags:
+      - IndividualExposureDataSubscription (Document)
+    put:
+      operationId: ReplaceIndividualExposureDataSubscription
+      parameters:
+      - description: Subscription id
+        explode: false
+        in: path
+        name: subId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExposureDataSubscription'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExposureDataSubscription'
+          description: |
+            Resource was successfully modified and a body with the modified subscription to notifications about exposure data is returned..
+        "204":
+          description: The individual subscription resource was successfully modified.
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      security:
+      - {}
+      - oAuth2ClientCredentials:
+        - nudr-dr
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+      - oAuth2ClientCredentials:
+        - nudr-dr
+        - nudr-dr:exposure-data
+        - nudr-dr:exposure-data:subs-to-notify:modify
+      summary: updates a subscription to receive notifications of exposure data changes
+      tags:
+      - IndividualExposureDataSubscription (Document)
+components:
+  responses:
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "406":
+      description: 406 Not Acceptable
+    "414":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: URI Too Long
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "502":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad Gateway
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+  schemas:
+    AccessAndMobilityData:
+      description: Represents Access and Mobility data for a UE.
+      example:
+        currentPlmn:
+          mnc: mnc
+          mcc: mcc
+        ratType:
+        - null
+        - null
+        timeZone: -08:00+1
+        timeZoneTs: 2000-01-23T04:56:07.000+00:00
+        reachabilityStatus: null
+        roamingStatusTs: 2000-01-23T04:56:07.000+00:00
+        accessType: null
+        smsOverNasStatusTs: 2000-01-23T04:56:07.000+00:00
+        currentPlmnTs: 2000-01-23T04:56:07.000+00:00
+        locationTs: 2000-01-23T04:56:07.000+00:00
+        regStates:
+        - accessType: null
+          rmState: null
+        - accessType: null
+          rmState: null
+        connStatesTs: 2000-01-23T04:56:07.000+00:00
+        regStatesTs: 2000-01-23T04:56:07.000+00:00
+        resetIds:
+        - resetIds
+        - resetIds
+        reachabilityStatusTs: 2000-01-23T04:56:07.000+00:00
+        roamingStatus: true
+        ratTypesTs: 2000-01-23T04:56:07.000+00:00
+        location:
+          geraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 7543
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            mscNumber: mscNumber
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            vlrNumber: vlrNumber
+            locationNumber: locationNumber
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          eutraLocation:
+            geographicalInformation: geographicalInformation
+            globalNgenbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 2624
+            ignoreEcgi: false
+            globalENbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ignoreTai: false
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+            ecgi:
+              eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          nrLocation:
+            ignoreNcgi: false
+            geographicalInformation: geographicalInformation
+            globalGnbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 4803
+            ncgi:
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          n3gaLocation:
+            ueIpv4Addr: 198.51.100.1
+            twapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            hfcNodeId:
+              hfcNId: hfcNId
+            protocol: null
+            gli: gli
+            n3gppTai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            tnapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            w5gbanLineType: null
+            ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            gci: gci
+            n3IwfId: n3IwfId
+            portNumber: 0
+          utraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 18471
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+        connStates:
+        - accessType: null
+          cmState: null
+        - accessType: null
+          cmState: null
+        smsOverNasStatus: null
+        suppFeat: suppFeat
+      properties:
+        location:
+          $ref: '#/components/schemas/UserLocation'
+        locationTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        timeZone:
+          description: "String with format \"time-numoffset\" optionally appended\
+            \ by \"daylightSavingTime\", where \n- \"time-numoffset\" shall represent\
+            \ the time zone adjusted for daylight saving time and be\n   encoded as\
+            \ time-numoffset as defined in clause\_5.6 of IETF RFC 3339; \n- \"daylightSavingTime\"\
+            \ shall represent the adjustment that has been made and shall be\n   encoded\
+            \ as \"+1\" or \"+2\" for a +1 or +2 hours adjustment. \n\nThe example\
+            \ is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.\n"
+          example: -08:00+1
+          type: string
+        timeZoneTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        accessType:
+          $ref: '#/components/schemas/AccessType'
+        regStates:
+          items:
+            $ref: '#/components/schemas/RmInfo'
+          type: array
+        regStatesTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        connStates:
+          items:
+            $ref: '#/components/schemas/CmInfo'
+          type: array
+        connStatesTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        reachabilityStatus:
+          $ref: '#/components/schemas/UeReachability'
+        reachabilityStatusTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        smsOverNasStatus:
+          $ref: '#/components/schemas/SmsSupport'
+        smsOverNasStatusTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        roamingStatus:
+          description: |
+            True  The serving PLMN of the UE is different from the HPLMN of the UE; False The serving PLMN of the UE is the HPLMN of the UE.
+          type: boolean
+        roamingStatusTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        currentPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        currentPlmnTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        ratType:
+          items:
+            $ref: '#/components/schemas/RatType'
+          type: array
+        ratTypesTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        resetIds:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    PduSessionManagementData:
+      description: Represents Session management data for a UE and a PDU session.
+      example:
+        pduSessionStatusTs: 2000-01-23T04:56:07.000+00:00
+        pduSessionStatus: null
+        n6TrafficRoutingInfoTs: 2000-01-23T04:56:07.000+00:00
+        dnn: dnn
+        ipv6Addrs:
+        - 2001:db8:85a3::8a2e:370:7334
+        - 2001:db8:85a3::8a2e:370:7334
+        n6TrafficRoutingInfo:
+        - dnai: dnai
+          routeInfo:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+          routeProfId: routeProfId
+        - dnai: dnai
+          routeInfo:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+          routeProfId: routeProfId
+        ipAddrTs: 2000-01-23T04:56:07.000+00:00
+        dnaiTs: 2000-01-23T04:56:07.000+00:00
+        resetIds:
+        - resetIds
+        - resetIds
+        pduSessType: null
+        ipv4Addr: 198.51.100.1
+        pduSessionId: 153
+        dnai: dnai
+        ipv6Prefix:
+        - 2001:db8:abcd:12::0/64
+        - 2001:db8:abcd:12::0/64
+        suppFeat: suppFeat
+      properties:
+        pduSessionStatus:
+          $ref: '#/components/schemas/PduSessionStatus'
+        pduSessionStatusTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        dnai:
+          description: "DNAI (Data network access identifier), see clause 5.6.7 of\
+            \ 3GPP TS 23.501."
+          type: string
+        dnaiTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        n6TrafficRoutingInfo:
+          items:
+            $ref: '#/components/schemas/RouteToLocation'
+          type: array
+        n6TrafficRoutingInfoTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Prefix:
+          description: UE IPv6 prefix.
+          items:
+            $ref: '#/components/schemas/Ipv6Prefix'
+          minItems: 1
+          type: array
+        ipv6Addrs:
+          items:
+            $ref: '#/components/schemas/Ipv6Addr'
+          minItems: 1
+          type: array
+        pduSessType:
+          $ref: '#/components/schemas/PduSessionType'
+        ipAddrTs:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        dnn:
+          description: |
+            String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+          type: string
+        pduSessionId:
+          description: "Unsigned integer identifying a PDU session, within the range\
+            \ 0 to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS\
+            \ 24.007. If the PDU Session ID is allocated by the  Core Network for\
+            \ UEs not supporting N1 mode, reserved range 64 to 95 is used. PDU Session\
+            \ ID  within the reserved range is only visible in the Core Network. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        resetIds:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    ExposureDataSubscription:
+      description: Represents a Subscription to Notifications about Exposure Data.
+      example:
+        supportedFeatures: supportedFeatures
+        resetIds:
+        - resetIds
+        - resetIds
+        notificationUri: notificationUri
+        monitoredResourceUris:
+        - null
+        - null
+        expiry: 2000-01-23T04:56:07.000+00:00
+      properties:
+        notificationUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        monitoredResourceUris:
+          items:
+            $ref: '#/components/schemas/Uri'
+          minItems: 1
+          type: array
+        expiry:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        resetIds:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      required:
+      - monitoredResourceUris
+      - notificationUri
+      type: object
+    ExposureDataChangeNotification:
+      description: Represents changed exposure data for one UE for which Notification
+        was requested.
+      example:
+        delResources:
+        - null
+        - null
+        pduSessionManagementData:
+        - pduSessionStatusTs: 2000-01-23T04:56:07.000+00:00
+          pduSessionStatus: null
+          n6TrafficRoutingInfoTs: 2000-01-23T04:56:07.000+00:00
+          dnn: dnn
+          ipv6Addrs:
+          - 2001:db8:85a3::8a2e:370:7334
+          - 2001:db8:85a3::8a2e:370:7334
+          n6TrafficRoutingInfo:
+          - dnai: dnai
+            routeInfo:
+              ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+              ipv4Addr: 198.51.100.1
+              portNumber: 0
+            routeProfId: routeProfId
+          - dnai: dnai
+            routeInfo:
+              ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+              ipv4Addr: 198.51.100.1
+              portNumber: 0
+            routeProfId: routeProfId
+          ipAddrTs: 2000-01-23T04:56:07.000+00:00
+          dnaiTs: 2000-01-23T04:56:07.000+00:00
+          resetIds:
+          - resetIds
+          - resetIds
+          pduSessType: null
+          ipv4Addr: 198.51.100.1
+          pduSessionId: 153
+          dnai: dnai
+          ipv6Prefix:
+          - 2001:db8:abcd:12::0/64
+          - 2001:db8:abcd:12::0/64
+          suppFeat: suppFeat
+        - pduSessionStatusTs: 2000-01-23T04:56:07.000+00:00
+          pduSessionStatus: null
+          n6TrafficRoutingInfoTs: 2000-01-23T04:56:07.000+00:00
+          dnn: dnn
+          ipv6Addrs:
+          - 2001:db8:85a3::8a2e:370:7334
+          - 2001:db8:85a3::8a2e:370:7334
+          n6TrafficRoutingInfo:
+          - dnai: dnai
+            routeInfo:
+              ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+              ipv4Addr: 198.51.100.1
+              portNumber: 0
+            routeProfId: routeProfId
+          - dnai: dnai
+            routeInfo:
+              ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+              ipv4Addr: 198.51.100.1
+              portNumber: 0
+            routeProfId: routeProfId
+          ipAddrTs: 2000-01-23T04:56:07.000+00:00
+          dnaiTs: 2000-01-23T04:56:07.000+00:00
+          resetIds:
+          - resetIds
+          - resetIds
+          pduSessType: null
+          ipv4Addr: 198.51.100.1
+          pduSessionId: 153
+          dnai: dnai
+          ipv6Prefix:
+          - 2001:db8:abcd:12::0/64
+          - 2001:db8:abcd:12::0/64
+          suppFeat: suppFeat
+        accessAndMobilityData:
+          currentPlmn:
+            mnc: mnc
+            mcc: mcc
+          ratType:
+          - null
+          - null
+          timeZone: -08:00+1
+          timeZoneTs: 2000-01-23T04:56:07.000+00:00
+          reachabilityStatus: null
+          roamingStatusTs: 2000-01-23T04:56:07.000+00:00
+          accessType: null
+          smsOverNasStatusTs: 2000-01-23T04:56:07.000+00:00
+          currentPlmnTs: 2000-01-23T04:56:07.000+00:00
+          locationTs: 2000-01-23T04:56:07.000+00:00
+          regStates:
+          - accessType: null
+            rmState: null
+          - accessType: null
+            rmState: null
+          connStatesTs: 2000-01-23T04:56:07.000+00:00
+          regStatesTs: 2000-01-23T04:56:07.000+00:00
+          resetIds:
+          - resetIds
+          - resetIds
+          reachabilityStatusTs: 2000-01-23T04:56:07.000+00:00
+          roamingStatus: true
+          ratTypesTs: 2000-01-23T04:56:07.000+00:00
+          location:
+            geraLocation:
+              geographicalInformation: geographicalInformation
+              ageOfLocationInformation: 7543
+              cgi:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                cellId: cellId
+                lac: lac
+              lai:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              mscNumber: mscNumber
+              sai:
+                sac: sac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              rai:
+                rac: rac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              vlrNumber: vlrNumber
+              locationNumber: locationNumber
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+            eutraLocation:
+              geographicalInformation: geographicalInformation
+              globalNgenbId:
+                eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 28
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ageOfLocationInformation: 2624
+              ignoreEcgi: false
+              globalENbId:
+                eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 28
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              tai:
+                tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              ignoreTai: false
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+              ecgi:
+                eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            nrLocation:
+              ignoreNcgi: false
+              geographicalInformation: geographicalInformation
+              globalGnbId:
+                eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 28
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ageOfLocationInformation: 4803
+              ncgi:
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tai:
+                tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+            n3gaLocation:
+              ueIpv4Addr: 198.51.100.1
+              twapId:
+                bssId: bssId
+                civicAddress: civicAddress
+                ssId: ssId
+              hfcNodeId:
+                hfcNId: hfcNId
+              protocol: null
+              gli: gli
+              n3gppTai:
+                tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              tnapId:
+                bssId: bssId
+                civicAddress: civicAddress
+                ssId: ssId
+              w5gbanLineType: null
+              ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+              gci: gci
+              n3IwfId: n3IwfId
+              portNumber: 0
+            utraLocation:
+              geographicalInformation: geographicalInformation
+              ageOfLocationInformation: 18471
+              cgi:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                cellId: cellId
+                lac: lac
+              lai:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              sai:
+                sac: sac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              rai:
+                rac: rac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+          connStates:
+          - accessType: null
+            cmState: null
+          - accessType: null
+            cmState: null
+          smsOverNasStatus: null
+          suppFeat: suppFeat
+        ueId: ueId
+      properties:
+        ueId:
+          description: String represents the SUPI or GPSI
+          pattern: "^(imsi-[0-9]{5,15}|nai-.+|msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|gci-.+|gli-.+|.+)$"
+          type: string
+        accessAndMobilityData:
+          $ref: '#/components/schemas/AccessAndMobilityData'
+        pduSessionManagementData:
+          items:
+            $ref: '#/components/schemas/PduSessionManagementData'
+          minItems: 1
+          type: array
+        delResources:
+          items:
+            $ref: '#/components/schemas/Uri'
+          minItems: 1
+          type: array
+      type: object
+    PduSessionStatus:
+      anyOf:
+      - enum:
+        - ACTIVE
+        - RELEASED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - "ACTIVE" - "RELEASED"
+    VarUeId:
+      description: String represents the SUPI or GPSI
+      pattern: "^(imsi-[0-9]{5,15}|nai-.+|msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|gci-.+|gli-.+|.+)$"
+      type: string
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    PduSessionId:
+      description: "Unsigned integer identifying a PDU session, within the range 0\
+        \ to 255, as specified in  clause 11.2.3.1b, bits 1 to 8, of 3GPP TS 24.007.\
+        \ If the PDU Session ID is allocated by the  Core Network for UEs not supporting\
+        \ N1 mode, reserved range 64 to 95 is used. PDU Session ID  within the reserved\
+        \ range is only visible in the Core Network. \n"
+      maximum: 255
+      minimum: 0
+      type: integer
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Prefix:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))(\\\
+          /(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))(\\\
+          /.+)$"
+      description: |
+        String identifying an IPv6 address prefix formatted according to clause 4 of RFC 5952. IPv6Prefix data type may contain an individual /128 IPv6 address.
+      example: 2001:db8:abcd:12::0/64
+      type: string
+    Dnn:
+      description: |
+        String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+      type: string
+    UserLocation:
+      description: |
+        At least one of eutraLocation, nrLocation and n3gaLocation shall be present. Several of them may be present.
+      example:
+        geraLocation:
+          geographicalInformation: geographicalInformation
+          ageOfLocationInformation: 7543
+          cgi:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            cellId: cellId
+            lac: lac
+          lai:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          mscNumber: mscNumber
+          sai:
+            sac: sac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          rai:
+            rac: rac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          vlrNumber: vlrNumber
+          locationNumber: locationNumber
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+        eutraLocation:
+          geographicalInformation: geographicalInformation
+          globalNgenbId:
+            eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 28
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ageOfLocationInformation: 2624
+          ignoreEcgi: false
+          globalENbId:
+            eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 28
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          tai:
+            tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          ignoreTai: false
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+          ecgi:
+            eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+        nrLocation:
+          ignoreNcgi: false
+          geographicalInformation: geographicalInformation
+          globalGnbId:
+            eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 28
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ageOfLocationInformation: 4803
+          ncgi:
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          tai:
+            tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+        n3gaLocation:
+          ueIpv4Addr: 198.51.100.1
+          twapId:
+            bssId: bssId
+            civicAddress: civicAddress
+            ssId: ssId
+          hfcNodeId:
+            hfcNId: hfcNId
+          protocol: null
+          gli: gli
+          n3gppTai:
+            tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          tnapId:
+            bssId: bssId
+            civicAddress: civicAddress
+            ssId: ssId
+          w5gbanLineType: null
+          ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+          gci: gci
+          n3IwfId: n3IwfId
+          portNumber: 0
+        utraLocation:
+          geographicalInformation: geographicalInformation
+          ageOfLocationInformation: 18471
+          cgi:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            cellId: cellId
+            lac: lac
+          lai:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          sai:
+            sac: sac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          rai:
+            rac: rac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+      properties:
+        eutraLocation:
+          $ref: '#/components/schemas/EutraLocation'
+        nrLocation:
+          $ref: '#/components/schemas/NrLocation'
+        n3gaLocation:
+          $ref: '#/components/schemas/N3gaLocation'
+        utraLocation:
+          $ref: '#/components/schemas/UtraLocation'
+        geraLocation:
+          $ref: '#/components/schemas/GeraLocation'
+      type: object
+    EutraLocation:
+      description: Contains the E-UTRA user location.
+      example:
+        geographicalInformation: geographicalInformation
+        globalNgenbId:
+          eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        ageOfLocationInformation: 2624
+        ignoreEcgi: false
+        globalENbId:
+          eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        tai:
+          tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        ignoreTai: false
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+        ecgi:
+          eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+      properties:
+        tai:
+          $ref: '#/components/schemas/Tai'
+        ignoreTai:
+          default: false
+          type: boolean
+        ecgi:
+          $ref: '#/components/schemas/Ecgi'
+        ignoreEcgi:
+          default: false
+          description: |
+            This flag when present shall indicate that the Ecgi shall be ignored When present, it shall be set as follows: - true: ecgi shall be ignored. - false (default): ecgi shall not be ignored.
+          type: boolean
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station.  Value "0" indicates that the location information was obtained after a successful paging procedure for Active Location Retrieval when the UE is in idle mode or after a successful NG-RAN location reporting procedure with the eNB when the UE is in connected mode.  Any other value than "0" indicates that the location information is the last known one.  See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information. See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) [24] clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+        globalNgenbId:
+          $ref: '#/components/schemas/GlobalRanNodeId'
+        globalENbId:
+          $ref: '#/components/schemas/GlobalRanNodeId'
+      required:
+      - ecgi
+      - tai
+      type: object
+    Tai:
+      description: Contains the tracking area identity as described in 3GPP 23.003
+      example:
+        tac: tac
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        tac:
+          description: "2 or 3-octet string identifying a tracking area code as specified\
+            \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation.\
+            \ Each character in the string shall  take a value of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant character representing the 4 most significant bits of the\
+            \ TAC shall  appear first in the string, and the character representing\
+            \ the 4 least significant bit  of the TAC shall appear last in the string.\
+            \ \n"
+          pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - plmnId
+      - tac
+      type: object
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      example:
+        mnc: mnc
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Tac:
+      description: "2 or 3-octet string identifying a tracking area code as specified\
+        \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation. Each\
+        \ character in the string shall  take a value of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the 4 most significant bits of the TAC shall  appear\
+        \ first in the string, and the character representing the 4 least significant\
+        \ bit  of the TAC shall appear last in the string. \n"
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    Ecgi:
+      description: "Contains the ECGI (E-UTRAN Cell Global Identity), as described\
+        \ in 3GPP 23.003"
+      example:
+        eutraCellId: eutraCellId
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        eutraCellId:
+          description: "28-bit string identifying an E-UTRA Cell Id as specified in\
+            \ clause 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each\
+            \ character in the string shall take a  value of \"0\" to \"9\", \"a\"\
+            \ to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most  significant\
+            \ character representing the 4 most significant bits of the Cell Id shall\
+            \ appear  first in the string, and the character representing the 4 least\
+            \ significant bit of the  Cell Id shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]{7}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - eutraCellId
+      - plmnId
+      type: object
+    EutraCellId:
+      description: "28-bit string identifying an E-UTRA Cell Id as specified in clause\
+        \ 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each character\
+        \ in the string shall take a  value of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most  significant character representing\
+        \ the 4 most significant bits of the Cell Id shall appear  first in the string,\
+        \ and the character representing the 4 least significant bit of the  Cell\
+        \ Id shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]{7}$"
+      type: string
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    GlobalRanNodeId:
+      description: |
+        One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present.
+      example:
+        eNbId: eNbId
+        wagfId: wagfId
+        tngfId: tngfId
+        gNbId:
+          bitLength: 28
+          gNBValue: gNBValue
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        n3IwfId: n3IwfId
+        ngeNbId: SMacroNGeNB-34B89
+      oneOf:
+      - required:
+        - n3IwfId
+      - required:
+        - gNbId
+      - required:
+        - ngeNbId
+      - required:
+        - wagfId
+      - required:
+        - tngfId
+      - required:
+        - eNbId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        n3IwfId:
+          description: "This represents the identifier of the N3IWF ID as specified\
+            \ in clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ N3IWF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the N3IWF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        gNbId:
+          $ref: '#/components/schemas/GNbId'
+        ngeNbId:
+          description: "This represents the identifier of the ng-eNB ID as specified\
+            \ in clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall\
+            \ be encoded in hexadecimal representation.  Each character in the string\
+            \ shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"\
+            F\" and  shall represent 4 bits. The padding 0 shall be added to make\
+            \ multiple nibbles, so the most  significant character representing the\
+            \ padding 0 if required together with the 4 most  significant bits of\
+            \ the ng-eNB ID shall appear first in the string, and the character  representing\
+            \ the 4 least significant bit of the ng-eNB ID (to form a nibble) shall\
+            \ appear last  in the string. \n"
+          example: SMacroNGeNB-34B89
+          pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+          type: string
+        wagfId:
+          description: "This represents the identifier of the W-AGF ID as specified\
+            \ in clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ W-AGF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the W-AGF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        tngfId:
+          description: "This represents the identifier of the TNGF ID as specified\
+            \ in clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation.\
+            \ Each character in the string shall take a value of \"0\" to \"9\", \"\
+            a\"  to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+            \ character representing the  4 most significant bits of the TNGF ID shall\
+            \ appear first in the string, and the character  representing the 4 least\
+            \ significant bit of the TNGF ID shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+        eNbId:
+          description: |
+            This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+          pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+          type: string
+      required:
+      - plmnId
+      type: object
+    N3IwfId:
+      description: "This represents the identifier of the N3IWF ID as specified in\
+        \ clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation. Each character\
+        \ in the string shall take a value  of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant  character representing\
+        \ the 4 most significant bits of the N3IWF ID shall appear first in the  string,\
+        \ and the character representing the 4 least significant bit of the N3IWF\
+        \ ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    GNbId:
+      description: Provides the G-NB identifier.
+      example:
+        bitLength: 28
+        gNBValue: gNBValue
+      properties:
+        bitLength:
+          description: |
+            Unsigned integer representing the bit length of the gNB ID as defined in clause 9.3.1.6 of 3GPP TS 38.413 [11], within the range 22 to 32.
+          maximum: 32
+          minimum: 22
+          type: integer
+        gNBValue:
+          description: |
+            This represents the identifier of the gNB. The value of the gNB ID shall be encoded in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The padding 0 shall be added to make multiple nibbles,  the most significant character representing the padding 0 if required together with the 4 most significant bits of the gNB ID shall appear first in the string, and the character representing the 4 least significant bit of the gNB ID shall appear last in the string.
+          pattern: "^[A-Fa-f0-9]{6,8}$"
+          type: string
+      required:
+      - bitLength
+      - gNBValue
+      type: object
+    NgeNbId:
+      description: "This represents the identifier of the ng-eNB ID as specified in\
+        \ clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall be encoded\
+        \ in hexadecimal representation.  Each character in the string shall take\
+        \ a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and  shall represent\
+        \ 4 bits. The padding 0 shall be added to make multiple nibbles, so the most\
+        \  significant character representing the padding 0 if required together with\
+        \ the 4 most  significant bits of the ng-eNB ID shall appear first in the\
+        \ string, and the character  representing the 4 least significant bit of the\
+        \ ng-eNB ID (to form a nibble) shall appear last  in the string. \n"
+      example: SMacroNGeNB-34B89
+      pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+      type: string
+    WAgfId:
+      description: "This represents the identifier of the W-AGF ID as specified in\
+        \ clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation. Each\
+        \ character in the string shall take a value  of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \  character representing the 4 most significant bits of the W-AGF ID shall\
+        \ appear first in the  string, and the character representing the 4 least\
+        \ significant bit of the W-AGF ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    TngfId:
+      description: "This represents the identifier of the TNGF ID as specified in\
+        \ clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation. Each\
+        \ character in the string shall take a value of \"0\" to \"9\", \"a\"  to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the  4 most significant bits of the TNGF ID shall\
+        \ appear first in the string, and the character  representing the 4 least\
+        \ significant bit of the TNGF ID shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    ENbId:
+      description: |
+        This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+      pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+      type: string
+    NrLocation:
+      description: Contains the NR user location.
+      example:
+        ignoreNcgi: false
+        geographicalInformation: geographicalInformation
+        globalGnbId:
+          eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        ageOfLocationInformation: 4803
+        ncgi:
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        tai:
+          tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+      properties:
+        tai:
+          $ref: '#/components/schemas/Tai'
+        ncgi:
+          $ref: '#/components/schemas/Ncgi'
+        ignoreNcgi:
+          default: false
+          type: boolean
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station. Value "0" indicates that the location information was obtained after a successful paging procedure for Active Location Retrieval when the UE is in idle mode or after a successful  NG-RAN location reporting procedure with the eNB when the UE is in connected mode. Any other value than "0" indicates that the location information is the last known one. See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information. See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) [24] clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+        globalGnbId:
+          $ref: '#/components/schemas/GlobalRanNodeId'
+      required:
+      - ncgi
+      - tai
+      type: object
+    Ncgi:
+      description: "Contains the NCGI (NR Cell Global Identity), as described in 3GPP\
+        \ 23.003"
+      example:
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        nrCellId: nrCellId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        nrCellId:
+          description: "36-bit string identifying an NR Cell Id as specified in clause\
+            \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+            \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant character\
+            \  representing the 4 most significant bits of the Cell Id shall appear\
+            \ first in the string, and  the character representing the 4 least significant\
+            \ bit of the Cell Id shall appear last in the  string. \n"
+          pattern: "^[A-Fa-f0-9]{9}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - nrCellId
+      - plmnId
+      type: object
+    NrCellId:
+      description: "36-bit string identifying an NR Cell Id as specified in clause\
+        \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+        \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant character  representing\
+        \ the 4 most significant bits of the Cell Id shall appear first in the string,\
+        \ and  the character representing the 4 least significant bit of the Cell\
+        \ Id shall appear last in the  string. \n"
+      pattern: "^[A-Fa-f0-9]{9}$"
+      type: string
+    N3gaLocation:
+      description: Contains the Non-3GPP access user location.
+      example:
+        ueIpv4Addr: 198.51.100.1
+        twapId:
+          bssId: bssId
+          civicAddress: civicAddress
+          ssId: ssId
+        hfcNodeId:
+          hfcNId: hfcNId
+        protocol: null
+        gli: gli
+        n3gppTai:
+          tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        tnapId:
+          bssId: bssId
+          civicAddress: civicAddress
+          ssId: ssId
+        w5gbanLineType: null
+        ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+        gci: gci
+        n3IwfId: n3IwfId
+        portNumber: 0
+      properties:
+        n3gppTai:
+          $ref: '#/components/schemas/Tai'
+        n3IwfId:
+          description: "This IE shall contain the N3IWF identifier received over NGAP\
+            \ and shall be encoded as a  string of hexadecimal characters. Each character\
+            \ in the string shall take a value of \"0\"  to \"9\", \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant \
+            \ character representing the 4 most significant bits of the N3IWF ID shall\
+            \ appear first in  the string, and the character representing the 4 least\
+            \ significant bit of the N3IWF ID  shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        ueIpv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ueIpv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        protocol:
+          $ref: '#/components/schemas/TransportProtocol'
+        tnapId:
+          $ref: '#/components/schemas/TnapId'
+        twapId:
+          $ref: '#/components/schemas/TwapId'
+        hfcNodeId:
+          $ref: '#/components/schemas/HfcNodeId'
+        gli:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        w5gbanLineType:
+          $ref: '#/components/schemas/LineType'
+        gci:
+          description: |
+            Global Cable Identifier uniquely identifying the connection between the 5G-CRG or FN-CRG to the 5GS. See clause 28.15.4 of 3GPP TS 23.003. This shall be encoded as a string per clause 28.15.4 of 3GPP TS 23.003, and compliant with the syntax specified  in clause 2.2  of IETF RFC 7542 for the username part of a NAI. The GCI value is specified in CableLabs WR-TR-5WWC-ARCH.
+          type: string
+      type: object
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    TransportProtocol:
+      anyOf:
+      - enum:
+        - UDP
+        - TCP
+        type: string
+      - description: "This string provides forward-compatibility with future extensions\
+          \ to the enumeration but is not used to encode content defined in the present\
+          \ version of this API. \n"
+        type: string
+      description: "Possible values are:\n- UDP: User Datagram Protocol.\n- TCP: Transmission\
+        \ Control Protocol. \n"
+    TnapId:
+      description: Contain the TNAP Identifier see clause5.6.2 of 3GPP TS 23.501.
+      example:
+        bssId: bssId
+        civicAddress: civicAddress
+        ssId: ssId
+      properties:
+        ssId:
+          description: "This IE shall be present if the UE is accessing the 5GC via\
+            \ a trusted WLAN access network.When present, it shall contain the SSID\
+            \ of the access point to which the UE is attached, that is received over\
+            \ NGAP,  see IEEE Std 802.11-2012. \n"
+          type: string
+        bssId:
+          description: "When present, it shall contain the BSSID of the access point\
+            \ to which the UE is attached, that is received over NGAP, see IEEE Std\
+            \ 802.11-2012. \n"
+          type: string
+        civicAddress:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+      type: object
+    Bytes:
+      description: string with format 'bytes' as defined in OpenAPI
+      format: byte
+      type: string
+    TwapId:
+      description: |
+        Contain the TWAP Identifier as defined in clause 4.2.8.5.3 of 3GPP TS 23.501 or the WLAN location information as defined in clause 4.5.7.2.8 of 3GPP TS 23.402.
+      example:
+        bssId: bssId
+        civicAddress: civicAddress
+        ssId: ssId
+      properties:
+        ssId:
+          description: "This IE shall contain the SSID of the access point to which\
+            \ the UE is attached, that is received over NGAP, see IEEE Std 802.11-2012.\
+            \ \n"
+          type: string
+        bssId:
+          description: "When present, it shall contain the BSSID of the access point\
+            \ to which the UE is attached, for trusted WLAN access, see IEEE Std 802.11-2012.\
+            \ \n"
+          type: string
+        civicAddress:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+      required:
+      - ssId
+      type: object
+    HfcNodeId:
+      description: REpresents the HFC Node Identifer received over NGAP.
+      example:
+        hfcNId: hfcNId
+      properties:
+        hfcNId:
+          description: |
+            This IE represents the identifier of the HFC node Id as specified in CableLabs WR-TR-5WWC-ARCH. It is provisioned by the wireline operator as part of wireline operations and may contain up to six characters.
+          maxLength: 6
+          type: string
+      required:
+      - hfcNId
+      type: object
+    HfcNId:
+      description: |
+        This IE represents the identifier of the HFC node Id as specified in CableLabs WR-TR-5WWC-ARCH. It is provisioned by the wireline operator as part of wireline operations and may contain up to six characters.
+      maxLength: 6
+      type: string
+    Gli:
+      $ref: '#/components/schemas/Bytes'
+    LineType:
+      anyOf:
+      - enum:
+        - DSL
+        - PON
+        type: string
+      - description: "This string provides forward-compatibility with future extensions\
+          \ to the enumeration but is not used to encode content defined in the present\
+          \ version of this API. \n"
+        type: string
+      description: |
+        Possible values are:
+        - DSL: Identifies a DSL line
+        - PON: Identifies a PON line
+    Gci:
+      description: |
+        Global Cable Identifier uniquely identifying the connection between the 5G-CRG or FN-CRG to the 5GS. See clause 28.15.4 of 3GPP TS 23.003. This shall be encoded as a string per clause 28.15.4 of 3GPP TS 23.003, and compliant with the syntax specified  in clause 2.2  of IETF RFC 7542 for the username part of a NAI. The GCI value is specified in CableLabs WR-TR-5WWC-ARCH.
+      type: string
+    UtraLocation:
+      description: "Exactly one of cgi, sai or lai shall be present."
+      example:
+        geographicalInformation: geographicalInformation
+        ageOfLocationInformation: 18471
+        cgi:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          cellId: cellId
+          lac: lac
+        lai:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        sai:
+          sac: sac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        rai:
+          rac: rac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+      oneOf:
+      - required:
+        - cgi
+      - required:
+        - sai
+      - required:
+        - rai
+      properties:
+        cgi:
+          $ref: '#/components/schemas/CellGlobalId'
+        sai:
+          $ref: '#/components/schemas/ServiceAreaId'
+        lai:
+          $ref: '#/components/schemas/LocationAreaId'
+        rai:
+          $ref: '#/components/schemas/RoutingAreaId'
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station.  Value "0" indicates that the location information was obtained after a successful paging procedure for  Active Location Retrieval when the UE is in idle mode
+             or after a successful location reporting procedure  the UE is in connected mode. Any
+            other value than "0" indicates that the location information is the last known one.  See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information.See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+      type: object
+    CellGlobalId:
+      description: "Contains a Cell Global Identification as defined in 3GPP TS 23.003,\
+        \ clause 4.3.1."
+      example:
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        cellId: cellId
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+        cellId:
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+      required:
+      - cellId
+      - lac
+      - plmnId
+      type: object
+    ServiceAreaId:
+      description: "Contains a Service Area Identifier as defined in 3GPP TS 23.003,\
+        \ clause 12.5."
+      example:
+        sac: sac
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          description: Location Area Code.
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+        sac:
+          description: Service Area Code.
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+      required:
+      - lac
+      - plmnId
+      - sac
+      type: object
+    LocationAreaId:
+      description: "Contains a Location area identification as defined in 3GPP TS\
+        \ 23.003, clause 4.1."
+      example:
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          description: Location Area Code.
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+      required:
+      - lac
+      - plmnId
+      type: object
+    RoutingAreaId:
+      description: "Contains a Routing Area Identification as defined in 3GPP TS 23.003,\
+        \ clause 4.2."
+      example:
+        rac: rac
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          description: Location Area Code
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+        rac:
+          description: Routing Area Code
+          pattern: "^[A-Fa-f0-9]{2}$"
+          type: string
+      required:
+      - lac
+      - plmnId
+      - rac
+      type: object
+    GeraLocation:
+      description: "Exactly one of cgi, sai or lai shall be present."
+      example:
+        geographicalInformation: geographicalInformation
+        ageOfLocationInformation: 7543
+        cgi:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          cellId: cellId
+          lac: lac
+        lai:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        mscNumber: mscNumber
+        sai:
+          sac: sac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        rai:
+          rac: rac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        vlrNumber: vlrNumber
+        locationNumber: locationNumber
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+      oneOf:
+      - required:
+        - cgi
+      - required:
+        - sai
+      - required:
+        - lai
+      - required:
+        - rai
+      properties:
+        locationNumber:
+          description: "Location number within the PLMN. See 3GPP TS 23.003, clause\
+            \ 4.5."
+          type: string
+        cgi:
+          $ref: '#/components/schemas/CellGlobalId'
+        rai:
+          $ref: '#/components/schemas/RoutingAreaId'
+        sai:
+          $ref: '#/components/schemas/ServiceAreaId'
+        lai:
+          $ref: '#/components/schemas/LocationAreaId'
+        vlrNumber:
+          description: VLR number. See 3GPP TS 23.003 clause 5.1.
+          type: string
+        mscNumber:
+          description: MSC number. See 3GPP TS 23.003 clause 5.1.
+          type: string
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station. Value "0" indicates that the location information was obtained after a successful paging procedure for  Active Location Retrieval when the UE is in idle mode or after a successful location reporting procedure the UE is in connected mode. Any other value than "0" indicates that the location information is the last known one. See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information.See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location.See ITU-T Recommendation Q.763 (1999) clause 3.88.2.  Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+      type: object
+    TimeZone:
+      description: "String with format \"time-numoffset\" optionally appended by \"\
+        daylightSavingTime\", where \n- \"time-numoffset\" shall represent the time\
+        \ zone adjusted for daylight saving time and be\n   encoded as time-numoffset\
+        \ as defined in clause\_5.6 of IETF RFC 3339; \n- \"daylightSavingTime\" shall\
+        \ represent the adjustment that has been made and shall be\n   encoded as\
+        \ \"+1\" or \"+2\" for a +1 or +2 hours adjustment. \n\nThe example is for\
+        \ 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.\n"
+      example: -08:00+1
+      type: string
+    AccessType:
+      description: Indicates whether the access is  via 3GPP or via non-3GPP.
+      enum:
+      - 3GPP_ACCESS
+      - NON_3GPP_ACCESS
+      type: string
+    RmInfo:
+      description: Represents the registration state of a UE for an access type
+      example:
+        accessType: null
+        rmState: null
+      properties:
+        rmState:
+          $ref: '#/components/schemas/RmState'
+        accessType:
+          $ref: '#/components/schemas/AccessType'
+      required:
+      - accessType
+      - rmState
+      type: object
+    RmState:
+      anyOf:
+      - enum:
+        - REGISTERED
+        - DEREGISTERED
+        type: string
+      - type: string
+      description: Describes the registration management state of a UE
+    CmInfo:
+      description: Represents the connection management state of a UE for an access
+        type
+      example:
+        accessType: null
+        cmState: null
+      properties:
+        cmState:
+          $ref: '#/components/schemas/CmState'
+        accessType:
+          $ref: '#/components/schemas/AccessType'
+      required:
+      - accessType
+      - cmState
+      type: object
+    CmState:
+      anyOf:
+      - enum:
+        - IDLE
+        - CONNECTED
+        type: string
+      - type: string
+      description: Describes the connection management state of a UE
+    UeReachability:
+      anyOf:
+      - enum:
+        - UNREACHABLE
+        - REACHABLE
+        - REGULATORY_ONLY
+        type: string
+      - type: string
+      description: Describes the reachability of the UE
+    SmsSupport:
+      anyOf:
+      - enum:
+        - 3GPP
+        - NON_3GPP
+        - BOTH
+        - NONE
+        type: string
+      - type: string
+      description: Indicates the supported SMS delivery of a UE
+    RatType:
+      anyOf:
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
+      - type: string
+      description: Indicates the radio access used.
+    Dnai:
+      description: "DNAI (Data network access identifier), see clause 5.6.7 of 3GPP\
+        \ TS 23.501."
+      type: string
+    RouteToLocation:
+      anyOf:
+      - required:
+        - routeInfo
+      - required:
+        - routeProfId
+      description: |
+        At least one of the "routeInfo" attribute and the "routeProfId" attribute shall be included in the "RouteToLocation" data type.
+      example:
+        dnai: dnai
+        routeInfo:
+          ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          portNumber: 0
+        routeProfId: routeProfId
+      nullable: true
+      properties:
+        dnai:
+          description: "DNAI (Data network access identifier), see clause 5.6.7 of\
+            \ 3GPP TS 23.501."
+          type: string
+        routeInfo:
+          $ref: '#/components/schemas/RouteInformation'
+        routeProfId:
+          description: Identifies the routing profile Id.
+          nullable: true
+          type: string
+      required:
+      - dnai
+      type: object
+    RouteInformation:
+      description: "At least one of the \"ipv4Addr\" attribute and the \"ipv6Addr\"\
+        \ attribute shall be included in the \"RouteInformation\" data type. \n"
+      example:
+        ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+        ipv4Addr: 198.51.100.1
+        portNumber: 0
+      nullable: true
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      required:
+      - portNumber
+      type: object
+    PduSessionType:
+      anyOf:
+      - enum:
+        - IPV4
+        - IPV6
+        - IPV4V6
+        - UNSTRUCTURED
+        - ETHERNET
+        type: string
+      - type: string
+      description: "PduSessionType indicates the type of a PDU session. It shall comply\
+        \ with the provisions defined in table 5.4.3.3-1. \n"
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string

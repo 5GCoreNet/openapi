@@ -1,0 +1,1201 @@
+openapi: 3.0.0
+info:
+  description: "API for UE updated location information notification.  \n© 2022, 3GPP\
+    \ Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights\
+    \ reserved.\n"
+  title: 3gpp-mo-lcs-notify
+  version: 1.1.1
+externalDocs:
+  description: |
+    3GPP TS 29.522 V17.7.0; 5G System; Network Exposure Function Northbound APIs.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.522/
+servers:
+- url: "{apiRoot}/3gpp-mo-lcs-notify/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122.
+security:
+- {}
+- oAuth2ClientCredentials: []
+paths:
+  /:
+    post:
+      operationId: UELocationNotify
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocUpdateData'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocUpdateDataReply'
+          description: Success
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: UE location information update notification
+      tags:
+      - AF level UE location update notification operation
+components:
+  responses:
+    "307":
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "308":
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+  schemas:
+    LocUpdateData:
+      description: Represents a UE updated location information.
+      example:
+        svcId: svcId
+        lcsQosClass: null
+        locInfo:
+          ldrType: null
+          geographicArea: null
+          qosFulfilInd: null
+          achievedQos:
+            hAccuracy: 0.6027456
+            vAccuracy: 0.14658129
+          twanId: twanId
+          ageOfLocationInfo: 0
+          enodeBId: enodeBId
+          cellId: cellId
+          routingAreaId: routingAreaId
+          positionMethod: null
+          ueVelocity: null
+          civicAddress:
+            POBOX: POBOX
+            usageRules: usageRules
+            country: country
+            PRD: PRD
+            PLC: PLC
+            HNO: HNO
+            PRM: PRM
+            HNS: HNS
+            FLR: FLR
+            A1: A1
+            A2: A2
+            A3: A3
+            A4: A4
+            STS: STS
+            A5: A5
+            A6: A6
+            RDSEC: RDSEC
+            providedBy: providedBy
+            LOC: LOC
+            UNIT: UNIT
+            SEAT: SEAT
+            POD: POD
+            RDBR: RDBR
+            method: method
+            LMK: LMK
+            POM: POM
+            ADDCODE: ADDCODE
+            RD: RD
+            PC: PC
+            PCN: PCN
+            NAM: NAM
+            BLD: BLD
+            ROOM: ROOM
+            RDSUBBR: RDSUBBR
+          plmnId: plmnId
+          trackingAreaId: trackingAreaId
+        suppFeat: suppFeat
+        gpsi: gpsi
+      properties:
+        gpsi:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        locInfo:
+          $ref: '#/components/schemas/LocationInfo'
+        lcsQosClass:
+          $ref: '#/components/schemas/LcsQosClass'
+        svcId:
+          description: Contains the service identity
+          type: string
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - gpsi
+      - lcsQosClass
+      - locInfo
+      - suppFeat
+      type: object
+    LocUpdateDataReply:
+      description: Represents a reply to a MO LCS notification.
+      example:
+        suppFeat: suppFeat
+      properties:
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - suppFeat
+      type: object
+    ProblemDetails:
+      description: Represents additional information and details on an error response.
+      properties:
+        type:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        title:
+          description: "A short, human-readable summary of the problem type. It should\
+            \ not change from occurrence to occurrence of the problem."
+          type: string
+        status:
+          description: The HTTP status code for this occurrence of the problem.
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        cause:
+          description: "A machine-readable application error cause specific to this\
+            \ occurrence of the problem. This IE should be present and provide application-related\
+            \ error information, if available."
+          type: string
+        invalidParams:
+          description: "Description of invalid parameters, for a request rejected\
+            \ due to invalid parameters."
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    Uri:
+      description: string providing an URI formatted according to IETF RFC 3986.
+      type: string
+    InvalidParam:
+      description: "Represents the description of invalid parameters, for a request\
+        \ rejected due to invalid parameters."
+      properties:
+        param:
+          description: "Attribute's name encoded as a JSON Pointer, or header's name."
+          type: string
+        reason:
+          description: "A human-readable reason, e.g. \"must be a positive integer\"\
+            ."
+          type: string
+      required:
+      - param
+      type: object
+    Gpsi:
+      description: "String identifying a Gpsi shall contain either an External Id\
+        \ or an MSISDN.  It shall be formatted as follows -External Identifier= \"\
+        extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2\
+        \ of 3GPP TS 23.003 that describes an  External Identifier. \n"
+      pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+      type: string
+    LocationInfo:
+      description: Represents the user location information.
+      example:
+        ldrType: null
+        geographicArea: null
+        qosFulfilInd: null
+        achievedQos:
+          hAccuracy: 0.6027456
+          vAccuracy: 0.14658129
+        twanId: twanId
+        ageOfLocationInfo: 0
+        enodeBId: enodeBId
+        cellId: cellId
+        routingAreaId: routingAreaId
+        positionMethod: null
+        ueVelocity: null
+        civicAddress:
+          POBOX: POBOX
+          usageRules: usageRules
+          country: country
+          PRD: PRD
+          PLC: PLC
+          HNO: HNO
+          PRM: PRM
+          HNS: HNS
+          FLR: FLR
+          A1: A1
+          A2: A2
+          A3: A3
+          A4: A4
+          STS: STS
+          A5: A5
+          A6: A6
+          RDSEC: RDSEC
+          providedBy: providedBy
+          LOC: LOC
+          UNIT: UNIT
+          SEAT: SEAT
+          POD: POD
+          RDBR: RDBR
+          method: method
+          LMK: LMK
+          POM: POM
+          ADDCODE: ADDCODE
+          RD: RD
+          PC: PC
+          PCN: PCN
+          NAM: NAM
+          BLD: BLD
+          ROOM: ROOM
+          RDSUBBR: RDSUBBR
+        plmnId: plmnId
+        trackingAreaId: trackingAreaId
+      properties:
+        ageOfLocationInfo:
+          description: Unsigned integer identifying a period of time in units of minutes.
+          format: int32
+          minimum: 0
+          type: integer
+        cellId:
+          description: Indicates the Cell Global Identification of the user which
+            identifies the cell the UE is registered.
+          type: string
+        enodeBId:
+          description: Indicates the eNodeB in which the UE is currently located.
+          type: string
+        routingAreaId:
+          description: Identifies the Routing Area Identity of the user where the
+            UE is located.
+          type: string
+        trackingAreaId:
+          description: Identifies the Tracking Area Identity of the user where the
+            UE is located.
+          type: string
+        plmnId:
+          description: Identifies the PLMN Identity of the user where the UE is located.
+          type: string
+        twanId:
+          description: Identifies the TWAN Identity of the user where the UE is located.
+          type: string
+        geographicArea:
+          $ref: '#/components/schemas/GeographicArea'
+        civicAddress:
+          $ref: '#/components/schemas/CivicAddress'
+        positionMethod:
+          $ref: '#/components/schemas/PositioningMethod'
+        qosFulfilInd:
+          $ref: '#/components/schemas/AccuracyFulfilmentIndicator'
+        ueVelocity:
+          $ref: '#/components/schemas/VelocityEstimate'
+        ldrType:
+          $ref: '#/components/schemas/LdrType'
+        achievedQos:
+          $ref: '#/components/schemas/MinorLocationQoS'
+      type: object
+    LcsQosClass:
+      anyOf:
+      - enum:
+        - BEST_EFFORT
+        - ASSURED
+        - MULTIPLE_QOS
+        type: string
+      - type: string
+      description: Specifies LCS QoS class.
+    ServiceIdentity:
+      description: Contains the service identity
+      type: string
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    DurationMin:
+      description: Unsigned integer identifying a period of time in units of minutes.
+      format: int32
+      minimum: 0
+      type: integer
+    GeographicArea:
+      anyOf:
+      - $ref: '#/components/schemas/Point'
+      - $ref: '#/components/schemas/PointUncertaintyCircle'
+      - $ref: '#/components/schemas/PointUncertaintyEllipse'
+      - $ref: '#/components/schemas/Polygon'
+      - $ref: '#/components/schemas/PointAltitude'
+      - $ref: '#/components/schemas/PointAltitudeUncertainty'
+      - $ref: '#/components/schemas/EllipsoidArc'
+      description: Geographic area specified by different shape.
+    Point:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Point_allOf'
+      description: Ellipsoid Point.
+    GADShape:
+      description: Common base type for GAD shapes.
+      discriminator:
+        mapping:
+          POINT: '#/components/schemas/Point'
+          POINT_UNCERTAINTY_CIRCLE: '#/components/schemas/PointUncertaintyCircle'
+          POINT_UNCERTAINTY_ELLIPSE: '#/components/schemas/PointUncertaintyEllipse'
+          POLYGON: '#/components/schemas/Polygon'
+          POINT_ALTITUDE: '#/components/schemas/PointAltitude'
+          POINT_ALTITUDE_UNCERTAINTY: '#/components/schemas/PointAltitudeUncertainty'
+          ELLIPSOID_ARC: '#/components/schemas/EllipsoidArc'
+          LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE: '#/components/schemas/Local2dPointUncertaintyEllipse'
+          LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID: '#/components/schemas/Local3dPointUncertaintyEllipsoid'
+        propertyName: shape
+      properties:
+        shape:
+          $ref: '#/components/schemas/SupportedGADShapes'
+      required:
+      - shape
+      type: object
+    SupportedGADShapes:
+      anyOf:
+      - enum:
+        - POINT
+        - POINT_UNCERTAINTY_CIRCLE
+        - POINT_UNCERTAINTY_ELLIPSE
+        - POLYGON
+        - POINT_ALTITUDE
+        - POINT_ALTITUDE_UNCERTAINTY
+        - ELLIPSOID_ARC
+        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+        type: string
+      - type: string
+      description: Indicates supported GAD shapes.
+    PointUncertaintyCircle:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointUncertaintyCircle_allOf'
+      description: Ellipsoid point with uncertainty circle.
+    GeographicalCoordinates:
+      description: Geographical coordinates.
+      properties:
+        lon:
+          format: double
+          maximum: 180
+          minimum: -180
+          type: number
+        lat:
+          format: double
+          maximum: 90
+          minimum: -90
+          type: number
+      required:
+      - lat
+      - lon
+      type: object
+    Uncertainty:
+      description: Indicates value of uncertainty.
+      format: float
+      minimum: 0
+      type: number
+    PointUncertaintyEllipse:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointUncertaintyEllipse_allOf'
+      description: Ellipsoid point with uncertainty ellipse.
+    UncertaintyEllipse:
+      description: Ellipse with uncertainty.
+      properties:
+        semiMajor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        semiMinor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        orientationMajor:
+          description: Indicates value of orientation angle.
+          maximum: 180
+          minimum: 0
+          type: integer
+      required:
+      - orientationMajor
+      - semiMajor
+      - semiMinor
+      type: object
+    Orientation:
+      description: Indicates value of orientation angle.
+      maximum: 180
+      minimum: 0
+      type: integer
+    Confidence:
+      description: Indicates value of confidence.
+      maximum: 100
+      minimum: 0
+      type: integer
+    Polygon:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Polygon_allOf'
+      description: Polygon.
+    PointList:
+      description: List of points.
+      items:
+        $ref: '#/components/schemas/GeographicalCoordinates'
+      maxItems: 15
+      minItems: 3
+      type: array
+    PointAltitude:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointAltitude_allOf'
+      description: Ellipsoid point with altitude.
+    Altitude:
+      description: Indicates value of altitude.
+      format: double
+      maximum: 32767
+      minimum: -32767
+      type: number
+    PointAltitudeUncertainty:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/PointAltitudeUncertainty_allOf'
+      description: Ellipsoid point with altitude and uncertainty ellipsoid.
+    EllipsoidArc:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/EllipsoidArc_allOf'
+      description: Ellipsoid Arc.
+    InnerRadius:
+      description: Indicates value of the inner radius.
+      format: int32
+      maximum: 327675
+      minimum: 0
+      type: integer
+    Angle:
+      description: Indicates value of angle.
+      maximum: 360
+      minimum: 0
+      type: integer
+    Local2dPointUncertaintyEllipse:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Local2dPointUncertaintyEllipse_allOf'
+      description: Local 2D point with uncertainty ellipse
+    LocalOrigin:
+      description: Indicates a Local origin in a reference system
+      properties:
+        coordinateId:
+          type: string
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+      type: object
+    RelativeCartesianLocation:
+      description: Relative Cartesian Location
+      properties:
+        x:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        "y":
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        z:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+      required:
+      - x
+      - "y"
+      type: object
+    Local3dPointUncertaintyEllipsoid:
+      allOf:
+      - $ref: '#/components/schemas/GADShape'
+      - $ref: '#/components/schemas/Local3dPointUncertaintyEllipsoid_allOf'
+      description: Local 3D point with uncertainty ellipsoid
+    UncertaintyEllipsoid:
+      description: Ellipsoid with uncertainty
+      properties:
+        semiMajor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        semiMinor:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        vertical:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        orientationMajor:
+          description: Indicates value of orientation angle.
+          maximum: 180
+          minimum: 0
+          type: integer
+      required:
+      - orientationMajor
+      - semiMajor
+      - semiMinor
+      - vertical
+      type: object
+    CivicAddress:
+      description: Indicates a Civic address.
+      example:
+        POBOX: POBOX
+        usageRules: usageRules
+        country: country
+        PRD: PRD
+        PLC: PLC
+        HNO: HNO
+        PRM: PRM
+        HNS: HNS
+        FLR: FLR
+        A1: A1
+        A2: A2
+        A3: A3
+        A4: A4
+        STS: STS
+        A5: A5
+        A6: A6
+        RDSEC: RDSEC
+        providedBy: providedBy
+        LOC: LOC
+        UNIT: UNIT
+        SEAT: SEAT
+        POD: POD
+        RDBR: RDBR
+        method: method
+        LMK: LMK
+        POM: POM
+        ADDCODE: ADDCODE
+        RD: RD
+        PC: PC
+        PCN: PCN
+        NAM: NAM
+        BLD: BLD
+        ROOM: ROOM
+        RDSUBBR: RDSUBBR
+      properties:
+        country:
+          type: string
+        A1:
+          type: string
+        A2:
+          type: string
+        A3:
+          type: string
+        A4:
+          type: string
+        A5:
+          type: string
+        A6:
+          type: string
+        PRD:
+          type: string
+        POD:
+          type: string
+        STS:
+          type: string
+        HNO:
+          type: string
+        HNS:
+          type: string
+        LMK:
+          type: string
+        LOC:
+          type: string
+        NAM:
+          type: string
+        PC:
+          type: string
+        BLD:
+          type: string
+        UNIT:
+          type: string
+        FLR:
+          type: string
+        ROOM:
+          type: string
+        PLC:
+          type: string
+        PCN:
+          type: string
+        POBOX:
+          type: string
+        ADDCODE:
+          type: string
+        SEAT:
+          type: string
+        RD:
+          type: string
+        RDSEC:
+          type: string
+        RDBR:
+          type: string
+        RDSUBBR:
+          type: string
+        PRM:
+          type: string
+        POM:
+          type: string
+        usageRules:
+          type: string
+        method:
+          type: string
+        providedBy:
+          type: string
+      type: object
+    PositioningMethod:
+      anyOf:
+      - enum:
+        - CELLID
+        - ECID
+        - OTDOA
+        - BAROMETRIC_PRESSURE
+        - WLAN
+        - BLUETOOTH
+        - MBS
+        - MOTION_SENSOR
+        - DL_TDOA
+        - DL_AOD
+        - MULTI-RTT
+        - NR_ECID
+        - UL_TDOA
+        - UL_AOA
+        - NETWORK_SPECIFIC
+        type: string
+      - type: string
+      description: Indicates supported positioning methods.
+    AccuracyFulfilmentIndicator:
+      anyOf:
+      - enum:
+        - REQUESTED_ACCURACY_FULFILLED
+        - REQUESTED_ACCURACY_NOT_FULFILLED
+        type: string
+      - type: string
+      description: Indicates fulfilment of requested accuracy.
+    VelocityEstimate:
+      description: Velocity estimate.
+      oneOf:
+      - $ref: '#/components/schemas/HorizontalVelocity'
+      - $ref: '#/components/schemas/HorizontalWithVerticalVelocity'
+      - $ref: '#/components/schemas/HorizontalVelocityWithUncertainty'
+      - $ref: '#/components/schemas/HorizontalWithVerticalVelocityAndUncertainty'
+    HorizontalVelocity:
+      description: Horizontal velocity.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+      required:
+      - bearing
+      - hSpeed
+      type: object
+    HorizontalSpeed:
+      description: Indicates value of horizontal speed.
+      format: float
+      maximum: 2047
+      minimum: 0
+      type: number
+    HorizontalWithVerticalVelocity:
+      description: Horizontal and vertical velocity.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        vSpeed:
+          description: Indicates value of vertical speed.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+        vDirection:
+          $ref: '#/components/schemas/VerticalDirection'
+      required:
+      - bearing
+      - hSpeed
+      - vDirection
+      - vSpeed
+      type: object
+    VerticalSpeed:
+      description: Indicates value of vertical speed.
+      format: float
+      maximum: 255
+      minimum: 0
+      type: number
+    VerticalDirection:
+      description: Indicates direction of vertical speed.
+      enum:
+      - UPWARD
+      - DOWNWARD
+      type: string
+    HorizontalVelocityWithUncertainty:
+      description: Horizontal velocity with speed uncertainty.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        hUncertainty:
+          description: Indicates value of speed uncertainty.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+      required:
+      - bearing
+      - hSpeed
+      - hUncertainty
+      type: object
+    SpeedUncertainty:
+      description: Indicates value of speed uncertainty.
+      format: float
+      maximum: 255
+      minimum: 0
+      type: number
+    HorizontalWithVerticalVelocityAndUncertainty:
+      description: Horizontal and vertical velocity with speed uncertainty.
+      properties:
+        hSpeed:
+          description: Indicates value of horizontal speed.
+          format: float
+          maximum: 2047
+          minimum: 0
+          type: number
+        bearing:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        vSpeed:
+          description: Indicates value of vertical speed.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+        vDirection:
+          $ref: '#/components/schemas/VerticalDirection'
+        hUncertainty:
+          description: Indicates value of speed uncertainty.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+        vUncertainty:
+          description: Indicates value of speed uncertainty.
+          format: float
+          maximum: 255
+          minimum: 0
+          type: number
+      required:
+      - bearing
+      - hSpeed
+      - hUncertainty
+      - vDirection
+      - vSpeed
+      - vUncertainty
+      type: object
+    LdrType:
+      anyOf:
+      - enum:
+        - UE_AVAILABLE
+        - PERIODIC
+        - ENTERING_INTO_AREA
+        - LEAVING_FROM_AREA
+        - BEING_INSIDE_AREA
+        - MOTION
+        type: string
+      - type: string
+      description: Indicates LDR types.
+    MinorLocationQoS:
+      description: Contain Minor Location QoS.
+      example:
+        hAccuracy: 0.6027456
+        vAccuracy: 0.14658129
+      properties:
+        hAccuracy:
+          description: Indicates value of accuracy.
+          format: float
+          minimum: 0
+          type: number
+        vAccuracy:
+          description: Indicates value of accuracy.
+          format: float
+          minimum: 0
+          type: number
+      type: object
+    Accuracy:
+      description: Indicates value of accuracy.
+      format: float
+      minimum: 0
+      type: number
+    Float:
+      description: string with format 'float' as defined in OpenAPI.
+      format: float
+      type: number
+    Point_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+      required:
+      - point
+      type: object
+      example: null
+    PointUncertaintyCircle_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        uncertainty:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+      required:
+      - point
+      - uncertainty
+      type: object
+      example: null
+    PointUncertaintyEllipse_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        uncertaintyEllipse:
+          $ref: '#/components/schemas/UncertaintyEllipse'
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - point
+      - uncertaintyEllipse
+      type: object
+      example: null
+    Polygon_allOf:
+      properties:
+        pointList:
+          description: List of points.
+          items:
+            $ref: '#/components/schemas/GeographicalCoordinates'
+          maxItems: 15
+          minItems: 3
+          type: array
+      required:
+      - pointList
+      type: object
+      example: null
+    PointAltitude_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        altitude:
+          description: Indicates value of altitude.
+          format: double
+          maximum: 32767
+          minimum: -32767
+          type: number
+      required:
+      - altitude
+      - point
+      type: object
+      example: null
+    PointAltitudeUncertainty_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        altitude:
+          description: Indicates value of altitude.
+          format: double
+          maximum: 32767
+          minimum: -32767
+          type: number
+        uncertaintyEllipse:
+          $ref: '#/components/schemas/UncertaintyEllipse'
+        uncertaintyAltitude:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - altitude
+      - confidence
+      - point
+      - uncertaintyAltitude
+      - uncertaintyEllipse
+      type: object
+      example: null
+    EllipsoidArc_allOf:
+      properties:
+        point:
+          $ref: '#/components/schemas/GeographicalCoordinates'
+        innerRadius:
+          description: Indicates value of the inner radius.
+          format: int32
+          maximum: 327675
+          minimum: 0
+          type: integer
+        uncertaintyRadius:
+          description: Indicates value of uncertainty.
+          format: float
+          minimum: 0
+          type: number
+        offsetAngle:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        includedAngle:
+          description: Indicates value of angle.
+          maximum: 360
+          minimum: 0
+          type: integer
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - includedAngle
+      - innerRadius
+      - offsetAngle
+      - point
+      - uncertaintyRadius
+      type: object
+      example: null
+    Local2dPointUncertaintyEllipse_allOf:
+      properties:
+        localOrigin:
+          $ref: '#/components/schemas/LocalOrigin'
+        point:
+          $ref: '#/components/schemas/RelativeCartesianLocation'
+        uncertaintyEllipse:
+          $ref: '#/components/schemas/UncertaintyEllipse'
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - localOrigin
+      - point
+      - uncertaintyEllipse
+      type: object
+      example: null
+    Local3dPointUncertaintyEllipsoid_allOf:
+      properties:
+        localOrigin:
+          $ref: '#/components/schemas/LocalOrigin'
+        point:
+          $ref: '#/components/schemas/RelativeCartesianLocation'
+        uncertaintyEllipsoid:
+          $ref: '#/components/schemas/UncertaintyEllipsoid'
+        confidence:
+          description: Indicates value of confidence.
+          maximum: 100
+          minimum: 0
+          type: integer
+      required:
+      - confidence
+      - localOrigin
+      - point
+      - uncertaintyEllipsoid
+      type: object
+      example: null
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: "{tokenUrl}"
+      type: oauth2

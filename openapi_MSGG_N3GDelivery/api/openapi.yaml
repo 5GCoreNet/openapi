@@ -1,0 +1,762 @@
+openapi: 3.0.0
+info:
+  description: "API for MSGG N3G Message Delivery Service.  \n© 2022, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: MSGG_N3GDelivery
+  version: 1.0.0
+externalDocs:
+  description: |
+    3GPP TS 29.538 V17.1.0; Enabling MSGin5G Service; Application Programming Interfaces (API) specification; Stage 3
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.538/
+servers:
+- url: "{apiRoot}/msgg-n3gdelivery/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials:
+  - msgg-n3gdelivery
+paths:
+  /deliver-message:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/N3gMessageDelivery'
+        required: true
+      responses:
+        "204":
+          description: "No Content,Message delivery successful"
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: deliver message to NON-3GPP Message Gateway
+      tags:
+      - N3G Message delivery
+  /deliver-report:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryStatusReport'
+        required: true
+      responses:
+        "204":
+          description: "No Content, status report delivery successfully"
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: deliver status report to NON-3GPP Message Gateway
+      tags:
+      - N3G status report delivery
+components:
+  responses:
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+  schemas:
+    N3gMessageDelivery:
+      description: N3G message delivery data
+      example:
+        oriAddr:
+          addr: addr
+          addrType: null
+        payload: payload
+        segInd: true
+        appId: appId
+        msgId: msgId
+        destAddr:
+          addr: addr
+          addrType: null
+        delivStReqInd: true
+        segParams:
+          segId: segId
+          segNumb: 6
+          totalSegCount: 0
+          lastSegFlag: true
+      properties:
+        oriAddr:
+          $ref: '#/components/schemas/Address'
+        destAddr:
+          $ref: '#/components/schemas/Address'
+        appId:
+          type: string
+        msgId:
+          type: string
+        delivStReqInd:
+          type: boolean
+        payload:
+          type: string
+        segInd:
+          type: boolean
+        segParams:
+          $ref: '#/components/schemas/MessageSegmentParameters'
+      required:
+      - destAddr
+      - msgId
+      - oriAddr
+      type: object
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    DeliveryStatusReport:
+      description: Contains the delivery status report data
+      example:
+        oriAddr:
+          addr: addr
+          addrType: null
+        delivSt: null
+        secCred: secCred
+        msgId: msgId
+        destAddr:
+          addr: addr
+          addrType: null
+        failureCause: failureCause
+      properties:
+        oriAddr:
+          $ref: '#/components/schemas/Address'
+        destAddr:
+          $ref: '#/components/schemas/Address'
+        msgId:
+          type: string
+        secCred:
+          type: string
+        failureCause:
+          type: string
+        delivSt:
+          $ref: '#/components/schemas/ReportDeliveryStatus'
+      required:
+      - delivSt
+      - destAddr
+      - msgId
+      - oriAddr
+      type: object
+    ReportDeliveryStatus:
+      anyOf:
+      - enum:
+        - REPT_DELY_SUCCESS
+        - REPT_DELY_FAILED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - REPT_DELY_SUCCESS: Indicates that the report delivery is successful.
+        - REPT_DELY_FAILED: Indicates that the report delivery is failed.
+    Address:
+      description: Contains the Message type data
+      example:
+        addr: addr
+        addrType: null
+      properties:
+        addrType:
+          $ref: '#/components/schemas/AddressType'
+        addr:
+          type: string
+      required:
+      - addr
+      - addrType
+      type: object
+    AddressType:
+      anyOf:
+      - enum:
+        - UE
+        - AS
+        - GROUP
+        - BC
+        - TOPIC
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - UE: The address type is UE.
+        - AS: The address type is AS.
+        - GROUP: The address type is GROUP.
+        - BC: The address type is BC.
+        - TOPIC: The address type is TOPIC.
+    MessageSegmentParameters:
+      description: Contains the message segment parameters data
+      example:
+        segId: segId
+        segNumb: 6
+        totalSegCount: 0
+        lastSegFlag: true
+      properties:
+        segId:
+          type: string
+        totalSegCount:
+          type: integer
+        segNumb:
+          type: integer
+        lastSegFlag:
+          type: boolean
+      type: object
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            msgg-n3gdelivery: Access to the MSGG_N3GDelivery API
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

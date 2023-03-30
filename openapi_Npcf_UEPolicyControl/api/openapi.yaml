@@ -1,0 +1,4340 @@
+openapi: 3.0.0
+info:
+  description: "UE Policy Control Service.  \n© 2022, 3GPP Organizational Partners\
+    \ (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: Npcf_UEPolicyControl
+  version: 1.3.0-alpha.1
+externalDocs:
+  description: 3GPP TS 29.525 V18.0.0; 5G System; UE Policy Control Service.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.525/
+servers:
+- url: "{apiRoot}/npcf-ue-policy-control/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials:
+  - npcf-ue-policy-control
+paths:
+  /policies:
+    post:
+      callbacks:
+        policyUpdateNotification:
+          '{$request.body#/notificationUri}/update':
+            post:
+              operationId: policyUpdateNotification_UpdatePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/PolicyUpdate'
+                required: true
+              responses:
+                "200":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/UeRequestedValueRep'
+                  description: |
+                    OK. The current applicable values corresponding to the policy control request trigger is reported
+                "204":
+                  description: "No Content, Notification was successful"
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+        policyAssocitionTerminationRequestNotification:
+          '{$request.body#/notificationUri}/terminate':
+            post:
+              operationId: policyAssocitionTerminationRequestNotification_TerminatePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/TerminationNotification'
+                required: true
+              responses:
+                "204":
+                  description: "No Content, Notification was successful"
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+      operationId: CreateIndividualUEPolicyAssociation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyAssociationRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyAssociation'
+          description: Created
+          headers:
+            Location:
+              description: |
+                Contains the URI of the newly created resource, according to the structure {apiRoot}/npcf-ue-policy-control/v1/policies/{polAssoId}'
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Create individual UE policy association.
+      tags:
+      - UE Policy Associations (Collection)
+  /policies/{polAssoId}:
+    delete:
+      operationId: DeleteIndividualUEPolicyAssociation
+      parameters:
+      - description: Identifier of a policy association
+        explode: false
+        in: path
+        name: polAssoId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content. Resource was successfully deleted
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Delete individual UE policy association.
+      tags:
+      - Individual UE Policy Association (Document)
+    get:
+      operationId: ReadIndividualUEPolicyAssociation
+      parameters:
+      - description: Identifier of a policy association
+        explode: false
+        in: path
+        name: polAssoId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyAssociation'
+          description: OK. Resource representation is returned
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          description: 406 Not Acceptable
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Read individual UE policy association.
+      tags:
+      - Individual UE Policy Association (Document)
+  /policies/{polAssoId}/update:
+    post:
+      operationId: ReportObservedEventTriggersForIndividualUEPolicyAssociation
+      parameters:
+      - description: Identifier of a policy association
+        explode: false
+        in: path
+        name: polAssoId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyAssociationUpdateRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyUpdate'
+          description: OK. Updated policies are returned
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: |
+        Report observed event triggers and possibly obtain updated policies for an individual UE policy association.
+      tags:
+      - Individual UE Policy Association (Document)
+components:
+  responses:
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "502":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad Gateway
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "307":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: Identifier of target NF (service) instance towards which the
+            request is redirected
+          schema:
+            type: string
+    "308":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: |
+            'Identifier of target NF (service) instance towards which the request is redirected'
+          schema:
+            type: string
+    "406":
+      description: 406 Not Acceptable
+  schemas:
+    PolicyAssociation:
+      description: |
+        Contains the description of a policy association that is returned by the PCF when a policy Association is created, updated, or read.
+      example:
+        pras:
+          key:
+            additionalPraId: additionalPraId
+            ecgiList:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            globalRanNodeIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            presenceState: null
+            praId: praId
+            trackingAreaList:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ncgiList:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            globaleNbIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+        request:
+          altNotifIpv6Addrs:
+          - 2001:db8:85a3::8a2e:370:7334
+          - 2001:db8:85a3::8a2e:370:7334
+          notificationUri: notificationUri
+          servingPlmn:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          ratType: null
+          timeZone: -08:00+1
+          pc5Capab: null
+          hPcfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          serviceName: null
+          supi: supi
+          guami:
+            plmnId:
+              mnc: mnc
+              nid: nid
+              mcc: mcc
+            amfId: amfId
+          proSeCapab:
+          - null
+          - null
+          altNotifFqdns:
+          - null
+          - null
+          gpsi: gpsi
+          userLoc:
+            geraLocation:
+              geographicalInformation: geographicalInformation
+              ageOfLocationInformation: 7543
+              cgi:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                cellId: cellId
+                lac: lac
+              lai:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              mscNumber: mscNumber
+              sai:
+                sac: sac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              rai:
+                rac: rac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              vlrNumber: vlrNumber
+              locationNumber: locationNumber
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+            eutraLocation:
+              geographicalInformation: geographicalInformation
+              globalNgenbId:
+                eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 28
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ageOfLocationInformation: 2624
+              ignoreEcgi: false
+              globalENbId:
+                eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 28
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              tai:
+                tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              ignoreTai: false
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+              ecgi:
+                eutraCellId: eutraCellId
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+            nrLocation:
+              ignoreNcgi: false
+              geographicalInformation: geographicalInformation
+              globalGnbId:
+                eNbId: eNbId
+                wagfId: wagfId
+                tngfId: tngfId
+                gNbId:
+                  bitLength: 28
+                  gNBValue: gNBValue
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                n3IwfId: n3IwfId
+                ngeNbId: SMacroNGeNB-34B89
+              ageOfLocationInformation: 4803
+              ncgi:
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                nrCellId: nrCellId
+              tai:
+                tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+            n3gaLocation:
+              ueIpv4Addr: 198.51.100.1
+              twapId:
+                bssId: bssId
+                civicAddress: civicAddress
+                ssId: ssId
+              hfcNodeId:
+                hfcNId: hfcNId
+              protocol: null
+              gli: gli
+              n3gppTai:
+                tac: tac
+                nid: nid
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+              tnapId:
+                bssId: bssId
+                civicAddress: civicAddress
+                ssId: ssId
+              w5gbanLineType: null
+              ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+              gci: gci
+              n3IwfId: n3IwfId
+              portNumber: 0
+            utraLocation:
+              geographicalInformation: geographicalInformation
+              ageOfLocationInformation: 18471
+              cgi:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                cellId: cellId
+                lac: lac
+              lai:
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              sai:
+                sac: sac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              rai:
+                rac: rac
+                plmnId:
+                  mnc: mnc
+                  mcc: mcc
+                lac: lac
+              ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+              geodeticInformation: geodeticInformation
+          accessType: null
+          uePolReq: uePolReq
+          servingNfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+          pei: pei
+          groupIds:
+          - null
+          - null
+          altNotifIpv4Addrs:
+          - 198.51.100.1
+          - 198.51.100.1
+          suppFeat: suppFeat
+        uePolicy: uePolicy
+        n2Pc5Pol:
+          ngapData:
+            contentId: contentId
+          ngapIeType: null
+          ngapMessageType: 0
+        n2Pc5ProSePol:
+          ngapData:
+            contentId: contentId
+          ngapIeType: null
+          ngapMessageType: 0
+        triggers:
+        - null
+        - null
+        suppFeat: suppFeat
+      properties:
+        request:
+          $ref: '#/components/schemas/PolicyAssociationRequest'
+        uePolicy:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        n2Pc5Pol:
+          $ref: '#/components/schemas/N2InfoContent'
+        n2Pc5ProSePol:
+          $ref: '#/components/schemas/N2InfoContent'
+        triggers:
+          description: |
+            Request Triggers that the PCF subscribes. Only values "LOC_CH" and "PRA_CH" are permitted.
+          items:
+            $ref: '#/components/schemas/RequestTrigger'
+          minItems: 1
+          type: array
+        pras:
+          additionalProperties:
+            $ref: '#/components/schemas/PresenceInfo'
+          description: |
+            Contains the presence reporting area(s) for which reporting was requested. The praId attribute within the PresenceInfo data type is the key of the map.
+          minProperties: 1
+          type: object
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - suppFeat
+      type: object
+    PolicyAssociationRequest:
+      description: |
+        Represents information that the NF service consumer provides when requesting the creation of a policy association.
+      example:
+        altNotifIpv6Addrs:
+        - 2001:db8:85a3::8a2e:370:7334
+        - 2001:db8:85a3::8a2e:370:7334
+        notificationUri: notificationUri
+        servingPlmn:
+          mnc: mnc
+          nid: nid
+          mcc: mcc
+        ratType: null
+        timeZone: -08:00+1
+        pc5Capab: null
+        hPcfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        serviceName: null
+        supi: supi
+        guami:
+          plmnId:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          amfId: amfId
+        proSeCapab:
+        - null
+        - null
+        altNotifFqdns:
+        - null
+        - null
+        gpsi: gpsi
+        userLoc:
+          geraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 7543
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            mscNumber: mscNumber
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            vlrNumber: vlrNumber
+            locationNumber: locationNumber
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          eutraLocation:
+            geographicalInformation: geographicalInformation
+            globalNgenbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 2624
+            ignoreEcgi: false
+            globalENbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ignoreTai: false
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+            ecgi:
+              eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          nrLocation:
+            ignoreNcgi: false
+            geographicalInformation: geographicalInformation
+            globalGnbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 4803
+            ncgi:
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          n3gaLocation:
+            ueIpv4Addr: 198.51.100.1
+            twapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            hfcNodeId:
+              hfcNId: hfcNId
+            protocol: null
+            gli: gli
+            n3gppTai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            tnapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            w5gbanLineType: null
+            ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            gci: gci
+            n3IwfId: n3IwfId
+            portNumber: 0
+          utraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 18471
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+        accessType: null
+        uePolReq: uePolReq
+        servingNfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        pei: pei
+        groupIds:
+        - null
+        - null
+        altNotifIpv4Addrs:
+        - 198.51.100.1
+        - 198.51.100.1
+        suppFeat: suppFeat
+      properties:
+        notificationUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        altNotifIpv4Addrs:
+          description: Alternate or backup IPv4 Address(es) where to send Notifications.
+          items:
+            $ref: '#/components/schemas/Ipv4Addr'
+          minItems: 1
+          type: array
+        altNotifIpv6Addrs:
+          description: Alternate or backup IPv6 Address(es) where to send Notifications.
+          items:
+            $ref: '#/components/schemas/Ipv6Addr'
+          minItems: 1
+          type: array
+        altNotifFqdns:
+          description: Alternate or backup FQDN(s) where to send Notifications.
+          items:
+            $ref: '#/components/schemas/Fqdn'
+          minItems: 1
+          type: array
+        supi:
+          description: "String identifying a Supi that shall contain either an IMSI,\
+            \ a network specific identifier,\na Global Cable Identifier (GCI) or a\
+            \ Global Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS\
+            \ 23.003. It shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\"\
+            , where <imsi> shall be formatted according to clause 2.2\n   of 3GPP\
+            \ TS 23.003 that describes an IMSI.\n - for a network specific identifier\
+            \ \"nai-<nai>, where <nai> shall be formatted\n   according to clause\
+            \ 28.7.2 of 3GPP TS 23.003 that describes an NAI.\n - for a GCI \"gci-<gci>\"\
+            , where <gci> shall be formatted according to clause 28.15.2\n   of 3GPP\
+            \ TS 23.003.\n - for a GLI \"gli-<gli>\", where <gli> shall be formatted\
+            \ according to clause 28.16.2 of\n   3GPP TS 23.003.To enable that the\
+            \ value is used as part of an URI, the string shall\n   only contain characters\
+            \ allowed according to the \"lower-with-hyphen\" naming convention\n \
+            \  defined in 3GPP TS 29.501.\n"
+          pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+          type: string
+        gpsi:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        accessType:
+          $ref: '#/components/schemas/AccessType'
+        pei:
+          description: "String representing a Permanent Equipment Identifier that\
+            \ may contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP\
+            \ TS 23.003; a MAC address for a 5G-RG or FN-RG via  wireline  access,\
+            \ with an indication that this address cannot be trusted for regulatory\
+            \ purpose if this  address cannot be used as an Equipment Identifier of\
+            \ the FN-RG, as specified in clause 4.7.7  of 3GPP TS23.316. Examples\
+            \ are imei-012345678901234 or imeisv-0123456789012345. \n"
+          pattern: "^(imei-[0-9]{15}|imeisv-[0-9]{16}|mac((-[0-9a-fA-F]{2}){6})(-untrusted)?|eui((-[0-9a-fA-F]{2}){8})|.+)$"
+          type: string
+        userLoc:
+          $ref: '#/components/schemas/UserLocation'
+        timeZone:
+          description: "String with format \"time-numoffset\" optionally appended\
+            \ by \"daylightSavingTime\", where \n- \"time-numoffset\" shall represent\
+            \ the time zone adjusted for daylight saving time and be\n   encoded as\
+            \ time-numoffset as defined in clause\_5.6 of IETF RFC 3339; \n- \"daylightSavingTime\"\
+            \ shall represent the adjustment that has been made and shall be\n   encoded\
+            \ as \"+1\" or \"+2\" for a +1 or +2 hours adjustment. \n\nThe example\
+            \ is for 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.\n"
+          example: -08:00+1
+          type: string
+        servingPlmn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        ratType:
+          $ref: '#/components/schemas/RatType'
+        groupIds:
+          items:
+            $ref: '#/components/schemas/GroupId'
+          minItems: 1
+          type: array
+        hPcfId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        uePolReq:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        guami:
+          $ref: '#/components/schemas/Guami'
+        serviceName:
+          $ref: '#/components/schemas/ServiceName'
+        servingNfId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        pc5Capab:
+          $ref: '#/components/schemas/Pc5Capability'
+        proSeCapab:
+          items:
+            $ref: '#/components/schemas/ProSeCapability'
+          minItems: 1
+          type: array
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - notificationUri
+      - supi
+      - suppFeat
+      type: object
+    PolicyAssociationUpdateRequest:
+      description: |
+        Represents Information that the NF service consumer provides when requesting the update of a policy association.
+      example:
+        altNotifIpv6Addrs:
+        - 2001:db8:85a3::8a2e:370:7334
+        - 2001:db8:85a3::8a2e:370:7334
+        uePolTransFailNotif:
+          cause: null
+          ptis:
+          - null
+          - null
+        uePolDelResult: uePolDelResult
+        notificationUri: notificationUri
+        connectState: null
+        triggers:
+        - null
+        - null
+        guami:
+          plmnId:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          amfId: amfId
+        proSeCapab:
+        - null
+        - null
+        altNotifFqdns:
+        - null
+        - null
+        userLoc:
+          geraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 7543
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            mscNumber: mscNumber
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            vlrNumber: vlrNumber
+            locationNumber: locationNumber
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          eutraLocation:
+            geographicalInformation: geographicalInformation
+            globalNgenbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 2624
+            ignoreEcgi: false
+            globalENbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ignoreTai: false
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+            ecgi:
+              eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          nrLocation:
+            ignoreNcgi: false
+            geographicalInformation: geographicalInformation
+            globalGnbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 4803
+            ncgi:
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          n3gaLocation:
+            ueIpv4Addr: 198.51.100.1
+            twapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            hfcNodeId:
+              hfcNId: hfcNId
+            protocol: null
+            gli: gli
+            n3gppTai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            tnapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            w5gbanLineType: null
+            ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            gci: gci
+            n3IwfId: n3IwfId
+            portNumber: 0
+          utraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 18471
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+        uePolReq: uePolReq
+        servingNfId: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        groupIds:
+        - null
+        - null
+        praStatuses:
+          key:
+            additionalPraId: additionalPraId
+            ecgiList:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            globalRanNodeIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            presenceState: null
+            praId: praId
+            trackingAreaList:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ncgiList:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            globaleNbIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+        plmnId:
+          mnc: mnc
+          nid: nid
+          mcc: mcc
+        altNotifIpv4Addrs:
+        - 198.51.100.1
+        - 198.51.100.1
+        suppFeat: suppFeat
+      properties:
+        notificationUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        altNotifIpv4Addrs:
+          description: Alternate or backup IPv4 Address(es) where to send Notifications.
+          items:
+            $ref: '#/components/schemas/Ipv4Addr'
+          minItems: 1
+          type: array
+        altNotifIpv6Addrs:
+          description: Alternate or backup IPv6 Address(es) where to send Notifications.
+          items:
+            $ref: '#/components/schemas/Ipv6Addr'
+          minItems: 1
+          type: array
+        altNotifFqdns:
+          description: Alternate or backup FQDN(s) where to send Notifications.
+          items:
+            $ref: '#/components/schemas/Fqdn'
+          minItems: 1
+          type: array
+        triggers:
+          description: Request Triggers that the NF service consumer observes.
+          items:
+            $ref: '#/components/schemas/RequestTrigger'
+          minItems: 1
+          type: array
+        praStatuses:
+          additionalProperties:
+            $ref: '#/components/schemas/PresenceInfo'
+          description: |
+            Contains the UE presence status for tracking area for which changes of the UE presence occurred. The praId attribute within the PresenceInfo data type is the key of the map.
+          minProperties: 1
+          type: object
+        userLoc:
+          $ref: '#/components/schemas/UserLocation'
+        uePolDelResult:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        uePolTransFailNotif:
+          $ref: '#/components/schemas/UePolicyTransferFailureNotification'
+        uePolReq:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        guami:
+          $ref: '#/components/schemas/Guami'
+        servingNfId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        plmnId:
+          $ref: '#/components/schemas/PlmnIdNid'
+        connectState:
+          $ref: '#/components/schemas/CmState'
+        groupIds:
+          items:
+            $ref: '#/components/schemas/GroupId'
+          minItems: 1
+          type: array
+        proSeCapab:
+          items:
+            $ref: '#/components/schemas/ProSeCapability'
+          minItems: 1
+          type: array
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    PolicyUpdate:
+      description: |
+        Represents updated policies that the PCF provides in a notification or in the reply to an Update Request.
+      example:
+        pras:
+          key:
+            additionalPraId: additionalPraId
+            ecgiList:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            globalRanNodeIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            presenceState: null
+            praId: praId
+            trackingAreaList:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ncgiList:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            globaleNbIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+        uePolicy: uePolicy
+        n2Pc5Pol:
+          ngapData:
+            contentId: contentId
+          ngapIeType: null
+          ngapMessageType: 0
+        resourceUri: resourceUri
+        n2Pc5ProSePol:
+          ngapData:
+            contentId: contentId
+          ngapIeType: null
+          ngapMessageType: 0
+        triggers:
+        - null
+        - null
+        suppFeat: suppFeat
+      properties:
+        resourceUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        uePolicy:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        n2Pc5Pol:
+          $ref: '#/components/schemas/N2InfoContent'
+        n2Pc5ProSePol:
+          $ref: '#/components/schemas/N2InfoContent'
+        triggers:
+          description: |
+            Request Triggers that the PCF subscribes. Only values "LOC_CH" and "PRA_CH" are permitted.
+          items:
+            $ref: '#/components/schemas/RequestTrigger'
+          minItems: 1
+          nullable: true
+          type: array
+        pras:
+          additionalProperties:
+            $ref: '#/components/schemas/PresenceInfo'
+          description: |
+            Contains the presence reporting area(s) for which reporting was requested. The praId attribute within the PresenceInfo data type is the key of the map.
+          minProperties: 1
+          nullable: true
+          type: object
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - resourceUri
+      type: object
+    TerminationNotification:
+      description: |
+        Represents a request to terminate a policy association that the PCF provides in a notification.
+      example:
+        cause: null
+        resourceUri: resourceUri
+      properties:
+        resourceUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          $ref: '#/components/schemas/PolicyAssociationReleaseCause'
+      required:
+      - cause
+      - resourceUri
+      type: object
+    UePolicyTransferFailureNotification:
+      description: |
+        Represents information on the failure of a UE policy transfer to the UE because the UE is not reachable.
+      example:
+        cause: null
+        ptis:
+        - null
+        - null
+      properties:
+        cause:
+          $ref: '#/components/schemas/N1N2MessageTransferCause'
+        ptis:
+          items:
+            $ref: '#/components/schemas/Uinteger'
+          minItems: 1
+          type: array
+      required:
+      - cause
+      - ptis
+      type: object
+    UeRequestedValueRep:
+      description: |
+        Contains the current applicable values corresponding to the policy control request triggers.
+      example:
+        praStatuses:
+          key:
+            additionalPraId: additionalPraId
+            ecgiList:
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            globalRanNodeIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            presenceState: null
+            praId: praId
+            trackingAreaList:
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            - tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ncgiList:
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            - nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            globaleNbIdList:
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            - eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+        plmnId:
+          mnc: mnc
+          nid: nid
+          mcc: mcc
+        connectState: null
+        userLoc:
+          geraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 7543
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            mscNumber: mscNumber
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            vlrNumber: vlrNumber
+            locationNumber: locationNumber
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          eutraLocation:
+            geographicalInformation: geographicalInformation
+            globalNgenbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 2624
+            ignoreEcgi: false
+            globalENbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ignoreTai: false
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+            ecgi:
+              eutraCellId: eutraCellId
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+          nrLocation:
+            ignoreNcgi: false
+            geographicalInformation: geographicalInformation
+            globalGnbId:
+              eNbId: eNbId
+              wagfId: wagfId
+              tngfId: tngfId
+              gNbId:
+                bitLength: 28
+                gNBValue: gNBValue
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              n3IwfId: n3IwfId
+              ngeNbId: SMacroNGeNB-34B89
+            ageOfLocationInformation: 4803
+            ncgi:
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              nrCellId: nrCellId
+            tai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+          n3gaLocation:
+            ueIpv4Addr: 198.51.100.1
+            twapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            hfcNodeId:
+              hfcNId: hfcNId
+            protocol: null
+            gli: gli
+            n3gppTai:
+              tac: tac
+              nid: nid
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+            tnapId:
+              bssId: bssId
+              civicAddress: civicAddress
+              ssId: ssId
+            w5gbanLineType: null
+            ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            gci: gci
+            n3IwfId: n3IwfId
+            portNumber: 0
+          utraLocation:
+            geographicalInformation: geographicalInformation
+            ageOfLocationInformation: 18471
+            cgi:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              cellId: cellId
+              lac: lac
+            lai:
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            sai:
+              sac: sac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            rai:
+              rac: rac
+              plmnId:
+                mnc: mnc
+                mcc: mcc
+              lac: lac
+            ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+            geodeticInformation: geodeticInformation
+      properties:
+        userLoc:
+          $ref: '#/components/schemas/UserLocation'
+        praStatuses:
+          additionalProperties:
+            $ref: '#/components/schemas/PresenceInfo'
+          description: |
+            Contains the UE presence statuses for tracking areas. The praId attribute within the PresenceInfo data type is the key of the map.
+          minProperties: 1
+          type: object
+        plmnId:
+          $ref: '#/components/schemas/PlmnIdNid'
+        connectState:
+          $ref: '#/components/schemas/CmState'
+      type: object
+    UePolicy:
+      description: string with format 'bytes' as defined in OpenAPI
+      format: byte
+      type: string
+    UePolicyDeliveryResult:
+      description: string with format 'bytes' as defined in OpenAPI
+      format: byte
+      type: string
+    UePolicyRequest:
+      description: string with format 'bytes' as defined in OpenAPI
+      format: byte
+      type: string
+    RequestTrigger:
+      anyOf:
+      - enum:
+        - LOC_CH
+        - PRA_CH
+        - UE_POLICY
+        - PLMN_CH
+        - CON_STATE_CH
+        - GROUP_ID_LIST_CHG
+        - UE_CAP_CH
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: "Possible values are:\n- LOC_CH: Location change (tracking area).\
+        \ The tracking area of the UE has changed.\n- PRA_CH: Change of UE presence\
+        \ in PRA. The AMF reports the current presence status of the UE\n  in a Presence\
+        \ Reporting Area, and notifies that the UE enters/leaves the Presence Reporting\n\
+        \  Area.\n- UE_POLICY: A MANAGE UE POLICY COMPLETE message or a MANAGE UE\
+        \ POLICY COMMAND REJECT\n  message, as defined in Annex D.5 of 3GPP TS 24.501\
+        \ or a \"UE POLICY PROVISIONING REQUEST\"\n  message, as defined in clause\
+        \ 7.2.1.1 of 3GPP TS 24.587 , has been received by the AMF\n  and is being\
+        \ forwarded.\n- PLMN_CH: PLMN change. the serving PLMN of UE has changed.\
+        \ \n- CON_STATE_CH: Connectivity state change: the connectivity state of UE\
+        \ has changed. \n- GROUP_ID_LIST_CHG: UE Internal Group Identifier(s) has\
+        \ changed. This policy control request\n  trigger does not require a subscription\n\
+        - UE_CAP_CH: UE Capabilities change: the UE provided 5G ProSe capabilities\
+        \ have changed.\n  This policy control request trigger does not require subscription.\
+        \ \n"
+    PolicyAssociationReleaseCause:
+      anyOf:
+      - enum:
+        - UNSPECIFIED
+        - UE_SUBSCRIPTION
+        - INSUFFICIENT_RES
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - UNSPECIFIED: This value is used for unspecified reasons.
+        - UE_SUBSCRIPTION: This value is used to indicate that the policy association needs to be
+          terminated because the subscription of UE has changed (e.g. was removed).
+        - INSUFFICIENT_RES: This value is used to indicate that the server is overloaded and needs
+          to abort the policy association.
+    Pc5Capability:
+      anyOf:
+      - enum:
+        - LTE_PC5
+        - NR_PC5
+        - LTE_NR_PC5
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: "Possible values are:\n- LTE_PC5: This value is used to indicate\
+        \ that UE supports PC5 LTE RAT for V2X communications\n  over the PC5 reference\
+        \ point.\n- NR_PC5: This value is used to indicate that UE supports PC5 NR\
+        \ RAT for V2X communications\n  over the PC5 reference point.\n- LTE_NR_PC5:\
+        \ This value is used to indicate that UE supports both PC5 LTE and NR RAT\
+        \ for\n  V2X communications over the PC5 reference point. \n"
+    ProSeCapability:
+      anyOf:
+      - enum:
+        - PROSE_DD
+        - PROSE_DC
+        - PROSE_L2_U2N_RELAY
+        - PROSE_L3_U2N_RELAY
+        - PROSE_L2_REMOTE_UE
+        - PROSE_L3_REMOTE_UE
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode the content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - PROSE_DD: This value is used to indicate that 5G ProSe Direct Discovery is supported
+          by the UE.
+        - PROSE_DC: This value is used to indicate that 5G ProSe Direct Communication is supported
+          by the UE.
+        - PROSE_L2_U2N_RELAY: This value is used to indicate that Layer-2 5G ProSe UE-to-Network
+          Relay is supported by the UE.
+        - PROSE_L3_U2N_RELAY: This value is used to indicate that Layer-3 5G ProSe UE-to-Network
+          Relay is supported by the UE.
+        - PROSE_L2_REMOTE_UE: This value is used to indicate that Layer-2 5G ProSe Remote UE is
+          supported by the UE.
+        - PROSE_L3_REMOTE_UE: This value is used to indicate that Layer-3 5G ProSe Remote UE is
+          supported by the UE.
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    RedirectResponse:
+      description: |
+        The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP.
+      properties:
+        cause:
+          type: string
+        targetScp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        targetSepp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      type: object
+    N2InfoContent:
+      description: Represents a transparent N2 information content to be relayed by
+        AMF
+      example:
+        ngapData:
+          contentId: contentId
+        ngapIeType: null
+        ngapMessageType: 0
+      properties:
+        ngapMessageType:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        ngapIeType:
+          $ref: '#/components/schemas/NgapIeType'
+        ngapData:
+          $ref: '#/components/schemas/RefToBinaryData'
+      required:
+      - ngapData
+      type: object
+    NgapIeType:
+      anyOf:
+      - enum:
+        - PDU_RES_SETUP_REQ
+        - PDU_RES_REL_CMD
+        - PDU_RES_MOD_REQ
+        - HANDOVER_CMD
+        - HANDOVER_REQUIRED
+        - HANDOVER_PREP_FAIL
+        - SRC_TO_TAR_CONTAINER
+        - TAR_TO_SRC_CONTAINER
+        - TAR_TO_SRC_FAIL_CONTAINER
+        - RAN_STATUS_TRANS_CONTAINER
+        - SON_CONFIG_TRANSFER
+        - NRPPA_PDU
+        - UE_RADIO_CAPABILITY
+        - RIM_INFO_TRANSFER
+        - SECONDARY_RAT_USAGE
+        - PC5_QOS_PARA
+        - EARLY_STATUS_TRANS_CONTAINER
+        - UE_RADIO_CAPABILITY_FOR_PAGING
+        type: string
+      - type: string
+      description: Indicates the supported NGAP IE types
+    PresenceInfo:
+      description: |
+        If the additionalPraId IE is present, this IE shall state the presence information of the UE for the individual PRA identified by the additionalPraId IE;  If the additionalPraId IE is not present, this IE shall state the presence information of the UE for the PRA identified by the praId IE.
+      example:
+        additionalPraId: additionalPraId
+        ecgiList:
+        - eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        - eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        globalRanNodeIdList:
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        presenceState: null
+        praId: praId
+        trackingAreaList:
+        - tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        - tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        ncgiList:
+        - nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        - nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        globaleNbIdList:
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        - eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+      properties:
+        praId:
+          description: |
+            Represents an identifier of the Presence Reporting Area (see clause 28.10 of 3GPP  TS 23.003.  This IE shall be present  if the Area of Interest subscribed or reported is a Presence Reporting Area or a Set of Core Network predefined Presence Reporting Areas. When present, it shall be encoded as a string representing an integer in the following ranges: 0 to 8 388 607 for UE-dedicated PRA 8 388 608 to 16 777 215 for Core Network predefined PRA Examples: PRA ID 123 is encoded as "123" PRA ID 11 238 660 is encoded as "11238660"
+          type: string
+        additionalPraId:
+          description: "This IE may be present if the praId IE is present and if it\
+            \ contains a PRA identifier referring to a set of Core Network predefined\
+            \ Presence Reporting Areas. When present, this IE shall contain a PRA\
+            \ Identifier of an individual PRA within the Set of Core Network predefined\
+            \ Presence Reporting Areas indicated by the praId IE. \n"
+          type: string
+        presenceState:
+          $ref: '#/components/schemas/PresenceState'
+        trackingAreaList:
+          description: "Represents the list of tracking areas that constitutes the\
+            \ area. This IE shall be present if the subscription or  the event report\
+            \ is for tracking UE presence in the tracking areas. For non 3GPP access\
+            \ the TAI shall be the N3GPP TAI. \n"
+          items:
+            $ref: '#/components/schemas/Tai'
+          minItems: 1
+          type: array
+        ecgiList:
+          description: "Represents the list of EUTRAN cell Ids that constitutes the\
+            \ area. This IE shall be present if the Area of Interest subscribed is\
+            \ a list of EUTRAN cell Ids. \n"
+          items:
+            $ref: '#/components/schemas/Ecgi'
+          minItems: 1
+          type: array
+        ncgiList:
+          description: "Represents the list of NR cell Ids that constitutes the area.\
+            \ This IE shall be present if the Area of Interest subscribed is a list\
+            \ of NR cell Ids. \n"
+          items:
+            $ref: '#/components/schemas/Ncgi'
+          minItems: 1
+          type: array
+        globalRanNodeIdList:
+          description: "Represents the list of NG RAN node identifiers that constitutes\
+            \ the area. This IE shall be present if the Area of Interest subscribed\
+            \ is a list of NG RAN node identifiers. \n"
+          items:
+            $ref: '#/components/schemas/GlobalRanNodeId'
+          minItems: 1
+          type: array
+        globaleNbIdList:
+          description: |
+            Represents the list of eNodeB identifiers that constitutes the area. This IE shall be  present if the Area of Interest subscribed is a list of eNodeB identifiers.
+          items:
+            $ref: '#/components/schemas/GlobalRanNodeId'
+          minItems: 1
+          type: array
+      type: object
+    PresenceState:
+      anyOf:
+      - enum:
+        - IN_AREA
+        - OUT_OF_AREA
+        - UNKNOWN
+        - INACTIVE
+        type: string
+      - type: string
+      description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
+        \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
+        \ UE is outside or leaves the presence reporting area\n-UNKNOW: Indicates\
+        \ it is unknown whether the UE is in the presence reporting area or not\n\
+        -INACTIVE: Indicates that the presence reporting area is inactive in the serving\
+        \ node. \n"
+    Tai:
+      description: Contains the tracking area identity as described in 3GPP 23.003
+      example:
+        tac: tac
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        tac:
+          description: "2 or 3-octet string identifying a tracking area code as specified\
+            \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation.\
+            \ Each character in the string shall  take a value of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant character representing the 4 most significant bits of the\
+            \ TAC shall  appear first in the string, and the character representing\
+            \ the 4 least significant bit  of the TAC shall appear last in the string.\
+            \ \n"
+          pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - plmnId
+      - tac
+      type: object
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      example:
+        mnc: mnc
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Tac:
+      description: "2 or 3-octet string identifying a tracking area code as specified\
+        \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation. Each\
+        \ character in the string shall  take a value of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the 4 most significant bits of the TAC shall  appear\
+        \ first in the string, and the character representing the 4 least significant\
+        \ bit  of the TAC shall appear last in the string. \n"
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    Ecgi:
+      description: "Contains the ECGI (E-UTRAN Cell Global Identity), as described\
+        \ in 3GPP 23.003"
+      example:
+        eutraCellId: eutraCellId
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        eutraCellId:
+          description: "28-bit string identifying an E-UTRA Cell Id as specified in\
+            \ clause 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each\
+            \ character in the string shall take a  value of \"0\" to \"9\", \"a\"\
+            \ to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most  significant\
+            \ character representing the 4 most significant bits of the Cell Id shall\
+            \ appear  first in the string, and the character representing the 4 least\
+            \ significant bit of the  Cell Id shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]{7}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - eutraCellId
+      - plmnId
+      type: object
+    EutraCellId:
+      description: "28-bit string identifying an E-UTRA Cell Id as specified in clause\
+        \ 9.3.1.9 of  3GPP TS 38.413, in hexadecimal representation. Each character\
+        \ in the string shall take a  value of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most  significant character representing\
+        \ the 4 most significant bits of the Cell Id shall appear  first in the string,\
+        \ and the character representing the 4 least significant bit of the  Cell\
+        \ Id shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]{7}$"
+      type: string
+    Ncgi:
+      description: "Contains the NCGI (NR Cell Global Identity), as described in 3GPP\
+        \ 23.003"
+      example:
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        nrCellId: nrCellId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        nrCellId:
+          description: "36-bit string identifying an NR Cell Id as specified in clause\
+            \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+            \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant character\
+            \  representing the 4 most significant bits of the Cell Id shall appear\
+            \ first in the string, and  the character representing the 4 least significant\
+            \ bit of the Cell Id shall appear last in the  string. \n"
+          pattern: "^[A-Fa-f0-9]{9}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - nrCellId
+      - plmnId
+      type: object
+    NrCellId:
+      description: "36-bit string identifying an NR Cell Id as specified in clause\
+        \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+        \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant character  representing\
+        \ the 4 most significant bits of the Cell Id shall appear first in the string,\
+        \ and  the character representing the 4 least significant bit of the Cell\
+        \ Id shall appear last in the  string. \n"
+      pattern: "^[A-Fa-f0-9]{9}$"
+      type: string
+    GlobalRanNodeId:
+      description: |
+        One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present.
+      example:
+        eNbId: eNbId
+        wagfId: wagfId
+        tngfId: tngfId
+        gNbId:
+          bitLength: 28
+          gNBValue: gNBValue
+        nid: nid
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        n3IwfId: n3IwfId
+        ngeNbId: SMacroNGeNB-34B89
+      oneOf:
+      - required:
+        - n3IwfId
+      - required:
+        - gNbId
+      - required:
+        - ngeNbId
+      - required:
+        - wagfId
+      - required:
+        - tngfId
+      - required:
+        - eNbId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        n3IwfId:
+          description: "This represents the identifier of the N3IWF ID as specified\
+            \ in clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ N3IWF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the N3IWF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        gNbId:
+          $ref: '#/components/schemas/GNbId'
+        ngeNbId:
+          description: "This represents the identifier of the ng-eNB ID as specified\
+            \ in clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall\
+            \ be encoded in hexadecimal representation.  Each character in the string\
+            \ shall take a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"\
+            F\" and  shall represent 4 bits. The padding 0 shall be added to make\
+            \ multiple nibbles, so the most  significant character representing the\
+            \ padding 0 if required together with the 4 most  significant bits of\
+            \ the ng-eNB ID shall appear first in the string, and the character  representing\
+            \ the 4 least significant bit of the ng-eNB ID (to form a nibble) shall\
+            \ appear last  in the string. \n"
+          example: SMacroNGeNB-34B89
+          pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+          type: string
+        wagfId:
+          description: "This represents the identifier of the W-AGF ID as specified\
+            \ in clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation.\
+            \ Each character in the string shall take a value  of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant  character representing the 4 most significant bits of the\
+            \ W-AGF ID shall appear first in the  string, and the character representing\
+            \ the 4 least significant bit of the W-AGF ID shall  appear last in the\
+            \ string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        tngfId:
+          description: "This represents the identifier of the TNGF ID as specified\
+            \ in clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation.\
+            \ Each character in the string shall take a value of \"0\" to \"9\", \"\
+            a\"  to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+            \ character representing the  4 most significant bits of the TNGF ID shall\
+            \ appear first in the string, and the character  representing the 4 least\
+            \ significant bit of the TNGF ID shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+        eNbId:
+          description: |
+            This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+          pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+          type: string
+      required:
+      - plmnId
+      type: object
+    N3IwfId:
+      description: "This represents the identifier of the N3IWF ID as specified in\
+        \ clause 9.3.1.57 of  3GPP TS 38.413 in hexadecimal representation. Each character\
+        \ in the string shall take a value  of \"0\" to \"9\", \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant  character representing\
+        \ the 4 most significant bits of the N3IWF ID shall appear first in the  string,\
+        \ and the character representing the 4 least significant bit of the N3IWF\
+        \ ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    GNbId:
+      description: Provides the G-NB identifier.
+      example:
+        bitLength: 28
+        gNBValue: gNBValue
+      properties:
+        bitLength:
+          description: |
+            Unsigned integer representing the bit length of the gNB ID as defined in clause 9.3.1.6 of 3GPP TS 38.413 [11], within the range 22 to 32.
+          maximum: 32
+          minimum: 22
+          type: integer
+        gNBValue:
+          description: |
+            This represents the identifier of the gNB. The value of the gNB ID shall be encoded in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The padding 0 shall be added to make multiple nibbles,  the most significant character representing the padding 0 if required together with the 4 most significant bits of the gNB ID shall appear first in the string, and the character representing the 4 least significant bit of the gNB ID shall appear last in the string.
+          pattern: "^[A-Fa-f0-9]{6,8}$"
+          type: string
+      required:
+      - bitLength
+      - gNBValue
+      type: object
+    NgeNbId:
+      description: "This represents the identifier of the ng-eNB ID as specified in\
+        \ clause 9.3.1.8 of  3GPP TS 38.413. The value of the ng-eNB ID shall be encoded\
+        \ in hexadecimal representation.  Each character in the string shall take\
+        \ a value of \"0\" to \"9\", \"a\" to \"f\" or \"A\" to \"F\" and  shall represent\
+        \ 4 bits. The padding 0 shall be added to make multiple nibbles, so the most\
+        \  significant character representing the padding 0 if required together with\
+        \ the 4 most  significant bits of the ng-eNB ID shall appear first in the\
+        \ string, and the character  representing the 4 least significant bit of the\
+        \ ng-eNB ID (to form a nibble) shall appear last  in the string. \n"
+      example: SMacroNGeNB-34B89
+      pattern: "^(MacroNGeNB-[A-Fa-f0-9]{5}|LMacroNGeNB-[A-Fa-f0-9]{6}|SMacroNGeNB-[A-Fa-f0-9]{5})$"
+      type: string
+    WAgfId:
+      description: "This represents the identifier of the W-AGF ID as specified in\
+        \ clause 9.3.1.162 of  3GPP TS 38.413 in hexadecimal representation. Each\
+        \ character in the string shall take a value  of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \  character representing the 4 most significant bits of the W-AGF ID shall\
+        \ appear first in the  string, and the character representing the 4 least\
+        \ significant bit of the W-AGF ID shall  appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    TngfId:
+      description: "This represents the identifier of the TNGF ID as specified in\
+        \ clause 9.3.1.161 of  3GPP TS 38.413  in hexadecimal representation. Each\
+        \ character in the string shall take a value of \"0\" to \"9\", \"a\"  to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the  4 most significant bits of the TNGF ID shall\
+        \ appear first in the string, and the character  representing the 4 least\
+        \ significant bit of the TNGF ID shall appear last in the string. \n"
+      pattern: "^[A-Fa-f0-9]+$"
+      type: string
+    ENbId:
+      description: |
+        This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
+      pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
+      type: string
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Supi:
+      description: "String identifying a Supi that shall contain either an IMSI, a\
+        \ network specific identifier,\na Global Cable Identifier (GCI) or a Global\
+        \ Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS 23.003. It\
+        \ shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\", where <imsi>\
+        \ shall be formatted according to clause 2.2\n   of 3GPP TS 23.003 that describes\
+        \ an IMSI.\n - for a network specific identifier \"nai-<nai>, where <nai>\
+        \ shall be formatted\n   according to clause 28.7.2 of 3GPP TS 23.003 that\
+        \ describes an NAI.\n - for a GCI \"gci-<gci>\", where <gci> shall be formatted\
+        \ according to clause 28.15.2\n   of 3GPP TS 23.003.\n - for a GLI \"gli-<gli>\"\
+        , where <gli> shall be formatted according to clause 28.16.2 of\n   3GPP TS\
+        \ 23.003.To enable that the value is used as part of an URI, the string shall\n\
+        \   only contain characters allowed according to the \"lower-with-hyphen\"\
+        \ naming convention\n   defined in 3GPP TS 29.501.\n"
+      pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+      type: string
+    Gpsi:
+      description: "String identifying a Gpsi shall contain either an External Id\
+        \ or an MSISDN.  It shall be formatted as follows -External Identifier= \"\
+        extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2\
+        \ of 3GPP TS 23.003 that describes an  External Identifier. \n"
+      pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+      type: string
+    AccessType:
+      description: Indicates whether the access is  via 3GPP or via non-3GPP.
+      enum:
+      - 3GPP_ACCESS
+      - NON_3GPP_ACCESS
+      type: string
+    Pei:
+      description: "String representing a Permanent Equipment Identifier that may\
+        \ contain - an IMEI or IMEISV, as  specified in clause 6.2 of 3GPP TS 23.003;\
+        \ a MAC address for a 5G-RG or FN-RG via  wireline  access, with an indication\
+        \ that this address cannot be trusted for regulatory purpose if this  address\
+        \ cannot be used as an Equipment Identifier of the FN-RG, as specified in\
+        \ clause 4.7.7  of 3GPP TS23.316. Examples are imei-012345678901234 or imeisv-0123456789012345.\
+        \ \n"
+      pattern: "^(imei-[0-9]{15}|imeisv-[0-9]{16}|mac((-[0-9a-fA-F]{2}){6})(-untrusted)?|eui((-[0-9a-fA-F]{2}){8})|.+)$"
+      type: string
+    UserLocation:
+      description: |
+        At least one of eutraLocation, nrLocation and n3gaLocation shall be present. Several of them may be present.
+      example:
+        geraLocation:
+          geographicalInformation: geographicalInformation
+          ageOfLocationInformation: 7543
+          cgi:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            cellId: cellId
+            lac: lac
+          lai:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          mscNumber: mscNumber
+          sai:
+            sac: sac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          rai:
+            rac: rac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          vlrNumber: vlrNumber
+          locationNumber: locationNumber
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+        eutraLocation:
+          geographicalInformation: geographicalInformation
+          globalNgenbId:
+            eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 28
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ageOfLocationInformation: 2624
+          ignoreEcgi: false
+          globalENbId:
+            eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 28
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          tai:
+            tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          ignoreTai: false
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+          ecgi:
+            eutraCellId: eutraCellId
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+        nrLocation:
+          ignoreNcgi: false
+          geographicalInformation: geographicalInformation
+          globalGnbId:
+            eNbId: eNbId
+            wagfId: wagfId
+            tngfId: tngfId
+            gNbId:
+              bitLength: 28
+              gNBValue: gNBValue
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            n3IwfId: n3IwfId
+            ngeNbId: SMacroNGeNB-34B89
+          ageOfLocationInformation: 4803
+          ncgi:
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            nrCellId: nrCellId
+          tai:
+            tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+        n3gaLocation:
+          ueIpv4Addr: 198.51.100.1
+          twapId:
+            bssId: bssId
+            civicAddress: civicAddress
+            ssId: ssId
+          hfcNodeId:
+            hfcNId: hfcNId
+          protocol: null
+          gli: gli
+          n3gppTai:
+            tac: tac
+            nid: nid
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+          tnapId:
+            bssId: bssId
+            civicAddress: civicAddress
+            ssId: ssId
+          w5gbanLineType: null
+          ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+          gci: gci
+          n3IwfId: n3IwfId
+          portNumber: 0
+        utraLocation:
+          geographicalInformation: geographicalInformation
+          ageOfLocationInformation: 18471
+          cgi:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            cellId: cellId
+            lac: lac
+          lai:
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          sai:
+            sac: sac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          rai:
+            rac: rac
+            plmnId:
+              mnc: mnc
+              mcc: mcc
+            lac: lac
+          ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+          geodeticInformation: geodeticInformation
+      properties:
+        eutraLocation:
+          $ref: '#/components/schemas/EutraLocation'
+        nrLocation:
+          $ref: '#/components/schemas/NrLocation'
+        n3gaLocation:
+          $ref: '#/components/schemas/N3gaLocation'
+        utraLocation:
+          $ref: '#/components/schemas/UtraLocation'
+        geraLocation:
+          $ref: '#/components/schemas/GeraLocation'
+      type: object
+    EutraLocation:
+      description: Contains the E-UTRA user location.
+      example:
+        geographicalInformation: geographicalInformation
+        globalNgenbId:
+          eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        ageOfLocationInformation: 2624
+        ignoreEcgi: false
+        globalENbId:
+          eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        tai:
+          tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        ignoreTai: false
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+        ecgi:
+          eutraCellId: eutraCellId
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+      properties:
+        tai:
+          $ref: '#/components/schemas/Tai'
+        ignoreTai:
+          default: false
+          type: boolean
+        ecgi:
+          $ref: '#/components/schemas/Ecgi'
+        ignoreEcgi:
+          default: false
+          description: |
+            This flag when present shall indicate that the Ecgi shall be ignored When present, it shall be set as follows: - true: ecgi shall be ignored. - false (default): ecgi shall not be ignored.
+          type: boolean
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station.  Value "0" indicates that the location information was obtained after a successful paging procedure for Active Location Retrieval when the UE is in idle mode or after a successful NG-RAN location reporting procedure with the eNB when the UE is in connected mode.  Any other value than "0" indicates that the location information is the last known one.  See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information. See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) [24] clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+        globalNgenbId:
+          $ref: '#/components/schemas/GlobalRanNodeId'
+        globalENbId:
+          $ref: '#/components/schemas/GlobalRanNodeId'
+      required:
+      - ecgi
+      - tai
+      type: object
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    NrLocation:
+      description: Contains the NR user location.
+      example:
+        ignoreNcgi: false
+        geographicalInformation: geographicalInformation
+        globalGnbId:
+          eNbId: eNbId
+          wagfId: wagfId
+          tngfId: tngfId
+          gNbId:
+            bitLength: 28
+            gNBValue: gNBValue
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          n3IwfId: n3IwfId
+          ngeNbId: SMacroNGeNB-34B89
+        ageOfLocationInformation: 4803
+        ncgi:
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          nrCellId: nrCellId
+        tai:
+          tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+      properties:
+        tai:
+          $ref: '#/components/schemas/Tai'
+        ncgi:
+          $ref: '#/components/schemas/Ncgi'
+        ignoreNcgi:
+          default: false
+          type: boolean
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station. Value "0" indicates that the location information was obtained after a successful paging procedure for Active Location Retrieval when the UE is in idle mode or after a successful  NG-RAN location reporting procedure with the eNB when the UE is in connected mode. Any other value than "0" indicates that the location information is the last known one. See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information. See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) [24] clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+        globalGnbId:
+          $ref: '#/components/schemas/GlobalRanNodeId'
+      required:
+      - ncgi
+      - tai
+      type: object
+    N3gaLocation:
+      description: Contains the Non-3GPP access user location.
+      example:
+        ueIpv4Addr: 198.51.100.1
+        twapId:
+          bssId: bssId
+          civicAddress: civicAddress
+          ssId: ssId
+        hfcNodeId:
+          hfcNId: hfcNId
+        protocol: null
+        gli: gli
+        n3gppTai:
+          tac: tac
+          nid: nid
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+        tnapId:
+          bssId: bssId
+          civicAddress: civicAddress
+          ssId: ssId
+        w5gbanLineType: null
+        ueIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+        gci: gci
+        n3IwfId: n3IwfId
+        portNumber: 0
+      properties:
+        n3gppTai:
+          $ref: '#/components/schemas/Tai'
+        n3IwfId:
+          description: "This IE shall contain the N3IWF identifier received over NGAP\
+            \ and shall be encoded as a  string of hexadecimal characters. Each character\
+            \ in the string shall take a value of \"0\"  to \"9\", \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant \
+            \ character representing the 4 most significant bits of the N3IWF ID shall\
+            \ appear first in  the string, and the character representing the 4 least\
+            \ significant bit of the N3IWF ID  shall appear last in the string. \n"
+          pattern: "^[A-Fa-f0-9]+$"
+          type: string
+        ueIpv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ueIpv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        protocol:
+          $ref: '#/components/schemas/TransportProtocol'
+        tnapId:
+          $ref: '#/components/schemas/TnapId'
+        twapId:
+          $ref: '#/components/schemas/TwapId'
+        hfcNodeId:
+          $ref: '#/components/schemas/HfcNodeId'
+        gli:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        w5gbanLineType:
+          $ref: '#/components/schemas/LineType'
+        gci:
+          description: |
+            Global Cable Identifier uniquely identifying the connection between the 5G-CRG or FN-CRG to the 5GS. See clause 28.15.4 of 3GPP TS 23.003. This shall be encoded as a string per clause 28.15.4 of 3GPP TS 23.003, and compliant with the syntax specified  in clause 2.2  of IETF RFC 7542 for the username part of a NAI. The GCI value is specified in CableLabs WR-TR-5WWC-ARCH.
+          type: string
+      type: object
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    TransportProtocol:
+      anyOf:
+      - enum:
+        - UDP
+        - TCP
+        type: string
+      - description: "This string provides forward-compatibility with future extensions\
+          \ to the enumeration but is not used to encode content defined in the present\
+          \ version of this API. \n"
+        type: string
+      description: "Possible values are:\n- UDP: User Datagram Protocol.\n- TCP: Transmission\
+        \ Control Protocol. \n"
+    TnapId:
+      description: Contain the TNAP Identifier see clause5.6.2 of 3GPP TS 23.501.
+      example:
+        bssId: bssId
+        civicAddress: civicAddress
+        ssId: ssId
+      properties:
+        ssId:
+          description: "This IE shall be present if the UE is accessing the 5GC via\
+            \ a trusted WLAN access network.When present, it shall contain the SSID\
+            \ of the access point to which the UE is attached, that is received over\
+            \ NGAP,  see IEEE Std 802.11-2012. \n"
+          type: string
+        bssId:
+          description: "When present, it shall contain the BSSID of the access point\
+            \ to which the UE is attached, that is received over NGAP, see IEEE Std\
+            \ 802.11-2012. \n"
+          type: string
+        civicAddress:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+      type: object
+    Bytes:
+      description: string with format 'bytes' as defined in OpenAPI
+      format: byte
+      type: string
+    TwapId:
+      description: |
+        Contain the TWAP Identifier as defined in clause 4.2.8.5.3 of 3GPP TS 23.501 or the WLAN location information as defined in clause 4.5.7.2.8 of 3GPP TS 23.402.
+      example:
+        bssId: bssId
+        civicAddress: civicAddress
+        ssId: ssId
+      properties:
+        ssId:
+          description: "This IE shall contain the SSID of the access point to which\
+            \ the UE is attached, that is received over NGAP, see IEEE Std 802.11-2012.\
+            \ \n"
+          type: string
+        bssId:
+          description: "When present, it shall contain the BSSID of the access point\
+            \ to which the UE is attached, for trusted WLAN access, see IEEE Std 802.11-2012.\
+            \ \n"
+          type: string
+        civicAddress:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+      required:
+      - ssId
+      type: object
+    HfcNodeId:
+      description: REpresents the HFC Node Identifer received over NGAP.
+      example:
+        hfcNId: hfcNId
+      properties:
+        hfcNId:
+          description: |
+            This IE represents the identifier of the HFC node Id as specified in CableLabs WR-TR-5WWC-ARCH. It is provisioned by the wireline operator as part of wireline operations and may contain up to six characters.
+          maxLength: 6
+          type: string
+      required:
+      - hfcNId
+      type: object
+    HfcNId:
+      description: |
+        This IE represents the identifier of the HFC node Id as specified in CableLabs WR-TR-5WWC-ARCH. It is provisioned by the wireline operator as part of wireline operations and may contain up to six characters.
+      maxLength: 6
+      type: string
+    Gli:
+      $ref: '#/components/schemas/Bytes'
+    LineType:
+      anyOf:
+      - enum:
+        - DSL
+        - PON
+        type: string
+      - description: "This string provides forward-compatibility with future extensions\
+          \ to the enumeration but is not used to encode content defined in the present\
+          \ version of this API. \n"
+        type: string
+      description: |
+        Possible values are:
+        - DSL: Identifies a DSL line
+        - PON: Identifies a PON line
+    Gci:
+      description: |
+        Global Cable Identifier uniquely identifying the connection between the 5G-CRG or FN-CRG to the 5GS. See clause 28.15.4 of 3GPP TS 23.003. This shall be encoded as a string per clause 28.15.4 of 3GPP TS 23.003, and compliant with the syntax specified  in clause 2.2  of IETF RFC 7542 for the username part of a NAI. The GCI value is specified in CableLabs WR-TR-5WWC-ARCH.
+      type: string
+    UtraLocation:
+      description: "Exactly one of cgi, sai or lai shall be present."
+      example:
+        geographicalInformation: geographicalInformation
+        ageOfLocationInformation: 18471
+        cgi:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          cellId: cellId
+          lac: lac
+        lai:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        sai:
+          sac: sac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        rai:
+          rac: rac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+      oneOf:
+      - required:
+        - cgi
+      - required:
+        - sai
+      - required:
+        - rai
+      properties:
+        cgi:
+          $ref: '#/components/schemas/CellGlobalId'
+        sai:
+          $ref: '#/components/schemas/ServiceAreaId'
+        lai:
+          $ref: '#/components/schemas/LocationAreaId'
+        rai:
+          $ref: '#/components/schemas/RoutingAreaId'
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station.  Value "0" indicates that the location information was obtained after a successful paging procedure for  Active Location Retrieval when the UE is in idle mode
+             or after a successful location reporting procedure  the UE is in connected mode. Any
+            other value than "0" indicates that the location information is the last known one.  See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information.See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location. See ITU-T Recommendation Q.763 (1999) clause 3.88.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+      type: object
+    CellGlobalId:
+      description: "Contains a Cell Global Identification as defined in 3GPP TS 23.003,\
+        \ clause 4.3.1."
+      example:
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        cellId: cellId
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+        cellId:
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+      required:
+      - cellId
+      - lac
+      - plmnId
+      type: object
+    ServiceAreaId:
+      description: "Contains a Service Area Identifier as defined in 3GPP TS 23.003,\
+        \ clause 12.5."
+      example:
+        sac: sac
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          description: Location Area Code.
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+        sac:
+          description: Service Area Code.
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+      required:
+      - lac
+      - plmnId
+      - sac
+      type: object
+    LocationAreaId:
+      description: "Contains a Location area identification as defined in 3GPP TS\
+        \ 23.003, clause 4.1."
+      example:
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          description: Location Area Code.
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+      required:
+      - lac
+      - plmnId
+      type: object
+    RoutingAreaId:
+      description: "Contains a Routing Area Identification as defined in 3GPP TS 23.003,\
+        \ clause 4.2."
+      example:
+        rac: rac
+        plmnId:
+          mnc: mnc
+          mcc: mcc
+        lac: lac
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        lac:
+          description: Location Area Code
+          pattern: "^[A-Fa-f0-9]{4}$"
+          type: string
+        rac:
+          description: Routing Area Code
+          pattern: "^[A-Fa-f0-9]{2}$"
+          type: string
+      required:
+      - lac
+      - plmnId
+      - rac
+      type: object
+    GeraLocation:
+      description: "Exactly one of cgi, sai or lai shall be present."
+      example:
+        geographicalInformation: geographicalInformation
+        ageOfLocationInformation: 7543
+        cgi:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          cellId: cellId
+          lac: lac
+        lai:
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        mscNumber: mscNumber
+        sai:
+          sac: sac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        rai:
+          rac: rac
+          plmnId:
+            mnc: mnc
+            mcc: mcc
+          lac: lac
+        vlrNumber: vlrNumber
+        locationNumber: locationNumber
+        ueLocationTimestamp: 2000-01-23T04:56:07.000+00:00
+        geodeticInformation: geodeticInformation
+      oneOf:
+      - required:
+        - cgi
+      - required:
+        - sai
+      - required:
+        - lai
+      - required:
+        - rai
+      properties:
+        locationNumber:
+          description: "Location number within the PLMN. See 3GPP TS 23.003, clause\
+            \ 4.5."
+          type: string
+        cgi:
+          $ref: '#/components/schemas/CellGlobalId'
+        rai:
+          $ref: '#/components/schemas/RoutingAreaId'
+        sai:
+          $ref: '#/components/schemas/ServiceAreaId'
+        lai:
+          $ref: '#/components/schemas/LocationAreaId'
+        vlrNumber:
+          description: VLR number. See 3GPP TS 23.003 clause 5.1.
+          type: string
+        mscNumber:
+          description: MSC number. See 3GPP TS 23.003 clause 5.1.
+          type: string
+        ageOfLocationInformation:
+          description: |
+            The value represents the elapsed time in minutes since the last network contact of the mobile station. Value "0" indicates that the location information was obtained after a successful paging procedure for  Active Location Retrieval when the UE is in idle mode or after a successful location reporting procedure the UE is in connected mode. Any other value than "0" indicates that the location information is the last known one. See 3GPP TS 29.002 clause 17.7.8.
+          maximum: 32767
+          minimum: 0
+          type: integer
+        ueLocationTimestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        geographicalInformation:
+          description: |
+            Refer to geographical Information.See 3GPP TS 23.032 clause 7.3.2. Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{16}$"
+          type: string
+        geodeticInformation:
+          description: |
+            Refers to Calling Geodetic Location.See ITU-T Recommendation Q.763 (1999) clause 3.88.2.  Only the description of an ellipsoid point with uncertainty circle is allowed to be used.
+          pattern: "^[0-9A-F]{20}$"
+          type: string
+      type: object
+    TimeZone:
+      description: "String with format \"time-numoffset\" optionally appended by \"\
+        daylightSavingTime\", where \n- \"time-numoffset\" shall represent the time\
+        \ zone adjusted for daylight saving time and be\n   encoded as time-numoffset\
+        \ as defined in clause\_5.6 of IETF RFC 3339; \n- \"daylightSavingTime\" shall\
+        \ represent the adjustment that has been made and shall be\n   encoded as\
+        \ \"+1\" or \"+2\" for a +1 or +2 hours adjustment. \n\nThe example is for\
+        \ 8 hours behind UTC, +1 hour adjustment for Daylight Saving Time.\n"
+      example: -08:00+1
+      type: string
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      example:
+        mnc: mnc
+        nid: nid
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    RatType:
+      anyOf:
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
+      - type: string
+      description: Indicates the radio access used.
+    GroupId:
+      description: "String identifying a group of devices network internal globally\
+        \ unique ID which identifies a set of IMSIs, as specified in clause 19.9 of\
+        \ 3GPP TS 23.003. \n"
+      pattern: "^[A-Fa-f0-9]{8}-[0-9]{3}-[0-9]{2,3}-([A-Fa-f0-9][A-Fa-f0-9]){1,10}$"
+      type: string
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    Guami:
+      description: "Globally Unique AMF Identifier constructed out of PLMN, Network\
+        \ and AMF identity."
+      example:
+        plmnId:
+          mnc: mnc
+          nid: nid
+          mcc: mcc
+        amfId: amfId
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnIdNid'
+        amfId:
+          description: "String identifying the AMF ID composed of AMF Region ID (8\
+            \ bits), AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in\
+            \ clause 2.10.1 of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal\
+            \ characters (i.e., 24 bits). \n"
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - amfId
+      - plmnId
+      type: object
+    AmfId:
+      description: "String identifying the AMF ID composed of AMF Region ID (8 bits),\
+        \ AMF Set ID (10 bits) and AMF  Pointer (6 bits) as specified in clause 2.10.1\
+        \ of 3GPP TS 23.003. It is encoded as a string of  6 hexadecimal characters\
+        \ (i.e., 24 bits). \n"
+      pattern: "^[A-Fa-f0-9]{6}$"
+      type: string
+    ServiceName:
+      anyOf:
+      - enum:
+        - nnrf-nfm
+        - nnrf-disc
+        - nnrf-oauth2
+        - nudm-sdm
+        - nudm-uecm
+        - nudm-ueau
+        - nudm-ee
+        - nudm-pp
+        - nudm-niddau
+        - nudm-mt
+        - nudm-ssau
+        - nudm-rsds
+        - namf-comm
+        - namf-evts
+        - namf-mt
+        - namf-loc
+        - namf-mbs-comm
+        - namf-mbs-bc
+        - nsmf-pdusession
+        - nsmf-event-exposure
+        - nsmf-nidd
+        - nausf-auth
+        - nausf-sorprotection
+        - nausf-upuprotection
+        - nnef-pfdmanagement
+        - nnef-smcontext
+        - nnef-eventexposure
+        - nnef-eas-deployment-info
+        - 3gpp-cp-parameter-provisioning
+        - 3gpp-device-triggering
+        - 3gpp-bdt
+        - 3gpp-traffic-influence
+        - 3gpp-chargeable-party
+        - 3gpp-as-session-with-qos
+        - 3gpp-msisdn-less-mo-sms
+        - 3gpp-service-parameter
+        - 3gpp-monitoring-event
+        - 3gpp-nidd-configuration-trigger
+        - 3gpp-nidd
+        - 3gpp-analyticsexposure
+        - 3gpp-racs-parameter-provisioning
+        - 3gpp-ecr-control
+        - 3gpp-applying-bdt-policy
+        - 3gpp-mo-lcs-notify
+        - 3gpp-time-sync
+        - 3gpp-am-influence
+        - 3gpp-am-policyauthorization
+        - 3gpp-akma
+        - 3gpp-eas-deployment
+        - 3gpp-iptvconfiguration
+        - 3gpp-mbs-tmgi
+        - 3gpp-mbs-session
+        - 3gpp-authentication
+        - 3gpp-asti
+        - npcf-am-policy-control
+        - npcf-smpolicycontrol
+        - npcf-policyauthorization
+        - npcf-bdtpolicycontrol
+        - npcf-eventexposure
+        - npcf-ue-policy-control
+        - npcf-am-policyauthorization
+        - nsmsf-sms
+        - nnssf-nsselection
+        - nnssf-nssaiavailability
+        - nudr-dr
+        - nudr-group-id-map
+        - nlmf-loc
+        - n5g-eir-eic
+        - nbsf-management
+        - nchf-spendinglimitcontrol
+        - nchf-convergedcharging
+        - nchf-offlineonlycharging
+        - nnwdaf-eventssubscription
+        - nnwdaf-analyticsinfo
+        - nnwdaf-datamanagement
+        - nnwdaf-mlmodelprovision
+        - ngmlc-loc
+        - nucmf-provisioning
+        - nucmf-uecapabilitymanagement
+        - nhss-sdm
+        - nhss-uecm
+        - nhss-ueau
+        - nhss-ee
+        - nhss-ims-sdm
+        - nhss-ims-uecm
+        - nhss-ims-ueau
+        - nhss-gba-sdm
+        - nhss-gba-ueau
+        - nsepp-telescopic
+        - nsoraf-sor
+        - nspaf-secured-packet
+        - nudsf-dr
+        - nudsf-timer
+        - nnssaaf-nssaa
+        - nnssaaf-aiw
+        - naanf-akma
+        - n5gddnmf-discovery
+        - nmfaf-3dadm
+        - nmfaf-3cadm
+        - neasdf-dnscontext
+        - neasdf-baselinednspattern
+        - ndccf-dm
+        - ndccf-cm
+        - nnsacf-nsac
+        - nnsacf-slice-ee
+        - nmbsmf-tmgi
+        - nmbsmf-mbssession
+        - nadrf-dm
+        - nbsp-gba
+        - ntsctsf-time-sync
+        - ntsctsf-qos-tscai
+        - ntsctsf-asti
+        - npkmf-keyreq
+        - nmnpf-npstatus
+        - niwmsc-smservice
+        - nmbsf-mbsuserserv
+        - nmbsf-mbsuserdataing
+        - nmbstf-distsession
+        - npanf-prosekey
+        type: string
+      - type: string
+      description: Service names known to NRF
+    CmState:
+      anyOf:
+      - enum:
+        - IDLE
+        - CONNECTED
+        type: string
+      - type: string
+      description: Describes the connection management state of a UE
+    N1N2MessageTransferCause:
+      anyOf:
+      - enum:
+        - ATTEMPTING_TO_REACH_UE
+        - N1_N2_TRANSFER_INITIATED
+        - WAITING_FOR_ASYNCHRONOUS_TRANSFER
+        - UE_NOT_RESPONDING
+        - N1_MSG_NOT_TRANSFERRED
+        - N2_MSG_NOT_TRANSFERRED
+        - UE_NOT_REACHABLE_FOR_SESSION
+        - TEMPORARY_REJECT_REGISTRATION_ONGOING
+        - TEMPORARY_REJECT_HANDOVER_ONGOING
+        - REJECTION_DUE_TO_PAGING_RESTRICTION
+        - AN_NOT_RESPONDING
+        - FAILURE_CAUSE_UNSPECIFIED
+        type: string
+      - type: string
+      description: Enumeration for N1N2Message Transfer Cause
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    RefToBinaryData:
+      description: This parameter provides information about the referenced binary
+        body data.
+      example:
+        contentId: contentId
+      properties:
+        contentId:
+          description: |
+            This IE shall contain the value of the Content-ID header of the referenced binary body part.
+          type: string
+      required:
+      - contentId
+      type: object
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            npcf-ue-policy-control: Access to the Npcf_UEPolicyControl API
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

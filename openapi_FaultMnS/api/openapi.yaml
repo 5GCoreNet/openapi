@@ -1,0 +1,1286 @@
+openapi: 3.0.1
+info:
+  description: "OAS 3.0.1 definition of the Fault Supervision MnS © 2022, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved."
+  title: Fault Supervision MnS
+  version: 17.2.0
+externalDocs:
+  description: 3GPP TS 28.532; Generic management services
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.532/
+servers:
+- url: "{MnSRoot}/FaultSupervisionMnS/{MnSversion}"
+  variables:
+    MnSRoot:
+      default: http://example.com/3GPPManagement
+      description: See subclause 4.4.3 of TS 32.158
+    MnSversion:
+      default: XXX
+      description: Version number of the OpenAPI definition
+paths:
+  /alarms:
+    get:
+      description: "Retrieves the alarms identified by alarmAckState, baseObjectInstance\
+        \ and filter."
+      parameters:
+      - explode: true
+        in: query
+        name: alarmAckState
+        required: false
+        schema:
+          $ref: '#/components/schemas/AlarmAckState'
+        style: form
+      - explode: true
+        in: query
+        name: baseObjectInstance
+        required: false
+        schema:
+          $ref: '#/components/schemas/Dn'
+        style: form
+      - explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          $ref: '#/components/schemas/Filter'
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                additionalProperties:
+                  $ref: '#/components/schemas/_alarms_get_200_response_value'
+                type: object
+          description: Success case ("200 OK"). Returns the alarms identified in the
+            request. The alarmId is the key of the map.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Response in case of error.
+      summary: Retrieve multiple alarms
+    patch:
+      description: "Clears, acknowledges or unacknowledges multiple alarms using patch.\
+        \ Depending on which action is to be performed, different merge patch documents\
+        \ need to be used."
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/_alarms_patch_request'
+        description: "Patch documents for acknowledging and unacknowledging, or clearing\
+          \ multiple alarms. The keys in the map are the alarmIds to be patched."
+      responses:
+        "204":
+          description: Success case ("204 No content"). The response message body
+            is empty.
+        default:
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/FailedAlarm'
+                type: array
+          description: Response in case of error.
+      summary: "Clear, acknowledge or unacknowledge multiple alarms"
+  /alarms/alarmCount:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: alarmAckState
+        required: false
+        schema:
+          $ref: '#/components/schemas/AlarmAckState'
+        style: form
+      - explode: true
+        in: query
+        name: filter
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AlarmCount'
+          description: Success case ("200 OK"). The alarm count per perceived severity
+            is returned.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Response in case of error. The error case needs rework.
+      summary: Get the alarm count per perceived severity
+  /alarms/{alarmId}:
+    patch:
+      description: "Clears, acknowledges or uncknowldeges a single alarm by patching\
+        \ the alarm information. A conditional acknowledge request based on the perceived\
+        \ severity is not supported."
+      parameters:
+      - description: Identifies the alarm to be patched.
+        explode: false
+        in: path
+        name: alarmId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/_alarms__alarmId__patch_request'
+        required: true
+      responses:
+        "204":
+          description: Success case (204 No content). The response message body is
+            absent.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Response in case of error.
+      summary: "Clear, acknowledge or unacknowledge a single alarm"
+  /alarms/{alarmId}/comments:
+    post:
+      description: Adds a comment to an alarm identified by alarmId. The id of the
+        new comment is allocated by the producer.
+      parameters:
+      - description: Identifies the alarm to which the comment shall be added.
+        explode: false
+        in: path
+        name: alarmId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+          description: Success case (201 Created). The representation of the newly
+            created comment resource shall be returned.
+          headers:
+            Location:
+              description: URI of the newly created comment resource.
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Error case.
+      summary: Add a comment to a single alarm
+  /subscriptions:
+    post:
+      callbacks:
+        notifyNewAlarm:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyNewAlarm_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      oneOf:
+                      - $ref: '#/components/schemas/NotifyNewAlarm'
+                      - $ref: '#/components/schemas/NotifyNewSecAlarm'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyClearedAlarm:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyClearedAlarm_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyClearedAlarm'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyChangedAlarm:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyChangedAlarm_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyChangedAlarm'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyChangedAlarmGeneral:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyChangedAlarmGeneral_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      oneOf:
+                      - $ref: '#/components/schemas/NotifyChangedAlarmGeneral'
+                      - $ref: '#/components/schemas/NotifyChangedSecAlarmGeneral'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyCorrelatedNotificationChanged:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyCorrelatedNotificationChanged_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyCorrelatedNotificationChanged'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyAckStateChanged:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyAckStateChanged_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyAckStateChanged'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyComments:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyComments_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyComments'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyPotentialFaultyAlarmList:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyPotentialFaultyAlarmList_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyPotentialFaultyAlarmList'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+        notifyAlarmListRebuilt:
+          '{request.body#/consumerReference}':
+            post:
+              operationId: notifyAlarmListRebuilt_request_bodyConsumerReferencePost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/NotifyAlarmListRebuilt'
+                required: true
+              responses:
+                "204":
+                  description: Success case ("204 No Content"). The notification is
+                    successfully delivered. The response message body is absent.
+                default:
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/ErrorResponse'
+                  description: Error case.
+              x-callback-request: true
+      description: To create a subscription the representation of the subscription
+        is POSTed on the /subscriptions collection resource.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Subscription'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subscription'
+          description: Success case ("201 Created"). The representation of the newly
+            created subscription resource shall be returned.
+          headers:
+            Location:
+              description: URI of the newly created subscription resource
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Error case.
+      summary: Create a subscription
+  /subscriptions/{subscriptionId}:
+    delete:
+      description: The subscription is deleted by deleting the corresponding subscription
+        resource. The resource to be deleted is identified with the path component
+        of the URI.
+      parameters:
+      - description: Identifies the subscription to be deleted.
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Success case ("204 No Content"). The subscription resource
+            has been deleted. The response message body is absent.
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+          description: Error case.
+      summary: Delete a subscription
+components:
+  schemas:
+    AlarmId:
+      type: string
+    AlarmType:
+      enum:
+      - COMMUNICATIONS_ALARM
+      - QUALITY_OF_SERVICE_ALARM
+      - PROCESSING_ERROR_ALARM
+      - EQUIPMENT_ALARM
+      - ENVIRONMENTAL_ALARM
+      - INTEGRITY_VIOLATION
+      - OPERATIONAL_VIOLATION
+      - PHYSICAL_VIOLATION
+      - SECURITY_SERVICE_OR_MECHANISM_VIOLATION
+      - TIME_DOMAIN_VIOLATION
+      type: string
+    ProbableCause:
+      description: "The value of the probable cause may be a specific standardized\
+        \ string, or any vendor provided string. Probable cause strings are not standardized\
+        \ in the present document. They may be added in a future version. Up to then\
+        \ the mapping of the generic probable cause strings \"PROBABLE_CAUSE_001\"\
+        \ to \"PROBABLE_CAUSE_005\" is vendor specific. The value of the probable\
+        \ cause may also be an integer. The mapping of integer values to probable\
+        \ causes is vendor specific."
+      oneOf:
+      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - type: integer
+    SpecificProblem:
+      oneOf:
+      - type: string
+      - type: integer
+    PerceivedSeverity:
+      enum:
+      - INDETERMINATE
+      - CRITICAL
+      - MAJOR
+      - MINOR
+      - WARNING
+      - CLEARED
+      type: string
+    TrendIndication:
+      enum:
+      - MORE_SEVERE
+      - NO_CHANGE
+      - LESS_SEVERE
+      type: string
+    ThresholdHysteresis:
+      properties:
+        high:
+          $ref: '#/components/schemas/ThresholdHysteresis_high'
+        low:
+          format: float
+          type: number
+      required:
+      - high
+      type: object
+    ThresholdLevelInd:
+      oneOf:
+      - $ref: '#/components/schemas/ThresholdLevelInd_oneOf'
+      - $ref: '#/components/schemas/ThresholdLevelInd_oneOf_1'
+    ThresholdInfo:
+      properties:
+        observedMeasurement:
+          type: string
+        observedValue:
+          type: number
+        thresholdLevel:
+          $ref: '#/components/schemas/ThresholdLevelInd'
+        armTime:
+          format: date-time
+          type: string
+      required:
+      - observedMeasurement
+      - observedValue
+      type: object
+    CorrelatedNotification:
+      properties:
+        sourceObjectInstance:
+          type: string
+        notificationIds:
+          items:
+            $ref: '#/components/schemas/NotificationId'
+          type: array
+      required:
+      - notificationIds
+      - sourceObjectInstance
+      type: object
+    CorrelatedNotifications:
+      items:
+        $ref: '#/components/schemas/CorrelatedNotification'
+      type: array
+    AckState:
+      enum:
+      - ACKNOWLEDGED
+      - UNACKNOWLEDGED
+      type: string
+    AlarmRecord:
+      description: The alarmId is not a property of an alarm record. It is used as
+        key in the map of alarm records instead.
+      properties:
+        objectInstance:
+          type: string
+        notificationId:
+          type: integer
+        alarmRaisedTime:
+          format: date-time
+          type: string
+        alarmChangedTime:
+          format: date-time
+          type: string
+        alarmClearedTime:
+          format: date-time
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        specificProblem:
+          $ref: '#/components/schemas/SpecificProblem'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        backedUpStatus:
+          type: boolean
+        backUpObject:
+          type: string
+        trendIndication:
+          $ref: '#/components/schemas/TrendIndication'
+        thresholdinfo:
+          $ref: '#/components/schemas/ThresholdInfo'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        stateChangeDefinition:
+          description: "The first array item contains the attribute name value pairs\
+            \ with the new values, and the second array item the attribute name value\
+            \ pairs with the optional old values."
+          items:
+            $ref: '#/components/schemas/AttributeNameValuePairSet'
+          maxItems: 2
+          minItems: 1
+          type: array
+        monitoredAttributes:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        proposedRepairActions:
+          type: string
+        additionalText:
+          type: string
+        additionalInformation:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        rootCauseIndicator:
+          type: boolean
+        ackTime:
+          format: date-time
+          type: string
+        ackUserId:
+          type: string
+        ackSystemId:
+          type: string
+        ackState:
+          $ref: '#/components/schemas/AckState'
+        clearUserId:
+          type: string
+        clearSystemId:
+          type: string
+        serviceUser:
+          type: string
+        serviceProvider:
+          type: string
+        securityAlarmDetector:
+          type: string
+      type: object
+    AlarmNotificationTypes:
+      enum:
+      - notifyNewAlarm
+      - notifyChangedAlarm
+      - notifyChangedAlarmGeneral
+      - notifyAckStateChanged
+      - notifyCorrelatedNotificationChanged
+      - notifyComments
+      - notifyClearedAlarm
+      - notifyAlarmListRebuilt
+      - notifyPotentialFaultyAlarmList
+      type: string
+    AlarmListAlignmentRequirement:
+      enum:
+      - ALIGNMENT_REQUIRED
+      - ALIGNMENT_NOT_REQUIRED
+      type: string
+    NotifyNewAlarm:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyNewAlarm_allOf'
+    NotifyNewSecAlarm:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyNewSecAlarm_allOf'
+    NotifyClearedAlarm:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyClearedAlarm_allOf'
+    NotifyChangedAlarm:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyChangedAlarm_allOf'
+    NotifyChangedAlarmGeneral:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyChangedAlarmGeneral_allOf'
+    NotifyChangedSecAlarmGeneral:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyChangedSecAlarmGeneral_allOf'
+    NotifyCorrelatedNotificationChanged:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyCorrelatedNotificationChanged_allOf'
+    NotifyAckStateChanged:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyAckStateChanged_allOf'
+    NotifyComments:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyComments_allOf'
+    NotifyPotentialFaultyAlarmList:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyPotentialFaultyAlarmList_allOf'
+    NotifyAlarmListRebuilt:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyAlarmListRebuilt_allOf'
+    AlarmAckState:
+      enum:
+      - ALL_ALARMS
+      - ALL_ACTIVE_ALARMS
+      - ALL_ACTIVE_AND_ACKNOWLEDGED_ALARMS
+      - ALL_ACTIVE_AND_UNACKNOWLEDGED_ALARMS
+      - ALL_CLEARED_AND_UNACKNOWLEDGED_ALARMS
+      - ALL_UNACKNOWLEDGED_ALARMS
+      type: string
+    MergePatchAcknowledgeAlarm:
+      description: "Patch document acknowledging or unacknowledging a single alarm.\
+        \ For acknowleding an alarm the value of ackState is ACKNOWLEDGED, for unacknowleding\
+        \ an alarm the value of ackState is UNACKNOWLEDGED."
+      properties:
+        ackUserId:
+          type: string
+        ackSystemId:
+          type: string
+        ackState:
+          $ref: '#/components/schemas/AckState'
+      required:
+      - ackState
+      - ackUserId
+      type: object
+    MergePatchClearAlarm:
+      description: Patch document for clearing a single alarm
+      properties:
+        clearUserId:
+          type: string
+        clearSystemId:
+          type: string
+        perceivedSeverity:
+          enum:
+          - CLEARED
+          type: string
+      required:
+      - clearUserId
+      - perceivedSeverity
+      type: object
+    FailedAlarm:
+      properties:
+        alarmId:
+          type: string
+        failureReason:
+          type: string
+      required:
+      - alarmId
+      - failureReason
+      type: object
+    AlarmCount:
+      example:
+        indeterminateCount: 5
+        minorCount: 1
+        majorCount: 6
+        clearedCount: 2
+        warningCount: 5
+        criticalCount: 0
+      properties:
+        criticalCount:
+          type: integer
+        majorCount:
+          type: integer
+        minorCount:
+          type: integer
+        warningCount:
+          type: integer
+        indeterminateCount:
+          type: integer
+        clearedCount:
+          type: integer
+      required:
+      - clearedCount
+      - criticalCount
+      - indeterminateCount
+      - majorCount
+      - minorCount
+      - warningCount
+      type: object
+    Comment:
+      example:
+        commentSystemId: commentSystemId
+        commentTime: 2000-01-23T04:56:07.000+00:00
+        commentText: commentText
+        commentUserId: commentUserId
+      properties:
+        commentTime:
+          format: date-time
+          type: string
+        commentUserId:
+          type: string
+        commentSystemId:
+          type: string
+        commentText:
+          type: string
+      type: object
+    Comments:
+      additionalProperties:
+        $ref: '#/components/schemas/Comment'
+      description: Collection of comments. The comment identifiers are allocated by
+        the MnS producer and used as key in the map.
+      type: object
+    Subscription:
+      example:
+        filter: filter
+        timeTick: 0
+        consumerReference: consumerReference
+      properties:
+        consumerReference:
+          type: string
+        timeTick:
+          type: integer
+        filter:
+          description: The filter format shall be compliant to XPath 1.0.
+          type: string
+      type: object
+    Dn:
+      type: string
+    Filter:
+      description: The filter format shall be compliant to XPath 1.0.
+      type: string
+    NotificationHeader:
+      properties:
+        href:
+          type: string
+        notificationId:
+          type: integer
+        notificationType:
+          $ref: '#/components/schemas/NotificationType'
+        eventTime:
+          format: date-time
+          type: string
+        systemDN:
+          type: string
+      required:
+      - eventTime
+      - href
+      - notificationId
+      - notificationType
+      - systemDN
+      type: object
+    Uri:
+      type: string
+    NotificationId:
+      type: integer
+    NotificationType:
+      oneOf:
+      - $ref: '#/components/schemas/AlarmNotificationTypes'
+      - $ref: '#/components/schemas/CmNotificationTypes'
+      - $ref: '#/components/schemas/PerfNotificationTypes'
+      - $ref: '#/components/schemas/HeartbeatNotificationTypes'
+      - $ref: '#/components/schemas/FileNotificationTypes'
+    DateTime:
+      format: date-time
+      type: string
+    SystemDN:
+      type: string
+    ErrorResponse:
+      description: Default schema for the response message body in case the request
+        is not successful.
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResponse_error'
+      type: object
+    Float:
+      format: float
+      type: number
+    AttributeValueChangeSet:
+      description: "The first array item contains the attribute name value pairs with\
+        \ the new values, and the second array item the attribute name value pairs\
+        \ with the optional old values."
+      items:
+        $ref: '#/components/schemas/AttributeNameValuePairSet'
+      maxItems: 2
+      minItems: 1
+      type: array
+    AttributeNameValuePairSet:
+      additionalProperties:
+        nullable: true
+      description: "The key of this map is the attribute name, and the value the attribute\
+        \ value."
+      minProperties: 1
+      type: object
+    CmNotificationTypes:
+      enum:
+      - notifyMOICreation
+      - notifyMOIDeletion
+      - notifyMOIAttributeValueChanges
+      - notifyMOIChanges
+      type: string
+    PerfNotificationTypes:
+      enum:
+      - notifyThresholdCrossing
+      type: string
+    HeartbeatNotificationTypes:
+      enum:
+      - notifyHeartbeat
+      type: string
+    FileNotificationTypes:
+      enum:
+      - notifyFileReady
+      - notifyFilePreparationError
+      type: string
+    _alarms_get_200_response_value_allOf:
+      properties:
+        lastNotificationHeader:
+          $ref: '#/components/schemas/NotificationHeader'
+      type: object
+    _alarms_get_200_response_value_allOf_1:
+      properties:
+        comments:
+          additionalProperties:
+            $ref: '#/components/schemas/Comment'
+          description: Collection of comments. The comment identifiers are allocated
+            by the MnS producer and used as key in the map.
+          type: object
+      type: object
+    _alarms_get_200_response_value:
+      allOf:
+      - $ref: '#/components/schemas/_alarms_get_200_response_value_allOf'
+      - $ref: '#/components/schemas/AlarmRecord'
+      - $ref: '#/components/schemas/_alarms_get_200_response_value_allOf_1'
+      type: object
+    _alarms_patch_request:
+      oneOf:
+      - additionalProperties:
+          $ref: '#/components/schemas/MergePatchAcknowledgeAlarm'
+        type: object
+      - additionalProperties:
+          $ref: '#/components/schemas/MergePatchClearAlarm'
+        type: object
+    _alarms__alarmId__patch_request:
+      oneOf:
+      - $ref: '#/components/schemas/MergePatchAcknowledgeAlarm'
+      - $ref: '#/components/schemas/MergePatchClearAlarm'
+    ProbableCause_oneOf:
+      anyOf:
+      - enum:
+        - PROBABLE_CAUSE_001
+        - PROBABLE_CAUSE_002
+        - PROBABLE_CAUSE_003
+        - PROBABLE_CAUSE_004
+        - PROBABLE_CAUSE_005
+        type: string
+      - type: string
+    ThresholdHysteresis_high:
+      oneOf:
+      - type: integer
+      - $ref: '#/components/schemas/Float'
+    ThresholdLevelInd_oneOf:
+      properties:
+        up:
+          $ref: '#/components/schemas/ThresholdHysteresis'
+      type: object
+    ThresholdLevelInd_oneOf_1:
+      properties:
+        down:
+          $ref: '#/components/schemas/ThresholdHysteresis'
+      type: object
+    NotifyNewAlarm_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        specificProblem:
+          $ref: '#/components/schemas/SpecificProblem'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        backedUpStatus:
+          type: boolean
+        backUpObject:
+          type: string
+        trendIndication:
+          $ref: '#/components/schemas/TrendIndication'
+        thresholdInfo:
+          $ref: '#/components/schemas/ThresholdInfo'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        stateChangeDefinition:
+          description: "The first array item contains the attribute name value pairs\
+            \ with the new values, and the second array item the attribute name value\
+            \ pairs with the optional old values."
+          items:
+            $ref: '#/components/schemas/AttributeNameValuePairSet'
+          maxItems: 2
+          minItems: 1
+          type: array
+        monitoredAttributes:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        proposedRepairActions:
+          type: string
+        additionalText:
+          type: string
+        additionalInformation:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        rootCauseIndicator:
+          type: boolean
+      required:
+      - alarmId
+      - alarmType
+      - perceivedSeverity
+      - probableCause
+      type: object
+      example: null
+    NotifyNewSecAlarm_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        additionalText:
+          type: string
+        additionalInformation:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        rootCauseIndicator:
+          type: boolean
+        serviceUser:
+          type: string
+        serviceProvider:
+          type: string
+        securityAlarmDetector:
+          type: string
+      required:
+      - alarmId
+      - alarmType
+      - perceivedSeverity
+      - probableCause
+      - securityAlarmDetector
+      - serviceProvider
+      - serviceUser
+      type: object
+      example: null
+    NotifyClearedAlarm_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        clearUserId:
+          type: string
+        clearSystemId:
+          type: string
+      required:
+      - alarmId
+      - alarmType
+      - perceivedSeverity
+      - probableCause
+      type: object
+      example: null
+    NotifyChangedAlarm_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+      required:
+      - alarmId
+      - alarmType
+      - perceivedSeverity
+      - probableCause
+      type: object
+      example: null
+    NotifyChangedAlarmGeneral_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        specificProblem:
+          $ref: '#/components/schemas/SpecificProblem'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        backedUpStatus:
+          type: boolean
+        backUpObject:
+          type: string
+        trendIndication:
+          $ref: '#/components/schemas/TrendIndication'
+        thresholdInfo:
+          $ref: '#/components/schemas/ThresholdInfo'
+        stateChangeDefinition:
+          description: "The first array item contains the attribute name value pairs\
+            \ with the new values, and the second array item the attribute name value\
+            \ pairs with the optional old values."
+          items:
+            $ref: '#/components/schemas/AttributeNameValuePairSet'
+          maxItems: 2
+          minItems: 1
+          type: array
+        monitoredAttributes:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        proposedRepairActions:
+          type: string
+        additionalText:
+          type: string
+        additionalInformation:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        rootCauseIndicator:
+          type: boolean
+        changedAlarmAttributes:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+      required:
+      - alarmId
+      - alarmType
+      type: object
+      example: null
+    NotifyChangedSecAlarmGeneral_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        additionalText:
+          type: string
+        additionalInformation:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        rootCauseIndicator:
+          type: boolean
+        serviceUser:
+          type: string
+        serviceProvider:
+          type: string
+        securityAlarmDetector:
+          type: string
+        changedAlarmAttributes:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+      required:
+      - alarmId
+      - alarmType
+      - securityAlarmDetector
+      - serviceProvider
+      - serviceUser
+      type: object
+      example: null
+    NotifyCorrelatedNotificationChanged_allOf:
+      properties:
+        alarmId:
+          type: string
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        rootCauseIndicator:
+          type: boolean
+      required:
+      - alarmId
+      - correlatedNotifications
+      type: object
+      example: null
+    NotifyAckStateChanged_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        ackState:
+          $ref: '#/components/schemas/AckState'
+        ackUserId:
+          type: string
+        ackSystemId:
+          type: string
+      required:
+      - ackState
+      - ackUserId
+      - alarmId
+      - alarmType
+      - perceivedSeverity
+      - probableCause
+      type: object
+      example: null
+    NotifyComments_allOf:
+      properties:
+        alarmId:
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        comments:
+          additionalProperties:
+            $ref: '#/components/schemas/Comment'
+          description: Collection of comments. The comment identifiers are allocated
+            by the MnS producer and used as key in the map.
+          type: object
+      required:
+      - alarmId
+      - alarmType
+      - comments
+      - perceivedSeverity
+      - probableCause
+      type: object
+      example: null
+    NotifyPotentialFaultyAlarmList_allOf:
+      properties:
+        reason:
+          type: string
+      required:
+      - reason
+      type: object
+      example: null
+    NotifyAlarmListRebuilt_allOf:
+      properties:
+        reason:
+          type: string
+        alarmListAlignmentRequirement:
+          $ref: '#/components/schemas/AlarmListAlignmentRequirement'
+      required:
+      - reason
+      type: object
+      example: null
+    ErrorResponse_error:
+      properties:
+        errorInfo:
+          type: string
+      type: object

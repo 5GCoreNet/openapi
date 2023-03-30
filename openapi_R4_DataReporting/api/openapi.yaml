@@ -1,0 +1,214 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS Data Reporting data types
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: 5GMS Data Reporting data types
+  version: 1.0.0
+externalDocs:
+  description: TS 26.512 V17.1.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: /
+tags:
+- description: "5G Media Streaming: Data Reporting data types"
+  name: 5GMS Data Reporting data types
+paths: {}
+components:
+  schemas:
+    MediaStreamingAccessRecord:
+      allOf:
+      - $ref: '#/components/schemas/BaseRecord'
+      - $ref: '#/components/schemas/MediaStreamingAccessRecord_allOf'
+    BaseRecord:
+      properties:
+        timestamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+      required:
+      - timestamp
+      type: object
+    EndpointAddress:
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: Integer where the allowed values correspond to the value range
+            of an unsigned 16-bit integer.
+          maximum: 65535
+          minimum: 0
+          type: integer
+      required:
+      - portNumber
+      type: object
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    CacheStatus:
+      anyOf:
+      - enum:
+        - HIT
+        - MISS
+        - EXPIRED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+    Float:
+      description: string with format 'float' as defined in OpenAPI.
+      format: float
+      type: number
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Uint16:
+      description: Integer where the allowed values correspond to the value range
+        of an unsigned 16-bit integer.
+      maximum: 65535
+      minimum: 0
+      type: integer
+    MediaStreamingAccessRecord_allOf_requestMessage:
+      properties:
+        method:
+          type: string
+        url:
+          description: "Uniform Resource Locator, comforming with the URI Generic\
+            \ Syntax specified in IETF RFC 3986."
+          format: uri
+          type: string
+        protocolVersion:
+          type: string
+        range:
+          type: string
+        size:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        bodySize:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        contentType:
+          type: string
+        userAgent:
+          type: string
+        userIdentity:
+          type: string
+        referer:
+          description: "Uniform Resource Locator, comforming with the URI Generic\
+            \ Syntax specified in IETF RFC 3986."
+          format: uri
+          type: string
+      required:
+      - bodySize
+      - method
+      - protocolVersion
+      - size
+      - url
+      type: object
+      example: null
+    MediaStreamingAccessRecord_allOf_responseMessage:
+      properties:
+        responseCode:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        size:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        bodySize:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        contentType:
+          type: string
+      required:
+      - bodySize
+      - responseCode
+      - size
+      type: object
+      example: null
+    MediaStreamingAccessRecord_allOf_connectionMetrics:
+      properties:
+        meanNetworkRoundTripTime:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        networkRoundTripTimeVariation:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        congestionWindowSize:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      required:
+      - congestionWindowSize
+      - meanNetworkRoundTripTime
+      - networkRoundTripTimeVariation
+      type: object
+      example: null
+    MediaStreamingAccessRecord_allOf:
+      properties:
+        mediaStreamHandlerEndpointAddress:
+          $ref: '#/components/schemas/EndpointAddress'
+        applicationServerEndpointAddress:
+          $ref: '#/components/schemas/EndpointAddress'
+        sessionIdentifier:
+          type: string
+        requestMessage:
+          $ref: '#/components/schemas/MediaStreamingAccessRecord_allOf_requestMessage'
+        cacheStatus:
+          $ref: '#/components/schemas/CacheStatus'
+        responseMessage:
+          $ref: '#/components/schemas/MediaStreamingAccessRecord_allOf_responseMessage'
+        processingLatency:
+          description: string with format 'float' as defined in OpenAPI.
+          format: float
+          type: number
+        connectionMetrics:
+          $ref: '#/components/schemas/MediaStreamingAccessRecord_allOf_connectionMetrics'
+      required:
+      - applicationServerEndpointAddress
+      - mediaStreamHandlerEndpointAddress
+      - processingLatency
+      - requestMessage
+      - responseMessage
+      type: object
+      example: null

@@ -1,0 +1,401 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Policy Templates Provisioning API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_PolicyTemplatesProvisioning
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Policy Templates Provisioning"
+  name: M1_PolicyTemplatesProvisioning
+paths:
+  /provisioning-sessions/{provisioningSessionId}/policy-templates:
+    post:
+      operationId: createPolicyTemplate
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyTemplate'
+        description: A JSON representation of a Policy Template
+        required: true
+      responses:
+        "201":
+          description: Policy Template Created
+          headers:
+            Location:
+              description: URL of the newly created Policy Template resource.
+              explode: false
+              required: true
+              schema:
+                $ref: '#/components/schemas/Url'
+              style: simple
+      summary: Create (and optionally upload) a new Policy Template
+  /provisioning-sessions/{provisioningSessionId}/policy-templates/{policyTemplateId}:
+    delete:
+      operationId: destroyPolicyTemplate
+      parameters:
+      - description: A unique identifier of the Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: A resource identifier of a Policy Template.
+        explode: false
+        in: path
+        name: policyTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "204":
+          description: Destroyed Policy Template
+        "404":
+          description: Not Found
+    get:
+      operationId: retrievePolicyTemplate
+      parameters:
+      - description: A unique identifier of the Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: A resource identifier of a Policy Template.
+        explode: false
+        in: path
+        name: policyTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyTemplate'
+          description: Success
+        "404":
+          description: Not Found
+      summary: Retrieve a representation of an existing Policy Template in the specified
+        Provisioning Session
+    patch:
+      operationId: patchPolicyTemplate
+      parameters:
+      - description: A unique identifier of the Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: A resource identifier of a Policy Template.
+        explode: false
+        in: path
+        name: policyTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/PolicyTemplate'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/PolicyTemplate'
+        description: A JSON representation of a Policy Template
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PolicyTemplate'
+          description: Patched Content Hosting Configuration
+        "404":
+          description: Not Found
+      summary: Patch the Policy Template for the specified Provisioning Session
+    put:
+      operationId: updatePolicyTemplate
+      parameters:
+      - description: A unique identifier of the Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: A resource identifier of a Policy Template.
+        explode: false
+        in: path
+        name: policyTemplateId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyTemplate'
+        description: A JSON representation of a Policy Template
+        required: true
+      responses:
+        "204":
+          description: Updated Policy Template
+        "404":
+          description: Not Found
+      summary: Update a Policy Template for the specified Provisioning Session
+components:
+  schemas:
+    PolicyTemplate:
+      description: A representation of a Policy Template resource.
+      example:
+        externalReference: externalReference
+        applicationSessionContext:
+          afAppId: afAppId
+          dnn: dnn
+          aspId: aspId
+          sliceInfo:
+            sd: sd
+            sst: 37
+        apiEndPoint: apiEndPoint
+        chargingSpecification:
+          sponId: sponId
+          sponStatus: null
+          gpsi:
+          - null
+          - null
+        qoSSpecification:
+          defPacketLossRateDl: 0
+          qosReference: qosReference
+          maxBtrUl: maxBtrUl
+          maxAuthBtrDl: maxAuthBtrDl
+          defPacketLossRateUl: 0
+          maxBtrDl: maxBtrDl
+          maxAuthBtrUl: maxAuthBtrUl
+        state: null
+        policyTemplateId: policyTemplateId
+        apiType: null
+      properties:
+        policyTemplateId:
+          description: String chosen by the 5GMS AF to serve as an identifier in a
+            resource URI.
+          type: string
+        state:
+          $ref: '#/components/schemas/PolicyTemplate_state'
+        apiEndPoint:
+          type: string
+        apiType:
+          $ref: '#/components/schemas/PolicyTemplate_apiType'
+        externalReference:
+          type: string
+        qoSSpecification:
+          $ref: '#/components/schemas/M1QoSSpecification'
+        applicationSessionContext:
+          $ref: '#/components/schemas/PolicyTemplate_applicationSessionContext'
+        chargingSpecification:
+          $ref: '#/components/schemas/ChargingSpecification'
+      required:
+      - apiEndPoint
+      - apiType
+      - applicationSessionContext
+      - externalReference
+      - policyTemplateId
+      - state
+      type: object
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string
+    M1QoSSpecification:
+      example:
+        defPacketLossRateDl: 0
+        qosReference: qosReference
+        maxBtrUl: maxBtrUl
+        maxAuthBtrDl: maxAuthBtrDl
+        defPacketLossRateUl: 0
+        maxBtrDl: maxBtrDl
+        maxAuthBtrUl: maxAuthBtrUl
+      properties:
+        qosReference:
+          type: string
+        maxBtrUl:
+          description: |
+            String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
+          pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
+          type: string
+        maxBtrDl:
+          description: |
+            String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
+          pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
+          type: string
+        maxAuthBtrUl:
+          description: |
+            String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
+          pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
+          type: string
+        maxAuthBtrDl:
+          description: |
+            String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
+          pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
+          type: string
+        defPacketLossRateDl:
+          minimum: 0
+          type: integer
+        defPacketLossRateUl:
+          minimum: 0
+          type: integer
+      type: object
+    AfAppId:
+      description: Contains an AF application identifier.
+      type: string
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      example:
+        sd: sd
+        sst: 37
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    Dnn:
+      description: |
+        String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+      type: string
+    AspId:
+      description: Contains an identity of an application service provider.
+      type: string
+    ChargingSpecification:
+      example:
+        sponId: sponId
+        sponStatus: null
+        gpsi:
+        - null
+        - null
+      properties:
+        sponId:
+          type: string
+        sponStatus:
+          $ref: '#/components/schemas/SponsoringStatus'
+        gpsi:
+          items:
+            $ref: '#/components/schemas/Gpsi'
+          type: array
+      type: object
+    BitRate:
+      description: |
+        String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
+      pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
+      type: string
+    SponsoringStatus:
+      anyOf:
+      - enum:
+        - SPONSOR_DISABLED
+        - SPONSOR_ENABLED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+      description: Indicates whether sponsored data connectivity is enabled or disabled/not
+        enabled.
+    Gpsi:
+      description: "String identifying a Gpsi shall contain either an External Id\
+        \ or an MSISDN.  It shall be formatted as follows -External Identifier= \"\
+        extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2\
+        \ of 3GPP TS 23.003 that describes an  External Identifier. \n"
+      pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+      type: string
+    PolicyTemplate_state:
+      anyOf:
+      - enum:
+        - PENDING
+        - INVALID
+        - READY
+        - SUSPENDED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+    PolicyTemplate_apiType:
+      anyOf:
+      - enum:
+        - N5
+        - N33
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+    PolicyTemplate_applicationSessionContext:
+      example:
+        afAppId: afAppId
+        dnn: dnn
+        aspId: aspId
+        sliceInfo:
+          sd: sd
+          sst: 37
+      properties:
+        afAppId:
+          description: Contains an AF application identifier.
+          type: string
+        sliceInfo:
+          $ref: '#/components/schemas/Snssai'
+        dnn:
+          description: |
+            String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+          type: string
+        aspId:
+          description: Contains an identity of an application service provider.
+          type: string
+      type: object

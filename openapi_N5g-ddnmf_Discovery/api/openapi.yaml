@@ -1,0 +1,2569 @@
+openapi: 3.0.0
+info:
+  description: "N5g-ddnmf_Discovery Service.  \n© 2022, 3GPP Organizational Partners\
+    \ (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: N5g-ddnmf_Discovery API
+  version: 1.1.0-alpha.1
+externalDocs:
+  description: 3GPP TS 29.555 V18.0.0; 5G System; 5G Direct Discovery Name Management
+    Services; Stage 3.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.555/
+servers:
+- url: "{apiRoot}/n5g-ddnmf-disc/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials:
+  - n5g-ddnmf-disc
+paths:
+  /{ueId}/announce-authorize/{discEntryId}:
+    patch:
+      operationId: UpdateAnnounceAuth
+      parameters:
+      - description: Identifier of the UE
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: Discovery Entry Id
+        explode: false
+        in: path
+        name: discEntryId
+        required: true
+        schema:
+          $ref: '#/components/schemas/DiscoveryEntryId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/AnnounceUpdateData'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchResult'
+          description: Expected response to a valid request
+        "204":
+          description: Expected response to a valid request
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unprocessable Request
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Unexpected error
+      summary: Update the authorization for announcing for a UE
+      tags:
+      - Update the authorization for announcing for a UE
+    put:
+      operationId: ObtainAnnounceAuth
+      parameters:
+      - description: Identifier of the UE
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: Discovery Entry Id
+        explode: false
+        in: path
+        name: discEntryId
+        required: true
+        schema:
+          $ref: '#/components/schemas/DiscoveryEntryId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnounceAuthReqData'
+        required: true
+      responses:
+        "201":
+          description: Successful creation of the resource
+          headers:
+            Location:
+              description: |
+                Contains the URI of the newly created resource, according to the structure: {apiRoot}/n5g-ddnmf-disc>/<apiVersion>/{ueId}/announce-authorize/{discEntryId}
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "204":
+          description: Successful update of the resource.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Unexpected error
+      summary: Obtain the authorization to announce for a UE
+      tags:
+      - Obtain the authorization to announce for a UE
+  /{ueId}/monitor-authorize/{discEntryId}:
+    patch:
+      callbacks:
+        onMonitorUpdateResult:
+          '{request.body#/monitorUpdateResultCallbackRef}':
+            post:
+              operationId: onMonitorUpdateResult_request_bodyMonitorUpdateResultCallbackRefPost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/MonitorUpdateResult'
+                required: true
+              responses:
+                "204":
+                  description: Successful Notification response
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Unexpected error
+              x-callback-request: true
+        onMatchInformation:
+          '{request.body#/matchInfoCallbackRef}':
+            post:
+              operationId: onMatchInformation_request_bodyMatchInfoCallbackRefPost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/MatchInformation'
+                required: true
+              responses:
+                "204":
+                  description: Successful Notification response
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Unexpected error
+              x-callback-request: true
+      operationId: UpdateMonitorAuth
+      parameters:
+      - description: Identifier of the UE
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: Discovery Entry Id
+        explode: false
+        in: path
+        name: discEntryId
+        required: true
+        schema:
+          $ref: '#/components/schemas/DiscoveryEntryId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/MonitorUpdateData'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchResult'
+          description: Expected response to a valid request
+        "204":
+          description: Expected response to a valid request
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "422":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unprocessable Request
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Unexpected error
+      summary: Update the authorization for monitoring for a UE
+      tags:
+      - Update the authorization for monitoring for a UE
+    put:
+      operationId: ObtainMonitorAuth
+      parameters:
+      - description: Identifier of the UE
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: Discovery Entry Id
+        explode: false
+        in: path
+        name: discEntryId
+        required: true
+        schema:
+          $ref: '#/components/schemas/DiscoveryEntryId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MonitorAuthReqData'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MonitorAuthRespData'
+          description: Created
+          headers:
+            Location:
+              description: |
+                Contains the URI of the newly created resource, according to the structure: {apiRoot}/n5g-ddnmf-disc>/<apiVersion>/{ueId}/monitor-authorize/{discEntryId}
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "204":
+          description: Successful update of the resource.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Unexpected error
+      summary: Obtain the authorization to monitor for a UE
+      tags:
+      - Obtain the authorization to monitor for a UE
+  /{ueId}/discovery-authorize/{discEntryId}:
+    put:
+      callbacks:
+        onMatchInformation:
+          '{request.body#/matchInfoCallbackRef}':
+            post:
+              operationId: onMatchInformation_request_bodyMatchInfoCallbackRefPost
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/MatchInformation'
+                required: true
+              responses:
+                "204":
+                  description: Successful Notification response
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Unexpected error
+              x-callback-request: true
+      operationId: ObtainDiscAuth
+      parameters:
+      - description: Identifier of the UE
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      - description: Discovery Entry Id
+        explode: false
+        in: path
+        name: discEntryId
+        required: true
+        schema:
+          $ref: '#/components/schemas/DiscoveryEntryId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DiscoveryAuthReqData'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DiscoveryAuthRespData'
+          description: Created
+          headers:
+            Location:
+              description: |
+                Contains the URI of the newly created resource, according to the structure: {apiRoot}/n5g-ddnmf-disc>/<apiVersion>/{ueId}/discovery-authorize/{discEntryId}
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "204":
+          description: Successful update of the resource.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Unexpected error
+      summary: Obtain the authorization from the 5G DDNMF for a discoverer UE in the
+        PLMN to operate Model B restricted discovery
+      tags:
+      - Obtain the authorization for a discoverer UE
+  /{ueId}/match-report:
+    post:
+      operationId: MatchReport
+      parameters:
+      - description: Identifier of the UE
+        explode: false
+        in: path
+        name: ueId
+        required: true
+        schema:
+          $ref: '#/components/schemas/VarUeId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MatchReportReqData'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MatchReportRespData'
+          description: Expected response to a valid request
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Unexpected error
+      summary: Obtain the information about the indicated discovery code from the
+        5G DDNMF
+      tags:
+      - Obtain the information about the indicated discovery code
+components:
+  responses:
+    "307":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: Identifier of target NF (service) instance towards which the
+            request is redirected
+          schema:
+            type: string
+    "308":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: |
+            'Identifier of target NF (service) instance towards which the request is redirected'
+          schema:
+            type: string
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "502":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad Gateway
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+  schemas:
+    AnnounceAuthReqData:
+      description: Represents Data used to request the authorization to announce for
+        a UE
+      example:
+        discType: null
+        openDiscData:
+          proseAppId: proseAppId
+          validityTime: 2000-01-23T04:56:07.000+00:00
+          metaData: metaData
+          proseAppCode: proseAppCode
+          proseAppCodeSuffixPool:
+            codeSuffix: codeSuffix
+            codeSuffixRange:
+              beginningSuffix: beginningSuffix
+              endingSuffix: endingSuffix
+          proseAppCodePrefix: proseAppCodePrefix
+        restrictedDiscData:
+          validityTime: 2000-01-23T04:56:07.000+00:00
+          codeSuffixPool:
+            codeSuffixList:
+            - null
+            - null
+            codeSuffixRangeList:
+            - beginningSuffix: beginningSuffix
+              endingSuffix: endingSuffix
+            - beginningSuffix: beginningSuffix
+              endingSuffix: endingSuffix
+          proseRestrictedCode: proseRestrictedCode
+          appId: appId
+          proseRestrictedPrefix: proseRestrictedPrefix
+          rpauid: rpauid
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        openDiscData:
+          $ref: '#/components/schemas/AnnounceDiscDataForOpen'
+        restrictedDiscData:
+          $ref: '#/components/schemas/AnnounceDiscDataForRestricted'
+      required:
+      - discType
+      type: object
+    AnnounceDiscDataForOpen:
+      description: Represents Data for open discovery used to request the authorization
+        to announce for a UE
+      example:
+        proseAppId: proseAppId
+        validityTime: 2000-01-23T04:56:07.000+00:00
+        metaData: metaData
+        proseAppCode: proseAppCode
+        proseAppCodeSuffixPool:
+          codeSuffix: codeSuffix
+          codeSuffixRange:
+            beginningSuffix: beginningSuffix
+            endingSuffix: endingSuffix
+        proseAppCodePrefix: proseAppCodePrefix
+      properties:
+        proseAppId:
+          description: Contains the ProSe Application ID.
+          type: string
+        validityTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        proseAppCode:
+          description: Contains the ProSe Application Code.
+          type: string
+        proseAppCodePrefix:
+          description: Contains the Prose Application Code Prefix.
+          type: string
+        proseAppCodeSuffixPool:
+          $ref: '#/components/schemas/ProseApplicationCodeSuffixPool'
+        metaData:
+          description: Contains the metadata.
+          type: string
+      required:
+      - proseAppId
+      - validityTime
+      type: object
+    AnnounceDiscDataForRestricted:
+      description: Represents Data for restricted discovery used to request the authorization
+        to announce for a UE
+      example:
+        validityTime: 2000-01-23T04:56:07.000+00:00
+        codeSuffixPool:
+          codeSuffixList:
+          - null
+          - null
+          codeSuffixRangeList:
+          - beginningSuffix: beginningSuffix
+            endingSuffix: endingSuffix
+          - beginningSuffix: beginningSuffix
+            endingSuffix: endingSuffix
+        proseRestrictedCode: proseRestrictedCode
+        appId: appId
+        proseRestrictedPrefix: proseRestrictedPrefix
+        rpauid: rpauid
+      properties:
+        rpauid:
+          description: Contains the RPAUID.
+          type: string
+        appId:
+          description: Contains the Application ID.
+          type: string
+        validityTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        proseRestrictedCode:
+          description: Contains the ProSe Restricted Code.
+          type: string
+        proseRestrictedPrefix:
+          description: Contains the ProSe Restricted Code Prefix.
+          type: string
+        codeSuffixPool:
+          $ref: '#/components/schemas/RestrictedCodeSuffixPool'
+      required:
+      - appId
+      - rpauid
+      - validityTime
+      type: object
+    AnnounceUpdateData:
+      description: Represents Announce Authorize Data to update
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        validityTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        proseAppCode:
+          description: Contains the ProSe Application Code.
+          type: string
+      required:
+      - discType
+      - validityTime
+      type: object
+    MonitorAuthReqData:
+      description: Represents Data used to request the authorization to monitor for
+        a UE
+      example:
+        discType: null
+        openDiscData:
+          proseAppIdNames:
+          - null
+          - null
+        restrictedDiscData:
+          appId: appId
+          targetRpauid: targetRpauid
+          rpauid: rpauid
+          targetPduid: targetPduid
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        openDiscData:
+          $ref: '#/components/schemas/MonitorDiscDataForOpen'
+        restrictedDiscData:
+          $ref: '#/components/schemas/MonitorDiscDataForRestricted'
+      required:
+      - discType
+      type: object
+    MonitorAuthRespData:
+      description: Represents the obtained Monitor Authorize Data for a UE
+      example:
+        authDataRestricted:
+          validityTime: 2000-01-23T04:56:07.000+00:00
+          proseRestrictedCode: proseRestrictedCode
+        authDataOpen:
+          proseAppMasks:
+          - null
+          - null
+          proseAppPrefix: proseAppPrefix
+          proseAppCodes:
+          - null
+          - null
+          ttl: 0
+      properties:
+        authDataOpen:
+          $ref: '#/components/schemas/MonitorAuthDataForOpen'
+        authDataRestricted:
+          $ref: '#/components/schemas/MonitorAuthDataForRestricted'
+      type: object
+    MonitorDiscDataForOpen:
+      description: Represents Data for open discovery used to request the authorization
+        to monitor for a UE
+      example:
+        proseAppIdNames:
+        - null
+        - null
+      properties:
+        proseAppIdNames:
+          items:
+            $ref: '#/components/schemas/ProseApplicationIdName'
+          minItems: 1
+          type: array
+      required:
+      - proseAppIdNames
+      type: object
+    MonitorDiscDataForRestricted:
+      description: Represents Data for restricted discovery used to request the authorization
+        to monitor for a UE
+      example:
+        appId: appId
+        targetRpauid: targetRpauid
+        rpauid: rpauid
+        targetPduid: targetPduid
+      properties:
+        rpauid:
+          description: Contains the RPAUID.
+          type: string
+        targetPduid:
+          description: Contains the PDUID.
+          type: string
+        appId:
+          description: Contains the Application ID.
+          type: string
+        targetRpauid:
+          description: Contains the RPAUID.
+          type: string
+      required:
+      - appId
+      - rpauid
+      - targetPduid
+      - targetRpauid
+      type: object
+    MonitorAuthDataForOpen:
+      description: Represents the obtained Announce Authorize Data for open discovery
+        for a UE
+      example:
+        proseAppMasks:
+        - null
+        - null
+        proseAppPrefix: proseAppPrefix
+        proseAppCodes:
+        - null
+        - null
+        ttl: 0
+      properties:
+        proseAppCodes:
+          items:
+            $ref: '#/components/schemas/ProseApplicationCode'
+          minItems: 1
+          type: array
+        proseAppPrefix:
+          description: Contains the Prose Application Code Prefix.
+          type: string
+        proseAppMasks:
+          items:
+            $ref: '#/components/schemas/ProseApplicationMask'
+          minItems: 1
+          type: array
+        ttl:
+          type: integer
+      required:
+      - proseAppMasks
+      - ttl
+      type: object
+    MonitorAuthDataForRestricted:
+      description: Represents the obtained Announce Authorize Data for restricted
+        discovery for a UE
+      example:
+        validityTime: 2000-01-23T04:56:07.000+00:00
+        proseRestrictedCode: proseRestrictedCode
+      properties:
+        proseRestrictedCode:
+          description: Contains the ProSe Restricted Code.
+          type: string
+        validityTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+      required:
+      - proseRestrictedCode
+      - validityTime
+      type: object
+    MonitorUpdateData:
+      description: Represents Monitor Authorize Data to update.
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        openUpdateData:
+          $ref: '#/components/schemas/MonitorUpdateDataForOpen'
+        restrictedUpdateData:
+          $ref: '#/components/schemas/MonitorUpdateDataForRestricted'
+      required:
+      - discType
+      type: object
+    DiscoveryAuthReqData:
+      description: Represents Data used to request the authorization for a discoverer
+        UE.
+      example:
+        discType: null
+        restrictedDiscData:
+          appId: appId
+          targetRpauid: targetRpauid
+          rpauid: rpauid
+          targetPduid: targetPduid
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        restrictedDiscData:
+          $ref: '#/components/schemas/DiscDataForRestricted'
+      required:
+      - discType
+      type: object
+    DiscoveryAuthRespData:
+      description: Represents the obtained authorization Data for a discoverer UE
+      example:
+        authDataRestricted:
+          validityTime: 2000-01-23T04:56:07.000+00:00
+          proseQueryCodes:
+          - null
+          - null
+          proseRespCode: proseRespCode
+      properties:
+        authDataRestricted:
+          $ref: '#/components/schemas/AuthDataForRestricted'
+      type: object
+    DiscDataForRestricted:
+      description: Represents Data for restricted discovery used to request the authorization
+        for a discoverer UE
+      example:
+        appId: appId
+        targetRpauid: targetRpauid
+        rpauid: rpauid
+        targetPduid: targetPduid
+      properties:
+        rpauid:
+          description: Contains the RPAUID.
+          type: string
+        targetPduid:
+          description: Contains the PDUID.
+          type: string
+        appId:
+          description: Contains the Application ID.
+          type: string
+        targetRpauid:
+          description: Contains the RPAUID.
+          type: string
+      required:
+      - appId
+      - rpauid
+      - targetPduid
+      - targetRpauid
+      type: object
+    AuthDataForRestricted:
+      description: Represents obtained authorization Data for restricted discovery
+        for a discoverer UE
+      example:
+        validityTime: 2000-01-23T04:56:07.000+00:00
+        proseQueryCodes:
+        - null
+        - null
+        proseRespCode: proseRespCode
+      properties:
+        proseQueryCodes:
+          items:
+            $ref: '#/components/schemas/ProseQueryCode'
+          minItems: 1
+          type: array
+        proseRespCode:
+          description: Contains the ProSe Response Code.
+          type: string
+        validityTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+      required:
+      - proseQueryCodes
+      - proseRespCode
+      - validityTime
+      type: object
+    MatchReportReqData:
+      description: Represents the Match Report information
+      example:
+        discType: null
+        moniteredPlmnId:
+          mnc: mnc
+          mcc: mcc
+        proseAppCodes:
+        - null
+        - null
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        proseAppCodes:
+          items:
+            $ref: '#/components/schemas/ProseApplicationCode'
+          minItems: 1
+          type: array
+        moniteredPlmnId:
+          $ref: '#/components/schemas/PlmnId'
+      required:
+      - discType
+      type: object
+    MatchReportRespData:
+      description: Represents Match Report Acknowledgement
+      example:
+        validityTime: 2000-01-23T04:56:07.000+00:00
+        metaData: metaData
+        proseAppIdNames:
+        - null
+        - null
+        metaDataIndexMasks:
+        - null
+        - null
+      properties:
+        proseAppIdNames:
+          items:
+            $ref: '#/components/schemas/ProseApplicationIdName'
+          minItems: 1
+          type: array
+        validityTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        metaData:
+          description: Contains the metadata.
+          type: string
+        metaDataIndexMasks:
+          items:
+            $ref: '#/components/schemas/MetaDataIndexMask'
+          minItems: 1
+          type: array
+      type: object
+    MonitorUpdateResult:
+      description: Represents the monitoring revocation results.
+      example:
+        bannedRpauid: bannedRpauid
+        discType: null
+        proseRestrictedCode: proseRestrictedCode
+        appId: appId
+        bannedPduid: bannedPduid
+        revocationResult: null
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        proseRestrictedCode:
+          description: Contains the ProSe Restricted Code.
+          type: string
+        appId:
+          description: Contains the Application ID.
+          type: string
+        bannedRpauid:
+          description: Contains the RPAUID.
+          type: string
+        bannedPduid:
+          description: Contains the PDUID.
+          type: string
+        revocationResult:
+          $ref: '#/components/schemas/RevocationResult'
+      required:
+      - appId
+      - bannedPduid
+      - bannedRpauid
+      - discType
+      - proseRestrictedCode
+      - revocationResult
+      type: object
+    MatchInformation:
+      description: |
+        Represents a report including a matching result, and the information that can be used for charging purpose.
+      example:
+        discType: null
+        restrictedMatchInfo:
+          proseRestrictedCode: proseRestrictedCode
+          targetRpauid: targetRpauid
+          supi: supi
+          rpauid: rpauid
+        openMatchInfoForOpen:
+          appId:
+          - null
+          - null
+          supi: supi
+      properties:
+        discType:
+          $ref: '#/components/schemas/DiscoveryType'
+        openMatchInfoForOpen:
+          $ref: '#/components/schemas/MatchInfoForOpen'
+        restrictedMatchInfo:
+          $ref: '#/components/schemas/MatchInfoForRestricted'
+      required:
+      - discType
+      type: object
+    MatchInfoForOpen:
+      description: |
+        Represents a report including a matching result, and the information that can be used for charging purpose for the open discovery type.
+      example:
+        appId:
+        - null
+        - null
+        supi: supi
+      properties:
+        supi:
+          description: "String identifying a Supi that shall contain either an IMSI,\
+            \ a network specific identifier,\na Global Cable Identifier (GCI) or a\
+            \ Global Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS\
+            \ 23.003. It shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\"\
+            , where <imsi> shall be formatted according to clause 2.2\n   of 3GPP\
+            \ TS 23.003 that describes an IMSI.\n - for a network specific identifier\
+            \ \"nai-<nai>, where <nai> shall be formatted\n   according to clause\
+            \ 28.7.2 of 3GPP TS 23.003 that describes an NAI.\n - for a GCI \"gci-<gci>\"\
+            , where <gci> shall be formatted according to clause 28.15.2\n   of 3GPP\
+            \ TS 23.003.\n - for a GLI \"gli-<gli>\", where <gli> shall be formatted\
+            \ according to clause 28.16.2 of\n   3GPP TS 23.003.To enable that the\
+            \ value is used as part of an URI, the string shall\n   only contain characters\
+            \ allowed according to the \"lower-with-hyphen\" naming convention\n \
+            \  defined in 3GPP TS 29.501.\n"
+          pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+          type: string
+        appId:
+          items:
+            $ref: '#/components/schemas/ApplicationId'
+          minItems: 1
+          type: array
+      required:
+      - appId
+      - supi
+      type: object
+    MatchInfoForRestricted:
+      description: |
+        Represents a report including a matching result, and the information that can be used for charging purpose for the restricted discovery type.
+      example:
+        proseRestrictedCode: proseRestrictedCode
+        targetRpauid: targetRpauid
+        supi: supi
+        rpauid: rpauid
+      properties:
+        supi:
+          description: "String identifying a Supi that shall contain either an IMSI,\
+            \ a network specific identifier,\na Global Cable Identifier (GCI) or a\
+            \ Global Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS\
+            \ 23.003. It shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\"\
+            , where <imsi> shall be formatted according to clause 2.2\n   of 3GPP\
+            \ TS 23.003 that describes an IMSI.\n - for a network specific identifier\
+            \ \"nai-<nai>, where <nai> shall be formatted\n   according to clause\
+            \ 28.7.2 of 3GPP TS 23.003 that describes an NAI.\n - for a GCI \"gci-<gci>\"\
+            , where <gci> shall be formatted according to clause 28.15.2\n   of 3GPP\
+            \ TS 23.003.\n - for a GLI \"gli-<gli>\", where <gli> shall be formatted\
+            \ according to clause 28.16.2 of\n   3GPP TS 23.003.To enable that the\
+            \ value is used as part of an URI, the string shall\n   only contain characters\
+            \ allowed according to the \"lower-with-hyphen\" naming convention\n \
+            \  defined in 3GPP TS 29.501.\n"
+          pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+          type: string
+        rpauid:
+          description: Contains the RPAUID.
+          type: string
+        targetRpauid:
+          description: Contains the RPAUID.
+          type: string
+        proseRestrictedCode:
+          description: Contains the ProSe Restricted Code.
+          type: string
+      required:
+      - proseRestrictedCode
+      - rpauid
+      - supi
+      - targetRpauid
+      type: object
+    RestrictedCodeSuffixPool:
+      anyOf:
+      - required:
+        - codeSuffixList
+      - required:
+        - codeSuffixRangeList
+      description: Contains the Restricted Code Suffix Pool.
+      example:
+        codeSuffixList:
+        - null
+        - null
+        codeSuffixRangeList:
+        - beginningSuffix: beginningSuffix
+          endingSuffix: endingSuffix
+        - beginningSuffix: beginningSuffix
+          endingSuffix: endingSuffix
+      properties:
+        codeSuffixList:
+          items:
+            $ref: '#/components/schemas/RestrictedCodeSuffix'
+          minItems: 1
+          type: array
+        codeSuffixRangeList:
+          items:
+            $ref: '#/components/schemas/RestrictedCodeSuffixRange'
+          minItems: 1
+          type: array
+      type: object
+    RestrictedCodeSuffixRange:
+      description: Contains a range of the Restricted Code Suffixes which are consecutive.
+      example:
+        beginningSuffix: beginningSuffix
+        endingSuffix: endingSuffix
+      properties:
+        beginningSuffix:
+          description: Contains the ProSe Restricted Code Suffix.
+          type: string
+        endingSuffix:
+          description: Contains the ProSe Restricted Code Suffix.
+          type: string
+      required:
+      - beginningSuffix
+      - endingSuffix
+      type: object
+    ProseApplicationCodeSuffixPool:
+      anyOf:
+      - required:
+        - codeSuffix
+      - required:
+        - codeSuffixRange
+      description: Contains the Prose Application Code Suffix Pool.
+      example:
+        codeSuffix: codeSuffix
+        codeSuffixRange:
+          beginningSuffix: beginningSuffix
+          endingSuffix: endingSuffix
+      properties:
+        codeSuffix:
+          description: Contains the ProSe Application Code Suffix.
+          type: string
+        codeSuffixRange:
+          $ref: '#/components/schemas/ProseAppCodeSuffixRange'
+      type: object
+    ProseAppCodeSuffixRange:
+      description: Contains a range of the Prose Application Code Suffixes which are
+        consecutive.
+      example:
+        beginningSuffix: beginningSuffix
+        endingSuffix: endingSuffix
+      properties:
+        beginningSuffix:
+          description: Contains the ProSe Application Code Suffix.
+          type: string
+        endingSuffix:
+          description: Contains the ProSe Application Code Suffix.
+          type: string
+      required:
+      - beginningSuffix
+      - endingSuffix
+      type: object
+    MonitorUpdateDataForOpen:
+      description: Represents Monitor Update Data for the Discovery Type "OPEN".
+      properties:
+        proseAppIdName:
+          description: Contains the ProSe Application ID name.
+          type: string
+        ttl:
+          minimum: 0
+          type: integer
+      required:
+      - proseAppIdName
+      - ttl
+      type: object
+    MonitorUpdateDataForRestricted:
+      description: Represents Monitor Update Data for the Discovery Type "RESTRICTED".
+      properties:
+        proseRestrictedCode:
+          description: Contains the ProSe Restricted Code.
+          type: string
+        appId:
+          description: Contains the Application ID.
+          type: string
+        bannedRpauid:
+          description: Contains the RPAUID.
+          type: string
+        bannedPduid:
+          description: Contains the PDUID.
+          type: string
+        monitorUpdateResultCallbackRef:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      required:
+      - appId
+      - bannedPduid
+      - bannedRpauid
+      - proseRestrictedCode
+      type: object
+    DiscoveryEntryId:
+      description: Contains the Discovery Entry ID.
+      type: string
+    ProseApplicationId:
+      description: Contains the ProSe Application ID.
+      type: string
+    ProseApplicationCode:
+      description: Contains the ProSe Application Code.
+      type: string
+    Rpauid:
+      description: Contains the RPAUID.
+      type: string
+    ApplicationId:
+      description: Contains the Application ID.
+      type: string
+    ProseRestrictedCode:
+      description: Contains the ProSe Restricted Code.
+      type: string
+    ProseRestrictedPrefix:
+      description: Contains the ProSe Restricted Code Prefix.
+      type: string
+    MetaData:
+      description: Contains the metadata.
+      type: string
+    ProseApplicationIdName:
+      description: Contains the ProSe Application ID name.
+      type: string
+    Pduid:
+      description: Contains the PDUID.
+      type: string
+    ProseApplicationPrefix:
+      description: Contains the Prose Application Code Prefix.
+      type: string
+    ProseApplicationMask:
+      description: Contains the Prose Application Mask.
+      type: string
+    ProseQueryCode:
+      description: Contains the ProSe Query Code.
+      type: string
+    ProseResponseCode:
+      description: Contains the ProSe Response Code.
+      type: string
+    MetaDataIndexMask:
+      description: Contains the Meta Data Index Mask.
+      type: string
+    RestrictedCodeSuffix:
+      description: Contains the ProSe Restricted Code Suffix.
+      type: string
+    ProseAppCodeSuffix:
+      description: Contains the ProSe Application Code Suffix.
+      type: string
+    DiscoveryType:
+      anyOf:
+      - enum:
+        - OPEN
+        - RESTRICTED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - OPEN: Discovery type is "open". - RESTRICTED: Discovery type is "restricted".
+    RevocationResult:
+      anyOf:
+      - enum:
+        - SUCCESSFUL
+        - FAILED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are - SUCCESSFUL: The Monitoring Revocation is successful. - FAILED: The Monitoring Revocation is failed.
+    VarUeId:
+      description: String represents the SUPI or GPSI
+      pattern: "^(imsi-[0-9]{5,15}|nai-.+|msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|gci-.+|gli-.+|.+)$"
+      type: string
+    RedirectResponse:
+      description: |
+        The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP.
+      properties:
+        cause:
+          type: string
+        targetScp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        targetSepp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    PatchResult:
+      description: The execution report result on failed modification.
+      example:
+        report:
+        - path: path
+          reason: reason
+        - path: path
+          reason: reason
+      properties:
+        report:
+          description: |
+            The execution report contains an array of report items. Each report item indicates one  failed modification.
+          items:
+            $ref: '#/components/schemas/ReportItem'
+          minItems: 1
+          type: array
+      required:
+      - report
+      type: object
+    ReportItem:
+      description: indicates performed modivications.
+      example:
+        path: path
+        reason: reason
+      properties:
+        path:
+          description: |
+            Contains a JSON pointer value (as defined in IETF RFC 6901) that references a  location of a resource to which the modification is subject.
+          type: string
+        reason:
+          description: |
+            A human-readable reason providing details on the reported modification failure.  The reason string should identify the operation that failed using the operation's  array index to assist in correlation of the invalid parameter with the failed  operation, e.g. "Replacement value invalid for attribute (failed operation index= 4)".
+          type: string
+      required:
+      - path
+      type: object
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      example:
+        mnc: mnc
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Supi:
+      description: "String identifying a Supi that shall contain either an IMSI, a\
+        \ network specific identifier,\na Global Cable Identifier (GCI) or a Global\
+        \ Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS 23.003. It\
+        \ shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\", where <imsi>\
+        \ shall be formatted according to clause 2.2\n   of 3GPP TS 23.003 that describes\
+        \ an IMSI.\n - for a network specific identifier \"nai-<nai>, where <nai>\
+        \ shall be formatted\n   according to clause 28.7.2 of 3GPP TS 23.003 that\
+        \ describes an NAI.\n - for a GCI \"gci-<gci>\", where <gci> shall be formatted\
+        \ according to clause 28.15.2\n   of 3GPP TS 23.003.\n - for a GLI \"gli-<gli>\"\
+        , where <gli> shall be formatted according to clause 28.16.2 of\n   3GPP TS\
+        \ 23.003.To enable that the value is used as part of an URI, the string shall\n\
+        \   only contain characters allowed according to the \"lower-with-hyphen\"\
+        \ naming convention\n   defined in 3GPP TS 29.501.\n"
+      pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+      type: string
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            n5g-ddnmf-disc: Access to the N5g-ddnmf_Discovery API
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

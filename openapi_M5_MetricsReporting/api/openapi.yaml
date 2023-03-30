@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M5 Metrics Reporting API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M5_MetricsReporting
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m5/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Media Session Handling (M5) APIs: Metrics Reporting"
+  name: M5_ConsumptionReporting
+paths:
+  /metrics-reporting/{provisioningSessionId}/{metricsReportingConfigurationId}:
+    post:
+      operationId: submitMetricsReport
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of a Metrics Configuration in the specified
+          Provisioning Session.
+        explode: false
+        in: path
+        name: metricsReportingConfigurationId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/3gpdash-qoe-report+xml:
+            schema:
+              format: xml
+              type: string
+          application/*:
+            schema:
+              type: string
+        description: A Metrics Report
+        required: true
+      responses:
+        "204":
+          description: Metrics Report Accepted
+        "400":
+          description: Bad Request
+        "415":
+          description: Unsupported Media Type
+      summary: Submit a Metrics Report
+components:
+  schemas:
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string

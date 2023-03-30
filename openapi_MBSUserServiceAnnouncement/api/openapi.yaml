@@ -1,0 +1,423 @@
+openapi: 3.0.0
+info:
+  description: |
+    MBS User Service Announcement Element units.
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: MBS User Service Announcement Element units’ definition
+  version: 1.1.0
+externalDocs:
+  description: 3GPP TS 26.517 V17.1.0; 5G System; 5G MBSF; Stage 3.
+  url: http://www.3gpp.org/ftp/Specs/archive/26_series/26.517/
+servers:
+- url: /
+paths: {}
+components:
+  schemas:
+    BundleDescription:
+      items:
+        $ref: '#/components/schemas/UserServiceDescription'
+      minItems: 1
+      type: array
+    UserServiceDescription:
+      properties:
+        name:
+          items:
+            type: string
+          type: array
+        serviceLanguage:
+          items:
+            type: string
+          type: array
+        serviceId:
+          type: string
+        distributionSessionDescription:
+          $ref: '#/components/schemas/DistributionSessionDescription'
+        appServiceDescription:
+          $ref: '#/components/schemas/AppServiceDescription'
+        scheduleDescription:
+          items:
+            $ref: '#/components/schemas/ServiceSchedule'
+          type: array
+        availabilityInfo:
+          items:
+            $ref: '#/components/schemas/AvailabilityInformationBinding'
+          type: array
+      required:
+      - distributionMethod
+      - serviceId
+      type: object
+    DistributionSessionDescription:
+      properties:
+        conformanceProfile:
+          type: string
+        sessionDescriptionURI:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        objectRepairParameters:
+          $ref: '#/components/schemas/AssociatedProcedureDescription'
+        dataNetworkName:
+          type: string
+        mbsAppService:
+          items:
+            $ref: '#/components/schemas/ApplicationService'
+          type: array
+        unicastAppServices:
+          items:
+            $ref: '#/components/schemas/DistributionSessionDescription_unicastAppServices_inner'
+          type: array
+      required:
+      - sessionDescriptionURI
+      type: object
+    AppServiceDescription:
+      properties:
+        mediaManifestDescriptionURI:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        mimeType:
+          type: string
+        identicalContents:
+          items:
+            $ref: '#/components/schemas/AppServiceDescription_identicalContents_inner'
+          type: array
+        alternativeContents:
+          items:
+            items:
+              $ref: '#/components/schemas/ApplicationService'
+            type: array
+          type: array
+      type: object
+    ApplicationService:
+      properties:
+        basePattern:
+          type: string
+      required:
+      - basePattern
+      type: object
+    AvailabilityInformation:
+      items:
+        $ref: '#/components/schemas/AvailabilityInformationBinding'
+      type: array
+    AvailabilityInformationBinding:
+      properties:
+        mbsServiceArea:
+          items:
+            $ref: '#/components/schemas/MbsServiceArea'
+          type: array
+        mbsFSAId:
+          description: MBS Frequency Selection Area Identifier
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+        radioFrequency:
+          items:
+            minimum: 0
+            type: integer
+          type: array
+      type: object
+    AssociatedProcedureDescription:
+      properties:
+        postObjectRepair:
+          $ref: '#/components/schemas/PostObjectRepair'
+        mbsObjectRepair:
+          $ref: '#/components/schemas/MbsObjectRepair'
+      type: object
+    PostObjectRepair:
+      properties:
+        serviceURIs:
+          items:
+            $ref: '#/components/schemas/Uri'
+          type: array
+        offsetTime:
+          description: indicating a time in seconds.
+          type: integer
+        randomTimePeriod:
+          description: indicating a time in seconds.
+          type: integer
+      type: object
+    MbsObjectRepair:
+      properties:
+        sessionDescriptionURI:
+          type: string
+      type: object
+    ScheduleDescription:
+      items:
+        $ref: '#/components/schemas/ServiceSchedule'
+      type: array
+    ServiceSchedule:
+      properties:
+        sessionSchedule:
+          items:
+            $ref: '#/components/schemas/SessionSchedule_inner'
+          type: array
+        sessionScheduleOverride:
+          items:
+            $ref: '#/components/schemas/SessionScheduleOverride_inner'
+          type: array
+        objectSchedule:
+          items:
+            $ref: '#/components/schemas/ObjectSchedule_inner'
+          type: array
+        serviceId:
+          type: string
+        serviceClass:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      required:
+      - serviceClass
+      - serviceId
+      - serviceSchedule
+      type: object
+    SessionSchedule:
+      items:
+        $ref: '#/components/schemas/SessionSchedule_inner'
+      type: array
+    SessionScheduleOverride:
+      items:
+        $ref: '#/components/schemas/SessionScheduleOverride_inner'
+      type: array
+    ObjectSchedule:
+      items:
+        $ref: '#/components/schemas/ObjectSchedule_inner'
+      type: array
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    MbsServiceArea:
+      anyOf:
+      - required:
+        - ncgiList
+      - required:
+        - taiList
+      description: MBS Service Area
+      properties:
+        ncgiList:
+          description: List of NR cell Ids
+          items:
+            $ref: '#/components/schemas/NcgiTai'
+          minItems: 1
+          type: array
+        taiList:
+          description: List of tracking area Ids
+          items:
+            $ref: '#/components/schemas/Tai'
+          minItems: 1
+          type: array
+      type: object
+    NcgiTai:
+      description: "List of NR cell ids, with their pertaining TAIs"
+      properties:
+        tai:
+          $ref: '#/components/schemas/Tai'
+        cellList:
+          description: List of List of NR cell ids
+          items:
+            $ref: '#/components/schemas/Ncgi'
+          minItems: 1
+          type: array
+      required:
+      - cellList
+      - tai
+      type: object
+    Tai:
+      description: Contains the tracking area identity as described in 3GPP 23.003
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        tac:
+          description: "2 or 3-octet string identifying a tracking area code as specified\
+            \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation.\
+            \ Each character in the string shall  take a value of \"0\" to \"9\",\
+            \ \"a\" to \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most\
+            \ significant character representing the 4 most significant bits of the\
+            \ TAC shall  appear first in the string, and the character representing\
+            \ the 4 least significant bit  of the TAC shall appear last in the string.\
+            \ \n"
+          pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - plmnId
+      - tac
+      type: object
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Tac:
+      description: "2 or 3-octet string identifying a tracking area code as specified\
+        \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation. Each\
+        \ character in the string shall  take a value of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the 4 most significant bits of the TAC shall  appear\
+        \ first in the string, and the character representing the 4 least significant\
+        \ bit  of the TAC shall appear last in the string. \n"
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    Ncgi:
+      description: "Contains the NCGI (NR Cell Global Identity), as described in 3GPP\
+        \ 23.003"
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        nrCellId:
+          description: "36-bit string identifying an NR Cell Id as specified in clause\
+            \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+            \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\"\
+            \ or \"A\" to \"F\" and shall represent 4 bits. The most significant character\
+            \  representing the 4 most significant bits of the Cell Id shall appear\
+            \ first in the string, and  the character representing the 4 least significant\
+            \ bit of the Cell Id shall appear last in the  string. \n"
+          pattern: "^[A-Fa-f0-9]{9}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - nrCellId
+      - plmnId
+      type: object
+    NrCellId:
+      description: "36-bit string identifying an NR Cell Id as specified in clause\
+        \ 9.3.1.7 of 3GPP TS 38.413,  in hexadecimal representation. Each character\
+        \ in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"\
+        A\" to \"F\" and shall represent 4 bits. The most significant character  representing\
+        \ the 4 most significant bits of the Cell Id shall appear first in the string,\
+        \ and  the character representing the 4 least significant bit of the Cell\
+        \ Id shall appear last in the  string. \n"
+      pattern: "^[A-Fa-f0-9]{9}$"
+      type: string
+    MbsFsaId:
+      description: MBS Frequency Selection Area Identifier
+      pattern: "^[A-Fa-f0-9]{6}$"
+      type: string
+    DurationSec:
+      description: indicating a time in seconds.
+      type: integer
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    DistributionSessionDescription_unicastAppServices_inner:
+      properties:
+        unicastAppService:
+          items:
+            $ref: '#/components/schemas/ApplicationService'
+          type: array
+      type: object
+    AppServiceDescription_identicalContents_inner:
+      properties:
+        unicastAppService:
+          items:
+            $ref: '#/components/schemas/ApplicationService'
+          minItems: 2
+          type: array
+      type: object
+    SessionSchedule_inner:
+      properties:
+        start:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        stop:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        reoccurencePattern:
+          type: string
+        numberOfTimes:
+          minimum: 1
+          type: integer
+        reoccurenceStopTime:
+          type: string
+        index:
+          type: integer
+        FDTInstanceURI:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      required:
+      - start
+      - stop
+      type: object
+    SessionScheduleOverride_inner:
+      properties:
+        start:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        stop:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        index:
+          type: integer
+        cancelled:
+          type: boolean
+        sessionDescriptionURI:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      type: object
+    ObjectSchedule_inner_deliveryInfo_inner:
+      properties:
+        start:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        stop:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+      type: object
+    ObjectSchedule_inner:
+      properties:
+        objectURI:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sessionId:
+          type: string
+        objectEtag:
+          type: string
+        unicastOnly:
+          type: boolean
+        deliveryInfo:
+          items:
+            $ref: '#/components/schemas/ObjectSchedule_inner_deliveryInfo_inner'
+          type: array
+      type: object

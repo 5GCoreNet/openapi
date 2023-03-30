@@ -1,0 +1,188 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Consumption Reporting Provisioning API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_ConsumptionReportingProvisioning
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Consumption Reporting\
+    \ Provisioning"
+  name: M1_ConsumptionReportingProvisioning
+paths:
+  /provisioning-sessions/{provisioningSessionId}/consumption-reporting-configuration:
+    delete:
+      operationId: destroyConsumptionReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "204":
+          description: Destroyed Consumption Reporting Configuration
+        "404":
+          description: Not Found
+      summary: Destroy the current Consumption Reporting Configuration of the specified
+        Provisioning Session
+    get:
+      operationId: retrieveConsumptionReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsumptionReportingConfiguration'
+          description: Success
+      summary: Retrieve the Consumption Reporting Configuration of the specified Provisioning
+        Session
+    patch:
+      operationId: patchConsumptionReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/ConsumptionReportingConfiguration'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ConsumptionReportingConfiguration'
+        description: A JSON representation of a Consumption Reporting Configuration
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConsumptionReportingConfiguration'
+          description: Patched Consumption Reporting Configuration
+        "404":
+          description: Not Found
+      summary: Patch the Consumption Reporting Configuration for the specified Provisioning
+        Session
+    post:
+      operationId: activateConsumptionReporting
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsumptionReportingConfiguration'
+        description: A JSON representation of a Consumption Reporting Configuration
+        required: true
+      responses:
+        "201":
+          description: Consumption Reporting Configuration Created
+          headers:
+            Location:
+              description: URL of the newly created Consumption Reporting Configuration
+                (same as request URL).
+              explode: false
+              required: true
+              schema:
+                $ref: '#/components/schemas/Url'
+              style: simple
+      summary: Activate the consumption reporting procedure for the specified Provisioning
+        Session by providing the Consumption Reporting Configuration
+    put:
+      operationId: updateConsumptionReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConsumptionReportingConfiguration'
+        description: A JSON representation of a Consumption Reporting Configuration
+        required: true
+      responses:
+        "204":
+          description: Updated Consumption Reporting Configuration
+        "404":
+          description: Not Found
+      summary: Update the Consumption Reporting Configuration for the specified Provisioning
+        Session
+components:
+  schemas:
+    ConsumptionReportingConfiguration:
+      description: A representation of a Consumption Reporting Configuration resource.
+      example:
+        reportingInterval: 0
+        samplePercentage: 60.27456183070403
+        locationReporting: true
+        accessReporting: true
+      properties:
+        reportingInterval:
+          description: indicating a time in seconds.
+          type: integer
+        samplePercentage:
+          maximum: 100.0
+          minimum: 0.0
+          type: number
+        locationReporting:
+          type: boolean
+        accessReporting:
+          type: boolean
+      type: object
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string
+    DurationSec:
+      description: indicating a time in seconds.
+      type: integer
+    Percentage:
+      maximum: 100.0
+      minimum: 0.0
+      type: number

@@ -1,0 +1,2345 @@
+openapi: 3.0.0
+info:
+  description: "MBSTF Distribution Session Service.  \n© 2022, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: Nmbstf-distsession
+  version: 1.0.2
+externalDocs:
+  description: 3GPP TS 29.581 V17.2.0; 5G System; MBSDistribution Service.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.581/
+servers:
+- url: "{apiRoot}/nmbstf-distsession/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials:
+  - nmbstf-distsession
+paths:
+  /dist-sessions:
+    post:
+      operationId: Create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReqData'
+        description: |
+          Representation of the MBS distribution session to be created in the MBSTF Creates an individual MBS distribution session resource in the MBSTF.
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateRspData'
+          description: |
+            Successful creation of an MBS session
+          headers:
+            Location:
+              description: |
+                'Contains the URI of the newly created resource, according to the structure: {apiRoot}/nmbstf-distsession/<apiVersion>/dist-sessions/{distSessionRef}'
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Create
+      tags:
+      - MBS distribution sessions collection
+  /dist-sessions/{distSessionRef}:
+    delete:
+      operationId: Destroy
+      parameters:
+      - description: Unique ID of the MBS distribution session
+        explode: false
+        in: path
+        name: distSessionRef
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: |
+            Successful release of the MBS distribution session without content in the response.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Deletes an individual MBS distribution session resource in the MBSTF.
+      tags:
+      - Individual MBS distribution session
+    get:
+      operationId: Retrieve
+      parameters:
+      - description: Unique ID of the MBS distribution session
+        explode: false
+        in: path
+        name: distSessionRef
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistSession'
+          description: successful retrieval of MBS distribution session parameters
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Retrieves an individual MBS distribution session resource in the MBSTF.
+      tags:
+      - Individual MBS distribution session
+    patch:
+      operationId: Update
+      parameters:
+      - description: Unique ID of the MBS distribution session
+        explode: false
+        in: path
+        name: distSessionRef
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/PatchItem'
+              minItems: 1
+              type: array
+        description: Data within the Update Request
+        required: true
+      responses:
+        "204":
+          description: "Successful modification of the MBS distribution session without\
+            \ content in the response. \n"
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistSession'
+          description: |
+            Successful response containing the updated representation of Distribution Session.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Updates an individual MBS distribution session resource in the MBSTF.
+      tags:
+      - Individual MBS distribution session
+  /dist-sessions/{distSessionRef}/subscriptions:
+    post:
+      callbacks:
+        statusNotification:
+          '{$request.body#/notifUri}':
+            post:
+              operationId: statusNotification_Post
+              parameters:
+              - description: "Content-Encoding, described in IETF RFC 7231"
+                explode: false
+                in: header
+                name: Content-Encoding
+                required: false
+                schema:
+                  type: string
+                style: simple
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/StatusNotifyReqData'
+                description: Notification Payload
+              responses:
+                "204":
+                  description: Expected response to a successful callback processing
+                  headers:
+                    Accept-Encoding:
+                      description: "Accept-Encoding, described in IETF RFC 7694"
+                      explode: false
+                      schema:
+                        type: string
+                      style: simple
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "501":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Implemented
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+      operationId: StatusSubscribe
+      parameters:
+      - description: Unique ID of the MBS distribution session
+        explode: false
+        in: path
+        name: distSessionRef
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatusSubscribeReqData'
+        description: Data within the StatusSubscribe Request
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatusSubscribeRspData'
+          description: Data within a successful StatusSubscribe Response
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: StatusSubscribe creating a subscription
+      tags:
+      - Subscriptions collection for MBS distribution session
+  /dist-sessions/{distSessionRef}/subscriptions/{subscriptionId}:
+    delete:
+      operationId: StatusUnSubscribe
+      parameters:
+      - description: Unique ID of the subscription
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Unique ID of the MBS distribution session
+        explode: false
+        in: path
+        name: distSessionRef
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: Successful deletion of the subscription
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: StatusUnSubscribe to unsubscribe from the Status Subscription
+      tags:
+      - Individual Subscription for an MBS session
+    patch:
+      operationId: StatusSubscribeMod
+      parameters:
+      - description: Unique ID of the individual subscription to be modified
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Unique ID of the MBS distribution session
+        explode: false
+        in: path
+        name: distSessionRef
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/PatchItem'
+              minItems: 1
+              type: array
+        description: Data to be modified in the DistSessionSubscription
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DistSessionSubscription'
+          description: Successful modification of the individual Status Subscription
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: StatusSubscribe to modify (update or renew) an individual subscription
+      tags:
+      - Individual Subscription for an MBS distribution session
+components:
+  responses:
+    "307":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: Identifier of target NF (service) instance towards which the
+            request is redirected
+          schema:
+            type: string
+    "308":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: |
+            'Identifier of target NF (service) instance towards which the request is redirected'
+          schema:
+            type: string
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "502":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad Gateway
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "501":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Implemented
+  schemas:
+    CreateReqData:
+      description: Data within Create Request
+      example:
+        distSession:
+          distSessionId: distSessionId
+          maxDelay: ""
+          pktDistributionData:
+            pktDistributionOperatingMode: null
+            pktIngestMethod: null
+            mbStfIngestAddr:
+              mbStfListenAddr: ""
+              afEgressTunAddr: null
+              afSsm: null
+              mbStfIngressTunAddr: ""
+          mbUpfTunAddr: ""
+          mbsSecurityContext:
+            keyList:
+              key:
+                msk: msk
+                mskId: mskId
+                mtk: mtk
+                mtkId: mtkId
+                keyDomainId: keyDomainId
+                mskLifetime: 2000-01-23T04:56:07.000+00:00
+          distSessionState: null
+          dscpMarking: dscpMarking
+          upTrafficFlowInfo: ""
+          fecInformation:
+            fecScheme: fecScheme
+            additionalParams:
+            - paramName: paramName
+              paramValue: paramValue
+            - paramName: paramName
+              paramValue: paramValue
+            fecOverHead: 0
+          mbmsGwTunAddr: ""
+          mbr: ""
+          objDistributionData:
+            objAcquisitionIdPush: objAcquisitionIdPush
+            objDistributionOperatingMode: null
+            objDistributionBaseUrl: objDistributionBaseUrl
+            objAcquisitionIdsPull:
+            - null
+            - null
+            objRepairBaseUrl: objRepairBaseUrl
+            objIngestBaseUrl: objIngestBaseUrl
+            objAcquisitionMethod: null
+      properties:
+        distSession:
+          $ref: '#/components/schemas/DistSession'
+      required:
+      - distSession
+      type: object
+    CreateRspData:
+      description: Data within Create Response
+      example:
+        distSession:
+          distSessionId: distSessionId
+          maxDelay: ""
+          pktDistributionData:
+            pktDistributionOperatingMode: null
+            pktIngestMethod: null
+            mbStfIngestAddr:
+              mbStfListenAddr: ""
+              afEgressTunAddr: null
+              afSsm: null
+              mbStfIngressTunAddr: ""
+          mbUpfTunAddr: ""
+          mbsSecurityContext:
+            keyList:
+              key:
+                msk: msk
+                mskId: mskId
+                mtk: mtk
+                mtkId: mtkId
+                keyDomainId: keyDomainId
+                mskLifetime: 2000-01-23T04:56:07.000+00:00
+          distSessionState: null
+          dscpMarking: dscpMarking
+          upTrafficFlowInfo: ""
+          fecInformation:
+            fecScheme: fecScheme
+            additionalParams:
+            - paramName: paramName
+              paramValue: paramValue
+            - paramName: paramName
+              paramValue: paramValue
+            fecOverHead: 0
+          mbmsGwTunAddr: ""
+          mbr: ""
+          objDistributionData:
+            objAcquisitionIdPush: objAcquisitionIdPush
+            objDistributionOperatingMode: null
+            objDistributionBaseUrl: objDistributionBaseUrl
+            objAcquisitionIdsPull:
+            - null
+            - null
+            objRepairBaseUrl: objRepairBaseUrl
+            objIngestBaseUrl: objIngestBaseUrl
+            objAcquisitionMethod: null
+      properties:
+        distSession:
+          $ref: '#/components/schemas/DistSession'
+      required:
+      - distSession
+      type: object
+    DistSession:
+      description: Mbs Distribution Session Information
+      example:
+        distSessionId: distSessionId
+        maxDelay: ""
+        pktDistributionData:
+          pktDistributionOperatingMode: null
+          pktIngestMethod: null
+          mbStfIngestAddr:
+            mbStfListenAddr: ""
+            afEgressTunAddr: null
+            afSsm: null
+            mbStfIngressTunAddr: ""
+        mbUpfTunAddr: ""
+        mbsSecurityContext:
+          keyList:
+            key:
+              msk: msk
+              mskId: mskId
+              mtk: mtk
+              mtkId: mtkId
+              keyDomainId: keyDomainId
+              mskLifetime: 2000-01-23T04:56:07.000+00:00
+        distSessionState: null
+        dscpMarking: dscpMarking
+        upTrafficFlowInfo: ""
+        fecInformation:
+          fecScheme: fecScheme
+          additionalParams:
+          - paramName: paramName
+            paramValue: paramValue
+          - paramName: paramName
+            paramValue: paramValue
+          fecOverHead: 0
+        mbmsGwTunAddr: ""
+        mbr: ""
+        objDistributionData:
+          objAcquisitionIdPush: objAcquisitionIdPush
+          objDistributionOperatingMode: null
+          objDistributionBaseUrl: objDistributionBaseUrl
+          objAcquisitionIdsPull:
+          - null
+          - null
+          objRepairBaseUrl: objRepairBaseUrl
+          objIngestBaseUrl: objIngestBaseUrl
+          objAcquisitionMethod: null
+      oneOf:
+      - required:
+        - objDistributionData
+      - required:
+        - pktDistributionData
+      properties:
+        distSessionId:
+          type: string
+        distSessionState:
+          $ref: '#/components/schemas/DistSessionState'
+        mbUpfTunAddr:
+          allOf:
+          - $ref: '#/components/schemas/TunnelAddress'
+          writeOnly: true
+        mbmsGwTunAddr:
+          allOf:
+          - $ref: '#/components/schemas/TunnelAddress'
+          writeOnly: true
+        upTrafficFlowInfo:
+          allOf:
+          - $ref: '#/components/schemas/UpTrafficFlowInfo'
+          writeOnly: true
+        mbr:
+          allOf:
+          - $ref: '#/components/schemas/BitRate'
+          writeOnly: true
+        maxDelay:
+          allOf:
+          - $ref: '#/components/schemas/PacketDelBudget'
+          writeOnly: true
+        objDistributionData:
+          $ref: '#/components/schemas/ObjDistributionData'
+        pktDistributionData:
+          $ref: '#/components/schemas/PktDistributionData'
+        fecInformation:
+          $ref: '#/components/schemas/FECConfig'
+        dscpMarking:
+          type: string
+          writeOnly: true
+        mbsSecurityContext:
+          $ref: '#/components/schemas/MbsSecurityContext'
+      required:
+      - distSessionId
+      - distSessionState
+      - mbUpfTunAddr
+      - mbr
+      type: object
+    ObjDistributionData:
+      description: Info for Object Distribution Method
+      example:
+        objAcquisitionIdPush: objAcquisitionIdPush
+        objDistributionOperatingMode: null
+        objDistributionBaseUrl: objDistributionBaseUrl
+        objAcquisitionIdsPull:
+        - null
+        - null
+        objRepairBaseUrl: objRepairBaseUrl
+        objIngestBaseUrl: objIngestBaseUrl
+        objAcquisitionMethod: null
+      properties:
+        objDistributionOperatingMode:
+          $ref: '#/components/schemas/ObjDistributionOperatingMode'
+        objAcquisitionMethod:
+          $ref: '#/components/schemas/ObjAcquisitionMethod'
+        objAcquisitionIdsPull:
+          items:
+            $ref: '#/components/schemas/Uri'
+          minItems: 1
+          type: array
+        objAcquisitionIdPush:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        objIngestBaseUrl:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        objDistributionBaseUrl:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        objRepairBaseUrl:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      required:
+      - objAcquisitionMethod
+      - objDistributionOperatingMode
+      type: object
+    PktDistributionData:
+      description: Info for Packet Distribution Method
+      example:
+        pktDistributionOperatingMode: null
+        pktIngestMethod: null
+        mbStfIngestAddr:
+          mbStfListenAddr: ""
+          afEgressTunAddr: null
+          afSsm: null
+          mbStfIngressTunAddr: ""
+      properties:
+        pktDistributionOperatingMode:
+          $ref: '#/components/schemas/PktDistributionOperatingMode'
+        pktIngestMethod:
+          $ref: '#/components/schemas/PktIngestMethod'
+        mbStfIngestAddr:
+          $ref: '#/components/schemas/MbStfIngestAddr'
+      required:
+      - mbStfIngestAddr
+      - pktDistributionOperatingMode
+      type: object
+    StatusSubscribeReqData:
+      description: Data within the StatusSubscribe Request
+      example:
+        subscription:
+          nfcInstanceId: ""
+          distSessionSubscUri: ""
+          eventList:
+          - null
+          - null
+          expiryTime: 2000-01-23T04:56:07.000+00:00
+          notifyUri: ""
+          notifyCorrelationId: notifyCorrelationId
+      properties:
+        subscription:
+          $ref: '#/components/schemas/DistSessionSubscription'
+      required:
+      - subscription
+      type: object
+    StatusSubscribeRspData:
+      description: Data within StatusSubscribe Response
+      example:
+        reportList:
+          eventReportList:
+          - timeStamp: 2000-01-23T04:56:07.000+00:00
+            mbsSecurityContext:
+              keyList:
+                key:
+                  msk: msk
+                  mskId: mskId
+                  mtk: mtk
+                  mtkId: mtkId
+                  keyDomainId: keyDomainId
+                  mskLifetime: 2000-01-23T04:56:07.000+00:00
+            eventType: null
+          - timeStamp: 2000-01-23T04:56:07.000+00:00
+            mbsSecurityContext:
+              keyList:
+                key:
+                  msk: msk
+                  mskId: mskId
+                  mtk: mtk
+                  mtkId: mtkId
+                  keyDomainId: keyDomainId
+                  mskLifetime: 2000-01-23T04:56:07.000+00:00
+            eventType: null
+          notifyCorrelationId: notifyCorrelationId
+        subscription:
+          nfcInstanceId: ""
+          distSessionSubscUri: ""
+          eventList:
+          - null
+          - null
+          expiryTime: 2000-01-23T04:56:07.000+00:00
+          notifyUri: ""
+          notifyCorrelationId: notifyCorrelationId
+      properties:
+        subscription:
+          $ref: '#/components/schemas/DistSessionSubscription'
+        reportList:
+          $ref: '#/components/schemas/DistSessionEventReportList'
+      required:
+      - subscription
+      type: object
+    StatusNotifyReqData:
+      description: Status Notification
+      example:
+        reportList:
+          eventReportList:
+          - timeStamp: 2000-01-23T04:56:07.000+00:00
+            mbsSecurityContext:
+              keyList:
+                key:
+                  msk: msk
+                  mskId: mskId
+                  mtk: mtk
+                  mtkId: mtkId
+                  keyDomainId: keyDomainId
+                  mskLifetime: 2000-01-23T04:56:07.000+00:00
+            eventType: null
+          - timeStamp: 2000-01-23T04:56:07.000+00:00
+            mbsSecurityContext:
+              keyList:
+                key:
+                  msk: msk
+                  mskId: mskId
+                  mtk: mtk
+                  mtkId: mtkId
+                  keyDomainId: keyDomainId
+                  mskLifetime: 2000-01-23T04:56:07.000+00:00
+            eventType: null
+          notifyCorrelationId: notifyCorrelationId
+      properties:
+        reportList:
+          $ref: '#/components/schemas/DistSessionEventReportList'
+      required:
+      - reportList
+      type: object
+    DistSessionSubscription:
+      description: Data within the Status Subscription
+      example:
+        nfcInstanceId: ""
+        distSessionSubscUri: ""
+        eventList:
+        - null
+        - null
+        expiryTime: 2000-01-23T04:56:07.000+00:00
+        notifyUri: ""
+        notifyCorrelationId: notifyCorrelationId
+      properties:
+        nfcInstanceId:
+          allOf:
+          - $ref: '#/components/schemas/NfInstanceId'
+          writeOnly: true
+        eventList:
+          items:
+            $ref: '#/components/schemas/DistSessionEventType'
+          minItems: 1
+          type: array
+        notifyUri:
+          allOf:
+          - $ref: '#/components/schemas/Uri'
+          writeOnly: true
+        notifyCorrelationId:
+          type: string
+          writeOnly: true
+        expiryTime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        distSessionSubscUri:
+          allOf:
+          - $ref: '#/components/schemas/Uri'
+          readOnly: true
+      required:
+      - eventList
+      - notifyUri
+      type: object
+    DistSessionEventReportList:
+      description: List of Event Reports
+      example:
+        eventReportList:
+        - timeStamp: 2000-01-23T04:56:07.000+00:00
+          mbsSecurityContext:
+            keyList:
+              key:
+                msk: msk
+                mskId: mskId
+                mtk: mtk
+                mtkId: mtkId
+                keyDomainId: keyDomainId
+                mskLifetime: 2000-01-23T04:56:07.000+00:00
+          eventType: null
+        - timeStamp: 2000-01-23T04:56:07.000+00:00
+          mbsSecurityContext:
+            keyList:
+              key:
+                msk: msk
+                mskId: mskId
+                mtk: mtk
+                mtkId: mtkId
+                keyDomainId: keyDomainId
+                mskLifetime: 2000-01-23T04:56:07.000+00:00
+          eventType: null
+        notifyCorrelationId: notifyCorrelationId
+      properties:
+        eventReportList:
+          items:
+            $ref: '#/components/schemas/DistSessionEventReport'
+          minItems: 1
+          type: array
+        notifyCorrelationId:
+          type: string
+      required:
+      - eventReportList
+      type: object
+    DistSessionEventReport:
+      description: Data related to a specific event
+      example:
+        timeStamp: 2000-01-23T04:56:07.000+00:00
+        mbsSecurityContext:
+          keyList:
+            key:
+              msk: msk
+              mskId: mskId
+              mtk: mtk
+              mtkId: mtkId
+              keyDomainId: keyDomainId
+              mskLifetime: 2000-01-23T04:56:07.000+00:00
+        eventType: null
+      properties:
+        eventType:
+          $ref: '#/components/schemas/DistSessionEventType'
+        timeStamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        mbsSecurityContext:
+          $ref: '#/components/schemas/MbsSecurityContext'
+      required:
+      - eventType
+      type: object
+    UpTrafficFlowInfo:
+      description: IP Multicast Address and Port Number
+      properties:
+        destIpAddr:
+          $ref: '#/components/schemas/IpAddr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      required:
+      - destIpAddr
+      - portNumber
+      type: object
+    MbStfIngestAddr:
+      description: MBSTF Ingest Addresses
+      example:
+        mbStfListenAddr: ""
+        afEgressTunAddr: null
+        afSsm: null
+        mbStfIngressTunAddr: ""
+      properties:
+        afEgressTunAddr:
+          $ref: '#/components/schemas/MbStfIngestAddr_afEgressTunAddr'
+        mbStfIngressTunAddr:
+          allOf:
+          - $ref: '#/components/schemas/TunnelAddress'
+          readOnly: true
+        afSsm:
+          $ref: '#/components/schemas/MbStfIngestAddr_afSsm'
+        mbStfListenAddr:
+          allOf:
+          - $ref: '#/components/schemas/TunnelAddress'
+          readOnly: true
+      type: object
+    ExtSsm:
+      description: SSM and Port Number
+      properties:
+        ssm:
+          $ref: '#/components/schemas/Ssm'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      required:
+      - portNumber
+      - ssm
+      type: object
+    DistSessionState:
+      anyOf:
+      - enum:
+        - INACTIVE
+        - ESTABLISHED
+        - ACTIVE
+        - DEACTIVATING
+        type: string
+      - type: string
+      description: Current State of MBS distribution session
+    ObjDistributionOperatingMode:
+      anyOf:
+      - enum:
+        - SINGLE
+        - COLLECTION
+        - CAROUSEL
+        - STREAMING
+        type: string
+      - type: string
+      description: Mode of data ingestion for Object distribution method
+    ObjAcquisitionMethod:
+      anyOf:
+      - enum:
+        - PULL
+        - PUSH
+        type: string
+      - type: string
+      description: Object Acquisition Method
+    PktDistributionOperatingMode:
+      anyOf:
+      - enum:
+        - PACKET_PROXY
+        - PACKET_FORWARD_ONLY
+        type: string
+      - type: string
+      description: Mode of data ingestion for Packet distribution method
+    DistSessionEventType:
+      anyOf:
+      - enum:
+        - DATA_INGEST_FAILURE
+        - SESSION_DEACTIVATED
+        - SESSION_ACTIVATED
+        type: string
+      - type: string
+      description: Status Event Type
+    PktIngestMethod:
+      anyOf:
+      - enum:
+        - MULTICAST
+        - UNICAST
+        type: string
+      - type: string
+      description: Packet Ingest Method
+    RedirectResponse:
+      description: |
+        The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP.
+      properties:
+        cause:
+          type: string
+        targetScp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        targetSepp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    PatchItem:
+      description: it contains information on data to be changed.
+      example:
+        op: null
+        path: path
+        from: from
+        value: ""
+      properties:
+        op:
+          $ref: '#/components/schemas/PatchOperation'
+        path:
+          description: |
+            contains a JSON pointer value (as defined in IETF RFC 6901) that references a location of a resource on which the patch operation shall be performed.
+          type: string
+        from:
+          description: |
+            indicates the path of the source JSON element (according to JSON Pointer syntax) being moved or copied to the location indicated by the "path" attribute.
+          type: string
+        value: {}
+      required:
+      - op
+      - path
+      type: object
+    PatchOperation:
+      anyOf:
+      - enum:
+        - add
+        - copy
+        - move
+        - remove
+        - replace
+        - test
+        type: string
+      - type: string
+      description: Operations as defined in IETF RFC 6902.
+    TunnelAddress:
+      anyOf:
+      - required:
+        - ipv4Addr
+      - required:
+        - ipv6Addr
+      description: Tunnel address
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      required:
+      - portNumber
+      type: object
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    BitRate:
+      description: |
+        String representing a bit rate; the prefixes follow the standard symbols from The International System of Units, and represent x1000 multipliers, with the exception that prefix "K" is used to represent the standard symbol "k".
+      pattern: ^\d+(\.\d+)? (bps|Kbps|Mbps|Gbps|Tbps)$
+      type: string
+    PacketDelBudget:
+      description: |
+        Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
+      minimum: 1
+      type: integer
+    FECConfig:
+      description: Represents FEC configuration information.
+      example:
+        fecScheme: fecScheme
+        additionalParams:
+        - paramName: paramName
+          paramValue: paramValue
+        - paramName: paramName
+          paramValue: paramValue
+        fecOverHead: 0
+      properties:
+        fecScheme:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        fecOverHead:
+          type: integer
+        additionalParams:
+          items:
+            $ref: '#/components/schemas/AddFecParams'
+          minItems: 1
+          type: array
+      required:
+      - fecOverHead
+      - fecScheme
+      type: object
+    AddFecParams:
+      description: Represents additional scheme-specific parameters for AL-FEC configuration.
+      example:
+        paramName: paramName
+        paramValue: paramValue
+      properties:
+        paramName:
+          type: string
+        paramValue:
+          type: string
+      required:
+      - paramName
+      - paramValue
+      type: object
+    MbsSecurityContext:
+      example:
+        keyList:
+          key:
+            msk: msk
+            mskId: mskId
+            mtk: mtk
+            mtkId: mtkId
+            keyDomainId: keyDomainId
+            mskLifetime: 2000-01-23T04:56:07.000+00:00
+      properties:
+        keyList:
+          additionalProperties:
+            $ref: '#/components/schemas/MbsKeyInfo'
+          description: A map (list of key-value pairs) where a (unique) valid JSON
+            string serves as key of MbsSecurityContext
+          minProperties: 1
+          type: object
+      required:
+      - keyList
+      type: object
+    MbsKeyInfo:
+      description: MBS Security Key Data Structure
+      example:
+        msk: msk
+        mskId: mskId
+        mtk: mtk
+        mtkId: mtkId
+        keyDomainId: keyDomainId
+        mskLifetime: 2000-01-23T04:56:07.000+00:00
+      properties:
+        keyDomainId:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        mskId:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        msk:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        mskLifetime:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        mtkId:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+        mtk:
+          description: string with format 'bytes' as defined in OpenAPI
+          format: byte
+          type: string
+      required:
+      - keyDomainId
+      - mskId
+      type: object
+    Bytes:
+      description: string with format 'bytes' as defined in OpenAPI
+      format: byte
+      type: string
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    IpAddr:
+      description: Contains an IP adresse.
+      oneOf:
+      - required:
+        - ipv4Addr
+      - required:
+        - ipv6Addr
+      - required:
+        - ipv6Prefix
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        ipv6Prefix:
+          $ref: '#/components/schemas/Ipv6Prefix'
+      type: object
+    Ipv6Prefix:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))(\\\
+          /(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))(\\\
+          /.+)$"
+      description: |
+        String identifying an IPv6 address prefix formatted according to clause 4 of RFC 5952. IPv6Prefix data type may contain an individual /128 IPv6 address.
+      example: 2001:db8:abcd:12::0/64
+      type: string
+    Ssm:
+      description: Source specific IP multicast address
+      properties:
+        sourceIpAddr:
+          $ref: '#/components/schemas/IpAddr'
+        destIpAddr:
+          $ref: '#/components/schemas/IpAddr'
+      required:
+      - destIpAddr
+      - sourceIpAddr
+      type: object
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string
+    MbStfIngestAddr_afEgressTunAddr:
+      allOf:
+      - $ref: '#/components/schemas/TunnelAddress'
+      writeOnly: true
+    MbStfIngestAddr_afSsm:
+      allOf:
+      - $ref: '#/components/schemas/ExtSsm'
+      writeOnly: true
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            nmbstf-distsession: Access to the nmbstf-distsession API
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

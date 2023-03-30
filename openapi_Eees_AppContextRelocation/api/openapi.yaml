@@ -1,0 +1,803 @@
+openapi: 3.0.0
+info:
+  description: "Eees Application Context Relocation Service.  \n© 2021, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).\nAll rights reserved.\n"
+  title: Eees Application Context Relocation Service
+  version: 1.0.0
+externalDocs:
+  description: |
+    3GPP TS 24.558 V17.0.0; Enabling Edge Applications; Protocol specification; Stage 3.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/24.558/
+servers:
+- url: "{apiRoot}/eees-appctxtreloc/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 5.2.4 of 3GPP TS 29.122
+security:
+- {}
+- oAuth2ClientCredentials:
+  - eees-appctxtreloc
+paths:
+  /determine:
+    post:
+      operationId: Determine
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AcrDetermReq'
+        required: true
+      responses:
+        "204":
+          description: No Content.
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Request ACR determination.
+      tags:
+      - Determine ACR
+  /initiate:
+    post:
+      operationId: Initiate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AcrInitReq'
+        required: true
+      responses:
+        "204":
+          description: No Content.
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Request the initiation of ACR.
+      tags:
+      - Initiate ACR
+  /declare:
+    post:
+      operationId: Declare
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AcrDecReq'
+        required: true
+      responses:
+        "204":
+          description: |
+            No Content. The selected target EAS information is successfully received.
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Informs about the selected target EAS and provides the associated information.
+      tags:
+      - Declare selected target EAS
+components:
+  responses:
+    "307":
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "308":
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+  schemas:
+    AcrDetermReq:
+      description: Represents the parameters to request ACR with action determination.
+      example:
+        acId: acId
+        requestorId: requestorId
+        ueId: ueId
+        sEasEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+        easId: easId
+      properties:
+        requestorId:
+          type: string
+        ueId:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        acId:
+          type: string
+        easId:
+          type: string
+        sEasEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+      required:
+      - requestorId
+      - sEasEndpoint
+      type: object
+    AcrInitReq:
+      description: Represents the parameters to request ACR with action initiation.
+      example:
+        acId: acId
+        easNotifInd: false
+        requestorId: requestorId
+        eecCtxtReloc:
+          tEecEndpoint:
+            fqdn: fqdn
+            ipv6Addrs:
+            - null
+            - null
+            uri: uri
+            ipv4Addrs:
+            - null
+            - null
+          sEesId: sEesId
+          eecCtxtId: eecCtxtId
+          tEesId: tEesId
+          sEecEndpoint:
+            fqdn: fqdn
+            ipv6Addrs:
+            - null
+            - null
+            uri: uri
+            ipv4Addrs:
+            - null
+            - null
+        prevTEasEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+        routeReq:
+          dnai: dnai
+          routeInfo:
+            ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+            ipv4Addr: 198.51.100.1
+            portNumber: 0
+          routeProfId: routeProfId
+        prevEasNotifInd: false
+        ueId: ueId
+        sEasEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+        tEasEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+        easId: easId
+      properties:
+        requestorId:
+          type: string
+        ueId:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        acId:
+          type: string
+        easId:
+          type: string
+        tEasEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+        sEasEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+        prevTEasEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+        routeReq:
+          $ref: '#/components/schemas/RouteToLocation'
+        easNotifInd:
+          default: false
+          type: boolean
+        prevEasNotifInd:
+          default: false
+          type: boolean
+        eecCtxtReloc:
+          $ref: '#/components/schemas/EecCtxtReloc'
+      required:
+      - easNotifInd
+      - requestorId
+      - tEasEndpoint
+      type: object
+    AcrDecReq:
+      description: |
+        Represents the parameters to inform about the selected target EAS and provide the associated information.
+      example:
+        acId: acId
+        tEasId: tEasId
+        ueId: ueId
+        tEasEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+      properties:
+        ueId:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        acId:
+          type: string
+        tEasId:
+          type: string
+        tEasEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+      required:
+      - tEasEndpoint
+      - tEasId
+      - ueId
+      type: object
+    EecCtxtReloc:
+      description: Represents EEC Context relocation information.
+      example:
+        tEecEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+        sEesId: sEesId
+        eecCtxtId: eecCtxtId
+        tEesId: tEesId
+        sEecEndpoint:
+          fqdn: fqdn
+          ipv6Addrs:
+          - null
+          - null
+          uri: uri
+          ipv4Addrs:
+          - null
+          - null
+      properties:
+        eecCtxtId:
+          type: string
+        sEesId:
+          type: string
+        sEecEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+        tEesId:
+          type: string
+        tEecEndpoint:
+          $ref: '#/components/schemas/EndPoint'
+      required:
+      - eecCtxtId
+      type: object
+    ProblemDetails:
+      description: Represents additional information and details on an error response.
+      properties:
+        type:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        title:
+          description: "A short, human-readable summary of the problem type. It should\
+            \ not change from occurrence to occurrence of the problem."
+          type: string
+        status:
+          description: The HTTP status code for this occurrence of the problem.
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        cause:
+          description: "A machine-readable application error cause specific to this\
+            \ occurrence of the problem. This IE should be present and provide application-related\
+            \ error information, if available."
+          type: string
+        invalidParams:
+          description: "Description of invalid parameters, for a request rejected\
+            \ due to invalid parameters."
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    Uri:
+      description: string providing an URI formatted according to IETF RFC 3986.
+      type: string
+    InvalidParam:
+      description: "Represents the description of invalid parameters, for a request\
+        \ rejected due to invalid parameters."
+      properties:
+        param:
+          description: "Attribute's name encoded as a JSON Pointer, or header's name."
+          type: string
+        reason:
+          description: "A human-readable reason, e.g. \"must be a positive integer\"\
+            ."
+          type: string
+      required:
+      - param
+      type: object
+    Gpsi:
+      description: "String identifying a Gpsi shall contain either an External Id\
+        \ or an MSISDN.  It shall be formatted as follows -External Identifier= \"\
+        extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2\
+        \ of 3GPP TS 23.003 that describes an  External Identifier. \n"
+      pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+      type: string
+    EndPoint:
+      description: The end point information to reach EAS.
+      example:
+        fqdn: fqdn
+        ipv6Addrs:
+        - null
+        - null
+        uri: uri
+        ipv4Addrs:
+        - null
+        - null
+      oneOf:
+      - required:
+        - uri
+      - required:
+        - fqdn
+      - required:
+        - ipv4Addrs
+      - required:
+        - ipv6Addrs
+      properties:
+        fqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        ipv4Addrs:
+          description: IPv4 addresses of the edge server.
+          items:
+            $ref: '#/components/schemas/Ipv4Addr_1'
+          minItems: 1
+          type: array
+        ipv6Addrs:
+          description: IPv6 addresses of the edge server.
+          items:
+            $ref: '#/components/schemas/Ipv6Addr_1'
+          minItems: 1
+          type: array
+        uri:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+      type: object
+    RouteToLocation:
+      anyOf:
+      - required:
+        - routeInfo
+      - required:
+        - routeProfId
+      description: |
+        At least one of the "routeInfo" attribute and the "routeProfId" attribute shall be included in the "RouteToLocation" data type.
+      example:
+        dnai: dnai
+        routeInfo:
+          ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+          ipv4Addr: 198.51.100.1
+          portNumber: 0
+        routeProfId: routeProfId
+      nullable: true
+      properties:
+        dnai:
+          description: "DNAI (Data network access identifier), see clause 5.6.7 of\
+            \ 3GPP TS 23.501."
+          type: string
+        routeInfo:
+          $ref: '#/components/schemas/RouteInformation'
+        routeProfId:
+          description: Identifies the routing profile Id.
+          nullable: true
+          type: string
+      required:
+      - dnai
+      type: object
+    Dnai:
+      description: "DNAI (Data network access identifier), see clause 5.6.7 of 3GPP\
+        \ TS 23.501."
+      type: string
+    RouteInformation:
+      description: "At least one of the \"ipv4Addr\" attribute and the \"ipv6Addr\"\
+        \ attribute shall be included in the \"RouteInformation\" data type. \n"
+      example:
+        ipv6Addr: 2001:db8:85a3::8a2e:370:7334
+        ipv4Addr: 198.51.100.1
+        portNumber: 0
+      nullable: true
+      properties:
+        ipv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+        portNumber:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+      required:
+      - portNumber
+      type: object
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    Ipv4Addr_1:
+      description: string identifying a Ipv4 address formatted in the "dotted decimal"
+        notation as defined in IETF RFC 1166.
+      type: string
+    Ipv6Addr_1:
+      description: string identifying a Ipv6 address formatted according to clause
+        4 in IETF RFC 5952. The mixed Ipv4 Ipv6 notation according to clause 5 of
+        IETF RFC 5952 shall not be used.
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            eees-appctxtreloc: Access to the Eees_AppContextRelocation API
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

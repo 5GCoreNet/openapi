@@ -1,0 +1,181 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Provisioning Sessions API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_ProvisioningSessions
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Provisioning Sessions"
+  name: M1_ProvisioningSessions
+paths:
+  /provisioning-sessions:
+    post:
+      operationId: createProvisioningSession
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProvisioningSession'
+          description: Provisioning Session Created
+          headers:
+            Location:
+              description: URL including the resource identifier of the newly created
+                Provisioning Session.
+              explode: false
+              required: true
+              schema:
+                $ref: '#/components/schemas/Url'
+              style: simple
+      summary: Create a new Provisioning Session
+  /provisioning-sessions/{provisioningSessionId}:
+    delete:
+      operationId: destroyProvisioningSession
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "204":
+          description: Provisioning Session Destroyed
+      summary: Destroy an existing Provisioning Session
+    get:
+      operationId: getProvisioningSessionById
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProvisioningSession'
+          description: Success
+      summary: Retrieve an existing Provisioning Session
+components:
+  schemas:
+    ProvisioningSession:
+      description: A representation of a Provisioning Session.
+      example:
+        contentPreparationTemplateIds:
+        - null
+        - null
+        policyTemplateIds:
+        - null
+        - null
+        edgeResourcesConfigurationIds:
+        - null
+        - null
+        aspId: aspId
+        externalApplicationId: externalApplicationId
+        provisioningSessionId: provisioningSessionId
+        provisioningSessionType: null
+        metricsReportingConfigurationIds:
+        - null
+        - null
+        serverCertificateIds:
+        - null
+        - null
+        eventDataProcessingConfigurationIds:
+        - null
+        - null
+      properties:
+        provisioningSessionId:
+          description: String chosen by the 5GMS AF to serve as an identifier in a
+            resource URI.
+          type: string
+        provisioningSessionType:
+          $ref: '#/components/schemas/ProvisioningSessionType'
+        aspId:
+          description: Contains an identity of an application service provider.
+          type: string
+        externalApplicationId:
+          description: String providing an application identifier.
+          type: string
+        serverCertificateIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          minItems: 1
+          type: array
+          uniqueItems: true
+        contentPreparationTemplateIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          minItems: 1
+          type: array
+          uniqueItems: true
+        metricsReportingConfigurationIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          minItems: 1
+          type: array
+          uniqueItems: true
+        policyTemplateIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          minItems: 1
+          type: array
+          uniqueItems: true
+        edgeResourcesConfigurationIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          minItems: 1
+          type: array
+          uniqueItems: true
+        eventDataProcessingConfigurationIds:
+          items:
+            $ref: '#/components/schemas/ResourceId'
+          minItems: 1
+          type: array
+          uniqueItems: true
+      required:
+      - externalApplicationId
+      - provisioningSessionId
+      - provisioningSessionType
+      type: object
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    ProvisioningSessionType:
+      anyOf:
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+    AspId:
+      description: Contains an identity of an application service provider.
+      type: string
+    ApplicationId:
+      description: String providing an application identifier.
+      type: string

@@ -1,0 +1,254 @@
+openapi: 3.0.0
+info:
+  description: |
+    5GMS AF M1 Metrics Reporting Provisioning API
+    © 2022, 3GPP Organizational Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).
+    All rights reserved.
+  title: M1_MetricsReportingProvisioning
+  version: 2.0.0
+externalDocs:
+  description: TS 26.512 V17.2.0; 5G Media Streaming (5GMS); Protocols
+  url: https://www.3gpp.org/ftp/Specs/archive/26_series/26.512/
+servers:
+- url: "{apiRoot}/3gpp-m1/v2"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: See 3GPP TS 29.512 clause 6.1.
+tags:
+- description: "5G Media Streaming: Provisioning (M1) APIs: Metrics Reporting Provisioning"
+  name: M1_MetricsReportingProvisioning
+paths:
+  /provisioning-sessions/{provisioningSessionId}/metrics-reporting-configurations:
+    post:
+      operationId: activateMetricsReporting
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetricsReportingConfiguration'
+        description: A JSON representation of a Metrics Reporting Configuration
+        required: true
+      responses:
+        "201":
+          description: Metrics Reporting Configuration Created
+          headers:
+            Location:
+              description: URL of the newly created Metrics Reporting Configuration
+                (same as request URL).
+              explode: false
+              required: true
+              schema:
+                $ref: '#/components/schemas/Url'
+              style: simple
+      summary: Activate the Metrics reporting procedure for the specified Provisioning
+        Session by providing the Metrics Reporting Configuration
+  /provisioning-sessions/{provisioningSessionId}/metrics-reporting-configurations/{metricsReportingConfigurationId}:
+    delete:
+      operationId: destroyMetricsReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of a Metrics Reporting Configuration.
+        explode: false
+        in: path
+        name: metricsReportingConfigurationId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "204":
+          description: Destroyed Metrics Reporting Configuration
+        "404":
+          description: Not Found
+      summary: Destroy the specified Metrics Reporting Configuration of the specified
+        Provisioning Session
+    get:
+      operationId: retrieveMetricsReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of a Metrics Reporting Configuration.
+        explode: false
+        in: path
+        name: metricsReportingConfigurationId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsReportingConfiguration'
+          description: Success
+      summary: Retrieve the specified Metrics Reporting Configuration of the specified
+        Provisioning Session
+    patch:
+      operationId: patchMetricsReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of a Metrics Reporting Configuration.
+        explode: false
+        in: path
+        name: metricsReportingConfigurationId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: '#/components/schemas/MetricsReportingConfiguration'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/MetricsReportingConfiguration'
+        description: A JSON representation of a Metrics Reporting Configuration
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsReportingConfiguration'
+          description: Patched Metrics Reporting Configuration
+        "404":
+          description: Not Found
+      summary: Patch the specified Metrics Reporting Configuration for the specified
+        Provisioning Session
+    put:
+      operationId: updateMetricsReportingConfiguration
+      parameters:
+      - description: The resource identifier of an existing Provisioning Session.
+        explode: false
+        in: path
+        name: provisioningSessionId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      - description: The resource identifier of a Metrics Reporting Configuration.
+        explode: false
+        in: path
+        name: metricsReportingConfigurationId
+        required: true
+        schema:
+          $ref: '#/components/schemas/ResourceId'
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetricsReportingConfiguration'
+        description: A JSON representation of a Metrics Reporting Configuration
+        required: true
+      responses:
+        "204":
+          description: Updated Metrics Reporting Configuration
+        "404":
+          description: Not Found
+      summary: Update the specified Metrics Reporting Configuration for the specified
+        Provisioning Session
+components:
+  schemas:
+    MetricsReportingConfiguration:
+      description: A representation of a Metrics Reporting Configuration resource.
+      example:
+        reportingInterval: 0
+        samplePercentage: 60.27456183070403
+        scheme: scheme
+        dataNetworkName: dataNetworkName
+        metricsReportingConfigurationId: metricsReportingConfigurationId
+        metrics:
+        - metrics
+        - metrics
+        urlFilters:
+        - urlFilters
+        - urlFilters
+      properties:
+        metricsReportingConfigurationId:
+          description: String chosen by the 5GMS AF to serve as an identifier in a
+            resource URI.
+          type: string
+        scheme:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        dataNetworkName:
+          description: |
+            String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+          type: string
+        reportingInterval:
+          description: indicating a time in seconds.
+          type: integer
+        samplePercentage:
+          maximum: 100.0
+          minimum: 0.0
+          type: number
+        urlFilters:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        metrics:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      required:
+      - metricsReportingConfigurationId
+      - scheme
+      type: object
+    ResourceId:
+      description: String chosen by the 5GMS AF to serve as an identifier in a resource
+        URI.
+      type: string
+    Url:
+      description: "Uniform Resource Locator, comforming with the URI Generic Syntax\
+        \ specified in IETF RFC 3986."
+      format: uri
+      type: string
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    Dnn:
+      description: |
+        String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+      type: string
+    DurationSec:
+      description: indicating a time in seconds.
+      type: integer
+    Percentage:
+      maximum: 100.0
+      minimum: 0.0
+      type: number

@@ -1,0 +1,674 @@
+openapi: 3.0.0
+info:
+  description: "API for VAE_V2VConfigRequirement  \n© 2022, 3GPP Organizational Partners\
+    \ (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: VAE_V2VConfigRequirement
+  version: 1.1.0-alpha.1
+externalDocs:
+  description: 3GPP TS 29.486 V18.0.0 V2X Application Enabler (VAE) Services
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.486/
+servers:
+- url: "{apiRoot}/vae-v2v-config-req/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials: []
+paths:
+  /configurations:
+    post:
+      operationId: Create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2vConfigurationData'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2vConfigurationData'
+          description: V2V Configuration Resource Created
+          headers:
+            Location:
+              description: Contains the URI of the newly created resource
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: VAE V2V Configuration resource create service Operation
+      tags:
+      - V2V Configurations collection (Document)
+  /configurations/{configurationId}:
+    delete:
+      operationId: DeleteV2VConfiguration
+      parameters:
+      - description: Unique ID of the V2V Configuration to be deleted
+        explode: false
+        in: path
+        name: configurationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: The configuration was deleted successfully.
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: VAE V2V Configuration resource delete service Operation
+      tags:
+      - Individual V2V Configuration (Document)
+    get:
+      operationId: ReadV2VConfiguration
+      parameters:
+      - description: Identifier of a V2V Configuration resource
+        explode: false
+        in: path
+        name: configurationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2vConfigurationData'
+          description: OK. Resource representation is returned
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Acceptable
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: VAE V2V Configuration resource read service Operation
+      tags:
+      - Individual V2V Configuration (Document)
+    put:
+      operationId: UpdateV2VConfiguration
+      parameters:
+      - description: Identifier of a V2V Configuration resource
+        explode: false
+        in: path
+        name: configurationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2vConfigurationData'
+        description: Parameters to update/replace the existing configuration
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2vConfigurationData'
+          description: OK (Successful update of the configuration)
+        "204":
+          description: No Content (Successful update of the configuration)
+        "307":
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "308":
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: An alternative URI of the resource.
+              required: true
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Updates/replaces an existing configuration resource
+      tags:
+      - VAE V2V Configuration resource put service Operation
+components:
+  responses:
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "307":
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "308":
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: An alternative URI of the resource.
+          required: true
+          schema:
+            type: string
+    "406":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Acceptable
+  schemas:
+    V2vConfigurationData:
+      description: Contains the V2V configuration data.
+      example:
+        groupId: groupId
+        canUeIds:
+        - null
+        - null
+        serviceId: serviceId
+        suppFeat: suppFeat
+        appQosReq:
+          priorityLevel: 0
+          maxDataBurstVol: 1129262
+          pqi: 20
+          packetErrorRate: packetErrorRate
+          resourceType: null
+          packetDelayBudget: 1
+          averagingWindow: 2441
+      properties:
+        groupId:
+          description: Represents the group ID for which a V2X message is addressed.
+          type: string
+        serviceId:
+          description: Represents the V2X service ID to which a V2X message belongs.
+          type: string
+        canUeIds:
+          items:
+            $ref: '#/components/schemas/V2xUeId'
+          minItems: 1
+          type: array
+        appQosReq:
+          $ref: '#/components/schemas/AppplicationQosRequirement'
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    ProblemDetails:
+      description: Represents additional information and details on an error response.
+      properties:
+        type:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        title:
+          description: "A short, human-readable summary of the problem type. It should\
+            \ not change from occurrence to occurrence of the problem."
+          type: string
+        status:
+          description: The HTTP status code for this occurrence of the problem.
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: string providing an URI formatted according to IETF RFC 3986.
+          type: string
+        cause:
+          description: "A machine-readable application error cause specific to this\
+            \ occurrence of the problem. This IE should be present and provide application-related\
+            \ error information, if available."
+          type: string
+        invalidParams:
+          description: "Description of invalid parameters, for a request rejected\
+            \ due to invalid parameters."
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      type: object
+    Uri:
+      description: string providing an URI formatted according to IETF RFC 3986.
+      type: string
+    InvalidParam:
+      description: "Represents the description of invalid parameters, for a request\
+        \ rejected due to invalid parameters."
+      properties:
+        param:
+          description: "Attribute's name encoded as a JSON Pointer, or header's name."
+          type: string
+        reason:
+          description: "A human-readable reason, e.g. \"must be a positive integer\"\
+            ."
+          type: string
+      required:
+      - param
+      type: object
+    V2xGroupId:
+      description: Represents the group ID for which a V2X message is addressed.
+      type: string
+    V2xServiceId:
+      description: Represents the V2X service ID to which a V2X message belongs.
+      type: string
+    V2xUeId:
+      description: Represents the identifier of the V2X UE.
+      type: string
+    AppplicationQosRequirement:
+      description: Represents application layer QoS requirement.
+      example:
+        priorityLevel: 0
+        maxDataBurstVol: 1129262
+        pqi: 20
+        packetErrorRate: packetErrorRate
+        resourceType: null
+        packetDelayBudget: 1
+        averagingWindow: 2441
+      properties:
+        pqi:
+          description: |
+            Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
+          maximum: 255
+          minimum: 0
+          type: integer
+        resourceType:
+          $ref: '#/components/schemas/QosResourceType'
+        priorityLevel:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        packetDelayBudget:
+          description: |
+            Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
+          minimum: 1
+          type: integer
+        packetErrorRate:
+          description: |
+            String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a "scalar x 10-k" where the scalar and the exponent k are each encoded as one decimal digit.
+          pattern: "^([0-9]E-[0-9])$"
+          type: string
+        averagingWindow:
+          default: 2000
+          description: "Unsigned integer indicating Averaging Window (see clause 5.7.3.6\
+            \ and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds."
+          maximum: 4095
+          minimum: 1
+          type: integer
+        maxDataBurstVol:
+          description: "Unsigned integer indicating Maximum Data Burst Volume (see\
+            \ clauses 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes. \n"
+          maximum: 2000000
+          minimum: 4096
+          type: integer
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    "5Qi":
+      description: |
+        Unsigned integer representing a 5G QoS Identifier (see clause 5.7.2.1 of 3GPP TS 23.501, within the range 0 to 255.
+      maximum: 255
+      minimum: 0
+      type: integer
+    QosResourceType:
+      anyOf:
+      - enum:
+        - NON_GBR
+        - NON_CRITICAL_GBR
+        - CRITICAL_GBR
+        type: string
+      - type: string
+      description: "The enumeration QosResourceType indicates whether a QoS Flow is\
+        \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
+        \ and 5.7.3.5 of 3GPP TS 23.501). It shall comply with the provisions defined\
+        \ in table 5.5.3.6-1. \n"
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    PacketDelBudget:
+      description: |
+        Unsigned integer indicating Packet Delay Budget (see clauses 5.7.3.4 and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds.
+      minimum: 1
+      type: integer
+    PacketErrRate:
+      description: |
+        String representing Packet Error Rate (see clause 5.7.3.5 and 5.7.4 of 3GPP TS 23.501, expressed as a "scalar x 10-k" where the scalar and the exponent k are each encoded as one decimal digit.
+      pattern: "^([0-9]E-[0-9])$"
+      type: string
+    AverWindow:
+      default: 2000
+      description: "Unsigned integer indicating Averaging Window (see clause 5.7.3.6\
+        \ and 5.7.4 of 3GPP TS 23.501), expressed in milliseconds."
+      maximum: 4095
+      minimum: 1
+      type: integer
+    ExtMaxDataBurstVol:
+      description: "Unsigned integer indicating Maximum Data Burst Volume (see clauses\
+        \ 5.7.3.7 and 5.7.4 of 3GPP TS 23.501), expressed in Bytes. \n"
+      maximum: 2000000
+      minimum: 4096
+      type: integer
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: "{tokenUrl}"
+      type: oauth2

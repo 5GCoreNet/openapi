@@ -1,0 +1,2459 @@
+openapi: 3.0.0
+info:
+  description: "PCF Event Exposure Service.  \n© 2022, 3GPP Organizational Partners\
+    \ (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC).  \nAll rights reserved.\n"
+  title: Npcf_EventExposure
+  version: 1.3.0-alpha.1
+externalDocs:
+  description: 3GPP TS 29.523 V18.0.0; 5G System; Policy Control Event Exposure Service;
+    Stage 3.
+  url: https://www.3gpp.org/ftp/Specs/archive/29_series/29.523/
+servers:
+- url: "{apiRoot}/npcf-eventexposure/v1"
+  variables:
+    apiRoot:
+      default: https://example.com
+      description: apiRoot as defined in clause 4.4 of 3GPP TS 29.501
+security:
+- {}
+- oAuth2ClientCredentials:
+  - npcf-eventexposure
+paths:
+  /subscriptions:
+    post:
+      callbacks:
+        PcEventNotification:
+          '{$request.body#/notifUri}':
+            post:
+              operationId: pcEventNotification_Post
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      $ref: '#/components/schemas/PcEventExposureNotif'
+                required: true
+              responses:
+                "204":
+                  description: "No Content, Notification was succesfull."
+                "307":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Temporary Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: Identifier of target NF (service) instance towards
+                        which the request is redirected
+                      schema:
+                        type: string
+                "308":
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/RedirectResponse'
+                  description: Permanent Redirect
+                  headers:
+                    Location:
+                      description: The URI pointing to the resource located on the
+                        redirect target
+                      required: true
+                      schema:
+                        type: string
+                    "3gpp-Sbi-Target-Nf-Id":
+                      description: |
+                        'Identifier of target NF (service) instance towards which the request is redirected'
+                      schema:
+                        type: string
+                "400":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad request
+                "401":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unauthorized
+                "403":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Forbidden
+                "404":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Not Found
+                "411":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Length Required
+                "413":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Payload Too Large
+                "415":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Unsupported Media Type
+                "429":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Too Many Requests
+                "500":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Internal Server Error
+                "502":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Bad Gateway
+                "503":
+                  content:
+                    application/problem+json:
+                      schema:
+                        $ref: '#/components/schemas/ProblemDetails'
+                  description: Service Unavailable
+                default:
+                  description: Generic Error
+              x-callback-request: true
+      operationId: PostPcEventExposureSubsc
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PcEventExposureSubsc'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PcEventExposureSubsc'
+          description: Success
+          headers:
+            Location:
+              description: |
+                Contains the URI of the created individual policy control events subscription resource, according to the structure {apiRoot}/npcf-eventexposure/v1/subscriptions/{subscriptionId}
+              explode: false
+              required: true
+              schema:
+                type: string
+              style: simple
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Creates a new Individual Policy Control Events Subscription resource
+      tags:
+      - Policy Control Events Subscription (Collection)
+  /subscriptions/{subscriptionId}:
+    delete:
+      operationId: DeletePcEventExposureSubsc
+      parameters:
+      - description: Policy Control Event Subscription ID.
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No Content. Resource was succesfully deleted.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: 'Cancels an existing Individual Policy Control Events Subscription '
+      tags:
+      - Individual Policy Control Events Subscription (Document)
+    get:
+      operationId: GetPcEventExposureSubsc
+      parameters:
+      - description: Policy Control Event Subscription ID.
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PcEventExposureSubsc'
+          description: OK. Resource representation is returned.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "406":
+          description: 406 Not Acceptable
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: Reads an existing Individual Policy Control Events Subscription
+      tags:
+      - Individual Policy Control Events Subscription (Document)
+    put:
+      operationId: PutPcEventExposureSubsc
+      parameters:
+      - description: Policy Control Event Subscription ID.
+        explode: false
+        in: path
+        name: subscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PcEventExposureSubsc'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PcEventExposureSubsc'
+          description: OK. Resource was succesfully modified and representation is
+            returned.
+        "204":
+          description: No Content. Resource was succesfully modified.
+        "307":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Temporary Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: Identifier of target NF (service) instance towards which
+                the request is redirected
+              schema:
+                type: string
+        "308":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RedirectResponse'
+          description: Permanent Redirect
+          headers:
+            Location:
+              description: The URI pointing to the resource located on the redirect
+                target
+              required: true
+              schema:
+                type: string
+            "3gpp-Sbi-Target-Nf-Id":
+              description: |
+                'Identifier of target NF (service) instance towards which the request is redirected'
+              schema:
+                type: string
+        "400":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad request
+        "401":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unauthorized
+        "403":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Forbidden
+        "404":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Not Found
+        "411":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Length Required
+        "413":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Payload Too Large
+        "415":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Unsupported Media Type
+        "429":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Too Many Requests
+        "500":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Internal Server Error
+        "502":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Bad Gateway
+        "503":
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/ProblemDetails'
+          description: Service Unavailable
+        default:
+          description: Generic Error
+      summary: 'Modifies an existing Individual Policy Control Events Subscription '
+      tags:
+      - Individual Policy Control Events Subscription (Document)
+components:
+  responses:
+    "400":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad request
+    "401":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unauthorized
+    "403":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Forbidden
+    "404":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Not Found
+    "411":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Length Required
+    "413":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Payload Too Large
+    "415":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Unsupported Media Type
+    "429":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Too Many Requests
+    "500":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Internal Server Error
+    "502":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Bad Gateway
+    "503":
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ProblemDetails'
+      description: Service Unavailable
+    default:
+      description: Generic Error
+    "307":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Temporary Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: Identifier of target NF (service) instance towards which the
+            request is redirected
+          schema:
+            type: string
+    "308":
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RedirectResponse'
+      description: Permanent Redirect
+      headers:
+        Location:
+          description: The URI pointing to the resource located on the redirect target
+          required: true
+          schema:
+            type: string
+        "3gpp-Sbi-Target-Nf-Id":
+          description: |
+            'Identifier of target NF (service) instance towards which the request is redirected'
+          schema:
+            type: string
+    "406":
+      description: 406 Not Acceptable
+  schemas:
+    PcEventExposureNotif:
+      description: |
+        Represents notifications about Policy Control events related to an Individual Policy Events Subscription resource.
+      example:
+        notifId: notifId
+        eventNotifs:
+        - ratType: null
+          addAccessInfo:
+            accessType: null
+            ratType: null
+          repServices:
+            servEthFlows:
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            servIpFlows:
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            afAppId: afAppId
+          supi: supi
+          relAccessInfo:
+            accessType: null
+            ratType: null
+          gpsi: gpsi
+          timeStamp: 2000-01-23T04:56:07.000+00:00
+          satBackhaulCategory: null
+          pduSessionInfo:
+            ueMac: ueMac
+            snssai:
+              sd: sd
+              sst: 143
+            dnn: dnn
+            ipDomain: ipDomain
+            ueIpv4: 198.51.100.1
+            ueIpv6: 2001:db8:abcd:12::0/64
+          delivFailure: null
+          plmnId:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          event: null
+          accType: null
+          anGwAddr:
+            anGwIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            anGwIpv4Addr: 198.51.100.1
+          appliedCov:
+            servingNetwork:
+              mnc: mnc
+              nid: nid
+              mcc: mcc
+            tacList:
+            - null
+            - null
+        - ratType: null
+          addAccessInfo:
+            accessType: null
+            ratType: null
+          repServices:
+            servEthFlows:
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            servIpFlows:
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            afAppId: afAppId
+          supi: supi
+          relAccessInfo:
+            accessType: null
+            ratType: null
+          gpsi: gpsi
+          timeStamp: 2000-01-23T04:56:07.000+00:00
+          satBackhaulCategory: null
+          pduSessionInfo:
+            ueMac: ueMac
+            snssai:
+              sd: sd
+              sst: 143
+            dnn: dnn
+            ipDomain: ipDomain
+            ueIpv4: 198.51.100.1
+            ueIpv6: 2001:db8:abcd:12::0/64
+          delivFailure: null
+          plmnId:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          event: null
+          accType: null
+          anGwAddr:
+            anGwIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            anGwIpv4Addr: 198.51.100.1
+          appliedCov:
+            servingNetwork:
+              mnc: mnc
+              nid: nid
+              mcc: mcc
+            tacList:
+            - null
+            - null
+      properties:
+        notifId:
+          type: string
+        eventNotifs:
+          items:
+            $ref: '#/components/schemas/PcEventNotification'
+          minItems: 1
+          type: array
+      required:
+      - eventNotifs
+      - notifId
+      type: object
+    PcEventExposureSubsc:
+      description: Represents an Individual Policy Events Subscription resource.
+      example:
+        notifId: notifId
+        filterDnns:
+        - null
+        - null
+        eventSubs:
+        - null
+        - null
+        notifUri: notifUri
+        snssaiDnns:
+        - dnns:
+          - null
+          - null
+          snssai:
+            sd: sd
+            sst: 143
+        - dnns:
+          - null
+          - null
+          snssai:
+            sd: sd
+            sst: 143
+        filterSnssais:
+        - sd: sd
+          sst: 143
+        - sd: sd
+          sst: 143
+        groupId: groupId
+        filterServices:
+        - servEthFlows:
+          - flowNumber: 2
+            ethFlows:
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+          - flowNumber: 2
+            ethFlows:
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+          servIpFlows:
+          - flowNumber: 7
+            ipFlows:
+            - null
+            - null
+          - flowNumber: 7
+            ipFlows:
+            - null
+            - null
+          afAppId: afAppId
+        - servEthFlows:
+          - flowNumber: 2
+            ethFlows:
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+          - flowNumber: 2
+            ethFlows:
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+          servIpFlows:
+          - flowNumber: 7
+            ipFlows:
+            - null
+            - null
+          - flowNumber: 7
+            ipFlows:
+            - null
+            - null
+          afAppId: afAppId
+        eventNotifs:
+        - ratType: null
+          addAccessInfo:
+            accessType: null
+            ratType: null
+          repServices:
+            servEthFlows:
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            servIpFlows:
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            afAppId: afAppId
+          supi: supi
+          relAccessInfo:
+            accessType: null
+            ratType: null
+          gpsi: gpsi
+          timeStamp: 2000-01-23T04:56:07.000+00:00
+          satBackhaulCategory: null
+          pduSessionInfo:
+            ueMac: ueMac
+            snssai:
+              sd: sd
+              sst: 143
+            dnn: dnn
+            ipDomain: ipDomain
+            ueIpv4: 198.51.100.1
+            ueIpv6: 2001:db8:abcd:12::0/64
+          delivFailure: null
+          plmnId:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          event: null
+          accType: null
+          anGwAddr:
+            anGwIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            anGwIpv4Addr: 198.51.100.1
+          appliedCov:
+            servingNetwork:
+              mnc: mnc
+              nid: nid
+              mcc: mcc
+            tacList:
+            - null
+            - null
+        - ratType: null
+          addAccessInfo:
+            accessType: null
+            ratType: null
+          repServices:
+            servEthFlows:
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            - flowNumber: 2
+              ethFlows:
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+              - destMacAddr: destMacAddr
+                destMacAddrEnd: destMacAddrEnd
+                sourceMacAddr: sourceMacAddr
+                fDir: null
+                ethType: ethType
+                fDesc: fDesc
+                vlanTags:
+                - vlanTags
+                - vlanTags
+                srcMacAddrEnd: srcMacAddrEnd
+            servIpFlows:
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            - flowNumber: 7
+              ipFlows:
+              - null
+              - null
+            afAppId: afAppId
+          supi: supi
+          relAccessInfo:
+            accessType: null
+            ratType: null
+          gpsi: gpsi
+          timeStamp: 2000-01-23T04:56:07.000+00:00
+          satBackhaulCategory: null
+          pduSessionInfo:
+            ueMac: ueMac
+            snssai:
+              sd: sd
+              sst: 143
+            dnn: dnn
+            ipDomain: ipDomain
+            ueIpv4: 198.51.100.1
+            ueIpv6: 2001:db8:abcd:12::0/64
+          delivFailure: null
+          plmnId:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          event: null
+          accType: null
+          anGwAddr:
+            anGwIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+            anGwIpv4Addr: 198.51.100.1
+          appliedCov:
+            servingNetwork:
+              mnc: mnc
+              nid: nid
+              mcc: mcc
+            tacList:
+            - null
+            - null
+        eventsRepInfo:
+          notifMethod: null
+          partitionCriteria:
+          - null
+          - null
+          grpRepTime: 5
+          notifFlag: null
+          monDur: 2000-01-23T04:56:07.000+00:00
+          immRep: true
+          maxReportNbr: 0
+          repPeriod: 6
+          sampRatio: 15
+        suppFeat: suppFeat
+      properties:
+        eventSubs:
+          items:
+            $ref: '#/components/schemas/PcEvent'
+          minItems: 1
+          type: array
+        eventsRepInfo:
+          $ref: '#/components/schemas/ReportingInformation'
+        groupId:
+          description: "String identifying a group of devices network internal globally\
+            \ unique ID which identifies a set of IMSIs, as specified in clause 19.9\
+            \ of 3GPP TS 23.003. \n"
+          pattern: "^[A-Fa-f0-9]{8}-[0-9]{3}-[0-9]{2,3}-([A-Fa-f0-9][A-Fa-f0-9]){1,10}$"
+          type: string
+        filterDnns:
+          items:
+            $ref: '#/components/schemas/Dnn'
+          minItems: 1
+          type: array
+        filterSnssais:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        snssaiDnns:
+          items:
+            $ref: '#/components/schemas/SnssaiDnnCombination'
+          minItems: 1
+          type: array
+        filterServices:
+          items:
+            $ref: '#/components/schemas/ServiceIdentification'
+          minItems: 1
+          type: array
+        notifUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        notifId:
+          type: string
+        eventNotifs:
+          items:
+            $ref: '#/components/schemas/PcEventNotification'
+          minItems: 1
+          type: array
+        suppFeat:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+      required:
+      - eventSubs
+      - notifId
+      - notifUri
+      type: object
+    ReportingInformation:
+      description: Represents the type of reporting that the subscription requires.
+      example:
+        notifMethod: null
+        partitionCriteria:
+        - null
+        - null
+        grpRepTime: 5
+        notifFlag: null
+        monDur: 2000-01-23T04:56:07.000+00:00
+        immRep: true
+        maxReportNbr: 0
+        repPeriod: 6
+        sampRatio: 15
+      properties:
+        immRep:
+          type: boolean
+        notifMethod:
+          $ref: '#/components/schemas/NotificationMethod'
+        maxReportNbr:
+          description: "Unsigned Integer, i.e. only value 0 and integers above 0 are\
+            \ permissible."
+          minimum: 0
+          type: integer
+        monDur:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        repPeriod:
+          description: indicating a time in seconds.
+          type: integer
+        sampRatio:
+          description: "Unsigned integer indicating Sampling Ratio (see clauses 4.15.1\
+            \ of 3GPP TS 23.502), expressed in percent. \n"
+          maximum: 100
+          minimum: 1
+          type: integer
+        partitionCriteria:
+          description: Criteria for partitioning the UEs before applying the sampling
+            ratio.
+          items:
+            $ref: '#/components/schemas/PartitioningCriteria'
+          minItems: 1
+          type: array
+        grpRepTime:
+          description: indicating a time in seconds.
+          type: integer
+        notifFlag:
+          $ref: '#/components/schemas/NotificationFlag'
+      type: object
+    ServiceIdentification:
+      allOf:
+      - not:
+          required:
+          - servEthFlows
+          - servIpFlows
+      - anyOf:
+        - required:
+          - servEthFlows
+        - required:
+          - servIpFlows
+        - required:
+          - afAppId
+      description: Identifies the service to which the subscription applies.
+      example:
+        servEthFlows:
+        - flowNumber: 2
+          ethFlows:
+          - destMacAddr: destMacAddr
+            destMacAddrEnd: destMacAddrEnd
+            sourceMacAddr: sourceMacAddr
+            fDir: null
+            ethType: ethType
+            fDesc: fDesc
+            vlanTags:
+            - vlanTags
+            - vlanTags
+            srcMacAddrEnd: srcMacAddrEnd
+          - destMacAddr: destMacAddr
+            destMacAddrEnd: destMacAddrEnd
+            sourceMacAddr: sourceMacAddr
+            fDir: null
+            ethType: ethType
+            fDesc: fDesc
+            vlanTags:
+            - vlanTags
+            - vlanTags
+            srcMacAddrEnd: srcMacAddrEnd
+        - flowNumber: 2
+          ethFlows:
+          - destMacAddr: destMacAddr
+            destMacAddrEnd: destMacAddrEnd
+            sourceMacAddr: sourceMacAddr
+            fDir: null
+            ethType: ethType
+            fDesc: fDesc
+            vlanTags:
+            - vlanTags
+            - vlanTags
+            srcMacAddrEnd: srcMacAddrEnd
+          - destMacAddr: destMacAddr
+            destMacAddrEnd: destMacAddrEnd
+            sourceMacAddr: sourceMacAddr
+            fDir: null
+            ethType: ethType
+            fDesc: fDesc
+            vlanTags:
+            - vlanTags
+            - vlanTags
+            srcMacAddrEnd: srcMacAddrEnd
+        servIpFlows:
+        - flowNumber: 7
+          ipFlows:
+          - null
+          - null
+        - flowNumber: 7
+          ipFlows:
+          - null
+          - null
+        afAppId: afAppId
+      properties:
+        servEthFlows:
+          items:
+            $ref: '#/components/schemas/EthernetFlowInfo'
+          minItems: 1
+          type: array
+        servIpFlows:
+          items:
+            $ref: '#/components/schemas/IpFlowInfo'
+          minItems: 1
+          type: array
+        afAppId:
+          description: Contains an AF application identifier.
+          type: string
+      type: object
+    EthernetFlowInfo:
+      description: Identifies an UL/DL ethernet flow.
+      example:
+        flowNumber: 2
+        ethFlows:
+        - destMacAddr: destMacAddr
+          destMacAddrEnd: destMacAddrEnd
+          sourceMacAddr: sourceMacAddr
+          fDir: null
+          ethType: ethType
+          fDesc: fDesc
+          vlanTags:
+          - vlanTags
+          - vlanTags
+          srcMacAddrEnd: srcMacAddrEnd
+        - destMacAddr: destMacAddr
+          destMacAddrEnd: destMacAddrEnd
+          sourceMacAddr: sourceMacAddr
+          fDir: null
+          ethType: ethType
+          fDesc: fDesc
+          vlanTags:
+          - vlanTags
+          - vlanTags
+          srcMacAddrEnd: srcMacAddrEnd
+      properties:
+        ethFlows:
+          items:
+            $ref: '#/components/schemas/EthFlowDescription'
+          maxItems: 2
+          minItems: 1
+          type: array
+        flowNumber:
+          type: integer
+      required:
+      - flowNumber
+      type: object
+    IpFlowInfo:
+      description: Identifies an UL/DL IP flow.
+      example:
+        flowNumber: 7
+        ipFlows:
+        - null
+        - null
+      properties:
+        ipFlows:
+          items:
+            $ref: '#/components/schemas/FlowDescription'
+          maxItems: 2
+          minItems: 1
+          type: array
+        flowNumber:
+          type: integer
+      required:
+      - flowNumber
+      type: object
+    PcEventNotification:
+      description: Represents the information reported for a Policy Control event.
+      example:
+        ratType: null
+        addAccessInfo:
+          accessType: null
+          ratType: null
+        repServices:
+          servEthFlows:
+          - flowNumber: 2
+            ethFlows:
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+          - flowNumber: 2
+            ethFlows:
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+            - destMacAddr: destMacAddr
+              destMacAddrEnd: destMacAddrEnd
+              sourceMacAddr: sourceMacAddr
+              fDir: null
+              ethType: ethType
+              fDesc: fDesc
+              vlanTags:
+              - vlanTags
+              - vlanTags
+              srcMacAddrEnd: srcMacAddrEnd
+          servIpFlows:
+          - flowNumber: 7
+            ipFlows:
+            - null
+            - null
+          - flowNumber: 7
+            ipFlows:
+            - null
+            - null
+          afAppId: afAppId
+        supi: supi
+        relAccessInfo:
+          accessType: null
+          ratType: null
+        gpsi: gpsi
+        timeStamp: 2000-01-23T04:56:07.000+00:00
+        satBackhaulCategory: null
+        pduSessionInfo:
+          ueMac: ueMac
+          snssai:
+            sd: sd
+            sst: 143
+          dnn: dnn
+          ipDomain: ipDomain
+          ueIpv4: 198.51.100.1
+          ueIpv6: 2001:db8:abcd:12::0/64
+        delivFailure: null
+        plmnId:
+          mnc: mnc
+          nid: nid
+          mcc: mcc
+        event: null
+        accType: null
+        anGwAddr:
+          anGwIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+          anGwIpv4Addr: 198.51.100.1
+        appliedCov:
+          servingNetwork:
+            mnc: mnc
+            nid: nid
+            mcc: mcc
+          tacList:
+          - null
+          - null
+      properties:
+        event:
+          $ref: '#/components/schemas/PcEvent'
+        accType:
+          $ref: '#/components/schemas/AccessType'
+        addAccessInfo:
+          $ref: '#/components/schemas/AdditionalAccessInfo'
+        relAccessInfo:
+          $ref: '#/components/schemas/AdditionalAccessInfo'
+        anGwAddr:
+          $ref: '#/components/schemas/AnGwAddress'
+        ratType:
+          $ref: '#/components/schemas/RatType'
+        plmnId:
+          $ref: '#/components/schemas/PlmnIdNid'
+        satBackhaulCategory:
+          $ref: '#/components/schemas/SatelliteBackhaulCategory'
+        appliedCov:
+          $ref: '#/components/schemas/ServiceAreaCoverageInfo'
+        supi:
+          description: "String identifying a Supi that shall contain either an IMSI,\
+            \ a network specific identifier,\na Global Cable Identifier (GCI) or a\
+            \ Global Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS\
+            \ 23.003. It shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\"\
+            , where <imsi> shall be formatted according to clause 2.2\n   of 3GPP\
+            \ TS 23.003 that describes an IMSI.\n - for a network specific identifier\
+            \ \"nai-<nai>, where <nai> shall be formatted\n   according to clause\
+            \ 28.7.2 of 3GPP TS 23.003 that describes an NAI.\n - for a GCI \"gci-<gci>\"\
+            , where <gci> shall be formatted according to clause 28.15.2\n   of 3GPP\
+            \ TS 23.003.\n - for a GLI \"gli-<gli>\", where <gli> shall be formatted\
+            \ according to clause 28.16.2 of\n   3GPP TS 23.003.To enable that the\
+            \ value is used as part of an URI, the string shall\n   only contain characters\
+            \ allowed according to the \"lower-with-hyphen\" naming convention\n \
+            \  defined in 3GPP TS 29.501.\n"
+          pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+          type: string
+        gpsi:
+          description: "String identifying a Gpsi shall contain either an External\
+            \ Id or an MSISDN.  It shall be formatted as follows -External Identifier=\
+            \ \"extid-'extid', where 'extid'  shall be formatted according to clause\
+            \ 19.7.2 of 3GPP TS 23.003 that describes an  External Identifier. \n"
+          pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+          type: string
+        timeStamp:
+          description: string with format 'date-time' as defined in OpenAPI.
+          format: date-time
+          type: string
+        pduSessionInfo:
+          $ref: '#/components/schemas/PduSessionInformation'
+        repServices:
+          $ref: '#/components/schemas/ServiceIdentification'
+        delivFailure:
+          $ref: '#/components/schemas/Failure'
+      required:
+      - event
+      - timeStamp
+      type: object
+    PduSessionInformation:
+      description: Represents PDU session identification information.
+      example:
+        ueMac: ueMac
+        snssai:
+          sd: sd
+          sst: 143
+        dnn: dnn
+        ipDomain: ipDomain
+        ueIpv4: 198.51.100.1
+        ueIpv6: 2001:db8:abcd:12::0/64
+      oneOf:
+      - required:
+        - ueMac
+      - anyOf:
+        - required:
+          - ueIpv4
+        - required:
+          - ueIpv6
+      properties:
+        snssai:
+          $ref: '#/components/schemas/Snssai'
+        dnn:
+          description: |
+            String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+          type: string
+        ueIpv4:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ueIpv6:
+          $ref: '#/components/schemas/Ipv6Prefix'
+        ipDomain:
+          type: string
+        ueMac:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+      required:
+      - dnn
+      - snssai
+      type: object
+    SnssaiDnnCombination:
+      description: Represents a combination of S-NSSAI and DNN(s).
+      example:
+        dnns:
+        - null
+        - null
+        snssai:
+          sd: sd
+          sst: 143
+      properties:
+        snssai:
+          $ref: '#/components/schemas/Snssai'
+        dnns:
+          items:
+            $ref: '#/components/schemas/Dnn'
+          minItems: 1
+          type: array
+      type: object
+    PcEvent:
+      anyOf:
+      - enum:
+        - AC_TY_CH
+        - PLMN_CH
+        - SAC_CH
+        - SAT_CATEGORY_CH
+        - SUCCESS_UE_POL_DEL_SP
+        - UNSUCCESS_UE_POL_DEL_SP
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+      description: Represents the policy control events that can be subscribed.
+    ProblemDetails:
+      description: Provides additional information in an error response.
+      properties:
+        type:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          description: A human-readable explanation specific to this occurrence of
+            the problem.
+          type: string
+        instance:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        cause:
+          description: |
+            A machine-readable application error cause specific to this occurrence of the problem.  This IE should be present and provide application-related error information, if available.
+          type: string
+        invalidParams:
+          items:
+            $ref: '#/components/schemas/InvalidParam'
+          minItems: 1
+          type: array
+        supportedFeatures:
+          description: |
+            A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+          pattern: "^[A-Fa-f0-9]*$"
+          type: string
+        accessTokenError:
+          $ref: '#/components/schemas/AccessTokenErr'
+        accessTokenRequest:
+          $ref: '#/components/schemas/AccessTokenReq'
+        nrfId:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        supportedApiVersions:
+          items:
+            type: string
+          minItems: 1
+          type: array
+      type: object
+    Uri:
+      description: String providing an URI formatted according to RFC 3986.
+      type: string
+    InvalidParam:
+      description: It contains an invalid parameter and a related description.
+      properties:
+        param:
+          description: |
+            If the invalid parameter is an attribute in a JSON body, this IE shall contain the  attribute's name and shall be encoded as a JSON Pointer. If the invalid parameter is  an HTTP header, this IE shall be formatted as the concatenation of the string "header "  plus the name of such header. If the invalid parameter is a query parameter, this IE  shall be formatted as the concatenation of the string "query " plus the name of such  query parameter. If the invalid parameter is a variable part in the path of a resource  URI, this IE shall contain the name of the variable, including the symbols "{" and "}"  used in OpenAPI specification as the notation to represent variable path segments.
+          type: string
+        reason:
+          description: |
+            A human-readable reason, e.g. "must be a positive integer". In cases involving failed  operations in a PATCH request, the reason string should identify the operation that  failed using the operation's array index to assist in correlation of the invalid  parameter with the failed operation, e.g." Replacement value invalid for attribute  (failed operation index= 4)"
+          type: string
+      required:
+      - param
+      type: object
+    SupportedFeatures:
+      description: |
+        A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of "0" to "9",  "a" to "f" or "A" to "F" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported.
+      pattern: "^[A-Fa-f0-9]*$"
+      type: string
+    Fqdn:
+      description: Fully Qualified Domain Name
+      maxLength: 253
+      minLength: 4
+      pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+        .?$"
+      type: string
+    RedirectResponse:
+      description: |
+        The response shall include a Location header field containing a different URI  (pointing to a different URI of an other service instance), or the same URI if a request  is redirected to the same target resource via a different SCP.
+      properties:
+        cause:
+          type: string
+        targetScp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        targetSepp:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+      type: object
+    GroupId:
+      description: "String identifying a group of devices network internal globally\
+        \ unique ID which identifies a set of IMSIs, as specified in clause 19.9 of\
+        \ 3GPP TS 23.003. \n"
+      pattern: "^[A-Fa-f0-9]{8}-[0-9]{3}-[0-9]{2,3}-([A-Fa-f0-9][A-Fa-f0-9]){1,10}$"
+      type: string
+    Dnn:
+      description: |
+        String representing a Data Network as defined in clause 9A of 3GPP TS 23.003;  it shall contain either a DNN Network Identifier, or a full DNN with both the Network  Identifier and Operator Identifier, as specified in 3GPP TS 23.003 clause 9.1.1 and 9.1.2. It shall be coded as string in which the labels are separated by dots  (e.g. "Label1.Label2.Label3").
+      type: string
+    Snssai:
+      description: |
+        When Snssai needs to be converted to string (e.g. when used in maps as key), the string shall be composed of one to three digits "sst" optionally followed by "-" and 6 hexadecimal digits "sd".
+      example:
+        sd: sd
+        sst: 143
+      properties:
+        sst:
+          description: "Unsigned integer, within the range 0 to 255, representing\
+            \ the Slice/Service Type.  It indicates the expected Network Slice behaviour\
+            \ in terms of features and services. Values 0 to 127 correspond to the\
+            \ standardized SST range. Values 128 to 255 correspond  to the Operator-specific\
+            \ range. See clause 28.4.2 of 3GPP TS 23.003. Standardized values are\
+            \ defined in clause 5.15.2.2 of 3GPP TS 23.501. \n"
+          maximum: 255
+          minimum: 0
+          type: integer
+        sd:
+          description: |
+            3-octet string, representing the Slice Differentiator, in hexadecimal representation. Each character in the string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits. The most significant character representing the 4 most significant bits of the SD shall appear first in the string, and the character representing the 4 least significant bit of the SD shall appear last in the string. This is an optional parameter that complements the Slice/Service type(s) to allow to  differentiate amongst multiple Network Slices of the same Slice/Service type. This IE shall be absent if no SD value is associated with the SST.
+          pattern: "^[A-Fa-f0-9]{6}$"
+          type: string
+      required:
+      - sst
+      type: object
+    NotificationMethod:
+      anyOf:
+      - enum:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - PERIODIC
+        - ONE_TIME
+        - ON_EVENT_DETECTION
+    Uinteger:
+      description: "Unsigned Integer, i.e. only value 0 and integers above 0 are permissible."
+      minimum: 0
+      type: integer
+    DateTime:
+      description: string with format 'date-time' as defined in OpenAPI.
+      format: date-time
+      type: string
+    DurationSec:
+      description: indicating a time in seconds.
+      type: integer
+    SamplingRatio:
+      description: "Unsigned integer indicating Sampling Ratio (see clauses 4.15.1\
+        \ of 3GPP TS 23.502), expressed in percent. \n"
+      maximum: 100
+      minimum: 1
+      type: integer
+    PartitioningCriteria:
+      anyOf:
+      - enum:
+        - TAC
+        - SUBPLMN
+        - GEOAREA
+        - SNSSAI
+        - DNN
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
+        type: string
+      description: |
+        Possible values are:
+        - "TAC": Type Allocation Code
+        - "SUBPLMN": Subscriber PLMN ID
+        - "GEOAREA": Geographical area, i.e. list(s) of TAI(s)
+        - "SNSSAI": S-NSSAI
+        - "DNN": DNN
+    NotificationFlag:
+      anyOf:
+      - enum:
+        - ACTIVATE
+        - DEACTIVATE
+        - RETRIEVAL
+        type: string
+      - description: "This string provides forward-compatibility with future extensions\
+          \ to the enumeration but is not used to encode content defined in the present\
+          \ version of this API. \n"
+        type: string
+      description: "Possible values are:\n- ACTIVATE: The event notification is activated.\n\
+        - DEACTIVATE: The event notification is deactivated and shall be muted. The\
+        \ available\n   event(s) shall be stored.\n- RETRIEVAL: The event notification\
+        \ shall be sent to the NF service consumer(s),\n  after that, is muted again.\
+        \ \n"
+    AfAppId:
+      description: Contains an AF application identifier.
+      type: string
+    EthFlowDescription:
+      description: Identifies an Ethernet flow.
+      example:
+        destMacAddr: destMacAddr
+        destMacAddrEnd: destMacAddrEnd
+        sourceMacAddr: sourceMacAddr
+        fDir: null
+        ethType: ethType
+        fDesc: fDesc
+        vlanTags:
+        - vlanTags
+        - vlanTags
+        srcMacAddrEnd: srcMacAddrEnd
+      properties:
+        destMacAddr:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+        ethType:
+          type: string
+        fDesc:
+          description: Defines a packet filter of an IP flow.
+          type: string
+        fDir:
+          $ref: '#/components/schemas/FlowDirection'
+        sourceMacAddr:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+        vlanTags:
+          items:
+            type: string
+          maxItems: 2
+          minItems: 1
+          type: array
+        srcMacAddrEnd:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+        destMacAddrEnd:
+          description: |
+            String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+          pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+          type: string
+      required:
+      - ethType
+      type: object
+    FlowDescription:
+      description: Defines a packet filter of an IP flow.
+      type: string
+    AccessType:
+      description: Indicates whether the access is  via 3GPP or via non-3GPP.
+      enum:
+      - 3GPP_ACCESS
+      - NON_3GPP_ACCESS
+      type: string
+    AdditionalAccessInfo:
+      description: |
+        Indicates the combination of additional Access Type and RAT Type for a MA PDU session.
+      example:
+        accessType: null
+        ratType: null
+      properties:
+        accessType:
+          $ref: '#/components/schemas/AccessType'
+        ratType:
+          $ref: '#/components/schemas/RatType'
+      required:
+      - accessType
+      type: object
+    AnGwAddress:
+      anyOf:
+      - required:
+        - anGwIpv4Addr
+      - required:
+        - anGwIpv6Addr
+      description: Describes the address of the access network gateway control node.
+      example:
+        anGwIpv6Addr: 2001:db8:85a3::8a2e:370:7334
+        anGwIpv4Addr: 198.51.100.1
+      properties:
+        anGwIpv4Addr:
+          description: |
+            String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        anGwIpv6Addr:
+          $ref: '#/components/schemas/Ipv6Addr'
+      type: object
+    RatType:
+      anyOf:
+      - enum:
+        - NR
+        - EUTRA
+        - WLAN
+        - VIRTUAL
+        - NBIOT
+        - WIRELINE
+        - WIRELINE_CABLE
+        - WIRELINE_BBF
+        - LTE-M
+        - NR_U
+        - EUTRA_U
+        - TRUSTED_N3GA
+        - TRUSTED_WLAN
+        - UTRA
+        - GERA
+        - NR_LEO
+        - NR_MEO
+        - NR_GEO
+        - NR_OTHER_SAT
+        - NR_REDCAP
+        type: string
+      - type: string
+      description: Indicates the radio access used.
+    PlmnIdNid:
+      description: |
+        Contains the serving core network operator PLMN ID and, for an SNPN, the NID that together with the PLMN ID identifies the SNPN.
+      example:
+        mnc: mnc
+        nid: nid
+        mcc: mcc
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+        nid:
+          description: "This represents the Network Identifier, which together with\
+            \ a PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS\
+            \ 23.501 clause 5.30.2.1). \n"
+          pattern: "^[A-Fa-f0-9]{11}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    Mcc:
+      description: "Mobile Country Code part of the PLMN, comprising 3 digits, as\
+        \ defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+      pattern: "^\\d{3}$"
+      type: string
+    Mnc:
+      description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+        \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+      pattern: "^\\d{2,3}$"
+      type: string
+    Nid:
+      description: "This represents the Network Identifier, which together with a\
+        \ PLMN ID is used to identify an SNPN (see 3GPP TS 23.003 and 3GPP TS 23.501\
+        \ clause 5.30.2.1). \n"
+      pattern: "^[A-Fa-f0-9]{11}$"
+      type: string
+    SatelliteBackhaulCategory:
+      anyOf:
+      - enum:
+        - GEO
+        - MEO
+        - LEO
+        - OTHER_SAT
+        - NON_SATELLITE
+        type: string
+      - type: string
+      description: Indicates the satellite backhaul used.
+    ServiceAreaCoverageInfo:
+      description: It represents a list of Tracking Areas within a serving network.
+      example:
+        servingNetwork:
+          mnc: mnc
+          nid: nid
+          mcc: mcc
+        tacList:
+        - null
+        - null
+      properties:
+        tacList:
+          description: Indicates a list of Tracking Areas where the service is allowed.
+          items:
+            $ref: '#/components/schemas/Tac'
+          type: array
+        servingNetwork:
+          $ref: '#/components/schemas/PlmnIdNid'
+      required:
+      - tacList
+      type: object
+    Supi:
+      description: "String identifying a Supi that shall contain either an IMSI, a\
+        \ network specific identifier,\na Global Cable Identifier (GCI) or a Global\
+        \ Line Identifier (GLI) as specified in clause \n2.2A of 3GPP TS 23.003. It\
+        \ shall be formatted as follows\n - for an IMSI \"imsi-<imsi>\", where <imsi>\
+        \ shall be formatted according to clause 2.2\n   of 3GPP TS 23.003 that describes\
+        \ an IMSI.\n - for a network specific identifier \"nai-<nai>, where <nai>\
+        \ shall be formatted\n   according to clause 28.7.2 of 3GPP TS 23.003 that\
+        \ describes an NAI.\n - for a GCI \"gci-<gci>\", where <gci> shall be formatted\
+        \ according to clause 28.15.2\n   of 3GPP TS 23.003.\n - for a GLI \"gli-<gli>\"\
+        , where <gli> shall be formatted according to clause 28.16.2 of\n   3GPP TS\
+        \ 23.003.To enable that the value is used as part of an URI, the string shall\n\
+        \   only contain characters allowed according to the \"lower-with-hyphen\"\
+        \ naming convention\n   defined in 3GPP TS 29.501.\n"
+      pattern: "^(imsi-[0-9]{5,15}|nai-.+|gci-.+|gli-.+|.+)$"
+      type: string
+    Gpsi:
+      description: "String identifying a Gpsi shall contain either an External Id\
+        \ or an MSISDN.  It shall be formatted as follows -External Identifier= \"\
+        extid-'extid', where 'extid'  shall be formatted according to clause 19.7.2\
+        \ of 3GPP TS 23.003 that describes an  External Identifier. \n"
+      pattern: "^(msisdn-[0-9]{5,15}|extid-[^@]+@[^@]+|.+)$"
+      type: string
+    Failure:
+      description: |
+        Possible values are:
+        - UNSPECIFIED: Indicates the PCF received the UE sent UE policy delivery service cause #111
+          (Protocol error, unspecified).
+        - UE_NOT_REACHABLE: Indicates the PCF received the notification from the AMF that the UE is
+          not reachable.
+        - UNKNOWN: Indicates unknown reasons upon no response from the UE, e.g. UPDS message type is
+          not defined or not implemented by the UE, or not compatible with the UPDS state, in which
+          the UE shall ignore the UPDS message.
+        - UE_TEMP_UNREACHABLE: Indicates the PCF received the notification from the AMF that the UE
+          is not reachable but the PCF will retry again.
+      oneOf:
+      - enum:
+        - UNSPECIFIED
+        - UE_NOT_REACHABLE
+        - UNKNOWN
+        - UE_TEMP_UNREACHABLE
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+    Ipv4Addr:
+      description: |
+        String identifying a IPv4 address formatted in the 'dotted decimal' notation as defined in RFC 1166.
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Prefix:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))(\\\
+          /(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))(\\\
+          /.+)$"
+      description: |
+        String identifying an IPv6 address prefix formatted according to clause 4 of RFC 5952. IPv6Prefix data type may contain an individual /128 IPv6 address.
+      example: 2001:db8:abcd:12::0/64
+      type: string
+    MacAddr48:
+      description: |
+        String identifying a MAC address formatted in the hexadecimal notation according to clause 1.1 and clause 2.1 of RFC 7042.
+      pattern: "^([0-9a-fA-F]{2})((-[0-9a-fA-F]{2}){5})$"
+      type: string
+    AccessTokenErr:
+      description: Error returned in the access token response message
+      properties:
+        error:
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          type: string
+        error_description:
+          type: string
+        error_uri:
+          type: string
+      required:
+      - error
+      type: object
+    AccessTokenReq:
+      description: Contains information related to the access token request
+      properties:
+        grant_type:
+          enum:
+          - client_credentials
+          type: string
+        nfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        nfType:
+          $ref: '#/components/schemas/NFType'
+        targetNfType:
+          $ref: '#/components/schemas/NFType'
+        scope:
+          pattern: "^([a-zA-Z0-9_:-]+)( [a-zA-Z0-9_:-]+)*$"
+          type: string
+        targetNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+        requesterPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        requesterPlmnList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          minItems: 2
+          type: array
+        requesterSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        requesterFqdn:
+          description: Fully Qualified Domain Name
+          maxLength: 253
+          minLength: 4
+          pattern: "^([0-9A-Za-z]([-0-9A-Za-z]{0,61}[0-9A-Za-z])?\\.)+[A-Za-z]{2,63}\\\
+            .?$"
+          type: string
+        requesterSnpnList:
+          items:
+            $ref: '#/components/schemas/PlmnIdNid'
+          minItems: 1
+          type: array
+        targetPlmn:
+          $ref: '#/components/schemas/PlmnId'
+        targetSnpn:
+          $ref: '#/components/schemas/PlmnIdNid'
+        targetSnssaiList:
+          items:
+            $ref: '#/components/schemas/Snssai'
+          minItems: 1
+          type: array
+        targetNsiList:
+          items:
+            type: string
+          minItems: 1
+          type: array
+        targetNfSetId:
+          description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+            \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+            , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with \
+            \ <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \  <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NFType> encoded as a value defined\
+            \ in Table 6.1.6.3.3-1 of 3GPP TS 29.510 but \n  with lower case characters\
+            \ <Set ID> encoded as a string of characters consisting of \n  alphabetic\
+            \ characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and that\
+            \ \n  shall end with either an alphabetic character or a digit. \n"
+          type: string
+        targetNfServiceSetId:
+          description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+            \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+            \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+            \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+            \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising\
+            \ 3 digits. \n  If there are only 2 significant digits in the MNC, one\
+            \ \"0\" digit shall be inserted \n  at the left side to fill the 3 digits\
+            \ coding of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_\
+            5.4.2 (\"Nid\" data type definition)  <NFInstanceId> encoded as defined\
+            \ in clause 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510\
+            \  <Set ID> encoded as a string of characters consisting of alphabetic\
+            \ \n  characters (A-Z and a-z), digits (0-9) and/or the hyphen (-) and\
+            \ that shall end \n  with either an alphabetic character or a digit.\n"
+          type: string
+        hnrfAccessTokenUri:
+          description: String providing an URI formatted according to RFC 3986.
+          type: string
+        sourceNfInstanceId:
+          description: "String uniquely identifying a NF instance. The format of the\
+            \ NF Instance ID shall be a  Universally Unique Identifier (UUID) version\
+            \ 4, as described in IETF RFC 4122. \n"
+          format: uuid
+          type: string
+      required:
+      - grant_type
+      - nfInstanceId
+      - scope
+      type: object
+    FlowDirection:
+      anyOf:
+      - enum:
+        - DOWNLINK
+        - UPLINK
+        - BIDIRECTIONAL
+        - UNSPECIFIED
+        type: string
+      - description: |
+          This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
+        type: string
+      description: "Possible values are:\n- DOWNLINK: The corresponding filter applies\
+        \ for traffic to the UE.\n- UPLINK: The corresponding filter applies for traffic\
+        \ from the UE.\n- BIDIRECTIONAL: The corresponding filter applies for traffic\
+        \ both to and from the UE.\n- UNSPECIFIED: The corresponding filter applies\
+        \ for traffic to the UE (downlink), but has no \nspecific direction declared.\
+        \ The service data flow detection shall apply the filter for \nuplink traffic\
+        \ as if the filter was bidirectional. The PCF shall not use the value \nUNSPECIFIED\
+        \ in filters created by the network in NW-initiated procedures. The PCF shall\
+        \ only \ninclude the value UNSPECIFIED in filters in UE-initiated procedures\
+        \ if the same value is \nreceived from the SMF.\n"
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      description: |
+        String identifying an IPv6 address formatted according to clause 4 of RFC5952. The mixed IPv4 IPv6 notation according to clause 5 of RFC5952 shall not be used.
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Tac:
+      description: "2 or 3-octet string identifying a tracking area code as specified\
+        \ in clause 9.3.3.10  of 3GPP TS 38.413, in hexadecimal representation. Each\
+        \ character in the string shall  take a value of \"0\" to \"9\", \"a\" to\
+        \ \"f\" or \"A\" to \"F\" and shall represent 4 bits. The most significant\
+        \ character representing the 4 most significant bits of the TAC shall  appear\
+        \ first in the string, and the character representing the 4 least significant\
+        \ bit  of the TAC shall appear last in the string. \n"
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+    NfInstanceId:
+      description: "String uniquely identifying a NF instance. The format of the NF\
+        \ Instance ID shall be a  Universally Unique Identifier (UUID) version 4,\
+        \ as described in IETF RFC 4122. \n"
+      format: uuid
+      type: string
+    NFType:
+      anyOf:
+      - enum:
+        - NRF
+        - UDM
+        - AMF
+        - SMF
+        - AUSF
+        - NEF
+        - PCF
+        - SMSF
+        - NSSF
+        - UDR
+        - LMF
+        - GMLC
+        - 5G_EIR
+        - SEPP
+        - UPF
+        - N3IWF
+        - AF
+        - UDSF
+        - BSF
+        - CHF
+        - NWDAF
+        - PCSCF
+        - CBCF
+        - HSS
+        - UCMF
+        - SOR_AF
+        - SPAF
+        - MME
+        - SCSAS
+        - SCEF
+        - SCP
+        - NSSAAF
+        - ICSCF
+        - SCSCF
+        - DRA
+        - IMS_AS
+        - AANF
+        - 5G_DDNMF
+        - NSACF
+        - MFAF
+        - EASDF
+        - DCCF
+        - MB_SMF
+        - TSCTSF
+        - ADRF
+        - GBA_BSF
+        - CEF
+        - MB_UPF
+        - NSWOF
+        - PKMF
+        - MNPF
+        - SMS_GMSC
+        - SMS_IWMSC
+        - MBSF
+        - MBSTF
+        - PANF
+        type: string
+      - type: string
+      description: NF types known to NRF
+    PlmnId:
+      description: |
+        When PlmnId needs to be converted to string (e.g. when used in maps as key), the string  shall be composed of three digits "mcc" followed by "-" and two or three digits "mnc".
+      properties:
+        mcc:
+          description: "Mobile Country Code part of the PLMN, comprising 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413. \n"
+          pattern: "^\\d{3}$"
+          type: string
+        mnc:
+          description: "Mobile Network Code part of the PLMN, comprising 2 or 3 digits,\
+            \ as defined in clause 9.3.3.5 of 3GPP TS 38.413."
+          pattern: "^\\d{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    NfSetId:
+      description: "NF Set Identifier (see clause 28.12 of 3GPP TS 23.003), formatted\
+        \ as the following string \"set<Set ID>.<nftype>set.5gc.mnc<MNC>.mcc<MCC>\"\
+        , or  \"set<SetID>.<NFType>set.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\" with  <MCC>\
+        \ encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)  <MNC>\
+        \ encoding the Mobile Network Code part of the PLMN, comprising 3 digits.\
+        \ \n  If there are only 2 significant digits in the MNC, one \"0\" digit shall\
+        \ be inserted \n  at the left side to fill the 3 digits coding of MNC.  Pattern:\
+        \ '^[0-9]{3}$'\n<NFType> encoded as a value defined in Table 6.1.6.3.3-1 of\
+        \ 3GPP TS 29.510 but \n  with lower case characters <Set ID> encoded as a\
+        \ string of characters consisting of \n  alphabetic characters (A-Z and a-z),\
+        \ digits (0-9) and/or the hyphen (-) and that \n  shall end with either an\
+        \ alphabetic character or a digit. \n"
+      type: string
+    NfServiceSetId:
+      description: "NF Service Set Identifier (see clause 28.12 of 3GPP TS 23.003)\
+        \ formatted as the following  string \"set<Set ID>.sn<Service Name>.nfi<NF\
+        \ Instance ID>.5gc.mnc<MNC>.mcc<MCC>\", or  \"set<SetID>.sn<ServiceName>.nfi<NFInstanceID>.5gc.nid<NID>.mnc<MNC>.mcc<MCC>\"\
+        \ with  <MCC> encoded as defined in clause 5.4.2 (\"Mcc\" data type definition)\
+        \   <MNC> encoding the Mobile Network Code part of the PLMN, comprising 3\
+        \ digits. \n  If there are only 2 significant digits in the MNC, one \"0\"\
+        \ digit shall be inserted \n  at the left side to fill the 3 digits coding\
+        \ of MNC.  Pattern: '^[0-9]{3}$'\n<NID> encoded as defined in clause\_5.4.2\
+        \ (\"Nid\" data type definition)  <NFInstanceId> encoded as defined in clause\
+        \ 5.3.2  <ServiceName> encoded as defined in 3GPP TS 29.510  <Set ID> encoded\
+        \ as a string of characters consisting of alphabetic \n  characters (A-Z and\
+        \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
+        \ an alphabetic character or a digit.\n"
+      type: string
+  securitySchemes:
+    oAuth2ClientCredentials:
+      flows:
+        clientCredentials:
+          scopes:
+            npcf-eventexposure: Access to the Npcf_EventExposure API.
+          tokenUrl: "{nrfApiRoot}/oauth2/token"
+      type: oauth2

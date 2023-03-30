@@ -1,0 +1,5189 @@
+openapi: 3.0.1
+info:
+  description: "OAS 3.0.1 specification of the NR NRM © 2022, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved."
+  title: NR NRM
+  version: 18.2.0
+externalDocs:
+  description: "3GPP TS 28.541; 5G NRM, NR NRM"
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.541/
+servers:
+- url: /
+paths: {}
+components:
+  schemas:
+    GnbId:
+      type: string
+    GnbIdLength:
+      maximum: 32
+      minimum: 22
+      type: integer
+    GnbName:
+      maxLength: 150
+      type: string
+    GnbDuId:
+      maximum: 68719476735
+      minimum: 0
+      type: number
+    GnbCuUpId:
+      maximum: 68719476735
+      minimum: 0
+      type: number
+    Sst:
+      maximum: 255
+      type: integer
+    Snssai:
+      properties:
+        sst:
+          maximum: 255
+          type: integer
+        sd:
+          type: string
+      type: object
+    Mnc:
+      pattern: "[0-9]{3}|[0-9]{2}"
+      type: string
+    PlmnId:
+      properties:
+        mcc:
+          pattern: "^[0-9]{3}$"
+          type: string
+        mnc:
+          pattern: "[0-9]{3}|[0-9]{2}"
+          type: string
+      type: object
+    PlmnIdList:
+      items:
+        $ref: '#/components/schemas/PlmnId'
+      type: array
+    PlmnInfo:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        snssai:
+          $ref: '#/components/schemas/Snssai'
+      type: object
+    PlmnInfoList:
+      items:
+        $ref: '#/components/schemas/PlmnInfo'
+      type: array
+    cagId:
+      type: string
+    nid:
+      type: string
+    NpnIdentity:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        cagidList:
+          type: string
+        nidList:
+          type: string
+      type: object
+    NpnIdentityList:
+      items:
+        $ref: '#/components/schemas/NpnIdentity'
+      type: array
+    GGnbId:
+      pattern: "^[0-9]{3}[0-9]{2,3}-(22|23|24|25|26|27|28|29|30|31|32)-[0-9]{1,10}"
+      type: string
+    GEnbId:
+      pattern: "^[0-9]{3}[0-9]{2,3}-(18|20|21|22)-[0-9]{1,7}"
+      type: string
+    GGnbIdList:
+      items:
+        $ref: '#/components/schemas/GGnbId'
+      type: array
+    GEnbIdList:
+      items:
+        $ref: '#/components/schemas/GEnbId'
+      type: array
+    NrPci:
+      maximum: 503
+      type: integer
+    NrTac:
+      maximum: 16777215
+      type: integer
+    NrTacList:
+      items:
+        $ref: '#/components/schemas/NrTac'
+      type: array
+    Tai:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        nrTac:
+          maximum: 16777215
+          type: integer
+      type: object
+    TaiList:
+      items:
+        $ref: '#/components/schemas/Tai'
+      type: array
+    BackhaulAddress:
+      properties:
+        gnbId:
+          type: string
+        tai:
+          $ref: '#/components/schemas/Tai'
+      type: object
+    MappingSetIDBackhaulAddress:
+      properties:
+        setID:
+          type: integer
+        backhaulAddress:
+          $ref: '#/components/schemas/BackhaulAddress'
+      type: object
+    IntraRatEsActivationOriginalCellLoadParameters:
+      properties:
+        loadThreshold:
+          type: integer
+        timeDuration:
+          type: integer
+      type: object
+    IntraRatEsActivationCandidateCellsLoadParameters:
+      properties:
+        loadThreshold:
+          type: integer
+        timeDuration:
+          type: integer
+      type: object
+    IntraRatEsDeactivationCandidateCellsLoadParameters:
+      properties:
+        loadThreshold:
+          type: integer
+        timeDuration:
+          type: integer
+      type: object
+    EsNotAllowedTimePeriod:
+      properties:
+        startTimeandendTime:
+          type: string
+        periodOfDay:
+          type: string
+        daysOfWeekList:
+          type: string
+        listoftimeperiods:
+          type: string
+      type: object
+    InterRatEsActivationOriginalCellParameters:
+      properties:
+        loadThreshold:
+          type: integer
+        timeDuration:
+          type: integer
+      type: object
+    InterRatEsActivationCandidateCellParameters:
+      properties:
+        loadThreshold:
+          type: integer
+        timeDuration:
+          type: integer
+      type: object
+    InterRatEsDeactivationCandidateCellParameters:
+      properties:
+        loadThreshold:
+          type: integer
+        timeDuration:
+          type: integer
+      type: object
+    UeAccProbilityDist:
+      properties:
+        targetProbability:
+          type: integer
+        numberofpreamblessent:
+          type: integer
+      type: object
+    UeAccDelayProbilityDist:
+      properties:
+        targetProbability:
+          type: integer
+        accessdelay:
+          type: integer
+      type: object
+    NRPciList:
+      properties:
+        NRPci:
+          type: integer
+      type: object
+    CSonPciList:
+      properties:
+        NRPci:
+          type: integer
+      type: object
+    MaximumDeviationHoTrigger:
+      maximum: 20
+      minimum: -20
+      type: integer
+    MaximumDeviationHoTriggerLow:
+      maximum: 20
+      minimum: -20
+      type: integer
+    MaximumDeviationHoTriggerHigh:
+      maximum: 20
+      minimum: -20
+      type: integer
+    MinimumTimeBetweenHoTriggerChange:
+      maximum: 604800
+      minimum: 0
+      type: integer
+    TstoreUEcntxt:
+      maximum: 1023
+      minimum: 0
+      type: integer
+    CellState:
+      enum:
+      - IDLE
+      - INACTIVE
+      - ACTIVE
+      type: string
+    CyclicPrefix:
+      enum:
+      - "15"
+      - "30"
+      - "60"
+      - "120"
+      type: string
+    TxDirection:
+      enum:
+      - DL
+      - UL
+      - DL and UL
+      type: string
+    BwpContext:
+      enum:
+      - DL
+      - UL
+      - SUL
+      type: string
+    IsInitialBwp:
+      enum:
+      - INITIAL
+      - OTHER
+      - SUL
+      type: string
+    IsESCoveredBy:
+      enum:
+      - "false"
+      - PARTIAL
+      - FULL
+      type: string
+    RrmPolicyMember:
+      properties:
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        snssai:
+          $ref: '#/components/schemas/Snssai'
+      type: object
+    RrmPolicyMemberList:
+      items:
+        $ref: '#/components/schemas/RrmPolicyMember'
+      type: array
+    AddressWithVlan:
+      properties:
+        ipv4Address:
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Address:
+          $ref: '#/components/schemas/Ipv6Addr'
+        vlanId:
+          maximum: 4096
+          minimum: 0
+          type: integer
+      type: object
+    LocalAddress:
+      properties:
+        addressWithVlan:
+          $ref: '#/components/schemas/AddressWithVlan'
+        port:
+          maximum: 65535
+          minimum: 0
+          type: integer
+      type: object
+    RemoteAddress:
+      properties:
+        ipv4Address:
+          example: 198.51.100.1
+          pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+          type: string
+        ipv6Address:
+          $ref: '#/components/schemas/Ipv6Addr'
+      type: object
+    CellIndividualOffset:
+      properties:
+        rsrpOffsetSSB:
+          type: integer
+        rsrqOffsetSSB:
+          type: integer
+        sinrOffsetSSB:
+          type: integer
+        rsrpOffsetCSI-RS:
+          type: integer
+        rsrqOffsetCSI-RS:
+          type: integer
+        sinrOffsetCSI-RS:
+          type: integer
+      type: object
+    QOffsetRange:
+      enum:
+      - -24
+      - -22
+      - -20
+      - -18
+      - -16
+      - -14
+      - -12
+      - -10
+      - -8
+      - -6
+      - -5
+      - -4
+      - -3
+      - -2
+      - -1
+      - 0
+      - 24
+      - 22
+      - 20
+      - 18
+      - 16
+      - 14
+      - 12
+      - 10
+      - 8
+      - 6
+      - 5
+      - 4
+      - 3
+      - 2
+      - 1
+      type: integer
+    QOffsetRangeList:
+      properties:
+        rsrpOffsetSSB:
+          $ref: '#/components/schemas/QOffsetRange'
+        rsrqOffsetSSB:
+          $ref: '#/components/schemas/QOffsetRange'
+        sinrOffsetSSB:
+          $ref: '#/components/schemas/QOffsetRange'
+        rsrpOffsetCSI-RS:
+          $ref: '#/components/schemas/QOffsetRange'
+        rsrqOffsetCSI-RS:
+          $ref: '#/components/schemas/QOffsetRange'
+        sinrOffsetCSI-RS:
+          $ref: '#/components/schemas/QOffsetRange'
+      type: object
+    QOffsetFreq:
+      type: number
+    TReselectionNRSf:
+      enum:
+      - 25
+      - 50
+      - 75
+      - 100
+      type: integer
+    SsbPeriodicity:
+      enum:
+      - 5
+      - 10
+      - 20
+      - 40
+      - 80
+      - 160
+      type: integer
+    SsbDuration:
+      enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      type: integer
+    SsbSubCarrierSpacing:
+      enum:
+      - 15
+      - 30
+      - 120
+      - 240
+      type: integer
+    CoverageShape:
+      maximum: 65535
+      type: integer
+    DigitalTilt:
+      maximum: 900
+      minimum: -900
+      type: integer
+    DigitalAzimuth:
+      maximum: 1800
+      minimum: -1800
+      type: integer
+    RSSetId:
+      maximum: 4194303
+      type: integer
+    RSSetType:
+      enum:
+      - RS1
+      - RS2
+      type: string
+    FrequencyDomainPara:
+      properties:
+        rimRSSubcarrierSpacing:
+          type: integer
+        rIMRSBandwidth:
+          type: integer
+        nrofGlobalRIMRSFrequencyCandidates:
+          type: integer
+        rimRSCommonCarrierReferencePoint:
+          type: integer
+        rimRSStartingFrequencyOffsetIdList:
+          items:
+            type: integer
+          type: array
+      type: object
+    SequenceDomainPara:
+      properties:
+        nrofRIMRSSequenceCandidatesofRS1:
+          type: integer
+        rimRSScrambleIdListofRS1:
+          items:
+            type: integer
+          type: array
+        nrofRIMRSSequenceCandidatesofRS2:
+          type: integer
+        rimRSScrambleIdListofRS2:
+          items:
+            type: integer
+          type: array
+        enableEnoughNotEnoughIndication:
+          enum:
+          - ENABLE
+          - DISABLE
+          type: string
+        RIMRSScrambleTimerMultiplier:
+          type: integer
+        RIMRSScrambleTimerOffset:
+          type: integer
+      type: object
+    TimeDomainPara:
+      properties:
+        dlULSwitchingPeriod1:
+          enum:
+          - MS0P5
+          - MS0P625
+          - MS1
+          - MS1P25
+          - MS2
+          - MS2P5
+          - MS3
+          - MS4
+          - MS5
+          - MS10
+          - MS20
+          type: string
+        symbolOffsetOfReferencePoint1:
+          type: integer
+        dlULSwitchingPeriod2:
+          enum:
+          - MS0P5
+          - MS0P625
+          - MS1
+          - MS1P25
+          - MS2
+          - MS2P5
+          - MS3
+          - MS4
+          - MS5
+          - MS10
+          - MS20
+          type: string
+        symbolOffsetOfReferencePoint2:
+          type: integer
+        totalnrofSetIdofRS1:
+          type: integer
+        totalnrofSetIdofRS2:
+          type: integer
+        nrofConsecutiveRIMRS1:
+          type: integer
+        nrofConsecutiveRIMRS2:
+          type: integer
+        consecutiveRIMRS1List:
+          items:
+            type: integer
+          type: array
+        consecutiveRIMRS2List:
+          items:
+            type: integer
+          type: array
+        enablenearfarIndicationRS1:
+          enum:
+          - ENABLE
+          - DISABLE
+          type: string
+        enablenearfarIndicationRS2:
+          enum:
+          - ENABLE
+          - DISABLE
+          type: string
+      type: object
+    RimRSReportInfo:
+      properties:
+        detectedSetID:
+          type: integer
+        propagationDelay:
+          type: integer
+        functionalityOfRIMRS:
+          enum:
+          - RS1
+          - RS2
+          - RS1forEnoughMitigation
+          - RS1forNotEnoughMitigation
+          type: string
+      type: object
+    RimRSReportConf:
+      properties:
+        reportIndicator:
+          enum:
+          - ENABLE
+          - DISABLE
+          type: string
+        reportInterval:
+          type: integer
+        nrofRIMRSReportInfo:
+          type: integer
+        maxPropagationDelay:
+          type: integer
+        rimRSReportInfoList:
+          items:
+            $ref: '#/components/schemas/RimRSReportInfo'
+          type: array
+      type: object
+    TceMappingInfo:
+      properties:
+        TceIPAddress:
+          $ref: '#/components/schemas/TceMappingInfo_TceIPAddress'
+        TceID:
+          type: integer
+        PlmnTarget:
+          $ref: '#/components/schemas/PlmnId'
+      type: object
+    TceMappingInfoList:
+      items:
+        $ref: '#/components/schemas/TceMappingInfo'
+      type: array
+    ResourceType:
+      enum:
+      - PRB
+      - PRB_UL
+      - PRB_DL
+      - RRC
+      - DRB
+      type: string
+    ParameterRange:
+      properties:
+        maxValue:
+          type: integer
+        minValue:
+          type: integer
+      type: object
+    RrmPolicy_-Attr:
+      properties:
+        resourceType:
+          $ref: '#/components/schemas/ResourceType'
+        rRMPolicyMemberList:
+          items:
+            $ref: '#/components/schemas/RrmPolicyMember'
+          type: array
+      type: object
+    MnS:
+      oneOf:
+      - $ref: '#/components/schemas/MnS_oneOf'
+      - $ref: '#/components/schemas/MnS_oneOf_1'
+    SubNetwork-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/SubNetwork_Single_allOf'
+      - $ref: '#/components/schemas/SubNetwork-ncO'
+      - $ref: '#/components/schemas/SubNetwork_Single_allOf_1'
+    ManagedElement-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ManagedElement_Single_allOf'
+      - $ref: '#/components/schemas/ManagedElement-ncO'
+      - $ref: '#/components/schemas/ManagedElement_Single_allOf_1'
+    GnbDuFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/GnbDuFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/GnbDuFunction_Single_allOf_1'
+    OperatorDu-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/OperatorDu_Single_allOf'
+      - $ref: '#/components/schemas/OperatorDu_Single_allOf_1'
+    GnbCuUpFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_1'
+    GnbCuCpFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_1'
+    NrCellCu-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NrCellCu_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/NrCellCu_Single_allOf_1'
+    NrCellDu-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NrCellDu_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/NrCellDu_Single_allOf_1'
+    BWPSet-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/BWPSet_Single_allOf'
+    NrOperatorCellDu-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NrOperatorCellDu_Single_allOf'
+    NRFrequency-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NRFrequency_Single_allOf'
+    EUtranFrequency-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EUtranFrequency_Single_allOf'
+    NrSectorCarrier-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NrSectorCarrier_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_1'
+    Bwp-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/Bwp_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+    CommonBeamformingFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf'
+      - $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_1'
+    Beam-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/Beam_Single_allOf'
+    RRMPolicyRatio-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf'
+    NRCellRelation-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NRCellRelation_Single_allOf'
+    EUtranCellRelation-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EUtranCellRelation_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+    NRFreqRelation-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NRFreqRelation_Single_allOf'
+    EUtranFreqRelation-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EUtranFreqRelation_Single_allOf'
+    DANRManagementFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/DANRManagementFunction_Single_allOf'
+    DESManagementFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/DESManagementFunction_Single_allOf'
+    DRACHOptimizationFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/DRACHOptimizationFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+    DMROFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/DMROFunction_Single_allOf'
+    DLBOFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/DLBOFunction_Single_allOf'
+    DPCIConfigurationFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/DPCIConfigurationFunction_Single_allOf'
+    CPCIConfigurationFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/CPCIConfigurationFunction_Single_allOf'
+    CESManagementFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/CESManagementFunction_Single_allOf'
+    RimRSGlobal-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/RimRSGlobal_Single_allOf'
+    RimRSSet-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/RimRSSet_Single_allOf'
+    ExternalGnbDuFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_1'
+    ExternalGnbCuUpFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/ExternalGnbCuUpFunction_Single_allOf'
+    ExternalGnbCuCpFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_1'
+    ExternalNrCellCu-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+    ExternalENBFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ExternalENBFunction_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+      - $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_1'
+    ExternalEUTranCell-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf'
+      - $ref: '#/components/schemas/ManagedFunction-ncO'
+    EP_XnC-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_E1-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_F1C-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_NgC-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_X2C-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_XnU-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_F1U-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_F1U_Single_allOf'
+    EP_NgU-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_F1U_Single_allOf'
+    EP_X2U-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    EP_S1U-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf'
+    CCOFunction-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/CCOFunction_Single_allOf'
+    CCOParameters-Attr:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/CCOParameters_Attr_allOf'
+    CCOWeakCoverageParameters-Single:
+      allOf:
+      - $ref: '#/components/schemas/CCOParameters-Attr'
+      - type: object
+    CCOPilotPollutionParameters-Single:
+      allOf:
+      - $ref: '#/components/schemas/CCOParameters-Attr'
+      - type: object
+    CCOOvershootCoverageParameters-Single:
+      allOf:
+      - $ref: '#/components/schemas/CCOParameters-Attr'
+      - type: object
+    SubNetwork-Multiple:
+      items:
+        $ref: '#/components/schemas/SubNetwork-Single'
+      type: array
+    ManagedElement-Multiple:
+      items:
+        $ref: '#/components/schemas/ManagedElement-Single'
+      type: array
+    GnbDuFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/GnbDuFunction-Single'
+      type: array
+    OperatorDu-Multiple:
+      items:
+        $ref: '#/components/schemas/OperatorDu-Single'
+      type: array
+    GnbCuUpFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/GnbCuUpFunction-Single'
+      type: array
+    GnbCuCpFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/GnbCuCpFunction-Single'
+      type: array
+    BWPSet-Multiple:
+      items:
+        $ref: '#/components/schemas/BWPSet-Single'
+      type: array
+    NrCellDu-Multiple:
+      items:
+        $ref: '#/components/schemas/NrCellDu-Single'
+      type: array
+    NrOperatorCellDu-Multiple:
+      items:
+        $ref: '#/components/schemas/NrOperatorCellDu-Single'
+      type: array
+    NrCellCu-Multiple:
+      items:
+        $ref: '#/components/schemas/NrCellCu-Single'
+      type: array
+    NRFrequency-Multiple:
+      items:
+        $ref: '#/components/schemas/NRFrequency-Single'
+      minItems: 1
+      type: array
+    EUtranFrequency-Multiple:
+      items:
+        $ref: '#/components/schemas/EUtranFrequency-Single'
+      minItems: 1
+      type: array
+    NrSectorCarrier-Multiple:
+      items:
+        $ref: '#/components/schemas/NrSectorCarrier-Single'
+      type: array
+    Bwp-Multiple:
+      items:
+        $ref: '#/components/schemas/Bwp-Single'
+      type: array
+    Beam-Multiple:
+      items:
+        $ref: '#/components/schemas/Beam-Single'
+      type: array
+    RRMPolicyRatio-Multiple:
+      items:
+        $ref: '#/components/schemas/RRMPolicyRatio-Single'
+      type: array
+    NRCellRelation-Multiple:
+      items:
+        $ref: '#/components/schemas/NRCellRelation-Single'
+      type: array
+    EUtranCellRelation-Multiple:
+      items:
+        $ref: '#/components/schemas/EUtranCellRelation-Single'
+      type: array
+    NRFreqRelation-Multiple:
+      items:
+        $ref: '#/components/schemas/NRFreqRelation-Single'
+      type: array
+    EUtranFreqRelation-Multiple:
+      items:
+        $ref: '#/components/schemas/EUtranFreqRelation-Single'
+      type: array
+    RimRSSet-Multiple:
+      items:
+        $ref: '#/components/schemas/RimRSSet-Single'
+      type: array
+    ExternalGnbDuFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/ExternalGnbDuFunction-Single'
+      type: array
+    ExternalGnbCuUpFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/ExternalGnbCuUpFunction-Single'
+      type: array
+    ExternalGnbCuCpFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/ExternalGnbCuCpFunction-Single'
+      type: array
+    ExternalNrCellCu-Multiple:
+      items:
+        $ref: '#/components/schemas/ExternalNrCellCu-Single'
+      type: array
+    ExternalENBFunction-Multiple:
+      items:
+        $ref: '#/components/schemas/ExternalENBFunction-Single'
+      type: array
+    ExternalEUTranCell-Multiple:
+      items:
+        $ref: '#/components/schemas/ExternalEUTranCell-Single'
+      type: array
+    EP_E1-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_E1-Single'
+      type: array
+    EP_XnC-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_XnC-Single'
+      type: array
+    EP_F1C-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_F1C-Single'
+      type: array
+    EP_NgC-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_NgC-Single'
+      type: array
+    EP_X2C-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_X2C-Single'
+      type: array
+    EP_XnU-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_XnU-Single'
+      type: array
+    EP_F1U-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_F1U-Single'
+      type: array
+    EP_NgU-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_NgU-Single'
+      type: array
+    EP_X2U-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_X2U-Single'
+      type: array
+    EP_S1U-Multiple:
+      items:
+        $ref: '#/components/schemas/EP_S1U-Single'
+      type: array
+    resources-nrNrm:
+      oneOf:
+      - $ref: '#/components/schemas/MnS'
+      - $ref: '#/components/schemas/SubNetwork-Single'
+      - $ref: '#/components/schemas/ManagedElement-Single'
+      - $ref: '#/components/schemas/GnbDuFunction-Single'
+      - $ref: '#/components/schemas/GnbCuUpFunction-Single'
+      - $ref: '#/components/schemas/GnbCuCpFunction-Single'
+      - $ref: '#/components/schemas/OperatorDu-Single'
+      - $ref: '#/components/schemas/NrCellCu-Single'
+      - $ref: '#/components/schemas/NrCellDu-Single'
+      - $ref: '#/components/schemas/NrOperatorCellDu-Single'
+      - $ref: '#/components/schemas/NRFrequency-Single'
+      - $ref: '#/components/schemas/EUtranFrequency-Single'
+      - $ref: '#/components/schemas/NrSectorCarrier-Single'
+      - $ref: '#/components/schemas/Bwp-Single'
+      - $ref: '#/components/schemas/BWPSet-Single'
+      - $ref: '#/components/schemas/CommonBeamformingFunction-Single'
+      - $ref: '#/components/schemas/Beam-Single'
+      - $ref: '#/components/schemas/RRMPolicyRatio-Single'
+      - $ref: '#/components/schemas/NRCellRelation-Single'
+      - $ref: '#/components/schemas/EUtranCellRelation-Single'
+      - $ref: '#/components/schemas/NRFreqRelation-Single'
+      - $ref: '#/components/schemas/EUtranFreqRelation-Single'
+      - $ref: '#/components/schemas/DANRManagementFunction-Single'
+      - $ref: '#/components/schemas/DESManagementFunction-Single'
+      - $ref: '#/components/schemas/DRACHOptimizationFunction-Single'
+      - $ref: '#/components/schemas/DMROFunction-Single'
+      - $ref: '#/components/schemas/DLBOFunction-Single'
+      - $ref: '#/components/schemas/DPCIConfigurationFunction-Single'
+      - $ref: '#/components/schemas/CPCIConfigurationFunction-Single'
+      - $ref: '#/components/schemas/CESManagementFunction-Single'
+      - $ref: '#/components/schemas/RimRSGlobal-Single'
+      - $ref: '#/components/schemas/RimRSSet-Single'
+      - $ref: '#/components/schemas/ExternalGnbDuFunction-Single'
+      - $ref: '#/components/schemas/ExternalGnbCuUpFunction-Single'
+      - $ref: '#/components/schemas/ExternalGnbCuCpFunction-Single'
+      - $ref: '#/components/schemas/ExternalNrCellCu-Single'
+      - $ref: '#/components/schemas/ExternalENBFunction-Single'
+      - $ref: '#/components/schemas/ExternalEUTranCell-Single'
+      - $ref: '#/components/schemas/EP_XnC-Single'
+      - $ref: '#/components/schemas/EP_E1-Single'
+      - $ref: '#/components/schemas/EP_F1C-Single'
+      - $ref: '#/components/schemas/EP_NgC-Single'
+      - $ref: '#/components/schemas/EP_X2C-Single'
+      - $ref: '#/components/schemas/EP_XnU-Single'
+      - $ref: '#/components/schemas/EP_F1U-Single'
+      - $ref: '#/components/schemas/EP_NgU-Single'
+      - $ref: '#/components/schemas/EP_X2U-Single'
+      - $ref: '#/components/schemas/EP_S1U-Single'
+      - $ref: '#/components/schemas/CCOFunction-Single'
+      - $ref: '#/components/schemas/CCOWeakCoverageParameters-Single'
+      - $ref: '#/components/schemas/CCOPilotPollutionParameters-Single'
+      - $ref: '#/components/schemas/CCOOvershootCoverageParameters-Single'
+    Mcc:
+      pattern: "^[0-9]{3}$"
+      type: string
+    Ipv4Addr:
+      example: 198.51.100.1
+      pattern: "^(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])$"
+      type: string
+    Ipv6Addr:
+      allOf:
+      - pattern: "^((:|(0?|([1-9a-f][0-9a-f]{0,3}))):)((0?|([1-9a-f][0-9a-f]{0,3})):){0,6}(:|(0?|([1-9a-f][0-9a-f]{0,3})))$"
+      - pattern: "^((([^:]+:){7}([^:]+))|((([^:]+:)*[^:]+)?::(([^:]+:)*[^:]+)?))$"
+      example: 2001:db8:85a3::8a2e:370:7334
+      type: string
+    Top:
+      properties:
+        id:
+          nullable: true
+          type: string
+        objectClass:
+          type: string
+        objectInstance:
+          type: string
+        VsDataContainer:
+          items:
+            $ref: '#/components/schemas/VsDataContainer-Single'
+          type: array
+      required:
+      - id
+      type: object
+    VsDataContainer-Multiple:
+      items:
+        $ref: '#/components/schemas/VsDataContainer-Single'
+      type: array
+    VsDataContainer-Single:
+      properties:
+        id:
+          type: string
+        attributes:
+          $ref: '#/components/schemas/VsDataContainer_Single_attributes'
+        VsDataContainer:
+          items:
+            $ref: '#/components/schemas/VsDataContainer-Single'
+          type: array
+      type: object
+    SubNetwork-Attr:
+      properties:
+        dnPrefix:
+          type: string
+        userLabel:
+          type: string
+        userDefinedNetworkType:
+          type: string
+        setOfMcc:
+          items:
+            $ref: '#/components/schemas/Mcc'
+          type: array
+        priorityLabel:
+          type: integer
+        supportedPerfMetricGroups:
+          items:
+            $ref: '#/components/schemas/SupportedPerfMetricGroup'
+          type: array
+        supportedTraceMetrics:
+          items:
+            type: string
+          type: array
+      type: object
+    SupportedPerfMetricGroup:
+      properties:
+        performanceMetrics:
+          items:
+            type: string
+          type: array
+        granularityPeriods:
+          items:
+            minimum: 1
+            type: integer
+          type: array
+        reportingMethods:
+          items:
+            enum:
+            - FILE_BASED_LOC_SET_BY_PRODUCER
+            - FILE_BASED_LOC_SET_BY_CONSUMER
+            - STREAM_BASED
+            type: string
+          type: array
+        monitorGranularityPeriods:
+          items:
+            minimum: 1
+            type: integer
+          type: array
+      type: object
+    SubNetwork-ncO:
+      properties:
+        ManagementNode:
+          items:
+            $ref: '#/components/schemas/ManagementNode-Single'
+          type: array
+        MnsAgent:
+          items:
+            $ref: '#/components/schemas/MnsAgent-Single'
+          type: array
+        MeContext:
+          items:
+            $ref: '#/components/schemas/MeContext-Single'
+          type: array
+        PerfMetricJob:
+          items:
+            $ref: '#/components/schemas/PerfMetricJob-Single'
+          type: array
+        ThresholdMonitor:
+          items:
+            $ref: '#/components/schemas/ThresholdMonitor-Single'
+          type: array
+        TraceJob:
+          items:
+            $ref: '#/components/schemas/TraceJob-Single'
+          type: array
+        ManagementDataCollection:
+          items:
+            $ref: '#/components/schemas/ManagementDataCollection-Single'
+          type: array
+        NtfSubscriptionControl:
+          items:
+            $ref: '#/components/schemas/NtfSubscriptionControl-Single'
+          type: array
+        AlarmList:
+          $ref: '#/components/schemas/AlarmList-Single'
+        FileDownloadJob:
+          items:
+            $ref: '#/components/schemas/FileDownloadJob-Single'
+          type: array
+        Files:
+          items:
+            $ref: '#/components/schemas/Files-Single'
+          type: array
+        MnsRegistry:
+          $ref: '#/components/schemas/MnsRegistry-Single'
+      type: object
+    ManagementNode-Multiple:
+      items:
+        $ref: '#/components/schemas/ManagementNode-Single'
+      type: array
+    ManagementNode-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ManagementNode_Single_allOf'
+    MnsAgent-Multiple:
+      items:
+        $ref: '#/components/schemas/MnsAgent-Single'
+      type: array
+    MnsAgent-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/MnsAgent_Single_allOf'
+    MeContext-Multiple:
+      items:
+        $ref: '#/components/schemas/MeContext-Single'
+      type: array
+    MeContext-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/MeContext_Single_allOf'
+    PerfMetricJob-Multiple:
+      items:
+        $ref: '#/components/schemas/PerfMetricJob-Single'
+      type: array
+    PerfMetricJob-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/PerfMetricJob_Single_allOf'
+    ReportingCtrl:
+      oneOf:
+      - $ref: '#/components/schemas/ReportingCtrl_oneOf'
+      - $ref: '#/components/schemas/ReportingCtrl_oneOf_1'
+      - $ref: '#/components/schemas/ReportingCtrl_oneOf_2'
+    Files-Multiple:
+      items:
+        $ref: '#/components/schemas/Files-Single'
+      type: array
+    Files-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/Files_Single_allOf'
+    File-Multiple:
+      items:
+        $ref: '#/components/schemas/File-Single'
+      type: array
+    File-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/File_Single_allOf'
+    ThresholdMonitor-Multiple:
+      items:
+        $ref: '#/components/schemas/ThresholdMonitor-Single'
+      type: array
+    ThresholdMonitor-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ThresholdMonitor_Single_allOf'
+    ThresholdInfo:
+      properties:
+        thresholdDirection:
+          enum:
+          - UP
+          - DOWN
+          - UP_AND_DOWN
+          type: string
+        thresholdValue:
+          $ref: '#/components/schemas/ThresholdInfo_thresholdValue'
+        hysteresis:
+          $ref: '#/components/schemas/ThresholdInfo_hysteresis'
+      type: object
+    TraceJob-Multiple:
+      items:
+        $ref: '#/components/schemas/TraceJob-Single'
+      type: array
+    TraceJob-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/TraceJob_Single_allOf'
+    TraceJob-Attr:
+      description: abstract class used as a container of all TraceJob attributes
+      properties:
+        jobType:
+          $ref: '#/components/schemas/jobType-Type'
+        listOfInterfaces:
+          $ref: '#/components/schemas/listOfInterfaces-Type'
+        listOfNeTypes:
+          description: The Network Element types where Trace Session activation is
+            needed. See 3GPP TS 32.422 clause 5.4 for additional details.
+          items:
+            enum:
+            - MSC_SERVER
+            - SGSN
+            - MGW
+            - GGSN
+            - RNC
+            - BM_SC
+            - MME
+            - SGW
+            - PGW
+            - ENB
+            - EN_GNB
+            - GNB_CU_CP
+            - GNB_CU_UP
+            - GNB_DU
+            - AMF
+            - PCF
+            - SMF
+            - UPF
+            - AUSF
+            - SMSF
+            - HSS
+            - UDM
+            type: string
+          type: array
+        plmnTarget:
+          $ref: '#/components/schemas/plmnTarget-Type'
+        traceReportingConsumerUri:
+          type: string
+        traceCollectionEntityIpAddress:
+          $ref: '#/components/schemas/IpAddr'
+        traceDepth:
+          $ref: '#/components/schemas/traceDepth-Type'
+        traceReference:
+          $ref: '#/components/schemas/traceReference-Type'
+        traceRecordingSessionReference:
+          type: string
+        jobId:
+          type: string
+        traceReportingFormat:
+          $ref: '#/components/schemas/traceReportingFormat-Type'
+        traceTarget:
+          $ref: '#/components/schemas/traceTarget-Type'
+        triggeringEvents:
+          $ref: '#/components/schemas/triggeringEvents-Type'
+        anonymizationOfMdtData:
+          $ref: '#/components/schemas/anonymizationOfMdtData-Type'
+        areaConfigurationForNeighCell:
+          $ref: '#/components/schemas/AreaConfig'
+        areaScope:
+          items:
+            $ref: '#/components/schemas/AreaScope'
+          type: array
+        beamLevelMeasurement:
+          description: Determines whether beam level measurements shall be included
+            in case of immediate MDT M1 measurement in NR. For additional details
+            see 3GPP TS 32.422 clause 5.10.40.
+          type: boolean
+        collectionPeriodRrmLte:
+          $ref: '#/components/schemas/collectionPeriodRrmLte-Type'
+        collectionPeriodM6Lte:
+          $ref: '#/components/schemas/collectionPeriodM6Lte-Type'
+        collectionPeriodM7Lte:
+          description: See details in 3GPP TS 32.422 clause 5.10.33.
+          maximum: 60
+          minimum: 1
+          type: integer
+        collectionPeriodRrmUmts:
+          $ref: '#/components/schemas/collectionPeriodRrmUmts-Type'
+        collectionPeriodRrmNr:
+          $ref: '#/components/schemas/collectionPeriodRrmNr-Type'
+        collectionPeriodM6Nr:
+          $ref: '#/components/schemas/collectionPeriodM6Nr-Type'
+        collectionPeriodM7Nr:
+          description: See details in 3GPP TS 32.422 clause 5.10.35.
+          maximum: 60
+          minimum: 1
+          type: integer
+        eventListForEventTriggeredMeasurement:
+          $ref: '#/components/schemas/eventListForEventTriggeredMeasurement-Type'
+        eventThreshold:
+          $ref: '#/components/schemas/eventThreshold-Type'
+        listOfMeasurements:
+          $ref: '#/components/schemas/listOfMeasurements-Type'
+        loggingDuration:
+          $ref: '#/components/schemas/loggingDuration-Type'
+        loggingInterval:
+          $ref: '#/components/schemas/loggingInterval-Type'
+        eventThresholdL1:
+          $ref: '#/components/schemas/eventThresholdL1-Type'
+        hysteresisL1:
+          description: See details in 3GPP TS 32.422 clause 5.10.Y.
+          maximum: 30
+          minimum: 0
+          type: integer
+        timeToTriggerL1:
+          $ref: '#/components/schemas/timeToTriggerL1-Type'
+        mbsfnAreaList:
+          items:
+            $ref: '#/components/schemas/MbsfnArea'
+          type: array
+        measurementPeriodLte:
+          $ref: '#/components/schemas/measurementPeriodLte-Type'
+        measurementPeriodUmts:
+          $ref: '#/components/schemas/measurementPeriodUmts-Type'
+        measurementQuantity:
+          $ref: '#/components/schemas/measurementQuantity-Type'
+        eventThresholdUphUmts:
+          description: See details in 3GPP TS 32.422 clause 5.10.A.
+          maximum: 31
+          minimum: 0
+          type: integer
+        plmnList:
+          description: See details in 3GPP TS 32.422 clause 5.10.24.
+          items:
+            $ref: '#/components/schemas/plmnList_Type_inner'
+          maxItems: 16
+          type: array
+        positioningMethod:
+          $ref: '#/components/schemas/positioningMethod-Type'
+        reportAmount:
+          $ref: '#/components/schemas/reportAmount-Type'
+        reportingTrigger:
+          description: See details in 3GPP TS 32.422 clause 5.10.4.
+          items:
+            enum:
+            - PERIODICAL
+            - A2_FOR_LTE_NR
+            - 1F_FOR_UMTS
+            - 1I_FOR_UMTS_MCPS_TDD
+            - A2_TRIGGERED_PERIODIC_FOR_LTE_NR
+            - ALL_CONFIGURED_RRM_FOR_LTE_NR
+            - ALL_CONFIGURED_RRM_FOR_UMTS
+            type: string
+          type: array
+        reportInterval:
+          $ref: '#/components/schemas/reportInterval-Type'
+        reportType:
+          $ref: '#/components/schemas/reportType-Type'
+        sensorInformation:
+          description: See details in 3GPP TS 32.422 clause 5.10.29.
+          items:
+            enum:
+            - BAROMETRIC_PRESSURE
+            - UE_SPEED
+            - UE_ORIENTATION
+            type: string
+          type: array
+        traceCollectionEntityId:
+          description: See details in 3GPP TS 32.422 clause 5.10.11. Only TCE Id value
+            may be sent over the air to the UE being configured for Logged MDT.
+          type: integer
+        excessPacketDelayThresholds:
+          description: Excess Packet Delay Threshold for NR MDT. See details in 3GPP
+            TS 32.422 clause 4.1.1 and 4.1.2.
+          properties:
+            fiveQIValue:
+              type: integer
+            excessPacketDelayThresholdValue:
+              enum:
+              - 0.25ms
+              - 0.5ms
+              - 1ms
+              - 2ms
+              - 4ms
+              - 5ms
+              - 10ms
+              - 20ms
+              - 30ms
+              - 40ms
+              - 50ms
+              - 60ms
+              - 70ms
+              - 80ms
+              - 90ms
+              - 100ms
+              - 150ms
+              - 300ms
+              - 500ms
+              type: string
+          type: array
+      type: object
+    jobType-Type:
+      description: "Specifies whether the TraceJob represents only MDT, Logged MBSFN\
+        \ MDT, Trace or a combined Trace and MDT job. Applicable for Trace, MDT, RCEF\
+        \ and RLF reporting. See 3GPP TS 32.422 clause 5.9a for additional details."
+      enum:
+      - IMMEDIATE_MDT_ONLY
+      - LOGGED_MDT_ONLY
+      - TRACE_ONLY
+      - IMMEDIATE_MDT AND TRACE
+      - RLF_REPORT_ONLY
+      - RCEF_REPORT_ONLY
+      - LOGGED_MBSFN_MDT
+      type: string
+    listOfInterfaces-Type:
+      description: The interfaces to be recorded in the Network Element. See 3GPP
+        TS 32.422 clause 5.5 for additional details.
+      properties:
+        MSCServerInterfaces:
+          items:
+            enum:
+            - A
+            - Iu-CS
+            - Mc
+            - MAP-G
+            - MAP-B
+            - MAP-E
+            - MAP-F
+            - MAP-D
+            - MAP-C
+            - CAP
+            type: string
+          type: array
+        MGWInterfaces:
+          items:
+            enum:
+            - Mc
+            - Nb-UP
+            - Iu-UP
+            type: string
+          type: array
+        RNCInterfaces:
+          items:
+            enum:
+            - Iu-CS
+            - Iu-PS
+            - Iur
+            - Iub
+            - Uu
+            type: string
+          type: array
+        SGSNInterfaces:
+          items:
+            enum:
+            - Gb
+            - Iu-PS
+            - Gn
+            - MAP-Gr
+            - MAP-Gd
+            - MAP-Gf
+            - Ge
+            - Gs
+            - S6d
+            - S4
+            - S3
+            - S13
+            type: string
+          type: array
+        GGSNInterfaces:
+          items:
+            enum:
+            - Gn
+            - Gi
+            - Gmb
+            type: string
+          type: array
+        S-CSCFInterfaces:
+          items:
+            enum:
+            - Mw
+            - Mg
+            - Mr
+            - Mi
+            type: string
+          type: array
+        P-CSCFInterfaces:
+          items:
+            enum:
+            - Gm
+            - Mw
+            type: string
+          type: array
+        I-CSCFInterfaces:
+          items:
+            enum:
+            - Cx
+            - Dx
+            - Mg
+            - Mw
+            type: string
+          type: array
+        MRFCInterfaces:
+          items:
+            enum:
+            - Mp
+            - Mr
+            type: string
+          type: array
+        MGCFInterfaces:
+          items:
+            enum:
+            - Mg
+            - Mj
+            - Mn
+            type: string
+          type: array
+        IBCFInterfaces:
+          items:
+            enum:
+            - Ix
+            - Mx
+            type: string
+          type: array
+        E-CSCFInterfaces:
+          items:
+            enum:
+            - Mw
+            - Ml
+            - Mm
+            - Mi/Mg
+            type: string
+          type: array
+        BGCFInterfaces:
+          items:
+            enum:
+            - Mi
+            - Mj
+            - Mk
+            type: string
+          type: array
+        ASInterfaces:
+          items:
+            enum:
+            - Dh
+            - Sh
+            - ISC
+            - Ut
+            type: string
+          type: array
+        HSSInterfaces:
+          items:
+            enum:
+            - MAP-C
+            - MAP-D
+            - Gc
+            - Gr
+            - Cx
+            - S6d
+            - S6a
+            - Sh
+            - N70
+            - N71
+            - NU1
+            type: string
+          type: array
+        EIRInterfaces:
+          items:
+            enum:
+            - MAP-F
+            - S13
+            - MAP-Gf
+            type: string
+          type: array
+        BM-SCInterfaces:
+          items:
+            enum:
+            - Gmb
+            type: string
+          type: array
+        MMEInterfaces:
+          items:
+            enum:
+            - S1-MME
+            - S3
+            - S6a
+            - S10
+            - S11
+            - S13
+            type: string
+          type: array
+        SGWInterfaces:
+          items:
+            enum:
+            - S4
+            - S5
+            - S8
+            - S11
+            - Gxc
+            type: string
+          type: array
+        PDN_GWInterfaces:
+          items:
+            enum:
+            - S2a
+            - S2b
+            - S2c
+            - S5
+            - S6b
+            - Gx
+            - S8
+            - SGi
+            type: string
+          type: array
+        eNBInterfaces:
+          items:
+            enum:
+            - S1-MME
+            - X2
+            type: string
+          type: array
+        en-gNBInterfaces:
+          items:
+            enum:
+            - S1-MME
+            - X2
+            - Uu
+            - F1-C
+            - E1
+            type: string
+          type: array
+        AMFInterfaces:
+          items:
+            enum:
+            - N1
+            - N2
+            - N8
+            - N11
+            - N12
+            - N14
+            - N15
+            - N20
+            - N22
+            - N26
+            type: string
+          type: array
+        AUSFInterfaces:
+          items:
+            enum:
+            - N12
+            - N13
+            type: string
+          type: array
+        NEFInterfaces:
+          items:
+            enum:
+            - N29
+            - N30
+            - N33
+            type: string
+          type: array
+        NRFInterfaces:
+          items:
+            enum:
+            - N27
+            type: string
+          type: array
+        NSSFInterfaces:
+          items:
+            enum:
+            - N22
+            - N31
+            type: string
+          type: array
+        PCFInterfaces:
+          items:
+            enum:
+            - N5
+            - N7
+            - N15
+            type: string
+          type: array
+        SMFInterfaces:
+          items:
+            enum:
+            - N4
+            - N7
+            - N10
+            - N11
+            - S5-C
+            type: string
+          type: array
+        SMSFInterfaces:
+          items:
+            enum:
+            - N20
+            - N21
+            type: string
+          type: array
+        UDMInterfaces:
+          items:
+            enum:
+            - N8
+            - N10
+            - N13
+            - N21
+            - NU1
+            type: string
+          type: array
+        UPFInterfaces:
+          items:
+            enum:
+            - N4
+            type: string
+          type: array
+        ng-eNBInterfaces:
+          items:
+            enum:
+            - NG-C
+            - Xn-C
+            - Uu
+            type: string
+          type: array
+        gNB-CU-CPInterfaces:
+          items:
+            enum:
+            - NG-C
+            - Xn-C
+            - Uu
+            - F1-C
+            - E1
+            - X2-C
+            type: string
+          type: array
+        gNB-CU-UPInterfaces:
+          items:
+            enum:
+            - E1
+            type: string
+          type: array
+        gNB-DUInterfaces:
+          items:
+            enum:
+            - F1-C
+            type: string
+          type: array
+      type: object
+    listOfNeTypes-Type:
+      description: The Network Element types where Trace Session activation is needed.
+        See 3GPP TS 32.422 clause 5.4 for additional details.
+      items:
+        enum:
+        - MSC_SERVER
+        - SGSN
+        - MGW
+        - GGSN
+        - RNC
+        - BM_SC
+        - MME
+        - SGW
+        - PGW
+        - ENB
+        - EN_GNB
+        - GNB_CU_CP
+        - GNB_CU_UP
+        - GNB_DU
+        - AMF
+        - PCF
+        - SMF
+        - UPF
+        - AUSF
+        - SMSF
+        - HSS
+        - UDM
+        type: string
+      type: array
+    plmnTarget-Type:
+      description: "The PLMN for which sessions shall be selected in the Trace Session\
+        \ in case of management based activation when several PLMNs are supported\
+        \ in the RAN (this means that shared cells and not shared cells are allowed\
+        \ for the specified PLMN. Note that the PLMN Target might differ from the\
+        \ PLMN specified in the Trace Reference, as that specifies the PLMN that is\
+        \ containing the management system requesting the Trace Session from the NE.\
+        \ See 3GPP TS 32.422 clause 5.9b for additional details."
+      properties:
+        mcc:
+          pattern: "^[0-9]{3}$"
+          type: string
+        mnc:
+          pattern: "^[0-9]{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    IpAddr:
+      oneOf:
+      - $ref: '#/components/schemas/Ipv4Addr'
+      - $ref: '#/components/schemas/Ipv6Addr'
+    traceDepth-Type:
+      description: "Specifies how detailed information should be recorded in the Network\
+        \ Element. The Trace Depth is a paremeter for Trace Session level, i.e., the\
+        \ Trace Depth is the same for all of the NEs to be traced in the same Trace\
+        \ Session. See 3GPP TS 32.422 clause 5.3 for additional details."
+      enum:
+      - MINIMUM
+      - MEDIUM
+      - MAXIMUM
+      - VENDORMINIMUM
+      - VENDORMEDIUM
+      - VENDORMAXIMUM
+      type: string
+    traceReference-Type:
+      description: "The Trace Reference parameter shall be globally unique, therefore\
+        \ the Trace Reference shall compose as follows - MCC+MNC+Trace ID, where the\
+        \ MCC and MNC are coming with the Trace activation request from the management\
+        \ system to identify one PLMN containing the management system, and Trace\
+        \ ID is a 3 byte Octet String. See 3GPP TS 32.422 clause 5.6 for additional\
+        \ details."
+      properties:
+        mcc:
+          pattern: "^[0-9]{3}$"
+          type: string
+        mnc:
+          pattern: "^[0-9]{2,3}$"
+          type: string
+        traceId:
+          type: string
+      required:
+      - mcc
+      - mnc
+      - traceId
+      type: object
+    traceReportingFormat-Type:
+      description: Specifies whether file-based or streaming reporting shall be used
+        for this Trace Session. See 3GPP TS 32.422 clause 5.11 for additional details.
+      enum:
+      - FILE-BASED
+      - STREAMING
+      type: string
+    traceTarget-Type:
+      description: Trace target conveying both the type and value of the target ID.
+        For additional details see 3GPP TS 32.422
+      properties:
+        TargetIdType:
+          enum:
+          - IMSI
+          - IMEI
+          - IMEISV
+          - PUBLIC_ID
+          - UTRAN_CELL
+          - E-UTRAN_CELL
+          - NG-RAN_CELL
+          - eNB
+          - RNC
+          - gNB
+          - SUPI
+          type: string
+        TargetIdValue:
+          type: string
+      required:
+      - TargetIdType
+      - TargetIdValue
+      type: object
+    triggeringEvents-Type:
+      description: "Specifies when to start a Trace Recording Session and which message\
+        \ shall be recorded first, when to stop a Trace Recording Session and which\
+        \ message shall be recorded last respectively. See 3GPP TS 32.422 clause 5.1\
+        \ for additional detials."
+      properties:
+        MSC_SERVER:
+          items:
+            enum:
+            - MO_MT_CALLS
+            - MO_MT_SMS
+            - LU_IMSIattach_IMSIdetach
+            - HANDOVER
+            - SS
+            type: string
+          type: array
+        SGSN:
+          items:
+            enum:
+            - PDPcontext
+            - MO_MT_SMS
+            - RAU_GPRSattach_GPRSdetach
+            - MBMScontext
+            type: string
+          type: array
+        MGW:
+          items:
+            enum:
+            - CONTEXT
+            type: string
+          type: array
+        GGSN:
+          items:
+            enum:
+            - PDPcontext
+            - MBMScontext
+            type: string
+          type: array
+        IMS:
+          items:
+            enum:
+            - SIPsession_StandaloneTransaction
+            type: string
+          type: array
+        BM_SC:
+          items:
+            enum:
+            - MBMSactivation
+            type: string
+          type: array
+        MME:
+          items:
+            enum:
+            - UEinitiatedPDNconnectivityRequest
+            - ServiceRequest
+            - InitialAttach_TAU_Detach
+            - UEinitiatedPDNdisconnection
+            - BearerActivationModificationDeletion
+            - Handover
+            type: string
+          type: array
+        SGW:
+          items:
+            enum:
+            - PDNconnectionCreation
+            - PDNconnectionTermination
+            - BearerActivationModificationDeletion
+            type: string
+          type: array
+        PGW:
+          items:
+            enum:
+            - PDNconnectionCreation
+            - PDNconnectionTermination
+            - BearerActivationModificationDeletion
+            type: string
+          type: array
+        AMF:
+          items:
+            enum:
+            - Registration
+            - ServiceRequest
+            - Handover
+            - UEderegistration
+            - NetworkDeregistration
+            - UEMobilityFromEPC
+            - UEMobilityToEPC
+            type: string
+          type: array
+        SMF:
+          items:
+            enum:
+            - PDUsessionEstablishment
+            - PDUsessionModification
+            - PDUsessionRelease
+            - PDUsessionUPactivationDeactivation
+            - MobilityBtw3gppAndN3gppTo5GC
+            - MobilityFromEpc
+            type: string
+          type: array
+        PCF:
+          items:
+            enum:
+            - AMpolicy
+            - SMpolicy
+            - Authorization
+            - BDTpolicy
+            type: string
+          type: array
+        UPF:
+          items:
+            enum:
+            - N4Session
+            type: string
+          type: array
+        AUSF:
+          items:
+            enum:
+            - UEauthentication
+            type: string
+          type: array
+        NEF:
+          items:
+            enum:
+            - EventExposure
+            - PFDmanagement
+            - ParameterProvision
+            - Trigger
+            type: string
+          type: array
+        NRF:
+          items:
+            enum:
+            - NFmanagement
+            - NFdiscovery
+            type: string
+          type: array
+        NSSF:
+          items:
+            enum:
+            - NSSelection
+            - NSSAI
+            type: string
+          type: array
+        SMSF:
+          items:
+            enum:
+            - SMservice
+            type: string
+          type: array
+        UDM:
+          items:
+            enum:
+            - UEcontext
+            - SubscriberData
+            - UEauthentication
+            - EventExposure
+            type: string
+          type: array
+      type: object
+    anonymizationOfMdtData-Type:
+      description: Specifies level of MDT anonymization. For additional details see
+        3GPP TS 32.422 clause 5.10.12.
+      enum:
+      - NO_IDENTITY
+      - TAC_OF_IMEI
+      type: string
+    AreaConfig:
+      properties:
+        freqInfo:
+          $ref: '#/components/schemas/FreqInfo'
+        pciList:
+          items:
+            type: integer
+          type: array
+      type: object
+    FreqInfo:
+      description: specifies the carrier frequency and bands used in a cell.
+      properties:
+        arfcn:
+          type: integer
+        freqBands:
+          items:
+            type: integer
+          type: array
+      type: object
+    AreaScope:
+      oneOf:
+      - items:
+          $ref: '#/components/schemas/EutraCellId'
+        type: array
+      - items:
+          $ref: '#/components/schemas/NrCellId'
+        type: array
+      - items:
+          $ref: '#/components/schemas/Tac'
+        type: array
+      - items:
+          $ref: '#/components/schemas/Tai'
+        type: array
+    beamLevelMeasurement-Type:
+      description: Determines whether beam level measurements shall be included in
+        case of immediate MDT M1 measurement in NR. For additional details see 3GPP
+        TS 32.422 clause 5.10.40.
+      type: boolean
+    collectionPeriodRrmLte-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.20.
+      enum:
+      - 100ms
+      - 1000ms
+      - 1024ms
+      - 1280ms
+      - 2048ms
+      - 2560ms
+      - 5120ms
+      - 10000ms
+      - 10240ms
+      - 60000ms
+      type: string
+    collectionPeriodM6Lte-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.32.
+      enum:
+      - 1024ms
+      - 2048ms
+      - 5120ms
+      - 10240ms
+      type: string
+    collectionPeriodM7Lte-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.33.
+      maximum: 60
+      minimum: 1
+      type: integer
+    collectionPeriodRrmUmts-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.21.
+      enum:
+      - 100ms
+      - 250ms
+      - 500ms
+      - 1000ms
+      - 2000ms
+      - 3000ms
+      - 4000ms
+      - 6000ms
+      type: string
+    collectionPeriodRrmNr-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.30.
+      enum:
+      - 1024ms
+      - 2048ms
+      - 5120ms
+      - 10240ms
+      - 60000ms
+      type: string
+    collectionPeriodM6Nr-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.34.
+      enum:
+      - 120ms
+      - 240ms
+      - 480ms
+      - 640ms
+      - 1024ms
+      - 2048ms
+      - 5120ms
+      - 10240ms
+      - 20480ms
+      - 40960ms
+      - 1min
+      - 6min
+      - 12min
+      - 30min
+      type: string
+    collectionPeriodM7Nr-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.35.
+      maximum: 60
+      minimum: 1
+      type: integer
+    eventListForEventTriggeredMeasurement-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.28.
+      enum:
+      - OUT_OF_COVERAGE
+      - A2_EVENT
+      type: string
+    eventThreshold-Type:
+      description: "See details in 3GPP TS 32.422 clause 5.10.7, 5.10.7a, 5.10.13\
+        \ and 5.10.14."
+      properties:
+        EventThresholdRSRP:
+          $ref: '#/components/schemas/eventThreshold_Type_EventThresholdRSRP'
+        EventThresholdRSRQ:
+          $ref: '#/components/schemas/eventThreshold_Type_EventThresholdRSRQ'
+        EventThreshold1F:
+          $ref: '#/components/schemas/eventThreshold_Type_EventThreshold1F'
+        EventThreshold1I:
+          maximum: 25
+          minimum: -120
+          type: integer
+      type: object
+    listOfMeasurements-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.3 for details.
+      properties:
+        UMTS:
+          items:
+            enum:
+            - M1
+            - M2
+            - M3
+            - M4
+            - M5
+            - M6_DL
+            - M6_UL
+            - M7_DL
+            - M7_UL
+            type: string
+          type: array
+        LTE:
+          items:
+            enum:
+            - M1
+            - M2
+            - M3
+            - M4
+            - M5
+            - M1_EVENT_TRIGGERED
+            - M6
+            - M7
+            - M8
+            - M9
+            type: string
+          type: array
+        NR:
+          items:
+            enum:
+            - M1
+            - M2
+            - M3
+            - M4
+            - M5
+            - M6
+            - M7
+            - M1_EVENT_TRIGGERED
+            - M8
+            - M9
+            type: string
+          type: array
+      type: object
+    loggingDuration-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.9.
+      enum:
+      - 600s
+      - 1200s
+      - 2400s
+      - 3600s
+      - 5400s
+      - 7200s
+      type: string
+    loggingInterval-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.8.
+      properties:
+        UMTS:
+          items:
+            enum:
+            - 1.28s
+            - 2.56s
+            - 5.12s
+            - 10.24s
+            - 20.48s
+            - 30.72s
+            - 40.96s
+            - 61.44s
+            type: string
+          type: array
+        LTE:
+          items:
+            enum:
+            - 1.28s
+            - 2.56s
+            - 5.12s
+            - 10.24s
+            - 20.48s
+            - 30.72s
+            - 40.96s
+            - 61.44s
+            type: string
+          type: array
+        NR:
+          items:
+            enum:
+            - 0.32s
+            - 0.64s
+            - 1.28s
+            - 2.56s
+            - 5.12s
+            - 10.24s
+            - 20.48s
+            - 30.72s
+            - 40.96s
+            - 61.44s
+            - INFINITY
+            type: string
+          type: array
+      type: object
+    eventThresholdL1-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.X.
+      properties:
+        RSRP:
+          maximum: 127
+          minimum: 0
+          type: integer
+        RSRQ:
+          maximum: 127
+          minimum: 0
+          type: integer
+      type: object
+    hysteresisL1-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.Y.
+      maximum: 30
+      minimum: 0
+      type: integer
+    timeToTriggerL1-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.Z.
+      enum:
+      - 0ms
+      - 40ms
+      - 64ms
+      - 80ms
+      - 100ms
+      - 128ms
+      - 160ms
+      - 256ms
+      - 320ms
+      - 480ms
+      - 512ms
+      - 640ms
+      - 1024ms
+      - 1280ms
+      - 2560ms
+      - 5120ms
+      type: string
+    MbsfnArea:
+      properties:
+        mbsfnAreaId:
+          minimum: 1
+          type: integer
+        earfcn:
+          minimum: 1
+          type: integer
+      type: object
+    measurementPeriodLte-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.23.
+      enum:
+      - 1024ms
+      - 2048ms
+      - 5120ms
+      - 10240ms
+      - 1min
+      type: string
+    measurementPeriodUmts-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.22.
+      enum:
+      - 1000ms
+      - 2000ms
+      - 3000ms
+      - 4000ms
+      - 6000ms
+      - 8000ms
+      - 12000ms
+      - 16000ms
+      - 20000ms
+      - 24000ms
+      - 28000ms
+      - 32000ms
+      - 64000ms
+      type: string
+    measurementQuantity-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.15.
+      enum:
+      - CPICH_EcNo
+      - CPICH_RSCP
+      - PathLoss
+      type: string
+    eventThresholdUphUmts-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.A.
+      maximum: 31
+      minimum: 0
+      type: integer
+    plmnList-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.24.
+      items:
+        $ref: '#/components/schemas/plmnList_Type_inner'
+      maxItems: 16
+      type: array
+    positioningMethod-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.19.
+      enum:
+      - GNSS
+      - E-CELL_ID
+      type: string
+    reportAmount-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.6.
+      enum:
+      - "1"
+      - "2"
+      - "4"
+      - "8"
+      - "16"
+      - "32"
+      - "64"
+      - INFINITY
+      type: string
+    reportingTrigger-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.4.
+      items:
+        enum:
+        - PERIODICAL
+        - A2_FOR_LTE_NR
+        - 1F_FOR_UMTS
+        - 1I_FOR_UMTS_MCPS_TDD
+        - A2_TRIGGERED_PERIODIC_FOR_LTE_NR
+        - ALL_CONFIGURED_RRM_FOR_LTE_NR
+        - ALL_CONFIGURED_RRM_FOR_UMTS
+        type: string
+      type: array
+    reportInterval-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.5.
+      properties:
+        UMTS:
+          items:
+            enum:
+            - 250ms
+            - 500ms
+            - 1000ms
+            - 2000ms
+            - 3000ms
+            - 4000ms
+            - 6000ms
+            - 8000ms
+            - 12000ms
+            - 16000ms
+            - 20000ms
+            - 24000ms
+            - 28000ms
+            - 32000ms
+            - 64000ms
+            type: string
+          type: array
+        LTE:
+          items:
+            enum:
+            - 120ms
+            - 240ms
+            - 480ms
+            - 640ms
+            - 1024ms
+            - 2048ms
+            - 5120ms
+            - 10240ms
+            - 60000ms
+            - 360000ms
+            - 720000ms
+            - 1800000ms
+            - 3600000ms
+            type: string
+          type: array
+        NR:
+          items:
+            enum:
+            - 120ms
+            - 240ms
+            - 480ms
+            - 640ms
+            - 1024ms
+            - 2048ms
+            - 5120ms
+            - 10240ms
+            - 20480ms
+            - 40960ms
+            - 60000ms
+            - 360000ms
+            - 720000ms
+            - 1800000ms
+            type: string
+          type: array
+      type: object
+    reportType-Type:
+      description: Report type for logged NR MDT. See details in 3GPP TS 32.422 clause
+        5.10.27.
+      enum:
+      - PERIODICAL
+      - EVENT_TRIGGERED
+      type: string
+    sensorInformation-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.29.
+      items:
+        enum:
+        - BAROMETRIC_PRESSURE
+        - UE_SPEED
+        - UE_ORIENTATION
+        type: string
+      type: array
+    traceCollectionEntityId-Type:
+      description: See details in 3GPP TS 32.422 clause 5.10.11. Only TCE Id value
+        may be sent over the air to the UE being configured for Logged MDT.
+      type: integer
+    excessPacketDelayThresholds-Type:
+      description: Excess Packet Delay Threshold for NR MDT. See details in 3GPP TS
+        32.422 clause 4.1.1 and 4.1.2.
+      properties:
+        fiveQIValue:
+          type: integer
+        excessPacketDelayThresholdValue:
+          enum:
+          - 0.25ms
+          - 0.5ms
+          - 1ms
+          - 2ms
+          - 4ms
+          - 5ms
+          - 10ms
+          - 20ms
+          - 30ms
+          - 40ms
+          - 50ms
+          - 60ms
+          - 70ms
+          - 80ms
+          - 90ms
+          - 100ms
+          - 150ms
+          - 300ms
+          - 500ms
+          type: string
+      type: array
+    ManagementDataCollection-Multiple:
+      items:
+        $ref: '#/components/schemas/ManagementDataCollection-Single'
+      type: array
+    ManagementDataCollection-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ManagementDataCollection_Single_allOf'
+    ManagementData:
+      oneOf:
+      - items:
+          enum:
+          - COVERAGE
+          - CAPACITY
+          - ENERGY_EFFICIENCY
+          - MOBILITY
+          - ACCESSIBILITY
+          type: string
+        type: array
+      - items:
+          type: string
+        type: array
+    NodeFilter:
+      properties:
+        areaOfInterest:
+          $ref: '#/components/schemas/AreaOfInterest'
+        networkDomain:
+          enum:
+          - CN
+          - RAN
+          type: string
+        cpUpType:
+          enum:
+          - CP
+          - UP
+          type: string
+        sst:
+          type: integer
+      type: object
+    NtfSubscriptionControl-Multiple:
+      items:
+        $ref: '#/components/schemas/NtfSubscriptionControl-Single'
+      type: array
+    NtfSubscriptionControl-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/NtfSubscriptionControl_Single_allOf'
+    Scope:
+      properties:
+        scopeType:
+          enum:
+          - BASE_ONLY
+          - BASE_ALL
+          - BASE_NTH_LEVEL
+          - BASE_SUBTREE
+          type: string
+        scopeLevel:
+          type: integer
+      type: object
+    HeartbeatControl-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/HeartbeatControl_Single_allOf'
+    AlarmList-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/AlarmList_Single_allOf'
+    FileDownloadJob-Multiple:
+      items:
+        $ref: '#/components/schemas/FileDownloadJob-Single'
+      type: array
+    FileDownloadJob-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/FileDownloadJob_Single_allOf'
+    FileDownloadJobProcessMonitor:
+      description: This data type is the "ProcessMonitor" data type with specialisations
+        for usage in the "FileDownloadJob".
+      properties:
+        jobId:
+          type: string
+        status:
+          enum:
+          - NOT_STARTED
+          - RUNNING
+          - FINSHED
+          - FAILED
+          - CANCELLING
+          - CANCELLED
+          type: string
+        progressPercentage:
+          maximum: 100
+          minimum: 0
+          type: integer
+        progressStateInfo:
+          type: string
+        resultStateInfo:
+          $ref: '#/components/schemas/FileDownloadJobProcessMonitor_resultStateInfo'
+        startTime:
+          format: date-time
+          type: string
+        endTime:
+          format: date-time
+          type: string
+        timer:
+          type: integer
+      type: object
+    MnsRegistry-Single:
+      properties:
+        MnsInfo:
+          items:
+            $ref: '#/components/schemas/MnsInfo-Single'
+          type: array
+      type: object
+    MnsInfo-Multiple:
+      items:
+        $ref: '#/components/schemas/MnsInfo-Single'
+      type: array
+    MnsInfo-Single:
+      properties:
+        mnsLabel:
+          type: string
+        mnsType:
+          enum:
+          - ProvMnS
+          - FaultSupervisionMnS
+          - StreamingDataReportingMnS
+          - FileDataReportingMnS
+          type: string
+        mnsVersion:
+          type: string
+        mnsAddress:
+          type: string
+        mnsScope:
+          description: "List of the managed object instances that can be accessed\
+            \ using the MnS. If a complete SubNetwork can be accessed using the MnS,\
+            \ this attribute may contain the DN of the SubNetwork instead of the DNs\
+            \ of the individual managed entities within the SubNetwork."
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+    Configurable5QISet-Multiple:
+      items:
+        $ref: '#/components/schemas/Configurable5QISet-Single'
+      type: array
+    Configurable5QISet-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/Configurable5QISet_Single_allOf'
+    FiveQICharacteristics-Multiple:
+      items:
+        $ref: '#/components/schemas/FiveQICharacteristics-Single'
+      type: array
+    FiveQICharacteristics-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/FiveQICharacteristics_Single_allOf'
+    PacketErrorRate:
+      properties:
+        scalar:
+          type: integer
+        exponent:
+          type: integer
+      type: object
+    Dynamic5QISet-Multiple:
+      items:
+        $ref: '#/components/schemas/Dynamic5QISet-Single'
+      type: array
+    Dynamic5QISet-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/Dynamic5QISet_Single_allOf'
+    ManagedElement-Attr:
+      properties:
+        dnPrefix:
+          type: string
+        managedElementTypeList:
+          items:
+            type: string
+          type: array
+        userLabel:
+          type: string
+        locationName:
+          type: string
+        managedBy:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        vendorName:
+          type: string
+        userDefinedState:
+          type: string
+        swVersion:
+          type: string
+        priorityLabel:
+          type: integer
+        supportedPerfMetricGroups:
+          items:
+            $ref: '#/components/schemas/SupportedPerfMetricGroup'
+          type: array
+        supportedTraceMetrics:
+          items:
+            type: string
+          type: array
+      type: object
+    ManagedElement-ncO:
+      properties:
+        MnsAgent:
+          items:
+            $ref: '#/components/schemas/MnsAgent-Single'
+          type: array
+        PerfMetricJob:
+          items:
+            $ref: '#/components/schemas/PerfMetricJob-Single'
+          type: array
+        ThresholdMonitor:
+          items:
+            $ref: '#/components/schemas/ThresholdMonitor-Single'
+          type: array
+        TraceJob:
+          items:
+            $ref: '#/components/schemas/TraceJob-Single'
+          type: array
+        NtfSubscriptionControl:
+          items:
+            $ref: '#/components/schemas/NtfSubscriptionControl-Single'
+          type: array
+        AlarmList:
+          $ref: '#/components/schemas/AlarmList-Single'
+        FileDownloadJob:
+          items:
+            $ref: '#/components/schemas/FileDownloadJob-Single'
+          type: array
+        Files:
+          items:
+            $ref: '#/components/schemas/Files-Single'
+          type: array
+      type: object
+    ManagedFunction-Attr:
+      properties:
+        userLabel:
+          type: string
+        vnfParametersList:
+          items:
+            $ref: '#/components/schemas/VnfParameter'
+          type: array
+        peeParametersList:
+          items:
+            $ref: '#/components/schemas/PeeParameter'
+          type: array
+        priorityLabel:
+          type: integer
+        supportedPerfMetricGroups:
+          items:
+            $ref: '#/components/schemas/SupportedPerfMetricGroup'
+          type: array
+        supportedTraceMetrics:
+          items:
+            type: string
+          type: array
+      type: object
+    VnfParameter:
+      properties:
+        vnfInstanceId:
+          type: string
+        vnfdId:
+          type: string
+        flavourId:
+          type: string
+        autoScalable:
+          type: boolean
+      type: object
+    PeeParameter:
+      properties:
+        siteIdentification:
+          type: string
+        siteDescription:
+          type: string
+        siteLatitude:
+          format: float
+          maximum: 90
+          minimum: -90
+          type: number
+        siteLongitude:
+          format: float
+          maximum: 180
+          minimum: -180
+          type: number
+        siteAltitude:
+          format: float
+          type: number
+        equipmentType:
+          type: string
+        environmentType:
+          type: string
+        powerInterface:
+          type: string
+      type: object
+    ManagedFunction-ncO:
+      properties:
+        PerfMetricJob:
+          items:
+            $ref: '#/components/schemas/PerfMetricJob-Single'
+          type: array
+        ThresholdMonitor:
+          items:
+            $ref: '#/components/schemas/ThresholdMonitor-Single'
+          type: array
+        ManagedNFService:
+          items:
+            $ref: '#/components/schemas/ManagedNFService-Single'
+          type: array
+        TraceJob:
+          items:
+            $ref: '#/components/schemas/TraceJob-Single'
+          type: array
+      type: object
+    ManagedNFService-Multiple:
+      items:
+        $ref: '#/components/schemas/ManagedNFService-Single'
+      type: array
+    ManagedNFService-Single:
+      allOf:
+      - $ref: '#/components/schemas/Top'
+      - $ref: '#/components/schemas/ManagedNFService_Single_allOf'
+    NFServiceType:
+      enum:
+      - Namf_Communication
+      - Namf_EventExposure
+      - Namf_MT
+      - Namf_Location
+      - Nsmf_PDUSession
+      - Nsmf_EventExposure
+      - Others
+      type: string
+    SAP:
+      properties:
+        host:
+          $ref: '#/components/schemas/HostAddr'
+        port:
+          type: integer
+      type: object
+    Operation:
+      properties:
+        name:
+          type: string
+        allowedNFTypes:
+          $ref: '#/components/schemas/NFType'
+        operationSemantics:
+          $ref: '#/components/schemas/OperationSemantics'
+      type: object
+    NFType:
+      description: ' NF name defined in TS 23.501 or TS 29.510'
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - DN
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      - TNGF
+      - W_AGF
+      - TWIF
+      - TSN_AF
+      type: string
+    OperationSemantics:
+      enum:
+      - REQUEST_RESPONSE
+      - SUBSCRIBE_NOTIFY
+      type: string
+    RegistrationState:
+      enum:
+      - REGISTERED
+      - DEREGISTERED
+      type: string
+    Dn:
+      type: string
+    AdministrativeState:
+      enum:
+      - LOCKED
+      - UNLOCKED
+      type: string
+    OperationalState:
+      enum:
+      - ENABLED
+      - DISABLED
+      type: string
+    DnList:
+      items:
+        $ref: '#/components/schemas/Dn'
+      type: array
+    EP_RP-Attr:
+      properties:
+        userLabel:
+          type: string
+        farEndEntity:
+          type: string
+        supportedPerfMetricGroups:
+          items:
+            $ref: '#/components/schemas/SupportedPerfMetricGroup'
+          type: array
+      type: object
+    Uri:
+      type: string
+    DateTime:
+      format: date-time
+      type: string
+    Float:
+      format: float
+      type: number
+    Mnc_1:
+      pattern: "^[0-9]{2,3}$"
+      type: string
+    TimeWindow:
+      properties:
+        startTime:
+          format: date-time
+          type: string
+        endTime:
+          format: date-time
+          type: string
+      type: object
+    AreaOfInterest:
+      oneOf:
+      - $ref: '#/components/schemas/GeoAreaToCellMapping'
+      - items:
+          $ref: '#/components/schemas/Tai_1'
+        type: array
+      - items:
+          $ref: '#/components/schemas/NrCellId'
+        type: array
+      - items:
+          $ref: '#/components/schemas/EutraCellId'
+        type: array
+      - items:
+          $ref: '#/components/schemas/UtraCellId'
+        type: array
+    GeoAreaToCellMapping:
+      properties:
+        geoArea:
+          $ref: '#/components/schemas/GeoArea'
+        associationThreshold:
+          type: integer
+      type: object
+    GeoArea:
+      properties:
+        convexGeoPolygon:
+          items:
+            $ref: '#/components/schemas/GeoCoordinate'
+          minItems: 3
+          type: array
+      type: object
+    ConvexGeoPolygon:
+      items:
+        $ref: '#/components/schemas/GeoCoordinate'
+      minItems: 3
+      type: array
+    GeoCoordinate:
+      properties:
+        latitude:
+          format: float
+          maximum: 90
+          minimum: -90
+          type: number
+        longitude:
+          format: float
+          maximum: 180
+          minimum: -180
+          type: number
+      type: object
+    Latitude:
+      format: float
+      maximum: 90
+      minimum: -90
+      type: number
+    Longitude:
+      format: float
+      maximum: 180
+      minimum: -180
+      type: number
+    NotificationType:
+      oneOf:
+      - $ref: '#/components/schemas/AlarmNotificationTypes'
+      - $ref: '#/components/schemas/CmNotificationTypes'
+      - $ref: '#/components/schemas/PerfNotificationTypes'
+      - $ref: '#/components/schemas/HeartbeatNotificationTypes'
+      - $ref: '#/components/schemas/FileNotificationTypes'
+    Filter:
+      description: The filter format shall be compliant to XPath 1.0.
+      type: string
+    AlarmRecord:
+      description: The alarmId is not a property of an alarm record. It is used as
+        key in the map of alarm records instead.
+      properties:
+        objectInstance:
+          type: string
+        notificationId:
+          type: integer
+        alarmRaisedTime:
+          format: date-time
+          type: string
+        alarmChangedTime:
+          format: date-time
+          type: string
+        alarmClearedTime:
+          format: date-time
+          type: string
+        alarmType:
+          $ref: '#/components/schemas/AlarmType'
+        probableCause:
+          $ref: '#/components/schemas/ProbableCause'
+        specificProblem:
+          $ref: '#/components/schemas/SpecificProblem'
+        perceivedSeverity:
+          $ref: '#/components/schemas/PerceivedSeverity'
+        backedUpStatus:
+          type: boolean
+        backUpObject:
+          type: string
+        trendIndication:
+          $ref: '#/components/schemas/TrendIndication'
+        thresholdinfo:
+          $ref: '#/components/schemas/ThresholdInfo_1'
+        correlatedNotifications:
+          items:
+            $ref: '#/components/schemas/CorrelatedNotification'
+          type: array
+        stateChangeDefinition:
+          description: "The first array item contains the attribute name value pairs\
+            \ with the new values, and the second array item the attribute name value\
+            \ pairs with the optional old values."
+          items:
+            $ref: '#/components/schemas/AttributeNameValuePairSet'
+          maxItems: 2
+          minItems: 1
+          type: array
+        monitoredAttributes:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        proposedRepairActions:
+          type: string
+        additionalText:
+          type: string
+        additionalInformation:
+          additionalProperties:
+            nullable: true
+          description: "The key of this map is the attribute name, and the value the\
+            \ attribute value."
+          minProperties: 1
+          type: object
+        rootCauseIndicator:
+          type: boolean
+        ackTime:
+          format: date-time
+          type: string
+        ackUserId:
+          type: string
+        ackSystemId:
+          type: string
+        ackState:
+          $ref: '#/components/schemas/AckState'
+        clearUserId:
+          type: string
+        clearSystemId:
+          type: string
+        serviceUser:
+          type: string
+        serviceProvider:
+          type: string
+        securityAlarmDetector:
+          type: string
+      type: object
+    AlarmType:
+      enum:
+      - COMMUNICATIONS_ALARM
+      - QUALITY_OF_SERVICE_ALARM
+      - PROCESSING_ERROR_ALARM
+      - EQUIPMENT_ALARM
+      - ENVIRONMENTAL_ALARM
+      - INTEGRITY_VIOLATION
+      - OPERATIONAL_VIOLATION
+      - PHYSICAL_VIOLATION
+      - SECURITY_SERVICE_OR_MECHANISM_VIOLATION
+      - TIME_DOMAIN_VIOLATION
+      type: string
+    ProbableCause:
+      description: "The value of the probable cause may be a specific standardized\
+        \ string, or any vendor provided string. Probable cause strings are not standardized\
+        \ in the present document. They may be added in a future version. Up to then\
+        \ the mapping of the generic probable cause strings \"PROBABLE_CAUSE_001\"\
+        \ to \"PROBABLE_CAUSE_005\" is vendor specific. The value of the probable\
+        \ cause may also be an integer. The mapping of integer values to probable\
+        \ causes is vendor specific."
+      oneOf:
+      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - type: integer
+    SpecificProblem:
+      oneOf:
+      - type: string
+      - type: integer
+    PerceivedSeverity:
+      enum:
+      - INDETERMINATE
+      - CRITICAL
+      - MAJOR
+      - MINOR
+      - WARNING
+      - CLEARED
+      type: string
+    TrendIndication:
+      enum:
+      - MORE_SEVERE
+      - NO_CHANGE
+      - LESS_SEVERE
+      type: string
+    ThresholdInfo_1:
+      properties:
+        observedMeasurement:
+          type: string
+        observedValue:
+          type: number
+        thresholdLevel:
+          $ref: '#/components/schemas/ThresholdLevelInd'
+        armTime:
+          format: date-time
+          type: string
+      required:
+      - observedMeasurement
+      - observedValue
+      type: object
+    ThresholdLevelInd:
+      oneOf:
+      - $ref: '#/components/schemas/ThresholdLevelInd_oneOf'
+      - $ref: '#/components/schemas/ThresholdLevelInd_oneOf_1'
+    CorrelatedNotifications:
+      items:
+        $ref: '#/components/schemas/CorrelatedNotification'
+      type: array
+    CorrelatedNotification:
+      properties:
+        sourceObjectInstance:
+          type: string
+        notificationIds:
+          items:
+            $ref: '#/components/schemas/NotificationId'
+          type: array
+      required:
+      - notificationIds
+      - sourceObjectInstance
+      type: object
+    AckState:
+      enum:
+      - ACKNOWLEDGED
+      - UNACKNOWLEDGED
+      type: string
+    UsageState:
+      enum:
+      - IDEL
+      - ACTIVE
+      - BUSY
+      type: string
+    HostAddr:
+      oneOf:
+      - $ref: '#/components/schemas/Ipv4Addr'
+      - $ref: '#/components/schemas/Ipv6Addr'
+      - $ref: '#/components/schemas/Fqdn'
+    Fqdn:
+      type: string
+    Tai_1:
+      properties:
+        mcc:
+          pattern: "^[0-9]{3}$"
+          type: string
+        mnc:
+          pattern: "^[0-9]{2,3}$"
+          type: string
+        tac:
+          pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+          type: string
+      type: object
+    Tac:
+      pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
+      type: string
+    AlarmNotificationTypes:
+      enum:
+      - notifyNewAlarm
+      - notifyChangedAlarm
+      - notifyChangedAlarmGeneral
+      - notifyAckStateChanged
+      - notifyCorrelatedNotificationChanged
+      - notifyComments
+      - notifyClearedAlarm
+      - notifyAlarmListRebuilt
+      - notifyPotentialFaultyAlarmList
+      type: string
+    CmNotificationTypes:
+      enum:
+      - notifyMOICreation
+      - notifyMOIDeletion
+      - notifyMOIAttributeValueChanges
+      - notifyMOIChanges
+      type: string
+    PerfNotificationTypes:
+      enum:
+      - notifyThresholdCrossing
+      type: string
+    HeartbeatNotificationTypes:
+      enum:
+      - notifyHeartbeat
+      type: string
+    FileNotificationTypes:
+      enum:
+      - notifyFileReady
+      - notifyFilePreparationError
+      type: string
+    NotificationId:
+      type: integer
+    AttributeValueChangeSet:
+      description: "The first array item contains the attribute name value pairs with\
+        \ the new values, and the second array item the attribute name value pairs\
+        \ with the optional old values."
+      items:
+        $ref: '#/components/schemas/AttributeNameValuePairSet'
+      maxItems: 2
+      minItems: 1
+      type: array
+    AttributeNameValuePairSet:
+      additionalProperties:
+        nullable: true
+      description: "The key of this map is the attribute name, and the value the attribute\
+        \ value."
+      minProperties: 1
+      type: object
+    TceMappingInfo_TceIPAddress:
+      oneOf:
+      - $ref: '#/components/schemas/Ipv4Addr'
+      - $ref: '#/components/schemas/Ipv6Addr'
+    MnS_oneOf:
+      properties:
+        SubNetwork:
+          items:
+            $ref: '#/components/schemas/SubNetwork-Single'
+          type: array
+      type: object
+    MnS_oneOf_1:
+      properties:
+        ManagedElement:
+          items:
+            $ref: '#/components/schemas/ManagedElement-Single'
+          type: array
+      type: object
+    SubNetwork_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/SubNetwork-Attr'
+      type: object
+      example: null
+    SubNetwork_Single_allOf_1:
+      properties:
+        SubNetwork:
+          items:
+            $ref: '#/components/schemas/SubNetwork-Single'
+          type: array
+        ManagedElement:
+          items:
+            $ref: '#/components/schemas/ManagedElement-Single'
+          type: array
+        NRFrequency:
+          items:
+            $ref: '#/components/schemas/NRFrequency-Single'
+          minItems: 1
+          type: array
+        ExternalGnbCuCpFunction:
+          items:
+            $ref: '#/components/schemas/ExternalGnbCuCpFunction-Single'
+          type: array
+        ExternalENBFunction:
+          items:
+            $ref: '#/components/schemas/ExternalENBFunction-Single'
+          type: array
+        EUtranFrequency:
+          items:
+            $ref: '#/components/schemas/EUtranFrequency-Single'
+          minItems: 1
+          type: array
+        DESManagementFunction:
+          $ref: '#/components/schemas/DESManagementFunction-Single'
+        DRACHOptimizationFunction:
+          $ref: '#/components/schemas/DRACHOptimizationFunction-Single'
+        DMROFunction:
+          $ref: '#/components/schemas/DMROFunction-Single'
+        DLBOFunction:
+          $ref: '#/components/schemas/DLBOFunction-Single'
+        DPCIConfigurationFunction:
+          $ref: '#/components/schemas/DPCIConfigurationFunction-Single'
+        CPCIConfigurationFunction:
+          $ref: '#/components/schemas/CPCIConfigurationFunction-Single'
+        CESManagementFunction:
+          $ref: '#/components/schemas/CESManagementFunction-Single'
+        Configurable5QISet:
+          items:
+            $ref: '#/components/schemas/Configurable5QISet-Single'
+          type: array
+        RimRSGlobal:
+          $ref: '#/components/schemas/RimRSGlobal-Single'
+        Dynamic5QISet:
+          items:
+            $ref: '#/components/schemas/Dynamic5QISet-Single'
+          type: array
+        CCOFunction:
+          $ref: '#/components/schemas/CCOFunction-Single'
+      type: object
+      example: null
+    ManagedElement_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ManagedElement-Attr'
+      type: object
+      example: null
+    ManagedElement_Single_allOf_1:
+      properties:
+        GnbDuFunction:
+          items:
+            $ref: '#/components/schemas/GnbDuFunction-Single'
+          type: array
+        GnbCuUpFunction:
+          items:
+            $ref: '#/components/schemas/GnbCuUpFunction-Single'
+          type: array
+        GnbCuCpFunction:
+          items:
+            $ref: '#/components/schemas/GnbCuCpFunction-Single'
+          type: array
+        DESManagementFunction:
+          $ref: '#/components/schemas/DESManagementFunction-Single'
+        DRACHOptimizationFunction:
+          $ref: '#/components/schemas/DRACHOptimizationFunction-Single'
+        DMROFunction:
+          $ref: '#/components/schemas/DMROFunction-Single'
+        DLBOFunction:
+          $ref: '#/components/schemas/DLBOFunction-Single'
+        DPCIConfigurationFunction:
+          $ref: '#/components/schemas/DPCIConfigurationFunction-Single'
+        CPCIConfigurationFunction:
+          $ref: '#/components/schemas/CPCIConfigurationFunction-Single'
+        CESManagementFunction:
+          $ref: '#/components/schemas/CESManagementFunction-Single'
+        Configurable5QISet:
+          items:
+            $ref: '#/components/schemas/Configurable5QISet-Single'
+          type: array
+        Dynamic5QISet:
+          items:
+            $ref: '#/components/schemas/Dynamic5QISet-Single'
+          type: array
+      type: object
+      example: null
+    GnbDuFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbDuId:
+          maximum: 68719476735
+          minimum: 0
+          type: number
+        gnbDuName:
+          maxLength: 150
+          type: string
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        rimRSReportConf:
+          $ref: '#/components/schemas/RimRSReportConf'
+      type: object
+    GnbDuFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/GnbDuFunction_Single_allOf_attributes_allOf'
+    GnbDuFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/GnbDuFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    GnbDuFunction_Single_allOf_1:
+      properties:
+        RRMPolicyRatio:
+          items:
+            $ref: '#/components/schemas/RRMPolicyRatio-Single'
+          type: array
+        NrCellDu:
+          items:
+            $ref: '#/components/schemas/NrCellDu-Single'
+          type: array
+        Bwp-Multiple:
+          items:
+            $ref: '#/components/schemas/Bwp-Single'
+          type: array
+        NrSectorCarrier-Multiple:
+          items:
+            $ref: '#/components/schemas/NrSectorCarrier-Single'
+          type: array
+        EP_F1C:
+          $ref: '#/components/schemas/EP_F1C-Single'
+        EP_F1U:
+          items:
+            $ref: '#/components/schemas/EP_F1U-Single'
+          type: array
+        DRACHOptimizationFunction:
+          $ref: '#/components/schemas/DRACHOptimizationFunction-Single'
+        OperatorDU:
+          items:
+            $ref: '#/components/schemas/OperatorDu-Single'
+          type: array
+        BWPSet:
+          items:
+            $ref: '#/components/schemas/BWPSet-Single'
+          type: array
+      type: object
+      example: null
+    OperatorDu_Single_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+      type: object
+      example: null
+    OperatorDu_Single_allOf_1:
+      properties:
+        EP_F1C:
+          $ref: '#/components/schemas/EP_F1C-Single'
+        EP_F1U:
+          items:
+            $ref: '#/components/schemas/EP_F1U-Single'
+          type: array
+      type: object
+      example: null
+    GnbCuUpFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        gnbCuUpId:
+          maximum: 68719476735
+          minimum: 0
+          type: number
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        configurable5QISetRef:
+          type: string
+        dynamic5QISetRef:
+          type: string
+      type: object
+    GnbCuUpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_attributes_allOf'
+    GnbCuUpFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    GnbCuUpFunction_Single_allOf_1:
+      properties:
+        RRMPolicyRatio:
+          items:
+            $ref: '#/components/schemas/RRMPolicyRatio-Single'
+          type: array
+        EP_E1:
+          $ref: '#/components/schemas/EP_E1-Single'
+        EP_XnU:
+          items:
+            $ref: '#/components/schemas/EP_XnU-Single'
+          type: array
+        EP_F1U:
+          items:
+            $ref: '#/components/schemas/EP_F1U-Single'
+          type: array
+        EP_NgU:
+          items:
+            $ref: '#/components/schemas/EP_NgU-Single'
+          type: array
+        EP_X2U:
+          items:
+            $ref: '#/components/schemas/EP_X2U-Single'
+          type: array
+        EP_S1U:
+          items:
+            $ref: '#/components/schemas/EP_S1U-Single'
+          type: array
+      type: object
+      example: null
+    GnbCuCpFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        gnbCuName:
+          maxLength: 150
+          type: string
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+        x2BlockList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        xnBlockList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        x2AllowList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        xnAllowList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        x2HOBlockList:
+          items:
+            $ref: '#/components/schemas/GEnbId'
+          type: array
+        xnHOBlackList:
+          items:
+            $ref: '#/components/schemas/GGnbId'
+          type: array
+        mappingSetIDBackhaulAddress:
+          $ref: '#/components/schemas/MappingSetIDBackhaulAddress'
+        tceMappingInfoList:
+          items:
+            $ref: '#/components/schemas/TceMappingInfo'
+          type: array
+        configurable5QISetRef:
+          type: string
+        dynamic5QISetRef:
+          type: string
+        dCHOControl:
+          type: boolean
+        dDAPSHOControl:
+          type: boolean
+      type: object
+    GnbCuCpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_attributes_allOf'
+    GnbCuCpFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    GnbCuCpFunction_Single_allOf_1:
+      properties:
+        RRMPolicyRatio:
+          items:
+            $ref: '#/components/schemas/RRMPolicyRatio-Single'
+          type: array
+        NrCellCu:
+          items:
+            $ref: '#/components/schemas/NrCellCu-Single'
+          type: array
+        EP_XnC:
+          items:
+            $ref: '#/components/schemas/EP_XnC-Single'
+          type: array
+        EP_E1:
+          items:
+            $ref: '#/components/schemas/EP_E1-Single'
+          type: array
+        EP_F1C:
+          items:
+            $ref: '#/components/schemas/EP_F1C-Single'
+          type: array
+        EP_NgC:
+          items:
+            $ref: '#/components/schemas/EP_NgC-Single'
+          type: array
+        EP_X2C:
+          items:
+            $ref: '#/components/schemas/EP_X2C-Single'
+          type: array
+        DANRManagementFunction:
+          $ref: '#/components/schemas/DANRManagementFunction-Single'
+        DESManagementFunction:
+          $ref: '#/components/schemas/DESManagementFunction-Single'
+        DMROFunction:
+          $ref: '#/components/schemas/DMROFunction-Single'
+        DLBOFunction:
+          $ref: '#/components/schemas/DLBOFunction-Single'
+      type: object
+      example: null
+    NrCellCu_Single_allOf_attributes_allOf:
+      properties:
+        cellLocalId:
+          type: integer
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        nRFrequencyRef:
+          type: string
+      type: object
+    NrCellCu_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrCellCu_Single_allOf_attributes_allOf'
+    NrCellCu_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NrCellCu_Single_allOf_attributes'
+      type: object
+      example: null
+    NrCellCu_Single_allOf_1:
+      properties:
+        RRMPolicyRatio:
+          items:
+            $ref: '#/components/schemas/RRMPolicyRatio-Single'
+          type: array
+        NRCellRelation:
+          items:
+            $ref: '#/components/schemas/NRCellRelation-Single'
+          type: array
+        EUtranCellRelation:
+          items:
+            $ref: '#/components/schemas/EUtranCellRelation-Single'
+          type: array
+        NRFreqRelation:
+          items:
+            $ref: '#/components/schemas/NRFreqRelation-Single'
+          type: array
+        EUtranFreqRelation:
+          items:
+            $ref: '#/components/schemas/EUtranFreqRelation-Single'
+          type: array
+        DESManagementFunction:
+          $ref: '#/components/schemas/DESManagementFunction-Single'
+        DMROFunction:
+          $ref: '#/components/schemas/DMROFunction-Single'
+        DLBOFunction:
+          $ref: '#/components/schemas/DLBOFunction-Single'
+        CESManagementFunction:
+          $ref: '#/components/schemas/CESManagementFunction-Single'
+        DPCIConfigurationFunction:
+          $ref: '#/components/schemas/DPCIConfigurationFunction-Single'
+      type: object
+      example: null
+    NrCellDu_Single_allOf_attributes_allOf:
+      properties:
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        cellLocalId:
+          type: integer
+        cellState:
+          $ref: '#/components/schemas/CellState'
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        npnIdentityList:
+          items:
+            $ref: '#/components/schemas/NpnIdentity'
+          type: array
+        nrPci:
+          maximum: 503
+          type: integer
+        nrTac:
+          maximum: 16777215
+          type: integer
+        arfcnDL:
+          type: integer
+        arfcnUL:
+          type: integer
+        arfcnSUL:
+          type: integer
+        bSChannelBwDL:
+          type: integer
+        bSChannelBwUL:
+          type: integer
+        bSChannelBwSUL:
+          type: integer
+        ssbFrequency:
+          maximum: 3279165
+          minimum: 0
+          type: integer
+        ssbPeriodicity:
+          $ref: '#/components/schemas/SsbPeriodicity'
+        ssbSubCarrierSpacing:
+          $ref: '#/components/schemas/SsbSubCarrierSpacing'
+        ssbOffset:
+          maximum: 159
+          minimum: 0
+          type: integer
+        ssbDuration:
+          $ref: '#/components/schemas/SsbDuration'
+        nrSectorCarrierRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        bwpRef:
+          description: Condition is BWP sets are not supported
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        bwpSetRef:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        rimRSMonitoringStartTime:
+          type: string
+        rimRSMonitoringStopTime:
+          type: string
+        rimRSMonitoringWindowDuration:
+          type: integer
+        rimRSMonitoringWindowStartingOffset:
+          type: integer
+        rimRSMonitoringWindowPeriodicity:
+          type: integer
+        rimRSMonitoringOccasionInterval:
+          type: integer
+        rimRSMonitoringOccasionStartingOffset:
+          type: integer
+        nRFrequencyRef:
+          type: string
+        victimSetRef:
+          type: string
+        aggressorSetRef:
+          type: string
+      type: object
+    NrCellDu_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrCellDu_Single_allOf_attributes_allOf'
+    NrCellDu_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NrCellDu_Single_allOf_attributes'
+      type: object
+      example: null
+    NrCellDu_Single_allOf_1:
+      properties:
+        RRMPolicyRatio:
+          items:
+            $ref: '#/components/schemas/RRMPolicyRatio-Single'
+          type: array
+        CPCIConfigurationFunction:
+          $ref: '#/components/schemas/CPCIConfigurationFunction-Single'
+        DRACHOptimizationFunction:
+          $ref: '#/components/schemas/DRACHOptimizationFunction-Single'
+        NrOperatorCellDu:
+          items:
+            $ref: '#/components/schemas/NrOperatorCellDu-Single'
+          type: array
+      type: object
+      example: null
+    BWPSet_Single_allOf:
+      properties:
+        bWPlist:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+      example: null
+    NrOperatorCellDu_Single_allOf:
+      properties:
+        cellLocalId:
+          type: integer
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        plmnInfoList:
+          items:
+            $ref: '#/components/schemas/PlmnInfo'
+          type: array
+        nrTac:
+          maximum: 16777215
+          type: integer
+      type: object
+      example: null
+    NRFrequency_Single_allOf_attributes:
+      properties:
+        absoluteFrequencySSB:
+          maximum: 3279165
+          minimum: 0
+          type: integer
+        ssbSubCarrierSpacing:
+          $ref: '#/components/schemas/SsbSubCarrierSpacing'
+        multiFrequencyBandListNR:
+          maximum: 256
+          minimum: 1
+          type: integer
+      type: object
+      example: null
+    NRFrequency_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NRFrequency_Single_allOf_attributes'
+      type: object
+      example: null
+    EUtranFrequency_Single_allOf_attributes:
+      properties:
+        earfcnDL:
+          maximum: 262143
+          minimum: 0
+          type: integer
+        multiBandInfoListEutra:
+          maximum: 256
+          minimum: 1
+          type: integer
+      type: object
+      example: null
+    EUtranFrequency_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/EUtranFrequency_Single_allOf_attributes'
+      type: object
+      example: null
+    NrSectorCarrier_Single_allOf_attributes_allOf:
+      properties:
+        txDirection:
+          $ref: '#/components/schemas/TxDirection'
+        configuredMaxTxPower:
+          type: integer
+        arfcnDL:
+          type: integer
+        arfcnUL:
+          type: integer
+        bSChannelBwDL:
+          type: integer
+        bSChannelBwUL:
+          type: integer
+        sectorEquipmentFunctionRef:
+          type: string
+      type: object
+    NrSectorCarrier_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_attributes_allOf'
+    NrSectorCarrier_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_attributes'
+      type: object
+      example: null
+    NrSectorCarrier_Single_allOf_1:
+      properties:
+        CommonBeamformingFunction:
+          $ref: '#/components/schemas/CommonBeamformingFunction-Single'
+      type: object
+      example: null
+    Bwp_Single_allOf_attributes_allOf:
+      properties:
+        bwpContext:
+          $ref: '#/components/schemas/BwpContext'
+        isInitialBwp:
+          $ref: '#/components/schemas/IsInitialBwp'
+        subCarrierSpacing:
+          type: integer
+        cyclicPrefix:
+          $ref: '#/components/schemas/CyclicPrefix'
+        startRB:
+          type: integer
+        numberOfRBs:
+          type: integer
+      type: object
+    Bwp_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/Bwp_Single_allOf_attributes_allOf'
+    Bwp_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/Bwp_Single_allOf_attributes'
+      type: object
+      example: null
+    CommonBeamformingFunction_Single_allOf_attributes_allOf:
+      properties:
+        coverageShape:
+          maximum: 65535
+          type: integer
+        digitalAzimuth:
+          maximum: 1800
+          minimum: -1800
+          type: integer
+        digitalTilt:
+          maximum: 900
+          minimum: -900
+          type: integer
+      type: object
+    CommonBeamformingFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_attributes_allOf'
+    CommonBeamformingFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    CommonBeamformingFunction_Single_allOf_1:
+      properties:
+        Beam:
+          items:
+            $ref: '#/components/schemas/Beam-Single'
+          type: array
+      type: object
+      example: null
+    Beam_Single_allOf_attributes_allOf:
+      properties:
+        beamIndex:
+          type: integer
+        beamType:
+          enum:
+          - SSB-BEAM
+          type: string
+        beamAzimuth:
+          maximum: 1800
+          minimum: -1800
+          type: integer
+        beamTilt:
+          maximum: 900
+          minimum: -900
+          type: integer
+        beamHorizWidth:
+          maximum: 3599
+          minimum: 0
+          type: integer
+        beamVertWidth:
+          maximum: 1800
+          minimum: 0
+          type: integer
+      type: object
+    Beam_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/Beam_Single_allOf_attributes_allOf'
+    Beam_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/Beam_Single_allOf_attributes'
+      type: object
+      example: null
+    RRMPolicyRatio_Single_allOf_attributes_allOf:
+      properties:
+        rRMPolicyMaxRatio:
+          type: integer
+        rRMPolicyMinRatio:
+          type: integer
+        rRMPolicyDedicatedRatio:
+          type: integer
+      type: object
+    RRMPolicyRatio_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/RrmPolicy_-Attr'
+      - $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf_attributes_allOf'
+    RRMPolicyRatio_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf_attributes'
+      type: object
+      example: null
+    NRCellRelation_Single_allOf_attributes:
+      properties:
+        nRTCI:
+          type: integer
+        cellIndividualOffset:
+          $ref: '#/components/schemas/CellIndividualOffset'
+        adjacentNRCellRef:
+          type: string
+        nRFreqRelationRef:
+          type: string
+        isRemoveAllowed:
+          type: boolean
+        isHOAllowed:
+          type: boolean
+        isESCoveredBy:
+          $ref: '#/components/schemas/IsESCoveredBy'
+        isENDCAllowed:
+          type: boolean
+        isMLBAllowed:
+          type: boolean
+      type: object
+      example: null
+    NRCellRelation_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NRCellRelation_Single_allOf_attributes'
+      type: object
+      example: null
+    EUtranCellRelation_Single_allOf_attributes_allOf:
+      properties:
+        adjacentEUtranCellRef:
+          type: string
+      type: object
+    EUtranCellRelation_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/EUtranCellRelation_Single_allOf_attributes_allOf'
+    EUtranCellRelation_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/EUtranCellRelation_Single_allOf_attributes'
+      type: object
+      example: null
+    NRFreqRelation_Single_allOf_attributes:
+      properties:
+        offsetMO:
+          $ref: '#/components/schemas/QOffsetRangeList'
+        blockListEntry:
+          items:
+            maximum: 1007
+            minimum: 0
+            type: integer
+          type: array
+        blockListEntryIdleMode:
+          type: integer
+        cellReselectionPriority:
+          type: integer
+        cellReselectionSubPriority:
+          maximum: 0.8
+          minimum: 0.2
+          multipleOf: 0.2
+          type: number
+        pMax:
+          maximum: 33
+          minimum: -30
+          type: integer
+        qOffsetFreq:
+          type: number
+        qQualMin:
+          type: number
+        qRxLevMin:
+          maximum: -44
+          minimum: -140
+          type: integer
+        threshXHighP:
+          maximum: 62
+          minimum: 0
+          type: integer
+        threshXHighQ:
+          maximum: 31
+          minimum: 0
+          type: integer
+        threshXLowP:
+          maximum: 62
+          minimum: 0
+          type: integer
+        threshXLowQ:
+          maximum: 31
+          minimum: 0
+          type: integer
+        tReselectionNr:
+          maximum: 7
+          minimum: 0
+          type: integer
+        tReselectionNRSfHigh:
+          $ref: '#/components/schemas/TReselectionNRSf'
+        tReselectionNRSfMedium:
+          $ref: '#/components/schemas/TReselectionNRSf'
+        nRFrequencyRef:
+          type: string
+      type: object
+      example: null
+    NRFreqRelation_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NRFreqRelation_Single_allOf_attributes'
+      type: object
+      example: null
+    EUtranFreqRelation_Single_allOf_attributes:
+      properties:
+        cellIndividualOffset:
+          $ref: '#/components/schemas/CellIndividualOffset'
+        blackListEntry:
+          items:
+            maximum: 1007
+            minimum: 0
+            type: integer
+          type: array
+        blackListEntryIdleMode:
+          type: integer
+        cellReselectionPriority:
+          type: integer
+        cellReselectionSubPriority:
+          maximum: 0.8
+          minimum: 0.2
+          multipleOf: 0.2
+          type: number
+        pMax:
+          maximum: 33
+          minimum: -30
+          type: integer
+        qOffsetFreq:
+          type: number
+        qQualMin:
+          type: number
+        qRxLevMin:
+          maximum: -44
+          minimum: -140
+          type: integer
+        threshXHighP:
+          maximum: 62
+          minimum: 0
+          type: integer
+        threshXHighQ:
+          maximum: 31
+          minimum: 0
+          type: integer
+        threshXLowP:
+          maximum: 62
+          minimum: 0
+          type: integer
+        threshXLowQ:
+          maximum: 31
+          minimum: 0
+          type: integer
+        tReselectionEutran:
+          maximum: 7
+          minimum: 0
+          type: integer
+        tReselectionNRSfHigh:
+          $ref: '#/components/schemas/TReselectionNRSf'
+        tReselectionNRSfMedium:
+          $ref: '#/components/schemas/TReselectionNRSf'
+        eUTranFrequencyRef:
+          type: string
+      type: object
+      example: null
+    EUtranFreqRelation_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/EUtranFreqRelation_Single_allOf_attributes'
+      type: object
+      example: null
+    DANRManagementFunction_Single_allOf_attributes:
+      properties:
+        intrasystemANRManagementSwitch:
+          type: boolean
+        intersystemANRManagementSwitch:
+          type: boolean
+      type: object
+      example: null
+    DANRManagementFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DANRManagementFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    DESManagementFunction_Single_allOf_attributes:
+      properties:
+        desSwitch:
+          type: boolean
+        intraRatEsActivationOriginalCellLoadParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationOriginalCellLoadParameters'
+        intraRatEsActivationCandidateCellsLoadParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationCandidateCellsLoadParameters'
+        intraRatEsDeactivationCandidateCellsLoadParameters:
+          $ref: '#/components/schemas/IntraRatEsDeactivationCandidateCellsLoadParameters'
+        esNotAllowedTimePeriod:
+          $ref: '#/components/schemas/EsNotAllowedTimePeriod'
+        interRatEsActivationOriginalCellParameters:
+          $ref: '#/components/schemas/InterRatEsActivationOriginalCellParameters'
+        interRatEsActivationCandidateCellParameters:
+          $ref: '#/components/schemas/InterRatEsActivationCandidateCellParameters'
+        interRatEsDeactivationCandidateCellParameters:
+          $ref: '#/components/schemas/InterRatEsDeactivationCandidateCellParameters'
+        isProbingCapable:
+          enum:
+          - "true"
+          - "false"
+          type: string
+        energySavingState:
+          enum:
+          - isNotEnergySaving
+          - isEnergySaving
+          type: string
+      type: object
+      example: null
+    DESManagementFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DESManagementFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    DRACHOptimizationFunction_Single_allOf_attributes:
+      properties:
+        drachOptimizationControl:
+          type: boolean
+        ueAccProbilityDist:
+          $ref: '#/components/schemas/UeAccProbilityDist'
+        ueAccDelayProbilityDist:
+          $ref: '#/components/schemas/UeAccDelayProbilityDist'
+      type: object
+      example: null
+    DRACHOptimizationFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DRACHOptimizationFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    DMROFunction_Single_allOf_attributes:
+      properties:
+        dmroControl:
+          type: boolean
+        maximumDeviationHoTriggerLow:
+          maximum: 20
+          minimum: -20
+          type: integer
+        maximumDeviationHoTriggerHigh:
+          maximum: 20
+          minimum: -20
+          type: integer
+        minimumTimeBetweenHoTriggerChange:
+          maximum: 604800
+          minimum: 0
+          type: integer
+        tstoreUEcntxt:
+          maximum: 1023
+          minimum: 0
+          type: integer
+      type: object
+      example: null
+    DMROFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DMROFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    DLBOFunction_Single_allOf_attributes:
+      properties:
+        dlboControl:
+          type: boolean
+        maximumDeviationHoTrigger:
+          maximum: 20
+          minimum: -20
+          type: integer
+        minimumTimeBetweenHoTriggerChange:
+          maximum: 604800
+          minimum: 0
+          type: integer
+      type: object
+      example: null
+    DLBOFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DLBOFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    DPCIConfigurationFunction_Single_allOf_attributes:
+      properties:
+        dPciConfigurationControl:
+          type: boolean
+        nRPciList:
+          $ref: '#/components/schemas/NRPciList'
+      type: object
+      example: null
+    DPCIConfigurationFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/DPCIConfigurationFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    CPCIConfigurationFunction_Single_allOf_attributes:
+      properties:
+        cPciConfigurationControl:
+          type: boolean
+        cSonPciList:
+          $ref: '#/components/schemas/CSonPciList'
+      type: object
+      example: null
+    CPCIConfigurationFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CPCIConfigurationFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    CESManagementFunction_Single_allOf_attributes:
+      properties:
+        cesSwitch:
+          type: boolean
+        intraRatEsActivationOriginalCellLoadParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationOriginalCellLoadParameters'
+        intraRatEsActivationCandidateCellsLoadParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationCandidateCellsLoadParameters'
+        intraRatEsDeactivationCandidateCellsLoadParameters:
+          $ref: '#/components/schemas/IntraRatEsDeactivationCandidateCellsLoadParameters'
+        esNotAllowedTimePeriod:
+          $ref: '#/components/schemas/EsNotAllowedTimePeriod'
+        interRatEsActivationOriginalCellParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationOriginalCellLoadParameters'
+        interRatEsActivationCandidateCellParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationOriginalCellLoadParameters'
+        interRatEsDeactivationCandidateCellParameters:
+          $ref: '#/components/schemas/IntraRatEsActivationOriginalCellLoadParameters'
+        energySavingControl:
+          enum:
+          - toBeEnergySaving
+          - toBeNotEnergySaving
+          type: string
+        energySavingState:
+          enum:
+          - isNotEnergySaving
+          - isEnergySaving
+          type: string
+      type: object
+      example: null
+    CESManagementFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CESManagementFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    RimRSGlobal_Single_allOf_attributes:
+      properties:
+        frequencyDomainPara:
+          $ref: '#/components/schemas/FrequencyDomainPara'
+        sequenceDomainPara:
+          $ref: '#/components/schemas/SequenceDomainPara'
+        timeDomainPara:
+          $ref: '#/components/schemas/TimeDomainPara'
+      type: object
+      example: null
+    RimRSGlobal_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RimRSGlobal_Single_allOf_attributes'
+        RimRSSet:
+          items:
+            $ref: '#/components/schemas/RimRSSet-Single'
+          type: array
+      type: object
+      example: null
+    RimRSSet_Single_allOf_attributes:
+      properties:
+        setId:
+          maximum: 4194303
+          type: integer
+        setType:
+          $ref: '#/components/schemas/RSSetType'
+        nRCellDURefs:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+      example: null
+    RimRSSet_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/RimRSSet_Single_allOf_attributes'
+      type: object
+      example: null
+    ExternalGnbDuFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+      type: object
+    ExternalGnbDuFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_attributes_allOf'
+    ExternalGnbDuFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    ExternalGnbDuFunction_Single_allOf_1:
+      properties:
+        EP_F1C:
+          items:
+            $ref: '#/components/schemas/EP_F1C-Single'
+          type: array
+        EP_F1U:
+          items:
+            $ref: '#/components/schemas/EP_F1U-Single'
+          type: array
+      type: object
+      example: null
+    ExternalGnbCuUpFunction_Single_allOf:
+      properties:
+        EP_E1:
+          items:
+            $ref: '#/components/schemas/EP_E1-Single'
+          type: array
+        EP_F1U:
+          items:
+            $ref: '#/components/schemas/EP_F1U-Single'
+          type: array
+        EP_XnU:
+          items:
+            $ref: '#/components/schemas/EP_XnU-Single'
+          type: array
+      type: object
+      example: null
+    ExternalGnbCuCpFunction_Single_allOf_attributes_allOf:
+      properties:
+        gnbId:
+          type: string
+        gnbIdLength:
+          maximum: 32
+          minimum: 22
+          type: integer
+        plmnId:
+          $ref: '#/components/schemas/PlmnId'
+      type: object
+    ExternalGnbCuCpFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_attributes_allOf'
+    ExternalGnbCuCpFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    ExternalGnbCuCpFunction_Single_allOf_1:
+      properties:
+        ExternalNrCellCu:
+          items:
+            $ref: '#/components/schemas/ExternalNrCellCu-Single'
+          type: array
+        EP_XnC:
+          items:
+            $ref: '#/components/schemas/EP_XnC-Single'
+          type: array
+        EP_E1:
+          items:
+            $ref: '#/components/schemas/EP_E1-Single'
+          type: array
+        EP_F1C:
+          items:
+            $ref: '#/components/schemas/EP_F1C-Single'
+          type: array
+      type: object
+      example: null
+    ExternalNrCellCu_Single_allOf_attributes_allOf:
+      properties:
+        cellLocalId:
+          type: integer
+        nrPci:
+          maximum: 503
+          type: integer
+        plmnIdList:
+          items:
+            $ref: '#/components/schemas/PlmnId'
+          type: array
+        nRFrequencyRef:
+          type: string
+      type: object
+    ExternalNrCellCu_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf_attributes_allOf'
+    ExternalNrCellCu_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf_attributes'
+      type: object
+      example: null
+    ExternalENBFunction_Single_allOf_attributes_allOf:
+      properties:
+        eNBId:
+          type: integer
+      type: object
+    ExternalENBFunction_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_attributes_allOf'
+    ExternalENBFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    ExternalENBFunction_Single_allOf_1:
+      properties:
+        ExternalEUTranCell:
+          items:
+            $ref: '#/components/schemas/ExternalEUTranCell-Single'
+          type: array
+      type: object
+      example: null
+    ExternalEUTranCell_Single_allOf_attributes_allOf:
+      properties:
+        EUtranFrequencyRef:
+          type: string
+      type: object
+    ExternalEUTranCell_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/ManagedFunction-Attr'
+      - $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf_attributes_allOf'
+    ExternalEUTranCell_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf_attributes'
+      type: object
+      example: null
+    EP_XnC_Single_allOf_attributes_allOf:
+      properties:
+        localAddress:
+          $ref: '#/components/schemas/LocalAddress'
+        remoteAddress:
+          $ref: '#/components/schemas/RemoteAddress'
+      type: object
+    EP_XnC_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/EP_RP-Attr'
+      - $ref: '#/components/schemas/EP_XnC_Single_allOf_attributes_allOf'
+    EP_XnC_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/EP_XnC_Single_allOf_attributes'
+      type: object
+      example: null
+    EP_F1U_Single_allOf_attributes_allOf:
+      properties:
+        localAddress:
+          $ref: '#/components/schemas/LocalAddress'
+        remoteAddress:
+          $ref: '#/components/schemas/RemoteAddress'
+        epTransportRefs:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+    EP_F1U_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/EP_RP-Attr'
+      - $ref: '#/components/schemas/EP_F1U_Single_allOf_attributes_allOf'
+    EP_F1U_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/EP_F1U_Single_allOf_attributes'
+      type: object
+      example: null
+    CCOFunction_Single_allOf_attributes:
+      properties:
+        cCOControl:
+          type: boolean
+        cCOWeakCoverageParameters:
+          $ref: '#/components/schemas/CCOWeakCoverageParameters-Single'
+        cCOPilotPollutionParameters:
+          $ref: '#/components/schemas/CCOPilotPollutionParameters-Single'
+        cCOOvershootCoverageParameters-Single:
+          $ref: '#/components/schemas/CCOOvershootCoverageParameters-Single'
+      type: object
+      example: null
+    CCOFunction_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CCOFunction_Single_allOf_attributes'
+      type: object
+      example: null
+    CCOParameters_Attr_allOf_attributes:
+      properties:
+        coverageShapeList:
+          type: integer
+        downlinkTransmitPowerRange:
+          $ref: '#/components/schemas/ParameterRange'
+        antennaTiltRange:
+          $ref: '#/components/schemas/ParameterRange'
+        antennaAzimuthRange:
+          $ref: '#/components/schemas/ParameterRange'
+        digitalTiltRange:
+          $ref: '#/components/schemas/ParameterRange'
+        digitalAzimuthRange:
+          $ref: '#/components/schemas/ParameterRange'
+      type: object
+      example: null
+    CCOParameters_Attr_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/CCOParameters_Attr_allOf_attributes'
+      type: object
+      example: null
+    VsDataContainer_Single_attributes:
+      properties:
+        vsDataType:
+          type: string
+        vsDataFormatVersion:
+          type: string
+        vsData:
+          nullable: true
+      type: object
+    ManagementNode_Single_allOf_attributes:
+      properties:
+        userLabel:
+          type: string
+        managedElements:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        vendorName:
+          type: string
+        userDefinedState:
+          type: string
+        locationName:
+          type: string
+        swVersion:
+          type: string
+      type: object
+      example: null
+    ManagementNode_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ManagementNode_Single_allOf_attributes'
+        MnsAgent:
+          items:
+            $ref: '#/components/schemas/MnsAgent-Single'
+          type: array
+      type: object
+      example: null
+    MnsAgent_Single_allOf_attributes:
+      properties:
+        systemDN:
+          type: string
+      type: object
+      example: null
+    MnsAgent_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/MnsAgent_Single_allOf_attributes'
+      type: object
+      example: null
+    MeContext_Single_allOf_attributes:
+      properties:
+        dnPrefix:
+          type: string
+      type: object
+      example: null
+    MeContext_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/MeContext_Single_allOf_attributes'
+      type: object
+      example: null
+    PerfMetricJob_Single_allOf_attributes:
+      properties:
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        jobId:
+          type: string
+        performanceMetrics:
+          items:
+            type: string
+          type: array
+        granularityPeriod:
+          minimum: 1
+          type: integer
+        objectInstances:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        rootObjectInstances:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        reportingCtrl:
+          $ref: '#/components/schemas/ReportingCtrl'
+      type: object
+      example: null
+    PerfMetricJob_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/PerfMetricJob_Single_allOf_attributes'
+        Files:
+          items:
+            $ref: '#/components/schemas/Files-Single'
+          type: array
+      type: object
+      example: null
+    ReportingCtrl_oneOf:
+      properties:
+        fileReportingPeriod:
+          type: integer
+      type: object
+    ReportingCtrl_oneOf_1:
+      properties:
+        fileReportingPeriod:
+          type: integer
+        fileLocation:
+          type: string
+      type: object
+    ReportingCtrl_oneOf_2:
+      properties:
+        streamTarget:
+          type: string
+      type: object
+    Files_Single_allOf_attributes:
+      properties:
+        numberOfFiles:
+          type: integer
+        jobRef:
+          type: string
+        jobId:
+          type: string
+        File:
+          items:
+            $ref: '#/components/schemas/File-Single'
+          type: array
+      type: object
+      example: null
+    Files_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/Files_Single_allOf_attributes'
+      type: object
+      example: null
+    File_Single_allOf_attributes:
+      properties:
+        fileLocation:
+          type: string
+        fileCompression:
+          type: string
+        fileSize:
+          type: integer
+        fileDataType:
+          enum:
+          - PERFORMANCE
+          - TRACE
+          - ANALYTICS
+          - PROPRIETARY
+          type: string
+        fileFormat:
+          type: string
+        fileReadyTime:
+          format: date-time
+          type: string
+        fileExpirationTime:
+          format: date-time
+          type: string
+        fileContent:
+          type: string
+        jobRef:
+          type: string
+        jobId:
+          type: string
+      type: object
+      example: null
+    File_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/File_Single_allOf_attributes'
+      type: object
+      example: null
+    ThresholdMonitor_Single_allOf_attributes:
+      properties:
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        performanceMetrics:
+          items:
+            type: string
+          type: array
+        thresholdInfoList:
+          items:
+            $ref: '#/components/schemas/ThresholdInfo'
+          type: array
+        monitorGranularityPeriod:
+          minimum: 1
+          type: integer
+        objectInstances:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+        rootObjectInstances:
+          items:
+            $ref: '#/components/schemas/Dn'
+          type: array
+      type: object
+      example: null
+    ThresholdMonitor_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ThresholdMonitor_Single_allOf_attributes'
+      type: object
+      example: null
+    ThresholdInfo_thresholdValue:
+      oneOf:
+      - type: integer
+      - $ref: '#/components/schemas/Float'
+    ThresholdInfo_hysteresis:
+      oneOf:
+      - minimum: 0
+        type: integer
+      - format: float
+        minimum: 0
+        type: number
+    TraceJob_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/TraceJob-Attr'
+        Files:
+          items:
+            $ref: '#/components/schemas/Files-Single'
+          type: array
+      type: object
+      example: null
+    eventThreshold_Type_EventThresholdRSRP:
+      oneOf:
+      - maximum: 97
+        minimum: 0
+        type: integer
+      - maximum: 127
+        minimum: 0
+        type: integer
+    eventThreshold_Type_EventThresholdRSRQ:
+      oneOf:
+      - maximum: 34
+        minimum: 0
+        type: integer
+      - maximum: 127
+        minimum: 0
+        type: integer
+    eventThreshold_Type_EventThreshold1F:
+      properties:
+        CPICH_RSCP:
+          maximum: 25
+          minimum: -120
+          type: integer
+        CPICH_EcNo:
+          maximum: 0
+          minimum: -24
+          type: integer
+        PathLoss:
+          maximum: 165
+          minimum: 30
+          type: integer
+      type: object
+    plmnList_Type_inner:
+      properties:
+        mcc:
+          pattern: "^[0-9]{3}$"
+          type: string
+        mnc:
+          pattern: "^[0-9]{2,3}$"
+          type: string
+      required:
+      - mcc
+      - mnc
+      type: object
+    ManagementDataCollection_Single_allOf_attributes:
+      properties:
+        managementData:
+          $ref: '#/components/schemas/ManagementData'
+        targetNodeFilter:
+          $ref: '#/components/schemas/NodeFilter'
+        collectionTimeWindow:
+          $ref: '#/components/schemas/TimeWindow'
+        reportingCtrl:
+          $ref: '#/components/schemas/ReportingCtrl'
+        dataScope:
+          enum:
+          - SNSSAI
+          - 5QI
+          type: string
+      type: object
+      example: null
+    ManagementDataCollection_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ManagementDataCollection_Single_allOf_attributes'
+      type: object
+      example: null
+    NtfSubscriptionControl_Single_allOf_attributes:
+      properties:
+        notificationRecipientAddress:
+          type: string
+        notificationTypes:
+          items:
+            $ref: '#/components/schemas/NotificationType'
+          type: array
+        scope:
+          $ref: '#/components/schemas/Scope'
+        notificationFilter:
+          description: The filter format shall be compliant to XPath 1.0.
+          type: string
+      type: object
+      example: null
+    NtfSubscriptionControl_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/NtfSubscriptionControl_Single_allOf_attributes'
+        HeartbeatControl:
+          $ref: '#/components/schemas/HeartbeatControl-Single'
+      type: object
+      example: null
+    HeartbeatControl_Single_allOf_attributes:
+      properties:
+        heartbeatNtfPeriod:
+          minimum: 0
+          type: integer
+        triggerHeartbeatNtf:
+          type: boolean
+      type: object
+      example: null
+    HeartbeatControl_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/HeartbeatControl_Single_allOf_attributes'
+      type: object
+      example: null
+    AlarmList_Single_allOf_attributes:
+      properties:
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        numOfAlarmRecords:
+          type: integer
+        lastModification:
+          format: date-time
+          type: string
+        alarmRecords:
+          additionalProperties:
+            $ref: '#/components/schemas/AlarmRecord'
+          description: This resource represents a map of alarm records. The alarmIds
+            are used as keys in the map.
+          type: object
+      type: object
+      example: null
+    AlarmList_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/AlarmList_Single_allOf_attributes'
+      type: object
+      example: null
+    FileDownloadJob_Single_allOf_attributes:
+      properties:
+        fileLocation:
+          type: string
+        notificationRecipientAddress:
+          type: string
+        cancelJob:
+          enum:
+          - "true"
+          - "false"
+          type: string
+        jobMonitor:
+          $ref: '#/components/schemas/FileDownloadJobProcessMonitor'
+      type: object
+      example: null
+    FileDownloadJob_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/FileDownloadJob_Single_allOf_attributes'
+      type: object
+      example: null
+    FileDownloadJobProcessMonitor_resultStateInfo:
+      oneOf:
+      - enum:
+        - null
+        - UNKNOWN
+        - NO_STORAGE
+        - LOW_MEMROY
+        - NO_CONNECTION_TO_REMOTE_SERVER
+        - FILE_NOT_AVAILABLE
+        - DNS_CANNOT_BE_RESOLVED
+        - TIMER_EXPIRED
+        - OTHER
+        type: string
+      - type: string
+    Configurable5QISet_Single_allOf_attributes_allOf:
+      properties:
+        configurable5QIs:
+          items:
+            $ref: '#/components/schemas/FiveQICharacteristics-Single'
+          type: array
+      type: object
+    Configurable5QISet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/Configurable5QISet_Single_allOf_attributes_allOf'
+    Configurable5QISet_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/Configurable5QISet_Single_allOf_attributes'
+      type: object
+      example: null
+    FiveQICharacteristics_Single_allOf:
+      properties:
+        fiveQIValue:
+          type: integer
+        resourceType:
+          enum:
+          - GBR
+          - NonGBR
+          type: string
+        priorityLevel:
+          type: integer
+        packetDelayBudget:
+          type: integer
+        packetErrorRate:
+          $ref: '#/components/schemas/PacketErrorRate'
+        averagingWindow:
+          type: integer
+        maximumDataBurstVolume:
+          type: integer
+      type: object
+      example: null
+    Dynamic5QISet_Single_allOf_attributes_allOf:
+      properties:
+        dynamic5QIs:
+          items:
+            $ref: '#/components/schemas/FiveQICharacteristics-Single'
+          type: array
+      type: object
+    Dynamic5QISet_Single_allOf_attributes:
+      allOf:
+      - $ref: '#/components/schemas/Dynamic5QISet_Single_allOf_attributes_allOf'
+    Dynamic5QISet_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/Dynamic5QISet_Single_allOf_attributes'
+      type: object
+      example: null
+    ManagedNFService_Single_allOf_attributes:
+      properties:
+        userLabel:
+          type: string
+        nFServiceType:
+          $ref: '#/components/schemas/NFServiceType'
+        sAP:
+          $ref: '#/components/schemas/SAP'
+        operations:
+          items:
+            $ref: '#/components/schemas/Operation'
+          type: array
+        administrativeState:
+          $ref: '#/components/schemas/AdministrativeState'
+        operationalState:
+          $ref: '#/components/schemas/OperationalState'
+        usageState:
+          $ref: '#/components/schemas/UsageState'
+        registrationState:
+          $ref: '#/components/schemas/RegistrationState'
+      type: object
+      example: null
+    ManagedNFService_Single_allOf:
+      properties:
+        attributes:
+          $ref: '#/components/schemas/ManagedNFService_Single_allOf_attributes'
+      type: object
+      example: null
+    ProbableCause_oneOf:
+      anyOf:
+      - enum:
+        - PROBABLE_CAUSE_001
+        - PROBABLE_CAUSE_002
+        - PROBABLE_CAUSE_003
+        - PROBABLE_CAUSE_004
+        - PROBABLE_CAUSE_005
+        type: string
+      - type: string
+    ThresholdLevelInd_oneOf:
+      properties:
+        up:
+          $ref: '#/components/schemas/ThresholdHysteresis'
+      type: object
+    ThresholdLevelInd_oneOf_1:
+      properties:
+        down:
+          $ref: '#/components/schemas/ThresholdHysteresis'
+      type: object

@@ -1,0 +1,92 @@
+openapi: 3.0.1
+info:
+  description: "OAS 3.0.1 definition of the heartbeat notification © 2020, 3GPP Organizational\
+    \ Partners (ARIB, ATIS, CCSA, ETSI, TSDSI, TTA, TTC). All rights reserved."
+  title: Heartbeat notification
+  version: 17.1.0
+externalDocs:
+  description: 3GPP TS 28.532; Generic management services
+  url: http://www.3gpp.org/ftp/Specs/archive/28_series/28.6532/
+servers:
+- url: /
+paths: {}
+components:
+  schemas:
+    HeartbeatNotificationTypes:
+      enum:
+      - notifyHeartbeat
+      type: string
+    NotifyHeartbeat:
+      allOf:
+      - $ref: '#/components/schemas/NotificationHeader'
+      - $ref: '#/components/schemas/NotifyHeartbeat_allOf'
+    NotificationHeader:
+      properties:
+        href:
+          type: string
+        notificationId:
+          type: integer
+        notificationType:
+          $ref: '#/components/schemas/NotificationType'
+        eventTime:
+          format: date-time
+          type: string
+        systemDN:
+          type: string
+      required:
+      - eventTime
+      - href
+      - notificationId
+      - notificationType
+      - systemDN
+      type: object
+    Uri:
+      type: string
+    NotificationId:
+      type: integer
+    NotificationType:
+      oneOf:
+      - $ref: '#/components/schemas/AlarmNotificationTypes'
+      - $ref: '#/components/schemas/CmNotificationTypes'
+      - $ref: '#/components/schemas/PerfNotificationTypes'
+      - $ref: '#/components/schemas/HeartbeatNotificationTypes'
+      - $ref: '#/components/schemas/FileNotificationTypes'
+    DateTime:
+      format: date-time
+      type: string
+    SystemDN:
+      type: string
+    AlarmNotificationTypes:
+      enum:
+      - notifyNewAlarm
+      - notifyChangedAlarm
+      - notifyChangedAlarmGeneral
+      - notifyAckStateChanged
+      - notifyCorrelatedNotificationChanged
+      - notifyComments
+      - notifyClearedAlarm
+      - notifyAlarmListRebuilt
+      - notifyPotentialFaultyAlarmList
+      type: string
+    CmNotificationTypes:
+      enum:
+      - notifyMOICreation
+      - notifyMOIDeletion
+      - notifyMOIAttributeValueChanges
+      - notifyMOIChanges
+      type: string
+    PerfNotificationTypes:
+      enum:
+      - notifyThresholdCrossing
+      type: string
+    FileNotificationTypes:
+      enum:
+      - notifyFileReady
+      - notifyFilePreparationError
+      type: string
+    NotifyHeartbeat_allOf:
+      properties:
+        heartbeatNtfPeriod:
+          type: integer
+      type: object
+      example: null
