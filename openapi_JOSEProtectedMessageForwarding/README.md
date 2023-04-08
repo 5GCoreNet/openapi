@@ -95,8 +95,10 @@ Class | Method | HTTP request | Description
  - [FlatJwsJson](docs/FlatJwsJson.md)
  - [HttpHeader](docs/HttpHeader.md)
  - [HttpMethod](docs/HttpMethod.md)
+ - [HttpMethodAnyOf](docs/HttpMethodAnyOf.md)
  - [HttpPayload](docs/HttpPayload.md)
  - [IeLocation](docs/IeLocation.md)
+ - [IeLocationAnyOf](docs/IeLocationAnyOf.md)
  - [IndexToEncryptedValue](docs/IndexToEncryptedValue.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [MetaData](docs/MetaData.md)
@@ -104,14 +106,17 @@ Class | Method | HTTP request | Description
  - [N32fReformattedReqMsg](docs/N32fReformattedReqMsg.md)
  - [N32fReformattedRspMsg](docs/N32fReformattedRspMsg.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PatchItem](docs/PatchItem.md)
  - [PatchOperation](docs/PatchOperation.md)
+ - [PatchOperationAnyOf](docs/PatchOperationAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RequestLine](docs/RequestLine.md)
  - [Snssai](docs/Snssai.md)
  - [UriScheme](docs/UriScheme.md)
+ - [UriSchemeAnyOf](docs/UriSchemeAnyOf.md)
 
 
 ## Documentation For Authorization

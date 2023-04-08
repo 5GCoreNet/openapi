@@ -45,7 +45,7 @@ func NewMMOriginatorInfoWithDefaults() *MMOriginatorInfo {
 
 // GetOriginatorSUPI returns the OriginatorSUPI field value if set, zero value otherwise.
 func (o *MMOriginatorInfo) GetOriginatorSUPI() string {
-	if o == nil || IsNil(o.OriginatorSUPI) {
+	if o == nil || isNil(o.OriginatorSUPI) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *MMOriginatorInfo) GetOriginatorSUPI() string {
 // GetOriginatorSUPIOk returns a tuple with the OriginatorSUPI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMOriginatorInfo) GetOriginatorSUPIOk() (*string, bool) {
-	if o == nil || IsNil(o.OriginatorSUPI) {
+	if o == nil || isNil(o.OriginatorSUPI) {
 		return nil, false
 	}
 	return o.OriginatorSUPI, true
@@ -63,7 +63,7 @@ func (o *MMOriginatorInfo) GetOriginatorSUPIOk() (*string, bool) {
 
 // HasOriginatorSUPI returns a boolean if a field has been set.
 func (o *MMOriginatorInfo) HasOriginatorSUPI() bool {
-	if o != nil && !IsNil(o.OriginatorSUPI) {
+	if o != nil && !isNil(o.OriginatorSUPI) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *MMOriginatorInfo) SetOriginatorSUPI(v string) {
 
 // GetOriginatorGPSI returns the OriginatorGPSI field value if set, zero value otherwise.
 func (o *MMOriginatorInfo) GetOriginatorGPSI() string {
-	if o == nil || IsNil(o.OriginatorGPSI) {
+	if o == nil || isNil(o.OriginatorGPSI) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *MMOriginatorInfo) GetOriginatorGPSI() string {
 // GetOriginatorGPSIOk returns a tuple with the OriginatorGPSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMOriginatorInfo) GetOriginatorGPSIOk() (*string, bool) {
-	if o == nil || IsNil(o.OriginatorGPSI) {
+	if o == nil || isNil(o.OriginatorGPSI) {
 		return nil, false
 	}
 	return o.OriginatorGPSI, true
@@ -95,7 +95,7 @@ func (o *MMOriginatorInfo) GetOriginatorGPSIOk() (*string, bool) {
 
 // HasOriginatorGPSI returns a boolean if a field has been set.
 func (o *MMOriginatorInfo) HasOriginatorGPSI() bool {
-	if o != nil && !IsNil(o.OriginatorGPSI) {
+	if o != nil && !isNil(o.OriginatorGPSI) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MMOriginatorInfo) SetOriginatorGPSI(v string) {
 
 // GetOriginatorOtherAddress returns the OriginatorOtherAddress field value if set, zero value otherwise.
 func (o *MMOriginatorInfo) GetOriginatorOtherAddress() []SMAddressInfo {
-	if o == nil || IsNil(o.OriginatorOtherAddress) {
+	if o == nil || isNil(o.OriginatorOtherAddress) {
 		var ret []SMAddressInfo
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *MMOriginatorInfo) GetOriginatorOtherAddress() []SMAddressInfo {
 // GetOriginatorOtherAddressOk returns a tuple with the OriginatorOtherAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMOriginatorInfo) GetOriginatorOtherAddressOk() ([]SMAddressInfo, bool) {
-	if o == nil || IsNil(o.OriginatorOtherAddress) {
+	if o == nil || isNil(o.OriginatorOtherAddress) {
 		return nil, false
 	}
 	return o.OriginatorOtherAddress, true
@@ -127,7 +127,7 @@ func (o *MMOriginatorInfo) GetOriginatorOtherAddressOk() ([]SMAddressInfo, bool)
 
 // HasOriginatorOtherAddress returns a boolean if a field has been set.
 func (o *MMOriginatorInfo) HasOriginatorOtherAddress() bool {
-	if o != nil && !IsNil(o.OriginatorOtherAddress) {
+	if o != nil && !isNil(o.OriginatorOtherAddress) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o MMOriginatorInfo) MarshalJSON() ([]byte, error) {
 
 func (o MMOriginatorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OriginatorSUPI) {
+	if !isNil(o.OriginatorSUPI) {
 		toSerialize["originatorSUPI"] = o.OriginatorSUPI
 	}
-	if !IsNil(o.OriginatorGPSI) {
+	if !isNil(o.OriginatorGPSI) {
 		toSerialize["originatorGPSI"] = o.OriginatorGPSI
 	}
-	if !IsNil(o.OriginatorOtherAddress) {
+	if !isNil(o.OriginatorOtherAddress) {
 		toSerialize["originatorOtherAddress"] = o.OriginatorOtherAddress
 	}
 	return toSerialize, nil

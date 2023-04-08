@@ -71,7 +71,7 @@ func (o *QosFlowProfile) SetVar5qi(v int32) {
 
 // GetNonDynamic5Qi returns the NonDynamic5Qi field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetNonDynamic5Qi() NonDynamic5Qi {
-	if o == nil || IsNil(o.NonDynamic5Qi) {
+	if o == nil || isNil(o.NonDynamic5Qi) {
 		var ret NonDynamic5Qi
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *QosFlowProfile) GetNonDynamic5Qi() NonDynamic5Qi {
 // GetNonDynamic5QiOk returns a tuple with the NonDynamic5Qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetNonDynamic5QiOk() (*NonDynamic5Qi, bool) {
-	if o == nil || IsNil(o.NonDynamic5Qi) {
+	if o == nil || isNil(o.NonDynamic5Qi) {
 		return nil, false
 	}
 	return o.NonDynamic5Qi, true
@@ -89,7 +89,7 @@ func (o *QosFlowProfile) GetNonDynamic5QiOk() (*NonDynamic5Qi, bool) {
 
 // HasNonDynamic5Qi returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasNonDynamic5Qi() bool {
-	if o != nil && !IsNil(o.NonDynamic5Qi) {
+	if o != nil && !isNil(o.NonDynamic5Qi) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *QosFlowProfile) SetNonDynamic5Qi(v NonDynamic5Qi) {
 
 // GetDynamic5Qi returns the Dynamic5Qi field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetDynamic5Qi() Dynamic5Qi {
-	if o == nil || IsNil(o.Dynamic5Qi) {
+	if o == nil || isNil(o.Dynamic5Qi) {
 		var ret Dynamic5Qi
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *QosFlowProfile) GetDynamic5Qi() Dynamic5Qi {
 // GetDynamic5QiOk returns a tuple with the Dynamic5Qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetDynamic5QiOk() (*Dynamic5Qi, bool) {
-	if o == nil || IsNil(o.Dynamic5Qi) {
+	if o == nil || isNil(o.Dynamic5Qi) {
 		return nil, false
 	}
 	return o.Dynamic5Qi, true
@@ -121,7 +121,7 @@ func (o *QosFlowProfile) GetDynamic5QiOk() (*Dynamic5Qi, bool) {
 
 // HasDynamic5Qi returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasDynamic5Qi() bool {
-	if o != nil && !IsNil(o.Dynamic5Qi) {
+	if o != nil && !isNil(o.Dynamic5Qi) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *QosFlowProfile) SetDynamic5Qi(v Dynamic5Qi) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetArp() Arp {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *QosFlowProfile) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -153,7 +153,7 @@ func (o *QosFlowProfile) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasArp() bool {
-	if o != nil && !IsNil(o.Arp) {
+	if o != nil && !isNil(o.Arp) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *QosFlowProfile) SetArp(v Arp) {
 
 // GetGbrQosFlowInfo returns the GbrQosFlowInfo field value if set, zero value otherwise.
 func (o *QosFlowProfile) GetGbrQosFlowInfo() GbrQosFlowInformation {
-	if o == nil || IsNil(o.GbrQosFlowInfo) {
+	if o == nil || isNil(o.GbrQosFlowInfo) {
 		var ret GbrQosFlowInformation
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *QosFlowProfile) GetGbrQosFlowInfo() GbrQosFlowInformation {
 // GetGbrQosFlowInfoOk returns a tuple with the GbrQosFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowProfile) GetGbrQosFlowInfoOk() (*GbrQosFlowInformation, bool) {
-	if o == nil || IsNil(o.GbrQosFlowInfo) {
+	if o == nil || isNil(o.GbrQosFlowInfo) {
 		return nil, false
 	}
 	return o.GbrQosFlowInfo, true
@@ -185,7 +185,7 @@ func (o *QosFlowProfile) GetGbrQosFlowInfoOk() (*GbrQosFlowInformation, bool) {
 
 // HasGbrQosFlowInfo returns a boolean if a field has been set.
 func (o *QosFlowProfile) HasGbrQosFlowInfo() bool {
-	if o != nil && !IsNil(o.GbrQosFlowInfo) {
+	if o != nil && !isNil(o.GbrQosFlowInfo) {
 		return true
 	}
 
@@ -208,16 +208,16 @@ func (o QosFlowProfile) MarshalJSON() ([]byte, error) {
 func (o QosFlowProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
-	if !IsNil(o.NonDynamic5Qi) {
+	if !isNil(o.NonDynamic5Qi) {
 		toSerialize["nonDynamic5Qi"] = o.NonDynamic5Qi
 	}
-	if !IsNil(o.Dynamic5Qi) {
+	if !isNil(o.Dynamic5Qi) {
 		toSerialize["dynamic5Qi"] = o.Dynamic5Qi
 	}
-	if !IsNil(o.Arp) {
+	if !isNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !IsNil(o.GbrQosFlowInfo) {
+	if !isNil(o.GbrQosFlowInfo) {
 		toSerialize["gbrQosFlowInfo"] = o.GbrQosFlowInfo
 	}
 	return toSerialize, nil

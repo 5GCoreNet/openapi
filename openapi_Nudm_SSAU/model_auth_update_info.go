@@ -68,7 +68,7 @@ func (o *AuthUpdateInfo) SetAuthorizationData(v ServiceSpecificAuthorizationData
 
 // GetInvalidityInd returns the InvalidityInd field value if set, zero value otherwise.
 func (o *AuthUpdateInfo) GetInvalidityInd() bool {
-	if o == nil || IsNil(o.InvalidityInd) {
+	if o == nil || isNil(o.InvalidityInd) {
 		var ret bool
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AuthUpdateInfo) GetInvalidityInd() bool {
 // GetInvalidityIndOk returns a tuple with the InvalidityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateInfo) GetInvalidityIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.InvalidityInd) {
+	if o == nil || isNil(o.InvalidityInd) {
 		return nil, false
 	}
 	return o.InvalidityInd, true
@@ -86,7 +86,7 @@ func (o *AuthUpdateInfo) GetInvalidityIndOk() (*bool, bool) {
 
 // HasInvalidityInd returns a boolean if a field has been set.
 func (o *AuthUpdateInfo) HasInvalidityInd() bool {
-	if o != nil && !IsNil(o.InvalidityInd) {
+	if o != nil && !isNil(o.InvalidityInd) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AuthUpdateInfo) SetInvalidityInd(v bool) {
 
 // GetInvalidCause returns the InvalidCause field value if set, zero value otherwise.
 func (o *AuthUpdateInfo) GetInvalidCause() InvalidCause {
-	if o == nil || IsNil(o.InvalidCause) {
+	if o == nil || isNil(o.InvalidCause) {
 		var ret InvalidCause
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AuthUpdateInfo) GetInvalidCause() InvalidCause {
 // GetInvalidCauseOk returns a tuple with the InvalidCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthUpdateInfo) GetInvalidCauseOk() (*InvalidCause, bool) {
-	if o == nil || IsNil(o.InvalidCause) {
+	if o == nil || isNil(o.InvalidCause) {
 		return nil, false
 	}
 	return o.InvalidCause, true
@@ -118,7 +118,7 @@ func (o *AuthUpdateInfo) GetInvalidCauseOk() (*InvalidCause, bool) {
 
 // HasInvalidCause returns a boolean if a field has been set.
 func (o *AuthUpdateInfo) HasInvalidCause() bool {
-	if o != nil && !IsNil(o.InvalidCause) {
+	if o != nil && !isNil(o.InvalidCause) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o AuthUpdateInfo) MarshalJSON() ([]byte, error) {
 func (o AuthUpdateInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authorizationData"] = o.AuthorizationData
-	if !IsNil(o.InvalidityInd) {
+	if !isNil(o.InvalidityInd) {
 		toSerialize["invalidityInd"] = o.InvalidityInd
 	}
-	if !IsNil(o.InvalidCause) {
+	if !isNil(o.InvalidCause) {
 		toSerialize["invalidCause"] = o.InvalidCause
 	}
 	return toSerialize, nil

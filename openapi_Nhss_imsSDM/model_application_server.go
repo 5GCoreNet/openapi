@@ -68,7 +68,7 @@ func (o *ApplicationServer) SetAsUri(v string) {
 
 // GetSessionContinue returns the SessionContinue field value if set, zero value otherwise.
 func (o *ApplicationServer) GetSessionContinue() bool {
-	if o == nil || IsNil(o.SessionContinue) {
+	if o == nil || isNil(o.SessionContinue) {
 		var ret bool
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ApplicationServer) GetSessionContinue() bool {
 // GetSessionContinueOk returns a tuple with the SessionContinue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationServer) GetSessionContinueOk() (*bool, bool) {
-	if o == nil || IsNil(o.SessionContinue) {
+	if o == nil || isNil(o.SessionContinue) {
 		return nil, false
 	}
 	return o.SessionContinue, true
@@ -86,7 +86,7 @@ func (o *ApplicationServer) GetSessionContinueOk() (*bool, bool) {
 
 // HasSessionContinue returns a boolean if a field has been set.
 func (o *ApplicationServer) HasSessionContinue() bool {
-	if o != nil && !IsNil(o.SessionContinue) {
+	if o != nil && !isNil(o.SessionContinue) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ApplicationServer) SetSessionContinue(v bool) {
 
 // GetServiceInfoList returns the ServiceInfoList field value if set, zero value otherwise.
 func (o *ApplicationServer) GetServiceInfoList() []ServiceInformation {
-	if o == nil || IsNil(o.ServiceInfoList) {
+	if o == nil || isNil(o.ServiceInfoList) {
 		var ret []ServiceInformation
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ApplicationServer) GetServiceInfoList() []ServiceInformation {
 // GetServiceInfoListOk returns a tuple with the ServiceInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationServer) GetServiceInfoListOk() ([]ServiceInformation, bool) {
-	if o == nil || IsNil(o.ServiceInfoList) {
+	if o == nil || isNil(o.ServiceInfoList) {
 		return nil, false
 	}
 	return o.ServiceInfoList, true
@@ -118,7 +118,7 @@ func (o *ApplicationServer) GetServiceInfoListOk() ([]ServiceInformation, bool) 
 
 // HasServiceInfoList returns a boolean if a field has been set.
 func (o *ApplicationServer) HasServiceInfoList() bool {
-	if o != nil && !IsNil(o.ServiceInfoList) {
+	if o != nil && !isNil(o.ServiceInfoList) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o ApplicationServer) MarshalJSON() ([]byte, error) {
 func (o ApplicationServer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["asUri"] = o.AsUri
-	if !IsNil(o.SessionContinue) {
+	if !isNil(o.SessionContinue) {
 		toSerialize["sessionContinue"] = o.SessionContinue
 	}
-	if !IsNil(o.ServiceInfoList) {
+	if !isNil(o.ServiceInfoList) {
 		toSerialize["serviceInfoList"] = o.ServiceInfoList
 	}
 	return toSerialize, nil

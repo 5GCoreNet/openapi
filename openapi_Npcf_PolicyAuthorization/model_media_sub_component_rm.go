@@ -53,7 +53,7 @@ func NewMediaSubComponentRmWithDefaults() *MediaSubComponentRm {
 
 // GetAfSigProtocol returns the AfSigProtocol field value if set, zero value otherwise.
 func (o *MediaSubComponentRm) GetAfSigProtocol() AfSigProtocol {
-	if o == nil || IsNil(o.AfSigProtocol) {
+	if o == nil || isNil(o.AfSigProtocol) {
 		var ret AfSigProtocol
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *MediaSubComponentRm) GetAfSigProtocol() AfSigProtocol {
 // GetAfSigProtocolOk returns a tuple with the AfSigProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponentRm) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
-	if o == nil || IsNil(o.AfSigProtocol) {
+	if o == nil || isNil(o.AfSigProtocol) {
 		return nil, false
 	}
 	return o.AfSigProtocol, true
@@ -71,7 +71,7 @@ func (o *MediaSubComponentRm) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
 
 // HasAfSigProtocol returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasAfSigProtocol() bool {
-	if o != nil && !IsNil(o.AfSigProtocol) {
+	if o != nil && !isNil(o.AfSigProtocol) {
 		return true
 	}
 
@@ -96,7 +96,7 @@ func (o *MediaSubComponentRm) GetEthfDescs() []EthFlowDescription {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaSubComponentRm) GetEthfDescsOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthfDescs) {
+	if o == nil || isNil(o.EthfDescs) {
 		return nil, false
 	}
 	return o.EthfDescs, true
@@ -104,7 +104,7 @@ func (o *MediaSubComponentRm) GetEthfDescsOk() ([]EthFlowDescription, bool) {
 
 // HasEthfDescs returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasEthfDescs() bool {
-	if o != nil && IsNil(o.EthfDescs) {
+	if o != nil && isNil(o.EthfDescs) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *MediaSubComponentRm) GetFDescs() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaSubComponentRm) GetFDescsOk() ([]string, bool) {
-	if o == nil || IsNil(o.FDescs) {
+	if o == nil || isNil(o.FDescs) {
 		return nil, false
 	}
 	return o.FDescs, true
@@ -161,7 +161,7 @@ func (o *MediaSubComponentRm) GetFDescsOk() ([]string, bool) {
 
 // HasFDescs returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasFDescs() bool {
-	if o != nil && IsNil(o.FDescs) {
+	if o != nil && isNil(o.FDescs) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *MediaSubComponentRm) SetFDescs(v []string) {
 
 // GetFStatus returns the FStatus field value if set, zero value otherwise.
 func (o *MediaSubComponentRm) GetFStatus() FlowStatus {
-	if o == nil || IsNil(o.FStatus) {
+	if o == nil || isNil(o.FStatus) {
 		var ret FlowStatus
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *MediaSubComponentRm) GetFStatus() FlowStatus {
 // GetFStatusOk returns a tuple with the FStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponentRm) GetFStatusOk() (*FlowStatus, bool) {
-	if o == nil || IsNil(o.FStatus) {
+	if o == nil || isNil(o.FStatus) {
 		return nil, false
 	}
 	return o.FStatus, true
@@ -193,7 +193,7 @@ func (o *MediaSubComponentRm) GetFStatusOk() (*FlowStatus, bool) {
 
 // HasFStatus returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasFStatus() bool {
-	if o != nil && !IsNil(o.FStatus) {
+	if o != nil && !isNil(o.FStatus) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *MediaSubComponentRm) SetFStatus(v FlowStatus) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaSubComponentRm) GetMarBwDl() string {
-	if o == nil || IsNil(o.MarBwDl.Get()) {
+	if o == nil || isNil(o.MarBwDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *MediaSubComponentRm) UnsetMarBwDl() {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaSubComponentRm) GetMarBwUl() string {
-	if o == nil || IsNil(o.MarBwUl.Get()) {
+	if o == nil || isNil(o.MarBwUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *MediaSubComponentRm) UnsetMarBwUl() {
 
 // GetTosTrCl returns the TosTrCl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaSubComponentRm) GetTosTrCl() string {
-	if o == nil || IsNil(o.TosTrCl.Get()) {
+	if o == nil || isNil(o.TosTrCl.Get()) {
 		var ret string
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *MediaSubComponentRm) UnsetTosTrCl() {
 
 // GetFlowUsage returns the FlowUsage field value if set, zero value otherwise.
 func (o *MediaSubComponentRm) GetFlowUsage() FlowUsage {
-	if o == nil || IsNil(o.FlowUsage) {
+	if o == nil || isNil(o.FlowUsage) {
 		var ret FlowUsage
 		return ret
 	}
@@ -343,7 +343,7 @@ func (o *MediaSubComponentRm) GetFlowUsage() FlowUsage {
 // GetFlowUsageOk returns a tuple with the FlowUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaSubComponentRm) GetFlowUsageOk() (*FlowUsage, bool) {
-	if o == nil || IsNil(o.FlowUsage) {
+	if o == nil || isNil(o.FlowUsage) {
 		return nil, false
 	}
 	return o.FlowUsage, true
@@ -351,7 +351,7 @@ func (o *MediaSubComponentRm) GetFlowUsageOk() (*FlowUsage, bool) {
 
 // HasFlowUsage returns a boolean if a field has been set.
 func (o *MediaSubComponentRm) HasFlowUsage() bool {
-	if o != nil && !IsNil(o.FlowUsage) {
+	if o != nil && !isNil(o.FlowUsage) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o MediaSubComponentRm) MarshalJSON() ([]byte, error) {
 
 func (o MediaSubComponentRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfSigProtocol) {
+	if !isNil(o.AfSigProtocol) {
 		toSerialize["afSigProtocol"] = o.AfSigProtocol
 	}
 	if o.EthfDescs != nil {
@@ -383,7 +383,7 @@ func (o MediaSubComponentRm) ToMap() (map[string]interface{}, error) {
 	if o.FDescs != nil {
 		toSerialize["fDescs"] = o.FDescs
 	}
-	if !IsNil(o.FStatus) {
+	if !isNil(o.FStatus) {
 		toSerialize["fStatus"] = o.FStatus
 	}
 	if o.MarBwDl.IsSet() {
@@ -395,7 +395,7 @@ func (o MediaSubComponentRm) ToMap() (map[string]interface{}, error) {
 	if o.TosTrCl.IsSet() {
 		toSerialize["tosTrCl"] = o.TosTrCl.Get()
 	}
-	if !IsNil(o.FlowUsage) {
+	if !isNil(o.FlowUsage) {
 		toSerialize["flowUsage"] = o.FlowUsage
 	}
 	return toSerialize, nil

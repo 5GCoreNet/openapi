@@ -17,23 +17,37 @@ import (
 
 // ReportingConditionType The type of condition that triggers reporting by a data collection client to the Data Collection AF.
 type ReportingConditionType struct {
-	string *string
+	ReportingConditionTypeAnyOf *ReportingConditionTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingConditionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ReportingConditionTypeAnyOf
+	err = json.Unmarshal(data, &dst.ReportingConditionTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonReportingConditionTypeAnyOf, _ := json.Marshal(dst.ReportingConditionTypeAnyOf)
+		if string(jsonReportingConditionTypeAnyOf) == "{}" { // empty struct
+			dst.ReportingConditionTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ReportingConditionTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ReportingConditionTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ReportingConditionType)")
@@ -41,8 +55,12 @@ func (dst *ReportingConditionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportingConditionType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ReportingConditionTypeAnyOf != nil {
+		return json.Marshal(&src.ReportingConditionTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

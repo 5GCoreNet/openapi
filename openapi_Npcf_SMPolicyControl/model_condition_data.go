@@ -74,7 +74,7 @@ func (o *ConditionData) SetCondId(v string) {
 
 // GetActivationTime returns the ActivationTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConditionData) GetActivationTime() time.Time {
-	if o == nil || IsNil(o.ActivationTime.Get()) {
+	if o == nil || isNil(o.ActivationTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *ConditionData) UnsetActivationTime() {
 
 // GetDeactivationTime returns the DeactivationTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ConditionData) GetDeactivationTime() time.Time {
-	if o == nil || IsNil(o.DeactivationTime.Get()) {
+	if o == nil || isNil(o.DeactivationTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ConditionData) UnsetDeactivationTime() {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *ConditionData) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *ConditionData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConditionData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -176,7 +176,7 @@ func (o *ConditionData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *ConditionData) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *ConditionData) SetAccessType(v AccessType) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *ConditionData) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *ConditionData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConditionData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -208,7 +208,7 @@ func (o *ConditionData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *ConditionData) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -237,10 +237,10 @@ func (o ConditionData) ToMap() (map[string]interface{}, error) {
 	if o.DeactivationTime.IsSet() {
 		toSerialize["deactivationTime"] = o.DeactivationTime.Get()
 	}
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil

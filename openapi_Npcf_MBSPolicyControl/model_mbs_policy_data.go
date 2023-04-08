@@ -69,7 +69,7 @@ func (o *MbsPolicyData) SetMbsPolicyCtxtData(v MbsPolicyCtxtData) {
 
 // GetMbsPolicies returns the MbsPolicies field value if set, zero value otherwise.
 func (o *MbsPolicyData) GetMbsPolicies() MbsPolicyDecision {
-	if o == nil || IsNil(o.MbsPolicies) {
+	if o == nil || isNil(o.MbsPolicies) {
 		var ret MbsPolicyDecision
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MbsPolicyData) GetMbsPolicies() MbsPolicyDecision {
 // GetMbsPoliciesOk returns a tuple with the MbsPolicies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyData) GetMbsPoliciesOk() (*MbsPolicyDecision, bool) {
-	if o == nil || IsNil(o.MbsPolicies) {
+	if o == nil || isNil(o.MbsPolicies) {
 		return nil, false
 	}
 	return o.MbsPolicies, true
@@ -87,7 +87,7 @@ func (o *MbsPolicyData) GetMbsPoliciesOk() (*MbsPolicyDecision, bool) {
 
 // HasMbsPolicies returns a boolean if a field has been set.
 func (o *MbsPolicyData) HasMbsPolicies() bool {
-	if o != nil && !IsNil(o.MbsPolicies) {
+	if o != nil && !isNil(o.MbsPolicies) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *MbsPolicyData) SetMbsPolicies(v MbsPolicyDecision) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsPolicyData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MbsPolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -119,7 +119,7 @@ func (o *MbsPolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsPolicyData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o MbsPolicyData) MarshalJSON() ([]byte, error) {
 func (o MbsPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsPolicyCtxtData"] = o.MbsPolicyCtxtData
-	if !IsNil(o.MbsPolicies) {
+	if !isNil(o.MbsPolicies) {
 		toSerialize["mbsPolicies"] = o.MbsPolicies
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

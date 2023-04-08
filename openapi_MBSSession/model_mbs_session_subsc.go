@@ -93,7 +93,7 @@ func (o *MbsSessionSubsc) SetSubscription(v MbsSessionSubscription) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *MbsSessionSubsc) GetSubscriptionId() string {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *MbsSessionSubsc) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionSubsc) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -111,7 +111,7 @@ func (o *MbsSessionSubsc) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *MbsSessionSubsc) HasSubscriptionId() bool {
-	if o != nil && !IsNil(o.SubscriptionId) {
+	if o != nil && !isNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o MbsSessionSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afId"] = o.AfId
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.SubscriptionId) {
+	if !isNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
 	return toSerialize, nil

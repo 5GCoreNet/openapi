@@ -55,7 +55,7 @@ func (o *SmPolicyDataPatch) GetUmData() map[string]UsageMonData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDataPatch) GetUmDataOk() (*map[string]UsageMonData, bool) {
-	if o == nil || IsNil(o.UmData) {
+	if o == nil || isNil(o.UmData) {
 		return nil, false
 	}
 	return &o.UmData, true
@@ -63,7 +63,7 @@ func (o *SmPolicyDataPatch) GetUmDataOk() (*map[string]UsageMonData, bool) {
 
 // HasUmData returns a boolean if a field has been set.
 func (o *SmPolicyDataPatch) HasUmData() bool {
-	if o != nil && IsNil(o.UmData) {
+	if o != nil && isNil(o.UmData) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SmPolicyDataPatch) SetUmData(v map[string]UsageMonData) {
 
 // GetSmPolicySnssaiData returns the SmPolicySnssaiData field value if set, zero value otherwise.
 func (o *SmPolicyDataPatch) GetSmPolicySnssaiData() map[string]SmPolicySnssaiDataPatch {
-	if o == nil || IsNil(o.SmPolicySnssaiData) {
+	if o == nil || isNil(o.SmPolicySnssaiData) {
 		var ret map[string]SmPolicySnssaiDataPatch
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SmPolicyDataPatch) GetSmPolicySnssaiData() map[string]SmPolicySnssaiDat
 // GetSmPolicySnssaiDataOk returns a tuple with the SmPolicySnssaiData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDataPatch) GetSmPolicySnssaiDataOk() (*map[string]SmPolicySnssaiDataPatch, bool) {
-	if o == nil || IsNil(o.SmPolicySnssaiData) {
+	if o == nil || isNil(o.SmPolicySnssaiData) {
 		return nil, false
 	}
 	return o.SmPolicySnssaiData, true
@@ -95,7 +95,7 @@ func (o *SmPolicyDataPatch) GetSmPolicySnssaiDataOk() (*map[string]SmPolicySnssa
 
 // HasSmPolicySnssaiData returns a boolean if a field has been set.
 func (o *SmPolicyDataPatch) HasSmPolicySnssaiData() bool {
-	if o != nil && !IsNil(o.SmPolicySnssaiData) {
+	if o != nil && !isNil(o.SmPolicySnssaiData) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o SmPolicyDataPatch) ToMap() (map[string]interface{}, error) {
 	if o.UmData != nil {
 		toSerialize["umData"] = o.UmData
 	}
-	if !IsNil(o.SmPolicySnssaiData) {
+	if !isNil(o.SmPolicySnssaiData) {
 		toSerialize["smPolicySnssaiData"] = o.SmPolicySnssaiData
 	}
 	return toSerialize, nil

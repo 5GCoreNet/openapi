@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -17,7 +16,9 @@ docs/PlmnId.md
 docs/ProblemDetails.md
 docs/ProvisioningRequirement.md
 docs/QosResourceType.md
+docs/QosResourceTypeAnyOf.md
 docs/Result.md
+docs/ResultAnyOf.md
 docs/VAEPC5ProvisioningRequirementSubscriptionResourcePutServiceOperationApi.md
 docs/WebsockNotifConfig.md
 git_push.sh
@@ -30,7 +31,9 @@ model_plmn_id.go
 model_problem_details.go
 model_provisioning_requirement.go
 model_qos_resource_type.go
+model_qos_resource_type_any_of.go
 model_result.go
+model_result_any_of.go
 model_websock_notif_config.go
 response.go
 test/api_individual_pc5_provisioning_requirement_subscription_document_test.go

@@ -121,7 +121,7 @@ func (o *PWSResponseData) SetMessageIdentifier(v int32) {
 
 // GetUnknownTaiList returns the UnknownTaiList field value if set, zero value otherwise.
 func (o *PWSResponseData) GetUnknownTaiList() []Tai {
-	if o == nil || IsNil(o.UnknownTaiList) {
+	if o == nil || isNil(o.UnknownTaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *PWSResponseData) GetUnknownTaiList() []Tai {
 // GetUnknownTaiListOk returns a tuple with the UnknownTaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PWSResponseData) GetUnknownTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.UnknownTaiList) {
+	if o == nil || isNil(o.UnknownTaiList) {
 		return nil, false
 	}
 	return o.UnknownTaiList, true
@@ -139,7 +139,7 @@ func (o *PWSResponseData) GetUnknownTaiListOk() ([]Tai, bool) {
 
 // HasUnknownTaiList returns a boolean if a field has been set.
 func (o *PWSResponseData) HasUnknownTaiList() bool {
-	if o != nil && !IsNil(o.UnknownTaiList) {
+	if o != nil && !isNil(o.UnknownTaiList) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o PWSResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize["ngapMessageType"] = o.NgapMessageType
 	toSerialize["serialNumber"] = o.SerialNumber
 	toSerialize["messageIdentifier"] = o.MessageIdentifier
-	if !IsNil(o.UnknownTaiList) {
+	if !isNil(o.UnknownTaiList) {
 		toSerialize["unknownTaiList"] = o.UnknownTaiList
 	}
 	return toSerialize, nil

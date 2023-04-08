@@ -17,37 +17,37 @@ import (
 
 // IpIndex Represents the IP Index to be sent from UDM to the SMF (its value can be either an integer or a string)
 type IpIndex struct {
-	int32 *int32
-	string *string
+	Int32 *int32
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *IpIndex) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into int32
-	err = json.Unmarshal(data, &dst.int32);
+	err = json.Unmarshal(data, &dst.Int32);
 	if err == nil {
-		jsonint32, _ := json.Marshal(dst.int32)
-		if string(jsonint32) == "{}" { // empty struct
-			dst.int32 = nil
+		jsonInt32, _ := json.Marshal(dst.Int32)
+		if string(jsonInt32) == "{}" { // empty struct
+			dst.Int32 = nil
 		} else {
-			return nil // data stored in dst.int32, return on the first match
+			return nil // data stored in dst.Int32, return on the first match
 		}
 	} else {
-		dst.int32 = nil
+		dst.Int32 = nil
 	}
 
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	err = json.Unmarshal(data, &dst.String);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.String, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(IpIndex)")
@@ -55,12 +55,12 @@ func (dst *IpIndex) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *IpIndex) MarshalJSON() ([]byte, error) {
-	if src.int32 != nil {
-		return json.Marshal(&src.int32)
+	if src.Int32 != nil {
+		return json.Marshal(&src.Int32)
 	}
 
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

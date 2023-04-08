@@ -44,7 +44,7 @@ func NewFileDownloadJobSingleAllOfAttributesWithDefaults() *FileDownloadJobSingl
 
 // GetFileLocation returns the FileLocation field value if set, zero value otherwise.
 func (o *FileDownloadJobSingleAllOfAttributes) GetFileLocation() string {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetFileLocation() string {
 // GetFileLocationOk returns a tuple with the FileLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) GetFileLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		return nil, false
 	}
 	return o.FileLocation, true
@@ -62,7 +62,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetFileLocationOk() (*string, boo
 
 // HasFileLocation returns a boolean if a field has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) HasFileLocation() bool {
-	if o != nil && !IsNil(o.FileLocation) {
+	if o != nil && !isNil(o.FileLocation) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) SetFileLocation(v string) {
 
 // GetNotificationRecipientAddress returns the NotificationRecipientAddress field value if set, zero value otherwise.
 func (o *FileDownloadJobSingleAllOfAttributes) GetNotificationRecipientAddress() string {
-	if o == nil || IsNil(o.NotificationRecipientAddress) {
+	if o == nil || isNil(o.NotificationRecipientAddress) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetNotificationRecipientAddress()
 // GetNotificationRecipientAddressOk returns a tuple with the NotificationRecipientAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) GetNotificationRecipientAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationRecipientAddress) {
+	if o == nil || isNil(o.NotificationRecipientAddress) {
 		return nil, false
 	}
 	return o.NotificationRecipientAddress, true
@@ -94,7 +94,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetNotificationRecipientAddressOk
 
 // HasNotificationRecipientAddress returns a boolean if a field has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) HasNotificationRecipientAddress() bool {
-	if o != nil && !IsNil(o.NotificationRecipientAddress) {
+	if o != nil && !isNil(o.NotificationRecipientAddress) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) SetNotificationRecipientAddress(v
 
 // GetCancelJob returns the CancelJob field value if set, zero value otherwise.
 func (o *FileDownloadJobSingleAllOfAttributes) GetCancelJob() string {
-	if o == nil || IsNil(o.CancelJob) {
+	if o == nil || isNil(o.CancelJob) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetCancelJob() string {
 // GetCancelJobOk returns a tuple with the CancelJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) GetCancelJobOk() (*string, bool) {
-	if o == nil || IsNil(o.CancelJob) {
+	if o == nil || isNil(o.CancelJob) {
 		return nil, false
 	}
 	return o.CancelJob, true
@@ -126,7 +126,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetCancelJobOk() (*string, bool) 
 
 // HasCancelJob returns a boolean if a field has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) HasCancelJob() bool {
-	if o != nil && !IsNil(o.CancelJob) {
+	if o != nil && !isNil(o.CancelJob) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) SetCancelJob(v string) {
 
 // GetJobMonitor returns the JobMonitor field value if set, zero value otherwise.
 func (o *FileDownloadJobSingleAllOfAttributes) GetJobMonitor() FileDownloadJobProcessMonitor {
-	if o == nil || IsNil(o.JobMonitor) {
+	if o == nil || isNil(o.JobMonitor) {
 		var ret FileDownloadJobProcessMonitor
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetJobMonitor() FileDownloadJobPr
 // GetJobMonitorOk returns a tuple with the JobMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) GetJobMonitorOk() (*FileDownloadJobProcessMonitor, bool) {
-	if o == nil || IsNil(o.JobMonitor) {
+	if o == nil || isNil(o.JobMonitor) {
 		return nil, false
 	}
 	return o.JobMonitor, true
@@ -158,7 +158,7 @@ func (o *FileDownloadJobSingleAllOfAttributes) GetJobMonitorOk() (*FileDownloadJ
 
 // HasJobMonitor returns a boolean if a field has been set.
 func (o *FileDownloadJobSingleAllOfAttributes) HasJobMonitor() bool {
-	if o != nil && !IsNil(o.JobMonitor) {
+	if o != nil && !isNil(o.JobMonitor) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o FileDownloadJobSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o FileDownloadJobSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FileLocation) {
+	if !isNil(o.FileLocation) {
 		toSerialize["fileLocation"] = o.FileLocation
 	}
-	if !IsNil(o.NotificationRecipientAddress) {
+	if !isNil(o.NotificationRecipientAddress) {
 		toSerialize["notificationRecipientAddress"] = o.NotificationRecipientAddress
 	}
-	if !IsNil(o.CancelJob) {
+	if !isNil(o.CancelJob) {
 		toSerialize["cancelJob"] = o.CancelJob
 	}
-	if !IsNil(o.JobMonitor) {
+	if !isNil(o.JobMonitor) {
 		toSerialize["jobMonitor"] = o.JobMonitor
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,7 +8,9 @@ configuration.go
 docs/ACRDataStatus.md
 docs/ACRUpdateData.md
 docs/ACTFailureCause.md
+docs/ACTFailureCauseAnyOf.md
 docs/ACTResult.md
+docs/ACTResultAnyOf.md
 docs/ACTResultInfo.md
 docs/E3SubscsStatus.md
 docs/EndPoint.md
@@ -22,7 +23,9 @@ go.sum
 model_acr_data_status.go
 model_acr_update_data.go
 model_act_failure_cause.go
+model_act_failure_cause_any_of.go
 model_act_result.go
+model_act_result_any_of.go
 model_act_result_info.go
 model_e3_subscs_status.go
 model_end_point.go

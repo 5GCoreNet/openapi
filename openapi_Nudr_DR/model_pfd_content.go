@@ -49,7 +49,7 @@ func NewPfdContentWithDefaults() *PfdContent {
 
 // GetPfdId returns the PfdId field value if set, zero value otherwise.
 func (o *PfdContent) GetPfdId() string {
-	if o == nil || IsNil(o.PfdId) {
+	if o == nil || isNil(o.PfdId) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *PfdContent) GetPfdId() string {
 // GetPfdIdOk returns a tuple with the PfdId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdContent) GetPfdIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PfdId) {
+	if o == nil || isNil(o.PfdId) {
 		return nil, false
 	}
 	return o.PfdId, true
@@ -67,7 +67,7 @@ func (o *PfdContent) GetPfdIdOk() (*string, bool) {
 
 // HasPfdId returns a boolean if a field has been set.
 func (o *PfdContent) HasPfdId() bool {
-	if o != nil && !IsNil(o.PfdId) {
+	if o != nil && !isNil(o.PfdId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *PfdContent) SetPfdId(v string) {
 
 // GetFlowDescriptions returns the FlowDescriptions field value if set, zero value otherwise.
 func (o *PfdContent) GetFlowDescriptions() []string {
-	if o == nil || IsNil(o.FlowDescriptions) {
+	if o == nil || isNil(o.FlowDescriptions) {
 		var ret []string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *PfdContent) GetFlowDescriptions() []string {
 // GetFlowDescriptionsOk returns a tuple with the FlowDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdContent) GetFlowDescriptionsOk() ([]string, bool) {
-	if o == nil || IsNil(o.FlowDescriptions) {
+	if o == nil || isNil(o.FlowDescriptions) {
 		return nil, false
 	}
 	return o.FlowDescriptions, true
@@ -99,7 +99,7 @@ func (o *PfdContent) GetFlowDescriptionsOk() ([]string, bool) {
 
 // HasFlowDescriptions returns a boolean if a field has been set.
 func (o *PfdContent) HasFlowDescriptions() bool {
-	if o != nil && !IsNil(o.FlowDescriptions) {
+	if o != nil && !isNil(o.FlowDescriptions) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *PfdContent) SetFlowDescriptions(v []string) {
 
 // GetUrls returns the Urls field value if set, zero value otherwise.
 func (o *PfdContent) GetUrls() []string {
-	if o == nil || IsNil(o.Urls) {
+	if o == nil || isNil(o.Urls) {
 		var ret []string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *PfdContent) GetUrls() []string {
 // GetUrlsOk returns a tuple with the Urls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdContent) GetUrlsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Urls) {
+	if o == nil || isNil(o.Urls) {
 		return nil, false
 	}
 	return o.Urls, true
@@ -131,7 +131,7 @@ func (o *PfdContent) GetUrlsOk() ([]string, bool) {
 
 // HasUrls returns a boolean if a field has been set.
 func (o *PfdContent) HasUrls() bool {
-	if o != nil && !IsNil(o.Urls) {
+	if o != nil && !isNil(o.Urls) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *PfdContent) SetUrls(v []string) {
 
 // GetDomainNames returns the DomainNames field value if set, zero value otherwise.
 func (o *PfdContent) GetDomainNames() []string {
-	if o == nil || IsNil(o.DomainNames) {
+	if o == nil || isNil(o.DomainNames) {
 		var ret []string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *PfdContent) GetDomainNames() []string {
 // GetDomainNamesOk returns a tuple with the DomainNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdContent) GetDomainNamesOk() ([]string, bool) {
-	if o == nil || IsNil(o.DomainNames) {
+	if o == nil || isNil(o.DomainNames) {
 		return nil, false
 	}
 	return o.DomainNames, true
@@ -163,7 +163,7 @@ func (o *PfdContent) GetDomainNamesOk() ([]string, bool) {
 
 // HasDomainNames returns a boolean if a field has been set.
 func (o *PfdContent) HasDomainNames() bool {
-	if o != nil && !IsNil(o.DomainNames) {
+	if o != nil && !isNil(o.DomainNames) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *PfdContent) SetDomainNames(v []string) {
 
 // GetDnProtocol returns the DnProtocol field value if set, zero value otherwise.
 func (o *PfdContent) GetDnProtocol() DomainNameProtocol {
-	if o == nil || IsNil(o.DnProtocol) {
+	if o == nil || isNil(o.DnProtocol) {
 		var ret DomainNameProtocol
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *PfdContent) GetDnProtocol() DomainNameProtocol {
 // GetDnProtocolOk returns a tuple with the DnProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdContent) GetDnProtocolOk() (*DomainNameProtocol, bool) {
-	if o == nil || IsNil(o.DnProtocol) {
+	if o == nil || isNil(o.DnProtocol) {
 		return nil, false
 	}
 	return o.DnProtocol, true
@@ -195,7 +195,7 @@ func (o *PfdContent) GetDnProtocolOk() (*DomainNameProtocol, bool) {
 
 // HasDnProtocol returns a boolean if a field has been set.
 func (o *PfdContent) HasDnProtocol() bool {
-	if o != nil && !IsNil(o.DnProtocol) {
+	if o != nil && !isNil(o.DnProtocol) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o PfdContent) MarshalJSON() ([]byte, error) {
 
 func (o PfdContent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PfdId) {
+	if !isNil(o.PfdId) {
 		toSerialize["pfdId"] = o.PfdId
 	}
-	if !IsNil(o.FlowDescriptions) {
+	if !isNil(o.FlowDescriptions) {
 		toSerialize["flowDescriptions"] = o.FlowDescriptions
 	}
-	if !IsNil(o.Urls) {
+	if !isNil(o.Urls) {
 		toSerialize["urls"] = o.Urls
 	}
-	if !IsNil(o.DomainNames) {
+	if !isNil(o.DomainNames) {
 		toSerialize["domainNames"] = o.DomainNames
 	}
-	if !IsNil(o.DnProtocol) {
+	if !isNil(o.DnProtocol) {
 		toSerialize["dnProtocol"] = o.DnProtocol
 	}
 	return toSerialize, nil

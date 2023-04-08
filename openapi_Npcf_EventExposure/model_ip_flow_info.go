@@ -43,7 +43,7 @@ func NewIpFlowInfoWithDefaults() *IpFlowInfo {
 
 // GetIpFlows returns the IpFlows field value if set, zero value otherwise.
 func (o *IpFlowInfo) GetIpFlows() []string {
-	if o == nil || IsNil(o.IpFlows) {
+	if o == nil || isNil(o.IpFlows) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IpFlowInfo) GetIpFlows() []string {
 // GetIpFlowsOk returns a tuple with the IpFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpFlowInfo) GetIpFlowsOk() ([]string, bool) {
-	if o == nil || IsNil(o.IpFlows) {
+	if o == nil || isNil(o.IpFlows) {
 		return nil, false
 	}
 	return o.IpFlows, true
@@ -61,7 +61,7 @@ func (o *IpFlowInfo) GetIpFlowsOk() ([]string, bool) {
 
 // HasIpFlows returns a boolean if a field has been set.
 func (o *IpFlowInfo) HasIpFlows() bool {
-	if o != nil && !IsNil(o.IpFlows) {
+	if o != nil && !isNil(o.IpFlows) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o IpFlowInfo) MarshalJSON() ([]byte, error) {
 
 func (o IpFlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IpFlows) {
+	if !isNil(o.IpFlows) {
 		toSerialize["ipFlows"] = o.IpFlows
 	}
 	toSerialize["flowNumber"] = o.FlowNumber

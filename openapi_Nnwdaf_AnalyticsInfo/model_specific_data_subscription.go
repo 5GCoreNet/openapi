@@ -46,7 +46,7 @@ func NewSpecificDataSubscriptionWithDefaults() *SpecificDataSubscription {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetSubscriptionId() string {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SpecificDataSubscription) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -64,7 +64,7 @@ func (o *SpecificDataSubscription) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasSubscriptionId() bool {
-	if o != nil && !IsNil(o.SubscriptionId) {
+	if o != nil && !isNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SpecificDataSubscription) SetSubscriptionId(v string) {
 
 // GetProducerId returns the ProducerId field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetProducerId() string {
-	if o == nil || IsNil(o.ProducerId) {
+	if o == nil || isNil(o.ProducerId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SpecificDataSubscription) GetProducerId() string {
 // GetProducerIdOk returns a tuple with the ProducerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetProducerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProducerId) {
+	if o == nil || isNil(o.ProducerId) {
 		return nil, false
 	}
 	return o.ProducerId, true
@@ -96,7 +96,7 @@ func (o *SpecificDataSubscription) GetProducerIdOk() (*string, bool) {
 
 // HasProducerId returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasProducerId() bool {
-	if o != nil && !IsNil(o.ProducerId) {
+	if o != nil && !isNil(o.ProducerId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SpecificDataSubscription) SetProducerId(v string) {
 
 // GetProducerSetId returns the ProducerSetId field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetProducerSetId() string {
-	if o == nil || IsNil(o.ProducerSetId) {
+	if o == nil || isNil(o.ProducerSetId) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SpecificDataSubscription) GetProducerSetId() string {
 // GetProducerSetIdOk returns a tuple with the ProducerSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetProducerSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProducerSetId) {
+	if o == nil || isNil(o.ProducerSetId) {
 		return nil, false
 	}
 	return o.ProducerSetId, true
@@ -128,7 +128,7 @@ func (o *SpecificDataSubscription) GetProducerSetIdOk() (*string, bool) {
 
 // HasProducerSetId returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasProducerSetId() bool {
-	if o != nil && !IsNil(o.ProducerSetId) {
+	if o != nil && !isNil(o.ProducerSetId) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SpecificDataSubscription) SetProducerSetId(v string) {
 
 // GetDataSub returns the DataSub field value if set, zero value otherwise.
 func (o *SpecificDataSubscription) GetDataSub() DataSubscription {
-	if o == nil || IsNil(o.DataSub) {
+	if o == nil || isNil(o.DataSub) {
 		var ret DataSubscription
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SpecificDataSubscription) GetDataSub() DataSubscription {
 // GetDataSubOk returns a tuple with the DataSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpecificDataSubscription) GetDataSubOk() (*DataSubscription, bool) {
-	if o == nil || IsNil(o.DataSub) {
+	if o == nil || isNil(o.DataSub) {
 		return nil, false
 	}
 	return o.DataSub, true
@@ -160,7 +160,7 @@ func (o *SpecificDataSubscription) GetDataSubOk() (*DataSubscription, bool) {
 
 // HasDataSub returns a boolean if a field has been set.
 func (o *SpecificDataSubscription) HasDataSub() bool {
-	if o != nil && !IsNil(o.DataSub) {
+	if o != nil && !isNil(o.DataSub) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o SpecificDataSubscription) MarshalJSON() ([]byte, error) {
 
 func (o SpecificDataSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscriptionId) {
+	if !isNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !IsNil(o.ProducerId) {
+	if !isNil(o.ProducerId) {
 		toSerialize["producerId"] = o.ProducerId
 	}
-	if !IsNil(o.ProducerSetId) {
+	if !isNil(o.ProducerSetId) {
 		toSerialize["producerSetId"] = o.ProducerSetId
 	}
-	if !IsNil(o.DataSub) {
+	if !isNil(o.DataSub) {
 		toSerialize["dataSub"] = o.DataSub
 	}
 	return toSerialize, nil

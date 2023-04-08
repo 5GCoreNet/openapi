@@ -13,7 +13,7 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -109,7 +109,7 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -129,10 +129,10 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.notificationSubscription
@@ -146,9 +146,9 @@ func (a *NotificationSubscriptionCRUDApiService) CreateAndUpdateNotificationSubs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -434,12 +434,12 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 		return localVarReturnValue, nil, reportError("clientId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "client-id", r.clientId, "")
+	parameterAddToQuery(localVarQueryParams, "client-id", r.clientId, "")
 	if r.getPrevious != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -459,7 +459,7 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -471,9 +471,9 @@ func (a *NotificationSubscriptionCRUDApiService) DeleteNotificationSubscriptionE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -687,7 +687,7 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -707,10 +707,10 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -722,9 +722,9 @@ func (a *NotificationSubscriptionCRUDApiService) GetNotificationSubscriptionExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -933,7 +933,7 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -953,7 +953,7 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -967,9 +967,9 @@ func (a *NotificationSubscriptionCRUDApiService) UpdateNotificationSubscriptionE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

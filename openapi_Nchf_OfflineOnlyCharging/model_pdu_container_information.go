@@ -60,7 +60,7 @@ func NewPDUContainerInformationWithDefaults() *PDUContainerInformation {
 
 // GetTimeofFirstUsage returns the TimeofFirstUsage field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetTimeofFirstUsage() time.Time {
-	if o == nil || IsNil(o.TimeofFirstUsage) {
+	if o == nil || isNil(o.TimeofFirstUsage) {
 		var ret time.Time
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *PDUContainerInformation) GetTimeofFirstUsage() time.Time {
 // GetTimeofFirstUsageOk returns a tuple with the TimeofFirstUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetTimeofFirstUsageOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeofFirstUsage) {
+	if o == nil || isNil(o.TimeofFirstUsage) {
 		return nil, false
 	}
 	return o.TimeofFirstUsage, true
@@ -78,7 +78,7 @@ func (o *PDUContainerInformation) GetTimeofFirstUsageOk() (*time.Time, bool) {
 
 // HasTimeofFirstUsage returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasTimeofFirstUsage() bool {
-	if o != nil && !IsNil(o.TimeofFirstUsage) {
+	if o != nil && !isNil(o.TimeofFirstUsage) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *PDUContainerInformation) SetTimeofFirstUsage(v time.Time) {
 
 // GetTimeofLastUsage returns the TimeofLastUsage field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetTimeofLastUsage() time.Time {
-	if o == nil || IsNil(o.TimeofLastUsage) {
+	if o == nil || isNil(o.TimeofLastUsage) {
 		var ret time.Time
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *PDUContainerInformation) GetTimeofLastUsage() time.Time {
 // GetTimeofLastUsageOk returns a tuple with the TimeofLastUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetTimeofLastUsageOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeofLastUsage) {
+	if o == nil || isNil(o.TimeofLastUsage) {
 		return nil, false
 	}
 	return o.TimeofLastUsage, true
@@ -110,7 +110,7 @@ func (o *PDUContainerInformation) GetTimeofLastUsageOk() (*time.Time, bool) {
 
 // HasTimeofLastUsage returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasTimeofLastUsage() bool {
-	if o != nil && !IsNil(o.TimeofLastUsage) {
+	if o != nil && !isNil(o.TimeofLastUsage) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *PDUContainerInformation) SetTimeofLastUsage(v time.Time) {
 
 // GetQoSInformation returns the QoSInformation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PDUContainerInformation) GetQoSInformation() QosData {
-	if o == nil || IsNil(o.QoSInformation.Get()) {
+	if o == nil || isNil(o.QoSInformation.Get()) {
 		var ret QosData
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *PDUContainerInformation) UnsetQoSInformation() {
 
 // GetQoSCharacteristics returns the QoSCharacteristics field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetQoSCharacteristics() QosCharacteristics {
-	if o == nil || IsNil(o.QoSCharacteristics) {
+	if o == nil || isNil(o.QoSCharacteristics) {
 		var ret QosCharacteristics
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *PDUContainerInformation) GetQoSCharacteristics() QosCharacteristics {
 // GetQoSCharacteristicsOk returns a tuple with the QoSCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetQoSCharacteristicsOk() (*QosCharacteristics, bool) {
-	if o == nil || IsNil(o.QoSCharacteristics) {
+	if o == nil || isNil(o.QoSCharacteristics) {
 		return nil, false
 	}
 	return o.QoSCharacteristics, true
@@ -184,7 +184,7 @@ func (o *PDUContainerInformation) GetQoSCharacteristicsOk() (*QosCharacteristics
 
 // HasQoSCharacteristics returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasQoSCharacteristics() bool {
-	if o != nil && !IsNil(o.QoSCharacteristics) {
+	if o != nil && !isNil(o.QoSCharacteristics) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *PDUContainerInformation) SetQoSCharacteristics(v QosCharacteristics) {
 
 // GetAFCorrelationInformation returns the AFCorrelationInformation field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetAFCorrelationInformation() string {
-	if o == nil || IsNil(o.AFCorrelationInformation) {
+	if o == nil || isNil(o.AFCorrelationInformation) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *PDUContainerInformation) GetAFCorrelationInformation() string {
 // GetAFCorrelationInformationOk returns a tuple with the AFCorrelationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetAFCorrelationInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.AFCorrelationInformation) {
+	if o == nil || isNil(o.AFCorrelationInformation) {
 		return nil, false
 	}
 	return o.AFCorrelationInformation, true
@@ -216,7 +216,7 @@ func (o *PDUContainerInformation) GetAFCorrelationInformationOk() (*string, bool
 
 // HasAFCorrelationInformation returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasAFCorrelationInformation() bool {
-	if o != nil && !IsNil(o.AFCorrelationInformation) {
+	if o != nil && !isNil(o.AFCorrelationInformation) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *PDUContainerInformation) SetAFCorrelationInformation(v string) {
 
 // GetUserLocationInformation returns the UserLocationInformation field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetUserLocationInformation() UserLocation {
-	if o == nil || IsNil(o.UserLocationInformation) {
+	if o == nil || isNil(o.UserLocationInformation) {
 		var ret UserLocation
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *PDUContainerInformation) GetUserLocationInformation() UserLocation {
 // GetUserLocationInformationOk returns a tuple with the UserLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetUserLocationInformationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationInformation) {
+	if o == nil || isNil(o.UserLocationInformation) {
 		return nil, false
 	}
 	return o.UserLocationInformation, true
@@ -248,7 +248,7 @@ func (o *PDUContainerInformation) GetUserLocationInformationOk() (*UserLocation,
 
 // HasUserLocationInformation returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasUserLocationInformation() bool {
-	if o != nil && !IsNil(o.UserLocationInformation) {
+	if o != nil && !isNil(o.UserLocationInformation) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *PDUContainerInformation) SetUserLocationInformation(v UserLocation) {
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *PDUContainerInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -280,7 +280,7 @@ func (o *PDUContainerInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -294,7 +294,7 @@ func (o *PDUContainerInformation) SetUetimeZone(v string) {
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetRATType() RatType {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -304,7 +304,7 @@ func (o *PDUContainerInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -312,7 +312,7 @@ func (o *PDUContainerInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasRATType() bool {
-	if o != nil && !IsNil(o.RATType) {
+	if o != nil && !isNil(o.RATType) {
 		return true
 	}
 
@@ -326,7 +326,7 @@ func (o *PDUContainerInformation) SetRATType(v RatType) {
 
 // GetServingNodeID returns the ServingNodeID field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetServingNodeID() []ServingNetworkFunctionID {
-	if o == nil || IsNil(o.ServingNodeID) {
+	if o == nil || isNil(o.ServingNodeID) {
 		var ret []ServingNetworkFunctionID
 		return ret
 	}
@@ -336,7 +336,7 @@ func (o *PDUContainerInformation) GetServingNodeID() []ServingNetworkFunctionID 
 // GetServingNodeIDOk returns a tuple with the ServingNodeID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetServingNodeIDOk() ([]ServingNetworkFunctionID, bool) {
-	if o == nil || IsNil(o.ServingNodeID) {
+	if o == nil || isNil(o.ServingNodeID) {
 		return nil, false
 	}
 	return o.ServingNodeID, true
@@ -344,7 +344,7 @@ func (o *PDUContainerInformation) GetServingNodeIDOk() ([]ServingNetworkFunction
 
 // HasServingNodeID returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasServingNodeID() bool {
-	if o != nil && !IsNil(o.ServingNodeID) {
+	if o != nil && !isNil(o.ServingNodeID) {
 		return true
 	}
 
@@ -358,7 +358,7 @@ func (o *PDUContainerInformation) SetServingNodeID(v []ServingNetworkFunctionID)
 
 // GetPresenceReportingAreaInformation returns the PresenceReportingAreaInformation field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetPresenceReportingAreaInformation() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -368,7 +368,7 @@ func (o *PDUContainerInformation) GetPresenceReportingAreaInformation() map[stri
 // GetPresenceReportingAreaInformationOk returns a tuple with the PresenceReportingAreaInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetPresenceReportingAreaInformationOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		return nil, false
 	}
 	return o.PresenceReportingAreaInformation, true
@@ -376,7 +376,7 @@ func (o *PDUContainerInformation) GetPresenceReportingAreaInformationOk() (*map[
 
 // HasPresenceReportingAreaInformation returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasPresenceReportingAreaInformation() bool {
-	if o != nil && !IsNil(o.PresenceReportingAreaInformation) {
+	if o != nil && !isNil(o.PresenceReportingAreaInformation) {
 		return true
 	}
 
@@ -390,7 +390,7 @@ func (o *PDUContainerInformation) SetPresenceReportingAreaInformation(v map[stri
 
 // GetVar3gppPSDataOffStatus returns the Var3gppPSDataOffStatus field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOffStatus {
-	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
 		var ret Model3GPPPSDataOffStatus
 		return ret
 	}
@@ -400,7 +400,7 @@ func (o *PDUContainerInformation) GetVar3gppPSDataOffStatus() Model3GPPPSDataOff
 // GetVar3gppPSDataOffStatusOk returns a tuple with the Var3gppPSDataOffStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDataOffStatus, bool) {
-	if o == nil || IsNil(o.Var3gppPSDataOffStatus) {
+	if o == nil || isNil(o.Var3gppPSDataOffStatus) {
 		return nil, false
 	}
 	return o.Var3gppPSDataOffStatus, true
@@ -408,7 +408,7 @@ func (o *PDUContainerInformation) GetVar3gppPSDataOffStatusOk() (*Model3GPPPSDat
 
 // HasVar3gppPSDataOffStatus returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasVar3gppPSDataOffStatus() bool {
-	if o != nil && !IsNil(o.Var3gppPSDataOffStatus) {
+	if o != nil && !isNil(o.Var3gppPSDataOffStatus) {
 		return true
 	}
 
@@ -422,7 +422,7 @@ func (o *PDUContainerInformation) SetVar3gppPSDataOffStatus(v Model3GPPPSDataOff
 
 // GetSponsorIdentity returns the SponsorIdentity field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetSponsorIdentity() string {
-	if o == nil || IsNil(o.SponsorIdentity) {
+	if o == nil || isNil(o.SponsorIdentity) {
 		var ret string
 		return ret
 	}
@@ -432,7 +432,7 @@ func (o *PDUContainerInformation) GetSponsorIdentity() string {
 // GetSponsorIdentityOk returns a tuple with the SponsorIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetSponsorIdentityOk() (*string, bool) {
-	if o == nil || IsNil(o.SponsorIdentity) {
+	if o == nil || isNil(o.SponsorIdentity) {
 		return nil, false
 	}
 	return o.SponsorIdentity, true
@@ -440,7 +440,7 @@ func (o *PDUContainerInformation) GetSponsorIdentityOk() (*string, bool) {
 
 // HasSponsorIdentity returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasSponsorIdentity() bool {
-	if o != nil && !IsNil(o.SponsorIdentity) {
+	if o != nil && !isNil(o.SponsorIdentity) {
 		return true
 	}
 
@@ -454,7 +454,7 @@ func (o *PDUContainerInformation) SetSponsorIdentity(v string) {
 
 // GetApplicationserviceProviderIdentity returns the ApplicationserviceProviderIdentity field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetApplicationserviceProviderIdentity() string {
-	if o == nil || IsNil(o.ApplicationserviceProviderIdentity) {
+	if o == nil || isNil(o.ApplicationserviceProviderIdentity) {
 		var ret string
 		return ret
 	}
@@ -464,7 +464,7 @@ func (o *PDUContainerInformation) GetApplicationserviceProviderIdentity() string
 // GetApplicationserviceProviderIdentityOk returns a tuple with the ApplicationserviceProviderIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetApplicationserviceProviderIdentityOk() (*string, bool) {
-	if o == nil || IsNil(o.ApplicationserviceProviderIdentity) {
+	if o == nil || isNil(o.ApplicationserviceProviderIdentity) {
 		return nil, false
 	}
 	return o.ApplicationserviceProviderIdentity, true
@@ -472,7 +472,7 @@ func (o *PDUContainerInformation) GetApplicationserviceProviderIdentityOk() (*st
 
 // HasApplicationserviceProviderIdentity returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasApplicationserviceProviderIdentity() bool {
-	if o != nil && !IsNil(o.ApplicationserviceProviderIdentity) {
+	if o != nil && !isNil(o.ApplicationserviceProviderIdentity) {
 		return true
 	}
 
@@ -486,7 +486,7 @@ func (o *PDUContainerInformation) SetApplicationserviceProviderIdentity(v string
 
 // GetChargingRuleBaseName returns the ChargingRuleBaseName field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetChargingRuleBaseName() string {
-	if o == nil || IsNil(o.ChargingRuleBaseName) {
+	if o == nil || isNil(o.ChargingRuleBaseName) {
 		var ret string
 		return ret
 	}
@@ -496,7 +496,7 @@ func (o *PDUContainerInformation) GetChargingRuleBaseName() string {
 // GetChargingRuleBaseNameOk returns a tuple with the ChargingRuleBaseName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetChargingRuleBaseNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ChargingRuleBaseName) {
+	if o == nil || isNil(o.ChargingRuleBaseName) {
 		return nil, false
 	}
 	return o.ChargingRuleBaseName, true
@@ -504,7 +504,7 @@ func (o *PDUContainerInformation) GetChargingRuleBaseNameOk() (*string, bool) {
 
 // HasChargingRuleBaseName returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasChargingRuleBaseName() bool {
-	if o != nil && !IsNil(o.ChargingRuleBaseName) {
+	if o != nil && !isNil(o.ChargingRuleBaseName) {
 		return true
 	}
 
@@ -518,7 +518,7 @@ func (o *PDUContainerInformation) SetChargingRuleBaseName(v string) {
 
 // GetMAPDUSteeringFunctionality returns the MAPDUSteeringFunctionality field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetMAPDUSteeringFunctionality() SteeringFunctionality {
-	if o == nil || IsNil(o.MAPDUSteeringFunctionality) {
+	if o == nil || isNil(o.MAPDUSteeringFunctionality) {
 		var ret SteeringFunctionality
 		return ret
 	}
@@ -528,7 +528,7 @@ func (o *PDUContainerInformation) GetMAPDUSteeringFunctionality() SteeringFuncti
 // GetMAPDUSteeringFunctionalityOk returns a tuple with the MAPDUSteeringFunctionality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetMAPDUSteeringFunctionalityOk() (*SteeringFunctionality, bool) {
-	if o == nil || IsNil(o.MAPDUSteeringFunctionality) {
+	if o == nil || isNil(o.MAPDUSteeringFunctionality) {
 		return nil, false
 	}
 	return o.MAPDUSteeringFunctionality, true
@@ -536,7 +536,7 @@ func (o *PDUContainerInformation) GetMAPDUSteeringFunctionalityOk() (*SteeringFu
 
 // HasMAPDUSteeringFunctionality returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasMAPDUSteeringFunctionality() bool {
-	if o != nil && !IsNil(o.MAPDUSteeringFunctionality) {
+	if o != nil && !isNil(o.MAPDUSteeringFunctionality) {
 		return true
 	}
 
@@ -550,7 +550,7 @@ func (o *PDUContainerInformation) SetMAPDUSteeringFunctionality(v SteeringFuncti
 
 // GetMAPDUSteeringMode returns the MAPDUSteeringMode field value if set, zero value otherwise.
 func (o *PDUContainerInformation) GetMAPDUSteeringMode() SteeringMode {
-	if o == nil || IsNil(o.MAPDUSteeringMode) {
+	if o == nil || isNil(o.MAPDUSteeringMode) {
 		var ret SteeringMode
 		return ret
 	}
@@ -560,7 +560,7 @@ func (o *PDUContainerInformation) GetMAPDUSteeringMode() SteeringMode {
 // GetMAPDUSteeringModeOk returns a tuple with the MAPDUSteeringMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUContainerInformation) GetMAPDUSteeringModeOk() (*SteeringMode, bool) {
-	if o == nil || IsNil(o.MAPDUSteeringMode) {
+	if o == nil || isNil(o.MAPDUSteeringMode) {
 		return nil, false
 	}
 	return o.MAPDUSteeringMode, true
@@ -568,7 +568,7 @@ func (o *PDUContainerInformation) GetMAPDUSteeringModeOk() (*SteeringMode, bool)
 
 // HasMAPDUSteeringMode returns a boolean if a field has been set.
 func (o *PDUContainerInformation) HasMAPDUSteeringMode() bool {
-	if o != nil && !IsNil(o.MAPDUSteeringMode) {
+	if o != nil && !isNil(o.MAPDUSteeringMode) {
 		return true
 	}
 
@@ -590,52 +590,52 @@ func (o PDUContainerInformation) MarshalJSON() ([]byte, error) {
 
 func (o PDUContainerInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TimeofFirstUsage) {
+	if !isNil(o.TimeofFirstUsage) {
 		toSerialize["timeofFirstUsage"] = o.TimeofFirstUsage
 	}
-	if !IsNil(o.TimeofLastUsage) {
+	if !isNil(o.TimeofLastUsage) {
 		toSerialize["timeofLastUsage"] = o.TimeofLastUsage
 	}
 	if o.QoSInformation.IsSet() {
 		toSerialize["qoSInformation"] = o.QoSInformation.Get()
 	}
-	if !IsNil(o.QoSCharacteristics) {
+	if !isNil(o.QoSCharacteristics) {
 		toSerialize["qoSCharacteristics"] = o.QoSCharacteristics
 	}
-	if !IsNil(o.AFCorrelationInformation) {
+	if !isNil(o.AFCorrelationInformation) {
 		toSerialize["aFCorrelationInformation"] = o.AFCorrelationInformation
 	}
-	if !IsNil(o.UserLocationInformation) {
+	if !isNil(o.UserLocationInformation) {
 		toSerialize["userLocationInformation"] = o.UserLocationInformation
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !IsNil(o.RATType) {
+	if !isNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !IsNil(o.ServingNodeID) {
+	if !isNil(o.ServingNodeID) {
 		toSerialize["servingNodeID"] = o.ServingNodeID
 	}
-	if !IsNil(o.PresenceReportingAreaInformation) {
+	if !isNil(o.PresenceReportingAreaInformation) {
 		toSerialize["presenceReportingAreaInformation"] = o.PresenceReportingAreaInformation
 	}
-	if !IsNil(o.Var3gppPSDataOffStatus) {
+	if !isNil(o.Var3gppPSDataOffStatus) {
 		toSerialize["3gppPSDataOffStatus"] = o.Var3gppPSDataOffStatus
 	}
-	if !IsNil(o.SponsorIdentity) {
+	if !isNil(o.SponsorIdentity) {
 		toSerialize["sponsorIdentity"] = o.SponsorIdentity
 	}
-	if !IsNil(o.ApplicationserviceProviderIdentity) {
+	if !isNil(o.ApplicationserviceProviderIdentity) {
 		toSerialize["applicationserviceProviderIdentity"] = o.ApplicationserviceProviderIdentity
 	}
-	if !IsNil(o.ChargingRuleBaseName) {
+	if !isNil(o.ChargingRuleBaseName) {
 		toSerialize["chargingRuleBaseName"] = o.ChargingRuleBaseName
 	}
-	if !IsNil(o.MAPDUSteeringFunctionality) {
+	if !isNil(o.MAPDUSteeringFunctionality) {
 		toSerialize["mAPDUSteeringFunctionality"] = o.MAPDUSteeringFunctionality
 	}
-	if !IsNil(o.MAPDUSteeringMode) {
+	if !isNil(o.MAPDUSteeringMode) {
 		toSerialize["mAPDUSteeringMode"] = o.MAPDUSteeringMode
 	}
 	return toSerialize, nil

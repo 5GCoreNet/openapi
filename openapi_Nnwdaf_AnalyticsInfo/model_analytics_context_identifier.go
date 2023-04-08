@@ -46,7 +46,7 @@ func NewAnalyticsContextIdentifierWithDefaults() *AnalyticsContextIdentifier {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *AnalyticsContextIdentifier) GetSubscriptionId() string {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AnalyticsContextIdentifier) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsContextIdentifier) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -64,7 +64,7 @@ func (o *AnalyticsContextIdentifier) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *AnalyticsContextIdentifier) HasSubscriptionId() bool {
-	if o != nil && !IsNil(o.SubscriptionId) {
+	if o != nil && !isNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AnalyticsContextIdentifier) SetSubscriptionId(v string) {
 
 // GetNfAnaCtxts returns the NfAnaCtxts field value if set, zero value otherwise.
 func (o *AnalyticsContextIdentifier) GetNfAnaCtxts() []NwdafEvent {
-	if o == nil || IsNil(o.NfAnaCtxts) {
+	if o == nil || isNil(o.NfAnaCtxts) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AnalyticsContextIdentifier) GetNfAnaCtxts() []NwdafEvent {
 // GetNfAnaCtxtsOk returns a tuple with the NfAnaCtxts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsContextIdentifier) GetNfAnaCtxtsOk() ([]NwdafEvent, bool) {
-	if o == nil || IsNil(o.NfAnaCtxts) {
+	if o == nil || isNil(o.NfAnaCtxts) {
 		return nil, false
 	}
 	return o.NfAnaCtxts, true
@@ -96,7 +96,7 @@ func (o *AnalyticsContextIdentifier) GetNfAnaCtxtsOk() ([]NwdafEvent, bool) {
 
 // HasNfAnaCtxts returns a boolean if a field has been set.
 func (o *AnalyticsContextIdentifier) HasNfAnaCtxts() bool {
-	if o != nil && !IsNil(o.NfAnaCtxts) {
+	if o != nil && !isNil(o.NfAnaCtxts) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AnalyticsContextIdentifier) SetNfAnaCtxts(v []NwdafEvent) {
 
 // GetUeAnaCtxts returns the UeAnaCtxts field value if set, zero value otherwise.
 func (o *AnalyticsContextIdentifier) GetUeAnaCtxts() []UeAnalyticsContextDescriptor {
-	if o == nil || IsNil(o.UeAnaCtxts) {
+	if o == nil || isNil(o.UeAnaCtxts) {
 		var ret []UeAnalyticsContextDescriptor
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AnalyticsContextIdentifier) GetUeAnaCtxts() []UeAnalyticsContextDescrip
 // GetUeAnaCtxtsOk returns a tuple with the UeAnaCtxts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsContextIdentifier) GetUeAnaCtxtsOk() ([]UeAnalyticsContextDescriptor, bool) {
-	if o == nil || IsNil(o.UeAnaCtxts) {
+	if o == nil || isNil(o.UeAnaCtxts) {
 		return nil, false
 	}
 	return o.UeAnaCtxts, true
@@ -128,7 +128,7 @@ func (o *AnalyticsContextIdentifier) GetUeAnaCtxtsOk() ([]UeAnalyticsContextDesc
 
 // HasUeAnaCtxts returns a boolean if a field has been set.
 func (o *AnalyticsContextIdentifier) HasUeAnaCtxts() bool {
-	if o != nil && !IsNil(o.UeAnaCtxts) {
+	if o != nil && !isNil(o.UeAnaCtxts) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o AnalyticsContextIdentifier) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsContextIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscriptionId) {
+	if !isNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !IsNil(o.NfAnaCtxts) {
+	if !isNil(o.NfAnaCtxts) {
 		toSerialize["nfAnaCtxts"] = o.NfAnaCtxts
 	}
-	if !IsNil(o.UeAnaCtxts) {
+	if !isNil(o.UeAnaCtxts) {
 		toSerialize["ueAnaCtxts"] = o.UeAnaCtxts
 	}
 	return toSerialize, nil

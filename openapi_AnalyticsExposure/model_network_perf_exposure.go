@@ -98,7 +98,7 @@ func (o *NetworkPerfExposure) SetNwPerfType(v NetworkPerfType) {
 
 // GetRelativeRatio returns the RelativeRatio field value if set, zero value otherwise.
 func (o *NetworkPerfExposure) GetRelativeRatio() int32 {
-	if o == nil || IsNil(o.RelativeRatio) {
+	if o == nil || isNil(o.RelativeRatio) {
 		var ret int32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *NetworkPerfExposure) GetRelativeRatio() int32 {
 // GetRelativeRatioOk returns a tuple with the RelativeRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfExposure) GetRelativeRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.RelativeRatio) {
+	if o == nil || isNil(o.RelativeRatio) {
 		return nil, false
 	}
 	return o.RelativeRatio, true
@@ -116,7 +116,7 @@ func (o *NetworkPerfExposure) GetRelativeRatioOk() (*int32, bool) {
 
 // HasRelativeRatio returns a boolean if a field has been set.
 func (o *NetworkPerfExposure) HasRelativeRatio() bool {
-	if o != nil && !IsNil(o.RelativeRatio) {
+	if o != nil && !isNil(o.RelativeRatio) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *NetworkPerfExposure) SetRelativeRatio(v int32) {
 
 // GetAbsoluteNum returns the AbsoluteNum field value if set, zero value otherwise.
 func (o *NetworkPerfExposure) GetAbsoluteNum() int32 {
-	if o == nil || IsNil(o.AbsoluteNum) {
+	if o == nil || isNil(o.AbsoluteNum) {
 		var ret int32
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *NetworkPerfExposure) GetAbsoluteNum() int32 {
 // GetAbsoluteNumOk returns a tuple with the AbsoluteNum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfExposure) GetAbsoluteNumOk() (*int32, bool) {
-	if o == nil || IsNil(o.AbsoluteNum) {
+	if o == nil || isNil(o.AbsoluteNum) {
 		return nil, false
 	}
 	return o.AbsoluteNum, true
@@ -148,7 +148,7 @@ func (o *NetworkPerfExposure) GetAbsoluteNumOk() (*int32, bool) {
 
 // HasAbsoluteNum returns a boolean if a field has been set.
 func (o *NetworkPerfExposure) HasAbsoluteNum() bool {
-	if o != nil && !IsNil(o.AbsoluteNum) {
+	if o != nil && !isNil(o.AbsoluteNum) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *NetworkPerfExposure) SetAbsoluteNum(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *NetworkPerfExposure) GetConfidence() int32 {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *NetworkPerfExposure) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkPerfExposure) GetConfidenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -180,7 +180,7 @@ func (o *NetworkPerfExposure) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *NetworkPerfExposure) HasConfidence() bool {
-	if o != nil && !IsNil(o.Confidence) {
+	if o != nil && !isNil(o.Confidence) {
 		return true
 	}
 
@@ -204,13 +204,13 @@ func (o NetworkPerfExposure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locArea"] = o.LocArea
 	toSerialize["nwPerfType"] = o.NwPerfType
-	if !IsNil(o.RelativeRatio) {
+	if !isNil(o.RelativeRatio) {
 		toSerialize["relativeRatio"] = o.RelativeRatio
 	}
-	if !IsNil(o.AbsoluteNum) {
+	if !isNil(o.AbsoluteNum) {
 		toSerialize["absoluteNum"] = o.AbsoluteNum
 	}
-	if !IsNil(o.Confidence) {
+	if !isNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil

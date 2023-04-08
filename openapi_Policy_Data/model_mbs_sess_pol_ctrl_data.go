@@ -49,7 +49,7 @@ func NewMbsSessPolCtrlDataWithDefaults() *MbsSessPolCtrlData {
 
 // GetVar5qis returns the Var5qis field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetVar5qis() []int32 {
-	if o == nil || IsNil(o.Var5qis) {
+	if o == nil || isNil(o.Var5qis) {
 		var ret []int32
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *MbsSessPolCtrlData) GetVar5qis() []int32 {
 // GetVar5qisOk returns a tuple with the Var5qis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetVar5qisOk() ([]int32, bool) {
-	if o == nil || IsNil(o.Var5qis) {
+	if o == nil || isNil(o.Var5qis) {
 		return nil, false
 	}
 	return o.Var5qis, true
@@ -67,7 +67,7 @@ func (o *MbsSessPolCtrlData) GetVar5qisOk() ([]int32, bool) {
 
 // HasVar5qis returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasVar5qis() bool {
-	if o != nil && !IsNil(o.Var5qis) {
+	if o != nil && !isNil(o.Var5qis) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *MbsSessPolCtrlData) SetVar5qis(v []int32) {
 
 // GetMaxMbsArpLevel returns the MaxMbsArpLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MbsSessPolCtrlData) GetMaxMbsArpLevel() int32 {
-	if o == nil || IsNil(o.MaxMbsArpLevel.Get()) {
+	if o == nil || isNil(o.MaxMbsArpLevel.Get()) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *MbsSessPolCtrlData) UnsetMaxMbsArpLevel() {
 
 // GetMaxMbsSessionAmbr returns the MaxMbsSessionAmbr field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbr() string {
-	if o == nil || IsNil(o.MaxMbsSessionAmbr) {
+	if o == nil || isNil(o.MaxMbsSessionAmbr) {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbr() string {
 // GetMaxMbsSessionAmbrOk returns a tuple with the MaxMbsSessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxMbsSessionAmbr) {
+	if o == nil || isNil(o.MaxMbsSessionAmbr) {
 		return nil, false
 	}
 	return o.MaxMbsSessionAmbr, true
@@ -141,7 +141,7 @@ func (o *MbsSessPolCtrlData) GetMaxMbsSessionAmbrOk() (*string, bool) {
 
 // HasMaxMbsSessionAmbr returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasMaxMbsSessionAmbr() bool {
-	if o != nil && !IsNil(o.MaxMbsSessionAmbr) {
+	if o != nil && !isNil(o.MaxMbsSessionAmbr) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *MbsSessPolCtrlData) SetMaxMbsSessionAmbr(v string) {
 
 // GetMaxGbr returns the MaxGbr field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetMaxGbr() string {
-	if o == nil || IsNil(o.MaxGbr) {
+	if o == nil || isNil(o.MaxGbr) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *MbsSessPolCtrlData) GetMaxGbr() string {
 // GetMaxGbrOk returns a tuple with the MaxGbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetMaxGbrOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxGbr) {
+	if o == nil || isNil(o.MaxGbr) {
 		return nil, false
 	}
 	return o.MaxGbr, true
@@ -173,7 +173,7 @@ func (o *MbsSessPolCtrlData) GetMaxGbrOk() (*string, bool) {
 
 // HasMaxGbr returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasMaxGbr() bool {
-	if o != nil && !IsNil(o.MaxGbr) {
+	if o != nil && !isNil(o.MaxGbr) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *MbsSessPolCtrlData) SetMaxGbr(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsSessPolCtrlData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *MbsSessPolCtrlData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessPolCtrlData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -205,7 +205,7 @@ func (o *MbsSessPolCtrlData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsSessPolCtrlData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -227,19 +227,19 @@ func (o MbsSessPolCtrlData) MarshalJSON() ([]byte, error) {
 
 func (o MbsSessPolCtrlData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Var5qis) {
+	if !isNil(o.Var5qis) {
 		toSerialize["5qis"] = o.Var5qis
 	}
 	if o.MaxMbsArpLevel.IsSet() {
 		toSerialize["maxMbsArpLevel"] = o.MaxMbsArpLevel.Get()
 	}
-	if !IsNil(o.MaxMbsSessionAmbr) {
+	if !isNil(o.MaxMbsSessionAmbr) {
 		toSerialize["maxMbsSessionAmbr"] = o.MaxMbsSessionAmbr
 	}
-	if !IsNil(o.MaxGbr) {
+	if !isNil(o.MaxGbr) {
 		toSerialize["maxGbr"] = o.MaxGbr
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

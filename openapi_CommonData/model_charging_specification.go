@@ -43,7 +43,7 @@ func NewChargingSpecificationWithDefaults() *ChargingSpecification {
 
 // GetSponId returns the SponId field value if set, zero value otherwise.
 func (o *ChargingSpecification) GetSponId() string {
-	if o == nil || IsNil(o.SponId) {
+	if o == nil || isNil(o.SponId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ChargingSpecification) GetSponId() string {
 // GetSponIdOk returns a tuple with the SponId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingSpecification) GetSponIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SponId) {
+	if o == nil || isNil(o.SponId) {
 		return nil, false
 	}
 	return o.SponId, true
@@ -61,7 +61,7 @@ func (o *ChargingSpecification) GetSponIdOk() (*string, bool) {
 
 // HasSponId returns a boolean if a field has been set.
 func (o *ChargingSpecification) HasSponId() bool {
-	if o != nil && !IsNil(o.SponId) {
+	if o != nil && !isNil(o.SponId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ChargingSpecification) SetSponId(v string) {
 
 // GetSponStatus returns the SponStatus field value if set, zero value otherwise.
 func (o *ChargingSpecification) GetSponStatus() SponsoringStatus {
-	if o == nil || IsNil(o.SponStatus) {
+	if o == nil || isNil(o.SponStatus) {
 		var ret SponsoringStatus
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ChargingSpecification) GetSponStatus() SponsoringStatus {
 // GetSponStatusOk returns a tuple with the SponStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingSpecification) GetSponStatusOk() (*SponsoringStatus, bool) {
-	if o == nil || IsNil(o.SponStatus) {
+	if o == nil || isNil(o.SponStatus) {
 		return nil, false
 	}
 	return o.SponStatus, true
@@ -93,7 +93,7 @@ func (o *ChargingSpecification) GetSponStatusOk() (*SponsoringStatus, bool) {
 
 // HasSponStatus returns a boolean if a field has been set.
 func (o *ChargingSpecification) HasSponStatus() bool {
-	if o != nil && !IsNil(o.SponStatus) {
+	if o != nil && !isNil(o.SponStatus) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ChargingSpecification) SetSponStatus(v SponsoringStatus) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ChargingSpecification) GetGpsi() []string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ChargingSpecification) GetGpsi() []string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingSpecification) GetGpsiOk() ([]string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -125,7 +125,7 @@ func (o *ChargingSpecification) GetGpsiOk() ([]string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ChargingSpecification) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o ChargingSpecification) MarshalJSON() ([]byte, error) {
 
 func (o ChargingSpecification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SponId) {
+	if !isNil(o.SponId) {
 		toSerialize["sponId"] = o.SponId
 	}
-	if !IsNil(o.SponStatus) {
+	if !isNil(o.SponStatus) {
 		toSerialize["sponStatus"] = o.SponStatus
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	return toSerialize, nil

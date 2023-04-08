@@ -17,23 +17,37 @@ import (
 
 // ServiceInfoStatus Represents the preliminary or final service information status.
 type ServiceInfoStatus struct {
-	string *string
+	ServiceInfoStatusAnyOf *ServiceInfoStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ServiceInfoStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ServiceInfoStatusAnyOf
+	err = json.Unmarshal(data, &dst.ServiceInfoStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonServiceInfoStatusAnyOf, _ := json.Marshal(dst.ServiceInfoStatusAnyOf)
+		if string(jsonServiceInfoStatusAnyOf) == "{}" { // empty struct
+			dst.ServiceInfoStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ServiceInfoStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ServiceInfoStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ServiceInfoStatus)")
@@ -41,8 +55,12 @@ func (dst *ServiceInfoStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ServiceInfoStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ServiceInfoStatusAnyOf != nil {
+		return json.Marshal(&src.ServiceInfoStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

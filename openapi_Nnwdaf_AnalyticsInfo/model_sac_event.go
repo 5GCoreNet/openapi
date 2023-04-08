@@ -77,7 +77,7 @@ func (o *SACEvent) SetEventType(v SACEventType) {
 
 // GetEventTrigger returns the EventTrigger field value if set, zero value otherwise.
 func (o *SACEvent) GetEventTrigger() SACEventTrigger {
-	if o == nil || IsNil(o.EventTrigger) {
+	if o == nil || isNil(o.EventTrigger) {
 		var ret SACEventTrigger
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SACEvent) GetEventTrigger() SACEventTrigger {
 // GetEventTriggerOk returns a tuple with the EventTrigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEvent) GetEventTriggerOk() (*SACEventTrigger, bool) {
-	if o == nil || IsNil(o.EventTrigger) {
+	if o == nil || isNil(o.EventTrigger) {
 		return nil, false
 	}
 	return o.EventTrigger, true
@@ -95,7 +95,7 @@ func (o *SACEvent) GetEventTriggerOk() (*SACEventTrigger, bool) {
 
 // HasEventTrigger returns a boolean if a field has been set.
 func (o *SACEvent) HasEventTrigger() bool {
-	if o != nil && !IsNil(o.EventTrigger) {
+	if o != nil && !isNil(o.EventTrigger) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *SACEvent) SetEventFilter(v []Snssai) {
 
 // GetNotificationPeriod returns the NotificationPeriod field value if set, zero value otherwise.
 func (o *SACEvent) GetNotificationPeriod() int32 {
-	if o == nil || IsNil(o.NotificationPeriod) {
+	if o == nil || isNil(o.NotificationPeriod) {
 		var ret int32
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *SACEvent) GetNotificationPeriod() int32 {
 // GetNotificationPeriodOk returns a tuple with the NotificationPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEvent) GetNotificationPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.NotificationPeriod) {
+	if o == nil || isNil(o.NotificationPeriod) {
 		return nil, false
 	}
 	return o.NotificationPeriod, true
@@ -151,7 +151,7 @@ func (o *SACEvent) GetNotificationPeriodOk() (*int32, bool) {
 
 // HasNotificationPeriod returns a boolean if a field has been set.
 func (o *SACEvent) HasNotificationPeriod() bool {
-	if o != nil && !IsNil(o.NotificationPeriod) {
+	if o != nil && !isNil(o.NotificationPeriod) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *SACEvent) SetNotificationPeriod(v int32) {
 
 // GetNotifThreshold returns the NotifThreshold field value if set, zero value otherwise.
 func (o *SACEvent) GetNotifThreshold() SACInfo {
-	if o == nil || IsNil(o.NotifThreshold) {
+	if o == nil || isNil(o.NotifThreshold) {
 		var ret SACInfo
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *SACEvent) GetNotifThreshold() SACInfo {
 // GetNotifThresholdOk returns a tuple with the NotifThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEvent) GetNotifThresholdOk() (*SACInfo, bool) {
-	if o == nil || IsNil(o.NotifThreshold) {
+	if o == nil || isNil(o.NotifThreshold) {
 		return nil, false
 	}
 	return o.NotifThreshold, true
@@ -183,7 +183,7 @@ func (o *SACEvent) GetNotifThresholdOk() (*SACInfo, bool) {
 
 // HasNotifThreshold returns a boolean if a field has been set.
 func (o *SACEvent) HasNotifThreshold() bool {
-	if o != nil && !IsNil(o.NotifThreshold) {
+	if o != nil && !isNil(o.NotifThreshold) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *SACEvent) SetNotifThreshold(v SACInfo) {
 
 // GetImmediateFlag returns the ImmediateFlag field value if set, zero value otherwise.
 func (o *SACEvent) GetImmediateFlag() bool {
-	if o == nil || IsNil(o.ImmediateFlag) {
+	if o == nil || isNil(o.ImmediateFlag) {
 		var ret bool
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *SACEvent) GetImmediateFlag() bool {
 // GetImmediateFlagOk returns a tuple with the ImmediateFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEvent) GetImmediateFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmediateFlag) {
+	if o == nil || isNil(o.ImmediateFlag) {
 		return nil, false
 	}
 	return o.ImmediateFlag, true
@@ -215,7 +215,7 @@ func (o *SACEvent) GetImmediateFlagOk() (*bool, bool) {
 
 // HasImmediateFlag returns a boolean if a field has been set.
 func (o *SACEvent) HasImmediateFlag() bool {
-	if o != nil && !IsNil(o.ImmediateFlag) {
+	if o != nil && !isNil(o.ImmediateFlag) {
 		return true
 	}
 
@@ -238,17 +238,17 @@ func (o SACEvent) MarshalJSON() ([]byte, error) {
 func (o SACEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.EventTrigger) {
+	if !isNil(o.EventTrigger) {
 		toSerialize["eventTrigger"] = o.EventTrigger
 	}
 	toSerialize["eventFilter"] = o.EventFilter
-	if !IsNil(o.NotificationPeriod) {
+	if !isNil(o.NotificationPeriod) {
 		toSerialize["notificationPeriod"] = o.NotificationPeriod
 	}
-	if !IsNil(o.NotifThreshold) {
+	if !isNil(o.NotifThreshold) {
 		toSerialize["notifThreshold"] = o.NotifThreshold
 	}
-	if !IsNil(o.ImmediateFlag) {
+	if !isNil(o.ImmediateFlag) {
 		toSerialize["immediateFlag"] = o.ImmediateFlag
 	}
 	return toSerialize, nil

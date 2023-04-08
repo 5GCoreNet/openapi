@@ -80,7 +80,7 @@ func (o *EESInfo) SetEesId(v string) {
 
 // GetEndPt returns the EndPt field value if set, zero value otherwise.
 func (o *EESInfo) GetEndPt() EndPoint {
-	if o == nil || IsNil(o.EndPt) {
+	if o == nil || isNil(o.EndPt) {
 		var ret EndPoint
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *EESInfo) GetEndPt() EndPoint {
 // GetEndPtOk returns a tuple with the EndPt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESInfo) GetEndPtOk() (*EndPoint, bool) {
-	if o == nil || IsNil(o.EndPt) {
+	if o == nil || isNil(o.EndPt) {
 		return nil, false
 	}
 	return o.EndPt, true
@@ -98,7 +98,7 @@ func (o *EESInfo) GetEndPtOk() (*EndPoint, bool) {
 
 // HasEndPt returns a boolean if a field has been set.
 func (o *EESInfo) HasEndPt() bool {
-	if o != nil && !IsNil(o.EndPt) {
+	if o != nil && !isNil(o.EndPt) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *EESInfo) SetEndPt(v EndPoint) {
 
 // GetEasIds returns the EasIds field value if set, zero value otherwise.
 func (o *EESInfo) GetEasIds() []string {
-	if o == nil || IsNil(o.EasIds) {
+	if o == nil || isNil(o.EasIds) {
 		var ret []string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *EESInfo) GetEasIds() []string {
 // GetEasIdsOk returns a tuple with the EasIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESInfo) GetEasIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.EasIds) {
+	if o == nil || isNil(o.EasIds) {
 		return nil, false
 	}
 	return o.EasIds, true
@@ -130,7 +130,7 @@ func (o *EESInfo) GetEasIdsOk() ([]string, bool) {
 
 // HasEasIds returns a boolean if a field has been set.
 func (o *EESInfo) HasEasIds() bool {
-	if o != nil && !IsNil(o.EasIds) {
+	if o != nil && !isNil(o.EasIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *EESInfo) SetEasIds(v []string) {
 
 // GetEcspInfo returns the EcspInfo field value if set, zero value otherwise.
 func (o *EESInfo) GetEcspInfo() string {
-	if o == nil || IsNil(o.EcspInfo) {
+	if o == nil || isNil(o.EcspInfo) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *EESInfo) GetEcspInfo() string {
 // GetEcspInfoOk returns a tuple with the EcspInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESInfo) GetEcspInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.EcspInfo) {
+	if o == nil || isNil(o.EcspInfo) {
 		return nil, false
 	}
 	return o.EcspInfo, true
@@ -162,7 +162,7 @@ func (o *EESInfo) GetEcspInfoOk() (*string, bool) {
 
 // HasEcspInfo returns a boolean if a field has been set.
 func (o *EESInfo) HasEcspInfo() bool {
-	if o != nil && !IsNil(o.EcspInfo) {
+	if o != nil && !isNil(o.EcspInfo) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *EESInfo) SetEcspInfo(v string) {
 
 // GetSvcArea returns the SvcArea field value if set, zero value otherwise.
 func (o *EESInfo) GetSvcArea() LocationArea5G {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *EESInfo) GetSvcArea() LocationArea5G {
 // GetSvcAreaOk returns a tuple with the SvcArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESInfo) GetSvcAreaOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		return nil, false
 	}
 	return o.SvcArea, true
@@ -194,7 +194,7 @@ func (o *EESInfo) GetSvcAreaOk() (*LocationArea5G, bool) {
 
 // HasSvcArea returns a boolean if a field has been set.
 func (o *EESInfo) HasSvcArea() bool {
-	if o != nil && !IsNil(o.SvcArea) {
+	if o != nil && !isNil(o.SvcArea) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *EESInfo) SetSvcArea(v LocationArea5G) {
 
 // GetDnais returns the Dnais field value if set, zero value otherwise.
 func (o *EESInfo) GetDnais() []string {
-	if o == nil || IsNil(o.Dnais) {
+	if o == nil || isNil(o.Dnais) {
 		var ret []string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *EESInfo) GetDnais() []string {
 // GetDnaisOk returns a tuple with the Dnais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESInfo) GetDnaisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Dnais) {
+	if o == nil || isNil(o.Dnais) {
 		return nil, false
 	}
 	return o.Dnais, true
@@ -226,7 +226,7 @@ func (o *EESInfo) GetDnaisOk() ([]string, bool) {
 
 // HasDnais returns a boolean if a field has been set.
 func (o *EESInfo) HasDnais() bool {
-	if o != nil && !IsNil(o.Dnais) {
+	if o != nil && !isNil(o.Dnais) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *EESInfo) SetDnais(v []string) {
 
 // GetEesSvcContSupp returns the EesSvcContSupp field value if set, zero value otherwise.
 func (o *EESInfo) GetEesSvcContSupp() []ACRScenario {
-	if o == nil || IsNil(o.EesSvcContSupp) {
+	if o == nil || isNil(o.EesSvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *EESInfo) GetEesSvcContSupp() []ACRScenario {
 // GetEesSvcContSuppOk returns a tuple with the EesSvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESInfo) GetEesSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EesSvcContSupp) {
+	if o == nil || isNil(o.EesSvcContSupp) {
 		return nil, false
 	}
 	return o.EesSvcContSupp, true
@@ -258,7 +258,7 @@ func (o *EESInfo) GetEesSvcContSuppOk() ([]ACRScenario, bool) {
 
 // HasEesSvcContSupp returns a boolean if a field has been set.
 func (o *EESInfo) HasEesSvcContSupp() bool {
-	if o != nil && !IsNil(o.EesSvcContSupp) {
+	if o != nil && !isNil(o.EesSvcContSupp) {
 		return true
 	}
 
@@ -305,22 +305,22 @@ func (o EESInfo) MarshalJSON() ([]byte, error) {
 func (o EESInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eesId"] = o.EesId
-	if !IsNil(o.EndPt) {
+	if !isNil(o.EndPt) {
 		toSerialize["endPt"] = o.EndPt
 	}
-	if !IsNil(o.EasIds) {
+	if !isNil(o.EasIds) {
 		toSerialize["easIds"] = o.EasIds
 	}
-	if !IsNil(o.EcspInfo) {
+	if !isNil(o.EcspInfo) {
 		toSerialize["ecspInfo"] = o.EcspInfo
 	}
-	if !IsNil(o.SvcArea) {
+	if !isNil(o.SvcArea) {
 		toSerialize["svcArea"] = o.SvcArea
 	}
-	if !IsNil(o.Dnais) {
+	if !isNil(o.Dnais) {
 		toSerialize["dnais"] = o.Dnais
 	}
-	if !IsNil(o.EesSvcContSupp) {
+	if !isNil(o.EesSvcContSupp) {
 		toSerialize["eesSvcContSupp"] = o.EesSvcContSupp
 	}
 	toSerialize["eecRegConf"] = o.EecRegConf

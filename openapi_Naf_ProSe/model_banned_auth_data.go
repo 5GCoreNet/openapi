@@ -95,7 +95,7 @@ func (o *BannedAuthData) SetBannedPduid(v string) {
 
 // GetRevocationResult returns the RevocationResult field value if set, zero value otherwise.
 func (o *BannedAuthData) GetRevocationResult() RevocationResult {
-	if o == nil || IsNil(o.RevocationResult) {
+	if o == nil || isNil(o.RevocationResult) {
 		var ret RevocationResult
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *BannedAuthData) GetRevocationResult() RevocationResult {
 // GetRevocationResultOk returns a tuple with the RevocationResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BannedAuthData) GetRevocationResultOk() (*RevocationResult, bool) {
-	if o == nil || IsNil(o.RevocationResult) {
+	if o == nil || isNil(o.RevocationResult) {
 		return nil, false
 	}
 	return o.RevocationResult, true
@@ -113,7 +113,7 @@ func (o *BannedAuthData) GetRevocationResultOk() (*RevocationResult, bool) {
 
 // HasRevocationResult returns a boolean if a field has been set.
 func (o *BannedAuthData) HasRevocationResult() bool {
-	if o != nil && !IsNil(o.RevocationResult) {
+	if o != nil && !isNil(o.RevocationResult) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o BannedAuthData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bannedRpauid"] = o.BannedRpauid
 	toSerialize["bannedPduid"] = o.BannedPduid
-	if !IsNil(o.RevocationResult) {
+	if !isNil(o.RevocationResult) {
 		toSerialize["revocationResult"] = o.RevocationResult
 	}
 	return toSerialize, nil

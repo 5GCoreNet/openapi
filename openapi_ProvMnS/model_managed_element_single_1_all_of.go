@@ -19,7 +19,7 @@ var _ MappedNullable = &ManagedElementSingle1AllOf{}
 
 // ManagedElementSingle1AllOf struct for ManagedElementSingle1AllOf
 type ManagedElementSingle1AllOf struct {
-	Attributes *ManagedElementSingle1AllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedElementAttr `json:"attributes,omitempty"`
 }
 
 // NewManagedElementSingle1AllOf instantiates a new ManagedElementSingle1AllOf object
@@ -40,9 +40,9 @@ func NewManagedElementSingle1AllOfWithDefaults() *ManagedElementSingle1AllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ManagedElementSingle1AllOf) GetAttributes() ManagedElementSingle1AllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret ManagedElementSingle1AllOfAttributes
+func (o *ManagedElementSingle1AllOf) GetAttributes() ManagedElementAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedElementAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *ManagedElementSingle1AllOf) GetAttributes() ManagedElementSingle1AllOfA
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManagedElementSingle1AllOf) GetAttributesOk() (*ManagedElementSingle1AllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *ManagedElementSingle1AllOf) GetAttributesOk() (*ManagedElementAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *ManagedElementSingle1AllOf) GetAttributesOk() (*ManagedElementSingle1Al
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ManagedElementSingle1AllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ManagedElementSingle1AllOfAttributes and assigns it to the Attributes field.
-func (o *ManagedElementSingle1AllOf) SetAttributes(v ManagedElementSingle1AllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedElementAttr and assigns it to the Attributes field.
+func (o *ManagedElementSingle1AllOf) SetAttributes(v ManagedElementAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o ManagedElementSingle1AllOf) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingle1AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

@@ -69,7 +69,7 @@ func (o *AmfCreateEventSubscription) SetSubscription(v AmfEventSubscription) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmfCreateEventSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AmfCreateEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreateEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -87,7 +87,7 @@ func (o *AmfCreateEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmfCreateEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AmfCreateEventSubscription) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *AmfCreateEventSubscription) GetOldGuami() Guami {
-	if o == nil || IsNil(o.OldGuami) {
+	if o == nil || isNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AmfCreateEventSubscription) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreateEventSubscription) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.OldGuami) {
+	if o == nil || isNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -119,7 +119,7 @@ func (o *AmfCreateEventSubscription) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *AmfCreateEventSubscription) HasOldGuami() bool {
-	if o != nil && !IsNil(o.OldGuami) {
+	if o != nil && !isNil(o.OldGuami) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o AmfCreateEventSubscription) MarshalJSON() ([]byte, error) {
 func (o AmfCreateEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.OldGuami) {
+	if !isNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewTrunkGroupIDWithDefaults() *TrunkGroupID {
 
 // GetIncomingTrunkGroupID returns the IncomingTrunkGroupID field value if set, zero value otherwise.
 func (o *TrunkGroupID) GetIncomingTrunkGroupID() string {
-	if o == nil || IsNil(o.IncomingTrunkGroupID) {
+	if o == nil || isNil(o.IncomingTrunkGroupID) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TrunkGroupID) GetIncomingTrunkGroupID() string {
 // GetIncomingTrunkGroupIDOk returns a tuple with the IncomingTrunkGroupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrunkGroupID) GetIncomingTrunkGroupIDOk() (*string, bool) {
-	if o == nil || IsNil(o.IncomingTrunkGroupID) {
+	if o == nil || isNil(o.IncomingTrunkGroupID) {
 		return nil, false
 	}
 	return o.IncomingTrunkGroupID, true
@@ -60,7 +60,7 @@ func (o *TrunkGroupID) GetIncomingTrunkGroupIDOk() (*string, bool) {
 
 // HasIncomingTrunkGroupID returns a boolean if a field has been set.
 func (o *TrunkGroupID) HasIncomingTrunkGroupID() bool {
-	if o != nil && !IsNil(o.IncomingTrunkGroupID) {
+	if o != nil && !isNil(o.IncomingTrunkGroupID) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TrunkGroupID) SetIncomingTrunkGroupID(v string) {
 
 // GetOutgoingTrunkGroupID returns the OutgoingTrunkGroupID field value if set, zero value otherwise.
 func (o *TrunkGroupID) GetOutgoingTrunkGroupID() string {
-	if o == nil || IsNil(o.OutgoingTrunkGroupID) {
+	if o == nil || isNil(o.OutgoingTrunkGroupID) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TrunkGroupID) GetOutgoingTrunkGroupID() string {
 // GetOutgoingTrunkGroupIDOk returns a tuple with the OutgoingTrunkGroupID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrunkGroupID) GetOutgoingTrunkGroupIDOk() (*string, bool) {
-	if o == nil || IsNil(o.OutgoingTrunkGroupID) {
+	if o == nil || isNil(o.OutgoingTrunkGroupID) {
 		return nil, false
 	}
 	return o.OutgoingTrunkGroupID, true
@@ -92,7 +92,7 @@ func (o *TrunkGroupID) GetOutgoingTrunkGroupIDOk() (*string, bool) {
 
 // HasOutgoingTrunkGroupID returns a boolean if a field has been set.
 func (o *TrunkGroupID) HasOutgoingTrunkGroupID() bool {
-	if o != nil && !IsNil(o.OutgoingTrunkGroupID) {
+	if o != nil && !isNil(o.OutgoingTrunkGroupID) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o TrunkGroupID) MarshalJSON() ([]byte, error) {
 
 func (o TrunkGroupID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IncomingTrunkGroupID) {
+	if !isNil(o.IncomingTrunkGroupID) {
 		toSerialize["incomingTrunkGroupID"] = o.IncomingTrunkGroupID
 	}
-	if !IsNil(o.OutgoingTrunkGroupID) {
+	if !isNil(o.OutgoingTrunkGroupID) {
 		toSerialize["outgoingTrunkGroupID"] = o.OutgoingTrunkGroupID
 	}
 	return toSerialize, nil

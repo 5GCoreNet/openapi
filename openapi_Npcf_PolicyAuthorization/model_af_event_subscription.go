@@ -71,7 +71,7 @@ func (o *AfEventSubscription) SetEvent(v AfEvent) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *AfEventSubscription) GetNotifMethod() AfNotifMethod {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		var ret AfNotifMethod
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AfEventSubscription) GetNotifMethod() AfNotifMethod {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventSubscription) GetNotifMethodOk() (*AfNotifMethod, bool) {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -89,7 +89,7 @@ func (o *AfEventSubscription) GetNotifMethodOk() (*AfNotifMethod, bool) {
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *AfEventSubscription) HasNotifMethod() bool {
-	if o != nil && !IsNil(o.NotifMethod) {
+	if o != nil && !isNil(o.NotifMethod) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *AfEventSubscription) SetNotifMethod(v AfNotifMethod) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *AfEventSubscription) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AfEventSubscription) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventSubscription) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -121,7 +121,7 @@ func (o *AfEventSubscription) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *AfEventSubscription) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *AfEventSubscription) SetRepPeriod(v int32) {
 
 // GetWaitTime returns the WaitTime field value if set, zero value otherwise.
 func (o *AfEventSubscription) GetWaitTime() int32 {
-	if o == nil || IsNil(o.WaitTime) {
+	if o == nil || isNil(o.WaitTime) {
 		var ret int32
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *AfEventSubscription) GetWaitTime() int32 {
 // GetWaitTimeOk returns a tuple with the WaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventSubscription) GetWaitTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.WaitTime) {
+	if o == nil || isNil(o.WaitTime) {
 		return nil, false
 	}
 	return o.WaitTime, true
@@ -153,7 +153,7 @@ func (o *AfEventSubscription) GetWaitTimeOk() (*int32, bool) {
 
 // HasWaitTime returns a boolean if a field has been set.
 func (o *AfEventSubscription) HasWaitTime() bool {
-	if o != nil && !IsNil(o.WaitTime) {
+	if o != nil && !isNil(o.WaitTime) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o AfEventSubscription) MarshalJSON() ([]byte, error) {
 func (o AfEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.NotifMethod) {
+	if !isNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !IsNil(o.WaitTime) {
+	if !isNil(o.WaitTime) {
 		toSerialize["waitTime"] = o.WaitTime
 	}
 	return toSerialize, nil

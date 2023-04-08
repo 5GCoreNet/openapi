@@ -67,7 +67,7 @@ func (o *SubscriptionContext) SetSubscriptionId(v string) {
 
 // GetSubscrCond returns the SubscrCond field value if set, zero value otherwise.
 func (o *SubscriptionContext) GetSubscrCond() SubscrCond {
-	if o == nil || IsNil(o.SubscrCond) {
+	if o == nil || isNil(o.SubscrCond) {
 		var ret SubscrCond
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SubscriptionContext) GetSubscrCond() SubscrCond {
 // GetSubscrCondOk returns a tuple with the SubscrCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionContext) GetSubscrCondOk() (*SubscrCond, bool) {
-	if o == nil || IsNil(o.SubscrCond) {
+	if o == nil || isNil(o.SubscrCond) {
 		return nil, false
 	}
 	return o.SubscrCond, true
@@ -85,7 +85,7 @@ func (o *SubscriptionContext) GetSubscrCondOk() (*SubscrCond, bool) {
 
 // HasSubscrCond returns a boolean if a field has been set.
 func (o *SubscriptionContext) HasSubscrCond() bool {
-	if o != nil && !IsNil(o.SubscrCond) {
+	if o != nil && !isNil(o.SubscrCond) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SubscriptionContext) MarshalJSON() ([]byte, error) {
 func (o SubscriptionContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.SubscrCond) {
+	if !isNil(o.SubscrCond) {
 		toSerialize["subscrCond"] = o.SubscrCond
 	}
 	return toSerialize, nil

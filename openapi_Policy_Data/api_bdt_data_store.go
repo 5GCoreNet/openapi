@@ -13,7 +13,7 @@ package openapi_Policy_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -80,10 +80,10 @@ func (a *BdtDataStoreApiService) ReadBdtDataExecute(r ApiReadBdtDataRequest) ([]
 	localVarFormParams := url.Values{}
 
 	if r.bdtRefIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "bdt-ref-ids", r.bdtRefIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "bdt-ref-ids", r.bdtRefIds, "csv")
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -112,9 +112,9 @@ func (a *BdtDataStoreApiService) ReadBdtDataExecute(r ApiReadBdtDataRequest) ([]
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

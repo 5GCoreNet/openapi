@@ -52,7 +52,7 @@ func NewBootstrappingInfoWithDefaults() *BootstrappingInfo {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetStatus() Status {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret Status
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *BootstrappingInfo) GetStatus() Status {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetStatusOk() (*Status, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -70,7 +70,7 @@ func (o *BootstrappingInfo) GetStatusOk() (*Status, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *BootstrappingInfo) SetLinks(v map[string]LinksValueSchema) {
 
 // GetNrfFeatures returns the NrfFeatures field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetNrfFeatures() map[string]string {
-	if o == nil || IsNil(o.NrfFeatures) {
+	if o == nil || isNil(o.NrfFeatures) {
 		var ret map[string]string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *BootstrappingInfo) GetNrfFeatures() map[string]string {
 // GetNrfFeaturesOk returns a tuple with the NrfFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetNrfFeaturesOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.NrfFeatures) {
+	if o == nil || isNil(o.NrfFeatures) {
 		return nil, false
 	}
 	return o.NrfFeatures, true
@@ -126,7 +126,7 @@ func (o *BootstrappingInfo) GetNrfFeaturesOk() (*map[string]string, bool) {
 
 // HasNrfFeatures returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasNrfFeatures() bool {
-	if o != nil && !IsNil(o.NrfFeatures) {
+	if o != nil && !isNil(o.NrfFeatures) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *BootstrappingInfo) SetNrfFeatures(v map[string]string) {
 
 // GetOauth2Required returns the Oauth2Required field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetOauth2Required() map[string]bool {
-	if o == nil || IsNil(o.Oauth2Required) {
+	if o == nil || isNil(o.Oauth2Required) {
 		var ret map[string]bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *BootstrappingInfo) GetOauth2Required() map[string]bool {
 // GetOauth2RequiredOk returns a tuple with the Oauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetOauth2RequiredOk() (*map[string]bool, bool) {
-	if o == nil || IsNil(o.Oauth2Required) {
+	if o == nil || isNil(o.Oauth2Required) {
 		return nil, false
 	}
 	return o.Oauth2Required, true
@@ -158,7 +158,7 @@ func (o *BootstrappingInfo) GetOauth2RequiredOk() (*map[string]bool, bool) {
 
 // HasOauth2Required returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasOauth2Required() bool {
-	if o != nil && !IsNil(o.Oauth2Required) {
+	if o != nil && !isNil(o.Oauth2Required) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *BootstrappingInfo) SetOauth2Required(v map[string]bool) {
 
 // GetNrfSetId returns the NrfSetId field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetNrfSetId() string {
-	if o == nil || IsNil(o.NrfSetId) {
+	if o == nil || isNil(o.NrfSetId) {
 		var ret string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *BootstrappingInfo) GetNrfSetId() string {
 // GetNrfSetIdOk returns a tuple with the NrfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetNrfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfSetId) {
+	if o == nil || isNil(o.NrfSetId) {
 		return nil, false
 	}
 	return o.NrfSetId, true
@@ -190,7 +190,7 @@ func (o *BootstrappingInfo) GetNrfSetIdOk() (*string, bool) {
 
 // HasNrfSetId returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasNrfSetId() bool {
-	if o != nil && !IsNil(o.NrfSetId) {
+	if o != nil && !isNil(o.NrfSetId) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *BootstrappingInfo) SetNrfSetId(v string) {
 
 // GetNrfInstanceId returns the NrfInstanceId field value if set, zero value otherwise.
 func (o *BootstrappingInfo) GetNrfInstanceId() string {
-	if o == nil || IsNil(o.NrfInstanceId) {
+	if o == nil || isNil(o.NrfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *BootstrappingInfo) GetNrfInstanceId() string {
 // GetNrfInstanceIdOk returns a tuple with the NrfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfo) GetNrfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfInstanceId) {
+	if o == nil || isNil(o.NrfInstanceId) {
 		return nil, false
 	}
 	return o.NrfInstanceId, true
@@ -222,7 +222,7 @@ func (o *BootstrappingInfo) GetNrfInstanceIdOk() (*string, bool) {
 
 // HasNrfInstanceId returns a boolean if a field has been set.
 func (o *BootstrappingInfo) HasNrfInstanceId() bool {
-	if o != nil && !IsNil(o.NrfInstanceId) {
+	if o != nil && !isNil(o.NrfInstanceId) {
 		return true
 	}
 
@@ -244,20 +244,20 @@ func (o BootstrappingInfo) MarshalJSON() ([]byte, error) {
 
 func (o BootstrappingInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	toSerialize["_links"] = o.Links
-	if !IsNil(o.NrfFeatures) {
+	if !isNil(o.NrfFeatures) {
 		toSerialize["nrfFeatures"] = o.NrfFeatures
 	}
-	if !IsNil(o.Oauth2Required) {
+	if !isNil(o.Oauth2Required) {
 		toSerialize["oauth2Required"] = o.Oauth2Required
 	}
-	if !IsNil(o.NrfSetId) {
+	if !isNil(o.NrfSetId) {
 		toSerialize["nrfSetId"] = o.NrfSetId
 	}
-	if !IsNil(o.NrfInstanceId) {
+	if !isNil(o.NrfInstanceId) {
 		toSerialize["nrfInstanceId"] = o.NrfInstanceId
 	}
 	return toSerialize, nil

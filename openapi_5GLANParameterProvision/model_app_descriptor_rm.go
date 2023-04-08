@@ -42,7 +42,7 @@ func NewAppDescriptorRmWithDefaults() *AppDescriptorRm {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *AppDescriptorRm) GetAppIds() map[string]string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret map[string]string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AppDescriptorRm) GetAppIds() map[string]string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDescriptorRm) GetAppIdsOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -60,7 +60,7 @@ func (o *AppDescriptorRm) GetAppIdsOk() (*map[string]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AppDescriptorRm) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o AppDescriptorRm) MarshalJSON() ([]byte, error) {
 
 func (o AppDescriptorRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
 	return toSerialize, nil

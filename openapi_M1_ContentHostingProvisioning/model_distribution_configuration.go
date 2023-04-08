@@ -53,7 +53,7 @@ func NewDistributionConfigurationWithDefaults() *DistributionConfiguration {
 
 // GetContentPreparationTemplateId returns the ContentPreparationTemplateId field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetContentPreparationTemplateId() string {
-	if o == nil || IsNil(o.ContentPreparationTemplateId) {
+	if o == nil || isNil(o.ContentPreparationTemplateId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *DistributionConfiguration) GetContentPreparationTemplateId() string {
 // GetContentPreparationTemplateIdOk returns a tuple with the ContentPreparationTemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetContentPreparationTemplateIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentPreparationTemplateId) {
+	if o == nil || isNil(o.ContentPreparationTemplateId) {
 		return nil, false
 	}
 	return o.ContentPreparationTemplateId, true
@@ -71,7 +71,7 @@ func (o *DistributionConfiguration) GetContentPreparationTemplateIdOk() (*string
 
 // HasContentPreparationTemplateId returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasContentPreparationTemplateId() bool {
-	if o != nil && !IsNil(o.ContentPreparationTemplateId) {
+	if o != nil && !isNil(o.ContentPreparationTemplateId) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *DistributionConfiguration) SetContentPreparationTemplateId(v string) {
 
 // GetCanonicalDomainName returns the CanonicalDomainName field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetCanonicalDomainName() string {
-	if o == nil || IsNil(o.CanonicalDomainName) {
+	if o == nil || isNil(o.CanonicalDomainName) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *DistributionConfiguration) GetCanonicalDomainName() string {
 // GetCanonicalDomainNameOk returns a tuple with the CanonicalDomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetCanonicalDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.CanonicalDomainName) {
+	if o == nil || isNil(o.CanonicalDomainName) {
 		return nil, false
 	}
 	return o.CanonicalDomainName, true
@@ -103,7 +103,7 @@ func (o *DistributionConfiguration) GetCanonicalDomainNameOk() (*string, bool) {
 
 // HasCanonicalDomainName returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasCanonicalDomainName() bool {
-	if o != nil && !IsNil(o.CanonicalDomainName) {
+	if o != nil && !isNil(o.CanonicalDomainName) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *DistributionConfiguration) SetCanonicalDomainName(v string) {
 
 // GetDomainNameAlias returns the DomainNameAlias field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetDomainNameAlias() string {
-	if o == nil || IsNil(o.DomainNameAlias) {
+	if o == nil || isNil(o.DomainNameAlias) {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *DistributionConfiguration) GetDomainNameAlias() string {
 // GetDomainNameAliasOk returns a tuple with the DomainNameAlias field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetDomainNameAliasOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainNameAlias) {
+	if o == nil || isNil(o.DomainNameAlias) {
 		return nil, false
 	}
 	return o.DomainNameAlias, true
@@ -135,7 +135,7 @@ func (o *DistributionConfiguration) GetDomainNameAliasOk() (*string, bool) {
 
 // HasDomainNameAlias returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasDomainNameAlias() bool {
-	if o != nil && !IsNil(o.DomainNameAlias) {
+	if o != nil && !isNil(o.DomainNameAlias) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *DistributionConfiguration) SetDomainNameAlias(v string) {
 
 // GetBaseURL returns the BaseURL field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetBaseURL() string {
-	if o == nil || IsNil(o.BaseURL) {
+	if o == nil || isNil(o.BaseURL) {
 		var ret string
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *DistributionConfiguration) GetBaseURL() string {
 // GetBaseURLOk returns a tuple with the BaseURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetBaseURLOk() (*string, bool) {
-	if o == nil || IsNil(o.BaseURL) {
+	if o == nil || isNil(o.BaseURL) {
 		return nil, false
 	}
 	return o.BaseURL, true
@@ -167,7 +167,7 @@ func (o *DistributionConfiguration) GetBaseURLOk() (*string, bool) {
 
 // HasBaseURL returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasBaseURL() bool {
-	if o != nil && !IsNil(o.BaseURL) {
+	if o != nil && !isNil(o.BaseURL) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *DistributionConfiguration) SetBaseURL(v string) {
 
 // GetPathRewriteRules returns the PathRewriteRules field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetPathRewriteRules() []PathRewriteRule {
-	if o == nil || IsNil(o.PathRewriteRules) {
+	if o == nil || isNil(o.PathRewriteRules) {
 		var ret []PathRewriteRule
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *DistributionConfiguration) GetPathRewriteRules() []PathRewriteRule {
 // GetPathRewriteRulesOk returns a tuple with the PathRewriteRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetPathRewriteRulesOk() ([]PathRewriteRule, bool) {
-	if o == nil || IsNil(o.PathRewriteRules) {
+	if o == nil || isNil(o.PathRewriteRules) {
 		return nil, false
 	}
 	return o.PathRewriteRules, true
@@ -199,7 +199,7 @@ func (o *DistributionConfiguration) GetPathRewriteRulesOk() ([]PathRewriteRule, 
 
 // HasPathRewriteRules returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasPathRewriteRules() bool {
-	if o != nil && !IsNil(o.PathRewriteRules) {
+	if o != nil && !isNil(o.PathRewriteRules) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *DistributionConfiguration) SetPathRewriteRules(v []PathRewriteRule) {
 
 // GetCachingConfigurations returns the CachingConfigurations field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetCachingConfigurations() []CachingConfiguration {
-	if o == nil || IsNil(o.CachingConfigurations) {
+	if o == nil || isNil(o.CachingConfigurations) {
 		var ret []CachingConfiguration
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *DistributionConfiguration) GetCachingConfigurations() []CachingConfigur
 // GetCachingConfigurationsOk returns a tuple with the CachingConfigurations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetCachingConfigurationsOk() ([]CachingConfiguration, bool) {
-	if o == nil || IsNil(o.CachingConfigurations) {
+	if o == nil || isNil(o.CachingConfigurations) {
 		return nil, false
 	}
 	return o.CachingConfigurations, true
@@ -231,7 +231,7 @@ func (o *DistributionConfiguration) GetCachingConfigurationsOk() ([]CachingConfi
 
 // HasCachingConfigurations returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasCachingConfigurations() bool {
-	if o != nil && !IsNil(o.CachingConfigurations) {
+	if o != nil && !isNil(o.CachingConfigurations) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *DistributionConfiguration) SetCachingConfigurations(v []CachingConfigur
 
 // GetGeoFencing returns the GeoFencing field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetGeoFencing() DistributionConfigurationGeoFencing {
-	if o == nil || IsNil(o.GeoFencing) {
+	if o == nil || isNil(o.GeoFencing) {
 		var ret DistributionConfigurationGeoFencing
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *DistributionConfiguration) GetGeoFencing() DistributionConfigurationGeo
 // GetGeoFencingOk returns a tuple with the GeoFencing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetGeoFencingOk() (*DistributionConfigurationGeoFencing, bool) {
-	if o == nil || IsNil(o.GeoFencing) {
+	if o == nil || isNil(o.GeoFencing) {
 		return nil, false
 	}
 	return o.GeoFencing, true
@@ -263,7 +263,7 @@ func (o *DistributionConfiguration) GetGeoFencingOk() (*DistributionConfiguratio
 
 // HasGeoFencing returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasGeoFencing() bool {
-	if o != nil && !IsNil(o.GeoFencing) {
+	if o != nil && !isNil(o.GeoFencing) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *DistributionConfiguration) SetGeoFencing(v DistributionConfigurationGeo
 
 // GetUrlSignature returns the UrlSignature field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetUrlSignature() DistributionConfigurationUrlSignature {
-	if o == nil || IsNil(o.UrlSignature) {
+	if o == nil || isNil(o.UrlSignature) {
 		var ret DistributionConfigurationUrlSignature
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *DistributionConfiguration) GetUrlSignature() DistributionConfigurationU
 // GetUrlSignatureOk returns a tuple with the UrlSignature field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetUrlSignatureOk() (*DistributionConfigurationUrlSignature, bool) {
-	if o == nil || IsNil(o.UrlSignature) {
+	if o == nil || isNil(o.UrlSignature) {
 		return nil, false
 	}
 	return o.UrlSignature, true
@@ -295,7 +295,7 @@ func (o *DistributionConfiguration) GetUrlSignatureOk() (*DistributionConfigurat
 
 // HasUrlSignature returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasUrlSignature() bool {
-	if o != nil && !IsNil(o.UrlSignature) {
+	if o != nil && !isNil(o.UrlSignature) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *DistributionConfiguration) SetUrlSignature(v DistributionConfigurationU
 
 // GetCertificateId returns the CertificateId field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetCertificateId() string {
-	if o == nil || IsNil(o.CertificateId) {
+	if o == nil || isNil(o.CertificateId) {
 		var ret string
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *DistributionConfiguration) GetCertificateId() string {
 // GetCertificateIdOk returns a tuple with the CertificateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetCertificateIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CertificateId) {
+	if o == nil || isNil(o.CertificateId) {
 		return nil, false
 	}
 	return o.CertificateId, true
@@ -327,7 +327,7 @@ func (o *DistributionConfiguration) GetCertificateIdOk() (*string, bool) {
 
 // HasCertificateId returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasCertificateId() bool {
-	if o != nil && !IsNil(o.CertificateId) {
+	if o != nil && !isNil(o.CertificateId) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *DistributionConfiguration) SetCertificateId(v string) {
 
 // GetSupplementaryDistributionNetworks returns the SupplementaryDistributionNetworks field value if set, zero value otherwise.
 func (o *DistributionConfiguration) GetSupplementaryDistributionNetworks() []DistributionConfigurationSupplementaryDistributionNetworksInner {
-	if o == nil || IsNil(o.SupplementaryDistributionNetworks) {
+	if o == nil || isNil(o.SupplementaryDistributionNetworks) {
 		var ret []DistributionConfigurationSupplementaryDistributionNetworksInner
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *DistributionConfiguration) GetSupplementaryDistributionNetworks() []Dis
 // GetSupplementaryDistributionNetworksOk returns a tuple with the SupplementaryDistributionNetworks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfiguration) GetSupplementaryDistributionNetworksOk() ([]DistributionConfigurationSupplementaryDistributionNetworksInner, bool) {
-	if o == nil || IsNil(o.SupplementaryDistributionNetworks) {
+	if o == nil || isNil(o.SupplementaryDistributionNetworks) {
 		return nil, false
 	}
 	return o.SupplementaryDistributionNetworks, true
@@ -359,7 +359,7 @@ func (o *DistributionConfiguration) GetSupplementaryDistributionNetworksOk() ([]
 
 // HasSupplementaryDistributionNetworks returns a boolean if a field has been set.
 func (o *DistributionConfiguration) HasSupplementaryDistributionNetworks() bool {
-	if o != nil && !IsNil(o.SupplementaryDistributionNetworks) {
+	if o != nil && !isNil(o.SupplementaryDistributionNetworks) {
 		return true
 	}
 
@@ -381,34 +381,34 @@ func (o DistributionConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o DistributionConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ContentPreparationTemplateId) {
+	if !isNil(o.ContentPreparationTemplateId) {
 		toSerialize["contentPreparationTemplateId"] = o.ContentPreparationTemplateId
 	}
-	if !IsNil(o.CanonicalDomainName) {
+	if !isNil(o.CanonicalDomainName) {
 		toSerialize["canonicalDomainName"] = o.CanonicalDomainName
 	}
-	if !IsNil(o.DomainNameAlias) {
+	if !isNil(o.DomainNameAlias) {
 		toSerialize["domainNameAlias"] = o.DomainNameAlias
 	}
-	if !IsNil(o.BaseURL) {
+	if !isNil(o.BaseURL) {
 		toSerialize["baseURL"] = o.BaseURL
 	}
-	if !IsNil(o.PathRewriteRules) {
+	if !isNil(o.PathRewriteRules) {
 		toSerialize["pathRewriteRules"] = o.PathRewriteRules
 	}
-	if !IsNil(o.CachingConfigurations) {
+	if !isNil(o.CachingConfigurations) {
 		toSerialize["cachingConfigurations"] = o.CachingConfigurations
 	}
-	if !IsNil(o.GeoFencing) {
+	if !isNil(o.GeoFencing) {
 		toSerialize["geoFencing"] = o.GeoFencing
 	}
-	if !IsNil(o.UrlSignature) {
+	if !isNil(o.UrlSignature) {
 		toSerialize["urlSignature"] = o.UrlSignature
 	}
-	if !IsNil(o.CertificateId) {
+	if !isNil(o.CertificateId) {
 		toSerialize["certificateId"] = o.CertificateId
 	}
-	if !IsNil(o.SupplementaryDistributionNetworks) {
+	if !isNil(o.SupplementaryDistributionNetworks) {
 		toSerialize["supplementaryDistributionNetworks"] = o.SupplementaryDistributionNetworks
 	}
 	return toSerialize, nil

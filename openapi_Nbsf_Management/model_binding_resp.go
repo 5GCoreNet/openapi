@@ -44,7 +44,7 @@ func NewBindingRespWithDefaults() *BindingResp {
 
 // GetPcfSmFqdn returns the PcfSmFqdn field value if set, zero value otherwise.
 func (o *BindingResp) GetPcfSmFqdn() string {
-	if o == nil || IsNil(o.PcfSmFqdn) {
+	if o == nil || isNil(o.PcfSmFqdn) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *BindingResp) GetPcfSmFqdn() string {
 // GetPcfSmFqdnOk returns a tuple with the PcfSmFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BindingResp) GetPcfSmFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfSmFqdn) {
+	if o == nil || isNil(o.PcfSmFqdn) {
 		return nil, false
 	}
 	return o.PcfSmFqdn, true
@@ -62,7 +62,7 @@ func (o *BindingResp) GetPcfSmFqdnOk() (*string, bool) {
 
 // HasPcfSmFqdn returns a boolean if a field has been set.
 func (o *BindingResp) HasPcfSmFqdn() bool {
-	if o != nil && !IsNil(o.PcfSmFqdn) {
+	if o != nil && !isNil(o.PcfSmFqdn) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *BindingResp) SetPcfSmFqdn(v string) {
 
 // GetPcfSmIpEndPoints returns the PcfSmIpEndPoints field value if set, zero value otherwise.
 func (o *BindingResp) GetPcfSmIpEndPoints() []IpEndPoint {
-	if o == nil || IsNil(o.PcfSmIpEndPoints) {
+	if o == nil || isNil(o.PcfSmIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *BindingResp) GetPcfSmIpEndPoints() []IpEndPoint {
 // GetPcfSmIpEndPointsOk returns a tuple with the PcfSmIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BindingResp) GetPcfSmIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || IsNil(o.PcfSmIpEndPoints) {
+	if o == nil || isNil(o.PcfSmIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfSmIpEndPoints, true
@@ -94,7 +94,7 @@ func (o *BindingResp) GetPcfSmIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfSmIpEndPoints returns a boolean if a field has been set.
 func (o *BindingResp) HasPcfSmIpEndPoints() bool {
-	if o != nil && !IsNil(o.PcfSmIpEndPoints) {
+	if o != nil && !isNil(o.PcfSmIpEndPoints) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o BindingResp) MarshalJSON() ([]byte, error) {
 
 func (o BindingResp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PcfSmFqdn) {
+	if !isNil(o.PcfSmFqdn) {
 		toSerialize["pcfSmFqdn"] = o.PcfSmFqdn
 	}
-	if !IsNil(o.PcfSmIpEndPoints) {
+	if !isNil(o.PcfSmIpEndPoints) {
 		toSerialize["pcfSmIpEndPoints"] = o.PcfSmIpEndPoints
 	}
 	return toSerialize, nil

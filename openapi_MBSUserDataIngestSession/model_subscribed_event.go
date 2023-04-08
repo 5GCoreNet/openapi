@@ -67,7 +67,7 @@ func (o *SubscribedEvent) SetStatusEvent(v Event) {
 
 // GetMbsDistSessionId returns the MbsDistSessionId field value if set, zero value otherwise.
 func (o *SubscribedEvent) GetMbsDistSessionId() string {
-	if o == nil || IsNil(o.MbsDistSessionId) {
+	if o == nil || isNil(o.MbsDistSessionId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SubscribedEvent) GetMbsDistSessionId() string {
 // GetMbsDistSessionIdOk returns a tuple with the MbsDistSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedEvent) GetMbsDistSessionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MbsDistSessionId) {
+	if o == nil || isNil(o.MbsDistSessionId) {
 		return nil, false
 	}
 	return o.MbsDistSessionId, true
@@ -85,7 +85,7 @@ func (o *SubscribedEvent) GetMbsDistSessionIdOk() (*string, bool) {
 
 // HasMbsDistSessionId returns a boolean if a field has been set.
 func (o *SubscribedEvent) HasMbsDistSessionId() bool {
-	if o != nil && !IsNil(o.MbsDistSessionId) {
+	if o != nil && !isNil(o.MbsDistSessionId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SubscribedEvent) MarshalJSON() ([]byte, error) {
 func (o SubscribedEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusEvent"] = o.StatusEvent
-	if !IsNil(o.MbsDistSessionId) {
+	if !isNil(o.MbsDistSessionId) {
 		toSerialize["mbsDistSessionId"] = o.MbsDistSessionId
 	}
 	return toSerialize, nil

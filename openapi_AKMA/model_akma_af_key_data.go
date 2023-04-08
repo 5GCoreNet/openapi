@@ -52,7 +52,7 @@ func NewAkmaAfKeyDataWithDefaults() *AkmaAfKeyData {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AkmaAfKeyData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *AkmaAfKeyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AkmaAfKeyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -70,7 +70,7 @@ func (o *AkmaAfKeyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AkmaAfKeyData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *AkmaAfKeyData) SetSuppFeat(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *AkmaAfKeyData) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *AkmaAfKeyData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AkmaAfKeyData) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -102,7 +102,7 @@ func (o *AkmaAfKeyData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *AkmaAfKeyData) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *AkmaAfKeyData) SetKaf(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AkmaAfKeyData) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *AkmaAfKeyData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AkmaAfKeyData) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -182,7 +182,7 @@ func (o *AkmaAfKeyData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AkmaAfKeyData) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -204,15 +204,15 @@ func (o AkmaAfKeyData) MarshalJSON() ([]byte, error) {
 
 func (o AkmaAfKeyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["expiry"] = o.Expiry
 	toSerialize["kaf"] = o.Kaf
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	return toSerialize, nil

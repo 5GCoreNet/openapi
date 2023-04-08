@@ -44,7 +44,7 @@ func NewPc5FlowBitRatesWithDefaults() *Pc5FlowBitRates {
 
 // GetGuaFbr returns the GuaFbr field value if set, zero value otherwise.
 func (o *Pc5FlowBitRates) GetGuaFbr() string {
-	if o == nil || IsNil(o.GuaFbr) {
+	if o == nil || isNil(o.GuaFbr) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Pc5FlowBitRates) GetGuaFbr() string {
 // GetGuaFbrOk returns a tuple with the GuaFbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5FlowBitRates) GetGuaFbrOk() (*string, bool) {
-	if o == nil || IsNil(o.GuaFbr) {
+	if o == nil || isNil(o.GuaFbr) {
 		return nil, false
 	}
 	return o.GuaFbr, true
@@ -62,7 +62,7 @@ func (o *Pc5FlowBitRates) GetGuaFbrOk() (*string, bool) {
 
 // HasGuaFbr returns a boolean if a field has been set.
 func (o *Pc5FlowBitRates) HasGuaFbr() bool {
-	if o != nil && !IsNil(o.GuaFbr) {
+	if o != nil && !isNil(o.GuaFbr) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Pc5FlowBitRates) SetGuaFbr(v string) {
 
 // GetMaxFbr returns the MaxFbr field value if set, zero value otherwise.
 func (o *Pc5FlowBitRates) GetMaxFbr() string {
-	if o == nil || IsNil(o.MaxFbr) {
+	if o == nil || isNil(o.MaxFbr) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Pc5FlowBitRates) GetMaxFbr() string {
 // GetMaxFbrOk returns a tuple with the MaxFbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5FlowBitRates) GetMaxFbrOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxFbr) {
+	if o == nil || isNil(o.MaxFbr) {
 		return nil, false
 	}
 	return o.MaxFbr, true
@@ -94,7 +94,7 @@ func (o *Pc5FlowBitRates) GetMaxFbrOk() (*string, bool) {
 
 // HasMaxFbr returns a boolean if a field has been set.
 func (o *Pc5FlowBitRates) HasMaxFbr() bool {
-	if o != nil && !IsNil(o.MaxFbr) {
+	if o != nil && !isNil(o.MaxFbr) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o Pc5FlowBitRates) MarshalJSON() ([]byte, error) {
 
 func (o Pc5FlowBitRates) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GuaFbr) {
+	if !isNil(o.GuaFbr) {
 		toSerialize["guaFbr"] = o.GuaFbr
 	}
-	if !IsNil(o.MaxFbr) {
+	if !isNil(o.MaxFbr) {
 		toSerialize["maxFbr"] = o.MaxFbr
 	}
 	return toSerialize, nil

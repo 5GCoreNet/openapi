@@ -47,7 +47,7 @@ func NewPolicyTemplateApplicationSessionContextWithDefaults() *PolicyTemplateApp
 
 // GetAfAppId returns the AfAppId field value if set, zero value otherwise.
 func (o *PolicyTemplateApplicationSessionContext) GetAfAppId() string {
-	if o == nil || IsNil(o.AfAppId) {
+	if o == nil || isNil(o.AfAppId) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetAfAppId() string {
 // GetAfAppIdOk returns a tuple with the AfAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyTemplateApplicationSessionContext) GetAfAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfAppId) {
+	if o == nil || isNil(o.AfAppId) {
 		return nil, false
 	}
 	return o.AfAppId, true
@@ -65,7 +65,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetAfAppIdOk() (*string, bool)
 
 // HasAfAppId returns a boolean if a field has been set.
 func (o *PolicyTemplateApplicationSessionContext) HasAfAppId() bool {
-	if o != nil && !IsNil(o.AfAppId) {
+	if o != nil && !isNil(o.AfAppId) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *PolicyTemplateApplicationSessionContext) SetAfAppId(v string) {
 
 // GetSliceInfo returns the SliceInfo field value if set, zero value otherwise.
 func (o *PolicyTemplateApplicationSessionContext) GetSliceInfo() Snssai {
-	if o == nil || IsNil(o.SliceInfo) {
+	if o == nil || isNil(o.SliceInfo) {
 		var ret Snssai
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetSliceInfo() Snssai {
 // GetSliceInfoOk returns a tuple with the SliceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyTemplateApplicationSessionContext) GetSliceInfoOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.SliceInfo) {
+	if o == nil || isNil(o.SliceInfo) {
 		return nil, false
 	}
 	return o.SliceInfo, true
@@ -97,7 +97,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetSliceInfoOk() (*Snssai, boo
 
 // HasSliceInfo returns a boolean if a field has been set.
 func (o *PolicyTemplateApplicationSessionContext) HasSliceInfo() bool {
-	if o != nil && !IsNil(o.SliceInfo) {
+	if o != nil && !isNil(o.SliceInfo) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *PolicyTemplateApplicationSessionContext) SetSliceInfo(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PolicyTemplateApplicationSessionContext) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyTemplateApplicationSessionContext) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -129,7 +129,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PolicyTemplateApplicationSessionContext) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PolicyTemplateApplicationSessionContext) SetDnn(v string) {
 
 // GetAspId returns the AspId field value if set, zero value otherwise.
 func (o *PolicyTemplateApplicationSessionContext) GetAspId() string {
-	if o == nil || IsNil(o.AspId) {
+	if o == nil || isNil(o.AspId) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetAspId() string {
 // GetAspIdOk returns a tuple with the AspId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyTemplateApplicationSessionContext) GetAspIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AspId) {
+	if o == nil || isNil(o.AspId) {
 		return nil, false
 	}
 	return o.AspId, true
@@ -161,7 +161,7 @@ func (o *PolicyTemplateApplicationSessionContext) GetAspIdOk() (*string, bool) {
 
 // HasAspId returns a boolean if a field has been set.
 func (o *PolicyTemplateApplicationSessionContext) HasAspId() bool {
-	if o != nil && !IsNil(o.AspId) {
+	if o != nil && !isNil(o.AspId) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o PolicyTemplateApplicationSessionContext) MarshalJSON() ([]byte, error) {
 
 func (o PolicyTemplateApplicationSessionContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfAppId) {
+	if !isNil(o.AfAppId) {
 		toSerialize["afAppId"] = o.AfAppId
 	}
-	if !IsNil(o.SliceInfo) {
+	if !isNil(o.SliceInfo) {
 		toSerialize["sliceInfo"] = o.SliceInfo
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.AspId) {
+	if !isNil(o.AspId) {
 		toSerialize["aspId"] = o.AspId
 	}
 	return toSerialize, nil

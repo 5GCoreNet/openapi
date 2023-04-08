@@ -42,7 +42,7 @@ func NewServiceDataFlowDescriptionWithDefaults() *ServiceDataFlowDescription {
 
 // GetFlowDescription returns the FlowDescription field value if set, zero value otherwise.
 func (o *ServiceDataFlowDescription) GetFlowDescription() IpPacketFilterSet {
-	if o == nil || IsNil(o.FlowDescription) {
+	if o == nil || isNil(o.FlowDescription) {
 		var ret IpPacketFilterSet
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ServiceDataFlowDescription) GetFlowDescription() IpPacketFilterSet {
 // GetFlowDescriptionOk returns a tuple with the FlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceDataFlowDescription) GetFlowDescriptionOk() (*IpPacketFilterSet, bool) {
-	if o == nil || IsNil(o.FlowDescription) {
+	if o == nil || isNil(o.FlowDescription) {
 		return nil, false
 	}
 	return o.FlowDescription, true
@@ -60,7 +60,7 @@ func (o *ServiceDataFlowDescription) GetFlowDescriptionOk() (*IpPacketFilterSet,
 
 // HasFlowDescription returns a boolean if a field has been set.
 func (o *ServiceDataFlowDescription) HasFlowDescription() bool {
-	if o != nil && !IsNil(o.FlowDescription) {
+	if o != nil && !isNil(o.FlowDescription) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ServiceDataFlowDescription) SetFlowDescription(v IpPacketFilterSet) {
 
 // GetDomainName returns the DomainName field value if set, zero value otherwise.
 func (o *ServiceDataFlowDescription) GetDomainName() string {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil || isNil(o.DomainName) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ServiceDataFlowDescription) GetDomainName() string {
 // GetDomainNameOk returns a tuple with the DomainName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceDataFlowDescription) GetDomainNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DomainName) {
+	if o == nil || isNil(o.DomainName) {
 		return nil, false
 	}
 	return o.DomainName, true
@@ -92,7 +92,7 @@ func (o *ServiceDataFlowDescription) GetDomainNameOk() (*string, bool) {
 
 // HasDomainName returns a boolean if a field has been set.
 func (o *ServiceDataFlowDescription) HasDomainName() bool {
-	if o != nil && !IsNil(o.DomainName) {
+	if o != nil && !isNil(o.DomainName) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ServiceDataFlowDescription) MarshalJSON() ([]byte, error) {
 
 func (o ServiceDataFlowDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FlowDescription) {
+	if !isNil(o.FlowDescription) {
 		toSerialize["flowDescription"] = o.FlowDescription
 	}
-	if !IsNil(o.DomainName) {
+	if !isNil(o.DomainName) {
 		toSerialize["domainName"] = o.DomainName
 	}
 	return toSerialize, nil

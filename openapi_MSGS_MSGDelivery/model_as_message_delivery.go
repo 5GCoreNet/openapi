@@ -105,7 +105,7 @@ func (o *ASMessageDelivery) SetDestAddr(v Address) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ASMessageDelivery) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -123,7 +123,7 @@ func (o *ASMessageDelivery) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *ASMessageDelivery) SetMsgId(v string) {
 
 // GetSecCred returns the SecCred field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetSecCred() string {
-	if o == nil || IsNil(o.SecCred) {
+	if o == nil || isNil(o.SecCred) {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *ASMessageDelivery) GetSecCred() string {
 // GetSecCredOk returns a tuple with the SecCred field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetSecCredOk() (*string, bool) {
-	if o == nil || IsNil(o.SecCred) {
+	if o == nil || isNil(o.SecCred) {
 		return nil, false
 	}
 	return o.SecCred, true
@@ -179,7 +179,7 @@ func (o *ASMessageDelivery) GetSecCredOk() (*string, bool) {
 
 // HasSecCred returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasSecCred() bool {
-	if o != nil && !IsNil(o.SecCred) {
+	if o != nil && !isNil(o.SecCred) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *ASMessageDelivery) SetSecCred(v string) {
 
 // GetDelivStReqInd returns the DelivStReqInd field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetDelivStReqInd() bool {
-	if o == nil || IsNil(o.DelivStReqInd) {
+	if o == nil || isNil(o.DelivStReqInd) {
 		var ret bool
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *ASMessageDelivery) GetDelivStReqInd() bool {
 // GetDelivStReqIndOk returns a tuple with the DelivStReqInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetDelivStReqIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DelivStReqInd) {
+	if o == nil || isNil(o.DelivStReqInd) {
 		return nil, false
 	}
 	return o.DelivStReqInd, true
@@ -211,7 +211,7 @@ func (o *ASMessageDelivery) GetDelivStReqIndOk() (*bool, bool) {
 
 // HasDelivStReqInd returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasDelivStReqInd() bool {
-	if o != nil && !IsNil(o.DelivStReqInd) {
+	if o != nil && !isNil(o.DelivStReqInd) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *ASMessageDelivery) SetDelivStReqInd(v bool) {
 
 // GetPayload returns the Payload field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetPayload() string {
-	if o == nil || IsNil(o.Payload) {
+	if o == nil || isNil(o.Payload) {
 		var ret string
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *ASMessageDelivery) GetPayload() string {
 // GetPayloadOk returns a tuple with the Payload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetPayloadOk() (*string, bool) {
-	if o == nil || IsNil(o.Payload) {
+	if o == nil || isNil(o.Payload) {
 		return nil, false
 	}
 	return o.Payload, true
@@ -243,7 +243,7 @@ func (o *ASMessageDelivery) GetPayloadOk() (*string, bool) {
 
 // HasPayload returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasPayload() bool {
-	if o != nil && !IsNil(o.Payload) {
+	if o != nil && !isNil(o.Payload) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *ASMessageDelivery) SetPayload(v string) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetPriority() Priority {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		var ret Priority
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *ASMessageDelivery) GetPriority() Priority {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetPriorityOk() (*Priority, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -275,7 +275,7 @@ func (o *ASMessageDelivery) GetPriorityOk() (*Priority, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && !isNil(o.Priority) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *ASMessageDelivery) SetPriority(v Priority) {
 
 // GetSegInd returns the SegInd field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetSegInd() bool {
-	if o == nil || IsNil(o.SegInd) {
+	if o == nil || isNil(o.SegInd) {
 		var ret bool
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *ASMessageDelivery) GetSegInd() bool {
 // GetSegIndOk returns a tuple with the SegInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetSegIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SegInd) {
+	if o == nil || isNil(o.SegInd) {
 		return nil, false
 	}
 	return o.SegInd, true
@@ -307,7 +307,7 @@ func (o *ASMessageDelivery) GetSegIndOk() (*bool, bool) {
 
 // HasSegInd returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasSegInd() bool {
-	if o != nil && !IsNil(o.SegInd) {
+	if o != nil && !isNil(o.SegInd) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *ASMessageDelivery) SetSegInd(v bool) {
 
 // GetSegParams returns the SegParams field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetSegParams() MessageSegmentParameters {
-	if o == nil || IsNil(o.SegParams) {
+	if o == nil || isNil(o.SegParams) {
 		var ret MessageSegmentParameters
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *ASMessageDelivery) GetSegParams() MessageSegmentParameters {
 // GetSegParamsOk returns a tuple with the SegParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetSegParamsOk() (*MessageSegmentParameters, bool) {
-	if o == nil || IsNil(o.SegParams) {
+	if o == nil || isNil(o.SegParams) {
 		return nil, false
 	}
 	return o.SegParams, true
@@ -339,7 +339,7 @@ func (o *ASMessageDelivery) GetSegParamsOk() (*MessageSegmentParameters, bool) {
 
 // HasSegParams returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasSegParams() bool {
-	if o != nil && !IsNil(o.SegParams) {
+	if o != nil && !isNil(o.SegParams) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *ASMessageDelivery) SetStoAndFwInd(v bool) {
 
 // GetStoAndFwParams returns the StoAndFwParams field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetStoAndFwParams() StoreAndForwardParameters {
-	if o == nil || IsNil(o.StoAndFwParams) {
+	if o == nil || isNil(o.StoAndFwParams) {
 		var ret StoreAndForwardParameters
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *ASMessageDelivery) GetStoAndFwParams() StoreAndForwardParameters {
 // GetStoAndFwParamsOk returns a tuple with the StoAndFwParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetStoAndFwParamsOk() (*StoreAndForwardParameters, bool) {
-	if o == nil || IsNil(o.StoAndFwParams) {
+	if o == nil || isNil(o.StoAndFwParams) {
 		return nil, false
 	}
 	return o.StoAndFwParams, true
@@ -395,7 +395,7 @@ func (o *ASMessageDelivery) GetStoAndFwParamsOk() (*StoreAndForwardParameters, b
 
 // HasStoAndFwParams returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasStoAndFwParams() bool {
-	if o != nil && !IsNil(o.StoAndFwParams) {
+	if o != nil && !isNil(o.StoAndFwParams) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *ASMessageDelivery) SetStoAndFwParams(v StoreAndForwardParameters) {
 
 // GetLatency returns the Latency field value if set, zero value otherwise.
 func (o *ASMessageDelivery) GetLatency() int32 {
-	if o == nil || IsNil(o.Latency) {
+	if o == nil || isNil(o.Latency) {
 		var ret int32
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *ASMessageDelivery) GetLatency() int32 {
 // GetLatencyOk returns a tuple with the Latency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASMessageDelivery) GetLatencyOk() (*int32, bool) {
-	if o == nil || IsNil(o.Latency) {
+	if o == nil || isNil(o.Latency) {
 		return nil, false
 	}
 	return o.Latency, true
@@ -427,7 +427,7 @@ func (o *ASMessageDelivery) GetLatencyOk() (*int32, bool) {
 
 // HasLatency returns a boolean if a field has been set.
 func (o *ASMessageDelivery) HasLatency() bool {
-	if o != nil && !IsNil(o.Latency) {
+	if o != nil && !isNil(o.Latency) {
 		return true
 	}
 
@@ -451,33 +451,33 @@ func (o ASMessageDelivery) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["oriAddr"] = o.OriAddr
 	toSerialize["destAddr"] = o.DestAddr
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
 	toSerialize["msgId"] = o.MsgId
-	if !IsNil(o.SecCred) {
+	if !isNil(o.SecCred) {
 		toSerialize["secCred"] = o.SecCred
 	}
-	if !IsNil(o.DelivStReqInd) {
+	if !isNil(o.DelivStReqInd) {
 		toSerialize["delivStReqInd"] = o.DelivStReqInd
 	}
-	if !IsNil(o.Payload) {
+	if !isNil(o.Payload) {
 		toSerialize["payload"] = o.Payload
 	}
-	if !IsNil(o.Priority) {
+	if !isNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !IsNil(o.SegInd) {
+	if !isNil(o.SegInd) {
 		toSerialize["segInd"] = o.SegInd
 	}
-	if !IsNil(o.SegParams) {
+	if !isNil(o.SegParams) {
 		toSerialize["segParams"] = o.SegParams
 	}
 	toSerialize["stoAndFwInd"] = o.StoAndFwInd
-	if !IsNil(o.StoAndFwParams) {
+	if !isNil(o.StoAndFwParams) {
 		toSerialize["stoAndFwParams"] = o.StoAndFwParams
 	}
-	if !IsNil(o.Latency) {
+	if !isNil(o.Latency) {
 		toSerialize["latency"] = o.Latency
 	}
 	return toSerialize, nil

@@ -69,7 +69,7 @@ func (o *StatusInfo) SetResourceStatus(v ResourceStatus) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *StatusInfo) GetCause() Cause {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *StatusInfo) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusInfo) GetCauseOk() (*Cause, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -87,7 +87,7 @@ func (o *StatusInfo) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *StatusInfo) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *StatusInfo) SetCause(v Cause) {
 
 // GetCnAssistedRanPara returns the CnAssistedRanPara field value if set, zero value otherwise.
 func (o *StatusInfo) GetCnAssistedRanPara() CnAssistedRanPara {
-	if o == nil || IsNil(o.CnAssistedRanPara) {
+	if o == nil || isNil(o.CnAssistedRanPara) {
 		var ret CnAssistedRanPara
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *StatusInfo) GetCnAssistedRanPara() CnAssistedRanPara {
 // GetCnAssistedRanParaOk returns a tuple with the CnAssistedRanPara field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusInfo) GetCnAssistedRanParaOk() (*CnAssistedRanPara, bool) {
-	if o == nil || IsNil(o.CnAssistedRanPara) {
+	if o == nil || isNil(o.CnAssistedRanPara) {
 		return nil, false
 	}
 	return o.CnAssistedRanPara, true
@@ -119,7 +119,7 @@ func (o *StatusInfo) GetCnAssistedRanParaOk() (*CnAssistedRanPara, bool) {
 
 // HasCnAssistedRanPara returns a boolean if a field has been set.
 func (o *StatusInfo) HasCnAssistedRanPara() bool {
-	if o != nil && !IsNil(o.CnAssistedRanPara) {
+	if o != nil && !isNil(o.CnAssistedRanPara) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *StatusInfo) SetCnAssistedRanPara(v CnAssistedRanPara) {
 
 // GetAnType returns the AnType field value if set, zero value otherwise.
 func (o *StatusInfo) GetAnType() AccessType {
-	if o == nil || IsNil(o.AnType) {
+	if o == nil || isNil(o.AnType) {
 		var ret AccessType
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *StatusInfo) GetAnType() AccessType {
 // GetAnTypeOk returns a tuple with the AnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusInfo) GetAnTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AnType) {
+	if o == nil || isNil(o.AnType) {
 		return nil, false
 	}
 	return o.AnType, true
@@ -151,7 +151,7 @@ func (o *StatusInfo) GetAnTypeOk() (*AccessType, bool) {
 
 // HasAnType returns a boolean if a field has been set.
 func (o *StatusInfo) HasAnType() bool {
-	if o != nil && !IsNil(o.AnType) {
+	if o != nil && !isNil(o.AnType) {
 		return true
 	}
 
@@ -174,13 +174,13 @@ func (o StatusInfo) MarshalJSON() ([]byte, error) {
 func (o StatusInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourceStatus"] = o.ResourceStatus
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.CnAssistedRanPara) {
+	if !isNil(o.CnAssistedRanPara) {
 		toSerialize["cnAssistedRanPara"] = o.CnAssistedRanPara
 	}
-	if !IsNil(o.AnType) {
+	if !isNil(o.AnType) {
 		toSerialize["anType"] = o.AnType
 	}
 	return toSerialize, nil

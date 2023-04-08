@@ -42,7 +42,7 @@ func NewAssuranceClosedControlLoopSingleAllOfWithDefaults() *AssuranceClosedCont
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributes() AssuranceClosedControlLoopSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret AssuranceClosedControlLoopSingleAllOfAttributes
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributes() AssuranceClosedC
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributesOk() (*AssuranceClosedControlLoopSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAttributesOk() (*AssuranceClo
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) SetAttributes(v AssuranceClosedC
 
 // GetAssuranceGoal returns the AssuranceGoal field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoal() []AssuranceGoalSingle {
-	if o == nil || IsNil(o.AssuranceGoal) {
+	if o == nil || isNil(o.AssuranceGoal) {
 		var ret []AssuranceGoalSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoal() []AssuranceGo
 // GetAssuranceGoalOk returns a tuple with the AssuranceGoal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoalOk() ([]AssuranceGoalSingle, bool) {
-	if o == nil || IsNil(o.AssuranceGoal) {
+	if o == nil || isNil(o.AssuranceGoal) {
 		return nil, false
 	}
 	return o.AssuranceGoal, true
@@ -92,7 +92,7 @@ func (o *AssuranceClosedControlLoopSingleAllOf) GetAssuranceGoalOk() ([]Assuranc
 
 // HasAssuranceGoal returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOf) HasAssuranceGoal() bool {
-	if o != nil && !IsNil(o.AssuranceGoal) {
+	if o != nil && !isNil(o.AssuranceGoal) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o AssuranceClosedControlLoopSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceClosedControlLoopSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.AssuranceGoal) {
+	if !isNil(o.AssuranceGoal) {
 		toSerialize["AssuranceGoal"] = o.AssuranceGoal
 	}
 	return toSerialize, nil

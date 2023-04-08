@@ -51,7 +51,7 @@ func NewAbnormalBehaviourWithDefaults() *AbnormalBehaviour {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *AbnormalBehaviour) GetSupis() []string {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *AbnormalBehaviour) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalBehaviour) GetSupisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -69,7 +69,7 @@ func (o *AbnormalBehaviour) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *AbnormalBehaviour) HasSupis() bool {
-	if o != nil && !IsNil(o.Supis) {
+	if o != nil && !isNil(o.Supis) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AbnormalBehaviour) SetExcep(v Exception) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *AbnormalBehaviour) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AbnormalBehaviour) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalBehaviour) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -125,7 +125,7 @@ func (o *AbnormalBehaviour) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *AbnormalBehaviour) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *AbnormalBehaviour) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *AbnormalBehaviour) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *AbnormalBehaviour) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalBehaviour) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -157,7 +157,7 @@ func (o *AbnormalBehaviour) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *AbnormalBehaviour) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *AbnormalBehaviour) SetSnssai(v Snssai) {
 
 // GetRatio returns the Ratio field value if set, zero value otherwise.
 func (o *AbnormalBehaviour) GetRatio() int32 {
-	if o == nil || IsNil(o.Ratio) {
+	if o == nil || isNil(o.Ratio) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *AbnormalBehaviour) GetRatio() int32 {
 // GetRatioOk returns a tuple with the Ratio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalBehaviour) GetRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.Ratio) {
+	if o == nil || isNil(o.Ratio) {
 		return nil, false
 	}
 	return o.Ratio, true
@@ -189,7 +189,7 @@ func (o *AbnormalBehaviour) GetRatioOk() (*int32, bool) {
 
 // HasRatio returns a boolean if a field has been set.
 func (o *AbnormalBehaviour) HasRatio() bool {
-	if o != nil && !IsNil(o.Ratio) {
+	if o != nil && !isNil(o.Ratio) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *AbnormalBehaviour) SetRatio(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *AbnormalBehaviour) GetConfidence() int32 {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *AbnormalBehaviour) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalBehaviour) GetConfidenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -221,7 +221,7 @@ func (o *AbnormalBehaviour) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *AbnormalBehaviour) HasConfidence() bool {
-	if o != nil && !IsNil(o.Confidence) {
+	if o != nil && !isNil(o.Confidence) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *AbnormalBehaviour) SetConfidence(v int32) {
 
 // GetAddtMeasInfo returns the AddtMeasInfo field value if set, zero value otherwise.
 func (o *AbnormalBehaviour) GetAddtMeasInfo() AdditionalMeasurement {
-	if o == nil || IsNil(o.AddtMeasInfo) {
+	if o == nil || isNil(o.AddtMeasInfo) {
 		var ret AdditionalMeasurement
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *AbnormalBehaviour) GetAddtMeasInfo() AdditionalMeasurement {
 // GetAddtMeasInfoOk returns a tuple with the AddtMeasInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AbnormalBehaviour) GetAddtMeasInfoOk() (*AdditionalMeasurement, bool) {
-	if o == nil || IsNil(o.AddtMeasInfo) {
+	if o == nil || isNil(o.AddtMeasInfo) {
 		return nil, false
 	}
 	return o.AddtMeasInfo, true
@@ -253,7 +253,7 @@ func (o *AbnormalBehaviour) GetAddtMeasInfoOk() (*AdditionalMeasurement, bool) {
 
 // HasAddtMeasInfo returns a boolean if a field has been set.
 func (o *AbnormalBehaviour) HasAddtMeasInfo() bool {
-	if o != nil && !IsNil(o.AddtMeasInfo) {
+	if o != nil && !isNil(o.AddtMeasInfo) {
 		return true
 	}
 
@@ -275,23 +275,23 @@ func (o AbnormalBehaviour) MarshalJSON() ([]byte, error) {
 
 func (o AbnormalBehaviour) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supis) {
+	if !isNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
 	toSerialize["excep"] = o.Excep
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.Ratio) {
+	if !isNil(o.Ratio) {
 		toSerialize["ratio"] = o.Ratio
 	}
-	if !IsNil(o.Confidence) {
+	if !isNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
-	if !IsNil(o.AddtMeasInfo) {
+	if !isNil(o.AddtMeasInfo) {
 		toSerialize["addtMeasInfo"] = o.AddtMeasInfo
 	}
 	return toSerialize, nil

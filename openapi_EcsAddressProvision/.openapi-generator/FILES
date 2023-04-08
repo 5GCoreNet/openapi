@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -44,6 +43,7 @@ docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/SpatialValidityCond.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/TargetUeId.md
 docs/UncertaintyEllipse.md
@@ -86,6 +86,7 @@ model_problem_details.go
 model_relative_cartesian_location.go
 model_spatial_validity_cond.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_target_ue_id.go
 model_uncertainty_ellipse.go

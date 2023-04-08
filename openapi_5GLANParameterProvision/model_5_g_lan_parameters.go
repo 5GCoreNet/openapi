@@ -136,7 +136,7 @@ func (o *Model5GLanParameters) SetDnn(v string) {
 
 // GetAaaIpv4Addr returns the AaaIpv4Addr field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetAaaIpv4Addr() string {
-	if o == nil || IsNil(o.AaaIpv4Addr) {
+	if o == nil || isNil(o.AaaIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *Model5GLanParameters) GetAaaIpv4Addr() string {
 // GetAaaIpv4AddrOk returns a tuple with the AaaIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetAaaIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.AaaIpv4Addr) {
+	if o == nil || isNil(o.AaaIpv4Addr) {
 		return nil, false
 	}
 	return o.AaaIpv4Addr, true
@@ -154,7 +154,7 @@ func (o *Model5GLanParameters) GetAaaIpv4AddrOk() (*string, bool) {
 
 // HasAaaIpv4Addr returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasAaaIpv4Addr() bool {
-	if o != nil && !IsNil(o.AaaIpv4Addr) {
+	if o != nil && !isNil(o.AaaIpv4Addr) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *Model5GLanParameters) SetAaaIpv4Addr(v string) {
 
 // GetAaaIpv6Addr returns the AaaIpv6Addr field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetAaaIpv6Addr() Ipv6Addr {
-	if o == nil || IsNil(o.AaaIpv6Addr) {
+	if o == nil || isNil(o.AaaIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *Model5GLanParameters) GetAaaIpv6Addr() Ipv6Addr {
 // GetAaaIpv6AddrOk returns a tuple with the AaaIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetAaaIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.AaaIpv6Addr) {
+	if o == nil || isNil(o.AaaIpv6Addr) {
 		return nil, false
 	}
 	return o.AaaIpv6Addr, true
@@ -186,7 +186,7 @@ func (o *Model5GLanParameters) GetAaaIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasAaaIpv6Addr returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasAaaIpv6Addr() bool {
-	if o != nil && !IsNil(o.AaaIpv6Addr) {
+	if o != nil && !isNil(o.AaaIpv6Addr) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *Model5GLanParameters) SetAaaIpv6Addr(v Ipv6Addr) {
 
 // GetAaaUsgs returns the AaaUsgs field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetAaaUsgs() []AaaUsage {
-	if o == nil || IsNil(o.AaaUsgs) {
+	if o == nil || isNil(o.AaaUsgs) {
 		var ret []AaaUsage
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *Model5GLanParameters) GetAaaUsgs() []AaaUsage {
 // GetAaaUsgsOk returns a tuple with the AaaUsgs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetAaaUsgsOk() ([]AaaUsage, bool) {
-	if o == nil || IsNil(o.AaaUsgs) {
+	if o == nil || isNil(o.AaaUsgs) {
 		return nil, false
 	}
 	return o.AaaUsgs, true
@@ -218,7 +218,7 @@ func (o *Model5GLanParameters) GetAaaUsgsOk() ([]AaaUsage, bool) {
 
 // HasAaaUsgs returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasAaaUsgs() bool {
-	if o != nil && !IsNil(o.AaaUsgs) {
+	if o != nil && !isNil(o.AaaUsgs) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *Model5GLanParameters) SetAaaUsgs(v []AaaUsage) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetMtcProviderId() string {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *Model5GLanParameters) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -250,7 +250,7 @@ func (o *Model5GLanParameters) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasMtcProviderId() bool {
-	if o != nil && !IsNil(o.MtcProviderId) {
+	if o != nil && !isNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *Model5GLanParameters) SetSessionType(v PduSessionType) {
 
 // GetSessionTypes returns the SessionTypes field value if set, zero value otherwise.
 func (o *Model5GLanParameters) GetSessionTypes() []PduSessionType {
-	if o == nil || IsNil(o.SessionTypes) {
+	if o == nil || isNil(o.SessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *Model5GLanParameters) GetSessionTypes() []PduSessionType {
 // GetSessionTypesOk returns a tuple with the SessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParameters) GetSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || IsNil(o.SessionTypes) {
+	if o == nil || isNil(o.SessionTypes) {
 		return nil, false
 	}
 	return o.SessionTypes, true
@@ -330,7 +330,7 @@ func (o *Model5GLanParameters) GetSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasSessionTypes returns a boolean if a field has been set.
 func (o *Model5GLanParameters) HasSessionTypes() bool {
-	if o != nil && !IsNil(o.SessionTypes) {
+	if o != nil && !isNil(o.SessionTypes) {
 		return true
 	}
 
@@ -379,21 +379,21 @@ func (o Model5GLanParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize["exterGroupId"] = o.ExterGroupId
 	toSerialize["gpsis"] = o.Gpsis
 	toSerialize["dnn"] = o.Dnn
-	if !IsNil(o.AaaIpv4Addr) {
+	if !isNil(o.AaaIpv4Addr) {
 		toSerialize["aaaIpv4Addr"] = o.AaaIpv4Addr
 	}
-	if !IsNil(o.AaaIpv6Addr) {
+	if !isNil(o.AaaIpv6Addr) {
 		toSerialize["aaaIpv6Addr"] = o.AaaIpv6Addr
 	}
-	if !IsNil(o.AaaUsgs) {
+	if !isNil(o.AaaUsgs) {
 		toSerialize["aaaUsgs"] = o.AaaUsgs
 	}
-	if !IsNil(o.MtcProviderId) {
+	if !isNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["sessionType"] = o.SessionType
-	if !IsNil(o.SessionTypes) {
+	if !isNil(o.SessionTypes) {
 		toSerialize["sessionTypes"] = o.SessionTypes
 	}
 	toSerialize["appDesps"] = o.AppDesps

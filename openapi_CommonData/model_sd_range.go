@@ -44,7 +44,7 @@ func NewSdRangeWithDefaults() *SdRange {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *SdRange) GetStart() string {
-	if o == nil || IsNil(o.Start) {
+	if o == nil || isNil(o.Start) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SdRange) GetStart() string {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdRange) GetStartOk() (*string, bool) {
-	if o == nil || IsNil(o.Start) {
+	if o == nil || isNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -62,7 +62,7 @@ func (o *SdRange) GetStartOk() (*string, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *SdRange) HasStart() bool {
-	if o != nil && !IsNil(o.Start) {
+	if o != nil && !isNil(o.Start) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SdRange) SetStart(v string) {
 
 // GetEnd returns the End field value if set, zero value otherwise.
 func (o *SdRange) GetEnd() string {
-	if o == nil || IsNil(o.End) {
+	if o == nil || isNil(o.End) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SdRange) GetEnd() string {
 // GetEndOk returns a tuple with the End field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdRange) GetEndOk() (*string, bool) {
-	if o == nil || IsNil(o.End) {
+	if o == nil || isNil(o.End) {
 		return nil, false
 	}
 	return o.End, true
@@ -94,7 +94,7 @@ func (o *SdRange) GetEndOk() (*string, bool) {
 
 // HasEnd returns a boolean if a field has been set.
 func (o *SdRange) HasEnd() bool {
-	if o != nil && !IsNil(o.End) {
+	if o != nil && !isNil(o.End) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o SdRange) MarshalJSON() ([]byte, error) {
 
 func (o SdRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Start) {
+	if !isNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !IsNil(o.End) {
+	if !isNil(o.End) {
 		toSerialize["end"] = o.End
 	}
 	return toSerialize, nil

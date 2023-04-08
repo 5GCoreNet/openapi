@@ -18,7 +18,7 @@ import (
 // NrfInfoServedLmfInfoValue struct for NrfInfoServedLmfInfoValue
 type NrfInfoServedLmfInfoValue struct {
 	LmfInfo *LmfInfo
-	map[string]interface{} *map[string]interface{}
+	MapOfInterface *map[string]interface{}
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
@@ -38,16 +38,16 @@ func (dst *NrfInfoServedLmfInfoValue) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into map[string]interface{}
-	err = json.Unmarshal(data, &dst.map[string]interface{});
+	err = json.Unmarshal(data, &dst.MapOfInterface);
 	if err == nil {
-		jsonmap[string]interface{}, _ := json.Marshal(dst.map[string]interface{})
-		if string(jsonmap[string]interface{}) == "{}" { // empty struct
-			dst.map[string]interface{} = nil
+		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
+		if string(jsonMapOfInterface) == "{}" { // empty struct
+			dst.MapOfInterface = nil
 		} else {
-			return nil // data stored in dst.map[string]interface{}, return on the first match
+			return nil // data stored in dst.MapOfInterface, return on the first match
 		}
 	} else {
-		dst.map[string]interface{} = nil
+		dst.MapOfInterface = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NrfInfoServedLmfInfoValue)")
@@ -59,8 +59,8 @@ func (src *NrfInfoServedLmfInfoValue) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.LmfInfo)
 	}
 
-	if src.map[string]interface{} != nil {
-		return json.Marshal(&src.map[string]interface{})
+	if src.MapOfInterface != nil {
+		return json.Marshal(&src.MapOfInterface)
 	}
 
 	return nil, nil // no data in anyOf schemas

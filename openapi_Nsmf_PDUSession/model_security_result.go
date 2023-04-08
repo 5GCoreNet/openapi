@@ -42,7 +42,7 @@ func NewSecurityResultWithDefaults() *SecurityResult {
 
 // GetIntegrityProtectionResult returns the IntegrityProtectionResult field value if set, zero value otherwise.
 func (o *SecurityResult) GetIntegrityProtectionResult() ProtectionResult {
-	if o == nil || IsNil(o.IntegrityProtectionResult) {
+	if o == nil || isNil(o.IntegrityProtectionResult) {
 		var ret ProtectionResult
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SecurityResult) GetIntegrityProtectionResult() ProtectionResult {
 // GetIntegrityProtectionResultOk returns a tuple with the IntegrityProtectionResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecurityResult) GetIntegrityProtectionResultOk() (*ProtectionResult, bool) {
-	if o == nil || IsNil(o.IntegrityProtectionResult) {
+	if o == nil || isNil(o.IntegrityProtectionResult) {
 		return nil, false
 	}
 	return o.IntegrityProtectionResult, true
@@ -60,7 +60,7 @@ func (o *SecurityResult) GetIntegrityProtectionResultOk() (*ProtectionResult, bo
 
 // HasIntegrityProtectionResult returns a boolean if a field has been set.
 func (o *SecurityResult) HasIntegrityProtectionResult() bool {
-	if o != nil && !IsNil(o.IntegrityProtectionResult) {
+	if o != nil && !isNil(o.IntegrityProtectionResult) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SecurityResult) SetIntegrityProtectionResult(v ProtectionResult) {
 
 // GetConfidentialityProtectionResult returns the ConfidentialityProtectionResult field value if set, zero value otherwise.
 func (o *SecurityResult) GetConfidentialityProtectionResult() ProtectionResult {
-	if o == nil || IsNil(o.ConfidentialityProtectionResult) {
+	if o == nil || isNil(o.ConfidentialityProtectionResult) {
 		var ret ProtectionResult
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SecurityResult) GetConfidentialityProtectionResult() ProtectionResult {
 // GetConfidentialityProtectionResultOk returns a tuple with the ConfidentialityProtectionResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecurityResult) GetConfidentialityProtectionResultOk() (*ProtectionResult, bool) {
-	if o == nil || IsNil(o.ConfidentialityProtectionResult) {
+	if o == nil || isNil(o.ConfidentialityProtectionResult) {
 		return nil, false
 	}
 	return o.ConfidentialityProtectionResult, true
@@ -92,7 +92,7 @@ func (o *SecurityResult) GetConfidentialityProtectionResultOk() (*ProtectionResu
 
 // HasConfidentialityProtectionResult returns a boolean if a field has been set.
 func (o *SecurityResult) HasConfidentialityProtectionResult() bool {
-	if o != nil && !IsNil(o.ConfidentialityProtectionResult) {
+	if o != nil && !isNil(o.ConfidentialityProtectionResult) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SecurityResult) MarshalJSON() ([]byte, error) {
 
 func (o SecurityResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IntegrityProtectionResult) {
+	if !isNil(o.IntegrityProtectionResult) {
 		toSerialize["integrityProtectionResult"] = o.IntegrityProtectionResult
 	}
-	if !IsNil(o.ConfidentialityProtectionResult) {
+	if !isNil(o.ConfidentialityProtectionResult) {
 		toSerialize["confidentialityProtectionResult"] = o.ConfidentialityProtectionResult
 	}
 	return toSerialize, nil

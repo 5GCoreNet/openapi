@@ -17,23 +17,37 @@ import (
 
 // SACRepFormat Indicates the NSAC reporting format.
 type SACRepFormat struct {
-	string *string
+	SACRepFormatAnyOf *SACRepFormatAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SACRepFormat) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SACRepFormatAnyOf
+	err = json.Unmarshal(data, &dst.SACRepFormatAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSACRepFormatAnyOf, _ := json.Marshal(dst.SACRepFormatAnyOf)
+		if string(jsonSACRepFormatAnyOf) == "{}" { // empty struct
+			dst.SACRepFormatAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SACRepFormatAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SACRepFormatAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SACRepFormat)")
@@ -41,8 +55,12 @@ func (dst *SACRepFormat) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SACRepFormat) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SACRepFormatAnyOf != nil {
+		return json.Marshal(&src.SACRepFormatAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

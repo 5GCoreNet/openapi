@@ -44,7 +44,7 @@ func NewClientIdWithDefaults() *ClientId {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *ClientId) GetNfId() string {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ClientId) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientId) GetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -62,7 +62,7 @@ func (o *ClientId) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *ClientId) HasNfId() bool {
-	if o != nil && !IsNil(o.NfId) {
+	if o != nil && !isNil(o.NfId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ClientId) SetNfId(v string) {
 
 // GetNfSetId returns the NfSetId field value if set, zero value otherwise.
 func (o *ClientId) GetNfSetId() string {
-	if o == nil || IsNil(o.NfSetId) {
+	if o == nil || isNil(o.NfSetId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ClientId) GetNfSetId() string {
 // GetNfSetIdOk returns a tuple with the NfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ClientId) GetNfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfSetId) {
+	if o == nil || isNil(o.NfSetId) {
 		return nil, false
 	}
 	return o.NfSetId, true
@@ -94,7 +94,7 @@ func (o *ClientId) GetNfSetIdOk() (*string, bool) {
 
 // HasNfSetId returns a boolean if a field has been set.
 func (o *ClientId) HasNfSetId() bool {
-	if o != nil && !IsNil(o.NfSetId) {
+	if o != nil && !isNil(o.NfSetId) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o ClientId) MarshalJSON() ([]byte, error) {
 
 func (o ClientId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NfId) {
+	if !isNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !IsNil(o.NfSetId) {
+	if !isNil(o.NfSetId) {
 		toSerialize["nfSetId"] = o.NfSetId
 	}
 	return toSerialize, nil

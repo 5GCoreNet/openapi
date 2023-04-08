@@ -50,7 +50,7 @@ func NewUeDifferentiationInfoWithDefaults() *UeDifferentiationInfo {
 
 // GetPeriodicComInd returns the PeriodicComInd field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetPeriodicComInd() PeriodicCommunicationIndicator {
-	if o == nil || IsNil(o.PeriodicComInd) {
+	if o == nil || isNil(o.PeriodicComInd) {
 		var ret PeriodicCommunicationIndicator
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *UeDifferentiationInfo) GetPeriodicComInd() PeriodicCommunicationIndicat
 // GetPeriodicComIndOk returns a tuple with the PeriodicComInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetPeriodicComIndOk() (*PeriodicCommunicationIndicator, bool) {
-	if o == nil || IsNil(o.PeriodicComInd) {
+	if o == nil || isNil(o.PeriodicComInd) {
 		return nil, false
 	}
 	return o.PeriodicComInd, true
@@ -68,7 +68,7 @@ func (o *UeDifferentiationInfo) GetPeriodicComIndOk() (*PeriodicCommunicationInd
 
 // HasPeriodicComInd returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasPeriodicComInd() bool {
-	if o != nil && !IsNil(o.PeriodicComInd) {
+	if o != nil && !isNil(o.PeriodicComInd) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *UeDifferentiationInfo) SetPeriodicComInd(v PeriodicCommunicationIndicat
 
 // GetPeriodicTime returns the PeriodicTime field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetPeriodicTime() int32 {
-	if o == nil || IsNil(o.PeriodicTime) {
+	if o == nil || isNil(o.PeriodicTime) {
 		var ret int32
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *UeDifferentiationInfo) GetPeriodicTime() int32 {
 // GetPeriodicTimeOk returns a tuple with the PeriodicTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetPeriodicTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.PeriodicTime) {
+	if o == nil || isNil(o.PeriodicTime) {
 		return nil, false
 	}
 	return o.PeriodicTime, true
@@ -100,7 +100,7 @@ func (o *UeDifferentiationInfo) GetPeriodicTimeOk() (*int32, bool) {
 
 // HasPeriodicTime returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasPeriodicTime() bool {
-	if o != nil && !IsNil(o.PeriodicTime) {
+	if o != nil && !isNil(o.PeriodicTime) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *UeDifferentiationInfo) SetPeriodicTime(v int32) {
 
 // GetScheduledComTime returns the ScheduledComTime field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetScheduledComTime() ScheduledCommunicationTime {
-	if o == nil || IsNil(o.ScheduledComTime) {
+	if o == nil || isNil(o.ScheduledComTime) {
 		var ret ScheduledCommunicationTime
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *UeDifferentiationInfo) GetScheduledComTime() ScheduledCommunicationTime
 // GetScheduledComTimeOk returns a tuple with the ScheduledComTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetScheduledComTimeOk() (*ScheduledCommunicationTime, bool) {
-	if o == nil || IsNil(o.ScheduledComTime) {
+	if o == nil || isNil(o.ScheduledComTime) {
 		return nil, false
 	}
 	return o.ScheduledComTime, true
@@ -132,7 +132,7 @@ func (o *UeDifferentiationInfo) GetScheduledComTimeOk() (*ScheduledCommunication
 
 // HasScheduledComTime returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasScheduledComTime() bool {
-	if o != nil && !IsNil(o.ScheduledComTime) {
+	if o != nil && !isNil(o.ScheduledComTime) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *UeDifferentiationInfo) SetScheduledComTime(v ScheduledCommunicationTime
 
 // GetStationaryInd returns the StationaryInd field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetStationaryInd() StationaryIndication {
-	if o == nil || IsNil(o.StationaryInd) {
+	if o == nil || isNil(o.StationaryInd) {
 		var ret StationaryIndication
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *UeDifferentiationInfo) GetStationaryInd() StationaryIndication {
 // GetStationaryIndOk returns a tuple with the StationaryInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetStationaryIndOk() (*StationaryIndication, bool) {
-	if o == nil || IsNil(o.StationaryInd) {
+	if o == nil || isNil(o.StationaryInd) {
 		return nil, false
 	}
 	return o.StationaryInd, true
@@ -164,7 +164,7 @@ func (o *UeDifferentiationInfo) GetStationaryIndOk() (*StationaryIndication, boo
 
 // HasStationaryInd returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasStationaryInd() bool {
-	if o != nil && !IsNil(o.StationaryInd) {
+	if o != nil && !isNil(o.StationaryInd) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *UeDifferentiationInfo) SetStationaryInd(v StationaryIndication) {
 
 // GetTrafficProfile returns the TrafficProfile field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetTrafficProfile() TrafficProfile {
-	if o == nil || IsNil(o.TrafficProfile) {
+	if o == nil || isNil(o.TrafficProfile) {
 		var ret TrafficProfile
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *UeDifferentiationInfo) GetTrafficProfile() TrafficProfile {
 // GetTrafficProfileOk returns a tuple with the TrafficProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetTrafficProfileOk() (*TrafficProfile, bool) {
-	if o == nil || IsNil(o.TrafficProfile) {
+	if o == nil || isNil(o.TrafficProfile) {
 		return nil, false
 	}
 	return o.TrafficProfile, true
@@ -196,7 +196,7 @@ func (o *UeDifferentiationInfo) GetTrafficProfileOk() (*TrafficProfile, bool) {
 
 // HasTrafficProfile returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasTrafficProfile() bool {
-	if o != nil && !IsNil(o.TrafficProfile) {
+	if o != nil && !isNil(o.TrafficProfile) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *UeDifferentiationInfo) SetTrafficProfile(v TrafficProfile) {
 
 // GetBatteryInd returns the BatteryInd field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetBatteryInd() BatteryIndication {
-	if o == nil || IsNil(o.BatteryInd) {
+	if o == nil || isNil(o.BatteryInd) {
 		var ret BatteryIndication
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *UeDifferentiationInfo) GetBatteryInd() BatteryIndication {
 // GetBatteryIndOk returns a tuple with the BatteryInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetBatteryIndOk() (*BatteryIndication, bool) {
-	if o == nil || IsNil(o.BatteryInd) {
+	if o == nil || isNil(o.BatteryInd) {
 		return nil, false
 	}
 	return o.BatteryInd, true
@@ -228,7 +228,7 @@ func (o *UeDifferentiationInfo) GetBatteryIndOk() (*BatteryIndication, bool) {
 
 // HasBatteryInd returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasBatteryInd() bool {
-	if o != nil && !IsNil(o.BatteryInd) {
+	if o != nil && !isNil(o.BatteryInd) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *UeDifferentiationInfo) SetBatteryInd(v BatteryIndication) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *UeDifferentiationInfo) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *UeDifferentiationInfo) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeDifferentiationInfo) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -260,7 +260,7 @@ func (o *UeDifferentiationInfo) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *UeDifferentiationInfo) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -282,25 +282,25 @@ func (o UeDifferentiationInfo) MarshalJSON() ([]byte, error) {
 
 func (o UeDifferentiationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PeriodicComInd) {
+	if !isNil(o.PeriodicComInd) {
 		toSerialize["periodicComInd"] = o.PeriodicComInd
 	}
-	if !IsNil(o.PeriodicTime) {
+	if !isNil(o.PeriodicTime) {
 		toSerialize["periodicTime"] = o.PeriodicTime
 	}
-	if !IsNil(o.ScheduledComTime) {
+	if !isNil(o.ScheduledComTime) {
 		toSerialize["scheduledComTime"] = o.ScheduledComTime
 	}
-	if !IsNil(o.StationaryInd) {
+	if !isNil(o.StationaryInd) {
 		toSerialize["stationaryInd"] = o.StationaryInd
 	}
-	if !IsNil(o.TrafficProfile) {
+	if !isNil(o.TrafficProfile) {
 		toSerialize["trafficProfile"] = o.TrafficProfile
 	}
-	if !IsNil(o.BatteryInd) {
+	if !isNil(o.BatteryInd) {
 		toSerialize["batteryInd"] = o.BatteryInd
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
 	return toSerialize, nil

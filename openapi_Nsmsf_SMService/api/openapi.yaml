@@ -1332,14 +1332,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -2245,10 +2238,7 @@ components:
       type: integer
     TransportProtocol:
       anyOf:
-      - enum:
-        - UDP
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -2329,10 +2319,7 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - enum:
-        - DSL
-        - PON
-        type: string
+      - $ref: '#/components/schemas/LineType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -2648,14 +2635,7 @@ components:
       type: object
     TraceDepth:
       anyOf:
-      - enum:
-        - MINIMUM
-        - MEDIUM
-        - MAXIMUM
-        - MINIMUM_WO_VENDOR_EXTENSION
-        - MEDIUM_WO_VENDOR_EXTENSION
-        - MAXIMUM_WO_VENDOR_EXTENSION
-        type: string
+      - $ref: '#/components/schemas/TraceDepth_anyOf'
       - type: string
       description: |
         The enumeration TraceDepth defines how detailed information should be recorded in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.1-1
@@ -2699,28 +2679,7 @@ components:
       type: string
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     RefToBinaryData:
@@ -2864,64 +2823,7 @@ components:
       type: object
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -3008,6 +2910,122 @@ components:
           format: binary
           type: string
       type: object
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - UDP
+      - TCP
+      type: string
+      example: null
+    LineType_anyOf:
+      enum:
+      - DSL
+      - PON
+      type: string
+      example: null
+    TraceDepth_anyOf:
+      enum:
+      - MINIMUM
+      - MEDIUM
+      - MAXIMUM
+      - MINIMUM_WO_VENDOR_EXTENSION
+      - MEDIUM_WO_VENDOR_EXTENSION
+      - MAXIMUM_WO_VENDOR_EXTENSION
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

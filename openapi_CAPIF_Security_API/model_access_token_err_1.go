@@ -68,7 +68,7 @@ func (o *AccessTokenErr1) SetError(v string) {
 
 // GetErrorDescription returns the ErrorDescription field value if set, zero value otherwise.
 func (o *AccessTokenErr1) GetErrorDescription() string {
-	if o == nil || IsNil(o.ErrorDescription) {
+	if o == nil || isNil(o.ErrorDescription) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AccessTokenErr1) GetErrorDescription() string {
 // GetErrorDescriptionOk returns a tuple with the ErrorDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenErr1) GetErrorDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorDescription) {
+	if o == nil || isNil(o.ErrorDescription) {
 		return nil, false
 	}
 	return o.ErrorDescription, true
@@ -86,7 +86,7 @@ func (o *AccessTokenErr1) GetErrorDescriptionOk() (*string, bool) {
 
 // HasErrorDescription returns a boolean if a field has been set.
 func (o *AccessTokenErr1) HasErrorDescription() bool {
-	if o != nil && !IsNil(o.ErrorDescription) {
+	if o != nil && !isNil(o.ErrorDescription) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AccessTokenErr1) SetErrorDescription(v string) {
 
 // GetErrorUri returns the ErrorUri field value if set, zero value otherwise.
 func (o *AccessTokenErr1) GetErrorUri() string {
-	if o == nil || IsNil(o.ErrorUri) {
+	if o == nil || isNil(o.ErrorUri) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AccessTokenErr1) GetErrorUri() string {
 // GetErrorUriOk returns a tuple with the ErrorUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenErr1) GetErrorUriOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorUri) {
+	if o == nil || isNil(o.ErrorUri) {
 		return nil, false
 	}
 	return o.ErrorUri, true
@@ -118,7 +118,7 @@ func (o *AccessTokenErr1) GetErrorUriOk() (*string, bool) {
 
 // HasErrorUri returns a boolean if a field has been set.
 func (o *AccessTokenErr1) HasErrorUri() bool {
-	if o != nil && !IsNil(o.ErrorUri) {
+	if o != nil && !isNil(o.ErrorUri) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o AccessTokenErr1) MarshalJSON() ([]byte, error) {
 func (o AccessTokenErr1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.ErrorDescription) {
+	if !isNil(o.ErrorDescription) {
 		toSerialize["error_description"] = o.ErrorDescription
 	}
-	if !IsNil(o.ErrorUri) {
+	if !isNil(o.ErrorUri) {
 		toSerialize["error_uri"] = o.ErrorUri
 	}
 	return toSerialize, nil

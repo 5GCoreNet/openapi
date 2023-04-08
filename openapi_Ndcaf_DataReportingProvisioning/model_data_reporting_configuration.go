@@ -97,7 +97,7 @@ func (o *DataReportingConfiguration) SetDataCollectionClientType(v DataCollectio
 
 // GetAuthorizationURL returns the AuthorizationURL field value if set, zero value otherwise.
 func (o *DataReportingConfiguration) GetAuthorizationURL() string {
-	if o == nil || IsNil(o.AuthorizationURL) {
+	if o == nil || isNil(o.AuthorizationURL) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *DataReportingConfiguration) GetAuthorizationURL() string {
 // GetAuthorizationURLOk returns a tuple with the AuthorizationURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingConfiguration) GetAuthorizationURLOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthorizationURL) {
+	if o == nil || isNil(o.AuthorizationURL) {
 		return nil, false
 	}
 	return o.AuthorizationURL, true
@@ -115,7 +115,7 @@ func (o *DataReportingConfiguration) GetAuthorizationURLOk() (*string, bool) {
 
 // HasAuthorizationURL returns a boolean if a field has been set.
 func (o *DataReportingConfiguration) HasAuthorizationURL() bool {
-	if o != nil && !IsNil(o.AuthorizationURL) {
+	if o != nil && !isNil(o.AuthorizationURL) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o DataReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dataReportingConfigurationId"] = o.DataReportingConfigurationId
 	toSerialize["dataCollectionClientType"] = o.DataCollectionClientType
-	if !IsNil(o.AuthorizationURL) {
+	if !isNil(o.AuthorizationURL) {
 		toSerialize["authorizationURL"] = o.AuthorizationURL
 	}
 	toSerialize["dataAccessProfiles"] = o.DataAccessProfiles

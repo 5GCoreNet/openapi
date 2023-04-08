@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 
  - [ACProfile](docs/ACProfile.md)
  - [ACRScenario](docs/ACRScenario.md)
+ - [ACRScenarioAnyOf](docs/ACRScenarioAnyOf.md)
  - [ACServiceKPIs](docs/ACServiceKPIs.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [EECRegistration](docs/EECRegistration.md)
@@ -131,10 +132,12 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [ScheduledCommunicationTime](docs/ScheduledCommunicationTime.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)
  - [UnfulfillACProfRsn](docs/UnfulfillACProfRsn.md)
+ - [UnfulfillACProfRsnAnyOf](docs/UnfulfillACProfRsnAnyOf.md)
  - [UnfulfilledAcProfile](docs/UnfulfilledAcProfile.md)
 
 

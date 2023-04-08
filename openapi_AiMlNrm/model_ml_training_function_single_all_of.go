@@ -19,7 +19,7 @@ var _ MappedNullable = &MLTrainingFunctionSingleAllOf{}
 
 // MLTrainingFunctionSingleAllOf struct for MLTrainingFunctionSingleAllOf
 type MLTrainingFunctionSingleAllOf struct {
-	Attributes *MLTrainingFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewMLTrainingFunctionSingleAllOf instantiates a new MLTrainingFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewMLTrainingFunctionSingleAllOfWithDefaults() *MLTrainingFunctionSingleAll
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MLTrainingFunctionSingleAllOf) GetAttributes() MLTrainingFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret MLTrainingFunctionSingleAllOfAttributes
+func (o *MLTrainingFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *MLTrainingFunctionSingleAllOf) GetAttributes() MLTrainingFunctionSingle
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MLTrainingFunctionSingleAllOf) GetAttributesOk() (*MLTrainingFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *MLTrainingFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *MLTrainingFunctionSingleAllOf) GetAttributesOk() (*MLTrainingFunctionSi
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given MLTrainingFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *MLTrainingFunctionSingleAllOf) SetAttributes(v MLTrainingFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *MLTrainingFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o MLTrainingFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MLTrainingFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

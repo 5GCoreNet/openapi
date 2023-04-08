@@ -43,7 +43,7 @@ func NewNpnIdentityWithDefaults() *NpnIdentity {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *NpnIdentity) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *NpnIdentity) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnIdentity) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -61,7 +61,7 @@ func (o *NpnIdentity) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *NpnIdentity) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *NpnIdentity) SetPlmnId(v PlmnId) {
 
 // GetCagidList returns the CagidList field value if set, zero value otherwise.
 func (o *NpnIdentity) GetCagidList() string {
-	if o == nil || IsNil(o.CagidList) {
+	if o == nil || isNil(o.CagidList) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *NpnIdentity) GetCagidList() string {
 // GetCagidListOk returns a tuple with the CagidList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnIdentity) GetCagidListOk() (*string, bool) {
-	if o == nil || IsNil(o.CagidList) {
+	if o == nil || isNil(o.CagidList) {
 		return nil, false
 	}
 	return o.CagidList, true
@@ -93,7 +93,7 @@ func (o *NpnIdentity) GetCagidListOk() (*string, bool) {
 
 // HasCagidList returns a boolean if a field has been set.
 func (o *NpnIdentity) HasCagidList() bool {
-	if o != nil && !IsNil(o.CagidList) {
+	if o != nil && !isNil(o.CagidList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NpnIdentity) SetCagidList(v string) {
 
 // GetNidList returns the NidList field value if set, zero value otherwise.
 func (o *NpnIdentity) GetNidList() string {
-	if o == nil || IsNil(o.NidList) {
+	if o == nil || isNil(o.NidList) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NpnIdentity) GetNidList() string {
 // GetNidListOk returns a tuple with the NidList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnIdentity) GetNidListOk() (*string, bool) {
-	if o == nil || IsNil(o.NidList) {
+	if o == nil || isNil(o.NidList) {
 		return nil, false
 	}
 	return o.NidList, true
@@ -125,7 +125,7 @@ func (o *NpnIdentity) GetNidListOk() (*string, bool) {
 
 // HasNidList returns a boolean if a field has been set.
 func (o *NpnIdentity) HasNidList() bool {
-	if o != nil && !IsNil(o.NidList) {
+	if o != nil && !isNil(o.NidList) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o NpnIdentity) MarshalJSON() ([]byte, error) {
 
 func (o NpnIdentity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.CagidList) {
+	if !isNil(o.CagidList) {
 		toSerialize["cagidList"] = o.CagidList
 	}
-	if !IsNil(o.NidList) {
+	if !isNil(o.NidList) {
 		toSerialize["nidList"] = o.NidList
 	}
 	return toSerialize, nil

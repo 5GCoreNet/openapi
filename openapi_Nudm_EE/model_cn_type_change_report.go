@@ -67,7 +67,7 @@ func (o *CnTypeChangeReport) SetNewCnType(v CnType) {
 
 // GetOldCnType returns the OldCnType field value if set, zero value otherwise.
 func (o *CnTypeChangeReport) GetOldCnType() CnType {
-	if o == nil || IsNil(o.OldCnType) {
+	if o == nil || isNil(o.OldCnType) {
 		var ret CnType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CnTypeChangeReport) GetOldCnType() CnType {
 // GetOldCnTypeOk returns a tuple with the OldCnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CnTypeChangeReport) GetOldCnTypeOk() (*CnType, bool) {
-	if o == nil || IsNil(o.OldCnType) {
+	if o == nil || isNil(o.OldCnType) {
 		return nil, false
 	}
 	return o.OldCnType, true
@@ -85,7 +85,7 @@ func (o *CnTypeChangeReport) GetOldCnTypeOk() (*CnType, bool) {
 
 // HasOldCnType returns a boolean if a field has been set.
 func (o *CnTypeChangeReport) HasOldCnType() bool {
-	if o != nil && !IsNil(o.OldCnType) {
+	if o != nil && !isNil(o.OldCnType) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o CnTypeChangeReport) MarshalJSON() ([]byte, error) {
 func (o CnTypeChangeReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["newCnType"] = o.NewCnType
-	if !IsNil(o.OldCnType) {
+	if !isNil(o.OldCnType) {
 		toSerialize["oldCnType"] = o.OldCnType
 	}
 	return toSerialize, nil

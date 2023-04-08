@@ -42,7 +42,7 @@ func NewGmlcInfoWithDefaults() *GmlcInfo {
 
 // GetServingClientTypes returns the ServingClientTypes field value if set, zero value otherwise.
 func (o *GmlcInfo) GetServingClientTypes() []ExternalClientType {
-	if o == nil || IsNil(o.ServingClientTypes) {
+	if o == nil || isNil(o.ServingClientTypes) {
 		var ret []ExternalClientType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GmlcInfo) GetServingClientTypes() []ExternalClientType {
 // GetServingClientTypesOk returns a tuple with the ServingClientTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GmlcInfo) GetServingClientTypesOk() ([]ExternalClientType, bool) {
-	if o == nil || IsNil(o.ServingClientTypes) {
+	if o == nil || isNil(o.ServingClientTypes) {
 		return nil, false
 	}
 	return o.ServingClientTypes, true
@@ -60,7 +60,7 @@ func (o *GmlcInfo) GetServingClientTypesOk() ([]ExternalClientType, bool) {
 
 // HasServingClientTypes returns a boolean if a field has been set.
 func (o *GmlcInfo) HasServingClientTypes() bool {
-	if o != nil && !IsNil(o.ServingClientTypes) {
+	if o != nil && !isNil(o.ServingClientTypes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GmlcInfo) SetServingClientTypes(v []ExternalClientType) {
 
 // GetGmlcNumbers returns the GmlcNumbers field value if set, zero value otherwise.
 func (o *GmlcInfo) GetGmlcNumbers() []string {
-	if o == nil || IsNil(o.GmlcNumbers) {
+	if o == nil || isNil(o.GmlcNumbers) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GmlcInfo) GetGmlcNumbers() []string {
 // GetGmlcNumbersOk returns a tuple with the GmlcNumbers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GmlcInfo) GetGmlcNumbersOk() ([]string, bool) {
-	if o == nil || IsNil(o.GmlcNumbers) {
+	if o == nil || isNil(o.GmlcNumbers) {
 		return nil, false
 	}
 	return o.GmlcNumbers, true
@@ -92,7 +92,7 @@ func (o *GmlcInfo) GetGmlcNumbersOk() ([]string, bool) {
 
 // HasGmlcNumbers returns a boolean if a field has been set.
 func (o *GmlcInfo) HasGmlcNumbers() bool {
-	if o != nil && !IsNil(o.GmlcNumbers) {
+	if o != nil && !isNil(o.GmlcNumbers) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GmlcInfo) MarshalJSON() ([]byte, error) {
 
 func (o GmlcInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServingClientTypes) {
+	if !isNil(o.ServingClientTypes) {
 		toSerialize["servingClientTypes"] = o.ServingClientTypes
 	}
-	if !IsNil(o.GmlcNumbers) {
+	if !isNil(o.GmlcNumbers) {
 		toSerialize["gmlcNumbers"] = o.GmlcNumbers
 	}
 	return toSerialize, nil

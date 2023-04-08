@@ -43,7 +43,7 @@ func NewGbaAuthenticationInfoResultWithDefaults() *GbaAuthenticationInfoResult {
 
 // GetVar3gAkaAv returns the Var3gAkaAv field value if set, zero value otherwise.
 func (o *GbaAuthenticationInfoResult) GetVar3gAkaAv() Model3GAkaAv {
-	if o == nil || IsNil(o.Var3gAkaAv) {
+	if o == nil || isNil(o.Var3gAkaAv) {
 		var ret Model3GAkaAv
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *GbaAuthenticationInfoResult) GetVar3gAkaAv() Model3GAkaAv {
 // GetVar3gAkaAvOk returns a tuple with the Var3gAkaAv field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaAuthenticationInfoResult) GetVar3gAkaAvOk() (*Model3GAkaAv, bool) {
-	if o == nil || IsNil(o.Var3gAkaAv) {
+	if o == nil || isNil(o.Var3gAkaAv) {
 		return nil, false
 	}
 	return o.Var3gAkaAv, true
@@ -61,7 +61,7 @@ func (o *GbaAuthenticationInfoResult) GetVar3gAkaAvOk() (*Model3GAkaAv, bool) {
 
 // HasVar3gAkaAv returns a boolean if a field has been set.
 func (o *GbaAuthenticationInfoResult) HasVar3gAkaAv() bool {
-	if o != nil && !IsNil(o.Var3gAkaAv) {
+	if o != nil && !isNil(o.Var3gAkaAv) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *GbaAuthenticationInfoResult) SetVar3gAkaAv(v Model3GAkaAv) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *GbaAuthenticationInfoResult) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *GbaAuthenticationInfoResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -93,7 +93,7 @@ func (o *GbaAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *GbaAuthenticationInfoResult) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o GbaAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 
 func (o GbaAuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Var3gAkaAv) {
+	if !isNil(o.Var3gAkaAv) {
 		toSerialize["3gAkaAv"] = o.Var3gAkaAv
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

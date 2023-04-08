@@ -13,7 +13,7 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -85,10 +85,10 @@ func (a *UESubscribedDataDocumentApiService) QueryUeSubscribedDataExecute(r ApiQ
 	localVarFormParams := url.Values{}
 
 	if r.datasetNames != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
+		parameterAddToQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
 	}
 	if r.servingPlmn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serving-plmn", r.servingPlmn, "")
+		parameterAddToQuery(localVarQueryParams, "serving-plmn", r.servingPlmn, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -117,9 +117,9 @@ func (a *UESubscribedDataDocumentApiService) QueryUeSubscribedDataExecute(r ApiQ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

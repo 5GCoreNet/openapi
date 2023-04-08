@@ -17,23 +17,37 @@ import (
 
 // FailureCode Possible values are - MALFUNCTION: This value indicates that something functions wrongly in PFD provisioning or the PFD provisioning does not function at all. - RESOURCE_LIMITATION: This value indicates there is resource limitation for PFD storage. - SHORT_DELAY: This value indicates that the allowed delay is too short and PFD(s) are not stored. - APP_ID_DUPLICATED: The received external application identifier(s) are already provisioned. - PARTIAL_FAILURE: The PFD(s) are not provisioned to all PCEFs/TDFs/SMFs. - OTHER_REASON: Other reason unspecified. 
 type FailureCode struct {
-	string *string
+	FailureCodeAnyOf *FailureCodeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *FailureCode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into FailureCodeAnyOf
+	err = json.Unmarshal(data, &dst.FailureCodeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonFailureCodeAnyOf, _ := json.Marshal(dst.FailureCodeAnyOf)
+		if string(jsonFailureCodeAnyOf) == "{}" { // empty struct
+			dst.FailureCodeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.FailureCodeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.FailureCodeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(FailureCode)")
@@ -41,8 +55,12 @@ func (dst *FailureCode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *FailureCode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.FailureCodeAnyOf != nil {
+		return json.Marshal(&src.FailureCodeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

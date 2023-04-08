@@ -13,7 +13,7 @@ package openapi_SS_KeyInfoRetrieval
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -84,9 +84,9 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 		return localVarReturnValue, nil, reportError("valServiceId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
+	parameterAddToQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
 	if r.valTgtUe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
+		parameterAddToQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -115,9 +115,9 @@ func (a *KeyRecordsCollectionApiService) RetrieveKeyMgmtInfoExecute(r ApiRetriev
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

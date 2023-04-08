@@ -13,7 +13,7 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -80,7 +80,7 @@ func (a *ReachabilitySubscriptionDeletionApiService) UeReachUnsubscribeExecute(r
 	localVarFormParams := url.Values{}
 
 	if r.privateIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -109,9 +109,9 @@ func (a *ReachabilitySubscriptionDeletionApiService) UeReachUnsubscribeExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

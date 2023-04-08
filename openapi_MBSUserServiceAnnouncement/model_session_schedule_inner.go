@@ -101,7 +101,7 @@ func (o *SessionScheduleInner) SetStop(v time.Time) {
 
 // GetReoccurencePattern returns the ReoccurencePattern field value if set, zero value otherwise.
 func (o *SessionScheduleInner) GetReoccurencePattern() string {
-	if o == nil || IsNil(o.ReoccurencePattern) {
+	if o == nil || isNil(o.ReoccurencePattern) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SessionScheduleInner) GetReoccurencePattern() string {
 // GetReoccurencePatternOk returns a tuple with the ReoccurencePattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleInner) GetReoccurencePatternOk() (*string, bool) {
-	if o == nil || IsNil(o.ReoccurencePattern) {
+	if o == nil || isNil(o.ReoccurencePattern) {
 		return nil, false
 	}
 	return o.ReoccurencePattern, true
@@ -119,7 +119,7 @@ func (o *SessionScheduleInner) GetReoccurencePatternOk() (*string, bool) {
 
 // HasReoccurencePattern returns a boolean if a field has been set.
 func (o *SessionScheduleInner) HasReoccurencePattern() bool {
-	if o != nil && !IsNil(o.ReoccurencePattern) {
+	if o != nil && !isNil(o.ReoccurencePattern) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *SessionScheduleInner) SetReoccurencePattern(v string) {
 
 // GetNumberOfTimes returns the NumberOfTimes field value if set, zero value otherwise.
 func (o *SessionScheduleInner) GetNumberOfTimes() int32 {
-	if o == nil || IsNil(o.NumberOfTimes) {
+	if o == nil || isNil(o.NumberOfTimes) {
 		var ret int32
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *SessionScheduleInner) GetNumberOfTimes() int32 {
 // GetNumberOfTimesOk returns a tuple with the NumberOfTimes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleInner) GetNumberOfTimesOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumberOfTimes) {
+	if o == nil || isNil(o.NumberOfTimes) {
 		return nil, false
 	}
 	return o.NumberOfTimes, true
@@ -151,7 +151,7 @@ func (o *SessionScheduleInner) GetNumberOfTimesOk() (*int32, bool) {
 
 // HasNumberOfTimes returns a boolean if a field has been set.
 func (o *SessionScheduleInner) HasNumberOfTimes() bool {
-	if o != nil && !IsNil(o.NumberOfTimes) {
+	if o != nil && !isNil(o.NumberOfTimes) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *SessionScheduleInner) SetNumberOfTimes(v int32) {
 
 // GetReoccurenceStopTime returns the ReoccurenceStopTime field value if set, zero value otherwise.
 func (o *SessionScheduleInner) GetReoccurenceStopTime() string {
-	if o == nil || IsNil(o.ReoccurenceStopTime) {
+	if o == nil || isNil(o.ReoccurenceStopTime) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *SessionScheduleInner) GetReoccurenceStopTime() string {
 // GetReoccurenceStopTimeOk returns a tuple with the ReoccurenceStopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleInner) GetReoccurenceStopTimeOk() (*string, bool) {
-	if o == nil || IsNil(o.ReoccurenceStopTime) {
+	if o == nil || isNil(o.ReoccurenceStopTime) {
 		return nil, false
 	}
 	return o.ReoccurenceStopTime, true
@@ -183,7 +183,7 @@ func (o *SessionScheduleInner) GetReoccurenceStopTimeOk() (*string, bool) {
 
 // HasReoccurenceStopTime returns a boolean if a field has been set.
 func (o *SessionScheduleInner) HasReoccurenceStopTime() bool {
-	if o != nil && !IsNil(o.ReoccurenceStopTime) {
+	if o != nil && !isNil(o.ReoccurenceStopTime) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *SessionScheduleInner) SetReoccurenceStopTime(v string) {
 
 // GetIndex returns the Index field value if set, zero value otherwise.
 func (o *SessionScheduleInner) GetIndex() int32 {
-	if o == nil || IsNil(o.Index) {
+	if o == nil || isNil(o.Index) {
 		var ret int32
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *SessionScheduleInner) GetIndex() int32 {
 // GetIndexOk returns a tuple with the Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleInner) GetIndexOk() (*int32, bool) {
-	if o == nil || IsNil(o.Index) {
+	if o == nil || isNil(o.Index) {
 		return nil, false
 	}
 	return o.Index, true
@@ -215,7 +215,7 @@ func (o *SessionScheduleInner) GetIndexOk() (*int32, bool) {
 
 // HasIndex returns a boolean if a field has been set.
 func (o *SessionScheduleInner) HasIndex() bool {
-	if o != nil && !IsNil(o.Index) {
+	if o != nil && !isNil(o.Index) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *SessionScheduleInner) SetIndex(v int32) {
 
 // GetFDTInstanceURI returns the FDTInstanceURI field value if set, zero value otherwise.
 func (o *SessionScheduleInner) GetFDTInstanceURI() string {
-	if o == nil || IsNil(o.FDTInstanceURI) {
+	if o == nil || isNil(o.FDTInstanceURI) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *SessionScheduleInner) GetFDTInstanceURI() string {
 // GetFDTInstanceURIOk returns a tuple with the FDTInstanceURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionScheduleInner) GetFDTInstanceURIOk() (*string, bool) {
-	if o == nil || IsNil(o.FDTInstanceURI) {
+	if o == nil || isNil(o.FDTInstanceURI) {
 		return nil, false
 	}
 	return o.FDTInstanceURI, true
@@ -247,7 +247,7 @@ func (o *SessionScheduleInner) GetFDTInstanceURIOk() (*string, bool) {
 
 // HasFDTInstanceURI returns a boolean if a field has been set.
 func (o *SessionScheduleInner) HasFDTInstanceURI() bool {
-	if o != nil && !IsNil(o.FDTInstanceURI) {
+	if o != nil && !isNil(o.FDTInstanceURI) {
 		return true
 	}
 
@@ -271,19 +271,19 @@ func (o SessionScheduleInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["start"] = o.Start
 	toSerialize["stop"] = o.Stop
-	if !IsNil(o.ReoccurencePattern) {
+	if !isNil(o.ReoccurencePattern) {
 		toSerialize["reoccurencePattern"] = o.ReoccurencePattern
 	}
-	if !IsNil(o.NumberOfTimes) {
+	if !isNil(o.NumberOfTimes) {
 		toSerialize["numberOfTimes"] = o.NumberOfTimes
 	}
-	if !IsNil(o.ReoccurenceStopTime) {
+	if !isNil(o.ReoccurenceStopTime) {
 		toSerialize["reoccurenceStopTime"] = o.ReoccurenceStopTime
 	}
-	if !IsNil(o.Index) {
+	if !isNil(o.Index) {
 		toSerialize["index"] = o.Index
 	}
-	if !IsNil(o.FDTInstanceURI) {
+	if !isNil(o.FDTInstanceURI) {
 		toSerialize["FDTInstanceURI"] = o.FDTInstanceURI
 	}
 	return toSerialize, nil

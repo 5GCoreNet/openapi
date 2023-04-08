@@ -68,7 +68,7 @@ func (o *MonitorUpdateData) SetDiscType(v DiscoveryType) {
 
 // GetOpenUpdateData returns the OpenUpdateData field value if set, zero value otherwise.
 func (o *MonitorUpdateData) GetOpenUpdateData() MonitorUpdateDataForOpen {
-	if o == nil || IsNil(o.OpenUpdateData) {
+	if o == nil || isNil(o.OpenUpdateData) {
 		var ret MonitorUpdateDataForOpen
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MonitorUpdateData) GetOpenUpdateData() MonitorUpdateDataForOpen {
 // GetOpenUpdateDataOk returns a tuple with the OpenUpdateData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorUpdateData) GetOpenUpdateDataOk() (*MonitorUpdateDataForOpen, bool) {
-	if o == nil || IsNil(o.OpenUpdateData) {
+	if o == nil || isNil(o.OpenUpdateData) {
 		return nil, false
 	}
 	return o.OpenUpdateData, true
@@ -86,7 +86,7 @@ func (o *MonitorUpdateData) GetOpenUpdateDataOk() (*MonitorUpdateDataForOpen, bo
 
 // HasOpenUpdateData returns a boolean if a field has been set.
 func (o *MonitorUpdateData) HasOpenUpdateData() bool {
-	if o != nil && !IsNil(o.OpenUpdateData) {
+	if o != nil && !isNil(o.OpenUpdateData) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *MonitorUpdateData) SetOpenUpdateData(v MonitorUpdateDataForOpen) {
 
 // GetRestrictedUpdateData returns the RestrictedUpdateData field value if set, zero value otherwise.
 func (o *MonitorUpdateData) GetRestrictedUpdateData() MonitorUpdateDataForRestricted {
-	if o == nil || IsNil(o.RestrictedUpdateData) {
+	if o == nil || isNil(o.RestrictedUpdateData) {
 		var ret MonitorUpdateDataForRestricted
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *MonitorUpdateData) GetRestrictedUpdateData() MonitorUpdateDataForRestri
 // GetRestrictedUpdateDataOk returns a tuple with the RestrictedUpdateData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorUpdateData) GetRestrictedUpdateDataOk() (*MonitorUpdateDataForRestricted, bool) {
-	if o == nil || IsNil(o.RestrictedUpdateData) {
+	if o == nil || isNil(o.RestrictedUpdateData) {
 		return nil, false
 	}
 	return o.RestrictedUpdateData, true
@@ -118,7 +118,7 @@ func (o *MonitorUpdateData) GetRestrictedUpdateDataOk() (*MonitorUpdateDataForRe
 
 // HasRestrictedUpdateData returns a boolean if a field has been set.
 func (o *MonitorUpdateData) HasRestrictedUpdateData() bool {
-	if o != nil && !IsNil(o.RestrictedUpdateData) {
+	if o != nil && !isNil(o.RestrictedUpdateData) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o MonitorUpdateData) MarshalJSON() ([]byte, error) {
 func (o MonitorUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
-	if !IsNil(o.OpenUpdateData) {
+	if !isNil(o.OpenUpdateData) {
 		toSerialize["openUpdateData"] = o.OpenUpdateData
 	}
-	if !IsNil(o.RestrictedUpdateData) {
+	if !isNil(o.RestrictedUpdateData) {
 		toSerialize["restrictedUpdateData"] = o.RestrictedUpdateData
 	}
 	return toSerialize, nil

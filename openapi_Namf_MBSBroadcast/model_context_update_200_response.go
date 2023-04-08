@@ -21,16 +21,16 @@ var _ MappedNullable = &ContextUpdate200Response{}
 // ContextUpdate200Response struct for ContextUpdate200Response
 type ContextUpdate200Response struct {
 	JsonData *ContextUpdateRspData `json:"jsonData,omitempty"`
-	BinaryDataN2Information1 **os.File `json:"binaryDataN2Information1,omitempty"`
-	BinaryDataN2Information2 **os.File `json:"binaryDataN2Information2,omitempty"`
-	BinaryDataN2Information3 **os.File `json:"binaryDataN2Information3,omitempty"`
-	BinaryDataN2Information4 **os.File `json:"binaryDataN2Information4,omitempty"`
-	BinaryDataN2Information5 **os.File `json:"binaryDataN2Information5,omitempty"`
-	BinaryDataN2Information6 **os.File `json:"binaryDataN2Information6,omitempty"`
-	BinaryDataN2Information7 **os.File `json:"binaryDataN2Information7,omitempty"`
-	BinaryDataN2Information8 **os.File `json:"binaryDataN2Information8,omitempty"`
-	BinaryDataN2Information9 **os.File `json:"binaryDataN2Information9,omitempty"`
-	BinaryDataN2Information10 **os.File `json:"binaryDataN2Information10,omitempty"`
+	BinaryDataN2Information1 *os.File `json:"binaryDataN2Information1,omitempty"`
+	BinaryDataN2Information2 *os.File `json:"binaryDataN2Information2,omitempty"`
+	BinaryDataN2Information3 *os.File `json:"binaryDataN2Information3,omitempty"`
+	BinaryDataN2Information4 *os.File `json:"binaryDataN2Information4,omitempty"`
+	BinaryDataN2Information5 *os.File `json:"binaryDataN2Information5,omitempty"`
+	BinaryDataN2Information6 *os.File `json:"binaryDataN2Information6,omitempty"`
+	BinaryDataN2Information7 *os.File `json:"binaryDataN2Information7,omitempty"`
+	BinaryDataN2Information8 *os.File `json:"binaryDataN2Information8,omitempty"`
+	BinaryDataN2Information9 *os.File `json:"binaryDataN2Information9,omitempty"`
+	BinaryDataN2Information10 *os.File `json:"binaryDataN2Information10,omitempty"`
 }
 
 // NewContextUpdate200Response instantiates a new ContextUpdate200Response object
@@ -52,7 +52,7 @@ func NewContextUpdate200ResponseWithDefaults() *ContextUpdate200Response {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *ContextUpdate200Response) GetJsonData() ContextUpdateRspData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret ContextUpdateRspData
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ContextUpdate200Response) GetJsonData() ContextUpdateRspData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdate200Response) GetJsonDataOk() (*ContextUpdateRspData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -70,7 +70,7 @@ func (o *ContextUpdate200Response) GetJsonDataOk() (*ContextUpdateRspData, bool)
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -83,9 +83,9 @@ func (o *ContextUpdate200Response) SetJsonData(v ContextUpdateRspData) {
 }
 
 // GetBinaryDataN2Information1 returns the BinaryDataN2Information1 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information1() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information1) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information1() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information1) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information1
@@ -93,8 +93,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information1() *os.File {
 
 // GetBinaryDataN2Information1Ok returns a tuple with the BinaryDataN2Information1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information1Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information1) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information1Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information1) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information1, true
@@ -102,22 +102,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information1Ok() (**os.File, b
 
 // HasBinaryDataN2Information1 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information1() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information1) {
+	if o != nil && !isNil(o.BinaryDataN2Information1) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information1 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information1 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information1(v *os.File) {
+// SetBinaryDataN2Information1 gets a reference to the given os.File and assigns it to the BinaryDataN2Information1 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information1(v os.File) {
 	o.BinaryDataN2Information1 = &v
 }
 
 // GetBinaryDataN2Information2 returns the BinaryDataN2Information2 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information2() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information2) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information2() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information2) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information2
@@ -125,8 +125,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information2() *os.File {
 
 // GetBinaryDataN2Information2Ok returns a tuple with the BinaryDataN2Information2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information2Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information2) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information2Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information2) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information2, true
@@ -134,22 +134,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information2Ok() (**os.File, b
 
 // HasBinaryDataN2Information2 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information2() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information2) {
+	if o != nil && !isNil(o.BinaryDataN2Information2) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information2 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information2 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information2(v *os.File) {
+// SetBinaryDataN2Information2 gets a reference to the given os.File and assigns it to the BinaryDataN2Information2 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information2(v os.File) {
 	o.BinaryDataN2Information2 = &v
 }
 
 // GetBinaryDataN2Information3 returns the BinaryDataN2Information3 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information3() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information3) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information3() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information3) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information3
@@ -157,8 +157,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information3() *os.File {
 
 // GetBinaryDataN2Information3Ok returns a tuple with the BinaryDataN2Information3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information3Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information3) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information3Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information3) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information3, true
@@ -166,22 +166,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information3Ok() (**os.File, b
 
 // HasBinaryDataN2Information3 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information3() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information3) {
+	if o != nil && !isNil(o.BinaryDataN2Information3) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information3 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information3 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information3(v *os.File) {
+// SetBinaryDataN2Information3 gets a reference to the given os.File and assigns it to the BinaryDataN2Information3 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information3(v os.File) {
 	o.BinaryDataN2Information3 = &v
 }
 
 // GetBinaryDataN2Information4 returns the BinaryDataN2Information4 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information4() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information4) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information4() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information4) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information4
@@ -189,8 +189,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information4() *os.File {
 
 // GetBinaryDataN2Information4Ok returns a tuple with the BinaryDataN2Information4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information4Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information4) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information4Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information4) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information4, true
@@ -198,22 +198,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information4Ok() (**os.File, b
 
 // HasBinaryDataN2Information4 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information4() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information4) {
+	if o != nil && !isNil(o.BinaryDataN2Information4) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information4 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information4 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information4(v *os.File) {
+// SetBinaryDataN2Information4 gets a reference to the given os.File and assigns it to the BinaryDataN2Information4 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information4(v os.File) {
 	o.BinaryDataN2Information4 = &v
 }
 
 // GetBinaryDataN2Information5 returns the BinaryDataN2Information5 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information5() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information5) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information5() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information5) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information5
@@ -221,8 +221,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information5() *os.File {
 
 // GetBinaryDataN2Information5Ok returns a tuple with the BinaryDataN2Information5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information5Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information5) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information5Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information5) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information5, true
@@ -230,22 +230,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information5Ok() (**os.File, b
 
 // HasBinaryDataN2Information5 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information5() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information5) {
+	if o != nil && !isNil(o.BinaryDataN2Information5) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information5 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information5 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information5(v *os.File) {
+// SetBinaryDataN2Information5 gets a reference to the given os.File and assigns it to the BinaryDataN2Information5 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information5(v os.File) {
 	o.BinaryDataN2Information5 = &v
 }
 
 // GetBinaryDataN2Information6 returns the BinaryDataN2Information6 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information6() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information6) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information6() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information6) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information6
@@ -253,8 +253,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information6() *os.File {
 
 // GetBinaryDataN2Information6Ok returns a tuple with the BinaryDataN2Information6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information6Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information6) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information6Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information6) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information6, true
@@ -262,22 +262,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information6Ok() (**os.File, b
 
 // HasBinaryDataN2Information6 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information6() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information6) {
+	if o != nil && !isNil(o.BinaryDataN2Information6) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information6 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information6 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information6(v *os.File) {
+// SetBinaryDataN2Information6 gets a reference to the given os.File and assigns it to the BinaryDataN2Information6 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information6(v os.File) {
 	o.BinaryDataN2Information6 = &v
 }
 
 // GetBinaryDataN2Information7 returns the BinaryDataN2Information7 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information7() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information7) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information7() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information7) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information7
@@ -285,8 +285,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information7() *os.File {
 
 // GetBinaryDataN2Information7Ok returns a tuple with the BinaryDataN2Information7 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information7Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information7) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information7Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information7) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information7, true
@@ -294,22 +294,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information7Ok() (**os.File, b
 
 // HasBinaryDataN2Information7 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information7() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information7) {
+	if o != nil && !isNil(o.BinaryDataN2Information7) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information7 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information7 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information7(v *os.File) {
+// SetBinaryDataN2Information7 gets a reference to the given os.File and assigns it to the BinaryDataN2Information7 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information7(v os.File) {
 	o.BinaryDataN2Information7 = &v
 }
 
 // GetBinaryDataN2Information8 returns the BinaryDataN2Information8 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information8() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information8) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information8() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information8) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information8
@@ -317,8 +317,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information8() *os.File {
 
 // GetBinaryDataN2Information8Ok returns a tuple with the BinaryDataN2Information8 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information8Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information8) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information8Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information8) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information8, true
@@ -326,22 +326,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information8Ok() (**os.File, b
 
 // HasBinaryDataN2Information8 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information8() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information8) {
+	if o != nil && !isNil(o.BinaryDataN2Information8) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information8 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information8 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information8(v *os.File) {
+// SetBinaryDataN2Information8 gets a reference to the given os.File and assigns it to the BinaryDataN2Information8 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information8(v os.File) {
 	o.BinaryDataN2Information8 = &v
 }
 
 // GetBinaryDataN2Information9 returns the BinaryDataN2Information9 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information9() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information9) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information9() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information9) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information9
@@ -349,8 +349,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information9() *os.File {
 
 // GetBinaryDataN2Information9Ok returns a tuple with the BinaryDataN2Information9 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information9Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information9) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information9Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information9) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information9, true
@@ -358,22 +358,22 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information9Ok() (**os.File, b
 
 // HasBinaryDataN2Information9 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information9() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information9) {
+	if o != nil && !isNil(o.BinaryDataN2Information9) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information9 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information9 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information9(v *os.File) {
+// SetBinaryDataN2Information9 gets a reference to the given os.File and assigns it to the BinaryDataN2Information9 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information9(v os.File) {
 	o.BinaryDataN2Information9 = &v
 }
 
 // GetBinaryDataN2Information10 returns the BinaryDataN2Information10 field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information10() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information10) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information10() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information10) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information10
@@ -381,8 +381,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information10() *os.File {
 
 // GetBinaryDataN2Information10Ok returns a tuple with the BinaryDataN2Information10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information10Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information10) {
+func (o *ContextUpdate200Response) GetBinaryDataN2Information10Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information10) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information10, true
@@ -390,15 +390,15 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information10Ok() (**os.File, 
 
 // HasBinaryDataN2Information10 returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information10() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information10) {
+	if o != nil && !isNil(o.BinaryDataN2Information10) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information10 gets a reference to the given *os.File and assigns it to the BinaryDataN2Information10 field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information10(v *os.File) {
+// SetBinaryDataN2Information10 gets a reference to the given os.File and assigns it to the BinaryDataN2Information10 field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information10(v os.File) {
 	o.BinaryDataN2Information10 = &v
 }
 
@@ -412,37 +412,37 @@ func (o ContextUpdate200Response) MarshalJSON() ([]byte, error) {
 
 func (o ContextUpdate200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataN2Information1) {
+	if !isNil(o.BinaryDataN2Information1) {
 		toSerialize["binaryDataN2Information1"] = o.BinaryDataN2Information1
 	}
-	if !IsNil(o.BinaryDataN2Information2) {
+	if !isNil(o.BinaryDataN2Information2) {
 		toSerialize["binaryDataN2Information2"] = o.BinaryDataN2Information2
 	}
-	if !IsNil(o.BinaryDataN2Information3) {
+	if !isNil(o.BinaryDataN2Information3) {
 		toSerialize["binaryDataN2Information3"] = o.BinaryDataN2Information3
 	}
-	if !IsNil(o.BinaryDataN2Information4) {
+	if !isNil(o.BinaryDataN2Information4) {
 		toSerialize["binaryDataN2Information4"] = o.BinaryDataN2Information4
 	}
-	if !IsNil(o.BinaryDataN2Information5) {
+	if !isNil(o.BinaryDataN2Information5) {
 		toSerialize["binaryDataN2Information5"] = o.BinaryDataN2Information5
 	}
-	if !IsNil(o.BinaryDataN2Information6) {
+	if !isNil(o.BinaryDataN2Information6) {
 		toSerialize["binaryDataN2Information6"] = o.BinaryDataN2Information6
 	}
-	if !IsNil(o.BinaryDataN2Information7) {
+	if !isNil(o.BinaryDataN2Information7) {
 		toSerialize["binaryDataN2Information7"] = o.BinaryDataN2Information7
 	}
-	if !IsNil(o.BinaryDataN2Information8) {
+	if !isNil(o.BinaryDataN2Information8) {
 		toSerialize["binaryDataN2Information8"] = o.BinaryDataN2Information8
 	}
-	if !IsNil(o.BinaryDataN2Information9) {
+	if !isNil(o.BinaryDataN2Information9) {
 		toSerialize["binaryDataN2Information9"] = o.BinaryDataN2Information9
 	}
-	if !IsNil(o.BinaryDataN2Information10) {
+	if !isNil(o.BinaryDataN2Information10) {
 		toSerialize["binaryDataN2Information10"] = o.BinaryDataN2Information10
 	}
 	return toSerialize, nil

@@ -99,7 +99,7 @@ func (o *UplinkMessageDeliveryData) SetUeId(v string) {
 
 // GetGeoId returns the GeoId field value if set, zero value otherwise.
 func (o *UplinkMessageDeliveryData) GetGeoId() string {
-	if o == nil || IsNil(o.GeoId) {
+	if o == nil || isNil(o.GeoId) {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *UplinkMessageDeliveryData) GetGeoId() string {
 // GetGeoIdOk returns a tuple with the GeoId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UplinkMessageDeliveryData) GetGeoIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GeoId) {
+	if o == nil || isNil(o.GeoId) {
 		return nil, false
 	}
 	return o.GeoId, true
@@ -117,7 +117,7 @@ func (o *UplinkMessageDeliveryData) GetGeoIdOk() (*string, bool) {
 
 // HasGeoId returns a boolean if a field has been set.
 func (o *UplinkMessageDeliveryData) HasGeoId() bool {
-	if o != nil && !IsNil(o.GeoId) {
+	if o != nil && !isNil(o.GeoId) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o UplinkMessageDeliveryData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourceUri"] = o.ResourceUri
 	toSerialize["ueId"] = o.UeId
-	if !IsNil(o.GeoId) {
+	if !isNil(o.GeoId) {
 		toSerialize["geoId"] = o.GeoId
 	}
 	toSerialize["payload"] = o.Payload

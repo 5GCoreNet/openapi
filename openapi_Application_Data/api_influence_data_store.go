@@ -13,7 +13,7 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -113,10 +113,10 @@ func (a *InfluenceDataStoreApiService) ReadInfluenceDataExecute(r ApiReadInfluen
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "influence-Ids", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "influence-Ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "influence-Ids", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "influence-Ids", t, "multi")
 		}
 	}
 	if r.dnns != nil {
@@ -124,24 +124,24 @@ func (a *InfluenceDataStoreApiService) ReadInfluenceDataExecute(r ApiReadInfluen
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "dnns", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "dnns", t, "multi")
 		}
 	}
 	if r.snssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.internalGroupIds != nil {
 		t := *r.internalGroupIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "internal-Group-Ids", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "internal-Group-Ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "internal-Group-Ids", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "internal-Group-Ids", t, "multi")
 		}
 	}
 	if r.supis != nil {
@@ -149,14 +149,14 @@ func (a *InfluenceDataStoreApiService) ReadInfluenceDataExecute(r ApiReadInfluen
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "supis", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "supis", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "supis", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "supis", t, "multi")
 		}
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -185,9 +185,9 @@ func (a *InfluenceDataStoreApiService) ReadInfluenceDataExecute(r ApiReadInfluen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

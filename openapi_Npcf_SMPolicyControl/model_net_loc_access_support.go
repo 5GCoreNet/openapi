@@ -17,23 +17,37 @@ import (
 
 // NetLocAccessSupport Possible values are - ANR_NOT_SUPPORTED: Indicates that the access network does not support the report of access  network information. - TZR_NOT_SUPPORTED: Indicates that the access network does not support the report of UE  time zone. - LOC_NOT_SUPPORTED: Indicates that the access network does not support the report of UE  Location (or PLMN Id). 
 type NetLocAccessSupport struct {
-	string *string
+	NetLocAccessSupportAnyOf *NetLocAccessSupportAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NetLocAccessSupport) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NetLocAccessSupportAnyOf
+	err = json.Unmarshal(data, &dst.NetLocAccessSupportAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNetLocAccessSupportAnyOf, _ := json.Marshal(dst.NetLocAccessSupportAnyOf)
+		if string(jsonNetLocAccessSupportAnyOf) == "{}" { // empty struct
+			dst.NetLocAccessSupportAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NetLocAccessSupportAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NetLocAccessSupportAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NetLocAccessSupport)")
@@ -41,8 +55,12 @@ func (dst *NetLocAccessSupport) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NetLocAccessSupport) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NetLocAccessSupportAnyOf != nil {
+		return json.Marshal(&src.NetLocAccessSupportAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

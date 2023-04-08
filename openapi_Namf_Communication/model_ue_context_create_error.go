@@ -68,7 +68,7 @@ func (o *UeContextCreateError) SetError(v ProblemDetails) {
 
 // GetNgapCause returns the NgapCause field value if set, zero value otherwise.
 func (o *UeContextCreateError) GetNgapCause() NgApCause {
-	if o == nil || IsNil(o.NgapCause) {
+	if o == nil || isNil(o.NgapCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UeContextCreateError) GetNgapCause() NgApCause {
 // GetNgapCauseOk returns a tuple with the NgapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateError) GetNgapCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgapCause) {
+	if o == nil || isNil(o.NgapCause) {
 		return nil, false
 	}
 	return o.NgapCause, true
@@ -86,7 +86,7 @@ func (o *UeContextCreateError) GetNgapCauseOk() (*NgApCause, bool) {
 
 // HasNgapCause returns a boolean if a field has been set.
 func (o *UeContextCreateError) HasNgapCause() bool {
-	if o != nil && !IsNil(o.NgapCause) {
+	if o != nil && !isNil(o.NgapCause) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *UeContextCreateError) SetNgapCause(v NgApCause) {
 
 // GetTargetToSourceFailureData returns the TargetToSourceFailureData field value if set, zero value otherwise.
 func (o *UeContextCreateError) GetTargetToSourceFailureData() N2InfoContent {
-	if o == nil || IsNil(o.TargetToSourceFailureData) {
+	if o == nil || isNil(o.TargetToSourceFailureData) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *UeContextCreateError) GetTargetToSourceFailureData() N2InfoContent {
 // GetTargetToSourceFailureDataOk returns a tuple with the TargetToSourceFailureData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateError) GetTargetToSourceFailureDataOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.TargetToSourceFailureData) {
+	if o == nil || isNil(o.TargetToSourceFailureData) {
 		return nil, false
 	}
 	return o.TargetToSourceFailureData, true
@@ -118,7 +118,7 @@ func (o *UeContextCreateError) GetTargetToSourceFailureDataOk() (*N2InfoContent,
 
 // HasTargetToSourceFailureData returns a boolean if a field has been set.
 func (o *UeContextCreateError) HasTargetToSourceFailureData() bool {
-	if o != nil && !IsNil(o.TargetToSourceFailureData) {
+	if o != nil && !isNil(o.TargetToSourceFailureData) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o UeContextCreateError) MarshalJSON() ([]byte, error) {
 func (o UeContextCreateError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.NgapCause) {
+	if !isNil(o.NgapCause) {
 		toSerialize["ngapCause"] = o.NgapCause
 	}
-	if !IsNil(o.TargetToSourceFailureData) {
+	if !isNil(o.TargetToSourceFailureData) {
 		toSerialize["targetToSourceFailureData"] = o.TargetToSourceFailureData
 	}
 	return toSerialize, nil

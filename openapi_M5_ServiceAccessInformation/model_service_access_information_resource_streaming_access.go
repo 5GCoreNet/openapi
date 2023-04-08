@@ -44,7 +44,7 @@ func NewServiceAccessInformationResourceStreamingAccessWithDefaults() *ServiceAc
 
 // GetMediaPlayerEntry returns the MediaPlayerEntry field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceStreamingAccess) GetMediaPlayerEntry() string {
-	if o == nil || IsNil(o.MediaPlayerEntry) {
+	if o == nil || isNil(o.MediaPlayerEntry) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ServiceAccessInformationResourceStreamingAccess) GetMediaPlayerEntry() 
 // GetMediaPlayerEntryOk returns a tuple with the MediaPlayerEntry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceStreamingAccess) GetMediaPlayerEntryOk() (*string, bool) {
-	if o == nil || IsNil(o.MediaPlayerEntry) {
+	if o == nil || isNil(o.MediaPlayerEntry) {
 		return nil, false
 	}
 	return o.MediaPlayerEntry, true
@@ -62,7 +62,7 @@ func (o *ServiceAccessInformationResourceStreamingAccess) GetMediaPlayerEntryOk(
 
 // HasMediaPlayerEntry returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceStreamingAccess) HasMediaPlayerEntry() bool {
-	if o != nil && !IsNil(o.MediaPlayerEntry) {
+	if o != nil && !isNil(o.MediaPlayerEntry) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ServiceAccessInformationResourceStreamingAccess) SetMediaPlayerEntry(v 
 
 // GetEMBMSServiceAnnouncementLocator returns the EMBMSServiceAnnouncementLocator field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceStreamingAccess) GetEMBMSServiceAnnouncementLocator() string {
-	if o == nil || IsNil(o.EMBMSServiceAnnouncementLocator) {
+	if o == nil || isNil(o.EMBMSServiceAnnouncementLocator) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ServiceAccessInformationResourceStreamingAccess) GetEMBMSServiceAnnounc
 // GetEMBMSServiceAnnouncementLocatorOk returns a tuple with the EMBMSServiceAnnouncementLocator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceStreamingAccess) GetEMBMSServiceAnnouncementLocatorOk() (*string, bool) {
-	if o == nil || IsNil(o.EMBMSServiceAnnouncementLocator) {
+	if o == nil || isNil(o.EMBMSServiceAnnouncementLocator) {
 		return nil, false
 	}
 	return o.EMBMSServiceAnnouncementLocator, true
@@ -94,7 +94,7 @@ func (o *ServiceAccessInformationResourceStreamingAccess) GetEMBMSServiceAnnounc
 
 // HasEMBMSServiceAnnouncementLocator returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceStreamingAccess) HasEMBMSServiceAnnouncementLocator() bool {
-	if o != nil && !IsNil(o.EMBMSServiceAnnouncementLocator) {
+	if o != nil && !isNil(o.EMBMSServiceAnnouncementLocator) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o ServiceAccessInformationResourceStreamingAccess) MarshalJSON() ([]byte, 
 
 func (o ServiceAccessInformationResourceStreamingAccess) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MediaPlayerEntry) {
+	if !isNil(o.MediaPlayerEntry) {
 		toSerialize["mediaPlayerEntry"] = o.MediaPlayerEntry
 	}
-	if !IsNil(o.EMBMSServiceAnnouncementLocator) {
+	if !isNil(o.EMBMSServiceAnnouncementLocator) {
 		toSerialize["eMBMSServiceAnnouncementLocator"] = o.EMBMSServiceAnnouncementLocator
 	}
 	return toSerialize, nil

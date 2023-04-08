@@ -47,7 +47,7 @@ func NewSmfSelectionDataWithDefaults() *SmfSelectionData {
 
 // GetUnsuppDnn returns the UnsuppDnn field value if set, zero value otherwise.
 func (o *SmfSelectionData) GetUnsuppDnn() bool {
-	if o == nil || IsNil(o.UnsuppDnn) {
+	if o == nil || isNil(o.UnsuppDnn) {
 		var ret bool
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SmfSelectionData) GetUnsuppDnn() bool {
 // GetUnsuppDnnOk returns a tuple with the UnsuppDnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionData) GetUnsuppDnnOk() (*bool, bool) {
-	if o == nil || IsNil(o.UnsuppDnn) {
+	if o == nil || isNil(o.UnsuppDnn) {
 		return nil, false
 	}
 	return o.UnsuppDnn, true
@@ -65,7 +65,7 @@ func (o *SmfSelectionData) GetUnsuppDnnOk() (*bool, bool) {
 
 // HasUnsuppDnn returns a boolean if a field has been set.
 func (o *SmfSelectionData) HasUnsuppDnn() bool {
-	if o != nil && !IsNil(o.UnsuppDnn) {
+	if o != nil && !isNil(o.UnsuppDnn) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *SmfSelectionData) GetCandidates() map[string]CandidateForReplacement {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmfSelectionData) GetCandidatesOk() (*map[string]CandidateForReplacement, bool) {
-	if o == nil || IsNil(o.Candidates) {
+	if o == nil || isNil(o.Candidates) {
 		return nil, false
 	}
 	return &o.Candidates, true
@@ -98,7 +98,7 @@ func (o *SmfSelectionData) GetCandidatesOk() (*map[string]CandidateForReplacemen
 
 // HasCandidates returns a boolean if a field has been set.
 func (o *SmfSelectionData) HasCandidates() bool {
-	if o != nil && IsNil(o.Candidates) {
+	if o != nil && isNil(o.Candidates) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *SmfSelectionData) SetCandidates(v map[string]CandidateForReplacement) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *SmfSelectionData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *SmfSelectionData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -130,7 +130,7 @@ func (o *SmfSelectionData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *SmfSelectionData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *SmfSelectionData) SetSnssai(v Snssai) {
 
 // GetMappingSnssai returns the MappingSnssai field value if set, zero value otherwise.
 func (o *SmfSelectionData) GetMappingSnssai() Snssai {
-	if o == nil || IsNil(o.MappingSnssai) {
+	if o == nil || isNil(o.MappingSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *SmfSelectionData) GetMappingSnssai() Snssai {
 // GetMappingSnssaiOk returns a tuple with the MappingSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionData) GetMappingSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.MappingSnssai) {
+	if o == nil || isNil(o.MappingSnssai) {
 		return nil, false
 	}
 	return o.MappingSnssai, true
@@ -162,7 +162,7 @@ func (o *SmfSelectionData) GetMappingSnssaiOk() (*Snssai, bool) {
 
 // HasMappingSnssai returns a boolean if a field has been set.
 func (o *SmfSelectionData) HasMappingSnssai() bool {
-	if o != nil && !IsNil(o.MappingSnssai) {
+	if o != nil && !isNil(o.MappingSnssai) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *SmfSelectionData) SetMappingSnssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *SmfSelectionData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *SmfSelectionData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -194,7 +194,7 @@ func (o *SmfSelectionData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *SmfSelectionData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -216,19 +216,19 @@ func (o SmfSelectionData) MarshalJSON() ([]byte, error) {
 
 func (o SmfSelectionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UnsuppDnn) {
+	if !isNil(o.UnsuppDnn) {
 		toSerialize["unsuppDnn"] = o.UnsuppDnn
 	}
 	if o.Candidates != nil {
 		toSerialize["candidates"] = o.Candidates
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.MappingSnssai) {
+	if !isNil(o.MappingSnssai) {
 		toSerialize["mappingSnssai"] = o.MappingSnssai
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	return toSerialize, nil

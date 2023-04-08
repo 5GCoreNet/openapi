@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,13 +6,16 @@ api_default.go
 client.go
 configuration.go
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/CivicAddress.md
 docs/DefaultApi.md
 docs/EASRelocationTolerance.md
+docs/EASRelocationToleranceAnyOf.md
 docs/EASRequirements.md
 docs/EASServiceKPI.md
 docs/Ecgi.md
 docs/EdgeManagementMode.md
+docs/EdgeManagementModeAnyOf.md
 docs/EdgeProcessingEligibilityCriteria.md
 docs/EdgeResourcesConfiguration.md
 docs/EllipsoidArc.md
@@ -51,6 +53,7 @@ docs/RelativeCartesianLocation.md
 docs/ScheduledCommunicationTime.md
 docs/ServiceDataFlowDescription.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/TimeWindow.md
 docs/UncertaintyEllipse.md
@@ -59,12 +62,15 @@ git_push.sh
 go.mod
 go.sum
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_civic_address.go
 model_eas_relocation_tolerance.go
+model_eas_relocation_tolerance_any_of.go
 model_eas_requirements.go
 model_eas_service_kpi.go
 model_ecgi.go
 model_edge_management_mode.go
+model_edge_management_mode_any_of.go
 model_edge_processing_eligibility_criteria.go
 model_edge_resources_configuration.go
 model_ellipsoid_arc.go
@@ -102,6 +108,7 @@ model_relative_cartesian_location.go
 model_scheduled_communication_time.go
 model_service_data_flow_description.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_time_window.go
 model_uncertainty_ellipse.go

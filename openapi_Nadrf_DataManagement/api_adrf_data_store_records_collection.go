@@ -13,7 +13,7 @@ package openapi_Nadrf_DataManagement
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -104,9 +104,9 @@ func (a *ADRFDataStoreRecordsCollectionApiService) CreateADRFDataStoreRecordExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,10 +310,10 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 	localVarFormParams := url.Values{}
 
 	if r.storeTransId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "store-trans-id", r.storeTransId, "")
+		parameterAddToQuery(localVarQueryParams, "store-trans-id", r.storeTransId, "")
 	}
 	if r.fetchCorrelationIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fetch-correlation-ids", r.fetchCorrelationIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "fetch-correlation-ids", r.fetchCorrelationIds, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -342,9 +342,9 @@ func (a *ADRFDataStoreRecordsCollectionApiService) GetAdrfDataStoreRecordsExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

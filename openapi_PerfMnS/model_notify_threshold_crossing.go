@@ -12,7 +12,6 @@ package openapi_PerfMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyThresholdCrossing type satisfies the MappedNullable interface at compile time
@@ -178,7 +177,7 @@ func (o *NotifyThresholdCrossing) SetSystemDN(v string) {
 
 // GetObservedPerfMetricName returns the ObservedPerfMetricName field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricName() string {
-	if o == nil || IsNil(o.ObservedPerfMetricName) {
+	if o == nil || isNil(o.ObservedPerfMetricName) {
 		var ret string
 		return ret
 	}
@@ -188,7 +187,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricName() string {
 // GetObservedPerfMetricNameOk returns a tuple with the ObservedPerfMetricName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ObservedPerfMetricName) {
+	if o == nil || isNil(o.ObservedPerfMetricName) {
 		return nil, false
 	}
 	return o.ObservedPerfMetricName, true
@@ -196,7 +195,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricNameOk() (*string, bool) 
 
 // HasObservedPerfMetricName returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasObservedPerfMetricName() bool {
-	if o != nil && !IsNil(o.ObservedPerfMetricName) {
+	if o != nil && !isNil(o.ObservedPerfMetricName) {
 		return true
 	}
 
@@ -210,7 +209,7 @@ func (o *NotifyThresholdCrossing) SetObservedPerfMetricName(v string) {
 
 // GetObservedPerfMetricValue returns the ObservedPerfMetricValue field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricValue() PerfMetricValue {
-	if o == nil || IsNil(o.ObservedPerfMetricValue) {
+	if o == nil || isNil(o.ObservedPerfMetricValue) {
 		var ret PerfMetricValue
 		return ret
 	}
@@ -220,7 +219,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricValue() PerfMetricValue {
 // GetObservedPerfMetricValueOk returns a tuple with the ObservedPerfMetricValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricValueOk() (*PerfMetricValue, bool) {
-	if o == nil || IsNil(o.ObservedPerfMetricValue) {
+	if o == nil || isNil(o.ObservedPerfMetricValue) {
 		return nil, false
 	}
 	return o.ObservedPerfMetricValue, true
@@ -228,7 +227,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricValueOk() (*PerfMetricVal
 
 // HasObservedPerfMetricValue returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasObservedPerfMetricValue() bool {
-	if o != nil && !IsNil(o.ObservedPerfMetricValue) {
+	if o != nil && !isNil(o.ObservedPerfMetricValue) {
 		return true
 	}
 
@@ -242,7 +241,7 @@ func (o *NotifyThresholdCrossing) SetObservedPerfMetricValue(v PerfMetricValue) 
 
 // GetObservedPerfMetricDirection returns the ObservedPerfMetricDirection field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirection() PerfMetricDirection {
-	if o == nil || IsNil(o.ObservedPerfMetricDirection) {
+	if o == nil || isNil(o.ObservedPerfMetricDirection) {
 		var ret PerfMetricDirection
 		return ret
 	}
@@ -252,7 +251,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirection() PerfMetricDir
 // GetObservedPerfMetricDirectionOk returns a tuple with the ObservedPerfMetricDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirectionOk() (*PerfMetricDirection, bool) {
-	if o == nil || IsNil(o.ObservedPerfMetricDirection) {
+	if o == nil || isNil(o.ObservedPerfMetricDirection) {
 		return nil, false
 	}
 	return o.ObservedPerfMetricDirection, true
@@ -260,7 +259,7 @@ func (o *NotifyThresholdCrossing) GetObservedPerfMetricDirectionOk() (*PerfMetri
 
 // HasObservedPerfMetricDirection returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasObservedPerfMetricDirection() bool {
-	if o != nil && !IsNil(o.ObservedPerfMetricDirection) {
+	if o != nil && !isNil(o.ObservedPerfMetricDirection) {
 		return true
 	}
 
@@ -274,7 +273,7 @@ func (o *NotifyThresholdCrossing) SetObservedPerfMetricDirection(v PerfMetricDir
 
 // GetThresholdValue returns the ThresholdValue field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetThresholdValue() PerfMetricValue {
-	if o == nil || IsNil(o.ThresholdValue) {
+	if o == nil || isNil(o.ThresholdValue) {
 		var ret PerfMetricValue
 		return ret
 	}
@@ -284,7 +283,7 @@ func (o *NotifyThresholdCrossing) GetThresholdValue() PerfMetricValue {
 // GetThresholdValueOk returns a tuple with the ThresholdValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetThresholdValueOk() (*PerfMetricValue, bool) {
-	if o == nil || IsNil(o.ThresholdValue) {
+	if o == nil || isNil(o.ThresholdValue) {
 		return nil, false
 	}
 	return o.ThresholdValue, true
@@ -292,7 +291,7 @@ func (o *NotifyThresholdCrossing) GetThresholdValueOk() (*PerfMetricValue, bool)
 
 // HasThresholdValue returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasThresholdValue() bool {
-	if o != nil && !IsNil(o.ThresholdValue) {
+	if o != nil && !isNil(o.ThresholdValue) {
 		return true
 	}
 
@@ -306,7 +305,7 @@ func (o *NotifyThresholdCrossing) SetThresholdValue(v PerfMetricValue) {
 
 // GetHysteresis returns the Hysteresis field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetHysteresis() PerfMetricValue {
-	if o == nil || IsNil(o.Hysteresis) {
+	if o == nil || isNil(o.Hysteresis) {
 		var ret PerfMetricValue
 		return ret
 	}
@@ -316,7 +315,7 @@ func (o *NotifyThresholdCrossing) GetHysteresis() PerfMetricValue {
 // GetHysteresisOk returns a tuple with the Hysteresis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetHysteresisOk() (*PerfMetricValue, bool) {
-	if o == nil || IsNil(o.Hysteresis) {
+	if o == nil || isNil(o.Hysteresis) {
 		return nil, false
 	}
 	return o.Hysteresis, true
@@ -324,7 +323,7 @@ func (o *NotifyThresholdCrossing) GetHysteresisOk() (*PerfMetricValue, bool) {
 
 // HasHysteresis returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasHysteresis() bool {
-	if o != nil && !IsNil(o.Hysteresis) {
+	if o != nil && !isNil(o.Hysteresis) {
 		return true
 	}
 
@@ -338,7 +337,7 @@ func (o *NotifyThresholdCrossing) SetHysteresis(v PerfMetricValue) {
 
 // GetMonitorGranularityPeriod returns the MonitorGranularityPeriod field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriod() int32 {
-	if o == nil || IsNil(o.MonitorGranularityPeriod) {
+	if o == nil || isNil(o.MonitorGranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -348,7 +347,7 @@ func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriod() int32 {
 // GetMonitorGranularityPeriodOk returns a tuple with the MonitorGranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.MonitorGranularityPeriod) {
+	if o == nil || isNil(o.MonitorGranularityPeriod) {
 		return nil, false
 	}
 	return o.MonitorGranularityPeriod, true
@@ -356,7 +355,7 @@ func (o *NotifyThresholdCrossing) GetMonitorGranularityPeriodOk() (*int32, bool)
 
 // HasMonitorGranularityPeriod returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasMonitorGranularityPeriod() bool {
-	if o != nil && !IsNil(o.MonitorGranularityPeriod) {
+	if o != nil && !isNil(o.MonitorGranularityPeriod) {
 		return true
 	}
 
@@ -370,7 +369,7 @@ func (o *NotifyThresholdCrossing) SetMonitorGranularityPeriod(v int32) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyThresholdCrossing) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -380,7 +379,7 @@ func (o *NotifyThresholdCrossing) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyThresholdCrossing) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -388,7 +387,7 @@ func (o *NotifyThresholdCrossing) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyThresholdCrossing) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -415,25 +414,25 @@ func (o NotifyThresholdCrossing) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
-	if !IsNil(o.ObservedPerfMetricName) {
+	if !isNil(o.ObservedPerfMetricName) {
 		toSerialize["observedPerfMetricName"] = o.ObservedPerfMetricName
 	}
-	if !IsNil(o.ObservedPerfMetricValue) {
+	if !isNil(o.ObservedPerfMetricValue) {
 		toSerialize["observedPerfMetricValue"] = o.ObservedPerfMetricValue
 	}
-	if !IsNil(o.ObservedPerfMetricDirection) {
+	if !isNil(o.ObservedPerfMetricDirection) {
 		toSerialize["observedPerfMetricDirection"] = o.ObservedPerfMetricDirection
 	}
-	if !IsNil(o.ThresholdValue) {
+	if !isNil(o.ThresholdValue) {
 		toSerialize["thresholdValue"] = o.ThresholdValue
 	}
-	if !IsNil(o.Hysteresis) {
+	if !isNil(o.Hysteresis) {
 		toSerialize["hysteresis"] = o.Hysteresis
 	}
-	if !IsNil(o.MonitorGranularityPeriod) {
+	if !isNil(o.MonitorGranularityPeriod) {
 		toSerialize["monitorGranularityPeriod"] = o.MonitorGranularityPeriod
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil

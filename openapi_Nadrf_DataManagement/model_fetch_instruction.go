@@ -97,7 +97,7 @@ func (o *FetchInstruction) SetFetchCorrIds(v []string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *FetchInstruction) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *FetchInstruction) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FetchInstruction) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -115,7 +115,7 @@ func (o *FetchInstruction) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *FetchInstruction) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o FetchInstruction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["fetchUri"] = o.FetchUri
 	toSerialize["fetchCorrIds"] = o.FetchCorrIds
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
 	return toSerialize, nil

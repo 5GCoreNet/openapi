@@ -41,7 +41,7 @@ func NewAdditionalInfoWithDefaults() *AdditionalInfo {
 
 // GetScscfServerName returns the ScscfServerName field value if set, zero value otherwise.
 func (o *AdditionalInfo) GetScscfServerName() string {
-	if o == nil || IsNil(o.ScscfServerName) {
+	if o == nil || isNil(o.ScscfServerName) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AdditionalInfo) GetScscfServerName() string {
 // GetScscfServerNameOk returns a tuple with the ScscfServerName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalInfo) GetScscfServerNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ScscfServerName) {
+	if o == nil || isNil(o.ScscfServerName) {
 		return nil, false
 	}
 	return o.ScscfServerName, true
@@ -59,7 +59,7 @@ func (o *AdditionalInfo) GetScscfServerNameOk() (*string, bool) {
 
 // HasScscfServerName returns a boolean if a field has been set.
 func (o *AdditionalInfo) HasScscfServerName() bool {
-	if o != nil && !IsNil(o.ScscfServerName) {
+	if o != nil && !isNil(o.ScscfServerName) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AdditionalInfo) MarshalJSON() ([]byte, error) {
 
 func (o AdditionalInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ScscfServerName) {
+	if !isNil(o.ScscfServerName) {
 		toSerialize["scscfServerName"] = o.ScscfServerName
 	}
 	return toSerialize, nil

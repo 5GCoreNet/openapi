@@ -71,7 +71,7 @@ func (o *CreateRoutingData) SetSmsfId(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *CreateRoutingData) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *CreateRoutingData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateRoutingData) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -89,7 +89,7 @@ func (o *CreateRoutingData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *CreateRoutingData) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *CreateRoutingData) SetSupi(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreateRoutingData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *CreateRoutingData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateRoutingData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -121,7 +121,7 @@ func (o *CreateRoutingData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreateRoutingData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o CreateRoutingData) MarshalJSON() ([]byte, error) {
 func (o CreateRoutingData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsfId"] = o.SmsfId
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

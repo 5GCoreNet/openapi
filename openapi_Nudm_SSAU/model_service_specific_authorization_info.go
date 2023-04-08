@@ -50,7 +50,7 @@ func NewServiceSpecificAuthorizationInfoWithDefaults() *ServiceSpecificAuthoriza
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationInfo) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -68,7 +68,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationInfo) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *ServiceSpecificAuthorizationInfo) SetSnssai(v Snssai) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationInfo) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationInfo) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -100,7 +100,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationInfo) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *ServiceSpecificAuthorizationInfo) SetDnn(v string) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationInfo) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationInfo) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -132,7 +132,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetMtcProviderInformationOk() (*strin
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationInfo) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *ServiceSpecificAuthorizationInfo) SetMtcProviderInformation(v string) {
 
 // GetAuthUpdateCallbackUri returns the AuthUpdateCallbackUri field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationInfo) GetAuthUpdateCallbackUri() string {
-	if o == nil || IsNil(o.AuthUpdateCallbackUri) {
+	if o == nil || isNil(o.AuthUpdateCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetAuthUpdateCallbackUri() string {
 // GetAuthUpdateCallbackUriOk returns a tuple with the AuthUpdateCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationInfo) GetAuthUpdateCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthUpdateCallbackUri) {
+	if o == nil || isNil(o.AuthUpdateCallbackUri) {
 		return nil, false
 	}
 	return o.AuthUpdateCallbackUri, true
@@ -164,7 +164,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetAuthUpdateCallbackUriOk() (*string
 
 // HasAuthUpdateCallbackUri returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationInfo) HasAuthUpdateCallbackUri() bool {
-	if o != nil && !IsNil(o.AuthUpdateCallbackUri) {
+	if o != nil && !isNil(o.AuthUpdateCallbackUri) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *ServiceSpecificAuthorizationInfo) SetAuthUpdateCallbackUri(v string) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationInfo) GetAfId() string {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationInfo) GetAfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -196,7 +196,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationInfo) HasAfId() bool {
-	if o != nil && !IsNil(o.AfId) {
+	if o != nil && !isNil(o.AfId) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *ServiceSpecificAuthorizationInfo) SetAfId(v string) {
 
 // GetNefId returns the NefId field value if set, zero value otherwise.
 func (o *ServiceSpecificAuthorizationInfo) GetNefId() string {
-	if o == nil || IsNil(o.NefId) {
+	if o == nil || isNil(o.NefId) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetNefId() string {
 // GetNefIdOk returns a tuple with the NefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSpecificAuthorizationInfo) GetNefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NefId) {
+	if o == nil || isNil(o.NefId) {
 		return nil, false
 	}
 	return o.NefId, true
@@ -228,7 +228,7 @@ func (o *ServiceSpecificAuthorizationInfo) GetNefIdOk() (*string, bool) {
 
 // HasNefId returns a boolean if a field has been set.
 func (o *ServiceSpecificAuthorizationInfo) HasNefId() bool {
-	if o != nil && !IsNil(o.NefId) {
+	if o != nil && !isNil(o.NefId) {
 		return true
 	}
 
@@ -250,22 +250,22 @@ func (o ServiceSpecificAuthorizationInfo) MarshalJSON() ([]byte, error) {
 
 func (o ServiceSpecificAuthorizationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
-	if !IsNil(o.AuthUpdateCallbackUri) {
+	if !isNil(o.AuthUpdateCallbackUri) {
 		toSerialize["authUpdateCallbackUri"] = o.AuthUpdateCallbackUri
 	}
-	if !IsNil(o.AfId) {
+	if !isNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !IsNil(o.NefId) {
+	if !isNil(o.NefId) {
 		toSerialize["nefId"] = o.NefId
 	}
 	return toSerialize, nil

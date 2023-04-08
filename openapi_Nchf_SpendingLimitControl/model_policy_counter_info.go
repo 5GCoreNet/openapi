@@ -96,7 +96,7 @@ func (o *PolicyCounterInfo) SetCurrentStatus(v string) {
 
 // GetPenPolCounterStatuses returns the PenPolCounterStatuses field value if set, zero value otherwise.
 func (o *PolicyCounterInfo) GetPenPolCounterStatuses() []PendingPolicyCounterStatus {
-	if o == nil || IsNil(o.PenPolCounterStatuses) {
+	if o == nil || isNil(o.PenPolCounterStatuses) {
 		var ret []PendingPolicyCounterStatus
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PolicyCounterInfo) GetPenPolCounterStatuses() []PendingPolicyCounterSta
 // GetPenPolCounterStatusesOk returns a tuple with the PenPolCounterStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyCounterInfo) GetPenPolCounterStatusesOk() ([]PendingPolicyCounterStatus, bool) {
-	if o == nil || IsNil(o.PenPolCounterStatuses) {
+	if o == nil || isNil(o.PenPolCounterStatuses) {
 		return nil, false
 	}
 	return o.PenPolCounterStatuses, true
@@ -114,7 +114,7 @@ func (o *PolicyCounterInfo) GetPenPolCounterStatusesOk() ([]PendingPolicyCounter
 
 // HasPenPolCounterStatuses returns a boolean if a field has been set.
 func (o *PolicyCounterInfo) HasPenPolCounterStatuses() bool {
-	if o != nil && !IsNil(o.PenPolCounterStatuses) {
+	if o != nil && !isNil(o.PenPolCounterStatuses) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o PolicyCounterInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["policyCounterId"] = o.PolicyCounterId
 	toSerialize["currentStatus"] = o.CurrentStatus
-	if !IsNil(o.PenPolCounterStatuses) {
+	if !isNil(o.PenPolCounterStatuses) {
 		toSerialize["penPolCounterStatuses"] = o.PenPolCounterStatuses
 	}
 	return toSerialize, nil

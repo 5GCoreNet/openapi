@@ -17,23 +17,23 @@ import (
 
 // StorageOutcome Indicates the result of Ciphering Data Set storage.
 type StorageOutcome struct {
-	string *string
+	StorageOutcomeAnyOf *StorageOutcomeAnyOf
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *StorageOutcome) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into StorageOutcomeAnyOf
+	err = json.Unmarshal(data, &dst.StorageOutcomeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonStorageOutcomeAnyOf, _ := json.Marshal(dst.StorageOutcomeAnyOf)
+		if string(jsonStorageOutcomeAnyOf) == "{}" { // empty struct
+			dst.StorageOutcomeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.StorageOutcomeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.StorageOutcomeAnyOf = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(StorageOutcome)")
@@ -41,8 +41,8 @@ func (dst *StorageOutcome) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *StorageOutcome) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.StorageOutcomeAnyOf != nil {
+		return json.Marshal(&src.StorageOutcomeAnyOf)
 	}
 
 	return nil, nil // no data in anyOf schemas

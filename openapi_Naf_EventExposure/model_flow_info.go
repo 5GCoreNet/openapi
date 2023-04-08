@@ -69,7 +69,7 @@ func (o *FlowInfo) SetFlowId(v int32) {
 
 // GetFlowDescriptions returns the FlowDescriptions field value if set, zero value otherwise.
 func (o *FlowInfo) GetFlowDescriptions() []string {
-	if o == nil || IsNil(o.FlowDescriptions) {
+	if o == nil || isNil(o.FlowDescriptions) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *FlowInfo) GetFlowDescriptions() []string {
 // GetFlowDescriptionsOk returns a tuple with the FlowDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlowInfo) GetFlowDescriptionsOk() ([]string, bool) {
-	if o == nil || IsNil(o.FlowDescriptions) {
+	if o == nil || isNil(o.FlowDescriptions) {
 		return nil, false
 	}
 	return o.FlowDescriptions, true
@@ -87,7 +87,7 @@ func (o *FlowInfo) GetFlowDescriptionsOk() ([]string, bool) {
 
 // HasFlowDescriptions returns a boolean if a field has been set.
 func (o *FlowInfo) HasFlowDescriptions() bool {
-	if o != nil && !IsNil(o.FlowDescriptions) {
+	if o != nil && !isNil(o.FlowDescriptions) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o FlowInfo) MarshalJSON() ([]byte, error) {
 func (o FlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["flowId"] = o.FlowId
-	if !IsNil(o.FlowDescriptions) {
+	if !isNil(o.FlowDescriptions) {
 		toSerialize["flowDescriptions"] = o.FlowDescriptions
 	}
 	return toSerialize, nil

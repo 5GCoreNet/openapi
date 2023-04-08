@@ -47,7 +47,7 @@ func NewBaseDnsPatternCreateDataWithDefaults() *BaseDnsPatternCreateData {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetLabel() string {
-	if o == nil || IsNil(o.Label) {
+	if o == nil || isNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *BaseDnsPatternCreateData) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.Label) {
+	if o == nil || isNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -65,7 +65,7 @@ func (o *BaseDnsPatternCreateData) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasLabel() bool {
-	if o != nil && !IsNil(o.Label) {
+	if o != nil && !isNil(o.Label) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *BaseDnsPatternCreateData) SetLabel(v string) {
 
 // GetBaseDnsMdtList returns the BaseDnsMdtList field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetBaseDnsMdtList() map[string]BaselineDnsMdt {
-	if o == nil || IsNil(o.BaseDnsMdtList) {
+	if o == nil || isNil(o.BaseDnsMdtList) {
 		var ret map[string]BaselineDnsMdt
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsMdtList() map[string]BaselineDnsMdt
 // GetBaseDnsMdtListOk returns a tuple with the BaseDnsMdtList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetBaseDnsMdtListOk() (*map[string]BaselineDnsMdt, bool) {
-	if o == nil || IsNil(o.BaseDnsMdtList) {
+	if o == nil || isNil(o.BaseDnsMdtList) {
 		return nil, false
 	}
 	return o.BaseDnsMdtList, true
@@ -97,7 +97,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsMdtListOk() (*map[string]BaselineDn
 
 // HasBaseDnsMdtList returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasBaseDnsMdtList() bool {
-	if o != nil && !IsNil(o.BaseDnsMdtList) {
+	if o != nil && !isNil(o.BaseDnsMdtList) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *BaseDnsPatternCreateData) SetBaseDnsMdtList(v map[string]BaselineDnsMdt
 
 // GetBaseDnsAitList returns the BaseDnsAitList field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetBaseDnsAitList() map[string]BaselineDnsAit {
-	if o == nil || IsNil(o.BaseDnsAitList) {
+	if o == nil || isNil(o.BaseDnsAitList) {
 		var ret map[string]BaselineDnsAit
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsAitList() map[string]BaselineDnsAit
 // GetBaseDnsAitListOk returns a tuple with the BaseDnsAitList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetBaseDnsAitListOk() (*map[string]BaselineDnsAit, bool) {
-	if o == nil || IsNil(o.BaseDnsAitList) {
+	if o == nil || isNil(o.BaseDnsAitList) {
 		return nil, false
 	}
 	return o.BaseDnsAitList, true
@@ -129,7 +129,7 @@ func (o *BaseDnsPatternCreateData) GetBaseDnsAitListOk() (*map[string]BaselineDn
 
 // HasBaseDnsAitList returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasBaseDnsAitList() bool {
-	if o != nil && !IsNil(o.BaseDnsAitList) {
+	if o != nil && !isNil(o.BaseDnsAitList) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *BaseDnsPatternCreateData) SetBaseDnsAitList(v map[string]BaselineDnsAit
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *BaseDnsPatternCreateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *BaseDnsPatternCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaseDnsPatternCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -161,7 +161,7 @@ func (o *BaseDnsPatternCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *BaseDnsPatternCreateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o BaseDnsPatternCreateData) MarshalJSON() ([]byte, error) {
 
 func (o BaseDnsPatternCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Label) {
+	if !isNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !IsNil(o.BaseDnsMdtList) {
+	if !isNil(o.BaseDnsMdtList) {
 		toSerialize["baseDnsMdtList"] = o.BaseDnsMdtList
 	}
-	if !IsNil(o.BaseDnsAitList) {
+	if !isNil(o.BaseDnsAitList) {
 		toSerialize["baseDnsAitList"] = o.BaseDnsAitList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

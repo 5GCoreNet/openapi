@@ -13,7 +13,7 @@ package openapi_Nudsf_DataRepository
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -92,9 +92,9 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 		return localVarReturnValue, nil, reportError("filter is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+	parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *RecordCRUDApiService) BulkDeleteRecordsExecute(r ApiBulkDeleteRecordsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -334,10 +334,10 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 	}
 
 	if r.getPrevious != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/mixed"}
@@ -357,10 +357,10 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.record
@@ -374,9 +374,9 @@ func (a *RecordCRUDApiService) CreateOrModifyRecordExecute(r ApiCreateOrModifyRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -632,10 +632,10 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 	localVarFormParams := url.Values{}
 
 	if r.getPrevious != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
+		parameterAddToQuery(localVarQueryParams, "get-previous", r.getPrevious, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -655,7 +655,7 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -667,9 +667,9 @@ func (a *RecordCRUDApiService) DeleteRecordExecute(r ApiDeleteRecordRequest) (*R
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -894,7 +894,7 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -914,10 +914,10 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -929,9 +929,9 @@ func (a *RecordCRUDApiService) GetMetaExecute(r ApiGetMetaRequest) (*RecordMeta,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1134,7 +1134,7 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 	localVarFormParams := url.Values{}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1154,10 +1154,10 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1169,9 +1169,9 @@ func (a *RecordCRUDApiService) GetRecordExecute(r ApiGetRecordRequest) (*Record,
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1391,22 +1391,22 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 	localVarFormParams := url.Values{}
 
 	if r.limitRange != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit-range", r.limitRange, "")
+		parameterAddToQuery(localVarQueryParams, "limit-range", r.limitRange, "")
 	}
 	if r.filter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	if r.countIndicator != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "count-indicator", r.countIndicator, "")
+		parameterAddToQuery(localVarQueryParams, "count-indicator", r.countIndicator, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.retrieveRecords != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "retrieve-records", r.retrieveRecords, "")
+		parameterAddToQuery(localVarQueryParams, "retrieve-records", r.retrieveRecords, "")
 	}
 	if r.maxPayloadSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "max-payload-size", r.maxPayloadSize, "")
+		parameterAddToQuery(localVarQueryParams, "max-payload-size", r.maxPayloadSize, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1435,9 +1435,9 @@ func (a *RecordCRUDApiService) SearchRecordExecute(r ApiSearchRecordRequest) (*R
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1635,7 +1635,7 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json-patch+json"}
@@ -1655,7 +1655,7 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Match", r.ifMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-Match", r.ifMatch, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -1669,9 +1669,9 @@ func (a *RecordCRUDApiService) UpdateMetaExecute(r ApiUpdateMetaRequest) (*Patch
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

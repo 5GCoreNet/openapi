@@ -12,7 +12,6 @@ package openapi_NIDD
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the RdsDownlinkDataDeliveryFailure type satisfies the MappedNullable interface at compile time
@@ -61,7 +60,7 @@ func NewRdsDownlinkDataDeliveryFailureWithDefaults() *RdsDownlinkDataDeliveryFai
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -71,7 +70,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -79,7 +78,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -93,7 +92,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetType(v string) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -103,7 +102,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -111,7 +110,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasTitle() bool {
-	if o != nil && !IsNil(o.Title) {
+	if o != nil && !isNil(o.Title) {
 		return true
 	}
 
@@ -125,7 +124,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetTitle(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetStatus() int32 {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret int32
 		return ret
 	}
@@ -135,7 +134,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetStatusOk() (*int32, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -143,7 +142,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetStatusOk() (*int32, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -157,7 +156,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetStatus(v int32) {
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetDetail() string {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		var ret string
 		return ret
 	}
@@ -167,7 +166,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetDetailOk() (*string, bool) {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		return nil, false
 	}
 	return o.Detail, true
@@ -175,7 +174,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetDetailOk() (*string, bool) {
 
 // HasDetail returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasDetail() bool {
-	if o != nil && !IsNil(o.Detail) {
+	if o != nil && !isNil(o.Detail) {
 		return true
 	}
 
@@ -189,7 +188,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetDetail(v string) {
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetInstance() string {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		var ret string
 		return ret
 	}
@@ -199,7 +198,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetInstance() string {
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		return nil, false
 	}
 	return o.Instance, true
@@ -207,7 +206,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetInstanceOk() (*string, bool) {
 
 // HasInstance returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && !isNil(o.Instance) {
 		return true
 	}
 
@@ -221,7 +220,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetInstance(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetCause() string {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -231,7 +230,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -239,7 +238,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -253,7 +252,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetCause(v string) {
 
 // GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetInvalidParams() []InvalidParam {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -263,7 +262,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetInvalidParams() []InvalidParam {
 // GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetInvalidParamsOk() ([]InvalidParam, bool) {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		return nil, false
 	}
 	return o.InvalidParams, true
@@ -271,7 +270,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetInvalidParamsOk() ([]InvalidParam, b
 
 // HasInvalidParams returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasInvalidParams() bool {
-	if o != nil && !IsNil(o.InvalidParams) {
+	if o != nil && !isNil(o.InvalidParams) {
 		return true
 	}
 
@@ -285,7 +284,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetInvalidParams(v []InvalidParam) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -295,7 +294,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -303,7 +302,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetSupportedFeaturesOk() (*string, bool
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -317,7 +316,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetSupportedFeatures(v string) {
 
 // GetRequestedRetransmissionTime returns the RequestedRetransmissionTime field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetRequestedRetransmissionTime() time.Time {
-	if o == nil || IsNil(o.RequestedRetransmissionTime) {
+	if o == nil || isNil(o.RequestedRetransmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -327,7 +326,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetRequestedRetransmissionTime() time.T
 // GetRequestedRetransmissionTimeOk returns a tuple with the RequestedRetransmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetRequestedRetransmissionTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RequestedRetransmissionTime) {
+	if o == nil || isNil(o.RequestedRetransmissionTime) {
 		return nil, false
 	}
 	return o.RequestedRetransmissionTime, true
@@ -335,7 +334,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetRequestedRetransmissionTimeOk() (*ti
 
 // HasRequestedRetransmissionTime returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasRequestedRetransmissionTime() bool {
-	if o != nil && !IsNil(o.RequestedRetransmissionTime) {
+	if o != nil && !isNil(o.RequestedRetransmissionTime) {
 		return true
 	}
 
@@ -349,7 +348,7 @@ func (o *RdsDownlinkDataDeliveryFailure) SetRequestedRetransmissionTime(v time.T
 
 // GetSupportedUeFormats returns the SupportedUeFormats field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailure) GetSupportedUeFormats() []SerializationFormat {
-	if o == nil || IsNil(o.SupportedUeFormats) {
+	if o == nil || isNil(o.SupportedUeFormats) {
 		var ret []SerializationFormat
 		return ret
 	}
@@ -359,7 +358,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetSupportedUeFormats() []Serialization
 // GetSupportedUeFormatsOk returns a tuple with the SupportedUeFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailure) GetSupportedUeFormatsOk() ([]SerializationFormat, bool) {
-	if o == nil || IsNil(o.SupportedUeFormats) {
+	if o == nil || isNil(o.SupportedUeFormats) {
 		return nil, false
 	}
 	return o.SupportedUeFormats, true
@@ -367,7 +366,7 @@ func (o *RdsDownlinkDataDeliveryFailure) GetSupportedUeFormatsOk() ([]Serializat
 
 // HasSupportedUeFormats returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailure) HasSupportedUeFormats() bool {
-	if o != nil && !IsNil(o.SupportedUeFormats) {
+	if o != nil && !isNil(o.SupportedUeFormats) {
 		return true
 	}
 
@@ -389,34 +388,34 @@ func (o RdsDownlinkDataDeliveryFailure) MarshalJSON() ([]byte, error) {
 
 func (o RdsDownlinkDataDeliveryFailure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Title) {
+	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Detail) {
+	if !isNil(o.Detail) {
 		toSerialize["detail"] = o.Detail
 	}
-	if !IsNil(o.Instance) {
+	if !isNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.InvalidParams) {
+	if !isNil(o.InvalidParams) {
 		toSerialize["invalidParams"] = o.InvalidParams
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.RequestedRetransmissionTime) {
+	if !isNil(o.RequestedRetransmissionTime) {
 		toSerialize["requestedRetransmissionTime"] = o.RequestedRetransmissionTime
 	}
-	if !IsNil(o.SupportedUeFormats) {
+	if !isNil(o.SupportedUeFormats) {
 		toSerialize["supportedUeFormats"] = o.SupportedUeFormats
 	}
 	return toSerialize, nil

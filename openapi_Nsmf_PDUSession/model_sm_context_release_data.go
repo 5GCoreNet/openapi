@@ -60,7 +60,7 @@ func NewSmContextReleaseDataWithDefaults() *SmContextReleaseData {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetCause() Cause {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *SmContextReleaseData) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetCauseOk() (*Cause, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -78,7 +78,7 @@ func (o *SmContextReleaseData) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *SmContextReleaseData) SetCause(v Cause) {
 
 // GetNgApCause returns the NgApCause field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetNgApCause() NgApCause {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *SmContextReleaseData) GetNgApCause() NgApCause {
 // GetNgApCauseOk returns a tuple with the NgApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetNgApCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		return nil, false
 	}
 	return o.NgApCause, true
@@ -110,7 +110,7 @@ func (o *SmContextReleaseData) GetNgApCauseOk() (*NgApCause, bool) {
 
 // HasNgApCause returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasNgApCause() bool {
-	if o != nil && !IsNil(o.NgApCause) {
+	if o != nil && !isNil(o.NgApCause) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *SmContextReleaseData) SetNgApCause(v NgApCause) {
 
 // GetVar5gMmCauseValue returns the Var5gMmCauseValue field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetVar5gMmCauseValue() int32 {
-	if o == nil || IsNil(o.Var5gMmCauseValue) {
+	if o == nil || isNil(o.Var5gMmCauseValue) {
 		var ret int32
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *SmContextReleaseData) GetVar5gMmCauseValue() int32 {
 // GetVar5gMmCauseValueOk returns a tuple with the Var5gMmCauseValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetVar5gMmCauseValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var5gMmCauseValue) {
+	if o == nil || isNil(o.Var5gMmCauseValue) {
 		return nil, false
 	}
 	return o.Var5gMmCauseValue, true
@@ -142,7 +142,7 @@ func (o *SmContextReleaseData) GetVar5gMmCauseValueOk() (*int32, bool) {
 
 // HasVar5gMmCauseValue returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasVar5gMmCauseValue() bool {
-	if o != nil && !IsNil(o.Var5gMmCauseValue) {
+	if o != nil && !isNil(o.Var5gMmCauseValue) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *SmContextReleaseData) SetVar5gMmCauseValue(v int32) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetUeLocation() UserLocation {
-	if o == nil || IsNil(o.UeLocation) {
+	if o == nil || isNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *SmContextReleaseData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UeLocation) {
+	if o == nil || isNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -174,7 +174,7 @@ func (o *SmContextReleaseData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasUeLocation() bool {
-	if o != nil && !IsNil(o.UeLocation) {
+	if o != nil && !isNil(o.UeLocation) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *SmContextReleaseData) SetUeLocation(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetUeTimeZone() string {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *SmContextReleaseData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -206,7 +206,7 @@ func (o *SmContextReleaseData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasUeTimeZone() bool {
-	if o != nil && !IsNil(o.UeTimeZone) {
+	if o != nil && !isNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *SmContextReleaseData) SetUeTimeZone(v string) {
 
 // GetAddUeLocation returns the AddUeLocation field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetAddUeLocation() UserLocation {
-	if o == nil || IsNil(o.AddUeLocation) {
+	if o == nil || isNil(o.AddUeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *SmContextReleaseData) GetAddUeLocation() UserLocation {
 // GetAddUeLocationOk returns a tuple with the AddUeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetAddUeLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.AddUeLocation) {
+	if o == nil || isNil(o.AddUeLocation) {
 		return nil, false
 	}
 	return o.AddUeLocation, true
@@ -238,7 +238,7 @@ func (o *SmContextReleaseData) GetAddUeLocationOk() (*UserLocation, bool) {
 
 // HasAddUeLocation returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasAddUeLocation() bool {
-	if o != nil && !IsNil(o.AddUeLocation) {
+	if o != nil && !isNil(o.AddUeLocation) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *SmContextReleaseData) SetAddUeLocation(v UserLocation) {
 
 // GetVsmfReleaseOnly returns the VsmfReleaseOnly field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetVsmfReleaseOnly() bool {
-	if o == nil || IsNil(o.VsmfReleaseOnly) {
+	if o == nil || isNil(o.VsmfReleaseOnly) {
 		var ret bool
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *SmContextReleaseData) GetVsmfReleaseOnly() bool {
 // GetVsmfReleaseOnlyOk returns a tuple with the VsmfReleaseOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetVsmfReleaseOnlyOk() (*bool, bool) {
-	if o == nil || IsNil(o.VsmfReleaseOnly) {
+	if o == nil || isNil(o.VsmfReleaseOnly) {
 		return nil, false
 	}
 	return o.VsmfReleaseOnly, true
@@ -270,7 +270,7 @@ func (o *SmContextReleaseData) GetVsmfReleaseOnlyOk() (*bool, bool) {
 
 // HasVsmfReleaseOnly returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasVsmfReleaseOnly() bool {
-	if o != nil && !IsNil(o.VsmfReleaseOnly) {
+	if o != nil && !isNil(o.VsmfReleaseOnly) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *SmContextReleaseData) SetVsmfReleaseOnly(v bool) {
 
 // GetN2SmInfo returns the N2SmInfo field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetN2SmInfo() RefToBinaryData {
-	if o == nil || IsNil(o.N2SmInfo) {
+	if o == nil || isNil(o.N2SmInfo) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *SmContextReleaseData) GetN2SmInfo() RefToBinaryData {
 // GetN2SmInfoOk returns a tuple with the N2SmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetN2SmInfoOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.N2SmInfo) {
+	if o == nil || isNil(o.N2SmInfo) {
 		return nil, false
 	}
 	return o.N2SmInfo, true
@@ -302,7 +302,7 @@ func (o *SmContextReleaseData) GetN2SmInfoOk() (*RefToBinaryData, bool) {
 
 // HasN2SmInfo returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasN2SmInfo() bool {
-	if o != nil && !IsNil(o.N2SmInfo) {
+	if o != nil && !isNil(o.N2SmInfo) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *SmContextReleaseData) SetN2SmInfo(v RefToBinaryData) {
 
 // GetN2SmInfoType returns the N2SmInfoType field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetN2SmInfoType() N2SmInfoType {
-	if o == nil || IsNil(o.N2SmInfoType) {
+	if o == nil || isNil(o.N2SmInfoType) {
 		var ret N2SmInfoType
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *SmContextReleaseData) GetN2SmInfoType() N2SmInfoType {
 // GetN2SmInfoTypeOk returns a tuple with the N2SmInfoType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
-	if o == nil || IsNil(o.N2SmInfoType) {
+	if o == nil || isNil(o.N2SmInfoType) {
 		return nil, false
 	}
 	return o.N2SmInfoType, true
@@ -334,7 +334,7 @@ func (o *SmContextReleaseData) GetN2SmInfoTypeOk() (*N2SmInfoType, bool) {
 
 // HasN2SmInfoType returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasN2SmInfoType() bool {
-	if o != nil && !IsNil(o.N2SmInfoType) {
+	if o != nil && !isNil(o.N2SmInfoType) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *SmContextReleaseData) SetN2SmInfoType(v N2SmInfoType) {
 
 // GetIsmfReleaseOnly returns the IsmfReleaseOnly field value if set, zero value otherwise.
 func (o *SmContextReleaseData) GetIsmfReleaseOnly() bool {
-	if o == nil || IsNil(o.IsmfReleaseOnly) {
+	if o == nil || isNil(o.IsmfReleaseOnly) {
 		var ret bool
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *SmContextReleaseData) GetIsmfReleaseOnly() bool {
 // GetIsmfReleaseOnlyOk returns a tuple with the IsmfReleaseOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleaseData) GetIsmfReleaseOnlyOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsmfReleaseOnly) {
+	if o == nil || isNil(o.IsmfReleaseOnly) {
 		return nil, false
 	}
 	return o.IsmfReleaseOnly, true
@@ -366,7 +366,7 @@ func (o *SmContextReleaseData) GetIsmfReleaseOnlyOk() (*bool, bool) {
 
 // HasIsmfReleaseOnly returns a boolean if a field has been set.
 func (o *SmContextReleaseData) HasIsmfReleaseOnly() bool {
-	if o != nil && !IsNil(o.IsmfReleaseOnly) {
+	if o != nil && !isNil(o.IsmfReleaseOnly) {
 		return true
 	}
 
@@ -388,34 +388,34 @@ func (o SmContextReleaseData) MarshalJSON() ([]byte, error) {
 
 func (o SmContextReleaseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.NgApCause) {
+	if !isNil(o.NgApCause) {
 		toSerialize["ngApCause"] = o.NgApCause
 	}
-	if !IsNil(o.Var5gMmCauseValue) {
+	if !isNil(o.Var5gMmCauseValue) {
 		toSerialize["5gMmCauseValue"] = o.Var5gMmCauseValue
 	}
-	if !IsNil(o.UeLocation) {
+	if !isNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
-	if !IsNil(o.UeTimeZone) {
+	if !isNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !IsNil(o.AddUeLocation) {
+	if !isNil(o.AddUeLocation) {
 		toSerialize["addUeLocation"] = o.AddUeLocation
 	}
-	if !IsNil(o.VsmfReleaseOnly) {
+	if !isNil(o.VsmfReleaseOnly) {
 		toSerialize["vsmfReleaseOnly"] = o.VsmfReleaseOnly
 	}
-	if !IsNil(o.N2SmInfo) {
+	if !isNil(o.N2SmInfo) {
 		toSerialize["n2SmInfo"] = o.N2SmInfo
 	}
-	if !IsNil(o.N2SmInfoType) {
+	if !isNil(o.N2SmInfoType) {
 		toSerialize["n2SmInfoType"] = o.N2SmInfoType
 	}
-	if !IsNil(o.IsmfReleaseOnly) {
+	if !isNil(o.IsmfReleaseOnly) {
 		toSerialize["ismfReleaseOnly"] = o.IsmfReleaseOnly
 	}
 	return toSerialize, nil

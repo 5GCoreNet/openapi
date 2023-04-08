@@ -43,7 +43,7 @@ func NewExternalUnrelatedClassWithDefaults() *ExternalUnrelatedClass {
 
 // GetLcsClientExternals returns the LcsClientExternals field value if set, zero value otherwise.
 func (o *ExternalUnrelatedClass) GetLcsClientExternals() []LcsClientExternal {
-	if o == nil || IsNil(o.LcsClientExternals) {
+	if o == nil || isNil(o.LcsClientExternals) {
 		var ret []LcsClientExternal
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ExternalUnrelatedClass) GetLcsClientExternals() []LcsClientExternal {
 // GetLcsClientExternalsOk returns a tuple with the LcsClientExternals field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalUnrelatedClass) GetLcsClientExternalsOk() ([]LcsClientExternal, bool) {
-	if o == nil || IsNil(o.LcsClientExternals) {
+	if o == nil || isNil(o.LcsClientExternals) {
 		return nil, false
 	}
 	return o.LcsClientExternals, true
@@ -61,7 +61,7 @@ func (o *ExternalUnrelatedClass) GetLcsClientExternalsOk() ([]LcsClientExternal,
 
 // HasLcsClientExternals returns a boolean if a field has been set.
 func (o *ExternalUnrelatedClass) HasLcsClientExternals() bool {
-	if o != nil && !IsNil(o.LcsClientExternals) {
+	if o != nil && !isNil(o.LcsClientExternals) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ExternalUnrelatedClass) SetLcsClientExternals(v []LcsClientExternal) {
 
 // GetAfExternals returns the AfExternals field value if set, zero value otherwise.
 func (o *ExternalUnrelatedClass) GetAfExternals() []AfExternal {
-	if o == nil || IsNil(o.AfExternals) {
+	if o == nil || isNil(o.AfExternals) {
 		var ret []AfExternal
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ExternalUnrelatedClass) GetAfExternals() []AfExternal {
 // GetAfExternalsOk returns a tuple with the AfExternals field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalUnrelatedClass) GetAfExternalsOk() ([]AfExternal, bool) {
-	if o == nil || IsNil(o.AfExternals) {
+	if o == nil || isNil(o.AfExternals) {
 		return nil, false
 	}
 	return o.AfExternals, true
@@ -93,7 +93,7 @@ func (o *ExternalUnrelatedClass) GetAfExternalsOk() ([]AfExternal, bool) {
 
 // HasAfExternals returns a boolean if a field has been set.
 func (o *ExternalUnrelatedClass) HasAfExternals() bool {
-	if o != nil && !IsNil(o.AfExternals) {
+	if o != nil && !isNil(o.AfExternals) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ExternalUnrelatedClass) SetAfExternals(v []AfExternal) {
 
 // GetLcsClientGroupExternals returns the LcsClientGroupExternals field value if set, zero value otherwise.
 func (o *ExternalUnrelatedClass) GetLcsClientGroupExternals() []LcsClientGroupExternal {
-	if o == nil || IsNil(o.LcsClientGroupExternals) {
+	if o == nil || isNil(o.LcsClientGroupExternals) {
 		var ret []LcsClientGroupExternal
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ExternalUnrelatedClass) GetLcsClientGroupExternals() []LcsClientGroupEx
 // GetLcsClientGroupExternalsOk returns a tuple with the LcsClientGroupExternals field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalUnrelatedClass) GetLcsClientGroupExternalsOk() ([]LcsClientGroupExternal, bool) {
-	if o == nil || IsNil(o.LcsClientGroupExternals) {
+	if o == nil || isNil(o.LcsClientGroupExternals) {
 		return nil, false
 	}
 	return o.LcsClientGroupExternals, true
@@ -125,7 +125,7 @@ func (o *ExternalUnrelatedClass) GetLcsClientGroupExternalsOk() ([]LcsClientGrou
 
 // HasLcsClientGroupExternals returns a boolean if a field has been set.
 func (o *ExternalUnrelatedClass) HasLcsClientGroupExternals() bool {
-	if o != nil && !IsNil(o.LcsClientGroupExternals) {
+	if o != nil && !isNil(o.LcsClientGroupExternals) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o ExternalUnrelatedClass) MarshalJSON() ([]byte, error) {
 
 func (o ExternalUnrelatedClass) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LcsClientExternals) {
+	if !isNil(o.LcsClientExternals) {
 		toSerialize["lcsClientExternals"] = o.LcsClientExternals
 	}
-	if !IsNil(o.AfExternals) {
+	if !isNil(o.AfExternals) {
 		toSerialize["afExternals"] = o.AfExternals
 	}
-	if !IsNil(o.LcsClientGroupExternals) {
+	if !isNil(o.LcsClientGroupExternals) {
 		toSerialize["lcsClientGroupExternals"] = o.LcsClientGroupExternals
 	}
 	return toSerialize, nil

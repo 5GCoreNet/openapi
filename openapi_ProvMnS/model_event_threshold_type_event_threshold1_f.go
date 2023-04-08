@@ -43,7 +43,7 @@ func NewEventThresholdTypeEventThreshold1FWithDefaults() *EventThresholdTypeEven
 
 // GetCPICH_RSCP returns the CPICH_RSCP field value if set, zero value otherwise.
 func (o *EventThresholdTypeEventThreshold1F) GetCPICH_RSCP() int32 {
-	if o == nil || IsNil(o.CPICH_RSCP) {
+	if o == nil || isNil(o.CPICH_RSCP) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EventThresholdTypeEventThreshold1F) GetCPICH_RSCP() int32 {
 // GetCPICH_RSCPOk returns a tuple with the CPICH_RSCP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdTypeEventThreshold1F) GetCPICH_RSCPOk() (*int32, bool) {
-	if o == nil || IsNil(o.CPICH_RSCP) {
+	if o == nil || isNil(o.CPICH_RSCP) {
 		return nil, false
 	}
 	return o.CPICH_RSCP, true
@@ -61,7 +61,7 @@ func (o *EventThresholdTypeEventThreshold1F) GetCPICH_RSCPOk() (*int32, bool) {
 
 // HasCPICH_RSCP returns a boolean if a field has been set.
 func (o *EventThresholdTypeEventThreshold1F) HasCPICH_RSCP() bool {
-	if o != nil && !IsNil(o.CPICH_RSCP) {
+	if o != nil && !isNil(o.CPICH_RSCP) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EventThresholdTypeEventThreshold1F) SetCPICH_RSCP(v int32) {
 
 // GetCPICHEcNo returns the CPICHEcNo field value if set, zero value otherwise.
 func (o *EventThresholdTypeEventThreshold1F) GetCPICHEcNo() int32 {
-	if o == nil || IsNil(o.CPICHEcNo) {
+	if o == nil || isNil(o.CPICHEcNo) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EventThresholdTypeEventThreshold1F) GetCPICHEcNo() int32 {
 // GetCPICHEcNoOk returns a tuple with the CPICHEcNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdTypeEventThreshold1F) GetCPICHEcNoOk() (*int32, bool) {
-	if o == nil || IsNil(o.CPICHEcNo) {
+	if o == nil || isNil(o.CPICHEcNo) {
 		return nil, false
 	}
 	return o.CPICHEcNo, true
@@ -93,7 +93,7 @@ func (o *EventThresholdTypeEventThreshold1F) GetCPICHEcNoOk() (*int32, bool) {
 
 // HasCPICHEcNo returns a boolean if a field has been set.
 func (o *EventThresholdTypeEventThreshold1F) HasCPICHEcNo() bool {
-	if o != nil && !IsNil(o.CPICHEcNo) {
+	if o != nil && !isNil(o.CPICHEcNo) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EventThresholdTypeEventThreshold1F) SetCPICHEcNo(v int32) {
 
 // GetPathLoss returns the PathLoss field value if set, zero value otherwise.
 func (o *EventThresholdTypeEventThreshold1F) GetPathLoss() int32 {
-	if o == nil || IsNil(o.PathLoss) {
+	if o == nil || isNil(o.PathLoss) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *EventThresholdTypeEventThreshold1F) GetPathLoss() int32 {
 // GetPathLossOk returns a tuple with the PathLoss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdTypeEventThreshold1F) GetPathLossOk() (*int32, bool) {
-	if o == nil || IsNil(o.PathLoss) {
+	if o == nil || isNil(o.PathLoss) {
 		return nil, false
 	}
 	return o.PathLoss, true
@@ -125,7 +125,7 @@ func (o *EventThresholdTypeEventThreshold1F) GetPathLossOk() (*int32, bool) {
 
 // HasPathLoss returns a boolean if a field has been set.
 func (o *EventThresholdTypeEventThreshold1F) HasPathLoss() bool {
-	if o != nil && !IsNil(o.PathLoss) {
+	if o != nil && !isNil(o.PathLoss) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o EventThresholdTypeEventThreshold1F) MarshalJSON() ([]byte, error) {
 
 func (o EventThresholdTypeEventThreshold1F) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CPICH_RSCP) {
+	if !isNil(o.CPICH_RSCP) {
 		toSerialize["CPICH_RSCP"] = o.CPICH_RSCP
 	}
-	if !IsNil(o.CPICHEcNo) {
+	if !isNil(o.CPICHEcNo) {
 		toSerialize["CPICH_EcNo"] = o.CPICHEcNo
 	}
-	if !IsNil(o.PathLoss) {
+	if !isNil(o.PathLoss) {
 		toSerialize["PathLoss"] = o.PathLoss
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewRrmPolicyAttrWithDefaults() *RrmPolicyAttr {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *RrmPolicyAttr) GetResourceType() ResourceType {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil || isNil(o.ResourceType) {
 		var ret ResourceType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RrmPolicyAttr) GetResourceType() ResourceType {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RrmPolicyAttr) GetResourceTypeOk() (*ResourceType, bool) {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil || isNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -60,7 +60,7 @@ func (o *RrmPolicyAttr) GetResourceTypeOk() (*ResourceType, bool) {
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *RrmPolicyAttr) HasResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
+	if o != nil && !isNil(o.ResourceType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RrmPolicyAttr) SetResourceType(v ResourceType) {
 
 // GetRRMPolicyMemberList returns the RRMPolicyMemberList field value if set, zero value otherwise.
 func (o *RrmPolicyAttr) GetRRMPolicyMemberList() []RrmPolicyMember {
-	if o == nil || IsNil(o.RRMPolicyMemberList) {
+	if o == nil || isNil(o.RRMPolicyMemberList) {
 		var ret []RrmPolicyMember
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RrmPolicyAttr) GetRRMPolicyMemberList() []RrmPolicyMember {
 // GetRRMPolicyMemberListOk returns a tuple with the RRMPolicyMemberList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RrmPolicyAttr) GetRRMPolicyMemberListOk() ([]RrmPolicyMember, bool) {
-	if o == nil || IsNil(o.RRMPolicyMemberList) {
+	if o == nil || isNil(o.RRMPolicyMemberList) {
 		return nil, false
 	}
 	return o.RRMPolicyMemberList, true
@@ -92,7 +92,7 @@ func (o *RrmPolicyAttr) GetRRMPolicyMemberListOk() ([]RrmPolicyMember, bool) {
 
 // HasRRMPolicyMemberList returns a boolean if a field has been set.
 func (o *RrmPolicyAttr) HasRRMPolicyMemberList() bool {
-	if o != nil && !IsNil(o.RRMPolicyMemberList) {
+	if o != nil && !isNil(o.RRMPolicyMemberList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RrmPolicyAttr) MarshalJSON() ([]byte, error) {
 
 func (o RrmPolicyAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ResourceType) {
+	if !isNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !IsNil(o.RRMPolicyMemberList) {
+	if !isNil(o.RRMPolicyMemberList) {
 		toSerialize["rRMPolicyMemberList"] = o.RRMPolicyMemberList
 	}
 	return toSerialize, nil

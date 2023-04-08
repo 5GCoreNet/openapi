@@ -85,7 +85,7 @@ func (o *ECSServProvSubscription) SetEecId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *ECSServProvSubscription) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -103,7 +103,7 @@ func (o *ECSServProvSubscription) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *ECSServProvSubscription) SetUeId(v string) {
 
 // GetAcProfs returns the AcProfs field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetAcProfs() []ACProfile {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		var ret []ACProfile
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *ECSServProvSubscription) GetAcProfs() []ACProfile {
 // GetAcProfsOk returns a tuple with the AcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetAcProfsOk() ([]ACProfile, bool) {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		return nil, false
 	}
 	return o.AcProfs, true
@@ -135,7 +135,7 @@ func (o *ECSServProvSubscription) GetAcProfsOk() ([]ACProfile, bool) {
 
 // HasAcProfs returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasAcProfs() bool {
-	if o != nil && !IsNil(o.AcProfs) {
+	if o != nil && !isNil(o.AcProfs) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *ECSServProvSubscription) SetAcProfs(v []ACProfile) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *ECSServProvSubscription) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -167,7 +167,7 @@ func (o *ECSServProvSubscription) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *ECSServProvSubscription) SetExpTime(v time.Time) {
 
 // GetEecSvcContSupp returns the EecSvcContSupp field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetEecSvcContSupp() []ACRScenario {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *ECSServProvSubscription) GetEecSvcContSupp() []ACRScenario {
 // GetEecSvcContSuppOk returns a tuple with the EecSvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		return nil, false
 	}
 	return o.EecSvcContSupp, true
@@ -199,7 +199,7 @@ func (o *ECSServProvSubscription) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
 
 // HasEecSvcContSupp returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasEecSvcContSupp() bool {
-	if o != nil && !IsNil(o.EecSvcContSupp) {
+	if o != nil && !isNil(o.EecSvcContSupp) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *ECSServProvSubscription) SetEecSvcContSupp(v []ACRScenario) {
 
 // GetConnInfo returns the ConnInfo field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetConnInfo() []ConnectivityInfo {
-	if o == nil || IsNil(o.ConnInfo) {
+	if o == nil || isNil(o.ConnInfo) {
 		var ret []ConnectivityInfo
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *ECSServProvSubscription) GetConnInfo() []ConnectivityInfo {
 // GetConnInfoOk returns a tuple with the ConnInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetConnInfoOk() ([]ConnectivityInfo, bool) {
-	if o == nil || IsNil(o.ConnInfo) {
+	if o == nil || isNil(o.ConnInfo) {
 		return nil, false
 	}
 	return o.ConnInfo, true
@@ -231,7 +231,7 @@ func (o *ECSServProvSubscription) GetConnInfoOk() ([]ConnectivityInfo, bool) {
 
 // HasConnInfo returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasConnInfo() bool {
-	if o != nil && !IsNil(o.ConnInfo) {
+	if o != nil && !isNil(o.ConnInfo) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *ECSServProvSubscription) SetConnInfo(v []ConnectivityInfo) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *ECSServProvSubscription) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -263,7 +263,7 @@ func (o *ECSServProvSubscription) GetNotificationDestinationOk() (*string, bool)
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *ECSServProvSubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *ECSServProvSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -295,7 +295,7 @@ func (o *ECSServProvSubscription) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *ECSServProvSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *ECSServProvSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -327,7 +327,7 @@ func (o *ECSServProvSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *ECSServProvSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ECSServProvSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *ECSServProvSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -359,7 +359,7 @@ func (o *ECSServProvSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ECSServProvSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -382,31 +382,31 @@ func (o ECSServProvSubscription) MarshalJSON() ([]byte, error) {
 func (o ECSServProvSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.AcProfs) {
+	if !isNil(o.AcProfs) {
 		toSerialize["acProfs"] = o.AcProfs
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !IsNil(o.EecSvcContSupp) {
+	if !isNil(o.EecSvcContSupp) {
 		toSerialize["eecSvcContSupp"] = o.EecSvcContSupp
 	}
-	if !IsNil(o.ConnInfo) {
+	if !isNil(o.ConnInfo) {
 		toSerialize["connInfo"] = o.ConnInfo
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

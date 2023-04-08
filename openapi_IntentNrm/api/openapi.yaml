@@ -2671,7 +2671,15 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - anyOf:
+        - enum:
+          - PROBABLE_CAUSE_001
+          - PROBABLE_CAUSE_002
+          - PROBABLE_CAUSE_003
+          - PROBABLE_CAUSE_004
+          - PROBABLE_CAUSE_005
+          type: string
+        - type: string
       - type: integer
     SpecificProblem:
       oneOf:
@@ -2815,19 +2823,17 @@ components:
           type: array
       type: object
       example: null
-    Intent_Single_allOf_intentExpectations_inner:
-      oneOf:
-      - $ref: '#/components/schemas/IntentExpectation'
-      - $ref: '#/components/schemas/RadioNetworkExpectation'
-      - $ref: '#/components/schemas/ServiceSupportExpectation'
-      type: object
     Intent_Single_allOf:
       properties:
         userLabel:
           type: string
         intentExpectations:
           items:
-            $ref: '#/components/schemas/Intent_Single_allOf_intentExpectations_inner'
+            oneOf:
+            - $ref: '#/components/schemas/IntentExpectation'
+            - $ref: '#/components/schemas/RadioNetworkExpectation'
+            - $ref: '#/components/schemas/ServiceSupportExpectation'
+            type: object
           type: array
         intentContexts:
           items:
@@ -2985,6 +2991,7 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
+      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -2992,11 +2999,13 @@ components:
         fileLocation:
           type: string
       type: object
+      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
+      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -3272,23 +3281,15 @@ components:
         - OTHER
         type: string
       - type: string
-    ProbableCause_oneOf:
-      anyOf:
-      - enum:
-        - PROBABLE_CAUSE_001
-        - PROBABLE_CAUSE_002
-        - PROBABLE_CAUSE_003
-        - PROBABLE_CAUSE_004
-        - PROBABLE_CAUSE_005
-        type: string
-      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null

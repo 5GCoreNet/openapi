@@ -12,7 +12,6 @@ package openapi_FaultMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyAlarmListRebuilt type satisfies the MappedNullable interface at compile time
@@ -198,7 +197,7 @@ func (o *NotifyAlarmListRebuilt) SetReason(v string) {
 
 // GetAlarmListAlignmentRequirement returns the AlarmListAlignmentRequirement field value if set, zero value otherwise.
 func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirement() AlarmListAlignmentRequirement {
-	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
 		var ret AlarmListAlignmentRequirement
 		return ret
 	}
@@ -208,7 +207,7 @@ func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirement() AlarmListAli
 // GetAlarmListAlignmentRequirementOk returns a tuple with the AlarmListAlignmentRequirement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirementOk() (*AlarmListAlignmentRequirement, bool) {
-	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
 		return nil, false
 	}
 	return o.AlarmListAlignmentRequirement, true
@@ -216,7 +215,7 @@ func (o *NotifyAlarmListRebuilt) GetAlarmListAlignmentRequirementOk() (*AlarmLis
 
 // HasAlarmListAlignmentRequirement returns a boolean if a field has been set.
 func (o *NotifyAlarmListRebuilt) HasAlarmListAlignmentRequirement() bool {
-	if o != nil && !IsNil(o.AlarmListAlignmentRequirement) {
+	if o != nil && !isNil(o.AlarmListAlignmentRequirement) {
 		return true
 	}
 
@@ -244,7 +243,7 @@ func (o NotifyAlarmListRebuilt) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
 	toSerialize["reason"] = o.Reason
-	if !IsNil(o.AlarmListAlignmentRequirement) {
+	if !isNil(o.AlarmListAlignmentRequirement) {
 		toSerialize["alarmListAlignmentRequirement"] = o.AlarmListAlignmentRequirement
 	}
 	return toSerialize, nil

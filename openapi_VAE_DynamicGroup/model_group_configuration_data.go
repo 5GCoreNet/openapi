@@ -155,7 +155,7 @@ func (o *GroupConfigurationData) SetNotifUri(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetDuration() time.Time {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *GroupConfigurationData) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetDurationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -173,7 +173,7 @@ func (o *GroupConfigurationData) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && !isNil(o.Duration) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *GroupConfigurationData) SetDuration(v time.Time) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *GroupConfigurationData) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -205,7 +205,7 @@ func (o *GroupConfigurationData) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *GroupConfigurationData) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *GroupConfigurationData) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -237,7 +237,7 @@ func (o *GroupConfigurationData) GetWebsockNotifConfigOk() (*WebsockNotifConfig,
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *GroupConfigurationData) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *GroupConfigurationData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *GroupConfigurationData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GroupConfigurationData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -269,7 +269,7 @@ func (o *GroupConfigurationData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *GroupConfigurationData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -295,16 +295,16 @@ func (o GroupConfigurationData) ToMap() (map[string]interface{}, error) {
 	toSerialize["definition"] = o.Definition
 	toSerialize["leaderId"] = o.LeaderId
 	toSerialize["notifUri"] = o.NotifUri
-	if !IsNil(o.Duration) {
+	if !isNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

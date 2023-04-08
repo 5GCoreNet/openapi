@@ -45,7 +45,7 @@ func NewEASDeploymentChargingInformationWithDefaults() *EASDeploymentChargingInf
 
 // GetLCMStartTime returns the LCMStartTime field value if set, zero value otherwise.
 func (o *EASDeploymentChargingInformation) GetLCMStartTime() time.Time {
-	if o == nil || IsNil(o.LCMStartTime) {
+	if o == nil || isNil(o.LCMStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *EASDeploymentChargingInformation) GetLCMStartTime() time.Time {
 // GetLCMStartTimeOk returns a tuple with the LCMStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASDeploymentChargingInformation) GetLCMStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LCMStartTime) {
+	if o == nil || isNil(o.LCMStartTime) {
 		return nil, false
 	}
 	return o.LCMStartTime, true
@@ -63,7 +63,7 @@ func (o *EASDeploymentChargingInformation) GetLCMStartTimeOk() (*time.Time, bool
 
 // HasLCMStartTime returns a boolean if a field has been set.
 func (o *EASDeploymentChargingInformation) HasLCMStartTime() bool {
-	if o != nil && !IsNil(o.LCMStartTime) {
+	if o != nil && !isNil(o.LCMStartTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *EASDeploymentChargingInformation) SetLCMStartTime(v time.Time) {
 
 // GetLCMEndTime returns the LCMEndTime field value if set, zero value otherwise.
 func (o *EASDeploymentChargingInformation) GetLCMEndTime() time.Time {
-	if o == nil || IsNil(o.LCMEndTime) {
+	if o == nil || isNil(o.LCMEndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *EASDeploymentChargingInformation) GetLCMEndTime() time.Time {
 // GetLCMEndTimeOk returns a tuple with the LCMEndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASDeploymentChargingInformation) GetLCMEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LCMEndTime) {
+	if o == nil || isNil(o.LCMEndTime) {
 		return nil, false
 	}
 	return o.LCMEndTime, true
@@ -95,7 +95,7 @@ func (o *EASDeploymentChargingInformation) GetLCMEndTimeOk() (*time.Time, bool) 
 
 // HasLCMEndTime returns a boolean if a field has been set.
 func (o *EASDeploymentChargingInformation) HasLCMEndTime() bool {
-	if o != nil && !IsNil(o.LCMEndTime) {
+	if o != nil && !isNil(o.LCMEndTime) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o EASDeploymentChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o EASDeploymentChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LCMStartTime) {
+	if !isNil(o.LCMStartTime) {
 		toSerialize["lCMStartTime"] = o.LCMStartTime
 	}
-	if !IsNil(o.LCMEndTime) {
+	if !isNil(o.LCMEndTime) {
 		toSerialize["lCMEndTime"] = o.LCMEndTime
 	}
 	return toSerialize, nil

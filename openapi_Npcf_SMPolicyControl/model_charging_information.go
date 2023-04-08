@@ -77,7 +77,7 @@ func (o *ChargingInformation) SetPrimaryChfAddress(v string) {
 
 // GetSecondaryChfAddress returns the SecondaryChfAddress field value if set, zero value otherwise.
 func (o *ChargingInformation) GetSecondaryChfAddress() string {
-	if o == nil || IsNil(o.SecondaryChfAddress) {
+	if o == nil || isNil(o.SecondaryChfAddress) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ChargingInformation) GetSecondaryChfAddress() string {
 // GetSecondaryChfAddressOk returns a tuple with the SecondaryChfAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetSecondaryChfAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.SecondaryChfAddress) {
+	if o == nil || isNil(o.SecondaryChfAddress) {
 		return nil, false
 	}
 	return o.SecondaryChfAddress, true
@@ -95,7 +95,7 @@ func (o *ChargingInformation) GetSecondaryChfAddressOk() (*string, bool) {
 
 // HasSecondaryChfAddress returns a boolean if a field has been set.
 func (o *ChargingInformation) HasSecondaryChfAddress() bool {
-	if o != nil && !IsNil(o.SecondaryChfAddress) {
+	if o != nil && !isNil(o.SecondaryChfAddress) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ChargingInformation) SetSecondaryChfAddress(v string) {
 
 // GetPrimaryChfSetId returns the PrimaryChfSetId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetPrimaryChfSetId() string {
-	if o == nil || IsNil(o.PrimaryChfSetId) {
+	if o == nil || isNil(o.PrimaryChfSetId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ChargingInformation) GetPrimaryChfSetId() string {
 // GetPrimaryChfSetIdOk returns a tuple with the PrimaryChfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetPrimaryChfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PrimaryChfSetId) {
+	if o == nil || isNil(o.PrimaryChfSetId) {
 		return nil, false
 	}
 	return o.PrimaryChfSetId, true
@@ -127,7 +127,7 @@ func (o *ChargingInformation) GetPrimaryChfSetIdOk() (*string, bool) {
 
 // HasPrimaryChfSetId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasPrimaryChfSetId() bool {
-	if o != nil && !IsNil(o.PrimaryChfSetId) {
+	if o != nil && !isNil(o.PrimaryChfSetId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ChargingInformation) SetPrimaryChfSetId(v string) {
 
 // GetPrimaryChfInstanceId returns the PrimaryChfInstanceId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetPrimaryChfInstanceId() string {
-	if o == nil || IsNil(o.PrimaryChfInstanceId) {
+	if o == nil || isNil(o.PrimaryChfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ChargingInformation) GetPrimaryChfInstanceId() string {
 // GetPrimaryChfInstanceIdOk returns a tuple with the PrimaryChfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetPrimaryChfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PrimaryChfInstanceId) {
+	if o == nil || isNil(o.PrimaryChfInstanceId) {
 		return nil, false
 	}
 	return o.PrimaryChfInstanceId, true
@@ -159,7 +159,7 @@ func (o *ChargingInformation) GetPrimaryChfInstanceIdOk() (*string, bool) {
 
 // HasPrimaryChfInstanceId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasPrimaryChfInstanceId() bool {
-	if o != nil && !IsNil(o.PrimaryChfInstanceId) {
+	if o != nil && !isNil(o.PrimaryChfInstanceId) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ChargingInformation) SetPrimaryChfInstanceId(v string) {
 
 // GetSecondaryChfSetId returns the SecondaryChfSetId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetSecondaryChfSetId() string {
-	if o == nil || IsNil(o.SecondaryChfSetId) {
+	if o == nil || isNil(o.SecondaryChfSetId) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ChargingInformation) GetSecondaryChfSetId() string {
 // GetSecondaryChfSetIdOk returns a tuple with the SecondaryChfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetSecondaryChfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SecondaryChfSetId) {
+	if o == nil || isNil(o.SecondaryChfSetId) {
 		return nil, false
 	}
 	return o.SecondaryChfSetId, true
@@ -191,7 +191,7 @@ func (o *ChargingInformation) GetSecondaryChfSetIdOk() (*string, bool) {
 
 // HasSecondaryChfSetId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasSecondaryChfSetId() bool {
-	if o != nil && !IsNil(o.SecondaryChfSetId) {
+	if o != nil && !isNil(o.SecondaryChfSetId) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *ChargingInformation) SetSecondaryChfSetId(v string) {
 
 // GetSecondaryChfInstanceId returns the SecondaryChfInstanceId field value if set, zero value otherwise.
 func (o *ChargingInformation) GetSecondaryChfInstanceId() string {
-	if o == nil || IsNil(o.SecondaryChfInstanceId) {
+	if o == nil || isNil(o.SecondaryChfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *ChargingInformation) GetSecondaryChfInstanceId() string {
 // GetSecondaryChfInstanceIdOk returns a tuple with the SecondaryChfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingInformation) GetSecondaryChfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SecondaryChfInstanceId) {
+	if o == nil || isNil(o.SecondaryChfInstanceId) {
 		return nil, false
 	}
 	return o.SecondaryChfInstanceId, true
@@ -223,7 +223,7 @@ func (o *ChargingInformation) GetSecondaryChfInstanceIdOk() (*string, bool) {
 
 // HasSecondaryChfInstanceId returns a boolean if a field has been set.
 func (o *ChargingInformation) HasSecondaryChfInstanceId() bool {
-	if o != nil && !IsNil(o.SecondaryChfInstanceId) {
+	if o != nil && !isNil(o.SecondaryChfInstanceId) {
 		return true
 	}
 
@@ -246,19 +246,19 @@ func (o ChargingInformation) MarshalJSON() ([]byte, error) {
 func (o ChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["primaryChfAddress"] = o.PrimaryChfAddress
-	if !IsNil(o.SecondaryChfAddress) {
+	if !isNil(o.SecondaryChfAddress) {
 		toSerialize["secondaryChfAddress"] = o.SecondaryChfAddress
 	}
-	if !IsNil(o.PrimaryChfSetId) {
+	if !isNil(o.PrimaryChfSetId) {
 		toSerialize["primaryChfSetId"] = o.PrimaryChfSetId
 	}
-	if !IsNil(o.PrimaryChfInstanceId) {
+	if !isNil(o.PrimaryChfInstanceId) {
 		toSerialize["primaryChfInstanceId"] = o.PrimaryChfInstanceId
 	}
-	if !IsNil(o.SecondaryChfSetId) {
+	if !isNil(o.SecondaryChfSetId) {
 		toSerialize["secondaryChfSetId"] = o.SecondaryChfSetId
 	}
-	if !IsNil(o.SecondaryChfInstanceId) {
+	if !isNil(o.SecondaryChfInstanceId) {
 		toSerialize["secondaryChfInstanceId"] = o.SecondaryChfInstanceId
 	}
 	return toSerialize, nil

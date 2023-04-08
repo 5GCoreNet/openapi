@@ -69,7 +69,7 @@ func (o *MergePatchAcknowledgeAlarm) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *MergePatchAcknowledgeAlarm) GetAckSystemId() string {
-	if o == nil || IsNil(o.AckSystemId) {
+	if o == nil || isNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MergePatchAcknowledgeAlarm) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MergePatchAcknowledgeAlarm) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AckSystemId) {
+	if o == nil || isNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -87,7 +87,7 @@ func (o *MergePatchAcknowledgeAlarm) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *MergePatchAcknowledgeAlarm) HasAckSystemId() bool {
-	if o != nil && !IsNil(o.AckSystemId) {
+	if o != nil && !isNil(o.AckSystemId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o MergePatchAcknowledgeAlarm) MarshalJSON() ([]byte, error) {
 func (o MergePatchAcknowledgeAlarm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ackUserId"] = o.AckUserId
-	if !IsNil(o.AckSystemId) {
+	if !isNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
 	toSerialize["ackState"] = o.AckState

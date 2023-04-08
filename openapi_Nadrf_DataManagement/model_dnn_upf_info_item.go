@@ -77,7 +77,7 @@ func (o *DnnUpfInfoItem) SetDnn(v string) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetDnaiList() []string {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DnnUpfInfoItem) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetDnaiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -95,7 +95,7 @@ func (o *DnnUpfInfoItem) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasDnaiList() bool {
-	if o != nil && !IsNil(o.DnaiList) {
+	if o != nil && !isNil(o.DnaiList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DnnUpfInfoItem) SetDnaiList(v []string) {
 
 // GetPduSessionTypes returns the PduSessionTypes field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetPduSessionTypes() []PduSessionType {
-	if o == nil || IsNil(o.PduSessionTypes) {
+	if o == nil || isNil(o.PduSessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *DnnUpfInfoItem) GetPduSessionTypes() []PduSessionType {
 // GetPduSessionTypesOk returns a tuple with the PduSessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetPduSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || IsNil(o.PduSessionTypes) {
+	if o == nil || isNil(o.PduSessionTypes) {
 		return nil, false
 	}
 	return o.PduSessionTypes, true
@@ -127,7 +127,7 @@ func (o *DnnUpfInfoItem) GetPduSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasPduSessionTypes returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasPduSessionTypes() bool {
-	if o != nil && !IsNil(o.PduSessionTypes) {
+	if o != nil && !isNil(o.PduSessionTypes) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *DnnUpfInfoItem) SetPduSessionTypes(v []PduSessionType) {
 
 // GetIpv4AddressRanges returns the Ipv4AddressRanges field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetIpv4AddressRanges() []Ipv4AddressRange {
-	if o == nil || IsNil(o.Ipv4AddressRanges) {
+	if o == nil || isNil(o.Ipv4AddressRanges) {
 		var ret []Ipv4AddressRange
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DnnUpfInfoItem) GetIpv4AddressRanges() []Ipv4AddressRange {
 // GetIpv4AddressRangesOk returns a tuple with the Ipv4AddressRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetIpv4AddressRangesOk() ([]Ipv4AddressRange, bool) {
-	if o == nil || IsNil(o.Ipv4AddressRanges) {
+	if o == nil || isNil(o.Ipv4AddressRanges) {
 		return nil, false
 	}
 	return o.Ipv4AddressRanges, true
@@ -159,7 +159,7 @@ func (o *DnnUpfInfoItem) GetIpv4AddressRangesOk() ([]Ipv4AddressRange, bool) {
 
 // HasIpv4AddressRanges returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasIpv4AddressRanges() bool {
-	if o != nil && !IsNil(o.Ipv4AddressRanges) {
+	if o != nil && !isNil(o.Ipv4AddressRanges) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *DnnUpfInfoItem) SetIpv4AddressRanges(v []Ipv4AddressRange) {
 
 // GetIpv6PrefixRanges returns the Ipv6PrefixRanges field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetIpv6PrefixRanges() []Ipv6PrefixRange {
-	if o == nil || IsNil(o.Ipv6PrefixRanges) {
+	if o == nil || isNil(o.Ipv6PrefixRanges) {
 		var ret []Ipv6PrefixRange
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *DnnUpfInfoItem) GetIpv6PrefixRanges() []Ipv6PrefixRange {
 // GetIpv6PrefixRangesOk returns a tuple with the Ipv6PrefixRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
-	if o == nil || IsNil(o.Ipv6PrefixRanges) {
+	if o == nil || isNil(o.Ipv6PrefixRanges) {
 		return nil, false
 	}
 	return o.Ipv6PrefixRanges, true
@@ -191,7 +191,7 @@ func (o *DnnUpfInfoItem) GetIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
 
 // HasIpv6PrefixRanges returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasIpv6PrefixRanges() bool {
-	if o != nil && !IsNil(o.Ipv6PrefixRanges) {
+	if o != nil && !isNil(o.Ipv6PrefixRanges) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *DnnUpfInfoItem) SetIpv6PrefixRanges(v []Ipv6PrefixRange) {
 
 // GetIpv4IndexList returns the Ipv4IndexList field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetIpv4IndexList() []IpIndex {
-	if o == nil || IsNil(o.Ipv4IndexList) {
+	if o == nil || isNil(o.Ipv4IndexList) {
 		var ret []IpIndex
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *DnnUpfInfoItem) GetIpv4IndexList() []IpIndex {
 // GetIpv4IndexListOk returns a tuple with the Ipv4IndexList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetIpv4IndexListOk() ([]IpIndex, bool) {
-	if o == nil || IsNil(o.Ipv4IndexList) {
+	if o == nil || isNil(o.Ipv4IndexList) {
 		return nil, false
 	}
 	return o.Ipv4IndexList, true
@@ -223,7 +223,7 @@ func (o *DnnUpfInfoItem) GetIpv4IndexListOk() ([]IpIndex, bool) {
 
 // HasIpv4IndexList returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasIpv4IndexList() bool {
-	if o != nil && !IsNil(o.Ipv4IndexList) {
+	if o != nil && !isNil(o.Ipv4IndexList) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *DnnUpfInfoItem) SetIpv4IndexList(v []IpIndex) {
 
 // GetIpv6IndexList returns the Ipv6IndexList field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetIpv6IndexList() []IpIndex {
-	if o == nil || IsNil(o.Ipv6IndexList) {
+	if o == nil || isNil(o.Ipv6IndexList) {
 		var ret []IpIndex
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *DnnUpfInfoItem) GetIpv6IndexList() []IpIndex {
 // GetIpv6IndexListOk returns a tuple with the Ipv6IndexList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetIpv6IndexListOk() ([]IpIndex, bool) {
-	if o == nil || IsNil(o.Ipv6IndexList) {
+	if o == nil || isNil(o.Ipv6IndexList) {
 		return nil, false
 	}
 	return o.Ipv6IndexList, true
@@ -255,7 +255,7 @@ func (o *DnnUpfInfoItem) GetIpv6IndexListOk() ([]IpIndex, bool) {
 
 // HasIpv6IndexList returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasIpv6IndexList() bool {
-	if o != nil && !IsNil(o.Ipv6IndexList) {
+	if o != nil && !isNil(o.Ipv6IndexList) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *DnnUpfInfoItem) SetIpv6IndexList(v []IpIndex) {
 
 // GetNetworkInstance returns the NetworkInstance field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetNetworkInstance() string {
-	if o == nil || IsNil(o.NetworkInstance) {
+	if o == nil || isNil(o.NetworkInstance) {
 		var ret string
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *DnnUpfInfoItem) GetNetworkInstance() string {
 // GetNetworkInstanceOk returns a tuple with the NetworkInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetNetworkInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkInstance) {
+	if o == nil || isNil(o.NetworkInstance) {
 		return nil, false
 	}
 	return o.NetworkInstance, true
@@ -287,7 +287,7 @@ func (o *DnnUpfInfoItem) GetNetworkInstanceOk() (*string, bool) {
 
 // HasNetworkInstance returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasNetworkInstance() bool {
-	if o != nil && !IsNil(o.NetworkInstance) {
+	if o != nil && !isNil(o.NetworkInstance) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *DnnUpfInfoItem) SetNetworkInstance(v string) {
 
 // GetDnaiNwInstanceList returns the DnaiNwInstanceList field value if set, zero value otherwise.
 func (o *DnnUpfInfoItem) GetDnaiNwInstanceList() map[string]string {
-	if o == nil || IsNil(o.DnaiNwInstanceList) {
+	if o == nil || isNil(o.DnaiNwInstanceList) {
 		var ret map[string]string
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *DnnUpfInfoItem) GetDnaiNwInstanceList() map[string]string {
 // GetDnaiNwInstanceListOk returns a tuple with the DnaiNwInstanceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnUpfInfoItem) GetDnaiNwInstanceListOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.DnaiNwInstanceList) {
+	if o == nil || isNil(o.DnaiNwInstanceList) {
 		return nil, false
 	}
 	return o.DnaiNwInstanceList, true
@@ -319,7 +319,7 @@ func (o *DnnUpfInfoItem) GetDnaiNwInstanceListOk() (*map[string]string, bool) {
 
 // HasDnaiNwInstanceList returns a boolean if a field has been set.
 func (o *DnnUpfInfoItem) HasDnaiNwInstanceList() bool {
-	if o != nil && !IsNil(o.DnaiNwInstanceList) {
+	if o != nil && !isNil(o.DnaiNwInstanceList) {
 		return true
 	}
 
@@ -342,28 +342,28 @@ func (o DnnUpfInfoItem) MarshalJSON() ([]byte, error) {
 func (o DnnUpfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !IsNil(o.DnaiList) {
+	if !isNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
-	if !IsNil(o.PduSessionTypes) {
+	if !isNil(o.PduSessionTypes) {
 		toSerialize["pduSessionTypes"] = o.PduSessionTypes
 	}
-	if !IsNil(o.Ipv4AddressRanges) {
+	if !isNil(o.Ipv4AddressRanges) {
 		toSerialize["ipv4AddressRanges"] = o.Ipv4AddressRanges
 	}
-	if !IsNil(o.Ipv6PrefixRanges) {
+	if !isNil(o.Ipv6PrefixRanges) {
 		toSerialize["ipv6PrefixRanges"] = o.Ipv6PrefixRanges
 	}
-	if !IsNil(o.Ipv4IndexList) {
+	if !isNil(o.Ipv4IndexList) {
 		toSerialize["ipv4IndexList"] = o.Ipv4IndexList
 	}
-	if !IsNil(o.Ipv6IndexList) {
+	if !isNil(o.Ipv6IndexList) {
 		toSerialize["ipv6IndexList"] = o.Ipv6IndexList
 	}
-	if !IsNil(o.NetworkInstance) {
+	if !isNil(o.NetworkInstance) {
 		toSerialize["networkInstance"] = o.NetworkInstance
 	}
-	if !IsNil(o.DnaiNwInstanceList) {
+	if !isNil(o.DnaiNwInstanceList) {
 		toSerialize["dnaiNwInstanceList"] = o.DnaiNwInstanceList
 	}
 	return toSerialize, nil

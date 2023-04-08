@@ -19,7 +19,7 @@ var _ MappedNullable = &CommonBeamformingFunctionSingleAllOf{}
 
 // CommonBeamformingFunctionSingleAllOf struct for CommonBeamformingFunctionSingleAllOf
 type CommonBeamformingFunctionSingleAllOf struct {
-	Attributes *CommonBeamformingFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewCommonBeamformingFunctionSingleAllOf instantiates a new CommonBeamformingFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewCommonBeamformingFunctionSingleAllOfWithDefaults() *CommonBeamformingFun
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *CommonBeamformingFunctionSingleAllOf) GetAttributes() CommonBeamformingFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret CommonBeamformingFunctionSingleAllOfAttributes
+func (o *CommonBeamformingFunctionSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *CommonBeamformingFunctionSingleAllOf) GetAttributes() CommonBeamforming
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CommonBeamformingFunctionSingleAllOf) GetAttributesOk() (*CommonBeamformingFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *CommonBeamformingFunctionSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *CommonBeamformingFunctionSingleAllOf) GetAttributesOk() (*CommonBeamfor
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *CommonBeamformingFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given CommonBeamformingFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *CommonBeamformingFunctionSingleAllOf) SetAttributes(v CommonBeamformingFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *CommonBeamformingFunctionSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o CommonBeamformingFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o CommonBeamformingFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

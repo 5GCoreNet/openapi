@@ -56,7 +56,7 @@ func NewNefInfoWithDefaults() *NefInfo {
 
 // GetNefId returns the NefId field value if set, zero value otherwise.
 func (o *NefInfo) GetNefId() string {
-	if o == nil || IsNil(o.NefId) {
+	if o == nil || isNil(o.NefId) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *NefInfo) GetNefId() string {
 // GetNefIdOk returns a tuple with the NefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetNefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NefId) {
+	if o == nil || isNil(o.NefId) {
 		return nil, false
 	}
 	return o.NefId, true
@@ -74,7 +74,7 @@ func (o *NefInfo) GetNefIdOk() (*string, bool) {
 
 // HasNefId returns a boolean if a field has been set.
 func (o *NefInfo) HasNefId() bool {
-	if o != nil && !IsNil(o.NefId) {
+	if o != nil && !isNil(o.NefId) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *NefInfo) SetNefId(v string) {
 
 // GetPfdData returns the PfdData field value if set, zero value otherwise.
 func (o *NefInfo) GetPfdData() PfdData {
-	if o == nil || IsNil(o.PfdData) {
+	if o == nil || isNil(o.PfdData) {
 		var ret PfdData
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *NefInfo) GetPfdData() PfdData {
 // GetPfdDataOk returns a tuple with the PfdData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetPfdDataOk() (*PfdData, bool) {
-	if o == nil || IsNil(o.PfdData) {
+	if o == nil || isNil(o.PfdData) {
 		return nil, false
 	}
 	return o.PfdData, true
@@ -106,7 +106,7 @@ func (o *NefInfo) GetPfdDataOk() (*PfdData, bool) {
 
 // HasPfdData returns a boolean if a field has been set.
 func (o *NefInfo) HasPfdData() bool {
-	if o != nil && !IsNil(o.PfdData) {
+	if o != nil && !isNil(o.PfdData) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *NefInfo) SetPfdData(v PfdData) {
 
 // GetAfEeData returns the AfEeData field value if set, zero value otherwise.
 func (o *NefInfo) GetAfEeData() AfEventExposureData {
-	if o == nil || IsNil(o.AfEeData) {
+	if o == nil || isNil(o.AfEeData) {
 		var ret AfEventExposureData
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *NefInfo) GetAfEeData() AfEventExposureData {
 // GetAfEeDataOk returns a tuple with the AfEeData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetAfEeDataOk() (*AfEventExposureData, bool) {
-	if o == nil || IsNil(o.AfEeData) {
+	if o == nil || isNil(o.AfEeData) {
 		return nil, false
 	}
 	return o.AfEeData, true
@@ -138,7 +138,7 @@ func (o *NefInfo) GetAfEeDataOk() (*AfEventExposureData, bool) {
 
 // HasAfEeData returns a boolean if a field has been set.
 func (o *NefInfo) HasAfEeData() bool {
-	if o != nil && !IsNil(o.AfEeData) {
+	if o != nil && !isNil(o.AfEeData) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *NefInfo) SetAfEeData(v AfEventExposureData) {
 
 // GetGpsiRanges returns the GpsiRanges field value if set, zero value otherwise.
 func (o *NefInfo) GetGpsiRanges() []IdentityRange {
-	if o == nil || IsNil(o.GpsiRanges) {
+	if o == nil || isNil(o.GpsiRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *NefInfo) GetGpsiRanges() []IdentityRange {
 // GetGpsiRangesOk returns a tuple with the GpsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.GpsiRanges) {
+	if o == nil || isNil(o.GpsiRanges) {
 		return nil, false
 	}
 	return o.GpsiRanges, true
@@ -170,7 +170,7 @@ func (o *NefInfo) GetGpsiRangesOk() ([]IdentityRange, bool) {
 
 // HasGpsiRanges returns a boolean if a field has been set.
 func (o *NefInfo) HasGpsiRanges() bool {
-	if o != nil && !IsNil(o.GpsiRanges) {
+	if o != nil && !isNil(o.GpsiRanges) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *NefInfo) SetGpsiRanges(v []IdentityRange) {
 
 // GetExternalGroupIdentifiersRanges returns the ExternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *NefInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
-	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *NefInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
 // GetExternalGroupIdentifiersRangesOk returns a tuple with the ExternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifiersRanges, true
@@ -202,7 +202,7 @@ func (o *NefInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) 
 
 // HasExternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *NefInfo) HasExternalGroupIdentifiersRanges() bool {
-	if o != nil && !IsNil(o.ExternalGroupIdentifiersRanges) {
+	if o != nil && !isNil(o.ExternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *NefInfo) SetExternalGroupIdentifiersRanges(v []IdentityRange) {
 
 // GetServedFqdnList returns the ServedFqdnList field value if set, zero value otherwise.
 func (o *NefInfo) GetServedFqdnList() []string {
-	if o == nil || IsNil(o.ServedFqdnList) {
+	if o == nil || isNil(o.ServedFqdnList) {
 		var ret []string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *NefInfo) GetServedFqdnList() []string {
 // GetServedFqdnListOk returns a tuple with the ServedFqdnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetServedFqdnListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServedFqdnList) {
+	if o == nil || isNil(o.ServedFqdnList) {
 		return nil, false
 	}
 	return o.ServedFqdnList, true
@@ -234,7 +234,7 @@ func (o *NefInfo) GetServedFqdnListOk() ([]string, bool) {
 
 // HasServedFqdnList returns a boolean if a field has been set.
 func (o *NefInfo) HasServedFqdnList() bool {
-	if o != nil && !IsNil(o.ServedFqdnList) {
+	if o != nil && !isNil(o.ServedFqdnList) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *NefInfo) SetServedFqdnList(v []string) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *NefInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *NefInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -266,7 +266,7 @@ func (o *NefInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *NefInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *NefInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *NefInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *NefInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -298,7 +298,7 @@ func (o *NefInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *NefInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *NefInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *NefInfo) GetDnaiList() []string {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *NefInfo) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetDnaiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -330,7 +330,7 @@ func (o *NefInfo) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *NefInfo) HasDnaiList() bool {
-	if o != nil && !IsNil(o.DnaiList) {
+	if o != nil && !isNil(o.DnaiList) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *NefInfo) SetDnaiList(v []string) {
 
 // GetUnTrustAfInfoList returns the UnTrustAfInfoList field value if set, zero value otherwise.
 func (o *NefInfo) GetUnTrustAfInfoList() []UnTrustAfInfo {
-	if o == nil || IsNil(o.UnTrustAfInfoList) {
+	if o == nil || isNil(o.UnTrustAfInfoList) {
 		var ret []UnTrustAfInfo
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *NefInfo) GetUnTrustAfInfoList() []UnTrustAfInfo {
 // GetUnTrustAfInfoListOk returns a tuple with the UnTrustAfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetUnTrustAfInfoListOk() ([]UnTrustAfInfo, bool) {
-	if o == nil || IsNil(o.UnTrustAfInfoList) {
+	if o == nil || isNil(o.UnTrustAfInfoList) {
 		return nil, false
 	}
 	return o.UnTrustAfInfoList, true
@@ -362,7 +362,7 @@ func (o *NefInfo) GetUnTrustAfInfoListOk() ([]UnTrustAfInfo, bool) {
 
 // HasUnTrustAfInfoList returns a boolean if a field has been set.
 func (o *NefInfo) HasUnTrustAfInfoList() bool {
-	if o != nil && !IsNil(o.UnTrustAfInfoList) {
+	if o != nil && !isNil(o.UnTrustAfInfoList) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *NefInfo) SetUnTrustAfInfoList(v []UnTrustAfInfo) {
 
 // GetUasNfFunctionalityInd returns the UasNfFunctionalityInd field value if set, zero value otherwise.
 func (o *NefInfo) GetUasNfFunctionalityInd() bool {
-	if o == nil || IsNil(o.UasNfFunctionalityInd) {
+	if o == nil || isNil(o.UasNfFunctionalityInd) {
 		var ret bool
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *NefInfo) GetUasNfFunctionalityInd() bool {
 // GetUasNfFunctionalityIndOk returns a tuple with the UasNfFunctionalityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefInfo) GetUasNfFunctionalityIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UasNfFunctionalityInd) {
+	if o == nil || isNil(o.UasNfFunctionalityInd) {
 		return nil, false
 	}
 	return o.UasNfFunctionalityInd, true
@@ -394,7 +394,7 @@ func (o *NefInfo) GetUasNfFunctionalityIndOk() (*bool, bool) {
 
 // HasUasNfFunctionalityInd returns a boolean if a field has been set.
 func (o *NefInfo) HasUasNfFunctionalityInd() bool {
-	if o != nil && !IsNil(o.UasNfFunctionalityInd) {
+	if o != nil && !isNil(o.UasNfFunctionalityInd) {
 		return true
 	}
 
@@ -416,37 +416,37 @@ func (o NefInfo) MarshalJSON() ([]byte, error) {
 
 func (o NefInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NefId) {
+	if !isNil(o.NefId) {
 		toSerialize["nefId"] = o.NefId
 	}
-	if !IsNil(o.PfdData) {
+	if !isNil(o.PfdData) {
 		toSerialize["pfdData"] = o.PfdData
 	}
-	if !IsNil(o.AfEeData) {
+	if !isNil(o.AfEeData) {
 		toSerialize["afEeData"] = o.AfEeData
 	}
-	if !IsNil(o.GpsiRanges) {
+	if !isNil(o.GpsiRanges) {
 		toSerialize["gpsiRanges"] = o.GpsiRanges
 	}
-	if !IsNil(o.ExternalGroupIdentifiersRanges) {
+	if !isNil(o.ExternalGroupIdentifiersRanges) {
 		toSerialize["externalGroupIdentifiersRanges"] = o.ExternalGroupIdentifiersRanges
 	}
-	if !IsNil(o.ServedFqdnList) {
+	if !isNil(o.ServedFqdnList) {
 		toSerialize["servedFqdnList"] = o.ServedFqdnList
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.DnaiList) {
+	if !isNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
-	if !IsNil(o.UnTrustAfInfoList) {
+	if !isNil(o.UnTrustAfInfoList) {
 		toSerialize["unTrustAfInfoList"] = o.UnTrustAfInfoList
 	}
-	if !IsNil(o.UasNfFunctionalityInd) {
+	if !isNil(o.UasNfFunctionalityInd) {
 		toSerialize["uasNfFunctionalityInd"] = o.UasNfFunctionalityInd
 	}
 	return toSerialize, nil

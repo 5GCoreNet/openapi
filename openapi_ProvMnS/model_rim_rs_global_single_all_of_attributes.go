@@ -43,7 +43,7 @@ func NewRimRSGlobalSingleAllOfAttributesWithDefaults() *RimRSGlobalSingleAllOfAt
 
 // GetFrequencyDomainPara returns the FrequencyDomainPara field value if set, zero value otherwise.
 func (o *RimRSGlobalSingleAllOfAttributes) GetFrequencyDomainPara() FrequencyDomainPara {
-	if o == nil || IsNil(o.FrequencyDomainPara) {
+	if o == nil || isNil(o.FrequencyDomainPara) {
 		var ret FrequencyDomainPara
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) GetFrequencyDomainPara() FrequencyDom
 // GetFrequencyDomainParaOk returns a tuple with the FrequencyDomainPara field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingleAllOfAttributes) GetFrequencyDomainParaOk() (*FrequencyDomainPara, bool) {
-	if o == nil || IsNil(o.FrequencyDomainPara) {
+	if o == nil || isNil(o.FrequencyDomainPara) {
 		return nil, false
 	}
 	return o.FrequencyDomainPara, true
@@ -61,7 +61,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) GetFrequencyDomainParaOk() (*Frequenc
 
 // HasFrequencyDomainPara returns a boolean if a field has been set.
 func (o *RimRSGlobalSingleAllOfAttributes) HasFrequencyDomainPara() bool {
-	if o != nil && !IsNil(o.FrequencyDomainPara) {
+	if o != nil && !isNil(o.FrequencyDomainPara) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) SetFrequencyDomainPara(v FrequencyDom
 
 // GetSequenceDomainPara returns the SequenceDomainPara field value if set, zero value otherwise.
 func (o *RimRSGlobalSingleAllOfAttributes) GetSequenceDomainPara() SequenceDomainPara {
-	if o == nil || IsNil(o.SequenceDomainPara) {
+	if o == nil || isNil(o.SequenceDomainPara) {
 		var ret SequenceDomainPara
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) GetSequenceDomainPara() SequenceDomai
 // GetSequenceDomainParaOk returns a tuple with the SequenceDomainPara field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingleAllOfAttributes) GetSequenceDomainParaOk() (*SequenceDomainPara, bool) {
-	if o == nil || IsNil(o.SequenceDomainPara) {
+	if o == nil || isNil(o.SequenceDomainPara) {
 		return nil, false
 	}
 	return o.SequenceDomainPara, true
@@ -93,7 +93,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) GetSequenceDomainParaOk() (*SequenceD
 
 // HasSequenceDomainPara returns a boolean if a field has been set.
 func (o *RimRSGlobalSingleAllOfAttributes) HasSequenceDomainPara() bool {
-	if o != nil && !IsNil(o.SequenceDomainPara) {
+	if o != nil && !isNil(o.SequenceDomainPara) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) SetSequenceDomainPara(v SequenceDomai
 
 // GetTimeDomainPara returns the TimeDomainPara field value if set, zero value otherwise.
 func (o *RimRSGlobalSingleAllOfAttributes) GetTimeDomainPara() TimeDomainPara {
-	if o == nil || IsNil(o.TimeDomainPara) {
+	if o == nil || isNil(o.TimeDomainPara) {
 		var ret TimeDomainPara
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) GetTimeDomainPara() TimeDomainPara {
 // GetTimeDomainParaOk returns a tuple with the TimeDomainPara field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingleAllOfAttributes) GetTimeDomainParaOk() (*TimeDomainPara, bool) {
-	if o == nil || IsNil(o.TimeDomainPara) {
+	if o == nil || isNil(o.TimeDomainPara) {
 		return nil, false
 	}
 	return o.TimeDomainPara, true
@@ -125,7 +125,7 @@ func (o *RimRSGlobalSingleAllOfAttributes) GetTimeDomainParaOk() (*TimeDomainPar
 
 // HasTimeDomainPara returns a boolean if a field has been set.
 func (o *RimRSGlobalSingleAllOfAttributes) HasTimeDomainPara() bool {
-	if o != nil && !IsNil(o.TimeDomainPara) {
+	if o != nil && !isNil(o.TimeDomainPara) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o RimRSGlobalSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o RimRSGlobalSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FrequencyDomainPara) {
+	if !isNil(o.FrequencyDomainPara) {
 		toSerialize["frequencyDomainPara"] = o.FrequencyDomainPara
 	}
-	if !IsNil(o.SequenceDomainPara) {
+	if !isNil(o.SequenceDomainPara) {
 		toSerialize["sequenceDomainPara"] = o.SequenceDomainPara
 	}
-	if !IsNil(o.TimeDomainPara) {
+	if !isNil(o.TimeDomainPara) {
 		toSerialize["timeDomainPara"] = o.TimeDomainPara
 	}
 	return toSerialize, nil

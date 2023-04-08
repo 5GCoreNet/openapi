@@ -97,7 +97,7 @@ func (o *SgsnLocationData) SetPlmnId(v PlmnId) {
 
 // GetSgsnLocation returns the SgsnLocation field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetSgsnLocation() UtraLocation {
-	if o == nil || IsNil(o.SgsnLocation) {
+	if o == nil || isNil(o.SgsnLocation) {
 		var ret UtraLocation
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *SgsnLocationData) GetSgsnLocation() UtraLocation {
 // GetSgsnLocationOk returns a tuple with the SgsnLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetSgsnLocationOk() (*UtraLocation, bool) {
-	if o == nil || IsNil(o.SgsnLocation) {
+	if o == nil || isNil(o.SgsnLocation) {
 		return nil, false
 	}
 	return o.SgsnLocation, true
@@ -115,7 +115,7 @@ func (o *SgsnLocationData) GetSgsnLocationOk() (*UtraLocation, bool) {
 
 // HasSgsnLocation returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasSgsnLocation() bool {
-	if o != nil && !IsNil(o.SgsnLocation) {
+	if o != nil && !isNil(o.SgsnLocation) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *SgsnLocationData) SetSgsnLocation(v UtraLocation) {
 
 // GetCsgInformation returns the CsgInformation field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetCsgInformation() CsgInformation {
-	if o == nil || IsNil(o.CsgInformation) {
+	if o == nil || isNil(o.CsgInformation) {
 		var ret CsgInformation
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *SgsnLocationData) GetCsgInformation() CsgInformation {
 // GetCsgInformationOk returns a tuple with the CsgInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
-	if o == nil || IsNil(o.CsgInformation) {
+	if o == nil || isNil(o.CsgInformation) {
 		return nil, false
 	}
 	return o.CsgInformation, true
@@ -147,7 +147,7 @@ func (o *SgsnLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
 
 // HasCsgInformation returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasCsgInformation() bool {
-	if o != nil && !IsNil(o.CsgInformation) {
+	if o != nil && !isNil(o.CsgInformation) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *SgsnLocationData) SetCsgInformation(v CsgInformation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetTimeZone() string {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *SgsnLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -179,7 +179,7 @@ func (o *SgsnLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasTimeZone() bool {
-	if o != nil && !IsNil(o.TimeZone) {
+	if o != nil && !isNil(o.TimeZone) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *SgsnLocationData) SetTimeZone(v string) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *SgsnLocationData) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *SgsnLocationData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SgsnLocationData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -211,7 +211,7 @@ func (o *SgsnLocationData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *SgsnLocationData) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -235,16 +235,16 @@ func (o SgsnLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sgsnNumber"] = o.SgsnNumber
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.SgsnLocation) {
+	if !isNil(o.SgsnLocation) {
 		toSerialize["sgsnLocation"] = o.SgsnLocation
 	}
-	if !IsNil(o.CsgInformation) {
+	if !isNil(o.CsgInformation) {
 		toSerialize["csgInformation"] = o.CsgInformation
 	}
-	if !IsNil(o.TimeZone) {
+	if !isNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil

@@ -68,7 +68,7 @@ func (o *TrafficInfluDataNotif) SetResUri(v string) {
 
 // GetTrafficInfluData returns the TrafficInfluData field value if set, zero value otherwise.
 func (o *TrafficInfluDataNotif) GetTrafficInfluData() TrafficInfluData {
-	if o == nil || IsNil(o.TrafficInfluData) {
+	if o == nil || isNil(o.TrafficInfluData) {
 		var ret TrafficInfluData
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *TrafficInfluDataNotif) GetTrafficInfluData() TrafficInfluData {
 // GetTrafficInfluDataOk returns a tuple with the TrafficInfluData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficInfluDataNotif) GetTrafficInfluDataOk() (*TrafficInfluData, bool) {
-	if o == nil || IsNil(o.TrafficInfluData) {
+	if o == nil || isNil(o.TrafficInfluData) {
 		return nil, false
 	}
 	return o.TrafficInfluData, true
@@ -86,7 +86,7 @@ func (o *TrafficInfluDataNotif) GetTrafficInfluDataOk() (*TrafficInfluData, bool
 
 // HasTrafficInfluData returns a boolean if a field has been set.
 func (o *TrafficInfluDataNotif) HasTrafficInfluData() bool {
-	if o != nil && !IsNil(o.TrafficInfluData) {
+	if o != nil && !isNil(o.TrafficInfluData) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o TrafficInfluDataNotif) MarshalJSON() ([]byte, error) {
 func (o TrafficInfluDataNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resUri"] = o.ResUri
-	if !IsNil(o.TrafficInfluData) {
+	if !isNil(o.TrafficInfluData) {
 		toSerialize["trafficInfluData"] = o.TrafficInfluData
 	}
 	return toSerialize, nil

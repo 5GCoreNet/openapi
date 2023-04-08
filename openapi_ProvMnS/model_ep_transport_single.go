@@ -72,7 +72,7 @@ func (o *EPTransportSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *EPTransportSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *EPTransportSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -90,7 +90,7 @@ func (o *EPTransportSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *EPTransportSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *EPTransportSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *EPTransportSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *EPTransportSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -122,7 +122,7 @@ func (o *EPTransportSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *EPTransportSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *EPTransportSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *EPTransportSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *EPTransportSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -154,7 +154,7 @@ func (o *EPTransportSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, boo
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *EPTransportSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *EPTransportSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *EPTransportSingle) GetAttributes() EPTransportSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret EPTransportSingleAllOfAttributes
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *EPTransportSingle) GetAttributes() EPTransportSingleAllOfAttributes {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingle) GetAttributesOk() (*EPTransportSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,7 +186,7 @@ func (o *EPTransportSingle) GetAttributesOk() (*EPTransportSingleAllOfAttributes
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EPTransportSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -209,16 +209,16 @@ func (o EPTransportSingle) MarshalJSON() ([]byte, error) {
 func (o EPTransportSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

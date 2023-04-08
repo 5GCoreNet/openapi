@@ -52,7 +52,7 @@ func NewPolicyAssociationWithDefaults() *PolicyAssociation {
 
 // GetRequest returns the Request field value if set, zero value otherwise.
 func (o *PolicyAssociation) GetRequest() PolicyAssociationRequest {
-	if o == nil || IsNil(o.Request) {
+	if o == nil || isNil(o.Request) {
 		var ret PolicyAssociationRequest
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *PolicyAssociation) GetRequest() PolicyAssociationRequest {
 // GetRequestOk returns a tuple with the Request field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociation) GetRequestOk() (*PolicyAssociationRequest, bool) {
-	if o == nil || IsNil(o.Request) {
+	if o == nil || isNil(o.Request) {
 		return nil, false
 	}
 	return o.Request, true
@@ -70,7 +70,7 @@ func (o *PolicyAssociation) GetRequestOk() (*PolicyAssociationRequest, bool) {
 
 // HasRequest returns a boolean if a field has been set.
 func (o *PolicyAssociation) HasRequest() bool {
-	if o != nil && !IsNil(o.Request) {
+	if o != nil && !isNil(o.Request) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *PolicyAssociation) SetRequest(v PolicyAssociationRequest) {
 
 // GetUePolicy returns the UePolicy field value if set, zero value otherwise.
 func (o *PolicyAssociation) GetUePolicy() string {
-	if o == nil || IsNil(o.UePolicy) {
+	if o == nil || isNil(o.UePolicy) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *PolicyAssociation) GetUePolicy() string {
 // GetUePolicyOk returns a tuple with the UePolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociation) GetUePolicyOk() (*string, bool) {
-	if o == nil || IsNil(o.UePolicy) {
+	if o == nil || isNil(o.UePolicy) {
 		return nil, false
 	}
 	return o.UePolicy, true
@@ -102,7 +102,7 @@ func (o *PolicyAssociation) GetUePolicyOk() (*string, bool) {
 
 // HasUePolicy returns a boolean if a field has been set.
 func (o *PolicyAssociation) HasUePolicy() bool {
-	if o != nil && !IsNil(o.UePolicy) {
+	if o != nil && !isNil(o.UePolicy) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *PolicyAssociation) SetUePolicy(v string) {
 
 // GetN2Pc5Pol returns the N2Pc5Pol field value if set, zero value otherwise.
 func (o *PolicyAssociation) GetN2Pc5Pol() N2InfoContent {
-	if o == nil || IsNil(o.N2Pc5Pol) {
+	if o == nil || isNil(o.N2Pc5Pol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *PolicyAssociation) GetN2Pc5Pol() N2InfoContent {
 // GetN2Pc5PolOk returns a tuple with the N2Pc5Pol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociation) GetN2Pc5PolOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.N2Pc5Pol) {
+	if o == nil || isNil(o.N2Pc5Pol) {
 		return nil, false
 	}
 	return o.N2Pc5Pol, true
@@ -134,7 +134,7 @@ func (o *PolicyAssociation) GetN2Pc5PolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5Pol returns a boolean if a field has been set.
 func (o *PolicyAssociation) HasN2Pc5Pol() bool {
-	if o != nil && !IsNil(o.N2Pc5Pol) {
+	if o != nil && !isNil(o.N2Pc5Pol) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *PolicyAssociation) SetN2Pc5Pol(v N2InfoContent) {
 
 // GetN2Pc5ProSePol returns the N2Pc5ProSePol field value if set, zero value otherwise.
 func (o *PolicyAssociation) GetN2Pc5ProSePol() N2InfoContent {
-	if o == nil || IsNil(o.N2Pc5ProSePol) {
+	if o == nil || isNil(o.N2Pc5ProSePol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *PolicyAssociation) GetN2Pc5ProSePol() N2InfoContent {
 // GetN2Pc5ProSePolOk returns a tuple with the N2Pc5ProSePol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociation) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.N2Pc5ProSePol) {
+	if o == nil || isNil(o.N2Pc5ProSePol) {
 		return nil, false
 	}
 	return o.N2Pc5ProSePol, true
@@ -166,7 +166,7 @@ func (o *PolicyAssociation) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5ProSePol returns a boolean if a field has been set.
 func (o *PolicyAssociation) HasN2Pc5ProSePol() bool {
-	if o != nil && !IsNil(o.N2Pc5ProSePol) {
+	if o != nil && !isNil(o.N2Pc5ProSePol) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *PolicyAssociation) SetN2Pc5ProSePol(v N2InfoContent) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *PolicyAssociation) GetTriggers() []RequestTrigger {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		var ret []RequestTrigger
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *PolicyAssociation) GetTriggers() []RequestTrigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociation) GetTriggersOk() ([]RequestTrigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -198,7 +198,7 @@ func (o *PolicyAssociation) GetTriggersOk() ([]RequestTrigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *PolicyAssociation) HasTriggers() bool {
-	if o != nil && !IsNil(o.Triggers) {
+	if o != nil && !isNil(o.Triggers) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *PolicyAssociation) SetTriggers(v []RequestTrigger) {
 
 // GetPras returns the Pras field value if set, zero value otherwise.
 func (o *PolicyAssociation) GetPras() map[string]PresenceInfo {
-	if o == nil || IsNil(o.Pras) {
+	if o == nil || isNil(o.Pras) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *PolicyAssociation) GetPras() map[string]PresenceInfo {
 // GetPrasOk returns a tuple with the Pras field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociation) GetPrasOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.Pras) {
+	if o == nil || isNil(o.Pras) {
 		return nil, false
 	}
 	return o.Pras, true
@@ -230,7 +230,7 @@ func (o *PolicyAssociation) GetPrasOk() (*map[string]PresenceInfo, bool) {
 
 // HasPras returns a boolean if a field has been set.
 func (o *PolicyAssociation) HasPras() bool {
-	if o != nil && !IsNil(o.Pras) {
+	if o != nil && !isNil(o.Pras) {
 		return true
 	}
 
@@ -276,22 +276,22 @@ func (o PolicyAssociation) MarshalJSON() ([]byte, error) {
 
 func (o PolicyAssociation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Request) {
+	if !isNil(o.Request) {
 		toSerialize["request"] = o.Request
 	}
-	if !IsNil(o.UePolicy) {
+	if !isNil(o.UePolicy) {
 		toSerialize["uePolicy"] = o.UePolicy
 	}
-	if !IsNil(o.N2Pc5Pol) {
+	if !isNil(o.N2Pc5Pol) {
 		toSerialize["n2Pc5Pol"] = o.N2Pc5Pol
 	}
-	if !IsNil(o.N2Pc5ProSePol) {
+	if !isNil(o.N2Pc5ProSePol) {
 		toSerialize["n2Pc5ProSePol"] = o.N2Pc5ProSePol
 	}
-	if !IsNil(o.Triggers) {
+	if !isNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.Pras) {
+	if !isNil(o.Pras) {
 		toSerialize["pras"] = o.Pras
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

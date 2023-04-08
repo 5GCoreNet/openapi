@@ -19,7 +19,7 @@ var _ MappedNullable = &NetworkSliceSingleAllOf{}
 
 // NetworkSliceSingleAllOf struct for NetworkSliceSingleAllOf
 type NetworkSliceSingleAllOf struct {
-	Attributes *NetworkSliceSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewNetworkSliceSingleAllOf instantiates a new NetworkSliceSingleAllOf object
@@ -40,9 +40,9 @@ func NewNetworkSliceSingleAllOfWithDefaults() *NetworkSliceSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NetworkSliceSingleAllOf) GetAttributes() NetworkSliceSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret NetworkSliceSingleAllOfAttributes
+func (o *NetworkSliceSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *NetworkSliceSingleAllOf) GetAttributes() NetworkSliceSingleAllOfAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NetworkSliceSingleAllOf) GetAttributesOk() (*NetworkSliceSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *NetworkSliceSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *NetworkSliceSingleAllOf) GetAttributesOk() (*NetworkSliceSingleAllOfAtt
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NetworkSliceSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given NetworkSliceSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *NetworkSliceSingleAllOf) SetAttributes(v NetworkSliceSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *NetworkSliceSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o NetworkSliceSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NetworkSliceSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

@@ -67,7 +67,7 @@ func (o *PlmnRouteSelectionDescriptor) SetServingPlmn(v PlmnId) {
 
 // GetSnssaiRouteSelDescs returns the SnssaiRouteSelDescs field value if set, zero value otherwise.
 func (o *PlmnRouteSelectionDescriptor) GetSnssaiRouteSelDescs() []SnssaiRouteSelectionDescriptor {
-	if o == nil || IsNil(o.SnssaiRouteSelDescs) {
+	if o == nil || isNil(o.SnssaiRouteSelDescs) {
 		var ret []SnssaiRouteSelectionDescriptor
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *PlmnRouteSelectionDescriptor) GetSnssaiRouteSelDescs() []SnssaiRouteSel
 // GetSnssaiRouteSelDescsOk returns a tuple with the SnssaiRouteSelDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnRouteSelectionDescriptor) GetSnssaiRouteSelDescsOk() ([]SnssaiRouteSelectionDescriptor, bool) {
-	if o == nil || IsNil(o.SnssaiRouteSelDescs) {
+	if o == nil || isNil(o.SnssaiRouteSelDescs) {
 		return nil, false
 	}
 	return o.SnssaiRouteSelDescs, true
@@ -85,7 +85,7 @@ func (o *PlmnRouteSelectionDescriptor) GetSnssaiRouteSelDescsOk() ([]SnssaiRoute
 
 // HasSnssaiRouteSelDescs returns a boolean if a field has been set.
 func (o *PlmnRouteSelectionDescriptor) HasSnssaiRouteSelDescs() bool {
-	if o != nil && !IsNil(o.SnssaiRouteSelDescs) {
+	if o != nil && !isNil(o.SnssaiRouteSelDescs) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o PlmnRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
 func (o PlmnRouteSelectionDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["servingPlmn"] = o.ServingPlmn
-	if !IsNil(o.SnssaiRouteSelDescs) {
+	if !isNil(o.SnssaiRouteSelDescs) {
 		toSerialize["snssaiRouteSelDescs"] = o.SnssaiRouteSelDescs
 	}
 	return toSerialize, nil

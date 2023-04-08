@@ -109,7 +109,7 @@ func (o *PcfForPduSessionInfo) SetSnssai(v Snssai) {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfFqdn() string {
-	if o == nil || IsNil(o.PcfFqdn) {
+	if o == nil || isNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PcfForPduSessionInfo) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfFqdn) {
+	if o == nil || isNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -127,7 +127,7 @@ func (o *PcfForPduSessionInfo) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfFqdn() bool {
-	if o != nil && !IsNil(o.PcfFqdn) {
+	if o != nil && !isNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PcfForPduSessionInfo) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || IsNil(o.PcfIpEndPoints) {
+	if o == nil || isNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PcfForPduSessionInfo) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || IsNil(o.PcfIpEndPoints) {
+	if o == nil || isNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -159,7 +159,7 @@ func (o *PcfForPduSessionInfo) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfIpEndPoints() bool {
-	if o != nil && !IsNil(o.PcfIpEndPoints) {
+	if o != nil && !isNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *PcfForPduSessionInfo) SetPcfIpEndPoints(v []IpEndPoint) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PcfForPduSessionInfo) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr.Get()) {
+	if o == nil || isNil(o.Ipv4Addr.Get()) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *PcfForPduSessionInfo) UnsetIpv4Addr() {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetIpDomain() string {
-	if o == nil || IsNil(o.IpDomain) {
+	if o == nil || isNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *PcfForPduSessionInfo) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetIpDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.IpDomain) {
+	if o == nil || isNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -233,7 +233,7 @@ func (o *PcfForPduSessionInfo) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasIpDomain() bool {
-	if o != nil && !IsNil(o.IpDomain) {
+	if o != nil && !isNil(o.IpDomain) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *PcfForPduSessionInfo) SetIpDomain(v string) {
 
 // GetIpv6Prefixes returns the Ipv6Prefixes field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetIpv6Prefixes() []Ipv6Prefix {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *PcfForPduSessionInfo) GetIpv6Prefixes() []Ipv6Prefix {
 // GetIpv6PrefixesOk returns a tuple with the Ipv6Prefixes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		return nil, false
 	}
 	return o.Ipv6Prefixes, true
@@ -265,7 +265,7 @@ func (o *PcfForPduSessionInfo) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
 
 // HasIpv6Prefixes returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasIpv6Prefixes() bool {
-	if o != nil && !IsNil(o.Ipv6Prefixes) {
+	if o != nil && !isNil(o.Ipv6Prefixes) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *PcfForPduSessionInfo) SetIpv6Prefixes(v []Ipv6Prefix) {
 
 // GetMacAddrs returns the MacAddrs field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetMacAddrs() []string {
-	if o == nil || IsNil(o.MacAddrs) {
+	if o == nil || isNil(o.MacAddrs) {
 		var ret []string
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *PcfForPduSessionInfo) GetMacAddrs() []string {
 // GetMacAddrsOk returns a tuple with the MacAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetMacAddrsOk() ([]string, bool) {
-	if o == nil || IsNil(o.MacAddrs) {
+	if o == nil || isNil(o.MacAddrs) {
 		return nil, false
 	}
 	return o.MacAddrs, true
@@ -297,7 +297,7 @@ func (o *PcfForPduSessionInfo) GetMacAddrsOk() ([]string, bool) {
 
 // HasMacAddrs returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasMacAddrs() bool {
-	if o != nil && !IsNil(o.MacAddrs) {
+	if o != nil && !isNil(o.MacAddrs) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *PcfForPduSessionInfo) SetMacAddrs(v []string) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfId() string {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *PcfForPduSessionInfo) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -329,7 +329,7 @@ func (o *PcfForPduSessionInfo) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfId() bool {
-	if o != nil && !IsNil(o.PcfId) {
+	if o != nil && !isNil(o.PcfId) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *PcfForPduSessionInfo) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetPcfSetId() string {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *PcfForPduSessionInfo) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -361,7 +361,7 @@ func (o *PcfForPduSessionInfo) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasPcfSetId() bool {
-	if o != nil && !IsNil(o.PcfSetId) {
+	if o != nil && !isNil(o.PcfSetId) {
 		return true
 	}
 
@@ -375,7 +375,7 @@ func (o *PcfForPduSessionInfo) SetPcfSetId(v string) {
 
 // GetBindLevel returns the BindLevel field value if set, zero value otherwise.
 func (o *PcfForPduSessionInfo) GetBindLevel() BindingLevel {
-	if o == nil || IsNil(o.BindLevel) {
+	if o == nil || isNil(o.BindLevel) {
 		var ret BindingLevel
 		return ret
 	}
@@ -385,7 +385,7 @@ func (o *PcfForPduSessionInfo) GetBindLevel() BindingLevel {
 // GetBindLevelOk returns a tuple with the BindLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForPduSessionInfo) GetBindLevelOk() (*BindingLevel, bool) {
-	if o == nil || IsNil(o.BindLevel) {
+	if o == nil || isNil(o.BindLevel) {
 		return nil, false
 	}
 	return o.BindLevel, true
@@ -393,7 +393,7 @@ func (o *PcfForPduSessionInfo) GetBindLevelOk() (*BindingLevel, bool) {
 
 // HasBindLevel returns a boolean if a field has been set.
 func (o *PcfForPduSessionInfo) HasBindLevel() bool {
-	if o != nil && !IsNil(o.BindLevel) {
+	if o != nil && !isNil(o.BindLevel) {
 		return true
 	}
 
@@ -417,31 +417,31 @@ func (o PcfForPduSessionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.PcfFqdn) {
+	if !isNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !IsNil(o.PcfIpEndPoints) {
+	if !isNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
 	if o.Ipv4Addr.IsSet() {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr.Get()
 	}
-	if !IsNil(o.IpDomain) {
+	if !isNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !IsNil(o.Ipv6Prefixes) {
+	if !isNil(o.Ipv6Prefixes) {
 		toSerialize["ipv6Prefixes"] = o.Ipv6Prefixes
 	}
-	if !IsNil(o.MacAddrs) {
+	if !isNil(o.MacAddrs) {
 		toSerialize["macAddrs"] = o.MacAddrs
 	}
-	if !IsNil(o.PcfId) {
+	if !isNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !IsNil(o.PcfSetId) {
+	if !isNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !IsNil(o.BindLevel) {
+	if !isNil(o.BindLevel) {
 		toSerialize["bindLevel"] = o.BindLevel
 	}
 	return toSerialize, nil

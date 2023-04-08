@@ -96,7 +96,7 @@ func (o *AmfStatusInfo) SetStatusChange(v StatusChange) {
 
 // GetTargetAmfRemoval returns the TargetAmfRemoval field value if set, zero value otherwise.
 func (o *AmfStatusInfo) GetTargetAmfRemoval() string {
-	if o == nil || IsNil(o.TargetAmfRemoval) {
+	if o == nil || isNil(o.TargetAmfRemoval) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AmfStatusInfo) GetTargetAmfRemoval() string {
 // GetTargetAmfRemovalOk returns a tuple with the TargetAmfRemoval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfStatusInfo) GetTargetAmfRemovalOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetAmfRemoval) {
+	if o == nil || isNil(o.TargetAmfRemoval) {
 		return nil, false
 	}
 	return o.TargetAmfRemoval, true
@@ -114,7 +114,7 @@ func (o *AmfStatusInfo) GetTargetAmfRemovalOk() (*string, bool) {
 
 // HasTargetAmfRemoval returns a boolean if a field has been set.
 func (o *AmfStatusInfo) HasTargetAmfRemoval() bool {
-	if o != nil && !IsNil(o.TargetAmfRemoval) {
+	if o != nil && !isNil(o.TargetAmfRemoval) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmfStatusInfo) SetTargetAmfRemoval(v string) {
 
 // GetTargetAmfFailure returns the TargetAmfFailure field value if set, zero value otherwise.
 func (o *AmfStatusInfo) GetTargetAmfFailure() string {
-	if o == nil || IsNil(o.TargetAmfFailure) {
+	if o == nil || isNil(o.TargetAmfFailure) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AmfStatusInfo) GetTargetAmfFailure() string {
 // GetTargetAmfFailureOk returns a tuple with the TargetAmfFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfStatusInfo) GetTargetAmfFailureOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetAmfFailure) {
+	if o == nil || isNil(o.TargetAmfFailure) {
 		return nil, false
 	}
 	return o.TargetAmfFailure, true
@@ -146,7 +146,7 @@ func (o *AmfStatusInfo) GetTargetAmfFailureOk() (*string, bool) {
 
 // HasTargetAmfFailure returns a boolean if a field has been set.
 func (o *AmfStatusInfo) HasTargetAmfFailure() bool {
-	if o != nil && !IsNil(o.TargetAmfFailure) {
+	if o != nil && !isNil(o.TargetAmfFailure) {
 		return true
 	}
 
@@ -170,10 +170,10 @@ func (o AmfStatusInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["guamiList"] = o.GuamiList
 	toSerialize["statusChange"] = o.StatusChange
-	if !IsNil(o.TargetAmfRemoval) {
+	if !isNil(o.TargetAmfRemoval) {
 		toSerialize["targetAmfRemoval"] = o.TargetAmfRemoval
 	}
-	if !IsNil(o.TargetAmfFailure) {
+	if !isNil(o.TargetAmfFailure) {
 		toSerialize["targetAmfFailure"] = o.TargetAmfFailure
 	}
 	return toSerialize, nil

@@ -44,7 +44,7 @@ func NewEESRegistrationPatchWithDefaults() *EESRegistrationPatch {
 
 // GetEesProf returns the EesProf field value if set, zero value otherwise.
 func (o *EESRegistrationPatch) GetEesProf() EESProfile {
-	if o == nil || IsNil(o.EesProf) {
+	if o == nil || isNil(o.EesProf) {
 		var ret EESProfile
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EESRegistrationPatch) GetEesProf() EESProfile {
 // GetEesProfOk returns a tuple with the EesProf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EESRegistrationPatch) GetEesProfOk() (*EESProfile, bool) {
-	if o == nil || IsNil(o.EesProf) {
+	if o == nil || isNil(o.EesProf) {
 		return nil, false
 	}
 	return o.EesProf, true
@@ -62,7 +62,7 @@ func (o *EESRegistrationPatch) GetEesProfOk() (*EESProfile, bool) {
 
 // HasEesProf returns a boolean if a field has been set.
 func (o *EESRegistrationPatch) HasEesProf() bool {
-	if o != nil && !IsNil(o.EesProf) {
+	if o != nil && !isNil(o.EesProf) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EESRegistrationPatch) SetEesProf(v EESProfile) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EESRegistrationPatch) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime.Get()) {
+	if o == nil || isNil(o.ExpTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o EESRegistrationPatch) MarshalJSON() ([]byte, error) {
 
 func (o EESRegistrationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EesProf) {
+	if !isNil(o.EesProf) {
 		toSerialize["eesProf"] = o.EesProf
 	}
 	if o.ExpTime.IsSet() {

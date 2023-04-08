@@ -13,7 +13,7 @@ package openapi_CAPIF_Auditing_API
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"time"
@@ -167,46 +167,46 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 	localVarFormParams := url.Values{}
 
 	if r.aefId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "aef-id", r.aefId, "")
+		parameterAddToQuery(localVarQueryParams, "aef-id", r.aefId, "")
 	}
 	if r.apiInvokerId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
+		parameterAddToQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
 	}
 	if r.timeRangeStart != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "time-range-start", r.timeRangeStart, "")
+		parameterAddToQuery(localVarQueryParams, "time-range-start", r.timeRangeStart, "")
 	}
 	if r.timeRangeEnd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "time-range-end", r.timeRangeEnd, "")
+		parameterAddToQuery(localVarQueryParams, "time-range-end", r.timeRangeEnd, "")
 	}
 	if r.apiId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-id", r.apiId, "")
+		parameterAddToQuery(localVarQueryParams, "api-id", r.apiId, "")
 	}
 	if r.apiName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-name", r.apiName, "")
+		parameterAddToQuery(localVarQueryParams, "api-name", r.apiName, "")
 	}
 	if r.apiVersion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-version", r.apiVersion, "")
+		parameterAddToQuery(localVarQueryParams, "api-version", r.apiVersion, "")
 	}
 	if r.protocol != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", r.protocol, "")
+		parameterAddToQuery(localVarQueryParams, "protocol", r.protocol, "")
 	}
 	if r.operation != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "operation", r.operation, "")
+		parameterAddToQuery(localVarQueryParams, "operation", r.operation, "")
 	}
 	if r.result != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "result", r.result, "")
+		parameterAddToQuery(localVarQueryParams, "result", r.result, "")
 	}
 	if r.resourceName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "resource-name", r.resourceName, "")
+		parameterAddToQuery(localVarQueryParams, "resource-name", r.resourceName, "")
 	}
 	if r.srcInterface != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "src-interface", r.srcInterface, "")
+		parameterAddToQuery(localVarQueryParams, "src-interface", r.srcInterface, "")
 	}
 	if r.destInterface != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dest-interface", r.destInterface, "")
+		parameterAddToQuery(localVarQueryParams, "dest-interface", r.destInterface, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -235,9 +235,9 @@ func (a *DefaultApiService) ApiInvocationLogsGetExecute(r ApiApiInvocationLogsGe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -85,7 +85,7 @@ func (o *PcEventNotification) SetEvent(v PcEvent) {
 
 // GetAccType returns the AccType field value if set, zero value otherwise.
 func (o *PcEventNotification) GetAccType() AccessType {
-	if o == nil || IsNil(o.AccType) {
+	if o == nil || isNil(o.AccType) {
 		var ret AccessType
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *PcEventNotification) GetAccType() AccessType {
 // GetAccTypeOk returns a tuple with the AccType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetAccTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccType) {
+	if o == nil || isNil(o.AccType) {
 		return nil, false
 	}
 	return o.AccType, true
@@ -103,7 +103,7 @@ func (o *PcEventNotification) GetAccTypeOk() (*AccessType, bool) {
 
 // HasAccType returns a boolean if a field has been set.
 func (o *PcEventNotification) HasAccType() bool {
-	if o != nil && !IsNil(o.AccType) {
+	if o != nil && !isNil(o.AccType) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *PcEventNotification) SetAccType(v AccessType) {
 
 // GetAddAccessInfo returns the AddAccessInfo field value if set, zero value otherwise.
 func (o *PcEventNotification) GetAddAccessInfo() AdditionalAccessInfo {
-	if o == nil || IsNil(o.AddAccessInfo) {
+	if o == nil || isNil(o.AddAccessInfo) {
 		var ret AdditionalAccessInfo
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *PcEventNotification) GetAddAccessInfo() AdditionalAccessInfo {
 // GetAddAccessInfoOk returns a tuple with the AddAccessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetAddAccessInfoOk() (*AdditionalAccessInfo, bool) {
-	if o == nil || IsNil(o.AddAccessInfo) {
+	if o == nil || isNil(o.AddAccessInfo) {
 		return nil, false
 	}
 	return o.AddAccessInfo, true
@@ -135,7 +135,7 @@ func (o *PcEventNotification) GetAddAccessInfoOk() (*AdditionalAccessInfo, bool)
 
 // HasAddAccessInfo returns a boolean if a field has been set.
 func (o *PcEventNotification) HasAddAccessInfo() bool {
-	if o != nil && !IsNil(o.AddAccessInfo) {
+	if o != nil && !isNil(o.AddAccessInfo) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *PcEventNotification) SetAddAccessInfo(v AdditionalAccessInfo) {
 
 // GetRelAccessInfo returns the RelAccessInfo field value if set, zero value otherwise.
 func (o *PcEventNotification) GetRelAccessInfo() AdditionalAccessInfo {
-	if o == nil || IsNil(o.RelAccessInfo) {
+	if o == nil || isNil(o.RelAccessInfo) {
 		var ret AdditionalAccessInfo
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *PcEventNotification) GetRelAccessInfo() AdditionalAccessInfo {
 // GetRelAccessInfoOk returns a tuple with the RelAccessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetRelAccessInfoOk() (*AdditionalAccessInfo, bool) {
-	if o == nil || IsNil(o.RelAccessInfo) {
+	if o == nil || isNil(o.RelAccessInfo) {
 		return nil, false
 	}
 	return o.RelAccessInfo, true
@@ -167,7 +167,7 @@ func (o *PcEventNotification) GetRelAccessInfoOk() (*AdditionalAccessInfo, bool)
 
 // HasRelAccessInfo returns a boolean if a field has been set.
 func (o *PcEventNotification) HasRelAccessInfo() bool {
-	if o != nil && !IsNil(o.RelAccessInfo) {
+	if o != nil && !isNil(o.RelAccessInfo) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *PcEventNotification) SetRelAccessInfo(v AdditionalAccessInfo) {
 
 // GetAnGwAddr returns the AnGwAddr field value if set, zero value otherwise.
 func (o *PcEventNotification) GetAnGwAddr() AnGwAddress {
-	if o == nil || IsNil(o.AnGwAddr) {
+	if o == nil || isNil(o.AnGwAddr) {
 		var ret AnGwAddress
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *PcEventNotification) GetAnGwAddr() AnGwAddress {
 // GetAnGwAddrOk returns a tuple with the AnGwAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetAnGwAddrOk() (*AnGwAddress, bool) {
-	if o == nil || IsNil(o.AnGwAddr) {
+	if o == nil || isNil(o.AnGwAddr) {
 		return nil, false
 	}
 	return o.AnGwAddr, true
@@ -199,7 +199,7 @@ func (o *PcEventNotification) GetAnGwAddrOk() (*AnGwAddress, bool) {
 
 // HasAnGwAddr returns a boolean if a field has been set.
 func (o *PcEventNotification) HasAnGwAddr() bool {
-	if o != nil && !IsNil(o.AnGwAddr) {
+	if o != nil && !isNil(o.AnGwAddr) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *PcEventNotification) SetAnGwAddr(v AnGwAddress) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *PcEventNotification) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *PcEventNotification) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -231,7 +231,7 @@ func (o *PcEventNotification) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *PcEventNotification) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *PcEventNotification) SetRatType(v RatType) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *PcEventNotification) GetPlmnId() PlmnIdNid {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *PcEventNotification) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -263,7 +263,7 @@ func (o *PcEventNotification) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *PcEventNotification) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *PcEventNotification) SetPlmnId(v PlmnIdNid) {
 
 // GetSatBackhaulCategory returns the SatBackhaulCategory field value if set, zero value otherwise.
 func (o *PcEventNotification) GetSatBackhaulCategory() SatelliteBackhaulCategory {
-	if o == nil || IsNil(o.SatBackhaulCategory) {
+	if o == nil || isNil(o.SatBackhaulCategory) {
 		var ret SatelliteBackhaulCategory
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *PcEventNotification) GetSatBackhaulCategory() SatelliteBackhaulCategory
 // GetSatBackhaulCategoryOk returns a tuple with the SatBackhaulCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCategory, bool) {
-	if o == nil || IsNil(o.SatBackhaulCategory) {
+	if o == nil || isNil(o.SatBackhaulCategory) {
 		return nil, false
 	}
 	return o.SatBackhaulCategory, true
@@ -295,7 +295,7 @@ func (o *PcEventNotification) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCate
 
 // HasSatBackhaulCategory returns a boolean if a field has been set.
 func (o *PcEventNotification) HasSatBackhaulCategory() bool {
-	if o != nil && !IsNil(o.SatBackhaulCategory) {
+	if o != nil && !isNil(o.SatBackhaulCategory) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *PcEventNotification) SetSatBackhaulCategory(v SatelliteBackhaulCategory
 
 // GetAppliedCov returns the AppliedCov field value if set, zero value otherwise.
 func (o *PcEventNotification) GetAppliedCov() ServiceAreaCoverageInfo {
-	if o == nil || IsNil(o.AppliedCov) {
+	if o == nil || isNil(o.AppliedCov) {
 		var ret ServiceAreaCoverageInfo
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *PcEventNotification) GetAppliedCov() ServiceAreaCoverageInfo {
 // GetAppliedCovOk returns a tuple with the AppliedCov field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetAppliedCovOk() (*ServiceAreaCoverageInfo, bool) {
-	if o == nil || IsNil(o.AppliedCov) {
+	if o == nil || isNil(o.AppliedCov) {
 		return nil, false
 	}
 	return o.AppliedCov, true
@@ -327,7 +327,7 @@ func (o *PcEventNotification) GetAppliedCovOk() (*ServiceAreaCoverageInfo, bool)
 
 // HasAppliedCov returns a boolean if a field has been set.
 func (o *PcEventNotification) HasAppliedCov() bool {
-	if o != nil && !IsNil(o.AppliedCov) {
+	if o != nil && !isNil(o.AppliedCov) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *PcEventNotification) SetAppliedCov(v ServiceAreaCoverageInfo) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *PcEventNotification) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *PcEventNotification) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -359,7 +359,7 @@ func (o *PcEventNotification) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *PcEventNotification) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o *PcEventNotification) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *PcEventNotification) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -383,7 +383,7 @@ func (o *PcEventNotification) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -391,7 +391,7 @@ func (o *PcEventNotification) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *PcEventNotification) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -429,7 +429,7 @@ func (o *PcEventNotification) SetTimeStamp(v time.Time) {
 
 // GetPduSessionInfo returns the PduSessionInfo field value if set, zero value otherwise.
 func (o *PcEventNotification) GetPduSessionInfo() PduSessionInformation {
-	if o == nil || IsNil(o.PduSessionInfo) {
+	if o == nil || isNil(o.PduSessionInfo) {
 		var ret PduSessionInformation
 		return ret
 	}
@@ -439,7 +439,7 @@ func (o *PcEventNotification) GetPduSessionInfo() PduSessionInformation {
 // GetPduSessionInfoOk returns a tuple with the PduSessionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetPduSessionInfoOk() (*PduSessionInformation, bool) {
-	if o == nil || IsNil(o.PduSessionInfo) {
+	if o == nil || isNil(o.PduSessionInfo) {
 		return nil, false
 	}
 	return o.PduSessionInfo, true
@@ -447,7 +447,7 @@ func (o *PcEventNotification) GetPduSessionInfoOk() (*PduSessionInformation, boo
 
 // HasPduSessionInfo returns a boolean if a field has been set.
 func (o *PcEventNotification) HasPduSessionInfo() bool {
-	if o != nil && !IsNil(o.PduSessionInfo) {
+	if o != nil && !isNil(o.PduSessionInfo) {
 		return true
 	}
 
@@ -461,7 +461,7 @@ func (o *PcEventNotification) SetPduSessionInfo(v PduSessionInformation) {
 
 // GetRepServices returns the RepServices field value if set, zero value otherwise.
 func (o *PcEventNotification) GetRepServices() ServiceIdentification {
-	if o == nil || IsNil(o.RepServices) {
+	if o == nil || isNil(o.RepServices) {
 		var ret ServiceIdentification
 		return ret
 	}
@@ -471,7 +471,7 @@ func (o *PcEventNotification) GetRepServices() ServiceIdentification {
 // GetRepServicesOk returns a tuple with the RepServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetRepServicesOk() (*ServiceIdentification, bool) {
-	if o == nil || IsNil(o.RepServices) {
+	if o == nil || isNil(o.RepServices) {
 		return nil, false
 	}
 	return o.RepServices, true
@@ -479,7 +479,7 @@ func (o *PcEventNotification) GetRepServicesOk() (*ServiceIdentification, bool) 
 
 // HasRepServices returns a boolean if a field has been set.
 func (o *PcEventNotification) HasRepServices() bool {
-	if o != nil && !IsNil(o.RepServices) {
+	if o != nil && !isNil(o.RepServices) {
 		return true
 	}
 
@@ -493,7 +493,7 @@ func (o *PcEventNotification) SetRepServices(v ServiceIdentification) {
 
 // GetDelivFailure returns the DelivFailure field value if set, zero value otherwise.
 func (o *PcEventNotification) GetDelivFailure() Failure {
-	if o == nil || IsNil(o.DelivFailure) {
+	if o == nil || isNil(o.DelivFailure) {
 		var ret Failure
 		return ret
 	}
@@ -503,7 +503,7 @@ func (o *PcEventNotification) GetDelivFailure() Failure {
 // GetDelivFailureOk returns a tuple with the DelivFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcEventNotification) GetDelivFailureOk() (*Failure, bool) {
-	if o == nil || IsNil(o.DelivFailure) {
+	if o == nil || isNil(o.DelivFailure) {
 		return nil, false
 	}
 	return o.DelivFailure, true
@@ -511,7 +511,7 @@ func (o *PcEventNotification) GetDelivFailureOk() (*Failure, bool) {
 
 // HasDelivFailure returns a boolean if a field has been set.
 func (o *PcEventNotification) HasDelivFailure() bool {
-	if o != nil && !IsNil(o.DelivFailure) {
+	if o != nil && !isNil(o.DelivFailure) {
 		return true
 	}
 
@@ -534,44 +534,44 @@ func (o PcEventNotification) MarshalJSON() ([]byte, error) {
 func (o PcEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.AccType) {
+	if !isNil(o.AccType) {
 		toSerialize["accType"] = o.AccType
 	}
-	if !IsNil(o.AddAccessInfo) {
+	if !isNil(o.AddAccessInfo) {
 		toSerialize["addAccessInfo"] = o.AddAccessInfo
 	}
-	if !IsNil(o.RelAccessInfo) {
+	if !isNil(o.RelAccessInfo) {
 		toSerialize["relAccessInfo"] = o.RelAccessInfo
 	}
-	if !IsNil(o.AnGwAddr) {
+	if !isNil(o.AnGwAddr) {
 		toSerialize["anGwAddr"] = o.AnGwAddr
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.SatBackhaulCategory) {
+	if !isNil(o.SatBackhaulCategory) {
 		toSerialize["satBackhaulCategory"] = o.SatBackhaulCategory
 	}
-	if !IsNil(o.AppliedCov) {
+	if !isNil(o.AppliedCov) {
 		toSerialize["appliedCov"] = o.AppliedCov
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !IsNil(o.PduSessionInfo) {
+	if !isNil(o.PduSessionInfo) {
 		toSerialize["pduSessionInfo"] = o.PduSessionInfo
 	}
-	if !IsNil(o.RepServices) {
+	if !isNil(o.RepServices) {
 		toSerialize["repServices"] = o.RepServices
 	}
-	if !IsNil(o.DelivFailure) {
+	if !isNil(o.DelivFailure) {
 		toSerialize["delivFailure"] = o.DelivFailure
 	}
 	return toSerialize, nil

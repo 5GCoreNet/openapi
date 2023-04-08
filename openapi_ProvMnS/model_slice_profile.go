@@ -45,7 +45,7 @@ func NewSliceProfileWithDefaults() *SliceProfile {
 
 // GetServiceProfileId returns the ServiceProfileId field value if set, zero value otherwise.
 func (o *SliceProfile) GetServiceProfileId() string {
-	if o == nil || IsNil(o.ServiceProfileId) {
+	if o == nil || isNil(o.ServiceProfileId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *SliceProfile) GetServiceProfileId() string {
 // GetServiceProfileIdOk returns a tuple with the ServiceProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceProfile) GetServiceProfileIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceProfileId) {
+	if o == nil || isNil(o.ServiceProfileId) {
 		return nil, false
 	}
 	return o.ServiceProfileId, true
@@ -63,7 +63,7 @@ func (o *SliceProfile) GetServiceProfileIdOk() (*string, bool) {
 
 // HasServiceProfileId returns a boolean if a field has been set.
 func (o *SliceProfile) HasServiceProfileId() bool {
-	if o != nil && !IsNil(o.ServiceProfileId) {
+	if o != nil && !isNil(o.ServiceProfileId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SliceProfile) SetServiceProfileId(v string) {
 
 // GetPlmnInfoList returns the PlmnInfoList field value if set, zero value otherwise.
 func (o *SliceProfile) GetPlmnInfoList() []PlmnInfo {
-	if o == nil || IsNil(o.PlmnInfoList) {
+	if o == nil || isNil(o.PlmnInfoList) {
 		var ret []PlmnInfo
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SliceProfile) GetPlmnInfoList() []PlmnInfo {
 // GetPlmnInfoListOk returns a tuple with the PlmnInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceProfile) GetPlmnInfoListOk() ([]PlmnInfo, bool) {
-	if o == nil || IsNil(o.PlmnInfoList) {
+	if o == nil || isNil(o.PlmnInfoList) {
 		return nil, false
 	}
 	return o.PlmnInfoList, true
@@ -95,7 +95,7 @@ func (o *SliceProfile) GetPlmnInfoListOk() ([]PlmnInfo, bool) {
 
 // HasPlmnInfoList returns a boolean if a field has been set.
 func (o *SliceProfile) HasPlmnInfoList() bool {
-	if o != nil && !IsNil(o.PlmnInfoList) {
+	if o != nil && !isNil(o.PlmnInfoList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *SliceProfile) SetPlmnInfoList(v []PlmnInfo) {
 
 // GetCNSliceSubnetProfile returns the CNSliceSubnetProfile field value if set, zero value otherwise.
 func (o *SliceProfile) GetCNSliceSubnetProfile() CNSliceSubnetProfile {
-	if o == nil || IsNil(o.CNSliceSubnetProfile) {
+	if o == nil || isNil(o.CNSliceSubnetProfile) {
 		var ret CNSliceSubnetProfile
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *SliceProfile) GetCNSliceSubnetProfile() CNSliceSubnetProfile {
 // GetCNSliceSubnetProfileOk returns a tuple with the CNSliceSubnetProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceProfile) GetCNSliceSubnetProfileOk() (*CNSliceSubnetProfile, bool) {
-	if o == nil || IsNil(o.CNSliceSubnetProfile) {
+	if o == nil || isNil(o.CNSliceSubnetProfile) {
 		return nil, false
 	}
 	return o.CNSliceSubnetProfile, true
@@ -127,7 +127,7 @@ func (o *SliceProfile) GetCNSliceSubnetProfileOk() (*CNSliceSubnetProfile, bool)
 
 // HasCNSliceSubnetProfile returns a boolean if a field has been set.
 func (o *SliceProfile) HasCNSliceSubnetProfile() bool {
-	if o != nil && !IsNil(o.CNSliceSubnetProfile) {
+	if o != nil && !isNil(o.CNSliceSubnetProfile) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *SliceProfile) SetCNSliceSubnetProfile(v CNSliceSubnetProfile) {
 
 // GetRANSliceSubnetProfile returns the RANSliceSubnetProfile field value if set, zero value otherwise.
 func (o *SliceProfile) GetRANSliceSubnetProfile() RANSliceSubnetProfile {
-	if o == nil || IsNil(o.RANSliceSubnetProfile) {
+	if o == nil || isNil(o.RANSliceSubnetProfile) {
 		var ret RANSliceSubnetProfile
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *SliceProfile) GetRANSliceSubnetProfile() RANSliceSubnetProfile {
 // GetRANSliceSubnetProfileOk returns a tuple with the RANSliceSubnetProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceProfile) GetRANSliceSubnetProfileOk() (*RANSliceSubnetProfile, bool) {
-	if o == nil || IsNil(o.RANSliceSubnetProfile) {
+	if o == nil || isNil(o.RANSliceSubnetProfile) {
 		return nil, false
 	}
 	return o.RANSliceSubnetProfile, true
@@ -159,7 +159,7 @@ func (o *SliceProfile) GetRANSliceSubnetProfileOk() (*RANSliceSubnetProfile, boo
 
 // HasRANSliceSubnetProfile returns a boolean if a field has been set.
 func (o *SliceProfile) HasRANSliceSubnetProfile() bool {
-	if o != nil && !IsNil(o.RANSliceSubnetProfile) {
+	if o != nil && !isNil(o.RANSliceSubnetProfile) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *SliceProfile) SetRANSliceSubnetProfile(v RANSliceSubnetProfile) {
 
 // GetTopSliceSubnetProfile returns the TopSliceSubnetProfile field value if set, zero value otherwise.
 func (o *SliceProfile) GetTopSliceSubnetProfile() TopSliceSubnetProfile {
-	if o == nil || IsNil(o.TopSliceSubnetProfile) {
+	if o == nil || isNil(o.TopSliceSubnetProfile) {
 		var ret TopSliceSubnetProfile
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *SliceProfile) GetTopSliceSubnetProfile() TopSliceSubnetProfile {
 // GetTopSliceSubnetProfileOk returns a tuple with the TopSliceSubnetProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceProfile) GetTopSliceSubnetProfileOk() (*TopSliceSubnetProfile, bool) {
-	if o == nil || IsNil(o.TopSliceSubnetProfile) {
+	if o == nil || isNil(o.TopSliceSubnetProfile) {
 		return nil, false
 	}
 	return o.TopSliceSubnetProfile, true
@@ -191,7 +191,7 @@ func (o *SliceProfile) GetTopSliceSubnetProfileOk() (*TopSliceSubnetProfile, boo
 
 // HasTopSliceSubnetProfile returns a boolean if a field has been set.
 func (o *SliceProfile) HasTopSliceSubnetProfile() bool {
-	if o != nil && !IsNil(o.TopSliceSubnetProfile) {
+	if o != nil && !isNil(o.TopSliceSubnetProfile) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o SliceProfile) MarshalJSON() ([]byte, error) {
 
 func (o SliceProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceProfileId) {
+	if !isNil(o.ServiceProfileId) {
 		toSerialize["serviceProfileId"] = o.ServiceProfileId
 	}
-	if !IsNil(o.PlmnInfoList) {
+	if !isNil(o.PlmnInfoList) {
 		toSerialize["plmnInfoList"] = o.PlmnInfoList
 	}
-	if !IsNil(o.CNSliceSubnetProfile) {
+	if !isNil(o.CNSliceSubnetProfile) {
 		toSerialize["cNSliceSubnetProfile"] = o.CNSliceSubnetProfile
 	}
-	if !IsNil(o.RANSliceSubnetProfile) {
+	if !isNil(o.RANSliceSubnetProfile) {
 		toSerialize["rANSliceSubnetProfile"] = o.RANSliceSubnetProfile
 	}
-	if !IsNil(o.TopSliceSubnetProfile) {
+	if !isNil(o.TopSliceSubnetProfile) {
 		toSerialize["topSliceSubnetProfile"] = o.TopSliceSubnetProfile
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewInterOperatorIdentifierWithDefaults() *InterOperatorIdentifier {
 
 // GetOriginatingIOI returns the OriginatingIOI field value if set, zero value otherwise.
 func (o *InterOperatorIdentifier) GetOriginatingIOI() string {
-	if o == nil || IsNil(o.OriginatingIOI) {
+	if o == nil || isNil(o.OriginatingIOI) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *InterOperatorIdentifier) GetOriginatingIOI() string {
 // GetOriginatingIOIOk returns a tuple with the OriginatingIOI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterOperatorIdentifier) GetOriginatingIOIOk() (*string, bool) {
-	if o == nil || IsNil(o.OriginatingIOI) {
+	if o == nil || isNil(o.OriginatingIOI) {
 		return nil, false
 	}
 	return o.OriginatingIOI, true
@@ -60,7 +60,7 @@ func (o *InterOperatorIdentifier) GetOriginatingIOIOk() (*string, bool) {
 
 // HasOriginatingIOI returns a boolean if a field has been set.
 func (o *InterOperatorIdentifier) HasOriginatingIOI() bool {
-	if o != nil && !IsNil(o.OriginatingIOI) {
+	if o != nil && !isNil(o.OriginatingIOI) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *InterOperatorIdentifier) SetOriginatingIOI(v string) {
 
 // GetTerminatingIOI returns the TerminatingIOI field value if set, zero value otherwise.
 func (o *InterOperatorIdentifier) GetTerminatingIOI() string {
-	if o == nil || IsNil(o.TerminatingIOI) {
+	if o == nil || isNil(o.TerminatingIOI) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *InterOperatorIdentifier) GetTerminatingIOI() string {
 // GetTerminatingIOIOk returns a tuple with the TerminatingIOI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterOperatorIdentifier) GetTerminatingIOIOk() (*string, bool) {
-	if o == nil || IsNil(o.TerminatingIOI) {
+	if o == nil || isNil(o.TerminatingIOI) {
 		return nil, false
 	}
 	return o.TerminatingIOI, true
@@ -92,7 +92,7 @@ func (o *InterOperatorIdentifier) GetTerminatingIOIOk() (*string, bool) {
 
 // HasTerminatingIOI returns a boolean if a field has been set.
 func (o *InterOperatorIdentifier) HasTerminatingIOI() bool {
-	if o != nil && !IsNil(o.TerminatingIOI) {
+	if o != nil && !isNil(o.TerminatingIOI) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o InterOperatorIdentifier) MarshalJSON() ([]byte, error) {
 
 func (o InterOperatorIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OriginatingIOI) {
+	if !isNil(o.OriginatingIOI) {
 		toSerialize["originatingIOI"] = o.OriginatingIOI
 	}
-	if !IsNil(o.TerminatingIOI) {
+	if !isNil(o.TerminatingIOI) {
 		toSerialize["terminatingIOI"] = o.TerminatingIOI
 	}
 	return toSerialize, nil

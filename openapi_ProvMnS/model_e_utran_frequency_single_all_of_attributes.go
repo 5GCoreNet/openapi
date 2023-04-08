@@ -42,7 +42,7 @@ func NewEUtranFrequencySingleAllOfAttributesWithDefaults() *EUtranFrequencySingl
 
 // GetEarfcnDL returns the EarfcnDL field value if set, zero value otherwise.
 func (o *EUtranFrequencySingleAllOfAttributes) GetEarfcnDL() int32 {
-	if o == nil || IsNil(o.EarfcnDL) {
+	if o == nil || isNil(o.EarfcnDL) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EUtranFrequencySingleAllOfAttributes) GetEarfcnDL() int32 {
 // GetEarfcnDLOk returns a tuple with the EarfcnDL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFrequencySingleAllOfAttributes) GetEarfcnDLOk() (*int32, bool) {
-	if o == nil || IsNil(o.EarfcnDL) {
+	if o == nil || isNil(o.EarfcnDL) {
 		return nil, false
 	}
 	return o.EarfcnDL, true
@@ -60,7 +60,7 @@ func (o *EUtranFrequencySingleAllOfAttributes) GetEarfcnDLOk() (*int32, bool) {
 
 // HasEarfcnDL returns a boolean if a field has been set.
 func (o *EUtranFrequencySingleAllOfAttributes) HasEarfcnDL() bool {
-	if o != nil && !IsNil(o.EarfcnDL) {
+	if o != nil && !isNil(o.EarfcnDL) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EUtranFrequencySingleAllOfAttributes) SetEarfcnDL(v int32) {
 
 // GetMultiBandInfoListEutra returns the MultiBandInfoListEutra field value if set, zero value otherwise.
 func (o *EUtranFrequencySingleAllOfAttributes) GetMultiBandInfoListEutra() int32 {
-	if o == nil || IsNil(o.MultiBandInfoListEutra) {
+	if o == nil || isNil(o.MultiBandInfoListEutra) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EUtranFrequencySingleAllOfAttributes) GetMultiBandInfoListEutra() int32
 // GetMultiBandInfoListEutraOk returns a tuple with the MultiBandInfoListEutra field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFrequencySingleAllOfAttributes) GetMultiBandInfoListEutraOk() (*int32, bool) {
-	if o == nil || IsNil(o.MultiBandInfoListEutra) {
+	if o == nil || isNil(o.MultiBandInfoListEutra) {
 		return nil, false
 	}
 	return o.MultiBandInfoListEutra, true
@@ -92,7 +92,7 @@ func (o *EUtranFrequencySingleAllOfAttributes) GetMultiBandInfoListEutraOk() (*i
 
 // HasMultiBandInfoListEutra returns a boolean if a field has been set.
 func (o *EUtranFrequencySingleAllOfAttributes) HasMultiBandInfoListEutra() bool {
-	if o != nil && !IsNil(o.MultiBandInfoListEutra) {
+	if o != nil && !isNil(o.MultiBandInfoListEutra) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o EUtranFrequencySingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o EUtranFrequencySingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EarfcnDL) {
+	if !isNil(o.EarfcnDL) {
 		toSerialize["earfcnDL"] = o.EarfcnDL
 	}
-	if !IsNil(o.MultiBandInfoListEutra) {
+	if !isNil(o.MultiBandInfoListEutra) {
 		toSerialize["multiBandInfoListEutra"] = o.MultiBandInfoListEutra
 	}
 	return toSerialize, nil

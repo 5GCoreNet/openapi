@@ -171,7 +171,7 @@ func (o *RequestLine) SetProtocolVersion(v string) {
 
 // GetQueryFragment returns the QueryFragment field value if set, zero value otherwise.
 func (o *RequestLine) GetQueryFragment() string {
-	if o == nil || IsNil(o.QueryFragment) {
+	if o == nil || isNil(o.QueryFragment) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *RequestLine) GetQueryFragment() string {
 // GetQueryFragmentOk returns a tuple with the QueryFragment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestLine) GetQueryFragmentOk() (*string, bool) {
-	if o == nil || IsNil(o.QueryFragment) {
+	if o == nil || isNil(o.QueryFragment) {
 		return nil, false
 	}
 	return o.QueryFragment, true
@@ -189,7 +189,7 @@ func (o *RequestLine) GetQueryFragmentOk() (*string, bool) {
 
 // HasQueryFragment returns a boolean if a field has been set.
 func (o *RequestLine) HasQueryFragment() bool {
-	if o != nil && !IsNil(o.QueryFragment) {
+	if o != nil && !isNil(o.QueryFragment) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o RequestLine) ToMap() (map[string]interface{}, error) {
 	toSerialize["authority"] = o.Authority
 	toSerialize["path"] = o.Path
 	toSerialize["protocolVersion"] = o.ProtocolVersion
-	if !IsNil(o.QueryFragment) {
+	if !isNil(o.QueryFragment) {
 		toSerialize["queryFragment"] = o.QueryFragment
 	}
 	return toSerialize, nil

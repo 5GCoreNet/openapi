@@ -66,7 +66,7 @@ func NewRANSliceSubnetProfileWithDefaults() *RANSliceSubnetProfile {
 
 // GetCoverageAreaTAList returns the CoverageAreaTAList field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetCoverageAreaTAList() []int32 {
-	if o == nil || IsNil(o.CoverageAreaTAList) {
+	if o == nil || isNil(o.CoverageAreaTAList) {
 		var ret []int32
 		return ret
 	}
@@ -76,7 +76,7 @@ func (o *RANSliceSubnetProfile) GetCoverageAreaTAList() []int32 {
 // GetCoverageAreaTAListOk returns a tuple with the CoverageAreaTAList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetCoverageAreaTAListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.CoverageAreaTAList) {
+	if o == nil || isNil(o.CoverageAreaTAList) {
 		return nil, false
 	}
 	return o.CoverageAreaTAList, true
@@ -84,7 +84,7 @@ func (o *RANSliceSubnetProfile) GetCoverageAreaTAListOk() ([]int32, bool) {
 
 // HasCoverageAreaTAList returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasCoverageAreaTAList() bool {
-	if o != nil && !IsNil(o.CoverageAreaTAList) {
+	if o != nil && !isNil(o.CoverageAreaTAList) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *RANSliceSubnetProfile) SetCoverageAreaTAList(v []int32) {
 
 // GetDLLatency returns the DLLatency field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetDLLatency() float32 {
-	if o == nil || IsNil(o.DLLatency) {
+	if o == nil || isNil(o.DLLatency) {
 		var ret float32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *RANSliceSubnetProfile) GetDLLatency() float32 {
 // GetDLLatencyOk returns a tuple with the DLLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetDLLatencyOk() (*float32, bool) {
-	if o == nil || IsNil(o.DLLatency) {
+	if o == nil || isNil(o.DLLatency) {
 		return nil, false
 	}
 	return o.DLLatency, true
@@ -116,7 +116,7 @@ func (o *RANSliceSubnetProfile) GetDLLatencyOk() (*float32, bool) {
 
 // HasDLLatency returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasDLLatency() bool {
-	if o != nil && !IsNil(o.DLLatency) {
+	if o != nil && !isNil(o.DLLatency) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *RANSliceSubnetProfile) SetDLLatency(v float32) {
 
 // GetULLatency returns the ULLatency field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetULLatency() float32 {
-	if o == nil || IsNil(o.ULLatency) {
+	if o == nil || isNil(o.ULLatency) {
 		var ret float32
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *RANSliceSubnetProfile) GetULLatency() float32 {
 // GetULLatencyOk returns a tuple with the ULLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetULLatencyOk() (*float32, bool) {
-	if o == nil || IsNil(o.ULLatency) {
+	if o == nil || isNil(o.ULLatency) {
 		return nil, false
 	}
 	return o.ULLatency, true
@@ -148,7 +148,7 @@ func (o *RANSliceSubnetProfile) GetULLatencyOk() (*float32, bool) {
 
 // HasULLatency returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasULLatency() bool {
-	if o != nil && !IsNil(o.ULLatency) {
+	if o != nil && !isNil(o.ULLatency) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *RANSliceSubnetProfile) SetULLatency(v float32) {
 
 // GetUEMobilityLevel returns the UEMobilityLevel field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetUEMobilityLevel() MobilityLevel {
-	if o == nil || IsNil(o.UEMobilityLevel) {
+	if o == nil || isNil(o.UEMobilityLevel) {
 		var ret MobilityLevel
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *RANSliceSubnetProfile) GetUEMobilityLevel() MobilityLevel {
 // GetUEMobilityLevelOk returns a tuple with the UEMobilityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetUEMobilityLevelOk() (*MobilityLevel, bool) {
-	if o == nil || IsNil(o.UEMobilityLevel) {
+	if o == nil || isNil(o.UEMobilityLevel) {
 		return nil, false
 	}
 	return o.UEMobilityLevel, true
@@ -180,7 +180,7 @@ func (o *RANSliceSubnetProfile) GetUEMobilityLevelOk() (*MobilityLevel, bool) {
 
 // HasUEMobilityLevel returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasUEMobilityLevel() bool {
-	if o != nil && !IsNil(o.UEMobilityLevel) {
+	if o != nil && !isNil(o.UEMobilityLevel) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *RANSliceSubnetProfile) SetUEMobilityLevel(v MobilityLevel) {
 
 // GetResourceSharingLevel returns the ResourceSharingLevel field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetResourceSharingLevel() SharingLevel {
-	if o == nil || IsNil(o.ResourceSharingLevel) {
+	if o == nil || isNil(o.ResourceSharingLevel) {
 		var ret SharingLevel
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *RANSliceSubnetProfile) GetResourceSharingLevel() SharingLevel {
 // GetResourceSharingLevelOk returns a tuple with the ResourceSharingLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetResourceSharingLevelOk() (*SharingLevel, bool) {
-	if o == nil || IsNil(o.ResourceSharingLevel) {
+	if o == nil || isNil(o.ResourceSharingLevel) {
 		return nil, false
 	}
 	return o.ResourceSharingLevel, true
@@ -212,7 +212,7 @@ func (o *RANSliceSubnetProfile) GetResourceSharingLevelOk() (*SharingLevel, bool
 
 // HasResourceSharingLevel returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasResourceSharingLevel() bool {
-	if o != nil && !IsNil(o.ResourceSharingLevel) {
+	if o != nil && !isNil(o.ResourceSharingLevel) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *RANSliceSubnetProfile) SetResourceSharingLevel(v SharingLevel) {
 
 // GetMaxNumberofUEs returns the MaxNumberofUEs field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetMaxNumberofUEs() int32 {
-	if o == nil || IsNil(o.MaxNumberofUEs) {
+	if o == nil || isNil(o.MaxNumberofUEs) {
 		var ret int32
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *RANSliceSubnetProfile) GetMaxNumberofUEs() int32 {
 // GetMaxNumberofUEsOk returns a tuple with the MaxNumberofUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetMaxNumberofUEsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumberofUEs) {
+	if o == nil || isNil(o.MaxNumberofUEs) {
 		return nil, false
 	}
 	return o.MaxNumberofUEs, true
@@ -244,7 +244,7 @@ func (o *RANSliceSubnetProfile) GetMaxNumberofUEsOk() (*int32, bool) {
 
 // HasMaxNumberofUEs returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasMaxNumberofUEs() bool {
-	if o != nil && !IsNil(o.MaxNumberofUEs) {
+	if o != nil && !isNil(o.MaxNumberofUEs) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *RANSliceSubnetProfile) SetMaxNumberofUEs(v int32) {
 
 // GetActivityFactor returns the ActivityFactor field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetActivityFactor() int32 {
-	if o == nil || IsNil(o.ActivityFactor) {
+	if o == nil || isNil(o.ActivityFactor) {
 		var ret int32
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *RANSliceSubnetProfile) GetActivityFactor() int32 {
 // GetActivityFactorOk returns a tuple with the ActivityFactor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetActivityFactorOk() (*int32, bool) {
-	if o == nil || IsNil(o.ActivityFactor) {
+	if o == nil || isNil(o.ActivityFactor) {
 		return nil, false
 	}
 	return o.ActivityFactor, true
@@ -276,7 +276,7 @@ func (o *RANSliceSubnetProfile) GetActivityFactorOk() (*int32, bool) {
 
 // HasActivityFactor returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasActivityFactor() bool {
-	if o != nil && !IsNil(o.ActivityFactor) {
+	if o != nil && !isNil(o.ActivityFactor) {
 		return true
 	}
 
@@ -290,7 +290,7 @@ func (o *RANSliceSubnetProfile) SetActivityFactor(v int32) {
 
 // GetDLThptPerSliceSubnet returns the DLThptPerSliceSubnet field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetDLThptPerSliceSubnet() XLThpt {
-	if o == nil || IsNil(o.DLThptPerSliceSubnet) {
+	if o == nil || isNil(o.DLThptPerSliceSubnet) {
 		var ret XLThpt
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *RANSliceSubnetProfile) GetDLThptPerSliceSubnet() XLThpt {
 // GetDLThptPerSliceSubnetOk returns a tuple with the DLThptPerSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetDLThptPerSliceSubnetOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.DLThptPerSliceSubnet) {
+	if o == nil || isNil(o.DLThptPerSliceSubnet) {
 		return nil, false
 	}
 	return o.DLThptPerSliceSubnet, true
@@ -308,7 +308,7 @@ func (o *RANSliceSubnetProfile) GetDLThptPerSliceSubnetOk() (*XLThpt, bool) {
 
 // HasDLThptPerSliceSubnet returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasDLThptPerSliceSubnet() bool {
-	if o != nil && !IsNil(o.DLThptPerSliceSubnet) {
+	if o != nil && !isNil(o.DLThptPerSliceSubnet) {
 		return true
 	}
 
@@ -322,7 +322,7 @@ func (o *RANSliceSubnetProfile) SetDLThptPerSliceSubnet(v XLThpt) {
 
 // GetDLThptPerUE returns the DLThptPerUE field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetDLThptPerUE() XLThpt {
-	if o == nil || IsNil(o.DLThptPerUE) {
+	if o == nil || isNil(o.DLThptPerUE) {
 		var ret XLThpt
 		return ret
 	}
@@ -332,7 +332,7 @@ func (o *RANSliceSubnetProfile) GetDLThptPerUE() XLThpt {
 // GetDLThptPerUEOk returns a tuple with the DLThptPerUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetDLThptPerUEOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.DLThptPerUE) {
+	if o == nil || isNil(o.DLThptPerUE) {
 		return nil, false
 	}
 	return o.DLThptPerUE, true
@@ -340,7 +340,7 @@ func (o *RANSliceSubnetProfile) GetDLThptPerUEOk() (*XLThpt, bool) {
 
 // HasDLThptPerUE returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasDLThptPerUE() bool {
-	if o != nil && !IsNil(o.DLThptPerUE) {
+	if o != nil && !isNil(o.DLThptPerUE) {
 		return true
 	}
 
@@ -354,7 +354,7 @@ func (o *RANSliceSubnetProfile) SetDLThptPerUE(v XLThpt) {
 
 // GetULThptPerSliceSubnet returns the ULThptPerSliceSubnet field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetULThptPerSliceSubnet() XLThpt {
-	if o == nil || IsNil(o.ULThptPerSliceSubnet) {
+	if o == nil || isNil(o.ULThptPerSliceSubnet) {
 		var ret XLThpt
 		return ret
 	}
@@ -364,7 +364,7 @@ func (o *RANSliceSubnetProfile) GetULThptPerSliceSubnet() XLThpt {
 // GetULThptPerSliceSubnetOk returns a tuple with the ULThptPerSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetULThptPerSliceSubnetOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.ULThptPerSliceSubnet) {
+	if o == nil || isNil(o.ULThptPerSliceSubnet) {
 		return nil, false
 	}
 	return o.ULThptPerSliceSubnet, true
@@ -372,7 +372,7 @@ func (o *RANSliceSubnetProfile) GetULThptPerSliceSubnetOk() (*XLThpt, bool) {
 
 // HasULThptPerSliceSubnet returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasULThptPerSliceSubnet() bool {
-	if o != nil && !IsNil(o.ULThptPerSliceSubnet) {
+	if o != nil && !isNil(o.ULThptPerSliceSubnet) {
 		return true
 	}
 
@@ -386,7 +386,7 @@ func (o *RANSliceSubnetProfile) SetULThptPerSliceSubnet(v XLThpt) {
 
 // GetULThptPerUE returns the ULThptPerUE field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetULThptPerUE() XLThpt {
-	if o == nil || IsNil(o.ULThptPerUE) {
+	if o == nil || isNil(o.ULThptPerUE) {
 		var ret XLThpt
 		return ret
 	}
@@ -396,7 +396,7 @@ func (o *RANSliceSubnetProfile) GetULThptPerUE() XLThpt {
 // GetULThptPerUEOk returns a tuple with the ULThptPerUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetULThptPerUEOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.ULThptPerUE) {
+	if o == nil || isNil(o.ULThptPerUE) {
 		return nil, false
 	}
 	return o.ULThptPerUE, true
@@ -404,7 +404,7 @@ func (o *RANSliceSubnetProfile) GetULThptPerUEOk() (*XLThpt, bool) {
 
 // HasULThptPerUE returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasULThptPerUE() bool {
-	if o != nil && !IsNil(o.ULThptPerUE) {
+	if o != nil && !isNil(o.ULThptPerUE) {
 		return true
 	}
 
@@ -418,7 +418,7 @@ func (o *RANSliceSubnetProfile) SetULThptPerUE(v XLThpt) {
 
 // GetUESpeed returns the UESpeed field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetUESpeed() int32 {
-	if o == nil || IsNil(o.UESpeed) {
+	if o == nil || isNil(o.UESpeed) {
 		var ret int32
 		return ret
 	}
@@ -428,7 +428,7 @@ func (o *RANSliceSubnetProfile) GetUESpeed() int32 {
 // GetUESpeedOk returns a tuple with the UESpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetUESpeedOk() (*int32, bool) {
-	if o == nil || IsNil(o.UESpeed) {
+	if o == nil || isNil(o.UESpeed) {
 		return nil, false
 	}
 	return o.UESpeed, true
@@ -436,7 +436,7 @@ func (o *RANSliceSubnetProfile) GetUESpeedOk() (*int32, bool) {
 
 // HasUESpeed returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasUESpeed() bool {
-	if o != nil && !IsNil(o.UESpeed) {
+	if o != nil && !isNil(o.UESpeed) {
 		return true
 	}
 
@@ -450,7 +450,7 @@ func (o *RANSliceSubnetProfile) SetUESpeed(v int32) {
 
 // GetReliability returns the Reliability field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetReliability() float32 {
-	if o == nil || IsNil(o.Reliability) {
+	if o == nil || isNil(o.Reliability) {
 		var ret float32
 		return ret
 	}
@@ -460,7 +460,7 @@ func (o *RANSliceSubnetProfile) GetReliability() float32 {
 // GetReliabilityOk returns a tuple with the Reliability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetReliabilityOk() (*float32, bool) {
-	if o == nil || IsNil(o.Reliability) {
+	if o == nil || isNil(o.Reliability) {
 		return nil, false
 	}
 	return o.Reliability, true
@@ -468,7 +468,7 @@ func (o *RANSliceSubnetProfile) GetReliabilityOk() (*float32, bool) {
 
 // HasReliability returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasReliability() bool {
-	if o != nil && !IsNil(o.Reliability) {
+	if o != nil && !isNil(o.Reliability) {
 		return true
 	}
 
@@ -482,7 +482,7 @@ func (o *RANSliceSubnetProfile) SetReliability(v float32) {
 
 // GetSST returns the SST field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetSST() int32 {
-	if o == nil || IsNil(o.SST) {
+	if o == nil || isNil(o.SST) {
 		var ret int32
 		return ret
 	}
@@ -492,7 +492,7 @@ func (o *RANSliceSubnetProfile) GetSST() int32 {
 // GetSSTOk returns a tuple with the SST field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetSSTOk() (*int32, bool) {
-	if o == nil || IsNil(o.SST) {
+	if o == nil || isNil(o.SST) {
 		return nil, false
 	}
 	return o.SST, true
@@ -500,7 +500,7 @@ func (o *RANSliceSubnetProfile) GetSSTOk() (*int32, bool) {
 
 // HasSST returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasSST() bool {
-	if o != nil && !IsNil(o.SST) {
+	if o != nil && !isNil(o.SST) {
 		return true
 	}
 
@@ -514,7 +514,7 @@ func (o *RANSliceSubnetProfile) SetSST(v int32) {
 
 // GetDLMaxPktSize returns the DLMaxPktSize field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetDLMaxPktSize() int32 {
-	if o == nil || IsNil(o.DLMaxPktSize) {
+	if o == nil || isNil(o.DLMaxPktSize) {
 		var ret int32
 		return ret
 	}
@@ -524,7 +524,7 @@ func (o *RANSliceSubnetProfile) GetDLMaxPktSize() int32 {
 // GetDLMaxPktSizeOk returns a tuple with the DLMaxPktSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetDLMaxPktSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.DLMaxPktSize) {
+	if o == nil || isNil(o.DLMaxPktSize) {
 		return nil, false
 	}
 	return o.DLMaxPktSize, true
@@ -532,7 +532,7 @@ func (o *RANSliceSubnetProfile) GetDLMaxPktSizeOk() (*int32, bool) {
 
 // HasDLMaxPktSize returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasDLMaxPktSize() bool {
-	if o != nil && !IsNil(o.DLMaxPktSize) {
+	if o != nil && !isNil(o.DLMaxPktSize) {
 		return true
 	}
 
@@ -546,7 +546,7 @@ func (o *RANSliceSubnetProfile) SetDLMaxPktSize(v int32) {
 
 // GetULMaxPktSize returns the ULMaxPktSize field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetULMaxPktSize() int32 {
-	if o == nil || IsNil(o.ULMaxPktSize) {
+	if o == nil || isNil(o.ULMaxPktSize) {
 		var ret int32
 		return ret
 	}
@@ -556,7 +556,7 @@ func (o *RANSliceSubnetProfile) GetULMaxPktSize() int32 {
 // GetULMaxPktSizeOk returns a tuple with the ULMaxPktSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetULMaxPktSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.ULMaxPktSize) {
+	if o == nil || isNil(o.ULMaxPktSize) {
 		return nil, false
 	}
 	return o.ULMaxPktSize, true
@@ -564,7 +564,7 @@ func (o *RANSliceSubnetProfile) GetULMaxPktSizeOk() (*int32, bool) {
 
 // HasULMaxPktSize returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasULMaxPktSize() bool {
-	if o != nil && !IsNil(o.ULMaxPktSize) {
+	if o != nil && !isNil(o.ULMaxPktSize) {
 		return true
 	}
 
@@ -578,7 +578,7 @@ func (o *RANSliceSubnetProfile) SetULMaxPktSize(v int32) {
 
 // GetNROperatingBands returns the NROperatingBands field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetNROperatingBands() string {
-	if o == nil || IsNil(o.NROperatingBands) {
+	if o == nil || isNil(o.NROperatingBands) {
 		var ret string
 		return ret
 	}
@@ -588,7 +588,7 @@ func (o *RANSliceSubnetProfile) GetNROperatingBands() string {
 // GetNROperatingBandsOk returns a tuple with the NROperatingBands field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetNROperatingBandsOk() (*string, bool) {
-	if o == nil || IsNil(o.NROperatingBands) {
+	if o == nil || isNil(o.NROperatingBands) {
 		return nil, false
 	}
 	return o.NROperatingBands, true
@@ -596,7 +596,7 @@ func (o *RANSliceSubnetProfile) GetNROperatingBandsOk() (*string, bool) {
 
 // HasNROperatingBands returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasNROperatingBands() bool {
-	if o != nil && !IsNil(o.NROperatingBands) {
+	if o != nil && !isNil(o.NROperatingBands) {
 		return true
 	}
 
@@ -610,7 +610,7 @@ func (o *RANSliceSubnetProfile) SetNROperatingBands(v string) {
 
 // GetDelayTolerance returns the DelayTolerance field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetDelayTolerance() DelayTolerance {
-	if o == nil || IsNil(o.DelayTolerance) {
+	if o == nil || isNil(o.DelayTolerance) {
 		var ret DelayTolerance
 		return ret
 	}
@@ -620,7 +620,7 @@ func (o *RANSliceSubnetProfile) GetDelayTolerance() DelayTolerance {
 // GetDelayToleranceOk returns a tuple with the DelayTolerance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetDelayToleranceOk() (*DelayTolerance, bool) {
-	if o == nil || IsNil(o.DelayTolerance) {
+	if o == nil || isNil(o.DelayTolerance) {
 		return nil, false
 	}
 	return o.DelayTolerance, true
@@ -628,7 +628,7 @@ func (o *RANSliceSubnetProfile) GetDelayToleranceOk() (*DelayTolerance, bool) {
 
 // HasDelayTolerance returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasDelayTolerance() bool {
-	if o != nil && !IsNil(o.DelayTolerance) {
+	if o != nil && !isNil(o.DelayTolerance) {
 		return true
 	}
 
@@ -642,7 +642,7 @@ func (o *RANSliceSubnetProfile) SetDelayTolerance(v DelayTolerance) {
 
 // GetPositioning returns the Positioning field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetPositioning() PositioningRANSubnet {
-	if o == nil || IsNil(o.Positioning) {
+	if o == nil || isNil(o.Positioning) {
 		var ret PositioningRANSubnet
 		return ret
 	}
@@ -652,7 +652,7 @@ func (o *RANSliceSubnetProfile) GetPositioning() PositioningRANSubnet {
 // GetPositioningOk returns a tuple with the Positioning field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetPositioningOk() (*PositioningRANSubnet, bool) {
-	if o == nil || IsNil(o.Positioning) {
+	if o == nil || isNil(o.Positioning) {
 		return nil, false
 	}
 	return o.Positioning, true
@@ -660,7 +660,7 @@ func (o *RANSliceSubnetProfile) GetPositioningOk() (*PositioningRANSubnet, bool)
 
 // HasPositioning returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasPositioning() bool {
-	if o != nil && !IsNil(o.Positioning) {
+	if o != nil && !isNil(o.Positioning) {
 		return true
 	}
 
@@ -674,7 +674,7 @@ func (o *RANSliceSubnetProfile) SetPositioning(v PositioningRANSubnet) {
 
 // GetSliceSimultaneousUse returns the SliceSimultaneousUse field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetSliceSimultaneousUse() SliceSimultaneousUse {
-	if o == nil || IsNil(o.SliceSimultaneousUse) {
+	if o == nil || isNil(o.SliceSimultaneousUse) {
 		var ret SliceSimultaneousUse
 		return ret
 	}
@@ -684,7 +684,7 @@ func (o *RANSliceSubnetProfile) GetSliceSimultaneousUse() SliceSimultaneousUse {
 // GetSliceSimultaneousUseOk returns a tuple with the SliceSimultaneousUse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetSliceSimultaneousUseOk() (*SliceSimultaneousUse, bool) {
-	if o == nil || IsNil(o.SliceSimultaneousUse) {
+	if o == nil || isNil(o.SliceSimultaneousUse) {
 		return nil, false
 	}
 	return o.SliceSimultaneousUse, true
@@ -692,7 +692,7 @@ func (o *RANSliceSubnetProfile) GetSliceSimultaneousUseOk() (*SliceSimultaneousU
 
 // HasSliceSimultaneousUse returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasSliceSimultaneousUse() bool {
-	if o != nil && !IsNil(o.SliceSimultaneousUse) {
+	if o != nil && !isNil(o.SliceSimultaneousUse) {
 		return true
 	}
 
@@ -706,7 +706,7 @@ func (o *RANSliceSubnetProfile) SetSliceSimultaneousUse(v SliceSimultaneousUse) 
 
 // GetEnergyEfficiency returns the EnergyEfficiency field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetEnergyEfficiency() float32 {
-	if o == nil || IsNil(o.EnergyEfficiency) {
+	if o == nil || isNil(o.EnergyEfficiency) {
 		var ret float32
 		return ret
 	}
@@ -716,7 +716,7 @@ func (o *RANSliceSubnetProfile) GetEnergyEfficiency() float32 {
 // GetEnergyEfficiencyOk returns a tuple with the EnergyEfficiency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetEnergyEfficiencyOk() (*float32, bool) {
-	if o == nil || IsNil(o.EnergyEfficiency) {
+	if o == nil || isNil(o.EnergyEfficiency) {
 		return nil, false
 	}
 	return o.EnergyEfficiency, true
@@ -724,7 +724,7 @@ func (o *RANSliceSubnetProfile) GetEnergyEfficiencyOk() (*float32, bool) {
 
 // HasEnergyEfficiency returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasEnergyEfficiency() bool {
-	if o != nil && !IsNil(o.EnergyEfficiency) {
+	if o != nil && !isNil(o.EnergyEfficiency) {
 		return true
 	}
 
@@ -738,7 +738,7 @@ func (o *RANSliceSubnetProfile) SetEnergyEfficiency(v float32) {
 
 // GetTermDensity returns the TermDensity field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetTermDensity() TermDensity {
-	if o == nil || IsNil(o.TermDensity) {
+	if o == nil || isNil(o.TermDensity) {
 		var ret TermDensity
 		return ret
 	}
@@ -748,7 +748,7 @@ func (o *RANSliceSubnetProfile) GetTermDensity() TermDensity {
 // GetTermDensityOk returns a tuple with the TermDensity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetTermDensityOk() (*TermDensity, bool) {
-	if o == nil || IsNil(o.TermDensity) {
+	if o == nil || isNil(o.TermDensity) {
 		return nil, false
 	}
 	return o.TermDensity, true
@@ -756,7 +756,7 @@ func (o *RANSliceSubnetProfile) GetTermDensityOk() (*TermDensity, bool) {
 
 // HasTermDensity returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasTermDensity() bool {
-	if o != nil && !IsNil(o.TermDensity) {
+	if o != nil && !isNil(o.TermDensity) {
 		return true
 	}
 
@@ -770,7 +770,7 @@ func (o *RANSliceSubnetProfile) SetTermDensity(v TermDensity) {
 
 // GetSurvivalTime returns the SurvivalTime field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetSurvivalTime() float32 {
-	if o == nil || IsNil(o.SurvivalTime) {
+	if o == nil || isNil(o.SurvivalTime) {
 		var ret float32
 		return ret
 	}
@@ -780,7 +780,7 @@ func (o *RANSliceSubnetProfile) GetSurvivalTime() float32 {
 // GetSurvivalTimeOk returns a tuple with the SurvivalTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetSurvivalTimeOk() (*float32, bool) {
-	if o == nil || IsNil(o.SurvivalTime) {
+	if o == nil || isNil(o.SurvivalTime) {
 		return nil, false
 	}
 	return o.SurvivalTime, true
@@ -788,7 +788,7 @@ func (o *RANSliceSubnetProfile) GetSurvivalTimeOk() (*float32, bool) {
 
 // HasSurvivalTime returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasSurvivalTime() bool {
-	if o != nil && !IsNil(o.SurvivalTime) {
+	if o != nil && !isNil(o.SurvivalTime) {
 		return true
 	}
 
@@ -802,7 +802,7 @@ func (o *RANSliceSubnetProfile) SetSurvivalTime(v float32) {
 
 // GetSynchronicity returns the Synchronicity field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetSynchronicity() SynchronicityRANSubnet {
-	if o == nil || IsNil(o.Synchronicity) {
+	if o == nil || isNil(o.Synchronicity) {
 		var ret SynchronicityRANSubnet
 		return ret
 	}
@@ -812,7 +812,7 @@ func (o *RANSliceSubnetProfile) GetSynchronicity() SynchronicityRANSubnet {
 // GetSynchronicityOk returns a tuple with the Synchronicity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetSynchronicityOk() (*SynchronicityRANSubnet, bool) {
-	if o == nil || IsNil(o.Synchronicity) {
+	if o == nil || isNil(o.Synchronicity) {
 		return nil, false
 	}
 	return o.Synchronicity, true
@@ -820,7 +820,7 @@ func (o *RANSliceSubnetProfile) GetSynchronicityOk() (*SynchronicityRANSubnet, b
 
 // HasSynchronicity returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasSynchronicity() bool {
-	if o != nil && !IsNil(o.Synchronicity) {
+	if o != nil && !isNil(o.Synchronicity) {
 		return true
 	}
 
@@ -834,7 +834,7 @@ func (o *RANSliceSubnetProfile) SetSynchronicity(v SynchronicityRANSubnet) {
 
 // GetDLDeterministicComm returns the DLDeterministicComm field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetDLDeterministicComm() DeterministicComm {
-	if o == nil || IsNil(o.DLDeterministicComm) {
+	if o == nil || isNil(o.DLDeterministicComm) {
 		var ret DeterministicComm
 		return ret
 	}
@@ -844,7 +844,7 @@ func (o *RANSliceSubnetProfile) GetDLDeterministicComm() DeterministicComm {
 // GetDLDeterministicCommOk returns a tuple with the DLDeterministicComm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetDLDeterministicCommOk() (*DeterministicComm, bool) {
-	if o == nil || IsNil(o.DLDeterministicComm) {
+	if o == nil || isNil(o.DLDeterministicComm) {
 		return nil, false
 	}
 	return o.DLDeterministicComm, true
@@ -852,7 +852,7 @@ func (o *RANSliceSubnetProfile) GetDLDeterministicCommOk() (*DeterministicComm, 
 
 // HasDLDeterministicComm returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasDLDeterministicComm() bool {
-	if o != nil && !IsNil(o.DLDeterministicComm) {
+	if o != nil && !isNil(o.DLDeterministicComm) {
 		return true
 	}
 
@@ -866,7 +866,7 @@ func (o *RANSliceSubnetProfile) SetDLDeterministicComm(v DeterministicComm) {
 
 // GetULDeterministicComm returns the ULDeterministicComm field value if set, zero value otherwise.
 func (o *RANSliceSubnetProfile) GetULDeterministicComm() DeterministicComm {
-	if o == nil || IsNil(o.ULDeterministicComm) {
+	if o == nil || isNil(o.ULDeterministicComm) {
 		var ret DeterministicComm
 		return ret
 	}
@@ -876,7 +876,7 @@ func (o *RANSliceSubnetProfile) GetULDeterministicComm() DeterministicComm {
 // GetULDeterministicCommOk returns a tuple with the ULDeterministicComm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSliceSubnetProfile) GetULDeterministicCommOk() (*DeterministicComm, bool) {
-	if o == nil || IsNil(o.ULDeterministicComm) {
+	if o == nil || isNil(o.ULDeterministicComm) {
 		return nil, false
 	}
 	return o.ULDeterministicComm, true
@@ -884,7 +884,7 @@ func (o *RANSliceSubnetProfile) GetULDeterministicCommOk() (*DeterministicComm, 
 
 // HasULDeterministicComm returns a boolean if a field has been set.
 func (o *RANSliceSubnetProfile) HasULDeterministicComm() bool {
-	if o != nil && !IsNil(o.ULDeterministicComm) {
+	if o != nil && !isNil(o.ULDeterministicComm) {
 		return true
 	}
 
@@ -906,82 +906,82 @@ func (o RANSliceSubnetProfile) MarshalJSON() ([]byte, error) {
 
 func (o RANSliceSubnetProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CoverageAreaTAList) {
+	if !isNil(o.CoverageAreaTAList) {
 		toSerialize["coverageAreaTAList"] = o.CoverageAreaTAList
 	}
-	if !IsNil(o.DLLatency) {
+	if !isNil(o.DLLatency) {
 		toSerialize["dLLatency"] = o.DLLatency
 	}
-	if !IsNil(o.ULLatency) {
+	if !isNil(o.ULLatency) {
 		toSerialize["uLLatency"] = o.ULLatency
 	}
-	if !IsNil(o.UEMobilityLevel) {
+	if !isNil(o.UEMobilityLevel) {
 		toSerialize["uEMobilityLevel"] = o.UEMobilityLevel
 	}
-	if !IsNil(o.ResourceSharingLevel) {
+	if !isNil(o.ResourceSharingLevel) {
 		toSerialize["resourceSharingLevel"] = o.ResourceSharingLevel
 	}
-	if !IsNil(o.MaxNumberofUEs) {
+	if !isNil(o.MaxNumberofUEs) {
 		toSerialize["maxNumberofUEs"] = o.MaxNumberofUEs
 	}
-	if !IsNil(o.ActivityFactor) {
+	if !isNil(o.ActivityFactor) {
 		toSerialize["activityFactor"] = o.ActivityFactor
 	}
-	if !IsNil(o.DLThptPerSliceSubnet) {
+	if !isNil(o.DLThptPerSliceSubnet) {
 		toSerialize["dLThptPerSliceSubnet"] = o.DLThptPerSliceSubnet
 	}
-	if !IsNil(o.DLThptPerUE) {
+	if !isNil(o.DLThptPerUE) {
 		toSerialize["dLThptPerUE"] = o.DLThptPerUE
 	}
-	if !IsNil(o.ULThptPerSliceSubnet) {
+	if !isNil(o.ULThptPerSliceSubnet) {
 		toSerialize["uLThptPerSliceSubnet"] = o.ULThptPerSliceSubnet
 	}
-	if !IsNil(o.ULThptPerUE) {
+	if !isNil(o.ULThptPerUE) {
 		toSerialize["uLThptPerUE"] = o.ULThptPerUE
 	}
-	if !IsNil(o.UESpeed) {
+	if !isNil(o.UESpeed) {
 		toSerialize["uESpeed"] = o.UESpeed
 	}
-	if !IsNil(o.Reliability) {
+	if !isNil(o.Reliability) {
 		toSerialize["reliability"] = o.Reliability
 	}
-	if !IsNil(o.SST) {
+	if !isNil(o.SST) {
 		toSerialize["sST"] = o.SST
 	}
-	if !IsNil(o.DLMaxPktSize) {
+	if !isNil(o.DLMaxPktSize) {
 		toSerialize["dLMaxPktSize"] = o.DLMaxPktSize
 	}
-	if !IsNil(o.ULMaxPktSize) {
+	if !isNil(o.ULMaxPktSize) {
 		toSerialize["uLMaxPktSize"] = o.ULMaxPktSize
 	}
-	if !IsNil(o.NROperatingBands) {
+	if !isNil(o.NROperatingBands) {
 		toSerialize["nROperatingBands"] = o.NROperatingBands
 	}
-	if !IsNil(o.DelayTolerance) {
+	if !isNil(o.DelayTolerance) {
 		toSerialize["delayTolerance"] = o.DelayTolerance
 	}
-	if !IsNil(o.Positioning) {
+	if !isNil(o.Positioning) {
 		toSerialize["positioning"] = o.Positioning
 	}
-	if !IsNil(o.SliceSimultaneousUse) {
+	if !isNil(o.SliceSimultaneousUse) {
 		toSerialize["sliceSimultaneousUse"] = o.SliceSimultaneousUse
 	}
-	if !IsNil(o.EnergyEfficiency) {
+	if !isNil(o.EnergyEfficiency) {
 		toSerialize["energyEfficiency"] = o.EnergyEfficiency
 	}
-	if !IsNil(o.TermDensity) {
+	if !isNil(o.TermDensity) {
 		toSerialize["termDensity"] = o.TermDensity
 	}
-	if !IsNil(o.SurvivalTime) {
+	if !isNil(o.SurvivalTime) {
 		toSerialize["survivalTime"] = o.SurvivalTime
 	}
-	if !IsNil(o.Synchronicity) {
+	if !isNil(o.Synchronicity) {
 		toSerialize["synchronicity"] = o.Synchronicity
 	}
-	if !IsNil(o.DLDeterministicComm) {
+	if !isNil(o.DLDeterministicComm) {
 		toSerialize["dLDeterministicComm"] = o.DLDeterministicComm
 	}
-	if !IsNil(o.ULDeterministicComm) {
+	if !isNil(o.ULDeterministicComm) {
 		toSerialize["uLDeterministicComm"] = o.ULDeterministicComm
 	}
 	return toSerialize, nil

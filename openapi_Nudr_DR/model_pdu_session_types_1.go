@@ -42,7 +42,7 @@ func NewPduSessionTypes1WithDefaults() *PduSessionTypes1 {
 
 // GetDefaultSessionType returns the DefaultSessionType field value if set, zero value otherwise.
 func (o *PduSessionTypes1) GetDefaultSessionType() PduSessionType {
-	if o == nil || IsNil(o.DefaultSessionType) {
+	if o == nil || isNil(o.DefaultSessionType) {
 		var ret PduSessionType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduSessionTypes1) GetDefaultSessionType() PduSessionType {
 // GetDefaultSessionTypeOk returns a tuple with the DefaultSessionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTypes1) GetDefaultSessionTypeOk() (*PduSessionType, bool) {
-	if o == nil || IsNil(o.DefaultSessionType) {
+	if o == nil || isNil(o.DefaultSessionType) {
 		return nil, false
 	}
 	return o.DefaultSessionType, true
@@ -60,7 +60,7 @@ func (o *PduSessionTypes1) GetDefaultSessionTypeOk() (*PduSessionType, bool) {
 
 // HasDefaultSessionType returns a boolean if a field has been set.
 func (o *PduSessionTypes1) HasDefaultSessionType() bool {
-	if o != nil && !IsNil(o.DefaultSessionType) {
+	if o != nil && !isNil(o.DefaultSessionType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PduSessionTypes1) SetDefaultSessionType(v PduSessionType) {
 
 // GetAllowedSessionTypes returns the AllowedSessionTypes field value if set, zero value otherwise.
 func (o *PduSessionTypes1) GetAllowedSessionTypes() []PduSessionType {
-	if o == nil || IsNil(o.AllowedSessionTypes) {
+	if o == nil || isNil(o.AllowedSessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PduSessionTypes1) GetAllowedSessionTypes() []PduSessionType {
 // GetAllowedSessionTypesOk returns a tuple with the AllowedSessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionTypes1) GetAllowedSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || IsNil(o.AllowedSessionTypes) {
+	if o == nil || isNil(o.AllowedSessionTypes) {
 		return nil, false
 	}
 	return o.AllowedSessionTypes, true
@@ -92,7 +92,7 @@ func (o *PduSessionTypes1) GetAllowedSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasAllowedSessionTypes returns a boolean if a field has been set.
 func (o *PduSessionTypes1) HasAllowedSessionTypes() bool {
-	if o != nil && !IsNil(o.AllowedSessionTypes) {
+	if o != nil && !isNil(o.AllowedSessionTypes) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PduSessionTypes1) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionTypes1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DefaultSessionType) {
+	if !isNil(o.DefaultSessionType) {
 		toSerialize["defaultSessionType"] = o.DefaultSessionType
 	}
-	if !IsNil(o.AllowedSessionTypes) {
+	if !isNil(o.AllowedSessionTypes) {
 		toSerialize["allowedSessionTypes"] = o.AllowedSessionTypes
 	}
 	return toSerialize, nil

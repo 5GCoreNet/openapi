@@ -42,7 +42,7 @@ func NewMLContextWithDefaults() *MLContext {
 
 // GetInferenceEntityRef returns the InferenceEntityRef field value if set, zero value otherwise.
 func (o *MLContext) GetInferenceEntityRef() []string {
-	if o == nil || IsNil(o.InferenceEntityRef) {
+	if o == nil || isNil(o.InferenceEntityRef) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MLContext) GetInferenceEntityRef() []string {
 // GetInferenceEntityRefOk returns a tuple with the InferenceEntityRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLContext) GetInferenceEntityRefOk() ([]string, bool) {
-	if o == nil || IsNil(o.InferenceEntityRef) {
+	if o == nil || isNil(o.InferenceEntityRef) {
 		return nil, false
 	}
 	return o.InferenceEntityRef, true
@@ -60,7 +60,7 @@ func (o *MLContext) GetInferenceEntityRefOk() ([]string, bool) {
 
 // HasInferenceEntityRef returns a boolean if a field has been set.
 func (o *MLContext) HasInferenceEntityRef() bool {
-	if o != nil && !IsNil(o.InferenceEntityRef) {
+	if o != nil && !isNil(o.InferenceEntityRef) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MLContext) SetInferenceEntityRef(v []string) {
 
 // GetDataProviderRef returns the DataProviderRef field value if set, zero value otherwise.
 func (o *MLContext) GetDataProviderRef() []string {
-	if o == nil || IsNil(o.DataProviderRef) {
+	if o == nil || isNil(o.DataProviderRef) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MLContext) GetDataProviderRef() []string {
 // GetDataProviderRefOk returns a tuple with the DataProviderRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLContext) GetDataProviderRefOk() ([]string, bool) {
-	if o == nil || IsNil(o.DataProviderRef) {
+	if o == nil || isNil(o.DataProviderRef) {
 		return nil, false
 	}
 	return o.DataProviderRef, true
@@ -92,7 +92,7 @@ func (o *MLContext) GetDataProviderRefOk() ([]string, bool) {
 
 // HasDataProviderRef returns a boolean if a field has been set.
 func (o *MLContext) HasDataProviderRef() bool {
-	if o != nil && !IsNil(o.DataProviderRef) {
+	if o != nil && !isNil(o.DataProviderRef) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o MLContext) MarshalJSON() ([]byte, error) {
 
 func (o MLContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InferenceEntityRef) {
+	if !isNil(o.InferenceEntityRef) {
 		toSerialize["inferenceEntityRef"] = o.InferenceEntityRef
 	}
-	if !IsNil(o.DataProviderRef) {
+	if !isNil(o.DataProviderRef) {
 		toSerialize["dataProviderRef"] = o.DataProviderRef
 	}
 	return toSerialize, nil

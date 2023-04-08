@@ -69,7 +69,7 @@ func (o *UpSecurityInfo) SetUpSecurity(v UpSecurity) {
 
 // GetMaxIntegrityProtectedDataRateUl returns the MaxIntegrityProtectedDataRateUl field value if set, zero value otherwise.
 func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateUl() MaxIntegrityProtectedDataRate {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateUl) {
 		var ret MaxIntegrityProtectedDataRate
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateUl() MaxIntegrityProtec
 // GetMaxIntegrityProtectedDataRateUlOk returns a tuple with the MaxIntegrityProtectedDataRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateUlOk() (*MaxIntegrityProtectedDataRate, bool) {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateUl) {
 		return nil, false
 	}
 	return o.MaxIntegrityProtectedDataRateUl, true
@@ -87,7 +87,7 @@ func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateUlOk() (*MaxIntegrityPr
 
 // HasMaxIntegrityProtectedDataRateUl returns a boolean if a field has been set.
 func (o *UpSecurityInfo) HasMaxIntegrityProtectedDataRateUl() bool {
-	if o != nil && !IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if o != nil && !isNil(o.MaxIntegrityProtectedDataRateUl) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *UpSecurityInfo) SetMaxIntegrityProtectedDataRateUl(v MaxIntegrityProtec
 
 // GetMaxIntegrityProtectedDataRateDl returns the MaxIntegrityProtectedDataRateDl field value if set, zero value otherwise.
 func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateDl() MaxIntegrityProtectedDataRate {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateDl) {
 		var ret MaxIntegrityProtectedDataRate
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateDl() MaxIntegrityProtec
 // GetMaxIntegrityProtectedDataRateDlOk returns a tuple with the MaxIntegrityProtectedDataRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateDlOk() (*MaxIntegrityProtectedDataRate, bool) {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateDl) {
 		return nil, false
 	}
 	return o.MaxIntegrityProtectedDataRateDl, true
@@ -119,7 +119,7 @@ func (o *UpSecurityInfo) GetMaxIntegrityProtectedDataRateDlOk() (*MaxIntegrityPr
 
 // HasMaxIntegrityProtectedDataRateDl returns a boolean if a field has been set.
 func (o *UpSecurityInfo) HasMaxIntegrityProtectedDataRateDl() bool {
-	if o != nil && !IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if o != nil && !isNil(o.MaxIntegrityProtectedDataRateDl) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *UpSecurityInfo) SetMaxIntegrityProtectedDataRateDl(v MaxIntegrityProtec
 
 // GetSecurityResult returns the SecurityResult field value if set, zero value otherwise.
 func (o *UpSecurityInfo) GetSecurityResult() SecurityResult {
-	if o == nil || IsNil(o.SecurityResult) {
+	if o == nil || isNil(o.SecurityResult) {
 		var ret SecurityResult
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *UpSecurityInfo) GetSecurityResult() SecurityResult {
 // GetSecurityResultOk returns a tuple with the SecurityResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpSecurityInfo) GetSecurityResultOk() (*SecurityResult, bool) {
-	if o == nil || IsNil(o.SecurityResult) {
+	if o == nil || isNil(o.SecurityResult) {
 		return nil, false
 	}
 	return o.SecurityResult, true
@@ -151,7 +151,7 @@ func (o *UpSecurityInfo) GetSecurityResultOk() (*SecurityResult, bool) {
 
 // HasSecurityResult returns a boolean if a field has been set.
 func (o *UpSecurityInfo) HasSecurityResult() bool {
-	if o != nil && !IsNil(o.SecurityResult) {
+	if o != nil && !isNil(o.SecurityResult) {
 		return true
 	}
 
@@ -174,13 +174,13 @@ func (o UpSecurityInfo) MarshalJSON() ([]byte, error) {
 func (o UpSecurityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upSecurity"] = o.UpSecurity
-	if !IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if !isNil(o.MaxIntegrityProtectedDataRateUl) {
 		toSerialize["maxIntegrityProtectedDataRateUl"] = o.MaxIntegrityProtectedDataRateUl
 	}
-	if !IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if !isNil(o.MaxIntegrityProtectedDataRateDl) {
 		toSerialize["maxIntegrityProtectedDataRateDl"] = o.MaxIntegrityProtectedDataRateDl
 	}
-	if !IsNil(o.SecurityResult) {
+	if !isNil(o.SecurityResult) {
 		toSerialize["securityResult"] = o.SecurityResult
 	}
 	return toSerialize, nil

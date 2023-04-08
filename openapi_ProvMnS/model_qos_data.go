@@ -61,7 +61,7 @@ func NewQosDataWithDefaults() *QosData {
 
 // GetQosId returns the QosId field value if set, zero value otherwise.
 func (o *QosData) GetQosId() string {
-	if o == nil || IsNil(o.QosId) {
+	if o == nil || isNil(o.QosId) {
 		var ret string
 		return ret
 	}
@@ -71,7 +71,7 @@ func (o *QosData) GetQosId() string {
 // GetQosIdOk returns a tuple with the QosId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetQosIdOk() (*string, bool) {
-	if o == nil || IsNil(o.QosId) {
+	if o == nil || isNil(o.QosId) {
 		return nil, false
 	}
 	return o.QosId, true
@@ -79,7 +79,7 @@ func (o *QosData) GetQosIdOk() (*string, bool) {
 
 // HasQosId returns a boolean if a field has been set.
 func (o *QosData) HasQosId() bool {
-	if o != nil && !IsNil(o.QosId) {
+	if o != nil && !isNil(o.QosId) {
 		return true
 	}
 
@@ -93,7 +93,7 @@ func (o *QosData) SetQosId(v string) {
 
 // GetFiveQIValue returns the FiveQIValue field value if set, zero value otherwise.
 func (o *QosData) GetFiveQIValue() int32 {
-	if o == nil || IsNil(o.FiveQIValue) {
+	if o == nil || isNil(o.FiveQIValue) {
 		var ret int32
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *QosData) GetFiveQIValue() int32 {
 // GetFiveQIValueOk returns a tuple with the FiveQIValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetFiveQIValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.FiveQIValue) {
+	if o == nil || isNil(o.FiveQIValue) {
 		return nil, false
 	}
 	return o.FiveQIValue, true
@@ -111,7 +111,7 @@ func (o *QosData) GetFiveQIValueOk() (*int32, bool) {
 
 // HasFiveQIValue returns a boolean if a field has been set.
 func (o *QosData) HasFiveQIValue() bool {
-	if o != nil && !IsNil(o.FiveQIValue) {
+	if o != nil && !isNil(o.FiveQIValue) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *QosData) SetFiveQIValue(v int32) {
 
 // GetMaxbrUl returns the MaxbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxbrUl() string {
-	if o == nil || IsNil(o.MaxbrUl.Get()) {
+	if o == nil || isNil(o.MaxbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *QosData) UnsetMaxbrUl() {
 
 // GetMaxbrDl returns the MaxbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxbrDl() string {
-	if o == nil || IsNil(o.MaxbrDl.Get()) {
+	if o == nil || isNil(o.MaxbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *QosData) UnsetMaxbrDl() {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetGbrUl() string {
-	if o == nil || IsNil(o.GbrUl.Get()) {
+	if o == nil || isNil(o.GbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *QosData) UnsetGbrUl() {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetGbrDl() string {
-	if o == nil || IsNil(o.GbrDl.Get()) {
+	if o == nil || isNil(o.GbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *QosData) UnsetGbrDl() {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *QosData) GetArp() Arp {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *QosData) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -311,7 +311,7 @@ func (o *QosData) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *QosData) HasArp() bool {
-	if o != nil && !IsNil(o.Arp) {
+	if o != nil && !isNil(o.Arp) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *QosData) SetArp(v Arp) {
 
 // GetQosNotificationControl returns the QosNotificationControl field value if set, zero value otherwise.
 func (o *QosData) GetQosNotificationControl() bool {
-	if o == nil || IsNil(o.QosNotificationControl) {
+	if o == nil || isNil(o.QosNotificationControl) {
 		var ret bool
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *QosData) GetQosNotificationControl() bool {
 // GetQosNotificationControlOk returns a tuple with the QosNotificationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetQosNotificationControlOk() (*bool, bool) {
-	if o == nil || IsNil(o.QosNotificationControl) {
+	if o == nil || isNil(o.QosNotificationControl) {
 		return nil, false
 	}
 	return o.QosNotificationControl, true
@@ -343,7 +343,7 @@ func (o *QosData) GetQosNotificationControlOk() (*bool, bool) {
 
 // HasQosNotificationControl returns a boolean if a field has been set.
 func (o *QosData) HasQosNotificationControl() bool {
-	if o != nil && !IsNil(o.QosNotificationControl) {
+	if o != nil && !isNil(o.QosNotificationControl) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *QosData) SetQosNotificationControl(v bool) {
 
 // GetReflectiveQos returns the ReflectiveQos field value if set, zero value otherwise.
 func (o *QosData) GetReflectiveQos() bool {
-	if o == nil || IsNil(o.ReflectiveQos) {
+	if o == nil || isNil(o.ReflectiveQos) {
 		var ret bool
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *QosData) GetReflectiveQos() bool {
 // GetReflectiveQosOk returns a tuple with the ReflectiveQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetReflectiveQosOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReflectiveQos) {
+	if o == nil || isNil(o.ReflectiveQos) {
 		return nil, false
 	}
 	return o.ReflectiveQos, true
@@ -375,7 +375,7 @@ func (o *QosData) GetReflectiveQosOk() (*bool, bool) {
 
 // HasReflectiveQos returns a boolean if a field has been set.
 func (o *QosData) HasReflectiveQos() bool {
-	if o != nil && !IsNil(o.ReflectiveQos) {
+	if o != nil && !isNil(o.ReflectiveQos) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *QosData) SetReflectiveQos(v bool) {
 
 // GetSharingKeyDl returns the SharingKeyDl field value if set, zero value otherwise.
 func (o *QosData) GetSharingKeyDl() string {
-	if o == nil || IsNil(o.SharingKeyDl) {
+	if o == nil || isNil(o.SharingKeyDl) {
 		var ret string
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *QosData) GetSharingKeyDl() string {
 // GetSharingKeyDlOk returns a tuple with the SharingKeyDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetSharingKeyDlOk() (*string, bool) {
-	if o == nil || IsNil(o.SharingKeyDl) {
+	if o == nil || isNil(o.SharingKeyDl) {
 		return nil, false
 	}
 	return o.SharingKeyDl, true
@@ -407,7 +407,7 @@ func (o *QosData) GetSharingKeyDlOk() (*string, bool) {
 
 // HasSharingKeyDl returns a boolean if a field has been set.
 func (o *QosData) HasSharingKeyDl() bool {
-	if o != nil && !IsNil(o.SharingKeyDl) {
+	if o != nil && !isNil(o.SharingKeyDl) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *QosData) SetSharingKeyDl(v string) {
 
 // GetSharingKeyUl returns the SharingKeyUl field value if set, zero value otherwise.
 func (o *QosData) GetSharingKeyUl() string {
-	if o == nil || IsNil(o.SharingKeyUl) {
+	if o == nil || isNil(o.SharingKeyUl) {
 		var ret string
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *QosData) GetSharingKeyUl() string {
 // GetSharingKeyUlOk returns a tuple with the SharingKeyUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosData) GetSharingKeyUlOk() (*string, bool) {
-	if o == nil || IsNil(o.SharingKeyUl) {
+	if o == nil || isNil(o.SharingKeyUl) {
 		return nil, false
 	}
 	return o.SharingKeyUl, true
@@ -439,7 +439,7 @@ func (o *QosData) GetSharingKeyUlOk() (*string, bool) {
 
 // HasSharingKeyUl returns a boolean if a field has been set.
 func (o *QosData) HasSharingKeyUl() bool {
-	if o != nil && !IsNil(o.SharingKeyUl) {
+	if o != nil && !isNil(o.SharingKeyUl) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *QosData) SetSharingKeyUl(v string) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxPacketLossRateDl() int32 {
-	if o == nil || IsNil(o.MaxPacketLossRateDl.Get()) {
+	if o == nil || isNil(o.MaxPacketLossRateDl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *QosData) UnsetMaxPacketLossRateDl() {
 
 // GetMaxPacketLossRateUl returns the MaxPacketLossRateUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetMaxPacketLossRateUl() int32 {
-	if o == nil || IsNil(o.MaxPacketLossRateUl.Get()) {
+	if o == nil || isNil(o.MaxPacketLossRateUl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -537,7 +537,7 @@ func (o *QosData) UnsetMaxPacketLossRateUl() {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosData) GetExtMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.ExtMaxDataBurstVol.Get()) {
+	if o == nil || isNil(o.ExtMaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -587,10 +587,10 @@ func (o QosData) MarshalJSON() ([]byte, error) {
 
 func (o QosData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.QosId) {
+	if !isNil(o.QosId) {
 		toSerialize["qosId"] = o.QosId
 	}
-	if !IsNil(o.FiveQIValue) {
+	if !isNil(o.FiveQIValue) {
 		toSerialize["fiveQIValue"] = o.FiveQIValue
 	}
 	if o.MaxbrUl.IsSet() {
@@ -605,19 +605,19 @@ func (o QosData) ToMap() (map[string]interface{}, error) {
 	if o.GbrDl.IsSet() {
 		toSerialize["gbrDl"] = o.GbrDl.Get()
 	}
-	if !IsNil(o.Arp) {
+	if !isNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !IsNil(o.QosNotificationControl) {
+	if !isNil(o.QosNotificationControl) {
 		toSerialize["qosNotificationControl"] = o.QosNotificationControl
 	}
-	if !IsNil(o.ReflectiveQos) {
+	if !isNil(o.ReflectiveQos) {
 		toSerialize["reflectiveQos"] = o.ReflectiveQos
 	}
-	if !IsNil(o.SharingKeyDl) {
+	if !isNil(o.SharingKeyDl) {
 		toSerialize["sharingKeyDl"] = o.SharingKeyDl
 	}
-	if !IsNil(o.SharingKeyUl) {
+	if !isNil(o.SharingKeyUl) {
 		toSerialize["sharingKeyUl"] = o.SharingKeyUl
 	}
 	if o.MaxPacketLossRateDl.IsSet() {

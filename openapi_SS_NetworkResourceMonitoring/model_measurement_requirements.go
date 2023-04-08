@@ -74,7 +74,7 @@ func (o *MeasurementRequirements) SetMeasDataTypes(v []MeasurementDataType) {
 
 // GetMeasAggrGranWnd returns the MeasAggrGranWnd field value if set, zero value otherwise.
 func (o *MeasurementRequirements) GetMeasAggrGranWnd() int32 {
-	if o == nil || IsNil(o.MeasAggrGranWnd) {
+	if o == nil || isNil(o.MeasAggrGranWnd) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MeasurementRequirements) GetMeasAggrGranWnd() int32 {
 // GetMeasAggrGranWndOk returns a tuple with the MeasAggrGranWnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasurementRequirements) GetMeasAggrGranWndOk() (*int32, bool) {
-	if o == nil || IsNil(o.MeasAggrGranWnd) {
+	if o == nil || isNil(o.MeasAggrGranWnd) {
 		return nil, false
 	}
 	return o.MeasAggrGranWnd, true
@@ -92,7 +92,7 @@ func (o *MeasurementRequirements) GetMeasAggrGranWndOk() (*int32, bool) {
 
 // HasMeasAggrGranWnd returns a boolean if a field has been set.
 func (o *MeasurementRequirements) HasMeasAggrGranWnd() bool {
-	if o != nil && !IsNil(o.MeasAggrGranWnd) {
+	if o != nil && !isNil(o.MeasAggrGranWnd) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *MeasurementRequirements) SetMeasAggrGranWnd(v int32) {
 
 // GetMeasPeriod returns the MeasPeriod field value if set, zero value otherwise.
 func (o *MeasurementRequirements) GetMeasPeriod() MeasurementPeriod {
-	if o == nil || IsNil(o.MeasPeriod) {
+	if o == nil || isNil(o.MeasPeriod) {
 		var ret MeasurementPeriod
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *MeasurementRequirements) GetMeasPeriod() MeasurementPeriod {
 // GetMeasPeriodOk returns a tuple with the MeasPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasurementRequirements) GetMeasPeriodOk() (*MeasurementPeriod, bool) {
-	if o == nil || IsNil(o.MeasPeriod) {
+	if o == nil || isNil(o.MeasPeriod) {
 		return nil, false
 	}
 	return o.MeasPeriod, true
@@ -124,7 +124,7 @@ func (o *MeasurementRequirements) GetMeasPeriodOk() (*MeasurementPeriod, bool) {
 
 // HasMeasPeriod returns a boolean if a field has been set.
 func (o *MeasurementRequirements) HasMeasPeriod() bool {
-	if o != nil && !IsNil(o.MeasPeriod) {
+	if o != nil && !isNil(o.MeasPeriod) {
 		return true
 	}
 
@@ -147,10 +147,10 @@ func (o MeasurementRequirements) MarshalJSON() ([]byte, error) {
 func (o MeasurementRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["measDataTypes"] = o.MeasDataTypes
-	if !IsNil(o.MeasAggrGranWnd) {
+	if !isNil(o.MeasAggrGranWnd) {
 		toSerialize["measAggrGranWnd"] = o.MeasAggrGranWnd
 	}
-	if !IsNil(o.MeasPeriod) {
+	if !isNil(o.MeasPeriod) {
 		toSerialize["measPeriod"] = o.MeasPeriod
 	}
 	return toSerialize, nil

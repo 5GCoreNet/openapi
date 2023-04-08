@@ -95,7 +95,7 @@ func (o *CollectiveBehaviourFilter) SetValue(v string) {
 
 // GetListOfUeInd returns the ListOfUeInd field value if set, zero value otherwise.
 func (o *CollectiveBehaviourFilter) GetListOfUeInd() bool {
-	if o == nil || IsNil(o.ListOfUeInd) {
+	if o == nil || isNil(o.ListOfUeInd) {
 		var ret bool
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *CollectiveBehaviourFilter) GetListOfUeInd() bool {
 // GetListOfUeIndOk returns a tuple with the ListOfUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectiveBehaviourFilter) GetListOfUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ListOfUeInd) {
+	if o == nil || isNil(o.ListOfUeInd) {
 		return nil, false
 	}
 	return o.ListOfUeInd, true
@@ -113,7 +113,7 @@ func (o *CollectiveBehaviourFilter) GetListOfUeIndOk() (*bool, bool) {
 
 // HasListOfUeInd returns a boolean if a field has been set.
 func (o *CollectiveBehaviourFilter) HasListOfUeInd() bool {
-	if o != nil && !IsNil(o.ListOfUeInd) {
+	if o != nil && !isNil(o.ListOfUeInd) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o CollectiveBehaviourFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["type"] = o.Type
 	toSerialize["value"] = o.Value
-	if !IsNil(o.ListOfUeInd) {
+	if !isNil(o.ListOfUeInd) {
 		toSerialize["listOfUeInd"] = o.ListOfUeInd
 	}
 	return toSerialize, nil

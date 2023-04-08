@@ -42,7 +42,7 @@ func NewIpv6PrefixRangeWithDefaults() *Ipv6PrefixRange {
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *Ipv6PrefixRange) GetStart() Ipv6Prefix {
-	if o == nil || IsNil(o.Start) {
+	if o == nil || isNil(o.Start) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Ipv6PrefixRange) GetStart() Ipv6Prefix {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ipv6PrefixRange) GetStartOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.Start) {
+	if o == nil || isNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -60,7 +60,7 @@ func (o *Ipv6PrefixRange) GetStartOk() (*Ipv6Prefix, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *Ipv6PrefixRange) HasStart() bool {
-	if o != nil && !IsNil(o.Start) {
+	if o != nil && !isNil(o.Start) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Ipv6PrefixRange) SetStart(v Ipv6Prefix) {
 
 // GetEnd returns the End field value if set, zero value otherwise.
 func (o *Ipv6PrefixRange) GetEnd() Ipv6Prefix {
-	if o == nil || IsNil(o.End) {
+	if o == nil || isNil(o.End) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Ipv6PrefixRange) GetEnd() Ipv6Prefix {
 // GetEndOk returns a tuple with the End field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ipv6PrefixRange) GetEndOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.End) {
+	if o == nil || isNil(o.End) {
 		return nil, false
 	}
 	return o.End, true
@@ -92,7 +92,7 @@ func (o *Ipv6PrefixRange) GetEndOk() (*Ipv6Prefix, bool) {
 
 // HasEnd returns a boolean if a field has been set.
 func (o *Ipv6PrefixRange) HasEnd() bool {
-	if o != nil && !IsNil(o.End) {
+	if o != nil && !isNil(o.End) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o Ipv6PrefixRange) MarshalJSON() ([]byte, error) {
 
 func (o Ipv6PrefixRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Start) {
+	if !isNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !IsNil(o.End) {
+	if !isNil(o.End) {
 		toSerialize["end"] = o.End
 	}
 	return toSerialize, nil

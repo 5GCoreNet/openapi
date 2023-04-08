@@ -96,7 +96,7 @@ func (o *UeContextTransferReqData) SetAccessType(v AccessType) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *UeContextTransferReqData) GetPlmnId() PlmnIdNid {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UeContextTransferReqData) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferReqData) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -114,7 +114,7 @@ func (o *UeContextTransferReqData) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *UeContextTransferReqData) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *UeContextTransferReqData) SetPlmnId(v PlmnIdNid) {
 
 // GetRegRequest returns the RegRequest field value if set, zero value otherwise.
 func (o *UeContextTransferReqData) GetRegRequest() N1MessageContainer {
-	if o == nil || IsNil(o.RegRequest) {
+	if o == nil || isNil(o.RegRequest) {
 		var ret N1MessageContainer
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *UeContextTransferReqData) GetRegRequest() N1MessageContainer {
 // GetRegRequestOk returns a tuple with the RegRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferReqData) GetRegRequestOk() (*N1MessageContainer, bool) {
-	if o == nil || IsNil(o.RegRequest) {
+	if o == nil || isNil(o.RegRequest) {
 		return nil, false
 	}
 	return o.RegRequest, true
@@ -146,7 +146,7 @@ func (o *UeContextTransferReqData) GetRegRequestOk() (*N1MessageContainer, bool)
 
 // HasRegRequest returns a boolean if a field has been set.
 func (o *UeContextTransferReqData) HasRegRequest() bool {
-	if o != nil && !IsNil(o.RegRequest) {
+	if o != nil && !isNil(o.RegRequest) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *UeContextTransferReqData) SetRegRequest(v N1MessageContainer) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextTransferReqData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *UeContextTransferReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -178,7 +178,7 @@ func (o *UeContextTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextTransferReqData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -202,13 +202,13 @@ func (o UeContextTransferReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reason"] = o.Reason
 	toSerialize["accessType"] = o.AccessType
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.RegRequest) {
+	if !isNil(o.RegRequest) {
 		toSerialize["regRequest"] = o.RegRequest
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

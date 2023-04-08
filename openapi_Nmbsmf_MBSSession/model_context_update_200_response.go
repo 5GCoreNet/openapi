@@ -21,7 +21,7 @@ var _ MappedNullable = &ContextUpdate200Response{}
 // ContextUpdate200Response struct for ContextUpdate200Response
 type ContextUpdate200Response struct {
 	JsonData *ContextUpdateRspData `json:"jsonData,omitempty"`
-	BinaryDataN2Information **os.File `json:"binaryDataN2Information,omitempty"`
+	BinaryDataN2Information *os.File `json:"binaryDataN2Information,omitempty"`
 }
 
 // NewContextUpdate200Response instantiates a new ContextUpdate200Response object
@@ -43,7 +43,7 @@ func NewContextUpdate200ResponseWithDefaults() *ContextUpdate200Response {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *ContextUpdate200Response) GetJsonData() ContextUpdateRspData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret ContextUpdateRspData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ContextUpdate200Response) GetJsonData() ContextUpdateRspData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdate200Response) GetJsonDataOk() (*ContextUpdateRspData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *ContextUpdate200Response) GetJsonDataOk() (*ContextUpdateRspData, bool)
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *ContextUpdate200Response) SetJsonData(v ContextUpdateRspData) {
 }
 
 // GetBinaryDataN2Information returns the BinaryDataN2Information field value if set, zero value otherwise.
-func (o *ContextUpdate200Response) GetBinaryDataN2Information() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information) {
-		var ret *os.File
+func (o *ContextUpdate200Response) GetBinaryDataN2Information() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information
@@ -84,8 +84,8 @@ func (o *ContextUpdate200Response) GetBinaryDataN2Information() *os.File {
 
 // GetBinaryDataN2InformationOk returns a tuple with the BinaryDataN2Information field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ContextUpdate200Response) GetBinaryDataN2InformationOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information) {
+func (o *ContextUpdate200Response) GetBinaryDataN2InformationOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information, true
@@ -93,15 +93,15 @@ func (o *ContextUpdate200Response) GetBinaryDataN2InformationOk() (**os.File, bo
 
 // HasBinaryDataN2Information returns a boolean if a field has been set.
 func (o *ContextUpdate200Response) HasBinaryDataN2Information() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information) {
+	if o != nil && !isNil(o.BinaryDataN2Information) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information gets a reference to the given *os.File and assigns it to the BinaryDataN2Information field.
-func (o *ContextUpdate200Response) SetBinaryDataN2Information(v *os.File) {
+// SetBinaryDataN2Information gets a reference to the given os.File and assigns it to the BinaryDataN2Information field.
+func (o *ContextUpdate200Response) SetBinaryDataN2Information(v os.File) {
 	o.BinaryDataN2Information = &v
 }
 
@@ -115,10 +115,10 @@ func (o ContextUpdate200Response) MarshalJSON() ([]byte, error) {
 
 func (o ContextUpdate200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataN2Information) {
+	if !isNil(o.BinaryDataN2Information) {
 		toSerialize["binaryDataN2Information"] = o.BinaryDataN2Information
 	}
 	return toSerialize, nil

@@ -102,7 +102,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetApplicationServerEndpointAddress(v 
 
 // GetSessionIdentifier returns the SessionIdentifier field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifier() string {
-	if o == nil || IsNil(o.SessionIdentifier) {
+	if o == nil || isNil(o.SessionIdentifier) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifier() string {
 // GetSessionIdentifierOk returns a tuple with the SessionIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.SessionIdentifier) {
+	if o == nil || isNil(o.SessionIdentifier) {
 		return nil, false
 	}
 	return o.SessionIdentifier, true
@@ -120,7 +120,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetSessionIdentifierOk() (*string, boo
 
 // HasSessionIdentifier returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOf) HasSessionIdentifier() bool {
-	if o != nil && !IsNil(o.SessionIdentifier) {
+	if o != nil && !isNil(o.SessionIdentifier) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetRequestMessage(v MediaStreamingAcce
 
 // GetCacheStatus returns the CacheStatus field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOf) GetCacheStatus() CacheStatus {
-	if o == nil || IsNil(o.CacheStatus) {
+	if o == nil || isNil(o.CacheStatus) {
 		var ret CacheStatus
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetCacheStatus() CacheStatus {
 // GetCacheStatusOk returns a tuple with the CacheStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOf) GetCacheStatusOk() (*CacheStatus, bool) {
-	if o == nil || IsNil(o.CacheStatus) {
+	if o == nil || isNil(o.CacheStatus) {
 		return nil, false
 	}
 	return o.CacheStatus, true
@@ -176,7 +176,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetCacheStatusOk() (*CacheStatus, bool
 
 // HasCacheStatus returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOf) HasCacheStatus() bool {
-	if o != nil && !IsNil(o.CacheStatus) {
+	if o != nil && !isNil(o.CacheStatus) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *MediaStreamingAccessRecordAllOf) SetProcessingLatency(v float32) {
 
 // GetConnectionMetrics returns the ConnectionMetrics field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetrics() MediaStreamingAccessRecordAllOfConnectionMetrics {
-	if o == nil || IsNil(o.ConnectionMetrics) {
+	if o == nil || isNil(o.ConnectionMetrics) {
 		var ret MediaStreamingAccessRecordAllOfConnectionMetrics
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetrics() MediaStreamingA
 // GetConnectionMetricsOk returns a tuple with the ConnectionMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetricsOk() (*MediaStreamingAccessRecordAllOfConnectionMetrics, bool) {
-	if o == nil || IsNil(o.ConnectionMetrics) {
+	if o == nil || isNil(o.ConnectionMetrics) {
 		return nil, false
 	}
 	return o.ConnectionMetrics, true
@@ -256,7 +256,7 @@ func (o *MediaStreamingAccessRecordAllOf) GetConnectionMetricsOk() (*MediaStream
 
 // HasConnectionMetrics returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOf) HasConnectionMetrics() bool {
-	if o != nil && !IsNil(o.ConnectionMetrics) {
+	if o != nil && !isNil(o.ConnectionMetrics) {
 		return true
 	}
 
@@ -280,16 +280,16 @@ func (o MediaStreamingAccessRecordAllOf) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	toSerialize["mediaStreamHandlerEndpointAddress"] = o.MediaStreamHandlerEndpointAddress
 	toSerialize["applicationServerEndpointAddress"] = o.ApplicationServerEndpointAddress
-	if !IsNil(o.SessionIdentifier) {
+	if !isNil(o.SessionIdentifier) {
 		toSerialize["sessionIdentifier"] = o.SessionIdentifier
 	}
 	toSerialize["requestMessage"] = o.RequestMessage
-	if !IsNil(o.CacheStatus) {
+	if !isNil(o.CacheStatus) {
 		toSerialize["cacheStatus"] = o.CacheStatus
 	}
 	toSerialize["responseMessage"] = o.ResponseMessage
 	toSerialize["processingLatency"] = o.ProcessingLatency
-	if !IsNil(o.ConnectionMetrics) {
+	if !isNil(o.ConnectionMetrics) {
 		toSerialize["connectionMetrics"] = o.ConnectionMetrics
 	}
 	return toSerialize, nil

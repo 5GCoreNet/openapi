@@ -42,7 +42,7 @@ func NewPacketErrorRateWithDefaults() *PacketErrorRate {
 
 // GetScalar returns the Scalar field value if set, zero value otherwise.
 func (o *PacketErrorRate) GetScalar() int32 {
-	if o == nil || IsNil(o.Scalar) {
+	if o == nil || isNil(o.Scalar) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PacketErrorRate) GetScalar() int32 {
 // GetScalarOk returns a tuple with the Scalar field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PacketErrorRate) GetScalarOk() (*int32, bool) {
-	if o == nil || IsNil(o.Scalar) {
+	if o == nil || isNil(o.Scalar) {
 		return nil, false
 	}
 	return o.Scalar, true
@@ -60,7 +60,7 @@ func (o *PacketErrorRate) GetScalarOk() (*int32, bool) {
 
 // HasScalar returns a boolean if a field has been set.
 func (o *PacketErrorRate) HasScalar() bool {
-	if o != nil && !IsNil(o.Scalar) {
+	if o != nil && !isNil(o.Scalar) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PacketErrorRate) SetScalar(v int32) {
 
 // GetExponent returns the Exponent field value if set, zero value otherwise.
 func (o *PacketErrorRate) GetExponent() int32 {
-	if o == nil || IsNil(o.Exponent) {
+	if o == nil || isNil(o.Exponent) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PacketErrorRate) GetExponent() int32 {
 // GetExponentOk returns a tuple with the Exponent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PacketErrorRate) GetExponentOk() (*int32, bool) {
-	if o == nil || IsNil(o.Exponent) {
+	if o == nil || isNil(o.Exponent) {
 		return nil, false
 	}
 	return o.Exponent, true
@@ -92,7 +92,7 @@ func (o *PacketErrorRate) GetExponentOk() (*int32, bool) {
 
 // HasExponent returns a boolean if a field has been set.
 func (o *PacketErrorRate) HasExponent() bool {
-	if o != nil && !IsNil(o.Exponent) {
+	if o != nil && !isNil(o.Exponent) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PacketErrorRate) MarshalJSON() ([]byte, error) {
 
 func (o PacketErrorRate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Scalar) {
+	if !isNil(o.Scalar) {
 		toSerialize["scalar"] = o.Scalar
 	}
-	if !IsNil(o.Exponent) {
+	if !isNil(o.Exponent) {
 		toSerialize["exponent"] = o.Exponent
 	}
 	return toSerialize, nil

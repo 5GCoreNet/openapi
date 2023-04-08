@@ -73,7 +73,7 @@ func (o *ApiInvokerPolicy) SetApiInvokerId(v string) {
 
 // GetAllowedTotalInvocations returns the AllowedTotalInvocations field value if set, zero value otherwise.
 func (o *ApiInvokerPolicy) GetAllowedTotalInvocations() int32 {
-	if o == nil || IsNil(o.AllowedTotalInvocations) {
+	if o == nil || isNil(o.AllowedTotalInvocations) {
 		var ret int32
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ApiInvokerPolicy) GetAllowedTotalInvocations() int32 {
 // GetAllowedTotalInvocationsOk returns a tuple with the AllowedTotalInvocations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiInvokerPolicy) GetAllowedTotalInvocationsOk() (*int32, bool) {
-	if o == nil || IsNil(o.AllowedTotalInvocations) {
+	if o == nil || isNil(o.AllowedTotalInvocations) {
 		return nil, false
 	}
 	return o.AllowedTotalInvocations, true
@@ -91,7 +91,7 @@ func (o *ApiInvokerPolicy) GetAllowedTotalInvocationsOk() (*int32, bool) {
 
 // HasAllowedTotalInvocations returns a boolean if a field has been set.
 func (o *ApiInvokerPolicy) HasAllowedTotalInvocations() bool {
-	if o != nil && !IsNil(o.AllowedTotalInvocations) {
+	if o != nil && !isNil(o.AllowedTotalInvocations) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ApiInvokerPolicy) SetAllowedTotalInvocations(v int32) {
 
 // GetAllowedInvocationsPerSecond returns the AllowedInvocationsPerSecond field value if set, zero value otherwise.
 func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecond() int32 {
-	if o == nil || IsNil(o.AllowedInvocationsPerSecond) {
+	if o == nil || isNil(o.AllowedInvocationsPerSecond) {
 		var ret int32
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecond() int32 {
 // GetAllowedInvocationsPerSecondOk returns a tuple with the AllowedInvocationsPerSecond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecondOk() (*int32, bool) {
-	if o == nil || IsNil(o.AllowedInvocationsPerSecond) {
+	if o == nil || isNil(o.AllowedInvocationsPerSecond) {
 		return nil, false
 	}
 	return o.AllowedInvocationsPerSecond, true
@@ -123,7 +123,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationsPerSecondOk() (*int32, bool) {
 
 // HasAllowedInvocationsPerSecond returns a boolean if a field has been set.
 func (o *ApiInvokerPolicy) HasAllowedInvocationsPerSecond() bool {
-	if o != nil && !IsNil(o.AllowedInvocationsPerSecond) {
+	if o != nil && !isNil(o.AllowedInvocationsPerSecond) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *ApiInvokerPolicy) SetAllowedInvocationsPerSecond(v int32) {
 
 // GetAllowedInvocationTimeRangeList returns the AllowedInvocationTimeRangeList field value if set, zero value otherwise.
 func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeList() []TimeRangeList {
-	if o == nil || IsNil(o.AllowedInvocationTimeRangeList) {
+	if o == nil || isNil(o.AllowedInvocationTimeRangeList) {
 		var ret []TimeRangeList
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeList() []TimeRangeList {
 // GetAllowedInvocationTimeRangeListOk returns a tuple with the AllowedInvocationTimeRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeListOk() ([]TimeRangeList, bool) {
-	if o == nil || IsNil(o.AllowedInvocationTimeRangeList) {
+	if o == nil || isNil(o.AllowedInvocationTimeRangeList) {
 		return nil, false
 	}
 	return o.AllowedInvocationTimeRangeList, true
@@ -155,7 +155,7 @@ func (o *ApiInvokerPolicy) GetAllowedInvocationTimeRangeListOk() ([]TimeRangeLis
 
 // HasAllowedInvocationTimeRangeList returns a boolean if a field has been set.
 func (o *ApiInvokerPolicy) HasAllowedInvocationTimeRangeList() bool {
-	if o != nil && !IsNil(o.AllowedInvocationTimeRangeList) {
+	if o != nil && !isNil(o.AllowedInvocationTimeRangeList) {
 		return true
 	}
 
@@ -178,13 +178,13 @@ func (o ApiInvokerPolicy) MarshalJSON() ([]byte, error) {
 func (o ApiInvokerPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiInvokerId"] = o.ApiInvokerId
-	if !IsNil(o.AllowedTotalInvocations) {
+	if !isNil(o.AllowedTotalInvocations) {
 		toSerialize["allowedTotalInvocations"] = o.AllowedTotalInvocations
 	}
-	if !IsNil(o.AllowedInvocationsPerSecond) {
+	if !isNil(o.AllowedInvocationsPerSecond) {
 		toSerialize["allowedInvocationsPerSecond"] = o.AllowedInvocationsPerSecond
 	}
-	if !IsNil(o.AllowedInvocationTimeRangeList) {
+	if !isNil(o.AllowedInvocationTimeRangeList) {
 		toSerialize["allowedInvocationTimeRangeList"] = o.AllowedInvocationTimeRangeList
 	}
 	return toSerialize, nil

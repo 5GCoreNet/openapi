@@ -42,7 +42,7 @@ func NewServingLocationWithDefaults() *ServingLocation {
 
 // GetGeographicalLocation returns the GeographicalLocation field value if set, zero value otherwise.
 func (o *ServingLocation) GetGeographicalLocation() GeoLoc {
-	if o == nil || IsNil(o.GeographicalLocation) {
+	if o == nil || isNil(o.GeographicalLocation) {
 		var ret GeoLoc
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ServingLocation) GetGeographicalLocation() GeoLoc {
 // GetGeographicalLocationOk returns a tuple with the GeographicalLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingLocation) GetGeographicalLocationOk() (*GeoLoc, bool) {
-	if o == nil || IsNil(o.GeographicalLocation) {
+	if o == nil || isNil(o.GeographicalLocation) {
 		return nil, false
 	}
 	return o.GeographicalLocation, true
@@ -60,7 +60,7 @@ func (o *ServingLocation) GetGeographicalLocationOk() (*GeoLoc, bool) {
 
 // HasGeographicalLocation returns a boolean if a field has been set.
 func (o *ServingLocation) HasGeographicalLocation() bool {
-	if o != nil && !IsNil(o.GeographicalLocation) {
+	if o != nil && !isNil(o.GeographicalLocation) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ServingLocation) SetGeographicalLocation(v GeoLoc) {
 
 // GetTopologicalLocation returns the TopologicalLocation field value if set, zero value otherwise.
 func (o *ServingLocation) GetTopologicalLocation() TopologicalServiceArea {
-	if o == nil || IsNil(o.TopologicalLocation) {
+	if o == nil || isNil(o.TopologicalLocation) {
 		var ret TopologicalServiceArea
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ServingLocation) GetTopologicalLocation() TopologicalServiceArea {
 // GetTopologicalLocationOk returns a tuple with the TopologicalLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingLocation) GetTopologicalLocationOk() (*TopologicalServiceArea, bool) {
-	if o == nil || IsNil(o.TopologicalLocation) {
+	if o == nil || isNil(o.TopologicalLocation) {
 		return nil, false
 	}
 	return o.TopologicalLocation, true
@@ -92,7 +92,7 @@ func (o *ServingLocation) GetTopologicalLocationOk() (*TopologicalServiceArea, b
 
 // HasTopologicalLocation returns a boolean if a field has been set.
 func (o *ServingLocation) HasTopologicalLocation() bool {
-	if o != nil && !IsNil(o.TopologicalLocation) {
+	if o != nil && !isNil(o.TopologicalLocation) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ServingLocation) MarshalJSON() ([]byte, error) {
 
 func (o ServingLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GeographicalLocation) {
+	if !isNil(o.GeographicalLocation) {
 		toSerialize["geographicalLocation"] = o.GeographicalLocation
 	}
-	if !IsNil(o.TopologicalLocation) {
+	if !isNil(o.TopologicalLocation) {
 		toSerialize["topologicalLocation"] = o.TopologicalLocation
 	}
 	return toSerialize, nil

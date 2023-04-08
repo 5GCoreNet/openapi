@@ -59,7 +59,7 @@ func NewSliceInfoForRegistrationWithDefaults() *SliceInfoForRegistration {
 
 // GetSubscribedNssai returns the SubscribedNssai field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetSubscribedNssai() []SubscribedSnssai {
-	if o == nil || IsNil(o.SubscribedNssai) {
+	if o == nil || isNil(o.SubscribedNssai) {
 		var ret []SubscribedSnssai
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *SliceInfoForRegistration) GetSubscribedNssai() []SubscribedSnssai {
 // GetSubscribedNssaiOk returns a tuple with the SubscribedNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetSubscribedNssaiOk() ([]SubscribedSnssai, bool) {
-	if o == nil || IsNil(o.SubscribedNssai) {
+	if o == nil || isNil(o.SubscribedNssai) {
 		return nil, false
 	}
 	return o.SubscribedNssai, true
@@ -77,7 +77,7 @@ func (o *SliceInfoForRegistration) GetSubscribedNssaiOk() ([]SubscribedSnssai, b
 
 // HasSubscribedNssai returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasSubscribedNssai() bool {
-	if o != nil && !IsNil(o.SubscribedNssai) {
+	if o != nil && !isNil(o.SubscribedNssai) {
 		return true
 	}
 
@@ -91,7 +91,7 @@ func (o *SliceInfoForRegistration) SetSubscribedNssai(v []SubscribedSnssai) {
 
 // GetAllowedNssaiCurrentAccess returns the AllowedNssaiCurrentAccess field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetAllowedNssaiCurrentAccess() AllowedNssai {
-	if o == nil || IsNil(o.AllowedNssaiCurrentAccess) {
+	if o == nil || isNil(o.AllowedNssaiCurrentAccess) {
 		var ret AllowedNssai
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *SliceInfoForRegistration) GetAllowedNssaiCurrentAccess() AllowedNssai {
 // GetAllowedNssaiCurrentAccessOk returns a tuple with the AllowedNssaiCurrentAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetAllowedNssaiCurrentAccessOk() (*AllowedNssai, bool) {
-	if o == nil || IsNil(o.AllowedNssaiCurrentAccess) {
+	if o == nil || isNil(o.AllowedNssaiCurrentAccess) {
 		return nil, false
 	}
 	return o.AllowedNssaiCurrentAccess, true
@@ -109,7 +109,7 @@ func (o *SliceInfoForRegistration) GetAllowedNssaiCurrentAccessOk() (*AllowedNss
 
 // HasAllowedNssaiCurrentAccess returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasAllowedNssaiCurrentAccess() bool {
-	if o != nil && !IsNil(o.AllowedNssaiCurrentAccess) {
+	if o != nil && !isNil(o.AllowedNssaiCurrentAccess) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *SliceInfoForRegistration) SetAllowedNssaiCurrentAccess(v AllowedNssai) 
 
 // GetAllowedNssaiOtherAccess returns the AllowedNssaiOtherAccess field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetAllowedNssaiOtherAccess() AllowedNssai {
-	if o == nil || IsNil(o.AllowedNssaiOtherAccess) {
+	if o == nil || isNil(o.AllowedNssaiOtherAccess) {
 		var ret AllowedNssai
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *SliceInfoForRegistration) GetAllowedNssaiOtherAccess() AllowedNssai {
 // GetAllowedNssaiOtherAccessOk returns a tuple with the AllowedNssaiOtherAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetAllowedNssaiOtherAccessOk() (*AllowedNssai, bool) {
-	if o == nil || IsNil(o.AllowedNssaiOtherAccess) {
+	if o == nil || isNil(o.AllowedNssaiOtherAccess) {
 		return nil, false
 	}
 	return o.AllowedNssaiOtherAccess, true
@@ -141,7 +141,7 @@ func (o *SliceInfoForRegistration) GetAllowedNssaiOtherAccessOk() (*AllowedNssai
 
 // HasAllowedNssaiOtherAccess returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasAllowedNssaiOtherAccess() bool {
-	if o != nil && !IsNil(o.AllowedNssaiOtherAccess) {
+	if o != nil && !isNil(o.AllowedNssaiOtherAccess) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *SliceInfoForRegistration) SetAllowedNssaiOtherAccess(v AllowedNssai) {
 
 // GetSNssaiForMapping returns the SNssaiForMapping field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetSNssaiForMapping() []Snssai {
-	if o == nil || IsNil(o.SNssaiForMapping) {
+	if o == nil || isNil(o.SNssaiForMapping) {
 		var ret []Snssai
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *SliceInfoForRegistration) GetSNssaiForMapping() []Snssai {
 // GetSNssaiForMappingOk returns a tuple with the SNssaiForMapping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetSNssaiForMappingOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.SNssaiForMapping) {
+	if o == nil || isNil(o.SNssaiForMapping) {
 		return nil, false
 	}
 	return o.SNssaiForMapping, true
@@ -173,7 +173,7 @@ func (o *SliceInfoForRegistration) GetSNssaiForMappingOk() ([]Snssai, bool) {
 
 // HasSNssaiForMapping returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasSNssaiForMapping() bool {
-	if o != nil && !IsNil(o.SNssaiForMapping) {
+	if o != nil && !isNil(o.SNssaiForMapping) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *SliceInfoForRegistration) SetSNssaiForMapping(v []Snssai) {
 
 // GetRequestedNssai returns the RequestedNssai field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetRequestedNssai() []Snssai {
-	if o == nil || IsNil(o.RequestedNssai) {
+	if o == nil || isNil(o.RequestedNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *SliceInfoForRegistration) GetRequestedNssai() []Snssai {
 // GetRequestedNssaiOk returns a tuple with the RequestedNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetRequestedNssaiOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.RequestedNssai) {
+	if o == nil || isNil(o.RequestedNssai) {
 		return nil, false
 	}
 	return o.RequestedNssai, true
@@ -205,7 +205,7 @@ func (o *SliceInfoForRegistration) GetRequestedNssaiOk() ([]Snssai, bool) {
 
 // HasRequestedNssai returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasRequestedNssai() bool {
-	if o != nil && !IsNil(o.RequestedNssai) {
+	if o != nil && !isNil(o.RequestedNssai) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *SliceInfoForRegistration) SetRequestedNssai(v []Snssai) {
 
 // GetDefaultConfiguredSnssaiInd returns the DefaultConfiguredSnssaiInd field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetDefaultConfiguredSnssaiInd() bool {
-	if o == nil || IsNil(o.DefaultConfiguredSnssaiInd) {
+	if o == nil || isNil(o.DefaultConfiguredSnssaiInd) {
 		var ret bool
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *SliceInfoForRegistration) GetDefaultConfiguredSnssaiInd() bool {
 // GetDefaultConfiguredSnssaiIndOk returns a tuple with the DefaultConfiguredSnssaiInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetDefaultConfiguredSnssaiIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DefaultConfiguredSnssaiInd) {
+	if o == nil || isNil(o.DefaultConfiguredSnssaiInd) {
 		return nil, false
 	}
 	return o.DefaultConfiguredSnssaiInd, true
@@ -237,7 +237,7 @@ func (o *SliceInfoForRegistration) GetDefaultConfiguredSnssaiIndOk() (*bool, boo
 
 // HasDefaultConfiguredSnssaiInd returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasDefaultConfiguredSnssaiInd() bool {
-	if o != nil && !IsNil(o.DefaultConfiguredSnssaiInd) {
+	if o != nil && !isNil(o.DefaultConfiguredSnssaiInd) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *SliceInfoForRegistration) SetDefaultConfiguredSnssaiInd(v bool) {
 
 // GetMappingOfNssai returns the MappingOfNssai field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetMappingOfNssai() []MappingOfSnssai {
-	if o == nil || IsNil(o.MappingOfNssai) {
+	if o == nil || isNil(o.MappingOfNssai) {
 		var ret []MappingOfSnssai
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *SliceInfoForRegistration) GetMappingOfNssai() []MappingOfSnssai {
 // GetMappingOfNssaiOk returns a tuple with the MappingOfNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetMappingOfNssaiOk() ([]MappingOfSnssai, bool) {
-	if o == nil || IsNil(o.MappingOfNssai) {
+	if o == nil || isNil(o.MappingOfNssai) {
 		return nil, false
 	}
 	return o.MappingOfNssai, true
@@ -269,7 +269,7 @@ func (o *SliceInfoForRegistration) GetMappingOfNssaiOk() ([]MappingOfSnssai, boo
 
 // HasMappingOfNssai returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasMappingOfNssai() bool {
-	if o != nil && !IsNil(o.MappingOfNssai) {
+	if o != nil && !isNil(o.MappingOfNssai) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *SliceInfoForRegistration) SetMappingOfNssai(v []MappingOfSnssai) {
 
 // GetRequestMapping returns the RequestMapping field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetRequestMapping() bool {
-	if o == nil || IsNil(o.RequestMapping) {
+	if o == nil || isNil(o.RequestMapping) {
 		var ret bool
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *SliceInfoForRegistration) GetRequestMapping() bool {
 // GetRequestMappingOk returns a tuple with the RequestMapping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetRequestMappingOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestMapping) {
+	if o == nil || isNil(o.RequestMapping) {
 		return nil, false
 	}
 	return o.RequestMapping, true
@@ -301,7 +301,7 @@ func (o *SliceInfoForRegistration) GetRequestMappingOk() (*bool, bool) {
 
 // HasRequestMapping returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasRequestMapping() bool {
-	if o != nil && !IsNil(o.RequestMapping) {
+	if o != nil && !isNil(o.RequestMapping) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *SliceInfoForRegistration) SetRequestMapping(v bool) {
 
 // GetUeSupNssrgInd returns the UeSupNssrgInd field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetUeSupNssrgInd() bool {
-	if o == nil || IsNil(o.UeSupNssrgInd) {
+	if o == nil || isNil(o.UeSupNssrgInd) {
 		var ret bool
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *SliceInfoForRegistration) GetUeSupNssrgInd() bool {
 // GetUeSupNssrgIndOk returns a tuple with the UeSupNssrgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetUeSupNssrgIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UeSupNssrgInd) {
+	if o == nil || isNil(o.UeSupNssrgInd) {
 		return nil, false
 	}
 	return o.UeSupNssrgInd, true
@@ -333,7 +333,7 @@ func (o *SliceInfoForRegistration) GetUeSupNssrgIndOk() (*bool, bool) {
 
 // HasUeSupNssrgInd returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasUeSupNssrgInd() bool {
-	if o != nil && !IsNil(o.UeSupNssrgInd) {
+	if o != nil && !isNil(o.UeSupNssrgInd) {
 		return true
 	}
 
@@ -347,7 +347,7 @@ func (o *SliceInfoForRegistration) SetUeSupNssrgInd(v bool) {
 
 // GetSuppressNssrgInd returns the SuppressNssrgInd field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetSuppressNssrgInd() bool {
-	if o == nil || IsNil(o.SuppressNssrgInd) {
+	if o == nil || isNil(o.SuppressNssrgInd) {
 		var ret bool
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *SliceInfoForRegistration) GetSuppressNssrgInd() bool {
 // GetSuppressNssrgIndOk returns a tuple with the SuppressNssrgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetSuppressNssrgIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SuppressNssrgInd) {
+	if o == nil || isNil(o.SuppressNssrgInd) {
 		return nil, false
 	}
 	return o.SuppressNssrgInd, true
@@ -365,7 +365,7 @@ func (o *SliceInfoForRegistration) GetSuppressNssrgIndOk() (*bool, bool) {
 
 // HasSuppressNssrgInd returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasSuppressNssrgInd() bool {
-	if o != nil && !IsNil(o.SuppressNssrgInd) {
+	if o != nil && !isNil(o.SuppressNssrgInd) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *SliceInfoForRegistration) SetSuppressNssrgInd(v bool) {
 
 // GetNsagSupported returns the NsagSupported field value if set, zero value otherwise.
 func (o *SliceInfoForRegistration) GetNsagSupported() bool {
-	if o == nil || IsNil(o.NsagSupported) {
+	if o == nil || isNil(o.NsagSupported) {
 		var ret bool
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *SliceInfoForRegistration) GetNsagSupported() bool {
 // GetNsagSupportedOk returns a tuple with the NsagSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForRegistration) GetNsagSupportedOk() (*bool, bool) {
-	if o == nil || IsNil(o.NsagSupported) {
+	if o == nil || isNil(o.NsagSupported) {
 		return nil, false
 	}
 	return o.NsagSupported, true
@@ -397,7 +397,7 @@ func (o *SliceInfoForRegistration) GetNsagSupportedOk() (*bool, bool) {
 
 // HasNsagSupported returns a boolean if a field has been set.
 func (o *SliceInfoForRegistration) HasNsagSupported() bool {
-	if o != nil && !IsNil(o.NsagSupported) {
+	if o != nil && !isNil(o.NsagSupported) {
 		return true
 	}
 
@@ -419,37 +419,37 @@ func (o SliceInfoForRegistration) MarshalJSON() ([]byte, error) {
 
 func (o SliceInfoForRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscribedNssai) {
+	if !isNil(o.SubscribedNssai) {
 		toSerialize["subscribedNssai"] = o.SubscribedNssai
 	}
-	if !IsNil(o.AllowedNssaiCurrentAccess) {
+	if !isNil(o.AllowedNssaiCurrentAccess) {
 		toSerialize["allowedNssaiCurrentAccess"] = o.AllowedNssaiCurrentAccess
 	}
-	if !IsNil(o.AllowedNssaiOtherAccess) {
+	if !isNil(o.AllowedNssaiOtherAccess) {
 		toSerialize["allowedNssaiOtherAccess"] = o.AllowedNssaiOtherAccess
 	}
-	if !IsNil(o.SNssaiForMapping) {
+	if !isNil(o.SNssaiForMapping) {
 		toSerialize["sNssaiForMapping"] = o.SNssaiForMapping
 	}
-	if !IsNil(o.RequestedNssai) {
+	if !isNil(o.RequestedNssai) {
 		toSerialize["requestedNssai"] = o.RequestedNssai
 	}
-	if !IsNil(o.DefaultConfiguredSnssaiInd) {
+	if !isNil(o.DefaultConfiguredSnssaiInd) {
 		toSerialize["defaultConfiguredSnssaiInd"] = o.DefaultConfiguredSnssaiInd
 	}
-	if !IsNil(o.MappingOfNssai) {
+	if !isNil(o.MappingOfNssai) {
 		toSerialize["mappingOfNssai"] = o.MappingOfNssai
 	}
-	if !IsNil(o.RequestMapping) {
+	if !isNil(o.RequestMapping) {
 		toSerialize["requestMapping"] = o.RequestMapping
 	}
-	if !IsNil(o.UeSupNssrgInd) {
+	if !isNil(o.UeSupNssrgInd) {
 		toSerialize["ueSupNssrgInd"] = o.UeSupNssrgInd
 	}
-	if !IsNil(o.SuppressNssrgInd) {
+	if !isNil(o.SuppressNssrgInd) {
 		toSerialize["suppressNssrgInd"] = o.SuppressNssrgInd
 	}
-	if !IsNil(o.NsagSupported) {
+	if !isNil(o.NsagSupported) {
 		toSerialize["nsagSupported"] = o.NsagSupported
 	}
 	return toSerialize, nil

@@ -44,7 +44,7 @@ func NewFilesSingleAllOfAttributesWithDefaults() *FilesSingleAllOfAttributes {
 
 // GetNumberOfFiles returns the NumberOfFiles field value if set, zero value otherwise.
 func (o *FilesSingleAllOfAttributes) GetNumberOfFiles() int32 {
-	if o == nil || IsNil(o.NumberOfFiles) {
+	if o == nil || isNil(o.NumberOfFiles) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *FilesSingleAllOfAttributes) GetNumberOfFiles() int32 {
 // GetNumberOfFilesOk returns a tuple with the NumberOfFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilesSingleAllOfAttributes) GetNumberOfFilesOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumberOfFiles) {
+	if o == nil || isNil(o.NumberOfFiles) {
 		return nil, false
 	}
 	return o.NumberOfFiles, true
@@ -62,7 +62,7 @@ func (o *FilesSingleAllOfAttributes) GetNumberOfFilesOk() (*int32, bool) {
 
 // HasNumberOfFiles returns a boolean if a field has been set.
 func (o *FilesSingleAllOfAttributes) HasNumberOfFiles() bool {
-	if o != nil && !IsNil(o.NumberOfFiles) {
+	if o != nil && !isNil(o.NumberOfFiles) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *FilesSingleAllOfAttributes) SetNumberOfFiles(v int32) {
 
 // GetJobRef returns the JobRef field value if set, zero value otherwise.
 func (o *FilesSingleAllOfAttributes) GetJobRef() string {
-	if o == nil || IsNil(o.JobRef) {
+	if o == nil || isNil(o.JobRef) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *FilesSingleAllOfAttributes) GetJobRef() string {
 // GetJobRefOk returns a tuple with the JobRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilesSingleAllOfAttributes) GetJobRefOk() (*string, bool) {
-	if o == nil || IsNil(o.JobRef) {
+	if o == nil || isNil(o.JobRef) {
 		return nil, false
 	}
 	return o.JobRef, true
@@ -94,7 +94,7 @@ func (o *FilesSingleAllOfAttributes) GetJobRefOk() (*string, bool) {
 
 // HasJobRef returns a boolean if a field has been set.
 func (o *FilesSingleAllOfAttributes) HasJobRef() bool {
-	if o != nil && !IsNil(o.JobRef) {
+	if o != nil && !isNil(o.JobRef) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *FilesSingleAllOfAttributes) SetJobRef(v string) {
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *FilesSingleAllOfAttributes) GetJobId() string {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *FilesSingleAllOfAttributes) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilesSingleAllOfAttributes) GetJobIdOk() (*string, bool) {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -126,7 +126,7 @@ func (o *FilesSingleAllOfAttributes) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *FilesSingleAllOfAttributes) HasJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
+	if o != nil && !isNil(o.JobId) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *FilesSingleAllOfAttributes) SetJobId(v string) {
 
 // GetFile returns the File field value if set, zero value otherwise.
 func (o *FilesSingleAllOfAttributes) GetFile() []FileSingle {
-	if o == nil || IsNil(o.File) {
+	if o == nil || isNil(o.File) {
 		var ret []FileSingle
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *FilesSingleAllOfAttributes) GetFile() []FileSingle {
 // GetFileOk returns a tuple with the File field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FilesSingleAllOfAttributes) GetFileOk() ([]FileSingle, bool) {
-	if o == nil || IsNil(o.File) {
+	if o == nil || isNil(o.File) {
 		return nil, false
 	}
 	return o.File, true
@@ -158,7 +158,7 @@ func (o *FilesSingleAllOfAttributes) GetFileOk() ([]FileSingle, bool) {
 
 // HasFile returns a boolean if a field has been set.
 func (o *FilesSingleAllOfAttributes) HasFile() bool {
-	if o != nil && !IsNil(o.File) {
+	if o != nil && !isNil(o.File) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o FilesSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o FilesSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NumberOfFiles) {
+	if !isNil(o.NumberOfFiles) {
 		toSerialize["numberOfFiles"] = o.NumberOfFiles
 	}
-	if !IsNil(o.JobRef) {
+	if !isNil(o.JobRef) {
 		toSerialize["jobRef"] = o.JobRef
 	}
-	if !IsNil(o.JobId) {
+	if !isNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
-	if !IsNil(o.File) {
+	if !isNil(o.File) {
 		toSerialize["File"] = o.File
 	}
 	return toSerialize, nil

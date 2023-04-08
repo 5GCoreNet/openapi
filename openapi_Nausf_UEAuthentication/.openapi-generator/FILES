@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,6 +10,7 @@ docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/AuthResult.md
 docs/AuthType.md
+docs/AuthTypeAnyOf.md
 docs/AuthenticationInfo.md
 docs/AuthenticationResultDeletionApi.md
 docs/Av5gAka.md
@@ -25,6 +25,7 @@ docs/Ipv6Addr.md
 docs/Link.md
 docs/LinksValueSchema.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProSeAuthData.md
@@ -41,6 +42,7 @@ docs/ServerAddressingInfo.md
 docs/Snssai.md
 docs/TraceData.md
 docs/TraceDepth.md
+docs/TraceDepthAnyOf.md
 docs/UEAuthenticationCtx.md
 docs/UEAuthenticationCtx5gAuthData.md
 git_push.sh
@@ -50,6 +52,7 @@ model_access_token_err.go
 model_access_token_req.go
 model_auth_result.go
 model_auth_type.go
+model_auth_type_any_of.go
 model_authentication_info.go
 model_av5g_aka.go
 model_confirmation_data.go
@@ -62,6 +65,7 @@ model_ipv6_addr.go
 model_link.go
 model_links_value_schema.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_pro_se_auth_data.go
@@ -78,6 +82,7 @@ model_server_addressing_info.go
 model_snssai.go
 model_trace_data.go
 model_trace_depth.go
+model_trace_depth_any_of.go
 model_ue_authentication_ctx.go
 model_ue_authentication_ctx_5g_auth_data.go
 response.go

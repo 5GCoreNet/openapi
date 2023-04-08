@@ -53,7 +53,7 @@ func NewAnnouncementInformationWithDefaults() *AnnouncementInformation {
 
 // GetAnnouncementIdentifier returns the AnnouncementIdentifier field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetAnnouncementIdentifier() int32 {
-	if o == nil || IsNil(o.AnnouncementIdentifier) {
+	if o == nil || isNil(o.AnnouncementIdentifier) {
 		var ret int32
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *AnnouncementInformation) GetAnnouncementIdentifier() int32 {
 // GetAnnouncementIdentifierOk returns a tuple with the AnnouncementIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetAnnouncementIdentifierOk() (*int32, bool) {
-	if o == nil || IsNil(o.AnnouncementIdentifier) {
+	if o == nil || isNil(o.AnnouncementIdentifier) {
 		return nil, false
 	}
 	return o.AnnouncementIdentifier, true
@@ -71,7 +71,7 @@ func (o *AnnouncementInformation) GetAnnouncementIdentifierOk() (*int32, bool) {
 
 // HasAnnouncementIdentifier returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasAnnouncementIdentifier() bool {
-	if o != nil && !IsNil(o.AnnouncementIdentifier) {
+	if o != nil && !isNil(o.AnnouncementIdentifier) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *AnnouncementInformation) SetAnnouncementIdentifier(v int32) {
 
 // GetAnnouncementReference returns the AnnouncementReference field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetAnnouncementReference() string {
-	if o == nil || IsNil(o.AnnouncementReference) {
+	if o == nil || isNil(o.AnnouncementReference) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *AnnouncementInformation) GetAnnouncementReference() string {
 // GetAnnouncementReferenceOk returns a tuple with the AnnouncementReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetAnnouncementReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.AnnouncementReference) {
+	if o == nil || isNil(o.AnnouncementReference) {
 		return nil, false
 	}
 	return o.AnnouncementReference, true
@@ -103,7 +103,7 @@ func (o *AnnouncementInformation) GetAnnouncementReferenceOk() (*string, bool) {
 
 // HasAnnouncementReference returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasAnnouncementReference() bool {
-	if o != nil && !IsNil(o.AnnouncementReference) {
+	if o != nil && !isNil(o.AnnouncementReference) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *AnnouncementInformation) SetAnnouncementReference(v string) {
 
 // GetVariableParts returns the VariableParts field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetVariableParts() []VariablePart {
-	if o == nil || IsNil(o.VariableParts) {
+	if o == nil || isNil(o.VariableParts) {
 		var ret []VariablePart
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *AnnouncementInformation) GetVariableParts() []VariablePart {
 // GetVariablePartsOk returns a tuple with the VariableParts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetVariablePartsOk() ([]VariablePart, bool) {
-	if o == nil || IsNil(o.VariableParts) {
+	if o == nil || isNil(o.VariableParts) {
 		return nil, false
 	}
 	return o.VariableParts, true
@@ -135,7 +135,7 @@ func (o *AnnouncementInformation) GetVariablePartsOk() ([]VariablePart, bool) {
 
 // HasVariableParts returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasVariableParts() bool {
-	if o != nil && !IsNil(o.VariableParts) {
+	if o != nil && !isNil(o.VariableParts) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *AnnouncementInformation) SetVariableParts(v []VariablePart) {
 
 // GetTimeToPlay returns the TimeToPlay field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetTimeToPlay() int32 {
-	if o == nil || IsNil(o.TimeToPlay) {
+	if o == nil || isNil(o.TimeToPlay) {
 		var ret int32
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *AnnouncementInformation) GetTimeToPlay() int32 {
 // GetTimeToPlayOk returns a tuple with the TimeToPlay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetTimeToPlayOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeToPlay) {
+	if o == nil || isNil(o.TimeToPlay) {
 		return nil, false
 	}
 	return o.TimeToPlay, true
@@ -167,7 +167,7 @@ func (o *AnnouncementInformation) GetTimeToPlayOk() (*int32, bool) {
 
 // HasTimeToPlay returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasTimeToPlay() bool {
-	if o != nil && !IsNil(o.TimeToPlay) {
+	if o != nil && !isNil(o.TimeToPlay) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *AnnouncementInformation) SetTimeToPlay(v int32) {
 
 // GetQuotaConsumptionIndicator returns the QuotaConsumptionIndicator field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetQuotaConsumptionIndicator() QuotaConsumptionIndicator {
-	if o == nil || IsNil(o.QuotaConsumptionIndicator) {
+	if o == nil || isNil(o.QuotaConsumptionIndicator) {
 		var ret QuotaConsumptionIndicator
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *AnnouncementInformation) GetQuotaConsumptionIndicator() QuotaConsumptio
 // GetQuotaConsumptionIndicatorOk returns a tuple with the QuotaConsumptionIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetQuotaConsumptionIndicatorOk() (*QuotaConsumptionIndicator, bool) {
-	if o == nil || IsNil(o.QuotaConsumptionIndicator) {
+	if o == nil || isNil(o.QuotaConsumptionIndicator) {
 		return nil, false
 	}
 	return o.QuotaConsumptionIndicator, true
@@ -199,7 +199,7 @@ func (o *AnnouncementInformation) GetQuotaConsumptionIndicatorOk() (*QuotaConsum
 
 // HasQuotaConsumptionIndicator returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasQuotaConsumptionIndicator() bool {
-	if o != nil && !IsNil(o.QuotaConsumptionIndicator) {
+	if o != nil && !isNil(o.QuotaConsumptionIndicator) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *AnnouncementInformation) SetQuotaConsumptionIndicator(v QuotaConsumptio
 
 // GetAnnouncementPriority returns the AnnouncementPriority field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetAnnouncementPriority() int32 {
-	if o == nil || IsNil(o.AnnouncementPriority) {
+	if o == nil || isNil(o.AnnouncementPriority) {
 		var ret int32
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *AnnouncementInformation) GetAnnouncementPriority() int32 {
 // GetAnnouncementPriorityOk returns a tuple with the AnnouncementPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetAnnouncementPriorityOk() (*int32, bool) {
-	if o == nil || IsNil(o.AnnouncementPriority) {
+	if o == nil || isNil(o.AnnouncementPriority) {
 		return nil, false
 	}
 	return o.AnnouncementPriority, true
@@ -231,7 +231,7 @@ func (o *AnnouncementInformation) GetAnnouncementPriorityOk() (*int32, bool) {
 
 // HasAnnouncementPriority returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasAnnouncementPriority() bool {
-	if o != nil && !IsNil(o.AnnouncementPriority) {
+	if o != nil && !isNil(o.AnnouncementPriority) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *AnnouncementInformation) SetAnnouncementPriority(v int32) {
 
 // GetPlayToParty returns the PlayToParty field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetPlayToParty() PlayToParty {
-	if o == nil || IsNil(o.PlayToParty) {
+	if o == nil || isNil(o.PlayToParty) {
 		var ret PlayToParty
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *AnnouncementInformation) GetPlayToParty() PlayToParty {
 // GetPlayToPartyOk returns a tuple with the PlayToParty field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetPlayToPartyOk() (*PlayToParty, bool) {
-	if o == nil || IsNil(o.PlayToParty) {
+	if o == nil || isNil(o.PlayToParty) {
 		return nil, false
 	}
 	return o.PlayToParty, true
@@ -263,7 +263,7 @@ func (o *AnnouncementInformation) GetPlayToPartyOk() (*PlayToParty, bool) {
 
 // HasPlayToParty returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasPlayToParty() bool {
-	if o != nil && !IsNil(o.PlayToParty) {
+	if o != nil && !isNil(o.PlayToParty) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *AnnouncementInformation) SetPlayToParty(v PlayToParty) {
 
 // GetAnnouncementPrivacyIndicator returns the AnnouncementPrivacyIndicator field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetAnnouncementPrivacyIndicator() AnnouncementPrivacyIndicator {
-	if o == nil || IsNil(o.AnnouncementPrivacyIndicator) {
+	if o == nil || isNil(o.AnnouncementPrivacyIndicator) {
 		var ret AnnouncementPrivacyIndicator
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *AnnouncementInformation) GetAnnouncementPrivacyIndicator() Announcement
 // GetAnnouncementPrivacyIndicatorOk returns a tuple with the AnnouncementPrivacyIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetAnnouncementPrivacyIndicatorOk() (*AnnouncementPrivacyIndicator, bool) {
-	if o == nil || IsNil(o.AnnouncementPrivacyIndicator) {
+	if o == nil || isNil(o.AnnouncementPrivacyIndicator) {
 		return nil, false
 	}
 	return o.AnnouncementPrivacyIndicator, true
@@ -295,7 +295,7 @@ func (o *AnnouncementInformation) GetAnnouncementPrivacyIndicatorOk() (*Announce
 
 // HasAnnouncementPrivacyIndicator returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasAnnouncementPrivacyIndicator() bool {
-	if o != nil && !IsNil(o.AnnouncementPrivacyIndicator) {
+	if o != nil && !isNil(o.AnnouncementPrivacyIndicator) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *AnnouncementInformation) SetAnnouncementPrivacyIndicator(v Announcement
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
 func (o *AnnouncementInformation) GetLanguage() string {
-	if o == nil || IsNil(o.Language) {
+	if o == nil || isNil(o.Language) {
 		var ret string
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *AnnouncementInformation) GetLanguage() string {
 // GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnouncementInformation) GetLanguageOk() (*string, bool) {
-	if o == nil || IsNil(o.Language) {
+	if o == nil || isNil(o.Language) {
 		return nil, false
 	}
 	return o.Language, true
@@ -327,7 +327,7 @@ func (o *AnnouncementInformation) GetLanguageOk() (*string, bool) {
 
 // HasLanguage returns a boolean if a field has been set.
 func (o *AnnouncementInformation) HasLanguage() bool {
-	if o != nil && !IsNil(o.Language) {
+	if o != nil && !isNil(o.Language) {
 		return true
 	}
 
@@ -349,31 +349,31 @@ func (o AnnouncementInformation) MarshalJSON() ([]byte, error) {
 
 func (o AnnouncementInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnnouncementIdentifier) {
+	if !isNil(o.AnnouncementIdentifier) {
 		toSerialize["announcementIdentifier"] = o.AnnouncementIdentifier
 	}
-	if !IsNil(o.AnnouncementReference) {
+	if !isNil(o.AnnouncementReference) {
 		toSerialize["announcementReference"] = o.AnnouncementReference
 	}
-	if !IsNil(o.VariableParts) {
+	if !isNil(o.VariableParts) {
 		toSerialize["variableParts"] = o.VariableParts
 	}
-	if !IsNil(o.TimeToPlay) {
+	if !isNil(o.TimeToPlay) {
 		toSerialize["timeToPlay"] = o.TimeToPlay
 	}
-	if !IsNil(o.QuotaConsumptionIndicator) {
+	if !isNil(o.QuotaConsumptionIndicator) {
 		toSerialize["quotaConsumptionIndicator"] = o.QuotaConsumptionIndicator
 	}
-	if !IsNil(o.AnnouncementPriority) {
+	if !isNil(o.AnnouncementPriority) {
 		toSerialize["announcementPriority"] = o.AnnouncementPriority
 	}
-	if !IsNil(o.PlayToParty) {
+	if !isNil(o.PlayToParty) {
 		toSerialize["playToParty"] = o.PlayToParty
 	}
-	if !IsNil(o.AnnouncementPrivacyIndicator) {
+	if !isNil(o.AnnouncementPrivacyIndicator) {
 		toSerialize["announcementPrivacyIndicator"] = o.AnnouncementPrivacyIndicator
 	}
-	if !IsNil(o.Language) {
+	if !isNil(o.Language) {
 		toSerialize["Language"] = o.Language
 	}
 	return toSerialize, nil

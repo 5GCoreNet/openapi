@@ -21,9 +21,9 @@ var _ MappedNullable = &ReleasePduSession200Response{}
 // ReleasePduSession200Response struct for ReleasePduSession200Response
 type ReleasePduSession200Response struct {
 	JsonData *ReleasedData `json:"jsonData,omitempty"`
-	BinaryDataN4Information **os.File `json:"binaryDataN4Information,omitempty"`
-	BinaryDataN4InformationExt1 **os.File `json:"binaryDataN4InformationExt1,omitempty"`
-	BinaryDataN4InformationExt2 **os.File `json:"binaryDataN4InformationExt2,omitempty"`
+	BinaryDataN4Information *os.File `json:"binaryDataN4Information,omitempty"`
+	BinaryDataN4InformationExt1 *os.File `json:"binaryDataN4InformationExt1,omitempty"`
+	BinaryDataN4InformationExt2 *os.File `json:"binaryDataN4InformationExt2,omitempty"`
 }
 
 // NewReleasePduSession200Response instantiates a new ReleasePduSession200Response object
@@ -45,7 +45,7 @@ func NewReleasePduSession200ResponseWithDefaults() *ReleasePduSession200Response
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *ReleasePduSession200Response) GetJsonData() ReleasedData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret ReleasedData
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ReleasePduSession200Response) GetJsonData() ReleasedData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleasePduSession200Response) GetJsonDataOk() (*ReleasedData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -63,7 +63,7 @@ func (o *ReleasePduSession200Response) GetJsonDataOk() (*ReleasedData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *ReleasePduSession200Response) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -76,9 +76,9 @@ func (o *ReleasePduSession200Response) SetJsonData(v ReleasedData) {
 }
 
 // GetBinaryDataN4Information returns the BinaryDataN4Information field value if set, zero value otherwise.
-func (o *ReleasePduSession200Response) GetBinaryDataN4Information() *os.File {
-	if o == nil || IsNil(o.BinaryDataN4Information) {
-		var ret *os.File
+func (o *ReleasePduSession200Response) GetBinaryDataN4Information() os.File {
+	if o == nil || isNil(o.BinaryDataN4Information) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN4Information
@@ -86,8 +86,8 @@ func (o *ReleasePduSession200Response) GetBinaryDataN4Information() *os.File {
 
 // GetBinaryDataN4InformationOk returns a tuple with the BinaryDataN4Information field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReleasePduSession200Response) GetBinaryDataN4InformationOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN4Information) {
+func (o *ReleasePduSession200Response) GetBinaryDataN4InformationOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN4Information) {
 		return nil, false
 	}
 	return o.BinaryDataN4Information, true
@@ -95,22 +95,22 @@ func (o *ReleasePduSession200Response) GetBinaryDataN4InformationOk() (**os.File
 
 // HasBinaryDataN4Information returns a boolean if a field has been set.
 func (o *ReleasePduSession200Response) HasBinaryDataN4Information() bool {
-	if o != nil && !IsNil(o.BinaryDataN4Information) {
+	if o != nil && !isNil(o.BinaryDataN4Information) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN4Information gets a reference to the given *os.File and assigns it to the BinaryDataN4Information field.
-func (o *ReleasePduSession200Response) SetBinaryDataN4Information(v *os.File) {
+// SetBinaryDataN4Information gets a reference to the given os.File and assigns it to the BinaryDataN4Information field.
+func (o *ReleasePduSession200Response) SetBinaryDataN4Information(v os.File) {
 	o.BinaryDataN4Information = &v
 }
 
 // GetBinaryDataN4InformationExt1 returns the BinaryDataN4InformationExt1 field value if set, zero value otherwise.
-func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt1() *os.File {
-	if o == nil || IsNil(o.BinaryDataN4InformationExt1) {
-		var ret *os.File
+func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt1() os.File {
+	if o == nil || isNil(o.BinaryDataN4InformationExt1) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN4InformationExt1
@@ -118,8 +118,8 @@ func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt1() *os.File
 
 // GetBinaryDataN4InformationExt1Ok returns a tuple with the BinaryDataN4InformationExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt1Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN4InformationExt1) {
+func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt1Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN4InformationExt1) {
 		return nil, false
 	}
 	return o.BinaryDataN4InformationExt1, true
@@ -127,22 +127,22 @@ func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt1Ok() (**os.
 
 // HasBinaryDataN4InformationExt1 returns a boolean if a field has been set.
 func (o *ReleasePduSession200Response) HasBinaryDataN4InformationExt1() bool {
-	if o != nil && !IsNil(o.BinaryDataN4InformationExt1) {
+	if o != nil && !isNil(o.BinaryDataN4InformationExt1) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN4InformationExt1 gets a reference to the given *os.File and assigns it to the BinaryDataN4InformationExt1 field.
-func (o *ReleasePduSession200Response) SetBinaryDataN4InformationExt1(v *os.File) {
+// SetBinaryDataN4InformationExt1 gets a reference to the given os.File and assigns it to the BinaryDataN4InformationExt1 field.
+func (o *ReleasePduSession200Response) SetBinaryDataN4InformationExt1(v os.File) {
 	o.BinaryDataN4InformationExt1 = &v
 }
 
 // GetBinaryDataN4InformationExt2 returns the BinaryDataN4InformationExt2 field value if set, zero value otherwise.
-func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt2() *os.File {
-	if o == nil || IsNil(o.BinaryDataN4InformationExt2) {
-		var ret *os.File
+func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt2() os.File {
+	if o == nil || isNil(o.BinaryDataN4InformationExt2) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN4InformationExt2
@@ -150,8 +150,8 @@ func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt2() *os.File
 
 // GetBinaryDataN4InformationExt2Ok returns a tuple with the BinaryDataN4InformationExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt2Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN4InformationExt2) {
+func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt2Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN4InformationExt2) {
 		return nil, false
 	}
 	return o.BinaryDataN4InformationExt2, true
@@ -159,15 +159,15 @@ func (o *ReleasePduSession200Response) GetBinaryDataN4InformationExt2Ok() (**os.
 
 // HasBinaryDataN4InformationExt2 returns a boolean if a field has been set.
 func (o *ReleasePduSession200Response) HasBinaryDataN4InformationExt2() bool {
-	if o != nil && !IsNil(o.BinaryDataN4InformationExt2) {
+	if o != nil && !isNil(o.BinaryDataN4InformationExt2) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN4InformationExt2 gets a reference to the given *os.File and assigns it to the BinaryDataN4InformationExt2 field.
-func (o *ReleasePduSession200Response) SetBinaryDataN4InformationExt2(v *os.File) {
+// SetBinaryDataN4InformationExt2 gets a reference to the given os.File and assigns it to the BinaryDataN4InformationExt2 field.
+func (o *ReleasePduSession200Response) SetBinaryDataN4InformationExt2(v os.File) {
 	o.BinaryDataN4InformationExt2 = &v
 }
 
@@ -181,16 +181,16 @@ func (o ReleasePduSession200Response) MarshalJSON() ([]byte, error) {
 
 func (o ReleasePduSession200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataN4Information) {
+	if !isNil(o.BinaryDataN4Information) {
 		toSerialize["binaryDataN4Information"] = o.BinaryDataN4Information
 	}
-	if !IsNil(o.BinaryDataN4InformationExt1) {
+	if !isNil(o.BinaryDataN4InformationExt1) {
 		toSerialize["binaryDataN4InformationExt1"] = o.BinaryDataN4InformationExt1
 	}
-	if !IsNil(o.BinaryDataN4InformationExt2) {
+	if !isNil(o.BinaryDataN4InformationExt2) {
 		toSerialize["binaryDataN4InformationExt2"] = o.BinaryDataN4InformationExt2
 	}
 	return toSerialize, nil

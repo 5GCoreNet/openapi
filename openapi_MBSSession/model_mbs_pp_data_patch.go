@@ -43,7 +43,7 @@ func NewMbsPpDataPatchWithDefaults() *MbsPpDataPatch {
 
 // GetMbsSessAuthData returns the MbsSessAuthData field value if set, zero value otherwise.
 func (o *MbsPpDataPatch) GetMbsSessAuthData() MbsSessAuthData {
-	if o == nil || IsNil(o.MbsSessAuthData) {
+	if o == nil || isNil(o.MbsSessAuthData) {
 		var ret MbsSessAuthData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MbsPpDataPatch) GetMbsSessAuthData() MbsSessAuthData {
 // GetMbsSessAuthDataOk returns a tuple with the MbsSessAuthData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPpDataPatch) GetMbsSessAuthDataOk() (*MbsSessAuthData, bool) {
-	if o == nil || IsNil(o.MbsSessAuthData) {
+	if o == nil || isNil(o.MbsSessAuthData) {
 		return nil, false
 	}
 	return o.MbsSessAuthData, true
@@ -61,7 +61,7 @@ func (o *MbsPpDataPatch) GetMbsSessAuthDataOk() (*MbsSessAuthData, bool) {
 
 // HasMbsSessAuthData returns a boolean if a field has been set.
 func (o *MbsPpDataPatch) HasMbsSessAuthData() bool {
-	if o != nil && !IsNil(o.MbsSessAuthData) {
+	if o != nil && !isNil(o.MbsSessAuthData) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MbsPpDataPatch) SetMbsSessAuthData(v MbsSessAuthData) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsPpDataPatch) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MbsPpDataPatch) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPpDataPatch) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -93,7 +93,7 @@ func (o *MbsPpDataPatch) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsPpDataPatch) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o MbsPpDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o MbsPpDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsSessAuthData) {
+	if !isNil(o.MbsSessAuthData) {
 		toSerialize["mbsSessAuthData"] = o.MbsSessAuthData
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

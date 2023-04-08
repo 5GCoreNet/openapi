@@ -47,7 +47,7 @@ func NewSmfSelectionSubscriptionDataWithDefaults() *SmfSelectionSubscriptionData
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SmfSelectionSubscriptionData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -65,7 +65,7 @@ func (o *SmfSelectionSubscriptionData) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *SmfSelectionSubscriptionData) SetSupportedFeatures(v string) {
 
 // GetSubscribedSnssaiInfos returns the SubscribedSnssaiInfos field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfos() map[string]SnssaiInfo {
-	if o == nil || IsNil(o.SubscribedSnssaiInfos) {
+	if o == nil || isNil(o.SubscribedSnssaiInfos) {
 		var ret map[string]SnssaiInfo
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfos() map[string]Sns
 // GetSubscribedSnssaiInfosOk returns a tuple with the SubscribedSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfosOk() (*map[string]SnssaiInfo, bool) {
-	if o == nil || IsNil(o.SubscribedSnssaiInfos) {
+	if o == nil || isNil(o.SubscribedSnssaiInfos) {
 		return nil, false
 	}
 	return o.SubscribedSnssaiInfos, true
@@ -97,7 +97,7 @@ func (o *SmfSelectionSubscriptionData) GetSubscribedSnssaiInfosOk() (*map[string
 
 // HasSubscribedSnssaiInfos returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasSubscribedSnssaiInfos() bool {
-	if o != nil && !IsNil(o.SubscribedSnssaiInfos) {
+	if o != nil && !isNil(o.SubscribedSnssaiInfos) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *SmfSelectionSubscriptionData) SetSubscribedSnssaiInfos(v map[string]Sns
 
 // GetSharedSnssaiInfosId returns the SharedSnssaiInfosId field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosId() string {
-	if o == nil || IsNil(o.SharedSnssaiInfosId) {
+	if o == nil || isNil(o.SharedSnssaiInfosId) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosId() string {
 // GetSharedSnssaiInfosIdOk returns a tuple with the SharedSnssaiInfosId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SharedSnssaiInfosId) {
+	if o == nil || isNil(o.SharedSnssaiInfosId) {
 		return nil, false
 	}
 	return o.SharedSnssaiInfosId, true
@@ -129,7 +129,7 @@ func (o *SmfSelectionSubscriptionData) GetSharedSnssaiInfosIdOk() (*string, bool
 
 // HasSharedSnssaiInfosId returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasSharedSnssaiInfosId() bool {
-	if o != nil && !IsNil(o.SharedSnssaiInfosId) {
+	if o != nil && !isNil(o.SharedSnssaiInfosId) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *SmfSelectionSubscriptionData) SetSharedSnssaiInfosId(v string) {
 
 // GetHssGroupId returns the HssGroupId field value if set, zero value otherwise.
 func (o *SmfSelectionSubscriptionData) GetHssGroupId() string {
-	if o == nil || IsNil(o.HssGroupId) {
+	if o == nil || isNil(o.HssGroupId) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *SmfSelectionSubscriptionData) GetHssGroupId() string {
 // GetHssGroupIdOk returns a tuple with the HssGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSelectionSubscriptionData) GetHssGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.HssGroupId) {
+	if o == nil || isNil(o.HssGroupId) {
 		return nil, false
 	}
 	return o.HssGroupId, true
@@ -161,7 +161,7 @@ func (o *SmfSelectionSubscriptionData) GetHssGroupIdOk() (*string, bool) {
 
 // HasHssGroupId returns a boolean if a field has been set.
 func (o *SmfSelectionSubscriptionData) HasHssGroupId() bool {
-	if o != nil && !IsNil(o.HssGroupId) {
+	if o != nil && !isNil(o.HssGroupId) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o SmfSelectionSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o SmfSelectionSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.SubscribedSnssaiInfos) {
+	if !isNil(o.SubscribedSnssaiInfos) {
 		toSerialize["subscribedSnssaiInfos"] = o.SubscribedSnssaiInfos
 	}
-	if !IsNil(o.SharedSnssaiInfosId) {
+	if !isNil(o.SharedSnssaiInfosId) {
 		toSerialize["sharedSnssaiInfosId"] = o.SharedSnssaiInfosId
 	}
-	if !IsNil(o.HssGroupId) {
+	if !isNil(o.HssGroupId) {
 		toSerialize["hssGroupId"] = o.HssGroupId
 	}
 	return toSerialize, nil

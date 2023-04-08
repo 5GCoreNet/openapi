@@ -56,7 +56,7 @@ func NewDispersionCollectionWithDefaults() *DispersionCollection {
 
 // GetUeLoc returns the UeLoc field value if set, zero value otherwise.
 func (o *DispersionCollection) GetUeLoc() UserLocation {
-	if o == nil || IsNil(o.UeLoc) {
+	if o == nil || isNil(o.UeLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *DispersionCollection) GetUeLoc() UserLocation {
 // GetUeLocOk returns a tuple with the UeLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetUeLocOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UeLoc) {
+	if o == nil || isNil(o.UeLoc) {
 		return nil, false
 	}
 	return o.UeLoc, true
@@ -74,7 +74,7 @@ func (o *DispersionCollection) GetUeLocOk() (*UserLocation, bool) {
 
 // HasUeLoc returns a boolean if a field has been set.
 func (o *DispersionCollection) HasUeLoc() bool {
-	if o != nil && !IsNil(o.UeLoc) {
+	if o != nil && !isNil(o.UeLoc) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *DispersionCollection) SetUeLoc(v UserLocation) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *DispersionCollection) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *DispersionCollection) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -106,7 +106,7 @@ func (o *DispersionCollection) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *DispersionCollection) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *DispersionCollection) SetSnssai(v Snssai) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *DispersionCollection) GetSupis() []string {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *DispersionCollection) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetSupisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -138,7 +138,7 @@ func (o *DispersionCollection) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *DispersionCollection) HasSupis() bool {
-	if o != nil && !IsNil(o.Supis) {
+	if o != nil && !isNil(o.Supis) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *DispersionCollection) SetSupis(v []string) {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *DispersionCollection) GetGpsis() []string {
-	if o == nil || IsNil(o.Gpsis) {
+	if o == nil || isNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *DispersionCollection) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetGpsisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Gpsis) {
+	if o == nil || isNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -170,7 +170,7 @@ func (o *DispersionCollection) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *DispersionCollection) HasGpsis() bool {
-	if o != nil && !IsNil(o.Gpsis) {
+	if o != nil && !isNil(o.Gpsis) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *DispersionCollection) SetGpsis(v []string) {
 
 // GetAppVolumes returns the AppVolumes field value if set, zero value otherwise.
 func (o *DispersionCollection) GetAppVolumes() []ApplicationVolume {
-	if o == nil || IsNil(o.AppVolumes) {
+	if o == nil || isNil(o.AppVolumes) {
 		var ret []ApplicationVolume
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *DispersionCollection) GetAppVolumes() []ApplicationVolume {
 // GetAppVolumesOk returns a tuple with the AppVolumes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetAppVolumesOk() ([]ApplicationVolume, bool) {
-	if o == nil || IsNil(o.AppVolumes) {
+	if o == nil || isNil(o.AppVolumes) {
 		return nil, false
 	}
 	return o.AppVolumes, true
@@ -202,7 +202,7 @@ func (o *DispersionCollection) GetAppVolumesOk() ([]ApplicationVolume, bool) {
 
 // HasAppVolumes returns a boolean if a field has been set.
 func (o *DispersionCollection) HasAppVolumes() bool {
-	if o != nil && !IsNil(o.AppVolumes) {
+	if o != nil && !isNil(o.AppVolumes) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *DispersionCollection) SetAppVolumes(v []ApplicationVolume) {
 
 // GetDisperAmount returns the DisperAmount field value if set, zero value otherwise.
 func (o *DispersionCollection) GetDisperAmount() int32 {
-	if o == nil || IsNil(o.DisperAmount) {
+	if o == nil || isNil(o.DisperAmount) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *DispersionCollection) GetDisperAmount() int32 {
 // GetDisperAmountOk returns a tuple with the DisperAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetDisperAmountOk() (*int32, bool) {
-	if o == nil || IsNil(o.DisperAmount) {
+	if o == nil || isNil(o.DisperAmount) {
 		return nil, false
 	}
 	return o.DisperAmount, true
@@ -234,7 +234,7 @@ func (o *DispersionCollection) GetDisperAmountOk() (*int32, bool) {
 
 // HasDisperAmount returns a boolean if a field has been set.
 func (o *DispersionCollection) HasDisperAmount() bool {
-	if o != nil && !IsNil(o.DisperAmount) {
+	if o != nil && !isNil(o.DisperAmount) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *DispersionCollection) SetDisperAmount(v int32) {
 
 // GetDisperClass returns the DisperClass field value if set, zero value otherwise.
 func (o *DispersionCollection) GetDisperClass() DispersionClass {
-	if o == nil || IsNil(o.DisperClass) {
+	if o == nil || isNil(o.DisperClass) {
 		var ret DispersionClass
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *DispersionCollection) GetDisperClass() DispersionClass {
 // GetDisperClassOk returns a tuple with the DisperClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetDisperClassOk() (*DispersionClass, bool) {
-	if o == nil || IsNil(o.DisperClass) {
+	if o == nil || isNil(o.DisperClass) {
 		return nil, false
 	}
 	return o.DisperClass, true
@@ -266,7 +266,7 @@ func (o *DispersionCollection) GetDisperClassOk() (*DispersionClass, bool) {
 
 // HasDisperClass returns a boolean if a field has been set.
 func (o *DispersionCollection) HasDisperClass() bool {
-	if o != nil && !IsNil(o.DisperClass) {
+	if o != nil && !isNil(o.DisperClass) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *DispersionCollection) SetDisperClass(v DispersionClass) {
 
 // GetUsageRank returns the UsageRank field value if set, zero value otherwise.
 func (o *DispersionCollection) GetUsageRank() int32 {
-	if o == nil || IsNil(o.UsageRank) {
+	if o == nil || isNil(o.UsageRank) {
 		var ret int32
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *DispersionCollection) GetUsageRank() int32 {
 // GetUsageRankOk returns a tuple with the UsageRank field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetUsageRankOk() (*int32, bool) {
-	if o == nil || IsNil(o.UsageRank) {
+	if o == nil || isNil(o.UsageRank) {
 		return nil, false
 	}
 	return o.UsageRank, true
@@ -298,7 +298,7 @@ func (o *DispersionCollection) GetUsageRankOk() (*int32, bool) {
 
 // HasUsageRank returns a boolean if a field has been set.
 func (o *DispersionCollection) HasUsageRank() bool {
-	if o != nil && !IsNil(o.UsageRank) {
+	if o != nil && !isNil(o.UsageRank) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *DispersionCollection) SetUsageRank(v int32) {
 
 // GetPercentileRank returns the PercentileRank field value if set, zero value otherwise.
 func (o *DispersionCollection) GetPercentileRank() int32 {
-	if o == nil || IsNil(o.PercentileRank) {
+	if o == nil || isNil(o.PercentileRank) {
 		var ret int32
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *DispersionCollection) GetPercentileRank() int32 {
 // GetPercentileRankOk returns a tuple with the PercentileRank field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetPercentileRankOk() (*int32, bool) {
-	if o == nil || IsNil(o.PercentileRank) {
+	if o == nil || isNil(o.PercentileRank) {
 		return nil, false
 	}
 	return o.PercentileRank, true
@@ -330,7 +330,7 @@ func (o *DispersionCollection) GetPercentileRankOk() (*int32, bool) {
 
 // HasPercentileRank returns a boolean if a field has been set.
 func (o *DispersionCollection) HasPercentileRank() bool {
-	if o != nil && !IsNil(o.PercentileRank) {
+	if o != nil && !isNil(o.PercentileRank) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *DispersionCollection) SetPercentileRank(v int32) {
 
 // GetUeRatio returns the UeRatio field value if set, zero value otherwise.
 func (o *DispersionCollection) GetUeRatio() int32 {
-	if o == nil || IsNil(o.UeRatio) {
+	if o == nil || isNil(o.UeRatio) {
 		var ret int32
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *DispersionCollection) GetUeRatio() int32 {
 // GetUeRatioOk returns a tuple with the UeRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetUeRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.UeRatio) {
+	if o == nil || isNil(o.UeRatio) {
 		return nil, false
 	}
 	return o.UeRatio, true
@@ -362,7 +362,7 @@ func (o *DispersionCollection) GetUeRatioOk() (*int32, bool) {
 
 // HasUeRatio returns a boolean if a field has been set.
 func (o *DispersionCollection) HasUeRatio() bool {
-	if o != nil && !IsNil(o.UeRatio) {
+	if o != nil && !isNil(o.UeRatio) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *DispersionCollection) SetUeRatio(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *DispersionCollection) GetConfidence() int32 {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *DispersionCollection) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DispersionCollection) GetConfidenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -394,7 +394,7 @@ func (o *DispersionCollection) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *DispersionCollection) HasConfidence() bool {
-	if o != nil && !IsNil(o.Confidence) {
+	if o != nil && !isNil(o.Confidence) {
 		return true
 	}
 
@@ -416,37 +416,37 @@ func (o DispersionCollection) MarshalJSON() ([]byte, error) {
 
 func (o DispersionCollection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeLoc) {
+	if !isNil(o.UeLoc) {
 		toSerialize["ueLoc"] = o.UeLoc
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.Supis) {
+	if !isNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !IsNil(o.Gpsis) {
+	if !isNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !IsNil(o.AppVolumes) {
+	if !isNil(o.AppVolumes) {
 		toSerialize["appVolumes"] = o.AppVolumes
 	}
-	if !IsNil(o.DisperAmount) {
+	if !isNil(o.DisperAmount) {
 		toSerialize["disperAmount"] = o.DisperAmount
 	}
-	if !IsNil(o.DisperClass) {
+	if !isNil(o.DisperClass) {
 		toSerialize["disperClass"] = o.DisperClass
 	}
-	if !IsNil(o.UsageRank) {
+	if !isNil(o.UsageRank) {
 		toSerialize["usageRank"] = o.UsageRank
 	}
-	if !IsNil(o.PercentileRank) {
+	if !isNil(o.PercentileRank) {
 		toSerialize["percentileRank"] = o.PercentileRank
 	}
-	if !IsNil(o.UeRatio) {
+	if !isNil(o.UeRatio) {
 		toSerialize["ueRatio"] = o.UeRatio
 	}
-	if !IsNil(o.Confidence) {
+	if !isNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil

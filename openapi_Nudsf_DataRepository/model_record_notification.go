@@ -94,7 +94,7 @@ func (o *RecordNotification) SetMeta(v RecordMeta) {
 
 // GetBlocks returns the Blocks field value if set, zero value otherwise.
 func (o *RecordNotification) GetBlocks() []interface{} {
-	if o == nil || IsNil(o.Blocks) {
+	if o == nil || isNil(o.Blocks) {
 		var ret []interface{}
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *RecordNotification) GetBlocks() []interface{} {
 // GetBlocksOk returns a tuple with the Blocks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordNotification) GetBlocksOk() ([]interface{}, bool) {
-	if o == nil || IsNil(o.Blocks) {
+	if o == nil || isNil(o.Blocks) {
 		return nil, false
 	}
 	return o.Blocks, true
@@ -112,7 +112,7 @@ func (o *RecordNotification) GetBlocksOk() ([]interface{}, bool) {
 
 // HasBlocks returns a boolean if a field has been set.
 func (o *RecordNotification) HasBlocks() bool {
-	if o != nil && !IsNil(o.Blocks) {
+	if o != nil && !isNil(o.Blocks) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o RecordNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["descriptor"] = o.Descriptor
 	toSerialize["meta"] = o.Meta
-	if !IsNil(o.Blocks) {
+	if !isNil(o.Blocks) {
 		toSerialize["blocks"] = o.Blocks
 	}
 	return toSerialize, nil

@@ -67,7 +67,7 @@ func (o *SdpDescription) SetLine(v string) {
 
 // GetContent returns the Content field value if set, zero value otherwise.
 func (o *SdpDescription) GetContent() string {
-	if o == nil || IsNil(o.Content) {
+	if o == nil || isNil(o.Content) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SdpDescription) GetContent() string {
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdpDescription) GetContentOk() (*string, bool) {
-	if o == nil || IsNil(o.Content) {
+	if o == nil || isNil(o.Content) {
 		return nil, false
 	}
 	return o.Content, true
@@ -85,7 +85,7 @@ func (o *SdpDescription) GetContentOk() (*string, bool) {
 
 // HasContent returns a boolean if a field has been set.
 func (o *SdpDescription) HasContent() bool {
-	if o != nil && !IsNil(o.Content) {
+	if o != nil && !isNil(o.Content) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SdpDescription) MarshalJSON() ([]byte, error) {
 func (o SdpDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["line"] = o.Line
-	if !IsNil(o.Content) {
+	if !isNil(o.Content) {
 		toSerialize["content"] = o.Content
 	}
 	return toSerialize, nil

@@ -95,7 +95,7 @@ func (o *UcmfNotification) SetEventType(v EventType) {
 
 // GetManAssOpRequestlist returns the ManAssOpRequestlist field value if set, zero value otherwise.
 func (o *UcmfNotification) GetManAssOpRequestlist() ManAssOpRequestlist {
-	if o == nil || IsNil(o.ManAssOpRequestlist) {
+	if o == nil || isNil(o.ManAssOpRequestlist) {
 		var ret ManAssOpRequestlist
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *UcmfNotification) GetManAssOpRequestlist() ManAssOpRequestlist {
 // GetManAssOpRequestlistOk returns a tuple with the ManAssOpRequestlist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UcmfNotification) GetManAssOpRequestlistOk() (*ManAssOpRequestlist, bool) {
-	if o == nil || IsNil(o.ManAssOpRequestlist) {
+	if o == nil || isNil(o.ManAssOpRequestlist) {
 		return nil, false
 	}
 	return o.ManAssOpRequestlist, true
@@ -113,7 +113,7 @@ func (o *UcmfNotification) GetManAssOpRequestlistOk() (*ManAssOpRequestlist, boo
 
 // HasManAssOpRequestlist returns a boolean if a field has been set.
 func (o *UcmfNotification) HasManAssOpRequestlist() bool {
-	if o != nil && !IsNil(o.ManAssOpRequestlist) {
+	if o != nil && !isNil(o.ManAssOpRequestlist) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *UcmfNotification) SetManAssOpRequestlist(v ManAssOpRequestlist) {
 
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
 func (o *UcmfNotification) GetVersionId() int32 {
-	if o == nil || IsNil(o.VersionId) {
+	if o == nil || isNil(o.VersionId) {
 		var ret int32
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *UcmfNotification) GetVersionId() int32 {
 // GetVersionIdOk returns a tuple with the VersionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UcmfNotification) GetVersionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.VersionId) {
+	if o == nil || isNil(o.VersionId) {
 		return nil, false
 	}
 	return o.VersionId, true
@@ -145,7 +145,7 @@ func (o *UcmfNotification) GetVersionIdOk() (*int32, bool) {
 
 // HasVersionId returns a boolean if a field has been set.
 func (o *UcmfNotification) HasVersionId() bool {
-	if o != nil && !IsNil(o.VersionId) {
+	if o != nil && !isNil(o.VersionId) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o UcmfNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dicEntryId"] = o.DicEntryId
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.ManAssOpRequestlist) {
+	if !isNil(o.ManAssOpRequestlist) {
 		toSerialize["manAssOpRequestlist"] = o.ManAssOpRequestlist
 	}
-	if !IsNil(o.VersionId) {
+	if !isNil(o.VersionId) {
 		toSerialize["versionId"] = o.VersionId
 	}
 	return toSerialize, nil

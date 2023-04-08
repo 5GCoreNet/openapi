@@ -97,7 +97,7 @@ func (o *EventDataProcessingConfiguration) SetEventId(v AfEvent) {
 
 // GetAuthorizationUrl returns the AuthorizationUrl field value if set, zero value otherwise.
 func (o *EventDataProcessingConfiguration) GetAuthorizationUrl() string {
-	if o == nil || IsNil(o.AuthorizationUrl) {
+	if o == nil || isNil(o.AuthorizationUrl) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *EventDataProcessingConfiguration) GetAuthorizationUrl() string {
 // GetAuthorizationUrlOk returns a tuple with the AuthorizationUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventDataProcessingConfiguration) GetAuthorizationUrlOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthorizationUrl) {
+	if o == nil || isNil(o.AuthorizationUrl) {
 		return nil, false
 	}
 	return o.AuthorizationUrl, true
@@ -115,7 +115,7 @@ func (o *EventDataProcessingConfiguration) GetAuthorizationUrlOk() (*string, boo
 
 // HasAuthorizationUrl returns a boolean if a field has been set.
 func (o *EventDataProcessingConfiguration) HasAuthorizationUrl() bool {
-	if o != nil && !IsNil(o.AuthorizationUrl) {
+	if o != nil && !isNil(o.AuthorizationUrl) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o EventDataProcessingConfiguration) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventDataProcessingConfigurationId"] = o.EventDataProcessingConfigurationId
 	toSerialize["eventId"] = o.EventId
-	if !IsNil(o.AuthorizationUrl) {
+	if !isNil(o.AuthorizationUrl) {
 		toSerialize["authorizationUrl"] = o.AuthorizationUrl
 	}
 	toSerialize["dataAccessProfiles"] = o.DataAccessProfiles

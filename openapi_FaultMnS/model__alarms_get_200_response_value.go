@@ -12,7 +12,6 @@ package openapi_FaultMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the AlarmsGet200ResponseValue type satisfies the MappedNullable interface at compile time
@@ -76,7 +75,7 @@ func NewAlarmsGet200ResponseValueWithDefaults() *AlarmsGet200ResponseValue {
 
 // GetLastNotificationHeader returns the LastNotificationHeader field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetLastNotificationHeader() NotificationHeader {
-	if o == nil || IsNil(o.LastNotificationHeader) {
+	if o == nil || isNil(o.LastNotificationHeader) {
 		var ret NotificationHeader
 		return ret
 	}
@@ -86,7 +85,7 @@ func (o *AlarmsGet200ResponseValue) GetLastNotificationHeader() NotificationHead
 // GetLastNotificationHeaderOk returns a tuple with the LastNotificationHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetLastNotificationHeaderOk() (*NotificationHeader, bool) {
-	if o == nil || IsNil(o.LastNotificationHeader) {
+	if o == nil || isNil(o.LastNotificationHeader) {
 		return nil, false
 	}
 	return o.LastNotificationHeader, true
@@ -94,7 +93,7 @@ func (o *AlarmsGet200ResponseValue) GetLastNotificationHeaderOk() (*Notification
 
 // HasLastNotificationHeader returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasLastNotificationHeader() bool {
-	if o != nil && !IsNil(o.LastNotificationHeader) {
+	if o != nil && !isNil(o.LastNotificationHeader) {
 		return true
 	}
 
@@ -108,7 +107,7 @@ func (o *AlarmsGet200ResponseValue) SetLastNotificationHeader(v NotificationHead
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -118,7 +117,7 @@ func (o *AlarmsGet200ResponseValue) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -126,7 +125,7 @@ func (o *AlarmsGet200ResponseValue) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -140,7 +139,7 @@ func (o *AlarmsGet200ResponseValue) SetObjectInstance(v string) {
 
 // GetNotificationId returns the NotificationId field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetNotificationId() int32 {
-	if o == nil || IsNil(o.NotificationId) {
+	if o == nil || isNil(o.NotificationId) {
 		var ret int32
 		return ret
 	}
@@ -150,7 +149,7 @@ func (o *AlarmsGet200ResponseValue) GetNotificationId() int32 {
 // GetNotificationIdOk returns a tuple with the NotificationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetNotificationIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.NotificationId) {
+	if o == nil || isNil(o.NotificationId) {
 		return nil, false
 	}
 	return o.NotificationId, true
@@ -158,7 +157,7 @@ func (o *AlarmsGet200ResponseValue) GetNotificationIdOk() (*int32, bool) {
 
 // HasNotificationId returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasNotificationId() bool {
-	if o != nil && !IsNil(o.NotificationId) {
+	if o != nil && !isNil(o.NotificationId) {
 		return true
 	}
 
@@ -172,7 +171,7 @@ func (o *AlarmsGet200ResponseValue) SetNotificationId(v int32) {
 
 // GetAlarmRaisedTime returns the AlarmRaisedTime field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAlarmRaisedTime() time.Time {
-	if o == nil || IsNil(o.AlarmRaisedTime) {
+	if o == nil || isNil(o.AlarmRaisedTime) {
 		var ret time.Time
 		return ret
 	}
@@ -182,7 +181,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmRaisedTime() time.Time {
 // GetAlarmRaisedTimeOk returns a tuple with the AlarmRaisedTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAlarmRaisedTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.AlarmRaisedTime) {
+	if o == nil || isNil(o.AlarmRaisedTime) {
 		return nil, false
 	}
 	return o.AlarmRaisedTime, true
@@ -190,7 +189,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmRaisedTimeOk() (*time.Time, bool) {
 
 // HasAlarmRaisedTime returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAlarmRaisedTime() bool {
-	if o != nil && !IsNil(o.AlarmRaisedTime) {
+	if o != nil && !isNil(o.AlarmRaisedTime) {
 		return true
 	}
 
@@ -204,7 +203,7 @@ func (o *AlarmsGet200ResponseValue) SetAlarmRaisedTime(v time.Time) {
 
 // GetAlarmChangedTime returns the AlarmChangedTime field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAlarmChangedTime() time.Time {
-	if o == nil || IsNil(o.AlarmChangedTime) {
+	if o == nil || isNil(o.AlarmChangedTime) {
 		var ret time.Time
 		return ret
 	}
@@ -214,7 +213,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmChangedTime() time.Time {
 // GetAlarmChangedTimeOk returns a tuple with the AlarmChangedTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAlarmChangedTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.AlarmChangedTime) {
+	if o == nil || isNil(o.AlarmChangedTime) {
 		return nil, false
 	}
 	return o.AlarmChangedTime, true
@@ -222,7 +221,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmChangedTimeOk() (*time.Time, bool) {
 
 // HasAlarmChangedTime returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAlarmChangedTime() bool {
-	if o != nil && !IsNil(o.AlarmChangedTime) {
+	if o != nil && !isNil(o.AlarmChangedTime) {
 		return true
 	}
 
@@ -236,7 +235,7 @@ func (o *AlarmsGet200ResponseValue) SetAlarmChangedTime(v time.Time) {
 
 // GetAlarmClearedTime returns the AlarmClearedTime field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAlarmClearedTime() time.Time {
-	if o == nil || IsNil(o.AlarmClearedTime) {
+	if o == nil || isNil(o.AlarmClearedTime) {
 		var ret time.Time
 		return ret
 	}
@@ -246,7 +245,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmClearedTime() time.Time {
 // GetAlarmClearedTimeOk returns a tuple with the AlarmClearedTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAlarmClearedTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.AlarmClearedTime) {
+	if o == nil || isNil(o.AlarmClearedTime) {
 		return nil, false
 	}
 	return o.AlarmClearedTime, true
@@ -254,7 +253,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmClearedTimeOk() (*time.Time, bool) {
 
 // HasAlarmClearedTime returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAlarmClearedTime() bool {
-	if o != nil && !IsNil(o.AlarmClearedTime) {
+	if o != nil && !isNil(o.AlarmClearedTime) {
 		return true
 	}
 
@@ -268,7 +267,7 @@ func (o *AlarmsGet200ResponseValue) SetAlarmClearedTime(v time.Time) {
 
 // GetAlarmType returns the AlarmType field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAlarmType() AlarmType {
-	if o == nil || IsNil(o.AlarmType) {
+	if o == nil || isNil(o.AlarmType) {
 		var ret AlarmType
 		return ret
 	}
@@ -278,7 +277,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmType() AlarmType {
 // GetAlarmTypeOk returns a tuple with the AlarmType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAlarmTypeOk() (*AlarmType, bool) {
-	if o == nil || IsNil(o.AlarmType) {
+	if o == nil || isNil(o.AlarmType) {
 		return nil, false
 	}
 	return o.AlarmType, true
@@ -286,7 +285,7 @@ func (o *AlarmsGet200ResponseValue) GetAlarmTypeOk() (*AlarmType, bool) {
 
 // HasAlarmType returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAlarmType() bool {
-	if o != nil && !IsNil(o.AlarmType) {
+	if o != nil && !isNil(o.AlarmType) {
 		return true
 	}
 
@@ -300,7 +299,7 @@ func (o *AlarmsGet200ResponseValue) SetAlarmType(v AlarmType) {
 
 // GetProbableCause returns the ProbableCause field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetProbableCause() ProbableCause {
-	if o == nil || IsNil(o.ProbableCause) {
+	if o == nil || isNil(o.ProbableCause) {
 		var ret ProbableCause
 		return ret
 	}
@@ -310,7 +309,7 @@ func (o *AlarmsGet200ResponseValue) GetProbableCause() ProbableCause {
 // GetProbableCauseOk returns a tuple with the ProbableCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetProbableCauseOk() (*ProbableCause, bool) {
-	if o == nil || IsNil(o.ProbableCause) {
+	if o == nil || isNil(o.ProbableCause) {
 		return nil, false
 	}
 	return o.ProbableCause, true
@@ -318,7 +317,7 @@ func (o *AlarmsGet200ResponseValue) GetProbableCauseOk() (*ProbableCause, bool) 
 
 // HasProbableCause returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasProbableCause() bool {
-	if o != nil && !IsNil(o.ProbableCause) {
+	if o != nil && !isNil(o.ProbableCause) {
 		return true
 	}
 
@@ -332,7 +331,7 @@ func (o *AlarmsGet200ResponseValue) SetProbableCause(v ProbableCause) {
 
 // GetSpecificProblem returns the SpecificProblem field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetSpecificProblem() SpecificProblem {
-	if o == nil || IsNil(o.SpecificProblem) {
+	if o == nil || isNil(o.SpecificProblem) {
 		var ret SpecificProblem
 		return ret
 	}
@@ -342,7 +341,7 @@ func (o *AlarmsGet200ResponseValue) GetSpecificProblem() SpecificProblem {
 // GetSpecificProblemOk returns a tuple with the SpecificProblem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetSpecificProblemOk() (*SpecificProblem, bool) {
-	if o == nil || IsNil(o.SpecificProblem) {
+	if o == nil || isNil(o.SpecificProblem) {
 		return nil, false
 	}
 	return o.SpecificProblem, true
@@ -350,7 +349,7 @@ func (o *AlarmsGet200ResponseValue) GetSpecificProblemOk() (*SpecificProblem, bo
 
 // HasSpecificProblem returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasSpecificProblem() bool {
-	if o != nil && !IsNil(o.SpecificProblem) {
+	if o != nil && !isNil(o.SpecificProblem) {
 		return true
 	}
 
@@ -364,7 +363,7 @@ func (o *AlarmsGet200ResponseValue) SetSpecificProblem(v SpecificProblem) {
 
 // GetPerceivedSeverity returns the PerceivedSeverity field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetPerceivedSeverity() PerceivedSeverity {
-	if o == nil || IsNil(o.PerceivedSeverity) {
+	if o == nil || isNil(o.PerceivedSeverity) {
 		var ret PerceivedSeverity
 		return ret
 	}
@@ -374,7 +373,7 @@ func (o *AlarmsGet200ResponseValue) GetPerceivedSeverity() PerceivedSeverity {
 // GetPerceivedSeverityOk returns a tuple with the PerceivedSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetPerceivedSeverityOk() (*PerceivedSeverity, bool) {
-	if o == nil || IsNil(o.PerceivedSeverity) {
+	if o == nil || isNil(o.PerceivedSeverity) {
 		return nil, false
 	}
 	return o.PerceivedSeverity, true
@@ -382,7 +381,7 @@ func (o *AlarmsGet200ResponseValue) GetPerceivedSeverityOk() (*PerceivedSeverity
 
 // HasPerceivedSeverity returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasPerceivedSeverity() bool {
-	if o != nil && !IsNil(o.PerceivedSeverity) {
+	if o != nil && !isNil(o.PerceivedSeverity) {
 		return true
 	}
 
@@ -396,7 +395,7 @@ func (o *AlarmsGet200ResponseValue) SetPerceivedSeverity(v PerceivedSeverity) {
 
 // GetBackedUpStatus returns the BackedUpStatus field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetBackedUpStatus() bool {
-	if o == nil || IsNil(o.BackedUpStatus) {
+	if o == nil || isNil(o.BackedUpStatus) {
 		var ret bool
 		return ret
 	}
@@ -406,7 +405,7 @@ func (o *AlarmsGet200ResponseValue) GetBackedUpStatus() bool {
 // GetBackedUpStatusOk returns a tuple with the BackedUpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetBackedUpStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.BackedUpStatus) {
+	if o == nil || isNil(o.BackedUpStatus) {
 		return nil, false
 	}
 	return o.BackedUpStatus, true
@@ -414,7 +413,7 @@ func (o *AlarmsGet200ResponseValue) GetBackedUpStatusOk() (*bool, bool) {
 
 // HasBackedUpStatus returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasBackedUpStatus() bool {
-	if o != nil && !IsNil(o.BackedUpStatus) {
+	if o != nil && !isNil(o.BackedUpStatus) {
 		return true
 	}
 
@@ -428,7 +427,7 @@ func (o *AlarmsGet200ResponseValue) SetBackedUpStatus(v bool) {
 
 // GetBackUpObject returns the BackUpObject field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetBackUpObject() string {
-	if o == nil || IsNil(o.BackUpObject) {
+	if o == nil || isNil(o.BackUpObject) {
 		var ret string
 		return ret
 	}
@@ -438,7 +437,7 @@ func (o *AlarmsGet200ResponseValue) GetBackUpObject() string {
 // GetBackUpObjectOk returns a tuple with the BackUpObject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetBackUpObjectOk() (*string, bool) {
-	if o == nil || IsNil(o.BackUpObject) {
+	if o == nil || isNil(o.BackUpObject) {
 		return nil, false
 	}
 	return o.BackUpObject, true
@@ -446,7 +445,7 @@ func (o *AlarmsGet200ResponseValue) GetBackUpObjectOk() (*string, bool) {
 
 // HasBackUpObject returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasBackUpObject() bool {
-	if o != nil && !IsNil(o.BackUpObject) {
+	if o != nil && !isNil(o.BackUpObject) {
 		return true
 	}
 
@@ -460,7 +459,7 @@ func (o *AlarmsGet200ResponseValue) SetBackUpObject(v string) {
 
 // GetTrendIndication returns the TrendIndication field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetTrendIndication() TrendIndication {
-	if o == nil || IsNil(o.TrendIndication) {
+	if o == nil || isNil(o.TrendIndication) {
 		var ret TrendIndication
 		return ret
 	}
@@ -470,7 +469,7 @@ func (o *AlarmsGet200ResponseValue) GetTrendIndication() TrendIndication {
 // GetTrendIndicationOk returns a tuple with the TrendIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetTrendIndicationOk() (*TrendIndication, bool) {
-	if o == nil || IsNil(o.TrendIndication) {
+	if o == nil || isNil(o.TrendIndication) {
 		return nil, false
 	}
 	return o.TrendIndication, true
@@ -478,7 +477,7 @@ func (o *AlarmsGet200ResponseValue) GetTrendIndicationOk() (*TrendIndication, bo
 
 // HasTrendIndication returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasTrendIndication() bool {
-	if o != nil && !IsNil(o.TrendIndication) {
+	if o != nil && !isNil(o.TrendIndication) {
 		return true
 	}
 
@@ -492,7 +491,7 @@ func (o *AlarmsGet200ResponseValue) SetTrendIndication(v TrendIndication) {
 
 // GetThresholdinfo returns the Thresholdinfo field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetThresholdinfo() ThresholdInfo {
-	if o == nil || IsNil(o.Thresholdinfo) {
+	if o == nil || isNil(o.Thresholdinfo) {
 		var ret ThresholdInfo
 		return ret
 	}
@@ -502,7 +501,7 @@ func (o *AlarmsGet200ResponseValue) GetThresholdinfo() ThresholdInfo {
 // GetThresholdinfoOk returns a tuple with the Thresholdinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetThresholdinfoOk() (*ThresholdInfo, bool) {
-	if o == nil || IsNil(o.Thresholdinfo) {
+	if o == nil || isNil(o.Thresholdinfo) {
 		return nil, false
 	}
 	return o.Thresholdinfo, true
@@ -510,7 +509,7 @@ func (o *AlarmsGet200ResponseValue) GetThresholdinfoOk() (*ThresholdInfo, bool) 
 
 // HasThresholdinfo returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasThresholdinfo() bool {
-	if o != nil && !IsNil(o.Thresholdinfo) {
+	if o != nil && !isNil(o.Thresholdinfo) {
 		return true
 	}
 
@@ -524,7 +523,7 @@ func (o *AlarmsGet200ResponseValue) SetThresholdinfo(v ThresholdInfo) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -534,7 +533,7 @@ func (o *AlarmsGet200ResponseValue) GetCorrelatedNotifications() []CorrelatedNot
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -542,7 +541,7 @@ func (o *AlarmsGet200ResponseValue) GetCorrelatedNotificationsOk() ([]Correlated
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -556,7 +555,7 @@ func (o *AlarmsGet200ResponseValue) SetCorrelatedNotifications(v []CorrelatedNot
 
 // GetStateChangeDefinition returns the StateChangeDefinition field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetStateChangeDefinition() []map[string]interface{} {
-	if o == nil || IsNil(o.StateChangeDefinition) {
+	if o == nil || isNil(o.StateChangeDefinition) {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -566,7 +565,7 @@ func (o *AlarmsGet200ResponseValue) GetStateChangeDefinition() []map[string]inte
 // GetStateChangeDefinitionOk returns a tuple with the StateChangeDefinition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetStateChangeDefinitionOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.StateChangeDefinition) {
+	if o == nil || isNil(o.StateChangeDefinition) {
 		return nil, false
 	}
 	return o.StateChangeDefinition, true
@@ -574,7 +573,7 @@ func (o *AlarmsGet200ResponseValue) GetStateChangeDefinitionOk() ([]map[string]i
 
 // HasStateChangeDefinition returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasStateChangeDefinition() bool {
-	if o != nil && !IsNil(o.StateChangeDefinition) {
+	if o != nil && !isNil(o.StateChangeDefinition) {
 		return true
 	}
 
@@ -588,7 +587,7 @@ func (o *AlarmsGet200ResponseValue) SetStateChangeDefinition(v []map[string]inte
 
 // GetMonitoredAttributes returns the MonitoredAttributes field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetMonitoredAttributes() map[string]interface{} {
-	if o == nil || IsNil(o.MonitoredAttributes) {
+	if o == nil || isNil(o.MonitoredAttributes) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -598,7 +597,7 @@ func (o *AlarmsGet200ResponseValue) GetMonitoredAttributes() map[string]interfac
 // GetMonitoredAttributesOk returns a tuple with the MonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetMonitoredAttributesOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.MonitoredAttributes) {
+	if o == nil || isNil(o.MonitoredAttributes) {
 		return map[string]interface{}{}, false
 	}
 	return o.MonitoredAttributes, true
@@ -606,7 +605,7 @@ func (o *AlarmsGet200ResponseValue) GetMonitoredAttributesOk() (map[string]inter
 
 // HasMonitoredAttributes returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasMonitoredAttributes() bool {
-	if o != nil && !IsNil(o.MonitoredAttributes) {
+	if o != nil && !isNil(o.MonitoredAttributes) {
 		return true
 	}
 
@@ -620,7 +619,7 @@ func (o *AlarmsGet200ResponseValue) SetMonitoredAttributes(v map[string]interfac
 
 // GetProposedRepairActions returns the ProposedRepairActions field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetProposedRepairActions() string {
-	if o == nil || IsNil(o.ProposedRepairActions) {
+	if o == nil || isNil(o.ProposedRepairActions) {
 		var ret string
 		return ret
 	}
@@ -630,7 +629,7 @@ func (o *AlarmsGet200ResponseValue) GetProposedRepairActions() string {
 // GetProposedRepairActionsOk returns a tuple with the ProposedRepairActions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetProposedRepairActionsOk() (*string, bool) {
-	if o == nil || IsNil(o.ProposedRepairActions) {
+	if o == nil || isNil(o.ProposedRepairActions) {
 		return nil, false
 	}
 	return o.ProposedRepairActions, true
@@ -638,7 +637,7 @@ func (o *AlarmsGet200ResponseValue) GetProposedRepairActionsOk() (*string, bool)
 
 // HasProposedRepairActions returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasProposedRepairActions() bool {
-	if o != nil && !IsNil(o.ProposedRepairActions) {
+	if o != nil && !isNil(o.ProposedRepairActions) {
 		return true
 	}
 
@@ -652,7 +651,7 @@ func (o *AlarmsGet200ResponseValue) SetProposedRepairActions(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -662,7 +661,7 @@ func (o *AlarmsGet200ResponseValue) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -670,7 +669,7 @@ func (o *AlarmsGet200ResponseValue) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -684,7 +683,7 @@ func (o *AlarmsGet200ResponseValue) SetAdditionalText(v string) {
 
 // GetAdditionalInformation returns the AdditionalInformation field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAdditionalInformation() map[string]interface{} {
-	if o == nil || IsNil(o.AdditionalInformation) {
+	if o == nil || isNil(o.AdditionalInformation) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -694,7 +693,7 @@ func (o *AlarmsGet200ResponseValue) GetAdditionalInformation() map[string]interf
 // GetAdditionalInformationOk returns a tuple with the AdditionalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAdditionalInformationOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AdditionalInformation) {
+	if o == nil || isNil(o.AdditionalInformation) {
 		return map[string]interface{}{}, false
 	}
 	return o.AdditionalInformation, true
@@ -702,7 +701,7 @@ func (o *AlarmsGet200ResponseValue) GetAdditionalInformationOk() (map[string]int
 
 // HasAdditionalInformation returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAdditionalInformation() bool {
-	if o != nil && !IsNil(o.AdditionalInformation) {
+	if o != nil && !isNil(o.AdditionalInformation) {
 		return true
 	}
 
@@ -716,7 +715,7 @@ func (o *AlarmsGet200ResponseValue) SetAdditionalInformation(v map[string]interf
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetRootCauseIndicator() bool {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -726,7 +725,7 @@ func (o *AlarmsGet200ResponseValue) GetRootCauseIndicator() bool {
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -734,7 +733,7 @@ func (o *AlarmsGet200ResponseValue) GetRootCauseIndicatorOk() (*bool, bool) {
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasRootCauseIndicator() bool {
-	if o != nil && !IsNil(o.RootCauseIndicator) {
+	if o != nil && !isNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -748,7 +747,7 @@ func (o *AlarmsGet200ResponseValue) SetRootCauseIndicator(v bool) {
 
 // GetAckTime returns the AckTime field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAckTime() time.Time {
-	if o == nil || IsNil(o.AckTime) {
+	if o == nil || isNil(o.AckTime) {
 		var ret time.Time
 		return ret
 	}
@@ -758,7 +757,7 @@ func (o *AlarmsGet200ResponseValue) GetAckTime() time.Time {
 // GetAckTimeOk returns a tuple with the AckTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAckTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.AckTime) {
+	if o == nil || isNil(o.AckTime) {
 		return nil, false
 	}
 	return o.AckTime, true
@@ -766,7 +765,7 @@ func (o *AlarmsGet200ResponseValue) GetAckTimeOk() (*time.Time, bool) {
 
 // HasAckTime returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAckTime() bool {
-	if o != nil && !IsNil(o.AckTime) {
+	if o != nil && !isNil(o.AckTime) {
 		return true
 	}
 
@@ -780,7 +779,7 @@ func (o *AlarmsGet200ResponseValue) SetAckTime(v time.Time) {
 
 // GetAckUserId returns the AckUserId field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAckUserId() string {
-	if o == nil || IsNil(o.AckUserId) {
+	if o == nil || isNil(o.AckUserId) {
 		var ret string
 		return ret
 	}
@@ -790,7 +789,7 @@ func (o *AlarmsGet200ResponseValue) GetAckUserId() string {
 // GetAckUserIdOk returns a tuple with the AckUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAckUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AckUserId) {
+	if o == nil || isNil(o.AckUserId) {
 		return nil, false
 	}
 	return o.AckUserId, true
@@ -798,7 +797,7 @@ func (o *AlarmsGet200ResponseValue) GetAckUserIdOk() (*string, bool) {
 
 // HasAckUserId returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAckUserId() bool {
-	if o != nil && !IsNil(o.AckUserId) {
+	if o != nil && !isNil(o.AckUserId) {
 		return true
 	}
 
@@ -812,7 +811,7 @@ func (o *AlarmsGet200ResponseValue) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAckSystemId() string {
-	if o == nil || IsNil(o.AckSystemId) {
+	if o == nil || isNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -822,7 +821,7 @@ func (o *AlarmsGet200ResponseValue) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AckSystemId) {
+	if o == nil || isNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -830,7 +829,7 @@ func (o *AlarmsGet200ResponseValue) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAckSystemId() bool {
-	if o != nil && !IsNil(o.AckSystemId) {
+	if o != nil && !isNil(o.AckSystemId) {
 		return true
 	}
 
@@ -844,7 +843,7 @@ func (o *AlarmsGet200ResponseValue) SetAckSystemId(v string) {
 
 // GetAckState returns the AckState field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetAckState() AckState {
-	if o == nil || IsNil(o.AckState) {
+	if o == nil || isNil(o.AckState) {
 		var ret AckState
 		return ret
 	}
@@ -854,7 +853,7 @@ func (o *AlarmsGet200ResponseValue) GetAckState() AckState {
 // GetAckStateOk returns a tuple with the AckState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetAckStateOk() (*AckState, bool) {
-	if o == nil || IsNil(o.AckState) {
+	if o == nil || isNil(o.AckState) {
 		return nil, false
 	}
 	return o.AckState, true
@@ -862,7 +861,7 @@ func (o *AlarmsGet200ResponseValue) GetAckStateOk() (*AckState, bool) {
 
 // HasAckState returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasAckState() bool {
-	if o != nil && !IsNil(o.AckState) {
+	if o != nil && !isNil(o.AckState) {
 		return true
 	}
 
@@ -876,7 +875,7 @@ func (o *AlarmsGet200ResponseValue) SetAckState(v AckState) {
 
 // GetClearUserId returns the ClearUserId field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetClearUserId() string {
-	if o == nil || IsNil(o.ClearUserId) {
+	if o == nil || isNil(o.ClearUserId) {
 		var ret string
 		return ret
 	}
@@ -886,7 +885,7 @@ func (o *AlarmsGet200ResponseValue) GetClearUserId() string {
 // GetClearUserIdOk returns a tuple with the ClearUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetClearUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClearUserId) {
+	if o == nil || isNil(o.ClearUserId) {
 		return nil, false
 	}
 	return o.ClearUserId, true
@@ -894,7 +893,7 @@ func (o *AlarmsGet200ResponseValue) GetClearUserIdOk() (*string, bool) {
 
 // HasClearUserId returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasClearUserId() bool {
-	if o != nil && !IsNil(o.ClearUserId) {
+	if o != nil && !isNil(o.ClearUserId) {
 		return true
 	}
 
@@ -908,7 +907,7 @@ func (o *AlarmsGet200ResponseValue) SetClearUserId(v string) {
 
 // GetClearSystemId returns the ClearSystemId field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetClearSystemId() string {
-	if o == nil || IsNil(o.ClearSystemId) {
+	if o == nil || isNil(o.ClearSystemId) {
 		var ret string
 		return ret
 	}
@@ -918,7 +917,7 @@ func (o *AlarmsGet200ResponseValue) GetClearSystemId() string {
 // GetClearSystemIdOk returns a tuple with the ClearSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetClearSystemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClearSystemId) {
+	if o == nil || isNil(o.ClearSystemId) {
 		return nil, false
 	}
 	return o.ClearSystemId, true
@@ -926,7 +925,7 @@ func (o *AlarmsGet200ResponseValue) GetClearSystemIdOk() (*string, bool) {
 
 // HasClearSystemId returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasClearSystemId() bool {
-	if o != nil && !IsNil(o.ClearSystemId) {
+	if o != nil && !isNil(o.ClearSystemId) {
 		return true
 	}
 
@@ -940,7 +939,7 @@ func (o *AlarmsGet200ResponseValue) SetClearSystemId(v string) {
 
 // GetServiceUser returns the ServiceUser field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetServiceUser() string {
-	if o == nil || IsNil(o.ServiceUser) {
+	if o == nil || isNil(o.ServiceUser) {
 		var ret string
 		return ret
 	}
@@ -950,7 +949,7 @@ func (o *AlarmsGet200ResponseValue) GetServiceUser() string {
 // GetServiceUserOk returns a tuple with the ServiceUser field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetServiceUserOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceUser) {
+	if o == nil || isNil(o.ServiceUser) {
 		return nil, false
 	}
 	return o.ServiceUser, true
@@ -958,7 +957,7 @@ func (o *AlarmsGet200ResponseValue) GetServiceUserOk() (*string, bool) {
 
 // HasServiceUser returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasServiceUser() bool {
-	if o != nil && !IsNil(o.ServiceUser) {
+	if o != nil && !isNil(o.ServiceUser) {
 		return true
 	}
 
@@ -972,7 +971,7 @@ func (o *AlarmsGet200ResponseValue) SetServiceUser(v string) {
 
 // GetServiceProvider returns the ServiceProvider field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetServiceProvider() string {
-	if o == nil || IsNil(o.ServiceProvider) {
+	if o == nil || isNil(o.ServiceProvider) {
 		var ret string
 		return ret
 	}
@@ -982,7 +981,7 @@ func (o *AlarmsGet200ResponseValue) GetServiceProvider() string {
 // GetServiceProviderOk returns a tuple with the ServiceProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetServiceProviderOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceProvider) {
+	if o == nil || isNil(o.ServiceProvider) {
 		return nil, false
 	}
 	return o.ServiceProvider, true
@@ -990,7 +989,7 @@ func (o *AlarmsGet200ResponseValue) GetServiceProviderOk() (*string, bool) {
 
 // HasServiceProvider returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasServiceProvider() bool {
-	if o != nil && !IsNil(o.ServiceProvider) {
+	if o != nil && !isNil(o.ServiceProvider) {
 		return true
 	}
 
@@ -1004,7 +1003,7 @@ func (o *AlarmsGet200ResponseValue) SetServiceProvider(v string) {
 
 // GetSecurityAlarmDetector returns the SecurityAlarmDetector field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetSecurityAlarmDetector() string {
-	if o == nil || IsNil(o.SecurityAlarmDetector) {
+	if o == nil || isNil(o.SecurityAlarmDetector) {
 		var ret string
 		return ret
 	}
@@ -1014,7 +1013,7 @@ func (o *AlarmsGet200ResponseValue) GetSecurityAlarmDetector() string {
 // GetSecurityAlarmDetectorOk returns a tuple with the SecurityAlarmDetector field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetSecurityAlarmDetectorOk() (*string, bool) {
-	if o == nil || IsNil(o.SecurityAlarmDetector) {
+	if o == nil || isNil(o.SecurityAlarmDetector) {
 		return nil, false
 	}
 	return o.SecurityAlarmDetector, true
@@ -1022,7 +1021,7 @@ func (o *AlarmsGet200ResponseValue) GetSecurityAlarmDetectorOk() (*string, bool)
 
 // HasSecurityAlarmDetector returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasSecurityAlarmDetector() bool {
-	if o != nil && !IsNil(o.SecurityAlarmDetector) {
+	if o != nil && !isNil(o.SecurityAlarmDetector) {
 		return true
 	}
 
@@ -1036,7 +1035,7 @@ func (o *AlarmsGet200ResponseValue) SetSecurityAlarmDetector(v string) {
 
 // GetComments returns the Comments field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValue) GetComments() map[string]Comment {
-	if o == nil || IsNil(o.Comments) {
+	if o == nil || isNil(o.Comments) {
 		var ret map[string]Comment
 		return ret
 	}
@@ -1046,7 +1045,7 @@ func (o *AlarmsGet200ResponseValue) GetComments() map[string]Comment {
 // GetCommentsOk returns a tuple with the Comments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValue) GetCommentsOk() (*map[string]Comment, bool) {
-	if o == nil || IsNil(o.Comments) {
+	if o == nil || isNil(o.Comments) {
 		return nil, false
 	}
 	return o.Comments, true
@@ -1054,7 +1053,7 @@ func (o *AlarmsGet200ResponseValue) GetCommentsOk() (*map[string]Comment, bool) 
 
 // HasComments returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValue) HasComments() bool {
-	if o != nil && !IsNil(o.Comments) {
+	if o != nil && !isNil(o.Comments) {
 		return true
 	}
 
@@ -1076,97 +1075,97 @@ func (o AlarmsGet200ResponseValue) MarshalJSON() ([]byte, error) {
 
 func (o AlarmsGet200ResponseValue) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LastNotificationHeader) {
+	if !isNil(o.LastNotificationHeader) {
 		toSerialize["lastNotificationHeader"] = o.LastNotificationHeader
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.NotificationId) {
+	if !isNil(o.NotificationId) {
 		toSerialize["notificationId"] = o.NotificationId
 	}
-	if !IsNil(o.AlarmRaisedTime) {
+	if !isNil(o.AlarmRaisedTime) {
 		toSerialize["alarmRaisedTime"] = o.AlarmRaisedTime
 	}
-	if !IsNil(o.AlarmChangedTime) {
+	if !isNil(o.AlarmChangedTime) {
 		toSerialize["alarmChangedTime"] = o.AlarmChangedTime
 	}
-	if !IsNil(o.AlarmClearedTime) {
+	if !isNil(o.AlarmClearedTime) {
 		toSerialize["alarmClearedTime"] = o.AlarmClearedTime
 	}
-	if !IsNil(o.AlarmType) {
+	if !isNil(o.AlarmType) {
 		toSerialize["alarmType"] = o.AlarmType
 	}
-	if !IsNil(o.ProbableCause) {
+	if !isNil(o.ProbableCause) {
 		toSerialize["probableCause"] = o.ProbableCause
 	}
-	if !IsNil(o.SpecificProblem) {
+	if !isNil(o.SpecificProblem) {
 		toSerialize["specificProblem"] = o.SpecificProblem
 	}
-	if !IsNil(o.PerceivedSeverity) {
+	if !isNil(o.PerceivedSeverity) {
 		toSerialize["perceivedSeverity"] = o.PerceivedSeverity
 	}
-	if !IsNil(o.BackedUpStatus) {
+	if !isNil(o.BackedUpStatus) {
 		toSerialize["backedUpStatus"] = o.BackedUpStatus
 	}
-	if !IsNil(o.BackUpObject) {
+	if !isNil(o.BackUpObject) {
 		toSerialize["backUpObject"] = o.BackUpObject
 	}
-	if !IsNil(o.TrendIndication) {
+	if !isNil(o.TrendIndication) {
 		toSerialize["trendIndication"] = o.TrendIndication
 	}
-	if !IsNil(o.Thresholdinfo) {
+	if !isNil(o.Thresholdinfo) {
 		toSerialize["thresholdinfo"] = o.Thresholdinfo
 	}
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.StateChangeDefinition) {
+	if !isNil(o.StateChangeDefinition) {
 		toSerialize["stateChangeDefinition"] = o.StateChangeDefinition
 	}
-	if !IsNil(o.MonitoredAttributes) {
+	if !isNil(o.MonitoredAttributes) {
 		toSerialize["monitoredAttributes"] = o.MonitoredAttributes
 	}
-	if !IsNil(o.ProposedRepairActions) {
+	if !isNil(o.ProposedRepairActions) {
 		toSerialize["proposedRepairActions"] = o.ProposedRepairActions
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.AdditionalInformation) {
+	if !isNil(o.AdditionalInformation) {
 		toSerialize["additionalInformation"] = o.AdditionalInformation
 	}
-	if !IsNil(o.RootCauseIndicator) {
+	if !isNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
-	if !IsNil(o.AckTime) {
+	if !isNil(o.AckTime) {
 		toSerialize["ackTime"] = o.AckTime
 	}
-	if !IsNil(o.AckUserId) {
+	if !isNil(o.AckUserId) {
 		toSerialize["ackUserId"] = o.AckUserId
 	}
-	if !IsNil(o.AckSystemId) {
+	if !isNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
-	if !IsNil(o.AckState) {
+	if !isNil(o.AckState) {
 		toSerialize["ackState"] = o.AckState
 	}
-	if !IsNil(o.ClearUserId) {
+	if !isNil(o.ClearUserId) {
 		toSerialize["clearUserId"] = o.ClearUserId
 	}
-	if !IsNil(o.ClearSystemId) {
+	if !isNil(o.ClearSystemId) {
 		toSerialize["clearSystemId"] = o.ClearSystemId
 	}
-	if !IsNil(o.ServiceUser) {
+	if !isNil(o.ServiceUser) {
 		toSerialize["serviceUser"] = o.ServiceUser
 	}
-	if !IsNil(o.ServiceProvider) {
+	if !isNil(o.ServiceProvider) {
 		toSerialize["serviceProvider"] = o.ServiceProvider
 	}
-	if !IsNil(o.SecurityAlarmDetector) {
+	if !isNil(o.SecurityAlarmDetector) {
 		toSerialize["securityAlarmDetector"] = o.SecurityAlarmDetector
 	}
-	if !IsNil(o.Comments) {
+	if !isNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
 	}
 	return toSerialize, nil

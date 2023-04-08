@@ -54,7 +54,7 @@ func NewSliceInfoForUEConfigurationUpdateWithDefaults() *SliceInfoForUEConfigura
 
 // GetSubscribedNssai returns the SubscribedNssai field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetSubscribedNssai() []SubscribedSnssai {
-	if o == nil || IsNil(o.SubscribedNssai) {
+	if o == nil || isNil(o.SubscribedNssai) {
 		var ret []SubscribedSnssai
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetSubscribedNssai() []SubscribedSns
 // GetSubscribedNssaiOk returns a tuple with the SubscribedNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetSubscribedNssaiOk() ([]SubscribedSnssai, bool) {
-	if o == nil || IsNil(o.SubscribedNssai) {
+	if o == nil || isNil(o.SubscribedNssai) {
 		return nil, false
 	}
 	return o.SubscribedNssai, true
@@ -72,7 +72,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetSubscribedNssaiOk() ([]Subscribed
 
 // HasSubscribedNssai returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasSubscribedNssai() bool {
-	if o != nil && !IsNil(o.SubscribedNssai) {
+	if o != nil && !isNil(o.SubscribedNssai) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetSubscribedNssai(v []SubscribedSns
 
 // GetAllowedNssaiCurrentAccess returns the AllowedNssaiCurrentAccess field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiCurrentAccess() AllowedNssai {
-	if o == nil || IsNil(o.AllowedNssaiCurrentAccess) {
+	if o == nil || isNil(o.AllowedNssaiCurrentAccess) {
 		var ret AllowedNssai
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiCurrentAccess() Allow
 // GetAllowedNssaiCurrentAccessOk returns a tuple with the AllowedNssaiCurrentAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiCurrentAccessOk() (*AllowedNssai, bool) {
-	if o == nil || IsNil(o.AllowedNssaiCurrentAccess) {
+	if o == nil || isNil(o.AllowedNssaiCurrentAccess) {
 		return nil, false
 	}
 	return o.AllowedNssaiCurrentAccess, true
@@ -104,7 +104,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiCurrentAccessOk() (*A
 
 // HasAllowedNssaiCurrentAccess returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasAllowedNssaiCurrentAccess() bool {
-	if o != nil && !IsNil(o.AllowedNssaiCurrentAccess) {
+	if o != nil && !isNil(o.AllowedNssaiCurrentAccess) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetAllowedNssaiCurrentAccess(v Allow
 
 // GetAllowedNssaiOtherAccess returns the AllowedNssaiOtherAccess field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiOtherAccess() AllowedNssai {
-	if o == nil || IsNil(o.AllowedNssaiOtherAccess) {
+	if o == nil || isNil(o.AllowedNssaiOtherAccess) {
 		var ret AllowedNssai
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiOtherAccess() Allowed
 // GetAllowedNssaiOtherAccessOk returns a tuple with the AllowedNssaiOtherAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiOtherAccessOk() (*AllowedNssai, bool) {
-	if o == nil || IsNil(o.AllowedNssaiOtherAccess) {
+	if o == nil || isNil(o.AllowedNssaiOtherAccess) {
 		return nil, false
 	}
 	return o.AllowedNssaiOtherAccess, true
@@ -136,7 +136,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetAllowedNssaiOtherAccessOk() (*All
 
 // HasAllowedNssaiOtherAccess returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasAllowedNssaiOtherAccess() bool {
-	if o != nil && !IsNil(o.AllowedNssaiOtherAccess) {
+	if o != nil && !isNil(o.AllowedNssaiOtherAccess) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetAllowedNssaiOtherAccess(v Allowed
 
 // GetDefaultConfiguredSnssaiInd returns the DefaultConfiguredSnssaiInd field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetDefaultConfiguredSnssaiInd() bool {
-	if o == nil || IsNil(o.DefaultConfiguredSnssaiInd) {
+	if o == nil || isNil(o.DefaultConfiguredSnssaiInd) {
 		var ret bool
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetDefaultConfiguredSnssaiInd() bool
 // GetDefaultConfiguredSnssaiIndOk returns a tuple with the DefaultConfiguredSnssaiInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetDefaultConfiguredSnssaiIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DefaultConfiguredSnssaiInd) {
+	if o == nil || isNil(o.DefaultConfiguredSnssaiInd) {
 		return nil, false
 	}
 	return o.DefaultConfiguredSnssaiInd, true
@@ -168,7 +168,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetDefaultConfiguredSnssaiIndOk() (*
 
 // HasDefaultConfiguredSnssaiInd returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasDefaultConfiguredSnssaiInd() bool {
-	if o != nil && !IsNil(o.DefaultConfiguredSnssaiInd) {
+	if o != nil && !isNil(o.DefaultConfiguredSnssaiInd) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetDefaultConfiguredSnssaiInd(v bool
 
 // GetRequestedNssai returns the RequestedNssai field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetRequestedNssai() []Snssai {
-	if o == nil || IsNil(o.RequestedNssai) {
+	if o == nil || isNil(o.RequestedNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetRequestedNssai() []Snssai {
 // GetRequestedNssaiOk returns a tuple with the RequestedNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetRequestedNssaiOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.RequestedNssai) {
+	if o == nil || isNil(o.RequestedNssai) {
 		return nil, false
 	}
 	return o.RequestedNssai, true
@@ -200,7 +200,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetRequestedNssaiOk() ([]Snssai, boo
 
 // HasRequestedNssai returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasRequestedNssai() bool {
-	if o != nil && !IsNil(o.RequestedNssai) {
+	if o != nil && !isNil(o.RequestedNssai) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetRequestedNssai(v []Snssai) {
 
 // GetMappingOfNssai returns the MappingOfNssai field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetMappingOfNssai() []MappingOfSnssai {
-	if o == nil || IsNil(o.MappingOfNssai) {
+	if o == nil || isNil(o.MappingOfNssai) {
 		var ret []MappingOfSnssai
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetMappingOfNssai() []MappingOfSnssa
 // GetMappingOfNssaiOk returns a tuple with the MappingOfNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetMappingOfNssaiOk() ([]MappingOfSnssai, bool) {
-	if o == nil || IsNil(o.MappingOfNssai) {
+	if o == nil || isNil(o.MappingOfNssai) {
 		return nil, false
 	}
 	return o.MappingOfNssai, true
@@ -232,7 +232,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetMappingOfNssaiOk() ([]MappingOfSn
 
 // HasMappingOfNssai returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasMappingOfNssai() bool {
-	if o != nil && !IsNil(o.MappingOfNssai) {
+	if o != nil && !isNil(o.MappingOfNssai) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetMappingOfNssai(v []MappingOfSnssa
 
 // GetUeSupNssrgInd returns the UeSupNssrgInd field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetUeSupNssrgInd() bool {
-	if o == nil || IsNil(o.UeSupNssrgInd) {
+	if o == nil || isNil(o.UeSupNssrgInd) {
 		var ret bool
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetUeSupNssrgInd() bool {
 // GetUeSupNssrgIndOk returns a tuple with the UeSupNssrgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetUeSupNssrgIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UeSupNssrgInd) {
+	if o == nil || isNil(o.UeSupNssrgInd) {
 		return nil, false
 	}
 	return o.UeSupNssrgInd, true
@@ -264,7 +264,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetUeSupNssrgIndOk() (*bool, bool) {
 
 // HasUeSupNssrgInd returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasUeSupNssrgInd() bool {
-	if o != nil && !IsNil(o.UeSupNssrgInd) {
+	if o != nil && !isNil(o.UeSupNssrgInd) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetUeSupNssrgInd(v bool) {
 
 // GetSuppressNssrgInd returns the SuppressNssrgInd field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetSuppressNssrgInd() bool {
-	if o == nil || IsNil(o.SuppressNssrgInd) {
+	if o == nil || isNil(o.SuppressNssrgInd) {
 		var ret bool
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetSuppressNssrgInd() bool {
 // GetSuppressNssrgIndOk returns a tuple with the SuppressNssrgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetSuppressNssrgIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SuppressNssrgInd) {
+	if o == nil || isNil(o.SuppressNssrgInd) {
 		return nil, false
 	}
 	return o.SuppressNssrgInd, true
@@ -296,7 +296,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetSuppressNssrgIndOk() (*bool, bool
 
 // HasSuppressNssrgInd returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasSuppressNssrgInd() bool {
-	if o != nil && !IsNil(o.SuppressNssrgInd) {
+	if o != nil && !isNil(o.SuppressNssrgInd) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetSuppressNssrgInd(v bool) {
 
 // GetRejectedNssaiRa returns the RejectedNssaiRa field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetRejectedNssaiRa() []Snssai {
-	if o == nil || IsNil(o.RejectedNssaiRa) {
+	if o == nil || isNil(o.RejectedNssaiRa) {
 		var ret []Snssai
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetRejectedNssaiRa() []Snssai {
 // GetRejectedNssaiRaOk returns a tuple with the RejectedNssaiRa field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetRejectedNssaiRaOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.RejectedNssaiRa) {
+	if o == nil || isNil(o.RejectedNssaiRa) {
 		return nil, false
 	}
 	return o.RejectedNssaiRa, true
@@ -328,7 +328,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetRejectedNssaiRaOk() ([]Snssai, bo
 
 // HasRejectedNssaiRa returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasRejectedNssaiRa() bool {
-	if o != nil && !IsNil(o.RejectedNssaiRa) {
+	if o != nil && !isNil(o.RejectedNssaiRa) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *SliceInfoForUEConfigurationUpdate) SetRejectedNssaiRa(v []Snssai) {
 
 // GetNsagSupported returns the NsagSupported field value if set, zero value otherwise.
 func (o *SliceInfoForUEConfigurationUpdate) GetNsagSupported() bool {
-	if o == nil || IsNil(o.NsagSupported) {
+	if o == nil || isNil(o.NsagSupported) {
 		var ret bool
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetNsagSupported() bool {
 // GetNsagSupportedOk returns a tuple with the NsagSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForUEConfigurationUpdate) GetNsagSupportedOk() (*bool, bool) {
-	if o == nil || IsNil(o.NsagSupported) {
+	if o == nil || isNil(o.NsagSupported) {
 		return nil, false
 	}
 	return o.NsagSupported, true
@@ -360,7 +360,7 @@ func (o *SliceInfoForUEConfigurationUpdate) GetNsagSupportedOk() (*bool, bool) {
 
 // HasNsagSupported returns a boolean if a field has been set.
 func (o *SliceInfoForUEConfigurationUpdate) HasNsagSupported() bool {
-	if o != nil && !IsNil(o.NsagSupported) {
+	if o != nil && !isNil(o.NsagSupported) {
 		return true
 	}
 
@@ -382,34 +382,34 @@ func (o SliceInfoForUEConfigurationUpdate) MarshalJSON() ([]byte, error) {
 
 func (o SliceInfoForUEConfigurationUpdate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscribedNssai) {
+	if !isNil(o.SubscribedNssai) {
 		toSerialize["subscribedNssai"] = o.SubscribedNssai
 	}
-	if !IsNil(o.AllowedNssaiCurrentAccess) {
+	if !isNil(o.AllowedNssaiCurrentAccess) {
 		toSerialize["allowedNssaiCurrentAccess"] = o.AllowedNssaiCurrentAccess
 	}
-	if !IsNil(o.AllowedNssaiOtherAccess) {
+	if !isNil(o.AllowedNssaiOtherAccess) {
 		toSerialize["allowedNssaiOtherAccess"] = o.AllowedNssaiOtherAccess
 	}
-	if !IsNil(o.DefaultConfiguredSnssaiInd) {
+	if !isNil(o.DefaultConfiguredSnssaiInd) {
 		toSerialize["defaultConfiguredSnssaiInd"] = o.DefaultConfiguredSnssaiInd
 	}
-	if !IsNil(o.RequestedNssai) {
+	if !isNil(o.RequestedNssai) {
 		toSerialize["requestedNssai"] = o.RequestedNssai
 	}
-	if !IsNil(o.MappingOfNssai) {
+	if !isNil(o.MappingOfNssai) {
 		toSerialize["mappingOfNssai"] = o.MappingOfNssai
 	}
-	if !IsNil(o.UeSupNssrgInd) {
+	if !isNil(o.UeSupNssrgInd) {
 		toSerialize["ueSupNssrgInd"] = o.UeSupNssrgInd
 	}
-	if !IsNil(o.SuppressNssrgInd) {
+	if !isNil(o.SuppressNssrgInd) {
 		toSerialize["suppressNssrgInd"] = o.SuppressNssrgInd
 	}
-	if !IsNil(o.RejectedNssaiRa) {
+	if !isNil(o.RejectedNssaiRa) {
 		toSerialize["rejectedNssaiRa"] = o.RejectedNssaiRa
 	}
-	if !IsNil(o.NsagSupported) {
+	if !isNil(o.NsagSupported) {
 		toSerialize["nsagSupported"] = o.NsagSupported
 	}
 	return toSerialize, nil

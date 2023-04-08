@@ -13,7 +13,7 @@ package openapi_Nsmf_PDUSession
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -107,9 +107,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) ReleasePduSessionExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -363,9 +363,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) RetrievePduSessionExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -557,8 +557,8 @@ func (r ApiTransferMoDataRequest) JsonData(jsonData TransferMoDataReqData) ApiTr
 	return r
 }
 
-func (r ApiTransferMoDataRequest) BinaryMoData(binaryMoData *os.File) ApiTransferMoDataRequest {
-	r.binaryMoData = binaryMoData
+func (r ApiTransferMoDataRequest) BinaryMoData(binaryMoData os.File) ApiTransferMoDataRequest {
+	r.binaryMoData = &binaryMoData
 	return r
 }
 
@@ -631,17 +631,17 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 
 	binaryMoDataLocalVarFormFileName = "binaryMoData"
 
-
-	binaryMoDataLocalVarFile := r.binaryMoData
-
+	var binaryMoDataLocalVarFile *os.File
+	if r.binaryMoData != nil {
+		binaryMoDataLocalVarFile = r.binaryMoData
+	}
 	if binaryMoDataLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryMoDataLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryMoDataLocalVarFile)
 		binaryMoDataLocalVarFileBytes = fbs
 		binaryMoDataLocalVarFileName = binaryMoDataLocalVarFile.Name()
 		binaryMoDataLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -652,9 +652,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) TransferMoDataExecute(r ApiTra
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -899,9 +899,9 @@ func (a *IndividualPDUSessionHSMFOrSMFApiService) UpdatePduSessionExecute(r ApiU
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

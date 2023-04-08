@@ -17,23 +17,37 @@ import (
 
 // ServiceInformation Indicates the type of additional information to be included in the body of the SIP request towards the Application Server 
 type ServiceInformation struct {
-	string *string
+	ServiceInformationAnyOf *ServiceInformationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ServiceInformation) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ServiceInformationAnyOf
+	err = json.Unmarshal(data, &dst.ServiceInformationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonServiceInformationAnyOf, _ := json.Marshal(dst.ServiceInformationAnyOf)
+		if string(jsonServiceInformationAnyOf) == "{}" { // empty struct
+			dst.ServiceInformationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ServiceInformationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ServiceInformationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ServiceInformation)")
@@ -41,8 +55,12 @@ func (dst *ServiceInformation) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ServiceInformation) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ServiceInformationAnyOf != nil {
+		return json.Marshal(&src.ServiceInformationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

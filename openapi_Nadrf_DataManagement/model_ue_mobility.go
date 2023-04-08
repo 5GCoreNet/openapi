@@ -49,7 +49,7 @@ func NewUeMobilityWithDefaults() *UeMobility {
 
 // GetTs returns the Ts field value if set, zero value otherwise.
 func (o *UeMobility) GetTs() time.Time {
-	if o == nil || IsNil(o.Ts) {
+	if o == nil || isNil(o.Ts) {
 		var ret time.Time
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *UeMobility) GetTs() time.Time {
 // GetTsOk returns a tuple with the Ts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobility) GetTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Ts) {
+	if o == nil || isNil(o.Ts) {
 		return nil, false
 	}
 	return o.Ts, true
@@ -67,7 +67,7 @@ func (o *UeMobility) GetTsOk() (*time.Time, bool) {
 
 // HasTs returns a boolean if a field has been set.
 func (o *UeMobility) HasTs() bool {
-	if o != nil && !IsNil(o.Ts) {
+	if o != nil && !isNil(o.Ts) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *UeMobility) SetTs(v time.Time) {
 
 // GetRecurringTime returns the RecurringTime field value if set, zero value otherwise.
 func (o *UeMobility) GetRecurringTime() ScheduledCommunicationTime {
-	if o == nil || IsNil(o.RecurringTime) {
+	if o == nil || isNil(o.RecurringTime) {
 		var ret ScheduledCommunicationTime
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *UeMobility) GetRecurringTime() ScheduledCommunicationTime {
 // GetRecurringTimeOk returns a tuple with the RecurringTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobility) GetRecurringTimeOk() (*ScheduledCommunicationTime, bool) {
-	if o == nil || IsNil(o.RecurringTime) {
+	if o == nil || isNil(o.RecurringTime) {
 		return nil, false
 	}
 	return o.RecurringTime, true
@@ -99,7 +99,7 @@ func (o *UeMobility) GetRecurringTimeOk() (*ScheduledCommunicationTime, bool) {
 
 // HasRecurringTime returns a boolean if a field has been set.
 func (o *UeMobility) HasRecurringTime() bool {
-	if o != nil && !IsNil(o.RecurringTime) {
+	if o != nil && !isNil(o.RecurringTime) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *UeMobility) SetRecurringTime(v ScheduledCommunicationTime) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *UeMobility) GetDuration() int32 {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *UeMobility) GetDuration() int32 {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobility) GetDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -131,7 +131,7 @@ func (o *UeMobility) GetDurationOk() (*int32, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *UeMobility) HasDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && !isNil(o.Duration) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *UeMobility) SetDuration(v int32) {
 
 // GetDurationVariance returns the DurationVariance field value if set, zero value otherwise.
 func (o *UeMobility) GetDurationVariance() float32 {
-	if o == nil || IsNil(o.DurationVariance) {
+	if o == nil || isNil(o.DurationVariance) {
 		var ret float32
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *UeMobility) GetDurationVariance() float32 {
 // GetDurationVarianceOk returns a tuple with the DurationVariance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobility) GetDurationVarianceOk() (*float32, bool) {
-	if o == nil || IsNil(o.DurationVariance) {
+	if o == nil || isNil(o.DurationVariance) {
 		return nil, false
 	}
 	return o.DurationVariance, true
@@ -163,7 +163,7 @@ func (o *UeMobility) GetDurationVarianceOk() (*float32, bool) {
 
 // HasDurationVariance returns a boolean if a field has been set.
 func (o *UeMobility) HasDurationVariance() bool {
-	if o != nil && !IsNil(o.DurationVariance) {
+	if o != nil && !isNil(o.DurationVariance) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *UeMobility) SetDurationVariance(v float32) {
 
 // GetLocInfos returns the LocInfos field value if set, zero value otherwise.
 func (o *UeMobility) GetLocInfos() []LocationInfo {
-	if o == nil || IsNil(o.LocInfos) {
+	if o == nil || isNil(o.LocInfos) {
 		var ret []LocationInfo
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *UeMobility) GetLocInfos() []LocationInfo {
 // GetLocInfosOk returns a tuple with the LocInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobility) GetLocInfosOk() ([]LocationInfo, bool) {
-	if o == nil || IsNil(o.LocInfos) {
+	if o == nil || isNil(o.LocInfos) {
 		return nil, false
 	}
 	return o.LocInfos, true
@@ -195,7 +195,7 @@ func (o *UeMobility) GetLocInfosOk() ([]LocationInfo, bool) {
 
 // HasLocInfos returns a boolean if a field has been set.
 func (o *UeMobility) HasLocInfos() bool {
-	if o != nil && !IsNil(o.LocInfos) {
+	if o != nil && !isNil(o.LocInfos) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o UeMobility) MarshalJSON() ([]byte, error) {
 
 func (o UeMobility) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ts) {
+	if !isNil(o.Ts) {
 		toSerialize["ts"] = o.Ts
 	}
-	if !IsNil(o.RecurringTime) {
+	if !isNil(o.RecurringTime) {
 		toSerialize["recurringTime"] = o.RecurringTime
 	}
-	if !IsNil(o.Duration) {
+	if !isNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !IsNil(o.DurationVariance) {
+	if !isNil(o.DurationVariance) {
 		toSerialize["durationVariance"] = o.DurationVariance
 	}
-	if !IsNil(o.LocInfos) {
+	if !isNil(o.LocInfos) {
 		toSerialize["locInfos"] = o.LocInfos
 	}
 	return toSerialize, nil

@@ -70,7 +70,7 @@ func (o *UeLocationInfo) SetLoc(v LocationArea5G) {
 
 // GetRatio returns the Ratio field value if set, zero value otherwise.
 func (o *UeLocationInfo) GetRatio() int32 {
-	if o == nil || IsNil(o.Ratio) {
+	if o == nil || isNil(o.Ratio) {
 		var ret int32
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *UeLocationInfo) GetRatio() int32 {
 // GetRatioOk returns a tuple with the Ratio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeLocationInfo) GetRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.Ratio) {
+	if o == nil || isNil(o.Ratio) {
 		return nil, false
 	}
 	return o.Ratio, true
@@ -88,7 +88,7 @@ func (o *UeLocationInfo) GetRatioOk() (*int32, bool) {
 
 // HasRatio returns a boolean if a field has been set.
 func (o *UeLocationInfo) HasRatio() bool {
-	if o != nil && !IsNil(o.Ratio) {
+	if o != nil && !isNil(o.Ratio) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *UeLocationInfo) SetRatio(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *UeLocationInfo) GetConfidence() int32 {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *UeLocationInfo) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeLocationInfo) GetConfidenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -120,7 +120,7 @@ func (o *UeLocationInfo) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *UeLocationInfo) HasConfidence() bool {
-	if o != nil && !IsNil(o.Confidence) {
+	if o != nil && !isNil(o.Confidence) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o UeLocationInfo) MarshalJSON() ([]byte, error) {
 func (o UeLocationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["loc"] = o.Loc
-	if !IsNil(o.Ratio) {
+	if !isNil(o.Ratio) {
 		toSerialize["ratio"] = o.Ratio
 	}
-	if !IsNil(o.Confidence) {
+	if !isNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil

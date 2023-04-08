@@ -17,13 +17,13 @@ import (
 
 // EmergencyInfo - struct for EmergencyInfo
 type EmergencyInfo struct {
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // interface{}AsEmergencyInfo is a convenience function that returns interface{} wrapped in EmergencyInfo
-func Interface{}AsEmergencyInfo(v *interface{}) EmergencyInfo {
+func InterfaceAsEmergencyInfo(v *interface{}) EmergencyInfo {
 	return EmergencyInfo{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -32,22 +32,22 @@ func Interface{}AsEmergencyInfo(v *interface{}) EmergencyInfo {
 func (dst *EmergencyInfo) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(EmergencyInfo)")
 	} else if match == 1 {
@@ -59,8 +59,8 @@ func (dst *EmergencyInfo) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src EmergencyInfo) MarshalJSON() ([]byte, error) {
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -71,8 +71,8 @@ func (obj *EmergencyInfo) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

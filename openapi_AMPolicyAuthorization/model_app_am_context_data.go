@@ -18,7 +18,7 @@ import (
 // AppAmContextData Represents an Individual Application AM Context resource.
 type AppAmContextData struct {
 	AnyOfAnyTypeAnyType *AnyOfAnyTypeAnyType
-	interface{} *interface{}
+	Interface *interface{}
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
@@ -38,16 +38,16 @@ func (dst *AppAmContextData) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.interface{});
+	err = json.Unmarshal(data, &dst.Interface);
 	if err == nil {
-		jsoninterface{}, _ := json.Marshal(dst.interface{})
-		if string(jsoninterface{}) == "{}" { // empty struct
-			dst.interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
-			return nil // data stored in dst.interface{}, return on the first match
+			return nil // data stored in dst.Interface, return on the first match
 		}
 	} else {
-		dst.interface{} = nil
+		dst.Interface = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AppAmContextData)")
@@ -59,8 +59,8 @@ func (src *AppAmContextData) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AnyOfAnyTypeAnyType)
 	}
 
-	if src.interface{} != nil {
-		return json.Marshal(&src.interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in anyOf schemas

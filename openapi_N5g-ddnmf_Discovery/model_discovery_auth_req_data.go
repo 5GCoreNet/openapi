@@ -67,7 +67,7 @@ func (o *DiscoveryAuthReqData) SetDiscType(v DiscoveryType) {
 
 // GetRestrictedDiscData returns the RestrictedDiscData field value if set, zero value otherwise.
 func (o *DiscoveryAuthReqData) GetRestrictedDiscData() DiscDataForRestricted {
-	if o == nil || IsNil(o.RestrictedDiscData) {
+	if o == nil || isNil(o.RestrictedDiscData) {
 		var ret DiscDataForRestricted
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *DiscoveryAuthReqData) GetRestrictedDiscData() DiscDataForRestricted {
 // GetRestrictedDiscDataOk returns a tuple with the RestrictedDiscData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiscoveryAuthReqData) GetRestrictedDiscDataOk() (*DiscDataForRestricted, bool) {
-	if o == nil || IsNil(o.RestrictedDiscData) {
+	if o == nil || isNil(o.RestrictedDiscData) {
 		return nil, false
 	}
 	return o.RestrictedDiscData, true
@@ -85,7 +85,7 @@ func (o *DiscoveryAuthReqData) GetRestrictedDiscDataOk() (*DiscDataForRestricted
 
 // HasRestrictedDiscData returns a boolean if a field has been set.
 func (o *DiscoveryAuthReqData) HasRestrictedDiscData() bool {
-	if o != nil && !IsNil(o.RestrictedDiscData) {
+	if o != nil && !isNil(o.RestrictedDiscData) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o DiscoveryAuthReqData) MarshalJSON() ([]byte, error) {
 func (o DiscoveryAuthReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
-	if !IsNil(o.RestrictedDiscData) {
+	if !isNil(o.RestrictedDiscData) {
 		toSerialize["restrictedDiscData"] = o.RestrictedDiscData
 	}
 	return toSerialize, nil

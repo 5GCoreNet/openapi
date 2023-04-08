@@ -2278,7 +2278,15 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - anyOf:
+        - enum:
+          - PROBABLE_CAUSE_001
+          - PROBABLE_CAUSE_002
+          - PROBABLE_CAUSE_003
+          - PROBABLE_CAUSE_004
+          - PROBABLE_CAUSE_005
+          type: string
+        - type: string
       - type: integer
     SpecificProblem:
       oneOf:
@@ -2424,11 +2432,13 @@ components:
             $ref: '#/components/schemas/Dn'
           type: array
       type: object
+      example: null
     AnalyticsScopeType_oneOf_1:
       properties:
         areaScope:
           $ref: '#/components/schemas/GeoArea'
       type: object
+      example: null
     AnalyticsSchedule_oneOf:
       properties:
         timeDurations:
@@ -2436,11 +2446,13 @@ components:
             $ref: '#/components/schemas/TimeWindow'
           type: array
       type: object
+      example: null
     AnalyticsSchedule_oneOf_1:
       properties:
         granularityPeriod:
           type: integer
       type: object
+      example: null
     ThresholdInfo_thresholdValue:
       oneOf:
       - type: integer
@@ -2492,21 +2504,15 @@ components:
           type: array
       type: object
       example: null
-    MDAFunction_Single_allOf_attributes_allOf:
-      properties:
-        supportedMDACapabilities:
-          items:
-            type: string
-          type: array
-      type: object
-    MDAFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/MDAFunction_Single_allOf_attributes_allOf'
     MDAFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MDAFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              supportedMDACapabilities:
+                $ref: '#/components/schemas/MDATypes'
+            type: object
       type: object
       example: null
     MDAFunction_Single_allOf_1:
@@ -2517,48 +2523,36 @@ components:
           type: array
       type: object
       example: null
-    MDARequest_Single_allOf_attributes_allOf:
-      properties:
-        requestedMDAOutputs:
-          items:
-            $ref: '#/components/schemas/MDAOutputPerMDAType'
-          type: array
-        reportingMethod:
-          $ref: '#/components/schemas/ReportingMethod'
-        reportingTarget:
-          type: string
-        analyticsScope:
-          $ref: '#/components/schemas/AnalyticsScopeType'
-        startTime:
-          format: date-time
-          type: string
-        stopTime:
-          format: date-time
-          type: string
-      type: object
-    MDARequest_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/MDARequest_Single_allOf_attributes_allOf'
     MDARequest_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MDARequest_Single_allOf_attributes'
+          allOf:
+          - properties:
+              requestedMDAOutputs:
+                $ref: '#/components/schemas/MDAOutputs'
+              reportingMethod:
+                $ref: '#/components/schemas/ReportingMethod'
+              reportingTarget:
+                $ref: '#/components/schemas/ReportingTarget'
+              analyticsScope:
+                $ref: '#/components/schemas/AnalyticsScopeType'
+              startTime:
+                $ref: '#/components/schemas/DateTime'
+              stopTime:
+                $ref: '#/components/schemas/DateTime'
+            type: object
       type: object
       example: null
-    MDAReport_Single_allOf_attributes_allOf:
-      properties:
-        mDAReportID:
-          type: string
-        mDAOutputs:
-          $ref: '#/components/schemas/MDAOutputs_1'
-      type: object
-    MDAReport_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/MDAReport_Single_allOf_attributes_allOf'
     MDAReport_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MDAReport_Single_allOf_attributes'
+          allOf:
+          - properties:
+              mDAReportID:
+                type: string
+              mDAOutputs:
+                $ref: '#/components/schemas/MDAOutputs_1'
+            type: object
       type: object
       example: null
     VsDataContainer_Single_attributes:
@@ -2664,6 +2658,7 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
+      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -2671,11 +2666,13 @@ components:
         fileLocation:
           type: string
       type: object
+      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
+      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -2968,23 +2965,15 @@ components:
           $ref: '#/components/schemas/ManagedNFService_Single_allOf_attributes'
       type: object
       example: null
-    ProbableCause_oneOf:
-      anyOf:
-      - enum:
-        - PROBABLE_CAUSE_001
-        - PROBABLE_CAUSE_002
-        - PROBABLE_CAUSE_003
-        - PROBABLE_CAUSE_004
-        - PROBABLE_CAUSE_005
-        type: string
-      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null

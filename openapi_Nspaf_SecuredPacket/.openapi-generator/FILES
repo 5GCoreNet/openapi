@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,11 +6,13 @@ api_secured_packet_generation_custom_operation.go
 client.go
 configuration.go
 docs/AccessTech.md
+docs/AccessTechAnyOf.md
 docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/ExtendedSteeringContainer.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -23,11 +24,13 @@ git_push.sh
 go.mod
 go.sum
 model_access_tech.go
+model_access_tech_any_of.go
 model_access_token_err.go
 model_access_token_req.go
 model_extended_steering_container.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

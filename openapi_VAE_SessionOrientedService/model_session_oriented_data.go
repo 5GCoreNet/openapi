@@ -154,7 +154,7 @@ func (o *SessionOrientedData) SetAppSerId(v string) {
 
 // GetAppQosReq returns the AppQosReq field value if set, zero value otherwise.
 func (o *SessionOrientedData) GetAppQosReq() AppplicationQosRequirement {
-	if o == nil || IsNil(o.AppQosReq) {
+	if o == nil || isNil(o.AppQosReq) {
 		var ret AppplicationQosRequirement
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *SessionOrientedData) GetAppQosReq() AppplicationQosRequirement {
 // GetAppQosReqOk returns a tuple with the AppQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionOrientedData) GetAppQosReqOk() (*AppplicationQosRequirement, bool) {
-	if o == nil || IsNil(o.AppQosReq) {
+	if o == nil || isNil(o.AppQosReq) {
 		return nil, false
 	}
 	return o.AppQosReq, true
@@ -172,7 +172,7 @@ func (o *SessionOrientedData) GetAppQosReqOk() (*AppplicationQosRequirement, boo
 
 // HasAppQosReq returns a boolean if a field has been set.
 func (o *SessionOrientedData) HasAppQosReq() bool {
-	if o != nil && !IsNil(o.AppQosReq) {
+	if o != nil && !isNil(o.AppQosReq) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *SessionOrientedData) SetAppQosReq(v AppplicationQosRequirement) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *SessionOrientedData) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *SessionOrientedData) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionOrientedData) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -204,7 +204,7 @@ func (o *SessionOrientedData) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *SessionOrientedData) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *SessionOrientedData) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *SessionOrientedData) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *SessionOrientedData) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionOrientedData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -236,7 +236,7 @@ func (o *SessionOrientedData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bo
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *SessionOrientedData) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *SessionOrientedData) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SessionOrientedData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *SessionOrientedData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionOrientedData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -268,7 +268,7 @@ func (o *SessionOrientedData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SessionOrientedData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -294,16 +294,16 @@ func (o SessionOrientedData) ToMap() (map[string]interface{}, error) {
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["serviceId"] = o.ServiceId
 	toSerialize["appSerId"] = o.AppSerId
-	if !IsNil(o.AppQosReq) {
+	if !isNil(o.AppQosReq) {
 		toSerialize["appQosReq"] = o.AppQosReq
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

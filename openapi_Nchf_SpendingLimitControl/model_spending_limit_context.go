@@ -54,7 +54,7 @@ func NewSpendingLimitContextWithDefaults() *SpendingLimitContext {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *SpendingLimitContext) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -72,7 +72,7 @@ func (o *SpendingLimitContext) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *SpendingLimitContext) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *SpendingLimitContext) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -104,7 +104,7 @@ func (o *SpendingLimitContext) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *SpendingLimitContext) SetGpsi(v string) {
 
 // GetPolicyCounterIds returns the PolicyCounterIds field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetPolicyCounterIds() []string {
-	if o == nil || IsNil(o.PolicyCounterIds) {
+	if o == nil || isNil(o.PolicyCounterIds) {
 		var ret []string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *SpendingLimitContext) GetPolicyCounterIds() []string {
 // GetPolicyCounterIdsOk returns a tuple with the PolicyCounterIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetPolicyCounterIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.PolicyCounterIds) {
+	if o == nil || isNil(o.PolicyCounterIds) {
 		return nil, false
 	}
 	return o.PolicyCounterIds, true
@@ -136,7 +136,7 @@ func (o *SpendingLimitContext) GetPolicyCounterIdsOk() ([]string, bool) {
 
 // HasPolicyCounterIds returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasPolicyCounterIds() bool {
-	if o != nil && !IsNil(o.PolicyCounterIds) {
+	if o != nil && !isNil(o.PolicyCounterIds) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *SpendingLimitContext) SetPolicyCounterIds(v []string) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *SpendingLimitContext) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -168,7 +168,7 @@ func (o *SpendingLimitContext) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasNotifUri() bool {
-	if o != nil && !IsNil(o.NotifUri) {
+	if o != nil && !isNil(o.NotifUri) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *SpendingLimitContext) SetNotifUri(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *SpendingLimitContext) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -200,7 +200,7 @@ func (o *SpendingLimitContext) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *SpendingLimitContext) SetExpiry(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *SpendingLimitContext) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -232,7 +232,7 @@ func (o *SpendingLimitContext) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *SpendingLimitContext) SetSupportedFeatures(v string) {
 
 // GetNotifId returns the NotifId field value if set, zero value otherwise.
 func (o *SpendingLimitContext) GetNotifId() string {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		var ret string
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *SpendingLimitContext) GetNotifId() string {
 // GetNotifIdOk returns a tuple with the NotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitContext) GetNotifIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		return nil, false
 	}
 	return o.NotifId, true
@@ -264,7 +264,7 @@ func (o *SpendingLimitContext) GetNotifIdOk() (*string, bool) {
 
 // HasNotifId returns a boolean if a field has been set.
 func (o *SpendingLimitContext) HasNotifId() bool {
-	if o != nil && !IsNil(o.NotifId) {
+	if o != nil && !isNil(o.NotifId) {
 		return true
 	}
 
@@ -286,25 +286,25 @@ func (o SpendingLimitContext) MarshalJSON() ([]byte, error) {
 
 func (o SpendingLimitContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.PolicyCounterIds) {
+	if !isNil(o.PolicyCounterIds) {
 		toSerialize["policyCounterIds"] = o.PolicyCounterIds
 	}
-	if !IsNil(o.NotifUri) {
+	if !isNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.NotifId) {
+	if !isNil(o.NotifId) {
 		toSerialize["notifId"] = o.NotifId
 	}
 	return toSerialize, nil

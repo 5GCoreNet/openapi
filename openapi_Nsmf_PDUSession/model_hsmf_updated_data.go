@@ -67,7 +67,7 @@ func NewHsmfUpdatedDataWithDefaults() *HsmfUpdatedData {
 
 // GetN1SmInfoToUe returns the N1SmInfoToUe field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetN1SmInfoToUe() RefToBinaryData {
-	if o == nil || IsNil(o.N1SmInfoToUe) {
+	if o == nil || isNil(o.N1SmInfoToUe) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *HsmfUpdatedData) GetN1SmInfoToUe() RefToBinaryData {
 // GetN1SmInfoToUeOk returns a tuple with the N1SmInfoToUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.N1SmInfoToUe) {
+	if o == nil || isNil(o.N1SmInfoToUe) {
 		return nil, false
 	}
 	return o.N1SmInfoToUe, true
@@ -85,7 +85,7 @@ func (o *HsmfUpdatedData) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
 
 // HasN1SmInfoToUe returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasN1SmInfoToUe() bool {
-	if o != nil && !IsNil(o.N1SmInfoToUe) {
+	if o != nil && !isNil(o.N1SmInfoToUe) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *HsmfUpdatedData) SetN1SmInfoToUe(v RefToBinaryData) {
 
 // GetN4Info returns the N4Info field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetN4Info() N4Information {
-	if o == nil || IsNil(o.N4Info) {
+	if o == nil || isNil(o.N4Info) {
 		var ret N4Information
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *HsmfUpdatedData) GetN4Info() N4Information {
 // GetN4InfoOk returns a tuple with the N4Info field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetN4InfoOk() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4Info) {
+	if o == nil || isNil(o.N4Info) {
 		return nil, false
 	}
 	return o.N4Info, true
@@ -117,7 +117,7 @@ func (o *HsmfUpdatedData) GetN4InfoOk() (*N4Information, bool) {
 
 // HasN4Info returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasN4Info() bool {
-	if o != nil && !IsNil(o.N4Info) {
+	if o != nil && !isNil(o.N4Info) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *HsmfUpdatedData) SetN4Info(v N4Information) {
 
 // GetN4InfoExt1 returns the N4InfoExt1 field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetN4InfoExt1() N4Information {
-	if o == nil || IsNil(o.N4InfoExt1) {
+	if o == nil || isNil(o.N4InfoExt1) {
 		var ret N4Information
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *HsmfUpdatedData) GetN4InfoExt1() N4Information {
 // GetN4InfoExt1Ok returns a tuple with the N4InfoExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetN4InfoExt1Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt1) {
+	if o == nil || isNil(o.N4InfoExt1) {
 		return nil, false
 	}
 	return o.N4InfoExt1, true
@@ -149,7 +149,7 @@ func (o *HsmfUpdatedData) GetN4InfoExt1Ok() (*N4Information, bool) {
 
 // HasN4InfoExt1 returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasN4InfoExt1() bool {
-	if o != nil && !IsNil(o.N4InfoExt1) {
+	if o != nil && !isNil(o.N4InfoExt1) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *HsmfUpdatedData) SetN4InfoExt1(v N4Information) {
 
 // GetN4InfoExt2 returns the N4InfoExt2 field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetN4InfoExt2() N4Information {
-	if o == nil || IsNil(o.N4InfoExt2) {
+	if o == nil || isNil(o.N4InfoExt2) {
 		var ret N4Information
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *HsmfUpdatedData) GetN4InfoExt2() N4Information {
 // GetN4InfoExt2Ok returns a tuple with the N4InfoExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetN4InfoExt2Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt2) {
+	if o == nil || isNil(o.N4InfoExt2) {
 		return nil, false
 	}
 	return o.N4InfoExt2, true
@@ -181,7 +181,7 @@ func (o *HsmfUpdatedData) GetN4InfoExt2Ok() (*N4Information, bool) {
 
 // HasN4InfoExt2 returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasN4InfoExt2() bool {
-	if o != nil && !IsNil(o.N4InfoExt2) {
+	if o != nil && !isNil(o.N4InfoExt2) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *HsmfUpdatedData) SetN4InfoExt2(v N4Information) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetDnaiList() []string {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *HsmfUpdatedData) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetDnaiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -213,7 +213,7 @@ func (o *HsmfUpdatedData) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasDnaiList() bool {
-	if o != nil && !IsNil(o.DnaiList) {
+	if o != nil && !isNil(o.DnaiList) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *HsmfUpdatedData) SetDnaiList(v []string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *HsmfUpdatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -245,7 +245,7 @@ func (o *HsmfUpdatedData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *HsmfUpdatedData) SetSupportedFeatures(v string) {
 
 // GetRoamingChargingProfile returns the RoamingChargingProfile field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetRoamingChargingProfile() RoamingChargingProfile {
-	if o == nil || IsNil(o.RoamingChargingProfile) {
+	if o == nil || isNil(o.RoamingChargingProfile) {
 		var ret RoamingChargingProfile
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *HsmfUpdatedData) GetRoamingChargingProfile() RoamingChargingProfile {
 // GetRoamingChargingProfileOk returns a tuple with the RoamingChargingProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetRoamingChargingProfileOk() (*RoamingChargingProfile, bool) {
-	if o == nil || IsNil(o.RoamingChargingProfile) {
+	if o == nil || isNil(o.RoamingChargingProfile) {
 		return nil, false
 	}
 	return o.RoamingChargingProfile, true
@@ -277,7 +277,7 @@ func (o *HsmfUpdatedData) GetRoamingChargingProfileOk() (*RoamingChargingProfile
 
 // HasRoamingChargingProfile returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasRoamingChargingProfile() bool {
-	if o != nil && !IsNil(o.RoamingChargingProfile) {
+	if o != nil && !isNil(o.RoamingChargingProfile) {
 		return true
 	}
 
@@ -291,7 +291,7 @@ func (o *HsmfUpdatedData) SetRoamingChargingProfile(v RoamingChargingProfile) {
 
 // GetHomeProvidedChargingId returns the HomeProvidedChargingId field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetHomeProvidedChargingId() string {
-	if o == nil || IsNil(o.HomeProvidedChargingId) {
+	if o == nil || isNil(o.HomeProvidedChargingId) {
 		var ret string
 		return ret
 	}
@@ -301,7 +301,7 @@ func (o *HsmfUpdatedData) GetHomeProvidedChargingId() string {
 // GetHomeProvidedChargingIdOk returns a tuple with the HomeProvidedChargingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetHomeProvidedChargingIdOk() (*string, bool) {
-	if o == nil || IsNil(o.HomeProvidedChargingId) {
+	if o == nil || isNil(o.HomeProvidedChargingId) {
 		return nil, false
 	}
 	return o.HomeProvidedChargingId, true
@@ -309,7 +309,7 @@ func (o *HsmfUpdatedData) GetHomeProvidedChargingIdOk() (*string, bool) {
 
 // HasHomeProvidedChargingId returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasHomeProvidedChargingId() bool {
-	if o != nil && !IsNil(o.HomeProvidedChargingId) {
+	if o != nil && !isNil(o.HomeProvidedChargingId) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *HsmfUpdatedData) SetHomeProvidedChargingId(v string) {
 
 // GetUpSecurity returns the UpSecurity field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetUpSecurity() UpSecurity {
-	if o == nil || IsNil(o.UpSecurity) {
+	if o == nil || isNil(o.UpSecurity) {
 		var ret UpSecurity
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *HsmfUpdatedData) GetUpSecurity() UpSecurity {
 // GetUpSecurityOk returns a tuple with the UpSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetUpSecurityOk() (*UpSecurity, bool) {
-	if o == nil || IsNil(o.UpSecurity) {
+	if o == nil || isNil(o.UpSecurity) {
 		return nil, false
 	}
 	return o.UpSecurity, true
@@ -341,7 +341,7 @@ func (o *HsmfUpdatedData) GetUpSecurityOk() (*UpSecurity, bool) {
 
 // HasUpSecurity returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasUpSecurity() bool {
-	if o != nil && !IsNil(o.UpSecurity) {
+	if o != nil && !isNil(o.UpSecurity) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *HsmfUpdatedData) SetUpSecurity(v UpSecurity) {
 
 // GetMaxIntegrityProtectedDataRateUl returns the MaxIntegrityProtectedDataRateUl field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateUl() MaxIntegrityProtectedDataRate {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateUl) {
 		var ret MaxIntegrityProtectedDataRate
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateUl() MaxIntegrityProte
 // GetMaxIntegrityProtectedDataRateUlOk returns a tuple with the MaxIntegrityProtectedDataRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateUlOk() (*MaxIntegrityProtectedDataRate, bool) {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateUl) {
 		return nil, false
 	}
 	return o.MaxIntegrityProtectedDataRateUl, true
@@ -373,7 +373,7 @@ func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateUlOk() (*MaxIntegrityP
 
 // HasMaxIntegrityProtectedDataRateUl returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasMaxIntegrityProtectedDataRateUl() bool {
-	if o != nil && !IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if o != nil && !isNil(o.MaxIntegrityProtectedDataRateUl) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *HsmfUpdatedData) SetMaxIntegrityProtectedDataRateUl(v MaxIntegrityProte
 
 // GetMaxIntegrityProtectedDataRateDl returns the MaxIntegrityProtectedDataRateDl field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateDl() MaxIntegrityProtectedDataRate {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateDl) {
 		var ret MaxIntegrityProtectedDataRate
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateDl() MaxIntegrityProte
 // GetMaxIntegrityProtectedDataRateDlOk returns a tuple with the MaxIntegrityProtectedDataRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateDlOk() (*MaxIntegrityProtectedDataRate, bool) {
-	if o == nil || IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if o == nil || isNil(o.MaxIntegrityProtectedDataRateDl) {
 		return nil, false
 	}
 	return o.MaxIntegrityProtectedDataRateDl, true
@@ -405,7 +405,7 @@ func (o *HsmfUpdatedData) GetMaxIntegrityProtectedDataRateDlOk() (*MaxIntegrityP
 
 // HasMaxIntegrityProtectedDataRateDl returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasMaxIntegrityProtectedDataRateDl() bool {
-	if o != nil && !IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if o != nil && !isNil(o.MaxIntegrityProtectedDataRateDl) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *HsmfUpdatedData) SetMaxIntegrityProtectedDataRateDl(v MaxIntegrityProte
 
 // GetIpv6MultiHomingInd returns the Ipv6MultiHomingInd field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetIpv6MultiHomingInd() bool {
-	if o == nil || IsNil(o.Ipv6MultiHomingInd) {
+	if o == nil || isNil(o.Ipv6MultiHomingInd) {
 		var ret bool
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *HsmfUpdatedData) GetIpv6MultiHomingInd() bool {
 // GetIpv6MultiHomingIndOk returns a tuple with the Ipv6MultiHomingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetIpv6MultiHomingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.Ipv6MultiHomingInd) {
+	if o == nil || isNil(o.Ipv6MultiHomingInd) {
 		return nil, false
 	}
 	return o.Ipv6MultiHomingInd, true
@@ -437,7 +437,7 @@ func (o *HsmfUpdatedData) GetIpv6MultiHomingIndOk() (*bool, bool) {
 
 // HasIpv6MultiHomingInd returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasIpv6MultiHomingInd() bool {
-	if o != nil && !IsNil(o.Ipv6MultiHomingInd) {
+	if o != nil && !isNil(o.Ipv6MultiHomingInd) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *HsmfUpdatedData) SetIpv6MultiHomingInd(v bool) {
 
 // GetQosFlowsSetupList returns the QosFlowsSetupList field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetQosFlowsSetupList() []QosFlowSetupItem {
-	if o == nil || IsNil(o.QosFlowsSetupList) {
+	if o == nil || isNil(o.QosFlowsSetupList) {
 		var ret []QosFlowSetupItem
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *HsmfUpdatedData) GetQosFlowsSetupList() []QosFlowSetupItem {
 // GetQosFlowsSetupListOk returns a tuple with the QosFlowsSetupList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetQosFlowsSetupListOk() ([]QosFlowSetupItem, bool) {
-	if o == nil || IsNil(o.QosFlowsSetupList) {
+	if o == nil || isNil(o.QosFlowsSetupList) {
 		return nil, false
 	}
 	return o.QosFlowsSetupList, true
@@ -469,7 +469,7 @@ func (o *HsmfUpdatedData) GetQosFlowsSetupListOk() ([]QosFlowSetupItem, bool) {
 
 // HasQosFlowsSetupList returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasQosFlowsSetupList() bool {
-	if o != nil && !IsNil(o.QosFlowsSetupList) {
+	if o != nil && !isNil(o.QosFlowsSetupList) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *HsmfUpdatedData) SetQosFlowsSetupList(v []QosFlowSetupItem) {
 
 // GetSessionAmbr returns the SessionAmbr field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetSessionAmbr() Ambr {
-	if o == nil || IsNil(o.SessionAmbr) {
+	if o == nil || isNil(o.SessionAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *HsmfUpdatedData) GetSessionAmbr() Ambr {
 // GetSessionAmbrOk returns a tuple with the SessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetSessionAmbrOk() (*Ambr, bool) {
-	if o == nil || IsNil(o.SessionAmbr) {
+	if o == nil || isNil(o.SessionAmbr) {
 		return nil, false
 	}
 	return o.SessionAmbr, true
@@ -501,7 +501,7 @@ func (o *HsmfUpdatedData) GetSessionAmbrOk() (*Ambr, bool) {
 
 // HasSessionAmbr returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasSessionAmbr() bool {
-	if o != nil && !IsNil(o.SessionAmbr) {
+	if o != nil && !isNil(o.SessionAmbr) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *HsmfUpdatedData) SetSessionAmbr(v Ambr) {
 
 // GetEpsPdnCnxInfo returns the EpsPdnCnxInfo field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetEpsPdnCnxInfo() EpsPdnCnxInfo {
-	if o == nil || IsNil(o.EpsPdnCnxInfo) {
+	if o == nil || isNil(o.EpsPdnCnxInfo) {
 		var ret EpsPdnCnxInfo
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *HsmfUpdatedData) GetEpsPdnCnxInfo() EpsPdnCnxInfo {
 // GetEpsPdnCnxInfoOk returns a tuple with the EpsPdnCnxInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetEpsPdnCnxInfoOk() (*EpsPdnCnxInfo, bool) {
-	if o == nil || IsNil(o.EpsPdnCnxInfo) {
+	if o == nil || isNil(o.EpsPdnCnxInfo) {
 		return nil, false
 	}
 	return o.EpsPdnCnxInfo, true
@@ -533,7 +533,7 @@ func (o *HsmfUpdatedData) GetEpsPdnCnxInfoOk() (*EpsPdnCnxInfo, bool) {
 
 // HasEpsPdnCnxInfo returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasEpsPdnCnxInfo() bool {
-	if o != nil && !IsNil(o.EpsPdnCnxInfo) {
+	if o != nil && !isNil(o.EpsPdnCnxInfo) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *HsmfUpdatedData) SetEpsPdnCnxInfo(v EpsPdnCnxInfo) {
 
 // GetEpsBearerInfo returns the EpsBearerInfo field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetEpsBearerInfo() []EpsBearerInfo {
-	if o == nil || IsNil(o.EpsBearerInfo) {
+	if o == nil || isNil(o.EpsBearerInfo) {
 		var ret []EpsBearerInfo
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *HsmfUpdatedData) GetEpsBearerInfo() []EpsBearerInfo {
 // GetEpsBearerInfoOk returns a tuple with the EpsBearerInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetEpsBearerInfoOk() ([]EpsBearerInfo, bool) {
-	if o == nil || IsNil(o.EpsBearerInfo) {
+	if o == nil || isNil(o.EpsBearerInfo) {
 		return nil, false
 	}
 	return o.EpsBearerInfo, true
@@ -565,7 +565,7 @@ func (o *HsmfUpdatedData) GetEpsBearerInfoOk() ([]EpsBearerInfo, bool) {
 
 // HasEpsBearerInfo returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasEpsBearerInfo() bool {
-	if o != nil && !IsNil(o.EpsBearerInfo) {
+	if o != nil && !isNil(o.EpsBearerInfo) {
 		return true
 	}
 
@@ -579,7 +579,7 @@ func (o *HsmfUpdatedData) SetEpsBearerInfo(v []EpsBearerInfo) {
 
 // GetPti returns the Pti field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetPti() int32 {
-	if o == nil || IsNil(o.Pti) {
+	if o == nil || isNil(o.Pti) {
 		var ret int32
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *HsmfUpdatedData) GetPti() int32 {
 // GetPtiOk returns a tuple with the Pti field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetPtiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Pti) {
+	if o == nil || isNil(o.Pti) {
 		return nil, false
 	}
 	return o.Pti, true
@@ -597,7 +597,7 @@ func (o *HsmfUpdatedData) GetPtiOk() (*int32, bool) {
 
 // HasPti returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasPti() bool {
-	if o != nil && !IsNil(o.Pti) {
+	if o != nil && !isNil(o.Pti) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o *HsmfUpdatedData) SetPti(v int32) {
 
 // GetInterPlmnApiRoot returns the InterPlmnApiRoot field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetInterPlmnApiRoot() string {
-	if o == nil || IsNil(o.InterPlmnApiRoot) {
+	if o == nil || isNil(o.InterPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *HsmfUpdatedData) GetInterPlmnApiRoot() string {
 // GetInterPlmnApiRootOk returns a tuple with the InterPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetInterPlmnApiRootOk() (*string, bool) {
-	if o == nil || IsNil(o.InterPlmnApiRoot) {
+	if o == nil || isNil(o.InterPlmnApiRoot) {
 		return nil, false
 	}
 	return o.InterPlmnApiRoot, true
@@ -629,7 +629,7 @@ func (o *HsmfUpdatedData) GetInterPlmnApiRootOk() (*string, bool) {
 
 // HasInterPlmnApiRoot returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasInterPlmnApiRoot() bool {
-	if o != nil && !IsNil(o.InterPlmnApiRoot) {
+	if o != nil && !isNil(o.InterPlmnApiRoot) {
 		return true
 	}
 
@@ -643,7 +643,7 @@ func (o *HsmfUpdatedData) SetInterPlmnApiRoot(v string) {
 
 // GetIntraPlmnApiRoot returns the IntraPlmnApiRoot field value if set, zero value otherwise.
 func (o *HsmfUpdatedData) GetIntraPlmnApiRoot() string {
-	if o == nil || IsNil(o.IntraPlmnApiRoot) {
+	if o == nil || isNil(o.IntraPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -653,7 +653,7 @@ func (o *HsmfUpdatedData) GetIntraPlmnApiRoot() string {
 // GetIntraPlmnApiRootOk returns a tuple with the IntraPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HsmfUpdatedData) GetIntraPlmnApiRootOk() (*string, bool) {
-	if o == nil || IsNil(o.IntraPlmnApiRoot) {
+	if o == nil || isNil(o.IntraPlmnApiRoot) {
 		return nil, false
 	}
 	return o.IntraPlmnApiRoot, true
@@ -661,7 +661,7 @@ func (o *HsmfUpdatedData) GetIntraPlmnApiRootOk() (*string, bool) {
 
 // HasIntraPlmnApiRoot returns a boolean if a field has been set.
 func (o *HsmfUpdatedData) HasIntraPlmnApiRoot() bool {
-	if o != nil && !IsNil(o.IntraPlmnApiRoot) {
+	if o != nil && !isNil(o.IntraPlmnApiRoot) {
 		return true
 	}
 
@@ -683,61 +683,61 @@ func (o HsmfUpdatedData) MarshalJSON() ([]byte, error) {
 
 func (o HsmfUpdatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.N1SmInfoToUe) {
+	if !isNil(o.N1SmInfoToUe) {
 		toSerialize["n1SmInfoToUe"] = o.N1SmInfoToUe
 	}
-	if !IsNil(o.N4Info) {
+	if !isNil(o.N4Info) {
 		toSerialize["n4Info"] = o.N4Info
 	}
-	if !IsNil(o.N4InfoExt1) {
+	if !isNil(o.N4InfoExt1) {
 		toSerialize["n4InfoExt1"] = o.N4InfoExt1
 	}
-	if !IsNil(o.N4InfoExt2) {
+	if !isNil(o.N4InfoExt2) {
 		toSerialize["n4InfoExt2"] = o.N4InfoExt2
 	}
-	if !IsNil(o.DnaiList) {
+	if !isNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.RoamingChargingProfile) {
+	if !isNil(o.RoamingChargingProfile) {
 		toSerialize["roamingChargingProfile"] = o.RoamingChargingProfile
 	}
-	if !IsNil(o.HomeProvidedChargingId) {
+	if !isNil(o.HomeProvidedChargingId) {
 		toSerialize["homeProvidedChargingId"] = o.HomeProvidedChargingId
 	}
-	if !IsNil(o.UpSecurity) {
+	if !isNil(o.UpSecurity) {
 		toSerialize["upSecurity"] = o.UpSecurity
 	}
-	if !IsNil(o.MaxIntegrityProtectedDataRateUl) {
+	if !isNil(o.MaxIntegrityProtectedDataRateUl) {
 		toSerialize["maxIntegrityProtectedDataRateUl"] = o.MaxIntegrityProtectedDataRateUl
 	}
-	if !IsNil(o.MaxIntegrityProtectedDataRateDl) {
+	if !isNil(o.MaxIntegrityProtectedDataRateDl) {
 		toSerialize["maxIntegrityProtectedDataRateDl"] = o.MaxIntegrityProtectedDataRateDl
 	}
-	if !IsNil(o.Ipv6MultiHomingInd) {
+	if !isNil(o.Ipv6MultiHomingInd) {
 		toSerialize["ipv6MultiHomingInd"] = o.Ipv6MultiHomingInd
 	}
-	if !IsNil(o.QosFlowsSetupList) {
+	if !isNil(o.QosFlowsSetupList) {
 		toSerialize["qosFlowsSetupList"] = o.QosFlowsSetupList
 	}
-	if !IsNil(o.SessionAmbr) {
+	if !isNil(o.SessionAmbr) {
 		toSerialize["sessionAmbr"] = o.SessionAmbr
 	}
-	if !IsNil(o.EpsPdnCnxInfo) {
+	if !isNil(o.EpsPdnCnxInfo) {
 		toSerialize["epsPdnCnxInfo"] = o.EpsPdnCnxInfo
 	}
-	if !IsNil(o.EpsBearerInfo) {
+	if !isNil(o.EpsBearerInfo) {
 		toSerialize["epsBearerInfo"] = o.EpsBearerInfo
 	}
-	if !IsNil(o.Pti) {
+	if !isNil(o.Pti) {
 		toSerialize["pti"] = o.Pti
 	}
-	if !IsNil(o.InterPlmnApiRoot) {
+	if !isNil(o.InterPlmnApiRoot) {
 		toSerialize["interPlmnApiRoot"] = o.InterPlmnApiRoot
 	}
-	if !IsNil(o.IntraPlmnApiRoot) {
+	if !isNil(o.IntraPlmnApiRoot) {
 		toSerialize["intraPlmnApiRoot"] = o.IntraPlmnApiRoot
 	}
 	return toSerialize, nil

@@ -96,7 +96,7 @@ func (o *MdtConfiguration) SetJobType(v JobType) {
 
 // GetReportType returns the ReportType field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetReportType() ReportTypeMdt {
-	if o == nil || IsNil(o.ReportType) {
+	if o == nil || isNil(o.ReportType) {
 		var ret ReportTypeMdt
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *MdtConfiguration) GetReportType() ReportTypeMdt {
 // GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetReportTypeOk() (*ReportTypeMdt, bool) {
-	if o == nil || IsNil(o.ReportType) {
+	if o == nil || isNil(o.ReportType) {
 		return nil, false
 	}
 	return o.ReportType, true
@@ -114,7 +114,7 @@ func (o *MdtConfiguration) GetReportTypeOk() (*ReportTypeMdt, bool) {
 
 // HasReportType returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasReportType() bool {
-	if o != nil && !IsNil(o.ReportType) {
+	if o != nil && !isNil(o.ReportType) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *MdtConfiguration) SetReportType(v ReportTypeMdt) {
 
 // GetAreaScope returns the AreaScope field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetAreaScope() AreaScope {
-	if o == nil || IsNil(o.AreaScope) {
+	if o == nil || isNil(o.AreaScope) {
 		var ret AreaScope
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *MdtConfiguration) GetAreaScope() AreaScope {
 // GetAreaScopeOk returns a tuple with the AreaScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetAreaScopeOk() (*AreaScope, bool) {
-	if o == nil || IsNil(o.AreaScope) {
+	if o == nil || isNil(o.AreaScope) {
 		return nil, false
 	}
 	return o.AreaScope, true
@@ -146,7 +146,7 @@ func (o *MdtConfiguration) GetAreaScopeOk() (*AreaScope, bool) {
 
 // HasAreaScope returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasAreaScope() bool {
-	if o != nil && !IsNil(o.AreaScope) {
+	if o != nil && !isNil(o.AreaScope) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *MdtConfiguration) SetAreaScope(v AreaScope) {
 
 // GetMeasurementLteList returns the MeasurementLteList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetMeasurementLteList() []MeasurementLteForMdt {
-	if o == nil || IsNil(o.MeasurementLteList) {
+	if o == nil || isNil(o.MeasurementLteList) {
 		var ret []MeasurementLteForMdt
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *MdtConfiguration) GetMeasurementLteList() []MeasurementLteForMdt {
 // GetMeasurementLteListOk returns a tuple with the MeasurementLteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetMeasurementLteListOk() ([]MeasurementLteForMdt, bool) {
-	if o == nil || IsNil(o.MeasurementLteList) {
+	if o == nil || isNil(o.MeasurementLteList) {
 		return nil, false
 	}
 	return o.MeasurementLteList, true
@@ -178,7 +178,7 @@ func (o *MdtConfiguration) GetMeasurementLteListOk() ([]MeasurementLteForMdt, bo
 
 // HasMeasurementLteList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasMeasurementLteList() bool {
-	if o != nil && !IsNil(o.MeasurementLteList) {
+	if o != nil && !isNil(o.MeasurementLteList) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *MdtConfiguration) SetMeasurementLteList(v []MeasurementLteForMdt) {
 
 // GetMeasurementNrList returns the MeasurementNrList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetMeasurementNrList() []MeasurementNrForMdt {
-	if o == nil || IsNil(o.MeasurementNrList) {
+	if o == nil || isNil(o.MeasurementNrList) {
 		var ret []MeasurementNrForMdt
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *MdtConfiguration) GetMeasurementNrList() []MeasurementNrForMdt {
 // GetMeasurementNrListOk returns a tuple with the MeasurementNrList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetMeasurementNrListOk() ([]MeasurementNrForMdt, bool) {
-	if o == nil || IsNil(o.MeasurementNrList) {
+	if o == nil || isNil(o.MeasurementNrList) {
 		return nil, false
 	}
 	return o.MeasurementNrList, true
@@ -210,7 +210,7 @@ func (o *MdtConfiguration) GetMeasurementNrListOk() ([]MeasurementNrForMdt, bool
 
 // HasMeasurementNrList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasMeasurementNrList() bool {
-	if o != nil && !IsNil(o.MeasurementNrList) {
+	if o != nil && !isNil(o.MeasurementNrList) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *MdtConfiguration) SetMeasurementNrList(v []MeasurementNrForMdt) {
 
 // GetSensorMeasurementList returns the SensorMeasurementList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetSensorMeasurementList() []SensorMeasurement {
-	if o == nil || IsNil(o.SensorMeasurementList) {
+	if o == nil || isNil(o.SensorMeasurementList) {
 		var ret []SensorMeasurement
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *MdtConfiguration) GetSensorMeasurementList() []SensorMeasurement {
 // GetSensorMeasurementListOk returns a tuple with the SensorMeasurementList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetSensorMeasurementListOk() ([]SensorMeasurement, bool) {
-	if o == nil || IsNil(o.SensorMeasurementList) {
+	if o == nil || isNil(o.SensorMeasurementList) {
 		return nil, false
 	}
 	return o.SensorMeasurementList, true
@@ -242,7 +242,7 @@ func (o *MdtConfiguration) GetSensorMeasurementListOk() ([]SensorMeasurement, bo
 
 // HasSensorMeasurementList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasSensorMeasurementList() bool {
-	if o != nil && !IsNil(o.SensorMeasurementList) {
+	if o != nil && !isNil(o.SensorMeasurementList) {
 		return true
 	}
 
@@ -256,7 +256,7 @@ func (o *MdtConfiguration) SetSensorMeasurementList(v []SensorMeasurement) {
 
 // GetReportingTriggerList returns the ReportingTriggerList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetReportingTriggerList() []ReportingTrigger {
-	if o == nil || IsNil(o.ReportingTriggerList) {
+	if o == nil || isNil(o.ReportingTriggerList) {
 		var ret []ReportingTrigger
 		return ret
 	}
@@ -266,7 +266,7 @@ func (o *MdtConfiguration) GetReportingTriggerList() []ReportingTrigger {
 // GetReportingTriggerListOk returns a tuple with the ReportingTriggerList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetReportingTriggerListOk() ([]ReportingTrigger, bool) {
-	if o == nil || IsNil(o.ReportingTriggerList) {
+	if o == nil || isNil(o.ReportingTriggerList) {
 		return nil, false
 	}
 	return o.ReportingTriggerList, true
@@ -274,7 +274,7 @@ func (o *MdtConfiguration) GetReportingTriggerListOk() ([]ReportingTrigger, bool
 
 // HasReportingTriggerList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasReportingTriggerList() bool {
-	if o != nil && !IsNil(o.ReportingTriggerList) {
+	if o != nil && !isNil(o.ReportingTriggerList) {
 		return true
 	}
 
@@ -288,7 +288,7 @@ func (o *MdtConfiguration) SetReportingTriggerList(v []ReportingTrigger) {
 
 // GetReportInterval returns the ReportInterval field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetReportInterval() ReportIntervalMdt {
-	if o == nil || IsNil(o.ReportInterval) {
+	if o == nil || isNil(o.ReportInterval) {
 		var ret ReportIntervalMdt
 		return ret
 	}
@@ -298,7 +298,7 @@ func (o *MdtConfiguration) GetReportInterval() ReportIntervalMdt {
 // GetReportIntervalOk returns a tuple with the ReportInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetReportIntervalOk() (*ReportIntervalMdt, bool) {
-	if o == nil || IsNil(o.ReportInterval) {
+	if o == nil || isNil(o.ReportInterval) {
 		return nil, false
 	}
 	return o.ReportInterval, true
@@ -306,7 +306,7 @@ func (o *MdtConfiguration) GetReportIntervalOk() (*ReportIntervalMdt, bool) {
 
 // HasReportInterval returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasReportInterval() bool {
-	if o != nil && !IsNil(o.ReportInterval) {
+	if o != nil && !isNil(o.ReportInterval) {
 		return true
 	}
 
@@ -320,7 +320,7 @@ func (o *MdtConfiguration) SetReportInterval(v ReportIntervalMdt) {
 
 // GetReportIntervalNr returns the ReportIntervalNr field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetReportIntervalNr() ReportIntervalNrMdt {
-	if o == nil || IsNil(o.ReportIntervalNr) {
+	if o == nil || isNil(o.ReportIntervalNr) {
 		var ret ReportIntervalNrMdt
 		return ret
 	}
@@ -330,7 +330,7 @@ func (o *MdtConfiguration) GetReportIntervalNr() ReportIntervalNrMdt {
 // GetReportIntervalNrOk returns a tuple with the ReportIntervalNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetReportIntervalNrOk() (*ReportIntervalNrMdt, bool) {
-	if o == nil || IsNil(o.ReportIntervalNr) {
+	if o == nil || isNil(o.ReportIntervalNr) {
 		return nil, false
 	}
 	return o.ReportIntervalNr, true
@@ -338,7 +338,7 @@ func (o *MdtConfiguration) GetReportIntervalNrOk() (*ReportIntervalNrMdt, bool) 
 
 // HasReportIntervalNr returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasReportIntervalNr() bool {
-	if o != nil && !IsNil(o.ReportIntervalNr) {
+	if o != nil && !isNil(o.ReportIntervalNr) {
 		return true
 	}
 
@@ -352,7 +352,7 @@ func (o *MdtConfiguration) SetReportIntervalNr(v ReportIntervalNrMdt) {
 
 // GetReportAmount returns the ReportAmount field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetReportAmount() ReportAmountMdt {
-	if o == nil || IsNil(o.ReportAmount) {
+	if o == nil || isNil(o.ReportAmount) {
 		var ret ReportAmountMdt
 		return ret
 	}
@@ -362,7 +362,7 @@ func (o *MdtConfiguration) GetReportAmount() ReportAmountMdt {
 // GetReportAmountOk returns a tuple with the ReportAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetReportAmountOk() (*ReportAmountMdt, bool) {
-	if o == nil || IsNil(o.ReportAmount) {
+	if o == nil || isNil(o.ReportAmount) {
 		return nil, false
 	}
 	return o.ReportAmount, true
@@ -370,7 +370,7 @@ func (o *MdtConfiguration) GetReportAmountOk() (*ReportAmountMdt, bool) {
 
 // HasReportAmount returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasReportAmount() bool {
-	if o != nil && !IsNil(o.ReportAmount) {
+	if o != nil && !isNil(o.ReportAmount) {
 		return true
 	}
 
@@ -384,7 +384,7 @@ func (o *MdtConfiguration) SetReportAmount(v ReportAmountMdt) {
 
 // GetEventThresholdRsrp returns the EventThresholdRsrp field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetEventThresholdRsrp() int32 {
-	if o == nil || IsNil(o.EventThresholdRsrp) {
+	if o == nil || isNil(o.EventThresholdRsrp) {
 		var ret int32
 		return ret
 	}
@@ -394,7 +394,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrp() int32 {
 // GetEventThresholdRsrpOk returns a tuple with the EventThresholdRsrp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetEventThresholdRsrpOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventThresholdRsrp) {
+	if o == nil || isNil(o.EventThresholdRsrp) {
 		return nil, false
 	}
 	return o.EventThresholdRsrp, true
@@ -402,7 +402,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrpOk() (*int32, bool) {
 
 // HasEventThresholdRsrp returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasEventThresholdRsrp() bool {
-	if o != nil && !IsNil(o.EventThresholdRsrp) {
+	if o != nil && !isNil(o.EventThresholdRsrp) {
 		return true
 	}
 
@@ -416,7 +416,7 @@ func (o *MdtConfiguration) SetEventThresholdRsrp(v int32) {
 
 // GetEventThresholdRsrpNr returns the EventThresholdRsrpNr field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetEventThresholdRsrpNr() int32 {
-	if o == nil || IsNil(o.EventThresholdRsrpNr) {
+	if o == nil || isNil(o.EventThresholdRsrpNr) {
 		var ret int32
 		return ret
 	}
@@ -426,7 +426,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrpNr() int32 {
 // GetEventThresholdRsrpNrOk returns a tuple with the EventThresholdRsrpNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetEventThresholdRsrpNrOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventThresholdRsrpNr) {
+	if o == nil || isNil(o.EventThresholdRsrpNr) {
 		return nil, false
 	}
 	return o.EventThresholdRsrpNr, true
@@ -434,7 +434,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrpNrOk() (*int32, bool) {
 
 // HasEventThresholdRsrpNr returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasEventThresholdRsrpNr() bool {
-	if o != nil && !IsNil(o.EventThresholdRsrpNr) {
+	if o != nil && !isNil(o.EventThresholdRsrpNr) {
 		return true
 	}
 
@@ -448,7 +448,7 @@ func (o *MdtConfiguration) SetEventThresholdRsrpNr(v int32) {
 
 // GetEventThresholdRsrq returns the EventThresholdRsrq field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetEventThresholdRsrq() int32 {
-	if o == nil || IsNil(o.EventThresholdRsrq) {
+	if o == nil || isNil(o.EventThresholdRsrq) {
 		var ret int32
 		return ret
 	}
@@ -458,7 +458,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrq() int32 {
 // GetEventThresholdRsrqOk returns a tuple with the EventThresholdRsrq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetEventThresholdRsrqOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventThresholdRsrq) {
+	if o == nil || isNil(o.EventThresholdRsrq) {
 		return nil, false
 	}
 	return o.EventThresholdRsrq, true
@@ -466,7 +466,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrqOk() (*int32, bool) {
 
 // HasEventThresholdRsrq returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasEventThresholdRsrq() bool {
-	if o != nil && !IsNil(o.EventThresholdRsrq) {
+	if o != nil && !isNil(o.EventThresholdRsrq) {
 		return true
 	}
 
@@ -480,7 +480,7 @@ func (o *MdtConfiguration) SetEventThresholdRsrq(v int32) {
 
 // GetEventThresholdRsrqNr returns the EventThresholdRsrqNr field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetEventThresholdRsrqNr() int32 {
-	if o == nil || IsNil(o.EventThresholdRsrqNr) {
+	if o == nil || isNil(o.EventThresholdRsrqNr) {
 		var ret int32
 		return ret
 	}
@@ -490,7 +490,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrqNr() int32 {
 // GetEventThresholdRsrqNrOk returns a tuple with the EventThresholdRsrqNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetEventThresholdRsrqNrOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventThresholdRsrqNr) {
+	if o == nil || isNil(o.EventThresholdRsrqNr) {
 		return nil, false
 	}
 	return o.EventThresholdRsrqNr, true
@@ -498,7 +498,7 @@ func (o *MdtConfiguration) GetEventThresholdRsrqNrOk() (*int32, bool) {
 
 // HasEventThresholdRsrqNr returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasEventThresholdRsrqNr() bool {
-	if o != nil && !IsNil(o.EventThresholdRsrqNr) {
+	if o != nil && !isNil(o.EventThresholdRsrqNr) {
 		return true
 	}
 
@@ -512,7 +512,7 @@ func (o *MdtConfiguration) SetEventThresholdRsrqNr(v int32) {
 
 // GetEventList returns the EventList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetEventList() []EventForMdt {
-	if o == nil || IsNil(o.EventList) {
+	if o == nil || isNil(o.EventList) {
 		var ret []EventForMdt
 		return ret
 	}
@@ -522,7 +522,7 @@ func (o *MdtConfiguration) GetEventList() []EventForMdt {
 // GetEventListOk returns a tuple with the EventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetEventListOk() ([]EventForMdt, bool) {
-	if o == nil || IsNil(o.EventList) {
+	if o == nil || isNil(o.EventList) {
 		return nil, false
 	}
 	return o.EventList, true
@@ -530,7 +530,7 @@ func (o *MdtConfiguration) GetEventListOk() ([]EventForMdt, bool) {
 
 // HasEventList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasEventList() bool {
-	if o != nil && !IsNil(o.EventList) {
+	if o != nil && !isNil(o.EventList) {
 		return true
 	}
 
@@ -544,7 +544,7 @@ func (o *MdtConfiguration) SetEventList(v []EventForMdt) {
 
 // GetLoggingInterval returns the LoggingInterval field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetLoggingInterval() LoggingIntervalMdt {
-	if o == nil || IsNil(o.LoggingInterval) {
+	if o == nil || isNil(o.LoggingInterval) {
 		var ret LoggingIntervalMdt
 		return ret
 	}
@@ -554,7 +554,7 @@ func (o *MdtConfiguration) GetLoggingInterval() LoggingIntervalMdt {
 // GetLoggingIntervalOk returns a tuple with the LoggingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetLoggingIntervalOk() (*LoggingIntervalMdt, bool) {
-	if o == nil || IsNil(o.LoggingInterval) {
+	if o == nil || isNil(o.LoggingInterval) {
 		return nil, false
 	}
 	return o.LoggingInterval, true
@@ -562,7 +562,7 @@ func (o *MdtConfiguration) GetLoggingIntervalOk() (*LoggingIntervalMdt, bool) {
 
 // HasLoggingInterval returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasLoggingInterval() bool {
-	if o != nil && !IsNil(o.LoggingInterval) {
+	if o != nil && !isNil(o.LoggingInterval) {
 		return true
 	}
 
@@ -576,7 +576,7 @@ func (o *MdtConfiguration) SetLoggingInterval(v LoggingIntervalMdt) {
 
 // GetLoggingIntervalNr returns the LoggingIntervalNr field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetLoggingIntervalNr() LoggingIntervalNrMdt {
-	if o == nil || IsNil(o.LoggingIntervalNr) {
+	if o == nil || isNil(o.LoggingIntervalNr) {
 		var ret LoggingIntervalNrMdt
 		return ret
 	}
@@ -586,7 +586,7 @@ func (o *MdtConfiguration) GetLoggingIntervalNr() LoggingIntervalNrMdt {
 // GetLoggingIntervalNrOk returns a tuple with the LoggingIntervalNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetLoggingIntervalNrOk() (*LoggingIntervalNrMdt, bool) {
-	if o == nil || IsNil(o.LoggingIntervalNr) {
+	if o == nil || isNil(o.LoggingIntervalNr) {
 		return nil, false
 	}
 	return o.LoggingIntervalNr, true
@@ -594,7 +594,7 @@ func (o *MdtConfiguration) GetLoggingIntervalNrOk() (*LoggingIntervalNrMdt, bool
 
 // HasLoggingIntervalNr returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasLoggingIntervalNr() bool {
-	if o != nil && !IsNil(o.LoggingIntervalNr) {
+	if o != nil && !isNil(o.LoggingIntervalNr) {
 		return true
 	}
 
@@ -608,7 +608,7 @@ func (o *MdtConfiguration) SetLoggingIntervalNr(v LoggingIntervalNrMdt) {
 
 // GetLoggingDuration returns the LoggingDuration field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetLoggingDuration() LoggingDurationMdt {
-	if o == nil || IsNil(o.LoggingDuration) {
+	if o == nil || isNil(o.LoggingDuration) {
 		var ret LoggingDurationMdt
 		return ret
 	}
@@ -618,7 +618,7 @@ func (o *MdtConfiguration) GetLoggingDuration() LoggingDurationMdt {
 // GetLoggingDurationOk returns a tuple with the LoggingDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetLoggingDurationOk() (*LoggingDurationMdt, bool) {
-	if o == nil || IsNil(o.LoggingDuration) {
+	if o == nil || isNil(o.LoggingDuration) {
 		return nil, false
 	}
 	return o.LoggingDuration, true
@@ -626,7 +626,7 @@ func (o *MdtConfiguration) GetLoggingDurationOk() (*LoggingDurationMdt, bool) {
 
 // HasLoggingDuration returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasLoggingDuration() bool {
-	if o != nil && !IsNil(o.LoggingDuration) {
+	if o != nil && !isNil(o.LoggingDuration) {
 		return true
 	}
 
@@ -640,7 +640,7 @@ func (o *MdtConfiguration) SetLoggingDuration(v LoggingDurationMdt) {
 
 // GetLoggingDurationNr returns the LoggingDurationNr field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetLoggingDurationNr() LoggingDurationNrMdt {
-	if o == nil || IsNil(o.LoggingDurationNr) {
+	if o == nil || isNil(o.LoggingDurationNr) {
 		var ret LoggingDurationNrMdt
 		return ret
 	}
@@ -650,7 +650,7 @@ func (o *MdtConfiguration) GetLoggingDurationNr() LoggingDurationNrMdt {
 // GetLoggingDurationNrOk returns a tuple with the LoggingDurationNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetLoggingDurationNrOk() (*LoggingDurationNrMdt, bool) {
-	if o == nil || IsNil(o.LoggingDurationNr) {
+	if o == nil || isNil(o.LoggingDurationNr) {
 		return nil, false
 	}
 	return o.LoggingDurationNr, true
@@ -658,7 +658,7 @@ func (o *MdtConfiguration) GetLoggingDurationNrOk() (*LoggingDurationNrMdt, bool
 
 // HasLoggingDurationNr returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasLoggingDurationNr() bool {
-	if o != nil && !IsNil(o.LoggingDurationNr) {
+	if o != nil && !isNil(o.LoggingDurationNr) {
 		return true
 	}
 
@@ -672,7 +672,7 @@ func (o *MdtConfiguration) SetLoggingDurationNr(v LoggingDurationNrMdt) {
 
 // GetPositioningMethod returns the PositioningMethod field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetPositioningMethod() PositioningMethodMdt {
-	if o == nil || IsNil(o.PositioningMethod) {
+	if o == nil || isNil(o.PositioningMethod) {
 		var ret PositioningMethodMdt
 		return ret
 	}
@@ -682,7 +682,7 @@ func (o *MdtConfiguration) GetPositioningMethod() PositioningMethodMdt {
 // GetPositioningMethodOk returns a tuple with the PositioningMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetPositioningMethodOk() (*PositioningMethodMdt, bool) {
-	if o == nil || IsNil(o.PositioningMethod) {
+	if o == nil || isNil(o.PositioningMethod) {
 		return nil, false
 	}
 	return o.PositioningMethod, true
@@ -690,7 +690,7 @@ func (o *MdtConfiguration) GetPositioningMethodOk() (*PositioningMethodMdt, bool
 
 // HasPositioningMethod returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasPositioningMethod() bool {
-	if o != nil && !IsNil(o.PositioningMethod) {
+	if o != nil && !isNil(o.PositioningMethod) {
 		return true
 	}
 
@@ -704,7 +704,7 @@ func (o *MdtConfiguration) SetPositioningMethod(v PositioningMethodMdt) {
 
 // GetAddPositioningMethodList returns the AddPositioningMethodList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetAddPositioningMethodList() []PositioningMethodMdt {
-	if o == nil || IsNil(o.AddPositioningMethodList) {
+	if o == nil || isNil(o.AddPositioningMethodList) {
 		var ret []PositioningMethodMdt
 		return ret
 	}
@@ -714,7 +714,7 @@ func (o *MdtConfiguration) GetAddPositioningMethodList() []PositioningMethodMdt 
 // GetAddPositioningMethodListOk returns a tuple with the AddPositioningMethodList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetAddPositioningMethodListOk() ([]PositioningMethodMdt, bool) {
-	if o == nil || IsNil(o.AddPositioningMethodList) {
+	if o == nil || isNil(o.AddPositioningMethodList) {
 		return nil, false
 	}
 	return o.AddPositioningMethodList, true
@@ -722,7 +722,7 @@ func (o *MdtConfiguration) GetAddPositioningMethodListOk() ([]PositioningMethodM
 
 // HasAddPositioningMethodList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasAddPositioningMethodList() bool {
-	if o != nil && !IsNil(o.AddPositioningMethodList) {
+	if o != nil && !isNil(o.AddPositioningMethodList) {
 		return true
 	}
 
@@ -736,7 +736,7 @@ func (o *MdtConfiguration) SetAddPositioningMethodList(v []PositioningMethodMdt)
 
 // GetCollectionPeriodRmmLte returns the CollectionPeriodRmmLte field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetCollectionPeriodRmmLte() CollectionPeriodRmmLteMdt {
-	if o == nil || IsNil(o.CollectionPeriodRmmLte) {
+	if o == nil || isNil(o.CollectionPeriodRmmLte) {
 		var ret CollectionPeriodRmmLteMdt
 		return ret
 	}
@@ -746,7 +746,7 @@ func (o *MdtConfiguration) GetCollectionPeriodRmmLte() CollectionPeriodRmmLteMdt
 // GetCollectionPeriodRmmLteOk returns a tuple with the CollectionPeriodRmmLte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetCollectionPeriodRmmLteOk() (*CollectionPeriodRmmLteMdt, bool) {
-	if o == nil || IsNil(o.CollectionPeriodRmmLte) {
+	if o == nil || isNil(o.CollectionPeriodRmmLte) {
 		return nil, false
 	}
 	return o.CollectionPeriodRmmLte, true
@@ -754,7 +754,7 @@ func (o *MdtConfiguration) GetCollectionPeriodRmmLteOk() (*CollectionPeriodRmmLt
 
 // HasCollectionPeriodRmmLte returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasCollectionPeriodRmmLte() bool {
-	if o != nil && !IsNil(o.CollectionPeriodRmmLte) {
+	if o != nil && !isNil(o.CollectionPeriodRmmLte) {
 		return true
 	}
 
@@ -768,7 +768,7 @@ func (o *MdtConfiguration) SetCollectionPeriodRmmLte(v CollectionPeriodRmmLteMdt
 
 // GetCollectionPeriodRmmNr returns the CollectionPeriodRmmNr field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetCollectionPeriodRmmNr() CollectionPeriodRmmNrMdt {
-	if o == nil || IsNil(o.CollectionPeriodRmmNr) {
+	if o == nil || isNil(o.CollectionPeriodRmmNr) {
 		var ret CollectionPeriodRmmNrMdt
 		return ret
 	}
@@ -778,7 +778,7 @@ func (o *MdtConfiguration) GetCollectionPeriodRmmNr() CollectionPeriodRmmNrMdt {
 // GetCollectionPeriodRmmNrOk returns a tuple with the CollectionPeriodRmmNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetCollectionPeriodRmmNrOk() (*CollectionPeriodRmmNrMdt, bool) {
-	if o == nil || IsNil(o.CollectionPeriodRmmNr) {
+	if o == nil || isNil(o.CollectionPeriodRmmNr) {
 		return nil, false
 	}
 	return o.CollectionPeriodRmmNr, true
@@ -786,7 +786,7 @@ func (o *MdtConfiguration) GetCollectionPeriodRmmNrOk() (*CollectionPeriodRmmNrM
 
 // HasCollectionPeriodRmmNr returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasCollectionPeriodRmmNr() bool {
-	if o != nil && !IsNil(o.CollectionPeriodRmmNr) {
+	if o != nil && !isNil(o.CollectionPeriodRmmNr) {
 		return true
 	}
 
@@ -800,7 +800,7 @@ func (o *MdtConfiguration) SetCollectionPeriodRmmNr(v CollectionPeriodRmmNrMdt) 
 
 // GetMeasurementPeriodLte returns the MeasurementPeriodLte field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetMeasurementPeriodLte() MeasurementPeriodLteMdt {
-	if o == nil || IsNil(o.MeasurementPeriodLte) {
+	if o == nil || isNil(o.MeasurementPeriodLte) {
 		var ret MeasurementPeriodLteMdt
 		return ret
 	}
@@ -810,7 +810,7 @@ func (o *MdtConfiguration) GetMeasurementPeriodLte() MeasurementPeriodLteMdt {
 // GetMeasurementPeriodLteOk returns a tuple with the MeasurementPeriodLte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetMeasurementPeriodLteOk() (*MeasurementPeriodLteMdt, bool) {
-	if o == nil || IsNil(o.MeasurementPeriodLte) {
+	if o == nil || isNil(o.MeasurementPeriodLte) {
 		return nil, false
 	}
 	return o.MeasurementPeriodLte, true
@@ -818,7 +818,7 @@ func (o *MdtConfiguration) GetMeasurementPeriodLteOk() (*MeasurementPeriodLteMdt
 
 // HasMeasurementPeriodLte returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasMeasurementPeriodLte() bool {
-	if o != nil && !IsNil(o.MeasurementPeriodLte) {
+	if o != nil && !isNil(o.MeasurementPeriodLte) {
 		return true
 	}
 
@@ -832,7 +832,7 @@ func (o *MdtConfiguration) SetMeasurementPeriodLte(v MeasurementPeriodLteMdt) {
 
 // GetMdtAllowedPlmnIdList returns the MdtAllowedPlmnIdList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetMdtAllowedPlmnIdList() []PlmnId {
-	if o == nil || IsNil(o.MdtAllowedPlmnIdList) {
+	if o == nil || isNil(o.MdtAllowedPlmnIdList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -842,7 +842,7 @@ func (o *MdtConfiguration) GetMdtAllowedPlmnIdList() []PlmnId {
 // GetMdtAllowedPlmnIdListOk returns a tuple with the MdtAllowedPlmnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetMdtAllowedPlmnIdListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.MdtAllowedPlmnIdList) {
+	if o == nil || isNil(o.MdtAllowedPlmnIdList) {
 		return nil, false
 	}
 	return o.MdtAllowedPlmnIdList, true
@@ -850,7 +850,7 @@ func (o *MdtConfiguration) GetMdtAllowedPlmnIdListOk() ([]PlmnId, bool) {
 
 // HasMdtAllowedPlmnIdList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasMdtAllowedPlmnIdList() bool {
-	if o != nil && !IsNil(o.MdtAllowedPlmnIdList) {
+	if o != nil && !isNil(o.MdtAllowedPlmnIdList) {
 		return true
 	}
 
@@ -864,7 +864,7 @@ func (o *MdtConfiguration) SetMdtAllowedPlmnIdList(v []PlmnId) {
 
 // GetMbsfnAreaList returns the MbsfnAreaList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetMbsfnAreaList() []MbsfnArea {
-	if o == nil || IsNil(o.MbsfnAreaList) {
+	if o == nil || isNil(o.MbsfnAreaList) {
 		var ret []MbsfnArea
 		return ret
 	}
@@ -874,7 +874,7 @@ func (o *MdtConfiguration) GetMbsfnAreaList() []MbsfnArea {
 // GetMbsfnAreaListOk returns a tuple with the MbsfnAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetMbsfnAreaListOk() ([]MbsfnArea, bool) {
-	if o == nil || IsNil(o.MbsfnAreaList) {
+	if o == nil || isNil(o.MbsfnAreaList) {
 		return nil, false
 	}
 	return o.MbsfnAreaList, true
@@ -882,7 +882,7 @@ func (o *MdtConfiguration) GetMbsfnAreaListOk() ([]MbsfnArea, bool) {
 
 // HasMbsfnAreaList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasMbsfnAreaList() bool {
-	if o != nil && !IsNil(o.MbsfnAreaList) {
+	if o != nil && !isNil(o.MbsfnAreaList) {
 		return true
 	}
 
@@ -896,7 +896,7 @@ func (o *MdtConfiguration) SetMbsfnAreaList(v []MbsfnArea) {
 
 // GetInterFreqTargetList returns the InterFreqTargetList field value if set, zero value otherwise.
 func (o *MdtConfiguration) GetInterFreqTargetList() []InterFreqTargetInfo {
-	if o == nil || IsNil(o.InterFreqTargetList) {
+	if o == nil || isNil(o.InterFreqTargetList) {
 		var ret []InterFreqTargetInfo
 		return ret
 	}
@@ -906,7 +906,7 @@ func (o *MdtConfiguration) GetInterFreqTargetList() []InterFreqTargetInfo {
 // GetInterFreqTargetListOk returns a tuple with the InterFreqTargetList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MdtConfiguration) GetInterFreqTargetListOk() ([]InterFreqTargetInfo, bool) {
-	if o == nil || IsNil(o.InterFreqTargetList) {
+	if o == nil || isNil(o.InterFreqTargetList) {
 		return nil, false
 	}
 	return o.InterFreqTargetList, true
@@ -914,7 +914,7 @@ func (o *MdtConfiguration) GetInterFreqTargetListOk() ([]InterFreqTargetInfo, bo
 
 // HasInterFreqTargetList returns a boolean if a field has been set.
 func (o *MdtConfiguration) HasInterFreqTargetList() bool {
-	if o != nil && !IsNil(o.InterFreqTargetList) {
+	if o != nil && !isNil(o.InterFreqTargetList) {
 		return true
 	}
 
@@ -937,82 +937,82 @@ func (o MdtConfiguration) MarshalJSON() ([]byte, error) {
 func (o MdtConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["jobType"] = o.JobType
-	if !IsNil(o.ReportType) {
+	if !isNil(o.ReportType) {
 		toSerialize["reportType"] = o.ReportType
 	}
-	if !IsNil(o.AreaScope) {
+	if !isNil(o.AreaScope) {
 		toSerialize["areaScope"] = o.AreaScope
 	}
-	if !IsNil(o.MeasurementLteList) {
+	if !isNil(o.MeasurementLteList) {
 		toSerialize["measurementLteList"] = o.MeasurementLteList
 	}
-	if !IsNil(o.MeasurementNrList) {
+	if !isNil(o.MeasurementNrList) {
 		toSerialize["measurementNrList"] = o.MeasurementNrList
 	}
-	if !IsNil(o.SensorMeasurementList) {
+	if !isNil(o.SensorMeasurementList) {
 		toSerialize["sensorMeasurementList"] = o.SensorMeasurementList
 	}
-	if !IsNil(o.ReportingTriggerList) {
+	if !isNil(o.ReportingTriggerList) {
 		toSerialize["reportingTriggerList"] = o.ReportingTriggerList
 	}
-	if !IsNil(o.ReportInterval) {
+	if !isNil(o.ReportInterval) {
 		toSerialize["reportInterval"] = o.ReportInterval
 	}
-	if !IsNil(o.ReportIntervalNr) {
+	if !isNil(o.ReportIntervalNr) {
 		toSerialize["reportIntervalNr"] = o.ReportIntervalNr
 	}
-	if !IsNil(o.ReportAmount) {
+	if !isNil(o.ReportAmount) {
 		toSerialize["reportAmount"] = o.ReportAmount
 	}
-	if !IsNil(o.EventThresholdRsrp) {
+	if !isNil(o.EventThresholdRsrp) {
 		toSerialize["eventThresholdRsrp"] = o.EventThresholdRsrp
 	}
-	if !IsNil(o.EventThresholdRsrpNr) {
+	if !isNil(o.EventThresholdRsrpNr) {
 		toSerialize["eventThresholdRsrpNr"] = o.EventThresholdRsrpNr
 	}
-	if !IsNil(o.EventThresholdRsrq) {
+	if !isNil(o.EventThresholdRsrq) {
 		toSerialize["eventThresholdRsrq"] = o.EventThresholdRsrq
 	}
-	if !IsNil(o.EventThresholdRsrqNr) {
+	if !isNil(o.EventThresholdRsrqNr) {
 		toSerialize["eventThresholdRsrqNr"] = o.EventThresholdRsrqNr
 	}
-	if !IsNil(o.EventList) {
+	if !isNil(o.EventList) {
 		toSerialize["eventList"] = o.EventList
 	}
-	if !IsNil(o.LoggingInterval) {
+	if !isNil(o.LoggingInterval) {
 		toSerialize["loggingInterval"] = o.LoggingInterval
 	}
-	if !IsNil(o.LoggingIntervalNr) {
+	if !isNil(o.LoggingIntervalNr) {
 		toSerialize["loggingIntervalNr"] = o.LoggingIntervalNr
 	}
-	if !IsNil(o.LoggingDuration) {
+	if !isNil(o.LoggingDuration) {
 		toSerialize["loggingDuration"] = o.LoggingDuration
 	}
-	if !IsNil(o.LoggingDurationNr) {
+	if !isNil(o.LoggingDurationNr) {
 		toSerialize["loggingDurationNr"] = o.LoggingDurationNr
 	}
-	if !IsNil(o.PositioningMethod) {
+	if !isNil(o.PositioningMethod) {
 		toSerialize["positioningMethod"] = o.PositioningMethod
 	}
-	if !IsNil(o.AddPositioningMethodList) {
+	if !isNil(o.AddPositioningMethodList) {
 		toSerialize["addPositioningMethodList"] = o.AddPositioningMethodList
 	}
-	if !IsNil(o.CollectionPeriodRmmLte) {
+	if !isNil(o.CollectionPeriodRmmLte) {
 		toSerialize["collectionPeriodRmmLte"] = o.CollectionPeriodRmmLte
 	}
-	if !IsNil(o.CollectionPeriodRmmNr) {
+	if !isNil(o.CollectionPeriodRmmNr) {
 		toSerialize["collectionPeriodRmmNr"] = o.CollectionPeriodRmmNr
 	}
-	if !IsNil(o.MeasurementPeriodLte) {
+	if !isNil(o.MeasurementPeriodLte) {
 		toSerialize["measurementPeriodLte"] = o.MeasurementPeriodLte
 	}
-	if !IsNil(o.MdtAllowedPlmnIdList) {
+	if !isNil(o.MdtAllowedPlmnIdList) {
 		toSerialize["mdtAllowedPlmnIdList"] = o.MdtAllowedPlmnIdList
 	}
-	if !IsNil(o.MbsfnAreaList) {
+	if !isNil(o.MbsfnAreaList) {
 		toSerialize["mbsfnAreaList"] = o.MbsfnAreaList
 	}
-	if !IsNil(o.InterFreqTargetList) {
+	if !isNil(o.InterFreqTargetList) {
 		toSerialize["interFreqTargetList"] = o.InterFreqTargetList
 	}
 	return toSerialize, nil

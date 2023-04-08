@@ -42,7 +42,7 @@ func NewUeAccDelayProbilityDistWithDefaults() *UeAccDelayProbilityDist {
 
 // GetTargetProbability returns the TargetProbability field value if set, zero value otherwise.
 func (o *UeAccDelayProbilityDist) GetTargetProbability() int32 {
-	if o == nil || IsNil(o.TargetProbability) {
+	if o == nil || isNil(o.TargetProbability) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UeAccDelayProbilityDist) GetTargetProbability() int32 {
 // GetTargetProbabilityOk returns a tuple with the TargetProbability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeAccDelayProbilityDist) GetTargetProbabilityOk() (*int32, bool) {
-	if o == nil || IsNil(o.TargetProbability) {
+	if o == nil || isNil(o.TargetProbability) {
 		return nil, false
 	}
 	return o.TargetProbability, true
@@ -60,7 +60,7 @@ func (o *UeAccDelayProbilityDist) GetTargetProbabilityOk() (*int32, bool) {
 
 // HasTargetProbability returns a boolean if a field has been set.
 func (o *UeAccDelayProbilityDist) HasTargetProbability() bool {
-	if o != nil && !IsNil(o.TargetProbability) {
+	if o != nil && !isNil(o.TargetProbability) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UeAccDelayProbilityDist) SetTargetProbability(v int32) {
 
 // GetAccessdelay returns the Accessdelay field value if set, zero value otherwise.
 func (o *UeAccDelayProbilityDist) GetAccessdelay() int32 {
-	if o == nil || IsNil(o.Accessdelay) {
+	if o == nil || isNil(o.Accessdelay) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UeAccDelayProbilityDist) GetAccessdelay() int32 {
 // GetAccessdelayOk returns a tuple with the Accessdelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeAccDelayProbilityDist) GetAccessdelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.Accessdelay) {
+	if o == nil || isNil(o.Accessdelay) {
 		return nil, false
 	}
 	return o.Accessdelay, true
@@ -92,7 +92,7 @@ func (o *UeAccDelayProbilityDist) GetAccessdelayOk() (*int32, bool) {
 
 // HasAccessdelay returns a boolean if a field has been set.
 func (o *UeAccDelayProbilityDist) HasAccessdelay() bool {
-	if o != nil && !IsNil(o.Accessdelay) {
+	if o != nil && !isNil(o.Accessdelay) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o UeAccDelayProbilityDist) MarshalJSON() ([]byte, error) {
 
 func (o UeAccDelayProbilityDist) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TargetProbability) {
+	if !isNil(o.TargetProbability) {
 		toSerialize["targetProbability"] = o.TargetProbability
 	}
-	if !IsNil(o.Accessdelay) {
+	if !isNil(o.Accessdelay) {
 		toSerialize["accessdelay"] = o.Accessdelay
 	}
 	return toSerialize, nil

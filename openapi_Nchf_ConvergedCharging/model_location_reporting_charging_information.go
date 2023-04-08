@@ -73,7 +73,7 @@ func (o *LocationReportingChargingInformation) SetLocationReportingMessageType(v
 
 // GetUserInformation returns the UserInformation field value if set, zero value otherwise.
 func (o *LocationReportingChargingInformation) GetUserInformation() UserInformation {
-	if o == nil || IsNil(o.UserInformation) {
+	if o == nil || isNil(o.UserInformation) {
 		var ret UserInformation
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *LocationReportingChargingInformation) GetUserInformation() UserInformat
 // GetUserInformationOk returns a tuple with the UserInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingChargingInformation) GetUserInformationOk() (*UserInformation, bool) {
-	if o == nil || IsNil(o.UserInformation) {
+	if o == nil || isNil(o.UserInformation) {
 		return nil, false
 	}
 	return o.UserInformation, true
@@ -91,7 +91,7 @@ func (o *LocationReportingChargingInformation) GetUserInformationOk() (*UserInfo
 
 // HasUserInformation returns a boolean if a field has been set.
 func (o *LocationReportingChargingInformation) HasUserInformation() bool {
-	if o != nil && !IsNil(o.UserInformation) {
+	if o != nil && !isNil(o.UserInformation) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *LocationReportingChargingInformation) SetUserInformation(v UserInformat
 
 // GetUserLocationinfo returns the UserLocationinfo field value if set, zero value otherwise.
 func (o *LocationReportingChargingInformation) GetUserLocationinfo() UserLocation {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *LocationReportingChargingInformation) GetUserLocationinfo() UserLocatio
 // GetUserLocationinfoOk returns a tuple with the UserLocationinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		return nil, false
 	}
 	return o.UserLocationinfo, true
@@ -123,7 +123,7 @@ func (o *LocationReportingChargingInformation) GetUserLocationinfoOk() (*UserLoc
 
 // HasUserLocationinfo returns a boolean if a field has been set.
 func (o *LocationReportingChargingInformation) HasUserLocationinfo() bool {
-	if o != nil && !IsNil(o.UserLocationinfo) {
+	if o != nil && !isNil(o.UserLocationinfo) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *LocationReportingChargingInformation) SetUserLocationinfo(v UserLocatio
 
 // GetPSCellInformation returns the PSCellInformation field value if set, zero value otherwise.
 func (o *LocationReportingChargingInformation) GetPSCellInformation() PSCellInformation {
-	if o == nil || IsNil(o.PSCellInformation) {
+	if o == nil || isNil(o.PSCellInformation) {
 		var ret PSCellInformation
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *LocationReportingChargingInformation) GetPSCellInformation() PSCellInfo
 // GetPSCellInformationOk returns a tuple with the PSCellInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingChargingInformation) GetPSCellInformationOk() (*PSCellInformation, bool) {
-	if o == nil || IsNil(o.PSCellInformation) {
+	if o == nil || isNil(o.PSCellInformation) {
 		return nil, false
 	}
 	return o.PSCellInformation, true
@@ -155,7 +155,7 @@ func (o *LocationReportingChargingInformation) GetPSCellInformationOk() (*PSCell
 
 // HasPSCellInformation returns a boolean if a field has been set.
 func (o *LocationReportingChargingInformation) HasPSCellInformation() bool {
-	if o != nil && !IsNil(o.PSCellInformation) {
+	if o != nil && !isNil(o.PSCellInformation) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *LocationReportingChargingInformation) SetPSCellInformation(v PSCellInfo
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *LocationReportingChargingInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *LocationReportingChargingInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingChargingInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -187,7 +187,7 @@ func (o *LocationReportingChargingInformation) GetUetimeZoneOk() (*string, bool)
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *LocationReportingChargingInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *LocationReportingChargingInformation) SetUetimeZone(v string) {
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *LocationReportingChargingInformation) GetRATType() RatType {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *LocationReportingChargingInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingChargingInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -219,7 +219,7 @@ func (o *LocationReportingChargingInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *LocationReportingChargingInformation) HasRATType() bool {
-	if o != nil && !IsNil(o.RATType) {
+	if o != nil && !isNil(o.RATType) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *LocationReportingChargingInformation) SetRATType(v RatType) {
 
 // GetPresenceReportingAreaInformation returns the PresenceReportingAreaInformation field value if set, zero value otherwise.
 func (o *LocationReportingChargingInformation) GetPresenceReportingAreaInformation() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *LocationReportingChargingInformation) GetPresenceReportingAreaInformati
 // GetPresenceReportingAreaInformationOk returns a tuple with the PresenceReportingAreaInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingChargingInformation) GetPresenceReportingAreaInformationOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		return nil, false
 	}
 	return o.PresenceReportingAreaInformation, true
@@ -251,7 +251,7 @@ func (o *LocationReportingChargingInformation) GetPresenceReportingAreaInformati
 
 // HasPresenceReportingAreaInformation returns a boolean if a field has been set.
 func (o *LocationReportingChargingInformation) HasPresenceReportingAreaInformation() bool {
-	if o != nil && !IsNil(o.PresenceReportingAreaInformation) {
+	if o != nil && !isNil(o.PresenceReportingAreaInformation) {
 		return true
 	}
 
@@ -274,22 +274,22 @@ func (o LocationReportingChargingInformation) MarshalJSON() ([]byte, error) {
 func (o LocationReportingChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locationReportingMessageType"] = o.LocationReportingMessageType
-	if !IsNil(o.UserInformation) {
+	if !isNil(o.UserInformation) {
 		toSerialize["userInformation"] = o.UserInformation
 	}
-	if !IsNil(o.UserLocationinfo) {
+	if !isNil(o.UserLocationinfo) {
 		toSerialize["userLocationinfo"] = o.UserLocationinfo
 	}
-	if !IsNil(o.PSCellInformation) {
+	if !isNil(o.PSCellInformation) {
 		toSerialize["pSCellInformation"] = o.PSCellInformation
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !IsNil(o.RATType) {
+	if !isNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !IsNil(o.PresenceReportingAreaInformation) {
+	if !isNil(o.PresenceReportingAreaInformation) {
 		toSerialize["presenceReportingAreaInformation"] = o.PresenceReportingAreaInformation
 	}
 	return toSerialize, nil

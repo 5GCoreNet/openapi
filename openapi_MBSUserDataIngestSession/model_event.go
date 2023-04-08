@@ -17,23 +17,37 @@ import (
 
 // Event Possible values are: - USER_DATA_ING_SESS_STARTING: >     Indicates that the MBS User Data Ingest Session is starting. This is an \"MBS User Data     Ingest Session\" level event. - USER_DATA_ING_SESS_STARTED: >     Indicates that the MBS User Data Ingest Session started. This is an \"MBS User Data     Ingest Session\" level event. - USER_DATA_ING_SESS_TERMINATED: >     Indicates that the MBS User Data Ingest Session is terminated. This is an \"MBS User Data     Ingest Session\" level event. - DIST_SESS_STARTING: >     Indicates that the MBS Distribution Session is starting. This is an \"MBS Distribution     Session\" level event. - DIST_SESS_STARTED: >     Indicates that the MBS Distribution Session started. This is an \"MBS Distribution     Session\" level event. - DIST_SESS_TERMINATED: >     Indicates that the MBS Distribution Session is terminated. This is an \"MBS Distribution     Session\" level event. - DIST_SESS_SERV_MNGT_FAILURE: >     Indicates that the MBS Distribution Session could not be started (e.g. the necessary     resources could not be allocated by the MBS system). This is an \"MBS Distribution     Session\" level event. - DIST_SESS_POL_CRTL_FAILURE: >     Indicates that the MBS Distribution Session could not be started because of a policy     authorization/control failure or rejection. This is an \"MBS Distribution Session\"     level event. - DATA_INGEST_FAILURE: >     The MBS User Data Ingest is failed because the MBSTF is expecting data (the MBS Session     is active), but not receiving it. This is an \"MBS Distribution Session\" level event. - DELIVERY_STARTED: >     The MBS User Data delivery is started. - SESSION_TERMINATED: >     The MBS User Data Ingest Session is terminated. 
 type Event struct {
-	string *string
+	EventAnyOf *EventAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Event) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into EventAnyOf
+	err = json.Unmarshal(data, &dst.EventAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonEventAnyOf, _ := json.Marshal(dst.EventAnyOf)
+		if string(jsonEventAnyOf) == "{}" { // empty struct
+			dst.EventAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.EventAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.EventAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(Event)")
@@ -41,8 +55,12 @@ func (dst *Event) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Event) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.EventAnyOf != nil {
+		return json.Marshal(&src.EventAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -23,7 +23,7 @@ type UdmFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *UdmFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -79,7 +79,7 @@ func (o *UdmFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *UdmFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -97,7 +97,7 @@ func (o *UdmFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *UdmFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *UdmFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -129,7 +129,7 @@ func (o *UdmFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *UdmFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *UdmFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -161,7 +161,7 @@ func (o *UdmFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, boo
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -174,9 +174,9 @@ func (o *UdmFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *UdmFunctionSingle) GetAttributes() UdmFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret UdmFunctionSingleAllOfAttributes
+func (o *UdmFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -184,8 +184,8 @@ func (o *UdmFunctionSingle) GetAttributes() UdmFunctionSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UdmFunctionSingle) GetAttributesOk() (*UdmFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *UdmFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -193,21 +193,21 @@ func (o *UdmFunctionSingle) GetAttributesOk() (*UdmFunctionSingleAllOfAttributes
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given UdmFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *UdmFunctionSingle) SetAttributes(v UdmFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *UdmFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *UdmFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -225,7 +225,7 @@ func (o *UdmFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *UdmFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *UdmFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -257,7 +257,7 @@ func (o *UdmFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, b
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *UdmFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *UdmFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -289,7 +289,7 @@ func (o *UdmFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, b
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *UdmFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *UdmFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -321,7 +321,7 @@ func (o *UdmFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *UdmFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN8 returns the EPN8 field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetEPN8() []EPN8Single {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		var ret []EPN8Single
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *UdmFunctionSingle) GetEPN8() []EPN8Single {
 // GetEPN8Ok returns a tuple with the EPN8 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetEPN8Ok() ([]EPN8Single, bool) {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		return nil, false
 	}
 	return o.EPN8, true
@@ -353,7 +353,7 @@ func (o *UdmFunctionSingle) GetEPN8Ok() ([]EPN8Single, bool) {
 
 // HasEPN8 returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasEPN8() bool {
-	if o != nil && !IsNil(o.EPN8) {
+	if o != nil && !isNil(o.EPN8) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *UdmFunctionSingle) SetEPN8(v []EPN8Single) {
 
 // GetEPN10 returns the EPN10 field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetEPN10() []EPN10Single {
-	if o == nil || IsNil(o.EPN10) {
+	if o == nil || isNil(o.EPN10) {
 		var ret []EPN10Single
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *UdmFunctionSingle) GetEPN10() []EPN10Single {
 // GetEPN10Ok returns a tuple with the EPN10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetEPN10Ok() ([]EPN10Single, bool) {
-	if o == nil || IsNil(o.EPN10) {
+	if o == nil || isNil(o.EPN10) {
 		return nil, false
 	}
 	return o.EPN10, true
@@ -385,7 +385,7 @@ func (o *UdmFunctionSingle) GetEPN10Ok() ([]EPN10Single, bool) {
 
 // HasEPN10 returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasEPN10() bool {
-	if o != nil && !IsNil(o.EPN10) {
+	if o != nil && !isNil(o.EPN10) {
 		return true
 	}
 
@@ -399,7 +399,7 @@ func (o *UdmFunctionSingle) SetEPN10(v []EPN10Single) {
 
 // GetEPN13 returns the EPN13 field value if set, zero value otherwise.
 func (o *UdmFunctionSingle) GetEPN13() []EPN13Single {
-	if o == nil || IsNil(o.EPN13) {
+	if o == nil || isNil(o.EPN13) {
 		var ret []EPN13Single
 		return ret
 	}
@@ -409,7 +409,7 @@ func (o *UdmFunctionSingle) GetEPN13() []EPN13Single {
 // GetEPN13Ok returns a tuple with the EPN13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingle) GetEPN13Ok() ([]EPN13Single, bool) {
-	if o == nil || IsNil(o.EPN13) {
+	if o == nil || isNil(o.EPN13) {
 		return nil, false
 	}
 	return o.EPN13, true
@@ -417,7 +417,7 @@ func (o *UdmFunctionSingle) GetEPN13Ok() ([]EPN13Single, bool) {
 
 // HasEPN13 returns a boolean if a field has been set.
 func (o *UdmFunctionSingle) HasEPN13() bool {
-	if o != nil && !IsNil(o.EPN13) {
+	if o != nil && !isNil(o.EPN13) {
 		return true
 	}
 
@@ -440,37 +440,37 @@ func (o UdmFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o UdmFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.EPN8) {
+	if !isNil(o.EPN8) {
 		toSerialize["EP_N8"] = o.EPN8
 	}
-	if !IsNil(o.EPN10) {
+	if !isNil(o.EPN10) {
 		toSerialize["EP_N10"] = o.EPN10
 	}
-	if !IsNil(o.EPN13) {
+	if !isNil(o.EPN13) {
 		toSerialize["EP_N13"] = o.EPN13
 	}
 	return toSerialize, nil

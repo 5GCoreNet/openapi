@@ -12,7 +12,6 @@ package openapi_FaultMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyNewSecAlarm type satisfies the MappedNullable interface at compile time
@@ -286,7 +285,7 @@ func (o *NotifyNewSecAlarm) SetPerceivedSeverity(v PerceivedSeverity) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyNewSecAlarm) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -296,7 +295,7 @@ func (o *NotifyNewSecAlarm) GetCorrelatedNotifications() []CorrelatedNotificatio
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyNewSecAlarm) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -304,7 +303,7 @@ func (o *NotifyNewSecAlarm) GetCorrelatedNotificationsOk() ([]CorrelatedNotifica
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyNewSecAlarm) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -318,7 +317,7 @@ func (o *NotifyNewSecAlarm) SetCorrelatedNotifications(v []CorrelatedNotificatio
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyNewSecAlarm) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -328,7 +327,7 @@ func (o *NotifyNewSecAlarm) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyNewSecAlarm) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -336,7 +335,7 @@ func (o *NotifyNewSecAlarm) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyNewSecAlarm) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -350,7 +349,7 @@ func (o *NotifyNewSecAlarm) SetAdditionalText(v string) {
 
 // GetAdditionalInformation returns the AdditionalInformation field value if set, zero value otherwise.
 func (o *NotifyNewSecAlarm) GetAdditionalInformation() map[string]interface{} {
-	if o == nil || IsNil(o.AdditionalInformation) {
+	if o == nil || isNil(o.AdditionalInformation) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -360,7 +359,7 @@ func (o *NotifyNewSecAlarm) GetAdditionalInformation() map[string]interface{} {
 // GetAdditionalInformationOk returns a tuple with the AdditionalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyNewSecAlarm) GetAdditionalInformationOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AdditionalInformation) {
+	if o == nil || isNil(o.AdditionalInformation) {
 		return map[string]interface{}{}, false
 	}
 	return o.AdditionalInformation, true
@@ -368,7 +367,7 @@ func (o *NotifyNewSecAlarm) GetAdditionalInformationOk() (map[string]interface{}
 
 // HasAdditionalInformation returns a boolean if a field has been set.
 func (o *NotifyNewSecAlarm) HasAdditionalInformation() bool {
-	if o != nil && !IsNil(o.AdditionalInformation) {
+	if o != nil && !isNil(o.AdditionalInformation) {
 		return true
 	}
 
@@ -382,7 +381,7 @@ func (o *NotifyNewSecAlarm) SetAdditionalInformation(v map[string]interface{}) {
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *NotifyNewSecAlarm) GetRootCauseIndicator() bool {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -392,7 +391,7 @@ func (o *NotifyNewSecAlarm) GetRootCauseIndicator() bool {
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyNewSecAlarm) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -400,7 +399,7 @@ func (o *NotifyNewSecAlarm) GetRootCauseIndicatorOk() (*bool, bool) {
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *NotifyNewSecAlarm) HasRootCauseIndicator() bool {
-	if o != nil && !IsNil(o.RootCauseIndicator) {
+	if o != nil && !isNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -503,16 +502,16 @@ func (o NotifyNewSecAlarm) ToMap() (map[string]interface{}, error) {
 	toSerialize["alarmType"] = o.AlarmType
 	toSerialize["probableCause"] = o.ProbableCause
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.AdditionalInformation) {
+	if !isNil(o.AdditionalInformation) {
 		toSerialize["additionalInformation"] = o.AdditionalInformation
 	}
-	if !IsNil(o.RootCauseIndicator) {
+	if !isNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
 	toSerialize["serviceUser"] = o.ServiceUser

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -10,6 +9,7 @@ docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -23,6 +23,7 @@ model_access_token_err.go
 model_access_token_req.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

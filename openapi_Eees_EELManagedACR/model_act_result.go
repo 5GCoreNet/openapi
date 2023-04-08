@@ -17,23 +17,37 @@ import (
 
 // ACTResult Possible values are: - SUCCESSFUL: Indicates that the ACT was successful. - FAILED: Indicates that the ACT failed. 
 type ACTResult struct {
-	string *string
+	ACTResultAnyOf *ACTResultAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ACTResult) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ACTResultAnyOf
+	err = json.Unmarshal(data, &dst.ACTResultAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonACTResultAnyOf, _ := json.Marshal(dst.ACTResultAnyOf)
+		if string(jsonACTResultAnyOf) == "{}" { // empty struct
+			dst.ACTResultAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ACTResultAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ACTResultAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ACTResult)")
@@ -41,8 +55,12 @@ func (dst *ACTResult) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ACTResult) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ACTResultAnyOf != nil {
+		return json.Marshal(&src.ACTResultAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

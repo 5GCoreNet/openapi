@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -16,6 +15,7 @@ client.go
 configuration.go
 docs/CivicAddress.md
 docs/DeliveryMode.md
+docs/DeliveryModeAnyOf.md
 docs/EllipsoidArc.md
 docs/EllipsoidArcAllOf.md
 docs/GADShape.md
@@ -38,6 +38,7 @@ docs/MbmsLocArea.md
 docs/MulticastSubscription.md
 docs/MulticastSubscriptionsCollectionApi.md
 docs/NrmEvent.md
+docs/NrmEventAnyOf.md
 docs/NrmEventNotification.md
 docs/Point.md
 docs/PointAllOf.md
@@ -54,8 +55,10 @@ docs/PolygonAllOf.md
 docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/ServiceAnnoucementMode.md
+docs/ServiceAnnoucementModeAnyOf.md
 docs/StreamSpecification.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/TSCStreamAvailabilityDiscoveryApi.md
 docs/TSCStreamCreationApi.md
 docs/TSCStreamRetrievalApi.md
@@ -75,6 +78,7 @@ go.mod
 go.sum
 model_civic_address.go
 model_delivery_mode.go
+model_delivery_mode_any_of.go
 model_ellipsoid_arc.go
 model_ellipsoid_arc_all_of.go
 model_gad_shape.go
@@ -92,6 +96,7 @@ model_local_origin.go
 model_mbms_loc_area.go
 model_multicast_subscription.go
 model_nrm_event.go
+model_nrm_event_any_of.go
 model_nrm_event_notification.go
 model_point.go
 model_point_all_of.go
@@ -108,8 +113,10 @@ model_polygon_all_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_service_annoucement_mode.go
+model_service_annoucement_mode_any_of.go
 model_stream_specification.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_traffic_spec_information.go
 model_traffic_specification.go
 model_tsc_stream_availability.go

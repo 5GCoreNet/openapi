@@ -48,7 +48,7 @@ func NewConfigForPortWithDefaults() *ConfigForPort {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ConfigForPort) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ConfigForPort) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -66,7 +66,7 @@ func (o *ConfigForPort) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ConfigForPort) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ConfigForPort) SetGpsi(v string) {
 
 // GetN6Ind returns the N6Ind field value if set, zero value otherwise.
 func (o *ConfigForPort) GetN6Ind() bool {
-	if o == nil || IsNil(o.N6Ind) {
+	if o == nil || isNil(o.N6Ind) {
 		var ret bool
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ConfigForPort) GetN6Ind() bool {
 // GetN6IndOk returns a tuple with the N6Ind field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetN6IndOk() (*bool, bool) {
-	if o == nil || IsNil(o.N6Ind) {
+	if o == nil || isNil(o.N6Ind) {
 		return nil, false
 	}
 	return o.N6Ind, true
@@ -98,7 +98,7 @@ func (o *ConfigForPort) GetN6IndOk() (*bool, bool) {
 
 // HasN6Ind returns a boolean if a field has been set.
 func (o *ConfigForPort) HasN6Ind() bool {
-	if o != nil && !IsNil(o.N6Ind) {
+	if o != nil && !isNil(o.N6Ind) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ConfigForPort) SetN6Ind(v bool) {
 
 // GetPtpEnable returns the PtpEnable field value if set, zero value otherwise.
 func (o *ConfigForPort) GetPtpEnable() bool {
-	if o == nil || IsNil(o.PtpEnable) {
+	if o == nil || isNil(o.PtpEnable) {
 		var ret bool
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ConfigForPort) GetPtpEnable() bool {
 // GetPtpEnableOk returns a tuple with the PtpEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetPtpEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.PtpEnable) {
+	if o == nil || isNil(o.PtpEnable) {
 		return nil, false
 	}
 	return o.PtpEnable, true
@@ -130,7 +130,7 @@ func (o *ConfigForPort) GetPtpEnableOk() (*bool, bool) {
 
 // HasPtpEnable returns a boolean if a field has been set.
 func (o *ConfigForPort) HasPtpEnable() bool {
-	if o != nil && !IsNil(o.PtpEnable) {
+	if o != nil && !isNil(o.PtpEnable) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ConfigForPort) SetPtpEnable(v bool) {
 
 // GetLogSyncInter returns the LogSyncInter field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogSyncInter() int32 {
-	if o == nil || IsNil(o.LogSyncInter) {
+	if o == nil || isNil(o.LogSyncInter) {
 		var ret int32
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ConfigForPort) GetLogSyncInter() int32 {
 // GetLogSyncInterOk returns a tuple with the LogSyncInter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogSyncInterOk() (*int32, bool) {
-	if o == nil || IsNil(o.LogSyncInter) {
+	if o == nil || isNil(o.LogSyncInter) {
 		return nil, false
 	}
 	return o.LogSyncInter, true
@@ -162,7 +162,7 @@ func (o *ConfigForPort) GetLogSyncInterOk() (*int32, bool) {
 
 // HasLogSyncInter returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogSyncInter() bool {
-	if o != nil && !IsNil(o.LogSyncInter) {
+	if o != nil && !isNil(o.LogSyncInter) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ConfigForPort) SetLogSyncInter(v int32) {
 
 // GetLogSyncInterInd returns the LogSyncInterInd field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogSyncInterInd() bool {
-	if o == nil || IsNil(o.LogSyncInterInd) {
+	if o == nil || isNil(o.LogSyncInterInd) {
 		var ret bool
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ConfigForPort) GetLogSyncInterInd() bool {
 // GetLogSyncInterIndOk returns a tuple with the LogSyncInterInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogSyncInterIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.LogSyncInterInd) {
+	if o == nil || isNil(o.LogSyncInterInd) {
 		return nil, false
 	}
 	return o.LogSyncInterInd, true
@@ -194,7 +194,7 @@ func (o *ConfigForPort) GetLogSyncInterIndOk() (*bool, bool) {
 
 // HasLogSyncInterInd returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogSyncInterInd() bool {
-	if o != nil && !IsNil(o.LogSyncInterInd) {
+	if o != nil && !isNil(o.LogSyncInterInd) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ConfigForPort) SetLogSyncInterInd(v bool) {
 
 // GetLogAnnouInter returns the LogAnnouInter field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogAnnouInter() int32 {
-	if o == nil || IsNil(o.LogAnnouInter) {
+	if o == nil || isNil(o.LogAnnouInter) {
 		var ret int32
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *ConfigForPort) GetLogAnnouInter() int32 {
 // GetLogAnnouInterOk returns a tuple with the LogAnnouInter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogAnnouInterOk() (*int32, bool) {
-	if o == nil || IsNil(o.LogAnnouInter) {
+	if o == nil || isNil(o.LogAnnouInter) {
 		return nil, false
 	}
 	return o.LogAnnouInter, true
@@ -226,7 +226,7 @@ func (o *ConfigForPort) GetLogAnnouInterOk() (*int32, bool) {
 
 // HasLogAnnouInter returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogAnnouInter() bool {
-	if o != nil && !IsNil(o.LogAnnouInter) {
+	if o != nil && !isNil(o.LogAnnouInter) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ConfigForPort) SetLogAnnouInter(v int32) {
 
 // GetLogAnnouInterInd returns the LogAnnouInterInd field value if set, zero value otherwise.
 func (o *ConfigForPort) GetLogAnnouInterInd() bool {
-	if o == nil || IsNil(o.LogAnnouInterInd) {
+	if o == nil || isNil(o.LogAnnouInterInd) {
 		var ret bool
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *ConfigForPort) GetLogAnnouInterInd() bool {
 // GetLogAnnouInterIndOk returns a tuple with the LogAnnouInterInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigForPort) GetLogAnnouInterIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.LogAnnouInterInd) {
+	if o == nil || isNil(o.LogAnnouInterInd) {
 		return nil, false
 	}
 	return o.LogAnnouInterInd, true
@@ -258,7 +258,7 @@ func (o *ConfigForPort) GetLogAnnouInterIndOk() (*bool, bool) {
 
 // HasLogAnnouInterInd returns a boolean if a field has been set.
 func (o *ConfigForPort) HasLogAnnouInterInd() bool {
-	if o != nil && !IsNil(o.LogAnnouInterInd) {
+	if o != nil && !isNil(o.LogAnnouInterInd) {
 		return true
 	}
 
@@ -280,25 +280,25 @@ func (o ConfigForPort) MarshalJSON() ([]byte, error) {
 
 func (o ConfigForPort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.N6Ind) {
+	if !isNil(o.N6Ind) {
 		toSerialize["n6Ind"] = o.N6Ind
 	}
-	if !IsNil(o.PtpEnable) {
+	if !isNil(o.PtpEnable) {
 		toSerialize["ptpEnable"] = o.PtpEnable
 	}
-	if !IsNil(o.LogSyncInter) {
+	if !isNil(o.LogSyncInter) {
 		toSerialize["logSyncInter"] = o.LogSyncInter
 	}
-	if !IsNil(o.LogSyncInterInd) {
+	if !isNil(o.LogSyncInterInd) {
 		toSerialize["logSyncInterInd"] = o.LogSyncInterInd
 	}
-	if !IsNil(o.LogAnnouInter) {
+	if !isNil(o.LogAnnouInter) {
 		toSerialize["logAnnouInter"] = o.LogAnnouInter
 	}
-	if !IsNil(o.LogAnnouInterInd) {
+	if !isNil(o.LogAnnouInterInd) {
 		toSerialize["logAnnouInterInd"] = o.LogAnnouInterInd
 	}
 	return toSerialize, nil

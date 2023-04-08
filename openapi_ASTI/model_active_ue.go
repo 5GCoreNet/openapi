@@ -44,7 +44,7 @@ func NewActiveUeWithDefaults() *ActiveUe {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ActiveUe) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ActiveUe) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActiveUe) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -62,7 +62,7 @@ func (o *ActiveUe) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ActiveUe) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ActiveUe) SetGpsi(v string) {
 
 // GetTimeSyncErrBdgt returns the TimeSyncErrBdgt field value if set, zero value otherwise.
 func (o *ActiveUe) GetTimeSyncErrBdgt() int32 {
-	if o == nil || IsNil(o.TimeSyncErrBdgt) {
+	if o == nil || isNil(o.TimeSyncErrBdgt) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ActiveUe) GetTimeSyncErrBdgt() int32 {
 // GetTimeSyncErrBdgtOk returns a tuple with the TimeSyncErrBdgt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActiveUe) GetTimeSyncErrBdgtOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeSyncErrBdgt) {
+	if o == nil || isNil(o.TimeSyncErrBdgt) {
 		return nil, false
 	}
 	return o.TimeSyncErrBdgt, true
@@ -94,7 +94,7 @@ func (o *ActiveUe) GetTimeSyncErrBdgtOk() (*int32, bool) {
 
 // HasTimeSyncErrBdgt returns a boolean if a field has been set.
 func (o *ActiveUe) HasTimeSyncErrBdgt() bool {
-	if o != nil && !IsNil(o.TimeSyncErrBdgt) {
+	if o != nil && !isNil(o.TimeSyncErrBdgt) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o ActiveUe) MarshalJSON() ([]byte, error) {
 
 func (o ActiveUe) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.TimeSyncErrBdgt) {
+	if !isNil(o.TimeSyncErrBdgt) {
 		toSerialize["timeSyncErrBdgt"] = o.TimeSyncErrBdgt
 	}
 	return toSerialize, nil

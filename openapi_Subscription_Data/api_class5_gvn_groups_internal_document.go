@@ -13,7 +13,7 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -75,7 +75,7 @@ func (a *Class5GVNGroupsInternalDocumentApiService) Query5GVnGroupInternalExecut
 		return localVarReturnValue, nil, reportError("internalGroupIds is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
+	parameterAddToQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -103,9 +103,9 @@ func (a *Class5GVNGroupsInternalDocumentApiService) Query5GVnGroupInternalExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

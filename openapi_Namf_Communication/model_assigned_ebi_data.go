@@ -96,7 +96,7 @@ func (o *AssignedEbiData) SetAssignedEbiList(v []EbiArpMapping) {
 
 // GetFailedArpList returns the FailedArpList field value if set, zero value otherwise.
 func (o *AssignedEbiData) GetFailedArpList() []Arp {
-	if o == nil || IsNil(o.FailedArpList) {
+	if o == nil || isNil(o.FailedArpList) {
 		var ret []Arp
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AssignedEbiData) GetFailedArpList() []Arp {
 // GetFailedArpListOk returns a tuple with the FailedArpList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignedEbiData) GetFailedArpListOk() ([]Arp, bool) {
-	if o == nil || IsNil(o.FailedArpList) {
+	if o == nil || isNil(o.FailedArpList) {
 		return nil, false
 	}
 	return o.FailedArpList, true
@@ -114,7 +114,7 @@ func (o *AssignedEbiData) GetFailedArpListOk() ([]Arp, bool) {
 
 // HasFailedArpList returns a boolean if a field has been set.
 func (o *AssignedEbiData) HasFailedArpList() bool {
-	if o != nil && !IsNil(o.FailedArpList) {
+	if o != nil && !isNil(o.FailedArpList) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AssignedEbiData) SetFailedArpList(v []Arp) {
 
 // GetReleasedEbiList returns the ReleasedEbiList field value if set, zero value otherwise.
 func (o *AssignedEbiData) GetReleasedEbiList() []int32 {
-	if o == nil || IsNil(o.ReleasedEbiList) {
+	if o == nil || isNil(o.ReleasedEbiList) {
 		var ret []int32
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AssignedEbiData) GetReleasedEbiList() []int32 {
 // GetReleasedEbiListOk returns a tuple with the ReleasedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignedEbiData) GetReleasedEbiListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.ReleasedEbiList) {
+	if o == nil || isNil(o.ReleasedEbiList) {
 		return nil, false
 	}
 	return o.ReleasedEbiList, true
@@ -146,7 +146,7 @@ func (o *AssignedEbiData) GetReleasedEbiListOk() ([]int32, bool) {
 
 // HasReleasedEbiList returns a boolean if a field has been set.
 func (o *AssignedEbiData) HasReleasedEbiList() bool {
-	if o != nil && !IsNil(o.ReleasedEbiList) {
+	if o != nil && !isNil(o.ReleasedEbiList) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *AssignedEbiData) SetReleasedEbiList(v []int32) {
 
 // GetModifiedEbiList returns the ModifiedEbiList field value if set, zero value otherwise.
 func (o *AssignedEbiData) GetModifiedEbiList() []int32 {
-	if o == nil || IsNil(o.ModifiedEbiList) {
+	if o == nil || isNil(o.ModifiedEbiList) {
 		var ret []int32
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *AssignedEbiData) GetModifiedEbiList() []int32 {
 // GetModifiedEbiListOk returns a tuple with the ModifiedEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignedEbiData) GetModifiedEbiListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.ModifiedEbiList) {
+	if o == nil || isNil(o.ModifiedEbiList) {
 		return nil, false
 	}
 	return o.ModifiedEbiList, true
@@ -178,7 +178,7 @@ func (o *AssignedEbiData) GetModifiedEbiListOk() ([]int32, bool) {
 
 // HasModifiedEbiList returns a boolean if a field has been set.
 func (o *AssignedEbiData) HasModifiedEbiList() bool {
-	if o != nil && !IsNil(o.ModifiedEbiList) {
+	if o != nil && !isNil(o.ModifiedEbiList) {
 		return true
 	}
 
@@ -202,13 +202,13 @@ func (o AssignedEbiData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduSessionId"] = o.PduSessionId
 	toSerialize["assignedEbiList"] = o.AssignedEbiList
-	if !IsNil(o.FailedArpList) {
+	if !isNil(o.FailedArpList) {
 		toSerialize["failedArpList"] = o.FailedArpList
 	}
-	if !IsNil(o.ReleasedEbiList) {
+	if !isNil(o.ReleasedEbiList) {
 		toSerialize["releasedEbiList"] = o.ReleasedEbiList
 	}
-	if !IsNil(o.ModifiedEbiList) {
+	if !isNil(o.ModifiedEbiList) {
 		toSerialize["modifiedEbiList"] = o.ModifiedEbiList
 	}
 	return toSerialize, nil

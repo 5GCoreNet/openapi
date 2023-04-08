@@ -101,7 +101,7 @@ func (o *ContextUpdateReqData) SetMbsSessionId(v MbsSessionId) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetAreaSessionId() int32 {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ContextUpdateReqData) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -119,7 +119,7 @@ func (o *ContextUpdateReqData) GetAreaSessionIdOk() (*int32, bool) {
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasAreaSessionId() bool {
-	if o != nil && !IsNil(o.AreaSessionId) {
+	if o != nil && !isNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ContextUpdateReqData) SetAreaSessionId(v int32) {
 
 // GetRequestedAction returns the RequestedAction field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetRequestedAction() ContextUpdateAction {
-	if o == nil || IsNil(o.RequestedAction) {
+	if o == nil || isNil(o.RequestedAction) {
 		var ret ContextUpdateAction
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ContextUpdateReqData) GetRequestedAction() ContextUpdateAction {
 // GetRequestedActionOk returns a tuple with the RequestedAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetRequestedActionOk() (*ContextUpdateAction, bool) {
-	if o == nil || IsNil(o.RequestedAction) {
+	if o == nil || isNil(o.RequestedAction) {
 		return nil, false
 	}
 	return o.RequestedAction, true
@@ -151,7 +151,7 @@ func (o *ContextUpdateReqData) GetRequestedActionOk() (*ContextUpdateAction, boo
 
 // HasRequestedAction returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasRequestedAction() bool {
-	if o != nil && !IsNil(o.RequestedAction) {
+	if o != nil && !isNil(o.RequestedAction) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *ContextUpdateReqData) SetRequestedAction(v ContextUpdateAction) {
 
 // GetDlTunnelInfo returns the DlTunnelInfo field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetDlTunnelInfo() string {
-	if o == nil || IsNil(o.DlTunnelInfo) {
+	if o == nil || isNil(o.DlTunnelInfo) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *ContextUpdateReqData) GetDlTunnelInfo() string {
 // GetDlTunnelInfoOk returns a tuple with the DlTunnelInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetDlTunnelInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.DlTunnelInfo) {
+	if o == nil || isNil(o.DlTunnelInfo) {
 		return nil, false
 	}
 	return o.DlTunnelInfo, true
@@ -183,7 +183,7 @@ func (o *ContextUpdateReqData) GetDlTunnelInfoOk() (*string, bool) {
 
 // HasDlTunnelInfo returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasDlTunnelInfo() bool {
-	if o != nil && !IsNil(o.DlTunnelInfo) {
+	if o != nil && !isNil(o.DlTunnelInfo) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *ContextUpdateReqData) SetDlTunnelInfo(v string) {
 
 // GetN2MbsSmInfo returns the N2MbsSmInfo field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetN2MbsSmInfo() N2MbsSmInfo {
-	if o == nil || IsNil(o.N2MbsSmInfo) {
+	if o == nil || isNil(o.N2MbsSmInfo) {
 		var ret N2MbsSmInfo
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *ContextUpdateReqData) GetN2MbsSmInfo() N2MbsSmInfo {
 // GetN2MbsSmInfoOk returns a tuple with the N2MbsSmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetN2MbsSmInfoOk() (*N2MbsSmInfo, bool) {
-	if o == nil || IsNil(o.N2MbsSmInfo) {
+	if o == nil || isNil(o.N2MbsSmInfo) {
 		return nil, false
 	}
 	return o.N2MbsSmInfo, true
@@ -215,7 +215,7 @@ func (o *ContextUpdateReqData) GetN2MbsSmInfoOk() (*N2MbsSmInfo, bool) {
 
 // HasN2MbsSmInfo returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasN2MbsSmInfo() bool {
-	if o != nil && !IsNil(o.N2MbsSmInfo) {
+	if o != nil && !isNil(o.N2MbsSmInfo) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *ContextUpdateReqData) SetN2MbsSmInfo(v N2MbsSmInfo) {
 
 // GetRanNodeId returns the RanNodeId field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetRanNodeId() GlobalRanNodeId {
-	if o == nil || IsNil(o.RanNodeId) {
+	if o == nil || isNil(o.RanNodeId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *ContextUpdateReqData) GetRanNodeId() GlobalRanNodeId {
 // GetRanNodeIdOk returns a tuple with the RanNodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetRanNodeIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.RanNodeId) {
+	if o == nil || isNil(o.RanNodeId) {
 		return nil, false
 	}
 	return o.RanNodeId, true
@@ -247,7 +247,7 @@ func (o *ContextUpdateReqData) GetRanNodeIdOk() (*GlobalRanNodeId, bool) {
 
 // HasRanNodeId returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasRanNodeId() bool {
-	if o != nil && !IsNil(o.RanNodeId) {
+	if o != nil && !isNil(o.RanNodeId) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *ContextUpdateReqData) SetRanNodeId(v GlobalRanNodeId) {
 
 // GetLeaveInd returns the LeaveInd field value if set, zero value otherwise.
 func (o *ContextUpdateReqData) GetLeaveInd() bool {
-	if o == nil || IsNil(o.LeaveInd) {
+	if o == nil || isNil(o.LeaveInd) {
 		var ret bool
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *ContextUpdateReqData) GetLeaveInd() bool {
 // GetLeaveIndOk returns a tuple with the LeaveInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextUpdateReqData) GetLeaveIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.LeaveInd) {
+	if o == nil || isNil(o.LeaveInd) {
 		return nil, false
 	}
 	return o.LeaveInd, true
@@ -279,7 +279,7 @@ func (o *ContextUpdateReqData) GetLeaveIndOk() (*bool, bool) {
 
 // HasLeaveInd returns a boolean if a field has been set.
 func (o *ContextUpdateReqData) HasLeaveInd() bool {
-	if o != nil && !IsNil(o.LeaveInd) {
+	if o != nil && !isNil(o.LeaveInd) {
 		return true
 	}
 
@@ -303,22 +303,22 @@ func (o ContextUpdateReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfcInstanceId"] = o.NfcInstanceId
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !IsNil(o.AreaSessionId) {
+	if !isNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
-	if !IsNil(o.RequestedAction) {
+	if !isNil(o.RequestedAction) {
 		toSerialize["requestedAction"] = o.RequestedAction
 	}
-	if !IsNil(o.DlTunnelInfo) {
+	if !isNil(o.DlTunnelInfo) {
 		toSerialize["dlTunnelInfo"] = o.DlTunnelInfo
 	}
-	if !IsNil(o.N2MbsSmInfo) {
+	if !isNil(o.N2MbsSmInfo) {
 		toSerialize["n2MbsSmInfo"] = o.N2MbsSmInfo
 	}
-	if !IsNil(o.RanNodeId) {
+	if !isNil(o.RanNodeId) {
 		toSerialize["ranNodeId"] = o.RanNodeId
 	}
-	if !IsNil(o.LeaveInd) {
+	if !isNil(o.LeaveInd) {
 		toSerialize["leaveInd"] = o.LeaveInd
 	}
 	return toSerialize, nil

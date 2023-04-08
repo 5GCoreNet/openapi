@@ -81,7 +81,7 @@ func (o *AnalyticsExposureSubsc) SetAnalyEventsSubs(v []AnalyticsEventSubsc) {
 
 // GetAnalyRepInfo returns the AnalyRepInfo field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetAnalyRepInfo() ReportingInformation {
-	if o == nil || IsNil(o.AnalyRepInfo) {
+	if o == nil || isNil(o.AnalyRepInfo) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *AnalyticsExposureSubsc) GetAnalyRepInfo() ReportingInformation {
 // GetAnalyRepInfoOk returns a tuple with the AnalyRepInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetAnalyRepInfoOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.AnalyRepInfo) {
+	if o == nil || isNil(o.AnalyRepInfo) {
 		return nil, false
 	}
 	return o.AnalyRepInfo, true
@@ -99,7 +99,7 @@ func (o *AnalyticsExposureSubsc) GetAnalyRepInfoOk() (*ReportingInformation, boo
 
 // HasAnalyRepInfo returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasAnalyRepInfo() bool {
-	if o != nil && !IsNil(o.AnalyRepInfo) {
+	if o != nil && !isNil(o.AnalyRepInfo) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *AnalyticsExposureSubsc) SetNotifId(v string) {
 
 // GetEventNotifis returns the EventNotifis field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetEventNotifis() []AnalyticsEventNotif {
-	if o == nil || IsNil(o.EventNotifis) {
+	if o == nil || isNil(o.EventNotifis) {
 		var ret []AnalyticsEventNotif
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *AnalyticsExposureSubsc) GetEventNotifis() []AnalyticsEventNotif {
 // GetEventNotifisOk returns a tuple with the EventNotifis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetEventNotifisOk() ([]AnalyticsEventNotif, bool) {
-	if o == nil || IsNil(o.EventNotifis) {
+	if o == nil || isNil(o.EventNotifis) {
 		return nil, false
 	}
 	return o.EventNotifis, true
@@ -179,7 +179,7 @@ func (o *AnalyticsExposureSubsc) GetEventNotifisOk() ([]AnalyticsEventNotif, boo
 
 // HasEventNotifis returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasEventNotifis() bool {
-	if o != nil && !IsNil(o.EventNotifis) {
+	if o != nil && !isNil(o.EventNotifis) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *AnalyticsExposureSubsc) SetEventNotifis(v []AnalyticsEventNotif) {
 
 // GetFailEventReports returns the FailEventReports field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetFailEventReports() []AnalyticsFailureEventInfo {
-	if o == nil || IsNil(o.FailEventReports) {
+	if o == nil || isNil(o.FailEventReports) {
 		var ret []AnalyticsFailureEventInfo
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *AnalyticsExposureSubsc) GetFailEventReports() []AnalyticsFailureEventIn
 // GetFailEventReportsOk returns a tuple with the FailEventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetFailEventReportsOk() ([]AnalyticsFailureEventInfo, bool) {
-	if o == nil || IsNil(o.FailEventReports) {
+	if o == nil || isNil(o.FailEventReports) {
 		return nil, false
 	}
 	return o.FailEventReports, true
@@ -211,7 +211,7 @@ func (o *AnalyticsExposureSubsc) GetFailEventReportsOk() ([]AnalyticsFailureEven
 
 // HasFailEventReports returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasFailEventReports() bool {
-	if o != nil && !IsNil(o.FailEventReports) {
+	if o != nil && !isNil(o.FailEventReports) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *AnalyticsExposureSubsc) SetFailEventReports(v []AnalyticsFailureEventIn
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *AnalyticsExposureSubsc) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -243,7 +243,7 @@ func (o *AnalyticsExposureSubsc) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *AnalyticsExposureSubsc) SetSuppFeat(v string) {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *AnalyticsExposureSubsc) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -275,7 +275,7 @@ func (o *AnalyticsExposureSubsc) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *AnalyticsExposureSubsc) SetSelf(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *AnalyticsExposureSubsc) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -307,7 +307,7 @@ func (o *AnalyticsExposureSubsc) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *AnalyticsExposureSubsc) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *AnalyticsExposureSubsc) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *AnalyticsExposureSubsc) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsExposureSubsc) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -339,7 +339,7 @@ func (o *AnalyticsExposureSubsc) GetWebsockNotifConfigOk() (*WebsockNotifConfig,
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *AnalyticsExposureSubsc) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -362,27 +362,27 @@ func (o AnalyticsExposureSubsc) MarshalJSON() ([]byte, error) {
 func (o AnalyticsExposureSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEventsSubs"] = o.AnalyEventsSubs
-	if !IsNil(o.AnalyRepInfo) {
+	if !isNil(o.AnalyRepInfo) {
 		toSerialize["analyRepInfo"] = o.AnalyRepInfo
 	}
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["notifId"] = o.NotifId
-	if !IsNil(o.EventNotifis) {
+	if !isNil(o.EventNotifis) {
 		toSerialize["eventNotifis"] = o.EventNotifis
 	}
-	if !IsNil(o.FailEventReports) {
+	if !isNil(o.FailEventReports) {
 		toSerialize["failEventReports"] = o.FailEventReports
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
 	return toSerialize, nil

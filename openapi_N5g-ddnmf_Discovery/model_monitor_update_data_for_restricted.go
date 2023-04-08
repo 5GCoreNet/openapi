@@ -150,7 +150,7 @@ func (o *MonitorUpdateDataForRestricted) SetBannedPduid(v string) {
 
 // GetMonitorUpdateResultCallbackRef returns the MonitorUpdateResultCallbackRef field value if set, zero value otherwise.
 func (o *MonitorUpdateDataForRestricted) GetMonitorUpdateResultCallbackRef() string {
-	if o == nil || IsNil(o.MonitorUpdateResultCallbackRef) {
+	if o == nil || isNil(o.MonitorUpdateResultCallbackRef) {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *MonitorUpdateDataForRestricted) GetMonitorUpdateResultCallbackRef() str
 // GetMonitorUpdateResultCallbackRefOk returns a tuple with the MonitorUpdateResultCallbackRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorUpdateDataForRestricted) GetMonitorUpdateResultCallbackRefOk() (*string, bool) {
-	if o == nil || IsNil(o.MonitorUpdateResultCallbackRef) {
+	if o == nil || isNil(o.MonitorUpdateResultCallbackRef) {
 		return nil, false
 	}
 	return o.MonitorUpdateResultCallbackRef, true
@@ -168,7 +168,7 @@ func (o *MonitorUpdateDataForRestricted) GetMonitorUpdateResultCallbackRefOk() (
 
 // HasMonitorUpdateResultCallbackRef returns a boolean if a field has been set.
 func (o *MonitorUpdateDataForRestricted) HasMonitorUpdateResultCallbackRef() bool {
-	if o != nil && !IsNil(o.MonitorUpdateResultCallbackRef) {
+	if o != nil && !isNil(o.MonitorUpdateResultCallbackRef) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o MonitorUpdateDataForRestricted) ToMap() (map[string]interface{}, error) 
 	toSerialize["appId"] = o.AppId
 	toSerialize["bannedRpauid"] = o.BannedRpauid
 	toSerialize["bannedPduid"] = o.BannedPduid
-	if !IsNil(o.MonitorUpdateResultCallbackRef) {
+	if !isNil(o.MonitorUpdateResultCallbackRef) {
 		toSerialize["monitorUpdateResultCallbackRef"] = o.MonitorUpdateResultCallbackRef
 	}
 	return toSerialize, nil

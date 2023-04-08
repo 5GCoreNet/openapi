@@ -70,7 +70,7 @@ func (o *ApplicationForPfdRequest) SetApplicationId(v string) {
 
 // GetPfdTimestamp returns the PfdTimestamp field value if set, zero value otherwise.
 func (o *ApplicationForPfdRequest) GetPfdTimestamp() time.Time {
-	if o == nil || IsNil(o.PfdTimestamp) {
+	if o == nil || isNil(o.PfdTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ApplicationForPfdRequest) GetPfdTimestamp() time.Time {
 // GetPfdTimestampOk returns a tuple with the PfdTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationForPfdRequest) GetPfdTimestampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.PfdTimestamp) {
+	if o == nil || isNil(o.PfdTimestamp) {
 		return nil, false
 	}
 	return o.PfdTimestamp, true
@@ -88,7 +88,7 @@ func (o *ApplicationForPfdRequest) GetPfdTimestampOk() (*time.Time, bool) {
 
 // HasPfdTimestamp returns a boolean if a field has been set.
 func (o *ApplicationForPfdRequest) HasPfdTimestamp() bool {
-	if o != nil && !IsNil(o.PfdTimestamp) {
+	if o != nil && !isNil(o.PfdTimestamp) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o ApplicationForPfdRequest) MarshalJSON() ([]byte, error) {
 func (o ApplicationForPfdRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applicationId"] = o.ApplicationId
-	if !IsNil(o.PfdTimestamp) {
+	if !isNil(o.PfdTimestamp) {
 		toSerialize["pfdTimestamp"] = o.PfdTimestamp
 	}
 	return toSerialize, nil

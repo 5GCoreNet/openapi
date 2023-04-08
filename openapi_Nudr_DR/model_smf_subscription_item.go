@@ -95,7 +95,7 @@ func (o *SmfSubscriptionItem) SetSubscriptionId(v string) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *SmfSubscriptionItem) GetContextInfo() ContextInfo {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SmfSubscriptionItem) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfSubscriptionItem) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -113,7 +113,7 @@ func (o *SmfSubscriptionItem) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *SmfSubscriptionItem) HasContextInfo() bool {
-	if o != nil && !IsNil(o.ContextInfo) {
+	if o != nil && !isNil(o.ContextInfo) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o SmfSubscriptionItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smfInstanceId"] = o.SmfInstanceId
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.ContextInfo) {
+	if !isNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
 	return toSerialize, nil

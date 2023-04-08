@@ -98,7 +98,7 @@ func (o *N4Information) SetN4MessagePayload(v RefToBinaryData) {
 
 // GetN4DnaiInfo returns the N4DnaiInfo field value if set, zero value otherwise.
 func (o *N4Information) GetN4DnaiInfo() DnaiInformation {
-	if o == nil || IsNil(o.N4DnaiInfo) {
+	if o == nil || isNil(o.N4DnaiInfo) {
 		var ret DnaiInformation
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *N4Information) GetN4DnaiInfo() DnaiInformation {
 // GetN4DnaiInfoOk returns a tuple with the N4DnaiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N4Information) GetN4DnaiInfoOk() (*DnaiInformation, bool) {
-	if o == nil || IsNil(o.N4DnaiInfo) {
+	if o == nil || isNil(o.N4DnaiInfo) {
 		return nil, false
 	}
 	return o.N4DnaiInfo, true
@@ -116,7 +116,7 @@ func (o *N4Information) GetN4DnaiInfoOk() (*DnaiInformation, bool) {
 
 // HasN4DnaiInfo returns a boolean if a field has been set.
 func (o *N4Information) HasN4DnaiInfo() bool {
-	if o != nil && !IsNil(o.N4DnaiInfo) {
+	if o != nil && !isNil(o.N4DnaiInfo) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *N4Information) SetN4DnaiInfo(v DnaiInformation) {
 
 // GetPsaUpfId returns the PsaUpfId field value if set, zero value otherwise.
 func (o *N4Information) GetPsaUpfId() string {
-	if o == nil || IsNil(o.PsaUpfId) {
+	if o == nil || isNil(o.PsaUpfId) {
 		var ret string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *N4Information) GetPsaUpfId() string {
 // GetPsaUpfIdOk returns a tuple with the PsaUpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N4Information) GetPsaUpfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PsaUpfId) {
+	if o == nil || isNil(o.PsaUpfId) {
 		return nil, false
 	}
 	return o.PsaUpfId, true
@@ -148,7 +148,7 @@ func (o *N4Information) GetPsaUpfIdOk() (*string, bool) {
 
 // HasPsaUpfId returns a boolean if a field has been set.
 func (o *N4Information) HasPsaUpfId() bool {
-	if o != nil && !IsNil(o.PsaUpfId) {
+	if o != nil && !isNil(o.PsaUpfId) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *N4Information) SetPsaUpfId(v string) {
 
 // GetUlClBpId returns the UlClBpId field value if set, zero value otherwise.
 func (o *N4Information) GetUlClBpId() string {
-	if o == nil || IsNil(o.UlClBpId) {
+	if o == nil || isNil(o.UlClBpId) {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *N4Information) GetUlClBpId() string {
 // GetUlClBpIdOk returns a tuple with the UlClBpId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N4Information) GetUlClBpIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UlClBpId) {
+	if o == nil || isNil(o.UlClBpId) {
 		return nil, false
 	}
 	return o.UlClBpId, true
@@ -180,7 +180,7 @@ func (o *N4Information) GetUlClBpIdOk() (*string, bool) {
 
 // HasUlClBpId returns a boolean if a field has been set.
 func (o *N4Information) HasUlClBpId() bool {
-	if o != nil && !IsNil(o.UlClBpId) {
+	if o != nil && !isNil(o.UlClBpId) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *N4Information) SetUlClBpId(v string) {
 
 // GetN9UlPdrIdList returns the N9UlPdrIdList field value if set, zero value otherwise.
 func (o *N4Information) GetN9UlPdrIdList() []int32 {
-	if o == nil || IsNil(o.N9UlPdrIdList) {
+	if o == nil || isNil(o.N9UlPdrIdList) {
 		var ret []int32
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *N4Information) GetN9UlPdrIdList() []int32 {
 // GetN9UlPdrIdListOk returns a tuple with the N9UlPdrIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N4Information) GetN9UlPdrIdListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.N9UlPdrIdList) {
+	if o == nil || isNil(o.N9UlPdrIdList) {
 		return nil, false
 	}
 	return o.N9UlPdrIdList, true
@@ -212,7 +212,7 @@ func (o *N4Information) GetN9UlPdrIdListOk() ([]int32, bool) {
 
 // HasN9UlPdrIdList returns a boolean if a field has been set.
 func (o *N4Information) HasN9UlPdrIdList() bool {
-	if o != nil && !IsNil(o.N9UlPdrIdList) {
+	if o != nil && !isNil(o.N9UlPdrIdList) {
 		return true
 	}
 
@@ -236,16 +236,16 @@ func (o N4Information) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n4MessageType"] = o.N4MessageType
 	toSerialize["n4MessagePayload"] = o.N4MessagePayload
-	if !IsNil(o.N4DnaiInfo) {
+	if !isNil(o.N4DnaiInfo) {
 		toSerialize["n4DnaiInfo"] = o.N4DnaiInfo
 	}
-	if !IsNil(o.PsaUpfId) {
+	if !isNil(o.PsaUpfId) {
 		toSerialize["psaUpfId"] = o.PsaUpfId
 	}
-	if !IsNil(o.UlClBpId) {
+	if !isNil(o.UlClBpId) {
 		toSerialize["ulClBpId"] = o.UlClBpId
 	}
-	if !IsNil(o.N9UlPdrIdList) {
+	if !isNil(o.N9UlPdrIdList) {
 		toSerialize["n9UlPdrIdList"] = o.N9UlPdrIdList
 	}
 	return toSerialize, nil

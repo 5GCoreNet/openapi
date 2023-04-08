@@ -41,7 +41,7 @@ func NewProblemDetailsExtensionWithDefaults() *ProblemDetailsExtension {
 
 // GetAccMbsServiceInfo returns the AccMbsServiceInfo field value if set, zero value otherwise.
 func (o *ProblemDetailsExtension) GetAccMbsServiceInfo() AcceptableMbsServInfo {
-	if o == nil || IsNil(o.AccMbsServiceInfo) {
+	if o == nil || isNil(o.AccMbsServiceInfo) {
 		var ret AcceptableMbsServInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProblemDetailsExtension) GetAccMbsServiceInfo() AcceptableMbsServInfo {
 // GetAccMbsServiceInfoOk returns a tuple with the AccMbsServiceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsExtension) GetAccMbsServiceInfoOk() (*AcceptableMbsServInfo, bool) {
-	if o == nil || IsNil(o.AccMbsServiceInfo) {
+	if o == nil || isNil(o.AccMbsServiceInfo) {
 		return nil, false
 	}
 	return o.AccMbsServiceInfo, true
@@ -59,7 +59,7 @@ func (o *ProblemDetailsExtension) GetAccMbsServiceInfoOk() (*AcceptableMbsServIn
 
 // HasAccMbsServiceInfo returns a boolean if a field has been set.
 func (o *ProblemDetailsExtension) HasAccMbsServiceInfo() bool {
-	if o != nil && !IsNil(o.AccMbsServiceInfo) {
+	if o != nil && !isNil(o.AccMbsServiceInfo) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ProblemDetailsExtension) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetailsExtension) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccMbsServiceInfo) {
+	if !isNil(o.AccMbsServiceInfo) {
 		toSerialize["accMbsServiceInfo"] = o.AccMbsServiceInfo
 	}
 	return toSerialize, nil

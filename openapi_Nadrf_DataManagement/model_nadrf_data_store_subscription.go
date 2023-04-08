@@ -52,7 +52,7 @@ func NewNadrfDataStoreSubscriptionWithDefaults() *NadrfDataStoreSubscription {
 
 // GetAnaSub returns the AnaSub field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetAnaSub() NnwdafEventsSubscription {
-	if o == nil || IsNil(o.AnaSub) {
+	if o == nil || isNil(o.AnaSub) {
 		var ret NnwdafEventsSubscription
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *NadrfDataStoreSubscription) GetAnaSub() NnwdafEventsSubscription {
 // GetAnaSubOk returns a tuple with the AnaSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetAnaSubOk() (*NnwdafEventsSubscription, bool) {
-	if o == nil || IsNil(o.AnaSub) {
+	if o == nil || isNil(o.AnaSub) {
 		return nil, false
 	}
 	return o.AnaSub, true
@@ -70,7 +70,7 @@ func (o *NadrfDataStoreSubscription) GetAnaSubOk() (*NnwdafEventsSubscription, b
 
 // HasAnaSub returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasAnaSub() bool {
-	if o != nil && !IsNil(o.AnaSub) {
+	if o != nil && !isNil(o.AnaSub) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *NadrfDataStoreSubscription) SetAnaSub(v NnwdafEventsSubscription) {
 
 // GetDataSub returns the DataSub field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetDataSub() DataSubscription {
-	if o == nil || IsNil(o.DataSub) {
+	if o == nil || isNil(o.DataSub) {
 		var ret DataSubscription
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *NadrfDataStoreSubscription) GetDataSub() DataSubscription {
 // GetDataSubOk returns a tuple with the DataSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetDataSubOk() (*DataSubscription, bool) {
-	if o == nil || IsNil(o.DataSub) {
+	if o == nil || isNil(o.DataSub) {
 		return nil, false
 	}
 	return o.DataSub, true
@@ -102,7 +102,7 @@ func (o *NadrfDataStoreSubscription) GetDataSubOk() (*DataSubscription, bool) {
 
 // HasDataSub returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasDataSub() bool {
-	if o != nil && !IsNil(o.DataSub) {
+	if o != nil && !isNil(o.DataSub) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *NadrfDataStoreSubscription) SetDataSub(v DataSubscription) {
 
 // GetTargetNfId returns the TargetNfId field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetTargetNfId() string {
-	if o == nil || IsNil(o.TargetNfId) {
+	if o == nil || isNil(o.TargetNfId) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfId() string {
 // GetTargetNfIdOk returns a tuple with the TargetNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetTargetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetNfId) {
+	if o == nil || isNil(o.TargetNfId) {
 		return nil, false
 	}
 	return o.TargetNfId, true
@@ -134,7 +134,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfIdOk() (*string, bool) {
 
 // HasTargetNfId returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasTargetNfId() bool {
-	if o != nil && !IsNil(o.TargetNfId) {
+	if o != nil && !isNil(o.TargetNfId) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *NadrfDataStoreSubscription) SetTargetNfId(v string) {
 
 // GetTargetNfSetId returns the TargetNfSetId field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetTargetNfSetId() string {
-	if o == nil || IsNil(o.TargetNfSetId) {
+	if o == nil || isNil(o.TargetNfSetId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfSetId() string {
 // GetTargetNfSetIdOk returns a tuple with the TargetNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetTargetNfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetNfSetId) {
+	if o == nil || isNil(o.TargetNfSetId) {
 		return nil, false
 	}
 	return o.TargetNfSetId, true
@@ -166,7 +166,7 @@ func (o *NadrfDataStoreSubscription) GetTargetNfSetIdOk() (*string, bool) {
 
 // HasTargetNfSetId returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasTargetNfSetId() bool {
-	if o != nil && !IsNil(o.TargetNfSetId) {
+	if o != nil && !isNil(o.TargetNfSetId) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *NadrfDataStoreSubscription) SetTargetNfSetId(v string) {
 
 // GetFormatInstruct returns the FormatInstruct field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetFormatInstruct() FormattingInstruction {
-	if o == nil || IsNil(o.FormatInstruct) {
+	if o == nil || isNil(o.FormatInstruct) {
 		var ret FormattingInstruction
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *NadrfDataStoreSubscription) GetFormatInstruct() FormattingInstruction {
 // GetFormatInstructOk returns a tuple with the FormatInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetFormatInstructOk() (*FormattingInstruction, bool) {
-	if o == nil || IsNil(o.FormatInstruct) {
+	if o == nil || isNil(o.FormatInstruct) {
 		return nil, false
 	}
 	return o.FormatInstruct, true
@@ -198,7 +198,7 @@ func (o *NadrfDataStoreSubscription) GetFormatInstructOk() (*FormattingInstructi
 
 // HasFormatInstruct returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasFormatInstruct() bool {
-	if o != nil && !IsNil(o.FormatInstruct) {
+	if o != nil && !isNil(o.FormatInstruct) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *NadrfDataStoreSubscription) SetFormatInstruct(v FormattingInstruction) 
 
 // GetProcInstruct returns the ProcInstruct field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetProcInstruct() ProcessingInstruction {
-	if o == nil || IsNil(o.ProcInstruct) {
+	if o == nil || isNil(o.ProcInstruct) {
 		var ret ProcessingInstruction
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *NadrfDataStoreSubscription) GetProcInstruct() ProcessingInstruction {
 // GetProcInstructOk returns a tuple with the ProcInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetProcInstructOk() (*ProcessingInstruction, bool) {
-	if o == nil || IsNil(o.ProcInstruct) {
+	if o == nil || isNil(o.ProcInstruct) {
 		return nil, false
 	}
 	return o.ProcInstruct, true
@@ -230,7 +230,7 @@ func (o *NadrfDataStoreSubscription) GetProcInstructOk() (*ProcessingInstruction
 
 // HasProcInstruct returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasProcInstruct() bool {
-	if o != nil && !IsNil(o.ProcInstruct) {
+	if o != nil && !isNil(o.ProcInstruct) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *NadrfDataStoreSubscription) SetProcInstruct(v ProcessingInstruction) {
 
 // GetMultiProcInstructs returns the MultiProcInstructs field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetMultiProcInstructs() []ProcessingInstruction {
-	if o == nil || IsNil(o.MultiProcInstructs) {
+	if o == nil || isNil(o.MultiProcInstructs) {
 		var ret []ProcessingInstruction
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *NadrfDataStoreSubscription) GetMultiProcInstructs() []ProcessingInstruc
 // GetMultiProcInstructsOk returns a tuple with the MultiProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetMultiProcInstructsOk() ([]ProcessingInstruction, bool) {
-	if o == nil || IsNil(o.MultiProcInstructs) {
+	if o == nil || isNil(o.MultiProcInstructs) {
 		return nil, false
 	}
 	return o.MultiProcInstructs, true
@@ -262,7 +262,7 @@ func (o *NadrfDataStoreSubscription) GetMultiProcInstructsOk() ([]ProcessingInst
 
 // HasMultiProcInstructs returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasMultiProcInstructs() bool {
-	if o != nil && !IsNil(o.MultiProcInstructs) {
+	if o != nil && !isNil(o.MultiProcInstructs) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *NadrfDataStoreSubscription) SetMultiProcInstructs(v []ProcessingInstruc
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *NadrfDataStoreSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *NadrfDataStoreSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NadrfDataStoreSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -294,7 +294,7 @@ func (o *NadrfDataStoreSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *NadrfDataStoreSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -316,28 +316,28 @@ func (o NadrfDataStoreSubscription) MarshalJSON() ([]byte, error) {
 
 func (o NadrfDataStoreSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnaSub) {
+	if !isNil(o.AnaSub) {
 		toSerialize["anaSub"] = o.AnaSub
 	}
-	if !IsNil(o.DataSub) {
+	if !isNil(o.DataSub) {
 		toSerialize["dataSub"] = o.DataSub
 	}
-	if !IsNil(o.TargetNfId) {
+	if !isNil(o.TargetNfId) {
 		toSerialize["targetNfId"] = o.TargetNfId
 	}
-	if !IsNil(o.TargetNfSetId) {
+	if !isNil(o.TargetNfSetId) {
 		toSerialize["targetNfSetId"] = o.TargetNfSetId
 	}
-	if !IsNil(o.FormatInstruct) {
+	if !isNil(o.FormatInstruct) {
 		toSerialize["formatInstruct"] = o.FormatInstruct
 	}
-	if !IsNil(o.ProcInstruct) {
+	if !isNil(o.ProcInstruct) {
 		toSerialize["procInstruct"] = o.ProcInstruct
 	}
-	if !IsNil(o.MultiProcInstructs) {
+	if !isNil(o.MultiProcInstructs) {
 		toSerialize["multiProcInstructs"] = o.MultiProcInstructs
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

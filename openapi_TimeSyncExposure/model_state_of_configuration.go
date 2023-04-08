@@ -44,7 +44,7 @@ func NewStateOfConfigurationWithDefaults() *StateOfConfiguration {
 
 // GetStateOfNwtt returns the StateOfNwtt field value if set, zero value otherwise.
 func (o *StateOfConfiguration) GetStateOfNwtt() bool {
-	if o == nil || IsNil(o.StateOfNwtt) {
+	if o == nil || isNil(o.StateOfNwtt) {
 		var ret bool
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *StateOfConfiguration) GetStateOfNwtt() bool {
 // GetStateOfNwttOk returns a tuple with the StateOfNwtt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StateOfConfiguration) GetStateOfNwttOk() (*bool, bool) {
-	if o == nil || IsNil(o.StateOfNwtt) {
+	if o == nil || isNil(o.StateOfNwtt) {
 		return nil, false
 	}
 	return o.StateOfNwtt, true
@@ -62,7 +62,7 @@ func (o *StateOfConfiguration) GetStateOfNwttOk() (*bool, bool) {
 
 // HasStateOfNwtt returns a boolean if a field has been set.
 func (o *StateOfConfiguration) HasStateOfNwtt() bool {
-	if o != nil && !IsNil(o.StateOfNwtt) {
+	if o != nil && !isNil(o.StateOfNwtt) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *StateOfConfiguration) SetStateOfNwtt(v bool) {
 
 // GetStateOfDstts returns the StateOfDstts field value if set, zero value otherwise.
 func (o *StateOfConfiguration) GetStateOfDstts() []StateOfDstt {
-	if o == nil || IsNil(o.StateOfDstts) {
+	if o == nil || isNil(o.StateOfDstts) {
 		var ret []StateOfDstt
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *StateOfConfiguration) GetStateOfDstts() []StateOfDstt {
 // GetStateOfDsttsOk returns a tuple with the StateOfDstts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StateOfConfiguration) GetStateOfDsttsOk() ([]StateOfDstt, bool) {
-	if o == nil || IsNil(o.StateOfDstts) {
+	if o == nil || isNil(o.StateOfDstts) {
 		return nil, false
 	}
 	return o.StateOfDstts, true
@@ -94,7 +94,7 @@ func (o *StateOfConfiguration) GetStateOfDsttsOk() ([]StateOfDstt, bool) {
 
 // HasStateOfDstts returns a boolean if a field has been set.
 func (o *StateOfConfiguration) HasStateOfDstts() bool {
-	if o != nil && !IsNil(o.StateOfDstts) {
+	if o != nil && !isNil(o.StateOfDstts) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o StateOfConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o StateOfConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StateOfNwtt) {
+	if !isNil(o.StateOfNwtt) {
 		toSerialize["stateOfNwtt"] = o.StateOfNwtt
 	}
-	if !IsNil(o.StateOfDstts) {
+	if !isNil(o.StateOfDstts) {
 		toSerialize["stateOfDstts"] = o.StateOfDstts
 	}
 	return toSerialize, nil

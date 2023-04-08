@@ -73,7 +73,7 @@ func (o *DnnInfo) SetDnn(v AccessAndMobilitySubscriptionDataSubscribedDnnListInn
 
 // GetDefaultDnnIndicator returns the DefaultDnnIndicator field value if set, zero value otherwise.
 func (o *DnnInfo) GetDefaultDnnIndicator() bool {
-	if o == nil || IsNil(o.DefaultDnnIndicator) {
+	if o == nil || isNil(o.DefaultDnnIndicator) {
 		var ret bool
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *DnnInfo) GetDefaultDnnIndicator() bool {
 // GetDefaultDnnIndicatorOk returns a tuple with the DefaultDnnIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetDefaultDnnIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.DefaultDnnIndicator) {
+	if o == nil || isNil(o.DefaultDnnIndicator) {
 		return nil, false
 	}
 	return o.DefaultDnnIndicator, true
@@ -91,7 +91,7 @@ func (o *DnnInfo) GetDefaultDnnIndicatorOk() (*bool, bool) {
 
 // HasDefaultDnnIndicator returns a boolean if a field has been set.
 func (o *DnnInfo) HasDefaultDnnIndicator() bool {
-	if o != nil && !IsNil(o.DefaultDnnIndicator) {
+	if o != nil && !isNil(o.DefaultDnnIndicator) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *DnnInfo) SetDefaultDnnIndicator(v bool) {
 
 // GetLboRoamingAllowed returns the LboRoamingAllowed field value if set, zero value otherwise.
 func (o *DnnInfo) GetLboRoamingAllowed() bool {
-	if o == nil || IsNil(o.LboRoamingAllowed) {
+	if o == nil || isNil(o.LboRoamingAllowed) {
 		var ret bool
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *DnnInfo) GetLboRoamingAllowed() bool {
 // GetLboRoamingAllowedOk returns a tuple with the LboRoamingAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetLboRoamingAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.LboRoamingAllowed) {
+	if o == nil || isNil(o.LboRoamingAllowed) {
 		return nil, false
 	}
 	return o.LboRoamingAllowed, true
@@ -123,7 +123,7 @@ func (o *DnnInfo) GetLboRoamingAllowedOk() (*bool, bool) {
 
 // HasLboRoamingAllowed returns a boolean if a field has been set.
 func (o *DnnInfo) HasLboRoamingAllowed() bool {
-	if o != nil && !IsNil(o.LboRoamingAllowed) {
+	if o != nil && !isNil(o.LboRoamingAllowed) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *DnnInfo) SetLboRoamingAllowed(v bool) {
 
 // GetIwkEpsInd returns the IwkEpsInd field value if set, zero value otherwise.
 func (o *DnnInfo) GetIwkEpsInd() bool {
-	if o == nil || IsNil(o.IwkEpsInd) {
+	if o == nil || isNil(o.IwkEpsInd) {
 		var ret bool
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *DnnInfo) GetIwkEpsInd() bool {
 // GetIwkEpsIndOk returns a tuple with the IwkEpsInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetIwkEpsIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.IwkEpsInd) {
+	if o == nil || isNil(o.IwkEpsInd) {
 		return nil, false
 	}
 	return o.IwkEpsInd, true
@@ -155,7 +155,7 @@ func (o *DnnInfo) GetIwkEpsIndOk() (*bool, bool) {
 
 // HasIwkEpsInd returns a boolean if a field has been set.
 func (o *DnnInfo) HasIwkEpsInd() bool {
-	if o != nil && !IsNil(o.IwkEpsInd) {
+	if o != nil && !isNil(o.IwkEpsInd) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *DnnInfo) SetIwkEpsInd(v bool) {
 
 // GetDnnBarred returns the DnnBarred field value if set, zero value otherwise.
 func (o *DnnInfo) GetDnnBarred() bool {
-	if o == nil || IsNil(o.DnnBarred) {
+	if o == nil || isNil(o.DnnBarred) {
 		var ret bool
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *DnnInfo) GetDnnBarred() bool {
 // GetDnnBarredOk returns a tuple with the DnnBarred field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetDnnBarredOk() (*bool, bool) {
-	if o == nil || IsNil(o.DnnBarred) {
+	if o == nil || isNil(o.DnnBarred) {
 		return nil, false
 	}
 	return o.DnnBarred, true
@@ -187,7 +187,7 @@ func (o *DnnInfo) GetDnnBarredOk() (*bool, bool) {
 
 // HasDnnBarred returns a boolean if a field has been set.
 func (o *DnnInfo) HasDnnBarred() bool {
-	if o != nil && !IsNil(o.DnnBarred) {
+	if o != nil && !isNil(o.DnnBarred) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *DnnInfo) SetDnnBarred(v bool) {
 
 // GetInvokeNefInd returns the InvokeNefInd field value if set, zero value otherwise.
 func (o *DnnInfo) GetInvokeNefInd() bool {
-	if o == nil || IsNil(o.InvokeNefInd) {
+	if o == nil || isNil(o.InvokeNefInd) {
 		var ret bool
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *DnnInfo) GetInvokeNefInd() bool {
 // GetInvokeNefIndOk returns a tuple with the InvokeNefInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetInvokeNefIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.InvokeNefInd) {
+	if o == nil || isNil(o.InvokeNefInd) {
 		return nil, false
 	}
 	return o.InvokeNefInd, true
@@ -219,7 +219,7 @@ func (o *DnnInfo) GetInvokeNefIndOk() (*bool, bool) {
 
 // HasInvokeNefInd returns a boolean if a field has been set.
 func (o *DnnInfo) HasInvokeNefInd() bool {
-	if o != nil && !IsNil(o.InvokeNefInd) {
+	if o != nil && !isNil(o.InvokeNefInd) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *DnnInfo) SetInvokeNefInd(v bool) {
 
 // GetSmfList returns the SmfList field value if set, zero value otherwise.
 func (o *DnnInfo) GetSmfList() []string {
-	if o == nil || IsNil(o.SmfList) {
+	if o == nil || isNil(o.SmfList) {
 		var ret []string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *DnnInfo) GetSmfList() []string {
 // GetSmfListOk returns a tuple with the SmfList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetSmfListOk() ([]string, bool) {
-	if o == nil || IsNil(o.SmfList) {
+	if o == nil || isNil(o.SmfList) {
 		return nil, false
 	}
 	return o.SmfList, true
@@ -251,7 +251,7 @@ func (o *DnnInfo) GetSmfListOk() ([]string, bool) {
 
 // HasSmfList returns a boolean if a field has been set.
 func (o *DnnInfo) HasSmfList() bool {
-	if o != nil && !IsNil(o.SmfList) {
+	if o != nil && !isNil(o.SmfList) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *DnnInfo) SetSmfList(v []string) {
 
 // GetSameSmfInd returns the SameSmfInd field value if set, zero value otherwise.
 func (o *DnnInfo) GetSameSmfInd() bool {
-	if o == nil || IsNil(o.SameSmfInd) {
+	if o == nil || isNil(o.SameSmfInd) {
 		var ret bool
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *DnnInfo) GetSameSmfInd() bool {
 // GetSameSmfIndOk returns a tuple with the SameSmfInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnInfo) GetSameSmfIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SameSmfInd) {
+	if o == nil || isNil(o.SameSmfInd) {
 		return nil, false
 	}
 	return o.SameSmfInd, true
@@ -283,7 +283,7 @@ func (o *DnnInfo) GetSameSmfIndOk() (*bool, bool) {
 
 // HasSameSmfInd returns a boolean if a field has been set.
 func (o *DnnInfo) HasSameSmfInd() bool {
-	if o != nil && !IsNil(o.SameSmfInd) {
+	if o != nil && !isNil(o.SameSmfInd) {
 		return true
 	}
 
@@ -306,25 +306,25 @@ func (o DnnInfo) MarshalJSON() ([]byte, error) {
 func (o DnnInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !IsNil(o.DefaultDnnIndicator) {
+	if !isNil(o.DefaultDnnIndicator) {
 		toSerialize["defaultDnnIndicator"] = o.DefaultDnnIndicator
 	}
-	if !IsNil(o.LboRoamingAllowed) {
+	if !isNil(o.LboRoamingAllowed) {
 		toSerialize["lboRoamingAllowed"] = o.LboRoamingAllowed
 	}
-	if !IsNil(o.IwkEpsInd) {
+	if !isNil(o.IwkEpsInd) {
 		toSerialize["iwkEpsInd"] = o.IwkEpsInd
 	}
-	if !IsNil(o.DnnBarred) {
+	if !isNil(o.DnnBarred) {
 		toSerialize["dnnBarred"] = o.DnnBarred
 	}
-	if !IsNil(o.InvokeNefInd) {
+	if !isNil(o.InvokeNefInd) {
 		toSerialize["invokeNefInd"] = o.InvokeNefInd
 	}
-	if !IsNil(o.SmfList) {
+	if !isNil(o.SmfList) {
 		toSerialize["smfList"] = o.SmfList
 	}
-	if !IsNil(o.SameSmfInd) {
+	if !isNil(o.SameSmfInd) {
 		toSerialize["sameSmfInd"] = o.SameSmfInd
 	}
 	return toSerialize, nil

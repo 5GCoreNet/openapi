@@ -72,7 +72,7 @@ func (o *RecordSearchResult) SetCount(v int32) {
 
 // GetReferences returns the References field value if set, zero value otherwise.
 func (o *RecordSearchResult) GetReferences() []string {
-	if o == nil || IsNil(o.References) {
+	if o == nil || isNil(o.References) {
 		var ret []string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *RecordSearchResult) GetReferences() []string {
 // GetReferencesOk returns a tuple with the References field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordSearchResult) GetReferencesOk() ([]string, bool) {
-	if o == nil || IsNil(o.References) {
+	if o == nil || isNil(o.References) {
 		return nil, false
 	}
 	return o.References, true
@@ -90,7 +90,7 @@ func (o *RecordSearchResult) GetReferencesOk() ([]string, bool) {
 
 // HasReferences returns a boolean if a field has been set.
 func (o *RecordSearchResult) HasReferences() bool {
-	if o != nil && !IsNil(o.References) {
+	if o != nil && !isNil(o.References) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *RecordSearchResult) SetReferences(v []string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *RecordSearchResult) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *RecordSearchResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordSearchResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -122,7 +122,7 @@ func (o *RecordSearchResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *RecordSearchResult) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *RecordSearchResult) SetSupportedFeatures(v string) {
 
 // GetMatchingRecords returns the MatchingRecords field value if set, zero value otherwise.
 func (o *RecordSearchResult) GetMatchingRecords() map[string]Record {
-	if o == nil || IsNil(o.MatchingRecords) {
+	if o == nil || isNil(o.MatchingRecords) {
 		var ret map[string]Record
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *RecordSearchResult) GetMatchingRecords() map[string]Record {
 // GetMatchingRecordsOk returns a tuple with the MatchingRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecordSearchResult) GetMatchingRecordsOk() (*map[string]Record, bool) {
-	if o == nil || IsNil(o.MatchingRecords) {
+	if o == nil || isNil(o.MatchingRecords) {
 		return nil, false
 	}
 	return o.MatchingRecords, true
@@ -154,7 +154,7 @@ func (o *RecordSearchResult) GetMatchingRecordsOk() (*map[string]Record, bool) {
 
 // HasMatchingRecords returns a boolean if a field has been set.
 func (o *RecordSearchResult) HasMatchingRecords() bool {
-	if o != nil && !IsNil(o.MatchingRecords) {
+	if o != nil && !isNil(o.MatchingRecords) {
 		return true
 	}
 
@@ -177,13 +177,13 @@ func (o RecordSearchResult) MarshalJSON() ([]byte, error) {
 func (o RecordSearchResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["count"] = o.Count
-	if !IsNil(o.References) {
+	if !isNil(o.References) {
 		toSerialize["references"] = o.References
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.MatchingRecords) {
+	if !isNil(o.MatchingRecords) {
 		toSerialize["matchingRecords"] = o.MatchingRecords
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,6 +10,7 @@ docs/APIProviderEnrolmentDetails.md
 docs/APIProviderEnrolmentDetailsPatch.md
 docs/APIProviderFunctionDetails.md
 docs/ApiProviderFuncRole.md
+docs/ApiProviderFuncRoleAnyOf.md
 docs/DefaultApi.md
 docs/IndividualAPIProviderEnrolmentDetailsApi.md
 docs/InvalidParam.md
@@ -22,6 +22,7 @@ go.sum
 model_api_provider_enrolment_details.go
 model_api_provider_enrolment_details_patch.go
 model_api_provider_func_role.go
+model_api_provider_func_role_any_of.go
 model_api_provider_function_details.go
 model_invalid_param.go
 model_problem_details.go

@@ -70,7 +70,7 @@ func (o *CagData1) SetCagInfos(v map[string]CagInfo1) {
 
 // GetProvisioningTime returns the ProvisioningTime field value if set, zero value otherwise.
 func (o *CagData1) GetProvisioningTime() time.Time {
-	if o == nil || IsNil(o.ProvisioningTime) {
+	if o == nil || isNil(o.ProvisioningTime) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *CagData1) GetProvisioningTime() time.Time {
 // GetProvisioningTimeOk returns a tuple with the ProvisioningTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CagData1) GetProvisioningTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ProvisioningTime) {
+	if o == nil || isNil(o.ProvisioningTime) {
 		return nil, false
 	}
 	return o.ProvisioningTime, true
@@ -88,7 +88,7 @@ func (o *CagData1) GetProvisioningTimeOk() (*time.Time, bool) {
 
 // HasProvisioningTime returns a boolean if a field has been set.
 func (o *CagData1) HasProvisioningTime() bool {
-	if o != nil && !IsNil(o.ProvisioningTime) {
+	if o != nil && !isNil(o.ProvisioningTime) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o CagData1) MarshalJSON() ([]byte, error) {
 func (o CagData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cagInfos"] = o.CagInfos
-	if !IsNil(o.ProvisioningTime) {
+	if !isNil(o.ProvisioningTime) {
 		toSerialize["provisioningTime"] = o.ProvisioningTime
 	}
 	return toSerialize, nil

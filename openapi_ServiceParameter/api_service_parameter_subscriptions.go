@@ -13,7 +13,7 @@ package openapi_ServiceParameter
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -110,9 +110,9 @@ func (a *ServiceParameterSubscriptionsApiService) CreateAnSubscriptionExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -327,10 +327,10 @@ func (a *ServiceParameterSubscriptionsApiService) ReadAllSubscriptionsExecute(r 
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gpsis", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "gpsis", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gpsis", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "gpsis", t, "multi")
 		}
 	}
 	if r.ipAddrs != nil {
@@ -338,24 +338,24 @@ func (a *ServiceParameterSubscriptionsApiService) ReadAllSubscriptionsExecute(r 
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "ip-addrs", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "ip-addrs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "ip-addrs", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "ip-addrs", t, "multi")
 		}
 	}
 	if r.ipDomain != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
+		parameterAddToQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
 	}
 	if r.macAddrs != nil {
 		t := *r.macAddrs
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "mac-addrs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -385,9 +385,9 @@ func (a *ServiceParameterSubscriptionsApiService) ReadAllSubscriptionsExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -97,7 +97,7 @@ func (o *EdgeResourcesConfiguration) SetEdgeManagementMode(v EdgeManagementMode)
 
 // GetEligibilityCriteria returns the EligibilityCriteria field value if set, zero value otherwise.
 func (o *EdgeResourcesConfiguration) GetEligibilityCriteria() EdgeProcessingEligibilityCriteria {
-	if o == nil || IsNil(o.EligibilityCriteria) {
+	if o == nil || isNil(o.EligibilityCriteria) {
 		var ret EdgeProcessingEligibilityCriteria
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *EdgeResourcesConfiguration) GetEligibilityCriteria() EdgeProcessingElig
 // GetEligibilityCriteriaOk returns a tuple with the EligibilityCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeResourcesConfiguration) GetEligibilityCriteriaOk() (*EdgeProcessingEligibilityCriteria, bool) {
-	if o == nil || IsNil(o.EligibilityCriteria) {
+	if o == nil || isNil(o.EligibilityCriteria) {
 		return nil, false
 	}
 	return o.EligibilityCriteria, true
@@ -115,7 +115,7 @@ func (o *EdgeResourcesConfiguration) GetEligibilityCriteriaOk() (*EdgeProcessing
 
 // HasEligibilityCriteria returns a boolean if a field has been set.
 func (o *EdgeResourcesConfiguration) HasEligibilityCriteria() bool {
-	if o != nil && !IsNil(o.EligibilityCriteria) {
+	if o != nil && !isNil(o.EligibilityCriteria) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *EdgeResourcesConfiguration) SetEasRequirements(v EASRequirements) {
 
 // GetEasRelocationRequirements returns the EasRelocationRequirements field value if set, zero value otherwise.
 func (o *EdgeResourcesConfiguration) GetEasRelocationRequirements() M1EASRelocationRequirements {
-	if o == nil || IsNil(o.EasRelocationRequirements) {
+	if o == nil || isNil(o.EasRelocationRequirements) {
 		var ret M1EASRelocationRequirements
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *EdgeResourcesConfiguration) GetEasRelocationRequirements() M1EASRelocat
 // GetEasRelocationRequirementsOk returns a tuple with the EasRelocationRequirements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeResourcesConfiguration) GetEasRelocationRequirementsOk() (*M1EASRelocationRequirements, bool) {
-	if o == nil || IsNil(o.EasRelocationRequirements) {
+	if o == nil || isNil(o.EasRelocationRequirements) {
 		return nil, false
 	}
 	return o.EasRelocationRequirements, true
@@ -171,7 +171,7 @@ func (o *EdgeResourcesConfiguration) GetEasRelocationRequirementsOk() (*M1EASRel
 
 // HasEasRelocationRequirements returns a boolean if a field has been set.
 func (o *EdgeResourcesConfiguration) HasEasRelocationRequirements() bool {
-	if o != nil && !IsNil(o.EasRelocationRequirements) {
+	if o != nil && !isNil(o.EasRelocationRequirements) {
 		return true
 	}
 
@@ -195,11 +195,11 @@ func (o EdgeResourcesConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["edgeResourcesConfigurationId"] = o.EdgeResourcesConfigurationId
 	toSerialize["edgeManagementMode"] = o.EdgeManagementMode
-	if !IsNil(o.EligibilityCriteria) {
+	if !isNil(o.EligibilityCriteria) {
 		toSerialize["eligibilityCriteria"] = o.EligibilityCriteria
 	}
 	toSerialize["easRequirements"] = o.EasRequirements
-	if !IsNil(o.EasRelocationRequirements) {
+	if !isNil(o.EasRelocationRequirements) {
 		toSerialize["easRelocationRequirements"] = o.EasRelocationRequirements
 	}
 	return toSerialize, nil

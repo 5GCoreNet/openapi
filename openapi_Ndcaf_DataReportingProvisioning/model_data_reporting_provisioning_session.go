@@ -127,7 +127,7 @@ func (o *DataReportingProvisioningSession) SetExternalApplicationId(v string) {
 
 // GetInternalApplicationId returns the InternalApplicationId field value if set, zero value otherwise.
 func (o *DataReportingProvisioningSession) GetInternalApplicationId() string {
-	if o == nil || IsNil(o.InternalApplicationId) {
+	if o == nil || isNil(o.InternalApplicationId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *DataReportingProvisioningSession) GetInternalApplicationId() string {
 // GetInternalApplicationIdOk returns a tuple with the InternalApplicationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingProvisioningSession) GetInternalApplicationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalApplicationId) {
+	if o == nil || isNil(o.InternalApplicationId) {
 		return nil, false
 	}
 	return o.InternalApplicationId, true
@@ -145,7 +145,7 @@ func (o *DataReportingProvisioningSession) GetInternalApplicationIdOk() (*string
 
 // HasInternalApplicationId returns a boolean if a field has been set.
 func (o *DataReportingProvisioningSession) HasInternalApplicationId() bool {
-	if o != nil && !IsNil(o.InternalApplicationId) {
+	if o != nil && !isNil(o.InternalApplicationId) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o DataReportingProvisioningSession) ToMap() (map[string]interface{}, error
 	toSerialize["provisioningSessionId"] = o.ProvisioningSessionId
 	toSerialize["aspId"] = o.AspId
 	toSerialize["externalApplicationId"] = o.ExternalApplicationId
-	if !IsNil(o.InternalApplicationId) {
+	if !isNil(o.InternalApplicationId) {
 		toSerialize["internalApplicationId"] = o.InternalApplicationId
 	}
 	toSerialize["eventId"] = o.EventId

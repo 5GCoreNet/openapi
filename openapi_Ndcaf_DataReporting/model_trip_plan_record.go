@@ -12,7 +12,6 @@ package openapi_Ndcaf_DataReporting
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the TripPlanRecord type satisfies the MappedNullable interface at compile time
@@ -101,7 +100,7 @@ func (o *TripPlanRecord) SetStartingPoint(v LocationData) {
 
 // GetWaypoints returns the Waypoints field value if set, zero value otherwise.
 func (o *TripPlanRecord) GetWaypoints() []LocationData {
-	if o == nil || IsNil(o.Waypoints) {
+	if o == nil || isNil(o.Waypoints) {
 		var ret []LocationData
 		return ret
 	}
@@ -111,7 +110,7 @@ func (o *TripPlanRecord) GetWaypoints() []LocationData {
 // GetWaypointsOk returns a tuple with the Waypoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TripPlanRecord) GetWaypointsOk() ([]LocationData, bool) {
-	if o == nil || IsNil(o.Waypoints) {
+	if o == nil || isNil(o.Waypoints) {
 		return nil, false
 	}
 	return o.Waypoints, true
@@ -119,7 +118,7 @@ func (o *TripPlanRecord) GetWaypointsOk() ([]LocationData, bool) {
 
 // HasWaypoints returns a boolean if a field has been set.
 func (o *TripPlanRecord) HasWaypoints() bool {
-	if o != nil && !IsNil(o.Waypoints) {
+	if o != nil && !isNil(o.Waypoints) {
 		return true
 	}
 
@@ -157,7 +156,7 @@ func (o *TripPlanRecord) SetDestination(v LocationData) {
 
 // GetEstimatedAverageSpeed returns the EstimatedAverageSpeed field value if set, zero value otherwise.
 func (o *TripPlanRecord) GetEstimatedAverageSpeed() float32 {
-	if o == nil || IsNil(o.EstimatedAverageSpeed) {
+	if o == nil || isNil(o.EstimatedAverageSpeed) {
 		var ret float32
 		return ret
 	}
@@ -167,7 +166,7 @@ func (o *TripPlanRecord) GetEstimatedAverageSpeed() float32 {
 // GetEstimatedAverageSpeedOk returns a tuple with the EstimatedAverageSpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TripPlanRecord) GetEstimatedAverageSpeedOk() (*float32, bool) {
-	if o == nil || IsNil(o.EstimatedAverageSpeed) {
+	if o == nil || isNil(o.EstimatedAverageSpeed) {
 		return nil, false
 	}
 	return o.EstimatedAverageSpeed, true
@@ -175,7 +174,7 @@ func (o *TripPlanRecord) GetEstimatedAverageSpeedOk() (*float32, bool) {
 
 // HasEstimatedAverageSpeed returns a boolean if a field has been set.
 func (o *TripPlanRecord) HasEstimatedAverageSpeed() bool {
-	if o != nil && !IsNil(o.EstimatedAverageSpeed) {
+	if o != nil && !isNil(o.EstimatedAverageSpeed) {
 		return true
 	}
 
@@ -189,7 +188,7 @@ func (o *TripPlanRecord) SetEstimatedAverageSpeed(v float32) {
 
 // GetEstimatedArrivalTime returns the EstimatedArrivalTime field value if set, zero value otherwise.
 func (o *TripPlanRecord) GetEstimatedArrivalTime() time.Time {
-	if o == nil || IsNil(o.EstimatedArrivalTime) {
+	if o == nil || isNil(o.EstimatedArrivalTime) {
 		var ret time.Time
 		return ret
 	}
@@ -199,7 +198,7 @@ func (o *TripPlanRecord) GetEstimatedArrivalTime() time.Time {
 // GetEstimatedArrivalTimeOk returns a tuple with the EstimatedArrivalTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TripPlanRecord) GetEstimatedArrivalTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EstimatedArrivalTime) {
+	if o == nil || isNil(o.EstimatedArrivalTime) {
 		return nil, false
 	}
 	return o.EstimatedArrivalTime, true
@@ -207,7 +206,7 @@ func (o *TripPlanRecord) GetEstimatedArrivalTimeOk() (*time.Time, bool) {
 
 // HasEstimatedArrivalTime returns a boolean if a field has been set.
 func (o *TripPlanRecord) HasEstimatedArrivalTime() bool {
-	if o != nil && !IsNil(o.EstimatedArrivalTime) {
+	if o != nil && !isNil(o.EstimatedArrivalTime) {
 		return true
 	}
 
@@ -231,14 +230,14 @@ func (o TripPlanRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["timestamp"] = o.Timestamp
 	toSerialize["startingPoint"] = o.StartingPoint
-	if !IsNil(o.Waypoints) {
+	if !isNil(o.Waypoints) {
 		toSerialize["waypoints"] = o.Waypoints
 	}
 	toSerialize["destination"] = o.Destination
-	if !IsNil(o.EstimatedAverageSpeed) {
+	if !isNil(o.EstimatedAverageSpeed) {
 		toSerialize["estimatedAverageSpeed"] = o.EstimatedAverageSpeed
 	}
-	if !IsNil(o.EstimatedArrivalTime) {
+	if !isNil(o.EstimatedArrivalTime) {
 		toSerialize["estimatedArrivalTime"] = o.EstimatedArrivalTime
 	}
 	return toSerialize, nil

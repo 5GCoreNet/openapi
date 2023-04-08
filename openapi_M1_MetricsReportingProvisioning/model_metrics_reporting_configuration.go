@@ -101,7 +101,7 @@ func (o *MetricsReportingConfiguration) SetScheme(v string) {
 
 // GetDataNetworkName returns the DataNetworkName field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetDataNetworkName() string {
-	if o == nil || IsNil(o.DataNetworkName) {
+	if o == nil || isNil(o.DataNetworkName) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MetricsReportingConfiguration) GetDataNetworkName() string {
 // GetDataNetworkNameOk returns a tuple with the DataNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetDataNetworkNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DataNetworkName) {
+	if o == nil || isNil(o.DataNetworkName) {
 		return nil, false
 	}
 	return o.DataNetworkName, true
@@ -119,7 +119,7 @@ func (o *MetricsReportingConfiguration) GetDataNetworkNameOk() (*string, bool) {
 
 // HasDataNetworkName returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasDataNetworkName() bool {
-	if o != nil && !IsNil(o.DataNetworkName) {
+	if o != nil && !isNil(o.DataNetworkName) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *MetricsReportingConfiguration) SetDataNetworkName(v string) {
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetReportingInterval() int32 {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *MetricsReportingConfiguration) GetReportingInterval() int32 {
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -151,7 +151,7 @@ func (o *MetricsReportingConfiguration) GetReportingIntervalOk() (*int32, bool) 
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasReportingInterval() bool {
-	if o != nil && !IsNil(o.ReportingInterval) {
+	if o != nil && !isNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *MetricsReportingConfiguration) SetReportingInterval(v int32) {
 
 // GetSamplePercentage returns the SamplePercentage field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetSamplePercentage() float32 {
-	if o == nil || IsNil(o.SamplePercentage) {
+	if o == nil || isNil(o.SamplePercentage) {
 		var ret float32
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *MetricsReportingConfiguration) GetSamplePercentage() float32 {
 // GetSamplePercentageOk returns a tuple with the SamplePercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetSamplePercentageOk() (*float32, bool) {
-	if o == nil || IsNil(o.SamplePercentage) {
+	if o == nil || isNil(o.SamplePercentage) {
 		return nil, false
 	}
 	return o.SamplePercentage, true
@@ -183,7 +183,7 @@ func (o *MetricsReportingConfiguration) GetSamplePercentageOk() (*float32, bool)
 
 // HasSamplePercentage returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasSamplePercentage() bool {
-	if o != nil && !IsNil(o.SamplePercentage) {
+	if o != nil && !isNil(o.SamplePercentage) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *MetricsReportingConfiguration) SetSamplePercentage(v float32) {
 
 // GetUrlFilters returns the UrlFilters field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetUrlFilters() []string {
-	if o == nil || IsNil(o.UrlFilters) {
+	if o == nil || isNil(o.UrlFilters) {
 		var ret []string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *MetricsReportingConfiguration) GetUrlFilters() []string {
 // GetUrlFiltersOk returns a tuple with the UrlFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetUrlFiltersOk() ([]string, bool) {
-	if o == nil || IsNil(o.UrlFilters) {
+	if o == nil || isNil(o.UrlFilters) {
 		return nil, false
 	}
 	return o.UrlFilters, true
@@ -215,7 +215,7 @@ func (o *MetricsReportingConfiguration) GetUrlFiltersOk() ([]string, bool) {
 
 // HasUrlFilters returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasUrlFilters() bool {
-	if o != nil && !IsNil(o.UrlFilters) {
+	if o != nil && !isNil(o.UrlFilters) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *MetricsReportingConfiguration) SetUrlFilters(v []string) {
 
 // GetMetrics returns the Metrics field value if set, zero value otherwise.
 func (o *MetricsReportingConfiguration) GetMetrics() []string {
-	if o == nil || IsNil(o.Metrics) {
+	if o == nil || isNil(o.Metrics) {
 		var ret []string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *MetricsReportingConfiguration) GetMetrics() []string {
 // GetMetricsOk returns a tuple with the Metrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetricsReportingConfiguration) GetMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Metrics) {
+	if o == nil || isNil(o.Metrics) {
 		return nil, false
 	}
 	return o.Metrics, true
@@ -247,7 +247,7 @@ func (o *MetricsReportingConfiguration) GetMetricsOk() ([]string, bool) {
 
 // HasMetrics returns a boolean if a field has been set.
 func (o *MetricsReportingConfiguration) HasMetrics() bool {
-	if o != nil && !IsNil(o.Metrics) {
+	if o != nil && !isNil(o.Metrics) {
 		return true
 	}
 
@@ -271,19 +271,19 @@ func (o MetricsReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["metricsReportingConfigurationId"] = o.MetricsReportingConfigurationId
 	toSerialize["scheme"] = o.Scheme
-	if !IsNil(o.DataNetworkName) {
+	if !isNil(o.DataNetworkName) {
 		toSerialize["dataNetworkName"] = o.DataNetworkName
 	}
-	if !IsNil(o.ReportingInterval) {
+	if !isNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
-	if !IsNil(o.SamplePercentage) {
+	if !isNil(o.SamplePercentage) {
 		toSerialize["samplePercentage"] = o.SamplePercentage
 	}
-	if !IsNil(o.UrlFilters) {
+	if !isNil(o.UrlFilters) {
 		toSerialize["urlFilters"] = o.UrlFilters
 	}
-	if !IsNil(o.Metrics) {
+	if !isNil(o.Metrics) {
 		toSerialize["metrics"] = o.Metrics
 	}
 	return toSerialize, nil

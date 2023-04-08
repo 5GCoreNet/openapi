@@ -102,7 +102,7 @@ func (o *AuthConfirmationResponse) SetEapMessage(v string) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *AuthConfirmationResponse) GetAuthResult() AuthStatus {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		var ret AuthStatus
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *AuthConfirmationResponse) GetAuthResult() AuthStatus {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthConfirmationResponse) GetAuthResultOk() (*AuthStatus, bool) {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -120,7 +120,7 @@ func (o *AuthConfirmationResponse) GetAuthResultOk() (*AuthStatus, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *AuthConfirmationResponse) HasAuthResult() bool {
-	if o != nil && !IsNil(o.AuthResult) {
+	if o != nil && !isNil(o.AuthResult) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *AuthConfirmationResponse) SetAuthResult(v AuthStatus) {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *AuthConfirmationResponse) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *AuthConfirmationResponse) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthConfirmationResponse) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -152,7 +152,7 @@ func (o *AuthConfirmationResponse) GetPvsInfoOk() ([]ServerAddressingInfo, bool)
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *AuthConfirmationResponse) HasPvsInfo() bool {
-	if o != nil && !IsNil(o.PvsInfo) {
+	if o != nil && !isNil(o.PvsInfo) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *AuthConfirmationResponse) SetPvsInfo(v []ServerAddressingInfo) {
 
 // GetMsk returns the Msk field value if set, zero value otherwise.
 func (o *AuthConfirmationResponse) GetMsk() string {
-	if o == nil || IsNil(o.Msk) {
+	if o == nil || isNil(o.Msk) {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *AuthConfirmationResponse) GetMsk() string {
 // GetMskOk returns a tuple with the Msk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthConfirmationResponse) GetMskOk() (*string, bool) {
-	if o == nil || IsNil(o.Msk) {
+	if o == nil || isNil(o.Msk) {
 		return nil, false
 	}
 	return o.Msk, true
@@ -184,7 +184,7 @@ func (o *AuthConfirmationResponse) GetMskOk() (*string, bool) {
 
 // HasMsk returns a boolean if a field has been set.
 func (o *AuthConfirmationResponse) HasMsk() bool {
-	if o != nil && !IsNil(o.Msk) {
+	if o != nil && !isNil(o.Msk) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *AuthConfirmationResponse) SetMsk(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthConfirmationResponse) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *AuthConfirmationResponse) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthConfirmationResponse) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -216,7 +216,7 @@ func (o *AuthConfirmationResponse) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthConfirmationResponse) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -240,16 +240,16 @@ func (o AuthConfirmationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
 	toSerialize["eapMessage"] = o.EapMessage.Get()
-	if !IsNil(o.AuthResult) {
+	if !isNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
-	if !IsNil(o.PvsInfo) {
+	if !isNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
-	if !IsNil(o.Msk) {
+	if !isNil(o.Msk) {
 		toSerialize["msk"] = o.Msk
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

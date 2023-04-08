@@ -41,7 +41,7 @@ func NewAnalyticsScheduleOneOf1WithDefaults() *AnalyticsScheduleOneOf1 {
 
 // GetGranularityPeriod returns the GranularityPeriod field value if set, zero value otherwise.
 func (o *AnalyticsScheduleOneOf1) GetGranularityPeriod() int32 {
-	if o == nil || IsNil(o.GranularityPeriod) {
+	if o == nil || isNil(o.GranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnalyticsScheduleOneOf1) GetGranularityPeriod() int32 {
 // GetGranularityPeriodOk returns a tuple with the GranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsScheduleOneOf1) GetGranularityPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.GranularityPeriod) {
+	if o == nil || isNil(o.GranularityPeriod) {
 		return nil, false
 	}
 	return o.GranularityPeriod, true
@@ -59,7 +59,7 @@ func (o *AnalyticsScheduleOneOf1) GetGranularityPeriodOk() (*int32, bool) {
 
 // HasGranularityPeriod returns a boolean if a field has been set.
 func (o *AnalyticsScheduleOneOf1) HasGranularityPeriod() bool {
-	if o != nil && !IsNil(o.GranularityPeriod) {
+	if o != nil && !isNil(o.GranularityPeriod) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AnalyticsScheduleOneOf1) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsScheduleOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GranularityPeriod) {
+	if !isNil(o.GranularityPeriod) {
 		toSerialize["granularityPeriod"] = o.GranularityPeriod
 	}
 	return toSerialize, nil

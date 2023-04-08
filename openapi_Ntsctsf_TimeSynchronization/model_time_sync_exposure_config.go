@@ -109,7 +109,7 @@ func (o *TimeSyncExposureConfig) SetReqPtpIns(v PtpInstance) {
 
 // GetGmEnable returns the GmEnable field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetGmEnable() bool {
-	if o == nil || IsNil(o.GmEnable) {
+	if o == nil || isNil(o.GmEnable) {
 		var ret bool
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *TimeSyncExposureConfig) GetGmEnable() bool {
 // GetGmEnableOk returns a tuple with the GmEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetGmEnableOk() (*bool, bool) {
-	if o == nil || IsNil(o.GmEnable) {
+	if o == nil || isNil(o.GmEnable) {
 		return nil, false
 	}
 	return o.GmEnable, true
@@ -127,7 +127,7 @@ func (o *TimeSyncExposureConfig) GetGmEnableOk() (*bool, bool) {
 
 // HasGmEnable returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasGmEnable() bool {
-	if o != nil && !IsNil(o.GmEnable) {
+	if o != nil && !isNil(o.GmEnable) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *TimeSyncExposureConfig) SetGmEnable(v bool) {
 
 // GetGmPrio returns the GmPrio field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetGmPrio() int32 {
-	if o == nil || IsNil(o.GmPrio) {
+	if o == nil || isNil(o.GmPrio) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *TimeSyncExposureConfig) GetGmPrio() int32 {
 // GetGmPrioOk returns a tuple with the GmPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetGmPrioOk() (*int32, bool) {
-	if o == nil || IsNil(o.GmPrio) {
+	if o == nil || isNil(o.GmPrio) {
 		return nil, false
 	}
 	return o.GmPrio, true
@@ -159,7 +159,7 @@ func (o *TimeSyncExposureConfig) GetGmPrioOk() (*int32, bool) {
 
 // HasGmPrio returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasGmPrio() bool {
-	if o != nil && !IsNil(o.GmPrio) {
+	if o != nil && !isNil(o.GmPrio) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *TimeSyncExposureConfig) SetTimeDom(v int32) {
 
 // GetTimeSyncErrBdgt returns the TimeSyncErrBdgt field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgt() int32 {
-	if o == nil || IsNil(o.TimeSyncErrBdgt) {
+	if o == nil || isNil(o.TimeSyncErrBdgt) {
 		var ret int32
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgt() int32 {
 // GetTimeSyncErrBdgtOk returns a tuple with the TimeSyncErrBdgt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgtOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeSyncErrBdgt) {
+	if o == nil || isNil(o.TimeSyncErrBdgt) {
 		return nil, false
 	}
 	return o.TimeSyncErrBdgt, true
@@ -215,7 +215,7 @@ func (o *TimeSyncExposureConfig) GetTimeSyncErrBdgtOk() (*int32, bool) {
 
 // HasTimeSyncErrBdgt returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasTimeSyncErrBdgt() bool {
-	if o != nil && !IsNil(o.TimeSyncErrBdgt) {
+	if o != nil && !isNil(o.TimeSyncErrBdgt) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *TimeSyncExposureConfig) SetConfigNotifUri(v string) {
 
 // GetTempValidity returns the TempValidity field value if set, zero value otherwise.
 func (o *TimeSyncExposureConfig) GetTempValidity() TemporalValidity {
-	if o == nil || IsNil(o.TempValidity) {
+	if o == nil || isNil(o.TempValidity) {
 		var ret TemporalValidity
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *TimeSyncExposureConfig) GetTempValidity() TemporalValidity {
 // GetTempValidityOk returns a tuple with the TempValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureConfig) GetTempValidityOk() (*TemporalValidity, bool) {
-	if o == nil || IsNil(o.TempValidity) {
+	if o == nil || isNil(o.TempValidity) {
 		return nil, false
 	}
 	return o.TempValidity, true
@@ -295,7 +295,7 @@ func (o *TimeSyncExposureConfig) GetTempValidityOk() (*TemporalValidity, bool) {
 
 // HasTempValidity returns a boolean if a field has been set.
 func (o *TimeSyncExposureConfig) HasTempValidity() bool {
-	if o != nil && !IsNil(o.TempValidity) {
+	if o != nil && !isNil(o.TempValidity) {
 		return true
 	}
 
@@ -319,19 +319,19 @@ func (o TimeSyncExposureConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upNodeId"] = o.UpNodeId
 	toSerialize["reqPtpIns"] = o.ReqPtpIns
-	if !IsNil(o.GmEnable) {
+	if !isNil(o.GmEnable) {
 		toSerialize["gmEnable"] = o.GmEnable
 	}
-	if !IsNil(o.GmPrio) {
+	if !isNil(o.GmPrio) {
 		toSerialize["gmPrio"] = o.GmPrio
 	}
 	toSerialize["timeDom"] = o.TimeDom
-	if !IsNil(o.TimeSyncErrBdgt) {
+	if !isNil(o.TimeSyncErrBdgt) {
 		toSerialize["timeSyncErrBdgt"] = o.TimeSyncErrBdgt
 	}
 	toSerialize["configNotifId"] = o.ConfigNotifId
 	toSerialize["configNotifUri"] = o.ConfigNotifUri
-	if !IsNil(o.TempValidity) {
+	if !isNil(o.TempValidity) {
 		toSerialize["tempValidity"] = o.TempValidity
 	}
 	return toSerialize, nil

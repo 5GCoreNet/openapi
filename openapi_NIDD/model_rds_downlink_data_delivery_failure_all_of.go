@@ -45,7 +45,7 @@ func NewRdsDownlinkDataDeliveryFailureAllOfWithDefaults() *RdsDownlinkDataDelive
 
 // GetRequestedRetransmissionTime returns the RequestedRetransmissionTime field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailureAllOf) GetRequestedRetransmissionTime() time.Time {
-	if o == nil || IsNil(o.RequestedRetransmissionTime) {
+	if o == nil || isNil(o.RequestedRetransmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *RdsDownlinkDataDeliveryFailureAllOf) GetRequestedRetransmissionTime() t
 // GetRequestedRetransmissionTimeOk returns a tuple with the RequestedRetransmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailureAllOf) GetRequestedRetransmissionTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RequestedRetransmissionTime) {
+	if o == nil || isNil(o.RequestedRetransmissionTime) {
 		return nil, false
 	}
 	return o.RequestedRetransmissionTime, true
@@ -63,7 +63,7 @@ func (o *RdsDownlinkDataDeliveryFailureAllOf) GetRequestedRetransmissionTimeOk()
 
 // HasRequestedRetransmissionTime returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailureAllOf) HasRequestedRetransmissionTime() bool {
-	if o != nil && !IsNil(o.RequestedRetransmissionTime) {
+	if o != nil && !isNil(o.RequestedRetransmissionTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *RdsDownlinkDataDeliveryFailureAllOf) SetRequestedRetransmissionTime(v t
 
 // GetSupportedUeFormats returns the SupportedUeFormats field value if set, zero value otherwise.
 func (o *RdsDownlinkDataDeliveryFailureAllOf) GetSupportedUeFormats() []SerializationFormat {
-	if o == nil || IsNil(o.SupportedUeFormats) {
+	if o == nil || isNil(o.SupportedUeFormats) {
 		var ret []SerializationFormat
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *RdsDownlinkDataDeliveryFailureAllOf) GetSupportedUeFormats() []Serializ
 // GetSupportedUeFormatsOk returns a tuple with the SupportedUeFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RdsDownlinkDataDeliveryFailureAllOf) GetSupportedUeFormatsOk() ([]SerializationFormat, bool) {
-	if o == nil || IsNil(o.SupportedUeFormats) {
+	if o == nil || isNil(o.SupportedUeFormats) {
 		return nil, false
 	}
 	return o.SupportedUeFormats, true
@@ -95,7 +95,7 @@ func (o *RdsDownlinkDataDeliveryFailureAllOf) GetSupportedUeFormatsOk() ([]Seria
 
 // HasSupportedUeFormats returns a boolean if a field has been set.
 func (o *RdsDownlinkDataDeliveryFailureAllOf) HasSupportedUeFormats() bool {
-	if o != nil && !IsNil(o.SupportedUeFormats) {
+	if o != nil && !isNil(o.SupportedUeFormats) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o RdsDownlinkDataDeliveryFailureAllOf) MarshalJSON() ([]byte, error) {
 
 func (o RdsDownlinkDataDeliveryFailureAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RequestedRetransmissionTime) {
+	if !isNil(o.RequestedRetransmissionTime) {
 		toSerialize["requestedRetransmissionTime"] = o.RequestedRetransmissionTime
 	}
-	if !IsNil(o.SupportedUeFormats) {
+	if !isNil(o.SupportedUeFormats) {
 		toSerialize["supportedUeFormats"] = o.SupportedUeFormats
 	}
 	return toSerialize, nil

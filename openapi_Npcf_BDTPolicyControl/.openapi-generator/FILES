@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -21,6 +20,7 @@ docs/GlobalRanNodeId.md
 docs/IndividualBDTPolicyDocumentApi.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/Ncgi.md
 docs/NetworkAreaInfo.md
 docs/Notification.md
@@ -51,6 +51,7 @@ model_invalid_param.go
 model_ncgi.go
 model_network_area_info.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_notification.go
 model_patch_bdt_policy.go
 model_plmn_id.go

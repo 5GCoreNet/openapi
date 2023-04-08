@@ -67,7 +67,7 @@ func (o *SubsEventNotification) SetEvent(v SubscribedEvent) {
 
 // GetTimeSyncCapas returns the TimeSyncCapas field value if set, zero value otherwise.
 func (o *SubsEventNotification) GetTimeSyncCapas() []TimeSyncCapability {
-	if o == nil || IsNil(o.TimeSyncCapas) {
+	if o == nil || isNil(o.TimeSyncCapas) {
 		var ret []TimeSyncCapability
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SubsEventNotification) GetTimeSyncCapas() []TimeSyncCapability {
 // GetTimeSyncCapasOk returns a tuple with the TimeSyncCapas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubsEventNotification) GetTimeSyncCapasOk() ([]TimeSyncCapability, bool) {
-	if o == nil || IsNil(o.TimeSyncCapas) {
+	if o == nil || isNil(o.TimeSyncCapas) {
 		return nil, false
 	}
 	return o.TimeSyncCapas, true
@@ -85,7 +85,7 @@ func (o *SubsEventNotification) GetTimeSyncCapasOk() ([]TimeSyncCapability, bool
 
 // HasTimeSyncCapas returns a boolean if a field has been set.
 func (o *SubsEventNotification) HasTimeSyncCapas() bool {
-	if o != nil && !IsNil(o.TimeSyncCapas) {
+	if o != nil && !isNil(o.TimeSyncCapas) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SubsEventNotification) MarshalJSON() ([]byte, error) {
 func (o SubsEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.TimeSyncCapas) {
+	if !isNil(o.TimeSyncCapas) {
 		toSerialize["timeSyncCapas"] = o.TimeSyncCapas
 	}
 	return toSerialize, nil

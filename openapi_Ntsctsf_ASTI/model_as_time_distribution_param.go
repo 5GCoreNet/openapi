@@ -45,7 +45,7 @@ func NewAsTimeDistributionParamWithDefaults() *AsTimeDistributionParam {
 
 // GetAsTimeDisEnabled returns the AsTimeDisEnabled field value if set, zero value otherwise.
 func (o *AsTimeDistributionParam) GetAsTimeDisEnabled() bool {
-	if o == nil || IsNil(o.AsTimeDisEnabled) {
+	if o == nil || isNil(o.AsTimeDisEnabled) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AsTimeDistributionParam) GetAsTimeDisEnabled() bool {
 // GetAsTimeDisEnabledOk returns a tuple with the AsTimeDisEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsTimeDistributionParam) GetAsTimeDisEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.AsTimeDisEnabled) {
+	if o == nil || isNil(o.AsTimeDisEnabled) {
 		return nil, false
 	}
 	return o.AsTimeDisEnabled, true
@@ -63,7 +63,7 @@ func (o *AsTimeDistributionParam) GetAsTimeDisEnabledOk() (*bool, bool) {
 
 // HasAsTimeDisEnabled returns a boolean if a field has been set.
 func (o *AsTimeDistributionParam) HasAsTimeDisEnabled() bool {
-	if o != nil && !IsNil(o.AsTimeDisEnabled) {
+	if o != nil && !isNil(o.AsTimeDisEnabled) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AsTimeDistributionParam) SetAsTimeDisEnabled(v bool) {
 
 // GetTimeSyncErrBdgt returns the TimeSyncErrBdgt field value if set, zero value otherwise.
 func (o *AsTimeDistributionParam) GetTimeSyncErrBdgt() int32 {
-	if o == nil || IsNil(o.TimeSyncErrBdgt) {
+	if o == nil || isNil(o.TimeSyncErrBdgt) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AsTimeDistributionParam) GetTimeSyncErrBdgt() int32 {
 // GetTimeSyncErrBdgtOk returns a tuple with the TimeSyncErrBdgt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsTimeDistributionParam) GetTimeSyncErrBdgtOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeSyncErrBdgt) {
+	if o == nil || isNil(o.TimeSyncErrBdgt) {
 		return nil, false
 	}
 	return o.TimeSyncErrBdgt, true
@@ -95,7 +95,7 @@ func (o *AsTimeDistributionParam) GetTimeSyncErrBdgtOk() (*int32, bool) {
 
 // HasTimeSyncErrBdgt returns a boolean if a field has been set.
 func (o *AsTimeDistributionParam) HasTimeSyncErrBdgt() bool {
-	if o != nil && !IsNil(o.TimeSyncErrBdgt) {
+	if o != nil && !isNil(o.TimeSyncErrBdgt) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AsTimeDistributionParam) SetTimeSyncErrBdgt(v int32) {
 
 // GetTempValidity returns the TempValidity field value if set, zero value otherwise.
 func (o *AsTimeDistributionParam) GetTempValidity() TemporalValidity {
-	if o == nil || IsNil(o.TempValidity) {
+	if o == nil || isNil(o.TempValidity) {
 		var ret TemporalValidity
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AsTimeDistributionParam) GetTempValidity() TemporalValidity {
 // GetTempValidityOk returns a tuple with the TempValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsTimeDistributionParam) GetTempValidityOk() (*TemporalValidity, bool) {
-	if o == nil || IsNil(o.TempValidity) {
+	if o == nil || isNil(o.TempValidity) {
 		return nil, false
 	}
 	return o.TempValidity, true
@@ -127,7 +127,7 @@ func (o *AsTimeDistributionParam) GetTempValidityOk() (*TemporalValidity, bool) 
 
 // HasTempValidity returns a boolean if a field has been set.
 func (o *AsTimeDistributionParam) HasTempValidity() bool {
-	if o != nil && !IsNil(o.TempValidity) {
+	if o != nil && !isNil(o.TempValidity) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o AsTimeDistributionParam) MarshalJSON() ([]byte, error) {
 
 func (o AsTimeDistributionParam) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AsTimeDisEnabled) {
+	if !isNil(o.AsTimeDisEnabled) {
 		toSerialize["asTimeDisEnabled"] = o.AsTimeDisEnabled
 	}
-	if !IsNil(o.TimeSyncErrBdgt) {
+	if !isNil(o.TimeSyncErrBdgt) {
 		toSerialize["timeSyncErrBdgt"] = o.TimeSyncErrBdgt
 	}
-	if !IsNil(o.TempValidity) {
+	if !isNil(o.TempValidity) {
 		toSerialize["tempValidity"] = o.TempValidity
 	}
 	return toSerialize, nil

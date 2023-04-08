@@ -13,7 +13,7 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -83,10 +83,10 @@ func (a *IMSProfileDataRetrievalApiService) GetProfileDataExecute(r ApiGetProfil
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dataset-names", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "dataset-names", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "dataset-names", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "dataset-names", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -116,9 +116,9 @@ func (a *IMSProfileDataRetrievalApiService) GetProfileDataExecute(r ApiGetProfil
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

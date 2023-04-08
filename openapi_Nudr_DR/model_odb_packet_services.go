@@ -17,13 +17,26 @@ import (
 
 // OdbPacketServices The enumeration OdbPacketServices defines the Barring of Packet Oriented Services. See 3GPP TS 23.015 for further description. It shall comply with the provisions defined in table 5.7.3.2-1 
 type OdbPacketServices struct {
+	AnyOfstringstring *AnyOfstringstring
 	NullValue *NullValue
-	OdbPacketServicesAnyOf *OdbPacketServicesAnyOf
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *OdbPacketServices) UnmarshalJSON(data []byte) error {
 	var err error
+	// try to unmarshal JSON data into AnyOfstringstring
+	err = json.Unmarshal(data, &dst.AnyOfstringstring);
+	if err == nil {
+		jsonAnyOfstringstring, _ := json.Marshal(dst.AnyOfstringstring)
+		if string(jsonAnyOfstringstring) == "{}" { // empty struct
+			dst.AnyOfstringstring = nil
+		} else {
+			return nil // data stored in dst.AnyOfstringstring, return on the first match
+		}
+	} else {
+		dst.AnyOfstringstring = nil
+	}
+
 	// try to unmarshal JSON data into NullValue
 	err = json.Unmarshal(data, &dst.NullValue);
 	if err == nil {
@@ -37,30 +50,17 @@ func (dst *OdbPacketServices) UnmarshalJSON(data []byte) error {
 		dst.NullValue = nil
 	}
 
-	// try to unmarshal JSON data into OdbPacketServicesAnyOf
-	err = json.Unmarshal(data, &dst.OdbPacketServicesAnyOf);
-	if err == nil {
-		jsonOdbPacketServicesAnyOf, _ := json.Marshal(dst.OdbPacketServicesAnyOf)
-		if string(jsonOdbPacketServicesAnyOf) == "{}" { // empty struct
-			dst.OdbPacketServicesAnyOf = nil
-		} else {
-			return nil // data stored in dst.OdbPacketServicesAnyOf, return on the first match
-		}
-	} else {
-		dst.OdbPacketServicesAnyOf = nil
-	}
-
 	return fmt.Errorf("data failed to match schemas in anyOf(OdbPacketServices)")
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *OdbPacketServices) MarshalJSON() ([]byte, error) {
-	if src.NullValue != nil {
-		return json.Marshal(&src.NullValue)
+	if src.AnyOfstringstring != nil {
+		return json.Marshal(&src.AnyOfstringstring)
 	}
 
-	if src.OdbPacketServicesAnyOf != nil {
-		return json.Marshal(&src.OdbPacketServicesAnyOf)
+	if src.NullValue != nil {
+		return json.Marshal(&src.NullValue)
 	}
 
 	return nil, nil // no data in anyOf schemas

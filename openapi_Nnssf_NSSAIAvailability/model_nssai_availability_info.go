@@ -69,7 +69,7 @@ func (o *NssaiAvailabilityInfo) SetSupportedNssaiAvailabilityData(v []SupportedN
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NssaiAvailabilityInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NssaiAvailabilityInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssaiAvailabilityInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -87,7 +87,7 @@ func (o *NssaiAvailabilityInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NssaiAvailabilityInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *NssaiAvailabilityInfo) SetSupportedFeatures(v string) {
 
 // GetAmfSetId returns the AmfSetId field value if set, zero value otherwise.
 func (o *NssaiAvailabilityInfo) GetAmfSetId() string {
-	if o == nil || IsNil(o.AmfSetId) {
+	if o == nil || isNil(o.AmfSetId) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NssaiAvailabilityInfo) GetAmfSetId() string {
 // GetAmfSetIdOk returns a tuple with the AmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssaiAvailabilityInfo) GetAmfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfSetId) {
+	if o == nil || isNil(o.AmfSetId) {
 		return nil, false
 	}
 	return o.AmfSetId, true
@@ -119,7 +119,7 @@ func (o *NssaiAvailabilityInfo) GetAmfSetIdOk() (*string, bool) {
 
 // HasAmfSetId returns a boolean if a field has been set.
 func (o *NssaiAvailabilityInfo) HasAmfSetId() bool {
-	if o != nil && !IsNil(o.AmfSetId) {
+	if o != nil && !isNil(o.AmfSetId) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o NssaiAvailabilityInfo) MarshalJSON() ([]byte, error) {
 func (o NssaiAvailabilityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supportedNssaiAvailabilityData"] = o.SupportedNssaiAvailabilityData
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.AmfSetId) {
+	if !isNil(o.AmfSetId) {
 		toSerialize["amfSetId"] = o.AmfSetId
 	}
 	return toSerialize, nil

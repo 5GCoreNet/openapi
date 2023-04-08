@@ -19,7 +19,7 @@ var _ MappedNullable = &EASDFFunctionSingleAllOf{}
 
 // EASDFFunctionSingleAllOf struct for EASDFFunctionSingleAllOf
 type EASDFFunctionSingleAllOf struct {
-	Attributes *EASDFFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewEASDFFunctionSingleAllOf instantiates a new EASDFFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewEASDFFunctionSingleAllOfWithDefaults() *EASDFFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *EASDFFunctionSingleAllOf) GetAttributes() EASDFFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret EASDFFunctionSingleAllOfAttributes
+func (o *EASDFFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *EASDFFunctionSingleAllOf) GetAttributes() EASDFFunctionSingleAllOfAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EASDFFunctionSingleAllOf) GetAttributesOk() (*EASDFFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *EASDFFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *EASDFFunctionSingleAllOf) GetAttributesOk() (*EASDFFunctionSingleAllOfA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EASDFFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given EASDFFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *EASDFFunctionSingleAllOf) SetAttributes(v EASDFFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *EASDFFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o EASDFFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o EASDFFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

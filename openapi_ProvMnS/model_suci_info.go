@@ -42,7 +42,7 @@ func NewSuciInfoWithDefaults() *SuciInfo {
 
 // GetRoutingInds returns the RoutingInds field value if set, zero value otherwise.
 func (o *SuciInfo) GetRoutingInds() []string {
-	if o == nil || IsNil(o.RoutingInds) {
+	if o == nil || isNil(o.RoutingInds) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SuciInfo) GetRoutingInds() []string {
 // GetRoutingIndsOk returns a tuple with the RoutingInds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SuciInfo) GetRoutingIndsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RoutingInds) {
+	if o == nil || isNil(o.RoutingInds) {
 		return nil, false
 	}
 	return o.RoutingInds, true
@@ -60,7 +60,7 @@ func (o *SuciInfo) GetRoutingIndsOk() ([]string, bool) {
 
 // HasRoutingInds returns a boolean if a field has been set.
 func (o *SuciInfo) HasRoutingInds() bool {
-	if o != nil && !IsNil(o.RoutingInds) {
+	if o != nil && !isNil(o.RoutingInds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SuciInfo) SetRoutingInds(v []string) {
 
 // GetHNwPubKeyIds returns the HNwPubKeyIds field value if set, zero value otherwise.
 func (o *SuciInfo) GetHNwPubKeyIds() []int32 {
-	if o == nil || IsNil(o.HNwPubKeyIds) {
+	if o == nil || isNil(o.HNwPubKeyIds) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SuciInfo) GetHNwPubKeyIds() []int32 {
 // GetHNwPubKeyIdsOk returns a tuple with the HNwPubKeyIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SuciInfo) GetHNwPubKeyIdsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.HNwPubKeyIds) {
+	if o == nil || isNil(o.HNwPubKeyIds) {
 		return nil, false
 	}
 	return o.HNwPubKeyIds, true
@@ -92,7 +92,7 @@ func (o *SuciInfo) GetHNwPubKeyIdsOk() ([]int32, bool) {
 
 // HasHNwPubKeyIds returns a boolean if a field has been set.
 func (o *SuciInfo) HasHNwPubKeyIds() bool {
-	if o != nil && !IsNil(o.HNwPubKeyIds) {
+	if o != nil && !isNil(o.HNwPubKeyIds) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SuciInfo) MarshalJSON() ([]byte, error) {
 
 func (o SuciInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RoutingInds) {
+	if !isNil(o.RoutingInds) {
 		toSerialize["routingInds"] = o.RoutingInds
 	}
-	if !IsNil(o.HNwPubKeyIds) {
+	if !isNil(o.HNwPubKeyIds) {
 		toSerialize["hNwPubKeyIds"] = o.HNwPubKeyIds
 	}
 	return toSerialize, nil

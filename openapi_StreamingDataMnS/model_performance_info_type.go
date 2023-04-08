@@ -94,7 +94,7 @@ func (o *PerformanceInfoType) SetPerformanceMetrics(v []string) {
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *PerformanceInfoType) GetJobId() string {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *PerformanceInfoType) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceInfoType) GetJobIdOk() (*string, bool) {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -112,7 +112,7 @@ func (o *PerformanceInfoType) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *PerformanceInfoType) HasJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
+	if o != nil && !isNil(o.JobId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o PerformanceInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["measObjDn"] = o.MeasObjDn
 	toSerialize["performanceMetrics"] = o.PerformanceMetrics
-	if !IsNil(o.JobId) {
+	if !isNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
 	return toSerialize, nil

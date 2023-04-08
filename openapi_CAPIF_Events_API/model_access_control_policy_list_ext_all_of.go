@@ -41,7 +41,7 @@ func NewAccessControlPolicyListExtAllOfWithDefaults() *AccessControlPolicyListEx
 
 // GetApiId returns the ApiId field value if set, zero value otherwise.
 func (o *AccessControlPolicyListExtAllOf) GetApiId() string {
-	if o == nil || IsNil(o.ApiId) {
+	if o == nil || isNil(o.ApiId) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AccessControlPolicyListExtAllOf) GetApiId() string {
 // GetApiIdOk returns a tuple with the ApiId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessControlPolicyListExtAllOf) GetApiIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiId) {
+	if o == nil || isNil(o.ApiId) {
 		return nil, false
 	}
 	return o.ApiId, true
@@ -59,7 +59,7 @@ func (o *AccessControlPolicyListExtAllOf) GetApiIdOk() (*string, bool) {
 
 // HasApiId returns a boolean if a field has been set.
 func (o *AccessControlPolicyListExtAllOf) HasApiId() bool {
-	if o != nil && !IsNil(o.ApiId) {
+	if o != nil && !isNil(o.ApiId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AccessControlPolicyListExtAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AccessControlPolicyListExtAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiId) {
+	if !isNil(o.ApiId) {
 		toSerialize["apiId"] = o.ApiId
 	}
 	return toSerialize, nil

@@ -94,7 +94,7 @@ func (o *AuthenticationSubscription) SetAuthenticationMethod(v AuthMethod) {
 
 // GetEncPermanentKey returns the EncPermanentKey field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetEncPermanentKey() string {
-	if o == nil || IsNil(o.EncPermanentKey) {
+	if o == nil || isNil(o.EncPermanentKey) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *AuthenticationSubscription) GetEncPermanentKey() string {
 // GetEncPermanentKeyOk returns a tuple with the EncPermanentKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetEncPermanentKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.EncPermanentKey) {
+	if o == nil || isNil(o.EncPermanentKey) {
 		return nil, false
 	}
 	return o.EncPermanentKey, true
@@ -112,7 +112,7 @@ func (o *AuthenticationSubscription) GetEncPermanentKeyOk() (*string, bool) {
 
 // HasEncPermanentKey returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasEncPermanentKey() bool {
-	if o != nil && !IsNil(o.EncPermanentKey) {
+	if o != nil && !isNil(o.EncPermanentKey) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *AuthenticationSubscription) SetEncPermanentKey(v string) {
 
 // GetProtectionParameterId returns the ProtectionParameterId field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetProtectionParameterId() string {
-	if o == nil || IsNil(o.ProtectionParameterId) {
+	if o == nil || isNil(o.ProtectionParameterId) {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *AuthenticationSubscription) GetProtectionParameterId() string {
 // GetProtectionParameterIdOk returns a tuple with the ProtectionParameterId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetProtectionParameterIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProtectionParameterId) {
+	if o == nil || isNil(o.ProtectionParameterId) {
 		return nil, false
 	}
 	return o.ProtectionParameterId, true
@@ -144,7 +144,7 @@ func (o *AuthenticationSubscription) GetProtectionParameterIdOk() (*string, bool
 
 // HasProtectionParameterId returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasProtectionParameterId() bool {
-	if o != nil && !IsNil(o.ProtectionParameterId) {
+	if o != nil && !isNil(o.ProtectionParameterId) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *AuthenticationSubscription) SetProtectionParameterId(v string) {
 
 // GetSequenceNumber returns the SequenceNumber field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetSequenceNumber() SequenceNumber {
-	if o == nil || IsNil(o.SequenceNumber) {
+	if o == nil || isNil(o.SequenceNumber) {
 		var ret SequenceNumber
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *AuthenticationSubscription) GetSequenceNumber() SequenceNumber {
 // GetSequenceNumberOk returns a tuple with the SequenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetSequenceNumberOk() (*SequenceNumber, bool) {
-	if o == nil || IsNil(o.SequenceNumber) {
+	if o == nil || isNil(o.SequenceNumber) {
 		return nil, false
 	}
 	return o.SequenceNumber, true
@@ -176,7 +176,7 @@ func (o *AuthenticationSubscription) GetSequenceNumberOk() (*SequenceNumber, boo
 
 // HasSequenceNumber returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasSequenceNumber() bool {
-	if o != nil && !IsNil(o.SequenceNumber) {
+	if o != nil && !isNil(o.SequenceNumber) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *AuthenticationSubscription) SetSequenceNumber(v SequenceNumber) {
 
 // GetAuthenticationManagementField returns the AuthenticationManagementField field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetAuthenticationManagementField() string {
-	if o == nil || IsNil(o.AuthenticationManagementField) {
+	if o == nil || isNil(o.AuthenticationManagementField) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *AuthenticationSubscription) GetAuthenticationManagementField() string {
 // GetAuthenticationManagementFieldOk returns a tuple with the AuthenticationManagementField field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetAuthenticationManagementFieldOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthenticationManagementField) {
+	if o == nil || isNil(o.AuthenticationManagementField) {
 		return nil, false
 	}
 	return o.AuthenticationManagementField, true
@@ -208,7 +208,7 @@ func (o *AuthenticationSubscription) GetAuthenticationManagementFieldOk() (*stri
 
 // HasAuthenticationManagementField returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasAuthenticationManagementField() bool {
-	if o != nil && !IsNil(o.AuthenticationManagementField) {
+	if o != nil && !isNil(o.AuthenticationManagementField) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *AuthenticationSubscription) SetAuthenticationManagementField(v string) 
 
 // GetAlgorithmId returns the AlgorithmId field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetAlgorithmId() string {
-	if o == nil || IsNil(o.AlgorithmId) {
+	if o == nil || isNil(o.AlgorithmId) {
 		var ret string
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *AuthenticationSubscription) GetAlgorithmId() string {
 // GetAlgorithmIdOk returns a tuple with the AlgorithmId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetAlgorithmIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AlgorithmId) {
+	if o == nil || isNil(o.AlgorithmId) {
 		return nil, false
 	}
 	return o.AlgorithmId, true
@@ -240,7 +240,7 @@ func (o *AuthenticationSubscription) GetAlgorithmIdOk() (*string, bool) {
 
 // HasAlgorithmId returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasAlgorithmId() bool {
-	if o != nil && !IsNil(o.AlgorithmId) {
+	if o != nil && !isNil(o.AlgorithmId) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *AuthenticationSubscription) SetAlgorithmId(v string) {
 
 // GetEncOpcKey returns the EncOpcKey field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetEncOpcKey() string {
-	if o == nil || IsNil(o.EncOpcKey) {
+	if o == nil || isNil(o.EncOpcKey) {
 		var ret string
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *AuthenticationSubscription) GetEncOpcKey() string {
 // GetEncOpcKeyOk returns a tuple with the EncOpcKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetEncOpcKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.EncOpcKey) {
+	if o == nil || isNil(o.EncOpcKey) {
 		return nil, false
 	}
 	return o.EncOpcKey, true
@@ -272,7 +272,7 @@ func (o *AuthenticationSubscription) GetEncOpcKeyOk() (*string, bool) {
 
 // HasEncOpcKey returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasEncOpcKey() bool {
-	if o != nil && !IsNil(o.EncOpcKey) {
+	if o != nil && !isNil(o.EncOpcKey) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *AuthenticationSubscription) SetEncOpcKey(v string) {
 
 // GetEncTopcKey returns the EncTopcKey field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetEncTopcKey() string {
-	if o == nil || IsNil(o.EncTopcKey) {
+	if o == nil || isNil(o.EncTopcKey) {
 		var ret string
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *AuthenticationSubscription) GetEncTopcKey() string {
 // GetEncTopcKeyOk returns a tuple with the EncTopcKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetEncTopcKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.EncTopcKey) {
+	if o == nil || isNil(o.EncTopcKey) {
 		return nil, false
 	}
 	return o.EncTopcKey, true
@@ -304,7 +304,7 @@ func (o *AuthenticationSubscription) GetEncTopcKeyOk() (*string, bool) {
 
 // HasEncTopcKey returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasEncTopcKey() bool {
-	if o != nil && !IsNil(o.EncTopcKey) {
+	if o != nil && !isNil(o.EncTopcKey) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *AuthenticationSubscription) SetEncTopcKey(v string) {
 
 // GetVectorGenerationInHss returns the VectorGenerationInHss field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetVectorGenerationInHss() bool {
-	if o == nil || IsNil(o.VectorGenerationInHss) {
+	if o == nil || isNil(o.VectorGenerationInHss) {
 		var ret bool
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *AuthenticationSubscription) GetVectorGenerationInHss() bool {
 // GetVectorGenerationInHssOk returns a tuple with the VectorGenerationInHss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetVectorGenerationInHssOk() (*bool, bool) {
-	if o == nil || IsNil(o.VectorGenerationInHss) {
+	if o == nil || isNil(o.VectorGenerationInHss) {
 		return nil, false
 	}
 	return o.VectorGenerationInHss, true
@@ -336,7 +336,7 @@ func (o *AuthenticationSubscription) GetVectorGenerationInHssOk() (*bool, bool) 
 
 // HasVectorGenerationInHss returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasVectorGenerationInHss() bool {
-	if o != nil && !IsNil(o.VectorGenerationInHss) {
+	if o != nil && !isNil(o.VectorGenerationInHss) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *AuthenticationSubscription) SetVectorGenerationInHss(v bool) {
 
 // GetHssGroupId returns the HssGroupId field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetHssGroupId() string {
-	if o == nil || IsNil(o.HssGroupId) {
+	if o == nil || isNil(o.HssGroupId) {
 		var ret string
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *AuthenticationSubscription) GetHssGroupId() string {
 // GetHssGroupIdOk returns a tuple with the HssGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetHssGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.HssGroupId) {
+	if o == nil || isNil(o.HssGroupId) {
 		return nil, false
 	}
 	return o.HssGroupId, true
@@ -368,7 +368,7 @@ func (o *AuthenticationSubscription) GetHssGroupIdOk() (*string, bool) {
 
 // HasHssGroupId returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasHssGroupId() bool {
-	if o != nil && !IsNil(o.HssGroupId) {
+	if o != nil && !isNil(o.HssGroupId) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *AuthenticationSubscription) SetHssGroupId(v string) {
 
 // GetN5gcAuthMethod returns the N5gcAuthMethod field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetN5gcAuthMethod() AuthMethod {
-	if o == nil || IsNil(o.N5gcAuthMethod) {
+	if o == nil || isNil(o.N5gcAuthMethod) {
 		var ret AuthMethod
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *AuthenticationSubscription) GetN5gcAuthMethod() AuthMethod {
 // GetN5gcAuthMethodOk returns a tuple with the N5gcAuthMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetN5gcAuthMethodOk() (*AuthMethod, bool) {
-	if o == nil || IsNil(o.N5gcAuthMethod) {
+	if o == nil || isNil(o.N5gcAuthMethod) {
 		return nil, false
 	}
 	return o.N5gcAuthMethod, true
@@ -400,7 +400,7 @@ func (o *AuthenticationSubscription) GetN5gcAuthMethodOk() (*AuthMethod, bool) {
 
 // HasN5gcAuthMethod returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasN5gcAuthMethod() bool {
-	if o != nil && !IsNil(o.N5gcAuthMethod) {
+	if o != nil && !isNil(o.N5gcAuthMethod) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *AuthenticationSubscription) SetN5gcAuthMethod(v AuthMethod) {
 
 // GetRgAuthenticationInd returns the RgAuthenticationInd field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetRgAuthenticationInd() bool {
-	if o == nil || IsNil(o.RgAuthenticationInd) {
+	if o == nil || isNil(o.RgAuthenticationInd) {
 		var ret bool
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *AuthenticationSubscription) GetRgAuthenticationInd() bool {
 // GetRgAuthenticationIndOk returns a tuple with the RgAuthenticationInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetRgAuthenticationIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.RgAuthenticationInd) {
+	if o == nil || isNil(o.RgAuthenticationInd) {
 		return nil, false
 	}
 	return o.RgAuthenticationInd, true
@@ -432,7 +432,7 @@ func (o *AuthenticationSubscription) GetRgAuthenticationIndOk() (*bool, bool) {
 
 // HasRgAuthenticationInd returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasRgAuthenticationInd() bool {
-	if o != nil && !IsNil(o.RgAuthenticationInd) {
+	if o != nil && !isNil(o.RgAuthenticationInd) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *AuthenticationSubscription) SetRgAuthenticationInd(v bool) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *AuthenticationSubscription) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -464,7 +464,7 @@ func (o *AuthenticationSubscription) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -478,7 +478,7 @@ func (o *AuthenticationSubscription) SetSupi(v string) {
 
 // GetAkmaAllowed returns the AkmaAllowed field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetAkmaAllowed() bool {
-	if o == nil || IsNil(o.AkmaAllowed) {
+	if o == nil || isNil(o.AkmaAllowed) {
 		var ret bool
 		return ret
 	}
@@ -488,7 +488,7 @@ func (o *AuthenticationSubscription) GetAkmaAllowed() bool {
 // GetAkmaAllowedOk returns a tuple with the AkmaAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetAkmaAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.AkmaAllowed) {
+	if o == nil || isNil(o.AkmaAllowed) {
 		return nil, false
 	}
 	return o.AkmaAllowed, true
@@ -496,7 +496,7 @@ func (o *AuthenticationSubscription) GetAkmaAllowedOk() (*bool, bool) {
 
 // HasAkmaAllowed returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasAkmaAllowed() bool {
-	if o != nil && !IsNil(o.AkmaAllowed) {
+	if o != nil && !isNil(o.AkmaAllowed) {
 		return true
 	}
 
@@ -510,7 +510,7 @@ func (o *AuthenticationSubscription) SetAkmaAllowed(v bool) {
 
 // GetRoutingId returns the RoutingId field value if set, zero value otherwise.
 func (o *AuthenticationSubscription) GetRoutingId() string {
-	if o == nil || IsNil(o.RoutingId) {
+	if o == nil || isNil(o.RoutingId) {
 		var ret string
 		return ret
 	}
@@ -520,7 +520,7 @@ func (o *AuthenticationSubscription) GetRoutingId() string {
 // GetRoutingIdOk returns a tuple with the RoutingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationSubscription) GetRoutingIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingId) {
+	if o == nil || isNil(o.RoutingId) {
 		return nil, false
 	}
 	return o.RoutingId, true
@@ -528,7 +528,7 @@ func (o *AuthenticationSubscription) GetRoutingIdOk() (*string, bool) {
 
 // HasRoutingId returns a boolean if a field has been set.
 func (o *AuthenticationSubscription) HasRoutingId() bool {
-	if o != nil && !IsNil(o.RoutingId) {
+	if o != nil && !isNil(o.RoutingId) {
 		return true
 	}
 
@@ -551,46 +551,46 @@ func (o AuthenticationSubscription) MarshalJSON() ([]byte, error) {
 func (o AuthenticationSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authenticationMethod"] = o.AuthenticationMethod
-	if !IsNil(o.EncPermanentKey) {
+	if !isNil(o.EncPermanentKey) {
 		toSerialize["encPermanentKey"] = o.EncPermanentKey
 	}
-	if !IsNil(o.ProtectionParameterId) {
+	if !isNil(o.ProtectionParameterId) {
 		toSerialize["protectionParameterId"] = o.ProtectionParameterId
 	}
-	if !IsNil(o.SequenceNumber) {
+	if !isNil(o.SequenceNumber) {
 		toSerialize["sequenceNumber"] = o.SequenceNumber
 	}
-	if !IsNil(o.AuthenticationManagementField) {
+	if !isNil(o.AuthenticationManagementField) {
 		toSerialize["authenticationManagementField"] = o.AuthenticationManagementField
 	}
-	if !IsNil(o.AlgorithmId) {
+	if !isNil(o.AlgorithmId) {
 		toSerialize["algorithmId"] = o.AlgorithmId
 	}
-	if !IsNil(o.EncOpcKey) {
+	if !isNil(o.EncOpcKey) {
 		toSerialize["encOpcKey"] = o.EncOpcKey
 	}
-	if !IsNil(o.EncTopcKey) {
+	if !isNil(o.EncTopcKey) {
 		toSerialize["encTopcKey"] = o.EncTopcKey
 	}
-	if !IsNil(o.VectorGenerationInHss) {
+	if !isNil(o.VectorGenerationInHss) {
 		toSerialize["vectorGenerationInHss"] = o.VectorGenerationInHss
 	}
-	if !IsNil(o.HssGroupId) {
+	if !isNil(o.HssGroupId) {
 		toSerialize["hssGroupId"] = o.HssGroupId
 	}
-	if !IsNil(o.N5gcAuthMethod) {
+	if !isNil(o.N5gcAuthMethod) {
 		toSerialize["n5gcAuthMethod"] = o.N5gcAuthMethod
 	}
-	if !IsNil(o.RgAuthenticationInd) {
+	if !isNil(o.RgAuthenticationInd) {
 		toSerialize["rgAuthenticationInd"] = o.RgAuthenticationInd
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.AkmaAllowed) {
+	if !isNil(o.AkmaAllowed) {
 		toSerialize["akmaAllowed"] = o.AkmaAllowed
 	}
-	if !IsNil(o.RoutingId) {
+	if !isNil(o.RoutingId) {
 		toSerialize["routingId"] = o.RoutingId
 	}
 	return toSerialize, nil

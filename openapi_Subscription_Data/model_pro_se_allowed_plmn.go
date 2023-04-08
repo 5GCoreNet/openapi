@@ -67,7 +67,7 @@ func (o *ProSeAllowedPlmn) SetVisitedPlmn(v PlmnId) {
 
 // GetProseDirectAllowed returns the ProseDirectAllowed field value if set, zero value otherwise.
 func (o *ProSeAllowedPlmn) GetProseDirectAllowed() []ProseDirectAllowed {
-	if o == nil || IsNil(o.ProseDirectAllowed) {
+	if o == nil || isNil(o.ProseDirectAllowed) {
 		var ret []ProseDirectAllowed
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ProSeAllowedPlmn) GetProseDirectAllowed() []ProseDirectAllowed {
 // GetProseDirectAllowedOk returns a tuple with the ProseDirectAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAllowedPlmn) GetProseDirectAllowedOk() ([]ProseDirectAllowed, bool) {
-	if o == nil || IsNil(o.ProseDirectAllowed) {
+	if o == nil || isNil(o.ProseDirectAllowed) {
 		return nil, false
 	}
 	return o.ProseDirectAllowed, true
@@ -85,7 +85,7 @@ func (o *ProSeAllowedPlmn) GetProseDirectAllowedOk() ([]ProseDirectAllowed, bool
 
 // HasProseDirectAllowed returns a boolean if a field has been set.
 func (o *ProSeAllowedPlmn) HasProseDirectAllowed() bool {
-	if o != nil && !IsNil(o.ProseDirectAllowed) {
+	if o != nil && !isNil(o.ProseDirectAllowed) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ProSeAllowedPlmn) MarshalJSON() ([]byte, error) {
 func (o ProSeAllowedPlmn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["visitedPlmn"] = o.VisitedPlmn
-	if !IsNil(o.ProseDirectAllowed) {
+	if !isNil(o.ProseDirectAllowed) {
 		toSerialize["proseDirectAllowed"] = o.ProseDirectAllowed
 	}
 	return toSerialize, nil

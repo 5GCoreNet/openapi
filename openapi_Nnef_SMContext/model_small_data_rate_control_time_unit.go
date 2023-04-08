@@ -17,23 +17,37 @@ import (
 
 // SmallDataRateControlTimeUnit Possible values are - MINUTE: Indicates the rate control is applied per minute. - HOUR: Indicates the rate control is applied per hour. - DAY: Indicates the rate control is applied per day. - WEEK: Indicates the rate control is applied per week. - 6MINUTES: Indicates the rate control is applied per 6 minutes. 
 type SmallDataRateControlTimeUnit struct {
-	string *string
+	SmallDataRateControlTimeUnitAnyOf *SmallDataRateControlTimeUnitAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmallDataRateControlTimeUnit) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SmallDataRateControlTimeUnitAnyOf
+	err = json.Unmarshal(data, &dst.SmallDataRateControlTimeUnitAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSmallDataRateControlTimeUnitAnyOf, _ := json.Marshal(dst.SmallDataRateControlTimeUnitAnyOf)
+		if string(jsonSmallDataRateControlTimeUnitAnyOf) == "{}" { // empty struct
+			dst.SmallDataRateControlTimeUnitAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SmallDataRateControlTimeUnitAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SmallDataRateControlTimeUnitAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SmallDataRateControlTimeUnit)")
@@ -41,8 +55,12 @@ func (dst *SmallDataRateControlTimeUnit) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmallDataRateControlTimeUnit) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SmallDataRateControlTimeUnitAnyOf != nil {
+		return json.Marshal(&src.SmallDataRateControlTimeUnitAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

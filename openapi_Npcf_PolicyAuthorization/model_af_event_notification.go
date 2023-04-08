@@ -69,7 +69,7 @@ func (o *AfEventNotification) SetEvent(v AfEvent) {
 
 // GetFlows returns the Flows field value if set, zero value otherwise.
 func (o *AfEventNotification) GetFlows() []Flows {
-	if o == nil || IsNil(o.Flows) {
+	if o == nil || isNil(o.Flows) {
 		var ret []Flows
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AfEventNotification) GetFlows() []Flows {
 // GetFlowsOk returns a tuple with the Flows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventNotification) GetFlowsOk() ([]Flows, bool) {
-	if o == nil || IsNil(o.Flows) {
+	if o == nil || isNil(o.Flows) {
 		return nil, false
 	}
 	return o.Flows, true
@@ -87,7 +87,7 @@ func (o *AfEventNotification) GetFlowsOk() ([]Flows, bool) {
 
 // HasFlows returns a boolean if a field has been set.
 func (o *AfEventNotification) HasFlows() bool {
-	if o != nil && !IsNil(o.Flows) {
+	if o != nil && !isNil(o.Flows) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AfEventNotification) SetFlows(v []Flows) {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *AfEventNotification) GetRetryAfter() int32 {
-	if o == nil || IsNil(o.RetryAfter) {
+	if o == nil || isNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AfEventNotification) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventNotification) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || IsNil(o.RetryAfter) {
+	if o == nil || isNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -119,7 +119,7 @@ func (o *AfEventNotification) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *AfEventNotification) HasRetryAfter() bool {
-	if o != nil && !IsNil(o.RetryAfter) {
+	if o != nil && !isNil(o.RetryAfter) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o AfEventNotification) MarshalJSON() ([]byte, error) {
 func (o AfEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.Flows) {
+	if !isNil(o.Flows) {
 		toSerialize["flows"] = o.Flows
 	}
-	if !IsNil(o.RetryAfter) {
+	if !isNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
 	return toSerialize, nil

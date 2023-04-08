@@ -17,23 +17,37 @@ import (
 
 // ServiceAnnoucementMode Possible values are: - NRM: NRM server performs the service announcement. - VAL: VAL server performs the service announcement. 
 type ServiceAnnoucementMode struct {
-	string *string
+	ServiceAnnoucementModeAnyOf *ServiceAnnoucementModeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ServiceAnnoucementMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ServiceAnnoucementModeAnyOf
+	err = json.Unmarshal(data, &dst.ServiceAnnoucementModeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonServiceAnnoucementModeAnyOf, _ := json.Marshal(dst.ServiceAnnoucementModeAnyOf)
+		if string(jsonServiceAnnoucementModeAnyOf) == "{}" { // empty struct
+			dst.ServiceAnnoucementModeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ServiceAnnoucementModeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ServiceAnnoucementModeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ServiceAnnoucementMode)")
@@ -41,8 +55,12 @@ func (dst *ServiceAnnoucementMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ServiceAnnoucementMode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ServiceAnnoucementModeAnyOf != nil {
+		return json.Marshal(&src.ServiceAnnoucementModeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

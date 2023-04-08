@@ -72,7 +72,7 @@ func (o *UserIdentifier) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *UserIdentifier) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *UserIdentifier) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserIdentifier) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -90,7 +90,7 @@ func (o *UserIdentifier) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *UserIdentifier) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *UserIdentifier) SetGpsi(v string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *UserIdentifier) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *UserIdentifier) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserIdentifier) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -122,7 +122,7 @@ func (o *UserIdentifier) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *UserIdentifier) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -145,10 +145,10 @@ func (o UserIdentifier) MarshalJSON() ([]byte, error) {
 func (o UserIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
 	return toSerialize, nil

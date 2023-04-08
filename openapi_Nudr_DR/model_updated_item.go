@@ -82,7 +82,7 @@ func (o *UpdatedItem) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UpdatedItem) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || isNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true

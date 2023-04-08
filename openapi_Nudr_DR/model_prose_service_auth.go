@@ -42,7 +42,7 @@ func NewProseServiceAuthWithDefaults() *ProseServiceAuth {
 
 // GetProseDirectDiscoveryAuth returns the ProseDirectDiscoveryAuth field value if set, zero value otherwise.
 func (o *ProseServiceAuth) GetProseDirectDiscoveryAuth() UeAuth {
-	if o == nil || IsNil(o.ProseDirectDiscoveryAuth) {
+	if o == nil || isNil(o.ProseDirectDiscoveryAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ProseServiceAuth) GetProseDirectDiscoveryAuth() UeAuth {
 // GetProseDirectDiscoveryAuthOk returns a tuple with the ProseDirectDiscoveryAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseServiceAuth) GetProseDirectDiscoveryAuthOk() (*UeAuth, bool) {
-	if o == nil || IsNil(o.ProseDirectDiscoveryAuth) {
+	if o == nil || isNil(o.ProseDirectDiscoveryAuth) {
 		return nil, false
 	}
 	return o.ProseDirectDiscoveryAuth, true
@@ -60,7 +60,7 @@ func (o *ProseServiceAuth) GetProseDirectDiscoveryAuthOk() (*UeAuth, bool) {
 
 // HasProseDirectDiscoveryAuth returns a boolean if a field has been set.
 func (o *ProseServiceAuth) HasProseDirectDiscoveryAuth() bool {
-	if o != nil && !IsNil(o.ProseDirectDiscoveryAuth) {
+	if o != nil && !isNil(o.ProseDirectDiscoveryAuth) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ProseServiceAuth) SetProseDirectDiscoveryAuth(v UeAuth) {
 
 // GetProseDirectCommunicationAuth returns the ProseDirectCommunicationAuth field value if set, zero value otherwise.
 func (o *ProseServiceAuth) GetProseDirectCommunicationAuth() UeAuth {
-	if o == nil || IsNil(o.ProseDirectCommunicationAuth) {
+	if o == nil || isNil(o.ProseDirectCommunicationAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ProseServiceAuth) GetProseDirectCommunicationAuth() UeAuth {
 // GetProseDirectCommunicationAuthOk returns a tuple with the ProseDirectCommunicationAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseServiceAuth) GetProseDirectCommunicationAuthOk() (*UeAuth, bool) {
-	if o == nil || IsNil(o.ProseDirectCommunicationAuth) {
+	if o == nil || isNil(o.ProseDirectCommunicationAuth) {
 		return nil, false
 	}
 	return o.ProseDirectCommunicationAuth, true
@@ -92,7 +92,7 @@ func (o *ProseServiceAuth) GetProseDirectCommunicationAuthOk() (*UeAuth, bool) {
 
 // HasProseDirectCommunicationAuth returns a boolean if a field has been set.
 func (o *ProseServiceAuth) HasProseDirectCommunicationAuth() bool {
-	if o != nil && !IsNil(o.ProseDirectCommunicationAuth) {
+	if o != nil && !isNil(o.ProseDirectCommunicationAuth) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ProseServiceAuth) MarshalJSON() ([]byte, error) {
 
 func (o ProseServiceAuth) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProseDirectDiscoveryAuth) {
+	if !isNil(o.ProseDirectDiscoveryAuth) {
 		toSerialize["proseDirectDiscoveryAuth"] = o.ProseDirectDiscoveryAuth
 	}
-	if !IsNil(o.ProseDirectCommunicationAuth) {
+	if !isNil(o.ProseDirectCommunicationAuth) {
 		toSerialize["proseDirectCommunicationAuth"] = o.ProseDirectCommunicationAuth
 	}
 	return toSerialize, nil

@@ -45,7 +45,7 @@ func NewN1N2MsgTxfrErrDetailWithDefaults() *N1N2MsgTxfrErrDetail {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrErrDetail) GetRetryAfter() int32 {
-	if o == nil || IsNil(o.RetryAfter) {
+	if o == nil || isNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *N1N2MsgTxfrErrDetail) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrErrDetail) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || IsNil(o.RetryAfter) {
+	if o == nil || isNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -63,7 +63,7 @@ func (o *N1N2MsgTxfrErrDetail) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrErrDetail) HasRetryAfter() bool {
-	if o != nil && !IsNil(o.RetryAfter) {
+	if o != nil && !isNil(o.RetryAfter) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *N1N2MsgTxfrErrDetail) SetRetryAfter(v int32) {
 
 // GetHighestPrioArp returns the HighestPrioArp field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArp() Arp {
-	if o == nil || IsNil(o.HighestPrioArp) {
+	if o == nil || isNil(o.HighestPrioArp) {
 		var ret Arp
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArp() Arp {
 // GetHighestPrioArpOk returns a tuple with the HighestPrioArp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.HighestPrioArp) {
+	if o == nil || isNil(o.HighestPrioArp) {
 		return nil, false
 	}
 	return o.HighestPrioArp, true
@@ -95,7 +95,7 @@ func (o *N1N2MsgTxfrErrDetail) GetHighestPrioArpOk() (*Arp, bool) {
 
 // HasHighestPrioArp returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrErrDetail) HasHighestPrioArp() bool {
-	if o != nil && !IsNil(o.HighestPrioArp) {
+	if o != nil && !isNil(o.HighestPrioArp) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *N1N2MsgTxfrErrDetail) SetHighestPrioArp(v Arp) {
 
 // GetMaxWaitingTime returns the MaxWaitingTime field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTime() int32 {
-	if o == nil || IsNil(o.MaxWaitingTime) {
+	if o == nil || isNil(o.MaxWaitingTime) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTime() int32 {
 // GetMaxWaitingTimeOk returns a tuple with the MaxWaitingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxWaitingTime) {
+	if o == nil || isNil(o.MaxWaitingTime) {
 		return nil, false
 	}
 	return o.MaxWaitingTime, true
@@ -127,7 +127,7 @@ func (o *N1N2MsgTxfrErrDetail) GetMaxWaitingTimeOk() (*int32, bool) {
 
 // HasMaxWaitingTime returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrErrDetail) HasMaxWaitingTime() bool {
-	if o != nil && !IsNil(o.MaxWaitingTime) {
+	if o != nil && !isNil(o.MaxWaitingTime) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o N1N2MsgTxfrErrDetail) MarshalJSON() ([]byte, error) {
 
 func (o N1N2MsgTxfrErrDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RetryAfter) {
+	if !isNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
-	if !IsNil(o.HighestPrioArp) {
+	if !isNil(o.HighestPrioArp) {
 		toSerialize["highestPrioArp"] = o.HighestPrioArp
 	}
-	if !IsNil(o.MaxWaitingTime) {
+	if !isNil(o.MaxWaitingTime) {
 		toSerialize["maxWaitingTime"] = o.MaxWaitingTime
 	}
 	return toSerialize, nil

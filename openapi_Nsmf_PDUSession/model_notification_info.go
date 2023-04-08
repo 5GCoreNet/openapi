@@ -98,7 +98,7 @@ func (o *NotificationInfo) SetNotifUri(v string) {
 
 // GetUpBufferInd returns the UpBufferInd field value if set, zero value otherwise.
 func (o *NotificationInfo) GetUpBufferInd() bool {
-	if o == nil || IsNil(o.UpBufferInd) {
+	if o == nil || isNil(o.UpBufferInd) {
 		var ret bool
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *NotificationInfo) GetUpBufferInd() bool {
 // GetUpBufferIndOk returns a tuple with the UpBufferInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationInfo) GetUpBufferIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpBufferInd) {
+	if o == nil || isNil(o.UpBufferInd) {
 		return nil, false
 	}
 	return o.UpBufferInd, true
@@ -116,7 +116,7 @@ func (o *NotificationInfo) GetUpBufferIndOk() (*bool, bool) {
 
 // HasUpBufferInd returns a boolean if a field has been set.
 func (o *NotificationInfo) HasUpBufferInd() bool {
-	if o != nil && !IsNil(o.UpBufferInd) {
+	if o != nil && !isNil(o.UpBufferInd) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o NotificationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["notifUri"] = o.NotifUri
-	if !IsNil(o.UpBufferInd) {
+	if !isNil(o.UpBufferInd) {
 		toSerialize["upBufferInd"] = o.UpBufferInd
 	}
 	return toSerialize, nil

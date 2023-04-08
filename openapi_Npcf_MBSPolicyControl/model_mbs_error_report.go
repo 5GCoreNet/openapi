@@ -41,7 +41,7 @@ func NewMbsErrorReportWithDefaults() *MbsErrorReport {
 
 // GetMbsReports returns the MbsReports field value if set, zero value otherwise.
 func (o *MbsErrorReport) GetMbsReports() []MbsReport {
-	if o == nil || IsNil(o.MbsReports) {
+	if o == nil || isNil(o.MbsReports) {
 		var ret []MbsReport
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MbsErrorReport) GetMbsReports() []MbsReport {
 // GetMbsReportsOk returns a tuple with the MbsReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsErrorReport) GetMbsReportsOk() ([]MbsReport, bool) {
-	if o == nil || IsNil(o.MbsReports) {
+	if o == nil || isNil(o.MbsReports) {
 		return nil, false
 	}
 	return o.MbsReports, true
@@ -59,7 +59,7 @@ func (o *MbsErrorReport) GetMbsReportsOk() ([]MbsReport, bool) {
 
 // HasMbsReports returns a boolean if a field has been set.
 func (o *MbsErrorReport) HasMbsReports() bool {
-	if o != nil && !IsNil(o.MbsReports) {
+	if o != nil && !isNil(o.MbsReports) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MbsErrorReport) MarshalJSON() ([]byte, error) {
 
 func (o MbsErrorReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsReports) {
+	if !isNil(o.MbsReports) {
 		toSerialize["mbsReports"] = o.MbsReports
 	}
 	return toSerialize, nil

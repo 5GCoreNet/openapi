@@ -49,7 +49,7 @@ func NewPcfForUeInfoWithDefaults() *PcfForUeInfo {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *PcfForUeInfo) GetPcfFqdn() string {
-	if o == nil || IsNil(o.PcfFqdn) {
+	if o == nil || isNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *PcfForUeInfo) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeInfo) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfFqdn) {
+	if o == nil || isNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -67,7 +67,7 @@ func (o *PcfForUeInfo) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *PcfForUeInfo) HasPcfFqdn() bool {
-	if o != nil && !IsNil(o.PcfFqdn) {
+	if o != nil && !isNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *PcfForUeInfo) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *PcfForUeInfo) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || IsNil(o.PcfIpEndPoints) {
+	if o == nil || isNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *PcfForUeInfo) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeInfo) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || IsNil(o.PcfIpEndPoints) {
+	if o == nil || isNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -99,7 +99,7 @@ func (o *PcfForUeInfo) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *PcfForUeInfo) HasPcfIpEndPoints() bool {
-	if o != nil && !IsNil(o.PcfIpEndPoints) {
+	if o != nil && !isNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *PcfForUeInfo) SetPcfIpEndPoints(v []IpEndPoint) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PcfForUeInfo) GetPcfId() string {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *PcfForUeInfo) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeInfo) GetPcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -131,7 +131,7 @@ func (o *PcfForUeInfo) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PcfForUeInfo) HasPcfId() bool {
-	if o != nil && !IsNil(o.PcfId) {
+	if o != nil && !isNil(o.PcfId) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *PcfForUeInfo) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *PcfForUeInfo) GetPcfSetId() string {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *PcfForUeInfo) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeInfo) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -163,7 +163,7 @@ func (o *PcfForUeInfo) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *PcfForUeInfo) HasPcfSetId() bool {
-	if o != nil && !IsNil(o.PcfSetId) {
+	if o != nil && !isNil(o.PcfSetId) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *PcfForUeInfo) SetPcfSetId(v string) {
 
 // GetBindLevel returns the BindLevel field value if set, zero value otherwise.
 func (o *PcfForUeInfo) GetBindLevel() BindingLevel {
-	if o == nil || IsNil(o.BindLevel) {
+	if o == nil || isNil(o.BindLevel) {
 		var ret BindingLevel
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *PcfForUeInfo) GetBindLevel() BindingLevel {
 // GetBindLevelOk returns a tuple with the BindLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfForUeInfo) GetBindLevelOk() (*BindingLevel, bool) {
-	if o == nil || IsNil(o.BindLevel) {
+	if o == nil || isNil(o.BindLevel) {
 		return nil, false
 	}
 	return o.BindLevel, true
@@ -195,7 +195,7 @@ func (o *PcfForUeInfo) GetBindLevelOk() (*BindingLevel, bool) {
 
 // HasBindLevel returns a boolean if a field has been set.
 func (o *PcfForUeInfo) HasBindLevel() bool {
-	if o != nil && !IsNil(o.BindLevel) {
+	if o != nil && !isNil(o.BindLevel) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o PcfForUeInfo) MarshalJSON() ([]byte, error) {
 
 func (o PcfForUeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PcfFqdn) {
+	if !isNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !IsNil(o.PcfIpEndPoints) {
+	if !isNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
-	if !IsNil(o.PcfId) {
+	if !isNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !IsNil(o.PcfSetId) {
+	if !isNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !IsNil(o.BindLevel) {
+	if !isNil(o.BindLevel) {
 		toSerialize["bindLevel"] = o.BindLevel
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // SmContextStatus Possible values are - RELEASED: Indicates that the Individual SM Context for NIDD is released. 
 type SmContextStatus struct {
-	string *string
+	SmContextStatusAnyOf *SmContextStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmContextStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SmContextStatusAnyOf
+	err = json.Unmarshal(data, &dst.SmContextStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSmContextStatusAnyOf, _ := json.Marshal(dst.SmContextStatusAnyOf)
+		if string(jsonSmContextStatusAnyOf) == "{}" { // empty struct
+			dst.SmContextStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SmContextStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SmContextStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SmContextStatus)")
@@ -41,8 +55,12 @@ func (dst *SmContextStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmContextStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SmContextStatusAnyOf != nil {
+		return json.Marshal(&src.SmContextStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

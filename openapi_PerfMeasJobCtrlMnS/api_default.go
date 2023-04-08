@@ -13,7 +13,7 @@ package openapi_PerfMeasJobCtrlMnS
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -84,10 +84,10 @@ func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJo
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "jobIdList", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "jobIdList", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "jobIdList", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "jobIdList", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -117,9 +117,9 @@ func (a *DefaultApiService) MeasJobsGetExecute(r ApiMeasJobsGetRequest) (*MeasJo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -226,9 +226,9 @@ func (a *DefaultApiService) MeasJobsJobIdDeleteExecute(r ApiMeasJobsJobIdDeleteR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -328,9 +328,9 @@ func (a *DefaultApiService) MeasJobsJobIdGetExecute(r ApiMeasJobsJobIdGetRequest
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -446,9 +446,9 @@ func (a *DefaultApiService) MeasJobsPostExecute(r ApiMeasJobsPostRequest) (*Meas
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

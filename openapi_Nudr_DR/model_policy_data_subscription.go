@@ -82,7 +82,7 @@ func (o *PolicyDataSubscription) SetNotificationUri(v string) {
 
 // GetNotifId returns the NotifId field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetNotifId() string {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *PolicyDataSubscription) GetNotifId() string {
 // GetNotifIdOk returns a tuple with the NotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetNotifIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		return nil, false
 	}
 	return o.NotifId, true
@@ -100,7 +100,7 @@ func (o *PolicyDataSubscription) GetNotifIdOk() (*string, bool) {
 
 // HasNotifId returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasNotifId() bool {
-	if o != nil && !IsNil(o.NotifId) {
+	if o != nil && !isNil(o.NotifId) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *PolicyDataSubscription) SetMonitoredResourceUris(v []string) {
 
 // GetMonResItems returns the MonResItems field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetMonResItems() []ResourceItem {
-	if o == nil || IsNil(o.MonResItems) {
+	if o == nil || isNil(o.MonResItems) {
 		var ret []ResourceItem
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *PolicyDataSubscription) GetMonResItems() []ResourceItem {
 // GetMonResItemsOk returns a tuple with the MonResItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetMonResItemsOk() ([]ResourceItem, bool) {
-	if o == nil || IsNil(o.MonResItems) {
+	if o == nil || isNil(o.MonResItems) {
 		return nil, false
 	}
 	return o.MonResItems, true
@@ -156,7 +156,7 @@ func (o *PolicyDataSubscription) GetMonResItemsOk() ([]ResourceItem, bool) {
 
 // HasMonResItems returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasMonResItems() bool {
-	if o != nil && !IsNil(o.MonResItems) {
+	if o != nil && !isNil(o.MonResItems) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *PolicyDataSubscription) SetMonResItems(v []ResourceItem) {
 
 // GetExcludedResItems returns the ExcludedResItems field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetExcludedResItems() []ResourceItem {
-	if o == nil || IsNil(o.ExcludedResItems) {
+	if o == nil || isNil(o.ExcludedResItems) {
 		var ret []ResourceItem
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *PolicyDataSubscription) GetExcludedResItems() []ResourceItem {
 // GetExcludedResItemsOk returns a tuple with the ExcludedResItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetExcludedResItemsOk() ([]ResourceItem, bool) {
-	if o == nil || IsNil(o.ExcludedResItems) {
+	if o == nil || isNil(o.ExcludedResItems) {
 		return nil, false
 	}
 	return o.ExcludedResItems, true
@@ -188,7 +188,7 @@ func (o *PolicyDataSubscription) GetExcludedResItemsOk() ([]ResourceItem, bool) 
 
 // HasExcludedResItems returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasExcludedResItems() bool {
-	if o != nil && !IsNil(o.ExcludedResItems) {
+	if o != nil && !isNil(o.ExcludedResItems) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *PolicyDataSubscription) SetExcludedResItems(v []ResourceItem) {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetImmRep() bool {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *PolicyDataSubscription) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetImmRepOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -220,7 +220,7 @@ func (o *PolicyDataSubscription) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasImmRep() bool {
-	if o != nil && !IsNil(o.ImmRep) {
+	if o != nil && !isNil(o.ImmRep) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *PolicyDataSubscription) SetImmRep(v bool) {
 
 // GetImmReports returns the ImmReports field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetImmReports() []PolicyDataChangeNotification {
-	if o == nil || IsNil(o.ImmReports) {
+	if o == nil || isNil(o.ImmReports) {
 		var ret []PolicyDataChangeNotification
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *PolicyDataSubscription) GetImmReports() []PolicyDataChangeNotification 
 // GetImmReportsOk returns a tuple with the ImmReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetImmReportsOk() ([]PolicyDataChangeNotification, bool) {
-	if o == nil || IsNil(o.ImmReports) {
+	if o == nil || isNil(o.ImmReports) {
 		return nil, false
 	}
 	return o.ImmReports, true
@@ -252,7 +252,7 @@ func (o *PolicyDataSubscription) GetImmReportsOk() ([]PolicyDataChangeNotificati
 
 // HasImmReports returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasImmReports() bool {
-	if o != nil && !IsNil(o.ImmReports) {
+	if o != nil && !isNil(o.ImmReports) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *PolicyDataSubscription) SetImmReports(v []PolicyDataChangeNotification)
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *PolicyDataSubscription) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -284,7 +284,7 @@ func (o *PolicyDataSubscription) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *PolicyDataSubscription) SetExpiry(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *PolicyDataSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -316,7 +316,7 @@ func (o *PolicyDataSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *PolicyDataSubscription) SetSupportedFeatures(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *PolicyDataSubscription) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *PolicyDataSubscription) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyDataSubscription) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -348,7 +348,7 @@ func (o *PolicyDataSubscription) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *PolicyDataSubscription) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -371,29 +371,29 @@ func (o PolicyDataSubscription) MarshalJSON() ([]byte, error) {
 func (o PolicyDataSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationUri"] = o.NotificationUri
-	if !IsNil(o.NotifId) {
+	if !isNil(o.NotifId) {
 		toSerialize["notifId"] = o.NotifId
 	}
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !IsNil(o.MonResItems) {
+	if !isNil(o.MonResItems) {
 		toSerialize["monResItems"] = o.MonResItems
 	}
-	if !IsNil(o.ExcludedResItems) {
+	if !isNil(o.ExcludedResItems) {
 		toSerialize["excludedResItems"] = o.ExcludedResItems
 	}
-	if !IsNil(o.ImmRep) {
+	if !isNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !IsNil(o.ImmReports) {
+	if !isNil(o.ImmReports) {
 		toSerialize["immReports"] = o.ImmReports
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

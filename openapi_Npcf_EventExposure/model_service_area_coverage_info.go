@@ -68,7 +68,7 @@ func (o *ServiceAreaCoverageInfo) SetTacList(v []string) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *ServiceAreaCoverageInfo) GetServingNetwork() PlmnIdNid {
-	if o == nil || IsNil(o.ServingNetwork) {
+	if o == nil || isNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ServiceAreaCoverageInfo) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAreaCoverageInfo) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ServingNetwork) {
+	if o == nil || isNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -86,7 +86,7 @@ func (o *ServiceAreaCoverageInfo) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *ServiceAreaCoverageInfo) HasServingNetwork() bool {
-	if o != nil && !IsNil(o.ServingNetwork) {
+	if o != nil && !isNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o ServiceAreaCoverageInfo) MarshalJSON() ([]byte, error) {
 func (o ServiceAreaCoverageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tacList"] = o.TacList
-	if !IsNil(o.ServingNetwork) {
+	if !isNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
 	return toSerialize, nil

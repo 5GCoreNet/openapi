@@ -43,7 +43,7 @@ func NewPduSessionInformationWithDefaults() *PduSessionInformation {
 
 // GetPduSessId returns the PduSessId field value if set, zero value otherwise.
 func (o *PduSessionInformation) GetPduSessId() int32 {
-	if o == nil || IsNil(o.PduSessId) {
+	if o == nil || isNil(o.PduSessId) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *PduSessionInformation) GetPduSessId() int32 {
 // GetPduSessIdOk returns a tuple with the PduSessId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionInformation) GetPduSessIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSessId) {
+	if o == nil || isNil(o.PduSessId) {
 		return nil, false
 	}
 	return o.PduSessId, true
@@ -61,7 +61,7 @@ func (o *PduSessionInformation) GetPduSessIdOk() (*int32, bool) {
 
 // HasPduSessId returns a boolean if a field has been set.
 func (o *PduSessionInformation) HasPduSessId() bool {
-	if o != nil && !IsNil(o.PduSessId) {
+	if o != nil && !isNil(o.PduSessId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *PduSessionInformation) SetPduSessId(v int32) {
 
 // GetSessInfo returns the SessInfo field value if set, zero value otherwise.
 func (o *PduSessionInformation) GetSessInfo() PduSessionInfo {
-	if o == nil || IsNil(o.SessInfo) {
+	if o == nil || isNil(o.SessInfo) {
 		var ret PduSessionInfo
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PduSessionInformation) GetSessInfo() PduSessionInfo {
 // GetSessInfoOk returns a tuple with the SessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionInformation) GetSessInfoOk() (*PduSessionInfo, bool) {
-	if o == nil || IsNil(o.SessInfo) {
+	if o == nil || isNil(o.SessInfo) {
 		return nil, false
 	}
 	return o.SessInfo, true
@@ -93,7 +93,7 @@ func (o *PduSessionInformation) GetSessInfoOk() (*PduSessionInfo, bool) {
 
 // HasSessInfo returns a boolean if a field has been set.
 func (o *PduSessionInformation) HasSessInfo() bool {
-	if o != nil && !IsNil(o.SessInfo) {
+	if o != nil && !isNil(o.SessInfo) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o PduSessionInformation) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PduSessId) {
+	if !isNil(o.PduSessId) {
 		toSerialize["pduSessId"] = o.PduSessId
 	}
-	if !IsNil(o.SessInfo) {
+	if !isNil(o.SessInfo) {
 		toSerialize["sessInfo"] = o.SessInfo
 	}
 	return toSerialize, nil

@@ -68,7 +68,7 @@ func (o *ReachabilityForDataConfiguration) SetReportCfg(v ReachabilityForDataRep
 
 // GetMinInterval returns the MinInterval field value if set, zero value otherwise.
 func (o *ReachabilityForDataConfiguration) GetMinInterval() int32 {
-	if o == nil || IsNil(o.MinInterval) {
+	if o == nil || isNil(o.MinInterval) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ReachabilityForDataConfiguration) GetMinInterval() int32 {
 // GetMinIntervalOk returns a tuple with the MinInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityForDataConfiguration) GetMinIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinInterval) {
+	if o == nil || isNil(o.MinInterval) {
 		return nil, false
 	}
 	return o.MinInterval, true
@@ -86,7 +86,7 @@ func (o *ReachabilityForDataConfiguration) GetMinIntervalOk() (*int32, bool) {
 
 // HasMinInterval returns a boolean if a field has been set.
 func (o *ReachabilityForDataConfiguration) HasMinInterval() bool {
-	if o != nil && !IsNil(o.MinInterval) {
+	if o != nil && !isNil(o.MinInterval) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o ReachabilityForDataConfiguration) MarshalJSON() ([]byte, error) {
 func (o ReachabilityForDataConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reportCfg"] = o.ReportCfg
-	if !IsNil(o.MinInterval) {
+	if !isNil(o.MinInterval) {
 		toSerialize["minInterval"] = o.MinInterval
 	}
 	return toSerialize, nil

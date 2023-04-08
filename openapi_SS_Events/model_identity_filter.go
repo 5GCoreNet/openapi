@@ -46,7 +46,7 @@ func NewIdentityFilterWithDefaults() *IdentityFilter {
 
 // GetValSvcId returns the ValSvcId field value if set, zero value otherwise.
 func (o *IdentityFilter) GetValSvcId() string {
-	if o == nil || IsNil(o.ValSvcId) {
+	if o == nil || isNil(o.ValSvcId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *IdentityFilter) GetValSvcId() string {
 // GetValSvcIdOk returns a tuple with the ValSvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityFilter) GetValSvcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValSvcId) {
+	if o == nil || isNil(o.ValSvcId) {
 		return nil, false
 	}
 	return o.ValSvcId, true
@@ -64,7 +64,7 @@ func (o *IdentityFilter) GetValSvcIdOk() (*string, bool) {
 
 // HasValSvcId returns a boolean if a field has been set.
 func (o *IdentityFilter) HasValSvcId() bool {
-	if o != nil && !IsNil(o.ValSvcId) {
+	if o != nil && !isNil(o.ValSvcId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *IdentityFilter) SetValSvcId(v string) {
 
 // GetValTgtUes returns the ValTgtUes field value if set, zero value otherwise.
 func (o *IdentityFilter) GetValTgtUes() []ValTargetUe {
-	if o == nil || IsNil(o.ValTgtUes) {
+	if o == nil || isNil(o.ValTgtUes) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *IdentityFilter) GetValTgtUes() []ValTargetUe {
 // GetValTgtUesOk returns a tuple with the ValTgtUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityFilter) GetValTgtUesOk() ([]ValTargetUe, bool) {
-	if o == nil || IsNil(o.ValTgtUes) {
+	if o == nil || isNil(o.ValTgtUes) {
 		return nil, false
 	}
 	return o.ValTgtUes, true
@@ -96,7 +96,7 @@ func (o *IdentityFilter) GetValTgtUesOk() ([]ValTargetUe, bool) {
 
 // HasValTgtUes returns a boolean if a field has been set.
 func (o *IdentityFilter) HasValTgtUes() bool {
-	if o != nil && !IsNil(o.ValTgtUes) {
+	if o != nil && !isNil(o.ValTgtUes) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *IdentityFilter) SetValTgtUes(v []ValTargetUe) {
 
 // GetSuppLoc returns the SuppLoc field value if set, zero value otherwise.
 func (o *IdentityFilter) GetSuppLoc() bool {
-	if o == nil || IsNil(o.SuppLoc) {
+	if o == nil || isNil(o.SuppLoc) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *IdentityFilter) GetSuppLoc() bool {
 // GetSuppLocOk returns a tuple with the SuppLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdentityFilter) GetSuppLocOk() (*bool, bool) {
-	if o == nil || IsNil(o.SuppLoc) {
+	if o == nil || isNil(o.SuppLoc) {
 		return nil, false
 	}
 	return o.SuppLoc, true
@@ -128,7 +128,7 @@ func (o *IdentityFilter) GetSuppLocOk() (*bool, bool) {
 
 // HasSuppLoc returns a boolean if a field has been set.
 func (o *IdentityFilter) HasSuppLoc() bool {
-	if o != nil && !IsNil(o.SuppLoc) {
+	if o != nil && !isNil(o.SuppLoc) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o IdentityFilter) MarshalJSON() ([]byte, error) {
 
 func (o IdentityFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ValSvcId) {
+	if !isNil(o.ValSvcId) {
 		toSerialize["valSvcId"] = o.ValSvcId
 	}
-	if !IsNil(o.ValTgtUes) {
+	if !isNil(o.ValTgtUes) {
 		toSerialize["valTgtUes"] = o.ValTgtUes
 	}
-	if !IsNil(o.SuppLoc) {
+	if !isNil(o.SuppLoc) {
 		toSerialize["suppLoc"] = o.SuppLoc
 	}
 	return toSerialize, nil

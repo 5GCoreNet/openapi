@@ -83,7 +83,7 @@ func (o *MbsQosDec) SetMbsQosId(v string) {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *MbsQosDec) GetVar5qi() int32 {
-	if o == nil || IsNil(o.Var5qi) {
+	if o == nil || isNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *MbsQosDec) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetVar5qiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var5qi) {
+	if o == nil || isNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -101,7 +101,7 @@ func (o *MbsQosDec) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *MbsQosDec) HasVar5qi() bool {
-	if o != nil && !IsNil(o.Var5qi) {
+	if o != nil && !isNil(o.Var5qi) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *MbsQosDec) SetVar5qi(v int32) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise.
 func (o *MbsQosDec) GetPriorityLevel() int32 {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *MbsQosDec) GetPriorityLevel() int32 {
 // GetPriorityLevelOk returns a tuple with the PriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetPriorityLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		return nil, false
 	}
 	return o.PriorityLevel, true
@@ -133,7 +133,7 @@ func (o *MbsQosDec) GetPriorityLevelOk() (*int32, bool) {
 
 // HasPriorityLevel returns a boolean if a field has been set.
 func (o *MbsQosDec) HasPriorityLevel() bool {
-	if o != nil && !IsNil(o.PriorityLevel) {
+	if o != nil && !isNil(o.PriorityLevel) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *MbsQosDec) SetPriorityLevel(v int32) {
 
 // GetMbrDl returns the MbrDl field value if set, zero value otherwise.
 func (o *MbsQosDec) GetMbrDl() string {
-	if o == nil || IsNil(o.MbrDl) {
+	if o == nil || isNil(o.MbrDl) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *MbsQosDec) GetMbrDl() string {
 // GetMbrDlOk returns a tuple with the MbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetMbrDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MbrDl) {
+	if o == nil || isNil(o.MbrDl) {
 		return nil, false
 	}
 	return o.MbrDl, true
@@ -165,7 +165,7 @@ func (o *MbsQosDec) GetMbrDlOk() (*string, bool) {
 
 // HasMbrDl returns a boolean if a field has been set.
 func (o *MbsQosDec) HasMbrDl() bool {
-	if o != nil && !IsNil(o.MbrDl) {
+	if o != nil && !isNil(o.MbrDl) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *MbsQosDec) SetMbrDl(v string) {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise.
 func (o *MbsQosDec) GetGbrDl() string {
-	if o == nil || IsNil(o.GbrDl) {
+	if o == nil || isNil(o.GbrDl) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *MbsQosDec) GetGbrDl() string {
 // GetGbrDlOk returns a tuple with the GbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetGbrDlOk() (*string, bool) {
-	if o == nil || IsNil(o.GbrDl) {
+	if o == nil || isNil(o.GbrDl) {
 		return nil, false
 	}
 	return o.GbrDl, true
@@ -197,7 +197,7 @@ func (o *MbsQosDec) GetGbrDlOk() (*string, bool) {
 
 // HasGbrDl returns a boolean if a field has been set.
 func (o *MbsQosDec) HasGbrDl() bool {
-	if o != nil && !IsNil(o.GbrDl) {
+	if o != nil && !isNil(o.GbrDl) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *MbsQosDec) SetGbrDl(v string) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *MbsQosDec) GetArp() Arp {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *MbsQosDec) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -229,7 +229,7 @@ func (o *MbsQosDec) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *MbsQosDec) HasArp() bool {
-	if o != nil && !IsNil(o.Arp) {
+	if o != nil && !isNil(o.Arp) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *MbsQosDec) SetArp(v Arp) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *MbsQosDec) GetAverWindow() int32 {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *MbsQosDec) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetAverWindowOk() (*int32, bool) {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -261,7 +261,7 @@ func (o *MbsQosDec) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *MbsQosDec) HasAverWindow() bool {
-	if o != nil && !IsNil(o.AverWindow) {
+	if o != nil && !isNil(o.AverWindow) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *MbsQosDec) SetAverWindow(v int32) {
 
 // GetMbsMaxDataBurstVol returns the MbsMaxDataBurstVol field value if set, zero value otherwise.
 func (o *MbsQosDec) GetMbsMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.MbsMaxDataBurstVol) {
+	if o == nil || isNil(o.MbsMaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *MbsQosDec) GetMbsMaxDataBurstVol() int32 {
 // GetMbsMaxDataBurstVolOk returns a tuple with the MbsMaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosDec) GetMbsMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || IsNil(o.MbsMaxDataBurstVol) {
+	if o == nil || isNil(o.MbsMaxDataBurstVol) {
 		return nil, false
 	}
 	return o.MbsMaxDataBurstVol, true
@@ -293,7 +293,7 @@ func (o *MbsQosDec) GetMbsMaxDataBurstVolOk() (*int32, bool) {
 
 // HasMbsMaxDataBurstVol returns a boolean if a field has been set.
 func (o *MbsQosDec) HasMbsMaxDataBurstVol() bool {
-	if o != nil && !IsNil(o.MbsMaxDataBurstVol) {
+	if o != nil && !isNil(o.MbsMaxDataBurstVol) {
 		return true
 	}
 
@@ -316,25 +316,25 @@ func (o MbsQosDec) MarshalJSON() ([]byte, error) {
 func (o MbsQosDec) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsQosId"] = o.MbsQosId
-	if !IsNil(o.Var5qi) {
+	if !isNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !IsNil(o.PriorityLevel) {
+	if !isNil(o.PriorityLevel) {
 		toSerialize["priorityLevel"] = o.PriorityLevel
 	}
-	if !IsNil(o.MbrDl) {
+	if !isNil(o.MbrDl) {
 		toSerialize["mbrDl"] = o.MbrDl
 	}
-	if !IsNil(o.GbrDl) {
+	if !isNil(o.GbrDl) {
 		toSerialize["gbrDl"] = o.GbrDl
 	}
-	if !IsNil(o.Arp) {
+	if !isNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !IsNil(o.AverWindow) {
+	if !isNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
-	if !IsNil(o.MbsMaxDataBurstVol) {
+	if !isNil(o.MbsMaxDataBurstVol) {
 		toSerialize["mbsMaxDataBurstVol"] = o.MbsMaxDataBurstVol
 	}
 	return toSerialize, nil

@@ -68,7 +68,7 @@ func (o *AnalyticsEventSubsc) SetAnalyEvent(v AnalyticsEvent) {
 
 // GetAnalyEventFilter returns the AnalyEventFilter field value if set, zero value otherwise.
 func (o *AnalyticsEventSubsc) GetAnalyEventFilter() AnalyticsEventFilterSubsc {
-	if o == nil || IsNil(o.AnalyEventFilter) {
+	if o == nil || isNil(o.AnalyEventFilter) {
 		var ret AnalyticsEventFilterSubsc
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AnalyticsEventSubsc) GetAnalyEventFilter() AnalyticsEventFilterSubsc {
 // GetAnalyEventFilterOk returns a tuple with the AnalyEventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventSubsc) GetAnalyEventFilterOk() (*AnalyticsEventFilterSubsc, bool) {
-	if o == nil || IsNil(o.AnalyEventFilter) {
+	if o == nil || isNil(o.AnalyEventFilter) {
 		return nil, false
 	}
 	return o.AnalyEventFilter, true
@@ -86,7 +86,7 @@ func (o *AnalyticsEventSubsc) GetAnalyEventFilterOk() (*AnalyticsEventFilterSubs
 
 // HasAnalyEventFilter returns a boolean if a field has been set.
 func (o *AnalyticsEventSubsc) HasAnalyEventFilter() bool {
-	if o != nil && !IsNil(o.AnalyEventFilter) {
+	if o != nil && !isNil(o.AnalyEventFilter) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AnalyticsEventSubsc) SetAnalyEventFilter(v AnalyticsEventFilterSubsc) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *AnalyticsEventSubsc) GetTgtUe() TargetUeId {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		var ret TargetUeId
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AnalyticsEventSubsc) GetTgtUe() TargetUeId {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventSubsc) GetTgtUeOk() (*TargetUeId, bool) {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -118,7 +118,7 @@ func (o *AnalyticsEventSubsc) GetTgtUeOk() (*TargetUeId, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *AnalyticsEventSubsc) HasTgtUe() bool {
-	if o != nil && !IsNil(o.TgtUe) {
+	if o != nil && !isNil(o.TgtUe) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o AnalyticsEventSubsc) MarshalJSON() ([]byte, error) {
 func (o AnalyticsEventSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEvent"] = o.AnalyEvent
-	if !IsNil(o.AnalyEventFilter) {
+	if !isNil(o.AnalyEventFilter) {
 		toSerialize["analyEventFilter"] = o.AnalyEventFilter
 	}
-	if !IsNil(o.TgtUe) {
+	if !isNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
 	return toSerialize, nil

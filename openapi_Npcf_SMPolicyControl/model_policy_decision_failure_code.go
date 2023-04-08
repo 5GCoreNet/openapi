@@ -17,23 +17,37 @@ import (
 
 // PolicyDecisionFailureCode Indicates the type of the failed policy decision and/or condition data.
 type PolicyDecisionFailureCode struct {
-	string *string
+	PolicyDecisionFailureCodeAnyOf *PolicyDecisionFailureCodeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PolicyDecisionFailureCode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PolicyDecisionFailureCodeAnyOf
+	err = json.Unmarshal(data, &dst.PolicyDecisionFailureCodeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPolicyDecisionFailureCodeAnyOf, _ := json.Marshal(dst.PolicyDecisionFailureCodeAnyOf)
+		if string(jsonPolicyDecisionFailureCodeAnyOf) == "{}" { // empty struct
+			dst.PolicyDecisionFailureCodeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PolicyDecisionFailureCodeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PolicyDecisionFailureCodeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PolicyDecisionFailureCode)")
@@ -41,8 +55,12 @@ func (dst *PolicyDecisionFailureCode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PolicyDecisionFailureCode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PolicyDecisionFailureCodeAnyOf != nil {
+		return json.Marshal(&src.PolicyDecisionFailureCodeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

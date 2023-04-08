@@ -47,7 +47,7 @@ func NewQosMonitoringMeasurementWithDefaults() *QosMonitoringMeasurement {
 
 // GetDlPacketDelay returns the DlPacketDelay field value if set, zero value otherwise.
 func (o *QosMonitoringMeasurement) GetDlPacketDelay() int32 {
-	if o == nil || IsNil(o.DlPacketDelay) {
+	if o == nil || isNil(o.DlPacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *QosMonitoringMeasurement) GetDlPacketDelay() int32 {
 // GetDlPacketDelayOk returns a tuple with the DlPacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringMeasurement) GetDlPacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.DlPacketDelay) {
+	if o == nil || isNil(o.DlPacketDelay) {
 		return nil, false
 	}
 	return o.DlPacketDelay, true
@@ -65,7 +65,7 @@ func (o *QosMonitoringMeasurement) GetDlPacketDelayOk() (*int32, bool) {
 
 // HasDlPacketDelay returns a boolean if a field has been set.
 func (o *QosMonitoringMeasurement) HasDlPacketDelay() bool {
-	if o != nil && !IsNil(o.DlPacketDelay) {
+	if o != nil && !isNil(o.DlPacketDelay) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *QosMonitoringMeasurement) SetDlPacketDelay(v int32) {
 
 // GetUlPacketDelay returns the UlPacketDelay field value if set, zero value otherwise.
 func (o *QosMonitoringMeasurement) GetUlPacketDelay() int32 {
-	if o == nil || IsNil(o.UlPacketDelay) {
+	if o == nil || isNil(o.UlPacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *QosMonitoringMeasurement) GetUlPacketDelay() int32 {
 // GetUlPacketDelayOk returns a tuple with the UlPacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringMeasurement) GetUlPacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.UlPacketDelay) {
+	if o == nil || isNil(o.UlPacketDelay) {
 		return nil, false
 	}
 	return o.UlPacketDelay, true
@@ -97,7 +97,7 @@ func (o *QosMonitoringMeasurement) GetUlPacketDelayOk() (*int32, bool) {
 
 // HasUlPacketDelay returns a boolean if a field has been set.
 func (o *QosMonitoringMeasurement) HasUlPacketDelay() bool {
-	if o != nil && !IsNil(o.UlPacketDelay) {
+	if o != nil && !isNil(o.UlPacketDelay) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *QosMonitoringMeasurement) SetUlPacketDelay(v int32) {
 
 // GetRtrPacketDelay returns the RtrPacketDelay field value if set, zero value otherwise.
 func (o *QosMonitoringMeasurement) GetRtrPacketDelay() int32 {
-	if o == nil || IsNil(o.RtrPacketDelay) {
+	if o == nil || isNil(o.RtrPacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *QosMonitoringMeasurement) GetRtrPacketDelay() int32 {
 // GetRtrPacketDelayOk returns a tuple with the RtrPacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringMeasurement) GetRtrPacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.RtrPacketDelay) {
+	if o == nil || isNil(o.RtrPacketDelay) {
 		return nil, false
 	}
 	return o.RtrPacketDelay, true
@@ -129,7 +129,7 @@ func (o *QosMonitoringMeasurement) GetRtrPacketDelayOk() (*int32, bool) {
 
 // HasRtrPacketDelay returns a boolean if a field has been set.
 func (o *QosMonitoringMeasurement) HasRtrPacketDelay() bool {
-	if o != nil && !IsNil(o.RtrPacketDelay) {
+	if o != nil && !isNil(o.RtrPacketDelay) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *QosMonitoringMeasurement) SetRtrPacketDelay(v int32) {
 
 // GetMeasureFailure returns the MeasureFailure field value if set, zero value otherwise.
 func (o *QosMonitoringMeasurement) GetMeasureFailure() bool {
-	if o == nil || IsNil(o.MeasureFailure) {
+	if o == nil || isNil(o.MeasureFailure) {
 		var ret bool
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *QosMonitoringMeasurement) GetMeasureFailure() bool {
 // GetMeasureFailureOk returns a tuple with the MeasureFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringMeasurement) GetMeasureFailureOk() (*bool, bool) {
-	if o == nil || IsNil(o.MeasureFailure) {
+	if o == nil || isNil(o.MeasureFailure) {
 		return nil, false
 	}
 	return o.MeasureFailure, true
@@ -161,7 +161,7 @@ func (o *QosMonitoringMeasurement) GetMeasureFailureOk() (*bool, bool) {
 
 // HasMeasureFailure returns a boolean if a field has been set.
 func (o *QosMonitoringMeasurement) HasMeasureFailure() bool {
-	if o != nil && !IsNil(o.MeasureFailure) {
+	if o != nil && !isNil(o.MeasureFailure) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o QosMonitoringMeasurement) MarshalJSON() ([]byte, error) {
 
 func (o QosMonitoringMeasurement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DlPacketDelay) {
+	if !isNil(o.DlPacketDelay) {
 		toSerialize["dlPacketDelay"] = o.DlPacketDelay
 	}
-	if !IsNil(o.UlPacketDelay) {
+	if !isNil(o.UlPacketDelay) {
 		toSerialize["ulPacketDelay"] = o.UlPacketDelay
 	}
-	if !IsNil(o.RtrPacketDelay) {
+	if !isNil(o.RtrPacketDelay) {
 		toSerialize["rtrPacketDelay"] = o.RtrPacketDelay
 	}
-	if !IsNil(o.MeasureFailure) {
+	if !isNil(o.MeasureFailure) {
 		toSerialize["measureFailure"] = o.MeasureFailure
 	}
 	return toSerialize, nil

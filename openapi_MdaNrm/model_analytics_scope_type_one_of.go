@@ -41,7 +41,7 @@ func NewAnalyticsScopeTypeOneOfWithDefaults() *AnalyticsScopeTypeOneOf {
 
 // GetManagedEntitiesScope returns the ManagedEntitiesScope field value if set, zero value otherwise.
 func (o *AnalyticsScopeTypeOneOf) GetManagedEntitiesScope() []string {
-	if o == nil || IsNil(o.ManagedEntitiesScope) {
+	if o == nil || isNil(o.ManagedEntitiesScope) {
 		var ret []string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnalyticsScopeTypeOneOf) GetManagedEntitiesScope() []string {
 // GetManagedEntitiesScopeOk returns a tuple with the ManagedEntitiesScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsScopeTypeOneOf) GetManagedEntitiesScopeOk() ([]string, bool) {
-	if o == nil || IsNil(o.ManagedEntitiesScope) {
+	if o == nil || isNil(o.ManagedEntitiesScope) {
 		return nil, false
 	}
 	return o.ManagedEntitiesScope, true
@@ -59,7 +59,7 @@ func (o *AnalyticsScopeTypeOneOf) GetManagedEntitiesScopeOk() ([]string, bool) {
 
 // HasManagedEntitiesScope returns a boolean if a field has been set.
 func (o *AnalyticsScopeTypeOneOf) HasManagedEntitiesScope() bool {
-	if o != nil && !IsNil(o.ManagedEntitiesScope) {
+	if o != nil && !isNil(o.ManagedEntitiesScope) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AnalyticsScopeTypeOneOf) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsScopeTypeOneOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ManagedEntitiesScope) {
+	if !isNil(o.ManagedEntitiesScope) {
 		toSerialize["managedEntitiesScope"] = o.ManagedEntitiesScope
 	}
 	return toSerialize, nil

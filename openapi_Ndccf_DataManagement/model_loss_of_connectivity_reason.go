@@ -17,23 +17,37 @@ import (
 
 // LossOfConnectivityReason Describes the reason for loss of connectivity
 type LossOfConnectivityReason struct {
-	string *string
+	LossOfConnectivityReasonAnyOf *LossOfConnectivityReasonAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LossOfConnectivityReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into LossOfConnectivityReasonAnyOf
+	err = json.Unmarshal(data, &dst.LossOfConnectivityReasonAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonLossOfConnectivityReasonAnyOf, _ := json.Marshal(dst.LossOfConnectivityReasonAnyOf)
+		if string(jsonLossOfConnectivityReasonAnyOf) == "{}" { // empty struct
+			dst.LossOfConnectivityReasonAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.LossOfConnectivityReasonAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.LossOfConnectivityReasonAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(LossOfConnectivityReason)")
@@ -41,8 +55,12 @@ func (dst *LossOfConnectivityReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LossOfConnectivityReason) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.LossOfConnectivityReasonAnyOf != nil {
+		return json.Marshal(&src.LossOfConnectivityReasonAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

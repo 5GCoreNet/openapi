@@ -44,7 +44,7 @@ func NewProseSubscriptionDataWithDefaults() *ProseSubscriptionData {
 
 // GetProseServiceAuth returns the ProseServiceAuth field value if set, zero value otherwise.
 func (o *ProseSubscriptionData) GetProseServiceAuth() ProseServiceAuth {
-	if o == nil || IsNil(o.ProseServiceAuth) {
+	if o == nil || isNil(o.ProseServiceAuth) {
 		var ret ProseServiceAuth
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ProseSubscriptionData) GetProseServiceAuth() ProseServiceAuth {
 // GetProseServiceAuthOk returns a tuple with the ProseServiceAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseSubscriptionData) GetProseServiceAuthOk() (*ProseServiceAuth, bool) {
-	if o == nil || IsNil(o.ProseServiceAuth) {
+	if o == nil || isNil(o.ProseServiceAuth) {
 		return nil, false
 	}
 	return o.ProseServiceAuth, true
@@ -62,7 +62,7 @@ func (o *ProseSubscriptionData) GetProseServiceAuthOk() (*ProseServiceAuth, bool
 
 // HasProseServiceAuth returns a boolean if a field has been set.
 func (o *ProseSubscriptionData) HasProseServiceAuth() bool {
-	if o != nil && !IsNil(o.ProseServiceAuth) {
+	if o != nil && !isNil(o.ProseServiceAuth) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ProseSubscriptionData) SetProseServiceAuth(v ProseServiceAuth) {
 
 // GetNrUePc5Ambr returns the NrUePc5Ambr field value if set, zero value otherwise.
 func (o *ProseSubscriptionData) GetNrUePc5Ambr() string {
-	if o == nil || IsNil(o.NrUePc5Ambr) {
+	if o == nil || isNil(o.NrUePc5Ambr) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ProseSubscriptionData) GetNrUePc5Ambr() string {
 // GetNrUePc5AmbrOk returns a tuple with the NrUePc5Ambr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseSubscriptionData) GetNrUePc5AmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.NrUePc5Ambr) {
+	if o == nil || isNil(o.NrUePc5Ambr) {
 		return nil, false
 	}
 	return o.NrUePc5Ambr, true
@@ -94,7 +94,7 @@ func (o *ProseSubscriptionData) GetNrUePc5AmbrOk() (*string, bool) {
 
 // HasNrUePc5Ambr returns a boolean if a field has been set.
 func (o *ProseSubscriptionData) HasNrUePc5Ambr() bool {
-	if o != nil && !IsNil(o.NrUePc5Ambr) {
+	if o != nil && !isNil(o.NrUePc5Ambr) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ProseSubscriptionData) SetNrUePc5Ambr(v string) {
 
 // GetProseAllowedPlmn returns the ProseAllowedPlmn field value if set, zero value otherwise.
 func (o *ProseSubscriptionData) GetProseAllowedPlmn() []ProSeAllowedPlmn {
-	if o == nil || IsNil(o.ProseAllowedPlmn) {
+	if o == nil || isNil(o.ProseAllowedPlmn) {
 		var ret []ProSeAllowedPlmn
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ProseSubscriptionData) GetProseAllowedPlmn() []ProSeAllowedPlmn {
 // GetProseAllowedPlmnOk returns a tuple with the ProseAllowedPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseSubscriptionData) GetProseAllowedPlmnOk() ([]ProSeAllowedPlmn, bool) {
-	if o == nil || IsNil(o.ProseAllowedPlmn) {
+	if o == nil || isNil(o.ProseAllowedPlmn) {
 		return nil, false
 	}
 	return o.ProseAllowedPlmn, true
@@ -126,7 +126,7 @@ func (o *ProseSubscriptionData) GetProseAllowedPlmnOk() ([]ProSeAllowedPlmn, boo
 
 // HasProseAllowedPlmn returns a boolean if a field has been set.
 func (o *ProseSubscriptionData) HasProseAllowedPlmn() bool {
-	if o != nil && !IsNil(o.ProseAllowedPlmn) {
+	if o != nil && !isNil(o.ProseAllowedPlmn) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o ProseSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o ProseSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProseServiceAuth) {
+	if !isNil(o.ProseServiceAuth) {
 		toSerialize["proseServiceAuth"] = o.ProseServiceAuth
 	}
-	if !IsNil(o.NrUePc5Ambr) {
+	if !isNil(o.NrUePc5Ambr) {
 		toSerialize["nrUePc5Ambr"] = o.NrUePc5Ambr
 	}
-	if !IsNil(o.ProseAllowedPlmn) {
+	if !isNil(o.ProseAllowedPlmn) {
 		toSerialize["proseAllowedPlmn"] = o.ProseAllowedPlmn
 	}
 	return toSerialize, nil

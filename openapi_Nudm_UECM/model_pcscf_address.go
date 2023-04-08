@@ -17,23 +17,23 @@ import (
 
 // PcscfAddress Contains the addressing information (IP addresses and/or FQDN) of the P-CSCF
 type PcscfAddress struct {
-	interface{} *interface{}
+	Interface *interface{}
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PcscfAddress) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into interface{}
-	err = json.Unmarshal(data, &dst.interface{});
+	err = json.Unmarshal(data, &dst.Interface);
 	if err == nil {
-		jsoninterface{}, _ := json.Marshal(dst.interface{})
-		if string(jsoninterface{}) == "{}" { // empty struct
-			dst.interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
-			return nil // data stored in dst.interface{}, return on the first match
+			return nil // data stored in dst.Interface, return on the first match
 		}
 	} else {
-		dst.interface{} = nil
+		dst.Interface = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PcscfAddress)")
@@ -41,8 +41,8 @@ func (dst *PcscfAddress) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PcscfAddress) MarshalJSON() ([]byte, error) {
-	if src.interface{} != nil {
-		return json.Marshal(&src.interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in anyOf schemas

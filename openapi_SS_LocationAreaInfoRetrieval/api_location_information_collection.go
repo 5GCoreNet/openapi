@@ -13,7 +13,7 @@ package openapi_SS_LocationAreaInfoRetrieval
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -88,8 +88,8 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 		return localVarReturnValue, nil, reportError("range_ is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "location-info", r.locationInfo, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "range", r.range_, "")
+	parameterAddToQuery(localVarQueryParams, "location-info", r.locationInfo, "")
+	parameterAddToQuery(localVarQueryParams, "range", r.range_, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -117,9 +117,9 @@ func (a *LocationInformationCollectionApiService) RetrieveUeLocInfoExecute(r Api
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

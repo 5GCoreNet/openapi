@@ -42,7 +42,7 @@ func NewIntraRatEsActivationCandidateCellsLoadParametersWithDefaults() *IntraRat
 
 // GetLoadThreshold returns the LoadThreshold field value if set, zero value otherwise.
 func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetLoadThreshold() int32 {
-	if o == nil || IsNil(o.LoadThreshold) {
+	if o == nil || isNil(o.LoadThreshold) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetLoadThreshold() in
 // GetLoadThresholdOk returns a tuple with the LoadThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetLoadThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.LoadThreshold) {
+	if o == nil || isNil(o.LoadThreshold) {
 		return nil, false
 	}
 	return o.LoadThreshold, true
@@ -60,7 +60,7 @@ func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetLoadThresholdOk() 
 
 // HasLoadThreshold returns a boolean if a field has been set.
 func (o *IntraRatEsActivationCandidateCellsLoadParameters) HasLoadThreshold() bool {
-	if o != nil && !IsNil(o.LoadThreshold) {
+	if o != nil && !isNil(o.LoadThreshold) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *IntraRatEsActivationCandidateCellsLoadParameters) SetLoadThreshold(v in
 
 // GetTimeDuration returns the TimeDuration field value if set, zero value otherwise.
 func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetTimeDuration() int32 {
-	if o == nil || IsNil(o.TimeDuration) {
+	if o == nil || isNil(o.TimeDuration) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetTimeDuration() int
 // GetTimeDurationOk returns a tuple with the TimeDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetTimeDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeDuration) {
+	if o == nil || isNil(o.TimeDuration) {
 		return nil, false
 	}
 	return o.TimeDuration, true
@@ -92,7 +92,7 @@ func (o *IntraRatEsActivationCandidateCellsLoadParameters) GetTimeDurationOk() (
 
 // HasTimeDuration returns a boolean if a field has been set.
 func (o *IntraRatEsActivationCandidateCellsLoadParameters) HasTimeDuration() bool {
-	if o != nil && !IsNil(o.TimeDuration) {
+	if o != nil && !isNil(o.TimeDuration) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o IntraRatEsActivationCandidateCellsLoadParameters) MarshalJSON() ([]byte,
 
 func (o IntraRatEsActivationCandidateCellsLoadParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LoadThreshold) {
+	if !isNil(o.LoadThreshold) {
 		toSerialize["loadThreshold"] = o.LoadThreshold
 	}
-	if !IsNil(o.TimeDuration) {
+	if !isNil(o.TimeDuration) {
 		toSerialize["timeDuration"] = o.TimeDuration
 	}
 	return toSerialize, nil

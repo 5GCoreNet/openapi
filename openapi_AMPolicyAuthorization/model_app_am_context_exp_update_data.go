@@ -45,7 +45,7 @@ func NewAppAmContextExpUpdateDataWithDefaults() *AppAmContextExpUpdateData {
 
 // GetEvSubscs returns the EvSubscs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextExpUpdateData) GetEvSubscs() AmEventsSubscDataRm {
-	if o == nil || IsNil(o.EvSubscs.Get()) {
+	if o == nil || isNil(o.EvSubscs.Get()) {
 		var ret AmEventsSubscDataRm
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AppAmContextExpUpdateData) UnsetEvSubscs() {
 
 // GetHighThruInd returns the HighThruInd field value if set, zero value otherwise.
 func (o *AppAmContextExpUpdateData) GetHighThruInd() bool {
-	if o == nil || IsNil(o.HighThruInd) {
+	if o == nil || isNil(o.HighThruInd) {
 		var ret bool
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *AppAmContextExpUpdateData) GetHighThruInd() bool {
 // GetHighThruIndOk returns a tuple with the HighThruInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextExpUpdateData) GetHighThruIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.HighThruInd) {
+	if o == nil || isNil(o.HighThruInd) {
 		return nil, false
 	}
 	return o.HighThruInd, true
@@ -105,7 +105,7 @@ func (o *AppAmContextExpUpdateData) GetHighThruIndOk() (*bool, bool) {
 
 // HasHighThruInd returns a boolean if a field has been set.
 func (o *AppAmContextExpUpdateData) HasHighThruInd() bool {
-	if o != nil && !IsNil(o.HighThruInd) {
+	if o != nil && !isNil(o.HighThruInd) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *AppAmContextExpUpdateData) SetHighThruInd(v bool) {
 
 // GetCovReqs returns the CovReqs field value if set, zero value otherwise.
 func (o *AppAmContextExpUpdateData) GetCovReqs() []GeographicalArea {
-	if o == nil || IsNil(o.CovReqs) {
+	if o == nil || isNil(o.CovReqs) {
 		var ret []GeographicalArea
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *AppAmContextExpUpdateData) GetCovReqs() []GeographicalArea {
 // GetCovReqsOk returns a tuple with the CovReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextExpUpdateData) GetCovReqsOk() ([]GeographicalArea, bool) {
-	if o == nil || IsNil(o.CovReqs) {
+	if o == nil || isNil(o.CovReqs) {
 		return nil, false
 	}
 	return o.CovReqs, true
@@ -137,7 +137,7 @@ func (o *AppAmContextExpUpdateData) GetCovReqsOk() ([]GeographicalArea, bool) {
 
 // HasCovReqs returns a boolean if a field has been set.
 func (o *AppAmContextExpUpdateData) HasCovReqs() bool {
-	if o != nil && !IsNil(o.CovReqs) {
+	if o != nil && !isNil(o.CovReqs) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *AppAmContextExpUpdateData) SetCovReqs(v []GeographicalArea) {
 
 // GetPolicyDuration returns the PolicyDuration field value if set, zero value otherwise.
 func (o *AppAmContextExpUpdateData) GetPolicyDuration() int32 {
-	if o == nil || IsNil(o.PolicyDuration) {
+	if o == nil || isNil(o.PolicyDuration) {
 		var ret int32
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *AppAmContextExpUpdateData) GetPolicyDuration() int32 {
 // GetPolicyDurationOk returns a tuple with the PolicyDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextExpUpdateData) GetPolicyDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.PolicyDuration) {
+	if o == nil || isNil(o.PolicyDuration) {
 		return nil, false
 	}
 	return o.PolicyDuration, true
@@ -169,7 +169,7 @@ func (o *AppAmContextExpUpdateData) GetPolicyDurationOk() (*int32, bool) {
 
 // HasPolicyDuration returns a boolean if a field has been set.
 func (o *AppAmContextExpUpdateData) HasPolicyDuration() bool {
-	if o != nil && !IsNil(o.PolicyDuration) {
+	if o != nil && !isNil(o.PolicyDuration) {
 		return true
 	}
 
@@ -194,13 +194,13 @@ func (o AppAmContextExpUpdateData) ToMap() (map[string]interface{}, error) {
 	if o.EvSubscs.IsSet() {
 		toSerialize["evSubscs"] = o.EvSubscs.Get()
 	}
-	if !IsNil(o.HighThruInd) {
+	if !isNil(o.HighThruInd) {
 		toSerialize["highThruInd"] = o.HighThruInd
 	}
-	if !IsNil(o.CovReqs) {
+	if !isNil(o.CovReqs) {
 		toSerialize["covReqs"] = o.CovReqs
 	}
-	if !IsNil(o.PolicyDuration) {
+	if !isNil(o.PolicyDuration) {
 		toSerialize["policyDuration"] = o.PolicyDuration
 	}
 	return toSerialize, nil

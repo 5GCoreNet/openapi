@@ -17,23 +17,37 @@ import (
 
 // SorAckStatus Represents the reception status of the acknowledgment of successful reception of SoR Information by a UE. 
 type SorAckStatus struct {
-	string *string
+	SorAckStatusAnyOf *SorAckStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SorAckStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SorAckStatusAnyOf
+	err = json.Unmarshal(data, &dst.SorAckStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSorAckStatusAnyOf, _ := json.Marshal(dst.SorAckStatusAnyOf)
+		if string(jsonSorAckStatusAnyOf) == "{}" { // empty struct
+			dst.SorAckStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SorAckStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SorAckStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SorAckStatus)")
@@ -41,8 +55,12 @@ func (dst *SorAckStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SorAckStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SorAckStatusAnyOf != nil {
+		return json.Marshal(&src.SorAckStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

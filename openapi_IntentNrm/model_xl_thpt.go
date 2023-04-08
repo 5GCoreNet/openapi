@@ -43,7 +43,7 @@ func NewXLThptWithDefaults() *XLThpt {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *XLThpt) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *XLThpt) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *XLThpt) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -61,7 +61,7 @@ func (o *XLThpt) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *XLThpt) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *XLThpt) SetServAttrCom(v ServAttrCom) {
 
 // GetGuaThpt returns the GuaThpt field value if set, zero value otherwise.
 func (o *XLThpt) GetGuaThpt() float32 {
-	if o == nil || IsNil(o.GuaThpt) {
+	if o == nil || isNil(o.GuaThpt) {
 		var ret float32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *XLThpt) GetGuaThpt() float32 {
 // GetGuaThptOk returns a tuple with the GuaThpt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *XLThpt) GetGuaThptOk() (*float32, bool) {
-	if o == nil || IsNil(o.GuaThpt) {
+	if o == nil || isNil(o.GuaThpt) {
 		return nil, false
 	}
 	return o.GuaThpt, true
@@ -93,7 +93,7 @@ func (o *XLThpt) GetGuaThptOk() (*float32, bool) {
 
 // HasGuaThpt returns a boolean if a field has been set.
 func (o *XLThpt) HasGuaThpt() bool {
-	if o != nil && !IsNil(o.GuaThpt) {
+	if o != nil && !isNil(o.GuaThpt) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *XLThpt) SetGuaThpt(v float32) {
 
 // GetMaxThpt returns the MaxThpt field value if set, zero value otherwise.
 func (o *XLThpt) GetMaxThpt() float32 {
-	if o == nil || IsNil(o.MaxThpt) {
+	if o == nil || isNil(o.MaxThpt) {
 		var ret float32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *XLThpt) GetMaxThpt() float32 {
 // GetMaxThptOk returns a tuple with the MaxThpt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *XLThpt) GetMaxThptOk() (*float32, bool) {
-	if o == nil || IsNil(o.MaxThpt) {
+	if o == nil || isNil(o.MaxThpt) {
 		return nil, false
 	}
 	return o.MaxThpt, true
@@ -125,7 +125,7 @@ func (o *XLThpt) GetMaxThptOk() (*float32, bool) {
 
 // HasMaxThpt returns a boolean if a field has been set.
 func (o *XLThpt) HasMaxThpt() bool {
-	if o != nil && !IsNil(o.MaxThpt) {
+	if o != nil && !isNil(o.MaxThpt) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o XLThpt) MarshalJSON() ([]byte, error) {
 
 func (o XLThpt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.GuaThpt) {
+	if !isNil(o.GuaThpt) {
 		toSerialize["guaThpt"] = o.GuaThpt
 	}
-	if !IsNil(o.MaxThpt) {
+	if !isNil(o.MaxThpt) {
 		toSerialize["maxThpt"] = o.MaxThpt
 	}
 	return toSerialize, nil

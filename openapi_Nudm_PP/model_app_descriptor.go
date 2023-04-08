@@ -43,7 +43,7 @@ func NewAppDescriptorWithDefaults() *AppDescriptor {
 
 // GetOsId returns the OsId field value if set, zero value otherwise.
 func (o *AppDescriptor) GetOsId() string {
-	if o == nil || IsNil(o.OsId) {
+	if o == nil || isNil(o.OsId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AppDescriptor) GetOsId() string {
 // GetOsIdOk returns a tuple with the OsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDescriptor) GetOsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.OsId) {
+	if o == nil || isNil(o.OsId) {
 		return nil, false
 	}
 	return o.OsId, true
@@ -61,7 +61,7 @@ func (o *AppDescriptor) GetOsIdOk() (*string, bool) {
 
 // HasOsId returns a boolean if a field has been set.
 func (o *AppDescriptor) HasOsId() bool {
-	if o != nil && !IsNil(o.OsId) {
+	if o != nil && !isNil(o.OsId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AppDescriptor) SetOsId(v string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *AppDescriptor) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AppDescriptor) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDescriptor) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -93,7 +93,7 @@ func (o *AppDescriptor) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *AppDescriptor) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o AppDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o AppDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OsId) {
+	if !isNil(o.OsId) {
 		toSerialize["osId"] = o.OsId
 	}
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
 	return toSerialize, nil

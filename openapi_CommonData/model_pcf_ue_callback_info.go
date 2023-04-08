@@ -68,7 +68,7 @@ func (o *PcfUeCallbackInfo) SetCallbackUri(v string) {
 
 // GetBindingInfo returns the BindingInfo field value if set, zero value otherwise.
 func (o *PcfUeCallbackInfo) GetBindingInfo() string {
-	if o == nil || IsNil(o.BindingInfo) {
+	if o == nil || isNil(o.BindingInfo) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *PcfUeCallbackInfo) GetBindingInfo() string {
 // GetBindingInfoOk returns a tuple with the BindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfUeCallbackInfo) GetBindingInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.BindingInfo) {
+	if o == nil || isNil(o.BindingInfo) {
 		return nil, false
 	}
 	return o.BindingInfo, true
@@ -86,7 +86,7 @@ func (o *PcfUeCallbackInfo) GetBindingInfoOk() (*string, bool) {
 
 // HasBindingInfo returns a boolean if a field has been set.
 func (o *PcfUeCallbackInfo) HasBindingInfo() bool {
-	if o != nil && !IsNil(o.BindingInfo) {
+	if o != nil && !isNil(o.BindingInfo) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o PcfUeCallbackInfo) MarshalJSON() ([]byte, error) {
 func (o PcfUeCallbackInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["callbackUri"] = o.CallbackUri
-	if !IsNil(o.BindingInfo) {
+	if !isNil(o.BindingInfo) {
 		toSerialize["bindingInfo"] = o.BindingInfo
 	}
 	return toSerialize, nil

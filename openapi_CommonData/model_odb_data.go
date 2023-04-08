@@ -41,7 +41,7 @@ func NewOdbDataWithDefaults() *OdbData {
 
 // GetRoamingOdb returns the RoamingOdb field value if set, zero value otherwise.
 func (o *OdbData) GetRoamingOdb() RoamingOdb {
-	if o == nil || IsNil(o.RoamingOdb) {
+	if o == nil || isNil(o.RoamingOdb) {
 		var ret RoamingOdb
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *OdbData) GetRoamingOdb() RoamingOdb {
 // GetRoamingOdbOk returns a tuple with the RoamingOdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OdbData) GetRoamingOdbOk() (*RoamingOdb, bool) {
-	if o == nil || IsNil(o.RoamingOdb) {
+	if o == nil || isNil(o.RoamingOdb) {
 		return nil, false
 	}
 	return o.RoamingOdb, true
@@ -59,7 +59,7 @@ func (o *OdbData) GetRoamingOdbOk() (*RoamingOdb, bool) {
 
 // HasRoamingOdb returns a boolean if a field has been set.
 func (o *OdbData) HasRoamingOdb() bool {
-	if o != nil && !IsNil(o.RoamingOdb) {
+	if o != nil && !isNil(o.RoamingOdb) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o OdbData) MarshalJSON() ([]byte, error) {
 
 func (o OdbData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RoamingOdb) {
+	if !isNil(o.RoamingOdb) {
 		toSerialize["roamingOdb"] = o.RoamingOdb
 	}
 	return toSerialize, nil

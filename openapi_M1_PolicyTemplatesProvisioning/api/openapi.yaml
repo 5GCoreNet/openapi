@@ -341,10 +341,7 @@ components:
       type: string
     SponsoringStatus:
       anyOf:
-      - enum:
-        - SPONSOR_DISABLED
-        - SPONSOR_ENABLED
-        type: string
+      - $ref: '#/components/schemas/SponsoringStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -399,3 +396,9 @@ components:
           description: Contains an identity of an application service provider.
           type: string
       type: object
+    SponsoringStatus_anyOf:
+      enum:
+      - SPONSOR_DISABLED
+      - SPONSOR_ENABLED
+      type: string
+      example: null

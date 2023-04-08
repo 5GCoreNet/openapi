@@ -17,23 +17,37 @@ import (
 
 // RuleOperation Possible values are - CREATE_PCC_RULE: Indicates to create a new PCC rule to reserve the resource requested by  the UE.  - DELETE_PCC_RULE: Indicates to delete a PCC rule corresponding to reserve the resource  requested by the UE. - MODIFY_PCC_RULE_AND_ADD_PACKET_FILTERS: Indicates to modify the PCC rule by adding new  packet filter(s). - MODIFY_ PCC_RULE_AND_REPLACE_PACKET_FILTERS: Indicates to modify the PCC rule by replacing  the existing packet filter(s). - MODIFY_ PCC_RULE_AND_DELETE_PACKET_FILTERS: Indicates to modify the PCC rule by deleting  the existing packet filter(s). - MODIFY_PCC_RULE_WITHOUT_MODIFY_PACKET_FILTERS: Indicates to modify the PCC rule by  modifying the QoS of the PCC rule. 
 type RuleOperation struct {
-	string *string
+	RuleOperationAnyOf *RuleOperationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RuleOperation) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into RuleOperationAnyOf
+	err = json.Unmarshal(data, &dst.RuleOperationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonRuleOperationAnyOf, _ := json.Marshal(dst.RuleOperationAnyOf)
+		if string(jsonRuleOperationAnyOf) == "{}" { // empty struct
+			dst.RuleOperationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.RuleOperationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.RuleOperationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RuleOperation)")
@@ -41,8 +55,12 @@ func (dst *RuleOperation) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RuleOperation) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.RuleOperationAnyOf != nil {
+		return json.Marshal(&src.RuleOperationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

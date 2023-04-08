@@ -46,7 +46,7 @@ func NewRadioNetworkExpectationWithDefaults() *RadioNetworkExpectation {
 
 // GetExpectationId returns the ExpectationId field value if set, zero value otherwise.
 func (o *RadioNetworkExpectation) GetExpectationId() string {
-	if o == nil || IsNil(o.ExpectationId) {
+	if o == nil || isNil(o.ExpectationId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *RadioNetworkExpectation) GetExpectationId() string {
 // GetExpectationIdOk returns a tuple with the ExpectationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectation) GetExpectationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExpectationId) {
+	if o == nil || isNil(o.ExpectationId) {
 		return nil, false
 	}
 	return o.ExpectationId, true
@@ -64,7 +64,7 @@ func (o *RadioNetworkExpectation) GetExpectationIdOk() (*string, bool) {
 
 // HasExpectationId returns a boolean if a field has been set.
 func (o *RadioNetworkExpectation) HasExpectationId() bool {
-	if o != nil && !IsNil(o.ExpectationId) {
+	if o != nil && !isNil(o.ExpectationId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *RadioNetworkExpectation) SetExpectationId(v string) {
 
 // GetExpectationVerb returns the ExpectationVerb field value if set, zero value otherwise.
 func (o *RadioNetworkExpectation) GetExpectationVerb() ExpectationVerb {
-	if o == nil || IsNil(o.ExpectationVerb) {
+	if o == nil || isNil(o.ExpectationVerb) {
 		var ret ExpectationVerb
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *RadioNetworkExpectation) GetExpectationVerb() ExpectationVerb {
 // GetExpectationVerbOk returns a tuple with the ExpectationVerb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectation) GetExpectationVerbOk() (*ExpectationVerb, bool) {
-	if o == nil || IsNil(o.ExpectationVerb) {
+	if o == nil || isNil(o.ExpectationVerb) {
 		return nil, false
 	}
 	return o.ExpectationVerb, true
@@ -96,7 +96,7 @@ func (o *RadioNetworkExpectation) GetExpectationVerbOk() (*ExpectationVerb, bool
 
 // HasExpectationVerb returns a boolean if a field has been set.
 func (o *RadioNetworkExpectation) HasExpectationVerb() bool {
-	if o != nil && !IsNil(o.ExpectationVerb) {
+	if o != nil && !isNil(o.ExpectationVerb) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *RadioNetworkExpectation) SetExpectationVerb(v ExpectationVerb) {
 
 // GetExpectationObjects returns the ExpectationObjects field value if set, zero value otherwise.
 func (o *RadioNetworkExpectation) GetExpectationObjects() []RadioNetworkExpectationObject {
-	if o == nil || IsNil(o.ExpectationObjects) {
+	if o == nil || isNil(o.ExpectationObjects) {
 		var ret []RadioNetworkExpectationObject
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *RadioNetworkExpectation) GetExpectationObjects() []RadioNetworkExpectat
 // GetExpectationObjectsOk returns a tuple with the ExpectationObjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectation) GetExpectationObjectsOk() ([]RadioNetworkExpectationObject, bool) {
-	if o == nil || IsNil(o.ExpectationObjects) {
+	if o == nil || isNil(o.ExpectationObjects) {
 		return nil, false
 	}
 	return o.ExpectationObjects, true
@@ -128,7 +128,7 @@ func (o *RadioNetworkExpectation) GetExpectationObjectsOk() ([]RadioNetworkExpec
 
 // HasExpectationObjects returns a boolean if a field has been set.
 func (o *RadioNetworkExpectation) HasExpectationObjects() bool {
-	if o != nil && !IsNil(o.ExpectationObjects) {
+	if o != nil && !isNil(o.ExpectationObjects) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *RadioNetworkExpectation) SetExpectationObjects(v []RadioNetworkExpectat
 
 // GetExpectationTargets returns the ExpectationTargets field value if set, zero value otherwise.
 func (o *RadioNetworkExpectation) GetExpectationTargets() []RadioNetworkExpectationExpectationTargetsInner {
-	if o == nil || IsNil(o.ExpectationTargets) {
+	if o == nil || isNil(o.ExpectationTargets) {
 		var ret []RadioNetworkExpectationExpectationTargetsInner
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *RadioNetworkExpectation) GetExpectationTargets() []RadioNetworkExpectat
 // GetExpectationTargetsOk returns a tuple with the ExpectationTargets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectation) GetExpectationTargetsOk() ([]RadioNetworkExpectationExpectationTargetsInner, bool) {
-	if o == nil || IsNil(o.ExpectationTargets) {
+	if o == nil || isNil(o.ExpectationTargets) {
 		return nil, false
 	}
 	return o.ExpectationTargets, true
@@ -160,7 +160,7 @@ func (o *RadioNetworkExpectation) GetExpectationTargetsOk() ([]RadioNetworkExpec
 
 // HasExpectationTargets returns a boolean if a field has been set.
 func (o *RadioNetworkExpectation) HasExpectationTargets() bool {
-	if o != nil && !IsNil(o.ExpectationTargets) {
+	if o != nil && !isNil(o.ExpectationTargets) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *RadioNetworkExpectation) SetExpectationTargets(v []RadioNetworkExpectat
 
 // GetExpectationContexts returns the ExpectationContexts field value if set, zero value otherwise.
 func (o *RadioNetworkExpectation) GetExpectationContexts() []ExpectationContext {
-	if o == nil || IsNil(o.ExpectationContexts) {
+	if o == nil || isNil(o.ExpectationContexts) {
 		var ret []ExpectationContext
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *RadioNetworkExpectation) GetExpectationContexts() []ExpectationContext 
 // GetExpectationContextsOk returns a tuple with the ExpectationContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectation) GetExpectationContextsOk() ([]ExpectationContext, bool) {
-	if o == nil || IsNil(o.ExpectationContexts) {
+	if o == nil || isNil(o.ExpectationContexts) {
 		return nil, false
 	}
 	return o.ExpectationContexts, true
@@ -192,7 +192,7 @@ func (o *RadioNetworkExpectation) GetExpectationContextsOk() ([]ExpectationConte
 
 // HasExpectationContexts returns a boolean if a field has been set.
 func (o *RadioNetworkExpectation) HasExpectationContexts() bool {
-	if o != nil && !IsNil(o.ExpectationContexts) {
+	if o != nil && !isNil(o.ExpectationContexts) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *RadioNetworkExpectation) SetExpectationContexts(v []ExpectationContext)
 
 // GetExpectationfulfilmentInfo returns the ExpectationfulfilmentInfo field value if set, zero value otherwise.
 func (o *RadioNetworkExpectation) GetExpectationfulfilmentInfo() FulfilmentInfo {
-	if o == nil || IsNil(o.ExpectationfulfilmentInfo) {
+	if o == nil || isNil(o.ExpectationfulfilmentInfo) {
 		var ret FulfilmentInfo
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *RadioNetworkExpectation) GetExpectationfulfilmentInfo() FulfilmentInfo 
 // GetExpectationfulfilmentInfoOk returns a tuple with the ExpectationfulfilmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RadioNetworkExpectation) GetExpectationfulfilmentInfoOk() (*FulfilmentInfo, bool) {
-	if o == nil || IsNil(o.ExpectationfulfilmentInfo) {
+	if o == nil || isNil(o.ExpectationfulfilmentInfo) {
 		return nil, false
 	}
 	return o.ExpectationfulfilmentInfo, true
@@ -224,7 +224,7 @@ func (o *RadioNetworkExpectation) GetExpectationfulfilmentInfoOk() (*FulfilmentI
 
 // HasExpectationfulfilmentInfo returns a boolean if a field has been set.
 func (o *RadioNetworkExpectation) HasExpectationfulfilmentInfo() bool {
-	if o != nil && !IsNil(o.ExpectationfulfilmentInfo) {
+	if o != nil && !isNil(o.ExpectationfulfilmentInfo) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o RadioNetworkExpectation) MarshalJSON() ([]byte, error) {
 
 func (o RadioNetworkExpectation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExpectationId) {
+	if !isNil(o.ExpectationId) {
 		toSerialize["expectationId"] = o.ExpectationId
 	}
-	if !IsNil(o.ExpectationVerb) {
+	if !isNil(o.ExpectationVerb) {
 		toSerialize["expectationVerb"] = o.ExpectationVerb
 	}
-	if !IsNil(o.ExpectationObjects) {
+	if !isNil(o.ExpectationObjects) {
 		toSerialize["expectationObjects"] = o.ExpectationObjects
 	}
-	if !IsNil(o.ExpectationTargets) {
+	if !isNil(o.ExpectationTargets) {
 		toSerialize["expectationTargets"] = o.ExpectationTargets
 	}
-	if !IsNil(o.ExpectationContexts) {
+	if !isNil(o.ExpectationContexts) {
 		toSerialize["expectationContexts"] = o.ExpectationContexts
 	}
-	if !IsNil(o.ExpectationfulfilmentInfo) {
+	if !isNil(o.ExpectationfulfilmentInfo) {
 		toSerialize["expectationfulfilmentInfo"] = o.ExpectationfulfilmentInfo
 	}
 	return toSerialize, nil

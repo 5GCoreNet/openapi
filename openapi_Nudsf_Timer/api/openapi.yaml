@@ -942,11 +942,7 @@ components:
       type: object
     ConditionOperator:
       anyOf:
-      - enum:
-        - AND
-        - OR
-        - NOT
-        type: string
+      - $ref: '#/components/schemas/ConditionOperator_anyOf'
       - type: string
       description: TBD
     SchemaId:
@@ -972,14 +968,7 @@ components:
       type: object
     ComparisonOperator:
       anyOf:
-      - enum:
-        - EQ
-        - NEQ
-        - GT
-        - GTE
-        - LT
-        - LTE
-        type: string
+      - $ref: '#/components/schemas/ComparisonOperator_anyOf'
       - type: string
       description: TBD
     RecordIdList:
@@ -1100,14 +1089,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -1288,64 +1270,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -1457,6 +1382,93 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    ConditionOperator_anyOf:
+      enum:
+      - AND
+      - OR
+      - NOT
+      type: string
+      example: null
+    ComparisonOperator_anyOf:
+      enum:
+      - EQ
+      - NEQ
+      - GT
+      - GTE
+      - LT
+      - LTE
+      type: string
+      example: null
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

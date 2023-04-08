@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -15,6 +14,7 @@ docs/PolicyTemplateApplicationSessionContext.md
 docs/PolicyTemplateState.md
 docs/Snssai.md
 docs/SponsoringStatus.md
+docs/SponsoringStatusAnyOf.md
 git_push.sh
 go.mod
 go.sum
@@ -26,6 +26,7 @@ model_policy_template_application_session_context.go
 model_policy_template_state.go
 model_snssai.go
 model_sponsoring_status.go
+model_sponsoring_status_any_of.go
 response.go
 test/api_default_test.go
 utils.go

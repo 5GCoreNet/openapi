@@ -175,7 +175,7 @@ func NewUeContextWithDefaults() *UeContext {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *UeContext) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *UeContext) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -193,7 +193,7 @@ func (o *UeContext) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *UeContext) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *UeContext) SetSupi(v string) {
 
 // GetSupiUnauthInd returns the SupiUnauthInd field value if set, zero value otherwise.
 func (o *UeContext) GetSupiUnauthInd() bool {
-	if o == nil || IsNil(o.SupiUnauthInd) {
+	if o == nil || isNil(o.SupiUnauthInd) {
 		var ret bool
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *UeContext) GetSupiUnauthInd() bool {
 // GetSupiUnauthIndOk returns a tuple with the SupiUnauthInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSupiUnauthIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SupiUnauthInd) {
+	if o == nil || isNil(o.SupiUnauthInd) {
 		return nil, false
 	}
 	return o.SupiUnauthInd, true
@@ -225,7 +225,7 @@ func (o *UeContext) GetSupiUnauthIndOk() (*bool, bool) {
 
 // HasSupiUnauthInd returns a boolean if a field has been set.
 func (o *UeContext) HasSupiUnauthInd() bool {
-	if o != nil && !IsNil(o.SupiUnauthInd) {
+	if o != nil && !isNil(o.SupiUnauthInd) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *UeContext) SetSupiUnauthInd(v bool) {
 
 // GetGpsiList returns the GpsiList field value if set, zero value otherwise.
 func (o *UeContext) GetGpsiList() []string {
-	if o == nil || IsNil(o.GpsiList) {
+	if o == nil || isNil(o.GpsiList) {
 		var ret []string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *UeContext) GetGpsiList() []string {
 // GetGpsiListOk returns a tuple with the GpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetGpsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.GpsiList) {
+	if o == nil || isNil(o.GpsiList) {
 		return nil, false
 	}
 	return o.GpsiList, true
@@ -257,7 +257,7 @@ func (o *UeContext) GetGpsiListOk() ([]string, bool) {
 
 // HasGpsiList returns a boolean if a field has been set.
 func (o *UeContext) HasGpsiList() bool {
-	if o != nil && !IsNil(o.GpsiList) {
+	if o != nil && !isNil(o.GpsiList) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *UeContext) SetGpsiList(v []string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UeContext) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *UeContext) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -289,7 +289,7 @@ func (o *UeContext) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UeContext) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *UeContext) SetPei(v string) {
 
 // GetUdmGroupId returns the UdmGroupId field value if set, zero value otherwise.
 func (o *UeContext) GetUdmGroupId() string {
-	if o == nil || IsNil(o.UdmGroupId) {
+	if o == nil || isNil(o.UdmGroupId) {
 		var ret string
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *UeContext) GetUdmGroupId() string {
 // GetUdmGroupIdOk returns a tuple with the UdmGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetUdmGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UdmGroupId) {
+	if o == nil || isNil(o.UdmGroupId) {
 		return nil, false
 	}
 	return o.UdmGroupId, true
@@ -321,7 +321,7 @@ func (o *UeContext) GetUdmGroupIdOk() (*string, bool) {
 
 // HasUdmGroupId returns a boolean if a field has been set.
 func (o *UeContext) HasUdmGroupId() bool {
-	if o != nil && !IsNil(o.UdmGroupId) {
+	if o != nil && !isNil(o.UdmGroupId) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *UeContext) SetUdmGroupId(v string) {
 
 // GetAusfGroupId returns the AusfGroupId field value if set, zero value otherwise.
 func (o *UeContext) GetAusfGroupId() string {
-	if o == nil || IsNil(o.AusfGroupId) {
+	if o == nil || isNil(o.AusfGroupId) {
 		var ret string
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *UeContext) GetAusfGroupId() string {
 // GetAusfGroupIdOk returns a tuple with the AusfGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetAusfGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AusfGroupId) {
+	if o == nil || isNil(o.AusfGroupId) {
 		return nil, false
 	}
 	return o.AusfGroupId, true
@@ -353,7 +353,7 @@ func (o *UeContext) GetAusfGroupIdOk() (*string, bool) {
 
 // HasAusfGroupId returns a boolean if a field has been set.
 func (o *UeContext) HasAusfGroupId() bool {
-	if o != nil && !IsNil(o.AusfGroupId) {
+	if o != nil && !isNil(o.AusfGroupId) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *UeContext) SetAusfGroupId(v string) {
 
 // GetPcfGroupId returns the PcfGroupId field value if set, zero value otherwise.
 func (o *UeContext) GetPcfGroupId() string {
-	if o == nil || IsNil(o.PcfGroupId) {
+	if o == nil || isNil(o.PcfGroupId) {
 		var ret string
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *UeContext) GetPcfGroupId() string {
 // GetPcfGroupIdOk returns a tuple with the PcfGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfGroupId) {
+	if o == nil || isNil(o.PcfGroupId) {
 		return nil, false
 	}
 	return o.PcfGroupId, true
@@ -385,7 +385,7 @@ func (o *UeContext) GetPcfGroupIdOk() (*string, bool) {
 
 // HasPcfGroupId returns a boolean if a field has been set.
 func (o *UeContext) HasPcfGroupId() bool {
-	if o != nil && !IsNil(o.PcfGroupId) {
+	if o != nil && !isNil(o.PcfGroupId) {
 		return true
 	}
 
@@ -399,7 +399,7 @@ func (o *UeContext) SetPcfGroupId(v string) {
 
 // GetRoutingIndicator returns the RoutingIndicator field value if set, zero value otherwise.
 func (o *UeContext) GetRoutingIndicator() string {
-	if o == nil || IsNil(o.RoutingIndicator) {
+	if o == nil || isNil(o.RoutingIndicator) {
 		var ret string
 		return ret
 	}
@@ -409,7 +409,7 @@ func (o *UeContext) GetRoutingIndicator() string {
 // GetRoutingIndicatorOk returns a tuple with the RoutingIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetRoutingIndicatorOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingIndicator) {
+	if o == nil || isNil(o.RoutingIndicator) {
 		return nil, false
 	}
 	return o.RoutingIndicator, true
@@ -417,7 +417,7 @@ func (o *UeContext) GetRoutingIndicatorOk() (*string, bool) {
 
 // HasRoutingIndicator returns a boolean if a field has been set.
 func (o *UeContext) HasRoutingIndicator() bool {
-	if o != nil && !IsNil(o.RoutingIndicator) {
+	if o != nil && !isNil(o.RoutingIndicator) {
 		return true
 	}
 
@@ -431,7 +431,7 @@ func (o *UeContext) SetRoutingIndicator(v string) {
 
 // GetHNwPubKeyId returns the HNwPubKeyId field value if set, zero value otherwise.
 func (o *UeContext) GetHNwPubKeyId() int32 {
-	if o == nil || IsNil(o.HNwPubKeyId) {
+	if o == nil || isNil(o.HNwPubKeyId) {
 		var ret int32
 		return ret
 	}
@@ -441,7 +441,7 @@ func (o *UeContext) GetHNwPubKeyId() int32 {
 // GetHNwPubKeyIdOk returns a tuple with the HNwPubKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetHNwPubKeyIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.HNwPubKeyId) {
+	if o == nil || isNil(o.HNwPubKeyId) {
 		return nil, false
 	}
 	return o.HNwPubKeyId, true
@@ -449,7 +449,7 @@ func (o *UeContext) GetHNwPubKeyIdOk() (*int32, bool) {
 
 // HasHNwPubKeyId returns a boolean if a field has been set.
 func (o *UeContext) HasHNwPubKeyId() bool {
-	if o != nil && !IsNil(o.HNwPubKeyId) {
+	if o != nil && !isNil(o.HNwPubKeyId) {
 		return true
 	}
 
@@ -463,7 +463,7 @@ func (o *UeContext) SetHNwPubKeyId(v int32) {
 
 // GetGroupList returns the GroupList field value if set, zero value otherwise.
 func (o *UeContext) GetGroupList() []string {
-	if o == nil || IsNil(o.GroupList) {
+	if o == nil || isNil(o.GroupList) {
 		var ret []string
 		return ret
 	}
@@ -473,7 +473,7 @@ func (o *UeContext) GetGroupList() []string {
 // GetGroupListOk returns a tuple with the GroupList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetGroupListOk() ([]string, bool) {
-	if o == nil || IsNil(o.GroupList) {
+	if o == nil || isNil(o.GroupList) {
 		return nil, false
 	}
 	return o.GroupList, true
@@ -481,7 +481,7 @@ func (o *UeContext) GetGroupListOk() ([]string, bool) {
 
 // HasGroupList returns a boolean if a field has been set.
 func (o *UeContext) HasGroupList() bool {
-	if o != nil && !IsNil(o.GroupList) {
+	if o != nil && !isNil(o.GroupList) {
 		return true
 	}
 
@@ -495,7 +495,7 @@ func (o *UeContext) SetGroupList(v []string) {
 
 // GetDrxParameter returns the DrxParameter field value if set, zero value otherwise.
 func (o *UeContext) GetDrxParameter() string {
-	if o == nil || IsNil(o.DrxParameter) {
+	if o == nil || isNil(o.DrxParameter) {
 		var ret string
 		return ret
 	}
@@ -505,7 +505,7 @@ func (o *UeContext) GetDrxParameter() string {
 // GetDrxParameterOk returns a tuple with the DrxParameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetDrxParameterOk() (*string, bool) {
-	if o == nil || IsNil(o.DrxParameter) {
+	if o == nil || isNil(o.DrxParameter) {
 		return nil, false
 	}
 	return o.DrxParameter, true
@@ -513,7 +513,7 @@ func (o *UeContext) GetDrxParameterOk() (*string, bool) {
 
 // HasDrxParameter returns a boolean if a field has been set.
 func (o *UeContext) HasDrxParameter() bool {
-	if o != nil && !IsNil(o.DrxParameter) {
+	if o != nil && !isNil(o.DrxParameter) {
 		return true
 	}
 
@@ -527,7 +527,7 @@ func (o *UeContext) SetDrxParameter(v string) {
 
 // GetSubRfsp returns the SubRfsp field value if set, zero value otherwise.
 func (o *UeContext) GetSubRfsp() int32 {
-	if o == nil || IsNil(o.SubRfsp) {
+	if o == nil || isNil(o.SubRfsp) {
 		var ret int32
 		return ret
 	}
@@ -537,7 +537,7 @@ func (o *UeContext) GetSubRfsp() int32 {
 // GetSubRfspOk returns a tuple with the SubRfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSubRfspOk() (*int32, bool) {
-	if o == nil || IsNil(o.SubRfsp) {
+	if o == nil || isNil(o.SubRfsp) {
 		return nil, false
 	}
 	return o.SubRfsp, true
@@ -545,7 +545,7 @@ func (o *UeContext) GetSubRfspOk() (*int32, bool) {
 
 // HasSubRfsp returns a boolean if a field has been set.
 func (o *UeContext) HasSubRfsp() bool {
-	if o != nil && !IsNil(o.SubRfsp) {
+	if o != nil && !isNil(o.SubRfsp) {
 		return true
 	}
 
@@ -559,7 +559,7 @@ func (o *UeContext) SetSubRfsp(v int32) {
 
 // GetUsedRfsp returns the UsedRfsp field value if set, zero value otherwise.
 func (o *UeContext) GetUsedRfsp() int32 {
-	if o == nil || IsNil(o.UsedRfsp) {
+	if o == nil || isNil(o.UsedRfsp) {
 		var ret int32
 		return ret
 	}
@@ -569,7 +569,7 @@ func (o *UeContext) GetUsedRfsp() int32 {
 // GetUsedRfspOk returns a tuple with the UsedRfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetUsedRfspOk() (*int32, bool) {
-	if o == nil || IsNil(o.UsedRfsp) {
+	if o == nil || isNil(o.UsedRfsp) {
 		return nil, false
 	}
 	return o.UsedRfsp, true
@@ -577,7 +577,7 @@ func (o *UeContext) GetUsedRfspOk() (*int32, bool) {
 
 // HasUsedRfsp returns a boolean if a field has been set.
 func (o *UeContext) HasUsedRfsp() bool {
-	if o != nil && !IsNil(o.UsedRfsp) {
+	if o != nil && !isNil(o.UsedRfsp) {
 		return true
 	}
 
@@ -591,7 +591,7 @@ func (o *UeContext) SetUsedRfsp(v int32) {
 
 // GetSubUeAmbr returns the SubUeAmbr field value if set, zero value otherwise.
 func (o *UeContext) GetSubUeAmbr() Ambr {
-	if o == nil || IsNil(o.SubUeAmbr) {
+	if o == nil || isNil(o.SubUeAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -601,7 +601,7 @@ func (o *UeContext) GetSubUeAmbr() Ambr {
 // GetSubUeAmbrOk returns a tuple with the SubUeAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSubUeAmbrOk() (*Ambr, bool) {
-	if o == nil || IsNil(o.SubUeAmbr) {
+	if o == nil || isNil(o.SubUeAmbr) {
 		return nil, false
 	}
 	return o.SubUeAmbr, true
@@ -609,7 +609,7 @@ func (o *UeContext) GetSubUeAmbrOk() (*Ambr, bool) {
 
 // HasSubUeAmbr returns a boolean if a field has been set.
 func (o *UeContext) HasSubUeAmbr() bool {
-	if o != nil && !IsNil(o.SubUeAmbr) {
+	if o != nil && !isNil(o.SubUeAmbr) {
 		return true
 	}
 
@@ -623,7 +623,7 @@ func (o *UeContext) SetSubUeAmbr(v Ambr) {
 
 // GetSubUeSliceMbrList returns the SubUeSliceMbrList field value if set, zero value otherwise.
 func (o *UeContext) GetSubUeSliceMbrList() map[string]SliceMbr {
-	if o == nil || IsNil(o.SubUeSliceMbrList) {
+	if o == nil || isNil(o.SubUeSliceMbrList) {
 		var ret map[string]SliceMbr
 		return ret
 	}
@@ -633,7 +633,7 @@ func (o *UeContext) GetSubUeSliceMbrList() map[string]SliceMbr {
 // GetSubUeSliceMbrListOk returns a tuple with the SubUeSliceMbrList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSubUeSliceMbrListOk() (*map[string]SliceMbr, bool) {
-	if o == nil || IsNil(o.SubUeSliceMbrList) {
+	if o == nil || isNil(o.SubUeSliceMbrList) {
 		return nil, false
 	}
 	return o.SubUeSliceMbrList, true
@@ -641,7 +641,7 @@ func (o *UeContext) GetSubUeSliceMbrListOk() (*map[string]SliceMbr, bool) {
 
 // HasSubUeSliceMbrList returns a boolean if a field has been set.
 func (o *UeContext) HasSubUeSliceMbrList() bool {
-	if o != nil && !IsNil(o.SubUeSliceMbrList) {
+	if o != nil && !isNil(o.SubUeSliceMbrList) {
 		return true
 	}
 
@@ -655,7 +655,7 @@ func (o *UeContext) SetSubUeSliceMbrList(v map[string]SliceMbr) {
 
 // GetSmsfId returns the SmsfId field value if set, zero value otherwise.
 func (o *UeContext) GetSmsfId() string {
-	if o == nil || IsNil(o.SmsfId) {
+	if o == nil || isNil(o.SmsfId) {
 		var ret string
 		return ret
 	}
@@ -665,7 +665,7 @@ func (o *UeContext) GetSmsfId() string {
 // GetSmsfIdOk returns a tuple with the SmsfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSmsfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfId) {
+	if o == nil || isNil(o.SmsfId) {
 		return nil, false
 	}
 	return o.SmsfId, true
@@ -673,7 +673,7 @@ func (o *UeContext) GetSmsfIdOk() (*string, bool) {
 
 // HasSmsfId returns a boolean if a field has been set.
 func (o *UeContext) HasSmsfId() bool {
-	if o != nil && !IsNil(o.SmsfId) {
+	if o != nil && !isNil(o.SmsfId) {
 		return true
 	}
 
@@ -687,7 +687,7 @@ func (o *UeContext) SetSmsfId(v string) {
 
 // GetSeafData returns the SeafData field value if set, zero value otherwise.
 func (o *UeContext) GetSeafData() SeafData {
-	if o == nil || IsNil(o.SeafData) {
+	if o == nil || isNil(o.SeafData) {
 		var ret SeafData
 		return ret
 	}
@@ -697,7 +697,7 @@ func (o *UeContext) GetSeafData() SeafData {
 // GetSeafDataOk returns a tuple with the SeafData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSeafDataOk() (*SeafData, bool) {
-	if o == nil || IsNil(o.SeafData) {
+	if o == nil || isNil(o.SeafData) {
 		return nil, false
 	}
 	return o.SeafData, true
@@ -705,7 +705,7 @@ func (o *UeContext) GetSeafDataOk() (*SeafData, bool) {
 
 // HasSeafData returns a boolean if a field has been set.
 func (o *UeContext) HasSeafData() bool {
-	if o != nil && !IsNil(o.SeafData) {
+	if o != nil && !isNil(o.SeafData) {
 		return true
 	}
 
@@ -719,7 +719,7 @@ func (o *UeContext) SetSeafData(v SeafData) {
 
 // GetVar5gMmCapability returns the Var5gMmCapability field value if set, zero value otherwise.
 func (o *UeContext) GetVar5gMmCapability() string {
-	if o == nil || IsNil(o.Var5gMmCapability) {
+	if o == nil || isNil(o.Var5gMmCapability) {
 		var ret string
 		return ret
 	}
@@ -729,7 +729,7 @@ func (o *UeContext) GetVar5gMmCapability() string {
 // GetVar5gMmCapabilityOk returns a tuple with the Var5gMmCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetVar5gMmCapabilityOk() (*string, bool) {
-	if o == nil || IsNil(o.Var5gMmCapability) {
+	if o == nil || isNil(o.Var5gMmCapability) {
 		return nil, false
 	}
 	return o.Var5gMmCapability, true
@@ -737,7 +737,7 @@ func (o *UeContext) GetVar5gMmCapabilityOk() (*string, bool) {
 
 // HasVar5gMmCapability returns a boolean if a field has been set.
 func (o *UeContext) HasVar5gMmCapability() bool {
-	if o != nil && !IsNil(o.Var5gMmCapability) {
+	if o != nil && !isNil(o.Var5gMmCapability) {
 		return true
 	}
 
@@ -751,7 +751,7 @@ func (o *UeContext) SetVar5gMmCapability(v string) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *UeContext) GetPcfId() string {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -761,7 +761,7 @@ func (o *UeContext) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -769,7 +769,7 @@ func (o *UeContext) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *UeContext) HasPcfId() bool {
-	if o != nil && !IsNil(o.PcfId) {
+	if o != nil && !isNil(o.PcfId) {
 		return true
 	}
 
@@ -783,7 +783,7 @@ func (o *UeContext) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *UeContext) GetPcfSetId() string {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -793,7 +793,7 @@ func (o *UeContext) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -801,7 +801,7 @@ func (o *UeContext) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *UeContext) HasPcfSetId() bool {
-	if o != nil && !IsNil(o.PcfSetId) {
+	if o != nil && !isNil(o.PcfSetId) {
 		return true
 	}
 
@@ -815,7 +815,7 @@ func (o *UeContext) SetPcfSetId(v string) {
 
 // GetPcfAmpServiceSetId returns the PcfAmpServiceSetId field value if set, zero value otherwise.
 func (o *UeContext) GetPcfAmpServiceSetId() string {
-	if o == nil || IsNil(o.PcfAmpServiceSetId) {
+	if o == nil || isNil(o.PcfAmpServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -825,7 +825,7 @@ func (o *UeContext) GetPcfAmpServiceSetId() string {
 // GetPcfAmpServiceSetIdOk returns a tuple with the PcfAmpServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfAmpServiceSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfAmpServiceSetId) {
+	if o == nil || isNil(o.PcfAmpServiceSetId) {
 		return nil, false
 	}
 	return o.PcfAmpServiceSetId, true
@@ -833,7 +833,7 @@ func (o *UeContext) GetPcfAmpServiceSetIdOk() (*string, bool) {
 
 // HasPcfAmpServiceSetId returns a boolean if a field has been set.
 func (o *UeContext) HasPcfAmpServiceSetId() bool {
-	if o != nil && !IsNil(o.PcfAmpServiceSetId) {
+	if o != nil && !isNil(o.PcfAmpServiceSetId) {
 		return true
 	}
 
@@ -847,7 +847,7 @@ func (o *UeContext) SetPcfAmpServiceSetId(v string) {
 
 // GetPcfUepServiceSetId returns the PcfUepServiceSetId field value if set, zero value otherwise.
 func (o *UeContext) GetPcfUepServiceSetId() string {
-	if o == nil || IsNil(o.PcfUepServiceSetId) {
+	if o == nil || isNil(o.PcfUepServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -857,7 +857,7 @@ func (o *UeContext) GetPcfUepServiceSetId() string {
 // GetPcfUepServiceSetIdOk returns a tuple with the PcfUepServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfUepServiceSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfUepServiceSetId) {
+	if o == nil || isNil(o.PcfUepServiceSetId) {
 		return nil, false
 	}
 	return o.PcfUepServiceSetId, true
@@ -865,7 +865,7 @@ func (o *UeContext) GetPcfUepServiceSetIdOk() (*string, bool) {
 
 // HasPcfUepServiceSetId returns a boolean if a field has been set.
 func (o *UeContext) HasPcfUepServiceSetId() bool {
-	if o != nil && !IsNil(o.PcfUepServiceSetId) {
+	if o != nil && !isNil(o.PcfUepServiceSetId) {
 		return true
 	}
 
@@ -879,7 +879,7 @@ func (o *UeContext) SetPcfUepServiceSetId(v string) {
 
 // GetPcfBinding returns the PcfBinding field value if set, zero value otherwise.
 func (o *UeContext) GetPcfBinding() SbiBindingLevel {
-	if o == nil || IsNil(o.PcfBinding) {
+	if o == nil || isNil(o.PcfBinding) {
 		var ret SbiBindingLevel
 		return ret
 	}
@@ -889,7 +889,7 @@ func (o *UeContext) GetPcfBinding() SbiBindingLevel {
 // GetPcfBindingOk returns a tuple with the PcfBinding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfBindingOk() (*SbiBindingLevel, bool) {
-	if o == nil || IsNil(o.PcfBinding) {
+	if o == nil || isNil(o.PcfBinding) {
 		return nil, false
 	}
 	return o.PcfBinding, true
@@ -897,7 +897,7 @@ func (o *UeContext) GetPcfBindingOk() (*SbiBindingLevel, bool) {
 
 // HasPcfBinding returns a boolean if a field has been set.
 func (o *UeContext) HasPcfBinding() bool {
-	if o != nil && !IsNil(o.PcfBinding) {
+	if o != nil && !isNil(o.PcfBinding) {
 		return true
 	}
 
@@ -911,7 +911,7 @@ func (o *UeContext) SetPcfBinding(v SbiBindingLevel) {
 
 // GetPcfAmPolicyUri returns the PcfAmPolicyUri field value if set, zero value otherwise.
 func (o *UeContext) GetPcfAmPolicyUri() string {
-	if o == nil || IsNil(o.PcfAmPolicyUri) {
+	if o == nil || isNil(o.PcfAmPolicyUri) {
 		var ret string
 		return ret
 	}
@@ -921,7 +921,7 @@ func (o *UeContext) GetPcfAmPolicyUri() string {
 // GetPcfAmPolicyUriOk returns a tuple with the PcfAmPolicyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfAmPolicyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfAmPolicyUri) {
+	if o == nil || isNil(o.PcfAmPolicyUri) {
 		return nil, false
 	}
 	return o.PcfAmPolicyUri, true
@@ -929,7 +929,7 @@ func (o *UeContext) GetPcfAmPolicyUriOk() (*string, bool) {
 
 // HasPcfAmPolicyUri returns a boolean if a field has been set.
 func (o *UeContext) HasPcfAmPolicyUri() bool {
-	if o != nil && !IsNil(o.PcfAmPolicyUri) {
+	if o != nil && !isNil(o.PcfAmPolicyUri) {
 		return true
 	}
 
@@ -943,7 +943,7 @@ func (o *UeContext) SetPcfAmPolicyUri(v string) {
 
 // GetAmPolicyReqTriggerList returns the AmPolicyReqTriggerList field value if set, zero value otherwise.
 func (o *UeContext) GetAmPolicyReqTriggerList() []PolicyReqTrigger {
-	if o == nil || IsNil(o.AmPolicyReqTriggerList) {
+	if o == nil || isNil(o.AmPolicyReqTriggerList) {
 		var ret []PolicyReqTrigger
 		return ret
 	}
@@ -953,7 +953,7 @@ func (o *UeContext) GetAmPolicyReqTriggerList() []PolicyReqTrigger {
 // GetAmPolicyReqTriggerListOk returns a tuple with the AmPolicyReqTriggerList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetAmPolicyReqTriggerListOk() ([]PolicyReqTrigger, bool) {
-	if o == nil || IsNil(o.AmPolicyReqTriggerList) {
+	if o == nil || isNil(o.AmPolicyReqTriggerList) {
 		return nil, false
 	}
 	return o.AmPolicyReqTriggerList, true
@@ -961,7 +961,7 @@ func (o *UeContext) GetAmPolicyReqTriggerListOk() ([]PolicyReqTrigger, bool) {
 
 // HasAmPolicyReqTriggerList returns a boolean if a field has been set.
 func (o *UeContext) HasAmPolicyReqTriggerList() bool {
-	if o != nil && !IsNil(o.AmPolicyReqTriggerList) {
+	if o != nil && !isNil(o.AmPolicyReqTriggerList) {
 		return true
 	}
 
@@ -975,7 +975,7 @@ func (o *UeContext) SetAmPolicyReqTriggerList(v []PolicyReqTrigger) {
 
 // GetPcfUePolicyUri returns the PcfUePolicyUri field value if set, zero value otherwise.
 func (o *UeContext) GetPcfUePolicyUri() string {
-	if o == nil || IsNil(o.PcfUePolicyUri) {
+	if o == nil || isNil(o.PcfUePolicyUri) {
 		var ret string
 		return ret
 	}
@@ -985,7 +985,7 @@ func (o *UeContext) GetPcfUePolicyUri() string {
 // GetPcfUePolicyUriOk returns a tuple with the PcfUePolicyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfUePolicyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfUePolicyUri) {
+	if o == nil || isNil(o.PcfUePolicyUri) {
 		return nil, false
 	}
 	return o.PcfUePolicyUri, true
@@ -993,7 +993,7 @@ func (o *UeContext) GetPcfUePolicyUriOk() (*string, bool) {
 
 // HasPcfUePolicyUri returns a boolean if a field has been set.
 func (o *UeContext) HasPcfUePolicyUri() bool {
-	if o != nil && !IsNil(o.PcfUePolicyUri) {
+	if o != nil && !isNil(o.PcfUePolicyUri) {
 		return true
 	}
 
@@ -1007,7 +1007,7 @@ func (o *UeContext) SetPcfUePolicyUri(v string) {
 
 // GetUePolicyReqTriggerList returns the UePolicyReqTriggerList field value if set, zero value otherwise.
 func (o *UeContext) GetUePolicyReqTriggerList() []PolicyReqTrigger {
-	if o == nil || IsNil(o.UePolicyReqTriggerList) {
+	if o == nil || isNil(o.UePolicyReqTriggerList) {
 		var ret []PolicyReqTrigger
 		return ret
 	}
@@ -1017,7 +1017,7 @@ func (o *UeContext) GetUePolicyReqTriggerList() []PolicyReqTrigger {
 // GetUePolicyReqTriggerListOk returns a tuple with the UePolicyReqTriggerList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetUePolicyReqTriggerListOk() ([]PolicyReqTrigger, bool) {
-	if o == nil || IsNil(o.UePolicyReqTriggerList) {
+	if o == nil || isNil(o.UePolicyReqTriggerList) {
 		return nil, false
 	}
 	return o.UePolicyReqTriggerList, true
@@ -1025,7 +1025,7 @@ func (o *UeContext) GetUePolicyReqTriggerListOk() ([]PolicyReqTrigger, bool) {
 
 // HasUePolicyReqTriggerList returns a boolean if a field has been set.
 func (o *UeContext) HasUePolicyReqTriggerList() bool {
-	if o != nil && !IsNil(o.UePolicyReqTriggerList) {
+	if o != nil && !isNil(o.UePolicyReqTriggerList) {
 		return true
 	}
 
@@ -1039,7 +1039,7 @@ func (o *UeContext) SetUePolicyReqTriggerList(v []PolicyReqTrigger) {
 
 // GetHpcfId returns the HpcfId field value if set, zero value otherwise.
 func (o *UeContext) GetHpcfId() string {
-	if o == nil || IsNil(o.HpcfId) {
+	if o == nil || isNil(o.HpcfId) {
 		var ret string
 		return ret
 	}
@@ -1049,7 +1049,7 @@ func (o *UeContext) GetHpcfId() string {
 // GetHpcfIdOk returns a tuple with the HpcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetHpcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.HpcfId) {
+	if o == nil || isNil(o.HpcfId) {
 		return nil, false
 	}
 	return o.HpcfId, true
@@ -1057,7 +1057,7 @@ func (o *UeContext) GetHpcfIdOk() (*string, bool) {
 
 // HasHpcfId returns a boolean if a field has been set.
 func (o *UeContext) HasHpcfId() bool {
-	if o != nil && !IsNil(o.HpcfId) {
+	if o != nil && !isNil(o.HpcfId) {
 		return true
 	}
 
@@ -1071,7 +1071,7 @@ func (o *UeContext) SetHpcfId(v string) {
 
 // GetHpcfSetId returns the HpcfSetId field value if set, zero value otherwise.
 func (o *UeContext) GetHpcfSetId() string {
-	if o == nil || IsNil(o.HpcfSetId) {
+	if o == nil || isNil(o.HpcfSetId) {
 		var ret string
 		return ret
 	}
@@ -1081,7 +1081,7 @@ func (o *UeContext) GetHpcfSetId() string {
 // GetHpcfSetIdOk returns a tuple with the HpcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetHpcfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.HpcfSetId) {
+	if o == nil || isNil(o.HpcfSetId) {
 		return nil, false
 	}
 	return o.HpcfSetId, true
@@ -1089,7 +1089,7 @@ func (o *UeContext) GetHpcfSetIdOk() (*string, bool) {
 
 // HasHpcfSetId returns a boolean if a field has been set.
 func (o *UeContext) HasHpcfSetId() bool {
-	if o != nil && !IsNil(o.HpcfSetId) {
+	if o != nil && !isNil(o.HpcfSetId) {
 		return true
 	}
 
@@ -1103,7 +1103,7 @@ func (o *UeContext) SetHpcfSetId(v string) {
 
 // GetRestrictedRatList returns the RestrictedRatList field value if set, zero value otherwise.
 func (o *UeContext) GetRestrictedRatList() []RatType {
-	if o == nil || IsNil(o.RestrictedRatList) {
+	if o == nil || isNil(o.RestrictedRatList) {
 		var ret []RatType
 		return ret
 	}
@@ -1113,7 +1113,7 @@ func (o *UeContext) GetRestrictedRatList() []RatType {
 // GetRestrictedRatListOk returns a tuple with the RestrictedRatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetRestrictedRatListOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RestrictedRatList) {
+	if o == nil || isNil(o.RestrictedRatList) {
 		return nil, false
 	}
 	return o.RestrictedRatList, true
@@ -1121,7 +1121,7 @@ func (o *UeContext) GetRestrictedRatListOk() ([]RatType, bool) {
 
 // HasRestrictedRatList returns a boolean if a field has been set.
 func (o *UeContext) HasRestrictedRatList() bool {
-	if o != nil && !IsNil(o.RestrictedRatList) {
+	if o != nil && !isNil(o.RestrictedRatList) {
 		return true
 	}
 
@@ -1135,7 +1135,7 @@ func (o *UeContext) SetRestrictedRatList(v []RatType) {
 
 // GetForbiddenAreaList returns the ForbiddenAreaList field value if set, zero value otherwise.
 func (o *UeContext) GetForbiddenAreaList() []Area {
-	if o == nil || IsNil(o.ForbiddenAreaList) {
+	if o == nil || isNil(o.ForbiddenAreaList) {
 		var ret []Area
 		return ret
 	}
@@ -1145,7 +1145,7 @@ func (o *UeContext) GetForbiddenAreaList() []Area {
 // GetForbiddenAreaListOk returns a tuple with the ForbiddenAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetForbiddenAreaListOk() ([]Area, bool) {
-	if o == nil || IsNil(o.ForbiddenAreaList) {
+	if o == nil || isNil(o.ForbiddenAreaList) {
 		return nil, false
 	}
 	return o.ForbiddenAreaList, true
@@ -1153,7 +1153,7 @@ func (o *UeContext) GetForbiddenAreaListOk() ([]Area, bool) {
 
 // HasForbiddenAreaList returns a boolean if a field has been set.
 func (o *UeContext) HasForbiddenAreaList() bool {
-	if o != nil && !IsNil(o.ForbiddenAreaList) {
+	if o != nil && !isNil(o.ForbiddenAreaList) {
 		return true
 	}
 
@@ -1167,7 +1167,7 @@ func (o *UeContext) SetForbiddenAreaList(v []Area) {
 
 // GetServiceAreaRestriction returns the ServiceAreaRestriction field value if set, zero value otherwise.
 func (o *UeContext) GetServiceAreaRestriction() ServiceAreaRestriction {
-	if o == nil || IsNil(o.ServiceAreaRestriction) {
+	if o == nil || isNil(o.ServiceAreaRestriction) {
 		var ret ServiceAreaRestriction
 		return ret
 	}
@@ -1177,7 +1177,7 @@ func (o *UeContext) GetServiceAreaRestriction() ServiceAreaRestriction {
 // GetServiceAreaRestrictionOk returns a tuple with the ServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetServiceAreaRestrictionOk() (*ServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.ServiceAreaRestriction) {
+	if o == nil || isNil(o.ServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.ServiceAreaRestriction, true
@@ -1185,7 +1185,7 @@ func (o *UeContext) GetServiceAreaRestrictionOk() (*ServiceAreaRestriction, bool
 
 // HasServiceAreaRestriction returns a boolean if a field has been set.
 func (o *UeContext) HasServiceAreaRestriction() bool {
-	if o != nil && !IsNil(o.ServiceAreaRestriction) {
+	if o != nil && !isNil(o.ServiceAreaRestriction) {
 		return true
 	}
 
@@ -1199,7 +1199,7 @@ func (o *UeContext) SetServiceAreaRestriction(v ServiceAreaRestriction) {
 
 // GetRestrictedCoreNwTypeList returns the RestrictedCoreNwTypeList field value if set, zero value otherwise.
 func (o *UeContext) GetRestrictedCoreNwTypeList() []CoreNetworkType {
-	if o == nil || IsNil(o.RestrictedCoreNwTypeList) {
+	if o == nil || isNil(o.RestrictedCoreNwTypeList) {
 		var ret []CoreNetworkType
 		return ret
 	}
@@ -1209,7 +1209,7 @@ func (o *UeContext) GetRestrictedCoreNwTypeList() []CoreNetworkType {
 // GetRestrictedCoreNwTypeListOk returns a tuple with the RestrictedCoreNwTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetRestrictedCoreNwTypeListOk() ([]CoreNetworkType, bool) {
-	if o == nil || IsNil(o.RestrictedCoreNwTypeList) {
+	if o == nil || isNil(o.RestrictedCoreNwTypeList) {
 		return nil, false
 	}
 	return o.RestrictedCoreNwTypeList, true
@@ -1217,7 +1217,7 @@ func (o *UeContext) GetRestrictedCoreNwTypeListOk() ([]CoreNetworkType, bool) {
 
 // HasRestrictedCoreNwTypeList returns a boolean if a field has been set.
 func (o *UeContext) HasRestrictedCoreNwTypeList() bool {
-	if o != nil && !IsNil(o.RestrictedCoreNwTypeList) {
+	if o != nil && !isNil(o.RestrictedCoreNwTypeList) {
 		return true
 	}
 
@@ -1231,7 +1231,7 @@ func (o *UeContext) SetRestrictedCoreNwTypeList(v []CoreNetworkType) {
 
 // GetEventSubscriptionList returns the EventSubscriptionList field value if set, zero value otherwise.
 func (o *UeContext) GetEventSubscriptionList() []ExtAmfEventSubscription {
-	if o == nil || IsNil(o.EventSubscriptionList) {
+	if o == nil || isNil(o.EventSubscriptionList) {
 		var ret []ExtAmfEventSubscription
 		return ret
 	}
@@ -1241,7 +1241,7 @@ func (o *UeContext) GetEventSubscriptionList() []ExtAmfEventSubscription {
 // GetEventSubscriptionListOk returns a tuple with the EventSubscriptionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetEventSubscriptionListOk() ([]ExtAmfEventSubscription, bool) {
-	if o == nil || IsNil(o.EventSubscriptionList) {
+	if o == nil || isNil(o.EventSubscriptionList) {
 		return nil, false
 	}
 	return o.EventSubscriptionList, true
@@ -1249,7 +1249,7 @@ func (o *UeContext) GetEventSubscriptionListOk() ([]ExtAmfEventSubscription, boo
 
 // HasEventSubscriptionList returns a boolean if a field has been set.
 func (o *UeContext) HasEventSubscriptionList() bool {
-	if o != nil && !IsNil(o.EventSubscriptionList) {
+	if o != nil && !isNil(o.EventSubscriptionList) {
 		return true
 	}
 
@@ -1263,7 +1263,7 @@ func (o *UeContext) SetEventSubscriptionList(v []ExtAmfEventSubscription) {
 
 // GetMmContextList returns the MmContextList field value if set, zero value otherwise.
 func (o *UeContext) GetMmContextList() []MmContext {
-	if o == nil || IsNil(o.MmContextList) {
+	if o == nil || isNil(o.MmContextList) {
 		var ret []MmContext
 		return ret
 	}
@@ -1273,7 +1273,7 @@ func (o *UeContext) GetMmContextList() []MmContext {
 // GetMmContextListOk returns a tuple with the MmContextList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetMmContextListOk() ([]MmContext, bool) {
-	if o == nil || IsNil(o.MmContextList) {
+	if o == nil || isNil(o.MmContextList) {
 		return nil, false
 	}
 	return o.MmContextList, true
@@ -1281,7 +1281,7 @@ func (o *UeContext) GetMmContextListOk() ([]MmContext, bool) {
 
 // HasMmContextList returns a boolean if a field has been set.
 func (o *UeContext) HasMmContextList() bool {
-	if o != nil && !IsNil(o.MmContextList) {
+	if o != nil && !isNil(o.MmContextList) {
 		return true
 	}
 
@@ -1295,7 +1295,7 @@ func (o *UeContext) SetMmContextList(v []MmContext) {
 
 // GetSessionContextList returns the SessionContextList field value if set, zero value otherwise.
 func (o *UeContext) GetSessionContextList() []PduSessionContext {
-	if o == nil || IsNil(o.SessionContextList) {
+	if o == nil || isNil(o.SessionContextList) {
 		var ret []PduSessionContext
 		return ret
 	}
@@ -1305,7 +1305,7 @@ func (o *UeContext) GetSessionContextList() []PduSessionContext {
 // GetSessionContextListOk returns a tuple with the SessionContextList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSessionContextListOk() ([]PduSessionContext, bool) {
-	if o == nil || IsNil(o.SessionContextList) {
+	if o == nil || isNil(o.SessionContextList) {
 		return nil, false
 	}
 	return o.SessionContextList, true
@@ -1313,7 +1313,7 @@ func (o *UeContext) GetSessionContextListOk() ([]PduSessionContext, bool) {
 
 // HasSessionContextList returns a boolean if a field has been set.
 func (o *UeContext) HasSessionContextList() bool {
-	if o != nil && !IsNil(o.SessionContextList) {
+	if o != nil && !isNil(o.SessionContextList) {
 		return true
 	}
 
@@ -1327,7 +1327,7 @@ func (o *UeContext) SetSessionContextList(v []PduSessionContext) {
 
 // GetEpsInterworkingInfo returns the EpsInterworkingInfo field value if set, zero value otherwise.
 func (o *UeContext) GetEpsInterworkingInfo() EpsInterworkingInfo {
-	if o == nil || IsNil(o.EpsInterworkingInfo) {
+	if o == nil || isNil(o.EpsInterworkingInfo) {
 		var ret EpsInterworkingInfo
 		return ret
 	}
@@ -1337,7 +1337,7 @@ func (o *UeContext) GetEpsInterworkingInfo() EpsInterworkingInfo {
 // GetEpsInterworkingInfoOk returns a tuple with the EpsInterworkingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetEpsInterworkingInfoOk() (*EpsInterworkingInfo, bool) {
-	if o == nil || IsNil(o.EpsInterworkingInfo) {
+	if o == nil || isNil(o.EpsInterworkingInfo) {
 		return nil, false
 	}
 	return o.EpsInterworkingInfo, true
@@ -1345,7 +1345,7 @@ func (o *UeContext) GetEpsInterworkingInfoOk() (*EpsInterworkingInfo, bool) {
 
 // HasEpsInterworkingInfo returns a boolean if a field has been set.
 func (o *UeContext) HasEpsInterworkingInfo() bool {
-	if o != nil && !IsNil(o.EpsInterworkingInfo) {
+	if o != nil && !isNil(o.EpsInterworkingInfo) {
 		return true
 	}
 
@@ -1359,7 +1359,7 @@ func (o *UeContext) SetEpsInterworkingInfo(v EpsInterworkingInfo) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UeContext) GetTraceData() TraceData {
-	if o == nil || IsNil(o.TraceData.Get()) {
+	if o == nil || isNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -1401,7 +1401,7 @@ func (o *UeContext) UnsetTraceData() {
 
 // GetServiceGapExpiryTime returns the ServiceGapExpiryTime field value if set, zero value otherwise.
 func (o *UeContext) GetServiceGapExpiryTime() time.Time {
-	if o == nil || IsNil(o.ServiceGapExpiryTime) {
+	if o == nil || isNil(o.ServiceGapExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -1411,7 +1411,7 @@ func (o *UeContext) GetServiceGapExpiryTime() time.Time {
 // GetServiceGapExpiryTimeOk returns a tuple with the ServiceGapExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetServiceGapExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ServiceGapExpiryTime) {
+	if o == nil || isNil(o.ServiceGapExpiryTime) {
 		return nil, false
 	}
 	return o.ServiceGapExpiryTime, true
@@ -1419,7 +1419,7 @@ func (o *UeContext) GetServiceGapExpiryTimeOk() (*time.Time, bool) {
 
 // HasServiceGapExpiryTime returns a boolean if a field has been set.
 func (o *UeContext) HasServiceGapExpiryTime() bool {
-	if o != nil && !IsNil(o.ServiceGapExpiryTime) {
+	if o != nil && !isNil(o.ServiceGapExpiryTime) {
 		return true
 	}
 
@@ -1433,7 +1433,7 @@ func (o *UeContext) SetServiceGapExpiryTime(v time.Time) {
 
 // GetStnSr returns the StnSr field value if set, zero value otherwise.
 func (o *UeContext) GetStnSr() string {
-	if o == nil || IsNil(o.StnSr) {
+	if o == nil || isNil(o.StnSr) {
 		var ret string
 		return ret
 	}
@@ -1443,7 +1443,7 @@ func (o *UeContext) GetStnSr() string {
 // GetStnSrOk returns a tuple with the StnSr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetStnSrOk() (*string, bool) {
-	if o == nil || IsNil(o.StnSr) {
+	if o == nil || isNil(o.StnSr) {
 		return nil, false
 	}
 	return o.StnSr, true
@@ -1451,7 +1451,7 @@ func (o *UeContext) GetStnSrOk() (*string, bool) {
 
 // HasStnSr returns a boolean if a field has been set.
 func (o *UeContext) HasStnSr() bool {
-	if o != nil && !IsNil(o.StnSr) {
+	if o != nil && !isNil(o.StnSr) {
 		return true
 	}
 
@@ -1465,7 +1465,7 @@ func (o *UeContext) SetStnSr(v string) {
 
 // GetCMsisdn returns the CMsisdn field value if set, zero value otherwise.
 func (o *UeContext) GetCMsisdn() string {
-	if o == nil || IsNil(o.CMsisdn) {
+	if o == nil || isNil(o.CMsisdn) {
 		var ret string
 		return ret
 	}
@@ -1475,7 +1475,7 @@ func (o *UeContext) GetCMsisdn() string {
 // GetCMsisdnOk returns a tuple with the CMsisdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetCMsisdnOk() (*string, bool) {
-	if o == nil || IsNil(o.CMsisdn) {
+	if o == nil || isNil(o.CMsisdn) {
 		return nil, false
 	}
 	return o.CMsisdn, true
@@ -1483,7 +1483,7 @@ func (o *UeContext) GetCMsisdnOk() (*string, bool) {
 
 // HasCMsisdn returns a boolean if a field has been set.
 func (o *UeContext) HasCMsisdn() bool {
-	if o != nil && !IsNil(o.CMsisdn) {
+	if o != nil && !isNil(o.CMsisdn) {
 		return true
 	}
 
@@ -1497,7 +1497,7 @@ func (o *UeContext) SetCMsisdn(v string) {
 
 // GetMsClassmark2 returns the MsClassmark2 field value if set, zero value otherwise.
 func (o *UeContext) GetMsClassmark2() string {
-	if o == nil || IsNil(o.MsClassmark2) {
+	if o == nil || isNil(o.MsClassmark2) {
 		var ret string
 		return ret
 	}
@@ -1507,7 +1507,7 @@ func (o *UeContext) GetMsClassmark2() string {
 // GetMsClassmark2Ok returns a tuple with the MsClassmark2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetMsClassmark2Ok() (*string, bool) {
-	if o == nil || IsNil(o.MsClassmark2) {
+	if o == nil || isNil(o.MsClassmark2) {
 		return nil, false
 	}
 	return o.MsClassmark2, true
@@ -1515,7 +1515,7 @@ func (o *UeContext) GetMsClassmark2Ok() (*string, bool) {
 
 // HasMsClassmark2 returns a boolean if a field has been set.
 func (o *UeContext) HasMsClassmark2() bool {
-	if o != nil && !IsNil(o.MsClassmark2) {
+	if o != nil && !isNil(o.MsClassmark2) {
 		return true
 	}
 
@@ -1529,7 +1529,7 @@ func (o *UeContext) SetMsClassmark2(v string) {
 
 // GetSupportedCodecList returns the SupportedCodecList field value if set, zero value otherwise.
 func (o *UeContext) GetSupportedCodecList() []string {
-	if o == nil || IsNil(o.SupportedCodecList) {
+	if o == nil || isNil(o.SupportedCodecList) {
 		var ret []string
 		return ret
 	}
@@ -1539,7 +1539,7 @@ func (o *UeContext) GetSupportedCodecList() []string {
 // GetSupportedCodecListOk returns a tuple with the SupportedCodecList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSupportedCodecListOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedCodecList) {
+	if o == nil || isNil(o.SupportedCodecList) {
 		return nil, false
 	}
 	return o.SupportedCodecList, true
@@ -1547,7 +1547,7 @@ func (o *UeContext) GetSupportedCodecListOk() ([]string, bool) {
 
 // HasSupportedCodecList returns a boolean if a field has been set.
 func (o *UeContext) HasSupportedCodecList() bool {
-	if o != nil && !IsNil(o.SupportedCodecList) {
+	if o != nil && !isNil(o.SupportedCodecList) {
 		return true
 	}
 
@@ -1561,7 +1561,7 @@ func (o *UeContext) SetSupportedCodecList(v []string) {
 
 // GetSmallDataRateStatusInfos returns the SmallDataRateStatusInfos field value if set, zero value otherwise.
 func (o *UeContext) GetSmallDataRateStatusInfos() []SmallDataRateStatusInfo {
-	if o == nil || IsNil(o.SmallDataRateStatusInfos) {
+	if o == nil || isNil(o.SmallDataRateStatusInfos) {
 		var ret []SmallDataRateStatusInfo
 		return ret
 	}
@@ -1571,7 +1571,7 @@ func (o *UeContext) GetSmallDataRateStatusInfos() []SmallDataRateStatusInfo {
 // GetSmallDataRateStatusInfosOk returns a tuple with the SmallDataRateStatusInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSmallDataRateStatusInfosOk() ([]SmallDataRateStatusInfo, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatusInfos) {
+	if o == nil || isNil(o.SmallDataRateStatusInfos) {
 		return nil, false
 	}
 	return o.SmallDataRateStatusInfos, true
@@ -1579,7 +1579,7 @@ func (o *UeContext) GetSmallDataRateStatusInfosOk() ([]SmallDataRateStatusInfo, 
 
 // HasSmallDataRateStatusInfos returns a boolean if a field has been set.
 func (o *UeContext) HasSmallDataRateStatusInfos() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatusInfos) {
+	if o != nil && !isNil(o.SmallDataRateStatusInfos) {
 		return true
 	}
 
@@ -1593,7 +1593,7 @@ func (o *UeContext) SetSmallDataRateStatusInfos(v []SmallDataRateStatusInfo) {
 
 // GetRestrictedPrimaryRatList returns the RestrictedPrimaryRatList field value if set, zero value otherwise.
 func (o *UeContext) GetRestrictedPrimaryRatList() []RatType {
-	if o == nil || IsNil(o.RestrictedPrimaryRatList) {
+	if o == nil || isNil(o.RestrictedPrimaryRatList) {
 		var ret []RatType
 		return ret
 	}
@@ -1603,7 +1603,7 @@ func (o *UeContext) GetRestrictedPrimaryRatList() []RatType {
 // GetRestrictedPrimaryRatListOk returns a tuple with the RestrictedPrimaryRatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetRestrictedPrimaryRatListOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RestrictedPrimaryRatList) {
+	if o == nil || isNil(o.RestrictedPrimaryRatList) {
 		return nil, false
 	}
 	return o.RestrictedPrimaryRatList, true
@@ -1611,7 +1611,7 @@ func (o *UeContext) GetRestrictedPrimaryRatListOk() ([]RatType, bool) {
 
 // HasRestrictedPrimaryRatList returns a boolean if a field has been set.
 func (o *UeContext) HasRestrictedPrimaryRatList() bool {
-	if o != nil && !IsNil(o.RestrictedPrimaryRatList) {
+	if o != nil && !isNil(o.RestrictedPrimaryRatList) {
 		return true
 	}
 
@@ -1625,7 +1625,7 @@ func (o *UeContext) SetRestrictedPrimaryRatList(v []RatType) {
 
 // GetRestrictedSecondaryRatList returns the RestrictedSecondaryRatList field value if set, zero value otherwise.
 func (o *UeContext) GetRestrictedSecondaryRatList() []RatType {
-	if o == nil || IsNil(o.RestrictedSecondaryRatList) {
+	if o == nil || isNil(o.RestrictedSecondaryRatList) {
 		var ret []RatType
 		return ret
 	}
@@ -1635,7 +1635,7 @@ func (o *UeContext) GetRestrictedSecondaryRatList() []RatType {
 // GetRestrictedSecondaryRatListOk returns a tuple with the RestrictedSecondaryRatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetRestrictedSecondaryRatListOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RestrictedSecondaryRatList) {
+	if o == nil || isNil(o.RestrictedSecondaryRatList) {
 		return nil, false
 	}
 	return o.RestrictedSecondaryRatList, true
@@ -1643,7 +1643,7 @@ func (o *UeContext) GetRestrictedSecondaryRatListOk() ([]RatType, bool) {
 
 // HasRestrictedSecondaryRatList returns a boolean if a field has been set.
 func (o *UeContext) HasRestrictedSecondaryRatList() bool {
-	if o != nil && !IsNil(o.RestrictedSecondaryRatList) {
+	if o != nil && !isNil(o.RestrictedSecondaryRatList) {
 		return true
 	}
 
@@ -1657,7 +1657,7 @@ func (o *UeContext) SetRestrictedSecondaryRatList(v []RatType) {
 
 // GetV2xContext returns the V2xContext field value if set, zero value otherwise.
 func (o *UeContext) GetV2xContext() V2xContext {
-	if o == nil || IsNil(o.V2xContext) {
+	if o == nil || isNil(o.V2xContext) {
 		var ret V2xContext
 		return ret
 	}
@@ -1667,7 +1667,7 @@ func (o *UeContext) GetV2xContext() V2xContext {
 // GetV2xContextOk returns a tuple with the V2xContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetV2xContextOk() (*V2xContext, bool) {
-	if o == nil || IsNil(o.V2xContext) {
+	if o == nil || isNil(o.V2xContext) {
 		return nil, false
 	}
 	return o.V2xContext, true
@@ -1675,7 +1675,7 @@ func (o *UeContext) GetV2xContextOk() (*V2xContext, bool) {
 
 // HasV2xContext returns a boolean if a field has been set.
 func (o *UeContext) HasV2xContext() bool {
-	if o != nil && !IsNil(o.V2xContext) {
+	if o != nil && !isNil(o.V2xContext) {
 		return true
 	}
 
@@ -1689,7 +1689,7 @@ func (o *UeContext) SetV2xContext(v V2xContext) {
 
 // GetLteCatMInd returns the LteCatMInd field value if set, zero value otherwise.
 func (o *UeContext) GetLteCatMInd() bool {
-	if o == nil || IsNil(o.LteCatMInd) {
+	if o == nil || isNil(o.LteCatMInd) {
 		var ret bool
 		return ret
 	}
@@ -1699,7 +1699,7 @@ func (o *UeContext) GetLteCatMInd() bool {
 // GetLteCatMIndOk returns a tuple with the LteCatMInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetLteCatMIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.LteCatMInd) {
+	if o == nil || isNil(o.LteCatMInd) {
 		return nil, false
 	}
 	return o.LteCatMInd, true
@@ -1707,7 +1707,7 @@ func (o *UeContext) GetLteCatMIndOk() (*bool, bool) {
 
 // HasLteCatMInd returns a boolean if a field has been set.
 func (o *UeContext) HasLteCatMInd() bool {
-	if o != nil && !IsNil(o.LteCatMInd) {
+	if o != nil && !isNil(o.LteCatMInd) {
 		return true
 	}
 
@@ -1721,7 +1721,7 @@ func (o *UeContext) SetLteCatMInd(v bool) {
 
 // GetRedCapInd returns the RedCapInd field value if set, zero value otherwise.
 func (o *UeContext) GetRedCapInd() bool {
-	if o == nil || IsNil(o.RedCapInd) {
+	if o == nil || isNil(o.RedCapInd) {
 		var ret bool
 		return ret
 	}
@@ -1731,7 +1731,7 @@ func (o *UeContext) GetRedCapInd() bool {
 // GetRedCapIndOk returns a tuple with the RedCapInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetRedCapIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.RedCapInd) {
+	if o == nil || isNil(o.RedCapInd) {
 		return nil, false
 	}
 	return o.RedCapInd, true
@@ -1739,7 +1739,7 @@ func (o *UeContext) GetRedCapIndOk() (*bool, bool) {
 
 // HasRedCapInd returns a boolean if a field has been set.
 func (o *UeContext) HasRedCapInd() bool {
-	if o != nil && !IsNil(o.RedCapInd) {
+	if o != nil && !isNil(o.RedCapInd) {
 		return true
 	}
 
@@ -1753,7 +1753,7 @@ func (o *UeContext) SetRedCapInd(v bool) {
 
 // GetMoExpDataCounter returns the MoExpDataCounter field value if set, zero value otherwise.
 func (o *UeContext) GetMoExpDataCounter() MoExpDataCounter {
-	if o == nil || IsNil(o.MoExpDataCounter) {
+	if o == nil || isNil(o.MoExpDataCounter) {
 		var ret MoExpDataCounter
 		return ret
 	}
@@ -1763,7 +1763,7 @@ func (o *UeContext) GetMoExpDataCounter() MoExpDataCounter {
 // GetMoExpDataCounterOk returns a tuple with the MoExpDataCounter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetMoExpDataCounterOk() (*MoExpDataCounter, bool) {
-	if o == nil || IsNil(o.MoExpDataCounter) {
+	if o == nil || isNil(o.MoExpDataCounter) {
 		return nil, false
 	}
 	return o.MoExpDataCounter, true
@@ -1771,7 +1771,7 @@ func (o *UeContext) GetMoExpDataCounterOk() (*MoExpDataCounter, bool) {
 
 // HasMoExpDataCounter returns a boolean if a field has been set.
 func (o *UeContext) HasMoExpDataCounter() bool {
-	if o != nil && !IsNil(o.MoExpDataCounter) {
+	if o != nil && !isNil(o.MoExpDataCounter) {
 		return true
 	}
 
@@ -1785,7 +1785,7 @@ func (o *UeContext) SetMoExpDataCounter(v MoExpDataCounter) {
 
 // GetCagData returns the CagData field value if set, zero value otherwise.
 func (o *UeContext) GetCagData() CagData {
-	if o == nil || IsNil(o.CagData) {
+	if o == nil || isNil(o.CagData) {
 		var ret CagData
 		return ret
 	}
@@ -1795,7 +1795,7 @@ func (o *UeContext) GetCagData() CagData {
 // GetCagDataOk returns a tuple with the CagData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetCagDataOk() (*CagData, bool) {
-	if o == nil || IsNil(o.CagData) {
+	if o == nil || isNil(o.CagData) {
 		return nil, false
 	}
 	return o.CagData, true
@@ -1803,7 +1803,7 @@ func (o *UeContext) GetCagDataOk() (*CagData, bool) {
 
 // HasCagData returns a boolean if a field has been set.
 func (o *UeContext) HasCagData() bool {
-	if o != nil && !IsNil(o.CagData) {
+	if o != nil && !isNil(o.CagData) {
 		return true
 	}
 
@@ -1817,7 +1817,7 @@ func (o *UeContext) SetCagData(v CagData) {
 
 // GetManagementMdtInd returns the ManagementMdtInd field value if set, zero value otherwise.
 func (o *UeContext) GetManagementMdtInd() bool {
-	if o == nil || IsNil(o.ManagementMdtInd) {
+	if o == nil || isNil(o.ManagementMdtInd) {
 		var ret bool
 		return ret
 	}
@@ -1827,7 +1827,7 @@ func (o *UeContext) GetManagementMdtInd() bool {
 // GetManagementMdtIndOk returns a tuple with the ManagementMdtInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetManagementMdtIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ManagementMdtInd) {
+	if o == nil || isNil(o.ManagementMdtInd) {
 		return nil, false
 	}
 	return o.ManagementMdtInd, true
@@ -1835,7 +1835,7 @@ func (o *UeContext) GetManagementMdtIndOk() (*bool, bool) {
 
 // HasManagementMdtInd returns a boolean if a field has been set.
 func (o *UeContext) HasManagementMdtInd() bool {
-	if o != nil && !IsNil(o.ManagementMdtInd) {
+	if o != nil && !isNil(o.ManagementMdtInd) {
 		return true
 	}
 
@@ -1849,7 +1849,7 @@ func (o *UeContext) SetManagementMdtInd(v bool) {
 
 // GetImmediateMdtConf returns the ImmediateMdtConf field value if set, zero value otherwise.
 func (o *UeContext) GetImmediateMdtConf() ImmediateMdtConf {
-	if o == nil || IsNil(o.ImmediateMdtConf) {
+	if o == nil || isNil(o.ImmediateMdtConf) {
 		var ret ImmediateMdtConf
 		return ret
 	}
@@ -1859,7 +1859,7 @@ func (o *UeContext) GetImmediateMdtConf() ImmediateMdtConf {
 // GetImmediateMdtConfOk returns a tuple with the ImmediateMdtConf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetImmediateMdtConfOk() (*ImmediateMdtConf, bool) {
-	if o == nil || IsNil(o.ImmediateMdtConf) {
+	if o == nil || isNil(o.ImmediateMdtConf) {
 		return nil, false
 	}
 	return o.ImmediateMdtConf, true
@@ -1867,7 +1867,7 @@ func (o *UeContext) GetImmediateMdtConfOk() (*ImmediateMdtConf, bool) {
 
 // HasImmediateMdtConf returns a boolean if a field has been set.
 func (o *UeContext) HasImmediateMdtConf() bool {
-	if o != nil && !IsNil(o.ImmediateMdtConf) {
+	if o != nil && !isNil(o.ImmediateMdtConf) {
 		return true
 	}
 
@@ -1881,7 +1881,7 @@ func (o *UeContext) SetImmediateMdtConf(v ImmediateMdtConf) {
 
 // GetEcRestrictionDataWb returns the EcRestrictionDataWb field value if set, zero value otherwise.
 func (o *UeContext) GetEcRestrictionDataWb() EcRestrictionDataWb {
-	if o == nil || IsNil(o.EcRestrictionDataWb) {
+	if o == nil || isNil(o.EcRestrictionDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -1891,7 +1891,7 @@ func (o *UeContext) GetEcRestrictionDataWb() EcRestrictionDataWb {
 // GetEcRestrictionDataWbOk returns a tuple with the EcRestrictionDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || IsNil(o.EcRestrictionDataWb) {
+	if o == nil || isNil(o.EcRestrictionDataWb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataWb, true
@@ -1899,7 +1899,7 @@ func (o *UeContext) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
 
 // HasEcRestrictionDataWb returns a boolean if a field has been set.
 func (o *UeContext) HasEcRestrictionDataWb() bool {
-	if o != nil && !IsNil(o.EcRestrictionDataWb) {
+	if o != nil && !isNil(o.EcRestrictionDataWb) {
 		return true
 	}
 
@@ -1913,7 +1913,7 @@ func (o *UeContext) SetEcRestrictionDataWb(v EcRestrictionDataWb) {
 
 // GetEcRestrictionDataNb returns the EcRestrictionDataNb field value if set, zero value otherwise.
 func (o *UeContext) GetEcRestrictionDataNb() bool {
-	if o == nil || IsNil(o.EcRestrictionDataNb) {
+	if o == nil || isNil(o.EcRestrictionDataNb) {
 		var ret bool
 		return ret
 	}
@@ -1923,7 +1923,7 @@ func (o *UeContext) GetEcRestrictionDataNb() bool {
 // GetEcRestrictionDataNbOk returns a tuple with the EcRestrictionDataNb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetEcRestrictionDataNbOk() (*bool, bool) {
-	if o == nil || IsNil(o.EcRestrictionDataNb) {
+	if o == nil || isNil(o.EcRestrictionDataNb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataNb, true
@@ -1931,7 +1931,7 @@ func (o *UeContext) GetEcRestrictionDataNbOk() (*bool, bool) {
 
 // HasEcRestrictionDataNb returns a boolean if a field has been set.
 func (o *UeContext) HasEcRestrictionDataNb() bool {
-	if o != nil && !IsNil(o.EcRestrictionDataNb) {
+	if o != nil && !isNil(o.EcRestrictionDataNb) {
 		return true
 	}
 
@@ -1945,7 +1945,7 @@ func (o *UeContext) SetEcRestrictionDataNb(v bool) {
 
 // GetIabOperationAllowed returns the IabOperationAllowed field value if set, zero value otherwise.
 func (o *UeContext) GetIabOperationAllowed() bool {
-	if o == nil || IsNil(o.IabOperationAllowed) {
+	if o == nil || isNil(o.IabOperationAllowed) {
 		var ret bool
 		return ret
 	}
@@ -1955,7 +1955,7 @@ func (o *UeContext) GetIabOperationAllowed() bool {
 // GetIabOperationAllowedOk returns a tuple with the IabOperationAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetIabOperationAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.IabOperationAllowed) {
+	if o == nil || isNil(o.IabOperationAllowed) {
 		return nil, false
 	}
 	return o.IabOperationAllowed, true
@@ -1963,7 +1963,7 @@ func (o *UeContext) GetIabOperationAllowedOk() (*bool, bool) {
 
 // HasIabOperationAllowed returns a boolean if a field has been set.
 func (o *UeContext) HasIabOperationAllowed() bool {
-	if o != nil && !IsNil(o.IabOperationAllowed) {
+	if o != nil && !isNil(o.IabOperationAllowed) {
 		return true
 	}
 
@@ -1977,7 +1977,7 @@ func (o *UeContext) SetIabOperationAllowed(v bool) {
 
 // GetProseContext returns the ProseContext field value if set, zero value otherwise.
 func (o *UeContext) GetProseContext() ProseContext {
-	if o == nil || IsNil(o.ProseContext) {
+	if o == nil || isNil(o.ProseContext) {
 		var ret ProseContext
 		return ret
 	}
@@ -1987,7 +1987,7 @@ func (o *UeContext) GetProseContext() ProseContext {
 // GetProseContextOk returns a tuple with the ProseContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetProseContextOk() (*ProseContext, bool) {
-	if o == nil || IsNil(o.ProseContext) {
+	if o == nil || isNil(o.ProseContext) {
 		return nil, false
 	}
 	return o.ProseContext, true
@@ -1995,7 +1995,7 @@ func (o *UeContext) GetProseContextOk() (*ProseContext, bool) {
 
 // HasProseContext returns a boolean if a field has been set.
 func (o *UeContext) HasProseContext() bool {
-	if o != nil && !IsNil(o.ProseContext) {
+	if o != nil && !isNil(o.ProseContext) {
 		return true
 	}
 
@@ -2009,7 +2009,7 @@ func (o *UeContext) SetProseContext(v ProseContext) {
 
 // GetAnalyticsSubscriptionList returns the AnalyticsSubscriptionList field value if set, zero value otherwise.
 func (o *UeContext) GetAnalyticsSubscriptionList() []AnalyticsSubscription {
-	if o == nil || IsNil(o.AnalyticsSubscriptionList) {
+	if o == nil || isNil(o.AnalyticsSubscriptionList) {
 		var ret []AnalyticsSubscription
 		return ret
 	}
@@ -2019,7 +2019,7 @@ func (o *UeContext) GetAnalyticsSubscriptionList() []AnalyticsSubscription {
 // GetAnalyticsSubscriptionListOk returns a tuple with the AnalyticsSubscriptionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetAnalyticsSubscriptionListOk() ([]AnalyticsSubscription, bool) {
-	if o == nil || IsNil(o.AnalyticsSubscriptionList) {
+	if o == nil || isNil(o.AnalyticsSubscriptionList) {
 		return nil, false
 	}
 	return o.AnalyticsSubscriptionList, true
@@ -2027,7 +2027,7 @@ func (o *UeContext) GetAnalyticsSubscriptionListOk() ([]AnalyticsSubscription, b
 
 // HasAnalyticsSubscriptionList returns a boolean if a field has been set.
 func (o *UeContext) HasAnalyticsSubscriptionList() bool {
-	if o != nil && !IsNil(o.AnalyticsSubscriptionList) {
+	if o != nil && !isNil(o.AnalyticsSubscriptionList) {
 		return true
 	}
 
@@ -2041,7 +2041,7 @@ func (o *UeContext) SetAnalyticsSubscriptionList(v []AnalyticsSubscription) {
 
 // GetPcfAmpBindingInfo returns the PcfAmpBindingInfo field value if set, zero value otherwise.
 func (o *UeContext) GetPcfAmpBindingInfo() string {
-	if o == nil || IsNil(o.PcfAmpBindingInfo) {
+	if o == nil || isNil(o.PcfAmpBindingInfo) {
 		var ret string
 		return ret
 	}
@@ -2051,7 +2051,7 @@ func (o *UeContext) GetPcfAmpBindingInfo() string {
 // GetPcfAmpBindingInfoOk returns a tuple with the PcfAmpBindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfAmpBindingInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfAmpBindingInfo) {
+	if o == nil || isNil(o.PcfAmpBindingInfo) {
 		return nil, false
 	}
 	return o.PcfAmpBindingInfo, true
@@ -2059,7 +2059,7 @@ func (o *UeContext) GetPcfAmpBindingInfoOk() (*string, bool) {
 
 // HasPcfAmpBindingInfo returns a boolean if a field has been set.
 func (o *UeContext) HasPcfAmpBindingInfo() bool {
-	if o != nil && !IsNil(o.PcfAmpBindingInfo) {
+	if o != nil && !isNil(o.PcfAmpBindingInfo) {
 		return true
 	}
 
@@ -2073,7 +2073,7 @@ func (o *UeContext) SetPcfAmpBindingInfo(v string) {
 
 // GetPcfUepBindingInfo returns the PcfUepBindingInfo field value if set, zero value otherwise.
 func (o *UeContext) GetPcfUepBindingInfo() string {
-	if o == nil || IsNil(o.PcfUepBindingInfo) {
+	if o == nil || isNil(o.PcfUepBindingInfo) {
 		var ret string
 		return ret
 	}
@@ -2083,7 +2083,7 @@ func (o *UeContext) GetPcfUepBindingInfo() string {
 // GetPcfUepBindingInfoOk returns a tuple with the PcfUepBindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfUepBindingInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfUepBindingInfo) {
+	if o == nil || isNil(o.PcfUepBindingInfo) {
 		return nil, false
 	}
 	return o.PcfUepBindingInfo, true
@@ -2091,7 +2091,7 @@ func (o *UeContext) GetPcfUepBindingInfoOk() (*string, bool) {
 
 // HasPcfUepBindingInfo returns a boolean if a field has been set.
 func (o *UeContext) HasPcfUepBindingInfo() bool {
-	if o != nil && !IsNil(o.PcfUepBindingInfo) {
+	if o != nil && !isNil(o.PcfUepBindingInfo) {
 		return true
 	}
 
@@ -2105,7 +2105,7 @@ func (o *UeContext) SetPcfUepBindingInfo(v string) {
 
 // GetUsedServiceAreaRestriction returns the UsedServiceAreaRestriction field value if set, zero value otherwise.
 func (o *UeContext) GetUsedServiceAreaRestriction() ServiceAreaRestriction {
-	if o == nil || IsNil(o.UsedServiceAreaRestriction) {
+	if o == nil || isNil(o.UsedServiceAreaRestriction) {
 		var ret ServiceAreaRestriction
 		return ret
 	}
@@ -2115,7 +2115,7 @@ func (o *UeContext) GetUsedServiceAreaRestriction() ServiceAreaRestriction {
 // GetUsedServiceAreaRestrictionOk returns a tuple with the UsedServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetUsedServiceAreaRestrictionOk() (*ServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.UsedServiceAreaRestriction) {
+	if o == nil || isNil(o.UsedServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.UsedServiceAreaRestriction, true
@@ -2123,7 +2123,7 @@ func (o *UeContext) GetUsedServiceAreaRestrictionOk() (*ServiceAreaRestriction, 
 
 // HasUsedServiceAreaRestriction returns a boolean if a field has been set.
 func (o *UeContext) HasUsedServiceAreaRestriction() bool {
-	if o != nil && !IsNil(o.UsedServiceAreaRestriction) {
+	if o != nil && !isNil(o.UsedServiceAreaRestriction) {
 		return true
 	}
 
@@ -2137,7 +2137,7 @@ func (o *UeContext) SetUsedServiceAreaRestriction(v ServiceAreaRestriction) {
 
 // GetPraInAmPolicy returns the PraInAmPolicy field value if set, zero value otherwise.
 func (o *UeContext) GetPraInAmPolicy() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PraInAmPolicy) {
+	if o == nil || isNil(o.PraInAmPolicy) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -2147,7 +2147,7 @@ func (o *UeContext) GetPraInAmPolicy() map[string]PresenceInfo {
 // GetPraInAmPolicyOk returns a tuple with the PraInAmPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPraInAmPolicyOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PraInAmPolicy) {
+	if o == nil || isNil(o.PraInAmPolicy) {
 		return nil, false
 	}
 	return o.PraInAmPolicy, true
@@ -2155,7 +2155,7 @@ func (o *UeContext) GetPraInAmPolicyOk() (*map[string]PresenceInfo, bool) {
 
 // HasPraInAmPolicy returns a boolean if a field has been set.
 func (o *UeContext) HasPraInAmPolicy() bool {
-	if o != nil && !IsNil(o.PraInAmPolicy) {
+	if o != nil && !isNil(o.PraInAmPolicy) {
 		return true
 	}
 
@@ -2169,7 +2169,7 @@ func (o *UeContext) SetPraInAmPolicy(v map[string]PresenceInfo) {
 
 // GetPraInUePolicy returns the PraInUePolicy field value if set, zero value otherwise.
 func (o *UeContext) GetPraInUePolicy() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PraInUePolicy) {
+	if o == nil || isNil(o.PraInUePolicy) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -2179,7 +2179,7 @@ func (o *UeContext) GetPraInUePolicy() map[string]PresenceInfo {
 // GetPraInUePolicyOk returns a tuple with the PraInUePolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPraInUePolicyOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PraInUePolicy) {
+	if o == nil || isNil(o.PraInUePolicy) {
 		return nil, false
 	}
 	return o.PraInUePolicy, true
@@ -2187,7 +2187,7 @@ func (o *UeContext) GetPraInUePolicyOk() (*map[string]PresenceInfo, bool) {
 
 // HasPraInUePolicy returns a boolean if a field has been set.
 func (o *UeContext) HasPraInUePolicy() bool {
-	if o != nil && !IsNil(o.PraInUePolicy) {
+	if o != nil && !isNil(o.PraInUePolicy) {
 		return true
 	}
 
@@ -2201,7 +2201,7 @@ func (o *UeContext) SetPraInUePolicy(v map[string]PresenceInfo) {
 
 // GetUpdpSubscriptionData returns the UpdpSubscriptionData field value if set, zero value otherwise.
 func (o *UeContext) GetUpdpSubscriptionData() UpdpSubscriptionData {
-	if o == nil || IsNil(o.UpdpSubscriptionData) {
+	if o == nil || isNil(o.UpdpSubscriptionData) {
 		var ret UpdpSubscriptionData
 		return ret
 	}
@@ -2211,7 +2211,7 @@ func (o *UeContext) GetUpdpSubscriptionData() UpdpSubscriptionData {
 // GetUpdpSubscriptionDataOk returns a tuple with the UpdpSubscriptionData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetUpdpSubscriptionDataOk() (*UpdpSubscriptionData, bool) {
-	if o == nil || IsNil(o.UpdpSubscriptionData) {
+	if o == nil || isNil(o.UpdpSubscriptionData) {
 		return nil, false
 	}
 	return o.UpdpSubscriptionData, true
@@ -2219,7 +2219,7 @@ func (o *UeContext) GetUpdpSubscriptionDataOk() (*UpdpSubscriptionData, bool) {
 
 // HasUpdpSubscriptionData returns a boolean if a field has been set.
 func (o *UeContext) HasUpdpSubscriptionData() bool {
-	if o != nil && !IsNil(o.UpdpSubscriptionData) {
+	if o != nil && !isNil(o.UpdpSubscriptionData) {
 		return true
 	}
 
@@ -2233,7 +2233,7 @@ func (o *UeContext) SetUpdpSubscriptionData(v UpdpSubscriptionData) {
 
 // GetSmPolicyNotifyPduList returns the SmPolicyNotifyPduList field value if set, zero value otherwise.
 func (o *UeContext) GetSmPolicyNotifyPduList() []PduSessionInfo {
-	if o == nil || IsNil(o.SmPolicyNotifyPduList) {
+	if o == nil || isNil(o.SmPolicyNotifyPduList) {
 		var ret []PduSessionInfo
 		return ret
 	}
@@ -2243,7 +2243,7 @@ func (o *UeContext) GetSmPolicyNotifyPduList() []PduSessionInfo {
 // GetSmPolicyNotifyPduListOk returns a tuple with the SmPolicyNotifyPduList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSmPolicyNotifyPduListOk() ([]PduSessionInfo, bool) {
-	if o == nil || IsNil(o.SmPolicyNotifyPduList) {
+	if o == nil || isNil(o.SmPolicyNotifyPduList) {
 		return nil, false
 	}
 	return o.SmPolicyNotifyPduList, true
@@ -2251,7 +2251,7 @@ func (o *UeContext) GetSmPolicyNotifyPduListOk() ([]PduSessionInfo, bool) {
 
 // HasSmPolicyNotifyPduList returns a boolean if a field has been set.
 func (o *UeContext) HasSmPolicyNotifyPduList() bool {
-	if o != nil && !IsNil(o.SmPolicyNotifyPduList) {
+	if o != nil && !isNil(o.SmPolicyNotifyPduList) {
 		return true
 	}
 
@@ -2265,7 +2265,7 @@ func (o *UeContext) SetSmPolicyNotifyPduList(v []PduSessionInfo) {
 
 // GetPcfUeCallbackInfo returns the PcfUeCallbackInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UeContext) GetPcfUeCallbackInfo() PcfUeCallbackInfo {
-	if o == nil || IsNil(o.PcfUeCallbackInfo.Get()) {
+	if o == nil || isNil(o.PcfUeCallbackInfo.Get()) {
 		var ret PcfUeCallbackInfo
 		return ret
 	}
@@ -2307,7 +2307,7 @@ func (o *UeContext) UnsetPcfUeCallbackInfo() {
 
 // GetUePositioningCap returns the UePositioningCap field value if set, zero value otherwise.
 func (o *UeContext) GetUePositioningCap() string {
-	if o == nil || IsNil(o.UePositioningCap) {
+	if o == nil || isNil(o.UePositioningCap) {
 		var ret string
 		return ret
 	}
@@ -2317,7 +2317,7 @@ func (o *UeContext) GetUePositioningCap() string {
 // GetUePositioningCapOk returns a tuple with the UePositioningCap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetUePositioningCapOk() (*string, bool) {
-	if o == nil || IsNil(o.UePositioningCap) {
+	if o == nil || isNil(o.UePositioningCap) {
 		return nil, false
 	}
 	return o.UePositioningCap, true
@@ -2325,7 +2325,7 @@ func (o *UeContext) GetUePositioningCapOk() (*string, bool) {
 
 // HasUePositioningCap returns a boolean if a field has been set.
 func (o *UeContext) HasUePositioningCap() bool {
-	if o != nil && !IsNil(o.UePositioningCap) {
+	if o != nil && !isNil(o.UePositioningCap) {
 		return true
 	}
 
@@ -2339,7 +2339,7 @@ func (o *UeContext) SetUePositioningCap(v string) {
 
 // GetAstiDistributionIndication returns the AstiDistributionIndication field value if set, zero value otherwise.
 func (o *UeContext) GetAstiDistributionIndication() bool {
-	if o == nil || IsNil(o.AstiDistributionIndication) {
+	if o == nil || isNil(o.AstiDistributionIndication) {
 		var ret bool
 		return ret
 	}
@@ -2349,7 +2349,7 @@ func (o *UeContext) GetAstiDistributionIndication() bool {
 // GetAstiDistributionIndicationOk returns a tuple with the AstiDistributionIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetAstiDistributionIndicationOk() (*bool, bool) {
-	if o == nil || IsNil(o.AstiDistributionIndication) {
+	if o == nil || isNil(o.AstiDistributionIndication) {
 		return nil, false
 	}
 	return o.AstiDistributionIndication, true
@@ -2357,7 +2357,7 @@ func (o *UeContext) GetAstiDistributionIndicationOk() (*bool, bool) {
 
 // HasAstiDistributionIndication returns a boolean if a field has been set.
 func (o *UeContext) HasAstiDistributionIndication() bool {
-	if o != nil && !IsNil(o.AstiDistributionIndication) {
+	if o != nil && !isNil(o.AstiDistributionIndication) {
 		return true
 	}
 
@@ -2371,7 +2371,7 @@ func (o *UeContext) SetAstiDistributionIndication(v bool) {
 
 // GetTsErrorBudget returns the TsErrorBudget field value if set, zero value otherwise.
 func (o *UeContext) GetTsErrorBudget() int32 {
-	if o == nil || IsNil(o.TsErrorBudget) {
+	if o == nil || isNil(o.TsErrorBudget) {
 		var ret int32
 		return ret
 	}
@@ -2381,7 +2381,7 @@ func (o *UeContext) GetTsErrorBudget() int32 {
 // GetTsErrorBudgetOk returns a tuple with the TsErrorBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetTsErrorBudgetOk() (*int32, bool) {
-	if o == nil || IsNil(o.TsErrorBudget) {
+	if o == nil || isNil(o.TsErrorBudget) {
 		return nil, false
 	}
 	return o.TsErrorBudget, true
@@ -2389,7 +2389,7 @@ func (o *UeContext) GetTsErrorBudgetOk() (*int32, bool) {
 
 // HasTsErrorBudget returns a boolean if a field has been set.
 func (o *UeContext) HasTsErrorBudget() bool {
-	if o != nil && !IsNil(o.TsErrorBudget) {
+	if o != nil && !isNil(o.TsErrorBudget) {
 		return true
 	}
 
@@ -2403,7 +2403,7 @@ func (o *UeContext) SetTsErrorBudget(v int32) {
 
 // GetSnpnOnboardInd returns the SnpnOnboardInd field value if set, zero value otherwise.
 func (o *UeContext) GetSnpnOnboardInd() bool {
-	if o == nil || IsNil(o.SnpnOnboardInd) {
+	if o == nil || isNil(o.SnpnOnboardInd) {
 		var ret bool
 		return ret
 	}
@@ -2413,7 +2413,7 @@ func (o *UeContext) GetSnpnOnboardInd() bool {
 // GetSnpnOnboardIndOk returns a tuple with the SnpnOnboardInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSnpnOnboardIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SnpnOnboardInd) {
+	if o == nil || isNil(o.SnpnOnboardInd) {
 		return nil, false
 	}
 	return o.SnpnOnboardInd, true
@@ -2421,7 +2421,7 @@ func (o *UeContext) GetSnpnOnboardIndOk() (*bool, bool) {
 
 // HasSnpnOnboardInd returns a boolean if a field has been set.
 func (o *UeContext) HasSnpnOnboardInd() bool {
-	if o != nil && !IsNil(o.SnpnOnboardInd) {
+	if o != nil && !isNil(o.SnpnOnboardInd) {
 		return true
 	}
 
@@ -2435,7 +2435,7 @@ func (o *UeContext) SetSnpnOnboardInd(v bool) {
 
 // GetSmfSelInfo returns the SmfSelInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UeContext) GetSmfSelInfo() SmfSelectionData {
-	if o == nil || IsNil(o.SmfSelInfo.Get()) {
+	if o == nil || isNil(o.SmfSelInfo.Get()) {
 		var ret SmfSelectionData
 		return ret
 	}
@@ -2477,7 +2477,7 @@ func (o *UeContext) UnsetSmfSelInfo() {
 
 // GetPcfUeSliceMbrList returns the PcfUeSliceMbrList field value if set, zero value otherwise.
 func (o *UeContext) GetPcfUeSliceMbrList() map[string]SliceMbr {
-	if o == nil || IsNil(o.PcfUeSliceMbrList) {
+	if o == nil || isNil(o.PcfUeSliceMbrList) {
 		var ret map[string]SliceMbr
 		return ret
 	}
@@ -2487,7 +2487,7 @@ func (o *UeContext) GetPcfUeSliceMbrList() map[string]SliceMbr {
 // GetPcfUeSliceMbrListOk returns a tuple with the PcfUeSliceMbrList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetPcfUeSliceMbrListOk() (*map[string]SliceMbr, bool) {
-	if o == nil || IsNil(o.PcfUeSliceMbrList) {
+	if o == nil || isNil(o.PcfUeSliceMbrList) {
 		return nil, false
 	}
 	return o.PcfUeSliceMbrList, true
@@ -2495,7 +2495,7 @@ func (o *UeContext) GetPcfUeSliceMbrListOk() (*map[string]SliceMbr, bool) {
 
 // HasPcfUeSliceMbrList returns a boolean if a field has been set.
 func (o *UeContext) HasPcfUeSliceMbrList() bool {
-	if o != nil && !IsNil(o.PcfUeSliceMbrList) {
+	if o != nil && !isNil(o.PcfUeSliceMbrList) {
 		return true
 	}
 
@@ -2509,7 +2509,7 @@ func (o *UeContext) SetPcfUeSliceMbrList(v map[string]SliceMbr) {
 
 // GetSmsfSetId returns the SmsfSetId field value if set, zero value otherwise.
 func (o *UeContext) GetSmsfSetId() string {
-	if o == nil || IsNil(o.SmsfSetId) {
+	if o == nil || isNil(o.SmsfSetId) {
 		var ret string
 		return ret
 	}
@@ -2519,7 +2519,7 @@ func (o *UeContext) GetSmsfSetId() string {
 // GetSmsfSetIdOk returns a tuple with the SmsfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSmsfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfSetId) {
+	if o == nil || isNil(o.SmsfSetId) {
 		return nil, false
 	}
 	return o.SmsfSetId, true
@@ -2527,7 +2527,7 @@ func (o *UeContext) GetSmsfSetIdOk() (*string, bool) {
 
 // HasSmsfSetId returns a boolean if a field has been set.
 func (o *UeContext) HasSmsfSetId() bool {
-	if o != nil && !IsNil(o.SmsfSetId) {
+	if o != nil && !isNil(o.SmsfSetId) {
 		return true
 	}
 
@@ -2541,7 +2541,7 @@ func (o *UeContext) SetSmsfSetId(v string) {
 
 // GetSmsfServiceSetId returns the SmsfServiceSetId field value if set, zero value otherwise.
 func (o *UeContext) GetSmsfServiceSetId() string {
-	if o == nil || IsNil(o.SmsfServiceSetId) {
+	if o == nil || isNil(o.SmsfServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -2551,7 +2551,7 @@ func (o *UeContext) GetSmsfServiceSetId() string {
 // GetSmsfServiceSetIdOk returns a tuple with the SmsfServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSmsfServiceSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfServiceSetId) {
+	if o == nil || isNil(o.SmsfServiceSetId) {
 		return nil, false
 	}
 	return o.SmsfServiceSetId, true
@@ -2559,7 +2559,7 @@ func (o *UeContext) GetSmsfServiceSetIdOk() (*string, bool) {
 
 // HasSmsfServiceSetId returns a boolean if a field has been set.
 func (o *UeContext) HasSmsfServiceSetId() bool {
-	if o != nil && !IsNil(o.SmsfServiceSetId) {
+	if o != nil && !isNil(o.SmsfServiceSetId) {
 		return true
 	}
 
@@ -2573,7 +2573,7 @@ func (o *UeContext) SetSmsfServiceSetId(v string) {
 
 // GetSmsfBindingInfo returns the SmsfBindingInfo field value if set, zero value otherwise.
 func (o *UeContext) GetSmsfBindingInfo() string {
-	if o == nil || IsNil(o.SmsfBindingInfo) {
+	if o == nil || isNil(o.SmsfBindingInfo) {
 		var ret string
 		return ret
 	}
@@ -2583,7 +2583,7 @@ func (o *UeContext) GetSmsfBindingInfo() string {
 // GetSmsfBindingInfoOk returns a tuple with the SmsfBindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetSmsfBindingInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfBindingInfo) {
+	if o == nil || isNil(o.SmsfBindingInfo) {
 		return nil, false
 	}
 	return o.SmsfBindingInfo, true
@@ -2591,7 +2591,7 @@ func (o *UeContext) GetSmsfBindingInfoOk() (*string, bool) {
 
 // HasSmsfBindingInfo returns a boolean if a field has been set.
 func (o *UeContext) HasSmsfBindingInfo() bool {
-	if o != nil && !IsNil(o.SmsfBindingInfo) {
+	if o != nil && !isNil(o.SmsfBindingInfo) {
 		return true
 	}
 
@@ -2605,7 +2605,7 @@ func (o *UeContext) SetSmsfBindingInfo(v string) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *UeContext) GetDisasterRoamingInd() bool {
-	if o == nil || IsNil(o.DisasterRoamingInd) {
+	if o == nil || isNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -2615,7 +2615,7 @@ func (o *UeContext) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DisasterRoamingInd) {
+	if o == nil || isNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -2623,7 +2623,7 @@ func (o *UeContext) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *UeContext) HasDisasterRoamingInd() bool {
-	if o != nil && !IsNil(o.DisasterRoamingInd) {
+	if o != nil && !isNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -2637,7 +2637,7 @@ func (o *UeContext) SetDisasterRoamingInd(v bool) {
 
 // GetDisasterPlmn returns the DisasterPlmn field value if set, zero value otherwise.
 func (o *UeContext) GetDisasterPlmn() PlmnId {
-	if o == nil || IsNil(o.DisasterPlmn) {
+	if o == nil || isNil(o.DisasterPlmn) {
 		var ret PlmnId
 		return ret
 	}
@@ -2647,7 +2647,7 @@ func (o *UeContext) GetDisasterPlmn() PlmnId {
 // GetDisasterPlmnOk returns a tuple with the DisasterPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContext) GetDisasterPlmnOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.DisasterPlmn) {
+	if o == nil || isNil(o.DisasterPlmn) {
 		return nil, false
 	}
 	return o.DisasterPlmn, true
@@ -2655,7 +2655,7 @@ func (o *UeContext) GetDisasterPlmnOk() (*PlmnId, bool) {
 
 // HasDisasterPlmn returns a boolean if a field has been set.
 func (o *UeContext) HasDisasterPlmn() bool {
-	if o != nil && !IsNil(o.DisasterPlmn) {
+	if o != nil && !isNil(o.DisasterPlmn) {
 		return true
 	}
 
@@ -2677,235 +2677,235 @@ func (o UeContext) MarshalJSON() ([]byte, error) {
 
 func (o UeContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.SupiUnauthInd) {
+	if !isNil(o.SupiUnauthInd) {
 		toSerialize["supiUnauthInd"] = o.SupiUnauthInd
 	}
-	if !IsNil(o.GpsiList) {
+	if !isNil(o.GpsiList) {
 		toSerialize["gpsiList"] = o.GpsiList
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.UdmGroupId) {
+	if !isNil(o.UdmGroupId) {
 		toSerialize["udmGroupId"] = o.UdmGroupId
 	}
-	if !IsNil(o.AusfGroupId) {
+	if !isNil(o.AusfGroupId) {
 		toSerialize["ausfGroupId"] = o.AusfGroupId
 	}
-	if !IsNil(o.PcfGroupId) {
+	if !isNil(o.PcfGroupId) {
 		toSerialize["pcfGroupId"] = o.PcfGroupId
 	}
-	if !IsNil(o.RoutingIndicator) {
+	if !isNil(o.RoutingIndicator) {
 		toSerialize["routingIndicator"] = o.RoutingIndicator
 	}
-	if !IsNil(o.HNwPubKeyId) {
+	if !isNil(o.HNwPubKeyId) {
 		toSerialize["hNwPubKeyId"] = o.HNwPubKeyId
 	}
-	if !IsNil(o.GroupList) {
+	if !isNil(o.GroupList) {
 		toSerialize["groupList"] = o.GroupList
 	}
-	if !IsNil(o.DrxParameter) {
+	if !isNil(o.DrxParameter) {
 		toSerialize["drxParameter"] = o.DrxParameter
 	}
-	if !IsNil(o.SubRfsp) {
+	if !isNil(o.SubRfsp) {
 		toSerialize["subRfsp"] = o.SubRfsp
 	}
-	if !IsNil(o.UsedRfsp) {
+	if !isNil(o.UsedRfsp) {
 		toSerialize["usedRfsp"] = o.UsedRfsp
 	}
-	if !IsNil(o.SubUeAmbr) {
+	if !isNil(o.SubUeAmbr) {
 		toSerialize["subUeAmbr"] = o.SubUeAmbr
 	}
-	if !IsNil(o.SubUeSliceMbrList) {
+	if !isNil(o.SubUeSliceMbrList) {
 		toSerialize["subUeSliceMbrList"] = o.SubUeSliceMbrList
 	}
-	if !IsNil(o.SmsfId) {
+	if !isNil(o.SmsfId) {
 		toSerialize["smsfId"] = o.SmsfId
 	}
-	if !IsNil(o.SeafData) {
+	if !isNil(o.SeafData) {
 		toSerialize["seafData"] = o.SeafData
 	}
-	if !IsNil(o.Var5gMmCapability) {
+	if !isNil(o.Var5gMmCapability) {
 		toSerialize["5gMmCapability"] = o.Var5gMmCapability
 	}
-	if !IsNil(o.PcfId) {
+	if !isNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !IsNil(o.PcfSetId) {
+	if !isNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !IsNil(o.PcfAmpServiceSetId) {
+	if !isNil(o.PcfAmpServiceSetId) {
 		toSerialize["pcfAmpServiceSetId"] = o.PcfAmpServiceSetId
 	}
-	if !IsNil(o.PcfUepServiceSetId) {
+	if !isNil(o.PcfUepServiceSetId) {
 		toSerialize["pcfUepServiceSetId"] = o.PcfUepServiceSetId
 	}
-	if !IsNil(o.PcfBinding) {
+	if !isNil(o.PcfBinding) {
 		toSerialize["pcfBinding"] = o.PcfBinding
 	}
-	if !IsNil(o.PcfAmPolicyUri) {
+	if !isNil(o.PcfAmPolicyUri) {
 		toSerialize["pcfAmPolicyUri"] = o.PcfAmPolicyUri
 	}
-	if !IsNil(o.AmPolicyReqTriggerList) {
+	if !isNil(o.AmPolicyReqTriggerList) {
 		toSerialize["amPolicyReqTriggerList"] = o.AmPolicyReqTriggerList
 	}
-	if !IsNil(o.PcfUePolicyUri) {
+	if !isNil(o.PcfUePolicyUri) {
 		toSerialize["pcfUePolicyUri"] = o.PcfUePolicyUri
 	}
-	if !IsNil(o.UePolicyReqTriggerList) {
+	if !isNil(o.UePolicyReqTriggerList) {
 		toSerialize["uePolicyReqTriggerList"] = o.UePolicyReqTriggerList
 	}
-	if !IsNil(o.HpcfId) {
+	if !isNil(o.HpcfId) {
 		toSerialize["hpcfId"] = o.HpcfId
 	}
-	if !IsNil(o.HpcfSetId) {
+	if !isNil(o.HpcfSetId) {
 		toSerialize["hpcfSetId"] = o.HpcfSetId
 	}
-	if !IsNil(o.RestrictedRatList) {
+	if !isNil(o.RestrictedRatList) {
 		toSerialize["restrictedRatList"] = o.RestrictedRatList
 	}
-	if !IsNil(o.ForbiddenAreaList) {
+	if !isNil(o.ForbiddenAreaList) {
 		toSerialize["forbiddenAreaList"] = o.ForbiddenAreaList
 	}
-	if !IsNil(o.ServiceAreaRestriction) {
+	if !isNil(o.ServiceAreaRestriction) {
 		toSerialize["serviceAreaRestriction"] = o.ServiceAreaRestriction
 	}
-	if !IsNil(o.RestrictedCoreNwTypeList) {
+	if !isNil(o.RestrictedCoreNwTypeList) {
 		toSerialize["restrictedCoreNwTypeList"] = o.RestrictedCoreNwTypeList
 	}
-	if !IsNil(o.EventSubscriptionList) {
+	if !isNil(o.EventSubscriptionList) {
 		toSerialize["eventSubscriptionList"] = o.EventSubscriptionList
 	}
-	if !IsNil(o.MmContextList) {
+	if !isNil(o.MmContextList) {
 		toSerialize["mmContextList"] = o.MmContextList
 	}
-	if !IsNil(o.SessionContextList) {
+	if !isNil(o.SessionContextList) {
 		toSerialize["sessionContextList"] = o.SessionContextList
 	}
-	if !IsNil(o.EpsInterworkingInfo) {
+	if !isNil(o.EpsInterworkingInfo) {
 		toSerialize["epsInterworkingInfo"] = o.EpsInterworkingInfo
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !IsNil(o.ServiceGapExpiryTime) {
+	if !isNil(o.ServiceGapExpiryTime) {
 		toSerialize["serviceGapExpiryTime"] = o.ServiceGapExpiryTime
 	}
-	if !IsNil(o.StnSr) {
+	if !isNil(o.StnSr) {
 		toSerialize["stnSr"] = o.StnSr
 	}
-	if !IsNil(o.CMsisdn) {
+	if !isNil(o.CMsisdn) {
 		toSerialize["cMsisdn"] = o.CMsisdn
 	}
-	if !IsNil(o.MsClassmark2) {
+	if !isNil(o.MsClassmark2) {
 		toSerialize["msClassmark2"] = o.MsClassmark2
 	}
-	if !IsNil(o.SupportedCodecList) {
+	if !isNil(o.SupportedCodecList) {
 		toSerialize["supportedCodecList"] = o.SupportedCodecList
 	}
-	if !IsNil(o.SmallDataRateStatusInfos) {
+	if !isNil(o.SmallDataRateStatusInfos) {
 		toSerialize["smallDataRateStatusInfos"] = o.SmallDataRateStatusInfos
 	}
-	if !IsNil(o.RestrictedPrimaryRatList) {
+	if !isNil(o.RestrictedPrimaryRatList) {
 		toSerialize["restrictedPrimaryRatList"] = o.RestrictedPrimaryRatList
 	}
-	if !IsNil(o.RestrictedSecondaryRatList) {
+	if !isNil(o.RestrictedSecondaryRatList) {
 		toSerialize["restrictedSecondaryRatList"] = o.RestrictedSecondaryRatList
 	}
-	if !IsNil(o.V2xContext) {
+	if !isNil(o.V2xContext) {
 		toSerialize["v2xContext"] = o.V2xContext
 	}
-	if !IsNil(o.LteCatMInd) {
+	if !isNil(o.LteCatMInd) {
 		toSerialize["lteCatMInd"] = o.LteCatMInd
 	}
-	if !IsNil(o.RedCapInd) {
+	if !isNil(o.RedCapInd) {
 		toSerialize["redCapInd"] = o.RedCapInd
 	}
-	if !IsNil(o.MoExpDataCounter) {
+	if !isNil(o.MoExpDataCounter) {
 		toSerialize["moExpDataCounter"] = o.MoExpDataCounter
 	}
-	if !IsNil(o.CagData) {
+	if !isNil(o.CagData) {
 		toSerialize["cagData"] = o.CagData
 	}
-	if !IsNil(o.ManagementMdtInd) {
+	if !isNil(o.ManagementMdtInd) {
 		toSerialize["managementMdtInd"] = o.ManagementMdtInd
 	}
-	if !IsNil(o.ImmediateMdtConf) {
+	if !isNil(o.ImmediateMdtConf) {
 		toSerialize["immediateMdtConf"] = o.ImmediateMdtConf
 	}
-	if !IsNil(o.EcRestrictionDataWb) {
+	if !isNil(o.EcRestrictionDataWb) {
 		toSerialize["ecRestrictionDataWb"] = o.EcRestrictionDataWb
 	}
-	if !IsNil(o.EcRestrictionDataNb) {
+	if !isNil(o.EcRestrictionDataNb) {
 		toSerialize["ecRestrictionDataNb"] = o.EcRestrictionDataNb
 	}
-	if !IsNil(o.IabOperationAllowed) {
+	if !isNil(o.IabOperationAllowed) {
 		toSerialize["iabOperationAllowed"] = o.IabOperationAllowed
 	}
-	if !IsNil(o.ProseContext) {
+	if !isNil(o.ProseContext) {
 		toSerialize["proseContext"] = o.ProseContext
 	}
-	if !IsNil(o.AnalyticsSubscriptionList) {
+	if !isNil(o.AnalyticsSubscriptionList) {
 		toSerialize["analyticsSubscriptionList"] = o.AnalyticsSubscriptionList
 	}
-	if !IsNil(o.PcfAmpBindingInfo) {
+	if !isNil(o.PcfAmpBindingInfo) {
 		toSerialize["pcfAmpBindingInfo"] = o.PcfAmpBindingInfo
 	}
-	if !IsNil(o.PcfUepBindingInfo) {
+	if !isNil(o.PcfUepBindingInfo) {
 		toSerialize["pcfUepBindingInfo"] = o.PcfUepBindingInfo
 	}
-	if !IsNil(o.UsedServiceAreaRestriction) {
+	if !isNil(o.UsedServiceAreaRestriction) {
 		toSerialize["usedServiceAreaRestriction"] = o.UsedServiceAreaRestriction
 	}
-	if !IsNil(o.PraInAmPolicy) {
+	if !isNil(o.PraInAmPolicy) {
 		toSerialize["praInAmPolicy"] = o.PraInAmPolicy
 	}
-	if !IsNil(o.PraInUePolicy) {
+	if !isNil(o.PraInUePolicy) {
 		toSerialize["praInUePolicy"] = o.PraInUePolicy
 	}
-	if !IsNil(o.UpdpSubscriptionData) {
+	if !isNil(o.UpdpSubscriptionData) {
 		toSerialize["updpSubscriptionData"] = o.UpdpSubscriptionData
 	}
-	if !IsNil(o.SmPolicyNotifyPduList) {
+	if !isNil(o.SmPolicyNotifyPduList) {
 		toSerialize["smPolicyNotifyPduList"] = o.SmPolicyNotifyPduList
 	}
 	if o.PcfUeCallbackInfo.IsSet() {
 		toSerialize["pcfUeCallbackInfo"] = o.PcfUeCallbackInfo.Get()
 	}
-	if !IsNil(o.UePositioningCap) {
+	if !isNil(o.UePositioningCap) {
 		toSerialize["uePositioningCap"] = o.UePositioningCap
 	}
-	if !IsNil(o.AstiDistributionIndication) {
+	if !isNil(o.AstiDistributionIndication) {
 		toSerialize["astiDistributionIndication"] = o.AstiDistributionIndication
 	}
-	if !IsNil(o.TsErrorBudget) {
+	if !isNil(o.TsErrorBudget) {
 		toSerialize["tsErrorBudget"] = o.TsErrorBudget
 	}
-	if !IsNil(o.SnpnOnboardInd) {
+	if !isNil(o.SnpnOnboardInd) {
 		toSerialize["snpnOnboardInd"] = o.SnpnOnboardInd
 	}
 	if o.SmfSelInfo.IsSet() {
 		toSerialize["smfSelInfo"] = o.SmfSelInfo.Get()
 	}
-	if !IsNil(o.PcfUeSliceMbrList) {
+	if !isNil(o.PcfUeSliceMbrList) {
 		toSerialize["pcfUeSliceMbrList"] = o.PcfUeSliceMbrList
 	}
-	if !IsNil(o.SmsfSetId) {
+	if !isNil(o.SmsfSetId) {
 		toSerialize["smsfSetId"] = o.SmsfSetId
 	}
-	if !IsNil(o.SmsfServiceSetId) {
+	if !isNil(o.SmsfServiceSetId) {
 		toSerialize["smsfServiceSetId"] = o.SmsfServiceSetId
 	}
-	if !IsNil(o.SmsfBindingInfo) {
+	if !isNil(o.SmsfBindingInfo) {
 		toSerialize["smsfBindingInfo"] = o.SmsfBindingInfo
 	}
-	if !IsNil(o.DisasterRoamingInd) {
+	if !isNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
-	if !IsNil(o.DisasterPlmn) {
+	if !isNil(o.DisasterPlmn) {
 		toSerialize["disasterPlmn"] = o.DisasterPlmn
 	}
 	return toSerialize, nil

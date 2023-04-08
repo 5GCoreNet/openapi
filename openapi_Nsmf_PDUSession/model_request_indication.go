@@ -17,23 +17,37 @@ import (
 
 // RequestIndication Request Indication in Update (SM context) service operation. Possible values are - UE_REQ_PDU_SES_MOD - UE_REQ_PDU_SES_REL - PDU_SES_MOB - NW_REQ_PDU_SES_AUTH - NW_REQ_PDU_SES_MOD - NW_REQ_PDU_SES_REL - EBI_ASSIGNMENT_REQ - REL_DUE_TO_5G_AN_REQUEST 
 type RequestIndication struct {
-	string *string
+	RequestIndicationAnyOf *RequestIndicationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RequestIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into RequestIndicationAnyOf
+	err = json.Unmarshal(data, &dst.RequestIndicationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonRequestIndicationAnyOf, _ := json.Marshal(dst.RequestIndicationAnyOf)
+		if string(jsonRequestIndicationAnyOf) == "{}" { // empty struct
+			dst.RequestIndicationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.RequestIndicationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.RequestIndicationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RequestIndication)")
@@ -41,8 +55,12 @@ func (dst *RequestIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RequestIndication) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.RequestIndicationAnyOf != nil {
+		return json.Marshal(&src.RequestIndicationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -43,7 +43,7 @@ func NewCmInfoReportWithDefaults() *CmInfoReport {
 
 // GetOldCmInfoList returns the OldCmInfoList field value if set, zero value otherwise.
 func (o *CmInfoReport) GetOldCmInfoList() []CmInfo {
-	if o == nil || IsNil(o.OldCmInfoList) {
+	if o == nil || isNil(o.OldCmInfoList) {
 		var ret []CmInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *CmInfoReport) GetOldCmInfoList() []CmInfo {
 // GetOldCmInfoListOk returns a tuple with the OldCmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CmInfoReport) GetOldCmInfoListOk() ([]CmInfo, bool) {
-	if o == nil || IsNil(o.OldCmInfoList) {
+	if o == nil || isNil(o.OldCmInfoList) {
 		return nil, false
 	}
 	return o.OldCmInfoList, true
@@ -61,7 +61,7 @@ func (o *CmInfoReport) GetOldCmInfoListOk() ([]CmInfo, bool) {
 
 // HasOldCmInfoList returns a boolean if a field has been set.
 func (o *CmInfoReport) HasOldCmInfoList() bool {
-	if o != nil && !IsNil(o.OldCmInfoList) {
+	if o != nil && !isNil(o.OldCmInfoList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o CmInfoReport) MarshalJSON() ([]byte, error) {
 
 func (o CmInfoReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OldCmInfoList) {
+	if !isNil(o.OldCmInfoList) {
 		toSerialize["oldCmInfoList"] = o.OldCmInfoList
 	}
 	toSerialize["newCmInfoList"] = o.NewCmInfoList

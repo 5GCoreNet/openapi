@@ -41,7 +41,7 @@ func NewProvMnSOneOf1WithDefaults() *ProvMnSOneOf1 {
 
 // GetManagedElement returns the ManagedElement field value if set, zero value otherwise.
 func (o *ProvMnSOneOf1) GetManagedElement() []ManagedElementSingle {
-	if o == nil || IsNil(o.ManagedElement) {
+	if o == nil || isNil(o.ManagedElement) {
 		var ret []ManagedElementSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProvMnSOneOf1) GetManagedElement() []ManagedElementSingle {
 // GetManagedElementOk returns a tuple with the ManagedElement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvMnSOneOf1) GetManagedElementOk() ([]ManagedElementSingle, bool) {
-	if o == nil || IsNil(o.ManagedElement) {
+	if o == nil || isNil(o.ManagedElement) {
 		return nil, false
 	}
 	return o.ManagedElement, true
@@ -59,7 +59,7 @@ func (o *ProvMnSOneOf1) GetManagedElementOk() ([]ManagedElementSingle, bool) {
 
 // HasManagedElement returns a boolean if a field has been set.
 func (o *ProvMnSOneOf1) HasManagedElement() bool {
-	if o != nil && !IsNil(o.ManagedElement) {
+	if o != nil && !isNil(o.ManagedElement) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ProvMnSOneOf1) MarshalJSON() ([]byte, error) {
 
 func (o ProvMnSOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ManagedElement) {
+	if !isNil(o.ManagedElement) {
 		toSerialize["ManagedElement"] = o.ManagedElement
 	}
 	return toSerialize, nil

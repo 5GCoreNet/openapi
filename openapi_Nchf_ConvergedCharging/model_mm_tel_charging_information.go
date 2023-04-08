@@ -41,7 +41,7 @@ func NewMMTelChargingInformationWithDefaults() *MMTelChargingInformation {
 
 // GetSupplementaryServices returns the SupplementaryServices field value if set, zero value otherwise.
 func (o *MMTelChargingInformation) GetSupplementaryServices() []SupplementaryService {
-	if o == nil || IsNil(o.SupplementaryServices) {
+	if o == nil || isNil(o.SupplementaryServices) {
 		var ret []SupplementaryService
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MMTelChargingInformation) GetSupplementaryServices() []SupplementarySer
 // GetSupplementaryServicesOk returns a tuple with the SupplementaryServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMTelChargingInformation) GetSupplementaryServicesOk() ([]SupplementaryService, bool) {
-	if o == nil || IsNil(o.SupplementaryServices) {
+	if o == nil || isNil(o.SupplementaryServices) {
 		return nil, false
 	}
 	return o.SupplementaryServices, true
@@ -59,7 +59,7 @@ func (o *MMTelChargingInformation) GetSupplementaryServicesOk() ([]Supplementary
 
 // HasSupplementaryServices returns a boolean if a field has been set.
 func (o *MMTelChargingInformation) HasSupplementaryServices() bool {
-	if o != nil && !IsNil(o.SupplementaryServices) {
+	if o != nil && !isNil(o.SupplementaryServices) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MMTelChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o MMTelChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupplementaryServices) {
+	if !isNil(o.SupplementaryServices) {
 		toSerialize["supplementaryServices"] = o.SupplementaryServices
 	}
 	return toSerialize, nil

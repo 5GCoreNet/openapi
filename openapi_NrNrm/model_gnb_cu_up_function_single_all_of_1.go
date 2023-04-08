@@ -47,7 +47,7 @@ func NewGnbCuUpFunctionSingleAllOf1WithDefaults() *GnbCuUpFunctionSingleAllOf1 {
 
 // GetRRMPolicyRatio returns the RRMPolicyRatio field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		var ret []RRMPolicyRatioSingle
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle
 // GetRRMPolicyRatioOk returns a tuple with the RRMPolicyRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bool) {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		return nil, false
 	}
 	return o.RRMPolicyRatio, true
@@ -65,7 +65,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSin
 
 // HasRRMPolicyRatio returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasRRMPolicyRatio() bool {
-	if o != nil && !IsNil(o.RRMPolicyRatio) {
+	if o != nil && !isNil(o.RRMPolicyRatio) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) SetRRMPolicyRatio(v []RRMPolicyRatioSingle
 
 // GetEPE1 returns the EPE1 field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPE1() EPE1Single {
-	if o == nil || IsNil(o.EPE1) {
+	if o == nil || isNil(o.EPE1) {
 		var ret EPE1Single
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPE1() EPE1Single {
 // GetEPE1Ok returns a tuple with the EPE1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPE1Ok() (*EPE1Single, bool) {
-	if o == nil || IsNil(o.EPE1) {
+	if o == nil || isNil(o.EPE1) {
 		return nil, false
 	}
 	return o.EPE1, true
@@ -97,7 +97,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPE1Ok() (*EPE1Single, bool) {
 
 // HasEPE1 returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasEPE1() bool {
-	if o != nil && !IsNil(o.EPE1) {
+	if o != nil && !isNil(o.EPE1) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) SetEPE1(v EPE1Single) {
 
 // GetEPXnU returns the EPXnU field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPXnU() []EPXnUSingle {
-	if o == nil || IsNil(o.EPXnU) {
+	if o == nil || isNil(o.EPXnU) {
 		var ret []EPXnUSingle
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPXnU() []EPXnUSingle {
 // GetEPXnUOk returns a tuple with the EPXnU field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPXnUOk() ([]EPXnUSingle, bool) {
-	if o == nil || IsNil(o.EPXnU) {
+	if o == nil || isNil(o.EPXnU) {
 		return nil, false
 	}
 	return o.EPXnU, true
@@ -129,7 +129,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPXnUOk() ([]EPXnUSingle, bool) {
 
 // HasEPXnU returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasEPXnU() bool {
-	if o != nil && !IsNil(o.EPXnU) {
+	if o != nil && !isNil(o.EPXnU) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) SetEPXnU(v []EPXnUSingle) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPF1U() []EPF1USingle {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -161,7 +161,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPF1UOk() ([]EPF1USingle, bool) {
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasEPF1U() bool {
-	if o != nil && !IsNil(o.EPF1U) {
+	if o != nil && !isNil(o.EPF1U) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) SetEPF1U(v []EPF1USingle) {
 
 // GetEPNgU returns the EPNgU field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPNgU() []EPNgUSingle {
-	if o == nil || IsNil(o.EPNgU) {
+	if o == nil || isNil(o.EPNgU) {
 		var ret []EPNgUSingle
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPNgU() []EPNgUSingle {
 // GetEPNgUOk returns a tuple with the EPNgU field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPNgUOk() ([]EPNgUSingle, bool) {
-	if o == nil || IsNil(o.EPNgU) {
+	if o == nil || isNil(o.EPNgU) {
 		return nil, false
 	}
 	return o.EPNgU, true
@@ -193,7 +193,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPNgUOk() ([]EPNgUSingle, bool) {
 
 // HasEPNgU returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasEPNgU() bool {
-	if o != nil && !IsNil(o.EPNgU) {
+	if o != nil && !isNil(o.EPNgU) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) SetEPNgU(v []EPNgUSingle) {
 
 // GetEPX2U returns the EPX2U field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPX2U() []EPX2USingle {
-	if o == nil || IsNil(o.EPX2U) {
+	if o == nil || isNil(o.EPX2U) {
 		var ret []EPX2USingle
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPX2U() []EPX2USingle {
 // GetEPX2UOk returns a tuple with the EPX2U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPX2UOk() ([]EPX2USingle, bool) {
-	if o == nil || IsNil(o.EPX2U) {
+	if o == nil || isNil(o.EPX2U) {
 		return nil, false
 	}
 	return o.EPX2U, true
@@ -225,7 +225,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPX2UOk() ([]EPX2USingle, bool) {
 
 // HasEPX2U returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasEPX2U() bool {
-	if o != nil && !IsNil(o.EPX2U) {
+	if o != nil && !isNil(o.EPX2U) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) SetEPX2U(v []EPX2USingle) {
 
 // GetEPS1U returns the EPS1U field value if set, zero value otherwise.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPS1U() []EPS1USingle {
-	if o == nil || IsNil(o.EPS1U) {
+	if o == nil || isNil(o.EPS1U) {
 		var ret []EPS1USingle
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPS1U() []EPS1USingle {
 // GetEPS1UOk returns a tuple with the EPS1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) GetEPS1UOk() ([]EPS1USingle, bool) {
-	if o == nil || IsNil(o.EPS1U) {
+	if o == nil || isNil(o.EPS1U) {
 		return nil, false
 	}
 	return o.EPS1U, true
@@ -257,7 +257,7 @@ func (o *GnbCuUpFunctionSingleAllOf1) GetEPS1UOk() ([]EPS1USingle, bool) {
 
 // HasEPS1U returns a boolean if a field has been set.
 func (o *GnbCuUpFunctionSingleAllOf1) HasEPS1U() bool {
-	if o != nil && !IsNil(o.EPS1U) {
+	if o != nil && !isNil(o.EPS1U) {
 		return true
 	}
 
@@ -279,25 +279,25 @@ func (o GnbCuUpFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o GnbCuUpFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RRMPolicyRatio) {
+	if !isNil(o.RRMPolicyRatio) {
 		toSerialize["RRMPolicyRatio"] = o.RRMPolicyRatio
 	}
-	if !IsNil(o.EPE1) {
+	if !isNil(o.EPE1) {
 		toSerialize["EP_E1"] = o.EPE1
 	}
-	if !IsNil(o.EPXnU) {
+	if !isNil(o.EPXnU) {
 		toSerialize["EP_XnU"] = o.EPXnU
 	}
-	if !IsNil(o.EPF1U) {
+	if !isNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
-	if !IsNil(o.EPNgU) {
+	if !isNil(o.EPNgU) {
 		toSerialize["EP_NgU"] = o.EPNgU
 	}
-	if !IsNil(o.EPX2U) {
+	if !isNil(o.EPX2U) {
 		toSerialize["EP_X2U"] = o.EPX2U
 	}
-	if !IsNil(o.EPS1U) {
+	if !isNil(o.EPS1U) {
 		toSerialize["EP_S1U"] = o.EPS1U
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewDLBOFunctionSingleAllOfAttributesWithDefaults() *DLBOFunctionSingleAllOf
 
 // GetDlboControl returns the DlboControl field value if set, zero value otherwise.
 func (o *DLBOFunctionSingleAllOfAttributes) GetDlboControl() bool {
-	if o == nil || IsNil(o.DlboControl) {
+	if o == nil || isNil(o.DlboControl) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) GetDlboControl() bool {
 // GetDlboControlOk returns a tuple with the DlboControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLBOFunctionSingleAllOfAttributes) GetDlboControlOk() (*bool, bool) {
-	if o == nil || IsNil(o.DlboControl) {
+	if o == nil || isNil(o.DlboControl) {
 		return nil, false
 	}
 	return o.DlboControl, true
@@ -61,7 +61,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) GetDlboControlOk() (*bool, bool) {
 
 // HasDlboControl returns a boolean if a field has been set.
 func (o *DLBOFunctionSingleAllOfAttributes) HasDlboControl() bool {
-	if o != nil && !IsNil(o.DlboControl) {
+	if o != nil && !isNil(o.DlboControl) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) SetDlboControl(v bool) {
 
 // GetMaximumDeviationHoTrigger returns the MaximumDeviationHoTrigger field value if set, zero value otherwise.
 func (o *DLBOFunctionSingleAllOfAttributes) GetMaximumDeviationHoTrigger() int32 {
-	if o == nil || IsNil(o.MaximumDeviationHoTrigger) {
+	if o == nil || isNil(o.MaximumDeviationHoTrigger) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) GetMaximumDeviationHoTrigger() int32
 // GetMaximumDeviationHoTriggerOk returns a tuple with the MaximumDeviationHoTrigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLBOFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumDeviationHoTrigger) {
+	if o == nil || isNil(o.MaximumDeviationHoTrigger) {
 		return nil, false
 	}
 	return o.MaximumDeviationHoTrigger, true
@@ -93,7 +93,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerOk() (*i
 
 // HasMaximumDeviationHoTrigger returns a boolean if a field has been set.
 func (o *DLBOFunctionSingleAllOfAttributes) HasMaximumDeviationHoTrigger() bool {
-	if o != nil && !IsNil(o.MaximumDeviationHoTrigger) {
+	if o != nil && !isNil(o.MaximumDeviationHoTrigger) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) SetMaximumDeviationHoTrigger(v int32
 
 // GetMinimumTimeBetweenHoTriggerChange returns the MinimumTimeBetweenHoTriggerChange field value if set, zero value otherwise.
 func (o *DLBOFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChange() int32 {
-	if o == nil || IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if o == nil || isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChange
 // GetMinimumTimeBetweenHoTriggerChangeOk returns a tuple with the MinimumTimeBetweenHoTriggerChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLBOFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChangeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if o == nil || isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		return nil, false
 	}
 	return o.MinimumTimeBetweenHoTriggerChange, true
@@ -125,7 +125,7 @@ func (o *DLBOFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChange
 
 // HasMinimumTimeBetweenHoTriggerChange returns a boolean if a field has been set.
 func (o *DLBOFunctionSingleAllOfAttributes) HasMinimumTimeBetweenHoTriggerChange() bool {
-	if o != nil && !IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if o != nil && !isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o DLBOFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o DLBOFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DlboControl) {
+	if !isNil(o.DlboControl) {
 		toSerialize["dlboControl"] = o.DlboControl
 	}
-	if !IsNil(o.MaximumDeviationHoTrigger) {
+	if !isNil(o.MaximumDeviationHoTrigger) {
 		toSerialize["maximumDeviationHoTrigger"] = o.MaximumDeviationHoTrigger
 	}
-	if !IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if !isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		toSerialize["minimumTimeBetweenHoTriggerChange"] = o.MinimumTimeBetweenHoTriggerChange
 	}
 	return toSerialize, nil

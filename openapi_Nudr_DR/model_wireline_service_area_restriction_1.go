@@ -42,7 +42,7 @@ func NewWirelineServiceAreaRestriction1WithDefaults() *WirelineServiceAreaRestri
 
 // GetRestrictionType returns the RestrictionType field value if set, zero value otherwise.
 func (o *WirelineServiceAreaRestriction1) GetRestrictionType() RestrictionType {
-	if o == nil || IsNil(o.RestrictionType) {
+	if o == nil || isNil(o.RestrictionType) {
 		var ret RestrictionType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *WirelineServiceAreaRestriction1) GetRestrictionType() RestrictionType {
 // GetRestrictionTypeOk returns a tuple with the RestrictionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineServiceAreaRestriction1) GetRestrictionTypeOk() (*RestrictionType, bool) {
-	if o == nil || IsNil(o.RestrictionType) {
+	if o == nil || isNil(o.RestrictionType) {
 		return nil, false
 	}
 	return o.RestrictionType, true
@@ -60,7 +60,7 @@ func (o *WirelineServiceAreaRestriction1) GetRestrictionTypeOk() (*RestrictionTy
 
 // HasRestrictionType returns a boolean if a field has been set.
 func (o *WirelineServiceAreaRestriction1) HasRestrictionType() bool {
-	if o != nil && !IsNil(o.RestrictionType) {
+	if o != nil && !isNil(o.RestrictionType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *WirelineServiceAreaRestriction1) SetRestrictionType(v RestrictionType) 
 
 // GetAreas returns the Areas field value if set, zero value otherwise.
 func (o *WirelineServiceAreaRestriction1) GetAreas() []WirelineArea1 {
-	if o == nil || IsNil(o.Areas) {
+	if o == nil || isNil(o.Areas) {
 		var ret []WirelineArea1
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *WirelineServiceAreaRestriction1) GetAreas() []WirelineArea1 {
 // GetAreasOk returns a tuple with the Areas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineServiceAreaRestriction1) GetAreasOk() ([]WirelineArea1, bool) {
-	if o == nil || IsNil(o.Areas) {
+	if o == nil || isNil(o.Areas) {
 		return nil, false
 	}
 	return o.Areas, true
@@ -92,7 +92,7 @@ func (o *WirelineServiceAreaRestriction1) GetAreasOk() ([]WirelineArea1, bool) {
 
 // HasAreas returns a boolean if a field has been set.
 func (o *WirelineServiceAreaRestriction1) HasAreas() bool {
-	if o != nil && !IsNil(o.Areas) {
+	if o != nil && !isNil(o.Areas) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o WirelineServiceAreaRestriction1) MarshalJSON() ([]byte, error) {
 
 func (o WirelineServiceAreaRestriction1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RestrictionType) {
+	if !isNil(o.RestrictionType) {
 		toSerialize["restrictionType"] = o.RestrictionType
 	}
-	if !IsNil(o.Areas) {
+	if !isNil(o.Areas) {
 		toSerialize["areas"] = o.Areas
 	}
 	return toSerialize, nil

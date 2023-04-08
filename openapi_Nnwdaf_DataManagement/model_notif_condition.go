@@ -42,7 +42,7 @@ func NewNotifConditionWithDefaults() *NotifCondition {
 
 // GetMonitoredAttributes returns the MonitoredAttributes field value if set, zero value otherwise.
 func (o *NotifCondition) GetMonitoredAttributes() []string {
-	if o == nil || IsNil(o.MonitoredAttributes) {
+	if o == nil || isNil(o.MonitoredAttributes) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NotifCondition) GetMonitoredAttributes() []string {
 // GetMonitoredAttributesOk returns a tuple with the MonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifCondition) GetMonitoredAttributesOk() ([]string, bool) {
-	if o == nil || IsNil(o.MonitoredAttributes) {
+	if o == nil || isNil(o.MonitoredAttributes) {
 		return nil, false
 	}
 	return o.MonitoredAttributes, true
@@ -60,7 +60,7 @@ func (o *NotifCondition) GetMonitoredAttributesOk() ([]string, bool) {
 
 // HasMonitoredAttributes returns a boolean if a field has been set.
 func (o *NotifCondition) HasMonitoredAttributes() bool {
-	if o != nil && !IsNil(o.MonitoredAttributes) {
+	if o != nil && !isNil(o.MonitoredAttributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NotifCondition) SetMonitoredAttributes(v []string) {
 
 // GetUnmonitoredAttributes returns the UnmonitoredAttributes field value if set, zero value otherwise.
 func (o *NotifCondition) GetUnmonitoredAttributes() []string {
-	if o == nil || IsNil(o.UnmonitoredAttributes) {
+	if o == nil || isNil(o.UnmonitoredAttributes) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NotifCondition) GetUnmonitoredAttributes() []string {
 // GetUnmonitoredAttributesOk returns a tuple with the UnmonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifCondition) GetUnmonitoredAttributesOk() ([]string, bool) {
-	if o == nil || IsNil(o.UnmonitoredAttributes) {
+	if o == nil || isNil(o.UnmonitoredAttributes) {
 		return nil, false
 	}
 	return o.UnmonitoredAttributes, true
@@ -92,7 +92,7 @@ func (o *NotifCondition) GetUnmonitoredAttributesOk() ([]string, bool) {
 
 // HasUnmonitoredAttributes returns a boolean if a field has been set.
 func (o *NotifCondition) HasUnmonitoredAttributes() bool {
-	if o != nil && !IsNil(o.UnmonitoredAttributes) {
+	if o != nil && !isNil(o.UnmonitoredAttributes) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o NotifCondition) MarshalJSON() ([]byte, error) {
 
 func (o NotifCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MonitoredAttributes) {
+	if !isNil(o.MonitoredAttributes) {
 		toSerialize["monitoredAttributes"] = o.MonitoredAttributes
 	}
-	if !IsNil(o.UnmonitoredAttributes) {
+	if !isNil(o.UnmonitoredAttributes) {
 		toSerialize["unmonitoredAttributes"] = o.UnmonitoredAttributes
 	}
 	return toSerialize, nil

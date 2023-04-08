@@ -99,7 +99,7 @@ func (o *BootstrappingInfoRequest) SetNafId(v NafId) {
 
 // GetGbaUAware returns the GbaUAware field value if set, zero value otherwise.
 func (o *BootstrappingInfoRequest) GetGbaUAware() bool {
-	if o == nil || IsNil(o.GbaUAware) {
+	if o == nil || isNil(o.GbaUAware) {
 		var ret bool
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *BootstrappingInfoRequest) GetGbaUAware() bool {
 // GetGbaUAwareOk returns a tuple with the GbaUAware field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoRequest) GetGbaUAwareOk() (*bool, bool) {
-	if o == nil || IsNil(o.GbaUAware) {
+	if o == nil || isNil(o.GbaUAware) {
 		return nil, false
 	}
 	return o.GbaUAware, true
@@ -117,7 +117,7 @@ func (o *BootstrappingInfoRequest) GetGbaUAwareOk() (*bool, bool) {
 
 // HasGbaUAware returns a boolean if a field has been set.
 func (o *BootstrappingInfoRequest) HasGbaUAware() bool {
-	if o != nil && !IsNil(o.GbaUAware) {
+	if o != nil && !isNil(o.GbaUAware) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *BootstrappingInfoRequest) SetGbaUAware(v bool) {
 
 // GetGsIds returns the GsIds field value if set, zero value otherwise.
 func (o *BootstrappingInfoRequest) GetGsIds() []int32 {
-	if o == nil || IsNil(o.GsIds) {
+	if o == nil || isNil(o.GsIds) {
 		var ret []int32
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *BootstrappingInfoRequest) GetGsIds() []int32 {
 // GetGsIdsOk returns a tuple with the GsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BootstrappingInfoRequest) GetGsIdsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.GsIds) {
+	if o == nil || isNil(o.GsIds) {
 		return nil, false
 	}
 	return o.GsIds, true
@@ -149,7 +149,7 @@ func (o *BootstrappingInfoRequest) GetGsIdsOk() ([]int32, bool) {
 
 // HasGsIds returns a boolean if a field has been set.
 func (o *BootstrappingInfoRequest) HasGsIds() bool {
-	if o != nil && !IsNil(o.GsIds) {
+	if o != nil && !isNil(o.GsIds) {
 		return true
 	}
 
@@ -173,10 +173,10 @@ func (o BootstrappingInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["btId"] = o.BtId
 	toSerialize["nafId"] = o.NafId
-	if !IsNil(o.GbaUAware) {
+	if !isNil(o.GbaUAware) {
 		toSerialize["gbaUAware"] = o.GbaUAware
 	}
-	if !IsNil(o.GsIds) {
+	if !isNil(o.GsIds) {
 		toSerialize["gsIds"] = o.GsIds
 	}
 	return toSerialize, nil

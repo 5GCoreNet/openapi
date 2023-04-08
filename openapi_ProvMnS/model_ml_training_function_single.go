@@ -23,7 +23,7 @@ type MLTrainingFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *MLTrainingFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -79,7 +79,7 @@ func (o *MLTrainingFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *MLTrainingFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -97,7 +97,7 @@ func (o *MLTrainingFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *MLTrainingFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *MLTrainingFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -129,7 +129,7 @@ func (o *MLTrainingFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *MLTrainingFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *MLTrainingFunctionSingle) GetVsDataContainer() []VsDataContainerSingle 
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -161,7 +161,7 @@ func (o *MLTrainingFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSing
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -174,9 +174,9 @@ func (o *MLTrainingFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle)
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MLTrainingFunctionSingle) GetAttributes() MLTrainingFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret MLTrainingFunctionSingleAllOfAttributes
+func (o *MLTrainingFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -184,8 +184,8 @@ func (o *MLTrainingFunctionSingle) GetAttributes() MLTrainingFunctionSingleAllOf
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MLTrainingFunctionSingle) GetAttributesOk() (*MLTrainingFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *MLTrainingFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -193,21 +193,21 @@ func (o *MLTrainingFunctionSingle) GetAttributesOk() (*MLTrainingFunctionSingleA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given MLTrainingFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *MLTrainingFunctionSingle) SetAttributes(v MLTrainingFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *MLTrainingFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *MLTrainingFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -225,7 +225,7 @@ func (o *MLTrainingFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, 
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *MLTrainingFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *MLTrainingFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingl
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -257,7 +257,7 @@ func (o *MLTrainingFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSi
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *MLTrainingFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingl
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *MLTrainingFunctionSingle) GetManagedNFService() []ManagedNFServiceSingl
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -289,7 +289,7 @@ func (o *MLTrainingFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSi
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *MLTrainingFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingl
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *MLTrainingFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -321,7 +321,7 @@ func (o *MLTrainingFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *MLTrainingFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetMLTrainingRequest returns the MLTrainingRequest field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetMLTrainingRequest() []MLTrainingRequestSingle {
-	if o == nil || IsNil(o.MLTrainingRequest) {
+	if o == nil || isNil(o.MLTrainingRequest) {
 		var ret []MLTrainingRequestSingle
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *MLTrainingFunctionSingle) GetMLTrainingRequest() []MLTrainingRequestSin
 // GetMLTrainingRequestOk returns a tuple with the MLTrainingRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetMLTrainingRequestOk() ([]MLTrainingRequestSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingRequest) {
+	if o == nil || isNil(o.MLTrainingRequest) {
 		return nil, false
 	}
 	return o.MLTrainingRequest, true
@@ -353,7 +353,7 @@ func (o *MLTrainingFunctionSingle) GetMLTrainingRequestOk() ([]MLTrainingRequest
 
 // HasMLTrainingRequest returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasMLTrainingRequest() bool {
-	if o != nil && !IsNil(o.MLTrainingRequest) {
+	if o != nil && !isNil(o.MLTrainingRequest) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *MLTrainingFunctionSingle) SetMLTrainingRequest(v []MLTrainingRequestSin
 
 // GetMLTrainingProcess returns the MLTrainingProcess field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetMLTrainingProcess() []MLTrainingProcessSingle {
-	if o == nil || IsNil(o.MLTrainingProcess) {
+	if o == nil || isNil(o.MLTrainingProcess) {
 		var ret []MLTrainingProcessSingle
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *MLTrainingFunctionSingle) GetMLTrainingProcess() []MLTrainingProcessSin
 // GetMLTrainingProcessOk returns a tuple with the MLTrainingProcess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetMLTrainingProcessOk() ([]MLTrainingProcessSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingProcess) {
+	if o == nil || isNil(o.MLTrainingProcess) {
 		return nil, false
 	}
 	return o.MLTrainingProcess, true
@@ -385,7 +385,7 @@ func (o *MLTrainingFunctionSingle) GetMLTrainingProcessOk() ([]MLTrainingProcess
 
 // HasMLTrainingProcess returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasMLTrainingProcess() bool {
-	if o != nil && !IsNil(o.MLTrainingProcess) {
+	if o != nil && !isNil(o.MLTrainingProcess) {
 		return true
 	}
 
@@ -399,7 +399,7 @@ func (o *MLTrainingFunctionSingle) SetMLTrainingProcess(v []MLTrainingProcessSin
 
 // GetMLTrainingReport returns the MLTrainingReport field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingle) GetMLTrainingReport() []MLTrainingReportSingle {
-	if o == nil || IsNil(o.MLTrainingReport) {
+	if o == nil || isNil(o.MLTrainingReport) {
 		var ret []MLTrainingReportSingle
 		return ret
 	}
@@ -409,7 +409,7 @@ func (o *MLTrainingFunctionSingle) GetMLTrainingReport() []MLTrainingReportSingl
 // GetMLTrainingReportOk returns a tuple with the MLTrainingReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingle) GetMLTrainingReportOk() ([]MLTrainingReportSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingReport) {
+	if o == nil || isNil(o.MLTrainingReport) {
 		return nil, false
 	}
 	return o.MLTrainingReport, true
@@ -417,7 +417,7 @@ func (o *MLTrainingFunctionSingle) GetMLTrainingReportOk() ([]MLTrainingReportSi
 
 // HasMLTrainingReport returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingle) HasMLTrainingReport() bool {
-	if o != nil && !IsNil(o.MLTrainingReport) {
+	if o != nil && !isNil(o.MLTrainingReport) {
 		return true
 	}
 
@@ -440,37 +440,37 @@ func (o MLTrainingFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o MLTrainingFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.MLTrainingRequest) {
+	if !isNil(o.MLTrainingRequest) {
 		toSerialize["MLTrainingRequest"] = o.MLTrainingRequest
 	}
-	if !IsNil(o.MLTrainingProcess) {
+	if !isNil(o.MLTrainingProcess) {
 		toSerialize["MLTrainingProcess"] = o.MLTrainingProcess
 	}
-	if !IsNil(o.MLTrainingReport) {
+	if !isNil(o.MLTrainingReport) {
 		toSerialize["MLTrainingReport"] = o.MLTrainingReport
 	}
 	return toSerialize, nil

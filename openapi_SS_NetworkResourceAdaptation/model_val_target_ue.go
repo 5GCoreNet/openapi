@@ -17,13 +17,13 @@ import (
 
 // ValTargetUe - Represents the information identifying a VAL user ID or a VAL UE ID.
 type ValTargetUe struct {
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // interface{}AsValTargetUe is a convenience function that returns interface{} wrapped in ValTargetUe
-func Interface{}AsValTargetUe(v *interface{}) ValTargetUe {
+func InterfaceAsValTargetUe(v *interface{}) ValTargetUe {
 	return ValTargetUe{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -32,22 +32,22 @@ func Interface{}AsValTargetUe(v *interface{}) ValTargetUe {
 func (dst *ValTargetUe) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(ValTargetUe)")
 	} else if match == 1 {
@@ -59,8 +59,8 @@ func (dst *ValTargetUe) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src ValTargetUe) MarshalJSON() ([]byte, error) {
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -71,8 +71,8 @@ func (obj *ValTargetUe) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

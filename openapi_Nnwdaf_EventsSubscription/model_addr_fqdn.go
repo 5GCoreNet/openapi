@@ -43,7 +43,7 @@ func NewAddrFqdnWithDefaults() *AddrFqdn {
 
 // GetIpAddr returns the IpAddr field value if set, zero value otherwise.
 func (o *AddrFqdn) GetIpAddr() IpAddr {
-	if o == nil || IsNil(o.IpAddr) {
+	if o == nil || isNil(o.IpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AddrFqdn) GetIpAddr() IpAddr {
 // GetIpAddrOk returns a tuple with the IpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddrFqdn) GetIpAddrOk() (*IpAddr, bool) {
-	if o == nil || IsNil(o.IpAddr) {
+	if o == nil || isNil(o.IpAddr) {
 		return nil, false
 	}
 	return o.IpAddr, true
@@ -61,7 +61,7 @@ func (o *AddrFqdn) GetIpAddrOk() (*IpAddr, bool) {
 
 // HasIpAddr returns a boolean if a field has been set.
 func (o *AddrFqdn) HasIpAddr() bool {
-	if o != nil && !IsNil(o.IpAddr) {
+	if o != nil && !isNil(o.IpAddr) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AddrFqdn) SetIpAddr(v IpAddr) {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *AddrFqdn) GetFqdn() string {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AddrFqdn) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddrFqdn) GetFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -93,7 +93,7 @@ func (o *AddrFqdn) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *AddrFqdn) HasFqdn() bool {
-	if o != nil && !IsNil(o.Fqdn) {
+	if o != nil && !isNil(o.Fqdn) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o AddrFqdn) MarshalJSON() ([]byte, error) {
 
 func (o AddrFqdn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IpAddr) {
+	if !isNil(o.IpAddr) {
 		toSerialize["ipAddr"] = o.IpAddr
 	}
-	if !IsNil(o.Fqdn) {
+	if !isNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
 	return toSerialize, nil

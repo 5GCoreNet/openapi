@@ -48,7 +48,7 @@ func NewV2vConfigurationDataWithDefaults() *V2vConfigurationData {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *V2vConfigurationData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -66,7 +66,7 @@ func (o *V2vConfigurationData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *V2vConfigurationData) SetGroupId(v string) {
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetServiceId() string {
-	if o == nil || IsNil(o.ServiceId) {
+	if o == nil || isNil(o.ServiceId) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *V2vConfigurationData) GetServiceId() string {
 // GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetServiceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceId) {
+	if o == nil || isNil(o.ServiceId) {
 		return nil, false
 	}
 	return o.ServiceId, true
@@ -98,7 +98,7 @@ func (o *V2vConfigurationData) GetServiceIdOk() (*string, bool) {
 
 // HasServiceId returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasServiceId() bool {
-	if o != nil && !IsNil(o.ServiceId) {
+	if o != nil && !isNil(o.ServiceId) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *V2vConfigurationData) SetServiceId(v string) {
 
 // GetCanUeIds returns the CanUeIds field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetCanUeIds() []string {
-	if o == nil || IsNil(o.CanUeIds) {
+	if o == nil || isNil(o.CanUeIds) {
 		var ret []string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *V2vConfigurationData) GetCanUeIds() []string {
 // GetCanUeIdsOk returns a tuple with the CanUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetCanUeIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.CanUeIds) {
+	if o == nil || isNil(o.CanUeIds) {
 		return nil, false
 	}
 	return o.CanUeIds, true
@@ -130,7 +130,7 @@ func (o *V2vConfigurationData) GetCanUeIdsOk() ([]string, bool) {
 
 // HasCanUeIds returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasCanUeIds() bool {
-	if o != nil && !IsNil(o.CanUeIds) {
+	if o != nil && !isNil(o.CanUeIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *V2vConfigurationData) SetCanUeIds(v []string) {
 
 // GetAppQosReq returns the AppQosReq field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetAppQosReq() AppplicationQosRequirement {
-	if o == nil || IsNil(o.AppQosReq) {
+	if o == nil || isNil(o.AppQosReq) {
 		var ret AppplicationQosRequirement
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *V2vConfigurationData) GetAppQosReq() AppplicationQosRequirement {
 // GetAppQosReqOk returns a tuple with the AppQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetAppQosReqOk() (*AppplicationQosRequirement, bool) {
-	if o == nil || IsNil(o.AppQosReq) {
+	if o == nil || isNil(o.AppQosReq) {
 		return nil, false
 	}
 	return o.AppQosReq, true
@@ -162,7 +162,7 @@ func (o *V2vConfigurationData) GetAppQosReqOk() (*AppplicationQosRequirement, bo
 
 // HasAppQosReq returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasAppQosReq() bool {
-	if o != nil && !IsNil(o.AppQosReq) {
+	if o != nil && !isNil(o.AppQosReq) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *V2vConfigurationData) SetAppQosReq(v AppplicationQosRequirement) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *V2vConfigurationData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *V2vConfigurationData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2vConfigurationData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -194,7 +194,7 @@ func (o *V2vConfigurationData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *V2vConfigurationData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -216,19 +216,19 @@ func (o V2vConfigurationData) MarshalJSON() ([]byte, error) {
 
 func (o V2vConfigurationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.ServiceId) {
+	if !isNil(o.ServiceId) {
 		toSerialize["serviceId"] = o.ServiceId
 	}
-	if !IsNil(o.CanUeIds) {
+	if !isNil(o.CanUeIds) {
 		toSerialize["canUeIds"] = o.CanUeIds
 	}
-	if !IsNil(o.AppQosReq) {
+	if !isNil(o.AppQosReq) {
 		toSerialize["appQosReq"] = o.AppQosReq
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

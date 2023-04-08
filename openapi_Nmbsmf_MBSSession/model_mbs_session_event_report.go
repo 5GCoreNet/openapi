@@ -71,7 +71,7 @@ func (o *MbsSessionEventReport) SetEventType(v MbsSessionEventType) {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *MbsSessionEventReport) GetTimeStamp() time.Time {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *MbsSessionEventReport) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionEventReport) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -89,7 +89,7 @@ func (o *MbsSessionEventReport) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *MbsSessionEventReport) HasTimeStamp() bool {
-	if o != nil && !IsNil(o.TimeStamp) {
+	if o != nil && !isNil(o.TimeStamp) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *MbsSessionEventReport) SetTimeStamp(v time.Time) {
 
 // GetIngressTunAddrInfo returns the IngressTunAddrInfo field value if set, zero value otherwise.
 func (o *MbsSessionEventReport) GetIngressTunAddrInfo() IngressTunAddrInfo {
-	if o == nil || IsNil(o.IngressTunAddrInfo) {
+	if o == nil || isNil(o.IngressTunAddrInfo) {
 		var ret IngressTunAddrInfo
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *MbsSessionEventReport) GetIngressTunAddrInfo() IngressTunAddrInfo {
 // GetIngressTunAddrInfoOk returns a tuple with the IngressTunAddrInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionEventReport) GetIngressTunAddrInfoOk() (*IngressTunAddrInfo, bool) {
-	if o == nil || IsNil(o.IngressTunAddrInfo) {
+	if o == nil || isNil(o.IngressTunAddrInfo) {
 		return nil, false
 	}
 	return o.IngressTunAddrInfo, true
@@ -121,7 +121,7 @@ func (o *MbsSessionEventReport) GetIngressTunAddrInfoOk() (*IngressTunAddrInfo, 
 
 // HasIngressTunAddrInfo returns a boolean if a field has been set.
 func (o *MbsSessionEventReport) HasIngressTunAddrInfo() bool {
-	if o != nil && !IsNil(o.IngressTunAddrInfo) {
+	if o != nil && !isNil(o.IngressTunAddrInfo) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *MbsSessionEventReport) SetIngressTunAddrInfo(v IngressTunAddrInfo) {
 
 // GetBroadcastDelStatus returns the BroadcastDelStatus field value if set, zero value otherwise.
 func (o *MbsSessionEventReport) GetBroadcastDelStatus() BroadcastDeliveryStatus {
-	if o == nil || IsNil(o.BroadcastDelStatus) {
+	if o == nil || isNil(o.BroadcastDelStatus) {
 		var ret BroadcastDeliveryStatus
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *MbsSessionEventReport) GetBroadcastDelStatus() BroadcastDeliveryStatus 
 // GetBroadcastDelStatusOk returns a tuple with the BroadcastDelStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionEventReport) GetBroadcastDelStatusOk() (*BroadcastDeliveryStatus, bool) {
-	if o == nil || IsNil(o.BroadcastDelStatus) {
+	if o == nil || isNil(o.BroadcastDelStatus) {
 		return nil, false
 	}
 	return o.BroadcastDelStatus, true
@@ -153,7 +153,7 @@ func (o *MbsSessionEventReport) GetBroadcastDelStatusOk() (*BroadcastDeliverySta
 
 // HasBroadcastDelStatus returns a boolean if a field has been set.
 func (o *MbsSessionEventReport) HasBroadcastDelStatus() bool {
-	if o != nil && !IsNil(o.BroadcastDelStatus) {
+	if o != nil && !isNil(o.BroadcastDelStatus) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o MbsSessionEventReport) MarshalJSON() ([]byte, error) {
 func (o MbsSessionEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.TimeStamp) {
+	if !isNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
-	if !IsNil(o.IngressTunAddrInfo) {
+	if !isNil(o.IngressTunAddrInfo) {
 		toSerialize["ingressTunAddrInfo"] = o.IngressTunAddrInfo
 	}
-	if !IsNil(o.BroadcastDelStatus) {
+	if !isNil(o.BroadcastDelStatus) {
 		toSerialize["broadcastDelStatus"] = o.BroadcastDelStatus
 	}
 	return toSerialize, nil

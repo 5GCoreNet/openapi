@@ -17,23 +17,37 @@ import (
 
 // LcsServiceAuth Possible values are: - \"LOCATION_ALLOWED_WITH_NOTIFICATION\": Location allowed with notification - \"LOCATION_ALLOWED_WITHOUT_NOTIFICATION\": Location allowed without notification - \"LOCATION_ALLOWED_WITHOUT_RESPONSE\": Location with notification and privacy    verification; location allowed if no response - \"LOCATION_RESTRICTED_WITHOUT_RESPONSE\": Location with notification and privacy   verification; location restricted if no response - \"NOTIFICATION_ONLY\": Notification only - \"NOTIFICATION_AND_VERIFICATION_ONLY\": Notification and privacy verification only 
 type LcsServiceAuth struct {
-	string *string
+	LcsServiceAuthAnyOf *LcsServiceAuthAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LcsServiceAuth) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into LcsServiceAuthAnyOf
+	err = json.Unmarshal(data, &dst.LcsServiceAuthAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonLcsServiceAuthAnyOf, _ := json.Marshal(dst.LcsServiceAuthAnyOf)
+		if string(jsonLcsServiceAuthAnyOf) == "{}" { // empty struct
+			dst.LcsServiceAuthAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.LcsServiceAuthAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.LcsServiceAuthAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(LcsServiceAuth)")
@@ -41,8 +55,12 @@ func (dst *LcsServiceAuth) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LcsServiceAuth) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.LcsServiceAuthAnyOf != nil {
+		return json.Marshal(&src.LcsServiceAuthAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

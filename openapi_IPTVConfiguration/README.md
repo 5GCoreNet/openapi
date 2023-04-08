@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessRightStatus](docs/AccessRightStatus.md)
+ - [AccessRightStatusAnyOf](docs/AccessRightStatusAnyOf.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [IptvConfigData](docs/IptvConfigData.md)
  - [IptvConfigDataPatch](docs/IptvConfigDataPatch.md)

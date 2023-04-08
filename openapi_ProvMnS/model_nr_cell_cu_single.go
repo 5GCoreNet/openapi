@@ -23,7 +23,7 @@ type NrCellCuSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *NrCellCuSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -86,7 +86,7 @@ func (o *NrCellCuSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *NrCellCuSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -104,7 +104,7 @@ func (o *NrCellCuSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *NrCellCuSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *NrCellCuSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -136,7 +136,7 @@ func (o *NrCellCuSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *NrCellCuSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *NrCellCuSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -168,7 +168,7 @@ func (o *NrCellCuSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) 
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -181,9 +181,9 @@ func (o *NrCellCuSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NrCellCuSingle) GetAttributes() NrCellCuSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret NrCellCuSingleAllOfAttributes
+func (o *NrCellCuSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -191,8 +191,8 @@ func (o *NrCellCuSingle) GetAttributes() NrCellCuSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NrCellCuSingle) GetAttributesOk() (*NrCellCuSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *NrCellCuSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -200,21 +200,21 @@ func (o *NrCellCuSingle) GetAttributesOk() (*NrCellCuSingleAllOfAttributes, bool
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given NrCellCuSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *NrCellCuSingle) SetAttributes(v NrCellCuSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *NrCellCuSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *NrCellCuSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -232,7 +232,7 @@ func (o *NrCellCuSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *NrCellCuSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *NrCellCuSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -264,7 +264,7 @@ func (o *NrCellCuSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *NrCellCuSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *NrCellCuSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -296,7 +296,7 @@ func (o *NrCellCuSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *NrCellCuSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *NrCellCuSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -328,7 +328,7 @@ func (o *NrCellCuSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *NrCellCuSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetRRMPolicyRatio returns the RRMPolicyRatio field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		var ret []RRMPolicyRatioSingle
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *NrCellCuSingle) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
 // GetRRMPolicyRatioOk returns a tuple with the RRMPolicyRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bool) {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		return nil, false
 	}
 	return o.RRMPolicyRatio, true
@@ -360,7 +360,7 @@ func (o *NrCellCuSingle) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bool) {
 
 // HasRRMPolicyRatio returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasRRMPolicyRatio() bool {
-	if o != nil && !IsNil(o.RRMPolicyRatio) {
+	if o != nil && !isNil(o.RRMPolicyRatio) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *NrCellCuSingle) SetRRMPolicyRatio(v []RRMPolicyRatioSingle) {
 
 // GetNRCellRelation returns the NRCellRelation field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetNRCellRelation() []NRCellRelationSingle {
-	if o == nil || IsNil(o.NRCellRelation) {
+	if o == nil || isNil(o.NRCellRelation) {
 		var ret []NRCellRelationSingle
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *NrCellCuSingle) GetNRCellRelation() []NRCellRelationSingle {
 // GetNRCellRelationOk returns a tuple with the NRCellRelation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetNRCellRelationOk() ([]NRCellRelationSingle, bool) {
-	if o == nil || IsNil(o.NRCellRelation) {
+	if o == nil || isNil(o.NRCellRelation) {
 		return nil, false
 	}
 	return o.NRCellRelation, true
@@ -392,7 +392,7 @@ func (o *NrCellCuSingle) GetNRCellRelationOk() ([]NRCellRelationSingle, bool) {
 
 // HasNRCellRelation returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasNRCellRelation() bool {
-	if o != nil && !IsNil(o.NRCellRelation) {
+	if o != nil && !isNil(o.NRCellRelation) {
 		return true
 	}
 
@@ -406,7 +406,7 @@ func (o *NrCellCuSingle) SetNRCellRelation(v []NRCellRelationSingle) {
 
 // GetEUtranCellRelation returns the EUtranCellRelation field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetEUtranCellRelation() []EUtranCellRelationSingle {
-	if o == nil || IsNil(o.EUtranCellRelation) {
+	if o == nil || isNil(o.EUtranCellRelation) {
 		var ret []EUtranCellRelationSingle
 		return ret
 	}
@@ -416,7 +416,7 @@ func (o *NrCellCuSingle) GetEUtranCellRelation() []EUtranCellRelationSingle {
 // GetEUtranCellRelationOk returns a tuple with the EUtranCellRelation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetEUtranCellRelationOk() ([]EUtranCellRelationSingle, bool) {
-	if o == nil || IsNil(o.EUtranCellRelation) {
+	if o == nil || isNil(o.EUtranCellRelation) {
 		return nil, false
 	}
 	return o.EUtranCellRelation, true
@@ -424,7 +424,7 @@ func (o *NrCellCuSingle) GetEUtranCellRelationOk() ([]EUtranCellRelationSingle, 
 
 // HasEUtranCellRelation returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasEUtranCellRelation() bool {
-	if o != nil && !IsNil(o.EUtranCellRelation) {
+	if o != nil && !isNil(o.EUtranCellRelation) {
 		return true
 	}
 
@@ -438,7 +438,7 @@ func (o *NrCellCuSingle) SetEUtranCellRelation(v []EUtranCellRelationSingle) {
 
 // GetNRFreqRelation returns the NRFreqRelation field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetNRFreqRelation() []NRFreqRelationSingle {
-	if o == nil || IsNil(o.NRFreqRelation) {
+	if o == nil || isNil(o.NRFreqRelation) {
 		var ret []NRFreqRelationSingle
 		return ret
 	}
@@ -448,7 +448,7 @@ func (o *NrCellCuSingle) GetNRFreqRelation() []NRFreqRelationSingle {
 // GetNRFreqRelationOk returns a tuple with the NRFreqRelation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetNRFreqRelationOk() ([]NRFreqRelationSingle, bool) {
-	if o == nil || IsNil(o.NRFreqRelation) {
+	if o == nil || isNil(o.NRFreqRelation) {
 		return nil, false
 	}
 	return o.NRFreqRelation, true
@@ -456,7 +456,7 @@ func (o *NrCellCuSingle) GetNRFreqRelationOk() ([]NRFreqRelationSingle, bool) {
 
 // HasNRFreqRelation returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasNRFreqRelation() bool {
-	if o != nil && !IsNil(o.NRFreqRelation) {
+	if o != nil && !isNil(o.NRFreqRelation) {
 		return true
 	}
 
@@ -470,7 +470,7 @@ func (o *NrCellCuSingle) SetNRFreqRelation(v []NRFreqRelationSingle) {
 
 // GetEUtranFreqRelation returns the EUtranFreqRelation field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetEUtranFreqRelation() []EUtranFreqRelationSingle {
-	if o == nil || IsNil(o.EUtranFreqRelation) {
+	if o == nil || isNil(o.EUtranFreqRelation) {
 		var ret []EUtranFreqRelationSingle
 		return ret
 	}
@@ -480,7 +480,7 @@ func (o *NrCellCuSingle) GetEUtranFreqRelation() []EUtranFreqRelationSingle {
 // GetEUtranFreqRelationOk returns a tuple with the EUtranFreqRelation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetEUtranFreqRelationOk() ([]EUtranFreqRelationSingle, bool) {
-	if o == nil || IsNil(o.EUtranFreqRelation) {
+	if o == nil || isNil(o.EUtranFreqRelation) {
 		return nil, false
 	}
 	return o.EUtranFreqRelation, true
@@ -488,7 +488,7 @@ func (o *NrCellCuSingle) GetEUtranFreqRelationOk() ([]EUtranFreqRelationSingle, 
 
 // HasEUtranFreqRelation returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasEUtranFreqRelation() bool {
-	if o != nil && !IsNil(o.EUtranFreqRelation) {
+	if o != nil && !isNil(o.EUtranFreqRelation) {
 		return true
 	}
 
@@ -502,7 +502,7 @@ func (o *NrCellCuSingle) SetEUtranFreqRelation(v []EUtranFreqRelationSingle) {
 
 // GetDESManagementFunction returns the DESManagementFunction field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetDESManagementFunction() DESManagementFunctionSingle {
-	if o == nil || IsNil(o.DESManagementFunction) {
+	if o == nil || isNil(o.DESManagementFunction) {
 		var ret DESManagementFunctionSingle
 		return ret
 	}
@@ -512,7 +512,7 @@ func (o *NrCellCuSingle) GetDESManagementFunction() DESManagementFunctionSingle 
 // GetDESManagementFunctionOk returns a tuple with the DESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetDESManagementFunctionOk() (*DESManagementFunctionSingle, bool) {
-	if o == nil || IsNil(o.DESManagementFunction) {
+	if o == nil || isNil(o.DESManagementFunction) {
 		return nil, false
 	}
 	return o.DESManagementFunction, true
@@ -520,7 +520,7 @@ func (o *NrCellCuSingle) GetDESManagementFunctionOk() (*DESManagementFunctionSin
 
 // HasDESManagementFunction returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasDESManagementFunction() bool {
-	if o != nil && !IsNil(o.DESManagementFunction) {
+	if o != nil && !isNil(o.DESManagementFunction) {
 		return true
 	}
 
@@ -534,7 +534,7 @@ func (o *NrCellCuSingle) SetDESManagementFunction(v DESManagementFunctionSingle)
 
 // GetDMROFunction returns the DMROFunction field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetDMROFunction() DMROFunctionSingle {
-	if o == nil || IsNil(o.DMROFunction) {
+	if o == nil || isNil(o.DMROFunction) {
 		var ret DMROFunctionSingle
 		return ret
 	}
@@ -544,7 +544,7 @@ func (o *NrCellCuSingle) GetDMROFunction() DMROFunctionSingle {
 // GetDMROFunctionOk returns a tuple with the DMROFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetDMROFunctionOk() (*DMROFunctionSingle, bool) {
-	if o == nil || IsNil(o.DMROFunction) {
+	if o == nil || isNil(o.DMROFunction) {
 		return nil, false
 	}
 	return o.DMROFunction, true
@@ -552,7 +552,7 @@ func (o *NrCellCuSingle) GetDMROFunctionOk() (*DMROFunctionSingle, bool) {
 
 // HasDMROFunction returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasDMROFunction() bool {
-	if o != nil && !IsNil(o.DMROFunction) {
+	if o != nil && !isNil(o.DMROFunction) {
 		return true
 	}
 
@@ -566,7 +566,7 @@ func (o *NrCellCuSingle) SetDMROFunction(v DMROFunctionSingle) {
 
 // GetDLBOFunction returns the DLBOFunction field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetDLBOFunction() DLBOFunctionSingle {
-	if o == nil || IsNil(o.DLBOFunction) {
+	if o == nil || isNil(o.DLBOFunction) {
 		var ret DLBOFunctionSingle
 		return ret
 	}
@@ -576,7 +576,7 @@ func (o *NrCellCuSingle) GetDLBOFunction() DLBOFunctionSingle {
 // GetDLBOFunctionOk returns a tuple with the DLBOFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetDLBOFunctionOk() (*DLBOFunctionSingle, bool) {
-	if o == nil || IsNil(o.DLBOFunction) {
+	if o == nil || isNil(o.DLBOFunction) {
 		return nil, false
 	}
 	return o.DLBOFunction, true
@@ -584,7 +584,7 @@ func (o *NrCellCuSingle) GetDLBOFunctionOk() (*DLBOFunctionSingle, bool) {
 
 // HasDLBOFunction returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasDLBOFunction() bool {
-	if o != nil && !IsNil(o.DLBOFunction) {
+	if o != nil && !isNil(o.DLBOFunction) {
 		return true
 	}
 
@@ -598,7 +598,7 @@ func (o *NrCellCuSingle) SetDLBOFunction(v DLBOFunctionSingle) {
 
 // GetCESManagementFunction returns the CESManagementFunction field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetCESManagementFunction() CESManagementFunctionSingle {
-	if o == nil || IsNil(o.CESManagementFunction) {
+	if o == nil || isNil(o.CESManagementFunction) {
 		var ret CESManagementFunctionSingle
 		return ret
 	}
@@ -608,7 +608,7 @@ func (o *NrCellCuSingle) GetCESManagementFunction() CESManagementFunctionSingle 
 // GetCESManagementFunctionOk returns a tuple with the CESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetCESManagementFunctionOk() (*CESManagementFunctionSingle, bool) {
-	if o == nil || IsNil(o.CESManagementFunction) {
+	if o == nil || isNil(o.CESManagementFunction) {
 		return nil, false
 	}
 	return o.CESManagementFunction, true
@@ -616,7 +616,7 @@ func (o *NrCellCuSingle) GetCESManagementFunctionOk() (*CESManagementFunctionSin
 
 // HasCESManagementFunction returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasCESManagementFunction() bool {
-	if o != nil && !IsNil(o.CESManagementFunction) {
+	if o != nil && !isNil(o.CESManagementFunction) {
 		return true
 	}
 
@@ -630,7 +630,7 @@ func (o *NrCellCuSingle) SetCESManagementFunction(v CESManagementFunctionSingle)
 
 // GetDPCIConfigurationFunction returns the DPCIConfigurationFunction field value if set, zero value otherwise.
 func (o *NrCellCuSingle) GetDPCIConfigurationFunction() DPCIConfigurationFunctionSingle {
-	if o == nil || IsNil(o.DPCIConfigurationFunction) {
+	if o == nil || isNil(o.DPCIConfigurationFunction) {
 		var ret DPCIConfigurationFunctionSingle
 		return ret
 	}
@@ -640,7 +640,7 @@ func (o *NrCellCuSingle) GetDPCIConfigurationFunction() DPCIConfigurationFunctio
 // GetDPCIConfigurationFunctionOk returns a tuple with the DPCIConfigurationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellCuSingle) GetDPCIConfigurationFunctionOk() (*DPCIConfigurationFunctionSingle, bool) {
-	if o == nil || IsNil(o.DPCIConfigurationFunction) {
+	if o == nil || isNil(o.DPCIConfigurationFunction) {
 		return nil, false
 	}
 	return o.DPCIConfigurationFunction, true
@@ -648,7 +648,7 @@ func (o *NrCellCuSingle) GetDPCIConfigurationFunctionOk() (*DPCIConfigurationFun
 
 // HasDPCIConfigurationFunction returns a boolean if a field has been set.
 func (o *NrCellCuSingle) HasDPCIConfigurationFunction() bool {
-	if o != nil && !IsNil(o.DPCIConfigurationFunction) {
+	if o != nil && !isNil(o.DPCIConfigurationFunction) {
 		return true
 	}
 
@@ -671,58 +671,58 @@ func (o NrCellCuSingle) MarshalJSON() ([]byte, error) {
 func (o NrCellCuSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.RRMPolicyRatio) {
+	if !isNil(o.RRMPolicyRatio) {
 		toSerialize["RRMPolicyRatio"] = o.RRMPolicyRatio
 	}
-	if !IsNil(o.NRCellRelation) {
+	if !isNil(o.NRCellRelation) {
 		toSerialize["NRCellRelation"] = o.NRCellRelation
 	}
-	if !IsNil(o.EUtranCellRelation) {
+	if !isNil(o.EUtranCellRelation) {
 		toSerialize["EUtranCellRelation"] = o.EUtranCellRelation
 	}
-	if !IsNil(o.NRFreqRelation) {
+	if !isNil(o.NRFreqRelation) {
 		toSerialize["NRFreqRelation"] = o.NRFreqRelation
 	}
-	if !IsNil(o.EUtranFreqRelation) {
+	if !isNil(o.EUtranFreqRelation) {
 		toSerialize["EUtranFreqRelation"] = o.EUtranFreqRelation
 	}
-	if !IsNil(o.DESManagementFunction) {
+	if !isNil(o.DESManagementFunction) {
 		toSerialize["DESManagementFunction"] = o.DESManagementFunction
 	}
-	if !IsNil(o.DMROFunction) {
+	if !isNil(o.DMROFunction) {
 		toSerialize["DMROFunction"] = o.DMROFunction
 	}
-	if !IsNil(o.DLBOFunction) {
+	if !isNil(o.DLBOFunction) {
 		toSerialize["DLBOFunction"] = o.DLBOFunction
 	}
-	if !IsNil(o.CESManagementFunction) {
+	if !isNil(o.CESManagementFunction) {
 		toSerialize["CESManagementFunction"] = o.CESManagementFunction
 	}
-	if !IsNil(o.DPCIConfigurationFunction) {
+	if !isNil(o.DPCIConfigurationFunction) {
 		toSerialize["DPCIConfigurationFunction"] = o.DPCIConfigurationFunction
 	}
 	return toSerialize, nil

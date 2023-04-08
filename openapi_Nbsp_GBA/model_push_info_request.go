@@ -235,7 +235,7 @@ func (o *PushInfoRequest) SetRequestedLifeTime(v time.Time) {
 
 // GetPrivateIdRequest returns the PrivateIdRequest field value if set, zero value otherwise.
 func (o *PushInfoRequest) GetPrivateIdRequest() bool {
-	if o == nil || IsNil(o.PrivateIdRequest) {
+	if o == nil || isNil(o.PrivateIdRequest) {
 		var ret bool
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *PushInfoRequest) GetPrivateIdRequest() bool {
 // GetPrivateIdRequestOk returns a tuple with the PrivateIdRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoRequest) GetPrivateIdRequestOk() (*bool, bool) {
-	if o == nil || IsNil(o.PrivateIdRequest) {
+	if o == nil || isNil(o.PrivateIdRequest) {
 		return nil, false
 	}
 	return o.PrivateIdRequest, true
@@ -253,7 +253,7 @@ func (o *PushInfoRequest) GetPrivateIdRequestOk() (*bool, bool) {
 
 // HasPrivateIdRequest returns a boolean if a field has been set.
 func (o *PushInfoRequest) HasPrivateIdRequest() bool {
-	if o != nil && !IsNil(o.PrivateIdRequest) {
+	if o != nil && !isNil(o.PrivateIdRequest) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *PushInfoRequest) SetPrivateIdRequest(v bool) {
 
 // GetGbaUAware returns the GbaUAware field value if set, zero value otherwise.
 func (o *PushInfoRequest) GetGbaUAware() bool {
-	if o == nil || IsNil(o.GbaUAware) {
+	if o == nil || isNil(o.GbaUAware) {
 		var ret bool
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *PushInfoRequest) GetGbaUAware() bool {
 // GetGbaUAwareOk returns a tuple with the GbaUAware field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoRequest) GetGbaUAwareOk() (*bool, bool) {
-	if o == nil || IsNil(o.GbaUAware) {
+	if o == nil || isNil(o.GbaUAware) {
 		return nil, false
 	}
 	return o.GbaUAware, true
@@ -285,7 +285,7 @@ func (o *PushInfoRequest) GetGbaUAwareOk() (*bool, bool) {
 
 // HasGbaUAware returns a boolean if a field has been set.
 func (o *PushInfoRequest) HasGbaUAware() bool {
-	if o != nil && !IsNil(o.GbaUAware) {
+	if o != nil && !isNil(o.GbaUAware) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *PushInfoRequest) SetGbaUAware(v bool) {
 
 // GetGsIds returns the GsIds field value if set, zero value otherwise.
 func (o *PushInfoRequest) GetGsIds() []int32 {
-	if o == nil || IsNil(o.GsIds) {
+	if o == nil || isNil(o.GsIds) {
 		var ret []int32
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *PushInfoRequest) GetGsIds() []int32 {
 // GetGsIdsOk returns a tuple with the GsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoRequest) GetGsIdsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.GsIds) {
+	if o == nil || isNil(o.GsIds) {
 		return nil, false
 	}
 	return o.GsIds, true
@@ -317,7 +317,7 @@ func (o *PushInfoRequest) GetGsIdsOk() ([]int32, bool) {
 
 // HasGsIds returns a boolean if a field has been set.
 func (o *PushInfoRequest) HasGsIds() bool {
-	if o != nil && !IsNil(o.GsIds) {
+	if o != nil && !isNil(o.GsIds) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *PushInfoRequest) SetGsIds(v []int32) {
 
 // GetAuts returns the Auts field value if set, zero value otherwise.
 func (o *PushInfoRequest) GetAuts() string {
-	if o == nil || IsNil(o.Auts) {
+	if o == nil || isNil(o.Auts) {
 		var ret string
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *PushInfoRequest) GetAuts() string {
 // GetAutsOk returns a tuple with the Auts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoRequest) GetAutsOk() (*string, bool) {
-	if o == nil || IsNil(o.Auts) {
+	if o == nil || isNil(o.Auts) {
 		return nil, false
 	}
 	return o.Auts, true
@@ -349,7 +349,7 @@ func (o *PushInfoRequest) GetAutsOk() (*string, bool) {
 
 // HasAuts returns a boolean if a field has been set.
 func (o *PushInfoRequest) HasAuts() bool {
-	if o != nil && !IsNil(o.Auts) {
+	if o != nil && !isNil(o.Auts) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *PushInfoRequest) SetAuts(v string) {
 
 // GetRand returns the Rand field value if set, zero value otherwise.
 func (o *PushInfoRequest) GetRand() string {
-	if o == nil || IsNil(o.Rand) {
+	if o == nil || isNil(o.Rand) {
 		var ret string
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *PushInfoRequest) GetRand() string {
 // GetRandOk returns a tuple with the Rand field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoRequest) GetRandOk() (*string, bool) {
-	if o == nil || IsNil(o.Rand) {
+	if o == nil || isNil(o.Rand) {
 		return nil, false
 	}
 	return o.Rand, true
@@ -381,7 +381,7 @@ func (o *PushInfoRequest) GetRandOk() (*string, bool) {
 
 // HasRand returns a boolean if a field has been set.
 func (o *PushInfoRequest) HasRand() bool {
-	if o != nil && !IsNil(o.Rand) {
+	if o != nil && !isNil(o.Rand) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *PushInfoRequest) SetRand(v string) {
 
 // GetSecurityFeaturesRequest returns the SecurityFeaturesRequest field value if set, zero value otherwise.
 func (o *PushInfoRequest) GetSecurityFeaturesRequest() []SecFeature {
-	if o == nil || IsNil(o.SecurityFeaturesRequest) {
+	if o == nil || isNil(o.SecurityFeaturesRequest) {
 		var ret []SecFeature
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *PushInfoRequest) GetSecurityFeaturesRequest() []SecFeature {
 // GetSecurityFeaturesRequestOk returns a tuple with the SecurityFeaturesRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoRequest) GetSecurityFeaturesRequestOk() ([]SecFeature, bool) {
-	if o == nil || IsNil(o.SecurityFeaturesRequest) {
+	if o == nil || isNil(o.SecurityFeaturesRequest) {
 		return nil, false
 	}
 	return o.SecurityFeaturesRequest, true
@@ -413,7 +413,7 @@ func (o *PushInfoRequest) GetSecurityFeaturesRequestOk() ([]SecFeature, bool) {
 
 // HasSecurityFeaturesRequest returns a boolean if a field has been set.
 func (o *PushInfoRequest) HasSecurityFeaturesRequest() bool {
-	if o != nil && !IsNil(o.SecurityFeaturesRequest) {
+	if o != nil && !isNil(o.SecurityFeaturesRequest) {
 		return true
 	}
 
@@ -442,22 +442,22 @@ func (o PushInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["ptId"] = o.PtId
 	toSerialize["uiccOrMe"] = o.UiccOrMe
 	toSerialize["requestedLifeTime"] = o.RequestedLifeTime
-	if !IsNil(o.PrivateIdRequest) {
+	if !isNil(o.PrivateIdRequest) {
 		toSerialize["privateIdRequest"] = o.PrivateIdRequest
 	}
-	if !IsNil(o.GbaUAware) {
+	if !isNil(o.GbaUAware) {
 		toSerialize["gbaUAware"] = o.GbaUAware
 	}
-	if !IsNil(o.GsIds) {
+	if !isNil(o.GsIds) {
 		toSerialize["gsIds"] = o.GsIds
 	}
-	if !IsNil(o.Auts) {
+	if !isNil(o.Auts) {
 		toSerialize["auts"] = o.Auts
 	}
-	if !IsNil(o.Rand) {
+	if !isNil(o.Rand) {
 		toSerialize["rand"] = o.Rand
 	}
-	if !IsNil(o.SecurityFeaturesRequest) {
+	if !isNil(o.SecurityFeaturesRequest) {
 		toSerialize["securityFeaturesRequest"] = o.SecurityFeaturesRequest
 	}
 	return toSerialize, nil

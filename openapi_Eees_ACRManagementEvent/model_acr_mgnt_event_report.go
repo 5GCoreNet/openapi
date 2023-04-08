@@ -72,7 +72,7 @@ func (o *AcrMgntEventReport) SetEvent(v AcrMgntEvent) {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *AcrMgntEventReport) GetTimeStamp() time.Time {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AcrMgntEventReport) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventReport) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -90,7 +90,7 @@ func (o *AcrMgntEventReport) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *AcrMgntEventReport) HasTimeStamp() bool {
-	if o != nil && !IsNil(o.TimeStamp) {
+	if o != nil && !isNil(o.TimeStamp) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AcrMgntEventReport) SetTimeStamp(v time.Time) {
 
 // GetUpPathChgInfo returns the UpPathChgInfo field value if set, zero value otherwise.
 func (o *AcrMgntEventReport) GetUpPathChgInfo() UpPathChangeInfo {
-	if o == nil || IsNil(o.UpPathChgInfo) {
+	if o == nil || isNil(o.UpPathChgInfo) {
 		var ret UpPathChangeInfo
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AcrMgntEventReport) GetUpPathChgInfo() UpPathChangeInfo {
 // GetUpPathChgInfoOk returns a tuple with the UpPathChgInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventReport) GetUpPathChgInfoOk() (*UpPathChangeInfo, bool) {
-	if o == nil || IsNil(o.UpPathChgInfo) {
+	if o == nil || isNil(o.UpPathChgInfo) {
 		return nil, false
 	}
 	return o.UpPathChgInfo, true
@@ -122,7 +122,7 @@ func (o *AcrMgntEventReport) GetUpPathChgInfoOk() (*UpPathChangeInfo, bool) {
 
 // HasUpPathChgInfo returns a boolean if a field has been set.
 func (o *AcrMgntEventReport) HasUpPathChgInfo() bool {
-	if o != nil && !IsNil(o.UpPathChgInfo) {
+	if o != nil && !isNil(o.UpPathChgInfo) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AcrMgntEventReport) SetUpPathChgInfo(v UpPathChangeInfo) {
 
 // GetEasEndPoint returns the EasEndPoint field value if set, zero value otherwise.
 func (o *AcrMgntEventReport) GetEasEndPoint() EndPoint {
-	if o == nil || IsNil(o.EasEndPoint) {
+	if o == nil || isNil(o.EasEndPoint) {
 		var ret EndPoint
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AcrMgntEventReport) GetEasEndPoint() EndPoint {
 // GetEasEndPointOk returns a tuple with the EasEndPoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventReport) GetEasEndPointOk() (*EndPoint, bool) {
-	if o == nil || IsNil(o.EasEndPoint) {
+	if o == nil || isNil(o.EasEndPoint) {
 		return nil, false
 	}
 	return o.EasEndPoint, true
@@ -154,7 +154,7 @@ func (o *AcrMgntEventReport) GetEasEndPointOk() (*EndPoint, bool) {
 
 // HasEasEndPoint returns a boolean if a field has been set.
 func (o *AcrMgntEventReport) HasEasEndPoint() bool {
-	if o != nil && !IsNil(o.EasEndPoint) {
+	if o != nil && !isNil(o.EasEndPoint) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *AcrMgntEventReport) SetEasEndPoint(v EndPoint) {
 
 // GetActStatus returns the ActStatus field value if set, zero value otherwise.
 func (o *AcrMgntEventReport) GetActStatus() ActStatus {
-	if o == nil || IsNil(o.ActStatus) {
+	if o == nil || isNil(o.ActStatus) {
 		var ret ActStatus
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *AcrMgntEventReport) GetActStatus() ActStatus {
 // GetActStatusOk returns a tuple with the ActStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventReport) GetActStatusOk() (*ActStatus, bool) {
-	if o == nil || IsNil(o.ActStatus) {
+	if o == nil || isNil(o.ActStatus) {
 		return nil, false
 	}
 	return o.ActStatus, true
@@ -186,7 +186,7 @@ func (o *AcrMgntEventReport) GetActStatusOk() (*ActStatus, bool) {
 
 // HasActStatus returns a boolean if a field has been set.
 func (o *AcrMgntEventReport) HasActStatus() bool {
-	if o != nil && !IsNil(o.ActStatus) {
+	if o != nil && !isNil(o.ActStatus) {
 		return true
 	}
 
@@ -209,16 +209,16 @@ func (o AcrMgntEventReport) MarshalJSON() ([]byte, error) {
 func (o AcrMgntEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.TimeStamp) {
+	if !isNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
-	if !IsNil(o.UpPathChgInfo) {
+	if !isNil(o.UpPathChgInfo) {
 		toSerialize["upPathChgInfo"] = o.UpPathChgInfo
 	}
-	if !IsNil(o.EasEndPoint) {
+	if !isNil(o.EasEndPoint) {
 		toSerialize["easEndPoint"] = o.EasEndPoint
 	}
-	if !IsNil(o.ActStatus) {
+	if !isNil(o.ActStatus) {
 		toSerialize["actStatus"] = o.ActStatus
 	}
 	return toSerialize, nil

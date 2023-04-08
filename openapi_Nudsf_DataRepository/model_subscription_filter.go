@@ -44,7 +44,7 @@ func NewSubscriptionFilterWithDefaults() *SubscriptionFilter {
 
 // GetMonitoredResourceUris returns the MonitoredResourceUris field value if set, zero value otherwise.
 func (o *SubscriptionFilter) GetMonitoredResourceUris() []string {
-	if o == nil || IsNil(o.MonitoredResourceUris) {
+	if o == nil || isNil(o.MonitoredResourceUris) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SubscriptionFilter) GetMonitoredResourceUris() []string {
 // GetMonitoredResourceUrisOk returns a tuple with the MonitoredResourceUris field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionFilter) GetMonitoredResourceUrisOk() ([]string, bool) {
-	if o == nil || IsNil(o.MonitoredResourceUris) {
+	if o == nil || isNil(o.MonitoredResourceUris) {
 		return nil, false
 	}
 	return o.MonitoredResourceUris, true
@@ -62,7 +62,7 @@ func (o *SubscriptionFilter) GetMonitoredResourceUrisOk() ([]string, bool) {
 
 // HasMonitoredResourceUris returns a boolean if a field has been set.
 func (o *SubscriptionFilter) HasMonitoredResourceUris() bool {
-	if o != nil && !IsNil(o.MonitoredResourceUris) {
+	if o != nil && !isNil(o.MonitoredResourceUris) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SubscriptionFilter) SetMonitoredResourceUris(v []string) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *SubscriptionFilter) GetOperations() []RecordOperation {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		var ret []RecordOperation
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SubscriptionFilter) GetOperations() []RecordOperation {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionFilter) GetOperationsOk() ([]RecordOperation, bool) {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -94,7 +94,7 @@ func (o *SubscriptionFilter) GetOperationsOk() ([]RecordOperation, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *SubscriptionFilter) HasOperations() bool {
-	if o != nil && !IsNil(o.Operations) {
+	if o != nil && !isNil(o.Operations) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o SubscriptionFilter) MarshalJSON() ([]byte, error) {
 
 func (o SubscriptionFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MonitoredResourceUris) {
+	if !isNil(o.MonitoredResourceUris) {
 		toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
 	}
-	if !IsNil(o.Operations) {
+	if !isNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
 	return toSerialize, nil

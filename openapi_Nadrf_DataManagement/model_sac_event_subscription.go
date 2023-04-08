@@ -127,7 +127,7 @@ func (o *SACEventSubscription) SetNfId(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *SACEventSubscription) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -145,7 +145,7 @@ func (o *SACEventSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *SACEventSubscription) SetNotifyCorrelationId(v string) {
 
 // GetMaxReports returns the MaxReports field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetMaxReports() int32 {
-	if o == nil || IsNil(o.MaxReports) {
+	if o == nil || isNil(o.MaxReports) {
 		var ret int32
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *SACEventSubscription) GetMaxReports() int32 {
 // GetMaxReportsOk returns a tuple with the MaxReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetMaxReportsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxReports) {
+	if o == nil || isNil(o.MaxReports) {
 		return nil, false
 	}
 	return o.MaxReports, true
@@ -177,7 +177,7 @@ func (o *SACEventSubscription) GetMaxReportsOk() (*int32, bool) {
 
 // HasMaxReports returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasMaxReports() bool {
-	if o != nil && !IsNil(o.MaxReports) {
+	if o != nil && !isNil(o.MaxReports) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *SACEventSubscription) SetMaxReports(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *SACEventSubscription) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -209,7 +209,7 @@ func (o *SACEventSubscription) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -223,7 +223,7 @@ func (o *SACEventSubscription) SetExpiry(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SACEventSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -233,7 +233,7 @@ func (o *SACEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -241,7 +241,7 @@ func (o *SACEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SACEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -266,16 +266,16 @@ func (o SACEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["event"] = o.Event
 	toSerialize["eventNotifyUri"] = o.EventNotifyUri
 	toSerialize["nfId"] = o.NfId
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !IsNil(o.MaxReports) {
+	if !isNil(o.MaxReports) {
 		toSerialize["maxReports"] = o.MaxReports
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

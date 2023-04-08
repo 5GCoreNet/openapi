@@ -100,7 +100,7 @@ func (o *PpDlPacketCountExt) SetReferenceId(v int32) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PpDlPacketCountExt) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *PpDlPacketCountExt) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDlPacketCountExt) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -118,7 +118,7 @@ func (o *PpDlPacketCountExt) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PpDlPacketCountExt) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *PpDlPacketCountExt) SetDnn(v string) {
 
 // GetSingleNssai returns the SingleNssai field value if set, zero value otherwise.
 func (o *PpDlPacketCountExt) GetSingleNssai() Snssai {
-	if o == nil || IsNil(o.SingleNssai) {
+	if o == nil || isNil(o.SingleNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *PpDlPacketCountExt) GetSingleNssai() Snssai {
 // GetSingleNssaiOk returns a tuple with the SingleNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDlPacketCountExt) GetSingleNssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.SingleNssai) {
+	if o == nil || isNil(o.SingleNssai) {
 		return nil, false
 	}
 	return o.SingleNssai, true
@@ -150,7 +150,7 @@ func (o *PpDlPacketCountExt) GetSingleNssaiOk() (*Snssai, bool) {
 
 // HasSingleNssai returns a boolean if a field has been set.
 func (o *PpDlPacketCountExt) HasSingleNssai() bool {
-	if o != nil && !IsNil(o.SingleNssai) {
+	if o != nil && !isNil(o.SingleNssai) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *PpDlPacketCountExt) SetSingleNssai(v Snssai) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *PpDlPacketCountExt) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *PpDlPacketCountExt) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDlPacketCountExt) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -182,7 +182,7 @@ func (o *PpDlPacketCountExt) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *PpDlPacketCountExt) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *PpDlPacketCountExt) SetValidityTime(v time.Time) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *PpDlPacketCountExt) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *PpDlPacketCountExt) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDlPacketCountExt) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -214,7 +214,7 @@ func (o *PpDlPacketCountExt) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *PpDlPacketCountExt) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -238,16 +238,16 @@ func (o PpDlPacketCountExt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afInstanceId"] = o.AfInstanceId
 	toSerialize["referenceId"] = o.ReferenceId
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.SingleNssai) {
+	if !isNil(o.SingleNssai) {
 		toSerialize["singleNssai"] = o.SingleNssai
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil

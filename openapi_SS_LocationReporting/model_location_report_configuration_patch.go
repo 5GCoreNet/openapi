@@ -47,7 +47,7 @@ func NewLocationReportConfigurationPatchWithDefaults() *LocationReportConfigurat
 
 // GetValTgtUe returns the ValTgtUe field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetValTgtUe() ValTargetUe {
-	if o == nil || IsNil(o.ValTgtUe) {
+	if o == nil || isNil(o.ValTgtUe) {
 		var ret ValTargetUe
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *LocationReportConfigurationPatch) GetValTgtUe() ValTargetUe {
 // GetValTgtUeOk returns a tuple with the ValTgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetValTgtUeOk() (*ValTargetUe, bool) {
-	if o == nil || IsNil(o.ValTgtUe) {
+	if o == nil || isNil(o.ValTgtUe) {
 		return nil, false
 	}
 	return o.ValTgtUe, true
@@ -65,7 +65,7 @@ func (o *LocationReportConfigurationPatch) GetValTgtUeOk() (*ValTargetUe, bool) 
 
 // HasValTgtUe returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasValTgtUe() bool {
-	if o != nil && !IsNil(o.ValTgtUe) {
+	if o != nil && !isNil(o.ValTgtUe) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *LocationReportConfigurationPatch) SetValTgtUe(v ValTargetUe) {
 
 // GetMonDur returns the MonDur field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetMonDur() time.Time {
-	if o == nil || IsNil(o.MonDur) {
+	if o == nil || isNil(o.MonDur) {
 		var ret time.Time
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *LocationReportConfigurationPatch) GetMonDur() time.Time {
 // GetMonDurOk returns a tuple with the MonDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetMonDurOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MonDur) {
+	if o == nil || isNil(o.MonDur) {
 		return nil, false
 	}
 	return o.MonDur, true
@@ -97,7 +97,7 @@ func (o *LocationReportConfigurationPatch) GetMonDurOk() (*time.Time, bool) {
 
 // HasMonDur returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasMonDur() bool {
-	if o != nil && !IsNil(o.MonDur) {
+	if o != nil && !isNil(o.MonDur) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *LocationReportConfigurationPatch) SetMonDur(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *LocationReportConfigurationPatch) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -129,7 +129,7 @@ func (o *LocationReportConfigurationPatch) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *LocationReportConfigurationPatch) SetRepPeriod(v int32) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *LocationReportConfigurationPatch) GetAccuracy() Accuracy {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		var ret Accuracy
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *LocationReportConfigurationPatch) GetAccuracy() Accuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportConfigurationPatch) GetAccuracyOk() (*Accuracy, bool) {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -161,7 +161,7 @@ func (o *LocationReportConfigurationPatch) GetAccuracyOk() (*Accuracy, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *LocationReportConfigurationPatch) HasAccuracy() bool {
-	if o != nil && !IsNil(o.Accuracy) {
+	if o != nil && !isNil(o.Accuracy) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o LocationReportConfigurationPatch) MarshalJSON() ([]byte, error) {
 
 func (o LocationReportConfigurationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ValTgtUe) {
+	if !isNil(o.ValTgtUe) {
 		toSerialize["valTgtUe"] = o.ValTgtUe
 	}
-	if !IsNil(o.MonDur) {
+	if !isNil(o.MonDur) {
 		toSerialize["monDur"] = o.MonDur
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !IsNil(o.Accuracy) {
+	if !isNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil

@@ -67,7 +67,7 @@ func (o *Lpi) SetLocationPrivacyInd(v LocationPrivacyInd) {
 
 // GetValidTimePeriod returns the ValidTimePeriod field value if set, zero value otherwise.
 func (o *Lpi) GetValidTimePeriod() ValidTimePeriod {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		var ret ValidTimePeriod
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *Lpi) GetValidTimePeriod() ValidTimePeriod {
 // GetValidTimePeriodOk returns a tuple with the ValidTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Lpi) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		return nil, false
 	}
 	return o.ValidTimePeriod, true
@@ -85,7 +85,7 @@ func (o *Lpi) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
 
 // HasValidTimePeriod returns a boolean if a field has been set.
 func (o *Lpi) HasValidTimePeriod() bool {
-	if o != nil && !IsNil(o.ValidTimePeriod) {
+	if o != nil && !isNil(o.ValidTimePeriod) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o Lpi) MarshalJSON() ([]byte, error) {
 func (o Lpi) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["locationPrivacyInd"] = o.LocationPrivacyInd
-	if !IsNil(o.ValidTimePeriod) {
+	if !isNil(o.ValidTimePeriod) {
 		toSerialize["validTimePeriod"] = o.ValidTimePeriod
 	}
 	return toSerialize, nil

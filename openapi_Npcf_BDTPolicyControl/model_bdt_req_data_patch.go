@@ -42,7 +42,7 @@ func NewBdtReqDataPatchWithDefaults() *BdtReqDataPatch {
 
 // GetWarnNotifReq returns the WarnNotifReq field value if set, zero value otherwise.
 func (o *BdtReqDataPatch) GetWarnNotifReq() bool {
-	if o == nil || IsNil(o.WarnNotifReq) {
+	if o == nil || isNil(o.WarnNotifReq) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *BdtReqDataPatch) GetWarnNotifReq() bool {
 // GetWarnNotifReqOk returns a tuple with the WarnNotifReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqDataPatch) GetWarnNotifReqOk() (*bool, bool) {
-	if o == nil || IsNil(o.WarnNotifReq) {
+	if o == nil || isNil(o.WarnNotifReq) {
 		return nil, false
 	}
 	return o.WarnNotifReq, true
@@ -60,7 +60,7 @@ func (o *BdtReqDataPatch) GetWarnNotifReqOk() (*bool, bool) {
 
 // HasWarnNotifReq returns a boolean if a field has been set.
 func (o *BdtReqDataPatch) HasWarnNotifReq() bool {
-	if o != nil && !IsNil(o.WarnNotifReq) {
+	if o != nil && !isNil(o.WarnNotifReq) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o BdtReqDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o BdtReqDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.WarnNotifReq) {
+	if !isNil(o.WarnNotifReq) {
 		toSerialize["warnNotifReq"] = o.WarnNotifReq
 	}
 	return toSerialize, nil

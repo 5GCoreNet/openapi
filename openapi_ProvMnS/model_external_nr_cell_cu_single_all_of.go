@@ -19,7 +19,7 @@ var _ MappedNullable = &ExternalNrCellCuSingleAllOf{}
 
 // ExternalNrCellCuSingleAllOf struct for ExternalNrCellCuSingleAllOf
 type ExternalNrCellCuSingleAllOf struct {
-	Attributes *ExternalNrCellCuSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewExternalNrCellCuSingleAllOf instantiates a new ExternalNrCellCuSingleAllOf object
@@ -40,9 +40,9 @@ func NewExternalNrCellCuSingleAllOfWithDefaults() *ExternalNrCellCuSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ExternalNrCellCuSingleAllOf) GetAttributes() ExternalNrCellCuSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret ExternalNrCellCuSingleAllOfAttributes
+func (o *ExternalNrCellCuSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *ExternalNrCellCuSingleAllOf) GetAttributes() ExternalNrCellCuSingleAllO
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalNrCellCuSingleAllOf) GetAttributesOk() (*ExternalNrCellCuSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *ExternalNrCellCuSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *ExternalNrCellCuSingleAllOf) GetAttributesOk() (*ExternalNrCellCuSingle
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ExternalNrCellCuSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ExternalNrCellCuSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *ExternalNrCellCuSingleAllOf) SetAttributes(v ExternalNrCellCuSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *ExternalNrCellCuSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o ExternalNrCellCuSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ExternalNrCellCuSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

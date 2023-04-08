@@ -108,7 +108,7 @@ func (o *UAVAuthInfo) SetServiceLevelId(v string) {
 
 // GetAuthNotificationURI returns the AuthNotificationURI field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetAuthNotificationURI() string {
-	if o == nil || IsNil(o.AuthNotificationURI) {
+	if o == nil || isNil(o.AuthNotificationURI) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UAVAuthInfo) GetAuthNotificationURI() string {
 // GetAuthNotificationURIOk returns a tuple with the AuthNotificationURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetAuthNotificationURIOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthNotificationURI) {
+	if o == nil || isNil(o.AuthNotificationURI) {
 		return nil, false
 	}
 	return o.AuthNotificationURI, true
@@ -126,7 +126,7 @@ func (o *UAVAuthInfo) GetAuthNotificationURIOk() (*string, bool) {
 
 // HasAuthNotificationURI returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthNotificationURI() bool {
-	if o != nil && !IsNil(o.AuthNotificationURI) {
+	if o != nil && !isNil(o.AuthNotificationURI) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UAVAuthInfo) SetAuthNotificationURI(v string) {
 
 // GetIpAddr returns the IpAddr field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetIpAddr() IpAddr {
-	if o == nil || IsNil(o.IpAddr) {
+	if o == nil || isNil(o.IpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *UAVAuthInfo) GetIpAddr() IpAddr {
 // GetIpAddrOk returns a tuple with the IpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetIpAddrOk() (*IpAddr, bool) {
-	if o == nil || IsNil(o.IpAddr) {
+	if o == nil || isNil(o.IpAddr) {
 		return nil, false
 	}
 	return o.IpAddr, true
@@ -158,7 +158,7 @@ func (o *UAVAuthInfo) GetIpAddrOk() (*IpAddr, bool) {
 
 // HasIpAddr returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasIpAddr() bool {
-	if o != nil && !IsNil(o.IpAddr) {
+	if o != nil && !isNil(o.IpAddr) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *UAVAuthInfo) SetIpAddr(v IpAddr) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *UAVAuthInfo) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -190,7 +190,7 @@ func (o *UAVAuthInfo) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *UAVAuthInfo) SetPei(v string) {
 
 // GetAuthServerAddress returns the AuthServerAddress field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetAuthServerAddress() string {
-	if o == nil || IsNil(o.AuthServerAddress) {
+	if o == nil || isNil(o.AuthServerAddress) {
 		var ret string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *UAVAuthInfo) GetAuthServerAddress() string {
 // GetAuthServerAddressOk returns a tuple with the AuthServerAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetAuthServerAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthServerAddress) {
+	if o == nil || isNil(o.AuthServerAddress) {
 		return nil, false
 	}
 	return o.AuthServerAddress, true
@@ -222,7 +222,7 @@ func (o *UAVAuthInfo) GetAuthServerAddressOk() (*string, bool) {
 
 // HasAuthServerAddress returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthServerAddress() bool {
-	if o != nil && !IsNil(o.AuthServerAddress) {
+	if o != nil && !isNil(o.AuthServerAddress) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *UAVAuthInfo) SetAuthServerAddress(v string) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthInfo) GetAuthMsg() UAVAuthInfoAuthMsg {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		var ret UAVAuthInfoAuthMsg
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *UAVAuthInfo) GetAuthMsg() UAVAuthInfoAuthMsg {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthInfo) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -256,7 +256,7 @@ func (o *UAVAuthInfo) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthMsg() bool {
-	if o != nil && !IsNil(o.AuthMsg) {
+	if o != nil && !isNil(o.AuthMsg) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *UAVAuthInfo) SetAuthMsg(v UAVAuthInfoAuthMsg) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetAuthContainer() []AuthContainer {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *UAVAuthInfo) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -289,7 +289,7 @@ func (o *UAVAuthInfo) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthContainer() bool {
-	if o != nil && !IsNil(o.AuthContainer) {
+	if o != nil && !isNil(o.AuthContainer) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *UAVAuthInfo) SetAuthContainer(v []AuthContainer) {
 
 // GetUeLocInfo returns the UeLocInfo field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetUeLocInfo() UserLocation {
-	if o == nil || IsNil(o.UeLocInfo) {
+	if o == nil || isNil(o.UeLocInfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *UAVAuthInfo) GetUeLocInfo() UserLocation {
 // GetUeLocInfoOk returns a tuple with the UeLocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetUeLocInfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UeLocInfo) {
+	if o == nil || isNil(o.UeLocInfo) {
 		return nil, false
 	}
 	return o.UeLocInfo, true
@@ -321,7 +321,7 @@ func (o *UAVAuthInfo) GetUeLocInfoOk() (*UserLocation, bool) {
 
 // HasUeLocInfo returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasUeLocInfo() bool {
-	if o != nil && !IsNil(o.UeLocInfo) {
+	if o != nil && !isNil(o.UeLocInfo) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *UAVAuthInfo) SetUeLocInfo(v UserLocation) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *UAVAuthInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -353,7 +353,7 @@ func (o *UAVAuthInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *UAVAuthInfo) SetDnn(v string) {
 
 // GetSNssai returns the SNssai field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetSNssai() ExtSnssai {
-	if o == nil || IsNil(o.SNssai) {
+	if o == nil || isNil(o.SNssai) {
 		var ret ExtSnssai
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *UAVAuthInfo) GetSNssai() ExtSnssai {
 // GetSNssaiOk returns a tuple with the SNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetSNssaiOk() (*ExtSnssai, bool) {
-	if o == nil || IsNil(o.SNssai) {
+	if o == nil || isNil(o.SNssai) {
 		return nil, false
 	}
 	return o.SNssai, true
@@ -385,7 +385,7 @@ func (o *UAVAuthInfo) GetSNssaiOk() (*ExtSnssai, bool) {
 
 // HasSNssai returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasSNssai() bool {
-	if o != nil && !IsNil(o.SNssai) {
+	if o != nil && !isNil(o.SNssai) {
 		return true
 	}
 
@@ -433,31 +433,31 @@ func (o UAVAuthInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["serviceLevelId"] = o.ServiceLevelId
-	if !IsNil(o.AuthNotificationURI) {
+	if !isNil(o.AuthNotificationURI) {
 		toSerialize["authNotificationURI"] = o.AuthNotificationURI
 	}
-	if !IsNil(o.IpAddr) {
+	if !isNil(o.IpAddr) {
 		toSerialize["ipAddr"] = o.IpAddr
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.AuthServerAddress) {
+	if !isNil(o.AuthServerAddress) {
 		toSerialize["authServerAddress"] = o.AuthServerAddress
 	}
-	if !IsNil(o.AuthMsg) {
+	if !isNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !IsNil(o.AuthContainer) {
+	if !isNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
-	if !IsNil(o.UeLocInfo) {
+	if !isNil(o.UeLocInfo) {
 		toSerialize["ueLocInfo"] = o.UeLocInfo
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.SNssai) {
+	if !isNil(o.SNssai) {
 		toSerialize["sNssai"] = o.SNssai
 	}
 	toSerialize["nfType"] = o.NfType

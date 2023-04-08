@@ -41,7 +41,7 @@ func NewStringMatchingRuleWithDefaults() *StringMatchingRule {
 
 // GetStringMatchingConditions returns the StringMatchingConditions field value if set, zero value otherwise.
 func (o *StringMatchingRule) GetStringMatchingConditions() []StringMatchingCondition {
-	if o == nil || IsNil(o.StringMatchingConditions) {
+	if o == nil || isNil(o.StringMatchingConditions) {
 		var ret []StringMatchingCondition
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *StringMatchingRule) GetStringMatchingConditions() []StringMatchingCondi
 // GetStringMatchingConditionsOk returns a tuple with the StringMatchingConditions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringMatchingRule) GetStringMatchingConditionsOk() ([]StringMatchingCondition, bool) {
-	if o == nil || IsNil(o.StringMatchingConditions) {
+	if o == nil || isNil(o.StringMatchingConditions) {
 		return nil, false
 	}
 	return o.StringMatchingConditions, true
@@ -59,7 +59,7 @@ func (o *StringMatchingRule) GetStringMatchingConditionsOk() ([]StringMatchingCo
 
 // HasStringMatchingConditions returns a boolean if a field has been set.
 func (o *StringMatchingRule) HasStringMatchingConditions() bool {
-	if o != nil && !IsNil(o.StringMatchingConditions) {
+	if o != nil && !isNil(o.StringMatchingConditions) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o StringMatchingRule) MarshalJSON() ([]byte, error) {
 
 func (o StringMatchingRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StringMatchingConditions) {
+	if !isNil(o.StringMatchingConditions) {
 		toSerialize["stringMatchingConditions"] = o.StringMatchingConditions
 	}
 	return toSerialize, nil

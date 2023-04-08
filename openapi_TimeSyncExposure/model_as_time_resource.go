@@ -17,23 +17,37 @@ import (
 
 // AsTimeResource Possible values are: - ATOMIC_CLOCK: Indicates atomic clock is supported. - GNSS: Indicates Global Navigation Satellite System is supported. - TERRESTRIAL_RADIO: Indicates terrestrial radio is supported. - SERIAL_TIME_CODE: Indicates serial time code is supported. - PTP: Indicates PTP is supported. - NTP: Indicates NTP is supported. - HAND_SET: Indicates hand set is supported. - INTERNAL_OSCILLATOR: Indicates internal oscillator is supported. - OTHER: Indicates other source of time is supported. 
 type AsTimeResource struct {
-	string *string
+	AsTimeResourceAnyOf *AsTimeResourceAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AsTimeResource) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AsTimeResourceAnyOf
+	err = json.Unmarshal(data, &dst.AsTimeResourceAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAsTimeResourceAnyOf, _ := json.Marshal(dst.AsTimeResourceAnyOf)
+		if string(jsonAsTimeResourceAnyOf) == "{}" { // empty struct
+			dst.AsTimeResourceAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AsTimeResourceAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AsTimeResourceAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AsTimeResource)")
@@ -41,8 +55,12 @@ func (dst *AsTimeResource) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AsTimeResource) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AsTimeResourceAnyOf != nil {
+		return json.Marshal(&src.AsTimeResourceAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

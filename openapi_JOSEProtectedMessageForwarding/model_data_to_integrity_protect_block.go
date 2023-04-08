@@ -45,7 +45,7 @@ func NewDataToIntegrityProtectBlockWithDefaults() *DataToIntegrityProtectBlock {
 
 // GetMetaData returns the MetaData field value if set, zero value otherwise.
 func (o *DataToIntegrityProtectBlock) GetMetaData() MetaData {
-	if o == nil || IsNil(o.MetaData) {
+	if o == nil || isNil(o.MetaData) {
 		var ret MetaData
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *DataToIntegrityProtectBlock) GetMetaData() MetaData {
 // GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataToIntegrityProtectBlock) GetMetaDataOk() (*MetaData, bool) {
-	if o == nil || IsNil(o.MetaData) {
+	if o == nil || isNil(o.MetaData) {
 		return nil, false
 	}
 	return o.MetaData, true
@@ -63,7 +63,7 @@ func (o *DataToIntegrityProtectBlock) GetMetaDataOk() (*MetaData, bool) {
 
 // HasMetaData returns a boolean if a field has been set.
 func (o *DataToIntegrityProtectBlock) HasMetaData() bool {
-	if o != nil && !IsNil(o.MetaData) {
+	if o != nil && !isNil(o.MetaData) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *DataToIntegrityProtectBlock) SetMetaData(v MetaData) {
 
 // GetRequestLine returns the RequestLine field value if set, zero value otherwise.
 func (o *DataToIntegrityProtectBlock) GetRequestLine() RequestLine {
-	if o == nil || IsNil(o.RequestLine) {
+	if o == nil || isNil(o.RequestLine) {
 		var ret RequestLine
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DataToIntegrityProtectBlock) GetRequestLine() RequestLine {
 // GetRequestLineOk returns a tuple with the RequestLine field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataToIntegrityProtectBlock) GetRequestLineOk() (*RequestLine, bool) {
-	if o == nil || IsNil(o.RequestLine) {
+	if o == nil || isNil(o.RequestLine) {
 		return nil, false
 	}
 	return o.RequestLine, true
@@ -95,7 +95,7 @@ func (o *DataToIntegrityProtectBlock) GetRequestLineOk() (*RequestLine, bool) {
 
 // HasRequestLine returns a boolean if a field has been set.
 func (o *DataToIntegrityProtectBlock) HasRequestLine() bool {
-	if o != nil && !IsNil(o.RequestLine) {
+	if o != nil && !isNil(o.RequestLine) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DataToIntegrityProtectBlock) SetRequestLine(v RequestLine) {
 
 // GetStatusLine returns the StatusLine field value if set, zero value otherwise.
 func (o *DataToIntegrityProtectBlock) GetStatusLine() string {
-	if o == nil || IsNil(o.StatusLine) {
+	if o == nil || isNil(o.StatusLine) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *DataToIntegrityProtectBlock) GetStatusLine() string {
 // GetStatusLineOk returns a tuple with the StatusLine field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataToIntegrityProtectBlock) GetStatusLineOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusLine) {
+	if o == nil || isNil(o.StatusLine) {
 		return nil, false
 	}
 	return o.StatusLine, true
@@ -127,7 +127,7 @@ func (o *DataToIntegrityProtectBlock) GetStatusLineOk() (*string, bool) {
 
 // HasStatusLine returns a boolean if a field has been set.
 func (o *DataToIntegrityProtectBlock) HasStatusLine() bool {
-	if o != nil && !IsNil(o.StatusLine) {
+	if o != nil && !isNil(o.StatusLine) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *DataToIntegrityProtectBlock) SetStatusLine(v string) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
 func (o *DataToIntegrityProtectBlock) GetHeaders() []HttpHeader {
-	if o == nil || IsNil(o.Headers) {
+	if o == nil || isNil(o.Headers) {
 		var ret []HttpHeader
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DataToIntegrityProtectBlock) GetHeaders() []HttpHeader {
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataToIntegrityProtectBlock) GetHeadersOk() ([]HttpHeader, bool) {
-	if o == nil || IsNil(o.Headers) {
+	if o == nil || isNil(o.Headers) {
 		return nil, false
 	}
 	return o.Headers, true
@@ -159,7 +159,7 @@ func (o *DataToIntegrityProtectBlock) GetHeadersOk() ([]HttpHeader, bool) {
 
 // HasHeaders returns a boolean if a field has been set.
 func (o *DataToIntegrityProtectBlock) HasHeaders() bool {
-	if o != nil && !IsNil(o.Headers) {
+	if o != nil && !isNil(o.Headers) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *DataToIntegrityProtectBlock) SetHeaders(v []HttpHeader) {
 
 // GetPayload returns the Payload field value if set, zero value otherwise.
 func (o *DataToIntegrityProtectBlock) GetPayload() []HttpPayload {
-	if o == nil || IsNil(o.Payload) {
+	if o == nil || isNil(o.Payload) {
 		var ret []HttpPayload
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *DataToIntegrityProtectBlock) GetPayload() []HttpPayload {
 // GetPayloadOk returns a tuple with the Payload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataToIntegrityProtectBlock) GetPayloadOk() ([]HttpPayload, bool) {
-	if o == nil || IsNil(o.Payload) {
+	if o == nil || isNil(o.Payload) {
 		return nil, false
 	}
 	return o.Payload, true
@@ -191,7 +191,7 @@ func (o *DataToIntegrityProtectBlock) GetPayloadOk() ([]HttpPayload, bool) {
 
 // HasPayload returns a boolean if a field has been set.
 func (o *DataToIntegrityProtectBlock) HasPayload() bool {
-	if o != nil && !IsNil(o.Payload) {
+	if o != nil && !isNil(o.Payload) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o DataToIntegrityProtectBlock) MarshalJSON() ([]byte, error) {
 
 func (o DataToIntegrityProtectBlock) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MetaData) {
+	if !isNil(o.MetaData) {
 		toSerialize["metaData"] = o.MetaData
 	}
-	if !IsNil(o.RequestLine) {
+	if !isNil(o.RequestLine) {
 		toSerialize["requestLine"] = o.RequestLine
 	}
-	if !IsNil(o.StatusLine) {
+	if !isNil(o.StatusLine) {
 		toSerialize["statusLine"] = o.StatusLine
 	}
-	if !IsNil(o.Headers) {
+	if !isNil(o.Headers) {
 		toSerialize["headers"] = o.Headers
 	}
-	if !IsNil(o.Payload) {
+	if !isNil(o.Payload) {
 		toSerialize["payload"] = o.Payload
 	}
 	return toSerialize, nil

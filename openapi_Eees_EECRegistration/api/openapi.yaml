@@ -1631,10 +1631,7 @@ components:
       type: object
     UnfulfillACProfRsn:
       anyOf:
-      - enum:
-        - EAS_NOT_AVAILABLE
-        - REQ_UNFULFILLED
-        type: string
+      - $ref: '#/components/schemas/UnfulfillACProfRsn_anyOf'
       description: represents reason for unfulfilled AC profile requirements.
     ProblemDetails:
       description: Represents additional information and details on an error response.
@@ -1704,14 +1701,7 @@ components:
       type: string
     ACRScenario:
       anyOf:
-      - enum:
-        - EEC_INITIATED
-        - EEC_EXECUTED_VIA_SOURCE_EES
-        - EEC_EXECUTED_VIA_TARGET_EES
-        - SOURCE_EAS_DECIDED
-        - SOURCE_EES_EXECUTED
-        - EEL_MANAGED_ACR
-        type: string
+      - $ref: '#/components/schemas/ACRScenario_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2033,17 +2023,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2746,6 +2726,22 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
+    UnfulfillACProfRsn_anyOf:
+      enum:
+      - EAS_NOT_AVAILABLE
+      - REQ_UNFULFILLED
+      type: string
+      example: null
+    ACRScenario_anyOf:
+      enum:
+      - EEC_INITIATED
+      - EEC_EXECUTED_VIA_SOURCE_EES
+      - EEC_EXECUTED_VIA_TARGET_EES
+      - SOURCE_EAS_DECIDED
+      - SOURCE_EES_EXECUTED
+      - EEL_MANAGED_ACR
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -2753,6 +2749,19 @@ components:
       required:
       - point
       type: object
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:

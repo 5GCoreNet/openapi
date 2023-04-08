@@ -17,14 +17,14 @@ import (
 
 // ChargingdataPost400Response - struct for ChargingdataPost400Response
 type ChargingdataPost400Response struct {
-	ChargingNotifyResponse *ChargingNotifyResponse
+	ChargingDataResponse *ChargingDataResponse
 	ProblemDetails *ProblemDetails
 }
 
-// ChargingNotifyResponseAsChargingdataPost400Response is a convenience function that returns ChargingNotifyResponse wrapped in ChargingdataPost400Response
-func ChargingNotifyResponseAsChargingdataPost400Response(v *ChargingNotifyResponse) ChargingdataPost400Response {
+// ChargingDataResponseAsChargingdataPost400Response is a convenience function that returns ChargingDataResponse wrapped in ChargingdataPost400Response
+func ChargingDataResponseAsChargingdataPost400Response(v *ChargingDataResponse) ChargingdataPost400Response {
 	return ChargingdataPost400Response{
-		ChargingNotifyResponse: v,
+		ChargingDataResponse: v,
 	}
 }
 
@@ -40,17 +40,17 @@ func ProblemDetailsAsChargingdataPost400Response(v *ProblemDetails) Chargingdata
 func (dst *ChargingdataPost400Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into ChargingNotifyResponse
-	err = newStrictDecoder(data).Decode(&dst.ChargingNotifyResponse)
+	// try to unmarshal data into ChargingDataResponse
+	err = newStrictDecoder(data).Decode(&dst.ChargingDataResponse)
 	if err == nil {
-		jsonChargingNotifyResponse, _ := json.Marshal(dst.ChargingNotifyResponse)
-		if string(jsonChargingNotifyResponse) == "{}" { // empty struct
-			dst.ChargingNotifyResponse = nil
+		jsonChargingDataResponse, _ := json.Marshal(dst.ChargingDataResponse)
+		if string(jsonChargingDataResponse) == "{}" { // empty struct
+			dst.ChargingDataResponse = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.ChargingNotifyResponse = nil
+		dst.ChargingDataResponse = nil
 	}
 
 	// try to unmarshal data into ProblemDetails
@@ -68,7 +68,7 @@ func (dst *ChargingdataPost400Response) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.ChargingNotifyResponse = nil
+		dst.ChargingDataResponse = nil
 		dst.ProblemDetails = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(ChargingdataPost400Response)")
@@ -81,8 +81,8 @@ func (dst *ChargingdataPost400Response) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src ChargingdataPost400Response) MarshalJSON() ([]byte, error) {
-	if src.ChargingNotifyResponse != nil {
-		return json.Marshal(&src.ChargingNotifyResponse)
+	if src.ChargingDataResponse != nil {
+		return json.Marshal(&src.ChargingDataResponse)
 	}
 
 	if src.ProblemDetails != nil {
@@ -97,8 +97,8 @@ func (obj *ChargingdataPost400Response) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
-	if obj.ChargingNotifyResponse != nil {
-		return obj.ChargingNotifyResponse
+	if obj.ChargingDataResponse != nil {
+		return obj.ChargingDataResponse
 	}
 
 	if obj.ProblemDetails != nil {

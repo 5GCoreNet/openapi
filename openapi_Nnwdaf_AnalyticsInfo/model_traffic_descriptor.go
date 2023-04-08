@@ -44,7 +44,7 @@ func NewTrafficDescriptorWithDefaults() *TrafficDescriptor {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *TrafficDescriptor) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *TrafficDescriptor) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficDescriptor) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -62,7 +62,7 @@ func (o *TrafficDescriptor) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *TrafficDescriptor) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *TrafficDescriptor) SetDnn(v string) {
 
 // GetSNssai returns the SNssai field value if set, zero value otherwise.
 func (o *TrafficDescriptor) GetSNssai() Snssai {
-	if o == nil || IsNil(o.SNssai) {
+	if o == nil || isNil(o.SNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *TrafficDescriptor) GetSNssai() Snssai {
 // GetSNssaiOk returns a tuple with the SNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficDescriptor) GetSNssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.SNssai) {
+	if o == nil || isNil(o.SNssai) {
 		return nil, false
 	}
 	return o.SNssai, true
@@ -94,7 +94,7 @@ func (o *TrafficDescriptor) GetSNssaiOk() (*Snssai, bool) {
 
 // HasSNssai returns a boolean if a field has been set.
 func (o *TrafficDescriptor) HasSNssai() bool {
-	if o != nil && !IsNil(o.SNssai) {
+	if o != nil && !isNil(o.SNssai) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *TrafficDescriptor) SetSNssai(v Snssai) {
 
 // GetDddTrafficDescriptorList returns the DddTrafficDescriptorList field value if set, zero value otherwise.
 func (o *TrafficDescriptor) GetDddTrafficDescriptorList() []DddTrafficDescriptor {
-	if o == nil || IsNil(o.DddTrafficDescriptorList) {
+	if o == nil || isNil(o.DddTrafficDescriptorList) {
 		var ret []DddTrafficDescriptor
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *TrafficDescriptor) GetDddTrafficDescriptorList() []DddTrafficDescriptor
 // GetDddTrafficDescriptorListOk returns a tuple with the DddTrafficDescriptorList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficDescriptor) GetDddTrafficDescriptorListOk() ([]DddTrafficDescriptor, bool) {
-	if o == nil || IsNil(o.DddTrafficDescriptorList) {
+	if o == nil || isNil(o.DddTrafficDescriptorList) {
 		return nil, false
 	}
 	return o.DddTrafficDescriptorList, true
@@ -126,7 +126,7 @@ func (o *TrafficDescriptor) GetDddTrafficDescriptorListOk() ([]DddTrafficDescrip
 
 // HasDddTrafficDescriptorList returns a boolean if a field has been set.
 func (o *TrafficDescriptor) HasDddTrafficDescriptorList() bool {
-	if o != nil && !IsNil(o.DddTrafficDescriptorList) {
+	if o != nil && !isNil(o.DddTrafficDescriptorList) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o TrafficDescriptor) MarshalJSON() ([]byte, error) {
 
 func (o TrafficDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.SNssai) {
+	if !isNil(o.SNssai) {
 		toSerialize["sNssai"] = o.SNssai
 	}
-	if !IsNil(o.DddTrafficDescriptorList) {
+	if !isNil(o.DddTrafficDescriptorList) {
 		toSerialize["dddTrafficDescriptorList"] = o.DddTrafficDescriptorList
 	}
 	return toSerialize, nil

@@ -50,7 +50,7 @@ func NewNwdafCapabilityWithDefaults() *NwdafCapability {
 
 // GetAnalyticsAggregation returns the AnalyticsAggregation field value if set, zero value otherwise.
 func (o *NwdafCapability) GetAnalyticsAggregation() bool {
-	if o == nil || IsNil(o.AnalyticsAggregation) {
+	if o == nil || isNil(o.AnalyticsAggregation) {
 		var ret bool
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NwdafCapability) GetAnalyticsAggregation() bool {
 // GetAnalyticsAggregationOk returns a tuple with the AnalyticsAggregation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCapability) GetAnalyticsAggregationOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnalyticsAggregation) {
+	if o == nil || isNil(o.AnalyticsAggregation) {
 		return nil, false
 	}
 	return o.AnalyticsAggregation, true
@@ -68,7 +68,7 @@ func (o *NwdafCapability) GetAnalyticsAggregationOk() (*bool, bool) {
 
 // HasAnalyticsAggregation returns a boolean if a field has been set.
 func (o *NwdafCapability) HasAnalyticsAggregation() bool {
-	if o != nil && !IsNil(o.AnalyticsAggregation) {
+	if o != nil && !isNil(o.AnalyticsAggregation) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *NwdafCapability) SetAnalyticsAggregation(v bool) {
 
 // GetAnalyticsMetadataProvisioning returns the AnalyticsMetadataProvisioning field value if set, zero value otherwise.
 func (o *NwdafCapability) GetAnalyticsMetadataProvisioning() bool {
-	if o == nil || IsNil(o.AnalyticsMetadataProvisioning) {
+	if o == nil || isNil(o.AnalyticsMetadataProvisioning) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NwdafCapability) GetAnalyticsMetadataProvisioning() bool {
 // GetAnalyticsMetadataProvisioningOk returns a tuple with the AnalyticsMetadataProvisioning field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafCapability) GetAnalyticsMetadataProvisioningOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnalyticsMetadataProvisioning) {
+	if o == nil || isNil(o.AnalyticsMetadataProvisioning) {
 		return nil, false
 	}
 	return o.AnalyticsMetadataProvisioning, true
@@ -100,7 +100,7 @@ func (o *NwdafCapability) GetAnalyticsMetadataProvisioningOk() (*bool, bool) {
 
 // HasAnalyticsMetadataProvisioning returns a boolean if a field has been set.
 func (o *NwdafCapability) HasAnalyticsMetadataProvisioning() bool {
-	if o != nil && !IsNil(o.AnalyticsMetadataProvisioning) {
+	if o != nil && !isNil(o.AnalyticsMetadataProvisioning) {
 		return true
 	}
 
@@ -122,10 +122,10 @@ func (o NwdafCapability) MarshalJSON() ([]byte, error) {
 
 func (o NwdafCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnalyticsAggregation) {
+	if !isNil(o.AnalyticsAggregation) {
 		toSerialize["analyticsAggregation"] = o.AnalyticsAggregation
 	}
-	if !IsNil(o.AnalyticsMetadataProvisioning) {
+	if !isNil(o.AnalyticsMetadataProvisioning) {
 		toSerialize["analyticsMetadataProvisioning"] = o.AnalyticsMetadataProvisioning
 	}
 	return toSerialize, nil

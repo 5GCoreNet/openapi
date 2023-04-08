@@ -45,7 +45,7 @@ func NewAppServiceDescriptionWithDefaults() *AppServiceDescription {
 
 // GetMediaManifestDescriptionURI returns the MediaManifestDescriptionURI field value if set, zero value otherwise.
 func (o *AppServiceDescription) GetMediaManifestDescriptionURI() string {
-	if o == nil || IsNil(o.MediaManifestDescriptionURI) {
+	if o == nil || isNil(o.MediaManifestDescriptionURI) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AppServiceDescription) GetMediaManifestDescriptionURI() string {
 // GetMediaManifestDescriptionURIOk returns a tuple with the MediaManifestDescriptionURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppServiceDescription) GetMediaManifestDescriptionURIOk() (*string, bool) {
-	if o == nil || IsNil(o.MediaManifestDescriptionURI) {
+	if o == nil || isNil(o.MediaManifestDescriptionURI) {
 		return nil, false
 	}
 	return o.MediaManifestDescriptionURI, true
@@ -63,7 +63,7 @@ func (o *AppServiceDescription) GetMediaManifestDescriptionURIOk() (*string, boo
 
 // HasMediaManifestDescriptionURI returns a boolean if a field has been set.
 func (o *AppServiceDescription) HasMediaManifestDescriptionURI() bool {
-	if o != nil && !IsNil(o.MediaManifestDescriptionURI) {
+	if o != nil && !isNil(o.MediaManifestDescriptionURI) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AppServiceDescription) SetMediaManifestDescriptionURI(v string) {
 
 // GetMimeType returns the MimeType field value if set, zero value otherwise.
 func (o *AppServiceDescription) GetMimeType() string {
-	if o == nil || IsNil(o.MimeType) {
+	if o == nil || isNil(o.MimeType) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AppServiceDescription) GetMimeType() string {
 // GetMimeTypeOk returns a tuple with the MimeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppServiceDescription) GetMimeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MimeType) {
+	if o == nil || isNil(o.MimeType) {
 		return nil, false
 	}
 	return o.MimeType, true
@@ -95,7 +95,7 @@ func (o *AppServiceDescription) GetMimeTypeOk() (*string, bool) {
 
 // HasMimeType returns a boolean if a field has been set.
 func (o *AppServiceDescription) HasMimeType() bool {
-	if o != nil && !IsNil(o.MimeType) {
+	if o != nil && !isNil(o.MimeType) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AppServiceDescription) SetMimeType(v string) {
 
 // GetIdenticalContents returns the IdenticalContents field value if set, zero value otherwise.
 func (o *AppServiceDescription) GetIdenticalContents() []AppServiceDescriptionIdenticalContentsInner {
-	if o == nil || IsNil(o.IdenticalContents) {
+	if o == nil || isNil(o.IdenticalContents) {
 		var ret []AppServiceDescriptionIdenticalContentsInner
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AppServiceDescription) GetIdenticalContents() []AppServiceDescriptionId
 // GetIdenticalContentsOk returns a tuple with the IdenticalContents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppServiceDescription) GetIdenticalContentsOk() ([]AppServiceDescriptionIdenticalContentsInner, bool) {
-	if o == nil || IsNil(o.IdenticalContents) {
+	if o == nil || isNil(o.IdenticalContents) {
 		return nil, false
 	}
 	return o.IdenticalContents, true
@@ -127,7 +127,7 @@ func (o *AppServiceDescription) GetIdenticalContentsOk() ([]AppServiceDescriptio
 
 // HasIdenticalContents returns a boolean if a field has been set.
 func (o *AppServiceDescription) HasIdenticalContents() bool {
-	if o != nil && !IsNil(o.IdenticalContents) {
+	if o != nil && !isNil(o.IdenticalContents) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AppServiceDescription) SetIdenticalContents(v []AppServiceDescriptionId
 
 // GetAlternativeContents returns the AlternativeContents field value if set, zero value otherwise.
 func (o *AppServiceDescription) GetAlternativeContents() [][]ApplicationService {
-	if o == nil || IsNil(o.AlternativeContents) {
+	if o == nil || isNil(o.AlternativeContents) {
 		var ret [][]ApplicationService
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *AppServiceDescription) GetAlternativeContents() [][]ApplicationService 
 // GetAlternativeContentsOk returns a tuple with the AlternativeContents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppServiceDescription) GetAlternativeContentsOk() ([][]ApplicationService, bool) {
-	if o == nil || IsNil(o.AlternativeContents) {
+	if o == nil || isNil(o.AlternativeContents) {
 		return nil, false
 	}
 	return o.AlternativeContents, true
@@ -159,7 +159,7 @@ func (o *AppServiceDescription) GetAlternativeContentsOk() ([][]ApplicationServi
 
 // HasAlternativeContents returns a boolean if a field has been set.
 func (o *AppServiceDescription) HasAlternativeContents() bool {
-	if o != nil && !IsNil(o.AlternativeContents) {
+	if o != nil && !isNil(o.AlternativeContents) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o AppServiceDescription) MarshalJSON() ([]byte, error) {
 
 func (o AppServiceDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MediaManifestDescriptionURI) {
+	if !isNil(o.MediaManifestDescriptionURI) {
 		toSerialize["mediaManifestDescriptionURI"] = o.MediaManifestDescriptionURI
 	}
-	if !IsNil(o.MimeType) {
+	if !isNil(o.MimeType) {
 		toSerialize["mimeType"] = o.MimeType
 	}
-	if !IsNil(o.IdenticalContents) {
+	if !isNil(o.IdenticalContents) {
 		toSerialize["identicalContents"] = o.IdenticalContents
 	}
-	if !IsNil(o.AlternativeContents) {
+	if !isNil(o.AlternativeContents) {
 		toSerialize["alternativeContents"] = o.AlternativeContents
 	}
 	return toSerialize, nil

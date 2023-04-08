@@ -42,7 +42,7 @@ func NewEcsAddrConfigInfo1WithDefaults() *EcsAddrConfigInfo1 {
 
 // GetEcsServerAddr returns the EcsServerAddr field value if set, zero value otherwise.
 func (o *EcsAddrConfigInfo1) GetEcsServerAddr() EcsServerAddr {
-	if o == nil || IsNil(o.EcsServerAddr) {
+	if o == nil || isNil(o.EcsServerAddr) {
 		var ret EcsServerAddr
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EcsAddrConfigInfo1) GetEcsServerAddr() EcsServerAddr {
 // GetEcsServerAddrOk returns a tuple with the EcsServerAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddrConfigInfo1) GetEcsServerAddrOk() (*EcsServerAddr, bool) {
-	if o == nil || IsNil(o.EcsServerAddr) {
+	if o == nil || isNil(o.EcsServerAddr) {
 		return nil, false
 	}
 	return o.EcsServerAddr, true
@@ -60,7 +60,7 @@ func (o *EcsAddrConfigInfo1) GetEcsServerAddrOk() (*EcsServerAddr, bool) {
 
 // HasEcsServerAddr returns a boolean if a field has been set.
 func (o *EcsAddrConfigInfo1) HasEcsServerAddr() bool {
-	if o != nil && !IsNil(o.EcsServerAddr) {
+	if o != nil && !isNil(o.EcsServerAddr) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EcsAddrConfigInfo1) SetEcsServerAddr(v EcsServerAddr) {
 
 // GetSpatialValidityCond returns the SpatialValidityCond field value if set, zero value otherwise.
 func (o *EcsAddrConfigInfo1) GetSpatialValidityCond() SpatialValidityCond1 {
-	if o == nil || IsNil(o.SpatialValidityCond) {
+	if o == nil || isNil(o.SpatialValidityCond) {
 		var ret SpatialValidityCond1
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EcsAddrConfigInfo1) GetSpatialValidityCond() SpatialValidityCond1 {
 // GetSpatialValidityCondOk returns a tuple with the SpatialValidityCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddrConfigInfo1) GetSpatialValidityCondOk() (*SpatialValidityCond1, bool) {
-	if o == nil || IsNil(o.SpatialValidityCond) {
+	if o == nil || isNil(o.SpatialValidityCond) {
 		return nil, false
 	}
 	return o.SpatialValidityCond, true
@@ -92,7 +92,7 @@ func (o *EcsAddrConfigInfo1) GetSpatialValidityCondOk() (*SpatialValidityCond1, 
 
 // HasSpatialValidityCond returns a boolean if a field has been set.
 func (o *EcsAddrConfigInfo1) HasSpatialValidityCond() bool {
-	if o != nil && !IsNil(o.SpatialValidityCond) {
+	if o != nil && !isNil(o.SpatialValidityCond) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o EcsAddrConfigInfo1) MarshalJSON() ([]byte, error) {
 
 func (o EcsAddrConfigInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EcsServerAddr) {
+	if !isNil(o.EcsServerAddr) {
 		toSerialize["ecsServerAddr"] = o.EcsServerAddr
 	}
-	if !IsNil(o.SpatialValidityCond) {
+	if !isNil(o.SpatialValidityCond) {
 		toSerialize["spatialValidityCond"] = o.SpatialValidityCond
 	}
 	return toSerialize, nil

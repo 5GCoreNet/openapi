@@ -149,7 +149,7 @@ func (o *UeContextRelocateData) SetForwardRelocationRequest(v RefToBinaryData) {
 
 // GetPduSessionList returns the PduSessionList field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetPduSessionList() []N2SmInformation {
-	if o == nil || IsNil(o.PduSessionList) {
+	if o == nil || isNil(o.PduSessionList) {
 		var ret []N2SmInformation
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *UeContextRelocateData) GetPduSessionList() []N2SmInformation {
 // GetPduSessionListOk returns a tuple with the PduSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetPduSessionListOk() ([]N2SmInformation, bool) {
-	if o == nil || IsNil(o.PduSessionList) {
+	if o == nil || isNil(o.PduSessionList) {
 		return nil, false
 	}
 	return o.PduSessionList, true
@@ -167,7 +167,7 @@ func (o *UeContextRelocateData) GetPduSessionListOk() ([]N2SmInformation, bool) 
 
 // HasPduSessionList returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasPduSessionList() bool {
-	if o != nil && !IsNil(o.PduSessionList) {
+	if o != nil && !isNil(o.PduSessionList) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *UeContextRelocateData) SetPduSessionList(v []N2SmInformation) {
 
 // GetUeRadioCapability returns the UeRadioCapability field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetUeRadioCapability() N2InfoContent {
-	if o == nil || IsNil(o.UeRadioCapability) {
+	if o == nil || isNil(o.UeRadioCapability) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *UeContextRelocateData) GetUeRadioCapability() N2InfoContent {
 // GetUeRadioCapabilityOk returns a tuple with the UeRadioCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.UeRadioCapability) {
+	if o == nil || isNil(o.UeRadioCapability) {
 		return nil, false
 	}
 	return o.UeRadioCapability, true
@@ -199,7 +199,7 @@ func (o *UeContextRelocateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) 
 
 // HasUeRadioCapability returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasUeRadioCapability() bool {
-	if o != nil && !IsNil(o.UeRadioCapability) {
+	if o != nil && !isNil(o.UeRadioCapability) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *UeContextRelocateData) SetUeRadioCapability(v N2InfoContent) {
 
 // GetNgapCause returns the NgapCause field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetNgapCause() NgApCause {
-	if o == nil || IsNil(o.NgapCause) {
+	if o == nil || isNil(o.NgapCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *UeContextRelocateData) GetNgapCause() NgApCause {
 // GetNgapCauseOk returns a tuple with the NgapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetNgapCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgapCause) {
+	if o == nil || isNil(o.NgapCause) {
 		return nil, false
 	}
 	return o.NgapCause, true
@@ -231,7 +231,7 @@ func (o *UeContextRelocateData) GetNgapCauseOk() (*NgApCause, bool) {
 
 // HasNgapCause returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasNgapCause() bool {
-	if o != nil && !IsNil(o.NgapCause) {
+	if o != nil && !isNil(o.NgapCause) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *UeContextRelocateData) SetNgapCause(v NgApCause) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextRelocateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *UeContextRelocateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextRelocateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -263,7 +263,7 @@ func (o *UeContextRelocateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextRelocateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -289,16 +289,16 @@ func (o UeContextRelocateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["targetId"] = o.TargetId
 	toSerialize["sourceToTargetData"] = o.SourceToTargetData
 	toSerialize["forwardRelocationRequest"] = o.ForwardRelocationRequest
-	if !IsNil(o.PduSessionList) {
+	if !isNil(o.PduSessionList) {
 		toSerialize["pduSessionList"] = o.PduSessionList
 	}
-	if !IsNil(o.UeRadioCapability) {
+	if !isNil(o.UeRadioCapability) {
 		toSerialize["ueRadioCapability"] = o.UeRadioCapability
 	}
-	if !IsNil(o.NgapCause) {
+	if !isNil(o.NgapCause) {
 		toSerialize["ngapCause"] = o.NgapCause
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

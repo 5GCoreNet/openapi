@@ -42,7 +42,7 @@ func NewAusfFunctionSingleAllOf1WithDefaults() *AusfFunctionSingleAllOf1 {
 
 // GetEPN12 returns the EPN12 field value if set, zero value otherwise.
 func (o *AusfFunctionSingleAllOf1) GetEPN12() []EPN12Single {
-	if o == nil || IsNil(o.EPN12) {
+	if o == nil || isNil(o.EPN12) {
 		var ret []EPN12Single
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AusfFunctionSingleAllOf1) GetEPN12() []EPN12Single {
 // GetEPN12Ok returns a tuple with the EPN12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingleAllOf1) GetEPN12Ok() ([]EPN12Single, bool) {
-	if o == nil || IsNil(o.EPN12) {
+	if o == nil || isNil(o.EPN12) {
 		return nil, false
 	}
 	return o.EPN12, true
@@ -60,7 +60,7 @@ func (o *AusfFunctionSingleAllOf1) GetEPN12Ok() ([]EPN12Single, bool) {
 
 // HasEPN12 returns a boolean if a field has been set.
 func (o *AusfFunctionSingleAllOf1) HasEPN12() bool {
-	if o != nil && !IsNil(o.EPN12) {
+	if o != nil && !isNil(o.EPN12) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AusfFunctionSingleAllOf1) SetEPN12(v []EPN12Single) {
 
 // GetEPN13 returns the EPN13 field value if set, zero value otherwise.
 func (o *AusfFunctionSingleAllOf1) GetEPN13() []EPN13Single {
-	if o == nil || IsNil(o.EPN13) {
+	if o == nil || isNil(o.EPN13) {
 		var ret []EPN13Single
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AusfFunctionSingleAllOf1) GetEPN13() []EPN13Single {
 // GetEPN13Ok returns a tuple with the EPN13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfFunctionSingleAllOf1) GetEPN13Ok() ([]EPN13Single, bool) {
-	if o == nil || IsNil(o.EPN13) {
+	if o == nil || isNil(o.EPN13) {
 		return nil, false
 	}
 	return o.EPN13, true
@@ -92,7 +92,7 @@ func (o *AusfFunctionSingleAllOf1) GetEPN13Ok() ([]EPN13Single, bool) {
 
 // HasEPN13 returns a boolean if a field has been set.
 func (o *AusfFunctionSingleAllOf1) HasEPN13() bool {
-	if o != nil && !IsNil(o.EPN13) {
+	if o != nil && !isNil(o.EPN13) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o AusfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o AusfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN12) {
+	if !isNil(o.EPN12) {
 		toSerialize["EP_N12"] = o.EPN12
 	}
-	if !IsNil(o.EPN13) {
+	if !isNil(o.EPN13) {
 		toSerialize["EP_N13"] = o.EPN13
 	}
 	return toSerialize, nil

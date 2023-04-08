@@ -178,11 +178,7 @@ components:
       type: object
     CellIdentifierType:
       anyOf:
-      - enum:
-        - CGI
-        - ECGI
-        - NCGI
-        type: string
+      - $ref: '#/components/schemas/CellIdentifierType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -206,3 +202,10 @@ components:
       maximum: 65535
       minimum: 0
       type: integer
+    CellIdentifierType_anyOf:
+      enum:
+      - CGI
+      - ECGI
+      - NCGI
+      type: string
+      example: null

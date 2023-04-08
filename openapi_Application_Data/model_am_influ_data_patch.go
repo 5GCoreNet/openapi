@@ -67,7 +67,7 @@ func (o *AmInfluDataPatch) GetAppIds() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluDataPatch) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -75,7 +75,7 @@ func (o *AmInfluDataPatch) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AmInfluDataPatch) HasAppIds() bool {
-	if o != nil && IsNil(o.AppIds) {
+	if o != nil && isNil(o.AppIds) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AmInfluDataPatch) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluDataPatch) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || IsNil(o.DnnSnssaiInfos) {
+	if o == nil || isNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -108,7 +108,7 @@ func (o *AmInfluDataPatch) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) 
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *AmInfluDataPatch) HasDnnSnssaiInfos() bool {
-	if o != nil && IsNil(o.DnnSnssaiInfos) {
+	if o != nil && isNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *AmInfluDataPatch) GetEvSubs() []AmInfluEvent {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluDataPatch) GetEvSubsOk() ([]AmInfluEvent, bool) {
-	if o == nil || IsNil(o.EvSubs) {
+	if o == nil || isNil(o.EvSubs) {
 		return nil, false
 	}
 	return o.EvSubs, true
@@ -141,7 +141,7 @@ func (o *AmInfluDataPatch) GetEvSubsOk() ([]AmInfluEvent, bool) {
 
 // HasEvSubs returns a boolean if a field has been set.
 func (o *AmInfluDataPatch) HasEvSubs() bool {
-	if o != nil && IsNil(o.EvSubs) {
+	if o != nil && isNil(o.EvSubs) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *AmInfluDataPatch) SetEvSubs(v []AmInfluEvent) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
 func (o *AmInfluDataPatch) GetHeaders() []string {
-	if o == nil || IsNil(o.Headers) {
+	if o == nil || isNil(o.Headers) {
 		var ret []string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *AmInfluDataPatch) GetHeaders() []string {
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluDataPatch) GetHeadersOk() ([]string, bool) {
-	if o == nil || IsNil(o.Headers) {
+	if o == nil || isNil(o.Headers) {
 		return nil, false
 	}
 	return o.Headers, true
@@ -173,7 +173,7 @@ func (o *AmInfluDataPatch) GetHeadersOk() ([]string, bool) {
 
 // HasHeaders returns a boolean if a field has been set.
 func (o *AmInfluDataPatch) HasHeaders() bool {
-	if o != nil && !IsNil(o.Headers) {
+	if o != nil && !isNil(o.Headers) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *AmInfluDataPatch) SetHeaders(v []string) {
 
 // GetThruReq returns the ThruReq field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluDataPatch) GetThruReq() bool {
-	if o == nil || IsNil(o.ThruReq.Get()) {
+	if o == nil || isNil(o.ThruReq.Get()) {
 		var ret bool
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *AmInfluDataPatch) UnsetThruReq() {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluDataPatch) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri.Get()) {
+	if o == nil || isNil(o.NotifUri.Get()) {
 		var ret string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *AmInfluDataPatch) UnsetNotifUri() {
 
 // GetNotifCorrId returns the NotifCorrId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluDataPatch) GetNotifCorrId() string {
-	if o == nil || IsNil(o.NotifCorrId.Get()) {
+	if o == nil || isNil(o.NotifCorrId.Get()) {
 		var ret string
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *AmInfluDataPatch) GetCovReq() []ServiceAreaCoverageInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluDataPatch) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool) {
-	if o == nil || IsNil(o.CovReq) {
+	if o == nil || isNil(o.CovReq) {
 		return nil, false
 	}
 	return o.CovReq, true
@@ -332,7 +332,7 @@ func (o *AmInfluDataPatch) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool) {
 
 // HasCovReq returns a boolean if a field has been set.
 func (o *AmInfluDataPatch) HasCovReq() bool {
-	if o != nil && IsNil(o.CovReq) {
+	if o != nil && isNil(o.CovReq) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o AmInfluDataPatch) ToMap() (map[string]interface{}, error) {
 	if o.EvSubs != nil {
 		toSerialize["evSubs"] = o.EvSubs
 	}
-	if !IsNil(o.Headers) {
+	if !isNil(o.Headers) {
 		toSerialize["headers"] = o.Headers
 	}
 	if o.ThruReq.IsSet() {

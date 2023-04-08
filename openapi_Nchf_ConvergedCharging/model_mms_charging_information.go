@@ -67,7 +67,7 @@ func NewMMSChargingInformationWithDefaults() *MMSChargingInformation {
 
 // GetMmOriginatorInfo returns the MmOriginatorInfo field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMmOriginatorInfo() MMOriginatorInfo {
-	if o == nil || IsNil(o.MmOriginatorInfo) {
+	if o == nil || isNil(o.MmOriginatorInfo) {
 		var ret MMOriginatorInfo
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *MMSChargingInformation) GetMmOriginatorInfo() MMOriginatorInfo {
 // GetMmOriginatorInfoOk returns a tuple with the MmOriginatorInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMmOriginatorInfoOk() (*MMOriginatorInfo, bool) {
-	if o == nil || IsNil(o.MmOriginatorInfo) {
+	if o == nil || isNil(o.MmOriginatorInfo) {
 		return nil, false
 	}
 	return o.MmOriginatorInfo, true
@@ -85,7 +85,7 @@ func (o *MMSChargingInformation) GetMmOriginatorInfoOk() (*MMOriginatorInfo, boo
 
 // HasMmOriginatorInfo returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMmOriginatorInfo() bool {
-	if o != nil && !IsNil(o.MmOriginatorInfo) {
+	if o != nil && !isNil(o.MmOriginatorInfo) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *MMSChargingInformation) SetMmOriginatorInfo(v MMOriginatorInfo) {
 
 // GetMmRecipientInfoList returns the MmRecipientInfoList field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMmRecipientInfoList() []MMRecipientInfo {
-	if o == nil || IsNil(o.MmRecipientInfoList) {
+	if o == nil || isNil(o.MmRecipientInfoList) {
 		var ret []MMRecipientInfo
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *MMSChargingInformation) GetMmRecipientInfoList() []MMRecipientInfo {
 // GetMmRecipientInfoListOk returns a tuple with the MmRecipientInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMmRecipientInfoListOk() ([]MMRecipientInfo, bool) {
-	if o == nil || IsNil(o.MmRecipientInfoList) {
+	if o == nil || isNil(o.MmRecipientInfoList) {
 		return nil, false
 	}
 	return o.MmRecipientInfoList, true
@@ -117,7 +117,7 @@ func (o *MMSChargingInformation) GetMmRecipientInfoListOk() ([]MMRecipientInfo, 
 
 // HasMmRecipientInfoList returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMmRecipientInfoList() bool {
-	if o != nil && !IsNil(o.MmRecipientInfoList) {
+	if o != nil && !isNil(o.MmRecipientInfoList) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *MMSChargingInformation) SetMmRecipientInfoList(v []MMRecipientInfo) {
 
 // GetUserLocationinfo returns the UserLocationinfo field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetUserLocationinfo() UserLocation {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *MMSChargingInformation) GetUserLocationinfo() UserLocation {
 // GetUserLocationinfoOk returns a tuple with the UserLocationinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		return nil, false
 	}
 	return o.UserLocationinfo, true
@@ -149,7 +149,7 @@ func (o *MMSChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
 
 // HasUserLocationinfo returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasUserLocationinfo() bool {
-	if o != nil && !IsNil(o.UserLocationinfo) {
+	if o != nil && !isNil(o.UserLocationinfo) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *MMSChargingInformation) SetUserLocationinfo(v UserLocation) {
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *MMSChargingInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -181,7 +181,7 @@ func (o *MMSChargingInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *MMSChargingInformation) SetUetimeZone(v string) {
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetRATType() RatType {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *MMSChargingInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -213,7 +213,7 @@ func (o *MMSChargingInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasRATType() bool {
-	if o != nil && !IsNil(o.RATType) {
+	if o != nil && !isNil(o.RATType) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *MMSChargingInformation) SetRATType(v RatType) {
 
 // GetCorrelationInformation returns the CorrelationInformation field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetCorrelationInformation() string {
-	if o == nil || IsNil(o.CorrelationInformation) {
+	if o == nil || isNil(o.CorrelationInformation) {
 		var ret string
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *MMSChargingInformation) GetCorrelationInformation() string {
 // GetCorrelationInformationOk returns a tuple with the CorrelationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetCorrelationInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.CorrelationInformation) {
+	if o == nil || isNil(o.CorrelationInformation) {
 		return nil, false
 	}
 	return o.CorrelationInformation, true
@@ -245,7 +245,7 @@ func (o *MMSChargingInformation) GetCorrelationInformationOk() (*string, bool) {
 
 // HasCorrelationInformation returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasCorrelationInformation() bool {
-	if o != nil && !IsNil(o.CorrelationInformation) {
+	if o != nil && !isNil(o.CorrelationInformation) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *MMSChargingInformation) SetCorrelationInformation(v string) {
 
 // GetSubmissionTime returns the SubmissionTime field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetSubmissionTime() time.Time {
-	if o == nil || IsNil(o.SubmissionTime) {
+	if o == nil || isNil(o.SubmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *MMSChargingInformation) GetSubmissionTime() time.Time {
 // GetSubmissionTimeOk returns a tuple with the SubmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetSubmissionTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SubmissionTime) {
+	if o == nil || isNil(o.SubmissionTime) {
 		return nil, false
 	}
 	return o.SubmissionTime, true
@@ -277,7 +277,7 @@ func (o *MMSChargingInformation) GetSubmissionTimeOk() (*time.Time, bool) {
 
 // HasSubmissionTime returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasSubmissionTime() bool {
-	if o != nil && !IsNil(o.SubmissionTime) {
+	if o != nil && !isNil(o.SubmissionTime) {
 		return true
 	}
 
@@ -291,7 +291,7 @@ func (o *MMSChargingInformation) SetSubmissionTime(v time.Time) {
 
 // GetMmContentType returns the MmContentType field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMmContentType() MMContentType {
-	if o == nil || IsNil(o.MmContentType) {
+	if o == nil || isNil(o.MmContentType) {
 		var ret MMContentType
 		return ret
 	}
@@ -301,7 +301,7 @@ func (o *MMSChargingInformation) GetMmContentType() MMContentType {
 // GetMmContentTypeOk returns a tuple with the MmContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMmContentTypeOk() (*MMContentType, bool) {
-	if o == nil || IsNil(o.MmContentType) {
+	if o == nil || isNil(o.MmContentType) {
 		return nil, false
 	}
 	return o.MmContentType, true
@@ -309,7 +309,7 @@ func (o *MMSChargingInformation) GetMmContentTypeOk() (*MMContentType, bool) {
 
 // HasMmContentType returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMmContentType() bool {
-	if o != nil && !IsNil(o.MmContentType) {
+	if o != nil && !isNil(o.MmContentType) {
 		return true
 	}
 
@@ -323,7 +323,7 @@ func (o *MMSChargingInformation) SetMmContentType(v MMContentType) {
 
 // GetMmPriority returns the MmPriority field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMmPriority() SMPriority {
-	if o == nil || IsNil(o.MmPriority) {
+	if o == nil || isNil(o.MmPriority) {
 		var ret SMPriority
 		return ret
 	}
@@ -333,7 +333,7 @@ func (o *MMSChargingInformation) GetMmPriority() SMPriority {
 // GetMmPriorityOk returns a tuple with the MmPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMmPriorityOk() (*SMPriority, bool) {
-	if o == nil || IsNil(o.MmPriority) {
+	if o == nil || isNil(o.MmPriority) {
 		return nil, false
 	}
 	return o.MmPriority, true
@@ -341,7 +341,7 @@ func (o *MMSChargingInformation) GetMmPriorityOk() (*SMPriority, bool) {
 
 // HasMmPriority returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMmPriority() bool {
-	if o != nil && !IsNil(o.MmPriority) {
+	if o != nil && !isNil(o.MmPriority) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *MMSChargingInformation) SetMmPriority(v SMPriority) {
 
 // GetMessageID returns the MessageID field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMessageID() string {
-	if o == nil || IsNil(o.MessageID) {
+	if o == nil || isNil(o.MessageID) {
 		var ret string
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *MMSChargingInformation) GetMessageID() string {
 // GetMessageIDOk returns a tuple with the MessageID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMessageIDOk() (*string, bool) {
-	if o == nil || IsNil(o.MessageID) {
+	if o == nil || isNil(o.MessageID) {
 		return nil, false
 	}
 	return o.MessageID, true
@@ -373,7 +373,7 @@ func (o *MMSChargingInformation) GetMessageIDOk() (*string, bool) {
 
 // HasMessageID returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMessageID() bool {
-	if o != nil && !IsNil(o.MessageID) {
+	if o != nil && !isNil(o.MessageID) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *MMSChargingInformation) SetMessageID(v string) {
 
 // GetMessageType returns the MessageType field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMessageType() string {
-	if o == nil || IsNil(o.MessageType) {
+	if o == nil || isNil(o.MessageType) {
 		var ret string
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *MMSChargingInformation) GetMessageType() string {
 // GetMessageTypeOk returns a tuple with the MessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMessageTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MessageType) {
+	if o == nil || isNil(o.MessageType) {
 		return nil, false
 	}
 	return o.MessageType, true
@@ -405,7 +405,7 @@ func (o *MMSChargingInformation) GetMessageTypeOk() (*string, bool) {
 
 // HasMessageType returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMessageType() bool {
-	if o != nil && !IsNil(o.MessageType) {
+	if o != nil && !isNil(o.MessageType) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *MMSChargingInformation) SetMessageType(v string) {
 
 // GetMessageSize returns the MessageSize field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMessageSize() int32 {
-	if o == nil || IsNil(o.MessageSize) {
+	if o == nil || isNil(o.MessageSize) {
 		var ret int32
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *MMSChargingInformation) GetMessageSize() int32 {
 // GetMessageSizeOk returns a tuple with the MessageSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMessageSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MessageSize) {
+	if o == nil || isNil(o.MessageSize) {
 		return nil, false
 	}
 	return o.MessageSize, true
@@ -437,7 +437,7 @@ func (o *MMSChargingInformation) GetMessageSizeOk() (*int32, bool) {
 
 // HasMessageSize returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMessageSize() bool {
-	if o != nil && !IsNil(o.MessageSize) {
+	if o != nil && !isNil(o.MessageSize) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *MMSChargingInformation) SetMessageSize(v int32) {
 
 // GetMessageClass returns the MessageClass field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetMessageClass() string {
-	if o == nil || IsNil(o.MessageClass) {
+	if o == nil || isNil(o.MessageClass) {
 		var ret string
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *MMSChargingInformation) GetMessageClass() string {
 // GetMessageClassOk returns a tuple with the MessageClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetMessageClassOk() (*string, bool) {
-	if o == nil || IsNil(o.MessageClass) {
+	if o == nil || isNil(o.MessageClass) {
 		return nil, false
 	}
 	return o.MessageClass, true
@@ -469,7 +469,7 @@ func (o *MMSChargingInformation) GetMessageClassOk() (*string, bool) {
 
 // HasMessageClass returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasMessageClass() bool {
-	if o != nil && !IsNil(o.MessageClass) {
+	if o != nil && !isNil(o.MessageClass) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *MMSChargingInformation) SetMessageClass(v string) {
 
 // GetDeliveryReportRequested returns the DeliveryReportRequested field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetDeliveryReportRequested() bool {
-	if o == nil || IsNil(o.DeliveryReportRequested) {
+	if o == nil || isNil(o.DeliveryReportRequested) {
 		var ret bool
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *MMSChargingInformation) GetDeliveryReportRequested() bool {
 // GetDeliveryReportRequestedOk returns a tuple with the DeliveryReportRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetDeliveryReportRequestedOk() (*bool, bool) {
-	if o == nil || IsNil(o.DeliveryReportRequested) {
+	if o == nil || isNil(o.DeliveryReportRequested) {
 		return nil, false
 	}
 	return o.DeliveryReportRequested, true
@@ -501,7 +501,7 @@ func (o *MMSChargingInformation) GetDeliveryReportRequestedOk() (*bool, bool) {
 
 // HasDeliveryReportRequested returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasDeliveryReportRequested() bool {
-	if o != nil && !IsNil(o.DeliveryReportRequested) {
+	if o != nil && !isNil(o.DeliveryReportRequested) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *MMSChargingInformation) SetDeliveryReportRequested(v bool) {
 
 // GetReadReplyReportRequested returns the ReadReplyReportRequested field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetReadReplyReportRequested() bool {
-	if o == nil || IsNil(o.ReadReplyReportRequested) {
+	if o == nil || isNil(o.ReadReplyReportRequested) {
 		var ret bool
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *MMSChargingInformation) GetReadReplyReportRequested() bool {
 // GetReadReplyReportRequestedOk returns a tuple with the ReadReplyReportRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetReadReplyReportRequestedOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReadReplyReportRequested) {
+	if o == nil || isNil(o.ReadReplyReportRequested) {
 		return nil, false
 	}
 	return o.ReadReplyReportRequested, true
@@ -533,7 +533,7 @@ func (o *MMSChargingInformation) GetReadReplyReportRequestedOk() (*bool, bool) {
 
 // HasReadReplyReportRequested returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasReadReplyReportRequested() bool {
-	if o != nil && !IsNil(o.ReadReplyReportRequested) {
+	if o != nil && !isNil(o.ReadReplyReportRequested) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *MMSChargingInformation) SetReadReplyReportRequested(v bool) {
 
 // GetApplicID returns the ApplicID field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetApplicID() string {
-	if o == nil || IsNil(o.ApplicID) {
+	if o == nil || isNil(o.ApplicID) {
 		var ret string
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *MMSChargingInformation) GetApplicID() string {
 // GetApplicIDOk returns a tuple with the ApplicID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetApplicIDOk() (*string, bool) {
-	if o == nil || IsNil(o.ApplicID) {
+	if o == nil || isNil(o.ApplicID) {
 		return nil, false
 	}
 	return o.ApplicID, true
@@ -565,7 +565,7 @@ func (o *MMSChargingInformation) GetApplicIDOk() (*string, bool) {
 
 // HasApplicID returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasApplicID() bool {
-	if o != nil && !IsNil(o.ApplicID) {
+	if o != nil && !isNil(o.ApplicID) {
 		return true
 	}
 
@@ -579,7 +579,7 @@ func (o *MMSChargingInformation) SetApplicID(v string) {
 
 // GetReplyApplicID returns the ReplyApplicID field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetReplyApplicID() string {
-	if o == nil || IsNil(o.ReplyApplicID) {
+	if o == nil || isNil(o.ReplyApplicID) {
 		var ret string
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *MMSChargingInformation) GetReplyApplicID() string {
 // GetReplyApplicIDOk returns a tuple with the ReplyApplicID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetReplyApplicIDOk() (*string, bool) {
-	if o == nil || IsNil(o.ReplyApplicID) {
+	if o == nil || isNil(o.ReplyApplicID) {
 		return nil, false
 	}
 	return o.ReplyApplicID, true
@@ -597,7 +597,7 @@ func (o *MMSChargingInformation) GetReplyApplicIDOk() (*string, bool) {
 
 // HasReplyApplicID returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasReplyApplicID() bool {
-	if o != nil && !IsNil(o.ReplyApplicID) {
+	if o != nil && !isNil(o.ReplyApplicID) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o *MMSChargingInformation) SetReplyApplicID(v string) {
 
 // GetAuxApplicInfo returns the AuxApplicInfo field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetAuxApplicInfo() string {
-	if o == nil || IsNil(o.AuxApplicInfo) {
+	if o == nil || isNil(o.AuxApplicInfo) {
 		var ret string
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *MMSChargingInformation) GetAuxApplicInfo() string {
 // GetAuxApplicInfoOk returns a tuple with the AuxApplicInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetAuxApplicInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.AuxApplicInfo) {
+	if o == nil || isNil(o.AuxApplicInfo) {
 		return nil, false
 	}
 	return o.AuxApplicInfo, true
@@ -629,7 +629,7 @@ func (o *MMSChargingInformation) GetAuxApplicInfoOk() (*string, bool) {
 
 // HasAuxApplicInfo returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasAuxApplicInfo() bool {
-	if o != nil && !IsNil(o.AuxApplicInfo) {
+	if o != nil && !isNil(o.AuxApplicInfo) {
 		return true
 	}
 
@@ -643,7 +643,7 @@ func (o *MMSChargingInformation) SetAuxApplicInfo(v string) {
 
 // GetContentClass returns the ContentClass field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetContentClass() string {
-	if o == nil || IsNil(o.ContentClass) {
+	if o == nil || isNil(o.ContentClass) {
 		var ret string
 		return ret
 	}
@@ -653,7 +653,7 @@ func (o *MMSChargingInformation) GetContentClass() string {
 // GetContentClassOk returns a tuple with the ContentClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetContentClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentClass) {
+	if o == nil || isNil(o.ContentClass) {
 		return nil, false
 	}
 	return o.ContentClass, true
@@ -661,7 +661,7 @@ func (o *MMSChargingInformation) GetContentClassOk() (*string, bool) {
 
 // HasContentClass returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasContentClass() bool {
-	if o != nil && !IsNil(o.ContentClass) {
+	if o != nil && !isNil(o.ContentClass) {
 		return true
 	}
 
@@ -675,7 +675,7 @@ func (o *MMSChargingInformation) SetContentClass(v string) {
 
 // GetDRMContent returns the DRMContent field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetDRMContent() bool {
-	if o == nil || IsNil(o.DRMContent) {
+	if o == nil || isNil(o.DRMContent) {
 		var ret bool
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *MMSChargingInformation) GetDRMContent() bool {
 // GetDRMContentOk returns a tuple with the DRMContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetDRMContentOk() (*bool, bool) {
-	if o == nil || IsNil(o.DRMContent) {
+	if o == nil || isNil(o.DRMContent) {
 		return nil, false
 	}
 	return o.DRMContent, true
@@ -693,7 +693,7 @@ func (o *MMSChargingInformation) GetDRMContentOk() (*bool, bool) {
 
 // HasDRMContent returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasDRMContent() bool {
-	if o != nil && !IsNil(o.DRMContent) {
+	if o != nil && !isNil(o.DRMContent) {
 		return true
 	}
 
@@ -707,7 +707,7 @@ func (o *MMSChargingInformation) SetDRMContent(v bool) {
 
 // GetAdaptations returns the Adaptations field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetAdaptations() bool {
-	if o == nil || IsNil(o.Adaptations) {
+	if o == nil || isNil(o.Adaptations) {
 		var ret bool
 		return ret
 	}
@@ -717,7 +717,7 @@ func (o *MMSChargingInformation) GetAdaptations() bool {
 // GetAdaptationsOk returns a tuple with the Adaptations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetAdaptationsOk() (*bool, bool) {
-	if o == nil || IsNil(o.Adaptations) {
+	if o == nil || isNil(o.Adaptations) {
 		return nil, false
 	}
 	return o.Adaptations, true
@@ -725,7 +725,7 @@ func (o *MMSChargingInformation) GetAdaptationsOk() (*bool, bool) {
 
 // HasAdaptations returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasAdaptations() bool {
-	if o != nil && !IsNil(o.Adaptations) {
+	if o != nil && !isNil(o.Adaptations) {
 		return true
 	}
 
@@ -739,7 +739,7 @@ func (o *MMSChargingInformation) SetAdaptations(v bool) {
 
 // GetVasID returns the VasID field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetVasID() string {
-	if o == nil || IsNil(o.VasID) {
+	if o == nil || isNil(o.VasID) {
 		var ret string
 		return ret
 	}
@@ -749,7 +749,7 @@ func (o *MMSChargingInformation) GetVasID() string {
 // GetVasIDOk returns a tuple with the VasID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetVasIDOk() (*string, bool) {
-	if o == nil || IsNil(o.VasID) {
+	if o == nil || isNil(o.VasID) {
 		return nil, false
 	}
 	return o.VasID, true
@@ -757,7 +757,7 @@ func (o *MMSChargingInformation) GetVasIDOk() (*string, bool) {
 
 // HasVasID returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasVasID() bool {
-	if o != nil && !IsNil(o.VasID) {
+	if o != nil && !isNil(o.VasID) {
 		return true
 	}
 
@@ -771,7 +771,7 @@ func (o *MMSChargingInformation) SetVasID(v string) {
 
 // GetVaspID returns the VaspID field value if set, zero value otherwise.
 func (o *MMSChargingInformation) GetVaspID() string {
-	if o == nil || IsNil(o.VaspID) {
+	if o == nil || isNil(o.VaspID) {
 		var ret string
 		return ret
 	}
@@ -781,7 +781,7 @@ func (o *MMSChargingInformation) GetVaspID() string {
 // GetVaspIDOk returns a tuple with the VaspID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMSChargingInformation) GetVaspIDOk() (*string, bool) {
-	if o == nil || IsNil(o.VaspID) {
+	if o == nil || isNil(o.VaspID) {
 		return nil, false
 	}
 	return o.VaspID, true
@@ -789,7 +789,7 @@ func (o *MMSChargingInformation) GetVaspIDOk() (*string, bool) {
 
 // HasVaspID returns a boolean if a field has been set.
 func (o *MMSChargingInformation) HasVaspID() bool {
-	if o != nil && !IsNil(o.VaspID) {
+	if o != nil && !isNil(o.VaspID) {
 		return true
 	}
 
@@ -811,73 +811,73 @@ func (o MMSChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o MMSChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MmOriginatorInfo) {
+	if !isNil(o.MmOriginatorInfo) {
 		toSerialize["mmOriginatorInfo"] = o.MmOriginatorInfo
 	}
-	if !IsNil(o.MmRecipientInfoList) {
+	if !isNil(o.MmRecipientInfoList) {
 		toSerialize["mmRecipientInfoList"] = o.MmRecipientInfoList
 	}
-	if !IsNil(o.UserLocationinfo) {
+	if !isNil(o.UserLocationinfo) {
 		toSerialize["userLocationinfo"] = o.UserLocationinfo
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !IsNil(o.RATType) {
+	if !isNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !IsNil(o.CorrelationInformation) {
+	if !isNil(o.CorrelationInformation) {
 		toSerialize["correlationInformation"] = o.CorrelationInformation
 	}
-	if !IsNil(o.SubmissionTime) {
+	if !isNil(o.SubmissionTime) {
 		toSerialize["submissionTime"] = o.SubmissionTime
 	}
-	if !IsNil(o.MmContentType) {
+	if !isNil(o.MmContentType) {
 		toSerialize["mmContentType"] = o.MmContentType
 	}
-	if !IsNil(o.MmPriority) {
+	if !isNil(o.MmPriority) {
 		toSerialize["mmPriority"] = o.MmPriority
 	}
-	if !IsNil(o.MessageID) {
+	if !isNil(o.MessageID) {
 		toSerialize["messageID"] = o.MessageID
 	}
-	if !IsNil(o.MessageType) {
+	if !isNil(o.MessageType) {
 		toSerialize["messageType"] = o.MessageType
 	}
-	if !IsNil(o.MessageSize) {
+	if !isNil(o.MessageSize) {
 		toSerialize["messageSize"] = o.MessageSize
 	}
-	if !IsNil(o.MessageClass) {
+	if !isNil(o.MessageClass) {
 		toSerialize["messageClass"] = o.MessageClass
 	}
-	if !IsNil(o.DeliveryReportRequested) {
+	if !isNil(o.DeliveryReportRequested) {
 		toSerialize["deliveryReportRequested"] = o.DeliveryReportRequested
 	}
-	if !IsNil(o.ReadReplyReportRequested) {
+	if !isNil(o.ReadReplyReportRequested) {
 		toSerialize["readReplyReportRequested"] = o.ReadReplyReportRequested
 	}
-	if !IsNil(o.ApplicID) {
+	if !isNil(o.ApplicID) {
 		toSerialize["applicID"] = o.ApplicID
 	}
-	if !IsNil(o.ReplyApplicID) {
+	if !isNil(o.ReplyApplicID) {
 		toSerialize["replyApplicID"] = o.ReplyApplicID
 	}
-	if !IsNil(o.AuxApplicInfo) {
+	if !isNil(o.AuxApplicInfo) {
 		toSerialize["auxApplicInfo"] = o.AuxApplicInfo
 	}
-	if !IsNil(o.ContentClass) {
+	if !isNil(o.ContentClass) {
 		toSerialize["contentClass"] = o.ContentClass
 	}
-	if !IsNil(o.DRMContent) {
+	if !isNil(o.DRMContent) {
 		toSerialize["dRMContent"] = o.DRMContent
 	}
-	if !IsNil(o.Adaptations) {
+	if !isNil(o.Adaptations) {
 		toSerialize["adaptations"] = o.Adaptations
 	}
-	if !IsNil(o.VasID) {
+	if !isNil(o.VasID) {
 		toSerialize["vasID"] = o.VasID
 	}
-	if !IsNil(o.VaspID) {
+	if !isNil(o.VaspID) {
 		toSerialize["vaspID"] = o.VaspID
 	}
 	return toSerialize, nil

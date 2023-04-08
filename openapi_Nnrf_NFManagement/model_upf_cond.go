@@ -68,7 +68,7 @@ func (o *UpfCond) SetConditionType(v string) {
 
 // GetSmfServingArea returns the SmfServingArea field value if set, zero value otherwise.
 func (o *UpfCond) GetSmfServingArea() []string {
-	if o == nil || IsNil(o.SmfServingArea) {
+	if o == nil || isNil(o.SmfServingArea) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UpfCond) GetSmfServingArea() []string {
 // GetSmfServingAreaOk returns a tuple with the SmfServingArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfCond) GetSmfServingAreaOk() ([]string, bool) {
-	if o == nil || IsNil(o.SmfServingArea) {
+	if o == nil || isNil(o.SmfServingArea) {
 		return nil, false
 	}
 	return o.SmfServingArea, true
@@ -86,7 +86,7 @@ func (o *UpfCond) GetSmfServingAreaOk() ([]string, bool) {
 
 // HasSmfServingArea returns a boolean if a field has been set.
 func (o *UpfCond) HasSmfServingArea() bool {
-	if o != nil && !IsNil(o.SmfServingArea) {
+	if o != nil && !isNil(o.SmfServingArea) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *UpfCond) SetSmfServingArea(v []string) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *UpfCond) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *UpfCond) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfCond) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -118,7 +118,7 @@ func (o *UpfCond) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *UpfCond) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o UpfCond) MarshalJSON() ([]byte, error) {
 func (o UpfCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["conditionType"] = o.ConditionType
-	if !IsNil(o.SmfServingArea) {
+	if !isNil(o.SmfServingArea) {
 		toSerialize["smfServingArea"] = o.SmfServingArea
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
 	return toSerialize, nil

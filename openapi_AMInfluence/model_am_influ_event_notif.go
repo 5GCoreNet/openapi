@@ -94,7 +94,7 @@ func (o *AmInfluEventNotif) SetEvent(v AmInfluEvent) {
 
 // GetGeoAreas returns the GeoAreas field value if set, zero value otherwise.
 func (o *AmInfluEventNotif) GetGeoAreas() []GeographicalArea {
-	if o == nil || IsNil(o.GeoAreas) {
+	if o == nil || isNil(o.GeoAreas) {
 		var ret []GeographicalArea
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *AmInfluEventNotif) GetGeoAreas() []GeographicalArea {
 // GetGeoAreasOk returns a tuple with the GeoAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluEventNotif) GetGeoAreasOk() ([]GeographicalArea, bool) {
-	if o == nil || IsNil(o.GeoAreas) {
+	if o == nil || isNil(o.GeoAreas) {
 		return nil, false
 	}
 	return o.GeoAreas, true
@@ -112,7 +112,7 @@ func (o *AmInfluEventNotif) GetGeoAreasOk() ([]GeographicalArea, bool) {
 
 // HasGeoAreas returns a boolean if a field has been set.
 func (o *AmInfluEventNotif) HasGeoAreas() bool {
-	if o != nil && !IsNil(o.GeoAreas) {
+	if o != nil && !isNil(o.GeoAreas) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o AmInfluEventNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afTransId"] = o.AfTransId
 	toSerialize["event"] = o.Event
-	if !IsNil(o.GeoAreas) {
+	if !isNil(o.GeoAreas) {
 		toSerialize["geoAreas"] = o.GeoAreas
 	}
 	return toSerialize, nil

@@ -23,7 +23,7 @@ type MDARequestSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *MDARequestSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewMDARequestSingle instantiates a new MDARequestSingle object
@@ -72,7 +72,7 @@ func (o *MDARequestSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *MDARequestSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *MDARequestSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDARequestSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -90,7 +90,7 @@ func (o *MDARequestSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *MDARequestSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *MDARequestSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *MDARequestSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *MDARequestSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDARequestSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -122,7 +122,7 @@ func (o *MDARequestSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *MDARequestSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *MDARequestSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *MDARequestSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *MDARequestSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDARequestSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -154,7 +154,7 @@ func (o *MDARequestSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *MDARequestSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -167,9 +167,9 @@ func (o *MDARequestSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MDARequestSingle) GetAttributes() MDARequestSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret MDARequestSingleAllOfAttributes
+func (o *MDARequestSingle) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -177,8 +177,8 @@ func (o *MDARequestSingle) GetAttributes() MDARequestSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MDARequestSingle) GetAttributesOk() (*MDARequestSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *MDARequestSingle) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,15 +186,15 @@ func (o *MDARequestSingle) GetAttributesOk() (*MDARequestSingleAllOfAttributes, 
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MDARequestSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given MDARequestSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *MDARequestSingle) SetAttributes(v MDARequestSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *MDARequestSingle) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -209,16 +209,16 @@ func (o MDARequestSingle) MarshalJSON() ([]byte, error) {
 func (o MDARequestSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

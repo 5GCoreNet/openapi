@@ -45,7 +45,7 @@ func NewSmContextUpdateDataWithDefaults() *SmContextUpdateData {
 
 // GetDlNiddEndPoint returns the DlNiddEndPoint field value if set, zero value otherwise.
 func (o *SmContextUpdateData) GetDlNiddEndPoint() string {
-	if o == nil || IsNil(o.DlNiddEndPoint) {
+	if o == nil || isNil(o.DlNiddEndPoint) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *SmContextUpdateData) GetDlNiddEndPoint() string {
 // GetDlNiddEndPointOk returns a tuple with the DlNiddEndPoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateData) GetDlNiddEndPointOk() (*string, bool) {
-	if o == nil || IsNil(o.DlNiddEndPoint) {
+	if o == nil || isNil(o.DlNiddEndPoint) {
 		return nil, false
 	}
 	return o.DlNiddEndPoint, true
@@ -63,7 +63,7 @@ func (o *SmContextUpdateData) GetDlNiddEndPointOk() (*string, bool) {
 
 // HasDlNiddEndPoint returns a boolean if a field has been set.
 func (o *SmContextUpdateData) HasDlNiddEndPoint() bool {
-	if o != nil && !IsNil(o.DlNiddEndPoint) {
+	if o != nil && !isNil(o.DlNiddEndPoint) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SmContextUpdateData) SetDlNiddEndPoint(v string) {
 
 // GetNotificationUri returns the NotificationUri field value if set, zero value otherwise.
 func (o *SmContextUpdateData) GetNotificationUri() string {
-	if o == nil || IsNil(o.NotificationUri) {
+	if o == nil || isNil(o.NotificationUri) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SmContextUpdateData) GetNotificationUri() string {
 // GetNotificationUriOk returns a tuple with the NotificationUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateData) GetNotificationUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationUri) {
+	if o == nil || isNil(o.NotificationUri) {
 		return nil, false
 	}
 	return o.NotificationUri, true
@@ -95,7 +95,7 @@ func (o *SmContextUpdateData) GetNotificationUriOk() (*string, bool) {
 
 // HasNotificationUri returns a boolean if a field has been set.
 func (o *SmContextUpdateData) HasNotificationUri() bool {
-	if o != nil && !IsNil(o.NotificationUri) {
+	if o != nil && !isNil(o.NotificationUri) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *SmContextUpdateData) SetNotificationUri(v string) {
 
 // GetSmContextConfig returns the SmContextConfig field value if set, zero value otherwise.
 func (o *SmContextUpdateData) GetSmContextConfig() SmContextConfiguration {
-	if o == nil || IsNil(o.SmContextConfig) {
+	if o == nil || isNil(o.SmContextConfig) {
 		var ret SmContextConfiguration
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *SmContextUpdateData) GetSmContextConfig() SmContextConfiguration {
 // GetSmContextConfigOk returns a tuple with the SmContextConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextUpdateData) GetSmContextConfigOk() (*SmContextConfiguration, bool) {
-	if o == nil || IsNil(o.SmContextConfig) {
+	if o == nil || isNil(o.SmContextConfig) {
 		return nil, false
 	}
 	return o.SmContextConfig, true
@@ -127,7 +127,7 @@ func (o *SmContextUpdateData) GetSmContextConfigOk() (*SmContextConfiguration, b
 
 // HasSmContextConfig returns a boolean if a field has been set.
 func (o *SmContextUpdateData) HasSmContextConfig() bool {
-	if o != nil && !IsNil(o.SmContextConfig) {
+	if o != nil && !isNil(o.SmContextConfig) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o SmContextUpdateData) MarshalJSON() ([]byte, error) {
 
 func (o SmContextUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DlNiddEndPoint) {
+	if !isNil(o.DlNiddEndPoint) {
 		toSerialize["dlNiddEndPoint"] = o.DlNiddEndPoint
 	}
-	if !IsNil(o.NotificationUri) {
+	if !isNil(o.NotificationUri) {
 		toSerialize["notificationUri"] = o.NotificationUri
 	}
-	if !IsNil(o.SmContextConfig) {
+	if !isNil(o.SmContextConfig) {
 		toSerialize["smContextConfig"] = o.SmContextConfig
 	}
 	return toSerialize, nil

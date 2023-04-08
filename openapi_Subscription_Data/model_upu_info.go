@@ -54,7 +54,7 @@ func NewUpuInfoWithDefaults() *UpuInfo {
 
 // GetUpuDataList returns the UpuDataList field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuDataList() []UpuData1 {
-	if o == nil || IsNil(o.UpuDataList) {
+	if o == nil || isNil(o.UpuDataList) {
 		var ret []UpuData1
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *UpuInfo) GetUpuDataList() []UpuData1 {
 // GetUpuDataListOk returns a tuple with the UpuDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuDataListOk() ([]UpuData1, bool) {
-	if o == nil || IsNil(o.UpuDataList) {
+	if o == nil || isNil(o.UpuDataList) {
 		return nil, false
 	}
 	return o.UpuDataList, true
@@ -72,7 +72,7 @@ func (o *UpuInfo) GetUpuDataListOk() ([]UpuData1, bool) {
 
 // HasUpuDataList returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuDataList() bool {
-	if o != nil && !IsNil(o.UpuDataList) {
+	if o != nil && !isNil(o.UpuDataList) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *UpuInfo) SetUpuDataList(v []UpuData1) {
 
 // GetUpuRegInd returns the UpuRegInd field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuRegInd() bool {
-	if o == nil || IsNil(o.UpuRegInd) {
+	if o == nil || isNil(o.UpuRegInd) {
 		var ret bool
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *UpuInfo) GetUpuRegInd() bool {
 // GetUpuRegIndOk returns a tuple with the UpuRegInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuRegIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpuRegInd) {
+	if o == nil || isNil(o.UpuRegInd) {
 		return nil, false
 	}
 	return o.UpuRegInd, true
@@ -104,7 +104,7 @@ func (o *UpuInfo) GetUpuRegIndOk() (*bool, bool) {
 
 // HasUpuRegInd returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuRegInd() bool {
-	if o != nil && !IsNil(o.UpuRegInd) {
+	if o != nil && !isNil(o.UpuRegInd) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *UpuInfo) SetUpuRegInd(v bool) {
 
 // GetUpuAckInd returns the UpuAckInd field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuAckInd() bool {
-	if o == nil || IsNil(o.UpuAckInd) {
+	if o == nil || isNil(o.UpuAckInd) {
 		var ret bool
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *UpuInfo) GetUpuAckInd() bool {
 // GetUpuAckIndOk returns a tuple with the UpuAckInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuAckIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpuAckInd) {
+	if o == nil || isNil(o.UpuAckInd) {
 		return nil, false
 	}
 	return o.UpuAckInd, true
@@ -136,7 +136,7 @@ func (o *UpuInfo) GetUpuAckIndOk() (*bool, bool) {
 
 // HasUpuAckInd returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuAckInd() bool {
-	if o != nil && !IsNil(o.UpuAckInd) {
+	if o != nil && !isNil(o.UpuAckInd) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *UpuInfo) SetUpuAckInd(v bool) {
 
 // GetUpuMacIausf returns the UpuMacIausf field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuMacIausf() string {
-	if o == nil || IsNil(o.UpuMacIausf) {
+	if o == nil || isNil(o.UpuMacIausf) {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *UpuInfo) GetUpuMacIausf() string {
 // GetUpuMacIausfOk returns a tuple with the UpuMacIausf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuMacIausfOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuMacIausf) {
+	if o == nil || isNil(o.UpuMacIausf) {
 		return nil, false
 	}
 	return o.UpuMacIausf, true
@@ -168,7 +168,7 @@ func (o *UpuInfo) GetUpuMacIausfOk() (*string, bool) {
 
 // HasUpuMacIausf returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuMacIausf() bool {
-	if o != nil && !IsNil(o.UpuMacIausf) {
+	if o != nil && !isNil(o.UpuMacIausf) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *UpuInfo) SetUpuMacIausf(v string) {
 
 // GetCounterUpu returns the CounterUpu field value if set, zero value otherwise.
 func (o *UpuInfo) GetCounterUpu() string {
-	if o == nil || IsNil(o.CounterUpu) {
+	if o == nil || isNil(o.CounterUpu) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *UpuInfo) GetCounterUpu() string {
 // GetCounterUpuOk returns a tuple with the CounterUpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetCounterUpuOk() (*string, bool) {
-	if o == nil || IsNil(o.CounterUpu) {
+	if o == nil || isNil(o.CounterUpu) {
 		return nil, false
 	}
 	return o.CounterUpu, true
@@ -200,7 +200,7 @@ func (o *UpuInfo) GetCounterUpuOk() (*string, bool) {
 
 // HasCounterUpu returns a boolean if a field has been set.
 func (o *UpuInfo) HasCounterUpu() bool {
-	if o != nil && !IsNil(o.CounterUpu) {
+	if o != nil && !isNil(o.CounterUpu) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *UpuInfo) SetProvisioningTime(v time.Time) {
 
 // GetUpuTransparentContainer returns the UpuTransparentContainer field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuTransparentContainer() string {
-	if o == nil || IsNil(o.UpuTransparentContainer) {
+	if o == nil || isNil(o.UpuTransparentContainer) {
 		var ret string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *UpuInfo) GetUpuTransparentContainer() string {
 // GetUpuTransparentContainerOk returns a tuple with the UpuTransparentContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuTransparentContainerOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuTransparentContainer) {
+	if o == nil || isNil(o.UpuTransparentContainer) {
 		return nil, false
 	}
 	return o.UpuTransparentContainer, true
@@ -256,7 +256,7 @@ func (o *UpuInfo) GetUpuTransparentContainerOk() (*string, bool) {
 
 // HasUpuTransparentContainer returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuTransparentContainer() bool {
-	if o != nil && !IsNil(o.UpuTransparentContainer) {
+	if o != nil && !isNil(o.UpuTransparentContainer) {
 		return true
 	}
 
@@ -278,23 +278,23 @@ func (o UpuInfo) MarshalJSON() ([]byte, error) {
 
 func (o UpuInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UpuDataList) {
+	if !isNil(o.UpuDataList) {
 		toSerialize["upuDataList"] = o.UpuDataList
 	}
-	if !IsNil(o.UpuRegInd) {
+	if !isNil(o.UpuRegInd) {
 		toSerialize["upuRegInd"] = o.UpuRegInd
 	}
-	if !IsNil(o.UpuAckInd) {
+	if !isNil(o.UpuAckInd) {
 		toSerialize["upuAckInd"] = o.UpuAckInd
 	}
-	if !IsNil(o.UpuMacIausf) {
+	if !isNil(o.UpuMacIausf) {
 		toSerialize["upuMacIausf"] = o.UpuMacIausf
 	}
-	if !IsNil(o.CounterUpu) {
+	if !isNil(o.CounterUpu) {
 		toSerialize["counterUpu"] = o.CounterUpu
 	}
 	toSerialize["provisioningTime"] = o.ProvisioningTime
-	if !IsNil(o.UpuTransparentContainer) {
+	if !isNil(o.UpuTransparentContainer) {
 		toSerialize["upuTransparentContainer"] = o.UpuTransparentContainer
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewUePrivacyRequirementsWithDefaults() *UePrivacyRequirements {
 
 // GetLcsServiceAuthInfo returns the LcsServiceAuthInfo field value if set, zero value otherwise.
 func (o *UePrivacyRequirements) GetLcsServiceAuthInfo() LcsServiceAuth {
-	if o == nil || IsNil(o.LcsServiceAuthInfo) {
+	if o == nil || isNil(o.LcsServiceAuthInfo) {
 		var ret LcsServiceAuth
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UePrivacyRequirements) GetLcsServiceAuthInfo() LcsServiceAuth {
 // GetLcsServiceAuthInfoOk returns a tuple with the LcsServiceAuthInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePrivacyRequirements) GetLcsServiceAuthInfoOk() (*LcsServiceAuth, bool) {
-	if o == nil || IsNil(o.LcsServiceAuthInfo) {
+	if o == nil || isNil(o.LcsServiceAuthInfo) {
 		return nil, false
 	}
 	return o.LcsServiceAuthInfo, true
@@ -60,7 +60,7 @@ func (o *UePrivacyRequirements) GetLcsServiceAuthInfoOk() (*LcsServiceAuth, bool
 
 // HasLcsServiceAuthInfo returns a boolean if a field has been set.
 func (o *UePrivacyRequirements) HasLcsServiceAuthInfo() bool {
-	if o != nil && !IsNil(o.LcsServiceAuthInfo) {
+	if o != nil && !isNil(o.LcsServiceAuthInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UePrivacyRequirements) SetLcsServiceAuthInfo(v LcsServiceAuth) {
 
 // GetCodeWordCheck returns the CodeWordCheck field value if set, zero value otherwise.
 func (o *UePrivacyRequirements) GetCodeWordCheck() bool {
-	if o == nil || IsNil(o.CodeWordCheck) {
+	if o == nil || isNil(o.CodeWordCheck) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UePrivacyRequirements) GetCodeWordCheck() bool {
 // GetCodeWordCheckOk returns a tuple with the CodeWordCheck field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePrivacyRequirements) GetCodeWordCheckOk() (*bool, bool) {
-	if o == nil || IsNil(o.CodeWordCheck) {
+	if o == nil || isNil(o.CodeWordCheck) {
 		return nil, false
 	}
 	return o.CodeWordCheck, true
@@ -92,7 +92,7 @@ func (o *UePrivacyRequirements) GetCodeWordCheckOk() (*bool, bool) {
 
 // HasCodeWordCheck returns a boolean if a field has been set.
 func (o *UePrivacyRequirements) HasCodeWordCheck() bool {
-	if o != nil && !IsNil(o.CodeWordCheck) {
+	if o != nil && !isNil(o.CodeWordCheck) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o UePrivacyRequirements) MarshalJSON() ([]byte, error) {
 
 func (o UePrivacyRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LcsServiceAuthInfo) {
+	if !isNil(o.LcsServiceAuthInfo) {
 		toSerialize["lcsServiceAuthInfo"] = o.LcsServiceAuthInfo
 	}
-	if !IsNil(o.CodeWordCheck) {
+	if !isNil(o.CodeWordCheck) {
 		toSerialize["codeWordCheck"] = o.CodeWordCheck
 	}
 	return toSerialize, nil

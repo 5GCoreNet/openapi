@@ -13,7 +13,7 @@ package openapi_SS_NetworkResourceAdaptation
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -84,10 +84,10 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "stream-specs", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "stream-specs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "stream-specs", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "stream-specs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -117,9 +117,9 @@ func (a *TSCStreamAvailabilityDiscoveryApiService) GetTscStreamAvailabilityExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

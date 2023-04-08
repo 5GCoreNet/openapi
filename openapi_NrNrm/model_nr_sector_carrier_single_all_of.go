@@ -19,7 +19,7 @@ var _ MappedNullable = &NrSectorCarrierSingleAllOf{}
 
 // NrSectorCarrierSingleAllOf struct for NrSectorCarrierSingleAllOf
 type NrSectorCarrierSingleAllOf struct {
-	Attributes *NrSectorCarrierSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewNrSectorCarrierSingleAllOf instantiates a new NrSectorCarrierSingleAllOf object
@@ -40,9 +40,9 @@ func NewNrSectorCarrierSingleAllOfWithDefaults() *NrSectorCarrierSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NrSectorCarrierSingleAllOf) GetAttributes() NrSectorCarrierSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret NrSectorCarrierSingleAllOfAttributes
+func (o *NrSectorCarrierSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *NrSectorCarrierSingleAllOf) GetAttributes() NrSectorCarrierSingleAllOfA
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NrSectorCarrierSingleAllOf) GetAttributesOk() (*NrSectorCarrierSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *NrSectorCarrierSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *NrSectorCarrierSingleAllOf) GetAttributesOk() (*NrSectorCarrierSingleAl
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given NrSectorCarrierSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *NrSectorCarrierSingleAllOf) SetAttributes(v NrSectorCarrierSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *NrSectorCarrierSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o NrSectorCarrierSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NrSectorCarrierSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

@@ -93,7 +93,7 @@ func (o *UserDataCongestionInfo) SetCongestionInfo(v CongestionInfo) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *UserDataCongestionInfo) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *UserDataCongestionInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserDataCongestionInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -111,7 +111,7 @@ func (o *UserDataCongestionInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *UserDataCongestionInfo) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o UserDataCongestionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["networkArea"] = o.NetworkArea
 	toSerialize["congestionInfo"] = o.CongestionInfo
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil

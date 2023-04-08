@@ -970,10 +970,7 @@ components:
       type: string
     UiccType:
       anyOf:
-      - enum:
-        - GBA
-        - GBA_U
-        type: string
+      - $ref: '#/components/schemas/UiccType_anyOf'
       - type: string
       description: Indicates whether GBA or GBA_U is to be used
     SupportedFeatures:
@@ -1130,14 +1127,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -1287,11 +1277,7 @@ components:
       $ref: '#/components/schemas/Uint32'
     KeyChoice:
       anyOf:
-      - enum:
-        - ME_BASED_KEY
-        - UICC_BASED_KEY
-        - ME_UICC_BASED_KEYS
-        type: string
+      - $ref: '#/components/schemas/KeyChoice_anyOf'
       - type: string
       description: Type of key (ME-based or UICC-based) that the NAF shall use
     DurationSec:
@@ -1299,9 +1285,7 @@ components:
       type: integer
     SecFeature:
       anyOf:
-      - enum:
-        - GPL_U
-        type: string
+      - $ref: '#/components/schemas/SecFeature_anyOf'
       - type: string
       description: Security features supported by the BSF or the NAF
     NfInstanceId:
@@ -1501,74 +1485,12 @@ components:
       type: object
     ChangeType:
       anyOf:
-      - enum:
-        - ADD
-        - MOVE
-        - REMOVE
-        - REPLACE
-        type: string
+      - $ref: '#/components/schemas/ChangeType_anyOf'
       - type: string
       description: Indicates the type of change to be performed.
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -1680,6 +1602,102 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    UiccType_anyOf:
+      enum:
+      - GBA
+      - GBA_U
+      type: string
+      example: null
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    KeyChoice_anyOf:
+      enum:
+      - ME_BASED_KEY
+      - UICC_BASED_KEY
+      - ME_UICC_BASED_KEYS
+      type: string
+      example: null
+    SecFeature_anyOf:
+      enum:
+      - GPL_U
+      type: string
+      example: null
+    ChangeType_anyOf:
+      enum:
+      - ADD
+      - MOVE
+      - REMOVE
+      - REPLACE
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

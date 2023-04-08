@@ -74,7 +74,7 @@ func (o *Amf3GppAccessRegistrationModification) SetGuami(v Guami) {
 
 // GetPurgeFlag returns the PurgeFlag field value if set, zero value otherwise.
 func (o *Amf3GppAccessRegistrationModification) GetPurgeFlag() bool {
-	if o == nil || IsNil(o.PurgeFlag) {
+	if o == nil || isNil(o.PurgeFlag) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Amf3GppAccessRegistrationModification) GetPurgeFlag() bool {
 // GetPurgeFlagOk returns a tuple with the PurgeFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Amf3GppAccessRegistrationModification) GetPurgeFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.PurgeFlag) {
+	if o == nil || isNil(o.PurgeFlag) {
 		return nil, false
 	}
 	return o.PurgeFlag, true
@@ -92,7 +92,7 @@ func (o *Amf3GppAccessRegistrationModification) GetPurgeFlagOk() (*bool, bool) {
 
 // HasPurgeFlag returns a boolean if a field has been set.
 func (o *Amf3GppAccessRegistrationModification) HasPurgeFlag() bool {
-	if o != nil && !IsNil(o.PurgeFlag) {
+	if o != nil && !isNil(o.PurgeFlag) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *Amf3GppAccessRegistrationModification) SetPurgeFlag(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *Amf3GppAccessRegistrationModification) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *Amf3GppAccessRegistrationModification) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Amf3GppAccessRegistrationModification) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -124,7 +124,7 @@ func (o *Amf3GppAccessRegistrationModification) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *Amf3GppAccessRegistrationModification) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *Amf3GppAccessRegistrationModification) SetPei(v string) {
 
 // GetImsVoPs returns the ImsVoPs field value if set, zero value otherwise.
 func (o *Amf3GppAccessRegistrationModification) GetImsVoPs() ImsVoPs {
-	if o == nil || IsNil(o.ImsVoPs) {
+	if o == nil || isNil(o.ImsVoPs) {
 		var ret ImsVoPs
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *Amf3GppAccessRegistrationModification) GetImsVoPs() ImsVoPs {
 // GetImsVoPsOk returns a tuple with the ImsVoPs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Amf3GppAccessRegistrationModification) GetImsVoPsOk() (*ImsVoPs, bool) {
-	if o == nil || IsNil(o.ImsVoPs) {
+	if o == nil || isNil(o.ImsVoPs) {
 		return nil, false
 	}
 	return o.ImsVoPs, true
@@ -156,7 +156,7 @@ func (o *Amf3GppAccessRegistrationModification) GetImsVoPsOk() (*ImsVoPs, bool) 
 
 // HasImsVoPs returns a boolean if a field has been set.
 func (o *Amf3GppAccessRegistrationModification) HasImsVoPs() bool {
-	if o != nil && !IsNil(o.ImsVoPs) {
+	if o != nil && !isNil(o.ImsVoPs) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *Amf3GppAccessRegistrationModification) SetImsVoPs(v ImsVoPs) {
 
 // GetBackupAmfInfo returns the BackupAmfInfo field value if set, zero value otherwise.
 func (o *Amf3GppAccessRegistrationModification) GetBackupAmfInfo() []BackupAmfInfo {
-	if o == nil || IsNil(o.BackupAmfInfo) {
+	if o == nil || isNil(o.BackupAmfInfo) {
 		var ret []BackupAmfInfo
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *Amf3GppAccessRegistrationModification) GetBackupAmfInfo() []BackupAmfIn
 // GetBackupAmfInfoOk returns a tuple with the BackupAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Amf3GppAccessRegistrationModification) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
-	if o == nil || IsNil(o.BackupAmfInfo) {
+	if o == nil || isNil(o.BackupAmfInfo) {
 		return nil, false
 	}
 	return o.BackupAmfInfo, true
@@ -188,7 +188,7 @@ func (o *Amf3GppAccessRegistrationModification) GetBackupAmfInfoOk() ([]BackupAm
 
 // HasBackupAmfInfo returns a boolean if a field has been set.
 func (o *Amf3GppAccessRegistrationModification) HasBackupAmfInfo() bool {
-	if o != nil && !IsNil(o.BackupAmfInfo) {
+	if o != nil && !isNil(o.BackupAmfInfo) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *Amf3GppAccessRegistrationModification) SetBackupAmfInfo(v []BackupAmfIn
 
 // GetEpsInterworkingInfo returns the EpsInterworkingInfo field value if set, zero value otherwise.
 func (o *Amf3GppAccessRegistrationModification) GetEpsInterworkingInfo() EpsInterworkingInfo {
-	if o == nil || IsNil(o.EpsInterworkingInfo) {
+	if o == nil || isNil(o.EpsInterworkingInfo) {
 		var ret EpsInterworkingInfo
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *Amf3GppAccessRegistrationModification) GetEpsInterworkingInfo() EpsInte
 // GetEpsInterworkingInfoOk returns a tuple with the EpsInterworkingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Amf3GppAccessRegistrationModification) GetEpsInterworkingInfoOk() (*EpsInterworkingInfo, bool) {
-	if o == nil || IsNil(o.EpsInterworkingInfo) {
+	if o == nil || isNil(o.EpsInterworkingInfo) {
 		return nil, false
 	}
 	return o.EpsInterworkingInfo, true
@@ -220,7 +220,7 @@ func (o *Amf3GppAccessRegistrationModification) GetEpsInterworkingInfoOk() (*Eps
 
 // HasEpsInterworkingInfo returns a boolean if a field has been set.
 func (o *Amf3GppAccessRegistrationModification) HasEpsInterworkingInfo() bool {
-	if o != nil && !IsNil(o.EpsInterworkingInfo) {
+	if o != nil && !isNil(o.EpsInterworkingInfo) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *Amf3GppAccessRegistrationModification) SetEpsInterworkingInfo(v EpsInte
 
 // GetUeSrvccCapability returns the UeSrvccCapability field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Amf3GppAccessRegistrationModification) GetUeSrvccCapability() bool {
-	if o == nil || IsNil(o.UeSrvccCapability.Get()) {
+	if o == nil || isNil(o.UeSrvccCapability.Get()) {
 		var ret bool
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *Amf3GppAccessRegistrationModification) UnsetUeSrvccCapability() {
 
 // GetUeMINTCapability returns the UeMINTCapability field value if set, zero value otherwise.
 func (o *Amf3GppAccessRegistrationModification) GetUeMINTCapability() bool {
-	if o == nil || IsNil(o.UeMINTCapability) {
+	if o == nil || isNil(o.UeMINTCapability) {
 		var ret bool
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *Amf3GppAccessRegistrationModification) GetUeMINTCapability() bool {
 // GetUeMINTCapabilityOk returns a tuple with the UeMINTCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Amf3GppAccessRegistrationModification) GetUeMINTCapabilityOk() (*bool, bool) {
-	if o == nil || IsNil(o.UeMINTCapability) {
+	if o == nil || isNil(o.UeMINTCapability) {
 		return nil, false
 	}
 	return o.UeMINTCapability, true
@@ -294,7 +294,7 @@ func (o *Amf3GppAccessRegistrationModification) GetUeMINTCapabilityOk() (*bool, 
 
 // HasUeMINTCapability returns a boolean if a field has been set.
 func (o *Amf3GppAccessRegistrationModification) HasUeMINTCapability() bool {
-	if o != nil && !IsNil(o.UeMINTCapability) {
+	if o != nil && !isNil(o.UeMINTCapability) {
 		return true
 	}
 
@@ -317,25 +317,25 @@ func (o Amf3GppAccessRegistrationModification) MarshalJSON() ([]byte, error) {
 func (o Amf3GppAccessRegistrationModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["guami"] = o.Guami
-	if !IsNil(o.PurgeFlag) {
+	if !isNil(o.PurgeFlag) {
 		toSerialize["purgeFlag"] = o.PurgeFlag
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.ImsVoPs) {
+	if !isNil(o.ImsVoPs) {
 		toSerialize["imsVoPs"] = o.ImsVoPs
 	}
-	if !IsNil(o.BackupAmfInfo) {
+	if !isNil(o.BackupAmfInfo) {
 		toSerialize["backupAmfInfo"] = o.BackupAmfInfo
 	}
-	if !IsNil(o.EpsInterworkingInfo) {
+	if !isNil(o.EpsInterworkingInfo) {
 		toSerialize["epsInterworkingInfo"] = o.EpsInterworkingInfo
 	}
 	if o.UeSrvccCapability.IsSet() {
 		toSerialize["ueSrvccCapability"] = o.UeSrvccCapability.Get()
 	}
-	if !IsNil(o.UeMINTCapability) {
+	if !isNil(o.UeMINTCapability) {
 		toSerialize["ueMINTCapability"] = o.UeMINTCapability
 	}
 	return toSerialize, nil

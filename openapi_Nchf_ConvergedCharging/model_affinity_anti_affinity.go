@@ -42,7 +42,7 @@ func NewAffinityAntiAffinityWithDefaults() *AffinityAntiAffinity {
 
 // GetAffinityEAS returns the AffinityEAS field value if set, zero value otherwise.
 func (o *AffinityAntiAffinity) GetAffinityEAS() []string {
-	if o == nil || IsNil(o.AffinityEAS) {
+	if o == nil || isNil(o.AffinityEAS) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AffinityAntiAffinity) GetAffinityEAS() []string {
 // GetAffinityEASOk returns a tuple with the AffinityEAS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AffinityAntiAffinity) GetAffinityEASOk() ([]string, bool) {
-	if o == nil || IsNil(o.AffinityEAS) {
+	if o == nil || isNil(o.AffinityEAS) {
 		return nil, false
 	}
 	return o.AffinityEAS, true
@@ -60,7 +60,7 @@ func (o *AffinityAntiAffinity) GetAffinityEASOk() ([]string, bool) {
 
 // HasAffinityEAS returns a boolean if a field has been set.
 func (o *AffinityAntiAffinity) HasAffinityEAS() bool {
-	if o != nil && !IsNil(o.AffinityEAS) {
+	if o != nil && !isNil(o.AffinityEAS) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AffinityAntiAffinity) SetAffinityEAS(v []string) {
 
 // GetAntiAffinityEAS returns the AntiAffinityEAS field value if set, zero value otherwise.
 func (o *AffinityAntiAffinity) GetAntiAffinityEAS() string {
-	if o == nil || IsNil(o.AntiAffinityEAS) {
+	if o == nil || isNil(o.AntiAffinityEAS) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AffinityAntiAffinity) GetAntiAffinityEAS() string {
 // GetAntiAffinityEASOk returns a tuple with the AntiAffinityEAS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AffinityAntiAffinity) GetAntiAffinityEASOk() (*string, bool) {
-	if o == nil || IsNil(o.AntiAffinityEAS) {
+	if o == nil || isNil(o.AntiAffinityEAS) {
 		return nil, false
 	}
 	return o.AntiAffinityEAS, true
@@ -92,7 +92,7 @@ func (o *AffinityAntiAffinity) GetAntiAffinityEASOk() (*string, bool) {
 
 // HasAntiAffinityEAS returns a boolean if a field has been set.
 func (o *AffinityAntiAffinity) HasAntiAffinityEAS() bool {
-	if o != nil && !IsNil(o.AntiAffinityEAS) {
+	if o != nil && !isNil(o.AntiAffinityEAS) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o AffinityAntiAffinity) MarshalJSON() ([]byte, error) {
 
 func (o AffinityAntiAffinity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AffinityEAS) {
+	if !isNil(o.AffinityEAS) {
 		toSerialize["affinityEAS"] = o.AffinityEAS
 	}
-	if !IsNil(o.AntiAffinityEAS) {
+	if !isNil(o.AntiAffinityEAS) {
 		toSerialize["antiAffinityEAS"] = o.AntiAffinityEAS
 	}
 	return toSerialize, nil

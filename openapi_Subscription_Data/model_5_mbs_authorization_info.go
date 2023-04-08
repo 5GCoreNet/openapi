@@ -41,7 +41,7 @@ func NewModel5MbsAuthorizationInfoWithDefaults() *Model5MbsAuthorizationInfo {
 
 // GetVar5mbsSessionIds returns the Var5mbsSessionIds field value if set, zero value otherwise.
 func (o *Model5MbsAuthorizationInfo) GetVar5mbsSessionIds() []MbsSessionId {
-	if o == nil || IsNil(o.Var5mbsSessionIds) {
+	if o == nil || isNil(o.Var5mbsSessionIds) {
 		var ret []MbsSessionId
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *Model5MbsAuthorizationInfo) GetVar5mbsSessionIds() []MbsSessionId {
 // GetVar5mbsSessionIdsOk returns a tuple with the Var5mbsSessionIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5MbsAuthorizationInfo) GetVar5mbsSessionIdsOk() ([]MbsSessionId, bool) {
-	if o == nil || IsNil(o.Var5mbsSessionIds) {
+	if o == nil || isNil(o.Var5mbsSessionIds) {
 		return nil, false
 	}
 	return o.Var5mbsSessionIds, true
@@ -59,7 +59,7 @@ func (o *Model5MbsAuthorizationInfo) GetVar5mbsSessionIdsOk() ([]MbsSessionId, b
 
 // HasVar5mbsSessionIds returns a boolean if a field has been set.
 func (o *Model5MbsAuthorizationInfo) HasVar5mbsSessionIds() bool {
-	if o != nil && !IsNil(o.Var5mbsSessionIds) {
+	if o != nil && !isNil(o.Var5mbsSessionIds) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o Model5MbsAuthorizationInfo) MarshalJSON() ([]byte, error) {
 
 func (o Model5MbsAuthorizationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Var5mbsSessionIds) {
+	if !isNil(o.Var5mbsSessionIds) {
 		toSerialize["5mbsSessionIds"] = o.Var5mbsSessionIds
 	}
 	return toSerialize, nil

@@ -93,7 +93,7 @@ func (o *SmContextStatusNotification) SetStatusInfo(v StatusInfo) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStat
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -111,7 +111,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRate
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *SmContextStatusNotification) SetSmallDataRateStatus(v SmallDataRateStat
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -143,7 +143,7 @@ func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasApnRateStatus() bool {
-	if o != nil && !IsNil(o.ApnRateStatus) {
+	if o != nil && !isNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *SmContextStatusNotification) SetApnRateStatus(v ApnRateStatus) {
 
 // GetDdnFailureStatus returns the DdnFailureStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetDdnFailureStatus() bool {
-	if o == nil || IsNil(o.DdnFailureStatus) {
+	if o == nil || isNil(o.DdnFailureStatus) {
 		var ret bool
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *SmContextStatusNotification) GetDdnFailureStatus() bool {
 // GetDdnFailureStatusOk returns a tuple with the DdnFailureStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetDdnFailureStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.DdnFailureStatus) {
+	if o == nil || isNil(o.DdnFailureStatus) {
 		return nil, false
 	}
 	return o.DdnFailureStatus, true
@@ -175,7 +175,7 @@ func (o *SmContextStatusNotification) GetDdnFailureStatusOk() (*bool, bool) {
 
 // HasDdnFailureStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasDdnFailureStatus() bool {
-	if o != nil && !IsNil(o.DdnFailureStatus) {
+	if o != nil && !isNil(o.DdnFailureStatus) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *SmContextStatusNotification) SetDdnFailureStatus(v bool) {
 
 // GetNotifyCorrelationIdsForddnFailure returns the NotifyCorrelationIdsForddnFailure field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailure() []string {
-	if o == nil || IsNil(o.NotifyCorrelationIdsForddnFailure) {
+	if o == nil || isNil(o.NotifyCorrelationIdsForddnFailure) {
 		var ret []string
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailure() []s
 // GetNotifyCorrelationIdsForddnFailureOk returns a tuple with the NotifyCorrelationIdsForddnFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailureOk() ([]string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationIdsForddnFailure) {
+	if o == nil || isNil(o.NotifyCorrelationIdsForddnFailure) {
 		return nil, false
 	}
 	return o.NotifyCorrelationIdsForddnFailure, true
@@ -207,7 +207,7 @@ func (o *SmContextStatusNotification) GetNotifyCorrelationIdsForddnFailureOk() (
 
 // HasNotifyCorrelationIdsForddnFailure returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNotifyCorrelationIdsForddnFailure() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationIdsForddnFailure) {
+	if o != nil && !isNil(o.NotifyCorrelationIdsForddnFailure) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *SmContextStatusNotification) SetNotifyCorrelationIdsForddnFailure(v []s
 
 // GetNewIntermediateSmfId returns the NewIntermediateSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNewIntermediateSmfId() string {
-	if o == nil || IsNil(o.NewIntermediateSmfId) {
+	if o == nil || isNil(o.NewIntermediateSmfId) {
 		var ret string
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *SmContextStatusNotification) GetNewIntermediateSmfId() string {
 // GetNewIntermediateSmfIdOk returns a tuple with the NewIntermediateSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNewIntermediateSmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NewIntermediateSmfId) {
+	if o == nil || isNil(o.NewIntermediateSmfId) {
 		return nil, false
 	}
 	return o.NewIntermediateSmfId, true
@@ -239,7 +239,7 @@ func (o *SmContextStatusNotification) GetNewIntermediateSmfIdOk() (*string, bool
 
 // HasNewIntermediateSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNewIntermediateSmfId() bool {
-	if o != nil && !IsNil(o.NewIntermediateSmfId) {
+	if o != nil && !isNil(o.NewIntermediateSmfId) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *SmContextStatusNotification) SetNewIntermediateSmfId(v string) {
 
 // GetNewSmfId returns the NewSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNewSmfId() string {
-	if o == nil || IsNil(o.NewSmfId) {
+	if o == nil || isNil(o.NewSmfId) {
 		var ret string
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *SmContextStatusNotification) GetNewSmfId() string {
 // GetNewSmfIdOk returns a tuple with the NewSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNewSmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NewSmfId) {
+	if o == nil || isNil(o.NewSmfId) {
 		return nil, false
 	}
 	return o.NewSmfId, true
@@ -271,7 +271,7 @@ func (o *SmContextStatusNotification) GetNewSmfIdOk() (*string, bool) {
 
 // HasNewSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNewSmfId() bool {
-	if o != nil && !IsNil(o.NewSmfId) {
+	if o != nil && !isNil(o.NewSmfId) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *SmContextStatusNotification) SetNewSmfId(v string) {
 
 // GetNewSmfSetId returns the NewSmfSetId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetNewSmfSetId() string {
-	if o == nil || IsNil(o.NewSmfSetId) {
+	if o == nil || isNil(o.NewSmfSetId) {
 		var ret string
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *SmContextStatusNotification) GetNewSmfSetId() string {
 // GetNewSmfSetIdOk returns a tuple with the NewSmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetNewSmfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NewSmfSetId) {
+	if o == nil || isNil(o.NewSmfSetId) {
 		return nil, false
 	}
 	return o.NewSmfSetId, true
@@ -303,7 +303,7 @@ func (o *SmContextStatusNotification) GetNewSmfSetIdOk() (*string, bool) {
 
 // HasNewSmfSetId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasNewSmfSetId() bool {
-	if o != nil && !IsNil(o.NewSmfSetId) {
+	if o != nil && !isNil(o.NewSmfSetId) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *SmContextStatusNotification) SetNewSmfSetId(v string) {
 
 // GetOldSmfId returns the OldSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetOldSmfId() string {
-	if o == nil || IsNil(o.OldSmfId) {
+	if o == nil || isNil(o.OldSmfId) {
 		var ret string
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *SmContextStatusNotification) GetOldSmfId() string {
 // GetOldSmfIdOk returns a tuple with the OldSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetOldSmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.OldSmfId) {
+	if o == nil || isNil(o.OldSmfId) {
 		return nil, false
 	}
 	return o.OldSmfId, true
@@ -335,7 +335,7 @@ func (o *SmContextStatusNotification) GetOldSmfIdOk() (*string, bool) {
 
 // HasOldSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasOldSmfId() bool {
-	if o != nil && !IsNil(o.OldSmfId) {
+	if o != nil && !isNil(o.OldSmfId) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *SmContextStatusNotification) SetOldSmfId(v string) {
 
 // GetOldSmContextRef returns the OldSmContextRef field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetOldSmContextRef() string {
-	if o == nil || IsNil(o.OldSmContextRef) {
+	if o == nil || isNil(o.OldSmContextRef) {
 		var ret string
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *SmContextStatusNotification) GetOldSmContextRef() string {
 // GetOldSmContextRefOk returns a tuple with the OldSmContextRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetOldSmContextRefOk() (*string, bool) {
-	if o == nil || IsNil(o.OldSmContextRef) {
+	if o == nil || isNil(o.OldSmContextRef) {
 		return nil, false
 	}
 	return o.OldSmContextRef, true
@@ -367,7 +367,7 @@ func (o *SmContextStatusNotification) GetOldSmContextRefOk() (*string, bool) {
 
 // HasOldSmContextRef returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasOldSmContextRef() bool {
-	if o != nil && !IsNil(o.OldSmContextRef) {
+	if o != nil && !isNil(o.OldSmContextRef) {
 		return true
 	}
 
@@ -381,7 +381,7 @@ func (o *SmContextStatusNotification) SetOldSmContextRef(v string) {
 
 // GetAltAnchorSmfUri returns the AltAnchorSmfUri field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetAltAnchorSmfUri() string {
-	if o == nil || IsNil(o.AltAnchorSmfUri) {
+	if o == nil || isNil(o.AltAnchorSmfUri) {
 		var ret string
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfUri() string {
 // GetAltAnchorSmfUriOk returns a tuple with the AltAnchorSmfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetAltAnchorSmfUriOk() (*string, bool) {
-	if o == nil || IsNil(o.AltAnchorSmfUri) {
+	if o == nil || isNil(o.AltAnchorSmfUri) {
 		return nil, false
 	}
 	return o.AltAnchorSmfUri, true
@@ -399,7 +399,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfUriOk() (*string, bool) {
 
 // HasAltAnchorSmfUri returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasAltAnchorSmfUri() bool {
-	if o != nil && !IsNil(o.AltAnchorSmfUri) {
+	if o != nil && !isNil(o.AltAnchorSmfUri) {
 		return true
 	}
 
@@ -413,7 +413,7 @@ func (o *SmContextStatusNotification) SetAltAnchorSmfUri(v string) {
 
 // GetAltAnchorSmfId returns the AltAnchorSmfId field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetAltAnchorSmfId() string {
-	if o == nil || IsNil(o.AltAnchorSmfId) {
+	if o == nil || isNil(o.AltAnchorSmfId) {
 		var ret string
 		return ret
 	}
@@ -423,7 +423,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfId() string {
 // GetAltAnchorSmfIdOk returns a tuple with the AltAnchorSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetAltAnchorSmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AltAnchorSmfId) {
+	if o == nil || isNil(o.AltAnchorSmfId) {
 		return nil, false
 	}
 	return o.AltAnchorSmfId, true
@@ -431,7 +431,7 @@ func (o *SmContextStatusNotification) GetAltAnchorSmfIdOk() (*string, bool) {
 
 // HasAltAnchorSmfId returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasAltAnchorSmfId() bool {
-	if o != nil && !IsNil(o.AltAnchorSmfId) {
+	if o != nil && !isNil(o.AltAnchorSmfId) {
 		return true
 	}
 
@@ -445,7 +445,7 @@ func (o *SmContextStatusNotification) SetAltAnchorSmfId(v string) {
 
 // GetTargetDnaiInfo returns the TargetDnaiInfo field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetTargetDnaiInfo() TargetDnaiInfo {
-	if o == nil || IsNil(o.TargetDnaiInfo) {
+	if o == nil || isNil(o.TargetDnaiInfo) {
 		var ret TargetDnaiInfo
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *SmContextStatusNotification) GetTargetDnaiInfo() TargetDnaiInfo {
 // GetTargetDnaiInfoOk returns a tuple with the TargetDnaiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetTargetDnaiInfoOk() (*TargetDnaiInfo, bool) {
-	if o == nil || IsNil(o.TargetDnaiInfo) {
+	if o == nil || isNil(o.TargetDnaiInfo) {
 		return nil, false
 	}
 	return o.TargetDnaiInfo, true
@@ -463,7 +463,7 @@ func (o *SmContextStatusNotification) GetTargetDnaiInfoOk() (*TargetDnaiInfo, bo
 
 // HasTargetDnaiInfo returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasTargetDnaiInfo() bool {
-	if o != nil && !IsNil(o.TargetDnaiInfo) {
+	if o != nil && !isNil(o.TargetDnaiInfo) {
 		return true
 	}
 
@@ -477,7 +477,7 @@ func (o *SmContextStatusNotification) SetTargetDnaiInfo(v TargetDnaiInfo) {
 
 // GetOldPduSessionRef returns the OldPduSessionRef field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetOldPduSessionRef() string {
-	if o == nil || IsNil(o.OldPduSessionRef) {
+	if o == nil || isNil(o.OldPduSessionRef) {
 		var ret string
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *SmContextStatusNotification) GetOldPduSessionRef() string {
 // GetOldPduSessionRefOk returns a tuple with the OldPduSessionRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetOldPduSessionRefOk() (*string, bool) {
-	if o == nil || IsNil(o.OldPduSessionRef) {
+	if o == nil || isNil(o.OldPduSessionRef) {
 		return nil, false
 	}
 	return o.OldPduSessionRef, true
@@ -495,7 +495,7 @@ func (o *SmContextStatusNotification) GetOldPduSessionRefOk() (*string, bool) {
 
 // HasOldPduSessionRef returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasOldPduSessionRef() bool {
-	if o != nil && !IsNil(o.OldPduSessionRef) {
+	if o != nil && !isNil(o.OldPduSessionRef) {
 		return true
 	}
 
@@ -509,7 +509,7 @@ func (o *SmContextStatusNotification) SetOldPduSessionRef(v string) {
 
 // GetInterPlmnApiRoot returns the InterPlmnApiRoot field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetInterPlmnApiRoot() string {
-	if o == nil || IsNil(o.InterPlmnApiRoot) {
+	if o == nil || isNil(o.InterPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -519,7 +519,7 @@ func (o *SmContextStatusNotification) GetInterPlmnApiRoot() string {
 // GetInterPlmnApiRootOk returns a tuple with the InterPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetInterPlmnApiRootOk() (*string, bool) {
-	if o == nil || IsNil(o.InterPlmnApiRoot) {
+	if o == nil || isNil(o.InterPlmnApiRoot) {
 		return nil, false
 	}
 	return o.InterPlmnApiRoot, true
@@ -527,7 +527,7 @@ func (o *SmContextStatusNotification) GetInterPlmnApiRootOk() (*string, bool) {
 
 // HasInterPlmnApiRoot returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasInterPlmnApiRoot() bool {
-	if o != nil && !IsNil(o.InterPlmnApiRoot) {
+	if o != nil && !isNil(o.InterPlmnApiRoot) {
 		return true
 	}
 
@@ -550,46 +550,46 @@ func (o SmContextStatusNotification) MarshalJSON() ([]byte, error) {
 func (o SmContextStatusNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusInfo"] = o.StatusInfo
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !IsNil(o.ApnRateStatus) {
+	if !isNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
-	if !IsNil(o.DdnFailureStatus) {
+	if !isNil(o.DdnFailureStatus) {
 		toSerialize["ddnFailureStatus"] = o.DdnFailureStatus
 	}
-	if !IsNil(o.NotifyCorrelationIdsForddnFailure) {
+	if !isNil(o.NotifyCorrelationIdsForddnFailure) {
 		toSerialize["notifyCorrelationIdsForddnFailure"] = o.NotifyCorrelationIdsForddnFailure
 	}
-	if !IsNil(o.NewIntermediateSmfId) {
+	if !isNil(o.NewIntermediateSmfId) {
 		toSerialize["newIntermediateSmfId"] = o.NewIntermediateSmfId
 	}
-	if !IsNil(o.NewSmfId) {
+	if !isNil(o.NewSmfId) {
 		toSerialize["newSmfId"] = o.NewSmfId
 	}
-	if !IsNil(o.NewSmfSetId) {
+	if !isNil(o.NewSmfSetId) {
 		toSerialize["newSmfSetId"] = o.NewSmfSetId
 	}
-	if !IsNil(o.OldSmfId) {
+	if !isNil(o.OldSmfId) {
 		toSerialize["oldSmfId"] = o.OldSmfId
 	}
-	if !IsNil(o.OldSmContextRef) {
+	if !isNil(o.OldSmContextRef) {
 		toSerialize["oldSmContextRef"] = o.OldSmContextRef
 	}
-	if !IsNil(o.AltAnchorSmfUri) {
+	if !isNil(o.AltAnchorSmfUri) {
 		toSerialize["altAnchorSmfUri"] = o.AltAnchorSmfUri
 	}
-	if !IsNil(o.AltAnchorSmfId) {
+	if !isNil(o.AltAnchorSmfId) {
 		toSerialize["altAnchorSmfId"] = o.AltAnchorSmfId
 	}
-	if !IsNil(o.TargetDnaiInfo) {
+	if !isNil(o.TargetDnaiInfo) {
 		toSerialize["targetDnaiInfo"] = o.TargetDnaiInfo
 	}
-	if !IsNil(o.OldPduSessionRef) {
+	if !isNil(o.OldPduSessionRef) {
 		toSerialize["oldPduSessionRef"] = o.OldPduSessionRef
 	}
-	if !IsNil(o.InterPlmnApiRoot) {
+	if !isNil(o.InterPlmnApiRoot) {
 		toSerialize["interPlmnApiRoot"] = o.InterPlmnApiRoot
 	}
 	return toSerialize, nil

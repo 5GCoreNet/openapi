@@ -42,7 +42,7 @@ func NewUpfInformationWithDefaults() *UpfInformation {
 
 // GetUpfId returns the UpfId field value if set, zero value otherwise.
 func (o *UpfInformation) GetUpfId() string {
-	if o == nil || IsNil(o.UpfId) {
+	if o == nil || isNil(o.UpfId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UpfInformation) GetUpfId() string {
 // GetUpfIdOk returns a tuple with the UpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInformation) GetUpfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UpfId) {
+	if o == nil || isNil(o.UpfId) {
 		return nil, false
 	}
 	return o.UpfId, true
@@ -60,7 +60,7 @@ func (o *UpfInformation) GetUpfIdOk() (*string, bool) {
 
 // HasUpfId returns a boolean if a field has been set.
 func (o *UpfInformation) HasUpfId() bool {
-	if o != nil && !IsNil(o.UpfId) {
+	if o != nil && !isNil(o.UpfId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UpfInformation) SetUpfId(v string) {
 
 // GetUpfAddr returns the UpfAddr field value if set, zero value otherwise.
 func (o *UpfInformation) GetUpfAddr() AddrFqdn {
-	if o == nil || IsNil(o.UpfAddr) {
+	if o == nil || isNil(o.UpfAddr) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UpfInformation) GetUpfAddr() AddrFqdn {
 // GetUpfAddrOk returns a tuple with the UpfAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInformation) GetUpfAddrOk() (*AddrFqdn, bool) {
-	if o == nil || IsNil(o.UpfAddr) {
+	if o == nil || isNil(o.UpfAddr) {
 		return nil, false
 	}
 	return o.UpfAddr, true
@@ -92,7 +92,7 @@ func (o *UpfInformation) GetUpfAddrOk() (*AddrFqdn, bool) {
 
 // HasUpfAddr returns a boolean if a field has been set.
 func (o *UpfInformation) HasUpfAddr() bool {
-	if o != nil && !IsNil(o.UpfAddr) {
+	if o != nil && !isNil(o.UpfAddr) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o UpfInformation) MarshalJSON() ([]byte, error) {
 
 func (o UpfInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UpfId) {
+	if !isNil(o.UpfId) {
 		toSerialize["upfId"] = o.UpfId
 	}
-	if !IsNil(o.UpfAddr) {
+	if !isNil(o.UpfAddr) {
 		toSerialize["upfAddr"] = o.UpfAddr
 	}
 	return toSerialize, nil

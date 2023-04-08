@@ -121,7 +121,7 @@ func (o *AccessTokenRsp) SetExpiresIn(v int32) {
 
 // GetScope returns the Scope field value if set, zero value otherwise.
 func (o *AccessTokenRsp) GetScope() string {
-	if o == nil || IsNil(o.Scope) {
+	if o == nil || isNil(o.Scope) {
 		var ret string
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *AccessTokenRsp) GetScope() string {
 // GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenRsp) GetScopeOk() (*string, bool) {
-	if o == nil || IsNil(o.Scope) {
+	if o == nil || isNil(o.Scope) {
 		return nil, false
 	}
 	return o.Scope, true
@@ -139,7 +139,7 @@ func (o *AccessTokenRsp) GetScopeOk() (*string, bool) {
 
 // HasScope returns a boolean if a field has been set.
 func (o *AccessTokenRsp) HasScope() bool {
-	if o != nil && !IsNil(o.Scope) {
+	if o != nil && !isNil(o.Scope) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o AccessTokenRsp) ToMap() (map[string]interface{}, error) {
 	toSerialize["access_token"] = o.AccessToken
 	toSerialize["token_type"] = o.TokenType
 	toSerialize["expires_in"] = o.ExpiresIn
-	if !IsNil(o.Scope) {
+	if !isNil(o.Scope) {
 		toSerialize["scope"] = o.Scope
 	}
 	return toSerialize, nil

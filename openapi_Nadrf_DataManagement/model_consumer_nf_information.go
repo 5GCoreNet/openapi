@@ -18,7 +18,7 @@ import (
 // ConsumerNfInformation - Represents the analytics consumer NF Information.
 type ConsumerNfInformation struct {
 	OneOfAnyTypeAnyType *OneOfAnyTypeAnyType
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // OneOfAnyTypeAnyTypeAsConsumerNfInformation is a convenience function that returns OneOfAnyTypeAnyType wrapped in ConsumerNfInformation
@@ -29,9 +29,9 @@ func OneOfAnyTypeAnyTypeAsConsumerNfInformation(v *OneOfAnyTypeAnyType) Consumer
 }
 
 // interface{}AsConsumerNfInformation is a convenience function that returns interface{} wrapped in ConsumerNfInformation
-func Interface{}AsConsumerNfInformation(v *interface{}) ConsumerNfInformation {
+func InterfaceAsConsumerNfInformation(v *interface{}) ConsumerNfInformation {
 	return ConsumerNfInformation{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -53,23 +53,23 @@ func (dst *ConsumerNfInformation) UnmarshalJSON(data []byte) error {
 		dst.OneOfAnyTypeAnyType = nil
 	}
 
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.OneOfAnyTypeAnyType = nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(ConsumerNfInformation)")
 	} else if match == 1 {
@@ -85,8 +85,8 @@ func (src ConsumerNfInformation) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.OneOfAnyTypeAnyType)
 	}
 
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -101,8 +101,8 @@ func (obj *ConsumerNfInformation) GetActualInstance() (interface{}) {
 		return obj.OneOfAnyTypeAnyType
 	}
 
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

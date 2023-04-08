@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,6 +6,7 @@ api_default.go
 client.go
 configuration.go
 docs/Cause.md
+docs/CauseAnyOf.md
 docs/CheckAuthenticationReq.md
 docs/CheckAuthenticationRsp.md
 docs/DefaultApi.md
@@ -19,6 +19,7 @@ git_push.sh
 go.mod
 go.sum
 model_cause.go
+model_cause_any_of.go
 model_check_authentication_req.go
 model_check_authentication_rsp.go
 model_invalid_param.go

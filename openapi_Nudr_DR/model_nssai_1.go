@@ -51,7 +51,7 @@ func NewNssai1WithDefaults() *Nssai1 {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *Nssai1) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *Nssai1) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai1) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -69,7 +69,7 @@ func (o *Nssai1) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *Nssai1) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Nssai1) SetDefaultSingleNssais(v []Snssai) {
 
 // GetSingleNssais returns the SingleNssais field value if set, zero value otherwise.
 func (o *Nssai1) GetSingleNssais() []Snssai {
-	if o == nil || IsNil(o.SingleNssais) {
+	if o == nil || isNil(o.SingleNssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Nssai1) GetSingleNssais() []Snssai {
 // GetSingleNssaisOk returns a tuple with the SingleNssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai1) GetSingleNssaisOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.SingleNssais) {
+	if o == nil || isNil(o.SingleNssais) {
 		return nil, false
 	}
 	return o.SingleNssais, true
@@ -125,7 +125,7 @@ func (o *Nssai1) GetSingleNssaisOk() ([]Snssai, bool) {
 
 // HasSingleNssais returns a boolean if a field has been set.
 func (o *Nssai1) HasSingleNssais() bool {
-	if o != nil && !IsNil(o.SingleNssais) {
+	if o != nil && !isNil(o.SingleNssais) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *Nssai1) SetSingleNssais(v []Snssai) {
 
 // GetProvisioningTime returns the ProvisioningTime field value if set, zero value otherwise.
 func (o *Nssai1) GetProvisioningTime() time.Time {
-	if o == nil || IsNil(o.ProvisioningTime) {
+	if o == nil || isNil(o.ProvisioningTime) {
 		var ret time.Time
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *Nssai1) GetProvisioningTime() time.Time {
 // GetProvisioningTimeOk returns a tuple with the ProvisioningTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai1) GetProvisioningTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ProvisioningTime) {
+	if o == nil || isNil(o.ProvisioningTime) {
 		return nil, false
 	}
 	return o.ProvisioningTime, true
@@ -157,7 +157,7 @@ func (o *Nssai1) GetProvisioningTimeOk() (*time.Time, bool) {
 
 // HasProvisioningTime returns a boolean if a field has been set.
 func (o *Nssai1) HasProvisioningTime() bool {
-	if o != nil && !IsNil(o.ProvisioningTime) {
+	if o != nil && !isNil(o.ProvisioningTime) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *Nssai1) SetProvisioningTime(v time.Time) {
 
 // GetAdditionalSnssaiData returns the AdditionalSnssaiData field value if set, zero value otherwise.
 func (o *Nssai1) GetAdditionalSnssaiData() map[string]AdditionalSnssaiData1 {
-	if o == nil || IsNil(o.AdditionalSnssaiData) {
+	if o == nil || isNil(o.AdditionalSnssaiData) {
 		var ret map[string]AdditionalSnssaiData1
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *Nssai1) GetAdditionalSnssaiData() map[string]AdditionalSnssaiData1 {
 // GetAdditionalSnssaiDataOk returns a tuple with the AdditionalSnssaiData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai1) GetAdditionalSnssaiDataOk() (*map[string]AdditionalSnssaiData1, bool) {
-	if o == nil || IsNil(o.AdditionalSnssaiData) {
+	if o == nil || isNil(o.AdditionalSnssaiData) {
 		return nil, false
 	}
 	return o.AdditionalSnssaiData, true
@@ -189,7 +189,7 @@ func (o *Nssai1) GetAdditionalSnssaiDataOk() (*map[string]AdditionalSnssaiData1,
 
 // HasAdditionalSnssaiData returns a boolean if a field has been set.
 func (o *Nssai1) HasAdditionalSnssaiData() bool {
-	if o != nil && !IsNil(o.AdditionalSnssaiData) {
+	if o != nil && !isNil(o.AdditionalSnssaiData) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *Nssai1) SetAdditionalSnssaiData(v map[string]AdditionalSnssaiData1) {
 
 // GetSuppressNssrgInd returns the SuppressNssrgInd field value if set, zero value otherwise.
 func (o *Nssai1) GetSuppressNssrgInd() bool {
-	if o == nil || IsNil(o.SuppressNssrgInd) {
+	if o == nil || isNil(o.SuppressNssrgInd) {
 		var ret bool
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *Nssai1) GetSuppressNssrgInd() bool {
 // GetSuppressNssrgIndOk returns a tuple with the SuppressNssrgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Nssai1) GetSuppressNssrgIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SuppressNssrgInd) {
+	if o == nil || isNil(o.SuppressNssrgInd) {
 		return nil, false
 	}
 	return o.SuppressNssrgInd, true
@@ -221,7 +221,7 @@ func (o *Nssai1) GetSuppressNssrgIndOk() (*bool, bool) {
 
 // HasSuppressNssrgInd returns a boolean if a field has been set.
 func (o *Nssai1) HasSuppressNssrgInd() bool {
-	if o != nil && !IsNil(o.SuppressNssrgInd) {
+	if o != nil && !isNil(o.SuppressNssrgInd) {
 		return true
 	}
 
@@ -243,20 +243,20 @@ func (o Nssai1) MarshalJSON() ([]byte, error) {
 
 func (o Nssai1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["defaultSingleNssais"] = o.DefaultSingleNssais
-	if !IsNil(o.SingleNssais) {
+	if !isNil(o.SingleNssais) {
 		toSerialize["singleNssais"] = o.SingleNssais
 	}
-	if !IsNil(o.ProvisioningTime) {
+	if !isNil(o.ProvisioningTime) {
 		toSerialize["provisioningTime"] = o.ProvisioningTime
 	}
-	if !IsNil(o.AdditionalSnssaiData) {
+	if !isNil(o.AdditionalSnssaiData) {
 		toSerialize["additionalSnssaiData"] = o.AdditionalSnssaiData
 	}
-	if !IsNil(o.SuppressNssrgInd) {
+	if !isNil(o.SuppressNssrgInd) {
 		toSerialize["suppressNssrgInd"] = o.SuppressNssrgInd
 	}
 	return toSerialize, nil

@@ -93,8 +93,10 @@ Class | Method | HTTP request | Description
  - [AuthUpdateNotification](docs/AuthUpdateNotification.md)
  - [AuthorizationUeId](docs/AuthorizationUeId.md)
  - [InvalidCause](docs/InvalidCause.md)
+ - [InvalidCauseAnyOf](docs/InvalidCauseAnyOf.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
@@ -102,6 +104,7 @@ Class | Method | HTTP request | Description
  - [ServiceSpecificAuthorizationInfo](docs/ServiceSpecificAuthorizationInfo.md)
  - [ServiceSpecificAuthorizationRemoveData](docs/ServiceSpecificAuthorizationRemoveData.md)
  - [ServiceType](docs/ServiceType.md)
+ - [ServiceTypeAnyOf](docs/ServiceTypeAnyOf.md)
  - [Snssai](docs/Snssai.md)
 
 

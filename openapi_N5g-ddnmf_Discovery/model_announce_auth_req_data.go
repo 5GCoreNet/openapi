@@ -68,7 +68,7 @@ func (o *AnnounceAuthReqData) SetDiscType(v DiscoveryType) {
 
 // GetOpenDiscData returns the OpenDiscData field value if set, zero value otherwise.
 func (o *AnnounceAuthReqData) GetOpenDiscData() AnnounceDiscDataForOpen {
-	if o == nil || IsNil(o.OpenDiscData) {
+	if o == nil || isNil(o.OpenDiscData) {
 		var ret AnnounceDiscDataForOpen
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AnnounceAuthReqData) GetOpenDiscData() AnnounceDiscDataForOpen {
 // GetOpenDiscDataOk returns a tuple with the OpenDiscData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceAuthReqData) GetOpenDiscDataOk() (*AnnounceDiscDataForOpen, bool) {
-	if o == nil || IsNil(o.OpenDiscData) {
+	if o == nil || isNil(o.OpenDiscData) {
 		return nil, false
 	}
 	return o.OpenDiscData, true
@@ -86,7 +86,7 @@ func (o *AnnounceAuthReqData) GetOpenDiscDataOk() (*AnnounceDiscDataForOpen, boo
 
 // HasOpenDiscData returns a boolean if a field has been set.
 func (o *AnnounceAuthReqData) HasOpenDiscData() bool {
-	if o != nil && !IsNil(o.OpenDiscData) {
+	if o != nil && !isNil(o.OpenDiscData) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AnnounceAuthReqData) SetOpenDiscData(v AnnounceDiscDataForOpen) {
 
 // GetRestrictedDiscData returns the RestrictedDiscData field value if set, zero value otherwise.
 func (o *AnnounceAuthReqData) GetRestrictedDiscData() AnnounceDiscDataForRestricted {
-	if o == nil || IsNil(o.RestrictedDiscData) {
+	if o == nil || isNil(o.RestrictedDiscData) {
 		var ret AnnounceDiscDataForRestricted
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AnnounceAuthReqData) GetRestrictedDiscData() AnnounceDiscDataForRestric
 // GetRestrictedDiscDataOk returns a tuple with the RestrictedDiscData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceAuthReqData) GetRestrictedDiscDataOk() (*AnnounceDiscDataForRestricted, bool) {
-	if o == nil || IsNil(o.RestrictedDiscData) {
+	if o == nil || isNil(o.RestrictedDiscData) {
 		return nil, false
 	}
 	return o.RestrictedDiscData, true
@@ -118,7 +118,7 @@ func (o *AnnounceAuthReqData) GetRestrictedDiscDataOk() (*AnnounceDiscDataForRes
 
 // HasRestrictedDiscData returns a boolean if a field has been set.
 func (o *AnnounceAuthReqData) HasRestrictedDiscData() bool {
-	if o != nil && !IsNil(o.RestrictedDiscData) {
+	if o != nil && !isNil(o.RestrictedDiscData) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o AnnounceAuthReqData) MarshalJSON() ([]byte, error) {
 func (o AnnounceAuthReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
-	if !IsNil(o.OpenDiscData) {
+	if !isNil(o.OpenDiscData) {
 		toSerialize["openDiscData"] = o.OpenDiscData
 	}
-	if !IsNil(o.RestrictedDiscData) {
+	if !isNil(o.RestrictedDiscData) {
 		toSerialize["restrictedDiscData"] = o.RestrictedDiscData
 	}
 	return toSerialize, nil

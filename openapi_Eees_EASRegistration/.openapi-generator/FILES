@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -8,8 +7,10 @@ api_individual_eas_registration_document.go
 client.go
 configuration.go
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/CivicAddress.md
 docs/EASCategory.md
+docs/EASCategoryAnyOf.md
 docs/EASProfile.md
 docs/EASRegistration.md
 docs/EASRegistrationPatch.md
@@ -33,6 +34,7 @@ docs/Local3dPointUncertaintyEllipsoidAllOf.md
 docs/LocalOrigin.md
 docs/Ncgi.md
 docs/PermissionLevel.md
+docs/PermissionLevelAnyOf.md
 docs/PlmnId.md
 docs/PlmnId1.md
 docs/Point.md
@@ -54,6 +56,7 @@ docs/RouteToLocation.md
 docs/ScheduledCommunicationTime.md
 docs/ServiceArea.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/TopologicalServiceArea.md
 docs/UncertaintyEllipse.md
@@ -62,8 +65,10 @@ git_push.sh
 go.mod
 go.sum
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_civic_address.go
 model_eas_category.go
+model_eas_category_any_of.go
 model_eas_profile.go
 model_eas_registration.go
 model_eas_registration_patch.go
@@ -85,6 +90,7 @@ model_local3d_point_uncertainty_ellipsoid_all_of.go
 model_local_origin.go
 model_ncgi.go
 model_permission_level.go
+model_permission_level_any_of.go
 model_plmn_id.go
 model_plmn_id_1.go
 model_point.go
@@ -106,6 +112,7 @@ model_route_to_location.go
 model_scheduled_communication_time.go
 model_service_area.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_topological_service_area.go
 model_uncertainty_ellipse.go

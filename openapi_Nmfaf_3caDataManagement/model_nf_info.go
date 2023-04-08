@@ -41,7 +41,7 @@ func NewNfInfoWithDefaults() *NfInfo {
 
 // GetNfType returns the NfType field value if set, zero value otherwise.
 func (o *NfInfo) GetNfType() NFType {
-	if o == nil || IsNil(o.NfType) {
+	if o == nil || isNil(o.NfType) {
 		var ret NFType
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NfInfo) GetNfType() NFType {
 // GetNfTypeOk returns a tuple with the NfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfInfo) GetNfTypeOk() (*NFType, bool) {
-	if o == nil || IsNil(o.NfType) {
+	if o == nil || isNil(o.NfType) {
 		return nil, false
 	}
 	return o.NfType, true
@@ -59,7 +59,7 @@ func (o *NfInfo) GetNfTypeOk() (*NFType, bool) {
 
 // HasNfType returns a boolean if a field has been set.
 func (o *NfInfo) HasNfType() bool {
-	if o != nil && !IsNil(o.NfType) {
+	if o != nil && !isNil(o.NfType) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o NfInfo) MarshalJSON() ([]byte, error) {
 
 func (o NfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NfType) {
+	if !isNil(o.NfType) {
 		toSerialize["nfType"] = o.NfType
 	}
 	return toSerialize, nil

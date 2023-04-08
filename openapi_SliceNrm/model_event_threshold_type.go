@@ -44,7 +44,7 @@ func NewEventThresholdTypeWithDefaults() *EventThresholdType {
 
 // GetEventThresholdRSRP returns the EventThresholdRSRP field value if set, zero value otherwise.
 func (o *EventThresholdType) GetEventThresholdRSRP() EventThresholdTypeEventThresholdRSRP {
-	if o == nil || IsNil(o.EventThresholdRSRP) {
+	if o == nil || isNil(o.EventThresholdRSRP) {
 		var ret EventThresholdTypeEventThresholdRSRP
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EventThresholdType) GetEventThresholdRSRP() EventThresholdTypeEventThre
 // GetEventThresholdRSRPOk returns a tuple with the EventThresholdRSRP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdType) GetEventThresholdRSRPOk() (*EventThresholdTypeEventThresholdRSRP, bool) {
-	if o == nil || IsNil(o.EventThresholdRSRP) {
+	if o == nil || isNil(o.EventThresholdRSRP) {
 		return nil, false
 	}
 	return o.EventThresholdRSRP, true
@@ -62,7 +62,7 @@ func (o *EventThresholdType) GetEventThresholdRSRPOk() (*EventThresholdTypeEvent
 
 // HasEventThresholdRSRP returns a boolean if a field has been set.
 func (o *EventThresholdType) HasEventThresholdRSRP() bool {
-	if o != nil && !IsNil(o.EventThresholdRSRP) {
+	if o != nil && !isNil(o.EventThresholdRSRP) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EventThresholdType) SetEventThresholdRSRP(v EventThresholdTypeEventThre
 
 // GetEventThresholdRSRQ returns the EventThresholdRSRQ field value if set, zero value otherwise.
 func (o *EventThresholdType) GetEventThresholdRSRQ() EventThresholdTypeEventThresholdRSRQ {
-	if o == nil || IsNil(o.EventThresholdRSRQ) {
+	if o == nil || isNil(o.EventThresholdRSRQ) {
 		var ret EventThresholdTypeEventThresholdRSRQ
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EventThresholdType) GetEventThresholdRSRQ() EventThresholdTypeEventThre
 // GetEventThresholdRSRQOk returns a tuple with the EventThresholdRSRQ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdType) GetEventThresholdRSRQOk() (*EventThresholdTypeEventThresholdRSRQ, bool) {
-	if o == nil || IsNil(o.EventThresholdRSRQ) {
+	if o == nil || isNil(o.EventThresholdRSRQ) {
 		return nil, false
 	}
 	return o.EventThresholdRSRQ, true
@@ -94,7 +94,7 @@ func (o *EventThresholdType) GetEventThresholdRSRQOk() (*EventThresholdTypeEvent
 
 // HasEventThresholdRSRQ returns a boolean if a field has been set.
 func (o *EventThresholdType) HasEventThresholdRSRQ() bool {
-	if o != nil && !IsNil(o.EventThresholdRSRQ) {
+	if o != nil && !isNil(o.EventThresholdRSRQ) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EventThresholdType) SetEventThresholdRSRQ(v EventThresholdTypeEventThre
 
 // GetEventThreshold1F returns the EventThreshold1F field value if set, zero value otherwise.
 func (o *EventThresholdType) GetEventThreshold1F() EventThresholdTypeEventThreshold1F {
-	if o == nil || IsNil(o.EventThreshold1F) {
+	if o == nil || isNil(o.EventThreshold1F) {
 		var ret EventThresholdTypeEventThreshold1F
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EventThresholdType) GetEventThreshold1F() EventThresholdTypeEventThresh
 // GetEventThreshold1FOk returns a tuple with the EventThreshold1F field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdType) GetEventThreshold1FOk() (*EventThresholdTypeEventThreshold1F, bool) {
-	if o == nil || IsNil(o.EventThreshold1F) {
+	if o == nil || isNil(o.EventThreshold1F) {
 		return nil, false
 	}
 	return o.EventThreshold1F, true
@@ -126,7 +126,7 @@ func (o *EventThresholdType) GetEventThreshold1FOk() (*EventThresholdTypeEventTh
 
 // HasEventThreshold1F returns a boolean if a field has been set.
 func (o *EventThresholdType) HasEventThreshold1F() bool {
-	if o != nil && !IsNil(o.EventThreshold1F) {
+	if o != nil && !isNil(o.EventThreshold1F) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EventThresholdType) SetEventThreshold1F(v EventThresholdTypeEventThresh
 
 // GetEventThreshold1I returns the EventThreshold1I field value if set, zero value otherwise.
 func (o *EventThresholdType) GetEventThreshold1I() int32 {
-	if o == nil || IsNil(o.EventThreshold1I) {
+	if o == nil || isNil(o.EventThreshold1I) {
 		var ret int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EventThresholdType) GetEventThreshold1I() int32 {
 // GetEventThreshold1IOk returns a tuple with the EventThreshold1I field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventThresholdType) GetEventThreshold1IOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventThreshold1I) {
+	if o == nil || isNil(o.EventThreshold1I) {
 		return nil, false
 	}
 	return o.EventThreshold1I, true
@@ -158,7 +158,7 @@ func (o *EventThresholdType) GetEventThreshold1IOk() (*int32, bool) {
 
 // HasEventThreshold1I returns a boolean if a field has been set.
 func (o *EventThresholdType) HasEventThreshold1I() bool {
-	if o != nil && !IsNil(o.EventThreshold1I) {
+	if o != nil && !isNil(o.EventThreshold1I) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o EventThresholdType) MarshalJSON() ([]byte, error) {
 
 func (o EventThresholdType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventThresholdRSRP) {
+	if !isNil(o.EventThresholdRSRP) {
 		toSerialize["EventThresholdRSRP"] = o.EventThresholdRSRP
 	}
-	if !IsNil(o.EventThresholdRSRQ) {
+	if !isNil(o.EventThresholdRSRQ) {
 		toSerialize["EventThresholdRSRQ"] = o.EventThresholdRSRQ
 	}
-	if !IsNil(o.EventThreshold1F) {
+	if !isNil(o.EventThreshold1F) {
 		toSerialize["EventThreshold1F"] = o.EventThreshold1F
 	}
-	if !IsNil(o.EventThreshold1I) {
+	if !isNil(o.EventThreshold1I) {
 		toSerialize["EventThreshold1I"] = o.EventThreshold1I
 	}
 	return toSerialize, nil

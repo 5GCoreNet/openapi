@@ -50,7 +50,7 @@ func NewNwdafInfoWithDefaults() *NwdafInfo {
 
 // GetEventIds returns the EventIds field value if set, zero value otherwise.
 func (o *NwdafInfo) GetEventIds() []EventId {
-	if o == nil || IsNil(o.EventIds) {
+	if o == nil || isNil(o.EventIds) {
 		var ret []EventId
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NwdafInfo) GetEventIds() []EventId {
 // GetEventIdsOk returns a tuple with the EventIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetEventIdsOk() ([]EventId, bool) {
-	if o == nil || IsNil(o.EventIds) {
+	if o == nil || isNil(o.EventIds) {
 		return nil, false
 	}
 	return o.EventIds, true
@@ -68,7 +68,7 @@ func (o *NwdafInfo) GetEventIdsOk() ([]EventId, bool) {
 
 // HasEventIds returns a boolean if a field has been set.
 func (o *NwdafInfo) HasEventIds() bool {
-	if o != nil && !IsNil(o.EventIds) {
+	if o != nil && !isNil(o.EventIds) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *NwdafInfo) SetEventIds(v []EventId) {
 
 // GetNwdafEvents returns the NwdafEvents field value if set, zero value otherwise.
 func (o *NwdafInfo) GetNwdafEvents() []NwdafEvent {
-	if o == nil || IsNil(o.NwdafEvents) {
+	if o == nil || isNil(o.NwdafEvents) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NwdafInfo) GetNwdafEvents() []NwdafEvent {
 // GetNwdafEventsOk returns a tuple with the NwdafEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetNwdafEventsOk() ([]NwdafEvent, bool) {
-	if o == nil || IsNil(o.NwdafEvents) {
+	if o == nil || isNil(o.NwdafEvents) {
 		return nil, false
 	}
 	return o.NwdafEvents, true
@@ -100,7 +100,7 @@ func (o *NwdafInfo) GetNwdafEventsOk() ([]NwdafEvent, bool) {
 
 // HasNwdafEvents returns a boolean if a field has been set.
 func (o *NwdafInfo) HasNwdafEvents() bool {
-	if o != nil && !IsNil(o.NwdafEvents) {
+	if o != nil && !isNil(o.NwdafEvents) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *NwdafInfo) SetNwdafEvents(v []NwdafEvent) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *NwdafInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *NwdafInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -132,7 +132,7 @@ func (o *NwdafInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *NwdafInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *NwdafInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *NwdafInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *NwdafInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -164,7 +164,7 @@ func (o *NwdafInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *NwdafInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *NwdafInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetNwdafCapability returns the NwdafCapability field value if set, zero value otherwise.
 func (o *NwdafInfo) GetNwdafCapability() NwdafCapability {
-	if o == nil || IsNil(o.NwdafCapability) {
+	if o == nil || isNil(o.NwdafCapability) {
 		var ret NwdafCapability
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *NwdafInfo) GetNwdafCapability() NwdafCapability {
 // GetNwdafCapabilityOk returns a tuple with the NwdafCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetNwdafCapabilityOk() (*NwdafCapability, bool) {
-	if o == nil || IsNil(o.NwdafCapability) {
+	if o == nil || isNil(o.NwdafCapability) {
 		return nil, false
 	}
 	return o.NwdafCapability, true
@@ -196,7 +196,7 @@ func (o *NwdafInfo) GetNwdafCapabilityOk() (*NwdafCapability, bool) {
 
 // HasNwdafCapability returns a boolean if a field has been set.
 func (o *NwdafInfo) HasNwdafCapability() bool {
-	if o != nil && !IsNil(o.NwdafCapability) {
+	if o != nil && !isNil(o.NwdafCapability) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *NwdafInfo) SetNwdafCapability(v NwdafCapability) {
 
 // GetAnalyticsDelay returns the AnalyticsDelay field value if set, zero value otherwise.
 func (o *NwdafInfo) GetAnalyticsDelay() int32 {
-	if o == nil || IsNil(o.AnalyticsDelay) {
+	if o == nil || isNil(o.AnalyticsDelay) {
 		var ret int32
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *NwdafInfo) GetAnalyticsDelay() int32 {
 // GetAnalyticsDelayOk returns a tuple with the AnalyticsDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetAnalyticsDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.AnalyticsDelay) {
+	if o == nil || isNil(o.AnalyticsDelay) {
 		return nil, false
 	}
 	return o.AnalyticsDelay, true
@@ -228,7 +228,7 @@ func (o *NwdafInfo) GetAnalyticsDelayOk() (*int32, bool) {
 
 // HasAnalyticsDelay returns a boolean if a field has been set.
 func (o *NwdafInfo) HasAnalyticsDelay() bool {
-	if o != nil && !IsNil(o.AnalyticsDelay) {
+	if o != nil && !isNil(o.AnalyticsDelay) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *NwdafInfo) SetAnalyticsDelay(v int32) {
 
 // GetServingNfSetIdList returns the ServingNfSetIdList field value if set, zero value otherwise.
 func (o *NwdafInfo) GetServingNfSetIdList() []string {
-	if o == nil || IsNil(o.ServingNfSetIdList) {
+	if o == nil || isNil(o.ServingNfSetIdList) {
 		var ret []string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *NwdafInfo) GetServingNfSetIdList() []string {
 // GetServingNfSetIdListOk returns a tuple with the ServingNfSetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetServingNfSetIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServingNfSetIdList) {
+	if o == nil || isNil(o.ServingNfSetIdList) {
 		return nil, false
 	}
 	return o.ServingNfSetIdList, true
@@ -260,7 +260,7 @@ func (o *NwdafInfo) GetServingNfSetIdListOk() ([]string, bool) {
 
 // HasServingNfSetIdList returns a boolean if a field has been set.
 func (o *NwdafInfo) HasServingNfSetIdList() bool {
-	if o != nil && !IsNil(o.ServingNfSetIdList) {
+	if o != nil && !isNil(o.ServingNfSetIdList) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *NwdafInfo) SetServingNfSetIdList(v []string) {
 
 // GetServingNfTypeList returns the ServingNfTypeList field value if set, zero value otherwise.
 func (o *NwdafInfo) GetServingNfTypeList() []NFType {
-	if o == nil || IsNil(o.ServingNfTypeList) {
+	if o == nil || isNil(o.ServingNfTypeList) {
 		var ret []NFType
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *NwdafInfo) GetServingNfTypeList() []NFType {
 // GetServingNfTypeListOk returns a tuple with the ServingNfTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetServingNfTypeListOk() ([]NFType, bool) {
-	if o == nil || IsNil(o.ServingNfTypeList) {
+	if o == nil || isNil(o.ServingNfTypeList) {
 		return nil, false
 	}
 	return o.ServingNfTypeList, true
@@ -292,7 +292,7 @@ func (o *NwdafInfo) GetServingNfTypeListOk() ([]NFType, bool) {
 
 // HasServingNfTypeList returns a boolean if a field has been set.
 func (o *NwdafInfo) HasServingNfTypeList() bool {
-	if o != nil && !IsNil(o.ServingNfTypeList) {
+	if o != nil && !isNil(o.ServingNfTypeList) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *NwdafInfo) SetServingNfTypeList(v []NFType) {
 
 // GetMlAnalyticsList returns the MlAnalyticsList field value if set, zero value otherwise.
 func (o *NwdafInfo) GetMlAnalyticsList() []MlAnalyticsInfo {
-	if o == nil || IsNil(o.MlAnalyticsList) {
+	if o == nil || isNil(o.MlAnalyticsList) {
 		var ret []MlAnalyticsInfo
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *NwdafInfo) GetMlAnalyticsList() []MlAnalyticsInfo {
 // GetMlAnalyticsListOk returns a tuple with the MlAnalyticsList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetMlAnalyticsListOk() ([]MlAnalyticsInfo, bool) {
-	if o == nil || IsNil(o.MlAnalyticsList) {
+	if o == nil || isNil(o.MlAnalyticsList) {
 		return nil, false
 	}
 	return o.MlAnalyticsList, true
@@ -324,7 +324,7 @@ func (o *NwdafInfo) GetMlAnalyticsListOk() ([]MlAnalyticsInfo, bool) {
 
 // HasMlAnalyticsList returns a boolean if a field has been set.
 func (o *NwdafInfo) HasMlAnalyticsList() bool {
-	if o != nil && !IsNil(o.MlAnalyticsList) {
+	if o != nil && !isNil(o.MlAnalyticsList) {
 		return true
 	}
 
@@ -346,31 +346,31 @@ func (o NwdafInfo) MarshalJSON() ([]byte, error) {
 
 func (o NwdafInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventIds) {
+	if !isNil(o.EventIds) {
 		toSerialize["eventIds"] = o.EventIds
 	}
-	if !IsNil(o.NwdafEvents) {
+	if !isNil(o.NwdafEvents) {
 		toSerialize["nwdafEvents"] = o.NwdafEvents
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.NwdafCapability) {
+	if !isNil(o.NwdafCapability) {
 		toSerialize["nwdafCapability"] = o.NwdafCapability
 	}
-	if !IsNil(o.AnalyticsDelay) {
+	if !isNil(o.AnalyticsDelay) {
 		toSerialize["analyticsDelay"] = o.AnalyticsDelay
 	}
-	if !IsNil(o.ServingNfSetIdList) {
+	if !isNil(o.ServingNfSetIdList) {
 		toSerialize["servingNfSetIdList"] = o.ServingNfSetIdList
 	}
-	if !IsNil(o.ServingNfTypeList) {
+	if !isNil(o.ServingNfTypeList) {
 		toSerialize["servingNfTypeList"] = o.ServingNfTypeList
 	}
-	if !IsNil(o.MlAnalyticsList) {
+	if !isNil(o.MlAnalyticsList) {
 		toSerialize["mlAnalyticsList"] = o.MlAnalyticsList
 	}
 	return toSerialize, nil

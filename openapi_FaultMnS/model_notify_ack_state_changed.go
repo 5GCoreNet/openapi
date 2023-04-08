@@ -12,7 +12,6 @@ package openapi_FaultMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyAckStateChanged type satisfies the MappedNullable interface at compile time
@@ -328,7 +327,7 @@ func (o *NotifyAckStateChanged) SetAckUserId(v string) {
 
 // GetAckSystemId returns the AckSystemId field value if set, zero value otherwise.
 func (o *NotifyAckStateChanged) GetAckSystemId() string {
-	if o == nil || IsNil(o.AckSystemId) {
+	if o == nil || isNil(o.AckSystemId) {
 		var ret string
 		return ret
 	}
@@ -338,7 +337,7 @@ func (o *NotifyAckStateChanged) GetAckSystemId() string {
 // GetAckSystemIdOk returns a tuple with the AckSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAckStateChanged) GetAckSystemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AckSystemId) {
+	if o == nil || isNil(o.AckSystemId) {
 		return nil, false
 	}
 	return o.AckSystemId, true
@@ -346,7 +345,7 @@ func (o *NotifyAckStateChanged) GetAckSystemIdOk() (*string, bool) {
 
 // HasAckSystemId returns a boolean if a field has been set.
 func (o *NotifyAckStateChanged) HasAckSystemId() bool {
-	if o != nil && !IsNil(o.AckSystemId) {
+	if o != nil && !isNil(o.AckSystemId) {
 		return true
 	}
 
@@ -379,7 +378,7 @@ func (o NotifyAckStateChanged) ToMap() (map[string]interface{}, error) {
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity
 	toSerialize["ackState"] = o.AckState
 	toSerialize["ackUserId"] = o.AckUserId
-	if !IsNil(o.AckSystemId) {
+	if !isNil(o.AckSystemId) {
 		toSerialize["ackSystemId"] = o.AckSystemId
 	}
 	return toSerialize, nil

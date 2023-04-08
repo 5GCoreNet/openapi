@@ -42,7 +42,7 @@ func NewN6ProtectionWithDefaults() *N6Protection {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *N6Protection) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *N6Protection) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N6Protection) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *N6Protection) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *N6Protection) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *N6Protection) SetServAttrCom(v ServAttrCom) {
 
 // GetSecFuncList returns the SecFuncList field value if set, zero value otherwise.
 func (o *N6Protection) GetSecFuncList() []SecFunc {
-	if o == nil || IsNil(o.SecFuncList) {
+	if o == nil || isNil(o.SecFuncList) {
 		var ret []SecFunc
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *N6Protection) GetSecFuncList() []SecFunc {
 // GetSecFuncListOk returns a tuple with the SecFuncList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N6Protection) GetSecFuncListOk() ([]SecFunc, bool) {
-	if o == nil || IsNil(o.SecFuncList) {
+	if o == nil || isNil(o.SecFuncList) {
 		return nil, false
 	}
 	return o.SecFuncList, true
@@ -92,7 +92,7 @@ func (o *N6Protection) GetSecFuncListOk() ([]SecFunc, bool) {
 
 // HasSecFuncList returns a boolean if a field has been set.
 func (o *N6Protection) HasSecFuncList() bool {
-	if o != nil && !IsNil(o.SecFuncList) {
+	if o != nil && !isNil(o.SecFuncList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o N6Protection) MarshalJSON() ([]byte, error) {
 
 func (o N6Protection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.SecFuncList) {
+	if !isNil(o.SecFuncList) {
 		toSerialize["secFuncList"] = o.SecFuncList
 	}
 	return toSerialize, nil

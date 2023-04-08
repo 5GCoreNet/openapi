@@ -60,7 +60,7 @@ func (o *MbsPolicyDecision) GetMbsPccRules() map[string]MbsPccRule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MbsPolicyDecision) GetMbsPccRulesOk() (*map[string]MbsPccRule, bool) {
-	if o == nil || IsNil(o.MbsPccRules) {
+	if o == nil || isNil(o.MbsPccRules) {
 		return nil, false
 	}
 	return &o.MbsPccRules, true
@@ -68,7 +68,7 @@ func (o *MbsPolicyDecision) GetMbsPccRulesOk() (*map[string]MbsPccRule, bool) {
 
 // HasMbsPccRules returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsPccRules() bool {
-	if o != nil && IsNil(o.MbsPccRules) {
+	if o != nil && isNil(o.MbsPccRules) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *MbsPolicyDecision) SetMbsPccRules(v map[string]MbsPccRule) {
 
 // GetMbsQosDecs returns the MbsQosDecs field value if set, zero value otherwise.
 func (o *MbsPolicyDecision) GetMbsQosDecs() map[string]MbsQosDec {
-	if o == nil || IsNil(o.MbsQosDecs) {
+	if o == nil || isNil(o.MbsQosDecs) {
 		var ret map[string]MbsQosDec
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *MbsPolicyDecision) GetMbsQosDecs() map[string]MbsQosDec {
 // GetMbsQosDecsOk returns a tuple with the MbsQosDecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyDecision) GetMbsQosDecsOk() (*map[string]MbsQosDec, bool) {
-	if o == nil || IsNil(o.MbsQosDecs) {
+	if o == nil || isNil(o.MbsQosDecs) {
 		return nil, false
 	}
 	return o.MbsQosDecs, true
@@ -100,7 +100,7 @@ func (o *MbsPolicyDecision) GetMbsQosDecsOk() (*map[string]MbsQosDec, bool) {
 
 // HasMbsQosDecs returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsQosDecs() bool {
-	if o != nil && !IsNil(o.MbsQosDecs) {
+	if o != nil && !isNil(o.MbsQosDecs) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *MbsPolicyDecision) SetMbsQosDecs(v map[string]MbsQosDec) {
 
 // GetMbsQosChars returns the MbsQosChars field value if set, zero value otherwise.
 func (o *MbsPolicyDecision) GetMbsQosChars() map[string]MbsQosChar {
-	if o == nil || IsNil(o.MbsQosChars) {
+	if o == nil || isNil(o.MbsQosChars) {
 		var ret map[string]MbsQosChar
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *MbsPolicyDecision) GetMbsQosChars() map[string]MbsQosChar {
 // GetMbsQosCharsOk returns a tuple with the MbsQosChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyDecision) GetMbsQosCharsOk() (*map[string]MbsQosChar, bool) {
-	if o == nil || IsNil(o.MbsQosChars) {
+	if o == nil || isNil(o.MbsQosChars) {
 		return nil, false
 	}
 	return o.MbsQosChars, true
@@ -132,7 +132,7 @@ func (o *MbsPolicyDecision) GetMbsQosCharsOk() (*map[string]MbsQosChar, bool) {
 
 // HasMbsQosChars returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsQosChars() bool {
-	if o != nil && !IsNil(o.MbsQosChars) {
+	if o != nil && !isNil(o.MbsQosChars) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *MbsPolicyDecision) SetMbsQosChars(v map[string]MbsQosChar) {
 
 // GetAuthMbsSessAmbr returns the AuthMbsSessAmbr field value if set, zero value otherwise.
 func (o *MbsPolicyDecision) GetAuthMbsSessAmbr() string {
-	if o == nil || IsNil(o.AuthMbsSessAmbr) {
+	if o == nil || isNil(o.AuthMbsSessAmbr) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *MbsPolicyDecision) GetAuthMbsSessAmbr() string {
 // GetAuthMbsSessAmbrOk returns a tuple with the AuthMbsSessAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyDecision) GetAuthMbsSessAmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthMbsSessAmbr) {
+	if o == nil || isNil(o.AuthMbsSessAmbr) {
 		return nil, false
 	}
 	return o.AuthMbsSessAmbr, true
@@ -164,7 +164,7 @@ func (o *MbsPolicyDecision) GetAuthMbsSessAmbrOk() (*string, bool) {
 
 // HasAuthMbsSessAmbr returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasAuthMbsSessAmbr() bool {
-	if o != nil && !IsNil(o.AuthMbsSessAmbr) {
+	if o != nil && !isNil(o.AuthMbsSessAmbr) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *MbsPolicyDecision) GetMbsPcrts() []MbsPcrt {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MbsPolicyDecision) GetMbsPcrtsOk() ([]MbsPcrt, bool) {
-	if o == nil || IsNil(o.MbsPcrts) {
+	if o == nil || isNil(o.MbsPcrts) {
 		return nil, false
 	}
 	return o.MbsPcrts, true
@@ -197,7 +197,7 @@ func (o *MbsPolicyDecision) GetMbsPcrtsOk() ([]MbsPcrt, bool) {
 
 // HasMbsPcrts returns a boolean if a field has been set.
 func (o *MbsPolicyDecision) HasMbsPcrts() bool {
-	if o != nil && IsNil(o.MbsPcrts) {
+	if o != nil && isNil(o.MbsPcrts) {
 		return true
 	}
 
@@ -222,13 +222,13 @@ func (o MbsPolicyDecision) ToMap() (map[string]interface{}, error) {
 	if o.MbsPccRules != nil {
 		toSerialize["mbsPccRules"] = o.MbsPccRules
 	}
-	if !IsNil(o.MbsQosDecs) {
+	if !isNil(o.MbsQosDecs) {
 		toSerialize["mbsQosDecs"] = o.MbsQosDecs
 	}
-	if !IsNil(o.MbsQosChars) {
+	if !isNil(o.MbsQosChars) {
 		toSerialize["mbsQosChars"] = o.MbsQosChars
 	}
-	if !IsNil(o.AuthMbsSessAmbr) {
+	if !isNil(o.AuthMbsSessAmbr) {
 		toSerialize["authMbsSessAmbr"] = o.AuthMbsSessAmbr
 	}
 	if o.MbsPcrts != nil {

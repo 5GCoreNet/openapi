@@ -12,18 +12,19 @@ package openapi_Ndccf_DataManagement
 
 import (
 	"encoding/json"
+	"time"
 	"fmt"
 )
 
 // NdccfAnalyticsSubscriptionNotification - Represents a notification for a DCCF analytics subscription.
 type NdccfAnalyticsSubscriptionNotification struct {
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // interface{}AsNdccfAnalyticsSubscriptionNotification is a convenience function that returns interface{} wrapped in NdccfAnalyticsSubscriptionNotification
-func Interface{}AsNdccfAnalyticsSubscriptionNotification(v *interface{}) NdccfAnalyticsSubscriptionNotification {
+func InterfaceAsNdccfAnalyticsSubscriptionNotification(v *interface{}) NdccfAnalyticsSubscriptionNotification {
 	return NdccfAnalyticsSubscriptionNotification{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -32,22 +33,22 @@ func Interface{}AsNdccfAnalyticsSubscriptionNotification(v *interface{}) NdccfAn
 func (dst *NdccfAnalyticsSubscriptionNotification) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(NdccfAnalyticsSubscriptionNotification)")
 	} else if match == 1 {
@@ -59,8 +60,8 @@ func (dst *NdccfAnalyticsSubscriptionNotification) UnmarshalJSON(data []byte) er
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src NdccfAnalyticsSubscriptionNotification) MarshalJSON() ([]byte, error) {
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -71,8 +72,8 @@ func (obj *NdccfAnalyticsSubscriptionNotification) GetActualInstance() (interfac
 	if obj == nil {
 		return nil
 	}
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

@@ -74,7 +74,7 @@ func (o *EnableUeReachabilityReqData) SetReachability(v UeReachability) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EnableUeReachabilityReqData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EnableUeReachabilityReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableUeReachabilityReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -92,7 +92,7 @@ func (o *EnableUeReachabilityReqData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EnableUeReachabilityReqData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *EnableUeReachabilityReqData) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *EnableUeReachabilityReqData) GetOldGuami() Guami {
-	if o == nil || IsNil(o.OldGuami) {
+	if o == nil || isNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *EnableUeReachabilityReqData) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableUeReachabilityReqData) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.OldGuami) {
+	if o == nil || isNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -124,7 +124,7 @@ func (o *EnableUeReachabilityReqData) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *EnableUeReachabilityReqData) HasOldGuami() bool {
-	if o != nil && !IsNil(o.OldGuami) {
+	if o != nil && !isNil(o.OldGuami) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *EnableUeReachabilityReqData) SetOldGuami(v Guami) {
 
 // GetExtBufSupport returns the ExtBufSupport field value if set, zero value otherwise.
 func (o *EnableUeReachabilityReqData) GetExtBufSupport() bool {
-	if o == nil || IsNil(o.ExtBufSupport) {
+	if o == nil || isNil(o.ExtBufSupport) {
 		var ret bool
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *EnableUeReachabilityReqData) GetExtBufSupport() bool {
 // GetExtBufSupportOk returns a tuple with the ExtBufSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableUeReachabilityReqData) GetExtBufSupportOk() (*bool, bool) {
-	if o == nil || IsNil(o.ExtBufSupport) {
+	if o == nil || isNil(o.ExtBufSupport) {
 		return nil, false
 	}
 	return o.ExtBufSupport, true
@@ -156,7 +156,7 @@ func (o *EnableUeReachabilityReqData) GetExtBufSupportOk() (*bool, bool) {
 
 // HasExtBufSupport returns a boolean if a field has been set.
 func (o *EnableUeReachabilityReqData) HasExtBufSupport() bool {
-	if o != nil && !IsNil(o.ExtBufSupport) {
+	if o != nil && !isNil(o.ExtBufSupport) {
 		return true
 	}
 
@@ -179,13 +179,13 @@ func (o EnableUeReachabilityReqData) MarshalJSON() ([]byte, error) {
 func (o EnableUeReachabilityReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reachability"] = o.Reachability
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.OldGuami) {
+	if !isNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
-	if !IsNil(o.ExtBufSupport) {
+	if !isNil(o.ExtBufSupport) {
 		toSerialize["extBufSupport"] = o.ExtBufSupport
 	}
 	return toSerialize, nil

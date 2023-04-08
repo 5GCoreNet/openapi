@@ -70,7 +70,7 @@ func (o *MoExpDataCounter) SetCounter(v int32) {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *MoExpDataCounter) GetTimeStamp() time.Time {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *MoExpDataCounter) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoExpDataCounter) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -88,7 +88,7 @@ func (o *MoExpDataCounter) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *MoExpDataCounter) HasTimeStamp() bool {
-	if o != nil && !IsNil(o.TimeStamp) {
+	if o != nil && !isNil(o.TimeStamp) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o MoExpDataCounter) MarshalJSON() ([]byte, error) {
 func (o MoExpDataCounter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["counter"] = o.Counter
-	if !IsNil(o.TimeStamp) {
+	if !isNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
 	return toSerialize, nil

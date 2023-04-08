@@ -69,7 +69,7 @@ func (o *DynamicGroupNotification) SetResourceUri(v string) {
 
 // GetJoinedUeIds returns the JoinedUeIds field value if set, zero value otherwise.
 func (o *DynamicGroupNotification) GetJoinedUeIds() []string {
-	if o == nil || IsNil(o.JoinedUeIds) {
+	if o == nil || isNil(o.JoinedUeIds) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *DynamicGroupNotification) GetJoinedUeIds() []string {
 // GetJoinedUeIdsOk returns a tuple with the JoinedUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicGroupNotification) GetJoinedUeIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.JoinedUeIds) {
+	if o == nil || isNil(o.JoinedUeIds) {
 		return nil, false
 	}
 	return o.JoinedUeIds, true
@@ -87,7 +87,7 @@ func (o *DynamicGroupNotification) GetJoinedUeIdsOk() ([]string, bool) {
 
 // HasJoinedUeIds returns a boolean if a field has been set.
 func (o *DynamicGroupNotification) HasJoinedUeIds() bool {
-	if o != nil && !IsNil(o.JoinedUeIds) {
+	if o != nil && !isNil(o.JoinedUeIds) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *DynamicGroupNotification) SetJoinedUeIds(v []string) {
 
 // GetLeftUeIds returns the LeftUeIds field value if set, zero value otherwise.
 func (o *DynamicGroupNotification) GetLeftUeIds() []string {
-	if o == nil || IsNil(o.LeftUeIds) {
+	if o == nil || isNil(o.LeftUeIds) {
 		var ret []string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *DynamicGroupNotification) GetLeftUeIds() []string {
 // GetLeftUeIdsOk returns a tuple with the LeftUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicGroupNotification) GetLeftUeIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.LeftUeIds) {
+	if o == nil || isNil(o.LeftUeIds) {
 		return nil, false
 	}
 	return o.LeftUeIds, true
@@ -119,7 +119,7 @@ func (o *DynamicGroupNotification) GetLeftUeIdsOk() ([]string, bool) {
 
 // HasLeftUeIds returns a boolean if a field has been set.
 func (o *DynamicGroupNotification) HasLeftUeIds() bool {
-	if o != nil && !IsNil(o.LeftUeIds) {
+	if o != nil && !isNil(o.LeftUeIds) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o DynamicGroupNotification) MarshalJSON() ([]byte, error) {
 func (o DynamicGroupNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourceUri"] = o.ResourceUri
-	if !IsNil(o.JoinedUeIds) {
+	if !isNil(o.JoinedUeIds) {
 		toSerialize["joinedUeIds"] = o.JoinedUeIds
 	}
-	if !IsNil(o.LeftUeIds) {
+	if !isNil(o.LeftUeIds) {
 		toSerialize["leftUeIds"] = o.LeftUeIds
 	}
 	return toSerialize, nil

@@ -85,7 +85,7 @@ func (o *EasDiscoverySubscription) SetEecId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *EasDiscoverySubscription) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -103,7 +103,7 @@ func (o *EasDiscoverySubscription) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *EasDiscoverySubscription) SetEasEventType(v EASDiscEventIDs) {
 
 // GetEasDiscoveryFilter returns the EasDiscoveryFilter field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetEasDiscoveryFilter() EasDiscoveryFilter {
-	if o == nil || IsNil(o.EasDiscoveryFilter) {
+	if o == nil || isNil(o.EasDiscoveryFilter) {
 		var ret EasDiscoveryFilter
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *EasDiscoverySubscription) GetEasDiscoveryFilter() EasDiscoveryFilter {
 // GetEasDiscoveryFilterOk returns a tuple with the EasDiscoveryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetEasDiscoveryFilterOk() (*EasDiscoveryFilter, bool) {
-	if o == nil || IsNil(o.EasDiscoveryFilter) {
+	if o == nil || isNil(o.EasDiscoveryFilter) {
 		return nil, false
 	}
 	return o.EasDiscoveryFilter, true
@@ -159,7 +159,7 @@ func (o *EasDiscoverySubscription) GetEasDiscoveryFilterOk() (*EasDiscoveryFilte
 
 // HasEasDiscoveryFilter returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasEasDiscoveryFilter() bool {
-	if o != nil && !IsNil(o.EasDiscoveryFilter) {
+	if o != nil && !isNil(o.EasDiscoveryFilter) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *EasDiscoverySubscription) SetEasDiscoveryFilter(v EasDiscoveryFilter) {
 
 // GetEasDynInfoFilter returns the EasDynInfoFilter field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetEasDynInfoFilter() EasDynamicInfoFilter {
-	if o == nil || IsNil(o.EasDynInfoFilter) {
+	if o == nil || isNil(o.EasDynInfoFilter) {
 		var ret EasDynamicInfoFilter
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *EasDiscoverySubscription) GetEasDynInfoFilter() EasDynamicInfoFilter {
 // GetEasDynInfoFilterOk returns a tuple with the EasDynInfoFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetEasDynInfoFilterOk() (*EasDynamicInfoFilter, bool) {
-	if o == nil || IsNil(o.EasDynInfoFilter) {
+	if o == nil || isNil(o.EasDynInfoFilter) {
 		return nil, false
 	}
 	return o.EasDynInfoFilter, true
@@ -191,7 +191,7 @@ func (o *EasDiscoverySubscription) GetEasDynInfoFilterOk() (*EasDynamicInfoFilte
 
 // HasEasDynInfoFilter returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasEasDynInfoFilter() bool {
-	if o != nil && !IsNil(o.EasDynInfoFilter) {
+	if o != nil && !isNil(o.EasDynInfoFilter) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *EasDiscoverySubscription) SetEasDynInfoFilter(v EasDynamicInfoFilter) {
 
 // GetEasSvcContinuity returns the EasSvcContinuity field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetEasSvcContinuity() []ACRScenario {
-	if o == nil || IsNil(o.EasSvcContinuity) {
+	if o == nil || isNil(o.EasSvcContinuity) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *EasDiscoverySubscription) GetEasSvcContinuity() []ACRScenario {
 // GetEasSvcContinuityOk returns a tuple with the EasSvcContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetEasSvcContinuityOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EasSvcContinuity) {
+	if o == nil || isNil(o.EasSvcContinuity) {
 		return nil, false
 	}
 	return o.EasSvcContinuity, true
@@ -223,7 +223,7 @@ func (o *EasDiscoverySubscription) GetEasSvcContinuityOk() ([]ACRScenario, bool)
 
 // HasEasSvcContinuity returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasEasSvcContinuity() bool {
-	if o != nil && !IsNil(o.EasSvcContinuity) {
+	if o != nil && !isNil(o.EasSvcContinuity) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *EasDiscoverySubscription) SetEasSvcContinuity(v []ACRScenario) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *EasDiscoverySubscription) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -255,7 +255,7 @@ func (o *EasDiscoverySubscription) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *EasDiscoverySubscription) SetExpTime(v time.Time) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *EasDiscoverySubscription) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -287,7 +287,7 @@ func (o *EasDiscoverySubscription) GetNotificationDestinationOk() (*string, bool
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *EasDiscoverySubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *EasDiscoverySubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -319,7 +319,7 @@ func (o *EasDiscoverySubscription) GetRequestTestNotificationOk() (*bool, bool) 
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -333,7 +333,7 @@ func (o *EasDiscoverySubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -343,7 +343,7 @@ func (o *EasDiscoverySubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -351,7 +351,7 @@ func (o *EasDiscoverySubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfi
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *EasDiscoverySubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *EasDiscoverySubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -375,7 +375,7 @@ func (o *EasDiscoverySubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -383,7 +383,7 @@ func (o *EasDiscoverySubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *EasDiscoverySubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -406,32 +406,32 @@ func (o EasDiscoverySubscription) MarshalJSON() ([]byte, error) {
 func (o EasDiscoverySubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
 	toSerialize["easEventType"] = o.EasEventType
-	if !IsNil(o.EasDiscoveryFilter) {
+	if !isNil(o.EasDiscoveryFilter) {
 		toSerialize["easDiscoveryFilter"] = o.EasDiscoveryFilter
 	}
-	if !IsNil(o.EasDynInfoFilter) {
+	if !isNil(o.EasDynInfoFilter) {
 		toSerialize["easDynInfoFilter"] = o.EasDynInfoFilter
 	}
-	if !IsNil(o.EasSvcContinuity) {
+	if !isNil(o.EasSvcContinuity) {
 		toSerialize["easSvcContinuity"] = o.EasSvcContinuity
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

@@ -67,7 +67,7 @@ func (o *AreaOfInterestEventState) SetPresence(v PresenceState) {
 
 // GetIndividualPraIdList returns the IndividualPraIdList field value if set, zero value otherwise.
 func (o *AreaOfInterestEventState) GetIndividualPraIdList() []string {
-	if o == nil || IsNil(o.IndividualPraIdList) {
+	if o == nil || isNil(o.IndividualPraIdList) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *AreaOfInterestEventState) GetIndividualPraIdList() []string {
 // GetIndividualPraIdListOk returns a tuple with the IndividualPraIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaOfInterestEventState) GetIndividualPraIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.IndividualPraIdList) {
+	if o == nil || isNil(o.IndividualPraIdList) {
 		return nil, false
 	}
 	return o.IndividualPraIdList, true
@@ -85,7 +85,7 @@ func (o *AreaOfInterestEventState) GetIndividualPraIdListOk() ([]string, bool) {
 
 // HasIndividualPraIdList returns a boolean if a field has been set.
 func (o *AreaOfInterestEventState) HasIndividualPraIdList() bool {
-	if o != nil && !IsNil(o.IndividualPraIdList) {
+	if o != nil && !isNil(o.IndividualPraIdList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o AreaOfInterestEventState) MarshalJSON() ([]byte, error) {
 func (o AreaOfInterestEventState) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["presence"] = o.Presence
-	if !IsNil(o.IndividualPraIdList) {
+	if !isNil(o.IndividualPraIdList) {
 		toSerialize["individualPraIdList"] = o.IndividualPraIdList
 	}
 	return toSerialize, nil

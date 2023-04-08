@@ -69,7 +69,7 @@ func (o *VarSnssai) SetSst(v int32) {
 
 // GetSd returns the Sd field value if set, zero value otherwise.
 func (o *VarSnssai) GetSd() string {
-	if o == nil || IsNil(o.Sd) {
+	if o == nil || isNil(o.Sd) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *VarSnssai) GetSd() string {
 // GetSdOk returns a tuple with the Sd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VarSnssai) GetSdOk() (*string, bool) {
-	if o == nil || IsNil(o.Sd) {
+	if o == nil || isNil(o.Sd) {
 		return nil, false
 	}
 	return o.Sd, true
@@ -87,7 +87,7 @@ func (o *VarSnssai) GetSdOk() (*string, bool) {
 
 // HasSd returns a boolean if a field has been set.
 func (o *VarSnssai) HasSd() bool {
-	if o != nil && !IsNil(o.Sd) {
+	if o != nil && !isNil(o.Sd) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o VarSnssai) MarshalJSON() ([]byte, error) {
 func (o VarSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sst"] = o.Sst
-	if !IsNil(o.Sd) {
+	if !isNil(o.Sd) {
 		toSerialize["sd"] = o.Sd
 	}
 	return toSerialize, nil

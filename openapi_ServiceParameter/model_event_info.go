@@ -41,7 +41,7 @@ func NewEventInfoWithDefaults() *EventInfo {
 
 // GetFailureCause returns the FailureCause field value if set, zero value otherwise.
 func (o *EventInfo) GetFailureCause() Failure {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		var ret Failure
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EventInfo) GetFailureCause() Failure {
 // GetFailureCauseOk returns a tuple with the FailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventInfo) GetFailureCauseOk() (*Failure, bool) {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		return nil, false
 	}
 	return o.FailureCause, true
@@ -59,7 +59,7 @@ func (o *EventInfo) GetFailureCauseOk() (*Failure, bool) {
 
 // HasFailureCause returns a boolean if a field has been set.
 func (o *EventInfo) HasFailureCause() bool {
-	if o != nil && !IsNil(o.FailureCause) {
+	if o != nil && !isNil(o.FailureCause) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o EventInfo) MarshalJSON() ([]byte, error) {
 
 func (o EventInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FailureCause) {
+	if !isNil(o.FailureCause) {
 		toSerialize["failureCause"] = o.FailureCause
 	}
 	return toSerialize, nil

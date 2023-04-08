@@ -97,7 +97,7 @@ func (o *PolicyUpdate) GetTriggers() []RequestTrigger {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetTriggersOk() ([]RequestTrigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -105,7 +105,7 @@ func (o *PolicyUpdate) GetTriggersOk() ([]RequestTrigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasTriggers() bool {
-	if o != nil && IsNil(o.Triggers) {
+	if o != nil && isNil(o.Triggers) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *PolicyUpdate) SetTriggers(v []RequestTrigger) {
 
 // GetServAreaRes returns the ServAreaRes field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetServAreaRes() ServiceAreaRestriction {
-	if o == nil || IsNil(o.ServAreaRes) {
+	if o == nil || isNil(o.ServAreaRes) {
 		var ret ServiceAreaRestriction
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PolicyUpdate) GetServAreaRes() ServiceAreaRestriction {
 // GetServAreaResOk returns a tuple with the ServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetServAreaResOk() (*ServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.ServAreaRes) {
+	if o == nil || isNil(o.ServAreaRes) {
 		return nil, false
 	}
 	return o.ServAreaRes, true
@@ -137,7 +137,7 @@ func (o *PolicyUpdate) GetServAreaResOk() (*ServiceAreaRestriction, bool) {
 
 // HasServAreaRes returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasServAreaRes() bool {
-	if o != nil && !IsNil(o.ServAreaRes) {
+	if o != nil && !isNil(o.ServAreaRes) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *PolicyUpdate) SetServAreaRes(v ServiceAreaRestriction) {
 
 // GetWlServAreaRes returns the WlServAreaRes field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetWlServAreaRes() WirelineServiceAreaRestriction {
-	if o == nil || IsNil(o.WlServAreaRes) {
+	if o == nil || isNil(o.WlServAreaRes) {
 		var ret WirelineServiceAreaRestriction
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *PolicyUpdate) GetWlServAreaRes() WirelineServiceAreaRestriction {
 // GetWlServAreaResOk returns a tuple with the WlServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetWlServAreaResOk() (*WirelineServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.WlServAreaRes) {
+	if o == nil || isNil(o.WlServAreaRes) {
 		return nil, false
 	}
 	return o.WlServAreaRes, true
@@ -169,7 +169,7 @@ func (o *PolicyUpdate) GetWlServAreaResOk() (*WirelineServiceAreaRestriction, bo
 
 // HasWlServAreaRes returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasWlServAreaRes() bool {
-	if o != nil && !IsNil(o.WlServAreaRes) {
+	if o != nil && !isNil(o.WlServAreaRes) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *PolicyUpdate) SetWlServAreaRes(v WirelineServiceAreaRestriction) {
 
 // GetRfsp returns the Rfsp field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetRfsp() int32 {
-	if o == nil || IsNil(o.Rfsp) {
+	if o == nil || isNil(o.Rfsp) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *PolicyUpdate) GetRfsp() int32 {
 // GetRfspOk returns a tuple with the Rfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetRfspOk() (*int32, bool) {
-	if o == nil || IsNil(o.Rfsp) {
+	if o == nil || isNil(o.Rfsp) {
 		return nil, false
 	}
 	return o.Rfsp, true
@@ -201,7 +201,7 @@ func (o *PolicyUpdate) GetRfspOk() (*int32, bool) {
 
 // HasRfsp returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasRfsp() bool {
-	if o != nil && !IsNil(o.Rfsp) {
+	if o != nil && !isNil(o.Rfsp) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *PolicyUpdate) SetRfsp(v int32) {
 
 // GetTargetRfsp returns the TargetRfsp field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetTargetRfsp() int32 {
-	if o == nil || IsNil(o.TargetRfsp) {
+	if o == nil || isNil(o.TargetRfsp) {
 		var ret int32
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *PolicyUpdate) GetTargetRfsp() int32 {
 // GetTargetRfspOk returns a tuple with the TargetRfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetTargetRfspOk() (*int32, bool) {
-	if o == nil || IsNil(o.TargetRfsp) {
+	if o == nil || isNil(o.TargetRfsp) {
 		return nil, false
 	}
 	return o.TargetRfsp, true
@@ -233,7 +233,7 @@ func (o *PolicyUpdate) GetTargetRfspOk() (*int32, bool) {
 
 // HasTargetRfsp returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasTargetRfsp() bool {
-	if o != nil && !IsNil(o.TargetRfsp) {
+	if o != nil && !isNil(o.TargetRfsp) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *PolicyUpdate) SetTargetRfsp(v int32) {
 
 // GetSmfSelInfo returns the SmfSelInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyUpdate) GetSmfSelInfo() SmfSelectionData {
-	if o == nil || IsNil(o.SmfSelInfo.Get()) {
+	if o == nil || isNil(o.SmfSelInfo.Get()) {
 		var ret SmfSelectionData
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *PolicyUpdate) UnsetSmfSelInfo() {
 
 // GetUeAmbr returns the UeAmbr field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetUeAmbr() Ambr {
-	if o == nil || IsNil(o.UeAmbr) {
+	if o == nil || isNil(o.UeAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *PolicyUpdate) GetUeAmbr() Ambr {
 // GetUeAmbrOk returns a tuple with the UeAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetUeAmbrOk() (*Ambr, bool) {
-	if o == nil || IsNil(o.UeAmbr) {
+	if o == nil || isNil(o.UeAmbr) {
 		return nil, false
 	}
 	return o.UeAmbr, true
@@ -307,7 +307,7 @@ func (o *PolicyUpdate) GetUeAmbrOk() (*Ambr, bool) {
 
 // HasUeAmbr returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasUeAmbr() bool {
-	if o != nil && !IsNil(o.UeAmbr) {
+	if o != nil && !isNil(o.UeAmbr) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *PolicyUpdate) SetUeAmbr(v Ambr) {
 
 // GetUeSliceMbrs returns the UeSliceMbrs field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetUeSliceMbrs() []UeSliceMbr {
-	if o == nil || IsNil(o.UeSliceMbrs) {
+	if o == nil || isNil(o.UeSliceMbrs) {
 		var ret []UeSliceMbr
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *PolicyUpdate) GetUeSliceMbrs() []UeSliceMbr {
 // GetUeSliceMbrsOk returns a tuple with the UeSliceMbrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
-	if o == nil || IsNil(o.UeSliceMbrs) {
+	if o == nil || isNil(o.UeSliceMbrs) {
 		return nil, false
 	}
 	return o.UeSliceMbrs, true
@@ -339,7 +339,7 @@ func (o *PolicyUpdate) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
 
 // HasUeSliceMbrs returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasUeSliceMbrs() bool {
-	if o != nil && !IsNil(o.UeSliceMbrs) {
+	if o != nil && !isNil(o.UeSliceMbrs) {
 		return true
 	}
 
@@ -364,7 +364,7 @@ func (o *PolicyUpdate) GetPras() map[string]PresenceInfoRm {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetPrasOk() (*map[string]PresenceInfoRm, bool) {
-	if o == nil || IsNil(o.Pras) {
+	if o == nil || isNil(o.Pras) {
 		return nil, false
 	}
 	return &o.Pras, true
@@ -372,7 +372,7 @@ func (o *PolicyUpdate) GetPrasOk() (*map[string]PresenceInfoRm, bool) {
 
 // HasPras returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasPras() bool {
-	if o != nil && IsNil(o.Pras) {
+	if o != nil && isNil(o.Pras) {
 		return true
 	}
 
@@ -386,7 +386,7 @@ func (o *PolicyUpdate) SetPras(v map[string]PresenceInfoRm) {
 
 // GetPcfUeInfo returns the PcfUeInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyUpdate) GetPcfUeInfo() PcfUeCallbackInfo {
-	if o == nil || IsNil(o.PcfUeInfo.Get()) {
+	if o == nil || isNil(o.PcfUeInfo.Get()) {
 		var ret PcfUeCallbackInfo
 		return ret
 	}
@@ -439,7 +439,7 @@ func (o *PolicyUpdate) GetMatchPdus() []PduSessionInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetMatchPdusOk() ([]PduSessionInfo, bool) {
-	if o == nil || IsNil(o.MatchPdus) {
+	if o == nil || isNil(o.MatchPdus) {
 		return nil, false
 	}
 	return o.MatchPdus, true
@@ -447,7 +447,7 @@ func (o *PolicyUpdate) GetMatchPdusOk() ([]PduSessionInfo, bool) {
 
 // HasMatchPdus returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasMatchPdus() bool {
-	if o != nil && IsNil(o.MatchPdus) {
+	if o != nil && isNil(o.MatchPdus) {
 		return true
 	}
 
@@ -461,7 +461,7 @@ func (o *PolicyUpdate) SetMatchPdus(v []PduSessionInfo) {
 
 // GetAsTimeDisParam returns the AsTimeDisParam field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyUpdate) GetAsTimeDisParam() AsTimeDistributionParam {
-	if o == nil || IsNil(o.AsTimeDisParam.Get()) {
+	if o == nil || isNil(o.AsTimeDisParam.Get()) {
 		var ret AsTimeDistributionParam
 		return ret
 	}
@@ -503,7 +503,7 @@ func (o *PolicyUpdate) UnsetAsTimeDisParam() {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *PolicyUpdate) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -521,7 +521,7 @@ func (o *PolicyUpdate) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -547,25 +547,25 @@ func (o PolicyUpdate) ToMap() (map[string]interface{}, error) {
 	if o.Triggers != nil {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.ServAreaRes) {
+	if !isNil(o.ServAreaRes) {
 		toSerialize["servAreaRes"] = o.ServAreaRes
 	}
-	if !IsNil(o.WlServAreaRes) {
+	if !isNil(o.WlServAreaRes) {
 		toSerialize["wlServAreaRes"] = o.WlServAreaRes
 	}
-	if !IsNil(o.Rfsp) {
+	if !isNil(o.Rfsp) {
 		toSerialize["rfsp"] = o.Rfsp
 	}
-	if !IsNil(o.TargetRfsp) {
+	if !isNil(o.TargetRfsp) {
 		toSerialize["targetRfsp"] = o.TargetRfsp
 	}
 	if o.SmfSelInfo.IsSet() {
 		toSerialize["smfSelInfo"] = o.SmfSelInfo.Get()
 	}
-	if !IsNil(o.UeAmbr) {
+	if !isNil(o.UeAmbr) {
 		toSerialize["ueAmbr"] = o.UeAmbr
 	}
-	if !IsNil(o.UeSliceMbrs) {
+	if !isNil(o.UeSliceMbrs) {
 		toSerialize["ueSliceMbrs"] = o.UeSliceMbrs
 	}
 	if o.Pras != nil {
@@ -580,7 +580,7 @@ func (o PolicyUpdate) ToMap() (map[string]interface{}, error) {
 	if o.AsTimeDisParam.IsSet() {
 		toSerialize["asTimeDisParam"] = o.AsTimeDisParam.Get()
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

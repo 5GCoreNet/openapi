@@ -47,7 +47,7 @@ func NewUePolicySetPatchWithDefaults() *UePolicySetPatch {
 
 // GetUePolicySections returns the UePolicySections field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetUePolicySections() map[string]UePolicySection {
-	if o == nil || IsNil(o.UePolicySections) {
+	if o == nil || isNil(o.UePolicySections) {
 		var ret map[string]UePolicySection
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *UePolicySetPatch) GetUePolicySections() map[string]UePolicySection {
 // GetUePolicySectionsOk returns a tuple with the UePolicySections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetUePolicySectionsOk() (*map[string]UePolicySection, bool) {
-	if o == nil || IsNil(o.UePolicySections) {
+	if o == nil || isNil(o.UePolicySections) {
 		return nil, false
 	}
 	return o.UePolicySections, true
@@ -65,7 +65,7 @@ func (o *UePolicySetPatch) GetUePolicySectionsOk() (*map[string]UePolicySection,
 
 // HasUePolicySections returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasUePolicySections() bool {
-	if o != nil && !IsNil(o.UePolicySections) {
+	if o != nil && !isNil(o.UePolicySections) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *UePolicySetPatch) SetUePolicySections(v map[string]UePolicySection) {
 
 // GetUpsis returns the Upsis field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetUpsis() []string {
-	if o == nil || IsNil(o.Upsis) {
+	if o == nil || isNil(o.Upsis) {
 		var ret []string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *UePolicySetPatch) GetUpsis() []string {
 // GetUpsisOk returns a tuple with the Upsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetUpsisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Upsis) {
+	if o == nil || isNil(o.Upsis) {
 		return nil, false
 	}
 	return o.Upsis, true
@@ -97,7 +97,7 @@ func (o *UePolicySetPatch) GetUpsisOk() ([]string, bool) {
 
 // HasUpsis returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasUpsis() bool {
-	if o != nil && !IsNil(o.Upsis) {
+	if o != nil && !isNil(o.Upsis) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *UePolicySetPatch) SetUpsis(v []string) {
 
 // GetAndspInd returns the AndspInd field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetAndspInd() bool {
-	if o == nil || IsNil(o.AndspInd) {
+	if o == nil || isNil(o.AndspInd) {
 		var ret bool
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *UePolicySetPatch) GetAndspInd() bool {
 // GetAndspIndOk returns a tuple with the AndspInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetAndspIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AndspInd) {
+	if o == nil || isNil(o.AndspInd) {
 		return nil, false
 	}
 	return o.AndspInd, true
@@ -129,7 +129,7 @@ func (o *UePolicySetPatch) GetAndspIndOk() (*bool, bool) {
 
 // HasAndspInd returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasAndspInd() bool {
-	if o != nil && !IsNil(o.AndspInd) {
+	if o != nil && !isNil(o.AndspInd) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *UePolicySetPatch) SetAndspInd(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *UePolicySetPatch) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -161,7 +161,7 @@ func (o *UePolicySetPatch) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *UePolicySetPatch) SetPei(v string) {
 
 // GetOsIds returns the OsIds field value if set, zero value otherwise.
 func (o *UePolicySetPatch) GetOsIds() []string {
-	if o == nil || IsNil(o.OsIds) {
+	if o == nil || isNil(o.OsIds) {
 		var ret []string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *UePolicySetPatch) GetOsIds() []string {
 // GetOsIdsOk returns a tuple with the OsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySetPatch) GetOsIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.OsIds) {
+	if o == nil || isNil(o.OsIds) {
 		return nil, false
 	}
 	return o.OsIds, true
@@ -193,7 +193,7 @@ func (o *UePolicySetPatch) GetOsIdsOk() ([]string, bool) {
 
 // HasOsIds returns a boolean if a field has been set.
 func (o *UePolicySetPatch) HasOsIds() bool {
-	if o != nil && !IsNil(o.OsIds) {
+	if o != nil && !isNil(o.OsIds) {
 		return true
 	}
 
@@ -215,19 +215,19 @@ func (o UePolicySetPatch) MarshalJSON() ([]byte, error) {
 
 func (o UePolicySetPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UePolicySections) {
+	if !isNil(o.UePolicySections) {
 		toSerialize["uePolicySections"] = o.UePolicySections
 	}
-	if !IsNil(o.Upsis) {
+	if !isNil(o.Upsis) {
 		toSerialize["upsis"] = o.Upsis
 	}
-	if !IsNil(o.AndspInd) {
+	if !isNil(o.AndspInd) {
 		toSerialize["andspInd"] = o.AndspInd
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.OsIds) {
+	if !isNil(o.OsIds) {
 		toSerialize["osIds"] = o.OsIds
 	}
 	return toSerialize, nil

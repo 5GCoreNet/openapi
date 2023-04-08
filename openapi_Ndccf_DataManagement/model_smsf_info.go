@@ -42,7 +42,7 @@ func NewSmsfInfoWithDefaults() *SmsfInfo {
 
 // GetRoamingUeInd returns the RoamingUeInd field value if set, zero value otherwise.
 func (o *SmsfInfo) GetRoamingUeInd() bool {
-	if o == nil || IsNil(o.RoamingUeInd) {
+	if o == nil || isNil(o.RoamingUeInd) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SmsfInfo) GetRoamingUeInd() bool {
 // GetRoamingUeIndOk returns a tuple with the RoamingUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfInfo) GetRoamingUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.RoamingUeInd) {
+	if o == nil || isNil(o.RoamingUeInd) {
 		return nil, false
 	}
 	return o.RoamingUeInd, true
@@ -60,7 +60,7 @@ func (o *SmsfInfo) GetRoamingUeIndOk() (*bool, bool) {
 
 // HasRoamingUeInd returns a boolean if a field has been set.
 func (o *SmsfInfo) HasRoamingUeInd() bool {
-	if o != nil && !IsNil(o.RoamingUeInd) {
+	if o != nil && !isNil(o.RoamingUeInd) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SmsfInfo) SetRoamingUeInd(v bool) {
 
 // GetRemotePlmnRangeList returns the RemotePlmnRangeList field value if set, zero value otherwise.
 func (o *SmsfInfo) GetRemotePlmnRangeList() []PlmnRange {
-	if o == nil || IsNil(o.RemotePlmnRangeList) {
+	if o == nil || isNil(o.RemotePlmnRangeList) {
 		var ret []PlmnRange
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SmsfInfo) GetRemotePlmnRangeList() []PlmnRange {
 // GetRemotePlmnRangeListOk returns a tuple with the RemotePlmnRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfInfo) GetRemotePlmnRangeListOk() ([]PlmnRange, bool) {
-	if o == nil || IsNil(o.RemotePlmnRangeList) {
+	if o == nil || isNil(o.RemotePlmnRangeList) {
 		return nil, false
 	}
 	return o.RemotePlmnRangeList, true
@@ -92,7 +92,7 @@ func (o *SmsfInfo) GetRemotePlmnRangeListOk() ([]PlmnRange, bool) {
 
 // HasRemotePlmnRangeList returns a boolean if a field has been set.
 func (o *SmsfInfo) HasRemotePlmnRangeList() bool {
-	if o != nil && !IsNil(o.RemotePlmnRangeList) {
+	if o != nil && !isNil(o.RemotePlmnRangeList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SmsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o SmsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RoamingUeInd) {
+	if !isNil(o.RoamingUeInd) {
 		toSerialize["roamingUeInd"] = o.RoamingUeInd
 	}
-	if !IsNil(o.RemotePlmnRangeList) {
+	if !isNil(o.RemotePlmnRangeList) {
 		toSerialize["remotePlmnRangeList"] = o.RemotePlmnRangeList
 	}
 	return toSerialize, nil

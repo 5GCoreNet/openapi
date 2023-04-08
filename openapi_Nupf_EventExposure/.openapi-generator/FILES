@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,9 +8,11 @@ configuration.go
 docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/EventType.md
+docs/EventTypeAnyOf.md
 docs/InvalidParam.md
 docs/Ipv6Prefix.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/NotificationData.md
 docs/NotificationItem.md
 docs/PlmnId.md
@@ -27,9 +28,11 @@ go.sum
 model_access_token_err.go
 model_access_token_req.go
 model_event_type.go
+model_event_type_any_of.go
 model_invalid_param.go
 model_ipv6_prefix.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_notification_data.go
 model_notification_item.go
 model_plmn_id.go

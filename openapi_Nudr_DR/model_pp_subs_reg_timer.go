@@ -124,7 +124,7 @@ func (o *PpSubsRegTimer) SetReferenceId(v int32) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *PpSubsRegTimer) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *PpSubsRegTimer) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpSubsRegTimer) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -142,7 +142,7 @@ func (o *PpSubsRegTimer) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *PpSubsRegTimer) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *PpSubsRegTimer) SetValidityTime(v time.Time) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *PpSubsRegTimer) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *PpSubsRegTimer) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpSubsRegTimer) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -174,7 +174,7 @@ func (o *PpSubsRegTimer) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *PpSubsRegTimer) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -199,10 +199,10 @@ func (o PpSubsRegTimer) ToMap() (map[string]interface{}, error) {
 	toSerialize["subsRegTimer"] = o.SubsRegTimer
 	toSerialize["afInstanceId"] = o.AfInstanceId
 	toSerialize["referenceId"] = o.ReferenceId
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil

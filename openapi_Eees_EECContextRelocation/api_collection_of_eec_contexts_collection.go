@@ -13,7 +13,7 @@ package openapi_Eees_EECContextRelocation
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -94,10 +94,10 @@ func (a *CollectionOfEECContextsCollectionApiService) PullEecContextsExecute(r A
 		return localVarReturnValue, nil, reportError("eecCntxId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ees-id", r.eesId, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "eec-cntx-id", r.eecCntxId, "")
+	parameterAddToQuery(localVarQueryParams, "ees-id", r.eesId, "")
+	parameterAddToQuery(localVarQueryParams, "eec-cntx-id", r.eecCntxId, "")
 	if r.sessCntxs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sess-cntxs", r.sessCntxs, "")
+		parameterAddToQuery(localVarQueryParams, "sess-cntxs", r.sessCntxs, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -126,9 +126,9 @@ func (a *CollectionOfEECContextsCollectionApiService) PullEecContextsExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -324,9 +324,9 @@ func (a *CollectionOfEECContextsCollectionApiService) PushEecContextsExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

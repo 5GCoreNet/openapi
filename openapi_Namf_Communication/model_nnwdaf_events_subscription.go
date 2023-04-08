@@ -78,7 +78,7 @@ func (o *NnwdafEventsSubscription) SetEventSubscriptions(v []EventSubscription) 
 
 // GetEvtReq returns the EvtReq field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetEvtReq() ReportingInformation {
-	if o == nil || IsNil(o.EvtReq) {
+	if o == nil || isNil(o.EvtReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *NnwdafEventsSubscription) GetEvtReq() ReportingInformation {
 // GetEvtReqOk returns a tuple with the EvtReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetEvtReqOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.EvtReq) {
+	if o == nil || isNil(o.EvtReq) {
 		return nil, false
 	}
 	return o.EvtReq, true
@@ -96,7 +96,7 @@ func (o *NnwdafEventsSubscription) GetEvtReqOk() (*ReportingInformation, bool) {
 
 // HasEvtReq returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasEvtReq() bool {
-	if o != nil && !IsNil(o.EvtReq) {
+	if o != nil && !isNil(o.EvtReq) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *NnwdafEventsSubscription) SetEvtReq(v ReportingInformation) {
 
 // GetNotificationURI returns the NotificationURI field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetNotificationURI() string {
-	if o == nil || IsNil(o.NotificationURI) {
+	if o == nil || isNil(o.NotificationURI) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *NnwdafEventsSubscription) GetNotificationURI() string {
 // GetNotificationURIOk returns a tuple with the NotificationURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetNotificationURIOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationURI) {
+	if o == nil || isNil(o.NotificationURI) {
 		return nil, false
 	}
 	return o.NotificationURI, true
@@ -128,7 +128,7 @@ func (o *NnwdafEventsSubscription) GetNotificationURIOk() (*string, bool) {
 
 // HasNotificationURI returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasNotificationURI() bool {
-	if o != nil && !IsNil(o.NotificationURI) {
+	if o != nil && !isNil(o.NotificationURI) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *NnwdafEventsSubscription) SetNotificationURI(v string) {
 
 // GetNotifCorrId returns the NotifCorrId field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetNotifCorrId() string {
-	if o == nil || IsNil(o.NotifCorrId) {
+	if o == nil || isNil(o.NotifCorrId) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *NnwdafEventsSubscription) GetNotifCorrId() string {
 // GetNotifCorrIdOk returns a tuple with the NotifCorrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetNotifCorrIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifCorrId) {
+	if o == nil || isNil(o.NotifCorrId) {
 		return nil, false
 	}
 	return o.NotifCorrId, true
@@ -160,7 +160,7 @@ func (o *NnwdafEventsSubscription) GetNotifCorrIdOk() (*string, bool) {
 
 // HasNotifCorrId returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasNotifCorrId() bool {
-	if o != nil && !IsNil(o.NotifCorrId) {
+	if o != nil && !isNil(o.NotifCorrId) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *NnwdafEventsSubscription) SetNotifCorrId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *NnwdafEventsSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -192,7 +192,7 @@ func (o *NnwdafEventsSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *NnwdafEventsSubscription) SetSupportedFeatures(v string) {
 
 // GetEventNotifications returns the EventNotifications field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetEventNotifications() []EventNotification {
-	if o == nil || IsNil(o.EventNotifications) {
+	if o == nil || isNil(o.EventNotifications) {
 		var ret []EventNotification
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *NnwdafEventsSubscription) GetEventNotifications() []EventNotification {
 // GetEventNotificationsOk returns a tuple with the EventNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetEventNotificationsOk() ([]EventNotification, bool) {
-	if o == nil || IsNil(o.EventNotifications) {
+	if o == nil || isNil(o.EventNotifications) {
 		return nil, false
 	}
 	return o.EventNotifications, true
@@ -224,7 +224,7 @@ func (o *NnwdafEventsSubscription) GetEventNotificationsOk() ([]EventNotificatio
 
 // HasEventNotifications returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasEventNotifications() bool {
-	if o != nil && !IsNil(o.EventNotifications) {
+	if o != nil && !isNil(o.EventNotifications) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *NnwdafEventsSubscription) SetEventNotifications(v []EventNotification) 
 
 // GetFailEventReports returns the FailEventReports field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetFailEventReports() []FailureEventInfo {
-	if o == nil || IsNil(o.FailEventReports) {
+	if o == nil || isNil(o.FailEventReports) {
 		var ret []FailureEventInfo
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *NnwdafEventsSubscription) GetFailEventReports() []FailureEventInfo {
 // GetFailEventReportsOk returns a tuple with the FailEventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetFailEventReportsOk() ([]FailureEventInfo, bool) {
-	if o == nil || IsNil(o.FailEventReports) {
+	if o == nil || isNil(o.FailEventReports) {
 		return nil, false
 	}
 	return o.FailEventReports, true
@@ -256,7 +256,7 @@ func (o *NnwdafEventsSubscription) GetFailEventReportsOk() ([]FailureEventInfo, 
 
 // HasFailEventReports returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasFailEventReports() bool {
-	if o != nil && !IsNil(o.FailEventReports) {
+	if o != nil && !isNil(o.FailEventReports) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *NnwdafEventsSubscription) SetFailEventReports(v []FailureEventInfo) {
 
 // GetPrevSub returns the PrevSub field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetPrevSub() PrevSubInfo {
-	if o == nil || IsNil(o.PrevSub) {
+	if o == nil || isNil(o.PrevSub) {
 		var ret PrevSubInfo
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *NnwdafEventsSubscription) GetPrevSub() PrevSubInfo {
 // GetPrevSubOk returns a tuple with the PrevSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetPrevSubOk() (*PrevSubInfo, bool) {
-	if o == nil || IsNil(o.PrevSub) {
+	if o == nil || isNil(o.PrevSub) {
 		return nil, false
 	}
 	return o.PrevSub, true
@@ -288,7 +288,7 @@ func (o *NnwdafEventsSubscription) GetPrevSubOk() (*PrevSubInfo, bool) {
 
 // HasPrevSub returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasPrevSub() bool {
-	if o != nil && !IsNil(o.PrevSub) {
+	if o != nil && !isNil(o.PrevSub) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *NnwdafEventsSubscription) SetPrevSub(v PrevSubInfo) {
 
 // GetConsNfInfo returns the ConsNfInfo field value if set, zero value otherwise.
 func (o *NnwdafEventsSubscription) GetConsNfInfo() ConsumerNfInformation {
-	if o == nil || IsNil(o.ConsNfInfo) {
+	if o == nil || isNil(o.ConsNfInfo) {
 		var ret ConsumerNfInformation
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *NnwdafEventsSubscription) GetConsNfInfo() ConsumerNfInformation {
 // GetConsNfInfoOk returns a tuple with the ConsNfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NnwdafEventsSubscription) GetConsNfInfoOk() (*ConsumerNfInformation, bool) {
-	if o == nil || IsNil(o.ConsNfInfo) {
+	if o == nil || isNil(o.ConsNfInfo) {
 		return nil, false
 	}
 	return o.ConsNfInfo, true
@@ -320,7 +320,7 @@ func (o *NnwdafEventsSubscription) GetConsNfInfoOk() (*ConsumerNfInformation, bo
 
 // HasConsNfInfo returns a boolean if a field has been set.
 func (o *NnwdafEventsSubscription) HasConsNfInfo() bool {
-	if o != nil && !IsNil(o.ConsNfInfo) {
+	if o != nil && !isNil(o.ConsNfInfo) {
 		return true
 	}
 
@@ -343,28 +343,28 @@ func (o NnwdafEventsSubscription) MarshalJSON() ([]byte, error) {
 func (o NnwdafEventsSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventSubscriptions"] = o.EventSubscriptions
-	if !IsNil(o.EvtReq) {
+	if !isNil(o.EvtReq) {
 		toSerialize["evtReq"] = o.EvtReq
 	}
-	if !IsNil(o.NotificationURI) {
+	if !isNil(o.NotificationURI) {
 		toSerialize["notificationURI"] = o.NotificationURI
 	}
-	if !IsNil(o.NotifCorrId) {
+	if !isNil(o.NotifCorrId) {
 		toSerialize["notifCorrId"] = o.NotifCorrId
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.EventNotifications) {
+	if !isNil(o.EventNotifications) {
 		toSerialize["eventNotifications"] = o.EventNotifications
 	}
-	if !IsNil(o.FailEventReports) {
+	if !isNil(o.FailEventReports) {
 		toSerialize["failEventReports"] = o.FailEventReports
 	}
-	if !IsNil(o.PrevSub) {
+	if !isNil(o.PrevSub) {
 		toSerialize["prevSub"] = o.PrevSub
 	}
-	if !IsNil(o.ConsNfInfo) {
+	if !isNil(o.ConsNfInfo) {
 		toSerialize["consNfInfo"] = o.ConsNfInfo
 	}
 	return toSerialize, nil

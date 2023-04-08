@@ -13,7 +13,7 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -120,25 +120,25 @@ func (a *PSLocationRetrievalApiService) GetLocPsDomainExecute(r ApiGetLocPsDomai
 	localVarFormParams := url.Values{}
 
 	if r.requestedNodes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requested-nodes", r.requestedNodes, "csv")
+		parameterAddToQuery(localVarQueryParams, "requested-nodes", r.requestedNodes, "csv")
 	}
 	if r.servingNode != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serving-node", r.servingNode, "")
+		parameterAddToQuery(localVarQueryParams, "serving-node", r.servingNode, "")
 	}
 	if r.localTime != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "local-time", r.localTime, "")
+		parameterAddToQuery(localVarQueryParams, "local-time", r.localTime, "")
 	}
 	if r.currentLocation != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "current-location", r.currentLocation, "")
+		parameterAddToQuery(localVarQueryParams, "current-location", r.currentLocation, "")
 	}
 	if r.ratType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rat-type", r.ratType, "")
+		parameterAddToQuery(localVarQueryParams, "rat-type", r.ratType, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.privateIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -167,9 +167,9 @@ func (a *PSLocationRetrievalApiService) GetLocPsDomainExecute(r ApiGetLocPsDomai
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

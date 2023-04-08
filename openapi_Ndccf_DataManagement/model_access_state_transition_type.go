@@ -17,23 +17,37 @@ import (
 
 // AccessStateTransitionType Access State Transition Type.
 type AccessStateTransitionType struct {
-	string *string
+	AccessStateTransitionTypeAnyOf *AccessStateTransitionTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessStateTransitionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AccessStateTransitionTypeAnyOf
+	err = json.Unmarshal(data, &dst.AccessStateTransitionTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAccessStateTransitionTypeAnyOf, _ := json.Marshal(dst.AccessStateTransitionTypeAnyOf)
+		if string(jsonAccessStateTransitionTypeAnyOf) == "{}" { // empty struct
+			dst.AccessStateTransitionTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AccessStateTransitionTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AccessStateTransitionTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AccessStateTransitionType)")
@@ -41,8 +55,12 @@ func (dst *AccessStateTransitionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessStateTransitionType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AccessStateTransitionTypeAnyOf != nil {
+		return json.Marshal(&src.AccessStateTransitionTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

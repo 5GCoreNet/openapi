@@ -42,7 +42,7 @@ func NewTimeIntervalTypeWithDefaults() *TimeIntervalType {
 
 // GetIntervalStart returns the IntervalStart field value if set, zero value otherwise.
 func (o *TimeIntervalType) GetIntervalStart() string {
-	if o == nil || IsNil(o.IntervalStart) {
+	if o == nil || isNil(o.IntervalStart) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TimeIntervalType) GetIntervalStart() string {
 // GetIntervalStartOk returns a tuple with the IntervalStart field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeIntervalType) GetIntervalStartOk() (*string, bool) {
-	if o == nil || IsNil(o.IntervalStart) {
+	if o == nil || isNil(o.IntervalStart) {
 		return nil, false
 	}
 	return o.IntervalStart, true
@@ -60,7 +60,7 @@ func (o *TimeIntervalType) GetIntervalStartOk() (*string, bool) {
 
 // HasIntervalStart returns a boolean if a field has been set.
 func (o *TimeIntervalType) HasIntervalStart() bool {
-	if o != nil && !IsNil(o.IntervalStart) {
+	if o != nil && !isNil(o.IntervalStart) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TimeIntervalType) SetIntervalStart(v string) {
 
 // GetIntervalEnd returns the IntervalEnd field value if set, zero value otherwise.
 func (o *TimeIntervalType) GetIntervalEnd() string {
-	if o == nil || IsNil(o.IntervalEnd) {
+	if o == nil || isNil(o.IntervalEnd) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TimeIntervalType) GetIntervalEnd() string {
 // GetIntervalEndOk returns a tuple with the IntervalEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeIntervalType) GetIntervalEndOk() (*string, bool) {
-	if o == nil || IsNil(o.IntervalEnd) {
+	if o == nil || isNil(o.IntervalEnd) {
 		return nil, false
 	}
 	return o.IntervalEnd, true
@@ -92,7 +92,7 @@ func (o *TimeIntervalType) GetIntervalEndOk() (*string, bool) {
 
 // HasIntervalEnd returns a boolean if a field has been set.
 func (o *TimeIntervalType) HasIntervalEnd() bool {
-	if o != nil && !IsNil(o.IntervalEnd) {
+	if o != nil && !isNil(o.IntervalEnd) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o TimeIntervalType) MarshalJSON() ([]byte, error) {
 
 func (o TimeIntervalType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IntervalStart) {
+	if !isNil(o.IntervalStart) {
 		toSerialize["intervalStart"] = o.IntervalStart
 	}
-	if !IsNil(o.IntervalEnd) {
+	if !isNil(o.IntervalEnd) {
 		toSerialize["intervalEnd"] = o.IntervalEnd
 	}
 	return toSerialize, nil

@@ -82,7 +82,7 @@ func (o *SessionManagementSubscriptionData) SetSingleNssai(v Snssai) {
 
 // GetDnnConfigurations returns the DnnConfigurations field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetDnnConfigurations() map[string]DnnConfiguration {
-	if o == nil || IsNil(o.DnnConfigurations) {
+	if o == nil || isNil(o.DnnConfigurations) {
 		var ret map[string]DnnConfiguration
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *SessionManagementSubscriptionData) GetDnnConfigurations() map[string]Dn
 // GetDnnConfigurationsOk returns a tuple with the DnnConfigurations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetDnnConfigurationsOk() (*map[string]DnnConfiguration, bool) {
-	if o == nil || IsNil(o.DnnConfigurations) {
+	if o == nil || isNil(o.DnnConfigurations) {
 		return nil, false
 	}
 	return o.DnnConfigurations, true
@@ -100,7 +100,7 @@ func (o *SessionManagementSubscriptionData) GetDnnConfigurationsOk() (*map[strin
 
 // HasDnnConfigurations returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasDnnConfigurations() bool {
-	if o != nil && !IsNil(o.DnnConfigurations) {
+	if o != nil && !isNil(o.DnnConfigurations) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *SessionManagementSubscriptionData) SetDnnConfigurations(v map[string]Dn
 
 // GetInternalGroupIds returns the InternalGroupIds field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetInternalGroupIds() []string {
-	if o == nil || IsNil(o.InternalGroupIds) {
+	if o == nil || isNil(o.InternalGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SessionManagementSubscriptionData) GetInternalGroupIds() []string {
 // GetInternalGroupIdsOk returns a tuple with the InternalGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetInternalGroupIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.InternalGroupIds) {
+	if o == nil || isNil(o.InternalGroupIds) {
 		return nil, false
 	}
 	return o.InternalGroupIds, true
@@ -132,7 +132,7 @@ func (o *SessionManagementSubscriptionData) GetInternalGroupIdsOk() ([]string, b
 
 // HasInternalGroupIds returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasInternalGroupIds() bool {
-	if o != nil && !IsNil(o.InternalGroupIds) {
+	if o != nil && !isNil(o.InternalGroupIds) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SessionManagementSubscriptionData) SetInternalGroupIds(v []string) {
 
 // GetSharedVnGroupDataIds returns the SharedVnGroupDataIds field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetSharedVnGroupDataIds() map[string]string {
-	if o == nil || IsNil(o.SharedVnGroupDataIds) {
+	if o == nil || isNil(o.SharedVnGroupDataIds) {
 		var ret map[string]string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SessionManagementSubscriptionData) GetSharedVnGroupDataIds() map[string
 // GetSharedVnGroupDataIdsOk returns a tuple with the SharedVnGroupDataIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetSharedVnGroupDataIdsOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.SharedVnGroupDataIds) {
+	if o == nil || isNil(o.SharedVnGroupDataIds) {
 		return nil, false
 	}
 	return o.SharedVnGroupDataIds, true
@@ -164,7 +164,7 @@ func (o *SessionManagementSubscriptionData) GetSharedVnGroupDataIdsOk() (*map[st
 
 // HasSharedVnGroupDataIds returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasSharedVnGroupDataIds() bool {
-	if o != nil && !IsNil(o.SharedVnGroupDataIds) {
+	if o != nil && !isNil(o.SharedVnGroupDataIds) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SessionManagementSubscriptionData) SetSharedVnGroupDataIds(v map[string
 
 // GetSharedDnnConfigurationsId returns the SharedDnnConfigurationsId field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetSharedDnnConfigurationsId() string {
-	if o == nil || IsNil(o.SharedDnnConfigurationsId) {
+	if o == nil || isNil(o.SharedDnnConfigurationsId) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *SessionManagementSubscriptionData) GetSharedDnnConfigurationsId() strin
 // GetSharedDnnConfigurationsIdOk returns a tuple with the SharedDnnConfigurationsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetSharedDnnConfigurationsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SharedDnnConfigurationsId) {
+	if o == nil || isNil(o.SharedDnnConfigurationsId) {
 		return nil, false
 	}
 	return o.SharedDnnConfigurationsId, true
@@ -196,7 +196,7 @@ func (o *SessionManagementSubscriptionData) GetSharedDnnConfigurationsIdOk() (*s
 
 // HasSharedDnnConfigurationsId returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasSharedDnnConfigurationsId() bool {
-	if o != nil && !IsNil(o.SharedDnnConfigurationsId) {
+	if o != nil && !isNil(o.SharedDnnConfigurationsId) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *SessionManagementSubscriptionData) SetSharedDnnConfigurationsId(v strin
 
 // GetOdbPacketServices returns the OdbPacketServices field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetOdbPacketServices() OdbPacketServices {
-	if o == nil || IsNil(o.OdbPacketServices) {
+	if o == nil || isNil(o.OdbPacketServices) {
 		var ret OdbPacketServices
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *SessionManagementSubscriptionData) GetOdbPacketServices() OdbPacketServ
 // GetOdbPacketServicesOk returns a tuple with the OdbPacketServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetOdbPacketServicesOk() (*OdbPacketServices, bool) {
-	if o == nil || IsNil(o.OdbPacketServices) {
+	if o == nil || isNil(o.OdbPacketServices) {
 		return nil, false
 	}
 	return o.OdbPacketServices, true
@@ -228,7 +228,7 @@ func (o *SessionManagementSubscriptionData) GetOdbPacketServicesOk() (*OdbPacket
 
 // HasOdbPacketServices returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasOdbPacketServices() bool {
-	if o != nil && !IsNil(o.OdbPacketServices) {
+	if o != nil && !isNil(o.OdbPacketServices) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *SessionManagementSubscriptionData) SetOdbPacketServices(v OdbPacketServ
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionManagementSubscriptionData) GetTraceData() TraceData1 {
-	if o == nil || IsNil(o.TraceData.Get()) {
+	if o == nil || isNil(o.TraceData.Get()) {
 		var ret TraceData1
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *SessionManagementSubscriptionData) UnsetTraceData() {
 
 // GetSharedTraceDataId returns the SharedTraceDataId field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetSharedTraceDataId() string {
-	if o == nil || IsNil(o.SharedTraceDataId) {
+	if o == nil || isNil(o.SharedTraceDataId) {
 		var ret string
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *SessionManagementSubscriptionData) GetSharedTraceDataId() string {
 // GetSharedTraceDataIdOk returns a tuple with the SharedTraceDataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetSharedTraceDataIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SharedTraceDataId) {
+	if o == nil || isNil(o.SharedTraceDataId) {
 		return nil, false
 	}
 	return o.SharedTraceDataId, true
@@ -302,7 +302,7 @@ func (o *SessionManagementSubscriptionData) GetSharedTraceDataIdOk() (*string, b
 
 // HasSharedTraceDataId returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasSharedTraceDataId() bool {
-	if o != nil && !IsNil(o.SharedTraceDataId) {
+	if o != nil && !isNil(o.SharedTraceDataId) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *SessionManagementSubscriptionData) SetSharedTraceDataId(v string) {
 
 // GetExpectedUeBehavioursList returns the ExpectedUeBehavioursList field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetExpectedUeBehavioursList() map[string]ExpectedUeBehaviourData {
-	if o == nil || IsNil(o.ExpectedUeBehavioursList) {
+	if o == nil || isNil(o.ExpectedUeBehavioursList) {
 		var ret map[string]ExpectedUeBehaviourData
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *SessionManagementSubscriptionData) GetExpectedUeBehavioursList() map[st
 // GetExpectedUeBehavioursListOk returns a tuple with the ExpectedUeBehavioursList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetExpectedUeBehavioursListOk() (*map[string]ExpectedUeBehaviourData, bool) {
-	if o == nil || IsNil(o.ExpectedUeBehavioursList) {
+	if o == nil || isNil(o.ExpectedUeBehavioursList) {
 		return nil, false
 	}
 	return o.ExpectedUeBehavioursList, true
@@ -334,7 +334,7 @@ func (o *SessionManagementSubscriptionData) GetExpectedUeBehavioursListOk() (*ma
 
 // HasExpectedUeBehavioursList returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasExpectedUeBehavioursList() bool {
-	if o != nil && !IsNil(o.ExpectedUeBehavioursList) {
+	if o != nil && !isNil(o.ExpectedUeBehavioursList) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *SessionManagementSubscriptionData) SetExpectedUeBehavioursList(v map[st
 
 // GetSuggestedPacketNumDlList returns the SuggestedPacketNumDlList field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetSuggestedPacketNumDlList() map[string]SuggestedPacketNumDl {
-	if o == nil || IsNil(o.SuggestedPacketNumDlList) {
+	if o == nil || isNil(o.SuggestedPacketNumDlList) {
 		var ret map[string]SuggestedPacketNumDl
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *SessionManagementSubscriptionData) GetSuggestedPacketNumDlList() map[st
 // GetSuggestedPacketNumDlListOk returns a tuple with the SuggestedPacketNumDlList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetSuggestedPacketNumDlListOk() (*map[string]SuggestedPacketNumDl, bool) {
-	if o == nil || IsNil(o.SuggestedPacketNumDlList) {
+	if o == nil || isNil(o.SuggestedPacketNumDlList) {
 		return nil, false
 	}
 	return o.SuggestedPacketNumDlList, true
@@ -366,7 +366,7 @@ func (o *SessionManagementSubscriptionData) GetSuggestedPacketNumDlListOk() (*ma
 
 // HasSuggestedPacketNumDlList returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasSuggestedPacketNumDlList() bool {
-	if o != nil && !IsNil(o.SuggestedPacketNumDlList) {
+	if o != nil && !isNil(o.SuggestedPacketNumDlList) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *SessionManagementSubscriptionData) SetSuggestedPacketNumDlList(v map[st
 
 // GetVar3gppChargingCharacteristics returns the Var3gppChargingCharacteristics field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetVar3gppChargingCharacteristics() string {
-	if o == nil || IsNil(o.Var3gppChargingCharacteristics) {
+	if o == nil || isNil(o.Var3gppChargingCharacteristics) {
 		var ret string
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *SessionManagementSubscriptionData) GetVar3gppChargingCharacteristics() 
 // GetVar3gppChargingCharacteristicsOk returns a tuple with the Var3gppChargingCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetVar3gppChargingCharacteristicsOk() (*string, bool) {
-	if o == nil || IsNil(o.Var3gppChargingCharacteristics) {
+	if o == nil || isNil(o.Var3gppChargingCharacteristics) {
 		return nil, false
 	}
 	return o.Var3gppChargingCharacteristics, true
@@ -398,7 +398,7 @@ func (o *SessionManagementSubscriptionData) GetVar3gppChargingCharacteristicsOk(
 
 // HasVar3gppChargingCharacteristics returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasVar3gppChargingCharacteristics() bool {
-	if o != nil && !IsNil(o.Var3gppChargingCharacteristics) {
+	if o != nil && !isNil(o.Var3gppChargingCharacteristics) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *SessionManagementSubscriptionData) SetVar3gppChargingCharacteristics(v 
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SessionManagementSubscriptionData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *SessionManagementSubscriptionData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionManagementSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -430,7 +430,7 @@ func (o *SessionManagementSubscriptionData) GetSupportedFeaturesOk() (*string, b
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SessionManagementSubscriptionData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -453,37 +453,37 @@ func (o SessionManagementSubscriptionData) MarshalJSON() ([]byte, error) {
 func (o SessionManagementSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["singleNssai"] = o.SingleNssai
-	if !IsNil(o.DnnConfigurations) {
+	if !isNil(o.DnnConfigurations) {
 		toSerialize["dnnConfigurations"] = o.DnnConfigurations
 	}
-	if !IsNil(o.InternalGroupIds) {
+	if !isNil(o.InternalGroupIds) {
 		toSerialize["internalGroupIds"] = o.InternalGroupIds
 	}
-	if !IsNil(o.SharedVnGroupDataIds) {
+	if !isNil(o.SharedVnGroupDataIds) {
 		toSerialize["sharedVnGroupDataIds"] = o.SharedVnGroupDataIds
 	}
-	if !IsNil(o.SharedDnnConfigurationsId) {
+	if !isNil(o.SharedDnnConfigurationsId) {
 		toSerialize["sharedDnnConfigurationsId"] = o.SharedDnnConfigurationsId
 	}
-	if !IsNil(o.OdbPacketServices) {
+	if !isNil(o.OdbPacketServices) {
 		toSerialize["odbPacketServices"] = o.OdbPacketServices
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !IsNil(o.SharedTraceDataId) {
+	if !isNil(o.SharedTraceDataId) {
 		toSerialize["sharedTraceDataId"] = o.SharedTraceDataId
 	}
-	if !IsNil(o.ExpectedUeBehavioursList) {
+	if !isNil(o.ExpectedUeBehavioursList) {
 		toSerialize["expectedUeBehavioursList"] = o.ExpectedUeBehavioursList
 	}
-	if !IsNil(o.SuggestedPacketNumDlList) {
+	if !isNil(o.SuggestedPacketNumDlList) {
 		toSerialize["suggestedPacketNumDlList"] = o.SuggestedPacketNumDlList
 	}
-	if !IsNil(o.Var3gppChargingCharacteristics) {
+	if !isNil(o.Var3gppChargingCharacteristics) {
 		toSerialize["3gppChargingCharacteristics"] = o.Var3gppChargingCharacteristics
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

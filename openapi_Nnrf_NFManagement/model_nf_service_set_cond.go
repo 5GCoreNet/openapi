@@ -69,7 +69,7 @@ func (o *NfServiceSetCond) SetNfServiceSetId(v string) {
 
 // GetNfSetId returns the NfSetId field value if set, zero value otherwise.
 func (o *NfServiceSetCond) GetNfSetId() string {
-	if o == nil || IsNil(o.NfSetId) {
+	if o == nil || isNil(o.NfSetId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NfServiceSetCond) GetNfSetId() string {
 // GetNfSetIdOk returns a tuple with the NfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfServiceSetCond) GetNfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfSetId) {
+	if o == nil || isNil(o.NfSetId) {
 		return nil, false
 	}
 	return o.NfSetId, true
@@ -87,7 +87,7 @@ func (o *NfServiceSetCond) GetNfSetIdOk() (*string, bool) {
 
 // HasNfSetId returns a boolean if a field has been set.
 func (o *NfServiceSetCond) HasNfSetId() bool {
-	if o != nil && !IsNil(o.NfSetId) {
+	if o != nil && !isNil(o.NfSetId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o NfServiceSetCond) MarshalJSON() ([]byte, error) {
 func (o NfServiceSetCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfServiceSetId"] = o.NfServiceSetId
-	if !IsNil(o.NfSetId) {
+	if !isNil(o.NfSetId) {
 		toSerialize["nfSetId"] = o.NfSetId
 	}
 	return toSerialize, nil

@@ -119,7 +119,7 @@ func (o *AmfNon3GppAccessRegistration) SetAmfInstanceId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -137,7 +137,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *AmfNon3GppAccessRegistration) SetSupportedFeatures(v string) {
 
 // GetPurgeFlag returns the PurgeFlag field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetPurgeFlag() bool {
-	if o == nil || IsNil(o.PurgeFlag) {
+	if o == nil || isNil(o.PurgeFlag) {
 		var ret bool
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *AmfNon3GppAccessRegistration) GetPurgeFlag() bool {
 // GetPurgeFlagOk returns a tuple with the PurgeFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetPurgeFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.PurgeFlag) {
+	if o == nil || isNil(o.PurgeFlag) {
 		return nil, false
 	}
 	return o.PurgeFlag, true
@@ -169,7 +169,7 @@ func (o *AmfNon3GppAccessRegistration) GetPurgeFlagOk() (*bool, bool) {
 
 // HasPurgeFlag returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasPurgeFlag() bool {
-	if o != nil && !IsNil(o.PurgeFlag) {
+	if o != nil && !isNil(o.PurgeFlag) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *AmfNon3GppAccessRegistration) SetPurgeFlag(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *AmfNon3GppAccessRegistration) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -201,7 +201,7 @@ func (o *AmfNon3GppAccessRegistration) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *AmfNon3GppAccessRegistration) SetDeregCallbackUri(v string) {
 
 // GetAmfServiceNameDereg returns the AmfServiceNameDereg field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDereg() ServiceName {
-	if o == nil || IsNil(o.AmfServiceNameDereg) {
+	if o == nil || isNil(o.AmfServiceNameDereg) {
 		var ret ServiceName
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDereg() ServiceName {
 // GetAmfServiceNameDeregOk returns a tuple with the AmfServiceNameDereg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDeregOk() (*ServiceName, bool) {
-	if o == nil || IsNil(o.AmfServiceNameDereg) {
+	if o == nil || isNil(o.AmfServiceNameDereg) {
 		return nil, false
 	}
 	return o.AmfServiceNameDereg, true
@@ -281,7 +281,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNameDeregOk() (*ServiceName,
 
 // HasAmfServiceNameDereg returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAmfServiceNameDereg() bool {
-	if o != nil && !IsNil(o.AmfServiceNameDereg) {
+	if o != nil && !isNil(o.AmfServiceNameDereg) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *AmfNon3GppAccessRegistration) SetAmfServiceNameDereg(v ServiceName) {
 
 // GetPcscfRestorationCallbackUri returns the PcscfRestorationCallbackUri field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUri() string {
-	if o == nil || IsNil(o.PcscfRestorationCallbackUri) {
+	if o == nil || isNil(o.PcscfRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUri() string {
 // GetPcscfRestorationCallbackUriOk returns a tuple with the PcscfRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.PcscfRestorationCallbackUri) {
+	if o == nil || isNil(o.PcscfRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.PcscfRestorationCallbackUri, true
@@ -313,7 +313,7 @@ func (o *AmfNon3GppAccessRegistration) GetPcscfRestorationCallbackUriOk() (*stri
 
 // HasPcscfRestorationCallbackUri returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasPcscfRestorationCallbackUri() bool {
-	if o != nil && !IsNil(o.PcscfRestorationCallbackUri) {
+	if o != nil && !isNil(o.PcscfRestorationCallbackUri) {
 		return true
 	}
 
@@ -327,7 +327,7 @@ func (o *AmfNon3GppAccessRegistration) SetPcscfRestorationCallbackUri(v string) 
 
 // GetAmfServiceNamePcscfRest returns the AmfServiceNamePcscfRest field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRest() ServiceName {
-	if o == nil || IsNil(o.AmfServiceNamePcscfRest) {
+	if o == nil || isNil(o.AmfServiceNamePcscfRest) {
 		var ret ServiceName
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRest() ServiceName 
 // GetAmfServiceNamePcscfRestOk returns a tuple with the AmfServiceNamePcscfRest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRestOk() (*ServiceName, bool) {
-	if o == nil || IsNil(o.AmfServiceNamePcscfRest) {
+	if o == nil || isNil(o.AmfServiceNamePcscfRest) {
 		return nil, false
 	}
 	return o.AmfServiceNamePcscfRest, true
@@ -345,7 +345,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfServiceNamePcscfRestOk() (*ServiceN
 
 // HasAmfServiceNamePcscfRest returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAmfServiceNamePcscfRest() bool {
-	if o != nil && !IsNil(o.AmfServiceNamePcscfRest) {
+	if o != nil && !isNil(o.AmfServiceNamePcscfRest) {
 		return true
 	}
 
@@ -383,7 +383,7 @@ func (o *AmfNon3GppAccessRegistration) SetGuami(v Guami) {
 
 // GetBackupAmfInfo returns the BackupAmfInfo field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfo() []BackupAmfInfo {
-	if o == nil || IsNil(o.BackupAmfInfo) {
+	if o == nil || isNil(o.BackupAmfInfo) {
 		var ret []BackupAmfInfo
 		return ret
 	}
@@ -393,7 +393,7 @@ func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfo() []BackupAmfInfo {
 // GetBackupAmfInfoOk returns a tuple with the BackupAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfoOk() ([]BackupAmfInfo, bool) {
-	if o == nil || IsNil(o.BackupAmfInfo) {
+	if o == nil || isNil(o.BackupAmfInfo) {
 		return nil, false
 	}
 	return o.BackupAmfInfo, true
@@ -401,7 +401,7 @@ func (o *AmfNon3GppAccessRegistration) GetBackupAmfInfoOk() ([]BackupAmfInfo, bo
 
 // HasBackupAmfInfo returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasBackupAmfInfo() bool {
-	if o != nil && !IsNil(o.BackupAmfInfo) {
+	if o != nil && !isNil(o.BackupAmfInfo) {
 		return true
 	}
 
@@ -439,7 +439,7 @@ func (o *AmfNon3GppAccessRegistration) SetRatType(v RatType) {
 
 // GetUrrpIndicator returns the UrrpIndicator field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetUrrpIndicator() bool {
-	if o == nil || IsNil(o.UrrpIndicator) {
+	if o == nil || isNil(o.UrrpIndicator) {
 		var ret bool
 		return ret
 	}
@@ -449,7 +449,7 @@ func (o *AmfNon3GppAccessRegistration) GetUrrpIndicator() bool {
 // GetUrrpIndicatorOk returns a tuple with the UrrpIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetUrrpIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.UrrpIndicator) {
+	if o == nil || isNil(o.UrrpIndicator) {
 		return nil, false
 	}
 	return o.UrrpIndicator, true
@@ -457,7 +457,7 @@ func (o *AmfNon3GppAccessRegistration) GetUrrpIndicatorOk() (*bool, bool) {
 
 // HasUrrpIndicator returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasUrrpIndicator() bool {
-	if o != nil && !IsNil(o.UrrpIndicator) {
+	if o != nil && !isNil(o.UrrpIndicator) {
 		return true
 	}
 
@@ -471,7 +471,7 @@ func (o *AmfNon3GppAccessRegistration) SetUrrpIndicator(v bool) {
 
 // GetAmfEeSubscriptionId returns the AmfEeSubscriptionId field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionId() string {
-	if o == nil || IsNil(o.AmfEeSubscriptionId) {
+	if o == nil || isNil(o.AmfEeSubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -481,7 +481,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionId() string {
 // GetAmfEeSubscriptionIdOk returns a tuple with the AmfEeSubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfEeSubscriptionId) {
+	if o == nil || isNil(o.AmfEeSubscriptionId) {
 		return nil, false
 	}
 	return o.AmfEeSubscriptionId, true
@@ -489,7 +489,7 @@ func (o *AmfNon3GppAccessRegistration) GetAmfEeSubscriptionIdOk() (*string, bool
 
 // HasAmfEeSubscriptionId returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAmfEeSubscriptionId() bool {
-	if o != nil && !IsNil(o.AmfEeSubscriptionId) {
+	if o != nil && !isNil(o.AmfEeSubscriptionId) {
 		return true
 	}
 
@@ -503,7 +503,7 @@ func (o *AmfNon3GppAccessRegistration) SetAmfEeSubscriptionId(v string) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetRegistrationTime() time.Time {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *AmfNon3GppAccessRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -521,7 +521,7 @@ func (o *AmfNon3GppAccessRegistration) GetRegistrationTimeOk() (*time.Time, bool
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasRegistrationTime() bool {
-	if o != nil && !IsNil(o.RegistrationTime) {
+	if o != nil && !isNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -535,7 +535,7 @@ func (o *AmfNon3GppAccessRegistration) SetRegistrationTime(v time.Time) {
 
 // GetVgmlcAddress returns the VgmlcAddress field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetVgmlcAddress() VgmlcAddress {
-	if o == nil || IsNil(o.VgmlcAddress) {
+	if o == nil || isNil(o.VgmlcAddress) {
 		var ret VgmlcAddress
 		return ret
 	}
@@ -545,7 +545,7 @@ func (o *AmfNon3GppAccessRegistration) GetVgmlcAddress() VgmlcAddress {
 // GetVgmlcAddressOk returns a tuple with the VgmlcAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetVgmlcAddressOk() (*VgmlcAddress, bool) {
-	if o == nil || IsNil(o.VgmlcAddress) {
+	if o == nil || isNil(o.VgmlcAddress) {
 		return nil, false
 	}
 	return o.VgmlcAddress, true
@@ -553,7 +553,7 @@ func (o *AmfNon3GppAccessRegistration) GetVgmlcAddressOk() (*VgmlcAddress, bool)
 
 // HasVgmlcAddress returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasVgmlcAddress() bool {
-	if o != nil && !IsNil(o.VgmlcAddress) {
+	if o != nil && !isNil(o.VgmlcAddress) {
 		return true
 	}
 
@@ -567,7 +567,7 @@ func (o *AmfNon3GppAccessRegistration) SetVgmlcAddress(v VgmlcAddress) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetContextInfo() ContextInfo {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -577,7 +577,7 @@ func (o *AmfNon3GppAccessRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -585,7 +585,7 @@ func (o *AmfNon3GppAccessRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasContextInfo() bool {
-	if o != nil && !IsNil(o.ContextInfo) {
+	if o != nil && !isNil(o.ContextInfo) {
 		return true
 	}
 
@@ -599,7 +599,7 @@ func (o *AmfNon3GppAccessRegistration) SetContextInfo(v ContextInfo) {
 
 // GetNoEeSubscriptionInd returns the NoEeSubscriptionInd field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionInd() bool {
-	if o == nil || IsNil(o.NoEeSubscriptionInd) {
+	if o == nil || isNil(o.NoEeSubscriptionInd) {
 		var ret bool
 		return ret
 	}
@@ -609,7 +609,7 @@ func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionInd() bool {
 // GetNoEeSubscriptionIndOk returns a tuple with the NoEeSubscriptionInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.NoEeSubscriptionInd) {
+	if o == nil || isNil(o.NoEeSubscriptionInd) {
 		return nil, false
 	}
 	return o.NoEeSubscriptionInd, true
@@ -617,7 +617,7 @@ func (o *AmfNon3GppAccessRegistration) GetNoEeSubscriptionIndOk() (*bool, bool) 
 
 // HasNoEeSubscriptionInd returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasNoEeSubscriptionInd() bool {
-	if o != nil && !IsNil(o.NoEeSubscriptionInd) {
+	if o != nil && !isNil(o.NoEeSubscriptionInd) {
 		return true
 	}
 
@@ -631,7 +631,7 @@ func (o *AmfNon3GppAccessRegistration) SetNoEeSubscriptionInd(v bool) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -641,7 +641,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -649,7 +649,7 @@ func (o *AmfNon3GppAccessRegistration) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -663,7 +663,7 @@ func (o *AmfNon3GppAccessRegistration) SetSupi(v string) {
 
 // GetReRegistrationRequired returns the ReRegistrationRequired field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequired() bool {
-	if o == nil || IsNil(o.ReRegistrationRequired) {
+	if o == nil || isNil(o.ReRegistrationRequired) {
 		var ret bool
 		return ret
 	}
@@ -673,7 +673,7 @@ func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequired() bool {
 // GetReRegistrationRequiredOk returns a tuple with the ReRegistrationRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequiredOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReRegistrationRequired) {
+	if o == nil || isNil(o.ReRegistrationRequired) {
 		return nil, false
 	}
 	return o.ReRegistrationRequired, true
@@ -681,7 +681,7 @@ func (o *AmfNon3GppAccessRegistration) GetReRegistrationRequiredOk() (*bool, boo
 
 // HasReRegistrationRequired returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasReRegistrationRequired() bool {
-	if o != nil && !IsNil(o.ReRegistrationRequired) {
+	if o != nil && !isNil(o.ReRegistrationRequired) {
 		return true
 	}
 
@@ -695,7 +695,7 @@ func (o *AmfNon3GppAccessRegistration) SetReRegistrationRequired(v bool) {
 
 // GetAdminDeregSubWithdrawn returns the AdminDeregSubWithdrawn field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawn() bool {
-	if o == nil || IsNil(o.AdminDeregSubWithdrawn) {
+	if o == nil || isNil(o.AdminDeregSubWithdrawn) {
 		var ret bool
 		return ret
 	}
@@ -705,7 +705,7 @@ func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawn() bool {
 // GetAdminDeregSubWithdrawnOk returns a tuple with the AdminDeregSubWithdrawn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawnOk() (*bool, bool) {
-	if o == nil || IsNil(o.AdminDeregSubWithdrawn) {
+	if o == nil || isNil(o.AdminDeregSubWithdrawn) {
 		return nil, false
 	}
 	return o.AdminDeregSubWithdrawn, true
@@ -713,7 +713,7 @@ func (o *AmfNon3GppAccessRegistration) GetAdminDeregSubWithdrawnOk() (*bool, boo
 
 // HasAdminDeregSubWithdrawn returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasAdminDeregSubWithdrawn() bool {
-	if o != nil && !IsNil(o.AdminDeregSubWithdrawn) {
+	if o != nil && !isNil(o.AdminDeregSubWithdrawn) {
 		return true
 	}
 
@@ -727,7 +727,7 @@ func (o *AmfNon3GppAccessRegistration) SetAdminDeregSubWithdrawn(v bool) {
 
 // GetDataRestorationCallbackUri returns the DataRestorationCallbackUri field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUri() string {
-	if o == nil || IsNil(o.DataRestorationCallbackUri) {
+	if o == nil || isNil(o.DataRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -737,7 +737,7 @@ func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUri() string {
 // GetDataRestorationCallbackUriOk returns a tuple with the DataRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.DataRestorationCallbackUri) {
+	if o == nil || isNil(o.DataRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.DataRestorationCallbackUri, true
@@ -745,7 +745,7 @@ func (o *AmfNon3GppAccessRegistration) GetDataRestorationCallbackUriOk() (*strin
 
 // HasDataRestorationCallbackUri returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasDataRestorationCallbackUri() bool {
-	if o != nil && !IsNil(o.DataRestorationCallbackUri) {
+	if o != nil && !isNil(o.DataRestorationCallbackUri) {
 		return true
 	}
 
@@ -759,7 +759,7 @@ func (o *AmfNon3GppAccessRegistration) SetDataRestorationCallbackUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -769,7 +769,7 @@ func (o *AmfNon3GppAccessRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -777,7 +777,7 @@ func (o *AmfNon3GppAccessRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -791,7 +791,7 @@ func (o *AmfNon3GppAccessRegistration) SetResetIds(v []string) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingInd() bool {
-	if o == nil || IsNil(o.DisasterRoamingInd) {
+	if o == nil || isNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -801,7 +801,7 @@ func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DisasterRoamingInd) {
+	if o == nil || isNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -809,7 +809,7 @@ func (o *AmfNon3GppAccessRegistration) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasDisasterRoamingInd() bool {
-	if o != nil && !IsNil(o.DisasterRoamingInd) {
+	if o != nil && !isNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -823,7 +823,7 @@ func (o *AmfNon3GppAccessRegistration) SetDisasterRoamingInd(v bool) {
 
 // GetSorSnpnSiSupported returns the SorSnpnSiSupported field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupported() bool {
-	if o == nil || IsNil(o.SorSnpnSiSupported) {
+	if o == nil || isNil(o.SorSnpnSiSupported) {
 		var ret bool
 		return ret
 	}
@@ -833,7 +833,7 @@ func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupported() bool {
 // GetSorSnpnSiSupportedOk returns a tuple with the SorSnpnSiSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupportedOk() (*bool, bool) {
-	if o == nil || IsNil(o.SorSnpnSiSupported) {
+	if o == nil || isNil(o.SorSnpnSiSupported) {
 		return nil, false
 	}
 	return o.SorSnpnSiSupported, true
@@ -841,7 +841,7 @@ func (o *AmfNon3GppAccessRegistration) GetSorSnpnSiSupportedOk() (*bool, bool) {
 
 // HasSorSnpnSiSupported returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasSorSnpnSiSupported() bool {
-	if o != nil && !IsNil(o.SorSnpnSiSupported) {
+	if o != nil && !isNil(o.SorSnpnSiSupported) {
 		return true
 	}
 
@@ -855,7 +855,7 @@ func (o *AmfNon3GppAccessRegistration) SetSorSnpnSiSupported(v bool) {
 
 // GetUdrRestartInd returns the UdrRestartInd field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetUdrRestartInd() bool {
-	if o == nil || IsNil(o.UdrRestartInd) {
+	if o == nil || isNil(o.UdrRestartInd) {
 		var ret bool
 		return ret
 	}
@@ -865,7 +865,7 @@ func (o *AmfNon3GppAccessRegistration) GetUdrRestartInd() bool {
 // GetUdrRestartIndOk returns a tuple with the UdrRestartInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetUdrRestartIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UdrRestartInd) {
+	if o == nil || isNil(o.UdrRestartInd) {
 		return nil, false
 	}
 	return o.UdrRestartInd, true
@@ -873,7 +873,7 @@ func (o *AmfNon3GppAccessRegistration) GetUdrRestartIndOk() (*bool, bool) {
 
 // HasUdrRestartInd returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasUdrRestartInd() bool {
-	if o != nil && !IsNil(o.UdrRestartInd) {
+	if o != nil && !isNil(o.UdrRestartInd) {
 		return true
 	}
 
@@ -887,7 +887,7 @@ func (o *AmfNon3GppAccessRegistration) SetUdrRestartInd(v bool) {
 
 // GetLastSynchronizationTime returns the LastSynchronizationTime field value if set, zero value otherwise.
 func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTime() time.Time {
-	if o == nil || IsNil(o.LastSynchronizationTime) {
+	if o == nil || isNil(o.LastSynchronizationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -897,7 +897,7 @@ func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTime() time.Time {
 // GetLastSynchronizationTimeOk returns a tuple with the LastSynchronizationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastSynchronizationTime) {
+	if o == nil || isNil(o.LastSynchronizationTime) {
 		return nil, false
 	}
 	return o.LastSynchronizationTime, true
@@ -905,7 +905,7 @@ func (o *AmfNon3GppAccessRegistration) GetLastSynchronizationTimeOk() (*time.Tim
 
 // HasLastSynchronizationTime returns a boolean if a field has been set.
 func (o *AmfNon3GppAccessRegistration) HasLastSynchronizationTime() bool {
-	if o != nil && !IsNil(o.LastSynchronizationTime) {
+	if o != nil && !isNil(o.LastSynchronizationTime) {
 		return true
 	}
 
@@ -928,74 +928,74 @@ func (o AmfNon3GppAccessRegistration) MarshalJSON() ([]byte, error) {
 func (o AmfNon3GppAccessRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfInstanceId"] = o.AmfInstanceId
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.PurgeFlag) {
+	if !isNil(o.PurgeFlag) {
 		toSerialize["purgeFlag"] = o.PurgeFlag
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
 	toSerialize["imsVoPs"] = o.ImsVoPs
 	toSerialize["deregCallbackUri"] = o.DeregCallbackUri
-	if !IsNil(o.AmfServiceNameDereg) {
+	if !isNil(o.AmfServiceNameDereg) {
 		toSerialize["amfServiceNameDereg"] = o.AmfServiceNameDereg
 	}
-	if !IsNil(o.PcscfRestorationCallbackUri) {
+	if !isNil(o.PcscfRestorationCallbackUri) {
 		toSerialize["pcscfRestorationCallbackUri"] = o.PcscfRestorationCallbackUri
 	}
-	if !IsNil(o.AmfServiceNamePcscfRest) {
+	if !isNil(o.AmfServiceNamePcscfRest) {
 		toSerialize["amfServiceNamePcscfRest"] = o.AmfServiceNamePcscfRest
 	}
 	toSerialize["guami"] = o.Guami
-	if !IsNil(o.BackupAmfInfo) {
+	if !isNil(o.BackupAmfInfo) {
 		toSerialize["backupAmfInfo"] = o.BackupAmfInfo
 	}
 	toSerialize["ratType"] = o.RatType
-	if !IsNil(o.UrrpIndicator) {
+	if !isNil(o.UrrpIndicator) {
 		toSerialize["urrpIndicator"] = o.UrrpIndicator
 	}
-	if !IsNil(o.AmfEeSubscriptionId) {
+	if !isNil(o.AmfEeSubscriptionId) {
 		toSerialize["amfEeSubscriptionId"] = o.AmfEeSubscriptionId
 	}
-	if !IsNil(o.RegistrationTime) {
+	if !isNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !IsNil(o.VgmlcAddress) {
+	if !isNil(o.VgmlcAddress) {
 		toSerialize["vgmlcAddress"] = o.VgmlcAddress
 	}
-	if !IsNil(o.ContextInfo) {
+	if !isNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !IsNil(o.NoEeSubscriptionInd) {
+	if !isNil(o.NoEeSubscriptionInd) {
 		toSerialize["noEeSubscriptionInd"] = o.NoEeSubscriptionInd
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.ReRegistrationRequired) {
+	if !isNil(o.ReRegistrationRequired) {
 		toSerialize["reRegistrationRequired"] = o.ReRegistrationRequired
 	}
-	if !IsNil(o.AdminDeregSubWithdrawn) {
+	if !isNil(o.AdminDeregSubWithdrawn) {
 		toSerialize["adminDeregSubWithdrawn"] = o.AdminDeregSubWithdrawn
 	}
-	if !IsNil(o.DataRestorationCallbackUri) {
+	if !isNil(o.DataRestorationCallbackUri) {
 		toSerialize["dataRestorationCallbackUri"] = o.DataRestorationCallbackUri
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !IsNil(o.DisasterRoamingInd) {
+	if !isNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
-	if !IsNil(o.SorSnpnSiSupported) {
+	if !isNil(o.SorSnpnSiSupported) {
 		toSerialize["sorSnpnSiSupported"] = o.SorSnpnSiSupported
 	}
-	if !IsNil(o.UdrRestartInd) {
+	if !isNil(o.UdrRestartInd) {
 		toSerialize["udrRestartInd"] = o.UdrRestartInd
 	}
-	if !IsNil(o.LastSynchronizationTime) {
+	if !isNil(o.LastSynchronizationTime) {
 		toSerialize["lastSynchronizationTime"] = o.LastSynchronizationTime
 	}
 	return toSerialize, nil

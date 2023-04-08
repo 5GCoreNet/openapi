@@ -2272,7 +2272,15 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - anyOf:
+        - enum:
+          - PROBABLE_CAUSE_001
+          - PROBABLE_CAUSE_002
+          - PROBABLE_CAUSE_003
+          - PROBABLE_CAUSE_004
+          - PROBABLE_CAUSE_005
+          type: string
+        - type: string
       - type: integer
     SpecificProblem:
       oneOf:
@@ -2447,21 +2455,15 @@ components:
           type: array
       type: object
       example: null
-    MLTrainingFunction_Single_allOf_attributes_allOf:
-      properties:
-        mLEntityList:
-          items:
-            $ref: '#/components/schemas/MLEntity'
-          type: array
-      type: object
-    MLTrainingFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/MLTrainingFunction_Single_allOf_attributes_allOf'
     MLTrainingFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MLTrainingFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              mLEntityList:
+                $ref: '#/components/schemas/MLEntityList'
+            type: object
       type: object
       example: null
     MLTrainingFunction_Single_allOf_1:
@@ -2480,98 +2482,81 @@ components:
           type: array
       type: object
       example: null
-    MLTrainingRequest_Single_allOf_attributes_allOf:
-      properties:
-        mLEntityId:
-          type: string
-        candidateTraingDataSource:
-          items:
-            type: string
-          type: array
-        traingDataQualityScore:
-          format: float
-          type: number
-        trainingRequestSource:
-          type: string
-        requestStatus:
-          $ref: '#/components/schemas/RequestStatus'
-        expectedRuntimeContext:
-          format: date-time
-          type: string
-        performanceRequirements:
-          items:
-            $ref: '#/components/schemas/ModelPerformance'
-          type: array
-        cancelRequest:
-          type: boolean
-        suspendRequest:
-          type: boolean
-      type: object
-    MLTrainingRequest_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/MLTrainingRequest_Single_allOf_attributes_allOf'
     MLTrainingRequest_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MLTrainingRequest_Single_allOf_attributes'
+          allOf:
+          - properties:
+              mLEntityId:
+                type: string
+              candidateTraingDataSource:
+                items:
+                  type: string
+                type: array
+              traingDataQualityScore:
+                format: float
+                type: number
+              trainingRequestSource:
+                type: string
+              requestStatus:
+                $ref: '#/components/schemas/RequestStatus'
+              expectedRuntimeContext:
+                $ref: '#/components/schemas/DateTime'
+              performanceRequirements:
+                $ref: '#/components/schemas/PerformanceRequirements'
+              cancelRequest:
+                type: boolean
+              suspendRequest:
+                type: boolean
+            type: object
       type: object
       example: null
-    MLTrainingProcess_Single_allOf_attributes_allOf:
-      properties:
-        mLTrainingProcessId:
-          type: string
-        priority:
-          type: integer
-        terminationConditions:
-          type: string
-        progressStatus:
-          $ref: '#/components/schemas/TrainingProcessMonitor'
-        cancelProcess:
-          type: boolean
-        suspendProcess:
-          type: boolean
-        trainingRequestRef:
-          items:
-            $ref: '#/components/schemas/Dn'
-          type: array
-        trainingReportRef:
-          type: string
-      type: object
-    MLTrainingProcess_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/MLTrainingProcess_Single_allOf_attributes_allOf'
     MLTrainingProcess_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MLTrainingProcess_Single_allOf_attributes'
+          allOf:
+          - properties:
+              mLTrainingProcessId:
+                type: string
+              priority:
+                type: integer
+              terminationConditions:
+                type: string
+              progressStatus:
+                $ref: '#/components/schemas/TrainingProcessMonitor'
+              cancelProcess:
+                type: boolean
+              suspendProcess:
+                type: boolean
+              trainingRequestRef:
+                $ref: '#/components/schemas/DnList'
+              trainingReportRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
-    MLTrainingReport_Single_allOf_attributes_allOf:
-      properties:
-        mLEntityId:
-          type: string
-        areConsumerTrainingDataUsed:
-          type: boolean
-        usedConsumerTrainingData:
-          items:
-            type: string
-          type: array
-        confidenceIndication:
-          type: integer
-        modelPerformanceTraining:
-          items:
-            $ref: '#/components/schemas/ModelPerformance'
-          type: array
-        areNewTrainingDataUsed:
-          type: boolean
-      type: object
-    MLTrainingReport_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/MLTrainingReport_Single_allOf_attributes_allOf'
     MLTrainingReport_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/MLTrainingReport_Single_allOf_attributes'
+          allOf:
+          - properties:
+              mLEntityId:
+                type: string
+              areConsumerTrainingDataUsed:
+                type: boolean
+              usedConsumerTrainingData:
+                items:
+                  type: string
+                type: array
+              confidenceIndication:
+                type: integer
+              modelPerformanceTraining:
+                items:
+                  $ref: '#/components/schemas/ModelPerformance'
+                type: array
+              areNewTrainingDataUsed:
+                type: boolean
+            type: object
       type: object
       example: null
     VsDataContainer_Single_attributes:
@@ -2677,6 +2662,7 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
+      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -2684,11 +2670,13 @@ components:
         fileLocation:
           type: string
       type: object
+      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
+      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -2992,23 +2980,15 @@ components:
           $ref: '#/components/schemas/ManagedNFService_Single_allOf_attributes'
       type: object
       example: null
-    ProbableCause_oneOf:
-      anyOf:
-      - enum:
-        - PROBABLE_CAUSE_001
-        - PROBABLE_CAUSE_002
-        - PROBABLE_CAUSE_003
-        - PROBABLE_CAUSE_004
-        - PROBABLE_CAUSE_005
-        type: string
-      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null

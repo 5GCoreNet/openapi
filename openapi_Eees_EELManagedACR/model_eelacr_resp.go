@@ -44,7 +44,7 @@ func NewEELACRRespWithDefaults() *EELACRResp {
 
 // GetAppCtxtStoreAddr returns the AppCtxtStoreAddr field value if set, zero value otherwise.
 func (o *EELACRResp) GetAppCtxtStoreAddr() string {
-	if o == nil || IsNil(o.AppCtxtStoreAddr) {
+	if o == nil || isNil(o.AppCtxtStoreAddr) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EELACRResp) GetAppCtxtStoreAddr() string {
 // GetAppCtxtStoreAddrOk returns a tuple with the AppCtxtStoreAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EELACRResp) GetAppCtxtStoreAddrOk() (*string, bool) {
-	if o == nil || IsNil(o.AppCtxtStoreAddr) {
+	if o == nil || isNil(o.AppCtxtStoreAddr) {
 		return nil, false
 	}
 	return o.AppCtxtStoreAddr, true
@@ -62,7 +62,7 @@ func (o *EELACRResp) GetAppCtxtStoreAddrOk() (*string, bool) {
 
 // HasAppCtxtStoreAddr returns a boolean if a field has been set.
 func (o *EELACRResp) HasAppCtxtStoreAddr() bool {
-	if o != nil && !IsNil(o.AppCtxtStoreAddr) {
+	if o != nil && !isNil(o.AppCtxtStoreAddr) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EELACRResp) SetAppCtxtStoreAddr(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *EELACRResp) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EELACRResp) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EELACRResp) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -94,7 +94,7 @@ func (o *EELACRResp) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *EELACRResp) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o EELACRResp) MarshalJSON() ([]byte, error) {
 
 func (o EELACRResp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppCtxtStoreAddr) {
+	if !isNil(o.AppCtxtStoreAddr) {
 		toSerialize["appCtxtStoreAddr"] = o.AppCtxtStoreAddr
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

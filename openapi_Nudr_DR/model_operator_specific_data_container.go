@@ -72,7 +72,7 @@ func (o *OperatorSpecificDataContainer) SetDataType(v string) {
 
 // GetDataTypeDefinition returns the DataTypeDefinition field value if set, zero value otherwise.
 func (o *OperatorSpecificDataContainer) GetDataTypeDefinition() string {
-	if o == nil || IsNil(o.DataTypeDefinition) {
+	if o == nil || isNil(o.DataTypeDefinition) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *OperatorSpecificDataContainer) GetDataTypeDefinition() string {
 // GetDataTypeDefinitionOk returns a tuple with the DataTypeDefinition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorSpecificDataContainer) GetDataTypeDefinitionOk() (*string, bool) {
-	if o == nil || IsNil(o.DataTypeDefinition) {
+	if o == nil || isNil(o.DataTypeDefinition) {
 		return nil, false
 	}
 	return o.DataTypeDefinition, true
@@ -90,7 +90,7 @@ func (o *OperatorSpecificDataContainer) GetDataTypeDefinitionOk() (*string, bool
 
 // HasDataTypeDefinition returns a boolean if a field has been set.
 func (o *OperatorSpecificDataContainer) HasDataTypeDefinition() bool {
-	if o != nil && !IsNil(o.DataTypeDefinition) {
+	if o != nil && !isNil(o.DataTypeDefinition) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *OperatorSpecificDataContainer) SetValue(v OperatorSpecificDataContainer
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *OperatorSpecificDataContainer) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *OperatorSpecificDataContainer) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorSpecificDataContainer) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -146,7 +146,7 @@ func (o *OperatorSpecificDataContainer) GetSupportedFeaturesOk() (*string, bool)
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *OperatorSpecificDataContainer) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *OperatorSpecificDataContainer) SetSupportedFeatures(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *OperatorSpecificDataContainer) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *OperatorSpecificDataContainer) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorSpecificDataContainer) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -178,7 +178,7 @@ func (o *OperatorSpecificDataContainer) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *OperatorSpecificDataContainer) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -201,14 +201,14 @@ func (o OperatorSpecificDataContainer) MarshalJSON() ([]byte, error) {
 func (o OperatorSpecificDataContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dataType"] = o.DataType
-	if !IsNil(o.DataTypeDefinition) {
+	if !isNil(o.DataTypeDefinition) {
 		toSerialize["dataTypeDefinition"] = o.DataTypeDefinition
 	}
 	toSerialize["value"] = o.Value
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

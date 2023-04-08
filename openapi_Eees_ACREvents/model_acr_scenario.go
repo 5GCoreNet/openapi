@@ -17,23 +17,37 @@ import (
 
 // ACRScenario Possible values are: - EEC_INITIATED: Represents the EEC initiated ACR scenario. - EEC_EXECUTED_VIA_SOURCE_EES: Represents the EEC ACR scenario executed via the S-EES. - EEC_EXECUTED_VIA_TARGET_EES: Represents the EEC ACR scenario executed via the T-EES. - SOURCE_EAS_DECIDED: Represents the EEC ACR scenario where the S-EAS decides to perform ACR. - SOURCE_EES_EXECUTED: Represents the EEC ACR scenario where S-EES executes the ACR. - EEL_MANAGED_ACR: Represents the EEC ACR scenario where the ACR is managed by the Edge Enabler Layer. 
 type ACRScenario struct {
-	string *string
+	ACRScenarioAnyOf *ACRScenarioAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ACRScenario) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ACRScenarioAnyOf
+	err = json.Unmarshal(data, &dst.ACRScenarioAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonACRScenarioAnyOf, _ := json.Marshal(dst.ACRScenarioAnyOf)
+		if string(jsonACRScenarioAnyOf) == "{}" { // empty struct
+			dst.ACRScenarioAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ACRScenarioAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ACRScenarioAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ACRScenario)")
@@ -41,8 +55,12 @@ func (dst *ACRScenario) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ACRScenario) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ACRScenarioAnyOf != nil {
+		return json.Marshal(&src.ACRScenarioAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

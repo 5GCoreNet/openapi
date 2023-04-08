@@ -43,7 +43,7 @@ func NewIpAddrWithDefaults() *IpAddr {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *IpAddr) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IpAddr) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpAddr) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -61,7 +61,7 @@ func (o *IpAddr) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *IpAddr) HasIpv4Addr() bool {
-	if o != nil && !IsNil(o.Ipv4Addr) {
+	if o != nil && !isNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IpAddr) SetIpv4Addr(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *IpAddr) GetIpv6Addr() string {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *IpAddr) GetIpv6Addr() string {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpAddr) GetIpv6AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -93,7 +93,7 @@ func (o *IpAddr) GetIpv6AddrOk() (*string, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *IpAddr) HasIpv6Addr() bool {
-	if o != nil && !IsNil(o.Ipv6Addr) {
+	if o != nil && !isNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *IpAddr) SetIpv6Addr(v string) {
 
 // GetIpv6Prefix returns the Ipv6Prefix field value if set, zero value otherwise.
 func (o *IpAddr) GetIpv6Prefix() string {
-	if o == nil || IsNil(o.Ipv6Prefix) {
+	if o == nil || isNil(o.Ipv6Prefix) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *IpAddr) GetIpv6Prefix() string {
 // GetIpv6PrefixOk returns a tuple with the Ipv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpAddr) GetIpv6PrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv6Prefix) {
+	if o == nil || isNil(o.Ipv6Prefix) {
 		return nil, false
 	}
 	return o.Ipv6Prefix, true
@@ -125,7 +125,7 @@ func (o *IpAddr) GetIpv6PrefixOk() (*string, bool) {
 
 // HasIpv6Prefix returns a boolean if a field has been set.
 func (o *IpAddr) HasIpv6Prefix() bool {
-	if o != nil && !IsNil(o.Ipv6Prefix) {
+	if o != nil && !isNil(o.Ipv6Prefix) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o IpAddr) MarshalJSON() ([]byte, error) {
 
 func (o IpAddr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4Addr) {
+	if !isNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !IsNil(o.Ipv6Addr) {
+	if !isNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
-	if !IsNil(o.Ipv6Prefix) {
+	if !isNil(o.Ipv6Prefix) {
 		toSerialize["ipv6Prefix"] = o.Ipv6Prefix
 	}
 	return toSerialize, nil

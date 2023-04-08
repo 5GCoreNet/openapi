@@ -17,23 +17,37 @@ import (
 
 // RuleStatus Possible values are - ACTIVE: Indicates that the PCC rule(s) are successfully installed (for those provisioned  from PCF) or activated (for those pre-defined in SMF), or the session rule(s) are  successfully installed  - INACTIVE: Indicates that the PCC rule(s) are removed (for those provisioned from PCF) or  inactive (for those pre-defined in SMF) or the session rule(s) are removed. 
 type RuleStatus struct {
-	string *string
+	RuleStatusAnyOf *RuleStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RuleStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into RuleStatusAnyOf
+	err = json.Unmarshal(data, &dst.RuleStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonRuleStatusAnyOf, _ := json.Marshal(dst.RuleStatusAnyOf)
+		if string(jsonRuleStatusAnyOf) == "{}" { // empty struct
+			dst.RuleStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.RuleStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.RuleStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RuleStatus)")
@@ -41,8 +55,12 @@ func (dst *RuleStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RuleStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.RuleStatusAnyOf != nil {
+		return json.Marshal(&src.RuleStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

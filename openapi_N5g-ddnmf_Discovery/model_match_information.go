@@ -68,7 +68,7 @@ func (o *MatchInformation) SetDiscType(v DiscoveryType) {
 
 // GetOpenMatchInfoForOpen returns the OpenMatchInfoForOpen field value if set, zero value otherwise.
 func (o *MatchInformation) GetOpenMatchInfoForOpen() MatchInfoForOpen {
-	if o == nil || IsNil(o.OpenMatchInfoForOpen) {
+	if o == nil || isNil(o.OpenMatchInfoForOpen) {
 		var ret MatchInfoForOpen
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MatchInformation) GetOpenMatchInfoForOpen() MatchInfoForOpen {
 // GetOpenMatchInfoForOpenOk returns a tuple with the OpenMatchInfoForOpen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchInformation) GetOpenMatchInfoForOpenOk() (*MatchInfoForOpen, bool) {
-	if o == nil || IsNil(o.OpenMatchInfoForOpen) {
+	if o == nil || isNil(o.OpenMatchInfoForOpen) {
 		return nil, false
 	}
 	return o.OpenMatchInfoForOpen, true
@@ -86,7 +86,7 @@ func (o *MatchInformation) GetOpenMatchInfoForOpenOk() (*MatchInfoForOpen, bool)
 
 // HasOpenMatchInfoForOpen returns a boolean if a field has been set.
 func (o *MatchInformation) HasOpenMatchInfoForOpen() bool {
-	if o != nil && !IsNil(o.OpenMatchInfoForOpen) {
+	if o != nil && !isNil(o.OpenMatchInfoForOpen) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *MatchInformation) SetOpenMatchInfoForOpen(v MatchInfoForOpen) {
 
 // GetRestrictedMatchInfo returns the RestrictedMatchInfo field value if set, zero value otherwise.
 func (o *MatchInformation) GetRestrictedMatchInfo() MatchInfoForRestricted {
-	if o == nil || IsNil(o.RestrictedMatchInfo) {
+	if o == nil || isNil(o.RestrictedMatchInfo) {
 		var ret MatchInfoForRestricted
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *MatchInformation) GetRestrictedMatchInfo() MatchInfoForRestricted {
 // GetRestrictedMatchInfoOk returns a tuple with the RestrictedMatchInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchInformation) GetRestrictedMatchInfoOk() (*MatchInfoForRestricted, bool) {
-	if o == nil || IsNil(o.RestrictedMatchInfo) {
+	if o == nil || isNil(o.RestrictedMatchInfo) {
 		return nil, false
 	}
 	return o.RestrictedMatchInfo, true
@@ -118,7 +118,7 @@ func (o *MatchInformation) GetRestrictedMatchInfoOk() (*MatchInfoForRestricted, 
 
 // HasRestrictedMatchInfo returns a boolean if a field has been set.
 func (o *MatchInformation) HasRestrictedMatchInfo() bool {
-	if o != nil && !IsNil(o.RestrictedMatchInfo) {
+	if o != nil && !isNil(o.RestrictedMatchInfo) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o MatchInformation) MarshalJSON() ([]byte, error) {
 func (o MatchInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
-	if !IsNil(o.OpenMatchInfoForOpen) {
+	if !isNil(o.OpenMatchInfoForOpen) {
 		toSerialize["openMatchInfoForOpen"] = o.OpenMatchInfoForOpen
 	}
-	if !IsNil(o.RestrictedMatchInfo) {
+	if !isNil(o.RestrictedMatchInfo) {
 		toSerialize["restrictedMatchInfo"] = o.RestrictedMatchInfo
 	}
 	return toSerialize, nil

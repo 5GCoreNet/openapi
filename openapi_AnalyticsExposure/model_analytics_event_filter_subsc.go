@@ -68,7 +68,7 @@ func NewAnalyticsEventFilterSubscWithDefaults() *AnalyticsEventFilterSubsc {
 
 // GetNwPerfReqs returns the NwPerfReqs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetNwPerfReqs() []NetworkPerfRequirement {
-	if o == nil || IsNil(o.NwPerfReqs) {
+	if o == nil || isNil(o.NwPerfReqs) {
 		var ret []NetworkPerfRequirement
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AnalyticsEventFilterSubsc) GetNwPerfReqs() []NetworkPerfRequirement {
 // GetNwPerfReqsOk returns a tuple with the NwPerfReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetNwPerfReqsOk() ([]NetworkPerfRequirement, bool) {
-	if o == nil || IsNil(o.NwPerfReqs) {
+	if o == nil || isNil(o.NwPerfReqs) {
 		return nil, false
 	}
 	return o.NwPerfReqs, true
@@ -86,7 +86,7 @@ func (o *AnalyticsEventFilterSubsc) GetNwPerfReqsOk() ([]NetworkPerfRequirement,
 
 // HasNwPerfReqs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasNwPerfReqs() bool {
-	if o != nil && !IsNil(o.NwPerfReqs) {
+	if o != nil && !isNil(o.NwPerfReqs) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AnalyticsEventFilterSubsc) SetNwPerfReqs(v []NetworkPerfRequirement) {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetLocArea() LocationArea5G {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AnalyticsEventFilterSubsc) GetLocArea() LocationArea5G {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetLocAreaOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -118,7 +118,7 @@ func (o *AnalyticsEventFilterSubsc) GetLocAreaOk() (*LocationArea5G, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasLocArea() bool {
-	if o != nil && !IsNil(o.LocArea) {
+	if o != nil && !isNil(o.LocArea) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *AnalyticsEventFilterSubsc) SetLocArea(v LocationArea5G) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetAppIds() []string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *AnalyticsEventFilterSubsc) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -150,7 +150,7 @@ func (o *AnalyticsEventFilterSubsc) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *AnalyticsEventFilterSubsc) SetAppIds(v []string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *AnalyticsEventFilterSubsc) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -182,7 +182,7 @@ func (o *AnalyticsEventFilterSubsc) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *AnalyticsEventFilterSubsc) SetDnn(v string) {
 
 // GetDnais returns the Dnais field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetDnais() []string {
-	if o == nil || IsNil(o.Dnais) {
+	if o == nil || isNil(o.Dnais) {
 		var ret []string
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *AnalyticsEventFilterSubsc) GetDnais() []string {
 // GetDnaisOk returns a tuple with the Dnais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetDnaisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Dnais) {
+	if o == nil || isNil(o.Dnais) {
 		return nil, false
 	}
 	return o.Dnais, true
@@ -214,7 +214,7 @@ func (o *AnalyticsEventFilterSubsc) GetDnaisOk() ([]string, bool) {
 
 // HasDnais returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasDnais() bool {
-	if o != nil && !IsNil(o.Dnais) {
+	if o != nil && !isNil(o.Dnais) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *AnalyticsEventFilterSubsc) SetDnais(v []string) {
 
 // GetExcepRequs returns the ExcepRequs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetExcepRequs() []Exception {
-	if o == nil || IsNil(o.ExcepRequs) {
+	if o == nil || isNil(o.ExcepRequs) {
 		var ret []Exception
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *AnalyticsEventFilterSubsc) GetExcepRequs() []Exception {
 // GetExcepRequsOk returns a tuple with the ExcepRequs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetExcepRequsOk() ([]Exception, bool) {
-	if o == nil || IsNil(o.ExcepRequs) {
+	if o == nil || isNil(o.ExcepRequs) {
 		return nil, false
 	}
 	return o.ExcepRequs, true
@@ -246,7 +246,7 @@ func (o *AnalyticsEventFilterSubsc) GetExcepRequsOk() ([]Exception, bool) {
 
 // HasExcepRequs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasExcepRequs() bool {
-	if o != nil && !IsNil(o.ExcepRequs) {
+	if o != nil && !isNil(o.ExcepRequs) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *AnalyticsEventFilterSubsc) SetExcepRequs(v []Exception) {
 
 // GetExptAnaType returns the ExptAnaType field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetExptAnaType() ExpectedAnalyticsType {
-	if o == nil || IsNil(o.ExptAnaType) {
+	if o == nil || isNil(o.ExptAnaType) {
 		var ret ExpectedAnalyticsType
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *AnalyticsEventFilterSubsc) GetExptAnaType() ExpectedAnalyticsType {
 // GetExptAnaTypeOk returns a tuple with the ExptAnaType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetExptAnaTypeOk() (*ExpectedAnalyticsType, bool) {
-	if o == nil || IsNil(o.ExptAnaType) {
+	if o == nil || isNil(o.ExptAnaType) {
 		return nil, false
 	}
 	return o.ExptAnaType, true
@@ -278,7 +278,7 @@ func (o *AnalyticsEventFilterSubsc) GetExptAnaTypeOk() (*ExpectedAnalyticsType, 
 
 // HasExptAnaType returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasExptAnaType() bool {
-	if o != nil && !IsNil(o.ExptAnaType) {
+	if o != nil && !isNil(o.ExptAnaType) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *AnalyticsEventFilterSubsc) SetExptAnaType(v ExpectedAnalyticsType) {
 
 // GetExptUeBehav returns the ExptUeBehav field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetExptUeBehav() ExpectedUeBehaviourData {
-	if o == nil || IsNil(o.ExptUeBehav) {
+	if o == nil || isNil(o.ExptUeBehav) {
 		var ret ExpectedUeBehaviourData
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *AnalyticsEventFilterSubsc) GetExptUeBehav() ExpectedUeBehaviourData {
 // GetExptUeBehavOk returns a tuple with the ExptUeBehav field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetExptUeBehavOk() (*ExpectedUeBehaviourData, bool) {
-	if o == nil || IsNil(o.ExptUeBehav) {
+	if o == nil || isNil(o.ExptUeBehav) {
 		return nil, false
 	}
 	return o.ExptUeBehav, true
@@ -310,7 +310,7 @@ func (o *AnalyticsEventFilterSubsc) GetExptUeBehavOk() (*ExpectedUeBehaviourData
 
 // HasExptUeBehav returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasExptUeBehav() bool {
-	if o != nil && !IsNil(o.ExptUeBehav) {
+	if o != nil && !isNil(o.ExptUeBehav) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *AnalyticsEventFilterSubsc) SetExptUeBehav(v ExpectedUeBehaviourData) {
 
 // GetMatchingDir returns the MatchingDir field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetMatchingDir() MatchingDirection {
-	if o == nil || IsNil(o.MatchingDir) {
+	if o == nil || isNil(o.MatchingDir) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *AnalyticsEventFilterSubsc) GetMatchingDir() MatchingDirection {
 // GetMatchingDirOk returns a tuple with the MatchingDir field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetMatchingDirOk() (*MatchingDirection, bool) {
-	if o == nil || IsNil(o.MatchingDir) {
+	if o == nil || isNil(o.MatchingDir) {
 		return nil, false
 	}
 	return o.MatchingDir, true
@@ -342,7 +342,7 @@ func (o *AnalyticsEventFilterSubsc) GetMatchingDirOk() (*MatchingDirection, bool
 
 // HasMatchingDir returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasMatchingDir() bool {
-	if o != nil && !IsNil(o.MatchingDir) {
+	if o != nil && !isNil(o.MatchingDir) {
 		return true
 	}
 
@@ -356,7 +356,7 @@ func (o *AnalyticsEventFilterSubsc) SetMatchingDir(v MatchingDirection) {
 
 // GetReptThlds returns the ReptThlds field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetReptThlds() []ThresholdLevel {
-	if o == nil || IsNil(o.ReptThlds) {
+	if o == nil || isNil(o.ReptThlds) {
 		var ret []ThresholdLevel
 		return ret
 	}
@@ -366,7 +366,7 @@ func (o *AnalyticsEventFilterSubsc) GetReptThlds() []ThresholdLevel {
 // GetReptThldsOk returns a tuple with the ReptThlds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetReptThldsOk() ([]ThresholdLevel, bool) {
-	if o == nil || IsNil(o.ReptThlds) {
+	if o == nil || isNil(o.ReptThlds) {
 		return nil, false
 	}
 	return o.ReptThlds, true
@@ -374,7 +374,7 @@ func (o *AnalyticsEventFilterSubsc) GetReptThldsOk() ([]ThresholdLevel, bool) {
 
 // HasReptThlds returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasReptThlds() bool {
-	if o != nil && !IsNil(o.ReptThlds) {
+	if o != nil && !isNil(o.ReptThlds) {
 		return true
 	}
 
@@ -388,7 +388,7 @@ func (o *AnalyticsEventFilterSubsc) SetReptThlds(v []ThresholdLevel) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -398,7 +398,7 @@ func (o *AnalyticsEventFilterSubsc) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -406,7 +406,7 @@ func (o *AnalyticsEventFilterSubsc) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -420,7 +420,7 @@ func (o *AnalyticsEventFilterSubsc) SetSnssai(v Snssai) {
 
 // GetNsiIdInfos returns the NsiIdInfos field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetNsiIdInfos() []NsiIdInfo {
-	if o == nil || IsNil(o.NsiIdInfos) {
+	if o == nil || isNil(o.NsiIdInfos) {
 		var ret []NsiIdInfo
 		return ret
 	}
@@ -430,7 +430,7 @@ func (o *AnalyticsEventFilterSubsc) GetNsiIdInfos() []NsiIdInfo {
 // GetNsiIdInfosOk returns a tuple with the NsiIdInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetNsiIdInfosOk() ([]NsiIdInfo, bool) {
-	if o == nil || IsNil(o.NsiIdInfos) {
+	if o == nil || isNil(o.NsiIdInfos) {
 		return nil, false
 	}
 	return o.NsiIdInfos, true
@@ -438,7 +438,7 @@ func (o *AnalyticsEventFilterSubsc) GetNsiIdInfosOk() ([]NsiIdInfo, bool) {
 
 // HasNsiIdInfos returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasNsiIdInfos() bool {
-	if o != nil && !IsNil(o.NsiIdInfos) {
+	if o != nil && !isNil(o.NsiIdInfos) {
 		return true
 	}
 
@@ -452,7 +452,7 @@ func (o *AnalyticsEventFilterSubsc) SetNsiIdInfos(v []NsiIdInfo) {
 
 // GetQosReq returns the QosReq field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetQosReq() QosRequirement {
-	if o == nil || IsNil(o.QosReq) {
+	if o == nil || isNil(o.QosReq) {
 		var ret QosRequirement
 		return ret
 	}
@@ -462,7 +462,7 @@ func (o *AnalyticsEventFilterSubsc) GetQosReq() QosRequirement {
 // GetQosReqOk returns a tuple with the QosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetQosReqOk() (*QosRequirement, bool) {
-	if o == nil || IsNil(o.QosReq) {
+	if o == nil || isNil(o.QosReq) {
 		return nil, false
 	}
 	return o.QosReq, true
@@ -470,7 +470,7 @@ func (o *AnalyticsEventFilterSubsc) GetQosReqOk() (*QosRequirement, bool) {
 
 // HasQosReq returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasQosReq() bool {
-	if o != nil && !IsNil(o.QosReq) {
+	if o != nil && !isNil(o.QosReq) {
 		return true
 	}
 
@@ -484,7 +484,7 @@ func (o *AnalyticsEventFilterSubsc) SetQosReq(v QosRequirement) {
 
 // GetQosFlowRetThds returns the QosFlowRetThds field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetQosFlowRetThds() []RetainabilityThreshold {
-	if o == nil || IsNil(o.QosFlowRetThds) {
+	if o == nil || isNil(o.QosFlowRetThds) {
 		var ret []RetainabilityThreshold
 		return ret
 	}
@@ -494,7 +494,7 @@ func (o *AnalyticsEventFilterSubsc) GetQosFlowRetThds() []RetainabilityThreshold
 // GetQosFlowRetThdsOk returns a tuple with the QosFlowRetThds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetQosFlowRetThdsOk() ([]RetainabilityThreshold, bool) {
-	if o == nil || IsNil(o.QosFlowRetThds) {
+	if o == nil || isNil(o.QosFlowRetThds) {
 		return nil, false
 	}
 	return o.QosFlowRetThds, true
@@ -502,7 +502,7 @@ func (o *AnalyticsEventFilterSubsc) GetQosFlowRetThdsOk() ([]RetainabilityThresh
 
 // HasQosFlowRetThds returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasQosFlowRetThds() bool {
-	if o != nil && !IsNil(o.QosFlowRetThds) {
+	if o != nil && !isNil(o.QosFlowRetThds) {
 		return true
 	}
 
@@ -516,7 +516,7 @@ func (o *AnalyticsEventFilterSubsc) SetQosFlowRetThds(v []RetainabilityThreshold
 
 // GetRanUeThrouThds returns the RanUeThrouThds field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetRanUeThrouThds() []string {
-	if o == nil || IsNil(o.RanUeThrouThds) {
+	if o == nil || isNil(o.RanUeThrouThds) {
 		var ret []string
 		return ret
 	}
@@ -526,7 +526,7 @@ func (o *AnalyticsEventFilterSubsc) GetRanUeThrouThds() []string {
 // GetRanUeThrouThdsOk returns a tuple with the RanUeThrouThds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetRanUeThrouThdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RanUeThrouThds) {
+	if o == nil || isNil(o.RanUeThrouThds) {
 		return nil, false
 	}
 	return o.RanUeThrouThds, true
@@ -534,7 +534,7 @@ func (o *AnalyticsEventFilterSubsc) GetRanUeThrouThdsOk() ([]string, bool) {
 
 // HasRanUeThrouThds returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasRanUeThrouThds() bool {
-	if o != nil && !IsNil(o.RanUeThrouThds) {
+	if o != nil && !isNil(o.RanUeThrouThds) {
 		return true
 	}
 
@@ -548,7 +548,7 @@ func (o *AnalyticsEventFilterSubsc) SetRanUeThrouThds(v []string) {
 
 // GetDisperReqs returns the DisperReqs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetDisperReqs() []DispersionRequirement {
-	if o == nil || IsNil(o.DisperReqs) {
+	if o == nil || isNil(o.DisperReqs) {
 		var ret []DispersionRequirement
 		return ret
 	}
@@ -558,7 +558,7 @@ func (o *AnalyticsEventFilterSubsc) GetDisperReqs() []DispersionRequirement {
 // GetDisperReqsOk returns a tuple with the DisperReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetDisperReqsOk() ([]DispersionRequirement, bool) {
-	if o == nil || IsNil(o.DisperReqs) {
+	if o == nil || isNil(o.DisperReqs) {
 		return nil, false
 	}
 	return o.DisperReqs, true
@@ -566,7 +566,7 @@ func (o *AnalyticsEventFilterSubsc) GetDisperReqsOk() ([]DispersionRequirement, 
 
 // HasDisperReqs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasDisperReqs() bool {
-	if o != nil && !IsNil(o.DisperReqs) {
+	if o != nil && !isNil(o.DisperReqs) {
 		return true
 	}
 
@@ -580,7 +580,7 @@ func (o *AnalyticsEventFilterSubsc) SetDisperReqs(v []DispersionRequirement) {
 
 // GetListOfAnaSubsets returns the ListOfAnaSubsets field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetListOfAnaSubsets() []AnalyticsSubset {
-	if o == nil || IsNil(o.ListOfAnaSubsets) {
+	if o == nil || isNil(o.ListOfAnaSubsets) {
 		var ret []AnalyticsSubset
 		return ret
 	}
@@ -590,7 +590,7 @@ func (o *AnalyticsEventFilterSubsc) GetListOfAnaSubsets() []AnalyticsSubset {
 // GetListOfAnaSubsetsOk returns a tuple with the ListOfAnaSubsets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetListOfAnaSubsetsOk() ([]AnalyticsSubset, bool) {
-	if o == nil || IsNil(o.ListOfAnaSubsets) {
+	if o == nil || isNil(o.ListOfAnaSubsets) {
 		return nil, false
 	}
 	return o.ListOfAnaSubsets, true
@@ -598,7 +598,7 @@ func (o *AnalyticsEventFilterSubsc) GetListOfAnaSubsetsOk() ([]AnalyticsSubset, 
 
 // HasListOfAnaSubsets returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasListOfAnaSubsets() bool {
-	if o != nil && !IsNil(o.ListOfAnaSubsets) {
+	if o != nil && !isNil(o.ListOfAnaSubsets) {
 		return true
 	}
 
@@ -612,7 +612,7 @@ func (o *AnalyticsEventFilterSubsc) SetListOfAnaSubsets(v []AnalyticsSubset) {
 
 // GetDnPerfReqs returns the DnPerfReqs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetDnPerfReqs() []DnPerformanceReq {
-	if o == nil || IsNil(o.DnPerfReqs) {
+	if o == nil || isNil(o.DnPerfReqs) {
 		var ret []DnPerformanceReq
 		return ret
 	}
@@ -622,7 +622,7 @@ func (o *AnalyticsEventFilterSubsc) GetDnPerfReqs() []DnPerformanceReq {
 // GetDnPerfReqsOk returns a tuple with the DnPerfReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetDnPerfReqsOk() ([]DnPerformanceReq, bool) {
-	if o == nil || IsNil(o.DnPerfReqs) {
+	if o == nil || isNil(o.DnPerfReqs) {
 		return nil, false
 	}
 	return o.DnPerfReqs, true
@@ -630,7 +630,7 @@ func (o *AnalyticsEventFilterSubsc) GetDnPerfReqsOk() ([]DnPerformanceReq, bool)
 
 // HasDnPerfReqs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasDnPerfReqs() bool {
-	if o != nil && !IsNil(o.DnPerfReqs) {
+	if o != nil && !isNil(o.DnPerfReqs) {
 		return true
 	}
 
@@ -644,7 +644,7 @@ func (o *AnalyticsEventFilterSubsc) SetDnPerfReqs(v []DnPerformanceReq) {
 
 // GetBwRequs returns the BwRequs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetBwRequs() []BwRequirement {
-	if o == nil || IsNil(o.BwRequs) {
+	if o == nil || isNil(o.BwRequs) {
 		var ret []BwRequirement
 		return ret
 	}
@@ -654,7 +654,7 @@ func (o *AnalyticsEventFilterSubsc) GetBwRequs() []BwRequirement {
 // GetBwRequsOk returns a tuple with the BwRequs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetBwRequsOk() ([]BwRequirement, bool) {
-	if o == nil || IsNil(o.BwRequs) {
+	if o == nil || isNil(o.BwRequs) {
 		return nil, false
 	}
 	return o.BwRequs, true
@@ -662,7 +662,7 @@ func (o *AnalyticsEventFilterSubsc) GetBwRequsOk() ([]BwRequirement, bool) {
 
 // HasBwRequs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasBwRequs() bool {
-	if o != nil && !IsNil(o.BwRequs) {
+	if o != nil && !isNil(o.BwRequs) {
 		return true
 	}
 
@@ -676,7 +676,7 @@ func (o *AnalyticsEventFilterSubsc) SetBwRequs(v []BwRequirement) {
 
 // GetRatFreqs returns the RatFreqs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetRatFreqs() []RatFreqInformation {
-	if o == nil || IsNil(o.RatFreqs) {
+	if o == nil || isNil(o.RatFreqs) {
 		var ret []RatFreqInformation
 		return ret
 	}
@@ -686,7 +686,7 @@ func (o *AnalyticsEventFilterSubsc) GetRatFreqs() []RatFreqInformation {
 // GetRatFreqsOk returns a tuple with the RatFreqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetRatFreqsOk() ([]RatFreqInformation, bool) {
-	if o == nil || IsNil(o.RatFreqs) {
+	if o == nil || isNil(o.RatFreqs) {
 		return nil, false
 	}
 	return o.RatFreqs, true
@@ -694,7 +694,7 @@ func (o *AnalyticsEventFilterSubsc) GetRatFreqsOk() ([]RatFreqInformation, bool)
 
 // HasRatFreqs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasRatFreqs() bool {
-	if o != nil && !IsNil(o.RatFreqs) {
+	if o != nil && !isNil(o.RatFreqs) {
 		return true
 	}
 
@@ -708,7 +708,7 @@ func (o *AnalyticsEventFilterSubsc) SetRatFreqs(v []RatFreqInformation) {
 
 // GetAppServerAddrs returns the AppServerAddrs field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetAppServerAddrs() []AddrFqdn {
-	if o == nil || IsNil(o.AppServerAddrs) {
+	if o == nil || isNil(o.AppServerAddrs) {
 		var ret []AddrFqdn
 		return ret
 	}
@@ -718,7 +718,7 @@ func (o *AnalyticsEventFilterSubsc) GetAppServerAddrs() []AddrFqdn {
 // GetAppServerAddrsOk returns a tuple with the AppServerAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetAppServerAddrsOk() ([]AddrFqdn, bool) {
-	if o == nil || IsNil(o.AppServerAddrs) {
+	if o == nil || isNil(o.AppServerAddrs) {
 		return nil, false
 	}
 	return o.AppServerAddrs, true
@@ -726,7 +726,7 @@ func (o *AnalyticsEventFilterSubsc) GetAppServerAddrsOk() ([]AddrFqdn, bool) {
 
 // HasAppServerAddrs returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasAppServerAddrs() bool {
-	if o != nil && !IsNil(o.AppServerAddrs) {
+	if o != nil && !isNil(o.AppServerAddrs) {
 		return true
 	}
 
@@ -740,7 +740,7 @@ func (o *AnalyticsEventFilterSubsc) SetAppServerAddrs(v []AddrFqdn) {
 
 // GetExtraReportReq returns the ExtraReportReq field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetExtraReportReq() EventReportingRequirement {
-	if o == nil || IsNil(o.ExtraReportReq) {
+	if o == nil || isNil(o.ExtraReportReq) {
 		var ret EventReportingRequirement
 		return ret
 	}
@@ -750,7 +750,7 @@ func (o *AnalyticsEventFilterSubsc) GetExtraReportReq() EventReportingRequiremen
 // GetExtraReportReqOk returns a tuple with the ExtraReportReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetExtraReportReqOk() (*EventReportingRequirement, bool) {
-	if o == nil || IsNil(o.ExtraReportReq) {
+	if o == nil || isNil(o.ExtraReportReq) {
 		return nil, false
 	}
 	return o.ExtraReportReq, true
@@ -758,7 +758,7 @@ func (o *AnalyticsEventFilterSubsc) GetExtraReportReqOk() (*EventReportingRequir
 
 // HasExtraReportReq returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasExtraReportReq() bool {
-	if o != nil && !IsNil(o.ExtraReportReq) {
+	if o != nil && !isNil(o.ExtraReportReq) {
 		return true
 	}
 
@@ -772,7 +772,7 @@ func (o *AnalyticsEventFilterSubsc) SetExtraReportReq(v EventReportingRequiremen
 
 // GetMaxNumOfTopAppUl returns the MaxNumOfTopAppUl field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppUl() int32 {
-	if o == nil || IsNil(o.MaxNumOfTopAppUl) {
+	if o == nil || isNil(o.MaxNumOfTopAppUl) {
 		var ret int32
 		return ret
 	}
@@ -782,7 +782,7 @@ func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppUl() int32 {
 // GetMaxNumOfTopAppUlOk returns a tuple with the MaxNumOfTopAppUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppUlOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumOfTopAppUl) {
+	if o == nil || isNil(o.MaxNumOfTopAppUl) {
 		return nil, false
 	}
 	return o.MaxNumOfTopAppUl, true
@@ -790,7 +790,7 @@ func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppUlOk() (*int32, bool) {
 
 // HasMaxNumOfTopAppUl returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasMaxNumOfTopAppUl() bool {
-	if o != nil && !IsNil(o.MaxNumOfTopAppUl) {
+	if o != nil && !isNil(o.MaxNumOfTopAppUl) {
 		return true
 	}
 
@@ -804,7 +804,7 @@ func (o *AnalyticsEventFilterSubsc) SetMaxNumOfTopAppUl(v int32) {
 
 // GetMaxNumOfTopAppDl returns the MaxNumOfTopAppDl field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppDl() int32 {
-	if o == nil || IsNil(o.MaxNumOfTopAppDl) {
+	if o == nil || isNil(o.MaxNumOfTopAppDl) {
 		var ret int32
 		return ret
 	}
@@ -814,7 +814,7 @@ func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppDl() int32 {
 // GetMaxNumOfTopAppDlOk returns a tuple with the MaxNumOfTopAppDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppDlOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumOfTopAppDl) {
+	if o == nil || isNil(o.MaxNumOfTopAppDl) {
 		return nil, false
 	}
 	return o.MaxNumOfTopAppDl, true
@@ -822,7 +822,7 @@ func (o *AnalyticsEventFilterSubsc) GetMaxNumOfTopAppDlOk() (*int32, bool) {
 
 // HasMaxNumOfTopAppDl returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasMaxNumOfTopAppDl() bool {
-	if o != nil && !IsNil(o.MaxNumOfTopAppDl) {
+	if o != nil && !isNil(o.MaxNumOfTopAppDl) {
 		return true
 	}
 
@@ -836,7 +836,7 @@ func (o *AnalyticsEventFilterSubsc) SetMaxNumOfTopAppDl(v int32) {
 
 // GetVisitedLocAreas returns the VisitedLocAreas field value if set, zero value otherwise.
 func (o *AnalyticsEventFilterSubsc) GetVisitedLocAreas() []LocationArea5G {
-	if o == nil || IsNil(o.VisitedLocAreas) {
+	if o == nil || isNil(o.VisitedLocAreas) {
 		var ret []LocationArea5G
 		return ret
 	}
@@ -846,7 +846,7 @@ func (o *AnalyticsEventFilterSubsc) GetVisitedLocAreas() []LocationArea5G {
 // GetVisitedLocAreasOk returns a tuple with the VisitedLocAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventFilterSubsc) GetVisitedLocAreasOk() ([]LocationArea5G, bool) {
-	if o == nil || IsNil(o.VisitedLocAreas) {
+	if o == nil || isNil(o.VisitedLocAreas) {
 		return nil, false
 	}
 	return o.VisitedLocAreas, true
@@ -854,7 +854,7 @@ func (o *AnalyticsEventFilterSubsc) GetVisitedLocAreasOk() ([]LocationArea5G, bo
 
 // HasVisitedLocAreas returns a boolean if a field has been set.
 func (o *AnalyticsEventFilterSubsc) HasVisitedLocAreas() bool {
-	if o != nil && !IsNil(o.VisitedLocAreas) {
+	if o != nil && !isNil(o.VisitedLocAreas) {
 		return true
 	}
 
@@ -876,79 +876,79 @@ func (o AnalyticsEventFilterSubsc) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsEventFilterSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NwPerfReqs) {
+	if !isNil(o.NwPerfReqs) {
 		toSerialize["nwPerfReqs"] = o.NwPerfReqs
 	}
-	if !IsNil(o.LocArea) {
+	if !isNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Dnais) {
+	if !isNil(o.Dnais) {
 		toSerialize["dnais"] = o.Dnais
 	}
-	if !IsNil(o.ExcepRequs) {
+	if !isNil(o.ExcepRequs) {
 		toSerialize["excepRequs"] = o.ExcepRequs
 	}
-	if !IsNil(o.ExptAnaType) {
+	if !isNil(o.ExptAnaType) {
 		toSerialize["exptAnaType"] = o.ExptAnaType
 	}
-	if !IsNil(o.ExptUeBehav) {
+	if !isNil(o.ExptUeBehav) {
 		toSerialize["exptUeBehav"] = o.ExptUeBehav
 	}
-	if !IsNil(o.MatchingDir) {
+	if !isNil(o.MatchingDir) {
 		toSerialize["matchingDir"] = o.MatchingDir
 	}
-	if !IsNil(o.ReptThlds) {
+	if !isNil(o.ReptThlds) {
 		toSerialize["reptThlds"] = o.ReptThlds
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.NsiIdInfos) {
+	if !isNil(o.NsiIdInfos) {
 		toSerialize["nsiIdInfos"] = o.NsiIdInfos
 	}
-	if !IsNil(o.QosReq) {
+	if !isNil(o.QosReq) {
 		toSerialize["qosReq"] = o.QosReq
 	}
-	if !IsNil(o.QosFlowRetThds) {
+	if !isNil(o.QosFlowRetThds) {
 		toSerialize["qosFlowRetThds"] = o.QosFlowRetThds
 	}
-	if !IsNil(o.RanUeThrouThds) {
+	if !isNil(o.RanUeThrouThds) {
 		toSerialize["ranUeThrouThds"] = o.RanUeThrouThds
 	}
-	if !IsNil(o.DisperReqs) {
+	if !isNil(o.DisperReqs) {
 		toSerialize["disperReqs"] = o.DisperReqs
 	}
-	if !IsNil(o.ListOfAnaSubsets) {
+	if !isNil(o.ListOfAnaSubsets) {
 		toSerialize["listOfAnaSubsets"] = o.ListOfAnaSubsets
 	}
-	if !IsNil(o.DnPerfReqs) {
+	if !isNil(o.DnPerfReqs) {
 		toSerialize["dnPerfReqs"] = o.DnPerfReqs
 	}
-	if !IsNil(o.BwRequs) {
+	if !isNil(o.BwRequs) {
 		toSerialize["bwRequs"] = o.BwRequs
 	}
-	if !IsNil(o.RatFreqs) {
+	if !isNil(o.RatFreqs) {
 		toSerialize["ratFreqs"] = o.RatFreqs
 	}
-	if !IsNil(o.AppServerAddrs) {
+	if !isNil(o.AppServerAddrs) {
 		toSerialize["appServerAddrs"] = o.AppServerAddrs
 	}
-	if !IsNil(o.ExtraReportReq) {
+	if !isNil(o.ExtraReportReq) {
 		toSerialize["extraReportReq"] = o.ExtraReportReq
 	}
-	if !IsNil(o.MaxNumOfTopAppUl) {
+	if !isNil(o.MaxNumOfTopAppUl) {
 		toSerialize["maxNumOfTopAppUl"] = o.MaxNumOfTopAppUl
 	}
-	if !IsNil(o.MaxNumOfTopAppDl) {
+	if !isNil(o.MaxNumOfTopAppDl) {
 		toSerialize["maxNumOfTopAppDl"] = o.MaxNumOfTopAppDl
 	}
-	if !IsNil(o.VisitedLocAreas) {
+	if !isNil(o.VisitedLocAreas) {
 		toSerialize["visitedLocAreas"] = o.VisitedLocAreas
 	}
 	return toSerialize, nil

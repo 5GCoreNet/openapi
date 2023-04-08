@@ -13,7 +13,7 @@ package openapi_Namf_MBSBroadcast
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextDeleteEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -237,8 +237,8 @@ func (r ApiContextUpdateRequest) JsonData(jsonData ContextUpdateReqData) ApiCont
 	return r
 }
 
-func (r ApiContextUpdateRequest) BinaryDataN2Information(binaryDataN2Information *os.File) ApiContextUpdateRequest {
-	r.binaryDataN2Information = binaryDataN2Information
+func (r ApiContextUpdateRequest) BinaryDataN2Information(binaryDataN2Information os.File) ApiContextUpdateRequest {
+	r.binaryDataN2Information = &binaryDataN2Information
 	return r
 }
 
@@ -313,17 +313,17 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 
 	binaryDataN2InformationLocalVarFormFileName = "binaryDataN2Information"
 
-
-	binaryDataN2InformationLocalVarFile := r.binaryDataN2Information
-
+	var binaryDataN2InformationLocalVarFile *os.File
+	if r.binaryDataN2Information != nil {
+		binaryDataN2InformationLocalVarFile = r.binaryDataN2Information
+	}
 	if binaryDataN2InformationLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataN2InformationLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataN2InformationLocalVarFile)
 		binaryDataN2InformationLocalVarFileBytes = fbs
 		binaryDataN2InformationLocalVarFileName = binaryDataN2InformationLocalVarFile.Name()
 		binaryDataN2InformationLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2InformationLocalVarFileBytes, fileName: binaryDataN2InformationLocalVarFileName, formFileName: binaryDataN2InformationLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -334,9 +334,9 @@ func (a *IndividualBroadcastMBSSessionContextDocumentApiService) ContextUpdateEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

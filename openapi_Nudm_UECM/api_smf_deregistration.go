@@ -13,7 +13,7 @@ package openapi_Nudm_UECM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -91,10 +91,10 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 	}
 
 	if r.smfSetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "smf-set-id", r.smfSetId, "")
+		parameterAddToQuery(localVarQueryParams, "smf-set-id", r.smfSetId, "")
 	}
 	if r.smfInstanceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "smf-instance-id", r.smfInstanceId, "")
+		parameterAddToQuery(localVarQueryParams, "smf-instance-id", r.smfInstanceId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *SMFDeregistrationApiService) SmfDeregistrationExecute(r ApiSmfDeregistr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

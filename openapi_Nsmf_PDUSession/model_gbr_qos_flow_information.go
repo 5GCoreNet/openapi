@@ -154,7 +154,7 @@ func (o *GbrQosFlowInformation) SetGuaFbrUl(v string) {
 
 // GetNotifControl returns the NotifControl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetNotifControl() NotificationControl {
-	if o == nil || IsNil(o.NotifControl) {
+	if o == nil || isNil(o.NotifControl) {
 		var ret NotificationControl
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *GbrQosFlowInformation) GetNotifControl() NotificationControl {
 // GetNotifControlOk returns a tuple with the NotifControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetNotifControlOk() (*NotificationControl, bool) {
-	if o == nil || IsNil(o.NotifControl) {
+	if o == nil || isNil(o.NotifControl) {
 		return nil, false
 	}
 	return o.NotifControl, true
@@ -172,7 +172,7 @@ func (o *GbrQosFlowInformation) GetNotifControlOk() (*NotificationControl, bool)
 
 // HasNotifControl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasNotifControl() bool {
-	if o != nil && !IsNil(o.NotifControl) {
+	if o != nil && !isNil(o.NotifControl) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *GbrQosFlowInformation) SetNotifControl(v NotificationControl) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
-	if o == nil || IsNil(o.MaxPacketLossRateDl) {
+	if o == nil || isNil(o.MaxPacketLossRateDl) {
 		var ret int32
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
 // GetMaxPacketLossRateDlOk returns a tuple with the MaxPacketLossRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxPacketLossRateDl) {
+	if o == nil || isNil(o.MaxPacketLossRateDl) {
 		return nil, false
 	}
 	return o.MaxPacketLossRateDl, true
@@ -204,7 +204,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
 
 // HasMaxPacketLossRateDl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasMaxPacketLossRateDl() bool {
-	if o != nil && !IsNil(o.MaxPacketLossRateDl) {
+	if o != nil && !isNil(o.MaxPacketLossRateDl) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *GbrQosFlowInformation) SetMaxPacketLossRateDl(v int32) {
 
 // GetMaxPacketLossRateUl returns the MaxPacketLossRateUl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateUl() int32 {
-	if o == nil || IsNil(o.MaxPacketLossRateUl) {
+	if o == nil || isNil(o.MaxPacketLossRateUl) {
 		var ret int32
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateUl() int32 {
 // GetMaxPacketLossRateUlOk returns a tuple with the MaxPacketLossRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateUlOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxPacketLossRateUl) {
+	if o == nil || isNil(o.MaxPacketLossRateUl) {
 		return nil, false
 	}
 	return o.MaxPacketLossRateUl, true
@@ -236,7 +236,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateUlOk() (*int32, bool) {
 
 // HasMaxPacketLossRateUl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasMaxPacketLossRateUl() bool {
-	if o != nil && !IsNil(o.MaxPacketLossRateUl) {
+	if o != nil && !isNil(o.MaxPacketLossRateUl) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *GbrQosFlowInformation) SetMaxPacketLossRateUl(v int32) {
 
 // GetAlternativeQosProfileList returns the AlternativeQosProfileList field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetAlternativeQosProfileList() []AlternativeQosProfile {
-	if o == nil || IsNil(o.AlternativeQosProfileList) {
+	if o == nil || isNil(o.AlternativeQosProfileList) {
 		var ret []AlternativeQosProfile
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *GbrQosFlowInformation) GetAlternativeQosProfileList() []AlternativeQosP
 // GetAlternativeQosProfileListOk returns a tuple with the AlternativeQosProfileList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetAlternativeQosProfileListOk() ([]AlternativeQosProfile, bool) {
-	if o == nil || IsNil(o.AlternativeQosProfileList) {
+	if o == nil || isNil(o.AlternativeQosProfileList) {
 		return nil, false
 	}
 	return o.AlternativeQosProfileList, true
@@ -268,7 +268,7 @@ func (o *GbrQosFlowInformation) GetAlternativeQosProfileListOk() ([]AlternativeQ
 
 // HasAlternativeQosProfileList returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasAlternativeQosProfileList() bool {
-	if o != nil && !IsNil(o.AlternativeQosProfileList) {
+	if o != nil && !isNil(o.AlternativeQosProfileList) {
 		return true
 	}
 
@@ -294,16 +294,16 @@ func (o GbrQosFlowInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize["maxFbrUl"] = o.MaxFbrUl
 	toSerialize["guaFbrDl"] = o.GuaFbrDl
 	toSerialize["guaFbrUl"] = o.GuaFbrUl
-	if !IsNil(o.NotifControl) {
+	if !isNil(o.NotifControl) {
 		toSerialize["notifControl"] = o.NotifControl
 	}
-	if !IsNil(o.MaxPacketLossRateDl) {
+	if !isNil(o.MaxPacketLossRateDl) {
 		toSerialize["maxPacketLossRateDl"] = o.MaxPacketLossRateDl
 	}
-	if !IsNil(o.MaxPacketLossRateUl) {
+	if !isNil(o.MaxPacketLossRateUl) {
 		toSerialize["maxPacketLossRateUl"] = o.MaxPacketLossRateUl
 	}
-	if !IsNil(o.AlternativeQosProfileList) {
+	if !isNil(o.AlternativeQosProfileList) {
 		toSerialize["alternativeQosProfileList"] = o.AlternativeQosProfileList
 	}
 	return toSerialize, nil

@@ -57,7 +57,7 @@ func NewN3gaLocationWithDefaults() *N3gaLocation {
 
 // GetN3gppTai returns the N3gppTai field value if set, zero value otherwise.
 func (o *N3gaLocation) GetN3gppTai() Tai {
-	if o == nil || IsNil(o.N3gppTai) {
+	if o == nil || isNil(o.N3gppTai) {
 		var ret Tai
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *N3gaLocation) GetN3gppTai() Tai {
 // GetN3gppTaiOk returns a tuple with the N3gppTai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetN3gppTaiOk() (*Tai, bool) {
-	if o == nil || IsNil(o.N3gppTai) {
+	if o == nil || isNil(o.N3gppTai) {
 		return nil, false
 	}
 	return o.N3gppTai, true
@@ -75,7 +75,7 @@ func (o *N3gaLocation) GetN3gppTaiOk() (*Tai, bool) {
 
 // HasN3gppTai returns a boolean if a field has been set.
 func (o *N3gaLocation) HasN3gppTai() bool {
-	if o != nil && !IsNil(o.N3gppTai) {
+	if o != nil && !isNil(o.N3gppTai) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *N3gaLocation) SetN3gppTai(v Tai) {
 
 // GetN3IwfId returns the N3IwfId field value if set, zero value otherwise.
 func (o *N3gaLocation) GetN3IwfId() string {
-	if o == nil || IsNil(o.N3IwfId) {
+	if o == nil || isNil(o.N3IwfId) {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *N3gaLocation) GetN3IwfId() string {
 // GetN3IwfIdOk returns a tuple with the N3IwfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetN3IwfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.N3IwfId) {
+	if o == nil || isNil(o.N3IwfId) {
 		return nil, false
 	}
 	return o.N3IwfId, true
@@ -107,7 +107,7 @@ func (o *N3gaLocation) GetN3IwfIdOk() (*string, bool) {
 
 // HasN3IwfId returns a boolean if a field has been set.
 func (o *N3gaLocation) HasN3IwfId() bool {
-	if o != nil && !IsNil(o.N3IwfId) {
+	if o != nil && !isNil(o.N3IwfId) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *N3gaLocation) SetN3IwfId(v string) {
 
 // GetUeIpv4Addr returns the UeIpv4Addr field value if set, zero value otherwise.
 func (o *N3gaLocation) GetUeIpv4Addr() string {
-	if o == nil || IsNil(o.UeIpv4Addr) {
+	if o == nil || isNil(o.UeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *N3gaLocation) GetUeIpv4Addr() string {
 // GetUeIpv4AddrOk returns a tuple with the UeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.UeIpv4Addr) {
+	if o == nil || isNil(o.UeIpv4Addr) {
 		return nil, false
 	}
 	return o.UeIpv4Addr, true
@@ -139,7 +139,7 @@ func (o *N3gaLocation) GetUeIpv4AddrOk() (*string, bool) {
 
 // HasUeIpv4Addr returns a boolean if a field has been set.
 func (o *N3gaLocation) HasUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.UeIpv4Addr) {
+	if o != nil && !isNil(o.UeIpv4Addr) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *N3gaLocation) SetUeIpv4Addr(v string) {
 
 // GetUeIpv6Addr returns the UeIpv6Addr field value if set, zero value otherwise.
 func (o *N3gaLocation) GetUeIpv6Addr() Ipv6Addr {
-	if o == nil || IsNil(o.UeIpv6Addr) {
+	if o == nil || isNil(o.UeIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *N3gaLocation) GetUeIpv6Addr() Ipv6Addr {
 // GetUeIpv6AddrOk returns a tuple with the UeIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetUeIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.UeIpv6Addr) {
+	if o == nil || isNil(o.UeIpv6Addr) {
 		return nil, false
 	}
 	return o.UeIpv6Addr, true
@@ -171,7 +171,7 @@ func (o *N3gaLocation) GetUeIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasUeIpv6Addr returns a boolean if a field has been set.
 func (o *N3gaLocation) HasUeIpv6Addr() bool {
-	if o != nil && !IsNil(o.UeIpv6Addr) {
+	if o != nil && !isNil(o.UeIpv6Addr) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *N3gaLocation) SetUeIpv6Addr(v Ipv6Addr) {
 
 // GetPortNumber returns the PortNumber field value if set, zero value otherwise.
 func (o *N3gaLocation) GetPortNumber() int32 {
-	if o == nil || IsNil(o.PortNumber) {
+	if o == nil || isNil(o.PortNumber) {
 		var ret int32
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *N3gaLocation) GetPortNumber() int32 {
 // GetPortNumberOk returns a tuple with the PortNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetPortNumberOk() (*int32, bool) {
-	if o == nil || IsNil(o.PortNumber) {
+	if o == nil || isNil(o.PortNumber) {
 		return nil, false
 	}
 	return o.PortNumber, true
@@ -203,7 +203,7 @@ func (o *N3gaLocation) GetPortNumberOk() (*int32, bool) {
 
 // HasPortNumber returns a boolean if a field has been set.
 func (o *N3gaLocation) HasPortNumber() bool {
-	if o != nil && !IsNil(o.PortNumber) {
+	if o != nil && !isNil(o.PortNumber) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *N3gaLocation) SetPortNumber(v int32) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *N3gaLocation) GetProtocol() TransportProtocol {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || isNil(o.Protocol) {
 		var ret TransportProtocol
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *N3gaLocation) GetProtocol() TransportProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetProtocolOk() (*TransportProtocol, bool) {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || isNil(o.Protocol) {
 		return nil, false
 	}
 	return o.Protocol, true
@@ -235,7 +235,7 @@ func (o *N3gaLocation) GetProtocolOk() (*TransportProtocol, bool) {
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *N3gaLocation) HasProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
+	if o != nil && !isNil(o.Protocol) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *N3gaLocation) SetProtocol(v TransportProtocol) {
 
 // GetTnapId returns the TnapId field value if set, zero value otherwise.
 func (o *N3gaLocation) GetTnapId() TnapId {
-	if o == nil || IsNil(o.TnapId) {
+	if o == nil || isNil(o.TnapId) {
 		var ret TnapId
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *N3gaLocation) GetTnapId() TnapId {
 // GetTnapIdOk returns a tuple with the TnapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetTnapIdOk() (*TnapId, bool) {
-	if o == nil || IsNil(o.TnapId) {
+	if o == nil || isNil(o.TnapId) {
 		return nil, false
 	}
 	return o.TnapId, true
@@ -267,7 +267,7 @@ func (o *N3gaLocation) GetTnapIdOk() (*TnapId, bool) {
 
 // HasTnapId returns a boolean if a field has been set.
 func (o *N3gaLocation) HasTnapId() bool {
-	if o != nil && !IsNil(o.TnapId) {
+	if o != nil && !isNil(o.TnapId) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *N3gaLocation) SetTnapId(v TnapId) {
 
 // GetTwapId returns the TwapId field value if set, zero value otherwise.
 func (o *N3gaLocation) GetTwapId() TwapId {
-	if o == nil || IsNil(o.TwapId) {
+	if o == nil || isNil(o.TwapId) {
 		var ret TwapId
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *N3gaLocation) GetTwapId() TwapId {
 // GetTwapIdOk returns a tuple with the TwapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetTwapIdOk() (*TwapId, bool) {
-	if o == nil || IsNil(o.TwapId) {
+	if o == nil || isNil(o.TwapId) {
 		return nil, false
 	}
 	return o.TwapId, true
@@ -299,7 +299,7 @@ func (o *N3gaLocation) GetTwapIdOk() (*TwapId, bool) {
 
 // HasTwapId returns a boolean if a field has been set.
 func (o *N3gaLocation) HasTwapId() bool {
-	if o != nil && !IsNil(o.TwapId) {
+	if o != nil && !isNil(o.TwapId) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *N3gaLocation) SetTwapId(v TwapId) {
 
 // GetHfcNodeId returns the HfcNodeId field value if set, zero value otherwise.
 func (o *N3gaLocation) GetHfcNodeId() HfcNodeId {
-	if o == nil || IsNil(o.HfcNodeId) {
+	if o == nil || isNil(o.HfcNodeId) {
 		var ret HfcNodeId
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *N3gaLocation) GetHfcNodeId() HfcNodeId {
 // GetHfcNodeIdOk returns a tuple with the HfcNodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetHfcNodeIdOk() (*HfcNodeId, bool) {
-	if o == nil || IsNil(o.HfcNodeId) {
+	if o == nil || isNil(o.HfcNodeId) {
 		return nil, false
 	}
 	return o.HfcNodeId, true
@@ -331,7 +331,7 @@ func (o *N3gaLocation) GetHfcNodeIdOk() (*HfcNodeId, bool) {
 
 // HasHfcNodeId returns a boolean if a field has been set.
 func (o *N3gaLocation) HasHfcNodeId() bool {
-	if o != nil && !IsNil(o.HfcNodeId) {
+	if o != nil && !isNil(o.HfcNodeId) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *N3gaLocation) SetHfcNodeId(v HfcNodeId) {
 
 // GetGli returns the Gli field value if set, zero value otherwise.
 func (o *N3gaLocation) GetGli() string {
-	if o == nil || IsNil(o.Gli) {
+	if o == nil || isNil(o.Gli) {
 		var ret string
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *N3gaLocation) GetGli() string {
 // GetGliOk returns a tuple with the Gli field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetGliOk() (*string, bool) {
-	if o == nil || IsNil(o.Gli) {
+	if o == nil || isNil(o.Gli) {
 		return nil, false
 	}
 	return o.Gli, true
@@ -363,7 +363,7 @@ func (o *N3gaLocation) GetGliOk() (*string, bool) {
 
 // HasGli returns a boolean if a field has been set.
 func (o *N3gaLocation) HasGli() bool {
-	if o != nil && !IsNil(o.Gli) {
+	if o != nil && !isNil(o.Gli) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *N3gaLocation) SetGli(v string) {
 
 // GetW5gbanLineType returns the W5gbanLineType field value if set, zero value otherwise.
 func (o *N3gaLocation) GetW5gbanLineType() LineType {
-	if o == nil || IsNil(o.W5gbanLineType) {
+	if o == nil || isNil(o.W5gbanLineType) {
 		var ret LineType
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *N3gaLocation) GetW5gbanLineType() LineType {
 // GetW5gbanLineTypeOk returns a tuple with the W5gbanLineType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetW5gbanLineTypeOk() (*LineType, bool) {
-	if o == nil || IsNil(o.W5gbanLineType) {
+	if o == nil || isNil(o.W5gbanLineType) {
 		return nil, false
 	}
 	return o.W5gbanLineType, true
@@ -395,7 +395,7 @@ func (o *N3gaLocation) GetW5gbanLineTypeOk() (*LineType, bool) {
 
 // HasW5gbanLineType returns a boolean if a field has been set.
 func (o *N3gaLocation) HasW5gbanLineType() bool {
-	if o != nil && !IsNil(o.W5gbanLineType) {
+	if o != nil && !isNil(o.W5gbanLineType) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *N3gaLocation) SetW5gbanLineType(v LineType) {
 
 // GetGci returns the Gci field value if set, zero value otherwise.
 func (o *N3gaLocation) GetGci() string {
-	if o == nil || IsNil(o.Gci) {
+	if o == nil || isNil(o.Gci) {
 		var ret string
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *N3gaLocation) GetGci() string {
 // GetGciOk returns a tuple with the Gci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gaLocation) GetGciOk() (*string, bool) {
-	if o == nil || IsNil(o.Gci) {
+	if o == nil || isNil(o.Gci) {
 		return nil, false
 	}
 	return o.Gci, true
@@ -427,7 +427,7 @@ func (o *N3gaLocation) GetGciOk() (*string, bool) {
 
 // HasGci returns a boolean if a field has been set.
 func (o *N3gaLocation) HasGci() bool {
-	if o != nil && !IsNil(o.Gci) {
+	if o != nil && !isNil(o.Gci) {
 		return true
 	}
 
@@ -449,40 +449,40 @@ func (o N3gaLocation) MarshalJSON() ([]byte, error) {
 
 func (o N3gaLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.N3gppTai) {
+	if !isNil(o.N3gppTai) {
 		toSerialize["n3gppTai"] = o.N3gppTai
 	}
-	if !IsNil(o.N3IwfId) {
+	if !isNil(o.N3IwfId) {
 		toSerialize["n3IwfId"] = o.N3IwfId
 	}
-	if !IsNil(o.UeIpv4Addr) {
+	if !isNil(o.UeIpv4Addr) {
 		toSerialize["ueIpv4Addr"] = o.UeIpv4Addr
 	}
-	if !IsNil(o.UeIpv6Addr) {
+	if !isNil(o.UeIpv6Addr) {
 		toSerialize["ueIpv6Addr"] = o.UeIpv6Addr
 	}
-	if !IsNil(o.PortNumber) {
+	if !isNil(o.PortNumber) {
 		toSerialize["portNumber"] = o.PortNumber
 	}
-	if !IsNil(o.Protocol) {
+	if !isNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
-	if !IsNil(o.TnapId) {
+	if !isNil(o.TnapId) {
 		toSerialize["tnapId"] = o.TnapId
 	}
-	if !IsNil(o.TwapId) {
+	if !isNil(o.TwapId) {
 		toSerialize["twapId"] = o.TwapId
 	}
-	if !IsNil(o.HfcNodeId) {
+	if !isNil(o.HfcNodeId) {
 		toSerialize["hfcNodeId"] = o.HfcNodeId
 	}
-	if !IsNil(o.Gli) {
+	if !isNil(o.Gli) {
 		toSerialize["gli"] = o.Gli
 	}
-	if !IsNil(o.W5gbanLineType) {
+	if !isNil(o.W5gbanLineType) {
 		toSerialize["w5gbanLineType"] = o.W5gbanLineType
 	}
-	if !IsNil(o.Gci) {
+	if !isNil(o.Gci) {
 		toSerialize["gci"] = o.Gci
 	}
 	return toSerialize, nil

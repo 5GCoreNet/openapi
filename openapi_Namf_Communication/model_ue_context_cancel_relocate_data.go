@@ -44,7 +44,7 @@ func NewUeContextCancelRelocateDataWithDefaults() *UeContextCancelRelocateData {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *UeContextCancelRelocateData) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UeContextCancelRelocateData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCancelRelocateData) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -62,7 +62,7 @@ func (o *UeContextCancelRelocateData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *UeContextCancelRelocateData) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o UeContextCancelRelocateData) MarshalJSON() ([]byte, error) {
 
 func (o UeContextCancelRelocateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	toSerialize["relocationCancelRequest"] = o.RelocationCancelRequest

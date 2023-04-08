@@ -13,7 +13,7 @@ package openapi_Nucmf_UERCM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -89,12 +89,12 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 		return localVarReturnValue, nil, reportError("ueRadioCapaId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ue-radio-capa-id", r.ueRadioCapaId, "")
+	parameterAddToQuery(localVarQueryParams, "ue-radio-capa-id", r.ueRadioCapaId, "")
 	if r.racFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rac-format", r.racFormat, "")
+		parameterAddToQuery(localVarQueryParams, "rac-format", r.racFormat, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -123,9 +123,9 @@ func (a *DictionaryEntryStoreApiService) RetrieveDictionaryEntryExecute(r ApiRet
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

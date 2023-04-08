@@ -168,7 +168,7 @@ func (o *EventNotification1) SetTimeStamp(v time.Time) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *EventNotification1) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *EventNotification1) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -186,7 +186,7 @@ func (o *EventNotification1) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *EventNotification1) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *EventNotification1) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *EventNotification1) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *EventNotification1) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -218,7 +218,7 @@ func (o *EventNotification1) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *EventNotification1) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -232,7 +232,7 @@ func (o *EventNotification1) SetGpsi(v string) {
 
 // GetUeIpAddr returns the UeIpAddr field value if set, zero value otherwise.
 func (o *EventNotification1) GetUeIpAddr() IpAddr {
-	if o == nil || IsNil(o.UeIpAddr) {
+	if o == nil || isNil(o.UeIpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *EventNotification1) GetUeIpAddr() IpAddr {
 // GetUeIpAddrOk returns a tuple with the UeIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetUeIpAddrOk() (*IpAddr, bool) {
-	if o == nil || IsNil(o.UeIpAddr) {
+	if o == nil || isNil(o.UeIpAddr) {
 		return nil, false
 	}
 	return o.UeIpAddr, true
@@ -250,7 +250,7 @@ func (o *EventNotification1) GetUeIpAddrOk() (*IpAddr, bool) {
 
 // HasUeIpAddr returns a boolean if a field has been set.
 func (o *EventNotification1) HasUeIpAddr() bool {
-	if o != nil && !IsNil(o.UeIpAddr) {
+	if o != nil && !isNil(o.UeIpAddr) {
 		return true
 	}
 
@@ -264,7 +264,7 @@ func (o *EventNotification1) SetUeIpAddr(v IpAddr) {
 
 // GetTransacInfos returns the TransacInfos field value if set, zero value otherwise.
 func (o *EventNotification1) GetTransacInfos() []TransactionInfo {
-	if o == nil || IsNil(o.TransacInfos) {
+	if o == nil || isNil(o.TransacInfos) {
 		var ret []TransactionInfo
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *EventNotification1) GetTransacInfos() []TransactionInfo {
 // GetTransacInfosOk returns a tuple with the TransacInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetTransacInfosOk() ([]TransactionInfo, bool) {
-	if o == nil || IsNil(o.TransacInfos) {
+	if o == nil || isNil(o.TransacInfos) {
 		return nil, false
 	}
 	return o.TransacInfos, true
@@ -282,7 +282,7 @@ func (o *EventNotification1) GetTransacInfosOk() ([]TransactionInfo, bool) {
 
 // HasTransacInfos returns a boolean if a field has been set.
 func (o *EventNotification1) HasTransacInfos() bool {
-	if o != nil && !IsNil(o.TransacInfos) {
+	if o != nil && !isNil(o.TransacInfos) {
 		return true
 	}
 
@@ -296,7 +296,7 @@ func (o *EventNotification1) SetTransacInfos(v []TransactionInfo) {
 
 // GetSourceDnai returns the SourceDnai field value if set, zero value otherwise.
 func (o *EventNotification1) GetSourceDnai() string {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		var ret string
 		return ret
 	}
@@ -306,7 +306,7 @@ func (o *EventNotification1) GetSourceDnai() string {
 // GetSourceDnaiOk returns a tuple with the SourceDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSourceDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		return nil, false
 	}
 	return o.SourceDnai, true
@@ -314,7 +314,7 @@ func (o *EventNotification1) GetSourceDnaiOk() (*string, bool) {
 
 // HasSourceDnai returns a boolean if a field has been set.
 func (o *EventNotification1) HasSourceDnai() bool {
-	if o != nil && !IsNil(o.SourceDnai) {
+	if o != nil && !isNil(o.SourceDnai) {
 		return true
 	}
 
@@ -328,7 +328,7 @@ func (o *EventNotification1) SetSourceDnai(v string) {
 
 // GetTargetDnai returns the TargetDnai field value if set, zero value otherwise.
 func (o *EventNotification1) GetTargetDnai() string {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		var ret string
 		return ret
 	}
@@ -338,7 +338,7 @@ func (o *EventNotification1) GetTargetDnai() string {
 // GetTargetDnaiOk returns a tuple with the TargetDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetTargetDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		return nil, false
 	}
 	return o.TargetDnai, true
@@ -346,7 +346,7 @@ func (o *EventNotification1) GetTargetDnaiOk() (*string, bool) {
 
 // HasTargetDnai returns a boolean if a field has been set.
 func (o *EventNotification1) HasTargetDnai() bool {
-	if o != nil && !IsNil(o.TargetDnai) {
+	if o != nil && !isNil(o.TargetDnai) {
 		return true
 	}
 
@@ -360,7 +360,7 @@ func (o *EventNotification1) SetTargetDnai(v string) {
 
 // GetDnaiChgType returns the DnaiChgType field value if set, zero value otherwise.
 func (o *EventNotification1) GetDnaiChgType() DnaiChangeType {
-	if o == nil || IsNil(o.DnaiChgType) {
+	if o == nil || isNil(o.DnaiChgType) {
 		var ret DnaiChangeType
 		return ret
 	}
@@ -370,7 +370,7 @@ func (o *EventNotification1) GetDnaiChgType() DnaiChangeType {
 // GetDnaiChgTypeOk returns a tuple with the DnaiChgType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetDnaiChgTypeOk() (*DnaiChangeType, bool) {
-	if o == nil || IsNil(o.DnaiChgType) {
+	if o == nil || isNil(o.DnaiChgType) {
 		return nil, false
 	}
 	return o.DnaiChgType, true
@@ -378,7 +378,7 @@ func (o *EventNotification1) GetDnaiChgTypeOk() (*DnaiChangeType, bool) {
 
 // HasDnaiChgType returns a boolean if a field has been set.
 func (o *EventNotification1) HasDnaiChgType() bool {
-	if o != nil && !IsNil(o.DnaiChgType) {
+	if o != nil && !isNil(o.DnaiChgType) {
 		return true
 	}
 
@@ -392,7 +392,7 @@ func (o *EventNotification1) SetDnaiChgType(v DnaiChangeType) {
 
 // GetSourceUeIpv4Addr returns the SourceUeIpv4Addr field value if set, zero value otherwise.
 func (o *EventNotification1) GetSourceUeIpv4Addr() string {
-	if o == nil || IsNil(o.SourceUeIpv4Addr) {
+	if o == nil || isNil(o.SourceUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -402,7 +402,7 @@ func (o *EventNotification1) GetSourceUeIpv4Addr() string {
 // GetSourceUeIpv4AddrOk returns a tuple with the SourceUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSourceUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceUeIpv4Addr) {
+	if o == nil || isNil(o.SourceUeIpv4Addr) {
 		return nil, false
 	}
 	return o.SourceUeIpv4Addr, true
@@ -410,7 +410,7 @@ func (o *EventNotification1) GetSourceUeIpv4AddrOk() (*string, bool) {
 
 // HasSourceUeIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification1) HasSourceUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.SourceUeIpv4Addr) {
+	if o != nil && !isNil(o.SourceUeIpv4Addr) {
 		return true
 	}
 
@@ -424,7 +424,7 @@ func (o *EventNotification1) SetSourceUeIpv4Addr(v string) {
 
 // GetSourceUeIpv6Prefix returns the SourceUeIpv6Prefix field value if set, zero value otherwise.
 func (o *EventNotification1) GetSourceUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.SourceUeIpv6Prefix) {
+	if o == nil || isNil(o.SourceUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -434,7 +434,7 @@ func (o *EventNotification1) GetSourceUeIpv6Prefix() Ipv6Prefix {
 // GetSourceUeIpv6PrefixOk returns a tuple with the SourceUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSourceUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.SourceUeIpv6Prefix) {
+	if o == nil || isNil(o.SourceUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.SourceUeIpv6Prefix, true
@@ -442,7 +442,7 @@ func (o *EventNotification1) GetSourceUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasSourceUeIpv6Prefix returns a boolean if a field has been set.
 func (o *EventNotification1) HasSourceUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.SourceUeIpv6Prefix) {
+	if o != nil && !isNil(o.SourceUeIpv6Prefix) {
 		return true
 	}
 
@@ -456,7 +456,7 @@ func (o *EventNotification1) SetSourceUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetTargetUeIpv4Addr returns the TargetUeIpv4Addr field value if set, zero value otherwise.
 func (o *EventNotification1) GetTargetUeIpv4Addr() string {
-	if o == nil || IsNil(o.TargetUeIpv4Addr) {
+	if o == nil || isNil(o.TargetUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -466,7 +466,7 @@ func (o *EventNotification1) GetTargetUeIpv4Addr() string {
 // GetTargetUeIpv4AddrOk returns a tuple with the TargetUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetTargetUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetUeIpv4Addr) {
+	if o == nil || isNil(o.TargetUeIpv4Addr) {
 		return nil, false
 	}
 	return o.TargetUeIpv4Addr, true
@@ -474,7 +474,7 @@ func (o *EventNotification1) GetTargetUeIpv4AddrOk() (*string, bool) {
 
 // HasTargetUeIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification1) HasTargetUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.TargetUeIpv4Addr) {
+	if o != nil && !isNil(o.TargetUeIpv4Addr) {
 		return true
 	}
 
@@ -488,7 +488,7 @@ func (o *EventNotification1) SetTargetUeIpv4Addr(v string) {
 
 // GetTargetUeIpv6Prefix returns the TargetUeIpv6Prefix field value if set, zero value otherwise.
 func (o *EventNotification1) GetTargetUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.TargetUeIpv6Prefix) {
+	if o == nil || isNil(o.TargetUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -498,7 +498,7 @@ func (o *EventNotification1) GetTargetUeIpv6Prefix() Ipv6Prefix {
 // GetTargetUeIpv6PrefixOk returns a tuple with the TargetUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetTargetUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.TargetUeIpv6Prefix) {
+	if o == nil || isNil(o.TargetUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.TargetUeIpv6Prefix, true
@@ -506,7 +506,7 @@ func (o *EventNotification1) GetTargetUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasTargetUeIpv6Prefix returns a boolean if a field has been set.
 func (o *EventNotification1) HasTargetUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.TargetUeIpv6Prefix) {
+	if o != nil && !isNil(o.TargetUeIpv6Prefix) {
 		return true
 	}
 
@@ -520,7 +520,7 @@ func (o *EventNotification1) SetTargetUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetSourceTraRouting returns the SourceTraRouting field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EventNotification1) GetSourceTraRouting() RouteToLocation {
-	if o == nil || IsNil(o.SourceTraRouting.Get()) {
+	if o == nil || isNil(o.SourceTraRouting.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -562,7 +562,7 @@ func (o *EventNotification1) UnsetSourceTraRouting() {
 
 // GetTargetTraRouting returns the TargetTraRouting field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EventNotification1) GetTargetTraRouting() RouteToLocation {
-	if o == nil || IsNil(o.TargetTraRouting.Get()) {
+	if o == nil || isNil(o.TargetTraRouting.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -604,7 +604,7 @@ func (o *EventNotification1) UnsetTargetTraRouting() {
 
 // GetUeMac returns the UeMac field value if set, zero value otherwise.
 func (o *EventNotification1) GetUeMac() string {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		var ret string
 		return ret
 	}
@@ -614,7 +614,7 @@ func (o *EventNotification1) GetUeMac() string {
 // GetUeMacOk returns a tuple with the UeMac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetUeMacOk() (*string, bool) {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		return nil, false
 	}
 	return o.UeMac, true
@@ -622,7 +622,7 @@ func (o *EventNotification1) GetUeMacOk() (*string, bool) {
 
 // HasUeMac returns a boolean if a field has been set.
 func (o *EventNotification1) HasUeMac() bool {
-	if o != nil && !IsNil(o.UeMac) {
+	if o != nil && !isNil(o.UeMac) {
 		return true
 	}
 
@@ -636,7 +636,7 @@ func (o *EventNotification1) SetUeMac(v string) {
 
 // GetAdIpv4Addr returns the AdIpv4Addr field value if set, zero value otherwise.
 func (o *EventNotification1) GetAdIpv4Addr() string {
-	if o == nil || IsNil(o.AdIpv4Addr) {
+	if o == nil || isNil(o.AdIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -646,7 +646,7 @@ func (o *EventNotification1) GetAdIpv4Addr() string {
 // GetAdIpv4AddrOk returns a tuple with the AdIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetAdIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.AdIpv4Addr) {
+	if o == nil || isNil(o.AdIpv4Addr) {
 		return nil, false
 	}
 	return o.AdIpv4Addr, true
@@ -654,7 +654,7 @@ func (o *EventNotification1) GetAdIpv4AddrOk() (*string, bool) {
 
 // HasAdIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification1) HasAdIpv4Addr() bool {
-	if o != nil && !IsNil(o.AdIpv4Addr) {
+	if o != nil && !isNil(o.AdIpv4Addr) {
 		return true
 	}
 
@@ -668,7 +668,7 @@ func (o *EventNotification1) SetAdIpv4Addr(v string) {
 
 // GetAdIpv6Prefix returns the AdIpv6Prefix field value if set, zero value otherwise.
 func (o *EventNotification1) GetAdIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.AdIpv6Prefix) {
+	if o == nil || isNil(o.AdIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -678,7 +678,7 @@ func (o *EventNotification1) GetAdIpv6Prefix() Ipv6Prefix {
 // GetAdIpv6PrefixOk returns a tuple with the AdIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetAdIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.AdIpv6Prefix) {
+	if o == nil || isNil(o.AdIpv6Prefix) {
 		return nil, false
 	}
 	return o.AdIpv6Prefix, true
@@ -686,7 +686,7 @@ func (o *EventNotification1) GetAdIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasAdIpv6Prefix returns a boolean if a field has been set.
 func (o *EventNotification1) HasAdIpv6Prefix() bool {
-	if o != nil && !IsNil(o.AdIpv6Prefix) {
+	if o != nil && !isNil(o.AdIpv6Prefix) {
 		return true
 	}
 
@@ -700,7 +700,7 @@ func (o *EventNotification1) SetAdIpv6Prefix(v Ipv6Prefix) {
 
 // GetReIpv4Addr returns the ReIpv4Addr field value if set, zero value otherwise.
 func (o *EventNotification1) GetReIpv4Addr() string {
-	if o == nil || IsNil(o.ReIpv4Addr) {
+	if o == nil || isNil(o.ReIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -710,7 +710,7 @@ func (o *EventNotification1) GetReIpv4Addr() string {
 // GetReIpv4AddrOk returns a tuple with the ReIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetReIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.ReIpv4Addr) {
+	if o == nil || isNil(o.ReIpv4Addr) {
 		return nil, false
 	}
 	return o.ReIpv4Addr, true
@@ -718,7 +718,7 @@ func (o *EventNotification1) GetReIpv4AddrOk() (*string, bool) {
 
 // HasReIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification1) HasReIpv4Addr() bool {
-	if o != nil && !IsNil(o.ReIpv4Addr) {
+	if o != nil && !isNil(o.ReIpv4Addr) {
 		return true
 	}
 
@@ -732,7 +732,7 @@ func (o *EventNotification1) SetReIpv4Addr(v string) {
 
 // GetReIpv6Prefix returns the ReIpv6Prefix field value if set, zero value otherwise.
 func (o *EventNotification1) GetReIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.ReIpv6Prefix) {
+	if o == nil || isNil(o.ReIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -742,7 +742,7 @@ func (o *EventNotification1) GetReIpv6Prefix() Ipv6Prefix {
 // GetReIpv6PrefixOk returns a tuple with the ReIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetReIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.ReIpv6Prefix) {
+	if o == nil || isNil(o.ReIpv6Prefix) {
 		return nil, false
 	}
 	return o.ReIpv6Prefix, true
@@ -750,7 +750,7 @@ func (o *EventNotification1) GetReIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasReIpv6Prefix returns a boolean if a field has been set.
 func (o *EventNotification1) HasReIpv6Prefix() bool {
-	if o != nil && !IsNil(o.ReIpv6Prefix) {
+	if o != nil && !isNil(o.ReIpv6Prefix) {
 		return true
 	}
 
@@ -764,7 +764,7 @@ func (o *EventNotification1) SetReIpv6Prefix(v Ipv6Prefix) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *EventNotification1) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -774,7 +774,7 @@ func (o *EventNotification1) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -782,7 +782,7 @@ func (o *EventNotification1) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *EventNotification1) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -796,7 +796,7 @@ func (o *EventNotification1) SetPlmnId(v PlmnId) {
 
 // GetAccType returns the AccType field value if set, zero value otherwise.
 func (o *EventNotification1) GetAccType() AccessType {
-	if o == nil || IsNil(o.AccType) {
+	if o == nil || isNil(o.AccType) {
 		var ret AccessType
 		return ret
 	}
@@ -806,7 +806,7 @@ func (o *EventNotification1) GetAccType() AccessType {
 // GetAccTypeOk returns a tuple with the AccType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetAccTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccType) {
+	if o == nil || isNil(o.AccType) {
 		return nil, false
 	}
 	return o.AccType, true
@@ -814,7 +814,7 @@ func (o *EventNotification1) GetAccTypeOk() (*AccessType, bool) {
 
 // HasAccType returns a boolean if a field has been set.
 func (o *EventNotification1) HasAccType() bool {
-	if o != nil && !IsNil(o.AccType) {
+	if o != nil && !isNil(o.AccType) {
 		return true
 	}
 
@@ -828,7 +828,7 @@ func (o *EventNotification1) SetAccType(v AccessType) {
 
 // GetPduSeId returns the PduSeId field value if set, zero value otherwise.
 func (o *EventNotification1) GetPduSeId() int32 {
-	if o == nil || IsNil(o.PduSeId) {
+	if o == nil || isNil(o.PduSeId) {
 		var ret int32
 		return ret
 	}
@@ -838,7 +838,7 @@ func (o *EventNotification1) GetPduSeId() int32 {
 // GetPduSeIdOk returns a tuple with the PduSeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetPduSeIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSeId) {
+	if o == nil || isNil(o.PduSeId) {
 		return nil, false
 	}
 	return o.PduSeId, true
@@ -846,7 +846,7 @@ func (o *EventNotification1) GetPduSeIdOk() (*int32, bool) {
 
 // HasPduSeId returns a boolean if a field has been set.
 func (o *EventNotification1) HasPduSeId() bool {
-	if o != nil && !IsNil(o.PduSeId) {
+	if o != nil && !isNil(o.PduSeId) {
 		return true
 	}
 
@@ -860,7 +860,7 @@ func (o *EventNotification1) SetPduSeId(v int32) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *EventNotification1) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -870,7 +870,7 @@ func (o *EventNotification1) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -878,7 +878,7 @@ func (o *EventNotification1) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *EventNotification1) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -892,7 +892,7 @@ func (o *EventNotification1) SetRatType(v RatType) {
 
 // GetDddStatus returns the DddStatus field value if set, zero value otherwise.
 func (o *EventNotification1) GetDddStatus() DlDataDeliveryStatus {
-	if o == nil || IsNil(o.DddStatus) {
+	if o == nil || isNil(o.DddStatus) {
 		var ret DlDataDeliveryStatus
 		return ret
 	}
@@ -902,7 +902,7 @@ func (o *EventNotification1) GetDddStatus() DlDataDeliveryStatus {
 // GetDddStatusOk returns a tuple with the DddStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetDddStatusOk() (*DlDataDeliveryStatus, bool) {
-	if o == nil || IsNil(o.DddStatus) {
+	if o == nil || isNil(o.DddStatus) {
 		return nil, false
 	}
 	return o.DddStatus, true
@@ -910,7 +910,7 @@ func (o *EventNotification1) GetDddStatusOk() (*DlDataDeliveryStatus, bool) {
 
 // HasDddStatus returns a boolean if a field has been set.
 func (o *EventNotification1) HasDddStatus() bool {
-	if o != nil && !IsNil(o.DddStatus) {
+	if o != nil && !isNil(o.DddStatus) {
 		return true
 	}
 
@@ -924,7 +924,7 @@ func (o *EventNotification1) SetDddStatus(v DlDataDeliveryStatus) {
 
 // GetDddTraDescriptor returns the DddTraDescriptor field value if set, zero value otherwise.
 func (o *EventNotification1) GetDddTraDescriptor() DddTrafficDescriptor {
-	if o == nil || IsNil(o.DddTraDescriptor) {
+	if o == nil || isNil(o.DddTraDescriptor) {
 		var ret DddTrafficDescriptor
 		return ret
 	}
@@ -934,7 +934,7 @@ func (o *EventNotification1) GetDddTraDescriptor() DddTrafficDescriptor {
 // GetDddTraDescriptorOk returns a tuple with the DddTraDescriptor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetDddTraDescriptorOk() (*DddTrafficDescriptor, bool) {
-	if o == nil || IsNil(o.DddTraDescriptor) {
+	if o == nil || isNil(o.DddTraDescriptor) {
 		return nil, false
 	}
 	return o.DddTraDescriptor, true
@@ -942,7 +942,7 @@ func (o *EventNotification1) GetDddTraDescriptorOk() (*DddTrafficDescriptor, boo
 
 // HasDddTraDescriptor returns a boolean if a field has been set.
 func (o *EventNotification1) HasDddTraDescriptor() bool {
-	if o != nil && !IsNil(o.DddTraDescriptor) {
+	if o != nil && !isNil(o.DddTraDescriptor) {
 		return true
 	}
 
@@ -956,7 +956,7 @@ func (o *EventNotification1) SetDddTraDescriptor(v DddTrafficDescriptor) {
 
 // GetMaxWaitTime returns the MaxWaitTime field value if set, zero value otherwise.
 func (o *EventNotification1) GetMaxWaitTime() time.Time {
-	if o == nil || IsNil(o.MaxWaitTime) {
+	if o == nil || isNil(o.MaxWaitTime) {
 		var ret time.Time
 		return ret
 	}
@@ -966,7 +966,7 @@ func (o *EventNotification1) GetMaxWaitTime() time.Time {
 // GetMaxWaitTimeOk returns a tuple with the MaxWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetMaxWaitTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MaxWaitTime) {
+	if o == nil || isNil(o.MaxWaitTime) {
 		return nil, false
 	}
 	return o.MaxWaitTime, true
@@ -974,7 +974,7 @@ func (o *EventNotification1) GetMaxWaitTimeOk() (*time.Time, bool) {
 
 // HasMaxWaitTime returns a boolean if a field has been set.
 func (o *EventNotification1) HasMaxWaitTime() bool {
-	if o != nil && !IsNil(o.MaxWaitTime) {
+	if o != nil && !isNil(o.MaxWaitTime) {
 		return true
 	}
 
@@ -988,7 +988,7 @@ func (o *EventNotification1) SetMaxWaitTime(v time.Time) {
 
 // GetCommFailure returns the CommFailure field value if set, zero value otherwise.
 func (o *EventNotification1) GetCommFailure() CommunicationFailure {
-	if o == nil || IsNil(o.CommFailure) {
+	if o == nil || isNil(o.CommFailure) {
 		var ret CommunicationFailure
 		return ret
 	}
@@ -998,7 +998,7 @@ func (o *EventNotification1) GetCommFailure() CommunicationFailure {
 // GetCommFailureOk returns a tuple with the CommFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetCommFailureOk() (*CommunicationFailure, bool) {
-	if o == nil || IsNil(o.CommFailure) {
+	if o == nil || isNil(o.CommFailure) {
 		return nil, false
 	}
 	return o.CommFailure, true
@@ -1006,7 +1006,7 @@ func (o *EventNotification1) GetCommFailureOk() (*CommunicationFailure, bool) {
 
 // HasCommFailure returns a boolean if a field has been set.
 func (o *EventNotification1) HasCommFailure() bool {
-	if o != nil && !IsNil(o.CommFailure) {
+	if o != nil && !isNil(o.CommFailure) {
 		return true
 	}
 
@@ -1020,7 +1020,7 @@ func (o *EventNotification1) SetCommFailure(v CommunicationFailure) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *EventNotification1) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -1030,7 +1030,7 @@ func (o *EventNotification1) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -1038,7 +1038,7 @@ func (o *EventNotification1) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification1) HasIpv4Addr() bool {
-	if o != nil && !IsNil(o.Ipv4Addr) {
+	if o != nil && !isNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -1052,7 +1052,7 @@ func (o *EventNotification1) SetIpv4Addr(v string) {
 
 // GetIpv6Prefixes returns the Ipv6Prefixes field value if set, zero value otherwise.
 func (o *EventNotification1) GetIpv6Prefixes() []Ipv6Prefix {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -1062,7 +1062,7 @@ func (o *EventNotification1) GetIpv6Prefixes() []Ipv6Prefix {
 // GetIpv6PrefixesOk returns a tuple with the Ipv6Prefixes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		return nil, false
 	}
 	return o.Ipv6Prefixes, true
@@ -1070,7 +1070,7 @@ func (o *EventNotification1) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
 
 // HasIpv6Prefixes returns a boolean if a field has been set.
 func (o *EventNotification1) HasIpv6Prefixes() bool {
-	if o != nil && !IsNil(o.Ipv6Prefixes) {
+	if o != nil && !isNil(o.Ipv6Prefixes) {
 		return true
 	}
 
@@ -1084,7 +1084,7 @@ func (o *EventNotification1) SetIpv6Prefixes(v []Ipv6Prefix) {
 
 // GetIpv6Addrs returns the Ipv6Addrs field value if set, zero value otherwise.
 func (o *EventNotification1) GetIpv6Addrs() []Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Addrs) {
+	if o == nil || isNil(o.Ipv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -1094,7 +1094,7 @@ func (o *EventNotification1) GetIpv6Addrs() []Ipv6Addr {
 // GetIpv6AddrsOk returns a tuple with the Ipv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Addrs) {
+	if o == nil || isNil(o.Ipv6Addrs) {
 		return nil, false
 	}
 	return o.Ipv6Addrs, true
@@ -1102,7 +1102,7 @@ func (o *EventNotification1) GetIpv6AddrsOk() ([]Ipv6Addr, bool) {
 
 // HasIpv6Addrs returns a boolean if a field has been set.
 func (o *EventNotification1) HasIpv6Addrs() bool {
-	if o != nil && !IsNil(o.Ipv6Addrs) {
+	if o != nil && !isNil(o.Ipv6Addrs) {
 		return true
 	}
 
@@ -1116,7 +1116,7 @@ func (o *EventNotification1) SetIpv6Addrs(v []Ipv6Addr) {
 
 // GetPduSessType returns the PduSessType field value if set, zero value otherwise.
 func (o *EventNotification1) GetPduSessType() PduSessionType {
-	if o == nil || IsNil(o.PduSessType) {
+	if o == nil || isNil(o.PduSessType) {
 		var ret PduSessionType
 		return ret
 	}
@@ -1126,7 +1126,7 @@ func (o *EventNotification1) GetPduSessType() PduSessionType {
 // GetPduSessTypeOk returns a tuple with the PduSessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetPduSessTypeOk() (*PduSessionType, bool) {
-	if o == nil || IsNil(o.PduSessType) {
+	if o == nil || isNil(o.PduSessType) {
 		return nil, false
 	}
 	return o.PduSessType, true
@@ -1134,7 +1134,7 @@ func (o *EventNotification1) GetPduSessTypeOk() (*PduSessionType, bool) {
 
 // HasPduSessType returns a boolean if a field has been set.
 func (o *EventNotification1) HasPduSessType() bool {
-	if o != nil && !IsNil(o.PduSessType) {
+	if o != nil && !isNil(o.PduSessType) {
 		return true
 	}
 
@@ -1148,7 +1148,7 @@ func (o *EventNotification1) SetPduSessType(v PduSessionType) {
 
 // GetQfi returns the Qfi field value if set, zero value otherwise.
 func (o *EventNotification1) GetQfi() int32 {
-	if o == nil || IsNil(o.Qfi) {
+	if o == nil || isNil(o.Qfi) {
 		var ret int32
 		return ret
 	}
@@ -1158,7 +1158,7 @@ func (o *EventNotification1) GetQfi() int32 {
 // GetQfiOk returns a tuple with the Qfi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetQfiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Qfi) {
+	if o == nil || isNil(o.Qfi) {
 		return nil, false
 	}
 	return o.Qfi, true
@@ -1166,7 +1166,7 @@ func (o *EventNotification1) GetQfiOk() (*int32, bool) {
 
 // HasQfi returns a boolean if a field has been set.
 func (o *EventNotification1) HasQfi() bool {
-	if o != nil && !IsNil(o.Qfi) {
+	if o != nil && !isNil(o.Qfi) {
 		return true
 	}
 
@@ -1180,7 +1180,7 @@ func (o *EventNotification1) SetQfi(v int32) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *EventNotification1) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -1190,7 +1190,7 @@ func (o *EventNotification1) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -1198,7 +1198,7 @@ func (o *EventNotification1) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *EventNotification1) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -1212,7 +1212,7 @@ func (o *EventNotification1) SetAppId(v string) {
 
 // GetEthFlowDescs returns the EthFlowDescs field value if set, zero value otherwise.
 func (o *EventNotification1) GetEthFlowDescs() []EthFlowDescription {
-	if o == nil || IsNil(o.EthFlowDescs) {
+	if o == nil || isNil(o.EthFlowDescs) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -1222,7 +1222,7 @@ func (o *EventNotification1) GetEthFlowDescs() []EthFlowDescription {
 // GetEthFlowDescsOk returns a tuple with the EthFlowDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetEthFlowDescsOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthFlowDescs) {
+	if o == nil || isNil(o.EthFlowDescs) {
 		return nil, false
 	}
 	return o.EthFlowDescs, true
@@ -1230,7 +1230,7 @@ func (o *EventNotification1) GetEthFlowDescsOk() ([]EthFlowDescription, bool) {
 
 // HasEthFlowDescs returns a boolean if a field has been set.
 func (o *EventNotification1) HasEthFlowDescs() bool {
-	if o != nil && !IsNil(o.EthFlowDescs) {
+	if o != nil && !isNil(o.EthFlowDescs) {
 		return true
 	}
 
@@ -1244,7 +1244,7 @@ func (o *EventNotification1) SetEthFlowDescs(v []EthFlowDescription) {
 
 // GetEthfDescs returns the EthfDescs field value if set, zero value otherwise.
 func (o *EventNotification1) GetEthfDescs() []EthFlowDescription {
-	if o == nil || IsNil(o.EthfDescs) {
+	if o == nil || isNil(o.EthfDescs) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -1254,7 +1254,7 @@ func (o *EventNotification1) GetEthfDescs() []EthFlowDescription {
 // GetEthfDescsOk returns a tuple with the EthfDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetEthfDescsOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthfDescs) {
+	if o == nil || isNil(o.EthfDescs) {
 		return nil, false
 	}
 	return o.EthfDescs, true
@@ -1262,7 +1262,7 @@ func (o *EventNotification1) GetEthfDescsOk() ([]EthFlowDescription, bool) {
 
 // HasEthfDescs returns a boolean if a field has been set.
 func (o *EventNotification1) HasEthfDescs() bool {
-	if o != nil && !IsNil(o.EthfDescs) {
+	if o != nil && !isNil(o.EthfDescs) {
 		return true
 	}
 
@@ -1276,7 +1276,7 @@ func (o *EventNotification1) SetEthfDescs(v []EthFlowDescription) {
 
 // GetFlowDescs returns the FlowDescs field value if set, zero value otherwise.
 func (o *EventNotification1) GetFlowDescs() []string {
-	if o == nil || IsNil(o.FlowDescs) {
+	if o == nil || isNil(o.FlowDescs) {
 		var ret []string
 		return ret
 	}
@@ -1286,7 +1286,7 @@ func (o *EventNotification1) GetFlowDescs() []string {
 // GetFlowDescsOk returns a tuple with the FlowDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetFlowDescsOk() ([]string, bool) {
-	if o == nil || IsNil(o.FlowDescs) {
+	if o == nil || isNil(o.FlowDescs) {
 		return nil, false
 	}
 	return o.FlowDescs, true
@@ -1294,7 +1294,7 @@ func (o *EventNotification1) GetFlowDescsOk() ([]string, bool) {
 
 // HasFlowDescs returns a boolean if a field has been set.
 func (o *EventNotification1) HasFlowDescs() bool {
-	if o != nil && !IsNil(o.FlowDescs) {
+	if o != nil && !isNil(o.FlowDescs) {
 		return true
 	}
 
@@ -1308,7 +1308,7 @@ func (o *EventNotification1) SetFlowDescs(v []string) {
 
 // GetFDescs returns the FDescs field value if set, zero value otherwise.
 func (o *EventNotification1) GetFDescs() []string {
-	if o == nil || IsNil(o.FDescs) {
+	if o == nil || isNil(o.FDescs) {
 		var ret []string
 		return ret
 	}
@@ -1318,7 +1318,7 @@ func (o *EventNotification1) GetFDescs() []string {
 // GetFDescsOk returns a tuple with the FDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetFDescsOk() ([]string, bool) {
-	if o == nil || IsNil(o.FDescs) {
+	if o == nil || isNil(o.FDescs) {
 		return nil, false
 	}
 	return o.FDescs, true
@@ -1326,7 +1326,7 @@ func (o *EventNotification1) GetFDescsOk() ([]string, bool) {
 
 // HasFDescs returns a boolean if a field has been set.
 func (o *EventNotification1) HasFDescs() bool {
-	if o != nil && !IsNil(o.FDescs) {
+	if o != nil && !isNil(o.FDescs) {
 		return true
 	}
 
@@ -1340,7 +1340,7 @@ func (o *EventNotification1) SetFDescs(v []string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *EventNotification1) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -1350,7 +1350,7 @@ func (o *EventNotification1) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -1358,7 +1358,7 @@ func (o *EventNotification1) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *EventNotification1) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -1372,7 +1372,7 @@ func (o *EventNotification1) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *EventNotification1) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -1382,7 +1382,7 @@ func (o *EventNotification1) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -1390,7 +1390,7 @@ func (o *EventNotification1) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *EventNotification1) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -1404,7 +1404,7 @@ func (o *EventNotification1) SetSnssai(v Snssai) {
 
 // GetUlDelays returns the UlDelays field value if set, zero value otherwise.
 func (o *EventNotification1) GetUlDelays() []int32 {
-	if o == nil || IsNil(o.UlDelays) {
+	if o == nil || isNil(o.UlDelays) {
 		var ret []int32
 		return ret
 	}
@@ -1414,7 +1414,7 @@ func (o *EventNotification1) GetUlDelays() []int32 {
 // GetUlDelaysOk returns a tuple with the UlDelays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetUlDelaysOk() ([]int32, bool) {
-	if o == nil || IsNil(o.UlDelays) {
+	if o == nil || isNil(o.UlDelays) {
 		return nil, false
 	}
 	return o.UlDelays, true
@@ -1422,7 +1422,7 @@ func (o *EventNotification1) GetUlDelaysOk() ([]int32, bool) {
 
 // HasUlDelays returns a boolean if a field has been set.
 func (o *EventNotification1) HasUlDelays() bool {
-	if o != nil && !IsNil(o.UlDelays) {
+	if o != nil && !isNil(o.UlDelays) {
 		return true
 	}
 
@@ -1436,7 +1436,7 @@ func (o *EventNotification1) SetUlDelays(v []int32) {
 
 // GetDlDelays returns the DlDelays field value if set, zero value otherwise.
 func (o *EventNotification1) GetDlDelays() []int32 {
-	if o == nil || IsNil(o.DlDelays) {
+	if o == nil || isNil(o.DlDelays) {
 		var ret []int32
 		return ret
 	}
@@ -1446,7 +1446,7 @@ func (o *EventNotification1) GetDlDelays() []int32 {
 // GetDlDelaysOk returns a tuple with the DlDelays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetDlDelaysOk() ([]int32, bool) {
-	if o == nil || IsNil(o.DlDelays) {
+	if o == nil || isNil(o.DlDelays) {
 		return nil, false
 	}
 	return o.DlDelays, true
@@ -1454,7 +1454,7 @@ func (o *EventNotification1) GetDlDelaysOk() ([]int32, bool) {
 
 // HasDlDelays returns a boolean if a field has been set.
 func (o *EventNotification1) HasDlDelays() bool {
-	if o != nil && !IsNil(o.DlDelays) {
+	if o != nil && !isNil(o.DlDelays) {
 		return true
 	}
 
@@ -1468,7 +1468,7 @@ func (o *EventNotification1) SetDlDelays(v []int32) {
 
 // GetRtDelays returns the RtDelays field value if set, zero value otherwise.
 func (o *EventNotification1) GetRtDelays() []int32 {
-	if o == nil || IsNil(o.RtDelays) {
+	if o == nil || isNil(o.RtDelays) {
 		var ret []int32
 		return ret
 	}
@@ -1478,7 +1478,7 @@ func (o *EventNotification1) GetRtDelays() []int32 {
 // GetRtDelaysOk returns a tuple with the RtDelays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetRtDelaysOk() ([]int32, bool) {
-	if o == nil || IsNil(o.RtDelays) {
+	if o == nil || isNil(o.RtDelays) {
 		return nil, false
 	}
 	return o.RtDelays, true
@@ -1486,7 +1486,7 @@ func (o *EventNotification1) GetRtDelaysOk() ([]int32, bool) {
 
 // HasRtDelays returns a boolean if a field has been set.
 func (o *EventNotification1) HasRtDelays() bool {
-	if o != nil && !IsNil(o.RtDelays) {
+	if o != nil && !isNil(o.RtDelays) {
 		return true
 	}
 
@@ -1500,7 +1500,7 @@ func (o *EventNotification1) SetRtDelays(v []int32) {
 
 // GetTimeWindow returns the TimeWindow field value if set, zero value otherwise.
 func (o *EventNotification1) GetTimeWindow() TimeWindow {
-	if o == nil || IsNil(o.TimeWindow) {
+	if o == nil || isNil(o.TimeWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -1510,7 +1510,7 @@ func (o *EventNotification1) GetTimeWindow() TimeWindow {
 // GetTimeWindowOk returns a tuple with the TimeWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetTimeWindowOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.TimeWindow) {
+	if o == nil || isNil(o.TimeWindow) {
 		return nil, false
 	}
 	return o.TimeWindow, true
@@ -1518,7 +1518,7 @@ func (o *EventNotification1) GetTimeWindowOk() (*TimeWindow, bool) {
 
 // HasTimeWindow returns a boolean if a field has been set.
 func (o *EventNotification1) HasTimeWindow() bool {
-	if o != nil && !IsNil(o.TimeWindow) {
+	if o != nil && !isNil(o.TimeWindow) {
 		return true
 	}
 
@@ -1532,7 +1532,7 @@ func (o *EventNotification1) SetTimeWindow(v TimeWindow) {
 
 // GetSmNasFromUe returns the SmNasFromUe field value if set, zero value otherwise.
 func (o *EventNotification1) GetSmNasFromUe() SmNasFromUe {
-	if o == nil || IsNil(o.SmNasFromUe) {
+	if o == nil || isNil(o.SmNasFromUe) {
 		var ret SmNasFromUe
 		return ret
 	}
@@ -1542,7 +1542,7 @@ func (o *EventNotification1) GetSmNasFromUe() SmNasFromUe {
 // GetSmNasFromUeOk returns a tuple with the SmNasFromUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSmNasFromUeOk() (*SmNasFromUe, bool) {
-	if o == nil || IsNil(o.SmNasFromUe) {
+	if o == nil || isNil(o.SmNasFromUe) {
 		return nil, false
 	}
 	return o.SmNasFromUe, true
@@ -1550,7 +1550,7 @@ func (o *EventNotification1) GetSmNasFromUeOk() (*SmNasFromUe, bool) {
 
 // HasSmNasFromUe returns a boolean if a field has been set.
 func (o *EventNotification1) HasSmNasFromUe() bool {
-	if o != nil && !IsNil(o.SmNasFromUe) {
+	if o != nil && !isNil(o.SmNasFromUe) {
 		return true
 	}
 
@@ -1564,7 +1564,7 @@ func (o *EventNotification1) SetSmNasFromUe(v SmNasFromUe) {
 
 // GetSmNasFromSmf returns the SmNasFromSmf field value if set, zero value otherwise.
 func (o *EventNotification1) GetSmNasFromSmf() SmNasFromSmf {
-	if o == nil || IsNil(o.SmNasFromSmf) {
+	if o == nil || isNil(o.SmNasFromSmf) {
 		var ret SmNasFromSmf
 		return ret
 	}
@@ -1574,7 +1574,7 @@ func (o *EventNotification1) GetSmNasFromSmf() SmNasFromSmf {
 // GetSmNasFromSmfOk returns a tuple with the SmNasFromSmf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSmNasFromSmfOk() (*SmNasFromSmf, bool) {
-	if o == nil || IsNil(o.SmNasFromSmf) {
+	if o == nil || isNil(o.SmNasFromSmf) {
 		return nil, false
 	}
 	return o.SmNasFromSmf, true
@@ -1582,7 +1582,7 @@ func (o *EventNotification1) GetSmNasFromSmfOk() (*SmNasFromSmf, bool) {
 
 // HasSmNasFromSmf returns a boolean if a field has been set.
 func (o *EventNotification1) HasSmNasFromSmf() bool {
-	if o != nil && !IsNil(o.SmNasFromSmf) {
+	if o != nil && !isNil(o.SmNasFromSmf) {
 		return true
 	}
 
@@ -1596,7 +1596,7 @@ func (o *EventNotification1) SetSmNasFromSmf(v SmNasFromSmf) {
 
 // GetUpRedTrans returns the UpRedTrans field value if set, zero value otherwise.
 func (o *EventNotification1) GetUpRedTrans() bool {
-	if o == nil || IsNil(o.UpRedTrans) {
+	if o == nil || isNil(o.UpRedTrans) {
 		var ret bool
 		return ret
 	}
@@ -1606,7 +1606,7 @@ func (o *EventNotification1) GetUpRedTrans() bool {
 // GetUpRedTransOk returns a tuple with the UpRedTrans field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetUpRedTransOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpRedTrans) {
+	if o == nil || isNil(o.UpRedTrans) {
 		return nil, false
 	}
 	return o.UpRedTrans, true
@@ -1614,7 +1614,7 @@ func (o *EventNotification1) GetUpRedTransOk() (*bool, bool) {
 
 // HasUpRedTrans returns a boolean if a field has been set.
 func (o *EventNotification1) HasUpRedTrans() bool {
-	if o != nil && !IsNil(o.UpRedTrans) {
+	if o != nil && !isNil(o.UpRedTrans) {
 		return true
 	}
 
@@ -1628,7 +1628,7 @@ func (o *EventNotification1) SetUpRedTrans(v bool) {
 
 // GetSsId returns the SsId field value if set, zero value otherwise.
 func (o *EventNotification1) GetSsId() string {
-	if o == nil || IsNil(o.SsId) {
+	if o == nil || isNil(o.SsId) {
 		var ret string
 		return ret
 	}
@@ -1638,7 +1638,7 @@ func (o *EventNotification1) GetSsId() string {
 // GetSsIdOk returns a tuple with the SsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetSsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SsId) {
+	if o == nil || isNil(o.SsId) {
 		return nil, false
 	}
 	return o.SsId, true
@@ -1646,7 +1646,7 @@ func (o *EventNotification1) GetSsIdOk() (*string, bool) {
 
 // HasSsId returns a boolean if a field has been set.
 func (o *EventNotification1) HasSsId() bool {
-	if o != nil && !IsNil(o.SsId) {
+	if o != nil && !isNil(o.SsId) {
 		return true
 	}
 
@@ -1660,7 +1660,7 @@ func (o *EventNotification1) SetSsId(v string) {
 
 // GetBssId returns the BssId field value if set, zero value otherwise.
 func (o *EventNotification1) GetBssId() string {
-	if o == nil || IsNil(o.BssId) {
+	if o == nil || isNil(o.BssId) {
 		var ret string
 		return ret
 	}
@@ -1670,7 +1670,7 @@ func (o *EventNotification1) GetBssId() string {
 // GetBssIdOk returns a tuple with the BssId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetBssIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BssId) {
+	if o == nil || isNil(o.BssId) {
 		return nil, false
 	}
 	return o.BssId, true
@@ -1678,7 +1678,7 @@ func (o *EventNotification1) GetBssIdOk() (*string, bool) {
 
 // HasBssId returns a boolean if a field has been set.
 func (o *EventNotification1) HasBssId() bool {
-	if o != nil && !IsNil(o.BssId) {
+	if o != nil && !isNil(o.BssId) {
 		return true
 	}
 
@@ -1692,7 +1692,7 @@ func (o *EventNotification1) SetBssId(v string) {
 
 // GetStartWlan returns the StartWlan field value if set, zero value otherwise.
 func (o *EventNotification1) GetStartWlan() time.Time {
-	if o == nil || IsNil(o.StartWlan) {
+	if o == nil || isNil(o.StartWlan) {
 		var ret time.Time
 		return ret
 	}
@@ -1702,7 +1702,7 @@ func (o *EventNotification1) GetStartWlan() time.Time {
 // GetStartWlanOk returns a tuple with the StartWlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetStartWlanOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartWlan) {
+	if o == nil || isNil(o.StartWlan) {
 		return nil, false
 	}
 	return o.StartWlan, true
@@ -1710,7 +1710,7 @@ func (o *EventNotification1) GetStartWlanOk() (*time.Time, bool) {
 
 // HasStartWlan returns a boolean if a field has been set.
 func (o *EventNotification1) HasStartWlan() bool {
-	if o != nil && !IsNil(o.StartWlan) {
+	if o != nil && !isNil(o.StartWlan) {
 		return true
 	}
 
@@ -1724,7 +1724,7 @@ func (o *EventNotification1) SetStartWlan(v time.Time) {
 
 // GetEndWlan returns the EndWlan field value if set, zero value otherwise.
 func (o *EventNotification1) GetEndWlan() time.Time {
-	if o == nil || IsNil(o.EndWlan) {
+	if o == nil || isNil(o.EndWlan) {
 		var ret time.Time
 		return ret
 	}
@@ -1734,7 +1734,7 @@ func (o *EventNotification1) GetEndWlan() time.Time {
 // GetEndWlanOk returns a tuple with the EndWlan field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetEndWlanOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndWlan) {
+	if o == nil || isNil(o.EndWlan) {
 		return nil, false
 	}
 	return o.EndWlan, true
@@ -1742,7 +1742,7 @@ func (o *EventNotification1) GetEndWlanOk() (*time.Time, bool) {
 
 // HasEndWlan returns a boolean if a field has been set.
 func (o *EventNotification1) HasEndWlan() bool {
-	if o != nil && !IsNil(o.EndWlan) {
+	if o != nil && !isNil(o.EndWlan) {
 		return true
 	}
 
@@ -1756,7 +1756,7 @@ func (o *EventNotification1) SetEndWlan(v time.Time) {
 
 // GetPduSessInfos returns the PduSessInfos field value if set, zero value otherwise.
 func (o *EventNotification1) GetPduSessInfos() []PduSessionInformation {
-	if o == nil || IsNil(o.PduSessInfos) {
+	if o == nil || isNil(o.PduSessInfos) {
 		var ret []PduSessionInformation
 		return ret
 	}
@@ -1766,7 +1766,7 @@ func (o *EventNotification1) GetPduSessInfos() []PduSessionInformation {
 // GetPduSessInfosOk returns a tuple with the PduSessInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetPduSessInfosOk() ([]PduSessionInformation, bool) {
-	if o == nil || IsNil(o.PduSessInfos) {
+	if o == nil || isNil(o.PduSessInfos) {
 		return nil, false
 	}
 	return o.PduSessInfos, true
@@ -1774,7 +1774,7 @@ func (o *EventNotification1) GetPduSessInfosOk() ([]PduSessionInformation, bool)
 
 // HasPduSessInfos returns a boolean if a field has been set.
 func (o *EventNotification1) HasPduSessInfos() bool {
-	if o != nil && !IsNil(o.PduSessInfos) {
+	if o != nil && !isNil(o.PduSessInfos) {
 		return true
 	}
 
@@ -1788,7 +1788,7 @@ func (o *EventNotification1) SetPduSessInfos(v []PduSessionInformation) {
 
 // GetUpfInfo returns the UpfInfo field value if set, zero value otherwise.
 func (o *EventNotification1) GetUpfInfo() UpfInformation {
-	if o == nil || IsNil(o.UpfInfo) {
+	if o == nil || isNil(o.UpfInfo) {
 		var ret UpfInformation
 		return ret
 	}
@@ -1798,7 +1798,7 @@ func (o *EventNotification1) GetUpfInfo() UpfInformation {
 // GetUpfInfoOk returns a tuple with the UpfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification1) GetUpfInfoOk() (*UpfInformation, bool) {
-	if o == nil || IsNil(o.UpfInfo) {
+	if o == nil || isNil(o.UpfInfo) {
 		return nil, false
 	}
 	return o.UpfInfo, true
@@ -1806,7 +1806,7 @@ func (o *EventNotification1) GetUpfInfoOk() (*UpfInformation, bool) {
 
 // HasUpfInfo returns a boolean if a field has been set.
 func (o *EventNotification1) HasUpfInfo() bool {
-	if o != nil && !IsNil(o.UpfInfo) {
+	if o != nil && !isNil(o.UpfInfo) {
 		return true
 	}
 
@@ -1830,37 +1830,37 @@ func (o EventNotification1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.UeIpAddr) {
+	if !isNil(o.UeIpAddr) {
 		toSerialize["ueIpAddr"] = o.UeIpAddr
 	}
-	if !IsNil(o.TransacInfos) {
+	if !isNil(o.TransacInfos) {
 		toSerialize["transacInfos"] = o.TransacInfos
 	}
-	if !IsNil(o.SourceDnai) {
+	if !isNil(o.SourceDnai) {
 		toSerialize["sourceDnai"] = o.SourceDnai
 	}
-	if !IsNil(o.TargetDnai) {
+	if !isNil(o.TargetDnai) {
 		toSerialize["targetDnai"] = o.TargetDnai
 	}
-	if !IsNil(o.DnaiChgType) {
+	if !isNil(o.DnaiChgType) {
 		toSerialize["dnaiChgType"] = o.DnaiChgType
 	}
-	if !IsNil(o.SourceUeIpv4Addr) {
+	if !isNil(o.SourceUeIpv4Addr) {
 		toSerialize["sourceUeIpv4Addr"] = o.SourceUeIpv4Addr
 	}
-	if !IsNil(o.SourceUeIpv6Prefix) {
+	if !isNil(o.SourceUeIpv6Prefix) {
 		toSerialize["sourceUeIpv6Prefix"] = o.SourceUeIpv6Prefix
 	}
-	if !IsNil(o.TargetUeIpv4Addr) {
+	if !isNil(o.TargetUeIpv4Addr) {
 		toSerialize["targetUeIpv4Addr"] = o.TargetUeIpv4Addr
 	}
-	if !IsNil(o.TargetUeIpv6Prefix) {
+	if !isNil(o.TargetUeIpv6Prefix) {
 		toSerialize["targetUeIpv6Prefix"] = o.TargetUeIpv6Prefix
 	}
 	if o.SourceTraRouting.IsSet() {
@@ -1869,118 +1869,118 @@ func (o EventNotification1) ToMap() (map[string]interface{}, error) {
 	if o.TargetTraRouting.IsSet() {
 		toSerialize["targetTraRouting"] = o.TargetTraRouting.Get()
 	}
-	if !IsNil(o.UeMac) {
+	if !isNil(o.UeMac) {
 		toSerialize["ueMac"] = o.UeMac
 	}
-	if !IsNil(o.AdIpv4Addr) {
+	if !isNil(o.AdIpv4Addr) {
 		toSerialize["adIpv4Addr"] = o.AdIpv4Addr
 	}
-	if !IsNil(o.AdIpv6Prefix) {
+	if !isNil(o.AdIpv6Prefix) {
 		toSerialize["adIpv6Prefix"] = o.AdIpv6Prefix
 	}
-	if !IsNil(o.ReIpv4Addr) {
+	if !isNil(o.ReIpv4Addr) {
 		toSerialize["reIpv4Addr"] = o.ReIpv4Addr
 	}
-	if !IsNil(o.ReIpv6Prefix) {
+	if !isNil(o.ReIpv6Prefix) {
 		toSerialize["reIpv6Prefix"] = o.ReIpv6Prefix
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.AccType) {
+	if !isNil(o.AccType) {
 		toSerialize["accType"] = o.AccType
 	}
-	if !IsNil(o.PduSeId) {
+	if !isNil(o.PduSeId) {
 		toSerialize["pduSeId"] = o.PduSeId
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.DddStatus) {
+	if !isNil(o.DddStatus) {
 		toSerialize["dddStatus"] = o.DddStatus
 	}
-	if !IsNil(o.DddTraDescriptor) {
+	if !isNil(o.DddTraDescriptor) {
 		toSerialize["dddTraDescriptor"] = o.DddTraDescriptor
 	}
-	if !IsNil(o.MaxWaitTime) {
+	if !isNil(o.MaxWaitTime) {
 		toSerialize["maxWaitTime"] = o.MaxWaitTime
 	}
-	if !IsNil(o.CommFailure) {
+	if !isNil(o.CommFailure) {
 		toSerialize["commFailure"] = o.CommFailure
 	}
-	if !IsNil(o.Ipv4Addr) {
+	if !isNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !IsNil(o.Ipv6Prefixes) {
+	if !isNil(o.Ipv6Prefixes) {
 		toSerialize["ipv6Prefixes"] = o.Ipv6Prefixes
 	}
-	if !IsNil(o.Ipv6Addrs) {
+	if !isNil(o.Ipv6Addrs) {
 		toSerialize["ipv6Addrs"] = o.Ipv6Addrs
 	}
-	if !IsNil(o.PduSessType) {
+	if !isNil(o.PduSessType) {
 		toSerialize["pduSessType"] = o.PduSessType
 	}
-	if !IsNil(o.Qfi) {
+	if !isNil(o.Qfi) {
 		toSerialize["qfi"] = o.Qfi
 	}
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.EthFlowDescs) {
+	if !isNil(o.EthFlowDescs) {
 		toSerialize["ethFlowDescs"] = o.EthFlowDescs
 	}
-	if !IsNil(o.EthfDescs) {
+	if !isNil(o.EthfDescs) {
 		toSerialize["ethfDescs"] = o.EthfDescs
 	}
-	if !IsNil(o.FlowDescs) {
+	if !isNil(o.FlowDescs) {
 		toSerialize["flowDescs"] = o.FlowDescs
 	}
-	if !IsNil(o.FDescs) {
+	if !isNil(o.FDescs) {
 		toSerialize["fDescs"] = o.FDescs
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.UlDelays) {
+	if !isNil(o.UlDelays) {
 		toSerialize["ulDelays"] = o.UlDelays
 	}
-	if !IsNil(o.DlDelays) {
+	if !isNil(o.DlDelays) {
 		toSerialize["dlDelays"] = o.DlDelays
 	}
-	if !IsNil(o.RtDelays) {
+	if !isNil(o.RtDelays) {
 		toSerialize["rtDelays"] = o.RtDelays
 	}
-	if !IsNil(o.TimeWindow) {
+	if !isNil(o.TimeWindow) {
 		toSerialize["timeWindow"] = o.TimeWindow
 	}
-	if !IsNil(o.SmNasFromUe) {
+	if !isNil(o.SmNasFromUe) {
 		toSerialize["smNasFromUe"] = o.SmNasFromUe
 	}
-	if !IsNil(o.SmNasFromSmf) {
+	if !isNil(o.SmNasFromSmf) {
 		toSerialize["smNasFromSmf"] = o.SmNasFromSmf
 	}
-	if !IsNil(o.UpRedTrans) {
+	if !isNil(o.UpRedTrans) {
 		toSerialize["upRedTrans"] = o.UpRedTrans
 	}
-	if !IsNil(o.SsId) {
+	if !isNil(o.SsId) {
 		toSerialize["ssId"] = o.SsId
 	}
-	if !IsNil(o.BssId) {
+	if !isNil(o.BssId) {
 		toSerialize["bssId"] = o.BssId
 	}
-	if !IsNil(o.StartWlan) {
+	if !isNil(o.StartWlan) {
 		toSerialize["startWlan"] = o.StartWlan
 	}
-	if !IsNil(o.EndWlan) {
+	if !isNil(o.EndWlan) {
 		toSerialize["endWlan"] = o.EndWlan
 	}
-	if !IsNil(o.PduSessInfos) {
+	if !isNil(o.PduSessInfos) {
 		toSerialize["pduSessInfos"] = o.PduSessInfos
 	}
-	if !IsNil(o.UpfInfo) {
+	if !isNil(o.UpfInfo) {
 		toSerialize["upfInfo"] = o.UpfInfo
 	}
 	return toSerialize, nil

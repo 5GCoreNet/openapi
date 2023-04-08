@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -118,9 +118,9 @@ func (a *PduSessionManagementDataApiService) CreateOrReplaceSessionManagementDat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -348,9 +348,9 @@ func (a *PduSessionManagementDataApiService) DeleteSessionManagementDataExecute(
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -547,19 +547,19 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 	}
 
 	if r.ipv4Addr != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv4-addr", r.ipv4Addr, "")
+		parameterAddToQuery(localVarQueryParams, "ipv4-addr", r.ipv4Addr, "")
 	}
 	if r.ipv6Prefix != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv6-prefix", r.ipv6Prefix, "")
+		parameterAddToQuery(localVarQueryParams, "ipv6-prefix", r.ipv6Prefix, "")
 	}
 	if r.dnn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.fields != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "fields", r.fields, "csv")
+		parameterAddToQuery(localVarQueryParams, "fields", r.fields, "csv")
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -588,9 +588,9 @@ func (a *PduSessionManagementDataApiService) QuerySessionManagementDataExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

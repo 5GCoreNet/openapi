@@ -69,7 +69,7 @@ func (o *MergePatchClearAlarm) SetClearUserId(v string) {
 
 // GetClearSystemId returns the ClearSystemId field value if set, zero value otherwise.
 func (o *MergePatchClearAlarm) GetClearSystemId() string {
-	if o == nil || IsNil(o.ClearSystemId) {
+	if o == nil || isNil(o.ClearSystemId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MergePatchClearAlarm) GetClearSystemId() string {
 // GetClearSystemIdOk returns a tuple with the ClearSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MergePatchClearAlarm) GetClearSystemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ClearSystemId) {
+	if o == nil || isNil(o.ClearSystemId) {
 		return nil, false
 	}
 	return o.ClearSystemId, true
@@ -87,7 +87,7 @@ func (o *MergePatchClearAlarm) GetClearSystemIdOk() (*string, bool) {
 
 // HasClearSystemId returns a boolean if a field has been set.
 func (o *MergePatchClearAlarm) HasClearSystemId() bool {
-	if o != nil && !IsNil(o.ClearSystemId) {
+	if o != nil && !isNil(o.ClearSystemId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o MergePatchClearAlarm) MarshalJSON() ([]byte, error) {
 func (o MergePatchClearAlarm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["clearUserId"] = o.ClearUserId
-	if !IsNil(o.ClearSystemId) {
+	if !isNil(o.ClearSystemId) {
 		toSerialize["clearSystemId"] = o.ClearSystemId
 	}
 	toSerialize["perceivedSeverity"] = o.PerceivedSeverity

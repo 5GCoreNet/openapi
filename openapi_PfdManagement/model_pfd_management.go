@@ -54,7 +54,7 @@ func NewPfdManagementWithDefaults() *PfdManagement {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *PfdManagement) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *PfdManagement) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagement) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -72,7 +72,7 @@ func (o *PfdManagement) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *PfdManagement) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *PfdManagement) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PfdManagement) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *PfdManagement) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagement) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -104,7 +104,7 @@ func (o *PfdManagement) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PfdManagement) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *PfdManagement) SetPfdDatas(v map[string]PfdData) {
 
 // GetPfdReports returns the PfdReports field value if set, zero value otherwise.
 func (o *PfdManagement) GetPfdReports() map[string]PfdReport {
-	if o == nil || IsNil(o.PfdReports) {
+	if o == nil || isNil(o.PfdReports) {
 		var ret map[string]PfdReport
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PfdManagement) GetPfdReports() map[string]PfdReport {
 // GetPfdReportsOk returns a tuple with the PfdReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagement) GetPfdReportsOk() (*map[string]PfdReport, bool) {
-	if o == nil || IsNil(o.PfdReports) {
+	if o == nil || isNil(o.PfdReports) {
 		return nil, false
 	}
 	return o.PfdReports, true
@@ -160,7 +160,7 @@ func (o *PfdManagement) GetPfdReportsOk() (*map[string]PfdReport, bool) {
 
 // HasPfdReports returns a boolean if a field has been set.
 func (o *PfdManagement) HasPfdReports() bool {
-	if o != nil && !IsNil(o.PfdReports) {
+	if o != nil && !isNil(o.PfdReports) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *PfdManagement) SetPfdReports(v map[string]PfdReport) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *PfdManagement) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *PfdManagement) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagement) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -192,7 +192,7 @@ func (o *PfdManagement) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *PfdManagement) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *PfdManagement) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *PfdManagement) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *PfdManagement) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagement) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -224,7 +224,7 @@ func (o *PfdManagement) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *PfdManagement) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *PfdManagement) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *PfdManagement) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *PfdManagement) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagement) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -256,7 +256,7 @@ func (o *PfdManagement) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *PfdManagement) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -278,21 +278,23 @@ func (o PfdManagement) MarshalJSON() ([]byte, error) {
 
 func (o PfdManagement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["pfdDatas"] = o.PfdDatas
-	// skip: pfdReports is readOnly
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.PfdReports) {
+		toSerialize["pfdReports"] = o.PfdReports
+	}
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
 	return toSerialize, nil

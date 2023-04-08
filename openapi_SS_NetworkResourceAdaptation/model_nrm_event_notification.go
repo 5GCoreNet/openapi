@@ -96,7 +96,7 @@ func (o *NrmEventNotification) SetTs(v time.Time) {
 
 // GetDeliveryMode returns the DeliveryMode field value if set, zero value otherwise.
 func (o *NrmEventNotification) GetDeliveryMode() DeliveryMode {
-	if o == nil || IsNil(o.DeliveryMode) {
+	if o == nil || isNil(o.DeliveryMode) {
 		var ret DeliveryMode
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NrmEventNotification) GetDeliveryMode() DeliveryMode {
 // GetDeliveryModeOk returns a tuple with the DeliveryMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrmEventNotification) GetDeliveryModeOk() (*DeliveryMode, bool) {
-	if o == nil || IsNil(o.DeliveryMode) {
+	if o == nil || isNil(o.DeliveryMode) {
 		return nil, false
 	}
 	return o.DeliveryMode, true
@@ -114,7 +114,7 @@ func (o *NrmEventNotification) GetDeliveryModeOk() (*DeliveryMode, bool) {
 
 // HasDeliveryMode returns a boolean if a field has been set.
 func (o *NrmEventNotification) HasDeliveryMode() bool {
-	if o != nil && !IsNil(o.DeliveryMode) {
+	if o != nil && !isNil(o.DeliveryMode) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *NrmEventNotification) SetDeliveryMode(v DeliveryMode) {
 
 // GetStreamIds returns the StreamIds field value if set, zero value otherwise.
 func (o *NrmEventNotification) GetStreamIds() []string {
-	if o == nil || IsNil(o.StreamIds) {
+	if o == nil || isNil(o.StreamIds) {
 		var ret []string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *NrmEventNotification) GetStreamIds() []string {
 // GetStreamIdsOk returns a tuple with the StreamIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrmEventNotification) GetStreamIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.StreamIds) {
+	if o == nil || isNil(o.StreamIds) {
 		return nil, false
 	}
 	return o.StreamIds, true
@@ -146,7 +146,7 @@ func (o *NrmEventNotification) GetStreamIdsOk() ([]string, bool) {
 
 // HasStreamIds returns a boolean if a field has been set.
 func (o *NrmEventNotification) HasStreamIds() bool {
-	if o != nil && !IsNil(o.StreamIds) {
+	if o != nil && !isNil(o.StreamIds) {
 		return true
 	}
 
@@ -170,10 +170,10 @@ func (o NrmEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
 	toSerialize["ts"] = o.Ts
-	if !IsNil(o.DeliveryMode) {
+	if !isNil(o.DeliveryMode) {
 		toSerialize["deliveryMode"] = o.DeliveryMode
 	}
-	if !IsNil(o.StreamIds) {
+	if !isNil(o.StreamIds) {
 		toSerialize["streamIds"] = o.StreamIds
 	}
 	return toSerialize, nil

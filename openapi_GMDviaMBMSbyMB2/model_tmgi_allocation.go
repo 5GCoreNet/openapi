@@ -50,7 +50,7 @@ func NewTMGIAllocationWithDefaults() *TMGIAllocation {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *TMGIAllocation) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *TMGIAllocation) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocation) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -68,7 +68,7 @@ func (o *TMGIAllocation) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *TMGIAllocation) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *TMGIAllocation) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *TMGIAllocation) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *TMGIAllocation) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocation) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -100,7 +100,7 @@ func (o *TMGIAllocation) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *TMGIAllocation) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *TMGIAllocation) SetSupportedFeatures(v string) {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *TMGIAllocation) GetExternalGroupId() string {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *TMGIAllocation) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocation) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -132,7 +132,7 @@ func (o *TMGIAllocation) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *TMGIAllocation) HasExternalGroupId() bool {
-	if o != nil && !IsNil(o.ExternalGroupId) {
+	if o != nil && !isNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *TMGIAllocation) SetExternalGroupId(v string) {
 
 // GetMbmsLocArea returns the MbmsLocArea field value if set, zero value otherwise.
 func (o *TMGIAllocation) GetMbmsLocArea() MbmsLocArea {
-	if o == nil || IsNil(o.MbmsLocArea) {
+	if o == nil || isNil(o.MbmsLocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *TMGIAllocation) GetMbmsLocArea() MbmsLocArea {
 // GetMbmsLocAreaOk returns a tuple with the MbmsLocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocation) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || IsNil(o.MbmsLocArea) {
+	if o == nil || isNil(o.MbmsLocArea) {
 		return nil, false
 	}
 	return o.MbmsLocArea, true
@@ -164,7 +164,7 @@ func (o *TMGIAllocation) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasMbmsLocArea returns a boolean if a field has been set.
 func (o *TMGIAllocation) HasMbmsLocArea() bool {
-	if o != nil && !IsNil(o.MbmsLocArea) {
+	if o != nil && !isNil(o.MbmsLocArea) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *TMGIAllocation) SetMbmsLocArea(v MbmsLocArea) {
 
 // GetTmgiExpiration returns the TmgiExpiration field value if set, zero value otherwise.
 func (o *TMGIAllocation) GetTmgiExpiration() time.Time {
-	if o == nil || IsNil(o.TmgiExpiration) {
+	if o == nil || isNil(o.TmgiExpiration) {
 		var ret time.Time
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *TMGIAllocation) GetTmgiExpiration() time.Time {
 // GetTmgiExpirationOk returns a tuple with the TmgiExpiration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocation) GetTmgiExpirationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TmgiExpiration) {
+	if o == nil || isNil(o.TmgiExpiration) {
 		return nil, false
 	}
 	return o.TmgiExpiration, true
@@ -196,7 +196,7 @@ func (o *TMGIAllocation) GetTmgiExpirationOk() (*time.Time, bool) {
 
 // HasTmgiExpiration returns a boolean if a field has been set.
 func (o *TMGIAllocation) HasTmgiExpiration() bool {
-	if o != nil && !IsNil(o.TmgiExpiration) {
+	if o != nil && !isNil(o.TmgiExpiration) {
 		return true
 	}
 
@@ -218,19 +218,21 @@ func (o TMGIAllocation) MarshalJSON() ([]byte, error) {
 
 func (o TMGIAllocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ExternalGroupId) {
+	if !isNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	if !IsNil(o.MbmsLocArea) {
+	if !isNil(o.MbmsLocArea) {
 		toSerialize["mbmsLocArea"] = o.MbmsLocArea
 	}
-	// skip: tmgiExpiration is readOnly
+	if !isNil(o.TmgiExpiration) {
+		toSerialize["tmgiExpiration"] = o.TmgiExpiration
+	}
 	return toSerialize, nil
 }
 

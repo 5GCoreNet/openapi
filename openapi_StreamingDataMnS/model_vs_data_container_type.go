@@ -43,7 +43,7 @@ func NewVsDataContainerTypeWithDefaults() *VsDataContainerType {
 
 // GetVsDataType returns the VsDataType field value if set, zero value otherwise.
 func (o *VsDataContainerType) GetVsDataType() string {
-	if o == nil || IsNil(o.VsDataType) {
+	if o == nil || isNil(o.VsDataType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *VsDataContainerType) GetVsDataType() string {
 // GetVsDataTypeOk returns a tuple with the VsDataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsDataContainerType) GetVsDataTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.VsDataType) {
+	if o == nil || isNil(o.VsDataType) {
 		return nil, false
 	}
 	return o.VsDataType, true
@@ -61,7 +61,7 @@ func (o *VsDataContainerType) GetVsDataTypeOk() (*string, bool) {
 
 // HasVsDataType returns a boolean if a field has been set.
 func (o *VsDataContainerType) HasVsDataType() bool {
-	if o != nil && !IsNil(o.VsDataType) {
+	if o != nil && !isNil(o.VsDataType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *VsDataContainerType) SetVsDataType(v string) {
 
 // GetVsData returns the VsData field value if set, zero value otherwise.
 func (o *VsDataContainerType) GetVsData() string {
-	if o == nil || IsNil(o.VsData) {
+	if o == nil || isNil(o.VsData) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *VsDataContainerType) GetVsData() string {
 // GetVsDataOk returns a tuple with the VsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsDataContainerType) GetVsDataOk() (*string, bool) {
-	if o == nil || IsNil(o.VsData) {
+	if o == nil || isNil(o.VsData) {
 		return nil, false
 	}
 	return o.VsData, true
@@ -93,7 +93,7 @@ func (o *VsDataContainerType) GetVsDataOk() (*string, bool) {
 
 // HasVsData returns a boolean if a field has been set.
 func (o *VsDataContainerType) HasVsData() bool {
-	if o != nil && !IsNil(o.VsData) {
+	if o != nil && !isNil(o.VsData) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *VsDataContainerType) SetVsData(v string) {
 
 // GetVsDataFormatVersion returns the VsDataFormatVersion field value if set, zero value otherwise.
 func (o *VsDataContainerType) GetVsDataFormatVersion() string {
-	if o == nil || IsNil(o.VsDataFormatVersion) {
+	if o == nil || isNil(o.VsDataFormatVersion) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *VsDataContainerType) GetVsDataFormatVersion() string {
 // GetVsDataFormatVersionOk returns a tuple with the VsDataFormatVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsDataContainerType) GetVsDataFormatVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.VsDataFormatVersion) {
+	if o == nil || isNil(o.VsDataFormatVersion) {
 		return nil, false
 	}
 	return o.VsDataFormatVersion, true
@@ -125,7 +125,7 @@ func (o *VsDataContainerType) GetVsDataFormatVersionOk() (*string, bool) {
 
 // HasVsDataFormatVersion returns a boolean if a field has been set.
 func (o *VsDataContainerType) HasVsDataFormatVersion() bool {
-	if o != nil && !IsNil(o.VsDataFormatVersion) {
+	if o != nil && !isNil(o.VsDataFormatVersion) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o VsDataContainerType) MarshalJSON() ([]byte, error) {
 
 func (o VsDataContainerType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.VsDataType) {
+	if !isNil(o.VsDataType) {
 		toSerialize["vsDataType"] = o.VsDataType
 	}
-	if !IsNil(o.VsData) {
+	if !isNil(o.VsData) {
 		toSerialize["vsData"] = o.VsData
 	}
-	if !IsNil(o.VsDataFormatVersion) {
+	if !isNil(o.VsDataFormatVersion) {
 		toSerialize["vsDataFormatVersion"] = o.VsDataFormatVersion
 	}
 	return toSerialize, nil

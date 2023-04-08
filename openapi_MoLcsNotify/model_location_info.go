@@ -61,7 +61,7 @@ func NewLocationInfoWithDefaults() *LocationInfo {
 
 // GetAgeOfLocationInfo returns the AgeOfLocationInfo field value if set, zero value otherwise.
 func (o *LocationInfo) GetAgeOfLocationInfo() int32 {
-	if o == nil || IsNil(o.AgeOfLocationInfo) {
+	if o == nil || isNil(o.AgeOfLocationInfo) {
 		var ret int32
 		return ret
 	}
@@ -71,7 +71,7 @@ func (o *LocationInfo) GetAgeOfLocationInfo() int32 {
 // GetAgeOfLocationInfoOk returns a tuple with the AgeOfLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetAgeOfLocationInfoOk() (*int32, bool) {
-	if o == nil || IsNil(o.AgeOfLocationInfo) {
+	if o == nil || isNil(o.AgeOfLocationInfo) {
 		return nil, false
 	}
 	return o.AgeOfLocationInfo, true
@@ -79,7 +79,7 @@ func (o *LocationInfo) GetAgeOfLocationInfoOk() (*int32, bool) {
 
 // HasAgeOfLocationInfo returns a boolean if a field has been set.
 func (o *LocationInfo) HasAgeOfLocationInfo() bool {
-	if o != nil && !IsNil(o.AgeOfLocationInfo) {
+	if o != nil && !isNil(o.AgeOfLocationInfo) {
 		return true
 	}
 
@@ -93,7 +93,7 @@ func (o *LocationInfo) SetAgeOfLocationInfo(v int32) {
 
 // GetCellId returns the CellId field value if set, zero value otherwise.
 func (o *LocationInfo) GetCellId() string {
-	if o == nil || IsNil(o.CellId) {
+	if o == nil || isNil(o.CellId) {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *LocationInfo) GetCellId() string {
 // GetCellIdOk returns a tuple with the CellId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetCellIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CellId) {
+	if o == nil || isNil(o.CellId) {
 		return nil, false
 	}
 	return o.CellId, true
@@ -111,7 +111,7 @@ func (o *LocationInfo) GetCellIdOk() (*string, bool) {
 
 // HasCellId returns a boolean if a field has been set.
 func (o *LocationInfo) HasCellId() bool {
-	if o != nil && !IsNil(o.CellId) {
+	if o != nil && !isNil(o.CellId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *LocationInfo) SetCellId(v string) {
 
 // GetEnodeBId returns the EnodeBId field value if set, zero value otherwise.
 func (o *LocationInfo) GetEnodeBId() string {
-	if o == nil || IsNil(o.EnodeBId) {
+	if o == nil || isNil(o.EnodeBId) {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *LocationInfo) GetEnodeBId() string {
 // GetEnodeBIdOk returns a tuple with the EnodeBId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetEnodeBIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EnodeBId) {
+	if o == nil || isNil(o.EnodeBId) {
 		return nil, false
 	}
 	return o.EnodeBId, true
@@ -143,7 +143,7 @@ func (o *LocationInfo) GetEnodeBIdOk() (*string, bool) {
 
 // HasEnodeBId returns a boolean if a field has been set.
 func (o *LocationInfo) HasEnodeBId() bool {
-	if o != nil && !IsNil(o.EnodeBId) {
+	if o != nil && !isNil(o.EnodeBId) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *LocationInfo) SetEnodeBId(v string) {
 
 // GetRoutingAreaId returns the RoutingAreaId field value if set, zero value otherwise.
 func (o *LocationInfo) GetRoutingAreaId() string {
-	if o == nil || IsNil(o.RoutingAreaId) {
+	if o == nil || isNil(o.RoutingAreaId) {
 		var ret string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *LocationInfo) GetRoutingAreaId() string {
 // GetRoutingAreaIdOk returns a tuple with the RoutingAreaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetRoutingAreaIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingAreaId) {
+	if o == nil || isNil(o.RoutingAreaId) {
 		return nil, false
 	}
 	return o.RoutingAreaId, true
@@ -175,7 +175,7 @@ func (o *LocationInfo) GetRoutingAreaIdOk() (*string, bool) {
 
 // HasRoutingAreaId returns a boolean if a field has been set.
 func (o *LocationInfo) HasRoutingAreaId() bool {
-	if o != nil && !IsNil(o.RoutingAreaId) {
+	if o != nil && !isNil(o.RoutingAreaId) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *LocationInfo) SetRoutingAreaId(v string) {
 
 // GetTrackingAreaId returns the TrackingAreaId field value if set, zero value otherwise.
 func (o *LocationInfo) GetTrackingAreaId() string {
-	if o == nil || IsNil(o.TrackingAreaId) {
+	if o == nil || isNil(o.TrackingAreaId) {
 		var ret string
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *LocationInfo) GetTrackingAreaId() string {
 // GetTrackingAreaIdOk returns a tuple with the TrackingAreaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetTrackingAreaIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TrackingAreaId) {
+	if o == nil || isNil(o.TrackingAreaId) {
 		return nil, false
 	}
 	return o.TrackingAreaId, true
@@ -207,7 +207,7 @@ func (o *LocationInfo) GetTrackingAreaIdOk() (*string, bool) {
 
 // HasTrackingAreaId returns a boolean if a field has been set.
 func (o *LocationInfo) HasTrackingAreaId() bool {
-	if o != nil && !IsNil(o.TrackingAreaId) {
+	if o != nil && !isNil(o.TrackingAreaId) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *LocationInfo) SetTrackingAreaId(v string) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *LocationInfo) GetPlmnId() string {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret string
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *LocationInfo) GetPlmnId() string {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetPlmnIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -239,7 +239,7 @@ func (o *LocationInfo) GetPlmnIdOk() (*string, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *LocationInfo) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *LocationInfo) SetPlmnId(v string) {
 
 // GetTwanId returns the TwanId field value if set, zero value otherwise.
 func (o *LocationInfo) GetTwanId() string {
-	if o == nil || IsNil(o.TwanId) {
+	if o == nil || isNil(o.TwanId) {
 		var ret string
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *LocationInfo) GetTwanId() string {
 // GetTwanIdOk returns a tuple with the TwanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetTwanIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TwanId) {
+	if o == nil || isNil(o.TwanId) {
 		return nil, false
 	}
 	return o.TwanId, true
@@ -271,7 +271,7 @@ func (o *LocationInfo) GetTwanIdOk() (*string, bool) {
 
 // HasTwanId returns a boolean if a field has been set.
 func (o *LocationInfo) HasTwanId() bool {
-	if o != nil && !IsNil(o.TwanId) {
+	if o != nil && !isNil(o.TwanId) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *LocationInfo) SetTwanId(v string) {
 
 // GetGeographicArea returns the GeographicArea field value if set, zero value otherwise.
 func (o *LocationInfo) GetGeographicArea() GeographicArea {
-	if o == nil || IsNil(o.GeographicArea) {
+	if o == nil || isNil(o.GeographicArea) {
 		var ret GeographicArea
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *LocationInfo) GetGeographicArea() GeographicArea {
 // GetGeographicAreaOk returns a tuple with the GeographicArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetGeographicAreaOk() (*GeographicArea, bool) {
-	if o == nil || IsNil(o.GeographicArea) {
+	if o == nil || isNil(o.GeographicArea) {
 		return nil, false
 	}
 	return o.GeographicArea, true
@@ -303,7 +303,7 @@ func (o *LocationInfo) GetGeographicAreaOk() (*GeographicArea, bool) {
 
 // HasGeographicArea returns a boolean if a field has been set.
 func (o *LocationInfo) HasGeographicArea() bool {
-	if o != nil && !IsNil(o.GeographicArea) {
+	if o != nil && !isNil(o.GeographicArea) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *LocationInfo) SetGeographicArea(v GeographicArea) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *LocationInfo) GetCivicAddress() CivicAddress {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *LocationInfo) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -335,7 +335,7 @@ func (o *LocationInfo) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *LocationInfo) HasCivicAddress() bool {
-	if o != nil && !IsNil(o.CivicAddress) {
+	if o != nil && !isNil(o.CivicAddress) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *LocationInfo) SetCivicAddress(v CivicAddress) {
 
 // GetPositionMethod returns the PositionMethod field value if set, zero value otherwise.
 func (o *LocationInfo) GetPositionMethod() PositioningMethod {
-	if o == nil || IsNil(o.PositionMethod) {
+	if o == nil || isNil(o.PositionMethod) {
 		var ret PositioningMethod
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *LocationInfo) GetPositionMethod() PositioningMethod {
 // GetPositionMethodOk returns a tuple with the PositionMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetPositionMethodOk() (*PositioningMethod, bool) {
-	if o == nil || IsNil(o.PositionMethod) {
+	if o == nil || isNil(o.PositionMethod) {
 		return nil, false
 	}
 	return o.PositionMethod, true
@@ -367,7 +367,7 @@ func (o *LocationInfo) GetPositionMethodOk() (*PositioningMethod, bool) {
 
 // HasPositionMethod returns a boolean if a field has been set.
 func (o *LocationInfo) HasPositionMethod() bool {
-	if o != nil && !IsNil(o.PositionMethod) {
+	if o != nil && !isNil(o.PositionMethod) {
 		return true
 	}
 
@@ -381,7 +381,7 @@ func (o *LocationInfo) SetPositionMethod(v PositioningMethod) {
 
 // GetQosFulfilInd returns the QosFulfilInd field value if set, zero value otherwise.
 func (o *LocationInfo) GetQosFulfilInd() AccuracyFulfilmentIndicator {
-	if o == nil || IsNil(o.QosFulfilInd) {
+	if o == nil || isNil(o.QosFulfilInd) {
 		var ret AccuracyFulfilmentIndicator
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *LocationInfo) GetQosFulfilInd() AccuracyFulfilmentIndicator {
 // GetQosFulfilIndOk returns a tuple with the QosFulfilInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetQosFulfilIndOk() (*AccuracyFulfilmentIndicator, bool) {
-	if o == nil || IsNil(o.QosFulfilInd) {
+	if o == nil || isNil(o.QosFulfilInd) {
 		return nil, false
 	}
 	return o.QosFulfilInd, true
@@ -399,7 +399,7 @@ func (o *LocationInfo) GetQosFulfilIndOk() (*AccuracyFulfilmentIndicator, bool) 
 
 // HasQosFulfilInd returns a boolean if a field has been set.
 func (o *LocationInfo) HasQosFulfilInd() bool {
-	if o != nil && !IsNil(o.QosFulfilInd) {
+	if o != nil && !isNil(o.QosFulfilInd) {
 		return true
 	}
 
@@ -413,7 +413,7 @@ func (o *LocationInfo) SetQosFulfilInd(v AccuracyFulfilmentIndicator) {
 
 // GetUeVelocity returns the UeVelocity field value if set, zero value otherwise.
 func (o *LocationInfo) GetUeVelocity() VelocityEstimate {
-	if o == nil || IsNil(o.UeVelocity) {
+	if o == nil || isNil(o.UeVelocity) {
 		var ret VelocityEstimate
 		return ret
 	}
@@ -423,7 +423,7 @@ func (o *LocationInfo) GetUeVelocity() VelocityEstimate {
 // GetUeVelocityOk returns a tuple with the UeVelocity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetUeVelocityOk() (*VelocityEstimate, bool) {
-	if o == nil || IsNil(o.UeVelocity) {
+	if o == nil || isNil(o.UeVelocity) {
 		return nil, false
 	}
 	return o.UeVelocity, true
@@ -431,7 +431,7 @@ func (o *LocationInfo) GetUeVelocityOk() (*VelocityEstimate, bool) {
 
 // HasUeVelocity returns a boolean if a field has been set.
 func (o *LocationInfo) HasUeVelocity() bool {
-	if o != nil && !IsNil(o.UeVelocity) {
+	if o != nil && !isNil(o.UeVelocity) {
 		return true
 	}
 
@@ -445,7 +445,7 @@ func (o *LocationInfo) SetUeVelocity(v VelocityEstimate) {
 
 // GetLdrType returns the LdrType field value if set, zero value otherwise.
 func (o *LocationInfo) GetLdrType() LdrType {
-	if o == nil || IsNil(o.LdrType) {
+	if o == nil || isNil(o.LdrType) {
 		var ret LdrType
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *LocationInfo) GetLdrType() LdrType {
 // GetLdrTypeOk returns a tuple with the LdrType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetLdrTypeOk() (*LdrType, bool) {
-	if o == nil || IsNil(o.LdrType) {
+	if o == nil || isNil(o.LdrType) {
 		return nil, false
 	}
 	return o.LdrType, true
@@ -463,7 +463,7 @@ func (o *LocationInfo) GetLdrTypeOk() (*LdrType, bool) {
 
 // HasLdrType returns a boolean if a field has been set.
 func (o *LocationInfo) HasLdrType() bool {
-	if o != nil && !IsNil(o.LdrType) {
+	if o != nil && !isNil(o.LdrType) {
 		return true
 	}
 
@@ -477,7 +477,7 @@ func (o *LocationInfo) SetLdrType(v LdrType) {
 
 // GetAchievedQos returns the AchievedQos field value if set, zero value otherwise.
 func (o *LocationInfo) GetAchievedQos() MinorLocationQoS {
-	if o == nil || IsNil(o.AchievedQos) {
+	if o == nil || isNil(o.AchievedQos) {
 		var ret MinorLocationQoS
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *LocationInfo) GetAchievedQos() MinorLocationQoS {
 // GetAchievedQosOk returns a tuple with the AchievedQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationInfo) GetAchievedQosOk() (*MinorLocationQoS, bool) {
-	if o == nil || IsNil(o.AchievedQos) {
+	if o == nil || isNil(o.AchievedQos) {
 		return nil, false
 	}
 	return o.AchievedQos, true
@@ -495,7 +495,7 @@ func (o *LocationInfo) GetAchievedQosOk() (*MinorLocationQoS, bool) {
 
 // HasAchievedQos returns a boolean if a field has been set.
 func (o *LocationInfo) HasAchievedQos() bool {
-	if o != nil && !IsNil(o.AchievedQos) {
+	if o != nil && !isNil(o.AchievedQos) {
 		return true
 	}
 
@@ -517,46 +517,46 @@ func (o LocationInfo) MarshalJSON() ([]byte, error) {
 
 func (o LocationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AgeOfLocationInfo) {
+	if !isNil(o.AgeOfLocationInfo) {
 		toSerialize["ageOfLocationInfo"] = o.AgeOfLocationInfo
 	}
-	if !IsNil(o.CellId) {
+	if !isNil(o.CellId) {
 		toSerialize["cellId"] = o.CellId
 	}
-	if !IsNil(o.EnodeBId) {
+	if !isNil(o.EnodeBId) {
 		toSerialize["enodeBId"] = o.EnodeBId
 	}
-	if !IsNil(o.RoutingAreaId) {
+	if !isNil(o.RoutingAreaId) {
 		toSerialize["routingAreaId"] = o.RoutingAreaId
 	}
-	if !IsNil(o.TrackingAreaId) {
+	if !isNil(o.TrackingAreaId) {
 		toSerialize["trackingAreaId"] = o.TrackingAreaId
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.TwanId) {
+	if !isNil(o.TwanId) {
 		toSerialize["twanId"] = o.TwanId
 	}
-	if !IsNil(o.GeographicArea) {
+	if !isNil(o.GeographicArea) {
 		toSerialize["geographicArea"] = o.GeographicArea
 	}
-	if !IsNil(o.CivicAddress) {
+	if !isNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
-	if !IsNil(o.PositionMethod) {
+	if !isNil(o.PositionMethod) {
 		toSerialize["positionMethod"] = o.PositionMethod
 	}
-	if !IsNil(o.QosFulfilInd) {
+	if !isNil(o.QosFulfilInd) {
 		toSerialize["qosFulfilInd"] = o.QosFulfilInd
 	}
-	if !IsNil(o.UeVelocity) {
+	if !isNil(o.UeVelocity) {
 		toSerialize["ueVelocity"] = o.UeVelocity
 	}
-	if !IsNil(o.LdrType) {
+	if !isNil(o.LdrType) {
 		toSerialize["ldrType"] = o.LdrType
 	}
-	if !IsNil(o.AchievedQos) {
+	if !isNil(o.AchievedQos) {
 		toSerialize["achievedQos"] = o.AchievedQos
 	}
 	return toSerialize, nil

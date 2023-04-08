@@ -41,7 +41,7 @@ func NewAanfInfoWithDefaults() *AanfInfo {
 
 // GetRoutingIndicators returns the RoutingIndicators field value if set, zero value otherwise.
 func (o *AanfInfo) GetRoutingIndicators() []string {
-	if o == nil || IsNil(o.RoutingIndicators) {
+	if o == nil || isNil(o.RoutingIndicators) {
 		var ret []string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AanfInfo) GetRoutingIndicators() []string {
 // GetRoutingIndicatorsOk returns a tuple with the RoutingIndicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AanfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RoutingIndicators) {
+	if o == nil || isNil(o.RoutingIndicators) {
 		return nil, false
 	}
 	return o.RoutingIndicators, true
@@ -59,7 +59,7 @@ func (o *AanfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
 
 // HasRoutingIndicators returns a boolean if a field has been set.
 func (o *AanfInfo) HasRoutingIndicators() bool {
-	if o != nil && !IsNil(o.RoutingIndicators) {
+	if o != nil && !isNil(o.RoutingIndicators) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AanfInfo) MarshalJSON() ([]byte, error) {
 
 func (o AanfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RoutingIndicators) {
+	if !isNil(o.RoutingIndicators) {
 		toSerialize["routingIndicators"] = o.RoutingIndicators
 	}
 	return toSerialize, nil

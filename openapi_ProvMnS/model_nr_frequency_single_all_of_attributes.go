@@ -43,7 +43,7 @@ func NewNRFrequencySingleAllOfAttributesWithDefaults() *NRFrequencySingleAllOfAt
 
 // GetAbsoluteFrequencySSB returns the AbsoluteFrequencySSB field value if set, zero value otherwise.
 func (o *NRFrequencySingleAllOfAttributes) GetAbsoluteFrequencySSB() int32 {
-	if o == nil || IsNil(o.AbsoluteFrequencySSB) {
+	if o == nil || isNil(o.AbsoluteFrequencySSB) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *NRFrequencySingleAllOfAttributes) GetAbsoluteFrequencySSB() int32 {
 // GetAbsoluteFrequencySSBOk returns a tuple with the AbsoluteFrequencySSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFrequencySingleAllOfAttributes) GetAbsoluteFrequencySSBOk() (*int32, bool) {
-	if o == nil || IsNil(o.AbsoluteFrequencySSB) {
+	if o == nil || isNil(o.AbsoluteFrequencySSB) {
 		return nil, false
 	}
 	return o.AbsoluteFrequencySSB, true
@@ -61,7 +61,7 @@ func (o *NRFrequencySingleAllOfAttributes) GetAbsoluteFrequencySSBOk() (*int32, 
 
 // HasAbsoluteFrequencySSB returns a boolean if a field has been set.
 func (o *NRFrequencySingleAllOfAttributes) HasAbsoluteFrequencySSB() bool {
-	if o != nil && !IsNil(o.AbsoluteFrequencySSB) {
+	if o != nil && !isNil(o.AbsoluteFrequencySSB) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *NRFrequencySingleAllOfAttributes) SetAbsoluteFrequencySSB(v int32) {
 
 // GetSsbSubCarrierSpacing returns the SsbSubCarrierSpacing field value if set, zero value otherwise.
 func (o *NRFrequencySingleAllOfAttributes) GetSsbSubCarrierSpacing() SsbSubCarrierSpacing {
-	if o == nil || IsNil(o.SsbSubCarrierSpacing) {
+	if o == nil || isNil(o.SsbSubCarrierSpacing) {
 		var ret SsbSubCarrierSpacing
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *NRFrequencySingleAllOfAttributes) GetSsbSubCarrierSpacing() SsbSubCarri
 // GetSsbSubCarrierSpacingOk returns a tuple with the SsbSubCarrierSpacing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFrequencySingleAllOfAttributes) GetSsbSubCarrierSpacingOk() (*SsbSubCarrierSpacing, bool) {
-	if o == nil || IsNil(o.SsbSubCarrierSpacing) {
+	if o == nil || isNil(o.SsbSubCarrierSpacing) {
 		return nil, false
 	}
 	return o.SsbSubCarrierSpacing, true
@@ -93,7 +93,7 @@ func (o *NRFrequencySingleAllOfAttributes) GetSsbSubCarrierSpacingOk() (*SsbSubC
 
 // HasSsbSubCarrierSpacing returns a boolean if a field has been set.
 func (o *NRFrequencySingleAllOfAttributes) HasSsbSubCarrierSpacing() bool {
-	if o != nil && !IsNil(o.SsbSubCarrierSpacing) {
+	if o != nil && !isNil(o.SsbSubCarrierSpacing) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *NRFrequencySingleAllOfAttributes) SetSsbSubCarrierSpacing(v SsbSubCarri
 
 // GetMultiFrequencyBandListNR returns the MultiFrequencyBandListNR field value if set, zero value otherwise.
 func (o *NRFrequencySingleAllOfAttributes) GetMultiFrequencyBandListNR() int32 {
-	if o == nil || IsNil(o.MultiFrequencyBandListNR) {
+	if o == nil || isNil(o.MultiFrequencyBandListNR) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NRFrequencySingleAllOfAttributes) GetMultiFrequencyBandListNR() int32 {
 // GetMultiFrequencyBandListNROk returns a tuple with the MultiFrequencyBandListNR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NRFrequencySingleAllOfAttributes) GetMultiFrequencyBandListNROk() (*int32, bool) {
-	if o == nil || IsNil(o.MultiFrequencyBandListNR) {
+	if o == nil || isNil(o.MultiFrequencyBandListNR) {
 		return nil, false
 	}
 	return o.MultiFrequencyBandListNR, true
@@ -125,7 +125,7 @@ func (o *NRFrequencySingleAllOfAttributes) GetMultiFrequencyBandListNROk() (*int
 
 // HasMultiFrequencyBandListNR returns a boolean if a field has been set.
 func (o *NRFrequencySingleAllOfAttributes) HasMultiFrequencyBandListNR() bool {
-	if o != nil && !IsNil(o.MultiFrequencyBandListNR) {
+	if o != nil && !isNil(o.MultiFrequencyBandListNR) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o NRFrequencySingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o NRFrequencySingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AbsoluteFrequencySSB) {
+	if !isNil(o.AbsoluteFrequencySSB) {
 		toSerialize["absoluteFrequencySSB"] = o.AbsoluteFrequencySSB
 	}
-	if !IsNil(o.SsbSubCarrierSpacing) {
+	if !isNil(o.SsbSubCarrierSpacing) {
 		toSerialize["ssbSubCarrierSpacing"] = o.SsbSubCarrierSpacing
 	}
-	if !IsNil(o.MultiFrequencyBandListNR) {
+	if !isNil(o.MultiFrequencyBandListNR) {
 		toSerialize["multiFrequencyBandListNR"] = o.MultiFrequencyBandListNR
 	}
 	return toSerialize, nil

@@ -95,7 +95,7 @@ func (o *TargetData) SetPduid(v string) {
 
 // GetMetadataIndic returns the MetadataIndic field value if set, zero value otherwise.
 func (o *TargetData) GetMetadataIndic() MetadataIndic {
-	if o == nil || IsNil(o.MetadataIndic) {
+	if o == nil || isNil(o.MetadataIndic) {
 		var ret MetadataIndic
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *TargetData) GetMetadataIndic() MetadataIndic {
 // GetMetadataIndicOk returns a tuple with the MetadataIndic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetData) GetMetadataIndicOk() (*MetadataIndic, bool) {
-	if o == nil || IsNil(o.MetadataIndic) {
+	if o == nil || isNil(o.MetadataIndic) {
 		return nil, false
 	}
 	return o.MetadataIndic, true
@@ -113,7 +113,7 @@ func (o *TargetData) GetMetadataIndicOk() (*MetadataIndic, bool) {
 
 // HasMetadataIndic returns a boolean if a field has been set.
 func (o *TargetData) HasMetadataIndic() bool {
-	if o != nil && !IsNil(o.MetadataIndic) {
+	if o != nil && !isNil(o.MetadataIndic) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o TargetData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["targetRpauid"] = o.TargetRpauid
 	toSerialize["pduid"] = o.Pduid
-	if !IsNil(o.MetadataIndic) {
+	if !isNil(o.MetadataIndic) {
 		toSerialize["metadataIndic"] = o.MetadataIndic
 	}
 	return toSerialize, nil

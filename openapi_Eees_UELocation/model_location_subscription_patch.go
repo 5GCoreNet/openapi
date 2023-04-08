@@ -50,7 +50,7 @@ func NewLocationSubscriptionPatchWithDefaults() *LocationSubscriptionPatch {
 
 // GetEventReq returns the EventReq field value if set, zero value otherwise.
 func (o *LocationSubscriptionPatch) GetEventReq() ReportingInformation {
-	if o == nil || IsNil(o.EventReq) {
+	if o == nil || isNil(o.EventReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *LocationSubscriptionPatch) GetEventReq() ReportingInformation {
 // GetEventReqOk returns a tuple with the EventReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationSubscriptionPatch) GetEventReqOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.EventReq) {
+	if o == nil || isNil(o.EventReq) {
 		return nil, false
 	}
 	return o.EventReq, true
@@ -68,7 +68,7 @@ func (o *LocationSubscriptionPatch) GetEventReqOk() (*ReportingInformation, bool
 
 // HasEventReq returns a boolean if a field has been set.
 func (o *LocationSubscriptionPatch) HasEventReq() bool {
-	if o != nil && !IsNil(o.EventReq) {
+	if o != nil && !isNil(o.EventReq) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *LocationSubscriptionPatch) SetEventReq(v ReportingInformation) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *LocationSubscriptionPatch) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *LocationSubscriptionPatch) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -100,7 +100,7 @@ func (o *LocationSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *LocationSubscriptionPatch) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *LocationSubscriptionPatch) SetExpTime(v time.Time) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *LocationSubscriptionPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *LocationSubscriptionPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationSubscriptionPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -132,7 +132,7 @@ func (o *LocationSubscriptionPatch) GetNotificationDestinationOk() (*string, boo
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *LocationSubscriptionPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *LocationSubscriptionPatch) SetNotificationDestination(v string) {
 
 // GetRevocationNotifUri returns the RevocationNotifUri field value if set, zero value otherwise.
 func (o *LocationSubscriptionPatch) GetRevocationNotifUri() string {
-	if o == nil || IsNil(o.RevocationNotifUri) {
+	if o == nil || isNil(o.RevocationNotifUri) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *LocationSubscriptionPatch) GetRevocationNotifUri() string {
 // GetRevocationNotifUriOk returns a tuple with the RevocationNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationSubscriptionPatch) GetRevocationNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.RevocationNotifUri) {
+	if o == nil || isNil(o.RevocationNotifUri) {
 		return nil, false
 	}
 	return o.RevocationNotifUri, true
@@ -164,7 +164,7 @@ func (o *LocationSubscriptionPatch) GetRevocationNotifUriOk() (*string, bool) {
 
 // HasRevocationNotifUri returns a boolean if a field has been set.
 func (o *LocationSubscriptionPatch) HasRevocationNotifUri() bool {
-	if o != nil && !IsNil(o.RevocationNotifUri) {
+	if o != nil && !isNil(o.RevocationNotifUri) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *LocationSubscriptionPatch) SetRevocationNotifUri(v string) {
 
 // GetLocGran returns the LocGran field value if set, zero value otherwise.
 func (o *LocationSubscriptionPatch) GetLocGran() Accuracy {
-	if o == nil || IsNil(o.LocGran) {
+	if o == nil || isNil(o.LocGran) {
 		var ret Accuracy
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *LocationSubscriptionPatch) GetLocGran() Accuracy {
 // GetLocGranOk returns a tuple with the LocGran field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationSubscriptionPatch) GetLocGranOk() (*Accuracy, bool) {
-	if o == nil || IsNil(o.LocGran) {
+	if o == nil || isNil(o.LocGran) {
 		return nil, false
 	}
 	return o.LocGran, true
@@ -196,7 +196,7 @@ func (o *LocationSubscriptionPatch) GetLocGranOk() (*Accuracy, bool) {
 
 // HasLocGran returns a boolean if a field has been set.
 func (o *LocationSubscriptionPatch) HasLocGran() bool {
-	if o != nil && !IsNil(o.LocGran) {
+	if o != nil && !isNil(o.LocGran) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *LocationSubscriptionPatch) SetLocGran(v Accuracy) {
 
 // GetLocQos returns the LocQos field value if set, zero value otherwise.
 func (o *LocationSubscriptionPatch) GetLocQos() LocationQoS {
-	if o == nil || IsNil(o.LocQos) {
+	if o == nil || isNil(o.LocQos) {
 		var ret LocationQoS
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *LocationSubscriptionPatch) GetLocQos() LocationQoS {
 // GetLocQosOk returns a tuple with the LocQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationSubscriptionPatch) GetLocQosOk() (*LocationQoS, bool) {
-	if o == nil || IsNil(o.LocQos) {
+	if o == nil || isNil(o.LocQos) {
 		return nil, false
 	}
 	return o.LocQos, true
@@ -228,7 +228,7 @@ func (o *LocationSubscriptionPatch) GetLocQosOk() (*LocationQoS, bool) {
 
 // HasLocQos returns a boolean if a field has been set.
 func (o *LocationSubscriptionPatch) HasLocQos() bool {
-	if o != nil && !IsNil(o.LocQos) {
+	if o != nil && !isNil(o.LocQos) {
 		return true
 	}
 
@@ -250,22 +250,22 @@ func (o LocationSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o LocationSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventReq) {
+	if !isNil(o.EventReq) {
 		toSerialize["eventReq"] = o.EventReq
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.RevocationNotifUri) {
+	if !isNil(o.RevocationNotifUri) {
 		toSerialize["revocationNotifUri"] = o.RevocationNotifUri
 	}
-	if !IsNil(o.LocGran) {
+	if !isNil(o.LocGran) {
 		toSerialize["locGran"] = o.LocGran
 	}
-	if !IsNil(o.LocQos) {
+	if !isNil(o.LocQos) {
 		toSerialize["locQos"] = o.LocQos
 	}
 	return toSerialize, nil

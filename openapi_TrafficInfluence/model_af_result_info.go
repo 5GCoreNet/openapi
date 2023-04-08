@@ -71,7 +71,7 @@ func (o *AfResultInfo) SetAfStatus(v AfResultStatus) {
 
 // GetTrafficRoute returns the TrafficRoute field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfResultInfo) GetTrafficRoute() RouteToLocation {
-	if o == nil || IsNil(o.TrafficRoute.Get()) {
+	if o == nil || isNil(o.TrafficRoute.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AfResultInfo) UnsetTrafficRoute() {
 
 // GetUpBuffInd returns the UpBuffInd field value if set, zero value otherwise.
 func (o *AfResultInfo) GetUpBuffInd() bool {
-	if o == nil || IsNil(o.UpBuffInd) {
+	if o == nil || isNil(o.UpBuffInd) {
 		var ret bool
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *AfResultInfo) GetUpBuffInd() bool {
 // GetUpBuffIndOk returns a tuple with the UpBuffInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfResultInfo) GetUpBuffIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpBuffInd) {
+	if o == nil || isNil(o.UpBuffInd) {
 		return nil, false
 	}
 	return o.UpBuffInd, true
@@ -131,7 +131,7 @@ func (o *AfResultInfo) GetUpBuffIndOk() (*bool, bool) {
 
 // HasUpBuffInd returns a boolean if a field has been set.
 func (o *AfResultInfo) HasUpBuffInd() bool {
-	if o != nil && !IsNil(o.UpBuffInd) {
+	if o != nil && !isNil(o.UpBuffInd) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *AfResultInfo) SetUpBuffInd(v bool) {
 
 // GetEasIpReplaceInfos returns the EasIpReplaceInfos field value if set, zero value otherwise.
 func (o *AfResultInfo) GetEasIpReplaceInfos() []EasIpReplacementInfo {
-	if o == nil || IsNil(o.EasIpReplaceInfos) {
+	if o == nil || isNil(o.EasIpReplaceInfos) {
 		var ret []EasIpReplacementInfo
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *AfResultInfo) GetEasIpReplaceInfos() []EasIpReplacementInfo {
 // GetEasIpReplaceInfosOk returns a tuple with the EasIpReplaceInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfResultInfo) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo, bool) {
-	if o == nil || IsNil(o.EasIpReplaceInfos) {
+	if o == nil || isNil(o.EasIpReplaceInfos) {
 		return nil, false
 	}
 	return o.EasIpReplaceInfos, true
@@ -163,7 +163,7 @@ func (o *AfResultInfo) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo, bool) {
 
 // HasEasIpReplaceInfos returns a boolean if a field has been set.
 func (o *AfResultInfo) HasEasIpReplaceInfos() bool {
-	if o != nil && !IsNil(o.EasIpReplaceInfos) {
+	if o != nil && !isNil(o.EasIpReplaceInfos) {
 		return true
 	}
 
@@ -189,10 +189,10 @@ func (o AfResultInfo) ToMap() (map[string]interface{}, error) {
 	if o.TrafficRoute.IsSet() {
 		toSerialize["trafficRoute"] = o.TrafficRoute.Get()
 	}
-	if !IsNil(o.UpBuffInd) {
+	if !isNil(o.UpBuffInd) {
 		toSerialize["upBuffInd"] = o.UpBuffInd
 	}
-	if !IsNil(o.EasIpReplaceInfos) {
+	if !isNil(o.EasIpReplaceInfos) {
 		toSerialize["easIpReplaceInfos"] = o.EasIpReplaceInfos
 	}
 	return toSerialize, nil

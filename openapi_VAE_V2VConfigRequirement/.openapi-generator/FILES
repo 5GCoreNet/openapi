@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -13,6 +12,7 @@ docs/IndividualV2VConfigurationDocumentApi.md
 docs/InvalidParam.md
 docs/ProblemDetails.md
 docs/QosResourceType.md
+docs/QosResourceTypeAnyOf.md
 docs/V2VConfigurationsCollectionDocumentApi.md
 docs/V2vConfigurationData.md
 docs/VAEV2VConfigurationResourcePutServiceOperationApi.md
@@ -23,6 +23,7 @@ model_appplication_qos_requirement.go
 model_invalid_param.go
 model_problem_details.go
 model_qos_resource_type.go
+model_qos_resource_type_any_of.go
 model_v2v_configuration_data.go
 response.go
 test/api_individual_v2_v_configuration_document_test.go

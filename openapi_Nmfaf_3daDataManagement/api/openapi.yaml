@@ -3817,14 +3817,7 @@ components:
       type: object
     SummarizationAttribute:
       anyOf:
-      - enum:
-        - SPACING
-        - DURATION
-        - OCCURRENCES
-        - AVG_VAR
-        - FREQ_VAL
-        - MIN_MAX
-        type: string
+      - $ref: '#/components/schemas/SummarizationAttribute_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -3838,10 +3831,7 @@ components:
         - MIN_MAX: Maximum and minimum parameter values.
     AggregationLevel:
       anyOf:
-      - enum:
-        - UE
-        - AOI
-        type: string
+      - $ref: '#/components/schemas/AggregationLevel_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4013,23 +4003,7 @@ components:
       type: integer
     NwdafEvent:
       anyOf:
-      - enum:
-        - SLICE_LOAD_LEVEL
-        - NETWORK_PERFORMANCE
-        - NF_LOAD
-        - SERVICE_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMMUNICATION
-        - QOS_SUSTAINABILITY
-        - ABNORMAL_BEHAVIOUR
-        - USER_DATA_CONGESTION
-        - NSI_LOAD_LEVEL
-        - DN_PERFORMANCE
-        - DISPERSION
-        - RED_TRANS_EXP
-        - WLAN_PERFORMANCE
-        - SM_CONGESTION
-        type: string
+      - $ref: '#/components/schemas/NwdafEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4055,25 +4029,7 @@ components:
         \ Experience information for specific DNN and/or S-NSSAI.\n"
     SmfEvent:
       anyOf:
-      - enum:
-        - AC_TY_CH
-        - UP_PATH_CH
-        - PDU_SES_REL
-        - PLMN_CH
-        - UE_IP_CH
-        - RAT_TY_CH
-        - DDDS
-        - COMM_FAIL
-        - PDU_SES_EST
-        - QFI_ALLOC
-        - QOS_MON
-        - SMCC_EXP
-        - DISPERSION
-        - RED_TRANS_EXP
-        - WLAN_INFO
-        - UPF_INFO
-        - UP_STATUS_INFO
-        type: string
+      - $ref: '#/components/schemas/SmfEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -4099,94 +4055,23 @@ components:
         - UP_STATUS_INFO: The User Plane status information.
     AmfEventType:
       anyOf:
-      - enum:
-        - LOCATION_REPORT
-        - PRESENCE_IN_AOI_REPORT
-        - TIMEZONE_REPORT
-        - ACCESS_TYPE_REPORT
-        - REGISTRATION_STATE_REPORT
-        - CONNECTIVITY_STATE_REPORT
-        - REACHABILITY_REPORT
-        - COMMUNICATION_FAILURE_REPORT
-        - UES_IN_AREA_REPORT
-        - SUBSCRIPTION_ID_CHANGE
-        - SUBSCRIPTION_ID_ADDITION
-        - SUBSCRIPTION_TERMINATION
-        - LOSS_OF_CONNECTIVITY
-        - 5GS_USER_STATE_REPORT
-        - AVAILABILITY_AFTER_DDN_FAILURE
-        - TYPE_ALLOCATION_CODE_REPORT
-        - FREQUENT_MOBILITY_REGISTRATION_REPORT
-        - SNSSAI_TA_MAPPING_REPORT
-        - UE_LOCATION_TRENDS
-        - UE_ACCESS_BEHAVIOR_TRENDS
-        - UE_MM_TRANSACTION_REPORT
-        type: string
+      - $ref: '#/components/schemas/AmfEventType_anyOf'
       - type: string
       description: Describes the supported event types of Namf_EventExposure Service
     NefEvent:
       anyOf:
-      - enum:
-        - SVC_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMM
-        - EXCEPTIONS
-        - USER_DATA_CONGESTION
-        - PERF_DATA
-        - DISPERSION
-        - COLLECTIVE_BEHAVIOUR
-        - MS_QOE_METRICS
-        - MS_CONSUMPTION
-        - MS_NET_ASSIST_INVOCATION
-        - MS_DYN_POLICY_INVOCATION
-        - MS_ACCESS_ACTIVITY
-        type: string
+      - $ref: '#/components/schemas/NefEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
       description: Represents Network Exposure Events.
     EventType:
       anyOf:
-      - enum:
-        - LOSS_OF_CONNECTIVITY
-        - UE_REACHABILITY_FOR_DATA
-        - UE_REACHABILITY_FOR_SMS
-        - LOCATION_REPORTING
-        - CHANGE_OF_SUPI_PEI_ASSOCIATION
-        - ROAMING_STATUS
-        - COMMUNICATION_FAILURE
-        - AVAILABILITY_AFTER_DDN_FAILURE
-        - CN_TYPE_CHANGE
-        - DL_DATA_DELIVERY_STATUS
-        - PDN_CONNECTIVITY_STATUS
-        - UE_CONNECTION_MANAGEMENT_STATE
-        - ACCESS_TYPE_REPORT
-        - REGISTRATION_STATE_REPORT
-        - CONNECTIVITY_STATE_REPORT
-        - TYPE_ALLOCATION_CODE_REPORT
-        - FREQUENT_MOBILITY_REGISTRATION_REPORT
-        - PDU_SES_REL
-        - PDU_SES_EST
-        - UE_MEMORY_AVAILABLE_FOR_SMS
-        type: string
+      - $ref: '#/components/schemas/EventType_anyOf'
       - type: string
     AfEvent:
       anyOf:
-      - enum:
-        - SVC_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMM
-        - EXCEPTIONS
-        - USER_DATA_CONGESTION
-        - PERF_DATA
-        - DISPERSION
-        - COLLECTIVE_BEHAVIOUR
-        - MS_QOE_METRICS
-        - MS_CONSUMPTION
-        - MS_NET_ASSIST_INVOCATION
-        - MS_DYN_POLICY_INVOCATION
-        - MS_ACCESS_ACTIVITY
-        type: string
+      - $ref: '#/components/schemas/NefEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4232,27 +4117,17 @@ components:
       type: object
     SACEventType:
       anyOf:
-      - enum:
-        - NUM_OF_REGD_UES
-        - NUM_OF_ESTD_PDU_SESSIONS
-        type: string
+      - $ref: '#/components/schemas/SACEventType_anyOf'
       - type: string
       description: Describes the supported event types
     SACEventTrigger:
       anyOf:
-      - enum:
-        - THRESHOLD
-        - PERIODIC
-        type: string
+      - $ref: '#/components/schemas/SACEventTrigger_anyOf'
       - type: string
       description: Describes how NSACF should generate the report for the event
     NotificationEventType:
       anyOf:
-      - enum:
-        - NF_REGISTERED
-        - NF_DEREGISTERED
-        - NF_PROFILE_CHANGED
-        type: string
+      - $ref: '#/components/schemas/NotificationEventType_anyOf'
       - type: string
       description: Types of events sent in notifications from NRF to subscribed NF
         Instances
@@ -4362,64 +4237,7 @@ components:
       type: object
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -4848,6 +4666,207 @@ components:
         \ bit  of the TAC shall appear last in the string. \n"
       pattern: "(^[A-Fa-f0-9]{4}$)|(^[A-Fa-f0-9]{6}$)"
       type: string
+    SummarizationAttribute_anyOf:
+      enum:
+      - SPACING
+      - DURATION
+      - OCCURRENCES
+      - AVG_VAR
+      - FREQ_VAL
+      - MIN_MAX
+      type: string
+      example: null
+    AggregationLevel_anyOf:
+      enum:
+      - UE
+      - AOI
+      type: string
+      example: null
+    NwdafEvent_anyOf:
+      enum:
+      - SLICE_LOAD_LEVEL
+      - NETWORK_PERFORMANCE
+      - NF_LOAD
+      - SERVICE_EXPERIENCE
+      - UE_MOBILITY
+      - UE_COMMUNICATION
+      - QOS_SUSTAINABILITY
+      - ABNORMAL_BEHAVIOUR
+      - USER_DATA_CONGESTION
+      - NSI_LOAD_LEVEL
+      - DN_PERFORMANCE
+      - DISPERSION
+      - RED_TRANS_EXP
+      - WLAN_PERFORMANCE
+      - SM_CONGESTION
+      type: string
+      example: null
+    SmfEvent_anyOf:
+      enum:
+      - AC_TY_CH
+      - UP_PATH_CH
+      - PDU_SES_REL
+      - PLMN_CH
+      - UE_IP_CH
+      - RAT_TY_CH
+      - DDDS
+      - COMM_FAIL
+      - PDU_SES_EST
+      - QFI_ALLOC
+      - QOS_MON
+      - SMCC_EXP
+      - DISPERSION
+      - RED_TRANS_EXP
+      - WLAN_INFO
+      - UPF_INFO
+      - UP_STATUS_INFO
+      type: string
+      example: null
+    AmfEventType_anyOf:
+      enum:
+      - LOCATION_REPORT
+      - PRESENCE_IN_AOI_REPORT
+      - TIMEZONE_REPORT
+      - ACCESS_TYPE_REPORT
+      - REGISTRATION_STATE_REPORT
+      - CONNECTIVITY_STATE_REPORT
+      - REACHABILITY_REPORT
+      - COMMUNICATION_FAILURE_REPORT
+      - UES_IN_AREA_REPORT
+      - SUBSCRIPTION_ID_CHANGE
+      - SUBSCRIPTION_ID_ADDITION
+      - SUBSCRIPTION_TERMINATION
+      - LOSS_OF_CONNECTIVITY
+      - 5GS_USER_STATE_REPORT
+      - AVAILABILITY_AFTER_DDN_FAILURE
+      - TYPE_ALLOCATION_CODE_REPORT
+      - FREQUENT_MOBILITY_REGISTRATION_REPORT
+      - SNSSAI_TA_MAPPING_REPORT
+      - UE_LOCATION_TRENDS
+      - UE_ACCESS_BEHAVIOR_TRENDS
+      - UE_MM_TRANSACTION_REPORT
+      type: string
+      example: null
+    NefEvent_anyOf:
+      enum:
+      - SVC_EXPERIENCE
+      - UE_MOBILITY
+      - UE_COMM
+      - EXCEPTIONS
+      - USER_DATA_CONGESTION
+      - PERF_DATA
+      - DISPERSION
+      - COLLECTIVE_BEHAVIOUR
+      - MS_QOE_METRICS
+      - MS_CONSUMPTION
+      - MS_NET_ASSIST_INVOCATION
+      - MS_DYN_POLICY_INVOCATION
+      - MS_ACCESS_ACTIVITY
+      type: string
+      example: null
+    EventType_anyOf:
+      enum:
+      - LOSS_OF_CONNECTIVITY
+      - UE_REACHABILITY_FOR_DATA
+      - UE_REACHABILITY_FOR_SMS
+      - LOCATION_REPORTING
+      - CHANGE_OF_SUPI_PEI_ASSOCIATION
+      - ROAMING_STATUS
+      - COMMUNICATION_FAILURE
+      - AVAILABILITY_AFTER_DDN_FAILURE
+      - CN_TYPE_CHANGE
+      - DL_DATA_DELIVERY_STATUS
+      - PDN_CONNECTIVITY_STATUS
+      - UE_CONNECTION_MANAGEMENT_STATE
+      - ACCESS_TYPE_REPORT
+      - REGISTRATION_STATE_REPORT
+      - CONNECTIVITY_STATE_REPORT
+      - TYPE_ALLOCATION_CODE_REPORT
+      - FREQUENT_MOBILITY_REGISTRATION_REPORT
+      - PDU_SES_REL
+      - PDU_SES_EST
+      - UE_MEMORY_AVAILABLE_FOR_SMS
+      type: string
+      example: null
+    SACEventType_anyOf:
+      enum:
+      - NUM_OF_REGD_UES
+      - NUM_OF_ESTD_PDU_SESSIONS
+      type: string
+      example: null
+    SACEventTrigger_anyOf:
+      enum:
+      - THRESHOLD
+      - PERIODIC
+      type: string
+      example: null
+    NotificationEventType_anyOf:
+      enum:
+      - NF_REGISTERED
+      - NF_DEREGISTERED
+      - NF_PROFILE_CHANGED
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

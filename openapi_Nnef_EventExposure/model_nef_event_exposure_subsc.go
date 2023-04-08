@@ -52,7 +52,7 @@ func NewNefEventExposureSubscWithDefaults() *NefEventExposureSubsc {
 
 // GetDataAccProfId returns the DataAccProfId field value if set, zero value otherwise.
 func (o *NefEventExposureSubsc) GetDataAccProfId() string {
-	if o == nil || IsNil(o.DataAccProfId) {
+	if o == nil || isNil(o.DataAccProfId) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *NefEventExposureSubsc) GetDataAccProfId() string {
 // GetDataAccProfIdOk returns a tuple with the DataAccProfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventExposureSubsc) GetDataAccProfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DataAccProfId) {
+	if o == nil || isNil(o.DataAccProfId) {
 		return nil, false
 	}
 	return o.DataAccProfId, true
@@ -70,7 +70,7 @@ func (o *NefEventExposureSubsc) GetDataAccProfIdOk() (*string, bool) {
 
 // HasDataAccProfId returns a boolean if a field has been set.
 func (o *NefEventExposureSubsc) HasDataAccProfId() bool {
-	if o != nil && !IsNil(o.DataAccProfId) {
+	if o != nil && !isNil(o.DataAccProfId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *NefEventExposureSubsc) SetEventsSubs(v []NefEventSubs) {
 
 // GetEventsRepInfo returns the EventsRepInfo field value if set, zero value otherwise.
 func (o *NefEventExposureSubsc) GetEventsRepInfo() ReportingInformation {
-	if o == nil || IsNil(o.EventsRepInfo) {
+	if o == nil || isNil(o.EventsRepInfo) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *NefEventExposureSubsc) GetEventsRepInfo() ReportingInformation {
 // GetEventsRepInfoOk returns a tuple with the EventsRepInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventExposureSubsc) GetEventsRepInfoOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.EventsRepInfo) {
+	if o == nil || isNil(o.EventsRepInfo) {
 		return nil, false
 	}
 	return o.EventsRepInfo, true
@@ -126,7 +126,7 @@ func (o *NefEventExposureSubsc) GetEventsRepInfoOk() (*ReportingInformation, boo
 
 // HasEventsRepInfo returns a boolean if a field has been set.
 func (o *NefEventExposureSubsc) HasEventsRepInfo() bool {
-	if o != nil && !IsNil(o.EventsRepInfo) {
+	if o != nil && !isNil(o.EventsRepInfo) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *NefEventExposureSubsc) SetNotifId(v string) {
 
 // GetEventNotifs returns the EventNotifs field value if set, zero value otherwise.
 func (o *NefEventExposureSubsc) GetEventNotifs() []NefEventNotification {
-	if o == nil || IsNil(o.EventNotifs) {
+	if o == nil || isNil(o.EventNotifs) {
 		var ret []NefEventNotification
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *NefEventExposureSubsc) GetEventNotifs() []NefEventNotification {
 // GetEventNotifsOk returns a tuple with the EventNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventExposureSubsc) GetEventNotifsOk() ([]NefEventNotification, bool) {
-	if o == nil || IsNil(o.EventNotifs) {
+	if o == nil || isNil(o.EventNotifs) {
 		return nil, false
 	}
 	return o.EventNotifs, true
@@ -206,7 +206,7 @@ func (o *NefEventExposureSubsc) GetEventNotifsOk() ([]NefEventNotification, bool
 
 // HasEventNotifs returns a boolean if a field has been set.
 func (o *NefEventExposureSubsc) HasEventNotifs() bool {
-	if o != nil && !IsNil(o.EventNotifs) {
+	if o != nil && !isNil(o.EventNotifs) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *NefEventExposureSubsc) SetEventNotifs(v []NefEventNotification) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *NefEventExposureSubsc) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *NefEventExposureSubsc) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventExposureSubsc) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -238,7 +238,7 @@ func (o *NefEventExposureSubsc) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *NefEventExposureSubsc) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -260,19 +260,19 @@ func (o NefEventExposureSubsc) MarshalJSON() ([]byte, error) {
 
 func (o NefEventExposureSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DataAccProfId) {
+	if !isNil(o.DataAccProfId) {
 		toSerialize["dataAccProfId"] = o.DataAccProfId
 	}
 	toSerialize["eventsSubs"] = o.EventsSubs
-	if !IsNil(o.EventsRepInfo) {
+	if !isNil(o.EventsRepInfo) {
 		toSerialize["eventsRepInfo"] = o.EventsRepInfo
 	}
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["notifId"] = o.NotifId
-	if !IsNil(o.EventNotifs) {
+	if !isNil(o.EventNotifs) {
 		toSerialize["eventNotifs"] = o.EventNotifs
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

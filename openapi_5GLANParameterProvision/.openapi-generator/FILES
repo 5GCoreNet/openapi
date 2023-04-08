@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -8,6 +7,7 @@ api_individual5_glan_parameters_provision_subscription.go
 client.go
 configuration.go
 docs/AaaUsage.md
+docs/AaaUsageAnyOf.md
 docs/AppDescriptor.md
 docs/AppDescriptorRm.md
 docs/Class5GLANParametersProvisionSubscriptionsApi.md
@@ -19,6 +19,7 @@ docs/Model5GLanParametersPatch.md
 docs/Model5GLanParametersProvision.md
 docs/Model5GLanParametersProvisionPatch.md
 docs/PduSessionType.md
+docs/PduSessionTypeAnyOf.md
 docs/ProblemDetails.md
 docs/Snssai.md
 git_push.sh
@@ -29,11 +30,13 @@ model_5_g_lan_parameters_patch.go
 model_5_g_lan_parameters_provision.go
 model_5_g_lan_parameters_provision_patch.go
 model_aaa_usage.go
+model_aaa_usage_any_of.go
 model_app_descriptor.go
 model_app_descriptor_rm.go
 model_invalid_param.go
 model_ipv6_addr.go
 model_pdu_session_type.go
+model_pdu_session_type_any_of.go
 model_problem_details.go
 model_snssai.go
 response.go

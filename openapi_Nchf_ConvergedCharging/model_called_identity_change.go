@@ -44,7 +44,7 @@ func NewCalledIdentityChangeWithDefaults() *CalledIdentityChange {
 
 // GetCalledIdentity returns the CalledIdentity field value if set, zero value otherwise.
 func (o *CalledIdentityChange) GetCalledIdentity() string {
-	if o == nil || IsNil(o.CalledIdentity) {
+	if o == nil || isNil(o.CalledIdentity) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CalledIdentityChange) GetCalledIdentity() string {
 // GetCalledIdentityOk returns a tuple with the CalledIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CalledIdentityChange) GetCalledIdentityOk() (*string, bool) {
-	if o == nil || IsNil(o.CalledIdentity) {
+	if o == nil || isNil(o.CalledIdentity) {
 		return nil, false
 	}
 	return o.CalledIdentity, true
@@ -62,7 +62,7 @@ func (o *CalledIdentityChange) GetCalledIdentityOk() (*string, bool) {
 
 // HasCalledIdentity returns a boolean if a field has been set.
 func (o *CalledIdentityChange) HasCalledIdentity() bool {
-	if o != nil && !IsNil(o.CalledIdentity) {
+	if o != nil && !isNil(o.CalledIdentity) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *CalledIdentityChange) SetCalledIdentity(v string) {
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *CalledIdentityChange) GetChangeTime() time.Time {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *CalledIdentityChange) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CalledIdentityChange) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -94,7 +94,7 @@ func (o *CalledIdentityChange) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *CalledIdentityChange) HasChangeTime() bool {
-	if o != nil && !IsNil(o.ChangeTime) {
+	if o != nil && !isNil(o.ChangeTime) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o CalledIdentityChange) MarshalJSON() ([]byte, error) {
 
 func (o CalledIdentityChange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CalledIdentity) {
+	if !isNil(o.CalledIdentity) {
 		toSerialize["calledIdentity"] = o.CalledIdentity
 	}
-	if !IsNil(o.ChangeTime) {
+	if !isNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
 	return toSerialize, nil

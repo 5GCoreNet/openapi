@@ -8728,157 +8728,88 @@ components:
       type: string
     IdentityType:
       anyOf:
-      - enum:
-        - DISTINCT_IMPU
-        - DISTINCT_PSI
-        - WILDCARDED_IMPU
-        - WILDCARDED_PSI
-        type: string
+      - $ref: '#/components/schemas/IdentityType_anyOf'
       - type: string
       description: Represents the type of IMS Public Identity
     PrivateIdentityType:
       anyOf:
-      - enum:
-        - IMPI
-        - IMSI
-        type: string
+      - $ref: '#/components/schemas/PrivateIdentityType_anyOf'
       - type: string
       description: Represents the type of IMS Private Identity (IMPI or IMSI)
     ImsRegistrationState:
       anyOf:
-      - enum:
-        - REGISTERED
-        - NOT_REGISTERED
-        - AUTHENTICATION_PENDING
-        - REGISTERED_UNREG_SERVICES
-        type: string
+      - $ref: '#/components/schemas/ImsRegistrationState_anyOf'
       - type: string
       description: Represents the IMS status of the user or Public Identity or the
         IRS
     TypeOfCondition:
       anyOf:
-      - enum:
-        - CNF
-        - DNF
-        type: string
+      - $ref: '#/components/schemas/TypeOfCondition_anyOf'
       - type: string
       description: |
         Represents the type of condition to be applied to the logical expression of SPT groups and SPTs (Conjunctive Normal Form, or Disjunctive Normal Form)
     RegistrationType:
       anyOf:
-      - enum:
-        - INITIAL_REGISTRATION
-        - RE_REGISTRATION
-        - DE_REGISTRATION
-        type: string
+      - $ref: '#/components/schemas/RegistrationType_anyOf'
       - type: string
       description: Represents the type of registration associated to the REGISTER
         request
     RequestDirection:
       anyOf:
-      - enum:
-        - ORIGINATING_REGISTERED
-        - ORIGINATING_UNREGISTERED
-        - ORIGINATING_CDIV
-        - TERMINATING_REGISTERED
-        - TERMINATING_UNREGISTERED
-        type: string
+      - $ref: '#/components/schemas/RequestDirection_anyOf'
       - type: string
       description: |
         Represents the direction of the request in combination with the registration status of the user as evaluated in the S-CSCF
     ServiceInformation:
       anyOf:
-      - enum:
-        - INCLUDE_REGISTER_REQUEST
-        - INCLUDE_REGISTER_RESPONSE
-        type: string
+      - $ref: '#/components/schemas/ServiceInformation_anyOf'
       - type: string
       description: |
         Indicates the type of additional information to be included in the body of the SIP request towards the Application Server
     RequestedNode:
       anyOf:
-      - enum:
-        - SGSN
-        - MME
-        - AMF
-        - 3GPP_AAA_SERVER_TWAN
-        type: string
+      - $ref: '#/components/schemas/RequestedNode_anyOf'
       - type: string
       description: Represents the type of serving node for which certain data is requested
     SrvccCapability:
       anyOf:
-      - enum:
-        - UE_4G_SRVCC_CAPABLE
-        - UE_5G_SRVCC_CAPABLE
-        type: string
+      - $ref: '#/components/schemas/SrvccCapability_anyOf'
       - type: string
       description: Represents the type of SRVCC support of the UE
     ActivationState:
       anyOf:
-      - enum:
-        - ACTIVE
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/ActivationState_anyOf'
       - type: string
       description: Represents the activation state of a PSI or DSAI tag
     ImsVoiceOverPsSessionSupport:
       anyOf:
-      - enum:
-        - IMS_VOICE_OVER_PS_NOT_SUPPORTED
-        - IMS_VOICE_OVER_PS_SUPPORTED
-        - IMS_VOICE_OVER_PS_SUPPORT_UNKNOWN
-        type: string
+      - $ref: '#/components/schemas/ImsVoiceOverPsSessionSupport_anyOf'
       - type: string
       description: Represents the support for Voice-over-PS of the UE
     DetectingNode:
       anyOf:
-      - enum:
-        - SGSN
-        - MME
-        - AMF
-        type: string
+      - $ref: '#/components/schemas/DetectingNode_anyOf'
       - type: string
       description: Represents the type of serving node that detected the reachability
         of the UE
     AccessType:
       anyOf:
-      - enum:
-        - 3GPP_ACCESS
-        - NON_3GPP_ACCESS
-        type: string
+      - $ref: '#/components/schemas/AccessType_anyOf'
       - type: string
       description: Represents the type of access (3GPP or non-3GPP)
     UserStatePs:
       anyOf:
-      - enum:
-        - DETACHED
-        - ATTACHED_NOT_REACHABLE_FOR_PAGING
-        - ATTACHED_REACHABLE_FOR_PAGING
-        - CONNECTED_NOT_REACHABLE_FOR_PAGING
-        - CONNECTED_REACHABLE_FOR_PAGING
-        - NOT_PROVIDED_FROM_SGSN_OR_MME_OR_AMF
-        - NETWORK_DETERMINED_NOT_REACHABLE
-        type: string
+      - $ref: '#/components/schemas/UserStatePs_anyOf'
       - type: string
       description: Represents the user state in PS domain
     UserStateCs:
       anyOf:
-      - enum:
-        - CAMEL_BUSY
-        - NETWORK_DETERMINED_NOT_REACHABLE
-        - ASSUMED_IDLE
-        - NOT_PROVIDED_FROM_VLR
-        type: string
+      - $ref: '#/components/schemas/UserStateCs_anyOf'
       - type: string
       description: Represents the user state in CS domain
     DataSetName:
       anyOf:
-      - enum:
-        - CHARGING_DATA
-        - IFC_DATA
-        - TRACE_DATA
-        - PRIORITY_DATA
-        type: string
+      - $ref: '#/components/schemas/DataSetName_anyOf'
       - type: string
       description: A set of data within the IMS User Profile
     SupportedFeatures:
@@ -8996,14 +8927,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     PatchResult:
@@ -9344,28 +9268,7 @@ components:
       type: string
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     DiameterIdentity:
@@ -10093,74 +9996,12 @@ components:
       type: object
     ChangeType:
       anyOf:
-      - enum:
-        - ADD
-        - MOVE
-        - REMOVE
-        - REPLACE
-        type: string
+      - $ref: '#/components/schemas/ChangeType_anyOf'
       - type: string
       description: Indicates the type of change to be performed.
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -10238,6 +10079,225 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    IdentityType_anyOf:
+      enum:
+      - DISTINCT_IMPU
+      - DISTINCT_PSI
+      - WILDCARDED_IMPU
+      - WILDCARDED_PSI
+      type: string
+      example: null
+    PrivateIdentityType_anyOf:
+      enum:
+      - IMPI
+      - IMSI
+      type: string
+      example: null
+    ImsRegistrationState_anyOf:
+      enum:
+      - REGISTERED
+      - NOT_REGISTERED
+      - AUTHENTICATION_PENDING
+      - REGISTERED_UNREG_SERVICES
+      type: string
+      example: null
+    TypeOfCondition_anyOf:
+      enum:
+      - CNF
+      - DNF
+      type: string
+      example: null
+    RegistrationType_anyOf:
+      enum:
+      - INITIAL_REGISTRATION
+      - RE_REGISTRATION
+      - DE_REGISTRATION
+      type: string
+      example: null
+    RequestDirection_anyOf:
+      enum:
+      - ORIGINATING_REGISTERED
+      - ORIGINATING_UNREGISTERED
+      - ORIGINATING_CDIV
+      - TERMINATING_REGISTERED
+      - TERMINATING_UNREGISTERED
+      type: string
+      example: null
+    ServiceInformation_anyOf:
+      enum:
+      - INCLUDE_REGISTER_REQUEST
+      - INCLUDE_REGISTER_RESPONSE
+      type: string
+      example: null
+    RequestedNode_anyOf:
+      enum:
+      - SGSN
+      - MME
+      - AMF
+      - 3GPP_AAA_SERVER_TWAN
+      type: string
+      example: null
+    SrvccCapability_anyOf:
+      enum:
+      - UE_4G_SRVCC_CAPABLE
+      - UE_5G_SRVCC_CAPABLE
+      type: string
+      example: null
+    ActivationState_anyOf:
+      enum:
+      - ACTIVE
+      - INACTIVE
+      type: string
+      example: null
+    ImsVoiceOverPsSessionSupport_anyOf:
+      enum:
+      - IMS_VOICE_OVER_PS_NOT_SUPPORTED
+      - IMS_VOICE_OVER_PS_SUPPORTED
+      - IMS_VOICE_OVER_PS_SUPPORT_UNKNOWN
+      type: string
+      example: null
+    DetectingNode_anyOf:
+      enum:
+      - SGSN
+      - MME
+      - AMF
+      type: string
+      example: null
+    AccessType_anyOf:
+      enum:
+      - 3GPP_ACCESS
+      - NON_3GPP_ACCESS
+      type: string
+      example: null
+    UserStatePs_anyOf:
+      enum:
+      - DETACHED
+      - ATTACHED_NOT_REACHABLE_FOR_PAGING
+      - ATTACHED_REACHABLE_FOR_PAGING
+      - CONNECTED_NOT_REACHABLE_FOR_PAGING
+      - CONNECTED_REACHABLE_FOR_PAGING
+      - NOT_PROVIDED_FROM_SGSN_OR_MME_OR_AMF
+      - NETWORK_DETERMINED_NOT_REACHABLE
+      type: string
+      example: null
+    UserStateCs_anyOf:
+      enum:
+      - CAMEL_BUSY
+      - NETWORK_DETERMINED_NOT_REACHABLE
+      - ASSUMED_IDLE
+      - NOT_PROVIDED_FROM_VLR
+      type: string
+      example: null
+    DataSetName_anyOf:
+      enum:
+      - CHARGING_DATA
+      - IFC_DATA
+      - TRACE_DATA
+      - PRIORITY_DATA
+      type: string
+      example: null
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    ChangeType_anyOf:
+      enum:
+      - ADD
+      - MOVE
+      - REMOVE
+      - REPLACE
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

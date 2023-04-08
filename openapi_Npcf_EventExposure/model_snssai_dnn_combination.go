@@ -42,7 +42,7 @@ func NewSnssaiDnnCombinationWithDefaults() *SnssaiDnnCombination {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *SnssaiDnnCombination) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SnssaiDnnCombination) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiDnnCombination) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -60,7 +60,7 @@ func (o *SnssaiDnnCombination) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *SnssaiDnnCombination) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SnssaiDnnCombination) SetSnssai(v Snssai) {
 
 // GetDnns returns the Dnns field value if set, zero value otherwise.
 func (o *SnssaiDnnCombination) GetDnns() []string {
-	if o == nil || IsNil(o.Dnns) {
+	if o == nil || isNil(o.Dnns) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SnssaiDnnCombination) GetDnns() []string {
 // GetDnnsOk returns a tuple with the Dnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiDnnCombination) GetDnnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Dnns) {
+	if o == nil || isNil(o.Dnns) {
 		return nil, false
 	}
 	return o.Dnns, true
@@ -92,7 +92,7 @@ func (o *SnssaiDnnCombination) GetDnnsOk() ([]string, bool) {
 
 // HasDnns returns a boolean if a field has been set.
 func (o *SnssaiDnnCombination) HasDnns() bool {
-	if o != nil && !IsNil(o.Dnns) {
+	if o != nil && !isNil(o.Dnns) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SnssaiDnnCombination) MarshalJSON() ([]byte, error) {
 
 func (o SnssaiDnnCombination) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.Dnns) {
+	if !isNil(o.Dnns) {
 		toSerialize["dnns"] = o.Dnns
 	}
 	return toSerialize, nil

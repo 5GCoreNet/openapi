@@ -123,7 +123,7 @@ func (o *AuthenticationInfo) SetServingNetworkName(v string) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *AuthenticationInfo) GetResynchronizationInfo() ResynchronizationInfo {
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -141,7 +141,7 @@ func (o *AuthenticationInfo) GetResynchronizationInfoOk() (*ResynchronizationInf
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasResynchronizationInfo() bool {
-	if o != nil && !IsNil(o.ResynchronizationInfo) {
+	if o != nil && !isNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *AuthenticationInfo) SetResynchronizationInfo(v ResynchronizationInfo) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *AuthenticationInfo) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -173,7 +173,7 @@ func (o *AuthenticationInfo) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *AuthenticationInfo) SetPei(v string) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthenticationInfo) GetTraceData() TraceData {
-	if o == nil || IsNil(o.TraceData.Get()) {
+	if o == nil || isNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *AuthenticationInfo) UnsetTraceData() {
 
 // GetUdmGroupId returns the UdmGroupId field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetUdmGroupId() string {
-	if o == nil || IsNil(o.UdmGroupId) {
+	if o == nil || isNil(o.UdmGroupId) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *AuthenticationInfo) GetUdmGroupId() string {
 // GetUdmGroupIdOk returns a tuple with the UdmGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetUdmGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UdmGroupId) {
+	if o == nil || isNil(o.UdmGroupId) {
 		return nil, false
 	}
 	return o.UdmGroupId, true
@@ -247,7 +247,7 @@ func (o *AuthenticationInfo) GetUdmGroupIdOk() (*string, bool) {
 
 // HasUdmGroupId returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasUdmGroupId() bool {
-	if o != nil && !IsNil(o.UdmGroupId) {
+	if o != nil && !isNil(o.UdmGroupId) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *AuthenticationInfo) SetUdmGroupId(v string) {
 
 // GetRoutingIndicator returns the RoutingIndicator field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetRoutingIndicator() string {
-	if o == nil || IsNil(o.RoutingIndicator) {
+	if o == nil || isNil(o.RoutingIndicator) {
 		var ret string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *AuthenticationInfo) GetRoutingIndicator() string {
 // GetRoutingIndicatorOk returns a tuple with the RoutingIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetRoutingIndicatorOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingIndicator) {
+	if o == nil || isNil(o.RoutingIndicator) {
 		return nil, false
 	}
 	return o.RoutingIndicator, true
@@ -279,7 +279,7 @@ func (o *AuthenticationInfo) GetRoutingIndicatorOk() (*string, bool) {
 
 // HasRoutingIndicator returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasRoutingIndicator() bool {
-	if o != nil && !IsNil(o.RoutingIndicator) {
+	if o != nil && !isNil(o.RoutingIndicator) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *AuthenticationInfo) SetRoutingIndicator(v string) {
 
 // GetCellCagInfo returns the CellCagInfo field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetCellCagInfo() []string {
-	if o == nil || IsNil(o.CellCagInfo) {
+	if o == nil || isNil(o.CellCagInfo) {
 		var ret []string
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *AuthenticationInfo) GetCellCagInfo() []string {
 // GetCellCagInfoOk returns a tuple with the CellCagInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetCellCagInfoOk() ([]string, bool) {
-	if o == nil || IsNil(o.CellCagInfo) {
+	if o == nil || isNil(o.CellCagInfo) {
 		return nil, false
 	}
 	return o.CellCagInfo, true
@@ -311,7 +311,7 @@ func (o *AuthenticationInfo) GetCellCagInfoOk() ([]string, bool) {
 
 // HasCellCagInfo returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasCellCagInfo() bool {
-	if o != nil && !IsNil(o.CellCagInfo) {
+	if o != nil && !isNil(o.CellCagInfo) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *AuthenticationInfo) SetCellCagInfo(v []string) {
 
 // GetN5gcInd returns the N5gcInd field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetN5gcInd() bool {
-	if o == nil || IsNil(o.N5gcInd) {
+	if o == nil || isNil(o.N5gcInd) {
 		var ret bool
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *AuthenticationInfo) GetN5gcInd() bool {
 // GetN5gcIndOk returns a tuple with the N5gcInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetN5gcIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.N5gcInd) {
+	if o == nil || isNil(o.N5gcInd) {
 		return nil, false
 	}
 	return o.N5gcInd, true
@@ -343,7 +343,7 @@ func (o *AuthenticationInfo) GetN5gcIndOk() (*bool, bool) {
 
 // HasN5gcInd returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasN5gcInd() bool {
-	if o != nil && !IsNil(o.N5gcInd) {
+	if o != nil && !isNil(o.N5gcInd) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *AuthenticationInfo) SetN5gcInd(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *AuthenticationInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -375,7 +375,7 @@ func (o *AuthenticationInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *AuthenticationInfo) SetSupportedFeatures(v string) {
 
 // GetNswoInd returns the NswoInd field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetNswoInd() bool {
-	if o == nil || IsNil(o.NswoInd) {
+	if o == nil || isNil(o.NswoInd) {
 		var ret bool
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *AuthenticationInfo) GetNswoInd() bool {
 // GetNswoIndOk returns a tuple with the NswoInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetNswoIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.NswoInd) {
+	if o == nil || isNil(o.NswoInd) {
 		return nil, false
 	}
 	return o.NswoInd, true
@@ -407,7 +407,7 @@ func (o *AuthenticationInfo) GetNswoIndOk() (*bool, bool) {
 
 // HasNswoInd returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasNswoInd() bool {
-	if o != nil && !IsNil(o.NswoInd) {
+	if o != nil && !isNil(o.NswoInd) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *AuthenticationInfo) SetNswoInd(v bool) {
 
 // GetDisasterRoamingInd returns the DisasterRoamingInd field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetDisasterRoamingInd() bool {
-	if o == nil || IsNil(o.DisasterRoamingInd) {
+	if o == nil || isNil(o.DisasterRoamingInd) {
 		var ret bool
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *AuthenticationInfo) GetDisasterRoamingInd() bool {
 // GetDisasterRoamingIndOk returns a tuple with the DisasterRoamingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetDisasterRoamingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DisasterRoamingInd) {
+	if o == nil || isNil(o.DisasterRoamingInd) {
 		return nil, false
 	}
 	return o.DisasterRoamingInd, true
@@ -439,7 +439,7 @@ func (o *AuthenticationInfo) GetDisasterRoamingIndOk() (*bool, bool) {
 
 // HasDisasterRoamingInd returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasDisasterRoamingInd() bool {
-	if o != nil && !IsNil(o.DisasterRoamingInd) {
+	if o != nil && !isNil(o.DisasterRoamingInd) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *AuthenticationInfo) SetDisasterRoamingInd(v bool) {
 
 // GetOnboardingInd returns the OnboardingInd field value if set, zero value otherwise.
 func (o *AuthenticationInfo) GetOnboardingInd() bool {
-	if o == nil || IsNil(o.OnboardingInd) {
+	if o == nil || isNil(o.OnboardingInd) {
 		var ret bool
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *AuthenticationInfo) GetOnboardingInd() bool {
 // GetOnboardingIndOk returns a tuple with the OnboardingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfo) GetOnboardingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.OnboardingInd) {
+	if o == nil || isNil(o.OnboardingInd) {
 		return nil, false
 	}
 	return o.OnboardingInd, true
@@ -471,7 +471,7 @@ func (o *AuthenticationInfo) GetOnboardingIndOk() (*bool, bool) {
 
 // HasOnboardingInd returns a boolean if a field has been set.
 func (o *AuthenticationInfo) HasOnboardingInd() bool {
-	if o != nil && !IsNil(o.OnboardingInd) {
+	if o != nil && !isNil(o.OnboardingInd) {
 		return true
 	}
 
@@ -495,37 +495,37 @@ func (o AuthenticationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supiOrSuci"] = o.SupiOrSuci
 	toSerialize["servingNetworkName"] = o.ServingNetworkName
-	if !IsNil(o.ResynchronizationInfo) {
+	if !isNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !IsNil(o.UdmGroupId) {
+	if !isNil(o.UdmGroupId) {
 		toSerialize["udmGroupId"] = o.UdmGroupId
 	}
-	if !IsNil(o.RoutingIndicator) {
+	if !isNil(o.RoutingIndicator) {
 		toSerialize["routingIndicator"] = o.RoutingIndicator
 	}
-	if !IsNil(o.CellCagInfo) {
+	if !isNil(o.CellCagInfo) {
 		toSerialize["cellCagInfo"] = o.CellCagInfo
 	}
-	if !IsNil(o.N5gcInd) {
+	if !isNil(o.N5gcInd) {
 		toSerialize["n5gcInd"] = o.N5gcInd
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.NswoInd) {
+	if !isNil(o.NswoInd) {
 		toSerialize["nswoInd"] = o.NswoInd
 	}
-	if !IsNil(o.DisasterRoamingInd) {
+	if !isNil(o.DisasterRoamingInd) {
 		toSerialize["disasterRoamingInd"] = o.DisasterRoamingInd
 	}
-	if !IsNil(o.OnboardingInd) {
+	if !isNil(o.OnboardingInd) {
 		toSerialize["onboardingInd"] = o.OnboardingInd
 	}
 	return toSerialize, nil

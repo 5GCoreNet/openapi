@@ -67,7 +67,7 @@ func (o *SteeringInfo) SetPlmnId(v PlmnId) {
 
 // GetAccessTechList returns the AccessTechList field value if set, zero value otherwise.
 func (o *SteeringInfo) GetAccessTechList() []AccessTech {
-	if o == nil || IsNil(o.AccessTechList) {
+	if o == nil || isNil(o.AccessTechList) {
 		var ret []AccessTech
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SteeringInfo) GetAccessTechList() []AccessTech {
 // GetAccessTechListOk returns a tuple with the AccessTechList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringInfo) GetAccessTechListOk() ([]AccessTech, bool) {
-	if o == nil || IsNil(o.AccessTechList) {
+	if o == nil || isNil(o.AccessTechList) {
 		return nil, false
 	}
 	return o.AccessTechList, true
@@ -85,7 +85,7 @@ func (o *SteeringInfo) GetAccessTechListOk() ([]AccessTech, bool) {
 
 // HasAccessTechList returns a boolean if a field has been set.
 func (o *SteeringInfo) HasAccessTechList() bool {
-	if o != nil && !IsNil(o.AccessTechList) {
+	if o != nil && !isNil(o.AccessTechList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SteeringInfo) MarshalJSON() ([]byte, error) {
 func (o SteeringInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.AccessTechList) {
+	if !isNil(o.AccessTechList) {
 		toSerialize["accessTechList"] = o.AccessTechList
 	}
 	return toSerialize, nil

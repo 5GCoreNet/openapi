@@ -42,7 +42,7 @@ func NewRANSecondaryRATUsageReportWithDefaults() *RANSecondaryRATUsageReport {
 
 // GetRANSecondaryRATType returns the RANSecondaryRATType field value if set, zero value otherwise.
 func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATType() RatType {
-	if o == nil || IsNil(o.RANSecondaryRATType) {
+	if o == nil || isNil(o.RANSecondaryRATType) {
 		var ret RatType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATType() RatType {
 // GetRANSecondaryRATTypeOk returns a tuple with the RANSecondaryRATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RANSecondaryRATType) {
+	if o == nil || isNil(o.RANSecondaryRATType) {
 		return nil, false
 	}
 	return o.RANSecondaryRATType, true
@@ -60,7 +60,7 @@ func (o *RANSecondaryRATUsageReport) GetRANSecondaryRATTypeOk() (*RatType, bool)
 
 // HasRANSecondaryRATType returns a boolean if a field has been set.
 func (o *RANSecondaryRATUsageReport) HasRANSecondaryRATType() bool {
-	if o != nil && !IsNil(o.RANSecondaryRATType) {
+	if o != nil && !isNil(o.RANSecondaryRATType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RANSecondaryRATUsageReport) SetRANSecondaryRATType(v RatType) {
 
 // GetQosFlowsUsageReports returns the QosFlowsUsageReports field value if set, zero value otherwise.
 func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReports() []QosFlowsUsageReport {
-	if o == nil || IsNil(o.QosFlowsUsageReports) {
+	if o == nil || isNil(o.QosFlowsUsageReports) {
 		var ret []QosFlowsUsageReport
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReports() []QosFlowsUsageRe
 // GetQosFlowsUsageReportsOk returns a tuple with the QosFlowsUsageReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReportsOk() ([]QosFlowsUsageReport, bool) {
-	if o == nil || IsNil(o.QosFlowsUsageReports) {
+	if o == nil || isNil(o.QosFlowsUsageReports) {
 		return nil, false
 	}
 	return o.QosFlowsUsageReports, true
@@ -92,7 +92,7 @@ func (o *RANSecondaryRATUsageReport) GetQosFlowsUsageReportsOk() ([]QosFlowsUsag
 
 // HasQosFlowsUsageReports returns a boolean if a field has been set.
 func (o *RANSecondaryRATUsageReport) HasQosFlowsUsageReports() bool {
-	if o != nil && !IsNil(o.QosFlowsUsageReports) {
+	if o != nil && !isNil(o.QosFlowsUsageReports) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RANSecondaryRATUsageReport) MarshalJSON() ([]byte, error) {
 
 func (o RANSecondaryRATUsageReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RANSecondaryRATType) {
+	if !isNil(o.RANSecondaryRATType) {
 		toSerialize["rANSecondaryRATType"] = o.RANSecondaryRATType
 	}
-	if !IsNil(o.QosFlowsUsageReports) {
+	if !isNil(o.QosFlowsUsageReports) {
 		toSerialize["qosFlowsUsageReports"] = o.QosFlowsUsageReports
 	}
 	return toSerialize, nil

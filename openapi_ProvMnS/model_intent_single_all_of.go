@@ -20,7 +20,7 @@ var _ MappedNullable = &IntentSingleAllOf{}
 // IntentSingleAllOf struct for IntentSingleAllOf
 type IntentSingleAllOf struct {
 	UserLabel *string `json:"userLabel,omitempty"`
-	IntentExpectations []IntentSingleAllOfIntentExpectationsInner `json:"intentExpectations,omitempty"`
+	IntentExpectations []OneOfIntentExpectationRadioNetworkExpectationServiceSupportExpectation `json:"intentExpectations,omitempty"`
 	IntentContexts []IntentContext `json:"intentContexts,omitempty"`
 	IntentFulfilmentInfo *FulfilmentInfo `json:"intentFulfilmentInfo,omitempty"`
 }
@@ -44,7 +44,7 @@ func NewIntentSingleAllOfWithDefaults() *IntentSingleAllOf {
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *IntentSingleAllOf) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *IntentSingleAllOf) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentSingleAllOf) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -62,7 +62,7 @@ func (o *IntentSingleAllOf) GetUserLabelOk() (*string, bool) {
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *IntentSingleAllOf) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
+	if o != nil && !isNil(o.UserLabel) {
 		return true
 	}
 
@@ -75,9 +75,9 @@ func (o *IntentSingleAllOf) SetUserLabel(v string) {
 }
 
 // GetIntentExpectations returns the IntentExpectations field value if set, zero value otherwise.
-func (o *IntentSingleAllOf) GetIntentExpectations() []IntentSingleAllOfIntentExpectationsInner {
-	if o == nil || IsNil(o.IntentExpectations) {
-		var ret []IntentSingleAllOfIntentExpectationsInner
+func (o *IntentSingleAllOf) GetIntentExpectations() []OneOfIntentExpectationRadioNetworkExpectationServiceSupportExpectation {
+	if o == nil || isNil(o.IntentExpectations) {
+		var ret []OneOfIntentExpectationRadioNetworkExpectationServiceSupportExpectation
 		return ret
 	}
 	return o.IntentExpectations
@@ -85,8 +85,8 @@ func (o *IntentSingleAllOf) GetIntentExpectations() []IntentSingleAllOfIntentExp
 
 // GetIntentExpectationsOk returns a tuple with the IntentExpectations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IntentSingleAllOf) GetIntentExpectationsOk() ([]IntentSingleAllOfIntentExpectationsInner, bool) {
-	if o == nil || IsNil(o.IntentExpectations) {
+func (o *IntentSingleAllOf) GetIntentExpectationsOk() ([]OneOfIntentExpectationRadioNetworkExpectationServiceSupportExpectation, bool) {
+	if o == nil || isNil(o.IntentExpectations) {
 		return nil, false
 	}
 	return o.IntentExpectations, true
@@ -94,21 +94,21 @@ func (o *IntentSingleAllOf) GetIntentExpectationsOk() ([]IntentSingleAllOfIntent
 
 // HasIntentExpectations returns a boolean if a field has been set.
 func (o *IntentSingleAllOf) HasIntentExpectations() bool {
-	if o != nil && !IsNil(o.IntentExpectations) {
+	if o != nil && !isNil(o.IntentExpectations) {
 		return true
 	}
 
 	return false
 }
 
-// SetIntentExpectations gets a reference to the given []IntentSingleAllOfIntentExpectationsInner and assigns it to the IntentExpectations field.
-func (o *IntentSingleAllOf) SetIntentExpectations(v []IntentSingleAllOfIntentExpectationsInner) {
+// SetIntentExpectations gets a reference to the given []OneOfIntentExpectationRadioNetworkExpectationServiceSupportExpectation and assigns it to the IntentExpectations field.
+func (o *IntentSingleAllOf) SetIntentExpectations(v []OneOfIntentExpectationRadioNetworkExpectationServiceSupportExpectation) {
 	o.IntentExpectations = v
 }
 
 // GetIntentContexts returns the IntentContexts field value if set, zero value otherwise.
 func (o *IntentSingleAllOf) GetIntentContexts() []IntentContext {
-	if o == nil || IsNil(o.IntentContexts) {
+	if o == nil || isNil(o.IntentContexts) {
 		var ret []IntentContext
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *IntentSingleAllOf) GetIntentContexts() []IntentContext {
 // GetIntentContextsOk returns a tuple with the IntentContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentSingleAllOf) GetIntentContextsOk() ([]IntentContext, bool) {
-	if o == nil || IsNil(o.IntentContexts) {
+	if o == nil || isNil(o.IntentContexts) {
 		return nil, false
 	}
 	return o.IntentContexts, true
@@ -126,7 +126,7 @@ func (o *IntentSingleAllOf) GetIntentContextsOk() ([]IntentContext, bool) {
 
 // HasIntentContexts returns a boolean if a field has been set.
 func (o *IntentSingleAllOf) HasIntentContexts() bool {
-	if o != nil && !IsNil(o.IntentContexts) {
+	if o != nil && !isNil(o.IntentContexts) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *IntentSingleAllOf) SetIntentContexts(v []IntentContext) {
 
 // GetIntentFulfilmentInfo returns the IntentFulfilmentInfo field value if set, zero value otherwise.
 func (o *IntentSingleAllOf) GetIntentFulfilmentInfo() FulfilmentInfo {
-	if o == nil || IsNil(o.IntentFulfilmentInfo) {
+	if o == nil || isNil(o.IntentFulfilmentInfo) {
 		var ret FulfilmentInfo
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *IntentSingleAllOf) GetIntentFulfilmentInfo() FulfilmentInfo {
 // GetIntentFulfilmentInfoOk returns a tuple with the IntentFulfilmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentSingleAllOf) GetIntentFulfilmentInfoOk() (*FulfilmentInfo, bool) {
-	if o == nil || IsNil(o.IntentFulfilmentInfo) {
+	if o == nil || isNil(o.IntentFulfilmentInfo) {
 		return nil, false
 	}
 	return o.IntentFulfilmentInfo, true
@@ -158,7 +158,7 @@ func (o *IntentSingleAllOf) GetIntentFulfilmentInfoOk() (*FulfilmentInfo, bool) 
 
 // HasIntentFulfilmentInfo returns a boolean if a field has been set.
 func (o *IntentSingleAllOf) HasIntentFulfilmentInfo() bool {
-	if o != nil && !IsNil(o.IntentFulfilmentInfo) {
+	if o != nil && !isNil(o.IntentFulfilmentInfo) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o IntentSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o IntentSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
+	if !isNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !IsNil(o.IntentExpectations) {
+	if !isNil(o.IntentExpectations) {
 		toSerialize["intentExpectations"] = o.IntentExpectations
 	}
-	if !IsNil(o.IntentContexts) {
+	if !isNil(o.IntentContexts) {
 		toSerialize["intentContexts"] = o.IntentContexts
 	}
-	if !IsNil(o.IntentFulfilmentInfo) {
+	if !isNil(o.IntentFulfilmentInfo) {
 		toSerialize["intentFulfilmentInfo"] = o.IntentFulfilmentInfo
 	}
 	return toSerialize, nil

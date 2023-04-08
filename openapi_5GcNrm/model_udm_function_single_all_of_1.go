@@ -43,7 +43,7 @@ func NewUdmFunctionSingleAllOf1WithDefaults() *UdmFunctionSingleAllOf1 {
 
 // GetEPN8 returns the EPN8 field value if set, zero value otherwise.
 func (o *UdmFunctionSingleAllOf1) GetEPN8() []EPN8Single {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		var ret []EPN8Single
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UdmFunctionSingleAllOf1) GetEPN8() []EPN8Single {
 // GetEPN8Ok returns a tuple with the EPN8 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingleAllOf1) GetEPN8Ok() ([]EPN8Single, bool) {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		return nil, false
 	}
 	return o.EPN8, true
@@ -61,7 +61,7 @@ func (o *UdmFunctionSingleAllOf1) GetEPN8Ok() ([]EPN8Single, bool) {
 
 // HasEPN8 returns a boolean if a field has been set.
 func (o *UdmFunctionSingleAllOf1) HasEPN8() bool {
-	if o != nil && !IsNil(o.EPN8) {
+	if o != nil && !isNil(o.EPN8) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UdmFunctionSingleAllOf1) SetEPN8(v []EPN8Single) {
 
 // GetEPN10 returns the EPN10 field value if set, zero value otherwise.
 func (o *UdmFunctionSingleAllOf1) GetEPN10() []EPN10Single {
-	if o == nil || IsNil(o.EPN10) {
+	if o == nil || isNil(o.EPN10) {
 		var ret []EPN10Single
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UdmFunctionSingleAllOf1) GetEPN10() []EPN10Single {
 // GetEPN10Ok returns a tuple with the EPN10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingleAllOf1) GetEPN10Ok() ([]EPN10Single, bool) {
-	if o == nil || IsNil(o.EPN10) {
+	if o == nil || isNil(o.EPN10) {
 		return nil, false
 	}
 	return o.EPN10, true
@@ -93,7 +93,7 @@ func (o *UdmFunctionSingleAllOf1) GetEPN10Ok() ([]EPN10Single, bool) {
 
 // HasEPN10 returns a boolean if a field has been set.
 func (o *UdmFunctionSingleAllOf1) HasEPN10() bool {
-	if o != nil && !IsNil(o.EPN10) {
+	if o != nil && !isNil(o.EPN10) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *UdmFunctionSingleAllOf1) SetEPN10(v []EPN10Single) {
 
 // GetEPN13 returns the EPN13 field value if set, zero value otherwise.
 func (o *UdmFunctionSingleAllOf1) GetEPN13() []EPN13Single {
-	if o == nil || IsNil(o.EPN13) {
+	if o == nil || isNil(o.EPN13) {
 		var ret []EPN13Single
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *UdmFunctionSingleAllOf1) GetEPN13() []EPN13Single {
 // GetEPN13Ok returns a tuple with the EPN13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UdmFunctionSingleAllOf1) GetEPN13Ok() ([]EPN13Single, bool) {
-	if o == nil || IsNil(o.EPN13) {
+	if o == nil || isNil(o.EPN13) {
 		return nil, false
 	}
 	return o.EPN13, true
@@ -125,7 +125,7 @@ func (o *UdmFunctionSingleAllOf1) GetEPN13Ok() ([]EPN13Single, bool) {
 
 // HasEPN13 returns a boolean if a field has been set.
 func (o *UdmFunctionSingleAllOf1) HasEPN13() bool {
-	if o != nil && !IsNil(o.EPN13) {
+	if o != nil && !isNil(o.EPN13) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o UdmFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o UdmFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN8) {
+	if !isNil(o.EPN8) {
 		toSerialize["EP_N8"] = o.EPN8
 	}
-	if !IsNil(o.EPN10) {
+	if !isNil(o.EPN10) {
 		toSerialize["EP_N10"] = o.EPN10
 	}
-	if !IsNil(o.EPN13) {
+	if !isNil(o.EPN13) {
 		toSerialize["EP_N13"] = o.EPN13
 	}
 	return toSerialize, nil

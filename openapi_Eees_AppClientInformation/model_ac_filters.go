@@ -54,7 +54,7 @@ func NewACFiltersWithDefaults() *ACFilters {
 
 // GetAcTypes returns the AcTypes field value if set, zero value otherwise.
 func (o *ACFilters) GetAcTypes() []string {
-	if o == nil || IsNil(o.AcTypes) {
+	if o == nil || isNil(o.AcTypes) {
 		var ret []string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *ACFilters) GetAcTypes() []string {
 // GetAcTypesOk returns a tuple with the AcTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetAcTypesOk() ([]string, bool) {
-	if o == nil || IsNil(o.AcTypes) {
+	if o == nil || isNil(o.AcTypes) {
 		return nil, false
 	}
 	return o.AcTypes, true
@@ -72,7 +72,7 @@ func (o *ACFilters) GetAcTypesOk() ([]string, bool) {
 
 // HasAcTypes returns a boolean if a field has been set.
 func (o *ACFilters) HasAcTypes() bool {
-	if o != nil && !IsNil(o.AcTypes) {
+	if o != nil && !isNil(o.AcTypes) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *ACFilters) SetAcTypes(v []string) {
 
 // GetEcspIds returns the EcspIds field value if set, zero value otherwise.
 func (o *ACFilters) GetEcspIds() []string {
-	if o == nil || IsNil(o.EcspIds) {
+	if o == nil || isNil(o.EcspIds) {
 		var ret []string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *ACFilters) GetEcspIds() []string {
 // GetEcspIdsOk returns a tuple with the EcspIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetEcspIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.EcspIds) {
+	if o == nil || isNil(o.EcspIds) {
 		return nil, false
 	}
 	return o.EcspIds, true
@@ -104,7 +104,7 @@ func (o *ACFilters) GetEcspIdsOk() ([]string, bool) {
 
 // HasEcspIds returns a boolean if a field has been set.
 func (o *ACFilters) HasEcspIds() bool {
-	if o != nil && !IsNil(o.EcspIds) {
+	if o != nil && !isNil(o.EcspIds) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *ACFilters) SetEcspIds(v []string) {
 
 // GetAcIds returns the AcIds field value if set, zero value otherwise.
 func (o *ACFilters) GetAcIds() []string {
-	if o == nil || IsNil(o.AcIds) {
+	if o == nil || isNil(o.AcIds) {
 		var ret []string
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *ACFilters) GetAcIds() []string {
 // GetAcIdsOk returns a tuple with the AcIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetAcIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AcIds) {
+	if o == nil || isNil(o.AcIds) {
 		return nil, false
 	}
 	return o.AcIds, true
@@ -136,7 +136,7 @@ func (o *ACFilters) GetAcIdsOk() ([]string, bool) {
 
 // HasAcIds returns a boolean if a field has been set.
 func (o *ACFilters) HasAcIds() bool {
-	if o != nil && !IsNil(o.AcIds) {
+	if o != nil && !isNil(o.AcIds) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *ACFilters) SetAcIds(v []string) {
 
 // GetSvcArea returns the SvcArea field value if set, zero value otherwise.
 func (o *ACFilters) GetSvcArea() ServiceArea {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		var ret ServiceArea
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *ACFilters) GetSvcArea() ServiceArea {
 // GetSvcAreaOk returns a tuple with the SvcArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetSvcAreaOk() (*ServiceArea, bool) {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		return nil, false
 	}
 	return o.SvcArea, true
@@ -168,7 +168,7 @@ func (o *ACFilters) GetSvcAreaOk() (*ServiceArea, bool) {
 
 // HasSvcArea returns a boolean if a field has been set.
 func (o *ACFilters) HasSvcArea() bool {
-	if o != nil && !IsNil(o.SvcArea) {
+	if o != nil && !isNil(o.SvcArea) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *ACFilters) SetSvcArea(v ServiceArea) {
 
 // GetMaxAcKpi returns the MaxAcKpi field value if set, zero value otherwise.
 func (o *ACFilters) GetMaxAcKpi() ACServiceKPIs {
-	if o == nil || IsNil(o.MaxAcKpi) {
+	if o == nil || isNil(o.MaxAcKpi) {
 		var ret ACServiceKPIs
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *ACFilters) GetMaxAcKpi() ACServiceKPIs {
 // GetMaxAcKpiOk returns a tuple with the MaxAcKpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetMaxAcKpiOk() (*ACServiceKPIs, bool) {
-	if o == nil || IsNil(o.MaxAcKpi) {
+	if o == nil || isNil(o.MaxAcKpi) {
 		return nil, false
 	}
 	return o.MaxAcKpi, true
@@ -200,7 +200,7 @@ func (o *ACFilters) GetMaxAcKpiOk() (*ACServiceKPIs, bool) {
 
 // HasMaxAcKpi returns a boolean if a field has been set.
 func (o *ACFilters) HasMaxAcKpi() bool {
-	if o != nil && !IsNil(o.MaxAcKpi) {
+	if o != nil && !isNil(o.MaxAcKpi) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *ACFilters) SetMaxAcKpi(v ACServiceKPIs) {
 
 // GetMinAcKpi returns the MinAcKpi field value if set, zero value otherwise.
 func (o *ACFilters) GetMinAcKpi() ACServiceKPIs {
-	if o == nil || IsNil(o.MinAcKpi) {
+	if o == nil || isNil(o.MinAcKpi) {
 		var ret ACServiceKPIs
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *ACFilters) GetMinAcKpi() ACServiceKPIs {
 // GetMinAcKpiOk returns a tuple with the MinAcKpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetMinAcKpiOk() (*ACServiceKPIs, bool) {
-	if o == nil || IsNil(o.MinAcKpi) {
+	if o == nil || isNil(o.MinAcKpi) {
 		return nil, false
 	}
 	return o.MinAcKpi, true
@@ -232,7 +232,7 @@ func (o *ACFilters) GetMinAcKpiOk() (*ACServiceKPIs, bool) {
 
 // HasMinAcKpi returns a boolean if a field has been set.
 func (o *ACFilters) HasMinAcKpi() bool {
-	if o != nil && !IsNil(o.MinAcKpi) {
+	if o != nil && !isNil(o.MinAcKpi) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *ACFilters) SetMinAcKpi(v ACServiceKPIs) {
 
 // GetOpSchds returns the OpSchds field value if set, zero value otherwise.
 func (o *ACFilters) GetOpSchds() []ScheduledCommunicationTime {
-	if o == nil || IsNil(o.OpSchds) {
+	if o == nil || isNil(o.OpSchds) {
 		var ret []ScheduledCommunicationTime
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *ACFilters) GetOpSchds() []ScheduledCommunicationTime {
 // GetOpSchdsOk returns a tuple with the OpSchds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetOpSchdsOk() ([]ScheduledCommunicationTime, bool) {
-	if o == nil || IsNil(o.OpSchds) {
+	if o == nil || isNil(o.OpSchds) {
 		return nil, false
 	}
 	return o.OpSchds, true
@@ -264,7 +264,7 @@ func (o *ACFilters) GetOpSchdsOk() ([]ScheduledCommunicationTime, bool) {
 
 // HasOpSchds returns a boolean if a field has been set.
 func (o *ACFilters) HasOpSchds() bool {
-	if o != nil && !IsNil(o.OpSchds) {
+	if o != nil && !isNil(o.OpSchds) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *ACFilters) SetOpSchds(v []ScheduledCommunicationTime) {
 
 // GetUeIds returns the UeIds field value if set, zero value otherwise.
 func (o *ACFilters) GetUeIds() []string {
-	if o == nil || IsNil(o.UeIds) {
+	if o == nil || isNil(o.UeIds) {
 		var ret []string
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *ACFilters) GetUeIds() []string {
 // GetUeIdsOk returns a tuple with the UeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetUeIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.UeIds) {
+	if o == nil || isNil(o.UeIds) {
 		return nil, false
 	}
 	return o.UeIds, true
@@ -296,7 +296,7 @@ func (o *ACFilters) GetUeIdsOk() ([]string, bool) {
 
 // HasUeIds returns a boolean if a field has been set.
 func (o *ACFilters) HasUeIds() bool {
-	if o != nil && !IsNil(o.UeIds) {
+	if o != nil && !isNil(o.UeIds) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *ACFilters) SetUeIds(v []string) {
 
 // GetLocInfs returns the LocInfs field value if set, zero value otherwise.
 func (o *ACFilters) GetLocInfs() LocationArea5G {
-	if o == nil || IsNil(o.LocInfs) {
+	if o == nil || isNil(o.LocInfs) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *ACFilters) GetLocInfs() LocationArea5G {
 // GetLocInfsOk returns a tuple with the LocInfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACFilters) GetLocInfsOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.LocInfs) {
+	if o == nil || isNil(o.LocInfs) {
 		return nil, false
 	}
 	return o.LocInfs, true
@@ -328,7 +328,7 @@ func (o *ACFilters) GetLocInfsOk() (*LocationArea5G, bool) {
 
 // HasLocInfs returns a boolean if a field has been set.
 func (o *ACFilters) HasLocInfs() bool {
-	if o != nil && !IsNil(o.LocInfs) {
+	if o != nil && !isNil(o.LocInfs) {
 		return true
 	}
 
@@ -350,31 +350,31 @@ func (o ACFilters) MarshalJSON() ([]byte, error) {
 
 func (o ACFilters) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcTypes) {
+	if !isNil(o.AcTypes) {
 		toSerialize["acTypes"] = o.AcTypes
 	}
-	if !IsNil(o.EcspIds) {
+	if !isNil(o.EcspIds) {
 		toSerialize["ecspIds"] = o.EcspIds
 	}
-	if !IsNil(o.AcIds) {
+	if !isNil(o.AcIds) {
 		toSerialize["acIds"] = o.AcIds
 	}
-	if !IsNil(o.SvcArea) {
+	if !isNil(o.SvcArea) {
 		toSerialize["svcArea"] = o.SvcArea
 	}
-	if !IsNil(o.MaxAcKpi) {
+	if !isNil(o.MaxAcKpi) {
 		toSerialize["maxAcKpi"] = o.MaxAcKpi
 	}
-	if !IsNil(o.MinAcKpi) {
+	if !isNil(o.MinAcKpi) {
 		toSerialize["minAcKpi"] = o.MinAcKpi
 	}
-	if !IsNil(o.OpSchds) {
+	if !isNil(o.OpSchds) {
 		toSerialize["opSchds"] = o.OpSchds
 	}
-	if !IsNil(o.UeIds) {
+	if !isNil(o.UeIds) {
 		toSerialize["ueIds"] = o.UeIds
 	}
-	if !IsNil(o.LocInfs) {
+	if !isNil(o.LocInfs) {
 		toSerialize["locInfs"] = o.LocInfs
 	}
 	return toSerialize, nil

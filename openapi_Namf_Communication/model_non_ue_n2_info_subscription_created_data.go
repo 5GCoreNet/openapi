@@ -69,7 +69,7 @@ func (o *NonUeN2InfoSubscriptionCreatedData) SetN2NotifySubscriptionId(v string)
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreatedData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NonUeN2InfoSubscriptionCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -87,7 +87,7 @@ func (o *NonUeN2InfoSubscriptionCreatedData) GetSupportedFeaturesOk() (*string, 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *NonUeN2InfoSubscriptionCreatedData) SetSupportedFeatures(v string) {
 
 // GetN2InformationClass returns the N2InformationClass field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreatedData) GetN2InformationClass() N2InformationClass {
-	if o == nil || IsNil(o.N2InformationClass) {
+	if o == nil || isNil(o.N2InformationClass) {
 		var ret N2InformationClass
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NonUeN2InfoSubscriptionCreatedData) GetN2InformationClass() N2Informati
 // GetN2InformationClassOk returns a tuple with the N2InformationClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreatedData) GetN2InformationClassOk() (*N2InformationClass, bool) {
-	if o == nil || IsNil(o.N2InformationClass) {
+	if o == nil || isNil(o.N2InformationClass) {
 		return nil, false
 	}
 	return o.N2InformationClass, true
@@ -119,7 +119,7 @@ func (o *NonUeN2InfoSubscriptionCreatedData) GetN2InformationClassOk() (*N2Infor
 
 // HasN2InformationClass returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreatedData) HasN2InformationClass() bool {
-	if o != nil && !IsNil(o.N2InformationClass) {
+	if o != nil && !isNil(o.N2InformationClass) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o NonUeN2InfoSubscriptionCreatedData) MarshalJSON() ([]byte, error) {
 func (o NonUeN2InfoSubscriptionCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n2NotifySubscriptionId"] = o.N2NotifySubscriptionId
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.N2InformationClass) {
+	if !isNil(o.N2InformationClass) {
 		toSerialize["n2InformationClass"] = o.N2InformationClass
 	}
 	return toSerialize, nil

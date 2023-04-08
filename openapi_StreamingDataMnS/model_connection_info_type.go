@@ -44,7 +44,7 @@ func NewConnectionInfoTypeWithDefaults() *ConnectionInfoType {
 
 // GetConnection returns the Connection field value if set, zero value otherwise.
 func (o *ConnectionInfoType) GetConnection() string {
-	if o == nil || IsNil(o.Connection) {
+	if o == nil || isNil(o.Connection) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ConnectionInfoType) GetConnection() string {
 // GetConnectionOk returns a tuple with the Connection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionInfoType) GetConnectionOk() (*string, bool) {
-	if o == nil || IsNil(o.Connection) {
+	if o == nil || isNil(o.Connection) {
 		return nil, false
 	}
 	return o.Connection, true
@@ -62,7 +62,7 @@ func (o *ConnectionInfoType) GetConnectionOk() (*string, bool) {
 
 // HasConnection returns a boolean if a field has been set.
 func (o *ConnectionInfoType) HasConnection() bool {
-	if o != nil && !IsNil(o.Connection) {
+	if o != nil && !isNil(o.Connection) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ConnectionInfoType) SetConnection(v string) {
 
 // GetProducer returns the Producer field value if set, zero value otherwise.
 func (o *ConnectionInfoType) GetProducer() ProducerIdType {
-	if o == nil || IsNil(o.Producer) {
+	if o == nil || isNil(o.Producer) {
 		var ret ProducerIdType
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ConnectionInfoType) GetProducer() ProducerIdType {
 // GetProducerOk returns a tuple with the Producer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionInfoType) GetProducerOk() (*ProducerIdType, bool) {
-	if o == nil || IsNil(o.Producer) {
+	if o == nil || isNil(o.Producer) {
 		return nil, false
 	}
 	return o.Producer, true
@@ -94,7 +94,7 @@ func (o *ConnectionInfoType) GetProducerOk() (*ProducerIdType, bool) {
 
 // HasProducer returns a boolean if a field has been set.
 func (o *ConnectionInfoType) HasProducer() bool {
-	if o != nil && !IsNil(o.Producer) {
+	if o != nil && !isNil(o.Producer) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ConnectionInfoType) SetProducer(v ProducerIdType) {
 
 // GetStreams returns the Streams field value if set, zero value otherwise.
 func (o *ConnectionInfoType) GetStreams() []string {
-	if o == nil || IsNil(o.Streams) {
+	if o == nil || isNil(o.Streams) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ConnectionInfoType) GetStreams() []string {
 // GetStreamsOk returns a tuple with the Streams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionInfoType) GetStreamsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Streams) {
+	if o == nil || isNil(o.Streams) {
 		return nil, false
 	}
 	return o.Streams, true
@@ -126,7 +126,7 @@ func (o *ConnectionInfoType) GetStreamsOk() ([]string, bool) {
 
 // HasStreams returns a boolean if a field has been set.
 func (o *ConnectionInfoType) HasStreams() bool {
-	if o != nil && !IsNil(o.Streams) {
+	if o != nil && !isNil(o.Streams) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o ConnectionInfoType) MarshalJSON() ([]byte, error) {
 
 func (o ConnectionInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Connection) {
+	if !isNil(o.Connection) {
 		toSerialize["connection"] = o.Connection
 	}
-	if !IsNil(o.Producer) {
+	if !isNil(o.Producer) {
 		toSerialize["producer"] = o.Producer
 	}
-	if !IsNil(o.Streams) {
+	if !isNil(o.Streams) {
 		toSerialize["streams"] = o.Streams
 	}
 	return toSerialize, nil

@@ -93,7 +93,7 @@ func (o *SliceInfoForPDUSession) SetRoamingIndication(v RoamingIndication) {
 
 // GetHomeSnssai returns the HomeSnssai field value if set, zero value otherwise.
 func (o *SliceInfoForPDUSession) GetHomeSnssai() Snssai {
-	if o == nil || IsNil(o.HomeSnssai) {
+	if o == nil || isNil(o.HomeSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *SliceInfoForPDUSession) GetHomeSnssai() Snssai {
 // GetHomeSnssaiOk returns a tuple with the HomeSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceInfoForPDUSession) GetHomeSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.HomeSnssai) {
+	if o == nil || isNil(o.HomeSnssai) {
 		return nil, false
 	}
 	return o.HomeSnssai, true
@@ -111,7 +111,7 @@ func (o *SliceInfoForPDUSession) GetHomeSnssaiOk() (*Snssai, bool) {
 
 // HasHomeSnssai returns a boolean if a field has been set.
 func (o *SliceInfoForPDUSession) HasHomeSnssai() bool {
-	if o != nil && !IsNil(o.HomeSnssai) {
+	if o != nil && !isNil(o.HomeSnssai) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o SliceInfoForPDUSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssai"] = o.SNssai
 	toSerialize["roamingIndication"] = o.RoamingIndication
-	if !IsNil(o.HomeSnssai) {
+	if !isNil(o.HomeSnssai) {
 		toSerialize["homeSnssai"] = o.HomeSnssai
 	}
 	return toSerialize, nil

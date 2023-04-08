@@ -52,7 +52,7 @@ func NewUeCommunicationCollectionWithDefaults() *UeCommunicationCollection {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *UeCommunicationCollection) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *UeCommunicationCollection) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunicationCollection) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -70,7 +70,7 @@ func (o *UeCommunicationCollection) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *UeCommunicationCollection) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *UeCommunicationCollection) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *UeCommunicationCollection) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *UeCommunicationCollection) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunicationCollection) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -102,7 +102,7 @@ func (o *UeCommunicationCollection) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *UeCommunicationCollection) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *UeCommunicationCollection) SetSupi(v string) {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *UeCommunicationCollection) GetExterGroupId() string {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *UeCommunicationCollection) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunicationCollection) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -134,7 +134,7 @@ func (o *UeCommunicationCollection) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *UeCommunicationCollection) HasExterGroupId() bool {
-	if o != nil && !IsNil(o.ExterGroupId) {
+	if o != nil && !isNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *UeCommunicationCollection) SetExterGroupId(v string) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *UeCommunicationCollection) GetInterGroupId() string {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *UeCommunicationCollection) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeCommunicationCollection) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -166,7 +166,7 @@ func (o *UeCommunicationCollection) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *UeCommunicationCollection) HasInterGroupId() bool {
-	if o != nil && !IsNil(o.InterGroupId) {
+	if o != nil && !isNil(o.InterGroupId) {
 		return true
 	}
 
@@ -236,16 +236,16 @@ func (o UeCommunicationCollection) MarshalJSON() ([]byte, error) {
 
 func (o UeCommunicationCollection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.ExterGroupId) {
+	if !isNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
-	if !IsNil(o.InterGroupId) {
+	if !isNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
 	toSerialize["appId"] = o.AppId

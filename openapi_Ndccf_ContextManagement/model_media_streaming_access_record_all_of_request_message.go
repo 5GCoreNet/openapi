@@ -131,7 +131,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) SetProtocolVersion(v str
 
 // GetRange returns the Range field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetRange() string {
-	if o == nil || IsNil(o.Range) {
+	if o == nil || isNil(o.Range) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetRange() string {
 // GetRangeOk returns a tuple with the Range field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetRangeOk() (*string, bool) {
-	if o == nil || IsNil(o.Range) {
+	if o == nil || isNil(o.Range) {
 		return nil, false
 	}
 	return o.Range, true
@@ -149,7 +149,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetRangeOk() (*string, b
 
 // HasRange returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) HasRange() bool {
-	if o != nil && !IsNil(o.Range) {
+	if o != nil && !isNil(o.Range) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) SetBodySize(v int32) {
 
 // GetContentType returns the ContentType field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetContentType() string {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || isNil(o.ContentType) {
 		var ret string
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetContentType() string 
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetContentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || isNil(o.ContentType) {
 		return nil, false
 	}
 	return o.ContentType, true
@@ -229,7 +229,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetContentTypeOk() (*str
 
 // HasContentType returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) HasContentType() bool {
-	if o != nil && !IsNil(o.ContentType) {
+	if o != nil && !isNil(o.ContentType) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) SetContentType(v string)
 
 // GetUserAgent returns the UserAgent field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserAgent() string {
-	if o == nil || IsNil(o.UserAgent) {
+	if o == nil || isNil(o.UserAgent) {
 		var ret string
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserAgent() string {
 // GetUserAgentOk returns a tuple with the UserAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserAgentOk() (*string, bool) {
-	if o == nil || IsNil(o.UserAgent) {
+	if o == nil || isNil(o.UserAgent) {
 		return nil, false
 	}
 	return o.UserAgent, true
@@ -261,7 +261,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserAgentOk() (*strin
 
 // HasUserAgent returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) HasUserAgent() bool {
-	if o != nil && !IsNil(o.UserAgent) {
+	if o != nil && !isNil(o.UserAgent) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) SetUserAgent(v string) {
 
 // GetUserIdentity returns the UserIdentity field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserIdentity() string {
-	if o == nil || IsNil(o.UserIdentity) {
+	if o == nil || isNil(o.UserIdentity) {
 		var ret string
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserIdentity() string
 // GetUserIdentityOk returns a tuple with the UserIdentity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserIdentityOk() (*string, bool) {
-	if o == nil || IsNil(o.UserIdentity) {
+	if o == nil || isNil(o.UserIdentity) {
 		return nil, false
 	}
 	return o.UserIdentity, true
@@ -293,7 +293,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetUserIdentityOk() (*st
 
 // HasUserIdentity returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) HasUserIdentity() bool {
-	if o != nil && !IsNil(o.UserIdentity) {
+	if o != nil && !isNil(o.UserIdentity) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) SetUserIdentity(v string
 
 // GetReferer returns the Referer field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetReferer() string {
-	if o == nil || IsNil(o.Referer) {
+	if o == nil || isNil(o.Referer) {
 		var ret string
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetReferer() string {
 // GetRefererOk returns a tuple with the Referer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetRefererOk() (*string, bool) {
-	if o == nil || IsNil(o.Referer) {
+	if o == nil || isNil(o.Referer) {
 		return nil, false
 	}
 	return o.Referer, true
@@ -325,7 +325,7 @@ func (o *MediaStreamingAccessRecordAllOfRequestMessage) GetRefererOk() (*string,
 
 // HasReferer returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfRequestMessage) HasReferer() bool {
-	if o != nil && !IsNil(o.Referer) {
+	if o != nil && !isNil(o.Referer) {
 		return true
 	}
 
@@ -350,21 +350,21 @@ func (o MediaStreamingAccessRecordAllOfRequestMessage) ToMap() (map[string]inter
 	toSerialize["method"] = o.Method
 	toSerialize["url"] = o.Url
 	toSerialize["protocolVersion"] = o.ProtocolVersion
-	if !IsNil(o.Range) {
+	if !isNil(o.Range) {
 		toSerialize["range"] = o.Range
 	}
 	toSerialize["size"] = o.Size
 	toSerialize["bodySize"] = o.BodySize
-	if !IsNil(o.ContentType) {
+	if !isNil(o.ContentType) {
 		toSerialize["contentType"] = o.ContentType
 	}
-	if !IsNil(o.UserAgent) {
+	if !isNil(o.UserAgent) {
 		toSerialize["userAgent"] = o.UserAgent
 	}
-	if !IsNil(o.UserIdentity) {
+	if !isNil(o.UserIdentity) {
 		toSerialize["userIdentity"] = o.UserIdentity
 	}
-	if !IsNil(o.Referer) {
+	if !isNil(o.Referer) {
 		toSerialize["referer"] = o.Referer
 	}
 	return toSerialize, nil

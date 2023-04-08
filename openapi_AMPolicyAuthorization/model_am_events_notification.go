@@ -44,7 +44,7 @@ func NewAmEventsNotificationWithDefaults() *AmEventsNotification {
 
 // GetAppAmContextId returns the AppAmContextId field value if set, zero value otherwise.
 func (o *AmEventsNotification) GetAppAmContextId() string {
-	if o == nil || IsNil(o.AppAmContextId) {
+	if o == nil || isNil(o.AppAmContextId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AmEventsNotification) GetAppAmContextId() string {
 // GetAppAmContextIdOk returns a tuple with the AppAmContextId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsNotification) GetAppAmContextIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppAmContextId) {
+	if o == nil || isNil(o.AppAmContextId) {
 		return nil, false
 	}
 	return o.AppAmContextId, true
@@ -62,7 +62,7 @@ func (o *AmEventsNotification) GetAppAmContextIdOk() (*string, bool) {
 
 // HasAppAmContextId returns a boolean if a field has been set.
 func (o *AmEventsNotification) HasAppAmContextId() bool {
-	if o != nil && !IsNil(o.AppAmContextId) {
+	if o != nil && !isNil(o.AppAmContextId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o AmEventsNotification) MarshalJSON() ([]byte, error) {
 
 func (o AmEventsNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppAmContextId) {
+	if !isNil(o.AppAmContextId) {
 		toSerialize["appAmContextId"] = o.AppAmContextId
 	}
 	toSerialize["repEvents"] = o.RepEvents

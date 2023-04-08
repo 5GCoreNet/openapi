@@ -42,7 +42,7 @@ func NewRrmPolicyMemberWithDefaults() *RrmPolicyMember {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *RrmPolicyMember) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RrmPolicyMember) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RrmPolicyMember) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -60,7 +60,7 @@ func (o *RrmPolicyMember) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *RrmPolicyMember) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RrmPolicyMember) SetPlmnId(v PlmnId) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *RrmPolicyMember) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RrmPolicyMember) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RrmPolicyMember) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -92,7 +92,7 @@ func (o *RrmPolicyMember) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *RrmPolicyMember) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RrmPolicyMember) MarshalJSON() ([]byte, error) {
 
 func (o RrmPolicyMember) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil

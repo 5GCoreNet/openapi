@@ -150,7 +150,7 @@ func (o *ContextStatusSubscription) SetNotifyUri(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *ContextStatusSubscription) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *ContextStatusSubscription) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -168,7 +168,7 @@ func (o *ContextStatusSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *ContextStatusSubscription) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *ContextStatusSubscription) SetNotifyCorrelationId(v string) {
 
 // GetExpiryTime returns the ExpiryTime field value if set, zero value otherwise.
 func (o *ContextStatusSubscription) GetExpiryTime() time.Time {
-	if o == nil || IsNil(o.ExpiryTime) {
+	if o == nil || isNil(o.ExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *ContextStatusSubscription) GetExpiryTime() time.Time {
 // GetExpiryTimeOk returns a tuple with the ExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusSubscription) GetExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpiryTime) {
+	if o == nil || isNil(o.ExpiryTime) {
 		return nil, false
 	}
 	return o.ExpiryTime, true
@@ -200,7 +200,7 @@ func (o *ContextStatusSubscription) GetExpiryTimeOk() (*time.Time, bool) {
 
 // HasExpiryTime returns a boolean if a field has been set.
 func (o *ContextStatusSubscription) HasExpiryTime() bool {
-	if o != nil && !IsNil(o.ExpiryTime) {
+	if o != nil && !isNil(o.ExpiryTime) {
 		return true
 	}
 
@@ -226,10 +226,10 @@ func (o ContextStatusSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["mbsSessionId"] = o.MbsSessionId
 	toSerialize["eventList"] = o.EventList
 	toSerialize["notifyUri"] = o.NotifyUri
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !IsNil(o.ExpiryTime) {
+	if !isNil(o.ExpiryTime) {
 		toSerialize["expiryTime"] = o.ExpiryTime
 	}
 	return toSerialize, nil

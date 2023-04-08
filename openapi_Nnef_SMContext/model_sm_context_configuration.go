@@ -44,7 +44,7 @@ func NewSmContextConfigurationWithDefaults() *SmContextConfiguration {
 
 // GetSmalDataRateControl returns the SmalDataRateControl field value if set, zero value otherwise.
 func (o *SmContextConfiguration) GetSmalDataRateControl() SmallDataRateControl {
-	if o == nil || IsNil(o.SmalDataRateControl) {
+	if o == nil || isNil(o.SmalDataRateControl) {
 		var ret SmallDataRateControl
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SmContextConfiguration) GetSmalDataRateControl() SmallDataRateControl {
 // GetSmalDataRateControlOk returns a tuple with the SmalDataRateControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextConfiguration) GetSmalDataRateControlOk() (*SmallDataRateControl, bool) {
-	if o == nil || IsNil(o.SmalDataRateControl) {
+	if o == nil || isNil(o.SmalDataRateControl) {
 		return nil, false
 	}
 	return o.SmalDataRateControl, true
@@ -62,7 +62,7 @@ func (o *SmContextConfiguration) GetSmalDataRateControlOk() (*SmallDataRateContr
 
 // HasSmalDataRateControl returns a boolean if a field has been set.
 func (o *SmContextConfiguration) HasSmalDataRateControl() bool {
-	if o != nil && !IsNil(o.SmalDataRateControl) {
+	if o != nil && !isNil(o.SmalDataRateControl) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SmContextConfiguration) SetSmalDataRateControl(v SmallDataRateControl) 
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextConfiguration) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SmContextConfiguration) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextConfiguration) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -94,7 +94,7 @@ func (o *SmContextConfiguration) GetSmallDataRateStatusOk() (*SmallDataRateStatu
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextConfiguration) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SmContextConfiguration) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetServPlmnDataRateCtl returns the ServPlmnDataRateCtl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SmContextConfiguration) GetServPlmnDataRateCtl() int32 {
-	if o == nil || IsNil(o.ServPlmnDataRateCtl.Get()) {
+	if o == nil || isNil(o.ServPlmnDataRateCtl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -158,10 +158,10 @@ func (o SmContextConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o SmContextConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SmalDataRateControl) {
+	if !isNil(o.SmalDataRateControl) {
 		toSerialize["smalDataRateControl"] = o.SmalDataRateControl
 	}
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
 	if o.ServPlmnDataRateCtl.IsSet() {

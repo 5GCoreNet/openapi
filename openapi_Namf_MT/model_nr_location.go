@@ -107,7 +107,7 @@ func (o *NrLocation) SetNcgi(v Ncgi) {
 
 // GetIgnoreNcgi returns the IgnoreNcgi field value if set, zero value otherwise.
 func (o *NrLocation) GetIgnoreNcgi() bool {
-	if o == nil || IsNil(o.IgnoreNcgi) {
+	if o == nil || isNil(o.IgnoreNcgi) {
 		var ret bool
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NrLocation) GetIgnoreNcgi() bool {
 // GetIgnoreNcgiOk returns a tuple with the IgnoreNcgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetIgnoreNcgiOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreNcgi) {
+	if o == nil || isNil(o.IgnoreNcgi) {
 		return nil, false
 	}
 	return o.IgnoreNcgi, true
@@ -125,7 +125,7 @@ func (o *NrLocation) GetIgnoreNcgiOk() (*bool, bool) {
 
 // HasIgnoreNcgi returns a boolean if a field has been set.
 func (o *NrLocation) HasIgnoreNcgi() bool {
-	if o != nil && !IsNil(o.IgnoreNcgi) {
+	if o != nil && !isNil(o.IgnoreNcgi) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *NrLocation) SetIgnoreNcgi(v bool) {
 
 // GetAgeOfLocationInformation returns the AgeOfLocationInformation field value if set, zero value otherwise.
 func (o *NrLocation) GetAgeOfLocationInformation() int32 {
-	if o == nil || IsNil(o.AgeOfLocationInformation) {
+	if o == nil || isNil(o.AgeOfLocationInformation) {
 		var ret int32
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *NrLocation) GetAgeOfLocationInformation() int32 {
 // GetAgeOfLocationInformationOk returns a tuple with the AgeOfLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetAgeOfLocationInformationOk() (*int32, bool) {
-	if o == nil || IsNil(o.AgeOfLocationInformation) {
+	if o == nil || isNil(o.AgeOfLocationInformation) {
 		return nil, false
 	}
 	return o.AgeOfLocationInformation, true
@@ -157,7 +157,7 @@ func (o *NrLocation) GetAgeOfLocationInformationOk() (*int32, bool) {
 
 // HasAgeOfLocationInformation returns a boolean if a field has been set.
 func (o *NrLocation) HasAgeOfLocationInformation() bool {
-	if o != nil && !IsNil(o.AgeOfLocationInformation) {
+	if o != nil && !isNil(o.AgeOfLocationInformation) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NrLocation) SetAgeOfLocationInformation(v int32) {
 
 // GetUeLocationTimestamp returns the UeLocationTimestamp field value if set, zero value otherwise.
 func (o *NrLocation) GetUeLocationTimestamp() time.Time {
-	if o == nil || IsNil(o.UeLocationTimestamp) {
+	if o == nil || isNil(o.UeLocationTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *NrLocation) GetUeLocationTimestamp() time.Time {
 // GetUeLocationTimestampOk returns a tuple with the UeLocationTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetUeLocationTimestampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.UeLocationTimestamp) {
+	if o == nil || isNil(o.UeLocationTimestamp) {
 		return nil, false
 	}
 	return o.UeLocationTimestamp, true
@@ -189,7 +189,7 @@ func (o *NrLocation) GetUeLocationTimestampOk() (*time.Time, bool) {
 
 // HasUeLocationTimestamp returns a boolean if a field has been set.
 func (o *NrLocation) HasUeLocationTimestamp() bool {
-	if o != nil && !IsNil(o.UeLocationTimestamp) {
+	if o != nil && !isNil(o.UeLocationTimestamp) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *NrLocation) SetUeLocationTimestamp(v time.Time) {
 
 // GetGeographicalInformation returns the GeographicalInformation field value if set, zero value otherwise.
 func (o *NrLocation) GetGeographicalInformation() string {
-	if o == nil || IsNil(o.GeographicalInformation) {
+	if o == nil || isNil(o.GeographicalInformation) {
 		var ret string
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *NrLocation) GetGeographicalInformation() string {
 // GetGeographicalInformationOk returns a tuple with the GeographicalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetGeographicalInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.GeographicalInformation) {
+	if o == nil || isNil(o.GeographicalInformation) {
 		return nil, false
 	}
 	return o.GeographicalInformation, true
@@ -221,7 +221,7 @@ func (o *NrLocation) GetGeographicalInformationOk() (*string, bool) {
 
 // HasGeographicalInformation returns a boolean if a field has been set.
 func (o *NrLocation) HasGeographicalInformation() bool {
-	if o != nil && !IsNil(o.GeographicalInformation) {
+	if o != nil && !isNil(o.GeographicalInformation) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *NrLocation) SetGeographicalInformation(v string) {
 
 // GetGeodeticInformation returns the GeodeticInformation field value if set, zero value otherwise.
 func (o *NrLocation) GetGeodeticInformation() string {
-	if o == nil || IsNil(o.GeodeticInformation) {
+	if o == nil || isNil(o.GeodeticInformation) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *NrLocation) GetGeodeticInformation() string {
 // GetGeodeticInformationOk returns a tuple with the GeodeticInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetGeodeticInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.GeodeticInformation) {
+	if o == nil || isNil(o.GeodeticInformation) {
 		return nil, false
 	}
 	return o.GeodeticInformation, true
@@ -253,7 +253,7 @@ func (o *NrLocation) GetGeodeticInformationOk() (*string, bool) {
 
 // HasGeodeticInformation returns a boolean if a field has been set.
 func (o *NrLocation) HasGeodeticInformation() bool {
-	if o != nil && !IsNil(o.GeodeticInformation) {
+	if o != nil && !isNil(o.GeodeticInformation) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *NrLocation) SetGeodeticInformation(v string) {
 
 // GetGlobalGnbId returns the GlobalGnbId field value if set, zero value otherwise.
 func (o *NrLocation) GetGlobalGnbId() GlobalRanNodeId {
-	if o == nil || IsNil(o.GlobalGnbId) {
+	if o == nil || isNil(o.GlobalGnbId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *NrLocation) GetGlobalGnbId() GlobalRanNodeId {
 // GetGlobalGnbIdOk returns a tuple with the GlobalGnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrLocation) GetGlobalGnbIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.GlobalGnbId) {
+	if o == nil || isNil(o.GlobalGnbId) {
 		return nil, false
 	}
 	return o.GlobalGnbId, true
@@ -285,7 +285,7 @@ func (o *NrLocation) GetGlobalGnbIdOk() (*GlobalRanNodeId, bool) {
 
 // HasGlobalGnbId returns a boolean if a field has been set.
 func (o *NrLocation) HasGlobalGnbId() bool {
-	if o != nil && !IsNil(o.GlobalGnbId) {
+	if o != nil && !isNil(o.GlobalGnbId) {
 		return true
 	}
 
@@ -309,22 +309,22 @@ func (o NrLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tai"] = o.Tai
 	toSerialize["ncgi"] = o.Ncgi
-	if !IsNil(o.IgnoreNcgi) {
+	if !isNil(o.IgnoreNcgi) {
 		toSerialize["ignoreNcgi"] = o.IgnoreNcgi
 	}
-	if !IsNil(o.AgeOfLocationInformation) {
+	if !isNil(o.AgeOfLocationInformation) {
 		toSerialize["ageOfLocationInformation"] = o.AgeOfLocationInformation
 	}
-	if !IsNil(o.UeLocationTimestamp) {
+	if !isNil(o.UeLocationTimestamp) {
 		toSerialize["ueLocationTimestamp"] = o.UeLocationTimestamp
 	}
-	if !IsNil(o.GeographicalInformation) {
+	if !isNil(o.GeographicalInformation) {
 		toSerialize["geographicalInformation"] = o.GeographicalInformation
 	}
-	if !IsNil(o.GeodeticInformation) {
+	if !isNil(o.GeodeticInformation) {
 		toSerialize["geodeticInformation"] = o.GeodeticInformation
 	}
-	if !IsNil(o.GlobalGnbId) {
+	if !isNil(o.GlobalGnbId) {
 		toSerialize["globalGnbId"] = o.GlobalGnbId
 	}
 	return toSerialize, nil

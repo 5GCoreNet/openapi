@@ -41,7 +41,7 @@ func NewEPTransportSingleAllOfWithDefaults() *EPTransportSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *EPTransportSingleAllOf) GetAttributes() EPTransportSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret EPTransportSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EPTransportSingleAllOf) GetAttributes() EPTransportSingleAllOfAttribute
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPTransportSingleAllOf) GetAttributesOk() (*EPTransportSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *EPTransportSingleAllOf) GetAttributesOk() (*EPTransportSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EPTransportSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o EPTransportSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o EPTransportSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

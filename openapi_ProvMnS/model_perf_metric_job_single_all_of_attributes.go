@@ -48,7 +48,7 @@ func NewPerfMetricJobSingleAllOfAttributesWithDefaults() *PerfMetricJobSingleAll
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetAdministrativeState() AdministrativeState {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetAdministrativeState() Administra
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -66,7 +66,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetAdministrativeStateOk() (*Admini
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasAdministrativeState() bool {
-	if o != nil && !IsNil(o.AdministrativeState) {
+	if o != nil && !isNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetAdministrativeState(v Administra
 
 // GetOperationalState returns the OperationalState field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetOperationalState() OperationalState {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		var ret OperationalState
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetOperationalState() OperationalSt
 // GetOperationalStateOk returns a tuple with the OperationalState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetOperationalStateOk() (*OperationalState, bool) {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		return nil, false
 	}
 	return o.OperationalState, true
@@ -98,7 +98,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetOperationalStateOk() (*Operation
 
 // HasOperationalState returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasOperationalState() bool {
-	if o != nil && !IsNil(o.OperationalState) {
+	if o != nil && !isNil(o.OperationalState) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetOperationalState(v OperationalSt
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetJobId() string {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetJobIdOk() (*string, bool) {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -130,7 +130,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
+	if o != nil && !isNil(o.JobId) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetJobId(v string) {
 
 // GetPerformanceMetrics returns the PerformanceMetrics field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetPerformanceMetrics() []string {
-	if o == nil || IsNil(o.PerformanceMetrics) {
+	if o == nil || isNil(o.PerformanceMetrics) {
 		var ret []string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetPerformanceMetrics() []string {
 // GetPerformanceMetricsOk returns a tuple with the PerformanceMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetPerformanceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.PerformanceMetrics) {
+	if o == nil || isNil(o.PerformanceMetrics) {
 		return nil, false
 	}
 	return o.PerformanceMetrics, true
@@ -162,7 +162,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetPerformanceMetricsOk() ([]string
 
 // HasPerformanceMetrics returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasPerformanceMetrics() bool {
-	if o != nil && !IsNil(o.PerformanceMetrics) {
+	if o != nil && !isNil(o.PerformanceMetrics) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetPerformanceMetrics(v []string) {
 
 // GetGranularityPeriod returns the GranularityPeriod field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetGranularityPeriod() int32 {
-	if o == nil || IsNil(o.GranularityPeriod) {
+	if o == nil || isNil(o.GranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetGranularityPeriod() int32 {
 // GetGranularityPeriodOk returns a tuple with the GranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetGranularityPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.GranularityPeriod) {
+	if o == nil || isNil(o.GranularityPeriod) {
 		return nil, false
 	}
 	return o.GranularityPeriod, true
@@ -194,7 +194,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetGranularityPeriodOk() (*int32, b
 
 // HasGranularityPeriod returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasGranularityPeriod() bool {
-	if o != nil && !IsNil(o.GranularityPeriod) {
+	if o != nil && !isNil(o.GranularityPeriod) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetGranularityPeriod(v int32) {
 
 // GetObjectInstances returns the ObjectInstances field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetObjectInstances() []string {
-	if o == nil || IsNil(o.ObjectInstances) {
+	if o == nil || isNil(o.ObjectInstances) {
 		var ret []string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetObjectInstances() []string {
 // GetObjectInstancesOk returns a tuple with the ObjectInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetObjectInstancesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ObjectInstances) {
+	if o == nil || isNil(o.ObjectInstances) {
 		return nil, false
 	}
 	return o.ObjectInstances, true
@@ -226,7 +226,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetObjectInstancesOk() ([]string, b
 
 // HasObjectInstances returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasObjectInstances() bool {
-	if o != nil && !IsNil(o.ObjectInstances) {
+	if o != nil && !isNil(o.ObjectInstances) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetObjectInstances(v []string) {
 
 // GetRootObjectInstances returns the RootObjectInstances field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetRootObjectInstances() []string {
-	if o == nil || IsNil(o.RootObjectInstances) {
+	if o == nil || isNil(o.RootObjectInstances) {
 		var ret []string
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetRootObjectInstances() []string {
 // GetRootObjectInstancesOk returns a tuple with the RootObjectInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetRootObjectInstancesOk() ([]string, bool) {
-	if o == nil || IsNil(o.RootObjectInstances) {
+	if o == nil || isNil(o.RootObjectInstances) {
 		return nil, false
 	}
 	return o.RootObjectInstances, true
@@ -258,7 +258,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetRootObjectInstancesOk() ([]strin
 
 // HasRootObjectInstances returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasRootObjectInstances() bool {
-	if o != nil && !IsNil(o.RootObjectInstances) {
+	if o != nil && !isNil(o.RootObjectInstances) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) SetRootObjectInstances(v []string) 
 
 // GetReportingCtrl returns the ReportingCtrl field value if set, zero value otherwise.
 func (o *PerfMetricJobSingleAllOfAttributes) GetReportingCtrl() ReportingCtrl {
-	if o == nil || IsNil(o.ReportingCtrl) {
+	if o == nil || isNil(o.ReportingCtrl) {
 		var ret ReportingCtrl
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetReportingCtrl() ReportingCtrl {
 // GetReportingCtrlOk returns a tuple with the ReportingCtrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) GetReportingCtrlOk() (*ReportingCtrl, bool) {
-	if o == nil || IsNil(o.ReportingCtrl) {
+	if o == nil || isNil(o.ReportingCtrl) {
 		return nil, false
 	}
 	return o.ReportingCtrl, true
@@ -290,7 +290,7 @@ func (o *PerfMetricJobSingleAllOfAttributes) GetReportingCtrlOk() (*ReportingCtr
 
 // HasReportingCtrl returns a boolean if a field has been set.
 func (o *PerfMetricJobSingleAllOfAttributes) HasReportingCtrl() bool {
-	if o != nil && !IsNil(o.ReportingCtrl) {
+	if o != nil && !isNil(o.ReportingCtrl) {
 		return true
 	}
 
@@ -312,28 +312,28 @@ func (o PerfMetricJobSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o PerfMetricJobSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AdministrativeState) {
+	if !isNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
-	if !IsNil(o.OperationalState) {
+	if !isNil(o.OperationalState) {
 		toSerialize["operationalState"] = o.OperationalState
 	}
-	if !IsNil(o.JobId) {
+	if !isNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
-	if !IsNil(o.PerformanceMetrics) {
+	if !isNil(o.PerformanceMetrics) {
 		toSerialize["performanceMetrics"] = o.PerformanceMetrics
 	}
-	if !IsNil(o.GranularityPeriod) {
+	if !isNil(o.GranularityPeriod) {
 		toSerialize["granularityPeriod"] = o.GranularityPeriod
 	}
-	if !IsNil(o.ObjectInstances) {
+	if !isNil(o.ObjectInstances) {
 		toSerialize["objectInstances"] = o.ObjectInstances
 	}
-	if !IsNil(o.RootObjectInstances) {
+	if !isNil(o.RootObjectInstances) {
 		toSerialize["rootObjectInstances"] = o.RootObjectInstances
 	}
-	if !IsNil(o.ReportingCtrl) {
+	if !isNil(o.ReportingCtrl) {
 		toSerialize["reportingCtrl"] = o.ReportingCtrl
 	}
 	return toSerialize, nil

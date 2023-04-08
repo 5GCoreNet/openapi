@@ -69,7 +69,7 @@ func NewAmInfluDataWithDefaults() *AmInfluData {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *AmInfluData) GetAppIds() []string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AmInfluData) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -87,7 +87,7 @@ func (o *AmInfluData) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AmInfluData) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AmInfluData) SetAppIds(v []string) {
 
 // GetDnnSnssaiInfos returns the DnnSnssaiInfos field value if set, zero value otherwise.
 func (o *AmInfluData) GetDnnSnssaiInfos() []DnnSnssaiInformation {
-	if o == nil || IsNil(o.DnnSnssaiInfos) {
+	if o == nil || isNil(o.DnnSnssaiInfos) {
 		var ret []DnnSnssaiInformation
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AmInfluData) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // GetDnnSnssaiInfosOk returns a tuple with the DnnSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || IsNil(o.DnnSnssaiInfos) {
+	if o == nil || isNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -119,7 +119,7 @@ func (o *AmInfluData) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *AmInfluData) HasDnnSnssaiInfos() bool {
-	if o != nil && !IsNil(o.DnnSnssaiInfos) {
+	if o != nil && !isNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *AmInfluData) SetDnnSnssaiInfos(v []DnnSnssaiInformation) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *AmInfluData) GetInterGroupId() string {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *AmInfluData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -151,7 +151,7 @@ func (o *AmInfluData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *AmInfluData) HasInterGroupId() bool {
-	if o != nil && !IsNil(o.InterGroupId) {
+	if o != nil && !isNil(o.InterGroupId) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *AmInfluData) SetInterGroupId(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AmInfluData) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *AmInfluData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -183,7 +183,7 @@ func (o *AmInfluData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AmInfluData) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *AmInfluData) SetSupi(v string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *AmInfluData) GetAnyUeInd() bool {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *AmInfluData) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -215,7 +215,7 @@ func (o *AmInfluData) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *AmInfluData) HasAnyUeInd() bool {
-	if o != nil && !IsNil(o.AnyUeInd) {
+	if o != nil && !isNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *AmInfluData) SetAnyUeInd(v bool) {
 
 // GetPolicyDuration returns the PolicyDuration field value if set, zero value otherwise.
 func (o *AmInfluData) GetPolicyDuration() int32 {
-	if o == nil || IsNil(o.PolicyDuration) {
+	if o == nil || isNil(o.PolicyDuration) {
 		var ret int32
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *AmInfluData) GetPolicyDuration() int32 {
 // GetPolicyDurationOk returns a tuple with the PolicyDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetPolicyDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.PolicyDuration) {
+	if o == nil || isNil(o.PolicyDuration) {
 		return nil, false
 	}
 	return o.PolicyDuration, true
@@ -247,7 +247,7 @@ func (o *AmInfluData) GetPolicyDurationOk() (*int32, bool) {
 
 // HasPolicyDuration returns a boolean if a field has been set.
 func (o *AmInfluData) HasPolicyDuration() bool {
-	if o != nil && !IsNil(o.PolicyDuration) {
+	if o != nil && !isNil(o.PolicyDuration) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *AmInfluData) SetPolicyDuration(v int32) {
 
 // GetEvSubs returns the EvSubs field value if set, zero value otherwise.
 func (o *AmInfluData) GetEvSubs() []AmInfluEvent {
-	if o == nil || IsNil(o.EvSubs) {
+	if o == nil || isNil(o.EvSubs) {
 		var ret []AmInfluEvent
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *AmInfluData) GetEvSubs() []AmInfluEvent {
 // GetEvSubsOk returns a tuple with the EvSubs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetEvSubsOk() ([]AmInfluEvent, bool) {
-	if o == nil || IsNil(o.EvSubs) {
+	if o == nil || isNil(o.EvSubs) {
 		return nil, false
 	}
 	return o.EvSubs, true
@@ -279,7 +279,7 @@ func (o *AmInfluData) GetEvSubsOk() ([]AmInfluEvent, bool) {
 
 // HasEvSubs returns a boolean if a field has been set.
 func (o *AmInfluData) HasEvSubs() bool {
-	if o != nil && !IsNil(o.EvSubs) {
+	if o != nil && !isNil(o.EvSubs) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *AmInfluData) SetEvSubs(v []AmInfluEvent) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *AmInfluData) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *AmInfluData) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -311,7 +311,7 @@ func (o *AmInfluData) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *AmInfluData) HasNotifUri() bool {
-	if o != nil && !IsNil(o.NotifUri) {
+	if o != nil && !isNil(o.NotifUri) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *AmInfluData) SetNotifUri(v string) {
 
 // GetNotifCorrId returns the NotifCorrId field value if set, zero value otherwise.
 func (o *AmInfluData) GetNotifCorrId() string {
-	if o == nil || IsNil(o.NotifCorrId) {
+	if o == nil || isNil(o.NotifCorrId) {
 		var ret string
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *AmInfluData) GetNotifCorrId() string {
 // GetNotifCorrIdOk returns a tuple with the NotifCorrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetNotifCorrIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifCorrId) {
+	if o == nil || isNil(o.NotifCorrId) {
 		return nil, false
 	}
 	return o.NotifCorrId, true
@@ -343,7 +343,7 @@ func (o *AmInfluData) GetNotifCorrIdOk() (*string, bool) {
 
 // HasNotifCorrId returns a boolean if a field has been set.
 func (o *AmInfluData) HasNotifCorrId() bool {
-	if o != nil && !IsNil(o.NotifCorrId) {
+	if o != nil && !isNil(o.NotifCorrId) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *AmInfluData) SetNotifCorrId(v string) {
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
 func (o *AmInfluData) GetHeaders() []string {
-	if o == nil || IsNil(o.Headers) {
+	if o == nil || isNil(o.Headers) {
 		var ret []string
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *AmInfluData) GetHeaders() []string {
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetHeadersOk() ([]string, bool) {
-	if o == nil || IsNil(o.Headers) {
+	if o == nil || isNil(o.Headers) {
 		return nil, false
 	}
 	return o.Headers, true
@@ -375,7 +375,7 @@ func (o *AmInfluData) GetHeadersOk() ([]string, bool) {
 
 // HasHeaders returns a boolean if a field has been set.
 func (o *AmInfluData) HasHeaders() bool {
-	if o != nil && !IsNil(o.Headers) {
+	if o != nil && !isNil(o.Headers) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *AmInfluData) SetHeaders(v []string) {
 
 // GetThruReq returns the ThruReq field value if set, zero value otherwise.
 func (o *AmInfluData) GetThruReq() bool {
-	if o == nil || IsNil(o.ThruReq) {
+	if o == nil || isNil(o.ThruReq) {
 		var ret bool
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *AmInfluData) GetThruReq() bool {
 // GetThruReqOk returns a tuple with the ThruReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetThruReqOk() (*bool, bool) {
-	if o == nil || IsNil(o.ThruReq) {
+	if o == nil || isNil(o.ThruReq) {
 		return nil, false
 	}
 	return o.ThruReq, true
@@ -407,7 +407,7 @@ func (o *AmInfluData) GetThruReqOk() (*bool, bool) {
 
 // HasThruReq returns a boolean if a field has been set.
 func (o *AmInfluData) HasThruReq() bool {
-	if o != nil && !IsNil(o.ThruReq) {
+	if o != nil && !isNil(o.ThruReq) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *AmInfluData) SetThruReq(v bool) {
 
 // GetCovReq returns the CovReq field value if set, zero value otherwise.
 func (o *AmInfluData) GetCovReq() []ServiceAreaCoverageInfo {
-	if o == nil || IsNil(o.CovReq) {
+	if o == nil || isNil(o.CovReq) {
 		var ret []ServiceAreaCoverageInfo
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *AmInfluData) GetCovReq() []ServiceAreaCoverageInfo {
 // GetCovReqOk returns a tuple with the CovReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool) {
-	if o == nil || IsNil(o.CovReq) {
+	if o == nil || isNil(o.CovReq) {
 		return nil, false
 	}
 	return o.CovReq, true
@@ -439,7 +439,7 @@ func (o *AmInfluData) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool) {
 
 // HasCovReq returns a boolean if a field has been set.
 func (o *AmInfluData) HasCovReq() bool {
-	if o != nil && !IsNil(o.CovReq) {
+	if o != nil && !isNil(o.CovReq) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *AmInfluData) SetCovReq(v []ServiceAreaCoverageInfo) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmInfluData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *AmInfluData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -471,7 +471,7 @@ func (o *AmInfluData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmInfluData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *AmInfluData) SetSupportedFeatures(v string) {
 
 // GetResUri returns the ResUri field value if set, zero value otherwise.
 func (o *AmInfluData) GetResUri() string {
-	if o == nil || IsNil(o.ResUri) {
+	if o == nil || isNil(o.ResUri) {
 		var ret string
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *AmInfluData) GetResUri() string {
 // GetResUriOk returns a tuple with the ResUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetResUriOk() (*string, bool) {
-	if o == nil || IsNil(o.ResUri) {
+	if o == nil || isNil(o.ResUri) {
 		return nil, false
 	}
 	return o.ResUri, true
@@ -503,7 +503,7 @@ func (o *AmInfluData) GetResUriOk() (*string, bool) {
 
 // HasResUri returns a boolean if a field has been set.
 func (o *AmInfluData) HasResUri() bool {
-	if o != nil && !IsNil(o.ResUri) {
+	if o != nil && !isNil(o.ResUri) {
 		return true
 	}
 
@@ -517,7 +517,7 @@ func (o *AmInfluData) SetResUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *AmInfluData) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *AmInfluData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmInfluData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -535,7 +535,7 @@ func (o *AmInfluData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *AmInfluData) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -557,49 +557,49 @@ func (o AmInfluData) MarshalJSON() ([]byte, error) {
 
 func (o AmInfluData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !IsNil(o.DnnSnssaiInfos) {
+	if !isNil(o.DnnSnssaiInfos) {
 		toSerialize["dnnSnssaiInfos"] = o.DnnSnssaiInfos
 	}
-	if !IsNil(o.InterGroupId) {
+	if !isNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.AnyUeInd) {
+	if !isNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !IsNil(o.PolicyDuration) {
+	if !isNil(o.PolicyDuration) {
 		toSerialize["policyDuration"] = o.PolicyDuration
 	}
-	if !IsNil(o.EvSubs) {
+	if !isNil(o.EvSubs) {
 		toSerialize["evSubs"] = o.EvSubs
 	}
-	if !IsNil(o.NotifUri) {
+	if !isNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !IsNil(o.NotifCorrId) {
+	if !isNil(o.NotifCorrId) {
 		toSerialize["notifCorrId"] = o.NotifCorrId
 	}
-	if !IsNil(o.Headers) {
+	if !isNil(o.Headers) {
 		toSerialize["headers"] = o.Headers
 	}
-	if !IsNil(o.ThruReq) {
+	if !isNil(o.ThruReq) {
 		toSerialize["thruReq"] = o.ThruReq
 	}
-	if !IsNil(o.CovReq) {
+	if !isNil(o.CovReq) {
 		toSerialize["covReq"] = o.CovReq
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ResUri) {
+	if !isNil(o.ResUri) {
 		toSerialize["resUri"] = o.ResUri
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

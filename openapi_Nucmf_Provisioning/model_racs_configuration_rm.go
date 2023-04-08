@@ -46,7 +46,7 @@ func NewRacsConfigurationRmWithDefaults() *RacsConfigurationRm {
 
 // GetRacsParamEps returns the RacsParamEps field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RacsConfigurationRm) GetRacsParamEps() string {
-	if o == nil || IsNil(o.RacsParamEps.Get()) {
+	if o == nil || isNil(o.RacsParamEps.Get()) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *RacsConfigurationRm) UnsetRacsParamEps() {
 
 // GetRacsParam5Gs returns the RacsParam5Gs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RacsConfigurationRm) GetRacsParam5Gs() string {
-	if o == nil || IsNil(o.RacsParam5Gs.Get()) {
+	if o == nil || isNil(o.RacsParam5Gs.Get()) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *RacsConfigurationRm) UnsetRacsParam5Gs() {
 
 // GetImeiTacs returns the ImeiTacs field value if set, zero value otherwise.
 func (o *RacsConfigurationRm) GetImeiTacs() []string {
-	if o == nil || IsNil(o.ImeiTacs) {
+	if o == nil || isNil(o.ImeiTacs) {
 		var ret []string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *RacsConfigurationRm) GetImeiTacs() []string {
 // GetImeiTacsOk returns a tuple with the ImeiTacs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsConfigurationRm) GetImeiTacsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ImeiTacs) {
+	if o == nil || isNil(o.ImeiTacs) {
 		return nil, false
 	}
 	return o.ImeiTacs, true
@@ -148,7 +148,7 @@ func (o *RacsConfigurationRm) GetImeiTacsOk() ([]string, bool) {
 
 // HasImeiTacs returns a boolean if a field has been set.
 func (o *RacsConfigurationRm) HasImeiTacs() bool {
-	if o != nil && !IsNil(o.ImeiTacs) {
+	if o != nil && !isNil(o.ImeiTacs) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o RacsConfigurationRm) ToMap() (map[string]interface{}, error) {
 	if o.RacsParam5Gs.IsSet() {
 		toSerialize["racsParam5Gs"] = o.RacsParam5Gs.Get()
 	}
-	if !IsNil(o.ImeiTacs) {
+	if !isNil(o.ImeiTacs) {
 		toSerialize["imeiTacs"] = o.ImeiTacs
 	}
 	return toSerialize, nil

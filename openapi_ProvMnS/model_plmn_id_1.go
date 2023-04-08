@@ -42,7 +42,7 @@ func NewPlmnId1WithDefaults() *PlmnId1 {
 
 // GetMcc returns the Mcc field value if set, zero value otherwise.
 func (o *PlmnId1) GetMcc() string {
-	if o == nil || IsNil(o.Mcc) {
+	if o == nil || isNil(o.Mcc) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PlmnId1) GetMcc() string {
 // GetMccOk returns a tuple with the Mcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnId1) GetMccOk() (*string, bool) {
-	if o == nil || IsNil(o.Mcc) {
+	if o == nil || isNil(o.Mcc) {
 		return nil, false
 	}
 	return o.Mcc, true
@@ -60,7 +60,7 @@ func (o *PlmnId1) GetMccOk() (*string, bool) {
 
 // HasMcc returns a boolean if a field has been set.
 func (o *PlmnId1) HasMcc() bool {
-	if o != nil && !IsNil(o.Mcc) {
+	if o != nil && !isNil(o.Mcc) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PlmnId1) SetMcc(v string) {
 
 // GetMnc returns the Mnc field value if set, zero value otherwise.
 func (o *PlmnId1) GetMnc() string {
-	if o == nil || IsNil(o.Mnc) {
+	if o == nil || isNil(o.Mnc) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PlmnId1) GetMnc() string {
 // GetMncOk returns a tuple with the Mnc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnId1) GetMncOk() (*string, bool) {
-	if o == nil || IsNil(o.Mnc) {
+	if o == nil || isNil(o.Mnc) {
 		return nil, false
 	}
 	return o.Mnc, true
@@ -92,7 +92,7 @@ func (o *PlmnId1) GetMncOk() (*string, bool) {
 
 // HasMnc returns a boolean if a field has been set.
 func (o *PlmnId1) HasMnc() bool {
-	if o != nil && !IsNil(o.Mnc) {
+	if o != nil && !isNil(o.Mnc) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PlmnId1) MarshalJSON() ([]byte, error) {
 
 func (o PlmnId1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Mcc) {
+	if !isNil(o.Mcc) {
 		toSerialize["mcc"] = o.Mcc
 	}
-	if !IsNil(o.Mnc) {
+	if !isNil(o.Mnc) {
 		toSerialize["mnc"] = o.Mnc
 	}
 	return toSerialize, nil

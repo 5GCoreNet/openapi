@@ -80,7 +80,7 @@ func (o *ProSeEapSession) SetEapPayload(v string) {
 
 // GetKnrProSe returns the KnrProSe field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetKnrProSe() string {
-	if o == nil || IsNil(o.KnrProSe) {
+	if o == nil || isNil(o.KnrProSe) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ProSeEapSession) GetKnrProSe() string {
 // GetKnrProSeOk returns a tuple with the KnrProSe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetKnrProSeOk() (*string, bool) {
-	if o == nil || IsNil(o.KnrProSe) {
+	if o == nil || isNil(o.KnrProSe) {
 		return nil, false
 	}
 	return o.KnrProSe, true
@@ -98,7 +98,7 @@ func (o *ProSeEapSession) GetKnrProSeOk() (*string, bool) {
 
 // HasKnrProSe returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasKnrProSe() bool {
-	if o != nil && !IsNil(o.KnrProSe) {
+	if o != nil && !isNil(o.KnrProSe) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ProSeEapSession) SetKnrProSe(v string) {
 
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetLinks() map[string]LinksValueSchema {
-	if o == nil || IsNil(o.Links) {
+	if o == nil || isNil(o.Links) {
 		var ret map[string]LinksValueSchema
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ProSeEapSession) GetLinks() map[string]LinksValueSchema {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetLinksOk() (*map[string]LinksValueSchema, bool) {
-	if o == nil || IsNil(o.Links) {
+	if o == nil || isNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -130,7 +130,7 @@ func (o *ProSeEapSession) GetLinksOk() (*map[string]LinksValueSchema, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && !isNil(o.Links) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ProSeEapSession) SetLinks(v map[string]LinksValueSchema) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetAuthResult() AuthResult {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		var ret AuthResult
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ProSeEapSession) GetAuthResult() AuthResult {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetAuthResultOk() (*AuthResult, bool) {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -162,7 +162,7 @@ func (o *ProSeEapSession) GetAuthResultOk() (*AuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasAuthResult() bool {
-	if o != nil && !IsNil(o.AuthResult) {
+	if o != nil && !isNil(o.AuthResult) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ProSeEapSession) SetAuthResult(v AuthResult) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ProSeEapSession) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -194,7 +194,7 @@ func (o *ProSeEapSession) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ProSeEapSession) SetSupportedFeatures(v string) {
 
 // GetNonce2 returns the Nonce2 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProSeEapSession) GetNonce2() string {
-	if o == nil || IsNil(o.Nonce2.Get()) {
+	if o == nil || isNil(o.Nonce2.Get()) {
 		var ret string
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *ProSeEapSession) UnsetNonce2() {
 
 // GetVar5gPrukId returns the Var5gPrukId field value if set, zero value otherwise.
 func (o *ProSeEapSession) GetVar5gPrukId() string {
-	if o == nil || IsNil(o.Var5gPrukId) {
+	if o == nil || isNil(o.Var5gPrukId) {
 		var ret string
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *ProSeEapSession) GetVar5gPrukId() string {
 // GetVar5gPrukIdOk returns a tuple with the Var5gPrukId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeEapSession) GetVar5gPrukIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Var5gPrukId) {
+	if o == nil || isNil(o.Var5gPrukId) {
 		return nil, false
 	}
 	return o.Var5gPrukId, true
@@ -268,7 +268,7 @@ func (o *ProSeEapSession) GetVar5gPrukIdOk() (*string, bool) {
 
 // HasVar5gPrukId returns a boolean if a field has been set.
 func (o *ProSeEapSession) HasVar5gPrukId() bool {
-	if o != nil && !IsNil(o.Var5gPrukId) {
+	if o != nil && !isNil(o.Var5gPrukId) {
 		return true
 	}
 
@@ -291,22 +291,22 @@ func (o ProSeEapSession) MarshalJSON() ([]byte, error) {
 func (o ProSeEapSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eapPayload"] = o.EapPayload.Get()
-	if !IsNil(o.KnrProSe) {
+	if !isNil(o.KnrProSe) {
 		toSerialize["knrProSe"] = o.KnrProSe
 	}
-	if !IsNil(o.Links) {
+	if !isNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
-	if !IsNil(o.AuthResult) {
+	if !isNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	if o.Nonce2.IsSet() {
 		toSerialize["nonce2"] = o.Nonce2.Get()
 	}
-	if !IsNil(o.Var5gPrukId) {
+	if !isNil(o.Var5gPrukId) {
 		toSerialize["5gPrukId"] = o.Var5gPrukId
 	}
 	return toSerialize, nil

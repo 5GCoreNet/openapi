@@ -94,7 +94,7 @@ func (o *FECConfig) SetFecOverHead(v int32) {
 
 // GetAdditionalParams returns the AdditionalParams field value if set, zero value otherwise.
 func (o *FECConfig) GetAdditionalParams() []AddFecParams {
-	if o == nil || IsNil(o.AdditionalParams) {
+	if o == nil || isNil(o.AdditionalParams) {
 		var ret []AddFecParams
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *FECConfig) GetAdditionalParams() []AddFecParams {
 // GetAdditionalParamsOk returns a tuple with the AdditionalParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FECConfig) GetAdditionalParamsOk() ([]AddFecParams, bool) {
-	if o == nil || IsNil(o.AdditionalParams) {
+	if o == nil || isNil(o.AdditionalParams) {
 		return nil, false
 	}
 	return o.AdditionalParams, true
@@ -112,7 +112,7 @@ func (o *FECConfig) GetAdditionalParamsOk() ([]AddFecParams, bool) {
 
 // HasAdditionalParams returns a boolean if a field has been set.
 func (o *FECConfig) HasAdditionalParams() bool {
-	if o != nil && !IsNil(o.AdditionalParams) {
+	if o != nil && !isNil(o.AdditionalParams) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o FECConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["fecScheme"] = o.FecScheme
 	toSerialize["fecOverHead"] = o.FecOverHead
-	if !IsNil(o.AdditionalParams) {
+	if !isNil(o.AdditionalParams) {
 		toSerialize["additionalParams"] = o.AdditionalParams
 	}
 	return toSerialize, nil

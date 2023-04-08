@@ -17,23 +17,37 @@ import (
 
 // OutputStrategy Possible values are: - BINARY: Indicates that the analytics shall only be reported when the requested level of accuracy is reached within a cycle of periodic notification. - GRADIENT: Indicates that the analytics shall be reported according with the periodicity irrespective of whether the requested level of accuracy has been reached or not. 
 type OutputStrategy struct {
-	string *string
+	OutputStrategyAnyOf *OutputStrategyAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *OutputStrategy) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into OutputStrategyAnyOf
+	err = json.Unmarshal(data, &dst.OutputStrategyAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonOutputStrategyAnyOf, _ := json.Marshal(dst.OutputStrategyAnyOf)
+		if string(jsonOutputStrategyAnyOf) == "{}" { // empty struct
+			dst.OutputStrategyAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.OutputStrategyAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.OutputStrategyAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(OutputStrategy)")
@@ -41,8 +55,12 @@ func (dst *OutputStrategy) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *OutputStrategy) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.OutputStrategyAnyOf != nil {
+		return json.Marshal(&src.OutputStrategyAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

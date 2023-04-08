@@ -47,7 +47,7 @@ func NewThresholdMonitorSingleAllOfAttributesWithDefaults() *ThresholdMonitorSin
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetAdministrativeState() AdministrativeState {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetAdministrativeState() Adminis
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -65,7 +65,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetAdministrativeStateOk() (*Adm
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasAdministrativeState() bool {
-	if o != nil && !IsNil(o.AdministrativeState) {
+	if o != nil && !isNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) SetAdministrativeState(v Adminis
 
 // GetOperationalState returns the OperationalState field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetOperationalState() OperationalState {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		var ret OperationalState
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetOperationalState() Operationa
 // GetOperationalStateOk returns a tuple with the OperationalState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetOperationalStateOk() (*OperationalState, bool) {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		return nil, false
 	}
 	return o.OperationalState, true
@@ -97,7 +97,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetOperationalStateOk() (*Operat
 
 // HasOperationalState returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasOperationalState() bool {
-	if o != nil && !IsNil(o.OperationalState) {
+	if o != nil && !isNil(o.OperationalState) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) SetOperationalState(v Operationa
 
 // GetPerformanceMetrics returns the PerformanceMetrics field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetPerformanceMetrics() []string {
-	if o == nil || IsNil(o.PerformanceMetrics) {
+	if o == nil || isNil(o.PerformanceMetrics) {
 		var ret []string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetPerformanceMetrics() []string
 // GetPerformanceMetricsOk returns a tuple with the PerformanceMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetPerformanceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.PerformanceMetrics) {
+	if o == nil || isNil(o.PerformanceMetrics) {
 		return nil, false
 	}
 	return o.PerformanceMetrics, true
@@ -129,7 +129,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetPerformanceMetricsOk() ([]str
 
 // HasPerformanceMetrics returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasPerformanceMetrics() bool {
-	if o != nil && !IsNil(o.PerformanceMetrics) {
+	if o != nil && !isNil(o.PerformanceMetrics) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) SetPerformanceMetrics(v []string
 
 // GetThresholdInfoList returns the ThresholdInfoList field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetThresholdInfoList() []ThresholdInfo1 {
-	if o == nil || IsNil(o.ThresholdInfoList) {
+	if o == nil || isNil(o.ThresholdInfoList) {
 		var ret []ThresholdInfo1
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetThresholdInfoList() []Thresho
 // GetThresholdInfoListOk returns a tuple with the ThresholdInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetThresholdInfoListOk() ([]ThresholdInfo1, bool) {
-	if o == nil || IsNil(o.ThresholdInfoList) {
+	if o == nil || isNil(o.ThresholdInfoList) {
 		return nil, false
 	}
 	return o.ThresholdInfoList, true
@@ -161,7 +161,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetThresholdInfoListOk() ([]Thre
 
 // HasThresholdInfoList returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasThresholdInfoList() bool {
-	if o != nil && !IsNil(o.ThresholdInfoList) {
+	if o != nil && !isNil(o.ThresholdInfoList) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) SetThresholdInfoList(v []Thresho
 
 // GetMonitorGranularityPeriod returns the MonitorGranularityPeriod field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetMonitorGranularityPeriod() int32 {
-	if o == nil || IsNil(o.MonitorGranularityPeriod) {
+	if o == nil || isNil(o.MonitorGranularityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetMonitorGranularityPeriod() in
 // GetMonitorGranularityPeriodOk returns a tuple with the MonitorGranularityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetMonitorGranularityPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.MonitorGranularityPeriod) {
+	if o == nil || isNil(o.MonitorGranularityPeriod) {
 		return nil, false
 	}
 	return o.MonitorGranularityPeriod, true
@@ -193,7 +193,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetMonitorGranularityPeriodOk() 
 
 // HasMonitorGranularityPeriod returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasMonitorGranularityPeriod() bool {
-	if o != nil && !IsNil(o.MonitorGranularityPeriod) {
+	if o != nil && !isNil(o.MonitorGranularityPeriod) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) SetMonitorGranularityPeriod(v in
 
 // GetObjectInstances returns the ObjectInstances field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetObjectInstances() []string {
-	if o == nil || IsNil(o.ObjectInstances) {
+	if o == nil || isNil(o.ObjectInstances) {
 		var ret []string
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetObjectInstances() []string {
 // GetObjectInstancesOk returns a tuple with the ObjectInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetObjectInstancesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ObjectInstances) {
+	if o == nil || isNil(o.ObjectInstances) {
 		return nil, false
 	}
 	return o.ObjectInstances, true
@@ -225,7 +225,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetObjectInstancesOk() ([]string
 
 // HasObjectInstances returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasObjectInstances() bool {
-	if o != nil && !IsNil(o.ObjectInstances) {
+	if o != nil && !isNil(o.ObjectInstances) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) SetObjectInstances(v []string) {
 
 // GetRootObjectInstances returns the RootObjectInstances field value if set, zero value otherwise.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetRootObjectInstances() []string {
-	if o == nil || IsNil(o.RootObjectInstances) {
+	if o == nil || isNil(o.RootObjectInstances) {
 		var ret []string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetRootObjectInstances() []strin
 // GetRootObjectInstancesOk returns a tuple with the RootObjectInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) GetRootObjectInstancesOk() ([]string, bool) {
-	if o == nil || IsNil(o.RootObjectInstances) {
+	if o == nil || isNil(o.RootObjectInstances) {
 		return nil, false
 	}
 	return o.RootObjectInstances, true
@@ -257,7 +257,7 @@ func (o *ThresholdMonitorSingleAllOfAttributes) GetRootObjectInstancesOk() ([]st
 
 // HasRootObjectInstances returns a boolean if a field has been set.
 func (o *ThresholdMonitorSingleAllOfAttributes) HasRootObjectInstances() bool {
-	if o != nil && !IsNil(o.RootObjectInstances) {
+	if o != nil && !isNil(o.RootObjectInstances) {
 		return true
 	}
 
@@ -279,25 +279,25 @@ func (o ThresholdMonitorSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o ThresholdMonitorSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AdministrativeState) {
+	if !isNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
-	if !IsNil(o.OperationalState) {
+	if !isNil(o.OperationalState) {
 		toSerialize["operationalState"] = o.OperationalState
 	}
-	if !IsNil(o.PerformanceMetrics) {
+	if !isNil(o.PerformanceMetrics) {
 		toSerialize["performanceMetrics"] = o.PerformanceMetrics
 	}
-	if !IsNil(o.ThresholdInfoList) {
+	if !isNil(o.ThresholdInfoList) {
 		toSerialize["thresholdInfoList"] = o.ThresholdInfoList
 	}
-	if !IsNil(o.MonitorGranularityPeriod) {
+	if !isNil(o.MonitorGranularityPeriod) {
 		toSerialize["monitorGranularityPeriod"] = o.MonitorGranularityPeriod
 	}
-	if !IsNil(o.ObjectInstances) {
+	if !isNil(o.ObjectInstances) {
 		toSerialize["objectInstances"] = o.ObjectInstances
 	}
-	if !IsNil(o.RootObjectInstances) {
+	if !isNil(o.RootObjectInstances) {
 		toSerialize["rootObjectInstances"] = o.RootObjectInstances
 	}
 	return toSerialize, nil

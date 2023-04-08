@@ -68,7 +68,7 @@ func (o *ContextStatusSubscribeRspData) SetSubscription(v ContextStatusSubscript
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *ContextStatusSubscribeRspData) GetReportList() []ContextStatusEventReport {
-	if o == nil || IsNil(o.ReportList) {
+	if o == nil || isNil(o.ReportList) {
 		var ret []ContextStatusEventReport
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ContextStatusSubscribeRspData) GetReportList() []ContextStatusEventRepo
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusSubscribeRspData) GetReportListOk() ([]ContextStatusEventReport, bool) {
-	if o == nil || IsNil(o.ReportList) {
+	if o == nil || isNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -86,7 +86,7 @@ func (o *ContextStatusSubscribeRspData) GetReportListOk() ([]ContextStatusEventR
 
 // HasReportList returns a boolean if a field has been set.
 func (o *ContextStatusSubscribeRspData) HasReportList() bool {
-	if o != nil && !IsNil(o.ReportList) {
+	if o != nil && !isNil(o.ReportList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ContextStatusSubscribeRspData) SetReportList(v []ContextStatusEventRepo
 
 // GetMbsContextInfo returns the MbsContextInfo field value if set, zero value otherwise.
 func (o *ContextStatusSubscribeRspData) GetMbsContextInfo() MbsContextInfo {
-	if o == nil || IsNil(o.MbsContextInfo) {
+	if o == nil || isNil(o.MbsContextInfo) {
 		var ret MbsContextInfo
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ContextStatusSubscribeRspData) GetMbsContextInfo() MbsContextInfo {
 // GetMbsContextInfoOk returns a tuple with the MbsContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusSubscribeRspData) GetMbsContextInfoOk() (*MbsContextInfo, bool) {
-	if o == nil || IsNil(o.MbsContextInfo) {
+	if o == nil || isNil(o.MbsContextInfo) {
 		return nil, false
 	}
 	return o.MbsContextInfo, true
@@ -118,7 +118,7 @@ func (o *ContextStatusSubscribeRspData) GetMbsContextInfoOk() (*MbsContextInfo, 
 
 // HasMbsContextInfo returns a boolean if a field has been set.
 func (o *ContextStatusSubscribeRspData) HasMbsContextInfo() bool {
-	if o != nil && !IsNil(o.MbsContextInfo) {
+	if o != nil && !isNil(o.MbsContextInfo) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o ContextStatusSubscribeRspData) MarshalJSON() ([]byte, error) {
 func (o ContextStatusSubscribeRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.ReportList) {
+	if !isNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
-	if !IsNil(o.MbsContextInfo) {
+	if !isNil(o.MbsContextInfo) {
 		toSerialize["mbsContextInfo"] = o.MbsContextInfo
 	}
 	return toSerialize, nil

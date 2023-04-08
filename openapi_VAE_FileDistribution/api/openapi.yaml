@@ -530,13 +530,7 @@ components:
       type: object
     FileStatus:
       anyOf:
-      - enum:
-        - PENDING
-        - FETCHED
-        - PREPARED
-        - TRANSMITTING
-        - SENT
-        type: string
+      - $ref: '#/components/schemas/FileStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -713,17 +707,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -1079,64 +1063,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -1248,6 +1175,15 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    FileStatus_anyOf:
+      enum:
+      - PENDING
+      - FETCHED
+      - PREPARED
+      - TRANSMITTING
+      - SENT
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -1255,6 +1191,19 @@ components:
       required:
       - point
       type: object
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -1423,6 +1372,66 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

@@ -42,7 +42,7 @@ func NewPfdDataWithDefaults() *PfdData {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *PfdData) GetAppIds() []string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PfdData) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdData) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -60,7 +60,7 @@ func (o *PfdData) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *PfdData) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PfdData) SetAppIds(v []string) {
 
 // GetAfIds returns the AfIds field value if set, zero value otherwise.
 func (o *PfdData) GetAfIds() []string {
-	if o == nil || IsNil(o.AfIds) {
+	if o == nil || isNil(o.AfIds) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PfdData) GetAfIds() []string {
 // GetAfIdsOk returns a tuple with the AfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdData) GetAfIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AfIds) {
+	if o == nil || isNil(o.AfIds) {
 		return nil, false
 	}
 	return o.AfIds, true
@@ -92,7 +92,7 @@ func (o *PfdData) GetAfIdsOk() ([]string, bool) {
 
 // HasAfIds returns a boolean if a field has been set.
 func (o *PfdData) HasAfIds() bool {
-	if o != nil && !IsNil(o.AfIds) {
+	if o != nil && !isNil(o.AfIds) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PfdData) MarshalJSON() ([]byte, error) {
 
 func (o PfdData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !IsNil(o.AfIds) {
+	if !isNil(o.AfIds) {
 		toSerialize["afIds"] = o.AfIds
 	}
 	return toSerialize, nil

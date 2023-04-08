@@ -119,7 +119,7 @@ func (o *PositioningMethodAndUsage) SetUsage(v Usage) {
 
 // GetMethodCode returns the MethodCode field value if set, zero value otherwise.
 func (o *PositioningMethodAndUsage) GetMethodCode() int32 {
-	if o == nil || IsNil(o.MethodCode) {
+	if o == nil || isNil(o.MethodCode) {
 		var ret int32
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PositioningMethodAndUsage) GetMethodCode() int32 {
 // GetMethodCodeOk returns a tuple with the MethodCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PositioningMethodAndUsage) GetMethodCodeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MethodCode) {
+	if o == nil || isNil(o.MethodCode) {
 		return nil, false
 	}
 	return o.MethodCode, true
@@ -137,7 +137,7 @@ func (o *PositioningMethodAndUsage) GetMethodCodeOk() (*int32, bool) {
 
 // HasMethodCode returns a boolean if a field has been set.
 func (o *PositioningMethodAndUsage) HasMethodCode() bool {
-	if o != nil && !IsNil(o.MethodCode) {
+	if o != nil && !isNil(o.MethodCode) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o PositioningMethodAndUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize["method"] = o.Method
 	toSerialize["mode"] = o.Mode
 	toSerialize["usage"] = o.Usage
-	if !IsNil(o.MethodCode) {
+	if !isNil(o.MethodCode) {
 		toSerialize["methodCode"] = o.MethodCode
 	}
 	return toSerialize, nil

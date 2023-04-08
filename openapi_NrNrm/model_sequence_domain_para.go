@@ -47,7 +47,7 @@ func NewSequenceDomainParaWithDefaults() *SequenceDomainPara {
 
 // GetNrofRIMRSSequenceCandidatesofRS1 returns the NrofRIMRSSequenceCandidatesofRS1 field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS1() int32 {
-	if o == nil || IsNil(o.NrofRIMRSSequenceCandidatesofRS1) {
+	if o == nil || isNil(o.NrofRIMRSSequenceCandidatesofRS1) {
 		var ret int32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS1() int32 {
 // GetNrofRIMRSSequenceCandidatesofRS1Ok returns a tuple with the NrofRIMRSSequenceCandidatesofRS1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS1Ok() (*int32, bool) {
-	if o == nil || IsNil(o.NrofRIMRSSequenceCandidatesofRS1) {
+	if o == nil || isNil(o.NrofRIMRSSequenceCandidatesofRS1) {
 		return nil, false
 	}
 	return o.NrofRIMRSSequenceCandidatesofRS1, true
@@ -65,7 +65,7 @@ func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS1Ok() (*int32, bo
 
 // HasNrofRIMRSSequenceCandidatesofRS1 returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasNrofRIMRSSequenceCandidatesofRS1() bool {
-	if o != nil && !IsNil(o.NrofRIMRSSequenceCandidatesofRS1) {
+	if o != nil && !isNil(o.NrofRIMRSSequenceCandidatesofRS1) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *SequenceDomainPara) SetNrofRIMRSSequenceCandidatesofRS1(v int32) {
 
 // GetRimRSScrambleIdListofRS1 returns the RimRSScrambleIdListofRS1 field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS1() []int32 {
-	if o == nil || IsNil(o.RimRSScrambleIdListofRS1) {
+	if o == nil || isNil(o.RimRSScrambleIdListofRS1) {
 		var ret []int32
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS1() []int32 {
 // GetRimRSScrambleIdListofRS1Ok returns a tuple with the RimRSScrambleIdListofRS1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS1Ok() ([]int32, bool) {
-	if o == nil || IsNil(o.RimRSScrambleIdListofRS1) {
+	if o == nil || isNil(o.RimRSScrambleIdListofRS1) {
 		return nil, false
 	}
 	return o.RimRSScrambleIdListofRS1, true
@@ -97,7 +97,7 @@ func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS1Ok() ([]int32, bool) {
 
 // HasRimRSScrambleIdListofRS1 returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasRimRSScrambleIdListofRS1() bool {
-	if o != nil && !IsNil(o.RimRSScrambleIdListofRS1) {
+	if o != nil && !isNil(o.RimRSScrambleIdListofRS1) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *SequenceDomainPara) SetRimRSScrambleIdListofRS1(v []int32) {
 
 // GetNrofRIMRSSequenceCandidatesofRS2 returns the NrofRIMRSSequenceCandidatesofRS2 field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS2() int32 {
-	if o == nil || IsNil(o.NrofRIMRSSequenceCandidatesofRS2) {
+	if o == nil || isNil(o.NrofRIMRSSequenceCandidatesofRS2) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS2() int32 {
 // GetNrofRIMRSSequenceCandidatesofRS2Ok returns a tuple with the NrofRIMRSSequenceCandidatesofRS2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS2Ok() (*int32, bool) {
-	if o == nil || IsNil(o.NrofRIMRSSequenceCandidatesofRS2) {
+	if o == nil || isNil(o.NrofRIMRSSequenceCandidatesofRS2) {
 		return nil, false
 	}
 	return o.NrofRIMRSSequenceCandidatesofRS2, true
@@ -129,7 +129,7 @@ func (o *SequenceDomainPara) GetNrofRIMRSSequenceCandidatesofRS2Ok() (*int32, bo
 
 // HasNrofRIMRSSequenceCandidatesofRS2 returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasNrofRIMRSSequenceCandidatesofRS2() bool {
-	if o != nil && !IsNil(o.NrofRIMRSSequenceCandidatesofRS2) {
+	if o != nil && !isNil(o.NrofRIMRSSequenceCandidatesofRS2) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *SequenceDomainPara) SetNrofRIMRSSequenceCandidatesofRS2(v int32) {
 
 // GetRimRSScrambleIdListofRS2 returns the RimRSScrambleIdListofRS2 field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS2() []int32 {
-	if o == nil || IsNil(o.RimRSScrambleIdListofRS2) {
+	if o == nil || isNil(o.RimRSScrambleIdListofRS2) {
 		var ret []int32
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS2() []int32 {
 // GetRimRSScrambleIdListofRS2Ok returns a tuple with the RimRSScrambleIdListofRS2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS2Ok() ([]int32, bool) {
-	if o == nil || IsNil(o.RimRSScrambleIdListofRS2) {
+	if o == nil || isNil(o.RimRSScrambleIdListofRS2) {
 		return nil, false
 	}
 	return o.RimRSScrambleIdListofRS2, true
@@ -161,7 +161,7 @@ func (o *SequenceDomainPara) GetRimRSScrambleIdListofRS2Ok() ([]int32, bool) {
 
 // HasRimRSScrambleIdListofRS2 returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasRimRSScrambleIdListofRS2() bool {
-	if o != nil && !IsNil(o.RimRSScrambleIdListofRS2) {
+	if o != nil && !isNil(o.RimRSScrambleIdListofRS2) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *SequenceDomainPara) SetRimRSScrambleIdListofRS2(v []int32) {
 
 // GetEnableEnoughNotEnoughIndication returns the EnableEnoughNotEnoughIndication field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetEnableEnoughNotEnoughIndication() string {
-	if o == nil || IsNil(o.EnableEnoughNotEnoughIndication) {
+	if o == nil || isNil(o.EnableEnoughNotEnoughIndication) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *SequenceDomainPara) GetEnableEnoughNotEnoughIndication() string {
 // GetEnableEnoughNotEnoughIndicationOk returns a tuple with the EnableEnoughNotEnoughIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetEnableEnoughNotEnoughIndicationOk() (*string, bool) {
-	if o == nil || IsNil(o.EnableEnoughNotEnoughIndication) {
+	if o == nil || isNil(o.EnableEnoughNotEnoughIndication) {
 		return nil, false
 	}
 	return o.EnableEnoughNotEnoughIndication, true
@@ -193,7 +193,7 @@ func (o *SequenceDomainPara) GetEnableEnoughNotEnoughIndicationOk() (*string, bo
 
 // HasEnableEnoughNotEnoughIndication returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasEnableEnoughNotEnoughIndication() bool {
-	if o != nil && !IsNil(o.EnableEnoughNotEnoughIndication) {
+	if o != nil && !isNil(o.EnableEnoughNotEnoughIndication) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *SequenceDomainPara) SetEnableEnoughNotEnoughIndication(v string) {
 
 // GetRIMRSScrambleTimerMultiplier returns the RIMRSScrambleTimerMultiplier field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetRIMRSScrambleTimerMultiplier() int32 {
-	if o == nil || IsNil(o.RIMRSScrambleTimerMultiplier) {
+	if o == nil || isNil(o.RIMRSScrambleTimerMultiplier) {
 		var ret int32
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *SequenceDomainPara) GetRIMRSScrambleTimerMultiplier() int32 {
 // GetRIMRSScrambleTimerMultiplierOk returns a tuple with the RIMRSScrambleTimerMultiplier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetRIMRSScrambleTimerMultiplierOk() (*int32, bool) {
-	if o == nil || IsNil(o.RIMRSScrambleTimerMultiplier) {
+	if o == nil || isNil(o.RIMRSScrambleTimerMultiplier) {
 		return nil, false
 	}
 	return o.RIMRSScrambleTimerMultiplier, true
@@ -225,7 +225,7 @@ func (o *SequenceDomainPara) GetRIMRSScrambleTimerMultiplierOk() (*int32, bool) 
 
 // HasRIMRSScrambleTimerMultiplier returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasRIMRSScrambleTimerMultiplier() bool {
-	if o != nil && !IsNil(o.RIMRSScrambleTimerMultiplier) {
+	if o != nil && !isNil(o.RIMRSScrambleTimerMultiplier) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *SequenceDomainPara) SetRIMRSScrambleTimerMultiplier(v int32) {
 
 // GetRIMRSScrambleTimerOffset returns the RIMRSScrambleTimerOffset field value if set, zero value otherwise.
 func (o *SequenceDomainPara) GetRIMRSScrambleTimerOffset() int32 {
-	if o == nil || IsNil(o.RIMRSScrambleTimerOffset) {
+	if o == nil || isNil(o.RIMRSScrambleTimerOffset) {
 		var ret int32
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *SequenceDomainPara) GetRIMRSScrambleTimerOffset() int32 {
 // GetRIMRSScrambleTimerOffsetOk returns a tuple with the RIMRSScrambleTimerOffset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceDomainPara) GetRIMRSScrambleTimerOffsetOk() (*int32, bool) {
-	if o == nil || IsNil(o.RIMRSScrambleTimerOffset) {
+	if o == nil || isNil(o.RIMRSScrambleTimerOffset) {
 		return nil, false
 	}
 	return o.RIMRSScrambleTimerOffset, true
@@ -257,7 +257,7 @@ func (o *SequenceDomainPara) GetRIMRSScrambleTimerOffsetOk() (*int32, bool) {
 
 // HasRIMRSScrambleTimerOffset returns a boolean if a field has been set.
 func (o *SequenceDomainPara) HasRIMRSScrambleTimerOffset() bool {
-	if o != nil && !IsNil(o.RIMRSScrambleTimerOffset) {
+	if o != nil && !isNil(o.RIMRSScrambleTimerOffset) {
 		return true
 	}
 
@@ -279,25 +279,25 @@ func (o SequenceDomainPara) MarshalJSON() ([]byte, error) {
 
 func (o SequenceDomainPara) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NrofRIMRSSequenceCandidatesofRS1) {
+	if !isNil(o.NrofRIMRSSequenceCandidatesofRS1) {
 		toSerialize["nrofRIMRSSequenceCandidatesofRS1"] = o.NrofRIMRSSequenceCandidatesofRS1
 	}
-	if !IsNil(o.RimRSScrambleIdListofRS1) {
+	if !isNil(o.RimRSScrambleIdListofRS1) {
 		toSerialize["rimRSScrambleIdListofRS1"] = o.RimRSScrambleIdListofRS1
 	}
-	if !IsNil(o.NrofRIMRSSequenceCandidatesofRS2) {
+	if !isNil(o.NrofRIMRSSequenceCandidatesofRS2) {
 		toSerialize["nrofRIMRSSequenceCandidatesofRS2"] = o.NrofRIMRSSequenceCandidatesofRS2
 	}
-	if !IsNil(o.RimRSScrambleIdListofRS2) {
+	if !isNil(o.RimRSScrambleIdListofRS2) {
 		toSerialize["rimRSScrambleIdListofRS2"] = o.RimRSScrambleIdListofRS2
 	}
-	if !IsNil(o.EnableEnoughNotEnoughIndication) {
+	if !isNil(o.EnableEnoughNotEnoughIndication) {
 		toSerialize["enableEnoughNotEnoughIndication"] = o.EnableEnoughNotEnoughIndication
 	}
-	if !IsNil(o.RIMRSScrambleTimerMultiplier) {
+	if !isNil(o.RIMRSScrambleTimerMultiplier) {
 		toSerialize["RIMRSScrambleTimerMultiplier"] = o.RIMRSScrambleTimerMultiplier
 	}
-	if !IsNil(o.RIMRSScrambleTimerOffset) {
+	if !isNil(o.RIMRSScrambleTimerOffset) {
 		toSerialize["RIMRSScrambleTimerOffset"] = o.RIMRSScrambleTimerOffset
 	}
 	return toSerialize, nil

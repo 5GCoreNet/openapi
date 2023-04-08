@@ -58,7 +58,7 @@ func NewSorInfoWithDefaults() *SorInfo {
 
 // GetSteeringContainer returns the SteeringContainer field value if set, zero value otherwise.
 func (o *SorInfo) GetSteeringContainer() SteeringContainer {
-	if o == nil || IsNil(o.SteeringContainer) {
+	if o == nil || isNil(o.SteeringContainer) {
 		var ret SteeringContainer
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *SorInfo) GetSteeringContainer() SteeringContainer {
 // GetSteeringContainerOk returns a tuple with the SteeringContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSteeringContainerOk() (*SteeringContainer, bool) {
-	if o == nil || IsNil(o.SteeringContainer) {
+	if o == nil || isNil(o.SteeringContainer) {
 		return nil, false
 	}
 	return o.SteeringContainer, true
@@ -76,7 +76,7 @@ func (o *SorInfo) GetSteeringContainerOk() (*SteeringContainer, bool) {
 
 // HasSteeringContainer returns a boolean if a field has been set.
 func (o *SorInfo) HasSteeringContainer() bool {
-	if o != nil && !IsNil(o.SteeringContainer) {
+	if o != nil && !isNil(o.SteeringContainer) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *SorInfo) SetAckInd(v bool) {
 
 // GetSorMacIausf returns the SorMacIausf field value if set, zero value otherwise.
 func (o *SorInfo) GetSorMacIausf() string {
-	if o == nil || IsNil(o.SorMacIausf) {
+	if o == nil || isNil(o.SorMacIausf) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SorInfo) GetSorMacIausf() string {
 // GetSorMacIausfOk returns a tuple with the SorMacIausf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorMacIausfOk() (*string, bool) {
-	if o == nil || IsNil(o.SorMacIausf) {
+	if o == nil || isNil(o.SorMacIausf) {
 		return nil, false
 	}
 	return o.SorMacIausf, true
@@ -132,7 +132,7 @@ func (o *SorInfo) GetSorMacIausfOk() (*string, bool) {
 
 // HasSorMacIausf returns a boolean if a field has been set.
 func (o *SorInfo) HasSorMacIausf() bool {
-	if o != nil && !IsNil(o.SorMacIausf) {
+	if o != nil && !isNil(o.SorMacIausf) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SorInfo) SetSorMacIausf(v string) {
 
 // GetCountersor returns the Countersor field value if set, zero value otherwise.
 func (o *SorInfo) GetCountersor() string {
-	if o == nil || IsNil(o.Countersor) {
+	if o == nil || isNil(o.Countersor) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SorInfo) GetCountersor() string {
 // GetCountersorOk returns a tuple with the Countersor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetCountersorOk() (*string, bool) {
-	if o == nil || IsNil(o.Countersor) {
+	if o == nil || isNil(o.Countersor) {
 		return nil, false
 	}
 	return o.Countersor, true
@@ -164,7 +164,7 @@ func (o *SorInfo) GetCountersorOk() (*string, bool) {
 
 // HasCountersor returns a boolean if a field has been set.
 func (o *SorInfo) HasCountersor() bool {
-	if o != nil && !IsNil(o.Countersor) {
+	if o != nil && !isNil(o.Countersor) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *SorInfo) SetProvisioningTime(v time.Time) {
 
 // GetSorTransparentContainer returns the SorTransparentContainer field value if set, zero value otherwise.
 func (o *SorInfo) GetSorTransparentContainer() string {
-	if o == nil || IsNil(o.SorTransparentContainer) {
+	if o == nil || isNil(o.SorTransparentContainer) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *SorInfo) GetSorTransparentContainer() string {
 // GetSorTransparentContainerOk returns a tuple with the SorTransparentContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorTransparentContainerOk() (*string, bool) {
-	if o == nil || IsNil(o.SorTransparentContainer) {
+	if o == nil || isNil(o.SorTransparentContainer) {
 		return nil, false
 	}
 	return o.SorTransparentContainer, true
@@ -220,7 +220,7 @@ func (o *SorInfo) GetSorTransparentContainerOk() (*string, bool) {
 
 // HasSorTransparentContainer returns a boolean if a field has been set.
 func (o *SorInfo) HasSorTransparentContainer() bool {
-	if o != nil && !IsNil(o.SorTransparentContainer) {
+	if o != nil && !isNil(o.SorTransparentContainer) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *SorInfo) SetSorTransparentContainer(v string) {
 
 // GetSorCmci returns the SorCmci field value if set, zero value otherwise.
 func (o *SorInfo) GetSorCmci() string {
-	if o == nil || IsNil(o.SorCmci) {
+	if o == nil || isNil(o.SorCmci) {
 		var ret string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *SorInfo) GetSorCmci() string {
 // GetSorCmciOk returns a tuple with the SorCmci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorCmciOk() (*string, bool) {
-	if o == nil || IsNil(o.SorCmci) {
+	if o == nil || isNil(o.SorCmci) {
 		return nil, false
 	}
 	return o.SorCmci, true
@@ -252,7 +252,7 @@ func (o *SorInfo) GetSorCmciOk() (*string, bool) {
 
 // HasSorCmci returns a boolean if a field has been set.
 func (o *SorInfo) HasSorCmci() bool {
-	if o != nil && !IsNil(o.SorCmci) {
+	if o != nil && !isNil(o.SorCmci) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *SorInfo) SetSorCmci(v string) {
 
 // GetStoreSorCmciInMe returns the StoreSorCmciInMe field value if set, zero value otherwise.
 func (o *SorInfo) GetStoreSorCmciInMe() bool {
-	if o == nil || IsNil(o.StoreSorCmciInMe) {
+	if o == nil || isNil(o.StoreSorCmciInMe) {
 		var ret bool
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *SorInfo) GetStoreSorCmciInMe() bool {
 // GetStoreSorCmciInMeOk returns a tuple with the StoreSorCmciInMe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetStoreSorCmciInMeOk() (*bool, bool) {
-	if o == nil || IsNil(o.StoreSorCmciInMe) {
+	if o == nil || isNil(o.StoreSorCmciInMe) {
 		return nil, false
 	}
 	return o.StoreSorCmciInMe, true
@@ -284,7 +284,7 @@ func (o *SorInfo) GetStoreSorCmciInMeOk() (*bool, bool) {
 
 // HasStoreSorCmciInMe returns a boolean if a field has been set.
 func (o *SorInfo) HasStoreSorCmciInMe() bool {
-	if o != nil && !IsNil(o.StoreSorCmciInMe) {
+	if o != nil && !isNil(o.StoreSorCmciInMe) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *SorInfo) SetStoreSorCmciInMe(v bool) {
 
 // GetUsimSupportOfSorCmci returns the UsimSupportOfSorCmci field value if set, zero value otherwise.
 func (o *SorInfo) GetUsimSupportOfSorCmci() bool {
-	if o == nil || IsNil(o.UsimSupportOfSorCmci) {
+	if o == nil || isNil(o.UsimSupportOfSorCmci) {
 		var ret bool
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *SorInfo) GetUsimSupportOfSorCmci() bool {
 // GetUsimSupportOfSorCmciOk returns a tuple with the UsimSupportOfSorCmci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetUsimSupportOfSorCmciOk() (*bool, bool) {
-	if o == nil || IsNil(o.UsimSupportOfSorCmci) {
+	if o == nil || isNil(o.UsimSupportOfSorCmci) {
 		return nil, false
 	}
 	return o.UsimSupportOfSorCmci, true
@@ -316,7 +316,7 @@ func (o *SorInfo) GetUsimSupportOfSorCmciOk() (*bool, bool) {
 
 // HasUsimSupportOfSorCmci returns a boolean if a field has been set.
 func (o *SorInfo) HasUsimSupportOfSorCmci() bool {
-	if o != nil && !IsNil(o.UsimSupportOfSorCmci) {
+	if o != nil && !isNil(o.UsimSupportOfSorCmci) {
 		return true
 	}
 
@@ -338,27 +338,27 @@ func (o SorInfo) MarshalJSON() ([]byte, error) {
 
 func (o SorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SteeringContainer) {
+	if !isNil(o.SteeringContainer) {
 		toSerialize["steeringContainer"] = o.SteeringContainer
 	}
 	toSerialize["ackInd"] = o.AckInd
-	if !IsNil(o.SorMacIausf) {
+	if !isNil(o.SorMacIausf) {
 		toSerialize["sorMacIausf"] = o.SorMacIausf
 	}
-	if !IsNil(o.Countersor) {
+	if !isNil(o.Countersor) {
 		toSerialize["countersor"] = o.Countersor
 	}
 	toSerialize["provisioningTime"] = o.ProvisioningTime
-	if !IsNil(o.SorTransparentContainer) {
+	if !isNil(o.SorTransparentContainer) {
 		toSerialize["sorTransparentContainer"] = o.SorTransparentContainer
 	}
-	if !IsNil(o.SorCmci) {
+	if !isNil(o.SorCmci) {
 		toSerialize["sorCmci"] = o.SorCmci
 	}
-	if !IsNil(o.StoreSorCmciInMe) {
+	if !isNil(o.StoreSorCmciInMe) {
 		toSerialize["storeSorCmciInMe"] = o.StoreSorCmciInMe
 	}
-	if !IsNil(o.UsimSupportOfSorCmci) {
+	if !isNil(o.UsimSupportOfSorCmci) {
 		toSerialize["usimSupportOfSorCmci"] = o.UsimSupportOfSorCmci
 	}
 	return toSerialize, nil

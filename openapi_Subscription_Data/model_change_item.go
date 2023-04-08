@@ -97,7 +97,7 @@ func (o *ChangeItem) SetPath(v string) {
 
 // GetFrom returns the From field value if set, zero value otherwise.
 func (o *ChangeItem) GetFrom() string {
-	if o == nil || IsNil(o.From) {
+	if o == nil || isNil(o.From) {
 		var ret string
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *ChangeItem) GetFrom() string {
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChangeItem) GetFromOk() (*string, bool) {
-	if o == nil || IsNil(o.From) {
+	if o == nil || isNil(o.From) {
 		return nil, false
 	}
 	return o.From, true
@@ -115,7 +115,7 @@ func (o *ChangeItem) GetFromOk() (*string, bool) {
 
 // HasFrom returns a boolean if a field has been set.
 func (o *ChangeItem) HasFrom() bool {
-	if o != nil && !IsNil(o.From) {
+	if o != nil && !isNil(o.From) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ChangeItem) GetOrigValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ChangeItem) GetOrigValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.OrigValue) {
+	if o == nil || isNil(o.OrigValue) {
 		return nil, false
 	}
 	return &o.OrigValue, true
@@ -148,7 +148,7 @@ func (o *ChangeItem) GetOrigValueOk() (*interface{}, bool) {
 
 // HasOrigValue returns a boolean if a field has been set.
 func (o *ChangeItem) HasOrigValue() bool {
-	if o != nil && IsNil(o.OrigValue) {
+	if o != nil && isNil(o.OrigValue) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ChangeItem) GetNewValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ChangeItem) GetNewValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.NewValue) {
+	if o == nil || isNil(o.NewValue) {
 		return nil, false
 	}
 	return &o.NewValue, true
@@ -181,7 +181,7 @@ func (o *ChangeItem) GetNewValueOk() (*interface{}, bool) {
 
 // HasNewValue returns a boolean if a field has been set.
 func (o *ChangeItem) HasNewValue() bool {
-	if o != nil && IsNil(o.NewValue) {
+	if o != nil && isNil(o.NewValue) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o ChangeItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
-	if !IsNil(o.From) {
+	if !isNil(o.From) {
 		toSerialize["from"] = o.From
 	}
 	if o.OrigValue != nil {

@@ -96,7 +96,7 @@ func (o *UpdpSubscriptionData) SetUpdpNotifyCallbackUri(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UpdpSubscriptionData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UpdpSubscriptionData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdpSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -114,7 +114,7 @@ func (o *UpdpSubscriptionData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UpdpSubscriptionData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *UpdpSubscriptionData) SetSupportedFeatures(v string) {
 
 // GetUpdpCallbackBinding returns the UpdpCallbackBinding field value if set, zero value otherwise.
 func (o *UpdpSubscriptionData) GetUpdpCallbackBinding() string {
-	if o == nil || IsNil(o.UpdpCallbackBinding) {
+	if o == nil || isNil(o.UpdpCallbackBinding) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *UpdpSubscriptionData) GetUpdpCallbackBinding() string {
 // GetUpdpCallbackBindingOk returns a tuple with the UpdpCallbackBinding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdpSubscriptionData) GetUpdpCallbackBindingOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdpCallbackBinding) {
+	if o == nil || isNil(o.UpdpCallbackBinding) {
 		return nil, false
 	}
 	return o.UpdpCallbackBinding, true
@@ -146,7 +146,7 @@ func (o *UpdpSubscriptionData) GetUpdpCallbackBindingOk() (*string, bool) {
 
 // HasUpdpCallbackBinding returns a boolean if a field has been set.
 func (o *UpdpSubscriptionData) HasUpdpCallbackBinding() bool {
-	if o != nil && !IsNil(o.UpdpCallbackBinding) {
+	if o != nil && !isNil(o.UpdpCallbackBinding) {
 		return true
 	}
 
@@ -170,10 +170,10 @@ func (o UpdpSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["updpNotifySubscriptionId"] = o.UpdpNotifySubscriptionId
 	toSerialize["updpNotifyCallbackUri"] = o.UpdpNotifyCallbackUri
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.UpdpCallbackBinding) {
+	if !isNil(o.UpdpCallbackBinding) {
 		toSerialize["updpCallbackBinding"] = o.UpdpCallbackBinding
 	}
 	return toSerialize, nil

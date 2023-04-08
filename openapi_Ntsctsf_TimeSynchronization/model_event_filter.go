@@ -43,7 +43,7 @@ func NewEventFilterWithDefaults() *EventFilter {
 
 // GetInstanceTypes returns the InstanceTypes field value if set, zero value otherwise.
 func (o *EventFilter) GetInstanceTypes() []InstanceType {
-	if o == nil || IsNil(o.InstanceTypes) {
+	if o == nil || isNil(o.InstanceTypes) {
 		var ret []InstanceType
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EventFilter) GetInstanceTypes() []InstanceType {
 // GetInstanceTypesOk returns a tuple with the InstanceTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetInstanceTypesOk() ([]InstanceType, bool) {
-	if o == nil || IsNil(o.InstanceTypes) {
+	if o == nil || isNil(o.InstanceTypes) {
 		return nil, false
 	}
 	return o.InstanceTypes, true
@@ -61,7 +61,7 @@ func (o *EventFilter) GetInstanceTypesOk() ([]InstanceType, bool) {
 
 // HasInstanceTypes returns a boolean if a field has been set.
 func (o *EventFilter) HasInstanceTypes() bool {
-	if o != nil && !IsNil(o.InstanceTypes) {
+	if o != nil && !isNil(o.InstanceTypes) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EventFilter) SetInstanceTypes(v []InstanceType) {
 
 // GetTransProtocols returns the TransProtocols field value if set, zero value otherwise.
 func (o *EventFilter) GetTransProtocols() []Protocol {
-	if o == nil || IsNil(o.TransProtocols) {
+	if o == nil || isNil(o.TransProtocols) {
 		var ret []Protocol
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EventFilter) GetTransProtocols() []Protocol {
 // GetTransProtocolsOk returns a tuple with the TransProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetTransProtocolsOk() ([]Protocol, bool) {
-	if o == nil || IsNil(o.TransProtocols) {
+	if o == nil || isNil(o.TransProtocols) {
 		return nil, false
 	}
 	return o.TransProtocols, true
@@ -93,7 +93,7 @@ func (o *EventFilter) GetTransProtocolsOk() ([]Protocol, bool) {
 
 // HasTransProtocols returns a boolean if a field has been set.
 func (o *EventFilter) HasTransProtocols() bool {
-	if o != nil && !IsNil(o.TransProtocols) {
+	if o != nil && !isNil(o.TransProtocols) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EventFilter) SetTransProtocols(v []Protocol) {
 
 // GetPtpProfiles returns the PtpProfiles field value if set, zero value otherwise.
 func (o *EventFilter) GetPtpProfiles() []string {
-	if o == nil || IsNil(o.PtpProfiles) {
+	if o == nil || isNil(o.PtpProfiles) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *EventFilter) GetPtpProfiles() []string {
 // GetPtpProfilesOk returns a tuple with the PtpProfiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventFilter) GetPtpProfilesOk() ([]string, bool) {
-	if o == nil || IsNil(o.PtpProfiles) {
+	if o == nil || isNil(o.PtpProfiles) {
 		return nil, false
 	}
 	return o.PtpProfiles, true
@@ -125,7 +125,7 @@ func (o *EventFilter) GetPtpProfilesOk() ([]string, bool) {
 
 // HasPtpProfiles returns a boolean if a field has been set.
 func (o *EventFilter) HasPtpProfiles() bool {
-	if o != nil && !IsNil(o.PtpProfiles) {
+	if o != nil && !isNil(o.PtpProfiles) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o EventFilter) MarshalJSON() ([]byte, error) {
 
 func (o EventFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InstanceTypes) {
+	if !isNil(o.InstanceTypes) {
 		toSerialize["instanceTypes"] = o.InstanceTypes
 	}
-	if !IsNil(o.TransProtocols) {
+	if !isNil(o.TransProtocols) {
 		toSerialize["transProtocols"] = o.TransProtocols
 	}
-	if !IsNil(o.PtpProfiles) {
+	if !isNil(o.PtpProfiles) {
 		toSerialize["ptpProfiles"] = o.PtpProfiles
 	}
 	return toSerialize, nil

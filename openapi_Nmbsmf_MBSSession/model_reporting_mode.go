@@ -17,23 +17,37 @@ import (
 
 // ReportingMode Reporting Mode
 type ReportingMode struct {
-	string *string
+	ReportingModeAnyOf *ReportingModeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ReportingModeAnyOf
+	err = json.Unmarshal(data, &dst.ReportingModeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonReportingModeAnyOf, _ := json.Marshal(dst.ReportingModeAnyOf)
+		if string(jsonReportingModeAnyOf) == "{}" { // empty struct
+			dst.ReportingModeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ReportingModeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ReportingModeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ReportingMode)")
@@ -41,8 +55,12 @@ func (dst *ReportingMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportingMode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ReportingModeAnyOf != nil {
+		return json.Marshal(&src.ReportingModeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

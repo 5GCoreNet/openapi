@@ -96,7 +96,7 @@ func NewSmPolicyDecisionWithDefaults() *SmPolicyDecision {
 
 // GetSessRules returns the SessRules field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetSessRules() map[string]SessionRule {
-	if o == nil || IsNil(o.SessRules) {
+	if o == nil || isNil(o.SessRules) {
 		var ret map[string]SessionRule
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SmPolicyDecision) GetSessRules() map[string]SessionRule {
 // GetSessRulesOk returns a tuple with the SessRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetSessRulesOk() (*map[string]SessionRule, bool) {
-	if o == nil || IsNil(o.SessRules) {
+	if o == nil || isNil(o.SessRules) {
 		return nil, false
 	}
 	return o.SessRules, true
@@ -114,7 +114,7 @@ func (o *SmPolicyDecision) GetSessRulesOk() (*map[string]SessionRule, bool) {
 
 // HasSessRules returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasSessRules() bool {
-	if o != nil && !IsNil(o.SessRules) {
+	if o != nil && !isNil(o.SessRules) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *SmPolicyDecision) GetPccRules() map[string]PccRule {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetPccRulesOk() (*map[string]PccRule, bool) {
-	if o == nil || IsNil(o.PccRules) {
+	if o == nil || isNil(o.PccRules) {
 		return nil, false
 	}
 	return &o.PccRules, true
@@ -147,7 +147,7 @@ func (o *SmPolicyDecision) GetPccRulesOk() (*map[string]PccRule, bool) {
 
 // HasPccRules returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasPccRules() bool {
-	if o != nil && IsNil(o.PccRules) {
+	if o != nil && isNil(o.PccRules) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *SmPolicyDecision) SetPccRules(v map[string]PccRule) {
 
 // GetPcscfRestIndication returns the PcscfRestIndication field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetPcscfRestIndication() bool {
-	if o == nil || IsNil(o.PcscfRestIndication) {
+	if o == nil || isNil(o.PcscfRestIndication) {
 		var ret bool
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *SmPolicyDecision) GetPcscfRestIndication() bool {
 // GetPcscfRestIndicationOk returns a tuple with the PcscfRestIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetPcscfRestIndicationOk() (*bool, bool) {
-	if o == nil || IsNil(o.PcscfRestIndication) {
+	if o == nil || isNil(o.PcscfRestIndication) {
 		return nil, false
 	}
 	return o.PcscfRestIndication, true
@@ -179,7 +179,7 @@ func (o *SmPolicyDecision) GetPcscfRestIndicationOk() (*bool, bool) {
 
 // HasPcscfRestIndication returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasPcscfRestIndication() bool {
-	if o != nil && !IsNil(o.PcscfRestIndication) {
+	if o != nil && !isNil(o.PcscfRestIndication) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *SmPolicyDecision) SetPcscfRestIndication(v bool) {
 
 // GetQosDecs returns the QosDecs field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetQosDecs() map[string]QosData {
-	if o == nil || IsNil(o.QosDecs) {
+	if o == nil || isNil(o.QosDecs) {
 		var ret map[string]QosData
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *SmPolicyDecision) GetQosDecs() map[string]QosData {
 // GetQosDecsOk returns a tuple with the QosDecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetQosDecsOk() (*map[string]QosData, bool) {
-	if o == nil || IsNil(o.QosDecs) {
+	if o == nil || isNil(o.QosDecs) {
 		return nil, false
 	}
 	return o.QosDecs, true
@@ -211,7 +211,7 @@ func (o *SmPolicyDecision) GetQosDecsOk() (*map[string]QosData, bool) {
 
 // HasQosDecs returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasQosDecs() bool {
-	if o != nil && !IsNil(o.QosDecs) {
+	if o != nil && !isNil(o.QosDecs) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *SmPolicyDecision) GetChgDecs() map[string]ChargingData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetChgDecsOk() (*map[string]ChargingData, bool) {
-	if o == nil || IsNil(o.ChgDecs) {
+	if o == nil || isNil(o.ChgDecs) {
 		return nil, false
 	}
 	return &o.ChgDecs, true
@@ -244,7 +244,7 @@ func (o *SmPolicyDecision) GetChgDecsOk() (*map[string]ChargingData, bool) {
 
 // HasChgDecs returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasChgDecs() bool {
-	if o != nil && IsNil(o.ChgDecs) {
+	if o != nil && isNil(o.ChgDecs) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *SmPolicyDecision) SetChgDecs(v map[string]ChargingData) {
 
 // GetChargingInfo returns the ChargingInfo field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetChargingInfo() ChargingInformation {
-	if o == nil || IsNil(o.ChargingInfo) {
+	if o == nil || isNil(o.ChargingInfo) {
 		var ret ChargingInformation
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *SmPolicyDecision) GetChargingInfo() ChargingInformation {
 // GetChargingInfoOk returns a tuple with the ChargingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetChargingInfoOk() (*ChargingInformation, bool) {
-	if o == nil || IsNil(o.ChargingInfo) {
+	if o == nil || isNil(o.ChargingInfo) {
 		return nil, false
 	}
 	return o.ChargingInfo, true
@@ -276,7 +276,7 @@ func (o *SmPolicyDecision) GetChargingInfoOk() (*ChargingInformation, bool) {
 
 // HasChargingInfo returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasChargingInfo() bool {
-	if o != nil && !IsNil(o.ChargingInfo) {
+	if o != nil && !isNil(o.ChargingInfo) {
 		return true
 	}
 
@@ -290,7 +290,7 @@ func (o *SmPolicyDecision) SetChargingInfo(v ChargingInformation) {
 
 // GetTraffContDecs returns the TraffContDecs field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetTraffContDecs() map[string]TrafficControlData {
-	if o == nil || IsNil(o.TraffContDecs) {
+	if o == nil || isNil(o.TraffContDecs) {
 		var ret map[string]TrafficControlData
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *SmPolicyDecision) GetTraffContDecs() map[string]TrafficControlData {
 // GetTraffContDecsOk returns a tuple with the TraffContDecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetTraffContDecsOk() (*map[string]TrafficControlData, bool) {
-	if o == nil || IsNil(o.TraffContDecs) {
+	if o == nil || isNil(o.TraffContDecs) {
 		return nil, false
 	}
 	return o.TraffContDecs, true
@@ -308,7 +308,7 @@ func (o *SmPolicyDecision) GetTraffContDecsOk() (*map[string]TrafficControlData,
 
 // HasTraffContDecs returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasTraffContDecs() bool {
-	if o != nil && !IsNil(o.TraffContDecs) {
+	if o != nil && !isNil(o.TraffContDecs) {
 		return true
 	}
 
@@ -333,7 +333,7 @@ func (o *SmPolicyDecision) GetUmDecs() map[string]UsageMonitoringData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetUmDecsOk() (*map[string]UsageMonitoringData, bool) {
-	if o == nil || IsNil(o.UmDecs) {
+	if o == nil || isNil(o.UmDecs) {
 		return nil, false
 	}
 	return &o.UmDecs, true
@@ -341,7 +341,7 @@ func (o *SmPolicyDecision) GetUmDecsOk() (*map[string]UsageMonitoringData, bool)
 
 // HasUmDecs returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasUmDecs() bool {
-	if o != nil && IsNil(o.UmDecs) {
+	if o != nil && isNil(o.UmDecs) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *SmPolicyDecision) SetUmDecs(v map[string]UsageMonitoringData) {
 
 // GetQosChars returns the QosChars field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetQosChars() map[string]QosCharacteristics {
-	if o == nil || IsNil(o.QosChars) {
+	if o == nil || isNil(o.QosChars) {
 		var ret map[string]QosCharacteristics
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *SmPolicyDecision) GetQosChars() map[string]QosCharacteristics {
 // GetQosCharsOk returns a tuple with the QosChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetQosCharsOk() (*map[string]QosCharacteristics, bool) {
-	if o == nil || IsNil(o.QosChars) {
+	if o == nil || isNil(o.QosChars) {
 		return nil, false
 	}
 	return o.QosChars, true
@@ -373,7 +373,7 @@ func (o *SmPolicyDecision) GetQosCharsOk() (*map[string]QosCharacteristics, bool
 
 // HasQosChars returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasQosChars() bool {
-	if o != nil && !IsNil(o.QosChars) {
+	if o != nil && !isNil(o.QosChars) {
 		return true
 	}
 
@@ -398,7 +398,7 @@ func (o *SmPolicyDecision) GetQosMonDecs() map[string]QosMonitoringData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetQosMonDecsOk() (*map[string]QosMonitoringData, bool) {
-	if o == nil || IsNil(o.QosMonDecs) {
+	if o == nil || isNil(o.QosMonDecs) {
 		return nil, false
 	}
 	return &o.QosMonDecs, true
@@ -406,7 +406,7 @@ func (o *SmPolicyDecision) GetQosMonDecsOk() (*map[string]QosMonitoringData, boo
 
 // HasQosMonDecs returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasQosMonDecs() bool {
-	if o != nil && IsNil(o.QosMonDecs) {
+	if o != nil && isNil(o.QosMonDecs) {
 		return true
 	}
 
@@ -420,7 +420,7 @@ func (o *SmPolicyDecision) SetQosMonDecs(v map[string]QosMonitoringData) {
 
 // GetReflectiveQoSTimer returns the ReflectiveQoSTimer field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetReflectiveQoSTimer() int32 {
-	if o == nil || IsNil(o.ReflectiveQoSTimer) {
+	if o == nil || isNil(o.ReflectiveQoSTimer) {
 		var ret int32
 		return ret
 	}
@@ -430,7 +430,7 @@ func (o *SmPolicyDecision) GetReflectiveQoSTimer() int32 {
 // GetReflectiveQoSTimerOk returns a tuple with the ReflectiveQoSTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetReflectiveQoSTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReflectiveQoSTimer) {
+	if o == nil || isNil(o.ReflectiveQoSTimer) {
 		return nil, false
 	}
 	return o.ReflectiveQoSTimer, true
@@ -438,7 +438,7 @@ func (o *SmPolicyDecision) GetReflectiveQoSTimerOk() (*int32, bool) {
 
 // HasReflectiveQoSTimer returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasReflectiveQoSTimer() bool {
-	if o != nil && !IsNil(o.ReflectiveQoSTimer) {
+	if o != nil && !isNil(o.ReflectiveQoSTimer) {
 		return true
 	}
 
@@ -463,7 +463,7 @@ func (o *SmPolicyDecision) GetConds() map[string]ConditionData {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetCondsOk() (*map[string]ConditionData, bool) {
-	if o == nil || IsNil(o.Conds) {
+	if o == nil || isNil(o.Conds) {
 		return nil, false
 	}
 	return &o.Conds, true
@@ -471,7 +471,7 @@ func (o *SmPolicyDecision) GetCondsOk() (*map[string]ConditionData, bool) {
 
 // HasConds returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasConds() bool {
-	if o != nil && IsNil(o.Conds) {
+	if o != nil && isNil(o.Conds) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *SmPolicyDecision) SetConds(v map[string]ConditionData) {
 
 // GetRevalidationTime returns the RevalidationTime field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetRevalidationTime() time.Time {
-	if o == nil || IsNil(o.RevalidationTime) {
+	if o == nil || isNil(o.RevalidationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *SmPolicyDecision) GetRevalidationTime() time.Time {
 // GetRevalidationTimeOk returns a tuple with the RevalidationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetRevalidationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RevalidationTime) {
+	if o == nil || isNil(o.RevalidationTime) {
 		return nil, false
 	}
 	return o.RevalidationTime, true
@@ -503,7 +503,7 @@ func (o *SmPolicyDecision) GetRevalidationTimeOk() (*time.Time, bool) {
 
 // HasRevalidationTime returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasRevalidationTime() bool {
-	if o != nil && !IsNil(o.RevalidationTime) {
+	if o != nil && !isNil(o.RevalidationTime) {
 		return true
 	}
 
@@ -517,7 +517,7 @@ func (o *SmPolicyDecision) SetRevalidationTime(v time.Time) {
 
 // GetOffline returns the Offline field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetOffline() bool {
-	if o == nil || IsNil(o.Offline) {
+	if o == nil || isNil(o.Offline) {
 		var ret bool
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *SmPolicyDecision) GetOffline() bool {
 // GetOfflineOk returns a tuple with the Offline field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetOfflineOk() (*bool, bool) {
-	if o == nil || IsNil(o.Offline) {
+	if o == nil || isNil(o.Offline) {
 		return nil, false
 	}
 	return o.Offline, true
@@ -535,7 +535,7 @@ func (o *SmPolicyDecision) GetOfflineOk() (*bool, bool) {
 
 // HasOffline returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasOffline() bool {
-	if o != nil && !IsNil(o.Offline) {
+	if o != nil && !isNil(o.Offline) {
 		return true
 	}
 
@@ -549,7 +549,7 @@ func (o *SmPolicyDecision) SetOffline(v bool) {
 
 // GetOnline returns the Online field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetOnline() bool {
-	if o == nil || IsNil(o.Online) {
+	if o == nil || isNil(o.Online) {
 		var ret bool
 		return ret
 	}
@@ -559,7 +559,7 @@ func (o *SmPolicyDecision) GetOnline() bool {
 // GetOnlineOk returns a tuple with the Online field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetOnlineOk() (*bool, bool) {
-	if o == nil || IsNil(o.Online) {
+	if o == nil || isNil(o.Online) {
 		return nil, false
 	}
 	return o.Online, true
@@ -567,7 +567,7 @@ func (o *SmPolicyDecision) GetOnlineOk() (*bool, bool) {
 
 // HasOnline returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasOnline() bool {
-	if o != nil && !IsNil(o.Online) {
+	if o != nil && !isNil(o.Online) {
 		return true
 	}
 
@@ -581,7 +581,7 @@ func (o *SmPolicyDecision) SetOnline(v bool) {
 
 // GetOfflineChOnly returns the OfflineChOnly field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetOfflineChOnly() bool {
-	if o == nil || IsNil(o.OfflineChOnly) {
+	if o == nil || isNil(o.OfflineChOnly) {
 		var ret bool
 		return ret
 	}
@@ -591,7 +591,7 @@ func (o *SmPolicyDecision) GetOfflineChOnly() bool {
 // GetOfflineChOnlyOk returns a tuple with the OfflineChOnly field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetOfflineChOnlyOk() (*bool, bool) {
-	if o == nil || IsNil(o.OfflineChOnly) {
+	if o == nil || isNil(o.OfflineChOnly) {
 		return nil, false
 	}
 	return o.OfflineChOnly, true
@@ -599,7 +599,7 @@ func (o *SmPolicyDecision) GetOfflineChOnlyOk() (*bool, bool) {
 
 // HasOfflineChOnly returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasOfflineChOnly() bool {
-	if o != nil && !IsNil(o.OfflineChOnly) {
+	if o != nil && !isNil(o.OfflineChOnly) {
 		return true
 	}
 
@@ -624,7 +624,7 @@ func (o *SmPolicyDecision) GetPolicyCtrlReqTriggers() []PolicyControlRequestTrig
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetPolicyCtrlReqTriggersOk() ([]PolicyControlRequestTrigger, bool) {
-	if o == nil || IsNil(o.PolicyCtrlReqTriggers) {
+	if o == nil || isNil(o.PolicyCtrlReqTriggers) {
 		return nil, false
 	}
 	return o.PolicyCtrlReqTriggers, true
@@ -632,7 +632,7 @@ func (o *SmPolicyDecision) GetPolicyCtrlReqTriggersOk() ([]PolicyControlRequestT
 
 // HasPolicyCtrlReqTriggers returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasPolicyCtrlReqTriggers() bool {
-	if o != nil && IsNil(o.PolicyCtrlReqTriggers) {
+	if o != nil && isNil(o.PolicyCtrlReqTriggers) {
 		return true
 	}
 
@@ -646,7 +646,7 @@ func (o *SmPolicyDecision) SetPolicyCtrlReqTriggers(v []PolicyControlRequestTrig
 
 // GetLastReqRuleData returns the LastReqRuleData field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetLastReqRuleData() []RequestedRuleData {
-	if o == nil || IsNil(o.LastReqRuleData) {
+	if o == nil || isNil(o.LastReqRuleData) {
 		var ret []RequestedRuleData
 		return ret
 	}
@@ -656,7 +656,7 @@ func (o *SmPolicyDecision) GetLastReqRuleData() []RequestedRuleData {
 // GetLastReqRuleDataOk returns a tuple with the LastReqRuleData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetLastReqRuleDataOk() ([]RequestedRuleData, bool) {
-	if o == nil || IsNil(o.LastReqRuleData) {
+	if o == nil || isNil(o.LastReqRuleData) {
 		return nil, false
 	}
 	return o.LastReqRuleData, true
@@ -664,7 +664,7 @@ func (o *SmPolicyDecision) GetLastReqRuleDataOk() ([]RequestedRuleData, bool) {
 
 // HasLastReqRuleData returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasLastReqRuleData() bool {
-	if o != nil && !IsNil(o.LastReqRuleData) {
+	if o != nil && !isNil(o.LastReqRuleData) {
 		return true
 	}
 
@@ -678,7 +678,7 @@ func (o *SmPolicyDecision) SetLastReqRuleData(v []RequestedRuleData) {
 
 // GetLastReqUsageData returns the LastReqUsageData field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetLastReqUsageData() RequestedUsageData {
-	if o == nil || IsNil(o.LastReqUsageData) {
+	if o == nil || isNil(o.LastReqUsageData) {
 		var ret RequestedUsageData
 		return ret
 	}
@@ -688,7 +688,7 @@ func (o *SmPolicyDecision) GetLastReqUsageData() RequestedUsageData {
 // GetLastReqUsageDataOk returns a tuple with the LastReqUsageData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetLastReqUsageDataOk() (*RequestedUsageData, bool) {
-	if o == nil || IsNil(o.LastReqUsageData) {
+	if o == nil || isNil(o.LastReqUsageData) {
 		return nil, false
 	}
 	return o.LastReqUsageData, true
@@ -696,7 +696,7 @@ func (o *SmPolicyDecision) GetLastReqUsageDataOk() (*RequestedUsageData, bool) {
 
 // HasLastReqUsageData returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasLastReqUsageData() bool {
-	if o != nil && !IsNil(o.LastReqUsageData) {
+	if o != nil && !isNil(o.LastReqUsageData) {
 		return true
 	}
 
@@ -721,7 +721,7 @@ func (o *SmPolicyDecision) GetPraInfos() map[string]PresenceInfoRm {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDecision) GetPraInfosOk() (*map[string]PresenceInfoRm, bool) {
-	if o == nil || IsNil(o.PraInfos) {
+	if o == nil || isNil(o.PraInfos) {
 		return nil, false
 	}
 	return &o.PraInfos, true
@@ -729,7 +729,7 @@ func (o *SmPolicyDecision) GetPraInfosOk() (*map[string]PresenceInfoRm, bool) {
 
 // HasPraInfos returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasPraInfos() bool {
-	if o != nil && IsNil(o.PraInfos) {
+	if o != nil && isNil(o.PraInfos) {
 		return true
 	}
 
@@ -743,7 +743,7 @@ func (o *SmPolicyDecision) SetPraInfos(v map[string]PresenceInfoRm) {
 
 // GetIpv4Index returns the Ipv4Index field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetIpv4Index() int32 {
-	if o == nil || IsNil(o.Ipv4Index) {
+	if o == nil || isNil(o.Ipv4Index) {
 		var ret int32
 		return ret
 	}
@@ -753,7 +753,7 @@ func (o *SmPolicyDecision) GetIpv4Index() int32 {
 // GetIpv4IndexOk returns a tuple with the Ipv4Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetIpv4IndexOk() (*int32, bool) {
-	if o == nil || IsNil(o.Ipv4Index) {
+	if o == nil || isNil(o.Ipv4Index) {
 		return nil, false
 	}
 	return o.Ipv4Index, true
@@ -761,7 +761,7 @@ func (o *SmPolicyDecision) GetIpv4IndexOk() (*int32, bool) {
 
 // HasIpv4Index returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasIpv4Index() bool {
-	if o != nil && !IsNil(o.Ipv4Index) {
+	if o != nil && !isNil(o.Ipv4Index) {
 		return true
 	}
 
@@ -775,7 +775,7 @@ func (o *SmPolicyDecision) SetIpv4Index(v int32) {
 
 // GetIpv6Index returns the Ipv6Index field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetIpv6Index() int32 {
-	if o == nil || IsNil(o.Ipv6Index) {
+	if o == nil || isNil(o.Ipv6Index) {
 		var ret int32
 		return ret
 	}
@@ -785,7 +785,7 @@ func (o *SmPolicyDecision) GetIpv6Index() int32 {
 // GetIpv6IndexOk returns a tuple with the Ipv6Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetIpv6IndexOk() (*int32, bool) {
-	if o == nil || IsNil(o.Ipv6Index) {
+	if o == nil || isNil(o.Ipv6Index) {
 		return nil, false
 	}
 	return o.Ipv6Index, true
@@ -793,7 +793,7 @@ func (o *SmPolicyDecision) GetIpv6IndexOk() (*int32, bool) {
 
 // HasIpv6Index returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasIpv6Index() bool {
-	if o != nil && !IsNil(o.Ipv6Index) {
+	if o != nil && !isNil(o.Ipv6Index) {
 		return true
 	}
 
@@ -807,7 +807,7 @@ func (o *SmPolicyDecision) SetIpv6Index(v int32) {
 
 // GetQosFlowUsage returns the QosFlowUsage field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetQosFlowUsage() QosFlowUsage {
-	if o == nil || IsNil(o.QosFlowUsage) {
+	if o == nil || isNil(o.QosFlowUsage) {
 		var ret QosFlowUsage
 		return ret
 	}
@@ -817,7 +817,7 @@ func (o *SmPolicyDecision) GetQosFlowUsage() QosFlowUsage {
 // GetQosFlowUsageOk returns a tuple with the QosFlowUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetQosFlowUsageOk() (*QosFlowUsage, bool) {
-	if o == nil || IsNil(o.QosFlowUsage) {
+	if o == nil || isNil(o.QosFlowUsage) {
 		return nil, false
 	}
 	return o.QosFlowUsage, true
@@ -825,7 +825,7 @@ func (o *SmPolicyDecision) GetQosFlowUsageOk() (*QosFlowUsage, bool) {
 
 // HasQosFlowUsage returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasQosFlowUsage() bool {
-	if o != nil && !IsNil(o.QosFlowUsage) {
+	if o != nil && !isNil(o.QosFlowUsage) {
 		return true
 	}
 
@@ -839,7 +839,7 @@ func (o *SmPolicyDecision) SetQosFlowUsage(v QosFlowUsage) {
 
 // GetRelCause returns the RelCause field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetRelCause() SmPolicyAssociationReleaseCause {
-	if o == nil || IsNil(o.RelCause) {
+	if o == nil || isNil(o.RelCause) {
 		var ret SmPolicyAssociationReleaseCause
 		return ret
 	}
@@ -849,7 +849,7 @@ func (o *SmPolicyDecision) GetRelCause() SmPolicyAssociationReleaseCause {
 // GetRelCauseOk returns a tuple with the RelCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetRelCauseOk() (*SmPolicyAssociationReleaseCause, bool) {
-	if o == nil || IsNil(o.RelCause) {
+	if o == nil || isNil(o.RelCause) {
 		return nil, false
 	}
 	return o.RelCause, true
@@ -857,7 +857,7 @@ func (o *SmPolicyDecision) GetRelCauseOk() (*SmPolicyAssociationReleaseCause, bo
 
 // HasRelCause returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasRelCause() bool {
-	if o != nil && !IsNil(o.RelCause) {
+	if o != nil && !isNil(o.RelCause) {
 		return true
 	}
 
@@ -871,7 +871,7 @@ func (o *SmPolicyDecision) SetRelCause(v SmPolicyAssociationReleaseCause) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -881,7 +881,7 @@ func (o *SmPolicyDecision) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -889,7 +889,7 @@ func (o *SmPolicyDecision) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -903,7 +903,7 @@ func (o *SmPolicyDecision) SetSuppFeat(v string) {
 
 // GetTsnBridgeManCont returns the TsnBridgeManCont field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetTsnBridgeManCont() BridgeManagementContainer {
-	if o == nil || IsNil(o.TsnBridgeManCont) {
+	if o == nil || isNil(o.TsnBridgeManCont) {
 		var ret BridgeManagementContainer
 		return ret
 	}
@@ -913,7 +913,7 @@ func (o *SmPolicyDecision) GetTsnBridgeManCont() BridgeManagementContainer {
 // GetTsnBridgeManContOk returns a tuple with the TsnBridgeManCont field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetTsnBridgeManContOk() (*BridgeManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnBridgeManCont) {
+	if o == nil || isNil(o.TsnBridgeManCont) {
 		return nil, false
 	}
 	return o.TsnBridgeManCont, true
@@ -921,7 +921,7 @@ func (o *SmPolicyDecision) GetTsnBridgeManContOk() (*BridgeManagementContainer, 
 
 // HasTsnBridgeManCont returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasTsnBridgeManCont() bool {
-	if o != nil && !IsNil(o.TsnBridgeManCont) {
+	if o != nil && !isNil(o.TsnBridgeManCont) {
 		return true
 	}
 
@@ -935,7 +935,7 @@ func (o *SmPolicyDecision) SetTsnBridgeManCont(v BridgeManagementContainer) {
 
 // GetTsnPortManContDstt returns the TsnPortManContDstt field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetTsnPortManContDstt() PortManagementContainer {
-	if o == nil || IsNil(o.TsnPortManContDstt) {
+	if o == nil || isNil(o.TsnPortManContDstt) {
 		var ret PortManagementContainer
 		return ret
 	}
@@ -945,7 +945,7 @@ func (o *SmPolicyDecision) GetTsnPortManContDstt() PortManagementContainer {
 // GetTsnPortManContDsttOk returns a tuple with the TsnPortManContDstt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetTsnPortManContDsttOk() (*PortManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnPortManContDstt) {
+	if o == nil || isNil(o.TsnPortManContDstt) {
 		return nil, false
 	}
 	return o.TsnPortManContDstt, true
@@ -953,7 +953,7 @@ func (o *SmPolicyDecision) GetTsnPortManContDsttOk() (*PortManagementContainer, 
 
 // HasTsnPortManContDstt returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasTsnPortManContDstt() bool {
-	if o != nil && !IsNil(o.TsnPortManContDstt) {
+	if o != nil && !isNil(o.TsnPortManContDstt) {
 		return true
 	}
 
@@ -967,7 +967,7 @@ func (o *SmPolicyDecision) SetTsnPortManContDstt(v PortManagementContainer) {
 
 // GetTsnPortManContNwtts returns the TsnPortManContNwtts field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetTsnPortManContNwtts() []PortManagementContainer {
-	if o == nil || IsNil(o.TsnPortManContNwtts) {
+	if o == nil || isNil(o.TsnPortManContNwtts) {
 		var ret []PortManagementContainer
 		return ret
 	}
@@ -977,7 +977,7 @@ func (o *SmPolicyDecision) GetTsnPortManContNwtts() []PortManagementContainer {
 // GetTsnPortManContNwttsOk returns a tuple with the TsnPortManContNwtts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetTsnPortManContNwttsOk() ([]PortManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnPortManContNwtts) {
+	if o == nil || isNil(o.TsnPortManContNwtts) {
 		return nil, false
 	}
 	return o.TsnPortManContNwtts, true
@@ -985,7 +985,7 @@ func (o *SmPolicyDecision) GetTsnPortManContNwttsOk() ([]PortManagementContainer
 
 // HasTsnPortManContNwtts returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasTsnPortManContNwtts() bool {
-	if o != nil && !IsNil(o.TsnPortManContNwtts) {
+	if o != nil && !isNil(o.TsnPortManContNwtts) {
 		return true
 	}
 
@@ -999,7 +999,7 @@ func (o *SmPolicyDecision) SetTsnPortManContNwtts(v []PortManagementContainer) {
 
 // GetRedSessIndication returns the RedSessIndication field value if set, zero value otherwise.
 func (o *SmPolicyDecision) GetRedSessIndication() bool {
-	if o == nil || IsNil(o.RedSessIndication) {
+	if o == nil || isNil(o.RedSessIndication) {
 		var ret bool
 		return ret
 	}
@@ -1009,7 +1009,7 @@ func (o *SmPolicyDecision) GetRedSessIndication() bool {
 // GetRedSessIndicationOk returns a tuple with the RedSessIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDecision) GetRedSessIndicationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RedSessIndication) {
+	if o == nil || isNil(o.RedSessIndication) {
 		return nil, false
 	}
 	return o.RedSessIndication, true
@@ -1017,7 +1017,7 @@ func (o *SmPolicyDecision) GetRedSessIndicationOk() (*bool, bool) {
 
 // HasRedSessIndication returns a boolean if a field has been set.
 func (o *SmPolicyDecision) HasRedSessIndication() bool {
-	if o != nil && !IsNil(o.RedSessIndication) {
+	if o != nil && !isNil(o.RedSessIndication) {
 		return true
 	}
 
@@ -1039,91 +1039,91 @@ func (o SmPolicyDecision) MarshalJSON() ([]byte, error) {
 
 func (o SmPolicyDecision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SessRules) {
+	if !isNil(o.SessRules) {
 		toSerialize["sessRules"] = o.SessRules
 	}
 	if o.PccRules != nil {
 		toSerialize["pccRules"] = o.PccRules
 	}
-	if !IsNil(o.PcscfRestIndication) {
+	if !isNil(o.PcscfRestIndication) {
 		toSerialize["pcscfRestIndication"] = o.PcscfRestIndication
 	}
-	if !IsNil(o.QosDecs) {
+	if !isNil(o.QosDecs) {
 		toSerialize["qosDecs"] = o.QosDecs
 	}
 	if o.ChgDecs != nil {
 		toSerialize["chgDecs"] = o.ChgDecs
 	}
-	if !IsNil(o.ChargingInfo) {
+	if !isNil(o.ChargingInfo) {
 		toSerialize["chargingInfo"] = o.ChargingInfo
 	}
-	if !IsNil(o.TraffContDecs) {
+	if !isNil(o.TraffContDecs) {
 		toSerialize["traffContDecs"] = o.TraffContDecs
 	}
 	if o.UmDecs != nil {
 		toSerialize["umDecs"] = o.UmDecs
 	}
-	if !IsNil(o.QosChars) {
+	if !isNil(o.QosChars) {
 		toSerialize["qosChars"] = o.QosChars
 	}
 	if o.QosMonDecs != nil {
 		toSerialize["qosMonDecs"] = o.QosMonDecs
 	}
-	if !IsNil(o.ReflectiveQoSTimer) {
+	if !isNil(o.ReflectiveQoSTimer) {
 		toSerialize["reflectiveQoSTimer"] = o.ReflectiveQoSTimer
 	}
 	if o.Conds != nil {
 		toSerialize["conds"] = o.Conds
 	}
-	if !IsNil(o.RevalidationTime) {
+	if !isNil(o.RevalidationTime) {
 		toSerialize["revalidationTime"] = o.RevalidationTime
 	}
-	if !IsNil(o.Offline) {
+	if !isNil(o.Offline) {
 		toSerialize["offline"] = o.Offline
 	}
-	if !IsNil(o.Online) {
+	if !isNil(o.Online) {
 		toSerialize["online"] = o.Online
 	}
-	if !IsNil(o.OfflineChOnly) {
+	if !isNil(o.OfflineChOnly) {
 		toSerialize["offlineChOnly"] = o.OfflineChOnly
 	}
 	if o.PolicyCtrlReqTriggers != nil {
 		toSerialize["policyCtrlReqTriggers"] = o.PolicyCtrlReqTriggers
 	}
-	if !IsNil(o.LastReqRuleData) {
+	if !isNil(o.LastReqRuleData) {
 		toSerialize["lastReqRuleData"] = o.LastReqRuleData
 	}
-	if !IsNil(o.LastReqUsageData) {
+	if !isNil(o.LastReqUsageData) {
 		toSerialize["lastReqUsageData"] = o.LastReqUsageData
 	}
 	if o.PraInfos != nil {
 		toSerialize["praInfos"] = o.PraInfos
 	}
-	if !IsNil(o.Ipv4Index) {
+	if !isNil(o.Ipv4Index) {
 		toSerialize["ipv4Index"] = o.Ipv4Index
 	}
-	if !IsNil(o.Ipv6Index) {
+	if !isNil(o.Ipv6Index) {
 		toSerialize["ipv6Index"] = o.Ipv6Index
 	}
-	if !IsNil(o.QosFlowUsage) {
+	if !isNil(o.QosFlowUsage) {
 		toSerialize["qosFlowUsage"] = o.QosFlowUsage
 	}
-	if !IsNil(o.RelCause) {
+	if !isNil(o.RelCause) {
 		toSerialize["relCause"] = o.RelCause
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.TsnBridgeManCont) {
+	if !isNil(o.TsnBridgeManCont) {
 		toSerialize["tsnBridgeManCont"] = o.TsnBridgeManCont
 	}
-	if !IsNil(o.TsnPortManContDstt) {
+	if !isNil(o.TsnPortManContDstt) {
 		toSerialize["tsnPortManContDstt"] = o.TsnPortManContDstt
 	}
-	if !IsNil(o.TsnPortManContNwtts) {
+	if !isNil(o.TsnPortManContNwtts) {
 		toSerialize["tsnPortManContNwtts"] = o.TsnPortManContNwtts
 	}
-	if !IsNil(o.RedSessIndication) {
+	if !isNil(o.RedSessIndication) {
 		toSerialize["redSessIndication"] = o.RedSessIndication
 	}
 	return toSerialize, nil

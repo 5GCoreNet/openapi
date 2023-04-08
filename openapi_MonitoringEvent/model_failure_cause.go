@@ -54,7 +54,7 @@ func NewFailureCauseWithDefaults() *FailureCause {
 
 // GetBssgpCause returns the BssgpCause field value if set, zero value otherwise.
 func (o *FailureCause) GetBssgpCause() int32 {
-	if o == nil || IsNil(o.BssgpCause) {
+	if o == nil || isNil(o.BssgpCause) {
 		var ret int32
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *FailureCause) GetBssgpCause() int32 {
 // GetBssgpCauseOk returns a tuple with the BssgpCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetBssgpCauseOk() (*int32, bool) {
-	if o == nil || IsNil(o.BssgpCause) {
+	if o == nil || isNil(o.BssgpCause) {
 		return nil, false
 	}
 	return o.BssgpCause, true
@@ -72,7 +72,7 @@ func (o *FailureCause) GetBssgpCauseOk() (*int32, bool) {
 
 // HasBssgpCause returns a boolean if a field has been set.
 func (o *FailureCause) HasBssgpCause() bool {
-	if o != nil && !IsNil(o.BssgpCause) {
+	if o != nil && !isNil(o.BssgpCause) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *FailureCause) SetBssgpCause(v int32) {
 
 // GetCauseType returns the CauseType field value if set, zero value otherwise.
 func (o *FailureCause) GetCauseType() int32 {
-	if o == nil || IsNil(o.CauseType) {
+	if o == nil || isNil(o.CauseType) {
 		var ret int32
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *FailureCause) GetCauseType() int32 {
 // GetCauseTypeOk returns a tuple with the CauseType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetCauseTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.CauseType) {
+	if o == nil || isNil(o.CauseType) {
 		return nil, false
 	}
 	return o.CauseType, true
@@ -104,7 +104,7 @@ func (o *FailureCause) GetCauseTypeOk() (*int32, bool) {
 
 // HasCauseType returns a boolean if a field has been set.
 func (o *FailureCause) HasCauseType() bool {
-	if o != nil && !IsNil(o.CauseType) {
+	if o != nil && !isNil(o.CauseType) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *FailureCause) SetCauseType(v int32) {
 
 // GetGmmCause returns the GmmCause field value if set, zero value otherwise.
 func (o *FailureCause) GetGmmCause() int32 {
-	if o == nil || IsNil(o.GmmCause) {
+	if o == nil || isNil(o.GmmCause) {
 		var ret int32
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *FailureCause) GetGmmCause() int32 {
 // GetGmmCauseOk returns a tuple with the GmmCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetGmmCauseOk() (*int32, bool) {
-	if o == nil || IsNil(o.GmmCause) {
+	if o == nil || isNil(o.GmmCause) {
 		return nil, false
 	}
 	return o.GmmCause, true
@@ -136,7 +136,7 @@ func (o *FailureCause) GetGmmCauseOk() (*int32, bool) {
 
 // HasGmmCause returns a boolean if a field has been set.
 func (o *FailureCause) HasGmmCause() bool {
-	if o != nil && !IsNil(o.GmmCause) {
+	if o != nil && !isNil(o.GmmCause) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *FailureCause) SetGmmCause(v int32) {
 
 // GetRanapCause returns the RanapCause field value if set, zero value otherwise.
 func (o *FailureCause) GetRanapCause() int32 {
-	if o == nil || IsNil(o.RanapCause) {
+	if o == nil || isNil(o.RanapCause) {
 		var ret int32
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *FailureCause) GetRanapCause() int32 {
 // GetRanapCauseOk returns a tuple with the RanapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetRanapCauseOk() (*int32, bool) {
-	if o == nil || IsNil(o.RanapCause) {
+	if o == nil || isNil(o.RanapCause) {
 		return nil, false
 	}
 	return o.RanapCause, true
@@ -168,7 +168,7 @@ func (o *FailureCause) GetRanapCauseOk() (*int32, bool) {
 
 // HasRanapCause returns a boolean if a field has been set.
 func (o *FailureCause) HasRanapCause() bool {
-	if o != nil && !IsNil(o.RanapCause) {
+	if o != nil && !isNil(o.RanapCause) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *FailureCause) SetRanapCause(v int32) {
 
 // GetRanNasCause returns the RanNasCause field value if set, zero value otherwise.
 func (o *FailureCause) GetRanNasCause() string {
-	if o == nil || IsNil(o.RanNasCause) {
+	if o == nil || isNil(o.RanNasCause) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *FailureCause) GetRanNasCause() string {
 // GetRanNasCauseOk returns a tuple with the RanNasCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetRanNasCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.RanNasCause) {
+	if o == nil || isNil(o.RanNasCause) {
 		return nil, false
 	}
 	return o.RanNasCause, true
@@ -200,7 +200,7 @@ func (o *FailureCause) GetRanNasCauseOk() (*string, bool) {
 
 // HasRanNasCause returns a boolean if a field has been set.
 func (o *FailureCause) HasRanNasCause() bool {
-	if o != nil && !IsNil(o.RanNasCause) {
+	if o != nil && !isNil(o.RanNasCause) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *FailureCause) SetRanNasCause(v string) {
 
 // GetS1ApCause returns the S1ApCause field value if set, zero value otherwise.
 func (o *FailureCause) GetS1ApCause() int32 {
-	if o == nil || IsNil(o.S1ApCause) {
+	if o == nil || isNil(o.S1ApCause) {
 		var ret int32
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *FailureCause) GetS1ApCause() int32 {
 // GetS1ApCauseOk returns a tuple with the S1ApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetS1ApCauseOk() (*int32, bool) {
-	if o == nil || IsNil(o.S1ApCause) {
+	if o == nil || isNil(o.S1ApCause) {
 		return nil, false
 	}
 	return o.S1ApCause, true
@@ -232,7 +232,7 @@ func (o *FailureCause) GetS1ApCauseOk() (*int32, bool) {
 
 // HasS1ApCause returns a boolean if a field has been set.
 func (o *FailureCause) HasS1ApCause() bool {
-	if o != nil && !IsNil(o.S1ApCause) {
+	if o != nil && !isNil(o.S1ApCause) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *FailureCause) SetS1ApCause(v int32) {
 
 // GetSmCause returns the SmCause field value if set, zero value otherwise.
 func (o *FailureCause) GetSmCause() int32 {
-	if o == nil || IsNil(o.SmCause) {
+	if o == nil || isNil(o.SmCause) {
 		var ret int32
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *FailureCause) GetSmCause() int32 {
 // GetSmCauseOk returns a tuple with the SmCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureCause) GetSmCauseOk() (*int32, bool) {
-	if o == nil || IsNil(o.SmCause) {
+	if o == nil || isNil(o.SmCause) {
 		return nil, false
 	}
 	return o.SmCause, true
@@ -264,7 +264,7 @@ func (o *FailureCause) GetSmCauseOk() (*int32, bool) {
 
 // HasSmCause returns a boolean if a field has been set.
 func (o *FailureCause) HasSmCause() bool {
-	if o != nil && !IsNil(o.SmCause) {
+	if o != nil && !isNil(o.SmCause) {
 		return true
 	}
 
@@ -286,25 +286,25 @@ func (o FailureCause) MarshalJSON() ([]byte, error) {
 
 func (o FailureCause) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BssgpCause) {
+	if !isNil(o.BssgpCause) {
 		toSerialize["bssgpCause"] = o.BssgpCause
 	}
-	if !IsNil(o.CauseType) {
+	if !isNil(o.CauseType) {
 		toSerialize["causeType"] = o.CauseType
 	}
-	if !IsNil(o.GmmCause) {
+	if !isNil(o.GmmCause) {
 		toSerialize["gmmCause"] = o.GmmCause
 	}
-	if !IsNil(o.RanapCause) {
+	if !isNil(o.RanapCause) {
 		toSerialize["ranapCause"] = o.RanapCause
 	}
-	if !IsNil(o.RanNasCause) {
+	if !isNil(o.RanNasCause) {
 		toSerialize["ranNasCause"] = o.RanNasCause
 	}
-	if !IsNil(o.S1ApCause) {
+	if !isNil(o.S1ApCause) {
 		toSerialize["s1ApCause"] = o.S1ApCause
 	}
-	if !IsNil(o.SmCause) {
+	if !isNil(o.SmCause) {
 		toSerialize["smCause"] = o.SmCause
 	}
 	return toSerialize, nil

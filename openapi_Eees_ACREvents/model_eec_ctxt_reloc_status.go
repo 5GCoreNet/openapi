@@ -41,7 +41,7 @@ func NewEecCtxtRelocStatusWithDefaults() *EecCtxtRelocStatus {
 
 // GetImplReg returns the ImplReg field value if set, zero value otherwise.
 func (o *EecCtxtRelocStatus) GetImplReg() ImplicitRegDetails {
-	if o == nil || IsNil(o.ImplReg) {
+	if o == nil || isNil(o.ImplReg) {
 		var ret ImplicitRegDetails
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EecCtxtRelocStatus) GetImplReg() ImplicitRegDetails {
 // GetImplRegOk returns a tuple with the ImplReg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EecCtxtRelocStatus) GetImplRegOk() (*ImplicitRegDetails, bool) {
-	if o == nil || IsNil(o.ImplReg) {
+	if o == nil || isNil(o.ImplReg) {
 		return nil, false
 	}
 	return o.ImplReg, true
@@ -59,7 +59,7 @@ func (o *EecCtxtRelocStatus) GetImplRegOk() (*ImplicitRegDetails, bool) {
 
 // HasImplReg returns a boolean if a field has been set.
 func (o *EecCtxtRelocStatus) HasImplReg() bool {
-	if o != nil && !IsNil(o.ImplReg) {
+	if o != nil && !isNil(o.ImplReg) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o EecCtxtRelocStatus) MarshalJSON() ([]byte, error) {
 
 func (o EecCtxtRelocStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ImplReg) {
+	if !isNil(o.ImplReg) {
 		toSerialize["implReg"] = o.ImplReg
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // ACREventIDs Possible values are - TARGET_INFORMATION: Represents the target information event. - ACR_COMPLETE: Represents the ACR complete event. 
 type ACREventIDs struct {
-	string *string
+	ACREventIDsAnyOf *ACREventIDsAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ACREventIDs) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ACREventIDsAnyOf
+	err = json.Unmarshal(data, &dst.ACREventIDsAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonACREventIDsAnyOf, _ := json.Marshal(dst.ACREventIDsAnyOf)
+		if string(jsonACREventIDsAnyOf) == "{}" { // empty struct
+			dst.ACREventIDsAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ACREventIDsAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ACREventIDsAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ACREventIDs)")
@@ -41,8 +55,12 @@ func (dst *ACREventIDs) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ACREventIDs) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ACREventIDsAnyOf != nil {
+		return json.Marshal(&src.ACREventIDsAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

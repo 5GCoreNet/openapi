@@ -104,7 +104,7 @@ func (o *ProvisioningSession) SetProvisioningSessionType(v ProvisioningSessionTy
 
 // GetAspId returns the AspId field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetAspId() string {
-	if o == nil || IsNil(o.AspId) {
+	if o == nil || isNil(o.AspId) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ProvisioningSession) GetAspId() string {
 // GetAspIdOk returns a tuple with the AspId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetAspIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AspId) {
+	if o == nil || isNil(o.AspId) {
 		return nil, false
 	}
 	return o.AspId, true
@@ -122,7 +122,7 @@ func (o *ProvisioningSession) GetAspIdOk() (*string, bool) {
 
 // HasAspId returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasAspId() bool {
-	if o != nil && !IsNil(o.AspId) {
+	if o != nil && !isNil(o.AspId) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *ProvisioningSession) SetExternalApplicationId(v string) {
 
 // GetServerCertificateIds returns the ServerCertificateIds field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetServerCertificateIds() []string {
-	if o == nil || IsNil(o.ServerCertificateIds) {
+	if o == nil || isNil(o.ServerCertificateIds) {
 		var ret []string
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *ProvisioningSession) GetServerCertificateIds() []string {
 // GetServerCertificateIdsOk returns a tuple with the ServerCertificateIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetServerCertificateIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServerCertificateIds) {
+	if o == nil || isNil(o.ServerCertificateIds) {
 		return nil, false
 	}
 	return o.ServerCertificateIds, true
@@ -178,7 +178,7 @@ func (o *ProvisioningSession) GetServerCertificateIdsOk() ([]string, bool) {
 
 // HasServerCertificateIds returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasServerCertificateIds() bool {
-	if o != nil && !IsNil(o.ServerCertificateIds) {
+	if o != nil && !isNil(o.ServerCertificateIds) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *ProvisioningSession) SetServerCertificateIds(v []string) {
 
 // GetContentPreparationTemplateIds returns the ContentPreparationTemplateIds field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetContentPreparationTemplateIds() []string {
-	if o == nil || IsNil(o.ContentPreparationTemplateIds) {
+	if o == nil || isNil(o.ContentPreparationTemplateIds) {
 		var ret []string
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *ProvisioningSession) GetContentPreparationTemplateIds() []string {
 // GetContentPreparationTemplateIdsOk returns a tuple with the ContentPreparationTemplateIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetContentPreparationTemplateIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ContentPreparationTemplateIds) {
+	if o == nil || isNil(o.ContentPreparationTemplateIds) {
 		return nil, false
 	}
 	return o.ContentPreparationTemplateIds, true
@@ -210,7 +210,7 @@ func (o *ProvisioningSession) GetContentPreparationTemplateIdsOk() ([]string, bo
 
 // HasContentPreparationTemplateIds returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasContentPreparationTemplateIds() bool {
-	if o != nil && !IsNil(o.ContentPreparationTemplateIds) {
+	if o != nil && !isNil(o.ContentPreparationTemplateIds) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *ProvisioningSession) SetContentPreparationTemplateIds(v []string) {
 
 // GetMetricsReportingConfigurationIds returns the MetricsReportingConfigurationIds field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetMetricsReportingConfigurationIds() []string {
-	if o == nil || IsNil(o.MetricsReportingConfigurationIds) {
+	if o == nil || isNil(o.MetricsReportingConfigurationIds) {
 		var ret []string
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *ProvisioningSession) GetMetricsReportingConfigurationIds() []string {
 // GetMetricsReportingConfigurationIdsOk returns a tuple with the MetricsReportingConfigurationIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetMetricsReportingConfigurationIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.MetricsReportingConfigurationIds) {
+	if o == nil || isNil(o.MetricsReportingConfigurationIds) {
 		return nil, false
 	}
 	return o.MetricsReportingConfigurationIds, true
@@ -242,7 +242,7 @@ func (o *ProvisioningSession) GetMetricsReportingConfigurationIdsOk() ([]string,
 
 // HasMetricsReportingConfigurationIds returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasMetricsReportingConfigurationIds() bool {
-	if o != nil && !IsNil(o.MetricsReportingConfigurationIds) {
+	if o != nil && !isNil(o.MetricsReportingConfigurationIds) {
 		return true
 	}
 
@@ -256,7 +256,7 @@ func (o *ProvisioningSession) SetMetricsReportingConfigurationIds(v []string) {
 
 // GetPolicyTemplateIds returns the PolicyTemplateIds field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetPolicyTemplateIds() []string {
-	if o == nil || IsNil(o.PolicyTemplateIds) {
+	if o == nil || isNil(o.PolicyTemplateIds) {
 		var ret []string
 		return ret
 	}
@@ -266,7 +266,7 @@ func (o *ProvisioningSession) GetPolicyTemplateIds() []string {
 // GetPolicyTemplateIdsOk returns a tuple with the PolicyTemplateIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetPolicyTemplateIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.PolicyTemplateIds) {
+	if o == nil || isNil(o.PolicyTemplateIds) {
 		return nil, false
 	}
 	return o.PolicyTemplateIds, true
@@ -274,7 +274,7 @@ func (o *ProvisioningSession) GetPolicyTemplateIdsOk() ([]string, bool) {
 
 // HasPolicyTemplateIds returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasPolicyTemplateIds() bool {
-	if o != nil && !IsNil(o.PolicyTemplateIds) {
+	if o != nil && !isNil(o.PolicyTemplateIds) {
 		return true
 	}
 
@@ -288,7 +288,7 @@ func (o *ProvisioningSession) SetPolicyTemplateIds(v []string) {
 
 // GetEdgeResourcesConfigurationIds returns the EdgeResourcesConfigurationIds field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetEdgeResourcesConfigurationIds() []string {
-	if o == nil || IsNil(o.EdgeResourcesConfigurationIds) {
+	if o == nil || isNil(o.EdgeResourcesConfigurationIds) {
 		var ret []string
 		return ret
 	}
@@ -298,7 +298,7 @@ func (o *ProvisioningSession) GetEdgeResourcesConfigurationIds() []string {
 // GetEdgeResourcesConfigurationIdsOk returns a tuple with the EdgeResourcesConfigurationIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetEdgeResourcesConfigurationIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.EdgeResourcesConfigurationIds) {
+	if o == nil || isNil(o.EdgeResourcesConfigurationIds) {
 		return nil, false
 	}
 	return o.EdgeResourcesConfigurationIds, true
@@ -306,7 +306,7 @@ func (o *ProvisioningSession) GetEdgeResourcesConfigurationIdsOk() ([]string, bo
 
 // HasEdgeResourcesConfigurationIds returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasEdgeResourcesConfigurationIds() bool {
-	if o != nil && !IsNil(o.EdgeResourcesConfigurationIds) {
+	if o != nil && !isNil(o.EdgeResourcesConfigurationIds) {
 		return true
 	}
 
@@ -320,7 +320,7 @@ func (o *ProvisioningSession) SetEdgeResourcesConfigurationIds(v []string) {
 
 // GetEventDataProcessingConfigurationIds returns the EventDataProcessingConfigurationIds field value if set, zero value otherwise.
 func (o *ProvisioningSession) GetEventDataProcessingConfigurationIds() []string {
-	if o == nil || IsNil(o.EventDataProcessingConfigurationIds) {
+	if o == nil || isNil(o.EventDataProcessingConfigurationIds) {
 		var ret []string
 		return ret
 	}
@@ -330,7 +330,7 @@ func (o *ProvisioningSession) GetEventDataProcessingConfigurationIds() []string 
 // GetEventDataProcessingConfigurationIdsOk returns a tuple with the EventDataProcessingConfigurationIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningSession) GetEventDataProcessingConfigurationIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.EventDataProcessingConfigurationIds) {
+	if o == nil || isNil(o.EventDataProcessingConfigurationIds) {
 		return nil, false
 	}
 	return o.EventDataProcessingConfigurationIds, true
@@ -338,7 +338,7 @@ func (o *ProvisioningSession) GetEventDataProcessingConfigurationIdsOk() ([]stri
 
 // HasEventDataProcessingConfigurationIds returns a boolean if a field has been set.
 func (o *ProvisioningSession) HasEventDataProcessingConfigurationIds() bool {
-	if o != nil && !IsNil(o.EventDataProcessingConfigurationIds) {
+	if o != nil && !isNil(o.EventDataProcessingConfigurationIds) {
 		return true
 	}
 
@@ -362,26 +362,26 @@ func (o ProvisioningSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["provisioningSessionId"] = o.ProvisioningSessionId
 	toSerialize["provisioningSessionType"] = o.ProvisioningSessionType
-	if !IsNil(o.AspId) {
+	if !isNil(o.AspId) {
 		toSerialize["aspId"] = o.AspId
 	}
 	toSerialize["externalApplicationId"] = o.ExternalApplicationId
-	if !IsNil(o.ServerCertificateIds) {
+	if !isNil(o.ServerCertificateIds) {
 		toSerialize["serverCertificateIds"] = o.ServerCertificateIds
 	}
-	if !IsNil(o.ContentPreparationTemplateIds) {
+	if !isNil(o.ContentPreparationTemplateIds) {
 		toSerialize["contentPreparationTemplateIds"] = o.ContentPreparationTemplateIds
 	}
-	if !IsNil(o.MetricsReportingConfigurationIds) {
+	if !isNil(o.MetricsReportingConfigurationIds) {
 		toSerialize["metricsReportingConfigurationIds"] = o.MetricsReportingConfigurationIds
 	}
-	if !IsNil(o.PolicyTemplateIds) {
+	if !isNil(o.PolicyTemplateIds) {
 		toSerialize["policyTemplateIds"] = o.PolicyTemplateIds
 	}
-	if !IsNil(o.EdgeResourcesConfigurationIds) {
+	if !isNil(o.EdgeResourcesConfigurationIds) {
 		toSerialize["edgeResourcesConfigurationIds"] = o.EdgeResourcesConfigurationIds
 	}
-	if !IsNil(o.EventDataProcessingConfigurationIds) {
+	if !isNil(o.EventDataProcessingConfigurationIds) {
 		toSerialize["eventDataProcessingConfigurationIds"] = o.EventDataProcessingConfigurationIds
 	}
 	return toSerialize, nil

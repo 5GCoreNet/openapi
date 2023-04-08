@@ -17,23 +17,37 @@ import (
 
 // FlowDirection Possible values are: - DOWNLINK: The corresponding filter applies for traffic to the UE. - UPLINK: The corresponding filter applies for traffic from the UE. - BIDIRECTIONAL: The corresponding filter applies for traffic both to and from the UE. - UNSPECIFIED: The corresponding filter applies for traffic to the UE (downlink), but has no  specific direction declared. The service data flow detection shall apply the filter for  uplink traffic as if the filter was bidirectional. The PCF shall not use the value  UNSPECIFIED in filters created by the network in NW-initiated procedures. The PCF shall only  include the value UNSPECIFIED in filters in UE-initiated procedures if the same value is  received from the SMF. 
 type FlowDirection struct {
-	string *string
+	FlowDirectionAnyOf *FlowDirectionAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *FlowDirection) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into FlowDirectionAnyOf
+	err = json.Unmarshal(data, &dst.FlowDirectionAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonFlowDirectionAnyOf, _ := json.Marshal(dst.FlowDirectionAnyOf)
+		if string(jsonFlowDirectionAnyOf) == "{}" { // empty struct
+			dst.FlowDirectionAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.FlowDirectionAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.FlowDirectionAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(FlowDirection)")
@@ -41,8 +55,12 @@ func (dst *FlowDirection) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *FlowDirection) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.FlowDirectionAnyOf != nil {
+		return json.Marshal(&src.FlowDirectionAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -43,7 +43,7 @@ func NewTimeWindowWithDefaults() *TimeWindow {
 
 // GetMDAOutputStartTime returns the MDAOutputStartTime field value if set, zero value otherwise.
 func (o *TimeWindow) GetMDAOutputStartTime() time.Time {
-	if o == nil || IsNil(o.MDAOutputStartTime) {
+	if o == nil || isNil(o.MDAOutputStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TimeWindow) GetMDAOutputStartTime() time.Time {
 // GetMDAOutputStartTimeOk returns a tuple with the MDAOutputStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow) GetMDAOutputStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MDAOutputStartTime) {
+	if o == nil || isNil(o.MDAOutputStartTime) {
 		return nil, false
 	}
 	return o.MDAOutputStartTime, true
@@ -61,7 +61,7 @@ func (o *TimeWindow) GetMDAOutputStartTimeOk() (*time.Time, bool) {
 
 // HasMDAOutputStartTime returns a boolean if a field has been set.
 func (o *TimeWindow) HasMDAOutputStartTime() bool {
-	if o != nil && !IsNil(o.MDAOutputStartTime) {
+	if o != nil && !isNil(o.MDAOutputStartTime) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TimeWindow) SetMDAOutputStartTime(v time.Time) {
 
 // GetMDAOutputEndTime returns the MDAOutputEndTime field value if set, zero value otherwise.
 func (o *TimeWindow) GetMDAOutputEndTime() time.Time {
-	if o == nil || IsNil(o.MDAOutputEndTime) {
+	if o == nil || isNil(o.MDAOutputEndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TimeWindow) GetMDAOutputEndTime() time.Time {
 // GetMDAOutputEndTimeOk returns a tuple with the MDAOutputEndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow) GetMDAOutputEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MDAOutputEndTime) {
+	if o == nil || isNil(o.MDAOutputEndTime) {
 		return nil, false
 	}
 	return o.MDAOutputEndTime, true
@@ -93,7 +93,7 @@ func (o *TimeWindow) GetMDAOutputEndTimeOk() (*time.Time, bool) {
 
 // HasMDAOutputEndTime returns a boolean if a field has been set.
 func (o *TimeWindow) HasMDAOutputEndTime() bool {
-	if o != nil && !IsNil(o.MDAOutputEndTime) {
+	if o != nil && !isNil(o.MDAOutputEndTime) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o TimeWindow) MarshalJSON() ([]byte, error) {
 
 func (o TimeWindow) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MDAOutputStartTime) {
+	if !isNil(o.MDAOutputStartTime) {
 		toSerialize["mDAOutputStartTime"] = o.MDAOutputStartTime
 	}
-	if !IsNil(o.MDAOutputEndTime) {
+	if !isNil(o.MDAOutputEndTime) {
 		toSerialize["mDAOutputEndTime"] = o.MDAOutputEndTime
 	}
 	return toSerialize, nil

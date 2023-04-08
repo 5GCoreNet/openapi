@@ -23,7 +23,7 @@ type N3iwfFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *N3iwfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -78,7 +78,7 @@ func (o *N3iwfFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *N3iwfFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -96,7 +96,7 @@ func (o *N3iwfFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *N3iwfFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *N3iwfFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -128,7 +128,7 @@ func (o *N3iwfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *N3iwfFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *N3iwfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -160,7 +160,7 @@ func (o *N3iwfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, b
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -173,9 +173,9 @@ func (o *N3iwfFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *N3iwfFunctionSingle) GetAttributes() N3iwfFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret N3iwfFunctionSingleAllOfAttributes
+func (o *N3iwfFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -183,8 +183,8 @@ func (o *N3iwfFunctionSingle) GetAttributes() N3iwfFunctionSingleAllOfAttributes
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *N3iwfFunctionSingle) GetAttributesOk() (*N3iwfFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *N3iwfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -192,21 +192,21 @@ func (o *N3iwfFunctionSingle) GetAttributesOk() (*N3iwfFunctionSingleAllOfAttrib
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given N3iwfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *N3iwfFunctionSingle) SetAttributes(v N3iwfFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *N3iwfFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *N3iwfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -224,7 +224,7 @@ func (o *N3iwfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool)
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *N3iwfFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *N3iwfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -256,7 +256,7 @@ func (o *N3iwfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle,
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *N3iwfFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *N3iwfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -288,7 +288,7 @@ func (o *N3iwfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle,
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *N3iwfFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *N3iwfFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -320,7 +320,7 @@ func (o *N3iwfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *N3iwfFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN3 returns the EPN3 field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetEPN3() []EPN3Single {
-	if o == nil || IsNil(o.EPN3) {
+	if o == nil || isNil(o.EPN3) {
 		var ret []EPN3Single
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *N3iwfFunctionSingle) GetEPN3() []EPN3Single {
 // GetEPN3Ok returns a tuple with the EPN3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetEPN3Ok() ([]EPN3Single, bool) {
-	if o == nil || IsNil(o.EPN3) {
+	if o == nil || isNil(o.EPN3) {
 		return nil, false
 	}
 	return o.EPN3, true
@@ -352,7 +352,7 @@ func (o *N3iwfFunctionSingle) GetEPN3Ok() ([]EPN3Single, bool) {
 
 // HasEPN3 returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasEPN3() bool {
-	if o != nil && !IsNil(o.EPN3) {
+	if o != nil && !isNil(o.EPN3) {
 		return true
 	}
 
@@ -366,7 +366,7 @@ func (o *N3iwfFunctionSingle) SetEPN3(v []EPN3Single) {
 
 // GetEPN4 returns the EPN4 field value if set, zero value otherwise.
 func (o *N3iwfFunctionSingle) GetEPN4() []EPN4Single {
-	if o == nil || IsNil(o.EPN4) {
+	if o == nil || isNil(o.EPN4) {
 		var ret []EPN4Single
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *N3iwfFunctionSingle) GetEPN4() []EPN4Single {
 // GetEPN4Ok returns a tuple with the EPN4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3iwfFunctionSingle) GetEPN4Ok() ([]EPN4Single, bool) {
-	if o == nil || IsNil(o.EPN4) {
+	if o == nil || isNil(o.EPN4) {
 		return nil, false
 	}
 	return o.EPN4, true
@@ -384,7 +384,7 @@ func (o *N3iwfFunctionSingle) GetEPN4Ok() ([]EPN4Single, bool) {
 
 // HasEPN4 returns a boolean if a field has been set.
 func (o *N3iwfFunctionSingle) HasEPN4() bool {
-	if o != nil && !IsNil(o.EPN4) {
+	if o != nil && !isNil(o.EPN4) {
 		return true
 	}
 
@@ -407,34 +407,34 @@ func (o N3iwfFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o N3iwfFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.EPN3) {
+	if !isNil(o.EPN3) {
 		toSerialize["EP_N3"] = o.EPN3
 	}
-	if !IsNil(o.EPN4) {
+	if !isNil(o.EPN4) {
 		toSerialize["EP_N4"] = o.EPN4
 	}
 	return toSerialize, nil

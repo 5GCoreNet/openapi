@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,6 +10,7 @@ docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/Action.md
 docs/ApplyAction.md
+docs/ApplyActionAnyOf.md
 docs/BaselineDnsAitId.md
 docs/BaselineDnsMdtId.md
 docs/BaselineDnsQueryMdtInfo.md
@@ -38,9 +38,12 @@ docs/Ipv6Addr.md
 docs/Ipv6Prefix.md
 docs/Ipv6PrefixRange.md
 docs/MatchingOperator.md
+docs/MatchingOperatorAnyOf.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PatchItem.md
 docs/PatchOperation.md
+docs/PatchOperationAnyOf.md
 docs/PatchResult.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
@@ -57,6 +60,7 @@ model_access_token_err.go
 model_access_token_req.go
 model_action.go
 model_apply_action.go
+model_apply_action_any_of.go
 model_baseline_dns_ait_id.go
 model_baseline_dns_mdt_id.go
 model_baseline_dns_query_mdt_info.go
@@ -82,9 +86,12 @@ model_ipv6_addr.go
 model_ipv6_prefix.go
 model_ipv6_prefix_range.go
 model_matching_operator.go
+model_matching_operator_any_of.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_patch_item.go
 model_patch_operation.go
+model_patch_operation_any_of.go
 model_patch_result.go
 model_plmn_id.go
 model_plmn_id_nid.go

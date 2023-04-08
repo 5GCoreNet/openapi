@@ -69,7 +69,7 @@ func NewAppSessionContextUpdateDataWithDefaults() *AppSessionContextUpdateData {
 
 // GetAfAppId returns the AfAppId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetAfAppId() string {
-	if o == nil || IsNil(o.AfAppId) {
+	if o == nil || isNil(o.AfAppId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AppSessionContextUpdateData) GetAfAppId() string {
 // GetAfAppIdOk returns a tuple with the AfAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetAfAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfAppId) {
+	if o == nil || isNil(o.AfAppId) {
 		return nil, false
 	}
 	return o.AfAppId, true
@@ -87,7 +87,7 @@ func (o *AppSessionContextUpdateData) GetAfAppIdOk() (*string, bool) {
 
 // HasAfAppId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasAfAppId() bool {
-	if o != nil && !IsNil(o.AfAppId) {
+	if o != nil && !isNil(o.AfAppId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AppSessionContextUpdateData) SetAfAppId(v string) {
 
 // GetAfRoutReq returns the AfRoutReq field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppSessionContextUpdateData) GetAfRoutReq() AfRoutingRequirementRm {
-	if o == nil || IsNil(o.AfRoutReq.Get()) {
+	if o == nil || isNil(o.AfRoutReq.Get()) {
 		var ret AfRoutingRequirementRm
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *AppSessionContextUpdateData) UnsetAfRoutReq() {
 
 // GetAspId returns the AspId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetAspId() string {
-	if o == nil || IsNil(o.AspId) {
+	if o == nil || isNil(o.AspId) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *AppSessionContextUpdateData) GetAspId() string {
 // GetAspIdOk returns a tuple with the AspId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetAspIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AspId) {
+	if o == nil || isNil(o.AspId) {
 		return nil, false
 	}
 	return o.AspId, true
@@ -161,7 +161,7 @@ func (o *AppSessionContextUpdateData) GetAspIdOk() (*string, bool) {
 
 // HasAspId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasAspId() bool {
-	if o != nil && !IsNil(o.AspId) {
+	if o != nil && !isNil(o.AspId) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *AppSessionContextUpdateData) SetAspId(v string) {
 
 // GetBdtRefId returns the BdtRefId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetBdtRefId() string {
-	if o == nil || IsNil(o.BdtRefId) {
+	if o == nil || isNil(o.BdtRefId) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *AppSessionContextUpdateData) GetBdtRefId() string {
 // GetBdtRefIdOk returns a tuple with the BdtRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetBdtRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BdtRefId) {
+	if o == nil || isNil(o.BdtRefId) {
 		return nil, false
 	}
 	return o.BdtRefId, true
@@ -193,7 +193,7 @@ func (o *AppSessionContextUpdateData) GetBdtRefIdOk() (*string, bool) {
 
 // HasBdtRefId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasBdtRefId() bool {
-	if o != nil && !IsNil(o.BdtRefId) {
+	if o != nil && !isNil(o.BdtRefId) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *AppSessionContextUpdateData) SetBdtRefId(v string) {
 
 // GetEvSubsc returns the EvSubsc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppSessionContextUpdateData) GetEvSubsc() EventsSubscReqDataRm {
-	if o == nil || IsNil(o.EvSubsc.Get()) {
+	if o == nil || isNil(o.EvSubsc.Get()) {
 		var ret EventsSubscReqDataRm
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *AppSessionContextUpdateData) UnsetEvSubsc() {
 
 // GetMcpttId returns the McpttId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetMcpttId() string {
-	if o == nil || IsNil(o.McpttId) {
+	if o == nil || isNil(o.McpttId) {
 		var ret string
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *AppSessionContextUpdateData) GetMcpttId() string {
 // GetMcpttIdOk returns a tuple with the McpttId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetMcpttIdOk() (*string, bool) {
-	if o == nil || IsNil(o.McpttId) {
+	if o == nil || isNil(o.McpttId) {
 		return nil, false
 	}
 	return o.McpttId, true
@@ -267,7 +267,7 @@ func (o *AppSessionContextUpdateData) GetMcpttIdOk() (*string, bool) {
 
 // HasMcpttId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasMcpttId() bool {
-	if o != nil && !IsNil(o.McpttId) {
+	if o != nil && !isNil(o.McpttId) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *AppSessionContextUpdateData) SetMcpttId(v string) {
 
 // GetMcVideoId returns the McVideoId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetMcVideoId() string {
-	if o == nil || IsNil(o.McVideoId) {
+	if o == nil || isNil(o.McVideoId) {
 		var ret string
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *AppSessionContextUpdateData) GetMcVideoId() string {
 // GetMcVideoIdOk returns a tuple with the McVideoId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetMcVideoIdOk() (*string, bool) {
-	if o == nil || IsNil(o.McVideoId) {
+	if o == nil || isNil(o.McVideoId) {
 		return nil, false
 	}
 	return o.McVideoId, true
@@ -299,7 +299,7 @@ func (o *AppSessionContextUpdateData) GetMcVideoIdOk() (*string, bool) {
 
 // HasMcVideoId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasMcVideoId() bool {
-	if o != nil && !IsNil(o.McVideoId) {
+	if o != nil && !isNil(o.McVideoId) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *AppSessionContextUpdateData) SetMcVideoId(v string) {
 
 // GetMedComponents returns the MedComponents field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetMedComponents() map[string]MediaComponentRm {
-	if o == nil || IsNil(o.MedComponents) {
+	if o == nil || isNil(o.MedComponents) {
 		var ret map[string]MediaComponentRm
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *AppSessionContextUpdateData) GetMedComponents() map[string]MediaCompone
 // GetMedComponentsOk returns a tuple with the MedComponents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetMedComponentsOk() (*map[string]MediaComponentRm, bool) {
-	if o == nil || IsNil(o.MedComponents) {
+	if o == nil || isNil(o.MedComponents) {
 		return nil, false
 	}
 	return o.MedComponents, true
@@ -331,7 +331,7 @@ func (o *AppSessionContextUpdateData) GetMedComponentsOk() (*map[string]MediaCom
 
 // HasMedComponents returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasMedComponents() bool {
-	if o != nil && !IsNil(o.MedComponents) {
+	if o != nil && !isNil(o.MedComponents) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *AppSessionContextUpdateData) SetMedComponents(v map[string]MediaCompone
 
 // GetMpsAction returns the MpsAction field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetMpsAction() MpsAction {
-	if o == nil || IsNil(o.MpsAction) {
+	if o == nil || isNil(o.MpsAction) {
 		var ret MpsAction
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *AppSessionContextUpdateData) GetMpsAction() MpsAction {
 // GetMpsActionOk returns a tuple with the MpsAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetMpsActionOk() (*MpsAction, bool) {
-	if o == nil || IsNil(o.MpsAction) {
+	if o == nil || isNil(o.MpsAction) {
 		return nil, false
 	}
 	return o.MpsAction, true
@@ -363,7 +363,7 @@ func (o *AppSessionContextUpdateData) GetMpsActionOk() (*MpsAction, bool) {
 
 // HasMpsAction returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasMpsAction() bool {
-	if o != nil && !IsNil(o.MpsAction) {
+	if o != nil && !isNil(o.MpsAction) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *AppSessionContextUpdateData) SetMpsAction(v MpsAction) {
 
 // GetMpsId returns the MpsId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetMpsId() string {
-	if o == nil || IsNil(o.MpsId) {
+	if o == nil || isNil(o.MpsId) {
 		var ret string
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *AppSessionContextUpdateData) GetMpsId() string {
 // GetMpsIdOk returns a tuple with the MpsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetMpsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MpsId) {
+	if o == nil || isNil(o.MpsId) {
 		return nil, false
 	}
 	return o.MpsId, true
@@ -395,7 +395,7 @@ func (o *AppSessionContextUpdateData) GetMpsIdOk() (*string, bool) {
 
 // HasMpsId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasMpsId() bool {
-	if o != nil && !IsNil(o.MpsId) {
+	if o != nil && !isNil(o.MpsId) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *AppSessionContextUpdateData) SetMpsId(v string) {
 
 // GetMcsId returns the McsId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetMcsId() string {
-	if o == nil || IsNil(o.McsId) {
+	if o == nil || isNil(o.McsId) {
 		var ret string
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *AppSessionContextUpdateData) GetMcsId() string {
 // GetMcsIdOk returns a tuple with the McsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetMcsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.McsId) {
+	if o == nil || isNil(o.McsId) {
 		return nil, false
 	}
 	return o.McsId, true
@@ -427,7 +427,7 @@ func (o *AppSessionContextUpdateData) GetMcsIdOk() (*string, bool) {
 
 // HasMcsId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasMcsId() bool {
-	if o != nil && !IsNil(o.McsId) {
+	if o != nil && !isNil(o.McsId) {
 		return true
 	}
 
@@ -441,7 +441,7 @@ func (o *AppSessionContextUpdateData) SetMcsId(v string) {
 
 // GetPreemptControlInfo returns the PreemptControlInfo field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetPreemptControlInfo() PreemptionControlInformationRm {
-	if o == nil || IsNil(o.PreemptControlInfo) {
+	if o == nil || isNil(o.PreemptControlInfo) {
 		var ret PreemptionControlInformationRm
 		return ret
 	}
@@ -451,7 +451,7 @@ func (o *AppSessionContextUpdateData) GetPreemptControlInfo() PreemptionControlI
 // GetPreemptControlInfoOk returns a tuple with the PreemptControlInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetPreemptControlInfoOk() (*PreemptionControlInformationRm, bool) {
-	if o == nil || IsNil(o.PreemptControlInfo) {
+	if o == nil || isNil(o.PreemptControlInfo) {
 		return nil, false
 	}
 	return o.PreemptControlInfo, true
@@ -459,7 +459,7 @@ func (o *AppSessionContextUpdateData) GetPreemptControlInfoOk() (*PreemptionCont
 
 // HasPreemptControlInfo returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasPreemptControlInfo() bool {
-	if o != nil && !IsNil(o.PreemptControlInfo) {
+	if o != nil && !isNil(o.PreemptControlInfo) {
 		return true
 	}
 
@@ -473,7 +473,7 @@ func (o *AppSessionContextUpdateData) SetPreemptControlInfo(v PreemptionControlI
 
 // GetResPrio returns the ResPrio field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetResPrio() ReservPriority {
-	if o == nil || IsNil(o.ResPrio) {
+	if o == nil || isNil(o.ResPrio) {
 		var ret ReservPriority
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *AppSessionContextUpdateData) GetResPrio() ReservPriority {
 // GetResPrioOk returns a tuple with the ResPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetResPrioOk() (*ReservPriority, bool) {
-	if o == nil || IsNil(o.ResPrio) {
+	if o == nil || isNil(o.ResPrio) {
 		return nil, false
 	}
 	return o.ResPrio, true
@@ -491,7 +491,7 @@ func (o *AppSessionContextUpdateData) GetResPrioOk() (*ReservPriority, bool) {
 
 // HasResPrio returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasResPrio() bool {
-	if o != nil && !IsNil(o.ResPrio) {
+	if o != nil && !isNil(o.ResPrio) {
 		return true
 	}
 
@@ -505,7 +505,7 @@ func (o *AppSessionContextUpdateData) SetResPrio(v ReservPriority) {
 
 // GetServInfStatus returns the ServInfStatus field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetServInfStatus() ServiceInfoStatus {
-	if o == nil || IsNil(o.ServInfStatus) {
+	if o == nil || isNil(o.ServInfStatus) {
 		var ret ServiceInfoStatus
 		return ret
 	}
@@ -515,7 +515,7 @@ func (o *AppSessionContextUpdateData) GetServInfStatus() ServiceInfoStatus {
 // GetServInfStatusOk returns a tuple with the ServInfStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetServInfStatusOk() (*ServiceInfoStatus, bool) {
-	if o == nil || IsNil(o.ServInfStatus) {
+	if o == nil || isNil(o.ServInfStatus) {
 		return nil, false
 	}
 	return o.ServInfStatus, true
@@ -523,7 +523,7 @@ func (o *AppSessionContextUpdateData) GetServInfStatusOk() (*ServiceInfoStatus, 
 
 // HasServInfStatus returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasServInfStatus() bool {
-	if o != nil && !IsNil(o.ServInfStatus) {
+	if o != nil && !isNil(o.ServInfStatus) {
 		return true
 	}
 
@@ -537,7 +537,7 @@ func (o *AppSessionContextUpdateData) SetServInfStatus(v ServiceInfoStatus) {
 
 // GetSipForkInd returns the SipForkInd field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetSipForkInd() SipForkingIndication {
-	if o == nil || IsNil(o.SipForkInd) {
+	if o == nil || isNil(o.SipForkInd) {
 		var ret SipForkingIndication
 		return ret
 	}
@@ -547,7 +547,7 @@ func (o *AppSessionContextUpdateData) GetSipForkInd() SipForkingIndication {
 // GetSipForkIndOk returns a tuple with the SipForkInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetSipForkIndOk() (*SipForkingIndication, bool) {
-	if o == nil || IsNil(o.SipForkInd) {
+	if o == nil || isNil(o.SipForkInd) {
 		return nil, false
 	}
 	return o.SipForkInd, true
@@ -555,7 +555,7 @@ func (o *AppSessionContextUpdateData) GetSipForkIndOk() (*SipForkingIndication, 
 
 // HasSipForkInd returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasSipForkInd() bool {
-	if o != nil && !IsNil(o.SipForkInd) {
+	if o != nil && !isNil(o.SipForkInd) {
 		return true
 	}
 
@@ -569,7 +569,7 @@ func (o *AppSessionContextUpdateData) SetSipForkInd(v SipForkingIndication) {
 
 // GetSponId returns the SponId field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetSponId() string {
-	if o == nil || IsNil(o.SponId) {
+	if o == nil || isNil(o.SponId) {
 		var ret string
 		return ret
 	}
@@ -579,7 +579,7 @@ func (o *AppSessionContextUpdateData) GetSponId() string {
 // GetSponIdOk returns a tuple with the SponId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetSponIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SponId) {
+	if o == nil || isNil(o.SponId) {
 		return nil, false
 	}
 	return o.SponId, true
@@ -587,7 +587,7 @@ func (o *AppSessionContextUpdateData) GetSponIdOk() (*string, bool) {
 
 // HasSponId returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasSponId() bool {
-	if o != nil && !IsNil(o.SponId) {
+	if o != nil && !isNil(o.SponId) {
 		return true
 	}
 
@@ -601,7 +601,7 @@ func (o *AppSessionContextUpdateData) SetSponId(v string) {
 
 // GetSponStatus returns the SponStatus field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetSponStatus() SponsoringStatus {
-	if o == nil || IsNil(o.SponStatus) {
+	if o == nil || isNil(o.SponStatus) {
 		var ret SponsoringStatus
 		return ret
 	}
@@ -611,7 +611,7 @@ func (o *AppSessionContextUpdateData) GetSponStatus() SponsoringStatus {
 // GetSponStatusOk returns a tuple with the SponStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetSponStatusOk() (*SponsoringStatus, bool) {
-	if o == nil || IsNil(o.SponStatus) {
+	if o == nil || isNil(o.SponStatus) {
 		return nil, false
 	}
 	return o.SponStatus, true
@@ -619,7 +619,7 @@ func (o *AppSessionContextUpdateData) GetSponStatusOk() (*SponsoringStatus, bool
 
 // HasSponStatus returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasSponStatus() bool {
-	if o != nil && !IsNil(o.SponStatus) {
+	if o != nil && !isNil(o.SponStatus) {
 		return true
 	}
 
@@ -633,7 +633,7 @@ func (o *AppSessionContextUpdateData) SetSponStatus(v SponsoringStatus) {
 
 // GetTsnBridgeManCont returns the TsnBridgeManCont field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetTsnBridgeManCont() BridgeManagementContainer {
-	if o == nil || IsNil(o.TsnBridgeManCont) {
+	if o == nil || isNil(o.TsnBridgeManCont) {
 		var ret BridgeManagementContainer
 		return ret
 	}
@@ -643,7 +643,7 @@ func (o *AppSessionContextUpdateData) GetTsnBridgeManCont() BridgeManagementCont
 // GetTsnBridgeManContOk returns a tuple with the TsnBridgeManCont field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetTsnBridgeManContOk() (*BridgeManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnBridgeManCont) {
+	if o == nil || isNil(o.TsnBridgeManCont) {
 		return nil, false
 	}
 	return o.TsnBridgeManCont, true
@@ -651,7 +651,7 @@ func (o *AppSessionContextUpdateData) GetTsnBridgeManContOk() (*BridgeManagement
 
 // HasTsnBridgeManCont returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasTsnBridgeManCont() bool {
-	if o != nil && !IsNil(o.TsnBridgeManCont) {
+	if o != nil && !isNil(o.TsnBridgeManCont) {
 		return true
 	}
 
@@ -665,7 +665,7 @@ func (o *AppSessionContextUpdateData) SetTsnBridgeManCont(v BridgeManagementCont
 
 // GetTsnPortManContDstt returns the TsnPortManContDstt field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetTsnPortManContDstt() PortManagementContainer {
-	if o == nil || IsNil(o.TsnPortManContDstt) {
+	if o == nil || isNil(o.TsnPortManContDstt) {
 		var ret PortManagementContainer
 		return ret
 	}
@@ -675,7 +675,7 @@ func (o *AppSessionContextUpdateData) GetTsnPortManContDstt() PortManagementCont
 // GetTsnPortManContDsttOk returns a tuple with the TsnPortManContDstt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetTsnPortManContDsttOk() (*PortManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnPortManContDstt) {
+	if o == nil || isNil(o.TsnPortManContDstt) {
 		return nil, false
 	}
 	return o.TsnPortManContDstt, true
@@ -683,7 +683,7 @@ func (o *AppSessionContextUpdateData) GetTsnPortManContDsttOk() (*PortManagement
 
 // HasTsnPortManContDstt returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasTsnPortManContDstt() bool {
-	if o != nil && !IsNil(o.TsnPortManContDstt) {
+	if o != nil && !isNil(o.TsnPortManContDstt) {
 		return true
 	}
 
@@ -697,7 +697,7 @@ func (o *AppSessionContextUpdateData) SetTsnPortManContDstt(v PortManagementCont
 
 // GetTsnPortManContNwtts returns the TsnPortManContNwtts field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateData) GetTsnPortManContNwtts() []PortManagementContainer {
-	if o == nil || IsNil(o.TsnPortManContNwtts) {
+	if o == nil || isNil(o.TsnPortManContNwtts) {
 		var ret []PortManagementContainer
 		return ret
 	}
@@ -707,7 +707,7 @@ func (o *AppSessionContextUpdateData) GetTsnPortManContNwtts() []PortManagementC
 // GetTsnPortManContNwttsOk returns a tuple with the TsnPortManContNwtts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateData) GetTsnPortManContNwttsOk() ([]PortManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnPortManContNwtts) {
+	if o == nil || isNil(o.TsnPortManContNwtts) {
 		return nil, false
 	}
 	return o.TsnPortManContNwtts, true
@@ -715,7 +715,7 @@ func (o *AppSessionContextUpdateData) GetTsnPortManContNwttsOk() ([]PortManageme
 
 // HasTsnPortManContNwtts returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateData) HasTsnPortManContNwtts() bool {
-	if o != nil && !IsNil(o.TsnPortManContNwtts) {
+	if o != nil && !isNil(o.TsnPortManContNwtts) {
 		return true
 	}
 
@@ -737,64 +737,64 @@ func (o AppSessionContextUpdateData) MarshalJSON() ([]byte, error) {
 
 func (o AppSessionContextUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfAppId) {
+	if !isNil(o.AfAppId) {
 		toSerialize["afAppId"] = o.AfAppId
 	}
 	if o.AfRoutReq.IsSet() {
 		toSerialize["afRoutReq"] = o.AfRoutReq.Get()
 	}
-	if !IsNil(o.AspId) {
+	if !isNil(o.AspId) {
 		toSerialize["aspId"] = o.AspId
 	}
-	if !IsNil(o.BdtRefId) {
+	if !isNil(o.BdtRefId) {
 		toSerialize["bdtRefId"] = o.BdtRefId
 	}
 	if o.EvSubsc.IsSet() {
 		toSerialize["evSubsc"] = o.EvSubsc.Get()
 	}
-	if !IsNil(o.McpttId) {
+	if !isNil(o.McpttId) {
 		toSerialize["mcpttId"] = o.McpttId
 	}
-	if !IsNil(o.McVideoId) {
+	if !isNil(o.McVideoId) {
 		toSerialize["mcVideoId"] = o.McVideoId
 	}
-	if !IsNil(o.MedComponents) {
+	if !isNil(o.MedComponents) {
 		toSerialize["medComponents"] = o.MedComponents
 	}
-	if !IsNil(o.MpsAction) {
+	if !isNil(o.MpsAction) {
 		toSerialize["mpsAction"] = o.MpsAction
 	}
-	if !IsNil(o.MpsId) {
+	if !isNil(o.MpsId) {
 		toSerialize["mpsId"] = o.MpsId
 	}
-	if !IsNil(o.McsId) {
+	if !isNil(o.McsId) {
 		toSerialize["mcsId"] = o.McsId
 	}
-	if !IsNil(o.PreemptControlInfo) {
+	if !isNil(o.PreemptControlInfo) {
 		toSerialize["preemptControlInfo"] = o.PreemptControlInfo
 	}
-	if !IsNil(o.ResPrio) {
+	if !isNil(o.ResPrio) {
 		toSerialize["resPrio"] = o.ResPrio
 	}
-	if !IsNil(o.ServInfStatus) {
+	if !isNil(o.ServInfStatus) {
 		toSerialize["servInfStatus"] = o.ServInfStatus
 	}
-	if !IsNil(o.SipForkInd) {
+	if !isNil(o.SipForkInd) {
 		toSerialize["sipForkInd"] = o.SipForkInd
 	}
-	if !IsNil(o.SponId) {
+	if !isNil(o.SponId) {
 		toSerialize["sponId"] = o.SponId
 	}
-	if !IsNil(o.SponStatus) {
+	if !isNil(o.SponStatus) {
 		toSerialize["sponStatus"] = o.SponStatus
 	}
-	if !IsNil(o.TsnBridgeManCont) {
+	if !isNil(o.TsnBridgeManCont) {
 		toSerialize["tsnBridgeManCont"] = o.TsnBridgeManCont
 	}
-	if !IsNil(o.TsnPortManContDstt) {
+	if !isNil(o.TsnPortManContDstt) {
 		toSerialize["tsnPortManContDstt"] = o.TsnPortManContDstt
 	}
-	if !IsNil(o.TsnPortManContNwtts) {
+	if !isNil(o.TsnPortManContNwtts) {
 		toSerialize["tsnPortManContNwtts"] = o.TsnPortManContNwtts
 	}
 	return toSerialize, nil

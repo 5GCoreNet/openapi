@@ -13,7 +13,7 @@ package openapi_StreamingDataMnS
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -121,19 +121,19 @@ func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsCo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.connection != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Connection", r.connection, "")
+		parameterAddToQuery(localVarQueryParams, "Connection", r.connection, "")
 	}
 	if r.secWebSocketExtensions != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Extensions", r.secWebSocketExtensions, "")
+		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Extensions", r.secWebSocketExtensions, "")
 	}
 	if r.secWebSocketKey != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Key", r.secWebSocketKey, "")
+		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Key", r.secWebSocketKey, "")
 	}
 	if r.secWebSocketProtocol != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Protocol", r.secWebSocketProtocol, "")
+		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Protocol", r.secWebSocketProtocol, "")
 	}
 	if r.secWebSocketVersion != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Sec-WebSocket-Version", r.secWebSocketVersion, "")
+		parameterAddToQuery(localVarQueryParams, "Sec-WebSocket-Version", r.secWebSocketVersion, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -145,9 +145,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdGetExecute(r ApiConnectionsCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -242,10 +242,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiCon
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "streamIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -275,9 +275,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsDeleteExecute(r ApiCon
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -365,10 +365,10 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnec
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "streamIds", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "streamIds", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "streamIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -398,9 +398,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsGetExecute(r ApiConnec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -520,9 +520,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsPostExecute(r ApiConne
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -635,9 +635,9 @@ func (a *DefaultApiService) ConnectionsConnectionIdStreamsStreamIdGetExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -727,10 +727,10 @@ func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "connectionIdList", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "connectionIdList", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "connectionIdList", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "connectionIdList", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -760,9 +760,9 @@ func (a *DefaultApiService) ConnectionsGetExecute(r ApiConnectionsGetRequest) ([
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -876,9 +876,9 @@ func (a *DefaultApiService) ConnectionsPostExecute(r ApiConnectionsPostRequest) 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

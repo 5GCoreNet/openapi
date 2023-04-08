@@ -44,7 +44,7 @@ func NewExternalGnbCuCpFunctionSingleAllOf1WithDefaults() *ExternalGnbCuCpFuncti
 
 // GetExternalNrCellCu returns the ExternalNrCellCu field value if set, zero value otherwise.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetExternalNrCellCu() []ExternalNrCellCuSingle {
-	if o == nil || IsNil(o.ExternalNrCellCu) {
+	if o == nil || isNil(o.ExternalNrCellCu) {
 		var ret []ExternalNrCellCuSingle
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetExternalNrCellCu() []ExternalNr
 // GetExternalNrCellCuOk returns a tuple with the ExternalNrCellCu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetExternalNrCellCuOk() ([]ExternalNrCellCuSingle, bool) {
-	if o == nil || IsNil(o.ExternalNrCellCu) {
+	if o == nil || isNil(o.ExternalNrCellCu) {
 		return nil, false
 	}
 	return o.ExternalNrCellCu, true
@@ -62,7 +62,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetExternalNrCellCuOk() ([]Externa
 
 // HasExternalNrCellCu returns a boolean if a field has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) HasExternalNrCellCu() bool {
-	if o != nil && !IsNil(o.ExternalNrCellCu) {
+	if o != nil && !isNil(o.ExternalNrCellCu) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) SetExternalNrCellCu(v []ExternalNr
 
 // GetEPXnC returns the EPXnC field value if set, zero value otherwise.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPXnC() []EPXnCSingle {
-	if o == nil || IsNil(o.EPXnC) {
+	if o == nil || isNil(o.EPXnC) {
 		var ret []EPXnCSingle
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPXnC() []EPXnCSingle {
 // GetEPXnCOk returns a tuple with the EPXnC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPXnCOk() ([]EPXnCSingle, bool) {
-	if o == nil || IsNil(o.EPXnC) {
+	if o == nil || isNil(o.EPXnC) {
 		return nil, false
 	}
 	return o.EPXnC, true
@@ -94,7 +94,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPXnCOk() ([]EPXnCSingle, bool)
 
 // HasEPXnC returns a boolean if a field has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) HasEPXnC() bool {
-	if o != nil && !IsNil(o.EPXnC) {
+	if o != nil && !isNil(o.EPXnC) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) SetEPXnC(v []EPXnCSingle) {
 
 // GetEPE1 returns the EPE1 field value if set, zero value otherwise.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPE1() []EPE1Single {
-	if o == nil || IsNil(o.EPE1) {
+	if o == nil || isNil(o.EPE1) {
 		var ret []EPE1Single
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPE1() []EPE1Single {
 // GetEPE1Ok returns a tuple with the EPE1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPE1Ok() ([]EPE1Single, bool) {
-	if o == nil || IsNil(o.EPE1) {
+	if o == nil || isNil(o.EPE1) {
 		return nil, false
 	}
 	return o.EPE1, true
@@ -126,7 +126,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPE1Ok() ([]EPE1Single, bool) {
 
 // HasEPE1 returns a boolean if a field has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) HasEPE1() bool {
-	if o != nil && !IsNil(o.EPE1) {
+	if o != nil && !isNil(o.EPE1) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) SetEPE1(v []EPE1Single) {
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPF1C() []EPF1CSingle {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		var ret []EPF1CSingle
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPF1C() []EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPF1COk() ([]EPF1CSingle, bool) {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -158,7 +158,7 @@ func (o *ExternalGnbCuCpFunctionSingleAllOf1) GetEPF1COk() ([]EPF1CSingle, bool)
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *ExternalGnbCuCpFunctionSingleAllOf1) HasEPF1C() bool {
-	if o != nil && !IsNil(o.EPF1C) {
+	if o != nil && !isNil(o.EPF1C) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o ExternalGnbCuCpFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ExternalGnbCuCpFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExternalNrCellCu) {
+	if !isNil(o.ExternalNrCellCu) {
 		toSerialize["ExternalNrCellCu"] = o.ExternalNrCellCu
 	}
-	if !IsNil(o.EPXnC) {
+	if !isNil(o.EPXnC) {
 		toSerialize["EP_XnC"] = o.EPXnC
 	}
-	if !IsNil(o.EPE1) {
+	if !isNil(o.EPE1) {
 		toSerialize["EP_E1"] = o.EPE1
 	}
-	if !IsNil(o.EPF1C) {
+	if !isNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
 	return toSerialize, nil

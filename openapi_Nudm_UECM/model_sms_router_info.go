@@ -49,7 +49,7 @@ func NewSmsRouterInfoWithDefaults() *SmsRouterInfo {
 
 // GetNfInstanceId returns the NfInstanceId field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetNfInstanceId() string {
-	if o == nil || IsNil(o.NfInstanceId) {
+	if o == nil || isNil(o.NfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *SmsRouterInfo) GetNfInstanceId() string {
 // GetNfInstanceIdOk returns a tuple with the NfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetNfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfInstanceId) {
+	if o == nil || isNil(o.NfInstanceId) {
 		return nil, false
 	}
 	return o.NfInstanceId, true
@@ -67,7 +67,7 @@ func (o *SmsRouterInfo) GetNfInstanceIdOk() (*string, bool) {
 
 // HasNfInstanceId returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasNfInstanceId() bool {
-	if o != nil && !IsNil(o.NfInstanceId) {
+	if o != nil && !isNil(o.NfInstanceId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *SmsRouterInfo) SetNfInstanceId(v string) {
 
 // GetDiameterAddress returns the DiameterAddress field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetDiameterAddress() NetworkNodeDiameterAddress {
-	if o == nil || IsNil(o.DiameterAddress) {
+	if o == nil || isNil(o.DiameterAddress) {
 		var ret NetworkNodeDiameterAddress
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *SmsRouterInfo) GetDiameterAddress() NetworkNodeDiameterAddress {
 // GetDiameterAddressOk returns a tuple with the DiameterAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetDiameterAddressOk() (*NetworkNodeDiameterAddress, bool) {
-	if o == nil || IsNil(o.DiameterAddress) {
+	if o == nil || isNil(o.DiameterAddress) {
 		return nil, false
 	}
 	return o.DiameterAddress, true
@@ -99,7 +99,7 @@ func (o *SmsRouterInfo) GetDiameterAddressOk() (*NetworkNodeDiameterAddress, boo
 
 // HasDiameterAddress returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasDiameterAddress() bool {
-	if o != nil && !IsNil(o.DiameterAddress) {
+	if o != nil && !isNil(o.DiameterAddress) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *SmsRouterInfo) SetDiameterAddress(v NetworkNodeDiameterAddress) {
 
 // GetMapAddress returns the MapAddress field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetMapAddress() string {
-	if o == nil || IsNil(o.MapAddress) {
+	if o == nil || isNil(o.MapAddress) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *SmsRouterInfo) GetMapAddress() string {
 // GetMapAddressOk returns a tuple with the MapAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetMapAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.MapAddress) {
+	if o == nil || isNil(o.MapAddress) {
 		return nil, false
 	}
 	return o.MapAddress, true
@@ -131,7 +131,7 @@ func (o *SmsRouterInfo) GetMapAddressOk() (*string, bool) {
 
 // HasMapAddress returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasMapAddress() bool {
-	if o != nil && !IsNil(o.MapAddress) {
+	if o != nil && !isNil(o.MapAddress) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *SmsRouterInfo) SetMapAddress(v string) {
 
 // GetRouterIpv4 returns the RouterIpv4 field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetRouterIpv4() string {
-	if o == nil || IsNil(o.RouterIpv4) {
+	if o == nil || isNil(o.RouterIpv4) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *SmsRouterInfo) GetRouterIpv4() string {
 // GetRouterIpv4Ok returns a tuple with the RouterIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetRouterIpv4Ok() (*string, bool) {
-	if o == nil || IsNil(o.RouterIpv4) {
+	if o == nil || isNil(o.RouterIpv4) {
 		return nil, false
 	}
 	return o.RouterIpv4, true
@@ -163,7 +163,7 @@ func (o *SmsRouterInfo) GetRouterIpv4Ok() (*string, bool) {
 
 // HasRouterIpv4 returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasRouterIpv4() bool {
-	if o != nil && !IsNil(o.RouterIpv4) {
+	if o != nil && !isNil(o.RouterIpv4) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *SmsRouterInfo) SetRouterIpv4(v string) {
 
 // GetRouterIpv6 returns the RouterIpv6 field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetRouterIpv6() Ipv6Addr {
-	if o == nil || IsNil(o.RouterIpv6) {
+	if o == nil || isNil(o.RouterIpv6) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *SmsRouterInfo) GetRouterIpv6() Ipv6Addr {
 // GetRouterIpv6Ok returns a tuple with the RouterIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetRouterIpv6Ok() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.RouterIpv6) {
+	if o == nil || isNil(o.RouterIpv6) {
 		return nil, false
 	}
 	return o.RouterIpv6, true
@@ -195,7 +195,7 @@ func (o *SmsRouterInfo) GetRouterIpv6Ok() (*Ipv6Addr, bool) {
 
 // HasRouterIpv6 returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasRouterIpv6() bool {
-	if o != nil && !IsNil(o.RouterIpv6) {
+	if o != nil && !isNil(o.RouterIpv6) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *SmsRouterInfo) SetRouterIpv6(v Ipv6Addr) {
 
 // GetRouterFqdn returns the RouterFqdn field value if set, zero value otherwise.
 func (o *SmsRouterInfo) GetRouterFqdn() string {
-	if o == nil || IsNil(o.RouterFqdn) {
+	if o == nil || isNil(o.RouterFqdn) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *SmsRouterInfo) GetRouterFqdn() string {
 // GetRouterFqdnOk returns a tuple with the RouterFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRouterInfo) GetRouterFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.RouterFqdn) {
+	if o == nil || isNil(o.RouterFqdn) {
 		return nil, false
 	}
 	return o.RouterFqdn, true
@@ -227,7 +227,7 @@ func (o *SmsRouterInfo) GetRouterFqdnOk() (*string, bool) {
 
 // HasRouterFqdn returns a boolean if a field has been set.
 func (o *SmsRouterInfo) HasRouterFqdn() bool {
-	if o != nil && !IsNil(o.RouterFqdn) {
+	if o != nil && !isNil(o.RouterFqdn) {
 		return true
 	}
 
@@ -249,22 +249,22 @@ func (o SmsRouterInfo) MarshalJSON() ([]byte, error) {
 
 func (o SmsRouterInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NfInstanceId) {
+	if !isNil(o.NfInstanceId) {
 		toSerialize["nfInstanceId"] = o.NfInstanceId
 	}
-	if !IsNil(o.DiameterAddress) {
+	if !isNil(o.DiameterAddress) {
 		toSerialize["diameterAddress"] = o.DiameterAddress
 	}
-	if !IsNil(o.MapAddress) {
+	if !isNil(o.MapAddress) {
 		toSerialize["mapAddress"] = o.MapAddress
 	}
-	if !IsNil(o.RouterIpv4) {
+	if !isNil(o.RouterIpv4) {
 		toSerialize["routerIpv4"] = o.RouterIpv4
 	}
-	if !IsNil(o.RouterIpv6) {
+	if !isNil(o.RouterIpv6) {
 		toSerialize["routerIpv6"] = o.RouterIpv6
 	}
-	if !IsNil(o.RouterFqdn) {
+	if !isNil(o.RouterFqdn) {
 		toSerialize["routerFqdn"] = o.RouterFqdn
 	}
 	return toSerialize, nil

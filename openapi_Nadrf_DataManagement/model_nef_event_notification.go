@@ -107,7 +107,7 @@ func (o *NefEventNotification) SetTimeStamp(v time.Time) {
 
 // GetSvcExprcInfos returns the SvcExprcInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetSvcExprcInfos() []ServiceExperienceInfo1 {
-	if o == nil || IsNil(o.SvcExprcInfos) {
+	if o == nil || isNil(o.SvcExprcInfos) {
 		var ret []ServiceExperienceInfo1
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *NefEventNotification) GetSvcExprcInfos() []ServiceExperienceInfo1 {
 // GetSvcExprcInfosOk returns a tuple with the SvcExprcInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetSvcExprcInfosOk() ([]ServiceExperienceInfo1, bool) {
-	if o == nil || IsNil(o.SvcExprcInfos) {
+	if o == nil || isNil(o.SvcExprcInfos) {
 		return nil, false
 	}
 	return o.SvcExprcInfos, true
@@ -125,7 +125,7 @@ func (o *NefEventNotification) GetSvcExprcInfosOk() ([]ServiceExperienceInfo1, b
 
 // HasSvcExprcInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasSvcExprcInfos() bool {
-	if o != nil && !IsNil(o.SvcExprcInfos) {
+	if o != nil && !isNil(o.SvcExprcInfos) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *NefEventNotification) SetSvcExprcInfos(v []ServiceExperienceInfo1) {
 
 // GetUeMobilityInfos returns the UeMobilityInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetUeMobilityInfos() []UeMobilityInfo {
-	if o == nil || IsNil(o.UeMobilityInfos) {
+	if o == nil || isNil(o.UeMobilityInfos) {
 		var ret []UeMobilityInfo
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *NefEventNotification) GetUeMobilityInfos() []UeMobilityInfo {
 // GetUeMobilityInfosOk returns a tuple with the UeMobilityInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetUeMobilityInfosOk() ([]UeMobilityInfo, bool) {
-	if o == nil || IsNil(o.UeMobilityInfos) {
+	if o == nil || isNil(o.UeMobilityInfos) {
 		return nil, false
 	}
 	return o.UeMobilityInfos, true
@@ -157,7 +157,7 @@ func (o *NefEventNotification) GetUeMobilityInfosOk() ([]UeMobilityInfo, bool) {
 
 // HasUeMobilityInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasUeMobilityInfos() bool {
-	if o != nil && !IsNil(o.UeMobilityInfos) {
+	if o != nil && !isNil(o.UeMobilityInfos) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *NefEventNotification) SetUeMobilityInfos(v []UeMobilityInfo) {
 
 // GetUeCommInfos returns the UeCommInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetUeCommInfos() []UeCommunicationInfo {
-	if o == nil || IsNil(o.UeCommInfos) {
+	if o == nil || isNil(o.UeCommInfos) {
 		var ret []UeCommunicationInfo
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *NefEventNotification) GetUeCommInfos() []UeCommunicationInfo {
 // GetUeCommInfosOk returns a tuple with the UeCommInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetUeCommInfosOk() ([]UeCommunicationInfo, bool) {
-	if o == nil || IsNil(o.UeCommInfos) {
+	if o == nil || isNil(o.UeCommInfos) {
 		return nil, false
 	}
 	return o.UeCommInfos, true
@@ -189,7 +189,7 @@ func (o *NefEventNotification) GetUeCommInfosOk() ([]UeCommunicationInfo, bool) 
 
 // HasUeCommInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasUeCommInfos() bool {
-	if o != nil && !IsNil(o.UeCommInfos) {
+	if o != nil && !isNil(o.UeCommInfos) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *NefEventNotification) SetUeCommInfos(v []UeCommunicationInfo) {
 
 // GetExcepInfos returns the ExcepInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetExcepInfos() []ExceptionInfo {
-	if o == nil || IsNil(o.ExcepInfos) {
+	if o == nil || isNil(o.ExcepInfos) {
 		var ret []ExceptionInfo
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *NefEventNotification) GetExcepInfos() []ExceptionInfo {
 // GetExcepInfosOk returns a tuple with the ExcepInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetExcepInfosOk() ([]ExceptionInfo, bool) {
-	if o == nil || IsNil(o.ExcepInfos) {
+	if o == nil || isNil(o.ExcepInfos) {
 		return nil, false
 	}
 	return o.ExcepInfos, true
@@ -221,7 +221,7 @@ func (o *NefEventNotification) GetExcepInfosOk() ([]ExceptionInfo, bool) {
 
 // HasExcepInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasExcepInfos() bool {
-	if o != nil && !IsNil(o.ExcepInfos) {
+	if o != nil && !isNil(o.ExcepInfos) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *NefEventNotification) SetExcepInfos(v []ExceptionInfo) {
 
 // GetCongestionInfos returns the CongestionInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetCongestionInfos() []UserDataCongestionCollection {
-	if o == nil || IsNil(o.CongestionInfos) {
+	if o == nil || isNil(o.CongestionInfos) {
 		var ret []UserDataCongestionCollection
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *NefEventNotification) GetCongestionInfos() []UserDataCongestionCollecti
 // GetCongestionInfosOk returns a tuple with the CongestionInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetCongestionInfosOk() ([]UserDataCongestionCollection, bool) {
-	if o == nil || IsNil(o.CongestionInfos) {
+	if o == nil || isNil(o.CongestionInfos) {
 		return nil, false
 	}
 	return o.CongestionInfos, true
@@ -253,7 +253,7 @@ func (o *NefEventNotification) GetCongestionInfosOk() ([]UserDataCongestionColle
 
 // HasCongestionInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasCongestionInfos() bool {
-	if o != nil && !IsNil(o.CongestionInfos) {
+	if o != nil && !isNil(o.CongestionInfos) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *NefEventNotification) SetCongestionInfos(v []UserDataCongestionCollecti
 
 // GetPerfDataInfos returns the PerfDataInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetPerfDataInfos() []PerformanceDataInfo {
-	if o == nil || IsNil(o.PerfDataInfos) {
+	if o == nil || isNil(o.PerfDataInfos) {
 		var ret []PerformanceDataInfo
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *NefEventNotification) GetPerfDataInfos() []PerformanceDataInfo {
 // GetPerfDataInfosOk returns a tuple with the PerfDataInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetPerfDataInfosOk() ([]PerformanceDataInfo, bool) {
-	if o == nil || IsNil(o.PerfDataInfos) {
+	if o == nil || isNil(o.PerfDataInfos) {
 		return nil, false
 	}
 	return o.PerfDataInfos, true
@@ -285,7 +285,7 @@ func (o *NefEventNotification) GetPerfDataInfosOk() ([]PerformanceDataInfo, bool
 
 // HasPerfDataInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasPerfDataInfos() bool {
-	if o != nil && !IsNil(o.PerfDataInfos) {
+	if o != nil && !isNil(o.PerfDataInfos) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *NefEventNotification) SetPerfDataInfos(v []PerformanceDataInfo) {
 
 // GetDispersionInfos returns the DispersionInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetDispersionInfos() []DispersionCollection1 {
-	if o == nil || IsNil(o.DispersionInfos) {
+	if o == nil || isNil(o.DispersionInfos) {
 		var ret []DispersionCollection1
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *NefEventNotification) GetDispersionInfos() []DispersionCollection1 {
 // GetDispersionInfosOk returns a tuple with the DispersionInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetDispersionInfosOk() ([]DispersionCollection1, bool) {
-	if o == nil || IsNil(o.DispersionInfos) {
+	if o == nil || isNil(o.DispersionInfos) {
 		return nil, false
 	}
 	return o.DispersionInfos, true
@@ -317,7 +317,7 @@ func (o *NefEventNotification) GetDispersionInfosOk() ([]DispersionCollection1, 
 
 // HasDispersionInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasDispersionInfos() bool {
-	if o != nil && !IsNil(o.DispersionInfos) {
+	if o != nil && !isNil(o.DispersionInfos) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *NefEventNotification) SetDispersionInfos(v []DispersionCollection1) {
 
 // GetCollBhvrInfs returns the CollBhvrInfs field value if set, zero value otherwise.
 func (o *NefEventNotification) GetCollBhvrInfs() []CollectiveBehaviourInfo {
-	if o == nil || IsNil(o.CollBhvrInfs) {
+	if o == nil || isNil(o.CollBhvrInfs) {
 		var ret []CollectiveBehaviourInfo
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *NefEventNotification) GetCollBhvrInfs() []CollectiveBehaviourInfo {
 // GetCollBhvrInfsOk returns a tuple with the CollBhvrInfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetCollBhvrInfsOk() ([]CollectiveBehaviourInfo, bool) {
-	if o == nil || IsNil(o.CollBhvrInfs) {
+	if o == nil || isNil(o.CollBhvrInfs) {
 		return nil, false
 	}
 	return o.CollBhvrInfs, true
@@ -349,7 +349,7 @@ func (o *NefEventNotification) GetCollBhvrInfsOk() ([]CollectiveBehaviourInfo, b
 
 // HasCollBhvrInfs returns a boolean if a field has been set.
 func (o *NefEventNotification) HasCollBhvrInfs() bool {
-	if o != nil && !IsNil(o.CollBhvrInfs) {
+	if o != nil && !isNil(o.CollBhvrInfs) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *NefEventNotification) SetCollBhvrInfs(v []CollectiveBehaviourInfo) {
 
 // GetMsQoeMetrInfos returns the MsQoeMetrInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetMsQoeMetrInfos() []MsQoeMetricsCollection {
-	if o == nil || IsNil(o.MsQoeMetrInfos) {
+	if o == nil || isNil(o.MsQoeMetrInfos) {
 		var ret []MsQoeMetricsCollection
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *NefEventNotification) GetMsQoeMetrInfos() []MsQoeMetricsCollection {
 // GetMsQoeMetrInfosOk returns a tuple with the MsQoeMetrInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetMsQoeMetrInfosOk() ([]MsQoeMetricsCollection, bool) {
-	if o == nil || IsNil(o.MsQoeMetrInfos) {
+	if o == nil || isNil(o.MsQoeMetrInfos) {
 		return nil, false
 	}
 	return o.MsQoeMetrInfos, true
@@ -381,7 +381,7 @@ func (o *NefEventNotification) GetMsQoeMetrInfosOk() ([]MsQoeMetricsCollection, 
 
 // HasMsQoeMetrInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasMsQoeMetrInfos() bool {
-	if o != nil && !IsNil(o.MsQoeMetrInfos) {
+	if o != nil && !isNil(o.MsQoeMetrInfos) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *NefEventNotification) SetMsQoeMetrInfos(v []MsQoeMetricsCollection) {
 
 // GetMsConsumpInfos returns the MsConsumpInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetMsConsumpInfos() []MsConsumptionCollection {
-	if o == nil || IsNil(o.MsConsumpInfos) {
+	if o == nil || isNil(o.MsConsumpInfos) {
 		var ret []MsConsumptionCollection
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *NefEventNotification) GetMsConsumpInfos() []MsConsumptionCollection {
 // GetMsConsumpInfosOk returns a tuple with the MsConsumpInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetMsConsumpInfosOk() ([]MsConsumptionCollection, bool) {
-	if o == nil || IsNil(o.MsConsumpInfos) {
+	if o == nil || isNil(o.MsConsumpInfos) {
 		return nil, false
 	}
 	return o.MsConsumpInfos, true
@@ -413,7 +413,7 @@ func (o *NefEventNotification) GetMsConsumpInfosOk() ([]MsConsumptionCollection,
 
 // HasMsConsumpInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasMsConsumpInfos() bool {
-	if o != nil && !IsNil(o.MsConsumpInfos) {
+	if o != nil && !isNil(o.MsConsumpInfos) {
 		return true
 	}
 
@@ -427,7 +427,7 @@ func (o *NefEventNotification) SetMsConsumpInfos(v []MsConsumptionCollection) {
 
 // GetMsNetAssInvInfos returns the MsNetAssInvInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetMsNetAssInvInfos() []MsNetAssInvocationCollection {
-	if o == nil || IsNil(o.MsNetAssInvInfos) {
+	if o == nil || isNil(o.MsNetAssInvInfos) {
 		var ret []MsNetAssInvocationCollection
 		return ret
 	}
@@ -437,7 +437,7 @@ func (o *NefEventNotification) GetMsNetAssInvInfos() []MsNetAssInvocationCollect
 // GetMsNetAssInvInfosOk returns a tuple with the MsNetAssInvInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetMsNetAssInvInfosOk() ([]MsNetAssInvocationCollection, bool) {
-	if o == nil || IsNil(o.MsNetAssInvInfos) {
+	if o == nil || isNil(o.MsNetAssInvInfos) {
 		return nil, false
 	}
 	return o.MsNetAssInvInfos, true
@@ -445,7 +445,7 @@ func (o *NefEventNotification) GetMsNetAssInvInfosOk() ([]MsNetAssInvocationColl
 
 // HasMsNetAssInvInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasMsNetAssInvInfos() bool {
-	if o != nil && !IsNil(o.MsNetAssInvInfos) {
+	if o != nil && !isNil(o.MsNetAssInvInfos) {
 		return true
 	}
 
@@ -459,7 +459,7 @@ func (o *NefEventNotification) SetMsNetAssInvInfos(v []MsNetAssInvocationCollect
 
 // GetMsDynPlyInvInfos returns the MsDynPlyInvInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetMsDynPlyInvInfos() []MsDynPolicyInvocationCollection {
-	if o == nil || IsNil(o.MsDynPlyInvInfos) {
+	if o == nil || isNil(o.MsDynPlyInvInfos) {
 		var ret []MsDynPolicyInvocationCollection
 		return ret
 	}
@@ -469,7 +469,7 @@ func (o *NefEventNotification) GetMsDynPlyInvInfos() []MsDynPolicyInvocationColl
 // GetMsDynPlyInvInfosOk returns a tuple with the MsDynPlyInvInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetMsDynPlyInvInfosOk() ([]MsDynPolicyInvocationCollection, bool) {
-	if o == nil || IsNil(o.MsDynPlyInvInfos) {
+	if o == nil || isNil(o.MsDynPlyInvInfos) {
 		return nil, false
 	}
 	return o.MsDynPlyInvInfos, true
@@ -477,7 +477,7 @@ func (o *NefEventNotification) GetMsDynPlyInvInfosOk() ([]MsDynPolicyInvocationC
 
 // HasMsDynPlyInvInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasMsDynPlyInvInfos() bool {
-	if o != nil && !IsNil(o.MsDynPlyInvInfos) {
+	if o != nil && !isNil(o.MsDynPlyInvInfos) {
 		return true
 	}
 
@@ -491,7 +491,7 @@ func (o *NefEventNotification) SetMsDynPlyInvInfos(v []MsDynPolicyInvocationColl
 
 // GetMsAccActInfos returns the MsAccActInfos field value if set, zero value otherwise.
 func (o *NefEventNotification) GetMsAccActInfos() []MSAccessActivityCollection {
-	if o == nil || IsNil(o.MsAccActInfos) {
+	if o == nil || isNil(o.MsAccActInfos) {
 		var ret []MSAccessActivityCollection
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *NefEventNotification) GetMsAccActInfos() []MSAccessActivityCollection {
 // GetMsAccActInfosOk returns a tuple with the MsAccActInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventNotification) GetMsAccActInfosOk() ([]MSAccessActivityCollection, bool) {
-	if o == nil || IsNil(o.MsAccActInfos) {
+	if o == nil || isNil(o.MsAccActInfos) {
 		return nil, false
 	}
 	return o.MsAccActInfos, true
@@ -509,7 +509,7 @@ func (o *NefEventNotification) GetMsAccActInfosOk() ([]MSAccessActivityCollectio
 
 // HasMsAccActInfos returns a boolean if a field has been set.
 func (o *NefEventNotification) HasMsAccActInfos() bool {
-	if o != nil && !IsNil(o.MsAccActInfos) {
+	if o != nil && !isNil(o.MsAccActInfos) {
 		return true
 	}
 
@@ -533,43 +533,43 @@ func (o NefEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !IsNil(o.SvcExprcInfos) {
+	if !isNil(o.SvcExprcInfos) {
 		toSerialize["svcExprcInfos"] = o.SvcExprcInfos
 	}
-	if !IsNil(o.UeMobilityInfos) {
+	if !isNil(o.UeMobilityInfos) {
 		toSerialize["ueMobilityInfos"] = o.UeMobilityInfos
 	}
-	if !IsNil(o.UeCommInfos) {
+	if !isNil(o.UeCommInfos) {
 		toSerialize["ueCommInfos"] = o.UeCommInfos
 	}
-	if !IsNil(o.ExcepInfos) {
+	if !isNil(o.ExcepInfos) {
 		toSerialize["excepInfos"] = o.ExcepInfos
 	}
-	if !IsNil(o.CongestionInfos) {
+	if !isNil(o.CongestionInfos) {
 		toSerialize["congestionInfos"] = o.CongestionInfos
 	}
-	if !IsNil(o.PerfDataInfos) {
+	if !isNil(o.PerfDataInfos) {
 		toSerialize["perfDataInfos"] = o.PerfDataInfos
 	}
-	if !IsNil(o.DispersionInfos) {
+	if !isNil(o.DispersionInfos) {
 		toSerialize["dispersionInfos"] = o.DispersionInfos
 	}
-	if !IsNil(o.CollBhvrInfs) {
+	if !isNil(o.CollBhvrInfs) {
 		toSerialize["collBhvrInfs"] = o.CollBhvrInfs
 	}
-	if !IsNil(o.MsQoeMetrInfos) {
+	if !isNil(o.MsQoeMetrInfos) {
 		toSerialize["msQoeMetrInfos"] = o.MsQoeMetrInfos
 	}
-	if !IsNil(o.MsConsumpInfos) {
+	if !isNil(o.MsConsumpInfos) {
 		toSerialize["msConsumpInfos"] = o.MsConsumpInfos
 	}
-	if !IsNil(o.MsNetAssInvInfos) {
+	if !isNil(o.MsNetAssInvInfos) {
 		toSerialize["msNetAssInvInfos"] = o.MsNetAssInvInfos
 	}
-	if !IsNil(o.MsDynPlyInvInfos) {
+	if !isNil(o.MsDynPlyInvInfos) {
 		toSerialize["msDynPlyInvInfos"] = o.MsDynPlyInvInfos
 	}
-	if !IsNil(o.MsAccActInfos) {
+	if !isNil(o.MsAccActInfos) {
 		toSerialize["msAccActInfos"] = o.MsAccActInfos
 	}
 	return toSerialize, nil

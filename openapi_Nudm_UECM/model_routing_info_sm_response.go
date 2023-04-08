@@ -46,7 +46,7 @@ func NewRoutingInfoSmResponseWithDefaults() *RoutingInfoSmResponse {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *RoutingInfoSmResponse) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *RoutingInfoSmResponse) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmResponse) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -64,7 +64,7 @@ func (o *RoutingInfoSmResponse) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *RoutingInfoSmResponse) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *RoutingInfoSmResponse) SetSupi(v string) {
 
 // GetSmsf3Gpp returns the Smsf3Gpp field value if set, zero value otherwise.
 func (o *RoutingInfoSmResponse) GetSmsf3Gpp() SmsfRegistration {
-	if o == nil || IsNil(o.Smsf3Gpp) {
+	if o == nil || isNil(o.Smsf3Gpp) {
 		var ret SmsfRegistration
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *RoutingInfoSmResponse) GetSmsf3Gpp() SmsfRegistration {
 // GetSmsf3GppOk returns a tuple with the Smsf3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmResponse) GetSmsf3GppOk() (*SmsfRegistration, bool) {
-	if o == nil || IsNil(o.Smsf3Gpp) {
+	if o == nil || isNil(o.Smsf3Gpp) {
 		return nil, false
 	}
 	return o.Smsf3Gpp, true
@@ -96,7 +96,7 @@ func (o *RoutingInfoSmResponse) GetSmsf3GppOk() (*SmsfRegistration, bool) {
 
 // HasSmsf3Gpp returns a boolean if a field has been set.
 func (o *RoutingInfoSmResponse) HasSmsf3Gpp() bool {
-	if o != nil && !IsNil(o.Smsf3Gpp) {
+	if o != nil && !isNil(o.Smsf3Gpp) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *RoutingInfoSmResponse) SetSmsf3Gpp(v SmsfRegistration) {
 
 // GetSmsfNon3Gpp returns the SmsfNon3Gpp field value if set, zero value otherwise.
 func (o *RoutingInfoSmResponse) GetSmsfNon3Gpp() SmsfRegistration {
-	if o == nil || IsNil(o.SmsfNon3Gpp) {
+	if o == nil || isNil(o.SmsfNon3Gpp) {
 		var ret SmsfRegistration
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *RoutingInfoSmResponse) GetSmsfNon3Gpp() SmsfRegistration {
 // GetSmsfNon3GppOk returns a tuple with the SmsfNon3Gpp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmResponse) GetSmsfNon3GppOk() (*SmsfRegistration, bool) {
-	if o == nil || IsNil(o.SmsfNon3Gpp) {
+	if o == nil || isNil(o.SmsfNon3Gpp) {
 		return nil, false
 	}
 	return o.SmsfNon3Gpp, true
@@ -128,7 +128,7 @@ func (o *RoutingInfoSmResponse) GetSmsfNon3GppOk() (*SmsfRegistration, bool) {
 
 // HasSmsfNon3Gpp returns a boolean if a field has been set.
 func (o *RoutingInfoSmResponse) HasSmsfNon3Gpp() bool {
-	if o != nil && !IsNil(o.SmsfNon3Gpp) {
+	if o != nil && !isNil(o.SmsfNon3Gpp) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *RoutingInfoSmResponse) SetSmsfNon3Gpp(v SmsfRegistration) {
 
 // GetIpSmGw returns the IpSmGw field value if set, zero value otherwise.
 func (o *RoutingInfoSmResponse) GetIpSmGw() IpSmGwInfo {
-	if o == nil || IsNil(o.IpSmGw) {
+	if o == nil || isNil(o.IpSmGw) {
 		var ret IpSmGwInfo
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *RoutingInfoSmResponse) GetIpSmGw() IpSmGwInfo {
 // GetIpSmGwOk returns a tuple with the IpSmGw field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmResponse) GetIpSmGwOk() (*IpSmGwInfo, bool) {
-	if o == nil || IsNil(o.IpSmGw) {
+	if o == nil || isNil(o.IpSmGw) {
 		return nil, false
 	}
 	return o.IpSmGw, true
@@ -160,7 +160,7 @@ func (o *RoutingInfoSmResponse) GetIpSmGwOk() (*IpSmGwInfo, bool) {
 
 // HasIpSmGw returns a boolean if a field has been set.
 func (o *RoutingInfoSmResponse) HasIpSmGw() bool {
-	if o != nil && !IsNil(o.IpSmGw) {
+	if o != nil && !isNil(o.IpSmGw) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *RoutingInfoSmResponse) SetIpSmGw(v IpSmGwInfo) {
 
 // GetSmsRouter returns the SmsRouter field value if set, zero value otherwise.
 func (o *RoutingInfoSmResponse) GetSmsRouter() SmsRouterInfo {
-	if o == nil || IsNil(o.SmsRouter) {
+	if o == nil || isNil(o.SmsRouter) {
 		var ret SmsRouterInfo
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *RoutingInfoSmResponse) GetSmsRouter() SmsRouterInfo {
 // GetSmsRouterOk returns a tuple with the SmsRouter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmResponse) GetSmsRouterOk() (*SmsRouterInfo, bool) {
-	if o == nil || IsNil(o.SmsRouter) {
+	if o == nil || isNil(o.SmsRouter) {
 		return nil, false
 	}
 	return o.SmsRouter, true
@@ -192,7 +192,7 @@ func (o *RoutingInfoSmResponse) GetSmsRouterOk() (*SmsRouterInfo, bool) {
 
 // HasSmsRouter returns a boolean if a field has been set.
 func (o *RoutingInfoSmResponse) HasSmsRouter() bool {
-	if o != nil && !IsNil(o.SmsRouter) {
+	if o != nil && !isNil(o.SmsRouter) {
 		return true
 	}
 
@@ -214,19 +214,19 @@ func (o RoutingInfoSmResponse) MarshalJSON() ([]byte, error) {
 
 func (o RoutingInfoSmResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.Smsf3Gpp) {
+	if !isNil(o.Smsf3Gpp) {
 		toSerialize["smsf3Gpp"] = o.Smsf3Gpp
 	}
-	if !IsNil(o.SmsfNon3Gpp) {
+	if !isNil(o.SmsfNon3Gpp) {
 		toSerialize["smsfNon3Gpp"] = o.SmsfNon3Gpp
 	}
-	if !IsNil(o.IpSmGw) {
+	if !isNil(o.IpSmGw) {
 		toSerialize["ipSmGw"] = o.IpSmGw
 	}
-	if !IsNil(o.SmsRouter) {
+	if !isNil(o.SmsRouter) {
 		toSerialize["smsRouter"] = o.SmsRouter
 	}
 	return toSerialize, nil

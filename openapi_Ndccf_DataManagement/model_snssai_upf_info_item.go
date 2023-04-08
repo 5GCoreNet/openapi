@@ -97,7 +97,7 @@ func (o *SnssaiUpfInfoItem) SetDnnUpfInfoList(v []DnnUpfInfoItem) {
 
 // GetRedundantTransport returns the RedundantTransport field value if set, zero value otherwise.
 func (o *SnssaiUpfInfoItem) GetRedundantTransport() bool {
-	if o == nil || IsNil(o.RedundantTransport) {
+	if o == nil || isNil(o.RedundantTransport) {
 		var ret bool
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *SnssaiUpfInfoItem) GetRedundantTransport() bool {
 // GetRedundantTransportOk returns a tuple with the RedundantTransport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiUpfInfoItem) GetRedundantTransportOk() (*bool, bool) {
-	if o == nil || IsNil(o.RedundantTransport) {
+	if o == nil || isNil(o.RedundantTransport) {
 		return nil, false
 	}
 	return o.RedundantTransport, true
@@ -115,7 +115,7 @@ func (o *SnssaiUpfInfoItem) GetRedundantTransportOk() (*bool, bool) {
 
 // HasRedundantTransport returns a boolean if a field has been set.
 func (o *SnssaiUpfInfoItem) HasRedundantTransport() bool {
-	if o != nil && !IsNil(o.RedundantTransport) {
+	if o != nil && !isNil(o.RedundantTransport) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o SnssaiUpfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssai"] = o.SNssai
 	toSerialize["dnnUpfInfoList"] = o.DnnUpfInfoList
-	if !IsNil(o.RedundantTransport) {
+	if !isNil(o.RedundantTransport) {
 		toSerialize["redundantTransport"] = o.RedundantTransport
 	}
 	return toSerialize, nil

@@ -52,7 +52,7 @@ func NewMonitorFilterWithDefaults() *MonitorFilter {
 
 // GetIdnts returns the Idnts field value if set, zero value otherwise.
 func (o *MonitorFilter) GetIdnts() []ValTargetUe {
-	if o == nil || IsNil(o.Idnts) {
+	if o == nil || isNil(o.Idnts) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *MonitorFilter) GetIdnts() []ValTargetUe {
 // GetIdntsOk returns a tuple with the Idnts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorFilter) GetIdntsOk() ([]ValTargetUe, bool) {
-	if o == nil || IsNil(o.Idnts) {
+	if o == nil || isNil(o.Idnts) {
 		return nil, false
 	}
 	return o.Idnts, true
@@ -70,7 +70,7 @@ func (o *MonitorFilter) GetIdntsOk() ([]ValTargetUe, bool) {
 
 // HasIdnts returns a boolean if a field has been set.
 func (o *MonitorFilter) HasIdnts() bool {
-	if o != nil && !IsNil(o.Idnts) {
+	if o != nil && !isNil(o.Idnts) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *MonitorFilter) SetIdnts(v []ValTargetUe) {
 
 // GetValSvcId returns the ValSvcId field value if set, zero value otherwise.
 func (o *MonitorFilter) GetValSvcId() string {
-	if o == nil || IsNil(o.ValSvcId) {
+	if o == nil || isNil(o.ValSvcId) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *MonitorFilter) GetValSvcId() string {
 // GetValSvcIdOk returns a tuple with the ValSvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorFilter) GetValSvcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValSvcId) {
+	if o == nil || isNil(o.ValSvcId) {
 		return nil, false
 	}
 	return o.ValSvcId, true
@@ -102,7 +102,7 @@ func (o *MonitorFilter) GetValSvcIdOk() (*string, bool) {
 
 // HasValSvcId returns a boolean if a field has been set.
 func (o *MonitorFilter) HasValSvcId() bool {
-	if o != nil && !IsNil(o.ValSvcId) {
+	if o != nil && !isNil(o.ValSvcId) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *MonitorFilter) SetValSvcId(v string) {
 
 // GetValGrpId returns the ValGrpId field value if set, zero value otherwise.
 func (o *MonitorFilter) GetValGrpId() string {
-	if o == nil || IsNil(o.ValGrpId) {
+	if o == nil || isNil(o.ValGrpId) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *MonitorFilter) GetValGrpId() string {
 // GetValGrpIdOk returns a tuple with the ValGrpId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorFilter) GetValGrpIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValGrpId) {
+	if o == nil || isNil(o.ValGrpId) {
 		return nil, false
 	}
 	return o.ValGrpId, true
@@ -134,7 +134,7 @@ func (o *MonitorFilter) GetValGrpIdOk() (*string, bool) {
 
 // HasValGrpId returns a boolean if a field has been set.
 func (o *MonitorFilter) HasValGrpId() bool {
-	if o != nil && !IsNil(o.ValGrpId) {
+	if o != nil && !isNil(o.ValGrpId) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *MonitorFilter) SetValGrpId(v string) {
 
 // GetProfId returns the ProfId field value if set, zero value otherwise.
 func (o *MonitorFilter) GetProfId() string {
-	if o == nil || IsNil(o.ProfId) {
+	if o == nil || isNil(o.ProfId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *MonitorFilter) GetProfId() string {
 // GetProfIdOk returns a tuple with the ProfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorFilter) GetProfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProfId) {
+	if o == nil || isNil(o.ProfId) {
 		return nil, false
 	}
 	return o.ProfId, true
@@ -166,7 +166,7 @@ func (o *MonitorFilter) GetProfIdOk() (*string, bool) {
 
 // HasProfId returns a boolean if a field has been set.
 func (o *MonitorFilter) HasProfId() bool {
-	if o != nil && !IsNil(o.ProfId) {
+	if o != nil && !isNil(o.ProfId) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *MonitorFilter) SetProfId(v string) {
 
 // GetValCnds returns the ValCnds field value if set, zero value otherwise.
 func (o *MonitorFilter) GetValCnds() []ValidityConditions {
-	if o == nil || IsNil(o.ValCnds) {
+	if o == nil || isNil(o.ValCnds) {
 		var ret []ValidityConditions
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *MonitorFilter) GetValCnds() []ValidityConditions {
 // GetValCndsOk returns a tuple with the ValCnds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorFilter) GetValCndsOk() ([]ValidityConditions, bool) {
-	if o == nil || IsNil(o.ValCnds) {
+	if o == nil || isNil(o.ValCnds) {
 		return nil, false
 	}
 	return o.ValCnds, true
@@ -198,7 +198,7 @@ func (o *MonitorFilter) GetValCndsOk() ([]ValidityConditions, bool) {
 
 // HasValCnds returns a boolean if a field has been set.
 func (o *MonitorFilter) HasValCnds() bool {
-	if o != nil && !IsNil(o.ValCnds) {
+	if o != nil && !isNil(o.ValCnds) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *MonitorFilter) SetValCnds(v []ValidityConditions) {
 
 // GetEvntDets returns the EvntDets field value if set, zero value otherwise.
 func (o *MonitorFilter) GetEvntDets() []MonitorEvents {
-	if o == nil || IsNil(o.EvntDets) {
+	if o == nil || isNil(o.EvntDets) {
 		var ret []MonitorEvents
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *MonitorFilter) GetEvntDets() []MonitorEvents {
 // GetEvntDetsOk returns a tuple with the EvntDets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorFilter) GetEvntDetsOk() ([]MonitorEvents, bool) {
-	if o == nil || IsNil(o.EvntDets) {
+	if o == nil || isNil(o.EvntDets) {
 		return nil, false
 	}
 	return o.EvntDets, true
@@ -230,7 +230,7 @@ func (o *MonitorFilter) GetEvntDetsOk() ([]MonitorEvents, bool) {
 
 // HasEvntDets returns a boolean if a field has been set.
 func (o *MonitorFilter) HasEvntDets() bool {
-	if o != nil && !IsNil(o.EvntDets) {
+	if o != nil && !isNil(o.EvntDets) {
 		return true
 	}
 
@@ -252,22 +252,22 @@ func (o MonitorFilter) MarshalJSON() ([]byte, error) {
 
 func (o MonitorFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Idnts) {
+	if !isNil(o.Idnts) {
 		toSerialize["idnts"] = o.Idnts
 	}
-	if !IsNil(o.ValSvcId) {
+	if !isNil(o.ValSvcId) {
 		toSerialize["valSvcId"] = o.ValSvcId
 	}
-	if !IsNil(o.ValGrpId) {
+	if !isNil(o.ValGrpId) {
 		toSerialize["valGrpId"] = o.ValGrpId
 	}
-	if !IsNil(o.ProfId) {
+	if !isNil(o.ProfId) {
 		toSerialize["profId"] = o.ProfId
 	}
-	if !IsNil(o.ValCnds) {
+	if !isNil(o.ValCnds) {
 		toSerialize["valCnds"] = o.ValCnds
 	}
-	if !IsNil(o.EvntDets) {
+	if !isNil(o.EvntDets) {
 		toSerialize["evntDets"] = o.EvntDets
 	}
 	return toSerialize, nil

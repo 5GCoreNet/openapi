@@ -127,7 +127,7 @@ func (o *RedundantTransmissionExpPerTS) SetObsvRedTransExp(v ObservedRedundantTr
 
 // GetRedTransStatus returns the RedTransStatus field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpPerTS) GetRedTransStatus() bool {
-	if o == nil || IsNil(o.RedTransStatus) {
+	if o == nil || isNil(o.RedTransStatus) {
 		var ret bool
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *RedundantTransmissionExpPerTS) GetRedTransStatus() bool {
 // GetRedTransStatusOk returns a tuple with the RedTransStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpPerTS) GetRedTransStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.RedTransStatus) {
+	if o == nil || isNil(o.RedTransStatus) {
 		return nil, false
 	}
 	return o.RedTransStatus, true
@@ -145,7 +145,7 @@ func (o *RedundantTransmissionExpPerTS) GetRedTransStatusOk() (*bool, bool) {
 
 // HasRedTransStatus returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpPerTS) HasRedTransStatus() bool {
-	if o != nil && !IsNil(o.RedTransStatus) {
+	if o != nil && !isNil(o.RedTransStatus) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *RedundantTransmissionExpPerTS) SetRedTransStatus(v bool) {
 
 // GetUeRatio returns the UeRatio field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpPerTS) GetUeRatio() int32 {
-	if o == nil || IsNil(o.UeRatio) {
+	if o == nil || isNil(o.UeRatio) {
 		var ret int32
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *RedundantTransmissionExpPerTS) GetUeRatio() int32 {
 // GetUeRatioOk returns a tuple with the UeRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpPerTS) GetUeRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.UeRatio) {
+	if o == nil || isNil(o.UeRatio) {
 		return nil, false
 	}
 	return o.UeRatio, true
@@ -177,7 +177,7 @@ func (o *RedundantTransmissionExpPerTS) GetUeRatioOk() (*int32, bool) {
 
 // HasUeRatio returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpPerTS) HasUeRatio() bool {
-	if o != nil && !IsNil(o.UeRatio) {
+	if o != nil && !isNil(o.UeRatio) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *RedundantTransmissionExpPerTS) SetUeRatio(v int32) {
 
 // GetConfidence returns the Confidence field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpPerTS) GetConfidence() int32 {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		var ret int32
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *RedundantTransmissionExpPerTS) GetConfidence() int32 {
 // GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpPerTS) GetConfidenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Confidence) {
+	if o == nil || isNil(o.Confidence) {
 		return nil, false
 	}
 	return o.Confidence, true
@@ -209,7 +209,7 @@ func (o *RedundantTransmissionExpPerTS) GetConfidenceOk() (*int32, bool) {
 
 // HasConfidence returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpPerTS) HasConfidence() bool {
-	if o != nil && !IsNil(o.Confidence) {
+	if o != nil && !isNil(o.Confidence) {
 		return true
 	}
 
@@ -234,13 +234,13 @@ func (o RedundantTransmissionExpPerTS) ToMap() (map[string]interface{}, error) {
 	toSerialize["tsStart"] = o.TsStart
 	toSerialize["tsDuration"] = o.TsDuration
 	toSerialize["obsvRedTransExp"] = o.ObsvRedTransExp
-	if !IsNil(o.RedTransStatus) {
+	if !isNil(o.RedTransStatus) {
 		toSerialize["redTransStatus"] = o.RedTransStatus
 	}
-	if !IsNil(o.UeRatio) {
+	if !isNil(o.UeRatio) {
 		toSerialize["ueRatio"] = o.UeRatio
 	}
-	if !IsNil(o.Confidence) {
+	if !isNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
 	}
 	return toSerialize, nil

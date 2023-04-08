@@ -19,7 +19,7 @@ var _ MappedNullable = &QFQoSMonitoringControlSingleAllOf{}
 
 // QFQoSMonitoringControlSingleAllOf struct for QFQoSMonitoringControlSingleAllOf
 type QFQoSMonitoringControlSingleAllOf struct {
-	Attributes *QFQoSMonitoringControlSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewQFQoSMonitoringControlSingleAllOf instantiates a new QFQoSMonitoringControlSingleAllOf object
@@ -40,9 +40,9 @@ func NewQFQoSMonitoringControlSingleAllOfWithDefaults() *QFQoSMonitoringControlS
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *QFQoSMonitoringControlSingleAllOf) GetAttributes() QFQoSMonitoringControlSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret QFQoSMonitoringControlSingleAllOfAttributes
+func (o *QFQoSMonitoringControlSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *QFQoSMonitoringControlSingleAllOf) GetAttributes() QFQoSMonitoringContr
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *QFQoSMonitoringControlSingleAllOf) GetAttributesOk() (*QFQoSMonitoringControlSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *QFQoSMonitoringControlSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *QFQoSMonitoringControlSingleAllOf) GetAttributesOk() (*QFQoSMonitoringC
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *QFQoSMonitoringControlSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given QFQoSMonitoringControlSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *QFQoSMonitoringControlSingleAllOf) SetAttributes(v QFQoSMonitoringControlSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *QFQoSMonitoringControlSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o QFQoSMonitoringControlSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o QFQoSMonitoringControlSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

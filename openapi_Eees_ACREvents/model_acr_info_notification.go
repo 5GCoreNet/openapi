@@ -101,7 +101,7 @@ func (o *ACRInfoNotification) SetEasId(v string) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *ACRInfoNotification) GetAcId() string {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ACRInfoNotification) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRInfoNotification) GetAcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -119,7 +119,7 @@ func (o *ACRInfoNotification) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *ACRInfoNotification) HasAcId() bool {
-	if o != nil && !IsNil(o.AcId) {
+	if o != nil && !isNil(o.AcId) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *ACRInfoNotification) SetEventId(v ACREventIDs) {
 
 // GetTrgtInfo returns the TrgtInfo field value if set, zero value otherwise.
 func (o *ACRInfoNotification) GetTrgtInfo() TargetInfo {
-	if o == nil || IsNil(o.TrgtInfo) {
+	if o == nil || isNil(o.TrgtInfo) {
 		var ret TargetInfo
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *ACRInfoNotification) GetTrgtInfo() TargetInfo {
 // GetTrgtInfoOk returns a tuple with the TrgtInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRInfoNotification) GetTrgtInfoOk() (*TargetInfo, bool) {
-	if o == nil || IsNil(o.TrgtInfo) {
+	if o == nil || isNil(o.TrgtInfo) {
 		return nil, false
 	}
 	return o.TrgtInfo, true
@@ -175,7 +175,7 @@ func (o *ACRInfoNotification) GetTrgtInfoOk() (*TargetInfo, bool) {
 
 // HasTrgtInfo returns a boolean if a field has been set.
 func (o *ACRInfoNotification) HasTrgtInfo() bool {
-	if o != nil && !IsNil(o.TrgtInfo) {
+	if o != nil && !isNil(o.TrgtInfo) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *ACRInfoNotification) SetTrgtInfo(v TargetInfo) {
 
 // GetAcrStatus returns the AcrStatus field value if set, zero value otherwise.
 func (o *ACRInfoNotification) GetAcrStatus() ACRCompleteEventInfo {
-	if o == nil || IsNil(o.AcrStatus) {
+	if o == nil || isNil(o.AcrStatus) {
 		var ret ACRCompleteEventInfo
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *ACRInfoNotification) GetAcrStatus() ACRCompleteEventInfo {
 // GetAcrStatusOk returns a tuple with the AcrStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRInfoNotification) GetAcrStatusOk() (*ACRCompleteEventInfo, bool) {
-	if o == nil || IsNil(o.AcrStatus) {
+	if o == nil || isNil(o.AcrStatus) {
 		return nil, false
 	}
 	return o.AcrStatus, true
@@ -207,7 +207,7 @@ func (o *ACRInfoNotification) GetAcrStatusOk() (*ACRCompleteEventInfo, bool) {
 
 // HasAcrStatus returns a boolean if a field has been set.
 func (o *ACRInfoNotification) HasAcrStatus() bool {
-	if o != nil && !IsNil(o.AcrStatus) {
+	if o != nil && !isNil(o.AcrStatus) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *ACRInfoNotification) SetAcrStatus(v ACRCompleteEventInfo) {
 
 // GetEecCtxtReloc returns the EecCtxtReloc field value if set, zero value otherwise.
 func (o *ACRInfoNotification) GetEecCtxtReloc() EecCtxtRelocStatus {
-	if o == nil || IsNil(o.EecCtxtReloc) {
+	if o == nil || isNil(o.EecCtxtReloc) {
 		var ret EecCtxtRelocStatus
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *ACRInfoNotification) GetEecCtxtReloc() EecCtxtRelocStatus {
 // GetEecCtxtRelocOk returns a tuple with the EecCtxtReloc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRInfoNotification) GetEecCtxtRelocOk() (*EecCtxtRelocStatus, bool) {
-	if o == nil || IsNil(o.EecCtxtReloc) {
+	if o == nil || isNil(o.EecCtxtReloc) {
 		return nil, false
 	}
 	return o.EecCtxtReloc, true
@@ -239,7 +239,7 @@ func (o *ACRInfoNotification) GetEecCtxtRelocOk() (*EecCtxtRelocStatus, bool) {
 
 // HasEecCtxtReloc returns a boolean if a field has been set.
 func (o *ACRInfoNotification) HasEecCtxtReloc() bool {
-	if o != nil && !IsNil(o.EecCtxtReloc) {
+	if o != nil && !isNil(o.EecCtxtReloc) {
 		return true
 	}
 
@@ -263,17 +263,17 @@ func (o ACRInfoNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subId"] = o.SubId
 	toSerialize["easId"] = o.EasId
-	if !IsNil(o.AcId) {
+	if !isNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
 	toSerialize["eventId"] = o.EventId
-	if !IsNil(o.TrgtInfo) {
+	if !isNil(o.TrgtInfo) {
 		toSerialize["trgtInfo"] = o.TrgtInfo
 	}
-	if !IsNil(o.AcrStatus) {
+	if !isNil(o.AcrStatus) {
 		toSerialize["acrStatus"] = o.AcrStatus
 	}
-	if !IsNil(o.EecCtxtReloc) {
+	if !isNil(o.EecCtxtReloc) {
 		toSerialize["eecCtxtReloc"] = o.EecCtxtReloc
 	}
 	return toSerialize, nil

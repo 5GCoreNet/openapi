@@ -138,7 +138,7 @@ func (o *NdccfDataSubscription) SetDataNotifCorrId(v string) {
 
 // GetFormatInstruct returns the FormatInstruct field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetFormatInstruct() FormattingInstruction {
-	if o == nil || IsNil(o.FormatInstruct) {
+	if o == nil || isNil(o.FormatInstruct) {
 		var ret FormattingInstruction
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *NdccfDataSubscription) GetFormatInstruct() FormattingInstruction {
 // GetFormatInstructOk returns a tuple with the FormatInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetFormatInstructOk() (*FormattingInstruction, bool) {
-	if o == nil || IsNil(o.FormatInstruct) {
+	if o == nil || isNil(o.FormatInstruct) {
 		return nil, false
 	}
 	return o.FormatInstruct, true
@@ -156,7 +156,7 @@ func (o *NdccfDataSubscription) GetFormatInstructOk() (*FormattingInstruction, b
 
 // HasFormatInstruct returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasFormatInstruct() bool {
-	if o != nil && !IsNil(o.FormatInstruct) {
+	if o != nil && !isNil(o.FormatInstruct) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *NdccfDataSubscription) SetFormatInstruct(v FormattingInstruction) {
 
 // GetProcInstructs returns the ProcInstructs field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetProcInstructs() []ProcessingInstruction {
-	if o == nil || IsNil(o.ProcInstructs) {
+	if o == nil || isNil(o.ProcInstructs) {
 		var ret []ProcessingInstruction
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *NdccfDataSubscription) GetProcInstructs() []ProcessingInstruction {
 // GetProcInstructsOk returns a tuple with the ProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetProcInstructsOk() ([]ProcessingInstruction, bool) {
-	if o == nil || IsNil(o.ProcInstructs) {
+	if o == nil || isNil(o.ProcInstructs) {
 		return nil, false
 	}
 	return o.ProcInstructs, true
@@ -188,7 +188,7 @@ func (o *NdccfDataSubscription) GetProcInstructsOk() ([]ProcessingInstruction, b
 
 // HasProcInstructs returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasProcInstructs() bool {
-	if o != nil && !IsNil(o.ProcInstructs) {
+	if o != nil && !isNil(o.ProcInstructs) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *NdccfDataSubscription) SetProcInstructs(v []ProcessingInstruction) {
 
 // GetTargetNfId returns the TargetNfId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetTargetNfId() string {
-	if o == nil || IsNil(o.TargetNfId) {
+	if o == nil || isNil(o.TargetNfId) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *NdccfDataSubscription) GetTargetNfId() string {
 // GetTargetNfIdOk returns a tuple with the TargetNfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetTargetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetNfId) {
+	if o == nil || isNil(o.TargetNfId) {
 		return nil, false
 	}
 	return o.TargetNfId, true
@@ -220,7 +220,7 @@ func (o *NdccfDataSubscription) GetTargetNfIdOk() (*string, bool) {
 
 // HasTargetNfId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasTargetNfId() bool {
-	if o != nil && !IsNil(o.TargetNfId) {
+	if o != nil && !isNil(o.TargetNfId) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *NdccfDataSubscription) SetTargetNfId(v string) {
 
 // GetTargetNfSetId returns the TargetNfSetId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetTargetNfSetId() string {
-	if o == nil || IsNil(o.TargetNfSetId) {
+	if o == nil || isNil(o.TargetNfSetId) {
 		var ret string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *NdccfDataSubscription) GetTargetNfSetId() string {
 // GetTargetNfSetIdOk returns a tuple with the TargetNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetTargetNfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetNfSetId) {
+	if o == nil || isNil(o.TargetNfSetId) {
 		return nil, false
 	}
 	return o.TargetNfSetId, true
@@ -252,7 +252,7 @@ func (o *NdccfDataSubscription) GetTargetNfSetIdOk() (*string, bool) {
 
 // HasTargetNfSetId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasTargetNfSetId() bool {
-	if o != nil && !IsNil(o.TargetNfSetId) {
+	if o != nil && !isNil(o.TargetNfSetId) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *NdccfDataSubscription) SetTargetNfSetId(v string) {
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetAdrfId() string {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *NdccfDataSubscription) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetAdrfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -284,7 +284,7 @@ func (o *NdccfDataSubscription) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasAdrfId() bool {
-	if o != nil && !IsNil(o.AdrfId) {
+	if o != nil && !isNil(o.AdrfId) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *NdccfDataSubscription) SetAdrfId(v string) {
 
 // GetArdfSetId returns the ArdfSetId field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetArdfSetId() string {
-	if o == nil || IsNil(o.ArdfSetId) {
+	if o == nil || isNil(o.ArdfSetId) {
 		var ret string
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *NdccfDataSubscription) GetArdfSetId() string {
 // GetArdfSetIdOk returns a tuple with the ArdfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetArdfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ArdfSetId) {
+	if o == nil || isNil(o.ArdfSetId) {
 		return nil, false
 	}
 	return o.ArdfSetId, true
@@ -316,7 +316,7 @@ func (o *NdccfDataSubscription) GetArdfSetIdOk() (*string, bool) {
 
 // HasArdfSetId returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasArdfSetId() bool {
-	if o != nil && !IsNil(o.ArdfSetId) {
+	if o != nil && !isNil(o.ArdfSetId) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *NdccfDataSubscription) SetArdfSetId(v string) {
 
 // GetTimePeriod returns the TimePeriod field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetTimePeriod() TimeWindow {
-	if o == nil || IsNil(o.TimePeriod) {
+	if o == nil || isNil(o.TimePeriod) {
 		var ret TimeWindow
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *NdccfDataSubscription) GetTimePeriod() TimeWindow {
 // GetTimePeriodOk returns a tuple with the TimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetTimePeriodOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.TimePeriod) {
+	if o == nil || isNil(o.TimePeriod) {
 		return nil, false
 	}
 	return o.TimePeriod, true
@@ -348,7 +348,7 @@ func (o *NdccfDataSubscription) GetTimePeriodOk() (*TimeWindow, bool) {
 
 // HasTimePeriod returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasTimePeriod() bool {
-	if o != nil && !IsNil(o.TimePeriod) {
+	if o != nil && !isNil(o.TimePeriod) {
 		return true
 	}
 
@@ -362,7 +362,7 @@ func (o *NdccfDataSubscription) SetTimePeriod(v TimeWindow) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -372,7 +372,7 @@ func (o *NdccfDataSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -380,7 +380,7 @@ func (o *NdccfDataSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -394,7 +394,7 @@ func (o *NdccfDataSubscription) SetSuppFeat(v string) {
 
 // GetDataCollectPurposes returns the DataCollectPurposes field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetDataCollectPurposes() []DataCollectionPurpose {
-	if o == nil || IsNil(o.DataCollectPurposes) {
+	if o == nil || isNil(o.DataCollectPurposes) {
 		var ret []DataCollectionPurpose
 		return ret
 	}
@@ -404,7 +404,7 @@ func (o *NdccfDataSubscription) GetDataCollectPurposes() []DataCollectionPurpose
 // GetDataCollectPurposesOk returns a tuple with the DataCollectPurposes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetDataCollectPurposesOk() ([]DataCollectionPurpose, bool) {
-	if o == nil || IsNil(o.DataCollectPurposes) {
+	if o == nil || isNil(o.DataCollectPurposes) {
 		return nil, false
 	}
 	return o.DataCollectPurposes, true
@@ -412,7 +412,7 @@ func (o *NdccfDataSubscription) GetDataCollectPurposesOk() ([]DataCollectionPurp
 
 // HasDataCollectPurposes returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasDataCollectPurposes() bool {
-	if o != nil && !IsNil(o.DataCollectPurposes) {
+	if o != nil && !isNil(o.DataCollectPurposes) {
 		return true
 	}
 
@@ -426,7 +426,7 @@ func (o *NdccfDataSubscription) SetDataCollectPurposes(v []DataCollectionPurpose
 
 // GetCheckedConsentInd returns the CheckedConsentInd field value if set, zero value otherwise.
 func (o *NdccfDataSubscription) GetCheckedConsentInd() bool {
-	if o == nil || IsNil(o.CheckedConsentInd) {
+	if o == nil || isNil(o.CheckedConsentInd) {
 		var ret bool
 		return ret
 	}
@@ -436,7 +436,7 @@ func (o *NdccfDataSubscription) GetCheckedConsentInd() bool {
 // GetCheckedConsentIndOk returns a tuple with the CheckedConsentInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataSubscription) GetCheckedConsentIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.CheckedConsentInd) {
+	if o == nil || isNil(o.CheckedConsentInd) {
 		return nil, false
 	}
 	return o.CheckedConsentInd, true
@@ -444,7 +444,7 @@ func (o *NdccfDataSubscription) GetCheckedConsentIndOk() (*bool, bool) {
 
 // HasCheckedConsentInd returns a boolean if a field has been set.
 func (o *NdccfDataSubscription) HasCheckedConsentInd() bool {
-	if o != nil && !IsNil(o.CheckedConsentInd) {
+	if o != nil && !isNil(o.CheckedConsentInd) {
 		return true
 	}
 
@@ -469,34 +469,34 @@ func (o NdccfDataSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["dataSub"] = o.DataSub
 	toSerialize["dataNotifUri"] = o.DataNotifUri
 	toSerialize["dataNotifCorrId"] = o.DataNotifCorrId
-	if !IsNil(o.FormatInstruct) {
+	if !isNil(o.FormatInstruct) {
 		toSerialize["formatInstruct"] = o.FormatInstruct
 	}
-	if !IsNil(o.ProcInstructs) {
+	if !isNil(o.ProcInstructs) {
 		toSerialize["procInstructs"] = o.ProcInstructs
 	}
-	if !IsNil(o.TargetNfId) {
+	if !isNil(o.TargetNfId) {
 		toSerialize["targetNfId"] = o.TargetNfId
 	}
-	if !IsNil(o.TargetNfSetId) {
+	if !isNil(o.TargetNfSetId) {
 		toSerialize["targetNfSetId"] = o.TargetNfSetId
 	}
-	if !IsNil(o.AdrfId) {
+	if !isNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !IsNil(o.ArdfSetId) {
+	if !isNil(o.ArdfSetId) {
 		toSerialize["ardfSetId"] = o.ArdfSetId
 	}
-	if !IsNil(o.TimePeriod) {
+	if !isNil(o.TimePeriod) {
 		toSerialize["timePeriod"] = o.TimePeriod
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.DataCollectPurposes) {
+	if !isNil(o.DataCollectPurposes) {
 		toSerialize["dataCollectPurposes"] = o.DataCollectPurposes
 	}
-	if !IsNil(o.CheckedConsentInd) {
+	if !isNil(o.CheckedConsentInd) {
 		toSerialize["checkedConsentInd"] = o.CheckedConsentInd
 	}
 	return toSerialize, nil

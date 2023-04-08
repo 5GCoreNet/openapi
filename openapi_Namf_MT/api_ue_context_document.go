@@ -13,7 +13,7 @@ package openapi_Namf_MT
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -92,13 +92,13 @@ func (a *UeContextDocumentApiService) ProvideDomainSelectionInfoExecute(r ApiPro
 	localVarFormParams := url.Values{}
 
 	if r.infoClass != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "info-class", r.infoClass, "")
+		parameterAddToQuery(localVarQueryParams, "info-class", r.infoClass, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.oldGuami != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "old-guami", r.oldGuami, "")
+		parameterAddToQuery(localVarQueryParams, "old-guami", r.oldGuami, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -127,9 +127,9 @@ func (a *UeContextDocumentApiService) ProvideDomainSelectionInfoExecute(r ApiPro
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

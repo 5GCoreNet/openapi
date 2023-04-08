@@ -91,7 +91,7 @@ func NewNsmfEventExposureWithDefaults() *NsmfEventExposure {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *NsmfEventExposure) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -109,7 +109,7 @@ func (o *NsmfEventExposure) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *NsmfEventExposure) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *NsmfEventExposure) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -141,7 +141,7 @@ func (o *NsmfEventExposure) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *NsmfEventExposure) SetGpsi(v string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetAnyUeInd() bool {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *NsmfEventExposure) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -173,7 +173,7 @@ func (o *NsmfEventExposure) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasAnyUeInd() bool {
-	if o != nil && !IsNil(o.AnyUeInd) {
+	if o != nil && !isNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *NsmfEventExposure) SetAnyUeInd(v bool) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *NsmfEventExposure) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -205,7 +205,7 @@ func (o *NsmfEventExposure) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *NsmfEventExposure) SetGroupId(v string) {
 
 // GetPduSeId returns the PduSeId field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetPduSeId() int32 {
-	if o == nil || IsNil(o.PduSeId) {
+	if o == nil || isNil(o.PduSeId) {
 		var ret int32
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *NsmfEventExposure) GetPduSeId() int32 {
 // GetPduSeIdOk returns a tuple with the PduSeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetPduSeIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSeId) {
+	if o == nil || isNil(o.PduSeId) {
 		return nil, false
 	}
 	return o.PduSeId, true
@@ -237,7 +237,7 @@ func (o *NsmfEventExposure) GetPduSeIdOk() (*int32, bool) {
 
 // HasPduSeId returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasPduSeId() bool {
-	if o != nil && !IsNil(o.PduSeId) {
+	if o != nil && !isNil(o.PduSeId) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *NsmfEventExposure) SetPduSeId(v int32) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *NsmfEventExposure) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -269,7 +269,7 @@ func (o *NsmfEventExposure) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *NsmfEventExposure) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *NsmfEventExposure) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -301,7 +301,7 @@ func (o *NsmfEventExposure) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *NsmfEventExposure) SetSnssai(v Snssai) {
 
 // GetSubId returns the SubId field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetSubId() string {
-	if o == nil || IsNil(o.SubId) {
+	if o == nil || isNil(o.SubId) {
 		var ret string
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *NsmfEventExposure) GetSubId() string {
 // GetSubIdOk returns a tuple with the SubId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetSubIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubId) {
+	if o == nil || isNil(o.SubId) {
 		return nil, false
 	}
 	return o.SubId, true
@@ -333,7 +333,7 @@ func (o *NsmfEventExposure) GetSubIdOk() (*string, bool) {
 
 // HasSubId returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasSubId() bool {
-	if o != nil && !IsNil(o.SubId) {
+	if o != nil && !isNil(o.SubId) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *NsmfEventExposure) SetNotifUri(v string) {
 
 // GetAltNotifIpv4Addrs returns the AltNotifIpv4Addrs field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetAltNotifIpv4Addrs() []string {
-	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
+	if o == nil || isNil(o.AltNotifIpv4Addrs) {
 		var ret []string
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *NsmfEventExposure) GetAltNotifIpv4Addrs() []string {
 // GetAltNotifIpv4AddrsOk returns a tuple with the AltNotifIpv4Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetAltNotifIpv4AddrsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
+	if o == nil || isNil(o.AltNotifIpv4Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv4Addrs, true
@@ -413,7 +413,7 @@ func (o *NsmfEventExposure) GetAltNotifIpv4AddrsOk() ([]string, bool) {
 
 // HasAltNotifIpv4Addrs returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasAltNotifIpv4Addrs() bool {
-	if o != nil && !IsNil(o.AltNotifIpv4Addrs) {
+	if o != nil && !isNil(o.AltNotifIpv4Addrs) {
 		return true
 	}
 
@@ -427,7 +427,7 @@ func (o *NsmfEventExposure) SetAltNotifIpv4Addrs(v []string) {
 
 // GetAltNotifIpv6Addrs returns the AltNotifIpv6Addrs field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetAltNotifIpv6Addrs() []Ipv6Addr {
-	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
+	if o == nil || isNil(o.AltNotifIpv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -437,7 +437,7 @@ func (o *NsmfEventExposure) GetAltNotifIpv6Addrs() []Ipv6Addr {
 // GetAltNotifIpv6AddrsOk returns a tuple with the AltNotifIpv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
+	if o == nil || isNil(o.AltNotifIpv6Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv6Addrs, true
@@ -445,7 +445,7 @@ func (o *NsmfEventExposure) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
 
 // HasAltNotifIpv6Addrs returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasAltNotifIpv6Addrs() bool {
-	if o != nil && !IsNil(o.AltNotifIpv6Addrs) {
+	if o != nil && !isNil(o.AltNotifIpv6Addrs) {
 		return true
 	}
 
@@ -459,7 +459,7 @@ func (o *NsmfEventExposure) SetAltNotifIpv6Addrs(v []Ipv6Addr) {
 
 // GetAltNotifFqdns returns the AltNotifFqdns field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetAltNotifFqdns() []string {
-	if o == nil || IsNil(o.AltNotifFqdns) {
+	if o == nil || isNil(o.AltNotifFqdns) {
 		var ret []string
 		return ret
 	}
@@ -469,7 +469,7 @@ func (o *NsmfEventExposure) GetAltNotifFqdns() []string {
 // GetAltNotifFqdnsOk returns a tuple with the AltNotifFqdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetAltNotifFqdnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AltNotifFqdns) {
+	if o == nil || isNil(o.AltNotifFqdns) {
 		return nil, false
 	}
 	return o.AltNotifFqdns, true
@@ -477,7 +477,7 @@ func (o *NsmfEventExposure) GetAltNotifFqdnsOk() ([]string, bool) {
 
 // HasAltNotifFqdns returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasAltNotifFqdns() bool {
-	if o != nil && !IsNil(o.AltNotifFqdns) {
+	if o != nil && !isNil(o.AltNotifFqdns) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *NsmfEventExposure) SetEventSubs(v []EventSubscription1) {
 
 // GetEventNotifs returns the EventNotifs field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetEventNotifs() []EventNotification1 {
-	if o == nil || IsNil(o.EventNotifs) {
+	if o == nil || isNil(o.EventNotifs) {
 		var ret []EventNotification1
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *NsmfEventExposure) GetEventNotifs() []EventNotification1 {
 // GetEventNotifsOk returns a tuple with the EventNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetEventNotifsOk() ([]EventNotification1, bool) {
-	if o == nil || IsNil(o.EventNotifs) {
+	if o == nil || isNil(o.EventNotifs) {
 		return nil, false
 	}
 	return o.EventNotifs, true
@@ -533,7 +533,7 @@ func (o *NsmfEventExposure) GetEventNotifsOk() ([]EventNotification1, bool) {
 
 // HasEventNotifs returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasEventNotifs() bool {
-	if o != nil && !IsNil(o.EventNotifs) {
+	if o != nil && !isNil(o.EventNotifs) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *NsmfEventExposure) SetEventNotifs(v []EventNotification1) {
 
 // GetImmeRep returns the ImmeRep field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetImmeRep() bool {
-	if o == nil || IsNil(o.ImmeRep) {
+	if o == nil || isNil(o.ImmeRep) {
 		var ret bool
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *NsmfEventExposure) GetImmeRep() bool {
 // GetImmeRepOk returns a tuple with the ImmeRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetImmeRepOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmeRep) {
+	if o == nil || isNil(o.ImmeRep) {
 		return nil, false
 	}
 	return o.ImmeRep, true
@@ -565,7 +565,7 @@ func (o *NsmfEventExposure) GetImmeRepOk() (*bool, bool) {
 
 // HasImmeRep returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasImmeRep() bool {
-	if o != nil && !IsNil(o.ImmeRep) {
+	if o != nil && !isNil(o.ImmeRep) {
 		return true
 	}
 
@@ -579,7 +579,7 @@ func (o *NsmfEventExposure) SetImmeRep(v bool) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetNotifMethod() NotificationMethod1 {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		var ret NotificationMethod1
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *NsmfEventExposure) GetNotifMethod() NotificationMethod1 {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetNotifMethodOk() (*NotificationMethod1, bool) {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -597,7 +597,7 @@ func (o *NsmfEventExposure) GetNotifMethodOk() (*NotificationMethod1, bool) {
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasNotifMethod() bool {
-	if o != nil && !IsNil(o.NotifMethod) {
+	if o != nil && !isNil(o.NotifMethod) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o *NsmfEventExposure) SetNotifMethod(v NotificationMethod1) {
 
 // GetMaxReportNbr returns the MaxReportNbr field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetMaxReportNbr() int32 {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		var ret int32
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *NsmfEventExposure) GetMaxReportNbr() int32 {
 // GetMaxReportNbrOk returns a tuple with the MaxReportNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetMaxReportNbrOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		return nil, false
 	}
 	return o.MaxReportNbr, true
@@ -629,7 +629,7 @@ func (o *NsmfEventExposure) GetMaxReportNbrOk() (*int32, bool) {
 
 // HasMaxReportNbr returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasMaxReportNbr() bool {
-	if o != nil && !IsNil(o.MaxReportNbr) {
+	if o != nil && !isNil(o.MaxReportNbr) {
 		return true
 	}
 
@@ -643,7 +643,7 @@ func (o *NsmfEventExposure) SetMaxReportNbr(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -653,7 +653,7 @@ func (o *NsmfEventExposure) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -661,7 +661,7 @@ func (o *NsmfEventExposure) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -675,7 +675,7 @@ func (o *NsmfEventExposure) SetExpiry(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *NsmfEventExposure) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -693,7 +693,7 @@ func (o *NsmfEventExposure) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -707,7 +707,7 @@ func (o *NsmfEventExposure) SetRepPeriod(v int32) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetGuami() Guami {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -717,7 +717,7 @@ func (o *NsmfEventExposure) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -725,7 +725,7 @@ func (o *NsmfEventExposure) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasGuami() bool {
-	if o != nil && !IsNil(o.Guami) {
+	if o != nil && !isNil(o.Guami) {
 		return true
 	}
 
@@ -739,7 +739,7 @@ func (o *NsmfEventExposure) SetGuami(v Guami) {
 
 // GetServiveName returns the ServiveName field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetServiveName() ServiceName {
-	if o == nil || IsNil(o.ServiveName) {
+	if o == nil || isNil(o.ServiveName) {
 		var ret ServiceName
 		return ret
 	}
@@ -749,7 +749,7 @@ func (o *NsmfEventExposure) GetServiveName() ServiceName {
 // GetServiveNameOk returns a tuple with the ServiveName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetServiveNameOk() (*ServiceName, bool) {
-	if o == nil || IsNil(o.ServiveName) {
+	if o == nil || isNil(o.ServiveName) {
 		return nil, false
 	}
 	return o.ServiveName, true
@@ -757,7 +757,7 @@ func (o *NsmfEventExposure) GetServiveNameOk() (*ServiceName, bool) {
 
 // HasServiveName returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasServiveName() bool {
-	if o != nil && !IsNil(o.ServiveName) {
+	if o != nil && !isNil(o.ServiveName) {
 		return true
 	}
 
@@ -771,7 +771,7 @@ func (o *NsmfEventExposure) SetServiveName(v ServiceName) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -781,7 +781,7 @@ func (o *NsmfEventExposure) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -789,7 +789,7 @@ func (o *NsmfEventExposure) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -803,7 +803,7 @@ func (o *NsmfEventExposure) SetSupportedFeatures(v string) {
 
 // GetSampRatio returns the SampRatio field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetSampRatio() int32 {
-	if o == nil || IsNil(o.SampRatio) {
+	if o == nil || isNil(o.SampRatio) {
 		var ret int32
 		return ret
 	}
@@ -813,7 +813,7 @@ func (o *NsmfEventExposure) GetSampRatio() int32 {
 // GetSampRatioOk returns a tuple with the SampRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetSampRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.SampRatio) {
+	if o == nil || isNil(o.SampRatio) {
 		return nil, false
 	}
 	return o.SampRatio, true
@@ -821,7 +821,7 @@ func (o *NsmfEventExposure) GetSampRatioOk() (*int32, bool) {
 
 // HasSampRatio returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasSampRatio() bool {
-	if o != nil && !IsNil(o.SampRatio) {
+	if o != nil && !isNil(o.SampRatio) {
 		return true
 	}
 
@@ -835,7 +835,7 @@ func (o *NsmfEventExposure) SetSampRatio(v int32) {
 
 // GetPartitionCriteria returns the PartitionCriteria field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetPartitionCriteria() []PartitioningCriteria {
-	if o == nil || IsNil(o.PartitionCriteria) {
+	if o == nil || isNil(o.PartitionCriteria) {
 		var ret []PartitioningCriteria
 		return ret
 	}
@@ -845,7 +845,7 @@ func (o *NsmfEventExposure) GetPartitionCriteria() []PartitioningCriteria {
 // GetPartitionCriteriaOk returns a tuple with the PartitionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetPartitionCriteriaOk() ([]PartitioningCriteria, bool) {
-	if o == nil || IsNil(o.PartitionCriteria) {
+	if o == nil || isNil(o.PartitionCriteria) {
 		return nil, false
 	}
 	return o.PartitionCriteria, true
@@ -853,7 +853,7 @@ func (o *NsmfEventExposure) GetPartitionCriteriaOk() ([]PartitioningCriteria, bo
 
 // HasPartitionCriteria returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasPartitionCriteria() bool {
-	if o != nil && !IsNil(o.PartitionCriteria) {
+	if o != nil && !isNil(o.PartitionCriteria) {
 		return true
 	}
 
@@ -867,7 +867,7 @@ func (o *NsmfEventExposure) SetPartitionCriteria(v []PartitioningCriteria) {
 
 // GetGrpRepTime returns the GrpRepTime field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetGrpRepTime() int32 {
-	if o == nil || IsNil(o.GrpRepTime) {
+	if o == nil || isNil(o.GrpRepTime) {
 		var ret int32
 		return ret
 	}
@@ -877,7 +877,7 @@ func (o *NsmfEventExposure) GetGrpRepTime() int32 {
 // GetGrpRepTimeOk returns a tuple with the GrpRepTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetGrpRepTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.GrpRepTime) {
+	if o == nil || isNil(o.GrpRepTime) {
 		return nil, false
 	}
 	return o.GrpRepTime, true
@@ -885,7 +885,7 @@ func (o *NsmfEventExposure) GetGrpRepTimeOk() (*int32, bool) {
 
 // HasGrpRepTime returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasGrpRepTime() bool {
-	if o != nil && !IsNil(o.GrpRepTime) {
+	if o != nil && !isNil(o.GrpRepTime) {
 		return true
 	}
 
@@ -899,7 +899,7 @@ func (o *NsmfEventExposure) SetGrpRepTime(v int32) {
 
 // GetNotifFlag returns the NotifFlag field value if set, zero value otherwise.
 func (o *NsmfEventExposure) GetNotifFlag() NotificationFlag {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		var ret NotificationFlag
 		return ret
 	}
@@ -909,7 +909,7 @@ func (o *NsmfEventExposure) GetNotifFlag() NotificationFlag {
 // GetNotifFlagOk returns a tuple with the NotifFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposure) GetNotifFlagOk() (*NotificationFlag, bool) {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		return nil, false
 	}
 	return o.NotifFlag, true
@@ -917,7 +917,7 @@ func (o *NsmfEventExposure) GetNotifFlagOk() (*NotificationFlag, bool) {
 
 // HasNotifFlag returns a boolean if a field has been set.
 func (o *NsmfEventExposure) HasNotifFlag() bool {
-	if o != nil && !IsNil(o.NotifFlag) {
+	if o != nil && !isNil(o.NotifFlag) {
 		return true
 	}
 
@@ -939,79 +939,79 @@ func (o NsmfEventExposure) MarshalJSON() ([]byte, error) {
 
 func (o NsmfEventExposure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.AnyUeInd) {
+	if !isNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.PduSeId) {
+	if !isNil(o.PduSeId) {
 		toSerialize["pduSeId"] = o.PduSeId
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.SubId) {
+	if !isNil(o.SubId) {
 		toSerialize["subId"] = o.SubId
 	}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["notifUri"] = o.NotifUri
-	if !IsNil(o.AltNotifIpv4Addrs) {
+	if !isNil(o.AltNotifIpv4Addrs) {
 		toSerialize["altNotifIpv4Addrs"] = o.AltNotifIpv4Addrs
 	}
-	if !IsNil(o.AltNotifIpv6Addrs) {
+	if !isNil(o.AltNotifIpv6Addrs) {
 		toSerialize["altNotifIpv6Addrs"] = o.AltNotifIpv6Addrs
 	}
-	if !IsNil(o.AltNotifFqdns) {
+	if !isNil(o.AltNotifFqdns) {
 		toSerialize["altNotifFqdns"] = o.AltNotifFqdns
 	}
 	toSerialize["eventSubs"] = o.EventSubs
-	if !IsNil(o.EventNotifs) {
+	if !isNil(o.EventNotifs) {
 		toSerialize["eventNotifs"] = o.EventNotifs
 	}
-	if !IsNil(o.ImmeRep) {
+	if !isNil(o.ImmeRep) {
 		toSerialize["ImmeRep"] = o.ImmeRep
 	}
-	if !IsNil(o.NotifMethod) {
+	if !isNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !IsNil(o.MaxReportNbr) {
+	if !isNil(o.MaxReportNbr) {
 		toSerialize["maxReportNbr"] = o.MaxReportNbr
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !IsNil(o.Guami) {
+	if !isNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !IsNil(o.ServiveName) {
+	if !isNil(o.ServiveName) {
 		toSerialize["serviveName"] = o.ServiveName
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.SampRatio) {
+	if !isNil(o.SampRatio) {
 		toSerialize["sampRatio"] = o.SampRatio
 	}
-	if !IsNil(o.PartitionCriteria) {
+	if !isNil(o.PartitionCriteria) {
 		toSerialize["partitionCriteria"] = o.PartitionCriteria
 	}
-	if !IsNil(o.GrpRepTime) {
+	if !isNil(o.GrpRepTime) {
 		toSerialize["grpRepTime"] = o.GrpRepTime
 	}
-	if !IsNil(o.NotifFlag) {
+	if !isNil(o.NotifFlag) {
 		toSerialize["notifFlag"] = o.NotifFlag
 	}
 	return toSerialize, nil

@@ -50,7 +50,7 @@ func NewSpendingLimitStatusWithDefaults() *SpendingLimitStatus {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *SpendingLimitStatus) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *SpendingLimitStatus) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitStatus) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -68,7 +68,7 @@ func (o *SpendingLimitStatus) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *SpendingLimitStatus) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *SpendingLimitStatus) SetSupi(v string) {
 
 // GetNotifId returns the NotifId field value if set, zero value otherwise.
 func (o *SpendingLimitStatus) GetNotifId() string {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *SpendingLimitStatus) GetNotifId() string {
 // GetNotifIdOk returns a tuple with the NotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitStatus) GetNotifIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		return nil, false
 	}
 	return o.NotifId, true
@@ -100,7 +100,7 @@ func (o *SpendingLimitStatus) GetNotifIdOk() (*string, bool) {
 
 // HasNotifId returns a boolean if a field has been set.
 func (o *SpendingLimitStatus) HasNotifId() bool {
-	if o != nil && !IsNil(o.NotifId) {
+	if o != nil && !isNil(o.NotifId) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *SpendingLimitStatus) SetNotifId(v string) {
 
 // GetStatusInfos returns the StatusInfos field value if set, zero value otherwise.
 func (o *SpendingLimitStatus) GetStatusInfos() map[string]PolicyCounterInfo {
-	if o == nil || IsNil(o.StatusInfos) {
+	if o == nil || isNil(o.StatusInfos) {
 		var ret map[string]PolicyCounterInfo
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SpendingLimitStatus) GetStatusInfos() map[string]PolicyCounterInfo {
 // GetStatusInfosOk returns a tuple with the StatusInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitStatus) GetStatusInfosOk() (*map[string]PolicyCounterInfo, bool) {
-	if o == nil || IsNil(o.StatusInfos) {
+	if o == nil || isNil(o.StatusInfos) {
 		return nil, false
 	}
 	return o.StatusInfos, true
@@ -132,7 +132,7 @@ func (o *SpendingLimitStatus) GetStatusInfosOk() (*map[string]PolicyCounterInfo,
 
 // HasStatusInfos returns a boolean if a field has been set.
 func (o *SpendingLimitStatus) HasStatusInfos() bool {
-	if o != nil && !IsNil(o.StatusInfos) {
+	if o != nil && !isNil(o.StatusInfos) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SpendingLimitStatus) SetStatusInfos(v map[string]PolicyCounterInfo) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *SpendingLimitStatus) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SpendingLimitStatus) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitStatus) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -164,7 +164,7 @@ func (o *SpendingLimitStatus) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *SpendingLimitStatus) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SpendingLimitStatus) SetExpiry(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SpendingLimitStatus) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *SpendingLimitStatus) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpendingLimitStatus) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -196,7 +196,7 @@ func (o *SpendingLimitStatus) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SpendingLimitStatus) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -218,19 +218,19 @@ func (o SpendingLimitStatus) MarshalJSON() ([]byte, error) {
 
 func (o SpendingLimitStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.NotifId) {
+	if !isNil(o.NotifId) {
 		toSerialize["notifId"] = o.NotifId
 	}
-	if !IsNil(o.StatusInfos) {
+	if !isNil(o.StatusInfos) {
 		toSerialize["statusInfos"] = o.StatusInfos
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

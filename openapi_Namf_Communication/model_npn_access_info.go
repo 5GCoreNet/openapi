@@ -41,7 +41,7 @@ func NewNpnAccessInfoWithDefaults() *NpnAccessInfo {
 
 // GetCellCagInfo returns the CellCagInfo field value if set, zero value otherwise.
 func (o *NpnAccessInfo) GetCellCagInfo() []string {
-	if o == nil || IsNil(o.CellCagInfo) {
+	if o == nil || isNil(o.CellCagInfo) {
 		var ret []string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NpnAccessInfo) GetCellCagInfo() []string {
 // GetCellCagInfoOk returns a tuple with the CellCagInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpnAccessInfo) GetCellCagInfoOk() ([]string, bool) {
-	if o == nil || IsNil(o.CellCagInfo) {
+	if o == nil || isNil(o.CellCagInfo) {
 		return nil, false
 	}
 	return o.CellCagInfo, true
@@ -59,7 +59,7 @@ func (o *NpnAccessInfo) GetCellCagInfoOk() ([]string, bool) {
 
 // HasCellCagInfo returns a boolean if a field has been set.
 func (o *NpnAccessInfo) HasCellCagInfo() bool {
-	if o != nil && !IsNil(o.CellCagInfo) {
+	if o != nil && !isNil(o.CellCagInfo) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o NpnAccessInfo) MarshalJSON() ([]byte, error) {
 
 func (o NpnAccessInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CellCagInfo) {
+	if !isNil(o.CellCagInfo) {
 		toSerialize["cellCagInfo"] = o.CellCagInfo
 	}
 	return toSerialize, nil

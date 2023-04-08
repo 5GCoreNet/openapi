@@ -67,7 +67,7 @@ func (o *PlmnEcRestrictionDataWb) SetPlmnId(v PlmnId) {
 
 // GetPlmnEcrDataWb returns the PlmnEcrDataWb field value if set, zero value otherwise.
 func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWb() EcRestrictionDataWb {
-	if o == nil || IsNil(o.PlmnEcrDataWb) {
+	if o == nil || isNil(o.PlmnEcrDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWb() EcRestrictionDataWb {
 // GetPlmnEcrDataWbOk returns a tuple with the PlmnEcrDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || IsNil(o.PlmnEcrDataWb) {
+	if o == nil || isNil(o.PlmnEcrDataWb) {
 		return nil, false
 	}
 	return o.PlmnEcrDataWb, true
@@ -85,7 +85,7 @@ func (o *PlmnEcRestrictionDataWb) GetPlmnEcrDataWbOk() (*EcRestrictionDataWb, bo
 
 // HasPlmnEcrDataWb returns a boolean if a field has been set.
 func (o *PlmnEcRestrictionDataWb) HasPlmnEcrDataWb() bool {
-	if o != nil && !IsNil(o.PlmnEcrDataWb) {
+	if o != nil && !isNil(o.PlmnEcrDataWb) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o PlmnEcRestrictionDataWb) MarshalJSON() ([]byte, error) {
 func (o PlmnEcRestrictionDataWb) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.PlmnEcrDataWb) {
+	if !isNil(o.PlmnEcrDataWb) {
 		toSerialize["plmnEcrDataWb"] = o.PlmnEcrDataWb
 	}
 	return toSerialize, nil

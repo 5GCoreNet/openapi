@@ -44,7 +44,7 @@ func NewTargetDnaiInfoWithDefaults() *TargetDnaiInfo {
 
 // GetTargetDnai returns the TargetDnai field value if set, zero value otherwise.
 func (o *TargetDnaiInfo) GetTargetDnai() string {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *TargetDnaiInfo) GetTargetDnai() string {
 // GetTargetDnaiOk returns a tuple with the TargetDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetDnaiInfo) GetTargetDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		return nil, false
 	}
 	return o.TargetDnai, true
@@ -62,7 +62,7 @@ func (o *TargetDnaiInfo) GetTargetDnaiOk() (*string, bool) {
 
 // HasTargetDnai returns a boolean if a field has been set.
 func (o *TargetDnaiInfo) HasTargetDnai() bool {
-	if o != nil && !IsNil(o.TargetDnai) {
+	if o != nil && !isNil(o.TargetDnai) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o TargetDnaiInfo) MarshalJSON() ([]byte, error) {
 
 func (o TargetDnaiInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TargetDnai) {
+	if !isNil(o.TargetDnai) {
 		toSerialize["targetDnai"] = o.TargetDnai
 	}
 	toSerialize["smfSelectionType"] = o.SmfSelectionType

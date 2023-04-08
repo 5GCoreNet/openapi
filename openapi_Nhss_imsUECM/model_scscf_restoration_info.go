@@ -47,7 +47,7 @@ func NewScscfRestorationInfoWithDefaults() *ScscfRestorationInfo {
 
 // GetUserName returns the UserName field value if set, zero value otherwise.
 func (o *ScscfRestorationInfo) GetUserName() string {
-	if o == nil || IsNil(o.UserName) {
+	if o == nil || isNil(o.UserName) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ScscfRestorationInfo) GetUserName() string {
 // GetUserNameOk returns a tuple with the UserName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRestorationInfo) GetUserNameOk() (*string, bool) {
-	if o == nil || IsNil(o.UserName) {
+	if o == nil || isNil(o.UserName) {
 		return nil, false
 	}
 	return o.UserName, true
@@ -65,7 +65,7 @@ func (o *ScscfRestorationInfo) GetUserNameOk() (*string, bool) {
 
 // HasUserName returns a boolean if a field has been set.
 func (o *ScscfRestorationInfo) HasUserName() bool {
-	if o != nil && !IsNil(o.UserName) {
+	if o != nil && !isNil(o.UserName) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *ScscfRestorationInfo) SetUserName(v string) {
 
 // GetRestorationInfo returns the RestorationInfo field value if set, zero value otherwise.
 func (o *ScscfRestorationInfo) GetRestorationInfo() []RestorationInfo {
-	if o == nil || IsNil(o.RestorationInfo) {
+	if o == nil || isNil(o.RestorationInfo) {
 		var ret []RestorationInfo
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *ScscfRestorationInfo) GetRestorationInfo() []RestorationInfo {
 // GetRestorationInfoOk returns a tuple with the RestorationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRestorationInfo) GetRestorationInfoOk() ([]RestorationInfo, bool) {
-	if o == nil || IsNil(o.RestorationInfo) {
+	if o == nil || isNil(o.RestorationInfo) {
 		return nil, false
 	}
 	return o.RestorationInfo, true
@@ -97,7 +97,7 @@ func (o *ScscfRestorationInfo) GetRestorationInfoOk() ([]RestorationInfo, bool) 
 
 // HasRestorationInfo returns a boolean if a field has been set.
 func (o *ScscfRestorationInfo) HasRestorationInfo() bool {
-	if o != nil && !IsNil(o.RestorationInfo) {
+	if o != nil && !isNil(o.RestorationInfo) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *ScscfRestorationInfo) SetRestorationInfo(v []RestorationInfo) {
 
 // GetRegistrationTimeOut returns the RegistrationTimeOut field value if set, zero value otherwise.
 func (o *ScscfRestorationInfo) GetRegistrationTimeOut() time.Time {
-	if o == nil || IsNil(o.RegistrationTimeOut) {
+	if o == nil || isNil(o.RegistrationTimeOut) {
 		var ret time.Time
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *ScscfRestorationInfo) GetRegistrationTimeOut() time.Time {
 // GetRegistrationTimeOutOk returns a tuple with the RegistrationTimeOut field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRestorationInfo) GetRegistrationTimeOutOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RegistrationTimeOut) {
+	if o == nil || isNil(o.RegistrationTimeOut) {
 		return nil, false
 	}
 	return o.RegistrationTimeOut, true
@@ -129,7 +129,7 @@ func (o *ScscfRestorationInfo) GetRegistrationTimeOutOk() (*time.Time, bool) {
 
 // HasRegistrationTimeOut returns a boolean if a field has been set.
 func (o *ScscfRestorationInfo) HasRegistrationTimeOut() bool {
-	if o != nil && !IsNil(o.RegistrationTimeOut) {
+	if o != nil && !isNil(o.RegistrationTimeOut) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *ScscfRestorationInfo) SetRegistrationTimeOut(v time.Time) {
 
 // GetSipAuthenticationScheme returns the SipAuthenticationScheme field value if set, zero value otherwise.
 func (o *ScscfRestorationInfo) GetSipAuthenticationScheme() SipAuthenticationScheme {
-	if o == nil || IsNil(o.SipAuthenticationScheme) {
+	if o == nil || isNil(o.SipAuthenticationScheme) {
 		var ret SipAuthenticationScheme
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *ScscfRestorationInfo) GetSipAuthenticationScheme() SipAuthenticationSch
 // GetSipAuthenticationSchemeOk returns a tuple with the SipAuthenticationScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRestorationInfo) GetSipAuthenticationSchemeOk() (*SipAuthenticationScheme, bool) {
-	if o == nil || IsNil(o.SipAuthenticationScheme) {
+	if o == nil || isNil(o.SipAuthenticationScheme) {
 		return nil, false
 	}
 	return o.SipAuthenticationScheme, true
@@ -161,7 +161,7 @@ func (o *ScscfRestorationInfo) GetSipAuthenticationSchemeOk() (*SipAuthenticatio
 
 // HasSipAuthenticationScheme returns a boolean if a field has been set.
 func (o *ScscfRestorationInfo) HasSipAuthenticationScheme() bool {
-	if o != nil && !IsNil(o.SipAuthenticationScheme) {
+	if o != nil && !isNil(o.SipAuthenticationScheme) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o ScscfRestorationInfo) MarshalJSON() ([]byte, error) {
 
 func (o ScscfRestorationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserName) {
+	if !isNil(o.UserName) {
 		toSerialize["userName"] = o.UserName
 	}
-	if !IsNil(o.RestorationInfo) {
+	if !isNil(o.RestorationInfo) {
 		toSerialize["restorationInfo"] = o.RestorationInfo
 	}
-	if !IsNil(o.RegistrationTimeOut) {
+	if !isNil(o.RegistrationTimeOut) {
 		toSerialize["registrationTimeOut"] = o.RegistrationTimeOut
 	}
-	if !IsNil(o.SipAuthenticationScheme) {
+	if !isNil(o.SipAuthenticationScheme) {
 		toSerialize["sipAuthenticationScheme"] = o.SipAuthenticationScheme
 	}
 	return toSerialize, nil

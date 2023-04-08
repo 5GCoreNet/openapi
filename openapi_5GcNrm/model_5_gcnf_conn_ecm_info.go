@@ -43,7 +43,7 @@ func NewModel5GCNfConnEcmInfoWithDefaults() *Model5GCNfConnEcmInfo {
 
 // GetVar5GCNFType returns the Var5GCNFType field value if set, zero value otherwise.
 func (o *Model5GCNfConnEcmInfo) GetVar5GCNFType() string {
-	if o == nil || IsNil(o.Var5GCNFType) {
+	if o == nil || isNil(o.Var5GCNFType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *Model5GCNfConnEcmInfo) GetVar5GCNFType() string {
 // GetVar5GCNFTypeOk returns a tuple with the Var5GCNFType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GCNfConnEcmInfo) GetVar5GCNFTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Var5GCNFType) {
+	if o == nil || isNil(o.Var5GCNFType) {
 		return nil, false
 	}
 	return o.Var5GCNFType, true
@@ -61,7 +61,7 @@ func (o *Model5GCNfConnEcmInfo) GetVar5GCNFTypeOk() (*string, bool) {
 
 // HasVar5GCNFType returns a boolean if a field has been set.
 func (o *Model5GCNfConnEcmInfo) HasVar5GCNFType() bool {
-	if o != nil && !IsNil(o.Var5GCNFType) {
+	if o != nil && !isNil(o.Var5GCNFType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *Model5GCNfConnEcmInfo) SetVar5GCNFType(v string) {
 
 // GetVar5GCNFIpAddress returns the Var5GCNFIpAddress field value if set, zero value otherwise.
 func (o *Model5GCNfConnEcmInfo) GetVar5GCNFIpAddress() string {
-	if o == nil || IsNil(o.Var5GCNFIpAddress) {
+	if o == nil || isNil(o.Var5GCNFIpAddress) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *Model5GCNfConnEcmInfo) GetVar5GCNFIpAddress() string {
 // GetVar5GCNFIpAddressOk returns a tuple with the Var5GCNFIpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GCNfConnEcmInfo) GetVar5GCNFIpAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.Var5GCNFIpAddress) {
+	if o == nil || isNil(o.Var5GCNFIpAddress) {
 		return nil, false
 	}
 	return o.Var5GCNFIpAddress, true
@@ -93,7 +93,7 @@ func (o *Model5GCNfConnEcmInfo) GetVar5GCNFIpAddressOk() (*string, bool) {
 
 // HasVar5GCNFIpAddress returns a boolean if a field has been set.
 func (o *Model5GCNfConnEcmInfo) HasVar5GCNFIpAddress() bool {
-	if o != nil && !IsNil(o.Var5GCNFIpAddress) {
+	if o != nil && !isNil(o.Var5GCNFIpAddress) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Model5GCNfConnEcmInfo) SetVar5GCNFIpAddress(v string) {
 
 // GetVar5GCNFRef returns the Var5GCNFRef field value if set, zero value otherwise.
 func (o *Model5GCNfConnEcmInfo) GetVar5GCNFRef() string {
-	if o == nil || IsNil(o.Var5GCNFRef) {
+	if o == nil || isNil(o.Var5GCNFRef) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Model5GCNfConnEcmInfo) GetVar5GCNFRef() string {
 // GetVar5GCNFRefOk returns a tuple with the Var5GCNFRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GCNfConnEcmInfo) GetVar5GCNFRefOk() (*string, bool) {
-	if o == nil || IsNil(o.Var5GCNFRef) {
+	if o == nil || isNil(o.Var5GCNFRef) {
 		return nil, false
 	}
 	return o.Var5GCNFRef, true
@@ -125,7 +125,7 @@ func (o *Model5GCNfConnEcmInfo) GetVar5GCNFRefOk() (*string, bool) {
 
 // HasVar5GCNFRef returns a boolean if a field has been set.
 func (o *Model5GCNfConnEcmInfo) HasVar5GCNFRef() bool {
-	if o != nil && !IsNil(o.Var5GCNFRef) {
+	if o != nil && !isNil(o.Var5GCNFRef) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o Model5GCNfConnEcmInfo) MarshalJSON() ([]byte, error) {
 
 func (o Model5GCNfConnEcmInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Var5GCNFType) {
+	if !isNil(o.Var5GCNFType) {
 		toSerialize["5GCNFType"] = o.Var5GCNFType
 	}
-	if !IsNil(o.Var5GCNFIpAddress) {
+	if !isNil(o.Var5GCNFIpAddress) {
 		toSerialize["5GCNFIpAddress"] = o.Var5GCNFIpAddress
 	}
-	if !IsNil(o.Var5GCNFRef) {
+	if !isNil(o.Var5GCNFRef) {
 		toSerialize["5GCNFRef"] = o.Var5GCNFRef
 	}
 	return toSerialize, nil

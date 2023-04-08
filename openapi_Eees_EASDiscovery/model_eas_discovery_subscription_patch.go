@@ -47,7 +47,7 @@ func NewEasDiscoverySubscriptionPatchWithDefaults() *EasDiscoverySubscriptionPat
 
 // GetEasDiscoveryFilter returns the EasDiscoveryFilter field value if set, zero value otherwise.
 func (o *EasDiscoverySubscriptionPatch) GetEasDiscoveryFilter() EasDiscoveryFilter {
-	if o == nil || IsNil(o.EasDiscoveryFilter) {
+	if o == nil || isNil(o.EasDiscoveryFilter) {
 		var ret EasDiscoveryFilter
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *EasDiscoverySubscriptionPatch) GetEasDiscoveryFilter() EasDiscoveryFilt
 // GetEasDiscoveryFilterOk returns a tuple with the EasDiscoveryFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscriptionPatch) GetEasDiscoveryFilterOk() (*EasDiscoveryFilter, bool) {
-	if o == nil || IsNil(o.EasDiscoveryFilter) {
+	if o == nil || isNil(o.EasDiscoveryFilter) {
 		return nil, false
 	}
 	return o.EasDiscoveryFilter, true
@@ -65,7 +65,7 @@ func (o *EasDiscoverySubscriptionPatch) GetEasDiscoveryFilterOk() (*EasDiscovery
 
 // HasEasDiscoveryFilter returns a boolean if a field has been set.
 func (o *EasDiscoverySubscriptionPatch) HasEasDiscoveryFilter() bool {
-	if o != nil && !IsNil(o.EasDiscoveryFilter) {
+	if o != nil && !isNil(o.EasDiscoveryFilter) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *EasDiscoverySubscriptionPatch) SetEasDiscoveryFilter(v EasDiscoveryFilt
 
 // GetEasDynInfoFilter returns the EasDynInfoFilter field value if set, zero value otherwise.
 func (o *EasDiscoverySubscriptionPatch) GetEasDynInfoFilter() EasDynamicInfoFilter {
-	if o == nil || IsNil(o.EasDynInfoFilter) {
+	if o == nil || isNil(o.EasDynInfoFilter) {
 		var ret EasDynamicInfoFilter
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *EasDiscoverySubscriptionPatch) GetEasDynInfoFilter() EasDynamicInfoFilt
 // GetEasDynInfoFilterOk returns a tuple with the EasDynInfoFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscriptionPatch) GetEasDynInfoFilterOk() (*EasDynamicInfoFilter, bool) {
-	if o == nil || IsNil(o.EasDynInfoFilter) {
+	if o == nil || isNil(o.EasDynInfoFilter) {
 		return nil, false
 	}
 	return o.EasDynInfoFilter, true
@@ -97,7 +97,7 @@ func (o *EasDiscoverySubscriptionPatch) GetEasDynInfoFilterOk() (*EasDynamicInfo
 
 // HasEasDynInfoFilter returns a boolean if a field has been set.
 func (o *EasDiscoverySubscriptionPatch) HasEasDynInfoFilter() bool {
-	if o != nil && !IsNil(o.EasDynInfoFilter) {
+	if o != nil && !isNil(o.EasDynInfoFilter) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *EasDiscoverySubscriptionPatch) SetEasDynInfoFilter(v EasDynamicInfoFilt
 
 // GetEasSvcContinuity returns the EasSvcContinuity field value if set, zero value otherwise.
 func (o *EasDiscoverySubscriptionPatch) GetEasSvcContinuity() []ACRScenario {
-	if o == nil || IsNil(o.EasSvcContinuity) {
+	if o == nil || isNil(o.EasSvcContinuity) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *EasDiscoverySubscriptionPatch) GetEasSvcContinuity() []ACRScenario {
 // GetEasSvcContinuityOk returns a tuple with the EasSvcContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscriptionPatch) GetEasSvcContinuityOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EasSvcContinuity) {
+	if o == nil || isNil(o.EasSvcContinuity) {
 		return nil, false
 	}
 	return o.EasSvcContinuity, true
@@ -129,7 +129,7 @@ func (o *EasDiscoverySubscriptionPatch) GetEasSvcContinuityOk() ([]ACRScenario, 
 
 // HasEasSvcContinuity returns a boolean if a field has been set.
 func (o *EasDiscoverySubscriptionPatch) HasEasSvcContinuity() bool {
-	if o != nil && !IsNil(o.EasSvcContinuity) {
+	if o != nil && !isNil(o.EasSvcContinuity) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *EasDiscoverySubscriptionPatch) SetEasSvcContinuity(v []ACRScenario) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *EasDiscoverySubscriptionPatch) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *EasDiscoverySubscriptionPatch) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoverySubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -161,7 +161,7 @@ func (o *EasDiscoverySubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *EasDiscoverySubscriptionPatch) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o EasDiscoverySubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o EasDiscoverySubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EasDiscoveryFilter) {
+	if !isNil(o.EasDiscoveryFilter) {
 		toSerialize["easDiscoveryFilter"] = o.EasDiscoveryFilter
 	}
-	if !IsNil(o.EasDynInfoFilter) {
+	if !isNil(o.EasDynInfoFilter) {
 		toSerialize["easDynInfoFilter"] = o.EasDynInfoFilter
 	}
-	if !IsNil(o.EasSvcContinuity) {
+	if !isNil(o.EasSvcContinuity) {
 		toSerialize["easSvcContinuity"] = o.EasSvcContinuity
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
 	return toSerialize, nil

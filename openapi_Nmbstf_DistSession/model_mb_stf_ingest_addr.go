@@ -44,7 +44,7 @@ func NewMbStfIngestAddrWithDefaults() *MbStfIngestAddr {
 
 // GetAfEgressTunAddr returns the AfEgressTunAddr field value if set, zero value otherwise.
 func (o *MbStfIngestAddr) GetAfEgressTunAddr() MbStfIngestAddrAfEgressTunAddr {
-	if o == nil || IsNil(o.AfEgressTunAddr) {
+	if o == nil || isNil(o.AfEgressTunAddr) {
 		var ret MbStfIngestAddrAfEgressTunAddr
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MbStfIngestAddr) GetAfEgressTunAddr() MbStfIngestAddrAfEgressTunAddr {
 // GetAfEgressTunAddrOk returns a tuple with the AfEgressTunAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbStfIngestAddr) GetAfEgressTunAddrOk() (*MbStfIngestAddrAfEgressTunAddr, bool) {
-	if o == nil || IsNil(o.AfEgressTunAddr) {
+	if o == nil || isNil(o.AfEgressTunAddr) {
 		return nil, false
 	}
 	return o.AfEgressTunAddr, true
@@ -62,7 +62,7 @@ func (o *MbStfIngestAddr) GetAfEgressTunAddrOk() (*MbStfIngestAddrAfEgressTunAdd
 
 // HasAfEgressTunAddr returns a boolean if a field has been set.
 func (o *MbStfIngestAddr) HasAfEgressTunAddr() bool {
-	if o != nil && !IsNil(o.AfEgressTunAddr) {
+	if o != nil && !isNil(o.AfEgressTunAddr) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MbStfIngestAddr) SetAfEgressTunAddr(v MbStfIngestAddrAfEgressTunAddr) {
 
 // GetMbStfIngressTunAddr returns the MbStfIngressTunAddr field value if set, zero value otherwise.
 func (o *MbStfIngestAddr) GetMbStfIngressTunAddr() TunnelAddress {
-	if o == nil || IsNil(o.MbStfIngressTunAddr) {
+	if o == nil || isNil(o.MbStfIngressTunAddr) {
 		var ret TunnelAddress
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MbStfIngestAddr) GetMbStfIngressTunAddr() TunnelAddress {
 // GetMbStfIngressTunAddrOk returns a tuple with the MbStfIngressTunAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbStfIngestAddr) GetMbStfIngressTunAddrOk() (*TunnelAddress, bool) {
-	if o == nil || IsNil(o.MbStfIngressTunAddr) {
+	if o == nil || isNil(o.MbStfIngressTunAddr) {
 		return nil, false
 	}
 	return o.MbStfIngressTunAddr, true
@@ -94,7 +94,7 @@ func (o *MbStfIngestAddr) GetMbStfIngressTunAddrOk() (*TunnelAddress, bool) {
 
 // HasMbStfIngressTunAddr returns a boolean if a field has been set.
 func (o *MbStfIngestAddr) HasMbStfIngressTunAddr() bool {
-	if o != nil && !IsNil(o.MbStfIngressTunAddr) {
+	if o != nil && !isNil(o.MbStfIngressTunAddr) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *MbStfIngestAddr) SetMbStfIngressTunAddr(v TunnelAddress) {
 
 // GetAfSsm returns the AfSsm field value if set, zero value otherwise.
 func (o *MbStfIngestAddr) GetAfSsm() MbStfIngestAddrAfSsm {
-	if o == nil || IsNil(o.AfSsm) {
+	if o == nil || isNil(o.AfSsm) {
 		var ret MbStfIngestAddrAfSsm
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *MbStfIngestAddr) GetAfSsm() MbStfIngestAddrAfSsm {
 // GetAfSsmOk returns a tuple with the AfSsm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbStfIngestAddr) GetAfSsmOk() (*MbStfIngestAddrAfSsm, bool) {
-	if o == nil || IsNil(o.AfSsm) {
+	if o == nil || isNil(o.AfSsm) {
 		return nil, false
 	}
 	return o.AfSsm, true
@@ -126,7 +126,7 @@ func (o *MbStfIngestAddr) GetAfSsmOk() (*MbStfIngestAddrAfSsm, bool) {
 
 // HasAfSsm returns a boolean if a field has been set.
 func (o *MbStfIngestAddr) HasAfSsm() bool {
-	if o != nil && !IsNil(o.AfSsm) {
+	if o != nil && !isNil(o.AfSsm) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *MbStfIngestAddr) SetAfSsm(v MbStfIngestAddrAfSsm) {
 
 // GetMbStfListenAddr returns the MbStfListenAddr field value if set, zero value otherwise.
 func (o *MbStfIngestAddr) GetMbStfListenAddr() TunnelAddress {
-	if o == nil || IsNil(o.MbStfListenAddr) {
+	if o == nil || isNil(o.MbStfListenAddr) {
 		var ret TunnelAddress
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *MbStfIngestAddr) GetMbStfListenAddr() TunnelAddress {
 // GetMbStfListenAddrOk returns a tuple with the MbStfListenAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbStfIngestAddr) GetMbStfListenAddrOk() (*TunnelAddress, bool) {
-	if o == nil || IsNil(o.MbStfListenAddr) {
+	if o == nil || isNil(o.MbStfListenAddr) {
 		return nil, false
 	}
 	return o.MbStfListenAddr, true
@@ -158,7 +158,7 @@ func (o *MbStfIngestAddr) GetMbStfListenAddrOk() (*TunnelAddress, bool) {
 
 // HasMbStfListenAddr returns a boolean if a field has been set.
 func (o *MbStfIngestAddr) HasMbStfListenAddr() bool {
-	if o != nil && !IsNil(o.MbStfListenAddr) {
+	if o != nil && !isNil(o.MbStfListenAddr) {
 		return true
 	}
 
@@ -180,14 +180,18 @@ func (o MbStfIngestAddr) MarshalJSON() ([]byte, error) {
 
 func (o MbStfIngestAddr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfEgressTunAddr) {
+	if !isNil(o.AfEgressTunAddr) {
 		toSerialize["afEgressTunAddr"] = o.AfEgressTunAddr
 	}
-	// skip: mbStfIngressTunAddr is readOnly
-	if !IsNil(o.AfSsm) {
+	if !isNil(o.MbStfIngressTunAddr) {
+		toSerialize["mbStfIngressTunAddr"] = o.MbStfIngressTunAddr
+	}
+	if !isNil(o.AfSsm) {
 		toSerialize["afSsm"] = o.AfSsm
 	}
-	// skip: mbStfListenAddr is readOnly
+	if !isNil(o.MbStfListenAddr) {
+		toSerialize["mbStfListenAddr"] = o.MbStfListenAddr
+	}
 	return toSerialize, nil
 }
 

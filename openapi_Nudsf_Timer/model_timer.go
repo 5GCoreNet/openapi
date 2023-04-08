@@ -52,7 +52,7 @@ func NewTimerWithDefaults() *Timer {
 
 // GetTimerId returns the TimerId field value if set, zero value otherwise.
 func (o *Timer) GetTimerId() string {
-	if o == nil || IsNil(o.TimerId) {
+	if o == nil || isNil(o.TimerId) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *Timer) GetTimerId() string {
 // GetTimerIdOk returns a tuple with the TimerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetTimerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TimerId) {
+	if o == nil || isNil(o.TimerId) {
 		return nil, false
 	}
 	return o.TimerId, true
@@ -70,7 +70,7 @@ func (o *Timer) GetTimerIdOk() (*string, bool) {
 
 // HasTimerId returns a boolean if a field has been set.
 func (o *Timer) HasTimerId() bool {
-	if o != nil && !IsNil(o.TimerId) {
+	if o != nil && !isNil(o.TimerId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *Timer) SetExpires(v time.Time) {
 
 // GetMetaTags returns the MetaTags field value if set, zero value otherwise.
 func (o *Timer) GetMetaTags() map[string][]string {
-	if o == nil || IsNil(o.MetaTags) {
+	if o == nil || isNil(o.MetaTags) {
 		var ret map[string][]string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *Timer) GetMetaTags() map[string][]string {
 // GetMetaTagsOk returns a tuple with the MetaTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetMetaTagsOk() (*map[string][]string, bool) {
-	if o == nil || IsNil(o.MetaTags) {
+	if o == nil || isNil(o.MetaTags) {
 		return nil, false
 	}
 	return o.MetaTags, true
@@ -126,7 +126,7 @@ func (o *Timer) GetMetaTagsOk() (*map[string][]string, bool) {
 
 // HasMetaTags returns a boolean if a field has been set.
 func (o *Timer) HasMetaTags() bool {
-	if o != nil && !IsNil(o.MetaTags) {
+	if o != nil && !isNil(o.MetaTags) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *Timer) SetMetaTags(v map[string][]string) {
 
 // GetCallbackReference returns the CallbackReference field value if set, zero value otherwise.
 func (o *Timer) GetCallbackReference() string {
-	if o == nil || IsNil(o.CallbackReference) {
+	if o == nil || isNil(o.CallbackReference) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *Timer) GetCallbackReference() string {
 // GetCallbackReferenceOk returns a tuple with the CallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetCallbackReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.CallbackReference) {
+	if o == nil || isNil(o.CallbackReference) {
 		return nil, false
 	}
 	return o.CallbackReference, true
@@ -158,7 +158,7 @@ func (o *Timer) GetCallbackReferenceOk() (*string, bool) {
 
 // HasCallbackReference returns a boolean if a field has been set.
 func (o *Timer) HasCallbackReference() bool {
-	if o != nil && !IsNil(o.CallbackReference) {
+	if o != nil && !isNil(o.CallbackReference) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *Timer) SetCallbackReference(v string) {
 
 // GetDeleteAfter returns the DeleteAfter field value if set, zero value otherwise.
 func (o *Timer) GetDeleteAfter() int32 {
-	if o == nil || IsNil(o.DeleteAfter) {
+	if o == nil || isNil(o.DeleteAfter) {
 		var ret int32
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *Timer) GetDeleteAfter() int32 {
 // GetDeleteAfterOk returns a tuple with the DeleteAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Timer) GetDeleteAfterOk() (*int32, bool) {
-	if o == nil || IsNil(o.DeleteAfter) {
+	if o == nil || isNil(o.DeleteAfter) {
 		return nil, false
 	}
 	return o.DeleteAfter, true
@@ -190,7 +190,7 @@ func (o *Timer) GetDeleteAfterOk() (*int32, bool) {
 
 // HasDeleteAfter returns a boolean if a field has been set.
 func (o *Timer) HasDeleteAfter() bool {
-	if o != nil && !IsNil(o.DeleteAfter) {
+	if o != nil && !isNil(o.DeleteAfter) {
 		return true
 	}
 
@@ -212,17 +212,17 @@ func (o Timer) MarshalJSON() ([]byte, error) {
 
 func (o Timer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TimerId) {
+	if !isNil(o.TimerId) {
 		toSerialize["timerId"] = o.TimerId
 	}
 	toSerialize["expires"] = o.Expires
-	if !IsNil(o.MetaTags) {
+	if !isNil(o.MetaTags) {
 		toSerialize["metaTags"] = o.MetaTags
 	}
-	if !IsNil(o.CallbackReference) {
+	if !isNil(o.CallbackReference) {
 		toSerialize["callbackReference"] = o.CallbackReference
 	}
-	if !IsNil(o.DeleteAfter) {
+	if !isNil(o.DeleteAfter) {
 		toSerialize["deleteAfter"] = o.DeleteAfter
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewTimeWindow1WithDefaults() *TimeWindow1 {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *TimeWindow1) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TimeWindow1) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow1) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -61,7 +61,7 @@ func (o *TimeWindow1) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *TimeWindow1) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TimeWindow1) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *TimeWindow1) GetEndTime() time.Time {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TimeWindow1) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeWindow1) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -93,7 +93,7 @@ func (o *TimeWindow1) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *TimeWindow1) HasEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
+	if o != nil && !isNil(o.EndTime) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o TimeWindow1) MarshalJSON() ([]byte, error) {
 
 func (o TimeWindow1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.EndTime) {
+	if !isNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
 	return toSerialize, nil

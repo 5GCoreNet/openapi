@@ -95,7 +95,7 @@ func (o *EcRestriction) SetReferenceId(v int32) {
 
 // GetPlmnEcInfos returns the PlmnEcInfos field value if set, zero value otherwise.
 func (o *EcRestriction) GetPlmnEcInfos() []PlmnEcInfo {
-	if o == nil || IsNil(o.PlmnEcInfos) {
+	if o == nil || isNil(o.PlmnEcInfos) {
 		var ret []PlmnEcInfo
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *EcRestriction) GetPlmnEcInfos() []PlmnEcInfo {
 // GetPlmnEcInfosOk returns a tuple with the PlmnEcInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcRestriction) GetPlmnEcInfosOk() ([]PlmnEcInfo, bool) {
-	if o == nil || IsNil(o.PlmnEcInfos) {
+	if o == nil || isNil(o.PlmnEcInfos) {
 		return nil, false
 	}
 	return o.PlmnEcInfos, true
@@ -113,7 +113,7 @@ func (o *EcRestriction) GetPlmnEcInfosOk() ([]PlmnEcInfo, bool) {
 
 // HasPlmnEcInfos returns a boolean if a field has been set.
 func (o *EcRestriction) HasPlmnEcInfos() bool {
-	if o != nil && !IsNil(o.PlmnEcInfos) {
+	if o != nil && !isNil(o.PlmnEcInfos) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *EcRestriction) SetPlmnEcInfos(v []PlmnEcInfo) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *EcRestriction) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *EcRestriction) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcRestriction) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -145,7 +145,7 @@ func (o *EcRestriction) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *EcRestriction) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o EcRestriction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afInstanceId"] = o.AfInstanceId
 	toSerialize["referenceId"] = o.ReferenceId
-	if !IsNil(o.PlmnEcInfos) {
+	if !isNil(o.PlmnEcInfos) {
 		toSerialize["plmnEcInfos"] = o.PlmnEcInfos
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil

@@ -184,7 +184,7 @@ func (o *QosCharacteristics) SetPacketErrorRate(v string) {
 
 // GetAveragingWindow returns the AveragingWindow field value if set, zero value otherwise.
 func (o *QosCharacteristics) GetAveragingWindow() int32 {
-	if o == nil || IsNil(o.AveragingWindow) {
+	if o == nil || isNil(o.AveragingWindow) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *QosCharacteristics) GetAveragingWindow() int32 {
 // GetAveragingWindowOk returns a tuple with the AveragingWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosCharacteristics) GetAveragingWindowOk() (*int32, bool) {
-	if o == nil || IsNil(o.AveragingWindow) {
+	if o == nil || isNil(o.AveragingWindow) {
 		return nil, false
 	}
 	return o.AveragingWindow, true
@@ -202,7 +202,7 @@ func (o *QosCharacteristics) GetAveragingWindowOk() (*int32, bool) {
 
 // HasAveragingWindow returns a boolean if a field has been set.
 func (o *QosCharacteristics) HasAveragingWindow() bool {
-	if o != nil && !IsNil(o.AveragingWindow) {
+	if o != nil && !isNil(o.AveragingWindow) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *QosCharacteristics) SetAveragingWindow(v int32) {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise.
 func (o *QosCharacteristics) GetMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.MaxDataBurstVol) {
+	if o == nil || isNil(o.MaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *QosCharacteristics) GetMaxDataBurstVol() int32 {
 // GetMaxDataBurstVolOk returns a tuple with the MaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosCharacteristics) GetMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxDataBurstVol) {
+	if o == nil || isNil(o.MaxDataBurstVol) {
 		return nil, false
 	}
 	return o.MaxDataBurstVol, true
@@ -234,7 +234,7 @@ func (o *QosCharacteristics) GetMaxDataBurstVolOk() (*int32, bool) {
 
 // HasMaxDataBurstVol returns a boolean if a field has been set.
 func (o *QosCharacteristics) HasMaxDataBurstVol() bool {
-	if o != nil && !IsNil(o.MaxDataBurstVol) {
+	if o != nil && !isNil(o.MaxDataBurstVol) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *QosCharacteristics) SetMaxDataBurstVol(v int32) {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise.
 func (o *QosCharacteristics) GetExtMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
+	if o == nil || isNil(o.ExtMaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *QosCharacteristics) GetExtMaxDataBurstVol() int32 {
 // GetExtMaxDataBurstVolOk returns a tuple with the ExtMaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosCharacteristics) GetExtMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
+	if o == nil || isNil(o.ExtMaxDataBurstVol) {
 		return nil, false
 	}
 	return o.ExtMaxDataBurstVol, true
@@ -266,7 +266,7 @@ func (o *QosCharacteristics) GetExtMaxDataBurstVolOk() (*int32, bool) {
 
 // HasExtMaxDataBurstVol returns a boolean if a field has been set.
 func (o *QosCharacteristics) HasExtMaxDataBurstVol() bool {
-	if o != nil && !IsNil(o.ExtMaxDataBurstVol) {
+	if o != nil && !isNil(o.ExtMaxDataBurstVol) {
 		return true
 	}
 
@@ -293,13 +293,13 @@ func (o QosCharacteristics) ToMap() (map[string]interface{}, error) {
 	toSerialize["priorityLevel"] = o.PriorityLevel
 	toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	toSerialize["packetErrorRate"] = o.PacketErrorRate
-	if !IsNil(o.AveragingWindow) {
+	if !isNil(o.AveragingWindow) {
 		toSerialize["averagingWindow"] = o.AveragingWindow
 	}
-	if !IsNil(o.MaxDataBurstVol) {
+	if !isNil(o.MaxDataBurstVol) {
 		toSerialize["maxDataBurstVol"] = o.MaxDataBurstVol
 	}
-	if !IsNil(o.ExtMaxDataBurstVol) {
+	if !isNil(o.ExtMaxDataBurstVol) {
 		toSerialize["extMaxDataBurstVol"] = o.ExtMaxDataBurstVol
 	}
 	return toSerialize, nil

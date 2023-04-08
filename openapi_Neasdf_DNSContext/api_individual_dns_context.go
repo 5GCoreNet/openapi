@@ -13,7 +13,7 @@ package openapi_Neasdf_DNSContext
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -95,9 +95,9 @@ func (a *IndividualDNSContextApiService) DeleteDnsContextExecute(r ApiDeleteDnsC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -335,7 +335,7 @@ func (a *IndividualDNSContextApiService) ReplaceDnsContextExecute(r ApiReplaceDn
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.dnsContextCreateData
@@ -349,9 +349,9 @@ func (a *IndividualDNSContextApiService) ReplaceDnsContextExecute(r ApiReplaceDn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -602,7 +602,7 @@ func (a *IndividualDNSContextApiService) UpdateDnsContextExecute(r ApiUpdateDnsC
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	// body params
 	localVarPostBody = r.patchItem
@@ -616,9 +616,9 @@ func (a *IndividualDNSContextApiService) UpdateDnsContextExecute(r ApiUpdateDnsC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

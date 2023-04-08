@@ -43,7 +43,7 @@ func NewPpDataEntryListWithDefaults() *PpDataEntryList {
 
 // GetPpDataEntryList returns the PpDataEntryList field value if set, zero value otherwise.
 func (o *PpDataEntryList) GetPpDataEntryList() []PpDataEntry {
-	if o == nil || IsNil(o.PpDataEntryList) {
+	if o == nil || isNil(o.PpDataEntryList) {
 		var ret []PpDataEntry
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *PpDataEntryList) GetPpDataEntryList() []PpDataEntry {
 // GetPpDataEntryListOk returns a tuple with the PpDataEntryList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntryList) GetPpDataEntryListOk() ([]PpDataEntry, bool) {
-	if o == nil || IsNil(o.PpDataEntryList) {
+	if o == nil || isNil(o.PpDataEntryList) {
 		return nil, false
 	}
 	return o.PpDataEntryList, true
@@ -61,7 +61,7 @@ func (o *PpDataEntryList) GetPpDataEntryListOk() ([]PpDataEntry, bool) {
 
 // HasPpDataEntryList returns a boolean if a field has been set.
 func (o *PpDataEntryList) HasPpDataEntryList() bool {
-	if o != nil && !IsNil(o.PpDataEntryList) {
+	if o != nil && !isNil(o.PpDataEntryList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *PpDataEntryList) SetPpDataEntryList(v []PpDataEntry) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PpDataEntryList) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PpDataEntryList) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntryList) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -93,7 +93,7 @@ func (o *PpDataEntryList) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PpDataEntryList) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o PpDataEntryList) MarshalJSON() ([]byte, error) {
 
 func (o PpDataEntryList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PpDataEntryList) {
+	if !isNil(o.PpDataEntryList) {
 		toSerialize["ppDataEntryList"] = o.PpDataEntryList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

@@ -41,7 +41,7 @@ func NewNsacfFunctionSingleAllOf1WithDefaults() *NsacfFunctionSingleAllOf1 {
 
 // GetEPN60 returns the EPN60 field value if set, zero value otherwise.
 func (o *NsacfFunctionSingleAllOf1) GetEPN60() []EPN60Single {
-	if o == nil || IsNil(o.EPN60) {
+	if o == nil || isNil(o.EPN60) {
 		var ret []EPN60Single
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NsacfFunctionSingleAllOf1) GetEPN60() []EPN60Single {
 // GetEPN60Ok returns a tuple with the EPN60 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsacfFunctionSingleAllOf1) GetEPN60Ok() ([]EPN60Single, bool) {
-	if o == nil || IsNil(o.EPN60) {
+	if o == nil || isNil(o.EPN60) {
 		return nil, false
 	}
 	return o.EPN60, true
@@ -59,7 +59,7 @@ func (o *NsacfFunctionSingleAllOf1) GetEPN60Ok() ([]EPN60Single, bool) {
 
 // HasEPN60 returns a boolean if a field has been set.
 func (o *NsacfFunctionSingleAllOf1) HasEPN60() bool {
-	if o != nil && !IsNil(o.EPN60) {
+	if o != nil && !isNil(o.EPN60) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o NsacfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NsacfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN60) {
+	if !isNil(o.EPN60) {
 		toSerialize["EP_N60"] = o.EPN60
 	}
 	return toSerialize, nil

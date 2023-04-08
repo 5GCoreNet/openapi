@@ -42,7 +42,7 @@ func NewTai1WithDefaults() *Tai1 {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *Tai1) GetPlmnId() PlmnId1 {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId1
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Tai1) GetPlmnId() PlmnId1 {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetPlmnIdOk() (*PlmnId1, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -60,7 +60,7 @@ func (o *Tai1) GetPlmnIdOk() (*PlmnId1, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *Tai1) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Tai1) SetPlmnId(v PlmnId1) {
 
 // GetNrTac returns the NrTac field value if set, zero value otherwise.
 func (o *Tai1) GetNrTac() int32 {
-	if o == nil || IsNil(o.NrTac) {
+	if o == nil || isNil(o.NrTac) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Tai1) GetNrTac() int32 {
 // GetNrTacOk returns a tuple with the NrTac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetNrTacOk() (*int32, bool) {
-	if o == nil || IsNil(o.NrTac) {
+	if o == nil || isNil(o.NrTac) {
 		return nil, false
 	}
 	return o.NrTac, true
@@ -92,7 +92,7 @@ func (o *Tai1) GetNrTacOk() (*int32, bool) {
 
 // HasNrTac returns a boolean if a field has been set.
 func (o *Tai1) HasNrTac() bool {
-	if o != nil && !IsNil(o.NrTac) {
+	if o != nil && !isNil(o.NrTac) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o Tai1) MarshalJSON() ([]byte, error) {
 
 func (o Tai1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.NrTac) {
+	if !isNil(o.NrTac) {
 		toSerialize["nrTac"] = o.NrTac
 	}
 	return toSerialize, nil

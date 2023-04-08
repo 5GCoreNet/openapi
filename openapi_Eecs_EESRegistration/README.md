@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ACRScenario](docs/ACRScenario.md)
+ - [ACRScenarioAnyOf](docs/ACRScenarioAnyOf.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [EESProfile](docs/EESProfile.md)
  - [EESRegistration](docs/EESRegistration.md)
@@ -128,6 +129,7 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [ServiceArea](docs/ServiceArea.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [TopologicalServiceArea](docs/TopologicalServiceArea.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)

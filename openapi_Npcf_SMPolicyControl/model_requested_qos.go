@@ -71,7 +71,7 @@ func (o *RequestedQos) SetVar5qi(v int32) {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise.
 func (o *RequestedQos) GetGbrUl() string {
-	if o == nil || IsNil(o.GbrUl) {
+	if o == nil || isNil(o.GbrUl) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *RequestedQos) GetGbrUl() string {
 // GetGbrUlOk returns a tuple with the GbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedQos) GetGbrUlOk() (*string, bool) {
-	if o == nil || IsNil(o.GbrUl) {
+	if o == nil || isNil(o.GbrUl) {
 		return nil, false
 	}
 	return o.GbrUl, true
@@ -89,7 +89,7 @@ func (o *RequestedQos) GetGbrUlOk() (*string, bool) {
 
 // HasGbrUl returns a boolean if a field has been set.
 func (o *RequestedQos) HasGbrUl() bool {
-	if o != nil && !IsNil(o.GbrUl) {
+	if o != nil && !isNil(o.GbrUl) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *RequestedQos) SetGbrUl(v string) {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise.
 func (o *RequestedQos) GetGbrDl() string {
-	if o == nil || IsNil(o.GbrDl) {
+	if o == nil || isNil(o.GbrDl) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *RequestedQos) GetGbrDl() string {
 // GetGbrDlOk returns a tuple with the GbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedQos) GetGbrDlOk() (*string, bool) {
-	if o == nil || IsNil(o.GbrDl) {
+	if o == nil || isNil(o.GbrDl) {
 		return nil, false
 	}
 	return o.GbrDl, true
@@ -121,7 +121,7 @@ func (o *RequestedQos) GetGbrDlOk() (*string, bool) {
 
 // HasGbrDl returns a boolean if a field has been set.
 func (o *RequestedQos) HasGbrDl() bool {
-	if o != nil && !IsNil(o.GbrDl) {
+	if o != nil && !isNil(o.GbrDl) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o RequestedQos) MarshalJSON() ([]byte, error) {
 func (o RequestedQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
-	if !IsNil(o.GbrUl) {
+	if !isNil(o.GbrUl) {
 		toSerialize["gbrUl"] = o.GbrUl
 	}
-	if !IsNil(o.GbrDl) {
+	if !isNil(o.GbrDl) {
 		toSerialize["gbrDl"] = o.GbrDl
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // AnnouncementPrivacyIndicator struct for AnnouncementPrivacyIndicator
 type AnnouncementPrivacyIndicator struct {
-	string *string
+	AnnouncementPrivacyIndicatorAnyOf *AnnouncementPrivacyIndicatorAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AnnouncementPrivacyIndicator) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AnnouncementPrivacyIndicatorAnyOf
+	err = json.Unmarshal(data, &dst.AnnouncementPrivacyIndicatorAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAnnouncementPrivacyIndicatorAnyOf, _ := json.Marshal(dst.AnnouncementPrivacyIndicatorAnyOf)
+		if string(jsonAnnouncementPrivacyIndicatorAnyOf) == "{}" { // empty struct
+			dst.AnnouncementPrivacyIndicatorAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AnnouncementPrivacyIndicatorAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AnnouncementPrivacyIndicatorAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AnnouncementPrivacyIndicator)")
@@ -41,8 +55,12 @@ func (dst *AnnouncementPrivacyIndicator) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AnnouncementPrivacyIndicator) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AnnouncementPrivacyIndicatorAnyOf != nil {
+		return json.Marshal(&src.AnnouncementPrivacyIndicatorAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

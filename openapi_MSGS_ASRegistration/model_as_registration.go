@@ -70,7 +70,7 @@ func (o *ASRegistration) SetAsSvcId(v string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ASRegistration) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ASRegistration) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASRegistration) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -88,7 +88,7 @@ func (o *ASRegistration) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ASRegistration) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *ASRegistration) SetAppId(v string) {
 
 // GetTargetUri returns the TargetUri field value if set, zero value otherwise.
 func (o *ASRegistration) GetTargetUri() string {
-	if o == nil || IsNil(o.TargetUri) {
+	if o == nil || isNil(o.TargetUri) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *ASRegistration) GetTargetUri() string {
 // GetTargetUriOk returns a tuple with the TargetUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASRegistration) GetTargetUriOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetUri) {
+	if o == nil || isNil(o.TargetUri) {
 		return nil, false
 	}
 	return o.TargetUri, true
@@ -120,7 +120,7 @@ func (o *ASRegistration) GetTargetUriOk() (*string, bool) {
 
 // HasTargetUri returns a boolean if a field has been set.
 func (o *ASRegistration) HasTargetUri() bool {
-	if o != nil && !IsNil(o.TargetUri) {
+	if o != nil && !isNil(o.TargetUri) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *ASRegistration) SetTargetUri(v string) {
 
 // GetAsProf returns the AsProf field value if set, zero value otherwise.
 func (o *ASRegistration) GetAsProf() ASProfile {
-	if o == nil || IsNil(o.AsProf) {
+	if o == nil || isNil(o.AsProf) {
 		var ret ASProfile
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *ASRegistration) GetAsProf() ASProfile {
 // GetAsProfOk returns a tuple with the AsProf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASRegistration) GetAsProfOk() (*ASProfile, bool) {
-	if o == nil || IsNil(o.AsProf) {
+	if o == nil || isNil(o.AsProf) {
 		return nil, false
 	}
 	return o.AsProf, true
@@ -152,7 +152,7 @@ func (o *ASRegistration) GetAsProfOk() (*ASProfile, bool) {
 
 // HasAsProf returns a boolean if a field has been set.
 func (o *ASRegistration) HasAsProf() bool {
-	if o != nil && !IsNil(o.AsProf) {
+	if o != nil && !isNil(o.AsProf) {
 		return true
 	}
 
@@ -175,13 +175,13 @@ func (o ASRegistration) MarshalJSON() ([]byte, error) {
 func (o ASRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["asSvcId"] = o.AsSvcId
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.TargetUri) {
+	if !isNil(o.TargetUri) {
 		toSerialize["targetUri"] = o.TargetUri
 	}
-	if !IsNil(o.AsProf) {
+	if !isNil(o.AsProf) {
 		toSerialize["asProf"] = o.AsProf
 	}
 	return toSerialize, nil

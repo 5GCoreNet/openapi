@@ -169,19 +169,7 @@ paths:
                     style: simple
                 style: form
             schema:
-              properties:
-                jsonData:
-                  $ref: '#/components/schemas/SmContextCreateData'
-                binaryDataN1SmMessage:
-                  format: binary
-                  type: string
-                binaryDataN2SmInformation:
-                  format: binary
-                  type: string
-                binaryDataN2SmInformationExt1:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/PostSmContexts_request'
         description: representation of the SM context to be created in the SMF
         required: true
       responses:
@@ -205,13 +193,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreatedData'
-                  binaryDataN2SmInformation:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_201_response'
           description: successful creation of an SM context
           headers:
             Location:
@@ -290,16 +272,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreateError'
-                  binaryDataN1SmMessage:
-                    format: binary
-                    type: string
-                  binaryDataN2SmMessage:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_400_response'
           description: unsuccessful creation of an SM context - bad request
         "401":
           content:
@@ -339,16 +312,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreateError'
-                  binaryDataN1SmMessage:
-                    format: binary
-                    type: string
-                  binaryDataN2SmMessage:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_400_response'
           description: unsuccessful creation of an SM context - forbidden
         "404":
           content:
@@ -379,16 +343,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreateError'
-                  binaryDataN1SmMessage:
-                    format: binary
-                    type: string
-                  binaryDataN2SmMessage:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_400_response'
           description: unsuccessful creation of an SM context - not found
         "411":
           content:
@@ -446,16 +401,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreateError'
-                  binaryDataN1SmMessage:
-                    format: binary
-                    type: string
-                  binaryDataN2SmMessage:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_400_response'
           description: unsuccessful creation of an SM context - internal server error
         "502":
           content:
@@ -495,16 +441,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreateError'
-                  binaryDataN1SmMessage:
-                    format: binary
-                    type: string
-                  binaryDataN2SmMessage:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_400_response'
           description: unsuccessful creation of an SM context - service unavailable
         "504":
           content:
@@ -538,16 +475,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/SmContextCreateError'
-                  binaryDataN1SmMessage:
-                    format: binary
-                    type: string
-                  binaryDataN2SmMessage:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostSmContexts_400_response'
           description: unsuccessful creation of an SM context - gateway timeout
         default:
           description: Generic Error
@@ -1616,28 +1544,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdatedData'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_200_response'
                   description: successful update of a PDU session with content in
                     the response
                 "204":
@@ -1747,28 +1654,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "403":
                   content:
@@ -1838,28 +1724,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "404":
                   content:
@@ -1929,28 +1794,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "409":
                   content:
@@ -2020,28 +1864,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "411":
                   content:
@@ -2135,28 +1958,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "502":
                   content:
@@ -2232,28 +2034,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "504":
                   content:
@@ -2323,28 +2104,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 default:
                   description: Generic Error
@@ -2424,28 +2184,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdatedData'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_200_response'
                   description: successful update of a PDU session with content in
                     the response
                 "204":
@@ -2555,28 +2294,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "403":
                   content:
@@ -2646,28 +2364,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "404":
                   content:
@@ -2737,28 +2434,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "409":
                   content:
@@ -2828,28 +2504,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "411":
                   content:
@@ -2943,28 +2598,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "502":
                   content:
@@ -3040,28 +2674,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 "504":
                   content:
@@ -3131,28 +2744,7 @@ paths:
                               style: simple
                           style: form
                       schema:
-                        properties:
-                          jsonData:
-                            $ref: '#/components/schemas/VsmfUpdateError'
-                          binaryDataN1SmInfoFromUe:
-                            format: binary
-                            type: string
-                          binaryDataUnknownN1SmInfo:
-                            format: binary
-                            type: string
-                          binaryDataN4Information:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt1:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt2:
-                            format: binary
-                            type: string
-                          binaryDataN4InformationExt3:
-                            format: binary
-                            type: string
-                        type: object
+                        $ref: '#/components/schemas/ModifyPduSession_400_response'
                   description: unsuccessful update of a PDU session
                 default:
                   description: Generic Error
@@ -3181,13 +2773,7 @@ paths:
                             style: simple
                         style: form
                     schema:
-                      properties:
-                        jsonData:
-                          $ref: '#/components/schemas/TransferMtDataReqData'
-                        binaryMtData:
-                          format: binary
-                          type: string
-                      type: object
+                      $ref: '#/components/schemas/TransferMtData_request'
                 description: representation of the payload of Transfer MT Data Request
                 required: true
               responses:
@@ -3329,7 +2915,7 @@ paths:
                             style: simple
                         style: form
                     schema:
-                      $ref: '#/components/schemas/TransferMtData_ismf_request'
+                      $ref: '#/components/schemas/TransferMtData_request'
                 description: representation of the payload of Transfer MT Data Request
                 required: true
               responses:
@@ -3480,16 +3066,7 @@ paths:
                     style: simple
                 style: form
             schema:
-              properties:
-                jsonData:
-                  $ref: '#/components/schemas/PduSessionCreateData'
-                binaryDataN1SmInfoFromUe:
-                  format: binary
-                  type: string
-                binaryDataUnknownN1SmInfo:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/PostPduSessions_request'
         description: representation of the PDU session to be created in the H-SMF
           or SMF
         required: true
@@ -3514,13 +3091,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/PduSessionCreatedData'
-                  binaryDataN1SmInfoToUe:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostPduSessions_201_response'
           description: successful creation of a PDU session
           headers:
             Location:
@@ -3590,13 +3161,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/PduSessionCreateError'
-                  binaryDataN1SmInfoToUe:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostPduSessions_400_response'
           description: unsuccessful creation of a PDU session
         "401":
           content:
@@ -3627,13 +3192,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/PduSessionCreateError'
-                  binaryDataN1SmInfoToUe:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostPduSessions_400_response'
           description: unsuccessful creation of a PDU session
         "404":
           content:
@@ -3658,13 +3217,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/PduSessionCreateError'
-                  binaryDataN1SmInfoToUe:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostPduSessions_400_response'
           description: unsuccessful creation of a PDU session
         "411":
           content:
@@ -3713,13 +3266,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/PduSessionCreateError'
-                  binaryDataN1SmInfoToUe:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostPduSessions_400_response'
           description: unsuccessful creation of a PDU session
         "502":
           content:
@@ -3750,13 +3297,7 @@ paths:
                       style: simple
                   style: form
               schema:
-                properties:
-                  jsonData:
-                    $ref: '#/components/schemas/PduSessionCreateError'
-                  binaryDataN1SmInfoToUe:
-                    format: binary
-                    type: string
-                type: object
+                $ref: '#/components/schemas/PostPduSessions_400_response'
           description: unsuccessful creation of a PDU session
         default:
           description: Generic Error
@@ -4630,25 +4171,7 @@ components:
                   style: simple
               style: form
           schema:
-            properties:
-              jsonData:
-                $ref: '#/components/schemas/VsmfUpdateData'
-              binaryDataN1SmInfoToUe:
-                format: binary
-                type: string
-              binaryDataN4Information:
-                format: binary
-                type: string
-              binaryDataN4InformationExt1:
-                format: binary
-                type: string
-              binaryDataN4InformationExt2:
-                format: binary
-                type: string
-              binaryDataN4InformationExt3:
-                format: binary
-                type: string
-            type: object
+            $ref: '#/components/schemas/ModifyPduSession_request'
       description: representation of updates to apply to the PDU session
       required: true
     NotifyStatusRequestBody:
@@ -4724,28 +4247,7 @@ components:
                   style: simple
               style: form
           schema:
-            properties:
-              jsonData:
-                $ref: '#/components/schemas/VsmfUpdatedData'
-              binaryDataN1SmInfoFromUe:
-                format: binary
-                type: string
-              binaryDataUnknownN1SmInfo:
-                format: binary
-                type: string
-              binaryDataN4Information:
-                format: binary
-                type: string
-              binaryDataN4InformationExt1:
-                format: binary
-                type: string
-              binaryDataN4InformationExt2:
-                format: binary
-                type: string
-              binaryDataN4InformationExt3:
-                format: binary
-                type: string
-            type: object
+            $ref: '#/components/schemas/ModifyPduSession_200_response'
       description: successful update of a PDU session with content in the response
     PduSessionCreateError:
       content:
@@ -4770,13 +4272,7 @@ components:
                   style: simple
               style: form
           schema:
-            properties:
-              jsonData:
-                $ref: '#/components/schemas/PduSessionCreateError'
-              binaryDataN1SmInfoToUe:
-                format: binary
-                type: string
-            type: object
+            $ref: '#/components/schemas/PostPduSessions_400_response'
       description: unsuccessful creation of a PDU session
     HsmfUpdateError:
       content:
@@ -4871,28 +4367,7 @@ components:
                   style: simple
               style: form
           schema:
-            properties:
-              jsonData:
-                $ref: '#/components/schemas/VsmfUpdateError'
-              binaryDataN1SmInfoFromUe:
-                format: binary
-                type: string
-              binaryDataUnknownN1SmInfo:
-                format: binary
-                type: string
-              binaryDataN4Information:
-                format: binary
-                type: string
-              binaryDataN4InformationExt1:
-                format: binary
-                type: string
-              binaryDataN4InformationExt2:
-                format: binary
-                type: string
-              binaryDataN4InformationExt3:
-                format: binary
-                type: string
-            type: object
+            $ref: '#/components/schemas/ModifyPduSession_400_response'
       description: unsuccessful update of a PDU session
     "400":
       content:
@@ -12807,12 +12282,7 @@ components:
       type: string
     UpCnxState:
       anyOf:
-      - enum:
-        - ACTIVATED
-        - DEACTIVATED
-        - ACTIVATING
-        - SUSPENDED
-        type: string
+      - $ref: '#/components/schemas/UpCnxState_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12824,13 +12294,7 @@ components:
         - SUSPENDED
     HoState:
       anyOf:
-      - enum:
-        - NONE
-        - PREPARING
-        - PREPARED
-        - COMPLETED
-        - CANCELLED
-        type: string
+      - $ref: '#/components/schemas/HoState_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12843,12 +12307,7 @@ components:
         - CANCELLED
     RequestType:
       anyOf:
-      - enum:
-        - INITIAL_REQUEST
-        - EXISTING_PDU_SESSION
-        - INITIAL_EMERGENCY_REQUEST
-        - EXISTING_EMERGENCY_PDU_SESSION
-        type: string
+      - $ref: '#/components/schemas/RequestType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12860,16 +12319,7 @@ components:
         - EXISTING_EMERGENCY_PDU_SESSION
     RequestIndication:
       anyOf:
-      - enum:
-        - UE_REQ_PDU_SES_MOD
-        - UE_REQ_PDU_SES_REL
-        - PDU_SES_MOB
-        - NW_REQ_PDU_SES_AUTH
-        - NW_REQ_PDU_SES_MOD
-        - NW_REQ_PDU_SES_REL
-        - EBI_ASSIGNMENT_REQ
-        - REL_DUE_TO_5G_AN_REQUEST
-        type: string
+      - $ref: '#/components/schemas/RequestIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12885,12 +12335,7 @@ components:
         - REL_DUE_TO_5G_AN_REQUEST
     NotificationCause:
       anyOf:
-      - enum:
-        - QOS_FULFILLED
-        - QOS_NOT_FULFILLED
-        - UP_SEC_FULFILLED
-        - UP_SEC_NOT_FULFILLED
-        type: string
+      - $ref: '#/components/schemas/NotificationCause_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12902,41 +12347,7 @@ components:
         - UP_SEC_NOT_FULFILLED
     Cause:
       anyOf:
-      - enum:
-        - REL_DUE_TO_HO
-        - EPS_FALLBACK
-        - REL_DUE_TO_UP_SEC
-        - DNN_CONGESTION
-        - S_NSSAI_CONGESTION
-        - REL_DUE_TO_REACTIVATION
-        - 5G_AN_NOT_RESPONDING
-        - REL_DUE_TO_SLICE_NOT_AVAILABLE
-        - REL_DUE_TO_DUPLICATE_SESSION_ID
-        - PDU_SESSION_STATUS_MISMATCH
-        - HO_FAILURE
-        - INSUFFICIENT_UP_RESOURCES
-        - PDU_SESSION_HANDED_OVER
-        - PDU_SESSION_RESUMED
-        - CN_ASSISTED_RAN_PARAMETER_TUNING
-        - ISMF_CONTEXT_TRANSFER
-        - SMF_CONTEXT_TRANSFER
-        - REL_DUE_TO_PS_TO_CS_HO
-        - REL_DUE_TO_SUBSCRIPTION_CHANGE
-        - HO_CANCEL
-        - REL_DUE_TO_SLICE_NOT_AUTHORIZED
-        - PDU_SESSION_HAND_OVER_FAILURE
-        - DDN_FAILURE_STATUS
-        - REL_DUE_TO_CP_ONLY_NOT_APPLICABLE
-        - NOT_SUPPORTED_WITH_ISMF
-        - CHANGED_ANCHOR_SMF
-        - CHANGED_INTERMEDIATE_SMF
-        - TARGET_DNAI_NOTIFICATION
-        - REL_DUE_TO_VPLMN_QOS_FAILURE
-        - REL_DUE_TO_SMF_NOT_SUPPORT_PSETR
-        - REL_DUE_TO_SNPN_SNPN_MOBILITY
-        - REL_DUE_TO_NO_HR_AGREEMENT
-        - REL_DUE_TO_UNSPECIFIED_REASON
-        type: string
+      - $ref: '#/components/schemas/Cause_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12977,13 +12388,7 @@ components:
         - REL_DUE_TO_UNSPECIFIED_REASON
     ResourceStatus:
       anyOf:
-      - enum:
-        - RELEASED
-        - UNCHANGED
-        - TRANSFERRED
-        - UPDATED
-        - ALT_ANCHOR_SMF
-        type: string
+      - $ref: '#/components/schemas/ResourceStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -12996,11 +12401,7 @@ components:
         - ALT_ANCHOR_SMF
     DnnSelectionMode:
       anyOf:
-      - enum:
-        - VERIFIED
-        - UE_DNN_NOT_VERIFIED
-        - NW_DNN_NOT_VERIFIED
-        type: string
+      - $ref: '#/components/schemas/DnnSelectionMode_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13011,12 +12412,7 @@ components:
         - NW_DNN_NOT_VERIFIED
     EpsInterworkingIndication:
       anyOf:
-      - enum:
-        - NONE
-        - WITH_N26
-        - WITHOUT_N26
-        - IWK_NON_3GPP
-        type: string
+      - $ref: '#/components/schemas/EpsInterworkingIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13028,34 +12424,7 @@ components:
         - IWK_NON_3GPP
     N2SmInfoType:
       anyOf:
-      - enum:
-        - PDU_RES_SETUP_REQ
-        - PDU_RES_SETUP_RSP
-        - PDU_RES_SETUP_FAIL
-        - PDU_RES_REL_CMD
-        - PDU_RES_REL_RSP
-        - PDU_RES_MOD_REQ
-        - PDU_RES_MOD_RSP
-        - PDU_RES_MOD_FAIL
-        - PDU_RES_NTY
-        - PDU_RES_NTY_REL
-        - PDU_RES_MOD_IND
-        - PDU_RES_MOD_CFM
-        - PATH_SWITCH_REQ
-        - PATH_SWITCH_SETUP_FAIL
-        - PATH_SWITCH_REQ_ACK
-        - PATH_SWITCH_REQ_FAIL
-        - HANDOVER_REQUIRED
-        - HANDOVER_CMD
-        - HANDOVER_PREP_FAIL
-        - HANDOVER_REQ_ACK
-        - HANDOVER_RES_ALLOC_FAIL
-        - SECONDARY_RAT_USAGE
-        - PDU_RES_MOD_IND_FAIL
-        - UE_CONTEXT_RESUME_REQ
-        - UE_CONTEXT_RESUME_RSP
-        - UE_CONTEXT_SUSPEND_REQ
-        type: string
+      - $ref: '#/components/schemas/N2SmInfoType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13089,10 +12458,7 @@ components:
         - UE_CONTEXT_SUSPEND_REQ
     MaxIntegrityProtectedDataRate:
       anyOf:
-      - enum:
-        - 64_KBPS
-        - MAX_UE_RATE
-        type: string
+      - $ref: '#/components/schemas/MaxIntegrityProtectedDataRate_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13102,10 +12468,7 @@ components:
           - MAX_UE_RATE
     MaReleaseIndication:
       anyOf:
-      - enum:
-        - REL_MAPDU_OVER_3GPP
-        - REL_MAPDU_OVER_N3GPP
-        type: string
+      - $ref: '#/components/schemas/MaReleaseIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13115,11 +12478,7 @@ components:
           - REL_MAPDU_OVER_N3GPP
     SmContextType:
       anyOf:
-      - enum:
-        - EPS_PDN_CONNECTION
-        - SM_CONTEXT
-        - AF_COORDINATION_INFO
-        type: string
+      - $ref: '#/components/schemas/SmContextType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13130,12 +12489,7 @@ components:
           - AF_COORDINATION_INFO
     PsaIndication:
       anyOf:
-      - enum:
-        - PSA_INSERTED
-        - PSA_REMOVED
-        - PSA_INSERTED_ONLY
-        - PSA_REMOVED_ONLY
-        type: string
+      - $ref: '#/components/schemas/PsaIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13147,16 +12501,7 @@ components:
           - PSA_REMOVED_ONLY
     N4MessageType:
       anyOf:
-      - enum:
-        - PFCP_SES_EST_REQ
-        - PFCP_SES_EST_RSP
-        - PFCP_SES_MOD_REQ
-        - PFCP_SES_MOD_RSP
-        - PFCP_SES_DEL_REQ
-        - PFCP_SES_DEL_RSP
-        - PFCP_SES_REP_REQ
-        - PFCP_SES_REP_RSP
-        type: string
+      - $ref: '#/components/schemas/N4MessageType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13172,11 +12517,7 @@ components:
           - PFCP_SES_REP_RSP
     QosFlowAccessType:
       anyOf:
-      - enum:
-        - 3GPP
-        - NON_3GPP
-        - 3GPP_AND_NON_3GPP
-        type: string
+      - $ref: '#/components/schemas/QosFlowAccessType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13187,10 +12528,7 @@ components:
           - 3GPP_AND_NON_3GPP
     UnavailableAccessIndication:
       anyOf:
-      - enum:
-        - 3GA_UNAVAILABLE
-        - N3GA_UNAVAILABLE
-        type: string
+      - $ref: '#/components/schemas/UnavailableAccessIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13200,10 +12538,7 @@ components:
           - N3GA_UNAVAILABLE
     ProtectionResult:
       anyOf:
-      - enum:
-        - PERFORMED
-        - NOT_PERFORMED
-        type: string
+      - $ref: '#/components/schemas/ProtectionResult_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13213,12 +12548,7 @@ components:
           - NOT_PERFORMED
     QosMonitoringReq:
       anyOf:
-      - enum:
-        - UL
-        - DL
-        - BOTH
-        - NONE
-        type: string
+      - $ref: '#/components/schemas/QosMonitoringReq_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13230,11 +12560,7 @@ components:
           - NONE
     Rsn:
       anyOf:
-      - enum:
-        - V1
-        - V2
-        - NONE
-        type: string
+      - $ref: '#/components/schemas/Rsn_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13245,10 +12571,7 @@ components:
           - NONE
     SmfSelectionType:
       anyOf:
-      - enum:
-        - CURRENT_PDU_SESSION
-        - NEXT_PDU_SESSION
-        type: string
+      - $ref: '#/components/schemas/SmfSelectionType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13258,9 +12581,7 @@ components:
           - NEXT_PDU_SESSION
     PduSessionContextType:
       anyOf:
-      - enum:
-        - AF_COORDINATION_INFO
-        type: string
+      - $ref: '#/components/schemas/PduSessionContextType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13510,127 +12831,7 @@ components:
       type: string
     ServiceName:
       anyOf:
-      - enum:
-        - nnrf-nfm
-        - nnrf-disc
-        - nnrf-oauth2
-        - nudm-sdm
-        - nudm-uecm
-        - nudm-ueau
-        - nudm-ee
-        - nudm-pp
-        - nudm-niddau
-        - nudm-mt
-        - nudm-ssau
-        - nudm-rsds
-        - namf-comm
-        - namf-evts
-        - namf-mt
-        - namf-loc
-        - namf-mbs-comm
-        - namf-mbs-bc
-        - nsmf-pdusession
-        - nsmf-event-exposure
-        - nsmf-nidd
-        - nausf-auth
-        - nausf-sorprotection
-        - nausf-upuprotection
-        - nnef-pfdmanagement
-        - nnef-smcontext
-        - nnef-eventexposure
-        - nnef-eas-deployment-info
-        - 3gpp-cp-parameter-provisioning
-        - 3gpp-device-triggering
-        - 3gpp-bdt
-        - 3gpp-traffic-influence
-        - 3gpp-chargeable-party
-        - 3gpp-as-session-with-qos
-        - 3gpp-msisdn-less-mo-sms
-        - 3gpp-service-parameter
-        - 3gpp-monitoring-event
-        - 3gpp-nidd-configuration-trigger
-        - 3gpp-nidd
-        - 3gpp-analyticsexposure
-        - 3gpp-racs-parameter-provisioning
-        - 3gpp-ecr-control
-        - 3gpp-applying-bdt-policy
-        - 3gpp-mo-lcs-notify
-        - 3gpp-time-sync
-        - 3gpp-am-influence
-        - 3gpp-am-policyauthorization
-        - 3gpp-akma
-        - 3gpp-eas-deployment
-        - 3gpp-iptvconfiguration
-        - 3gpp-mbs-tmgi
-        - 3gpp-mbs-session
-        - 3gpp-authentication
-        - 3gpp-asti
-        - npcf-am-policy-control
-        - npcf-smpolicycontrol
-        - npcf-policyauthorization
-        - npcf-bdtpolicycontrol
-        - npcf-eventexposure
-        - npcf-ue-policy-control
-        - npcf-am-policyauthorization
-        - nsmsf-sms
-        - nnssf-nsselection
-        - nnssf-nssaiavailability
-        - nudr-dr
-        - nudr-group-id-map
-        - nlmf-loc
-        - n5g-eir-eic
-        - nbsf-management
-        - nchf-spendinglimitcontrol
-        - nchf-convergedcharging
-        - nchf-offlineonlycharging
-        - nnwdaf-eventssubscription
-        - nnwdaf-analyticsinfo
-        - nnwdaf-datamanagement
-        - nnwdaf-mlmodelprovision
-        - ngmlc-loc
-        - nucmf-provisioning
-        - nucmf-uecapabilitymanagement
-        - nhss-sdm
-        - nhss-uecm
-        - nhss-ueau
-        - nhss-ee
-        - nhss-ims-sdm
-        - nhss-ims-uecm
-        - nhss-ims-ueau
-        - nhss-gba-sdm
-        - nhss-gba-ueau
-        - nsepp-telescopic
-        - nsoraf-sor
-        - nspaf-secured-packet
-        - nudsf-dr
-        - nudsf-timer
-        - nnssaaf-nssaa
-        - nnssaaf-aiw
-        - naanf-akma
-        - n5gddnmf-discovery
-        - nmfaf-3dadm
-        - nmfaf-3cadm
-        - neasdf-dnscontext
-        - neasdf-baselinednspattern
-        - ndccf-dm
-        - ndccf-cm
-        - nnsacf-nsac
-        - nnsacf-slice-ee
-        - nmbsmf-tmgi
-        - nmbsmf-mbssession
-        - nadrf-dm
-        - nbsp-gba
-        - ntsctsf-time-sync
-        - ntsctsf-qos-tscai
-        - ntsctsf-asti
-        - npkmf-keyreq
-        - nmnpf-npstatus
-        - niwmsc-smservice
-        - nmbsf-mbsuserserv
-        - nmbsf-mbsuserdataing
-        - nmbstf-distsession
-        - npanf-prosekey
-        type: string
+      - $ref: '#/components/schemas/ServiceName_anyOf'
       - type: string
       description: Service names known to NRF
     RefToBinaryData:
@@ -13654,38 +12855,12 @@ components:
       type: string
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     PresenceState:
       anyOf:
-      - enum:
-        - IN_AREA
-        - OUT_OF_AREA
-        - UNKNOWN
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/PresenceState_anyOf'
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -14430,10 +13605,7 @@ components:
       type: integer
     TransportProtocol:
       anyOf:
-      - enum:
-        - UDP
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -14514,10 +13686,7 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - enum:
-        - DSL
-        - PON
-        type: string
+      - $ref: '#/components/schemas/LineType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -14885,14 +14054,7 @@ components:
       type: object
     TraceDepth:
       anyOf:
-      - enum:
-        - MINIMUM
-        - MEDIUM
-        - MAXIMUM
-        - MINIMUM_WO_VENDOR_EXTENSION
-        - MEDIUM_WO_VENDOR_EXTENSION
-        - MAXIMUM_WO_VENDOR_EXTENSION
-        type: string
+      - $ref: '#/components/schemas/TraceDepth_anyOf'
       - type: string
       description: |
         The enumeration TraceDepth defines how detailed information should be recorded in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.1-1
@@ -14944,12 +14106,7 @@ components:
       type: string
     SbiBindingLevel:
       anyOf:
-      - enum:
-        - NF_INSTANCE_BINDING
-        - NF_SET_BINDING
-        - NF_SERVICE_SET_BINDING
-        - NF_SERVICE_INSTANCE_BINDING
-        type: string
+      - $ref: '#/components/schemas/SbiBindingLevel_anyOf'
       - type: string
       description: SBI Binding Level
     SmallDataRateStatus:
@@ -15153,13 +14310,7 @@ components:
       type: object
     SatelliteBackhaulCategory:
       anyOf:
-      - enum:
-        - GEO
-        - MEO
-        - LEO
-        - OTHER_SAT
-        - NON_SATELLITE
-        type: string
+      - $ref: '#/components/schemas/SatelliteBackhaulCategory_anyOf'
       - type: string
       description: Indicates the satellite backhaul used.
     DurationSec:
@@ -15285,65 +14436,15 @@ components:
       type: object
     TriggerType:
       anyOf:
-      - enum:
-        - QUOTA_THRESHOLD
-        - QHT
-        - FINAL
-        - QUOTA_EXHAUSTED
-        - VALIDITY_TIME
-        - OTHER_QUOTA_TYPE
-        - FORCED_REAUTHORISATION
-        - UNUSED_QUOTA_TIMER
-        - UNIT_COUNT_INACTIVITY_TIMER
-        - ABNORMAL_RELEASE
-        - QOS_CHANGE
-        - VOLUME_LIMIT
-        - TIME_LIMIT
-        - EVENT_LIMIT
-        - PLMN_CHANGE
-        - USER_LOCATION_CHANGE
-        - RAT_CHANGE
-        - SESSION_AMBR_CHANGE
-        - UE_TIMEZONE_CHANGE
-        - TARIFF_TIME_CHANGE
-        - MAX_NUMBER_OF_CHANGES_IN_CHARGING_CONDITIONS
-        - MANAGEMENT_INTERVENTION
-        - CHANGE_OF_UE_PRESENCE_IN_PRESENCE_REPORTING_AREA
-        - CHANGE_OF_3GPP_PS_DATA_OFF_STATUS
-        - SERVING_NODE_CHANGE
-        - REMOVAL_OF_UPF
-        - ADDITION_OF_UPF
-        - INSERTION_OF_ISMF
-        - REMOVAL_OF_ISMF
-        - CHANGE_OF_ISMF
-        - START_OF_SERVICE_DATA_FLOW
-        - ECGI_CHANGE
-        - TAI_CHANGE
-        - HANDOVER_CANCEL
-        - HANDOVER_START
-        - HANDOVER_COMPLETE
-        - GFBR_GUARANTEED_STATUS_CHANGE
-        - ADDITION_OF_ACCESS
-        - REMOVAL_OF_ACCESS
-        - START_OF_SDF_ADDITIONAL_ACCESS
-        - REDUNDANT_TRANSMISSION_CHANGE
-        - CGI_SAI_CHANGE
-        - RAI_CHANGE
-        type: string
+      - $ref: '#/components/schemas/TriggerType_anyOf'
       - type: string
     TriggerCategory:
       anyOf:
-      - enum:
-        - IMMEDIATE_REPORT
-        - DEFERRED_REPORT
-        type: string
+      - $ref: '#/components/schemas/TriggerCategory_anyOf'
       - type: string
     PartialRecordMethod:
       anyOf:
-      - enum:
-        - DEFAULT
-        - INDIVIDUAL
-        type: string
+      - $ref: '#/components/schemas/PartialRecordMethod_anyOf'
       - type: string
     SecondaryRatUsageInfo:
       description: |
@@ -15466,13 +14567,7 @@ components:
       type: object
     PduSessionType:
       anyOf:
-      - enum:
-        - IPV4
-        - IPV6
-        - IPV4V6
-        - UNSTRUCTURED
-        - ETHERNET
-        type: string
+      - $ref: '#/components/schemas/PduSessionType_anyOf'
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
@@ -15527,22 +14622,14 @@ components:
       type: object
     UpIntegrity:
       anyOf:
-      - enum:
-        - REQUIRED
-        - PREFERRED
-        - NOT_NEEDED
-        type: string
+      - $ref: '#/components/schemas/UpIntegrity_anyOf'
       - type: string
       description: "indicates whether UP integrity protection is required, preferred\
         \ or not needed for all the traffic on the PDU Session. It shall comply with\
         \ the provisions defined in  table 5.4.3.4-1. \n"
     UpConfidentiality:
       anyOf:
-      - enum:
-        - REQUIRED
-        - PREFERRED
-        - NOT_NEEDED
-        type: string
+      - $ref: '#/components/schemas/UpIntegrity_anyOf'
       - type: string
       description: |
         indicates whether UP confidentiality protection is required, preferred or not needed for all the traffic on the PDU Session. It shall comply with the provisions defined in table 5.4.3.5-1.
@@ -15615,19 +14702,13 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - enum:
-        - NOT_PREEMPT
-        - MAY_PREEMPT
-        type: string
+      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - enum:
-        - NOT_PREEMPTABLE
-        - PREEMPTABLE
-        type: string
+      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -15796,11 +14877,7 @@ components:
       type: object
     QosResourceType:
       anyOf:
-      - enum:
-        - NON_GBR
-        - NON_CRITICAL_GBR
-        - CRITICAL_GBR
-        type: string
+      - $ref: '#/components/schemas/QosResourceType_anyOf'
       - type: string
       description: "The enumeration QosResourceType indicates whether a QoS Flow is\
         \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
@@ -15818,10 +14895,7 @@ components:
       type: string
     ReflectiveQoSAttribute:
       anyOf:
-      - enum:
-        - RQOS
-        - NO_RQOS
-        type: string
+      - $ref: '#/components/schemas/ReflectiveQoSAttribute_anyOf'
       - type: string
       description: "The enumeration ReflectiveQosAttribute indicates whether certain\
         \ traffic of the QoS flow may be subject to Reflective QoS (see clause 5.7.2.3\
@@ -15829,7 +14903,11 @@ components:
         \ 5.5.3.3-1. \n"
     AdditionalQosFlowInfo:
       anyOf:
-      - $ref: '#/components/schemas/AdditionalQosFlowInfo_anyOf'
+      - anyOf:
+        - enum:
+          - MORE_LIKELY
+          type: string
+        - type: string
       - $ref: '#/components/schemas/NullValue'
       description: |
         The enumeration AdditionalQosFlowInfo provides additional QoS flow information (see clause  9.3.1.12 3GPP TS 38.413 [11]). It shall comply with the provisions defined in table 5.5.3.12-1.
@@ -15840,10 +14918,7 @@ components:
       type: string
     NotificationControl:
       anyOf:
-      - enum:
-        - REQUESTED
-        - NOT_REQUESTED
-        type: string
+      - $ref: '#/components/schemas/NotificationControl_anyOf'
       - type: string
       description: "The enumeration NotificationControl indicates whether notifications\
         \ are requested from the RAN when the GFBR can no longer  (or again) be fulfilled\
@@ -15923,10 +14998,7 @@ components:
       type: integer
     StationaryIndication:
       anyOf:
-      - enum:
-        - STATIONARY
-        - MOBILE
-        type: string
+      - $ref: '#/components/schemas/StationaryIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -15979,11 +15051,7 @@ components:
       type: string
     ScheduledCommunicationType:
       anyOf:
-      - enum:
-        - DOWNLINK_ONLY
-        - UPLINK_ONLY
-        - BIDIRECTIONAL
-        type: string
+      - $ref: '#/components/schemas/ScheduledCommunicationType_anyOf'
       - type: string
       description: |
         Possible values are:
@@ -15992,13 +15060,7 @@ components:
         -BIDIRECTIONA: Bi-directional
     TrafficProfile:
       anyOf:
-      - enum:
-        - SINGLE_TRANS_UL
-        - SINGLE_TRANS_DL
-        - DUAL_TRANS_UL_FIRST
-        - DUAL_TRANS_DL_FIRST
-        - MULTI_TRANS
-        type: string
+      - $ref: '#/components/schemas/TrafficProfile_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -16202,66 +15264,42 @@ components:
       type: integer
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
+    PostSmContexts_request:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/SmContextCreateData'
+        binaryDataN1SmMessage:
+          format: binary
+          type: string
+        binaryDataN2SmInformation:
+          format: binary
+          type: string
+        binaryDataN2SmInformationExt1:
+          format: binary
+          type: string
+      type: object
+    PostSmContexts_201_response:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/SmContextCreatedData'
+        binaryDataN2SmInformation:
+          format: binary
+          type: string
+      type: object
+    PostSmContexts_400_response:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/SmContextCreateError'
+        binaryDataN1SmMessage:
+          format: binary
+          type: string
+        binaryDataN2SmMessage:
+          format: binary
+          type: string
+      type: object
     UpdateSmContext_request:
       properties:
         jsonData:
@@ -16314,7 +15352,100 @@ components:
           format: binary
           type: string
       type: object
-    TransferMtData_ismf_request:
+    PostPduSessions_request:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/PduSessionCreateData'
+        binaryDataN1SmInfoFromUe:
+          format: binary
+          type: string
+        binaryDataUnknownN1SmInfo:
+          format: binary
+          type: string
+      type: object
+    PostPduSessions_201_response:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/PduSessionCreatedData'
+        binaryDataN1SmInfoToUe:
+          format: binary
+          type: string
+      type: object
+    PostPduSessions_400_response:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/PduSessionCreateError'
+        binaryDataN1SmInfoToUe:
+          format: binary
+          type: string
+      type: object
+    ModifyPduSession_request:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/VsmfUpdateData'
+        binaryDataN1SmInfoToUe:
+          format: binary
+          type: string
+        binaryDataN4Information:
+          format: binary
+          type: string
+        binaryDataN4InformationExt1:
+          format: binary
+          type: string
+        binaryDataN4InformationExt2:
+          format: binary
+          type: string
+        binaryDataN4InformationExt3:
+          format: binary
+          type: string
+      type: object
+    ModifyPduSession_200_response:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/VsmfUpdatedData'
+        binaryDataN1SmInfoFromUe:
+          format: binary
+          type: string
+        binaryDataUnknownN1SmInfo:
+          format: binary
+          type: string
+        binaryDataN4Information:
+          format: binary
+          type: string
+        binaryDataN4InformationExt1:
+          format: binary
+          type: string
+        binaryDataN4InformationExt2:
+          format: binary
+          type: string
+        binaryDataN4InformationExt3:
+          format: binary
+          type: string
+      type: object
+    ModifyPduSession_400_response:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/VsmfUpdateError'
+        binaryDataN1SmInfoFromUe:
+          format: binary
+          type: string
+        binaryDataUnknownN1SmInfo:
+          format: binary
+          type: string
+        binaryDataN4Information:
+          format: binary
+          type: string
+        binaryDataN4InformationExt1:
+          format: binary
+          type: string
+        binaryDataN4InformationExt2:
+          format: binary
+          type: string
+        binaryDataN4InformationExt3:
+          format: binary
+          type: string
+      type: object
+    TransferMtData_request:
       properties:
         jsonData:
           $ref: '#/components/schemas/TransferMtDataReqData'
@@ -16403,12 +15534,608 @@ components:
           format: binary
           type: string
       type: object
-    AdditionalQosFlowInfo_anyOf:
-      anyOf:
-      - enum:
-        - MORE_LIKELY
-        type: string
-      - type: string
+    UpCnxState_anyOf:
+      enum:
+      - ACTIVATED
+      - DEACTIVATED
+      - ACTIVATING
+      - SUSPENDED
+      type: string
+      example: null
+    HoState_anyOf:
+      enum:
+      - NONE
+      - PREPARING
+      - PREPARED
+      - COMPLETED
+      - CANCELLED
+      type: string
+      example: null
+    RequestType_anyOf:
+      enum:
+      - INITIAL_REQUEST
+      - EXISTING_PDU_SESSION
+      - INITIAL_EMERGENCY_REQUEST
+      - EXISTING_EMERGENCY_PDU_SESSION
+      type: string
+      example: null
+    RequestIndication_anyOf:
+      enum:
+      - UE_REQ_PDU_SES_MOD
+      - UE_REQ_PDU_SES_REL
+      - PDU_SES_MOB
+      - NW_REQ_PDU_SES_AUTH
+      - NW_REQ_PDU_SES_MOD
+      - NW_REQ_PDU_SES_REL
+      - EBI_ASSIGNMENT_REQ
+      - REL_DUE_TO_5G_AN_REQUEST
+      type: string
+      example: null
+    NotificationCause_anyOf:
+      enum:
+      - QOS_FULFILLED
+      - QOS_NOT_FULFILLED
+      - UP_SEC_FULFILLED
+      - UP_SEC_NOT_FULFILLED
+      type: string
+      example: null
+    Cause_anyOf:
+      enum:
+      - REL_DUE_TO_HO
+      - EPS_FALLBACK
+      - REL_DUE_TO_UP_SEC
+      - DNN_CONGESTION
+      - S_NSSAI_CONGESTION
+      - REL_DUE_TO_REACTIVATION
+      - 5G_AN_NOT_RESPONDING
+      - REL_DUE_TO_SLICE_NOT_AVAILABLE
+      - REL_DUE_TO_DUPLICATE_SESSION_ID
+      - PDU_SESSION_STATUS_MISMATCH
+      - HO_FAILURE
+      - INSUFFICIENT_UP_RESOURCES
+      - PDU_SESSION_HANDED_OVER
+      - PDU_SESSION_RESUMED
+      - CN_ASSISTED_RAN_PARAMETER_TUNING
+      - ISMF_CONTEXT_TRANSFER
+      - SMF_CONTEXT_TRANSFER
+      - REL_DUE_TO_PS_TO_CS_HO
+      - REL_DUE_TO_SUBSCRIPTION_CHANGE
+      - HO_CANCEL
+      - REL_DUE_TO_SLICE_NOT_AUTHORIZED
+      - PDU_SESSION_HAND_OVER_FAILURE
+      - DDN_FAILURE_STATUS
+      - REL_DUE_TO_CP_ONLY_NOT_APPLICABLE
+      - NOT_SUPPORTED_WITH_ISMF
+      - CHANGED_ANCHOR_SMF
+      - CHANGED_INTERMEDIATE_SMF
+      - TARGET_DNAI_NOTIFICATION
+      - REL_DUE_TO_VPLMN_QOS_FAILURE
+      - REL_DUE_TO_SMF_NOT_SUPPORT_PSETR
+      - REL_DUE_TO_SNPN_SNPN_MOBILITY
+      - REL_DUE_TO_NO_HR_AGREEMENT
+      - REL_DUE_TO_UNSPECIFIED_REASON
+      type: string
+      example: null
+    ResourceStatus_anyOf:
+      enum:
+      - RELEASED
+      - UNCHANGED
+      - TRANSFERRED
+      - UPDATED
+      - ALT_ANCHOR_SMF
+      type: string
+      example: null
+    DnnSelectionMode_anyOf:
+      enum:
+      - VERIFIED
+      - UE_DNN_NOT_VERIFIED
+      - NW_DNN_NOT_VERIFIED
+      type: string
+      example: null
+    EpsInterworkingIndication_anyOf:
+      enum:
+      - NONE
+      - WITH_N26
+      - WITHOUT_N26
+      - IWK_NON_3GPP
+      type: string
+      example: null
+    N2SmInfoType_anyOf:
+      enum:
+      - PDU_RES_SETUP_REQ
+      - PDU_RES_SETUP_RSP
+      - PDU_RES_SETUP_FAIL
+      - PDU_RES_REL_CMD
+      - PDU_RES_REL_RSP
+      - PDU_RES_MOD_REQ
+      - PDU_RES_MOD_RSP
+      - PDU_RES_MOD_FAIL
+      - PDU_RES_NTY
+      - PDU_RES_NTY_REL
+      - PDU_RES_MOD_IND
+      - PDU_RES_MOD_CFM
+      - PATH_SWITCH_REQ
+      - PATH_SWITCH_SETUP_FAIL
+      - PATH_SWITCH_REQ_ACK
+      - PATH_SWITCH_REQ_FAIL
+      - HANDOVER_REQUIRED
+      - HANDOVER_CMD
+      - HANDOVER_PREP_FAIL
+      - HANDOVER_REQ_ACK
+      - HANDOVER_RES_ALLOC_FAIL
+      - SECONDARY_RAT_USAGE
+      - PDU_RES_MOD_IND_FAIL
+      - UE_CONTEXT_RESUME_REQ
+      - UE_CONTEXT_RESUME_RSP
+      - UE_CONTEXT_SUSPEND_REQ
+      type: string
+      example: null
+    MaxIntegrityProtectedDataRate_anyOf:
+      enum:
+      - 64_KBPS
+      - MAX_UE_RATE
+      type: string
+      example: null
+    MaReleaseIndication_anyOf:
+      enum:
+      - REL_MAPDU_OVER_3GPP
+      - REL_MAPDU_OVER_N3GPP
+      type: string
+      example: null
+    SmContextType_anyOf:
+      enum:
+      - EPS_PDN_CONNECTION
+      - SM_CONTEXT
+      - AF_COORDINATION_INFO
+      type: string
+      example: null
+    PsaIndication_anyOf:
+      enum:
+      - PSA_INSERTED
+      - PSA_REMOVED
+      - PSA_INSERTED_ONLY
+      - PSA_REMOVED_ONLY
+      type: string
+      example: null
+    N4MessageType_anyOf:
+      enum:
+      - PFCP_SES_EST_REQ
+      - PFCP_SES_EST_RSP
+      - PFCP_SES_MOD_REQ
+      - PFCP_SES_MOD_RSP
+      - PFCP_SES_DEL_REQ
+      - PFCP_SES_DEL_RSP
+      - PFCP_SES_REP_REQ
+      - PFCP_SES_REP_RSP
+      type: string
+      example: null
+    QosFlowAccessType_anyOf:
+      enum:
+      - 3GPP
+      - NON_3GPP
+      - 3GPP_AND_NON_3GPP
+      type: string
+      example: null
+    UnavailableAccessIndication_anyOf:
+      enum:
+      - 3GA_UNAVAILABLE
+      - N3GA_UNAVAILABLE
+      type: string
+      example: null
+    ProtectionResult_anyOf:
+      enum:
+      - PERFORMED
+      - NOT_PERFORMED
+      type: string
+      example: null
+    QosMonitoringReq_anyOf:
+      enum:
+      - UL
+      - DL
+      - BOTH
+      - NONE
+      type: string
+      example: null
+    Rsn_anyOf:
+      enum:
+      - V1
+      - V2
+      - NONE
+      type: string
+      example: null
+    SmfSelectionType_anyOf:
+      enum:
+      - CURRENT_PDU_SESSION
+      - NEXT_PDU_SESSION
+      type: string
+      example: null
+    PduSessionContextType_anyOf:
+      enum:
+      - AF_COORDINATION_INFO
+      type: string
+      example: null
+    ServiceName_anyOf:
+      enum:
+      - nnrf-nfm
+      - nnrf-disc
+      - nnrf-oauth2
+      - nudm-sdm
+      - nudm-uecm
+      - nudm-ueau
+      - nudm-ee
+      - nudm-pp
+      - nudm-niddau
+      - nudm-mt
+      - nudm-ssau
+      - nudm-rsds
+      - namf-comm
+      - namf-evts
+      - namf-mt
+      - namf-loc
+      - namf-mbs-comm
+      - namf-mbs-bc
+      - nsmf-pdusession
+      - nsmf-event-exposure
+      - nsmf-nidd
+      - nausf-auth
+      - nausf-sorprotection
+      - nausf-upuprotection
+      - nnef-pfdmanagement
+      - nnef-smcontext
+      - nnef-eventexposure
+      - nnef-eas-deployment-info
+      - 3gpp-cp-parameter-provisioning
+      - 3gpp-device-triggering
+      - 3gpp-bdt
+      - 3gpp-traffic-influence
+      - 3gpp-chargeable-party
+      - 3gpp-as-session-with-qos
+      - 3gpp-msisdn-less-mo-sms
+      - 3gpp-service-parameter
+      - 3gpp-monitoring-event
+      - 3gpp-nidd-configuration-trigger
+      - 3gpp-nidd
+      - 3gpp-analyticsexposure
+      - 3gpp-racs-parameter-provisioning
+      - 3gpp-ecr-control
+      - 3gpp-applying-bdt-policy
+      - 3gpp-mo-lcs-notify
+      - 3gpp-time-sync
+      - 3gpp-am-influence
+      - 3gpp-am-policyauthorization
+      - 3gpp-akma
+      - 3gpp-eas-deployment
+      - 3gpp-iptvconfiguration
+      - 3gpp-mbs-tmgi
+      - 3gpp-mbs-session
+      - 3gpp-authentication
+      - 3gpp-asti
+      - npcf-am-policy-control
+      - npcf-smpolicycontrol
+      - npcf-policyauthorization
+      - npcf-bdtpolicycontrol
+      - npcf-eventexposure
+      - npcf-ue-policy-control
+      - npcf-am-policyauthorization
+      - nsmsf-sms
+      - nnssf-nsselection
+      - nnssf-nssaiavailability
+      - nudr-dr
+      - nudr-group-id-map
+      - nlmf-loc
+      - n5g-eir-eic
+      - nbsf-management
+      - nchf-spendinglimitcontrol
+      - nchf-convergedcharging
+      - nchf-offlineonlycharging
+      - nnwdaf-eventssubscription
+      - nnwdaf-analyticsinfo
+      - nnwdaf-datamanagement
+      - nnwdaf-mlmodelprovision
+      - ngmlc-loc
+      - nucmf-provisioning
+      - nucmf-uecapabilitymanagement
+      - nhss-sdm
+      - nhss-uecm
+      - nhss-ueau
+      - nhss-ee
+      - nhss-ims-sdm
+      - nhss-ims-uecm
+      - nhss-ims-ueau
+      - nhss-gba-sdm
+      - nhss-gba-ueau
+      - nsepp-telescopic
+      - nsoraf-sor
+      - nspaf-secured-packet
+      - nudsf-dr
+      - nudsf-timer
+      - nnssaaf-nssaa
+      - nnssaaf-aiw
+      - naanf-akma
+      - n5gddnmf-discovery
+      - nmfaf-3dadm
+      - nmfaf-3cadm
+      - neasdf-dnscontext
+      - neasdf-baselinednspattern
+      - ndccf-dm
+      - ndccf-cm
+      - nnsacf-nsac
+      - nnsacf-slice-ee
+      - nmbsmf-tmgi
+      - nmbsmf-mbssession
+      - nadrf-dm
+      - nbsp-gba
+      - ntsctsf-time-sync
+      - ntsctsf-qos-tscai
+      - ntsctsf-asti
+      - npkmf-keyreq
+      - nmnpf-npstatus
+      - niwmsc-smservice
+      - nmbsf-mbsuserserv
+      - nmbsf-mbsuserdataing
+      - nmbstf-distsession
+      - npanf-prosekey
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    PresenceState_anyOf:
+      enum:
+      - IN_AREA
+      - OUT_OF_AREA
+      - UNKNOWN
+      - INACTIVE
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - UDP
+      - TCP
+      type: string
+      example: null
+    LineType_anyOf:
+      enum:
+      - DSL
+      - PON
+      type: string
+      example: null
+    TraceDepth_anyOf:
+      enum:
+      - MINIMUM
+      - MEDIUM
+      - MAXIMUM
+      - MINIMUM_WO_VENDOR_EXTENSION
+      - MEDIUM_WO_VENDOR_EXTENSION
+      - MAXIMUM_WO_VENDOR_EXTENSION
+      type: string
+      example: null
+    SbiBindingLevel_anyOf:
+      enum:
+      - NF_INSTANCE_BINDING
+      - NF_SET_BINDING
+      - NF_SERVICE_SET_BINDING
+      - NF_SERVICE_INSTANCE_BINDING
+      type: string
+      example: null
+    SatelliteBackhaulCategory_anyOf:
+      enum:
+      - GEO
+      - MEO
+      - LEO
+      - OTHER_SAT
+      - NON_SATELLITE
+      type: string
+      example: null
+    TriggerType_anyOf:
+      enum:
+      - QUOTA_THRESHOLD
+      - QHT
+      - FINAL
+      - QUOTA_EXHAUSTED
+      - VALIDITY_TIME
+      - OTHER_QUOTA_TYPE
+      - FORCED_REAUTHORISATION
+      - UNUSED_QUOTA_TIMER
+      - UNIT_COUNT_INACTIVITY_TIMER
+      - ABNORMAL_RELEASE
+      - QOS_CHANGE
+      - VOLUME_LIMIT
+      - TIME_LIMIT
+      - EVENT_LIMIT
+      - PLMN_CHANGE
+      - USER_LOCATION_CHANGE
+      - RAT_CHANGE
+      - SESSION_AMBR_CHANGE
+      - UE_TIMEZONE_CHANGE
+      - TARIFF_TIME_CHANGE
+      - MAX_NUMBER_OF_CHANGES_IN_CHARGING_CONDITIONS
+      - MANAGEMENT_INTERVENTION
+      - CHANGE_OF_UE_PRESENCE_IN_PRESENCE_REPORTING_AREA
+      - CHANGE_OF_3GPP_PS_DATA_OFF_STATUS
+      - SERVING_NODE_CHANGE
+      - REMOVAL_OF_UPF
+      - ADDITION_OF_UPF
+      - INSERTION_OF_ISMF
+      - REMOVAL_OF_ISMF
+      - CHANGE_OF_ISMF
+      - START_OF_SERVICE_DATA_FLOW
+      - ECGI_CHANGE
+      - TAI_CHANGE
+      - HANDOVER_CANCEL
+      - HANDOVER_START
+      - HANDOVER_COMPLETE
+      - GFBR_GUARANTEED_STATUS_CHANGE
+      - ADDITION_OF_ACCESS
+      - REMOVAL_OF_ACCESS
+      - START_OF_SDF_ADDITIONAL_ACCESS
+      - REDUNDANT_TRANSMISSION_CHANGE
+      - CGI_SAI_CHANGE
+      - RAI_CHANGE
+      type: string
+      example: null
+    TriggerCategory_anyOf:
+      enum:
+      - IMMEDIATE_REPORT
+      - DEFERRED_REPORT
+      type: string
+      example: null
+    PartialRecordMethod_anyOf:
+      enum:
+      - DEFAULT
+      - INDIVIDUAL
+      type: string
+      example: null
+    PduSessionType_anyOf:
+      enum:
+      - IPV4
+      - IPV6
+      - IPV4V6
+      - UNSTRUCTURED
+      - ETHERNET
+      type: string
+      example: null
+    UpIntegrity_anyOf:
+      enum:
+      - REQUIRED
+      - PREFERRED
+      - NOT_NEEDED
+      type: string
+      example: null
+    PreemptionCapability_anyOf:
+      enum:
+      - NOT_PREEMPT
+      - MAY_PREEMPT
+      type: string
+      example: null
+    PreemptionVulnerability_anyOf:
+      enum:
+      - NOT_PREEMPTABLE
+      - PREEMPTABLE
+      type: string
+      example: null
+    QosResourceType_anyOf:
+      enum:
+      - NON_GBR
+      - NON_CRITICAL_GBR
+      - CRITICAL_GBR
+      type: string
+      example: null
+    ReflectiveQoSAttribute_anyOf:
+      enum:
+      - RQOS
+      - NO_RQOS
+      type: string
+      example: null
+    NotificationControl_anyOf:
+      enum:
+      - REQUESTED
+      - NOT_REQUESTED
+      type: string
+      example: null
+    StationaryIndication_anyOf:
+      enum:
+      - STATIONARY
+      - MOBILE
+      type: string
+      example: null
+    ScheduledCommunicationType_anyOf:
+      enum:
+      - DOWNLINK_ONLY
+      - UPLINK_ONLY
+      - BIDIRECTIONAL
+      type: string
+      example: null
+    TrafficProfile_anyOf:
+      enum:
+      - SINGLE_TRANS_UL
+      - SINGLE_TRANS_DL
+      - DUAL_TRANS_UL_FIRST
+      - DUAL_TRANS_DL_FIRST
+      - MULTI_TRANS
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

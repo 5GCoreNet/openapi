@@ -42,7 +42,7 @@ func NewMaxPktSizeWithDefaults() *MaxPktSize {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *MaxPktSize) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MaxPktSize) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxPktSize) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *MaxPktSize) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *MaxPktSize) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MaxPktSize) SetServAttrCom(v ServAttrCom) {
 
 // GetMaxsize returns the Maxsize field value if set, zero value otherwise.
 func (o *MaxPktSize) GetMaxsize() int32 {
-	if o == nil || IsNil(o.Maxsize) {
+	if o == nil || isNil(o.Maxsize) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MaxPktSize) GetMaxsize() int32 {
 // GetMaxsizeOk returns a tuple with the Maxsize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MaxPktSize) GetMaxsizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.Maxsize) {
+	if o == nil || isNil(o.Maxsize) {
 		return nil, false
 	}
 	return o.Maxsize, true
@@ -92,7 +92,7 @@ func (o *MaxPktSize) GetMaxsizeOk() (*int32, bool) {
 
 // HasMaxsize returns a boolean if a field has been set.
 func (o *MaxPktSize) HasMaxsize() bool {
-	if o != nil && !IsNil(o.Maxsize) {
+	if o != nil && !isNil(o.Maxsize) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o MaxPktSize) MarshalJSON() ([]byte, error) {
 
 func (o MaxPktSize) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.Maxsize) {
+	if !isNil(o.Maxsize) {
 		toSerialize["maxsize"] = o.Maxsize
 	}
 	return toSerialize, nil

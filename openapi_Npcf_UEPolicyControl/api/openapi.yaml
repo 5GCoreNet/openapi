@@ -2304,15 +2304,7 @@ components:
       type: string
     RequestTrigger:
       anyOf:
-      - enum:
-        - LOC_CH
-        - PRA_CH
-        - UE_POLICY
-        - PLMN_CH
-        - CON_STATE_CH
-        - GROUP_ID_LIST_CHG
-        - UE_CAP_CH
-        type: string
+      - $ref: '#/components/schemas/RequestTrigger_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2333,11 +2325,7 @@ components:
         \ \n"
     PolicyAssociationReleaseCause:
       anyOf:
-      - enum:
-        - UNSPECIFIED
-        - UE_SUBSCRIPTION
-        - INSUFFICIENT_RES
-        type: string
+      - $ref: '#/components/schemas/PolicyAssociationReleaseCause_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2350,11 +2338,7 @@ components:
           to abort the policy association.
     Pc5Capability:
       anyOf:
-      - enum:
-        - LTE_PC5
-        - NR_PC5
-        - LTE_NR_PC5
-        type: string
+      - $ref: '#/components/schemas/Pc5Capability_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2366,14 +2350,7 @@ components:
         \ for\n  V2X communications over the PC5 reference point. \n"
     ProSeCapability:
       anyOf:
-      - enum:
-        - PROSE_DD
-        - PROSE_DC
-        - PROSE_L2_U2N_RELAY
-        - PROSE_L3_U2N_RELAY
-        - PROSE_L2_REMOTE_UE
-        - PROSE_L3_REMOTE_UE
-        type: string
+      - $ref: '#/components/schemas/ProSeCapability_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode the content defined in the present version of this API.
         type: string
@@ -2504,26 +2481,7 @@ components:
       type: object
     NgapIeType:
       anyOf:
-      - enum:
-        - PDU_RES_SETUP_REQ
-        - PDU_RES_REL_CMD
-        - PDU_RES_MOD_REQ
-        - HANDOVER_CMD
-        - HANDOVER_REQUIRED
-        - HANDOVER_PREP_FAIL
-        - SRC_TO_TAR_CONTAINER
-        - TAR_TO_SRC_CONTAINER
-        - TAR_TO_SRC_FAIL_CONTAINER
-        - RAN_STATUS_TRANS_CONTAINER
-        - SON_CONFIG_TRANSFER
-        - NRPPA_PDU
-        - UE_RADIO_CAPABILITY
-        - RIM_INFO_TRANSFER
-        - SECONDARY_RAT_USAGE
-        - PC5_QOS_PARA
-        - EARLY_STATUS_TRANS_CONTAINER
-        - UE_RADIO_CAPABILITY_FOR_PAGING
-        type: string
+      - $ref: '#/components/schemas/NgapIeType_anyOf'
       - type: string
       description: Indicates the supported NGAP IE types
     PresenceInfo:
@@ -2673,12 +2631,7 @@ components:
       type: object
     PresenceState:
       anyOf:
-      - enum:
-        - IN_AREA
-        - OUT_OF_AREA
-        - UNKNOWN
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/PresenceState_anyOf'
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -3478,10 +3431,7 @@ components:
       type: integer
     TransportProtocol:
       anyOf:
-      - enum:
-        - UDP
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -3562,10 +3512,7 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - enum:
-        - DSL
-        - PON
-        type: string
+      - $ref: '#/components/schemas/LineType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -3861,28 +3808,7 @@ components:
       type: object
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     GroupId:
@@ -3929,153 +3855,17 @@ components:
       type: string
     ServiceName:
       anyOf:
-      - enum:
-        - nnrf-nfm
-        - nnrf-disc
-        - nnrf-oauth2
-        - nudm-sdm
-        - nudm-uecm
-        - nudm-ueau
-        - nudm-ee
-        - nudm-pp
-        - nudm-niddau
-        - nudm-mt
-        - nudm-ssau
-        - nudm-rsds
-        - namf-comm
-        - namf-evts
-        - namf-mt
-        - namf-loc
-        - namf-mbs-comm
-        - namf-mbs-bc
-        - nsmf-pdusession
-        - nsmf-event-exposure
-        - nsmf-nidd
-        - nausf-auth
-        - nausf-sorprotection
-        - nausf-upuprotection
-        - nnef-pfdmanagement
-        - nnef-smcontext
-        - nnef-eventexposure
-        - nnef-eas-deployment-info
-        - 3gpp-cp-parameter-provisioning
-        - 3gpp-device-triggering
-        - 3gpp-bdt
-        - 3gpp-traffic-influence
-        - 3gpp-chargeable-party
-        - 3gpp-as-session-with-qos
-        - 3gpp-msisdn-less-mo-sms
-        - 3gpp-service-parameter
-        - 3gpp-monitoring-event
-        - 3gpp-nidd-configuration-trigger
-        - 3gpp-nidd
-        - 3gpp-analyticsexposure
-        - 3gpp-racs-parameter-provisioning
-        - 3gpp-ecr-control
-        - 3gpp-applying-bdt-policy
-        - 3gpp-mo-lcs-notify
-        - 3gpp-time-sync
-        - 3gpp-am-influence
-        - 3gpp-am-policyauthorization
-        - 3gpp-akma
-        - 3gpp-eas-deployment
-        - 3gpp-iptvconfiguration
-        - 3gpp-mbs-tmgi
-        - 3gpp-mbs-session
-        - 3gpp-authentication
-        - 3gpp-asti
-        - npcf-am-policy-control
-        - npcf-smpolicycontrol
-        - npcf-policyauthorization
-        - npcf-bdtpolicycontrol
-        - npcf-eventexposure
-        - npcf-ue-policy-control
-        - npcf-am-policyauthorization
-        - nsmsf-sms
-        - nnssf-nsselection
-        - nnssf-nssaiavailability
-        - nudr-dr
-        - nudr-group-id-map
-        - nlmf-loc
-        - n5g-eir-eic
-        - nbsf-management
-        - nchf-spendinglimitcontrol
-        - nchf-convergedcharging
-        - nchf-offlineonlycharging
-        - nnwdaf-eventssubscription
-        - nnwdaf-analyticsinfo
-        - nnwdaf-datamanagement
-        - nnwdaf-mlmodelprovision
-        - ngmlc-loc
-        - nucmf-provisioning
-        - nucmf-uecapabilitymanagement
-        - nhss-sdm
-        - nhss-uecm
-        - nhss-ueau
-        - nhss-ee
-        - nhss-ims-sdm
-        - nhss-ims-uecm
-        - nhss-ims-ueau
-        - nhss-gba-sdm
-        - nhss-gba-ueau
-        - nsepp-telescopic
-        - nsoraf-sor
-        - nspaf-secured-packet
-        - nudsf-dr
-        - nudsf-timer
-        - nnssaaf-nssaa
-        - nnssaaf-aiw
-        - naanf-akma
-        - n5gddnmf-discovery
-        - nmfaf-3dadm
-        - nmfaf-3cadm
-        - neasdf-dnscontext
-        - neasdf-baselinednspattern
-        - ndccf-dm
-        - ndccf-cm
-        - nnsacf-nsac
-        - nnsacf-slice-ee
-        - nmbsmf-tmgi
-        - nmbsmf-mbssession
-        - nadrf-dm
-        - nbsp-gba
-        - ntsctsf-time-sync
-        - ntsctsf-qos-tscai
-        - ntsctsf-asti
-        - npkmf-keyreq
-        - nmnpf-npstatus
-        - niwmsc-smservice
-        - nmbsf-mbsuserserv
-        - nmbsf-mbsuserdataing
-        - nmbstf-distsession
-        - npanf-prosekey
-        type: string
+      - $ref: '#/components/schemas/ServiceName_anyOf'
       - type: string
       description: Service names known to NRF
     CmState:
       anyOf:
-      - enum:
-        - IDLE
-        - CONNECTED
-        type: string
+      - $ref: '#/components/schemas/CmState_anyOf'
       - type: string
       description: Describes the connection management state of a UE
     N1N2MessageTransferCause:
       anyOf:
-      - enum:
-        - ATTEMPTING_TO_REACH_UE
-        - N1_N2_TRANSFER_INITIATED
-        - WAITING_FOR_ASYNCHRONOUS_TRANSFER
-        - UE_NOT_RESPONDING
-        - N1_MSG_NOT_TRANSFERRED
-        - N2_MSG_NOT_TRANSFERRED
-        - UE_NOT_REACHABLE_FOR_SESSION
-        - TEMPORARY_REJECT_REGISTRATION_ONGOING
-        - TEMPORARY_REJECT_HANDOVER_ONGOING
-        - REJECTION_DUE_TO_PAGING_RESTRICTION
-        - AN_NOT_RESPONDING
-        - FAILURE_CAUSE_UNSPECIFIED
-        type: string
+      - $ref: '#/components/schemas/N1N2MessageTransferCause_anyOf'
       - type: string
       description: Enumeration for N1N2Message Transfer Cause
     AccessTokenErr:
@@ -4219,64 +4009,7 @@ components:
       type: object
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -4330,6 +4063,312 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    RequestTrigger_anyOf:
+      enum:
+      - LOC_CH
+      - PRA_CH
+      - UE_POLICY
+      - PLMN_CH
+      - CON_STATE_CH
+      - GROUP_ID_LIST_CHG
+      - UE_CAP_CH
+      type: string
+      example: null
+    PolicyAssociationReleaseCause_anyOf:
+      enum:
+      - UNSPECIFIED
+      - UE_SUBSCRIPTION
+      - INSUFFICIENT_RES
+      type: string
+      example: null
+    Pc5Capability_anyOf:
+      enum:
+      - LTE_PC5
+      - NR_PC5
+      - LTE_NR_PC5
+      type: string
+      example: null
+    ProSeCapability_anyOf:
+      enum:
+      - PROSE_DD
+      - PROSE_DC
+      - PROSE_L2_U2N_RELAY
+      - PROSE_L3_U2N_RELAY
+      - PROSE_L2_REMOTE_UE
+      - PROSE_L3_REMOTE_UE
+      type: string
+      example: null
+    NgapIeType_anyOf:
+      enum:
+      - PDU_RES_SETUP_REQ
+      - PDU_RES_REL_CMD
+      - PDU_RES_MOD_REQ
+      - HANDOVER_CMD
+      - HANDOVER_REQUIRED
+      - HANDOVER_PREP_FAIL
+      - SRC_TO_TAR_CONTAINER
+      - TAR_TO_SRC_CONTAINER
+      - TAR_TO_SRC_FAIL_CONTAINER
+      - RAN_STATUS_TRANS_CONTAINER
+      - SON_CONFIG_TRANSFER
+      - NRPPA_PDU
+      - UE_RADIO_CAPABILITY
+      - RIM_INFO_TRANSFER
+      - SECONDARY_RAT_USAGE
+      - PC5_QOS_PARA
+      - EARLY_STATUS_TRANS_CONTAINER
+      - UE_RADIO_CAPABILITY_FOR_PAGING
+      type: string
+      example: null
+    PresenceState_anyOf:
+      enum:
+      - IN_AREA
+      - OUT_OF_AREA
+      - UNKNOWN
+      - INACTIVE
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - UDP
+      - TCP
+      type: string
+      example: null
+    LineType_anyOf:
+      enum:
+      - DSL
+      - PON
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    ServiceName_anyOf:
+      enum:
+      - nnrf-nfm
+      - nnrf-disc
+      - nnrf-oauth2
+      - nudm-sdm
+      - nudm-uecm
+      - nudm-ueau
+      - nudm-ee
+      - nudm-pp
+      - nudm-niddau
+      - nudm-mt
+      - nudm-ssau
+      - nudm-rsds
+      - namf-comm
+      - namf-evts
+      - namf-mt
+      - namf-loc
+      - namf-mbs-comm
+      - namf-mbs-bc
+      - nsmf-pdusession
+      - nsmf-event-exposure
+      - nsmf-nidd
+      - nausf-auth
+      - nausf-sorprotection
+      - nausf-upuprotection
+      - nnef-pfdmanagement
+      - nnef-smcontext
+      - nnef-eventexposure
+      - nnef-eas-deployment-info
+      - 3gpp-cp-parameter-provisioning
+      - 3gpp-device-triggering
+      - 3gpp-bdt
+      - 3gpp-traffic-influence
+      - 3gpp-chargeable-party
+      - 3gpp-as-session-with-qos
+      - 3gpp-msisdn-less-mo-sms
+      - 3gpp-service-parameter
+      - 3gpp-monitoring-event
+      - 3gpp-nidd-configuration-trigger
+      - 3gpp-nidd
+      - 3gpp-analyticsexposure
+      - 3gpp-racs-parameter-provisioning
+      - 3gpp-ecr-control
+      - 3gpp-applying-bdt-policy
+      - 3gpp-mo-lcs-notify
+      - 3gpp-time-sync
+      - 3gpp-am-influence
+      - 3gpp-am-policyauthorization
+      - 3gpp-akma
+      - 3gpp-eas-deployment
+      - 3gpp-iptvconfiguration
+      - 3gpp-mbs-tmgi
+      - 3gpp-mbs-session
+      - 3gpp-authentication
+      - 3gpp-asti
+      - npcf-am-policy-control
+      - npcf-smpolicycontrol
+      - npcf-policyauthorization
+      - npcf-bdtpolicycontrol
+      - npcf-eventexposure
+      - npcf-ue-policy-control
+      - npcf-am-policyauthorization
+      - nsmsf-sms
+      - nnssf-nsselection
+      - nnssf-nssaiavailability
+      - nudr-dr
+      - nudr-group-id-map
+      - nlmf-loc
+      - n5g-eir-eic
+      - nbsf-management
+      - nchf-spendinglimitcontrol
+      - nchf-convergedcharging
+      - nchf-offlineonlycharging
+      - nnwdaf-eventssubscription
+      - nnwdaf-analyticsinfo
+      - nnwdaf-datamanagement
+      - nnwdaf-mlmodelprovision
+      - ngmlc-loc
+      - nucmf-provisioning
+      - nucmf-uecapabilitymanagement
+      - nhss-sdm
+      - nhss-uecm
+      - nhss-ueau
+      - nhss-ee
+      - nhss-ims-sdm
+      - nhss-ims-uecm
+      - nhss-ims-ueau
+      - nhss-gba-sdm
+      - nhss-gba-ueau
+      - nsepp-telescopic
+      - nsoraf-sor
+      - nspaf-secured-packet
+      - nudsf-dr
+      - nudsf-timer
+      - nnssaaf-nssaa
+      - nnssaaf-aiw
+      - naanf-akma
+      - n5gddnmf-discovery
+      - nmfaf-3dadm
+      - nmfaf-3cadm
+      - neasdf-dnscontext
+      - neasdf-baselinednspattern
+      - ndccf-dm
+      - ndccf-cm
+      - nnsacf-nsac
+      - nnsacf-slice-ee
+      - nmbsmf-tmgi
+      - nmbsmf-mbssession
+      - nadrf-dm
+      - nbsp-gba
+      - ntsctsf-time-sync
+      - ntsctsf-qos-tscai
+      - ntsctsf-asti
+      - npkmf-keyreq
+      - nmnpf-npstatus
+      - niwmsc-smservice
+      - nmbsf-mbsuserserv
+      - nmbsf-mbsuserdataing
+      - nmbstf-distsession
+      - npanf-prosekey
+      type: string
+      example: null
+    CmState_anyOf:
+      enum:
+      - IDLE
+      - CONNECTED
+      type: string
+      example: null
+    N1N2MessageTransferCause_anyOf:
+      enum:
+      - ATTEMPTING_TO_REACH_UE
+      - N1_N2_TRANSFER_INITIATED
+      - WAITING_FOR_ASYNCHRONOUS_TRANSFER
+      - UE_NOT_RESPONDING
+      - N1_MSG_NOT_TRANSFERRED
+      - N2_MSG_NOT_TRANSFERRED
+      - UE_NOT_REACHABLE_FOR_SESSION
+      - TEMPORARY_REJECT_REGISTRATION_ONGOING
+      - TEMPORARY_REJECT_HANDOVER_ONGOING
+      - REJECTION_DUE_TO_PAGING_RESTRICTION
+      - AN_NOT_RESPONDING
+      - FAILURE_CAUSE_UNSPECIFIED
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

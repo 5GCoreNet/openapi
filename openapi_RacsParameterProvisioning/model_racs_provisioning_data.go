@@ -49,7 +49,7 @@ func NewRacsProvisioningDataWithDefaults() *RacsProvisioningData {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *RacsProvisioningData) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *RacsProvisioningData) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningData) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -67,7 +67,7 @@ func (o *RacsProvisioningData) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *RacsProvisioningData) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *RacsProvisioningData) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *RacsProvisioningData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *RacsProvisioningData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -99,7 +99,7 @@ func (o *RacsProvisioningData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *RacsProvisioningData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *RacsProvisioningData) SetRacsConfigs(v map[string]RacsConfiguration) {
 
 // GetRacsReports returns the RacsReports field value if set, zero value otherwise.
 func (o *RacsProvisioningData) GetRacsReports() map[string]RacsFailureReport {
-	if o == nil || IsNil(o.RacsReports) {
+	if o == nil || isNil(o.RacsReports) {
 		var ret map[string]RacsFailureReport
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *RacsProvisioningData) GetRacsReports() map[string]RacsFailureReport {
 // GetRacsReportsOk returns a tuple with the RacsReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningData) GetRacsReportsOk() (*map[string]RacsFailureReport, bool) {
-	if o == nil || IsNil(o.RacsReports) {
+	if o == nil || isNil(o.RacsReports) {
 		return nil, false
 	}
 	return o.RacsReports, true
@@ -155,7 +155,7 @@ func (o *RacsProvisioningData) GetRacsReportsOk() (*map[string]RacsFailureReport
 
 // HasRacsReports returns a boolean if a field has been set.
 func (o *RacsProvisioningData) HasRacsReports() bool {
-	if o != nil && !IsNil(o.RacsReports) {
+	if o != nil && !isNil(o.RacsReports) {
 		return true
 	}
 
@@ -177,14 +177,16 @@ func (o RacsProvisioningData) MarshalJSON() ([]byte, error) {
 
 func (o RacsProvisioningData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["racsConfigs"] = o.RacsConfigs
-	// skip: racsReports is readOnly
+	if !isNil(o.RacsReports) {
+		toSerialize["racsReports"] = o.RacsReports
+	}
 	return toSerialize, nil
 }
 

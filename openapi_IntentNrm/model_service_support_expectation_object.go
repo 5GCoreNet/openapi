@@ -43,7 +43,7 @@ func NewServiceSupportExpectationObjectWithDefaults() *ServiceSupportExpectation
 
 // GetObjectType returns the ObjectType field value if set, zero value otherwise.
 func (o *ServiceSupportExpectationObject) GetObjectType() string {
-	if o == nil || IsNil(o.ObjectType) {
+	if o == nil || isNil(o.ObjectType) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ServiceSupportExpectationObject) GetObjectType() string {
 // GetObjectTypeOk returns a tuple with the ObjectType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectationObject) GetObjectTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectType) {
+	if o == nil || isNil(o.ObjectType) {
 		return nil, false
 	}
 	return o.ObjectType, true
@@ -61,7 +61,7 @@ func (o *ServiceSupportExpectationObject) GetObjectTypeOk() (*string, bool) {
 
 // HasObjectType returns a boolean if a field has been set.
 func (o *ServiceSupportExpectationObject) HasObjectType() bool {
-	if o != nil && !IsNil(o.ObjectType) {
+	if o != nil && !isNil(o.ObjectType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ServiceSupportExpectationObject) SetObjectType(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *ServiceSupportExpectationObject) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ServiceSupportExpectationObject) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectationObject) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -93,7 +93,7 @@ func (o *ServiceSupportExpectationObject) GetObjectInstanceOk() (*string, bool) 
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *ServiceSupportExpectationObject) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ServiceSupportExpectationObject) SetObjectInstance(v string) {
 
 // GetObjectContexts returns the ObjectContexts field value if set, zero value otherwise.
 func (o *ServiceSupportExpectationObject) GetObjectContexts() []ServiceSupportExpectationObjectObjectContextsInner {
-	if o == nil || IsNil(o.ObjectContexts) {
+	if o == nil || isNil(o.ObjectContexts) {
 		var ret []ServiceSupportExpectationObjectObjectContextsInner
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ServiceSupportExpectationObject) GetObjectContexts() []ServiceSupportEx
 // GetObjectContextsOk returns a tuple with the ObjectContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectationObject) GetObjectContextsOk() ([]ServiceSupportExpectationObjectObjectContextsInner, bool) {
-	if o == nil || IsNil(o.ObjectContexts) {
+	if o == nil || isNil(o.ObjectContexts) {
 		return nil, false
 	}
 	return o.ObjectContexts, true
@@ -125,7 +125,7 @@ func (o *ServiceSupportExpectationObject) GetObjectContextsOk() ([]ServiceSuppor
 
 // HasObjectContexts returns a boolean if a field has been set.
 func (o *ServiceSupportExpectationObject) HasObjectContexts() bool {
-	if o != nil && !IsNil(o.ObjectContexts) {
+	if o != nil && !isNil(o.ObjectContexts) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o ServiceSupportExpectationObject) MarshalJSON() ([]byte, error) {
 
 func (o ServiceSupportExpectationObject) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ObjectType) {
+	if !isNil(o.ObjectType) {
 		toSerialize["objectType"] = o.ObjectType
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.ObjectContexts) {
+	if !isNil(o.ObjectContexts) {
 		toSerialize["objectContexts"] = o.ObjectContexts
 	}
 	return toSerialize, nil

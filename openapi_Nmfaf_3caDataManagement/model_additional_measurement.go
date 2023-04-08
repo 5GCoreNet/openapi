@@ -47,7 +47,7 @@ func NewAdditionalMeasurementWithDefaults() *AdditionalMeasurement {
 
 // GetUnexpLoc returns the UnexpLoc field value if set, zero value otherwise.
 func (o *AdditionalMeasurement) GetUnexpLoc() NetworkAreaInfo {
-	if o == nil || IsNil(o.UnexpLoc) {
+	if o == nil || isNil(o.UnexpLoc) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AdditionalMeasurement) GetUnexpLoc() NetworkAreaInfo {
 // GetUnexpLocOk returns a tuple with the UnexpLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalMeasurement) GetUnexpLocOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.UnexpLoc) {
+	if o == nil || isNil(o.UnexpLoc) {
 		return nil, false
 	}
 	return o.UnexpLoc, true
@@ -65,7 +65,7 @@ func (o *AdditionalMeasurement) GetUnexpLocOk() (*NetworkAreaInfo, bool) {
 
 // HasUnexpLoc returns a boolean if a field has been set.
 func (o *AdditionalMeasurement) HasUnexpLoc() bool {
-	if o != nil && !IsNil(o.UnexpLoc) {
+	if o != nil && !isNil(o.UnexpLoc) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *AdditionalMeasurement) SetUnexpLoc(v NetworkAreaInfo) {
 
 // GetUnexpFlowTeps returns the UnexpFlowTeps field value if set, zero value otherwise.
 func (o *AdditionalMeasurement) GetUnexpFlowTeps() []IpEthFlowDescription {
-	if o == nil || IsNil(o.UnexpFlowTeps) {
+	if o == nil || isNil(o.UnexpFlowTeps) {
 		var ret []IpEthFlowDescription
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *AdditionalMeasurement) GetUnexpFlowTeps() []IpEthFlowDescription {
 // GetUnexpFlowTepsOk returns a tuple with the UnexpFlowTeps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalMeasurement) GetUnexpFlowTepsOk() ([]IpEthFlowDescription, bool) {
-	if o == nil || IsNil(o.UnexpFlowTeps) {
+	if o == nil || isNil(o.UnexpFlowTeps) {
 		return nil, false
 	}
 	return o.UnexpFlowTeps, true
@@ -97,7 +97,7 @@ func (o *AdditionalMeasurement) GetUnexpFlowTepsOk() ([]IpEthFlowDescription, bo
 
 // HasUnexpFlowTeps returns a boolean if a field has been set.
 func (o *AdditionalMeasurement) HasUnexpFlowTeps() bool {
-	if o != nil && !IsNil(o.UnexpFlowTeps) {
+	if o != nil && !isNil(o.UnexpFlowTeps) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *AdditionalMeasurement) SetUnexpFlowTeps(v []IpEthFlowDescription) {
 
 // GetUnexpWakes returns the UnexpWakes field value if set, zero value otherwise.
 func (o *AdditionalMeasurement) GetUnexpWakes() []time.Time {
-	if o == nil || IsNil(o.UnexpWakes) {
+	if o == nil || isNil(o.UnexpWakes) {
 		var ret []time.Time
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *AdditionalMeasurement) GetUnexpWakes() []time.Time {
 // GetUnexpWakesOk returns a tuple with the UnexpWakes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalMeasurement) GetUnexpWakesOk() ([]time.Time, bool) {
-	if o == nil || IsNil(o.UnexpWakes) {
+	if o == nil || isNil(o.UnexpWakes) {
 		return nil, false
 	}
 	return o.UnexpWakes, true
@@ -129,7 +129,7 @@ func (o *AdditionalMeasurement) GetUnexpWakesOk() ([]time.Time, bool) {
 
 // HasUnexpWakes returns a boolean if a field has been set.
 func (o *AdditionalMeasurement) HasUnexpWakes() bool {
-	if o != nil && !IsNil(o.UnexpWakes) {
+	if o != nil && !isNil(o.UnexpWakes) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *AdditionalMeasurement) SetUnexpWakes(v []time.Time) {
 
 // GetDdosAttack returns the DdosAttack field value if set, zero value otherwise.
 func (o *AdditionalMeasurement) GetDdosAttack() AddressList {
-	if o == nil || IsNil(o.DdosAttack) {
+	if o == nil || isNil(o.DdosAttack) {
 		var ret AddressList
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *AdditionalMeasurement) GetDdosAttack() AddressList {
 // GetDdosAttackOk returns a tuple with the DdosAttack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalMeasurement) GetDdosAttackOk() (*AddressList, bool) {
-	if o == nil || IsNil(o.DdosAttack) {
+	if o == nil || isNil(o.DdosAttack) {
 		return nil, false
 	}
 	return o.DdosAttack, true
@@ -161,7 +161,7 @@ func (o *AdditionalMeasurement) GetDdosAttackOk() (*AddressList, bool) {
 
 // HasDdosAttack returns a boolean if a field has been set.
 func (o *AdditionalMeasurement) HasDdosAttack() bool {
-	if o != nil && !IsNil(o.DdosAttack) {
+	if o != nil && !isNil(o.DdosAttack) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *AdditionalMeasurement) SetDdosAttack(v AddressList) {
 
 // GetWrgDest returns the WrgDest field value if set, zero value otherwise.
 func (o *AdditionalMeasurement) GetWrgDest() AddressList {
-	if o == nil || IsNil(o.WrgDest) {
+	if o == nil || isNil(o.WrgDest) {
 		var ret AddressList
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *AdditionalMeasurement) GetWrgDest() AddressList {
 // GetWrgDestOk returns a tuple with the WrgDest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalMeasurement) GetWrgDestOk() (*AddressList, bool) {
-	if o == nil || IsNil(o.WrgDest) {
+	if o == nil || isNil(o.WrgDest) {
 		return nil, false
 	}
 	return o.WrgDest, true
@@ -193,7 +193,7 @@ func (o *AdditionalMeasurement) GetWrgDestOk() (*AddressList, bool) {
 
 // HasWrgDest returns a boolean if a field has been set.
 func (o *AdditionalMeasurement) HasWrgDest() bool {
-	if o != nil && !IsNil(o.WrgDest) {
+	if o != nil && !isNil(o.WrgDest) {
 		return true
 	}
 
@@ -207,7 +207,7 @@ func (o *AdditionalMeasurement) SetWrgDest(v AddressList) {
 
 // GetCircums returns the Circums field value if set, zero value otherwise.
 func (o *AdditionalMeasurement) GetCircums() []CircumstanceDescription {
-	if o == nil || IsNil(o.Circums) {
+	if o == nil || isNil(o.Circums) {
 		var ret []CircumstanceDescription
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *AdditionalMeasurement) GetCircums() []CircumstanceDescription {
 // GetCircumsOk returns a tuple with the Circums field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionalMeasurement) GetCircumsOk() ([]CircumstanceDescription, bool) {
-	if o == nil || IsNil(o.Circums) {
+	if o == nil || isNil(o.Circums) {
 		return nil, false
 	}
 	return o.Circums, true
@@ -225,7 +225,7 @@ func (o *AdditionalMeasurement) GetCircumsOk() ([]CircumstanceDescription, bool)
 
 // HasCircums returns a boolean if a field has been set.
 func (o *AdditionalMeasurement) HasCircums() bool {
-	if o != nil && !IsNil(o.Circums) {
+	if o != nil && !isNil(o.Circums) {
 		return true
 	}
 
@@ -247,22 +247,22 @@ func (o AdditionalMeasurement) MarshalJSON() ([]byte, error) {
 
 func (o AdditionalMeasurement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UnexpLoc) {
+	if !isNil(o.UnexpLoc) {
 		toSerialize["unexpLoc"] = o.UnexpLoc
 	}
-	if !IsNil(o.UnexpFlowTeps) {
+	if !isNil(o.UnexpFlowTeps) {
 		toSerialize["unexpFlowTeps"] = o.UnexpFlowTeps
 	}
-	if !IsNil(o.UnexpWakes) {
+	if !isNil(o.UnexpWakes) {
 		toSerialize["unexpWakes"] = o.UnexpWakes
 	}
-	if !IsNil(o.DdosAttack) {
+	if !isNil(o.DdosAttack) {
 		toSerialize["ddosAttack"] = o.DdosAttack
 	}
-	if !IsNil(o.WrgDest) {
+	if !isNil(o.WrgDest) {
 		toSerialize["wrgDest"] = o.WrgDest
 	}
-	if !IsNil(o.Circums) {
+	if !isNil(o.Circums) {
 		toSerialize["circums"] = o.Circums
 	}
 	return toSerialize, nil

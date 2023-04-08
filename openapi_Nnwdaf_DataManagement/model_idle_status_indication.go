@@ -49,7 +49,7 @@ func NewIdleStatusIndicationWithDefaults() *IdleStatusIndication {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *IdleStatusIndication) GetTimeStamp() time.Time {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *IdleStatusIndication) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdleStatusIndication) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -67,7 +67,7 @@ func (o *IdleStatusIndication) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *IdleStatusIndication) HasTimeStamp() bool {
-	if o != nil && !IsNil(o.TimeStamp) {
+	if o != nil && !isNil(o.TimeStamp) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *IdleStatusIndication) SetTimeStamp(v time.Time) {
 
 // GetActiveTime returns the ActiveTime field value if set, zero value otherwise.
 func (o *IdleStatusIndication) GetActiveTime() int32 {
-	if o == nil || IsNil(o.ActiveTime) {
+	if o == nil || isNil(o.ActiveTime) {
 		var ret int32
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *IdleStatusIndication) GetActiveTime() int32 {
 // GetActiveTimeOk returns a tuple with the ActiveTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdleStatusIndication) GetActiveTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.ActiveTime) {
+	if o == nil || isNil(o.ActiveTime) {
 		return nil, false
 	}
 	return o.ActiveTime, true
@@ -99,7 +99,7 @@ func (o *IdleStatusIndication) GetActiveTimeOk() (*int32, bool) {
 
 // HasActiveTime returns a boolean if a field has been set.
 func (o *IdleStatusIndication) HasActiveTime() bool {
-	if o != nil && !IsNil(o.ActiveTime) {
+	if o != nil && !isNil(o.ActiveTime) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *IdleStatusIndication) SetActiveTime(v int32) {
 
 // GetSubsRegTimer returns the SubsRegTimer field value if set, zero value otherwise.
 func (o *IdleStatusIndication) GetSubsRegTimer() int32 {
-	if o == nil || IsNil(o.SubsRegTimer) {
+	if o == nil || isNil(o.SubsRegTimer) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *IdleStatusIndication) GetSubsRegTimer() int32 {
 // GetSubsRegTimerOk returns a tuple with the SubsRegTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdleStatusIndication) GetSubsRegTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.SubsRegTimer) {
+	if o == nil || isNil(o.SubsRegTimer) {
 		return nil, false
 	}
 	return o.SubsRegTimer, true
@@ -131,7 +131,7 @@ func (o *IdleStatusIndication) GetSubsRegTimerOk() (*int32, bool) {
 
 // HasSubsRegTimer returns a boolean if a field has been set.
 func (o *IdleStatusIndication) HasSubsRegTimer() bool {
-	if o != nil && !IsNil(o.SubsRegTimer) {
+	if o != nil && !isNil(o.SubsRegTimer) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *IdleStatusIndication) SetSubsRegTimer(v int32) {
 
 // GetEdrxCycleLength returns the EdrxCycleLength field value if set, zero value otherwise.
 func (o *IdleStatusIndication) GetEdrxCycleLength() int32 {
-	if o == nil || IsNil(o.EdrxCycleLength) {
+	if o == nil || isNil(o.EdrxCycleLength) {
 		var ret int32
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *IdleStatusIndication) GetEdrxCycleLength() int32 {
 // GetEdrxCycleLengthOk returns a tuple with the EdrxCycleLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdleStatusIndication) GetEdrxCycleLengthOk() (*int32, bool) {
-	if o == nil || IsNil(o.EdrxCycleLength) {
+	if o == nil || isNil(o.EdrxCycleLength) {
 		return nil, false
 	}
 	return o.EdrxCycleLength, true
@@ -163,7 +163,7 @@ func (o *IdleStatusIndication) GetEdrxCycleLengthOk() (*int32, bool) {
 
 // HasEdrxCycleLength returns a boolean if a field has been set.
 func (o *IdleStatusIndication) HasEdrxCycleLength() bool {
-	if o != nil && !IsNil(o.EdrxCycleLength) {
+	if o != nil && !isNil(o.EdrxCycleLength) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *IdleStatusIndication) SetEdrxCycleLength(v int32) {
 
 // GetSuggestedNumOfDlPackets returns the SuggestedNumOfDlPackets field value if set, zero value otherwise.
 func (o *IdleStatusIndication) GetSuggestedNumOfDlPackets() int32 {
-	if o == nil || IsNil(o.SuggestedNumOfDlPackets) {
+	if o == nil || isNil(o.SuggestedNumOfDlPackets) {
 		var ret int32
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *IdleStatusIndication) GetSuggestedNumOfDlPackets() int32 {
 // GetSuggestedNumOfDlPacketsOk returns a tuple with the SuggestedNumOfDlPackets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdleStatusIndication) GetSuggestedNumOfDlPacketsOk() (*int32, bool) {
-	if o == nil || IsNil(o.SuggestedNumOfDlPackets) {
+	if o == nil || isNil(o.SuggestedNumOfDlPackets) {
 		return nil, false
 	}
 	return o.SuggestedNumOfDlPackets, true
@@ -195,7 +195,7 @@ func (o *IdleStatusIndication) GetSuggestedNumOfDlPacketsOk() (*int32, bool) {
 
 // HasSuggestedNumOfDlPackets returns a boolean if a field has been set.
 func (o *IdleStatusIndication) HasSuggestedNumOfDlPackets() bool {
-	if o != nil && !IsNil(o.SuggestedNumOfDlPackets) {
+	if o != nil && !isNil(o.SuggestedNumOfDlPackets) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o IdleStatusIndication) MarshalJSON() ([]byte, error) {
 
 func (o IdleStatusIndication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TimeStamp) {
+	if !isNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
-	if !IsNil(o.ActiveTime) {
+	if !isNil(o.ActiveTime) {
 		toSerialize["activeTime"] = o.ActiveTime
 	}
-	if !IsNil(o.SubsRegTimer) {
+	if !isNil(o.SubsRegTimer) {
 		toSerialize["subsRegTimer"] = o.SubsRegTimer
 	}
-	if !IsNil(o.EdrxCycleLength) {
+	if !isNil(o.EdrxCycleLength) {
 		toSerialize["edrxCycleLength"] = o.EdrxCycleLength
 	}
-	if !IsNil(o.SuggestedNumOfDlPackets) {
+	if !isNil(o.SuggestedNumOfDlPackets) {
 		toSerialize["suggestedNumOfDlPackets"] = o.SuggestedNumOfDlPackets
 	}
 	return toSerialize, nil

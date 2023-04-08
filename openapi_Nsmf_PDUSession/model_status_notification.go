@@ -78,7 +78,7 @@ func (o *StatusNotification) SetStatusInfo(v StatusInfo) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *StatusNotification) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *StatusNotification) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -96,7 +96,7 @@ func (o *StatusNotification) GetSmallDataRateStatusOk() (*SmallDataRateStatus, b
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *StatusNotification) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *StatusNotification) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *StatusNotification) GetApnRateStatus() ApnRateStatus {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *StatusNotification) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -128,7 +128,7 @@ func (o *StatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool) {
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *StatusNotification) HasApnRateStatus() bool {
-	if o != nil && !IsNil(o.ApnRateStatus) {
+	if o != nil && !isNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *StatusNotification) SetApnRateStatus(v ApnRateStatus) {
 
 // GetTargetDnaiInfo returns the TargetDnaiInfo field value if set, zero value otherwise.
 func (o *StatusNotification) GetTargetDnaiInfo() TargetDnaiInfo {
-	if o == nil || IsNil(o.TargetDnaiInfo) {
+	if o == nil || isNil(o.TargetDnaiInfo) {
 		var ret TargetDnaiInfo
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *StatusNotification) GetTargetDnaiInfo() TargetDnaiInfo {
 // GetTargetDnaiInfoOk returns a tuple with the TargetDnaiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetTargetDnaiInfoOk() (*TargetDnaiInfo, bool) {
-	if o == nil || IsNil(o.TargetDnaiInfo) {
+	if o == nil || isNil(o.TargetDnaiInfo) {
 		return nil, false
 	}
 	return o.TargetDnaiInfo, true
@@ -160,7 +160,7 @@ func (o *StatusNotification) GetTargetDnaiInfoOk() (*TargetDnaiInfo, bool) {
 
 // HasTargetDnaiInfo returns a boolean if a field has been set.
 func (o *StatusNotification) HasTargetDnaiInfo() bool {
-	if o != nil && !IsNil(o.TargetDnaiInfo) {
+	if o != nil && !isNil(o.TargetDnaiInfo) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *StatusNotification) SetTargetDnaiInfo(v TargetDnaiInfo) {
 
 // GetOldPduSessionRef returns the OldPduSessionRef field value if set, zero value otherwise.
 func (o *StatusNotification) GetOldPduSessionRef() string {
-	if o == nil || IsNil(o.OldPduSessionRef) {
+	if o == nil || isNil(o.OldPduSessionRef) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *StatusNotification) GetOldPduSessionRef() string {
 // GetOldPduSessionRefOk returns a tuple with the OldPduSessionRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetOldPduSessionRefOk() (*string, bool) {
-	if o == nil || IsNil(o.OldPduSessionRef) {
+	if o == nil || isNil(o.OldPduSessionRef) {
 		return nil, false
 	}
 	return o.OldPduSessionRef, true
@@ -192,7 +192,7 @@ func (o *StatusNotification) GetOldPduSessionRefOk() (*string, bool) {
 
 // HasOldPduSessionRef returns a boolean if a field has been set.
 func (o *StatusNotification) HasOldPduSessionRef() bool {
-	if o != nil && !IsNil(o.OldPduSessionRef) {
+	if o != nil && !isNil(o.OldPduSessionRef) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *StatusNotification) SetOldPduSessionRef(v string) {
 
 // GetNewSmfId returns the NewSmfId field value if set, zero value otherwise.
 func (o *StatusNotification) GetNewSmfId() string {
-	if o == nil || IsNil(o.NewSmfId) {
+	if o == nil || isNil(o.NewSmfId) {
 		var ret string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *StatusNotification) GetNewSmfId() string {
 // GetNewSmfIdOk returns a tuple with the NewSmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetNewSmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NewSmfId) {
+	if o == nil || isNil(o.NewSmfId) {
 		return nil, false
 	}
 	return o.NewSmfId, true
@@ -224,7 +224,7 @@ func (o *StatusNotification) GetNewSmfIdOk() (*string, bool) {
 
 // HasNewSmfId returns a boolean if a field has been set.
 func (o *StatusNotification) HasNewSmfId() bool {
-	if o != nil && !IsNil(o.NewSmfId) {
+	if o != nil && !isNil(o.NewSmfId) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *StatusNotification) SetNewSmfId(v string) {
 
 // GetEpsPdnCnxInfo returns the EpsPdnCnxInfo field value if set, zero value otherwise.
 func (o *StatusNotification) GetEpsPdnCnxInfo() EpsPdnCnxInfo {
-	if o == nil || IsNil(o.EpsPdnCnxInfo) {
+	if o == nil || isNil(o.EpsPdnCnxInfo) {
 		var ret EpsPdnCnxInfo
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *StatusNotification) GetEpsPdnCnxInfo() EpsPdnCnxInfo {
 // GetEpsPdnCnxInfoOk returns a tuple with the EpsPdnCnxInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetEpsPdnCnxInfoOk() (*EpsPdnCnxInfo, bool) {
-	if o == nil || IsNil(o.EpsPdnCnxInfo) {
+	if o == nil || isNil(o.EpsPdnCnxInfo) {
 		return nil, false
 	}
 	return o.EpsPdnCnxInfo, true
@@ -256,7 +256,7 @@ func (o *StatusNotification) GetEpsPdnCnxInfoOk() (*EpsPdnCnxInfo, bool) {
 
 // HasEpsPdnCnxInfo returns a boolean if a field has been set.
 func (o *StatusNotification) HasEpsPdnCnxInfo() bool {
-	if o != nil && !IsNil(o.EpsPdnCnxInfo) {
+	if o != nil && !isNil(o.EpsPdnCnxInfo) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *StatusNotification) SetEpsPdnCnxInfo(v EpsPdnCnxInfo) {
 
 // GetInterPlmnApiRoot returns the InterPlmnApiRoot field value if set, zero value otherwise.
 func (o *StatusNotification) GetInterPlmnApiRoot() string {
-	if o == nil || IsNil(o.InterPlmnApiRoot) {
+	if o == nil || isNil(o.InterPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *StatusNotification) GetInterPlmnApiRoot() string {
 // GetInterPlmnApiRootOk returns a tuple with the InterPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetInterPlmnApiRootOk() (*string, bool) {
-	if o == nil || IsNil(o.InterPlmnApiRoot) {
+	if o == nil || isNil(o.InterPlmnApiRoot) {
 		return nil, false
 	}
 	return o.InterPlmnApiRoot, true
@@ -288,7 +288,7 @@ func (o *StatusNotification) GetInterPlmnApiRootOk() (*string, bool) {
 
 // HasInterPlmnApiRoot returns a boolean if a field has been set.
 func (o *StatusNotification) HasInterPlmnApiRoot() bool {
-	if o != nil && !IsNil(o.InterPlmnApiRoot) {
+	if o != nil && !isNil(o.InterPlmnApiRoot) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *StatusNotification) SetInterPlmnApiRoot(v string) {
 
 // GetIntraPlmnApiRoot returns the IntraPlmnApiRoot field value if set, zero value otherwise.
 func (o *StatusNotification) GetIntraPlmnApiRoot() string {
-	if o == nil || IsNil(o.IntraPlmnApiRoot) {
+	if o == nil || isNil(o.IntraPlmnApiRoot) {
 		var ret string
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *StatusNotification) GetIntraPlmnApiRoot() string {
 // GetIntraPlmnApiRootOk returns a tuple with the IntraPlmnApiRoot field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusNotification) GetIntraPlmnApiRootOk() (*string, bool) {
-	if o == nil || IsNil(o.IntraPlmnApiRoot) {
+	if o == nil || isNil(o.IntraPlmnApiRoot) {
 		return nil, false
 	}
 	return o.IntraPlmnApiRoot, true
@@ -320,7 +320,7 @@ func (o *StatusNotification) GetIntraPlmnApiRootOk() (*string, bool) {
 
 // HasIntraPlmnApiRoot returns a boolean if a field has been set.
 func (o *StatusNotification) HasIntraPlmnApiRoot() bool {
-	if o != nil && !IsNil(o.IntraPlmnApiRoot) {
+	if o != nil && !isNil(o.IntraPlmnApiRoot) {
 		return true
 	}
 
@@ -343,28 +343,28 @@ func (o StatusNotification) MarshalJSON() ([]byte, error) {
 func (o StatusNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusInfo"] = o.StatusInfo
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !IsNil(o.ApnRateStatus) {
+	if !isNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
-	if !IsNil(o.TargetDnaiInfo) {
+	if !isNil(o.TargetDnaiInfo) {
 		toSerialize["targetDnaiInfo"] = o.TargetDnaiInfo
 	}
-	if !IsNil(o.OldPduSessionRef) {
+	if !isNil(o.OldPduSessionRef) {
 		toSerialize["oldPduSessionRef"] = o.OldPduSessionRef
 	}
-	if !IsNil(o.NewSmfId) {
+	if !isNil(o.NewSmfId) {
 		toSerialize["newSmfId"] = o.NewSmfId
 	}
-	if !IsNil(o.EpsPdnCnxInfo) {
+	if !isNil(o.EpsPdnCnxInfo) {
 		toSerialize["epsPdnCnxInfo"] = o.EpsPdnCnxInfo
 	}
-	if !IsNil(o.InterPlmnApiRoot) {
+	if !isNil(o.InterPlmnApiRoot) {
 		toSerialize["interPlmnApiRoot"] = o.InterPlmnApiRoot
 	}
-	if !IsNil(o.IntraPlmnApiRoot) {
+	if !isNil(o.IntraPlmnApiRoot) {
 		toSerialize["intraPlmnApiRoot"] = o.IntraPlmnApiRoot
 	}
 	return toSerialize, nil

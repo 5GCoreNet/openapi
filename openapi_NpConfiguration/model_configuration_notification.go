@@ -70,7 +70,7 @@ func (o *ConfigurationNotification) SetConfiguration(v string) {
 
 // GetConfigResults returns the ConfigResults field value if set, zero value otherwise.
 func (o *ConfigurationNotification) GetConfigResults() []ConfigResult {
-	if o == nil || IsNil(o.ConfigResults) {
+	if o == nil || isNil(o.ConfigResults) {
 		var ret []ConfigResult
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ConfigurationNotification) GetConfigResults() []ConfigResult {
 // GetConfigResultsOk returns a tuple with the ConfigResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigurationNotification) GetConfigResultsOk() ([]ConfigResult, bool) {
-	if o == nil || IsNil(o.ConfigResults) {
+	if o == nil || isNil(o.ConfigResults) {
 		return nil, false
 	}
 	return o.ConfigResults, true
@@ -88,7 +88,7 @@ func (o *ConfigurationNotification) GetConfigResultsOk() ([]ConfigResult, bool) 
 
 // HasConfigResults returns a boolean if a field has been set.
 func (o *ConfigurationNotification) HasConfigResults() bool {
-	if o != nil && !IsNil(o.ConfigResults) {
+	if o != nil && !isNil(o.ConfigResults) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *ConfigurationNotification) SetConfigResults(v []ConfigResult) {
 
 // GetAppliedParam returns the AppliedParam field value if set, zero value otherwise.
 func (o *ConfigurationNotification) GetAppliedParam() AppliedParameterConfiguration {
-	if o == nil || IsNil(o.AppliedParam) {
+	if o == nil || isNil(o.AppliedParam) {
 		var ret AppliedParameterConfiguration
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *ConfigurationNotification) GetAppliedParam() AppliedParameterConfigurat
 // GetAppliedParamOk returns a tuple with the AppliedParam field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigurationNotification) GetAppliedParamOk() (*AppliedParameterConfiguration, bool) {
-	if o == nil || IsNil(o.AppliedParam) {
+	if o == nil || isNil(o.AppliedParam) {
 		return nil, false
 	}
 	return o.AppliedParam, true
@@ -120,7 +120,7 @@ func (o *ConfigurationNotification) GetAppliedParamOk() (*AppliedParameterConfig
 
 // HasAppliedParam returns a boolean if a field has been set.
 func (o *ConfigurationNotification) HasAppliedParam() bool {
-	if o != nil && !IsNil(o.AppliedParam) {
+	if o != nil && !isNil(o.AppliedParam) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o ConfigurationNotification) MarshalJSON() ([]byte, error) {
 func (o ConfigurationNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["configuration"] = o.Configuration
-	if !IsNil(o.ConfigResults) {
+	if !isNil(o.ConfigResults) {
 		toSerialize["configResults"] = o.ConfigResults
 	}
-	if !IsNil(o.AppliedParam) {
+	if !isNil(o.AppliedParam) {
 		toSerialize["appliedParam"] = o.AppliedParam
 	}
 	return toSerialize, nil

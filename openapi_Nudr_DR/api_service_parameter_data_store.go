@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -136,34 +136,34 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 	localVarFormParams := url.Values{}
 
 	if r.serviceParamIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "service-param-ids", r.serviceParamIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "service-param-ids", r.serviceParamIds, "csv")
 	}
 	if r.dnns != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", r.dnns, "csv")
+		parameterAddToQuery(localVarQueryParams, "dnns", r.dnns, "csv")
 	}
 	if r.snssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.internalGroupIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
 	}
 	if r.supis != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supis", r.supis, "csv")
+		parameterAddToQuery(localVarQueryParams, "supis", r.supis, "csv")
 	}
 	if r.ueIpv4s != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-ipv4s", r.ueIpv4s, "csv")
+		parameterAddToQuery(localVarQueryParams, "ue-ipv4s", r.ueIpv4s, "csv")
 	}
 	if r.ueIpv6s != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-ipv6s", r.ueIpv6s, "csv")
+		parameterAddToQuery(localVarQueryParams, "ue-ipv6s", r.ueIpv6s, "csv")
 	}
 	if r.ueMacs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-macs", r.ueMacs, "csv")
+		parameterAddToQuery(localVarQueryParams, "ue-macs", r.ueMacs, "csv")
 	}
 	if r.anyUe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "any-ue", r.anyUe, "")
+		parameterAddToQuery(localVarQueryParams, "any-ue", r.anyUe, "")
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -192,9 +192,9 @@ func (a *ServiceParameterDataStoreApiService) ReadServiceParameterDataExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

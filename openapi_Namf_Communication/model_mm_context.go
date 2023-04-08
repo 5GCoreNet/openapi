@@ -94,7 +94,7 @@ func (o *MmContext) SetAccessType(v AccessType) {
 
 // GetNasSecurityMode returns the NasSecurityMode field value if set, zero value otherwise.
 func (o *MmContext) GetNasSecurityMode() NasSecurityMode {
-	if o == nil || IsNil(o.NasSecurityMode) {
+	if o == nil || isNil(o.NasSecurityMode) {
 		var ret NasSecurityMode
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *MmContext) GetNasSecurityMode() NasSecurityMode {
 // GetNasSecurityModeOk returns a tuple with the NasSecurityMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetNasSecurityModeOk() (*NasSecurityMode, bool) {
-	if o == nil || IsNil(o.NasSecurityMode) {
+	if o == nil || isNil(o.NasSecurityMode) {
 		return nil, false
 	}
 	return o.NasSecurityMode, true
@@ -112,7 +112,7 @@ func (o *MmContext) GetNasSecurityModeOk() (*NasSecurityMode, bool) {
 
 // HasNasSecurityMode returns a boolean if a field has been set.
 func (o *MmContext) HasNasSecurityMode() bool {
-	if o != nil && !IsNil(o.NasSecurityMode) {
+	if o != nil && !isNil(o.NasSecurityMode) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *MmContext) SetNasSecurityMode(v NasSecurityMode) {
 
 // GetEpsNasSecurityMode returns the EpsNasSecurityMode field value if set, zero value otherwise.
 func (o *MmContext) GetEpsNasSecurityMode() EpsNasSecurityMode {
-	if o == nil || IsNil(o.EpsNasSecurityMode) {
+	if o == nil || isNil(o.EpsNasSecurityMode) {
 		var ret EpsNasSecurityMode
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *MmContext) GetEpsNasSecurityMode() EpsNasSecurityMode {
 // GetEpsNasSecurityModeOk returns a tuple with the EpsNasSecurityMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetEpsNasSecurityModeOk() (*EpsNasSecurityMode, bool) {
-	if o == nil || IsNil(o.EpsNasSecurityMode) {
+	if o == nil || isNil(o.EpsNasSecurityMode) {
 		return nil, false
 	}
 	return o.EpsNasSecurityMode, true
@@ -144,7 +144,7 @@ func (o *MmContext) GetEpsNasSecurityModeOk() (*EpsNasSecurityMode, bool) {
 
 // HasEpsNasSecurityMode returns a boolean if a field has been set.
 func (o *MmContext) HasEpsNasSecurityMode() bool {
-	if o != nil && !IsNil(o.EpsNasSecurityMode) {
+	if o != nil && !isNil(o.EpsNasSecurityMode) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *MmContext) SetEpsNasSecurityMode(v EpsNasSecurityMode) {
 
 // GetNasDownlinkCount returns the NasDownlinkCount field value if set, zero value otherwise.
 func (o *MmContext) GetNasDownlinkCount() int32 {
-	if o == nil || IsNil(o.NasDownlinkCount) {
+	if o == nil || isNil(o.NasDownlinkCount) {
 		var ret int32
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *MmContext) GetNasDownlinkCount() int32 {
 // GetNasDownlinkCountOk returns a tuple with the NasDownlinkCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetNasDownlinkCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.NasDownlinkCount) {
+	if o == nil || isNil(o.NasDownlinkCount) {
 		return nil, false
 	}
 	return o.NasDownlinkCount, true
@@ -176,7 +176,7 @@ func (o *MmContext) GetNasDownlinkCountOk() (*int32, bool) {
 
 // HasNasDownlinkCount returns a boolean if a field has been set.
 func (o *MmContext) HasNasDownlinkCount() bool {
-	if o != nil && !IsNil(o.NasDownlinkCount) {
+	if o != nil && !isNil(o.NasDownlinkCount) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *MmContext) SetNasDownlinkCount(v int32) {
 
 // GetNasUplinkCount returns the NasUplinkCount field value if set, zero value otherwise.
 func (o *MmContext) GetNasUplinkCount() int32 {
-	if o == nil || IsNil(o.NasUplinkCount) {
+	if o == nil || isNil(o.NasUplinkCount) {
 		var ret int32
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *MmContext) GetNasUplinkCount() int32 {
 // GetNasUplinkCountOk returns a tuple with the NasUplinkCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetNasUplinkCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.NasUplinkCount) {
+	if o == nil || isNil(o.NasUplinkCount) {
 		return nil, false
 	}
 	return o.NasUplinkCount, true
@@ -208,7 +208,7 @@ func (o *MmContext) GetNasUplinkCountOk() (*int32, bool) {
 
 // HasNasUplinkCount returns a boolean if a field has been set.
 func (o *MmContext) HasNasUplinkCount() bool {
-	if o != nil && !IsNil(o.NasUplinkCount) {
+	if o != nil && !isNil(o.NasUplinkCount) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *MmContext) SetNasUplinkCount(v int32) {
 
 // GetUeSecurityCapability returns the UeSecurityCapability field value if set, zero value otherwise.
 func (o *MmContext) GetUeSecurityCapability() string {
-	if o == nil || IsNil(o.UeSecurityCapability) {
+	if o == nil || isNil(o.UeSecurityCapability) {
 		var ret string
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *MmContext) GetUeSecurityCapability() string {
 // GetUeSecurityCapabilityOk returns a tuple with the UeSecurityCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetUeSecurityCapabilityOk() (*string, bool) {
-	if o == nil || IsNil(o.UeSecurityCapability) {
+	if o == nil || isNil(o.UeSecurityCapability) {
 		return nil, false
 	}
 	return o.UeSecurityCapability, true
@@ -240,7 +240,7 @@ func (o *MmContext) GetUeSecurityCapabilityOk() (*string, bool) {
 
 // HasUeSecurityCapability returns a boolean if a field has been set.
 func (o *MmContext) HasUeSecurityCapability() bool {
-	if o != nil && !IsNil(o.UeSecurityCapability) {
+	if o != nil && !isNil(o.UeSecurityCapability) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *MmContext) SetUeSecurityCapability(v string) {
 
 // GetS1UeNetworkCapability returns the S1UeNetworkCapability field value if set, zero value otherwise.
 func (o *MmContext) GetS1UeNetworkCapability() string {
-	if o == nil || IsNil(o.S1UeNetworkCapability) {
+	if o == nil || isNil(o.S1UeNetworkCapability) {
 		var ret string
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *MmContext) GetS1UeNetworkCapability() string {
 // GetS1UeNetworkCapabilityOk returns a tuple with the S1UeNetworkCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetS1UeNetworkCapabilityOk() (*string, bool) {
-	if o == nil || IsNil(o.S1UeNetworkCapability) {
+	if o == nil || isNil(o.S1UeNetworkCapability) {
 		return nil, false
 	}
 	return o.S1UeNetworkCapability, true
@@ -272,7 +272,7 @@ func (o *MmContext) GetS1UeNetworkCapabilityOk() (*string, bool) {
 
 // HasS1UeNetworkCapability returns a boolean if a field has been set.
 func (o *MmContext) HasS1UeNetworkCapability() bool {
-	if o != nil && !IsNil(o.S1UeNetworkCapability) {
+	if o != nil && !isNil(o.S1UeNetworkCapability) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *MmContext) SetS1UeNetworkCapability(v string) {
 
 // GetAllowedNssai returns the AllowedNssai field value if set, zero value otherwise.
 func (o *MmContext) GetAllowedNssai() []Snssai {
-	if o == nil || IsNil(o.AllowedNssai) {
+	if o == nil || isNil(o.AllowedNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *MmContext) GetAllowedNssai() []Snssai {
 // GetAllowedNssaiOk returns a tuple with the AllowedNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetAllowedNssaiOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.AllowedNssai) {
+	if o == nil || isNil(o.AllowedNssai) {
 		return nil, false
 	}
 	return o.AllowedNssai, true
@@ -304,7 +304,7 @@ func (o *MmContext) GetAllowedNssaiOk() ([]Snssai, bool) {
 
 // HasAllowedNssai returns a boolean if a field has been set.
 func (o *MmContext) HasAllowedNssai() bool {
-	if o != nil && !IsNil(o.AllowedNssai) {
+	if o != nil && !isNil(o.AllowedNssai) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *MmContext) SetAllowedNssai(v []Snssai) {
 
 // GetNssaiMappingList returns the NssaiMappingList field value if set, zero value otherwise.
 func (o *MmContext) GetNssaiMappingList() []NssaiMapping {
-	if o == nil || IsNil(o.NssaiMappingList) {
+	if o == nil || isNil(o.NssaiMappingList) {
 		var ret []NssaiMapping
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *MmContext) GetNssaiMappingList() []NssaiMapping {
 // GetNssaiMappingListOk returns a tuple with the NssaiMappingList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetNssaiMappingListOk() ([]NssaiMapping, bool) {
-	if o == nil || IsNil(o.NssaiMappingList) {
+	if o == nil || isNil(o.NssaiMappingList) {
 		return nil, false
 	}
 	return o.NssaiMappingList, true
@@ -336,7 +336,7 @@ func (o *MmContext) GetNssaiMappingListOk() ([]NssaiMapping, bool) {
 
 // HasNssaiMappingList returns a boolean if a field has been set.
 func (o *MmContext) HasNssaiMappingList() bool {
-	if o != nil && !IsNil(o.NssaiMappingList) {
+	if o != nil && !isNil(o.NssaiMappingList) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *MmContext) SetNssaiMappingList(v []NssaiMapping) {
 
 // GetAllowedHomeNssai returns the AllowedHomeNssai field value if set, zero value otherwise.
 func (o *MmContext) GetAllowedHomeNssai() []Snssai {
-	if o == nil || IsNil(o.AllowedHomeNssai) {
+	if o == nil || isNil(o.AllowedHomeNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *MmContext) GetAllowedHomeNssai() []Snssai {
 // GetAllowedHomeNssaiOk returns a tuple with the AllowedHomeNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetAllowedHomeNssaiOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.AllowedHomeNssai) {
+	if o == nil || isNil(o.AllowedHomeNssai) {
 		return nil, false
 	}
 	return o.AllowedHomeNssai, true
@@ -368,7 +368,7 @@ func (o *MmContext) GetAllowedHomeNssaiOk() ([]Snssai, bool) {
 
 // HasAllowedHomeNssai returns a boolean if a field has been set.
 func (o *MmContext) HasAllowedHomeNssai() bool {
-	if o != nil && !IsNil(o.AllowedHomeNssai) {
+	if o != nil && !isNil(o.AllowedHomeNssai) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *MmContext) SetAllowedHomeNssai(v []Snssai) {
 
 // GetNsInstanceList returns the NsInstanceList field value if set, zero value otherwise.
 func (o *MmContext) GetNsInstanceList() []string {
-	if o == nil || IsNil(o.NsInstanceList) {
+	if o == nil || isNil(o.NsInstanceList) {
 		var ret []string
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *MmContext) GetNsInstanceList() []string {
 // GetNsInstanceListOk returns a tuple with the NsInstanceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetNsInstanceListOk() ([]string, bool) {
-	if o == nil || IsNil(o.NsInstanceList) {
+	if o == nil || isNil(o.NsInstanceList) {
 		return nil, false
 	}
 	return o.NsInstanceList, true
@@ -400,7 +400,7 @@ func (o *MmContext) GetNsInstanceListOk() ([]string, bool) {
 
 // HasNsInstanceList returns a boolean if a field has been set.
 func (o *MmContext) HasNsInstanceList() bool {
-	if o != nil && !IsNil(o.NsInstanceList) {
+	if o != nil && !isNil(o.NsInstanceList) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *MmContext) SetNsInstanceList(v []string) {
 
 // GetExpectedUEbehavior returns the ExpectedUEbehavior field value if set, zero value otherwise.
 func (o *MmContext) GetExpectedUEbehavior() ExpectedUeBehavior {
-	if o == nil || IsNil(o.ExpectedUEbehavior) {
+	if o == nil || isNil(o.ExpectedUEbehavior) {
 		var ret ExpectedUeBehavior
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *MmContext) GetExpectedUEbehavior() ExpectedUeBehavior {
 // GetExpectedUEbehaviorOk returns a tuple with the ExpectedUEbehavior field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetExpectedUEbehaviorOk() (*ExpectedUeBehavior, bool) {
-	if o == nil || IsNil(o.ExpectedUEbehavior) {
+	if o == nil || isNil(o.ExpectedUEbehavior) {
 		return nil, false
 	}
 	return o.ExpectedUEbehavior, true
@@ -432,7 +432,7 @@ func (o *MmContext) GetExpectedUEbehaviorOk() (*ExpectedUeBehavior, bool) {
 
 // HasExpectedUEbehavior returns a boolean if a field has been set.
 func (o *MmContext) HasExpectedUEbehavior() bool {
-	if o != nil && !IsNil(o.ExpectedUEbehavior) {
+	if o != nil && !isNil(o.ExpectedUEbehavior) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *MmContext) SetExpectedUEbehavior(v ExpectedUeBehavior) {
 
 // GetUeDifferentiationInfo returns the UeDifferentiationInfo field value if set, zero value otherwise.
 func (o *MmContext) GetUeDifferentiationInfo() UeDifferentiationInfo {
-	if o == nil || IsNil(o.UeDifferentiationInfo) {
+	if o == nil || isNil(o.UeDifferentiationInfo) {
 		var ret UeDifferentiationInfo
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *MmContext) GetUeDifferentiationInfo() UeDifferentiationInfo {
 // GetUeDifferentiationInfoOk returns a tuple with the UeDifferentiationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetUeDifferentiationInfoOk() (*UeDifferentiationInfo, bool) {
-	if o == nil || IsNil(o.UeDifferentiationInfo) {
+	if o == nil || isNil(o.UeDifferentiationInfo) {
 		return nil, false
 	}
 	return o.UeDifferentiationInfo, true
@@ -464,7 +464,7 @@ func (o *MmContext) GetUeDifferentiationInfoOk() (*UeDifferentiationInfo, bool) 
 
 // HasUeDifferentiationInfo returns a boolean if a field has been set.
 func (o *MmContext) HasUeDifferentiationInfo() bool {
-	if o != nil && !IsNil(o.UeDifferentiationInfo) {
+	if o != nil && !isNil(o.UeDifferentiationInfo) {
 		return true
 	}
 
@@ -478,7 +478,7 @@ func (o *MmContext) SetUeDifferentiationInfo(v UeDifferentiationInfo) {
 
 // GetPlmnAssiUeRadioCapId returns the PlmnAssiUeRadioCapId field value if set, zero value otherwise.
 func (o *MmContext) GetPlmnAssiUeRadioCapId() string {
-	if o == nil || IsNil(o.PlmnAssiUeRadioCapId) {
+	if o == nil || isNil(o.PlmnAssiUeRadioCapId) {
 		var ret string
 		return ret
 	}
@@ -488,7 +488,7 @@ func (o *MmContext) GetPlmnAssiUeRadioCapId() string {
 // GetPlmnAssiUeRadioCapIdOk returns a tuple with the PlmnAssiUeRadioCapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetPlmnAssiUeRadioCapIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PlmnAssiUeRadioCapId) {
+	if o == nil || isNil(o.PlmnAssiUeRadioCapId) {
 		return nil, false
 	}
 	return o.PlmnAssiUeRadioCapId, true
@@ -496,7 +496,7 @@ func (o *MmContext) GetPlmnAssiUeRadioCapIdOk() (*string, bool) {
 
 // HasPlmnAssiUeRadioCapId returns a boolean if a field has been set.
 func (o *MmContext) HasPlmnAssiUeRadioCapId() bool {
-	if o != nil && !IsNil(o.PlmnAssiUeRadioCapId) {
+	if o != nil && !isNil(o.PlmnAssiUeRadioCapId) {
 		return true
 	}
 
@@ -510,7 +510,7 @@ func (o *MmContext) SetPlmnAssiUeRadioCapId(v string) {
 
 // GetManAssiUeRadioCapId returns the ManAssiUeRadioCapId field value if set, zero value otherwise.
 func (o *MmContext) GetManAssiUeRadioCapId() string {
-	if o == nil || IsNil(o.ManAssiUeRadioCapId) {
+	if o == nil || isNil(o.ManAssiUeRadioCapId) {
 		var ret string
 		return ret
 	}
@@ -520,7 +520,7 @@ func (o *MmContext) GetManAssiUeRadioCapId() string {
 // GetManAssiUeRadioCapIdOk returns a tuple with the ManAssiUeRadioCapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetManAssiUeRadioCapIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ManAssiUeRadioCapId) {
+	if o == nil || isNil(o.ManAssiUeRadioCapId) {
 		return nil, false
 	}
 	return o.ManAssiUeRadioCapId, true
@@ -528,7 +528,7 @@ func (o *MmContext) GetManAssiUeRadioCapIdOk() (*string, bool) {
 
 // HasManAssiUeRadioCapId returns a boolean if a field has been set.
 func (o *MmContext) HasManAssiUeRadioCapId() bool {
-	if o != nil && !IsNil(o.ManAssiUeRadioCapId) {
+	if o != nil && !isNil(o.ManAssiUeRadioCapId) {
 		return true
 	}
 
@@ -542,7 +542,7 @@ func (o *MmContext) SetManAssiUeRadioCapId(v string) {
 
 // GetUcmfDicEntryId returns the UcmfDicEntryId field value if set, zero value otherwise.
 func (o *MmContext) GetUcmfDicEntryId() string {
-	if o == nil || IsNil(o.UcmfDicEntryId) {
+	if o == nil || isNil(o.UcmfDicEntryId) {
 		var ret string
 		return ret
 	}
@@ -552,7 +552,7 @@ func (o *MmContext) GetUcmfDicEntryId() string {
 // GetUcmfDicEntryIdOk returns a tuple with the UcmfDicEntryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetUcmfDicEntryIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UcmfDicEntryId) {
+	if o == nil || isNil(o.UcmfDicEntryId) {
 		return nil, false
 	}
 	return o.UcmfDicEntryId, true
@@ -560,7 +560,7 @@ func (o *MmContext) GetUcmfDicEntryIdOk() (*string, bool) {
 
 // HasUcmfDicEntryId returns a boolean if a field has been set.
 func (o *MmContext) HasUcmfDicEntryId() bool {
-	if o != nil && !IsNil(o.UcmfDicEntryId) {
+	if o != nil && !isNil(o.UcmfDicEntryId) {
 		return true
 	}
 
@@ -574,7 +574,7 @@ func (o *MmContext) SetUcmfDicEntryId(v string) {
 
 // GetN3IwfId returns the N3IwfId field value if set, zero value otherwise.
 func (o *MmContext) GetN3IwfId() GlobalRanNodeId {
-	if o == nil || IsNil(o.N3IwfId) {
+	if o == nil || isNil(o.N3IwfId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -584,7 +584,7 @@ func (o *MmContext) GetN3IwfId() GlobalRanNodeId {
 // GetN3IwfIdOk returns a tuple with the N3IwfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetN3IwfIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.N3IwfId) {
+	if o == nil || isNil(o.N3IwfId) {
 		return nil, false
 	}
 	return o.N3IwfId, true
@@ -592,7 +592,7 @@ func (o *MmContext) GetN3IwfIdOk() (*GlobalRanNodeId, bool) {
 
 // HasN3IwfId returns a boolean if a field has been set.
 func (o *MmContext) HasN3IwfId() bool {
-	if o != nil && !IsNil(o.N3IwfId) {
+	if o != nil && !isNil(o.N3IwfId) {
 		return true
 	}
 
@@ -606,7 +606,7 @@ func (o *MmContext) SetN3IwfId(v GlobalRanNodeId) {
 
 // GetWagfId returns the WagfId field value if set, zero value otherwise.
 func (o *MmContext) GetWagfId() GlobalRanNodeId {
-	if o == nil || IsNil(o.WagfId) {
+	if o == nil || isNil(o.WagfId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -616,7 +616,7 @@ func (o *MmContext) GetWagfId() GlobalRanNodeId {
 // GetWagfIdOk returns a tuple with the WagfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetWagfIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.WagfId) {
+	if o == nil || isNil(o.WagfId) {
 		return nil, false
 	}
 	return o.WagfId, true
@@ -624,7 +624,7 @@ func (o *MmContext) GetWagfIdOk() (*GlobalRanNodeId, bool) {
 
 // HasWagfId returns a boolean if a field has been set.
 func (o *MmContext) HasWagfId() bool {
-	if o != nil && !IsNil(o.WagfId) {
+	if o != nil && !isNil(o.WagfId) {
 		return true
 	}
 
@@ -638,7 +638,7 @@ func (o *MmContext) SetWagfId(v GlobalRanNodeId) {
 
 // GetTngfId returns the TngfId field value if set, zero value otherwise.
 func (o *MmContext) GetTngfId() GlobalRanNodeId {
-	if o == nil || IsNil(o.TngfId) {
+	if o == nil || isNil(o.TngfId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -648,7 +648,7 @@ func (o *MmContext) GetTngfId() GlobalRanNodeId {
 // GetTngfIdOk returns a tuple with the TngfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetTngfIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.TngfId) {
+	if o == nil || isNil(o.TngfId) {
 		return nil, false
 	}
 	return o.TngfId, true
@@ -656,7 +656,7 @@ func (o *MmContext) GetTngfIdOk() (*GlobalRanNodeId, bool) {
 
 // HasTngfId returns a boolean if a field has been set.
 func (o *MmContext) HasTngfId() bool {
-	if o != nil && !IsNil(o.TngfId) {
+	if o != nil && !isNil(o.TngfId) {
 		return true
 	}
 
@@ -670,7 +670,7 @@ func (o *MmContext) SetTngfId(v GlobalRanNodeId) {
 
 // GetAnN2ApId returns the AnN2ApId field value if set, zero value otherwise.
 func (o *MmContext) GetAnN2ApId() int32 {
-	if o == nil || IsNil(o.AnN2ApId) {
+	if o == nil || isNil(o.AnN2ApId) {
 		var ret int32
 		return ret
 	}
@@ -680,7 +680,7 @@ func (o *MmContext) GetAnN2ApId() int32 {
 // GetAnN2ApIdOk returns a tuple with the AnN2ApId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetAnN2ApIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AnN2ApId) {
+	if o == nil || isNil(o.AnN2ApId) {
 		return nil, false
 	}
 	return o.AnN2ApId, true
@@ -688,7 +688,7 @@ func (o *MmContext) GetAnN2ApIdOk() (*int32, bool) {
 
 // HasAnN2ApId returns a boolean if a field has been set.
 func (o *MmContext) HasAnN2ApId() bool {
-	if o != nil && !IsNil(o.AnN2ApId) {
+	if o != nil && !isNil(o.AnN2ApId) {
 		return true
 	}
 
@@ -702,7 +702,7 @@ func (o *MmContext) SetAnN2ApId(v int32) {
 
 // GetNssaaStatusList returns the NssaaStatusList field value if set, zero value otherwise.
 func (o *MmContext) GetNssaaStatusList() []NssaaStatus {
-	if o == nil || IsNil(o.NssaaStatusList) {
+	if o == nil || isNil(o.NssaaStatusList) {
 		var ret []NssaaStatus
 		return ret
 	}
@@ -712,7 +712,7 @@ func (o *MmContext) GetNssaaStatusList() []NssaaStatus {
 // GetNssaaStatusListOk returns a tuple with the NssaaStatusList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetNssaaStatusListOk() ([]NssaaStatus, bool) {
-	if o == nil || IsNil(o.NssaaStatusList) {
+	if o == nil || isNil(o.NssaaStatusList) {
 		return nil, false
 	}
 	return o.NssaaStatusList, true
@@ -720,7 +720,7 @@ func (o *MmContext) GetNssaaStatusListOk() ([]NssaaStatus, bool) {
 
 // HasNssaaStatusList returns a boolean if a field has been set.
 func (o *MmContext) HasNssaaStatusList() bool {
-	if o != nil && !IsNil(o.NssaaStatusList) {
+	if o != nil && !isNil(o.NssaaStatusList) {
 		return true
 	}
 
@@ -734,7 +734,7 @@ func (o *MmContext) SetNssaaStatusList(v []NssaaStatus) {
 
 // GetPendingNssaiMappingList returns the PendingNssaiMappingList field value if set, zero value otherwise.
 func (o *MmContext) GetPendingNssaiMappingList() []NssaiMapping {
-	if o == nil || IsNil(o.PendingNssaiMappingList) {
+	if o == nil || isNil(o.PendingNssaiMappingList) {
 		var ret []NssaiMapping
 		return ret
 	}
@@ -744,7 +744,7 @@ func (o *MmContext) GetPendingNssaiMappingList() []NssaiMapping {
 // GetPendingNssaiMappingListOk returns a tuple with the PendingNssaiMappingList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetPendingNssaiMappingListOk() ([]NssaiMapping, bool) {
-	if o == nil || IsNil(o.PendingNssaiMappingList) {
+	if o == nil || isNil(o.PendingNssaiMappingList) {
 		return nil, false
 	}
 	return o.PendingNssaiMappingList, true
@@ -752,7 +752,7 @@ func (o *MmContext) GetPendingNssaiMappingListOk() ([]NssaiMapping, bool) {
 
 // HasPendingNssaiMappingList returns a boolean if a field has been set.
 func (o *MmContext) HasPendingNssaiMappingList() bool {
-	if o != nil && !IsNil(o.PendingNssaiMappingList) {
+	if o != nil && !isNil(o.PendingNssaiMappingList) {
 		return true
 	}
 
@@ -766,7 +766,7 @@ func (o *MmContext) SetPendingNssaiMappingList(v []NssaiMapping) {
 
 // GetUuaaMmStatus returns the UuaaMmStatus field value if set, zero value otherwise.
 func (o *MmContext) GetUuaaMmStatus() UuaaMmStatus {
-	if o == nil || IsNil(o.UuaaMmStatus) {
+	if o == nil || isNil(o.UuaaMmStatus) {
 		var ret UuaaMmStatus
 		return ret
 	}
@@ -776,7 +776,7 @@ func (o *MmContext) GetUuaaMmStatus() UuaaMmStatus {
 // GetUuaaMmStatusOk returns a tuple with the UuaaMmStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmContext) GetUuaaMmStatusOk() (*UuaaMmStatus, bool) {
-	if o == nil || IsNil(o.UuaaMmStatus) {
+	if o == nil || isNil(o.UuaaMmStatus) {
 		return nil, false
 	}
 	return o.UuaaMmStatus, true
@@ -784,7 +784,7 @@ func (o *MmContext) GetUuaaMmStatusOk() (*UuaaMmStatus, bool) {
 
 // HasUuaaMmStatus returns a boolean if a field has been set.
 func (o *MmContext) HasUuaaMmStatus() bool {
-	if o != nil && !IsNil(o.UuaaMmStatus) {
+	if o != nil && !isNil(o.UuaaMmStatus) {
 		return true
 	}
 
@@ -807,70 +807,70 @@ func (o MmContext) MarshalJSON() ([]byte, error) {
 func (o MmContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["accessType"] = o.AccessType
-	if !IsNil(o.NasSecurityMode) {
+	if !isNil(o.NasSecurityMode) {
 		toSerialize["nasSecurityMode"] = o.NasSecurityMode
 	}
-	if !IsNil(o.EpsNasSecurityMode) {
+	if !isNil(o.EpsNasSecurityMode) {
 		toSerialize["epsNasSecurityMode"] = o.EpsNasSecurityMode
 	}
-	if !IsNil(o.NasDownlinkCount) {
+	if !isNil(o.NasDownlinkCount) {
 		toSerialize["nasDownlinkCount"] = o.NasDownlinkCount
 	}
-	if !IsNil(o.NasUplinkCount) {
+	if !isNil(o.NasUplinkCount) {
 		toSerialize["nasUplinkCount"] = o.NasUplinkCount
 	}
-	if !IsNil(o.UeSecurityCapability) {
+	if !isNil(o.UeSecurityCapability) {
 		toSerialize["ueSecurityCapability"] = o.UeSecurityCapability
 	}
-	if !IsNil(o.S1UeNetworkCapability) {
+	if !isNil(o.S1UeNetworkCapability) {
 		toSerialize["s1UeNetworkCapability"] = o.S1UeNetworkCapability
 	}
-	if !IsNil(o.AllowedNssai) {
+	if !isNil(o.AllowedNssai) {
 		toSerialize["allowedNssai"] = o.AllowedNssai
 	}
-	if !IsNil(o.NssaiMappingList) {
+	if !isNil(o.NssaiMappingList) {
 		toSerialize["nssaiMappingList"] = o.NssaiMappingList
 	}
-	if !IsNil(o.AllowedHomeNssai) {
+	if !isNil(o.AllowedHomeNssai) {
 		toSerialize["allowedHomeNssai"] = o.AllowedHomeNssai
 	}
-	if !IsNil(o.NsInstanceList) {
+	if !isNil(o.NsInstanceList) {
 		toSerialize["nsInstanceList"] = o.NsInstanceList
 	}
-	if !IsNil(o.ExpectedUEbehavior) {
+	if !isNil(o.ExpectedUEbehavior) {
 		toSerialize["expectedUEbehavior"] = o.ExpectedUEbehavior
 	}
-	if !IsNil(o.UeDifferentiationInfo) {
+	if !isNil(o.UeDifferentiationInfo) {
 		toSerialize["ueDifferentiationInfo"] = o.UeDifferentiationInfo
 	}
-	if !IsNil(o.PlmnAssiUeRadioCapId) {
+	if !isNil(o.PlmnAssiUeRadioCapId) {
 		toSerialize["plmnAssiUeRadioCapId"] = o.PlmnAssiUeRadioCapId
 	}
-	if !IsNil(o.ManAssiUeRadioCapId) {
+	if !isNil(o.ManAssiUeRadioCapId) {
 		toSerialize["manAssiUeRadioCapId"] = o.ManAssiUeRadioCapId
 	}
-	if !IsNil(o.UcmfDicEntryId) {
+	if !isNil(o.UcmfDicEntryId) {
 		toSerialize["ucmfDicEntryId"] = o.UcmfDicEntryId
 	}
-	if !IsNil(o.N3IwfId) {
+	if !isNil(o.N3IwfId) {
 		toSerialize["n3IwfId"] = o.N3IwfId
 	}
-	if !IsNil(o.WagfId) {
+	if !isNil(o.WagfId) {
 		toSerialize["wagfId"] = o.WagfId
 	}
-	if !IsNil(o.TngfId) {
+	if !isNil(o.TngfId) {
 		toSerialize["tngfId"] = o.TngfId
 	}
-	if !IsNil(o.AnN2ApId) {
+	if !isNil(o.AnN2ApId) {
 		toSerialize["anN2ApId"] = o.AnN2ApId
 	}
-	if !IsNil(o.NssaaStatusList) {
+	if !isNil(o.NssaaStatusList) {
 		toSerialize["nssaaStatusList"] = o.NssaaStatusList
 	}
-	if !IsNil(o.PendingNssaiMappingList) {
+	if !isNil(o.PendingNssaiMappingList) {
 		toSerialize["pendingNssaiMappingList"] = o.PendingNssaiMappingList
 	}
-	if !IsNil(o.UuaaMmStatus) {
+	if !isNil(o.UuaaMmStatus) {
 		toSerialize["uuaaMmStatus"] = o.UuaaMmStatus
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewMbsPolicyCtxtDataUpdateWithDefaults() *MbsPolicyCtxtDataUpdate {
 
 // GetMbsServInfo returns the MbsServInfo field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtDataUpdate) GetMbsServInfo() MbsServiceInfo {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		var ret MbsServiceInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MbsPolicyCtxtDataUpdate) GetMbsServInfo() MbsServiceInfo {
 // GetMbsServInfoOk returns a tuple with the MbsServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtDataUpdate) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		return nil, false
 	}
 	return o.MbsServInfo, true
@@ -61,7 +61,7 @@ func (o *MbsPolicyCtxtDataUpdate) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
 
 // HasMbsServInfo returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtDataUpdate) HasMbsServInfo() bool {
-	if o != nil && !IsNil(o.MbsServInfo) {
+	if o != nil && !isNil(o.MbsServInfo) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MbsPolicyCtxtDataUpdate) SetMbsServInfo(v MbsServiceInfo) {
 
 // GetMbsPcrts returns the MbsPcrts field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtDataUpdate) GetMbsPcrts() []MbsPcrt {
-	if o == nil || IsNil(o.MbsPcrts) {
+	if o == nil || isNil(o.MbsPcrts) {
 		var ret []MbsPcrt
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MbsPolicyCtxtDataUpdate) GetMbsPcrts() []MbsPcrt {
 // GetMbsPcrtsOk returns a tuple with the MbsPcrts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtDataUpdate) GetMbsPcrtsOk() ([]MbsPcrt, bool) {
-	if o == nil || IsNil(o.MbsPcrts) {
+	if o == nil || isNil(o.MbsPcrts) {
 		return nil, false
 	}
 	return o.MbsPcrts, true
@@ -93,7 +93,7 @@ func (o *MbsPolicyCtxtDataUpdate) GetMbsPcrtsOk() ([]MbsPcrt, bool) {
 
 // HasMbsPcrts returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtDataUpdate) HasMbsPcrts() bool {
-	if o != nil && !IsNil(o.MbsPcrts) {
+	if o != nil && !isNil(o.MbsPcrts) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MbsPolicyCtxtDataUpdate) SetMbsPcrts(v []MbsPcrt) {
 
 // GetMbsErrorReport returns the MbsErrorReport field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtDataUpdate) GetMbsErrorReport() MbsErrorReport {
-	if o == nil || IsNil(o.MbsErrorReport) {
+	if o == nil || isNil(o.MbsErrorReport) {
 		var ret MbsErrorReport
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MbsPolicyCtxtDataUpdate) GetMbsErrorReport() MbsErrorReport {
 // GetMbsErrorReportOk returns a tuple with the MbsErrorReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtDataUpdate) GetMbsErrorReportOk() (*MbsErrorReport, bool) {
-	if o == nil || IsNil(o.MbsErrorReport) {
+	if o == nil || isNil(o.MbsErrorReport) {
 		return nil, false
 	}
 	return o.MbsErrorReport, true
@@ -125,7 +125,7 @@ func (o *MbsPolicyCtxtDataUpdate) GetMbsErrorReportOk() (*MbsErrorReport, bool) 
 
 // HasMbsErrorReport returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtDataUpdate) HasMbsErrorReport() bool {
-	if o != nil && !IsNil(o.MbsErrorReport) {
+	if o != nil && !isNil(o.MbsErrorReport) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o MbsPolicyCtxtDataUpdate) MarshalJSON() ([]byte, error) {
 
 func (o MbsPolicyCtxtDataUpdate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsServInfo) {
+	if !isNil(o.MbsServInfo) {
 		toSerialize["mbsServInfo"] = o.MbsServInfo
 	}
-	if !IsNil(o.MbsPcrts) {
+	if !isNil(o.MbsPcrts) {
 		toSerialize["mbsPcrts"] = o.MbsPcrts
 	}
-	if !IsNil(o.MbsErrorReport) {
+	if !isNil(o.MbsErrorReport) {
 		toSerialize["mbsErrorReport"] = o.MbsErrorReport
 	}
 	return toSerialize, nil

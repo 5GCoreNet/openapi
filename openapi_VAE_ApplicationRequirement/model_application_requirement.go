@@ -41,7 +41,7 @@ func NewApplicationRequirementWithDefaults() *ApplicationRequirement {
 
 // GetServiceLevel returns the ServiceLevel field value if set, zero value otherwise.
 func (o *ApplicationRequirement) GetServiceLevel() ServiceLevel {
-	if o == nil || IsNil(o.ServiceLevel) {
+	if o == nil || isNil(o.ServiceLevel) {
 		var ret ServiceLevel
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ApplicationRequirement) GetServiceLevel() ServiceLevel {
 // GetServiceLevelOk returns a tuple with the ServiceLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirement) GetServiceLevelOk() (*ServiceLevel, bool) {
-	if o == nil || IsNil(o.ServiceLevel) {
+	if o == nil || isNil(o.ServiceLevel) {
 		return nil, false
 	}
 	return o.ServiceLevel, true
@@ -59,7 +59,7 @@ func (o *ApplicationRequirement) GetServiceLevelOk() (*ServiceLevel, bool) {
 
 // HasServiceLevel returns a boolean if a field has been set.
 func (o *ApplicationRequirement) HasServiceLevel() bool {
-	if o != nil && !IsNil(o.ServiceLevel) {
+	if o != nil && !isNil(o.ServiceLevel) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ApplicationRequirement) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceLevel) {
+	if !isNil(o.ServiceLevel) {
 		toSerialize["serviceLevel"] = o.ServiceLevel
 	}
 	return toSerialize, nil

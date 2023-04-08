@@ -17,23 +17,37 @@ import (
 
 // EventConsumerType The type of event consumer.
 type EventConsumerType struct {
-	string *string
+	EventConsumerTypeAnyOf *EventConsumerTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EventConsumerType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into EventConsumerTypeAnyOf
+	err = json.Unmarshal(data, &dst.EventConsumerTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonEventConsumerTypeAnyOf, _ := json.Marshal(dst.EventConsumerTypeAnyOf)
+		if string(jsonEventConsumerTypeAnyOf) == "{}" { // empty struct
+			dst.EventConsumerTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.EventConsumerTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.EventConsumerTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(EventConsumerType)")
@@ -41,8 +55,12 @@ func (dst *EventConsumerType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EventConsumerType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.EventConsumerTypeAnyOf != nil {
+		return json.Marshal(&src.EventConsumerTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -41,7 +41,7 @@ func NewMeContextSingleAllOfWithDefaults() *MeContextSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *MeContextSingleAllOf) GetAttributes() MeContextSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret MeContextSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MeContextSingleAllOf) GetAttributes() MeContextSingleAllOfAttributes {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeContextSingleAllOf) GetAttributesOk() (*MeContextSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *MeContextSingleAllOf) GetAttributesOk() (*MeContextSingleAllOfAttribute
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MeContextSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MeContextSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MeContextSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

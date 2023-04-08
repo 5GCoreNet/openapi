@@ -42,7 +42,7 @@ func NewInvocationResultWithDefaults() *InvocationResult {
 
 // GetError returns the Error field value if set, zero value otherwise.
 func (o *InvocationResult) GetError() ProblemDetails {
-	if o == nil || IsNil(o.Error) {
+	if o == nil || isNil(o.Error) {
 		var ret ProblemDetails
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *InvocationResult) GetError() ProblemDetails {
 // GetErrorOk returns a tuple with the Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InvocationResult) GetErrorOk() (*ProblemDetails, bool) {
-	if o == nil || IsNil(o.Error) {
+	if o == nil || isNil(o.Error) {
 		return nil, false
 	}
 	return o.Error, true
@@ -60,7 +60,7 @@ func (o *InvocationResult) GetErrorOk() (*ProblemDetails, bool) {
 
 // HasError returns a boolean if a field has been set.
 func (o *InvocationResult) HasError() bool {
-	if o != nil && !IsNil(o.Error) {
+	if o != nil && !isNil(o.Error) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *InvocationResult) SetError(v ProblemDetails) {
 
 // GetFailureHandling returns the FailureHandling field value if set, zero value otherwise.
 func (o *InvocationResult) GetFailureHandling() FailureHandling {
-	if o == nil || IsNil(o.FailureHandling) {
+	if o == nil || isNil(o.FailureHandling) {
 		var ret FailureHandling
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *InvocationResult) GetFailureHandling() FailureHandling {
 // GetFailureHandlingOk returns a tuple with the FailureHandling field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InvocationResult) GetFailureHandlingOk() (*FailureHandling, bool) {
-	if o == nil || IsNil(o.FailureHandling) {
+	if o == nil || isNil(o.FailureHandling) {
 		return nil, false
 	}
 	return o.FailureHandling, true
@@ -92,7 +92,7 @@ func (o *InvocationResult) GetFailureHandlingOk() (*FailureHandling, bool) {
 
 // HasFailureHandling returns a boolean if a field has been set.
 func (o *InvocationResult) HasFailureHandling() bool {
-	if o != nil && !IsNil(o.FailureHandling) {
+	if o != nil && !isNil(o.FailureHandling) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o InvocationResult) MarshalJSON() ([]byte, error) {
 
 func (o InvocationResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Error) {
+	if !isNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
-	if !IsNil(o.FailureHandling) {
+	if !isNil(o.FailureHandling) {
 		toSerialize["failureHandling"] = o.FailureHandling
 	}
 	return toSerialize, nil

@@ -53,7 +53,7 @@ func NewAmInfluSubPatchWithDefaults() *AmInfluSubPatch {
 
 // GetHighThruInd returns the HighThruInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluSubPatch) GetHighThruInd() bool {
-	if o == nil || IsNil(o.HighThruInd.Get()) {
+	if o == nil || isNil(o.HighThruInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AmInfluSubPatch) GetGeoAreas() []GeographicArea {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetGeoAreasOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.GeoAreas) {
+	if o == nil || isNil(o.GeoAreas) {
 		return nil, false
 	}
 	return o.GeoAreas, true
@@ -114,7 +114,7 @@ func (o *AmInfluSubPatch) GetGeoAreasOk() ([]GeographicArea, bool) {
 
 // HasGeoAreas returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasGeoAreas() bool {
-	if o != nil && IsNil(o.GeoAreas) {
+	if o != nil && isNil(o.GeoAreas) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmInfluSubPatch) SetGeoAreas(v []GeographicArea) {
 
 // GetPolicyDuration returns the PolicyDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluSubPatch) GetPolicyDuration() int32 {
-	if o == nil || IsNil(o.PolicyDuration.Get()) {
+	if o == nil || isNil(o.PolicyDuration.Get()) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *AmInfluSubPatch) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || IsNil(o.DnnSnssaiInfos) {
+	if o == nil || isNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -189,7 +189,7 @@ func (o *AmInfluSubPatch) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasDnnSnssaiInfos() bool {
-	if o != nil && IsNil(o.DnnSnssaiInfos) {
+	if o != nil && isNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *AmInfluSubPatch) GetAfAppIds() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetAfAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AfAppIds) {
+	if o == nil || isNil(o.AfAppIds) {
 		return nil, false
 	}
 	return o.AfAppIds, true
@@ -222,7 +222,7 @@ func (o *AmInfluSubPatch) GetAfAppIdsOk() ([]string, bool) {
 
 // HasAfAppIds returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasAfAppIds() bool {
-	if o != nil && IsNil(o.AfAppIds) {
+	if o != nil && isNil(o.AfAppIds) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *AmInfluSubPatch) GetSubscribedEvents() []AmInfluEvent {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AmInfluSubPatch) GetSubscribedEventsOk() ([]AmInfluEvent, bool) {
-	if o == nil || IsNil(o.SubscribedEvents) {
+	if o == nil || isNil(o.SubscribedEvents) {
 		return nil, false
 	}
 	return o.SubscribedEvents, true
@@ -255,7 +255,7 @@ func (o *AmInfluSubPatch) GetSubscribedEventsOk() ([]AmInfluEvent, bool) {
 
 // HasSubscribedEvents returns a boolean if a field has been set.
 func (o *AmInfluSubPatch) HasSubscribedEvents() bool {
-	if o != nil && IsNil(o.SubscribedEvents) {
+	if o != nil && isNil(o.SubscribedEvents) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *AmInfluSubPatch) SetSubscribedEvents(v []AmInfluEvent) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AmInfluSubPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination.Get()) {
+	if o == nil || isNil(o.NotificationDestination.Get()) {
 		var ret string
 		return ret
 	}

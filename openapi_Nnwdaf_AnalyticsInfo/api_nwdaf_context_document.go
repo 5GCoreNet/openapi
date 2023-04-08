@@ -13,7 +13,7 @@ package openapi_Nnwdaf_AnalyticsInfo
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -82,9 +82,9 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 		return localVarReturnValue, nil, reportError("contextIds is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "context-ids", r.contextIds, "")
+	parameterAddToQuery(localVarQueryParams, "context-ids", r.contextIds, "")
 	if r.reqContext != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "req-context", r.reqContext, "")
+		parameterAddToQuery(localVarQueryParams, "req-context", r.reqContext, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -113,9 +113,9 @@ func (a *NWDAFContextDocumentApiService) GetNwdafContextExecute(r ApiGetNwdafCon
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

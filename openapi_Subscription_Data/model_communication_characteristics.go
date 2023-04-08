@@ -46,7 +46,7 @@ func NewCommunicationCharacteristicsWithDefaults() *CommunicationCharacteristics
 
 // GetPpSubsRegTimer returns the PpSubsRegTimer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpSubsRegTimer() PpSubsRegTimer {
-	if o == nil || IsNil(o.PpSubsRegTimer.Get()) {
+	if o == nil || isNil(o.PpSubsRegTimer.Get()) {
 		var ret PpSubsRegTimer
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *CommunicationCharacteristics) UnsetPpSubsRegTimer() {
 
 // GetPpActiveTime returns the PpActiveTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpActiveTime() PpActiveTime {
-	if o == nil || IsNil(o.PpActiveTime.Get()) {
+	if o == nil || isNil(o.PpActiveTime.Get()) {
 		var ret PpActiveTime
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *CommunicationCharacteristics) UnsetPpActiveTime() {
 
 // GetPpDlPacketCount returns the PpDlPacketCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpDlPacketCount() int32 {
-	if o == nil || IsNil(o.PpDlPacketCount.Get()) {
+	if o == nil || isNil(o.PpDlPacketCount.Get()) {
 		var ret int32
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *CommunicationCharacteristics) UnsetPpDlPacketCount() {
 
 // GetPpDlPacketCountExt returns the PpDlPacketCountExt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpDlPacketCountExt() PpDlPacketCountExt {
-	if o == nil || IsNil(o.PpDlPacketCountExt.Get()) {
+	if o == nil || isNil(o.PpDlPacketCountExt.Get()) {
 		var ret PpDlPacketCountExt
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *CommunicationCharacteristics) UnsetPpDlPacketCountExt() {
 
 // GetPpMaximumResponseTime returns the PpMaximumResponseTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpMaximumResponseTime() PpMaximumResponseTime {
-	if o == nil || IsNil(o.PpMaximumResponseTime.Get()) {
+	if o == nil || isNil(o.PpMaximumResponseTime.Get()) {
 		var ret PpMaximumResponseTime
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *CommunicationCharacteristics) UnsetPpMaximumResponseTime() {
 
 // GetPpMaximumLatency returns the PpMaximumLatency field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristics) GetPpMaximumLatency() PpMaximumLatency {
-	if o == nil || IsNil(o.PpMaximumLatency.Get()) {
+	if o == nil || isNil(o.PpMaximumLatency.Get()) {
 		var ret PpMaximumLatency
 		return ret
 	}

@@ -106,7 +106,7 @@ func (o *PushInfoResponse) SetGbaPushInfo(v string) {
 
 // GetUiccKeyMaterial returns the UiccKeyMaterial field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetUiccKeyMaterial() string {
-	if o == nil || IsNil(o.UiccKeyMaterial) {
+	if o == nil || isNil(o.UiccKeyMaterial) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *PushInfoResponse) GetUiccKeyMaterial() string {
 // GetUiccKeyMaterialOk returns a tuple with the UiccKeyMaterial field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetUiccKeyMaterialOk() (*string, bool) {
-	if o == nil || IsNil(o.UiccKeyMaterial) {
+	if o == nil || isNil(o.UiccKeyMaterial) {
 		return nil, false
 	}
 	return o.UiccKeyMaterial, true
@@ -124,7 +124,7 @@ func (o *PushInfoResponse) GetUiccKeyMaterialOk() (*string, bool) {
 
 // HasUiccKeyMaterial returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasUiccKeyMaterial() bool {
-	if o != nil && !IsNil(o.UiccKeyMaterial) {
+	if o != nil && !isNil(o.UiccKeyMaterial) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *PushInfoResponse) SetUiccKeyMaterial(v string) {
 
 // GetKeyExpiryTime returns the KeyExpiryTime field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetKeyExpiryTime() time.Time {
-	if o == nil || IsNil(o.KeyExpiryTime) {
+	if o == nil || isNil(o.KeyExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *PushInfoResponse) GetKeyExpiryTime() time.Time {
 // GetKeyExpiryTimeOk returns a tuple with the KeyExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetKeyExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.KeyExpiryTime) {
+	if o == nil || isNil(o.KeyExpiryTime) {
 		return nil, false
 	}
 	return o.KeyExpiryTime, true
@@ -156,7 +156,7 @@ func (o *PushInfoResponse) GetKeyExpiryTimeOk() (*time.Time, bool) {
 
 // HasKeyExpiryTime returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasKeyExpiryTime() bool {
-	if o != nil && !IsNil(o.KeyExpiryTime) {
+	if o != nil && !isNil(o.KeyExpiryTime) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *PushInfoResponse) SetKeyExpiryTime(v time.Time) {
 
 // GetBootstrappingInfoCreationTime returns the BootstrappingInfoCreationTime field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetBootstrappingInfoCreationTime() time.Time {
-	if o == nil || IsNil(o.BootstrappingInfoCreationTime) {
+	if o == nil || isNil(o.BootstrappingInfoCreationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *PushInfoResponse) GetBootstrappingInfoCreationTime() time.Time {
 // GetBootstrappingInfoCreationTimeOk returns a tuple with the BootstrappingInfoCreationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetBootstrappingInfoCreationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.BootstrappingInfoCreationTime) {
+	if o == nil || isNil(o.BootstrappingInfoCreationTime) {
 		return nil, false
 	}
 	return o.BootstrappingInfoCreationTime, true
@@ -188,7 +188,7 @@ func (o *PushInfoResponse) GetBootstrappingInfoCreationTimeOk() (*time.Time, boo
 
 // HasBootstrappingInfoCreationTime returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasBootstrappingInfoCreationTime() bool {
-	if o != nil && !IsNil(o.BootstrappingInfoCreationTime) {
+	if o != nil && !isNil(o.BootstrappingInfoCreationTime) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *PushInfoResponse) SetBootstrappingInfoCreationTime(v time.Time) {
 
 // GetUssList returns the UssList field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetUssList() []UssListItem {
-	if o == nil || IsNil(o.UssList) {
+	if o == nil || isNil(o.UssList) {
 		var ret []UssListItem
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *PushInfoResponse) GetUssList() []UssListItem {
 // GetUssListOk returns a tuple with the UssList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetUssListOk() ([]UssListItem, bool) {
-	if o == nil || IsNil(o.UssList) {
+	if o == nil || isNil(o.UssList) {
 		return nil, false
 	}
 	return o.UssList, true
@@ -220,7 +220,7 @@ func (o *PushInfoResponse) GetUssListOk() ([]UssListItem, bool) {
 
 // HasUssList returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasUssList() bool {
-	if o != nil && !IsNil(o.UssList) {
+	if o != nil && !isNil(o.UssList) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *PushInfoResponse) SetUssList(v []UssListItem) {
 
 // GetGbaType returns the GbaType field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetGbaType() GbaType {
-	if o == nil || IsNil(o.GbaType) {
+	if o == nil || isNil(o.GbaType) {
 		var ret GbaType
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *PushInfoResponse) GetGbaType() GbaType {
 // GetGbaTypeOk returns a tuple with the GbaType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetGbaTypeOk() (*GbaType, bool) {
-	if o == nil || IsNil(o.GbaType) {
+	if o == nil || isNil(o.GbaType) {
 		return nil, false
 	}
 	return o.GbaType, true
@@ -252,7 +252,7 @@ func (o *PushInfoResponse) GetGbaTypeOk() (*GbaType, bool) {
 
 // HasGbaType returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasGbaType() bool {
-	if o != nil && !IsNil(o.GbaType) {
+	if o != nil && !isNil(o.GbaType) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *PushInfoResponse) SetGbaType(v GbaType) {
 
 // GetImpi returns the Impi field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetImpi() string {
-	if o == nil || IsNil(o.Impi) {
+	if o == nil || isNil(o.Impi) {
 		var ret string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *PushInfoResponse) GetImpi() string {
 // GetImpiOk returns a tuple with the Impi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetImpiOk() (*string, bool) {
-	if o == nil || IsNil(o.Impi) {
+	if o == nil || isNil(o.Impi) {
 		return nil, false
 	}
 	return o.Impi, true
@@ -284,7 +284,7 @@ func (o *PushInfoResponse) GetImpiOk() (*string, bool) {
 
 // HasImpi returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasImpi() bool {
-	if o != nil && !IsNil(o.Impi) {
+	if o != nil && !isNil(o.Impi) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *PushInfoResponse) SetImpi(v string) {
 
 // GetSecurityFeaturesResponse returns the SecurityFeaturesResponse field value if set, zero value otherwise.
 func (o *PushInfoResponse) GetSecurityFeaturesResponse() []SecFeature {
-	if o == nil || IsNil(o.SecurityFeaturesResponse) {
+	if o == nil || isNil(o.SecurityFeaturesResponse) {
 		var ret []SecFeature
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *PushInfoResponse) GetSecurityFeaturesResponse() []SecFeature {
 // GetSecurityFeaturesResponseOk returns a tuple with the SecurityFeaturesResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PushInfoResponse) GetSecurityFeaturesResponseOk() ([]SecFeature, bool) {
-	if o == nil || IsNil(o.SecurityFeaturesResponse) {
+	if o == nil || isNil(o.SecurityFeaturesResponse) {
 		return nil, false
 	}
 	return o.SecurityFeaturesResponse, true
@@ -316,7 +316,7 @@ func (o *PushInfoResponse) GetSecurityFeaturesResponseOk() ([]SecFeature, bool) 
 
 // HasSecurityFeaturesResponse returns a boolean if a field has been set.
 func (o *PushInfoResponse) HasSecurityFeaturesResponse() bool {
-	if o != nil && !IsNil(o.SecurityFeaturesResponse) {
+	if o != nil && !isNil(o.SecurityFeaturesResponse) {
 		return true
 	}
 
@@ -340,25 +340,25 @@ func (o PushInfoResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["meKeyMaterial"] = o.MeKeyMaterial
 	toSerialize["gbaPushInfo"] = o.GbaPushInfo
-	if !IsNil(o.UiccKeyMaterial) {
+	if !isNil(o.UiccKeyMaterial) {
 		toSerialize["uiccKeyMaterial"] = o.UiccKeyMaterial
 	}
-	if !IsNil(o.KeyExpiryTime) {
+	if !isNil(o.KeyExpiryTime) {
 		toSerialize["keyExpiryTime"] = o.KeyExpiryTime
 	}
-	if !IsNil(o.BootstrappingInfoCreationTime) {
+	if !isNil(o.BootstrappingInfoCreationTime) {
 		toSerialize["bootstrappingInfoCreationTime"] = o.BootstrappingInfoCreationTime
 	}
-	if !IsNil(o.UssList) {
+	if !isNil(o.UssList) {
 		toSerialize["ussList"] = o.UssList
 	}
-	if !IsNil(o.GbaType) {
+	if !isNil(o.GbaType) {
 		toSerialize["gbaType"] = o.GbaType
 	}
-	if !IsNil(o.Impi) {
+	if !isNil(o.Impi) {
 		toSerialize["impi"] = o.Impi
 	}
-	if !IsNil(o.SecurityFeaturesResponse) {
+	if !isNil(o.SecurityFeaturesResponse) {
 		toSerialize["securityFeaturesResponse"] = o.SecurityFeaturesResponse
 	}
 	return toSerialize, nil

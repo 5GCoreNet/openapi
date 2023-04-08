@@ -77,7 +77,7 @@ func (o *PolicyUpdate) SetResourceUri(v string) {
 
 // GetUePolicy returns the UePolicy field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetUePolicy() string {
-	if o == nil || IsNil(o.UePolicy) {
+	if o == nil || isNil(o.UePolicy) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PolicyUpdate) GetUePolicy() string {
 // GetUePolicyOk returns a tuple with the UePolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetUePolicyOk() (*string, bool) {
-	if o == nil || IsNil(o.UePolicy) {
+	if o == nil || isNil(o.UePolicy) {
 		return nil, false
 	}
 	return o.UePolicy, true
@@ -95,7 +95,7 @@ func (o *PolicyUpdate) GetUePolicyOk() (*string, bool) {
 
 // HasUePolicy returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasUePolicy() bool {
-	if o != nil && !IsNil(o.UePolicy) {
+	if o != nil && !isNil(o.UePolicy) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *PolicyUpdate) SetUePolicy(v string) {
 
 // GetN2Pc5Pol returns the N2Pc5Pol field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetN2Pc5Pol() N2InfoContent {
-	if o == nil || IsNil(o.N2Pc5Pol) {
+	if o == nil || isNil(o.N2Pc5Pol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PolicyUpdate) GetN2Pc5Pol() N2InfoContent {
 // GetN2Pc5PolOk returns a tuple with the N2Pc5Pol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetN2Pc5PolOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.N2Pc5Pol) {
+	if o == nil || isNil(o.N2Pc5Pol) {
 		return nil, false
 	}
 	return o.N2Pc5Pol, true
@@ -127,7 +127,7 @@ func (o *PolicyUpdate) GetN2Pc5PolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5Pol returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasN2Pc5Pol() bool {
-	if o != nil && !IsNil(o.N2Pc5Pol) {
+	if o != nil && !isNil(o.N2Pc5Pol) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PolicyUpdate) SetN2Pc5Pol(v N2InfoContent) {
 
 // GetN2Pc5ProSePol returns the N2Pc5ProSePol field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetN2Pc5ProSePol() N2InfoContent {
-	if o == nil || IsNil(o.N2Pc5ProSePol) {
+	if o == nil || isNil(o.N2Pc5ProSePol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PolicyUpdate) GetN2Pc5ProSePol() N2InfoContent {
 // GetN2Pc5ProSePolOk returns a tuple with the N2Pc5ProSePol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.N2Pc5ProSePol) {
+	if o == nil || isNil(o.N2Pc5ProSePol) {
 		return nil, false
 	}
 	return o.N2Pc5ProSePol, true
@@ -159,7 +159,7 @@ func (o *PolicyUpdate) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5ProSePol returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasN2Pc5ProSePol() bool {
-	if o != nil && !IsNil(o.N2Pc5ProSePol) {
+	if o != nil && !isNil(o.N2Pc5ProSePol) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *PolicyUpdate) GetTriggers() []RequestTrigger {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetTriggersOk() ([]RequestTrigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -192,7 +192,7 @@ func (o *PolicyUpdate) GetTriggersOk() ([]RequestTrigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasTriggers() bool {
-	if o != nil && IsNil(o.Triggers) {
+	if o != nil && isNil(o.Triggers) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *PolicyUpdate) GetPras() map[string]PresenceInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PolicyUpdate) GetPrasOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.Pras) {
+	if o == nil || isNil(o.Pras) {
 		return nil, false
 	}
 	return &o.Pras, true
@@ -225,7 +225,7 @@ func (o *PolicyUpdate) GetPrasOk() (*map[string]PresenceInfo, bool) {
 
 // HasPras returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasPras() bool {
-	if o != nil && IsNil(o.Pras) {
+	if o != nil && isNil(o.Pras) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *PolicyUpdate) SetPras(v map[string]PresenceInfo) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PolicyUpdate) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *PolicyUpdate) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyUpdate) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -257,7 +257,7 @@ func (o *PolicyUpdate) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PolicyUpdate) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -280,13 +280,13 @@ func (o PolicyUpdate) MarshalJSON() ([]byte, error) {
 func (o PolicyUpdate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["resourceUri"] = o.ResourceUri
-	if !IsNil(o.UePolicy) {
+	if !isNil(o.UePolicy) {
 		toSerialize["uePolicy"] = o.UePolicy
 	}
-	if !IsNil(o.N2Pc5Pol) {
+	if !isNil(o.N2Pc5Pol) {
 		toSerialize["n2Pc5Pol"] = o.N2Pc5Pol
 	}
-	if !IsNil(o.N2Pc5ProSePol) {
+	if !isNil(o.N2Pc5ProSePol) {
 		toSerialize["n2Pc5ProSePol"] = o.N2Pc5ProSePol
 	}
 	if o.Triggers != nil {
@@ -295,7 +295,7 @@ func (o PolicyUpdate) ToMap() (map[string]interface{}, error) {
 	if o.Pras != nil {
 		toSerialize["pras"] = o.Pras
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

@@ -75,7 +75,7 @@ func NewMonitoringEventReportWithDefaults() *MonitoringEventReport {
 
 // GetImeiChange returns the ImeiChange field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetImeiChange() AssociationType {
-	if o == nil || IsNil(o.ImeiChange) {
+	if o == nil || isNil(o.ImeiChange) {
 		var ret AssociationType
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MonitoringEventReport) GetImeiChange() AssociationType {
 // GetImeiChangeOk returns a tuple with the ImeiChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetImeiChangeOk() (*AssociationType, bool) {
-	if o == nil || IsNil(o.ImeiChange) {
+	if o == nil || isNil(o.ImeiChange) {
 		return nil, false
 	}
 	return o.ImeiChange, true
@@ -93,7 +93,7 @@ func (o *MonitoringEventReport) GetImeiChangeOk() (*AssociationType, bool) {
 
 // HasImeiChange returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasImeiChange() bool {
-	if o != nil && !IsNil(o.ImeiChange) {
+	if o != nil && !isNil(o.ImeiChange) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MonitoringEventReport) SetImeiChange(v AssociationType) {
 
 // GetExternalId returns the ExternalId field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetExternalId() string {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || isNil(o.ExternalId) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MonitoringEventReport) GetExternalId() string {
 // GetExternalIdOk returns a tuple with the ExternalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetExternalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalId) {
+	if o == nil || isNil(o.ExternalId) {
 		return nil, false
 	}
 	return o.ExternalId, true
@@ -125,7 +125,7 @@ func (o *MonitoringEventReport) GetExternalIdOk() (*string, bool) {
 
 // HasExternalId returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasExternalId() bool {
-	if o != nil && !IsNil(o.ExternalId) {
+	if o != nil && !isNil(o.ExternalId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *MonitoringEventReport) SetExternalId(v string) {
 
 // GetIdleStatusInfo returns the IdleStatusInfo field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetIdleStatusInfo() IdleStatusInfo {
-	if o == nil || IsNil(o.IdleStatusInfo) {
+	if o == nil || isNil(o.IdleStatusInfo) {
 		var ret IdleStatusInfo
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *MonitoringEventReport) GetIdleStatusInfo() IdleStatusInfo {
 // GetIdleStatusInfoOk returns a tuple with the IdleStatusInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetIdleStatusInfoOk() (*IdleStatusInfo, bool) {
-	if o == nil || IsNil(o.IdleStatusInfo) {
+	if o == nil || isNil(o.IdleStatusInfo) {
 		return nil, false
 	}
 	return o.IdleStatusInfo, true
@@ -157,7 +157,7 @@ func (o *MonitoringEventReport) GetIdleStatusInfoOk() (*IdleStatusInfo, bool) {
 
 // HasIdleStatusInfo returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasIdleStatusInfo() bool {
-	if o != nil && !IsNil(o.IdleStatusInfo) {
+	if o != nil && !isNil(o.IdleStatusInfo) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *MonitoringEventReport) SetIdleStatusInfo(v IdleStatusInfo) {
 
 // GetLocationInfo returns the LocationInfo field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetLocationInfo() LocationInfo {
-	if o == nil || IsNil(o.LocationInfo) {
+	if o == nil || isNil(o.LocationInfo) {
 		var ret LocationInfo
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *MonitoringEventReport) GetLocationInfo() LocationInfo {
 // GetLocationInfoOk returns a tuple with the LocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetLocationInfoOk() (*LocationInfo, bool) {
-	if o == nil || IsNil(o.LocationInfo) {
+	if o == nil || isNil(o.LocationInfo) {
 		return nil, false
 	}
 	return o.LocationInfo, true
@@ -189,7 +189,7 @@ func (o *MonitoringEventReport) GetLocationInfoOk() (*LocationInfo, bool) {
 
 // HasLocationInfo returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasLocationInfo() bool {
-	if o != nil && !IsNil(o.LocationInfo) {
+	if o != nil && !isNil(o.LocationInfo) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *MonitoringEventReport) SetLocationInfo(v LocationInfo) {
 
 // GetLocFailureCause returns the LocFailureCause field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetLocFailureCause() LocationFailureCause {
-	if o == nil || IsNil(o.LocFailureCause) {
+	if o == nil || isNil(o.LocFailureCause) {
 		var ret LocationFailureCause
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *MonitoringEventReport) GetLocFailureCause() LocationFailureCause {
 // GetLocFailureCauseOk returns a tuple with the LocFailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetLocFailureCauseOk() (*LocationFailureCause, bool) {
-	if o == nil || IsNil(o.LocFailureCause) {
+	if o == nil || isNil(o.LocFailureCause) {
 		return nil, false
 	}
 	return o.LocFailureCause, true
@@ -221,7 +221,7 @@ func (o *MonitoringEventReport) GetLocFailureCauseOk() (*LocationFailureCause, b
 
 // HasLocFailureCause returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasLocFailureCause() bool {
-	if o != nil && !IsNil(o.LocFailureCause) {
+	if o != nil && !isNil(o.LocFailureCause) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *MonitoringEventReport) SetLocFailureCause(v LocationFailureCause) {
 
 // GetLossOfConnectReason returns the LossOfConnectReason field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetLossOfConnectReason() int32 {
-	if o == nil || IsNil(o.LossOfConnectReason) {
+	if o == nil || isNil(o.LossOfConnectReason) {
 		var ret int32
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *MonitoringEventReport) GetLossOfConnectReason() int32 {
 // GetLossOfConnectReasonOk returns a tuple with the LossOfConnectReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetLossOfConnectReasonOk() (*int32, bool) {
-	if o == nil || IsNil(o.LossOfConnectReason) {
+	if o == nil || isNil(o.LossOfConnectReason) {
 		return nil, false
 	}
 	return o.LossOfConnectReason, true
@@ -253,7 +253,7 @@ func (o *MonitoringEventReport) GetLossOfConnectReasonOk() (*int32, bool) {
 
 // HasLossOfConnectReason returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasLossOfConnectReason() bool {
-	if o != nil && !IsNil(o.LossOfConnectReason) {
+	if o != nil && !isNil(o.LossOfConnectReason) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *MonitoringEventReport) SetLossOfConnectReason(v int32) {
 
 // GetMaxUEAvailabilityTime returns the MaxUEAvailabilityTime field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetMaxUEAvailabilityTime() time.Time {
-	if o == nil || IsNil(o.MaxUEAvailabilityTime) {
+	if o == nil || isNil(o.MaxUEAvailabilityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *MonitoringEventReport) GetMaxUEAvailabilityTime() time.Time {
 // GetMaxUEAvailabilityTimeOk returns a tuple with the MaxUEAvailabilityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetMaxUEAvailabilityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MaxUEAvailabilityTime) {
+	if o == nil || isNil(o.MaxUEAvailabilityTime) {
 		return nil, false
 	}
 	return o.MaxUEAvailabilityTime, true
@@ -285,7 +285,7 @@ func (o *MonitoringEventReport) GetMaxUEAvailabilityTimeOk() (*time.Time, bool) 
 
 // HasMaxUEAvailabilityTime returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasMaxUEAvailabilityTime() bool {
-	if o != nil && !IsNil(o.MaxUEAvailabilityTime) {
+	if o != nil && !isNil(o.MaxUEAvailabilityTime) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *MonitoringEventReport) SetMaxUEAvailabilityTime(v time.Time) {
 
 // GetMsisdn returns the Msisdn field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetMsisdn() string {
-	if o == nil || IsNil(o.Msisdn) {
+	if o == nil || isNil(o.Msisdn) {
 		var ret string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *MonitoringEventReport) GetMsisdn() string {
 // GetMsisdnOk returns a tuple with the Msisdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetMsisdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Msisdn) {
+	if o == nil || isNil(o.Msisdn) {
 		return nil, false
 	}
 	return o.Msisdn, true
@@ -317,7 +317,7 @@ func (o *MonitoringEventReport) GetMsisdnOk() (*string, bool) {
 
 // HasMsisdn returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasMsisdn() bool {
-	if o != nil && !IsNil(o.Msisdn) {
+	if o != nil && !isNil(o.Msisdn) {
 		return true
 	}
 
@@ -355,7 +355,7 @@ func (o *MonitoringEventReport) SetMonitoringType(v MonitoringType) {
 
 // GetUePerLocationReport returns the UePerLocationReport field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetUePerLocationReport() UePerLocationReport {
-	if o == nil || IsNil(o.UePerLocationReport) {
+	if o == nil || isNil(o.UePerLocationReport) {
 		var ret UePerLocationReport
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *MonitoringEventReport) GetUePerLocationReport() UePerLocationReport {
 // GetUePerLocationReportOk returns a tuple with the UePerLocationReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetUePerLocationReportOk() (*UePerLocationReport, bool) {
-	if o == nil || IsNil(o.UePerLocationReport) {
+	if o == nil || isNil(o.UePerLocationReport) {
 		return nil, false
 	}
 	return o.UePerLocationReport, true
@@ -373,7 +373,7 @@ func (o *MonitoringEventReport) GetUePerLocationReportOk() (*UePerLocationReport
 
 // HasUePerLocationReport returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasUePerLocationReport() bool {
-	if o != nil && !IsNil(o.UePerLocationReport) {
+	if o != nil && !isNil(o.UePerLocationReport) {
 		return true
 	}
 
@@ -387,7 +387,7 @@ func (o *MonitoringEventReport) SetUePerLocationReport(v UePerLocationReport) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -397,7 +397,7 @@ func (o *MonitoringEventReport) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -405,7 +405,7 @@ func (o *MonitoringEventReport) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *MonitoringEventReport) SetPlmnId(v PlmnId) {
 
 // GetReachabilityType returns the ReachabilityType field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetReachabilityType() ReachabilityType {
-	if o == nil || IsNil(o.ReachabilityType) {
+	if o == nil || isNil(o.ReachabilityType) {
 		var ret ReachabilityType
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *MonitoringEventReport) GetReachabilityType() ReachabilityType {
 // GetReachabilityTypeOk returns a tuple with the ReachabilityType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetReachabilityTypeOk() (*ReachabilityType, bool) {
-	if o == nil || IsNil(o.ReachabilityType) {
+	if o == nil || isNil(o.ReachabilityType) {
 		return nil, false
 	}
 	return o.ReachabilityType, true
@@ -437,7 +437,7 @@ func (o *MonitoringEventReport) GetReachabilityTypeOk() (*ReachabilityType, bool
 
 // HasReachabilityType returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasReachabilityType() bool {
-	if o != nil && !IsNil(o.ReachabilityType) {
+	if o != nil && !isNil(o.ReachabilityType) {
 		return true
 	}
 
@@ -451,7 +451,7 @@ func (o *MonitoringEventReport) SetReachabilityType(v ReachabilityType) {
 
 // GetRoamingStatus returns the RoamingStatus field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetRoamingStatus() bool {
-	if o == nil || IsNil(o.RoamingStatus) {
+	if o == nil || isNil(o.RoamingStatus) {
 		var ret bool
 		return ret
 	}
@@ -461,7 +461,7 @@ func (o *MonitoringEventReport) GetRoamingStatus() bool {
 // GetRoamingStatusOk returns a tuple with the RoamingStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetRoamingStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.RoamingStatus) {
+	if o == nil || isNil(o.RoamingStatus) {
 		return nil, false
 	}
 	return o.RoamingStatus, true
@@ -469,7 +469,7 @@ func (o *MonitoringEventReport) GetRoamingStatusOk() (*bool, bool) {
 
 // HasRoamingStatus returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasRoamingStatus() bool {
-	if o != nil && !IsNil(o.RoamingStatus) {
+	if o != nil && !isNil(o.RoamingStatus) {
 		return true
 	}
 
@@ -483,7 +483,7 @@ func (o *MonitoringEventReport) SetRoamingStatus(v bool) {
 
 // GetFailureCause returns the FailureCause field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetFailureCause() FailureCause {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		var ret FailureCause
 		return ret
 	}
@@ -493,7 +493,7 @@ func (o *MonitoringEventReport) GetFailureCause() FailureCause {
 // GetFailureCauseOk returns a tuple with the FailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetFailureCauseOk() (*FailureCause, bool) {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		return nil, false
 	}
 	return o.FailureCause, true
@@ -501,7 +501,7 @@ func (o *MonitoringEventReport) GetFailureCauseOk() (*FailureCause, bool) {
 
 // HasFailureCause returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasFailureCause() bool {
-	if o != nil && !IsNil(o.FailureCause) {
+	if o != nil && !isNil(o.FailureCause) {
 		return true
 	}
 
@@ -515,7 +515,7 @@ func (o *MonitoringEventReport) SetFailureCause(v FailureCause) {
 
 // GetEventTime returns the EventTime field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetEventTime() time.Time {
-	if o == nil || IsNil(o.EventTime) {
+	if o == nil || isNil(o.EventTime) {
 		var ret time.Time
 		return ret
 	}
@@ -525,7 +525,7 @@ func (o *MonitoringEventReport) GetEventTime() time.Time {
 // GetEventTimeOk returns a tuple with the EventTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetEventTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EventTime) {
+	if o == nil || isNil(o.EventTime) {
 		return nil, false
 	}
 	return o.EventTime, true
@@ -533,7 +533,7 @@ func (o *MonitoringEventReport) GetEventTimeOk() (*time.Time, bool) {
 
 // HasEventTime returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasEventTime() bool {
-	if o != nil && !IsNil(o.EventTime) {
+	if o != nil && !isNil(o.EventTime) {
 		return true
 	}
 
@@ -547,7 +547,7 @@ func (o *MonitoringEventReport) SetEventTime(v time.Time) {
 
 // GetPdnConnInfoList returns the PdnConnInfoList field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetPdnConnInfoList() []PdnConnectionInformation {
-	if o == nil || IsNil(o.PdnConnInfoList) {
+	if o == nil || isNil(o.PdnConnInfoList) {
 		var ret []PdnConnectionInformation
 		return ret
 	}
@@ -557,7 +557,7 @@ func (o *MonitoringEventReport) GetPdnConnInfoList() []PdnConnectionInformation 
 // GetPdnConnInfoListOk returns a tuple with the PdnConnInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetPdnConnInfoListOk() ([]PdnConnectionInformation, bool) {
-	if o == nil || IsNil(o.PdnConnInfoList) {
+	if o == nil || isNil(o.PdnConnInfoList) {
 		return nil, false
 	}
 	return o.PdnConnInfoList, true
@@ -565,7 +565,7 @@ func (o *MonitoringEventReport) GetPdnConnInfoListOk() ([]PdnConnectionInformati
 
 // HasPdnConnInfoList returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasPdnConnInfoList() bool {
-	if o != nil && !IsNil(o.PdnConnInfoList) {
+	if o != nil && !isNil(o.PdnConnInfoList) {
 		return true
 	}
 
@@ -579,7 +579,7 @@ func (o *MonitoringEventReport) SetPdnConnInfoList(v []PdnConnectionInformation)
 
 // GetDddStatus returns the DddStatus field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetDddStatus() DlDataDeliveryStatus {
-	if o == nil || IsNil(o.DddStatus) {
+	if o == nil || isNil(o.DddStatus) {
 		var ret DlDataDeliveryStatus
 		return ret
 	}
@@ -589,7 +589,7 @@ func (o *MonitoringEventReport) GetDddStatus() DlDataDeliveryStatus {
 // GetDddStatusOk returns a tuple with the DddStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetDddStatusOk() (*DlDataDeliveryStatus, bool) {
-	if o == nil || IsNil(o.DddStatus) {
+	if o == nil || isNil(o.DddStatus) {
 		return nil, false
 	}
 	return o.DddStatus, true
@@ -597,7 +597,7 @@ func (o *MonitoringEventReport) GetDddStatusOk() (*DlDataDeliveryStatus, bool) {
 
 // HasDddStatus returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasDddStatus() bool {
-	if o != nil && !IsNil(o.DddStatus) {
+	if o != nil && !isNil(o.DddStatus) {
 		return true
 	}
 
@@ -611,7 +611,7 @@ func (o *MonitoringEventReport) SetDddStatus(v DlDataDeliveryStatus) {
 
 // GetDddTrafDescriptor returns the DddTrafDescriptor field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetDddTrafDescriptor() DddTrafficDescriptor {
-	if o == nil || IsNil(o.DddTrafDescriptor) {
+	if o == nil || isNil(o.DddTrafDescriptor) {
 		var ret DddTrafficDescriptor
 		return ret
 	}
@@ -621,7 +621,7 @@ func (o *MonitoringEventReport) GetDddTrafDescriptor() DddTrafficDescriptor {
 // GetDddTrafDescriptorOk returns a tuple with the DddTrafDescriptor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetDddTrafDescriptorOk() (*DddTrafficDescriptor, bool) {
-	if o == nil || IsNil(o.DddTrafDescriptor) {
+	if o == nil || isNil(o.DddTrafDescriptor) {
 		return nil, false
 	}
 	return o.DddTrafDescriptor, true
@@ -629,7 +629,7 @@ func (o *MonitoringEventReport) GetDddTrafDescriptorOk() (*DddTrafficDescriptor,
 
 // HasDddTrafDescriptor returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasDddTrafDescriptor() bool {
-	if o != nil && !IsNil(o.DddTrafDescriptor) {
+	if o != nil && !isNil(o.DddTrafDescriptor) {
 		return true
 	}
 
@@ -643,7 +643,7 @@ func (o *MonitoringEventReport) SetDddTrafDescriptor(v DddTrafficDescriptor) {
 
 // GetMaxWaitTime returns the MaxWaitTime field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetMaxWaitTime() time.Time {
-	if o == nil || IsNil(o.MaxWaitTime) {
+	if o == nil || isNil(o.MaxWaitTime) {
 		var ret time.Time
 		return ret
 	}
@@ -653,7 +653,7 @@ func (o *MonitoringEventReport) GetMaxWaitTime() time.Time {
 // GetMaxWaitTimeOk returns a tuple with the MaxWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetMaxWaitTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MaxWaitTime) {
+	if o == nil || isNil(o.MaxWaitTime) {
 		return nil, false
 	}
 	return o.MaxWaitTime, true
@@ -661,7 +661,7 @@ func (o *MonitoringEventReport) GetMaxWaitTimeOk() (*time.Time, bool) {
 
 // HasMaxWaitTime returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasMaxWaitTime() bool {
-	if o != nil && !IsNil(o.MaxWaitTime) {
+	if o != nil && !isNil(o.MaxWaitTime) {
 		return true
 	}
 
@@ -675,7 +675,7 @@ func (o *MonitoringEventReport) SetMaxWaitTime(v time.Time) {
 
 // GetApiCaps returns the ApiCaps field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetApiCaps() []ApiCapabilityInfo {
-	if o == nil || IsNil(o.ApiCaps) {
+	if o == nil || isNil(o.ApiCaps) {
 		var ret []ApiCapabilityInfo
 		return ret
 	}
@@ -685,7 +685,7 @@ func (o *MonitoringEventReport) GetApiCaps() []ApiCapabilityInfo {
 // GetApiCapsOk returns a tuple with the ApiCaps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetApiCapsOk() ([]ApiCapabilityInfo, bool) {
-	if o == nil || IsNil(o.ApiCaps) {
+	if o == nil || isNil(o.ApiCaps) {
 		return nil, false
 	}
 	return o.ApiCaps, true
@@ -693,7 +693,7 @@ func (o *MonitoringEventReport) GetApiCapsOk() ([]ApiCapabilityInfo, bool) {
 
 // HasApiCaps returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasApiCaps() bool {
-	if o != nil && !IsNil(o.ApiCaps) {
+	if o != nil && !isNil(o.ApiCaps) {
 		return true
 	}
 
@@ -707,7 +707,7 @@ func (o *MonitoringEventReport) SetApiCaps(v []ApiCapabilityInfo) {
 
 // GetNSStatusInfo returns the NSStatusInfo field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetNSStatusInfo() SACEventStatus {
-	if o == nil || IsNil(o.NSStatusInfo) {
+	if o == nil || isNil(o.NSStatusInfo) {
 		var ret SACEventStatus
 		return ret
 	}
@@ -717,7 +717,7 @@ func (o *MonitoringEventReport) GetNSStatusInfo() SACEventStatus {
 // GetNSStatusInfoOk returns a tuple with the NSStatusInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetNSStatusInfoOk() (*SACEventStatus, bool) {
-	if o == nil || IsNil(o.NSStatusInfo) {
+	if o == nil || isNil(o.NSStatusInfo) {
 		return nil, false
 	}
 	return o.NSStatusInfo, true
@@ -725,7 +725,7 @@ func (o *MonitoringEventReport) GetNSStatusInfoOk() (*SACEventStatus, bool) {
 
 // HasNSStatusInfo returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasNSStatusInfo() bool {
-	if o != nil && !IsNil(o.NSStatusInfo) {
+	if o != nil && !isNil(o.NSStatusInfo) {
 		return true
 	}
 
@@ -739,7 +739,7 @@ func (o *MonitoringEventReport) SetNSStatusInfo(v SACEventStatus) {
 
 // GetAfServiceId returns the AfServiceId field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetAfServiceId() string {
-	if o == nil || IsNil(o.AfServiceId) {
+	if o == nil || isNil(o.AfServiceId) {
 		var ret string
 		return ret
 	}
@@ -749,7 +749,7 @@ func (o *MonitoringEventReport) GetAfServiceId() string {
 // GetAfServiceIdOk returns a tuple with the AfServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetAfServiceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfServiceId) {
+	if o == nil || isNil(o.AfServiceId) {
 		return nil, false
 	}
 	return o.AfServiceId, true
@@ -757,7 +757,7 @@ func (o *MonitoringEventReport) GetAfServiceIdOk() (*string, bool) {
 
 // HasAfServiceId returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasAfServiceId() bool {
-	if o != nil && !IsNil(o.AfServiceId) {
+	if o != nil && !isNil(o.AfServiceId) {
 		return true
 	}
 
@@ -771,7 +771,7 @@ func (o *MonitoringEventReport) SetAfServiceId(v string) {
 
 // GetServLevelDevId returns the ServLevelDevId field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetServLevelDevId() string {
-	if o == nil || IsNil(o.ServLevelDevId) {
+	if o == nil || isNil(o.ServLevelDevId) {
 		var ret string
 		return ret
 	}
@@ -781,7 +781,7 @@ func (o *MonitoringEventReport) GetServLevelDevId() string {
 // GetServLevelDevIdOk returns a tuple with the ServLevelDevId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetServLevelDevIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServLevelDevId) {
+	if o == nil || isNil(o.ServLevelDevId) {
 		return nil, false
 	}
 	return o.ServLevelDevId, true
@@ -789,7 +789,7 @@ func (o *MonitoringEventReport) GetServLevelDevIdOk() (*string, bool) {
 
 // HasServLevelDevId returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasServLevelDevId() bool {
-	if o != nil && !IsNil(o.ServLevelDevId) {
+	if o != nil && !isNil(o.ServLevelDevId) {
 		return true
 	}
 
@@ -803,7 +803,7 @@ func (o *MonitoringEventReport) SetServLevelDevId(v string) {
 
 // GetUavPresInd returns the UavPresInd field value if set, zero value otherwise.
 func (o *MonitoringEventReport) GetUavPresInd() bool {
-	if o == nil || IsNil(o.UavPresInd) {
+	if o == nil || isNil(o.UavPresInd) {
 		var ret bool
 		return ret
 	}
@@ -813,7 +813,7 @@ func (o *MonitoringEventReport) GetUavPresInd() bool {
 // GetUavPresIndOk returns a tuple with the UavPresInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEventReport) GetUavPresIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UavPresInd) {
+	if o == nil || isNil(o.UavPresInd) {
 		return nil, false
 	}
 	return o.UavPresInd, true
@@ -821,7 +821,7 @@ func (o *MonitoringEventReport) GetUavPresIndOk() (*bool, bool) {
 
 // HasUavPresInd returns a boolean if a field has been set.
 func (o *MonitoringEventReport) HasUavPresInd() bool {
-	if o != nil && !IsNil(o.UavPresInd) {
+	if o != nil && !isNil(o.UavPresInd) {
 		return true
 	}
 
@@ -843,74 +843,74 @@ func (o MonitoringEventReport) MarshalJSON() ([]byte, error) {
 
 func (o MonitoringEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ImeiChange) {
+	if !isNil(o.ImeiChange) {
 		toSerialize["imeiChange"] = o.ImeiChange
 	}
-	if !IsNil(o.ExternalId) {
+	if !isNil(o.ExternalId) {
 		toSerialize["externalId"] = o.ExternalId
 	}
-	if !IsNil(o.IdleStatusInfo) {
+	if !isNil(o.IdleStatusInfo) {
 		toSerialize["idleStatusInfo"] = o.IdleStatusInfo
 	}
-	if !IsNil(o.LocationInfo) {
+	if !isNil(o.LocationInfo) {
 		toSerialize["locationInfo"] = o.LocationInfo
 	}
-	if !IsNil(o.LocFailureCause) {
+	if !isNil(o.LocFailureCause) {
 		toSerialize["locFailureCause"] = o.LocFailureCause
 	}
-	if !IsNil(o.LossOfConnectReason) {
+	if !isNil(o.LossOfConnectReason) {
 		toSerialize["lossOfConnectReason"] = o.LossOfConnectReason
 	}
-	if !IsNil(o.MaxUEAvailabilityTime) {
+	if !isNil(o.MaxUEAvailabilityTime) {
 		toSerialize["maxUEAvailabilityTime"] = o.MaxUEAvailabilityTime
 	}
-	if !IsNil(o.Msisdn) {
+	if !isNil(o.Msisdn) {
 		toSerialize["msisdn"] = o.Msisdn
 	}
 	toSerialize["monitoringType"] = o.MonitoringType
-	if !IsNil(o.UePerLocationReport) {
+	if !isNil(o.UePerLocationReport) {
 		toSerialize["uePerLocationReport"] = o.UePerLocationReport
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.ReachabilityType) {
+	if !isNil(o.ReachabilityType) {
 		toSerialize["reachabilityType"] = o.ReachabilityType
 	}
-	if !IsNil(o.RoamingStatus) {
+	if !isNil(o.RoamingStatus) {
 		toSerialize["roamingStatus"] = o.RoamingStatus
 	}
-	if !IsNil(o.FailureCause) {
+	if !isNil(o.FailureCause) {
 		toSerialize["failureCause"] = o.FailureCause
 	}
-	if !IsNil(o.EventTime) {
+	if !isNil(o.EventTime) {
 		toSerialize["eventTime"] = o.EventTime
 	}
-	if !IsNil(o.PdnConnInfoList) {
+	if !isNil(o.PdnConnInfoList) {
 		toSerialize["pdnConnInfoList"] = o.PdnConnInfoList
 	}
-	if !IsNil(o.DddStatus) {
+	if !isNil(o.DddStatus) {
 		toSerialize["dddStatus"] = o.DddStatus
 	}
-	if !IsNil(o.DddTrafDescriptor) {
+	if !isNil(o.DddTrafDescriptor) {
 		toSerialize["dddTrafDescriptor"] = o.DddTrafDescriptor
 	}
-	if !IsNil(o.MaxWaitTime) {
+	if !isNil(o.MaxWaitTime) {
 		toSerialize["maxWaitTime"] = o.MaxWaitTime
 	}
-	if !IsNil(o.ApiCaps) {
+	if !isNil(o.ApiCaps) {
 		toSerialize["apiCaps"] = o.ApiCaps
 	}
-	if !IsNil(o.NSStatusInfo) {
+	if !isNil(o.NSStatusInfo) {
 		toSerialize["nSStatusInfo"] = o.NSStatusInfo
 	}
-	if !IsNil(o.AfServiceId) {
+	if !isNil(o.AfServiceId) {
 		toSerialize["afServiceId"] = o.AfServiceId
 	}
-	if !IsNil(o.ServLevelDevId) {
+	if !isNil(o.ServLevelDevId) {
 		toSerialize["servLevelDevId"] = o.ServLevelDevId
 	}
-	if !IsNil(o.UavPresInd) {
+	if !isNil(o.UavPresInd) {
 		toSerialize["uavPresInd"] = o.UavPresInd
 	}
 	return toSerialize, nil

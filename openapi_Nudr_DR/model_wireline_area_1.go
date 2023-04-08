@@ -46,7 +46,7 @@ func NewWirelineArea1WithDefaults() *WirelineArea1 {
 
 // GetGlobalLineIds returns the GlobalLineIds field value if set, zero value otherwise.
 func (o *WirelineArea1) GetGlobalLineIds() []string {
-	if o == nil || IsNil(o.GlobalLineIds) {
+	if o == nil || isNil(o.GlobalLineIds) {
 		var ret []string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *WirelineArea1) GetGlobalLineIds() []string {
 // GetGlobalLineIdsOk returns a tuple with the GlobalLineIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea1) GetGlobalLineIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.GlobalLineIds) {
+	if o == nil || isNil(o.GlobalLineIds) {
 		return nil, false
 	}
 	return o.GlobalLineIds, true
@@ -64,7 +64,7 @@ func (o *WirelineArea1) GetGlobalLineIdsOk() ([]string, bool) {
 
 // HasGlobalLineIds returns a boolean if a field has been set.
 func (o *WirelineArea1) HasGlobalLineIds() bool {
-	if o != nil && !IsNil(o.GlobalLineIds) {
+	if o != nil && !isNil(o.GlobalLineIds) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *WirelineArea1) SetGlobalLineIds(v []string) {
 
 // GetHfcNIds returns the HfcNIds field value if set, zero value otherwise.
 func (o *WirelineArea1) GetHfcNIds() []string {
-	if o == nil || IsNil(o.HfcNIds) {
+	if o == nil || isNil(o.HfcNIds) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *WirelineArea1) GetHfcNIds() []string {
 // GetHfcNIdsOk returns a tuple with the HfcNIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea1) GetHfcNIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.HfcNIds) {
+	if o == nil || isNil(o.HfcNIds) {
 		return nil, false
 	}
 	return o.HfcNIds, true
@@ -96,7 +96,7 @@ func (o *WirelineArea1) GetHfcNIdsOk() ([]string, bool) {
 
 // HasHfcNIds returns a boolean if a field has been set.
 func (o *WirelineArea1) HasHfcNIds() bool {
-	if o != nil && !IsNil(o.HfcNIds) {
+	if o != nil && !isNil(o.HfcNIds) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *WirelineArea1) SetHfcNIds(v []string) {
 
 // GetAreaCodeB returns the AreaCodeB field value if set, zero value otherwise.
 func (o *WirelineArea1) GetAreaCodeB() string {
-	if o == nil || IsNil(o.AreaCodeB) {
+	if o == nil || isNil(o.AreaCodeB) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *WirelineArea1) GetAreaCodeB() string {
 // GetAreaCodeBOk returns a tuple with the AreaCodeB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea1) GetAreaCodeBOk() (*string, bool) {
-	if o == nil || IsNil(o.AreaCodeB) {
+	if o == nil || isNil(o.AreaCodeB) {
 		return nil, false
 	}
 	return o.AreaCodeB, true
@@ -128,7 +128,7 @@ func (o *WirelineArea1) GetAreaCodeBOk() (*string, bool) {
 
 // HasAreaCodeB returns a boolean if a field has been set.
 func (o *WirelineArea1) HasAreaCodeB() bool {
-	if o != nil && !IsNil(o.AreaCodeB) {
+	if o != nil && !isNil(o.AreaCodeB) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *WirelineArea1) SetAreaCodeB(v string) {
 
 // GetAreaCodeC returns the AreaCodeC field value if set, zero value otherwise.
 func (o *WirelineArea1) GetAreaCodeC() string {
-	if o == nil || IsNil(o.AreaCodeC) {
+	if o == nil || isNil(o.AreaCodeC) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *WirelineArea1) GetAreaCodeC() string {
 // GetAreaCodeCOk returns a tuple with the AreaCodeC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WirelineArea1) GetAreaCodeCOk() (*string, bool) {
-	if o == nil || IsNil(o.AreaCodeC) {
+	if o == nil || isNil(o.AreaCodeC) {
 		return nil, false
 	}
 	return o.AreaCodeC, true
@@ -160,7 +160,7 @@ func (o *WirelineArea1) GetAreaCodeCOk() (*string, bool) {
 
 // HasAreaCodeC returns a boolean if a field has been set.
 func (o *WirelineArea1) HasAreaCodeC() bool {
-	if o != nil && !IsNil(o.AreaCodeC) {
+	if o != nil && !isNil(o.AreaCodeC) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o WirelineArea1) MarshalJSON() ([]byte, error) {
 
 func (o WirelineArea1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GlobalLineIds) {
+	if !isNil(o.GlobalLineIds) {
 		toSerialize["globalLineIds"] = o.GlobalLineIds
 	}
-	if !IsNil(o.HfcNIds) {
+	if !isNil(o.HfcNIds) {
 		toSerialize["hfcNIds"] = o.HfcNIds
 	}
-	if !IsNil(o.AreaCodeB) {
+	if !isNil(o.AreaCodeB) {
 		toSerialize["areaCodeB"] = o.AreaCodeB
 	}
-	if !IsNil(o.AreaCodeC) {
+	if !isNil(o.AreaCodeC) {
 		toSerialize["areaCodeC"] = o.AreaCodeC
 	}
 	return toSerialize, nil

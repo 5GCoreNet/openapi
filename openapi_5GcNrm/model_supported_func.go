@@ -42,7 +42,7 @@ func NewSupportedFuncWithDefaults() *SupportedFunc {
 
 // GetFunction returns the Function field value if set, zero value otherwise.
 func (o *SupportedFunc) GetFunction() string {
-	if o == nil || IsNil(o.Function) {
+	if o == nil || isNil(o.Function) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SupportedFunc) GetFunction() string {
 // GetFunctionOk returns a tuple with the Function field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedFunc) GetFunctionOk() (*string, bool) {
-	if o == nil || IsNil(o.Function) {
+	if o == nil || isNil(o.Function) {
 		return nil, false
 	}
 	return o.Function, true
@@ -60,7 +60,7 @@ func (o *SupportedFunc) GetFunctionOk() (*string, bool) {
 
 // HasFunction returns a boolean if a field has been set.
 func (o *SupportedFunc) HasFunction() bool {
-	if o != nil && !IsNil(o.Function) {
+	if o != nil && !isNil(o.Function) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SupportedFunc) SetFunction(v string) {
 
 // GetPolicy returns the Policy field value if set, zero value otherwise.
 func (o *SupportedFunc) GetPolicy() string {
-	if o == nil || IsNil(o.Policy) {
+	if o == nil || isNil(o.Policy) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SupportedFunc) GetPolicy() string {
 // GetPolicyOk returns a tuple with the Policy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedFunc) GetPolicyOk() (*string, bool) {
-	if o == nil || IsNil(o.Policy) {
+	if o == nil || isNil(o.Policy) {
 		return nil, false
 	}
 	return o.Policy, true
@@ -92,7 +92,7 @@ func (o *SupportedFunc) GetPolicyOk() (*string, bool) {
 
 // HasPolicy returns a boolean if a field has been set.
 func (o *SupportedFunc) HasPolicy() bool {
-	if o != nil && !IsNil(o.Policy) {
+	if o != nil && !isNil(o.Policy) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SupportedFunc) MarshalJSON() ([]byte, error) {
 
 func (o SupportedFunc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Function) {
+	if !isNil(o.Function) {
 		toSerialize["function"] = o.Function
 	}
-	if !IsNil(o.Policy) {
+	if !isNil(o.Policy) {
 		toSerialize["policy"] = o.Policy
 	}
 	return toSerialize, nil

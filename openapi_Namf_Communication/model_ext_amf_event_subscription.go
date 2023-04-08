@@ -171,7 +171,7 @@ func (o *ExtAmfEventSubscription) SetNfId(v string) {
 
 // GetSubsChangeNotifyUri returns the SubsChangeNotifyUri field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetSubsChangeNotifyUri() string {
-	if o == nil || IsNil(o.SubsChangeNotifyUri) {
+	if o == nil || isNil(o.SubsChangeNotifyUri) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *ExtAmfEventSubscription) GetSubsChangeNotifyUri() string {
 // GetSubsChangeNotifyUriOk returns a tuple with the SubsChangeNotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetSubsChangeNotifyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.SubsChangeNotifyUri) {
+	if o == nil || isNil(o.SubsChangeNotifyUri) {
 		return nil, false
 	}
 	return o.SubsChangeNotifyUri, true
@@ -189,7 +189,7 @@ func (o *ExtAmfEventSubscription) GetSubsChangeNotifyUriOk() (*string, bool) {
 
 // HasSubsChangeNotifyUri returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasSubsChangeNotifyUri() bool {
-	if o != nil && !IsNil(o.SubsChangeNotifyUri) {
+	if o != nil && !isNil(o.SubsChangeNotifyUri) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *ExtAmfEventSubscription) SetSubsChangeNotifyUri(v string) {
 
 // GetSubsChangeNotifyCorrelationId returns the SubsChangeNotifyCorrelationId field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetSubsChangeNotifyCorrelationId() string {
-	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *ExtAmfEventSubscription) GetSubsChangeNotifyCorrelationId() string {
 // GetSubsChangeNotifyCorrelationIdOk returns a tuple with the SubsChangeNotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetSubsChangeNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubsChangeNotifyCorrelationId) {
+	if o == nil || isNil(o.SubsChangeNotifyCorrelationId) {
 		return nil, false
 	}
 	return o.SubsChangeNotifyCorrelationId, true
@@ -221,7 +221,7 @@ func (o *ExtAmfEventSubscription) GetSubsChangeNotifyCorrelationIdOk() (*string,
 
 // HasSubsChangeNotifyCorrelationId returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasSubsChangeNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.SubsChangeNotifyCorrelationId) {
+	if o != nil && !isNil(o.SubsChangeNotifyCorrelationId) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *ExtAmfEventSubscription) SetSubsChangeNotifyCorrelationId(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *ExtAmfEventSubscription) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -253,7 +253,7 @@ func (o *ExtAmfEventSubscription) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *ExtAmfEventSubscription) SetSupi(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *ExtAmfEventSubscription) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -285,7 +285,7 @@ func (o *ExtAmfEventSubscription) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *ExtAmfEventSubscription) SetGroupId(v string) {
 
 // GetExcludeSupiList returns the ExcludeSupiList field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetExcludeSupiList() []string {
-	if o == nil || IsNil(o.ExcludeSupiList) {
+	if o == nil || isNil(o.ExcludeSupiList) {
 		var ret []string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *ExtAmfEventSubscription) GetExcludeSupiList() []string {
 // GetExcludeSupiListOk returns a tuple with the ExcludeSupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetExcludeSupiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExcludeSupiList) {
+	if o == nil || isNil(o.ExcludeSupiList) {
 		return nil, false
 	}
 	return o.ExcludeSupiList, true
@@ -317,7 +317,7 @@ func (o *ExtAmfEventSubscription) GetExcludeSupiListOk() ([]string, bool) {
 
 // HasExcludeSupiList returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasExcludeSupiList() bool {
-	if o != nil && !IsNil(o.ExcludeSupiList) {
+	if o != nil && !isNil(o.ExcludeSupiList) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *ExtAmfEventSubscription) SetExcludeSupiList(v []string) {
 
 // GetExcludeGpsiList returns the ExcludeGpsiList field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetExcludeGpsiList() []string {
-	if o == nil || IsNil(o.ExcludeGpsiList) {
+	if o == nil || isNil(o.ExcludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *ExtAmfEventSubscription) GetExcludeGpsiList() []string {
 // GetExcludeGpsiListOk returns a tuple with the ExcludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetExcludeGpsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExcludeGpsiList) {
+	if o == nil || isNil(o.ExcludeGpsiList) {
 		return nil, false
 	}
 	return o.ExcludeGpsiList, true
@@ -349,7 +349,7 @@ func (o *ExtAmfEventSubscription) GetExcludeGpsiListOk() ([]string, bool) {
 
 // HasExcludeGpsiList returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasExcludeGpsiList() bool {
-	if o != nil && !IsNil(o.ExcludeGpsiList) {
+	if o != nil && !isNil(o.ExcludeGpsiList) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *ExtAmfEventSubscription) SetExcludeGpsiList(v []string) {
 
 // GetIncludeSupiList returns the IncludeSupiList field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetIncludeSupiList() []string {
-	if o == nil || IsNil(o.IncludeSupiList) {
+	if o == nil || isNil(o.IncludeSupiList) {
 		var ret []string
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *ExtAmfEventSubscription) GetIncludeSupiList() []string {
 // GetIncludeSupiListOk returns a tuple with the IncludeSupiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetIncludeSupiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.IncludeSupiList) {
+	if o == nil || isNil(o.IncludeSupiList) {
 		return nil, false
 	}
 	return o.IncludeSupiList, true
@@ -381,7 +381,7 @@ func (o *ExtAmfEventSubscription) GetIncludeSupiListOk() ([]string, bool) {
 
 // HasIncludeSupiList returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasIncludeSupiList() bool {
-	if o != nil && !IsNil(o.IncludeSupiList) {
+	if o != nil && !isNil(o.IncludeSupiList) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *ExtAmfEventSubscription) SetIncludeSupiList(v []string) {
 
 // GetIncludeGpsiList returns the IncludeGpsiList field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetIncludeGpsiList() []string {
-	if o == nil || IsNil(o.IncludeGpsiList) {
+	if o == nil || isNil(o.IncludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *ExtAmfEventSubscription) GetIncludeGpsiList() []string {
 // GetIncludeGpsiListOk returns a tuple with the IncludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetIncludeGpsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.IncludeGpsiList) {
+	if o == nil || isNil(o.IncludeGpsiList) {
 		return nil, false
 	}
 	return o.IncludeGpsiList, true
@@ -413,7 +413,7 @@ func (o *ExtAmfEventSubscription) GetIncludeGpsiListOk() ([]string, bool) {
 
 // HasIncludeGpsiList returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasIncludeGpsiList() bool {
-	if o != nil && !IsNil(o.IncludeGpsiList) {
+	if o != nil && !isNil(o.IncludeGpsiList) {
 		return true
 	}
 
@@ -427,7 +427,7 @@ func (o *ExtAmfEventSubscription) SetIncludeGpsiList(v []string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -437,7 +437,7 @@ func (o *ExtAmfEventSubscription) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -445,7 +445,7 @@ func (o *ExtAmfEventSubscription) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -459,7 +459,7 @@ func (o *ExtAmfEventSubscription) SetGpsi(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -469,7 +469,7 @@ func (o *ExtAmfEventSubscription) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -477,7 +477,7 @@ func (o *ExtAmfEventSubscription) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -491,7 +491,7 @@ func (o *ExtAmfEventSubscription) SetPei(v string) {
 
 // GetAnyUE returns the AnyUE field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetAnyUE() bool {
-	if o == nil || IsNil(o.AnyUE) {
+	if o == nil || isNil(o.AnyUE) {
 		var ret bool
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *ExtAmfEventSubscription) GetAnyUE() bool {
 // GetAnyUEOk returns a tuple with the AnyUE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetAnyUEOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUE) {
+	if o == nil || isNil(o.AnyUE) {
 		return nil, false
 	}
 	return o.AnyUE, true
@@ -509,7 +509,7 @@ func (o *ExtAmfEventSubscription) GetAnyUEOk() (*bool, bool) {
 
 // HasAnyUE returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasAnyUE() bool {
-	if o != nil && !IsNil(o.AnyUE) {
+	if o != nil && !isNil(o.AnyUE) {
 		return true
 	}
 
@@ -523,7 +523,7 @@ func (o *ExtAmfEventSubscription) SetAnyUE(v bool) {
 
 // GetOptions returns the Options field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetOptions() AmfEventMode {
-	if o == nil || IsNil(o.Options) {
+	if o == nil || isNil(o.Options) {
 		var ret AmfEventMode
 		return ret
 	}
@@ -533,7 +533,7 @@ func (o *ExtAmfEventSubscription) GetOptions() AmfEventMode {
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetOptionsOk() (*AmfEventMode, bool) {
-	if o == nil || IsNil(o.Options) {
+	if o == nil || isNil(o.Options) {
 		return nil, false
 	}
 	return o.Options, true
@@ -541,7 +541,7 @@ func (o *ExtAmfEventSubscription) GetOptionsOk() (*AmfEventMode, bool) {
 
 // HasOptions returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasOptions() bool {
-	if o != nil && !IsNil(o.Options) {
+	if o != nil && !isNil(o.Options) {
 		return true
 	}
 
@@ -555,7 +555,7 @@ func (o *ExtAmfEventSubscription) SetOptions(v AmfEventMode) {
 
 // GetSourceNfType returns the SourceNfType field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetSourceNfType() NFType {
-	if o == nil || IsNil(o.SourceNfType) {
+	if o == nil || isNil(o.SourceNfType) {
 		var ret NFType
 		return ret
 	}
@@ -565,7 +565,7 @@ func (o *ExtAmfEventSubscription) GetSourceNfType() NFType {
 // GetSourceNfTypeOk returns a tuple with the SourceNfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetSourceNfTypeOk() (*NFType, bool) {
-	if o == nil || IsNil(o.SourceNfType) {
+	if o == nil || isNil(o.SourceNfType) {
 		return nil, false
 	}
 	return o.SourceNfType, true
@@ -573,7 +573,7 @@ func (o *ExtAmfEventSubscription) GetSourceNfTypeOk() (*NFType, bool) {
 
 // HasSourceNfType returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasSourceNfType() bool {
-	if o != nil && !IsNil(o.SourceNfType) {
+	if o != nil && !isNil(o.SourceNfType) {
 		return true
 	}
 
@@ -587,7 +587,7 @@ func (o *ExtAmfEventSubscription) SetSourceNfType(v NFType) {
 
 // GetTermNotifyInd returns the TermNotifyInd field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetTermNotifyInd() bool {
-	if o == nil || IsNil(o.TermNotifyInd) {
+	if o == nil || isNil(o.TermNotifyInd) {
 		var ret bool
 		return ret
 	}
@@ -597,7 +597,7 @@ func (o *ExtAmfEventSubscription) GetTermNotifyInd() bool {
 // GetTermNotifyIndOk returns a tuple with the TermNotifyInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetTermNotifyIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.TermNotifyInd) {
+	if o == nil || isNil(o.TermNotifyInd) {
 		return nil, false
 	}
 	return o.TermNotifyInd, true
@@ -605,7 +605,7 @@ func (o *ExtAmfEventSubscription) GetTermNotifyIndOk() (*bool, bool) {
 
 // HasTermNotifyInd returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasTermNotifyInd() bool {
-	if o != nil && !IsNil(o.TermNotifyInd) {
+	if o != nil && !isNil(o.TermNotifyInd) {
 		return true
 	}
 
@@ -619,7 +619,7 @@ func (o *ExtAmfEventSubscription) SetTermNotifyInd(v bool) {
 
 // GetBindingInfo returns the BindingInfo field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetBindingInfo() []string {
-	if o == nil || IsNil(o.BindingInfo) {
+	if o == nil || isNil(o.BindingInfo) {
 		var ret []string
 		return ret
 	}
@@ -629,7 +629,7 @@ func (o *ExtAmfEventSubscription) GetBindingInfo() []string {
 // GetBindingInfoOk returns a tuple with the BindingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetBindingInfoOk() ([]string, bool) {
-	if o == nil || IsNil(o.BindingInfo) {
+	if o == nil || isNil(o.BindingInfo) {
 		return nil, false
 	}
 	return o.BindingInfo, true
@@ -637,7 +637,7 @@ func (o *ExtAmfEventSubscription) GetBindingInfoOk() ([]string, bool) {
 
 // HasBindingInfo returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasBindingInfo() bool {
-	if o != nil && !IsNil(o.BindingInfo) {
+	if o != nil && !isNil(o.BindingInfo) {
 		return true
 	}
 
@@ -651,7 +651,7 @@ func (o *ExtAmfEventSubscription) SetBindingInfo(v []string) {
 
 // GetSubscribingNfType returns the SubscribingNfType field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetSubscribingNfType() NFType {
-	if o == nil || IsNil(o.SubscribingNfType) {
+	if o == nil || isNil(o.SubscribingNfType) {
 		var ret NFType
 		return ret
 	}
@@ -661,7 +661,7 @@ func (o *ExtAmfEventSubscription) GetSubscribingNfType() NFType {
 // GetSubscribingNfTypeOk returns a tuple with the SubscribingNfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetSubscribingNfTypeOk() (*NFType, bool) {
-	if o == nil || IsNil(o.SubscribingNfType) {
+	if o == nil || isNil(o.SubscribingNfType) {
 		return nil, false
 	}
 	return o.SubscribingNfType, true
@@ -669,7 +669,7 @@ func (o *ExtAmfEventSubscription) GetSubscribingNfTypeOk() (*NFType, bool) {
 
 // HasSubscribingNfType returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasSubscribingNfType() bool {
-	if o != nil && !IsNil(o.SubscribingNfType) {
+	if o != nil && !isNil(o.SubscribingNfType) {
 		return true
 	}
 
@@ -683,7 +683,7 @@ func (o *ExtAmfEventSubscription) SetSubscribingNfType(v NFType) {
 
 // GetEventSyncInd returns the EventSyncInd field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetEventSyncInd() bool {
-	if o == nil || IsNil(o.EventSyncInd) {
+	if o == nil || isNil(o.EventSyncInd) {
 		var ret bool
 		return ret
 	}
@@ -693,7 +693,7 @@ func (o *ExtAmfEventSubscription) GetEventSyncInd() bool {
 // GetEventSyncIndOk returns a tuple with the EventSyncInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetEventSyncIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.EventSyncInd) {
+	if o == nil || isNil(o.EventSyncInd) {
 		return nil, false
 	}
 	return o.EventSyncInd, true
@@ -701,7 +701,7 @@ func (o *ExtAmfEventSubscription) GetEventSyncIndOk() (*bool, bool) {
 
 // HasEventSyncInd returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasEventSyncInd() bool {
-	if o != nil && !IsNil(o.EventSyncInd) {
+	if o != nil && !isNil(o.EventSyncInd) {
 		return true
 	}
 
@@ -715,7 +715,7 @@ func (o *ExtAmfEventSubscription) SetEventSyncInd(v bool) {
 
 // GetNfConsumerInfo returns the NfConsumerInfo field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetNfConsumerInfo() []string {
-	if o == nil || IsNil(o.NfConsumerInfo) {
+	if o == nil || isNil(o.NfConsumerInfo) {
 		var ret []string
 		return ret
 	}
@@ -725,7 +725,7 @@ func (o *ExtAmfEventSubscription) GetNfConsumerInfo() []string {
 // GetNfConsumerInfoOk returns a tuple with the NfConsumerInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetNfConsumerInfoOk() ([]string, bool) {
-	if o == nil || IsNil(o.NfConsumerInfo) {
+	if o == nil || isNil(o.NfConsumerInfo) {
 		return nil, false
 	}
 	return o.NfConsumerInfo, true
@@ -733,7 +733,7 @@ func (o *ExtAmfEventSubscription) GetNfConsumerInfoOk() ([]string, bool) {
 
 // HasNfConsumerInfo returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasNfConsumerInfo() bool {
-	if o != nil && !IsNil(o.NfConsumerInfo) {
+	if o != nil && !isNil(o.NfConsumerInfo) {
 		return true
 	}
 
@@ -747,7 +747,7 @@ func (o *ExtAmfEventSubscription) SetNfConsumerInfo(v []string) {
 
 // GetAoiStateList returns the AoiStateList field value if set, zero value otherwise.
 func (o *ExtAmfEventSubscription) GetAoiStateList() map[string]AreaOfInterestEventState {
-	if o == nil || IsNil(o.AoiStateList) {
+	if o == nil || isNil(o.AoiStateList) {
 		var ret map[string]AreaOfInterestEventState
 		return ret
 	}
@@ -757,7 +757,7 @@ func (o *ExtAmfEventSubscription) GetAoiStateList() map[string]AreaOfInterestEve
 // GetAoiStateListOk returns a tuple with the AoiStateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtAmfEventSubscription) GetAoiStateListOk() (*map[string]AreaOfInterestEventState, bool) {
-	if o == nil || IsNil(o.AoiStateList) {
+	if o == nil || isNil(o.AoiStateList) {
 		return nil, false
 	}
 	return o.AoiStateList, true
@@ -765,7 +765,7 @@ func (o *ExtAmfEventSubscription) GetAoiStateListOk() (*map[string]AreaOfInteres
 
 // HasAoiStateList returns a boolean if a field has been set.
 func (o *ExtAmfEventSubscription) HasAoiStateList() bool {
-	if o != nil && !IsNil(o.AoiStateList) {
+	if o != nil && !isNil(o.AoiStateList) {
 		return true
 	}
 
@@ -791,61 +791,61 @@ func (o ExtAmfEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventNotifyUri"] = o.EventNotifyUri
 	toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	toSerialize["nfId"] = o.NfId
-	if !IsNil(o.SubsChangeNotifyUri) {
+	if !isNil(o.SubsChangeNotifyUri) {
 		toSerialize["subsChangeNotifyUri"] = o.SubsChangeNotifyUri
 	}
-	if !IsNil(o.SubsChangeNotifyCorrelationId) {
+	if !isNil(o.SubsChangeNotifyCorrelationId) {
 		toSerialize["subsChangeNotifyCorrelationId"] = o.SubsChangeNotifyCorrelationId
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.ExcludeSupiList) {
+	if !isNil(o.ExcludeSupiList) {
 		toSerialize["excludeSupiList"] = o.ExcludeSupiList
 	}
-	if !IsNil(o.ExcludeGpsiList) {
+	if !isNil(o.ExcludeGpsiList) {
 		toSerialize["excludeGpsiList"] = o.ExcludeGpsiList
 	}
-	if !IsNil(o.IncludeSupiList) {
+	if !isNil(o.IncludeSupiList) {
 		toSerialize["includeSupiList"] = o.IncludeSupiList
 	}
-	if !IsNil(o.IncludeGpsiList) {
+	if !isNil(o.IncludeGpsiList) {
 		toSerialize["includeGpsiList"] = o.IncludeGpsiList
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.AnyUE) {
+	if !isNil(o.AnyUE) {
 		toSerialize["anyUE"] = o.AnyUE
 	}
-	if !IsNil(o.Options) {
+	if !isNil(o.Options) {
 		toSerialize["options"] = o.Options
 	}
-	if !IsNil(o.SourceNfType) {
+	if !isNil(o.SourceNfType) {
 		toSerialize["sourceNfType"] = o.SourceNfType
 	}
-	if !IsNil(o.TermNotifyInd) {
+	if !isNil(o.TermNotifyInd) {
 		toSerialize["termNotifyInd"] = o.TermNotifyInd
 	}
-	if !IsNil(o.BindingInfo) {
+	if !isNil(o.BindingInfo) {
 		toSerialize["bindingInfo"] = o.BindingInfo
 	}
-	if !IsNil(o.SubscribingNfType) {
+	if !isNil(o.SubscribingNfType) {
 		toSerialize["subscribingNfType"] = o.SubscribingNfType
 	}
-	if !IsNil(o.EventSyncInd) {
+	if !isNil(o.EventSyncInd) {
 		toSerialize["eventSyncInd"] = o.EventSyncInd
 	}
-	if !IsNil(o.NfConsumerInfo) {
+	if !isNil(o.NfConsumerInfo) {
 		toSerialize["nfConsumerInfo"] = o.NfConsumerInfo
 	}
-	if !IsNil(o.AoiStateList) {
+	if !isNil(o.AoiStateList) {
 		toSerialize["aoiStateList"] = o.AoiStateList
 	}
 	return toSerialize, nil

@@ -17,13 +17,27 @@ import (
 
 // MeteringMethod Possible values are: - DURATION: Indicates that the duration of the service data flow traffic shall be metered. - VOLUME: Indicates that volume of the service data flow traffic shall be metered. - DURATION_VOLUME: Indicates that the duration and the volume of the service data flow  traffic shall be metered. - EVENT: Indicates that events of the service data flow traffic shall be metered. 
 type MeteringMethod struct {
+	MeteringMethodAnyOf *MeteringMethodAnyOf
 	NullValue *NullValue
-	string *string
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MeteringMethod) UnmarshalJSON(data []byte) error {
 	var err error
+	// try to unmarshal JSON data into MeteringMethodAnyOf
+	err = json.Unmarshal(data, &dst.MeteringMethodAnyOf);
+	if err == nil {
+		jsonMeteringMethodAnyOf, _ := json.Marshal(dst.MeteringMethodAnyOf)
+		if string(jsonMeteringMethodAnyOf) == "{}" { // empty struct
+			dst.MeteringMethodAnyOf = nil
+		} else {
+			return nil // data stored in dst.MeteringMethodAnyOf, return on the first match
+		}
+	} else {
+		dst.MeteringMethodAnyOf = nil
+	}
+
 	// try to unmarshal JSON data into NullValue
 	err = json.Unmarshal(data, &dst.NullValue);
 	if err == nil {
@@ -38,16 +52,16 @@ func (dst *MeteringMethod) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	err = json.Unmarshal(data, &dst.String);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.String, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(MeteringMethod)")
@@ -55,12 +69,16 @@ func (dst *MeteringMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MeteringMethod) MarshalJSON() ([]byte, error) {
+	if src.MeteringMethodAnyOf != nil {
+		return json.Marshal(&src.MeteringMethodAnyOf)
+	}
+
 	if src.NullValue != nil {
 		return json.Marshal(&src.NullValue)
 	}
 
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

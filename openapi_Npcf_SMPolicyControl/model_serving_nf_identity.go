@@ -45,7 +45,7 @@ func NewServingNfIdentityWithDefaults() *ServingNfIdentity {
 
 // GetServNfInstId returns the ServNfInstId field value if set, zero value otherwise.
 func (o *ServingNfIdentity) GetServNfInstId() string {
-	if o == nil || IsNil(o.ServNfInstId) {
+	if o == nil || isNil(o.ServNfInstId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ServingNfIdentity) GetServNfInstId() string {
 // GetServNfInstIdOk returns a tuple with the ServNfInstId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingNfIdentity) GetServNfInstIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServNfInstId) {
+	if o == nil || isNil(o.ServNfInstId) {
 		return nil, false
 	}
 	return o.ServNfInstId, true
@@ -63,7 +63,7 @@ func (o *ServingNfIdentity) GetServNfInstIdOk() (*string, bool) {
 
 // HasServNfInstId returns a boolean if a field has been set.
 func (o *ServingNfIdentity) HasServNfInstId() bool {
-	if o != nil && !IsNil(o.ServNfInstId) {
+	if o != nil && !isNil(o.ServNfInstId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ServingNfIdentity) SetServNfInstId(v string) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *ServingNfIdentity) GetGuami() Guami {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ServingNfIdentity) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingNfIdentity) GetGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -95,7 +95,7 @@ func (o *ServingNfIdentity) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *ServingNfIdentity) HasGuami() bool {
-	if o != nil && !IsNil(o.Guami) {
+	if o != nil && !isNil(o.Guami) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ServingNfIdentity) SetGuami(v Guami) {
 
 // GetAnGwAddr returns the AnGwAddr field value if set, zero value otherwise.
 func (o *ServingNfIdentity) GetAnGwAddr() AnGwAddress {
-	if o == nil || IsNil(o.AnGwAddr) {
+	if o == nil || isNil(o.AnGwAddr) {
 		var ret AnGwAddress
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ServingNfIdentity) GetAnGwAddr() AnGwAddress {
 // GetAnGwAddrOk returns a tuple with the AnGwAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingNfIdentity) GetAnGwAddrOk() (*AnGwAddress, bool) {
-	if o == nil || IsNil(o.AnGwAddr) {
+	if o == nil || isNil(o.AnGwAddr) {
 		return nil, false
 	}
 	return o.AnGwAddr, true
@@ -127,7 +127,7 @@ func (o *ServingNfIdentity) GetAnGwAddrOk() (*AnGwAddress, bool) {
 
 // HasAnGwAddr returns a boolean if a field has been set.
 func (o *ServingNfIdentity) HasAnGwAddr() bool {
-	if o != nil && !IsNil(o.AnGwAddr) {
+	if o != nil && !isNil(o.AnGwAddr) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ServingNfIdentity) SetAnGwAddr(v AnGwAddress) {
 
 // GetSgsnAddr returns the SgsnAddr field value if set, zero value otherwise.
 func (o *ServingNfIdentity) GetSgsnAddr() SgsnAddress {
-	if o == nil || IsNil(o.SgsnAddr) {
+	if o == nil || isNil(o.SgsnAddr) {
 		var ret SgsnAddress
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ServingNfIdentity) GetSgsnAddr() SgsnAddress {
 // GetSgsnAddrOk returns a tuple with the SgsnAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingNfIdentity) GetSgsnAddrOk() (*SgsnAddress, bool) {
-	if o == nil || IsNil(o.SgsnAddr) {
+	if o == nil || isNil(o.SgsnAddr) {
 		return nil, false
 	}
 	return o.SgsnAddr, true
@@ -159,7 +159,7 @@ func (o *ServingNfIdentity) GetSgsnAddrOk() (*SgsnAddress, bool) {
 
 // HasSgsnAddr returns a boolean if a field has been set.
 func (o *ServingNfIdentity) HasSgsnAddr() bool {
-	if o != nil && !IsNil(o.SgsnAddr) {
+	if o != nil && !isNil(o.SgsnAddr) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o ServingNfIdentity) MarshalJSON() ([]byte, error) {
 
 func (o ServingNfIdentity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServNfInstId) {
+	if !isNil(o.ServNfInstId) {
 		toSerialize["servNfInstId"] = o.ServNfInstId
 	}
-	if !IsNil(o.Guami) {
+	if !isNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !IsNil(o.AnGwAddr) {
+	if !isNil(o.AnGwAddr) {
 		toSerialize["anGwAddr"] = o.AnGwAddr
 	}
-	if !IsNil(o.SgsnAddr) {
+	if !isNil(o.SgsnAddr) {
 		toSerialize["sgsnAddr"] = o.SgsnAddr
 	}
 	return toSerialize, nil

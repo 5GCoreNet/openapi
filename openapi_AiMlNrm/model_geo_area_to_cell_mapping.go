@@ -42,7 +42,7 @@ func NewGeoAreaToCellMappingWithDefaults() *GeoAreaToCellMapping {
 
 // GetGeoArea returns the GeoArea field value if set, zero value otherwise.
 func (o *GeoAreaToCellMapping) GetGeoArea() GeoArea {
-	if o == nil || IsNil(o.GeoArea) {
+	if o == nil || isNil(o.GeoArea) {
 		var ret GeoArea
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeoAreaToCellMapping) GetGeoArea() GeoArea {
 // GetGeoAreaOk returns a tuple with the GeoArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoAreaToCellMapping) GetGeoAreaOk() (*GeoArea, bool) {
-	if o == nil || IsNil(o.GeoArea) {
+	if o == nil || isNil(o.GeoArea) {
 		return nil, false
 	}
 	return o.GeoArea, true
@@ -60,7 +60,7 @@ func (o *GeoAreaToCellMapping) GetGeoAreaOk() (*GeoArea, bool) {
 
 // HasGeoArea returns a boolean if a field has been set.
 func (o *GeoAreaToCellMapping) HasGeoArea() bool {
-	if o != nil && !IsNil(o.GeoArea) {
+	if o != nil && !isNil(o.GeoArea) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeoAreaToCellMapping) SetGeoArea(v GeoArea) {
 
 // GetAssociationThreshold returns the AssociationThreshold field value if set, zero value otherwise.
 func (o *GeoAreaToCellMapping) GetAssociationThreshold() int32 {
-	if o == nil || IsNil(o.AssociationThreshold) {
+	if o == nil || isNil(o.AssociationThreshold) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeoAreaToCellMapping) GetAssociationThreshold() int32 {
 // GetAssociationThresholdOk returns a tuple with the AssociationThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoAreaToCellMapping) GetAssociationThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AssociationThreshold) {
+	if o == nil || isNil(o.AssociationThreshold) {
 		return nil, false
 	}
 	return o.AssociationThreshold, true
@@ -92,7 +92,7 @@ func (o *GeoAreaToCellMapping) GetAssociationThresholdOk() (*int32, bool) {
 
 // HasAssociationThreshold returns a boolean if a field has been set.
 func (o *GeoAreaToCellMapping) HasAssociationThreshold() bool {
-	if o != nil && !IsNil(o.AssociationThreshold) {
+	if o != nil && !isNil(o.AssociationThreshold) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GeoAreaToCellMapping) MarshalJSON() ([]byte, error) {
 
 func (o GeoAreaToCellMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GeoArea) {
+	if !isNil(o.GeoArea) {
 		toSerialize["geoArea"] = o.GeoArea
 	}
-	if !IsNil(o.AssociationThreshold) {
+	if !isNil(o.AssociationThreshold) {
 		toSerialize["associationThreshold"] = o.AssociationThreshold
 	}
 	return toSerialize, nil

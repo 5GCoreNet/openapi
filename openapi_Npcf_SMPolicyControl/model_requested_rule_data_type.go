@@ -17,23 +17,37 @@ import (
 
 // RequestedRuleDataType Possible values are: - CH_ID: Indicates that the requested rule data is the charging identifier.  - MS_TIME_ZONE: Indicates that the requested access network info type is the UE's timezone. - USER_LOC_INFO: Indicates that the requested access network info type is the UE's location. - RES_RELEASE: Indicates that the requested rule data is the result of the release of  resource. - SUCC_RES_ALLO: Indicates that the requested rule data is the successful resource  allocation. - EPS_FALLBACK: Indicates that the requested rule data is the report of QoS flow rejection  due to EPS fallback. 
 type RequestedRuleDataType struct {
-	string *string
+	RequestedRuleDataTypeAnyOf *RequestedRuleDataTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RequestedRuleDataType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into RequestedRuleDataTypeAnyOf
+	err = json.Unmarshal(data, &dst.RequestedRuleDataTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonRequestedRuleDataTypeAnyOf, _ := json.Marshal(dst.RequestedRuleDataTypeAnyOf)
+		if string(jsonRequestedRuleDataTypeAnyOf) == "{}" { // empty struct
+			dst.RequestedRuleDataTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.RequestedRuleDataTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.RequestedRuleDataTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RequestedRuleDataType)")
@@ -41,8 +55,12 @@ func (dst *RequestedRuleDataType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RequestedRuleDataType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.RequestedRuleDataTypeAnyOf != nil {
+		return json.Marshal(&src.RequestedRuleDataTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

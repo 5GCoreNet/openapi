@@ -19,7 +19,7 @@ var _ MappedNullable = &PcfFunctionSingleAllOf{}
 
 // PcfFunctionSingleAllOf struct for PcfFunctionSingleAllOf
 type PcfFunctionSingleAllOf struct {
-	Attributes *PcfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewPcfFunctionSingleAllOf instantiates a new PcfFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewPcfFunctionSingleAllOfWithDefaults() *PcfFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PcfFunctionSingleAllOf) GetAttributes() PcfFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret PcfFunctionSingleAllOfAttributes
+func (o *PcfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *PcfFunctionSingleAllOf) GetAttributes() PcfFunctionSingleAllOfAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PcfFunctionSingleAllOf) GetAttributesOk() (*PcfFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *PcfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *PcfFunctionSingleAllOf) GetAttributesOk() (*PcfFunctionSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given PcfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *PcfFunctionSingleAllOf) SetAttributes(v PcfFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *PcfFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o PcfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o PcfFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

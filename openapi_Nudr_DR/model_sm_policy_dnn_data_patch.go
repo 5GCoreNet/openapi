@@ -80,7 +80,7 @@ func (o *SmPolicyDnnDataPatch) GetBdtRefIds() map[string]string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SmPolicyDnnDataPatch) GetBdtRefIdsOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.BdtRefIds) {
+	if o == nil || isNil(o.BdtRefIds) {
 		return nil, false
 	}
 	return &o.BdtRefIds, true
@@ -88,7 +88,7 @@ func (o *SmPolicyDnnDataPatch) GetBdtRefIdsOk() (*map[string]string, bool) {
 
 // HasBdtRefIds returns a boolean if a field has been set.
 func (o *SmPolicyDnnDataPatch) HasBdtRefIds() bool {
-	if o != nil && IsNil(o.BdtRefIds) {
+	if o != nil && isNil(o.BdtRefIds) {
 		return true
 	}
 

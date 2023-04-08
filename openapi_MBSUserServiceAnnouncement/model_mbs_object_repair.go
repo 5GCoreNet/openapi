@@ -41,7 +41,7 @@ func NewMbsObjectRepairWithDefaults() *MbsObjectRepair {
 
 // GetSessionDescriptionURI returns the SessionDescriptionURI field value if set, zero value otherwise.
 func (o *MbsObjectRepair) GetSessionDescriptionURI() string {
-	if o == nil || IsNil(o.SessionDescriptionURI) {
+	if o == nil || isNil(o.SessionDescriptionURI) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MbsObjectRepair) GetSessionDescriptionURI() string {
 // GetSessionDescriptionURIOk returns a tuple with the SessionDescriptionURI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsObjectRepair) GetSessionDescriptionURIOk() (*string, bool) {
-	if o == nil || IsNil(o.SessionDescriptionURI) {
+	if o == nil || isNil(o.SessionDescriptionURI) {
 		return nil, false
 	}
 	return o.SessionDescriptionURI, true
@@ -59,7 +59,7 @@ func (o *MbsObjectRepair) GetSessionDescriptionURIOk() (*string, bool) {
 
 // HasSessionDescriptionURI returns a boolean if a field has been set.
 func (o *MbsObjectRepair) HasSessionDescriptionURI() bool {
-	if o != nil && !IsNil(o.SessionDescriptionURI) {
+	if o != nil && !isNil(o.SessionDescriptionURI) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MbsObjectRepair) MarshalJSON() ([]byte, error) {
 
 func (o MbsObjectRepair) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SessionDescriptionURI) {
+	if !isNil(o.SessionDescriptionURI) {
 		toSerialize["sessionDescriptionURI"] = o.SessionDescriptionURI
 	}
 	return toSerialize, nil

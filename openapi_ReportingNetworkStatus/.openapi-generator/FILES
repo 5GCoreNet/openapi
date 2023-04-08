@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,6 +8,7 @@ client.go
 configuration.go
 docs/CivicAddress.md
 docs/CongestionType.md
+docs/CongestionTypeAnyOf.md
 docs/EllipsoidArc.md
 docs/EllipsoidArcAllOf.md
 docs/GADShape.md
@@ -41,6 +41,7 @@ docs/PolygonAllOf.md
 docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
 docs/WebsockNotifConfig.md
@@ -49,6 +50,7 @@ go.mod
 go.sum
 model_civic_address.go
 model_congestion_type.go
+model_congestion_type_any_of.go
 model_ellipsoid_arc.go
 model_ellipsoid_arc_all_of.go
 model_gad_shape.go
@@ -79,6 +81,7 @@ model_polygon_all_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go
 model_websock_notif_config.go

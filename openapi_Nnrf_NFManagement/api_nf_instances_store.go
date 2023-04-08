@@ -13,7 +13,7 @@ package openapi_Nnrf_NFManagement
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -94,16 +94,16 @@ func (a *NFInstancesStoreApiService) GetNFInstancesExecute(r ApiGetNFInstancesRe
 	localVarFormParams := url.Values{}
 
 	if r.nfType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nf-type", r.nfType, "")
+		parameterAddToQuery(localVarQueryParams, "nf-type", r.nfType, "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	if r.pageNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page-number", r.pageNumber, "")
+		parameterAddToQuery(localVarQueryParams, "page-number", r.pageNumber, "")
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page-size", r.pageSize, "")
+		parameterAddToQuery(localVarQueryParams, "page-size", r.pageSize, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,9 +132,9 @@ func (a *NFInstancesStoreApiService) GetNFInstancesExecute(r ApiGetNFInstancesRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *NFInstancesStoreApiService) OptionsNFInstancesExecute(r ApiOptionsNFIns
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

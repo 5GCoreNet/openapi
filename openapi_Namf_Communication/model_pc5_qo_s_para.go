@@ -68,7 +68,7 @@ func (o *Pc5QoSPara) SetPc5QosFlowList(v []Pc5QosFlowItem) {
 
 // GetPc5LinkAmbr returns the Pc5LinkAmbr field value if set, zero value otherwise.
 func (o *Pc5QoSPara) GetPc5LinkAmbr() string {
-	if o == nil || IsNil(o.Pc5LinkAmbr) {
+	if o == nil || isNil(o.Pc5LinkAmbr) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *Pc5QoSPara) GetPc5LinkAmbr() string {
 // GetPc5LinkAmbrOk returns a tuple with the Pc5LinkAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5QoSPara) GetPc5LinkAmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.Pc5LinkAmbr) {
+	if o == nil || isNil(o.Pc5LinkAmbr) {
 		return nil, false
 	}
 	return o.Pc5LinkAmbr, true
@@ -86,7 +86,7 @@ func (o *Pc5QoSPara) GetPc5LinkAmbrOk() (*string, bool) {
 
 // HasPc5LinkAmbr returns a boolean if a field has been set.
 func (o *Pc5QoSPara) HasPc5LinkAmbr() bool {
-	if o != nil && !IsNil(o.Pc5LinkAmbr) {
+	if o != nil && !isNil(o.Pc5LinkAmbr) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o Pc5QoSPara) MarshalJSON() ([]byte, error) {
 func (o Pc5QoSPara) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pc5QosFlowList"] = o.Pc5QosFlowList
-	if !IsNil(o.Pc5LinkAmbr) {
+	if !isNil(o.Pc5LinkAmbr) {
 		toSerialize["pc5LinkAmbr"] = o.Pc5LinkAmbr
 	}
 	return toSerialize, nil

@@ -69,7 +69,7 @@ func (o *EventReport) SetEvent(v Event) {
 
 // GetAccumulatedUsage returns the AccumulatedUsage field value if set, zero value otherwise.
 func (o *EventReport) GetAccumulatedUsage() AccumulatedUsage {
-	if o == nil || IsNil(o.AccumulatedUsage) {
+	if o == nil || isNil(o.AccumulatedUsage) {
 		var ret AccumulatedUsage
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EventReport) GetAccumulatedUsage() AccumulatedUsage {
 // GetAccumulatedUsageOk returns a tuple with the AccumulatedUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReport) GetAccumulatedUsageOk() (*AccumulatedUsage, bool) {
-	if o == nil || IsNil(o.AccumulatedUsage) {
+	if o == nil || isNil(o.AccumulatedUsage) {
 		return nil, false
 	}
 	return o.AccumulatedUsage, true
@@ -87,7 +87,7 @@ func (o *EventReport) GetAccumulatedUsageOk() (*AccumulatedUsage, bool) {
 
 // HasAccumulatedUsage returns a boolean if a field has been set.
 func (o *EventReport) HasAccumulatedUsage() bool {
-	if o != nil && !IsNil(o.AccumulatedUsage) {
+	if o != nil && !isNil(o.AccumulatedUsage) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *EventReport) SetAccumulatedUsage(v AccumulatedUsage) {
 
 // GetFlowIds returns the FlowIds field value if set, zero value otherwise.
 func (o *EventReport) GetFlowIds() []int32 {
-	if o == nil || IsNil(o.FlowIds) {
+	if o == nil || isNil(o.FlowIds) {
 		var ret []int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *EventReport) GetFlowIds() []int32 {
 // GetFlowIdsOk returns a tuple with the FlowIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReport) GetFlowIdsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.FlowIds) {
+	if o == nil || isNil(o.FlowIds) {
 		return nil, false
 	}
 	return o.FlowIds, true
@@ -119,7 +119,7 @@ func (o *EventReport) GetFlowIdsOk() ([]int32, bool) {
 
 // HasFlowIds returns a boolean if a field has been set.
 func (o *EventReport) HasFlowIds() bool {
-	if o != nil && !IsNil(o.FlowIds) {
+	if o != nil && !isNil(o.FlowIds) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o EventReport) MarshalJSON() ([]byte, error) {
 func (o EventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.AccumulatedUsage) {
+	if !isNil(o.AccumulatedUsage) {
 		toSerialize["accumulatedUsage"] = o.AccumulatedUsage
 	}
-	if !IsNil(o.FlowIds) {
+	if !isNil(o.FlowIds) {
 		toSerialize["flowIds"] = o.FlowIds
 	}
 	return toSerialize, nil

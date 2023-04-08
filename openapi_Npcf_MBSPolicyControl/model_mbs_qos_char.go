@@ -183,7 +183,7 @@ func (o *MbsQosChar) SetPacketErrorRate(v string) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *MbsQosChar) GetAverWindow() int32 {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *MbsQosChar) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQosChar) GetAverWindowOk() (*int32, bool) {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -201,7 +201,7 @@ func (o *MbsQosChar) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *MbsQosChar) HasAverWindow() bool {
-	if o != nil && !IsNil(o.AverWindow) {
+	if o != nil && !isNil(o.AverWindow) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o MbsQosChar) ToMap() (map[string]interface{}, error) {
 	toSerialize["resourceType"] = o.ResourceType
 	toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	toSerialize["packetErrorRate"] = o.PacketErrorRate
-	if !IsNil(o.AverWindow) {
+	if !isNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
 	toSerialize["mbsMaxDataBurstVol"] = o.MbsMaxDataBurstVol

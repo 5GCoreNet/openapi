@@ -41,7 +41,7 @@ func NewEnhancedCoverageRestrictionDataWithDefaults() *EnhancedCoverageRestricti
 
 // GetPlmnEcInfoList returns the PlmnEcInfoList field value if set, zero value otherwise.
 func (o *EnhancedCoverageRestrictionData) GetPlmnEcInfoList() []PlmnEcInfo {
-	if o == nil || IsNil(o.PlmnEcInfoList) {
+	if o == nil || isNil(o.PlmnEcInfoList) {
 		var ret []PlmnEcInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EnhancedCoverageRestrictionData) GetPlmnEcInfoList() []PlmnEcInfo {
 // GetPlmnEcInfoListOk returns a tuple with the PlmnEcInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnhancedCoverageRestrictionData) GetPlmnEcInfoListOk() ([]PlmnEcInfo, bool) {
-	if o == nil || IsNil(o.PlmnEcInfoList) {
+	if o == nil || isNil(o.PlmnEcInfoList) {
 		return nil, false
 	}
 	return o.PlmnEcInfoList, true
@@ -59,7 +59,7 @@ func (o *EnhancedCoverageRestrictionData) GetPlmnEcInfoListOk() ([]PlmnEcInfo, b
 
 // HasPlmnEcInfoList returns a boolean if a field has been set.
 func (o *EnhancedCoverageRestrictionData) HasPlmnEcInfoList() bool {
-	if o != nil && !IsNil(o.PlmnEcInfoList) {
+	if o != nil && !isNil(o.PlmnEcInfoList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o EnhancedCoverageRestrictionData) MarshalJSON() ([]byte, error) {
 
 func (o EnhancedCoverageRestrictionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnEcInfoList) {
+	if !isNil(o.PlmnEcInfoList) {
 		toSerialize["plmnEcInfoList"] = o.PlmnEcInfoList
 	}
 	return toSerialize, nil

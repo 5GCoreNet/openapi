@@ -96,7 +96,7 @@ func (o *SorSecurityInfo) SetCounterSor(v string) {
 
 // GetSorXmacIue returns the SorXmacIue field value if set, zero value otherwise.
 func (o *SorSecurityInfo) GetSorXmacIue() string {
-	if o == nil || IsNil(o.SorXmacIue) {
+	if o == nil || isNil(o.SorXmacIue) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SorSecurityInfo) GetSorXmacIue() string {
 // GetSorXmacIueOk returns a tuple with the SorXmacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorSecurityInfo) GetSorXmacIueOk() (*string, bool) {
-	if o == nil || IsNil(o.SorXmacIue) {
+	if o == nil || isNil(o.SorXmacIue) {
 		return nil, false
 	}
 	return o.SorXmacIue, true
@@ -114,7 +114,7 @@ func (o *SorSecurityInfo) GetSorXmacIueOk() (*string, bool) {
 
 // HasSorXmacIue returns a boolean if a field has been set.
 func (o *SorSecurityInfo) HasSorXmacIue() bool {
-	if o != nil && !IsNil(o.SorXmacIue) {
+	if o != nil && !isNil(o.SorXmacIue) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o SorSecurityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sorMacIausf"] = o.SorMacIausf
 	toSerialize["counterSor"] = o.CounterSor
-	if !IsNil(o.SorXmacIue) {
+	if !isNil(o.SorXmacIue) {
 		toSerialize["sorXmacIue"] = o.SorXmacIue
 	}
 	return toSerialize, nil

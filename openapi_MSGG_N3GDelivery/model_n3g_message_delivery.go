@@ -99,7 +99,7 @@ func (o *N3gMessageDelivery) SetDestAddr(v Address) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *N3gMessageDelivery) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *N3gMessageDelivery) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gMessageDelivery) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -117,7 +117,7 @@ func (o *N3gMessageDelivery) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *N3gMessageDelivery) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *N3gMessageDelivery) SetMsgId(v string) {
 
 // GetDelivStReqInd returns the DelivStReqInd field value if set, zero value otherwise.
 func (o *N3gMessageDelivery) GetDelivStReqInd() bool {
-	if o == nil || IsNil(o.DelivStReqInd) {
+	if o == nil || isNil(o.DelivStReqInd) {
 		var ret bool
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *N3gMessageDelivery) GetDelivStReqInd() bool {
 // GetDelivStReqIndOk returns a tuple with the DelivStReqInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gMessageDelivery) GetDelivStReqIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DelivStReqInd) {
+	if o == nil || isNil(o.DelivStReqInd) {
 		return nil, false
 	}
 	return o.DelivStReqInd, true
@@ -173,7 +173,7 @@ func (o *N3gMessageDelivery) GetDelivStReqIndOk() (*bool, bool) {
 
 // HasDelivStReqInd returns a boolean if a field has been set.
 func (o *N3gMessageDelivery) HasDelivStReqInd() bool {
-	if o != nil && !IsNil(o.DelivStReqInd) {
+	if o != nil && !isNil(o.DelivStReqInd) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *N3gMessageDelivery) SetDelivStReqInd(v bool) {
 
 // GetPayload returns the Payload field value if set, zero value otherwise.
 func (o *N3gMessageDelivery) GetPayload() string {
-	if o == nil || IsNil(o.Payload) {
+	if o == nil || isNil(o.Payload) {
 		var ret string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *N3gMessageDelivery) GetPayload() string {
 // GetPayloadOk returns a tuple with the Payload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gMessageDelivery) GetPayloadOk() (*string, bool) {
-	if o == nil || IsNil(o.Payload) {
+	if o == nil || isNil(o.Payload) {
 		return nil, false
 	}
 	return o.Payload, true
@@ -205,7 +205,7 @@ func (o *N3gMessageDelivery) GetPayloadOk() (*string, bool) {
 
 // HasPayload returns a boolean if a field has been set.
 func (o *N3gMessageDelivery) HasPayload() bool {
-	if o != nil && !IsNil(o.Payload) {
+	if o != nil && !isNil(o.Payload) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *N3gMessageDelivery) SetPayload(v string) {
 
 // GetSegInd returns the SegInd field value if set, zero value otherwise.
 func (o *N3gMessageDelivery) GetSegInd() bool {
-	if o == nil || IsNil(o.SegInd) {
+	if o == nil || isNil(o.SegInd) {
 		var ret bool
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *N3gMessageDelivery) GetSegInd() bool {
 // GetSegIndOk returns a tuple with the SegInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gMessageDelivery) GetSegIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SegInd) {
+	if o == nil || isNil(o.SegInd) {
 		return nil, false
 	}
 	return o.SegInd, true
@@ -237,7 +237,7 @@ func (o *N3gMessageDelivery) GetSegIndOk() (*bool, bool) {
 
 // HasSegInd returns a boolean if a field has been set.
 func (o *N3gMessageDelivery) HasSegInd() bool {
-	if o != nil && !IsNil(o.SegInd) {
+	if o != nil && !isNil(o.SegInd) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *N3gMessageDelivery) SetSegInd(v bool) {
 
 // GetSegParams returns the SegParams field value if set, zero value otherwise.
 func (o *N3gMessageDelivery) GetSegParams() MessageSegmentParameters {
-	if o == nil || IsNil(o.SegParams) {
+	if o == nil || isNil(o.SegParams) {
 		var ret MessageSegmentParameters
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *N3gMessageDelivery) GetSegParams() MessageSegmentParameters {
 // GetSegParamsOk returns a tuple with the SegParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N3gMessageDelivery) GetSegParamsOk() (*MessageSegmentParameters, bool) {
-	if o == nil || IsNil(o.SegParams) {
+	if o == nil || isNil(o.SegParams) {
 		return nil, false
 	}
 	return o.SegParams, true
@@ -269,7 +269,7 @@ func (o *N3gMessageDelivery) GetSegParamsOk() (*MessageSegmentParameters, bool) 
 
 // HasSegParams returns a boolean if a field has been set.
 func (o *N3gMessageDelivery) HasSegParams() bool {
-	if o != nil && !IsNil(o.SegParams) {
+	if o != nil && !isNil(o.SegParams) {
 		return true
 	}
 
@@ -293,20 +293,20 @@ func (o N3gMessageDelivery) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["oriAddr"] = o.OriAddr
 	toSerialize["destAddr"] = o.DestAddr
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
 	toSerialize["msgId"] = o.MsgId
-	if !IsNil(o.DelivStReqInd) {
+	if !isNil(o.DelivStReqInd) {
 		toSerialize["delivStReqInd"] = o.DelivStReqInd
 	}
-	if !IsNil(o.Payload) {
+	if !isNil(o.Payload) {
 		toSerialize["payload"] = o.Payload
 	}
-	if !IsNil(o.SegInd) {
+	if !isNil(o.SegInd) {
 		toSerialize["segInd"] = o.SegInd
 	}
-	if !IsNil(o.SegParams) {
+	if !isNil(o.SegParams) {
 		toSerialize["segParams"] = o.SegParams
 	}
 	return toSerialize, nil

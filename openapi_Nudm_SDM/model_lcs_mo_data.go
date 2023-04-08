@@ -67,7 +67,7 @@ func (o *LcsMoData) SetAllowedServiceClasses(v []LcsMoServiceClass) {
 
 // GetMoAssistanceDataTypes returns the MoAssistanceDataTypes field value if set, zero value otherwise.
 func (o *LcsMoData) GetMoAssistanceDataTypes() LcsBroadcastAssistanceTypesData {
-	if o == nil || IsNil(o.MoAssistanceDataTypes) {
+	if o == nil || isNil(o.MoAssistanceDataTypes) {
 		var ret LcsBroadcastAssistanceTypesData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LcsMoData) GetMoAssistanceDataTypes() LcsBroadcastAssistanceTypesData {
 // GetMoAssistanceDataTypesOk returns a tuple with the MoAssistanceDataTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsMoData) GetMoAssistanceDataTypesOk() (*LcsBroadcastAssistanceTypesData, bool) {
-	if o == nil || IsNil(o.MoAssistanceDataTypes) {
+	if o == nil || isNil(o.MoAssistanceDataTypes) {
 		return nil, false
 	}
 	return o.MoAssistanceDataTypes, true
@@ -85,7 +85,7 @@ func (o *LcsMoData) GetMoAssistanceDataTypesOk() (*LcsBroadcastAssistanceTypesDa
 
 // HasMoAssistanceDataTypes returns a boolean if a field has been set.
 func (o *LcsMoData) HasMoAssistanceDataTypes() bool {
-	if o != nil && !IsNil(o.MoAssistanceDataTypes) {
+	if o != nil && !isNil(o.MoAssistanceDataTypes) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o LcsMoData) MarshalJSON() ([]byte, error) {
 func (o LcsMoData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allowedServiceClasses"] = o.AllowedServiceClasses
-	if !IsNil(o.MoAssistanceDataTypes) {
+	if !isNil(o.MoAssistanceDataTypes) {
 		toSerialize["moAssistanceDataTypes"] = o.MoAssistanceDataTypes
 	}
 	return toSerialize, nil

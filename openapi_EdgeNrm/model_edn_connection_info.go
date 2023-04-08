@@ -42,7 +42,7 @@ func NewEDNConnectionInfoWithDefaults() *EDNConnectionInfo {
 
 // GetDNN returns the DNN field value if set, zero value otherwise.
 func (o *EDNConnectionInfo) GetDNN() string {
-	if o == nil || IsNil(o.DNN) {
+	if o == nil || isNil(o.DNN) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EDNConnectionInfo) GetDNN() string {
 // GetDNNOk returns a tuple with the DNN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConnectionInfo) GetDNNOk() (*string, bool) {
-	if o == nil || IsNil(o.DNN) {
+	if o == nil || isNil(o.DNN) {
 		return nil, false
 	}
 	return o.DNN, true
@@ -60,7 +60,7 @@ func (o *EDNConnectionInfo) GetDNNOk() (*string, bool) {
 
 // HasDNN returns a boolean if a field has been set.
 func (o *EDNConnectionInfo) HasDNN() bool {
-	if o != nil && !IsNil(o.DNN) {
+	if o != nil && !isNil(o.DNN) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EDNConnectionInfo) SetDNN(v string) {
 
 // GetEDNServiceArea returns the EDNServiceArea field value if set, zero value otherwise.
 func (o *EDNConnectionInfo) GetEDNServiceArea() ServingLocation {
-	if o == nil || IsNil(o.EDNServiceArea) {
+	if o == nil || isNil(o.EDNServiceArea) {
 		var ret ServingLocation
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EDNConnectionInfo) GetEDNServiceArea() ServingLocation {
 // GetEDNServiceAreaOk returns a tuple with the EDNServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConnectionInfo) GetEDNServiceAreaOk() (*ServingLocation, bool) {
-	if o == nil || IsNil(o.EDNServiceArea) {
+	if o == nil || isNil(o.EDNServiceArea) {
 		return nil, false
 	}
 	return o.EDNServiceArea, true
@@ -92,7 +92,7 @@ func (o *EDNConnectionInfo) GetEDNServiceAreaOk() (*ServingLocation, bool) {
 
 // HasEDNServiceArea returns a boolean if a field has been set.
 func (o *EDNConnectionInfo) HasEDNServiceArea() bool {
-	if o != nil && !IsNil(o.EDNServiceArea) {
+	if o != nil && !isNil(o.EDNServiceArea) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o EDNConnectionInfo) MarshalJSON() ([]byte, error) {
 
 func (o EDNConnectionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DNN) {
+	if !isNil(o.DNN) {
 		toSerialize["dNN"] = o.DNN
 	}
-	if !IsNil(o.EDNServiceArea) {
+	if !isNil(o.EDNServiceArea) {
 		toSerialize["eDNServiceArea"] = o.EDNServiceArea
 	}
 	return toSerialize, nil

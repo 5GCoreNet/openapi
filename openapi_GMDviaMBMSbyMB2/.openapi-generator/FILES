@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -44,6 +43,7 @@ docs/PolygonAllOf.md
 docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/TMGIAllocation.md
 docs/TMGIAllocationOperationApi.md
 docs/TMGIAllocationPatch.md
@@ -85,6 +85,7 @@ model_polygon_all_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tmgi_allocation.go
 model_tmgi_allocation_patch.go
 model_uncertainty_ellipse.go

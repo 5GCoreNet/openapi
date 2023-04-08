@@ -42,7 +42,7 @@ func NewTransferMtDataAddInfoWithDefaults() *TransferMtDataAddInfo {
 
 // GetMaxWaitingTime returns the MaxWaitingTime field value if set, zero value otherwise.
 func (o *TransferMtDataAddInfo) GetMaxWaitingTime() int32 {
-	if o == nil || IsNil(o.MaxWaitingTime) {
+	if o == nil || isNil(o.MaxWaitingTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TransferMtDataAddInfo) GetMaxWaitingTime() int32 {
 // GetMaxWaitingTimeOk returns a tuple with the MaxWaitingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferMtDataAddInfo) GetMaxWaitingTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxWaitingTime) {
+	if o == nil || isNil(o.MaxWaitingTime) {
 		return nil, false
 	}
 	return o.MaxWaitingTime, true
@@ -60,7 +60,7 @@ func (o *TransferMtDataAddInfo) GetMaxWaitingTimeOk() (*int32, bool) {
 
 // HasMaxWaitingTime returns a boolean if a field has been set.
 func (o *TransferMtDataAddInfo) HasMaxWaitingTime() bool {
-	if o != nil && !IsNil(o.MaxWaitingTime) {
+	if o != nil && !isNil(o.MaxWaitingTime) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o TransferMtDataAddInfo) MarshalJSON() ([]byte, error) {
 
 func (o TransferMtDataAddInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxWaitingTime) {
+	if !isNil(o.MaxWaitingTime) {
 		toSerialize["maxWaitingTime"] = o.MaxWaitingTime
 	}
 	return toSerialize, nil

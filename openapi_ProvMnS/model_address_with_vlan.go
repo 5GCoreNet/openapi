@@ -43,7 +43,7 @@ func NewAddressWithVlanWithDefaults() *AddressWithVlan {
 
 // GetIpv4Address returns the Ipv4Address field value if set, zero value otherwise.
 func (o *AddressWithVlan) GetIpv4Address() string {
-	if o == nil || IsNil(o.Ipv4Address) {
+	if o == nil || isNil(o.Ipv4Address) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AddressWithVlan) GetIpv4Address() string {
 // GetIpv4AddressOk returns a tuple with the Ipv4Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressWithVlan) GetIpv4AddressOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Address) {
+	if o == nil || isNil(o.Ipv4Address) {
 		return nil, false
 	}
 	return o.Ipv4Address, true
@@ -61,7 +61,7 @@ func (o *AddressWithVlan) GetIpv4AddressOk() (*string, bool) {
 
 // HasIpv4Address returns a boolean if a field has been set.
 func (o *AddressWithVlan) HasIpv4Address() bool {
-	if o != nil && !IsNil(o.Ipv4Address) {
+	if o != nil && !isNil(o.Ipv4Address) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AddressWithVlan) SetIpv4Address(v string) {
 
 // GetIpv6Address returns the Ipv6Address field value if set, zero value otherwise.
 func (o *AddressWithVlan) GetIpv6Address() Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Address) {
+	if o == nil || isNil(o.Ipv6Address) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AddressWithVlan) GetIpv6Address() Ipv6Addr {
 // GetIpv6AddressOk returns a tuple with the Ipv6Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressWithVlan) GetIpv6AddressOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Address) {
+	if o == nil || isNil(o.Ipv6Address) {
 		return nil, false
 	}
 	return o.Ipv6Address, true
@@ -93,7 +93,7 @@ func (o *AddressWithVlan) GetIpv6AddressOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Address returns a boolean if a field has been set.
 func (o *AddressWithVlan) HasIpv6Address() bool {
-	if o != nil && !IsNil(o.Ipv6Address) {
+	if o != nil && !isNil(o.Ipv6Address) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AddressWithVlan) SetIpv6Address(v Ipv6Addr) {
 
 // GetVlanId returns the VlanId field value if set, zero value otherwise.
 func (o *AddressWithVlan) GetVlanId() int32 {
-	if o == nil || IsNil(o.VlanId) {
+	if o == nil || isNil(o.VlanId) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AddressWithVlan) GetVlanId() int32 {
 // GetVlanIdOk returns a tuple with the VlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressWithVlan) GetVlanIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.VlanId) {
+	if o == nil || isNil(o.VlanId) {
 		return nil, false
 	}
 	return o.VlanId, true
@@ -125,7 +125,7 @@ func (o *AddressWithVlan) GetVlanIdOk() (*int32, bool) {
 
 // HasVlanId returns a boolean if a field has been set.
 func (o *AddressWithVlan) HasVlanId() bool {
-	if o != nil && !IsNil(o.VlanId) {
+	if o != nil && !isNil(o.VlanId) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o AddressWithVlan) MarshalJSON() ([]byte, error) {
 
 func (o AddressWithVlan) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4Address) {
+	if !isNil(o.Ipv4Address) {
 		toSerialize["ipv4Address"] = o.Ipv4Address
 	}
-	if !IsNil(o.Ipv6Address) {
+	if !isNil(o.Ipv6Address) {
 		toSerialize["ipv6Address"] = o.Ipv6Address
 	}
-	if !IsNil(o.VlanId) {
+	if !isNil(o.VlanId) {
 		toSerialize["vlanId"] = o.VlanId
 	}
 	return toSerialize, nil

@@ -64,7 +64,7 @@ func NewEventNotificationWithDefaults() *EventNotification {
 
 // GetAfTransId returns the AfTransId field value if set, zero value otherwise.
 func (o *EventNotification) GetAfTransId() string {
-	if o == nil || IsNil(o.AfTransId) {
+	if o == nil || isNil(o.AfTransId) {
 		var ret string
 		return ret
 	}
@@ -74,7 +74,7 @@ func (o *EventNotification) GetAfTransId() string {
 // GetAfTransIdOk returns a tuple with the AfTransId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetAfTransIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfTransId) {
+	if o == nil || isNil(o.AfTransId) {
 		return nil, false
 	}
 	return o.AfTransId, true
@@ -82,7 +82,7 @@ func (o *EventNotification) GetAfTransIdOk() (*string, bool) {
 
 // HasAfTransId returns a boolean if a field has been set.
 func (o *EventNotification) HasAfTransId() bool {
-	if o != nil && !IsNil(o.AfTransId) {
+	if o != nil && !isNil(o.AfTransId) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *EventNotification) SetDnaiChgType(v DnaiChangeType) {
 
 // GetSourceTrafficRoute returns the SourceTrafficRoute field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EventNotification) GetSourceTrafficRoute() RouteToLocation {
-	if o == nil || IsNil(o.SourceTrafficRoute.Get()) {
+	if o == nil || isNil(o.SourceTrafficRoute.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *EventNotification) SetSubscribedEvent(v SubscribedEvent) {
 
 // GetTargetTrafficRoute returns the TargetTrafficRoute field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EventNotification) GetTargetTrafficRoute() RouteToLocation {
-	if o == nil || IsNil(o.TargetTrafficRoute.Get()) {
+	if o == nil || isNil(o.TargetTrafficRoute.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *EventNotification) UnsetTargetTrafficRoute() {
 
 // GetSourceDnai returns the SourceDnai field value if set, zero value otherwise.
 func (o *EventNotification) GetSourceDnai() string {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		var ret string
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *EventNotification) GetSourceDnai() string {
 // GetSourceDnaiOk returns a tuple with the SourceDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetSourceDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		return nil, false
 	}
 	return o.SourceDnai, true
@@ -246,7 +246,7 @@ func (o *EventNotification) GetSourceDnaiOk() (*string, bool) {
 
 // HasSourceDnai returns a boolean if a field has been set.
 func (o *EventNotification) HasSourceDnai() bool {
-	if o != nil && !IsNil(o.SourceDnai) {
+	if o != nil && !isNil(o.SourceDnai) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *EventNotification) SetSourceDnai(v string) {
 
 // GetTargetDnai returns the TargetDnai field value if set, zero value otherwise.
 func (o *EventNotification) GetTargetDnai() string {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		var ret string
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *EventNotification) GetTargetDnai() string {
 // GetTargetDnaiOk returns a tuple with the TargetDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetTargetDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		return nil, false
 	}
 	return o.TargetDnai, true
@@ -278,7 +278,7 @@ func (o *EventNotification) GetTargetDnaiOk() (*string, bool) {
 
 // HasTargetDnai returns a boolean if a field has been set.
 func (o *EventNotification) HasTargetDnai() bool {
-	if o != nil && !IsNil(o.TargetDnai) {
+	if o != nil && !isNil(o.TargetDnai) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *EventNotification) SetTargetDnai(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *EventNotification) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *EventNotification) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -310,7 +310,7 @@ func (o *EventNotification) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *EventNotification) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *EventNotification) SetGpsi(v string) {
 
 // GetSrcUeIpv4Addr returns the SrcUeIpv4Addr field value if set, zero value otherwise.
 func (o *EventNotification) GetSrcUeIpv4Addr() string {
-	if o == nil || IsNil(o.SrcUeIpv4Addr) {
+	if o == nil || isNil(o.SrcUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *EventNotification) GetSrcUeIpv4Addr() string {
 // GetSrcUeIpv4AddrOk returns a tuple with the SrcUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetSrcUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.SrcUeIpv4Addr) {
+	if o == nil || isNil(o.SrcUeIpv4Addr) {
 		return nil, false
 	}
 	return o.SrcUeIpv4Addr, true
@@ -342,7 +342,7 @@ func (o *EventNotification) GetSrcUeIpv4AddrOk() (*string, bool) {
 
 // HasSrcUeIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification) HasSrcUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.SrcUeIpv4Addr) {
+	if o != nil && !isNil(o.SrcUeIpv4Addr) {
 		return true
 	}
 
@@ -356,7 +356,7 @@ func (o *EventNotification) SetSrcUeIpv4Addr(v string) {
 
 // GetSrcUeIpv6Prefix returns the SrcUeIpv6Prefix field value if set, zero value otherwise.
 func (o *EventNotification) GetSrcUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.SrcUeIpv6Prefix) {
+	if o == nil || isNil(o.SrcUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -366,7 +366,7 @@ func (o *EventNotification) GetSrcUeIpv6Prefix() Ipv6Prefix {
 // GetSrcUeIpv6PrefixOk returns a tuple with the SrcUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetSrcUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.SrcUeIpv6Prefix) {
+	if o == nil || isNil(o.SrcUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.SrcUeIpv6Prefix, true
@@ -374,7 +374,7 @@ func (o *EventNotification) GetSrcUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasSrcUeIpv6Prefix returns a boolean if a field has been set.
 func (o *EventNotification) HasSrcUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.SrcUeIpv6Prefix) {
+	if o != nil && !isNil(o.SrcUeIpv6Prefix) {
 		return true
 	}
 
@@ -388,7 +388,7 @@ func (o *EventNotification) SetSrcUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetTgtUeIpv4Addr returns the TgtUeIpv4Addr field value if set, zero value otherwise.
 func (o *EventNotification) GetTgtUeIpv4Addr() string {
-	if o == nil || IsNil(o.TgtUeIpv4Addr) {
+	if o == nil || isNil(o.TgtUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -398,7 +398,7 @@ func (o *EventNotification) GetTgtUeIpv4Addr() string {
 // GetTgtUeIpv4AddrOk returns a tuple with the TgtUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetTgtUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.TgtUeIpv4Addr) {
+	if o == nil || isNil(o.TgtUeIpv4Addr) {
 		return nil, false
 	}
 	return o.TgtUeIpv4Addr, true
@@ -406,7 +406,7 @@ func (o *EventNotification) GetTgtUeIpv4AddrOk() (*string, bool) {
 
 // HasTgtUeIpv4Addr returns a boolean if a field has been set.
 func (o *EventNotification) HasTgtUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.TgtUeIpv4Addr) {
+	if o != nil && !isNil(o.TgtUeIpv4Addr) {
 		return true
 	}
 
@@ -420,7 +420,7 @@ func (o *EventNotification) SetTgtUeIpv4Addr(v string) {
 
 // GetTgtUeIpv6Prefix returns the TgtUeIpv6Prefix field value if set, zero value otherwise.
 func (o *EventNotification) GetTgtUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.TgtUeIpv6Prefix) {
+	if o == nil || isNil(o.TgtUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -430,7 +430,7 @@ func (o *EventNotification) GetTgtUeIpv6Prefix() Ipv6Prefix {
 // GetTgtUeIpv6PrefixOk returns a tuple with the TgtUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetTgtUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.TgtUeIpv6Prefix) {
+	if o == nil || isNil(o.TgtUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.TgtUeIpv6Prefix, true
@@ -438,7 +438,7 @@ func (o *EventNotification) GetTgtUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasTgtUeIpv6Prefix returns a boolean if a field has been set.
 func (o *EventNotification) HasTgtUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.TgtUeIpv6Prefix) {
+	if o != nil && !isNil(o.TgtUeIpv6Prefix) {
 		return true
 	}
 
@@ -452,7 +452,7 @@ func (o *EventNotification) SetTgtUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetUeMac returns the UeMac field value if set, zero value otherwise.
 func (o *EventNotification) GetUeMac() string {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		var ret string
 		return ret
 	}
@@ -462,7 +462,7 @@ func (o *EventNotification) GetUeMac() string {
 // GetUeMacOk returns a tuple with the UeMac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetUeMacOk() (*string, bool) {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		return nil, false
 	}
 	return o.UeMac, true
@@ -470,7 +470,7 @@ func (o *EventNotification) GetUeMacOk() (*string, bool) {
 
 // HasUeMac returns a boolean if a field has been set.
 func (o *EventNotification) HasUeMac() bool {
-	if o != nil && !IsNil(o.UeMac) {
+	if o != nil && !isNil(o.UeMac) {
 		return true
 	}
 
@@ -484,7 +484,7 @@ func (o *EventNotification) SetUeMac(v string) {
 
 // GetAfAckUri returns the AfAckUri field value if set, zero value otherwise.
 func (o *EventNotification) GetAfAckUri() string {
-	if o == nil || IsNil(o.AfAckUri) {
+	if o == nil || isNil(o.AfAckUri) {
 		var ret string
 		return ret
 	}
@@ -494,7 +494,7 @@ func (o *EventNotification) GetAfAckUri() string {
 // GetAfAckUriOk returns a tuple with the AfAckUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetAfAckUriOk() (*string, bool) {
-	if o == nil || IsNil(o.AfAckUri) {
+	if o == nil || isNil(o.AfAckUri) {
 		return nil, false
 	}
 	return o.AfAckUri, true
@@ -502,7 +502,7 @@ func (o *EventNotification) GetAfAckUriOk() (*string, bool) {
 
 // HasAfAckUri returns a boolean if a field has been set.
 func (o *EventNotification) HasAfAckUri() bool {
-	if o != nil && !IsNil(o.AfAckUri) {
+	if o != nil && !isNil(o.AfAckUri) {
 		return true
 	}
 
@@ -524,7 +524,7 @@ func (o EventNotification) MarshalJSON() ([]byte, error) {
 
 func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfTransId) {
+	if !isNil(o.AfTransId) {
 		toSerialize["afTransId"] = o.AfTransId
 	}
 	toSerialize["dnaiChgType"] = o.DnaiChgType
@@ -535,31 +535,31 @@ func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	if o.TargetTrafficRoute.IsSet() {
 		toSerialize["targetTrafficRoute"] = o.TargetTrafficRoute.Get()
 	}
-	if !IsNil(o.SourceDnai) {
+	if !isNil(o.SourceDnai) {
 		toSerialize["sourceDnai"] = o.SourceDnai
 	}
-	if !IsNil(o.TargetDnai) {
+	if !isNil(o.TargetDnai) {
 		toSerialize["targetDnai"] = o.TargetDnai
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.SrcUeIpv4Addr) {
+	if !isNil(o.SrcUeIpv4Addr) {
 		toSerialize["srcUeIpv4Addr"] = o.SrcUeIpv4Addr
 	}
-	if !IsNil(o.SrcUeIpv6Prefix) {
+	if !isNil(o.SrcUeIpv6Prefix) {
 		toSerialize["srcUeIpv6Prefix"] = o.SrcUeIpv6Prefix
 	}
-	if !IsNil(o.TgtUeIpv4Addr) {
+	if !isNil(o.TgtUeIpv4Addr) {
 		toSerialize["tgtUeIpv4Addr"] = o.TgtUeIpv4Addr
 	}
-	if !IsNil(o.TgtUeIpv6Prefix) {
+	if !isNil(o.TgtUeIpv6Prefix) {
 		toSerialize["tgtUeIpv6Prefix"] = o.TgtUeIpv6Prefix
 	}
-	if !IsNil(o.UeMac) {
+	if !isNil(o.UeMac) {
 		toSerialize["ueMac"] = o.UeMac
 	}
-	if !IsNil(o.AfAckUri) {
+	if !isNil(o.AfAckUri) {
 		toSerialize["afAckUri"] = o.AfAckUri
 	}
 	return toSerialize, nil

@@ -13,7 +13,7 @@ package openapi_Nnssf_NSSelection
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -127,25 +127,25 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 		return localVarReturnValue, nil, reportError("nfId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "nf-type", r.nfType, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "nf-id", r.nfId, "")
+	parameterAddToQuery(localVarQueryParams, "nf-type", r.nfType, "")
+	parameterAddToQuery(localVarQueryParams, "nf-id", r.nfId, "")
 	if r.sliceInfoRequestForRegistration != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slice-info-request-for-registration", r.sliceInfoRequestForRegistration, "")
+		parameterAddToQuery(localVarQueryParams, "slice-info-request-for-registration", r.sliceInfoRequestForRegistration, "")
 	}
 	if r.sliceInfoRequestForPduSession != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slice-info-request-for-pdu-session", r.sliceInfoRequestForPduSession, "")
+		parameterAddToQuery(localVarQueryParams, "slice-info-request-for-pdu-session", r.sliceInfoRequestForPduSession, "")
 	}
 	if r.sliceInfoRequestForUeCu != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "slice-info-request-for-ue-cu", r.sliceInfoRequestForUeCu, "")
+		parameterAddToQuery(localVarQueryParams, "slice-info-request-for-ue-cu", r.sliceInfoRequestForUeCu, "")
 	}
 	if r.homePlmnId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "home-plmn-id", r.homePlmnId, "")
+		parameterAddToQuery(localVarQueryParams, "home-plmn-id", r.homePlmnId, "")
 	}
 	if r.tai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tai", r.tai, "")
+		parameterAddToQuery(localVarQueryParams, "tai", r.tai, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -174,9 +174,9 @@ func (a *NetworkSliceInformationDocumentApiService) NSSelectionGetExecute(r ApiN
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

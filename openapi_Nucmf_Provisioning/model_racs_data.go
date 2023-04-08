@@ -47,7 +47,7 @@ func NewRacsDataWithDefaults() *RacsData {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *RacsData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *RacsData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -65,7 +65,7 @@ func (o *RacsData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *RacsData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *RacsData) SetRacsConfigs(v map[string]RacsConfiguration) {
 
 // GetRacsReports returns the RacsReports field value if set, zero value otherwise.
 func (o *RacsData) GetRacsReports() map[string]RacsFailureReport {
-	if o == nil || IsNil(o.RacsReports) {
+	if o == nil || isNil(o.RacsReports) {
 		var ret map[string]RacsFailureReport
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *RacsData) GetRacsReports() map[string]RacsFailureReport {
 // GetRacsReportsOk returns a tuple with the RacsReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsData) GetRacsReportsOk() (*map[string]RacsFailureReport, bool) {
-	if o == nil || IsNil(o.RacsReports) {
+	if o == nil || isNil(o.RacsReports) {
 		return nil, false
 	}
 	return o.RacsReports, true
@@ -121,7 +121,7 @@ func (o *RacsData) GetRacsReportsOk() (*map[string]RacsFailureReport, bool) {
 
 // HasRacsReports returns a boolean if a field has been set.
 func (o *RacsData) HasRacsReports() bool {
-	if o != nil && !IsNil(o.RacsReports) {
+	if o != nil && !isNil(o.RacsReports) {
 		return true
 	}
 
@@ -143,11 +143,13 @@ func (o RacsData) MarshalJSON() ([]byte, error) {
 
 func (o RacsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	toSerialize["racsConfigs"] = o.RacsConfigs
-	// skip: racsReports is readOnly
+	if !isNil(o.RacsReports) {
+		toSerialize["racsReports"] = o.RacsReports
+	}
 	return toSerialize, nil
 }
 

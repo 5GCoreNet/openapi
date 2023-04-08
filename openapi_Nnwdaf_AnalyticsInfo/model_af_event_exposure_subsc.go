@@ -53,7 +53,7 @@ func NewAfEventExposureSubscWithDefaults() *AfEventExposureSubsc {
 
 // GetDataAccProfId returns the DataAccProfId field value if set, zero value otherwise.
 func (o *AfEventExposureSubsc) GetDataAccProfId() string {
-	if o == nil || IsNil(o.DataAccProfId) {
+	if o == nil || isNil(o.DataAccProfId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *AfEventExposureSubsc) GetDataAccProfId() string {
 // GetDataAccProfIdOk returns a tuple with the DataAccProfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureSubsc) GetDataAccProfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DataAccProfId) {
+	if o == nil || isNil(o.DataAccProfId) {
 		return nil, false
 	}
 	return o.DataAccProfId, true
@@ -71,7 +71,7 @@ func (o *AfEventExposureSubsc) GetDataAccProfIdOk() (*string, bool) {
 
 // HasDataAccProfId returns a boolean if a field has been set.
 func (o *AfEventExposureSubsc) HasDataAccProfId() bool {
-	if o != nil && !IsNil(o.DataAccProfId) {
+	if o != nil && !isNil(o.DataAccProfId) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *AfEventExposureSubsc) SetNotifId(v string) {
 
 // GetEventNotifs returns the EventNotifs field value if set, zero value otherwise.
 func (o *AfEventExposureSubsc) GetEventNotifs() []AfEventNotification {
-	if o == nil || IsNil(o.EventNotifs) {
+	if o == nil || isNil(o.EventNotifs) {
 		var ret []AfEventNotification
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *AfEventExposureSubsc) GetEventNotifs() []AfEventNotification {
 // GetEventNotifsOk returns a tuple with the EventNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureSubsc) GetEventNotifsOk() ([]AfEventNotification, bool) {
-	if o == nil || IsNil(o.EventNotifs) {
+	if o == nil || isNil(o.EventNotifs) {
 		return nil, false
 	}
 	return o.EventNotifs, true
@@ -199,7 +199,7 @@ func (o *AfEventExposureSubsc) GetEventNotifsOk() ([]AfEventNotification, bool) 
 
 // HasEventNotifs returns a boolean if a field has been set.
 func (o *AfEventExposureSubsc) HasEventNotifs() bool {
-	if o != nil && !IsNil(o.EventNotifs) {
+	if o != nil && !isNil(o.EventNotifs) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *AfEventExposureSubsc) SetEventNotifs(v []AfEventNotification) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AfEventExposureSubsc) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *AfEventExposureSubsc) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureSubsc) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -231,7 +231,7 @@ func (o *AfEventExposureSubsc) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AfEventExposureSubsc) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -253,17 +253,17 @@ func (o AfEventExposureSubsc) MarshalJSON() ([]byte, error) {
 
 func (o AfEventExposureSubsc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DataAccProfId) {
+	if !isNil(o.DataAccProfId) {
 		toSerialize["dataAccProfId"] = o.DataAccProfId
 	}
 	toSerialize["eventsSubs"] = o.EventsSubs
 	toSerialize["eventsRepInfo"] = o.EventsRepInfo
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["notifId"] = o.NotifId
-	if !IsNil(o.EventNotifs) {
+	if !isNil(o.EventNotifs) {
 		toSerialize["eventNotifs"] = o.EventNotifs
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

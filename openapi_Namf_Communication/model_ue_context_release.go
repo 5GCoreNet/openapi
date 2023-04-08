@@ -49,7 +49,7 @@ func NewUEContextReleaseWithDefaults() *UEContextRelease {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *UEContextRelease) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *UEContextRelease) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEContextRelease) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -67,7 +67,7 @@ func (o *UEContextRelease) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *UEContextRelease) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *UEContextRelease) SetSupi(v string) {
 
 // GetUnauthenticatedSupi returns the UnauthenticatedSupi field value if set, zero value otherwise.
 func (o *UEContextRelease) GetUnauthenticatedSupi() bool {
-	if o == nil || IsNil(o.UnauthenticatedSupi) {
+	if o == nil || isNil(o.UnauthenticatedSupi) {
 		var ret bool
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *UEContextRelease) GetUnauthenticatedSupi() bool {
 // GetUnauthenticatedSupiOk returns a tuple with the UnauthenticatedSupi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEContextRelease) GetUnauthenticatedSupiOk() (*bool, bool) {
-	if o == nil || IsNil(o.UnauthenticatedSupi) {
+	if o == nil || isNil(o.UnauthenticatedSupi) {
 		return nil, false
 	}
 	return o.UnauthenticatedSupi, true
@@ -99,7 +99,7 @@ func (o *UEContextRelease) GetUnauthenticatedSupiOk() (*bool, bool) {
 
 // HasUnauthenticatedSupi returns a boolean if a field has been set.
 func (o *UEContextRelease) HasUnauthenticatedSupi() bool {
-	if o != nil && !IsNil(o.UnauthenticatedSupi) {
+	if o != nil && !isNil(o.UnauthenticatedSupi) {
 		return true
 	}
 
@@ -145,10 +145,10 @@ func (o UEContextRelease) MarshalJSON() ([]byte, error) {
 
 func (o UEContextRelease) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.UnauthenticatedSupi) {
+	if !isNil(o.UnauthenticatedSupi) {
 		toSerialize["unauthenticatedSupi"] = o.UnauthenticatedSupi
 	}
 	toSerialize["ngapCause"] = o.NgapCause

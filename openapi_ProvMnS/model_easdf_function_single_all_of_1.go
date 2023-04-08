@@ -41,7 +41,7 @@ func NewEASDFFunctionSingleAllOf1WithDefaults() *EASDFFunctionSingleAllOf1 {
 
 // GetEPN88 returns the EPN88 field value if set, zero value otherwise.
 func (o *EASDFFunctionSingleAllOf1) GetEPN88() []EPN88Single {
-	if o == nil || IsNil(o.EPN88) {
+	if o == nil || isNil(o.EPN88) {
 		var ret []EPN88Single
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EASDFFunctionSingleAllOf1) GetEPN88() []EPN88Single {
 // GetEPN88Ok returns a tuple with the EPN88 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASDFFunctionSingleAllOf1) GetEPN88Ok() ([]EPN88Single, bool) {
-	if o == nil || IsNil(o.EPN88) {
+	if o == nil || isNil(o.EPN88) {
 		return nil, false
 	}
 	return o.EPN88, true
@@ -59,7 +59,7 @@ func (o *EASDFFunctionSingleAllOf1) GetEPN88Ok() ([]EPN88Single, bool) {
 
 // HasEPN88 returns a boolean if a field has been set.
 func (o *EASDFFunctionSingleAllOf1) HasEPN88() bool {
-	if o != nil && !IsNil(o.EPN88) {
+	if o != nil && !isNil(o.EPN88) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o EASDFFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o EASDFFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN88) {
+	if !isNil(o.EPN88) {
 		toSerialize["EP_N88"] = o.EPN88
 	}
 	return toSerialize, nil

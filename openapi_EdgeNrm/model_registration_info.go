@@ -43,7 +43,7 @@ func NewRegistrationInfoWithDefaults() *RegistrationInfo {
 
 // GetRegistrationExpiry returns the RegistrationExpiry field value if set, zero value otherwise.
 func (o *RegistrationInfo) GetRegistrationExpiry() string {
-	if o == nil || IsNil(o.RegistrationExpiry) {
+	if o == nil || isNil(o.RegistrationExpiry) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RegistrationInfo) GetRegistrationExpiry() string {
 // GetRegistrationExpiryOk returns a tuple with the RegistrationExpiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInfo) GetRegistrationExpiryOk() (*string, bool) {
-	if o == nil || IsNil(o.RegistrationExpiry) {
+	if o == nil || isNil(o.RegistrationExpiry) {
 		return nil, false
 	}
 	return o.RegistrationExpiry, true
@@ -61,7 +61,7 @@ func (o *RegistrationInfo) GetRegistrationExpiryOk() (*string, bool) {
 
 // HasRegistrationExpiry returns a boolean if a field has been set.
 func (o *RegistrationInfo) HasRegistrationExpiry() bool {
-	if o != nil && !IsNil(o.RegistrationExpiry) {
+	if o != nil && !isNil(o.RegistrationExpiry) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RegistrationInfo) SetRegistrationExpiry(v string) {
 
 // GetRegistrationID returns the RegistrationID field value if set, zero value otherwise.
 func (o *RegistrationInfo) GetRegistrationID() string {
-	if o == nil || IsNil(o.RegistrationID) {
+	if o == nil || isNil(o.RegistrationID) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RegistrationInfo) GetRegistrationID() string {
 // GetRegistrationIDOk returns a tuple with the RegistrationID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInfo) GetRegistrationIDOk() (*string, bool) {
-	if o == nil || IsNil(o.RegistrationID) {
+	if o == nil || isNil(o.RegistrationID) {
 		return nil, false
 	}
 	return o.RegistrationID, true
@@ -93,7 +93,7 @@ func (o *RegistrationInfo) GetRegistrationIDOk() (*string, bool) {
 
 // HasRegistrationID returns a boolean if a field has been set.
 func (o *RegistrationInfo) HasRegistrationID() bool {
-	if o != nil && !IsNil(o.RegistrationID) {
+	if o != nil && !isNil(o.RegistrationID) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RegistrationInfo) SetRegistrationID(v string) {
 
 // GetSecCredential returns the SecCredential field value if set, zero value otherwise.
 func (o *RegistrationInfo) GetSecCredential() string {
-	if o == nil || IsNil(o.SecCredential) {
+	if o == nil || isNil(o.SecCredential) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RegistrationInfo) GetSecCredential() string {
 // GetSecCredentialOk returns a tuple with the SecCredential field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInfo) GetSecCredentialOk() (*string, bool) {
-	if o == nil || IsNil(o.SecCredential) {
+	if o == nil || isNil(o.SecCredential) {
 		return nil, false
 	}
 	return o.SecCredential, true
@@ -125,7 +125,7 @@ func (o *RegistrationInfo) GetSecCredentialOk() (*string, bool) {
 
 // HasSecCredential returns a boolean if a field has been set.
 func (o *RegistrationInfo) HasSecCredential() bool {
-	if o != nil && !IsNil(o.SecCredential) {
+	if o != nil && !isNil(o.SecCredential) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o RegistrationInfo) MarshalJSON() ([]byte, error) {
 
 func (o RegistrationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RegistrationExpiry) {
+	if !isNil(o.RegistrationExpiry) {
 		toSerialize["registrationExpiry"] = o.RegistrationExpiry
 	}
-	if !IsNil(o.RegistrationID) {
+	if !isNil(o.RegistrationID) {
 		toSerialize["registrationID"] = o.RegistrationID
 	}
-	if !IsNil(o.SecCredential) {
+	if !isNil(o.SecCredential) {
 		toSerialize["secCredential"] = o.SecCredential
 	}
 	return toSerialize, nil

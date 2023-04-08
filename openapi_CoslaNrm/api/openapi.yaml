@@ -2113,7 +2113,15 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - anyOf:
+        - enum:
+          - PROBABLE_CAUSE_001
+          - PROBABLE_CAUSE_002
+          - PROBABLE_CAUSE_003
+          - PROBABLE_CAUSE_004
+          - PROBABLE_CAUSE_005
+          type: string
+        - type: string
       - type: integer
     SpecificProblem:
       oneOf:
@@ -2246,6 +2254,7 @@ components:
             $ref: '#/components/schemas/SubNetwork-Single'
           type: array
       type: object
+      example: null
     MnS_oneOf_1:
       properties:
         ManagedElement:
@@ -2253,13 +2262,12 @@ components:
             $ref: '#/components/schemas/ManagedElement-Single'
           type: array
       type: object
-    SubNetwork_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/SubNetwork-Attr'
+      example: null
     SubNetwork_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/SubNetwork_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/SubNetwork-Attr'
       type: object
       example: null
     SubNetwork_Single_allOf_1:
@@ -2270,13 +2278,11 @@ components:
           type: array
       type: object
       example: null
-    ManagedElement_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedElement-Attr'
     ManagedElement_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/ManagedElement_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedElement-Attr'
       type: object
       example: null
     AssuranceClosedControlLoop_Single_allOf_attributes:
@@ -2301,44 +2307,32 @@ components:
           type: array
       type: object
       example: null
-    AssuranceGoal_Single_allOf_attributes_allOf:
-      properties:
-        observationTime:
-          type: integer
-        assuranceTargetList:
-          items:
-            $ref: '#/components/schemas/AssuranceTarget'
-          type: array
-        assuranceScope:
-          $ref: '#/components/schemas/AssuranceScope'
-        serviceProfileId:
-          type: string
-        sliceProfileId:
-          type: string
-      type: object
-    AssuranceGoal_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/AssuranceGoal_Single_allOf_attributes_allOf'
     AssuranceGoal_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/AssuranceGoal_Single_allOf_attributes'
+          allOf:
+          - properties:
+              observationTime:
+                $ref: '#/components/schemas/ObservationTime'
+              assuranceTargetList:
+                $ref: '#/components/schemas/AssuranceTargetList'
+              assuranceScope:
+                $ref: '#/components/schemas/AssuranceScope'
+              serviceProfileId:
+                type: string
+              sliceProfileId:
+                type: string
+            type: object
       type: object
       example: null
-    AssuranceReport_Single_allOf_attributes_allOf:
-      properties:
-        assuranceGoalStatusList:
-          items:
-            $ref: '#/components/schemas/AssuranceGoalStatus'
-          type: array
-      type: object
-    AssuranceReport_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/AssuranceReport_Single_allOf_attributes_allOf'
     AssuranceReport_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/AssuranceReport_Single_allOf_attributes'
+          allOf:
+          - properties:
+              assuranceGoalStatusList:
+                $ref: '#/components/schemas/AssuranceGoalStatusList'
+            type: object
       type: object
       example: null
     VsDataContainer_Single_attributes:
@@ -2444,6 +2438,7 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
+      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -2451,11 +2446,13 @@ components:
         fileLocation:
           type: string
       type: object
+      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
+      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -2731,23 +2728,15 @@ components:
         - OTHER
         type: string
       - type: string
-    ProbableCause_oneOf:
-      anyOf:
-      - enum:
-        - PROBABLE_CAUSE_001
-        - PROBABLE_CAUSE_002
-        - PROBABLE_CAUSE_003
-        - PROBABLE_CAUSE_004
-        - PROBABLE_CAUSE_005
-        type: string
-      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null

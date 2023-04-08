@@ -40,9 +40,7 @@ type SubscriptionData struct {
 	ReqPlmnList []PlmnId `json:"reqPlmnList,omitempty"`
 	ReqSnpnList []PlmnIdNid `json:"reqSnpnList,omitempty"`
 	ServingScope []string `json:"servingScope,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
 	RequesterFeatures *string `json:"requesterFeatures,omitempty"`
-	// A string used to indicate the features supported by an API that is used as defined in clause  6.6 in 3GPP TS 29.500. The string shall contain a bitmask indicating supported features in  hexadecimal representation Each character in the string shall take a value of \"0\" to \"9\",  \"a\" to \"f\" or \"A\" to \"F\" and shall represent the support of 4 features as described in  table 5.2.2-3. The most significant character representing the highest-numbered features shall  appear first in the string, and the character representing features 1 to 4 shall appear last  in the string. The list of features and their numbering (starting with 1) are defined  separately for each API. If the string contains a lower number of characters than there are  defined features for an API, all features that would be represented by characters that are not  present in the string are not supported. 
 	NrfSupportedFeatures *string `json:"nrfSupportedFeatures,omitempty"`
 	// String providing an URI formatted according to RFC 3986.
 	HnrfUri *string `json:"hnrfUri,omitempty"`
@@ -108,7 +106,7 @@ func (o *SubscriptionData) SetNfStatusNotificationUri(v string) {
 
 // GetReqNfInstanceId returns the ReqNfInstanceId field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqNfInstanceId() string {
-	if o == nil || IsNil(o.ReqNfInstanceId) {
+	if o == nil || isNil(o.ReqNfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -118,7 +116,7 @@ func (o *SubscriptionData) GetReqNfInstanceId() string {
 // GetReqNfInstanceIdOk returns a tuple with the ReqNfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqNfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ReqNfInstanceId) {
+	if o == nil || isNil(o.ReqNfInstanceId) {
 		return nil, false
 	}
 	return o.ReqNfInstanceId, true
@@ -126,7 +124,7 @@ func (o *SubscriptionData) GetReqNfInstanceIdOk() (*string, bool) {
 
 // HasReqNfInstanceId returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqNfInstanceId() bool {
-	if o != nil && !IsNil(o.ReqNfInstanceId) {
+	if o != nil && !isNil(o.ReqNfInstanceId) {
 		return true
 	}
 
@@ -140,7 +138,7 @@ func (o *SubscriptionData) SetReqNfInstanceId(v string) {
 
 // GetSubscrCond returns the SubscrCond field value if set, zero value otherwise.
 func (o *SubscriptionData) GetSubscrCond() SubscrCond {
-	if o == nil || IsNil(o.SubscrCond) {
+	if o == nil || isNil(o.SubscrCond) {
 		var ret SubscrCond
 		return ret
 	}
@@ -150,7 +148,7 @@ func (o *SubscriptionData) GetSubscrCond() SubscrCond {
 // GetSubscrCondOk returns a tuple with the SubscrCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetSubscrCondOk() (*SubscrCond, bool) {
-	if o == nil || IsNil(o.SubscrCond) {
+	if o == nil || isNil(o.SubscrCond) {
 		return nil, false
 	}
 	return o.SubscrCond, true
@@ -158,7 +156,7 @@ func (o *SubscriptionData) GetSubscrCondOk() (*SubscrCond, bool) {
 
 // HasSubscrCond returns a boolean if a field has been set.
 func (o *SubscriptionData) HasSubscrCond() bool {
-	if o != nil && !IsNil(o.SubscrCond) {
+	if o != nil && !isNil(o.SubscrCond) {
 		return true
 	}
 
@@ -196,7 +194,7 @@ func (o *SubscriptionData) SetSubscriptionId(v string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *SubscriptionData) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -206,7 +204,7 @@ func (o *SubscriptionData) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -214,7 +212,7 @@ func (o *SubscriptionData) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *SubscriptionData) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -228,7 +226,7 @@ func (o *SubscriptionData) SetValidityTime(v time.Time) {
 
 // GetReqNotifEvents returns the ReqNotifEvents field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqNotifEvents() []NotificationEventType {
-	if o == nil || IsNil(o.ReqNotifEvents) {
+	if o == nil || isNil(o.ReqNotifEvents) {
 		var ret []NotificationEventType
 		return ret
 	}
@@ -238,7 +236,7 @@ func (o *SubscriptionData) GetReqNotifEvents() []NotificationEventType {
 // GetReqNotifEventsOk returns a tuple with the ReqNotifEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqNotifEventsOk() ([]NotificationEventType, bool) {
-	if o == nil || IsNil(o.ReqNotifEvents) {
+	if o == nil || isNil(o.ReqNotifEvents) {
 		return nil, false
 	}
 	return o.ReqNotifEvents, true
@@ -246,7 +244,7 @@ func (o *SubscriptionData) GetReqNotifEventsOk() ([]NotificationEventType, bool)
 
 // HasReqNotifEvents returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqNotifEvents() bool {
-	if o != nil && !IsNil(o.ReqNotifEvents) {
+	if o != nil && !isNil(o.ReqNotifEvents) {
 		return true
 	}
 
@@ -260,7 +258,7 @@ func (o *SubscriptionData) SetReqNotifEvents(v []NotificationEventType) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *SubscriptionData) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -270,7 +268,7 @@ func (o *SubscriptionData) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -278,7 +276,7 @@ func (o *SubscriptionData) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *SubscriptionData) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -292,7 +290,7 @@ func (o *SubscriptionData) SetPlmnId(v PlmnId) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *SubscriptionData) GetNid() string {
-	if o == nil || IsNil(o.Nid) {
+	if o == nil || isNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -302,7 +300,7 @@ func (o *SubscriptionData) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetNidOk() (*string, bool) {
-	if o == nil || IsNil(o.Nid) {
+	if o == nil || isNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -310,7 +308,7 @@ func (o *SubscriptionData) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *SubscriptionData) HasNid() bool {
-	if o != nil && !IsNil(o.Nid) {
+	if o != nil && !isNil(o.Nid) {
 		return true
 	}
 
@@ -324,7 +322,7 @@ func (o *SubscriptionData) SetNid(v string) {
 
 // GetNotifCondition returns the NotifCondition field value if set, zero value otherwise.
 func (o *SubscriptionData) GetNotifCondition() NotifCondition {
-	if o == nil || IsNil(o.NotifCondition) {
+	if o == nil || isNil(o.NotifCondition) {
 		var ret NotifCondition
 		return ret
 	}
@@ -334,7 +332,7 @@ func (o *SubscriptionData) GetNotifCondition() NotifCondition {
 // GetNotifConditionOk returns a tuple with the NotifCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetNotifConditionOk() (*NotifCondition, bool) {
-	if o == nil || IsNil(o.NotifCondition) {
+	if o == nil || isNil(o.NotifCondition) {
 		return nil, false
 	}
 	return o.NotifCondition, true
@@ -342,7 +340,7 @@ func (o *SubscriptionData) GetNotifConditionOk() (*NotifCondition, bool) {
 
 // HasNotifCondition returns a boolean if a field has been set.
 func (o *SubscriptionData) HasNotifCondition() bool {
-	if o != nil && !IsNil(o.NotifCondition) {
+	if o != nil && !isNil(o.NotifCondition) {
 		return true
 	}
 
@@ -356,7 +354,7 @@ func (o *SubscriptionData) SetNotifCondition(v NotifCondition) {
 
 // GetReqNfType returns the ReqNfType field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqNfType() NFType {
-	if o == nil || IsNil(o.ReqNfType) {
+	if o == nil || isNil(o.ReqNfType) {
 		var ret NFType
 		return ret
 	}
@@ -366,7 +364,7 @@ func (o *SubscriptionData) GetReqNfType() NFType {
 // GetReqNfTypeOk returns a tuple with the ReqNfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqNfTypeOk() (*NFType, bool) {
-	if o == nil || IsNil(o.ReqNfType) {
+	if o == nil || isNil(o.ReqNfType) {
 		return nil, false
 	}
 	return o.ReqNfType, true
@@ -374,7 +372,7 @@ func (o *SubscriptionData) GetReqNfTypeOk() (*NFType, bool) {
 
 // HasReqNfType returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqNfType() bool {
-	if o != nil && !IsNil(o.ReqNfType) {
+	if o != nil && !isNil(o.ReqNfType) {
 		return true
 	}
 
@@ -388,7 +386,7 @@ func (o *SubscriptionData) SetReqNfType(v NFType) {
 
 // GetReqNfFqdn returns the ReqNfFqdn field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqNfFqdn() string {
-	if o == nil || IsNil(o.ReqNfFqdn) {
+	if o == nil || isNil(o.ReqNfFqdn) {
 		var ret string
 		return ret
 	}
@@ -398,7 +396,7 @@ func (o *SubscriptionData) GetReqNfFqdn() string {
 // GetReqNfFqdnOk returns a tuple with the ReqNfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqNfFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.ReqNfFqdn) {
+	if o == nil || isNil(o.ReqNfFqdn) {
 		return nil, false
 	}
 	return o.ReqNfFqdn, true
@@ -406,7 +404,7 @@ func (o *SubscriptionData) GetReqNfFqdnOk() (*string, bool) {
 
 // HasReqNfFqdn returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqNfFqdn() bool {
-	if o != nil && !IsNil(o.ReqNfFqdn) {
+	if o != nil && !isNil(o.ReqNfFqdn) {
 		return true
 	}
 
@@ -420,7 +418,7 @@ func (o *SubscriptionData) SetReqNfFqdn(v string) {
 
 // GetReqSnssais returns the ReqSnssais field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqSnssais() []ExtSnssai {
-	if o == nil || IsNil(o.ReqSnssais) {
+	if o == nil || isNil(o.ReqSnssais) {
 		var ret []ExtSnssai
 		return ret
 	}
@@ -430,7 +428,7 @@ func (o *SubscriptionData) GetReqSnssais() []ExtSnssai {
 // GetReqSnssaisOk returns a tuple with the ReqSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqSnssaisOk() ([]ExtSnssai, bool) {
-	if o == nil || IsNil(o.ReqSnssais) {
+	if o == nil || isNil(o.ReqSnssais) {
 		return nil, false
 	}
 	return o.ReqSnssais, true
@@ -438,7 +436,7 @@ func (o *SubscriptionData) GetReqSnssaisOk() ([]ExtSnssai, bool) {
 
 // HasReqSnssais returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqSnssais() bool {
-	if o != nil && !IsNil(o.ReqSnssais) {
+	if o != nil && !isNil(o.ReqSnssais) {
 		return true
 	}
 
@@ -452,7 +450,7 @@ func (o *SubscriptionData) SetReqSnssais(v []ExtSnssai) {
 
 // GetReqPerPlmnSnssais returns the ReqPerPlmnSnssais field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqPerPlmnSnssais() []PlmnSnssai {
-	if o == nil || IsNil(o.ReqPerPlmnSnssais) {
+	if o == nil || isNil(o.ReqPerPlmnSnssais) {
 		var ret []PlmnSnssai
 		return ret
 	}
@@ -462,7 +460,7 @@ func (o *SubscriptionData) GetReqPerPlmnSnssais() []PlmnSnssai {
 // GetReqPerPlmnSnssaisOk returns a tuple with the ReqPerPlmnSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqPerPlmnSnssaisOk() ([]PlmnSnssai, bool) {
-	if o == nil || IsNil(o.ReqPerPlmnSnssais) {
+	if o == nil || isNil(o.ReqPerPlmnSnssais) {
 		return nil, false
 	}
 	return o.ReqPerPlmnSnssais, true
@@ -470,7 +468,7 @@ func (o *SubscriptionData) GetReqPerPlmnSnssaisOk() ([]PlmnSnssai, bool) {
 
 // HasReqPerPlmnSnssais returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqPerPlmnSnssais() bool {
-	if o != nil && !IsNil(o.ReqPerPlmnSnssais) {
+	if o != nil && !isNil(o.ReqPerPlmnSnssais) {
 		return true
 	}
 
@@ -484,7 +482,7 @@ func (o *SubscriptionData) SetReqPerPlmnSnssais(v []PlmnSnssai) {
 
 // GetReqPlmnList returns the ReqPlmnList field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqPlmnList() []PlmnId {
-	if o == nil || IsNil(o.ReqPlmnList) {
+	if o == nil || isNil(o.ReqPlmnList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -494,7 +492,7 @@ func (o *SubscriptionData) GetReqPlmnList() []PlmnId {
 // GetReqPlmnListOk returns a tuple with the ReqPlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqPlmnListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.ReqPlmnList) {
+	if o == nil || isNil(o.ReqPlmnList) {
 		return nil, false
 	}
 	return o.ReqPlmnList, true
@@ -502,7 +500,7 @@ func (o *SubscriptionData) GetReqPlmnListOk() ([]PlmnId, bool) {
 
 // HasReqPlmnList returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqPlmnList() bool {
-	if o != nil && !IsNil(o.ReqPlmnList) {
+	if o != nil && !isNil(o.ReqPlmnList) {
 		return true
 	}
 
@@ -516,7 +514,7 @@ func (o *SubscriptionData) SetReqPlmnList(v []PlmnId) {
 
 // GetReqSnpnList returns the ReqSnpnList field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReqSnpnList() []PlmnIdNid {
-	if o == nil || IsNil(o.ReqSnpnList) {
+	if o == nil || isNil(o.ReqSnpnList) {
 		var ret []PlmnIdNid
 		return ret
 	}
@@ -526,7 +524,7 @@ func (o *SubscriptionData) GetReqSnpnList() []PlmnIdNid {
 // GetReqSnpnListOk returns a tuple with the ReqSnpnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReqSnpnListOk() ([]PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ReqSnpnList) {
+	if o == nil || isNil(o.ReqSnpnList) {
 		return nil, false
 	}
 	return o.ReqSnpnList, true
@@ -534,7 +532,7 @@ func (o *SubscriptionData) GetReqSnpnListOk() ([]PlmnIdNid, bool) {
 
 // HasReqSnpnList returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReqSnpnList() bool {
-	if o != nil && !IsNil(o.ReqSnpnList) {
+	if o != nil && !isNil(o.ReqSnpnList) {
 		return true
 	}
 
@@ -548,7 +546,7 @@ func (o *SubscriptionData) SetReqSnpnList(v []PlmnIdNid) {
 
 // GetServingScope returns the ServingScope field value if set, zero value otherwise.
 func (o *SubscriptionData) GetServingScope() []string {
-	if o == nil || IsNil(o.ServingScope) {
+	if o == nil || isNil(o.ServingScope) {
 		var ret []string
 		return ret
 	}
@@ -558,7 +556,7 @@ func (o *SubscriptionData) GetServingScope() []string {
 // GetServingScopeOk returns a tuple with the ServingScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetServingScopeOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServingScope) {
+	if o == nil || isNil(o.ServingScope) {
 		return nil, false
 	}
 	return o.ServingScope, true
@@ -566,7 +564,7 @@ func (o *SubscriptionData) GetServingScopeOk() ([]string, bool) {
 
 // HasServingScope returns a boolean if a field has been set.
 func (o *SubscriptionData) HasServingScope() bool {
-	if o != nil && !IsNil(o.ServingScope) {
+	if o != nil && !isNil(o.ServingScope) {
 		return true
 	}
 
@@ -580,7 +578,7 @@ func (o *SubscriptionData) SetServingScope(v []string) {
 
 // GetRequesterFeatures returns the RequesterFeatures field value if set, zero value otherwise.
 func (o *SubscriptionData) GetRequesterFeatures() string {
-	if o == nil || IsNil(o.RequesterFeatures) {
+	if o == nil || isNil(o.RequesterFeatures) {
 		var ret string
 		return ret
 	}
@@ -590,7 +588,7 @@ func (o *SubscriptionData) GetRequesterFeatures() string {
 // GetRequesterFeaturesOk returns a tuple with the RequesterFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetRequesterFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.RequesterFeatures) {
+	if o == nil || isNil(o.RequesterFeatures) {
 		return nil, false
 	}
 	return o.RequesterFeatures, true
@@ -598,7 +596,7 @@ func (o *SubscriptionData) GetRequesterFeaturesOk() (*string, bool) {
 
 // HasRequesterFeatures returns a boolean if a field has been set.
 func (o *SubscriptionData) HasRequesterFeatures() bool {
-	if o != nil && !IsNil(o.RequesterFeatures) {
+	if o != nil && !isNil(o.RequesterFeatures) {
 		return true
 	}
 
@@ -612,7 +610,7 @@ func (o *SubscriptionData) SetRequesterFeatures(v string) {
 
 // GetNrfSupportedFeatures returns the NrfSupportedFeatures field value if set, zero value otherwise.
 func (o *SubscriptionData) GetNrfSupportedFeatures() string {
-	if o == nil || IsNil(o.NrfSupportedFeatures) {
+	if o == nil || isNil(o.NrfSupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -622,7 +620,7 @@ func (o *SubscriptionData) GetNrfSupportedFeatures() string {
 // GetNrfSupportedFeaturesOk returns a tuple with the NrfSupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetNrfSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfSupportedFeatures) {
+	if o == nil || isNil(o.NrfSupportedFeatures) {
 		return nil, false
 	}
 	return o.NrfSupportedFeatures, true
@@ -630,7 +628,7 @@ func (o *SubscriptionData) GetNrfSupportedFeaturesOk() (*string, bool) {
 
 // HasNrfSupportedFeatures returns a boolean if a field has been set.
 func (o *SubscriptionData) HasNrfSupportedFeatures() bool {
-	if o != nil && !IsNil(o.NrfSupportedFeatures) {
+	if o != nil && !isNil(o.NrfSupportedFeatures) {
 		return true
 	}
 
@@ -644,7 +642,7 @@ func (o *SubscriptionData) SetNrfSupportedFeatures(v string) {
 
 // GetHnrfUri returns the HnrfUri field value if set, zero value otherwise.
 func (o *SubscriptionData) GetHnrfUri() string {
-	if o == nil || IsNil(o.HnrfUri) {
+	if o == nil || isNil(o.HnrfUri) {
 		var ret string
 		return ret
 	}
@@ -654,7 +652,7 @@ func (o *SubscriptionData) GetHnrfUri() string {
 // GetHnrfUriOk returns a tuple with the HnrfUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetHnrfUriOk() (*string, bool) {
-	if o == nil || IsNil(o.HnrfUri) {
+	if o == nil || isNil(o.HnrfUri) {
 		return nil, false
 	}
 	return o.HnrfUri, true
@@ -662,7 +660,7 @@ func (o *SubscriptionData) GetHnrfUriOk() (*string, bool) {
 
 // HasHnrfUri returns a boolean if a field has been set.
 func (o *SubscriptionData) HasHnrfUri() bool {
-	if o != nil && !IsNil(o.HnrfUri) {
+	if o != nil && !isNil(o.HnrfUri) {
 		return true
 	}
 
@@ -676,7 +674,7 @@ func (o *SubscriptionData) SetHnrfUri(v string) {
 
 // GetOnboardingCapability returns the OnboardingCapability field value if set, zero value otherwise.
 func (o *SubscriptionData) GetOnboardingCapability() bool {
-	if o == nil || IsNil(o.OnboardingCapability) {
+	if o == nil || isNil(o.OnboardingCapability) {
 		var ret bool
 		return ret
 	}
@@ -686,7 +684,7 @@ func (o *SubscriptionData) GetOnboardingCapability() bool {
 // GetOnboardingCapabilityOk returns a tuple with the OnboardingCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetOnboardingCapabilityOk() (*bool, bool) {
-	if o == nil || IsNil(o.OnboardingCapability) {
+	if o == nil || isNil(o.OnboardingCapability) {
 		return nil, false
 	}
 	return o.OnboardingCapability, true
@@ -694,7 +692,7 @@ func (o *SubscriptionData) GetOnboardingCapabilityOk() (*bool, bool) {
 
 // HasOnboardingCapability returns a boolean if a field has been set.
 func (o *SubscriptionData) HasOnboardingCapability() bool {
-	if o != nil && !IsNil(o.OnboardingCapability) {
+	if o != nil && !isNil(o.OnboardingCapability) {
 		return true
 	}
 
@@ -708,7 +706,7 @@ func (o *SubscriptionData) SetOnboardingCapability(v bool) {
 
 // GetTargetHni returns the TargetHni field value if set, zero value otherwise.
 func (o *SubscriptionData) GetTargetHni() string {
-	if o == nil || IsNil(o.TargetHni) {
+	if o == nil || isNil(o.TargetHni) {
 		var ret string
 		return ret
 	}
@@ -718,7 +716,7 @@ func (o *SubscriptionData) GetTargetHni() string {
 // GetTargetHniOk returns a tuple with the TargetHni field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetTargetHniOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetHni) {
+	if o == nil || isNil(o.TargetHni) {
 		return nil, false
 	}
 	return o.TargetHni, true
@@ -726,7 +724,7 @@ func (o *SubscriptionData) GetTargetHniOk() (*string, bool) {
 
 // HasTargetHni returns a boolean if a field has been set.
 func (o *SubscriptionData) HasTargetHni() bool {
-	if o != nil && !IsNil(o.TargetHni) {
+	if o != nil && !isNil(o.TargetHni) {
 		return true
 	}
 
@@ -740,7 +738,7 @@ func (o *SubscriptionData) SetTargetHni(v string) {
 
 // GetPreferredLocality returns the PreferredLocality field value if set, zero value otherwise.
 func (o *SubscriptionData) GetPreferredLocality() string {
-	if o == nil || IsNil(o.PreferredLocality) {
+	if o == nil || isNil(o.PreferredLocality) {
 		var ret string
 		return ret
 	}
@@ -750,7 +748,7 @@ func (o *SubscriptionData) GetPreferredLocality() string {
 // GetPreferredLocalityOk returns a tuple with the PreferredLocality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetPreferredLocalityOk() (*string, bool) {
-	if o == nil || IsNil(o.PreferredLocality) {
+	if o == nil || isNil(o.PreferredLocality) {
 		return nil, false
 	}
 	return o.PreferredLocality, true
@@ -758,7 +756,7 @@ func (o *SubscriptionData) GetPreferredLocalityOk() (*string, bool) {
 
 // HasPreferredLocality returns a boolean if a field has been set.
 func (o *SubscriptionData) HasPreferredLocality() bool {
-	if o != nil && !IsNil(o.PreferredLocality) {
+	if o != nil && !isNil(o.PreferredLocality) {
 		return true
 	}
 
@@ -772,7 +770,7 @@ func (o *SubscriptionData) SetPreferredLocality(v string) {
 
 // GetExtPreferredLocality returns the ExtPreferredLocality field value if set, zero value otherwise.
 func (o *SubscriptionData) GetExtPreferredLocality() map[string][]LocalityDescription {
-	if o == nil || IsNil(o.ExtPreferredLocality) {
+	if o == nil || isNil(o.ExtPreferredLocality) {
 		var ret map[string][]LocalityDescription
 		return ret
 	}
@@ -782,7 +780,7 @@ func (o *SubscriptionData) GetExtPreferredLocality() map[string][]LocalityDescri
 // GetExtPreferredLocalityOk returns a tuple with the ExtPreferredLocality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetExtPreferredLocalityOk() (*map[string][]LocalityDescription, bool) {
-	if o == nil || IsNil(o.ExtPreferredLocality) {
+	if o == nil || isNil(o.ExtPreferredLocality) {
 		return nil, false
 	}
 	return o.ExtPreferredLocality, true
@@ -790,7 +788,7 @@ func (o *SubscriptionData) GetExtPreferredLocalityOk() (*map[string][]LocalityDe
 
 // HasExtPreferredLocality returns a boolean if a field has been set.
 func (o *SubscriptionData) HasExtPreferredLocality() bool {
-	if o != nil && !IsNil(o.ExtPreferredLocality) {
+	if o != nil && !isNil(o.ExtPreferredLocality) {
 		return true
 	}
 
@@ -804,7 +802,7 @@ func (o *SubscriptionData) SetExtPreferredLocality(v map[string][]LocalityDescri
 
 // GetCompleteProfileSubscription returns the CompleteProfileSubscription field value if set, zero value otherwise.
 func (o *SubscriptionData) GetCompleteProfileSubscription() bool {
-	if o == nil || IsNil(o.CompleteProfileSubscription) {
+	if o == nil || isNil(o.CompleteProfileSubscription) {
 		var ret bool
 		return ret
 	}
@@ -814,7 +812,7 @@ func (o *SubscriptionData) GetCompleteProfileSubscription() bool {
 // GetCompleteProfileSubscriptionOk returns a tuple with the CompleteProfileSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetCompleteProfileSubscriptionOk() (*bool, bool) {
-	if o == nil || IsNil(o.CompleteProfileSubscription) {
+	if o == nil || isNil(o.CompleteProfileSubscription) {
 		return nil, false
 	}
 	return o.CompleteProfileSubscription, true
@@ -822,7 +820,7 @@ func (o *SubscriptionData) GetCompleteProfileSubscriptionOk() (*bool, bool) {
 
 // HasCompleteProfileSubscription returns a boolean if a field has been set.
 func (o *SubscriptionData) HasCompleteProfileSubscription() bool {
-	if o != nil && !IsNil(o.CompleteProfileSubscription) {
+	if o != nil && !isNil(o.CompleteProfileSubscription) {
 		return true
 	}
 
@@ -845,69 +843,71 @@ func (o SubscriptionData) MarshalJSON() ([]byte, error) {
 func (o SubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfStatusNotificationUri"] = o.NfStatusNotificationUri
-	if !IsNil(o.ReqNfInstanceId) {
+	if !isNil(o.ReqNfInstanceId) {
 		toSerialize["reqNfInstanceId"] = o.ReqNfInstanceId
 	}
-	if !IsNil(o.SubscrCond) {
+	if !isNil(o.SubscrCond) {
 		toSerialize["subscrCond"] = o.SubscrCond
 	}
-	// skip: subscriptionId is readOnly
-	if !IsNil(o.ValidityTime) {
+	toSerialize["subscriptionId"] = o.SubscriptionId
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.ReqNotifEvents) {
+	if !isNil(o.ReqNotifEvents) {
 		toSerialize["reqNotifEvents"] = o.ReqNotifEvents
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.Nid) {
+	if !isNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
-	if !IsNil(o.NotifCondition) {
+	if !isNil(o.NotifCondition) {
 		toSerialize["notifCondition"] = o.NotifCondition
 	}
-	if !IsNil(o.ReqNfType) {
+	if !isNil(o.ReqNfType) {
 		toSerialize["reqNfType"] = o.ReqNfType
 	}
-	if !IsNil(o.ReqNfFqdn) {
+	if !isNil(o.ReqNfFqdn) {
 		toSerialize["reqNfFqdn"] = o.ReqNfFqdn
 	}
-	if !IsNil(o.ReqSnssais) {
+	if !isNil(o.ReqSnssais) {
 		toSerialize["reqSnssais"] = o.ReqSnssais
 	}
-	if !IsNil(o.ReqPerPlmnSnssais) {
+	if !isNil(o.ReqPerPlmnSnssais) {
 		toSerialize["reqPerPlmnSnssais"] = o.ReqPerPlmnSnssais
 	}
-	if !IsNil(o.ReqPlmnList) {
+	if !isNil(o.ReqPlmnList) {
 		toSerialize["reqPlmnList"] = o.ReqPlmnList
 	}
-	if !IsNil(o.ReqSnpnList) {
+	if !isNil(o.ReqSnpnList) {
 		toSerialize["reqSnpnList"] = o.ReqSnpnList
 	}
-	if !IsNil(o.ServingScope) {
+	if !isNil(o.ServingScope) {
 		toSerialize["servingScope"] = o.ServingScope
 	}
-	if !IsNil(o.RequesterFeatures) {
+	if !isNil(o.RequesterFeatures) {
 		toSerialize["requesterFeatures"] = o.RequesterFeatures
 	}
-	// skip: nrfSupportedFeatures is readOnly
-	if !IsNil(o.HnrfUri) {
+	if !isNil(o.NrfSupportedFeatures) {
+		toSerialize["nrfSupportedFeatures"] = o.NrfSupportedFeatures
+	}
+	if !isNil(o.HnrfUri) {
 		toSerialize["hnrfUri"] = o.HnrfUri
 	}
-	if !IsNil(o.OnboardingCapability) {
+	if !isNil(o.OnboardingCapability) {
 		toSerialize["onboardingCapability"] = o.OnboardingCapability
 	}
-	if !IsNil(o.TargetHni) {
+	if !isNil(o.TargetHni) {
 		toSerialize["targetHni"] = o.TargetHni
 	}
-	if !IsNil(o.PreferredLocality) {
+	if !isNil(o.PreferredLocality) {
 		toSerialize["preferredLocality"] = o.PreferredLocality
 	}
-	if !IsNil(o.ExtPreferredLocality) {
+	if !isNil(o.ExtPreferredLocality) {
 		toSerialize["extPreferredLocality"] = o.ExtPreferredLocality
 	}
-	if !IsNil(o.CompleteProfileSubscription) {
+	if !isNil(o.CompleteProfileSubscription) {
 		toSerialize["completeProfileSubscription"] = o.CompleteProfileSubscription
 	}
 	return toSerialize, nil

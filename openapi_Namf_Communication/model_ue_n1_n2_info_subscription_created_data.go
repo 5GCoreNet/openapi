@@ -68,7 +68,7 @@ func (o *UeN1N2InfoSubscriptionCreatedData) SetN1n2NotifySubscriptionId(v string
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeN1N2InfoSubscriptionCreatedData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UeN1N2InfoSubscriptionCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeN1N2InfoSubscriptionCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -86,7 +86,7 @@ func (o *UeN1N2InfoSubscriptionCreatedData) GetSupportedFeaturesOk() (*string, b
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeN1N2InfoSubscriptionCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o UeN1N2InfoSubscriptionCreatedData) MarshalJSON() ([]byte, error) {
 func (o UeN1N2InfoSubscriptionCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n1n2NotifySubscriptionId"] = o.N1n2NotifySubscriptionId
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

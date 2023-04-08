@@ -42,7 +42,7 @@ func NewRoamingChargingProfileWithDefaults() *RoamingChargingProfile {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *RoamingChargingProfile) GetTriggers() []Trigger {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RoamingChargingProfile) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingChargingProfile) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -60,7 +60,7 @@ func (o *RoamingChargingProfile) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *RoamingChargingProfile) HasTriggers() bool {
-	if o != nil && !IsNil(o.Triggers) {
+	if o != nil && !isNil(o.Triggers) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RoamingChargingProfile) SetTriggers(v []Trigger) {
 
 // GetPartialRecordMethod returns the PartialRecordMethod field value if set, zero value otherwise.
 func (o *RoamingChargingProfile) GetPartialRecordMethod() PartialRecordMethod {
-	if o == nil || IsNil(o.PartialRecordMethod) {
+	if o == nil || isNil(o.PartialRecordMethod) {
 		var ret PartialRecordMethod
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RoamingChargingProfile) GetPartialRecordMethod() PartialRecordMethod {
 // GetPartialRecordMethodOk returns a tuple with the PartialRecordMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingChargingProfile) GetPartialRecordMethodOk() (*PartialRecordMethod, bool) {
-	if o == nil || IsNil(o.PartialRecordMethod) {
+	if o == nil || isNil(o.PartialRecordMethod) {
 		return nil, false
 	}
 	return o.PartialRecordMethod, true
@@ -92,7 +92,7 @@ func (o *RoamingChargingProfile) GetPartialRecordMethodOk() (*PartialRecordMetho
 
 // HasPartialRecordMethod returns a boolean if a field has been set.
 func (o *RoamingChargingProfile) HasPartialRecordMethod() bool {
-	if o != nil && !IsNil(o.PartialRecordMethod) {
+	if o != nil && !isNil(o.PartialRecordMethod) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RoamingChargingProfile) MarshalJSON() ([]byte, error) {
 
 func (o RoamingChargingProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Triggers) {
+	if !isNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.PartialRecordMethod) {
+	if !isNil(o.PartialRecordMethod) {
 		toSerialize["partialRecordMethod"] = o.PartialRecordMethod
 	}
 	return toSerialize, nil

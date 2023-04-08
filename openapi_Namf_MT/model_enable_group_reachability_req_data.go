@@ -100,7 +100,7 @@ func (o *EnableGroupReachabilityReqData) SetTmgi(v Tmgi) {
 
 // GetReachabilityNotifyUri returns the ReachabilityNotifyUri field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUri() string {
-	if o == nil || IsNil(o.ReachabilityNotifyUri) {
+	if o == nil || isNil(o.ReachabilityNotifyUri) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUri() string {
 // GetReachabilityNotifyUriOk returns a tuple with the ReachabilityNotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.ReachabilityNotifyUri) {
+	if o == nil || isNil(o.ReachabilityNotifyUri) {
 		return nil, false
 	}
 	return o.ReachabilityNotifyUri, true
@@ -118,7 +118,7 @@ func (o *EnableGroupReachabilityReqData) GetReachabilityNotifyUriOk() (*string, 
 
 // HasReachabilityNotifyUri returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasReachabilityNotifyUri() bool {
-	if o != nil && !IsNil(o.ReachabilityNotifyUri) {
+	if o != nil && !isNil(o.ReachabilityNotifyUri) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *EnableGroupReachabilityReqData) SetReachabilityNotifyUri(v string) {
 
 // GetMbsServiceAreaInfoList returns the MbsServiceAreaInfoList field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoList() []MbsServiceAreaInfo {
-	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
+	if o == nil || isNil(o.MbsServiceAreaInfoList) {
 		var ret []MbsServiceAreaInfo
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoList() []MbsServic
 // GetMbsServiceAreaInfoListOk returns a tuple with the MbsServiceAreaInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoListOk() ([]MbsServiceAreaInfo, bool) {
-	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
+	if o == nil || isNil(o.MbsServiceAreaInfoList) {
 		return nil, false
 	}
 	return o.MbsServiceAreaInfoList, true
@@ -150,7 +150,7 @@ func (o *EnableGroupReachabilityReqData) GetMbsServiceAreaInfoListOk() ([]MbsSer
 
 // HasMbsServiceAreaInfoList returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasMbsServiceAreaInfoList() bool {
-	if o != nil && !IsNil(o.MbsServiceAreaInfoList) {
+	if o != nil && !isNil(o.MbsServiceAreaInfoList) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *EnableGroupReachabilityReqData) SetMbsServiceAreaInfoList(v []MbsServic
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetArp() Arp {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *EnableGroupReachabilityReqData) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -182,7 +182,7 @@ func (o *EnableGroupReachabilityReqData) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasArp() bool {
-	if o != nil && !IsNil(o.Arp) {
+	if o != nil && !isNil(o.Arp) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *EnableGroupReachabilityReqData) SetArp(v Arp) {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetVar5qi() int32 {
-	if o == nil || IsNil(o.Var5qi) {
+	if o == nil || isNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *EnableGroupReachabilityReqData) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetVar5qiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var5qi) {
+	if o == nil || isNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -214,7 +214,7 @@ func (o *EnableGroupReachabilityReqData) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasVar5qi() bool {
-	if o != nil && !IsNil(o.Var5qi) {
+	if o != nil && !isNil(o.Var5qi) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *EnableGroupReachabilityReqData) SetVar5qi(v int32) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityReqData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *EnableGroupReachabilityReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -246,7 +246,7 @@ func (o *EnableGroupReachabilityReqData) GetSupportedFeaturesOk() (*string, bool
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityReqData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -270,19 +270,19 @@ func (o EnableGroupReachabilityReqData) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueInfoList"] = o.UeInfoList
 	toSerialize["tmgi"] = o.Tmgi
-	if !IsNil(o.ReachabilityNotifyUri) {
+	if !isNil(o.ReachabilityNotifyUri) {
 		toSerialize["reachabilityNotifyUri"] = o.ReachabilityNotifyUri
 	}
-	if !IsNil(o.MbsServiceAreaInfoList) {
+	if !isNil(o.MbsServiceAreaInfoList) {
 		toSerialize["mbsServiceAreaInfoList"] = o.MbsServiceAreaInfoList
 	}
-	if !IsNil(o.Arp) {
+	if !isNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
-	if !IsNil(o.Var5qi) {
+	if !isNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

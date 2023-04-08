@@ -48,7 +48,7 @@ func NewReachabilityReportWithDefaults() *ReachabilityReport {
 
 // GetAmfInstanceId returns the AmfInstanceId field value if set, zero value otherwise.
 func (o *ReachabilityReport) GetAmfInstanceId() string {
-	if o == nil || IsNil(o.AmfInstanceId) {
+	if o == nil || isNil(o.AmfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ReachabilityReport) GetAmfInstanceId() string {
 // GetAmfInstanceIdOk returns a tuple with the AmfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityReport) GetAmfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfInstanceId) {
+	if o == nil || isNil(o.AmfInstanceId) {
 		return nil, false
 	}
 	return o.AmfInstanceId, true
@@ -66,7 +66,7 @@ func (o *ReachabilityReport) GetAmfInstanceIdOk() (*string, bool) {
 
 // HasAmfInstanceId returns a boolean if a field has been set.
 func (o *ReachabilityReport) HasAmfInstanceId() bool {
-	if o != nil && !IsNil(o.AmfInstanceId) {
+	if o != nil && !isNil(o.AmfInstanceId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ReachabilityReport) SetAmfInstanceId(v string) {
 
 // GetAccessTypeList returns the AccessTypeList field value if set, zero value otherwise.
 func (o *ReachabilityReport) GetAccessTypeList() []AccessType {
-	if o == nil || IsNil(o.AccessTypeList) {
+	if o == nil || isNil(o.AccessTypeList) {
 		var ret []AccessType
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ReachabilityReport) GetAccessTypeList() []AccessType {
 // GetAccessTypeListOk returns a tuple with the AccessTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityReport) GetAccessTypeListOk() ([]AccessType, bool) {
-	if o == nil || IsNil(o.AccessTypeList) {
+	if o == nil || isNil(o.AccessTypeList) {
 		return nil, false
 	}
 	return o.AccessTypeList, true
@@ -98,7 +98,7 @@ func (o *ReachabilityReport) GetAccessTypeListOk() ([]AccessType, bool) {
 
 // HasAccessTypeList returns a boolean if a field has been set.
 func (o *ReachabilityReport) HasAccessTypeList() bool {
-	if o != nil && !IsNil(o.AccessTypeList) {
+	if o != nil && !isNil(o.AccessTypeList) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ReachabilityReport) SetAccessTypeList(v []AccessType) {
 
 // GetReachability returns the Reachability field value if set, zero value otherwise.
 func (o *ReachabilityReport) GetReachability() UeReachability {
-	if o == nil || IsNil(o.Reachability) {
+	if o == nil || isNil(o.Reachability) {
 		var ret UeReachability
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ReachabilityReport) GetReachability() UeReachability {
 // GetReachabilityOk returns a tuple with the Reachability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityReport) GetReachabilityOk() (*UeReachability, bool) {
-	if o == nil || IsNil(o.Reachability) {
+	if o == nil || isNil(o.Reachability) {
 		return nil, false
 	}
 	return o.Reachability, true
@@ -130,7 +130,7 @@ func (o *ReachabilityReport) GetReachabilityOk() (*UeReachability, bool) {
 
 // HasReachability returns a boolean if a field has been set.
 func (o *ReachabilityReport) HasReachability() bool {
-	if o != nil && !IsNil(o.Reachability) {
+	if o != nil && !isNil(o.Reachability) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ReachabilityReport) SetReachability(v UeReachability) {
 
 // GetMaxAvailabilityTime returns the MaxAvailabilityTime field value if set, zero value otherwise.
 func (o *ReachabilityReport) GetMaxAvailabilityTime() time.Time {
-	if o == nil || IsNil(o.MaxAvailabilityTime) {
+	if o == nil || isNil(o.MaxAvailabilityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ReachabilityReport) GetMaxAvailabilityTime() time.Time {
 // GetMaxAvailabilityTimeOk returns a tuple with the MaxAvailabilityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MaxAvailabilityTime) {
+	if o == nil || isNil(o.MaxAvailabilityTime) {
 		return nil, false
 	}
 	return o.MaxAvailabilityTime, true
@@ -162,7 +162,7 @@ func (o *ReachabilityReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
 
 // HasMaxAvailabilityTime returns a boolean if a field has been set.
 func (o *ReachabilityReport) HasMaxAvailabilityTime() bool {
-	if o != nil && !IsNil(o.MaxAvailabilityTime) {
+	if o != nil && !isNil(o.MaxAvailabilityTime) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ReachabilityReport) SetMaxAvailabilityTime(v time.Time) {
 
 // GetIdleStatusIndication returns the IdleStatusIndication field value if set, zero value otherwise.
 func (o *ReachabilityReport) GetIdleStatusIndication() IdleStatusIndication {
-	if o == nil || IsNil(o.IdleStatusIndication) {
+	if o == nil || isNil(o.IdleStatusIndication) {
 		var ret IdleStatusIndication
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ReachabilityReport) GetIdleStatusIndication() IdleStatusIndication {
 // GetIdleStatusIndicationOk returns a tuple with the IdleStatusIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityReport) GetIdleStatusIndicationOk() (*IdleStatusIndication, bool) {
-	if o == nil || IsNil(o.IdleStatusIndication) {
+	if o == nil || isNil(o.IdleStatusIndication) {
 		return nil, false
 	}
 	return o.IdleStatusIndication, true
@@ -194,7 +194,7 @@ func (o *ReachabilityReport) GetIdleStatusIndicationOk() (*IdleStatusIndication,
 
 // HasIdleStatusIndication returns a boolean if a field has been set.
 func (o *ReachabilityReport) HasIdleStatusIndication() bool {
-	if o != nil && !IsNil(o.IdleStatusIndication) {
+	if o != nil && !isNil(o.IdleStatusIndication) {
 		return true
 	}
 
@@ -216,19 +216,19 @@ func (o ReachabilityReport) MarshalJSON() ([]byte, error) {
 
 func (o ReachabilityReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AmfInstanceId) {
+	if !isNil(o.AmfInstanceId) {
 		toSerialize["amfInstanceId"] = o.AmfInstanceId
 	}
-	if !IsNil(o.AccessTypeList) {
+	if !isNil(o.AccessTypeList) {
 		toSerialize["accessTypeList"] = o.AccessTypeList
 	}
-	if !IsNil(o.Reachability) {
+	if !isNil(o.Reachability) {
 		toSerialize["reachability"] = o.Reachability
 	}
-	if !IsNil(o.MaxAvailabilityTime) {
+	if !isNil(o.MaxAvailabilityTime) {
 		toSerialize["maxAvailabilityTime"] = o.MaxAvailabilityTime
 	}
-	if !IsNil(o.IdleStatusIndication) {
+	if !isNil(o.IdleStatusIndication) {
 		toSerialize["idleStatusIndication"] = o.IdleStatusIndication
 	}
 	return toSerialize, nil

@@ -443,10 +443,7 @@ components:
       type: object
     Cause:
       anyOf:
-      - enum:
-        - OVERLIMIT_USAGE
-        - UNEXPECTED_REASON
-        type: string
+      - $ref: '#/components/schemas/Cause_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -457,3 +454,9 @@ components:
              usage of the service API
         - UNEXPECTED_REASON:
              The revocation of the authorization of the API invoker is due to unexpected reason.
+    Cause_anyOf:
+      enum:
+      - OVERLIMIT_USAGE
+      - UNEXPECTED_REASON
+      type: string
+      example: null

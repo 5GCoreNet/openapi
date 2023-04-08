@@ -67,7 +67,7 @@ func (o *NetworkSliceCond) SetSnssaiList(v []Snssai) {
 
 // GetNsiList returns the NsiList field value if set, zero value otherwise.
 func (o *NetworkSliceCond) GetNsiList() []string {
-	if o == nil || IsNil(o.NsiList) {
+	if o == nil || isNil(o.NsiList) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NetworkSliceCond) GetNsiList() []string {
 // GetNsiListOk returns a tuple with the NsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceCond) GetNsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.NsiList) {
+	if o == nil || isNil(o.NsiList) {
 		return nil, false
 	}
 	return o.NsiList, true
@@ -85,7 +85,7 @@ func (o *NetworkSliceCond) GetNsiListOk() ([]string, bool) {
 
 // HasNsiList returns a boolean if a field has been set.
 func (o *NetworkSliceCond) HasNsiList() bool {
-	if o != nil && !IsNil(o.NsiList) {
+	if o != nil && !isNil(o.NsiList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o NetworkSliceCond) MarshalJSON() ([]byte, error) {
 func (o NetworkSliceCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssaiList"] = o.SnssaiList
-	if !IsNil(o.NsiList) {
+	if !isNil(o.NsiList) {
 		toSerialize["nsiList"] = o.NsiList
 	}
 	return toSerialize, nil

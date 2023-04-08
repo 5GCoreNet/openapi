@@ -71,7 +71,7 @@ func (o *CreatedEeSubscription) SetEeSubscription(v EeSubscription) {
 
 // GetEventReports returns the EventReports field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetEventReports() []MonitoringReport {
-	if o == nil || IsNil(o.EventReports) {
+	if o == nil || isNil(o.EventReports) {
 		var ret []MonitoringReport
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *CreatedEeSubscription) GetEventReports() []MonitoringReport {
 // GetEventReportsOk returns a tuple with the EventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetEventReportsOk() ([]MonitoringReport, bool) {
-	if o == nil || IsNil(o.EventReports) {
+	if o == nil || isNil(o.EventReports) {
 		return nil, false
 	}
 	return o.EventReports, true
@@ -89,7 +89,7 @@ func (o *CreatedEeSubscription) GetEventReportsOk() ([]MonitoringReport, bool) {
 
 // HasEventReports returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasEventReports() bool {
-	if o != nil && !IsNil(o.EventReports) {
+	if o != nil && !isNil(o.EventReports) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *CreatedEeSubscription) SetEventReports(v []MonitoringReport) {
 
 // GetFailedMonitoringConfigs returns the FailedMonitoringConfigs field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetFailedMonitoringConfigs() map[string]FailedMonitoringConfiguration {
-	if o == nil || IsNil(o.FailedMonitoringConfigs) {
+	if o == nil || isNil(o.FailedMonitoringConfigs) {
 		var ret map[string]FailedMonitoringConfiguration
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *CreatedEeSubscription) GetFailedMonitoringConfigs() map[string]FailedMo
 // GetFailedMonitoringConfigsOk returns a tuple with the FailedMonitoringConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetFailedMonitoringConfigsOk() (*map[string]FailedMonitoringConfiguration, bool) {
-	if o == nil || IsNil(o.FailedMonitoringConfigs) {
+	if o == nil || isNil(o.FailedMonitoringConfigs) {
 		return nil, false
 	}
 	return o.FailedMonitoringConfigs, true
@@ -121,7 +121,7 @@ func (o *CreatedEeSubscription) GetFailedMonitoringConfigsOk() (*map[string]Fail
 
 // HasFailedMonitoringConfigs returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasFailedMonitoringConfigs() bool {
-	if o != nil && !IsNil(o.FailedMonitoringConfigs) {
+	if o != nil && !isNil(o.FailedMonitoringConfigs) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *CreatedEeSubscription) SetFailedMonitoringConfigs(v map[string]FailedMo
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreatedEeSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *CreatedEeSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedEeSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -153,7 +153,7 @@ func (o *CreatedEeSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreatedEeSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o CreatedEeSubscription) MarshalJSON() ([]byte, error) {
 func (o CreatedEeSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eeSubscription"] = o.EeSubscription
-	if !IsNil(o.EventReports) {
+	if !isNil(o.EventReports) {
 		toSerialize["eventReports"] = o.EventReports
 	}
-	if !IsNil(o.FailedMonitoringConfigs) {
+	if !isNil(o.FailedMonitoringConfigs) {
 		toSerialize["failedMonitoringConfigs"] = o.FailedMonitoringConfigs
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

@@ -95,7 +95,7 @@ func (o *ProcessingInstruction) SetProcInterval(v int32) {
 
 // GetParamProcInstructs returns the ParamProcInstructs field value if set, zero value otherwise.
 func (o *ProcessingInstruction) GetParamProcInstructs() []ParameterProcessingInstruction {
-	if o == nil || IsNil(o.ParamProcInstructs) {
+	if o == nil || isNil(o.ParamProcInstructs) {
 		var ret []ParameterProcessingInstruction
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ProcessingInstruction) GetParamProcInstructs() []ParameterProcessingIns
 // GetParamProcInstructsOk returns a tuple with the ParamProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProcessingInstruction) GetParamProcInstructsOk() ([]ParameterProcessingInstruction, bool) {
-	if o == nil || IsNil(o.ParamProcInstructs) {
+	if o == nil || isNil(o.ParamProcInstructs) {
 		return nil, false
 	}
 	return o.ParamProcInstructs, true
@@ -113,7 +113,7 @@ func (o *ProcessingInstruction) GetParamProcInstructsOk() ([]ParameterProcessing
 
 // HasParamProcInstructs returns a boolean if a field has been set.
 func (o *ProcessingInstruction) HasParamProcInstructs() bool {
-	if o != nil && !IsNil(o.ParamProcInstructs) {
+	if o != nil && !isNil(o.ParamProcInstructs) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o ProcessingInstruction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventId"] = o.EventId
 	toSerialize["procInterval"] = o.ProcInterval
-	if !IsNil(o.ParamProcInstructs) {
+	if !isNil(o.ParamProcInstructs) {
 		toSerialize["paramProcInstructs"] = o.ParamProcInstructs
 	}
 	return toSerialize, nil

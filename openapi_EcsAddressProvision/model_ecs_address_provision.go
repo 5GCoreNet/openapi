@@ -49,7 +49,7 @@ func NewEcsAddressProvisionWithDefaults() *EcsAddressProvision {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *EcsAddressProvision) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *EcsAddressProvision) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddressProvision) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -67,7 +67,7 @@ func (o *EcsAddressProvision) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *EcsAddressProvision) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EcsAddressProvision) SetEcsServerAddr(v EcsServerAddr) {
 
 // GetSpatialValidityCond returns the SpatialValidityCond field value if set, zero value otherwise.
 func (o *EcsAddressProvision) GetSpatialValidityCond() SpatialValidityCond {
-	if o == nil || IsNil(o.SpatialValidityCond) {
+	if o == nil || isNil(o.SpatialValidityCond) {
 		var ret SpatialValidityCond
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *EcsAddressProvision) GetSpatialValidityCond() SpatialValidityCond {
 // GetSpatialValidityCondOk returns a tuple with the SpatialValidityCond field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddressProvision) GetSpatialValidityCondOk() (*SpatialValidityCond, bool) {
-	if o == nil || IsNil(o.SpatialValidityCond) {
+	if o == nil || isNil(o.SpatialValidityCond) {
 		return nil, false
 	}
 	return o.SpatialValidityCond, true
@@ -123,7 +123,7 @@ func (o *EcsAddressProvision) GetSpatialValidityCondOk() (*SpatialValidityCond, 
 
 // HasSpatialValidityCond returns a boolean if a field has been set.
 func (o *EcsAddressProvision) HasSpatialValidityCond() bool {
-	if o != nil && !IsNil(o.SpatialValidityCond) {
+	if o != nil && !isNil(o.SpatialValidityCond) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *EcsAddressProvision) SetSpatialValidityCond(v SpatialValidityCond) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *EcsAddressProvision) GetTgtUe() TargetUeId {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		var ret TargetUeId
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *EcsAddressProvision) GetTgtUe() TargetUeId {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsAddressProvision) GetTgtUeOk() (*TargetUeId, bool) {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -155,7 +155,7 @@ func (o *EcsAddressProvision) GetTgtUeOk() (*TargetUeId, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *EcsAddressProvision) HasTgtUe() bool {
-	if o != nil && !IsNil(o.TgtUe) {
+	if o != nil && !isNil(o.TgtUe) {
 		return true
 	}
 
@@ -201,14 +201,14 @@ func (o EcsAddressProvision) MarshalJSON() ([]byte, error) {
 
 func (o EcsAddressProvision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["ecsServerAddr"] = o.EcsServerAddr
-	if !IsNil(o.SpatialValidityCond) {
+	if !isNil(o.SpatialValidityCond) {
 		toSerialize["spatialValidityCond"] = o.SpatialValidityCond
 	}
-	if !IsNil(o.TgtUe) {
+	if !isNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

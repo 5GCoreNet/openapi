@@ -41,7 +41,7 @@ func NewSubscriptionDataSetsWithDefaults() *SubscriptionDataSets {
 
 // GetUeContextInPgwData returns the UeContextInPgwData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetUeContextInPgwData() UeContextInPgwData {
-	if o == nil || IsNil(o.UeContextInPgwData) {
+	if o == nil || isNil(o.UeContextInPgwData) {
 		var ret UeContextInPgwData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *SubscriptionDataSets) GetUeContextInPgwData() UeContextInPgwData {
 // GetUeContextInPgwDataOk returns a tuple with the UeContextInPgwData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetUeContextInPgwDataOk() (*UeContextInPgwData, bool) {
-	if o == nil || IsNil(o.UeContextInPgwData) {
+	if o == nil || isNil(o.UeContextInPgwData) {
 		return nil, false
 	}
 	return o.UeContextInPgwData, true
@@ -59,7 +59,7 @@ func (o *SubscriptionDataSets) GetUeContextInPgwDataOk() (*UeContextInPgwData, b
 
 // HasUeContextInPgwData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasUeContextInPgwData() bool {
-	if o != nil && !IsNil(o.UeContextInPgwData) {
+	if o != nil && !isNil(o.UeContextInPgwData) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o SubscriptionDataSets) MarshalJSON() ([]byte, error) {
 
 func (o SubscriptionDataSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeContextInPgwData) {
+	if !isNil(o.UeContextInPgwData) {
 		toSerialize["ueContextInPgwData"] = o.UeContextInPgwData
 	}
 	return toSerialize, nil

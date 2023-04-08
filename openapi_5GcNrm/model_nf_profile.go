@@ -49,7 +49,7 @@ func NewNFProfileWithDefaults() *NFProfile {
 
 // GetNFInstanceId returns the NFInstanceId field value if set, zero value otherwise.
 func (o *NFProfile) GetNFInstanceId() string {
-	if o == nil || IsNil(o.NFInstanceId) {
+	if o == nil || isNil(o.NFInstanceId) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *NFProfile) GetNFInstanceId() string {
 // GetNFInstanceIdOk returns a tuple with the NFInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetNFInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NFInstanceId) {
+	if o == nil || isNil(o.NFInstanceId) {
 		return nil, false
 	}
 	return o.NFInstanceId, true
@@ -67,7 +67,7 @@ func (o *NFProfile) GetNFInstanceIdOk() (*string, bool) {
 
 // HasNFInstanceId returns a boolean if a field has been set.
 func (o *NFProfile) HasNFInstanceId() bool {
-	if o != nil && !IsNil(o.NFInstanceId) {
+	if o != nil && !isNil(o.NFInstanceId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *NFProfile) SetNFInstanceId(v string) {
 
 // GetNFType returns the NFType field value if set, zero value otherwise.
 func (o *NFProfile) GetNFType() NFType {
-	if o == nil || IsNil(o.NFType) {
+	if o == nil || isNil(o.NFType) {
 		var ret NFType
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *NFProfile) GetNFType() NFType {
 // GetNFTypeOk returns a tuple with the NFType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetNFTypeOk() (*NFType, bool) {
-	if o == nil || IsNil(o.NFType) {
+	if o == nil || isNil(o.NFType) {
 		return nil, false
 	}
 	return o.NFType, true
@@ -99,7 +99,7 @@ func (o *NFProfile) GetNFTypeOk() (*NFType, bool) {
 
 // HasNFType returns a boolean if a field has been set.
 func (o *NFProfile) HasNFType() bool {
-	if o != nil && !IsNil(o.NFType) {
+	if o != nil && !isNil(o.NFType) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *NFProfile) SetNFType(v NFType) {
 
 // GetNFStatus returns the NFStatus field value if set, zero value otherwise.
 func (o *NFProfile) GetNFStatus() NFStatus {
-	if o == nil || IsNil(o.NFStatus) {
+	if o == nil || isNil(o.NFStatus) {
 		var ret NFStatus
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *NFProfile) GetNFStatus() NFStatus {
 // GetNFStatusOk returns a tuple with the NFStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetNFStatusOk() (*NFStatus, bool) {
-	if o == nil || IsNil(o.NFStatus) {
+	if o == nil || isNil(o.NFStatus) {
 		return nil, false
 	}
 	return o.NFStatus, true
@@ -131,7 +131,7 @@ func (o *NFProfile) GetNFStatusOk() (*NFStatus, bool) {
 
 // HasNFStatus returns a boolean if a field has been set.
 func (o *NFProfile) HasNFStatus() bool {
-	if o != nil && !IsNil(o.NFStatus) {
+	if o != nil && !isNil(o.NFStatus) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *NFProfile) SetNFStatus(v NFStatus) {
 
 // GetPlmn returns the Plmn field value if set, zero value otherwise.
 func (o *NFProfile) GetPlmn() PlmnId {
-	if o == nil || IsNil(o.Plmn) {
+	if o == nil || isNil(o.Plmn) {
 		var ret PlmnId
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *NFProfile) GetPlmn() PlmnId {
 // GetPlmnOk returns a tuple with the Plmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetPlmnOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.Plmn) {
+	if o == nil || isNil(o.Plmn) {
 		return nil, false
 	}
 	return o.Plmn, true
@@ -163,7 +163,7 @@ func (o *NFProfile) GetPlmnOk() (*PlmnId, bool) {
 
 // HasPlmn returns a boolean if a field has been set.
 func (o *NFProfile) HasPlmn() bool {
-	if o != nil && !IsNil(o.Plmn) {
+	if o != nil && !isNil(o.Plmn) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *NFProfile) SetPlmn(v PlmnId) {
 
 // GetSNssais returns the SNssais field value if set, zero value otherwise.
 func (o *NFProfile) GetSNssais() Snssai {
-	if o == nil || IsNil(o.SNssais) {
+	if o == nil || isNil(o.SNssais) {
 		var ret Snssai
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *NFProfile) GetSNssais() Snssai {
 // GetSNssaisOk returns a tuple with the SNssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetSNssaisOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.SNssais) {
+	if o == nil || isNil(o.SNssais) {
 		return nil, false
 	}
 	return o.SNssais, true
@@ -195,7 +195,7 @@ func (o *NFProfile) GetSNssaisOk() (*Snssai, bool) {
 
 // HasSNssais returns a boolean if a field has been set.
 func (o *NFProfile) HasSNssais() bool {
-	if o != nil && !IsNil(o.SNssais) {
+	if o != nil && !isNil(o.SNssais) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *NFProfile) SetSNssais(v Snssai) {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *NFProfile) GetFqdn() string {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *NFProfile) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -227,7 +227,7 @@ func (o *NFProfile) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *NFProfile) HasFqdn() bool {
-	if o != nil && !IsNil(o.Fqdn) {
+	if o != nil && !isNil(o.Fqdn) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *NFProfile) SetFqdn(v string) {
 
 // GetInterPlmnFqdn returns the InterPlmnFqdn field value if set, zero value otherwise.
 func (o *NFProfile) GetInterPlmnFqdn() string {
-	if o == nil || IsNil(o.InterPlmnFqdn) {
+	if o == nil || isNil(o.InterPlmnFqdn) {
 		var ret string
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *NFProfile) GetInterPlmnFqdn() string {
 // GetInterPlmnFqdnOk returns a tuple with the InterPlmnFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetInterPlmnFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.InterPlmnFqdn) {
+	if o == nil || isNil(o.InterPlmnFqdn) {
 		return nil, false
 	}
 	return o.InterPlmnFqdn, true
@@ -259,7 +259,7 @@ func (o *NFProfile) GetInterPlmnFqdnOk() (*string, bool) {
 
 // HasInterPlmnFqdn returns a boolean if a field has been set.
 func (o *NFProfile) HasInterPlmnFqdn() bool {
-	if o != nil && !IsNil(o.InterPlmnFqdn) {
+	if o != nil && !isNil(o.InterPlmnFqdn) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *NFProfile) SetInterPlmnFqdn(v string) {
 
 // GetNfServices returns the NfServices field value if set, zero value otherwise.
 func (o *NFProfile) GetNfServices() []NFService {
-	if o == nil || IsNil(o.NfServices) {
+	if o == nil || isNil(o.NfServices) {
 		var ret []NFService
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *NFProfile) GetNfServices() []NFService {
 // GetNfServicesOk returns a tuple with the NfServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFProfile) GetNfServicesOk() ([]NFService, bool) {
-	if o == nil || IsNil(o.NfServices) {
+	if o == nil || isNil(o.NfServices) {
 		return nil, false
 	}
 	return o.NfServices, true
@@ -291,7 +291,7 @@ func (o *NFProfile) GetNfServicesOk() ([]NFService, bool) {
 
 // HasNfServices returns a boolean if a field has been set.
 func (o *NFProfile) HasNfServices() bool {
-	if o != nil && !IsNil(o.NfServices) {
+	if o != nil && !isNil(o.NfServices) {
 		return true
 	}
 
@@ -313,28 +313,28 @@ func (o NFProfile) MarshalJSON() ([]byte, error) {
 
 func (o NFProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NFInstanceId) {
+	if !isNil(o.NFInstanceId) {
 		toSerialize["nFInstanceId"] = o.NFInstanceId
 	}
-	if !IsNil(o.NFType) {
+	if !isNil(o.NFType) {
 		toSerialize["nFType"] = o.NFType
 	}
-	if !IsNil(o.NFStatus) {
+	if !isNil(o.NFStatus) {
 		toSerialize["nFStatus"] = o.NFStatus
 	}
-	if !IsNil(o.Plmn) {
+	if !isNil(o.Plmn) {
 		toSerialize["plmn"] = o.Plmn
 	}
-	if !IsNil(o.SNssais) {
+	if !isNil(o.SNssais) {
 		toSerialize["sNssais"] = o.SNssais
 	}
-	if !IsNil(o.Fqdn) {
+	if !isNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if !IsNil(o.InterPlmnFqdn) {
+	if !isNil(o.InterPlmnFqdn) {
 		toSerialize["interPlmnFqdn"] = o.InterPlmnFqdn
 	}
-	if !IsNil(o.NfServices) {
+	if !isNil(o.NfServices) {
 		toSerialize["nfServices"] = o.NfServices
 	}
 	return toSerialize, nil

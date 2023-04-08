@@ -122,7 +122,7 @@ func (o *DeliveryStatusReport) SetMsgId(v string) {
 
 // GetSecCred returns the SecCred field value if set, zero value otherwise.
 func (o *DeliveryStatusReport) GetSecCred() string {
-	if o == nil || IsNil(o.SecCred) {
+	if o == nil || isNil(o.SecCred) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *DeliveryStatusReport) GetSecCred() string {
 // GetSecCredOk returns a tuple with the SecCred field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeliveryStatusReport) GetSecCredOk() (*string, bool) {
-	if o == nil || IsNil(o.SecCred) {
+	if o == nil || isNil(o.SecCred) {
 		return nil, false
 	}
 	return o.SecCred, true
@@ -140,7 +140,7 @@ func (o *DeliveryStatusReport) GetSecCredOk() (*string, bool) {
 
 // HasSecCred returns a boolean if a field has been set.
 func (o *DeliveryStatusReport) HasSecCred() bool {
-	if o != nil && !IsNil(o.SecCred) {
+	if o != nil && !isNil(o.SecCred) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *DeliveryStatusReport) SetSecCred(v string) {
 
 // GetFailureCause returns the FailureCause field value if set, zero value otherwise.
 func (o *DeliveryStatusReport) GetFailureCause() string {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *DeliveryStatusReport) GetFailureCause() string {
 // GetFailureCauseOk returns a tuple with the FailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeliveryStatusReport) GetFailureCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		return nil, false
 	}
 	return o.FailureCause, true
@@ -172,7 +172,7 @@ func (o *DeliveryStatusReport) GetFailureCauseOk() (*string, bool) {
 
 // HasFailureCause returns a boolean if a field has been set.
 func (o *DeliveryStatusReport) HasFailureCause() bool {
-	if o != nil && !IsNil(o.FailureCause) {
+	if o != nil && !isNil(o.FailureCause) {
 		return true
 	}
 
@@ -221,10 +221,10 @@ func (o DeliveryStatusReport) ToMap() (map[string]interface{}, error) {
 	toSerialize["oriAddr"] = o.OriAddr
 	toSerialize["destAddr"] = o.DestAddr
 	toSerialize["msgId"] = o.MsgId
-	if !IsNil(o.SecCred) {
+	if !isNil(o.SecCred) {
 		toSerialize["secCred"] = o.SecCred
 	}
-	if !IsNil(o.FailureCause) {
+	if !isNil(o.FailureCause) {
 		toSerialize["failureCause"] = o.FailureCause
 	}
 	toSerialize["delivSt"] = o.DelivSt

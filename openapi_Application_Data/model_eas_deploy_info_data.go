@@ -50,7 +50,7 @@ func NewEasDeployInfoDataWithDefaults() *EasDeployInfoData {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *EasDeployInfoData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -68,7 +68,7 @@ func (o *EasDeployInfoData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *EasDeployInfoData) SetAppId(v string) {
 
 // GetDnaiInfos returns the DnaiInfos field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetDnaiInfos() map[string]DnaiInformation {
-	if o == nil || IsNil(o.DnaiInfos) {
+	if o == nil || isNil(o.DnaiInfos) {
 		var ret map[string]DnaiInformation
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *EasDeployInfoData) GetDnaiInfos() map[string]DnaiInformation {
 // GetDnaiInfosOk returns a tuple with the DnaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetDnaiInfosOk() (*map[string]DnaiInformation, bool) {
-	if o == nil || IsNil(o.DnaiInfos) {
+	if o == nil || isNil(o.DnaiInfos) {
 		return nil, false
 	}
 	return o.DnaiInfos, true
@@ -100,7 +100,7 @@ func (o *EasDeployInfoData) GetDnaiInfosOk() (*map[string]DnaiInformation, bool)
 
 // HasDnaiInfos returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasDnaiInfos() bool {
-	if o != nil && !IsNil(o.DnaiInfos) {
+	if o != nil && !isNil(o.DnaiInfos) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *EasDeployInfoData) SetDnaiInfos(v map[string]DnaiInformation) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *EasDeployInfoData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -132,7 +132,7 @@ func (o *EasDeployInfoData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *EasDeployInfoData) SetFqdnPatternList(v []FqdnPatternMatchingRule) {
 
 // GetInternalGroupId returns the InternalGroupId field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetInternalGroupId() string {
-	if o == nil || IsNil(o.InternalGroupId) {
+	if o == nil || isNil(o.InternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *EasDeployInfoData) GetInternalGroupId() string {
 // GetInternalGroupIdOk returns a tuple with the InternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetInternalGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalGroupId) {
+	if o == nil || isNil(o.InternalGroupId) {
 		return nil, false
 	}
 	return o.InternalGroupId, true
@@ -188,7 +188,7 @@ func (o *EasDeployInfoData) GetInternalGroupIdOk() (*string, bool) {
 
 // HasInternalGroupId returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasInternalGroupId() bool {
-	if o != nil && !IsNil(o.InternalGroupId) {
+	if o != nil && !isNil(o.InternalGroupId) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *EasDeployInfoData) SetInternalGroupId(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *EasDeployInfoData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *EasDeployInfoData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeployInfoData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -220,7 +220,7 @@ func (o *EasDeployInfoData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *EasDeployInfoData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -242,20 +242,20 @@ func (o EasDeployInfoData) MarshalJSON() ([]byte, error) {
 
 func (o EasDeployInfoData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.DnaiInfos) {
+	if !isNil(o.DnaiInfos) {
 		toSerialize["dnaiInfos"] = o.DnaiInfos
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	toSerialize["fqdnPatternList"] = o.FqdnPatternList
-	if !IsNil(o.InternalGroupId) {
+	if !isNil(o.InternalGroupId) {
 		toSerialize["internalGroupId"] = o.InternalGroupId
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	return toSerialize, nil

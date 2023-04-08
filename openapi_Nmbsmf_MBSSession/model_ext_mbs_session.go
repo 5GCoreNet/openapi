@@ -46,7 +46,7 @@ func NewExtMbsSessionWithDefaults() *ExtMbsSession {
 
 // GetMbsSecurityContext returns the MbsSecurityContext field value if set, zero value otherwise.
 func (o *ExtMbsSession) GetMbsSecurityContext() MbsSecurityContext {
-	if o == nil || IsNil(o.MbsSecurityContext) {
+	if o == nil || isNil(o.MbsSecurityContext) {
 		var ret MbsSecurityContext
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ExtMbsSession) GetMbsSecurityContext() MbsSecurityContext {
 // GetMbsSecurityContextOk returns a tuple with the MbsSecurityContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtMbsSession) GetMbsSecurityContextOk() (*MbsSecurityContext, bool) {
-	if o == nil || IsNil(o.MbsSecurityContext) {
+	if o == nil || isNil(o.MbsSecurityContext) {
 		return nil, false
 	}
 	return o.MbsSecurityContext, true
@@ -64,7 +64,7 @@ func (o *ExtMbsSession) GetMbsSecurityContextOk() (*MbsSecurityContext, bool) {
 
 // HasMbsSecurityContext returns a boolean if a field has been set.
 func (o *ExtMbsSession) HasMbsSecurityContext() bool {
-	if o != nil && !IsNil(o.MbsSecurityContext) {
+	if o != nil && !isNil(o.MbsSecurityContext) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ExtMbsSession) SetMbsSecurityContext(v MbsSecurityContext) {
 
 // GetContactPcfInd returns the ContactPcfInd field value if set, zero value otherwise.
 func (o *ExtMbsSession) GetContactPcfInd() bool {
-	if o == nil || IsNil(o.ContactPcfInd) {
+	if o == nil || isNil(o.ContactPcfInd) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ExtMbsSession) GetContactPcfInd() bool {
 // GetContactPcfIndOk returns a tuple with the ContactPcfInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtMbsSession) GetContactPcfIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ContactPcfInd) {
+	if o == nil || isNil(o.ContactPcfInd) {
 		return nil, false
 	}
 	return o.ContactPcfInd, true
@@ -96,7 +96,7 @@ func (o *ExtMbsSession) GetContactPcfIndOk() (*bool, bool) {
 
 // HasContactPcfInd returns a boolean if a field has been set.
 func (o *ExtMbsSession) HasContactPcfInd() bool {
-	if o != nil && !IsNil(o.ContactPcfInd) {
+	if o != nil && !isNil(o.ContactPcfInd) {
 		return true
 	}
 
@@ -118,10 +118,10 @@ func (o ExtMbsSession) MarshalJSON() ([]byte, error) {
 
 func (o ExtMbsSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsSecurityContext) {
+	if !isNil(o.MbsSecurityContext) {
 		toSerialize["mbsSecurityContext"] = o.MbsSecurityContext
 	}
-	if !IsNil(o.ContactPcfInd) {
+	if !isNil(o.ContactPcfInd) {
 		toSerialize["contactPcfInd"] = o.ContactPcfInd
 	}
 	return toSerialize, nil

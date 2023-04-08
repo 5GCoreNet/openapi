@@ -56,7 +56,7 @@ func NewAfRoutingRequirementWithDefaults() *AfRoutingRequirement {
 
 // GetAppReloc returns the AppReloc field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetAppReloc() bool {
-	if o == nil || IsNil(o.AppReloc) {
+	if o == nil || isNil(o.AppReloc) {
 		var ret bool
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *AfRoutingRequirement) GetAppReloc() bool {
 // GetAppRelocOk returns a tuple with the AppReloc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetAppRelocOk() (*bool, bool) {
-	if o == nil || IsNil(o.AppReloc) {
+	if o == nil || isNil(o.AppReloc) {
 		return nil, false
 	}
 	return o.AppReloc, true
@@ -74,7 +74,7 @@ func (o *AfRoutingRequirement) GetAppRelocOk() (*bool, bool) {
 
 // HasAppReloc returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasAppReloc() bool {
-	if o != nil && !IsNil(o.AppReloc) {
+	if o != nil && !isNil(o.AppReloc) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *AfRoutingRequirement) SetAppReloc(v bool) {
 
 // GetRouteToLocs returns the RouteToLocs field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetRouteToLocs() []RouteToLocation {
-	if o == nil || IsNil(o.RouteToLocs) {
+	if o == nil || isNil(o.RouteToLocs) {
 		var ret []RouteToLocation
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *AfRoutingRequirement) GetRouteToLocs() []RouteToLocation {
 // GetRouteToLocsOk returns a tuple with the RouteToLocs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetRouteToLocsOk() ([]RouteToLocation, bool) {
-	if o == nil || IsNil(o.RouteToLocs) {
+	if o == nil || isNil(o.RouteToLocs) {
 		return nil, false
 	}
 	return o.RouteToLocs, true
@@ -106,7 +106,7 @@ func (o *AfRoutingRequirement) GetRouteToLocsOk() ([]RouteToLocation, bool) {
 
 // HasRouteToLocs returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasRouteToLocs() bool {
-	if o != nil && !IsNil(o.RouteToLocs) {
+	if o != nil && !isNil(o.RouteToLocs) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *AfRoutingRequirement) SetRouteToLocs(v []RouteToLocation) {
 
 // GetSpVal returns the SpVal field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetSpVal() SpatialValidity {
-	if o == nil || IsNil(o.SpVal) {
+	if o == nil || isNil(o.SpVal) {
 		var ret SpatialValidity
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *AfRoutingRequirement) GetSpVal() SpatialValidity {
 // GetSpValOk returns a tuple with the SpVal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetSpValOk() (*SpatialValidity, bool) {
-	if o == nil || IsNil(o.SpVal) {
+	if o == nil || isNil(o.SpVal) {
 		return nil, false
 	}
 	return o.SpVal, true
@@ -138,7 +138,7 @@ func (o *AfRoutingRequirement) GetSpValOk() (*SpatialValidity, bool) {
 
 // HasSpVal returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasSpVal() bool {
-	if o != nil && !IsNil(o.SpVal) {
+	if o != nil && !isNil(o.SpVal) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *AfRoutingRequirement) SetSpVal(v SpatialValidity) {
 
 // GetTempVals returns the TempVals field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetTempVals() []TemporalValidity {
-	if o == nil || IsNil(o.TempVals) {
+	if o == nil || isNil(o.TempVals) {
 		var ret []TemporalValidity
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *AfRoutingRequirement) GetTempVals() []TemporalValidity {
 // GetTempValsOk returns a tuple with the TempVals field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetTempValsOk() ([]TemporalValidity, bool) {
-	if o == nil || IsNil(o.TempVals) {
+	if o == nil || isNil(o.TempVals) {
 		return nil, false
 	}
 	return o.TempVals, true
@@ -170,7 +170,7 @@ func (o *AfRoutingRequirement) GetTempValsOk() ([]TemporalValidity, bool) {
 
 // HasTempVals returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasTempVals() bool {
-	if o != nil && !IsNil(o.TempVals) {
+	if o != nil && !isNil(o.TempVals) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *AfRoutingRequirement) SetTempVals(v []TemporalValidity) {
 
 // GetUpPathChgSub returns the UpPathChgSub field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AfRoutingRequirement) GetUpPathChgSub() UpPathChgEvent {
-	if o == nil || IsNil(o.UpPathChgSub.Get()) {
+	if o == nil || isNil(o.UpPathChgSub.Get()) {
 		var ret UpPathChgEvent
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *AfRoutingRequirement) UnsetUpPathChgSub() {
 
 // GetAddrPreserInd returns the AddrPreserInd field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetAddrPreserInd() bool {
-	if o == nil || IsNil(o.AddrPreserInd) {
+	if o == nil || isNil(o.AddrPreserInd) {
 		var ret bool
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *AfRoutingRequirement) GetAddrPreserInd() bool {
 // GetAddrPreserIndOk returns a tuple with the AddrPreserInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetAddrPreserIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AddrPreserInd) {
+	if o == nil || isNil(o.AddrPreserInd) {
 		return nil, false
 	}
 	return o.AddrPreserInd, true
@@ -244,7 +244,7 @@ func (o *AfRoutingRequirement) GetAddrPreserIndOk() (*bool, bool) {
 
 // HasAddrPreserInd returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasAddrPreserInd() bool {
-	if o != nil && !IsNil(o.AddrPreserInd) {
+	if o != nil && !isNil(o.AddrPreserInd) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *AfRoutingRequirement) SetAddrPreserInd(v bool) {
 
 // GetSimConnInd returns the SimConnInd field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetSimConnInd() bool {
-	if o == nil || IsNil(o.SimConnInd) {
+	if o == nil || isNil(o.SimConnInd) {
 		var ret bool
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *AfRoutingRequirement) GetSimConnInd() bool {
 // GetSimConnIndOk returns a tuple with the SimConnInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetSimConnIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SimConnInd) {
+	if o == nil || isNil(o.SimConnInd) {
 		return nil, false
 	}
 	return o.SimConnInd, true
@@ -276,7 +276,7 @@ func (o *AfRoutingRequirement) GetSimConnIndOk() (*bool, bool) {
 
 // HasSimConnInd returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasSimConnInd() bool {
-	if o != nil && !IsNil(o.SimConnInd) {
+	if o != nil && !isNil(o.SimConnInd) {
 		return true
 	}
 
@@ -290,7 +290,7 @@ func (o *AfRoutingRequirement) SetSimConnInd(v bool) {
 
 // GetSimConnTerm returns the SimConnTerm field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetSimConnTerm() int32 {
-	if o == nil || IsNil(o.SimConnTerm) {
+	if o == nil || isNil(o.SimConnTerm) {
 		var ret int32
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *AfRoutingRequirement) GetSimConnTerm() int32 {
 // GetSimConnTermOk returns a tuple with the SimConnTerm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetSimConnTermOk() (*int32, bool) {
-	if o == nil || IsNil(o.SimConnTerm) {
+	if o == nil || isNil(o.SimConnTerm) {
 		return nil, false
 	}
 	return o.SimConnTerm, true
@@ -308,7 +308,7 @@ func (o *AfRoutingRequirement) GetSimConnTermOk() (*int32, bool) {
 
 // HasSimConnTerm returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasSimConnTerm() bool {
-	if o != nil && !IsNil(o.SimConnTerm) {
+	if o != nil && !isNil(o.SimConnTerm) {
 		return true
 	}
 
@@ -322,7 +322,7 @@ func (o *AfRoutingRequirement) SetSimConnTerm(v int32) {
 
 // GetEasIpReplaceInfos returns the EasIpReplaceInfos field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetEasIpReplaceInfos() []EasIpReplacementInfo {
-	if o == nil || IsNil(o.EasIpReplaceInfos) {
+	if o == nil || isNil(o.EasIpReplaceInfos) {
 		var ret []EasIpReplacementInfo
 		return ret
 	}
@@ -332,7 +332,7 @@ func (o *AfRoutingRequirement) GetEasIpReplaceInfos() []EasIpReplacementInfo {
 // GetEasIpReplaceInfosOk returns a tuple with the EasIpReplaceInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo, bool) {
-	if o == nil || IsNil(o.EasIpReplaceInfos) {
+	if o == nil || isNil(o.EasIpReplaceInfos) {
 		return nil, false
 	}
 	return o.EasIpReplaceInfos, true
@@ -340,7 +340,7 @@ func (o *AfRoutingRequirement) GetEasIpReplaceInfosOk() ([]EasIpReplacementInfo,
 
 // HasEasIpReplaceInfos returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasEasIpReplaceInfos() bool {
-	if o != nil && !IsNil(o.EasIpReplaceInfos) {
+	if o != nil && !isNil(o.EasIpReplaceInfos) {
 		return true
 	}
 
@@ -354,7 +354,7 @@ func (o *AfRoutingRequirement) SetEasIpReplaceInfos(v []EasIpReplacementInfo) {
 
 // GetEasRedisInd returns the EasRedisInd field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetEasRedisInd() bool {
-	if o == nil || IsNil(o.EasRedisInd) {
+	if o == nil || isNil(o.EasRedisInd) {
 		var ret bool
 		return ret
 	}
@@ -364,7 +364,7 @@ func (o *AfRoutingRequirement) GetEasRedisInd() bool {
 // GetEasRedisIndOk returns a tuple with the EasRedisInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetEasRedisIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasRedisInd) {
+	if o == nil || isNil(o.EasRedisInd) {
 		return nil, false
 	}
 	return o.EasRedisInd, true
@@ -372,7 +372,7 @@ func (o *AfRoutingRequirement) GetEasRedisIndOk() (*bool, bool) {
 
 // HasEasRedisInd returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasEasRedisInd() bool {
-	if o != nil && !IsNil(o.EasRedisInd) {
+	if o != nil && !isNil(o.EasRedisInd) {
 		return true
 	}
 
@@ -386,7 +386,7 @@ func (o *AfRoutingRequirement) SetEasRedisInd(v bool) {
 
 // GetMaxAllowedUpLat returns the MaxAllowedUpLat field value if set, zero value otherwise.
 func (o *AfRoutingRequirement) GetMaxAllowedUpLat() int32 {
-	if o == nil || IsNil(o.MaxAllowedUpLat) {
+	if o == nil || isNil(o.MaxAllowedUpLat) {
 		var ret int32
 		return ret
 	}
@@ -396,7 +396,7 @@ func (o *AfRoutingRequirement) GetMaxAllowedUpLat() int32 {
 // GetMaxAllowedUpLatOk returns a tuple with the MaxAllowedUpLat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfRoutingRequirement) GetMaxAllowedUpLatOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxAllowedUpLat) {
+	if o == nil || isNil(o.MaxAllowedUpLat) {
 		return nil, false
 	}
 	return o.MaxAllowedUpLat, true
@@ -404,7 +404,7 @@ func (o *AfRoutingRequirement) GetMaxAllowedUpLatOk() (*int32, bool) {
 
 // HasMaxAllowedUpLat returns a boolean if a field has been set.
 func (o *AfRoutingRequirement) HasMaxAllowedUpLat() bool {
-	if o != nil && !IsNil(o.MaxAllowedUpLat) {
+	if o != nil && !isNil(o.MaxAllowedUpLat) {
 		return true
 	}
 
@@ -426,37 +426,37 @@ func (o AfRoutingRequirement) MarshalJSON() ([]byte, error) {
 
 func (o AfRoutingRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppReloc) {
+	if !isNil(o.AppReloc) {
 		toSerialize["appReloc"] = o.AppReloc
 	}
-	if !IsNil(o.RouteToLocs) {
+	if !isNil(o.RouteToLocs) {
 		toSerialize["routeToLocs"] = o.RouteToLocs
 	}
-	if !IsNil(o.SpVal) {
+	if !isNil(o.SpVal) {
 		toSerialize["spVal"] = o.SpVal
 	}
-	if !IsNil(o.TempVals) {
+	if !isNil(o.TempVals) {
 		toSerialize["tempVals"] = o.TempVals
 	}
 	if o.UpPathChgSub.IsSet() {
 		toSerialize["upPathChgSub"] = o.UpPathChgSub.Get()
 	}
-	if !IsNil(o.AddrPreserInd) {
+	if !isNil(o.AddrPreserInd) {
 		toSerialize["addrPreserInd"] = o.AddrPreserInd
 	}
-	if !IsNil(o.SimConnInd) {
+	if !isNil(o.SimConnInd) {
 		toSerialize["simConnInd"] = o.SimConnInd
 	}
-	if !IsNil(o.SimConnTerm) {
+	if !isNil(o.SimConnTerm) {
 		toSerialize["simConnTerm"] = o.SimConnTerm
 	}
-	if !IsNil(o.EasIpReplaceInfos) {
+	if !isNil(o.EasIpReplaceInfos) {
 		toSerialize["easIpReplaceInfos"] = o.EasIpReplaceInfos
 	}
-	if !IsNil(o.EasRedisInd) {
+	if !isNil(o.EasRedisInd) {
 		toSerialize["easRedisInd"] = o.EasRedisInd
 	}
-	if !IsNil(o.MaxAllowedUpLat) {
+	if !isNil(o.MaxAllowedUpLat) {
 		toSerialize["maxAllowedUpLat"] = o.MaxAllowedUpLat
 	}
 	return toSerialize, nil

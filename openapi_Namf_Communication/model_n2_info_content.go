@@ -45,7 +45,7 @@ func NewN2InfoContentWithDefaults() *N2InfoContent {
 
 // GetNgapMessageType returns the NgapMessageType field value if set, zero value otherwise.
 func (o *N2InfoContent) GetNgapMessageType() int32 {
-	if o == nil || IsNil(o.NgapMessageType) {
+	if o == nil || isNil(o.NgapMessageType) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *N2InfoContent) GetNgapMessageType() int32 {
 // GetNgapMessageTypeOk returns a tuple with the NgapMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContent) GetNgapMessageTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.NgapMessageType) {
+	if o == nil || isNil(o.NgapMessageType) {
 		return nil, false
 	}
 	return o.NgapMessageType, true
@@ -63,7 +63,7 @@ func (o *N2InfoContent) GetNgapMessageTypeOk() (*int32, bool) {
 
 // HasNgapMessageType returns a boolean if a field has been set.
 func (o *N2InfoContent) HasNgapMessageType() bool {
-	if o != nil && !IsNil(o.NgapMessageType) {
+	if o != nil && !isNil(o.NgapMessageType) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *N2InfoContent) SetNgapMessageType(v int32) {
 
 // GetNgapIeType returns the NgapIeType field value if set, zero value otherwise.
 func (o *N2InfoContent) GetNgapIeType() NgapIeType {
-	if o == nil || IsNil(o.NgapIeType) {
+	if o == nil || isNil(o.NgapIeType) {
 		var ret NgapIeType
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *N2InfoContent) GetNgapIeType() NgapIeType {
 // GetNgapIeTypeOk returns a tuple with the NgapIeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoContent) GetNgapIeTypeOk() (*NgapIeType, bool) {
-	if o == nil || IsNil(o.NgapIeType) {
+	if o == nil || isNil(o.NgapIeType) {
 		return nil, false
 	}
 	return o.NgapIeType, true
@@ -95,7 +95,7 @@ func (o *N2InfoContent) GetNgapIeTypeOk() (*NgapIeType, bool) {
 
 // HasNgapIeType returns a boolean if a field has been set.
 func (o *N2InfoContent) HasNgapIeType() bool {
-	if o != nil && !IsNil(o.NgapIeType) {
+	if o != nil && !isNil(o.NgapIeType) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o N2InfoContent) MarshalJSON() ([]byte, error) {
 
 func (o N2InfoContent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NgapMessageType) {
+	if !isNil(o.NgapMessageType) {
 		toSerialize["ngapMessageType"] = o.NgapMessageType
 	}
-	if !IsNil(o.NgapIeType) {
+	if !isNil(o.NgapIeType) {
 		toSerialize["ngapIeType"] = o.NgapIeType
 	}
 	toSerialize["ngapData"] = o.NgapData

@@ -12,7 +12,6 @@ package openapi_DataReporting
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ApplicationSpecificRecord type satisfies the MappedNullable interface at compile time
@@ -110,7 +109,7 @@ func (o *ApplicationSpecificRecord) GetRecordContainer() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationSpecificRecord) GetRecordContainerOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.RecordContainer) {
+	if o == nil || isNil(o.RecordContainer) {
 		return nil, false
 	}
 	return &o.RecordContainer, true

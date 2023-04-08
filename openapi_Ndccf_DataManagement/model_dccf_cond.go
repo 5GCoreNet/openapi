@@ -70,7 +70,7 @@ func (o *DccfCond) SetConditionType(v string) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *DccfCond) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *DccfCond) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfCond) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -88,7 +88,7 @@ func (o *DccfCond) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *DccfCond) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *DccfCond) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *DccfCond) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *DccfCond) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfCond) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -120,7 +120,7 @@ func (o *DccfCond) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *DccfCond) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *DccfCond) SetTaiRangeList(v []TaiRange) {
 
 // GetServingNfTypeList returns the ServingNfTypeList field value if set, zero value otherwise.
 func (o *DccfCond) GetServingNfTypeList() []NFType {
-	if o == nil || IsNil(o.ServingNfTypeList) {
+	if o == nil || isNil(o.ServingNfTypeList) {
 		var ret []NFType
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *DccfCond) GetServingNfTypeList() []NFType {
 // GetServingNfTypeListOk returns a tuple with the ServingNfTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfCond) GetServingNfTypeListOk() ([]NFType, bool) {
-	if o == nil || IsNil(o.ServingNfTypeList) {
+	if o == nil || isNil(o.ServingNfTypeList) {
 		return nil, false
 	}
 	return o.ServingNfTypeList, true
@@ -152,7 +152,7 @@ func (o *DccfCond) GetServingNfTypeListOk() ([]NFType, bool) {
 
 // HasServingNfTypeList returns a boolean if a field has been set.
 func (o *DccfCond) HasServingNfTypeList() bool {
-	if o != nil && !IsNil(o.ServingNfTypeList) {
+	if o != nil && !isNil(o.ServingNfTypeList) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *DccfCond) SetServingNfTypeList(v []NFType) {
 
 // GetServingNfSetIdList returns the ServingNfSetIdList field value if set, zero value otherwise.
 func (o *DccfCond) GetServingNfSetIdList() []string {
-	if o == nil || IsNil(o.ServingNfSetIdList) {
+	if o == nil || isNil(o.ServingNfSetIdList) {
 		var ret []string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *DccfCond) GetServingNfSetIdList() []string {
 // GetServingNfSetIdListOk returns a tuple with the ServingNfSetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfCond) GetServingNfSetIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServingNfSetIdList) {
+	if o == nil || isNil(o.ServingNfSetIdList) {
 		return nil, false
 	}
 	return o.ServingNfSetIdList, true
@@ -184,7 +184,7 @@ func (o *DccfCond) GetServingNfSetIdListOk() ([]string, bool) {
 
 // HasServingNfSetIdList returns a boolean if a field has been set.
 func (o *DccfCond) HasServingNfSetIdList() bool {
-	if o != nil && !IsNil(o.ServingNfSetIdList) {
+	if o != nil && !isNil(o.ServingNfSetIdList) {
 		return true
 	}
 
@@ -207,16 +207,16 @@ func (o DccfCond) MarshalJSON() ([]byte, error) {
 func (o DccfCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["conditionType"] = o.ConditionType
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.ServingNfTypeList) {
+	if !isNil(o.ServingNfTypeList) {
 		toSerialize["servingNfTypeList"] = o.ServingNfTypeList
 	}
-	if !IsNil(o.ServingNfSetIdList) {
+	if !isNil(o.ServingNfSetIdList) {
 		toSerialize["servingNfSetIdList"] = o.ServingNfSetIdList
 	}
 	return toSerialize, nil

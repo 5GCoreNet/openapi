@@ -43,7 +43,7 @@ func NewStatusResponseDataWithDefaults() *StatusResponseData {
 
 // GetInactiveUes returns the InactiveUes field value if set, zero value otherwise.
 func (o *StatusResponseData) GetInactiveUes() []string {
-	if o == nil || IsNil(o.InactiveUes) {
+	if o == nil || isNil(o.InactiveUes) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *StatusResponseData) GetInactiveUes() []string {
 // GetInactiveUesOk returns a tuple with the InactiveUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusResponseData) GetInactiveUesOk() ([]string, bool) {
-	if o == nil || IsNil(o.InactiveUes) {
+	if o == nil || isNil(o.InactiveUes) {
 		return nil, false
 	}
 	return o.InactiveUes, true
@@ -61,7 +61,7 @@ func (o *StatusResponseData) GetInactiveUesOk() ([]string, bool) {
 
 // HasInactiveUes returns a boolean if a field has been set.
 func (o *StatusResponseData) HasInactiveUes() bool {
-	if o != nil && !IsNil(o.InactiveUes) {
+	if o != nil && !isNil(o.InactiveUes) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *StatusResponseData) SetInactiveUes(v []string) {
 
 // GetInactiveGpsis returns the InactiveGpsis field value if set, zero value otherwise.
 func (o *StatusResponseData) GetInactiveGpsis() []string {
-	if o == nil || IsNil(o.InactiveGpsis) {
+	if o == nil || isNil(o.InactiveGpsis) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *StatusResponseData) GetInactiveGpsis() []string {
 // GetInactiveGpsisOk returns a tuple with the InactiveGpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusResponseData) GetInactiveGpsisOk() ([]string, bool) {
-	if o == nil || IsNil(o.InactiveGpsis) {
+	if o == nil || isNil(o.InactiveGpsis) {
 		return nil, false
 	}
 	return o.InactiveGpsis, true
@@ -93,7 +93,7 @@ func (o *StatusResponseData) GetInactiveGpsisOk() ([]string, bool) {
 
 // HasInactiveGpsis returns a boolean if a field has been set.
 func (o *StatusResponseData) HasInactiveGpsis() bool {
-	if o != nil && !IsNil(o.InactiveGpsis) {
+	if o != nil && !isNil(o.InactiveGpsis) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *StatusResponseData) SetInactiveGpsis(v []string) {
 
 // GetActiveUes returns the ActiveUes field value if set, zero value otherwise.
 func (o *StatusResponseData) GetActiveUes() []ActiveUe {
-	if o == nil || IsNil(o.ActiveUes) {
+	if o == nil || isNil(o.ActiveUes) {
 		var ret []ActiveUe
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *StatusResponseData) GetActiveUes() []ActiveUe {
 // GetActiveUesOk returns a tuple with the ActiveUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusResponseData) GetActiveUesOk() ([]ActiveUe, bool) {
-	if o == nil || IsNil(o.ActiveUes) {
+	if o == nil || isNil(o.ActiveUes) {
 		return nil, false
 	}
 	return o.ActiveUes, true
@@ -125,7 +125,7 @@ func (o *StatusResponseData) GetActiveUesOk() ([]ActiveUe, bool) {
 
 // HasActiveUes returns a boolean if a field has been set.
 func (o *StatusResponseData) HasActiveUes() bool {
-	if o != nil && !IsNil(o.ActiveUes) {
+	if o != nil && !isNil(o.ActiveUes) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o StatusResponseData) MarshalJSON() ([]byte, error) {
 
 func (o StatusResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InactiveUes) {
+	if !isNil(o.InactiveUes) {
 		toSerialize["inactiveUes"] = o.InactiveUes
 	}
-	if !IsNil(o.InactiveGpsis) {
+	if !isNil(o.InactiveGpsis) {
 		toSerialize["inactiveGpsis"] = o.InactiveGpsis
 	}
-	if !IsNil(o.ActiveUes) {
+	if !isNil(o.ActiveUes) {
 		toSerialize["activeUes"] = o.ActiveUes
 	}
 	return toSerialize, nil

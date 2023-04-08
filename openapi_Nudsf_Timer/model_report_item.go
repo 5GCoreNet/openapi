@@ -69,7 +69,7 @@ func (o *ReportItem) SetPath(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *ReportItem) GetReason() string {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReportItem) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportItem) GetReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -87,7 +87,7 @@ func (o *ReportItem) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *ReportItem) HasReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && !isNil(o.Reason) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o ReportItem) MarshalJSON() ([]byte, error) {
 func (o ReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["path"] = o.Path
-	if !IsNil(o.Reason) {
+	if !isNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil

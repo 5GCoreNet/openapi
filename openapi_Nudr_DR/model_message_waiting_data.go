@@ -41,7 +41,7 @@ func NewMessageWaitingDataWithDefaults() *MessageWaitingData {
 
 // GetMwdList returns the MwdList field value if set, zero value otherwise.
 func (o *MessageWaitingData) GetMwdList() []SmscData {
-	if o == nil || IsNil(o.MwdList) {
+	if o == nil || isNil(o.MwdList) {
 		var ret []SmscData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MessageWaitingData) GetMwdList() []SmscData {
 // GetMwdListOk returns a tuple with the MwdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageWaitingData) GetMwdListOk() ([]SmscData, bool) {
-	if o == nil || IsNil(o.MwdList) {
+	if o == nil || isNil(o.MwdList) {
 		return nil, false
 	}
 	return o.MwdList, true
@@ -59,7 +59,7 @@ func (o *MessageWaitingData) GetMwdListOk() ([]SmscData, bool) {
 
 // HasMwdList returns a boolean if a field has been set.
 func (o *MessageWaitingData) HasMwdList() bool {
-	if o != nil && !IsNil(o.MwdList) {
+	if o != nil && !isNil(o.MwdList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MessageWaitingData) MarshalJSON() ([]byte, error) {
 
 func (o MessageWaitingData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MwdList) {
+	if !isNil(o.MwdList) {
 		toSerialize["mwdList"] = o.MwdList
 	}
 	return toSerialize, nil

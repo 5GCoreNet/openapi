@@ -42,7 +42,7 @@ func NewTransmitterInfoWithDefaults() *TransmitterInfo {
 
 // GetProseSourceIPAddress returns the ProseSourceIPAddress field value if set, zero value otherwise.
 func (o *TransmitterInfo) GetProseSourceIPAddress() IpAddr {
-	if o == nil || IsNil(o.ProseSourceIPAddress) {
+	if o == nil || isNil(o.ProseSourceIPAddress) {
 		var ret IpAddr
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TransmitterInfo) GetProseSourceIPAddress() IpAddr {
 // GetProseSourceIPAddressOk returns a tuple with the ProseSourceIPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransmitterInfo) GetProseSourceIPAddressOk() (*IpAddr, bool) {
-	if o == nil || IsNil(o.ProseSourceIPAddress) {
+	if o == nil || isNil(o.ProseSourceIPAddress) {
 		return nil, false
 	}
 	return o.ProseSourceIPAddress, true
@@ -60,7 +60,7 @@ func (o *TransmitterInfo) GetProseSourceIPAddressOk() (*IpAddr, bool) {
 
 // HasProseSourceIPAddress returns a boolean if a field has been set.
 func (o *TransmitterInfo) HasProseSourceIPAddress() bool {
-	if o != nil && !IsNil(o.ProseSourceIPAddress) {
+	if o != nil && !isNil(o.ProseSourceIPAddress) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TransmitterInfo) SetProseSourceIPAddress(v IpAddr) {
 
 // GetProseSourceL2Id returns the ProseSourceL2Id field value if set, zero value otherwise.
 func (o *TransmitterInfo) GetProseSourceL2Id() string {
-	if o == nil || IsNil(o.ProseSourceL2Id) {
+	if o == nil || isNil(o.ProseSourceL2Id) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TransmitterInfo) GetProseSourceL2Id() string {
 // GetProseSourceL2IdOk returns a tuple with the ProseSourceL2Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransmitterInfo) GetProseSourceL2IdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseSourceL2Id) {
+	if o == nil || isNil(o.ProseSourceL2Id) {
 		return nil, false
 	}
 	return o.ProseSourceL2Id, true
@@ -92,7 +92,7 @@ func (o *TransmitterInfo) GetProseSourceL2IdOk() (*string, bool) {
 
 // HasProseSourceL2Id returns a boolean if a field has been set.
 func (o *TransmitterInfo) HasProseSourceL2Id() bool {
-	if o != nil && !IsNil(o.ProseSourceL2Id) {
+	if o != nil && !isNil(o.ProseSourceL2Id) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o TransmitterInfo) MarshalJSON() ([]byte, error) {
 
 func (o TransmitterInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProseSourceIPAddress) {
+	if !isNil(o.ProseSourceIPAddress) {
 		toSerialize["proseSourceIPAddress"] = o.ProseSourceIPAddress
 	}
-	if !IsNil(o.ProseSourceL2Id) {
+	if !isNil(o.ProseSourceL2Id) {
 		toSerialize["proseSourceL2Id"] = o.ProseSourceL2Id
 	}
 	return toSerialize, nil

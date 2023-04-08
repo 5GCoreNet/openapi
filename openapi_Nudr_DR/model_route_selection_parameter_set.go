@@ -49,7 +49,7 @@ func NewRouteSelectionParameterSetWithDefaults() *RouteSelectionParameterSet {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *RouteSelectionParameterSet) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -67,7 +67,7 @@ func (o *RouteSelectionParameterSet) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *RouteSelectionParameterSet) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *RouteSelectionParameterSet) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -99,7 +99,7 @@ func (o *RouteSelectionParameterSet) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *RouteSelectionParameterSet) SetSnssai(v Snssai) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetPrecedence() int32 {
-	if o == nil || IsNil(o.Precedence) {
+	if o == nil || isNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *RouteSelectionParameterSet) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Precedence) {
+	if o == nil || isNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -131,7 +131,7 @@ func (o *RouteSelectionParameterSet) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasPrecedence() bool {
-	if o != nil && !IsNil(o.Precedence) {
+	if o != nil && !isNil(o.Precedence) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *RouteSelectionParameterSet) SetPrecedence(v int32) {
 
 // GetSpatialValidityAreas returns the SpatialValidityAreas field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetSpatialValidityAreas() []GeographicalArea {
-	if o == nil || IsNil(o.SpatialValidityAreas) {
+	if o == nil || isNil(o.SpatialValidityAreas) {
 		var ret []GeographicalArea
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityAreas() []GeographicalAre
 // GetSpatialValidityAreasOk returns a tuple with the SpatialValidityAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetSpatialValidityAreasOk() ([]GeographicalArea, bool) {
-	if o == nil || IsNil(o.SpatialValidityAreas) {
+	if o == nil || isNil(o.SpatialValidityAreas) {
 		return nil, false
 	}
 	return o.SpatialValidityAreas, true
@@ -163,7 +163,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityAreasOk() ([]Geographical
 
 // HasSpatialValidityAreas returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasSpatialValidityAreas() bool {
-	if o != nil && !IsNil(o.SpatialValidityAreas) {
+	if o != nil && !isNil(o.SpatialValidityAreas) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *RouteSelectionParameterSet) SetSpatialValidityAreas(v []GeographicalAre
 
 // GetSpatialValidityTais returns the SpatialValidityTais field value if set, zero value otherwise.
 func (o *RouteSelectionParameterSet) GetSpatialValidityTais() []Tai1 {
-	if o == nil || IsNil(o.SpatialValidityTais) {
+	if o == nil || isNil(o.SpatialValidityTais) {
 		var ret []Tai1
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityTais() []Tai1 {
 // GetSpatialValidityTaisOk returns a tuple with the SpatialValidityTais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteSelectionParameterSet) GetSpatialValidityTaisOk() ([]Tai1, bool) {
-	if o == nil || IsNil(o.SpatialValidityTais) {
+	if o == nil || isNil(o.SpatialValidityTais) {
 		return nil, false
 	}
 	return o.SpatialValidityTais, true
@@ -195,7 +195,7 @@ func (o *RouteSelectionParameterSet) GetSpatialValidityTaisOk() ([]Tai1, bool) {
 
 // HasSpatialValidityTais returns a boolean if a field has been set.
 func (o *RouteSelectionParameterSet) HasSpatialValidityTais() bool {
-	if o != nil && !IsNil(o.SpatialValidityTais) {
+	if o != nil && !isNil(o.SpatialValidityTais) {
 		return true
 	}
 
@@ -217,19 +217,19 @@ func (o RouteSelectionParameterSet) MarshalJSON() ([]byte, error) {
 
 func (o RouteSelectionParameterSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.Precedence) {
+	if !isNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
-	if !IsNil(o.SpatialValidityAreas) {
+	if !isNil(o.SpatialValidityAreas) {
 		toSerialize["spatialValidityAreas"] = o.SpatialValidityAreas
 	}
-	if !IsNil(o.SpatialValidityTais) {
+	if !isNil(o.SpatialValidityTais) {
 		toSerialize["spatialValidityTais"] = o.SpatialValidityTais
 	}
 	return toSerialize, nil

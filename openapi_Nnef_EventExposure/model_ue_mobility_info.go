@@ -71,7 +71,7 @@ func (o *UeMobilityInfo) SetSupi(v string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *UeMobilityInfo) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *UeMobilityInfo) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityInfo) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -89,7 +89,7 @@ func (o *UeMobilityInfo) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *UeMobilityInfo) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o UeMobilityInfo) MarshalJSON() ([]byte, error) {
 func (o UeMobilityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
 	toSerialize["ueTrajs"] = o.UeTrajs

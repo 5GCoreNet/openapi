@@ -47,7 +47,7 @@ func NewReportingOptionsWithDefaults() *ReportingOptions {
 
 // GetMaxNumOfReports returns the MaxNumOfReports field value if set, zero value otherwise.
 func (o *ReportingOptions) GetMaxNumOfReports() int32 {
-	if o == nil || IsNil(o.MaxNumOfReports) {
+	if o == nil || isNil(o.MaxNumOfReports) {
 		var ret int32
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ReportingOptions) GetMaxNumOfReports() int32 {
 // GetMaxNumOfReportsOk returns a tuple with the MaxNumOfReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetMaxNumOfReportsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumOfReports) {
+	if o == nil || isNil(o.MaxNumOfReports) {
 		return nil, false
 	}
 	return o.MaxNumOfReports, true
@@ -65,7 +65,7 @@ func (o *ReportingOptions) GetMaxNumOfReportsOk() (*int32, bool) {
 
 // HasMaxNumOfReports returns a boolean if a field has been set.
 func (o *ReportingOptions) HasMaxNumOfReports() bool {
-	if o != nil && !IsNil(o.MaxNumOfReports) {
+	if o != nil && !isNil(o.MaxNumOfReports) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *ReportingOptions) SetMaxNumOfReports(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *ReportingOptions) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *ReportingOptions) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -97,7 +97,7 @@ func (o *ReportingOptions) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *ReportingOptions) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *ReportingOptions) SetExpiry(v time.Time) {
 
 // GetReportPeriod returns the ReportPeriod field value if set, zero value otherwise.
 func (o *ReportingOptions) GetReportPeriod() int32 {
-	if o == nil || IsNil(o.ReportPeriod) {
+	if o == nil || isNil(o.ReportPeriod) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *ReportingOptions) GetReportPeriod() int32 {
 // GetReportPeriodOk returns a tuple with the ReportPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetReportPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportPeriod) {
+	if o == nil || isNil(o.ReportPeriod) {
 		return nil, false
 	}
 	return o.ReportPeriod, true
@@ -129,7 +129,7 @@ func (o *ReportingOptions) GetReportPeriodOk() (*int32, bool) {
 
 // HasReportPeriod returns a boolean if a field has been set.
 func (o *ReportingOptions) HasReportPeriod() bool {
-	if o != nil && !IsNil(o.ReportPeriod) {
+	if o != nil && !isNil(o.ReportPeriod) {
 		return true
 	}
 
@@ -151,13 +151,13 @@ func (o ReportingOptions) MarshalJSON() ([]byte, error) {
 
 func (o ReportingOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxNumOfReports) {
+	if !isNil(o.MaxNumOfReports) {
 		toSerialize["maxNumOfReports"] = o.MaxNumOfReports
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.ReportPeriod) {
+	if !isNil(o.ReportPeriod) {
 		toSerialize["reportPeriod"] = o.ReportPeriod
 	}
 	return toSerialize, nil

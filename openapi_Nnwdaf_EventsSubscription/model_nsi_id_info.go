@@ -67,7 +67,7 @@ func (o *NsiIdInfo) SetSnssai(v Snssai) {
 
 // GetNsiIds returns the NsiIds field value if set, zero value otherwise.
 func (o *NsiIdInfo) GetNsiIds() []string {
-	if o == nil || IsNil(o.NsiIds) {
+	if o == nil || isNil(o.NsiIds) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NsiIdInfo) GetNsiIds() []string {
 // GetNsiIdsOk returns a tuple with the NsiIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsiIdInfo) GetNsiIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.NsiIds) {
+	if o == nil || isNil(o.NsiIds) {
 		return nil, false
 	}
 	return o.NsiIds, true
@@ -85,7 +85,7 @@ func (o *NsiIdInfo) GetNsiIdsOk() ([]string, bool) {
 
 // HasNsiIds returns a boolean if a field has been set.
 func (o *NsiIdInfo) HasNsiIds() bool {
-	if o != nil && !IsNil(o.NsiIds) {
+	if o != nil && !isNil(o.NsiIds) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o NsiIdInfo) MarshalJSON() ([]byte, error) {
 func (o NsiIdInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.NsiIds) {
+	if !isNil(o.NsiIds) {
 		toSerialize["nsiIds"] = o.NsiIds
 	}
 	return toSerialize, nil

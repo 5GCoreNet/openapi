@@ -67,7 +67,7 @@ func (o *StoredSearchResult) SetNfInstances(v []NFProfile) {
 
 // GetCompleteNfInstances returns the CompleteNfInstances field value if set, zero value otherwise.
 func (o *StoredSearchResult) GetCompleteNfInstances() []NFProfile {
-	if o == nil || IsNil(o.CompleteNfInstances) {
+	if o == nil || isNil(o.CompleteNfInstances) {
 		var ret []NFProfile
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *StoredSearchResult) GetCompleteNfInstances() []NFProfile {
 // GetCompleteNfInstancesOk returns a tuple with the CompleteNfInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StoredSearchResult) GetCompleteNfInstancesOk() ([]NFProfile, bool) {
-	if o == nil || IsNil(o.CompleteNfInstances) {
+	if o == nil || isNil(o.CompleteNfInstances) {
 		return nil, false
 	}
 	return o.CompleteNfInstances, true
@@ -85,7 +85,7 @@ func (o *StoredSearchResult) GetCompleteNfInstancesOk() ([]NFProfile, bool) {
 
 // HasCompleteNfInstances returns a boolean if a field has been set.
 func (o *StoredSearchResult) HasCompleteNfInstances() bool {
-	if o != nil && !IsNil(o.CompleteNfInstances) {
+	if o != nil && !isNil(o.CompleteNfInstances) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o StoredSearchResult) MarshalJSON() ([]byte, error) {
 func (o StoredSearchResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfInstances"] = o.NfInstances
-	if !IsNil(o.CompleteNfInstances) {
+	if !isNil(o.CompleteNfInstances) {
 		toSerialize["completeNfInstances"] = o.CompleteNfInstances
 	}
 	return toSerialize, nil

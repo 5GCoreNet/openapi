@@ -68,7 +68,7 @@ func (o *SrvccData) SetStnSr(v string) {
 
 // GetUeSrvccCapabilities returns the UeSrvccCapabilities field value if set, zero value otherwise.
 func (o *SrvccData) GetUeSrvccCapabilities() []SrvccCapability {
-	if o == nil || IsNil(o.UeSrvccCapabilities) {
+	if o == nil || isNil(o.UeSrvccCapabilities) {
 		var ret []SrvccCapability
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SrvccData) GetUeSrvccCapabilities() []SrvccCapability {
 // GetUeSrvccCapabilitiesOk returns a tuple with the UeSrvccCapabilities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SrvccData) GetUeSrvccCapabilitiesOk() ([]SrvccCapability, bool) {
-	if o == nil || IsNil(o.UeSrvccCapabilities) {
+	if o == nil || isNil(o.UeSrvccCapabilities) {
 		return nil, false
 	}
 	return o.UeSrvccCapabilities, true
@@ -86,7 +86,7 @@ func (o *SrvccData) GetUeSrvccCapabilitiesOk() ([]SrvccCapability, bool) {
 
 // HasUeSrvccCapabilities returns a boolean if a field has been set.
 func (o *SrvccData) HasUeSrvccCapabilities() bool {
-	if o != nil && !IsNil(o.UeSrvccCapabilities) {
+	if o != nil && !isNil(o.UeSrvccCapabilities) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o SrvccData) MarshalJSON() ([]byte, error) {
 func (o SrvccData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["stnSr"] = o.StnSr
-	if !IsNil(o.UeSrvccCapabilities) {
+	if !isNil(o.UeSrvccCapabilities) {
 		toSerialize["ueSrvccCapabilities"] = o.UeSrvccCapabilities
 	}
 	return toSerialize, nil

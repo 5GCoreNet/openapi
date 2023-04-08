@@ -41,7 +41,7 @@ func NewManagedElementSingle4AllOfWithDefaults() *ManagedElementSingle4AllOf {
 
 // GetMLTrainingFunction returns the MLTrainingFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingle4AllOf) GetMLTrainingFunction() []MLTrainingFunctionSingle {
-	if o == nil || IsNil(o.MLTrainingFunction) {
+	if o == nil || isNil(o.MLTrainingFunction) {
 		var ret []MLTrainingFunctionSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ManagedElementSingle4AllOf) GetMLTrainingFunction() []MLTrainingFunctio
 // GetMLTrainingFunctionOk returns a tuple with the MLTrainingFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingle4AllOf) GetMLTrainingFunctionOk() ([]MLTrainingFunctionSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingFunction) {
+	if o == nil || isNil(o.MLTrainingFunction) {
 		return nil, false
 	}
 	return o.MLTrainingFunction, true
@@ -59,7 +59,7 @@ func (o *ManagedElementSingle4AllOf) GetMLTrainingFunctionOk() ([]MLTrainingFunc
 
 // HasMLTrainingFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingle4AllOf) HasMLTrainingFunction() bool {
-	if o != nil && !IsNil(o.MLTrainingFunction) {
+	if o != nil && !isNil(o.MLTrainingFunction) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ManagedElementSingle4AllOf) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingle4AllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MLTrainingFunction) {
+	if !isNil(o.MLTrainingFunction) {
 		toSerialize["MLTrainingFunction"] = o.MLTrainingFunction
 	}
 	return toSerialize, nil

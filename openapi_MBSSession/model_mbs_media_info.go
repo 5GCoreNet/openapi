@@ -46,7 +46,7 @@ func NewMbsMediaInfoWithDefaults() *MbsMediaInfo {
 
 // GetMbsMedType returns the MbsMedType field value if set, zero value otherwise.
 func (o *MbsMediaInfo) GetMbsMedType() MediaType {
-	if o == nil || IsNil(o.MbsMedType) {
+	if o == nil || isNil(o.MbsMedType) {
 		var ret MediaType
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MbsMediaInfo) GetMbsMedType() MediaType {
 // GetMbsMedTypeOk returns a tuple with the MbsMedType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaInfo) GetMbsMedTypeOk() (*MediaType, bool) {
-	if o == nil || IsNil(o.MbsMedType) {
+	if o == nil || isNil(o.MbsMedType) {
 		return nil, false
 	}
 	return o.MbsMedType, true
@@ -64,7 +64,7 @@ func (o *MbsMediaInfo) GetMbsMedTypeOk() (*MediaType, bool) {
 
 // HasMbsMedType returns a boolean if a field has been set.
 func (o *MbsMediaInfo) HasMbsMedType() bool {
-	if o != nil && !IsNil(o.MbsMedType) {
+	if o != nil && !isNil(o.MbsMedType) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MbsMediaInfo) SetMbsMedType(v MediaType) {
 
 // GetMaxReqMbsBwDl returns the MaxReqMbsBwDl field value if set, zero value otherwise.
 func (o *MbsMediaInfo) GetMaxReqMbsBwDl() string {
-	if o == nil || IsNil(o.MaxReqMbsBwDl) {
+	if o == nil || isNil(o.MaxReqMbsBwDl) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MbsMediaInfo) GetMaxReqMbsBwDl() string {
 // GetMaxReqMbsBwDlOk returns a tuple with the MaxReqMbsBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaInfo) GetMaxReqMbsBwDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxReqMbsBwDl) {
+	if o == nil || isNil(o.MaxReqMbsBwDl) {
 		return nil, false
 	}
 	return o.MaxReqMbsBwDl, true
@@ -96,7 +96,7 @@ func (o *MbsMediaInfo) GetMaxReqMbsBwDlOk() (*string, bool) {
 
 // HasMaxReqMbsBwDl returns a boolean if a field has been set.
 func (o *MbsMediaInfo) HasMaxReqMbsBwDl() bool {
-	if o != nil && !IsNil(o.MaxReqMbsBwDl) {
+	if o != nil && !isNil(o.MaxReqMbsBwDl) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MbsMediaInfo) SetMaxReqMbsBwDl(v string) {
 
 // GetMinReqMbsBwDl returns the MinReqMbsBwDl field value if set, zero value otherwise.
 func (o *MbsMediaInfo) GetMinReqMbsBwDl() string {
-	if o == nil || IsNil(o.MinReqMbsBwDl) {
+	if o == nil || isNil(o.MinReqMbsBwDl) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MbsMediaInfo) GetMinReqMbsBwDl() string {
 // GetMinReqMbsBwDlOk returns a tuple with the MinReqMbsBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaInfo) GetMinReqMbsBwDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MinReqMbsBwDl) {
+	if o == nil || isNil(o.MinReqMbsBwDl) {
 		return nil, false
 	}
 	return o.MinReqMbsBwDl, true
@@ -128,7 +128,7 @@ func (o *MbsMediaInfo) GetMinReqMbsBwDlOk() (*string, bool) {
 
 // HasMinReqMbsBwDl returns a boolean if a field has been set.
 func (o *MbsMediaInfo) HasMinReqMbsBwDl() bool {
-	if o != nil && !IsNil(o.MinReqMbsBwDl) {
+	if o != nil && !isNil(o.MinReqMbsBwDl) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MbsMediaInfo) SetMinReqMbsBwDl(v string) {
 
 // GetCodecs returns the Codecs field value if set, zero value otherwise.
 func (o *MbsMediaInfo) GetCodecs() []string {
-	if o == nil || IsNil(o.Codecs) {
+	if o == nil || isNil(o.Codecs) {
 		var ret []string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MbsMediaInfo) GetCodecs() []string {
 // GetCodecsOk returns a tuple with the Codecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaInfo) GetCodecsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Codecs) {
+	if o == nil || isNil(o.Codecs) {
 		return nil, false
 	}
 	return o.Codecs, true
@@ -160,7 +160,7 @@ func (o *MbsMediaInfo) GetCodecsOk() ([]string, bool) {
 
 // HasCodecs returns a boolean if a field has been set.
 func (o *MbsMediaInfo) HasCodecs() bool {
-	if o != nil && !IsNil(o.Codecs) {
+	if o != nil && !isNil(o.Codecs) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o MbsMediaInfo) MarshalJSON() ([]byte, error) {
 
 func (o MbsMediaInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsMedType) {
+	if !isNil(o.MbsMedType) {
 		toSerialize["mbsMedType"] = o.MbsMedType
 	}
-	if !IsNil(o.MaxReqMbsBwDl) {
+	if !isNil(o.MaxReqMbsBwDl) {
 		toSerialize["maxReqMbsBwDl"] = o.MaxReqMbsBwDl
 	}
-	if !IsNil(o.MinReqMbsBwDl) {
+	if !isNil(o.MinReqMbsBwDl) {
 		toSerialize["minReqMbsBwDl"] = o.MinReqMbsBwDl
 	}
-	if !IsNil(o.Codecs) {
+	if !isNil(o.Codecs) {
 		toSerialize["codecs"] = o.Codecs
 	}
 	return toSerialize, nil

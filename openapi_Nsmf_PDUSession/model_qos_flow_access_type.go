@@ -17,23 +17,37 @@ import (
 
 // QosFlowAccessType Access type associated with a QoS Flow. Possible values are   - 3GPP   - NON_3GPP   - 3GPP_AND_NON_3GPP 
 type QosFlowAccessType struct {
-	string *string
+	QosFlowAccessTypeAnyOf *QosFlowAccessTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *QosFlowAccessType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into QosFlowAccessTypeAnyOf
+	err = json.Unmarshal(data, &dst.QosFlowAccessTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonQosFlowAccessTypeAnyOf, _ := json.Marshal(dst.QosFlowAccessTypeAnyOf)
+		if string(jsonQosFlowAccessTypeAnyOf) == "{}" { // empty struct
+			dst.QosFlowAccessTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.QosFlowAccessTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.QosFlowAccessTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(QosFlowAccessType)")
@@ -41,8 +55,12 @@ func (dst *QosFlowAccessType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *QosFlowAccessType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.QosFlowAccessTypeAnyOf != nil {
+		return json.Marshal(&src.QosFlowAccessTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

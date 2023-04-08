@@ -68,7 +68,7 @@ func (o *NwdafData) SetNwdafInstanceId(v string) {
 
 // GetNwdafEvents returns the NwdafEvents field value if set, zero value otherwise.
 func (o *NwdafData) GetNwdafEvents() []NwdafEvent {
-	if o == nil || IsNil(o.NwdafEvents) {
+	if o == nil || isNil(o.NwdafEvents) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *NwdafData) GetNwdafEvents() []NwdafEvent {
 // GetNwdafEventsOk returns a tuple with the NwdafEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafData) GetNwdafEventsOk() ([]NwdafEvent, bool) {
-	if o == nil || IsNil(o.NwdafEvents) {
+	if o == nil || isNil(o.NwdafEvents) {
 		return nil, false
 	}
 	return o.NwdafEvents, true
@@ -86,7 +86,7 @@ func (o *NwdafData) GetNwdafEventsOk() ([]NwdafEvent, bool) {
 
 // HasNwdafEvents returns a boolean if a field has been set.
 func (o *NwdafData) HasNwdafEvents() bool {
-	if o != nil && !IsNil(o.NwdafEvents) {
+	if o != nil && !isNil(o.NwdafEvents) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o NwdafData) MarshalJSON() ([]byte, error) {
 func (o NwdafData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwdafInstanceId"] = o.NwdafInstanceId
-	if !IsNil(o.NwdafEvents) {
+	if !isNil(o.NwdafEvents) {
 		toSerialize["nwdafEvents"] = o.NwdafEvents
 	}
 	return toSerialize, nil

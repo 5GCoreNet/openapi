@@ -71,7 +71,7 @@ func (o *QosFlowReleaseRequestItem) SetQfi(v int32) {
 
 // GetQosRules returns the QosRules field value if set, zero value otherwise.
 func (o *QosFlowReleaseRequestItem) GetQosRules() string {
-	if o == nil || IsNil(o.QosRules) {
+	if o == nil || isNil(o.QosRules) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *QosFlowReleaseRequestItem) GetQosRules() string {
 // GetQosRulesOk returns a tuple with the QosRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowReleaseRequestItem) GetQosRulesOk() (*string, bool) {
-	if o == nil || IsNil(o.QosRules) {
+	if o == nil || isNil(o.QosRules) {
 		return nil, false
 	}
 	return o.QosRules, true
@@ -89,7 +89,7 @@ func (o *QosFlowReleaseRequestItem) GetQosRulesOk() (*string, bool) {
 
 // HasQosRules returns a boolean if a field has been set.
 func (o *QosFlowReleaseRequestItem) HasQosRules() bool {
-	if o != nil && !IsNil(o.QosRules) {
+	if o != nil && !isNil(o.QosRules) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *QosFlowReleaseRequestItem) SetQosRules(v string) {
 
 // GetQosFlowDescription returns the QosFlowDescription field value if set, zero value otherwise.
 func (o *QosFlowReleaseRequestItem) GetQosFlowDescription() string {
-	if o == nil || IsNil(o.QosFlowDescription) {
+	if o == nil || isNil(o.QosFlowDescription) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *QosFlowReleaseRequestItem) GetQosFlowDescription() string {
 // GetQosFlowDescriptionOk returns a tuple with the QosFlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowReleaseRequestItem) GetQosFlowDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.QosFlowDescription) {
+	if o == nil || isNil(o.QosFlowDescription) {
 		return nil, false
 	}
 	return o.QosFlowDescription, true
@@ -121,7 +121,7 @@ func (o *QosFlowReleaseRequestItem) GetQosFlowDescriptionOk() (*string, bool) {
 
 // HasQosFlowDescription returns a boolean if a field has been set.
 func (o *QosFlowReleaseRequestItem) HasQosFlowDescription() bool {
-	if o != nil && !IsNil(o.QosFlowDescription) {
+	if o != nil && !isNil(o.QosFlowDescription) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o QosFlowReleaseRequestItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowReleaseRequestItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !IsNil(o.QosRules) {
+	if !isNil(o.QosRules) {
 		toSerialize["qosRules"] = o.QosRules
 	}
-	if !IsNil(o.QosFlowDescription) {
+	if !isNil(o.QosFlowDescription) {
 		toSerialize["qosFlowDescription"] = o.QosFlowDescription
 	}
 	return toSerialize, nil

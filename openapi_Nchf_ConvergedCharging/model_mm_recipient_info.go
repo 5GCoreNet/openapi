@@ -45,7 +45,7 @@ func NewMMRecipientInfoWithDefaults() *MMRecipientInfo {
 
 // GetRecipientSUPI returns the RecipientSUPI field value if set, zero value otherwise.
 func (o *MMRecipientInfo) GetRecipientSUPI() string {
-	if o == nil || IsNil(o.RecipientSUPI) {
+	if o == nil || isNil(o.RecipientSUPI) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *MMRecipientInfo) GetRecipientSUPI() string {
 // GetRecipientSUPIOk returns a tuple with the RecipientSUPI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMRecipientInfo) GetRecipientSUPIOk() (*string, bool) {
-	if o == nil || IsNil(o.RecipientSUPI) {
+	if o == nil || isNil(o.RecipientSUPI) {
 		return nil, false
 	}
 	return o.RecipientSUPI, true
@@ -63,7 +63,7 @@ func (o *MMRecipientInfo) GetRecipientSUPIOk() (*string, bool) {
 
 // HasRecipientSUPI returns a boolean if a field has been set.
 func (o *MMRecipientInfo) HasRecipientSUPI() bool {
-	if o != nil && !IsNil(o.RecipientSUPI) {
+	if o != nil && !isNil(o.RecipientSUPI) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *MMRecipientInfo) SetRecipientSUPI(v string) {
 
 // GetRecipientGPSI returns the RecipientGPSI field value if set, zero value otherwise.
 func (o *MMRecipientInfo) GetRecipientGPSI() string {
-	if o == nil || IsNil(o.RecipientGPSI) {
+	if o == nil || isNil(o.RecipientGPSI) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *MMRecipientInfo) GetRecipientGPSI() string {
 // GetRecipientGPSIOk returns a tuple with the RecipientGPSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMRecipientInfo) GetRecipientGPSIOk() (*string, bool) {
-	if o == nil || IsNil(o.RecipientGPSI) {
+	if o == nil || isNil(o.RecipientGPSI) {
 		return nil, false
 	}
 	return o.RecipientGPSI, true
@@ -95,7 +95,7 @@ func (o *MMRecipientInfo) GetRecipientGPSIOk() (*string, bool) {
 
 // HasRecipientGPSI returns a boolean if a field has been set.
 func (o *MMRecipientInfo) HasRecipientGPSI() bool {
-	if o != nil && !IsNil(o.RecipientGPSI) {
+	if o != nil && !isNil(o.RecipientGPSI) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MMRecipientInfo) SetRecipientGPSI(v string) {
 
 // GetRecipientOtherAddress returns the RecipientOtherAddress field value if set, zero value otherwise.
 func (o *MMRecipientInfo) GetRecipientOtherAddress() []SMAddressInfo {
-	if o == nil || IsNil(o.RecipientOtherAddress) {
+	if o == nil || isNil(o.RecipientOtherAddress) {
 		var ret []SMAddressInfo
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *MMRecipientInfo) GetRecipientOtherAddress() []SMAddressInfo {
 // GetRecipientOtherAddressOk returns a tuple with the RecipientOtherAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMRecipientInfo) GetRecipientOtherAddressOk() ([]SMAddressInfo, bool) {
-	if o == nil || IsNil(o.RecipientOtherAddress) {
+	if o == nil || isNil(o.RecipientOtherAddress) {
 		return nil, false
 	}
 	return o.RecipientOtherAddress, true
@@ -127,7 +127,7 @@ func (o *MMRecipientInfo) GetRecipientOtherAddressOk() ([]SMAddressInfo, bool) {
 
 // HasRecipientOtherAddress returns a boolean if a field has been set.
 func (o *MMRecipientInfo) HasRecipientOtherAddress() bool {
-	if o != nil && !IsNil(o.RecipientOtherAddress) {
+	if o != nil && !isNil(o.RecipientOtherAddress) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o MMRecipientInfo) MarshalJSON() ([]byte, error) {
 
 func (o MMRecipientInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RecipientSUPI) {
+	if !isNil(o.RecipientSUPI) {
 		toSerialize["recipientSUPI"] = o.RecipientSUPI
 	}
-	if !IsNil(o.RecipientGPSI) {
+	if !isNil(o.RecipientGPSI) {
 		toSerialize["recipientGPSI"] = o.RecipientGPSI
 	}
-	if !IsNil(o.RecipientOtherAddress) {
+	if !isNil(o.RecipientOtherAddress) {
 		toSerialize["recipientOtherAddress"] = o.RecipientOtherAddress
 	}
 	return toSerialize, nil

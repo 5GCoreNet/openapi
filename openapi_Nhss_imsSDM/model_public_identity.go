@@ -95,7 +95,7 @@ func (o *PublicIdentity) SetIdentityType(v IdentityType) {
 
 // GetIrsIsDefault returns the IrsIsDefault field value if set, zero value otherwise.
 func (o *PublicIdentity) GetIrsIsDefault() bool {
-	if o == nil || IsNil(o.IrsIsDefault) {
+	if o == nil || isNil(o.IrsIsDefault) {
 		var ret bool
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *PublicIdentity) GetIrsIsDefault() bool {
 // GetIrsIsDefaultOk returns a tuple with the IrsIsDefault field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentity) GetIrsIsDefaultOk() (*bool, bool) {
-	if o == nil || IsNil(o.IrsIsDefault) {
+	if o == nil || isNil(o.IrsIsDefault) {
 		return nil, false
 	}
 	return o.IrsIsDefault, true
@@ -113,7 +113,7 @@ func (o *PublicIdentity) GetIrsIsDefaultOk() (*bool, bool) {
 
 // HasIrsIsDefault returns a boolean if a field has been set.
 func (o *PublicIdentity) HasIrsIsDefault() bool {
-	if o != nil && !IsNil(o.IrsIsDefault) {
+	if o != nil && !isNil(o.IrsIsDefault) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *PublicIdentity) SetIrsIsDefault(v bool) {
 
 // GetAliasGroupId returns the AliasGroupId field value if set, zero value otherwise.
 func (o *PublicIdentity) GetAliasGroupId() string {
-	if o == nil || IsNil(o.AliasGroupId) {
+	if o == nil || isNil(o.AliasGroupId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *PublicIdentity) GetAliasGroupId() string {
 // GetAliasGroupIdOk returns a tuple with the AliasGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PublicIdentity) GetAliasGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AliasGroupId) {
+	if o == nil || isNil(o.AliasGroupId) {
 		return nil, false
 	}
 	return o.AliasGroupId, true
@@ -145,7 +145,7 @@ func (o *PublicIdentity) GetAliasGroupIdOk() (*string, bool) {
 
 // HasAliasGroupId returns a boolean if a field has been set.
 func (o *PublicIdentity) HasAliasGroupId() bool {
-	if o != nil && !IsNil(o.AliasGroupId) {
+	if o != nil && !isNil(o.AliasGroupId) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o PublicIdentity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["imsPublicId"] = o.ImsPublicId
 	toSerialize["identityType"] = o.IdentityType
-	if !IsNil(o.IrsIsDefault) {
+	if !isNil(o.IrsIsDefault) {
 		toSerialize["irsIsDefault"] = o.IrsIsDefault
 	}
-	if !IsNil(o.AliasGroupId) {
+	if !isNil(o.AliasGroupId) {
 		toSerialize["aliasGroupId"] = o.AliasGroupId
 	}
 	return toSerialize, nil

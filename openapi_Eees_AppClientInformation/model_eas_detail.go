@@ -69,7 +69,7 @@ func (o *EasDetail) SetEasId(v string) {
 
 // GetExpectedSvcKPIs returns the ExpectedSvcKPIs field value if set, zero value otherwise.
 func (o *EasDetail) GetExpectedSvcKPIs() ACServiceKPIs {
-	if o == nil || IsNil(o.ExpectedSvcKPIs) {
+	if o == nil || isNil(o.ExpectedSvcKPIs) {
 		var ret ACServiceKPIs
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EasDetail) GetExpectedSvcKPIs() ACServiceKPIs {
 // GetExpectedSvcKPIsOk returns a tuple with the ExpectedSvcKPIs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDetail) GetExpectedSvcKPIsOk() (*ACServiceKPIs, bool) {
-	if o == nil || IsNil(o.ExpectedSvcKPIs) {
+	if o == nil || isNil(o.ExpectedSvcKPIs) {
 		return nil, false
 	}
 	return o.ExpectedSvcKPIs, true
@@ -87,7 +87,7 @@ func (o *EasDetail) GetExpectedSvcKPIsOk() (*ACServiceKPIs, bool) {
 
 // HasExpectedSvcKPIs returns a boolean if a field has been set.
 func (o *EasDetail) HasExpectedSvcKPIs() bool {
-	if o != nil && !IsNil(o.ExpectedSvcKPIs) {
+	if o != nil && !isNil(o.ExpectedSvcKPIs) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *EasDetail) SetExpectedSvcKPIs(v ACServiceKPIs) {
 
 // GetMinimumReqSvcKPIs returns the MinimumReqSvcKPIs field value if set, zero value otherwise.
 func (o *EasDetail) GetMinimumReqSvcKPIs() ACServiceKPIs {
-	if o == nil || IsNil(o.MinimumReqSvcKPIs) {
+	if o == nil || isNil(o.MinimumReqSvcKPIs) {
 		var ret ACServiceKPIs
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *EasDetail) GetMinimumReqSvcKPIs() ACServiceKPIs {
 // GetMinimumReqSvcKPIsOk returns a tuple with the MinimumReqSvcKPIs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDetail) GetMinimumReqSvcKPIsOk() (*ACServiceKPIs, bool) {
-	if o == nil || IsNil(o.MinimumReqSvcKPIs) {
+	if o == nil || isNil(o.MinimumReqSvcKPIs) {
 		return nil, false
 	}
 	return o.MinimumReqSvcKPIs, true
@@ -119,7 +119,7 @@ func (o *EasDetail) GetMinimumReqSvcKPIsOk() (*ACServiceKPIs, bool) {
 
 // HasMinimumReqSvcKPIs returns a boolean if a field has been set.
 func (o *EasDetail) HasMinimumReqSvcKPIs() bool {
-	if o != nil && !IsNil(o.MinimumReqSvcKPIs) {
+	if o != nil && !isNil(o.MinimumReqSvcKPIs) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o EasDetail) MarshalJSON() ([]byte, error) {
 func (o EasDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
-	if !IsNil(o.ExpectedSvcKPIs) {
+	if !isNil(o.ExpectedSvcKPIs) {
 		toSerialize["expectedSvcKPIs"] = o.ExpectedSvcKPIs
 	}
-	if !IsNil(o.MinimumReqSvcKPIs) {
+	if !isNil(o.MinimumReqSvcKPIs) {
 		toSerialize["minimumReqSvcKPIs"] = o.MinimumReqSvcKPIs
 	}
 	return toSerialize, nil

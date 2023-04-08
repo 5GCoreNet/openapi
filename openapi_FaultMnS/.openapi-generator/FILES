@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -17,7 +16,7 @@ docs/AlarmsAlarmIdPatchRequest.md
 docs/AlarmsGet200ResponseValue.md
 docs/AlarmsGet200ResponseValueAllOf.md
 docs/AlarmsGet200ResponseValueAllOf1.md
-docs/AlarmsPatchRequest.md
+docs/AlarmsGetRequest.md
 docs/CmNotificationTypes.md
 docs/Comment.md
 docs/CorrelatedNotification.md
@@ -56,9 +55,10 @@ docs/NotifyPotentialFaultyAlarmListAllOf.md
 docs/PerceivedSeverity.md
 docs/PerfNotificationTypes.md
 docs/ProbableCause.md
-docs/ProbableCauseOneOf.md
 docs/SpecificProblem.md
 docs/Subscription.md
+docs/SubscriptionsPostRequest.md
+docs/SubscriptionsPostRequest1.md
 docs/ThresholdHysteresis.md
 docs/ThresholdHysteresisHigh.md
 docs/ThresholdInfo.md
@@ -73,7 +73,9 @@ model__alarms__alarm_id__patch_request.go
 model__alarms_get_200_response_value.go
 model__alarms_get_200_response_value_all_of.go
 model__alarms_get_200_response_value_all_of_1.go
-model__alarms_patch_request.go
+model__alarms_get_request.go
+model__subscriptions_post_request.go
+model__subscriptions_post_request_1.go
 model_ack_state.go
 model_alarm_ack_state.go
 model_alarm_count.go
@@ -118,7 +120,6 @@ model_notify_potential_faulty_alarm_list_all_of.go
 model_perceived_severity.go
 model_perf_notification_types.go
 model_probable_cause.go
-model_probable_cause_one_of.go
 model_specific_problem.go
 model_subscription.go
 model_threshold_hysteresis.go

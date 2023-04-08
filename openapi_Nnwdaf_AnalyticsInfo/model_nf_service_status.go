@@ -17,23 +17,37 @@ import (
 
 // NFServiceStatus Status of a given NF Service Instance of an NF Instance stored in NRF
 type NFServiceStatus struct {
-	string *string
+	NFServiceStatusAnyOf *NFServiceStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NFServiceStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NFServiceStatusAnyOf
+	err = json.Unmarshal(data, &dst.NFServiceStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNFServiceStatusAnyOf, _ := json.Marshal(dst.NFServiceStatusAnyOf)
+		if string(jsonNFServiceStatusAnyOf) == "{}" { // empty struct
+			dst.NFServiceStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NFServiceStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NFServiceStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NFServiceStatus)")
@@ -41,8 +55,12 @@ func (dst *NFServiceStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NFServiceStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NFServiceStatusAnyOf != nil {
+		return json.Marshal(&src.NFServiceStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

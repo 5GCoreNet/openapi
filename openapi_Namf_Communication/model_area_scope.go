@@ -45,7 +45,7 @@ func NewAreaScopeWithDefaults() *AreaScope {
 
 // GetEutraCellIdList returns the EutraCellIdList field value if set, zero value otherwise.
 func (o *AreaScope) GetEutraCellIdList() []string {
-	if o == nil || IsNil(o.EutraCellIdList) {
+	if o == nil || isNil(o.EutraCellIdList) {
 		var ret []string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AreaScope) GetEutraCellIdList() []string {
 // GetEutraCellIdListOk returns a tuple with the EutraCellIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaScope) GetEutraCellIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.EutraCellIdList) {
+	if o == nil || isNil(o.EutraCellIdList) {
 		return nil, false
 	}
 	return o.EutraCellIdList, true
@@ -63,7 +63,7 @@ func (o *AreaScope) GetEutraCellIdListOk() ([]string, bool) {
 
 // HasEutraCellIdList returns a boolean if a field has been set.
 func (o *AreaScope) HasEutraCellIdList() bool {
-	if o != nil && !IsNil(o.EutraCellIdList) {
+	if o != nil && !isNil(o.EutraCellIdList) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AreaScope) SetEutraCellIdList(v []string) {
 
 // GetNrCellIdList returns the NrCellIdList field value if set, zero value otherwise.
 func (o *AreaScope) GetNrCellIdList() []string {
-	if o == nil || IsNil(o.NrCellIdList) {
+	if o == nil || isNil(o.NrCellIdList) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AreaScope) GetNrCellIdList() []string {
 // GetNrCellIdListOk returns a tuple with the NrCellIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaScope) GetNrCellIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.NrCellIdList) {
+	if o == nil || isNil(o.NrCellIdList) {
 		return nil, false
 	}
 	return o.NrCellIdList, true
@@ -95,7 +95,7 @@ func (o *AreaScope) GetNrCellIdListOk() ([]string, bool) {
 
 // HasNrCellIdList returns a boolean if a field has been set.
 func (o *AreaScope) HasNrCellIdList() bool {
-	if o != nil && !IsNil(o.NrCellIdList) {
+	if o != nil && !isNil(o.NrCellIdList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AreaScope) SetNrCellIdList(v []string) {
 
 // GetTacList returns the TacList field value if set, zero value otherwise.
 func (o *AreaScope) GetTacList() []string {
-	if o == nil || IsNil(o.TacList) {
+	if o == nil || isNil(o.TacList) {
 		var ret []string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AreaScope) GetTacList() []string {
 // GetTacListOk returns a tuple with the TacList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaScope) GetTacListOk() ([]string, bool) {
-	if o == nil || IsNil(o.TacList) {
+	if o == nil || isNil(o.TacList) {
 		return nil, false
 	}
 	return o.TacList, true
@@ -127,7 +127,7 @@ func (o *AreaScope) GetTacListOk() ([]string, bool) {
 
 // HasTacList returns a boolean if a field has been set.
 func (o *AreaScope) HasTacList() bool {
-	if o != nil && !IsNil(o.TacList) {
+	if o != nil && !isNil(o.TacList) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AreaScope) SetTacList(v []string) {
 
 // GetTacInfoPerPlmn returns the TacInfoPerPlmn field value if set, zero value otherwise.
 func (o *AreaScope) GetTacInfoPerPlmn() map[string]TacInfo {
-	if o == nil || IsNil(o.TacInfoPerPlmn) {
+	if o == nil || isNil(o.TacInfoPerPlmn) {
 		var ret map[string]TacInfo
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *AreaScope) GetTacInfoPerPlmn() map[string]TacInfo {
 // GetTacInfoPerPlmnOk returns a tuple with the TacInfoPerPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaScope) GetTacInfoPerPlmnOk() (*map[string]TacInfo, bool) {
-	if o == nil || IsNil(o.TacInfoPerPlmn) {
+	if o == nil || isNil(o.TacInfoPerPlmn) {
 		return nil, false
 	}
 	return o.TacInfoPerPlmn, true
@@ -159,7 +159,7 @@ func (o *AreaScope) GetTacInfoPerPlmnOk() (*map[string]TacInfo, bool) {
 
 // HasTacInfoPerPlmn returns a boolean if a field has been set.
 func (o *AreaScope) HasTacInfoPerPlmn() bool {
-	if o != nil && !IsNil(o.TacInfoPerPlmn) {
+	if o != nil && !isNil(o.TacInfoPerPlmn) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o AreaScope) MarshalJSON() ([]byte, error) {
 
 func (o AreaScope) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EutraCellIdList) {
+	if !isNil(o.EutraCellIdList) {
 		toSerialize["eutraCellIdList"] = o.EutraCellIdList
 	}
-	if !IsNil(o.NrCellIdList) {
+	if !isNil(o.NrCellIdList) {
 		toSerialize["nrCellIdList"] = o.NrCellIdList
 	}
-	if !IsNil(o.TacList) {
+	if !isNil(o.TacList) {
 		toSerialize["tacList"] = o.TacList
 	}
-	if !IsNil(o.TacInfoPerPlmn) {
+	if !isNil(o.TacInfoPerPlmn) {
 		toSerialize["tacInfoPerPlmn"] = o.TacInfoPerPlmn
 	}
 	return toSerialize, nil

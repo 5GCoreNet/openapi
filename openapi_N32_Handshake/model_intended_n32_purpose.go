@@ -68,7 +68,7 @@ func (o *IntendedN32Purpose) SetUsagePurpose(v N32Purpose) {
 
 // GetAdditionalInfo returns the AdditionalInfo field value if set, zero value otherwise.
 func (o *IntendedN32Purpose) GetAdditionalInfo() string {
-	if o == nil || IsNil(o.AdditionalInfo) {
+	if o == nil || isNil(o.AdditionalInfo) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *IntendedN32Purpose) GetAdditionalInfo() string {
 // GetAdditionalInfoOk returns a tuple with the AdditionalInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntendedN32Purpose) GetAdditionalInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalInfo) {
+	if o == nil || isNil(o.AdditionalInfo) {
 		return nil, false
 	}
 	return o.AdditionalInfo, true
@@ -86,7 +86,7 @@ func (o *IntendedN32Purpose) GetAdditionalInfoOk() (*string, bool) {
 
 // HasAdditionalInfo returns a boolean if a field has been set.
 func (o *IntendedN32Purpose) HasAdditionalInfo() bool {
-	if o != nil && !IsNil(o.AdditionalInfo) {
+	if o != nil && !isNil(o.AdditionalInfo) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *IntendedN32Purpose) SetAdditionalInfo(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *IntendedN32Purpose) GetCause() string {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *IntendedN32Purpose) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntendedN32Purpose) GetCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -118,7 +118,7 @@ func (o *IntendedN32Purpose) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *IntendedN32Purpose) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o IntendedN32Purpose) MarshalJSON() ([]byte, error) {
 func (o IntendedN32Purpose) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["usagePurpose"] = o.UsagePurpose
-	if !IsNil(o.AdditionalInfo) {
+	if !isNil(o.AdditionalInfo) {
 		toSerialize["additionalInfo"] = o.AdditionalInfo
 	}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
 	return toSerialize, nil

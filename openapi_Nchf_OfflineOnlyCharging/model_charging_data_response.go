@@ -100,7 +100,7 @@ func (o *ChargingDataResponse) SetInvocationSequenceNumber(v int32) {
 
 // GetInvocationResult returns the InvocationResult field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetInvocationResult() InvocationResult {
-	if o == nil || IsNil(o.InvocationResult) {
+	if o == nil || isNil(o.InvocationResult) {
 		var ret InvocationResult
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ChargingDataResponse) GetInvocationResult() InvocationResult {
 // GetInvocationResultOk returns a tuple with the InvocationResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetInvocationResultOk() (*InvocationResult, bool) {
-	if o == nil || IsNil(o.InvocationResult) {
+	if o == nil || isNil(o.InvocationResult) {
 		return nil, false
 	}
 	return o.InvocationResult, true
@@ -118,7 +118,7 @@ func (o *ChargingDataResponse) GetInvocationResultOk() (*InvocationResult, bool)
 
 // HasInvocationResult returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasInvocationResult() bool {
-	if o != nil && !IsNil(o.InvocationResult) {
+	if o != nil && !isNil(o.InvocationResult) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *ChargingDataResponse) SetInvocationResult(v InvocationResult) {
 
 // GetSessionFailover returns the SessionFailover field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetSessionFailover() SessionFailover {
-	if o == nil || IsNil(o.SessionFailover) {
+	if o == nil || isNil(o.SessionFailover) {
 		var ret SessionFailover
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *ChargingDataResponse) GetSessionFailover() SessionFailover {
 // GetSessionFailoverOk returns a tuple with the SessionFailover field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetSessionFailoverOk() (*SessionFailover, bool) {
-	if o == nil || IsNil(o.SessionFailover) {
+	if o == nil || isNil(o.SessionFailover) {
 		return nil, false
 	}
 	return o.SessionFailover, true
@@ -150,7 +150,7 @@ func (o *ChargingDataResponse) GetSessionFailoverOk() (*SessionFailover, bool) {
 
 // HasSessionFailover returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasSessionFailover() bool {
-	if o != nil && !IsNil(o.SessionFailover) {
+	if o != nil && !isNil(o.SessionFailover) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *ChargingDataResponse) SetSessionFailover(v SessionFailover) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetTriggers() []Trigger {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *ChargingDataResponse) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -182,7 +182,7 @@ func (o *ChargingDataResponse) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasTriggers() bool {
-	if o != nil && !IsNil(o.Triggers) {
+	if o != nil && !isNil(o.Triggers) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *ChargingDataResponse) SetTriggers(v []Trigger) {
 
 // GetPDUSessionChargingInformation returns the PDUSessionChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetPDUSessionChargingInformation() PDUSessionChargingInformation {
-	if o == nil || IsNil(o.PDUSessionChargingInformation) {
+	if o == nil || isNil(o.PDUSessionChargingInformation) {
 		var ret PDUSessionChargingInformation
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *ChargingDataResponse) GetPDUSessionChargingInformation() PDUSessionChar
 // GetPDUSessionChargingInformationOk returns a tuple with the PDUSessionChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetPDUSessionChargingInformationOk() (*PDUSessionChargingInformation, bool) {
-	if o == nil || IsNil(o.PDUSessionChargingInformation) {
+	if o == nil || isNil(o.PDUSessionChargingInformation) {
 		return nil, false
 	}
 	return o.PDUSessionChargingInformation, true
@@ -214,7 +214,7 @@ func (o *ChargingDataResponse) GetPDUSessionChargingInformationOk() (*PDUSession
 
 // HasPDUSessionChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasPDUSessionChargingInformation() bool {
-	if o != nil && !IsNil(o.PDUSessionChargingInformation) {
+	if o != nil && !isNil(o.PDUSessionChargingInformation) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *ChargingDataResponse) SetPDUSessionChargingInformation(v PDUSessionChar
 
 // GetRoamingQBCInformation returns the RoamingQBCInformation field value if set, zero value otherwise.
 func (o *ChargingDataResponse) GetRoamingQBCInformation() RoamingQBCInformation {
-	if o == nil || IsNil(o.RoamingQBCInformation) {
+	if o == nil || isNil(o.RoamingQBCInformation) {
 		var ret RoamingQBCInformation
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *ChargingDataResponse) GetRoamingQBCInformation() RoamingQBCInformation 
 // GetRoamingQBCInformationOk returns a tuple with the RoamingQBCInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataResponse) GetRoamingQBCInformationOk() (*RoamingQBCInformation, bool) {
-	if o == nil || IsNil(o.RoamingQBCInformation) {
+	if o == nil || isNil(o.RoamingQBCInformation) {
 		return nil, false
 	}
 	return o.RoamingQBCInformation, true
@@ -246,7 +246,7 @@ func (o *ChargingDataResponse) GetRoamingQBCInformationOk() (*RoamingQBCInformat
 
 // HasRoamingQBCInformation returns a boolean if a field has been set.
 func (o *ChargingDataResponse) HasRoamingQBCInformation() bool {
-	if o != nil && !IsNil(o.RoamingQBCInformation) {
+	if o != nil && !isNil(o.RoamingQBCInformation) {
 		return true
 	}
 
@@ -270,19 +270,19 @@ func (o ChargingDataResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["invocationTimeStamp"] = o.InvocationTimeStamp
 	toSerialize["invocationSequenceNumber"] = o.InvocationSequenceNumber
-	if !IsNil(o.InvocationResult) {
+	if !isNil(o.InvocationResult) {
 		toSerialize["invocationResult"] = o.InvocationResult
 	}
-	if !IsNil(o.SessionFailover) {
+	if !isNil(o.SessionFailover) {
 		toSerialize["sessionFailover"] = o.SessionFailover
 	}
-	if !IsNil(o.Triggers) {
+	if !isNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.PDUSessionChargingInformation) {
+	if !isNil(o.PDUSessionChargingInformation) {
 		toSerialize["pDUSessionChargingInformation"] = o.PDUSessionChargingInformation
 	}
-	if !IsNil(o.RoamingQBCInformation) {
+	if !isNil(o.RoamingQBCInformation) {
 		toSerialize["roamingQBCInformation"] = o.RoamingQBCInformation
 	}
 	return toSerialize, nil

@@ -82,7 +82,7 @@ func (o *MonitoringNotification) SetSubscription(v string) {
 
 // GetConfigResults returns the ConfigResults field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetConfigResults() []ConfigResult {
-	if o == nil || IsNil(o.ConfigResults) {
+	if o == nil || isNil(o.ConfigResults) {
 		var ret []ConfigResult
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *MonitoringNotification) GetConfigResults() []ConfigResult {
 // GetConfigResultsOk returns a tuple with the ConfigResults field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetConfigResultsOk() ([]ConfigResult, bool) {
-	if o == nil || IsNil(o.ConfigResults) {
+	if o == nil || isNil(o.ConfigResults) {
 		return nil, false
 	}
 	return o.ConfigResults, true
@@ -100,7 +100,7 @@ func (o *MonitoringNotification) GetConfigResultsOk() ([]ConfigResult, bool) {
 
 // HasConfigResults returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasConfigResults() bool {
-	if o != nil && !IsNil(o.ConfigResults) {
+	if o != nil && !isNil(o.ConfigResults) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *MonitoringNotification) SetConfigResults(v []ConfigResult) {
 
 // GetMonitoringEventReports returns the MonitoringEventReports field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetMonitoringEventReports() []MonitoringEventReport {
-	if o == nil || IsNil(o.MonitoringEventReports) {
+	if o == nil || isNil(o.MonitoringEventReports) {
 		var ret []MonitoringEventReport
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *MonitoringNotification) GetMonitoringEventReports() []MonitoringEventRe
 // GetMonitoringEventReportsOk returns a tuple with the MonitoringEventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetMonitoringEventReportsOk() ([]MonitoringEventReport, bool) {
-	if o == nil || IsNil(o.MonitoringEventReports) {
+	if o == nil || isNil(o.MonitoringEventReports) {
 		return nil, false
 	}
 	return o.MonitoringEventReports, true
@@ -132,7 +132,7 @@ func (o *MonitoringNotification) GetMonitoringEventReportsOk() ([]MonitoringEven
 
 // HasMonitoringEventReports returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasMonitoringEventReports() bool {
-	if o != nil && !IsNil(o.MonitoringEventReports) {
+	if o != nil && !isNil(o.MonitoringEventReports) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *MonitoringNotification) SetMonitoringEventReports(v []MonitoringEventRe
 
 // GetAddedExternalIds returns the AddedExternalIds field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetAddedExternalIds() []string {
-	if o == nil || IsNil(o.AddedExternalIds) {
+	if o == nil || isNil(o.AddedExternalIds) {
 		var ret []string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *MonitoringNotification) GetAddedExternalIds() []string {
 // GetAddedExternalIdsOk returns a tuple with the AddedExternalIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetAddedExternalIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AddedExternalIds) {
+	if o == nil || isNil(o.AddedExternalIds) {
 		return nil, false
 	}
 	return o.AddedExternalIds, true
@@ -164,7 +164,7 @@ func (o *MonitoringNotification) GetAddedExternalIdsOk() ([]string, bool) {
 
 // HasAddedExternalIds returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasAddedExternalIds() bool {
-	if o != nil && !IsNil(o.AddedExternalIds) {
+	if o != nil && !isNil(o.AddedExternalIds) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *MonitoringNotification) SetAddedExternalIds(v []string) {
 
 // GetAddedMsisdns returns the AddedMsisdns field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetAddedMsisdns() []string {
-	if o == nil || IsNil(o.AddedMsisdns) {
+	if o == nil || isNil(o.AddedMsisdns) {
 		var ret []string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *MonitoringNotification) GetAddedMsisdns() []string {
 // GetAddedMsisdnsOk returns a tuple with the AddedMsisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetAddedMsisdnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AddedMsisdns) {
+	if o == nil || isNil(o.AddedMsisdns) {
 		return nil, false
 	}
 	return o.AddedMsisdns, true
@@ -196,7 +196,7 @@ func (o *MonitoringNotification) GetAddedMsisdnsOk() ([]string, bool) {
 
 // HasAddedMsisdns returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasAddedMsisdns() bool {
-	if o != nil && !IsNil(o.AddedMsisdns) {
+	if o != nil && !isNil(o.AddedMsisdns) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *MonitoringNotification) SetAddedMsisdns(v []string) {
 
 // GetCancelExternalIds returns the CancelExternalIds field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetCancelExternalIds() []string {
-	if o == nil || IsNil(o.CancelExternalIds) {
+	if o == nil || isNil(o.CancelExternalIds) {
 		var ret []string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *MonitoringNotification) GetCancelExternalIds() []string {
 // GetCancelExternalIdsOk returns a tuple with the CancelExternalIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetCancelExternalIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.CancelExternalIds) {
+	if o == nil || isNil(o.CancelExternalIds) {
 		return nil, false
 	}
 	return o.CancelExternalIds, true
@@ -228,7 +228,7 @@ func (o *MonitoringNotification) GetCancelExternalIdsOk() ([]string, bool) {
 
 // HasCancelExternalIds returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasCancelExternalIds() bool {
-	if o != nil && !IsNil(o.CancelExternalIds) {
+	if o != nil && !isNil(o.CancelExternalIds) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *MonitoringNotification) SetCancelExternalIds(v []string) {
 
 // GetCancelMsisdns returns the CancelMsisdns field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetCancelMsisdns() []string {
-	if o == nil || IsNil(o.CancelMsisdns) {
+	if o == nil || isNil(o.CancelMsisdns) {
 		var ret []string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *MonitoringNotification) GetCancelMsisdns() []string {
 // GetCancelMsisdnsOk returns a tuple with the CancelMsisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetCancelMsisdnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.CancelMsisdns) {
+	if o == nil || isNil(o.CancelMsisdns) {
 		return nil, false
 	}
 	return o.CancelMsisdns, true
@@ -260,7 +260,7 @@ func (o *MonitoringNotification) GetCancelMsisdnsOk() ([]string, bool) {
 
 // HasCancelMsisdns returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasCancelMsisdns() bool {
-	if o != nil && !IsNil(o.CancelMsisdns) {
+	if o != nil && !isNil(o.CancelMsisdns) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *MonitoringNotification) SetCancelMsisdns(v []string) {
 
 // GetCancelInd returns the CancelInd field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetCancelInd() bool {
-	if o == nil || IsNil(o.CancelInd) {
+	if o == nil || isNil(o.CancelInd) {
 		var ret bool
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *MonitoringNotification) GetCancelInd() bool {
 // GetCancelIndOk returns a tuple with the CancelInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetCancelIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.CancelInd) {
+	if o == nil || isNil(o.CancelInd) {
 		return nil, false
 	}
 	return o.CancelInd, true
@@ -292,7 +292,7 @@ func (o *MonitoringNotification) GetCancelIndOk() (*bool, bool) {
 
 // HasCancelInd returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasCancelInd() bool {
-	if o != nil && !IsNil(o.CancelInd) {
+	if o != nil && !isNil(o.CancelInd) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *MonitoringNotification) SetCancelInd(v bool) {
 
 // GetAppliedParam returns the AppliedParam field value if set, zero value otherwise.
 func (o *MonitoringNotification) GetAppliedParam() AppliedParameterConfiguration {
-	if o == nil || IsNil(o.AppliedParam) {
+	if o == nil || isNil(o.AppliedParam) {
 		var ret AppliedParameterConfiguration
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *MonitoringNotification) GetAppliedParam() AppliedParameterConfiguration
 // GetAppliedParamOk returns a tuple with the AppliedParam field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringNotification) GetAppliedParamOk() (*AppliedParameterConfiguration, bool) {
-	if o == nil || IsNil(o.AppliedParam) {
+	if o == nil || isNil(o.AppliedParam) {
 		return nil, false
 	}
 	return o.AppliedParam, true
@@ -324,7 +324,7 @@ func (o *MonitoringNotification) GetAppliedParamOk() (*AppliedParameterConfigura
 
 // HasAppliedParam returns a boolean if a field has been set.
 func (o *MonitoringNotification) HasAppliedParam() bool {
-	if o != nil && !IsNil(o.AppliedParam) {
+	if o != nil && !isNil(o.AppliedParam) {
 		return true
 	}
 
@@ -347,28 +347,28 @@ func (o MonitoringNotification) MarshalJSON() ([]byte, error) {
 func (o MonitoringNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.ConfigResults) {
+	if !isNil(o.ConfigResults) {
 		toSerialize["configResults"] = o.ConfigResults
 	}
-	if !IsNil(o.MonitoringEventReports) {
+	if !isNil(o.MonitoringEventReports) {
 		toSerialize["monitoringEventReports"] = o.MonitoringEventReports
 	}
-	if !IsNil(o.AddedExternalIds) {
+	if !isNil(o.AddedExternalIds) {
 		toSerialize["addedExternalIds"] = o.AddedExternalIds
 	}
-	if !IsNil(o.AddedMsisdns) {
+	if !isNil(o.AddedMsisdns) {
 		toSerialize["addedMsisdns"] = o.AddedMsisdns
 	}
-	if !IsNil(o.CancelExternalIds) {
+	if !isNil(o.CancelExternalIds) {
 		toSerialize["cancelExternalIds"] = o.CancelExternalIds
 	}
-	if !IsNil(o.CancelMsisdns) {
+	if !isNil(o.CancelMsisdns) {
 		toSerialize["cancelMsisdns"] = o.CancelMsisdns
 	}
-	if !IsNil(o.CancelInd) {
+	if !isNil(o.CancelInd) {
 		toSerialize["cancelInd"] = o.CancelInd
 	}
-	if !IsNil(o.AppliedParam) {
+	if !isNil(o.AppliedParam) {
 		toSerialize["appliedParam"] = o.AppliedParam
 	}
 	return toSerialize, nil

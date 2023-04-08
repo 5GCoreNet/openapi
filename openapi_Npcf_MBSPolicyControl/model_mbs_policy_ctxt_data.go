@@ -72,7 +72,7 @@ func (o *MbsPolicyCtxtData) SetMbsSessionId(v MbsSessionId) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *MbsPolicyCtxtData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -90,7 +90,7 @@ func (o *MbsPolicyCtxtData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *MbsPolicyCtxtData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *MbsPolicyCtxtData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -122,7 +122,7 @@ func (o *MbsPolicyCtxtData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *MbsPolicyCtxtData) SetSnssai(v Snssai) {
 
 // GetMbsServInfo returns the MbsServInfo field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetMbsServInfo() MbsServiceInfo {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		var ret MbsServiceInfo
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *MbsPolicyCtxtData) GetMbsServInfo() MbsServiceInfo {
 // GetMbsServInfoOk returns a tuple with the MbsServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		return nil, false
 	}
 	return o.MbsServInfo, true
@@ -154,7 +154,7 @@ func (o *MbsPolicyCtxtData) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
 
 // HasMbsServInfo returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasMbsServInfo() bool {
-	if o != nil && !IsNil(o.MbsServInfo) {
+	if o != nil && !isNil(o.MbsServInfo) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *MbsPolicyCtxtData) SetMbsServInfo(v MbsServiceInfo) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsPolicyCtxtData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *MbsPolicyCtxtData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsPolicyCtxtData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -186,7 +186,7 @@ func (o *MbsPolicyCtxtData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsPolicyCtxtData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -209,16 +209,16 @@ func (o MbsPolicyCtxtData) MarshalJSON() ([]byte, error) {
 func (o MbsPolicyCtxtData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.MbsServInfo) {
+	if !isNil(o.MbsServInfo) {
 		toSerialize["mbsServInfo"] = o.MbsServInfo
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

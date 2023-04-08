@@ -44,7 +44,7 @@ func NewThresholdValueWithDefaults() *ThresholdValue {
 
 // GetRttThres returns the RttThres field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ThresholdValue) GetRttThres() int32 {
-	if o == nil || IsNil(o.RttThres.Get()) {
+	if o == nil || isNil(o.RttThres.Get()) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ThresholdValue) UnsetRttThres() {
 
 // GetPlrThres returns the PlrThres field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ThresholdValue) GetPlrThres() int32 {
-	if o == nil || IsNil(o.PlrThres.Get()) {
+	if o == nil || isNil(o.PlrThres.Get()) {
 		var ret int32
 		return ret
 	}

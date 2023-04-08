@@ -234,7 +234,7 @@ func (o *SmContextCreateData) SetNotificationUri(v string) {
 
 // GetNiddInfo returns the NiddInfo field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetNiddInfo() NiddInformation {
-	if o == nil || IsNil(o.NiddInfo) {
+	if o == nil || isNil(o.NiddInfo) {
 		var ret NiddInformation
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *SmContextCreateData) GetNiddInfo() NiddInformation {
 // GetNiddInfoOk returns a tuple with the NiddInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetNiddInfoOk() (*NiddInformation, bool) {
-	if o == nil || IsNil(o.NiddInfo) {
+	if o == nil || isNil(o.NiddInfo) {
 		return nil, false
 	}
 	return o.NiddInfo, true
@@ -252,7 +252,7 @@ func (o *SmContextCreateData) GetNiddInfoOk() (*NiddInformation, bool) {
 
 // HasNiddInfo returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasNiddInfo() bool {
-	if o != nil && !IsNil(o.NiddInfo) {
+	if o != nil && !isNil(o.NiddInfo) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *SmContextCreateData) SetNiddInfo(v NiddInformation) {
 
 // GetRdsSupport returns the RdsSupport field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetRdsSupport() bool {
-	if o == nil || IsNil(o.RdsSupport) {
+	if o == nil || isNil(o.RdsSupport) {
 		var ret bool
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *SmContextCreateData) GetRdsSupport() bool {
 // GetRdsSupportOk returns a tuple with the RdsSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetRdsSupportOk() (*bool, bool) {
-	if o == nil || IsNil(o.RdsSupport) {
+	if o == nil || isNil(o.RdsSupport) {
 		return nil, false
 	}
 	return o.RdsSupport, true
@@ -284,7 +284,7 @@ func (o *SmContextCreateData) GetRdsSupportOk() (*bool, bool) {
 
 // HasRdsSupport returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasRdsSupport() bool {
-	if o != nil && !IsNil(o.RdsSupport) {
+	if o != nil && !isNil(o.RdsSupport) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *SmContextCreateData) SetRdsSupport(v bool) {
 
 // GetSmContextConfig returns the SmContextConfig field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSmContextConfig() SmContextConfiguration {
-	if o == nil || IsNil(o.SmContextConfig) {
+	if o == nil || isNil(o.SmContextConfig) {
 		var ret SmContextConfiguration
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *SmContextCreateData) GetSmContextConfig() SmContextConfiguration {
 // GetSmContextConfigOk returns a tuple with the SmContextConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSmContextConfigOk() (*SmContextConfiguration, bool) {
-	if o == nil || IsNil(o.SmContextConfig) {
+	if o == nil || isNil(o.SmContextConfig) {
 		return nil, false
 	}
 	return o.SmContextConfig, true
@@ -316,7 +316,7 @@ func (o *SmContextCreateData) GetSmContextConfigOk() (*SmContextConfiguration, b
 
 // HasSmContextConfig returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSmContextConfig() bool {
-	if o != nil && !IsNil(o.SmContextConfig) {
+	if o != nil && !isNil(o.SmContextConfig) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *SmContextCreateData) SetSmContextConfig(v SmContextConfiguration) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmContextCreateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *SmContextCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -348,7 +348,7 @@ func (o *SmContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmContextCreateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -377,16 +377,16 @@ func (o SmContextCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["nefId"] = o.NefId
 	toSerialize["dlNiddEndPoint"] = o.DlNiddEndPoint
 	toSerialize["notificationUri"] = o.NotificationUri
-	if !IsNil(o.NiddInfo) {
+	if !isNil(o.NiddInfo) {
 		toSerialize["niddInfo"] = o.NiddInfo
 	}
-	if !IsNil(o.RdsSupport) {
+	if !isNil(o.RdsSupport) {
 		toSerialize["rdsSupport"] = o.RdsSupport
 	}
-	if !IsNil(o.SmContextConfig) {
+	if !isNil(o.SmContextConfig) {
 		toSerialize["smContextConfig"] = o.SmContextConfig
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

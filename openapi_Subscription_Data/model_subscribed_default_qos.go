@@ -95,7 +95,7 @@ func (o *SubscribedDefaultQos) SetArp(v Arp) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise.
 func (o *SubscribedDefaultQos) GetPriorityLevel() int32 {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SubscribedDefaultQos) GetPriorityLevel() int32 {
 // GetPriorityLevelOk returns a tuple with the PriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedDefaultQos) GetPriorityLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		return nil, false
 	}
 	return o.PriorityLevel, true
@@ -113,7 +113,7 @@ func (o *SubscribedDefaultQos) GetPriorityLevelOk() (*int32, bool) {
 
 // HasPriorityLevel returns a boolean if a field has been set.
 func (o *SubscribedDefaultQos) HasPriorityLevel() bool {
-	if o != nil && !IsNil(o.PriorityLevel) {
+	if o != nil && !isNil(o.PriorityLevel) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o SubscribedDefaultQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
 	toSerialize["arp"] = o.Arp
-	if !IsNil(o.PriorityLevel) {
+	if !isNil(o.PriorityLevel) {
 		toSerialize["priorityLevel"] = o.PriorityLevel
 	}
 	return toSerialize, nil

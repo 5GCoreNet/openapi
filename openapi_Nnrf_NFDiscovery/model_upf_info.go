@@ -103,7 +103,7 @@ func (o *UpfInfo) SetSNssaiUpfInfoList(v []SnssaiUpfInfoItem) {
 
 // GetSmfServingArea returns the SmfServingArea field value if set, zero value otherwise.
 func (o *UpfInfo) GetSmfServingArea() []string {
-	if o == nil || IsNil(o.SmfServingArea) {
+	if o == nil || isNil(o.SmfServingArea) {
 		var ret []string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *UpfInfo) GetSmfServingArea() []string {
 // GetSmfServingAreaOk returns a tuple with the SmfServingArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetSmfServingAreaOk() ([]string, bool) {
-	if o == nil || IsNil(o.SmfServingArea) {
+	if o == nil || isNil(o.SmfServingArea) {
 		return nil, false
 	}
 	return o.SmfServingArea, true
@@ -121,7 +121,7 @@ func (o *UpfInfo) GetSmfServingAreaOk() ([]string, bool) {
 
 // HasSmfServingArea returns a boolean if a field has been set.
 func (o *UpfInfo) HasSmfServingArea() bool {
-	if o != nil && !IsNil(o.SmfServingArea) {
+	if o != nil && !isNil(o.SmfServingArea) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *UpfInfo) SetSmfServingArea(v []string) {
 
 // GetInterfaceUpfInfoList returns the InterfaceUpfInfoList field value if set, zero value otherwise.
 func (o *UpfInfo) GetInterfaceUpfInfoList() []InterfaceUpfInfoItem {
-	if o == nil || IsNil(o.InterfaceUpfInfoList) {
+	if o == nil || isNil(o.InterfaceUpfInfoList) {
 		var ret []InterfaceUpfInfoItem
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *UpfInfo) GetInterfaceUpfInfoList() []InterfaceUpfInfoItem {
 // GetInterfaceUpfInfoListOk returns a tuple with the InterfaceUpfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetInterfaceUpfInfoListOk() ([]InterfaceUpfInfoItem, bool) {
-	if o == nil || IsNil(o.InterfaceUpfInfoList) {
+	if o == nil || isNil(o.InterfaceUpfInfoList) {
 		return nil, false
 	}
 	return o.InterfaceUpfInfoList, true
@@ -153,7 +153,7 @@ func (o *UpfInfo) GetInterfaceUpfInfoListOk() ([]InterfaceUpfInfoItem, bool) {
 
 // HasInterfaceUpfInfoList returns a boolean if a field has been set.
 func (o *UpfInfo) HasInterfaceUpfInfoList() bool {
-	if o != nil && !IsNil(o.InterfaceUpfInfoList) {
+	if o != nil && !isNil(o.InterfaceUpfInfoList) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *UpfInfo) SetInterfaceUpfInfoList(v []InterfaceUpfInfoItem) {
 
 // GetIwkEpsInd returns the IwkEpsInd field value if set, zero value otherwise.
 func (o *UpfInfo) GetIwkEpsInd() bool {
-	if o == nil || IsNil(o.IwkEpsInd) {
+	if o == nil || isNil(o.IwkEpsInd) {
 		var ret bool
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *UpfInfo) GetIwkEpsInd() bool {
 // GetIwkEpsIndOk returns a tuple with the IwkEpsInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetIwkEpsIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.IwkEpsInd) {
+	if o == nil || isNil(o.IwkEpsInd) {
 		return nil, false
 	}
 	return o.IwkEpsInd, true
@@ -185,7 +185,7 @@ func (o *UpfInfo) GetIwkEpsIndOk() (*bool, bool) {
 
 // HasIwkEpsInd returns a boolean if a field has been set.
 func (o *UpfInfo) HasIwkEpsInd() bool {
-	if o != nil && !IsNil(o.IwkEpsInd) {
+	if o != nil && !isNil(o.IwkEpsInd) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *UpfInfo) SetIwkEpsInd(v bool) {
 
 // GetSxaInd returns the SxaInd field value if set, zero value otherwise.
 func (o *UpfInfo) GetSxaInd() bool {
-	if o == nil || IsNil(o.SxaInd) {
+	if o == nil || isNil(o.SxaInd) {
 		var ret bool
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *UpfInfo) GetSxaInd() bool {
 // GetSxaIndOk returns a tuple with the SxaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetSxaIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SxaInd) {
+	if o == nil || isNil(o.SxaInd) {
 		return nil, false
 	}
 	return o.SxaInd, true
@@ -217,7 +217,7 @@ func (o *UpfInfo) GetSxaIndOk() (*bool, bool) {
 
 // HasSxaInd returns a boolean if a field has been set.
 func (o *UpfInfo) HasSxaInd() bool {
-	if o != nil && !IsNil(o.SxaInd) {
+	if o != nil && !isNil(o.SxaInd) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *UpfInfo) SetSxaInd(v bool) {
 
 // GetPduSessionTypes returns the PduSessionTypes field value if set, zero value otherwise.
 func (o *UpfInfo) GetPduSessionTypes() []PduSessionType {
-	if o == nil || IsNil(o.PduSessionTypes) {
+	if o == nil || isNil(o.PduSessionTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *UpfInfo) GetPduSessionTypes() []PduSessionType {
 // GetPduSessionTypesOk returns a tuple with the PduSessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetPduSessionTypesOk() ([]PduSessionType, bool) {
-	if o == nil || IsNil(o.PduSessionTypes) {
+	if o == nil || isNil(o.PduSessionTypes) {
 		return nil, false
 	}
 	return o.PduSessionTypes, true
@@ -249,7 +249,7 @@ func (o *UpfInfo) GetPduSessionTypesOk() ([]PduSessionType, bool) {
 
 // HasPduSessionTypes returns a boolean if a field has been set.
 func (o *UpfInfo) HasPduSessionTypes() bool {
-	if o != nil && !IsNil(o.PduSessionTypes) {
+	if o != nil && !isNil(o.PduSessionTypes) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *UpfInfo) SetPduSessionTypes(v []PduSessionType) {
 
 // GetAtsssCapability returns the AtsssCapability field value if set, zero value otherwise.
 func (o *UpfInfo) GetAtsssCapability() AtsssCapability {
-	if o == nil || IsNil(o.AtsssCapability) {
+	if o == nil || isNil(o.AtsssCapability) {
 		var ret AtsssCapability
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *UpfInfo) GetAtsssCapability() AtsssCapability {
 // GetAtsssCapabilityOk returns a tuple with the AtsssCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetAtsssCapabilityOk() (*AtsssCapability, bool) {
-	if o == nil || IsNil(o.AtsssCapability) {
+	if o == nil || isNil(o.AtsssCapability) {
 		return nil, false
 	}
 	return o.AtsssCapability, true
@@ -281,7 +281,7 @@ func (o *UpfInfo) GetAtsssCapabilityOk() (*AtsssCapability, bool) {
 
 // HasAtsssCapability returns a boolean if a field has been set.
 func (o *UpfInfo) HasAtsssCapability() bool {
-	if o != nil && !IsNil(o.AtsssCapability) {
+	if o != nil && !isNil(o.AtsssCapability) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *UpfInfo) SetAtsssCapability(v AtsssCapability) {
 
 // GetUeIpAddrInd returns the UeIpAddrInd field value if set, zero value otherwise.
 func (o *UpfInfo) GetUeIpAddrInd() bool {
-	if o == nil || IsNil(o.UeIpAddrInd) {
+	if o == nil || isNil(o.UeIpAddrInd) {
 		var ret bool
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *UpfInfo) GetUeIpAddrInd() bool {
 // GetUeIpAddrIndOk returns a tuple with the UeIpAddrInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetUeIpAddrIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UeIpAddrInd) {
+	if o == nil || isNil(o.UeIpAddrInd) {
 		return nil, false
 	}
 	return o.UeIpAddrInd, true
@@ -313,7 +313,7 @@ func (o *UpfInfo) GetUeIpAddrIndOk() (*bool, bool) {
 
 // HasUeIpAddrInd returns a boolean if a field has been set.
 func (o *UpfInfo) HasUeIpAddrInd() bool {
-	if o != nil && !IsNil(o.UeIpAddrInd) {
+	if o != nil && !isNil(o.UeIpAddrInd) {
 		return true
 	}
 
@@ -327,7 +327,7 @@ func (o *UpfInfo) SetUeIpAddrInd(v bool) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *UpfInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *UpfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -345,7 +345,7 @@ func (o *UpfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *UpfInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -359,7 +359,7 @@ func (o *UpfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *UpfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *UpfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -377,7 +377,7 @@ func (o *UpfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *UpfInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -391,7 +391,7 @@ func (o *UpfInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetWAgfInfo returns the WAgfInfo field value if set, zero value otherwise.
 func (o *UpfInfo) GetWAgfInfo() WAgfInfo {
-	if o == nil || IsNil(o.WAgfInfo) {
+	if o == nil || isNil(o.WAgfInfo) {
 		var ret WAgfInfo
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o *UpfInfo) GetWAgfInfo() WAgfInfo {
 // GetWAgfInfoOk returns a tuple with the WAgfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetWAgfInfoOk() (*WAgfInfo, bool) {
-	if o == nil || IsNil(o.WAgfInfo) {
+	if o == nil || isNil(o.WAgfInfo) {
 		return nil, false
 	}
 	return o.WAgfInfo, true
@@ -409,7 +409,7 @@ func (o *UpfInfo) GetWAgfInfoOk() (*WAgfInfo, bool) {
 
 // HasWAgfInfo returns a boolean if a field has been set.
 func (o *UpfInfo) HasWAgfInfo() bool {
-	if o != nil && !IsNil(o.WAgfInfo) {
+	if o != nil && !isNil(o.WAgfInfo) {
 		return true
 	}
 
@@ -423,7 +423,7 @@ func (o *UpfInfo) SetWAgfInfo(v WAgfInfo) {
 
 // GetTngfInfo returns the TngfInfo field value if set, zero value otherwise.
 func (o *UpfInfo) GetTngfInfo() TngfInfo {
-	if o == nil || IsNil(o.TngfInfo) {
+	if o == nil || isNil(o.TngfInfo) {
 		var ret TngfInfo
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *UpfInfo) GetTngfInfo() TngfInfo {
 // GetTngfInfoOk returns a tuple with the TngfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetTngfInfoOk() (*TngfInfo, bool) {
-	if o == nil || IsNil(o.TngfInfo) {
+	if o == nil || isNil(o.TngfInfo) {
 		return nil, false
 	}
 	return o.TngfInfo, true
@@ -441,7 +441,7 @@ func (o *UpfInfo) GetTngfInfoOk() (*TngfInfo, bool) {
 
 // HasTngfInfo returns a boolean if a field has been set.
 func (o *UpfInfo) HasTngfInfo() bool {
-	if o != nil && !IsNil(o.TngfInfo) {
+	if o != nil && !isNil(o.TngfInfo) {
 		return true
 	}
 
@@ -455,7 +455,7 @@ func (o *UpfInfo) SetTngfInfo(v TngfInfo) {
 
 // GetTwifInfo returns the TwifInfo field value if set, zero value otherwise.
 func (o *UpfInfo) GetTwifInfo() TwifInfo {
-	if o == nil || IsNil(o.TwifInfo) {
+	if o == nil || isNil(o.TwifInfo) {
 		var ret TwifInfo
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *UpfInfo) GetTwifInfo() TwifInfo {
 // GetTwifInfoOk returns a tuple with the TwifInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetTwifInfoOk() (*TwifInfo, bool) {
-	if o == nil || IsNil(o.TwifInfo) {
+	if o == nil || isNil(o.TwifInfo) {
 		return nil, false
 	}
 	return o.TwifInfo, true
@@ -473,7 +473,7 @@ func (o *UpfInfo) GetTwifInfoOk() (*TwifInfo, bool) {
 
 // HasTwifInfo returns a boolean if a field has been set.
 func (o *UpfInfo) HasTwifInfo() bool {
-	if o != nil && !IsNil(o.TwifInfo) {
+	if o != nil && !isNil(o.TwifInfo) {
 		return true
 	}
 
@@ -487,7 +487,7 @@ func (o *UpfInfo) SetTwifInfo(v TwifInfo) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *UpfInfo) GetPriority() int32 {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -497,7 +497,7 @@ func (o *UpfInfo) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetPriorityOk() (*int32, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -505,7 +505,7 @@ func (o *UpfInfo) GetPriorityOk() (*int32, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *UpfInfo) HasPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && !isNil(o.Priority) {
 		return true
 	}
 
@@ -519,7 +519,7 @@ func (o *UpfInfo) SetPriority(v int32) {
 
 // GetRedundantGtpu returns the RedundantGtpu field value if set, zero value otherwise.
 func (o *UpfInfo) GetRedundantGtpu() bool {
-	if o == nil || IsNil(o.RedundantGtpu) {
+	if o == nil || isNil(o.RedundantGtpu) {
 		var ret bool
 		return ret
 	}
@@ -529,7 +529,7 @@ func (o *UpfInfo) GetRedundantGtpu() bool {
 // GetRedundantGtpuOk returns a tuple with the RedundantGtpu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetRedundantGtpuOk() (*bool, bool) {
-	if o == nil || IsNil(o.RedundantGtpu) {
+	if o == nil || isNil(o.RedundantGtpu) {
 		return nil, false
 	}
 	return o.RedundantGtpu, true
@@ -537,7 +537,7 @@ func (o *UpfInfo) GetRedundantGtpuOk() (*bool, bool) {
 
 // HasRedundantGtpu returns a boolean if a field has been set.
 func (o *UpfInfo) HasRedundantGtpu() bool {
-	if o != nil && !IsNil(o.RedundantGtpu) {
+	if o != nil && !isNil(o.RedundantGtpu) {
 		return true
 	}
 
@@ -551,7 +551,7 @@ func (o *UpfInfo) SetRedundantGtpu(v bool) {
 
 // GetIpups returns the Ipups field value if set, zero value otherwise.
 func (o *UpfInfo) GetIpups() bool {
-	if o == nil || IsNil(o.Ipups) {
+	if o == nil || isNil(o.Ipups) {
 		var ret bool
 		return ret
 	}
@@ -561,7 +561,7 @@ func (o *UpfInfo) GetIpups() bool {
 // GetIpupsOk returns a tuple with the Ipups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetIpupsOk() (*bool, bool) {
-	if o == nil || IsNil(o.Ipups) {
+	if o == nil || isNil(o.Ipups) {
 		return nil, false
 	}
 	return o.Ipups, true
@@ -569,7 +569,7 @@ func (o *UpfInfo) GetIpupsOk() (*bool, bool) {
 
 // HasIpups returns a boolean if a field has been set.
 func (o *UpfInfo) HasIpups() bool {
-	if o != nil && !IsNil(o.Ipups) {
+	if o != nil && !isNil(o.Ipups) {
 		return true
 	}
 
@@ -583,7 +583,7 @@ func (o *UpfInfo) SetIpups(v bool) {
 
 // GetDataForwarding returns the DataForwarding field value if set, zero value otherwise.
 func (o *UpfInfo) GetDataForwarding() bool {
-	if o == nil || IsNil(o.DataForwarding) {
+	if o == nil || isNil(o.DataForwarding) {
 		var ret bool
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *UpfInfo) GetDataForwarding() bool {
 // GetDataForwardingOk returns a tuple with the DataForwarding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetDataForwardingOk() (*bool, bool) {
-	if o == nil || IsNil(o.DataForwarding) {
+	if o == nil || isNil(o.DataForwarding) {
 		return nil, false
 	}
 	return o.DataForwarding, true
@@ -601,7 +601,7 @@ func (o *UpfInfo) GetDataForwardingOk() (*bool, bool) {
 
 // HasDataForwarding returns a boolean if a field has been set.
 func (o *UpfInfo) HasDataForwarding() bool {
-	if o != nil && !IsNil(o.DataForwarding) {
+	if o != nil && !isNil(o.DataForwarding) {
 		return true
 	}
 
@@ -615,7 +615,7 @@ func (o *UpfInfo) SetDataForwarding(v bool) {
 
 // GetSupportedPfcpFeatures returns the SupportedPfcpFeatures field value if set, zero value otherwise.
 func (o *UpfInfo) GetSupportedPfcpFeatures() string {
-	if o == nil || IsNil(o.SupportedPfcpFeatures) {
+	if o == nil || isNil(o.SupportedPfcpFeatures) {
 		var ret string
 		return ret
 	}
@@ -625,7 +625,7 @@ func (o *UpfInfo) GetSupportedPfcpFeatures() string {
 // GetSupportedPfcpFeaturesOk returns a tuple with the SupportedPfcpFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfInfo) GetSupportedPfcpFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedPfcpFeatures) {
+	if o == nil || isNil(o.SupportedPfcpFeatures) {
 		return nil, false
 	}
 	return o.SupportedPfcpFeatures, true
@@ -633,7 +633,7 @@ func (o *UpfInfo) GetSupportedPfcpFeaturesOk() (*string, bool) {
 
 // HasSupportedPfcpFeatures returns a boolean if a field has been set.
 func (o *UpfInfo) HasSupportedPfcpFeatures() bool {
-	if o != nil && !IsNil(o.SupportedPfcpFeatures) {
+	if o != nil && !isNil(o.SupportedPfcpFeatures) {
 		return true
 	}
 
@@ -656,55 +656,55 @@ func (o UpfInfo) MarshalJSON() ([]byte, error) {
 func (o UpfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssaiUpfInfoList"] = o.SNssaiUpfInfoList
-	if !IsNil(o.SmfServingArea) {
+	if !isNil(o.SmfServingArea) {
 		toSerialize["smfServingArea"] = o.SmfServingArea
 	}
-	if !IsNil(o.InterfaceUpfInfoList) {
+	if !isNil(o.InterfaceUpfInfoList) {
 		toSerialize["interfaceUpfInfoList"] = o.InterfaceUpfInfoList
 	}
-	if !IsNil(o.IwkEpsInd) {
+	if !isNil(o.IwkEpsInd) {
 		toSerialize["iwkEpsInd"] = o.IwkEpsInd
 	}
-	if !IsNil(o.SxaInd) {
+	if !isNil(o.SxaInd) {
 		toSerialize["sxaInd"] = o.SxaInd
 	}
-	if !IsNil(o.PduSessionTypes) {
+	if !isNil(o.PduSessionTypes) {
 		toSerialize["pduSessionTypes"] = o.PduSessionTypes
 	}
-	if !IsNil(o.AtsssCapability) {
+	if !isNil(o.AtsssCapability) {
 		toSerialize["atsssCapability"] = o.AtsssCapability
 	}
-	if !IsNil(o.UeIpAddrInd) {
+	if !isNil(o.UeIpAddrInd) {
 		toSerialize["ueIpAddrInd"] = o.UeIpAddrInd
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.WAgfInfo) {
+	if !isNil(o.WAgfInfo) {
 		toSerialize["wAgfInfo"] = o.WAgfInfo
 	}
-	if !IsNil(o.TngfInfo) {
+	if !isNil(o.TngfInfo) {
 		toSerialize["tngfInfo"] = o.TngfInfo
 	}
-	if !IsNil(o.TwifInfo) {
+	if !isNil(o.TwifInfo) {
 		toSerialize["twifInfo"] = o.TwifInfo
 	}
-	if !IsNil(o.Priority) {
+	if !isNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !IsNil(o.RedundantGtpu) {
+	if !isNil(o.RedundantGtpu) {
 		toSerialize["redundantGtpu"] = o.RedundantGtpu
 	}
-	if !IsNil(o.Ipups) {
+	if !isNil(o.Ipups) {
 		toSerialize["ipups"] = o.Ipups
 	}
-	if !IsNil(o.DataForwarding) {
+	if !isNil(o.DataForwarding) {
 		toSerialize["dataForwarding"] = o.DataForwarding
 	}
-	if !IsNil(o.SupportedPfcpFeatures) {
+	if !isNil(o.SupportedPfcpFeatures) {
 		toSerialize["supportedPfcpFeatures"] = o.SupportedPfcpFeatures
 	}
 	return toSerialize, nil

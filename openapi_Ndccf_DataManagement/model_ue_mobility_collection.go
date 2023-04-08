@@ -51,7 +51,7 @@ func NewUeMobilityCollectionWithDefaults() *UeMobilityCollection {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *UeMobilityCollection) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *UeMobilityCollection) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityCollection) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -69,7 +69,7 @@ func (o *UeMobilityCollection) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *UeMobilityCollection) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *UeMobilityCollection) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *UeMobilityCollection) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *UeMobilityCollection) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityCollection) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -101,7 +101,7 @@ func (o *UeMobilityCollection) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *UeMobilityCollection) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *UeMobilityCollection) SetAppId(v string) {
 
 // GetAllAppInd returns the AllAppInd field value if set, zero value otherwise.
 func (o *UeMobilityCollection) GetAllAppInd() bool {
-	if o == nil || IsNil(o.AllAppInd) {
+	if o == nil || isNil(o.AllAppInd) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *UeMobilityCollection) GetAllAppInd() bool {
 // GetAllAppIndOk returns a tuple with the AllAppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeMobilityCollection) GetAllAppIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllAppInd) {
+	if o == nil || isNil(o.AllAppInd) {
 		return nil, false
 	}
 	return o.AllAppInd, true
@@ -157,7 +157,7 @@ func (o *UeMobilityCollection) GetAllAppIndOk() (*bool, bool) {
 
 // HasAllAppInd returns a boolean if a field has been set.
 func (o *UeMobilityCollection) HasAllAppInd() bool {
-	if o != nil && !IsNil(o.AllAppInd) {
+	if o != nil && !isNil(o.AllAppInd) {
 		return true
 	}
 
@@ -203,14 +203,14 @@ func (o UeMobilityCollection) MarshalJSON() ([]byte, error) {
 
 func (o UeMobilityCollection) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	toSerialize["appId"] = o.AppId
-	if !IsNil(o.AllAppInd) {
+	if !isNil(o.AllAppInd) {
 		toSerialize["allAppInd"] = o.AllAppInd
 	}
 	toSerialize["ueTrajs"] = o.UeTrajs

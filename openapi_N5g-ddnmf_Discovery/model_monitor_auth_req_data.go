@@ -68,7 +68,7 @@ func (o *MonitorAuthReqData) SetDiscType(v DiscoveryType) {
 
 // GetOpenDiscData returns the OpenDiscData field value if set, zero value otherwise.
 func (o *MonitorAuthReqData) GetOpenDiscData() MonitorDiscDataForOpen {
-	if o == nil || IsNil(o.OpenDiscData) {
+	if o == nil || isNil(o.OpenDiscData) {
 		var ret MonitorDiscDataForOpen
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MonitorAuthReqData) GetOpenDiscData() MonitorDiscDataForOpen {
 // GetOpenDiscDataOk returns a tuple with the OpenDiscData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorAuthReqData) GetOpenDiscDataOk() (*MonitorDiscDataForOpen, bool) {
-	if o == nil || IsNil(o.OpenDiscData) {
+	if o == nil || isNil(o.OpenDiscData) {
 		return nil, false
 	}
 	return o.OpenDiscData, true
@@ -86,7 +86,7 @@ func (o *MonitorAuthReqData) GetOpenDiscDataOk() (*MonitorDiscDataForOpen, bool)
 
 // HasOpenDiscData returns a boolean if a field has been set.
 func (o *MonitorAuthReqData) HasOpenDiscData() bool {
-	if o != nil && !IsNil(o.OpenDiscData) {
+	if o != nil && !isNil(o.OpenDiscData) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *MonitorAuthReqData) SetOpenDiscData(v MonitorDiscDataForOpen) {
 
 // GetRestrictedDiscData returns the RestrictedDiscData field value if set, zero value otherwise.
 func (o *MonitorAuthReqData) GetRestrictedDiscData() MonitorDiscDataForRestricted {
-	if o == nil || IsNil(o.RestrictedDiscData) {
+	if o == nil || isNil(o.RestrictedDiscData) {
 		var ret MonitorDiscDataForRestricted
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *MonitorAuthReqData) GetRestrictedDiscData() MonitorDiscDataForRestricte
 // GetRestrictedDiscDataOk returns a tuple with the RestrictedDiscData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorAuthReqData) GetRestrictedDiscDataOk() (*MonitorDiscDataForRestricted, bool) {
-	if o == nil || IsNil(o.RestrictedDiscData) {
+	if o == nil || isNil(o.RestrictedDiscData) {
 		return nil, false
 	}
 	return o.RestrictedDiscData, true
@@ -118,7 +118,7 @@ func (o *MonitorAuthReqData) GetRestrictedDiscDataOk() (*MonitorDiscDataForRestr
 
 // HasRestrictedDiscData returns a boolean if a field has been set.
 func (o *MonitorAuthReqData) HasRestrictedDiscData() bool {
-	if o != nil && !IsNil(o.RestrictedDiscData) {
+	if o != nil && !isNil(o.RestrictedDiscData) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o MonitorAuthReqData) MarshalJSON() ([]byte, error) {
 func (o MonitorAuthReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
-	if !IsNil(o.OpenDiscData) {
+	if !isNil(o.OpenDiscData) {
 		toSerialize["openDiscData"] = o.OpenDiscData
 	}
-	if !IsNil(o.RestrictedDiscData) {
+	if !isNil(o.RestrictedDiscData) {
 		toSerialize["restrictedDiscData"] = o.RestrictedDiscData
 	}
 	return toSerialize, nil

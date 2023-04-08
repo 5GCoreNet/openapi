@@ -93,7 +93,7 @@ func (o *RoamingStatusReport) SetNewServingPlmn(v PlmnId) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *RoamingStatusReport) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *RoamingStatusReport) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingStatusReport) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -111,7 +111,7 @@ func (o *RoamingStatusReport) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *RoamingStatusReport) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o RoamingStatusReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["roaming"] = o.Roaming
 	toSerialize["newServingPlmn"] = o.NewServingPlmn
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
 	return toSerialize, nil

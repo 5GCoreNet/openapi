@@ -73,7 +73,7 @@ func (o *RgAuthCtx) SetAuthResult(v AuthResult) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *RgAuthCtx) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *RgAuthCtx) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RgAuthCtx) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -91,7 +91,7 @@ func (o *RgAuthCtx) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *RgAuthCtx) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RgAuthCtx) SetSupi(v string) {
 
 // GetAuthInd returns the AuthInd field value if set, zero value otherwise.
 func (o *RgAuthCtx) GetAuthInd() bool {
-	if o == nil || IsNil(o.AuthInd) {
+	if o == nil || isNil(o.AuthInd) {
 		var ret bool
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *RgAuthCtx) GetAuthInd() bool {
 // GetAuthIndOk returns a tuple with the AuthInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RgAuthCtx) GetAuthIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AuthInd) {
+	if o == nil || isNil(o.AuthInd) {
 		return nil, false
 	}
 	return o.AuthInd, true
@@ -123,7 +123,7 @@ func (o *RgAuthCtx) GetAuthIndOk() (*bool, bool) {
 
 // HasAuthInd returns a boolean if a field has been set.
 func (o *RgAuthCtx) HasAuthInd() bool {
-	if o != nil && !IsNil(o.AuthInd) {
+	if o != nil && !isNil(o.AuthInd) {
 		return true
 	}
 
@@ -146,10 +146,10 @@ func (o RgAuthCtx) MarshalJSON() ([]byte, error) {
 func (o RgAuthCtx) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authResult"] = o.AuthResult
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.AuthInd) {
+	if !isNil(o.AuthInd) {
 		toSerialize["authInd"] = o.AuthInd
 	}
 	return toSerialize, nil

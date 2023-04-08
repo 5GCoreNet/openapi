@@ -41,7 +41,7 @@ func NewCoreNetworkServiceAuthorizationWithDefaults() *CoreNetworkServiceAuthori
 
 // GetSubscribedMediaProfileId returns the SubscribedMediaProfileId field value if set, zero value otherwise.
 func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileId() int32 {
-	if o == nil || IsNil(o.SubscribedMediaProfileId) {
+	if o == nil || isNil(o.SubscribedMediaProfileId) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileId() int32 {
 // GetSubscribedMediaProfileIdOk returns a tuple with the SubscribedMediaProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.SubscribedMediaProfileId) {
+	if o == nil || isNil(o.SubscribedMediaProfileId) {
 		return nil, false
 	}
 	return o.SubscribedMediaProfileId, true
@@ -59,7 +59,7 @@ func (o *CoreNetworkServiceAuthorization) GetSubscribedMediaProfileIdOk() (*int3
 
 // HasSubscribedMediaProfileId returns a boolean if a field has been set.
 func (o *CoreNetworkServiceAuthorization) HasSubscribedMediaProfileId() bool {
-	if o != nil && !IsNil(o.SubscribedMediaProfileId) {
+	if o != nil && !isNil(o.SubscribedMediaProfileId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o CoreNetworkServiceAuthorization) MarshalJSON() ([]byte, error) {
 
 func (o CoreNetworkServiceAuthorization) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscribedMediaProfileId) {
+	if !isNil(o.SubscribedMediaProfileId) {
 		toSerialize["subscribedMediaProfileId"] = o.SubscribedMediaProfileId
 	}
 	return toSerialize, nil

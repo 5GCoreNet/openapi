@@ -72,7 +72,7 @@ func (o *NwdafRegistrationModification) SetNwdafInstanceId(v string) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *NwdafRegistrationModification) GetNwdafSetId() string {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *NwdafRegistrationModification) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistrationModification) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -90,7 +90,7 @@ func (o *NwdafRegistrationModification) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *NwdafRegistrationModification) HasNwdafSetId() bool {
-	if o != nil && !IsNil(o.NwdafSetId) {
+	if o != nil && !isNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *NwdafRegistrationModification) SetNwdafSetId(v string) {
 
 // GetAnalyticsIds returns the AnalyticsIds field value if set, zero value otherwise.
 func (o *NwdafRegistrationModification) GetAnalyticsIds() []EventId {
-	if o == nil || IsNil(o.AnalyticsIds) {
+	if o == nil || isNil(o.AnalyticsIds) {
 		var ret []EventId
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *NwdafRegistrationModification) GetAnalyticsIds() []EventId {
 // GetAnalyticsIdsOk returns a tuple with the AnalyticsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistrationModification) GetAnalyticsIdsOk() ([]EventId, bool) {
-	if o == nil || IsNil(o.AnalyticsIds) {
+	if o == nil || isNil(o.AnalyticsIds) {
 		return nil, false
 	}
 	return o.AnalyticsIds, true
@@ -122,7 +122,7 @@ func (o *NwdafRegistrationModification) GetAnalyticsIdsOk() ([]EventId, bool) {
 
 // HasAnalyticsIds returns a boolean if a field has been set.
 func (o *NwdafRegistrationModification) HasAnalyticsIds() bool {
-	if o != nil && !IsNil(o.AnalyticsIds) {
+	if o != nil && !isNil(o.AnalyticsIds) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *NwdafRegistrationModification) SetAnalyticsIds(v []EventId) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NwdafRegistrationModification) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *NwdafRegistrationModification) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistrationModification) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -154,7 +154,7 @@ func (o *NwdafRegistrationModification) GetSupportedFeaturesOk() (*string, bool)
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NwdafRegistrationModification) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -177,13 +177,13 @@ func (o NwdafRegistrationModification) MarshalJSON() ([]byte, error) {
 func (o NwdafRegistrationModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwdafInstanceId"] = o.NwdafInstanceId
-	if !IsNil(o.NwdafSetId) {
+	if !isNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
-	if !IsNil(o.AnalyticsIds) {
+	if !isNil(o.AnalyticsIds) {
 		toSerialize["analyticsIds"] = o.AnalyticsIds
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

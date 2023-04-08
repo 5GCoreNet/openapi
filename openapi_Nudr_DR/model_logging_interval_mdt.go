@@ -17,23 +17,37 @@ import (
 
 // LoggingIntervalMdt The enumeration LoggingIntervalMdt defines Logging Interval for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.12-1. 
 type LoggingIntervalMdt struct {
-	string *string
+	LoggingIntervalMdtAnyOf *LoggingIntervalMdtAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LoggingIntervalMdt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into LoggingIntervalMdtAnyOf
+	err = json.Unmarshal(data, &dst.LoggingIntervalMdtAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonLoggingIntervalMdtAnyOf, _ := json.Marshal(dst.LoggingIntervalMdtAnyOf)
+		if string(jsonLoggingIntervalMdtAnyOf) == "{}" { // empty struct
+			dst.LoggingIntervalMdtAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.LoggingIntervalMdtAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.LoggingIntervalMdtAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(LoggingIntervalMdt)")
@@ -41,8 +55,12 @@ func (dst *LoggingIntervalMdt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LoggingIntervalMdt) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.LoggingIntervalMdtAnyOf != nil {
+		return json.Marshal(&src.LoggingIntervalMdtAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

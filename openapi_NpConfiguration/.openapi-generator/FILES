@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -20,6 +19,7 @@ docs/NpConfigurationPatch.md
 docs/NpConfigurationsApi.md
 docs/ProblemDetails.md
 docs/ResultReason.md
+docs/ResultReasonAnyOf.md
 docs/Snssai.md
 docs/WebsockNotifConfig.md
 git_push.sh
@@ -36,6 +36,7 @@ model_np_configuration.go
 model_np_configuration_patch.go
 model_problem_details.go
 model_result_reason.go
+model_result_reason_any_of.go
 model_snssai.go
 model_websock_notif_config.go
 response.go

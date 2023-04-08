@@ -2146,14 +2146,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     MbsSession:
@@ -2612,10 +2605,7 @@ components:
       type: string
     MbsServiceType:
       anyOf:
-      - enum:
-        - MULTICAST
-        - BROADCAST
-        type: string
+      - $ref: '#/components/schemas/MbsServiceType_anyOf'
       - type: string
       description: Indicates the MBS service type of an MBS session
     AreaSessionId:
@@ -3123,19 +3113,13 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - enum:
-        - NOT_PREEMPT
-        - MAY_PREEMPT
-        type: string
+      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - enum:
-        - NOT_PREEMPTABLE
-        - PREEMPTABLE
-        type: string
+      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -3220,11 +3204,7 @@ components:
       type: object
     MbsSessionEventType:
       anyOf:
-      - enum:
-        - MBS_REL_TMGI_EXPIRY
-        - BROADCAST_DELIVERY_STATUS
-        - INGRESS_TUNNEL_ADD_CHANGE
-        type: string
+      - $ref: '#/components/schemas/MbsSessionEventType_anyOf'
       - type: string
       description: MBS Session Event Type
     Uri_1:
@@ -3238,10 +3218,7 @@ components:
       type: string
     MbsSessionActivityStatus:
       anyOf:
-      - enum:
-        - ACTIVE
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/MbsSessionActivityStatus_anyOf'
       - type: string
       description: Indicates the MBS session's activity status
     MbsFsaId:
@@ -3340,10 +3317,7 @@ components:
       type: object
     BroadcastDeliveryStatus:
       anyOf:
-      - enum:
-        - STARTED
-        - TERMINATED
-        type: string
+      - $ref: '#/components/schemas/BroadcastDeliveryStatus_anyOf'
       - type: string
       description: Broadcast MBS Session's Delivery Status
     ExternalGroupId:
@@ -3437,17 +3411,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -3734,24 +3698,7 @@ components:
       type: object
     ReservPriority:
       anyOf:
-      - enum:
-        - PRIO_1
-        - PRIO_2
-        - PRIO_3
-        - PRIO_4
-        - PRIO_5
-        - PRIO_6
-        - PRIO_7
-        - PRIO_8
-        - PRIO_9
-        - PRIO_10
-        - PRIO_11
-        - PRIO_12
-        - PRIO_13
-        - PRIO_14
-        - PRIO_15
-        - PRIO_16
-        type: string
+      - $ref: '#/components/schemas/ReservPriority_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -3764,16 +3711,7 @@ components:
       type: string
     MediaType:
       anyOf:
-      - enum:
-        - AUDIO
-        - VIDEO
-        - DATA
-        - APPLICATION
-        - CONTROL
-        - TEXT
-        - MESSAGE
-        - OTHER
-        type: string
+      - $ref: '#/components/schemas/MediaType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -3785,6 +3723,53 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    MbsServiceType_anyOf:
+      enum:
+      - MULTICAST
+      - BROADCAST
+      type: string
+      example: null
+    PreemptionCapability_anyOf:
+      enum:
+      - NOT_PREEMPT
+      - MAY_PREEMPT
+      type: string
+      example: null
+    PreemptionVulnerability_anyOf:
+      enum:
+      - NOT_PREEMPTABLE
+      - PREEMPTABLE
+      type: string
+      example: null
+    MbsSessionEventType_anyOf:
+      enum:
+      - MBS_REL_TMGI_EXPIRY
+      - BROADCAST_DELIVERY_STATUS
+      - INGRESS_TUNNEL_ADD_CHANGE
+      type: string
+      example: null
+    MbsSessionActivityStatus_anyOf:
+      enum:
+      - ACTIVE
+      - INACTIVE
+      type: string
+      example: null
+    BroadcastDeliveryStatus_anyOf:
+      enum:
+      - STARTED
+      - TERMINATED
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -3792,6 +3777,19 @@ components:
       required:
       - point
       type: object
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -3960,6 +3958,38 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
+      example: null
+    ReservPriority_anyOf:
+      enum:
+      - PRIO_1
+      - PRIO_2
+      - PRIO_3
+      - PRIO_4
+      - PRIO_5
+      - PRIO_6
+      - PRIO_7
+      - PRIO_8
+      - PRIO_9
+      - PRIO_10
+      - PRIO_11
+      - PRIO_12
+      - PRIO_13
+      - PRIO_14
+      - PRIO_15
+      - PRIO_16
+      type: string
+      example: null
+    MediaType_anyOf:
+      enum:
+      - AUDIO
+      - VIDEO
+      - DATA
+      - APPLICATION
+      - CONTROL
+      - TEXT
+      - MESSAGE
+      - OTHER
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

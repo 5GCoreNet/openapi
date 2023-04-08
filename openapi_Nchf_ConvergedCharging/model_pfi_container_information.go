@@ -54,7 +54,7 @@ func NewPFIContainerInformationWithDefaults() *PFIContainerInformation {
 
 // GetPFI returns the PFI field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetPFI() string {
-	if o == nil || IsNil(o.PFI) {
+	if o == nil || isNil(o.PFI) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *PFIContainerInformation) GetPFI() string {
 // GetPFIOk returns a tuple with the PFI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetPFIOk() (*string, bool) {
-	if o == nil || IsNil(o.PFI) {
+	if o == nil || isNil(o.PFI) {
 		return nil, false
 	}
 	return o.PFI, true
@@ -72,7 +72,7 @@ func (o *PFIContainerInformation) GetPFIOk() (*string, bool) {
 
 // HasPFI returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasPFI() bool {
-	if o != nil && !IsNil(o.PFI) {
+	if o != nil && !isNil(o.PFI) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *PFIContainerInformation) SetPFI(v string) {
 
 // GetReportTime returns the ReportTime field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetReportTime() time.Time {
-	if o == nil || IsNil(o.ReportTime) {
+	if o == nil || isNil(o.ReportTime) {
 		var ret time.Time
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *PFIContainerInformation) GetReportTime() time.Time {
 // GetReportTimeOk returns a tuple with the ReportTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetReportTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ReportTime) {
+	if o == nil || isNil(o.ReportTime) {
 		return nil, false
 	}
 	return o.ReportTime, true
@@ -104,7 +104,7 @@ func (o *PFIContainerInformation) GetReportTimeOk() (*time.Time, bool) {
 
 // HasReportTime returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasReportTime() bool {
-	if o != nil && !IsNil(o.ReportTime) {
+	if o != nil && !isNil(o.ReportTime) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *PFIContainerInformation) SetReportTime(v time.Time) {
 
 // GetTimeofFirstUsage returns the TimeofFirstUsage field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetTimeofFirstUsage() time.Time {
-	if o == nil || IsNil(o.TimeofFirstUsage) {
+	if o == nil || isNil(o.TimeofFirstUsage) {
 		var ret time.Time
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *PFIContainerInformation) GetTimeofFirstUsage() time.Time {
 // GetTimeofFirstUsageOk returns a tuple with the TimeofFirstUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetTimeofFirstUsageOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeofFirstUsage) {
+	if o == nil || isNil(o.TimeofFirstUsage) {
 		return nil, false
 	}
 	return o.TimeofFirstUsage, true
@@ -136,7 +136,7 @@ func (o *PFIContainerInformation) GetTimeofFirstUsageOk() (*time.Time, bool) {
 
 // HasTimeofFirstUsage returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasTimeofFirstUsage() bool {
-	if o != nil && !IsNil(o.TimeofFirstUsage) {
+	if o != nil && !isNil(o.TimeofFirstUsage) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *PFIContainerInformation) SetTimeofFirstUsage(v time.Time) {
 
 // GetTimeofLastUsage returns the TimeofLastUsage field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetTimeofLastUsage() time.Time {
-	if o == nil || IsNil(o.TimeofLastUsage) {
+	if o == nil || isNil(o.TimeofLastUsage) {
 		var ret time.Time
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *PFIContainerInformation) GetTimeofLastUsage() time.Time {
 // GetTimeofLastUsageOk returns a tuple with the TimeofLastUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetTimeofLastUsageOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeofLastUsage) {
+	if o == nil || isNil(o.TimeofLastUsage) {
 		return nil, false
 	}
 	return o.TimeofLastUsage, true
@@ -168,7 +168,7 @@ func (o *PFIContainerInformation) GetTimeofLastUsageOk() (*time.Time, bool) {
 
 // HasTimeofLastUsage returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasTimeofLastUsage() bool {
-	if o != nil && !IsNil(o.TimeofLastUsage) {
+	if o != nil && !isNil(o.TimeofLastUsage) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *PFIContainerInformation) SetTimeofLastUsage(v time.Time) {
 
 // GetQoSInformation returns the QoSInformation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PFIContainerInformation) GetQoSInformation() QosData {
-	if o == nil || IsNil(o.QoSInformation.Get()) {
+	if o == nil || isNil(o.QoSInformation.Get()) {
 		var ret QosData
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *PFIContainerInformation) UnsetQoSInformation() {
 
 // GetQoSCharacteristics returns the QoSCharacteristics field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetQoSCharacteristics() QosCharacteristics {
-	if o == nil || IsNil(o.QoSCharacteristics) {
+	if o == nil || isNil(o.QoSCharacteristics) {
 		var ret QosCharacteristics
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *PFIContainerInformation) GetQoSCharacteristics() QosCharacteristics {
 // GetQoSCharacteristicsOk returns a tuple with the QoSCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetQoSCharacteristicsOk() (*QosCharacteristics, bool) {
-	if o == nil || IsNil(o.QoSCharacteristics) {
+	if o == nil || isNil(o.QoSCharacteristics) {
 		return nil, false
 	}
 	return o.QoSCharacteristics, true
@@ -242,7 +242,7 @@ func (o *PFIContainerInformation) GetQoSCharacteristicsOk() (*QosCharacteristics
 
 // HasQoSCharacteristics returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasQoSCharacteristics() bool {
-	if o != nil && !IsNil(o.QoSCharacteristics) {
+	if o != nil && !isNil(o.QoSCharacteristics) {
 		return true
 	}
 
@@ -256,7 +256,7 @@ func (o *PFIContainerInformation) SetQoSCharacteristics(v QosCharacteristics) {
 
 // GetUserLocationInformation returns the UserLocationInformation field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetUserLocationInformation() UserLocation {
-	if o == nil || IsNil(o.UserLocationInformation) {
+	if o == nil || isNil(o.UserLocationInformation) {
 		var ret UserLocation
 		return ret
 	}
@@ -266,7 +266,7 @@ func (o *PFIContainerInformation) GetUserLocationInformation() UserLocation {
 // GetUserLocationInformationOk returns a tuple with the UserLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetUserLocationInformationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationInformation) {
+	if o == nil || isNil(o.UserLocationInformation) {
 		return nil, false
 	}
 	return o.UserLocationInformation, true
@@ -274,7 +274,7 @@ func (o *PFIContainerInformation) GetUserLocationInformationOk() (*UserLocation,
 
 // HasUserLocationInformation returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasUserLocationInformation() bool {
-	if o != nil && !IsNil(o.UserLocationInformation) {
+	if o != nil && !isNil(o.UserLocationInformation) {
 		return true
 	}
 
@@ -288,7 +288,7 @@ func (o *PFIContainerInformation) SetUserLocationInformation(v UserLocation) {
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -298,7 +298,7 @@ func (o *PFIContainerInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -306,7 +306,7 @@ func (o *PFIContainerInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -320,7 +320,7 @@ func (o *PFIContainerInformation) SetUetimeZone(v string) {
 
 // GetPresenceReportingAreaInformation returns the PresenceReportingAreaInformation field value if set, zero value otherwise.
 func (o *PFIContainerInformation) GetPresenceReportingAreaInformation() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -330,7 +330,7 @@ func (o *PFIContainerInformation) GetPresenceReportingAreaInformation() map[stri
 // GetPresenceReportingAreaInformationOk returns a tuple with the PresenceReportingAreaInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PFIContainerInformation) GetPresenceReportingAreaInformationOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		return nil, false
 	}
 	return o.PresenceReportingAreaInformation, true
@@ -338,7 +338,7 @@ func (o *PFIContainerInformation) GetPresenceReportingAreaInformationOk() (*map[
 
 // HasPresenceReportingAreaInformation returns a boolean if a field has been set.
 func (o *PFIContainerInformation) HasPresenceReportingAreaInformation() bool {
-	if o != nil && !IsNil(o.PresenceReportingAreaInformation) {
+	if o != nil && !isNil(o.PresenceReportingAreaInformation) {
 		return true
 	}
 
@@ -360,31 +360,31 @@ func (o PFIContainerInformation) MarshalJSON() ([]byte, error) {
 
 func (o PFIContainerInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PFI) {
+	if !isNil(o.PFI) {
 		toSerialize["pFI"] = o.PFI
 	}
-	if !IsNil(o.ReportTime) {
+	if !isNil(o.ReportTime) {
 		toSerialize["reportTime"] = o.ReportTime
 	}
-	if !IsNil(o.TimeofFirstUsage) {
+	if !isNil(o.TimeofFirstUsage) {
 		toSerialize["timeofFirstUsage"] = o.TimeofFirstUsage
 	}
-	if !IsNil(o.TimeofLastUsage) {
+	if !isNil(o.TimeofLastUsage) {
 		toSerialize["timeofLastUsage"] = o.TimeofLastUsage
 	}
 	if o.QoSInformation.IsSet() {
 		toSerialize["qoSInformation"] = o.QoSInformation.Get()
 	}
-	if !IsNil(o.QoSCharacteristics) {
+	if !isNil(o.QoSCharacteristics) {
 		toSerialize["qoSCharacteristics"] = o.QoSCharacteristics
 	}
-	if !IsNil(o.UserLocationInformation) {
+	if !isNil(o.UserLocationInformation) {
 		toSerialize["userLocationInformation"] = o.UserLocationInformation
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !IsNil(o.PresenceReportingAreaInformation) {
+	if !isNil(o.PresenceReportingAreaInformation) {
 		toSerialize["presenceReportingAreaInformation"] = o.PresenceReportingAreaInformation
 	}
 	return toSerialize, nil

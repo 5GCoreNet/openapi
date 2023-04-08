@@ -23,7 +23,7 @@ type SmsfFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *SmsfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -79,7 +79,7 @@ func (o *SmsfFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *SmsfFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -97,7 +97,7 @@ func (o *SmsfFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *SmsfFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *SmsfFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -129,7 +129,7 @@ func (o *SmsfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *SmsfFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *SmsfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -161,7 +161,7 @@ func (o *SmsfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bo
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -174,9 +174,9 @@ func (o *SmsfFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *SmsfFunctionSingle) GetAttributes() SmsfFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret SmsfFunctionSingleAllOfAttributes
+func (o *SmsfFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -184,8 +184,8 @@ func (o *SmsfFunctionSingle) GetAttributes() SmsfFunctionSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SmsfFunctionSingle) GetAttributesOk() (*SmsfFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *SmsfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -193,21 +193,21 @@ func (o *SmsfFunctionSingle) GetAttributesOk() (*SmsfFunctionSingleAllOfAttribut
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given SmsfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *SmsfFunctionSingle) SetAttributes(v SmsfFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *SmsfFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -217,7 +217,7 @@ func (o *SmsfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -225,7 +225,7 @@ func (o *SmsfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) 
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -239,7 +239,7 @@ func (o *SmsfFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -249,7 +249,7 @@ func (o *SmsfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -257,7 +257,7 @@ func (o *SmsfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, 
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *SmsfFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *SmsfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -289,7 +289,7 @@ func (o *SmsfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, 
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *SmsfFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *SmsfFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -321,7 +321,7 @@ func (o *SmsfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -335,7 +335,7 @@ func (o *SmsfFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN20 returns the EPN20 field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetEPN20() []EPN20Single {
-	if o == nil || IsNil(o.EPN20) {
+	if o == nil || isNil(o.EPN20) {
 		var ret []EPN20Single
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *SmsfFunctionSingle) GetEPN20() []EPN20Single {
 // GetEPN20Ok returns a tuple with the EPN20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetEPN20Ok() ([]EPN20Single, bool) {
-	if o == nil || IsNil(o.EPN20) {
+	if o == nil || isNil(o.EPN20) {
 		return nil, false
 	}
 	return o.EPN20, true
@@ -353,7 +353,7 @@ func (o *SmsfFunctionSingle) GetEPN20Ok() ([]EPN20Single, bool) {
 
 // HasEPN20 returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasEPN20() bool {
-	if o != nil && !IsNil(o.EPN20) {
+	if o != nil && !isNil(o.EPN20) {
 		return true
 	}
 
@@ -367,7 +367,7 @@ func (o *SmsfFunctionSingle) SetEPN20(v []EPN20Single) {
 
 // GetEPN21 returns the EPN21 field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetEPN21() []EPN21Single {
-	if o == nil || IsNil(o.EPN21) {
+	if o == nil || isNil(o.EPN21) {
 		var ret []EPN21Single
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *SmsfFunctionSingle) GetEPN21() []EPN21Single {
 // GetEPN21Ok returns a tuple with the EPN21 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetEPN21Ok() ([]EPN21Single, bool) {
-	if o == nil || IsNil(o.EPN21) {
+	if o == nil || isNil(o.EPN21) {
 		return nil, false
 	}
 	return o.EPN21, true
@@ -385,7 +385,7 @@ func (o *SmsfFunctionSingle) GetEPN21Ok() ([]EPN21Single, bool) {
 
 // HasEPN21 returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasEPN21() bool {
-	if o != nil && !IsNil(o.EPN21) {
+	if o != nil && !isNil(o.EPN21) {
 		return true
 	}
 
@@ -399,7 +399,7 @@ func (o *SmsfFunctionSingle) SetEPN21(v []EPN21Single) {
 
 // GetEP_MAP_SMSC returns the EP_MAP_SMSC field value if set, zero value otherwise.
 func (o *SmsfFunctionSingle) GetEP_MAP_SMSC() []EPMAPSMSCSingle {
-	if o == nil || IsNil(o.EP_MAP_SMSC) {
+	if o == nil || isNil(o.EP_MAP_SMSC) {
 		var ret []EPMAPSMSCSingle
 		return ret
 	}
@@ -409,7 +409,7 @@ func (o *SmsfFunctionSingle) GetEP_MAP_SMSC() []EPMAPSMSCSingle {
 // GetEP_MAP_SMSCOk returns a tuple with the EP_MAP_SMSC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfFunctionSingle) GetEP_MAP_SMSCOk() ([]EPMAPSMSCSingle, bool) {
-	if o == nil || IsNil(o.EP_MAP_SMSC) {
+	if o == nil || isNil(o.EP_MAP_SMSC) {
 		return nil, false
 	}
 	return o.EP_MAP_SMSC, true
@@ -417,7 +417,7 @@ func (o *SmsfFunctionSingle) GetEP_MAP_SMSCOk() ([]EPMAPSMSCSingle, bool) {
 
 // HasEP_MAP_SMSC returns a boolean if a field has been set.
 func (o *SmsfFunctionSingle) HasEP_MAP_SMSC() bool {
-	if o != nil && !IsNil(o.EP_MAP_SMSC) {
+	if o != nil && !isNil(o.EP_MAP_SMSC) {
 		return true
 	}
 
@@ -440,37 +440,37 @@ func (o SmsfFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o SmsfFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.EPN20) {
+	if !isNil(o.EPN20) {
 		toSerialize["EP_N20"] = o.EPN20
 	}
-	if !IsNil(o.EPN21) {
+	if !isNil(o.EPN21) {
 		toSerialize["EP_N21"] = o.EPN21
 	}
-	if !IsNil(o.EP_MAP_SMSC) {
+	if !isNil(o.EP_MAP_SMSC) {
 		toSerialize["EP_MAP_SMSC"] = o.EP_MAP_SMSC
 	}
 	return toSerialize, nil

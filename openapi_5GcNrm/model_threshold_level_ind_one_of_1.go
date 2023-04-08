@@ -41,7 +41,7 @@ func NewThresholdLevelIndOneOf1WithDefaults() *ThresholdLevelIndOneOf1 {
 
 // GetDown returns the Down field value if set, zero value otherwise.
 func (o *ThresholdLevelIndOneOf1) GetDown() ThresholdHysteresis {
-	if o == nil || IsNil(o.Down) {
+	if o == nil || isNil(o.Down) {
 		var ret ThresholdHysteresis
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ThresholdLevelIndOneOf1) GetDown() ThresholdHysteresis {
 // GetDownOk returns a tuple with the Down field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevelIndOneOf1) GetDownOk() (*ThresholdHysteresis, bool) {
-	if o == nil || IsNil(o.Down) {
+	if o == nil || isNil(o.Down) {
 		return nil, false
 	}
 	return o.Down, true
@@ -59,7 +59,7 @@ func (o *ThresholdLevelIndOneOf1) GetDownOk() (*ThresholdHysteresis, bool) {
 
 // HasDown returns a boolean if a field has been set.
 func (o *ThresholdLevelIndOneOf1) HasDown() bool {
-	if o != nil && !IsNil(o.Down) {
+	if o != nil && !isNil(o.Down) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ThresholdLevelIndOneOf1) MarshalJSON() ([]byte, error) {
 
 func (o ThresholdLevelIndOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Down) {
+	if !isNil(o.Down) {
 		toSerialize["down"] = o.Down
 	}
 	return toSerialize, nil

@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 
  - [CivicAddress](docs/CivicAddress.md)
  - [CongestionType](docs/CongestionType.md)
+ - [CongestionTypeAnyOf](docs/CongestionTypeAnyOf.md)
  - [EllipsoidArc](docs/EllipsoidArc.md)
  - [EllipsoidArcAllOf](docs/EllipsoidArcAllOf.md)
  - [GADShape](docs/GADShape.md)
@@ -123,6 +124,7 @@ Class | Method | HTTP request | Description
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)

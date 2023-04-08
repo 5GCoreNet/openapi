@@ -45,7 +45,7 @@ func NewVgmlcAddressWithDefaults() *VgmlcAddress {
 
 // GetVgmlcAddressIpv4 returns the VgmlcAddressIpv4 field value if set, zero value otherwise.
 func (o *VgmlcAddress) GetVgmlcAddressIpv4() string {
-	if o == nil || IsNil(o.VgmlcAddressIpv4) {
+	if o == nil || isNil(o.VgmlcAddressIpv4) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *VgmlcAddress) GetVgmlcAddressIpv4() string {
 // GetVgmlcAddressIpv4Ok returns a tuple with the VgmlcAddressIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VgmlcAddress) GetVgmlcAddressIpv4Ok() (*string, bool) {
-	if o == nil || IsNil(o.VgmlcAddressIpv4) {
+	if o == nil || isNil(o.VgmlcAddressIpv4) {
 		return nil, false
 	}
 	return o.VgmlcAddressIpv4, true
@@ -63,7 +63,7 @@ func (o *VgmlcAddress) GetVgmlcAddressIpv4Ok() (*string, bool) {
 
 // HasVgmlcAddressIpv4 returns a boolean if a field has been set.
 func (o *VgmlcAddress) HasVgmlcAddressIpv4() bool {
-	if o != nil && !IsNil(o.VgmlcAddressIpv4) {
+	if o != nil && !isNil(o.VgmlcAddressIpv4) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *VgmlcAddress) SetVgmlcAddressIpv4(v string) {
 
 // GetVgmlcAddressIpv6 returns the VgmlcAddressIpv6 field value if set, zero value otherwise.
 func (o *VgmlcAddress) GetVgmlcAddressIpv6() Ipv6Addr {
-	if o == nil || IsNil(o.VgmlcAddressIpv6) {
+	if o == nil || isNil(o.VgmlcAddressIpv6) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *VgmlcAddress) GetVgmlcAddressIpv6() Ipv6Addr {
 // GetVgmlcAddressIpv6Ok returns a tuple with the VgmlcAddressIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VgmlcAddress) GetVgmlcAddressIpv6Ok() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.VgmlcAddressIpv6) {
+	if o == nil || isNil(o.VgmlcAddressIpv6) {
 		return nil, false
 	}
 	return o.VgmlcAddressIpv6, true
@@ -95,7 +95,7 @@ func (o *VgmlcAddress) GetVgmlcAddressIpv6Ok() (*Ipv6Addr, bool) {
 
 // HasVgmlcAddressIpv6 returns a boolean if a field has been set.
 func (o *VgmlcAddress) HasVgmlcAddressIpv6() bool {
-	if o != nil && !IsNil(o.VgmlcAddressIpv6) {
+	if o != nil && !isNil(o.VgmlcAddressIpv6) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *VgmlcAddress) SetVgmlcAddressIpv6(v Ipv6Addr) {
 
 // GetVgmlcFqdn returns the VgmlcFqdn field value if set, zero value otherwise.
 func (o *VgmlcAddress) GetVgmlcFqdn() string {
-	if o == nil || IsNil(o.VgmlcFqdn) {
+	if o == nil || isNil(o.VgmlcFqdn) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *VgmlcAddress) GetVgmlcFqdn() string {
 // GetVgmlcFqdnOk returns a tuple with the VgmlcFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VgmlcAddress) GetVgmlcFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.VgmlcFqdn) {
+	if o == nil || isNil(o.VgmlcFqdn) {
 		return nil, false
 	}
 	return o.VgmlcFqdn, true
@@ -127,7 +127,7 @@ func (o *VgmlcAddress) GetVgmlcFqdnOk() (*string, bool) {
 
 // HasVgmlcFqdn returns a boolean if a field has been set.
 func (o *VgmlcAddress) HasVgmlcFqdn() bool {
-	if o != nil && !IsNil(o.VgmlcFqdn) {
+	if o != nil && !isNil(o.VgmlcFqdn) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o VgmlcAddress) MarshalJSON() ([]byte, error) {
 
 func (o VgmlcAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.VgmlcAddressIpv4) {
+	if !isNil(o.VgmlcAddressIpv4) {
 		toSerialize["vgmlcAddressIpv4"] = o.VgmlcAddressIpv4
 	}
-	if !IsNil(o.VgmlcAddressIpv6) {
+	if !isNil(o.VgmlcAddressIpv6) {
 		toSerialize["vgmlcAddressIpv6"] = o.VgmlcAddressIpv6
 	}
-	if !IsNil(o.VgmlcFqdn) {
+	if !isNil(o.VgmlcFqdn) {
 		toSerialize["vgmlcFqdn"] = o.VgmlcFqdn
 	}
 	return toSerialize, nil

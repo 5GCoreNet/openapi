@@ -55,7 +55,7 @@ func NewScpInfoWithDefaults() *ScpInfo {
 
 // GetScpDomainInfoList returns the ScpDomainInfoList field value if set, zero value otherwise.
 func (o *ScpInfo) GetScpDomainInfoList() map[string]ScpDomainInfo {
-	if o == nil || IsNil(o.ScpDomainInfoList) {
+	if o == nil || isNil(o.ScpDomainInfoList) {
 		var ret map[string]ScpDomainInfo
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *ScpInfo) GetScpDomainInfoList() map[string]ScpDomainInfo {
 // GetScpDomainInfoListOk returns a tuple with the ScpDomainInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetScpDomainInfoListOk() (*map[string]ScpDomainInfo, bool) {
-	if o == nil || IsNil(o.ScpDomainInfoList) {
+	if o == nil || isNil(o.ScpDomainInfoList) {
 		return nil, false
 	}
 	return o.ScpDomainInfoList, true
@@ -73,7 +73,7 @@ func (o *ScpInfo) GetScpDomainInfoListOk() (*map[string]ScpDomainInfo, bool) {
 
 // HasScpDomainInfoList returns a boolean if a field has been set.
 func (o *ScpInfo) HasScpDomainInfoList() bool {
-	if o != nil && !IsNil(o.ScpDomainInfoList) {
+	if o != nil && !isNil(o.ScpDomainInfoList) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *ScpInfo) SetScpDomainInfoList(v map[string]ScpDomainInfo) {
 
 // GetScpPrefix returns the ScpPrefix field value if set, zero value otherwise.
 func (o *ScpInfo) GetScpPrefix() string {
-	if o == nil || IsNil(o.ScpPrefix) {
+	if o == nil || isNil(o.ScpPrefix) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *ScpInfo) GetScpPrefix() string {
 // GetScpPrefixOk returns a tuple with the ScpPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetScpPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.ScpPrefix) {
+	if o == nil || isNil(o.ScpPrefix) {
 		return nil, false
 	}
 	return o.ScpPrefix, true
@@ -105,7 +105,7 @@ func (o *ScpInfo) GetScpPrefixOk() (*string, bool) {
 
 // HasScpPrefix returns a boolean if a field has been set.
 func (o *ScpInfo) HasScpPrefix() bool {
-	if o != nil && !IsNil(o.ScpPrefix) {
+	if o != nil && !isNil(o.ScpPrefix) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *ScpInfo) SetScpPrefix(v string) {
 
 // GetScpPorts returns the ScpPorts field value if set, zero value otherwise.
 func (o *ScpInfo) GetScpPorts() map[string]int32 {
-	if o == nil || IsNil(o.ScpPorts) {
+	if o == nil || isNil(o.ScpPorts) {
 		var ret map[string]int32
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *ScpInfo) GetScpPorts() map[string]int32 {
 // GetScpPortsOk returns a tuple with the ScpPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetScpPortsOk() (*map[string]int32, bool) {
-	if o == nil || IsNil(o.ScpPorts) {
+	if o == nil || isNil(o.ScpPorts) {
 		return nil, false
 	}
 	return o.ScpPorts, true
@@ -137,7 +137,7 @@ func (o *ScpInfo) GetScpPortsOk() (*map[string]int32, bool) {
 
 // HasScpPorts returns a boolean if a field has been set.
 func (o *ScpInfo) HasScpPorts() bool {
-	if o != nil && !IsNil(o.ScpPorts) {
+	if o != nil && !isNil(o.ScpPorts) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ScpInfo) SetScpPorts(v map[string]int32) {
 
 // GetAddressDomains returns the AddressDomains field value if set, zero value otherwise.
 func (o *ScpInfo) GetAddressDomains() []string {
-	if o == nil || IsNil(o.AddressDomains) {
+	if o == nil || isNil(o.AddressDomains) {
 		var ret []string
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *ScpInfo) GetAddressDomains() []string {
 // GetAddressDomainsOk returns a tuple with the AddressDomains field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetAddressDomainsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AddressDomains) {
+	if o == nil || isNil(o.AddressDomains) {
 		return nil, false
 	}
 	return o.AddressDomains, true
@@ -169,7 +169,7 @@ func (o *ScpInfo) GetAddressDomainsOk() ([]string, bool) {
 
 // HasAddressDomains returns a boolean if a field has been set.
 func (o *ScpInfo) HasAddressDomains() bool {
-	if o != nil && !IsNil(o.AddressDomains) {
+	if o != nil && !isNil(o.AddressDomains) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *ScpInfo) SetAddressDomains(v []string) {
 
 // GetIpv4Addresses returns the Ipv4Addresses field value if set, zero value otherwise.
 func (o *ScpInfo) GetIpv4Addresses() []string {
-	if o == nil || IsNil(o.Ipv4Addresses) {
+	if o == nil || isNil(o.Ipv4Addresses) {
 		var ret []string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *ScpInfo) GetIpv4Addresses() []string {
 // GetIpv4AddressesOk returns a tuple with the Ipv4Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetIpv4AddressesOk() ([]string, bool) {
-	if o == nil || IsNil(o.Ipv4Addresses) {
+	if o == nil || isNil(o.Ipv4Addresses) {
 		return nil, false
 	}
 	return o.Ipv4Addresses, true
@@ -201,7 +201,7 @@ func (o *ScpInfo) GetIpv4AddressesOk() ([]string, bool) {
 
 // HasIpv4Addresses returns a boolean if a field has been set.
 func (o *ScpInfo) HasIpv4Addresses() bool {
-	if o != nil && !IsNil(o.Ipv4Addresses) {
+	if o != nil && !isNil(o.Ipv4Addresses) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *ScpInfo) SetIpv4Addresses(v []string) {
 
 // GetIpv6Prefixes returns the Ipv6Prefixes field value if set, zero value otherwise.
 func (o *ScpInfo) GetIpv6Prefixes() []Ipv6Prefix1 {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		var ret []Ipv6Prefix1
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *ScpInfo) GetIpv6Prefixes() []Ipv6Prefix1 {
 // GetIpv6PrefixesOk returns a tuple with the Ipv6Prefixes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetIpv6PrefixesOk() ([]Ipv6Prefix1, bool) {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		return nil, false
 	}
 	return o.Ipv6Prefixes, true
@@ -233,7 +233,7 @@ func (o *ScpInfo) GetIpv6PrefixesOk() ([]Ipv6Prefix1, bool) {
 
 // HasIpv6Prefixes returns a boolean if a field has been set.
 func (o *ScpInfo) HasIpv6Prefixes() bool {
-	if o != nil && !IsNil(o.Ipv6Prefixes) {
+	if o != nil && !isNil(o.Ipv6Prefixes) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *ScpInfo) SetIpv6Prefixes(v []Ipv6Prefix1) {
 
 // GetIpv4AddrRanges returns the Ipv4AddrRanges field value if set, zero value otherwise.
 func (o *ScpInfo) GetIpv4AddrRanges() []Ipv4AddressRange {
-	if o == nil || IsNil(o.Ipv4AddrRanges) {
+	if o == nil || isNil(o.Ipv4AddrRanges) {
 		var ret []Ipv4AddressRange
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *ScpInfo) GetIpv4AddrRanges() []Ipv4AddressRange {
 // GetIpv4AddrRangesOk returns a tuple with the Ipv4AddrRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetIpv4AddrRangesOk() ([]Ipv4AddressRange, bool) {
-	if o == nil || IsNil(o.Ipv4AddrRanges) {
+	if o == nil || isNil(o.Ipv4AddrRanges) {
 		return nil, false
 	}
 	return o.Ipv4AddrRanges, true
@@ -265,7 +265,7 @@ func (o *ScpInfo) GetIpv4AddrRangesOk() ([]Ipv4AddressRange, bool) {
 
 // HasIpv4AddrRanges returns a boolean if a field has been set.
 func (o *ScpInfo) HasIpv4AddrRanges() bool {
-	if o != nil && !IsNil(o.Ipv4AddrRanges) {
+	if o != nil && !isNil(o.Ipv4AddrRanges) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *ScpInfo) SetIpv4AddrRanges(v []Ipv4AddressRange) {
 
 // GetIpv6PrefixRanges returns the Ipv6PrefixRanges field value if set, zero value otherwise.
 func (o *ScpInfo) GetIpv6PrefixRanges() []Ipv6PrefixRange {
-	if o == nil || IsNil(o.Ipv6PrefixRanges) {
+	if o == nil || isNil(o.Ipv6PrefixRanges) {
 		var ret []Ipv6PrefixRange
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *ScpInfo) GetIpv6PrefixRanges() []Ipv6PrefixRange {
 // GetIpv6PrefixRangesOk returns a tuple with the Ipv6PrefixRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
-	if o == nil || IsNil(o.Ipv6PrefixRanges) {
+	if o == nil || isNil(o.Ipv6PrefixRanges) {
 		return nil, false
 	}
 	return o.Ipv6PrefixRanges, true
@@ -297,7 +297,7 @@ func (o *ScpInfo) GetIpv6PrefixRangesOk() ([]Ipv6PrefixRange, bool) {
 
 // HasIpv6PrefixRanges returns a boolean if a field has been set.
 func (o *ScpInfo) HasIpv6PrefixRanges() bool {
-	if o != nil && !IsNil(o.Ipv6PrefixRanges) {
+	if o != nil && !isNil(o.Ipv6PrefixRanges) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *ScpInfo) SetIpv6PrefixRanges(v []Ipv6PrefixRange) {
 
 // GetServedNfSetIdList returns the ServedNfSetIdList field value if set, zero value otherwise.
 func (o *ScpInfo) GetServedNfSetIdList() []string {
-	if o == nil || IsNil(o.ServedNfSetIdList) {
+	if o == nil || isNil(o.ServedNfSetIdList) {
 		var ret []string
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *ScpInfo) GetServedNfSetIdList() []string {
 // GetServedNfSetIdListOk returns a tuple with the ServedNfSetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetServedNfSetIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServedNfSetIdList) {
+	if o == nil || isNil(o.ServedNfSetIdList) {
 		return nil, false
 	}
 	return o.ServedNfSetIdList, true
@@ -329,7 +329,7 @@ func (o *ScpInfo) GetServedNfSetIdListOk() ([]string, bool) {
 
 // HasServedNfSetIdList returns a boolean if a field has been set.
 func (o *ScpInfo) HasServedNfSetIdList() bool {
-	if o != nil && !IsNil(o.ServedNfSetIdList) {
+	if o != nil && !isNil(o.ServedNfSetIdList) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *ScpInfo) SetServedNfSetIdList(v []string) {
 
 // GetRemotePlmnList returns the RemotePlmnList field value if set, zero value otherwise.
 func (o *ScpInfo) GetRemotePlmnList() []PlmnId2 {
-	if o == nil || IsNil(o.RemotePlmnList) {
+	if o == nil || isNil(o.RemotePlmnList) {
 		var ret []PlmnId2
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *ScpInfo) GetRemotePlmnList() []PlmnId2 {
 // GetRemotePlmnListOk returns a tuple with the RemotePlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetRemotePlmnListOk() ([]PlmnId2, bool) {
-	if o == nil || IsNil(o.RemotePlmnList) {
+	if o == nil || isNil(o.RemotePlmnList) {
 		return nil, false
 	}
 	return o.RemotePlmnList, true
@@ -361,7 +361,7 @@ func (o *ScpInfo) GetRemotePlmnListOk() ([]PlmnId2, bool) {
 
 // HasRemotePlmnList returns a boolean if a field has been set.
 func (o *ScpInfo) HasRemotePlmnList() bool {
-	if o != nil && !IsNil(o.RemotePlmnList) {
+	if o != nil && !isNil(o.RemotePlmnList) {
 		return true
 	}
 
@@ -375,7 +375,7 @@ func (o *ScpInfo) SetRemotePlmnList(v []PlmnId2) {
 
 // GetRemoteSnpnList returns the RemoteSnpnList field value if set, zero value otherwise.
 func (o *ScpInfo) GetRemoteSnpnList() []PlmnIdNid {
-	if o == nil || IsNil(o.RemoteSnpnList) {
+	if o == nil || isNil(o.RemoteSnpnList) {
 		var ret []PlmnIdNid
 		return ret
 	}
@@ -385,7 +385,7 @@ func (o *ScpInfo) GetRemoteSnpnList() []PlmnIdNid {
 // GetRemoteSnpnListOk returns a tuple with the RemoteSnpnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetRemoteSnpnListOk() ([]PlmnIdNid, bool) {
-	if o == nil || IsNil(o.RemoteSnpnList) {
+	if o == nil || isNil(o.RemoteSnpnList) {
 		return nil, false
 	}
 	return o.RemoteSnpnList, true
@@ -393,7 +393,7 @@ func (o *ScpInfo) GetRemoteSnpnListOk() ([]PlmnIdNid, bool) {
 
 // HasRemoteSnpnList returns a boolean if a field has been set.
 func (o *ScpInfo) HasRemoteSnpnList() bool {
-	if o != nil && !IsNil(o.RemoteSnpnList) {
+	if o != nil && !isNil(o.RemoteSnpnList) {
 		return true
 	}
 
@@ -407,7 +407,7 @@ func (o *ScpInfo) SetRemoteSnpnList(v []PlmnIdNid) {
 
 // GetIpReachability returns the IpReachability field value if set, zero value otherwise.
 func (o *ScpInfo) GetIpReachability() IpReachability {
-	if o == nil || IsNil(o.IpReachability) {
+	if o == nil || isNil(o.IpReachability) {
 		var ret IpReachability
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *ScpInfo) GetIpReachability() IpReachability {
 // GetIpReachabilityOk returns a tuple with the IpReachability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetIpReachabilityOk() (*IpReachability, bool) {
-	if o == nil || IsNil(o.IpReachability) {
+	if o == nil || isNil(o.IpReachability) {
 		return nil, false
 	}
 	return o.IpReachability, true
@@ -425,7 +425,7 @@ func (o *ScpInfo) GetIpReachabilityOk() (*IpReachability, bool) {
 
 // HasIpReachability returns a boolean if a field has been set.
 func (o *ScpInfo) HasIpReachability() bool {
-	if o != nil && !IsNil(o.IpReachability) {
+	if o != nil && !isNil(o.IpReachability) {
 		return true
 	}
 
@@ -439,7 +439,7 @@ func (o *ScpInfo) SetIpReachability(v IpReachability) {
 
 // GetScpCapabilities returns the ScpCapabilities field value if set, zero value otherwise.
 func (o *ScpInfo) GetScpCapabilities() []ScpCapability {
-	if o == nil || IsNil(o.ScpCapabilities) {
+	if o == nil || isNil(o.ScpCapabilities) {
 		var ret []ScpCapability
 		return ret
 	}
@@ -449,7 +449,7 @@ func (o *ScpInfo) GetScpCapabilities() []ScpCapability {
 // GetScpCapabilitiesOk returns a tuple with the ScpCapabilities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpInfo) GetScpCapabilitiesOk() ([]ScpCapability, bool) {
-	if o == nil || IsNil(o.ScpCapabilities) {
+	if o == nil || isNil(o.ScpCapabilities) {
 		return nil, false
 	}
 	return o.ScpCapabilities, true
@@ -457,7 +457,7 @@ func (o *ScpInfo) GetScpCapabilitiesOk() ([]ScpCapability, bool) {
 
 // HasScpCapabilities returns a boolean if a field has been set.
 func (o *ScpInfo) HasScpCapabilities() bool {
-	if o != nil && !IsNil(o.ScpCapabilities) {
+	if o != nil && !isNil(o.ScpCapabilities) {
 		return true
 	}
 
@@ -479,43 +479,43 @@ func (o ScpInfo) MarshalJSON() ([]byte, error) {
 
 func (o ScpInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ScpDomainInfoList) {
+	if !isNil(o.ScpDomainInfoList) {
 		toSerialize["scpDomainInfoList"] = o.ScpDomainInfoList
 	}
-	if !IsNil(o.ScpPrefix) {
+	if !isNil(o.ScpPrefix) {
 		toSerialize["scpPrefix"] = o.ScpPrefix
 	}
-	if !IsNil(o.ScpPorts) {
+	if !isNil(o.ScpPorts) {
 		toSerialize["scpPorts"] = o.ScpPorts
 	}
-	if !IsNil(o.AddressDomains) {
+	if !isNil(o.AddressDomains) {
 		toSerialize["addressDomains"] = o.AddressDomains
 	}
-	if !IsNil(o.Ipv4Addresses) {
+	if !isNil(o.Ipv4Addresses) {
 		toSerialize["ipv4Addresses"] = o.Ipv4Addresses
 	}
-	if !IsNil(o.Ipv6Prefixes) {
+	if !isNil(o.Ipv6Prefixes) {
 		toSerialize["ipv6Prefixes"] = o.Ipv6Prefixes
 	}
-	if !IsNil(o.Ipv4AddrRanges) {
+	if !isNil(o.Ipv4AddrRanges) {
 		toSerialize["ipv4AddrRanges"] = o.Ipv4AddrRanges
 	}
-	if !IsNil(o.Ipv6PrefixRanges) {
+	if !isNil(o.Ipv6PrefixRanges) {
 		toSerialize["ipv6PrefixRanges"] = o.Ipv6PrefixRanges
 	}
-	if !IsNil(o.ServedNfSetIdList) {
+	if !isNil(o.ServedNfSetIdList) {
 		toSerialize["servedNfSetIdList"] = o.ServedNfSetIdList
 	}
-	if !IsNil(o.RemotePlmnList) {
+	if !isNil(o.RemotePlmnList) {
 		toSerialize["remotePlmnList"] = o.RemotePlmnList
 	}
-	if !IsNil(o.RemoteSnpnList) {
+	if !isNil(o.RemoteSnpnList) {
 		toSerialize["remoteSnpnList"] = o.RemoteSnpnList
 	}
-	if !IsNil(o.IpReachability) {
+	if !isNil(o.IpReachability) {
 		toSerialize["ipReachability"] = o.IpReachability
 	}
-	if !IsNil(o.ScpCapabilities) {
+	if !isNil(o.ScpCapabilities) {
 		toSerialize["scpCapabilities"] = o.ScpCapabilities
 	}
 	return toSerialize, nil

@@ -12,7 +12,6 @@ package openapi_FileDataReportingMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyFileReady type satisfies the MappedNullable interface at compile time
@@ -173,7 +172,7 @@ func (o *NotifyFileReady) SetSystemDN(v string) {
 
 // GetFileInfoList returns the FileInfoList field value if set, zero value otherwise.
 func (o *NotifyFileReady) GetFileInfoList() []FileInfo {
-	if o == nil || IsNil(o.FileInfoList) {
+	if o == nil || isNil(o.FileInfoList) {
 		var ret []FileInfo
 		return ret
 	}
@@ -183,7 +182,7 @@ func (o *NotifyFileReady) GetFileInfoList() []FileInfo {
 // GetFileInfoListOk returns a tuple with the FileInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFileReady) GetFileInfoListOk() ([]FileInfo, bool) {
-	if o == nil || IsNil(o.FileInfoList) {
+	if o == nil || isNil(o.FileInfoList) {
 		return nil, false
 	}
 	return o.FileInfoList, true
@@ -191,7 +190,7 @@ func (o *NotifyFileReady) GetFileInfoListOk() ([]FileInfo, bool) {
 
 // HasFileInfoList returns a boolean if a field has been set.
 func (o *NotifyFileReady) HasFileInfoList() bool {
-	if o != nil && !IsNil(o.FileInfoList) {
+	if o != nil && !isNil(o.FileInfoList) {
 		return true
 	}
 
@@ -205,7 +204,7 @@ func (o *NotifyFileReady) SetFileInfoList(v []FileInfo) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyFileReady) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -215,7 +214,7 @@ func (o *NotifyFileReady) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFileReady) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -223,7 +222,7 @@ func (o *NotifyFileReady) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyFileReady) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -250,10 +249,10 @@ func (o NotifyFileReady) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
-	if !IsNil(o.FileInfoList) {
+	if !isNil(o.FileInfoList) {
 		toSerialize["fileInfoList"] = o.FileInfoList
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil

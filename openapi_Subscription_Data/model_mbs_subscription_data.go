@@ -46,7 +46,7 @@ func NewMbsSubscriptionDataWithDefaults() *MbsSubscriptionData {
 
 // GetMbsAllowed returns the MbsAllowed field value if set, zero value otherwise.
 func (o *MbsSubscriptionData) GetMbsAllowed() bool {
-	if o == nil || IsNil(o.MbsAllowed) {
+	if o == nil || isNil(o.MbsAllowed) {
 		var ret bool
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MbsSubscriptionData) GetMbsAllowed() bool {
 // GetMbsAllowedOk returns a tuple with the MbsAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSubscriptionData) GetMbsAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.MbsAllowed) {
+	if o == nil || isNil(o.MbsAllowed) {
 		return nil, false
 	}
 	return o.MbsAllowed, true
@@ -64,7 +64,7 @@ func (o *MbsSubscriptionData) GetMbsAllowedOk() (*bool, bool) {
 
 // HasMbsAllowed returns a boolean if a field has been set.
 func (o *MbsSubscriptionData) HasMbsAllowed() bool {
-	if o != nil && !IsNil(o.MbsAllowed) {
+	if o != nil && !isNil(o.MbsAllowed) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MbsSubscriptionData) SetMbsAllowed(v bool) {
 
 // GetMbsSessionIdList returns the MbsSessionIdList field value if set, zero value otherwise.
 func (o *MbsSubscriptionData) GetMbsSessionIdList() []MbsSessionId {
-	if o == nil || IsNil(o.MbsSessionIdList) {
+	if o == nil || isNil(o.MbsSessionIdList) {
 		var ret []MbsSessionId
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MbsSubscriptionData) GetMbsSessionIdList() []MbsSessionId {
 // GetMbsSessionIdListOk returns a tuple with the MbsSessionIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSubscriptionData) GetMbsSessionIdListOk() ([]MbsSessionId, bool) {
-	if o == nil || IsNil(o.MbsSessionIdList) {
+	if o == nil || isNil(o.MbsSessionIdList) {
 		return nil, false
 	}
 	return o.MbsSessionIdList, true
@@ -96,7 +96,7 @@ func (o *MbsSubscriptionData) GetMbsSessionIdListOk() ([]MbsSessionId, bool) {
 
 // HasMbsSessionIdList returns a boolean if a field has been set.
 func (o *MbsSubscriptionData) HasMbsSessionIdList() bool {
-	if o != nil && !IsNil(o.MbsSessionIdList) {
+	if o != nil && !isNil(o.MbsSessionIdList) {
 		return true
 	}
 
@@ -118,10 +118,10 @@ func (o MbsSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o MbsSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsAllowed) {
+	if !isNil(o.MbsAllowed) {
 		toSerialize["mbsAllowed"] = o.MbsAllowed
 	}
-	if !IsNil(o.MbsSessionIdList) {
+	if !isNil(o.MbsSessionIdList) {
 		toSerialize["mbsSessionIdList"] = o.MbsSessionIdList
 	}
 	return toSerialize, nil

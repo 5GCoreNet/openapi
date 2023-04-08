@@ -121,7 +121,7 @@ func (o *ProSeAuthenticationCtx) SetProSeAuthData(v ProSeAuthData) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeAuthenticationCtx) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *ProSeAuthenticationCtx) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationCtx) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -139,7 +139,7 @@ func (o *ProSeAuthenticationCtx) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeAuthenticationCtx) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o ProSeAuthenticationCtx) ToMap() (map[string]interface{}, error) {
 	toSerialize["authType"] = o.AuthType
 	toSerialize["_links"] = o.Links
 	toSerialize["proSeAuthData"] = o.ProSeAuthData
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

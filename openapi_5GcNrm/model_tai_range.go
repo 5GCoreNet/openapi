@@ -42,7 +42,7 @@ func NewTaiRangeWithDefaults() *TaiRange {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *TaiRange) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TaiRange) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaiRange) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -60,7 +60,7 @@ func (o *TaiRange) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *TaiRange) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TaiRange) SetPlmnId(v PlmnId) {
 
 // GetNRTACRangelist returns the NRTACRangelist field value if set, zero value otherwise.
 func (o *TaiRange) GetNRTACRangelist() []NRTACRange {
-	if o == nil || IsNil(o.NRTACRangelist) {
+	if o == nil || isNil(o.NRTACRangelist) {
 		var ret []NRTACRange
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TaiRange) GetNRTACRangelist() []NRTACRange {
 // GetNRTACRangelistOk returns a tuple with the NRTACRangelist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaiRange) GetNRTACRangelistOk() ([]NRTACRange, bool) {
-	if o == nil || IsNil(o.NRTACRangelist) {
+	if o == nil || isNil(o.NRTACRangelist) {
 		return nil, false
 	}
 	return o.NRTACRangelist, true
@@ -92,7 +92,7 @@ func (o *TaiRange) GetNRTACRangelistOk() ([]NRTACRange, bool) {
 
 // HasNRTACRangelist returns a boolean if a field has been set.
 func (o *TaiRange) HasNRTACRangelist() bool {
-	if o != nil && !IsNil(o.NRTACRangelist) {
+	if o != nil && !isNil(o.NRTACRangelist) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o TaiRange) MarshalJSON() ([]byte, error) {
 
 func (o TaiRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.NRTACRangelist) {
+	if !isNil(o.NRTACRangelist) {
 		toSerialize["nRTACRangelist"] = o.NRTACRangelist
 	}
 	return toSerialize, nil

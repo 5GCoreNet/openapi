@@ -81,7 +81,7 @@ func (o *EapSession) SetEapPayload(v string) {
 
 // GetKSeaf returns the KSeaf field value if set, zero value otherwise.
 func (o *EapSession) GetKSeaf() string {
-	if o == nil || IsNil(o.KSeaf) {
+	if o == nil || isNil(o.KSeaf) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *EapSession) GetKSeaf() string {
 // GetKSeafOk returns a tuple with the KSeaf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetKSeafOk() (*string, bool) {
-	if o == nil || IsNil(o.KSeaf) {
+	if o == nil || isNil(o.KSeaf) {
 		return nil, false
 	}
 	return o.KSeaf, true
@@ -99,7 +99,7 @@ func (o *EapSession) GetKSeafOk() (*string, bool) {
 
 // HasKSeaf returns a boolean if a field has been set.
 func (o *EapSession) HasKSeaf() bool {
-	if o != nil && !IsNil(o.KSeaf) {
+	if o != nil && !isNil(o.KSeaf) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *EapSession) SetKSeaf(v string) {
 
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *EapSession) GetLinks() map[string]LinksValueSchema {
-	if o == nil || IsNil(o.Links) {
+	if o == nil || isNil(o.Links) {
 		var ret map[string]LinksValueSchema
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *EapSession) GetLinks() map[string]LinksValueSchema {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetLinksOk() (*map[string]LinksValueSchema, bool) {
-	if o == nil || IsNil(o.Links) {
+	if o == nil || isNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -131,7 +131,7 @@ func (o *EapSession) GetLinksOk() (*map[string]LinksValueSchema, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *EapSession) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && !isNil(o.Links) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *EapSession) SetLinks(v map[string]LinksValueSchema) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *EapSession) GetAuthResult() AuthResult {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		var ret AuthResult
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *EapSession) GetAuthResult() AuthResult {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetAuthResultOk() (*AuthResult, bool) {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -163,7 +163,7 @@ func (o *EapSession) GetAuthResultOk() (*AuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *EapSession) HasAuthResult() bool {
-	if o != nil && !IsNil(o.AuthResult) {
+	if o != nil && !isNil(o.AuthResult) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *EapSession) SetAuthResult(v AuthResult) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *EapSession) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *EapSession) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -195,7 +195,7 @@ func (o *EapSession) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *EapSession) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *EapSession) SetSupi(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EapSession) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *EapSession) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -227,7 +227,7 @@ func (o *EapSession) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EapSession) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *EapSession) SetSupportedFeatures(v string) {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *EapSession) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *EapSession) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -259,7 +259,7 @@ func (o *EapSession) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *EapSession) HasPvsInfo() bool {
-	if o != nil && !IsNil(o.PvsInfo) {
+	if o != nil && !isNil(o.PvsInfo) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *EapSession) SetPvsInfo(v []ServerAddressingInfo) {
 
 // GetMsk returns the Msk field value if set, zero value otherwise.
 func (o *EapSession) GetMsk() string {
-	if o == nil || IsNil(o.Msk) {
+	if o == nil || isNil(o.Msk) {
 		var ret string
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *EapSession) GetMsk() string {
 // GetMskOk returns a tuple with the Msk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EapSession) GetMskOk() (*string, bool) {
-	if o == nil || IsNil(o.Msk) {
+	if o == nil || isNil(o.Msk) {
 		return nil, false
 	}
 	return o.Msk, true
@@ -291,7 +291,7 @@ func (o *EapSession) GetMskOk() (*string, bool) {
 
 // HasMsk returns a boolean if a field has been set.
 func (o *EapSession) HasMsk() bool {
-	if o != nil && !IsNil(o.Msk) {
+	if o != nil && !isNil(o.Msk) {
 		return true
 	}
 
@@ -314,25 +314,25 @@ func (o EapSession) MarshalJSON() ([]byte, error) {
 func (o EapSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eapPayload"] = o.EapPayload.Get()
-	if !IsNil(o.KSeaf) {
+	if !isNil(o.KSeaf) {
 		toSerialize["kSeaf"] = o.KSeaf
 	}
-	if !IsNil(o.Links) {
+	if !isNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
-	if !IsNil(o.AuthResult) {
+	if !isNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.PvsInfo) {
+	if !isNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
-	if !IsNil(o.Msk) {
+	if !isNil(o.Msk) {
 		toSerialize["msk"] = o.Msk
 	}
 	return toSerialize, nil

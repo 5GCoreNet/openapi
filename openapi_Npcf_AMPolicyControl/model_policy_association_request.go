@@ -111,7 +111,7 @@ func (o *PolicyAssociationRequest) SetNotificationUri(v string) {
 
 // GetAltNotifIpv4Addrs returns the AltNotifIpv4Addrs field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAltNotifIpv4Addrs() []string {
-	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
+	if o == nil || isNil(o.AltNotifIpv4Addrs) {
 		var ret []string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv4Addrs() []string {
 // GetAltNotifIpv4AddrsOk returns a tuple with the AltNotifIpv4Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAltNotifIpv4AddrsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AltNotifIpv4Addrs) {
+	if o == nil || isNil(o.AltNotifIpv4Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv4Addrs, true
@@ -129,7 +129,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv4AddrsOk() ([]string, bool) {
 
 // HasAltNotifIpv4Addrs returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAltNotifIpv4Addrs() bool {
-	if o != nil && !IsNil(o.AltNotifIpv4Addrs) {
+	if o != nil && !isNil(o.AltNotifIpv4Addrs) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PolicyAssociationRequest) SetAltNotifIpv4Addrs(v []string) {
 
 // GetAltNotifIpv6Addrs returns the AltNotifIpv6Addrs field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAltNotifIpv6Addrs() []Ipv6Addr {
-	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
+	if o == nil || isNil(o.AltNotifIpv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv6Addrs() []Ipv6Addr {
 // GetAltNotifIpv6AddrsOk returns a tuple with the AltNotifIpv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || IsNil(o.AltNotifIpv6Addrs) {
+	if o == nil || isNil(o.AltNotifIpv6Addrs) {
 		return nil, false
 	}
 	return o.AltNotifIpv6Addrs, true
@@ -161,7 +161,7 @@ func (o *PolicyAssociationRequest) GetAltNotifIpv6AddrsOk() ([]Ipv6Addr, bool) {
 
 // HasAltNotifIpv6Addrs returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAltNotifIpv6Addrs() bool {
-	if o != nil && !IsNil(o.AltNotifIpv6Addrs) {
+	if o != nil && !isNil(o.AltNotifIpv6Addrs) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *PolicyAssociationRequest) SetAltNotifIpv6Addrs(v []Ipv6Addr) {
 
 // GetAltNotifFqdns returns the AltNotifFqdns field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAltNotifFqdns() []string {
-	if o == nil || IsNil(o.AltNotifFqdns) {
+	if o == nil || isNil(o.AltNotifFqdns) {
 		var ret []string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *PolicyAssociationRequest) GetAltNotifFqdns() []string {
 // GetAltNotifFqdnsOk returns a tuple with the AltNotifFqdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAltNotifFqdnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AltNotifFqdns) {
+	if o == nil || isNil(o.AltNotifFqdns) {
 		return nil, false
 	}
 	return o.AltNotifFqdns, true
@@ -193,7 +193,7 @@ func (o *PolicyAssociationRequest) GetAltNotifFqdnsOk() ([]string, bool) {
 
 // HasAltNotifFqdns returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAltNotifFqdns() bool {
-	if o != nil && !IsNil(o.AltNotifFqdns) {
+	if o != nil && !isNil(o.AltNotifFqdns) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *PolicyAssociationRequest) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *PolicyAssociationRequest) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -249,7 +249,7 @@ func (o *PolicyAssociationRequest) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *PolicyAssociationRequest) SetGpsi(v string) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *PolicyAssociationRequest) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -281,7 +281,7 @@ func (o *PolicyAssociationRequest) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -295,7 +295,7 @@ func (o *PolicyAssociationRequest) SetAccessType(v AccessType) {
 
 // GetAccessTypes returns the AccessTypes field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAccessTypes() []AccessType {
-	if o == nil || IsNil(o.AccessTypes) {
+	if o == nil || isNil(o.AccessTypes) {
 		var ret []AccessType
 		return ret
 	}
@@ -305,7 +305,7 @@ func (o *PolicyAssociationRequest) GetAccessTypes() []AccessType {
 // GetAccessTypesOk returns a tuple with the AccessTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAccessTypesOk() ([]AccessType, bool) {
-	if o == nil || IsNil(o.AccessTypes) {
+	if o == nil || isNil(o.AccessTypes) {
 		return nil, false
 	}
 	return o.AccessTypes, true
@@ -313,7 +313,7 @@ func (o *PolicyAssociationRequest) GetAccessTypesOk() ([]AccessType, bool) {
 
 // HasAccessTypes returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAccessTypes() bool {
-	if o != nil && !IsNil(o.AccessTypes) {
+	if o != nil && !isNil(o.AccessTypes) {
 		return true
 	}
 
@@ -327,7 +327,7 @@ func (o *PolicyAssociationRequest) SetAccessTypes(v []AccessType) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *PolicyAssociationRequest) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -345,7 +345,7 @@ func (o *PolicyAssociationRequest) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -359,7 +359,7 @@ func (o *PolicyAssociationRequest) SetPei(v string) {
 
 // GetUserLoc returns the UserLoc field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetUserLoc() UserLocation {
-	if o == nil || IsNil(o.UserLoc) {
+	if o == nil || isNil(o.UserLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -369,7 +369,7 @@ func (o *PolicyAssociationRequest) GetUserLoc() UserLocation {
 // GetUserLocOk returns a tuple with the UserLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetUserLocOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLoc) {
+	if o == nil || isNil(o.UserLoc) {
 		return nil, false
 	}
 	return o.UserLoc, true
@@ -377,7 +377,7 @@ func (o *PolicyAssociationRequest) GetUserLocOk() (*UserLocation, bool) {
 
 // HasUserLoc returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasUserLoc() bool {
-	if o != nil && !IsNil(o.UserLoc) {
+	if o != nil && !isNil(o.UserLoc) {
 		return true
 	}
 
@@ -391,7 +391,7 @@ func (o *PolicyAssociationRequest) SetUserLoc(v UserLocation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetTimeZone() string {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -401,7 +401,7 @@ func (o *PolicyAssociationRequest) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -409,7 +409,7 @@ func (o *PolicyAssociationRequest) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasTimeZone() bool {
-	if o != nil && !IsNil(o.TimeZone) {
+	if o != nil && !isNil(o.TimeZone) {
 		return true
 	}
 
@@ -423,7 +423,7 @@ func (o *PolicyAssociationRequest) SetTimeZone(v string) {
 
 // GetServingPlmn returns the ServingPlmn field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetServingPlmn() PlmnIdNid {
-	if o == nil || IsNil(o.ServingPlmn) {
+	if o == nil || isNil(o.ServingPlmn) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -433,7 +433,7 @@ func (o *PolicyAssociationRequest) GetServingPlmn() PlmnIdNid {
 // GetServingPlmnOk returns a tuple with the ServingPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetServingPlmnOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ServingPlmn) {
+	if o == nil || isNil(o.ServingPlmn) {
 		return nil, false
 	}
 	return o.ServingPlmn, true
@@ -441,7 +441,7 @@ func (o *PolicyAssociationRequest) GetServingPlmnOk() (*PlmnIdNid, bool) {
 
 // HasServingPlmn returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasServingPlmn() bool {
-	if o != nil && !IsNil(o.ServingPlmn) {
+	if o != nil && !isNil(o.ServingPlmn) {
 		return true
 	}
 
@@ -455,7 +455,7 @@ func (o *PolicyAssociationRequest) SetServingPlmn(v PlmnIdNid) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -465,7 +465,7 @@ func (o *PolicyAssociationRequest) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -473,7 +473,7 @@ func (o *PolicyAssociationRequest) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -487,7 +487,7 @@ func (o *PolicyAssociationRequest) SetRatType(v RatType) {
 
 // GetRatTypes returns the RatTypes field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetRatTypes() []RatType {
-	if o == nil || IsNil(o.RatTypes) {
+	if o == nil || isNil(o.RatTypes) {
 		var ret []RatType
 		return ret
 	}
@@ -497,7 +497,7 @@ func (o *PolicyAssociationRequest) GetRatTypes() []RatType {
 // GetRatTypesOk returns a tuple with the RatTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetRatTypesOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RatTypes) {
+	if o == nil || isNil(o.RatTypes) {
 		return nil, false
 	}
 	return o.RatTypes, true
@@ -505,7 +505,7 @@ func (o *PolicyAssociationRequest) GetRatTypesOk() ([]RatType, bool) {
 
 // HasRatTypes returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasRatTypes() bool {
-	if o != nil && !IsNil(o.RatTypes) {
+	if o != nil && !isNil(o.RatTypes) {
 		return true
 	}
 
@@ -519,7 +519,7 @@ func (o *PolicyAssociationRequest) SetRatTypes(v []RatType) {
 
 // GetGroupIds returns the GroupIds field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetGroupIds() []string {
-	if o == nil || IsNil(o.GroupIds) {
+	if o == nil || isNil(o.GroupIds) {
 		var ret []string
 		return ret
 	}
@@ -529,7 +529,7 @@ func (o *PolicyAssociationRequest) GetGroupIds() []string {
 // GetGroupIdsOk returns a tuple with the GroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetGroupIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.GroupIds) {
+	if o == nil || isNil(o.GroupIds) {
 		return nil, false
 	}
 	return o.GroupIds, true
@@ -537,7 +537,7 @@ func (o *PolicyAssociationRequest) GetGroupIdsOk() ([]string, bool) {
 
 // HasGroupIds returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasGroupIds() bool {
-	if o != nil && !IsNil(o.GroupIds) {
+	if o != nil && !isNil(o.GroupIds) {
 		return true
 	}
 
@@ -551,7 +551,7 @@ func (o *PolicyAssociationRequest) SetGroupIds(v []string) {
 
 // GetServAreaRes returns the ServAreaRes field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetServAreaRes() ServiceAreaRestriction {
-	if o == nil || IsNil(o.ServAreaRes) {
+	if o == nil || isNil(o.ServAreaRes) {
 		var ret ServiceAreaRestriction
 		return ret
 	}
@@ -561,7 +561,7 @@ func (o *PolicyAssociationRequest) GetServAreaRes() ServiceAreaRestriction {
 // GetServAreaResOk returns a tuple with the ServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetServAreaResOk() (*ServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.ServAreaRes) {
+	if o == nil || isNil(o.ServAreaRes) {
 		return nil, false
 	}
 	return o.ServAreaRes, true
@@ -569,7 +569,7 @@ func (o *PolicyAssociationRequest) GetServAreaResOk() (*ServiceAreaRestriction, 
 
 // HasServAreaRes returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasServAreaRes() bool {
-	if o != nil && !IsNil(o.ServAreaRes) {
+	if o != nil && !isNil(o.ServAreaRes) {
 		return true
 	}
 
@@ -583,7 +583,7 @@ func (o *PolicyAssociationRequest) SetServAreaRes(v ServiceAreaRestriction) {
 
 // GetWlServAreaRes returns the WlServAreaRes field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetWlServAreaRes() WirelineServiceAreaRestriction {
-	if o == nil || IsNil(o.WlServAreaRes) {
+	if o == nil || isNil(o.WlServAreaRes) {
 		var ret WirelineServiceAreaRestriction
 		return ret
 	}
@@ -593,7 +593,7 @@ func (o *PolicyAssociationRequest) GetWlServAreaRes() WirelineServiceAreaRestric
 // GetWlServAreaResOk returns a tuple with the WlServAreaRes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetWlServAreaResOk() (*WirelineServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.WlServAreaRes) {
+	if o == nil || isNil(o.WlServAreaRes) {
 		return nil, false
 	}
 	return o.WlServAreaRes, true
@@ -601,7 +601,7 @@ func (o *PolicyAssociationRequest) GetWlServAreaResOk() (*WirelineServiceAreaRes
 
 // HasWlServAreaRes returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasWlServAreaRes() bool {
-	if o != nil && !IsNil(o.WlServAreaRes) {
+	if o != nil && !isNil(o.WlServAreaRes) {
 		return true
 	}
 
@@ -615,7 +615,7 @@ func (o *PolicyAssociationRequest) SetWlServAreaRes(v WirelineServiceAreaRestric
 
 // GetRfsp returns the Rfsp field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetRfsp() int32 {
-	if o == nil || IsNil(o.Rfsp) {
+	if o == nil || isNil(o.Rfsp) {
 		var ret int32
 		return ret
 	}
@@ -625,7 +625,7 @@ func (o *PolicyAssociationRequest) GetRfsp() int32 {
 // GetRfspOk returns a tuple with the Rfsp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetRfspOk() (*int32, bool) {
-	if o == nil || IsNil(o.Rfsp) {
+	if o == nil || isNil(o.Rfsp) {
 		return nil, false
 	}
 	return o.Rfsp, true
@@ -633,7 +633,7 @@ func (o *PolicyAssociationRequest) GetRfspOk() (*int32, bool) {
 
 // HasRfsp returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasRfsp() bool {
-	if o != nil && !IsNil(o.Rfsp) {
+	if o != nil && !isNil(o.Rfsp) {
 		return true
 	}
 
@@ -647,7 +647,7 @@ func (o *PolicyAssociationRequest) SetRfsp(v int32) {
 
 // GetUeAmbr returns the UeAmbr field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetUeAmbr() Ambr {
-	if o == nil || IsNil(o.UeAmbr) {
+	if o == nil || isNil(o.UeAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -657,7 +657,7 @@ func (o *PolicyAssociationRequest) GetUeAmbr() Ambr {
 // GetUeAmbrOk returns a tuple with the UeAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetUeAmbrOk() (*Ambr, bool) {
-	if o == nil || IsNil(o.UeAmbr) {
+	if o == nil || isNil(o.UeAmbr) {
 		return nil, false
 	}
 	return o.UeAmbr, true
@@ -665,7 +665,7 @@ func (o *PolicyAssociationRequest) GetUeAmbrOk() (*Ambr, bool) {
 
 // HasUeAmbr returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasUeAmbr() bool {
-	if o != nil && !IsNil(o.UeAmbr) {
+	if o != nil && !isNil(o.UeAmbr) {
 		return true
 	}
 
@@ -679,7 +679,7 @@ func (o *PolicyAssociationRequest) SetUeAmbr(v Ambr) {
 
 // GetUeSliceMbrs returns the UeSliceMbrs field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetUeSliceMbrs() []UeSliceMbr {
-	if o == nil || IsNil(o.UeSliceMbrs) {
+	if o == nil || isNil(o.UeSliceMbrs) {
 		var ret []UeSliceMbr
 		return ret
 	}
@@ -689,7 +689,7 @@ func (o *PolicyAssociationRequest) GetUeSliceMbrs() []UeSliceMbr {
 // GetUeSliceMbrsOk returns a tuple with the UeSliceMbrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
-	if o == nil || IsNil(o.UeSliceMbrs) {
+	if o == nil || isNil(o.UeSliceMbrs) {
 		return nil, false
 	}
 	return o.UeSliceMbrs, true
@@ -697,7 +697,7 @@ func (o *PolicyAssociationRequest) GetUeSliceMbrsOk() ([]UeSliceMbr, bool) {
 
 // HasUeSliceMbrs returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasUeSliceMbrs() bool {
-	if o != nil && !IsNil(o.UeSliceMbrs) {
+	if o != nil && !isNil(o.UeSliceMbrs) {
 		return true
 	}
 
@@ -711,7 +711,7 @@ func (o *PolicyAssociationRequest) SetUeSliceMbrs(v []UeSliceMbr) {
 
 // GetAllowedSnssais returns the AllowedSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetAllowedSnssais() []Snssai {
-	if o == nil || IsNil(o.AllowedSnssais) {
+	if o == nil || isNil(o.AllowedSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -721,7 +721,7 @@ func (o *PolicyAssociationRequest) GetAllowedSnssais() []Snssai {
 // GetAllowedSnssaisOk returns a tuple with the AllowedSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetAllowedSnssaisOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.AllowedSnssais) {
+	if o == nil || isNil(o.AllowedSnssais) {
 		return nil, false
 	}
 	return o.AllowedSnssais, true
@@ -729,7 +729,7 @@ func (o *PolicyAssociationRequest) GetAllowedSnssaisOk() ([]Snssai, bool) {
 
 // HasAllowedSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasAllowedSnssais() bool {
-	if o != nil && !IsNil(o.AllowedSnssais) {
+	if o != nil && !isNil(o.AllowedSnssais) {
 		return true
 	}
 
@@ -743,7 +743,7 @@ func (o *PolicyAssociationRequest) SetAllowedSnssais(v []Snssai) {
 
 // GetTargetSnssais returns the TargetSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetTargetSnssais() []Snssai {
-	if o == nil || IsNil(o.TargetSnssais) {
+	if o == nil || isNil(o.TargetSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -753,7 +753,7 @@ func (o *PolicyAssociationRequest) GetTargetSnssais() []Snssai {
 // GetTargetSnssaisOk returns a tuple with the TargetSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetTargetSnssaisOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.TargetSnssais) {
+	if o == nil || isNil(o.TargetSnssais) {
 		return nil, false
 	}
 	return o.TargetSnssais, true
@@ -761,7 +761,7 @@ func (o *PolicyAssociationRequest) GetTargetSnssaisOk() ([]Snssai, bool) {
 
 // HasTargetSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasTargetSnssais() bool {
-	if o != nil && !IsNil(o.TargetSnssais) {
+	if o != nil && !isNil(o.TargetSnssais) {
 		return true
 	}
 
@@ -775,7 +775,7 @@ func (o *PolicyAssociationRequest) SetTargetSnssais(v []Snssai) {
 
 // GetMappingSnssais returns the MappingSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetMappingSnssais() []MappingOfSnssai {
-	if o == nil || IsNil(o.MappingSnssais) {
+	if o == nil || isNil(o.MappingSnssais) {
 		var ret []MappingOfSnssai
 		return ret
 	}
@@ -785,7 +785,7 @@ func (o *PolicyAssociationRequest) GetMappingSnssais() []MappingOfSnssai {
 // GetMappingSnssaisOk returns a tuple with the MappingSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetMappingSnssaisOk() ([]MappingOfSnssai, bool) {
-	if o == nil || IsNil(o.MappingSnssais) {
+	if o == nil || isNil(o.MappingSnssais) {
 		return nil, false
 	}
 	return o.MappingSnssais, true
@@ -793,7 +793,7 @@ func (o *PolicyAssociationRequest) GetMappingSnssaisOk() ([]MappingOfSnssai, boo
 
 // HasMappingSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasMappingSnssais() bool {
-	if o != nil && !IsNil(o.MappingSnssais) {
+	if o != nil && !isNil(o.MappingSnssais) {
 		return true
 	}
 
@@ -807,7 +807,7 @@ func (o *PolicyAssociationRequest) SetMappingSnssais(v []MappingOfSnssai) {
 
 // GetN3gAllowedSnssais returns the N3gAllowedSnssais field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetN3gAllowedSnssais() []Snssai {
-	if o == nil || IsNil(o.N3gAllowedSnssais) {
+	if o == nil || isNil(o.N3gAllowedSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -817,7 +817,7 @@ func (o *PolicyAssociationRequest) GetN3gAllowedSnssais() []Snssai {
 // GetN3gAllowedSnssaisOk returns a tuple with the N3gAllowedSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetN3gAllowedSnssaisOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.N3gAllowedSnssais) {
+	if o == nil || isNil(o.N3gAllowedSnssais) {
 		return nil, false
 	}
 	return o.N3gAllowedSnssais, true
@@ -825,7 +825,7 @@ func (o *PolicyAssociationRequest) GetN3gAllowedSnssaisOk() ([]Snssai, bool) {
 
 // HasN3gAllowedSnssais returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasN3gAllowedSnssais() bool {
-	if o != nil && !IsNil(o.N3gAllowedSnssais) {
+	if o != nil && !isNil(o.N3gAllowedSnssais) {
 		return true
 	}
 
@@ -839,7 +839,7 @@ func (o *PolicyAssociationRequest) SetN3gAllowedSnssais(v []Snssai) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetGuami() Guami {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -849,7 +849,7 @@ func (o *PolicyAssociationRequest) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -857,7 +857,7 @@ func (o *PolicyAssociationRequest) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasGuami() bool {
-	if o != nil && !IsNil(o.Guami) {
+	if o != nil && !isNil(o.Guami) {
 		return true
 	}
 
@@ -871,7 +871,7 @@ func (o *PolicyAssociationRequest) SetGuami(v Guami) {
 
 // GetServiveName returns the ServiveName field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetServiveName() ServiceName {
-	if o == nil || IsNil(o.ServiveName) {
+	if o == nil || isNil(o.ServiveName) {
 		var ret ServiceName
 		return ret
 	}
@@ -881,7 +881,7 @@ func (o *PolicyAssociationRequest) GetServiveName() ServiceName {
 // GetServiveNameOk returns a tuple with the ServiveName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetServiveNameOk() (*ServiceName, bool) {
-	if o == nil || IsNil(o.ServiveName) {
+	if o == nil || isNil(o.ServiveName) {
 		return nil, false
 	}
 	return o.ServiveName, true
@@ -889,7 +889,7 @@ func (o *PolicyAssociationRequest) GetServiveNameOk() (*ServiceName, bool) {
 
 // HasServiveName returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasServiveName() bool {
-	if o != nil && !IsNil(o.ServiveName) {
+	if o != nil && !isNil(o.ServiveName) {
 		return true
 	}
 
@@ -903,7 +903,7 @@ func (o *PolicyAssociationRequest) SetServiveName(v ServiceName) {
 
 // GetTraceReq returns the TraceReq field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PolicyAssociationRequest) GetTraceReq() TraceData {
-	if o == nil || IsNil(o.TraceReq.Get()) {
+	if o == nil || isNil(o.TraceReq.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -945,7 +945,7 @@ func (o *PolicyAssociationRequest) UnsetTraceReq() {
 
 // GetNwdafDatas returns the NwdafDatas field value if set, zero value otherwise.
 func (o *PolicyAssociationRequest) GetNwdafDatas() []NwdafData {
-	if o == nil || IsNil(o.NwdafDatas) {
+	if o == nil || isNil(o.NwdafDatas) {
 		var ret []NwdafData
 		return ret
 	}
@@ -955,7 +955,7 @@ func (o *PolicyAssociationRequest) GetNwdafDatas() []NwdafData {
 // GetNwdafDatasOk returns a tuple with the NwdafDatas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PolicyAssociationRequest) GetNwdafDatasOk() ([]NwdafData, bool) {
-	if o == nil || IsNil(o.NwdafDatas) {
+	if o == nil || isNil(o.NwdafDatas) {
 		return nil, false
 	}
 	return o.NwdafDatas, true
@@ -963,7 +963,7 @@ func (o *PolicyAssociationRequest) GetNwdafDatasOk() ([]NwdafData, bool) {
 
 // HasNwdafDatas returns a boolean if a field has been set.
 func (o *PolicyAssociationRequest) HasNwdafDatas() bool {
-	if o != nil && !IsNil(o.NwdafDatas) {
+	if o != nil && !isNil(o.NwdafDatas) {
 		return true
 	}
 
@@ -1010,83 +1010,83 @@ func (o PolicyAssociationRequest) MarshalJSON() ([]byte, error) {
 func (o PolicyAssociationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationUri"] = o.NotificationUri
-	if !IsNil(o.AltNotifIpv4Addrs) {
+	if !isNil(o.AltNotifIpv4Addrs) {
 		toSerialize["altNotifIpv4Addrs"] = o.AltNotifIpv4Addrs
 	}
-	if !IsNil(o.AltNotifIpv6Addrs) {
+	if !isNil(o.AltNotifIpv6Addrs) {
 		toSerialize["altNotifIpv6Addrs"] = o.AltNotifIpv6Addrs
 	}
-	if !IsNil(o.AltNotifFqdns) {
+	if !isNil(o.AltNotifFqdns) {
 		toSerialize["altNotifFqdns"] = o.AltNotifFqdns
 	}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.AccessTypes) {
+	if !isNil(o.AccessTypes) {
 		toSerialize["accessTypes"] = o.AccessTypes
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.UserLoc) {
+	if !isNil(o.UserLoc) {
 		toSerialize["userLoc"] = o.UserLoc
 	}
-	if !IsNil(o.TimeZone) {
+	if !isNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !IsNil(o.ServingPlmn) {
+	if !isNil(o.ServingPlmn) {
 		toSerialize["servingPlmn"] = o.ServingPlmn
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.RatTypes) {
+	if !isNil(o.RatTypes) {
 		toSerialize["ratTypes"] = o.RatTypes
 	}
-	if !IsNil(o.GroupIds) {
+	if !isNil(o.GroupIds) {
 		toSerialize["groupIds"] = o.GroupIds
 	}
-	if !IsNil(o.ServAreaRes) {
+	if !isNil(o.ServAreaRes) {
 		toSerialize["servAreaRes"] = o.ServAreaRes
 	}
-	if !IsNil(o.WlServAreaRes) {
+	if !isNil(o.WlServAreaRes) {
 		toSerialize["wlServAreaRes"] = o.WlServAreaRes
 	}
-	if !IsNil(o.Rfsp) {
+	if !isNil(o.Rfsp) {
 		toSerialize["rfsp"] = o.Rfsp
 	}
-	if !IsNil(o.UeAmbr) {
+	if !isNil(o.UeAmbr) {
 		toSerialize["ueAmbr"] = o.UeAmbr
 	}
-	if !IsNil(o.UeSliceMbrs) {
+	if !isNil(o.UeSliceMbrs) {
 		toSerialize["ueSliceMbrs"] = o.UeSliceMbrs
 	}
-	if !IsNil(o.AllowedSnssais) {
+	if !isNil(o.AllowedSnssais) {
 		toSerialize["allowedSnssais"] = o.AllowedSnssais
 	}
-	if !IsNil(o.TargetSnssais) {
+	if !isNil(o.TargetSnssais) {
 		toSerialize["targetSnssais"] = o.TargetSnssais
 	}
-	if !IsNil(o.MappingSnssais) {
+	if !isNil(o.MappingSnssais) {
 		toSerialize["mappingSnssais"] = o.MappingSnssais
 	}
-	if !IsNil(o.N3gAllowedSnssais) {
+	if !isNil(o.N3gAllowedSnssais) {
 		toSerialize["n3gAllowedSnssais"] = o.N3gAllowedSnssais
 	}
-	if !IsNil(o.Guami) {
+	if !isNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
-	if !IsNil(o.ServiveName) {
+	if !isNil(o.ServiveName) {
 		toSerialize["serviveName"] = o.ServiveName
 	}
 	if o.TraceReq.IsSet() {
 		toSerialize["traceReq"] = o.TraceReq.Get()
 	}
-	if !IsNil(o.NwdafDatas) {
+	if !isNil(o.NwdafDatas) {
 		toSerialize["nwdafDatas"] = o.NwdafDatas
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

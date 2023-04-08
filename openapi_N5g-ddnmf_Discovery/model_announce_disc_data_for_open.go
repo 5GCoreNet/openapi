@@ -102,7 +102,7 @@ func (o *AnnounceDiscDataForOpen) SetValidityTime(v time.Time) {
 
 // GetProseAppCode returns the ProseAppCode field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForOpen) GetProseAppCode() string {
-	if o == nil || IsNil(o.ProseAppCode) {
+	if o == nil || isNil(o.ProseAppCode) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *AnnounceDiscDataForOpen) GetProseAppCode() string {
 // GetProseAppCodeOk returns a tuple with the ProseAppCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForOpen) GetProseAppCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseAppCode) {
+	if o == nil || isNil(o.ProseAppCode) {
 		return nil, false
 	}
 	return o.ProseAppCode, true
@@ -120,7 +120,7 @@ func (o *AnnounceDiscDataForOpen) GetProseAppCodeOk() (*string, bool) {
 
 // HasProseAppCode returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForOpen) HasProseAppCode() bool {
-	if o != nil && !IsNil(o.ProseAppCode) {
+	if o != nil && !isNil(o.ProseAppCode) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *AnnounceDiscDataForOpen) SetProseAppCode(v string) {
 
 // GetProseAppCodePrefix returns the ProseAppCodePrefix field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForOpen) GetProseAppCodePrefix() string {
-	if o == nil || IsNil(o.ProseAppCodePrefix) {
+	if o == nil || isNil(o.ProseAppCodePrefix) {
 		var ret string
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *AnnounceDiscDataForOpen) GetProseAppCodePrefix() string {
 // GetProseAppCodePrefixOk returns a tuple with the ProseAppCodePrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForOpen) GetProseAppCodePrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseAppCodePrefix) {
+	if o == nil || isNil(o.ProseAppCodePrefix) {
 		return nil, false
 	}
 	return o.ProseAppCodePrefix, true
@@ -152,7 +152,7 @@ func (o *AnnounceDiscDataForOpen) GetProseAppCodePrefixOk() (*string, bool) {
 
 // HasProseAppCodePrefix returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForOpen) HasProseAppCodePrefix() bool {
-	if o != nil && !IsNil(o.ProseAppCodePrefix) {
+	if o != nil && !isNil(o.ProseAppCodePrefix) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *AnnounceDiscDataForOpen) SetProseAppCodePrefix(v string) {
 
 // GetProseAppCodeSuffixPool returns the ProseAppCodeSuffixPool field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForOpen) GetProseAppCodeSuffixPool() ProseApplicationCodeSuffixPool {
-	if o == nil || IsNil(o.ProseAppCodeSuffixPool) {
+	if o == nil || isNil(o.ProseAppCodeSuffixPool) {
 		var ret ProseApplicationCodeSuffixPool
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *AnnounceDiscDataForOpen) GetProseAppCodeSuffixPool() ProseApplicationCo
 // GetProseAppCodeSuffixPoolOk returns a tuple with the ProseAppCodeSuffixPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForOpen) GetProseAppCodeSuffixPoolOk() (*ProseApplicationCodeSuffixPool, bool) {
-	if o == nil || IsNil(o.ProseAppCodeSuffixPool) {
+	if o == nil || isNil(o.ProseAppCodeSuffixPool) {
 		return nil, false
 	}
 	return o.ProseAppCodeSuffixPool, true
@@ -184,7 +184,7 @@ func (o *AnnounceDiscDataForOpen) GetProseAppCodeSuffixPoolOk() (*ProseApplicati
 
 // HasProseAppCodeSuffixPool returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForOpen) HasProseAppCodeSuffixPool() bool {
-	if o != nil && !IsNil(o.ProseAppCodeSuffixPool) {
+	if o != nil && !isNil(o.ProseAppCodeSuffixPool) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *AnnounceDiscDataForOpen) SetProseAppCodeSuffixPool(v ProseApplicationCo
 
 // GetMetaData returns the MetaData field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForOpen) GetMetaData() string {
-	if o == nil || IsNil(o.MetaData) {
+	if o == nil || isNil(o.MetaData) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *AnnounceDiscDataForOpen) GetMetaData() string {
 // GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForOpen) GetMetaDataOk() (*string, bool) {
-	if o == nil || IsNil(o.MetaData) {
+	if o == nil || isNil(o.MetaData) {
 		return nil, false
 	}
 	return o.MetaData, true
@@ -216,7 +216,7 @@ func (o *AnnounceDiscDataForOpen) GetMetaDataOk() (*string, bool) {
 
 // HasMetaData returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForOpen) HasMetaData() bool {
-	if o != nil && !IsNil(o.MetaData) {
+	if o != nil && !isNil(o.MetaData) {
 		return true
 	}
 
@@ -240,16 +240,16 @@ func (o AnnounceDiscDataForOpen) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["proseAppId"] = o.ProseAppId
 	toSerialize["validityTime"] = o.ValidityTime
-	if !IsNil(o.ProseAppCode) {
+	if !isNil(o.ProseAppCode) {
 		toSerialize["proseAppCode"] = o.ProseAppCode
 	}
-	if !IsNil(o.ProseAppCodePrefix) {
+	if !isNil(o.ProseAppCodePrefix) {
 		toSerialize["proseAppCodePrefix"] = o.ProseAppCodePrefix
 	}
-	if !IsNil(o.ProseAppCodeSuffixPool) {
+	if !isNil(o.ProseAppCodeSuffixPool) {
 		toSerialize["proseAppCodeSuffixPool"] = o.ProseAppCodeSuffixPool
 	}
-	if !IsNil(o.MetaData) {
+	if !isNil(o.MetaData) {
 		toSerialize["metaData"] = o.MetaData
 	}
 	return toSerialize, nil

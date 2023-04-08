@@ -95,7 +95,7 @@ func (o *N1MessageContainer) SetN1MessageContent(v RefToBinaryData) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *N1MessageContainer) GetNfId() string {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *N1MessageContainer) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageContainer) GetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -113,7 +113,7 @@ func (o *N1MessageContainer) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *N1MessageContainer) HasNfId() bool {
-	if o != nil && !IsNil(o.NfId) {
+	if o != nil && !isNil(o.NfId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *N1MessageContainer) SetNfId(v string) {
 
 // GetServiceInstanceId returns the ServiceInstanceId field value if set, zero value otherwise.
 func (o *N1MessageContainer) GetServiceInstanceId() string {
-	if o == nil || IsNil(o.ServiceInstanceId) {
+	if o == nil || isNil(o.ServiceInstanceId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *N1MessageContainer) GetServiceInstanceId() string {
 // GetServiceInstanceIdOk returns a tuple with the ServiceInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1MessageContainer) GetServiceInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceInstanceId) {
+	if o == nil || isNil(o.ServiceInstanceId) {
 		return nil, false
 	}
 	return o.ServiceInstanceId, true
@@ -145,7 +145,7 @@ func (o *N1MessageContainer) GetServiceInstanceIdOk() (*string, bool) {
 
 // HasServiceInstanceId returns a boolean if a field has been set.
 func (o *N1MessageContainer) HasServiceInstanceId() bool {
-	if o != nil && !IsNil(o.ServiceInstanceId) {
+	if o != nil && !isNil(o.ServiceInstanceId) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o N1MessageContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n1MessageClass"] = o.N1MessageClass
 	toSerialize["n1MessageContent"] = o.N1MessageContent
-	if !IsNil(o.NfId) {
+	if !isNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !IsNil(o.ServiceInstanceId) {
+	if !isNil(o.ServiceInstanceId) {
 		toSerialize["serviceInstanceId"] = o.ServiceInstanceId
 	}
 	return toSerialize, nil

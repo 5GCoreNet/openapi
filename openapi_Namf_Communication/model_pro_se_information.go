@@ -41,7 +41,7 @@ func NewProSeInformationWithDefaults() *ProSeInformation {
 
 // GetN2Pc5ProSePol returns the N2Pc5ProSePol field value if set, zero value otherwise.
 func (o *ProSeInformation) GetN2Pc5ProSePol() N2InfoContent {
-	if o == nil || IsNil(o.N2Pc5ProSePol) {
+	if o == nil || isNil(o.N2Pc5ProSePol) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProSeInformation) GetN2Pc5ProSePol() N2InfoContent {
 // GetN2Pc5ProSePolOk returns a tuple with the N2Pc5ProSePol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeInformation) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.N2Pc5ProSePol) {
+	if o == nil || isNil(o.N2Pc5ProSePol) {
 		return nil, false
 	}
 	return o.N2Pc5ProSePol, true
@@ -59,7 +59,7 @@ func (o *ProSeInformation) GetN2Pc5ProSePolOk() (*N2InfoContent, bool) {
 
 // HasN2Pc5ProSePol returns a boolean if a field has been set.
 func (o *ProSeInformation) HasN2Pc5ProSePol() bool {
-	if o != nil && !IsNil(o.N2Pc5ProSePol) {
+	if o != nil && !isNil(o.N2Pc5ProSePol) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ProSeInformation) MarshalJSON() ([]byte, error) {
 
 func (o ProSeInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.N2Pc5ProSePol) {
+	if !isNil(o.N2Pc5ProSePol) {
 		toSerialize["n2Pc5ProSePol"] = o.N2Pc5ProSePol
 	}
 	return toSerialize, nil

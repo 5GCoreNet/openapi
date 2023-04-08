@@ -43,7 +43,7 @@ func NewMLTrainingFunctionSingleAllOf1WithDefaults() *MLTrainingFunctionSingleAl
 
 // GetMLTrainingRequest returns the MLTrainingRequest field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingRequest() []MLTrainingRequestSingle {
-	if o == nil || IsNil(o.MLTrainingRequest) {
+	if o == nil || isNil(o.MLTrainingRequest) {
 		var ret []MLTrainingRequestSingle
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingRequest() []MLTrainingRequ
 // GetMLTrainingRequestOk returns a tuple with the MLTrainingRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingRequestOk() ([]MLTrainingRequestSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingRequest) {
+	if o == nil || isNil(o.MLTrainingRequest) {
 		return nil, false
 	}
 	return o.MLTrainingRequest, true
@@ -61,7 +61,7 @@ func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingRequestOk() ([]MLTrainingR
 
 // HasMLTrainingRequest returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingleAllOf1) HasMLTrainingRequest() bool {
-	if o != nil && !IsNil(o.MLTrainingRequest) {
+	if o != nil && !isNil(o.MLTrainingRequest) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MLTrainingFunctionSingleAllOf1) SetMLTrainingRequest(v []MLTrainingRequ
 
 // GetMLTrainingProcess returns the MLTrainingProcess field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingProcess() []MLTrainingProcessSingle {
-	if o == nil || IsNil(o.MLTrainingProcess) {
+	if o == nil || isNil(o.MLTrainingProcess) {
 		var ret []MLTrainingProcessSingle
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingProcess() []MLTrainingProc
 // GetMLTrainingProcessOk returns a tuple with the MLTrainingProcess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingProcessOk() ([]MLTrainingProcessSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingProcess) {
+	if o == nil || isNil(o.MLTrainingProcess) {
 		return nil, false
 	}
 	return o.MLTrainingProcess, true
@@ -93,7 +93,7 @@ func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingProcessOk() ([]MLTrainingP
 
 // HasMLTrainingProcess returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingleAllOf1) HasMLTrainingProcess() bool {
-	if o != nil && !IsNil(o.MLTrainingProcess) {
+	if o != nil && !isNil(o.MLTrainingProcess) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MLTrainingFunctionSingleAllOf1) SetMLTrainingProcess(v []MLTrainingProc
 
 // GetMLTrainingReport returns the MLTrainingReport field value if set, zero value otherwise.
 func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingReport() []MLTrainingReportSingle {
-	if o == nil || IsNil(o.MLTrainingReport) {
+	if o == nil || isNil(o.MLTrainingReport) {
 		var ret []MLTrainingReportSingle
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingReport() []MLTrainingRepor
 // GetMLTrainingReportOk returns a tuple with the MLTrainingReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingReportOk() ([]MLTrainingReportSingle, bool) {
-	if o == nil || IsNil(o.MLTrainingReport) {
+	if o == nil || isNil(o.MLTrainingReport) {
 		return nil, false
 	}
 	return o.MLTrainingReport, true
@@ -125,7 +125,7 @@ func (o *MLTrainingFunctionSingleAllOf1) GetMLTrainingReportOk() ([]MLTrainingRe
 
 // HasMLTrainingReport returns a boolean if a field has been set.
 func (o *MLTrainingFunctionSingleAllOf1) HasMLTrainingReport() bool {
-	if o != nil && !IsNil(o.MLTrainingReport) {
+	if o != nil && !isNil(o.MLTrainingReport) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o MLTrainingFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o MLTrainingFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MLTrainingRequest) {
+	if !isNil(o.MLTrainingRequest) {
 		toSerialize["MLTrainingRequest"] = o.MLTrainingRequest
 	}
-	if !IsNil(o.MLTrainingProcess) {
+	if !isNil(o.MLTrainingProcess) {
 		toSerialize["MLTrainingProcess"] = o.MLTrainingProcess
 	}
-	if !IsNil(o.MLTrainingReport) {
+	if !isNil(o.MLTrainingReport) {
 		toSerialize["MLTrainingReport"] = o.MLTrainingReport
 	}
 	return toSerialize, nil

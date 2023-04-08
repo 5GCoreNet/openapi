@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -12,9 +11,12 @@ docs/InvalidParam.md
 docs/InvocationLog.md
 docs/Log.md
 docs/Operation.md
+docs/OperationAnyOf.md
 docs/ProblemDetails.md
 docs/Protocol.md
+docs/ProtocolAnyOf.md
 docs/SecurityMethod.md
+docs/SecurityMethodAnyOf.md
 git_push.sh
 go.mod
 go.sum
@@ -23,9 +25,12 @@ model_invalid_param.go
 model_invocation_log.go
 model_log.go
 model_operation.go
+model_operation_any_of.go
 model_problem_details.go
 model_protocol.go
+model_protocol_any_of.go
 model_security_method.go
+model_security_method_any_of.go
 response.go
 test/api_default_test.go
 utils.go

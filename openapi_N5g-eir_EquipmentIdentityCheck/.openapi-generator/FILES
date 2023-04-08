@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -13,6 +12,7 @@ docs/EquipmentStatus.md
 docs/EquipmentStatusDocumentApi.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -27,6 +27,7 @@ model_eir_response_data.go
 model_equipment_status.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

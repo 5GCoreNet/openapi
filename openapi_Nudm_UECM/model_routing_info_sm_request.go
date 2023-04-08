@@ -47,7 +47,7 @@ func NewRoutingInfoSmRequestWithDefaults() *RoutingInfoSmRequest {
 
 // GetIpSmGwInd returns the IpSmGwInd field value if set, zero value otherwise.
 func (o *RoutingInfoSmRequest) GetIpSmGwInd() bool {
-	if o == nil || IsNil(o.IpSmGwInd) {
+	if o == nil || isNil(o.IpSmGwInd) {
 		var ret bool
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *RoutingInfoSmRequest) GetIpSmGwInd() bool {
 // GetIpSmGwIndOk returns a tuple with the IpSmGwInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmRequest) GetIpSmGwIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.IpSmGwInd) {
+	if o == nil || isNil(o.IpSmGwInd) {
 		return nil, false
 	}
 	return o.IpSmGwInd, true
@@ -65,7 +65,7 @@ func (o *RoutingInfoSmRequest) GetIpSmGwIndOk() (*bool, bool) {
 
 // HasIpSmGwInd returns a boolean if a field has been set.
 func (o *RoutingInfoSmRequest) HasIpSmGwInd() bool {
-	if o != nil && !IsNil(o.IpSmGwInd) {
+	if o != nil && !isNil(o.IpSmGwInd) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *RoutingInfoSmRequest) SetIpSmGwInd(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *RoutingInfoSmRequest) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *RoutingInfoSmRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoutingInfoSmRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -97,7 +97,7 @@ func (o *RoutingInfoSmRequest) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *RoutingInfoSmRequest) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -119,10 +119,10 @@ func (o RoutingInfoSmRequest) MarshalJSON() ([]byte, error) {
 
 func (o RoutingInfoSmRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IpSmGwInd) {
+	if !isNil(o.IpSmGwInd) {
 		toSerialize["ipSmGwInd"] = o.IpSmGwInd
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

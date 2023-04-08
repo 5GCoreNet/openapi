@@ -17,23 +17,37 @@ import (
 
 // LooseRouteIndication Indicates whether the loose routing mechanism is required to serve the user
 type LooseRouteIndication struct {
-	string *string
+	LooseRouteIndicationAnyOf *LooseRouteIndicationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LooseRouteIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into LooseRouteIndicationAnyOf
+	err = json.Unmarshal(data, &dst.LooseRouteIndicationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonLooseRouteIndicationAnyOf, _ := json.Marshal(dst.LooseRouteIndicationAnyOf)
+		if string(jsonLooseRouteIndicationAnyOf) == "{}" { // empty struct
+			dst.LooseRouteIndicationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.LooseRouteIndicationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.LooseRouteIndicationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(LooseRouteIndication)")
@@ -41,8 +55,12 @@ func (dst *LooseRouteIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LooseRouteIndication) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.LooseRouteIndicationAnyOf != nil {
+		return json.Marshal(&src.LooseRouteIndicationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

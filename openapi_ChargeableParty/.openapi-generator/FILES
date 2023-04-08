@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -13,8 +12,10 @@ docs/ChargeablePartyPatch.md
 docs/ChargeablePartyTransactionOperationApi.md
 docs/EthFlowDescription.md
 docs/Event.md
+docs/EventAnyOf.md
 docs/EventReport.md
 docs/FlowDirection.md
+docs/FlowDirectionAnyOf.md
 docs/FlowInfo.md
 docs/IndividualChargeablePartyResourceOperationApi.md
 docs/InvalidParam.md
@@ -24,6 +25,7 @@ docs/Ipv6Prefix.md
 docs/NotificationData.md
 docs/ProblemDetails.md
 docs/ServAuthInfo.md
+docs/ServAuthInfoAnyOf.md
 docs/Snssai.md
 docs/SponsorInformation.md
 docs/UsageThreshold.md
@@ -37,8 +39,10 @@ model_chargeable_party.go
 model_chargeable_party_patch.go
 model_eth_flow_description.go
 model_event.go
+model_event_any_of.go
 model_event_report.go
 model_flow_direction.go
+model_flow_direction_any_of.go
 model_flow_info.go
 model_invalid_param.go
 model_ip_addr.go
@@ -47,6 +51,7 @@ model_ipv6_prefix.go
 model_notification_data.go
 model_problem_details.go
 model_serv_auth_info.go
+model_serv_auth_info_any_of.go
 model_snssai.go
 model_sponsor_information.go
 model_usage_threshold.go

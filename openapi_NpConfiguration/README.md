@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
  - [NpConfigurationPatch](docs/NpConfigurationPatch.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [ResultReason](docs/ResultReason.md)
+ - [ResultReasonAnyOf](docs/ResultReasonAnyOf.md)
  - [Snssai](docs/Snssai.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)
 

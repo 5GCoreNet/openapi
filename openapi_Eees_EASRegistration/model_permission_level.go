@@ -17,23 +17,37 @@ import (
 
 // PermissionLevel Possible values are: - TRIAL: Level of service permission supported is TRIAL. - GOLD: Level of service permission supported is GOLD. - SILVER: Level of service permission supported is SILVER. - OTHER: Any other level of service permissions supported. 
 type PermissionLevel struct {
-	string *string
+	PermissionLevelAnyOf *PermissionLevelAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PermissionLevel) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PermissionLevelAnyOf
+	err = json.Unmarshal(data, &dst.PermissionLevelAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPermissionLevelAnyOf, _ := json.Marshal(dst.PermissionLevelAnyOf)
+		if string(jsonPermissionLevelAnyOf) == "{}" { // empty struct
+			dst.PermissionLevelAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PermissionLevelAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PermissionLevelAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PermissionLevel)")
@@ -41,8 +55,12 @@ func (dst *PermissionLevel) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PermissionLevel) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PermissionLevelAnyOf != nil {
+		return json.Marshal(&src.PermissionLevelAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

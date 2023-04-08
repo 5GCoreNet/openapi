@@ -69,7 +69,7 @@ func (o *NotificationPush) SetAppIds(v []string) {
 
 // GetAllowedDelay returns the AllowedDelay field value if set, zero value otherwise.
 func (o *NotificationPush) GetAllowedDelay() int32 {
-	if o == nil || IsNil(o.AllowedDelay) {
+	if o == nil || isNil(o.AllowedDelay) {
 		var ret int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NotificationPush) GetAllowedDelay() int32 {
 // GetAllowedDelayOk returns a tuple with the AllowedDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationPush) GetAllowedDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.AllowedDelay) {
+	if o == nil || isNil(o.AllowedDelay) {
 		return nil, false
 	}
 	return o.AllowedDelay, true
@@ -87,7 +87,7 @@ func (o *NotificationPush) GetAllowedDelayOk() (*int32, bool) {
 
 // HasAllowedDelay returns a boolean if a field has been set.
 func (o *NotificationPush) HasAllowedDelay() bool {
-	if o != nil && !IsNil(o.AllowedDelay) {
+	if o != nil && !isNil(o.AllowedDelay) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *NotificationPush) SetAllowedDelay(v int32) {
 
 // GetPfdOp returns the PfdOp field value if set, zero value otherwise.
 func (o *NotificationPush) GetPfdOp() PfdOperation {
-	if o == nil || IsNil(o.PfdOp) {
+	if o == nil || isNil(o.PfdOp) {
 		var ret PfdOperation
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NotificationPush) GetPfdOp() PfdOperation {
 // GetPfdOpOk returns a tuple with the PfdOp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationPush) GetPfdOpOk() (*PfdOperation, bool) {
-	if o == nil || IsNil(o.PfdOp) {
+	if o == nil || isNil(o.PfdOp) {
 		return nil, false
 	}
 	return o.PfdOp, true
@@ -119,7 +119,7 @@ func (o *NotificationPush) GetPfdOpOk() (*PfdOperation, bool) {
 
 // HasPfdOp returns a boolean if a field has been set.
 func (o *NotificationPush) HasPfdOp() bool {
-	if o != nil && !IsNil(o.PfdOp) {
+	if o != nil && !isNil(o.PfdOp) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o NotificationPush) MarshalJSON() ([]byte, error) {
 func (o NotificationPush) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appIds"] = o.AppIds
-	if !IsNil(o.AllowedDelay) {
+	if !isNil(o.AllowedDelay) {
 		toSerialize["allowedDelay"] = o.AllowedDelay
 	}
-	if !IsNil(o.PfdOp) {
+	if !isNil(o.PfdOp) {
 		toSerialize["pfdOp"] = o.PfdOp
 	}
 	return toSerialize, nil

@@ -55,7 +55,7 @@ func NewChargeablePartyPatchWithDefaults() *ChargeablePartyPatch {
 
 // GetFlowInfo returns the FlowInfo field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetFlowInfo() []FlowInfo {
-	if o == nil || IsNil(o.FlowInfo) {
+	if o == nil || isNil(o.FlowInfo) {
 		var ret []FlowInfo
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *ChargeablePartyPatch) GetFlowInfo() []FlowInfo {
 // GetFlowInfoOk returns a tuple with the FlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetFlowInfoOk() ([]FlowInfo, bool) {
-	if o == nil || IsNil(o.FlowInfo) {
+	if o == nil || isNil(o.FlowInfo) {
 		return nil, false
 	}
 	return o.FlowInfo, true
@@ -73,7 +73,7 @@ func (o *ChargeablePartyPatch) GetFlowInfoOk() ([]FlowInfo, bool) {
 
 // HasFlowInfo returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasFlowInfo() bool {
-	if o != nil && !IsNil(o.FlowInfo) {
+	if o != nil && !isNil(o.FlowInfo) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *ChargeablePartyPatch) SetFlowInfo(v []FlowInfo) {
 
 // GetExterAppId returns the ExterAppId field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetExterAppId() string {
-	if o == nil || IsNil(o.ExterAppId) {
+	if o == nil || isNil(o.ExterAppId) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *ChargeablePartyPatch) GetExterAppId() string {
 // GetExterAppIdOk returns a tuple with the ExterAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetExterAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterAppId) {
+	if o == nil || isNil(o.ExterAppId) {
 		return nil, false
 	}
 	return o.ExterAppId, true
@@ -105,7 +105,7 @@ func (o *ChargeablePartyPatch) GetExterAppIdOk() (*string, bool) {
 
 // HasExterAppId returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasExterAppId() bool {
-	if o != nil && !IsNil(o.ExterAppId) {
+	if o != nil && !isNil(o.ExterAppId) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *ChargeablePartyPatch) SetExterAppId(v string) {
 
 // GetEthFlowInfo returns the EthFlowInfo field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetEthFlowInfo() []EthFlowDescription {
-	if o == nil || IsNil(o.EthFlowInfo) {
+	if o == nil || isNil(o.EthFlowInfo) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *ChargeablePartyPatch) GetEthFlowInfo() []EthFlowDescription {
 // GetEthFlowInfoOk returns a tuple with the EthFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetEthFlowInfoOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthFlowInfo) {
+	if o == nil || isNil(o.EthFlowInfo) {
 		return nil, false
 	}
 	return o.EthFlowInfo, true
@@ -137,7 +137,7 @@ func (o *ChargeablePartyPatch) GetEthFlowInfoOk() ([]EthFlowDescription, bool) {
 
 // HasEthFlowInfo returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasEthFlowInfo() bool {
-	if o != nil && !IsNil(o.EthFlowInfo) {
+	if o != nil && !isNil(o.EthFlowInfo) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ChargeablePartyPatch) SetEthFlowInfo(v []EthFlowDescription) {
 
 // GetSponsoringEnabled returns the SponsoringEnabled field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetSponsoringEnabled() bool {
-	if o == nil || IsNil(o.SponsoringEnabled) {
+	if o == nil || isNil(o.SponsoringEnabled) {
 		var ret bool
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *ChargeablePartyPatch) GetSponsoringEnabled() bool {
 // GetSponsoringEnabledOk returns a tuple with the SponsoringEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetSponsoringEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.SponsoringEnabled) {
+	if o == nil || isNil(o.SponsoringEnabled) {
 		return nil, false
 	}
 	return o.SponsoringEnabled, true
@@ -169,7 +169,7 @@ func (o *ChargeablePartyPatch) GetSponsoringEnabledOk() (*bool, bool) {
 
 // HasSponsoringEnabled returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasSponsoringEnabled() bool {
-	if o != nil && !IsNil(o.SponsoringEnabled) {
+	if o != nil && !isNil(o.SponsoringEnabled) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *ChargeablePartyPatch) SetSponsoringEnabled(v bool) {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetReferenceId() string {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *ChargeablePartyPatch) GetReferenceId() string {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetReferenceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -201,7 +201,7 @@ func (o *ChargeablePartyPatch) GetReferenceIdOk() (*string, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasReferenceId() bool {
-	if o != nil && !IsNil(o.ReferenceId) {
+	if o != nil && !isNil(o.ReferenceId) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *ChargeablePartyPatch) SetReferenceId(v string) {
 
 // GetUsageThreshold returns the UsageThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ChargeablePartyPatch) GetUsageThreshold() UsageThresholdRm {
-	if o == nil || IsNil(o.UsageThreshold.Get()) {
+	if o == nil || isNil(o.UsageThreshold.Get()) {
 		var ret UsageThresholdRm
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *ChargeablePartyPatch) UnsetUsageThreshold() {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *ChargeablePartyPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -275,7 +275,7 @@ func (o *ChargeablePartyPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *ChargeablePartyPatch) SetNotificationDestination(v string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *ChargeablePartyPatch) GetEvents() []Event {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		var ret []Event
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *ChargeablePartyPatch) GetEvents() []Event {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeablePartyPatch) GetEventsOk() ([]Event, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -307,7 +307,7 @@ func (o *ChargeablePartyPatch) GetEventsOk() ([]Event, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *ChargeablePartyPatch) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && !isNil(o.Events) {
 		return true
 	}
 
@@ -329,28 +329,28 @@ func (o ChargeablePartyPatch) MarshalJSON() ([]byte, error) {
 
 func (o ChargeablePartyPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FlowInfo) {
+	if !isNil(o.FlowInfo) {
 		toSerialize["flowInfo"] = o.FlowInfo
 	}
-	if !IsNil(o.ExterAppId) {
+	if !isNil(o.ExterAppId) {
 		toSerialize["exterAppId"] = o.ExterAppId
 	}
-	if !IsNil(o.EthFlowInfo) {
+	if !isNil(o.EthFlowInfo) {
 		toSerialize["ethFlowInfo"] = o.EthFlowInfo
 	}
-	if !IsNil(o.SponsoringEnabled) {
+	if !isNil(o.SponsoringEnabled) {
 		toSerialize["sponsoringEnabled"] = o.SponsoringEnabled
 	}
-	if !IsNil(o.ReferenceId) {
+	if !isNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
 	if o.UsageThreshold.IsSet() {
 		toSerialize["usageThreshold"] = o.UsageThreshold.Get()
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.Events) {
+	if !isNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil

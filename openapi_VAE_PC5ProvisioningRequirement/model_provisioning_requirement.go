@@ -57,7 +57,7 @@ func NewProvisioningRequirementWithDefaults() *ProvisioningRequirement {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *ProvisioningRequirement) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -75,7 +75,7 @@ func (o *ProvisioningRequirement) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *ProvisioningRequirement) SetUeId(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *ProvisioningRequirement) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -107,7 +107,7 @@ func (o *ProvisioningRequirement) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *ProvisioningRequirement) SetServiceId(v string) {
 
 // GetAppQosReq returns the AppQosReq field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetAppQosReq() AppplicationQosRequirement {
-	if o == nil || IsNil(o.AppQosReq) {
+	if o == nil || isNil(o.AppQosReq) {
 		var ret AppplicationQosRequirement
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *ProvisioningRequirement) GetAppQosReq() AppplicationQosRequirement {
 // GetAppQosReqOk returns a tuple with the AppQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetAppQosReqOk() (*AppplicationQosRequirement, bool) {
-	if o == nil || IsNil(o.AppQosReq) {
+	if o == nil || isNil(o.AppQosReq) {
 		return nil, false
 	}
 	return o.AppQosReq, true
@@ -187,7 +187,7 @@ func (o *ProvisioningRequirement) GetAppQosReqOk() (*AppplicationQosRequirement,
 
 // HasAppQosReq returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasAppQosReq() bool {
-	if o != nil && !IsNil(o.AppQosReq) {
+	if o != nil && !isNil(o.AppQosReq) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *ProvisioningRequirement) SetAppQosReq(v AppplicationQosRequirement) {
 
 // GetPlmnList returns the PlmnList field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetPlmnList() []PlmnId {
-	if o == nil || IsNil(o.PlmnList) {
+	if o == nil || isNil(o.PlmnList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *ProvisioningRequirement) GetPlmnList() []PlmnId {
 // GetPlmnListOk returns a tuple with the PlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetPlmnListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnList) {
+	if o == nil || isNil(o.PlmnList) {
 		return nil, false
 	}
 	return o.PlmnList, true
@@ -219,7 +219,7 @@ func (o *ProvisioningRequirement) GetPlmnListOk() ([]PlmnId, bool) {
 
 // HasPlmnList returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasPlmnList() bool {
-	if o != nil && !IsNil(o.PlmnList) {
+	if o != nil && !isNil(o.PlmnList) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *ProvisioningRequirement) SetPlmnList(v []PlmnId) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *ProvisioningRequirement) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -251,7 +251,7 @@ func (o *ProvisioningRequirement) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *ProvisioningRequirement) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *ProvisioningRequirement) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -283,7 +283,7 @@ func (o *ProvisioningRequirement) GetWebsockNotifConfigOk() (*WebsockNotifConfig
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *ProvisioningRequirement) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ProvisioningRequirement) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *ProvisioningRequirement) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvisioningRequirement) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -315,7 +315,7 @@ func (o *ProvisioningRequirement) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ProvisioningRequirement) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -337,27 +337,27 @@ func (o ProvisioningRequirement) MarshalJSON() ([]byte, error) {
 
 func (o ProvisioningRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["serviceId"] = o.ServiceId
-	if !IsNil(o.AppQosReq) {
+	if !isNil(o.AppQosReq) {
 		toSerialize["appQosReq"] = o.AppQosReq
 	}
-	if !IsNil(o.PlmnList) {
+	if !isNil(o.PlmnList) {
 		toSerialize["plmnList"] = o.PlmnList
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

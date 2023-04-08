@@ -44,7 +44,7 @@ func NewSmsSubscriptionData1WithDefaults() *SmsSubscriptionData1 {
 
 // GetSmsSubscribed returns the SmsSubscribed field value if set, zero value otherwise.
 func (o *SmsSubscriptionData1) GetSmsSubscribed() bool {
-	if o == nil || IsNil(o.SmsSubscribed) {
+	if o == nil || isNil(o.SmsSubscribed) {
 		var ret bool
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SmsSubscriptionData1) GetSmsSubscribed() bool {
 // GetSmsSubscribedOk returns a tuple with the SmsSubscribed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsSubscriptionData1) GetSmsSubscribedOk() (*bool, bool) {
-	if o == nil || IsNil(o.SmsSubscribed) {
+	if o == nil || isNil(o.SmsSubscribed) {
 		return nil, false
 	}
 	return o.SmsSubscribed, true
@@ -62,7 +62,7 @@ func (o *SmsSubscriptionData1) GetSmsSubscribedOk() (*bool, bool) {
 
 // HasSmsSubscribed returns a boolean if a field has been set.
 func (o *SmsSubscriptionData1) HasSmsSubscribed() bool {
-	if o != nil && !IsNil(o.SmsSubscribed) {
+	if o != nil && !isNil(o.SmsSubscribed) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SmsSubscriptionData1) SetSmsSubscribed(v bool) {
 
 // GetSharedSmsSubsDataId returns the SharedSmsSubsDataId field value if set, zero value otherwise.
 func (o *SmsSubscriptionData1) GetSharedSmsSubsDataId() string {
-	if o == nil || IsNil(o.SharedSmsSubsDataId) {
+	if o == nil || isNil(o.SharedSmsSubsDataId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SmsSubscriptionData1) GetSharedSmsSubsDataId() string {
 // GetSharedSmsSubsDataIdOk returns a tuple with the SharedSmsSubsDataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsSubscriptionData1) GetSharedSmsSubsDataIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SharedSmsSubsDataId) {
+	if o == nil || isNil(o.SharedSmsSubsDataId) {
 		return nil, false
 	}
 	return o.SharedSmsSubsDataId, true
@@ -94,7 +94,7 @@ func (o *SmsSubscriptionData1) GetSharedSmsSubsDataIdOk() (*string, bool) {
 
 // HasSharedSmsSubsDataId returns a boolean if a field has been set.
 func (o *SmsSubscriptionData1) HasSharedSmsSubsDataId() bool {
-	if o != nil && !IsNil(o.SharedSmsSubsDataId) {
+	if o != nil && !isNil(o.SharedSmsSubsDataId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SmsSubscriptionData1) SetSharedSmsSubsDataId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmsSubscriptionData1) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SmsSubscriptionData1) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsSubscriptionData1) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -126,7 +126,7 @@ func (o *SmsSubscriptionData1) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmsSubscriptionData1) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o SmsSubscriptionData1) MarshalJSON() ([]byte, error) {
 
 func (o SmsSubscriptionData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SmsSubscribed) {
+	if !isNil(o.SmsSubscribed) {
 		toSerialize["smsSubscribed"] = o.SmsSubscribed
 	}
-	if !IsNil(o.SharedSmsSubsDataId) {
+	if !isNil(o.SharedSmsSubsDataId) {
 		toSerialize["sharedSmsSubsDataId"] = o.SharedSmsSubsDataId
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

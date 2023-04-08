@@ -44,7 +44,7 @@ func NewAPIProviderEnrolmentDetailsPatchWithDefaults() *APIProviderEnrolmentDeta
 
 // GetApiProvFuncs returns the ApiProvFuncs field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncs() []APIProviderFunctionDetails {
-	if o == nil || IsNil(o.ApiProvFuncs) {
+	if o == nil || isNil(o.ApiProvFuncs) {
 		var ret []APIProviderFunctionDetails
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncs() []APIProviderFuncti
 // GetApiProvFuncsOk returns a tuple with the ApiProvFuncs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncsOk() ([]APIProviderFunctionDetails, bool) {
-	if o == nil || IsNil(o.ApiProvFuncs) {
+	if o == nil || isNil(o.ApiProvFuncs) {
 		return nil, false
 	}
 	return o.ApiProvFuncs, true
@@ -62,7 +62,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvFuncsOk() ([]APIProviderFun
 
 // HasApiProvFuncs returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetailsPatch) HasApiProvFuncs() bool {
-	if o != nil && !IsNil(o.ApiProvFuncs) {
+	if o != nil && !isNil(o.ApiProvFuncs) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *APIProviderEnrolmentDetailsPatch) SetApiProvFuncs(v []APIProviderFuncti
 
 // GetApiProvDomInfo returns the ApiProvDomInfo field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfo() string {
-	if o == nil || IsNil(o.ApiProvDomInfo) {
+	if o == nil || isNil(o.ApiProvDomInfo) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfo() string {
 // GetApiProvDomInfoOk returns a tuple with the ApiProvDomInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiProvDomInfo) {
+	if o == nil || isNil(o.ApiProvDomInfo) {
 		return nil, false
 	}
 	return o.ApiProvDomInfo, true
@@ -94,7 +94,7 @@ func (o *APIProviderEnrolmentDetailsPatch) GetApiProvDomInfoOk() (*string, bool)
 
 // HasApiProvDomInfo returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetailsPatch) HasApiProvDomInfo() bool {
-	if o != nil && !IsNil(o.ApiProvDomInfo) {
+	if o != nil && !isNil(o.ApiProvDomInfo) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o APIProviderEnrolmentDetailsPatch) MarshalJSON() ([]byte, error) {
 
 func (o APIProviderEnrolmentDetailsPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiProvFuncs) {
+	if !isNil(o.ApiProvFuncs) {
 		toSerialize["apiProvFuncs"] = o.ApiProvFuncs
 	}
-	if !IsNil(o.ApiProvDomInfo) {
+	if !isNil(o.ApiProvDomInfo) {
 		toSerialize["apiProvDomInfo"] = o.ApiProvDomInfo
 	}
 	return toSerialize, nil

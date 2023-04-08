@@ -44,7 +44,7 @@ func NewAusfInfoWithDefaults() *AusfInfo {
 
 // GetNFSrvGroupId returns the NFSrvGroupId field value if set, zero value otherwise.
 func (o *AusfInfo) GetNFSrvGroupId() string {
-	if o == nil || IsNil(o.NFSrvGroupId) {
+	if o == nil || isNil(o.NFSrvGroupId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AusfInfo) GetNFSrvGroupId() string {
 // GetNFSrvGroupIdOk returns a tuple with the NFSrvGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetNFSrvGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NFSrvGroupId) {
+	if o == nil || isNil(o.NFSrvGroupId) {
 		return nil, false
 	}
 	return o.NFSrvGroupId, true
@@ -62,7 +62,7 @@ func (o *AusfInfo) GetNFSrvGroupIdOk() (*string, bool) {
 
 // HasNFSrvGroupId returns a boolean if a field has been set.
 func (o *AusfInfo) HasNFSrvGroupId() bool {
-	if o != nil && !IsNil(o.NFSrvGroupId) {
+	if o != nil && !isNil(o.NFSrvGroupId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AusfInfo) SetNFSrvGroupId(v string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *AusfInfo) GetSupiRanges() []SupiRange {
-	if o == nil || IsNil(o.SupiRanges) {
+	if o == nil || isNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AusfInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || IsNil(o.SupiRanges) {
+	if o == nil || isNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -94,7 +94,7 @@ func (o *AusfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *AusfInfo) HasSupiRanges() bool {
-	if o != nil && !IsNil(o.SupiRanges) {
+	if o != nil && !isNil(o.SupiRanges) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AusfInfo) SetSupiRanges(v []SupiRange) {
 
 // GetRoutingIndicators returns the RoutingIndicators field value if set, zero value otherwise.
 func (o *AusfInfo) GetRoutingIndicators() []string {
-	if o == nil || IsNil(o.RoutingIndicators) {
+	if o == nil || isNil(o.RoutingIndicators) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AusfInfo) GetRoutingIndicators() []string {
 // GetRoutingIndicatorsOk returns a tuple with the RoutingIndicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RoutingIndicators) {
+	if o == nil || isNil(o.RoutingIndicators) {
 		return nil, false
 	}
 	return o.RoutingIndicators, true
@@ -126,7 +126,7 @@ func (o *AusfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
 
 // HasRoutingIndicators returns a boolean if a field has been set.
 func (o *AusfInfo) HasRoutingIndicators() bool {
-	if o != nil && !IsNil(o.RoutingIndicators) {
+	if o != nil && !isNil(o.RoutingIndicators) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AusfInfo) SetRoutingIndicators(v []string) {
 
 // GetSuciInfos returns the SuciInfos field value if set, zero value otherwise.
 func (o *AusfInfo) GetSuciInfos() []SuciInfo {
-	if o == nil || IsNil(o.SuciInfos) {
+	if o == nil || isNil(o.SuciInfos) {
 		var ret []SuciInfo
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AusfInfo) GetSuciInfos() []SuciInfo {
 // GetSuciInfosOk returns a tuple with the SuciInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetSuciInfosOk() ([]SuciInfo, bool) {
-	if o == nil || IsNil(o.SuciInfos) {
+	if o == nil || isNil(o.SuciInfos) {
 		return nil, false
 	}
 	return o.SuciInfos, true
@@ -158,7 +158,7 @@ func (o *AusfInfo) GetSuciInfosOk() ([]SuciInfo, bool) {
 
 // HasSuciInfos returns a boolean if a field has been set.
 func (o *AusfInfo) HasSuciInfos() bool {
-	if o != nil && !IsNil(o.SuciInfos) {
+	if o != nil && !isNil(o.SuciInfos) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o AusfInfo) MarshalJSON() ([]byte, error) {
 
 func (o AusfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NFSrvGroupId) {
+	if !isNil(o.NFSrvGroupId) {
 		toSerialize["nFSrvGroupId"] = o.NFSrvGroupId
 	}
-	if !IsNil(o.SupiRanges) {
+	if !isNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !IsNil(o.RoutingIndicators) {
+	if !isNil(o.RoutingIndicators) {
 		toSerialize["routingIndicators"] = o.RoutingIndicators
 	}
-	if !IsNil(o.SuciInfos) {
+	if !isNil(o.SuciInfos) {
 		toSerialize["suciInfos"] = o.SuciInfos
 	}
 	return toSerialize, nil

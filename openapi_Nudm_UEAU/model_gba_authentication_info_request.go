@@ -69,7 +69,7 @@ func (o *GbaAuthenticationInfoRequest) SetAuthType(v GbaAuthType) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *GbaAuthenticationInfoRequest) GetResynchronizationInfo() ResynchronizationInfo1 {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo1
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *GbaAuthenticationInfoRequest) GetResynchronizationInfo() Resynchronizat
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaAuthenticationInfoRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo1, bool) {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -87,7 +87,7 @@ func (o *GbaAuthenticationInfoRequest) GetResynchronizationInfoOk() (*Resynchron
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *GbaAuthenticationInfoRequest) HasResynchronizationInfo() bool {
-	if o != nil && !IsNil(o.ResynchronizationInfo) {
+	if o != nil && !isNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *GbaAuthenticationInfoRequest) SetResynchronizationInfo(v Resynchronizat
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *GbaAuthenticationInfoRequest) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *GbaAuthenticationInfoRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaAuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -119,7 +119,7 @@ func (o *GbaAuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *GbaAuthenticationInfoRequest) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o GbaAuthenticationInfoRequest) MarshalJSON() ([]byte, error) {
 func (o GbaAuthenticationInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authType"] = o.AuthType
-	if !IsNil(o.ResynchronizationInfo) {
+	if !isNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

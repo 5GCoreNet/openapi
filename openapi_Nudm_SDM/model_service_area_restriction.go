@@ -46,7 +46,7 @@ func NewServiceAreaRestrictionWithDefaults() *ServiceAreaRestriction {
 
 // GetRestrictionType returns the RestrictionType field value if set, zero value otherwise.
 func (o *ServiceAreaRestriction) GetRestrictionType() RestrictionType {
-	if o == nil || IsNil(o.RestrictionType) {
+	if o == nil || isNil(o.RestrictionType) {
 		var ret RestrictionType
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ServiceAreaRestriction) GetRestrictionType() RestrictionType {
 // GetRestrictionTypeOk returns a tuple with the RestrictionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAreaRestriction) GetRestrictionTypeOk() (*RestrictionType, bool) {
-	if o == nil || IsNil(o.RestrictionType) {
+	if o == nil || isNil(o.RestrictionType) {
 		return nil, false
 	}
 	return o.RestrictionType, true
@@ -64,7 +64,7 @@ func (o *ServiceAreaRestriction) GetRestrictionTypeOk() (*RestrictionType, bool)
 
 // HasRestrictionType returns a boolean if a field has been set.
 func (o *ServiceAreaRestriction) HasRestrictionType() bool {
-	if o != nil && !IsNil(o.RestrictionType) {
+	if o != nil && !isNil(o.RestrictionType) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ServiceAreaRestriction) SetRestrictionType(v RestrictionType) {
 
 // GetAreas returns the Areas field value if set, zero value otherwise.
 func (o *ServiceAreaRestriction) GetAreas() []Area {
-	if o == nil || IsNil(o.Areas) {
+	if o == nil || isNil(o.Areas) {
 		var ret []Area
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ServiceAreaRestriction) GetAreas() []Area {
 // GetAreasOk returns a tuple with the Areas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAreaRestriction) GetAreasOk() ([]Area, bool) {
-	if o == nil || IsNil(o.Areas) {
+	if o == nil || isNil(o.Areas) {
 		return nil, false
 	}
 	return o.Areas, true
@@ -96,7 +96,7 @@ func (o *ServiceAreaRestriction) GetAreasOk() ([]Area, bool) {
 
 // HasAreas returns a boolean if a field has been set.
 func (o *ServiceAreaRestriction) HasAreas() bool {
-	if o != nil && !IsNil(o.Areas) {
+	if o != nil && !isNil(o.Areas) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ServiceAreaRestriction) SetAreas(v []Area) {
 
 // GetMaxNumOfTAs returns the MaxNumOfTAs field value if set, zero value otherwise.
 func (o *ServiceAreaRestriction) GetMaxNumOfTAs() int32 {
-	if o == nil || IsNil(o.MaxNumOfTAs) {
+	if o == nil || isNil(o.MaxNumOfTAs) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ServiceAreaRestriction) GetMaxNumOfTAs() int32 {
 // GetMaxNumOfTAsOk returns a tuple with the MaxNumOfTAs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAreaRestriction) GetMaxNumOfTAsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumOfTAs) {
+	if o == nil || isNil(o.MaxNumOfTAs) {
 		return nil, false
 	}
 	return o.MaxNumOfTAs, true
@@ -128,7 +128,7 @@ func (o *ServiceAreaRestriction) GetMaxNumOfTAsOk() (*int32, bool) {
 
 // HasMaxNumOfTAs returns a boolean if a field has been set.
 func (o *ServiceAreaRestriction) HasMaxNumOfTAs() bool {
-	if o != nil && !IsNil(o.MaxNumOfTAs) {
+	if o != nil && !isNil(o.MaxNumOfTAs) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ServiceAreaRestriction) SetMaxNumOfTAs(v int32) {
 
 // GetMaxNumOfTAsForNotAllowedAreas returns the MaxNumOfTAsForNotAllowedAreas field value if set, zero value otherwise.
 func (o *ServiceAreaRestriction) GetMaxNumOfTAsForNotAllowedAreas() int32 {
-	if o == nil || IsNil(o.MaxNumOfTAsForNotAllowedAreas) {
+	if o == nil || isNil(o.MaxNumOfTAsForNotAllowedAreas) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ServiceAreaRestriction) GetMaxNumOfTAsForNotAllowedAreas() int32 {
 // GetMaxNumOfTAsForNotAllowedAreasOk returns a tuple with the MaxNumOfTAsForNotAllowedAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAreaRestriction) GetMaxNumOfTAsForNotAllowedAreasOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumOfTAsForNotAllowedAreas) {
+	if o == nil || isNil(o.MaxNumOfTAsForNotAllowedAreas) {
 		return nil, false
 	}
 	return o.MaxNumOfTAsForNotAllowedAreas, true
@@ -160,7 +160,7 @@ func (o *ServiceAreaRestriction) GetMaxNumOfTAsForNotAllowedAreasOk() (*int32, b
 
 // HasMaxNumOfTAsForNotAllowedAreas returns a boolean if a field has been set.
 func (o *ServiceAreaRestriction) HasMaxNumOfTAsForNotAllowedAreas() bool {
-	if o != nil && !IsNil(o.MaxNumOfTAsForNotAllowedAreas) {
+	if o != nil && !isNil(o.MaxNumOfTAsForNotAllowedAreas) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o ServiceAreaRestriction) MarshalJSON() ([]byte, error) {
 
 func (o ServiceAreaRestriction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RestrictionType) {
+	if !isNil(o.RestrictionType) {
 		toSerialize["restrictionType"] = o.RestrictionType
 	}
-	if !IsNil(o.Areas) {
+	if !isNil(o.Areas) {
 		toSerialize["areas"] = o.Areas
 	}
-	if !IsNil(o.MaxNumOfTAs) {
+	if !isNil(o.MaxNumOfTAs) {
 		toSerialize["maxNumOfTAs"] = o.MaxNumOfTAs
 	}
-	if !IsNil(o.MaxNumOfTAsForNotAllowedAreas) {
+	if !isNil(o.MaxNumOfTAsForNotAllowedAreas) {
 		toSerialize["maxNumOfTAsForNotAllowedAreas"] = o.MaxNumOfTAsForNotAllowedAreas
 	}
 	return toSerialize, nil

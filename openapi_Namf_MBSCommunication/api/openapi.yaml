@@ -149,13 +149,7 @@ paths:
                     style: simple
                 style: form
             schema:
-              properties:
-                jsonData:
-                  $ref: '#/components/schemas/MbsN2MessageTransferReqData'
-                binaryDataN2Information:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/N2MessageTransfer_request'
         required: true
       responses:
         "200":
@@ -586,19 +580,12 @@ components:
       type: object
     MbsNgapIeType:
       anyOf:
-      - enum:
-        - MBS_SES_ACT_REQ
-        - MBS_SES_DEACT_REQ
-        - MBS_SES_UPD_REQ
-        type: string
+      - $ref: '#/components/schemas/MbsNgapIeType_anyOf'
       - type: string
       description: NGAP Information Element Type
     RanFailureIndication:
       anyOf:
-      - enum:
-        - NG_RAN_FAILURE_WITHOUT_RESTART
-        - NG_RAN_NOT_REACHABLE
-        type: string
+      - $ref: '#/components/schemas/RanFailureIndication_anyOf'
       - type: string
       description: Indicates a NG-RAN failure event
     RedirectResponse:
@@ -1023,9 +1010,7 @@ components:
       type: string
     N2InformationTransferResult:
       anyOf:
-      - enum:
-        - N2_INFO_TRANSFER_INITIATED
-        type: string
+      - $ref: '#/components/schemas/N2InformationTransferResult_anyOf'
       - type: string
       description: Describes the result of N2 information transfer by AMF to the AN
     RefToBinaryData:
@@ -1197,64 +1182,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -1332,6 +1260,92 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    N2MessageTransfer_request:
+      properties:
+        jsonData:
+          $ref: '#/components/schemas/MbsN2MessageTransferReqData'
+        binaryDataN2Information:
+          format: binary
+          type: string
+      type: object
+    MbsNgapIeType_anyOf:
+      enum:
+      - MBS_SES_ACT_REQ
+      - MBS_SES_DEACT_REQ
+      - MBS_SES_UPD_REQ
+      type: string
+      example: null
+    RanFailureIndication_anyOf:
+      enum:
+      - NG_RAN_FAILURE_WITHOUT_RESTART
+      - NG_RAN_NOT_REACHABLE
+      type: string
+      example: null
+    N2InformationTransferResult_anyOf:
+      enum:
+      - N2_INFO_TRANSFER_INITIATED
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

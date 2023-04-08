@@ -48,7 +48,7 @@ func NewUsageThresholdRmWithDefaults() *UsageThresholdRm {
 
 // GetDuration returns the Duration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetDuration() int32 {
-	if o == nil || IsNil(o.Duration.Get()) {
+	if o == nil || isNil(o.Duration.Get()) {
 		var ret int32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *UsageThresholdRm) UnsetDuration() {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetTotalVolume() int64 {
-	if o == nil || IsNil(o.TotalVolume.Get()) {
+	if o == nil || isNil(o.TotalVolume.Get()) {
 		var ret int64
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *UsageThresholdRm) UnsetTotalVolume() {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetDownlinkVolume() int64 {
-	if o == nil || IsNil(o.DownlinkVolume.Get()) {
+	if o == nil || isNil(o.DownlinkVolume.Get()) {
 		var ret int64
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *UsageThresholdRm) UnsetDownlinkVolume() {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageThresholdRm) GetUplinkVolume() int64 {
-	if o == nil || IsNil(o.UplinkVolume.Get()) {
+	if o == nil || isNil(o.UplinkVolume.Get()) {
 		var ret int64
 		return ret
 	}

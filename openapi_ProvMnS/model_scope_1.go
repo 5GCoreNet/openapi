@@ -42,7 +42,7 @@ func NewScope1WithDefaults() *Scope1 {
 
 // GetScopeType returns the ScopeType field value if set, zero value otherwise.
 func (o *Scope1) GetScopeType() string {
-	if o == nil || IsNil(o.ScopeType) {
+	if o == nil || isNil(o.ScopeType) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Scope1) GetScopeType() string {
 // GetScopeTypeOk returns a tuple with the ScopeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scope1) GetScopeTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ScopeType) {
+	if o == nil || isNil(o.ScopeType) {
 		return nil, false
 	}
 	return o.ScopeType, true
@@ -60,7 +60,7 @@ func (o *Scope1) GetScopeTypeOk() (*string, bool) {
 
 // HasScopeType returns a boolean if a field has been set.
 func (o *Scope1) HasScopeType() bool {
-	if o != nil && !IsNil(o.ScopeType) {
+	if o != nil && !isNil(o.ScopeType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Scope1) SetScopeType(v string) {
 
 // GetScopeLevel returns the ScopeLevel field value if set, zero value otherwise.
 func (o *Scope1) GetScopeLevel() int32 {
-	if o == nil || IsNil(o.ScopeLevel) {
+	if o == nil || isNil(o.ScopeLevel) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Scope1) GetScopeLevel() int32 {
 // GetScopeLevelOk returns a tuple with the ScopeLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Scope1) GetScopeLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.ScopeLevel) {
+	if o == nil || isNil(o.ScopeLevel) {
 		return nil, false
 	}
 	return o.ScopeLevel, true
@@ -92,7 +92,7 @@ func (o *Scope1) GetScopeLevelOk() (*int32, bool) {
 
 // HasScopeLevel returns a boolean if a field has been set.
 func (o *Scope1) HasScopeLevel() bool {
-	if o != nil && !IsNil(o.ScopeLevel) {
+	if o != nil && !isNil(o.ScopeLevel) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o Scope1) MarshalJSON() ([]byte, error) {
 
 func (o Scope1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ScopeType) {
+	if !isNil(o.ScopeType) {
 		toSerialize["scopeType"] = o.ScopeType
 	}
-	if !IsNil(o.ScopeLevel) {
+	if !isNil(o.ScopeLevel) {
 		toSerialize["scopeLevel"] = o.ScopeLevel
 	}
 	return toSerialize, nil

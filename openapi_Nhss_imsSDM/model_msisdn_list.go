@@ -68,7 +68,7 @@ func (o *MsisdnList) SetBasicMsisdn(v string) {
 
 // GetAdditionalMsisdns returns the AdditionalMsisdns field value if set, zero value otherwise.
 func (o *MsisdnList) GetAdditionalMsisdns() []string {
-	if o == nil || IsNil(o.AdditionalMsisdns) {
+	if o == nil || isNil(o.AdditionalMsisdns) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MsisdnList) GetAdditionalMsisdns() []string {
 // GetAdditionalMsisdnsOk returns a tuple with the AdditionalMsisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MsisdnList) GetAdditionalMsisdnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AdditionalMsisdns) {
+	if o == nil || isNil(o.AdditionalMsisdns) {
 		return nil, false
 	}
 	return o.AdditionalMsisdns, true
@@ -86,7 +86,7 @@ func (o *MsisdnList) GetAdditionalMsisdnsOk() ([]string, bool) {
 
 // HasAdditionalMsisdns returns a boolean if a field has been set.
 func (o *MsisdnList) HasAdditionalMsisdns() bool {
-	if o != nil && !IsNil(o.AdditionalMsisdns) {
+	if o != nil && !isNil(o.AdditionalMsisdns) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o MsisdnList) MarshalJSON() ([]byte, error) {
 func (o MsisdnList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["basicMsisdn"] = o.BasicMsisdn
-	if !IsNil(o.AdditionalMsisdns) {
+	if !isNil(o.AdditionalMsisdns) {
 		toSerialize["additionalMsisdns"] = o.AdditionalMsisdns
 	}
 	return toSerialize, nil

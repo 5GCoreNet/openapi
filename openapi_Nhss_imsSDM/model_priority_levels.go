@@ -67,7 +67,7 @@ func (o *PriorityLevels) SetServicePriorityLevelList(v []string) {
 
 // GetServicePriorityLevel returns the ServicePriorityLevel field value if set, zero value otherwise.
 func (o *PriorityLevels) GetServicePriorityLevel() int32 {
-	if o == nil || IsNil(o.ServicePriorityLevel) {
+	if o == nil || isNil(o.ServicePriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *PriorityLevels) GetServicePriorityLevel() int32 {
 // GetServicePriorityLevelOk returns a tuple with the ServicePriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriorityLevels) GetServicePriorityLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServicePriorityLevel) {
+	if o == nil || isNil(o.ServicePriorityLevel) {
 		return nil, false
 	}
 	return o.ServicePriorityLevel, true
@@ -85,7 +85,7 @@ func (o *PriorityLevels) GetServicePriorityLevelOk() (*int32, bool) {
 
 // HasServicePriorityLevel returns a boolean if a field has been set.
 func (o *PriorityLevels) HasServicePriorityLevel() bool {
-	if o != nil && !IsNil(o.ServicePriorityLevel) {
+	if o != nil && !isNil(o.ServicePriorityLevel) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o PriorityLevels) MarshalJSON() ([]byte, error) {
 func (o PriorityLevels) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["servicePriorityLevelList"] = o.ServicePriorityLevelList
-	if !IsNil(o.ServicePriorityLevel) {
+	if !isNil(o.ServicePriorityLevel) {
 		toSerialize["servicePriorityLevel"] = o.ServicePriorityLevel
 	}
 	return toSerialize, nil

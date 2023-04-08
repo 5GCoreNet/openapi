@@ -98,7 +98,7 @@ func (o *TagType) SetKeyType(v KeyType) {
 
 // GetSort returns the Sort field value if set, zero value otherwise.
 func (o *TagType) GetSort() bool {
-	if o == nil || IsNil(o.Sort) {
+	if o == nil || isNil(o.Sort) {
 		var ret bool
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *TagType) GetSort() bool {
 // GetSortOk returns a tuple with the Sort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TagType) GetSortOk() (*bool, bool) {
-	if o == nil || IsNil(o.Sort) {
+	if o == nil || isNil(o.Sort) {
 		return nil, false
 	}
 	return o.Sort, true
@@ -116,7 +116,7 @@ func (o *TagType) GetSortOk() (*bool, bool) {
 
 // HasSort returns a boolean if a field has been set.
 func (o *TagType) HasSort() bool {
-	if o != nil && !IsNil(o.Sort) {
+	if o != nil && !isNil(o.Sort) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *TagType) SetSort(v bool) {
 
 // GetPresence returns the Presence field value if set, zero value otherwise.
 func (o *TagType) GetPresence() bool {
-	if o == nil || IsNil(o.Presence) {
+	if o == nil || isNil(o.Presence) {
 		var ret bool
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *TagType) GetPresence() bool {
 // GetPresenceOk returns a tuple with the Presence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TagType) GetPresenceOk() (*bool, bool) {
-	if o == nil || IsNil(o.Presence) {
+	if o == nil || isNil(o.Presence) {
 		return nil, false
 	}
 	return o.Presence, true
@@ -148,7 +148,7 @@ func (o *TagType) GetPresenceOk() (*bool, bool) {
 
 // HasPresence returns a boolean if a field has been set.
 func (o *TagType) HasPresence() bool {
-	if o != nil && !IsNil(o.Presence) {
+	if o != nil && !isNil(o.Presence) {
 		return true
 	}
 
@@ -172,10 +172,10 @@ func (o TagType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tagName"] = o.TagName
 	toSerialize["keyType"] = o.KeyType
-	if !IsNil(o.Sort) {
+	if !isNil(o.Sort) {
 		toSerialize["sort"] = o.Sort
 	}
-	if !IsNil(o.Presence) {
+	if !isNil(o.Presence) {
 		toSerialize["presence"] = o.Presence
 	}
 	return toSerialize, nil

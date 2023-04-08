@@ -13,7 +13,7 @@ package openapi_Eecs_TargetEESDiscovery
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -108,16 +108,16 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 		return localVarReturnValue, nil, reportError("easId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ees-id", r.eesId, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "eas-id", r.easId, "")
+	parameterAddToQuery(localVarQueryParams, "ees-id", r.eesId, "")
+	parameterAddToQuery(localVarQueryParams, "eas-id", r.easId, "")
 	if r.targetDnai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-dnai", r.targetDnai, "")
+		parameterAddToQuery(localVarQueryParams, "target-dnai", r.targetDnai, "")
 	}
 	if r.ueId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id", r.ueId, "")
+		parameterAddToQuery(localVarQueryParams, "ue-id", r.ueId, "")
 	}
 	if r.ueLocation != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-location", r.ueLocation, "")
+		parameterAddToQuery(localVarQueryParams, "ue-location", r.ueLocation, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -146,9 +146,9 @@ func (a *EESProfilesCollectionApiService) GetEESProfilesExecute(r ApiGetEESProfi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

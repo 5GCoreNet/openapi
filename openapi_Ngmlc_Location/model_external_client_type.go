@@ -17,23 +17,37 @@ import (
 
 // ExternalClientType Indicates types of External Clients.
 type ExternalClientType struct {
-	string *string
+	ExternalClientTypeAnyOf *ExternalClientTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ExternalClientType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ExternalClientTypeAnyOf
+	err = json.Unmarshal(data, &dst.ExternalClientTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonExternalClientTypeAnyOf, _ := json.Marshal(dst.ExternalClientTypeAnyOf)
+		if string(jsonExternalClientTypeAnyOf) == "{}" { // empty struct
+			dst.ExternalClientTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ExternalClientTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ExternalClientTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ExternalClientType)")
@@ -41,8 +55,12 @@ func (dst *ExternalClientType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ExternalClientType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ExternalClientTypeAnyOf != nil {
+		return json.Marshal(&src.ExternalClientTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

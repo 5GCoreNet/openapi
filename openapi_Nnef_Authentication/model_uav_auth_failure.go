@@ -71,7 +71,7 @@ func (o *UAVAuthFailure) SetError(v ProblemDetails) {
 
 // GetUasResourceRelease returns the UasResourceRelease field value if set, zero value otherwise.
 func (o *UAVAuthFailure) GetUasResourceRelease() bool {
-	if o == nil || IsNil(o.UasResourceRelease) {
+	if o == nil || isNil(o.UasResourceRelease) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *UAVAuthFailure) GetUasResourceRelease() bool {
 // GetUasResourceReleaseOk returns a tuple with the UasResourceRelease field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthFailure) GetUasResourceReleaseOk() (*bool, bool) {
-	if o == nil || IsNil(o.UasResourceRelease) {
+	if o == nil || isNil(o.UasResourceRelease) {
 		return nil, false
 	}
 	return o.UasResourceRelease, true
@@ -89,7 +89,7 @@ func (o *UAVAuthFailure) GetUasResourceReleaseOk() (*bool, bool) {
 
 // HasUasResourceRelease returns a boolean if a field has been set.
 func (o *UAVAuthFailure) HasUasResourceRelease() bool {
-	if o != nil && !IsNil(o.UasResourceRelease) {
+	if o != nil && !isNil(o.UasResourceRelease) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o UAVAuthFailure) MarshalJSON() ([]byte, error) {
 func (o UAVAuthFailure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.UasResourceRelease) {
+	if !isNil(o.UasResourceRelease) {
 		toSerialize["uasResourceRelease"] = o.UasResourceRelease
 	}
 	return toSerialize, nil

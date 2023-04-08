@@ -44,7 +44,7 @@ func NewMMAddContentInfoWithDefaults() *MMAddContentInfo {
 
 // GetTypeNumber returns the TypeNumber field value if set, zero value otherwise.
 func (o *MMAddContentInfo) GetTypeNumber() string {
-	if o == nil || IsNil(o.TypeNumber) {
+	if o == nil || isNil(o.TypeNumber) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MMAddContentInfo) GetTypeNumber() string {
 // GetTypeNumberOk returns a tuple with the TypeNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMAddContentInfo) GetTypeNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.TypeNumber) {
+	if o == nil || isNil(o.TypeNumber) {
 		return nil, false
 	}
 	return o.TypeNumber, true
@@ -62,7 +62,7 @@ func (o *MMAddContentInfo) GetTypeNumberOk() (*string, bool) {
 
 // HasTypeNumber returns a boolean if a field has been set.
 func (o *MMAddContentInfo) HasTypeNumber() bool {
-	if o != nil && !IsNil(o.TypeNumber) {
+	if o != nil && !isNil(o.TypeNumber) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MMAddContentInfo) SetTypeNumber(v string) {
 
 // GetAddtypeInfo returns the AddtypeInfo field value if set, zero value otherwise.
 func (o *MMAddContentInfo) GetAddtypeInfo() string {
-	if o == nil || IsNil(o.AddtypeInfo) {
+	if o == nil || isNil(o.AddtypeInfo) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MMAddContentInfo) GetAddtypeInfo() string {
 // GetAddtypeInfoOk returns a tuple with the AddtypeInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMAddContentInfo) GetAddtypeInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.AddtypeInfo) {
+	if o == nil || isNil(o.AddtypeInfo) {
 		return nil, false
 	}
 	return o.AddtypeInfo, true
@@ -94,7 +94,7 @@ func (o *MMAddContentInfo) GetAddtypeInfoOk() (*string, bool) {
 
 // HasAddtypeInfo returns a boolean if a field has been set.
 func (o *MMAddContentInfo) HasAddtypeInfo() bool {
-	if o != nil && !IsNil(o.AddtypeInfo) {
+	if o != nil && !isNil(o.AddtypeInfo) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *MMAddContentInfo) SetAddtypeInfo(v string) {
 
 // GetContentSize returns the ContentSize field value if set, zero value otherwise.
 func (o *MMAddContentInfo) GetContentSize() int32 {
-	if o == nil || IsNil(o.ContentSize) {
+	if o == nil || isNil(o.ContentSize) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *MMAddContentInfo) GetContentSize() int32 {
 // GetContentSizeOk returns a tuple with the ContentSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MMAddContentInfo) GetContentSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.ContentSize) {
+	if o == nil || isNil(o.ContentSize) {
 		return nil, false
 	}
 	return o.ContentSize, true
@@ -126,7 +126,7 @@ func (o *MMAddContentInfo) GetContentSizeOk() (*int32, bool) {
 
 // HasContentSize returns a boolean if a field has been set.
 func (o *MMAddContentInfo) HasContentSize() bool {
-	if o != nil && !IsNil(o.ContentSize) {
+	if o != nil && !isNil(o.ContentSize) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o MMAddContentInfo) MarshalJSON() ([]byte, error) {
 
 func (o MMAddContentInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TypeNumber) {
+	if !isNil(o.TypeNumber) {
 		toSerialize["typeNumber"] = o.TypeNumber
 	}
-	if !IsNil(o.AddtypeInfo) {
+	if !isNil(o.AddtypeInfo) {
 		toSerialize["addtypeInfo"] = o.AddtypeInfo
 	}
-	if !IsNil(o.ContentSize) {
+	if !isNil(o.ContentSize) {
 		toSerialize["contentSize"] = o.ContentSize
 	}
 	return toSerialize, nil

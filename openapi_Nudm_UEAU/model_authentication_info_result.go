@@ -83,7 +83,7 @@ func (o *AuthenticationInfoResult) SetAuthType(v AuthType) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *AuthenticationInfoResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -101,7 +101,7 @@ func (o *AuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *AuthenticationInfoResult) SetSupportedFeatures(v string) {
 
 // GetAuthenticationVector returns the AuthenticationVector field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetAuthenticationVector() AuthenticationVector {
-	if o == nil || IsNil(o.AuthenticationVector) {
+	if o == nil || isNil(o.AuthenticationVector) {
 		var ret AuthenticationVector
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *AuthenticationInfoResult) GetAuthenticationVector() AuthenticationVecto
 // GetAuthenticationVectorOk returns a tuple with the AuthenticationVector field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetAuthenticationVectorOk() (*AuthenticationVector, bool) {
-	if o == nil || IsNil(o.AuthenticationVector) {
+	if o == nil || isNil(o.AuthenticationVector) {
 		return nil, false
 	}
 	return o.AuthenticationVector, true
@@ -133,7 +133,7 @@ func (o *AuthenticationInfoResult) GetAuthenticationVectorOk() (*AuthenticationV
 
 // HasAuthenticationVector returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasAuthenticationVector() bool {
-	if o != nil && !IsNil(o.AuthenticationVector) {
+	if o != nil && !isNil(o.AuthenticationVector) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *AuthenticationInfoResult) SetAuthenticationVector(v AuthenticationVecto
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *AuthenticationInfoResult) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -165,7 +165,7 @@ func (o *AuthenticationInfoResult) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *AuthenticationInfoResult) SetSupi(v string) {
 
 // GetAkmaInd returns the AkmaInd field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetAkmaInd() bool {
-	if o == nil || IsNil(o.AkmaInd) {
+	if o == nil || isNil(o.AkmaInd) {
 		var ret bool
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *AuthenticationInfoResult) GetAkmaInd() bool {
 // GetAkmaIndOk returns a tuple with the AkmaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetAkmaIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AkmaInd) {
+	if o == nil || isNil(o.AkmaInd) {
 		return nil, false
 	}
 	return o.AkmaInd, true
@@ -197,7 +197,7 @@ func (o *AuthenticationInfoResult) GetAkmaIndOk() (*bool, bool) {
 
 // HasAkmaInd returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasAkmaInd() bool {
-	if o != nil && !IsNil(o.AkmaInd) {
+	if o != nil && !isNil(o.AkmaInd) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *AuthenticationInfoResult) SetAkmaInd(v bool) {
 
 // GetAuthAaa returns the AuthAaa field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetAuthAaa() bool {
-	if o == nil || IsNil(o.AuthAaa) {
+	if o == nil || isNil(o.AuthAaa) {
 		var ret bool
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *AuthenticationInfoResult) GetAuthAaa() bool {
 // GetAuthAaaOk returns a tuple with the AuthAaa field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetAuthAaaOk() (*bool, bool) {
-	if o == nil || IsNil(o.AuthAaa) {
+	if o == nil || isNil(o.AuthAaa) {
 		return nil, false
 	}
 	return o.AuthAaa, true
@@ -229,7 +229,7 @@ func (o *AuthenticationInfoResult) GetAuthAaaOk() (*bool, bool) {
 
 // HasAuthAaa returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasAuthAaa() bool {
-	if o != nil && !IsNil(o.AuthAaa) {
+	if o != nil && !isNil(o.AuthAaa) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *AuthenticationInfoResult) SetAuthAaa(v bool) {
 
 // GetRoutingId returns the RoutingId field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetRoutingId() string {
-	if o == nil || IsNil(o.RoutingId) {
+	if o == nil || isNil(o.RoutingId) {
 		var ret string
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *AuthenticationInfoResult) GetRoutingId() string {
 // GetRoutingIdOk returns a tuple with the RoutingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetRoutingIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingId) {
+	if o == nil || isNil(o.RoutingId) {
 		return nil, false
 	}
 	return o.RoutingId, true
@@ -261,7 +261,7 @@ func (o *AuthenticationInfoResult) GetRoutingIdOk() (*string, bool) {
 
 // HasRoutingId returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasRoutingId() bool {
-	if o != nil && !IsNil(o.RoutingId) {
+	if o != nil && !isNil(o.RoutingId) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *AuthenticationInfoResult) SetRoutingId(v string) {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *AuthenticationInfoResult) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *AuthenticationInfoResult) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoResult) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -293,7 +293,7 @@ func (o *AuthenticationInfoResult) GetPvsInfoOk() ([]ServerAddressingInfo, bool)
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *AuthenticationInfoResult) HasPvsInfo() bool {
-	if o != nil && !IsNil(o.PvsInfo) {
+	if o != nil && !isNil(o.PvsInfo) {
 		return true
 	}
 
@@ -316,25 +316,25 @@ func (o AuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 func (o AuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authType"] = o.AuthType
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.AuthenticationVector) {
+	if !isNil(o.AuthenticationVector) {
 		toSerialize["authenticationVector"] = o.AuthenticationVector
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.AkmaInd) {
+	if !isNil(o.AkmaInd) {
 		toSerialize["akmaInd"] = o.AkmaInd
 	}
-	if !IsNil(o.AuthAaa) {
+	if !isNil(o.AuthAaa) {
 		toSerialize["authAaa"] = o.AuthAaa
 	}
-	if !IsNil(o.RoutingId) {
+	if !isNil(o.RoutingId) {
 		toSerialize["routingId"] = o.RoutingId
 	}
-	if !IsNil(o.PvsInfo) {
+	if !isNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
 	return toSerialize, nil

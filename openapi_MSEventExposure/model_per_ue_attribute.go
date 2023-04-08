@@ -47,7 +47,7 @@ func NewPerUeAttributeWithDefaults() *PerUeAttribute {
 
 // GetUeDest returns the UeDest field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetUeDest() LocationArea5G {
-	if o == nil || IsNil(o.UeDest) {
+	if o == nil || isNil(o.UeDest) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PerUeAttribute) GetUeDest() LocationArea5G {
 // GetUeDestOk returns a tuple with the UeDest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetUeDestOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.UeDest) {
+	if o == nil || isNil(o.UeDest) {
 		return nil, false
 	}
 	return o.UeDest, true
@@ -65,7 +65,7 @@ func (o *PerUeAttribute) GetUeDestOk() (*LocationArea5G, bool) {
 
 // HasUeDest returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasUeDest() bool {
-	if o != nil && !IsNil(o.UeDest) {
+	if o != nil && !isNil(o.UeDest) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *PerUeAttribute) SetUeDest(v LocationArea5G) {
 
 // GetRoute returns the Route field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetRoute() string {
-	if o == nil || IsNil(o.Route) {
+	if o == nil || isNil(o.Route) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *PerUeAttribute) GetRoute() string {
 // GetRouteOk returns a tuple with the Route field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetRouteOk() (*string, bool) {
-	if o == nil || IsNil(o.Route) {
+	if o == nil || isNil(o.Route) {
 		return nil, false
 	}
 	return o.Route, true
@@ -97,7 +97,7 @@ func (o *PerUeAttribute) GetRouteOk() (*string, bool) {
 
 // HasRoute returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasRoute() bool {
-	if o != nil && !IsNil(o.Route) {
+	if o != nil && !isNil(o.Route) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *PerUeAttribute) SetRoute(v string) {
 
 // GetAvgSpeed returns the AvgSpeed field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetAvgSpeed() string {
-	if o == nil || IsNil(o.AvgSpeed) {
+	if o == nil || isNil(o.AvgSpeed) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *PerUeAttribute) GetAvgSpeed() string {
 // GetAvgSpeedOk returns a tuple with the AvgSpeed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetAvgSpeedOk() (*string, bool) {
-	if o == nil || IsNil(o.AvgSpeed) {
+	if o == nil || isNil(o.AvgSpeed) {
 		return nil, false
 	}
 	return o.AvgSpeed, true
@@ -129,7 +129,7 @@ func (o *PerUeAttribute) GetAvgSpeedOk() (*string, bool) {
 
 // HasAvgSpeed returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasAvgSpeed() bool {
-	if o != nil && !IsNil(o.AvgSpeed) {
+	if o != nil && !isNil(o.AvgSpeed) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *PerUeAttribute) SetAvgSpeed(v string) {
 
 // GetTimeOfArrival returns the TimeOfArrival field value if set, zero value otherwise.
 func (o *PerUeAttribute) GetTimeOfArrival() time.Time {
-	if o == nil || IsNil(o.TimeOfArrival) {
+	if o == nil || isNil(o.TimeOfArrival) {
 		var ret time.Time
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *PerUeAttribute) GetTimeOfArrival() time.Time {
 // GetTimeOfArrivalOk returns a tuple with the TimeOfArrival field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerUeAttribute) GetTimeOfArrivalOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeOfArrival) {
+	if o == nil || isNil(o.TimeOfArrival) {
 		return nil, false
 	}
 	return o.TimeOfArrival, true
@@ -161,7 +161,7 @@ func (o *PerUeAttribute) GetTimeOfArrivalOk() (*time.Time, bool) {
 
 // HasTimeOfArrival returns a boolean if a field has been set.
 func (o *PerUeAttribute) HasTimeOfArrival() bool {
-	if o != nil && !IsNil(o.TimeOfArrival) {
+	if o != nil && !isNil(o.TimeOfArrival) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o PerUeAttribute) MarshalJSON() ([]byte, error) {
 
 func (o PerUeAttribute) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeDest) {
+	if !isNil(o.UeDest) {
 		toSerialize["ueDest"] = o.UeDest
 	}
-	if !IsNil(o.Route) {
+	if !isNil(o.Route) {
 		toSerialize["route"] = o.Route
 	}
-	if !IsNil(o.AvgSpeed) {
+	if !isNil(o.AvgSpeed) {
 		toSerialize["avgSpeed"] = o.AvgSpeed
 	}
-	if !IsNil(o.TimeOfArrival) {
+	if !isNil(o.TimeOfArrival) {
 		toSerialize["timeOfArrival"] = o.TimeOfArrival
 	}
 	return toSerialize, nil

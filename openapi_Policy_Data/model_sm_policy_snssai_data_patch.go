@@ -68,7 +68,7 @@ func (o *SmPolicySnssaiDataPatch) SetSnssai(v Snssai) {
 
 // GetSmPolicyDnnData returns the SmPolicyDnnData field value if set, zero value otherwise.
 func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnData() map[string]SmPolicyDnnDataPatch {
-	if o == nil || IsNil(o.SmPolicyDnnData) {
+	if o == nil || isNil(o.SmPolicyDnnData) {
 		var ret map[string]SmPolicyDnnDataPatch
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnData() map[string]SmPolicyDnnDat
 // GetSmPolicyDnnDataOk returns a tuple with the SmPolicyDnnData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDnnDataPatch, bool) {
-	if o == nil || IsNil(o.SmPolicyDnnData) {
+	if o == nil || isNil(o.SmPolicyDnnData) {
 		return nil, false
 	}
 	return o.SmPolicyDnnData, true
@@ -86,7 +86,7 @@ func (o *SmPolicySnssaiDataPatch) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDn
 
 // HasSmPolicyDnnData returns a boolean if a field has been set.
 func (o *SmPolicySnssaiDataPatch) HasSmPolicyDnnData() bool {
-	if o != nil && !IsNil(o.SmPolicyDnnData) {
+	if o != nil && !isNil(o.SmPolicyDnnData) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o SmPolicySnssaiDataPatch) MarshalJSON() ([]byte, error) {
 func (o SmPolicySnssaiDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.SmPolicyDnnData) {
+	if !isNil(o.SmPolicyDnnData) {
 		toSerialize["smPolicyDnnData"] = o.SmPolicyDnnData
 	}
 	return toSerialize, nil

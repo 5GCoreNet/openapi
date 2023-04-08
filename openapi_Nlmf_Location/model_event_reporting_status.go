@@ -44,7 +44,7 @@ func NewEventReportingStatusWithDefaults() *EventReportingStatus {
 
 // GetEventReportCounter returns the EventReportCounter field value if set, zero value otherwise.
 func (o *EventReportingStatus) GetEventReportCounter() int32 {
-	if o == nil || IsNil(o.EventReportCounter) {
+	if o == nil || isNil(o.EventReportCounter) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EventReportingStatus) GetEventReportCounter() int32 {
 // GetEventReportCounterOk returns a tuple with the EventReportCounter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingStatus) GetEventReportCounterOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventReportCounter) {
+	if o == nil || isNil(o.EventReportCounter) {
 		return nil, false
 	}
 	return o.EventReportCounter, true
@@ -62,7 +62,7 @@ func (o *EventReportingStatus) GetEventReportCounterOk() (*int32, bool) {
 
 // HasEventReportCounter returns a boolean if a field has been set.
 func (o *EventReportingStatus) HasEventReportCounter() bool {
-	if o != nil && !IsNil(o.EventReportCounter) {
+	if o != nil && !isNil(o.EventReportCounter) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EventReportingStatus) SetEventReportCounter(v int32) {
 
 // GetEventReportDuration returns the EventReportDuration field value if set, zero value otherwise.
 func (o *EventReportingStatus) GetEventReportDuration() int32 {
-	if o == nil || IsNil(o.EventReportDuration) {
+	if o == nil || isNil(o.EventReportDuration) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EventReportingStatus) GetEventReportDuration() int32 {
 // GetEventReportDurationOk returns a tuple with the EventReportDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventReportingStatus) GetEventReportDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventReportDuration) {
+	if o == nil || isNil(o.EventReportDuration) {
 		return nil, false
 	}
 	return o.EventReportDuration, true
@@ -94,7 +94,7 @@ func (o *EventReportingStatus) GetEventReportDurationOk() (*int32, bool) {
 
 // HasEventReportDuration returns a boolean if a field has been set.
 func (o *EventReportingStatus) HasEventReportDuration() bool {
-	if o != nil && !IsNil(o.EventReportDuration) {
+	if o != nil && !isNil(o.EventReportDuration) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o EventReportingStatus) MarshalJSON() ([]byte, error) {
 
 func (o EventReportingStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventReportCounter) {
+	if !isNil(o.EventReportCounter) {
 		toSerialize["eventReportCounter"] = o.EventReportCounter
 	}
-	if !IsNil(o.EventReportDuration) {
+	if !isNil(o.EventReportDuration) {
 		toSerialize["eventReportDuration"] = o.EventReportDuration
 	}
 	return toSerialize, nil

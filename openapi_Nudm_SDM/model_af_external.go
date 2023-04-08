@@ -44,7 +44,7 @@ func NewAfExternalWithDefaults() *AfExternal {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *AfExternal) GetAfId() string {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AfExternal) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfExternal) GetAfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -62,7 +62,7 @@ func (o *AfExternal) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *AfExternal) HasAfId() bool {
-	if o != nil && !IsNil(o.AfId) {
+	if o != nil && !isNil(o.AfId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AfExternal) SetAfId(v string) {
 
 // GetAllowedGeographicArea returns the AllowedGeographicArea field value if set, zero value otherwise.
 func (o *AfExternal) GetAllowedGeographicArea() []GeographicArea {
-	if o == nil || IsNil(o.AllowedGeographicArea) {
+	if o == nil || isNil(o.AllowedGeographicArea) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AfExternal) GetAllowedGeographicArea() []GeographicArea {
 // GetAllowedGeographicAreaOk returns a tuple with the AllowedGeographicArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfExternal) GetAllowedGeographicAreaOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.AllowedGeographicArea) {
+	if o == nil || isNil(o.AllowedGeographicArea) {
 		return nil, false
 	}
 	return o.AllowedGeographicArea, true
@@ -94,7 +94,7 @@ func (o *AfExternal) GetAllowedGeographicAreaOk() ([]GeographicArea, bool) {
 
 // HasAllowedGeographicArea returns a boolean if a field has been set.
 func (o *AfExternal) HasAllowedGeographicArea() bool {
-	if o != nil && !IsNil(o.AllowedGeographicArea) {
+	if o != nil && !isNil(o.AllowedGeographicArea) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AfExternal) SetAllowedGeographicArea(v []GeographicArea) {
 
 // GetPrivacyCheckRelatedAction returns the PrivacyCheckRelatedAction field value if set, zero value otherwise.
 func (o *AfExternal) GetPrivacyCheckRelatedAction() PrivacyCheckRelatedAction {
-	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
 		var ret PrivacyCheckRelatedAction
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AfExternal) GetPrivacyCheckRelatedAction() PrivacyCheckRelatedAction {
 // GetPrivacyCheckRelatedActionOk returns a tuple with the PrivacyCheckRelatedAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfExternal) GetPrivacyCheckRelatedActionOk() (*PrivacyCheckRelatedAction, bool) {
-	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
 		return nil, false
 	}
 	return o.PrivacyCheckRelatedAction, true
@@ -126,7 +126,7 @@ func (o *AfExternal) GetPrivacyCheckRelatedActionOk() (*PrivacyCheckRelatedActio
 
 // HasPrivacyCheckRelatedAction returns a boolean if a field has been set.
 func (o *AfExternal) HasPrivacyCheckRelatedAction() bool {
-	if o != nil && !IsNil(o.PrivacyCheckRelatedAction) {
+	if o != nil && !isNil(o.PrivacyCheckRelatedAction) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AfExternal) SetPrivacyCheckRelatedAction(v PrivacyCheckRelatedAction) {
 
 // GetValidTimePeriod returns the ValidTimePeriod field value if set, zero value otherwise.
 func (o *AfExternal) GetValidTimePeriod() ValidTimePeriod {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		var ret ValidTimePeriod
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AfExternal) GetValidTimePeriod() ValidTimePeriod {
 // GetValidTimePeriodOk returns a tuple with the ValidTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfExternal) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		return nil, false
 	}
 	return o.ValidTimePeriod, true
@@ -158,7 +158,7 @@ func (o *AfExternal) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
 
 // HasValidTimePeriod returns a boolean if a field has been set.
 func (o *AfExternal) HasValidTimePeriod() bool {
-	if o != nil && !IsNil(o.ValidTimePeriod) {
+	if o != nil && !isNil(o.ValidTimePeriod) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o AfExternal) MarshalJSON() ([]byte, error) {
 
 func (o AfExternal) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfId) {
+	if !isNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !IsNil(o.AllowedGeographicArea) {
+	if !isNil(o.AllowedGeographicArea) {
 		toSerialize["allowedGeographicArea"] = o.AllowedGeographicArea
 	}
-	if !IsNil(o.PrivacyCheckRelatedAction) {
+	if !isNil(o.PrivacyCheckRelatedAction) {
 		toSerialize["privacyCheckRelatedAction"] = o.PrivacyCheckRelatedAction
 	}
-	if !IsNil(o.ValidTimePeriod) {
+	if !isNil(o.ValidTimePeriod) {
 		toSerialize["validTimePeriod"] = o.ValidTimePeriod
 	}
 	return toSerialize, nil

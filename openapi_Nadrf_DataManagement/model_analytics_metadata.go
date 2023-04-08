@@ -17,23 +17,37 @@ import (
 
 // AnalyticsMetadata Possible values are: - NUM_OF_SAMPLES: Number of data samples used for the generation of the output analytics. - DATA_WINDOW: Data time window of the data samples. - DATA_STAT_PROPS: Dataset statistical properties of the data used to generate the analytics. - STRATEGY: Output strategy used for the reporting of the analytics. - ACCURACY: Level of accuracy reached for the analytics. 
 type AnalyticsMetadata struct {
-	string *string
+	AnalyticsMetadataAnyOf *AnalyticsMetadataAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AnalyticsMetadata) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AnalyticsMetadataAnyOf
+	err = json.Unmarshal(data, &dst.AnalyticsMetadataAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAnalyticsMetadataAnyOf, _ := json.Marshal(dst.AnalyticsMetadataAnyOf)
+		if string(jsonAnalyticsMetadataAnyOf) == "{}" { // empty struct
+			dst.AnalyticsMetadataAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AnalyticsMetadataAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AnalyticsMetadataAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AnalyticsMetadata)")
@@ -41,8 +55,12 @@ func (dst *AnalyticsMetadata) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AnalyticsMetadata) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AnalyticsMetadataAnyOf != nil {
+		return json.Marshal(&src.AnalyticsMetadataAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

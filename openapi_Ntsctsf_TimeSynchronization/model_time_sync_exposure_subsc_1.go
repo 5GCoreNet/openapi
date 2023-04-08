@@ -74,7 +74,7 @@ func NewTimeSyncExposureSubsc1WithDefaults() *TimeSyncExposureSubsc1 {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetExterGroupId() string {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TimeSyncExposureSubsc1) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -92,7 +92,7 @@ func (o *TimeSyncExposureSubsc1) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasExterGroupId() bool {
-	if o != nil && !IsNil(o.ExterGroupId) {
+	if o != nil && !isNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *TimeSyncExposureSubsc1) SetExterGroupId(v string) {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetGpsis() []string {
-	if o == nil || IsNil(o.Gpsis) {
+	if o == nil || isNil(o.Gpsis) {
 		var ret []string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *TimeSyncExposureSubsc1) GetGpsis() []string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetGpsisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Gpsis) {
+	if o == nil || isNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -124,7 +124,7 @@ func (o *TimeSyncExposureSubsc1) GetGpsisOk() ([]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasGpsis() bool {
-	if o != nil && !IsNil(o.Gpsis) {
+	if o != nil && !isNil(o.Gpsis) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *TimeSyncExposureSubsc1) SetGpsis(v []string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetAnyUeInd() bool {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *TimeSyncExposureSubsc1) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -156,7 +156,7 @@ func (o *TimeSyncExposureSubsc1) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasAnyUeInd() bool {
-	if o != nil && !IsNil(o.AnyUeInd) {
+	if o != nil && !isNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *TimeSyncExposureSubsc1) SetAnyUeInd(v bool) {
 
 // GetAfServiceId returns the AfServiceId field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetAfServiceId() string {
-	if o == nil || IsNil(o.AfServiceId) {
+	if o == nil || isNil(o.AfServiceId) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *TimeSyncExposureSubsc1) GetAfServiceId() string {
 // GetAfServiceIdOk returns a tuple with the AfServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetAfServiceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfServiceId) {
+	if o == nil || isNil(o.AfServiceId) {
 		return nil, false
 	}
 	return o.AfServiceId, true
@@ -188,7 +188,7 @@ func (o *TimeSyncExposureSubsc1) GetAfServiceIdOk() (*string, bool) {
 
 // HasAfServiceId returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasAfServiceId() bool {
-	if o != nil && !IsNil(o.AfServiceId) {
+	if o != nil && !isNil(o.AfServiceId) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *TimeSyncExposureSubsc1) SetAfServiceId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *TimeSyncExposureSubsc1) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -220,7 +220,7 @@ func (o *TimeSyncExposureSubsc1) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *TimeSyncExposureSubsc1) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *TimeSyncExposureSubsc1) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -252,7 +252,7 @@ func (o *TimeSyncExposureSubsc1) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -314,7 +314,7 @@ func (o *TimeSyncExposureSubsc1) SetSubsNotifUri(v string) {
 
 // GetSubscribedEvents returns the SubscribedEvents field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetSubscribedEvents() []SubscribedEvent {
-	if o == nil || IsNil(o.SubscribedEvents) {
+	if o == nil || isNil(o.SubscribedEvents) {
 		var ret []SubscribedEvent
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *TimeSyncExposureSubsc1) GetSubscribedEvents() []SubscribedEvent {
 // GetSubscribedEventsOk returns a tuple with the SubscribedEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetSubscribedEventsOk() ([]SubscribedEvent, bool) {
-	if o == nil || IsNil(o.SubscribedEvents) {
+	if o == nil || isNil(o.SubscribedEvents) {
 		return nil, false
 	}
 	return o.SubscribedEvents, true
@@ -332,7 +332,7 @@ func (o *TimeSyncExposureSubsc1) GetSubscribedEventsOk() ([]SubscribedEvent, boo
 
 // HasSubscribedEvents returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasSubscribedEvents() bool {
-	if o != nil && !IsNil(o.SubscribedEvents) {
+	if o != nil && !isNil(o.SubscribedEvents) {
 		return true
 	}
 
@@ -346,7 +346,7 @@ func (o *TimeSyncExposureSubsc1) SetSubscribedEvents(v []SubscribedEvent) {
 
 // GetEventFilters returns the EventFilters field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetEventFilters() []EventFilter {
-	if o == nil || IsNil(o.EventFilters) {
+	if o == nil || isNil(o.EventFilters) {
 		var ret []EventFilter
 		return ret
 	}
@@ -356,7 +356,7 @@ func (o *TimeSyncExposureSubsc1) GetEventFilters() []EventFilter {
 // GetEventFiltersOk returns a tuple with the EventFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetEventFiltersOk() ([]EventFilter, bool) {
-	if o == nil || IsNil(o.EventFilters) {
+	if o == nil || isNil(o.EventFilters) {
 		return nil, false
 	}
 	return o.EventFilters, true
@@ -364,7 +364,7 @@ func (o *TimeSyncExposureSubsc1) GetEventFiltersOk() ([]EventFilter, bool) {
 
 // HasEventFilters returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasEventFilters() bool {
-	if o != nil && !IsNil(o.EventFilters) {
+	if o != nil && !isNil(o.EventFilters) {
 		return true
 	}
 
@@ -378,7 +378,7 @@ func (o *TimeSyncExposureSubsc1) SetEventFilters(v []EventFilter) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetNotifMethod() NotificationMethod {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		var ret NotificationMethod
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *TimeSyncExposureSubsc1) GetNotifMethod() NotificationMethod {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetNotifMethodOk() (*NotificationMethod, bool) {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -396,7 +396,7 @@ func (o *TimeSyncExposureSubsc1) GetNotifMethodOk() (*NotificationMethod, bool) 
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasNotifMethod() bool {
-	if o != nil && !IsNil(o.NotifMethod) {
+	if o != nil && !isNil(o.NotifMethod) {
 		return true
 	}
 
@@ -410,7 +410,7 @@ func (o *TimeSyncExposureSubsc1) SetNotifMethod(v NotificationMethod) {
 
 // GetMaxReportNbr returns the MaxReportNbr field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetMaxReportNbr() int32 {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		var ret int32
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *TimeSyncExposureSubsc1) GetMaxReportNbr() int32 {
 // GetMaxReportNbrOk returns a tuple with the MaxReportNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetMaxReportNbrOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		return nil, false
 	}
 	return o.MaxReportNbr, true
@@ -428,7 +428,7 @@ func (o *TimeSyncExposureSubsc1) GetMaxReportNbrOk() (*int32, bool) {
 
 // HasMaxReportNbr returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasMaxReportNbr() bool {
-	if o != nil && !IsNil(o.MaxReportNbr) {
+	if o != nil && !isNil(o.MaxReportNbr) {
 		return true
 	}
 
@@ -442,7 +442,7 @@ func (o *TimeSyncExposureSubsc1) SetMaxReportNbr(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -452,7 +452,7 @@ func (o *TimeSyncExposureSubsc1) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -460,7 +460,7 @@ func (o *TimeSyncExposureSubsc1) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -474,7 +474,7 @@ func (o *TimeSyncExposureSubsc1) SetExpiry(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -484,7 +484,7 @@ func (o *TimeSyncExposureSubsc1) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -492,7 +492,7 @@ func (o *TimeSyncExposureSubsc1) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -506,7 +506,7 @@ func (o *TimeSyncExposureSubsc1) SetRepPeriod(v int32) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -516,7 +516,7 @@ func (o *TimeSyncExposureSubsc1) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -524,7 +524,7 @@ func (o *TimeSyncExposureSubsc1) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -538,7 +538,7 @@ func (o *TimeSyncExposureSubsc1) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -548,7 +548,7 @@ func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -556,7 +556,7 @@ func (o *TimeSyncExposureSubsc1) GetWebsockNotifConfigOk() (*WebsockNotifConfig,
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -570,7 +570,7 @@ func (o *TimeSyncExposureSubsc1) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *TimeSyncExposureSubsc1) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -580,7 +580,7 @@ func (o *TimeSyncExposureSubsc1) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeSyncExposureSubsc1) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -588,7 +588,7 @@ func (o *TimeSyncExposureSubsc1) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *TimeSyncExposureSubsc1) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -610,51 +610,51 @@ func (o TimeSyncExposureSubsc1) MarshalJSON() ([]byte, error) {
 
 func (o TimeSyncExposureSubsc1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExterGroupId) {
+	if !isNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
-	if !IsNil(o.Gpsis) {
+	if !isNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !IsNil(o.AnyUeInd) {
+	if !isNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !IsNil(o.AfServiceId) {
+	if !isNil(o.AfServiceId) {
 		toSerialize["afServiceId"] = o.AfServiceId
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["subsNotifId"] = o.SubsNotifId
 	toSerialize["subsNotifUri"] = o.SubsNotifUri
-	if !IsNil(o.SubscribedEvents) {
+	if !isNil(o.SubscribedEvents) {
 		toSerialize["subscribedEvents"] = o.SubscribedEvents
 	}
-	if !IsNil(o.EventFilters) {
+	if !isNil(o.EventFilters) {
 		toSerialize["eventFilters"] = o.EventFilters
 	}
-	if !IsNil(o.NotifMethod) {
+	if !isNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !IsNil(o.MaxReportNbr) {
+	if !isNil(o.MaxReportNbr) {
 		toSerialize["maxReportNbr"] = o.MaxReportNbr
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

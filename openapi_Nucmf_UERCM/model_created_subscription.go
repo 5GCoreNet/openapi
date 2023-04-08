@@ -71,7 +71,7 @@ func (o *CreatedSubscription) SetDicEntryId(v int32) {
 
 // GetConfirmedExpires returns the ConfirmedExpires field value if set, zero value otherwise.
 func (o *CreatedSubscription) GetConfirmedExpires() time.Time {
-	if o == nil || IsNil(o.ConfirmedExpires) {
+	if o == nil || isNil(o.ConfirmedExpires) {
 		var ret time.Time
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *CreatedSubscription) GetConfirmedExpires() time.Time {
 // GetConfirmedExpiresOk returns a tuple with the ConfirmedExpires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedSubscription) GetConfirmedExpiresOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ConfirmedExpires) {
+	if o == nil || isNil(o.ConfirmedExpires) {
 		return nil, false
 	}
 	return o.ConfirmedExpires, true
@@ -89,7 +89,7 @@ func (o *CreatedSubscription) GetConfirmedExpiresOk() (*time.Time, bool) {
 
 // HasConfirmedExpires returns a boolean if a field has been set.
 func (o *CreatedSubscription) HasConfirmedExpires() bool {
-	if o != nil && !IsNil(o.ConfirmedExpires) {
+	if o != nil && !isNil(o.ConfirmedExpires) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *CreatedSubscription) SetConfirmedExpires(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreatedSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *CreatedSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -121,7 +121,7 @@ func (o *CreatedSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreatedSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o CreatedSubscription) MarshalJSON() ([]byte, error) {
 func (o CreatedSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dicEntryId"] = o.DicEntryId
-	if !IsNil(o.ConfirmedExpires) {
+	if !isNil(o.ConfirmedExpires) {
 		toSerialize["confirmedExpires"] = o.ConfirmedExpires
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

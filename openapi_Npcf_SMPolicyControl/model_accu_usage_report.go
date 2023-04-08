@@ -83,7 +83,7 @@ func (o *AccuUsageReport) SetRefUmIds(v string) {
 
 // GetVolUsage returns the VolUsage field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetVolUsage() int64 {
-	if o == nil || IsNil(o.VolUsage) {
+	if o == nil || isNil(o.VolUsage) {
 		var ret int64
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *AccuUsageReport) GetVolUsage() int64 {
 // GetVolUsageOk returns a tuple with the VolUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetVolUsageOk() (*int64, bool) {
-	if o == nil || IsNil(o.VolUsage) {
+	if o == nil || isNil(o.VolUsage) {
 		return nil, false
 	}
 	return o.VolUsage, true
@@ -101,7 +101,7 @@ func (o *AccuUsageReport) GetVolUsageOk() (*int64, bool) {
 
 // HasVolUsage returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasVolUsage() bool {
-	if o != nil && !IsNil(o.VolUsage) {
+	if o != nil && !isNil(o.VolUsage) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *AccuUsageReport) SetVolUsage(v int64) {
 
 // GetVolUsageUplink returns the VolUsageUplink field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetVolUsageUplink() int64 {
-	if o == nil || IsNil(o.VolUsageUplink) {
+	if o == nil || isNil(o.VolUsageUplink) {
 		var ret int64
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *AccuUsageReport) GetVolUsageUplink() int64 {
 // GetVolUsageUplinkOk returns a tuple with the VolUsageUplink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetVolUsageUplinkOk() (*int64, bool) {
-	if o == nil || IsNil(o.VolUsageUplink) {
+	if o == nil || isNil(o.VolUsageUplink) {
 		return nil, false
 	}
 	return o.VolUsageUplink, true
@@ -133,7 +133,7 @@ func (o *AccuUsageReport) GetVolUsageUplinkOk() (*int64, bool) {
 
 // HasVolUsageUplink returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasVolUsageUplink() bool {
-	if o != nil && !IsNil(o.VolUsageUplink) {
+	if o != nil && !isNil(o.VolUsageUplink) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *AccuUsageReport) SetVolUsageUplink(v int64) {
 
 // GetVolUsageDownlink returns the VolUsageDownlink field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetVolUsageDownlink() int64 {
-	if o == nil || IsNil(o.VolUsageDownlink) {
+	if o == nil || isNil(o.VolUsageDownlink) {
 		var ret int64
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *AccuUsageReport) GetVolUsageDownlink() int64 {
 // GetVolUsageDownlinkOk returns a tuple with the VolUsageDownlink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetVolUsageDownlinkOk() (*int64, bool) {
-	if o == nil || IsNil(o.VolUsageDownlink) {
+	if o == nil || isNil(o.VolUsageDownlink) {
 		return nil, false
 	}
 	return o.VolUsageDownlink, true
@@ -165,7 +165,7 @@ func (o *AccuUsageReport) GetVolUsageDownlinkOk() (*int64, bool) {
 
 // HasVolUsageDownlink returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasVolUsageDownlink() bool {
-	if o != nil && !IsNil(o.VolUsageDownlink) {
+	if o != nil && !isNil(o.VolUsageDownlink) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *AccuUsageReport) SetVolUsageDownlink(v int64) {
 
 // GetTimeUsage returns the TimeUsage field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetTimeUsage() int32 {
-	if o == nil || IsNil(o.TimeUsage) {
+	if o == nil || isNil(o.TimeUsage) {
 		var ret int32
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *AccuUsageReport) GetTimeUsage() int32 {
 // GetTimeUsageOk returns a tuple with the TimeUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetTimeUsageOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeUsage) {
+	if o == nil || isNil(o.TimeUsage) {
 		return nil, false
 	}
 	return o.TimeUsage, true
@@ -197,7 +197,7 @@ func (o *AccuUsageReport) GetTimeUsageOk() (*int32, bool) {
 
 // HasTimeUsage returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasTimeUsage() bool {
-	if o != nil && !IsNil(o.TimeUsage) {
+	if o != nil && !isNil(o.TimeUsage) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *AccuUsageReport) SetTimeUsage(v int32) {
 
 // GetNextVolUsage returns the NextVolUsage field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetNextVolUsage() int64 {
-	if o == nil || IsNil(o.NextVolUsage) {
+	if o == nil || isNil(o.NextVolUsage) {
 		var ret int64
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *AccuUsageReport) GetNextVolUsage() int64 {
 // GetNextVolUsageOk returns a tuple with the NextVolUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetNextVolUsageOk() (*int64, bool) {
-	if o == nil || IsNil(o.NextVolUsage) {
+	if o == nil || isNil(o.NextVolUsage) {
 		return nil, false
 	}
 	return o.NextVolUsage, true
@@ -229,7 +229,7 @@ func (o *AccuUsageReport) GetNextVolUsageOk() (*int64, bool) {
 
 // HasNextVolUsage returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasNextVolUsage() bool {
-	if o != nil && !IsNil(o.NextVolUsage) {
+	if o != nil && !isNil(o.NextVolUsage) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *AccuUsageReport) SetNextVolUsage(v int64) {
 
 // GetNextVolUsageUplink returns the NextVolUsageUplink field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetNextVolUsageUplink() int64 {
-	if o == nil || IsNil(o.NextVolUsageUplink) {
+	if o == nil || isNil(o.NextVolUsageUplink) {
 		var ret int64
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *AccuUsageReport) GetNextVolUsageUplink() int64 {
 // GetNextVolUsageUplinkOk returns a tuple with the NextVolUsageUplink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetNextVolUsageUplinkOk() (*int64, bool) {
-	if o == nil || IsNil(o.NextVolUsageUplink) {
+	if o == nil || isNil(o.NextVolUsageUplink) {
 		return nil, false
 	}
 	return o.NextVolUsageUplink, true
@@ -261,7 +261,7 @@ func (o *AccuUsageReport) GetNextVolUsageUplinkOk() (*int64, bool) {
 
 // HasNextVolUsageUplink returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasNextVolUsageUplink() bool {
-	if o != nil && !IsNil(o.NextVolUsageUplink) {
+	if o != nil && !isNil(o.NextVolUsageUplink) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *AccuUsageReport) SetNextVolUsageUplink(v int64) {
 
 // GetNextVolUsageDownlink returns the NextVolUsageDownlink field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetNextVolUsageDownlink() int64 {
-	if o == nil || IsNil(o.NextVolUsageDownlink) {
+	if o == nil || isNil(o.NextVolUsageDownlink) {
 		var ret int64
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *AccuUsageReport) GetNextVolUsageDownlink() int64 {
 // GetNextVolUsageDownlinkOk returns a tuple with the NextVolUsageDownlink field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetNextVolUsageDownlinkOk() (*int64, bool) {
-	if o == nil || IsNil(o.NextVolUsageDownlink) {
+	if o == nil || isNil(o.NextVolUsageDownlink) {
 		return nil, false
 	}
 	return o.NextVolUsageDownlink, true
@@ -293,7 +293,7 @@ func (o *AccuUsageReport) GetNextVolUsageDownlinkOk() (*int64, bool) {
 
 // HasNextVolUsageDownlink returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasNextVolUsageDownlink() bool {
-	if o != nil && !IsNil(o.NextVolUsageDownlink) {
+	if o != nil && !isNil(o.NextVolUsageDownlink) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *AccuUsageReport) SetNextVolUsageDownlink(v int64) {
 
 // GetNextTimeUsage returns the NextTimeUsage field value if set, zero value otherwise.
 func (o *AccuUsageReport) GetNextTimeUsage() int32 {
-	if o == nil || IsNil(o.NextTimeUsage) {
+	if o == nil || isNil(o.NextTimeUsage) {
 		var ret int32
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *AccuUsageReport) GetNextTimeUsage() int32 {
 // GetNextTimeUsageOk returns a tuple with the NextTimeUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccuUsageReport) GetNextTimeUsageOk() (*int32, bool) {
-	if o == nil || IsNil(o.NextTimeUsage) {
+	if o == nil || isNil(o.NextTimeUsage) {
 		return nil, false
 	}
 	return o.NextTimeUsage, true
@@ -325,7 +325,7 @@ func (o *AccuUsageReport) GetNextTimeUsageOk() (*int32, bool) {
 
 // HasNextTimeUsage returns a boolean if a field has been set.
 func (o *AccuUsageReport) HasNextTimeUsage() bool {
-	if o != nil && !IsNil(o.NextTimeUsage) {
+	if o != nil && !isNil(o.NextTimeUsage) {
 		return true
 	}
 
@@ -348,28 +348,28 @@ func (o AccuUsageReport) MarshalJSON() ([]byte, error) {
 func (o AccuUsageReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["refUmIds"] = o.RefUmIds
-	if !IsNil(o.VolUsage) {
+	if !isNil(o.VolUsage) {
 		toSerialize["volUsage"] = o.VolUsage
 	}
-	if !IsNil(o.VolUsageUplink) {
+	if !isNil(o.VolUsageUplink) {
 		toSerialize["volUsageUplink"] = o.VolUsageUplink
 	}
-	if !IsNil(o.VolUsageDownlink) {
+	if !isNil(o.VolUsageDownlink) {
 		toSerialize["volUsageDownlink"] = o.VolUsageDownlink
 	}
-	if !IsNil(o.TimeUsage) {
+	if !isNil(o.TimeUsage) {
 		toSerialize["timeUsage"] = o.TimeUsage
 	}
-	if !IsNil(o.NextVolUsage) {
+	if !isNil(o.NextVolUsage) {
 		toSerialize["nextVolUsage"] = o.NextVolUsage
 	}
-	if !IsNil(o.NextVolUsageUplink) {
+	if !isNil(o.NextVolUsageUplink) {
 		toSerialize["nextVolUsageUplink"] = o.NextVolUsageUplink
 	}
-	if !IsNil(o.NextVolUsageDownlink) {
+	if !isNil(o.NextVolUsageDownlink) {
 		toSerialize["nextVolUsageDownlink"] = o.NextVolUsageDownlink
 	}
-	if !IsNil(o.NextTimeUsage) {
+	if !isNil(o.NextTimeUsage) {
 		toSerialize["nextTimeUsage"] = o.NextTimeUsage
 	}
 	return toSerialize, nil

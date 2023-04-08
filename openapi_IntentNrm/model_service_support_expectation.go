@@ -46,7 +46,7 @@ func NewServiceSupportExpectationWithDefaults() *ServiceSupportExpectation {
 
 // GetExpectationId returns the ExpectationId field value if set, zero value otherwise.
 func (o *ServiceSupportExpectation) GetExpectationId() string {
-	if o == nil || IsNil(o.ExpectationId) {
+	if o == nil || isNil(o.ExpectationId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ServiceSupportExpectation) GetExpectationId() string {
 // GetExpectationIdOk returns a tuple with the ExpectationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectation) GetExpectationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExpectationId) {
+	if o == nil || isNil(o.ExpectationId) {
 		return nil, false
 	}
 	return o.ExpectationId, true
@@ -64,7 +64,7 @@ func (o *ServiceSupportExpectation) GetExpectationIdOk() (*string, bool) {
 
 // HasExpectationId returns a boolean if a field has been set.
 func (o *ServiceSupportExpectation) HasExpectationId() bool {
-	if o != nil && !IsNil(o.ExpectationId) {
+	if o != nil && !isNil(o.ExpectationId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ServiceSupportExpectation) SetExpectationId(v string) {
 
 // GetExpectationVerb returns the ExpectationVerb field value if set, zero value otherwise.
 func (o *ServiceSupportExpectation) GetExpectationVerb() ExpectationVerb {
-	if o == nil || IsNil(o.ExpectationVerb) {
+	if o == nil || isNil(o.ExpectationVerb) {
 		var ret ExpectationVerb
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ServiceSupportExpectation) GetExpectationVerb() ExpectationVerb {
 // GetExpectationVerbOk returns a tuple with the ExpectationVerb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectation) GetExpectationVerbOk() (*ExpectationVerb, bool) {
-	if o == nil || IsNil(o.ExpectationVerb) {
+	if o == nil || isNil(o.ExpectationVerb) {
 		return nil, false
 	}
 	return o.ExpectationVerb, true
@@ -96,7 +96,7 @@ func (o *ServiceSupportExpectation) GetExpectationVerbOk() (*ExpectationVerb, bo
 
 // HasExpectationVerb returns a boolean if a field has been set.
 func (o *ServiceSupportExpectation) HasExpectationVerb() bool {
-	if o != nil && !IsNil(o.ExpectationVerb) {
+	if o != nil && !isNil(o.ExpectationVerb) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ServiceSupportExpectation) SetExpectationVerb(v ExpectationVerb) {
 
 // GetExpectationObjects returns the ExpectationObjects field value if set, zero value otherwise.
 func (o *ServiceSupportExpectation) GetExpectationObjects() []ServiceSupportExpectationObject {
-	if o == nil || IsNil(o.ExpectationObjects) {
+	if o == nil || isNil(o.ExpectationObjects) {
 		var ret []ServiceSupportExpectationObject
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ServiceSupportExpectation) GetExpectationObjects() []ServiceSupportExpe
 // GetExpectationObjectsOk returns a tuple with the ExpectationObjects field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectation) GetExpectationObjectsOk() ([]ServiceSupportExpectationObject, bool) {
-	if o == nil || IsNil(o.ExpectationObjects) {
+	if o == nil || isNil(o.ExpectationObjects) {
 		return nil, false
 	}
 	return o.ExpectationObjects, true
@@ -128,7 +128,7 @@ func (o *ServiceSupportExpectation) GetExpectationObjectsOk() ([]ServiceSupportE
 
 // HasExpectationObjects returns a boolean if a field has been set.
 func (o *ServiceSupportExpectation) HasExpectationObjects() bool {
-	if o != nil && !IsNil(o.ExpectationObjects) {
+	if o != nil && !isNil(o.ExpectationObjects) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ServiceSupportExpectation) SetExpectationObjects(v []ServiceSupportExpe
 
 // GetExpectationTargets returns the ExpectationTargets field value if set, zero value otherwise.
 func (o *ServiceSupportExpectation) GetExpectationTargets() []ServiceSupportExpectationExpectationTargetsInner {
-	if o == nil || IsNil(o.ExpectationTargets) {
+	if o == nil || isNil(o.ExpectationTargets) {
 		var ret []ServiceSupportExpectationExpectationTargetsInner
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ServiceSupportExpectation) GetExpectationTargets() []ServiceSupportExpe
 // GetExpectationTargetsOk returns a tuple with the ExpectationTargets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectation) GetExpectationTargetsOk() ([]ServiceSupportExpectationExpectationTargetsInner, bool) {
-	if o == nil || IsNil(o.ExpectationTargets) {
+	if o == nil || isNil(o.ExpectationTargets) {
 		return nil, false
 	}
 	return o.ExpectationTargets, true
@@ -160,7 +160,7 @@ func (o *ServiceSupportExpectation) GetExpectationTargetsOk() ([]ServiceSupportE
 
 // HasExpectationTargets returns a boolean if a field has been set.
 func (o *ServiceSupportExpectation) HasExpectationTargets() bool {
-	if o != nil && !IsNil(o.ExpectationTargets) {
+	if o != nil && !isNil(o.ExpectationTargets) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ServiceSupportExpectation) SetExpectationTargets(v []ServiceSupportExpe
 
 // GetExpectationContexts returns the ExpectationContexts field value if set, zero value otherwise.
 func (o *ServiceSupportExpectation) GetExpectationContexts() []ServiceSupportExpectationExpectationContextsInner {
-	if o == nil || IsNil(o.ExpectationContexts) {
+	if o == nil || isNil(o.ExpectationContexts) {
 		var ret []ServiceSupportExpectationExpectationContextsInner
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ServiceSupportExpectation) GetExpectationContexts() []ServiceSupportExp
 // GetExpectationContextsOk returns a tuple with the ExpectationContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectation) GetExpectationContextsOk() ([]ServiceSupportExpectationExpectationContextsInner, bool) {
-	if o == nil || IsNil(o.ExpectationContexts) {
+	if o == nil || isNil(o.ExpectationContexts) {
 		return nil, false
 	}
 	return o.ExpectationContexts, true
@@ -192,7 +192,7 @@ func (o *ServiceSupportExpectation) GetExpectationContextsOk() ([]ServiceSupport
 
 // HasExpectationContexts returns a boolean if a field has been set.
 func (o *ServiceSupportExpectation) HasExpectationContexts() bool {
-	if o != nil && !IsNil(o.ExpectationContexts) {
+	if o != nil && !isNil(o.ExpectationContexts) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *ServiceSupportExpectation) SetExpectationContexts(v []ServiceSupportExp
 
 // GetExpectationfulfilmentInfo returns the ExpectationfulfilmentInfo field value if set, zero value otherwise.
 func (o *ServiceSupportExpectation) GetExpectationfulfilmentInfo() FulfilmentInfo {
-	if o == nil || IsNil(o.ExpectationfulfilmentInfo) {
+	if o == nil || isNil(o.ExpectationfulfilmentInfo) {
 		var ret FulfilmentInfo
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *ServiceSupportExpectation) GetExpectationfulfilmentInfo() FulfilmentInf
 // GetExpectationfulfilmentInfoOk returns a tuple with the ExpectationfulfilmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceSupportExpectation) GetExpectationfulfilmentInfoOk() (*FulfilmentInfo, bool) {
-	if o == nil || IsNil(o.ExpectationfulfilmentInfo) {
+	if o == nil || isNil(o.ExpectationfulfilmentInfo) {
 		return nil, false
 	}
 	return o.ExpectationfulfilmentInfo, true
@@ -224,7 +224,7 @@ func (o *ServiceSupportExpectation) GetExpectationfulfilmentInfoOk() (*Fulfilmen
 
 // HasExpectationfulfilmentInfo returns a boolean if a field has been set.
 func (o *ServiceSupportExpectation) HasExpectationfulfilmentInfo() bool {
-	if o != nil && !IsNil(o.ExpectationfulfilmentInfo) {
+	if o != nil && !isNil(o.ExpectationfulfilmentInfo) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o ServiceSupportExpectation) MarshalJSON() ([]byte, error) {
 
 func (o ServiceSupportExpectation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExpectationId) {
+	if !isNil(o.ExpectationId) {
 		toSerialize["expectationId"] = o.ExpectationId
 	}
-	if !IsNil(o.ExpectationVerb) {
+	if !isNil(o.ExpectationVerb) {
 		toSerialize["expectationVerb"] = o.ExpectationVerb
 	}
-	if !IsNil(o.ExpectationObjects) {
+	if !isNil(o.ExpectationObjects) {
 		toSerialize["expectationObjects"] = o.ExpectationObjects
 	}
-	if !IsNil(o.ExpectationTargets) {
+	if !isNil(o.ExpectationTargets) {
 		toSerialize["expectationTargets"] = o.ExpectationTargets
 	}
-	if !IsNil(o.ExpectationContexts) {
+	if !isNil(o.ExpectationContexts) {
 		toSerialize["expectationContexts"] = o.ExpectationContexts
 	}
-	if !IsNil(o.ExpectationfulfilmentInfo) {
+	if !isNil(o.ExpectationfulfilmentInfo) {
 		toSerialize["expectationfulfilmentInfo"] = o.ExpectationfulfilmentInfo
 	}
 	return toSerialize, nil

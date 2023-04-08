@@ -53,7 +53,7 @@ func NewGrantedUnitWithDefaults() *GrantedUnit {
 
 // GetTariffTimeChange returns the TariffTimeChange field value if set, zero value otherwise.
 func (o *GrantedUnit) GetTariffTimeChange() time.Time {
-	if o == nil || IsNil(o.TariffTimeChange) {
+	if o == nil || isNil(o.TariffTimeChange) {
 		var ret time.Time
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *GrantedUnit) GetTariffTimeChange() time.Time {
 // GetTariffTimeChangeOk returns a tuple with the TariffTimeChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GrantedUnit) GetTariffTimeChangeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TariffTimeChange) {
+	if o == nil || isNil(o.TariffTimeChange) {
 		return nil, false
 	}
 	return o.TariffTimeChange, true
@@ -71,7 +71,7 @@ func (o *GrantedUnit) GetTariffTimeChangeOk() (*time.Time, bool) {
 
 // HasTariffTimeChange returns a boolean if a field has been set.
 func (o *GrantedUnit) HasTariffTimeChange() bool {
-	if o != nil && !IsNil(o.TariffTimeChange) {
+	if o != nil && !isNil(o.TariffTimeChange) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *GrantedUnit) SetTariffTimeChange(v time.Time) {
 
 // GetTime returns the Time field value if set, zero value otherwise.
 func (o *GrantedUnit) GetTime() int32 {
-	if o == nil || IsNil(o.Time) {
+	if o == nil || isNil(o.Time) {
 		var ret int32
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *GrantedUnit) GetTime() int32 {
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GrantedUnit) GetTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.Time) {
+	if o == nil || isNil(o.Time) {
 		return nil, false
 	}
 	return o.Time, true
@@ -103,7 +103,7 @@ func (o *GrantedUnit) GetTimeOk() (*int32, bool) {
 
 // HasTime returns a boolean if a field has been set.
 func (o *GrantedUnit) HasTime() bool {
-	if o != nil && !IsNil(o.Time) {
+	if o != nil && !isNil(o.Time) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *GrantedUnit) SetTime(v int32) {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise.
 func (o *GrantedUnit) GetTotalVolume() int32 {
-	if o == nil || IsNil(o.TotalVolume) {
+	if o == nil || isNil(o.TotalVolume) {
 		var ret int32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *GrantedUnit) GetTotalVolume() int32 {
 // GetTotalVolumeOk returns a tuple with the TotalVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GrantedUnit) GetTotalVolumeOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalVolume) {
+	if o == nil || isNil(o.TotalVolume) {
 		return nil, false
 	}
 	return o.TotalVolume, true
@@ -135,7 +135,7 @@ func (o *GrantedUnit) GetTotalVolumeOk() (*int32, bool) {
 
 // HasTotalVolume returns a boolean if a field has been set.
 func (o *GrantedUnit) HasTotalVolume() bool {
-	if o != nil && !IsNil(o.TotalVolume) {
+	if o != nil && !isNil(o.TotalVolume) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *GrantedUnit) SetTotalVolume(v int32) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *GrantedUnit) GetUplinkVolume() int32 {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *GrantedUnit) GetUplinkVolume() int32 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GrantedUnit) GetUplinkVolumeOk() (*int32, bool) {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -167,7 +167,7 @@ func (o *GrantedUnit) GetUplinkVolumeOk() (*int32, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *GrantedUnit) HasUplinkVolume() bool {
-	if o != nil && !IsNil(o.UplinkVolume) {
+	if o != nil && !isNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *GrantedUnit) SetUplinkVolume(v int32) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *GrantedUnit) GetDownlinkVolume() int32 {
-	if o == nil || IsNil(o.DownlinkVolume) {
+	if o == nil || isNil(o.DownlinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *GrantedUnit) GetDownlinkVolume() int32 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GrantedUnit) GetDownlinkVolumeOk() (*int32, bool) {
-	if o == nil || IsNil(o.DownlinkVolume) {
+	if o == nil || isNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -199,7 +199,7 @@ func (o *GrantedUnit) GetDownlinkVolumeOk() (*int32, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *GrantedUnit) HasDownlinkVolume() bool {
-	if o != nil && !IsNil(o.DownlinkVolume) {
+	if o != nil && !isNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *GrantedUnit) SetDownlinkVolume(v int32) {
 
 // GetServiceSpecificUnits returns the ServiceSpecificUnits field value if set, zero value otherwise.
 func (o *GrantedUnit) GetServiceSpecificUnits() int32 {
-	if o == nil || IsNil(o.ServiceSpecificUnits) {
+	if o == nil || isNil(o.ServiceSpecificUnits) {
 		var ret int32
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *GrantedUnit) GetServiceSpecificUnits() int32 {
 // GetServiceSpecificUnitsOk returns a tuple with the ServiceSpecificUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GrantedUnit) GetServiceSpecificUnitsOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServiceSpecificUnits) {
+	if o == nil || isNil(o.ServiceSpecificUnits) {
 		return nil, false
 	}
 	return o.ServiceSpecificUnits, true
@@ -231,7 +231,7 @@ func (o *GrantedUnit) GetServiceSpecificUnitsOk() (*int32, bool) {
 
 // HasServiceSpecificUnits returns a boolean if a field has been set.
 func (o *GrantedUnit) HasServiceSpecificUnits() bool {
-	if o != nil && !IsNil(o.ServiceSpecificUnits) {
+	if o != nil && !isNil(o.ServiceSpecificUnits) {
 		return true
 	}
 
@@ -253,22 +253,22 @@ func (o GrantedUnit) MarshalJSON() ([]byte, error) {
 
 func (o GrantedUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TariffTimeChange) {
+	if !isNil(o.TariffTimeChange) {
 		toSerialize["tariffTimeChange"] = o.TariffTimeChange
 	}
-	if !IsNil(o.Time) {
+	if !isNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
-	if !IsNil(o.TotalVolume) {
+	if !isNil(o.TotalVolume) {
 		toSerialize["totalVolume"] = o.TotalVolume
 	}
-	if !IsNil(o.UplinkVolume) {
+	if !isNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !IsNil(o.DownlinkVolume) {
+	if !isNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
-	if !IsNil(o.ServiceSpecificUnits) {
+	if !isNil(o.ServiceSpecificUnits) {
 		toSerialize["serviceSpecificUnits"] = o.ServiceSpecificUnits
 	}
 	return toSerialize, nil

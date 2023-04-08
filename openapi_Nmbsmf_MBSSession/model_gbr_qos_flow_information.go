@@ -96,7 +96,7 @@ func (o *GbrQosFlowInformation) SetGuaFbrDl(v string) {
 
 // GetMaxPacketLossRateDl returns the MaxPacketLossRateDl field value if set, zero value otherwise.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
-	if o == nil || IsNil(o.MaxPacketLossRateDl) {
+	if o == nil || isNil(o.MaxPacketLossRateDl) {
 		var ret int32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDl() int32 {
 // GetMaxPacketLossRateDlOk returns a tuple with the MaxPacketLossRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxPacketLossRateDl) {
+	if o == nil || isNil(o.MaxPacketLossRateDl) {
 		return nil, false
 	}
 	return o.MaxPacketLossRateDl, true
@@ -114,7 +114,7 @@ func (o *GbrQosFlowInformation) GetMaxPacketLossRateDlOk() (*int32, bool) {
 
 // HasMaxPacketLossRateDl returns a boolean if a field has been set.
 func (o *GbrQosFlowInformation) HasMaxPacketLossRateDl() bool {
-	if o != nil && !IsNil(o.MaxPacketLossRateDl) {
+	if o != nil && !isNil(o.MaxPacketLossRateDl) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o GbrQosFlowInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["maxFbrDl"] = o.MaxFbrDl
 	toSerialize["guaFbrDl"] = o.GuaFbrDl
-	if !IsNil(o.MaxPacketLossRateDl) {
+	if !isNil(o.MaxPacketLossRateDl) {
 		toSerialize["maxPacketLossRateDl"] = o.MaxPacketLossRateDl
 	}
 	return toSerialize, nil

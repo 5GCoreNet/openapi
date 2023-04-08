@@ -95,7 +95,7 @@ func (o *DeregistrationData) SetImpi(v string) {
 
 // GetAssociatedImpis returns the AssociatedImpis field value if set, zero value otherwise.
 func (o *DeregistrationData) GetAssociatedImpis() []string {
-	if o == nil || IsNil(o.AssociatedImpis) {
+	if o == nil || isNil(o.AssociatedImpis) {
 		var ret []string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *DeregistrationData) GetAssociatedImpis() []string {
 // GetAssociatedImpisOk returns a tuple with the AssociatedImpis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationData) GetAssociatedImpisOk() ([]string, bool) {
-	if o == nil || IsNil(o.AssociatedImpis) {
+	if o == nil || isNil(o.AssociatedImpis) {
 		return nil, false
 	}
 	return o.AssociatedImpis, true
@@ -113,7 +113,7 @@ func (o *DeregistrationData) GetAssociatedImpisOk() ([]string, bool) {
 
 // HasAssociatedImpis returns a boolean if a field has been set.
 func (o *DeregistrationData) HasAssociatedImpis() bool {
-	if o != nil && !IsNil(o.AssociatedImpis) {
+	if o != nil && !isNil(o.AssociatedImpis) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *DeregistrationData) SetAssociatedImpis(v []string) {
 
 // GetEmergencyRegisteredIdentities returns the EmergencyRegisteredIdentities field value if set, zero value otherwise.
 func (o *DeregistrationData) GetEmergencyRegisteredIdentities() []EmergencyRegisteredIdentity {
-	if o == nil || IsNil(o.EmergencyRegisteredIdentities) {
+	if o == nil || isNil(o.EmergencyRegisteredIdentities) {
 		var ret []EmergencyRegisteredIdentity
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *DeregistrationData) GetEmergencyRegisteredIdentities() []EmergencyRegis
 // GetEmergencyRegisteredIdentitiesOk returns a tuple with the EmergencyRegisteredIdentities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationData) GetEmergencyRegisteredIdentitiesOk() ([]EmergencyRegisteredIdentity, bool) {
-	if o == nil || IsNil(o.EmergencyRegisteredIdentities) {
+	if o == nil || isNil(o.EmergencyRegisteredIdentities) {
 		return nil, false
 	}
 	return o.EmergencyRegisteredIdentities, true
@@ -145,7 +145,7 @@ func (o *DeregistrationData) GetEmergencyRegisteredIdentitiesOk() ([]EmergencyRe
 
 // HasEmergencyRegisteredIdentities returns a boolean if a field has been set.
 func (o *DeregistrationData) HasEmergencyRegisteredIdentities() bool {
-	if o != nil && !IsNil(o.EmergencyRegisteredIdentities) {
+	if o != nil && !isNil(o.EmergencyRegisteredIdentities) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o DeregistrationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["deregReason"] = o.DeregReason
 	toSerialize["impi"] = o.Impi
-	if !IsNil(o.AssociatedImpis) {
+	if !isNil(o.AssociatedImpis) {
 		toSerialize["associatedImpis"] = o.AssociatedImpis
 	}
-	if !IsNil(o.EmergencyRegisteredIdentities) {
+	if !isNil(o.EmergencyRegisteredIdentities) {
 		toSerialize["emergencyRegisteredIdentities"] = o.EmergencyRegisteredIdentities
 	}
 	return toSerialize, nil

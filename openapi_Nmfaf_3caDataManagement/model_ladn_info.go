@@ -67,7 +67,7 @@ func (o *LadnInfo) SetLadn(v string) {
 
 // GetPresence returns the Presence field value if set, zero value otherwise.
 func (o *LadnInfo) GetPresence() PresenceState {
-	if o == nil || IsNil(o.Presence) {
+	if o == nil || isNil(o.Presence) {
 		var ret PresenceState
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LadnInfo) GetPresence() PresenceState {
 // GetPresenceOk returns a tuple with the Presence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LadnInfo) GetPresenceOk() (*PresenceState, bool) {
-	if o == nil || IsNil(o.Presence) {
+	if o == nil || isNil(o.Presence) {
 		return nil, false
 	}
 	return o.Presence, true
@@ -85,7 +85,7 @@ func (o *LadnInfo) GetPresenceOk() (*PresenceState, bool) {
 
 // HasPresence returns a boolean if a field has been set.
 func (o *LadnInfo) HasPresence() bool {
-	if o != nil && !IsNil(o.Presence) {
+	if o != nil && !isNil(o.Presence) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o LadnInfo) MarshalJSON() ([]byte, error) {
 func (o LadnInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ladn"] = o.Ladn
-	if !IsNil(o.Presence) {
+	if !isNil(o.Presence) {
 		toSerialize["presence"] = o.Presence
 	}
 	return toSerialize, nil

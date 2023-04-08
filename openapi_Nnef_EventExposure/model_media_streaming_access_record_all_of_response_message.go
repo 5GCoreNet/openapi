@@ -122,7 +122,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) SetBodySize(v int32) {
 
 // GetContentType returns the ContentType field value if set, zero value otherwise.
 func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentType() string {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || isNil(o.ContentType) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentType() string
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || isNil(o.ContentType) {
 		return nil, false
 	}
 	return o.ContentType, true
@@ -140,7 +140,7 @@ func (o *MediaStreamingAccessRecordAllOfResponseMessage) GetContentTypeOk() (*st
 
 // HasContentType returns a boolean if a field has been set.
 func (o *MediaStreamingAccessRecordAllOfResponseMessage) HasContentType() bool {
-	if o != nil && !IsNil(o.ContentType) {
+	if o != nil && !isNil(o.ContentType) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o MediaStreamingAccessRecordAllOfResponseMessage) ToMap() (map[string]inte
 	toSerialize["responseCode"] = o.ResponseCode
 	toSerialize["size"] = o.Size
 	toSerialize["bodySize"] = o.BodySize
-	if !IsNil(o.ContentType) {
+	if !isNil(o.ContentType) {
 		toSerialize["contentType"] = o.ContentType
 	}
 	return toSerialize, nil

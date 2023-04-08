@@ -42,7 +42,7 @@ func NewModel5GLANTypeServiceWithDefaults() *Model5GLANTypeService {
 
 // GetInternalGroupIdentifier returns the InternalGroupIdentifier field value if set, zero value otherwise.
 func (o *Model5GLANTypeService) GetInternalGroupIdentifier() string {
-	if o == nil || IsNil(o.InternalGroupIdentifier) {
+	if o == nil || isNil(o.InternalGroupIdentifier) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Model5GLANTypeService) GetInternalGroupIdentifier() string {
 // GetInternalGroupIdentifierOk returns a tuple with the InternalGroupIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLANTypeService) GetInternalGroupIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.InternalGroupIdentifier) {
+	if o == nil || isNil(o.InternalGroupIdentifier) {
 		return nil, false
 	}
 	return o.InternalGroupIdentifier, true
@@ -60,7 +60,7 @@ func (o *Model5GLANTypeService) GetInternalGroupIdentifierOk() (*string, bool) {
 
 // HasInternalGroupIdentifier returns a boolean if a field has been set.
 func (o *Model5GLANTypeService) HasInternalGroupIdentifier() bool {
-	if o != nil && !IsNil(o.InternalGroupIdentifier) {
+	if o != nil && !isNil(o.InternalGroupIdentifier) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o Model5GLANTypeService) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLANTypeService) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InternalGroupIdentifier) {
+	if !isNil(o.InternalGroupIdentifier) {
 		toSerialize["internalGroupIdentifier"] = o.InternalGroupIdentifier
 	}
 	return toSerialize, nil

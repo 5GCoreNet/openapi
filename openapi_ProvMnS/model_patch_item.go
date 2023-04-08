@@ -44,7 +44,7 @@ func NewPatchItemWithDefaults() *PatchItem {
 
 // GetOp returns the Op field value if set, zero value otherwise.
 func (o *PatchItem) GetOp() PatchOperation {
-	if o == nil || IsNil(o.Op) {
+	if o == nil || isNil(o.Op) {
 		var ret PatchOperation
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *PatchItem) GetOp() PatchOperation {
 // GetOpOk returns a tuple with the Op field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchItem) GetOpOk() (*PatchOperation, bool) {
-	if o == nil || IsNil(o.Op) {
+	if o == nil || isNil(o.Op) {
 		return nil, false
 	}
 	return o.Op, true
@@ -62,7 +62,7 @@ func (o *PatchItem) GetOpOk() (*PatchOperation, bool) {
 
 // HasOp returns a boolean if a field has been set.
 func (o *PatchItem) HasOp() bool {
-	if o != nil && !IsNil(o.Op) {
+	if o != nil && !isNil(o.Op) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *PatchItem) SetOp(v PatchOperation) {
 
 // GetFrom returns the From field value if set, zero value otherwise.
 func (o *PatchItem) GetFrom() string {
-	if o == nil || IsNil(o.From) {
+	if o == nil || isNil(o.From) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *PatchItem) GetFrom() string {
 // GetFromOk returns a tuple with the From field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchItem) GetFromOk() (*string, bool) {
-	if o == nil || IsNil(o.From) {
+	if o == nil || isNil(o.From) {
 		return nil, false
 	}
 	return o.From, true
@@ -94,7 +94,7 @@ func (o *PatchItem) GetFromOk() (*string, bool) {
 
 // HasFrom returns a boolean if a field has been set.
 func (o *PatchItem) HasFrom() bool {
-	if o != nil && !IsNil(o.From) {
+	if o != nil && !isNil(o.From) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *PatchItem) SetFrom(v string) {
 
 // GetPath returns the Path field value if set, zero value otherwise.
 func (o *PatchItem) GetPath() string {
-	if o == nil || IsNil(o.Path) {
+	if o == nil || isNil(o.Path) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *PatchItem) GetPath() string {
 // GetPathOk returns a tuple with the Path field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchItem) GetPathOk() (*string, bool) {
-	if o == nil || IsNil(o.Path) {
+	if o == nil || isNil(o.Path) {
 		return nil, false
 	}
 	return o.Path, true
@@ -126,7 +126,7 @@ func (o *PatchItem) GetPathOk() (*string, bool) {
 
 // HasPath returns a boolean if a field has been set.
 func (o *PatchItem) HasPath() bool {
-	if o != nil && !IsNil(o.Path) {
+	if o != nil && !isNil(o.Path) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *PatchItem) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PatchItem) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || isNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true
@@ -159,7 +159,7 @@ func (o *PatchItem) GetValueOk() (*interface{}, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *PatchItem) HasValue() bool {
-	if o != nil && IsNil(o.Value) {
+	if o != nil && isNil(o.Value) {
 		return true
 	}
 
@@ -181,13 +181,13 @@ func (o PatchItem) MarshalJSON() ([]byte, error) {
 
 func (o PatchItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Op) {
+	if !isNil(o.Op) {
 		toSerialize["op"] = o.Op
 	}
-	if !IsNil(o.From) {
+	if !isNil(o.From) {
 		toSerialize["from"] = o.From
 	}
-	if !IsNil(o.Path) {
+	if !isNil(o.Path) {
 		toSerialize["path"] = o.Path
 	}
 	if o.Value != nil {

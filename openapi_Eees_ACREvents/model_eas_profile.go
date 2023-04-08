@@ -114,7 +114,7 @@ func (o *EASProfile) SetEndPt(v EndPoint) {
 
 // GetAcIds returns the AcIds field value if set, zero value otherwise.
 func (o *EASProfile) GetAcIds() []string {
-	if o == nil || IsNil(o.AcIds) {
+	if o == nil || isNil(o.AcIds) {
 		var ret []string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *EASProfile) GetAcIds() []string {
 // GetAcIdsOk returns a tuple with the AcIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetAcIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AcIds) {
+	if o == nil || isNil(o.AcIds) {
 		return nil, false
 	}
 	return o.AcIds, true
@@ -132,7 +132,7 @@ func (o *EASProfile) GetAcIdsOk() ([]string, bool) {
 
 // HasAcIds returns a boolean if a field has been set.
 func (o *EASProfile) HasAcIds() bool {
-	if o != nil && !IsNil(o.AcIds) {
+	if o != nil && !isNil(o.AcIds) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *EASProfile) SetAcIds(v []string) {
 
 // GetProvId returns the ProvId field value if set, zero value otherwise.
 func (o *EASProfile) GetProvId() string {
-	if o == nil || IsNil(o.ProvId) {
+	if o == nil || isNil(o.ProvId) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *EASProfile) GetProvId() string {
 // GetProvIdOk returns a tuple with the ProvId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetProvIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProvId) {
+	if o == nil || isNil(o.ProvId) {
 		return nil, false
 	}
 	return o.ProvId, true
@@ -164,7 +164,7 @@ func (o *EASProfile) GetProvIdOk() (*string, bool) {
 
 // HasProvId returns a boolean if a field has been set.
 func (o *EASProfile) HasProvId() bool {
-	if o != nil && !IsNil(o.ProvId) {
+	if o != nil && !isNil(o.ProvId) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *EASProfile) SetProvId(v string) {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *EASProfile) GetType() EASCategory {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		var ret EASCategory
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *EASProfile) GetType() EASCategory {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetTypeOk() (*EASCategory, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -196,7 +196,7 @@ func (o *EASProfile) GetTypeOk() (*EASCategory, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *EASProfile) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *EASProfile) SetType(v EASCategory) {
 
 // GetScheds returns the Scheds field value if set, zero value otherwise.
 func (o *EASProfile) GetScheds() []ScheduledCommunicationTime {
-	if o == nil || IsNil(o.Scheds) {
+	if o == nil || isNil(o.Scheds) {
 		var ret []ScheduledCommunicationTime
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *EASProfile) GetScheds() []ScheduledCommunicationTime {
 // GetSchedsOk returns a tuple with the Scheds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetSchedsOk() ([]ScheduledCommunicationTime, bool) {
-	if o == nil || IsNil(o.Scheds) {
+	if o == nil || isNil(o.Scheds) {
 		return nil, false
 	}
 	return o.Scheds, true
@@ -228,7 +228,7 @@ func (o *EASProfile) GetSchedsOk() ([]ScheduledCommunicationTime, bool) {
 
 // HasScheds returns a boolean if a field has been set.
 func (o *EASProfile) HasScheds() bool {
-	if o != nil && !IsNil(o.Scheds) {
+	if o != nil && !isNil(o.Scheds) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *EASProfile) SetScheds(v []ScheduledCommunicationTime) {
 
 // GetSvcArea returns the SvcArea field value if set, zero value otherwise.
 func (o *EASProfile) GetSvcArea() ServiceArea {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		var ret ServiceArea
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *EASProfile) GetSvcArea() ServiceArea {
 // GetSvcAreaOk returns a tuple with the SvcArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetSvcAreaOk() (*ServiceArea, bool) {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		return nil, false
 	}
 	return o.SvcArea, true
@@ -260,7 +260,7 @@ func (o *EASProfile) GetSvcAreaOk() (*ServiceArea, bool) {
 
 // HasSvcArea returns a boolean if a field has been set.
 func (o *EASProfile) HasSvcArea() bool {
-	if o != nil && !IsNil(o.SvcArea) {
+	if o != nil && !isNil(o.SvcArea) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *EASProfile) SetSvcArea(v ServiceArea) {
 
 // GetSvcKpi returns the SvcKpi field value if set, zero value otherwise.
 func (o *EASProfile) GetSvcKpi() EASServiceKPI {
-	if o == nil || IsNil(o.SvcKpi) {
+	if o == nil || isNil(o.SvcKpi) {
 		var ret EASServiceKPI
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *EASProfile) GetSvcKpi() EASServiceKPI {
 // GetSvcKpiOk returns a tuple with the SvcKpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetSvcKpiOk() (*EASServiceKPI, bool) {
-	if o == nil || IsNil(o.SvcKpi) {
+	if o == nil || isNil(o.SvcKpi) {
 		return nil, false
 	}
 	return o.SvcKpi, true
@@ -292,7 +292,7 @@ func (o *EASProfile) GetSvcKpiOk() (*EASServiceKPI, bool) {
 
 // HasSvcKpi returns a boolean if a field has been set.
 func (o *EASProfile) HasSvcKpi() bool {
-	if o != nil && !IsNil(o.SvcKpi) {
+	if o != nil && !isNil(o.SvcKpi) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *EASProfile) SetSvcKpi(v EASServiceKPI) {
 
 // GetPermLvl returns the PermLvl field value if set, zero value otherwise.
 func (o *EASProfile) GetPermLvl() []PermissionLevel {
-	if o == nil || IsNil(o.PermLvl) {
+	if o == nil || isNil(o.PermLvl) {
 		var ret []PermissionLevel
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *EASProfile) GetPermLvl() []PermissionLevel {
 // GetPermLvlOk returns a tuple with the PermLvl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetPermLvlOk() ([]PermissionLevel, bool) {
-	if o == nil || IsNil(o.PermLvl) {
+	if o == nil || isNil(o.PermLvl) {
 		return nil, false
 	}
 	return o.PermLvl, true
@@ -324,7 +324,7 @@ func (o *EASProfile) GetPermLvlOk() ([]PermissionLevel, bool) {
 
 // HasPermLvl returns a boolean if a field has been set.
 func (o *EASProfile) HasPermLvl() bool {
-	if o != nil && !IsNil(o.PermLvl) {
+	if o != nil && !isNil(o.PermLvl) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *EASProfile) SetPermLvl(v []PermissionLevel) {
 
 // GetEasFeats returns the EasFeats field value if set, zero value otherwise.
 func (o *EASProfile) GetEasFeats() []string {
-	if o == nil || IsNil(o.EasFeats) {
+	if o == nil || isNil(o.EasFeats) {
 		var ret []string
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *EASProfile) GetEasFeats() []string {
 // GetEasFeatsOk returns a tuple with the EasFeats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetEasFeatsOk() ([]string, bool) {
-	if o == nil || IsNil(o.EasFeats) {
+	if o == nil || isNil(o.EasFeats) {
 		return nil, false
 	}
 	return o.EasFeats, true
@@ -356,7 +356,7 @@ func (o *EASProfile) GetEasFeatsOk() ([]string, bool) {
 
 // HasEasFeats returns a boolean if a field has been set.
 func (o *EASProfile) HasEasFeats() bool {
-	if o != nil && !IsNil(o.EasFeats) {
+	if o != nil && !isNil(o.EasFeats) {
 		return true
 	}
 
@@ -370,7 +370,7 @@ func (o *EASProfile) SetEasFeats(v []string) {
 
 // GetAppLocs returns the AppLocs field value if set, zero value otherwise.
 func (o *EASProfile) GetAppLocs() []RouteToLocation {
-	if o == nil || IsNil(o.AppLocs) {
+	if o == nil || isNil(o.AppLocs) {
 		var ret []RouteToLocation
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *EASProfile) GetAppLocs() []RouteToLocation {
 // GetAppLocsOk returns a tuple with the AppLocs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetAppLocsOk() ([]RouteToLocation, bool) {
-	if o == nil || IsNil(o.AppLocs) {
+	if o == nil || isNil(o.AppLocs) {
 		return nil, false
 	}
 	return o.AppLocs, true
@@ -388,7 +388,7 @@ func (o *EASProfile) GetAppLocsOk() ([]RouteToLocation, bool) {
 
 // HasAppLocs returns a boolean if a field has been set.
 func (o *EASProfile) HasAppLocs() bool {
-	if o != nil && !IsNil(o.AppLocs) {
+	if o != nil && !isNil(o.AppLocs) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *EASProfile) SetAppLocs(v []RouteToLocation) {
 
 // GetSvcContSupp returns the SvcContSupp field value if set, zero value otherwise.
 func (o *EASProfile) GetSvcContSupp() []ACRScenario {
-	if o == nil || IsNil(o.SvcContSupp) {
+	if o == nil || isNil(o.SvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *EASProfile) GetSvcContSupp() []ACRScenario {
 // GetSvcContSuppOk returns a tuple with the SvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.SvcContSupp) {
+	if o == nil || isNil(o.SvcContSupp) {
 		return nil, false
 	}
 	return o.SvcContSupp, true
@@ -420,7 +420,7 @@ func (o *EASProfile) GetSvcContSuppOk() ([]ACRScenario, bool) {
 
 // HasSvcContSupp returns a boolean if a field has been set.
 func (o *EASProfile) HasSvcContSupp() bool {
-	if o != nil && !IsNil(o.SvcContSupp) {
+	if o != nil && !isNil(o.SvcContSupp) {
 		return true
 	}
 
@@ -434,7 +434,7 @@ func (o *EASProfile) SetSvcContSupp(v []ACRScenario) {
 
 // GetAvlRep returns the AvlRep field value if set, zero value otherwise.
 func (o *EASProfile) GetAvlRep() int32 {
-	if o == nil || IsNil(o.AvlRep) {
+	if o == nil || isNil(o.AvlRep) {
 		var ret int32
 		return ret
 	}
@@ -444,7 +444,7 @@ func (o *EASProfile) GetAvlRep() int32 {
 // GetAvlRepOk returns a tuple with the AvlRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetAvlRepOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvlRep) {
+	if o == nil || isNil(o.AvlRep) {
 		return nil, false
 	}
 	return o.AvlRep, true
@@ -452,7 +452,7 @@ func (o *EASProfile) GetAvlRepOk() (*int32, bool) {
 
 // HasAvlRep returns a boolean if a field has been set.
 func (o *EASProfile) HasAvlRep() bool {
-	if o != nil && !IsNil(o.AvlRep) {
+	if o != nil && !isNil(o.AvlRep) {
 		return true
 	}
 
@@ -466,7 +466,7 @@ func (o *EASProfile) SetAvlRep(v int32) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *EASProfile) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret string
 		return ret
 	}
@@ -476,7 +476,7 @@ func (o *EASProfile) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASProfile) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -484,7 +484,7 @@ func (o *EASProfile) GetStatusOk() (*string, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *EASProfile) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -508,40 +508,40 @@ func (o EASProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
 	toSerialize["endPt"] = o.EndPt
-	if !IsNil(o.AcIds) {
+	if !isNil(o.AcIds) {
 		toSerialize["acIds"] = o.AcIds
 	}
-	if !IsNil(o.ProvId) {
+	if !isNil(o.ProvId) {
 		toSerialize["provId"] = o.ProvId
 	}
-	if !IsNil(o.Type) {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Scheds) {
+	if !isNil(o.Scheds) {
 		toSerialize["scheds"] = o.Scheds
 	}
-	if !IsNil(o.SvcArea) {
+	if !isNil(o.SvcArea) {
 		toSerialize["svcArea"] = o.SvcArea
 	}
-	if !IsNil(o.SvcKpi) {
+	if !isNil(o.SvcKpi) {
 		toSerialize["svcKpi"] = o.SvcKpi
 	}
-	if !IsNil(o.PermLvl) {
+	if !isNil(o.PermLvl) {
 		toSerialize["permLvl"] = o.PermLvl
 	}
-	if !IsNil(o.EasFeats) {
+	if !isNil(o.EasFeats) {
 		toSerialize["easFeats"] = o.EasFeats
 	}
-	if !IsNil(o.AppLocs) {
+	if !isNil(o.AppLocs) {
 		toSerialize["appLocs"] = o.AppLocs
 	}
-	if !IsNil(o.SvcContSupp) {
+	if !isNil(o.SvcContSupp) {
 		toSerialize["svcContSupp"] = o.SvcContSupp
 	}
-	if !IsNil(o.AvlRep) {
+	if !isNil(o.AvlRep) {
 		toSerialize["avlRep"] = o.AvlRep
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
 	return toSerialize, nil

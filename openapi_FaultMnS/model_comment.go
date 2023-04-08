@@ -45,7 +45,7 @@ func NewCommentWithDefaults() *Comment {
 
 // GetCommentTime returns the CommentTime field value if set, zero value otherwise.
 func (o *Comment) GetCommentTime() time.Time {
-	if o == nil || IsNil(o.CommentTime) {
+	if o == nil || isNil(o.CommentTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *Comment) GetCommentTime() time.Time {
 // GetCommentTimeOk returns a tuple with the CommentTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Comment) GetCommentTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.CommentTime) {
+	if o == nil || isNil(o.CommentTime) {
 		return nil, false
 	}
 	return o.CommentTime, true
@@ -63,7 +63,7 @@ func (o *Comment) GetCommentTimeOk() (*time.Time, bool) {
 
 // HasCommentTime returns a boolean if a field has been set.
 func (o *Comment) HasCommentTime() bool {
-	if o != nil && !IsNil(o.CommentTime) {
+	if o != nil && !isNil(o.CommentTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *Comment) SetCommentTime(v time.Time) {
 
 // GetCommentUserId returns the CommentUserId field value if set, zero value otherwise.
 func (o *Comment) GetCommentUserId() string {
-	if o == nil || IsNil(o.CommentUserId) {
+	if o == nil || isNil(o.CommentUserId) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *Comment) GetCommentUserId() string {
 // GetCommentUserIdOk returns a tuple with the CommentUserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Comment) GetCommentUserIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CommentUserId) {
+	if o == nil || isNil(o.CommentUserId) {
 		return nil, false
 	}
 	return o.CommentUserId, true
@@ -95,7 +95,7 @@ func (o *Comment) GetCommentUserIdOk() (*string, bool) {
 
 // HasCommentUserId returns a boolean if a field has been set.
 func (o *Comment) HasCommentUserId() bool {
-	if o != nil && !IsNil(o.CommentUserId) {
+	if o != nil && !isNil(o.CommentUserId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *Comment) SetCommentUserId(v string) {
 
 // GetCommentSystemId returns the CommentSystemId field value if set, zero value otherwise.
 func (o *Comment) GetCommentSystemId() string {
-	if o == nil || IsNil(o.CommentSystemId) {
+	if o == nil || isNil(o.CommentSystemId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *Comment) GetCommentSystemId() string {
 // GetCommentSystemIdOk returns a tuple with the CommentSystemId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Comment) GetCommentSystemIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CommentSystemId) {
+	if o == nil || isNil(o.CommentSystemId) {
 		return nil, false
 	}
 	return o.CommentSystemId, true
@@ -127,7 +127,7 @@ func (o *Comment) GetCommentSystemIdOk() (*string, bool) {
 
 // HasCommentSystemId returns a boolean if a field has been set.
 func (o *Comment) HasCommentSystemId() bool {
-	if o != nil && !IsNil(o.CommentSystemId) {
+	if o != nil && !isNil(o.CommentSystemId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *Comment) SetCommentSystemId(v string) {
 
 // GetCommentText returns the CommentText field value if set, zero value otherwise.
 func (o *Comment) GetCommentText() string {
-	if o == nil || IsNil(o.CommentText) {
+	if o == nil || isNil(o.CommentText) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *Comment) GetCommentText() string {
 // GetCommentTextOk returns a tuple with the CommentText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Comment) GetCommentTextOk() (*string, bool) {
-	if o == nil || IsNil(o.CommentText) {
+	if o == nil || isNil(o.CommentText) {
 		return nil, false
 	}
 	return o.CommentText, true
@@ -159,7 +159,7 @@ func (o *Comment) GetCommentTextOk() (*string, bool) {
 
 // HasCommentText returns a boolean if a field has been set.
 func (o *Comment) HasCommentText() bool {
-	if o != nil && !IsNil(o.CommentText) {
+	if o != nil && !isNil(o.CommentText) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o Comment) MarshalJSON() ([]byte, error) {
 
 func (o Comment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CommentTime) {
+	if !isNil(o.CommentTime) {
 		toSerialize["commentTime"] = o.CommentTime
 	}
-	if !IsNil(o.CommentUserId) {
+	if !isNil(o.CommentUserId) {
 		toSerialize["commentUserId"] = o.CommentUserId
 	}
-	if !IsNil(o.CommentSystemId) {
+	if !isNil(o.CommentSystemId) {
 		toSerialize["commentSystemId"] = o.CommentSystemId
 	}
-	if !IsNil(o.CommentText) {
+	if !isNil(o.CommentText) {
 		toSerialize["commentText"] = o.CommentText
 	}
 	return toSerialize, nil

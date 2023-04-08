@@ -68,7 +68,7 @@ func (o *UeInfo) SetUeList(v []string) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *UeInfo) GetPduSessionId() int32 {
-	if o == nil || IsNil(o.PduSessionId) {
+	if o == nil || isNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UeInfo) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInfo) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSessionId) {
+	if o == nil || isNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -86,7 +86,7 @@ func (o *UeInfo) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *UeInfo) HasPduSessionId() bool {
-	if o != nil && !IsNil(o.PduSessionId) {
+	if o != nil && !isNil(o.PduSessionId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o UeInfo) MarshalJSON() ([]byte, error) {
 func (o UeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueList"] = o.UeList
-	if !IsNil(o.PduSessionId) {
+	if !isNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
 	return toSerialize, nil

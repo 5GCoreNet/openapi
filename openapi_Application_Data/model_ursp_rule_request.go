@@ -45,7 +45,7 @@ func NewUrspRuleRequestWithDefaults() *UrspRuleRequest {
 
 // GetTrafficDesc returns the TrafficDesc field value if set, zero value otherwise.
 func (o *UrspRuleRequest) GetTrafficDesc() TrafficDescriptorComponents {
-	if o == nil || IsNil(o.TrafficDesc) {
+	if o == nil || isNil(o.TrafficDesc) {
 		var ret TrafficDescriptorComponents
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UrspRuleRequest) GetTrafficDesc() TrafficDescriptorComponents {
 // GetTrafficDescOk returns a tuple with the TrafficDesc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UrspRuleRequest) GetTrafficDescOk() (*TrafficDescriptorComponents, bool) {
-	if o == nil || IsNil(o.TrafficDesc) {
+	if o == nil || isNil(o.TrafficDesc) {
 		return nil, false
 	}
 	return o.TrafficDesc, true
@@ -63,7 +63,7 @@ func (o *UrspRuleRequest) GetTrafficDescOk() (*TrafficDescriptorComponents, bool
 
 // HasTrafficDesc returns a boolean if a field has been set.
 func (o *UrspRuleRequest) HasTrafficDesc() bool {
-	if o != nil && !IsNil(o.TrafficDesc) {
+	if o != nil && !isNil(o.TrafficDesc) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UrspRuleRequest) SetTrafficDesc(v TrafficDescriptorComponents) {
 
 // GetRelatPrecedence returns the RelatPrecedence field value if set, zero value otherwise.
 func (o *UrspRuleRequest) GetRelatPrecedence() int32 {
-	if o == nil || IsNil(o.RelatPrecedence) {
+	if o == nil || isNil(o.RelatPrecedence) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UrspRuleRequest) GetRelatPrecedence() int32 {
 // GetRelatPrecedenceOk returns a tuple with the RelatPrecedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UrspRuleRequest) GetRelatPrecedenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.RelatPrecedence) {
+	if o == nil || isNil(o.RelatPrecedence) {
 		return nil, false
 	}
 	return o.RelatPrecedence, true
@@ -95,7 +95,7 @@ func (o *UrspRuleRequest) GetRelatPrecedenceOk() (*int32, bool) {
 
 // HasRelatPrecedence returns a boolean if a field has been set.
 func (o *UrspRuleRequest) HasRelatPrecedence() bool {
-	if o != nil && !IsNil(o.RelatPrecedence) {
+	if o != nil && !isNil(o.RelatPrecedence) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UrspRuleRequest) SetRelatPrecedence(v int32) {
 
 // GetRouteSelParamSets returns the RouteSelParamSets field value if set, zero value otherwise.
 func (o *UrspRuleRequest) GetRouteSelParamSets() []RouteSelectionParameterSet {
-	if o == nil || IsNil(o.RouteSelParamSets) {
+	if o == nil || isNil(o.RouteSelParamSets) {
 		var ret []RouteSelectionParameterSet
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UrspRuleRequest) GetRouteSelParamSets() []RouteSelectionParameterSet {
 // GetRouteSelParamSetsOk returns a tuple with the RouteSelParamSets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UrspRuleRequest) GetRouteSelParamSetsOk() ([]RouteSelectionParameterSet, bool) {
-	if o == nil || IsNil(o.RouteSelParamSets) {
+	if o == nil || isNil(o.RouteSelParamSets) {
 		return nil, false
 	}
 	return o.RouteSelParamSets, true
@@ -127,7 +127,7 @@ func (o *UrspRuleRequest) GetRouteSelParamSetsOk() ([]RouteSelectionParameterSet
 
 // HasRouteSelParamSets returns a boolean if a field has been set.
 func (o *UrspRuleRequest) HasRouteSelParamSets() bool {
-	if o != nil && !IsNil(o.RouteSelParamSets) {
+	if o != nil && !isNil(o.RouteSelParamSets) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o UrspRuleRequest) MarshalJSON() ([]byte, error) {
 
 func (o UrspRuleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TrafficDesc) {
+	if !isNil(o.TrafficDesc) {
 		toSerialize["trafficDesc"] = o.TrafficDesc
 	}
-	if !IsNil(o.RelatPrecedence) {
+	if !isNil(o.RelatPrecedence) {
 		toSerialize["relatPrecedence"] = o.RelatPrecedence
 	}
-	if !IsNil(o.RouteSelParamSets) {
+	if !isNil(o.RouteSelParamSets) {
 		toSerialize["routeSelParamSets"] = o.RouteSelParamSets
 	}
 	return toSerialize, nil

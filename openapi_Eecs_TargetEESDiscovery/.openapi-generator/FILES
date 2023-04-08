@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,6 +6,7 @@ api_ees_profiles_collection.go
 client.go
 configuration.go
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/CivicAddress.md
 docs/ECSServProvResp.md
 docs/EDNConInfo.md
@@ -48,6 +48,7 @@ docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/Snssai.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
@@ -55,6 +56,7 @@ git_push.sh
 go.mod
 go.sum
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_civic_address.go
 model_ecgi.go
 model_ecs_serv_prov_resp.go
@@ -95,6 +97,7 @@ model_problem_details.go
 model_relative_cartesian_location.go
 model_snssai.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go

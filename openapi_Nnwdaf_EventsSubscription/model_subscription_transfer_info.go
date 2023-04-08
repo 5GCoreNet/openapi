@@ -123,7 +123,7 @@ func (o *SubscriptionTransferInfo) SetConsumerId(v string) {
 
 // GetContextId returns the ContextId field value if set, zero value otherwise.
 func (o *SubscriptionTransferInfo) GetContextId() AnalyticsContextIdentifier {
-	if o == nil || IsNil(o.ContextId) {
+	if o == nil || isNil(o.ContextId) {
 		var ret AnalyticsContextIdentifier
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *SubscriptionTransferInfo) GetContextId() AnalyticsContextIdentifier {
 // GetContextIdOk returns a tuple with the ContextId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTransferInfo) GetContextIdOk() (*AnalyticsContextIdentifier, bool) {
-	if o == nil || IsNil(o.ContextId) {
+	if o == nil || isNil(o.ContextId) {
 		return nil, false
 	}
 	return o.ContextId, true
@@ -141,7 +141,7 @@ func (o *SubscriptionTransferInfo) GetContextIdOk() (*AnalyticsContextIdentifier
 
 // HasContextId returns a boolean if a field has been set.
 func (o *SubscriptionTransferInfo) HasContextId() bool {
-	if o != nil && !IsNil(o.ContextId) {
+	if o != nil && !isNil(o.ContextId) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *SubscriptionTransferInfo) SetContextId(v AnalyticsContextIdentifier) {
 
 // GetSourceNfIds returns the SourceNfIds field value if set, zero value otherwise.
 func (o *SubscriptionTransferInfo) GetSourceNfIds() []string {
-	if o == nil || IsNil(o.SourceNfIds) {
+	if o == nil || isNil(o.SourceNfIds) {
 		var ret []string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *SubscriptionTransferInfo) GetSourceNfIds() []string {
 // GetSourceNfIdsOk returns a tuple with the SourceNfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTransferInfo) GetSourceNfIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SourceNfIds) {
+	if o == nil || isNil(o.SourceNfIds) {
 		return nil, false
 	}
 	return o.SourceNfIds, true
@@ -173,7 +173,7 @@ func (o *SubscriptionTransferInfo) GetSourceNfIdsOk() ([]string, bool) {
 
 // HasSourceNfIds returns a boolean if a field has been set.
 func (o *SubscriptionTransferInfo) HasSourceNfIds() bool {
-	if o != nil && !IsNil(o.SourceNfIds) {
+	if o != nil && !isNil(o.SourceNfIds) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *SubscriptionTransferInfo) SetSourceNfIds(v []string) {
 
 // GetSourceSetIds returns the SourceSetIds field value if set, zero value otherwise.
 func (o *SubscriptionTransferInfo) GetSourceSetIds() []string {
-	if o == nil || IsNil(o.SourceSetIds) {
+	if o == nil || isNil(o.SourceSetIds) {
 		var ret []string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *SubscriptionTransferInfo) GetSourceSetIds() []string {
 // GetSourceSetIdsOk returns a tuple with the SourceSetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTransferInfo) GetSourceSetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SourceSetIds) {
+	if o == nil || isNil(o.SourceSetIds) {
 		return nil, false
 	}
 	return o.SourceSetIds, true
@@ -205,7 +205,7 @@ func (o *SubscriptionTransferInfo) GetSourceSetIdsOk() ([]string, bool) {
 
 // HasSourceSetIds returns a boolean if a field has been set.
 func (o *SubscriptionTransferInfo) HasSourceSetIds() bool {
-	if o != nil && !IsNil(o.SourceSetIds) {
+	if o != nil && !isNil(o.SourceSetIds) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *SubscriptionTransferInfo) SetSourceSetIds(v []string) {
 
 // GetModelInfo returns the ModelInfo field value if set, zero value otherwise.
 func (o *SubscriptionTransferInfo) GetModelInfo() []ModelInfo {
-	if o == nil || IsNil(o.ModelInfo) {
+	if o == nil || isNil(o.ModelInfo) {
 		var ret []ModelInfo
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *SubscriptionTransferInfo) GetModelInfo() []ModelInfo {
 // GetModelInfoOk returns a tuple with the ModelInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTransferInfo) GetModelInfoOk() ([]ModelInfo, bool) {
-	if o == nil || IsNil(o.ModelInfo) {
+	if o == nil || isNil(o.ModelInfo) {
 		return nil, false
 	}
 	return o.ModelInfo, true
@@ -237,7 +237,7 @@ func (o *SubscriptionTransferInfo) GetModelInfoOk() ([]ModelInfo, bool) {
 
 // HasModelInfo returns a boolean if a field has been set.
 func (o *SubscriptionTransferInfo) HasModelInfo() bool {
-	if o != nil && !IsNil(o.ModelInfo) {
+	if o != nil && !isNil(o.ModelInfo) {
 		return true
 	}
 
@@ -262,16 +262,16 @@ func (o SubscriptionTransferInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["transReqType"] = o.TransReqType
 	toSerialize["nwdafEvSub"] = o.NwdafEvSub
 	toSerialize["consumerId"] = o.ConsumerId
-	if !IsNil(o.ContextId) {
+	if !isNil(o.ContextId) {
 		toSerialize["contextId"] = o.ContextId
 	}
-	if !IsNil(o.SourceNfIds) {
+	if !isNil(o.SourceNfIds) {
 		toSerialize["sourceNfIds"] = o.SourceNfIds
 	}
-	if !IsNil(o.SourceSetIds) {
+	if !isNil(o.SourceSetIds) {
 		toSerialize["sourceSetIds"] = o.SourceSetIds
 	}
-	if !IsNil(o.ModelInfo) {
+	if !isNil(o.ModelInfo) {
 		toSerialize["modelInfo"] = o.ModelInfo
 	}
 	return toSerialize, nil

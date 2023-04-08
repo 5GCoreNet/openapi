@@ -72,7 +72,7 @@ func (o *AmfEventSubscriptionInfo) SetSubId(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -90,7 +90,7 @@ func (o *AmfEventSubscriptionInfo) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionInfo) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmfEventSubscriptionInfo) SetRefIdList(v []int32) {
 
 // GetOldSubId returns the OldSubId field value if set, zero value otherwise.
 func (o *AmfEventSubscriptionInfo) GetOldSubId() string {
-	if o == nil || IsNil(o.OldSubId) {
+	if o == nil || isNil(o.OldSubId) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AmfEventSubscriptionInfo) GetOldSubId() string {
 // GetOldSubIdOk returns a tuple with the OldSubId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventSubscriptionInfo) GetOldSubIdOk() (*string, bool) {
-	if o == nil || IsNil(o.OldSubId) {
+	if o == nil || isNil(o.OldSubId) {
 		return nil, false
 	}
 	return o.OldSubId, true
@@ -146,7 +146,7 @@ func (o *AmfEventSubscriptionInfo) GetOldSubIdOk() (*string, bool) {
 
 // HasOldSubId returns a boolean if a field has been set.
 func (o *AmfEventSubscriptionInfo) HasOldSubId() bool {
-	if o != nil && !IsNil(o.OldSubId) {
+	if o != nil && !isNil(o.OldSubId) {
 		return true
 	}
 
@@ -169,11 +169,11 @@ func (o AmfEventSubscriptionInfo) MarshalJSON() ([]byte, error) {
 func (o AmfEventSubscriptionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subId"] = o.SubId
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	toSerialize["refIdList"] = o.RefIdList
-	if !IsNil(o.OldSubId) {
+	if !isNil(o.OldSubId) {
 		toSerialize["oldSubId"] = o.OldSubId
 	}
 	return toSerialize, nil

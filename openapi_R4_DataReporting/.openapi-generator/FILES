@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,6 +6,7 @@ client.go
 configuration.go
 docs/BaseRecord.md
 docs/CacheStatus.md
+docs/CacheStatusAnyOf.md
 docs/EndpointAddress.md
 docs/Ipv6Addr.md
 docs/MediaStreamingAccessRecord.md
@@ -19,6 +19,7 @@ go.mod
 go.sum
 model_base_record.go
 model_cache_status.go
+model_cache_status_any_of.go
 model_endpoint_address.go
 model_ipv6_addr.go
 model_media_streaming_access_record.go

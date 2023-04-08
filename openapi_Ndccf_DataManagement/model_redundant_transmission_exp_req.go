@@ -42,7 +42,7 @@ func NewRedundantTransmissionExpReqWithDefaults() *RedundantTransmissionExpReq {
 
 // GetRedTOrderCriter returns the RedTOrderCriter field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpReq) GetRedTOrderCriter() RedTransExpOrderingCriterion {
-	if o == nil || IsNil(o.RedTOrderCriter) {
+	if o == nil || isNil(o.RedTOrderCriter) {
 		var ret RedTransExpOrderingCriterion
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RedundantTransmissionExpReq) GetRedTOrderCriter() RedTransExpOrderingCr
 // GetRedTOrderCriterOk returns a tuple with the RedTOrderCriter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpReq) GetRedTOrderCriterOk() (*RedTransExpOrderingCriterion, bool) {
-	if o == nil || IsNil(o.RedTOrderCriter) {
+	if o == nil || isNil(o.RedTOrderCriter) {
 		return nil, false
 	}
 	return o.RedTOrderCriter, true
@@ -60,7 +60,7 @@ func (o *RedundantTransmissionExpReq) GetRedTOrderCriterOk() (*RedTransExpOrderi
 
 // HasRedTOrderCriter returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpReq) HasRedTOrderCriter() bool {
-	if o != nil && !IsNil(o.RedTOrderCriter) {
+	if o != nil && !isNil(o.RedTOrderCriter) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RedundantTransmissionExpReq) SetRedTOrderCriter(v RedTransExpOrderingCr
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpReq) GetOrder() MatchingDirection {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || isNil(o.Order) {
 		var ret MatchingDirection
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RedundantTransmissionExpReq) GetOrder() MatchingDirection {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpReq) GetOrderOk() (*MatchingDirection, bool) {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || isNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -92,7 +92,7 @@ func (o *RedundantTransmissionExpReq) GetOrderOk() (*MatchingDirection, bool) {
 
 // HasOrder returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpReq) HasOrder() bool {
-	if o != nil && !IsNil(o.Order) {
+	if o != nil && !isNil(o.Order) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RedundantTransmissionExpReq) MarshalJSON() ([]byte, error) {
 
 func (o RedundantTransmissionExpReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RedTOrderCriter) {
+	if !isNil(o.RedTOrderCriter) {
 		toSerialize["redTOrderCriter"] = o.RedTOrderCriter
 	}
-	if !IsNil(o.Order) {
+	if !isNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
 	return toSerialize, nil

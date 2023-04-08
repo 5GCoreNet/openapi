@@ -99,7 +99,7 @@ func (o *ProseKeyReqData) SetKnrpFreshness1(v string) {
 
 // GetResyncInfo returns the ResyncInfo field value if set, zero value otherwise.
 func (o *ProseKeyReqData) GetResyncInfo() ResynchronizationInfo {
-	if o == nil || IsNil(o.ResyncInfo) {
+	if o == nil || isNil(o.ResyncInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *ProseKeyReqData) GetResyncInfo() ResynchronizationInfo {
 // GetResyncInfoOk returns a tuple with the ResyncInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseKeyReqData) GetResyncInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || IsNil(o.ResyncInfo) {
+	if o == nil || isNil(o.ResyncInfo) {
 		return nil, false
 	}
 	return o.ResyncInfo, true
@@ -117,7 +117,7 @@ func (o *ProseKeyReqData) GetResyncInfoOk() (*ResynchronizationInfo, bool) {
 
 // HasResyncInfo returns a boolean if a field has been set.
 func (o *ProseKeyReqData) HasResyncInfo() bool {
-	if o != nil && !IsNil(o.ResyncInfo) {
+	if o != nil && !isNil(o.ResyncInfo) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *ProseKeyReqData) SetResyncInfo(v ResynchronizationInfo) {
 
 // GetPrukId returns the PrukId field value if set, zero value otherwise.
 func (o *ProseKeyReqData) GetPrukId() string {
-	if o == nil || IsNil(o.PrukId) {
+	if o == nil || isNil(o.PrukId) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *ProseKeyReqData) GetPrukId() string {
 // GetPrukIdOk returns a tuple with the PrukId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseKeyReqData) GetPrukIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PrukId) {
+	if o == nil || isNil(o.PrukId) {
 		return nil, false
 	}
 	return o.PrukId, true
@@ -149,7 +149,7 @@ func (o *ProseKeyReqData) GetPrukIdOk() (*string, bool) {
 
 // HasPrukId returns a boolean if a field has been set.
 func (o *ProseKeyReqData) HasPrukId() bool {
-	if o != nil && !IsNil(o.PrukId) {
+	if o != nil && !isNil(o.PrukId) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *ProseKeyReqData) SetPrukId(v string) {
 
 // GetSuci returns the Suci field value if set, zero value otherwise.
 func (o *ProseKeyReqData) GetSuci() string {
-	if o == nil || IsNil(o.Suci) {
+	if o == nil || isNil(o.Suci) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *ProseKeyReqData) GetSuci() string {
 // GetSuciOk returns a tuple with the Suci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProseKeyReqData) GetSuciOk() (*string, bool) {
-	if o == nil || IsNil(o.Suci) {
+	if o == nil || isNil(o.Suci) {
 		return nil, false
 	}
 	return o.Suci, true
@@ -181,7 +181,7 @@ func (o *ProseKeyReqData) GetSuciOk() (*string, bool) {
 
 // HasSuci returns a boolean if a field has been set.
 func (o *ProseKeyReqData) HasSuci() bool {
-	if o != nil && !IsNil(o.Suci) {
+	if o != nil && !isNil(o.Suci) {
 		return true
 	}
 
@@ -205,13 +205,13 @@ func (o ProseKeyReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["relayServCode"] = o.RelayServCode
 	toSerialize["knrpFreshness1"] = o.KnrpFreshness1
-	if !IsNil(o.ResyncInfo) {
+	if !isNil(o.ResyncInfo) {
 		toSerialize["resyncInfo"] = o.ResyncInfo
 	}
-	if !IsNil(o.PrukId) {
+	if !isNil(o.PrukId) {
 		toSerialize["prukId"] = o.PrukId
 	}
-	if !IsNil(o.Suci) {
+	if !isNil(o.Suci) {
 		toSerialize["suci"] = o.Suci
 	}
 	return toSerialize, nil

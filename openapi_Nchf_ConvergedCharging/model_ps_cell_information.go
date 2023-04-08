@@ -42,7 +42,7 @@ func NewPSCellInformationWithDefaults() *PSCellInformation {
 
 // GetNrcgi returns the Nrcgi field value if set, zero value otherwise.
 func (o *PSCellInformation) GetNrcgi() Ncgi {
-	if o == nil || IsNil(o.Nrcgi) {
+	if o == nil || isNil(o.Nrcgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PSCellInformation) GetNrcgi() Ncgi {
 // GetNrcgiOk returns a tuple with the Nrcgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PSCellInformation) GetNrcgiOk() (*Ncgi, bool) {
-	if o == nil || IsNil(o.Nrcgi) {
+	if o == nil || isNil(o.Nrcgi) {
 		return nil, false
 	}
 	return o.Nrcgi, true
@@ -60,7 +60,7 @@ func (o *PSCellInformation) GetNrcgiOk() (*Ncgi, bool) {
 
 // HasNrcgi returns a boolean if a field has been set.
 func (o *PSCellInformation) HasNrcgi() bool {
-	if o != nil && !IsNil(o.Nrcgi) {
+	if o != nil && !isNil(o.Nrcgi) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PSCellInformation) SetNrcgi(v Ncgi) {
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *PSCellInformation) GetEcgi() Ecgi {
-	if o == nil || IsNil(o.Ecgi) {
+	if o == nil || isNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PSCellInformation) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PSCellInformation) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || IsNil(o.Ecgi) {
+	if o == nil || isNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -92,7 +92,7 @@ func (o *PSCellInformation) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *PSCellInformation) HasEcgi() bool {
-	if o != nil && !IsNil(o.Ecgi) {
+	if o != nil && !isNil(o.Ecgi) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PSCellInformation) MarshalJSON() ([]byte, error) {
 
 func (o PSCellInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Nrcgi) {
+	if !isNil(o.Nrcgi) {
 		toSerialize["nrcgi"] = o.Nrcgi
 	}
-	if !IsNil(o.Ecgi) {
+	if !isNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
 	return toSerialize, nil

@@ -49,7 +49,7 @@ func NewAmRequestedValueRepWithDefaults() *AmRequestedValueRep {
 
 // GetUserLoc returns the UserLoc field value if set, zero value otherwise.
 func (o *AmRequestedValueRep) GetUserLoc() UserLocation {
-	if o == nil || IsNil(o.UserLoc) {
+	if o == nil || isNil(o.UserLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *AmRequestedValueRep) GetUserLoc() UserLocation {
 // GetUserLocOk returns a tuple with the UserLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmRequestedValueRep) GetUserLocOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLoc) {
+	if o == nil || isNil(o.UserLoc) {
 		return nil, false
 	}
 	return o.UserLoc, true
@@ -67,7 +67,7 @@ func (o *AmRequestedValueRep) GetUserLocOk() (*UserLocation, bool) {
 
 // HasUserLoc returns a boolean if a field has been set.
 func (o *AmRequestedValueRep) HasUserLoc() bool {
-	if o != nil && !IsNil(o.UserLoc) {
+	if o != nil && !isNil(o.UserLoc) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *AmRequestedValueRep) SetUserLoc(v UserLocation) {
 
 // GetPraStatuses returns the PraStatuses field value if set, zero value otherwise.
 func (o *AmRequestedValueRep) GetPraStatuses() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PraStatuses) {
+	if o == nil || isNil(o.PraStatuses) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *AmRequestedValueRep) GetPraStatuses() map[string]PresenceInfo {
 // GetPraStatusesOk returns a tuple with the PraStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmRequestedValueRep) GetPraStatusesOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PraStatuses) {
+	if o == nil || isNil(o.PraStatuses) {
 		return nil, false
 	}
 	return o.PraStatuses, true
@@ -99,7 +99,7 @@ func (o *AmRequestedValueRep) GetPraStatusesOk() (*map[string]PresenceInfo, bool
 
 // HasPraStatuses returns a boolean if a field has been set.
 func (o *AmRequestedValueRep) HasPraStatuses() bool {
-	if o != nil && !IsNil(o.PraStatuses) {
+	if o != nil && !isNil(o.PraStatuses) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *AmRequestedValueRep) SetPraStatuses(v map[string]PresenceInfo) {
 
 // GetAccessTypes returns the AccessTypes field value if set, zero value otherwise.
 func (o *AmRequestedValueRep) GetAccessTypes() []AccessType {
-	if o == nil || IsNil(o.AccessTypes) {
+	if o == nil || isNil(o.AccessTypes) {
 		var ret []AccessType
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *AmRequestedValueRep) GetAccessTypes() []AccessType {
 // GetAccessTypesOk returns a tuple with the AccessTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmRequestedValueRep) GetAccessTypesOk() ([]AccessType, bool) {
-	if o == nil || IsNil(o.AccessTypes) {
+	if o == nil || isNil(o.AccessTypes) {
 		return nil, false
 	}
 	return o.AccessTypes, true
@@ -131,7 +131,7 @@ func (o *AmRequestedValueRep) GetAccessTypesOk() ([]AccessType, bool) {
 
 // HasAccessTypes returns a boolean if a field has been set.
 func (o *AmRequestedValueRep) HasAccessTypes() bool {
-	if o != nil && !IsNil(o.AccessTypes) {
+	if o != nil && !isNil(o.AccessTypes) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *AmRequestedValueRep) SetAccessTypes(v []AccessType) {
 
 // GetRatTypes returns the RatTypes field value if set, zero value otherwise.
 func (o *AmRequestedValueRep) GetRatTypes() []RatType {
-	if o == nil || IsNil(o.RatTypes) {
+	if o == nil || isNil(o.RatTypes) {
 		var ret []RatType
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *AmRequestedValueRep) GetRatTypes() []RatType {
 // GetRatTypesOk returns a tuple with the RatTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmRequestedValueRep) GetRatTypesOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RatTypes) {
+	if o == nil || isNil(o.RatTypes) {
 		return nil, false
 	}
 	return o.RatTypes, true
@@ -163,7 +163,7 @@ func (o *AmRequestedValueRep) GetRatTypesOk() ([]RatType, bool) {
 
 // HasRatTypes returns a boolean if a field has been set.
 func (o *AmRequestedValueRep) HasRatTypes() bool {
-	if o != nil && !IsNil(o.RatTypes) {
+	if o != nil && !isNil(o.RatTypes) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *AmRequestedValueRep) SetRatTypes(v []RatType) {
 
 // GetAllowedSnssais returns the AllowedSnssais field value if set, zero value otherwise.
 func (o *AmRequestedValueRep) GetAllowedSnssais() []Snssai {
-	if o == nil || IsNil(o.AllowedSnssais) {
+	if o == nil || isNil(o.AllowedSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *AmRequestedValueRep) GetAllowedSnssais() []Snssai {
 // GetAllowedSnssaisOk returns a tuple with the AllowedSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmRequestedValueRep) GetAllowedSnssaisOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.AllowedSnssais) {
+	if o == nil || isNil(o.AllowedSnssais) {
 		return nil, false
 	}
 	return o.AllowedSnssais, true
@@ -195,7 +195,7 @@ func (o *AmRequestedValueRep) GetAllowedSnssaisOk() ([]Snssai, bool) {
 
 // HasAllowedSnssais returns a boolean if a field has been set.
 func (o *AmRequestedValueRep) HasAllowedSnssais() bool {
-	if o != nil && !IsNil(o.AllowedSnssais) {
+	if o != nil && !isNil(o.AllowedSnssais) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *AmRequestedValueRep) SetAllowedSnssais(v []Snssai) {
 
 // GetN3gAllowedSnssais returns the N3gAllowedSnssais field value if set, zero value otherwise.
 func (o *AmRequestedValueRep) GetN3gAllowedSnssais() []Snssai {
-	if o == nil || IsNil(o.N3gAllowedSnssais) {
+	if o == nil || isNil(o.N3gAllowedSnssais) {
 		var ret []Snssai
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *AmRequestedValueRep) GetN3gAllowedSnssais() []Snssai {
 // GetN3gAllowedSnssaisOk returns a tuple with the N3gAllowedSnssais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmRequestedValueRep) GetN3gAllowedSnssaisOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.N3gAllowedSnssais) {
+	if o == nil || isNil(o.N3gAllowedSnssais) {
 		return nil, false
 	}
 	return o.N3gAllowedSnssais, true
@@ -227,7 +227,7 @@ func (o *AmRequestedValueRep) GetN3gAllowedSnssaisOk() ([]Snssai, bool) {
 
 // HasN3gAllowedSnssais returns a boolean if a field has been set.
 func (o *AmRequestedValueRep) HasN3gAllowedSnssais() bool {
-	if o != nil && !IsNil(o.N3gAllowedSnssais) {
+	if o != nil && !isNil(o.N3gAllowedSnssais) {
 		return true
 	}
 
@@ -249,22 +249,22 @@ func (o AmRequestedValueRep) MarshalJSON() ([]byte, error) {
 
 func (o AmRequestedValueRep) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLoc) {
+	if !isNil(o.UserLoc) {
 		toSerialize["userLoc"] = o.UserLoc
 	}
-	if !IsNil(o.PraStatuses) {
+	if !isNil(o.PraStatuses) {
 		toSerialize["praStatuses"] = o.PraStatuses
 	}
-	if !IsNil(o.AccessTypes) {
+	if !isNil(o.AccessTypes) {
 		toSerialize["accessTypes"] = o.AccessTypes
 	}
-	if !IsNil(o.RatTypes) {
+	if !isNil(o.RatTypes) {
 		toSerialize["ratTypes"] = o.RatTypes
 	}
-	if !IsNil(o.AllowedSnssais) {
+	if !isNil(o.AllowedSnssais) {
 		toSerialize["allowedSnssais"] = o.AllowedSnssais
 	}
-	if !IsNil(o.N3gAllowedSnssais) {
+	if !isNil(o.N3gAllowedSnssais) {
 		toSerialize["n3gAllowedSnssais"] = o.N3gAllowedSnssais
 	}
 	return toSerialize, nil

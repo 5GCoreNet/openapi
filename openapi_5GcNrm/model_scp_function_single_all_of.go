@@ -19,7 +19,7 @@ var _ MappedNullable = &ScpFunctionSingleAllOf{}
 
 // ScpFunctionSingleAllOf struct for ScpFunctionSingleAllOf
 type ScpFunctionSingleAllOf struct {
-	Attributes *ScpFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewScpFunctionSingleAllOf instantiates a new ScpFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewScpFunctionSingleAllOfWithDefaults() *ScpFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ScpFunctionSingleAllOf) GetAttributes() ScpFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret ScpFunctionSingleAllOfAttributes
+func (o *ScpFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *ScpFunctionSingleAllOf) GetAttributes() ScpFunctionSingleAllOfAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ScpFunctionSingleAllOf) GetAttributesOk() (*ScpFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *ScpFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *ScpFunctionSingleAllOf) GetAttributesOk() (*ScpFunctionSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ScpFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ScpFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *ScpFunctionSingleAllOf) SetAttributes(v ScpFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *ScpFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o ScpFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ScpFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

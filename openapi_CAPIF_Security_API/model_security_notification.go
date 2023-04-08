@@ -74,7 +74,7 @@ func (o *SecurityNotification) SetApiInvokerId(v string) {
 
 // GetAefId returns the AefId field value if set, zero value otherwise.
 func (o *SecurityNotification) GetAefId() string {
-	if o == nil || IsNil(o.AefId) {
+	if o == nil || isNil(o.AefId) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SecurityNotification) GetAefId() string {
 // GetAefIdOk returns a tuple with the AefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecurityNotification) GetAefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AefId) {
+	if o == nil || isNil(o.AefId) {
 		return nil, false
 	}
 	return o.AefId, true
@@ -92,7 +92,7 @@ func (o *SecurityNotification) GetAefIdOk() (*string, bool) {
 
 // HasAefId returns a boolean if a field has been set.
 func (o *SecurityNotification) HasAefId() bool {
-	if o != nil && !IsNil(o.AefId) {
+	if o != nil && !isNil(o.AefId) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o SecurityNotification) MarshalJSON() ([]byte, error) {
 func (o SecurityNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiInvokerId"] = o.ApiInvokerId
-	if !IsNil(o.AefId) {
+	if !isNil(o.AefId) {
 		toSerialize["aefId"] = o.AefId
 	}
 	toSerialize["apiIds"] = o.ApiIds

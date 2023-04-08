@@ -58,7 +58,7 @@ func NewFeasibilityCheckAndReservationJobSingleAllOfAttributesWithDefaults() *Fe
 
 // GetProfile returns the Profile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetProfile() OneOfSliceProfileServiceProfile {
-	if o == nil || IsNil(o.Profile.Get()) {
+	if o == nil || isNil(o.Profile.Get()) {
 		var ret OneOfSliceProfileServiceProfile
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) UnsetProfile() 
 
 // GetResourceReservation returns the ResourceReservation field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceReservation() bool {
-	if o == nil || IsNil(o.ResourceReservation) {
+	if o == nil || isNil(o.ResourceReservation) {
 		var ret bool
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceRese
 // GetResourceReservationOk returns a tuple with the ResourceReservation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceReservationOk() (*bool, bool) {
-	if o == nil || IsNil(o.ResourceReservation) {
+	if o == nil || isNil(o.ResourceReservation) {
 		return nil, false
 	}
 	return o.ResourceReservation, true
@@ -118,7 +118,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceRese
 
 // HasResourceReservation returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasResourceReservation() bool {
-	if o != nil && !IsNil(o.ResourceReservation) {
+	if o != nil && !isNil(o.ResourceReservation) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetResourceRese
 
 // GetRecommendationRequest returns the RecommendationRequest field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendationRequest() bool {
-	if o == nil || IsNil(o.RecommendationRequest) {
+	if o == nil || isNil(o.RecommendationRequest) {
 		var ret bool
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendati
 // GetRecommendationRequestOk returns a tuple with the RecommendationRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendationRequestOk() (*bool, bool) {
-	if o == nil || IsNil(o.RecommendationRequest) {
+	if o == nil || isNil(o.RecommendationRequest) {
 		return nil, false
 	}
 	return o.RecommendationRequest, true
@@ -150,7 +150,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendati
 
 // HasRecommendationRequest returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasRecommendationRequest() bool {
-	if o != nil && !IsNil(o.RecommendationRequest) {
+	if o != nil && !isNil(o.RecommendationRequest) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetRecommendati
 
 // GetRequestedReservationExpiration returns the RequestedReservationExpiration field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRequestedReservationExpiration() string {
-	if o == nil || IsNil(o.RequestedReservationExpiration) {
+	if o == nil || isNil(o.RequestedReservationExpiration) {
 		var ret string
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRequestedRes
 // GetRequestedReservationExpirationOk returns a tuple with the RequestedReservationExpiration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRequestedReservationExpirationOk() (*string, bool) {
-	if o == nil || IsNil(o.RequestedReservationExpiration) {
+	if o == nil || isNil(o.RequestedReservationExpiration) {
 		return nil, false
 	}
 	return o.RequestedReservationExpiration, true
@@ -182,7 +182,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRequestedRes
 
 // HasRequestedReservationExpiration returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasRequestedReservationExpiration() bool {
-	if o != nil && !IsNil(o.RequestedReservationExpiration) {
+	if o != nil && !isNil(o.RequestedReservationExpiration) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetRequestedRes
 
 // GetProcessMonitor returns the ProcessMonitor field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetProcessMonitor() ProcessMonitor {
-	if o == nil || IsNil(o.ProcessMonitor) {
+	if o == nil || isNil(o.ProcessMonitor) {
 		var ret ProcessMonitor
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetProcessMonit
 // GetProcessMonitorOk returns a tuple with the ProcessMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetProcessMonitorOk() (*ProcessMonitor, bool) {
-	if o == nil || IsNil(o.ProcessMonitor) {
+	if o == nil || isNil(o.ProcessMonitor) {
 		return nil, false
 	}
 	return o.ProcessMonitor, true
@@ -214,7 +214,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetProcessMonit
 
 // HasProcessMonitor returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasProcessMonitor() bool {
-	if o != nil && !IsNil(o.ProcessMonitor) {
+	if o != nil && !isNil(o.ProcessMonitor) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetProcessMonit
 
 // GetFeasibilityResult returns the FeasibilityResult field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetFeasibilityResult() FeasibilityResult {
-	if o == nil || IsNil(o.FeasibilityResult) {
+	if o == nil || isNil(o.FeasibilityResult) {
 		var ret FeasibilityResult
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetFeasibilityR
 // GetFeasibilityResultOk returns a tuple with the FeasibilityResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetFeasibilityResultOk() (*FeasibilityResult, bool) {
-	if o == nil || IsNil(o.FeasibilityResult) {
+	if o == nil || isNil(o.FeasibilityResult) {
 		return nil, false
 	}
 	return o.FeasibilityResult, true
@@ -246,7 +246,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetFeasibilityR
 
 // HasFeasibilityResult returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasFeasibilityResult() bool {
-	if o != nil && !IsNil(o.FeasibilityResult) {
+	if o != nil && !isNil(o.FeasibilityResult) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetFeasibilityR
 
 // GetInFeasibleReason returns the InFeasibleReason field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetInFeasibleReason() string {
-	if o == nil || IsNil(o.InFeasibleReason) {
+	if o == nil || isNil(o.InFeasibleReason) {
 		var ret string
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetInFeasibleRe
 // GetInFeasibleReasonOk returns a tuple with the InFeasibleReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetInFeasibleReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.InFeasibleReason) {
+	if o == nil || isNil(o.InFeasibleReason) {
 		return nil, false
 	}
 	return o.InFeasibleReason, true
@@ -278,7 +278,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetInFeasibleRe
 
 // HasInFeasibleReason returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasInFeasibleReason() bool {
-	if o != nil && !IsNil(o.InFeasibleReason) {
+	if o != nil && !isNil(o.InFeasibleReason) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetInFeasibleRe
 
 // GetResourceReservationStatus returns the ResourceReservationStatus field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceReservationStatus() ResourceReservationStatus {
-	if o == nil || IsNil(o.ResourceReservationStatus) {
+	if o == nil || isNil(o.ResourceReservationStatus) {
 		var ret ResourceReservationStatus
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceRese
 // GetResourceReservationStatusOk returns a tuple with the ResourceReservationStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceReservationStatusOk() (*ResourceReservationStatus, bool) {
-	if o == nil || IsNil(o.ResourceReservationStatus) {
+	if o == nil || isNil(o.ResourceReservationStatus) {
 		return nil, false
 	}
 	return o.ResourceReservationStatus, true
@@ -310,7 +310,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetResourceRese
 
 // HasResourceReservationStatus returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasResourceReservationStatus() bool {
-	if o != nil && !IsNil(o.ResourceReservationStatus) {
+	if o != nil && !isNil(o.ResourceReservationStatus) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetResourceRese
 
 // GetReservationFailureReason returns the ReservationFailureReason field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationFailureReason() string {
-	if o == nil || IsNil(o.ReservationFailureReason) {
+	if o == nil || isNil(o.ReservationFailureReason) {
 		var ret string
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationF
 // GetReservationFailureReasonOk returns a tuple with the ReservationFailureReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationFailureReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.ReservationFailureReason) {
+	if o == nil || isNil(o.ReservationFailureReason) {
 		return nil, false
 	}
 	return o.ReservationFailureReason, true
@@ -342,7 +342,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationF
 
 // HasReservationFailureReason returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasReservationFailureReason() bool {
-	if o != nil && !IsNil(o.ReservationFailureReason) {
+	if o != nil && !isNil(o.ReservationFailureReason) {
 		return true
 	}
 
@@ -356,7 +356,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetReservationF
 
 // GetReservationExpiration returns the ReservationExpiration field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationExpiration() string {
-	if o == nil || IsNil(o.ReservationExpiration) {
+	if o == nil || isNil(o.ReservationExpiration) {
 		var ret string
 		return ret
 	}
@@ -366,7 +366,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationE
 // GetReservationExpirationOk returns a tuple with the ReservationExpiration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationExpirationOk() (*string, bool) {
-	if o == nil || IsNil(o.ReservationExpiration) {
+	if o == nil || isNil(o.ReservationExpiration) {
 		return nil, false
 	}
 	return o.ReservationExpiration, true
@@ -374,7 +374,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetReservationE
 
 // HasReservationExpiration returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasReservationExpiration() bool {
-	if o != nil && !IsNil(o.ReservationExpiration) {
+	if o != nil && !isNil(o.ReservationExpiration) {
 		return true
 	}
 
@@ -388,7 +388,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) SetReservationE
 
 // GetRecommendedRequirements returns the RecommendedRequirements field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendedRequirements() string {
-	if o == nil || IsNil(o.RecommendedRequirements) {
+	if o == nil || isNil(o.RecommendedRequirements) {
 		var ret string
 		return ret
 	}
@@ -398,7 +398,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendedR
 // GetRecommendedRequirementsOk returns a tuple with the RecommendedRequirements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendedRequirementsOk() (*string, bool) {
-	if o == nil || IsNil(o.RecommendedRequirements) {
+	if o == nil || isNil(o.RecommendedRequirements) {
 		return nil, false
 	}
 	return o.RecommendedRequirements, true
@@ -406,7 +406,7 @@ func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) GetRecommendedR
 
 // HasRecommendedRequirements returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingleAllOfAttributes) HasRecommendedRequirements() bool {
-	if o != nil && !IsNil(o.RecommendedRequirements) {
+	if o != nil && !isNil(o.RecommendedRequirements) {
 		return true
 	}
 
@@ -431,34 +431,34 @@ func (o FeasibilityCheckAndReservationJobSingleAllOfAttributes) ToMap() (map[str
 	if o.Profile.IsSet() {
 		toSerialize["profile"] = o.Profile.Get()
 	}
-	if !IsNil(o.ResourceReservation) {
+	if !isNil(o.ResourceReservation) {
 		toSerialize["resourceReservation"] = o.ResourceReservation
 	}
-	if !IsNil(o.RecommendationRequest) {
+	if !isNil(o.RecommendationRequest) {
 		toSerialize["recommendationRequest"] = o.RecommendationRequest
 	}
-	if !IsNil(o.RequestedReservationExpiration) {
+	if !isNil(o.RequestedReservationExpiration) {
 		toSerialize["requestedReservationExpiration"] = o.RequestedReservationExpiration
 	}
-	if !IsNil(o.ProcessMonitor) {
+	if !isNil(o.ProcessMonitor) {
 		toSerialize["processMonitor"] = o.ProcessMonitor
 	}
-	if !IsNil(o.FeasibilityResult) {
+	if !isNil(o.FeasibilityResult) {
 		toSerialize["feasibilityResult"] = o.FeasibilityResult
 	}
-	if !IsNil(o.InFeasibleReason) {
+	if !isNil(o.InFeasibleReason) {
 		toSerialize["inFeasibleReason"] = o.InFeasibleReason
 	}
-	if !IsNil(o.ResourceReservationStatus) {
+	if !isNil(o.ResourceReservationStatus) {
 		toSerialize["resourceReservationStatus"] = o.ResourceReservationStatus
 	}
-	if !IsNil(o.ReservationFailureReason) {
+	if !isNil(o.ReservationFailureReason) {
 		toSerialize["reservationFailureReason"] = o.ReservationFailureReason
 	}
-	if !IsNil(o.ReservationExpiration) {
+	if !isNil(o.ReservationExpiration) {
 		toSerialize["reservationExpiration"] = o.ReservationExpiration
 	}
-	if !IsNil(o.RecommendedRequirements) {
+	if !isNil(o.RecommendedRequirements) {
 		toSerialize["recommendedRequirements"] = o.RecommendedRequirements
 	}
 	return toSerialize, nil

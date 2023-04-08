@@ -48,7 +48,7 @@ func NewDistributionSessionDescriptionWithDefaults() *DistributionSessionDescrip
 
 // GetConformanceProfile returns the ConformanceProfile field value if set, zero value otherwise.
 func (o *DistributionSessionDescription) GetConformanceProfile() string {
-	if o == nil || IsNil(o.ConformanceProfile) {
+	if o == nil || isNil(o.ConformanceProfile) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *DistributionSessionDescription) GetConformanceProfile() string {
 // GetConformanceProfileOk returns a tuple with the ConformanceProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionSessionDescription) GetConformanceProfileOk() (*string, bool) {
-	if o == nil || IsNil(o.ConformanceProfile) {
+	if o == nil || isNil(o.ConformanceProfile) {
 		return nil, false
 	}
 	return o.ConformanceProfile, true
@@ -66,7 +66,7 @@ func (o *DistributionSessionDescription) GetConformanceProfileOk() (*string, boo
 
 // HasConformanceProfile returns a boolean if a field has been set.
 func (o *DistributionSessionDescription) HasConformanceProfile() bool {
-	if o != nil && !IsNil(o.ConformanceProfile) {
+	if o != nil && !isNil(o.ConformanceProfile) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *DistributionSessionDescription) SetSessionDescriptionURI(v string) {
 
 // GetObjectRepairParameters returns the ObjectRepairParameters field value if set, zero value otherwise.
 func (o *DistributionSessionDescription) GetObjectRepairParameters() AssociatedProcedureDescription {
-	if o == nil || IsNil(o.ObjectRepairParameters) {
+	if o == nil || isNil(o.ObjectRepairParameters) {
 		var ret AssociatedProcedureDescription
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *DistributionSessionDescription) GetObjectRepairParameters() AssociatedP
 // GetObjectRepairParametersOk returns a tuple with the ObjectRepairParameters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionSessionDescription) GetObjectRepairParametersOk() (*AssociatedProcedureDescription, bool) {
-	if o == nil || IsNil(o.ObjectRepairParameters) {
+	if o == nil || isNil(o.ObjectRepairParameters) {
 		return nil, false
 	}
 	return o.ObjectRepairParameters, true
@@ -122,7 +122,7 @@ func (o *DistributionSessionDescription) GetObjectRepairParametersOk() (*Associa
 
 // HasObjectRepairParameters returns a boolean if a field has been set.
 func (o *DistributionSessionDescription) HasObjectRepairParameters() bool {
-	if o != nil && !IsNil(o.ObjectRepairParameters) {
+	if o != nil && !isNil(o.ObjectRepairParameters) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *DistributionSessionDescription) SetObjectRepairParameters(v AssociatedP
 
 // GetDataNetworkName returns the DataNetworkName field value if set, zero value otherwise.
 func (o *DistributionSessionDescription) GetDataNetworkName() string {
-	if o == nil || IsNil(o.DataNetworkName) {
+	if o == nil || isNil(o.DataNetworkName) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *DistributionSessionDescription) GetDataNetworkName() string {
 // GetDataNetworkNameOk returns a tuple with the DataNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionSessionDescription) GetDataNetworkNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DataNetworkName) {
+	if o == nil || isNil(o.DataNetworkName) {
 		return nil, false
 	}
 	return o.DataNetworkName, true
@@ -154,7 +154,7 @@ func (o *DistributionSessionDescription) GetDataNetworkNameOk() (*string, bool) 
 
 // HasDataNetworkName returns a boolean if a field has been set.
 func (o *DistributionSessionDescription) HasDataNetworkName() bool {
-	if o != nil && !IsNil(o.DataNetworkName) {
+	if o != nil && !isNil(o.DataNetworkName) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *DistributionSessionDescription) SetDataNetworkName(v string) {
 
 // GetMbsAppService returns the MbsAppService field value if set, zero value otherwise.
 func (o *DistributionSessionDescription) GetMbsAppService() []ApplicationService {
-	if o == nil || IsNil(o.MbsAppService) {
+	if o == nil || isNil(o.MbsAppService) {
 		var ret []ApplicationService
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *DistributionSessionDescription) GetMbsAppService() []ApplicationService
 // GetMbsAppServiceOk returns a tuple with the MbsAppService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionSessionDescription) GetMbsAppServiceOk() ([]ApplicationService, bool) {
-	if o == nil || IsNil(o.MbsAppService) {
+	if o == nil || isNil(o.MbsAppService) {
 		return nil, false
 	}
 	return o.MbsAppService, true
@@ -186,7 +186,7 @@ func (o *DistributionSessionDescription) GetMbsAppServiceOk() ([]ApplicationServ
 
 // HasMbsAppService returns a boolean if a field has been set.
 func (o *DistributionSessionDescription) HasMbsAppService() bool {
-	if o != nil && !IsNil(o.MbsAppService) {
+	if o != nil && !isNil(o.MbsAppService) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *DistributionSessionDescription) SetMbsAppService(v []ApplicationService
 
 // GetUnicastAppServices returns the UnicastAppServices field value if set, zero value otherwise.
 func (o *DistributionSessionDescription) GetUnicastAppServices() []DistributionSessionDescriptionUnicastAppServicesInner {
-	if o == nil || IsNil(o.UnicastAppServices) {
+	if o == nil || isNil(o.UnicastAppServices) {
 		var ret []DistributionSessionDescriptionUnicastAppServicesInner
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *DistributionSessionDescription) GetUnicastAppServices() []DistributionS
 // GetUnicastAppServicesOk returns a tuple with the UnicastAppServices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionSessionDescription) GetUnicastAppServicesOk() ([]DistributionSessionDescriptionUnicastAppServicesInner, bool) {
-	if o == nil || IsNil(o.UnicastAppServices) {
+	if o == nil || isNil(o.UnicastAppServices) {
 		return nil, false
 	}
 	return o.UnicastAppServices, true
@@ -218,7 +218,7 @@ func (o *DistributionSessionDescription) GetUnicastAppServicesOk() ([]Distributi
 
 // HasUnicastAppServices returns a boolean if a field has been set.
 func (o *DistributionSessionDescription) HasUnicastAppServices() bool {
-	if o != nil && !IsNil(o.UnicastAppServices) {
+	if o != nil && !isNil(o.UnicastAppServices) {
 		return true
 	}
 
@@ -240,20 +240,20 @@ func (o DistributionSessionDescription) MarshalJSON() ([]byte, error) {
 
 func (o DistributionSessionDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ConformanceProfile) {
+	if !isNil(o.ConformanceProfile) {
 		toSerialize["conformanceProfile"] = o.ConformanceProfile
 	}
 	toSerialize["sessionDescriptionURI"] = o.SessionDescriptionURI
-	if !IsNil(o.ObjectRepairParameters) {
+	if !isNil(o.ObjectRepairParameters) {
 		toSerialize["objectRepairParameters"] = o.ObjectRepairParameters
 	}
-	if !IsNil(o.DataNetworkName) {
+	if !isNil(o.DataNetworkName) {
 		toSerialize["dataNetworkName"] = o.DataNetworkName
 	}
-	if !IsNil(o.MbsAppService) {
+	if !isNil(o.MbsAppService) {
 		toSerialize["mbsAppService"] = o.MbsAppService
 	}
-	if !IsNil(o.UnicastAppServices) {
+	if !isNil(o.UnicastAppServices) {
 		toSerialize["unicastAppServices"] = o.UnicastAppServices
 	}
 	return toSerialize, nil

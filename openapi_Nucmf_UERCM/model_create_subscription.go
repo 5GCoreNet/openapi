@@ -50,7 +50,7 @@ func NewCreateSubscriptionWithDefaults() *CreateSubscription {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *CreateSubscription) GetNfId() string {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *CreateSubscription) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateSubscription) GetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -68,7 +68,7 @@ func (o *CreateSubscription) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *CreateSubscription) HasNfId() bool {
-	if o != nil && !IsNil(o.NfId) {
+	if o != nil && !isNil(o.NfId) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *CreateSubscription) SetUcmfNotificationUri(v string) {
 
 // GetSuggestedExpires returns the SuggestedExpires field value if set, zero value otherwise.
 func (o *CreateSubscription) GetSuggestedExpires() time.Time {
-	if o == nil || IsNil(o.SuggestedExpires) {
+	if o == nil || isNil(o.SuggestedExpires) {
 		var ret time.Time
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *CreateSubscription) GetSuggestedExpires() time.Time {
 // GetSuggestedExpiresOk returns a tuple with the SuggestedExpires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateSubscription) GetSuggestedExpiresOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SuggestedExpires) {
+	if o == nil || isNil(o.SuggestedExpires) {
 		return nil, false
 	}
 	return o.SuggestedExpires, true
@@ -124,7 +124,7 @@ func (o *CreateSubscription) GetSuggestedExpiresOk() (*time.Time, bool) {
 
 // HasSuggestedExpires returns a boolean if a field has been set.
 func (o *CreateSubscription) HasSuggestedExpires() bool {
-	if o != nil && !IsNil(o.SuggestedExpires) {
+	if o != nil && !isNil(o.SuggestedExpires) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *CreateSubscription) SetSuggestedExpires(v time.Time) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreateSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *CreateSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -156,7 +156,7 @@ func (o *CreateSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreateSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -178,14 +178,14 @@ func (o CreateSubscription) MarshalJSON() ([]byte, error) {
 
 func (o CreateSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NfId) {
+	if !isNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
 	toSerialize["ucmfNotificationUri"] = o.UcmfNotificationUri
-	if !IsNil(o.SuggestedExpires) {
+	if !isNil(o.SuggestedExpires) {
 		toSerialize["suggestedExpires"] = o.SuggestedExpires
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

@@ -13,7 +13,7 @@ package openapi_SS_GroupManagement
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -97,9 +97,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) DeleteIndValGroupDocExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -279,9 +279,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) ModifyIndValGroupDocExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -480,10 +480,10 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 	localVarFormParams := url.Values{}
 
 	if r.groupMembers != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group-members", r.groupMembers, "")
+		parameterAddToQuery(localVarQueryParams, "group-members", r.groupMembers, "")
 	}
 	if r.groupConfiguration != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group-configuration", r.groupConfiguration, "")
+		parameterAddToQuery(localVarQueryParams, "group-configuration", r.groupConfiguration, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -512,9 +512,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) RetrieveIndValGroupDocExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -715,9 +715,9 @@ func (a *IndividualVALGroupDocumentDocumentApiService) UpdateIndValGroupDocExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -96,7 +96,7 @@ func (o *IeInfo) SetIeType(v IeType) {
 
 // GetReqIe returns the ReqIe field value if set, zero value otherwise.
 func (o *IeInfo) GetReqIe() string {
-	if o == nil || IsNil(o.ReqIe) {
+	if o == nil || isNil(o.ReqIe) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *IeInfo) GetReqIe() string {
 // GetReqIeOk returns a tuple with the ReqIe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetReqIeOk() (*string, bool) {
-	if o == nil || IsNil(o.ReqIe) {
+	if o == nil || isNil(o.ReqIe) {
 		return nil, false
 	}
 	return o.ReqIe, true
@@ -114,7 +114,7 @@ func (o *IeInfo) GetReqIeOk() (*string, bool) {
 
 // HasReqIe returns a boolean if a field has been set.
 func (o *IeInfo) HasReqIe() bool {
-	if o != nil && !IsNil(o.ReqIe) {
+	if o != nil && !isNil(o.ReqIe) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *IeInfo) SetReqIe(v string) {
 
 // GetRspIe returns the RspIe field value if set, zero value otherwise.
 func (o *IeInfo) GetRspIe() string {
-	if o == nil || IsNil(o.RspIe) {
+	if o == nil || isNil(o.RspIe) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *IeInfo) GetRspIe() string {
 // GetRspIeOk returns a tuple with the RspIe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetRspIeOk() (*string, bool) {
-	if o == nil || IsNil(o.RspIe) {
+	if o == nil || isNil(o.RspIe) {
 		return nil, false
 	}
 	return o.RspIe, true
@@ -146,7 +146,7 @@ func (o *IeInfo) GetRspIeOk() (*string, bool) {
 
 // HasRspIe returns a boolean if a field has been set.
 func (o *IeInfo) HasRspIe() bool {
-	if o != nil && !IsNil(o.RspIe) {
+	if o != nil && !isNil(o.RspIe) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *IeInfo) SetRspIe(v string) {
 
 // GetIsModifiable returns the IsModifiable field value if set, zero value otherwise.
 func (o *IeInfo) GetIsModifiable() bool {
-	if o == nil || IsNil(o.IsModifiable) {
+	if o == nil || isNil(o.IsModifiable) {
 		var ret bool
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *IeInfo) GetIsModifiable() bool {
 // GetIsModifiableOk returns a tuple with the IsModifiable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetIsModifiableOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsModifiable) {
+	if o == nil || isNil(o.IsModifiable) {
 		return nil, false
 	}
 	return o.IsModifiable, true
@@ -178,7 +178,7 @@ func (o *IeInfo) GetIsModifiableOk() (*bool, bool) {
 
 // HasIsModifiable returns a boolean if a field has been set.
 func (o *IeInfo) HasIsModifiable() bool {
-	if o != nil && !IsNil(o.IsModifiable) {
+	if o != nil && !isNil(o.IsModifiable) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *IeInfo) SetIsModifiable(v bool) {
 
 // GetIsModifiableByIpx returns the IsModifiableByIpx field value if set, zero value otherwise.
 func (o *IeInfo) GetIsModifiableByIpx() map[string]bool {
-	if o == nil || IsNil(o.IsModifiableByIpx) {
+	if o == nil || isNil(o.IsModifiableByIpx) {
 		var ret map[string]bool
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *IeInfo) GetIsModifiableByIpx() map[string]bool {
 // GetIsModifiableByIpxOk returns a tuple with the IsModifiableByIpx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IeInfo) GetIsModifiableByIpxOk() (*map[string]bool, bool) {
-	if o == nil || IsNil(o.IsModifiableByIpx) {
+	if o == nil || isNil(o.IsModifiableByIpx) {
 		return nil, false
 	}
 	return o.IsModifiableByIpx, true
@@ -210,7 +210,7 @@ func (o *IeInfo) GetIsModifiableByIpxOk() (*map[string]bool, bool) {
 
 // HasIsModifiableByIpx returns a boolean if a field has been set.
 func (o *IeInfo) HasIsModifiableByIpx() bool {
-	if o != nil && !IsNil(o.IsModifiableByIpx) {
+	if o != nil && !isNil(o.IsModifiableByIpx) {
 		return true
 	}
 
@@ -234,16 +234,16 @@ func (o IeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ieLoc"] = o.IeLoc
 	toSerialize["ieType"] = o.IeType
-	if !IsNil(o.ReqIe) {
+	if !isNil(o.ReqIe) {
 		toSerialize["reqIe"] = o.ReqIe
 	}
-	if !IsNil(o.RspIe) {
+	if !isNil(o.RspIe) {
 		toSerialize["rspIe"] = o.RspIe
 	}
-	if !IsNil(o.IsModifiable) {
+	if !isNil(o.IsModifiable) {
 		toSerialize["isModifiable"] = o.IsModifiable
 	}
-	if !IsNil(o.IsModifiableByIpx) {
+	if !isNil(o.IsModifiableByIpx) {
 		toSerialize["isModifiableByIpx"] = o.IsModifiableByIpx
 	}
 	return toSerialize, nil

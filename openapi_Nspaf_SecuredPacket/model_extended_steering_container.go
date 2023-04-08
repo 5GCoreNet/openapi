@@ -44,7 +44,7 @@ func NewExtendedSteeringContainerWithDefaults() *ExtendedSteeringContainer {
 
 // GetSteeringContainer returns the SteeringContainer field value if set, zero value otherwise.
 func (o *ExtendedSteeringContainer) GetSteeringContainer() []SteeringInfo {
-	if o == nil || IsNil(o.SteeringContainer) {
+	if o == nil || isNil(o.SteeringContainer) {
 		var ret []SteeringInfo
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ExtendedSteeringContainer) GetSteeringContainer() []SteeringInfo {
 // GetSteeringContainerOk returns a tuple with the SteeringContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedSteeringContainer) GetSteeringContainerOk() ([]SteeringInfo, bool) {
-	if o == nil || IsNil(o.SteeringContainer) {
+	if o == nil || isNil(o.SteeringContainer) {
 		return nil, false
 	}
 	return o.SteeringContainer, true
@@ -62,7 +62,7 @@ func (o *ExtendedSteeringContainer) GetSteeringContainerOk() ([]SteeringInfo, bo
 
 // HasSteeringContainer returns a boolean if a field has been set.
 func (o *ExtendedSteeringContainer) HasSteeringContainer() bool {
-	if o != nil && !IsNil(o.SteeringContainer) {
+	if o != nil && !isNil(o.SteeringContainer) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *ExtendedSteeringContainer) SetSteeringContainer(v []SteeringInfo) {
 
 // GetSorCmci returns the SorCmci field value if set, zero value otherwise.
 func (o *ExtendedSteeringContainer) GetSorCmci() string {
-	if o == nil || IsNil(o.SorCmci) {
+	if o == nil || isNil(o.SorCmci) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ExtendedSteeringContainer) GetSorCmci() string {
 // GetSorCmciOk returns a tuple with the SorCmci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedSteeringContainer) GetSorCmciOk() (*string, bool) {
-	if o == nil || IsNil(o.SorCmci) {
+	if o == nil || isNil(o.SorCmci) {
 		return nil, false
 	}
 	return o.SorCmci, true
@@ -94,7 +94,7 @@ func (o *ExtendedSteeringContainer) GetSorCmciOk() (*string, bool) {
 
 // HasSorCmci returns a boolean if a field has been set.
 func (o *ExtendedSteeringContainer) HasSorCmci() bool {
-	if o != nil && !IsNil(o.SorCmci) {
+	if o != nil && !isNil(o.SorCmci) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ExtendedSteeringContainer) SetSorCmci(v string) {
 
 // GetStoreSorCmciInMe returns the StoreSorCmciInMe field value if set, zero value otherwise.
 func (o *ExtendedSteeringContainer) GetStoreSorCmciInMe() bool {
-	if o == nil || IsNil(o.StoreSorCmciInMe) {
+	if o == nil || isNil(o.StoreSorCmciInMe) {
 		var ret bool
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ExtendedSteeringContainer) GetStoreSorCmciInMe() bool {
 // GetStoreSorCmciInMeOk returns a tuple with the StoreSorCmciInMe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedSteeringContainer) GetStoreSorCmciInMeOk() (*bool, bool) {
-	if o == nil || IsNil(o.StoreSorCmciInMe) {
+	if o == nil || isNil(o.StoreSorCmciInMe) {
 		return nil, false
 	}
 	return o.StoreSorCmciInMe, true
@@ -126,7 +126,7 @@ func (o *ExtendedSteeringContainer) GetStoreSorCmciInMeOk() (*bool, bool) {
 
 // HasStoreSorCmciInMe returns a boolean if a field has been set.
 func (o *ExtendedSteeringContainer) HasStoreSorCmciInMe() bool {
-	if o != nil && !IsNil(o.StoreSorCmciInMe) {
+	if o != nil && !isNil(o.StoreSorCmciInMe) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o ExtendedSteeringContainer) MarshalJSON() ([]byte, error) {
 
 func (o ExtendedSteeringContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SteeringContainer) {
+	if !isNil(o.SteeringContainer) {
 		toSerialize["steeringContainer"] = o.SteeringContainer
 	}
-	if !IsNil(o.SorCmci) {
+	if !isNil(o.SorCmci) {
 		toSerialize["sorCmci"] = o.SorCmci
 	}
-	if !IsNil(o.StoreSorCmciInMe) {
+	if !isNil(o.StoreSorCmciInMe) {
 		toSerialize["storeSorCmciInMe"] = o.StoreSorCmciInMe
 	}
 	return toSerialize, nil

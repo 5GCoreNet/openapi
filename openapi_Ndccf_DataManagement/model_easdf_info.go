@@ -43,7 +43,7 @@ func NewEasdfInfoWithDefaults() *EasdfInfo {
 
 // GetSNssaiEasdfInfoList returns the SNssaiEasdfInfoList field value if set, zero value otherwise.
 func (o *EasdfInfo) GetSNssaiEasdfInfoList() []SnssaiEasdfInfoItem {
-	if o == nil || IsNil(o.SNssaiEasdfInfoList) {
+	if o == nil || isNil(o.SNssaiEasdfInfoList) {
 		var ret []SnssaiEasdfInfoItem
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EasdfInfo) GetSNssaiEasdfInfoList() []SnssaiEasdfInfoItem {
 // GetSNssaiEasdfInfoListOk returns a tuple with the SNssaiEasdfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasdfInfo) GetSNssaiEasdfInfoListOk() ([]SnssaiEasdfInfoItem, bool) {
-	if o == nil || IsNil(o.SNssaiEasdfInfoList) {
+	if o == nil || isNil(o.SNssaiEasdfInfoList) {
 		return nil, false
 	}
 	return o.SNssaiEasdfInfoList, true
@@ -61,7 +61,7 @@ func (o *EasdfInfo) GetSNssaiEasdfInfoListOk() ([]SnssaiEasdfInfoItem, bool) {
 
 // HasSNssaiEasdfInfoList returns a boolean if a field has been set.
 func (o *EasdfInfo) HasSNssaiEasdfInfoList() bool {
-	if o != nil && !IsNil(o.SNssaiEasdfInfoList) {
+	if o != nil && !isNil(o.SNssaiEasdfInfoList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EasdfInfo) SetSNssaiEasdfInfoList(v []SnssaiEasdfInfoItem) {
 
 // GetEasdfN6IpAddressList returns the EasdfN6IpAddressList field value if set, zero value otherwise.
 func (o *EasdfInfo) GetEasdfN6IpAddressList() []IpAddr {
-	if o == nil || IsNil(o.EasdfN6IpAddressList) {
+	if o == nil || isNil(o.EasdfN6IpAddressList) {
 		var ret []IpAddr
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EasdfInfo) GetEasdfN6IpAddressList() []IpAddr {
 // GetEasdfN6IpAddressListOk returns a tuple with the EasdfN6IpAddressList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasdfInfo) GetEasdfN6IpAddressListOk() ([]IpAddr, bool) {
-	if o == nil || IsNil(o.EasdfN6IpAddressList) {
+	if o == nil || isNil(o.EasdfN6IpAddressList) {
 		return nil, false
 	}
 	return o.EasdfN6IpAddressList, true
@@ -93,7 +93,7 @@ func (o *EasdfInfo) GetEasdfN6IpAddressListOk() ([]IpAddr, bool) {
 
 // HasEasdfN6IpAddressList returns a boolean if a field has been set.
 func (o *EasdfInfo) HasEasdfN6IpAddressList() bool {
-	if o != nil && !IsNil(o.EasdfN6IpAddressList) {
+	if o != nil && !isNil(o.EasdfN6IpAddressList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EasdfInfo) SetEasdfN6IpAddressList(v []IpAddr) {
 
 // GetUpfN6IpAddressList returns the UpfN6IpAddressList field value if set, zero value otherwise.
 func (o *EasdfInfo) GetUpfN6IpAddressList() []IpAddr {
-	if o == nil || IsNil(o.UpfN6IpAddressList) {
+	if o == nil || isNil(o.UpfN6IpAddressList) {
 		var ret []IpAddr
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *EasdfInfo) GetUpfN6IpAddressList() []IpAddr {
 // GetUpfN6IpAddressListOk returns a tuple with the UpfN6IpAddressList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasdfInfo) GetUpfN6IpAddressListOk() ([]IpAddr, bool) {
-	if o == nil || IsNil(o.UpfN6IpAddressList) {
+	if o == nil || isNil(o.UpfN6IpAddressList) {
 		return nil, false
 	}
 	return o.UpfN6IpAddressList, true
@@ -125,7 +125,7 @@ func (o *EasdfInfo) GetUpfN6IpAddressListOk() ([]IpAddr, bool) {
 
 // HasUpfN6IpAddressList returns a boolean if a field has been set.
 func (o *EasdfInfo) HasUpfN6IpAddressList() bool {
-	if o != nil && !IsNil(o.UpfN6IpAddressList) {
+	if o != nil && !isNil(o.UpfN6IpAddressList) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o EasdfInfo) MarshalJSON() ([]byte, error) {
 
 func (o EasdfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SNssaiEasdfInfoList) {
+	if !isNil(o.SNssaiEasdfInfoList) {
 		toSerialize["sNssaiEasdfInfoList"] = o.SNssaiEasdfInfoList
 	}
-	if !IsNil(o.EasdfN6IpAddressList) {
+	if !isNil(o.EasdfN6IpAddressList) {
 		toSerialize["easdfN6IpAddressList"] = o.EasdfN6IpAddressList
 	}
-	if !IsNil(o.UpfN6IpAddressList) {
+	if !isNil(o.UpfN6IpAddressList) {
 		toSerialize["upfN6IpAddressList"] = o.UpfN6IpAddressList
 	}
 	return toSerialize, nil

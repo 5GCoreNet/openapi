@@ -41,7 +41,7 @@ func NewRoamingRestrictionsWithDefaults() *RoamingRestrictions {
 
 // GetAccessAllowed returns the AccessAllowed field value if set, zero value otherwise.
 func (o *RoamingRestrictions) GetAccessAllowed() bool {
-	if o == nil || IsNil(o.AccessAllowed) {
+	if o == nil || isNil(o.AccessAllowed) {
 		var ret bool
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *RoamingRestrictions) GetAccessAllowed() bool {
 // GetAccessAllowedOk returns a tuple with the AccessAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingRestrictions) GetAccessAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.AccessAllowed) {
+	if o == nil || isNil(o.AccessAllowed) {
 		return nil, false
 	}
 	return o.AccessAllowed, true
@@ -59,7 +59,7 @@ func (o *RoamingRestrictions) GetAccessAllowedOk() (*bool, bool) {
 
 // HasAccessAllowed returns a boolean if a field has been set.
 func (o *RoamingRestrictions) HasAccessAllowed() bool {
-	if o != nil && !IsNil(o.AccessAllowed) {
+	if o != nil && !isNil(o.AccessAllowed) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o RoamingRestrictions) MarshalJSON() ([]byte, error) {
 
 func (o RoamingRestrictions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccessAllowed) {
+	if !isNil(o.AccessAllowed) {
 		toSerialize["accessAllowed"] = o.AccessAllowed
 	}
 	return toSerialize, nil

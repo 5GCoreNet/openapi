@@ -13,7 +13,7 @@ package openapi_Nsmf_PDUSession
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -107,9 +107,9 @@ func (a *IndividualSMContextApiService) ReleaseSmContextExecute(r ApiReleaseSmCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,9 +360,9 @@ func (a *IndividualSMContextApiService) RetrieveSmContextExecute(r ApiRetrieveSm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -554,8 +554,8 @@ func (r ApiSendMoDataRequest) JsonData(jsonData SendMoDataReqData) ApiSendMoData
 	return r
 }
 
-func (r ApiSendMoDataRequest) BinaryMoData(binaryMoData *os.File) ApiSendMoDataRequest {
-	r.binaryMoData = binaryMoData
+func (r ApiSendMoDataRequest) BinaryMoData(binaryMoData os.File) ApiSendMoDataRequest {
+	r.binaryMoData = &binaryMoData
 	return r
 }
 
@@ -628,17 +628,17 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 
 	binaryMoDataLocalVarFormFileName = "binaryMoData"
 
-
-	binaryMoDataLocalVarFile := r.binaryMoData
-
+	var binaryMoDataLocalVarFile *os.File
+	if r.binaryMoData != nil {
+		binaryMoDataLocalVarFile = r.binaryMoData
+	}
 	if binaryMoDataLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryMoDataLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryMoDataLocalVarFile)
 		binaryMoDataLocalVarFileBytes = fbs
 		binaryMoDataLocalVarFileName = binaryMoDataLocalVarFile.Name()
 		binaryMoDataLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryMoDataLocalVarFileBytes, fileName: binaryMoDataLocalVarFileName, formFileName: binaryMoDataLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -649,9 +649,9 @@ func (a *IndividualSMContextApiService) SendMoDataExecute(r ApiSendMoDataRequest
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -896,9 +896,9 @@ func (a *IndividualSMContextApiService) UpdateSmContextExecute(r ApiUpdateSmCont
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -49,7 +49,7 @@ func NewECSServProvSubscriptionPatchWithDefaults() *ECSServProvSubscriptionPatch
 
 // GetAcProfs returns the AcProfs field value if set, zero value otherwise.
 func (o *ECSServProvSubscriptionPatch) GetAcProfs() []ACProfile {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		var ret []ACProfile
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *ECSServProvSubscriptionPatch) GetAcProfs() []ACProfile {
 // GetAcProfsOk returns a tuple with the AcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscriptionPatch) GetAcProfsOk() ([]ACProfile, bool) {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		return nil, false
 	}
 	return o.AcProfs, true
@@ -67,7 +67,7 @@ func (o *ECSServProvSubscriptionPatch) GetAcProfsOk() ([]ACProfile, bool) {
 
 // HasAcProfs returns a boolean if a field has been set.
 func (o *ECSServProvSubscriptionPatch) HasAcProfs() bool {
-	if o != nil && !IsNil(o.AcProfs) {
+	if o != nil && !isNil(o.AcProfs) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *ECSServProvSubscriptionPatch) SetAcProfs(v []ACProfile) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ECSServProvSubscriptionPatch) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *ECSServProvSubscriptionPatch) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -99,7 +99,7 @@ func (o *ECSServProvSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ECSServProvSubscriptionPatch) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *ECSServProvSubscriptionPatch) SetExpTime(v time.Time) {
 
 // GetEecSvcContSupp returns the EecSvcContSupp field value if set, zero value otherwise.
 func (o *ECSServProvSubscriptionPatch) GetEecSvcContSupp() []ACRScenario {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *ECSServProvSubscriptionPatch) GetEecSvcContSupp() []ACRScenario {
 // GetEecSvcContSuppOk returns a tuple with the EecSvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscriptionPatch) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		return nil, false
 	}
 	return o.EecSvcContSupp, true
@@ -131,7 +131,7 @@ func (o *ECSServProvSubscriptionPatch) GetEecSvcContSuppOk() ([]ACRScenario, boo
 
 // HasEecSvcContSupp returns a boolean if a field has been set.
 func (o *ECSServProvSubscriptionPatch) HasEecSvcContSupp() bool {
-	if o != nil && !IsNil(o.EecSvcContSupp) {
+	if o != nil && !isNil(o.EecSvcContSupp) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *ECSServProvSubscriptionPatch) SetEecSvcContSupp(v []ACRScenario) {
 
 // GetConnInfo returns the ConnInfo field value if set, zero value otherwise.
 func (o *ECSServProvSubscriptionPatch) GetConnInfo() []ConnectivityInfo {
-	if o == nil || IsNil(o.ConnInfo) {
+	if o == nil || isNil(o.ConnInfo) {
 		var ret []ConnectivityInfo
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *ECSServProvSubscriptionPatch) GetConnInfo() []ConnectivityInfo {
 // GetConnInfoOk returns a tuple with the ConnInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvSubscriptionPatch) GetConnInfoOk() ([]ConnectivityInfo, bool) {
-	if o == nil || IsNil(o.ConnInfo) {
+	if o == nil || isNil(o.ConnInfo) {
 		return nil, false
 	}
 	return o.ConnInfo, true
@@ -163,7 +163,7 @@ func (o *ECSServProvSubscriptionPatch) GetConnInfoOk() ([]ConnectivityInfo, bool
 
 // HasConnInfo returns a boolean if a field has been set.
 func (o *ECSServProvSubscriptionPatch) HasConnInfo() bool {
-	if o != nil && !IsNil(o.ConnInfo) {
+	if o != nil && !isNil(o.ConnInfo) {
 		return true
 	}
 
@@ -185,16 +185,16 @@ func (o ECSServProvSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o ECSServProvSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcProfs) {
+	if !isNil(o.AcProfs) {
 		toSerialize["acProfs"] = o.AcProfs
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !IsNil(o.EecSvcContSupp) {
+	if !isNil(o.EecSvcContSupp) {
 		toSerialize["eecSvcContSupp"] = o.EecSvcContSupp
 	}
-	if !IsNil(o.ConnInfo) {
+	if !isNil(o.ConnInfo) {
 		toSerialize["connInfo"] = o.ConnInfo
 	}
 	return toSerialize, nil

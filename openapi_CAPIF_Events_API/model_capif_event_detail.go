@@ -50,7 +50,7 @@ func NewCAPIFEventDetailWithDefaults() *CAPIFEventDetail {
 
 // GetServiceAPIDescriptions returns the ServiceAPIDescriptions field value if set, zero value otherwise.
 func (o *CAPIFEventDetail) GetServiceAPIDescriptions() []ServiceAPIDescription {
-	if o == nil || IsNil(o.ServiceAPIDescriptions) {
+	if o == nil || isNil(o.ServiceAPIDescriptions) {
 		var ret []ServiceAPIDescription
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *CAPIFEventDetail) GetServiceAPIDescriptions() []ServiceAPIDescription {
 // GetServiceAPIDescriptionsOk returns a tuple with the ServiceAPIDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventDetail) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription, bool) {
-	if o == nil || IsNil(o.ServiceAPIDescriptions) {
+	if o == nil || isNil(o.ServiceAPIDescriptions) {
 		return nil, false
 	}
 	return o.ServiceAPIDescriptions, true
@@ -68,7 +68,7 @@ func (o *CAPIFEventDetail) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescriptio
 
 // HasServiceAPIDescriptions returns a boolean if a field has been set.
 func (o *CAPIFEventDetail) HasServiceAPIDescriptions() bool {
-	if o != nil && !IsNil(o.ServiceAPIDescriptions) {
+	if o != nil && !isNil(o.ServiceAPIDescriptions) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *CAPIFEventDetail) SetServiceAPIDescriptions(v []ServiceAPIDescription) 
 
 // GetApiIds returns the ApiIds field value if set, zero value otherwise.
 func (o *CAPIFEventDetail) GetApiIds() []string {
-	if o == nil || IsNil(o.ApiIds) {
+	if o == nil || isNil(o.ApiIds) {
 		var ret []string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *CAPIFEventDetail) GetApiIds() []string {
 // GetApiIdsOk returns a tuple with the ApiIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventDetail) GetApiIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ApiIds) {
+	if o == nil || isNil(o.ApiIds) {
 		return nil, false
 	}
 	return o.ApiIds, true
@@ -100,7 +100,7 @@ func (o *CAPIFEventDetail) GetApiIdsOk() ([]string, bool) {
 
 // HasApiIds returns a boolean if a field has been set.
 func (o *CAPIFEventDetail) HasApiIds() bool {
-	if o != nil && !IsNil(o.ApiIds) {
+	if o != nil && !isNil(o.ApiIds) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *CAPIFEventDetail) SetApiIds(v []string) {
 
 // GetApiInvokerIds returns the ApiInvokerIds field value if set, zero value otherwise.
 func (o *CAPIFEventDetail) GetApiInvokerIds() []string {
-	if o == nil || IsNil(o.ApiInvokerIds) {
+	if o == nil || isNil(o.ApiInvokerIds) {
 		var ret []string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *CAPIFEventDetail) GetApiInvokerIds() []string {
 // GetApiInvokerIdsOk returns a tuple with the ApiInvokerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventDetail) GetApiInvokerIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ApiInvokerIds) {
+	if o == nil || isNil(o.ApiInvokerIds) {
 		return nil, false
 	}
 	return o.ApiInvokerIds, true
@@ -132,7 +132,7 @@ func (o *CAPIFEventDetail) GetApiInvokerIdsOk() ([]string, bool) {
 
 // HasApiInvokerIds returns a boolean if a field has been set.
 func (o *CAPIFEventDetail) HasApiInvokerIds() bool {
-	if o != nil && !IsNil(o.ApiInvokerIds) {
+	if o != nil && !isNil(o.ApiInvokerIds) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *CAPIFEventDetail) SetApiInvokerIds(v []string) {
 
 // GetAccCtrlPolList returns the AccCtrlPolList field value if set, zero value otherwise.
 func (o *CAPIFEventDetail) GetAccCtrlPolList() AccessControlPolicyListExt {
-	if o == nil || IsNil(o.AccCtrlPolList) {
+	if o == nil || isNil(o.AccCtrlPolList) {
 		var ret AccessControlPolicyListExt
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *CAPIFEventDetail) GetAccCtrlPolList() AccessControlPolicyListExt {
 // GetAccCtrlPolListOk returns a tuple with the AccCtrlPolList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventDetail) GetAccCtrlPolListOk() (*AccessControlPolicyListExt, bool) {
-	if o == nil || IsNil(o.AccCtrlPolList) {
+	if o == nil || isNil(o.AccCtrlPolList) {
 		return nil, false
 	}
 	return o.AccCtrlPolList, true
@@ -164,7 +164,7 @@ func (o *CAPIFEventDetail) GetAccCtrlPolListOk() (*AccessControlPolicyListExt, b
 
 // HasAccCtrlPolList returns a boolean if a field has been set.
 func (o *CAPIFEventDetail) HasAccCtrlPolList() bool {
-	if o != nil && !IsNil(o.AccCtrlPolList) {
+	if o != nil && !isNil(o.AccCtrlPolList) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *CAPIFEventDetail) SetAccCtrlPolList(v AccessControlPolicyListExt) {
 
 // GetInvocationLogs returns the InvocationLogs field value if set, zero value otherwise.
 func (o *CAPIFEventDetail) GetInvocationLogs() []InvocationLog {
-	if o == nil || IsNil(o.InvocationLogs) {
+	if o == nil || isNil(o.InvocationLogs) {
 		var ret []InvocationLog
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *CAPIFEventDetail) GetInvocationLogs() []InvocationLog {
 // GetInvocationLogsOk returns a tuple with the InvocationLogs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventDetail) GetInvocationLogsOk() ([]InvocationLog, bool) {
-	if o == nil || IsNil(o.InvocationLogs) {
+	if o == nil || isNil(o.InvocationLogs) {
 		return nil, false
 	}
 	return o.InvocationLogs, true
@@ -196,7 +196,7 @@ func (o *CAPIFEventDetail) GetInvocationLogsOk() ([]InvocationLog, bool) {
 
 // HasInvocationLogs returns a boolean if a field has been set.
 func (o *CAPIFEventDetail) HasInvocationLogs() bool {
-	if o != nil && !IsNil(o.InvocationLogs) {
+	if o != nil && !isNil(o.InvocationLogs) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *CAPIFEventDetail) SetInvocationLogs(v []InvocationLog) {
 
 // GetApiTopoHide returns the ApiTopoHide field value if set, zero value otherwise.
 func (o *CAPIFEventDetail) GetApiTopoHide() TopologyHiding {
-	if o == nil || IsNil(o.ApiTopoHide) {
+	if o == nil || isNil(o.ApiTopoHide) {
 		var ret TopologyHiding
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *CAPIFEventDetail) GetApiTopoHide() TopologyHiding {
 // GetApiTopoHideOk returns a tuple with the ApiTopoHide field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventDetail) GetApiTopoHideOk() (*TopologyHiding, bool) {
-	if o == nil || IsNil(o.ApiTopoHide) {
+	if o == nil || isNil(o.ApiTopoHide) {
 		return nil, false
 	}
 	return o.ApiTopoHide, true
@@ -228,7 +228,7 @@ func (o *CAPIFEventDetail) GetApiTopoHideOk() (*TopologyHiding, bool) {
 
 // HasApiTopoHide returns a boolean if a field has been set.
 func (o *CAPIFEventDetail) HasApiTopoHide() bool {
-	if o != nil && !IsNil(o.ApiTopoHide) {
+	if o != nil && !isNil(o.ApiTopoHide) {
 		return true
 	}
 
@@ -250,22 +250,22 @@ func (o CAPIFEventDetail) MarshalJSON() ([]byte, error) {
 
 func (o CAPIFEventDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceAPIDescriptions) {
+	if !isNil(o.ServiceAPIDescriptions) {
 		toSerialize["serviceAPIDescriptions"] = o.ServiceAPIDescriptions
 	}
-	if !IsNil(o.ApiIds) {
+	if !isNil(o.ApiIds) {
 		toSerialize["apiIds"] = o.ApiIds
 	}
-	if !IsNil(o.ApiInvokerIds) {
+	if !isNil(o.ApiInvokerIds) {
 		toSerialize["apiInvokerIds"] = o.ApiInvokerIds
 	}
-	if !IsNil(o.AccCtrlPolList) {
+	if !isNil(o.AccCtrlPolList) {
 		toSerialize["accCtrlPolList"] = o.AccCtrlPolList
 	}
-	if !IsNil(o.InvocationLogs) {
+	if !isNil(o.InvocationLogs) {
 		toSerialize["invocationLogs"] = o.InvocationLogs
 	}
-	if !IsNil(o.ApiTopoHide) {
+	if !isNil(o.ApiTopoHide) {
 		toSerialize["apiTopoHide"] = o.ApiTopoHide
 	}
 	return toSerialize, nil

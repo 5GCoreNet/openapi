@@ -41,7 +41,7 @@ func NewAssuranceScopeWithDefaults() *AssuranceScope {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *AssuranceScope) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AssuranceScope) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceScope) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -59,7 +59,7 @@ func (o *AssuranceScope) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *AssuranceScope) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AssuranceScope) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceScope) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
 	return toSerialize, nil

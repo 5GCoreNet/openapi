@@ -69,7 +69,7 @@ func (o *DnaiInformation) SetDnai(v string) {
 
 // GetNoDnaiChangeInd returns the NoDnaiChangeInd field value if set, zero value otherwise.
 func (o *DnaiInformation) GetNoDnaiChangeInd() bool {
-	if o == nil || IsNil(o.NoDnaiChangeInd) {
+	if o == nil || isNil(o.NoDnaiChangeInd) {
 		var ret bool
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *DnaiInformation) GetNoDnaiChangeInd() bool {
 // GetNoDnaiChangeIndOk returns a tuple with the NoDnaiChangeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnaiInformation) GetNoDnaiChangeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.NoDnaiChangeInd) {
+	if o == nil || isNil(o.NoDnaiChangeInd) {
 		return nil, false
 	}
 	return o.NoDnaiChangeInd, true
@@ -87,7 +87,7 @@ func (o *DnaiInformation) GetNoDnaiChangeIndOk() (*bool, bool) {
 
 // HasNoDnaiChangeInd returns a boolean if a field has been set.
 func (o *DnaiInformation) HasNoDnaiChangeInd() bool {
-	if o != nil && !IsNil(o.NoDnaiChangeInd) {
+	if o != nil && !isNil(o.NoDnaiChangeInd) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *DnaiInformation) SetNoDnaiChangeInd(v bool) {
 
 // GetNoLocalPsaChangeInd returns the NoLocalPsaChangeInd field value if set, zero value otherwise.
 func (o *DnaiInformation) GetNoLocalPsaChangeInd() bool {
-	if o == nil || IsNil(o.NoLocalPsaChangeInd) {
+	if o == nil || isNil(o.NoLocalPsaChangeInd) {
 		var ret bool
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *DnaiInformation) GetNoLocalPsaChangeInd() bool {
 // GetNoLocalPsaChangeIndOk returns a tuple with the NoLocalPsaChangeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnaiInformation) GetNoLocalPsaChangeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.NoLocalPsaChangeInd) {
+	if o == nil || isNil(o.NoLocalPsaChangeInd) {
 		return nil, false
 	}
 	return o.NoLocalPsaChangeInd, true
@@ -119,7 +119,7 @@ func (o *DnaiInformation) GetNoLocalPsaChangeIndOk() (*bool, bool) {
 
 // HasNoLocalPsaChangeInd returns a boolean if a field has been set.
 func (o *DnaiInformation) HasNoLocalPsaChangeInd() bool {
-	if o != nil && !IsNil(o.NoLocalPsaChangeInd) {
+	if o != nil && !isNil(o.NoLocalPsaChangeInd) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o DnaiInformation) MarshalJSON() ([]byte, error) {
 func (o DnaiInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnai"] = o.Dnai
-	if !IsNil(o.NoDnaiChangeInd) {
+	if !isNil(o.NoDnaiChangeInd) {
 		toSerialize["noDnaiChangeInd"] = o.NoDnaiChangeInd
 	}
-	if !IsNil(o.NoLocalPsaChangeInd) {
+	if !isNil(o.NoLocalPsaChangeInd) {
 		toSerialize["noLocalPsaChangeInd"] = o.NoLocalPsaChangeInd
 	}
 	return toSerialize, nil

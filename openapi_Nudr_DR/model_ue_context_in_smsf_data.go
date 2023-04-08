@@ -42,7 +42,7 @@ func NewUeContextInSmsfDataWithDefaults() *UeContextInSmsfData {
 
 // GetSmsfInfo3GppAccess returns the SmsfInfo3GppAccess field value if set, zero value otherwise.
 func (o *UeContextInSmsfData) GetSmsfInfo3GppAccess() SmsfInfo {
-	if o == nil || IsNil(o.SmsfInfo3GppAccess) {
+	if o == nil || isNil(o.SmsfInfo3GppAccess) {
 		var ret SmsfInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UeContextInSmsfData) GetSmsfInfo3GppAccess() SmsfInfo {
 // GetSmsfInfo3GppAccessOk returns a tuple with the SmsfInfo3GppAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmsfData) GetSmsfInfo3GppAccessOk() (*SmsfInfo, bool) {
-	if o == nil || IsNil(o.SmsfInfo3GppAccess) {
+	if o == nil || isNil(o.SmsfInfo3GppAccess) {
 		return nil, false
 	}
 	return o.SmsfInfo3GppAccess, true
@@ -60,7 +60,7 @@ func (o *UeContextInSmsfData) GetSmsfInfo3GppAccessOk() (*SmsfInfo, bool) {
 
 // HasSmsfInfo3GppAccess returns a boolean if a field has been set.
 func (o *UeContextInSmsfData) HasSmsfInfo3GppAccess() bool {
-	if o != nil && !IsNil(o.SmsfInfo3GppAccess) {
+	if o != nil && !isNil(o.SmsfInfo3GppAccess) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *UeContextInSmsfData) SetSmsfInfo3GppAccess(v SmsfInfo) {
 
 // GetSmsfInfoNon3GppAccess returns the SmsfInfoNon3GppAccess field value if set, zero value otherwise.
 func (o *UeContextInSmsfData) GetSmsfInfoNon3GppAccess() SmsfInfo {
-	if o == nil || IsNil(o.SmsfInfoNon3GppAccess) {
+	if o == nil || isNil(o.SmsfInfoNon3GppAccess) {
 		var ret SmsfInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *UeContextInSmsfData) GetSmsfInfoNon3GppAccess() SmsfInfo {
 // GetSmsfInfoNon3GppAccessOk returns a tuple with the SmsfInfoNon3GppAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextInSmsfData) GetSmsfInfoNon3GppAccessOk() (*SmsfInfo, bool) {
-	if o == nil || IsNil(o.SmsfInfoNon3GppAccess) {
+	if o == nil || isNil(o.SmsfInfoNon3GppAccess) {
 		return nil, false
 	}
 	return o.SmsfInfoNon3GppAccess, true
@@ -92,7 +92,7 @@ func (o *UeContextInSmsfData) GetSmsfInfoNon3GppAccessOk() (*SmsfInfo, bool) {
 
 // HasSmsfInfoNon3GppAccess returns a boolean if a field has been set.
 func (o *UeContextInSmsfData) HasSmsfInfoNon3GppAccess() bool {
-	if o != nil && !IsNil(o.SmsfInfoNon3GppAccess) {
+	if o != nil && !isNil(o.SmsfInfoNon3GppAccess) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o UeContextInSmsfData) MarshalJSON() ([]byte, error) {
 
 func (o UeContextInSmsfData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SmsfInfo3GppAccess) {
+	if !isNil(o.SmsfInfo3GppAccess) {
 		toSerialize["smsfInfo3GppAccess"] = o.SmsfInfo3GppAccess
 	}
-	if !IsNil(o.SmsfInfoNon3GppAccess) {
+	if !isNil(o.SmsfInfoNon3GppAccess) {
 		toSerialize["smsfInfoNon3GppAccess"] = o.SmsfInfoNon3GppAccess
 	}
 	return toSerialize, nil

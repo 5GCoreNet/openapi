@@ -45,7 +45,7 @@ func NewVarNfIdWithDefaults() *VarNfId {
 
 // GetSmfSetId returns the SmfSetId field value if set, zero value otherwise.
 func (o *VarNfId) GetSmfSetId() string {
-	if o == nil || IsNil(o.SmfSetId) {
+	if o == nil || isNil(o.SmfSetId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *VarNfId) GetSmfSetId() string {
 // GetSmfSetIdOk returns a tuple with the SmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VarNfId) GetSmfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmfSetId) {
+	if o == nil || isNil(o.SmfSetId) {
 		return nil, false
 	}
 	return o.SmfSetId, true
@@ -63,7 +63,7 @@ func (o *VarNfId) GetSmfSetIdOk() (*string, bool) {
 
 // HasSmfSetId returns a boolean if a field has been set.
 func (o *VarNfId) HasSmfSetId() bool {
-	if o != nil && !IsNil(o.SmfSetId) {
+	if o != nil && !isNil(o.SmfSetId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *VarNfId) SetSmfSetId(v string) {
 
 // GetSetId returns the SetId field value if set, zero value otherwise.
 func (o *VarNfId) GetSetId() string {
-	if o == nil || IsNil(o.SetId) {
+	if o == nil || isNil(o.SetId) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *VarNfId) GetSetId() string {
 // GetSetIdOk returns a tuple with the SetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VarNfId) GetSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SetId) {
+	if o == nil || isNil(o.SetId) {
 		return nil, false
 	}
 	return o.SetId, true
@@ -95,7 +95,7 @@ func (o *VarNfId) GetSetIdOk() (*string, bool) {
 
 // HasSetId returns a boolean if a field has been set.
 func (o *VarNfId) HasSetId() bool {
-	if o != nil && !IsNil(o.SetId) {
+	if o != nil && !isNil(o.SetId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *VarNfId) SetSetId(v string) {
 
 // GetSmfInstanceId returns the SmfInstanceId field value if set, zero value otherwise.
 func (o *VarNfId) GetSmfInstanceId() string {
-	if o == nil || IsNil(o.SmfInstanceId) {
+	if o == nil || isNil(o.SmfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *VarNfId) GetSmfInstanceId() string {
 // GetSmfInstanceIdOk returns a tuple with the SmfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VarNfId) GetSmfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmfInstanceId) {
+	if o == nil || isNil(o.SmfInstanceId) {
 		return nil, false
 	}
 	return o.SmfInstanceId, true
@@ -127,7 +127,7 @@ func (o *VarNfId) GetSmfInstanceIdOk() (*string, bool) {
 
 // HasSmfInstanceId returns a boolean if a field has been set.
 func (o *VarNfId) HasSmfInstanceId() bool {
-	if o != nil && !IsNil(o.SmfInstanceId) {
+	if o != nil && !isNil(o.SmfInstanceId) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o VarNfId) MarshalJSON() ([]byte, error) {
 
 func (o VarNfId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SmfSetId) {
+	if !isNil(o.SmfSetId) {
 		toSerialize["smfSetId"] = o.SmfSetId
 	}
-	if !IsNil(o.SetId) {
+	if !isNil(o.SetId) {
 		toSerialize["setId"] = o.SetId
 	}
-	if !IsNil(o.SmfInstanceId) {
+	if !isNil(o.SmfInstanceId) {
 		toSerialize["smfInstanceId"] = o.SmfInstanceId
 	}
 	return toSerialize, nil

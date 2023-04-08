@@ -42,7 +42,7 @@ func NewLogicalInterfaceInfoWithDefaults() *LogicalInterfaceInfo {
 
 // GetLogicalInterfaceType returns the LogicalInterfaceType field value if set, zero value otherwise.
 func (o *LogicalInterfaceInfo) GetLogicalInterfaceType() string {
-	if o == nil || IsNil(o.LogicalInterfaceType) {
+	if o == nil || isNil(o.LogicalInterfaceType) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LogicalInterfaceInfo) GetLogicalInterfaceType() string {
 // GetLogicalInterfaceTypeOk returns a tuple with the LogicalInterfaceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LogicalInterfaceInfo) GetLogicalInterfaceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.LogicalInterfaceType) {
+	if o == nil || isNil(o.LogicalInterfaceType) {
 		return nil, false
 	}
 	return o.LogicalInterfaceType, true
@@ -60,7 +60,7 @@ func (o *LogicalInterfaceInfo) GetLogicalInterfaceTypeOk() (*string, bool) {
 
 // HasLogicalInterfaceType returns a boolean if a field has been set.
 func (o *LogicalInterfaceInfo) HasLogicalInterfaceType() bool {
-	if o != nil && !IsNil(o.LogicalInterfaceType) {
+	if o != nil && !isNil(o.LogicalInterfaceType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *LogicalInterfaceInfo) SetLogicalInterfaceType(v string) {
 
 // GetLogicalInterfaceId returns the LogicalInterfaceId field value if set, zero value otherwise.
 func (o *LogicalInterfaceInfo) GetLogicalInterfaceId() string {
-	if o == nil || IsNil(o.LogicalInterfaceId) {
+	if o == nil || isNil(o.LogicalInterfaceId) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *LogicalInterfaceInfo) GetLogicalInterfaceId() string {
 // GetLogicalInterfaceIdOk returns a tuple with the LogicalInterfaceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LogicalInterfaceInfo) GetLogicalInterfaceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.LogicalInterfaceId) {
+	if o == nil || isNil(o.LogicalInterfaceId) {
 		return nil, false
 	}
 	return o.LogicalInterfaceId, true
@@ -92,7 +92,7 @@ func (o *LogicalInterfaceInfo) GetLogicalInterfaceIdOk() (*string, bool) {
 
 // HasLogicalInterfaceId returns a boolean if a field has been set.
 func (o *LogicalInterfaceInfo) HasLogicalInterfaceId() bool {
-	if o != nil && !IsNil(o.LogicalInterfaceId) {
+	if o != nil && !isNil(o.LogicalInterfaceId) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o LogicalInterfaceInfo) MarshalJSON() ([]byte, error) {
 
 func (o LogicalInterfaceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LogicalInterfaceType) {
+	if !isNil(o.LogicalInterfaceType) {
 		toSerialize["logicalInterfaceType"] = o.LogicalInterfaceType
 	}
-	if !IsNil(o.LogicalInterfaceId) {
+	if !isNil(o.LogicalInterfaceId) {
 		toSerialize["logicalInterfaceId"] = o.LogicalInterfaceId
 	}
 	return toSerialize, nil

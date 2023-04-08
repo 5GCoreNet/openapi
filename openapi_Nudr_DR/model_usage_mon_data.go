@@ -76,7 +76,7 @@ func (o *UsageMonData) SetLimitId(v string) {
 
 // GetScopes returns the Scopes field value if set, zero value otherwise.
 func (o *UsageMonData) GetScopes() map[string]UsageMonDataScope {
-	if o == nil || IsNil(o.Scopes) {
+	if o == nil || isNil(o.Scopes) {
 		var ret map[string]UsageMonDataScope
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UsageMonData) GetScopes() map[string]UsageMonDataScope {
 // GetScopesOk returns a tuple with the Scopes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetScopesOk() (*map[string]UsageMonDataScope, bool) {
-	if o == nil || IsNil(o.Scopes) {
+	if o == nil || isNil(o.Scopes) {
 		return nil, false
 	}
 	return o.Scopes, true
@@ -94,7 +94,7 @@ func (o *UsageMonData) GetScopesOk() (*map[string]UsageMonDataScope, bool) {
 
 // HasScopes returns a boolean if a field has been set.
 func (o *UsageMonData) HasScopes() bool {
-	if o != nil && !IsNil(o.Scopes) {
+	if o != nil && !isNil(o.Scopes) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *UsageMonData) SetScopes(v map[string]UsageMonDataScope) {
 
 // GetUmLevel returns the UmLevel field value if set, zero value otherwise.
 func (o *UsageMonData) GetUmLevel() UsageMonLevel {
-	if o == nil || IsNil(o.UmLevel) {
+	if o == nil || isNil(o.UmLevel) {
 		var ret UsageMonLevel
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UsageMonData) GetUmLevel() UsageMonLevel {
 // GetUmLevelOk returns a tuple with the UmLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetUmLevelOk() (*UsageMonLevel, bool) {
-	if o == nil || IsNil(o.UmLevel) {
+	if o == nil || isNil(o.UmLevel) {
 		return nil, false
 	}
 	return o.UmLevel, true
@@ -126,7 +126,7 @@ func (o *UsageMonData) GetUmLevelOk() (*UsageMonLevel, bool) {
 
 // HasUmLevel returns a boolean if a field has been set.
 func (o *UsageMonData) HasUmLevel() bool {
-	if o != nil && !IsNil(o.UmLevel) {
+	if o != nil && !isNil(o.UmLevel) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *UsageMonData) SetUmLevel(v UsageMonLevel) {
 
 // GetAllowedUsage returns the AllowedUsage field value if set, zero value otherwise.
 func (o *UsageMonData) GetAllowedUsage() UsageThreshold {
-	if o == nil || IsNil(o.AllowedUsage) {
+	if o == nil || isNil(o.AllowedUsage) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *UsageMonData) GetAllowedUsage() UsageThreshold {
 // GetAllowedUsageOk returns a tuple with the AllowedUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetAllowedUsageOk() (*UsageThreshold, bool) {
-	if o == nil || IsNil(o.AllowedUsage) {
+	if o == nil || isNil(o.AllowedUsage) {
 		return nil, false
 	}
 	return o.AllowedUsage, true
@@ -158,7 +158,7 @@ func (o *UsageMonData) GetAllowedUsageOk() (*UsageThreshold, bool) {
 
 // HasAllowedUsage returns a boolean if a field has been set.
 func (o *UsageMonData) HasAllowedUsage() bool {
-	if o != nil && !IsNil(o.AllowedUsage) {
+	if o != nil && !isNil(o.AllowedUsage) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *UsageMonData) SetAllowedUsage(v UsageThreshold) {
 
 // GetResetTime returns the ResetTime field value if set, zero value otherwise.
 func (o *UsageMonData) GetResetTime() time.Time {
-	if o == nil || IsNil(o.ResetTime) {
+	if o == nil || isNil(o.ResetTime) {
 		var ret time.Time
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *UsageMonData) GetResetTime() time.Time {
 // GetResetTimeOk returns a tuple with the ResetTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetResetTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ResetTime) {
+	if o == nil || isNil(o.ResetTime) {
 		return nil, false
 	}
 	return o.ResetTime, true
@@ -190,7 +190,7 @@ func (o *UsageMonData) GetResetTimeOk() (*time.Time, bool) {
 
 // HasResetTime returns a boolean if a field has been set.
 func (o *UsageMonData) HasResetTime() bool {
-	if o != nil && !IsNil(o.ResetTime) {
+	if o != nil && !isNil(o.ResetTime) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *UsageMonData) SetResetTime(v time.Time) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UsageMonData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *UsageMonData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -222,7 +222,7 @@ func (o *UsageMonData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UsageMonData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *UsageMonData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *UsageMonData) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *UsageMonData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UsageMonData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -254,7 +254,7 @@ func (o *UsageMonData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *UsageMonData) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -277,22 +277,22 @@ func (o UsageMonData) MarshalJSON() ([]byte, error) {
 func (o UsageMonData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["limitId"] = o.LimitId
-	if !IsNil(o.Scopes) {
+	if !isNil(o.Scopes) {
 		toSerialize["scopes"] = o.Scopes
 	}
-	if !IsNil(o.UmLevel) {
+	if !isNil(o.UmLevel) {
 		toSerialize["umLevel"] = o.UmLevel
 	}
-	if !IsNil(o.AllowedUsage) {
+	if !isNil(o.AllowedUsage) {
 		toSerialize["allowedUsage"] = o.AllowedUsage
 	}
-	if !IsNil(o.ResetTime) {
+	if !isNil(o.ResetTime) {
 		toSerialize["resetTime"] = o.ResetTime
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

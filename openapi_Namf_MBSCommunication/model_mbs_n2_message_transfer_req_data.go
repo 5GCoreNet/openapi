@@ -76,7 +76,7 @@ func (o *MbsN2MessageTransferReqData) SetMbsSessionId(v MbsSessionId) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferReqData) GetAreaSessionId() int32 {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MbsN2MessageTransferReqData) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferReqData) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -94,7 +94,7 @@ func (o *MbsN2MessageTransferReqData) GetAreaSessionIdOk() (*int32, bool) {
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferReqData) HasAreaSessionId() bool {
-	if o != nil && !IsNil(o.AreaSessionId) {
+	if o != nil && !isNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *MbsN2MessageTransferReqData) SetN2MbsSmInfo(v N2MbsSmInfo) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferReqData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *MbsN2MessageTransferReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -150,7 +150,7 @@ func (o *MbsN2MessageTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferReqData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o *MbsN2MessageTransferReqData) SetSupportedFeatures(v string) {
 
 // GetRanNodeIdList returns the RanNodeIdList field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferReqData) GetRanNodeIdList() []GlobalRanNodeId {
-	if o == nil || IsNil(o.RanNodeIdList) {
+	if o == nil || isNil(o.RanNodeIdList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *MbsN2MessageTransferReqData) GetRanNodeIdList() []GlobalRanNodeId {
 // GetRanNodeIdListOk returns a tuple with the RanNodeIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferReqData) GetRanNodeIdListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.RanNodeIdList) {
+	if o == nil || isNil(o.RanNodeIdList) {
 		return nil, false
 	}
 	return o.RanNodeIdList, true
@@ -182,7 +182,7 @@ func (o *MbsN2MessageTransferReqData) GetRanNodeIdListOk() ([]GlobalRanNodeId, b
 
 // HasRanNodeIdList returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferReqData) HasRanNodeIdList() bool {
-	if o != nil && !IsNil(o.RanNodeIdList) {
+	if o != nil && !isNil(o.RanNodeIdList) {
 		return true
 	}
 
@@ -196,7 +196,7 @@ func (o *MbsN2MessageTransferReqData) SetRanNodeIdList(v []GlobalRanNodeId) {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferReqData) GetNotifyUri() string {
-	if o == nil || IsNil(o.NotifyUri) {
+	if o == nil || isNil(o.NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -206,7 +206,7 @@ func (o *MbsN2MessageTransferReqData) GetNotifyUri() string {
 // GetNotifyUriOk returns a tuple with the NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferReqData) GetNotifyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyUri) {
+	if o == nil || isNil(o.NotifyUri) {
 		return nil, false
 	}
 	return o.NotifyUri, true
@@ -214,7 +214,7 @@ func (o *MbsN2MessageTransferReqData) GetNotifyUriOk() (*string, bool) {
 
 // HasNotifyUri returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferReqData) HasNotifyUri() bool {
-	if o != nil && !IsNil(o.NotifyUri) {
+	if o != nil && !isNil(o.NotifyUri) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *MbsN2MessageTransferReqData) SetNotifyUri(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferReqData) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *MbsN2MessageTransferReqData) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferReqData) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -246,7 +246,7 @@ func (o *MbsN2MessageTransferReqData) GetNotifyCorrelationIdOk() (*string, bool)
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferReqData) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -269,20 +269,20 @@ func (o MbsN2MessageTransferReqData) MarshalJSON() ([]byte, error) {
 func (o MbsN2MessageTransferReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !IsNil(o.AreaSessionId) {
+	if !isNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
 	toSerialize["n2MbsSmInfo"] = o.N2MbsSmInfo
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.RanNodeIdList) {
+	if !isNil(o.RanNodeIdList) {
 		toSerialize["ranNodeIdList"] = o.RanNodeIdList
 	}
-	if !IsNil(o.NotifyUri) {
+	if !isNil(o.NotifyUri) {
 		toSerialize["notifyUri"] = o.NotifyUri
 	}
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	return toSerialize, nil

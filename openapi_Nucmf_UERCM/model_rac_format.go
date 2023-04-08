@@ -17,23 +17,37 @@ import (
 
 // RacFormat struct for RacFormat
 type RacFormat struct {
-	string *string
+	RacFormatAnyOf *RacFormatAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RacFormat) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into RacFormatAnyOf
+	err = json.Unmarshal(data, &dst.RacFormatAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonRacFormatAnyOf, _ := json.Marshal(dst.RacFormatAnyOf)
+		if string(jsonRacFormatAnyOf) == "{}" { // empty struct
+			dst.RacFormatAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.RacFormatAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.RacFormatAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RacFormat)")
@@ -41,8 +55,12 @@ func (dst *RacFormat) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RacFormat) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.RacFormatAnyOf != nil {
+		return json.Marshal(&src.RacFormatAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -44,7 +44,7 @@ func NewFlowsWithDefaults() *Flows {
 
 // GetContVers returns the ContVers field value if set, zero value otherwise.
 func (o *Flows) GetContVers() []int32 {
-	if o == nil || IsNil(o.ContVers) {
+	if o == nil || isNil(o.ContVers) {
 		var ret []int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Flows) GetContVers() []int32 {
 // GetContVersOk returns a tuple with the ContVers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Flows) GetContVersOk() ([]int32, bool) {
-	if o == nil || IsNil(o.ContVers) {
+	if o == nil || isNil(o.ContVers) {
 		return nil, false
 	}
 	return o.ContVers, true
@@ -62,7 +62,7 @@ func (o *Flows) GetContVersOk() ([]int32, bool) {
 
 // HasContVers returns a boolean if a field has been set.
 func (o *Flows) HasContVers() bool {
-	if o != nil && !IsNil(o.ContVers) {
+	if o != nil && !isNil(o.ContVers) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Flows) SetContVers(v []int32) {
 
 // GetFNums returns the FNums field value if set, zero value otherwise.
 func (o *Flows) GetFNums() []int32 {
-	if o == nil || IsNil(o.FNums) {
+	if o == nil || isNil(o.FNums) {
 		var ret []int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Flows) GetFNums() []int32 {
 // GetFNumsOk returns a tuple with the FNums field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Flows) GetFNumsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.FNums) {
+	if o == nil || isNil(o.FNums) {
 		return nil, false
 	}
 	return o.FNums, true
@@ -94,7 +94,7 @@ func (o *Flows) GetFNumsOk() ([]int32, bool) {
 
 // HasFNums returns a boolean if a field has been set.
 func (o *Flows) HasFNums() bool {
-	if o != nil && !IsNil(o.FNums) {
+	if o != nil && !isNil(o.FNums) {
 		return true
 	}
 
@@ -140,10 +140,10 @@ func (o Flows) MarshalJSON() ([]byte, error) {
 
 func (o Flows) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ContVers) {
+	if !isNil(o.ContVers) {
 		toSerialize["contVers"] = o.ContVers
 	}
-	if !IsNil(o.FNums) {
+	if !isNil(o.FNums) {
 		toSerialize["fNums"] = o.FNums
 	}
 	toSerialize["medCompN"] = o.MedCompN

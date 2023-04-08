@@ -43,7 +43,7 @@ func NewAmPolicyDataWithDefaults() *AmPolicyData {
 
 // GetPraInfos returns the PraInfos field value if set, zero value otherwise.
 func (o *AmPolicyData) GetPraInfos() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PraInfos) {
+	if o == nil || isNil(o.PraInfos) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AmPolicyData) GetPraInfos() map[string]PresenceInfo {
 // GetPraInfosOk returns a tuple with the PraInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmPolicyData) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PraInfos) {
+	if o == nil || isNil(o.PraInfos) {
 		return nil, false
 	}
 	return o.PraInfos, true
@@ -61,7 +61,7 @@ func (o *AmPolicyData) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
 
 // HasPraInfos returns a boolean if a field has been set.
 func (o *AmPolicyData) HasPraInfos() bool {
-	if o != nil && !IsNil(o.PraInfos) {
+	if o != nil && !isNil(o.PraInfos) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AmPolicyData) SetPraInfos(v map[string]PresenceInfo) {
 
 // GetSubscCats returns the SubscCats field value if set, zero value otherwise.
 func (o *AmPolicyData) GetSubscCats() []string {
-	if o == nil || IsNil(o.SubscCats) {
+	if o == nil || isNil(o.SubscCats) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AmPolicyData) GetSubscCats() []string {
 // GetSubscCatsOk returns a tuple with the SubscCats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmPolicyData) GetSubscCatsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SubscCats) {
+	if o == nil || isNil(o.SubscCats) {
 		return nil, false
 	}
 	return o.SubscCats, true
@@ -93,7 +93,7 @@ func (o *AmPolicyData) GetSubscCatsOk() ([]string, bool) {
 
 // HasSubscCats returns a boolean if a field has been set.
 func (o *AmPolicyData) HasSubscCats() bool {
-	if o != nil && !IsNil(o.SubscCats) {
+	if o != nil && !isNil(o.SubscCats) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o AmPolicyData) MarshalJSON() ([]byte, error) {
 
 func (o AmPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PraInfos) {
+	if !isNil(o.PraInfos) {
 		toSerialize["praInfos"] = o.PraInfos
 	}
-	if !IsNil(o.SubscCats) {
+	if !isNil(o.SubscCats) {
 		toSerialize["subscCats"] = o.SubscCats
 	}
 	return toSerialize, nil

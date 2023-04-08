@@ -42,7 +42,7 @@ func NewIptvConfigDataPatchWithDefaults() *IptvConfigDataPatch {
 
 // GetMultiAccCtrls returns the MultiAccCtrls field value if set, zero value otherwise.
 func (o *IptvConfigDataPatch) GetMultiAccCtrls() map[string]MulticastAccessControl {
-	if o == nil || IsNil(o.MultiAccCtrls) {
+	if o == nil || isNil(o.MultiAccCtrls) {
 		var ret map[string]MulticastAccessControl
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *IptvConfigDataPatch) GetMultiAccCtrls() map[string]MulticastAccessContr
 // GetMultiAccCtrlsOk returns a tuple with the MultiAccCtrls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigDataPatch) GetMultiAccCtrlsOk() (*map[string]MulticastAccessControl, bool) {
-	if o == nil || IsNil(o.MultiAccCtrls) {
+	if o == nil || isNil(o.MultiAccCtrls) {
 		return nil, false
 	}
 	return o.MultiAccCtrls, true
@@ -60,7 +60,7 @@ func (o *IptvConfigDataPatch) GetMultiAccCtrlsOk() (*map[string]MulticastAccessC
 
 // HasMultiAccCtrls returns a boolean if a field has been set.
 func (o *IptvConfigDataPatch) HasMultiAccCtrls() bool {
-	if o != nil && !IsNil(o.MultiAccCtrls) {
+	if o != nil && !isNil(o.MultiAccCtrls) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o IptvConfigDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o IptvConfigDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MultiAccCtrls) {
+	if !isNil(o.MultiAccCtrls) {
 		toSerialize["multiAccCtrls"] = o.MultiAccCtrls
 	}
 	return toSerialize, nil

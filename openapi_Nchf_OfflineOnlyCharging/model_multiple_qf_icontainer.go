@@ -53,7 +53,7 @@ func NewMultipleQFIcontainerWithDefaults() *MultipleQFIcontainer {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *MultipleQFIcontainer) GetTriggers() []Trigger {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *MultipleQFIcontainer) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleQFIcontainer) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -71,7 +71,7 @@ func (o *MultipleQFIcontainer) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *MultipleQFIcontainer) HasTriggers() bool {
-	if o != nil && !IsNil(o.Triggers) {
+	if o != nil && !isNil(o.Triggers) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *MultipleQFIcontainer) SetTriggers(v []Trigger) {
 
 // GetTriggerTimestamp returns the TriggerTimestamp field value if set, zero value otherwise.
 func (o *MultipleQFIcontainer) GetTriggerTimestamp() time.Time {
-	if o == nil || IsNil(o.TriggerTimestamp) {
+	if o == nil || isNil(o.TriggerTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *MultipleQFIcontainer) GetTriggerTimestamp() time.Time {
 // GetTriggerTimestampOk returns a tuple with the TriggerTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleQFIcontainer) GetTriggerTimestampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TriggerTimestamp) {
+	if o == nil || isNil(o.TriggerTimestamp) {
 		return nil, false
 	}
 	return o.TriggerTimestamp, true
@@ -103,7 +103,7 @@ func (o *MultipleQFIcontainer) GetTriggerTimestampOk() (*time.Time, bool) {
 
 // HasTriggerTimestamp returns a boolean if a field has been set.
 func (o *MultipleQFIcontainer) HasTriggerTimestamp() bool {
-	if o != nil && !IsNil(o.TriggerTimestamp) {
+	if o != nil && !isNil(o.TriggerTimestamp) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *MultipleQFIcontainer) SetTriggerTimestamp(v time.Time) {
 
 // GetTime returns the Time field value if set, zero value otherwise.
 func (o *MultipleQFIcontainer) GetTime() int32 {
-	if o == nil || IsNil(o.Time) {
+	if o == nil || isNil(o.Time) {
 		var ret int32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *MultipleQFIcontainer) GetTime() int32 {
 // GetTimeOk returns a tuple with the Time field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleQFIcontainer) GetTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.Time) {
+	if o == nil || isNil(o.Time) {
 		return nil, false
 	}
 	return o.Time, true
@@ -135,7 +135,7 @@ func (o *MultipleQFIcontainer) GetTimeOk() (*int32, bool) {
 
 // HasTime returns a boolean if a field has been set.
 func (o *MultipleQFIcontainer) HasTime() bool {
-	if o != nil && !IsNil(o.Time) {
+	if o != nil && !isNil(o.Time) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *MultipleQFIcontainer) SetTime(v int32) {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise.
 func (o *MultipleQFIcontainer) GetTotalVolume() int32 {
-	if o == nil || IsNil(o.TotalVolume) {
+	if o == nil || isNil(o.TotalVolume) {
 		var ret int32
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *MultipleQFIcontainer) GetTotalVolume() int32 {
 // GetTotalVolumeOk returns a tuple with the TotalVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleQFIcontainer) GetTotalVolumeOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalVolume) {
+	if o == nil || isNil(o.TotalVolume) {
 		return nil, false
 	}
 	return o.TotalVolume, true
@@ -167,7 +167,7 @@ func (o *MultipleQFIcontainer) GetTotalVolumeOk() (*int32, bool) {
 
 // HasTotalVolume returns a boolean if a field has been set.
 func (o *MultipleQFIcontainer) HasTotalVolume() bool {
-	if o != nil && !IsNil(o.TotalVolume) {
+	if o != nil && !isNil(o.TotalVolume) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *MultipleQFIcontainer) SetTotalVolume(v int32) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *MultipleQFIcontainer) GetUplinkVolume() int32 {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		var ret int32
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *MultipleQFIcontainer) GetUplinkVolume() int32 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleQFIcontainer) GetUplinkVolumeOk() (*int32, bool) {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -199,7 +199,7 @@ func (o *MultipleQFIcontainer) GetUplinkVolumeOk() (*int32, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *MultipleQFIcontainer) HasUplinkVolume() bool {
-	if o != nil && !IsNil(o.UplinkVolume) {
+	if o != nil && !isNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *MultipleQFIcontainer) SetLocalSequenceNumber(v int32) {
 
 // GetQFIContainerInformation returns the QFIContainerInformation field value if set, zero value otherwise.
 func (o *MultipleQFIcontainer) GetQFIContainerInformation() QFIContainerInformation {
-	if o == nil || IsNil(o.QFIContainerInformation) {
+	if o == nil || isNil(o.QFIContainerInformation) {
 		var ret QFIContainerInformation
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *MultipleQFIcontainer) GetQFIContainerInformation() QFIContainerInformat
 // GetQFIContainerInformationOk returns a tuple with the QFIContainerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleQFIcontainer) GetQFIContainerInformationOk() (*QFIContainerInformation, bool) {
-	if o == nil || IsNil(o.QFIContainerInformation) {
+	if o == nil || isNil(o.QFIContainerInformation) {
 		return nil, false
 	}
 	return o.QFIContainerInformation, true
@@ -255,7 +255,7 @@ func (o *MultipleQFIcontainer) GetQFIContainerInformationOk() (*QFIContainerInfo
 
 // HasQFIContainerInformation returns a boolean if a field has been set.
 func (o *MultipleQFIcontainer) HasQFIContainerInformation() bool {
-	if o != nil && !IsNil(o.QFIContainerInformation) {
+	if o != nil && !isNil(o.QFIContainerInformation) {
 		return true
 	}
 
@@ -277,23 +277,23 @@ func (o MultipleQFIcontainer) MarshalJSON() ([]byte, error) {
 
 func (o MultipleQFIcontainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Triggers) {
+	if !isNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.TriggerTimestamp) {
+	if !isNil(o.TriggerTimestamp) {
 		toSerialize["triggerTimestamp"] = o.TriggerTimestamp
 	}
-	if !IsNil(o.Time) {
+	if !isNil(o.Time) {
 		toSerialize["time"] = o.Time
 	}
-	if !IsNil(o.TotalVolume) {
+	if !isNil(o.TotalVolume) {
 		toSerialize["totalVolume"] = o.TotalVolume
 	}
-	if !IsNil(o.UplinkVolume) {
+	if !isNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
 	toSerialize["localSequenceNumber"] = o.LocalSequenceNumber
-	if !IsNil(o.QFIContainerInformation) {
+	if !isNil(o.QFIContainerInformation) {
 		toSerialize["qFIContainerInformation"] = o.QFIContainerInformation
 	}
 	return toSerialize, nil

@@ -53,7 +53,7 @@ func NewNpConfigurationPatchWithDefaults() *NpConfigurationPatch {
 
 // GetMaximumLatency returns the MaximumLatency field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NpConfigurationPatch) GetMaximumLatency() int32 {
-	if o == nil || IsNil(o.MaximumLatency.Get()) {
+	if o == nil || isNil(o.MaximumLatency.Get()) {
 		var ret int32
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *NpConfigurationPatch) UnsetMaximumLatency() {
 
 // GetMaximumResponseTime returns the MaximumResponseTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NpConfigurationPatch) GetMaximumResponseTime() int32 {
-	if o == nil || IsNil(o.MaximumResponseTime.Get()) {
+	if o == nil || isNil(o.MaximumResponseTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *NpConfigurationPatch) UnsetMaximumResponseTime() {
 
 // GetSuggestedNumberOfDlPackets returns the SuggestedNumberOfDlPackets field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NpConfigurationPatch) GetSuggestedNumberOfDlPackets() int32 {
-	if o == nil || IsNil(o.SuggestedNumberOfDlPackets.Get()) {
+	if o == nil || isNil(o.SuggestedNumberOfDlPackets.Get()) {
 		var ret int32
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *NpConfigurationPatch) UnsetSuggestedNumberOfDlPackets() {
 
 // GetGroupReportGuardTime returns the GroupReportGuardTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NpConfigurationPatch) GetGroupReportGuardTime() int32 {
-	if o == nil || IsNil(o.GroupReportGuardTime.Get()) {
+	if o == nil || isNil(o.GroupReportGuardTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *NpConfigurationPatch) UnsetGroupReportGuardTime() {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NpConfigurationPatch) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime.Get()) {
+	if o == nil || isNil(o.ValidityTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *NpConfigurationPatch) UnsetValidityTime() {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *NpConfigurationPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *NpConfigurationPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NpConfigurationPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -281,7 +281,7 @@ func (o *NpConfigurationPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *NpConfigurationPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o NpConfigurationPatch) ToMap() (map[string]interface{}, error) {
 	if o.ValidityTime.IsSet() {
 		toSerialize["validityTime"] = o.ValidityTime.Get()
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

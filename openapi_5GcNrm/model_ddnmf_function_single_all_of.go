@@ -19,7 +19,7 @@ var _ MappedNullable = &DDNMFFunctionSingleAllOf{}
 
 // DDNMFFunctionSingleAllOf struct for DDNMFFunctionSingleAllOf
 type DDNMFFunctionSingleAllOf struct {
-	Attributes *DDNMFFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewDDNMFFunctionSingleAllOf instantiates a new DDNMFFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewDDNMFFunctionSingleAllOfWithDefaults() *DDNMFFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *DDNMFFunctionSingleAllOf) GetAttributes() DDNMFFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret DDNMFFunctionSingleAllOfAttributes
+func (o *DDNMFFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *DDNMFFunctionSingleAllOf) GetAttributes() DDNMFFunctionSingleAllOfAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DDNMFFunctionSingleAllOf) GetAttributesOk() (*DDNMFFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *DDNMFFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *DDNMFFunctionSingleAllOf) GetAttributesOk() (*DDNMFFunctionSingleAllOfA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *DDNMFFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given DDNMFFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *DDNMFFunctionSingleAllOf) SetAttributes(v DDNMFFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *DDNMFFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o DDNMFFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o DDNMFFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

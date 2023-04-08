@@ -70,7 +70,7 @@ func (o *Pc5QosFlowItem) SetPqi(v int32) {
 
 // GetPc5FlowBitRates returns the Pc5FlowBitRates field value if set, zero value otherwise.
 func (o *Pc5QosFlowItem) GetPc5FlowBitRates() Pc5FlowBitRates {
-	if o == nil || IsNil(o.Pc5FlowBitRates) {
+	if o == nil || isNil(o.Pc5FlowBitRates) {
 		var ret Pc5FlowBitRates
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *Pc5QosFlowItem) GetPc5FlowBitRates() Pc5FlowBitRates {
 // GetPc5FlowBitRatesOk returns a tuple with the Pc5FlowBitRates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5QosFlowItem) GetPc5FlowBitRatesOk() (*Pc5FlowBitRates, bool) {
-	if o == nil || IsNil(o.Pc5FlowBitRates) {
+	if o == nil || isNil(o.Pc5FlowBitRates) {
 		return nil, false
 	}
 	return o.Pc5FlowBitRates, true
@@ -88,7 +88,7 @@ func (o *Pc5QosFlowItem) GetPc5FlowBitRatesOk() (*Pc5FlowBitRates, bool) {
 
 // HasPc5FlowBitRates returns a boolean if a field has been set.
 func (o *Pc5QosFlowItem) HasPc5FlowBitRates() bool {
-	if o != nil && !IsNil(o.Pc5FlowBitRates) {
+	if o != nil && !isNil(o.Pc5FlowBitRates) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *Pc5QosFlowItem) SetPc5FlowBitRates(v Pc5FlowBitRates) {
 
 // GetRange returns the Range field value if set, zero value otherwise.
 func (o *Pc5QosFlowItem) GetRange() int32 {
-	if o == nil || IsNil(o.Range) {
+	if o == nil || isNil(o.Range) {
 		var ret int32
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *Pc5QosFlowItem) GetRange() int32 {
 // GetRangeOk returns a tuple with the Range field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pc5QosFlowItem) GetRangeOk() (*int32, bool) {
-	if o == nil || IsNil(o.Range) {
+	if o == nil || isNil(o.Range) {
 		return nil, false
 	}
 	return o.Range, true
@@ -120,7 +120,7 @@ func (o *Pc5QosFlowItem) GetRangeOk() (*int32, bool) {
 
 // HasRange returns a boolean if a field has been set.
 func (o *Pc5QosFlowItem) HasRange() bool {
-	if o != nil && !IsNil(o.Range) {
+	if o != nil && !isNil(o.Range) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o Pc5QosFlowItem) MarshalJSON() ([]byte, error) {
 func (o Pc5QosFlowItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pqi"] = o.Pqi
-	if !IsNil(o.Pc5FlowBitRates) {
+	if !isNil(o.Pc5FlowBitRates) {
 		toSerialize["pc5FlowBitRates"] = o.Pc5FlowBitRates
 	}
-	if !IsNil(o.Range) {
+	if !isNil(o.Range) {
 		toSerialize["range"] = o.Range
 	}
 	return toSerialize, nil

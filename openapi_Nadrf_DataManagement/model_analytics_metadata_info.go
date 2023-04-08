@@ -46,7 +46,7 @@ func NewAnalyticsMetadataInfoWithDefaults() *AnalyticsMetadataInfo {
 
 // GetNumSamples returns the NumSamples field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetNumSamples() int32 {
-	if o == nil || IsNil(o.NumSamples) {
+	if o == nil || isNil(o.NumSamples) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AnalyticsMetadataInfo) GetNumSamples() int32 {
 // GetNumSamplesOk returns a tuple with the NumSamples field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetNumSamplesOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumSamples) {
+	if o == nil || isNil(o.NumSamples) {
 		return nil, false
 	}
 	return o.NumSamples, true
@@ -64,7 +64,7 @@ func (o *AnalyticsMetadataInfo) GetNumSamplesOk() (*int32, bool) {
 
 // HasNumSamples returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasNumSamples() bool {
-	if o != nil && !IsNil(o.NumSamples) {
+	if o != nil && !isNil(o.NumSamples) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AnalyticsMetadataInfo) SetNumSamples(v int32) {
 
 // GetDataWindow returns the DataWindow field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetDataWindow() TimeWindow {
-	if o == nil || IsNil(o.DataWindow) {
+	if o == nil || isNil(o.DataWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AnalyticsMetadataInfo) GetDataWindow() TimeWindow {
 // GetDataWindowOk returns a tuple with the DataWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetDataWindowOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.DataWindow) {
+	if o == nil || isNil(o.DataWindow) {
 		return nil, false
 	}
 	return o.DataWindow, true
@@ -96,7 +96,7 @@ func (o *AnalyticsMetadataInfo) GetDataWindowOk() (*TimeWindow, bool) {
 
 // HasDataWindow returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasDataWindow() bool {
-	if o != nil && !IsNil(o.DataWindow) {
+	if o != nil && !isNil(o.DataWindow) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AnalyticsMetadataInfo) SetDataWindow(v TimeWindow) {
 
 // GetDataStatProps returns the DataStatProps field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetDataStatProps() []DatasetStatisticalProperty {
-	if o == nil || IsNil(o.DataStatProps) {
+	if o == nil || isNil(o.DataStatProps) {
 		var ret []DatasetStatisticalProperty
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AnalyticsMetadataInfo) GetDataStatProps() []DatasetStatisticalProperty 
 // GetDataStatPropsOk returns a tuple with the DataStatProps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetDataStatPropsOk() ([]DatasetStatisticalProperty, bool) {
-	if o == nil || IsNil(o.DataStatProps) {
+	if o == nil || isNil(o.DataStatProps) {
 		return nil, false
 	}
 	return o.DataStatProps, true
@@ -128,7 +128,7 @@ func (o *AnalyticsMetadataInfo) GetDataStatPropsOk() ([]DatasetStatisticalProper
 
 // HasDataStatProps returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasDataStatProps() bool {
-	if o != nil && !IsNil(o.DataStatProps) {
+	if o != nil && !isNil(o.DataStatProps) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AnalyticsMetadataInfo) SetDataStatProps(v []DatasetStatisticalProperty)
 
 // GetStrategy returns the Strategy field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetStrategy() OutputStrategy {
-	if o == nil || IsNil(o.Strategy) {
+	if o == nil || isNil(o.Strategy) {
 		var ret OutputStrategy
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AnalyticsMetadataInfo) GetStrategy() OutputStrategy {
 // GetStrategyOk returns a tuple with the Strategy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetStrategyOk() (*OutputStrategy, bool) {
-	if o == nil || IsNil(o.Strategy) {
+	if o == nil || isNil(o.Strategy) {
 		return nil, false
 	}
 	return o.Strategy, true
@@ -160,7 +160,7 @@ func (o *AnalyticsMetadataInfo) GetStrategyOk() (*OutputStrategy, bool) {
 
 // HasStrategy returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasStrategy() bool {
-	if o != nil && !IsNil(o.Strategy) {
+	if o != nil && !isNil(o.Strategy) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *AnalyticsMetadataInfo) SetStrategy(v OutputStrategy) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *AnalyticsMetadataInfo) GetAccuracy() Accuracy {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		var ret Accuracy
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *AnalyticsMetadataInfo) GetAccuracy() Accuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataInfo) GetAccuracyOk() (*Accuracy, bool) {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -192,7 +192,7 @@ func (o *AnalyticsMetadataInfo) GetAccuracyOk() (*Accuracy, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *AnalyticsMetadataInfo) HasAccuracy() bool {
-	if o != nil && !IsNil(o.Accuracy) {
+	if o != nil && !isNil(o.Accuracy) {
 		return true
 	}
 
@@ -214,19 +214,19 @@ func (o AnalyticsMetadataInfo) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsMetadataInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NumSamples) {
+	if !isNil(o.NumSamples) {
 		toSerialize["numSamples"] = o.NumSamples
 	}
-	if !IsNil(o.DataWindow) {
+	if !isNil(o.DataWindow) {
 		toSerialize["dataWindow"] = o.DataWindow
 	}
-	if !IsNil(o.DataStatProps) {
+	if !isNil(o.DataStatProps) {
 		toSerialize["dataStatProps"] = o.DataStatProps
 	}
-	if !IsNil(o.Strategy) {
+	if !isNil(o.Strategy) {
 		toSerialize["strategy"] = o.Strategy
 	}
-	if !IsNil(o.Accuracy) {
+	if !isNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil

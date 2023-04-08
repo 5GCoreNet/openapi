@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SpatialValidityCond](docs/SpatialValidityCond.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [TargetUeId](docs/TargetUeId.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)

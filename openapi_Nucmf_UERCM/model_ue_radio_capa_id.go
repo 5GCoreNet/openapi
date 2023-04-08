@@ -44,7 +44,7 @@ func NewUeRadioCapaIdWithDefaults() *UeRadioCapaId {
 
 // GetPlmnAssiUeRadioCapId returns the PlmnAssiUeRadioCapId field value if set, zero value otherwise.
 func (o *UeRadioCapaId) GetPlmnAssiUeRadioCapId() string {
-	if o == nil || IsNil(o.PlmnAssiUeRadioCapId) {
+	if o == nil || isNil(o.PlmnAssiUeRadioCapId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UeRadioCapaId) GetPlmnAssiUeRadioCapId() string {
 // GetPlmnAssiUeRadioCapIdOk returns a tuple with the PlmnAssiUeRadioCapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRadioCapaId) GetPlmnAssiUeRadioCapIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PlmnAssiUeRadioCapId) {
+	if o == nil || isNil(o.PlmnAssiUeRadioCapId) {
 		return nil, false
 	}
 	return o.PlmnAssiUeRadioCapId, true
@@ -62,7 +62,7 @@ func (o *UeRadioCapaId) GetPlmnAssiUeRadioCapIdOk() (*string, bool) {
 
 // HasPlmnAssiUeRadioCapId returns a boolean if a field has been set.
 func (o *UeRadioCapaId) HasPlmnAssiUeRadioCapId() bool {
-	if o != nil && !IsNil(o.PlmnAssiUeRadioCapId) {
+	if o != nil && !isNil(o.PlmnAssiUeRadioCapId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *UeRadioCapaId) SetPlmnAssiUeRadioCapId(v string) {
 
 // GetManAssiUeRadioCapId returns the ManAssiUeRadioCapId field value if set, zero value otherwise.
 func (o *UeRadioCapaId) GetManAssiUeRadioCapId() string {
-	if o == nil || IsNil(o.ManAssiUeRadioCapId) {
+	if o == nil || isNil(o.ManAssiUeRadioCapId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UeRadioCapaId) GetManAssiUeRadioCapId() string {
 // GetManAssiUeRadioCapIdOk returns a tuple with the ManAssiUeRadioCapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRadioCapaId) GetManAssiUeRadioCapIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ManAssiUeRadioCapId) {
+	if o == nil || isNil(o.ManAssiUeRadioCapId) {
 		return nil, false
 	}
 	return o.ManAssiUeRadioCapId, true
@@ -94,7 +94,7 @@ func (o *UeRadioCapaId) GetManAssiUeRadioCapIdOk() (*string, bool) {
 
 // HasManAssiUeRadioCapId returns a boolean if a field has been set.
 func (o *UeRadioCapaId) HasManAssiUeRadioCapId() bool {
-	if o != nil && !IsNil(o.ManAssiUeRadioCapId) {
+	if o != nil && !isNil(o.ManAssiUeRadioCapId) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o UeRadioCapaId) MarshalJSON() ([]byte, error) {
 
 func (o UeRadioCapaId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnAssiUeRadioCapId) {
+	if !isNil(o.PlmnAssiUeRadioCapId) {
 		toSerialize["plmnAssiUeRadioCapId"] = o.PlmnAssiUeRadioCapId
 	}
-	if !IsNil(o.ManAssiUeRadioCapId) {
+	if !isNil(o.ManAssiUeRadioCapId) {
 		toSerialize["manAssiUeRadioCapId"] = o.ManAssiUeRadioCapId
 	}
 	return toSerialize, nil

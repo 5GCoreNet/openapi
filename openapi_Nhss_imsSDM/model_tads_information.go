@@ -71,7 +71,7 @@ func (o *TadsInformation) SetVoiceOverPsSessionSupport(v ImsVoiceOverPsSessionSu
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *TadsInformation) GetAccessType() AccessType1 {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType1
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *TadsInformation) GetAccessType() AccessType1 {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TadsInformation) GetAccessTypeOk() (*AccessType1, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -89,7 +89,7 @@ func (o *TadsInformation) GetAccessTypeOk() (*AccessType1, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *TadsInformation) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *TadsInformation) SetAccessType(v AccessType1) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *TadsInformation) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *TadsInformation) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TadsInformation) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -121,7 +121,7 @@ func (o *TadsInformation) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *TadsInformation) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *TadsInformation) SetRatType(v RatType) {
 
 // GetLastUeActivityTime returns the LastUeActivityTime field value if set, zero value otherwise.
 func (o *TadsInformation) GetLastUeActivityTime() time.Time {
-	if o == nil || IsNil(o.LastUeActivityTime) {
+	if o == nil || isNil(o.LastUeActivityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *TadsInformation) GetLastUeActivityTime() time.Time {
 // GetLastUeActivityTimeOk returns a tuple with the LastUeActivityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TadsInformation) GetLastUeActivityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastUeActivityTime) {
+	if o == nil || isNil(o.LastUeActivityTime) {
 		return nil, false
 	}
 	return o.LastUeActivityTime, true
@@ -153,7 +153,7 @@ func (o *TadsInformation) GetLastUeActivityTimeOk() (*time.Time, bool) {
 
 // HasLastUeActivityTime returns a boolean if a field has been set.
 func (o *TadsInformation) HasLastUeActivityTime() bool {
-	if o != nil && !IsNil(o.LastUeActivityTime) {
+	if o != nil && !isNil(o.LastUeActivityTime) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o TadsInformation) MarshalJSON() ([]byte, error) {
 func (o TadsInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["voiceOverPsSessionSupport"] = o.VoiceOverPsSessionSupport
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.LastUeActivityTime) {
+	if !isNil(o.LastUeActivityTime) {
 		toSerialize["lastUeActivityTime"] = o.LastUeActivityTime
 	}
 	return toSerialize, nil

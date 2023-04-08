@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -16,6 +15,7 @@ docs/Ipv6Addr.md
 docs/Ipv6Prefix.md
 docs/Model3GAkaAv.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -24,8 +24,11 @@ docs/ResynchronizationInfo.md
 docs/SipAuthenticationInfoRequest.md
 docs/SipAuthenticationInfoResult.md
 docs/SipAuthenticationScheme.md
+docs/SipAuthenticationSchemeAnyOf.md
 docs/SipDigestAlgorithm.md
+docs/SipDigestAlgorithmAnyOf.md
 docs/SipDigestQop.md
+docs/SipDigestQopAnyOf.md
 docs/Snssai.md
 git_push.sh
 go.mod
@@ -39,6 +42,7 @@ model_ip_addr.go
 model_ipv6_addr.go
 model_ipv6_prefix.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
@@ -47,8 +51,11 @@ model_resynchronization_info.go
 model_sip_authentication_info_request.go
 model_sip_authentication_info_result.go
 model_sip_authentication_scheme.go
+model_sip_authentication_scheme_any_of.go
 model_sip_digest_algorithm.go
+model_sip_digest_algorithm_any_of.go
 model_sip_digest_qop.go
+model_sip_digest_qop_any_of.go
 model_snssai.go
 response.go
 test/api_generate_sip_auth_data_custom_operation_test.go

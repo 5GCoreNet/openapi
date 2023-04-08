@@ -48,7 +48,7 @@ func NewCircumstanceDescriptionWithDefaults() *CircumstanceDescription {
 
 // GetFreq returns the Freq field value if set, zero value otherwise.
 func (o *CircumstanceDescription) GetFreq() float32 {
-	if o == nil || IsNil(o.Freq) {
+	if o == nil || isNil(o.Freq) {
 		var ret float32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *CircumstanceDescription) GetFreq() float32 {
 // GetFreqOk returns a tuple with the Freq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CircumstanceDescription) GetFreqOk() (*float32, bool) {
-	if o == nil || IsNil(o.Freq) {
+	if o == nil || isNil(o.Freq) {
 		return nil, false
 	}
 	return o.Freq, true
@@ -66,7 +66,7 @@ func (o *CircumstanceDescription) GetFreqOk() (*float32, bool) {
 
 // HasFreq returns a boolean if a field has been set.
 func (o *CircumstanceDescription) HasFreq() bool {
-	if o != nil && !IsNil(o.Freq) {
+	if o != nil && !isNil(o.Freq) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *CircumstanceDescription) SetFreq(v float32) {
 
 // GetTm returns the Tm field value if set, zero value otherwise.
 func (o *CircumstanceDescription) GetTm() time.Time {
-	if o == nil || IsNil(o.Tm) {
+	if o == nil || isNil(o.Tm) {
 		var ret time.Time
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *CircumstanceDescription) GetTm() time.Time {
 // GetTmOk returns a tuple with the Tm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CircumstanceDescription) GetTmOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Tm) {
+	if o == nil || isNil(o.Tm) {
 		return nil, false
 	}
 	return o.Tm, true
@@ -98,7 +98,7 @@ func (o *CircumstanceDescription) GetTmOk() (*time.Time, bool) {
 
 // HasTm returns a boolean if a field has been set.
 func (o *CircumstanceDescription) HasTm() bool {
-	if o != nil && !IsNil(o.Tm) {
+	if o != nil && !isNil(o.Tm) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *CircumstanceDescription) SetTm(v time.Time) {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *CircumstanceDescription) GetLocArea() NetworkAreaInfo {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *CircumstanceDescription) GetLocArea() NetworkAreaInfo {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CircumstanceDescription) GetLocAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -130,7 +130,7 @@ func (o *CircumstanceDescription) GetLocAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *CircumstanceDescription) HasLocArea() bool {
-	if o != nil && !IsNil(o.LocArea) {
+	if o != nil && !isNil(o.LocArea) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *CircumstanceDescription) SetLocArea(v NetworkAreaInfo) {
 
 // GetVol returns the Vol field value if set, zero value otherwise.
 func (o *CircumstanceDescription) GetVol() int64 {
-	if o == nil || IsNil(o.Vol) {
+	if o == nil || isNil(o.Vol) {
 		var ret int64
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *CircumstanceDescription) GetVol() int64 {
 // GetVolOk returns a tuple with the Vol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CircumstanceDescription) GetVolOk() (*int64, bool) {
-	if o == nil || IsNil(o.Vol) {
+	if o == nil || isNil(o.Vol) {
 		return nil, false
 	}
 	return o.Vol, true
@@ -162,7 +162,7 @@ func (o *CircumstanceDescription) GetVolOk() (*int64, bool) {
 
 // HasVol returns a boolean if a field has been set.
 func (o *CircumstanceDescription) HasVol() bool {
-	if o != nil && !IsNil(o.Vol) {
+	if o != nil && !isNil(o.Vol) {
 		return true
 	}
 
@@ -184,16 +184,16 @@ func (o CircumstanceDescription) MarshalJSON() ([]byte, error) {
 
 func (o CircumstanceDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Freq) {
+	if !isNil(o.Freq) {
 		toSerialize["freq"] = o.Freq
 	}
-	if !IsNil(o.Tm) {
+	if !isNil(o.Tm) {
 		toSerialize["tm"] = o.Tm
 	}
-	if !IsNil(o.LocArea) {
+	if !isNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !IsNil(o.Vol) {
+	if !isNil(o.Vol) {
 		toSerialize["vol"] = o.Vol
 	}
 	return toSerialize, nil

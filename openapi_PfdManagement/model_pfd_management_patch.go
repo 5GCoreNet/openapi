@@ -43,7 +43,7 @@ func NewPfdManagementPatchWithDefaults() *PfdManagementPatch {
 
 // GetPfdDatas returns the PfdDatas field value if set, zero value otherwise.
 func (o *PfdManagementPatch) GetPfdDatas() map[string]PfdData {
-	if o == nil || IsNil(o.PfdDatas) {
+	if o == nil || isNil(o.PfdDatas) {
 		var ret map[string]PfdData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *PfdManagementPatch) GetPfdDatas() map[string]PfdData {
 // GetPfdDatasOk returns a tuple with the PfdDatas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagementPatch) GetPfdDatasOk() (*map[string]PfdData, bool) {
-	if o == nil || IsNil(o.PfdDatas) {
+	if o == nil || isNil(o.PfdDatas) {
 		return nil, false
 	}
 	return o.PfdDatas, true
@@ -61,7 +61,7 @@ func (o *PfdManagementPatch) GetPfdDatasOk() (*map[string]PfdData, bool) {
 
 // HasPfdDatas returns a boolean if a field has been set.
 func (o *PfdManagementPatch) HasPfdDatas() bool {
-	if o != nil && !IsNil(o.PfdDatas) {
+	if o != nil && !isNil(o.PfdDatas) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *PfdManagementPatch) SetPfdDatas(v map[string]PfdData) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *PfdManagementPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PfdManagementPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdManagementPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -93,7 +93,7 @@ func (o *PfdManagementPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *PfdManagementPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o PfdManagementPatch) MarshalJSON() ([]byte, error) {
 
 func (o PfdManagementPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PfdDatas) {
+	if !isNil(o.PfdDatas) {
 		toSerialize["pfdDatas"] = o.PfdDatas
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewBdtDataPatchWithDefaults() *BdtDataPatch {
 
 // GetTransPolicy returns the TransPolicy field value if set, zero value otherwise.
 func (o *BdtDataPatch) GetTransPolicy() TransferPolicy {
-	if o == nil || IsNil(o.TransPolicy) {
+	if o == nil || isNil(o.TransPolicy) {
 		var ret TransferPolicy
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *BdtDataPatch) GetTransPolicy() TransferPolicy {
 // GetTransPolicyOk returns a tuple with the TransPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtDataPatch) GetTransPolicyOk() (*TransferPolicy, bool) {
-	if o == nil || IsNil(o.TransPolicy) {
+	if o == nil || isNil(o.TransPolicy) {
 		return nil, false
 	}
 	return o.TransPolicy, true
@@ -60,7 +60,7 @@ func (o *BdtDataPatch) GetTransPolicyOk() (*TransferPolicy, bool) {
 
 // HasTransPolicy returns a boolean if a field has been set.
 func (o *BdtDataPatch) HasTransPolicy() bool {
-	if o != nil && !IsNil(o.TransPolicy) {
+	if o != nil && !isNil(o.TransPolicy) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *BdtDataPatch) SetTransPolicy(v TransferPolicy) {
 
 // GetBdtpStatus returns the BdtpStatus field value if set, zero value otherwise.
 func (o *BdtDataPatch) GetBdtpStatus() BdtPolicyStatus {
-	if o == nil || IsNil(o.BdtpStatus) {
+	if o == nil || isNil(o.BdtpStatus) {
 		var ret BdtPolicyStatus
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *BdtDataPatch) GetBdtpStatus() BdtPolicyStatus {
 // GetBdtpStatusOk returns a tuple with the BdtpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtDataPatch) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
-	if o == nil || IsNil(o.BdtpStatus) {
+	if o == nil || isNil(o.BdtpStatus) {
 		return nil, false
 	}
 	return o.BdtpStatus, true
@@ -92,7 +92,7 @@ func (o *BdtDataPatch) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
 
 // HasBdtpStatus returns a boolean if a field has been set.
 func (o *BdtDataPatch) HasBdtpStatus() bool {
-	if o != nil && !IsNil(o.BdtpStatus) {
+	if o != nil && !isNil(o.BdtpStatus) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o BdtDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o BdtDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TransPolicy) {
+	if !isNil(o.TransPolicy) {
 		toSerialize["transPolicy"] = o.TransPolicy
 	}
-	if !IsNil(o.BdtpStatus) {
+	if !isNil(o.BdtpStatus) {
 		toSerialize["bdtpStatus"] = o.BdtpStatus
 	}
 	return toSerialize, nil

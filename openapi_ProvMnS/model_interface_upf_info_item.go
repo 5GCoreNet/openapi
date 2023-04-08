@@ -45,7 +45,7 @@ func NewInterfaceUpfInfoItemWithDefaults() *InterfaceUpfInfoItem {
 
 // GetInterfaceType returns the InterfaceType field value if set, zero value otherwise.
 func (o *InterfaceUpfInfoItem) GetInterfaceType() string {
-	if o == nil || IsNil(o.InterfaceType) {
+	if o == nil || isNil(o.InterfaceType) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *InterfaceUpfInfoItem) GetInterfaceType() string {
 // GetInterfaceTypeOk returns a tuple with the InterfaceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterfaceUpfInfoItem) GetInterfaceTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.InterfaceType) {
+	if o == nil || isNil(o.InterfaceType) {
 		return nil, false
 	}
 	return o.InterfaceType, true
@@ -63,7 +63,7 @@ func (o *InterfaceUpfInfoItem) GetInterfaceTypeOk() (*string, bool) {
 
 // HasInterfaceType returns a boolean if a field has been set.
 func (o *InterfaceUpfInfoItem) HasInterfaceType() bool {
-	if o != nil && !IsNil(o.InterfaceType) {
+	if o != nil && !isNil(o.InterfaceType) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *InterfaceUpfInfoItem) SetInterfaceType(v string) {
 
 // GetIpv4EndpointAddresses returns the Ipv4EndpointAddresses field value if set, zero value otherwise.
 func (o *InterfaceUpfInfoItem) GetIpv4EndpointAddresses() string {
-	if o == nil || IsNil(o.Ipv4EndpointAddresses) {
+	if o == nil || isNil(o.Ipv4EndpointAddresses) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *InterfaceUpfInfoItem) GetIpv4EndpointAddresses() string {
 // GetIpv4EndpointAddressesOk returns a tuple with the Ipv4EndpointAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterfaceUpfInfoItem) GetIpv4EndpointAddressesOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4EndpointAddresses) {
+	if o == nil || isNil(o.Ipv4EndpointAddresses) {
 		return nil, false
 	}
 	return o.Ipv4EndpointAddresses, true
@@ -95,7 +95,7 @@ func (o *InterfaceUpfInfoItem) GetIpv4EndpointAddressesOk() (*string, bool) {
 
 // HasIpv4EndpointAddresses returns a boolean if a field has been set.
 func (o *InterfaceUpfInfoItem) HasIpv4EndpointAddresses() bool {
-	if o != nil && !IsNil(o.Ipv4EndpointAddresses) {
+	if o != nil && !isNil(o.Ipv4EndpointAddresses) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *InterfaceUpfInfoItem) SetIpv4EndpointAddresses(v string) {
 
 // GetIpv6EndpointAddresses returns the Ipv6EndpointAddresses field value if set, zero value otherwise.
 func (o *InterfaceUpfInfoItem) GetIpv6EndpointAddresses() Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6EndpointAddresses) {
+	if o == nil || isNil(o.Ipv6EndpointAddresses) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *InterfaceUpfInfoItem) GetIpv6EndpointAddresses() Ipv6Addr {
 // GetIpv6EndpointAddressesOk returns a tuple with the Ipv6EndpointAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterfaceUpfInfoItem) GetIpv6EndpointAddressesOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6EndpointAddresses) {
+	if o == nil || isNil(o.Ipv6EndpointAddresses) {
 		return nil, false
 	}
 	return o.Ipv6EndpointAddresses, true
@@ -127,7 +127,7 @@ func (o *InterfaceUpfInfoItem) GetIpv6EndpointAddressesOk() (*Ipv6Addr, bool) {
 
 // HasIpv6EndpointAddresses returns a boolean if a field has been set.
 func (o *InterfaceUpfInfoItem) HasIpv6EndpointAddresses() bool {
-	if o != nil && !IsNil(o.Ipv6EndpointAddresses) {
+	if o != nil && !isNil(o.Ipv6EndpointAddresses) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *InterfaceUpfInfoItem) SetIpv6EndpointAddresses(v Ipv6Addr) {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *InterfaceUpfInfoItem) GetFqdn() string {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *InterfaceUpfInfoItem) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterfaceUpfInfoItem) GetFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -159,7 +159,7 @@ func (o *InterfaceUpfInfoItem) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *InterfaceUpfInfoItem) HasFqdn() bool {
-	if o != nil && !IsNil(o.Fqdn) {
+	if o != nil && !isNil(o.Fqdn) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *InterfaceUpfInfoItem) SetFqdn(v string) {
 
 // GetNetworkInstance returns the NetworkInstance field value if set, zero value otherwise.
 func (o *InterfaceUpfInfoItem) GetNetworkInstance() string {
-	if o == nil || IsNil(o.NetworkInstance) {
+	if o == nil || isNil(o.NetworkInstance) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *InterfaceUpfInfoItem) GetNetworkInstance() string {
 // GetNetworkInstanceOk returns a tuple with the NetworkInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterfaceUpfInfoItem) GetNetworkInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.NetworkInstance) {
+	if o == nil || isNil(o.NetworkInstance) {
 		return nil, false
 	}
 	return o.NetworkInstance, true
@@ -191,7 +191,7 @@ func (o *InterfaceUpfInfoItem) GetNetworkInstanceOk() (*string, bool) {
 
 // HasNetworkInstance returns a boolean if a field has been set.
 func (o *InterfaceUpfInfoItem) HasNetworkInstance() bool {
-	if o != nil && !IsNil(o.NetworkInstance) {
+	if o != nil && !isNil(o.NetworkInstance) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o InterfaceUpfInfoItem) MarshalJSON() ([]byte, error) {
 
 func (o InterfaceUpfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InterfaceType) {
+	if !isNil(o.InterfaceType) {
 		toSerialize["interfaceType"] = o.InterfaceType
 	}
-	if !IsNil(o.Ipv4EndpointAddresses) {
+	if !isNil(o.Ipv4EndpointAddresses) {
 		toSerialize["ipv4EndpointAddresses"] = o.Ipv4EndpointAddresses
 	}
-	if !IsNil(o.Ipv6EndpointAddresses) {
+	if !isNil(o.Ipv6EndpointAddresses) {
 		toSerialize["ipv6EndpointAddresses"] = o.Ipv6EndpointAddresses
 	}
-	if !IsNil(o.Fqdn) {
+	if !isNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
-	if !IsNil(o.NetworkInstance) {
+	if !isNil(o.NetworkInstance) {
 		toSerialize["networkInstance"] = o.NetworkInstance
 	}
 	return toSerialize, nil

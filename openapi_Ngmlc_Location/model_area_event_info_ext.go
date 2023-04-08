@@ -86,7 +86,7 @@ func (o *AreaEventInfoExt) SetAreaDefinition(v []ReportingArea) {
 
 // GetOccurrenceInfo returns the OccurrenceInfo field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetOccurrenceInfo() OccurrenceInfo {
-	if o == nil || IsNil(o.OccurrenceInfo) {
+	if o == nil || isNil(o.OccurrenceInfo) {
 		var ret OccurrenceInfo
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *AreaEventInfoExt) GetOccurrenceInfo() OccurrenceInfo {
 // GetOccurrenceInfoOk returns a tuple with the OccurrenceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetOccurrenceInfoOk() (*OccurrenceInfo, bool) {
-	if o == nil || IsNil(o.OccurrenceInfo) {
+	if o == nil || isNil(o.OccurrenceInfo) {
 		return nil, false
 	}
 	return o.OccurrenceInfo, true
@@ -104,7 +104,7 @@ func (o *AreaEventInfoExt) GetOccurrenceInfoOk() (*OccurrenceInfo, bool) {
 
 // HasOccurrenceInfo returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasOccurrenceInfo() bool {
-	if o != nil && !IsNil(o.OccurrenceInfo) {
+	if o != nil && !isNil(o.OccurrenceInfo) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *AreaEventInfoExt) SetOccurrenceInfo(v OccurrenceInfo) {
 
 // GetMinimumInterval returns the MinimumInterval field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetMinimumInterval() int32 {
-	if o == nil || IsNil(o.MinimumInterval) {
+	if o == nil || isNil(o.MinimumInterval) {
 		var ret int32
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *AreaEventInfoExt) GetMinimumInterval() int32 {
 // GetMinimumIntervalOk returns a tuple with the MinimumInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetMinimumIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinimumInterval) {
+	if o == nil || isNil(o.MinimumInterval) {
 		return nil, false
 	}
 	return o.MinimumInterval, true
@@ -136,7 +136,7 @@ func (o *AreaEventInfoExt) GetMinimumIntervalOk() (*int32, bool) {
 
 // HasMinimumInterval returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasMinimumInterval() bool {
-	if o != nil && !IsNil(o.MinimumInterval) {
+	if o != nil && !isNil(o.MinimumInterval) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *AreaEventInfoExt) SetMinimumInterval(v int32) {
 
 // GetMaximumInterval returns the MaximumInterval field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetMaximumInterval() int32 {
-	if o == nil || IsNil(o.MaximumInterval) {
+	if o == nil || isNil(o.MaximumInterval) {
 		var ret int32
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *AreaEventInfoExt) GetMaximumInterval() int32 {
 // GetMaximumIntervalOk returns a tuple with the MaximumInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetMaximumIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumInterval) {
+	if o == nil || isNil(o.MaximumInterval) {
 		return nil, false
 	}
 	return o.MaximumInterval, true
@@ -168,7 +168,7 @@ func (o *AreaEventInfoExt) GetMaximumIntervalOk() (*int32, bool) {
 
 // HasMaximumInterval returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasMaximumInterval() bool {
-	if o != nil && !IsNil(o.MaximumInterval) {
+	if o != nil && !isNil(o.MaximumInterval) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *AreaEventInfoExt) SetMaximumInterval(v int32) {
 
 // GetSamplingInterval returns the SamplingInterval field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetSamplingInterval() int32 {
-	if o == nil || IsNil(o.SamplingInterval) {
+	if o == nil || isNil(o.SamplingInterval) {
 		var ret int32
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *AreaEventInfoExt) GetSamplingInterval() int32 {
 // GetSamplingIntervalOk returns a tuple with the SamplingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetSamplingIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.SamplingInterval) {
+	if o == nil || isNil(o.SamplingInterval) {
 		return nil, false
 	}
 	return o.SamplingInterval, true
@@ -200,7 +200,7 @@ func (o *AreaEventInfoExt) GetSamplingIntervalOk() (*int32, bool) {
 
 // HasSamplingInterval returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasSamplingInterval() bool {
-	if o != nil && !IsNil(o.SamplingInterval) {
+	if o != nil && !isNil(o.SamplingInterval) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *AreaEventInfoExt) SetSamplingInterval(v int32) {
 
 // GetReportingDuration returns the ReportingDuration field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetReportingDuration() int32 {
-	if o == nil || IsNil(o.ReportingDuration) {
+	if o == nil || isNil(o.ReportingDuration) {
 		var ret int32
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *AreaEventInfoExt) GetReportingDuration() int32 {
 // GetReportingDurationOk returns a tuple with the ReportingDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetReportingDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingDuration) {
+	if o == nil || isNil(o.ReportingDuration) {
 		return nil, false
 	}
 	return o.ReportingDuration, true
@@ -232,7 +232,7 @@ func (o *AreaEventInfoExt) GetReportingDurationOk() (*int32, bool) {
 
 // HasReportingDuration returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasReportingDuration() bool {
-	if o != nil && !IsNil(o.ReportingDuration) {
+	if o != nil && !isNil(o.ReportingDuration) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *AreaEventInfoExt) SetReportingDuration(v int32) {
 
 // GetReportingLocationReq returns the ReportingLocationReq field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetReportingLocationReq() bool {
-	if o == nil || IsNil(o.ReportingLocationReq) {
+	if o == nil || isNil(o.ReportingLocationReq) {
 		var ret bool
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *AreaEventInfoExt) GetReportingLocationReq() bool {
 // GetReportingLocationReqOk returns a tuple with the ReportingLocationReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetReportingLocationReqOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReportingLocationReq) {
+	if o == nil || isNil(o.ReportingLocationReq) {
 		return nil, false
 	}
 	return o.ReportingLocationReq, true
@@ -264,7 +264,7 @@ func (o *AreaEventInfoExt) GetReportingLocationReqOk() (*bool, bool) {
 
 // HasReportingLocationReq returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasReportingLocationReq() bool {
-	if o != nil && !IsNil(o.ReportingLocationReq) {
+	if o != nil && !isNil(o.ReportingLocationReq) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *AreaEventInfoExt) SetReportingLocationReq(v bool) {
 
 // GetGeoAreaList returns the GeoAreaList field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetGeoAreaList() []GeographicArea {
-	if o == nil || IsNil(o.GeoAreaList) {
+	if o == nil || isNil(o.GeoAreaList) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *AreaEventInfoExt) GetGeoAreaList() []GeographicArea {
 // GetGeoAreaListOk returns a tuple with the GeoAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetGeoAreaListOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.GeoAreaList) {
+	if o == nil || isNil(o.GeoAreaList) {
 		return nil, false
 	}
 	return o.GeoAreaList, true
@@ -296,7 +296,7 @@ func (o *AreaEventInfoExt) GetGeoAreaListOk() ([]GeographicArea, bool) {
 
 // HasGeoAreaList returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasGeoAreaList() bool {
-	if o != nil && !IsNil(o.GeoAreaList) {
+	if o != nil && !isNil(o.GeoAreaList) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *AreaEventInfoExt) SetGeoAreaList(v []GeographicArea) {
 
 // GetIgnoreAreaDefInd returns the IgnoreAreaDefInd field value if set, zero value otherwise.
 func (o *AreaEventInfoExt) GetIgnoreAreaDefInd() bool {
-	if o == nil || IsNil(o.IgnoreAreaDefInd) {
+	if o == nil || isNil(o.IgnoreAreaDefInd) {
 		var ret bool
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *AreaEventInfoExt) GetIgnoreAreaDefInd() bool {
 // GetIgnoreAreaDefIndOk returns a tuple with the IgnoreAreaDefInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaEventInfoExt) GetIgnoreAreaDefIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreAreaDefInd) {
+	if o == nil || isNil(o.IgnoreAreaDefInd) {
 		return nil, false
 	}
 	return o.IgnoreAreaDefInd, true
@@ -328,7 +328,7 @@ func (o *AreaEventInfoExt) GetIgnoreAreaDefIndOk() (*bool, bool) {
 
 // HasIgnoreAreaDefInd returns a boolean if a field has been set.
 func (o *AreaEventInfoExt) HasIgnoreAreaDefInd() bool {
-	if o != nil && !IsNil(o.IgnoreAreaDefInd) {
+	if o != nil && !isNil(o.IgnoreAreaDefInd) {
 		return true
 	}
 
@@ -351,28 +351,28 @@ func (o AreaEventInfoExt) MarshalJSON() ([]byte, error) {
 func (o AreaEventInfoExt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["areaDefinition"] = o.AreaDefinition
-	if !IsNil(o.OccurrenceInfo) {
+	if !isNil(o.OccurrenceInfo) {
 		toSerialize["occurrenceInfo"] = o.OccurrenceInfo
 	}
-	if !IsNil(o.MinimumInterval) {
+	if !isNil(o.MinimumInterval) {
 		toSerialize["minimumInterval"] = o.MinimumInterval
 	}
-	if !IsNil(o.MaximumInterval) {
+	if !isNil(o.MaximumInterval) {
 		toSerialize["maximumInterval"] = o.MaximumInterval
 	}
-	if !IsNil(o.SamplingInterval) {
+	if !isNil(o.SamplingInterval) {
 		toSerialize["samplingInterval"] = o.SamplingInterval
 	}
-	if !IsNil(o.ReportingDuration) {
+	if !isNil(o.ReportingDuration) {
 		toSerialize["reportingDuration"] = o.ReportingDuration
 	}
-	if !IsNil(o.ReportingLocationReq) {
+	if !isNil(o.ReportingLocationReq) {
 		toSerialize["reportingLocationReq"] = o.ReportingLocationReq
 	}
-	if !IsNil(o.GeoAreaList) {
+	if !isNil(o.GeoAreaList) {
 		toSerialize["geoAreaList"] = o.GeoAreaList
 	}
-	if !IsNil(o.IgnoreAreaDefInd) {
+	if !isNil(o.IgnoreAreaDefInd) {
 		toSerialize["ignoreAreaDefInd"] = o.IgnoreAreaDefInd
 	}
 	return toSerialize, nil

@@ -41,7 +41,7 @@ func NewDnsContextNotificationWithDefaults() *DnsContextNotification {
 
 // GetEventreportList returns the EventreportList field value if set, zero value otherwise.
 func (o *DnsContextNotification) GetEventreportList() []DnsContextEventReport {
-	if o == nil || IsNil(o.EventreportList) {
+	if o == nil || isNil(o.EventreportList) {
 		var ret []DnsContextEventReport
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *DnsContextNotification) GetEventreportList() []DnsContextEventReport {
 // GetEventreportListOk returns a tuple with the EventreportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextNotification) GetEventreportListOk() ([]DnsContextEventReport, bool) {
-	if o == nil || IsNil(o.EventreportList) {
+	if o == nil || isNil(o.EventreportList) {
 		return nil, false
 	}
 	return o.EventreportList, true
@@ -59,7 +59,7 @@ func (o *DnsContextNotification) GetEventreportListOk() ([]DnsContextEventReport
 
 // HasEventreportList returns a boolean if a field has been set.
 func (o *DnsContextNotification) HasEventreportList() bool {
-	if o != nil && !IsNil(o.EventreportList) {
+	if o != nil && !isNil(o.EventreportList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o DnsContextNotification) MarshalJSON() ([]byte, error) {
 
 func (o DnsContextNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventreportList) {
+	if !isNil(o.EventreportList) {
 		toSerialize["eventreportList"] = o.EventreportList
 	}
 	return toSerialize, nil

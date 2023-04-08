@@ -71,7 +71,7 @@ func (o *MbsMediaComp) SetMbsMedCompNum(v int32) {
 
 // GetMbsFlowDescs returns the MbsFlowDescs field value if set, zero value otherwise.
 func (o *MbsMediaComp) GetMbsFlowDescs() []string {
-	if o == nil || IsNil(o.MbsFlowDescs) {
+	if o == nil || isNil(o.MbsFlowDescs) {
 		var ret []string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *MbsMediaComp) GetMbsFlowDescs() []string {
 // GetMbsFlowDescsOk returns a tuple with the MbsFlowDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaComp) GetMbsFlowDescsOk() ([]string, bool) {
-	if o == nil || IsNil(o.MbsFlowDescs) {
+	if o == nil || isNil(o.MbsFlowDescs) {
 		return nil, false
 	}
 	return o.MbsFlowDescs, true
@@ -89,7 +89,7 @@ func (o *MbsMediaComp) GetMbsFlowDescsOk() ([]string, bool) {
 
 // HasMbsFlowDescs returns a boolean if a field has been set.
 func (o *MbsMediaComp) HasMbsFlowDescs() bool {
-	if o != nil && !IsNil(o.MbsFlowDescs) {
+	if o != nil && !isNil(o.MbsFlowDescs) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *MbsMediaComp) SetMbsFlowDescs(v []string) {
 
 // GetMbsSdfResPrio returns the MbsSdfResPrio field value if set, zero value otherwise.
 func (o *MbsMediaComp) GetMbsSdfResPrio() ReservPriority {
-	if o == nil || IsNil(o.MbsSdfResPrio) {
+	if o == nil || isNil(o.MbsSdfResPrio) {
 		var ret ReservPriority
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *MbsMediaComp) GetMbsSdfResPrio() ReservPriority {
 // GetMbsSdfResPrioOk returns a tuple with the MbsSdfResPrio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaComp) GetMbsSdfResPrioOk() (*ReservPriority, bool) {
-	if o == nil || IsNil(o.MbsSdfResPrio) {
+	if o == nil || isNil(o.MbsSdfResPrio) {
 		return nil, false
 	}
 	return o.MbsSdfResPrio, true
@@ -121,7 +121,7 @@ func (o *MbsMediaComp) GetMbsSdfResPrioOk() (*ReservPriority, bool) {
 
 // HasMbsSdfResPrio returns a boolean if a field has been set.
 func (o *MbsMediaComp) HasMbsSdfResPrio() bool {
-	if o != nil && !IsNil(o.MbsSdfResPrio) {
+	if o != nil && !isNil(o.MbsSdfResPrio) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *MbsMediaComp) SetMbsSdfResPrio(v ReservPriority) {
 
 // GetMbsMediaInfo returns the MbsMediaInfo field value if set, zero value otherwise.
 func (o *MbsMediaComp) GetMbsMediaInfo() MbsMediaInfo {
-	if o == nil || IsNil(o.MbsMediaInfo) {
+	if o == nil || isNil(o.MbsMediaInfo) {
 		var ret MbsMediaInfo
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *MbsMediaComp) GetMbsMediaInfo() MbsMediaInfo {
 // GetMbsMediaInfoOk returns a tuple with the MbsMediaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaComp) GetMbsMediaInfoOk() (*MbsMediaInfo, bool) {
-	if o == nil || IsNil(o.MbsMediaInfo) {
+	if o == nil || isNil(o.MbsMediaInfo) {
 		return nil, false
 	}
 	return o.MbsMediaInfo, true
@@ -153,7 +153,7 @@ func (o *MbsMediaComp) GetMbsMediaInfoOk() (*MbsMediaInfo, bool) {
 
 // HasMbsMediaInfo returns a boolean if a field has been set.
 func (o *MbsMediaComp) HasMbsMediaInfo() bool {
-	if o != nil && !IsNil(o.MbsMediaInfo) {
+	if o != nil && !isNil(o.MbsMediaInfo) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *MbsMediaComp) SetMbsMediaInfo(v MbsMediaInfo) {
 
 // GetQosRef returns the QosRef field value if set, zero value otherwise.
 func (o *MbsMediaComp) GetQosRef() string {
-	if o == nil || IsNil(o.QosRef) {
+	if o == nil || isNil(o.QosRef) {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *MbsMediaComp) GetQosRef() string {
 // GetQosRefOk returns a tuple with the QosRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaComp) GetQosRefOk() (*string, bool) {
-	if o == nil || IsNil(o.QosRef) {
+	if o == nil || isNil(o.QosRef) {
 		return nil, false
 	}
 	return o.QosRef, true
@@ -185,7 +185,7 @@ func (o *MbsMediaComp) GetQosRefOk() (*string, bool) {
 
 // HasQosRef returns a boolean if a field has been set.
 func (o *MbsMediaComp) HasQosRef() bool {
-	if o != nil && !IsNil(o.QosRef) {
+	if o != nil && !isNil(o.QosRef) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *MbsMediaComp) SetQosRef(v string) {
 
 // GetMbsQoSReq returns the MbsQoSReq field value if set, zero value otherwise.
 func (o *MbsMediaComp) GetMbsQoSReq() MbsQoSReq {
-	if o == nil || IsNil(o.MbsQoSReq) {
+	if o == nil || isNil(o.MbsQoSReq) {
 		var ret MbsQoSReq
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *MbsMediaComp) GetMbsQoSReq() MbsQoSReq {
 // GetMbsQoSReqOk returns a tuple with the MbsQoSReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsMediaComp) GetMbsQoSReqOk() (*MbsQoSReq, bool) {
-	if o == nil || IsNil(o.MbsQoSReq) {
+	if o == nil || isNil(o.MbsQoSReq) {
 		return nil, false
 	}
 	return o.MbsQoSReq, true
@@ -217,7 +217,7 @@ func (o *MbsMediaComp) GetMbsQoSReqOk() (*MbsQoSReq, bool) {
 
 // HasMbsQoSReq returns a boolean if a field has been set.
 func (o *MbsMediaComp) HasMbsQoSReq() bool {
-	if o != nil && !IsNil(o.MbsQoSReq) {
+	if o != nil && !isNil(o.MbsQoSReq) {
 		return true
 	}
 
@@ -240,19 +240,19 @@ func (o MbsMediaComp) MarshalJSON() ([]byte, error) {
 func (o MbsMediaComp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsMedCompNum"] = o.MbsMedCompNum
-	if !IsNil(o.MbsFlowDescs) {
+	if !isNil(o.MbsFlowDescs) {
 		toSerialize["mbsFlowDescs"] = o.MbsFlowDescs
 	}
-	if !IsNil(o.MbsSdfResPrio) {
+	if !isNil(o.MbsSdfResPrio) {
 		toSerialize["mbsSdfResPrio"] = o.MbsSdfResPrio
 	}
-	if !IsNil(o.MbsMediaInfo) {
+	if !isNil(o.MbsMediaInfo) {
 		toSerialize["mbsMediaInfo"] = o.MbsMediaInfo
 	}
-	if !IsNil(o.QosRef) {
+	if !isNil(o.QosRef) {
 		toSerialize["qosRef"] = o.QosRef
 	}
-	if !IsNil(o.MbsQoSReq) {
+	if !isNil(o.MbsQoSReq) {
 		toSerialize["mbsQoSReq"] = o.MbsQoSReq
 	}
 	return toSerialize, nil

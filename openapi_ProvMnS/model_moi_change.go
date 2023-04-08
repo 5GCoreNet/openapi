@@ -76,7 +76,7 @@ func (o *MoiChange) SetNotificationId(v int32) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *MoiChange) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MoiChange) GetCorrelatedNotifications() []CorrelatedNotification {
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoiChange) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -94,7 +94,7 @@ func (o *MoiChange) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bo
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *MoiChange) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *MoiChange) SetCorrelatedNotifications(v []CorrelatedNotification) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *MoiChange) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *MoiChange) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoiChange) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -126,7 +126,7 @@ func (o *MoiChange) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *MoiChange) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *MoiChange) SetAdditionalText(v string) {
 
 // GetSourceIndicator returns the SourceIndicator field value if set, zero value otherwise.
 func (o *MoiChange) GetSourceIndicator() SourceIndicator {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		var ret SourceIndicator
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *MoiChange) GetSourceIndicator() SourceIndicator {
 // GetSourceIndicatorOk returns a tuple with the SourceIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoiChange) GetSourceIndicatorOk() (*SourceIndicator, bool) {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		return nil, false
 	}
 	return o.SourceIndicator, true
@@ -158,7 +158,7 @@ func (o *MoiChange) GetSourceIndicatorOk() (*SourceIndicator, bool) {
 
 // HasSourceIndicator returns a boolean if a field has been set.
 func (o *MoiChange) HasSourceIndicator() bool {
-	if o != nil && !IsNil(o.SourceIndicator) {
+	if o != nil && !isNil(o.SourceIndicator) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *MoiChange) SetPath(v string) {
 
 // GetInsert returns the Insert field value if set, zero value otherwise.
 func (o *MoiChange) GetInsert() Insert {
-	if o == nil || IsNil(o.Insert) {
+	if o == nil || isNil(o.Insert) {
 		var ret Insert
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *MoiChange) GetInsert() Insert {
 // GetInsertOk returns a tuple with the Insert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MoiChange) GetInsertOk() (*Insert, bool) {
-	if o == nil || IsNil(o.Insert) {
+	if o == nil || isNil(o.Insert) {
 		return nil, false
 	}
 	return o.Insert, true
@@ -238,7 +238,7 @@ func (o *MoiChange) GetInsertOk() (*Insert, bool) {
 
 // HasInsert returns a boolean if a field has been set.
 func (o *MoiChange) HasInsert() bool {
-	if o != nil && !IsNil(o.Insert) {
+	if o != nil && !isNil(o.Insert) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *MoiChange) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MoiChange) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || isNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true
@@ -271,7 +271,7 @@ func (o *MoiChange) GetValueOk() (*interface{}, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *MoiChange) HasValue() bool {
-	if o != nil && IsNil(o.Value) {
+	if o != nil && isNil(o.Value) {
 		return true
 	}
 
@@ -296,7 +296,7 @@ func (o *MoiChange) GetOldValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MoiChange) GetOldValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.OldValue) {
+	if o == nil || isNil(o.OldValue) {
 		return nil, false
 	}
 	return &o.OldValue, true
@@ -304,7 +304,7 @@ func (o *MoiChange) GetOldValueOk() (*interface{}, bool) {
 
 // HasOldValue returns a boolean if a field has been set.
 func (o *MoiChange) HasOldValue() bool {
-	if o != nil && IsNil(o.OldValue) {
+	if o != nil && isNil(o.OldValue) {
 		return true
 	}
 
@@ -327,18 +327,18 @@ func (o MoiChange) MarshalJSON() ([]byte, error) {
 func (o MoiChange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationId"] = o.NotificationId
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.SourceIndicator) {
+	if !isNil(o.SourceIndicator) {
 		toSerialize["sourceIndicator"] = o.SourceIndicator
 	}
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
-	if !IsNil(o.Insert) {
+	if !isNil(o.Insert) {
 		toSerialize["insert"] = o.Insert
 	}
 	if o.Value != nil {

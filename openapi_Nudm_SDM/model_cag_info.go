@@ -67,7 +67,7 @@ func (o *CagInfo) SetAllowedCagList(v []string) {
 
 // GetCagOnlyIndicator returns the CagOnlyIndicator field value if set, zero value otherwise.
 func (o *CagInfo) GetCagOnlyIndicator() bool {
-	if o == nil || IsNil(o.CagOnlyIndicator) {
+	if o == nil || isNil(o.CagOnlyIndicator) {
 		var ret bool
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CagInfo) GetCagOnlyIndicator() bool {
 // GetCagOnlyIndicatorOk returns a tuple with the CagOnlyIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CagInfo) GetCagOnlyIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.CagOnlyIndicator) {
+	if o == nil || isNil(o.CagOnlyIndicator) {
 		return nil, false
 	}
 	return o.CagOnlyIndicator, true
@@ -85,7 +85,7 @@ func (o *CagInfo) GetCagOnlyIndicatorOk() (*bool, bool) {
 
 // HasCagOnlyIndicator returns a boolean if a field has been set.
 func (o *CagInfo) HasCagOnlyIndicator() bool {
-	if o != nil && !IsNil(o.CagOnlyIndicator) {
+	if o != nil && !isNil(o.CagOnlyIndicator) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o CagInfo) MarshalJSON() ([]byte, error) {
 func (o CagInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["allowedCagList"] = o.AllowedCagList
-	if !IsNil(o.CagOnlyIndicator) {
+	if !isNil(o.CagOnlyIndicator) {
 		toSerialize["cagOnlyIndicator"] = o.CagOnlyIndicator
 	}
 	return toSerialize, nil

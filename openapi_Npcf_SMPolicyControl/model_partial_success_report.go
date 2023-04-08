@@ -75,7 +75,7 @@ func (o *PartialSuccessReport) SetFailureCause(v FailureCause) {
 
 // GetRuleReports returns the RuleReports field value if set, zero value otherwise.
 func (o *PartialSuccessReport) GetRuleReports() []RuleReport {
-	if o == nil || IsNil(o.RuleReports) {
+	if o == nil || isNil(o.RuleReports) {
 		var ret []RuleReport
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PartialSuccessReport) GetRuleReports() []RuleReport {
 // GetRuleReportsOk returns a tuple with the RuleReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartialSuccessReport) GetRuleReportsOk() ([]RuleReport, bool) {
-	if o == nil || IsNil(o.RuleReports) {
+	if o == nil || isNil(o.RuleReports) {
 		return nil, false
 	}
 	return o.RuleReports, true
@@ -93,7 +93,7 @@ func (o *PartialSuccessReport) GetRuleReportsOk() ([]RuleReport, bool) {
 
 // HasRuleReports returns a boolean if a field has been set.
 func (o *PartialSuccessReport) HasRuleReports() bool {
-	if o != nil && !IsNil(o.RuleReports) {
+	if o != nil && !isNil(o.RuleReports) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *PartialSuccessReport) SetRuleReports(v []RuleReport) {
 
 // GetSessRuleReports returns the SessRuleReports field value if set, zero value otherwise.
 func (o *PartialSuccessReport) GetSessRuleReports() []SessionRuleReport {
-	if o == nil || IsNil(o.SessRuleReports) {
+	if o == nil || isNil(o.SessRuleReports) {
 		var ret []SessionRuleReport
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *PartialSuccessReport) GetSessRuleReports() []SessionRuleReport {
 // GetSessRuleReportsOk returns a tuple with the SessRuleReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartialSuccessReport) GetSessRuleReportsOk() ([]SessionRuleReport, bool) {
-	if o == nil || IsNil(o.SessRuleReports) {
+	if o == nil || isNil(o.SessRuleReports) {
 		return nil, false
 	}
 	return o.SessRuleReports, true
@@ -125,7 +125,7 @@ func (o *PartialSuccessReport) GetSessRuleReportsOk() ([]SessionRuleReport, bool
 
 // HasSessRuleReports returns a boolean if a field has been set.
 func (o *PartialSuccessReport) HasSessRuleReports() bool {
-	if o != nil && !IsNil(o.SessRuleReports) {
+	if o != nil && !isNil(o.SessRuleReports) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *PartialSuccessReport) SetSessRuleReports(v []SessionRuleReport) {
 
 // GetUeCampingRep returns the UeCampingRep field value if set, zero value otherwise.
 func (o *PartialSuccessReport) GetUeCampingRep() UeCampingRep {
-	if o == nil || IsNil(o.UeCampingRep) {
+	if o == nil || isNil(o.UeCampingRep) {
 		var ret UeCampingRep
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *PartialSuccessReport) GetUeCampingRep() UeCampingRep {
 // GetUeCampingRepOk returns a tuple with the UeCampingRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartialSuccessReport) GetUeCampingRepOk() (*UeCampingRep, bool) {
-	if o == nil || IsNil(o.UeCampingRep) {
+	if o == nil || isNil(o.UeCampingRep) {
 		return nil, false
 	}
 	return o.UeCampingRep, true
@@ -157,7 +157,7 @@ func (o *PartialSuccessReport) GetUeCampingRepOk() (*UeCampingRep, bool) {
 
 // HasUeCampingRep returns a boolean if a field has been set.
 func (o *PartialSuccessReport) HasUeCampingRep() bool {
-	if o != nil && !IsNil(o.UeCampingRep) {
+	if o != nil && !isNil(o.UeCampingRep) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *PartialSuccessReport) SetUeCampingRep(v UeCampingRep) {
 
 // GetPolicyDecFailureReports returns the PolicyDecFailureReports field value if set, zero value otherwise.
 func (o *PartialSuccessReport) GetPolicyDecFailureReports() []PolicyDecisionFailureCode {
-	if o == nil || IsNil(o.PolicyDecFailureReports) {
+	if o == nil || isNil(o.PolicyDecFailureReports) {
 		var ret []PolicyDecisionFailureCode
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *PartialSuccessReport) GetPolicyDecFailureReports() []PolicyDecisionFail
 // GetPolicyDecFailureReportsOk returns a tuple with the PolicyDecFailureReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartialSuccessReport) GetPolicyDecFailureReportsOk() ([]PolicyDecisionFailureCode, bool) {
-	if o == nil || IsNil(o.PolicyDecFailureReports) {
+	if o == nil || isNil(o.PolicyDecFailureReports) {
 		return nil, false
 	}
 	return o.PolicyDecFailureReports, true
@@ -189,7 +189,7 @@ func (o *PartialSuccessReport) GetPolicyDecFailureReportsOk() ([]PolicyDecisionF
 
 // HasPolicyDecFailureReports returns a boolean if a field has been set.
 func (o *PartialSuccessReport) HasPolicyDecFailureReports() bool {
-	if o != nil && !IsNil(o.PolicyDecFailureReports) {
+	if o != nil && !isNil(o.PolicyDecFailureReports) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *PartialSuccessReport) SetPolicyDecFailureReports(v []PolicyDecisionFail
 
 // GetInvalidPolicyDecs returns the InvalidPolicyDecs field value if set, zero value otherwise.
 func (o *PartialSuccessReport) GetInvalidPolicyDecs() []InvalidParam {
-	if o == nil || IsNil(o.InvalidPolicyDecs) {
+	if o == nil || isNil(o.InvalidPolicyDecs) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *PartialSuccessReport) GetInvalidPolicyDecs() []InvalidParam {
 // GetInvalidPolicyDecsOk returns a tuple with the InvalidPolicyDecs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PartialSuccessReport) GetInvalidPolicyDecsOk() ([]InvalidParam, bool) {
-	if o == nil || IsNil(o.InvalidPolicyDecs) {
+	if o == nil || isNil(o.InvalidPolicyDecs) {
 		return nil, false
 	}
 	return o.InvalidPolicyDecs, true
@@ -221,7 +221,7 @@ func (o *PartialSuccessReport) GetInvalidPolicyDecsOk() ([]InvalidParam, bool) {
 
 // HasInvalidPolicyDecs returns a boolean if a field has been set.
 func (o *PartialSuccessReport) HasInvalidPolicyDecs() bool {
-	if o != nil && !IsNil(o.InvalidPolicyDecs) {
+	if o != nil && !isNil(o.InvalidPolicyDecs) {
 		return true
 	}
 
@@ -244,19 +244,19 @@ func (o PartialSuccessReport) MarshalJSON() ([]byte, error) {
 func (o PartialSuccessReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["failureCause"] = o.FailureCause
-	if !IsNil(o.RuleReports) {
+	if !isNil(o.RuleReports) {
 		toSerialize["ruleReports"] = o.RuleReports
 	}
-	if !IsNil(o.SessRuleReports) {
+	if !isNil(o.SessRuleReports) {
 		toSerialize["sessRuleReports"] = o.SessRuleReports
 	}
-	if !IsNil(o.UeCampingRep) {
+	if !isNil(o.UeCampingRep) {
 		toSerialize["ueCampingRep"] = o.UeCampingRep
 	}
-	if !IsNil(o.PolicyDecFailureReports) {
+	if !isNil(o.PolicyDecFailureReports) {
 		toSerialize["policyDecFailureReports"] = o.PolicyDecFailureReports
 	}
-	if !IsNil(o.InvalidPolicyDecs) {
+	if !isNil(o.InvalidPolicyDecs) {
 		toSerialize["invalidPolicyDecs"] = o.InvalidPolicyDecs
 	}
 	return toSerialize, nil

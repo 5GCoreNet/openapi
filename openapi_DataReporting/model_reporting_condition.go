@@ -72,7 +72,7 @@ func (o *ReportingCondition) SetType(v ReportingConditionType) {
 
 // GetPeriod returns the Period field value if set, zero value otherwise.
 func (o *ReportingCondition) GetPeriod() int32 {
-	if o == nil || IsNil(o.Period) {
+	if o == nil || isNil(o.Period) {
 		var ret int32
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ReportingCondition) GetPeriod() int32 {
 // GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCondition) GetPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.Period) {
+	if o == nil || isNil(o.Period) {
 		return nil, false
 	}
 	return o.Period, true
@@ -90,7 +90,7 @@ func (o *ReportingCondition) GetPeriodOk() (*int32, bool) {
 
 // HasPeriod returns a boolean if a field has been set.
 func (o *ReportingCondition) HasPeriod() bool {
-	if o != nil && !IsNil(o.Period) {
+	if o != nil && !isNil(o.Period) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *ReportingCondition) SetPeriod(v int32) {
 
 // GetParameter returns the Parameter field value if set, zero value otherwise.
 func (o *ReportingCondition) GetParameter() string {
-	if o == nil || IsNil(o.Parameter) {
+	if o == nil || isNil(o.Parameter) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ReportingCondition) GetParameter() string {
 // GetParameterOk returns a tuple with the Parameter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCondition) GetParameterOk() (*string, bool) {
-	if o == nil || IsNil(o.Parameter) {
+	if o == nil || isNil(o.Parameter) {
 		return nil, false
 	}
 	return o.Parameter, true
@@ -122,7 +122,7 @@ func (o *ReportingCondition) GetParameterOk() (*string, bool) {
 
 // HasParameter returns a boolean if a field has been set.
 func (o *ReportingCondition) HasParameter() bool {
-	if o != nil && !IsNil(o.Parameter) {
+	if o != nil && !isNil(o.Parameter) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *ReportingCondition) SetParameter(v string) {
 
 // GetThreshold returns the Threshold field value if set, zero value otherwise.
 func (o *ReportingCondition) GetThreshold() ReportingConditionThreshold {
-	if o == nil || IsNil(o.Threshold) {
+	if o == nil || isNil(o.Threshold) {
 		var ret ReportingConditionThreshold
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *ReportingCondition) GetThreshold() ReportingConditionThreshold {
 // GetThresholdOk returns a tuple with the Threshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCondition) GetThresholdOk() (*ReportingConditionThreshold, bool) {
-	if o == nil || IsNil(o.Threshold) {
+	if o == nil || isNil(o.Threshold) {
 		return nil, false
 	}
 	return o.Threshold, true
@@ -154,7 +154,7 @@ func (o *ReportingCondition) GetThresholdOk() (*ReportingConditionThreshold, boo
 
 // HasThreshold returns a boolean if a field has been set.
 func (o *ReportingCondition) HasThreshold() bool {
-	if o != nil && !IsNil(o.Threshold) {
+	if o != nil && !isNil(o.Threshold) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *ReportingCondition) SetThreshold(v ReportingConditionThreshold) {
 
 // GetReportWhenBelow returns the ReportWhenBelow field value if set, zero value otherwise.
 func (o *ReportingCondition) GetReportWhenBelow() bool {
-	if o == nil || IsNil(o.ReportWhenBelow) {
+	if o == nil || isNil(o.ReportWhenBelow) {
 		var ret bool
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *ReportingCondition) GetReportWhenBelow() bool {
 // GetReportWhenBelowOk returns a tuple with the ReportWhenBelow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCondition) GetReportWhenBelowOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReportWhenBelow) {
+	if o == nil || isNil(o.ReportWhenBelow) {
 		return nil, false
 	}
 	return o.ReportWhenBelow, true
@@ -186,7 +186,7 @@ func (o *ReportingCondition) GetReportWhenBelowOk() (*bool, bool) {
 
 // HasReportWhenBelow returns a boolean if a field has been set.
 func (o *ReportingCondition) HasReportWhenBelow() bool {
-	if o != nil && !IsNil(o.ReportWhenBelow) {
+	if o != nil && !isNil(o.ReportWhenBelow) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *ReportingCondition) SetReportWhenBelow(v bool) {
 
 // GetEventTrigger returns the EventTrigger field value if set, zero value otherwise.
 func (o *ReportingCondition) GetEventTrigger() ReportingEventTrigger {
-	if o == nil || IsNil(o.EventTrigger) {
+	if o == nil || isNil(o.EventTrigger) {
 		var ret ReportingEventTrigger
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *ReportingCondition) GetEventTrigger() ReportingEventTrigger {
 // GetEventTriggerOk returns a tuple with the EventTrigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCondition) GetEventTriggerOk() (*ReportingEventTrigger, bool) {
-	if o == nil || IsNil(o.EventTrigger) {
+	if o == nil || isNil(o.EventTrigger) {
 		return nil, false
 	}
 	return o.EventTrigger, true
@@ -218,7 +218,7 @@ func (o *ReportingCondition) GetEventTriggerOk() (*ReportingEventTrigger, bool) 
 
 // HasEventTrigger returns a boolean if a field has been set.
 func (o *ReportingCondition) HasEventTrigger() bool {
-	if o != nil && !IsNil(o.EventTrigger) {
+	if o != nil && !isNil(o.EventTrigger) {
 		return true
 	}
 
@@ -241,19 +241,19 @@ func (o ReportingCondition) MarshalJSON() ([]byte, error) {
 func (o ReportingCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["type"] = o.Type
-	if !IsNil(o.Period) {
+	if !isNil(o.Period) {
 		toSerialize["period"] = o.Period
 	}
-	if !IsNil(o.Parameter) {
+	if !isNil(o.Parameter) {
 		toSerialize["parameter"] = o.Parameter
 	}
-	if !IsNil(o.Threshold) {
+	if !isNil(o.Threshold) {
 		toSerialize["threshold"] = o.Threshold
 	}
-	if !IsNil(o.ReportWhenBelow) {
+	if !isNil(o.ReportWhenBelow) {
 		toSerialize["reportWhenBelow"] = o.ReportWhenBelow
 	}
-	if !IsNil(o.EventTrigger) {
+	if !isNil(o.EventTrigger) {
 		toSerialize["eventTrigger"] = o.EventTrigger
 	}
 	return toSerialize, nil

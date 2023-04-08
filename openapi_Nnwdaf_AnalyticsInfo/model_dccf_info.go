@@ -44,7 +44,7 @@ func NewDccfInfoWithDefaults() *DccfInfo {
 
 // GetServingNfTypeList returns the ServingNfTypeList field value if set, zero value otherwise.
 func (o *DccfInfo) GetServingNfTypeList() []NFType {
-	if o == nil || IsNil(o.ServingNfTypeList) {
+	if o == nil || isNil(o.ServingNfTypeList) {
 		var ret []NFType
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *DccfInfo) GetServingNfTypeList() []NFType {
 // GetServingNfTypeListOk returns a tuple with the ServingNfTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfInfo) GetServingNfTypeListOk() ([]NFType, bool) {
-	if o == nil || IsNil(o.ServingNfTypeList) {
+	if o == nil || isNil(o.ServingNfTypeList) {
 		return nil, false
 	}
 	return o.ServingNfTypeList, true
@@ -62,7 +62,7 @@ func (o *DccfInfo) GetServingNfTypeListOk() ([]NFType, bool) {
 
 // HasServingNfTypeList returns a boolean if a field has been set.
 func (o *DccfInfo) HasServingNfTypeList() bool {
-	if o != nil && !IsNil(o.ServingNfTypeList) {
+	if o != nil && !isNil(o.ServingNfTypeList) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *DccfInfo) SetServingNfTypeList(v []NFType) {
 
 // GetServingNfSetIdList returns the ServingNfSetIdList field value if set, zero value otherwise.
 func (o *DccfInfo) GetServingNfSetIdList() []string {
-	if o == nil || IsNil(o.ServingNfSetIdList) {
+	if o == nil || isNil(o.ServingNfSetIdList) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *DccfInfo) GetServingNfSetIdList() []string {
 // GetServingNfSetIdListOk returns a tuple with the ServingNfSetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfInfo) GetServingNfSetIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServingNfSetIdList) {
+	if o == nil || isNil(o.ServingNfSetIdList) {
 		return nil, false
 	}
 	return o.ServingNfSetIdList, true
@@ -94,7 +94,7 @@ func (o *DccfInfo) GetServingNfSetIdListOk() ([]string, bool) {
 
 // HasServingNfSetIdList returns a boolean if a field has been set.
 func (o *DccfInfo) HasServingNfSetIdList() bool {
-	if o != nil && !IsNil(o.ServingNfSetIdList) {
+	if o != nil && !isNil(o.ServingNfSetIdList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *DccfInfo) SetServingNfSetIdList(v []string) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *DccfInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *DccfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -126,7 +126,7 @@ func (o *DccfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *DccfInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *DccfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *DccfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *DccfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DccfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -158,7 +158,7 @@ func (o *DccfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *DccfInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o DccfInfo) MarshalJSON() ([]byte, error) {
 
 func (o DccfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServingNfTypeList) {
+	if !isNil(o.ServingNfTypeList) {
 		toSerialize["servingNfTypeList"] = o.ServingNfTypeList
 	}
-	if !IsNil(o.ServingNfSetIdList) {
+	if !isNil(o.ServingNfSetIdList) {
 		toSerialize["servingNfSetIdList"] = o.ServingNfSetIdList
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
 	return toSerialize, nil

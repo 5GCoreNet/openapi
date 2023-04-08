@@ -45,7 +45,7 @@ func NewObjectScheduleInnerDeliveryInfoInnerWithDefaults() *ObjectScheduleInnerD
 
 // GetStart returns the Start field value if set, zero value otherwise.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStart() time.Time {
-	if o == nil || IsNil(o.Start) {
+	if o == nil || isNil(o.Start) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStart() time.Time {
 // GetStartOk returns a tuple with the Start field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStartOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Start) {
+	if o == nil || isNil(o.Start) {
 		return nil, false
 	}
 	return o.Start, true
@@ -63,7 +63,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStartOk() (*time.Time, bool) {
 
 // HasStart returns a boolean if a field has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) HasStart() bool {
-	if o != nil && !IsNil(o.Start) {
+	if o != nil && !isNil(o.Start) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) SetStart(v time.Time) {
 
 // GetStop returns the Stop field value if set, zero value otherwise.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStop() time.Time {
-	if o == nil || IsNil(o.Stop) {
+	if o == nil || isNil(o.Stop) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStop() time.Time {
 // GetStopOk returns a tuple with the Stop field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) GetStopOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Stop) {
+	if o == nil || isNil(o.Stop) {
 		return nil, false
 	}
 	return o.Stop, true
@@ -95,7 +95,7 @@ func (o *ObjectScheduleInnerDeliveryInfoInner) GetStopOk() (*time.Time, bool) {
 
 // HasStop returns a boolean if a field has been set.
 func (o *ObjectScheduleInnerDeliveryInfoInner) HasStop() bool {
-	if o != nil && !IsNil(o.Stop) {
+	if o != nil && !isNil(o.Stop) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o ObjectScheduleInnerDeliveryInfoInner) MarshalJSON() ([]byte, error) {
 
 func (o ObjectScheduleInnerDeliveryInfoInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Start) {
+	if !isNil(o.Start) {
 		toSerialize["start"] = o.Start
 	}
-	if !IsNil(o.Stop) {
+	if !isNil(o.Stop) {
 		toSerialize["stop"] = o.Stop
 	}
 	return toSerialize, nil

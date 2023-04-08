@@ -41,7 +41,7 @@ func NewGeoAreaWithDefaults() *GeoArea {
 
 // GetConvexGeoPolygon returns the ConvexGeoPolygon field value if set, zero value otherwise.
 func (o *GeoArea) GetConvexGeoPolygon() []GeoCoordinate {
-	if o == nil || IsNil(o.ConvexGeoPolygon) {
+	if o == nil || isNil(o.ConvexGeoPolygon) {
 		var ret []GeoCoordinate
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *GeoArea) GetConvexGeoPolygon() []GeoCoordinate {
 // GetConvexGeoPolygonOk returns a tuple with the ConvexGeoPolygon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoArea) GetConvexGeoPolygonOk() ([]GeoCoordinate, bool) {
-	if o == nil || IsNil(o.ConvexGeoPolygon) {
+	if o == nil || isNil(o.ConvexGeoPolygon) {
 		return nil, false
 	}
 	return o.ConvexGeoPolygon, true
@@ -59,7 +59,7 @@ func (o *GeoArea) GetConvexGeoPolygonOk() ([]GeoCoordinate, bool) {
 
 // HasConvexGeoPolygon returns a boolean if a field has been set.
 func (o *GeoArea) HasConvexGeoPolygon() bool {
-	if o != nil && !IsNil(o.ConvexGeoPolygon) {
+	if o != nil && !isNil(o.ConvexGeoPolygon) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o GeoArea) MarshalJSON() ([]byte, error) {
 
 func (o GeoArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ConvexGeoPolygon) {
+	if !isNil(o.ConvexGeoPolygon) {
 		toSerialize["convexGeoPolygon"] = o.ConvexGeoPolygon
 	}
 	return toSerialize, nil

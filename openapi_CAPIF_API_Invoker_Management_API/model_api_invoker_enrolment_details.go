@@ -55,7 +55,7 @@ func NewAPIInvokerEnrolmentDetailsWithDefaults() *APIInvokerEnrolmentDetails {
 
 // GetApiInvokerId returns the ApiInvokerId field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerId() string {
-	if o == nil || IsNil(o.ApiInvokerId) {
+	if o == nil || isNil(o.ApiInvokerId) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerId() string {
 // GetApiInvokerIdOk returns a tuple with the ApiInvokerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiInvokerId) {
+	if o == nil || isNil(o.ApiInvokerId) {
 		return nil, false
 	}
 	return o.ApiInvokerId, true
@@ -73,7 +73,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerIdOk() (*string, bool) {
 
 // HasApiInvokerId returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasApiInvokerId() bool {
-	if o != nil && !IsNil(o.ApiInvokerId) {
+	if o != nil && !isNil(o.ApiInvokerId) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *APIInvokerEnrolmentDetails) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *APIInvokerEnrolmentDetails) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -153,7 +153,7 @@ func (o *APIInvokerEnrolmentDetails) GetRequestTestNotificationOk() (*bool, bool
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *APIInvokerEnrolmentDetails) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfig() WebsockNotifConfig 
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -185,7 +185,7 @@ func (o *APIInvokerEnrolmentDetails) GetWebsockNotifConfigOk() (*WebsockNotifCon
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *APIInvokerEnrolmentDetails) SetWebsockNotifConfig(v WebsockNotifConfig)
 
 // GetApiList returns the ApiList field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetApiList() APIList {
-	if o == nil || IsNil(o.ApiList) {
+	if o == nil || isNil(o.ApiList) {
 		var ret APIList
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiList() APIList {
 // GetApiListOk returns a tuple with the ApiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetApiListOk() (*APIList, bool) {
-	if o == nil || IsNil(o.ApiList) {
+	if o == nil || isNil(o.ApiList) {
 		return nil, false
 	}
 	return o.ApiList, true
@@ -217,7 +217,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiListOk() (*APIList, bool) {
 
 // HasApiList returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasApiList() bool {
-	if o != nil && !IsNil(o.ApiList) {
+	if o != nil && !isNil(o.ApiList) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *APIInvokerEnrolmentDetails) SetApiList(v APIList) {
 
 // GetApiInvokerInformation returns the ApiInvokerInformation field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformation() string {
-	if o == nil || IsNil(o.ApiInvokerInformation) {
+	if o == nil || isNil(o.ApiInvokerInformation) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformation() string {
 // GetApiInvokerInformationOk returns a tuple with the ApiInvokerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiInvokerInformation) {
+	if o == nil || isNil(o.ApiInvokerInformation) {
 		return nil, false
 	}
 	return o.ApiInvokerInformation, true
@@ -249,7 +249,7 @@ func (o *APIInvokerEnrolmentDetails) GetApiInvokerInformationOk() (*string, bool
 
 // HasApiInvokerInformation returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasApiInvokerInformation() bool {
-	if o != nil && !IsNil(o.ApiInvokerInformation) {
+	if o != nil && !isNil(o.ApiInvokerInformation) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *APIInvokerEnrolmentDetails) SetApiInvokerInformation(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetails) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *APIInvokerEnrolmentDetails) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetails) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -281,7 +281,7 @@ func (o *APIInvokerEnrolmentDetails) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetails) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -303,22 +303,24 @@ func (o APIInvokerEnrolmentDetails) MarshalJSON() ([]byte, error) {
 
 func (o APIInvokerEnrolmentDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: apiInvokerId is readOnly
+	if !isNil(o.ApiInvokerId) {
+		toSerialize["apiInvokerId"] = o.ApiInvokerId
+	}
 	toSerialize["onboardingInformation"] = o.OnboardingInformation
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.ApiList) {
+	if !isNil(o.ApiList) {
 		toSerialize["apiList"] = o.ApiList
 	}
-	if !IsNil(o.ApiInvokerInformation) {
+	if !isNil(o.ApiInvokerInformation) {
 		toSerialize["apiInvokerInformation"] = o.ApiInvokerInformation
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

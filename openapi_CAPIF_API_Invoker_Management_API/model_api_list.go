@@ -42,7 +42,7 @@ func NewAPIListWithDefaults() *APIList {
 
 // GetServiceAPIDescriptions returns the ServiceAPIDescriptions field value if set, zero value otherwise.
 func (o *APIList) GetServiceAPIDescriptions() []ServiceAPIDescription {
-	if o == nil || IsNil(o.ServiceAPIDescriptions) {
+	if o == nil || isNil(o.ServiceAPIDescriptions) {
 		var ret []ServiceAPIDescription
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *APIList) GetServiceAPIDescriptions() []ServiceAPIDescription {
 // GetServiceAPIDescriptionsOk returns a tuple with the ServiceAPIDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIList) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription, bool) {
-	if o == nil || IsNil(o.ServiceAPIDescriptions) {
+	if o == nil || isNil(o.ServiceAPIDescriptions) {
 		return nil, false
 	}
 	return o.ServiceAPIDescriptions, true
@@ -60,7 +60,7 @@ func (o *APIList) GetServiceAPIDescriptionsOk() ([]ServiceAPIDescription, bool) 
 
 // HasServiceAPIDescriptions returns a boolean if a field has been set.
 func (o *APIList) HasServiceAPIDescriptions() bool {
-	if o != nil && !IsNil(o.ServiceAPIDescriptions) {
+	if o != nil && !isNil(o.ServiceAPIDescriptions) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o APIList) MarshalJSON() ([]byte, error) {
 
 func (o APIList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceAPIDescriptions) {
+	if !isNil(o.ServiceAPIDescriptions) {
 		toSerialize["serviceAPIDescriptions"] = o.ServiceAPIDescriptions
 	}
 	return toSerialize, nil

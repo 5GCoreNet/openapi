@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -15,8 +14,10 @@ docs/CipheringKeyInfo.md
 docs/CipheringKeyResponse.md
 docs/CipheringSetReport.md
 docs/DataAvailability.md
+docs/DataAvailabilityAnyOf.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -24,6 +25,7 @@ docs/RedirectResponse.md
 docs/RequestCipheringKeyDataApi.md
 docs/Snssai.md
 docs/StorageOutcome.md
+docs/StorageOutcomeAnyOf.md
 git_push.sh
 go.mod
 go.sum
@@ -36,14 +38,17 @@ model_ciphering_key_info.go
 model_ciphering_key_response.go
 model_ciphering_set_report.go
 model_data_availability.go
+model_data_availability_any_of.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
 model_redirect_response.go
 model_snssai.go
 model_storage_outcome.go
+model_storage_outcome_any_of.go
 response.go
 test/api_request_ciphering_key_data_test.go
 utils.go

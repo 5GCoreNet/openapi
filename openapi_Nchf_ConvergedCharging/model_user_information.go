@@ -46,7 +46,7 @@ func NewUserInformationWithDefaults() *UserInformation {
 
 // GetServedGPSI returns the ServedGPSI field value if set, zero value otherwise.
 func (o *UserInformation) GetServedGPSI() string {
-	if o == nil || IsNil(o.ServedGPSI) {
+	if o == nil || isNil(o.ServedGPSI) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *UserInformation) GetServedGPSI() string {
 // GetServedGPSIOk returns a tuple with the ServedGPSI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetServedGPSIOk() (*string, bool) {
-	if o == nil || IsNil(o.ServedGPSI) {
+	if o == nil || isNil(o.ServedGPSI) {
 		return nil, false
 	}
 	return o.ServedGPSI, true
@@ -64,7 +64,7 @@ func (o *UserInformation) GetServedGPSIOk() (*string, bool) {
 
 // HasServedGPSI returns a boolean if a field has been set.
 func (o *UserInformation) HasServedGPSI() bool {
-	if o != nil && !IsNil(o.ServedGPSI) {
+	if o != nil && !isNil(o.ServedGPSI) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *UserInformation) SetServedGPSI(v string) {
 
 // GetServedPEI returns the ServedPEI field value if set, zero value otherwise.
 func (o *UserInformation) GetServedPEI() string {
-	if o == nil || IsNil(o.ServedPEI) {
+	if o == nil || isNil(o.ServedPEI) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *UserInformation) GetServedPEI() string {
 // GetServedPEIOk returns a tuple with the ServedPEI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetServedPEIOk() (*string, bool) {
-	if o == nil || IsNil(o.ServedPEI) {
+	if o == nil || isNil(o.ServedPEI) {
 		return nil, false
 	}
 	return o.ServedPEI, true
@@ -96,7 +96,7 @@ func (o *UserInformation) GetServedPEIOk() (*string, bool) {
 
 // HasServedPEI returns a boolean if a field has been set.
 func (o *UserInformation) HasServedPEI() bool {
-	if o != nil && !IsNil(o.ServedPEI) {
+	if o != nil && !isNil(o.ServedPEI) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *UserInformation) SetServedPEI(v string) {
 
 // GetUnauthenticatedFlag returns the UnauthenticatedFlag field value if set, zero value otherwise.
 func (o *UserInformation) GetUnauthenticatedFlag() bool {
-	if o == nil || IsNil(o.UnauthenticatedFlag) {
+	if o == nil || isNil(o.UnauthenticatedFlag) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *UserInformation) GetUnauthenticatedFlag() bool {
 // GetUnauthenticatedFlagOk returns a tuple with the UnauthenticatedFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetUnauthenticatedFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.UnauthenticatedFlag) {
+	if o == nil || isNil(o.UnauthenticatedFlag) {
 		return nil, false
 	}
 	return o.UnauthenticatedFlag, true
@@ -128,7 +128,7 @@ func (o *UserInformation) GetUnauthenticatedFlagOk() (*bool, bool) {
 
 // HasUnauthenticatedFlag returns a boolean if a field has been set.
 func (o *UserInformation) HasUnauthenticatedFlag() bool {
-	if o != nil && !IsNil(o.UnauthenticatedFlag) {
+	if o != nil && !isNil(o.UnauthenticatedFlag) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *UserInformation) SetUnauthenticatedFlag(v bool) {
 
 // GetRoamerInOut returns the RoamerInOut field value if set, zero value otherwise.
 func (o *UserInformation) GetRoamerInOut() RoamerInOut {
-	if o == nil || IsNil(o.RoamerInOut) {
+	if o == nil || isNil(o.RoamerInOut) {
 		var ret RoamerInOut
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *UserInformation) GetRoamerInOut() RoamerInOut {
 // GetRoamerInOutOk returns a tuple with the RoamerInOut field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetRoamerInOutOk() (*RoamerInOut, bool) {
-	if o == nil || IsNil(o.RoamerInOut) {
+	if o == nil || isNil(o.RoamerInOut) {
 		return nil, false
 	}
 	return o.RoamerInOut, true
@@ -160,7 +160,7 @@ func (o *UserInformation) GetRoamerInOutOk() (*RoamerInOut, bool) {
 
 // HasRoamerInOut returns a boolean if a field has been set.
 func (o *UserInformation) HasRoamerInOut() bool {
-	if o != nil && !IsNil(o.RoamerInOut) {
+	if o != nil && !isNil(o.RoamerInOut) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o UserInformation) MarshalJSON() ([]byte, error) {
 
 func (o UserInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServedGPSI) {
+	if !isNil(o.ServedGPSI) {
 		toSerialize["servedGPSI"] = o.ServedGPSI
 	}
-	if !IsNil(o.ServedPEI) {
+	if !isNil(o.ServedPEI) {
 		toSerialize["servedPEI"] = o.ServedPEI
 	}
-	if !IsNil(o.UnauthenticatedFlag) {
+	if !isNil(o.UnauthenticatedFlag) {
 		toSerialize["unauthenticatedFlag"] = o.UnauthenticatedFlag
 	}
-	if !IsNil(o.RoamerInOut) {
+	if !isNil(o.RoamerInOut) {
 		toSerialize["roamerInOut"] = o.RoamerInOut
 	}
 	return toSerialize, nil

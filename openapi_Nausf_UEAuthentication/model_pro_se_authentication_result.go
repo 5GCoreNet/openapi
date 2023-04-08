@@ -46,7 +46,7 @@ func NewProSeAuthenticationResultWithDefaults() *ProSeAuthenticationResult {
 
 // GetKnrProSe returns the KnrProSe field value if set, zero value otherwise.
 func (o *ProSeAuthenticationResult) GetKnrProSe() string {
-	if o == nil || IsNil(o.KnrProSe) {
+	if o == nil || isNil(o.KnrProSe) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ProSeAuthenticationResult) GetKnrProSe() string {
 // GetKnrProSeOk returns a tuple with the KnrProSe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationResult) GetKnrProSeOk() (*string, bool) {
-	if o == nil || IsNil(o.KnrProSe) {
+	if o == nil || isNil(o.KnrProSe) {
 		return nil, false
 	}
 	return o.KnrProSe, true
@@ -64,7 +64,7 @@ func (o *ProSeAuthenticationResult) GetKnrProSeOk() (*string, bool) {
 
 // HasKnrProSe returns a boolean if a field has been set.
 func (o *ProSeAuthenticationResult) HasKnrProSe() bool {
-	if o != nil && !IsNil(o.KnrProSe) {
+	if o != nil && !isNil(o.KnrProSe) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ProSeAuthenticationResult) SetKnrProSe(v string) {
 
 // GetNonce2 returns the Nonce2 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ProSeAuthenticationResult) GetNonce2() string {
-	if o == nil || IsNil(o.Nonce2.Get()) {
+	if o == nil || isNil(o.Nonce2.Get()) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ProSeAuthenticationResult) UnsetNonce2() {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeAuthenticationResult) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ProSeAuthenticationResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -138,7 +138,7 @@ func (o *ProSeAuthenticationResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeAuthenticationResult) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -160,13 +160,13 @@ func (o ProSeAuthenticationResult) MarshalJSON() ([]byte, error) {
 
 func (o ProSeAuthenticationResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.KnrProSe) {
+	if !isNil(o.KnrProSe) {
 		toSerialize["knrProSe"] = o.KnrProSe
 	}
 	if o.Nonce2.IsSet() {
 		toSerialize["nonce2"] = o.Nonce2.Get()
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

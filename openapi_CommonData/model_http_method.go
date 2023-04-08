@@ -17,23 +17,37 @@ import (
 
 // HttpMethod HTTP methodes.
 type HttpMethod struct {
-	string *string
+	HttpMethodAnyOf *HttpMethodAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *HttpMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into HttpMethodAnyOf
+	err = json.Unmarshal(data, &dst.HttpMethodAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonHttpMethodAnyOf, _ := json.Marshal(dst.HttpMethodAnyOf)
+		if string(jsonHttpMethodAnyOf) == "{}" { // empty struct
+			dst.HttpMethodAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.HttpMethodAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.HttpMethodAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(HttpMethod)")
@@ -41,8 +55,12 @@ func (dst *HttpMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *HttpMethod) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.HttpMethodAnyOf != nil {
+		return json.Marshal(&src.HttpMethodAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

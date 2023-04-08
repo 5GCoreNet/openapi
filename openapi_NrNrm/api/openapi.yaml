@@ -3200,7 +3200,15 @@ components:
         \ cause may also be an integer. The mapping of integer values to probable\
         \ causes is vendor specific."
       oneOf:
-      - $ref: '#/components/schemas/ProbableCause_oneOf'
+      - anyOf:
+        - enum:
+          - PROBABLE_CAUSE_001
+          - PROBABLE_CAUSE_002
+          - PROBABLE_CAUSE_003
+          - PROBABLE_CAUSE_004
+          - PROBABLE_CAUSE_005
+          type: string
+        - type: string
       - type: integer
     SpecificProblem:
       oneOf:
@@ -3350,6 +3358,7 @@ components:
             $ref: '#/components/schemas/SubNetwork-Single'
           type: array
       type: object
+      example: null
     MnS_oneOf_1:
       properties:
         ManagedElement:
@@ -3357,6 +3366,7 @@ components:
             $ref: '#/components/schemas/ManagedElement-Single'
           type: array
       type: object
+      example: null
     SubNetwork_Single_allOf:
       properties:
         attributes:
@@ -3463,32 +3473,23 @@ components:
           type: array
       type: object
       example: null
-    GnbDuFunction_Single_allOf_attributes_allOf:
-      properties:
-        gnbDuId:
-          maximum: 68719476735
-          minimum: 0
-          type: number
-        gnbDuName:
-          maxLength: 150
-          type: string
-        gnbId:
-          type: string
-        gnbIdLength:
-          maximum: 32
-          minimum: 22
-          type: integer
-        rimRSReportConf:
-          $ref: '#/components/schemas/RimRSReportConf'
-      type: object
-    GnbDuFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/GnbDuFunction_Single_allOf_attributes_allOf'
     GnbDuFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/GnbDuFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              gnbDuId:
+                $ref: '#/components/schemas/GnbDuId'
+              gnbDuName:
+                $ref: '#/components/schemas/GnbName'
+              gnbId:
+                $ref: '#/components/schemas/GnbId'
+              gnbIdLength:
+                $ref: '#/components/schemas/GnbIdLength'
+              rimRSReportConf:
+                $ref: '#/components/schemas/RimRSReportConf'
+            type: object
       type: object
       example: null
     GnbDuFunction_Single_allOf_1:
@@ -3547,35 +3548,25 @@ components:
           type: array
       type: object
       example: null
-    GnbCuUpFunction_Single_allOf_attributes_allOf:
-      properties:
-        gnbId:
-          type: string
-        gnbIdLength:
-          maximum: 32
-          minimum: 22
-          type: integer
-        gnbCuUpId:
-          maximum: 68719476735
-          minimum: 0
-          type: number
-        plmnInfoList:
-          items:
-            $ref: '#/components/schemas/PlmnInfo'
-          type: array
-        configurable5QISetRef:
-          type: string
-        dynamic5QISetRef:
-          type: string
-      type: object
-    GnbCuUpFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_attributes_allOf'
     GnbCuUpFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/GnbCuUpFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              gnbId:
+                $ref: '#/components/schemas/GnbId'
+              gnbIdLength:
+                $ref: '#/components/schemas/GnbIdLength'
+              gnbCuUpId:
+                $ref: '#/components/schemas/GnbCuUpId'
+              plmnInfoList:
+                $ref: '#/components/schemas/PlmnInfoList'
+              configurable5QISetRef:
+                $ref: '#/components/schemas/Dn'
+              dynamic5QISetRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
     GnbCuUpFunction_Single_allOf_1:
@@ -3608,66 +3599,45 @@ components:
           type: array
       type: object
       example: null
-    GnbCuCpFunction_Single_allOf_attributes_allOf:
-      properties:
-        gnbId:
-          type: string
-        gnbIdLength:
-          maximum: 32
-          minimum: 22
-          type: integer
-        gnbCuName:
-          maxLength: 150
-          type: string
-        plmnId:
-          $ref: '#/components/schemas/PlmnId'
-        x2BlockList:
-          items:
-            $ref: '#/components/schemas/GGnbId'
-          type: array
-        xnBlockList:
-          items:
-            $ref: '#/components/schemas/GGnbId'
-          type: array
-        x2AllowList:
-          items:
-            $ref: '#/components/schemas/GGnbId'
-          type: array
-        xnAllowList:
-          items:
-            $ref: '#/components/schemas/GGnbId'
-          type: array
-        x2HOBlockList:
-          items:
-            $ref: '#/components/schemas/GEnbId'
-          type: array
-        xnHOBlackList:
-          items:
-            $ref: '#/components/schemas/GGnbId'
-          type: array
-        mappingSetIDBackhaulAddress:
-          $ref: '#/components/schemas/MappingSetIDBackhaulAddress'
-        tceMappingInfoList:
-          items:
-            $ref: '#/components/schemas/TceMappingInfo'
-          type: array
-        configurable5QISetRef:
-          type: string
-        dynamic5QISetRef:
-          type: string
-        dCHOControl:
-          type: boolean
-        dDAPSHOControl:
-          type: boolean
-      type: object
-    GnbCuCpFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_attributes_allOf'
     GnbCuCpFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/GnbCuCpFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              gnbId:
+                $ref: '#/components/schemas/GnbId'
+              gnbIdLength:
+                $ref: '#/components/schemas/GnbIdLength'
+              gnbCuName:
+                $ref: '#/components/schemas/GnbName'
+              plmnId:
+                $ref: '#/components/schemas/PlmnId'
+              x2BlockList:
+                $ref: '#/components/schemas/GGnbIdList'
+              xnBlockList:
+                $ref: '#/components/schemas/GGnbIdList'
+              x2AllowList:
+                $ref: '#/components/schemas/GGnbIdList'
+              xnAllowList:
+                $ref: '#/components/schemas/GGnbIdList'
+              x2HOBlockList:
+                $ref: '#/components/schemas/GEnbIdList'
+              xnHOBlackList:
+                $ref: '#/components/schemas/GGnbIdList'
+              mappingSetIDBackhaulAddress:
+                $ref: '#/components/schemas/MappingSetIDBackhaulAddress'
+              tceMappingInfoList:
+                $ref: '#/components/schemas/TceMappingInfoList'
+              configurable5QISetRef:
+                $ref: '#/components/schemas/Dn'
+              dynamic5QISetRef:
+                $ref: '#/components/schemas/Dn'
+              dCHOControl:
+                type: boolean
+              dDAPSHOControl:
+                type: boolean
+            type: object
       type: object
       example: null
     GnbCuCpFunction_Single_allOf_1:
@@ -3710,25 +3680,19 @@ components:
           $ref: '#/components/schemas/DLBOFunction-Single'
       type: object
       example: null
-    NrCellCu_Single_allOf_attributes_allOf:
-      properties:
-        cellLocalId:
-          type: integer
-        plmnInfoList:
-          items:
-            $ref: '#/components/schemas/PlmnInfo'
-          type: array
-        nRFrequencyRef:
-          type: string
-      type: object
-    NrCellCu_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/NrCellCu_Single_allOf_attributes_allOf'
     NrCellCu_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/NrCellCu_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              cellLocalId:
+                type: integer
+              plmnInfoList:
+                $ref: '#/components/schemas/PlmnInfoList'
+              nRFrequencyRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
     NrCellCu_Single_allOf_1:
@@ -3765,98 +3729,86 @@ components:
           $ref: '#/components/schemas/DPCIConfigurationFunction-Single'
       type: object
       example: null
-    NrCellDu_Single_allOf_attributes_allOf:
-      properties:
-        administrativeState:
-          $ref: '#/components/schemas/AdministrativeState'
-        operationalState:
-          $ref: '#/components/schemas/OperationalState'
-        cellLocalId:
-          type: integer
-        cellState:
-          $ref: '#/components/schemas/CellState'
-        plmnInfoList:
-          items:
-            $ref: '#/components/schemas/PlmnInfo'
-          type: array
-        npnIdentityList:
-          items:
-            $ref: '#/components/schemas/NpnIdentity'
-          type: array
-        nrPci:
-          maximum: 503
-          type: integer
-        nrTac:
-          maximum: 16777215
-          type: integer
-        arfcnDL:
-          type: integer
-        arfcnUL:
-          type: integer
-        arfcnSUL:
-          type: integer
-        bSChannelBwDL:
-          type: integer
-        bSChannelBwUL:
-          type: integer
-        bSChannelBwSUL:
-          type: integer
-        ssbFrequency:
-          maximum: 3279165
-          minimum: 0
-          type: integer
-        ssbPeriodicity:
-          $ref: '#/components/schemas/SsbPeriodicity'
-        ssbSubCarrierSpacing:
-          $ref: '#/components/schemas/SsbSubCarrierSpacing'
-        ssbOffset:
-          maximum: 159
-          minimum: 0
-          type: integer
-        ssbDuration:
-          $ref: '#/components/schemas/SsbDuration'
-        nrSectorCarrierRef:
-          items:
-            $ref: '#/components/schemas/Dn'
-          type: array
-        bwpRef:
-          description: Condition is BWP sets are not supported
-          items:
-            $ref: '#/components/schemas/Dn'
-          type: array
-        bwpSetRef:
-          items:
-            $ref: '#/components/schemas/Dn'
-          type: array
-        rimRSMonitoringStartTime:
-          type: string
-        rimRSMonitoringStopTime:
-          type: string
-        rimRSMonitoringWindowDuration:
-          type: integer
-        rimRSMonitoringWindowStartingOffset:
-          type: integer
-        rimRSMonitoringWindowPeriodicity:
-          type: integer
-        rimRSMonitoringOccasionInterval:
-          type: integer
-        rimRSMonitoringOccasionStartingOffset:
-          type: integer
-        nRFrequencyRef:
-          type: string
-        victimSetRef:
-          type: string
-        aggressorSetRef:
-          type: string
-      type: object
-    NrCellDu_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/NrCellDu_Single_allOf_attributes_allOf'
     NrCellDu_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/NrCellDu_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              administrativeState:
+                $ref: '#/components/schemas/AdministrativeState'
+              operationalState:
+                $ref: '#/components/schemas/OperationalState'
+              cellLocalId:
+                type: integer
+              cellState:
+                $ref: '#/components/schemas/CellState'
+              plmnInfoList:
+                $ref: '#/components/schemas/PlmnInfoList'
+              npnIdentityList:
+                $ref: '#/components/schemas/NpnIdentityList'
+              nrPci:
+                $ref: '#/components/schemas/NrPci'
+              nrTac:
+                $ref: '#/components/schemas/NrTac'
+              arfcnDL:
+                type: integer
+              arfcnUL:
+                type: integer
+              arfcnSUL:
+                type: integer
+              bSChannelBwDL:
+                type: integer
+              bSChannelBwUL:
+                type: integer
+              bSChannelBwSUL:
+                type: integer
+              ssbFrequency:
+                maximum: 3279165
+                minimum: 0
+                type: integer
+              ssbPeriodicity:
+                $ref: '#/components/schemas/SsbPeriodicity'
+              ssbSubCarrierSpacing:
+                $ref: '#/components/schemas/SsbSubCarrierSpacing'
+              ssbOffset:
+                maximum: 159
+                minimum: 0
+                type: integer
+              ssbDuration:
+                $ref: '#/components/schemas/SsbDuration'
+              nrSectorCarrierRef:
+                items:
+                  $ref: '#/components/schemas/Dn'
+                type: array
+              bwpRef:
+                description: Condition is BWP sets are not supported
+                items:
+                  $ref: '#/components/schemas/Dn'
+                type: array
+              bwpSetRef:
+                $ref: '#/components/schemas/DnList'
+              rimRSMonitoringStartTime:
+                type: string
+              rimRSMonitoringStopTime:
+                type: string
+              rimRSMonitoringWindowDuration:
+                type: integer
+              rimRSMonitoringWindowStartingOffset:
+                type: integer
+              rimRSMonitoringWindowPeriodicity:
+                type: integer
+              rimRSMonitoringOccasionInterval:
+                type: integer
+              rimRSMonitoringOccasionStartingOffset:
+                type: integer
+              nRFrequencyRef:
+                $ref: '#/components/schemas/Dn'
+              victimSetRef:
+                $ref: '#/components/schemas/Dn'
+              aggressorSetRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
     NrCellDu_Single_allOf_1:
@@ -3936,31 +3888,27 @@ components:
           $ref: '#/components/schemas/EUtranFrequency_Single_allOf_attributes'
       type: object
       example: null
-    NrSectorCarrier_Single_allOf_attributes_allOf:
-      properties:
-        txDirection:
-          $ref: '#/components/schemas/TxDirection'
-        configuredMaxTxPower:
-          type: integer
-        arfcnDL:
-          type: integer
-        arfcnUL:
-          type: integer
-        bSChannelBwDL:
-          type: integer
-        bSChannelBwUL:
-          type: integer
-        sectorEquipmentFunctionRef:
-          type: string
-      type: object
-    NrSectorCarrier_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_attributes_allOf'
     NrSectorCarrier_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/NrSectorCarrier_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              txDirection:
+                $ref: '#/components/schemas/TxDirection'
+              configuredMaxTxPower:
+                type: integer
+              arfcnDL:
+                type: integer
+              arfcnUL:
+                type: integer
+              bSChannelBwDL:
+                type: integer
+              bSChannelBwUL:
+                type: integer
+              sectorEquipmentFunctionRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
     NrSectorCarrier_Single_allOf_1:
@@ -3969,52 +3917,39 @@ components:
           $ref: '#/components/schemas/CommonBeamformingFunction-Single'
       type: object
       example: null
-    Bwp_Single_allOf_attributes_allOf:
-      properties:
-        bwpContext:
-          $ref: '#/components/schemas/BwpContext'
-        isInitialBwp:
-          $ref: '#/components/schemas/IsInitialBwp'
-        subCarrierSpacing:
-          type: integer
-        cyclicPrefix:
-          $ref: '#/components/schemas/CyclicPrefix'
-        startRB:
-          type: integer
-        numberOfRBs:
-          type: integer
-      type: object
-    Bwp_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/Bwp_Single_allOf_attributes_allOf'
     Bwp_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/Bwp_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              bwpContext:
+                $ref: '#/components/schemas/BwpContext'
+              isInitialBwp:
+                $ref: '#/components/schemas/IsInitialBwp'
+              subCarrierSpacing:
+                type: integer
+              cyclicPrefix:
+                $ref: '#/components/schemas/CyclicPrefix'
+              startRB:
+                type: integer
+              numberOfRBs:
+                type: integer
+            type: object
       type: object
       example: null
-    CommonBeamformingFunction_Single_allOf_attributes_allOf:
-      properties:
-        coverageShape:
-          maximum: 65535
-          type: integer
-        digitalAzimuth:
-          maximum: 1800
-          minimum: -1800
-          type: integer
-        digitalTilt:
-          maximum: 900
-          minimum: -900
-          type: integer
-      type: object
-    CommonBeamformingFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_attributes_allOf'
     CommonBeamformingFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/CommonBeamformingFunction_Single_allOf_attributes'
+          allOf:
+          - properties:
+              coverageShape:
+                $ref: '#/components/schemas/CoverageShape'
+              digitalAzimuth:
+                $ref: '#/components/schemas/DigitalAzimuth'
+              digitalTilt:
+                $ref: '#/components/schemas/DigitalTilt'
+            type: object
       type: object
       example: null
     CommonBeamformingFunction_Single_allOf_1:
@@ -4025,57 +3960,49 @@ components:
           type: array
       type: object
       example: null
-    Beam_Single_allOf_attributes_allOf:
-      properties:
-        beamIndex:
-          type: integer
-        beamType:
-          enum:
-          - SSB-BEAM
-          type: string
-        beamAzimuth:
-          maximum: 1800
-          minimum: -1800
-          type: integer
-        beamTilt:
-          maximum: 900
-          minimum: -900
-          type: integer
-        beamHorizWidth:
-          maximum: 3599
-          minimum: 0
-          type: integer
-        beamVertWidth:
-          maximum: 1800
-          minimum: 0
-          type: integer
-      type: object
-    Beam_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/Beam_Single_allOf_attributes_allOf'
     Beam_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/Beam_Single_allOf_attributes'
+          allOf:
+          - properties:
+              beamIndex:
+                type: integer
+              beamType:
+                enum:
+                - SSB-BEAM
+                type: string
+              beamAzimuth:
+                maximum: 1800
+                minimum: -1800
+                type: integer
+              beamTilt:
+                maximum: 900
+                minimum: -900
+                type: integer
+              beamHorizWidth:
+                maximum: 3599
+                minimum: 0
+                type: integer
+              beamVertWidth:
+                maximum: 1800
+                minimum: 0
+                type: integer
+            type: object
       type: object
       example: null
-    RRMPolicyRatio_Single_allOf_attributes_allOf:
-      properties:
-        rRMPolicyMaxRatio:
-          type: integer
-        rRMPolicyMinRatio:
-          type: integer
-        rRMPolicyDedicatedRatio:
-          type: integer
-      type: object
-    RRMPolicyRatio_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/RrmPolicy_-Attr'
-      - $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf_attributes_allOf'
     RRMPolicyRatio_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/RRMPolicyRatio_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/RrmPolicy_-Attr'
+          - properties:
+              rRMPolicyMaxRatio:
+                type: integer
+              rRMPolicyMinRatio:
+                type: integer
+              rRMPolicyDedicatedRatio:
+                type: integer
+            type: object
       type: object
       example: null
     NRCellRelation_Single_allOf_attributes:
@@ -4106,19 +4033,15 @@ components:
           $ref: '#/components/schemas/NRCellRelation_Single_allOf_attributes'
       type: object
       example: null
-    EUtranCellRelation_Single_allOf_attributes_allOf:
-      properties:
-        adjacentEUtranCellRef:
-          type: string
-      type: object
-    EUtranCellRelation_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/EUtranCellRelation_Single_allOf_attributes_allOf'
     EUtranCellRelation_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/EUtranCellRelation_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              adjacentEUtranCellRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
     NRFreqRelation_Single_allOf_attributes:
@@ -4468,23 +4391,17 @@ components:
           $ref: '#/components/schemas/RimRSSet_Single_allOf_attributes'
       type: object
       example: null
-    ExternalGnbDuFunction_Single_allOf_attributes_allOf:
-      properties:
-        gnbId:
-          type: string
-        gnbIdLength:
-          maximum: 32
-          minimum: 22
-          type: integer
-      type: object
-    ExternalGnbDuFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_attributes_allOf'
     ExternalGnbDuFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/ExternalGnbDuFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              gnbId:
+                $ref: '#/components/schemas/GnbId'
+              gnbIdLength:
+                $ref: '#/components/schemas/GnbIdLength'
+            type: object
       type: object
       example: null
     ExternalGnbDuFunction_Single_allOf_1:
@@ -4515,25 +4432,19 @@ components:
           type: array
       type: object
       example: null
-    ExternalGnbCuCpFunction_Single_allOf_attributes_allOf:
-      properties:
-        gnbId:
-          type: string
-        gnbIdLength:
-          maximum: 32
-          minimum: 22
-          type: integer
-        plmnId:
-          $ref: '#/components/schemas/PlmnId'
-      type: object
-    ExternalGnbCuCpFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_attributes_allOf'
     ExternalGnbCuCpFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/ExternalGnbCuCpFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              gnbId:
+                $ref: '#/components/schemas/GnbId'
+              gnbIdLength:
+                $ref: '#/components/schemas/GnbIdLength'
+              plmnId:
+                $ref: '#/components/schemas/PlmnId'
+            type: object
       type: object
       example: null
     ExternalGnbCuCpFunction_Single_allOf_1:
@@ -4556,43 +4467,32 @@ components:
           type: array
       type: object
       example: null
-    ExternalNrCellCu_Single_allOf_attributes_allOf:
-      properties:
-        cellLocalId:
-          type: integer
-        nrPci:
-          maximum: 503
-          type: integer
-        plmnIdList:
-          items:
-            $ref: '#/components/schemas/PlmnId'
-          type: array
-        nRFrequencyRef:
-          type: string
-      type: object
-    ExternalNrCellCu_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf_attributes_allOf'
     ExternalNrCellCu_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/ExternalNrCellCu_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              cellLocalId:
+                type: integer
+              nrPci:
+                $ref: '#/components/schemas/NrPci'
+              plmnIdList:
+                $ref: '#/components/schemas/PlmnIdList'
+              nRFrequencyRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
-    ExternalENBFunction_Single_allOf_attributes_allOf:
-      properties:
-        eNBId:
-          type: integer
-      type: object
-    ExternalENBFunction_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_attributes_allOf'
     ExternalENBFunction_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/ExternalENBFunction_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              eNBId:
+                type: integer
+            type: object
       type: object
       example: null
     ExternalENBFunction_Single_allOf_1:
@@ -4603,57 +4503,43 @@ components:
           type: array
       type: object
       example: null
-    ExternalEUTranCell_Single_allOf_attributes_allOf:
-      properties:
-        EUtranFrequencyRef:
-          type: string
-      type: object
-    ExternalEUTranCell_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/ManagedFunction-Attr'
-      - $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf_attributes_allOf'
     ExternalEUTranCell_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/ExternalEUTranCell_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/ManagedFunction-Attr'
+          - properties:
+              EUtranFrequencyRef:
+                $ref: '#/components/schemas/Dn'
+            type: object
       type: object
       example: null
-    EP_XnC_Single_allOf_attributes_allOf:
-      properties:
-        localAddress:
-          $ref: '#/components/schemas/LocalAddress'
-        remoteAddress:
-          $ref: '#/components/schemas/RemoteAddress'
-      type: object
-    EP_XnC_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/EP_RP-Attr'
-      - $ref: '#/components/schemas/EP_XnC_Single_allOf_attributes_allOf'
     EP_XnC_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/EP_XnC_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/EP_RP-Attr'
+          - properties:
+              localAddress:
+                $ref: '#/components/schemas/LocalAddress'
+              remoteAddress:
+                $ref: '#/components/schemas/RemoteAddress'
+            type: object
       type: object
       example: null
-    EP_F1U_Single_allOf_attributes_allOf:
-      properties:
-        localAddress:
-          $ref: '#/components/schemas/LocalAddress'
-        remoteAddress:
-          $ref: '#/components/schemas/RemoteAddress'
-        epTransportRefs:
-          items:
-            $ref: '#/components/schemas/Dn'
-          type: array
-      type: object
-    EP_F1U_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/EP_RP-Attr'
-      - $ref: '#/components/schemas/EP_F1U_Single_allOf_attributes_allOf'
     EP_F1U_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/EP_F1U_Single_allOf_attributes'
+          allOf:
+          - $ref: '#/components/schemas/EP_RP-Attr'
+          - properties:
+              localAddress:
+                $ref: '#/components/schemas/LocalAddress'
+              remoteAddress:
+                $ref: '#/components/schemas/RemoteAddress'
+              epTransportRefs:
+                $ref: '#/components/schemas/DnList'
+            type: object
       type: object
       example: null
     CCOFunction_Single_allOf_attributes:
@@ -4799,6 +4685,7 @@ components:
         fileReportingPeriod:
           type: integer
       type: object
+      example: null
     ReportingCtrl_oneOf_1:
       properties:
         fileReportingPeriod:
@@ -4806,11 +4693,13 @@ components:
         fileLocation:
           type: string
       type: object
+      example: null
     ReportingCtrl_oneOf_2:
       properties:
         streamTarget:
           type: string
       type: object
+      example: null
     Files_Single_allOf_attributes:
       properties:
         numberOfFiles:
@@ -5086,20 +4975,14 @@ components:
         - OTHER
         type: string
       - type: string
-    Configurable5QISet_Single_allOf_attributes_allOf:
-      properties:
-        configurable5QIs:
-          items:
-            $ref: '#/components/schemas/FiveQICharacteristics-Single'
-          type: array
-      type: object
-    Configurable5QISet_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/Configurable5QISet_Single_allOf_attributes_allOf'
     Configurable5QISet_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/Configurable5QISet_Single_allOf_attributes'
+          allOf:
+          - properties:
+              configurable5QIs:
+                $ref: '#/components/schemas/FiveQICharacteristics-Multiple'
+            type: object
       type: object
       example: null
     FiveQICharacteristics_Single_allOf:
@@ -5123,20 +5006,14 @@ components:
           type: integer
       type: object
       example: null
-    Dynamic5QISet_Single_allOf_attributes_allOf:
-      properties:
-        dynamic5QIs:
-          items:
-            $ref: '#/components/schemas/FiveQICharacteristics-Single'
-          type: array
-      type: object
-    Dynamic5QISet_Single_allOf_attributes:
-      allOf:
-      - $ref: '#/components/schemas/Dynamic5QISet_Single_allOf_attributes_allOf'
     Dynamic5QISet_Single_allOf:
       properties:
         attributes:
-          $ref: '#/components/schemas/Dynamic5QISet_Single_allOf_attributes'
+          allOf:
+          - properties:
+              dynamic5QIs:
+                $ref: '#/components/schemas/FiveQICharacteristics-Multiple'
+            type: object
       type: object
       example: null
     ManagedNFService_Single_allOf_attributes:
@@ -5167,23 +5044,15 @@ components:
           $ref: '#/components/schemas/ManagedNFService_Single_allOf_attributes'
       type: object
       example: null
-    ProbableCause_oneOf:
-      anyOf:
-      - enum:
-        - PROBABLE_CAUSE_001
-        - PROBABLE_CAUSE_002
-        - PROBABLE_CAUSE_003
-        - PROBABLE_CAUSE_004
-        - PROBABLE_CAUSE_005
-        type: string
-      - type: string
     ThresholdLevelInd_oneOf:
       properties:
         up:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null
     ThresholdLevelInd_oneOf_1:
       properties:
         down:
           $ref: '#/components/schemas/ThresholdHysteresis'
       type: object
+      example: null

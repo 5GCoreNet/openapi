@@ -104,7 +104,7 @@ func (o *UpPathChangeInfo) SetDnaiChgType(v DnaiChangeType) {
 
 // GetSourceTrafficRoute returns the SourceTrafficRoute field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpPathChangeInfo) GetSourceTrafficRoute() RouteToLocation {
-	if o == nil || IsNil(o.SourceTrafficRoute.Get()) {
+	if o == nil || isNil(o.SourceTrafficRoute.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *UpPathChangeInfo) UnsetSourceTrafficRoute() {
 
 // GetTargetTrafficRoute returns the TargetTrafficRoute field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UpPathChangeInfo) GetTargetTrafficRoute() RouteToLocation {
-	if o == nil || IsNil(o.TargetTrafficRoute.Get()) {
+	if o == nil || isNil(o.TargetTrafficRoute.Get()) {
 		var ret RouteToLocation
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *UpPathChangeInfo) UnsetTargetTrafficRoute() {
 
 // GetSourceDnai returns the SourceDnai field value if set, zero value otherwise.
 func (o *UpPathChangeInfo) GetSourceDnai() string {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *UpPathChangeInfo) GetSourceDnai() string {
 // GetSourceDnaiOk returns a tuple with the SourceDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChangeInfo) GetSourceDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		return nil, false
 	}
 	return o.SourceDnai, true
@@ -206,7 +206,7 @@ func (o *UpPathChangeInfo) GetSourceDnaiOk() (*string, bool) {
 
 // HasSourceDnai returns a boolean if a field has been set.
 func (o *UpPathChangeInfo) HasSourceDnai() bool {
-	if o != nil && !IsNil(o.SourceDnai) {
+	if o != nil && !isNil(o.SourceDnai) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *UpPathChangeInfo) SetSourceDnai(v string) {
 
 // GetTargetDnai returns the TargetDnai field value if set, zero value otherwise.
 func (o *UpPathChangeInfo) GetTargetDnai() string {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		var ret string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *UpPathChangeInfo) GetTargetDnai() string {
 // GetTargetDnaiOk returns a tuple with the TargetDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChangeInfo) GetTargetDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetDnai) {
+	if o == nil || isNil(o.TargetDnai) {
 		return nil, false
 	}
 	return o.TargetDnai, true
@@ -238,7 +238,7 @@ func (o *UpPathChangeInfo) GetTargetDnaiOk() (*string, bool) {
 
 // HasTargetDnai returns a boolean if a field has been set.
 func (o *UpPathChangeInfo) HasTargetDnai() bool {
-	if o != nil && !IsNil(o.TargetDnai) {
+	if o != nil && !isNil(o.TargetDnai) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *UpPathChangeInfo) SetTargetDnai(v string) {
 
 // GetSrcUeIpv4Addr returns the SrcUeIpv4Addr field value if set, zero value otherwise.
 func (o *UpPathChangeInfo) GetSrcUeIpv4Addr() string {
-	if o == nil || IsNil(o.SrcUeIpv4Addr) {
+	if o == nil || isNil(o.SrcUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *UpPathChangeInfo) GetSrcUeIpv4Addr() string {
 // GetSrcUeIpv4AddrOk returns a tuple with the SrcUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChangeInfo) GetSrcUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.SrcUeIpv4Addr) {
+	if o == nil || isNil(o.SrcUeIpv4Addr) {
 		return nil, false
 	}
 	return o.SrcUeIpv4Addr, true
@@ -270,7 +270,7 @@ func (o *UpPathChangeInfo) GetSrcUeIpv4AddrOk() (*string, bool) {
 
 // HasSrcUeIpv4Addr returns a boolean if a field has been set.
 func (o *UpPathChangeInfo) HasSrcUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.SrcUeIpv4Addr) {
+	if o != nil && !isNil(o.SrcUeIpv4Addr) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *UpPathChangeInfo) SetSrcUeIpv4Addr(v string) {
 
 // GetSrcUeIpv6Prefix returns the SrcUeIpv6Prefix field value if set, zero value otherwise.
 func (o *UpPathChangeInfo) GetSrcUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.SrcUeIpv6Prefix) {
+	if o == nil || isNil(o.SrcUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *UpPathChangeInfo) GetSrcUeIpv6Prefix() Ipv6Prefix {
 // GetSrcUeIpv6PrefixOk returns a tuple with the SrcUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChangeInfo) GetSrcUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.SrcUeIpv6Prefix) {
+	if o == nil || isNil(o.SrcUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.SrcUeIpv6Prefix, true
@@ -302,7 +302,7 @@ func (o *UpPathChangeInfo) GetSrcUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasSrcUeIpv6Prefix returns a boolean if a field has been set.
 func (o *UpPathChangeInfo) HasSrcUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.SrcUeIpv6Prefix) {
+	if o != nil && !isNil(o.SrcUeIpv6Prefix) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *UpPathChangeInfo) SetSrcUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetTgtUeIpv4Addr returns the TgtUeIpv4Addr field value if set, zero value otherwise.
 func (o *UpPathChangeInfo) GetTgtUeIpv4Addr() string {
-	if o == nil || IsNil(o.TgtUeIpv4Addr) {
+	if o == nil || isNil(o.TgtUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *UpPathChangeInfo) GetTgtUeIpv4Addr() string {
 // GetTgtUeIpv4AddrOk returns a tuple with the TgtUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChangeInfo) GetTgtUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.TgtUeIpv4Addr) {
+	if o == nil || isNil(o.TgtUeIpv4Addr) {
 		return nil, false
 	}
 	return o.TgtUeIpv4Addr, true
@@ -334,7 +334,7 @@ func (o *UpPathChangeInfo) GetTgtUeIpv4AddrOk() (*string, bool) {
 
 // HasTgtUeIpv4Addr returns a boolean if a field has been set.
 func (o *UpPathChangeInfo) HasTgtUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.TgtUeIpv4Addr) {
+	if o != nil && !isNil(o.TgtUeIpv4Addr) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *UpPathChangeInfo) SetTgtUeIpv4Addr(v string) {
 
 // GetTgtUeIpv6Prefix returns the TgtUeIpv6Prefix field value if set, zero value otherwise.
 func (o *UpPathChangeInfo) GetTgtUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.TgtUeIpv6Prefix) {
+	if o == nil || isNil(o.TgtUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *UpPathChangeInfo) GetTgtUeIpv6Prefix() Ipv6Prefix {
 // GetTgtUeIpv6PrefixOk returns a tuple with the TgtUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChangeInfo) GetTgtUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.TgtUeIpv6Prefix) {
+	if o == nil || isNil(o.TgtUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.TgtUeIpv6Prefix, true
@@ -366,7 +366,7 @@ func (o *UpPathChangeInfo) GetTgtUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasTgtUeIpv6Prefix returns a boolean if a field has been set.
 func (o *UpPathChangeInfo) HasTgtUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.TgtUeIpv6Prefix) {
+	if o != nil && !isNil(o.TgtUeIpv6Prefix) {
 		return true
 	}
 
@@ -396,22 +396,22 @@ func (o UpPathChangeInfo) ToMap() (map[string]interface{}, error) {
 	if o.TargetTrafficRoute.IsSet() {
 		toSerialize["targetTrafficRoute"] = o.TargetTrafficRoute.Get()
 	}
-	if !IsNil(o.SourceDnai) {
+	if !isNil(o.SourceDnai) {
 		toSerialize["sourceDnai"] = o.SourceDnai
 	}
-	if !IsNil(o.TargetDnai) {
+	if !isNil(o.TargetDnai) {
 		toSerialize["targetDnai"] = o.TargetDnai
 	}
-	if !IsNil(o.SrcUeIpv4Addr) {
+	if !isNil(o.SrcUeIpv4Addr) {
 		toSerialize["srcUeIpv4Addr"] = o.SrcUeIpv4Addr
 	}
-	if !IsNil(o.SrcUeIpv6Prefix) {
+	if !isNil(o.SrcUeIpv6Prefix) {
 		toSerialize["srcUeIpv6Prefix"] = o.SrcUeIpv6Prefix
 	}
-	if !IsNil(o.TgtUeIpv4Addr) {
+	if !isNil(o.TgtUeIpv4Addr) {
 		toSerialize["tgtUeIpv4Addr"] = o.TgtUeIpv4Addr
 	}
-	if !IsNil(o.TgtUeIpv6Prefix) {
+	if !isNil(o.TgtUeIpv6Prefix) {
 		toSerialize["tgtUeIpv6Prefix"] = o.TgtUeIpv6Prefix
 	}
 	return toSerialize, nil

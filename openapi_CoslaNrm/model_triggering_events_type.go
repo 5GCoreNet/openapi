@@ -59,7 +59,7 @@ func NewTriggeringEventsTypeWithDefaults() *TriggeringEventsType {
 
 // GetMSC_SERVER returns the MSC_SERVER field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetMSC_SERVER() []string {
-	if o == nil || IsNil(o.MSC_SERVER) {
+	if o == nil || isNil(o.MSC_SERVER) {
 		var ret []string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *TriggeringEventsType) GetMSC_SERVER() []string {
 // GetMSC_SERVEROk returns a tuple with the MSC_SERVER field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetMSC_SERVEROk() ([]string, bool) {
-	if o == nil || IsNil(o.MSC_SERVER) {
+	if o == nil || isNil(o.MSC_SERVER) {
 		return nil, false
 	}
 	return o.MSC_SERVER, true
@@ -77,7 +77,7 @@ func (o *TriggeringEventsType) GetMSC_SERVEROk() ([]string, bool) {
 
 // HasMSC_SERVER returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasMSC_SERVER() bool {
-	if o != nil && !IsNil(o.MSC_SERVER) {
+	if o != nil && !isNil(o.MSC_SERVER) {
 		return true
 	}
 
@@ -91,7 +91,7 @@ func (o *TriggeringEventsType) SetMSC_SERVER(v []string) {
 
 // GetSGSN returns the SGSN field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetSGSN() []string {
-	if o == nil || IsNil(o.SGSN) {
+	if o == nil || isNil(o.SGSN) {
 		var ret []string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *TriggeringEventsType) GetSGSN() []string {
 // GetSGSNOk returns a tuple with the SGSN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetSGSNOk() ([]string, bool) {
-	if o == nil || IsNil(o.SGSN) {
+	if o == nil || isNil(o.SGSN) {
 		return nil, false
 	}
 	return o.SGSN, true
@@ -109,7 +109,7 @@ func (o *TriggeringEventsType) GetSGSNOk() ([]string, bool) {
 
 // HasSGSN returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasSGSN() bool {
-	if o != nil && !IsNil(o.SGSN) {
+	if o != nil && !isNil(o.SGSN) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *TriggeringEventsType) SetSGSN(v []string) {
 
 // GetMGW returns the MGW field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetMGW() []string {
-	if o == nil || IsNil(o.MGW) {
+	if o == nil || isNil(o.MGW) {
 		var ret []string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *TriggeringEventsType) GetMGW() []string {
 // GetMGWOk returns a tuple with the MGW field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetMGWOk() ([]string, bool) {
-	if o == nil || IsNil(o.MGW) {
+	if o == nil || isNil(o.MGW) {
 		return nil, false
 	}
 	return o.MGW, true
@@ -141,7 +141,7 @@ func (o *TriggeringEventsType) GetMGWOk() ([]string, bool) {
 
 // HasMGW returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasMGW() bool {
-	if o != nil && !IsNil(o.MGW) {
+	if o != nil && !isNil(o.MGW) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *TriggeringEventsType) SetMGW(v []string) {
 
 // GetGGSN returns the GGSN field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetGGSN() []string {
-	if o == nil || IsNil(o.GGSN) {
+	if o == nil || isNil(o.GGSN) {
 		var ret []string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *TriggeringEventsType) GetGGSN() []string {
 // GetGGSNOk returns a tuple with the GGSN field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetGGSNOk() ([]string, bool) {
-	if o == nil || IsNil(o.GGSN) {
+	if o == nil || isNil(o.GGSN) {
 		return nil, false
 	}
 	return o.GGSN, true
@@ -173,7 +173,7 @@ func (o *TriggeringEventsType) GetGGSNOk() ([]string, bool) {
 
 // HasGGSN returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasGGSN() bool {
-	if o != nil && !IsNil(o.GGSN) {
+	if o != nil && !isNil(o.GGSN) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *TriggeringEventsType) SetGGSN(v []string) {
 
 // GetIMS returns the IMS field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetIMS() []string {
-	if o == nil || IsNil(o.IMS) {
+	if o == nil || isNil(o.IMS) {
 		var ret []string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *TriggeringEventsType) GetIMS() []string {
 // GetIMSOk returns a tuple with the IMS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetIMSOk() ([]string, bool) {
-	if o == nil || IsNil(o.IMS) {
+	if o == nil || isNil(o.IMS) {
 		return nil, false
 	}
 	return o.IMS, true
@@ -205,7 +205,7 @@ func (o *TriggeringEventsType) GetIMSOk() ([]string, bool) {
 
 // HasIMS returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasIMS() bool {
-	if o != nil && !IsNil(o.IMS) {
+	if o != nil && !isNil(o.IMS) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *TriggeringEventsType) SetIMS(v []string) {
 
 // GetBM_SC returns the BM_SC field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetBM_SC() []string {
-	if o == nil || IsNil(o.BM_SC) {
+	if o == nil || isNil(o.BM_SC) {
 		var ret []string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *TriggeringEventsType) GetBM_SC() []string {
 // GetBM_SCOk returns a tuple with the BM_SC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetBM_SCOk() ([]string, bool) {
-	if o == nil || IsNil(o.BM_SC) {
+	if o == nil || isNil(o.BM_SC) {
 		return nil, false
 	}
 	return o.BM_SC, true
@@ -237,7 +237,7 @@ func (o *TriggeringEventsType) GetBM_SCOk() ([]string, bool) {
 
 // HasBM_SC returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasBM_SC() bool {
-	if o != nil && !IsNil(o.BM_SC) {
+	if o != nil && !isNil(o.BM_SC) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *TriggeringEventsType) SetBM_SC(v []string) {
 
 // GetMME returns the MME field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetMME() []string {
-	if o == nil || IsNil(o.MME) {
+	if o == nil || isNil(o.MME) {
 		var ret []string
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *TriggeringEventsType) GetMME() []string {
 // GetMMEOk returns a tuple with the MME field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetMMEOk() ([]string, bool) {
-	if o == nil || IsNil(o.MME) {
+	if o == nil || isNil(o.MME) {
 		return nil, false
 	}
 	return o.MME, true
@@ -269,7 +269,7 @@ func (o *TriggeringEventsType) GetMMEOk() ([]string, bool) {
 
 // HasMME returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasMME() bool {
-	if o != nil && !IsNil(o.MME) {
+	if o != nil && !isNil(o.MME) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *TriggeringEventsType) SetMME(v []string) {
 
 // GetSGW returns the SGW field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetSGW() []string {
-	if o == nil || IsNil(o.SGW) {
+	if o == nil || isNil(o.SGW) {
 		var ret []string
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *TriggeringEventsType) GetSGW() []string {
 // GetSGWOk returns a tuple with the SGW field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetSGWOk() ([]string, bool) {
-	if o == nil || IsNil(o.SGW) {
+	if o == nil || isNil(o.SGW) {
 		return nil, false
 	}
 	return o.SGW, true
@@ -301,7 +301,7 @@ func (o *TriggeringEventsType) GetSGWOk() ([]string, bool) {
 
 // HasSGW returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasSGW() bool {
-	if o != nil && !IsNil(o.SGW) {
+	if o != nil && !isNil(o.SGW) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *TriggeringEventsType) SetSGW(v []string) {
 
 // GetPGW returns the PGW field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetPGW() []string {
-	if o == nil || IsNil(o.PGW) {
+	if o == nil || isNil(o.PGW) {
 		var ret []string
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *TriggeringEventsType) GetPGW() []string {
 // GetPGWOk returns a tuple with the PGW field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetPGWOk() ([]string, bool) {
-	if o == nil || IsNil(o.PGW) {
+	if o == nil || isNil(o.PGW) {
 		return nil, false
 	}
 	return o.PGW, true
@@ -333,7 +333,7 @@ func (o *TriggeringEventsType) GetPGWOk() ([]string, bool) {
 
 // HasPGW returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasPGW() bool {
-	if o != nil && !IsNil(o.PGW) {
+	if o != nil && !isNil(o.PGW) {
 		return true
 	}
 
@@ -347,7 +347,7 @@ func (o *TriggeringEventsType) SetPGW(v []string) {
 
 // GetAMF returns the AMF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetAMF() []string {
-	if o == nil || IsNil(o.AMF) {
+	if o == nil || isNil(o.AMF) {
 		var ret []string
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *TriggeringEventsType) GetAMF() []string {
 // GetAMFOk returns a tuple with the AMF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetAMFOk() ([]string, bool) {
-	if o == nil || IsNil(o.AMF) {
+	if o == nil || isNil(o.AMF) {
 		return nil, false
 	}
 	return o.AMF, true
@@ -365,7 +365,7 @@ func (o *TriggeringEventsType) GetAMFOk() ([]string, bool) {
 
 // HasAMF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasAMF() bool {
-	if o != nil && !IsNil(o.AMF) {
+	if o != nil && !isNil(o.AMF) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *TriggeringEventsType) SetAMF(v []string) {
 
 // GetSMF returns the SMF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetSMF() []string {
-	if o == nil || IsNil(o.SMF) {
+	if o == nil || isNil(o.SMF) {
 		var ret []string
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *TriggeringEventsType) GetSMF() []string {
 // GetSMFOk returns a tuple with the SMF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetSMFOk() ([]string, bool) {
-	if o == nil || IsNil(o.SMF) {
+	if o == nil || isNil(o.SMF) {
 		return nil, false
 	}
 	return o.SMF, true
@@ -397,7 +397,7 @@ func (o *TriggeringEventsType) GetSMFOk() ([]string, bool) {
 
 // HasSMF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasSMF() bool {
-	if o != nil && !IsNil(o.SMF) {
+	if o != nil && !isNil(o.SMF) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *TriggeringEventsType) SetSMF(v []string) {
 
 // GetPCF returns the PCF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetPCF() []string {
-	if o == nil || IsNil(o.PCF) {
+	if o == nil || isNil(o.PCF) {
 		var ret []string
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *TriggeringEventsType) GetPCF() []string {
 // GetPCFOk returns a tuple with the PCF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetPCFOk() ([]string, bool) {
-	if o == nil || IsNil(o.PCF) {
+	if o == nil || isNil(o.PCF) {
 		return nil, false
 	}
 	return o.PCF, true
@@ -429,7 +429,7 @@ func (o *TriggeringEventsType) GetPCFOk() ([]string, bool) {
 
 // HasPCF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasPCF() bool {
-	if o != nil && !IsNil(o.PCF) {
+	if o != nil && !isNil(o.PCF) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *TriggeringEventsType) SetPCF(v []string) {
 
 // GetUPF returns the UPF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetUPF() []string {
-	if o == nil || IsNil(o.UPF) {
+	if o == nil || isNil(o.UPF) {
 		var ret []string
 		return ret
 	}
@@ -453,7 +453,7 @@ func (o *TriggeringEventsType) GetUPF() []string {
 // GetUPFOk returns a tuple with the UPF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetUPFOk() ([]string, bool) {
-	if o == nil || IsNil(o.UPF) {
+	if o == nil || isNil(o.UPF) {
 		return nil, false
 	}
 	return o.UPF, true
@@ -461,7 +461,7 @@ func (o *TriggeringEventsType) GetUPFOk() ([]string, bool) {
 
 // HasUPF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasUPF() bool {
-	if o != nil && !IsNil(o.UPF) {
+	if o != nil && !isNil(o.UPF) {
 		return true
 	}
 
@@ -475,7 +475,7 @@ func (o *TriggeringEventsType) SetUPF(v []string) {
 
 // GetAUSF returns the AUSF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetAUSF() []string {
-	if o == nil || IsNil(o.AUSF) {
+	if o == nil || isNil(o.AUSF) {
 		var ret []string
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *TriggeringEventsType) GetAUSF() []string {
 // GetAUSFOk returns a tuple with the AUSF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetAUSFOk() ([]string, bool) {
-	if o == nil || IsNil(o.AUSF) {
+	if o == nil || isNil(o.AUSF) {
 		return nil, false
 	}
 	return o.AUSF, true
@@ -493,7 +493,7 @@ func (o *TriggeringEventsType) GetAUSFOk() ([]string, bool) {
 
 // HasAUSF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasAUSF() bool {
-	if o != nil && !IsNil(o.AUSF) {
+	if o != nil && !isNil(o.AUSF) {
 		return true
 	}
 
@@ -507,7 +507,7 @@ func (o *TriggeringEventsType) SetAUSF(v []string) {
 
 // GetNEF returns the NEF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetNEF() []string {
-	if o == nil || IsNil(o.NEF) {
+	if o == nil || isNil(o.NEF) {
 		var ret []string
 		return ret
 	}
@@ -517,7 +517,7 @@ func (o *TriggeringEventsType) GetNEF() []string {
 // GetNEFOk returns a tuple with the NEF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetNEFOk() ([]string, bool) {
-	if o == nil || IsNil(o.NEF) {
+	if o == nil || isNil(o.NEF) {
 		return nil, false
 	}
 	return o.NEF, true
@@ -525,7 +525,7 @@ func (o *TriggeringEventsType) GetNEFOk() ([]string, bool) {
 
 // HasNEF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasNEF() bool {
-	if o != nil && !IsNil(o.NEF) {
+	if o != nil && !isNil(o.NEF) {
 		return true
 	}
 
@@ -539,7 +539,7 @@ func (o *TriggeringEventsType) SetNEF(v []string) {
 
 // GetNRF returns the NRF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetNRF() []string {
-	if o == nil || IsNil(o.NRF) {
+	if o == nil || isNil(o.NRF) {
 		var ret []string
 		return ret
 	}
@@ -549,7 +549,7 @@ func (o *TriggeringEventsType) GetNRF() []string {
 // GetNRFOk returns a tuple with the NRF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetNRFOk() ([]string, bool) {
-	if o == nil || IsNil(o.NRF) {
+	if o == nil || isNil(o.NRF) {
 		return nil, false
 	}
 	return o.NRF, true
@@ -557,7 +557,7 @@ func (o *TriggeringEventsType) GetNRFOk() ([]string, bool) {
 
 // HasNRF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasNRF() bool {
-	if o != nil && !IsNil(o.NRF) {
+	if o != nil && !isNil(o.NRF) {
 		return true
 	}
 
@@ -571,7 +571,7 @@ func (o *TriggeringEventsType) SetNRF(v []string) {
 
 // GetNSSF returns the NSSF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetNSSF() []string {
-	if o == nil || IsNil(o.NSSF) {
+	if o == nil || isNil(o.NSSF) {
 		var ret []string
 		return ret
 	}
@@ -581,7 +581,7 @@ func (o *TriggeringEventsType) GetNSSF() []string {
 // GetNSSFOk returns a tuple with the NSSF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetNSSFOk() ([]string, bool) {
-	if o == nil || IsNil(o.NSSF) {
+	if o == nil || isNil(o.NSSF) {
 		return nil, false
 	}
 	return o.NSSF, true
@@ -589,7 +589,7 @@ func (o *TriggeringEventsType) GetNSSFOk() ([]string, bool) {
 
 // HasNSSF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasNSSF() bool {
-	if o != nil && !IsNil(o.NSSF) {
+	if o != nil && !isNil(o.NSSF) {
 		return true
 	}
 
@@ -603,7 +603,7 @@ func (o *TriggeringEventsType) SetNSSF(v []string) {
 
 // GetSMSF returns the SMSF field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetSMSF() []string {
-	if o == nil || IsNil(o.SMSF) {
+	if o == nil || isNil(o.SMSF) {
 		var ret []string
 		return ret
 	}
@@ -613,7 +613,7 @@ func (o *TriggeringEventsType) GetSMSF() []string {
 // GetSMSFOk returns a tuple with the SMSF field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetSMSFOk() ([]string, bool) {
-	if o == nil || IsNil(o.SMSF) {
+	if o == nil || isNil(o.SMSF) {
 		return nil, false
 	}
 	return o.SMSF, true
@@ -621,7 +621,7 @@ func (o *TriggeringEventsType) GetSMSFOk() ([]string, bool) {
 
 // HasSMSF returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasSMSF() bool {
-	if o != nil && !IsNil(o.SMSF) {
+	if o != nil && !isNil(o.SMSF) {
 		return true
 	}
 
@@ -635,7 +635,7 @@ func (o *TriggeringEventsType) SetSMSF(v []string) {
 
 // GetUDM returns the UDM field value if set, zero value otherwise.
 func (o *TriggeringEventsType) GetUDM() []string {
-	if o == nil || IsNil(o.UDM) {
+	if o == nil || isNil(o.UDM) {
 		var ret []string
 		return ret
 	}
@@ -645,7 +645,7 @@ func (o *TriggeringEventsType) GetUDM() []string {
 // GetUDMOk returns a tuple with the UDM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggeringEventsType) GetUDMOk() ([]string, bool) {
-	if o == nil || IsNil(o.UDM) {
+	if o == nil || isNil(o.UDM) {
 		return nil, false
 	}
 	return o.UDM, true
@@ -653,7 +653,7 @@ func (o *TriggeringEventsType) GetUDMOk() ([]string, bool) {
 
 // HasUDM returns a boolean if a field has been set.
 func (o *TriggeringEventsType) HasUDM() bool {
-	if o != nil && !IsNil(o.UDM) {
+	if o != nil && !isNil(o.UDM) {
 		return true
 	}
 
@@ -675,61 +675,61 @@ func (o TriggeringEventsType) MarshalJSON() ([]byte, error) {
 
 func (o TriggeringEventsType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MSC_SERVER) {
+	if !isNil(o.MSC_SERVER) {
 		toSerialize["MSC_SERVER"] = o.MSC_SERVER
 	}
-	if !IsNil(o.SGSN) {
+	if !isNil(o.SGSN) {
 		toSerialize["SGSN"] = o.SGSN
 	}
-	if !IsNil(o.MGW) {
+	if !isNil(o.MGW) {
 		toSerialize["MGW"] = o.MGW
 	}
-	if !IsNil(o.GGSN) {
+	if !isNil(o.GGSN) {
 		toSerialize["GGSN"] = o.GGSN
 	}
-	if !IsNil(o.IMS) {
+	if !isNil(o.IMS) {
 		toSerialize["IMS"] = o.IMS
 	}
-	if !IsNil(o.BM_SC) {
+	if !isNil(o.BM_SC) {
 		toSerialize["BM_SC"] = o.BM_SC
 	}
-	if !IsNil(o.MME) {
+	if !isNil(o.MME) {
 		toSerialize["MME"] = o.MME
 	}
-	if !IsNil(o.SGW) {
+	if !isNil(o.SGW) {
 		toSerialize["SGW"] = o.SGW
 	}
-	if !IsNil(o.PGW) {
+	if !isNil(o.PGW) {
 		toSerialize["PGW"] = o.PGW
 	}
-	if !IsNil(o.AMF) {
+	if !isNil(o.AMF) {
 		toSerialize["AMF"] = o.AMF
 	}
-	if !IsNil(o.SMF) {
+	if !isNil(o.SMF) {
 		toSerialize["SMF"] = o.SMF
 	}
-	if !IsNil(o.PCF) {
+	if !isNil(o.PCF) {
 		toSerialize["PCF"] = o.PCF
 	}
-	if !IsNil(o.UPF) {
+	if !isNil(o.UPF) {
 		toSerialize["UPF"] = o.UPF
 	}
-	if !IsNil(o.AUSF) {
+	if !isNil(o.AUSF) {
 		toSerialize["AUSF"] = o.AUSF
 	}
-	if !IsNil(o.NEF) {
+	if !isNil(o.NEF) {
 		toSerialize["NEF"] = o.NEF
 	}
-	if !IsNil(o.NRF) {
+	if !isNil(o.NRF) {
 		toSerialize["NRF"] = o.NRF
 	}
-	if !IsNil(o.NSSF) {
+	if !isNil(o.NSSF) {
 		toSerialize["NSSF"] = o.NSSF
 	}
-	if !IsNil(o.SMSF) {
+	if !isNil(o.SMSF) {
 		toSerialize["SMSF"] = o.SMSF
 	}
-	if !IsNil(o.UDM) {
+	if !isNil(o.UDM) {
 		toSerialize["UDM"] = o.UDM
 	}
 	return toSerialize, nil

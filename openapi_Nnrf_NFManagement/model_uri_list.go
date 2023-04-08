@@ -43,7 +43,7 @@ func NewUriListWithDefaults() *UriList {
 
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *UriList) GetLinks() map[string]LinksValueSchema {
-	if o == nil || IsNil(o.Links) {
+	if o == nil || isNil(o.Links) {
 		var ret map[string]LinksValueSchema
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UriList) GetLinks() map[string]LinksValueSchema {
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UriList) GetLinksOk() (*map[string]LinksValueSchema, bool) {
-	if o == nil || IsNil(o.Links) {
+	if o == nil || isNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -61,7 +61,7 @@ func (o *UriList) GetLinksOk() (*map[string]LinksValueSchema, bool) {
 
 // HasLinks returns a boolean if a field has been set.
 func (o *UriList) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && !isNil(o.Links) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UriList) SetLinks(v map[string]LinksValueSchema) {
 
 // GetTotalItemCount returns the TotalItemCount field value if set, zero value otherwise.
 func (o *UriList) GetTotalItemCount() int32 {
-	if o == nil || IsNil(o.TotalItemCount) {
+	if o == nil || isNil(o.TotalItemCount) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UriList) GetTotalItemCount() int32 {
 // GetTotalItemCountOk returns a tuple with the TotalItemCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UriList) GetTotalItemCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalItemCount) {
+	if o == nil || isNil(o.TotalItemCount) {
 		return nil, false
 	}
 	return o.TotalItemCount, true
@@ -93,7 +93,7 @@ func (o *UriList) GetTotalItemCountOk() (*int32, bool) {
 
 // HasTotalItemCount returns a boolean if a field has been set.
 func (o *UriList) HasTotalItemCount() bool {
-	if o != nil && !IsNil(o.TotalItemCount) {
+	if o != nil && !isNil(o.TotalItemCount) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o UriList) MarshalJSON() ([]byte, error) {
 
 func (o UriList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Links) {
+	if !isNil(o.Links) {
 		toSerialize["_links"] = o.Links
 	}
-	if !IsNil(o.TotalItemCount) {
+	if !isNil(o.TotalItemCount) {
 		toSerialize["totalItemCount"] = o.TotalItemCount
 	}
 	return toSerialize, nil

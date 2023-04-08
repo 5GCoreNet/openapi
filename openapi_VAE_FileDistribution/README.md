@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
  - [FileDistributionData](docs/FileDistributionData.md)
  - [FileList](docs/FileList.md)
  - [FileStatus](docs/FileStatus.md)
+ - [FileStatusAnyOf](docs/FileStatusAnyOf.md)
  - [GADShape](docs/GADShape.md)
  - [GeographicArea](docs/GeographicArea.md)
  - [GeographicalCoordinates](docs/GeographicalCoordinates.md)
@@ -109,6 +110,7 @@ Class | Method | HTTP request | Description
  - [LocalMbmsInfo](docs/LocalMbmsInfo.md)
  - [LocalOrigin](docs/LocalOrigin.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [Point](docs/Point.md)
@@ -128,6 +130,7 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [Snssai](docs/Snssai.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)
 

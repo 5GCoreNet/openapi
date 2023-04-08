@@ -51,7 +51,7 @@ func NewFileSingleAllOfAttributesWithDefaults() *FileSingleAllOfAttributes {
 
 // GetFileLocation returns the FileLocation field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileLocation() string {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *FileSingleAllOfAttributes) GetFileLocation() string {
 // GetFileLocationOk returns a tuple with the FileLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		return nil, false
 	}
 	return o.FileLocation, true
@@ -69,7 +69,7 @@ func (o *FileSingleAllOfAttributes) GetFileLocationOk() (*string, bool) {
 
 // HasFileLocation returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileLocation() bool {
-	if o != nil && !IsNil(o.FileLocation) {
+	if o != nil && !isNil(o.FileLocation) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *FileSingleAllOfAttributes) SetFileLocation(v string) {
 
 // GetFileCompression returns the FileCompression field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileCompression() string {
-	if o == nil || IsNil(o.FileCompression) {
+	if o == nil || isNil(o.FileCompression) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *FileSingleAllOfAttributes) GetFileCompression() string {
 // GetFileCompressionOk returns a tuple with the FileCompression field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileCompressionOk() (*string, bool) {
-	if o == nil || IsNil(o.FileCompression) {
+	if o == nil || isNil(o.FileCompression) {
 		return nil, false
 	}
 	return o.FileCompression, true
@@ -101,7 +101,7 @@ func (o *FileSingleAllOfAttributes) GetFileCompressionOk() (*string, bool) {
 
 // HasFileCompression returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileCompression() bool {
-	if o != nil && !IsNil(o.FileCompression) {
+	if o != nil && !isNil(o.FileCompression) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *FileSingleAllOfAttributes) SetFileCompression(v string) {
 
 // GetFileSize returns the FileSize field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileSize() int32 {
-	if o == nil || IsNil(o.FileSize) {
+	if o == nil || isNil(o.FileSize) {
 		var ret int32
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *FileSingleAllOfAttributes) GetFileSize() int32 {
 // GetFileSizeOk returns a tuple with the FileSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.FileSize) {
+	if o == nil || isNil(o.FileSize) {
 		return nil, false
 	}
 	return o.FileSize, true
@@ -133,7 +133,7 @@ func (o *FileSingleAllOfAttributes) GetFileSizeOk() (*int32, bool) {
 
 // HasFileSize returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileSize() bool {
-	if o != nil && !IsNil(o.FileSize) {
+	if o != nil && !isNil(o.FileSize) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *FileSingleAllOfAttributes) SetFileSize(v int32) {
 
 // GetFileDataType returns the FileDataType field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileDataType() string {
-	if o == nil || IsNil(o.FileDataType) {
+	if o == nil || isNil(o.FileDataType) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *FileSingleAllOfAttributes) GetFileDataType() string {
 // GetFileDataTypeOk returns a tuple with the FileDataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileDataTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.FileDataType) {
+	if o == nil || isNil(o.FileDataType) {
 		return nil, false
 	}
 	return o.FileDataType, true
@@ -165,7 +165,7 @@ func (o *FileSingleAllOfAttributes) GetFileDataTypeOk() (*string, bool) {
 
 // HasFileDataType returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileDataType() bool {
-	if o != nil && !IsNil(o.FileDataType) {
+	if o != nil && !isNil(o.FileDataType) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *FileSingleAllOfAttributes) SetFileDataType(v string) {
 
 // GetFileFormat returns the FileFormat field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileFormat() string {
-	if o == nil || IsNil(o.FileFormat) {
+	if o == nil || isNil(o.FileFormat) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *FileSingleAllOfAttributes) GetFileFormat() string {
 // GetFileFormatOk returns a tuple with the FileFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.FileFormat) {
+	if o == nil || isNil(o.FileFormat) {
 		return nil, false
 	}
 	return o.FileFormat, true
@@ -197,7 +197,7 @@ func (o *FileSingleAllOfAttributes) GetFileFormatOk() (*string, bool) {
 
 // HasFileFormat returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileFormat() bool {
-	if o != nil && !IsNil(o.FileFormat) {
+	if o != nil && !isNil(o.FileFormat) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *FileSingleAllOfAttributes) SetFileFormat(v string) {
 
 // GetFileReadyTime returns the FileReadyTime field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileReadyTime() time.Time {
-	if o == nil || IsNil(o.FileReadyTime) {
+	if o == nil || isNil(o.FileReadyTime) {
 		var ret time.Time
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *FileSingleAllOfAttributes) GetFileReadyTime() time.Time {
 // GetFileReadyTimeOk returns a tuple with the FileReadyTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileReadyTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.FileReadyTime) {
+	if o == nil || isNil(o.FileReadyTime) {
 		return nil, false
 	}
 	return o.FileReadyTime, true
@@ -229,7 +229,7 @@ func (o *FileSingleAllOfAttributes) GetFileReadyTimeOk() (*time.Time, bool) {
 
 // HasFileReadyTime returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileReadyTime() bool {
-	if o != nil && !IsNil(o.FileReadyTime) {
+	if o != nil && !isNil(o.FileReadyTime) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *FileSingleAllOfAttributes) SetFileReadyTime(v time.Time) {
 
 // GetFileExpirationTime returns the FileExpirationTime field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileExpirationTime() time.Time {
-	if o == nil || IsNil(o.FileExpirationTime) {
+	if o == nil || isNil(o.FileExpirationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *FileSingleAllOfAttributes) GetFileExpirationTime() time.Time {
 // GetFileExpirationTimeOk returns a tuple with the FileExpirationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileExpirationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.FileExpirationTime) {
+	if o == nil || isNil(o.FileExpirationTime) {
 		return nil, false
 	}
 	return o.FileExpirationTime, true
@@ -261,7 +261,7 @@ func (o *FileSingleAllOfAttributes) GetFileExpirationTimeOk() (*time.Time, bool)
 
 // HasFileExpirationTime returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileExpirationTime() bool {
-	if o != nil && !IsNil(o.FileExpirationTime) {
+	if o != nil && !isNil(o.FileExpirationTime) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *FileSingleAllOfAttributes) SetFileExpirationTime(v time.Time) {
 
 // GetFileContent returns the FileContent field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetFileContent() string {
-	if o == nil || IsNil(o.FileContent) {
+	if o == nil || isNil(o.FileContent) {
 		var ret string
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *FileSingleAllOfAttributes) GetFileContent() string {
 // GetFileContentOk returns a tuple with the FileContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetFileContentOk() (*string, bool) {
-	if o == nil || IsNil(o.FileContent) {
+	if o == nil || isNil(o.FileContent) {
 		return nil, false
 	}
 	return o.FileContent, true
@@ -293,7 +293,7 @@ func (o *FileSingleAllOfAttributes) GetFileContentOk() (*string, bool) {
 
 // HasFileContent returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasFileContent() bool {
-	if o != nil && !IsNil(o.FileContent) {
+	if o != nil && !isNil(o.FileContent) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *FileSingleAllOfAttributes) SetFileContent(v string) {
 
 // GetJobRef returns the JobRef field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetJobRef() string {
-	if o == nil || IsNil(o.JobRef) {
+	if o == nil || isNil(o.JobRef) {
 		var ret string
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *FileSingleAllOfAttributes) GetJobRef() string {
 // GetJobRefOk returns a tuple with the JobRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetJobRefOk() (*string, bool) {
-	if o == nil || IsNil(o.JobRef) {
+	if o == nil || isNil(o.JobRef) {
 		return nil, false
 	}
 	return o.JobRef, true
@@ -325,7 +325,7 @@ func (o *FileSingleAllOfAttributes) GetJobRefOk() (*string, bool) {
 
 // HasJobRef returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasJobRef() bool {
-	if o != nil && !IsNil(o.JobRef) {
+	if o != nil && !isNil(o.JobRef) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *FileSingleAllOfAttributes) SetJobRef(v string) {
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *FileSingleAllOfAttributes) GetJobId() string {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -349,7 +349,7 @@ func (o *FileSingleAllOfAttributes) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileSingleAllOfAttributes) GetJobIdOk() (*string, bool) {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -357,7 +357,7 @@ func (o *FileSingleAllOfAttributes) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *FileSingleAllOfAttributes) HasJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
+	if o != nil && !isNil(o.JobId) {
 		return true
 	}
 
@@ -379,34 +379,34 @@ func (o FileSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o FileSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FileLocation) {
+	if !isNil(o.FileLocation) {
 		toSerialize["fileLocation"] = o.FileLocation
 	}
-	if !IsNil(o.FileCompression) {
+	if !isNil(o.FileCompression) {
 		toSerialize["fileCompression"] = o.FileCompression
 	}
-	if !IsNil(o.FileSize) {
+	if !isNil(o.FileSize) {
 		toSerialize["fileSize"] = o.FileSize
 	}
-	if !IsNil(o.FileDataType) {
+	if !isNil(o.FileDataType) {
 		toSerialize["fileDataType"] = o.FileDataType
 	}
-	if !IsNil(o.FileFormat) {
+	if !isNil(o.FileFormat) {
 		toSerialize["fileFormat"] = o.FileFormat
 	}
-	if !IsNil(o.FileReadyTime) {
+	if !isNil(o.FileReadyTime) {
 		toSerialize["fileReadyTime"] = o.FileReadyTime
 	}
-	if !IsNil(o.FileExpirationTime) {
+	if !isNil(o.FileExpirationTime) {
 		toSerialize["fileExpirationTime"] = o.FileExpirationTime
 	}
-	if !IsNil(o.FileContent) {
+	if !isNil(o.FileContent) {
 		toSerialize["fileContent"] = o.FileContent
 	}
-	if !IsNil(o.JobRef) {
+	if !isNil(o.JobRef) {
 		toSerialize["jobRef"] = o.JobRef
 	}
-	if !IsNil(o.JobId) {
+	if !isNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
 	return toSerialize, nil

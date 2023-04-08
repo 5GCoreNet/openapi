@@ -70,7 +70,7 @@ func (o *NiddInformation) SetAfId(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *NiddInformation) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *NiddInformation) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddInformation) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -88,7 +88,7 @@ func (o *NiddInformation) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *NiddInformation) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *NiddInformation) SetGpsi(v string) {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *NiddInformation) GetExtGroupId() string {
-	if o == nil || IsNil(o.ExtGroupId) {
+	if o == nil || isNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NiddInformation) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddInformation) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExtGroupId) {
+	if o == nil || isNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -120,7 +120,7 @@ func (o *NiddInformation) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *NiddInformation) HasExtGroupId() bool {
-	if o != nil && !IsNil(o.ExtGroupId) {
+	if o != nil && !isNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o NiddInformation) MarshalJSON() ([]byte, error) {
 func (o NiddInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afId"] = o.AfId
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.ExtGroupId) {
+	if !isNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
 	return toSerialize, nil

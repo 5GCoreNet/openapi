@@ -71,7 +71,7 @@ func (o *DnsQueryMdt) SetMdtId(v string) {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *DnsQueryMdt) GetLabel() string {
-	if o == nil || IsNil(o.Label) {
+	if o == nil || isNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *DnsQueryMdt) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsQueryMdt) GetLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.Label) {
+	if o == nil || isNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -89,7 +89,7 @@ func (o *DnsQueryMdt) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *DnsQueryMdt) HasLabel() bool {
-	if o != nil && !IsNil(o.Label) {
+	if o != nil && !isNil(o.Label) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *DnsQueryMdt) SetLabel(v string) {
 
 // GetSourceIpv4Addr returns the SourceIpv4Addr field value if set, zero value otherwise.
 func (o *DnsQueryMdt) GetSourceIpv4Addr() string {
-	if o == nil || IsNil(o.SourceIpv4Addr) {
+	if o == nil || isNil(o.SourceIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *DnsQueryMdt) GetSourceIpv4Addr() string {
 // GetSourceIpv4AddrOk returns a tuple with the SourceIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsQueryMdt) GetSourceIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceIpv4Addr) {
+	if o == nil || isNil(o.SourceIpv4Addr) {
 		return nil, false
 	}
 	return o.SourceIpv4Addr, true
@@ -121,7 +121,7 @@ func (o *DnsQueryMdt) GetSourceIpv4AddrOk() (*string, bool) {
 
 // HasSourceIpv4Addr returns a boolean if a field has been set.
 func (o *DnsQueryMdt) HasSourceIpv4Addr() bool {
-	if o != nil && !IsNil(o.SourceIpv4Addr) {
+	if o != nil && !isNil(o.SourceIpv4Addr) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *DnsQueryMdt) SetSourceIpv4Addr(v string) {
 
 // GetSourceIpv6Prefix returns the SourceIpv6Prefix field value if set, zero value otherwise.
 func (o *DnsQueryMdt) GetSourceIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.SourceIpv6Prefix) {
+	if o == nil || isNil(o.SourceIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *DnsQueryMdt) GetSourceIpv6Prefix() Ipv6Prefix {
 // GetSourceIpv6PrefixOk returns a tuple with the SourceIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsQueryMdt) GetSourceIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.SourceIpv6Prefix) {
+	if o == nil || isNil(o.SourceIpv6Prefix) {
 		return nil, false
 	}
 	return o.SourceIpv6Prefix, true
@@ -153,7 +153,7 @@ func (o *DnsQueryMdt) GetSourceIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasSourceIpv6Prefix returns a boolean if a field has been set.
 func (o *DnsQueryMdt) HasSourceIpv6Prefix() bool {
-	if o != nil && !IsNil(o.SourceIpv6Prefix) {
+	if o != nil && !isNil(o.SourceIpv6Prefix) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *DnsQueryMdt) SetSourceIpv6Prefix(v Ipv6Prefix) {
 
 // GetFqdnPatternList returns the FqdnPatternList field value if set, zero value otherwise.
 func (o *DnsQueryMdt) GetFqdnPatternList() []FqdnPatternMatchingRule {
-	if o == nil || IsNil(o.FqdnPatternList) {
+	if o == nil || isNil(o.FqdnPatternList) {
 		var ret []FqdnPatternMatchingRule
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *DnsQueryMdt) GetFqdnPatternList() []FqdnPatternMatchingRule {
 // GetFqdnPatternListOk returns a tuple with the FqdnPatternList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsQueryMdt) GetFqdnPatternListOk() ([]FqdnPatternMatchingRule, bool) {
-	if o == nil || IsNil(o.FqdnPatternList) {
+	if o == nil || isNil(o.FqdnPatternList) {
 		return nil, false
 	}
 	return o.FqdnPatternList, true
@@ -185,7 +185,7 @@ func (o *DnsQueryMdt) GetFqdnPatternListOk() ([]FqdnPatternMatchingRule, bool) {
 
 // HasFqdnPatternList returns a boolean if a field has been set.
 func (o *DnsQueryMdt) HasFqdnPatternList() bool {
-	if o != nil && !IsNil(o.FqdnPatternList) {
+	if o != nil && !isNil(o.FqdnPatternList) {
 		return true
 	}
 
@@ -208,16 +208,16 @@ func (o DnsQueryMdt) MarshalJSON() ([]byte, error) {
 func (o DnsQueryMdt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mdtId"] = o.MdtId
-	if !IsNil(o.Label) {
+	if !isNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !IsNil(o.SourceIpv4Addr) {
+	if !isNil(o.SourceIpv4Addr) {
 		toSerialize["sourceIpv4Addr"] = o.SourceIpv4Addr
 	}
-	if !IsNil(o.SourceIpv6Prefix) {
+	if !isNil(o.SourceIpv6Prefix) {
 		toSerialize["sourceIpv6Prefix"] = o.SourceIpv6Prefix
 	}
-	if !IsNil(o.FqdnPatternList) {
+	if !isNil(o.FqdnPatternList) {
 		toSerialize["fqdnPatternList"] = o.FqdnPatternList
 	}
 	return toSerialize, nil

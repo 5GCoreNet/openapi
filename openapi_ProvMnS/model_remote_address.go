@@ -42,7 +42,7 @@ func NewRemoteAddressWithDefaults() *RemoteAddress {
 
 // GetIpv4Address returns the Ipv4Address field value if set, zero value otherwise.
 func (o *RemoteAddress) GetIpv4Address() string {
-	if o == nil || IsNil(o.Ipv4Address) {
+	if o == nil || isNil(o.Ipv4Address) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RemoteAddress) GetIpv4Address() string {
 // GetIpv4AddressOk returns a tuple with the Ipv4Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RemoteAddress) GetIpv4AddressOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Address) {
+	if o == nil || isNil(o.Ipv4Address) {
 		return nil, false
 	}
 	return o.Ipv4Address, true
@@ -60,7 +60,7 @@ func (o *RemoteAddress) GetIpv4AddressOk() (*string, bool) {
 
 // HasIpv4Address returns a boolean if a field has been set.
 func (o *RemoteAddress) HasIpv4Address() bool {
-	if o != nil && !IsNil(o.Ipv4Address) {
+	if o != nil && !isNil(o.Ipv4Address) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RemoteAddress) SetIpv4Address(v string) {
 
 // GetIpv6Address returns the Ipv6Address field value if set, zero value otherwise.
 func (o *RemoteAddress) GetIpv6Address() Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Address) {
+	if o == nil || isNil(o.Ipv6Address) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RemoteAddress) GetIpv6Address() Ipv6Addr {
 // GetIpv6AddressOk returns a tuple with the Ipv6Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RemoteAddress) GetIpv6AddressOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Address) {
+	if o == nil || isNil(o.Ipv6Address) {
 		return nil, false
 	}
 	return o.Ipv6Address, true
@@ -92,7 +92,7 @@ func (o *RemoteAddress) GetIpv6AddressOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Address returns a boolean if a field has been set.
 func (o *RemoteAddress) HasIpv6Address() bool {
-	if o != nil && !IsNil(o.Ipv6Address) {
+	if o != nil && !isNil(o.Ipv6Address) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RemoteAddress) MarshalJSON() ([]byte, error) {
 
 func (o RemoteAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4Address) {
+	if !isNil(o.Ipv4Address) {
 		toSerialize["ipv4Address"] = o.Ipv4Address
 	}
-	if !IsNil(o.Ipv6Address) {
+	if !isNil(o.Ipv6Address) {
 		toSerialize["ipv6Address"] = o.Ipv6Address
 	}
 	return toSerialize, nil

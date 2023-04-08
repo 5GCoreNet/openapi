@@ -48,7 +48,7 @@ func NewNetworkAreaInfo2WithDefaults() *NetworkAreaInfo2 {
 
 // GetEcgis returns the Ecgis field value if set, zero value otherwise.
 func (o *NetworkAreaInfo2) GetEcgis() []Ecgi1 {
-	if o == nil || IsNil(o.Ecgis) {
+	if o == nil || isNil(o.Ecgis) {
 		var ret []Ecgi1
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *NetworkAreaInfo2) GetEcgis() []Ecgi1 {
 // GetEcgisOk returns a tuple with the Ecgis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo2) GetEcgisOk() ([]Ecgi1, bool) {
-	if o == nil || IsNil(o.Ecgis) {
+	if o == nil || isNil(o.Ecgis) {
 		return nil, false
 	}
 	return o.Ecgis, true
@@ -66,7 +66,7 @@ func (o *NetworkAreaInfo2) GetEcgisOk() ([]Ecgi1, bool) {
 
 // HasEcgis returns a boolean if a field has been set.
 func (o *NetworkAreaInfo2) HasEcgis() bool {
-	if o != nil && !IsNil(o.Ecgis) {
+	if o != nil && !isNil(o.Ecgis) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *NetworkAreaInfo2) SetEcgis(v []Ecgi1) {
 
 // GetNcgis returns the Ncgis field value if set, zero value otherwise.
 func (o *NetworkAreaInfo2) GetNcgis() []Ncgi1 {
-	if o == nil || IsNil(o.Ncgis) {
+	if o == nil || isNil(o.Ncgis) {
 		var ret []Ncgi1
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *NetworkAreaInfo2) GetNcgis() []Ncgi1 {
 // GetNcgisOk returns a tuple with the Ncgis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo2) GetNcgisOk() ([]Ncgi1, bool) {
-	if o == nil || IsNil(o.Ncgis) {
+	if o == nil || isNil(o.Ncgis) {
 		return nil, false
 	}
 	return o.Ncgis, true
@@ -98,7 +98,7 @@ func (o *NetworkAreaInfo2) GetNcgisOk() ([]Ncgi1, bool) {
 
 // HasNcgis returns a boolean if a field has been set.
 func (o *NetworkAreaInfo2) HasNcgis() bool {
-	if o != nil && !IsNil(o.Ncgis) {
+	if o != nil && !isNil(o.Ncgis) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *NetworkAreaInfo2) SetNcgis(v []Ncgi1) {
 
 // GetGRanNodeIds returns the GRanNodeIds field value if set, zero value otherwise.
 func (o *NetworkAreaInfo2) GetGRanNodeIds() []GlobalRanNodeId1 {
-	if o == nil || IsNil(o.GRanNodeIds) {
+	if o == nil || isNil(o.GRanNodeIds) {
 		var ret []GlobalRanNodeId1
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *NetworkAreaInfo2) GetGRanNodeIds() []GlobalRanNodeId1 {
 // GetGRanNodeIdsOk returns a tuple with the GRanNodeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo2) GetGRanNodeIdsOk() ([]GlobalRanNodeId1, bool) {
-	if o == nil || IsNil(o.GRanNodeIds) {
+	if o == nil || isNil(o.GRanNodeIds) {
 		return nil, false
 	}
 	return o.GRanNodeIds, true
@@ -130,7 +130,7 @@ func (o *NetworkAreaInfo2) GetGRanNodeIdsOk() ([]GlobalRanNodeId1, bool) {
 
 // HasGRanNodeIds returns a boolean if a field has been set.
 func (o *NetworkAreaInfo2) HasGRanNodeIds() bool {
-	if o != nil && !IsNil(o.GRanNodeIds) {
+	if o != nil && !isNil(o.GRanNodeIds) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *NetworkAreaInfo2) SetGRanNodeIds(v []GlobalRanNodeId1) {
 
 // GetTais returns the Tais field value if set, zero value otherwise.
 func (o *NetworkAreaInfo2) GetTais() []Tai1 {
-	if o == nil || IsNil(o.Tais) {
+	if o == nil || isNil(o.Tais) {
 		var ret []Tai1
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *NetworkAreaInfo2) GetTais() []Tai1 {
 // GetTaisOk returns a tuple with the Tais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAreaInfo2) GetTaisOk() ([]Tai1, bool) {
-	if o == nil || IsNil(o.Tais) {
+	if o == nil || isNil(o.Tais) {
 		return nil, false
 	}
 	return o.Tais, true
@@ -162,7 +162,7 @@ func (o *NetworkAreaInfo2) GetTaisOk() ([]Tai1, bool) {
 
 // HasTais returns a boolean if a field has been set.
 func (o *NetworkAreaInfo2) HasTais() bool {
-	if o != nil && !IsNil(o.Tais) {
+	if o != nil && !isNil(o.Tais) {
 		return true
 	}
 
@@ -184,16 +184,16 @@ func (o NetworkAreaInfo2) MarshalJSON() ([]byte, error) {
 
 func (o NetworkAreaInfo2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ecgis) {
+	if !isNil(o.Ecgis) {
 		toSerialize["ecgis"] = o.Ecgis
 	}
-	if !IsNil(o.Ncgis) {
+	if !isNil(o.Ncgis) {
 		toSerialize["ncgis"] = o.Ncgis
 	}
-	if !IsNil(o.GRanNodeIds) {
+	if !isNil(o.GRanNodeIds) {
 		toSerialize["gRanNodeIds"] = o.GRanNodeIds
 	}
-	if !IsNil(o.Tais) {
+	if !isNil(o.Tais) {
 		toSerialize["tais"] = o.Tais
 	}
 	return toSerialize, nil

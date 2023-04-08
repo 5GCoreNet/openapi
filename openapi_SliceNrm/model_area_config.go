@@ -42,7 +42,7 @@ func NewAreaConfigWithDefaults() *AreaConfig {
 
 // GetFreqInfo returns the FreqInfo field value if set, zero value otherwise.
 func (o *AreaConfig) GetFreqInfo() FreqInfo {
-	if o == nil || IsNil(o.FreqInfo) {
+	if o == nil || isNil(o.FreqInfo) {
 		var ret FreqInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AreaConfig) GetFreqInfo() FreqInfo {
 // GetFreqInfoOk returns a tuple with the FreqInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaConfig) GetFreqInfoOk() (*FreqInfo, bool) {
-	if o == nil || IsNil(o.FreqInfo) {
+	if o == nil || isNil(o.FreqInfo) {
 		return nil, false
 	}
 	return o.FreqInfo, true
@@ -60,7 +60,7 @@ func (o *AreaConfig) GetFreqInfoOk() (*FreqInfo, bool) {
 
 // HasFreqInfo returns a boolean if a field has been set.
 func (o *AreaConfig) HasFreqInfo() bool {
-	if o != nil && !IsNil(o.FreqInfo) {
+	if o != nil && !isNil(o.FreqInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AreaConfig) SetFreqInfo(v FreqInfo) {
 
 // GetPciList returns the PciList field value if set, zero value otherwise.
 func (o *AreaConfig) GetPciList() []int32 {
-	if o == nil || IsNil(o.PciList) {
+	if o == nil || isNil(o.PciList) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AreaConfig) GetPciList() []int32 {
 // GetPciListOk returns a tuple with the PciList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AreaConfig) GetPciListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.PciList) {
+	if o == nil || isNil(o.PciList) {
 		return nil, false
 	}
 	return o.PciList, true
@@ -92,7 +92,7 @@ func (o *AreaConfig) GetPciListOk() ([]int32, bool) {
 
 // HasPciList returns a boolean if a field has been set.
 func (o *AreaConfig) HasPciList() bool {
-	if o != nil && !IsNil(o.PciList) {
+	if o != nil && !isNil(o.PciList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o AreaConfig) MarshalJSON() ([]byte, error) {
 
 func (o AreaConfig) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FreqInfo) {
+	if !isNil(o.FreqInfo) {
 		toSerialize["freqInfo"] = o.FreqInfo
 	}
-	if !IsNil(o.PciList) {
+	if !isNil(o.PciList) {
 		toSerialize["pciList"] = o.PciList
 	}
 	return toSerialize, nil

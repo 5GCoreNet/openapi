@@ -42,7 +42,7 @@ func NewSnssaiInfoWithDefaults() *SnssaiInfo {
 
 // GetPlmnInfo returns the PlmnInfo field value if set, zero value otherwise.
 func (o *SnssaiInfo) GetPlmnInfo() PlmnInfo {
-	if o == nil || IsNil(o.PlmnInfo) {
+	if o == nil || isNil(o.PlmnInfo) {
 		var ret PlmnInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SnssaiInfo) GetPlmnInfo() PlmnInfo {
 // GetPlmnInfoOk returns a tuple with the PlmnInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiInfo) GetPlmnInfoOk() (*PlmnInfo, bool) {
-	if o == nil || IsNil(o.PlmnInfo) {
+	if o == nil || isNil(o.PlmnInfo) {
 		return nil, false
 	}
 	return o.PlmnInfo, true
@@ -60,7 +60,7 @@ func (o *SnssaiInfo) GetPlmnInfoOk() (*PlmnInfo, bool) {
 
 // HasPlmnInfo returns a boolean if a field has been set.
 func (o *SnssaiInfo) HasPlmnInfo() bool {
-	if o != nil && !IsNil(o.PlmnInfo) {
+	if o != nil && !isNil(o.PlmnInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SnssaiInfo) SetPlmnInfo(v PlmnInfo) {
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *SnssaiInfo) GetAdministrativeState() AdministrativeState {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SnssaiInfo) GetAdministrativeState() AdministrativeState {
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiInfo) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -92,7 +92,7 @@ func (o *SnssaiInfo) GetAdministrativeStateOk() (*AdministrativeState, bool) {
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *SnssaiInfo) HasAdministrativeState() bool {
-	if o != nil && !IsNil(o.AdministrativeState) {
+	if o != nil && !isNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SnssaiInfo) MarshalJSON() ([]byte, error) {
 
 func (o SnssaiInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PlmnInfo) {
+	if !isNil(o.PlmnInfo) {
 		toSerialize["plmnInfo"] = o.PlmnInfo
 	}
-	if !IsNil(o.AdministrativeState) {
+	if !isNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
 	return toSerialize, nil

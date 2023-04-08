@@ -43,7 +43,7 @@ func NewAuthContainerWithDefaults() *AuthContainer {
 
 // GetAuthMsgType returns the AuthMsgType field value if set, zero value otherwise.
 func (o *AuthContainer) GetAuthMsgType() AuthMsgType {
-	if o == nil || IsNil(o.AuthMsgType) {
+	if o == nil || isNil(o.AuthMsgType) {
 		var ret AuthMsgType
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AuthContainer) GetAuthMsgType() AuthMsgType {
 // GetAuthMsgTypeOk returns a tuple with the AuthMsgType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthContainer) GetAuthMsgTypeOk() (*AuthMsgType, bool) {
-	if o == nil || IsNil(o.AuthMsgType) {
+	if o == nil || isNil(o.AuthMsgType) {
 		return nil, false
 	}
 	return o.AuthMsgType, true
@@ -61,7 +61,7 @@ func (o *AuthContainer) GetAuthMsgTypeOk() (*AuthMsgType, bool) {
 
 // HasAuthMsgType returns a boolean if a field has been set.
 func (o *AuthContainer) HasAuthMsgType() bool {
-	if o != nil && !IsNil(o.AuthMsgType) {
+	if o != nil && !isNil(o.AuthMsgType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AuthContainer) SetAuthMsgType(v AuthMsgType) {
 
 // GetAuthMsgPayload returns the AuthMsgPayload field value if set, zero value otherwise.
 func (o *AuthContainer) GetAuthMsgPayload() RefToBinaryData {
-	if o == nil || IsNil(o.AuthMsgPayload) {
+	if o == nil || isNil(o.AuthMsgPayload) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AuthContainer) GetAuthMsgPayload() RefToBinaryData {
 // GetAuthMsgPayloadOk returns a tuple with the AuthMsgPayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthContainer) GetAuthMsgPayloadOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.AuthMsgPayload) {
+	if o == nil || isNil(o.AuthMsgPayload) {
 		return nil, false
 	}
 	return o.AuthMsgPayload, true
@@ -93,7 +93,7 @@ func (o *AuthContainer) GetAuthMsgPayloadOk() (*RefToBinaryData, bool) {
 
 // HasAuthMsgPayload returns a boolean if a field has been set.
 func (o *AuthContainer) HasAuthMsgPayload() bool {
-	if o != nil && !IsNil(o.AuthMsgPayload) {
+	if o != nil && !isNil(o.AuthMsgPayload) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AuthContainer) SetAuthMsgPayload(v RefToBinaryData) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *AuthContainer) GetAuthResult() AuthResult {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		var ret AuthResult
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AuthContainer) GetAuthResult() AuthResult {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthContainer) GetAuthResultOk() (*AuthResult, bool) {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -125,7 +125,7 @@ func (o *AuthContainer) GetAuthResultOk() (*AuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *AuthContainer) HasAuthResult() bool {
-	if o != nil && !IsNil(o.AuthResult) {
+	if o != nil && !isNil(o.AuthResult) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o AuthContainer) MarshalJSON() ([]byte, error) {
 
 func (o AuthContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthMsgType) {
+	if !isNil(o.AuthMsgType) {
 		toSerialize["authMsgType"] = o.AuthMsgType
 	}
-	if !IsNil(o.AuthMsgPayload) {
+	if !isNil(o.AuthMsgPayload) {
 		toSerialize["authMsgPayload"] = o.AuthMsgPayload
 	}
-	if !IsNil(o.AuthResult) {
+	if !isNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
 	return toSerialize, nil

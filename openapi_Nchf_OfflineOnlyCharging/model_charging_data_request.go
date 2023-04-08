@@ -57,7 +57,7 @@ func NewChargingDataRequestWithDefaults() *ChargingDataRequest {
 
 // GetSubscriberIdentifier returns the SubscriberIdentifier field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetSubscriberIdentifier() string {
-	if o == nil || IsNil(o.SubscriberIdentifier) {
+	if o == nil || isNil(o.SubscriberIdentifier) {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *ChargingDataRequest) GetSubscriberIdentifier() string {
 // GetSubscriberIdentifierOk returns a tuple with the SubscriberIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetSubscriberIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriberIdentifier) {
+	if o == nil || isNil(o.SubscriberIdentifier) {
 		return nil, false
 	}
 	return o.SubscriberIdentifier, true
@@ -75,7 +75,7 @@ func (o *ChargingDataRequest) GetSubscriberIdentifierOk() (*string, bool) {
 
 // HasSubscriberIdentifier returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasSubscriberIdentifier() bool {
-	if o != nil && !IsNil(o.SubscriberIdentifier) {
+	if o != nil && !isNil(o.SubscriberIdentifier) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *ChargingDataRequest) SetInvocationSequenceNumber(v int32) {
 
 // GetRetransmissionIndicator returns the RetransmissionIndicator field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetRetransmissionIndicator() bool {
-	if o == nil || IsNil(o.RetransmissionIndicator) {
+	if o == nil || isNil(o.RetransmissionIndicator) {
 		var ret bool
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *ChargingDataRequest) GetRetransmissionIndicator() bool {
 // GetRetransmissionIndicatorOk returns a tuple with the RetransmissionIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetRetransmissionIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.RetransmissionIndicator) {
+	if o == nil || isNil(o.RetransmissionIndicator) {
 		return nil, false
 	}
 	return o.RetransmissionIndicator, true
@@ -179,7 +179,7 @@ func (o *ChargingDataRequest) GetRetransmissionIndicatorOk() (*bool, bool) {
 
 // HasRetransmissionIndicator returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasRetransmissionIndicator() bool {
-	if o != nil && !IsNil(o.RetransmissionIndicator) {
+	if o != nil && !isNil(o.RetransmissionIndicator) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *ChargingDataRequest) SetRetransmissionIndicator(v bool) {
 
 // GetServiceSpecificationInfo returns the ServiceSpecificationInfo field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetServiceSpecificationInfo() string {
-	if o == nil || IsNil(o.ServiceSpecificationInfo) {
+	if o == nil || isNil(o.ServiceSpecificationInfo) {
 		var ret string
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *ChargingDataRequest) GetServiceSpecificationInfo() string {
 // GetServiceSpecificationInfoOk returns a tuple with the ServiceSpecificationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetServiceSpecificationInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceSpecificationInfo) {
+	if o == nil || isNil(o.ServiceSpecificationInfo) {
 		return nil, false
 	}
 	return o.ServiceSpecificationInfo, true
@@ -211,7 +211,7 @@ func (o *ChargingDataRequest) GetServiceSpecificationInfoOk() (*string, bool) {
 
 // HasServiceSpecificationInfo returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasServiceSpecificationInfo() bool {
-	if o != nil && !IsNil(o.ServiceSpecificationInfo) {
+	if o != nil && !isNil(o.ServiceSpecificationInfo) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *ChargingDataRequest) SetServiceSpecificationInfo(v string) {
 
 // GetMultipleUnitUsage returns the MultipleUnitUsage field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetMultipleUnitUsage() []MultipleUnitUsage {
-	if o == nil || IsNil(o.MultipleUnitUsage) {
+	if o == nil || isNil(o.MultipleUnitUsage) {
 		var ret []MultipleUnitUsage
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *ChargingDataRequest) GetMultipleUnitUsage() []MultipleUnitUsage {
 // GetMultipleUnitUsageOk returns a tuple with the MultipleUnitUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetMultipleUnitUsageOk() ([]MultipleUnitUsage, bool) {
-	if o == nil || IsNil(o.MultipleUnitUsage) {
+	if o == nil || isNil(o.MultipleUnitUsage) {
 		return nil, false
 	}
 	return o.MultipleUnitUsage, true
@@ -243,7 +243,7 @@ func (o *ChargingDataRequest) GetMultipleUnitUsageOk() ([]MultipleUnitUsage, boo
 
 // HasMultipleUnitUsage returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasMultipleUnitUsage() bool {
-	if o != nil && !IsNil(o.MultipleUnitUsage) {
+	if o != nil && !isNil(o.MultipleUnitUsage) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *ChargingDataRequest) SetMultipleUnitUsage(v []MultipleUnitUsage) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetTriggers() []Trigger {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *ChargingDataRequest) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -275,7 +275,7 @@ func (o *ChargingDataRequest) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasTriggers() bool {
-	if o != nil && !IsNil(o.Triggers) {
+	if o != nil && !isNil(o.Triggers) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *ChargingDataRequest) SetTriggers(v []Trigger) {
 
 // GetPDUSessionChargingInformation returns the PDUSessionChargingInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetPDUSessionChargingInformation() PDUSessionChargingInformation {
-	if o == nil || IsNil(o.PDUSessionChargingInformation) {
+	if o == nil || isNil(o.PDUSessionChargingInformation) {
 		var ret PDUSessionChargingInformation
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *ChargingDataRequest) GetPDUSessionChargingInformation() PDUSessionCharg
 // GetPDUSessionChargingInformationOk returns a tuple with the PDUSessionChargingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetPDUSessionChargingInformationOk() (*PDUSessionChargingInformation, bool) {
-	if o == nil || IsNil(o.PDUSessionChargingInformation) {
+	if o == nil || isNil(o.PDUSessionChargingInformation) {
 		return nil, false
 	}
 	return o.PDUSessionChargingInformation, true
@@ -307,7 +307,7 @@ func (o *ChargingDataRequest) GetPDUSessionChargingInformationOk() (*PDUSessionC
 
 // HasPDUSessionChargingInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasPDUSessionChargingInformation() bool {
-	if o != nil && !IsNil(o.PDUSessionChargingInformation) {
+	if o != nil && !isNil(o.PDUSessionChargingInformation) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *ChargingDataRequest) SetPDUSessionChargingInformation(v PDUSessionCharg
 
 // GetRoamingQBCInformation returns the RoamingQBCInformation field value if set, zero value otherwise.
 func (o *ChargingDataRequest) GetRoamingQBCInformation() RoamingQBCInformation {
-	if o == nil || IsNil(o.RoamingQBCInformation) {
+	if o == nil || isNil(o.RoamingQBCInformation) {
 		var ret RoamingQBCInformation
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *ChargingDataRequest) GetRoamingQBCInformation() RoamingQBCInformation {
 // GetRoamingQBCInformationOk returns a tuple with the RoamingQBCInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingDataRequest) GetRoamingQBCInformationOk() (*RoamingQBCInformation, bool) {
-	if o == nil || IsNil(o.RoamingQBCInformation) {
+	if o == nil || isNil(o.RoamingQBCInformation) {
 		return nil, false
 	}
 	return o.RoamingQBCInformation, true
@@ -339,7 +339,7 @@ func (o *ChargingDataRequest) GetRoamingQBCInformationOk() (*RoamingQBCInformati
 
 // HasRoamingQBCInformation returns a boolean if a field has been set.
 func (o *ChargingDataRequest) HasRoamingQBCInformation() bool {
-	if o != nil && !IsNil(o.RoamingQBCInformation) {
+	if o != nil && !isNil(o.RoamingQBCInformation) {
 		return true
 	}
 
@@ -361,28 +361,28 @@ func (o ChargingDataRequest) MarshalJSON() ([]byte, error) {
 
 func (o ChargingDataRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubscriberIdentifier) {
+	if !isNil(o.SubscriberIdentifier) {
 		toSerialize["subscriberIdentifier"] = o.SubscriberIdentifier
 	}
 	toSerialize["nfConsumerIdentification"] = o.NfConsumerIdentification
 	toSerialize["invocationTimeStamp"] = o.InvocationTimeStamp
 	toSerialize["invocationSequenceNumber"] = o.InvocationSequenceNumber
-	if !IsNil(o.RetransmissionIndicator) {
+	if !isNil(o.RetransmissionIndicator) {
 		toSerialize["retransmissionIndicator"] = o.RetransmissionIndicator
 	}
-	if !IsNil(o.ServiceSpecificationInfo) {
+	if !isNil(o.ServiceSpecificationInfo) {
 		toSerialize["serviceSpecificationInfo"] = o.ServiceSpecificationInfo
 	}
-	if !IsNil(o.MultipleUnitUsage) {
+	if !isNil(o.MultipleUnitUsage) {
 		toSerialize["multipleUnitUsage"] = o.MultipleUnitUsage
 	}
-	if !IsNil(o.Triggers) {
+	if !isNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.PDUSessionChargingInformation) {
+	if !isNil(o.PDUSessionChargingInformation) {
 		toSerialize["pDUSessionChargingInformation"] = o.PDUSessionChargingInformation
 	}
-	if !IsNil(o.RoamingQBCInformation) {
+	if !isNil(o.RoamingQBCInformation) {
 		toSerialize["roamingQBCInformation"] = o.RoamingQBCInformation
 	}
 	return toSerialize, nil

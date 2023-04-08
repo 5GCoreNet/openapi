@@ -96,7 +96,7 @@ func (o *PlmnIdNid) SetMnc(v string) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *PlmnIdNid) GetNid() string {
-	if o == nil || IsNil(o.Nid) {
+	if o == nil || isNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PlmnIdNid) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnIdNid) GetNidOk() (*string, bool) {
-	if o == nil || IsNil(o.Nid) {
+	if o == nil || isNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -114,7 +114,7 @@ func (o *PlmnIdNid) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *PlmnIdNid) HasNid() bool {
-	if o != nil && !IsNil(o.Nid) {
+	if o != nil && !isNil(o.Nid) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o PlmnIdNid) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mcc"] = o.Mcc
 	toSerialize["mnc"] = o.Mnc
-	if !IsNil(o.Nid) {
+	if !isNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil

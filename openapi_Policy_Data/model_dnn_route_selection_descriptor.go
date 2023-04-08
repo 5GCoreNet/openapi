@@ -75,7 +75,7 @@ func (o *DnnRouteSelectionDescriptor) SetDnn(v string) {
 
 // GetSscModes returns the SscModes field value if set, zero value otherwise.
 func (o *DnnRouteSelectionDescriptor) GetSscModes() []SscMode {
-	if o == nil || IsNil(o.SscModes) {
+	if o == nil || isNil(o.SscModes) {
 		var ret []SscMode
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DnnRouteSelectionDescriptor) GetSscModes() []SscMode {
 // GetSscModesOk returns a tuple with the SscModes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnRouteSelectionDescriptor) GetSscModesOk() ([]SscMode, bool) {
-	if o == nil || IsNil(o.SscModes) {
+	if o == nil || isNil(o.SscModes) {
 		return nil, false
 	}
 	return o.SscModes, true
@@ -93,7 +93,7 @@ func (o *DnnRouteSelectionDescriptor) GetSscModesOk() ([]SscMode, bool) {
 
 // HasSscModes returns a boolean if a field has been set.
 func (o *DnnRouteSelectionDescriptor) HasSscModes() bool {
-	if o != nil && !IsNil(o.SscModes) {
+	if o != nil && !isNil(o.SscModes) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DnnRouteSelectionDescriptor) SetSscModes(v []SscMode) {
 
 // GetPduSessTypes returns the PduSessTypes field value if set, zero value otherwise.
 func (o *DnnRouteSelectionDescriptor) GetPduSessTypes() []PduSessionType {
-	if o == nil || IsNil(o.PduSessTypes) {
+	if o == nil || isNil(o.PduSessTypes) {
 		var ret []PduSessionType
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DnnRouteSelectionDescriptor) GetPduSessTypes() []PduSessionType {
 // GetPduSessTypesOk returns a tuple with the PduSessTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnRouteSelectionDescriptor) GetPduSessTypesOk() ([]PduSessionType, bool) {
-	if o == nil || IsNil(o.PduSessTypes) {
+	if o == nil || isNil(o.PduSessTypes) {
 		return nil, false
 	}
 	return o.PduSessTypes, true
@@ -125,7 +125,7 @@ func (o *DnnRouteSelectionDescriptor) GetPduSessTypesOk() ([]PduSessionType, boo
 
 // HasPduSessTypes returns a boolean if a field has been set.
 func (o *DnnRouteSelectionDescriptor) HasPduSessTypes() bool {
-	if o != nil && !IsNil(o.PduSessTypes) {
+	if o != nil && !isNil(o.PduSessTypes) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *DnnRouteSelectionDescriptor) SetPduSessTypes(v []PduSessionType) {
 
 // GetAtsssInfo returns the AtsssInfo field value if set, zero value otherwise.
 func (o *DnnRouteSelectionDescriptor) GetAtsssInfo() bool {
-	if o == nil || IsNil(o.AtsssInfo) {
+	if o == nil || isNil(o.AtsssInfo) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *DnnRouteSelectionDescriptor) GetAtsssInfo() bool {
 // GetAtsssInfoOk returns a tuple with the AtsssInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnRouteSelectionDescriptor) GetAtsssInfoOk() (*bool, bool) {
-	if o == nil || IsNil(o.AtsssInfo) {
+	if o == nil || isNil(o.AtsssInfo) {
 		return nil, false
 	}
 	return o.AtsssInfo, true
@@ -157,7 +157,7 @@ func (o *DnnRouteSelectionDescriptor) GetAtsssInfoOk() (*bool, bool) {
 
 // HasAtsssInfo returns a boolean if a field has been set.
 func (o *DnnRouteSelectionDescriptor) HasAtsssInfo() bool {
-	if o != nil && !IsNil(o.AtsssInfo) {
+	if o != nil && !isNil(o.AtsssInfo) {
 		return true
 	}
 
@@ -180,13 +180,13 @@ func (o DnnRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
 func (o DnnRouteSelectionDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !IsNil(o.SscModes) {
+	if !isNil(o.SscModes) {
 		toSerialize["sscModes"] = o.SscModes
 	}
-	if !IsNil(o.PduSessTypes) {
+	if !isNil(o.PduSessTypes) {
 		toSerialize["pduSessTypes"] = o.PduSessTypes
 	}
-	if !IsNil(o.AtsssInfo) {
+	if !isNil(o.AtsssInfo) {
 		toSerialize["atsssInfo"] = o.AtsssInfo
 	}
 	return toSerialize, nil

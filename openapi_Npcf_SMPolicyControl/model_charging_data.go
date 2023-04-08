@@ -88,7 +88,7 @@ func (o *ChargingData) SetChgId(v string) {
 
 // GetMeteringMethod returns the MeteringMethod field value if set, zero value otherwise.
 func (o *ChargingData) GetMeteringMethod() MeteringMethod {
-	if o == nil || IsNil(o.MeteringMethod) {
+	if o == nil || isNil(o.MeteringMethod) {
 		var ret MeteringMethod
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ChargingData) GetMeteringMethod() MeteringMethod {
 // GetMeteringMethodOk returns a tuple with the MeteringMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetMeteringMethodOk() (*MeteringMethod, bool) {
-	if o == nil || IsNil(o.MeteringMethod) {
+	if o == nil || isNil(o.MeteringMethod) {
 		return nil, false
 	}
 	return o.MeteringMethod, true
@@ -106,7 +106,7 @@ func (o *ChargingData) GetMeteringMethodOk() (*MeteringMethod, bool) {
 
 // HasMeteringMethod returns a boolean if a field has been set.
 func (o *ChargingData) HasMeteringMethod() bool {
-	if o != nil && !IsNil(o.MeteringMethod) {
+	if o != nil && !isNil(o.MeteringMethod) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ChargingData) SetMeteringMethod(v MeteringMethod) {
 
 // GetOffline returns the Offline field value if set, zero value otherwise.
 func (o *ChargingData) GetOffline() bool {
-	if o == nil || IsNil(o.Offline) {
+	if o == nil || isNil(o.Offline) {
 		var ret bool
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ChargingData) GetOffline() bool {
 // GetOfflineOk returns a tuple with the Offline field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetOfflineOk() (*bool, bool) {
-	if o == nil || IsNil(o.Offline) {
+	if o == nil || isNil(o.Offline) {
 		return nil, false
 	}
 	return o.Offline, true
@@ -138,7 +138,7 @@ func (o *ChargingData) GetOfflineOk() (*bool, bool) {
 
 // HasOffline returns a boolean if a field has been set.
 func (o *ChargingData) HasOffline() bool {
-	if o != nil && !IsNil(o.Offline) {
+	if o != nil && !isNil(o.Offline) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ChargingData) SetOffline(v bool) {
 
 // GetOnline returns the Online field value if set, zero value otherwise.
 func (o *ChargingData) GetOnline() bool {
-	if o == nil || IsNil(o.Online) {
+	if o == nil || isNil(o.Online) {
 		var ret bool
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ChargingData) GetOnline() bool {
 // GetOnlineOk returns a tuple with the Online field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetOnlineOk() (*bool, bool) {
-	if o == nil || IsNil(o.Online) {
+	if o == nil || isNil(o.Online) {
 		return nil, false
 	}
 	return o.Online, true
@@ -170,7 +170,7 @@ func (o *ChargingData) GetOnlineOk() (*bool, bool) {
 
 // HasOnline returns a boolean if a field has been set.
 func (o *ChargingData) HasOnline() bool {
-	if o != nil && !IsNil(o.Online) {
+	if o != nil && !isNil(o.Online) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ChargingData) SetOnline(v bool) {
 
 // GetSdfHandl returns the SdfHandl field value if set, zero value otherwise.
 func (o *ChargingData) GetSdfHandl() bool {
-	if o == nil || IsNil(o.SdfHandl) {
+	if o == nil || isNil(o.SdfHandl) {
 		var ret bool
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ChargingData) GetSdfHandl() bool {
 // GetSdfHandlOk returns a tuple with the SdfHandl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetSdfHandlOk() (*bool, bool) {
-	if o == nil || IsNil(o.SdfHandl) {
+	if o == nil || isNil(o.SdfHandl) {
 		return nil, false
 	}
 	return o.SdfHandl, true
@@ -202,7 +202,7 @@ func (o *ChargingData) GetSdfHandlOk() (*bool, bool) {
 
 // HasSdfHandl returns a boolean if a field has been set.
 func (o *ChargingData) HasSdfHandl() bool {
-	if o != nil && !IsNil(o.SdfHandl) {
+	if o != nil && !isNil(o.SdfHandl) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ChargingData) SetSdfHandl(v bool) {
 
 // GetRatingGroup returns the RatingGroup field value if set, zero value otherwise.
 func (o *ChargingData) GetRatingGroup() int32 {
-	if o == nil || IsNil(o.RatingGroup) {
+	if o == nil || isNil(o.RatingGroup) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ChargingData) GetRatingGroup() int32 {
 // GetRatingGroupOk returns a tuple with the RatingGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetRatingGroupOk() (*int32, bool) {
-	if o == nil || IsNil(o.RatingGroup) {
+	if o == nil || isNil(o.RatingGroup) {
 		return nil, false
 	}
 	return o.RatingGroup, true
@@ -234,7 +234,7 @@ func (o *ChargingData) GetRatingGroupOk() (*int32, bool) {
 
 // HasRatingGroup returns a boolean if a field has been set.
 func (o *ChargingData) HasRatingGroup() bool {
-	if o != nil && !IsNil(o.RatingGroup) {
+	if o != nil && !isNil(o.RatingGroup) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ChargingData) SetRatingGroup(v int32) {
 
 // GetReportingLevel returns the ReportingLevel field value if set, zero value otherwise.
 func (o *ChargingData) GetReportingLevel() ReportingLevel {
-	if o == nil || IsNil(o.ReportingLevel) {
+	if o == nil || isNil(o.ReportingLevel) {
 		var ret ReportingLevel
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ChargingData) GetReportingLevel() ReportingLevel {
 // GetReportingLevelOk returns a tuple with the ReportingLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetReportingLevelOk() (*ReportingLevel, bool) {
-	if o == nil || IsNil(o.ReportingLevel) {
+	if o == nil || isNil(o.ReportingLevel) {
 		return nil, false
 	}
 	return o.ReportingLevel, true
@@ -266,7 +266,7 @@ func (o *ChargingData) GetReportingLevelOk() (*ReportingLevel, bool) {
 
 // HasReportingLevel returns a boolean if a field has been set.
 func (o *ChargingData) HasReportingLevel() bool {
-	if o != nil && !IsNil(o.ReportingLevel) {
+	if o != nil && !isNil(o.ReportingLevel) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ChargingData) SetReportingLevel(v ReportingLevel) {
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *ChargingData) GetServiceId() int32 {
-	if o == nil || IsNil(o.ServiceId) {
+	if o == nil || isNil(o.ServiceId) {
 		var ret int32
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ChargingData) GetServiceId() int32 {
 // GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetServiceIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServiceId) {
+	if o == nil || isNil(o.ServiceId) {
 		return nil, false
 	}
 	return o.ServiceId, true
@@ -298,7 +298,7 @@ func (o *ChargingData) GetServiceIdOk() (*int32, bool) {
 
 // HasServiceId returns a boolean if a field has been set.
 func (o *ChargingData) HasServiceId() bool {
-	if o != nil && !IsNil(o.ServiceId) {
+	if o != nil && !isNil(o.ServiceId) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *ChargingData) SetServiceId(v int32) {
 
 // GetSponsorId returns the SponsorId field value if set, zero value otherwise.
 func (o *ChargingData) GetSponsorId() string {
-	if o == nil || IsNil(o.SponsorId) {
+	if o == nil || isNil(o.SponsorId) {
 		var ret string
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *ChargingData) GetSponsorId() string {
 // GetSponsorIdOk returns a tuple with the SponsorId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetSponsorIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SponsorId) {
+	if o == nil || isNil(o.SponsorId) {
 		return nil, false
 	}
 	return o.SponsorId, true
@@ -330,7 +330,7 @@ func (o *ChargingData) GetSponsorIdOk() (*string, bool) {
 
 // HasSponsorId returns a boolean if a field has been set.
 func (o *ChargingData) HasSponsorId() bool {
-	if o != nil && !IsNil(o.SponsorId) {
+	if o != nil && !isNil(o.SponsorId) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *ChargingData) SetSponsorId(v string) {
 
 // GetAppSvcProvId returns the AppSvcProvId field value if set, zero value otherwise.
 func (o *ChargingData) GetAppSvcProvId() string {
-	if o == nil || IsNil(o.AppSvcProvId) {
+	if o == nil || isNil(o.AppSvcProvId) {
 		var ret string
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *ChargingData) GetAppSvcProvId() string {
 // GetAppSvcProvIdOk returns a tuple with the AppSvcProvId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetAppSvcProvIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppSvcProvId) {
+	if o == nil || isNil(o.AppSvcProvId) {
 		return nil, false
 	}
 	return o.AppSvcProvId, true
@@ -362,7 +362,7 @@ func (o *ChargingData) GetAppSvcProvIdOk() (*string, bool) {
 
 // HasAppSvcProvId returns a boolean if a field has been set.
 func (o *ChargingData) HasAppSvcProvId() bool {
-	if o != nil && !IsNil(o.AppSvcProvId) {
+	if o != nil && !isNil(o.AppSvcProvId) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *ChargingData) SetAppSvcProvId(v string) {
 // GetAfChargingIdentifier returns the AfChargingIdentifier field value if set, zero value otherwise.
 // Deprecated
 func (o *ChargingData) GetAfChargingIdentifier() int32 {
-	if o == nil || IsNil(o.AfChargingIdentifier) {
+	if o == nil || isNil(o.AfChargingIdentifier) {
 		var ret int32
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *ChargingData) GetAfChargingIdentifier() int32 {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *ChargingData) GetAfChargingIdentifierOk() (*int32, bool) {
-	if o == nil || IsNil(o.AfChargingIdentifier) {
+	if o == nil || isNil(o.AfChargingIdentifier) {
 		return nil, false
 	}
 	return o.AfChargingIdentifier, true
@@ -396,7 +396,7 @@ func (o *ChargingData) GetAfChargingIdentifierOk() (*int32, bool) {
 
 // HasAfChargingIdentifier returns a boolean if a field has been set.
 func (o *ChargingData) HasAfChargingIdentifier() bool {
-	if o != nil && !IsNil(o.AfChargingIdentifier) {
+	if o != nil && !isNil(o.AfChargingIdentifier) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *ChargingData) SetAfChargingIdentifier(v int32) {
 
 // GetAfChargId returns the AfChargId field value if set, zero value otherwise.
 func (o *ChargingData) GetAfChargId() string {
-	if o == nil || IsNil(o.AfChargId) {
+	if o == nil || isNil(o.AfChargId) {
 		var ret string
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *ChargingData) GetAfChargId() string {
 // GetAfChargIdOk returns a tuple with the AfChargId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingData) GetAfChargIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfChargId) {
+	if o == nil || isNil(o.AfChargId) {
 		return nil, false
 	}
 	return o.AfChargId, true
@@ -429,7 +429,7 @@ func (o *ChargingData) GetAfChargIdOk() (*string, bool) {
 
 // HasAfChargId returns a boolean if a field has been set.
 func (o *ChargingData) HasAfChargId() bool {
-	if o != nil && !IsNil(o.AfChargId) {
+	if o != nil && !isNil(o.AfChargId) {
 		return true
 	}
 
@@ -452,37 +452,37 @@ func (o ChargingData) MarshalJSON() ([]byte, error) {
 func (o ChargingData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["chgId"] = o.ChgId
-	if !IsNil(o.MeteringMethod) {
+	if !isNil(o.MeteringMethod) {
 		toSerialize["meteringMethod"] = o.MeteringMethod
 	}
-	if !IsNil(o.Offline) {
+	if !isNil(o.Offline) {
 		toSerialize["offline"] = o.Offline
 	}
-	if !IsNil(o.Online) {
+	if !isNil(o.Online) {
 		toSerialize["online"] = o.Online
 	}
-	if !IsNil(o.SdfHandl) {
+	if !isNil(o.SdfHandl) {
 		toSerialize["sdfHandl"] = o.SdfHandl
 	}
-	if !IsNil(o.RatingGroup) {
+	if !isNil(o.RatingGroup) {
 		toSerialize["ratingGroup"] = o.RatingGroup
 	}
-	if !IsNil(o.ReportingLevel) {
+	if !isNil(o.ReportingLevel) {
 		toSerialize["reportingLevel"] = o.ReportingLevel
 	}
-	if !IsNil(o.ServiceId) {
+	if !isNil(o.ServiceId) {
 		toSerialize["serviceId"] = o.ServiceId
 	}
-	if !IsNil(o.SponsorId) {
+	if !isNil(o.SponsorId) {
 		toSerialize["sponsorId"] = o.SponsorId
 	}
-	if !IsNil(o.AppSvcProvId) {
+	if !isNil(o.AppSvcProvId) {
 		toSerialize["appSvcProvId"] = o.AppSvcProvId
 	}
-	if !IsNil(o.AfChargingIdentifier) {
+	if !isNil(o.AfChargingIdentifier) {
 		toSerialize["afChargingIdentifier"] = o.AfChargingIdentifier
 	}
-	if !IsNil(o.AfChargId) {
+	if !isNil(o.AfChargId) {
 		toSerialize["afChargId"] = o.AfChargId
 	}
 	return toSerialize, nil

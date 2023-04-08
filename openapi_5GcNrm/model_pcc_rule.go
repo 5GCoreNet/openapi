@@ -59,7 +59,7 @@ func NewPccRuleWithDefaults() *PccRule {
 
 // GetPccRuleId returns the PccRuleId field value if set, zero value otherwise.
 func (o *PccRule) GetPccRuleId() string {
-	if o == nil || IsNil(o.PccRuleId) {
+	if o == nil || isNil(o.PccRuleId) {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *PccRule) GetPccRuleId() string {
 // GetPccRuleIdOk returns a tuple with the PccRuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetPccRuleIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PccRuleId) {
+	if o == nil || isNil(o.PccRuleId) {
 		return nil, false
 	}
 	return o.PccRuleId, true
@@ -77,7 +77,7 @@ func (o *PccRule) GetPccRuleIdOk() (*string, bool) {
 
 // HasPccRuleId returns a boolean if a field has been set.
 func (o *PccRule) HasPccRuleId() bool {
-	if o != nil && !IsNil(o.PccRuleId) {
+	if o != nil && !isNil(o.PccRuleId) {
 		return true
 	}
 
@@ -91,7 +91,7 @@ func (o *PccRule) SetPccRuleId(v string) {
 
 // GetFlowInfoList returns the FlowInfoList field value if set, zero value otherwise.
 func (o *PccRule) GetFlowInfoList() []FlowInformation {
-	if o == nil || IsNil(o.FlowInfoList) {
+	if o == nil || isNil(o.FlowInfoList) {
 		var ret []FlowInformation
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *PccRule) GetFlowInfoList() []FlowInformation {
 // GetFlowInfoListOk returns a tuple with the FlowInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetFlowInfoListOk() ([]FlowInformation, bool) {
-	if o == nil || IsNil(o.FlowInfoList) {
+	if o == nil || isNil(o.FlowInfoList) {
 		return nil, false
 	}
 	return o.FlowInfoList, true
@@ -109,7 +109,7 @@ func (o *PccRule) GetFlowInfoListOk() ([]FlowInformation, bool) {
 
 // HasFlowInfoList returns a boolean if a field has been set.
 func (o *PccRule) HasFlowInfoList() bool {
-	if o != nil && !IsNil(o.FlowInfoList) {
+	if o != nil && !isNil(o.FlowInfoList) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *PccRule) SetFlowInfoList(v []FlowInformation) {
 
 // GetApplicationId returns the ApplicationId field value if set, zero value otherwise.
 func (o *PccRule) GetApplicationId() string {
-	if o == nil || IsNil(o.ApplicationId) {
+	if o == nil || isNil(o.ApplicationId) {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *PccRule) GetApplicationId() string {
 // GetApplicationIdOk returns a tuple with the ApplicationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetApplicationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApplicationId) {
+	if o == nil || isNil(o.ApplicationId) {
 		return nil, false
 	}
 	return o.ApplicationId, true
@@ -141,7 +141,7 @@ func (o *PccRule) GetApplicationIdOk() (*string, bool) {
 
 // HasApplicationId returns a boolean if a field has been set.
 func (o *PccRule) HasApplicationId() bool {
-	if o != nil && !IsNil(o.ApplicationId) {
+	if o != nil && !isNil(o.ApplicationId) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *PccRule) SetApplicationId(v string) {
 
 // GetAppDescriptor returns the AppDescriptor field value if set, zero value otherwise.
 func (o *PccRule) GetAppDescriptor() string {
-	if o == nil || IsNil(o.AppDescriptor) {
+	if o == nil || isNil(o.AppDescriptor) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *PccRule) GetAppDescriptor() string {
 // GetAppDescriptorOk returns a tuple with the AppDescriptor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAppDescriptorOk() (*string, bool) {
-	if o == nil || IsNil(o.AppDescriptor) {
+	if o == nil || isNil(o.AppDescriptor) {
 		return nil, false
 	}
 	return o.AppDescriptor, true
@@ -173,7 +173,7 @@ func (o *PccRule) GetAppDescriptorOk() (*string, bool) {
 
 // HasAppDescriptor returns a boolean if a field has been set.
 func (o *PccRule) HasAppDescriptor() bool {
-	if o != nil && !IsNil(o.AppDescriptor) {
+	if o != nil && !isNil(o.AppDescriptor) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *PccRule) SetAppDescriptor(v string) {
 
 // GetContentVersion returns the ContentVersion field value if set, zero value otherwise.
 func (o *PccRule) GetContentVersion() int32 {
-	if o == nil || IsNil(o.ContentVersion) {
+	if o == nil || isNil(o.ContentVersion) {
 		var ret int32
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *PccRule) GetContentVersion() int32 {
 // GetContentVersionOk returns a tuple with the ContentVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetContentVersionOk() (*int32, bool) {
-	if o == nil || IsNil(o.ContentVersion) {
+	if o == nil || isNil(o.ContentVersion) {
 		return nil, false
 	}
 	return o.ContentVersion, true
@@ -205,7 +205,7 @@ func (o *PccRule) GetContentVersionOk() (*int32, bool) {
 
 // HasContentVersion returns a boolean if a field has been set.
 func (o *PccRule) HasContentVersion() bool {
-	if o != nil && !IsNil(o.ContentVersion) {
+	if o != nil && !isNil(o.ContentVersion) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *PccRule) SetContentVersion(v int32) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *PccRule) GetPrecedence() int32 {
-	if o == nil || IsNil(o.Precedence) {
+	if o == nil || isNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *PccRule) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Precedence) {
+	if o == nil || isNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -237,7 +237,7 @@ func (o *PccRule) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *PccRule) HasPrecedence() bool {
-	if o != nil && !IsNil(o.Precedence) {
+	if o != nil && !isNil(o.Precedence) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *PccRule) SetPrecedence(v int32) {
 
 // GetAfSigProtocol returns the AfSigProtocol field value if set, zero value otherwise.
 func (o *PccRule) GetAfSigProtocol() AfSigProtocol {
-	if o == nil || IsNil(o.AfSigProtocol) {
+	if o == nil || isNil(o.AfSigProtocol) {
 		var ret AfSigProtocol
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *PccRule) GetAfSigProtocol() AfSigProtocol {
 // GetAfSigProtocolOk returns a tuple with the AfSigProtocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
-	if o == nil || IsNil(o.AfSigProtocol) {
+	if o == nil || isNil(o.AfSigProtocol) {
 		return nil, false
 	}
 	return o.AfSigProtocol, true
@@ -269,7 +269,7 @@ func (o *PccRule) GetAfSigProtocolOk() (*AfSigProtocol, bool) {
 
 // HasAfSigProtocol returns a boolean if a field has been set.
 func (o *PccRule) HasAfSigProtocol() bool {
-	if o != nil && !IsNil(o.AfSigProtocol) {
+	if o != nil && !isNil(o.AfSigProtocol) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *PccRule) SetAfSigProtocol(v AfSigProtocol) {
 
 // GetIsAppRelocatable returns the IsAppRelocatable field value if set, zero value otherwise.
 func (o *PccRule) GetIsAppRelocatable() bool {
-	if o == nil || IsNil(o.IsAppRelocatable) {
+	if o == nil || isNil(o.IsAppRelocatable) {
 		var ret bool
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *PccRule) GetIsAppRelocatable() bool {
 // GetIsAppRelocatableOk returns a tuple with the IsAppRelocatable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetIsAppRelocatableOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsAppRelocatable) {
+	if o == nil || isNil(o.IsAppRelocatable) {
 		return nil, false
 	}
 	return o.IsAppRelocatable, true
@@ -301,7 +301,7 @@ func (o *PccRule) GetIsAppRelocatableOk() (*bool, bool) {
 
 // HasIsAppRelocatable returns a boolean if a field has been set.
 func (o *PccRule) HasIsAppRelocatable() bool {
-	if o != nil && !IsNil(o.IsAppRelocatable) {
+	if o != nil && !isNil(o.IsAppRelocatable) {
 		return true
 	}
 
@@ -315,7 +315,7 @@ func (o *PccRule) SetIsAppRelocatable(v bool) {
 
 // GetIsUeAddrPreserved returns the IsUeAddrPreserved field value if set, zero value otherwise.
 func (o *PccRule) GetIsUeAddrPreserved() bool {
-	if o == nil || IsNil(o.IsUeAddrPreserved) {
+	if o == nil || isNil(o.IsUeAddrPreserved) {
 		var ret bool
 		return ret
 	}
@@ -325,7 +325,7 @@ func (o *PccRule) GetIsUeAddrPreserved() bool {
 // GetIsUeAddrPreservedOk returns a tuple with the IsUeAddrPreserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetIsUeAddrPreservedOk() (*bool, bool) {
-	if o == nil || IsNil(o.IsUeAddrPreserved) {
+	if o == nil || isNil(o.IsUeAddrPreserved) {
 		return nil, false
 	}
 	return o.IsUeAddrPreserved, true
@@ -333,7 +333,7 @@ func (o *PccRule) GetIsUeAddrPreservedOk() (*bool, bool) {
 
 // HasIsUeAddrPreserved returns a boolean if a field has been set.
 func (o *PccRule) HasIsUeAddrPreserved() bool {
-	if o != nil && !IsNil(o.IsUeAddrPreserved) {
+	if o != nil && !isNil(o.IsUeAddrPreserved) {
 		return true
 	}
 
@@ -347,7 +347,7 @@ func (o *PccRule) SetIsUeAddrPreserved(v bool) {
 
 // GetQosData returns the QosData field value if set, zero value otherwise.
 func (o *PccRule) GetQosData() [][]QosData {
-	if o == nil || IsNil(o.QosData) {
+	if o == nil || isNil(o.QosData) {
 		var ret [][]QosData
 		return ret
 	}
@@ -357,7 +357,7 @@ func (o *PccRule) GetQosData() [][]QosData {
 // GetQosDataOk returns a tuple with the QosData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetQosDataOk() ([][]QosData, bool) {
-	if o == nil || IsNil(o.QosData) {
+	if o == nil || isNil(o.QosData) {
 		return nil, false
 	}
 	return o.QosData, true
@@ -365,7 +365,7 @@ func (o *PccRule) GetQosDataOk() ([][]QosData, bool) {
 
 // HasQosData returns a boolean if a field has been set.
 func (o *PccRule) HasQosData() bool {
-	if o != nil && !IsNil(o.QosData) {
+	if o != nil && !isNil(o.QosData) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *PccRule) SetQosData(v [][]QosData) {
 
 // GetAltQosParams returns the AltQosParams field value if set, zero value otherwise.
 func (o *PccRule) GetAltQosParams() [][]QosData {
-	if o == nil || IsNil(o.AltQosParams) {
+	if o == nil || isNil(o.AltQosParams) {
 		var ret [][]QosData
 		return ret
 	}
@@ -389,7 +389,7 @@ func (o *PccRule) GetAltQosParams() [][]QosData {
 // GetAltQosParamsOk returns a tuple with the AltQosParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetAltQosParamsOk() ([][]QosData, bool) {
-	if o == nil || IsNil(o.AltQosParams) {
+	if o == nil || isNil(o.AltQosParams) {
 		return nil, false
 	}
 	return o.AltQosParams, true
@@ -397,7 +397,7 @@ func (o *PccRule) GetAltQosParamsOk() ([][]QosData, bool) {
 
 // HasAltQosParams returns a boolean if a field has been set.
 func (o *PccRule) HasAltQosParams() bool {
-	if o != nil && !IsNil(o.AltQosParams) {
+	if o != nil && !isNil(o.AltQosParams) {
 		return true
 	}
 
@@ -411,7 +411,7 @@ func (o *PccRule) SetAltQosParams(v [][]QosData) {
 
 // GetTrafficControlData returns the TrafficControlData field value if set, zero value otherwise.
 func (o *PccRule) GetTrafficControlData() [][]TrafficControlData {
-	if o == nil || IsNil(o.TrafficControlData) {
+	if o == nil || isNil(o.TrafficControlData) {
 		var ret [][]TrafficControlData
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *PccRule) GetTrafficControlData() [][]TrafficControlData {
 // GetTrafficControlDataOk returns a tuple with the TrafficControlData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PccRule) GetTrafficControlDataOk() ([][]TrafficControlData, bool) {
-	if o == nil || IsNil(o.TrafficControlData) {
+	if o == nil || isNil(o.TrafficControlData) {
 		return nil, false
 	}
 	return o.TrafficControlData, true
@@ -429,7 +429,7 @@ func (o *PccRule) GetTrafficControlDataOk() ([][]TrafficControlData, bool) {
 
 // HasTrafficControlData returns a boolean if a field has been set.
 func (o *PccRule) HasTrafficControlData() bool {
-	if o != nil && !IsNil(o.TrafficControlData) {
+	if o != nil && !isNil(o.TrafficControlData) {
 		return true
 	}
 
@@ -443,7 +443,7 @@ func (o *PccRule) SetTrafficControlData(v [][]TrafficControlData) {
 
 // GetConditionData returns the ConditionData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetConditionData() ConditionData {
-	if o == nil || IsNil(o.ConditionData.Get()) {
+	if o == nil || isNil(o.ConditionData.Get()) {
 		var ret ConditionData
 		return ret
 	}
@@ -485,7 +485,7 @@ func (o *PccRule) UnsetConditionData() {
 
 // GetTscaiInputDl returns the TscaiInputDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetTscaiInputDl() TscaiInputContainer {
-	if o == nil || IsNil(o.TscaiInputDl.Get()) {
+	if o == nil || isNil(o.TscaiInputDl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -527,7 +527,7 @@ func (o *PccRule) UnsetTscaiInputDl() {
 
 // GetTscaiInputUl returns the TscaiInputUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PccRule) GetTscaiInputUl() TscaiInputContainer {
-	if o == nil || IsNil(o.TscaiInputUl.Get()) {
+	if o == nil || isNil(o.TscaiInputUl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -577,40 +577,40 @@ func (o PccRule) MarshalJSON() ([]byte, error) {
 
 func (o PccRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PccRuleId) {
+	if !isNil(o.PccRuleId) {
 		toSerialize["pccRuleId"] = o.PccRuleId
 	}
-	if !IsNil(o.FlowInfoList) {
+	if !isNil(o.FlowInfoList) {
 		toSerialize["flowInfoList"] = o.FlowInfoList
 	}
-	if !IsNil(o.ApplicationId) {
+	if !isNil(o.ApplicationId) {
 		toSerialize["applicationId"] = o.ApplicationId
 	}
-	if !IsNil(o.AppDescriptor) {
+	if !isNil(o.AppDescriptor) {
 		toSerialize["appDescriptor"] = o.AppDescriptor
 	}
-	if !IsNil(o.ContentVersion) {
+	if !isNil(o.ContentVersion) {
 		toSerialize["contentVersion"] = o.ContentVersion
 	}
-	if !IsNil(o.Precedence) {
+	if !isNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
-	if !IsNil(o.AfSigProtocol) {
+	if !isNil(o.AfSigProtocol) {
 		toSerialize["afSigProtocol"] = o.AfSigProtocol
 	}
-	if !IsNil(o.IsAppRelocatable) {
+	if !isNil(o.IsAppRelocatable) {
 		toSerialize["isAppRelocatable"] = o.IsAppRelocatable
 	}
-	if !IsNil(o.IsUeAddrPreserved) {
+	if !isNil(o.IsUeAddrPreserved) {
 		toSerialize["isUeAddrPreserved"] = o.IsUeAddrPreserved
 	}
-	if !IsNil(o.QosData) {
+	if !isNil(o.QosData) {
 		toSerialize["qosData"] = o.QosData
 	}
-	if !IsNil(o.AltQosParams) {
+	if !isNil(o.AltQosParams) {
 		toSerialize["altQosParams"] = o.AltQosParams
 	}
-	if !IsNil(o.TrafficControlData) {
+	if !isNil(o.TrafficControlData) {
 		toSerialize["trafficControlData"] = o.TrafficControlData
 	}
 	if o.ConditionData.IsSet() {

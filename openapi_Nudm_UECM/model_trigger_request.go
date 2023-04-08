@@ -68,7 +68,7 @@ func (o *TriggerRequest) SetSupi(v string) {
 
 // GetFailedPcscf returns the FailedPcscf field value if set, zero value otherwise.
 func (o *TriggerRequest) GetFailedPcscf() PcscfAddress {
-	if o == nil || IsNil(o.FailedPcscf) {
+	if o == nil || isNil(o.FailedPcscf) {
 		var ret PcscfAddress
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *TriggerRequest) GetFailedPcscf() PcscfAddress {
 // GetFailedPcscfOk returns a tuple with the FailedPcscf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TriggerRequest) GetFailedPcscfOk() (*PcscfAddress, bool) {
-	if o == nil || IsNil(o.FailedPcscf) {
+	if o == nil || isNil(o.FailedPcscf) {
 		return nil, false
 	}
 	return o.FailedPcscf, true
@@ -86,7 +86,7 @@ func (o *TriggerRequest) GetFailedPcscfOk() (*PcscfAddress, bool) {
 
 // HasFailedPcscf returns a boolean if a field has been set.
 func (o *TriggerRequest) HasFailedPcscf() bool {
-	if o != nil && !IsNil(o.FailedPcscf) {
+	if o != nil && !isNil(o.FailedPcscf) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o TriggerRequest) MarshalJSON() ([]byte, error) {
 func (o TriggerRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.FailedPcscf) {
+	if !isNil(o.FailedPcscf) {
 		toSerialize["failedPcscf"] = o.FailedPcscf
 	}
 	return toSerialize, nil

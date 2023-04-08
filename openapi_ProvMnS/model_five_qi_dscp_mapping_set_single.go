@@ -23,7 +23,7 @@ type FiveQiDscpMappingSetSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *FiveQiDscpMappingSetSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewFiveQiDscpMappingSetSingle instantiates a new FiveQiDscpMappingSetSingle object
@@ -72,7 +72,7 @@ func (o *FiveQiDscpMappingSetSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *FiveQiDscpMappingSetSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *FiveQiDscpMappingSetSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQiDscpMappingSetSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -90,7 +90,7 @@ func (o *FiveQiDscpMappingSetSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *FiveQiDscpMappingSetSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *FiveQiDscpMappingSetSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *FiveQiDscpMappingSetSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *FiveQiDscpMappingSetSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQiDscpMappingSetSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -122,7 +122,7 @@ func (o *FiveQiDscpMappingSetSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *FiveQiDscpMappingSetSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *FiveQiDscpMappingSetSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *FiveQiDscpMappingSetSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *FiveQiDscpMappingSetSingle) GetVsDataContainer() []VsDataContainerSingl
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FiveQiDscpMappingSetSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -154,7 +154,7 @@ func (o *FiveQiDscpMappingSetSingle) GetVsDataContainerOk() ([]VsDataContainerSi
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *FiveQiDscpMappingSetSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -167,9 +167,9 @@ func (o *FiveQiDscpMappingSetSingle) SetVsDataContainer(v []VsDataContainerSingl
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *FiveQiDscpMappingSetSingle) GetAttributes() FiveQiDscpMappingSetSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret FiveQiDscpMappingSetSingleAllOfAttributes
+func (o *FiveQiDscpMappingSetSingle) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -177,8 +177,8 @@ func (o *FiveQiDscpMappingSetSingle) GetAttributes() FiveQiDscpMappingSetSingleA
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FiveQiDscpMappingSetSingle) GetAttributesOk() (*FiveQiDscpMappingSetSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *FiveQiDscpMappingSetSingle) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,15 +186,15 @@ func (o *FiveQiDscpMappingSetSingle) GetAttributesOk() (*FiveQiDscpMappingSetSin
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *FiveQiDscpMappingSetSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given FiveQiDscpMappingSetSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *FiveQiDscpMappingSetSingle) SetAttributes(v FiveQiDscpMappingSetSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *FiveQiDscpMappingSetSingle) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -209,16 +209,16 @@ func (o FiveQiDscpMappingSetSingle) MarshalJSON() ([]byte, error) {
 func (o FiveQiDscpMappingSetSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

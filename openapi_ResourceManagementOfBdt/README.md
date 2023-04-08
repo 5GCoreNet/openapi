@@ -129,6 +129,7 @@ Class | Method | HTTP request | Description
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [TimeWindow](docs/TimeWindow.md)
  - [TransferPolicy](docs/TransferPolicy.md)

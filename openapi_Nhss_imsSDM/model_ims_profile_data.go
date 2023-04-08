@@ -73,7 +73,7 @@ func (o *ImsProfileData) SetImsServiceProfiles(v []ImsServiceProfile) {
 
 // GetChargingInfo returns the ChargingInfo field value if set, zero value otherwise.
 func (o *ImsProfileData) GetChargingInfo() ChargingInfo {
-	if o == nil || IsNil(o.ChargingInfo) {
+	if o == nil || isNil(o.ChargingInfo) {
 		var ret ChargingInfo
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ImsProfileData) GetChargingInfo() ChargingInfo {
 // GetChargingInfoOk returns a tuple with the ChargingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsProfileData) GetChargingInfoOk() (*ChargingInfo, bool) {
-	if o == nil || IsNil(o.ChargingInfo) {
+	if o == nil || isNil(o.ChargingInfo) {
 		return nil, false
 	}
 	return o.ChargingInfo, true
@@ -91,7 +91,7 @@ func (o *ImsProfileData) GetChargingInfoOk() (*ChargingInfo, bool) {
 
 // HasChargingInfo returns a boolean if a field has been set.
 func (o *ImsProfileData) HasChargingInfo() bool {
-	if o != nil && !IsNil(o.ChargingInfo) {
+	if o != nil && !isNil(o.ChargingInfo) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ImsProfileData) SetChargingInfo(v ChargingInfo) {
 
 // GetServiceLevelTraceInfo returns the ServiceLevelTraceInfo field value if set, zero value otherwise.
 func (o *ImsProfileData) GetServiceLevelTraceInfo() ServiceLevelTraceInformation {
-	if o == nil || IsNil(o.ServiceLevelTraceInfo) {
+	if o == nil || isNil(o.ServiceLevelTraceInfo) {
 		var ret ServiceLevelTraceInformation
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ImsProfileData) GetServiceLevelTraceInfo() ServiceLevelTraceInformation
 // GetServiceLevelTraceInfoOk returns a tuple with the ServiceLevelTraceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsProfileData) GetServiceLevelTraceInfoOk() (*ServiceLevelTraceInformation, bool) {
-	if o == nil || IsNil(o.ServiceLevelTraceInfo) {
+	if o == nil || isNil(o.ServiceLevelTraceInfo) {
 		return nil, false
 	}
 	return o.ServiceLevelTraceInfo, true
@@ -123,7 +123,7 @@ func (o *ImsProfileData) GetServiceLevelTraceInfoOk() (*ServiceLevelTraceInforma
 
 // HasServiceLevelTraceInfo returns a boolean if a field has been set.
 func (o *ImsProfileData) HasServiceLevelTraceInfo() bool {
-	if o != nil && !IsNil(o.ServiceLevelTraceInfo) {
+	if o != nil && !isNil(o.ServiceLevelTraceInfo) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *ImsProfileData) SetServiceLevelTraceInfo(v ServiceLevelTraceInformation
 
 // GetServicePriorityLevelList returns the ServicePriorityLevelList field value if set, zero value otherwise.
 func (o *ImsProfileData) GetServicePriorityLevelList() []string {
-	if o == nil || IsNil(o.ServicePriorityLevelList) {
+	if o == nil || isNil(o.ServicePriorityLevelList) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ImsProfileData) GetServicePriorityLevelList() []string {
 // GetServicePriorityLevelListOk returns a tuple with the ServicePriorityLevelList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsProfileData) GetServicePriorityLevelListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServicePriorityLevelList) {
+	if o == nil || isNil(o.ServicePriorityLevelList) {
 		return nil, false
 	}
 	return o.ServicePriorityLevelList, true
@@ -155,7 +155,7 @@ func (o *ImsProfileData) GetServicePriorityLevelListOk() ([]string, bool) {
 
 // HasServicePriorityLevelList returns a boolean if a field has been set.
 func (o *ImsProfileData) HasServicePriorityLevelList() bool {
-	if o != nil && !IsNil(o.ServicePriorityLevelList) {
+	if o != nil && !isNil(o.ServicePriorityLevelList) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *ImsProfileData) SetServicePriorityLevelList(v []string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ImsProfileData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *ImsProfileData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsProfileData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -187,7 +187,7 @@ func (o *ImsProfileData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ImsProfileData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *ImsProfileData) SetSupportedFeatures(v string) {
 
 // GetMaxAllowedSimulReg returns the MaxAllowedSimulReg field value if set, zero value otherwise.
 func (o *ImsProfileData) GetMaxAllowedSimulReg() int32 {
-	if o == nil || IsNil(o.MaxAllowedSimulReg) {
+	if o == nil || isNil(o.MaxAllowedSimulReg) {
 		var ret int32
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *ImsProfileData) GetMaxAllowedSimulReg() int32 {
 // GetMaxAllowedSimulRegOk returns a tuple with the MaxAllowedSimulReg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsProfileData) GetMaxAllowedSimulRegOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxAllowedSimulReg) {
+	if o == nil || isNil(o.MaxAllowedSimulReg) {
 		return nil, false
 	}
 	return o.MaxAllowedSimulReg, true
@@ -219,7 +219,7 @@ func (o *ImsProfileData) GetMaxAllowedSimulRegOk() (*int32, bool) {
 
 // HasMaxAllowedSimulReg returns a boolean if a field has been set.
 func (o *ImsProfileData) HasMaxAllowedSimulReg() bool {
-	if o != nil && !IsNil(o.MaxAllowedSimulReg) {
+	if o != nil && !isNil(o.MaxAllowedSimulReg) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *ImsProfileData) SetMaxAllowedSimulReg(v int32) {
 
 // GetServicePriorityLevel returns the ServicePriorityLevel field value if set, zero value otherwise.
 func (o *ImsProfileData) GetServicePriorityLevel() int32 {
-	if o == nil || IsNil(o.ServicePriorityLevel) {
+	if o == nil || isNil(o.ServicePriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *ImsProfileData) GetServicePriorityLevel() int32 {
 // GetServicePriorityLevelOk returns a tuple with the ServicePriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsProfileData) GetServicePriorityLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServicePriorityLevel) {
+	if o == nil || isNil(o.ServicePriorityLevel) {
 		return nil, false
 	}
 	return o.ServicePriorityLevel, true
@@ -251,7 +251,7 @@ func (o *ImsProfileData) GetServicePriorityLevelOk() (*int32, bool) {
 
 // HasServicePriorityLevel returns a boolean if a field has been set.
 func (o *ImsProfileData) HasServicePriorityLevel() bool {
-	if o != nil && !IsNil(o.ServicePriorityLevel) {
+	if o != nil && !isNil(o.ServicePriorityLevel) {
 		return true
 	}
 
@@ -274,22 +274,22 @@ func (o ImsProfileData) MarshalJSON() ([]byte, error) {
 func (o ImsProfileData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["imsServiceProfiles"] = o.ImsServiceProfiles
-	if !IsNil(o.ChargingInfo) {
+	if !isNil(o.ChargingInfo) {
 		toSerialize["chargingInfo"] = o.ChargingInfo
 	}
-	if !IsNil(o.ServiceLevelTraceInfo) {
+	if !isNil(o.ServiceLevelTraceInfo) {
 		toSerialize["serviceLevelTraceInfo"] = o.ServiceLevelTraceInfo
 	}
-	if !IsNil(o.ServicePriorityLevelList) {
+	if !isNil(o.ServicePriorityLevelList) {
 		toSerialize["servicePriorityLevelList"] = o.ServicePriorityLevelList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.MaxAllowedSimulReg) {
+	if !isNil(o.MaxAllowedSimulReg) {
 		toSerialize["maxAllowedSimulReg"] = o.MaxAllowedSimulReg
 	}
-	if !IsNil(o.ServicePriorityLevel) {
+	if !isNil(o.ServicePriorityLevel) {
 		toSerialize["servicePriorityLevel"] = o.ServicePriorityLevel
 	}
 	return toSerialize, nil

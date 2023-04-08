@@ -120,7 +120,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) S
 
 // GetExternalReferences returns the ExternalReferences field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) GetExternalReferences() []string {
-	if o == nil || IsNil(o.ExternalReferences) {
+	if o == nil || isNil(o.ExternalReferences) {
 		var ret []string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) G
 // GetExternalReferencesOk returns a tuple with the ExternalReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) GetExternalReferencesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExternalReferences) {
+	if o == nil || isNil(o.ExternalReferences) {
 		return nil, false
 	}
 	return o.ExternalReferences, true
@@ -138,7 +138,7 @@ func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) G
 
 // HasExternalReferences returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) HasExternalReferences() bool {
-	if o != nil && !IsNil(o.ExternalReferences) {
+	if o != nil && !isNil(o.ExternalReferences) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration) To
 	toSerialize["serverAddresses"] = o.ServerAddresses
 	toSerialize["validPolicyTemplateIds"] = o.ValidPolicyTemplateIds
 	toSerialize["sdfMethods"] = o.SdfMethods
-	if !IsNil(o.ExternalReferences) {
+	if !isNil(o.ExternalReferences) {
 		toSerialize["externalReferences"] = o.ExternalReferences
 	}
 	return toSerialize, nil

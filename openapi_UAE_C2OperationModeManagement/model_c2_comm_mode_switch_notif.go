@@ -120,7 +120,7 @@ func (o *C2CommModeSwitchNotif) SetC2CommModeSwitchType(v C2CommModeSwitching) {
 
 // GetSwitchingCause returns the SwitchingCause field value if set, zero value otherwise.
 func (o *C2CommModeSwitchNotif) GetSwitchingCause() C2SwitchingCause {
-	if o == nil || IsNil(o.SwitchingCause) {
+	if o == nil || isNil(o.SwitchingCause) {
 		var ret C2SwitchingCause
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *C2CommModeSwitchNotif) GetSwitchingCause() C2SwitchingCause {
 // GetSwitchingCauseOk returns a tuple with the SwitchingCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2CommModeSwitchNotif) GetSwitchingCauseOk() (*C2SwitchingCause, bool) {
-	if o == nil || IsNil(o.SwitchingCause) {
+	if o == nil || isNil(o.SwitchingCause) {
 		return nil, false
 	}
 	return o.SwitchingCause, true
@@ -138,7 +138,7 @@ func (o *C2CommModeSwitchNotif) GetSwitchingCauseOk() (*C2SwitchingCause, bool) 
 
 // HasSwitchingCause returns a boolean if a field has been set.
 func (o *C2CommModeSwitchNotif) HasSwitchingCause() bool {
-	if o != nil && !IsNil(o.SwitchingCause) {
+	if o != nil && !isNil(o.SwitchingCause) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o C2CommModeSwitchNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize["uaeServerId"] = o.UaeServerId
 	toSerialize["uasId"] = o.UasId
 	toSerialize["c2CommModeSwitchType"] = o.C2CommModeSwitchType
-	if !IsNil(o.SwitchingCause) {
+	if !isNil(o.SwitchingCause) {
 		toSerialize["switchingCause"] = o.SwitchingCause
 	}
 	return toSerialize, nil

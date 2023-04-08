@@ -42,7 +42,7 @@ func NewEnergyEfficiencyWithDefaults() *EnergyEfficiency {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *EnergyEfficiency) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EnergyEfficiency) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnergyEfficiency) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *EnergyEfficiency) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *EnergyEfficiency) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EnergyEfficiency) SetServAttrCom(v ServAttrCom) {
 
 // GetPerformance returns the Performance field value if set, zero value otherwise.
 func (o *EnergyEfficiency) GetPerformance() EEPerfReq {
-	if o == nil || IsNil(o.Performance) {
+	if o == nil || isNil(o.Performance) {
 		var ret EEPerfReq
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EnergyEfficiency) GetPerformance() EEPerfReq {
 // GetPerformanceOk returns a tuple with the Performance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnergyEfficiency) GetPerformanceOk() (*EEPerfReq, bool) {
-	if o == nil || IsNil(o.Performance) {
+	if o == nil || isNil(o.Performance) {
 		return nil, false
 	}
 	return o.Performance, true
@@ -92,7 +92,7 @@ func (o *EnergyEfficiency) GetPerformanceOk() (*EEPerfReq, bool) {
 
 // HasPerformance returns a boolean if a field has been set.
 func (o *EnergyEfficiency) HasPerformance() bool {
-	if o != nil && !IsNil(o.Performance) {
+	if o != nil && !isNil(o.Performance) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o EnergyEfficiency) MarshalJSON() ([]byte, error) {
 
 func (o EnergyEfficiency) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.Performance) {
+	if !isNil(o.Performance) {
 		toSerialize["performance"] = o.Performance
 	}
 	return toSerialize, nil

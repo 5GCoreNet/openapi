@@ -42,7 +42,7 @@ func NewRecipientAddressWithDefaults() *RecipientAddress {
 
 // GetRecipientAddressInfo returns the RecipientAddressInfo field value if set, zero value otherwise.
 func (o *RecipientAddress) GetRecipientAddressInfo() SMAddressInfo {
-	if o == nil || IsNil(o.RecipientAddressInfo) {
+	if o == nil || isNil(o.RecipientAddressInfo) {
 		var ret SMAddressInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RecipientAddress) GetRecipientAddressInfo() SMAddressInfo {
 // GetRecipientAddressInfoOk returns a tuple with the RecipientAddressInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipientAddress) GetRecipientAddressInfoOk() (*SMAddressInfo, bool) {
-	if o == nil || IsNil(o.RecipientAddressInfo) {
+	if o == nil || isNil(o.RecipientAddressInfo) {
 		return nil, false
 	}
 	return o.RecipientAddressInfo, true
@@ -60,7 +60,7 @@ func (o *RecipientAddress) GetRecipientAddressInfoOk() (*SMAddressInfo, bool) {
 
 // HasRecipientAddressInfo returns a boolean if a field has been set.
 func (o *RecipientAddress) HasRecipientAddressInfo() bool {
-	if o != nil && !IsNil(o.RecipientAddressInfo) {
+	if o != nil && !isNil(o.RecipientAddressInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RecipientAddress) SetRecipientAddressInfo(v SMAddressInfo) {
 
 // GetSMaddresseeType returns the SMaddresseeType field value if set, zero value otherwise.
 func (o *RecipientAddress) GetSMaddresseeType() SMAddresseeType {
-	if o == nil || IsNil(o.SMaddresseeType) {
+	if o == nil || isNil(o.SMaddresseeType) {
 		var ret SMAddresseeType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RecipientAddress) GetSMaddresseeType() SMAddresseeType {
 // GetSMaddresseeTypeOk returns a tuple with the SMaddresseeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecipientAddress) GetSMaddresseeTypeOk() (*SMAddresseeType, bool) {
-	if o == nil || IsNil(o.SMaddresseeType) {
+	if o == nil || isNil(o.SMaddresseeType) {
 		return nil, false
 	}
 	return o.SMaddresseeType, true
@@ -92,7 +92,7 @@ func (o *RecipientAddress) GetSMaddresseeTypeOk() (*SMAddresseeType, bool) {
 
 // HasSMaddresseeType returns a boolean if a field has been set.
 func (o *RecipientAddress) HasSMaddresseeType() bool {
-	if o != nil && !IsNil(o.SMaddresseeType) {
+	if o != nil && !isNil(o.SMaddresseeType) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RecipientAddress) MarshalJSON() ([]byte, error) {
 
 func (o RecipientAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RecipientAddressInfo) {
+	if !isNil(o.RecipientAddressInfo) {
 		toSerialize["recipientAddressInfo"] = o.RecipientAddressInfo
 	}
-	if !IsNil(o.SMaddresseeType) {
+	if !isNil(o.SMaddresseeType) {
 		toSerialize["sMaddresseeType"] = o.SMaddresseeType
 	}
 	return toSerialize, nil

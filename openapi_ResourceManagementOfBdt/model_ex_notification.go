@@ -71,7 +71,7 @@ func (o *ExNotification) SetBdtRefId(v string) {
 
 // GetLocationArea5G returns the LocationArea5G field value if set, zero value otherwise.
 func (o *ExNotification) GetLocationArea5G() LocationArea5G {
-	if o == nil || IsNil(o.LocationArea5G) {
+	if o == nil || isNil(o.LocationArea5G) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ExNotification) GetLocationArea5G() LocationArea5G {
 // GetLocationArea5GOk returns a tuple with the LocationArea5G field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExNotification) GetLocationArea5GOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.LocationArea5G) {
+	if o == nil || isNil(o.LocationArea5G) {
 		return nil, false
 	}
 	return o.LocationArea5G, true
@@ -89,7 +89,7 @@ func (o *ExNotification) GetLocationArea5GOk() (*LocationArea5G, bool) {
 
 // HasLocationArea5G returns a boolean if a field has been set.
 func (o *ExNotification) HasLocationArea5G() bool {
-	if o != nil && !IsNil(o.LocationArea5G) {
+	if o != nil && !isNil(o.LocationArea5G) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ExNotification) SetLocationArea5G(v LocationArea5G) {
 
 // GetTimeWindow returns the TimeWindow field value if set, zero value otherwise.
 func (o *ExNotification) GetTimeWindow() TimeWindow {
-	if o == nil || IsNil(o.TimeWindow) {
+	if o == nil || isNil(o.TimeWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ExNotification) GetTimeWindow() TimeWindow {
 // GetTimeWindowOk returns a tuple with the TimeWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExNotification) GetTimeWindowOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.TimeWindow) {
+	if o == nil || isNil(o.TimeWindow) {
 		return nil, false
 	}
 	return o.TimeWindow, true
@@ -121,7 +121,7 @@ func (o *ExNotification) GetTimeWindowOk() (*TimeWindow, bool) {
 
 // HasTimeWindow returns a boolean if a field has been set.
 func (o *ExNotification) HasTimeWindow() bool {
-	if o != nil && !IsNil(o.TimeWindow) {
+	if o != nil && !isNil(o.TimeWindow) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ExNotification) SetTimeWindow(v TimeWindow) {
 
 // GetCandPolicies returns the CandPolicies field value if set, zero value otherwise.
 func (o *ExNotification) GetCandPolicies() []TransferPolicy {
-	if o == nil || IsNil(o.CandPolicies) {
+	if o == nil || isNil(o.CandPolicies) {
 		var ret []TransferPolicy
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ExNotification) GetCandPolicies() []TransferPolicy {
 // GetCandPoliciesOk returns a tuple with the CandPolicies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExNotification) GetCandPoliciesOk() ([]TransferPolicy, bool) {
-	if o == nil || IsNil(o.CandPolicies) {
+	if o == nil || isNil(o.CandPolicies) {
 		return nil, false
 	}
 	return o.CandPolicies, true
@@ -153,7 +153,7 @@ func (o *ExNotification) GetCandPoliciesOk() ([]TransferPolicy, bool) {
 
 // HasCandPolicies returns a boolean if a field has been set.
 func (o *ExNotification) HasCandPolicies() bool {
-	if o != nil && !IsNil(o.CandPolicies) {
+	if o != nil && !isNil(o.CandPolicies) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o ExNotification) MarshalJSON() ([]byte, error) {
 func (o ExNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bdtRefId"] = o.BdtRefId
-	if !IsNil(o.LocationArea5G) {
+	if !isNil(o.LocationArea5G) {
 		toSerialize["locationArea5G"] = o.LocationArea5G
 	}
-	if !IsNil(o.TimeWindow) {
+	if !isNil(o.TimeWindow) {
 		toSerialize["timeWindow"] = o.TimeWindow
 	}
-	if !IsNil(o.CandPolicies) {
+	if !isNil(o.CandPolicies) {
 		toSerialize["candPolicies"] = o.CandPolicies
 	}
 	return toSerialize, nil

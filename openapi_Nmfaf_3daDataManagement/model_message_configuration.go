@@ -79,7 +79,7 @@ func (o *MessageConfiguration) SetCorreId(v string) {
 
 // GetFormatInstruct returns the FormatInstruct field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetFormatInstruct() FormattingInstruction {
-	if o == nil || IsNil(o.FormatInstruct) {
+	if o == nil || isNil(o.FormatInstruct) {
 		var ret FormattingInstruction
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *MessageConfiguration) GetFormatInstruct() FormattingInstruction {
 // GetFormatInstructOk returns a tuple with the FormatInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetFormatInstructOk() (*FormattingInstruction, bool) {
-	if o == nil || IsNil(o.FormatInstruct) {
+	if o == nil || isNil(o.FormatInstruct) {
 		return nil, false
 	}
 	return o.FormatInstruct, true
@@ -97,7 +97,7 @@ func (o *MessageConfiguration) GetFormatInstructOk() (*FormattingInstruction, bo
 
 // HasFormatInstruct returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasFormatInstruct() bool {
-	if o != nil && !IsNil(o.FormatInstruct) {
+	if o != nil && !isNil(o.FormatInstruct) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *MessageConfiguration) SetFormatInstruct(v FormattingInstruction) {
 
 // GetMfafNotiInfo returns the MfafNotiInfo field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetMfafNotiInfo() MfafNotiInfo {
-	if o == nil || IsNil(o.MfafNotiInfo) {
+	if o == nil || isNil(o.MfafNotiInfo) {
 		var ret MfafNotiInfo
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *MessageConfiguration) GetMfafNotiInfo() MfafNotiInfo {
 // GetMfafNotiInfoOk returns a tuple with the MfafNotiInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetMfafNotiInfoOk() (*MfafNotiInfo, bool) {
-	if o == nil || IsNil(o.MfafNotiInfo) {
+	if o == nil || isNil(o.MfafNotiInfo) {
 		return nil, false
 	}
 	return o.MfafNotiInfo, true
@@ -129,7 +129,7 @@ func (o *MessageConfiguration) GetMfafNotiInfoOk() (*MfafNotiInfo, bool) {
 
 // HasMfafNotiInfo returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasMfafNotiInfo() bool {
-	if o != nil && !IsNil(o.MfafNotiInfo) {
+	if o != nil && !isNil(o.MfafNotiInfo) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *MessageConfiguration) SetNotificationURI(v string) {
 
 // GetProcInstruct returns the ProcInstruct field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetProcInstruct() ProcessingInstruction {
-	if o == nil || IsNil(o.ProcInstruct) {
+	if o == nil || isNil(o.ProcInstruct) {
 		var ret ProcessingInstruction
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *MessageConfiguration) GetProcInstruct() ProcessingInstruction {
 // GetProcInstructOk returns a tuple with the ProcInstruct field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetProcInstructOk() (*ProcessingInstruction, bool) {
-	if o == nil || IsNil(o.ProcInstruct) {
+	if o == nil || isNil(o.ProcInstruct) {
 		return nil, false
 	}
 	return o.ProcInstruct, true
@@ -185,7 +185,7 @@ func (o *MessageConfiguration) GetProcInstructOk() (*ProcessingInstruction, bool
 
 // HasProcInstruct returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasProcInstruct() bool {
-	if o != nil && !IsNil(o.ProcInstruct) {
+	if o != nil && !isNil(o.ProcInstruct) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *MessageConfiguration) SetProcInstruct(v ProcessingInstruction) {
 
 // GetMultiProcInstructs returns the MultiProcInstructs field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetMultiProcInstructs() []ProcessingInstruction {
-	if o == nil || IsNil(o.MultiProcInstructs) {
+	if o == nil || isNil(o.MultiProcInstructs) {
 		var ret []ProcessingInstruction
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *MessageConfiguration) GetMultiProcInstructs() []ProcessingInstruction {
 // GetMultiProcInstructsOk returns a tuple with the MultiProcInstructs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetMultiProcInstructsOk() ([]ProcessingInstruction, bool) {
-	if o == nil || IsNil(o.MultiProcInstructs) {
+	if o == nil || isNil(o.MultiProcInstructs) {
 		return nil, false
 	}
 	return o.MultiProcInstructs, true
@@ -217,7 +217,7 @@ func (o *MessageConfiguration) GetMultiProcInstructsOk() ([]ProcessingInstructio
 
 // HasMultiProcInstructs returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasMultiProcInstructs() bool {
-	if o != nil && !IsNil(o.MultiProcInstructs) {
+	if o != nil && !isNil(o.MultiProcInstructs) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *MessageConfiguration) SetMultiProcInstructs(v []ProcessingInstruction) 
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetAdrfId() string {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *MessageConfiguration) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetAdrfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -249,7 +249,7 @@ func (o *MessageConfiguration) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasAdrfId() bool {
-	if o != nil && !IsNil(o.AdrfId) {
+	if o != nil && !isNil(o.AdrfId) {
 		return true
 	}
 
@@ -263,7 +263,7 @@ func (o *MessageConfiguration) SetAdrfId(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MessageConfiguration) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -273,7 +273,7 @@ func (o *MessageConfiguration) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageConfiguration) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -281,7 +281,7 @@ func (o *MessageConfiguration) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MessageConfiguration) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -304,23 +304,23 @@ func (o MessageConfiguration) MarshalJSON() ([]byte, error) {
 func (o MessageConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["correId"] = o.CorreId
-	if !IsNil(o.FormatInstruct) {
+	if !isNil(o.FormatInstruct) {
 		toSerialize["formatInstruct"] = o.FormatInstruct
 	}
-	if !IsNil(o.MfafNotiInfo) {
+	if !isNil(o.MfafNotiInfo) {
 		toSerialize["mfafNotiInfo"] = o.MfafNotiInfo
 	}
 	toSerialize["notificationURI"] = o.NotificationURI
-	if !IsNil(o.ProcInstruct) {
+	if !isNil(o.ProcInstruct) {
 		toSerialize["procInstruct"] = o.ProcInstruct
 	}
-	if !IsNil(o.MultiProcInstructs) {
+	if !isNil(o.MultiProcInstructs) {
 		toSerialize["multiProcInstructs"] = o.MultiProcInstructs
 	}
-	if !IsNil(o.AdrfId) {
+	if !isNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

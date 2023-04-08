@@ -43,7 +43,7 @@ func NewLoggingIntervalTypeWithDefaults() *LoggingIntervalType {
 
 // GetUMTS returns the UMTS field value if set, zero value otherwise.
 func (o *LoggingIntervalType) GetUMTS() []string {
-	if o == nil || IsNil(o.UMTS) {
+	if o == nil || isNil(o.UMTS) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *LoggingIntervalType) GetUMTS() []string {
 // GetUMTSOk returns a tuple with the UMTS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LoggingIntervalType) GetUMTSOk() ([]string, bool) {
-	if o == nil || IsNil(o.UMTS) {
+	if o == nil || isNil(o.UMTS) {
 		return nil, false
 	}
 	return o.UMTS, true
@@ -61,7 +61,7 @@ func (o *LoggingIntervalType) GetUMTSOk() ([]string, bool) {
 
 // HasUMTS returns a boolean if a field has been set.
 func (o *LoggingIntervalType) HasUMTS() bool {
-	if o != nil && !IsNil(o.UMTS) {
+	if o != nil && !isNil(o.UMTS) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *LoggingIntervalType) SetUMTS(v []string) {
 
 // GetLTE returns the LTE field value if set, zero value otherwise.
 func (o *LoggingIntervalType) GetLTE() []string {
-	if o == nil || IsNil(o.LTE) {
+	if o == nil || isNil(o.LTE) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LoggingIntervalType) GetLTE() []string {
 // GetLTEOk returns a tuple with the LTE field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LoggingIntervalType) GetLTEOk() ([]string, bool) {
-	if o == nil || IsNil(o.LTE) {
+	if o == nil || isNil(o.LTE) {
 		return nil, false
 	}
 	return o.LTE, true
@@ -93,7 +93,7 @@ func (o *LoggingIntervalType) GetLTEOk() ([]string, bool) {
 
 // HasLTE returns a boolean if a field has been set.
 func (o *LoggingIntervalType) HasLTE() bool {
-	if o != nil && !IsNil(o.LTE) {
+	if o != nil && !isNil(o.LTE) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *LoggingIntervalType) SetLTE(v []string) {
 
 // GetNR returns the NR field value if set, zero value otherwise.
 func (o *LoggingIntervalType) GetNR() []string {
-	if o == nil || IsNil(o.NR) {
+	if o == nil || isNil(o.NR) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *LoggingIntervalType) GetNR() []string {
 // GetNROk returns a tuple with the NR field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LoggingIntervalType) GetNROk() ([]string, bool) {
-	if o == nil || IsNil(o.NR) {
+	if o == nil || isNil(o.NR) {
 		return nil, false
 	}
 	return o.NR, true
@@ -125,7 +125,7 @@ func (o *LoggingIntervalType) GetNROk() ([]string, bool) {
 
 // HasNR returns a boolean if a field has been set.
 func (o *LoggingIntervalType) HasNR() bool {
-	if o != nil && !IsNil(o.NR) {
+	if o != nil && !isNil(o.NR) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o LoggingIntervalType) MarshalJSON() ([]byte, error) {
 
 func (o LoggingIntervalType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UMTS) {
+	if !isNil(o.UMTS) {
 		toSerialize["UMTS"] = o.UMTS
 	}
-	if !IsNil(o.LTE) {
+	if !isNil(o.LTE) {
 		toSerialize["LTE"] = o.LTE
 	}
-	if !IsNil(o.NR) {
+	if !isNil(o.NR) {
 		toSerialize["NR"] = o.NR
 	}
 	return toSerialize, nil

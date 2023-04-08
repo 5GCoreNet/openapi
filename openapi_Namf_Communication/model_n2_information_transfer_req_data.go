@@ -47,7 +47,7 @@ func NewN2InformationTransferReqDataWithDefaults() *N2InformationTransferReqData
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *N2InformationTransferReqData) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -65,7 +65,7 @@ func (o *N2InformationTransferReqData) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *N2InformationTransferReqData) SetTaiList(v []Tai) {
 
 // GetRatSelector returns the RatSelector field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetRatSelector() RatSelector {
-	if o == nil || IsNil(o.RatSelector) {
+	if o == nil || isNil(o.RatSelector) {
 		var ret RatSelector
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *N2InformationTransferReqData) GetRatSelector() RatSelector {
 // GetRatSelectorOk returns a tuple with the RatSelector field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetRatSelectorOk() (*RatSelector, bool) {
-	if o == nil || IsNil(o.RatSelector) {
+	if o == nil || isNil(o.RatSelector) {
 		return nil, false
 	}
 	return o.RatSelector, true
@@ -97,7 +97,7 @@ func (o *N2InformationTransferReqData) GetRatSelectorOk() (*RatSelector, bool) {
 
 // HasRatSelector returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasRatSelector() bool {
-	if o != nil && !IsNil(o.RatSelector) {
+	if o != nil && !isNil(o.RatSelector) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *N2InformationTransferReqData) SetRatSelector(v RatSelector) {
 
 // GetGlobalRanNodeList returns the GlobalRanNodeList field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetGlobalRanNodeList() []GlobalRanNodeId {
-	if o == nil || IsNil(o.GlobalRanNodeList) {
+	if o == nil || isNil(o.GlobalRanNodeList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *N2InformationTransferReqData) GetGlobalRanNodeList() []GlobalRanNodeId 
 // GetGlobalRanNodeListOk returns a tuple with the GlobalRanNodeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetGlobalRanNodeListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.GlobalRanNodeList) {
+	if o == nil || isNil(o.GlobalRanNodeList) {
 		return nil, false
 	}
 	return o.GlobalRanNodeList, true
@@ -129,7 +129,7 @@ func (o *N2InformationTransferReqData) GetGlobalRanNodeListOk() ([]GlobalRanNode
 
 // HasGlobalRanNodeList returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasGlobalRanNodeList() bool {
-	if o != nil && !IsNil(o.GlobalRanNodeList) {
+	if o != nil && !isNil(o.GlobalRanNodeList) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *N2InformationTransferReqData) SetN2Information(v N2InfoContainer) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *N2InformationTransferReqData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *N2InformationTransferReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -185,7 +185,7 @@ func (o *N2InformationTransferReqData) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *N2InformationTransferReqData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -207,17 +207,17 @@ func (o N2InformationTransferReqData) MarshalJSON() ([]byte, error) {
 
 func (o N2InformationTransferReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.RatSelector) {
+	if !isNil(o.RatSelector) {
 		toSerialize["ratSelector"] = o.RatSelector
 	}
-	if !IsNil(o.GlobalRanNodeList) {
+	if !isNil(o.GlobalRanNodeList) {
 		toSerialize["globalRanNodeList"] = o.GlobalRanNodeList
 	}
 	toSerialize["n2Information"] = o.N2Information
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

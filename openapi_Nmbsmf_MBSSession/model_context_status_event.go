@@ -72,7 +72,7 @@ func (o *ContextStatusEvent) SetEventType(v ContextStatusEventType) {
 
 // GetImmediateReportInd returns the ImmediateReportInd field value if set, zero value otherwise.
 func (o *ContextStatusEvent) GetImmediateReportInd() bool {
-	if o == nil || IsNil(o.ImmediateReportInd) {
+	if o == nil || isNil(o.ImmediateReportInd) {
 		var ret bool
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ContextStatusEvent) GetImmediateReportInd() bool {
 // GetImmediateReportIndOk returns a tuple with the ImmediateReportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEvent) GetImmediateReportIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmediateReportInd) {
+	if o == nil || isNil(o.ImmediateReportInd) {
 		return nil, false
 	}
 	return o.ImmediateReportInd, true
@@ -90,7 +90,7 @@ func (o *ContextStatusEvent) GetImmediateReportIndOk() (*bool, bool) {
 
 // HasImmediateReportInd returns a boolean if a field has been set.
 func (o *ContextStatusEvent) HasImmediateReportInd() bool {
-	if o != nil && !IsNil(o.ImmediateReportInd) {
+	if o != nil && !isNil(o.ImmediateReportInd) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *ContextStatusEvent) SetImmediateReportInd(v bool) {
 
 // GetReportingMode returns the ReportingMode field value if set, zero value otherwise.
 func (o *ContextStatusEvent) GetReportingMode() ReportingMode {
-	if o == nil || IsNil(o.ReportingMode) {
+	if o == nil || isNil(o.ReportingMode) {
 		var ret ReportingMode
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ContextStatusEvent) GetReportingMode() ReportingMode {
 // GetReportingModeOk returns a tuple with the ReportingMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEvent) GetReportingModeOk() (*ReportingMode, bool) {
-	if o == nil || IsNil(o.ReportingMode) {
+	if o == nil || isNil(o.ReportingMode) {
 		return nil, false
 	}
 	return o.ReportingMode, true
@@ -122,7 +122,7 @@ func (o *ContextStatusEvent) GetReportingModeOk() (*ReportingMode, bool) {
 
 // HasReportingMode returns a boolean if a field has been set.
 func (o *ContextStatusEvent) HasReportingMode() bool {
-	if o != nil && !IsNil(o.ReportingMode) {
+	if o != nil && !isNil(o.ReportingMode) {
 		return true
 	}
 
@@ -145,10 +145,10 @@ func (o ContextStatusEvent) MarshalJSON() ([]byte, error) {
 func (o ContextStatusEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.ImmediateReportInd) {
+	if !isNil(o.ImmediateReportInd) {
 		toSerialize["immediateReportInd"] = o.ImmediateReportInd
 	}
-	if !IsNil(o.ReportingMode) {
+	if !isNil(o.ReportingMode) {
 		toSerialize["reportingMode"] = o.ReportingMode
 	}
 	return toSerialize, nil

@@ -67,7 +67,7 @@ func (o *SscModes) SetDefaultSscMode(v SscMode) {
 
 // GetAllowedSscModes returns the AllowedSscModes field value if set, zero value otherwise.
 func (o *SscModes) GetAllowedSscModes() []SscMode {
-	if o == nil || IsNil(o.AllowedSscModes) {
+	if o == nil || isNil(o.AllowedSscModes) {
 		var ret []SscMode
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SscModes) GetAllowedSscModes() []SscMode {
 // GetAllowedSscModesOk returns a tuple with the AllowedSscModes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SscModes) GetAllowedSscModesOk() ([]SscMode, bool) {
-	if o == nil || IsNil(o.AllowedSscModes) {
+	if o == nil || isNil(o.AllowedSscModes) {
 		return nil, false
 	}
 	return o.AllowedSscModes, true
@@ -85,7 +85,7 @@ func (o *SscModes) GetAllowedSscModesOk() ([]SscMode, bool) {
 
 // HasAllowedSscModes returns a boolean if a field has been set.
 func (o *SscModes) HasAllowedSscModes() bool {
-	if o != nil && !IsNil(o.AllowedSscModes) {
+	if o != nil && !isNil(o.AllowedSscModes) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SscModes) MarshalJSON() ([]byte, error) {
 func (o SscModes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["defaultSscMode"] = o.DefaultSscMode
-	if !IsNil(o.AllowedSscModes) {
+	if !isNil(o.AllowedSscModes) {
 		toSerialize["allowedSscModes"] = o.AllowedSscModes
 	}
 	return toSerialize, nil

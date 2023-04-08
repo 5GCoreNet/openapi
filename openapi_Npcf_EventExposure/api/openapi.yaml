@@ -1701,14 +1701,7 @@ components:
       type: object
     PcEvent:
       anyOf:
-      - enum:
-        - AC_TY_CH
-        - PLMN_CH
-        - SAC_CH
-        - SAT_CATEGORY_CH
-        - SUCCESS_UE_POL_DEL_SP
-        - UNSUCCESS_UE_POL_DEL_SP
-        type: string
+      - $ref: '#/components/schemas/PcEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1840,11 +1833,7 @@ components:
       type: object
     NotificationMethod:
       anyOf:
-      - enum:
-        - PERIODIC
-        - ONE_TIME
-        - ON_EVENT_DETECTION
-        type: string
+      - $ref: '#/components/schemas/NotificationMethod_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1872,13 +1861,7 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - enum:
-        - TAC
-        - SUBPLMN
-        - GEOAREA
-        - SNSSAI
-        - DNN
-        type: string
+      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1891,11 +1874,7 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - enum:
-        - ACTIVATE
-        - DEACTIVATE
-        - RETRIEVAL
-        type: string
+      - $ref: '#/components/schemas/NotificationFlag_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -2003,28 +1982,7 @@ components:
       type: object
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     PlmnIdNid:
@@ -2073,13 +2031,7 @@ components:
       type: string
     SatelliteBackhaulCategory:
       anyOf:
-      - enum:
-        - GEO
-        - MEO
-        - LEO
-        - OTHER_SAT
-        - NON_SATELLITE
-        type: string
+      - $ref: '#/components/schemas/SatelliteBackhaulCategory_anyOf'
       - type: string
       description: Indicates the satellite backhaul used.
     ServiceAreaCoverageInfo:
@@ -2139,12 +2091,7 @@ components:
         - UE_TEMP_UNREACHABLE: Indicates the PCF received the notification from the AMF that the UE
           is not reachable but the PCF will retry again.
       oneOf:
-      - enum:
-        - UNSPECIFIED
-        - UE_NOT_REACHABLE
-        - UNKNOWN
-        - UE_TEMP_UNREACHABLE
-        type: string
+      - $ref: '#/components/schemas/Failure_oneOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2297,12 +2244,7 @@ components:
       type: object
     FlowDirection:
       anyOf:
-      - enum:
-        - DOWNLINK
-        - UPLINK
-        - BIDIRECTIONAL
-        - UNSPECIFIED
-        type: string
+      - $ref: '#/components/schemas/FlowDirection_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2342,64 +2284,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -2449,6 +2334,148 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    PcEvent_anyOf:
+      enum:
+      - AC_TY_CH
+      - PLMN_CH
+      - SAC_CH
+      - SAT_CATEGORY_CH
+      - SUCCESS_UE_POL_DEL_SP
+      - UNSUCCESS_UE_POL_DEL_SP
+      type: string
+      example: null
+    NotificationMethod_anyOf:
+      enum:
+      - PERIODIC
+      - ONE_TIME
+      - ON_EVENT_DETECTION
+      type: string
+      example: null
+    PartitioningCriteria_anyOf:
+      enum:
+      - TAC
+      - SUBPLMN
+      - GEOAREA
+      - SNSSAI
+      - DNN
+      type: string
+      example: null
+    NotificationFlag_anyOf:
+      enum:
+      - ACTIVATE
+      - DEACTIVATE
+      - RETRIEVAL
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    SatelliteBackhaulCategory_anyOf:
+      enum:
+      - GEO
+      - MEO
+      - LEO
+      - OTHER_SAT
+      - NON_SATELLITE
+      type: string
+      example: null
+    Failure_oneOf:
+      enum:
+      - UNSPECIFIED
+      - UE_NOT_REACHABLE
+      - UNKNOWN
+      - UE_TEMP_UNREACHABLE
+      type: string
+      example: null
+    FlowDirection_anyOf:
+      enum:
+      - DOWNLINK
+      - UPLINK
+      - BIDIRECTIONAL
+      - UNSPECIFIED
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

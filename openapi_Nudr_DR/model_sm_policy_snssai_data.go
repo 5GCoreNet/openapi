@@ -69,7 +69,7 @@ func (o *SmPolicySnssaiData) SetSnssai(v Snssai) {
 
 // GetSmPolicyDnnData returns the SmPolicyDnnData field value if set, zero value otherwise.
 func (o *SmPolicySnssaiData) GetSmPolicyDnnData() map[string]SmPolicyDnnData {
-	if o == nil || IsNil(o.SmPolicyDnnData) {
+	if o == nil || isNil(o.SmPolicyDnnData) {
 		var ret map[string]SmPolicyDnnData
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *SmPolicySnssaiData) GetSmPolicyDnnData() map[string]SmPolicyDnnData {
 // GetSmPolicyDnnDataOk returns a tuple with the SmPolicyDnnData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicySnssaiData) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDnnData, bool) {
-	if o == nil || IsNil(o.SmPolicyDnnData) {
+	if o == nil || isNil(o.SmPolicyDnnData) {
 		return nil, false
 	}
 	return o.SmPolicyDnnData, true
@@ -87,7 +87,7 @@ func (o *SmPolicySnssaiData) GetSmPolicyDnnDataOk() (*map[string]SmPolicyDnnData
 
 // HasSmPolicyDnnData returns a boolean if a field has been set.
 func (o *SmPolicySnssaiData) HasSmPolicyDnnData() bool {
-	if o != nil && !IsNil(o.SmPolicyDnnData) {
+	if o != nil && !isNil(o.SmPolicyDnnData) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *SmPolicySnssaiData) SetSmPolicyDnnData(v map[string]SmPolicyDnnData) {
 
 // GetUeSliceMbr returns the UeSliceMbr field value if set, zero value otherwise.
 func (o *SmPolicySnssaiData) GetUeSliceMbr() SliceMbr1 {
-	if o == nil || IsNil(o.UeSliceMbr) {
+	if o == nil || isNil(o.UeSliceMbr) {
 		var ret SliceMbr1
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SmPolicySnssaiData) GetUeSliceMbr() SliceMbr1 {
 // GetUeSliceMbrOk returns a tuple with the UeSliceMbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicySnssaiData) GetUeSliceMbrOk() (*SliceMbr1, bool) {
-	if o == nil || IsNil(o.UeSliceMbr) {
+	if o == nil || isNil(o.UeSliceMbr) {
 		return nil, false
 	}
 	return o.UeSliceMbr, true
@@ -119,7 +119,7 @@ func (o *SmPolicySnssaiData) GetUeSliceMbrOk() (*SliceMbr1, bool) {
 
 // HasUeSliceMbr returns a boolean if a field has been set.
 func (o *SmPolicySnssaiData) HasUeSliceMbr() bool {
-	if o != nil && !IsNil(o.UeSliceMbr) {
+	if o != nil && !isNil(o.UeSliceMbr) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o SmPolicySnssaiData) MarshalJSON() ([]byte, error) {
 func (o SmPolicySnssaiData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.SmPolicyDnnData) {
+	if !isNil(o.SmPolicyDnnData) {
 		toSerialize["smPolicyDnnData"] = o.SmPolicyDnnData
 	}
-	if !IsNil(o.UeSliceMbr) {
+	if !isNil(o.UeSliceMbr) {
 		toSerialize["ueSliceMbr"] = o.UeSliceMbr
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewTai1WithDefaults() *Tai1 {
 
 // GetMcc returns the Mcc field value if set, zero value otherwise.
 func (o *Tai1) GetMcc() string {
-	if o == nil || IsNil(o.Mcc) {
+	if o == nil || isNil(o.Mcc) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *Tai1) GetMcc() string {
 // GetMccOk returns a tuple with the Mcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetMccOk() (*string, bool) {
-	if o == nil || IsNil(o.Mcc) {
+	if o == nil || isNil(o.Mcc) {
 		return nil, false
 	}
 	return o.Mcc, true
@@ -61,7 +61,7 @@ func (o *Tai1) GetMccOk() (*string, bool) {
 
 // HasMcc returns a boolean if a field has been set.
 func (o *Tai1) HasMcc() bool {
-	if o != nil && !IsNil(o.Mcc) {
+	if o != nil && !isNil(o.Mcc) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *Tai1) SetMcc(v string) {
 
 // GetMnc returns the Mnc field value if set, zero value otherwise.
 func (o *Tai1) GetMnc() string {
-	if o == nil || IsNil(o.Mnc) {
+	if o == nil || isNil(o.Mnc) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *Tai1) GetMnc() string {
 // GetMncOk returns a tuple with the Mnc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetMncOk() (*string, bool) {
-	if o == nil || IsNil(o.Mnc) {
+	if o == nil || isNil(o.Mnc) {
 		return nil, false
 	}
 	return o.Mnc, true
@@ -93,7 +93,7 @@ func (o *Tai1) GetMncOk() (*string, bool) {
 
 // HasMnc returns a boolean if a field has been set.
 func (o *Tai1) HasMnc() bool {
-	if o != nil && !IsNil(o.Mnc) {
+	if o != nil && !isNil(o.Mnc) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Tai1) SetMnc(v string) {
 
 // GetTac returns the Tac field value if set, zero value otherwise.
 func (o *Tai1) GetTac() string {
-	if o == nil || IsNil(o.Tac) {
+	if o == nil || isNil(o.Tac) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Tai1) GetTac() string {
 // GetTacOk returns a tuple with the Tac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tai1) GetTacOk() (*string, bool) {
-	if o == nil || IsNil(o.Tac) {
+	if o == nil || isNil(o.Tac) {
 		return nil, false
 	}
 	return o.Tac, true
@@ -125,7 +125,7 @@ func (o *Tai1) GetTacOk() (*string, bool) {
 
 // HasTac returns a boolean if a field has been set.
 func (o *Tai1) HasTac() bool {
-	if o != nil && !IsNil(o.Tac) {
+	if o != nil && !isNil(o.Tac) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o Tai1) MarshalJSON() ([]byte, error) {
 
 func (o Tai1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Mcc) {
+	if !isNil(o.Mcc) {
 		toSerialize["mcc"] = o.Mcc
 	}
-	if !IsNil(o.Mnc) {
+	if !isNil(o.Mnc) {
 		toSerialize["mnc"] = o.Mnc
 	}
-	if !IsNil(o.Tac) {
+	if !isNil(o.Tac) {
 		toSerialize["tac"] = o.Tac
 	}
 	return toSerialize, nil

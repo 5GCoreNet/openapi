@@ -135,7 +135,7 @@ func (o *QosMonitoringData) SetRepFreqs(v []ReportingFrequency) {
 
 // GetRepThreshDl returns the RepThreshDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepThreshDl() int32 {
-	if o == nil || IsNil(o.RepThreshDl.Get()) {
+	if o == nil || isNil(o.RepThreshDl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *QosMonitoringData) UnsetRepThreshDl() {
 
 // GetRepThreshUl returns the RepThreshUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepThreshUl() int32 {
-	if o == nil || IsNil(o.RepThreshUl.Get()) {
+	if o == nil || isNil(o.RepThreshUl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *QosMonitoringData) UnsetRepThreshUl() {
 
 // GetRepThreshRp returns the RepThreshRp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepThreshRp() int32 {
-	if o == nil || IsNil(o.RepThreshRp.Get()) {
+	if o == nil || isNil(o.RepThreshRp.Get()) {
 		var ret int32
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *QosMonitoringData) UnsetRepThreshRp() {
 
 // GetWaitTime returns the WaitTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetWaitTime() int32 {
-	if o == nil || IsNil(o.WaitTime.Get()) {
+	if o == nil || isNil(o.WaitTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *QosMonitoringData) UnsetWaitTime() {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod.Get()) {
+	if o == nil || isNil(o.RepPeriod.Get()) {
 		var ret int32
 		return ret
 	}
@@ -345,7 +345,7 @@ func (o *QosMonitoringData) UnsetRepPeriod() {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetNotifyUri() string {
-	if o == nil || IsNil(o.NotifyUri.Get()) {
+	if o == nil || isNil(o.NotifyUri.Get()) {
 		var ret string
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *QosMonitoringData) UnsetNotifyUri() {
 
 // GetNotifyCorreId returns the NotifyCorreId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringData) GetNotifyCorreId() string {
-	if o == nil || IsNil(o.NotifyCorreId.Get()) {
+	if o == nil || isNil(o.NotifyCorreId.Get()) {
 		var ret string
 		return ret
 	}
@@ -429,7 +429,7 @@ func (o *QosMonitoringData) UnsetNotifyCorreId() {
 
 // GetDirectNotifInd returns the DirectNotifInd field value if set, zero value otherwise.
 func (o *QosMonitoringData) GetDirectNotifInd() bool {
-	if o == nil || IsNil(o.DirectNotifInd) {
+	if o == nil || isNil(o.DirectNotifInd) {
 		var ret bool
 		return ret
 	}
@@ -439,7 +439,7 @@ func (o *QosMonitoringData) GetDirectNotifInd() bool {
 // GetDirectNotifIndOk returns a tuple with the DirectNotifInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringData) GetDirectNotifIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DirectNotifInd) {
+	if o == nil || isNil(o.DirectNotifInd) {
 		return nil, false
 	}
 	return o.DirectNotifInd, true
@@ -447,7 +447,7 @@ func (o *QosMonitoringData) GetDirectNotifIndOk() (*bool, bool) {
 
 // HasDirectNotifInd returns a boolean if a field has been set.
 func (o *QosMonitoringData) HasDirectNotifInd() bool {
-	if o != nil && !IsNil(o.DirectNotifInd) {
+	if o != nil && !isNil(o.DirectNotifInd) {
 		return true
 	}
 
@@ -493,7 +493,7 @@ func (o QosMonitoringData) ToMap() (map[string]interface{}, error) {
 	if o.NotifyCorreId.IsSet() {
 		toSerialize["notifyCorreId"] = o.NotifyCorreId.Get()
 	}
-	if !IsNil(o.DirectNotifInd) {
+	if !isNil(o.DirectNotifInd) {
 		toSerialize["directNotifInd"] = o.DirectNotifInd
 	}
 	return toSerialize, nil

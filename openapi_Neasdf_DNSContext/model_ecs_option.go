@@ -69,7 +69,7 @@ func (o *EcsOption) SetSourcePrefixLength(v int32) {
 
 // GetScopePrefixLength returns the ScopePrefixLength field value if set, zero value otherwise.
 func (o *EcsOption) GetScopePrefixLength() int32 {
-	if o == nil || IsNil(o.ScopePrefixLength) {
+	if o == nil || isNil(o.ScopePrefixLength) {
 		var ret int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *EcsOption) GetScopePrefixLength() int32 {
 // GetScopePrefixLengthOk returns a tuple with the ScopePrefixLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcsOption) GetScopePrefixLengthOk() (*int32, bool) {
-	if o == nil || IsNil(o.ScopePrefixLength) {
+	if o == nil || isNil(o.ScopePrefixLength) {
 		return nil, false
 	}
 	return o.ScopePrefixLength, true
@@ -87,7 +87,7 @@ func (o *EcsOption) GetScopePrefixLengthOk() (*int32, bool) {
 
 // HasScopePrefixLength returns a boolean if a field has been set.
 func (o *EcsOption) HasScopePrefixLength() bool {
-	if o != nil && !IsNil(o.ScopePrefixLength) {
+	if o != nil && !isNil(o.ScopePrefixLength) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o EcsOption) MarshalJSON() ([]byte, error) {
 func (o EcsOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sourcePrefixLength"] = o.SourcePrefixLength
-	if !IsNil(o.ScopePrefixLength) {
+	if !isNil(o.ScopePrefixLength) {
 		toSerialize["scopePrefixLength"] = o.ScopePrefixLength
 	}
 	toSerialize["ipAddr"] = o.IpAddr

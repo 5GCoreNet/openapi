@@ -95,7 +95,7 @@ func (o *CreatedSACEventSubscription) SetSubscriptionId(v string) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *CreatedSACEventSubscription) GetReport() SACEventReportItem {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		var ret SACEventReportItem
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *CreatedSACEventSubscription) GetReport() SACEventReportItem {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedSACEventSubscription) GetReportOk() (*SACEventReportItem, bool) {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -113,7 +113,7 @@ func (o *CreatedSACEventSubscription) GetReportOk() (*SACEventReportItem, bool) 
 
 // HasReport returns a boolean if a field has been set.
 func (o *CreatedSACEventSubscription) HasReport() bool {
-	if o != nil && !IsNil(o.Report) {
+	if o != nil && !isNil(o.Report) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *CreatedSACEventSubscription) SetReport(v SACEventReportItem) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreatedSACEventSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *CreatedSACEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedSACEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -145,7 +145,7 @@ func (o *CreatedSACEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreatedSACEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o CreatedSACEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.Report) {
+	if !isNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

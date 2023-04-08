@@ -42,7 +42,7 @@ func NewAssociatedProcedureDescriptionWithDefaults() *AssociatedProcedureDescrip
 
 // GetPostObjectRepair returns the PostObjectRepair field value if set, zero value otherwise.
 func (o *AssociatedProcedureDescription) GetPostObjectRepair() PostObjectRepair {
-	if o == nil || IsNil(o.PostObjectRepair) {
+	if o == nil || isNil(o.PostObjectRepair) {
 		var ret PostObjectRepair
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AssociatedProcedureDescription) GetPostObjectRepair() PostObjectRepair 
 // GetPostObjectRepairOk returns a tuple with the PostObjectRepair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssociatedProcedureDescription) GetPostObjectRepairOk() (*PostObjectRepair, bool) {
-	if o == nil || IsNil(o.PostObjectRepair) {
+	if o == nil || isNil(o.PostObjectRepair) {
 		return nil, false
 	}
 	return o.PostObjectRepair, true
@@ -60,7 +60,7 @@ func (o *AssociatedProcedureDescription) GetPostObjectRepairOk() (*PostObjectRep
 
 // HasPostObjectRepair returns a boolean if a field has been set.
 func (o *AssociatedProcedureDescription) HasPostObjectRepair() bool {
-	if o != nil && !IsNil(o.PostObjectRepair) {
+	if o != nil && !isNil(o.PostObjectRepair) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AssociatedProcedureDescription) SetPostObjectRepair(v PostObjectRepair)
 
 // GetMbsObjectRepair returns the MbsObjectRepair field value if set, zero value otherwise.
 func (o *AssociatedProcedureDescription) GetMbsObjectRepair() MbsObjectRepair {
-	if o == nil || IsNil(o.MbsObjectRepair) {
+	if o == nil || isNil(o.MbsObjectRepair) {
 		var ret MbsObjectRepair
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AssociatedProcedureDescription) GetMbsObjectRepair() MbsObjectRepair {
 // GetMbsObjectRepairOk returns a tuple with the MbsObjectRepair field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssociatedProcedureDescription) GetMbsObjectRepairOk() (*MbsObjectRepair, bool) {
-	if o == nil || IsNil(o.MbsObjectRepair) {
+	if o == nil || isNil(o.MbsObjectRepair) {
 		return nil, false
 	}
 	return o.MbsObjectRepair, true
@@ -92,7 +92,7 @@ func (o *AssociatedProcedureDescription) GetMbsObjectRepairOk() (*MbsObjectRepai
 
 // HasMbsObjectRepair returns a boolean if a field has been set.
 func (o *AssociatedProcedureDescription) HasMbsObjectRepair() bool {
-	if o != nil && !IsNil(o.MbsObjectRepair) {
+	if o != nil && !isNil(o.MbsObjectRepair) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o AssociatedProcedureDescription) MarshalJSON() ([]byte, error) {
 
 func (o AssociatedProcedureDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PostObjectRepair) {
+	if !isNil(o.PostObjectRepair) {
 		toSerialize["postObjectRepair"] = o.PostObjectRepair
 	}
-	if !IsNil(o.MbsObjectRepair) {
+	if !isNil(o.MbsObjectRepair) {
 		toSerialize["mbsObjectRepair"] = o.MbsObjectRepair
 	}
 	return toSerialize, nil

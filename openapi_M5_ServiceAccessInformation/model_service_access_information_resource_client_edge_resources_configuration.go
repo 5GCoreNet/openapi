@@ -44,7 +44,7 @@ func NewServiceAccessInformationResourceClientEdgeResourcesConfigurationWithDefa
 
 // GetEligibilityCriteria returns the EligibilityCriteria field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEligibilityCriteria() EdgeProcessingEligibilityCriteria {
-	if o == nil || IsNil(o.EligibilityCriteria) {
+	if o == nil || isNil(o.EligibilityCriteria) {
 		var ret EdgeProcessingEligibilityCriteria
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEl
 // GetEligibilityCriteriaOk returns a tuple with the EligibilityCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEligibilityCriteriaOk() (*EdgeProcessingEligibilityCriteria, bool) {
-	if o == nil || IsNil(o.EligibilityCriteria) {
+	if o == nil || isNil(o.EligibilityCriteria) {
 		return nil, false
 	}
 	return o.EligibilityCriteria, true
@@ -62,7 +62,7 @@ func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEl
 
 // HasEligibilityCriteria returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) HasEligibilityCriteria() bool {
-	if o != nil && !IsNil(o.EligibilityCriteria) {
+	if o != nil && !isNil(o.EligibilityCriteria) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) SetEa
 
 // GetEasRelocationRequirements returns the EasRelocationRequirements field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEasRelocationRequirements() M5EASRelocationRequirements {
-	if o == nil || IsNil(o.EasRelocationRequirements) {
+	if o == nil || isNil(o.EasRelocationRequirements) {
 		var ret M5EASRelocationRequirements
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEa
 // GetEasRelocationRequirementsOk returns a tuple with the EasRelocationRequirements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEasRelocationRequirementsOk() (*M5EASRelocationRequirements, bool) {
-	if o == nil || IsNil(o.EasRelocationRequirements) {
+	if o == nil || isNil(o.EasRelocationRequirements) {
 		return nil, false
 	}
 	return o.EasRelocationRequirements, true
@@ -118,7 +118,7 @@ func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) GetEa
 
 // HasEasRelocationRequirements returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientEdgeResourcesConfiguration) HasEasRelocationRequirements() bool {
-	if o != nil && !IsNil(o.EasRelocationRequirements) {
+	if o != nil && !isNil(o.EasRelocationRequirements) {
 		return true
 	}
 
@@ -140,11 +140,11 @@ func (o ServiceAccessInformationResourceClientEdgeResourcesConfiguration) Marsha
 
 func (o ServiceAccessInformationResourceClientEdgeResourcesConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EligibilityCriteria) {
+	if !isNil(o.EligibilityCriteria) {
 		toSerialize["eligibilityCriteria"] = o.EligibilityCriteria
 	}
 	toSerialize["easDiscoveryTemplate"] = o.EasDiscoveryTemplate
-	if !IsNil(o.EasRelocationRequirements) {
+	if !isNil(o.EasRelocationRequirements) {
 		toSerialize["easRelocationRequirements"] = o.EasRelocationRequirements
 	}
 	return toSerialize, nil

@@ -48,7 +48,7 @@ func NewNetStatusRepSubsPatchWithDefaults() *NetStatusRepSubsPatch {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *NetStatusRepSubsPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -66,7 +66,7 @@ func (o *NetStatusRepSubsPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *NetStatusRepSubsPatch) SetNotificationDestination(v string) {
 
 // GetLocationArea returns the LocationArea field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetLocationArea() LocationArea {
-	if o == nil || IsNil(o.LocationArea) {
+	if o == nil || isNil(o.LocationArea) {
 		var ret LocationArea
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *NetStatusRepSubsPatch) GetLocationArea() LocationArea {
 // GetLocationAreaOk returns a tuple with the LocationArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetLocationAreaOk() (*LocationArea, bool) {
-	if o == nil || IsNil(o.LocationArea) {
+	if o == nil || isNil(o.LocationArea) {
 		return nil, false
 	}
 	return o.LocationArea, true
@@ -98,7 +98,7 @@ func (o *NetStatusRepSubsPatch) GetLocationAreaOk() (*LocationArea, bool) {
 
 // HasLocationArea returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasLocationArea() bool {
-	if o != nil && !IsNil(o.LocationArea) {
+	if o != nil && !isNil(o.LocationArea) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *NetStatusRepSubsPatch) SetLocationArea(v LocationArea) {
 
 // GetTimeDuration returns the TimeDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NetStatusRepSubsPatch) GetTimeDuration() time.Time {
-	if o == nil || IsNil(o.TimeDuration.Get()) {
+	if o == nil || isNil(o.TimeDuration.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *NetStatusRepSubsPatch) UnsetTimeDuration() {
 
 // GetThresholdValues returns the ThresholdValues field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetThresholdValues() []int32 {
-	if o == nil || IsNil(o.ThresholdValues) {
+	if o == nil || isNil(o.ThresholdValues) {
 		var ret []int32
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdValues() []int32 {
 // GetThresholdValuesOk returns a tuple with the ThresholdValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetThresholdValuesOk() ([]int32, bool) {
-	if o == nil || IsNil(o.ThresholdValues) {
+	if o == nil || isNil(o.ThresholdValues) {
 		return nil, false
 	}
 	return o.ThresholdValues, true
@@ -172,7 +172,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdValuesOk() ([]int32, bool) {
 
 // HasThresholdValues returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasThresholdValues() bool {
-	if o != nil && !IsNil(o.ThresholdValues) {
+	if o != nil && !isNil(o.ThresholdValues) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *NetStatusRepSubsPatch) SetThresholdValues(v []int32) {
 
 // GetThresholdTypes returns the ThresholdTypes field value if set, zero value otherwise.
 func (o *NetStatusRepSubsPatch) GetThresholdTypes() []CongestionType {
-	if o == nil || IsNil(o.ThresholdTypes) {
+	if o == nil || isNil(o.ThresholdTypes) {
 		var ret []CongestionType
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdTypes() []CongestionType {
 // GetThresholdTypesOk returns a tuple with the ThresholdTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetStatusRepSubsPatch) GetThresholdTypesOk() ([]CongestionType, bool) {
-	if o == nil || IsNil(o.ThresholdTypes) {
+	if o == nil || isNil(o.ThresholdTypes) {
 		return nil, false
 	}
 	return o.ThresholdTypes, true
@@ -204,7 +204,7 @@ func (o *NetStatusRepSubsPatch) GetThresholdTypesOk() ([]CongestionType, bool) {
 
 // HasThresholdTypes returns a boolean if a field has been set.
 func (o *NetStatusRepSubsPatch) HasThresholdTypes() bool {
-	if o != nil && !IsNil(o.ThresholdTypes) {
+	if o != nil && !isNil(o.ThresholdTypes) {
 		return true
 	}
 
@@ -226,19 +226,19 @@ func (o NetStatusRepSubsPatch) MarshalJSON() ([]byte, error) {
 
 func (o NetStatusRepSubsPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.LocationArea) {
+	if !isNil(o.LocationArea) {
 		toSerialize["locationArea"] = o.LocationArea
 	}
 	if o.TimeDuration.IsSet() {
 		toSerialize["timeDuration"] = o.TimeDuration.Get()
 	}
-	if !IsNil(o.ThresholdValues) {
+	if !isNil(o.ThresholdValues) {
 		toSerialize["thresholdValues"] = o.ThresholdValues
 	}
-	if !IsNil(o.ThresholdTypes) {
+	if !isNil(o.ThresholdTypes) {
 		toSerialize["thresholdTypes"] = o.ThresholdTypes
 	}
 	return toSerialize, nil

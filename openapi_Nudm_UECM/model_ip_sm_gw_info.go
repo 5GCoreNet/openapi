@@ -42,7 +42,7 @@ func NewIpSmGwInfoWithDefaults() *IpSmGwInfo {
 
 // GetIpSmGwRegistration returns the IpSmGwRegistration field value if set, zero value otherwise.
 func (o *IpSmGwInfo) GetIpSmGwRegistration() IpSmGwRegistration {
-	if o == nil || IsNil(o.IpSmGwRegistration) {
+	if o == nil || isNil(o.IpSmGwRegistration) {
 		var ret IpSmGwRegistration
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *IpSmGwInfo) GetIpSmGwRegistration() IpSmGwRegistration {
 // GetIpSmGwRegistrationOk returns a tuple with the IpSmGwRegistration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwInfo) GetIpSmGwRegistrationOk() (*IpSmGwRegistration, bool) {
-	if o == nil || IsNil(o.IpSmGwRegistration) {
+	if o == nil || isNil(o.IpSmGwRegistration) {
 		return nil, false
 	}
 	return o.IpSmGwRegistration, true
@@ -60,7 +60,7 @@ func (o *IpSmGwInfo) GetIpSmGwRegistrationOk() (*IpSmGwRegistration, bool) {
 
 // HasIpSmGwRegistration returns a boolean if a field has been set.
 func (o *IpSmGwInfo) HasIpSmGwRegistration() bool {
-	if o != nil && !IsNil(o.IpSmGwRegistration) {
+	if o != nil && !isNil(o.IpSmGwRegistration) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *IpSmGwInfo) SetIpSmGwRegistration(v IpSmGwRegistration) {
 
 // GetIpSmGwGuidance returns the IpSmGwGuidance field value if set, zero value otherwise.
 func (o *IpSmGwInfo) GetIpSmGwGuidance() IpSmGwGuidance {
-	if o == nil || IsNil(o.IpSmGwGuidance) {
+	if o == nil || isNil(o.IpSmGwGuidance) {
 		var ret IpSmGwGuidance
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *IpSmGwInfo) GetIpSmGwGuidance() IpSmGwGuidance {
 // GetIpSmGwGuidanceOk returns a tuple with the IpSmGwGuidance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpSmGwInfo) GetIpSmGwGuidanceOk() (*IpSmGwGuidance, bool) {
-	if o == nil || IsNil(o.IpSmGwGuidance) {
+	if o == nil || isNil(o.IpSmGwGuidance) {
 		return nil, false
 	}
 	return o.IpSmGwGuidance, true
@@ -92,7 +92,7 @@ func (o *IpSmGwInfo) GetIpSmGwGuidanceOk() (*IpSmGwGuidance, bool) {
 
 // HasIpSmGwGuidance returns a boolean if a field has been set.
 func (o *IpSmGwInfo) HasIpSmGwGuidance() bool {
-	if o != nil && !IsNil(o.IpSmGwGuidance) {
+	if o != nil && !isNil(o.IpSmGwGuidance) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o IpSmGwInfo) MarshalJSON() ([]byte, error) {
 
 func (o IpSmGwInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IpSmGwRegistration) {
+	if !isNil(o.IpSmGwRegistration) {
 		toSerialize["ipSmGwRegistration"] = o.IpSmGwRegistration
 	}
-	if !IsNil(o.IpSmGwGuidance) {
+	if !isNil(o.IpSmGwGuidance) {
 		toSerialize["ipSmGwGuidance"] = o.IpSmGwGuidance
 	}
 	return toSerialize, nil

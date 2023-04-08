@@ -51,7 +51,7 @@ func NewManagePortWithDefaults() *ManagePort {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *ManagePort) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *ManagePort) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -69,7 +69,7 @@ func (o *ManagePort) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *ManagePort) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ManagePort) SetAppId(v string) {
 
 // GetManageEntity returns the ManageEntity field value if set, zero value otherwise.
 func (o *ManagePort) GetManageEntity() ManageEntity {
-	if o == nil || IsNil(o.ManageEntity) {
+	if o == nil || isNil(o.ManageEntity) {
 		var ret ManageEntity
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ManagePort) GetManageEntity() ManageEntity {
 // GetManageEntityOk returns a tuple with the ManageEntity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetManageEntityOk() (*ManageEntity, bool) {
-	if o == nil || IsNil(o.ManageEntity) {
+	if o == nil || isNil(o.ManageEntity) {
 		return nil, false
 	}
 	return o.ManageEntity, true
@@ -125,7 +125,7 @@ func (o *ManagePort) GetManageEntityOk() (*ManageEntity, bool) {
 
 // HasManageEntity returns a boolean if a field has been set.
 func (o *ManagePort) HasManageEntity() bool {
-	if o != nil && !IsNil(o.ManageEntity) {
+	if o != nil && !isNil(o.ManageEntity) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *ManagePort) SetManageEntity(v ManageEntity) {
 
 // GetSkipUeInquiry returns the SkipUeInquiry field value if set, zero value otherwise.
 func (o *ManagePort) GetSkipUeInquiry() bool {
-	if o == nil || IsNil(o.SkipUeInquiry) {
+	if o == nil || isNil(o.SkipUeInquiry) {
 		var ret bool
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *ManagePort) GetSkipUeInquiry() bool {
 // GetSkipUeInquiryOk returns a tuple with the SkipUeInquiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetSkipUeInquiryOk() (*bool, bool) {
-	if o == nil || IsNil(o.SkipUeInquiry) {
+	if o == nil || isNil(o.SkipUeInquiry) {
 		return nil, false
 	}
 	return o.SkipUeInquiry, true
@@ -157,7 +157,7 @@ func (o *ManagePort) GetSkipUeInquiryOk() (*bool, bool) {
 
 // HasSkipUeInquiry returns a boolean if a field has been set.
 func (o *ManagePort) HasSkipUeInquiry() bool {
-	if o != nil && !IsNil(o.SkipUeInquiry) {
+	if o != nil && !isNil(o.SkipUeInquiry) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *ManagePort) SetSkipUeInquiry(v bool) {
 
 // GetSupportedFormats returns the SupportedFormats field value if set, zero value otherwise.
 func (o *ManagePort) GetSupportedFormats() []SerializationFormat {
-	if o == nil || IsNil(o.SupportedFormats) {
+	if o == nil || isNil(o.SupportedFormats) {
 		var ret []SerializationFormat
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *ManagePort) GetSupportedFormats() []SerializationFormat {
 // GetSupportedFormatsOk returns a tuple with the SupportedFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetSupportedFormatsOk() ([]SerializationFormat, bool) {
-	if o == nil || IsNil(o.SupportedFormats) {
+	if o == nil || isNil(o.SupportedFormats) {
 		return nil, false
 	}
 	return o.SupportedFormats, true
@@ -189,7 +189,7 @@ func (o *ManagePort) GetSupportedFormatsOk() ([]SerializationFormat, bool) {
 
 // HasSupportedFormats returns a boolean if a field has been set.
 func (o *ManagePort) HasSupportedFormats() bool {
-	if o != nil && !IsNil(o.SupportedFormats) {
+	if o != nil && !isNil(o.SupportedFormats) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *ManagePort) SetSupportedFormats(v []SerializationFormat) {
 
 // GetConfiguredFormat returns the ConfiguredFormat field value if set, zero value otherwise.
 func (o *ManagePort) GetConfiguredFormat() SerializationFormat {
-	if o == nil || IsNil(o.ConfiguredFormat) {
+	if o == nil || isNil(o.ConfiguredFormat) {
 		var ret SerializationFormat
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *ManagePort) GetConfiguredFormat() SerializationFormat {
 // GetConfiguredFormatOk returns a tuple with the ConfiguredFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagePort) GetConfiguredFormatOk() (*SerializationFormat, bool) {
-	if o == nil || IsNil(o.ConfiguredFormat) {
+	if o == nil || isNil(o.ConfiguredFormat) {
 		return nil, false
 	}
 	return o.ConfiguredFormat, true
@@ -221,7 +221,7 @@ func (o *ManagePort) GetConfiguredFormatOk() (*SerializationFormat, bool) {
 
 // HasConfiguredFormat returns a boolean if a field has been set.
 func (o *ManagePort) HasConfiguredFormat() bool {
-	if o != nil && !IsNil(o.ConfiguredFormat) {
+	if o != nil && !isNil(o.ConfiguredFormat) {
 		return true
 	}
 
@@ -243,20 +243,20 @@ func (o ManagePort) MarshalJSON() ([]byte, error) {
 
 func (o ManagePort) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["appId"] = o.AppId
-	if !IsNil(o.ManageEntity) {
+	if !isNil(o.ManageEntity) {
 		toSerialize["manageEntity"] = o.ManageEntity
 	}
-	if !IsNil(o.SkipUeInquiry) {
+	if !isNil(o.SkipUeInquiry) {
 		toSerialize["skipUeInquiry"] = o.SkipUeInquiry
 	}
-	if !IsNil(o.SupportedFormats) {
+	if !isNil(o.SupportedFormats) {
 		toSerialize["supportedFormats"] = o.SupportedFormats
 	}
-	if !IsNil(o.ConfiguredFormat) {
+	if !isNil(o.ConfiguredFormat) {
 		toSerialize["configuredFormat"] = o.ConfiguredFormat
 	}
 	return toSerialize, nil

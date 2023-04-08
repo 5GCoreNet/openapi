@@ -44,7 +44,7 @@ func NewBsfInfoWithDefaults() *BsfInfo {
 
 // GetUiccType returns the UiccType field value if set, zero value otherwise.
 func (o *BsfInfo) GetUiccType() UiccType {
-	if o == nil || IsNil(o.UiccType) {
+	if o == nil || isNil(o.UiccType) {
 		var ret UiccType
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *BsfInfo) GetUiccType() UiccType {
 // GetUiccTypeOk returns a tuple with the UiccType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetUiccTypeOk() (*UiccType, bool) {
-	if o == nil || IsNil(o.UiccType) {
+	if o == nil || isNil(o.UiccType) {
 		return nil, false
 	}
 	return o.UiccType, true
@@ -62,7 +62,7 @@ func (o *BsfInfo) GetUiccTypeOk() (*UiccType, bool) {
 
 // HasUiccType returns a boolean if a field has been set.
 func (o *BsfInfo) HasUiccType() bool {
-	if o != nil && !IsNil(o.UiccType) {
+	if o != nil && !isNil(o.UiccType) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *BsfInfo) SetUiccType(v UiccType) {
 
 // GetLifeTime returns the LifeTime field value if set, zero value otherwise.
 func (o *BsfInfo) GetLifeTime() int32 {
-	if o == nil || IsNil(o.LifeTime) {
+	if o == nil || isNil(o.LifeTime) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *BsfInfo) GetLifeTime() int32 {
 // GetLifeTimeOk returns a tuple with the LifeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetLifeTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.LifeTime) {
+	if o == nil || isNil(o.LifeTime) {
 		return nil, false
 	}
 	return o.LifeTime, true
@@ -94,7 +94,7 @@ func (o *BsfInfo) GetLifeTimeOk() (*int32, bool) {
 
 // HasLifeTime returns a boolean if a field has been set.
 func (o *BsfInfo) HasLifeTime() bool {
-	if o != nil && !IsNil(o.LifeTime) {
+	if o != nil && !isNil(o.LifeTime) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *BsfInfo) SetLifeTime(v int32) {
 
 // GetSecurityFeatures returns the SecurityFeatures field value if set, zero value otherwise.
 func (o *BsfInfo) GetSecurityFeatures() []SecFeature {
-	if o == nil || IsNil(o.SecurityFeatures) {
+	if o == nil || isNil(o.SecurityFeatures) {
 		var ret []SecFeature
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *BsfInfo) GetSecurityFeatures() []SecFeature {
 // GetSecurityFeaturesOk returns a tuple with the SecurityFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfInfo) GetSecurityFeaturesOk() ([]SecFeature, bool) {
-	if o == nil || IsNil(o.SecurityFeatures) {
+	if o == nil || isNil(o.SecurityFeatures) {
 		return nil, false
 	}
 	return o.SecurityFeatures, true
@@ -126,7 +126,7 @@ func (o *BsfInfo) GetSecurityFeaturesOk() ([]SecFeature, bool) {
 
 // HasSecurityFeatures returns a boolean if a field has been set.
 func (o *BsfInfo) HasSecurityFeatures() bool {
-	if o != nil && !IsNil(o.SecurityFeatures) {
+	if o != nil && !isNil(o.SecurityFeatures) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o BsfInfo) MarshalJSON() ([]byte, error) {
 
 func (o BsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UiccType) {
+	if !isNil(o.UiccType) {
 		toSerialize["uiccType"] = o.UiccType
 	}
-	if !IsNil(o.LifeTime) {
+	if !isNil(o.LifeTime) {
 		toSerialize["lifeTime"] = o.LifeTime
 	}
-	if !IsNil(o.SecurityFeatures) {
+	if !isNil(o.SecurityFeatures) {
 		toSerialize["securityFeatures"] = o.SecurityFeatures
 	}
 	return toSerialize, nil

@@ -45,7 +45,7 @@ func NewRedundantTransmissionExpInfoWithDefaults() *RedundantTransmissionExpInfo
 
 // GetSpatialValidCon returns the SpatialValidCon field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpInfo) GetSpatialValidCon() NetworkAreaInfo {
-	if o == nil || IsNil(o.SpatialValidCon) {
+	if o == nil || isNil(o.SpatialValidCon) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *RedundantTransmissionExpInfo) GetSpatialValidCon() NetworkAreaInfo {
 // GetSpatialValidConOk returns a tuple with the SpatialValidCon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpInfo) GetSpatialValidConOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.SpatialValidCon) {
+	if o == nil || isNil(o.SpatialValidCon) {
 		return nil, false
 	}
 	return o.SpatialValidCon, true
@@ -63,7 +63,7 @@ func (o *RedundantTransmissionExpInfo) GetSpatialValidConOk() (*NetworkAreaInfo,
 
 // HasSpatialValidCon returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpInfo) HasSpatialValidCon() bool {
-	if o != nil && !IsNil(o.SpatialValidCon) {
+	if o != nil && !isNil(o.SpatialValidCon) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *RedundantTransmissionExpInfo) SetSpatialValidCon(v NetworkAreaInfo) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *RedundantTransmissionExpInfo) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *RedundantTransmissionExpInfo) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantTransmissionExpInfo) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -95,7 +95,7 @@ func (o *RedundantTransmissionExpInfo) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *RedundantTransmissionExpInfo) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o RedundantTransmissionExpInfo) MarshalJSON() ([]byte, error) {
 
 func (o RedundantTransmissionExpInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SpatialValidCon) {
+	if !isNil(o.SpatialValidCon) {
 		toSerialize["spatialValidCon"] = o.SpatialValidCon
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	toSerialize["redTransExps"] = o.RedTransExps

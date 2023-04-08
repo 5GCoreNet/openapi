@@ -42,7 +42,7 @@ func NewPduSessionStatusCfgWithDefaults() *PduSessionStatusCfg {
 
 // GetApn returns the Apn field value if set, zero value otherwise.
 func (o *PduSessionStatusCfg) GetApn() string {
-	if o == nil || IsNil(o.Apn) {
+	if o == nil || isNil(o.Apn) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduSessionStatusCfg) GetApn() string {
 // GetApnOk returns a tuple with the Apn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionStatusCfg) GetApnOk() (*string, bool) {
-	if o == nil || IsNil(o.Apn) {
+	if o == nil || isNil(o.Apn) {
 		return nil, false
 	}
 	return o.Apn, true
@@ -60,7 +60,7 @@ func (o *PduSessionStatusCfg) GetApnOk() (*string, bool) {
 
 // HasApn returns a boolean if a field has been set.
 func (o *PduSessionStatusCfg) HasApn() bool {
-	if o != nil && !IsNil(o.Apn) {
+	if o != nil && !isNil(o.Apn) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o PduSessionStatusCfg) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionStatusCfg) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Apn) {
+	if !isNil(o.Apn) {
 		toSerialize["apn"] = o.Apn
 	}
 	return toSerialize, nil

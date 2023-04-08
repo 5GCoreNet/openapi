@@ -125,7 +125,7 @@ func (o *CancelPosInfo) SetLdrReference(v string) {
 
 // GetServingLMFIdentification returns the ServingLMFIdentification field value if set, zero value otherwise.
 func (o *CancelPosInfo) GetServingLMFIdentification() string {
-	if o == nil || IsNil(o.ServingLMFIdentification) {
+	if o == nil || isNil(o.ServingLMFIdentification) {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *CancelPosInfo) GetServingLMFIdentification() string {
 // GetServingLMFIdentificationOk returns a tuple with the ServingLMFIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelPosInfo) GetServingLMFIdentificationOk() (*string, bool) {
-	if o == nil || IsNil(o.ServingLMFIdentification) {
+	if o == nil || isNil(o.ServingLMFIdentification) {
 		return nil, false
 	}
 	return o.ServingLMFIdentification, true
@@ -143,7 +143,7 @@ func (o *CancelPosInfo) GetServingLMFIdentificationOk() (*string, bool) {
 
 // HasServingLMFIdentification returns a boolean if a field has been set.
 func (o *CancelPosInfo) HasServingLMFIdentification() bool {
-	if o != nil && !IsNil(o.ServingLMFIdentification) {
+	if o != nil && !isNil(o.ServingLMFIdentification) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *CancelPosInfo) SetServingLMFIdentification(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CancelPosInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *CancelPosInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelPosInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -175,7 +175,7 @@ func (o *CancelPosInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CancelPosInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -200,10 +200,10 @@ func (o CancelPosInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["supi"] = o.Supi
 	toSerialize["hgmlcCallBackURI"] = o.HgmlcCallBackURI
 	toSerialize["ldrReference"] = o.LdrReference
-	if !IsNil(o.ServingLMFIdentification) {
+	if !isNil(o.ServingLMFIdentification) {
 		toSerialize["servingLMFIdentification"] = o.ServingLMFIdentification
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

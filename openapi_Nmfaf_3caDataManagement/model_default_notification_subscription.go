@@ -102,7 +102,7 @@ func (o *DefaultNotificationSubscription) SetCallbackUri(v string) {
 
 // GetN1MessageClass returns the N1MessageClass field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetN1MessageClass() N1MessageClass {
-	if o == nil || IsNil(o.N1MessageClass) {
+	if o == nil || isNil(o.N1MessageClass) {
 		var ret N1MessageClass
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *DefaultNotificationSubscription) GetN1MessageClass() N1MessageClass {
 // GetN1MessageClassOk returns a tuple with the N1MessageClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetN1MessageClassOk() (*N1MessageClass, bool) {
-	if o == nil || IsNil(o.N1MessageClass) {
+	if o == nil || isNil(o.N1MessageClass) {
 		return nil, false
 	}
 	return o.N1MessageClass, true
@@ -120,7 +120,7 @@ func (o *DefaultNotificationSubscription) GetN1MessageClassOk() (*N1MessageClass
 
 // HasN1MessageClass returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasN1MessageClass() bool {
-	if o != nil && !IsNil(o.N1MessageClass) {
+	if o != nil && !isNil(o.N1MessageClass) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *DefaultNotificationSubscription) SetN1MessageClass(v N1MessageClass) {
 
 // GetN2InformationClass returns the N2InformationClass field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetN2InformationClass() N2InformationClass {
-	if o == nil || IsNil(o.N2InformationClass) {
+	if o == nil || isNil(o.N2InformationClass) {
 		var ret N2InformationClass
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *DefaultNotificationSubscription) GetN2InformationClass() N2InformationC
 // GetN2InformationClassOk returns a tuple with the N2InformationClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetN2InformationClassOk() (*N2InformationClass, bool) {
-	if o == nil || IsNil(o.N2InformationClass) {
+	if o == nil || isNil(o.N2InformationClass) {
 		return nil, false
 	}
 	return o.N2InformationClass, true
@@ -152,7 +152,7 @@ func (o *DefaultNotificationSubscription) GetN2InformationClassOk() (*N2Informat
 
 // HasN2InformationClass returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasN2InformationClass() bool {
-	if o != nil && !IsNil(o.N2InformationClass) {
+	if o != nil && !isNil(o.N2InformationClass) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *DefaultNotificationSubscription) SetN2InformationClass(v N2InformationC
 
 // GetVersions returns the Versions field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetVersions() []string {
-	if o == nil || IsNil(o.Versions) {
+	if o == nil || isNil(o.Versions) {
 		var ret []string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *DefaultNotificationSubscription) GetVersions() []string {
 // GetVersionsOk returns a tuple with the Versions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetVersionsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Versions) {
+	if o == nil || isNil(o.Versions) {
 		return nil, false
 	}
 	return o.Versions, true
@@ -184,7 +184,7 @@ func (o *DefaultNotificationSubscription) GetVersionsOk() ([]string, bool) {
 
 // HasVersions returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasVersions() bool {
-	if o != nil && !IsNil(o.Versions) {
+	if o != nil && !isNil(o.Versions) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *DefaultNotificationSubscription) SetVersions(v []string) {
 
 // GetBinding returns the Binding field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetBinding() string {
-	if o == nil || IsNil(o.Binding) {
+	if o == nil || isNil(o.Binding) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *DefaultNotificationSubscription) GetBinding() string {
 // GetBindingOk returns a tuple with the Binding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetBindingOk() (*string, bool) {
-	if o == nil || IsNil(o.Binding) {
+	if o == nil || isNil(o.Binding) {
 		return nil, false
 	}
 	return o.Binding, true
@@ -216,7 +216,7 @@ func (o *DefaultNotificationSubscription) GetBindingOk() (*string, bool) {
 
 // HasBinding returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasBinding() bool {
-	if o != nil && !IsNil(o.Binding) {
+	if o != nil && !isNil(o.Binding) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *DefaultNotificationSubscription) SetBinding(v string) {
 
 // GetAcceptedEncoding returns the AcceptedEncoding field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetAcceptedEncoding() string {
-	if o == nil || IsNil(o.AcceptedEncoding) {
+	if o == nil || isNil(o.AcceptedEncoding) {
 		var ret string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *DefaultNotificationSubscription) GetAcceptedEncoding() string {
 // GetAcceptedEncodingOk returns a tuple with the AcceptedEncoding field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetAcceptedEncodingOk() (*string, bool) {
-	if o == nil || IsNil(o.AcceptedEncoding) {
+	if o == nil || isNil(o.AcceptedEncoding) {
 		return nil, false
 	}
 	return o.AcceptedEncoding, true
@@ -248,7 +248,7 @@ func (o *DefaultNotificationSubscription) GetAcceptedEncodingOk() (*string, bool
 
 // HasAcceptedEncoding returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasAcceptedEncoding() bool {
-	if o != nil && !IsNil(o.AcceptedEncoding) {
+	if o != nil && !isNil(o.AcceptedEncoding) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *DefaultNotificationSubscription) SetAcceptedEncoding(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *DefaultNotificationSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -280,7 +280,7 @@ func (o *DefaultNotificationSubscription) GetSupportedFeaturesOk() (*string, boo
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -294,7 +294,7 @@ func (o *DefaultNotificationSubscription) SetSupportedFeatures(v string) {
 
 // GetServiceInfoList returns the ServiceInfoList field value if set, zero value otherwise.
 func (o *DefaultNotificationSubscription) GetServiceInfoList() map[string]DefSubServiceInfo {
-	if o == nil || IsNil(o.ServiceInfoList) {
+	if o == nil || isNil(o.ServiceInfoList) {
 		var ret map[string]DefSubServiceInfo
 		return ret
 	}
@@ -304,7 +304,7 @@ func (o *DefaultNotificationSubscription) GetServiceInfoList() map[string]DefSub
 // GetServiceInfoListOk returns a tuple with the ServiceInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultNotificationSubscription) GetServiceInfoListOk() (*map[string]DefSubServiceInfo, bool) {
-	if o == nil || IsNil(o.ServiceInfoList) {
+	if o == nil || isNil(o.ServiceInfoList) {
 		return nil, false
 	}
 	return o.ServiceInfoList, true
@@ -312,7 +312,7 @@ func (o *DefaultNotificationSubscription) GetServiceInfoListOk() (*map[string]De
 
 // HasServiceInfoList returns a boolean if a field has been set.
 func (o *DefaultNotificationSubscription) HasServiceInfoList() bool {
-	if o != nil && !IsNil(o.ServiceInfoList) {
+	if o != nil && !isNil(o.ServiceInfoList) {
 		return true
 	}
 
@@ -336,25 +336,25 @@ func (o DefaultNotificationSubscription) ToMap() (map[string]interface{}, error)
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["callbackUri"] = o.CallbackUri
-	if !IsNil(o.N1MessageClass) {
+	if !isNil(o.N1MessageClass) {
 		toSerialize["n1MessageClass"] = o.N1MessageClass
 	}
-	if !IsNil(o.N2InformationClass) {
+	if !isNil(o.N2InformationClass) {
 		toSerialize["n2InformationClass"] = o.N2InformationClass
 	}
-	if !IsNil(o.Versions) {
+	if !isNil(o.Versions) {
 		toSerialize["versions"] = o.Versions
 	}
-	if !IsNil(o.Binding) {
+	if !isNil(o.Binding) {
 		toSerialize["binding"] = o.Binding
 	}
-	if !IsNil(o.AcceptedEncoding) {
+	if !isNil(o.AcceptedEncoding) {
 		toSerialize["acceptedEncoding"] = o.AcceptedEncoding
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ServiceInfoList) {
+	if !isNil(o.ServiceInfoList) {
 		toSerialize["serviceInfoList"] = o.ServiceInfoList
 	}
 	return toSerialize, nil

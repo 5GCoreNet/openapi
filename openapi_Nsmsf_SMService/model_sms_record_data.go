@@ -101,7 +101,7 @@ func (o *SmsRecordData) SetSmsPayload(v RefToBinaryData) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *SmsRecordData) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SmsRecordData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -119,7 +119,7 @@ func (o *SmsRecordData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *SmsRecordData) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *SmsRecordData) SetAccessType(v AccessType) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *SmsRecordData) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *SmsRecordData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -151,7 +151,7 @@ func (o *SmsRecordData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *SmsRecordData) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *SmsRecordData) SetGpsi(v string) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *SmsRecordData) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *SmsRecordData) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -183,7 +183,7 @@ func (o *SmsRecordData) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *SmsRecordData) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *SmsRecordData) SetPei(v string) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *SmsRecordData) GetUeLocation() UserLocation {
-	if o == nil || IsNil(o.UeLocation) {
+	if o == nil || isNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *SmsRecordData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UeLocation) {
+	if o == nil || isNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -215,7 +215,7 @@ func (o *SmsRecordData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *SmsRecordData) HasUeLocation() bool {
-	if o != nil && !IsNil(o.UeLocation) {
+	if o != nil && !isNil(o.UeLocation) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *SmsRecordData) SetUeLocation(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *SmsRecordData) GetUeTimeZone() string {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *SmsRecordData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRecordData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -247,7 +247,7 @@ func (o *SmsRecordData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *SmsRecordData) HasUeTimeZone() bool {
-	if o != nil && !IsNil(o.UeTimeZone) {
+	if o != nil && !isNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -271,19 +271,19 @@ func (o SmsRecordData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsRecordId"] = o.SmsRecordId
 	toSerialize["smsPayload"] = o.SmsPayload
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.UeLocation) {
+	if !isNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
-	if !IsNil(o.UeTimeZone) {
+	if !isNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
 	return toSerialize, nil

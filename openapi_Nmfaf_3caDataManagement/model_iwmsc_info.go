@@ -44,7 +44,7 @@ func NewIwmscInfoWithDefaults() *IwmscInfo {
 
 // GetMsisdnRanges returns the MsisdnRanges field value if set, zero value otherwise.
 func (o *IwmscInfo) GetMsisdnRanges() []IdentityRange {
-	if o == nil || IsNil(o.MsisdnRanges) {
+	if o == nil || isNil(o.MsisdnRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *IwmscInfo) GetMsisdnRanges() []IdentityRange {
 // GetMsisdnRangesOk returns a tuple with the MsisdnRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IwmscInfo) GetMsisdnRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.MsisdnRanges) {
+	if o == nil || isNil(o.MsisdnRanges) {
 		return nil, false
 	}
 	return o.MsisdnRanges, true
@@ -62,7 +62,7 @@ func (o *IwmscInfo) GetMsisdnRangesOk() ([]IdentityRange, bool) {
 
 // HasMsisdnRanges returns a boolean if a field has been set.
 func (o *IwmscInfo) HasMsisdnRanges() bool {
-	if o != nil && !IsNil(o.MsisdnRanges) {
+	if o != nil && !isNil(o.MsisdnRanges) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *IwmscInfo) SetMsisdnRanges(v []IdentityRange) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *IwmscInfo) GetSupiRanges() []SupiRange {
-	if o == nil || IsNil(o.SupiRanges) {
+	if o == nil || isNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *IwmscInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IwmscInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || IsNil(o.SupiRanges) {
+	if o == nil || isNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -94,7 +94,7 @@ func (o *IwmscInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *IwmscInfo) HasSupiRanges() bool {
-	if o != nil && !IsNil(o.SupiRanges) {
+	if o != nil && !isNil(o.SupiRanges) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *IwmscInfo) SetSupiRanges(v []SupiRange) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *IwmscInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *IwmscInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IwmscInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -126,7 +126,7 @@ func (o *IwmscInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *IwmscInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *IwmscInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetScNumber returns the ScNumber field value if set, zero value otherwise.
 func (o *IwmscInfo) GetScNumber() string {
-	if o == nil || IsNil(o.ScNumber) {
+	if o == nil || isNil(o.ScNumber) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *IwmscInfo) GetScNumber() string {
 // GetScNumberOk returns a tuple with the ScNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IwmscInfo) GetScNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.ScNumber) {
+	if o == nil || isNil(o.ScNumber) {
 		return nil, false
 	}
 	return o.ScNumber, true
@@ -158,7 +158,7 @@ func (o *IwmscInfo) GetScNumberOk() (*string, bool) {
 
 // HasScNumber returns a boolean if a field has been set.
 func (o *IwmscInfo) HasScNumber() bool {
-	if o != nil && !IsNil(o.ScNumber) {
+	if o != nil && !isNil(o.ScNumber) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o IwmscInfo) MarshalJSON() ([]byte, error) {
 
 func (o IwmscInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MsisdnRanges) {
+	if !isNil(o.MsisdnRanges) {
 		toSerialize["msisdnRanges"] = o.MsisdnRanges
 	}
-	if !IsNil(o.SupiRanges) {
+	if !isNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.ScNumber) {
+	if !isNil(o.ScNumber) {
 		toSerialize["scNumber"] = o.ScNumber
 	}
 	return toSerialize, nil

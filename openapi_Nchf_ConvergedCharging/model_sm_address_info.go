@@ -43,7 +43,7 @@ func NewSMAddressInfoWithDefaults() *SMAddressInfo {
 
 // GetSMaddressType returns the SMaddressType field value if set, zero value otherwise.
 func (o *SMAddressInfo) GetSMaddressType() SMAddressType {
-	if o == nil || IsNil(o.SMaddressType) {
+	if o == nil || isNil(o.SMaddressType) {
 		var ret SMAddressType
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SMAddressInfo) GetSMaddressType() SMAddressType {
 // GetSMaddressTypeOk returns a tuple with the SMaddressType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMAddressInfo) GetSMaddressTypeOk() (*SMAddressType, bool) {
-	if o == nil || IsNil(o.SMaddressType) {
+	if o == nil || isNil(o.SMaddressType) {
 		return nil, false
 	}
 	return o.SMaddressType, true
@@ -61,7 +61,7 @@ func (o *SMAddressInfo) GetSMaddressTypeOk() (*SMAddressType, bool) {
 
 // HasSMaddressType returns a boolean if a field has been set.
 func (o *SMAddressInfo) HasSMaddressType() bool {
-	if o != nil && !IsNil(o.SMaddressType) {
+	if o != nil && !isNil(o.SMaddressType) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SMAddressInfo) SetSMaddressType(v SMAddressType) {
 
 // GetSMaddressData returns the SMaddressData field value if set, zero value otherwise.
 func (o *SMAddressInfo) GetSMaddressData() string {
-	if o == nil || IsNil(o.SMaddressData) {
+	if o == nil || isNil(o.SMaddressData) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SMAddressInfo) GetSMaddressData() string {
 // GetSMaddressDataOk returns a tuple with the SMaddressData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMAddressInfo) GetSMaddressDataOk() (*string, bool) {
-	if o == nil || IsNil(o.SMaddressData) {
+	if o == nil || isNil(o.SMaddressData) {
 		return nil, false
 	}
 	return o.SMaddressData, true
@@ -93,7 +93,7 @@ func (o *SMAddressInfo) GetSMaddressDataOk() (*string, bool) {
 
 // HasSMaddressData returns a boolean if a field has been set.
 func (o *SMAddressInfo) HasSMaddressData() bool {
-	if o != nil && !IsNil(o.SMaddressData) {
+	if o != nil && !isNil(o.SMaddressData) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SMAddressInfo) SetSMaddressData(v string) {
 
 // GetSMaddressDomain returns the SMaddressDomain field value if set, zero value otherwise.
 func (o *SMAddressInfo) GetSMaddressDomain() SMAddressDomain {
-	if o == nil || IsNil(o.SMaddressDomain) {
+	if o == nil || isNil(o.SMaddressDomain) {
 		var ret SMAddressDomain
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SMAddressInfo) GetSMaddressDomain() SMAddressDomain {
 // GetSMaddressDomainOk returns a tuple with the SMaddressDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMAddressInfo) GetSMaddressDomainOk() (*SMAddressDomain, bool) {
-	if o == nil || IsNil(o.SMaddressDomain) {
+	if o == nil || isNil(o.SMaddressDomain) {
 		return nil, false
 	}
 	return o.SMaddressDomain, true
@@ -125,7 +125,7 @@ func (o *SMAddressInfo) GetSMaddressDomainOk() (*SMAddressDomain, bool) {
 
 // HasSMaddressDomain returns a boolean if a field has been set.
 func (o *SMAddressInfo) HasSMaddressDomain() bool {
-	if o != nil && !IsNil(o.SMaddressDomain) {
+	if o != nil && !isNil(o.SMaddressDomain) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o SMAddressInfo) MarshalJSON() ([]byte, error) {
 
 func (o SMAddressInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SMaddressType) {
+	if !isNil(o.SMaddressType) {
 		toSerialize["sMaddressType"] = o.SMaddressType
 	}
-	if !IsNil(o.SMaddressData) {
+	if !isNil(o.SMaddressData) {
 		toSerialize["sMaddressData"] = o.SMaddressData
 	}
-	if !IsNil(o.SMaddressDomain) {
+	if !isNil(o.SMaddressDomain) {
 		toSerialize["sMaddressDomain"] = o.SMaddressDomain
 	}
 	return toSerialize, nil

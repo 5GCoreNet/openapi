@@ -48,7 +48,7 @@ func NewC2LinkQualityThrldsWithDefaults() *C2LinkQualityThrlds {
 
 // GetNrRsrpThrldLow returns the NrRsrpThrldLow field value if set, zero value otherwise.
 func (o *C2LinkQualityThrlds) GetNrRsrpThrldLow() int32 {
-	if o == nil || IsNil(o.NrRsrpThrldLow) {
+	if o == nil || isNil(o.NrRsrpThrldLow) {
 		var ret int32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrpThrldLow() int32 {
 // GetNrRsrpThrldLowOk returns a tuple with the NrRsrpThrldLow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2LinkQualityThrlds) GetNrRsrpThrldLowOk() (*int32, bool) {
-	if o == nil || IsNil(o.NrRsrpThrldLow) {
+	if o == nil || isNil(o.NrRsrpThrldLow) {
 		return nil, false
 	}
 	return o.NrRsrpThrldLow, true
@@ -66,7 +66,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrpThrldLowOk() (*int32, bool) {
 
 // HasNrRsrpThrldLow returns a boolean if a field has been set.
 func (o *C2LinkQualityThrlds) HasNrRsrpThrldLow() bool {
-	if o != nil && !IsNil(o.NrRsrpThrldLow) {
+	if o != nil && !isNil(o.NrRsrpThrldLow) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *C2LinkQualityThrlds) SetNrRsrpThrldLow(v int32) {
 
 // GetNrRsrpThrldHigh returns the NrRsrpThrldHigh field value if set, zero value otherwise.
 func (o *C2LinkQualityThrlds) GetNrRsrpThrldHigh() int32 {
-	if o == nil || IsNil(o.NrRsrpThrldHigh) {
+	if o == nil || isNil(o.NrRsrpThrldHigh) {
 		var ret int32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrpThrldHigh() int32 {
 // GetNrRsrpThrldHighOk returns a tuple with the NrRsrpThrldHigh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2LinkQualityThrlds) GetNrRsrpThrldHighOk() (*int32, bool) {
-	if o == nil || IsNil(o.NrRsrpThrldHigh) {
+	if o == nil || isNil(o.NrRsrpThrldHigh) {
 		return nil, false
 	}
 	return o.NrRsrpThrldHigh, true
@@ -98,7 +98,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrpThrldHighOk() (*int32, bool) {
 
 // HasNrRsrpThrldHigh returns a boolean if a field has been set.
 func (o *C2LinkQualityThrlds) HasNrRsrpThrldHigh() bool {
-	if o != nil && !IsNil(o.NrRsrpThrldHigh) {
+	if o != nil && !isNil(o.NrRsrpThrldHigh) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *C2LinkQualityThrlds) SetNrRsrpThrldHigh(v int32) {
 
 // GetNrRsrqThrldLow returns the NrRsrqThrldLow field value if set, zero value otherwise.
 func (o *C2LinkQualityThrlds) GetNrRsrqThrldLow() int32 {
-	if o == nil || IsNil(o.NrRsrqThrldLow) {
+	if o == nil || isNil(o.NrRsrqThrldLow) {
 		var ret int32
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrqThrldLow() int32 {
 // GetNrRsrqThrldLowOk returns a tuple with the NrRsrqThrldLow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2LinkQualityThrlds) GetNrRsrqThrldLowOk() (*int32, bool) {
-	if o == nil || IsNil(o.NrRsrqThrldLow) {
+	if o == nil || isNil(o.NrRsrqThrldLow) {
 		return nil, false
 	}
 	return o.NrRsrqThrldLow, true
@@ -130,7 +130,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrqThrldLowOk() (*int32, bool) {
 
 // HasNrRsrqThrldLow returns a boolean if a field has been set.
 func (o *C2LinkQualityThrlds) HasNrRsrqThrldLow() bool {
-	if o != nil && !IsNil(o.NrRsrqThrldLow) {
+	if o != nil && !isNil(o.NrRsrqThrldLow) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *C2LinkQualityThrlds) SetNrRsrqThrldLow(v int32) {
 
 // GetNrRsrqThrldHigh returns the NrRsrqThrldHigh field value if set, zero value otherwise.
 func (o *C2LinkQualityThrlds) GetNrRsrqThrldHigh() int32 {
-	if o == nil || IsNil(o.NrRsrqThrldHigh) {
+	if o == nil || isNil(o.NrRsrqThrldHigh) {
 		var ret int32
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrqThrldHigh() int32 {
 // GetNrRsrqThrldHighOk returns a tuple with the NrRsrqThrldHigh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2LinkQualityThrlds) GetNrRsrqThrldHighOk() (*int32, bool) {
-	if o == nil || IsNil(o.NrRsrqThrldHigh) {
+	if o == nil || isNil(o.NrRsrqThrldHigh) {
 		return nil, false
 	}
 	return o.NrRsrqThrldHigh, true
@@ -162,7 +162,7 @@ func (o *C2LinkQualityThrlds) GetNrRsrqThrldHighOk() (*int32, bool) {
 
 // HasNrRsrqThrldHigh returns a boolean if a field has been set.
 func (o *C2LinkQualityThrlds) HasNrRsrqThrldHigh() bool {
-	if o != nil && !IsNil(o.NrRsrqThrldHigh) {
+	if o != nil && !isNil(o.NrRsrqThrldHigh) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *C2LinkQualityThrlds) SetNrRsrqThrldHigh(v int32) {
 
 // GetPacketLossThrldLow returns the PacketLossThrldLow field value if set, zero value otherwise.
 func (o *C2LinkQualityThrlds) GetPacketLossThrldLow() int32 {
-	if o == nil || IsNil(o.PacketLossThrldLow) {
+	if o == nil || isNil(o.PacketLossThrldLow) {
 		var ret int32
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *C2LinkQualityThrlds) GetPacketLossThrldLow() int32 {
 // GetPacketLossThrldLowOk returns a tuple with the PacketLossThrldLow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2LinkQualityThrlds) GetPacketLossThrldLowOk() (*int32, bool) {
-	if o == nil || IsNil(o.PacketLossThrldLow) {
+	if o == nil || isNil(o.PacketLossThrldLow) {
 		return nil, false
 	}
 	return o.PacketLossThrldLow, true
@@ -194,7 +194,7 @@ func (o *C2LinkQualityThrlds) GetPacketLossThrldLowOk() (*int32, bool) {
 
 // HasPacketLossThrldLow returns a boolean if a field has been set.
 func (o *C2LinkQualityThrlds) HasPacketLossThrldLow() bool {
-	if o != nil && !IsNil(o.PacketLossThrldLow) {
+	if o != nil && !isNil(o.PacketLossThrldLow) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *C2LinkQualityThrlds) SetPacketLossThrldLow(v int32) {
 
 // GetPacketLossThrldHigh returns the PacketLossThrldHigh field value if set, zero value otherwise.
 func (o *C2LinkQualityThrlds) GetPacketLossThrldHigh() int32 {
-	if o == nil || IsNil(o.PacketLossThrldHigh) {
+	if o == nil || isNil(o.PacketLossThrldHigh) {
 		var ret int32
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *C2LinkQualityThrlds) GetPacketLossThrldHigh() int32 {
 // GetPacketLossThrldHighOk returns a tuple with the PacketLossThrldHigh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *C2LinkQualityThrlds) GetPacketLossThrldHighOk() (*int32, bool) {
-	if o == nil || IsNil(o.PacketLossThrldHigh) {
+	if o == nil || isNil(o.PacketLossThrldHigh) {
 		return nil, false
 	}
 	return o.PacketLossThrldHigh, true
@@ -226,7 +226,7 @@ func (o *C2LinkQualityThrlds) GetPacketLossThrldHighOk() (*int32, bool) {
 
 // HasPacketLossThrldHigh returns a boolean if a field has been set.
 func (o *C2LinkQualityThrlds) HasPacketLossThrldHigh() bool {
-	if o != nil && !IsNil(o.PacketLossThrldHigh) {
+	if o != nil && !isNil(o.PacketLossThrldHigh) {
 		return true
 	}
 
@@ -248,22 +248,22 @@ func (o C2LinkQualityThrlds) MarshalJSON() ([]byte, error) {
 
 func (o C2LinkQualityThrlds) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NrRsrpThrldLow) {
+	if !isNil(o.NrRsrpThrldLow) {
 		toSerialize["nrRsrpThrldLow"] = o.NrRsrpThrldLow
 	}
-	if !IsNil(o.NrRsrpThrldHigh) {
+	if !isNil(o.NrRsrpThrldHigh) {
 		toSerialize["nrRsrpThrldHigh"] = o.NrRsrpThrldHigh
 	}
-	if !IsNil(o.NrRsrqThrldLow) {
+	if !isNil(o.NrRsrqThrldLow) {
 		toSerialize["nrRsrqThrldLow"] = o.NrRsrqThrldLow
 	}
-	if !IsNil(o.NrRsrqThrldHigh) {
+	if !isNil(o.NrRsrqThrldHigh) {
 		toSerialize["nrRsrqThrldHigh"] = o.NrRsrqThrldHigh
 	}
-	if !IsNil(o.PacketLossThrldLow) {
+	if !isNil(o.PacketLossThrldLow) {
 		toSerialize["packetLossThrldLow"] = o.PacketLossThrldLow
 	}
-	if !IsNil(o.PacketLossThrldHigh) {
+	if !isNil(o.PacketLossThrldHigh) {
 		toSerialize["packetLossThrldHigh"] = o.PacketLossThrldHigh
 	}
 	return toSerialize, nil

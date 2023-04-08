@@ -71,7 +71,7 @@ func (o *ContextStatusNotification) SetMbsSessionId(v MbsSessionId) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *ContextStatusNotification) GetAreaSessionId() int32 {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ContextStatusNotification) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusNotification) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -89,7 +89,7 @@ func (o *ContextStatusNotification) GetAreaSessionIdOk() (*int32, bool) {
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *ContextStatusNotification) HasAreaSessionId() bool {
-	if o != nil && !IsNil(o.AreaSessionId) {
+	if o != nil && !isNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ContextStatusNotification) SetAreaSessionId(v int32) {
 
 // GetN2MbsSmInfoList returns the N2MbsSmInfoList field value if set, zero value otherwise.
 func (o *ContextStatusNotification) GetN2MbsSmInfoList() []N2MbsSmInfo {
-	if o == nil || IsNil(o.N2MbsSmInfoList) {
+	if o == nil || isNil(o.N2MbsSmInfoList) {
 		var ret []N2MbsSmInfo
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ContextStatusNotification) GetN2MbsSmInfoList() []N2MbsSmInfo {
 // GetN2MbsSmInfoListOk returns a tuple with the N2MbsSmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusNotification) GetN2MbsSmInfoListOk() ([]N2MbsSmInfo, bool) {
-	if o == nil || IsNil(o.N2MbsSmInfoList) {
+	if o == nil || isNil(o.N2MbsSmInfoList) {
 		return nil, false
 	}
 	return o.N2MbsSmInfoList, true
@@ -121,7 +121,7 @@ func (o *ContextStatusNotification) GetN2MbsSmInfoListOk() ([]N2MbsSmInfo, bool)
 
 // HasN2MbsSmInfoList returns a boolean if a field has been set.
 func (o *ContextStatusNotification) HasN2MbsSmInfoList() bool {
-	if o != nil && !IsNil(o.N2MbsSmInfoList) {
+	if o != nil && !isNil(o.N2MbsSmInfoList) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ContextStatusNotification) SetN2MbsSmInfoList(v []N2MbsSmInfo) {
 
 // GetOperationEvents returns the OperationEvents field value if set, zero value otherwise.
 func (o *ContextStatusNotification) GetOperationEvents() []OperationEvent {
-	if o == nil || IsNil(o.OperationEvents) {
+	if o == nil || isNil(o.OperationEvents) {
 		var ret []OperationEvent
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ContextStatusNotification) GetOperationEvents() []OperationEvent {
 // GetOperationEventsOk returns a tuple with the OperationEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusNotification) GetOperationEventsOk() ([]OperationEvent, bool) {
-	if o == nil || IsNil(o.OperationEvents) {
+	if o == nil || isNil(o.OperationEvents) {
 		return nil, false
 	}
 	return o.OperationEvents, true
@@ -153,7 +153,7 @@ func (o *ContextStatusNotification) GetOperationEventsOk() ([]OperationEvent, bo
 
 // HasOperationEvents returns a boolean if a field has been set.
 func (o *ContextStatusNotification) HasOperationEvents() bool {
-	if o != nil && !IsNil(o.OperationEvents) {
+	if o != nil && !isNil(o.OperationEvents) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *ContextStatusNotification) SetOperationEvents(v []OperationEvent) {
 
 // GetOperationStatus returns the OperationStatus field value if set, zero value otherwise.
 func (o *ContextStatusNotification) GetOperationStatus() OperationStatus {
-	if o == nil || IsNil(o.OperationStatus) {
+	if o == nil || isNil(o.OperationStatus) {
 		var ret OperationStatus
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *ContextStatusNotification) GetOperationStatus() OperationStatus {
 // GetOperationStatusOk returns a tuple with the OperationStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusNotification) GetOperationStatusOk() (*OperationStatus, bool) {
-	if o == nil || IsNil(o.OperationStatus) {
+	if o == nil || isNil(o.OperationStatus) {
 		return nil, false
 	}
 	return o.OperationStatus, true
@@ -185,7 +185,7 @@ func (o *ContextStatusNotification) GetOperationStatusOk() (*OperationStatus, bo
 
 // HasOperationStatus returns a boolean if a field has been set.
 func (o *ContextStatusNotification) HasOperationStatus() bool {
-	if o != nil && !IsNil(o.OperationStatus) {
+	if o != nil && !isNil(o.OperationStatus) {
 		return true
 	}
 
@@ -208,16 +208,16 @@ func (o ContextStatusNotification) MarshalJSON() ([]byte, error) {
 func (o ContextStatusNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !IsNil(o.AreaSessionId) {
+	if !isNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
-	if !IsNil(o.N2MbsSmInfoList) {
+	if !isNil(o.N2MbsSmInfoList) {
 		toSerialize["n2MbsSmInfoList"] = o.N2MbsSmInfoList
 	}
-	if !IsNil(o.OperationEvents) {
+	if !isNil(o.OperationEvents) {
 		toSerialize["operationEvents"] = o.OperationEvents
 	}
-	if !IsNil(o.OperationStatus) {
+	if !isNil(o.OperationStatus) {
 		toSerialize["operationStatus"] = o.OperationStatus
 	}
 	return toSerialize, nil

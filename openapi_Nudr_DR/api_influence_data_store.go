@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -108,22 +108,22 @@ func (a *InfluenceDataStoreApiService) ReadInfluenceDataExecute(r ApiReadInfluen
 	localVarFormParams := url.Values{}
 
 	if r.influenceIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "influence-Ids", r.influenceIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "influence-Ids", r.influenceIds, "csv")
 	}
 	if r.dnns != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", r.dnns, "csv")
+		parameterAddToQuery(localVarQueryParams, "dnns", r.dnns, "csv")
 	}
 	if r.snssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.internalGroupIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-Group-Ids", r.internalGroupIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "internal-Group-Ids", r.internalGroupIds, "csv")
 	}
 	if r.supis != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supis", r.supis, "csv")
+		parameterAddToQuery(localVarQueryParams, "supis", r.supis, "csv")
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -152,9 +152,9 @@ func (a *InfluenceDataStoreApiService) ReadInfluenceDataExecute(r ApiReadInfluen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -72,7 +72,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -90,7 +90,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetObjectClassOk() (*string, b
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -122,7 +122,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetObjectInstanceOk() (*string
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetVsDataContainer() []VsDataC
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -154,7 +154,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetVsDataContainerOk() ([]VsDa
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) SetVsDataContainer(v []VsDataC
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *FeasibilityCheckAndReservationJobSingle) GetAttributes() FeasibilityCheckAndReservationJobSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret FeasibilityCheckAndReservationJobSingleAllOfAttributes
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetAttributes() FeasibilityChe
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) GetAttributesOk() (*FeasibilityCheckAndReservationJobSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,7 +186,7 @@ func (o *FeasibilityCheckAndReservationJobSingle) GetAttributesOk() (*Feasibilit
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *FeasibilityCheckAndReservationJobSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -209,16 +209,16 @@ func (o FeasibilityCheckAndReservationJobSingle) MarshalJSON() ([]byte, error) {
 func (o FeasibilityCheckAndReservationJobSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

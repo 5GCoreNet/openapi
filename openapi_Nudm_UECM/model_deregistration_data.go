@@ -71,7 +71,7 @@ func (o *DeregistrationData) SetDeregReason(v DeregistrationReason) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *DeregistrationData) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *DeregistrationData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -89,7 +89,7 @@ func (o *DeregistrationData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *DeregistrationData) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *DeregistrationData) SetAccessType(v AccessType) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *DeregistrationData) GetPduSessionId() int32 {
-	if o == nil || IsNil(o.PduSessionId) {
+	if o == nil || isNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *DeregistrationData) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationData) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSessionId) {
+	if o == nil || isNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -121,7 +121,7 @@ func (o *DeregistrationData) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *DeregistrationData) HasPduSessionId() bool {
-	if o != nil && !IsNil(o.PduSessionId) {
+	if o != nil && !isNil(o.PduSessionId) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *DeregistrationData) SetPduSessionId(v int32) {
 
 // GetNewSmfInstanceId returns the NewSmfInstanceId field value if set, zero value otherwise.
 func (o *DeregistrationData) GetNewSmfInstanceId() string {
-	if o == nil || IsNil(o.NewSmfInstanceId) {
+	if o == nil || isNil(o.NewSmfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *DeregistrationData) GetNewSmfInstanceId() string {
 // GetNewSmfInstanceIdOk returns a tuple with the NewSmfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationData) GetNewSmfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NewSmfInstanceId) {
+	if o == nil || isNil(o.NewSmfInstanceId) {
 		return nil, false
 	}
 	return o.NewSmfInstanceId, true
@@ -153,7 +153,7 @@ func (o *DeregistrationData) GetNewSmfInstanceIdOk() (*string, bool) {
 
 // HasNewSmfInstanceId returns a boolean if a field has been set.
 func (o *DeregistrationData) HasNewSmfInstanceId() bool {
-	if o != nil && !IsNil(o.NewSmfInstanceId) {
+	if o != nil && !isNil(o.NewSmfInstanceId) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o DeregistrationData) MarshalJSON() ([]byte, error) {
 func (o DeregistrationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["deregReason"] = o.DeregReason
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.PduSessionId) {
+	if !isNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
-	if !IsNil(o.NewSmfInstanceId) {
+	if !isNil(o.NewSmfInstanceId) {
 		toSerialize["newSmfInstanceId"] = o.NewSmfInstanceId
 	}
 	return toSerialize, nil

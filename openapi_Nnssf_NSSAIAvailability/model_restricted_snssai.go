@@ -98,7 +98,7 @@ func (o *RestrictedSnssai) SetSNssaiList(v []ExtSnssai) {
 
 // GetHomePlmnIdList returns the HomePlmnIdList field value if set, zero value otherwise.
 func (o *RestrictedSnssai) GetHomePlmnIdList() []PlmnId {
-	if o == nil || IsNil(o.HomePlmnIdList) {
+	if o == nil || isNil(o.HomePlmnIdList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *RestrictedSnssai) GetHomePlmnIdList() []PlmnId {
 // GetHomePlmnIdListOk returns a tuple with the HomePlmnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestrictedSnssai) GetHomePlmnIdListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.HomePlmnIdList) {
+	if o == nil || isNil(o.HomePlmnIdList) {
 		return nil, false
 	}
 	return o.HomePlmnIdList, true
@@ -116,7 +116,7 @@ func (o *RestrictedSnssai) GetHomePlmnIdListOk() ([]PlmnId, bool) {
 
 // HasHomePlmnIdList returns a boolean if a field has been set.
 func (o *RestrictedSnssai) HasHomePlmnIdList() bool {
-	if o != nil && !IsNil(o.HomePlmnIdList) {
+	if o != nil && !isNil(o.HomePlmnIdList) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *RestrictedSnssai) SetHomePlmnIdList(v []PlmnId) {
 
 // GetRoamingRestriction returns the RoamingRestriction field value if set, zero value otherwise.
 func (o *RestrictedSnssai) GetRoamingRestriction() bool {
-	if o == nil || IsNil(o.RoamingRestriction) {
+	if o == nil || isNil(o.RoamingRestriction) {
 		var ret bool
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *RestrictedSnssai) GetRoamingRestriction() bool {
 // GetRoamingRestrictionOk returns a tuple with the RoamingRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestrictedSnssai) GetRoamingRestrictionOk() (*bool, bool) {
-	if o == nil || IsNil(o.RoamingRestriction) {
+	if o == nil || isNil(o.RoamingRestriction) {
 		return nil, false
 	}
 	return o.RoamingRestriction, true
@@ -148,7 +148,7 @@ func (o *RestrictedSnssai) GetRoamingRestrictionOk() (*bool, bool) {
 
 // HasRoamingRestriction returns a boolean if a field has been set.
 func (o *RestrictedSnssai) HasRoamingRestriction() bool {
-	if o != nil && !IsNil(o.RoamingRestriction) {
+	if o != nil && !isNil(o.RoamingRestriction) {
 		return true
 	}
 
@@ -172,10 +172,10 @@ func (o RestrictedSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["homePlmnId"] = o.HomePlmnId
 	toSerialize["sNssaiList"] = o.SNssaiList
-	if !IsNil(o.HomePlmnIdList) {
+	if !isNil(o.HomePlmnIdList) {
 		toSerialize["homePlmnIdList"] = o.HomePlmnIdList
 	}
-	if !IsNil(o.RoamingRestriction) {
+	if !isNil(o.RoamingRestriction) {
 		toSerialize["roamingRestriction"] = o.RoamingRestriction
 	}
 	return toSerialize, nil

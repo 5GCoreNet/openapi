@@ -66,7 +66,7 @@ func NewLocUpdateDataWithDefaults() *LocUpdateData {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *LocUpdateData) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -76,7 +76,7 @@ func (o *LocUpdateData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -84,7 +84,7 @@ func (o *LocUpdateData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *LocUpdateData) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -98,7 +98,7 @@ func (o *LocUpdateData) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *LocUpdateData) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *LocUpdateData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -116,7 +116,7 @@ func (o *LocUpdateData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *LocUpdateData) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *LocUpdateData) SetSupi(v string) {
 
 // GetPseudonymIndicator returns the PseudonymIndicator field value if set, zero value otherwise.
 func (o *LocUpdateData) GetPseudonymIndicator() PseudonymIndicator {
-	if o == nil || IsNil(o.PseudonymIndicator) {
+	if o == nil || isNil(o.PseudonymIndicator) {
 		var ret PseudonymIndicator
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *LocUpdateData) GetPseudonymIndicator() PseudonymIndicator {
 // GetPseudonymIndicatorOk returns a tuple with the PseudonymIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetPseudonymIndicatorOk() (*PseudonymIndicator, bool) {
-	if o == nil || IsNil(o.PseudonymIndicator) {
+	if o == nil || isNil(o.PseudonymIndicator) {
 		return nil, false
 	}
 	return o.PseudonymIndicator, true
@@ -148,7 +148,7 @@ func (o *LocUpdateData) GetPseudonymIndicatorOk() (*PseudonymIndicator, bool) {
 
 // HasPseudonymIndicator returns a boolean if a field has been set.
 func (o *LocUpdateData) HasPseudonymIndicator() bool {
-	if o != nil && !IsNil(o.PseudonymIndicator) {
+	if o != nil && !isNil(o.PseudonymIndicator) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *LocUpdateData) SetAgeOfLocationEstimate(v int32) {
 
 // GetTimestampOfLocationEstimate returns the TimestampOfLocationEstimate field value if set, zero value otherwise.
 func (o *LocUpdateData) GetTimestampOfLocationEstimate() time.Time {
-	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
+	if o == nil || isNil(o.TimestampOfLocationEstimate) {
 		var ret time.Time
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *LocUpdateData) GetTimestampOfLocationEstimate() time.Time {
 // GetTimestampOfLocationEstimateOk returns a tuple with the TimestampOfLocationEstimate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimestampOfLocationEstimate) {
+	if o == nil || isNil(o.TimestampOfLocationEstimate) {
 		return nil, false
 	}
 	return o.TimestampOfLocationEstimate, true
@@ -252,7 +252,7 @@ func (o *LocUpdateData) GetTimestampOfLocationEstimateOk() (*time.Time, bool) {
 
 // HasTimestampOfLocationEstimate returns a boolean if a field has been set.
 func (o *LocUpdateData) HasTimestampOfLocationEstimate() bool {
-	if o != nil && !IsNil(o.TimestampOfLocationEstimate) {
+	if o != nil && !isNil(o.TimestampOfLocationEstimate) {
 		return true
 	}
 
@@ -290,7 +290,7 @@ func (o *LocUpdateData) SetAccuracyFulfilmentIndicator(v AccuracyFulfilmentIndic
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *LocUpdateData) GetCivicAddress() CivicAddress {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *LocUpdateData) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -308,7 +308,7 @@ func (o *LocUpdateData) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *LocUpdateData) HasCivicAddress() bool {
-	if o != nil && !IsNil(o.CivicAddress) {
+	if o != nil && !isNil(o.CivicAddress) {
 		return true
 	}
 
@@ -346,7 +346,7 @@ func (o *LocUpdateData) SetLcsQosClass(v LcsQosClass) {
 
 // GetExternalClientIdentification returns the ExternalClientIdentification field value if set, zero value otherwise.
 func (o *LocUpdateData) GetExternalClientIdentification() string {
-	if o == nil || IsNil(o.ExternalClientIdentification) {
+	if o == nil || isNil(o.ExternalClientIdentification) {
 		var ret string
 		return ret
 	}
@@ -356,7 +356,7 @@ func (o *LocUpdateData) GetExternalClientIdentification() string {
 // GetExternalClientIdentificationOk returns a tuple with the ExternalClientIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetExternalClientIdentificationOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalClientIdentification) {
+	if o == nil || isNil(o.ExternalClientIdentification) {
 		return nil, false
 	}
 	return o.ExternalClientIdentification, true
@@ -364,7 +364,7 @@ func (o *LocUpdateData) GetExternalClientIdentificationOk() (*string, bool) {
 
 // HasExternalClientIdentification returns a boolean if a field has been set.
 func (o *LocUpdateData) HasExternalClientIdentification() bool {
-	if o != nil && !IsNil(o.ExternalClientIdentification) {
+	if o != nil && !isNil(o.ExternalClientIdentification) {
 		return true
 	}
 
@@ -378,7 +378,7 @@ func (o *LocUpdateData) SetExternalClientIdentification(v string) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *LocUpdateData) GetAfId() string {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *LocUpdateData) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetAfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -396,7 +396,7 @@ func (o *LocUpdateData) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *LocUpdateData) HasAfId() bool {
-	if o != nil && !IsNil(o.AfId) {
+	if o != nil && !isNil(o.AfId) {
 		return true
 	}
 
@@ -410,7 +410,7 @@ func (o *LocUpdateData) SetAfId(v string) {
 
 // GetGmlcNumber returns the GmlcNumber field value if set, zero value otherwise.
 func (o *LocUpdateData) GetGmlcNumber() string {
-	if o == nil || IsNil(o.GmlcNumber) {
+	if o == nil || isNil(o.GmlcNumber) {
 		var ret string
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *LocUpdateData) GetGmlcNumber() string {
 // GetGmlcNumberOk returns a tuple with the GmlcNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetGmlcNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.GmlcNumber) {
+	if o == nil || isNil(o.GmlcNumber) {
 		return nil, false
 	}
 	return o.GmlcNumber, true
@@ -428,7 +428,7 @@ func (o *LocUpdateData) GetGmlcNumberOk() (*string, bool) {
 
 // HasGmlcNumber returns a boolean if a field has been set.
 func (o *LocUpdateData) HasGmlcNumber() bool {
-	if o != nil && !IsNil(o.GmlcNumber) {
+	if o != nil && !isNil(o.GmlcNumber) {
 		return true
 	}
 
@@ -442,7 +442,7 @@ func (o *LocUpdateData) SetGmlcNumber(v string) {
 
 // GetLcsServiceType returns the LcsServiceType field value if set, zero value otherwise.
 func (o *LocUpdateData) GetLcsServiceType() int32 {
-	if o == nil || IsNil(o.LcsServiceType) {
+	if o == nil || isNil(o.LcsServiceType) {
 		var ret int32
 		return ret
 	}
@@ -452,7 +452,7 @@ func (o *LocUpdateData) GetLcsServiceType() int32 {
 // GetLcsServiceTypeOk returns a tuple with the LcsServiceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetLcsServiceTypeOk() (*int32, bool) {
-	if o == nil || IsNil(o.LcsServiceType) {
+	if o == nil || isNil(o.LcsServiceType) {
 		return nil, false
 	}
 	return o.LcsServiceType, true
@@ -460,7 +460,7 @@ func (o *LocUpdateData) GetLcsServiceTypeOk() (*int32, bool) {
 
 // HasLcsServiceType returns a boolean if a field has been set.
 func (o *LocUpdateData) HasLcsServiceType() bool {
-	if o != nil && !IsNil(o.LcsServiceType) {
+	if o != nil && !isNil(o.LcsServiceType) {
 		return true
 	}
 
@@ -482,36 +482,36 @@ func (o LocUpdateData) MarshalJSON() ([]byte, error) {
 
 func (o LocUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.PseudonymIndicator) {
+	if !isNil(o.PseudonymIndicator) {
 		toSerialize["pseudonymIndicator"] = o.PseudonymIndicator
 	}
 	toSerialize["locationRequestType"] = o.LocationRequestType
 	toSerialize["locationEstimate"] = o.LocationEstimate
 	toSerialize["ageOfLocationEstimate"] = o.AgeOfLocationEstimate
-	if !IsNil(o.TimestampOfLocationEstimate) {
+	if !isNil(o.TimestampOfLocationEstimate) {
 		toSerialize["timestampOfLocationEstimate"] = o.TimestampOfLocationEstimate
 	}
 	toSerialize["accuracyFulfilmentIndicator"] = o.AccuracyFulfilmentIndicator
-	if !IsNil(o.CivicAddress) {
+	if !isNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	toSerialize["lcsQosClass"] = o.LcsQosClass
-	if !IsNil(o.ExternalClientIdentification) {
+	if !isNil(o.ExternalClientIdentification) {
 		toSerialize["externalClientIdentification"] = o.ExternalClientIdentification
 	}
-	if !IsNil(o.AfId) {
+	if !isNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !IsNil(o.GmlcNumber) {
+	if !isNil(o.GmlcNumber) {
 		toSerialize["gmlcNumber"] = o.GmlcNumber
 	}
-	if !IsNil(o.LcsServiceType) {
+	if !isNil(o.LcsServiceType) {
 		toSerialize["lcsServiceType"] = o.LcsServiceType
 	}
 	return toSerialize, nil

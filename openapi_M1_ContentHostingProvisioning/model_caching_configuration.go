@@ -67,7 +67,7 @@ func (o *CachingConfiguration) SetUrlPatternFilter(v string) {
 
 // GetCachingDirectives returns the CachingDirectives field value if set, zero value otherwise.
 func (o *CachingConfiguration) GetCachingDirectives() CachingConfigurationCachingDirectives {
-	if o == nil || IsNil(o.CachingDirectives) {
+	if o == nil || isNil(o.CachingDirectives) {
 		var ret CachingConfigurationCachingDirectives
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *CachingConfiguration) GetCachingDirectives() CachingConfigurationCachin
 // GetCachingDirectivesOk returns a tuple with the CachingDirectives field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CachingConfiguration) GetCachingDirectivesOk() (*CachingConfigurationCachingDirectives, bool) {
-	if o == nil || IsNil(o.CachingDirectives) {
+	if o == nil || isNil(o.CachingDirectives) {
 		return nil, false
 	}
 	return o.CachingDirectives, true
@@ -85,7 +85,7 @@ func (o *CachingConfiguration) GetCachingDirectivesOk() (*CachingConfigurationCa
 
 // HasCachingDirectives returns a boolean if a field has been set.
 func (o *CachingConfiguration) HasCachingDirectives() bool {
-	if o != nil && !IsNil(o.CachingDirectives) {
+	if o != nil && !isNil(o.CachingDirectives) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o CachingConfiguration) MarshalJSON() ([]byte, error) {
 func (o CachingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["urlPatternFilter"] = o.UrlPatternFilter
-	if !IsNil(o.CachingDirectives) {
+	if !isNil(o.CachingDirectives) {
 		toSerialize["cachingDirectives"] = o.CachingDirectives
 	}
 	return toSerialize, nil

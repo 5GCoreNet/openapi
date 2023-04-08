@@ -13,7 +13,7 @@ package openapi_Nbsf_Management
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -103,9 +103,9 @@ func (a *PCFForAnMBSSessionBindingsCollectionApiService) CreatePCFMbsBindingExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -311,9 +311,9 @@ func (a *PCFForAnMBSSessionBindingsCollectionApiService) GetPCFMbsBindingExecute
 		return localVarReturnValue, nil, reportError("mbsSessionId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "mbs-session-id", r.mbsSessionId, "")
+	parameterAddToQuery(localVarQueryParams, "mbs-session-id", r.mbsSessionId, "")
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -342,9 +342,9 @@ func (a *PCFForAnMBSSessionBindingsCollectionApiService) GetPCFMbsBindingExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

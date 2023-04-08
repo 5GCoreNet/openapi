@@ -56,7 +56,7 @@ func NewNonDynamic5QiWithDefaults() *NonDynamic5Qi {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise.
 func (o *NonDynamic5Qi) GetPriorityLevel() int32 {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *NonDynamic5Qi) GetPriorityLevel() int32 {
 // GetPriorityLevelOk returns a tuple with the PriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonDynamic5Qi) GetPriorityLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		return nil, false
 	}
 	return o.PriorityLevel, true
@@ -74,7 +74,7 @@ func (o *NonDynamic5Qi) GetPriorityLevelOk() (*int32, bool) {
 
 // HasPriorityLevel returns a boolean if a field has been set.
 func (o *NonDynamic5Qi) HasPriorityLevel() bool {
-	if o != nil && !IsNil(o.PriorityLevel) {
+	if o != nil && !isNil(o.PriorityLevel) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *NonDynamic5Qi) SetPriorityLevel(v int32) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *NonDynamic5Qi) GetAverWindow() int32 {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *NonDynamic5Qi) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonDynamic5Qi) GetAverWindowOk() (*int32, bool) {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -106,7 +106,7 @@ func (o *NonDynamic5Qi) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *NonDynamic5Qi) HasAverWindow() bool {
-	if o != nil && !IsNil(o.AverWindow) {
+	if o != nil && !isNil(o.AverWindow) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *NonDynamic5Qi) SetAverWindow(v int32) {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise.
 func (o *NonDynamic5Qi) GetMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.MaxDataBurstVol) {
+	if o == nil || isNil(o.MaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *NonDynamic5Qi) GetMaxDataBurstVol() int32 {
 // GetMaxDataBurstVolOk returns a tuple with the MaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonDynamic5Qi) GetMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxDataBurstVol) {
+	if o == nil || isNil(o.MaxDataBurstVol) {
 		return nil, false
 	}
 	return o.MaxDataBurstVol, true
@@ -138,7 +138,7 @@ func (o *NonDynamic5Qi) GetMaxDataBurstVolOk() (*int32, bool) {
 
 // HasMaxDataBurstVol returns a boolean if a field has been set.
 func (o *NonDynamic5Qi) HasMaxDataBurstVol() bool {
-	if o != nil && !IsNil(o.MaxDataBurstVol) {
+	if o != nil && !isNil(o.MaxDataBurstVol) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *NonDynamic5Qi) SetMaxDataBurstVol(v int32) {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise.
 func (o *NonDynamic5Qi) GetExtMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
+	if o == nil || isNil(o.ExtMaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *NonDynamic5Qi) GetExtMaxDataBurstVol() int32 {
 // GetExtMaxDataBurstVolOk returns a tuple with the ExtMaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonDynamic5Qi) GetExtMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExtMaxDataBurstVol) {
+	if o == nil || isNil(o.ExtMaxDataBurstVol) {
 		return nil, false
 	}
 	return o.ExtMaxDataBurstVol, true
@@ -170,7 +170,7 @@ func (o *NonDynamic5Qi) GetExtMaxDataBurstVolOk() (*int32, bool) {
 
 // HasExtMaxDataBurstVol returns a boolean if a field has been set.
 func (o *NonDynamic5Qi) HasExtMaxDataBurstVol() bool {
-	if o != nil && !IsNil(o.ExtMaxDataBurstVol) {
+	if o != nil && !isNil(o.ExtMaxDataBurstVol) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *NonDynamic5Qi) SetExtMaxDataBurstVol(v int32) {
 
 // GetCnPacketDelayBudgetDl returns the CnPacketDelayBudgetDl field value if set, zero value otherwise.
 func (o *NonDynamic5Qi) GetCnPacketDelayBudgetDl() int32 {
-	if o == nil || IsNil(o.CnPacketDelayBudgetDl) {
+	if o == nil || isNil(o.CnPacketDelayBudgetDl) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *NonDynamic5Qi) GetCnPacketDelayBudgetDl() int32 {
 // GetCnPacketDelayBudgetDlOk returns a tuple with the CnPacketDelayBudgetDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonDynamic5Qi) GetCnPacketDelayBudgetDlOk() (*int32, bool) {
-	if o == nil || IsNil(o.CnPacketDelayBudgetDl) {
+	if o == nil || isNil(o.CnPacketDelayBudgetDl) {
 		return nil, false
 	}
 	return o.CnPacketDelayBudgetDl, true
@@ -202,7 +202,7 @@ func (o *NonDynamic5Qi) GetCnPacketDelayBudgetDlOk() (*int32, bool) {
 
 // HasCnPacketDelayBudgetDl returns a boolean if a field has been set.
 func (o *NonDynamic5Qi) HasCnPacketDelayBudgetDl() bool {
-	if o != nil && !IsNil(o.CnPacketDelayBudgetDl) {
+	if o != nil && !isNil(o.CnPacketDelayBudgetDl) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *NonDynamic5Qi) SetCnPacketDelayBudgetDl(v int32) {
 
 // GetCnPacketDelayBudgetUl returns the CnPacketDelayBudgetUl field value if set, zero value otherwise.
 func (o *NonDynamic5Qi) GetCnPacketDelayBudgetUl() int32 {
-	if o == nil || IsNil(o.CnPacketDelayBudgetUl) {
+	if o == nil || isNil(o.CnPacketDelayBudgetUl) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *NonDynamic5Qi) GetCnPacketDelayBudgetUl() int32 {
 // GetCnPacketDelayBudgetUlOk returns a tuple with the CnPacketDelayBudgetUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonDynamic5Qi) GetCnPacketDelayBudgetUlOk() (*int32, bool) {
-	if o == nil || IsNil(o.CnPacketDelayBudgetUl) {
+	if o == nil || isNil(o.CnPacketDelayBudgetUl) {
 		return nil, false
 	}
 	return o.CnPacketDelayBudgetUl, true
@@ -234,7 +234,7 @@ func (o *NonDynamic5Qi) GetCnPacketDelayBudgetUlOk() (*int32, bool) {
 
 // HasCnPacketDelayBudgetUl returns a boolean if a field has been set.
 func (o *NonDynamic5Qi) HasCnPacketDelayBudgetUl() bool {
-	if o != nil && !IsNil(o.CnPacketDelayBudgetUl) {
+	if o != nil && !isNil(o.CnPacketDelayBudgetUl) {
 		return true
 	}
 
@@ -256,22 +256,22 @@ func (o NonDynamic5Qi) MarshalJSON() ([]byte, error) {
 
 func (o NonDynamic5Qi) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PriorityLevel) {
+	if !isNil(o.PriorityLevel) {
 		toSerialize["priorityLevel"] = o.PriorityLevel
 	}
-	if !IsNil(o.AverWindow) {
+	if !isNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
-	if !IsNil(o.MaxDataBurstVol) {
+	if !isNil(o.MaxDataBurstVol) {
 		toSerialize["maxDataBurstVol"] = o.MaxDataBurstVol
 	}
-	if !IsNil(o.ExtMaxDataBurstVol) {
+	if !isNil(o.ExtMaxDataBurstVol) {
 		toSerialize["extMaxDataBurstVol"] = o.ExtMaxDataBurstVol
 	}
-	if !IsNil(o.CnPacketDelayBudgetDl) {
+	if !isNil(o.CnPacketDelayBudgetDl) {
 		toSerialize["cnPacketDelayBudgetDl"] = o.CnPacketDelayBudgetDl
 	}
-	if !IsNil(o.CnPacketDelayBudgetUl) {
+	if !isNil(o.CnPacketDelayBudgetUl) {
 		toSerialize["cnPacketDelayBudgetUl"] = o.CnPacketDelayBudgetUl
 	}
 	return toSerialize, nil

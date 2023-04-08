@@ -48,7 +48,7 @@ func NewLocationQoSWithDefaults() *LocationQoS {
 
 // GetHAccuracy returns the HAccuracy field value if set, zero value otherwise.
 func (o *LocationQoS) GetHAccuracy() float32 {
-	if o == nil || IsNil(o.HAccuracy) {
+	if o == nil || isNil(o.HAccuracy) {
 		var ret float32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *LocationQoS) GetHAccuracy() float32 {
 // GetHAccuracyOk returns a tuple with the HAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationQoS) GetHAccuracyOk() (*float32, bool) {
-	if o == nil || IsNil(o.HAccuracy) {
+	if o == nil || isNil(o.HAccuracy) {
 		return nil, false
 	}
 	return o.HAccuracy, true
@@ -66,7 +66,7 @@ func (o *LocationQoS) GetHAccuracyOk() (*float32, bool) {
 
 // HasHAccuracy returns a boolean if a field has been set.
 func (o *LocationQoS) HasHAccuracy() bool {
-	if o != nil && !IsNil(o.HAccuracy) {
+	if o != nil && !isNil(o.HAccuracy) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *LocationQoS) SetHAccuracy(v float32) {
 
 // GetVAccuracy returns the VAccuracy field value if set, zero value otherwise.
 func (o *LocationQoS) GetVAccuracy() float32 {
-	if o == nil || IsNil(o.VAccuracy) {
+	if o == nil || isNil(o.VAccuracy) {
 		var ret float32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *LocationQoS) GetVAccuracy() float32 {
 // GetVAccuracyOk returns a tuple with the VAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationQoS) GetVAccuracyOk() (*float32, bool) {
-	if o == nil || IsNil(o.VAccuracy) {
+	if o == nil || isNil(o.VAccuracy) {
 		return nil, false
 	}
 	return o.VAccuracy, true
@@ -98,7 +98,7 @@ func (o *LocationQoS) GetVAccuracyOk() (*float32, bool) {
 
 // HasVAccuracy returns a boolean if a field has been set.
 func (o *LocationQoS) HasVAccuracy() bool {
-	if o != nil && !IsNil(o.VAccuracy) {
+	if o != nil && !isNil(o.VAccuracy) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *LocationQoS) SetVAccuracy(v float32) {
 
 // GetVerticalRequested returns the VerticalRequested field value if set, zero value otherwise.
 func (o *LocationQoS) GetVerticalRequested() bool {
-	if o == nil || IsNil(o.VerticalRequested) {
+	if o == nil || isNil(o.VerticalRequested) {
 		var ret bool
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *LocationQoS) GetVerticalRequested() bool {
 // GetVerticalRequestedOk returns a tuple with the VerticalRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationQoS) GetVerticalRequestedOk() (*bool, bool) {
-	if o == nil || IsNil(o.VerticalRequested) {
+	if o == nil || isNil(o.VerticalRequested) {
 		return nil, false
 	}
 	return o.VerticalRequested, true
@@ -130,7 +130,7 @@ func (o *LocationQoS) GetVerticalRequestedOk() (*bool, bool) {
 
 // HasVerticalRequested returns a boolean if a field has been set.
 func (o *LocationQoS) HasVerticalRequested() bool {
-	if o != nil && !IsNil(o.VerticalRequested) {
+	if o != nil && !isNil(o.VerticalRequested) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *LocationQoS) SetVerticalRequested(v bool) {
 
 // GetResponseTime returns the ResponseTime field value if set, zero value otherwise.
 func (o *LocationQoS) GetResponseTime() ResponseTime {
-	if o == nil || IsNil(o.ResponseTime) {
+	if o == nil || isNil(o.ResponseTime) {
 		var ret ResponseTime
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *LocationQoS) GetResponseTime() ResponseTime {
 // GetResponseTimeOk returns a tuple with the ResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationQoS) GetResponseTimeOk() (*ResponseTime, bool) {
-	if o == nil || IsNil(o.ResponseTime) {
+	if o == nil || isNil(o.ResponseTime) {
 		return nil, false
 	}
 	return o.ResponseTime, true
@@ -162,7 +162,7 @@ func (o *LocationQoS) GetResponseTimeOk() (*ResponseTime, bool) {
 
 // HasResponseTime returns a boolean if a field has been set.
 func (o *LocationQoS) HasResponseTime() bool {
-	if o != nil && !IsNil(o.ResponseTime) {
+	if o != nil && !isNil(o.ResponseTime) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *LocationQoS) SetResponseTime(v ResponseTime) {
 
 // GetMinorLocQoses returns the MinorLocQoses field value if set, zero value otherwise.
 func (o *LocationQoS) GetMinorLocQoses() []MinorLocationQoS {
-	if o == nil || IsNil(o.MinorLocQoses) {
+	if o == nil || isNil(o.MinorLocQoses) {
 		var ret []MinorLocationQoS
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *LocationQoS) GetMinorLocQoses() []MinorLocationQoS {
 // GetMinorLocQosesOk returns a tuple with the MinorLocQoses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationQoS) GetMinorLocQosesOk() ([]MinorLocationQoS, bool) {
-	if o == nil || IsNil(o.MinorLocQoses) {
+	if o == nil || isNil(o.MinorLocQoses) {
 		return nil, false
 	}
 	return o.MinorLocQoses, true
@@ -194,7 +194,7 @@ func (o *LocationQoS) GetMinorLocQosesOk() ([]MinorLocationQoS, bool) {
 
 // HasMinorLocQoses returns a boolean if a field has been set.
 func (o *LocationQoS) HasMinorLocQoses() bool {
-	if o != nil && !IsNil(o.MinorLocQoses) {
+	if o != nil && !isNil(o.MinorLocQoses) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *LocationQoS) SetMinorLocQoses(v []MinorLocationQoS) {
 
 // GetLcsQosClass returns the LcsQosClass field value if set, zero value otherwise.
 func (o *LocationQoS) GetLcsQosClass() LcsQosClass {
-	if o == nil || IsNil(o.LcsQosClass) {
+	if o == nil || isNil(o.LcsQosClass) {
 		var ret LcsQosClass
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *LocationQoS) GetLcsQosClass() LcsQosClass {
 // GetLcsQosClassOk returns a tuple with the LcsQosClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationQoS) GetLcsQosClassOk() (*LcsQosClass, bool) {
-	if o == nil || IsNil(o.LcsQosClass) {
+	if o == nil || isNil(o.LcsQosClass) {
 		return nil, false
 	}
 	return o.LcsQosClass, true
@@ -226,7 +226,7 @@ func (o *LocationQoS) GetLcsQosClassOk() (*LcsQosClass, bool) {
 
 // HasLcsQosClass returns a boolean if a field has been set.
 func (o *LocationQoS) HasLcsQosClass() bool {
-	if o != nil && !IsNil(o.LcsQosClass) {
+	if o != nil && !isNil(o.LcsQosClass) {
 		return true
 	}
 
@@ -248,22 +248,22 @@ func (o LocationQoS) MarshalJSON() ([]byte, error) {
 
 func (o LocationQoS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.HAccuracy) {
+	if !isNil(o.HAccuracy) {
 		toSerialize["hAccuracy"] = o.HAccuracy
 	}
-	if !IsNil(o.VAccuracy) {
+	if !isNil(o.VAccuracy) {
 		toSerialize["vAccuracy"] = o.VAccuracy
 	}
-	if !IsNil(o.VerticalRequested) {
+	if !isNil(o.VerticalRequested) {
 		toSerialize["verticalRequested"] = o.VerticalRequested
 	}
-	if !IsNil(o.ResponseTime) {
+	if !isNil(o.ResponseTime) {
 		toSerialize["responseTime"] = o.ResponseTime
 	}
-	if !IsNil(o.MinorLocQoses) {
+	if !isNil(o.MinorLocQoses) {
 		toSerialize["minorLocQoses"] = o.MinorLocQoses
 	}
-	if !IsNil(o.LcsQosClass) {
+	if !isNil(o.LcsQosClass) {
 		toSerialize["lcsQosClass"] = o.LcsQosClass
 	}
 	return toSerialize, nil

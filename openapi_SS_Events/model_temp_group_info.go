@@ -93,7 +93,7 @@ func (o *TempGroupInfo) SetTempValGrpId(v string) {
 
 // GetValServIds returns the ValServIds field value if set, zero value otherwise.
 func (o *TempGroupInfo) GetValServIds() []string {
-	if o == nil || IsNil(o.ValServIds) {
+	if o == nil || isNil(o.ValServIds) {
 		var ret []string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *TempGroupInfo) GetValServIds() []string {
 // GetValServIdsOk returns a tuple with the ValServIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TempGroupInfo) GetValServIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ValServIds) {
+	if o == nil || isNil(o.ValServIds) {
 		return nil, false
 	}
 	return o.ValServIds, true
@@ -111,7 +111,7 @@ func (o *TempGroupInfo) GetValServIdsOk() ([]string, bool) {
 
 // HasValServIds returns a boolean if a field has been set.
 func (o *TempGroupInfo) HasValServIds() bool {
-	if o != nil && !IsNil(o.ValServIds) {
+	if o != nil && !isNil(o.ValServIds) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o TempGroupInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valGrpIds"] = o.ValGrpIds
 	toSerialize["tempValGrpId"] = o.TempValGrpId
-	if !IsNil(o.ValServIds) {
+	if !isNil(o.ValServIds) {
 		toSerialize["valServIds"] = o.ValServIds
 	}
 	return toSerialize, nil

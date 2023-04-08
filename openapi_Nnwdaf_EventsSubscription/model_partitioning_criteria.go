@@ -17,23 +17,37 @@ import (
 
 // PartitioningCriteria Possible values are: - \"TAC\": Type Allocation Code - \"SUBPLMN\": Subscriber PLMN ID - \"GEOAREA\": Geographical area, i.e. list(s) of TAI(s) - \"SNSSAI\": S-NSSAI - \"DNN\": DNN 
 type PartitioningCriteria struct {
-	string *string
+	PartitioningCriteriaAnyOf *PartitioningCriteriaAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PartitioningCriteria) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PartitioningCriteriaAnyOf
+	err = json.Unmarshal(data, &dst.PartitioningCriteriaAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPartitioningCriteriaAnyOf, _ := json.Marshal(dst.PartitioningCriteriaAnyOf)
+		if string(jsonPartitioningCriteriaAnyOf) == "{}" { // empty struct
+			dst.PartitioningCriteriaAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PartitioningCriteriaAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PartitioningCriteriaAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PartitioningCriteria)")
@@ -41,8 +55,12 @@ func (dst *PartitioningCriteria) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PartitioningCriteria) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PartitioningCriteriaAnyOf != nil {
+		return json.Marshal(&src.PartitioningCriteriaAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

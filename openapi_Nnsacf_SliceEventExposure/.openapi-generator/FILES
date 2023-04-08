@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -13,8 +12,10 @@ docs/CreatedSACEventSubscription.md
 docs/IndividualSubscriptionDocumentApi.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PatchItem.md
 docs/PatchOperation.md
+docs/PatchOperationAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -26,7 +27,9 @@ docs/SACEventState.md
 docs/SACEventStatus.md
 docs/SACEventSubscription.md
 docs/SACEventTrigger.md
+docs/SACEventTriggerAnyOf.md
 docs/SACEventType.md
+docs/SACEventTypeAnyOf.md
 docs/SACInfo.md
 docs/Snssai.md
 docs/SubscriptionsCollectionCollectionApi.md
@@ -38,8 +41,10 @@ model_access_token_req.go
 model_created_sac_event_subscription.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_patch_item.go
 model_patch_operation.go
+model_patch_operation_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
@@ -51,7 +56,9 @@ model_sac_event_state.go
 model_sac_event_status.go
 model_sac_event_subscription.go
 model_sac_event_trigger.go
+model_sac_event_trigger_any_of.go
 model_sac_event_type.go
+model_sac_event_type_any_of.go
 model_sac_info.go
 model_snssai.go
 response.go

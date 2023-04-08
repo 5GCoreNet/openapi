@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
  - [InvalidParam](docs/InvalidParam.md)
  - [Ipv6Addr](docs/Ipv6Addr.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)

@@ -46,7 +46,7 @@ func NewGtpUPathDelayThresholdsTypeWithDefaults() *GtpUPathDelayThresholdsType {
 
 // GetN3AveragePacketDelayThreshold returns the N3AveragePacketDelayThreshold field value if set, zero value otherwise.
 func (o *GtpUPathDelayThresholdsType) GetN3AveragePacketDelayThreshold() int32 {
-	if o == nil || IsNil(o.N3AveragePacketDelayThreshold) {
+	if o == nil || isNil(o.N3AveragePacketDelayThreshold) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *GtpUPathDelayThresholdsType) GetN3AveragePacketDelayThreshold() int32 {
 // GetN3AveragePacketDelayThresholdOk returns a tuple with the N3AveragePacketDelayThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathDelayThresholdsType) GetN3AveragePacketDelayThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.N3AveragePacketDelayThreshold) {
+	if o == nil || isNil(o.N3AveragePacketDelayThreshold) {
 		return nil, false
 	}
 	return o.N3AveragePacketDelayThreshold, true
@@ -64,7 +64,7 @@ func (o *GtpUPathDelayThresholdsType) GetN3AveragePacketDelayThresholdOk() (*int
 
 // HasN3AveragePacketDelayThreshold returns a boolean if a field has been set.
 func (o *GtpUPathDelayThresholdsType) HasN3AveragePacketDelayThreshold() bool {
-	if o != nil && !IsNil(o.N3AveragePacketDelayThreshold) {
+	if o != nil && !isNil(o.N3AveragePacketDelayThreshold) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *GtpUPathDelayThresholdsType) SetN3AveragePacketDelayThreshold(v int32) 
 
 // GetN3MinPacketDelayThreshold returns the N3MinPacketDelayThreshold field value if set, zero value otherwise.
 func (o *GtpUPathDelayThresholdsType) GetN3MinPacketDelayThreshold() int32 {
-	if o == nil || IsNil(o.N3MinPacketDelayThreshold) {
+	if o == nil || isNil(o.N3MinPacketDelayThreshold) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *GtpUPathDelayThresholdsType) GetN3MinPacketDelayThreshold() int32 {
 // GetN3MinPacketDelayThresholdOk returns a tuple with the N3MinPacketDelayThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathDelayThresholdsType) GetN3MinPacketDelayThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.N3MinPacketDelayThreshold) {
+	if o == nil || isNil(o.N3MinPacketDelayThreshold) {
 		return nil, false
 	}
 	return o.N3MinPacketDelayThreshold, true
@@ -96,7 +96,7 @@ func (o *GtpUPathDelayThresholdsType) GetN3MinPacketDelayThresholdOk() (*int32, 
 
 // HasN3MinPacketDelayThreshold returns a boolean if a field has been set.
 func (o *GtpUPathDelayThresholdsType) HasN3MinPacketDelayThreshold() bool {
-	if o != nil && !IsNil(o.N3MinPacketDelayThreshold) {
+	if o != nil && !isNil(o.N3MinPacketDelayThreshold) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *GtpUPathDelayThresholdsType) SetN3MinPacketDelayThreshold(v int32) {
 
 // GetN3MaxPacketDelayThreshold returns the N3MaxPacketDelayThreshold field value if set, zero value otherwise.
 func (o *GtpUPathDelayThresholdsType) GetN3MaxPacketDelayThreshold() int32 {
-	if o == nil || IsNil(o.N3MaxPacketDelayThreshold) {
+	if o == nil || isNil(o.N3MaxPacketDelayThreshold) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *GtpUPathDelayThresholdsType) GetN3MaxPacketDelayThreshold() int32 {
 // GetN3MaxPacketDelayThresholdOk returns a tuple with the N3MaxPacketDelayThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathDelayThresholdsType) GetN3MaxPacketDelayThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.N3MaxPacketDelayThreshold) {
+	if o == nil || isNil(o.N3MaxPacketDelayThreshold) {
 		return nil, false
 	}
 	return o.N3MaxPacketDelayThreshold, true
@@ -128,7 +128,7 @@ func (o *GtpUPathDelayThresholdsType) GetN3MaxPacketDelayThresholdOk() (*int32, 
 
 // HasN3MaxPacketDelayThreshold returns a boolean if a field has been set.
 func (o *GtpUPathDelayThresholdsType) HasN3MaxPacketDelayThreshold() bool {
-	if o != nil && !IsNil(o.N3MaxPacketDelayThreshold) {
+	if o != nil && !isNil(o.N3MaxPacketDelayThreshold) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *GtpUPathDelayThresholdsType) SetN3MaxPacketDelayThreshold(v int32) {
 
 // GetN9AveragePacketDelayThreshold returns the N9AveragePacketDelayThreshold field value if set, zero value otherwise.
 func (o *GtpUPathDelayThresholdsType) GetN9AveragePacketDelayThreshold() int32 {
-	if o == nil || IsNil(o.N9AveragePacketDelayThreshold) {
+	if o == nil || isNil(o.N9AveragePacketDelayThreshold) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *GtpUPathDelayThresholdsType) GetN9AveragePacketDelayThreshold() int32 {
 // GetN9AveragePacketDelayThresholdOk returns a tuple with the N9AveragePacketDelayThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathDelayThresholdsType) GetN9AveragePacketDelayThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.N9AveragePacketDelayThreshold) {
+	if o == nil || isNil(o.N9AveragePacketDelayThreshold) {
 		return nil, false
 	}
 	return o.N9AveragePacketDelayThreshold, true
@@ -160,7 +160,7 @@ func (o *GtpUPathDelayThresholdsType) GetN9AveragePacketDelayThresholdOk() (*int
 
 // HasN9AveragePacketDelayThreshold returns a boolean if a field has been set.
 func (o *GtpUPathDelayThresholdsType) HasN9AveragePacketDelayThreshold() bool {
-	if o != nil && !IsNil(o.N9AveragePacketDelayThreshold) {
+	if o != nil && !isNil(o.N9AveragePacketDelayThreshold) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *GtpUPathDelayThresholdsType) SetN9AveragePacketDelayThreshold(v int32) 
 
 // GetN9MinPacketDelayThreshold returns the N9MinPacketDelayThreshold field value if set, zero value otherwise.
 func (o *GtpUPathDelayThresholdsType) GetN9MinPacketDelayThreshold() int32 {
-	if o == nil || IsNil(o.N9MinPacketDelayThreshold) {
+	if o == nil || isNil(o.N9MinPacketDelayThreshold) {
 		var ret int32
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *GtpUPathDelayThresholdsType) GetN9MinPacketDelayThreshold() int32 {
 // GetN9MinPacketDelayThresholdOk returns a tuple with the N9MinPacketDelayThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathDelayThresholdsType) GetN9MinPacketDelayThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.N9MinPacketDelayThreshold) {
+	if o == nil || isNil(o.N9MinPacketDelayThreshold) {
 		return nil, false
 	}
 	return o.N9MinPacketDelayThreshold, true
@@ -192,7 +192,7 @@ func (o *GtpUPathDelayThresholdsType) GetN9MinPacketDelayThresholdOk() (*int32, 
 
 // HasN9MinPacketDelayThreshold returns a boolean if a field has been set.
 func (o *GtpUPathDelayThresholdsType) HasN9MinPacketDelayThreshold() bool {
-	if o != nil && !IsNil(o.N9MinPacketDelayThreshold) {
+	if o != nil && !isNil(o.N9MinPacketDelayThreshold) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *GtpUPathDelayThresholdsType) SetN9MinPacketDelayThreshold(v int32) {
 
 // GetN9MaxPacketDelayThreshold returns the N9MaxPacketDelayThreshold field value if set, zero value otherwise.
 func (o *GtpUPathDelayThresholdsType) GetN9MaxPacketDelayThreshold() int32 {
-	if o == nil || IsNil(o.N9MaxPacketDelayThreshold) {
+	if o == nil || isNil(o.N9MaxPacketDelayThreshold) {
 		var ret int32
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *GtpUPathDelayThresholdsType) GetN9MaxPacketDelayThreshold() int32 {
 // GetN9MaxPacketDelayThresholdOk returns a tuple with the N9MaxPacketDelayThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathDelayThresholdsType) GetN9MaxPacketDelayThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.N9MaxPacketDelayThreshold) {
+	if o == nil || isNil(o.N9MaxPacketDelayThreshold) {
 		return nil, false
 	}
 	return o.N9MaxPacketDelayThreshold, true
@@ -224,7 +224,7 @@ func (o *GtpUPathDelayThresholdsType) GetN9MaxPacketDelayThresholdOk() (*int32, 
 
 // HasN9MaxPacketDelayThreshold returns a boolean if a field has been set.
 func (o *GtpUPathDelayThresholdsType) HasN9MaxPacketDelayThreshold() bool {
-	if o != nil && !IsNil(o.N9MaxPacketDelayThreshold) {
+	if o != nil && !isNil(o.N9MaxPacketDelayThreshold) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o GtpUPathDelayThresholdsType) MarshalJSON() ([]byte, error) {
 
 func (o GtpUPathDelayThresholdsType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.N3AveragePacketDelayThreshold) {
+	if !isNil(o.N3AveragePacketDelayThreshold) {
 		toSerialize["n3AveragePacketDelayThreshold"] = o.N3AveragePacketDelayThreshold
 	}
-	if !IsNil(o.N3MinPacketDelayThreshold) {
+	if !isNil(o.N3MinPacketDelayThreshold) {
 		toSerialize["n3MinPacketDelayThreshold"] = o.N3MinPacketDelayThreshold
 	}
-	if !IsNil(o.N3MaxPacketDelayThreshold) {
+	if !isNil(o.N3MaxPacketDelayThreshold) {
 		toSerialize["n3MaxPacketDelayThreshold"] = o.N3MaxPacketDelayThreshold
 	}
-	if !IsNil(o.N9AveragePacketDelayThreshold) {
+	if !isNil(o.N9AveragePacketDelayThreshold) {
 		toSerialize["n9AveragePacketDelayThreshold"] = o.N9AveragePacketDelayThreshold
 	}
-	if !IsNil(o.N9MinPacketDelayThreshold) {
+	if !isNil(o.N9MinPacketDelayThreshold) {
 		toSerialize["n9MinPacketDelayThreshold"] = o.N9MinPacketDelayThreshold
 	}
-	if !IsNil(o.N9MaxPacketDelayThreshold) {
+	if !isNil(o.N9MaxPacketDelayThreshold) {
 		toSerialize["n9MaxPacketDelayThreshold"] = o.N9MaxPacketDelayThreshold
 	}
 	return toSerialize, nil

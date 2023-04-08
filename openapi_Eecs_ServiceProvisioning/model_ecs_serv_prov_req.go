@@ -76,7 +76,7 @@ func (o *ECSServProvReq) SetEecId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ECSServProvReq) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ECSServProvReq) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvReq) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -94,7 +94,7 @@ func (o *ECSServProvReq) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ECSServProvReq) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *ECSServProvReq) SetUeId(v string) {
 
 // GetAcProfs returns the AcProfs field value if set, zero value otherwise.
 func (o *ECSServProvReq) GetAcProfs() []ACProfile {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		var ret []ACProfile
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ECSServProvReq) GetAcProfs() []ACProfile {
 // GetAcProfsOk returns a tuple with the AcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvReq) GetAcProfsOk() ([]ACProfile, bool) {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		return nil, false
 	}
 	return o.AcProfs, true
@@ -126,7 +126,7 @@ func (o *ECSServProvReq) GetAcProfsOk() ([]ACProfile, bool) {
 
 // HasAcProfs returns a boolean if a field has been set.
 func (o *ECSServProvReq) HasAcProfs() bool {
-	if o != nil && !IsNil(o.AcProfs) {
+	if o != nil && !isNil(o.AcProfs) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ECSServProvReq) SetAcProfs(v []ACProfile) {
 
 // GetEecSvcContSupp returns the EecSvcContSupp field value if set, zero value otherwise.
 func (o *ECSServProvReq) GetEecSvcContSupp() []ACRScenario {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *ECSServProvReq) GetEecSvcContSupp() []ACRScenario {
 // GetEecSvcContSuppOk returns a tuple with the EecSvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvReq) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		return nil, false
 	}
 	return o.EecSvcContSupp, true
@@ -158,7 +158,7 @@ func (o *ECSServProvReq) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
 
 // HasEecSvcContSupp returns a boolean if a field has been set.
 func (o *ECSServProvReq) HasEecSvcContSupp() bool {
-	if o != nil && !IsNil(o.EecSvcContSupp) {
+	if o != nil && !isNil(o.EecSvcContSupp) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *ECSServProvReq) SetEecSvcContSupp(v []ACRScenario) {
 
 // GetConnInfo returns the ConnInfo field value if set, zero value otherwise.
 func (o *ECSServProvReq) GetConnInfo() []ConnectivityInfo {
-	if o == nil || IsNil(o.ConnInfo) {
+	if o == nil || isNil(o.ConnInfo) {
 		var ret []ConnectivityInfo
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *ECSServProvReq) GetConnInfo() []ConnectivityInfo {
 // GetConnInfoOk returns a tuple with the ConnInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvReq) GetConnInfoOk() ([]ConnectivityInfo, bool) {
-	if o == nil || IsNil(o.ConnInfo) {
+	if o == nil || isNil(o.ConnInfo) {
 		return nil, false
 	}
 	return o.ConnInfo, true
@@ -190,7 +190,7 @@ func (o *ECSServProvReq) GetConnInfoOk() ([]ConnectivityInfo, bool) {
 
 // HasConnInfo returns a boolean if a field has been set.
 func (o *ECSServProvReq) HasConnInfo() bool {
-	if o != nil && !IsNil(o.ConnInfo) {
+	if o != nil && !isNil(o.ConnInfo) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *ECSServProvReq) SetConnInfo(v []ConnectivityInfo) {
 
 // GetLocInf returns the LocInf field value if set, zero value otherwise.
 func (o *ECSServProvReq) GetLocInf() LocationInfo {
-	if o == nil || IsNil(o.LocInf) {
+	if o == nil || isNil(o.LocInf) {
 		var ret LocationInfo
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *ECSServProvReq) GetLocInf() LocationInfo {
 // GetLocInfOk returns a tuple with the LocInf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECSServProvReq) GetLocInfOk() (*LocationInfo, bool) {
-	if o == nil || IsNil(o.LocInf) {
+	if o == nil || isNil(o.LocInf) {
 		return nil, false
 	}
 	return o.LocInf, true
@@ -222,7 +222,7 @@ func (o *ECSServProvReq) GetLocInfOk() (*LocationInfo, bool) {
 
 // HasLocInf returns a boolean if a field has been set.
 func (o *ECSServProvReq) HasLocInf() bool {
-	if o != nil && !IsNil(o.LocInf) {
+	if o != nil && !isNil(o.LocInf) {
 		return true
 	}
 
@@ -245,19 +245,19 @@ func (o ECSServProvReq) MarshalJSON() ([]byte, error) {
 func (o ECSServProvReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.AcProfs) {
+	if !isNil(o.AcProfs) {
 		toSerialize["acProfs"] = o.AcProfs
 	}
-	if !IsNil(o.EecSvcContSupp) {
+	if !isNil(o.EecSvcContSupp) {
 		toSerialize["eecSvcContSupp"] = o.EecSvcContSupp
 	}
-	if !IsNil(o.ConnInfo) {
+	if !isNil(o.ConnInfo) {
 		toSerialize["connInfo"] = o.ConnInfo
 	}
-	if !IsNil(o.LocInf) {
+	if !isNil(o.LocInf) {
 		toSerialize["locInf"] = o.LocInf
 	}
 	return toSerialize, nil

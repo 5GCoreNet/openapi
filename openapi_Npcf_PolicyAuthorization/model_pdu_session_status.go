@@ -17,23 +17,37 @@ import (
 
 // PduSessionStatus Indicates whether the PDU session is established or terminated.
 type PduSessionStatus struct {
-	string *string
+	PduSessionStatusAnyOf *PduSessionStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PduSessionStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PduSessionStatusAnyOf
+	err = json.Unmarshal(data, &dst.PduSessionStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPduSessionStatusAnyOf, _ := json.Marshal(dst.PduSessionStatusAnyOf)
+		if string(jsonPduSessionStatusAnyOf) == "{}" { // empty struct
+			dst.PduSessionStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PduSessionStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PduSessionStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PduSessionStatus)")
@@ -41,8 +55,12 @@ func (dst *PduSessionStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PduSessionStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PduSessionStatusAnyOf != nil {
+		return json.Marshal(&src.PduSessionStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

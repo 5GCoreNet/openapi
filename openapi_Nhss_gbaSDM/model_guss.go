@@ -42,7 +42,7 @@ func NewGussWithDefaults() *Guss {
 
 // GetBsfInfo returns the BsfInfo field value if set, zero value otherwise.
 func (o *Guss) GetBsfInfo() BsfInfo {
-	if o == nil || IsNil(o.BsfInfo) {
+	if o == nil || isNil(o.BsfInfo) {
 		var ret BsfInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Guss) GetBsfInfo() BsfInfo {
 // GetBsfInfoOk returns a tuple with the BsfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Guss) GetBsfInfoOk() (*BsfInfo, bool) {
-	if o == nil || IsNil(o.BsfInfo) {
+	if o == nil || isNil(o.BsfInfo) {
 		return nil, false
 	}
 	return o.BsfInfo, true
@@ -60,7 +60,7 @@ func (o *Guss) GetBsfInfoOk() (*BsfInfo, bool) {
 
 // HasBsfInfo returns a boolean if a field has been set.
 func (o *Guss) HasBsfInfo() bool {
-	if o != nil && !IsNil(o.BsfInfo) {
+	if o != nil && !isNil(o.BsfInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *Guss) SetBsfInfo(v BsfInfo) {
 
 // GetUssList returns the UssList field value if set, zero value otherwise.
 func (o *Guss) GetUssList() []UssListItem {
-	if o == nil || IsNil(o.UssList) {
+	if o == nil || isNil(o.UssList) {
 		var ret []UssListItem
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Guss) GetUssList() []UssListItem {
 // GetUssListOk returns a tuple with the UssList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Guss) GetUssListOk() ([]UssListItem, bool) {
-	if o == nil || IsNil(o.UssList) {
+	if o == nil || isNil(o.UssList) {
 		return nil, false
 	}
 	return o.UssList, true
@@ -92,7 +92,7 @@ func (o *Guss) GetUssListOk() ([]UssListItem, bool) {
 
 // HasUssList returns a boolean if a field has been set.
 func (o *Guss) HasUssList() bool {
-	if o != nil && !IsNil(o.UssList) {
+	if o != nil && !isNil(o.UssList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o Guss) MarshalJSON() ([]byte, error) {
 
 func (o Guss) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BsfInfo) {
+	if !isNil(o.BsfInfo) {
 		toSerialize["bsfInfo"] = o.BsfInfo
 	}
-	if !IsNil(o.UssList) {
+	if !isNil(o.UssList) {
 		toSerialize["ussList"] = o.UssList
 	}
 	return toSerialize, nil

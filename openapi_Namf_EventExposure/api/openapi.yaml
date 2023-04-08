@@ -11664,133 +11664,62 @@ components:
       type: object
     AmfEventType:
       anyOf:
-      - enum:
-        - LOCATION_REPORT
-        - PRESENCE_IN_AOI_REPORT
-        - TIMEZONE_REPORT
-        - ACCESS_TYPE_REPORT
-        - REGISTRATION_STATE_REPORT
-        - CONNECTIVITY_STATE_REPORT
-        - REACHABILITY_REPORT
-        - COMMUNICATION_FAILURE_REPORT
-        - UES_IN_AREA_REPORT
-        - SUBSCRIPTION_ID_CHANGE
-        - SUBSCRIPTION_ID_ADDITION
-        - SUBSCRIPTION_TERMINATION
-        - LOSS_OF_CONNECTIVITY
-        - 5GS_USER_STATE_REPORT
-        - AVAILABILITY_AFTER_DDN_FAILURE
-        - TYPE_ALLOCATION_CODE_REPORT
-        - FREQUENT_MOBILITY_REGISTRATION_REPORT
-        - SNSSAI_TA_MAPPING_REPORT
-        - UE_LOCATION_TRENDS
-        - UE_ACCESS_BEHAVIOR_TRENDS
-        - UE_MM_TRANSACTION_REPORT
-        type: string
+      - $ref: '#/components/schemas/AmfEventType_anyOf'
       - type: string
       description: Describes the supported event types of Namf_EventExposure Service
     AmfEventTrigger:
       anyOf:
-      - enum:
-        - ONE_TIME
-        - CONTINUOUS
-        - PERIODIC
-        type: string
+      - $ref: '#/components/schemas/AmfEventTrigger_anyOf'
       - type: string
       description: Describes how AMF should generate the report for the event
     LocationFilter:
       anyOf:
-      - enum:
-        - TAI
-        - CELL_ID
-        - RAN_NODE
-        - N3IWF
-        - UE_IP
-        - UDP_PORT
-        - TNAP_ID
-        - GLI
-        - TWAP_ID
-        type: string
+      - $ref: '#/components/schemas/LocationFilter_anyOf'
       - type: string
       description: Describes the supported filters of LOCATION_REPORT event type
     UeReachability:
       anyOf:
-      - enum:
-        - UNREACHABLE
-        - REACHABLE
-        - REGULATORY_ONLY
-        type: string
+      - $ref: '#/components/schemas/UeReachability_anyOf'
       - type: string
       description: Describes the reachability of the UE
     RmState:
       anyOf:
-      - enum:
-        - REGISTERED
-        - DEREGISTERED
-        type: string
+      - $ref: '#/components/schemas/RmState_anyOf'
       - type: string
       description: Describes the registration management state of a UE
     CmState:
       anyOf:
-      - enum:
-        - IDLE
-        - CONNECTED
-        type: string
+      - $ref: '#/components/schemas/CmState_anyOf'
       - type: string
       description: Describes the connection management state of a UE
     "5GsUserState":
       anyOf:
-      - enum:
-        - DEREGISTERED
-        - CONNECTED_NOT_REACHABLE_FOR_PAGING
-        - CONNECTED_REACHABLE_FOR_PAGING
-        - NOT_PROVIDED_FROM_AMF
-        type: string
+      - $ref: '#/components/schemas/_5GsUserState_anyOf'
       - type: string
       description: Describes the 5GS User State of a UE
     LossOfConnectivityReason:
       anyOf:
-      - enum:
-        - DEREGISTERED
-        - MAX_DETECTION_TIME_EXPIRED
-        - PURGED
-        type: string
+      - $ref: '#/components/schemas/LossOfConnectivityReason_anyOf'
       - type: string
       description: Describes the reason for loss of connectivity
     ReachabilityFilter:
       anyOf:
-      - enum:
-        - UE_REACHABILITY_STATUS_CHANGE
-        - UE_REACHABLE_DL_TRAFFIC
-        type: string
+      - $ref: '#/components/schemas/ReachabilityFilter_anyOf'
       - type: string
       description: Event filter for REACHABILITY_REPORT event type
     UeType:
       anyOf:
-      - enum:
-        - AERIAL_UE
-        type: string
+      - $ref: '#/components/schemas/UeType_anyOf'
       - type: string
       description: Describes the type of UEs
     AccessStateTransitionType:
       anyOf:
-      - enum:
-        - ACCESS_TYPE_CHANGE_3GPP
-        - ACCESS_TYPE_CHANGE_N3GPP
-        - RM_STATE_CHANGE_DEREGISTERED
-        - RM_STATE_CHANGE_REGISTERED
-        - CM_STATE_CHANGE_IDLE
-        - CM_STATE_CHANGE_CONNECTED
-        - HANDOVER
-        - MOBILITY_REGISTRATION_UPDATE
-        type: string
+      - $ref: '#/components/schemas/AccessStateTransitionType_anyOf'
       - type: string
       description: Access State Transition Type.
     SubTerminationReason:
       anyOf:
-      - enum:
-        - INVALID_SUBSCRIPTION
-        type: string
+      - $ref: '#/components/schemas/SubTerminationReason_anyOf'
       - type: string
       description: Subscription Termination Reason.
     RedirectResponse:
@@ -11930,64 +11859,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     ReferenceId:
@@ -12139,12 +12011,7 @@ components:
       type: object
     PresenceState:
       anyOf:
-      - enum:
-        - IN_AREA
-        - OUT_OF_AREA
-        - UNKNOWN
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/PresenceState_anyOf'
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -12975,10 +12842,7 @@ components:
       type: integer
     TransportProtocol:
       anyOf:
-      - enum:
-        - UDP
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -13059,10 +12923,7 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - enum:
-        - DSL
-        - PON
-        type: string
+      - $ref: '#/components/schemas/LineType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -13342,13 +13203,7 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - enum:
-        - TAC
-        - SUBPLMN
-        - GEOAREA
-        - SNSSAI
-        - DNN
-        type: string
+      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -13361,11 +13216,7 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - enum:
-        - ACTIVATE
-        - DEACTIVATE
-        - RETRIEVAL
-        type: string
+      - $ref: '#/components/schemas/NotificationFlag_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -13712,6 +13563,209 @@ components:
         maxItems: 1
         minItems: 1
         type: array
+    AmfEventType_anyOf:
+      enum:
+      - LOCATION_REPORT
+      - PRESENCE_IN_AOI_REPORT
+      - TIMEZONE_REPORT
+      - ACCESS_TYPE_REPORT
+      - REGISTRATION_STATE_REPORT
+      - CONNECTIVITY_STATE_REPORT
+      - REACHABILITY_REPORT
+      - COMMUNICATION_FAILURE_REPORT
+      - UES_IN_AREA_REPORT
+      - SUBSCRIPTION_ID_CHANGE
+      - SUBSCRIPTION_ID_ADDITION
+      - SUBSCRIPTION_TERMINATION
+      - LOSS_OF_CONNECTIVITY
+      - 5GS_USER_STATE_REPORT
+      - AVAILABILITY_AFTER_DDN_FAILURE
+      - TYPE_ALLOCATION_CODE_REPORT
+      - FREQUENT_MOBILITY_REGISTRATION_REPORT
+      - SNSSAI_TA_MAPPING_REPORT
+      - UE_LOCATION_TRENDS
+      - UE_ACCESS_BEHAVIOR_TRENDS
+      - UE_MM_TRANSACTION_REPORT
+      type: string
+      example: null
+    AmfEventTrigger_anyOf:
+      enum:
+      - ONE_TIME
+      - CONTINUOUS
+      - PERIODIC
+      type: string
+      example: null
+    LocationFilter_anyOf:
+      enum:
+      - TAI
+      - CELL_ID
+      - RAN_NODE
+      - N3IWF
+      - UE_IP
+      - UDP_PORT
+      - TNAP_ID
+      - GLI
+      - TWAP_ID
+      type: string
+      example: null
+    UeReachability_anyOf:
+      enum:
+      - UNREACHABLE
+      - REACHABLE
+      - REGULATORY_ONLY
+      type: string
+      example: null
+    RmState_anyOf:
+      enum:
+      - REGISTERED
+      - DEREGISTERED
+      type: string
+      example: null
+    CmState_anyOf:
+      enum:
+      - IDLE
+      - CONNECTED
+      type: string
+      example: null
+    _5GsUserState_anyOf:
+      enum:
+      - DEREGISTERED
+      - CONNECTED_NOT_REACHABLE_FOR_PAGING
+      - CONNECTED_REACHABLE_FOR_PAGING
+      - NOT_PROVIDED_FROM_AMF
+      type: string
+      example: null
+    LossOfConnectivityReason_anyOf:
+      enum:
+      - DEREGISTERED
+      - MAX_DETECTION_TIME_EXPIRED
+      - PURGED
+      type: string
+      example: null
+    ReachabilityFilter_anyOf:
+      enum:
+      - UE_REACHABILITY_STATUS_CHANGE
+      - UE_REACHABLE_DL_TRAFFIC
+      type: string
+      example: null
+    UeType_anyOf:
+      enum:
+      - AERIAL_UE
+      type: string
+      example: null
+    AccessStateTransitionType_anyOf:
+      enum:
+      - ACCESS_TYPE_CHANGE_3GPP
+      - ACCESS_TYPE_CHANGE_N3GPP
+      - RM_STATE_CHANGE_DEREGISTERED
+      - RM_STATE_CHANGE_REGISTERED
+      - CM_STATE_CHANGE_IDLE
+      - CM_STATE_CHANGE_CONNECTED
+      - HANDOVER
+      - MOBILITY_REGISTRATION_UPDATE
+      type: string
+      example: null
+    SubTerminationReason_anyOf:
+      enum:
+      - INVALID_SUBSCRIPTION
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
+    PresenceState_anyOf:
+      enum:
+      - IN_AREA
+      - OUT_OF_AREA
+      - UNKNOWN
+      - INACTIVE
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - UDP
+      - TCP
+      type: string
+      example: null
+    LineType_anyOf:
+      enum:
+      - DSL
+      - PON
+      type: string
+      example: null
+    PartitioningCriteria_anyOf:
+      enum:
+      - TAC
+      - SUBPLMN
+      - GEOAREA
+      - SNSSAI
+      - DNN
+      type: string
+      example: null
+    NotificationFlag_anyOf:
+      enum:
+      - ACTIVATE
+      - DEACTIVATE
+      - RETRIEVAL
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

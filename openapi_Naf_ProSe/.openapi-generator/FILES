@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -12,13 +11,17 @@ docs/AccessTokenReq.md
 docs/AuthDisReqData.md
 docs/AuthDisResData.md
 docs/AuthRequestType.md
+docs/AuthRequestTypeAnyOf.md
 docs/AuthResponseType.md
+docs/AuthResponseTypeAnyOf.md
 docs/AuthUpdateData.md
 docs/AuthorizationInformationUpdateResultApi.md
 docs/BannedAuthData.md
 docs/InvalidParam.md
 docs/MetadataIndic.md
+docs/MetadataIndicAnyOf.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/ObtainTheAuthorizationOfDiscoveryRequestForAUEApi.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
@@ -29,6 +32,7 @@ docs/RedirectResponse.md
 docs/RestrictedCodeSuffixPool.md
 docs/RestrictedCodeSuffixRange.md
 docs/RevocationResult.md
+docs/RevocationResultAnyOf.md
 docs/Snssai.md
 docs/TargetData.md
 git_push.sh
@@ -39,12 +43,16 @@ model_access_token_req.go
 model_auth_dis_req_data.go
 model_auth_dis_res_data.go
 model_auth_request_type.go
+model_auth_request_type_any_of.go
 model_auth_response_type.go
+model_auth_response_type_any_of.go
 model_auth_update_data.go
 model_banned_auth_data.go
 model_invalid_param.go
 model_metadata_indic.go
+model_metadata_indic_any_of.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
@@ -54,6 +62,7 @@ model_redirect_response.go
 model_restricted_code_suffix_pool.go
 model_restricted_code_suffix_range.go
 model_revocation_result.go
+model_revocation_result_any_of.go
 model_snssai.go
 model_target_data.go
 response.go

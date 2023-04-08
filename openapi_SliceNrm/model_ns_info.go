@@ -42,7 +42,7 @@ func NewNsInfoWithDefaults() *NsInfo {
 
 // GetNsInstanceId returns the NsInstanceId field value if set, zero value otherwise.
 func (o *NsInfo) GetNsInstanceId() string {
-	if o == nil || IsNil(o.NsInstanceId) {
+	if o == nil || isNil(o.NsInstanceId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NsInfo) GetNsInstanceId() string {
 // GetNsInstanceIdOk returns a tuple with the NsInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsInfo) GetNsInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NsInstanceId) {
+	if o == nil || isNil(o.NsInstanceId) {
 		return nil, false
 	}
 	return o.NsInstanceId, true
@@ -60,7 +60,7 @@ func (o *NsInfo) GetNsInstanceIdOk() (*string, bool) {
 
 // HasNsInstanceId returns a boolean if a field has been set.
 func (o *NsInfo) HasNsInstanceId() bool {
-	if o != nil && !IsNil(o.NsInstanceId) {
+	if o != nil && !isNil(o.NsInstanceId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NsInfo) SetNsInstanceId(v string) {
 
 // GetNsName returns the NsName field value if set, zero value otherwise.
 func (o *NsInfo) GetNsName() string {
-	if o == nil || IsNil(o.NsName) {
+	if o == nil || isNil(o.NsName) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NsInfo) GetNsName() string {
 // GetNsNameOk returns a tuple with the NsName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsInfo) GetNsNameOk() (*string, bool) {
-	if o == nil || IsNil(o.NsName) {
+	if o == nil || isNil(o.NsName) {
 		return nil, false
 	}
 	return o.NsName, true
@@ -92,7 +92,7 @@ func (o *NsInfo) GetNsNameOk() (*string, bool) {
 
 // HasNsName returns a boolean if a field has been set.
 func (o *NsInfo) HasNsName() bool {
-	if o != nil && !IsNil(o.NsName) {
+	if o != nil && !isNil(o.NsName) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o NsInfo) MarshalJSON() ([]byte, error) {
 
 func (o NsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NsInstanceId) {
+	if !isNil(o.NsInstanceId) {
 		toSerialize["nsInstanceId"] = o.NsInstanceId
 	}
-	if !IsNil(o.NsName) {
+	if !isNil(o.NsName) {
 		toSerialize["nsName"] = o.NsName
 	}
 	return toSerialize, nil

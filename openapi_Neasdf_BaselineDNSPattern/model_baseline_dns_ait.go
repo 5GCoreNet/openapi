@@ -69,7 +69,7 @@ func (o *BaselineDnsAit) SetAitId(v string) {
 
 // GetLabel returns the Label field value if set, zero value otherwise.
 func (o *BaselineDnsAit) GetLabel() string {
-	if o == nil || IsNil(o.Label) {
+	if o == nil || isNil(o.Label) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *BaselineDnsAit) GetLabel() string {
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsAit) GetLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.Label) {
+	if o == nil || isNil(o.Label) {
 		return nil, false
 	}
 	return o.Label, true
@@ -87,7 +87,7 @@ func (o *BaselineDnsAit) GetLabelOk() (*string, bool) {
 
 // HasLabel returns a boolean if a field has been set.
 func (o *BaselineDnsAit) HasLabel() bool {
-	if o != nil && !IsNil(o.Label) {
+	if o != nil && !isNil(o.Label) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *BaselineDnsAit) SetLabel(v string) {
 
 // GetEcsOption returns the EcsOption field value if set, zero value otherwise.
 func (o *BaselineDnsAit) GetEcsOption() EcsOption {
-	if o == nil || IsNil(o.EcsOption) {
+	if o == nil || isNil(o.EcsOption) {
 		var ret EcsOption
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *BaselineDnsAit) GetEcsOption() EcsOption {
 // GetEcsOptionOk returns a tuple with the EcsOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsAit) GetEcsOptionOk() (*EcsOption, bool) {
-	if o == nil || IsNil(o.EcsOption) {
+	if o == nil || isNil(o.EcsOption) {
 		return nil, false
 	}
 	return o.EcsOption, true
@@ -119,7 +119,7 @@ func (o *BaselineDnsAit) GetEcsOptionOk() (*EcsOption, bool) {
 
 // HasEcsOption returns a boolean if a field has been set.
 func (o *BaselineDnsAit) HasEcsOption() bool {
-	if o != nil && !IsNil(o.EcsOption) {
+	if o != nil && !isNil(o.EcsOption) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *BaselineDnsAit) SetEcsOption(v EcsOption) {
 
 // GetDnsServerAddressList returns the DnsServerAddressList field value if set, zero value otherwise.
 func (o *BaselineDnsAit) GetDnsServerAddressList() []IpAddr {
-	if o == nil || IsNil(o.DnsServerAddressList) {
+	if o == nil || isNil(o.DnsServerAddressList) {
 		var ret []IpAddr
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *BaselineDnsAit) GetDnsServerAddressList() []IpAddr {
 // GetDnsServerAddressListOk returns a tuple with the DnsServerAddressList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BaselineDnsAit) GetDnsServerAddressListOk() ([]IpAddr, bool) {
-	if o == nil || IsNil(o.DnsServerAddressList) {
+	if o == nil || isNil(o.DnsServerAddressList) {
 		return nil, false
 	}
 	return o.DnsServerAddressList, true
@@ -151,7 +151,7 @@ func (o *BaselineDnsAit) GetDnsServerAddressListOk() ([]IpAddr, bool) {
 
 // HasDnsServerAddressList returns a boolean if a field has been set.
 func (o *BaselineDnsAit) HasDnsServerAddressList() bool {
-	if o != nil && !IsNil(o.DnsServerAddressList) {
+	if o != nil && !isNil(o.DnsServerAddressList) {
 		return true
 	}
 
@@ -174,13 +174,13 @@ func (o BaselineDnsAit) MarshalJSON() ([]byte, error) {
 func (o BaselineDnsAit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aitId"] = o.AitId
-	if !IsNil(o.Label) {
+	if !isNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
-	if !IsNil(o.EcsOption) {
+	if !isNil(o.EcsOption) {
 		toSerialize["ecsOption"] = o.EcsOption
 	}
-	if !IsNil(o.DnsServerAddressList) {
+	if !isNil(o.DnsServerAddressList) {
 		toSerialize["dnsServerAddressList"] = o.DnsServerAddressList
 	}
 	return toSerialize, nil

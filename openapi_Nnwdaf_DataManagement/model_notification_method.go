@@ -17,23 +17,37 @@ import (
 
 // NotificationMethod Possible values are: - PERIODIC: The subscribe of NWDAF Event is periodically. The periodic of the notification is identified by repetitionPeriod defined in clause 5.1.6.2.3.   - THRESHOLD: The subscribe of NWDAF Event is upon threshold exceeded. 
 type NotificationMethod struct {
-	string *string
+	NotificationMethodAnyOf *NotificationMethodAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotificationMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NotificationMethodAnyOf
+	err = json.Unmarshal(data, &dst.NotificationMethodAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNotificationMethodAnyOf, _ := json.Marshal(dst.NotificationMethodAnyOf)
+		if string(jsonNotificationMethodAnyOf) == "{}" { // empty struct
+			dst.NotificationMethodAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NotificationMethodAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NotificationMethodAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NotificationMethod)")
@@ -41,8 +55,12 @@ func (dst *NotificationMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotificationMethod) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NotificationMethodAnyOf != nil {
+		return json.Marshal(&src.NotificationMethodAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

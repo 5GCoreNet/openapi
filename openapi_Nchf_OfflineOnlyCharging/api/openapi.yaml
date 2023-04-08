@@ -8317,104 +8317,43 @@ components:
       type: array
     NodeFunctionality:
       anyOf:
-      - enum:
-        - SMF
-        - SMSF
-        - I-SMF
-        type: string
+      - $ref: '#/components/schemas/NodeFunctionality_anyOf'
       - type: string
     ChargingCharacteristicsSelectionMode:
       anyOf:
-      - enum:
-        - HOME_DEFAULT
-        - ROAMING_DEFAULT
-        - VISITING_DEFAULT
-        type: string
+      - $ref: '#/components/schemas/ChargingCharacteristicsSelectionMode_anyOf'
       - type: string
     TriggerType:
       anyOf:
-      - enum:
-        - FINAL
-        - ABNORMAL_RELEASE
-        - QOS_CHANGE
-        - VOLUME_LIMIT
-        - TIME_LIMIT
-        - EVENT_LIMIT
-        - PLMN_CHANGE
-        - USER_LOCATION_CHANGE
-        - RAT_CHANGE
-        - SESSION_AMBR_CHANGE
-        - UE_TIMEZONE_CHANGE
-        - TARIFF_TIME_CHANGE
-        - MAX_NUMBER_OF_CHANGES_IN_CHARGING_CONDITIONS
-        - MANAGEMENT_INTERVENTION
-        - CHANGE_OF_UE_PRESENCE_IN_PRESENCE_REPORTING_AREA
-        - CHANGE_OF_3GPP_PS_DATA_OFF_STATUS
-        - SERVING_NODE_CHANGE
-        - REMOVAL_OF_UPF
-        - ADDITION_OF_UPF
-        - INSERTION_OF_ISMF
-        - REMOVAL_OF_ISMF
-        - CHANGE_OF_ISMF
-        - START_OF_SERVICE_DATA_FLOW
-        - GFBR_GUARANTEED_STATUS_CHANGE
-        - HANDOVER_CANCEL
-        - HANDOVER_START
-        - HANDOVER_COMPLETE
-        - ADDITION_OF_ACCESS
-        - REMOVAL_OF_ACCESS
-        - START_OF_SDF_ADDITIONAL_ACCESS
-        type: string
+      - $ref: '#/components/schemas/TriggerType_anyOf'
       - type: string
     TriggerCategory:
       anyOf:
-      - enum:
-        - IMMEDIATE_REPORT
-        - DEFERRED_REPORT
-        type: string
+      - $ref: '#/components/schemas/TriggerCategory_anyOf'
       - type: string
     FailureHandling:
       anyOf:
-      - enum:
-        - TERMINATE
-        - CONTINUE
-        - RETRY_AND_TERMINATE
-        type: string
+      - $ref: '#/components/schemas/FailureHandling_anyOf'
       - type: string
     SessionFailover:
       anyOf:
-      - enum:
-        - FAILOVER_NOT_SUPPORTED
-        - FAILOVER_SUPPORTED
-        type: string
+      - $ref: '#/components/schemas/SessionFailover_anyOf'
       - type: string
     "3GPPPSDataOffStatus":
       anyOf:
-      - enum:
-        - ACTIVE
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/_3GPPPSDataOffStatus_anyOf'
       - type: string
     ResultCode:
       anyOf:
-      - enum:
-        - SUCCESS
-        - END_USER_SERVICE_DENIED
-        type: string
+      - $ref: '#/components/schemas/ResultCode_anyOf'
       - type: string
     PartialRecordMethod:
       anyOf:
-      - enum:
-        - DEFAULT
-        - INDIVIDUAL
-        type: string
+      - $ref: '#/components/schemas/PartialRecordMethod_anyOf'
       - type: string
     RoamerInOut:
       anyOf:
-      - enum:
-        - IN_BOUND
-        - OUT_BOUND
-        type: string
+      - $ref: '#/components/schemas/RoamerInOut_anyOf'
       - type: string
     ProblemDetails:
       description: Provides additional information in an error response.
@@ -9365,10 +9304,7 @@ components:
       type: integer
     TransportProtocol:
       anyOf:
-      - enum:
-        - UDP
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -9449,10 +9385,7 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - enum:
-        - DSL
-        - PON
-        type: string
+      - $ref: '#/components/schemas/LineType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -9855,12 +9788,7 @@ components:
       type: object
     PresenceState:
       anyOf:
-      - enum:
-        - IN_AREA
-        - OUT_OF_AREA
-        - UNKNOWN
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/PresenceState_anyOf'
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -9906,50 +9834,19 @@ components:
       type: integer
     PduSessionType:
       anyOf:
-      - enum:
-        - IPV4
-        - IPV6
-        - IPV4V6
-        - UNSTRUCTURED
-        - ETHERNET
-        type: string
+      - $ref: '#/components/schemas/PduSessionType_anyOf'
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
     SscMode:
       anyOf:
-      - enum:
-        - SSC_MODE_1
-        - SSC_MODE_2
-        - SSC_MODE_3
-        type: string
+      - $ref: '#/components/schemas/SscMode_anyOf'
       - type: string
       description: "represents the service and session continuity mode It shall comply\
         \ with the provisions defined in table 5.4.3.6-1. \n"
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     Dnn:
@@ -10109,19 +10006,13 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - enum:
-        - NOT_PREEMPT
-        - MAY_PREEMPT
-        type: string
+      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - enum:
-        - NOT_PREEMPTABLE
-        - PREEMPTABLE
-        type: string
+      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -10365,10 +10256,7 @@ components:
       type: object
     SteeringFunctionality:
       anyOf:
-      - enum:
-        - MPTCP
-        - ATSSS_LL
-        type: string
+      - $ref: '#/components/schemas/SteeringFunctionality_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -10412,12 +10300,7 @@ components:
       type: object
     SteerModeValue:
       anyOf:
-      - enum:
-        - ACTIVE_STANDBY
-        - LOAD_BALANCING
-        - SMALLEST_DELAY
-        - PRIORITY_BASED
-        type: string
+      - $ref: '#/components/schemas/SteerModeValue_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -10445,10 +10328,7 @@ components:
       type: object
     SteerModeIndicator:
       anyOf:
-      - enum:
-        - AUTO_LOAD_BALANCE
-        - UE_ASSISTANCE
-        type: string
+      - $ref: '#/components/schemas/SteerModeIndicator_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -10493,10 +10373,7 @@ components:
       type: integer
     MaPduIndication:
       anyOf:
-      - enum:
-        - MA_PDU_REQUEST
-        - MA_PDU_NETWORK_UPGRADE_ALLOWED
-        type: string
+      - $ref: '#/components/schemas/MaPduIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -10788,11 +10665,7 @@ components:
       type: string
     QosResourceType:
       anyOf:
-      - enum:
-        - NON_GBR
-        - NON_CRITICAL_GBR
-        - CRITICAL_GBR
-        type: string
+      - $ref: '#/components/schemas/QosResourceType_anyOf'
       - type: string
       description: "The enumeration QosResourceType indicates whether a QoS Flow is\
         \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
@@ -10864,64 +10737,7 @@ components:
       $ref: '#/components/schemas/Uinteger'
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnIdNid:
@@ -10981,6 +10797,262 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    NodeFunctionality_anyOf:
+      enum:
+      - SMF
+      - SMSF
+      - I-SMF
+      type: string
+      example: null
+    ChargingCharacteristicsSelectionMode_anyOf:
+      enum:
+      - HOME_DEFAULT
+      - ROAMING_DEFAULT
+      - VISITING_DEFAULT
+      type: string
+      example: null
+    TriggerType_anyOf:
+      enum:
+      - FINAL
+      - ABNORMAL_RELEASE
+      - QOS_CHANGE
+      - VOLUME_LIMIT
+      - TIME_LIMIT
+      - EVENT_LIMIT
+      - PLMN_CHANGE
+      - USER_LOCATION_CHANGE
+      - RAT_CHANGE
+      - SESSION_AMBR_CHANGE
+      - UE_TIMEZONE_CHANGE
+      - TARIFF_TIME_CHANGE
+      - MAX_NUMBER_OF_CHANGES_IN_CHARGING_CONDITIONS
+      - MANAGEMENT_INTERVENTION
+      - CHANGE_OF_UE_PRESENCE_IN_PRESENCE_REPORTING_AREA
+      - CHANGE_OF_3GPP_PS_DATA_OFF_STATUS
+      - SERVING_NODE_CHANGE
+      - REMOVAL_OF_UPF
+      - ADDITION_OF_UPF
+      - INSERTION_OF_ISMF
+      - REMOVAL_OF_ISMF
+      - CHANGE_OF_ISMF
+      - START_OF_SERVICE_DATA_FLOW
+      - GFBR_GUARANTEED_STATUS_CHANGE
+      - HANDOVER_CANCEL
+      - HANDOVER_START
+      - HANDOVER_COMPLETE
+      - ADDITION_OF_ACCESS
+      - REMOVAL_OF_ACCESS
+      - START_OF_SDF_ADDITIONAL_ACCESS
+      type: string
+      example: null
+    TriggerCategory_anyOf:
+      enum:
+      - IMMEDIATE_REPORT
+      - DEFERRED_REPORT
+      type: string
+      example: null
+    FailureHandling_anyOf:
+      enum:
+      - TERMINATE
+      - CONTINUE
+      - RETRY_AND_TERMINATE
+      type: string
+      example: null
+    SessionFailover_anyOf:
+      enum:
+      - FAILOVER_NOT_SUPPORTED
+      - FAILOVER_SUPPORTED
+      type: string
+      example: null
+    _3GPPPSDataOffStatus_anyOf:
+      enum:
+      - ACTIVE
+      - INACTIVE
+      type: string
+      example: null
+    ResultCode_anyOf:
+      enum:
+      - SUCCESS
+      - END_USER_SERVICE_DENIED
+      type: string
+      example: null
+    PartialRecordMethod_anyOf:
+      enum:
+      - DEFAULT
+      - INDIVIDUAL
+      type: string
+      example: null
+    RoamerInOut_anyOf:
+      enum:
+      - IN_BOUND
+      - OUT_BOUND
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - UDP
+      - TCP
+      type: string
+      example: null
+    LineType_anyOf:
+      enum:
+      - DSL
+      - PON
+      type: string
+      example: null
+    PresenceState_anyOf:
+      enum:
+      - IN_AREA
+      - OUT_OF_AREA
+      - UNKNOWN
+      - INACTIVE
+      type: string
+      example: null
+    PduSessionType_anyOf:
+      enum:
+      - IPV4
+      - IPV6
+      - IPV4V6
+      - UNSTRUCTURED
+      - ETHERNET
+      type: string
+      example: null
+    SscMode_anyOf:
+      enum:
+      - SSC_MODE_1
+      - SSC_MODE_2
+      - SSC_MODE_3
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    PreemptionCapability_anyOf:
+      enum:
+      - NOT_PREEMPT
+      - MAY_PREEMPT
+      type: string
+      example: null
+    PreemptionVulnerability_anyOf:
+      enum:
+      - NOT_PREEMPTABLE
+      - PREEMPTABLE
+      type: string
+      example: null
+    SteeringFunctionality_anyOf:
+      enum:
+      - MPTCP
+      - ATSSS_LL
+      type: string
+      example: null
+    SteerModeValue_anyOf:
+      enum:
+      - ACTIVE_STANDBY
+      - LOAD_BALANCING
+      - SMALLEST_DELAY
+      - PRIORITY_BASED
+      type: string
+      example: null
+    SteerModeIndicator_anyOf:
+      enum:
+      - AUTO_LOAD_BALANCE
+      - UE_ASSISTANCE
+      type: string
+      example: null
+    MaPduIndication_anyOf:
+      enum:
+      - MA_PDU_REQUEST
+      - MA_PDU_NETWORK_UPGRADE_ALLOWED
+      type: string
+      example: null
+    QosResourceType_anyOf:
+      enum:
+      - NON_GBR
+      - NON_CRITICAL_GBR
+      - CRITICAL_GBR
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

@@ -41,7 +41,7 @@ func NewCPCIConfigurationFunctionSingleAllOfWithDefaults() *CPCIConfigurationFun
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *CPCIConfigurationFunctionSingleAllOf) GetAttributes() CPCIConfigurationFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret CPCIConfigurationFunctionSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CPCIConfigurationFunctionSingleAllOf) GetAttributes() CPCIConfiguration
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CPCIConfigurationFunctionSingleAllOf) GetAttributesOk() (*CPCIConfigurationFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *CPCIConfigurationFunctionSingleAllOf) GetAttributesOk() (*CPCIConfigura
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *CPCIConfigurationFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o CPCIConfigurationFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o CPCIConfigurationFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

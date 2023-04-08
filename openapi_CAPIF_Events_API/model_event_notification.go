@@ -94,7 +94,7 @@ func (o *EventNotification) SetEvents(v CAPIFEvent) {
 
 // GetEventDetail returns the EventDetail field value if set, zero value otherwise.
 func (o *EventNotification) GetEventDetail() CAPIFEventDetail {
-	if o == nil || IsNil(o.EventDetail) {
+	if o == nil || isNil(o.EventDetail) {
 		var ret CAPIFEventDetail
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *EventNotification) GetEventDetail() CAPIFEventDetail {
 // GetEventDetailOk returns a tuple with the EventDetail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetEventDetailOk() (*CAPIFEventDetail, bool) {
-	if o == nil || IsNil(o.EventDetail) {
+	if o == nil || isNil(o.EventDetail) {
 		return nil, false
 	}
 	return o.EventDetail, true
@@ -112,7 +112,7 @@ func (o *EventNotification) GetEventDetailOk() (*CAPIFEventDetail, bool) {
 
 // HasEventDetail returns a boolean if a field has been set.
 func (o *EventNotification) HasEventDetail() bool {
-	if o != nil && !IsNil(o.EventDetail) {
+	if o != nil && !isNil(o.EventDetail) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscriptionId"] = o.SubscriptionId
 	toSerialize["events"] = o.Events
-	if !IsNil(o.EventDetail) {
+	if !isNil(o.EventDetail) {
 		toSerialize["eventDetail"] = o.EventDetail
 	}
 	return toSerialize, nil

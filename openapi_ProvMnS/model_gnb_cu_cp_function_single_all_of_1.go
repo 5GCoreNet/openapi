@@ -51,7 +51,7 @@ func NewGnbCuCpFunctionSingleAllOf1WithDefaults() *GnbCuCpFunctionSingleAllOf1 {
 
 // GetRRMPolicyRatio returns the RRMPolicyRatio field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		var ret []RRMPolicyRatioSingle
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle
 // GetRRMPolicyRatioOk returns a tuple with the RRMPolicyRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bool) {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		return nil, false
 	}
 	return o.RRMPolicyRatio, true
@@ -69,7 +69,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSin
 
 // HasRRMPolicyRatio returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasRRMPolicyRatio() bool {
-	if o != nil && !IsNil(o.RRMPolicyRatio) {
+	if o != nil && !isNil(o.RRMPolicyRatio) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetRRMPolicyRatio(v []RRMPolicyRatioSingle
 
 // GetNrCellCu returns the NrCellCu field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetNrCellCu() []NrCellCuSingle {
-	if o == nil || IsNil(o.NrCellCu) {
+	if o == nil || isNil(o.NrCellCu) {
 		var ret []NrCellCuSingle
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetNrCellCu() []NrCellCuSingle {
 // GetNrCellCuOk returns a tuple with the NrCellCu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetNrCellCuOk() ([]NrCellCuSingle, bool) {
-	if o == nil || IsNil(o.NrCellCu) {
+	if o == nil || isNil(o.NrCellCu) {
 		return nil, false
 	}
 	return o.NrCellCu, true
@@ -101,7 +101,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetNrCellCuOk() ([]NrCellCuSingle, bool) {
 
 // HasNrCellCu returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasNrCellCu() bool {
-	if o != nil && !IsNil(o.NrCellCu) {
+	if o != nil && !isNil(o.NrCellCu) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetNrCellCu(v []NrCellCuSingle) {
 
 // GetEPXnC returns the EPXnC field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPXnC() []EPXnCSingle {
-	if o == nil || IsNil(o.EPXnC) {
+	if o == nil || isNil(o.EPXnC) {
 		var ret []EPXnCSingle
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPXnC() []EPXnCSingle {
 // GetEPXnCOk returns a tuple with the EPXnC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPXnCOk() ([]EPXnCSingle, bool) {
-	if o == nil || IsNil(o.EPXnC) {
+	if o == nil || isNil(o.EPXnC) {
 		return nil, false
 	}
 	return o.EPXnC, true
@@ -133,7 +133,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPXnCOk() ([]EPXnCSingle, bool) {
 
 // HasEPXnC returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasEPXnC() bool {
-	if o != nil && !IsNil(o.EPXnC) {
+	if o != nil && !isNil(o.EPXnC) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetEPXnC(v []EPXnCSingle) {
 
 // GetEPE1 returns the EPE1 field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPE1() []EPE1Single {
-	if o == nil || IsNil(o.EPE1) {
+	if o == nil || isNil(o.EPE1) {
 		var ret []EPE1Single
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPE1() []EPE1Single {
 // GetEPE1Ok returns a tuple with the EPE1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPE1Ok() ([]EPE1Single, bool) {
-	if o == nil || IsNil(o.EPE1) {
+	if o == nil || isNil(o.EPE1) {
 		return nil, false
 	}
 	return o.EPE1, true
@@ -165,7 +165,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPE1Ok() ([]EPE1Single, bool) {
 
 // HasEPE1 returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasEPE1() bool {
-	if o != nil && !IsNil(o.EPE1) {
+	if o != nil && !isNil(o.EPE1) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetEPE1(v []EPE1Single) {
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPF1C() []EPF1CSingle {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		var ret []EPF1CSingle
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPF1C() []EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPF1COk() ([]EPF1CSingle, bool) {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -197,7 +197,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPF1COk() ([]EPF1CSingle, bool) {
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasEPF1C() bool {
-	if o != nil && !IsNil(o.EPF1C) {
+	if o != nil && !isNil(o.EPF1C) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetEPF1C(v []EPF1CSingle) {
 
 // GetEPNgC returns the EPNgC field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPNgC() []EPNgCSingle {
-	if o == nil || IsNil(o.EPNgC) {
+	if o == nil || isNil(o.EPNgC) {
 		var ret []EPNgCSingle
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPNgC() []EPNgCSingle {
 // GetEPNgCOk returns a tuple with the EPNgC field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPNgCOk() ([]EPNgCSingle, bool) {
-	if o == nil || IsNil(o.EPNgC) {
+	if o == nil || isNil(o.EPNgC) {
 		return nil, false
 	}
 	return o.EPNgC, true
@@ -229,7 +229,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPNgCOk() ([]EPNgCSingle, bool) {
 
 // HasEPNgC returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasEPNgC() bool {
-	if o != nil && !IsNil(o.EPNgC) {
+	if o != nil && !isNil(o.EPNgC) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetEPNgC(v []EPNgCSingle) {
 
 // GetEPX2C returns the EPX2C field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPX2C() []EPX2CSingle {
-	if o == nil || IsNil(o.EPX2C) {
+	if o == nil || isNil(o.EPX2C) {
 		var ret []EPX2CSingle
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPX2C() []EPX2CSingle {
 // GetEPX2COk returns a tuple with the EPX2C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetEPX2COk() ([]EPX2CSingle, bool) {
-	if o == nil || IsNil(o.EPX2C) {
+	if o == nil || isNil(o.EPX2C) {
 		return nil, false
 	}
 	return o.EPX2C, true
@@ -261,7 +261,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetEPX2COk() ([]EPX2CSingle, bool) {
 
 // HasEPX2C returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasEPX2C() bool {
-	if o != nil && !IsNil(o.EPX2C) {
+	if o != nil && !isNil(o.EPX2C) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetEPX2C(v []EPX2CSingle) {
 
 // GetDANRManagementFunction returns the DANRManagementFunction field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDANRManagementFunction() DANRManagementFunctionSingle {
-	if o == nil || IsNil(o.DANRManagementFunction) {
+	if o == nil || isNil(o.DANRManagementFunction) {
 		var ret DANRManagementFunctionSingle
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDANRManagementFunction() DANRManagement
 // GetDANRManagementFunctionOk returns a tuple with the DANRManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDANRManagementFunctionOk() (*DANRManagementFunctionSingle, bool) {
-	if o == nil || IsNil(o.DANRManagementFunction) {
+	if o == nil || isNil(o.DANRManagementFunction) {
 		return nil, false
 	}
 	return o.DANRManagementFunction, true
@@ -293,7 +293,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDANRManagementFunctionOk() (*DANRManage
 
 // HasDANRManagementFunction returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasDANRManagementFunction() bool {
-	if o != nil && !IsNil(o.DANRManagementFunction) {
+	if o != nil && !isNil(o.DANRManagementFunction) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetDANRManagementFunction(v DANRManagement
 
 // GetDESManagementFunction returns the DESManagementFunction field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDESManagementFunction() DESManagementFunctionSingle {
-	if o == nil || IsNil(o.DESManagementFunction) {
+	if o == nil || isNil(o.DESManagementFunction) {
 		var ret DESManagementFunctionSingle
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDESManagementFunction() DESManagementFu
 // GetDESManagementFunctionOk returns a tuple with the DESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDESManagementFunctionOk() (*DESManagementFunctionSingle, bool) {
-	if o == nil || IsNil(o.DESManagementFunction) {
+	if o == nil || isNil(o.DESManagementFunction) {
 		return nil, false
 	}
 	return o.DESManagementFunction, true
@@ -325,7 +325,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDESManagementFunctionOk() (*DESManageme
 
 // HasDESManagementFunction returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasDESManagementFunction() bool {
-	if o != nil && !IsNil(o.DESManagementFunction) {
+	if o != nil && !isNil(o.DESManagementFunction) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetDESManagementFunction(v DESManagementFu
 
 // GetDMROFunction returns the DMROFunction field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDMROFunction() DMROFunctionSingle {
-	if o == nil || IsNil(o.DMROFunction) {
+	if o == nil || isNil(o.DMROFunction) {
 		var ret DMROFunctionSingle
 		return ret
 	}
@@ -349,7 +349,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDMROFunction() DMROFunctionSingle {
 // GetDMROFunctionOk returns a tuple with the DMROFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDMROFunctionOk() (*DMROFunctionSingle, bool) {
-	if o == nil || IsNil(o.DMROFunction) {
+	if o == nil || isNil(o.DMROFunction) {
 		return nil, false
 	}
 	return o.DMROFunction, true
@@ -357,7 +357,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDMROFunctionOk() (*DMROFunctionSingle, 
 
 // HasDMROFunction returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasDMROFunction() bool {
-	if o != nil && !IsNil(o.DMROFunction) {
+	if o != nil && !isNil(o.DMROFunction) {
 		return true
 	}
 
@@ -371,7 +371,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) SetDMROFunction(v DMROFunctionSingle) {
 
 // GetDLBOFunction returns the DLBOFunction field value if set, zero value otherwise.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDLBOFunction() DLBOFunctionSingle {
-	if o == nil || IsNil(o.DLBOFunction) {
+	if o == nil || isNil(o.DLBOFunction) {
 		var ret DLBOFunctionSingle
 		return ret
 	}
@@ -381,7 +381,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDLBOFunction() DLBOFunctionSingle {
 // GetDLBOFunctionOk returns a tuple with the DLBOFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) GetDLBOFunctionOk() (*DLBOFunctionSingle, bool) {
-	if o == nil || IsNil(o.DLBOFunction) {
+	if o == nil || isNil(o.DLBOFunction) {
 		return nil, false
 	}
 	return o.DLBOFunction, true
@@ -389,7 +389,7 @@ func (o *GnbCuCpFunctionSingleAllOf1) GetDLBOFunctionOk() (*DLBOFunctionSingle, 
 
 // HasDLBOFunction returns a boolean if a field has been set.
 func (o *GnbCuCpFunctionSingleAllOf1) HasDLBOFunction() bool {
-	if o != nil && !IsNil(o.DLBOFunction) {
+	if o != nil && !isNil(o.DLBOFunction) {
 		return true
 	}
 
@@ -411,37 +411,37 @@ func (o GnbCuCpFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o GnbCuCpFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RRMPolicyRatio) {
+	if !isNil(o.RRMPolicyRatio) {
 		toSerialize["RRMPolicyRatio"] = o.RRMPolicyRatio
 	}
-	if !IsNil(o.NrCellCu) {
+	if !isNil(o.NrCellCu) {
 		toSerialize["NrCellCu"] = o.NrCellCu
 	}
-	if !IsNil(o.EPXnC) {
+	if !isNil(o.EPXnC) {
 		toSerialize["EP_XnC"] = o.EPXnC
 	}
-	if !IsNil(o.EPE1) {
+	if !isNil(o.EPE1) {
 		toSerialize["EP_E1"] = o.EPE1
 	}
-	if !IsNil(o.EPF1C) {
+	if !isNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
-	if !IsNil(o.EPNgC) {
+	if !isNil(o.EPNgC) {
 		toSerialize["EP_NgC"] = o.EPNgC
 	}
-	if !IsNil(o.EPX2C) {
+	if !isNil(o.EPX2C) {
 		toSerialize["EP_X2C"] = o.EPX2C
 	}
-	if !IsNil(o.DANRManagementFunction) {
+	if !isNil(o.DANRManagementFunction) {
 		toSerialize["DANRManagementFunction"] = o.DANRManagementFunction
 	}
-	if !IsNil(o.DESManagementFunction) {
+	if !isNil(o.DESManagementFunction) {
 		toSerialize["DESManagementFunction"] = o.DESManagementFunction
 	}
-	if !IsNil(o.DMROFunction) {
+	if !isNil(o.DMROFunction) {
 		toSerialize["DMROFunction"] = o.DMROFunction
 	}
-	if !IsNil(o.DLBOFunction) {
+	if !isNil(o.DLBOFunction) {
 		toSerialize["DLBOFunction"] = o.DLBOFunction
 	}
 	return toSerialize, nil

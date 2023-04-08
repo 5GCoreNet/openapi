@@ -48,7 +48,7 @@ func NewTsnBridgeInfoWithDefaults() *TsnBridgeInfo {
 
 // GetBridgeId returns the BridgeId field value if set, zero value otherwise.
 func (o *TsnBridgeInfo) GetBridgeId() int32 {
-	if o == nil || IsNil(o.BridgeId) {
+	if o == nil || isNil(o.BridgeId) {
 		var ret int32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *TsnBridgeInfo) GetBridgeId() int32 {
 // GetBridgeIdOk returns a tuple with the BridgeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnBridgeInfo) GetBridgeIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.BridgeId) {
+	if o == nil || isNil(o.BridgeId) {
 		return nil, false
 	}
 	return o.BridgeId, true
@@ -66,7 +66,7 @@ func (o *TsnBridgeInfo) GetBridgeIdOk() (*int32, bool) {
 
 // HasBridgeId returns a boolean if a field has been set.
 func (o *TsnBridgeInfo) HasBridgeId() bool {
-	if o != nil && !IsNil(o.BridgeId) {
+	if o != nil && !isNil(o.BridgeId) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *TsnBridgeInfo) SetBridgeId(v int32) {
 
 // GetDsttAddr returns the DsttAddr field value if set, zero value otherwise.
 func (o *TsnBridgeInfo) GetDsttAddr() string {
-	if o == nil || IsNil(o.DsttAddr) {
+	if o == nil || isNil(o.DsttAddr) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *TsnBridgeInfo) GetDsttAddr() string {
 // GetDsttAddrOk returns a tuple with the DsttAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnBridgeInfo) GetDsttAddrOk() (*string, bool) {
-	if o == nil || IsNil(o.DsttAddr) {
+	if o == nil || isNil(o.DsttAddr) {
 		return nil, false
 	}
 	return o.DsttAddr, true
@@ -98,7 +98,7 @@ func (o *TsnBridgeInfo) GetDsttAddrOk() (*string, bool) {
 
 // HasDsttAddr returns a boolean if a field has been set.
 func (o *TsnBridgeInfo) HasDsttAddr() bool {
-	if o != nil && !IsNil(o.DsttAddr) {
+	if o != nil && !isNil(o.DsttAddr) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *TsnBridgeInfo) SetDsttAddr(v string) {
 
 // GetDsttPortNum returns the DsttPortNum field value if set, zero value otherwise.
 func (o *TsnBridgeInfo) GetDsttPortNum() int32 {
-	if o == nil || IsNil(o.DsttPortNum) {
+	if o == nil || isNil(o.DsttPortNum) {
 		var ret int32
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *TsnBridgeInfo) GetDsttPortNum() int32 {
 // GetDsttPortNumOk returns a tuple with the DsttPortNum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnBridgeInfo) GetDsttPortNumOk() (*int32, bool) {
-	if o == nil || IsNil(o.DsttPortNum) {
+	if o == nil || isNil(o.DsttPortNum) {
 		return nil, false
 	}
 	return o.DsttPortNum, true
@@ -130,7 +130,7 @@ func (o *TsnBridgeInfo) GetDsttPortNumOk() (*int32, bool) {
 
 // HasDsttPortNum returns a boolean if a field has been set.
 func (o *TsnBridgeInfo) HasDsttPortNum() bool {
-	if o != nil && !IsNil(o.DsttPortNum) {
+	if o != nil && !isNil(o.DsttPortNum) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *TsnBridgeInfo) SetDsttPortNum(v int32) {
 
 // GetDsttResidTime returns the DsttResidTime field value if set, zero value otherwise.
 func (o *TsnBridgeInfo) GetDsttResidTime() int32 {
-	if o == nil || IsNil(o.DsttResidTime) {
+	if o == nil || isNil(o.DsttResidTime) {
 		var ret int32
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *TsnBridgeInfo) GetDsttResidTime() int32 {
 // GetDsttResidTimeOk returns a tuple with the DsttResidTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnBridgeInfo) GetDsttResidTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.DsttResidTime) {
+	if o == nil || isNil(o.DsttResidTime) {
 		return nil, false
 	}
 	return o.DsttResidTime, true
@@ -162,7 +162,7 @@ func (o *TsnBridgeInfo) GetDsttResidTimeOk() (*int32, bool) {
 
 // HasDsttResidTime returns a boolean if a field has been set.
 func (o *TsnBridgeInfo) HasDsttResidTime() bool {
-	if o != nil && !IsNil(o.DsttResidTime) {
+	if o != nil && !isNil(o.DsttResidTime) {
 		return true
 	}
 
@@ -184,16 +184,16 @@ func (o TsnBridgeInfo) MarshalJSON() ([]byte, error) {
 
 func (o TsnBridgeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BridgeId) {
+	if !isNil(o.BridgeId) {
 		toSerialize["bridgeId"] = o.BridgeId
 	}
-	if !IsNil(o.DsttAddr) {
+	if !isNil(o.DsttAddr) {
 		toSerialize["dsttAddr"] = o.DsttAddr
 	}
-	if !IsNil(o.DsttPortNum) {
+	if !isNil(o.DsttPortNum) {
 		toSerialize["dsttPortNum"] = o.DsttPortNum
 	}
-	if !IsNil(o.DsttResidTime) {
+	if !isNil(o.DsttResidTime) {
 		toSerialize["dsttResidTime"] = o.DsttResidTime
 	}
 	return toSerialize, nil

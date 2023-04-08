@@ -94,7 +94,7 @@ func (o *SmsfRegistration) SetSmsfInstanceId(v string) {
 
 // GetSmsfSetId returns the SmsfSetId field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfSetId() string {
-	if o == nil || IsNil(o.SmsfSetId) {
+	if o == nil || isNil(o.SmsfSetId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *SmsfRegistration) GetSmsfSetId() string {
 // GetSmsfSetIdOk returns a tuple with the SmsfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfSetId) {
+	if o == nil || isNil(o.SmsfSetId) {
 		return nil, false
 	}
 	return o.SmsfSetId, true
@@ -112,7 +112,7 @@ func (o *SmsfRegistration) GetSmsfSetIdOk() (*string, bool) {
 
 // HasSmsfSetId returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfSetId() bool {
-	if o != nil && !IsNil(o.SmsfSetId) {
+	if o != nil && !isNil(o.SmsfSetId) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *SmsfRegistration) SetSmsfSetId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *SmsfRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -144,7 +144,7 @@ func (o *SmsfRegistration) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *SmsfRegistration) SetPlmnId(v PlmnId) {
 
 // GetSmsfMAPAddress returns the SmsfMAPAddress field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfMAPAddress() string {
-	if o == nil || IsNil(o.SmsfMAPAddress) {
+	if o == nil || isNil(o.SmsfMAPAddress) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *SmsfRegistration) GetSmsfMAPAddress() string {
 // GetSmsfMAPAddressOk returns a tuple with the SmsfMAPAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfMAPAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfMAPAddress) {
+	if o == nil || isNil(o.SmsfMAPAddress) {
 		return nil, false
 	}
 	return o.SmsfMAPAddress, true
@@ -200,7 +200,7 @@ func (o *SmsfRegistration) GetSmsfMAPAddressOk() (*string, bool) {
 
 // HasSmsfMAPAddress returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfMAPAddress() bool {
-	if o != nil && !IsNil(o.SmsfMAPAddress) {
+	if o != nil && !isNil(o.SmsfMAPAddress) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *SmsfRegistration) SetSmsfMAPAddress(v string) {
 
 // GetSmsfDiameterAddress returns the SmsfDiameterAddress field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfDiameterAddress() NetworkNodeDiameterAddress {
-	if o == nil || IsNil(o.SmsfDiameterAddress) {
+	if o == nil || isNil(o.SmsfDiameterAddress) {
 		var ret NetworkNodeDiameterAddress
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *SmsfRegistration) GetSmsfDiameterAddress() NetworkNodeDiameterAddress {
 // GetSmsfDiameterAddressOk returns a tuple with the SmsfDiameterAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfDiameterAddressOk() (*NetworkNodeDiameterAddress, bool) {
-	if o == nil || IsNil(o.SmsfDiameterAddress) {
+	if o == nil || isNil(o.SmsfDiameterAddress) {
 		return nil, false
 	}
 	return o.SmsfDiameterAddress, true
@@ -232,7 +232,7 @@ func (o *SmsfRegistration) GetSmsfDiameterAddressOk() (*NetworkNodeDiameterAddre
 
 // HasSmsfDiameterAddress returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfDiameterAddress() bool {
-	if o != nil && !IsNil(o.SmsfDiameterAddress) {
+	if o != nil && !isNil(o.SmsfDiameterAddress) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *SmsfRegistration) SetSmsfDiameterAddress(v NetworkNodeDiameterAddress) 
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetRegistrationTime() time.Time {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *SmsfRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -264,7 +264,7 @@ func (o *SmsfRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasRegistrationTime() bool {
-	if o != nil && !IsNil(o.RegistrationTime) {
+	if o != nil && !isNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *SmsfRegistration) SetRegistrationTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetContextInfo() ContextInfo {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *SmsfRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -296,7 +296,7 @@ func (o *SmsfRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasContextInfo() bool {
-	if o != nil && !IsNil(o.ContextInfo) {
+	if o != nil && !isNil(o.ContextInfo) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *SmsfRegistration) SetContextInfo(v ContextInfo) {
 
 // GetDataRestorationCallbackUri returns the DataRestorationCallbackUri field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetDataRestorationCallbackUri() string {
-	if o == nil || IsNil(o.DataRestorationCallbackUri) {
+	if o == nil || isNil(o.DataRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *SmsfRegistration) GetDataRestorationCallbackUri() string {
 // GetDataRestorationCallbackUriOk returns a tuple with the DataRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.DataRestorationCallbackUri) {
+	if o == nil || isNil(o.DataRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.DataRestorationCallbackUri, true
@@ -328,7 +328,7 @@ func (o *SmsfRegistration) GetDataRestorationCallbackUriOk() (*string, bool) {
 
 // HasDataRestorationCallbackUri returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasDataRestorationCallbackUri() bool {
-	if o != nil && !IsNil(o.DataRestorationCallbackUri) {
+	if o != nil && !isNil(o.DataRestorationCallbackUri) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *SmsfRegistration) SetDataRestorationCallbackUri(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *SmsfRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -360,7 +360,7 @@ func (o *SmsfRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *SmsfRegistration) SetResetIds(v []string) {
 
 // GetSmsfSbiSupInd returns the SmsfSbiSupInd field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetSmsfSbiSupInd() bool {
-	if o == nil || IsNil(o.SmsfSbiSupInd) {
+	if o == nil || isNil(o.SmsfSbiSupInd) {
 		var ret bool
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *SmsfRegistration) GetSmsfSbiSupInd() bool {
 // GetSmsfSbiSupIndOk returns a tuple with the SmsfSbiSupInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetSmsfSbiSupIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.SmsfSbiSupInd) {
+	if o == nil || isNil(o.SmsfSbiSupInd) {
 		return nil, false
 	}
 	return o.SmsfSbiSupInd, true
@@ -392,7 +392,7 @@ func (o *SmsfRegistration) GetSmsfSbiSupIndOk() (*bool, bool) {
 
 // HasSmsfSbiSupInd returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasSmsfSbiSupInd() bool {
-	if o != nil && !IsNil(o.SmsfSbiSupInd) {
+	if o != nil && !isNil(o.SmsfSbiSupInd) {
 		return true
 	}
 
@@ -406,7 +406,7 @@ func (o *SmsfRegistration) SetSmsfSbiSupInd(v bool) {
 
 // GetUdrRestartInd returns the UdrRestartInd field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetUdrRestartInd() bool {
-	if o == nil || IsNil(o.UdrRestartInd) {
+	if o == nil || isNil(o.UdrRestartInd) {
 		var ret bool
 		return ret
 	}
@@ -416,7 +416,7 @@ func (o *SmsfRegistration) GetUdrRestartInd() bool {
 // GetUdrRestartIndOk returns a tuple with the UdrRestartInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetUdrRestartIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UdrRestartInd) {
+	if o == nil || isNil(o.UdrRestartInd) {
 		return nil, false
 	}
 	return o.UdrRestartInd, true
@@ -424,7 +424,7 @@ func (o *SmsfRegistration) GetUdrRestartIndOk() (*bool, bool) {
 
 // HasUdrRestartInd returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasUdrRestartInd() bool {
-	if o != nil && !IsNil(o.UdrRestartInd) {
+	if o != nil && !isNil(o.UdrRestartInd) {
 		return true
 	}
 
@@ -438,7 +438,7 @@ func (o *SmsfRegistration) SetUdrRestartInd(v bool) {
 
 // GetLastSynchronizationTime returns the LastSynchronizationTime field value if set, zero value otherwise.
 func (o *SmsfRegistration) GetLastSynchronizationTime() time.Time {
-	if o == nil || IsNil(o.LastSynchronizationTime) {
+	if o == nil || isNil(o.LastSynchronizationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -448,7 +448,7 @@ func (o *SmsfRegistration) GetLastSynchronizationTime() time.Time {
 // GetLastSynchronizationTimeOk returns a tuple with the LastSynchronizationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastSynchronizationTime) {
+	if o == nil || isNil(o.LastSynchronizationTime) {
 		return nil, false
 	}
 	return o.LastSynchronizationTime, true
@@ -456,7 +456,7 @@ func (o *SmsfRegistration) GetLastSynchronizationTimeOk() (*time.Time, bool) {
 
 // HasLastSynchronizationTime returns a boolean if a field has been set.
 func (o *SmsfRegistration) HasLastSynchronizationTime() bool {
-	if o != nil && !IsNil(o.LastSynchronizationTime) {
+	if o != nil && !isNil(o.LastSynchronizationTime) {
 		return true
 	}
 
@@ -479,38 +479,38 @@ func (o SmsfRegistration) MarshalJSON() ([]byte, error) {
 func (o SmsfRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsfInstanceId"] = o.SmsfInstanceId
-	if !IsNil(o.SmsfSetId) {
+	if !isNil(o.SmsfSetId) {
 		toSerialize["smsfSetId"] = o.SmsfSetId
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.SmsfMAPAddress) {
+	if !isNil(o.SmsfMAPAddress) {
 		toSerialize["smsfMAPAddress"] = o.SmsfMAPAddress
 	}
-	if !IsNil(o.SmsfDiameterAddress) {
+	if !isNil(o.SmsfDiameterAddress) {
 		toSerialize["smsfDiameterAddress"] = o.SmsfDiameterAddress
 	}
-	if !IsNil(o.RegistrationTime) {
+	if !isNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !IsNil(o.ContextInfo) {
+	if !isNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !IsNil(o.DataRestorationCallbackUri) {
+	if !isNil(o.DataRestorationCallbackUri) {
 		toSerialize["dataRestorationCallbackUri"] = o.DataRestorationCallbackUri
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !IsNil(o.SmsfSbiSupInd) {
+	if !isNil(o.SmsfSbiSupInd) {
 		toSerialize["smsfSbiSupInd"] = o.SmsfSbiSupInd
 	}
-	if !IsNil(o.UdrRestartInd) {
+	if !isNil(o.UdrRestartInd) {
 		toSerialize["udrRestartInd"] = o.UdrRestartInd
 	}
-	if !IsNil(o.LastSynchronizationTime) {
+	if !isNil(o.LastSynchronizationTime) {
 		toSerialize["lastSynchronizationTime"] = o.LastSynchronizationTime
 	}
 	return toSerialize, nil

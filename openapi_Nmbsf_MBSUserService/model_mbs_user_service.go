@@ -174,7 +174,7 @@ func (o *MBSUserService) SetServNameDescs(v []ServiceNameDescription) {
 
 // GetMainServLang returns the MainServLang field value if set, zero value otherwise.
 func (o *MBSUserService) GetMainServLang() string {
-	if o == nil || IsNil(o.MainServLang) {
+	if o == nil || isNil(o.MainServLang) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MBSUserService) GetMainServLang() string {
 // GetMainServLangOk returns a tuple with the MainServLang field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserService) GetMainServLangOk() (*string, bool) {
-	if o == nil || IsNil(o.MainServLang) {
+	if o == nil || isNil(o.MainServLang) {
 		return nil, false
 	}
 	return o.MainServLang, true
@@ -192,7 +192,7 @@ func (o *MBSUserService) GetMainServLangOk() (*string, bool) {
 
 // HasMainServLang returns a boolean if a field has been set.
 func (o *MBSUserService) HasMainServLang() bool {
-	if o != nil && !IsNil(o.MainServLang) {
+	if o != nil && !isNil(o.MainServLang) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *MBSUserService) SetMainServLang(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MBSUserService) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *MBSUserService) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserService) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -224,7 +224,7 @@ func (o *MBSUserService) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MBSUserService) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -251,10 +251,10 @@ func (o MBSUserService) ToMap() (map[string]interface{}, error) {
 	toSerialize["servClass"] = o.ServClass
 	toSerialize["servAnnModes"] = o.ServAnnModes
 	toSerialize["servNameDescs"] = o.ServNameDescs
-	if !IsNil(o.MainServLang) {
+	if !isNil(o.MainServLang) {
 		toSerialize["mainServLang"] = o.MainServLang
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

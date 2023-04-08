@@ -47,7 +47,7 @@ func NewTargetAreaWithDefaults() *TargetArea {
 
 // GetTaList returns the TaList field value if set, zero value otherwise.
 func (o *TargetArea) GetTaList() []Tai {
-	if o == nil || IsNil(o.TaList) {
+	if o == nil || isNil(o.TaList) {
 		var ret []Tai
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *TargetArea) GetTaList() []Tai {
 // GetTaListOk returns a tuple with the TaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetArea) GetTaListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaList) {
+	if o == nil || isNil(o.TaList) {
 		return nil, false
 	}
 	return o.TaList, true
@@ -65,7 +65,7 @@ func (o *TargetArea) GetTaListOk() ([]Tai, bool) {
 
 // HasTaList returns a boolean if a field has been set.
 func (o *TargetArea) HasTaList() bool {
-	if o != nil && !IsNil(o.TaList) {
+	if o != nil && !isNil(o.TaList) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *TargetArea) SetTaList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *TargetArea) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *TargetArea) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetArea) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -97,7 +97,7 @@ func (o *TargetArea) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *TargetArea) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *TargetArea) SetTaiRangeList(v []TaiRange) {
 
 // GetAnyTa returns the AnyTa field value if set, zero value otherwise.
 func (o *TargetArea) GetAnyTa() bool {
-	if o == nil || IsNil(o.AnyTa) {
+	if o == nil || isNil(o.AnyTa) {
 		var ret bool
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *TargetArea) GetAnyTa() bool {
 // GetAnyTaOk returns a tuple with the AnyTa field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetArea) GetAnyTaOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyTa) {
+	if o == nil || isNil(o.AnyTa) {
 		return nil, false
 	}
 	return o.AnyTa, true
@@ -129,7 +129,7 @@ func (o *TargetArea) GetAnyTaOk() (*bool, bool) {
 
 // HasAnyTa returns a boolean if a field has been set.
 func (o *TargetArea) HasAnyTa() bool {
-	if o != nil && !IsNil(o.AnyTa) {
+	if o != nil && !isNil(o.AnyTa) {
 		return true
 	}
 
@@ -151,13 +151,13 @@ func (o TargetArea) MarshalJSON() ([]byte, error) {
 
 func (o TargetArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TaList) {
+	if !isNil(o.TaList) {
 		toSerialize["taList"] = o.TaList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.AnyTa) {
+	if !isNil(o.AnyTa) {
 		toSerialize["anyTa"] = o.AnyTa
 	}
 	return toSerialize, nil

@@ -1106,10 +1106,7 @@ components:
       type: string
     ResultReason:
       anyOf:
-      - enum:
-        - ROAMING_NOT_ALLOWED
-        - OTHER_REASON
-        type: string
+      - $ref: '#/components/schemas/ResultReason_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1290,6 +1287,12 @@ components:
           minimum: 0
           type: integer
       type: object
+    ResultReason_anyOf:
+      enum:
+      - ROAMING_NOT_ALLOWED
+      - OTHER_REASON
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

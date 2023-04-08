@@ -42,7 +42,7 @@ func NewKPIMonitoringWithDefaults() *KPIMonitoring {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *KPIMonitoring) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *KPIMonitoring) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KPIMonitoring) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *KPIMonitoring) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *KPIMonitoring) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *KPIMonitoring) SetServAttrCom(v ServAttrCom) {
 
 // GetKPIList returns the KPIList field value if set, zero value otherwise.
 func (o *KPIMonitoring) GetKPIList() []string {
-	if o == nil || IsNil(o.KPIList) {
+	if o == nil || isNil(o.KPIList) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *KPIMonitoring) GetKPIList() []string {
 // GetKPIListOk returns a tuple with the KPIList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KPIMonitoring) GetKPIListOk() ([]string, bool) {
-	if o == nil || IsNil(o.KPIList) {
+	if o == nil || isNil(o.KPIList) {
 		return nil, false
 	}
 	return o.KPIList, true
@@ -92,7 +92,7 @@ func (o *KPIMonitoring) GetKPIListOk() ([]string, bool) {
 
 // HasKPIList returns a boolean if a field has been set.
 func (o *KPIMonitoring) HasKPIList() bool {
-	if o != nil && !IsNil(o.KPIList) {
+	if o != nil && !isNil(o.KPIList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o KPIMonitoring) MarshalJSON() ([]byte, error) {
 
 func (o KPIMonitoring) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.KPIList) {
+	if !isNil(o.KPIList) {
 		toSerialize["kPIList"] = o.KPIList
 	}
 	return toSerialize, nil

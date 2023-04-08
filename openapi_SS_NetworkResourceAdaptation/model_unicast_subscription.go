@@ -77,7 +77,7 @@ func (o *UnicastSubscription) SetValTgtUe(v ValTargetUe) {
 
 // GetUniQosReq returns the UniQosReq field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetUniQosReq() string {
-	if o == nil || IsNil(o.UniQosReq) {
+	if o == nil || isNil(o.UniQosReq) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UnicastSubscription) GetUniQosReq() string {
 // GetUniQosReqOk returns a tuple with the UniQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetUniQosReqOk() (*string, bool) {
-	if o == nil || IsNil(o.UniQosReq) {
+	if o == nil || isNil(o.UniQosReq) {
 		return nil, false
 	}
 	return o.UniQosReq, true
@@ -95,7 +95,7 @@ func (o *UnicastSubscription) GetUniQosReqOk() (*string, bool) {
 
 // HasUniQosReq returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasUniQosReq() bool {
-	if o != nil && !IsNil(o.UniQosReq) {
+	if o != nil && !isNil(o.UniQosReq) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UnicastSubscription) SetUniQosReq(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetDuration() time.Time {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UnicastSubscription) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetDurationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -127,7 +127,7 @@ func (o *UnicastSubscription) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && !isNil(o.Duration) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *UnicastSubscription) SetNotifUri(v string) {
 
 // GetReqTestNotif returns the ReqTestNotif field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetReqTestNotif() bool {
-	if o == nil || IsNil(o.ReqTestNotif) {
+	if o == nil || isNil(o.ReqTestNotif) {
 		var ret bool
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *UnicastSubscription) GetReqTestNotif() bool {
 // GetReqTestNotifOk returns a tuple with the ReqTestNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetReqTestNotifOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReqTestNotif) {
+	if o == nil || isNil(o.ReqTestNotif) {
 		return nil, false
 	}
 	return o.ReqTestNotif, true
@@ -183,7 +183,7 @@ func (o *UnicastSubscription) GetReqTestNotifOk() (*bool, bool) {
 
 // HasReqTestNotif returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasReqTestNotif() bool {
-	if o != nil && !IsNil(o.ReqTestNotif) {
+	if o != nil && !isNil(o.ReqTestNotif) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *UnicastSubscription) SetReqTestNotif(v bool) {
 
 // GetWsNotifCfg returns the WsNotifCfg field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetWsNotifCfg() WebsockNotifConfig {
-	if o == nil || IsNil(o.WsNotifCfg) {
+	if o == nil || isNil(o.WsNotifCfg) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *UnicastSubscription) GetWsNotifCfg() WebsockNotifConfig {
 // GetWsNotifCfgOk returns a tuple with the WsNotifCfg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetWsNotifCfgOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WsNotifCfg) {
+	if o == nil || isNil(o.WsNotifCfg) {
 		return nil, false
 	}
 	return o.WsNotifCfg, true
@@ -215,7 +215,7 @@ func (o *UnicastSubscription) GetWsNotifCfgOk() (*WebsockNotifConfig, bool) {
 
 // HasWsNotifCfg returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasWsNotifCfg() bool {
-	if o != nil && !IsNil(o.WsNotifCfg) {
+	if o != nil && !isNil(o.WsNotifCfg) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *UnicastSubscription) SetWsNotifCfg(v WebsockNotifConfig) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UnicastSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *UnicastSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnicastSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -247,7 +247,7 @@ func (o *UnicastSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UnicastSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -270,20 +270,20 @@ func (o UnicastSubscription) MarshalJSON() ([]byte, error) {
 func (o UnicastSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valTgtUe"] = o.ValTgtUe
-	if !IsNil(o.UniQosReq) {
+	if !isNil(o.UniQosReq) {
 		toSerialize["uniQosReq"] = o.UniQosReq
 	}
-	if !IsNil(o.Duration) {
+	if !isNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
 	toSerialize["notifUri"] = o.NotifUri
-	if !IsNil(o.ReqTestNotif) {
+	if !isNil(o.ReqTestNotif) {
 		toSerialize["reqTestNotif"] = o.ReqTestNotif
 	}
-	if !IsNil(o.WsNotifCfg) {
+	if !isNil(o.WsNotifCfg) {
 		toSerialize["wsNotifCfg"] = o.WsNotifCfg
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

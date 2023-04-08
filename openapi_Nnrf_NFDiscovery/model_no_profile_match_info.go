@@ -67,7 +67,7 @@ func (o *NoProfileMatchInfo) SetReason(v NoProfileMatchReason) {
 
 // GetQueryParamCombinationList returns the QueryParamCombinationList field value if set, zero value otherwise.
 func (o *NoProfileMatchInfo) GetQueryParamCombinationList() []QueryParamCombination {
-	if o == nil || IsNil(o.QueryParamCombinationList) {
+	if o == nil || isNil(o.QueryParamCombinationList) {
 		var ret []QueryParamCombination
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NoProfileMatchInfo) GetQueryParamCombinationList() []QueryParamCombinat
 // GetQueryParamCombinationListOk returns a tuple with the QueryParamCombinationList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NoProfileMatchInfo) GetQueryParamCombinationListOk() ([]QueryParamCombination, bool) {
-	if o == nil || IsNil(o.QueryParamCombinationList) {
+	if o == nil || isNil(o.QueryParamCombinationList) {
 		return nil, false
 	}
 	return o.QueryParamCombinationList, true
@@ -85,7 +85,7 @@ func (o *NoProfileMatchInfo) GetQueryParamCombinationListOk() ([]QueryParamCombi
 
 // HasQueryParamCombinationList returns a boolean if a field has been set.
 func (o *NoProfileMatchInfo) HasQueryParamCombinationList() bool {
-	if o != nil && !IsNil(o.QueryParamCombinationList) {
+	if o != nil && !isNil(o.QueryParamCombinationList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o NoProfileMatchInfo) MarshalJSON() ([]byte, error) {
 func (o NoProfileMatchInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reason"] = o.Reason
-	if !IsNil(o.QueryParamCombinationList) {
+	if !isNil(o.QueryParamCombinationList) {
 		toSerialize["queryParamCombinationList"] = o.QueryParamCombinationList
 	}
 	return toSerialize, nil

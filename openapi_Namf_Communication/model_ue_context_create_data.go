@@ -152,7 +152,7 @@ func (o *UeContextCreateData) SetPduSessionList(v []N2SmInformation) {
 
 // GetN2NotifyUri returns the N2NotifyUri field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetN2NotifyUri() string {
-	if o == nil || IsNil(o.N2NotifyUri) {
+	if o == nil || isNil(o.N2NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *UeContextCreateData) GetN2NotifyUri() string {
 // GetN2NotifyUriOk returns a tuple with the N2NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetN2NotifyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.N2NotifyUri) {
+	if o == nil || isNil(o.N2NotifyUri) {
 		return nil, false
 	}
 	return o.N2NotifyUri, true
@@ -170,7 +170,7 @@ func (o *UeContextCreateData) GetN2NotifyUriOk() (*string, bool) {
 
 // HasN2NotifyUri returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasN2NotifyUri() bool {
-	if o != nil && !IsNil(o.N2NotifyUri) {
+	if o != nil && !isNil(o.N2NotifyUri) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *UeContextCreateData) SetN2NotifyUri(v string) {
 
 // GetUeRadioCapability returns the UeRadioCapability field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetUeRadioCapability() N2InfoContent {
-	if o == nil || IsNil(o.UeRadioCapability) {
+	if o == nil || isNil(o.UeRadioCapability) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *UeContextCreateData) GetUeRadioCapability() N2InfoContent {
 // GetUeRadioCapabilityOk returns a tuple with the UeRadioCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.UeRadioCapability) {
+	if o == nil || isNil(o.UeRadioCapability) {
 		return nil, false
 	}
 	return o.UeRadioCapability, true
@@ -202,7 +202,7 @@ func (o *UeContextCreateData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
 
 // HasUeRadioCapability returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasUeRadioCapability() bool {
-	if o != nil && !IsNil(o.UeRadioCapability) {
+	if o != nil && !isNil(o.UeRadioCapability) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *UeContextCreateData) SetUeRadioCapability(v N2InfoContent) {
 
 // GetUeRadioCapabilityForPaging returns the UeRadioCapabilityForPaging field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetUeRadioCapabilityForPaging() N2InfoContent {
-	if o == nil || IsNil(o.UeRadioCapabilityForPaging) {
+	if o == nil || isNil(o.UeRadioCapabilityForPaging) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *UeContextCreateData) GetUeRadioCapabilityForPaging() N2InfoContent {
 // GetUeRadioCapabilityForPagingOk returns a tuple with the UeRadioCapabilityForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetUeRadioCapabilityForPagingOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.UeRadioCapabilityForPaging) {
+	if o == nil || isNil(o.UeRadioCapabilityForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCapabilityForPaging, true
@@ -234,7 +234,7 @@ func (o *UeContextCreateData) GetUeRadioCapabilityForPagingOk() (*N2InfoContent,
 
 // HasUeRadioCapabilityForPaging returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasUeRadioCapabilityForPaging() bool {
-	if o != nil && !IsNil(o.UeRadioCapabilityForPaging) {
+	if o != nil && !isNil(o.UeRadioCapabilityForPaging) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *UeContextCreateData) SetUeRadioCapabilityForPaging(v N2InfoContent) {
 
 // GetNgapCause returns the NgapCause field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetNgapCause() NgApCause {
-	if o == nil || IsNil(o.NgapCause) {
+	if o == nil || isNil(o.NgapCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *UeContextCreateData) GetNgapCause() NgApCause {
 // GetNgapCauseOk returns a tuple with the NgapCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetNgapCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgapCause) {
+	if o == nil || isNil(o.NgapCause) {
 		return nil, false
 	}
 	return o.NgapCause, true
@@ -266,7 +266,7 @@ func (o *UeContextCreateData) GetNgapCauseOk() (*NgApCause, bool) {
 
 // HasNgapCause returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasNgapCause() bool {
-	if o != nil && !IsNil(o.NgapCause) {
+	if o != nil && !isNil(o.NgapCause) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *UeContextCreateData) SetNgapCause(v NgApCause) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *UeContextCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -298,7 +298,7 @@ func (o *UeContextCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *UeContextCreateData) SetSupportedFeatures(v string) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *UeContextCreateData) GetServingNetwork() PlmnIdNid {
-	if o == nil || IsNil(o.ServingNetwork) {
+	if o == nil || isNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *UeContextCreateData) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreateData) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ServingNetwork) {
+	if o == nil || isNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -330,7 +330,7 @@ func (o *UeContextCreateData) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *UeContextCreateData) HasServingNetwork() bool {
-	if o != nil && !IsNil(o.ServingNetwork) {
+	if o != nil && !isNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -356,22 +356,22 @@ func (o UeContextCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["targetId"] = o.TargetId
 	toSerialize["sourceToTargetData"] = o.SourceToTargetData
 	toSerialize["pduSessionList"] = o.PduSessionList
-	if !IsNil(o.N2NotifyUri) {
+	if !isNil(o.N2NotifyUri) {
 		toSerialize["n2NotifyUri"] = o.N2NotifyUri
 	}
-	if !IsNil(o.UeRadioCapability) {
+	if !isNil(o.UeRadioCapability) {
 		toSerialize["ueRadioCapability"] = o.UeRadioCapability
 	}
-	if !IsNil(o.UeRadioCapabilityForPaging) {
+	if !isNil(o.UeRadioCapabilityForPaging) {
 		toSerialize["ueRadioCapabilityForPaging"] = o.UeRadioCapabilityForPaging
 	}
-	if !IsNil(o.NgapCause) {
+	if !isNil(o.NgapCause) {
 		toSerialize["ngapCause"] = o.NgapCause
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ServingNetwork) {
+	if !isNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
 	return toSerialize, nil

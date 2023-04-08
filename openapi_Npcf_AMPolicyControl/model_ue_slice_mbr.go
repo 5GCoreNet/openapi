@@ -94,7 +94,7 @@ func (o *UeSliceMbr) SetServingSnssai(v Snssai) {
 
 // GetMappedHomeSnssai returns the MappedHomeSnssai field value if set, zero value otherwise.
 func (o *UeSliceMbr) GetMappedHomeSnssai() Snssai {
-	if o == nil || IsNil(o.MappedHomeSnssai) {
+	if o == nil || isNil(o.MappedHomeSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *UeSliceMbr) GetMappedHomeSnssai() Snssai {
 // GetMappedHomeSnssaiOk returns a tuple with the MappedHomeSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeSliceMbr) GetMappedHomeSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.MappedHomeSnssai) {
+	if o == nil || isNil(o.MappedHomeSnssai) {
 		return nil, false
 	}
 	return o.MappedHomeSnssai, true
@@ -112,7 +112,7 @@ func (o *UeSliceMbr) GetMappedHomeSnssaiOk() (*Snssai, bool) {
 
 // HasMappedHomeSnssai returns a boolean if a field has been set.
 func (o *UeSliceMbr) HasMappedHomeSnssai() bool {
-	if o != nil && !IsNil(o.MappedHomeSnssai) {
+	if o != nil && !isNil(o.MappedHomeSnssai) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o UeSliceMbr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sliceMbr"] = o.SliceMbr
 	toSerialize["servingSnssai"] = o.ServingSnssai
-	if !IsNil(o.MappedHomeSnssai) {
+	if !isNil(o.MappedHomeSnssai) {
 		toSerialize["mappedHomeSnssai"] = o.MappedHomeSnssai
 	}
 	return toSerialize, nil

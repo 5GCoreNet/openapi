@@ -17,23 +17,37 @@ import (
 
 // Model5GsUserState Describes the 5GS User State of a UE
 type Model5GsUserState struct {
-	string *string
+	5GsUserStateAnyOf *5GsUserStateAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Model5GsUserState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into 5GsUserStateAnyOf
+	err = json.Unmarshal(data, &dst.5GsUserStateAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		json5GsUserStateAnyOf, _ := json.Marshal(dst.5GsUserStateAnyOf)
+		if string(json5GsUserStateAnyOf) == "{}" { // empty struct
+			dst.5GsUserStateAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.5GsUserStateAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.5GsUserStateAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(Model5GsUserState)")
@@ -41,8 +55,12 @@ func (dst *Model5GsUserState) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Model5GsUserState) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.5GsUserStateAnyOf != nil {
+		return json.Marshal(&src.5GsUserStateAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

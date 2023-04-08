@@ -46,7 +46,7 @@ func NewQOffsetRangeListWithDefaults() *QOffsetRangeList {
 
 // GetRsrpOffsetSSB returns the RsrpOffsetSSB field value if set, zero value otherwise.
 func (o *QOffsetRangeList) GetRsrpOffsetSSB() QOffsetRange {
-	if o == nil || IsNil(o.RsrpOffsetSSB) {
+	if o == nil || isNil(o.RsrpOffsetSSB) {
 		var ret QOffsetRange
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *QOffsetRangeList) GetRsrpOffsetSSB() QOffsetRange {
 // GetRsrpOffsetSSBOk returns a tuple with the RsrpOffsetSSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QOffsetRangeList) GetRsrpOffsetSSBOk() (*QOffsetRange, bool) {
-	if o == nil || IsNil(o.RsrpOffsetSSB) {
+	if o == nil || isNil(o.RsrpOffsetSSB) {
 		return nil, false
 	}
 	return o.RsrpOffsetSSB, true
@@ -64,7 +64,7 @@ func (o *QOffsetRangeList) GetRsrpOffsetSSBOk() (*QOffsetRange, bool) {
 
 // HasRsrpOffsetSSB returns a boolean if a field has been set.
 func (o *QOffsetRangeList) HasRsrpOffsetSSB() bool {
-	if o != nil && !IsNil(o.RsrpOffsetSSB) {
+	if o != nil && !isNil(o.RsrpOffsetSSB) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *QOffsetRangeList) SetRsrpOffsetSSB(v QOffsetRange) {
 
 // GetRsrqOffsetSSB returns the RsrqOffsetSSB field value if set, zero value otherwise.
 func (o *QOffsetRangeList) GetRsrqOffsetSSB() QOffsetRange {
-	if o == nil || IsNil(o.RsrqOffsetSSB) {
+	if o == nil || isNil(o.RsrqOffsetSSB) {
 		var ret QOffsetRange
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *QOffsetRangeList) GetRsrqOffsetSSB() QOffsetRange {
 // GetRsrqOffsetSSBOk returns a tuple with the RsrqOffsetSSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QOffsetRangeList) GetRsrqOffsetSSBOk() (*QOffsetRange, bool) {
-	if o == nil || IsNil(o.RsrqOffsetSSB) {
+	if o == nil || isNil(o.RsrqOffsetSSB) {
 		return nil, false
 	}
 	return o.RsrqOffsetSSB, true
@@ -96,7 +96,7 @@ func (o *QOffsetRangeList) GetRsrqOffsetSSBOk() (*QOffsetRange, bool) {
 
 // HasRsrqOffsetSSB returns a boolean if a field has been set.
 func (o *QOffsetRangeList) HasRsrqOffsetSSB() bool {
-	if o != nil && !IsNil(o.RsrqOffsetSSB) {
+	if o != nil && !isNil(o.RsrqOffsetSSB) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *QOffsetRangeList) SetRsrqOffsetSSB(v QOffsetRange) {
 
 // GetSinrOffsetSSB returns the SinrOffsetSSB field value if set, zero value otherwise.
 func (o *QOffsetRangeList) GetSinrOffsetSSB() QOffsetRange {
-	if o == nil || IsNil(o.SinrOffsetSSB) {
+	if o == nil || isNil(o.SinrOffsetSSB) {
 		var ret QOffsetRange
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *QOffsetRangeList) GetSinrOffsetSSB() QOffsetRange {
 // GetSinrOffsetSSBOk returns a tuple with the SinrOffsetSSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QOffsetRangeList) GetSinrOffsetSSBOk() (*QOffsetRange, bool) {
-	if o == nil || IsNil(o.SinrOffsetSSB) {
+	if o == nil || isNil(o.SinrOffsetSSB) {
 		return nil, false
 	}
 	return o.SinrOffsetSSB, true
@@ -128,7 +128,7 @@ func (o *QOffsetRangeList) GetSinrOffsetSSBOk() (*QOffsetRange, bool) {
 
 // HasSinrOffsetSSB returns a boolean if a field has been set.
 func (o *QOffsetRangeList) HasSinrOffsetSSB() bool {
-	if o != nil && !IsNil(o.SinrOffsetSSB) {
+	if o != nil && !isNil(o.SinrOffsetSSB) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *QOffsetRangeList) SetSinrOffsetSSB(v QOffsetRange) {
 
 // GetRsrpOffsetCSIRS returns the RsrpOffsetCSIRS field value if set, zero value otherwise.
 func (o *QOffsetRangeList) GetRsrpOffsetCSIRS() QOffsetRange {
-	if o == nil || IsNil(o.RsrpOffsetCSIRS) {
+	if o == nil || isNil(o.RsrpOffsetCSIRS) {
 		var ret QOffsetRange
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *QOffsetRangeList) GetRsrpOffsetCSIRS() QOffsetRange {
 // GetRsrpOffsetCSIRSOk returns a tuple with the RsrpOffsetCSIRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QOffsetRangeList) GetRsrpOffsetCSIRSOk() (*QOffsetRange, bool) {
-	if o == nil || IsNil(o.RsrpOffsetCSIRS) {
+	if o == nil || isNil(o.RsrpOffsetCSIRS) {
 		return nil, false
 	}
 	return o.RsrpOffsetCSIRS, true
@@ -160,7 +160,7 @@ func (o *QOffsetRangeList) GetRsrpOffsetCSIRSOk() (*QOffsetRange, bool) {
 
 // HasRsrpOffsetCSIRS returns a boolean if a field has been set.
 func (o *QOffsetRangeList) HasRsrpOffsetCSIRS() bool {
-	if o != nil && !IsNil(o.RsrpOffsetCSIRS) {
+	if o != nil && !isNil(o.RsrpOffsetCSIRS) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *QOffsetRangeList) SetRsrpOffsetCSIRS(v QOffsetRange) {
 
 // GetRsrqOffsetCSIRS returns the RsrqOffsetCSIRS field value if set, zero value otherwise.
 func (o *QOffsetRangeList) GetRsrqOffsetCSIRS() QOffsetRange {
-	if o == nil || IsNil(o.RsrqOffsetCSIRS) {
+	if o == nil || isNil(o.RsrqOffsetCSIRS) {
 		var ret QOffsetRange
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *QOffsetRangeList) GetRsrqOffsetCSIRS() QOffsetRange {
 // GetRsrqOffsetCSIRSOk returns a tuple with the RsrqOffsetCSIRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QOffsetRangeList) GetRsrqOffsetCSIRSOk() (*QOffsetRange, bool) {
-	if o == nil || IsNil(o.RsrqOffsetCSIRS) {
+	if o == nil || isNil(o.RsrqOffsetCSIRS) {
 		return nil, false
 	}
 	return o.RsrqOffsetCSIRS, true
@@ -192,7 +192,7 @@ func (o *QOffsetRangeList) GetRsrqOffsetCSIRSOk() (*QOffsetRange, bool) {
 
 // HasRsrqOffsetCSIRS returns a boolean if a field has been set.
 func (o *QOffsetRangeList) HasRsrqOffsetCSIRS() bool {
-	if o != nil && !IsNil(o.RsrqOffsetCSIRS) {
+	if o != nil && !isNil(o.RsrqOffsetCSIRS) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *QOffsetRangeList) SetRsrqOffsetCSIRS(v QOffsetRange) {
 
 // GetSinrOffsetCSIRS returns the SinrOffsetCSIRS field value if set, zero value otherwise.
 func (o *QOffsetRangeList) GetSinrOffsetCSIRS() QOffsetRange {
-	if o == nil || IsNil(o.SinrOffsetCSIRS) {
+	if o == nil || isNil(o.SinrOffsetCSIRS) {
 		var ret QOffsetRange
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *QOffsetRangeList) GetSinrOffsetCSIRS() QOffsetRange {
 // GetSinrOffsetCSIRSOk returns a tuple with the SinrOffsetCSIRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QOffsetRangeList) GetSinrOffsetCSIRSOk() (*QOffsetRange, bool) {
-	if o == nil || IsNil(o.SinrOffsetCSIRS) {
+	if o == nil || isNil(o.SinrOffsetCSIRS) {
 		return nil, false
 	}
 	return o.SinrOffsetCSIRS, true
@@ -224,7 +224,7 @@ func (o *QOffsetRangeList) GetSinrOffsetCSIRSOk() (*QOffsetRange, bool) {
 
 // HasSinrOffsetCSIRS returns a boolean if a field has been set.
 func (o *QOffsetRangeList) HasSinrOffsetCSIRS() bool {
-	if o != nil && !IsNil(o.SinrOffsetCSIRS) {
+	if o != nil && !isNil(o.SinrOffsetCSIRS) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o QOffsetRangeList) MarshalJSON() ([]byte, error) {
 
 func (o QOffsetRangeList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RsrpOffsetSSB) {
+	if !isNil(o.RsrpOffsetSSB) {
 		toSerialize["rsrpOffsetSSB"] = o.RsrpOffsetSSB
 	}
-	if !IsNil(o.RsrqOffsetSSB) {
+	if !isNil(o.RsrqOffsetSSB) {
 		toSerialize["rsrqOffsetSSB"] = o.RsrqOffsetSSB
 	}
-	if !IsNil(o.SinrOffsetSSB) {
+	if !isNil(o.SinrOffsetSSB) {
 		toSerialize["sinrOffsetSSB"] = o.SinrOffsetSSB
 	}
-	if !IsNil(o.RsrpOffsetCSIRS) {
+	if !isNil(o.RsrpOffsetCSIRS) {
 		toSerialize["rsrpOffsetCSI-RS"] = o.RsrpOffsetCSIRS
 	}
-	if !IsNil(o.RsrqOffsetCSIRS) {
+	if !isNil(o.RsrqOffsetCSIRS) {
 		toSerialize["rsrqOffsetCSI-RS"] = o.RsrqOffsetCSIRS
 	}
-	if !IsNil(o.SinrOffsetCSIRS) {
+	if !isNil(o.SinrOffsetCSIRS) {
 		toSerialize["sinrOffsetCSI-RS"] = o.SinrOffsetCSIRS
 	}
 	return toSerialize, nil

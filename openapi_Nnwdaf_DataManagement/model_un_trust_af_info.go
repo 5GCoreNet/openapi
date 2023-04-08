@@ -72,7 +72,7 @@ func (o *UnTrustAfInfo) SetAfId(v string) {
 
 // GetSNssaiInfoList returns the SNssaiInfoList field value if set, zero value otherwise.
 func (o *UnTrustAfInfo) GetSNssaiInfoList() []SnssaiInfoItem {
-	if o == nil || IsNil(o.SNssaiInfoList) {
+	if o == nil || isNil(o.SNssaiInfoList) {
 		var ret []SnssaiInfoItem
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *UnTrustAfInfo) GetSNssaiInfoList() []SnssaiInfoItem {
 // GetSNssaiInfoListOk returns a tuple with the SNssaiInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnTrustAfInfo) GetSNssaiInfoListOk() ([]SnssaiInfoItem, bool) {
-	if o == nil || IsNil(o.SNssaiInfoList) {
+	if o == nil || isNil(o.SNssaiInfoList) {
 		return nil, false
 	}
 	return o.SNssaiInfoList, true
@@ -90,7 +90,7 @@ func (o *UnTrustAfInfo) GetSNssaiInfoListOk() ([]SnssaiInfoItem, bool) {
 
 // HasSNssaiInfoList returns a boolean if a field has been set.
 func (o *UnTrustAfInfo) HasSNssaiInfoList() bool {
-	if o != nil && !IsNil(o.SNssaiInfoList) {
+	if o != nil && !isNil(o.SNssaiInfoList) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *UnTrustAfInfo) SetSNssaiInfoList(v []SnssaiInfoItem) {
 
 // GetMappingInd returns the MappingInd field value if set, zero value otherwise.
 func (o *UnTrustAfInfo) GetMappingInd() bool {
-	if o == nil || IsNil(o.MappingInd) {
+	if o == nil || isNil(o.MappingInd) {
 		var ret bool
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *UnTrustAfInfo) GetMappingInd() bool {
 // GetMappingIndOk returns a tuple with the MappingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnTrustAfInfo) GetMappingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.MappingInd) {
+	if o == nil || isNil(o.MappingInd) {
 		return nil, false
 	}
 	return o.MappingInd, true
@@ -122,7 +122,7 @@ func (o *UnTrustAfInfo) GetMappingIndOk() (*bool, bool) {
 
 // HasMappingInd returns a boolean if a field has been set.
 func (o *UnTrustAfInfo) HasMappingInd() bool {
-	if o != nil && !IsNil(o.MappingInd) {
+	if o != nil && !isNil(o.MappingInd) {
 		return true
 	}
 
@@ -145,10 +145,10 @@ func (o UnTrustAfInfo) MarshalJSON() ([]byte, error) {
 func (o UnTrustAfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afId"] = o.AfId
-	if !IsNil(o.SNssaiInfoList) {
+	if !isNil(o.SNssaiInfoList) {
 		toSerialize["sNssaiInfoList"] = o.SNssaiInfoList
 	}
-	if !IsNil(o.MappingInd) {
+	if !isNil(o.MappingInd) {
 		toSerialize["mappingInd"] = o.MappingInd
 	}
 	return toSerialize, nil

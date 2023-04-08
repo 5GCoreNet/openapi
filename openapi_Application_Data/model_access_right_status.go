@@ -17,23 +17,37 @@ import (
 
 // AccessRightStatus Possible values are: - FULLY_ALLOWED: The User is fully allowed to access to the channel. - PREVIEW_ALLOWED: The User is preview allowed to access to the channel. - NO_ALLOWED: The User is not allowed to access to the channel. 
 type AccessRightStatus struct {
-	string *string
+	AccessRightStatusAnyOf *AccessRightStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessRightStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AccessRightStatusAnyOf
+	err = json.Unmarshal(data, &dst.AccessRightStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAccessRightStatusAnyOf, _ := json.Marshal(dst.AccessRightStatusAnyOf)
+		if string(jsonAccessRightStatusAnyOf) == "{}" { // empty struct
+			dst.AccessRightStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AccessRightStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AccessRightStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AccessRightStatus)")
@@ -41,8 +55,12 @@ func (dst *AccessRightStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessRightStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AccessRightStatusAnyOf != nil {
+		return json.Marshal(&src.AccessRightStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

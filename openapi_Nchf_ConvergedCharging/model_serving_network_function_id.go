@@ -68,7 +68,7 @@ func (o *ServingNetworkFunctionID) SetServingNetworkFunctionInformation(v NFIden
 
 // GetAMFId returns the AMFId field value if set, zero value otherwise.
 func (o *ServingNetworkFunctionID) GetAMFId() string {
-	if o == nil || IsNil(o.AMFId) {
+	if o == nil || isNil(o.AMFId) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ServingNetworkFunctionID) GetAMFId() string {
 // GetAMFIdOk returns a tuple with the AMFId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServingNetworkFunctionID) GetAMFIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AMFId) {
+	if o == nil || isNil(o.AMFId) {
 		return nil, false
 	}
 	return o.AMFId, true
@@ -86,7 +86,7 @@ func (o *ServingNetworkFunctionID) GetAMFIdOk() (*string, bool) {
 
 // HasAMFId returns a boolean if a field has been set.
 func (o *ServingNetworkFunctionID) HasAMFId() bool {
-	if o != nil && !IsNil(o.AMFId) {
+	if o != nil && !isNil(o.AMFId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o ServingNetworkFunctionID) MarshalJSON() ([]byte, error) {
 func (o ServingNetworkFunctionID) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["servingNetworkFunctionInformation"] = o.ServingNetworkFunctionInformation
-	if !IsNil(o.AMFId) {
+	if !isNil(o.AMFId) {
 		toSerialize["aMFId"] = o.AMFId
 	}
 	return toSerialize, nil

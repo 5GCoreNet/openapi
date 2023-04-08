@@ -43,7 +43,7 @@ func NewWlanPerformanceInfoWithDefaults() *WlanPerformanceInfo {
 
 // GetNetworkArea returns the NetworkArea field value if set, zero value otherwise.
 func (o *WlanPerformanceInfo) GetNetworkArea() NetworkAreaInfo {
-	if o == nil || IsNil(o.NetworkArea) {
+	if o == nil || isNil(o.NetworkArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *WlanPerformanceInfo) GetNetworkArea() NetworkAreaInfo {
 // GetNetworkAreaOk returns a tuple with the NetworkArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WlanPerformanceInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.NetworkArea) {
+	if o == nil || isNil(o.NetworkArea) {
 		return nil, false
 	}
 	return o.NetworkArea, true
@@ -61,7 +61,7 @@ func (o *WlanPerformanceInfo) GetNetworkAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasNetworkArea returns a boolean if a field has been set.
 func (o *WlanPerformanceInfo) HasNetworkArea() bool {
-	if o != nil && !IsNil(o.NetworkArea) {
+	if o != nil && !isNil(o.NetworkArea) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o WlanPerformanceInfo) MarshalJSON() ([]byte, error) {
 
 func (o WlanPerformanceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NetworkArea) {
+	if !isNil(o.NetworkArea) {
 		toSerialize["networkArea"] = o.NetworkArea
 	}
 	toSerialize["wlanPerSsidInfos"] = o.WlanPerSsidInfos

@@ -17,23 +17,37 @@ import (
 
 // AmfEventTrigger Describes how AMF should generate the report for the event
 type AmfEventTrigger struct {
-	string *string
+	AmfEventTriggerAnyOf *AmfEventTriggerAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AmfEventTrigger) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AmfEventTriggerAnyOf
+	err = json.Unmarshal(data, &dst.AmfEventTriggerAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAmfEventTriggerAnyOf, _ := json.Marshal(dst.AmfEventTriggerAnyOf)
+		if string(jsonAmfEventTriggerAnyOf) == "{}" { // empty struct
+			dst.AmfEventTriggerAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AmfEventTriggerAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AmfEventTriggerAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AmfEventTrigger)")
@@ -41,8 +55,12 @@ func (dst *AmfEventTrigger) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AmfEventTrigger) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AmfEventTriggerAnyOf != nil {
+		return json.Marshal(&src.AmfEventTriggerAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

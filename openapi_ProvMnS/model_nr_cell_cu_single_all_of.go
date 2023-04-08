@@ -19,7 +19,7 @@ var _ MappedNullable = &NrCellCuSingleAllOf{}
 
 // NrCellCuSingleAllOf struct for NrCellCuSingleAllOf
 type NrCellCuSingleAllOf struct {
-	Attributes *NrCellCuSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewNrCellCuSingleAllOf instantiates a new NrCellCuSingleAllOf object
@@ -40,9 +40,9 @@ func NewNrCellCuSingleAllOfWithDefaults() *NrCellCuSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NrCellCuSingleAllOf) GetAttributes() NrCellCuSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret NrCellCuSingleAllOfAttributes
+func (o *NrCellCuSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *NrCellCuSingleAllOf) GetAttributes() NrCellCuSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NrCellCuSingleAllOf) GetAttributesOk() (*NrCellCuSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *NrCellCuSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *NrCellCuSingleAllOf) GetAttributesOk() (*NrCellCuSingleAllOfAttributes,
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NrCellCuSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given NrCellCuSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *NrCellCuSingleAllOf) SetAttributes(v NrCellCuSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *NrCellCuSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o NrCellCuSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NrCellCuSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // C2CommModeSwitching Possible values are: - DIRECT_TO_NETWORK_ASSISTED_C2: Indicates the C2 Communication Mode switching from Direct C2 Communication mode to Network-Assisted C2 Communication mode. - NETWORK_ASSISTED_TO_DIRECT_C2: Indicates the C2 Communication Mode switching from Network-Assisted C2 Communication mode to Direct C2 Communication mode. - DIRECT_TO_UTM_NAVIGATED_C2: Indicates the C2 Communication Mode switching from Direct C2 Communication mode to UTM-Navigated C2 communication mode. - NETWORK_ASSISTED_TO_UTM_NAVIGATED_C2: Indicates the C2 Communication Mode switching from Network-Assisted C2 Communication mode to UTM-Navigated C2 communication mode. 
 type C2CommModeSwitching struct {
-	string *string
+	C2CommModeSwitchingAnyOf *C2CommModeSwitchingAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *C2CommModeSwitching) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into C2CommModeSwitchingAnyOf
+	err = json.Unmarshal(data, &dst.C2CommModeSwitchingAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonC2CommModeSwitchingAnyOf, _ := json.Marshal(dst.C2CommModeSwitchingAnyOf)
+		if string(jsonC2CommModeSwitchingAnyOf) == "{}" { // empty struct
+			dst.C2CommModeSwitchingAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.C2CommModeSwitchingAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.C2CommModeSwitchingAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(C2CommModeSwitching)")
@@ -41,8 +55,12 @@ func (dst *C2CommModeSwitching) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *C2CommModeSwitching) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.C2CommModeSwitchingAnyOf != nil {
+		return json.Marshal(&src.C2CommModeSwitchingAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

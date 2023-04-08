@@ -99,7 +99,7 @@ func (o *AmfLocationData) SetPlmnId(v PlmnId) {
 
 // GetAmfLocation returns the AmfLocation field value if set, zero value otherwise.
 func (o *AmfLocationData) GetAmfLocation() NrLocation {
-	if o == nil || IsNil(o.AmfLocation) {
+	if o == nil || isNil(o.AmfLocation) {
 		var ret NrLocation
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *AmfLocationData) GetAmfLocation() NrLocation {
 // GetAmfLocationOk returns a tuple with the AmfLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetAmfLocationOk() (*NrLocation, bool) {
-	if o == nil || IsNil(o.AmfLocation) {
+	if o == nil || isNil(o.AmfLocation) {
 		return nil, false
 	}
 	return o.AmfLocation, true
@@ -117,7 +117,7 @@ func (o *AmfLocationData) GetAmfLocationOk() (*NrLocation, bool) {
 
 // HasAmfLocation returns a boolean if a field has been set.
 func (o *AmfLocationData) HasAmfLocation() bool {
-	if o != nil && !IsNil(o.AmfLocation) {
+	if o != nil && !isNil(o.AmfLocation) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *AmfLocationData) SetAmfLocation(v NrLocation) {
 
 // GetSmsfAddress returns the SmsfAddress field value if set, zero value otherwise.
 func (o *AmfLocationData) GetSmsfAddress() string {
-	if o == nil || IsNil(o.SmsfAddress) {
+	if o == nil || isNil(o.SmsfAddress) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *AmfLocationData) GetSmsfAddress() string {
 // GetSmsfAddressOk returns a tuple with the SmsfAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetSmsfAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfAddress) {
+	if o == nil || isNil(o.SmsfAddress) {
 		return nil, false
 	}
 	return o.SmsfAddress, true
@@ -149,7 +149,7 @@ func (o *AmfLocationData) GetSmsfAddressOk() (*string, bool) {
 
 // HasSmsfAddress returns a boolean if a field has been set.
 func (o *AmfLocationData) HasSmsfAddress() bool {
-	if o != nil && !IsNil(o.SmsfAddress) {
+	if o != nil && !isNil(o.SmsfAddress) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *AmfLocationData) SetSmsfAddress(v string) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *AmfLocationData) GetTimeZone() string {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *AmfLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -181,7 +181,7 @@ func (o *AmfLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *AmfLocationData) HasTimeZone() bool {
-	if o != nil && !IsNil(o.TimeZone) {
+	if o != nil && !isNil(o.TimeZone) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *AmfLocationData) SetTimeZone(v string) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *AmfLocationData) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *AmfLocationData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfLocationData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -213,7 +213,7 @@ func (o *AmfLocationData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *AmfLocationData) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -237,16 +237,16 @@ func (o AmfLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["amfAddress"] = o.AmfAddress
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.AmfLocation) {
+	if !isNil(o.AmfLocation) {
 		toSerialize["amfLocation"] = o.AmfLocation
 	}
-	if !IsNil(o.SmsfAddress) {
+	if !isNil(o.SmsfAddress) {
 		toSerialize["smsfAddress"] = o.SmsfAddress
 	}
-	if !IsNil(o.TimeZone) {
+	if !isNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil

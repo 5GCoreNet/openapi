@@ -48,7 +48,7 @@ func NewHalTemplateWithDefaults() *HalTemplate {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *HalTemplate) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *HalTemplate) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HalTemplate) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -66,7 +66,7 @@ func (o *HalTemplate) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *HalTemplate) HasTitle() bool {
-	if o != nil && !IsNil(o.Title) {
+	if o != nil && !isNil(o.Title) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *HalTemplate) SetMethod(v HttpMethod) {
 
 // GetContentType returns the ContentType field value if set, zero value otherwise.
 func (o *HalTemplate) GetContentType() string {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || isNil(o.ContentType) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *HalTemplate) GetContentType() string {
 // GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HalTemplate) GetContentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentType) {
+	if o == nil || isNil(o.ContentType) {
 		return nil, false
 	}
 	return o.ContentType, true
@@ -122,7 +122,7 @@ func (o *HalTemplate) GetContentTypeOk() (*string, bool) {
 
 // HasContentType returns a boolean if a field has been set.
 func (o *HalTemplate) HasContentType() bool {
-	if o != nil && !IsNil(o.ContentType) {
+	if o != nil && !isNil(o.ContentType) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *HalTemplate) SetContentType(v string) {
 
 // GetProperties returns the Properties field value if set, zero value otherwise.
 func (o *HalTemplate) GetProperties() []Property {
-	if o == nil || IsNil(o.Properties) {
+	if o == nil || isNil(o.Properties) {
 		var ret []Property
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *HalTemplate) GetProperties() []Property {
 // GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HalTemplate) GetPropertiesOk() ([]Property, bool) {
-	if o == nil || IsNil(o.Properties) {
+	if o == nil || isNil(o.Properties) {
 		return nil, false
 	}
 	return o.Properties, true
@@ -154,7 +154,7 @@ func (o *HalTemplate) GetPropertiesOk() ([]Property, bool) {
 
 // HasProperties returns a boolean if a field has been set.
 func (o *HalTemplate) HasProperties() bool {
-	if o != nil && !IsNil(o.Properties) {
+	if o != nil && !isNil(o.Properties) {
 		return true
 	}
 
@@ -176,14 +176,14 @@ func (o HalTemplate) MarshalJSON() ([]byte, error) {
 
 func (o HalTemplate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Title) {
+	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
 	toSerialize["method"] = o.Method
-	if !IsNil(o.ContentType) {
+	if !isNil(o.ContentType) {
 		toSerialize["contentType"] = o.ContentType
 	}
-	if !IsNil(o.Properties) {
+	if !isNil(o.Properties) {
 		toSerialize["properties"] = o.Properties
 	}
 	return toSerialize, nil

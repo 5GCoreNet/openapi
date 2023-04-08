@@ -42,7 +42,7 @@ func NewRetrievedDataWithDefaults() *RetrievedData {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *RetrievedData) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RetrievedData) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetrievedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -60,7 +60,7 @@ func (o *RetrievedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) 
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *RetrievedData) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *RetrievedData) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetAfCoordinationInfo returns the AfCoordinationInfo field value if set, zero value otherwise.
 func (o *RetrievedData) GetAfCoordinationInfo() AfCoordinationInfo {
-	if o == nil || IsNil(o.AfCoordinationInfo) {
+	if o == nil || isNil(o.AfCoordinationInfo) {
 		var ret AfCoordinationInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *RetrievedData) GetAfCoordinationInfo() AfCoordinationInfo {
 // GetAfCoordinationInfoOk returns a tuple with the AfCoordinationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RetrievedData) GetAfCoordinationInfoOk() (*AfCoordinationInfo, bool) {
-	if o == nil || IsNil(o.AfCoordinationInfo) {
+	if o == nil || isNil(o.AfCoordinationInfo) {
 		return nil, false
 	}
 	return o.AfCoordinationInfo, true
@@ -92,7 +92,7 @@ func (o *RetrievedData) GetAfCoordinationInfoOk() (*AfCoordinationInfo, bool) {
 
 // HasAfCoordinationInfo returns a boolean if a field has been set.
 func (o *RetrievedData) HasAfCoordinationInfo() bool {
-	if o != nil && !IsNil(o.AfCoordinationInfo) {
+	if o != nil && !isNil(o.AfCoordinationInfo) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o RetrievedData) MarshalJSON() ([]byte, error) {
 
 func (o RetrievedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !IsNil(o.AfCoordinationInfo) {
+	if !isNil(o.AfCoordinationInfo) {
 		toSerialize["afCoordinationInfo"] = o.AfCoordinationInfo
 	}
 	return toSerialize, nil

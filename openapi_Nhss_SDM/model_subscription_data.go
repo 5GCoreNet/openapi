@@ -129,7 +129,7 @@ func (o *SubscriptionData) SetMonitoredResourceUris(v []string) {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *SubscriptionData) GetExpires() time.Time {
-	if o == nil || IsNil(o.Expires) {
+	if o == nil || isNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *SubscriptionData) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expires) {
+	if o == nil || isNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -147,7 +147,7 @@ func (o *SubscriptionData) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *SubscriptionData) HasExpires() bool {
-	if o != nil && !IsNil(o.Expires) {
+	if o != nil && !isNil(o.Expires) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *SubscriptionData) SetExpires(v time.Time) {
 
 // GetImmediateReport returns the ImmediateReport field value if set, zero value otherwise.
 func (o *SubscriptionData) GetImmediateReport() bool {
-	if o == nil || IsNil(o.ImmediateReport) {
+	if o == nil || isNil(o.ImmediateReport) {
 		var ret bool
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *SubscriptionData) GetImmediateReport() bool {
 // GetImmediateReportOk returns a tuple with the ImmediateReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetImmediateReportOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmediateReport) {
+	if o == nil || isNil(o.ImmediateReport) {
 		return nil, false
 	}
 	return o.ImmediateReport, true
@@ -179,7 +179,7 @@ func (o *SubscriptionData) GetImmediateReportOk() (*bool, bool) {
 
 // HasImmediateReport returns a boolean if a field has been set.
 func (o *SubscriptionData) HasImmediateReport() bool {
-	if o != nil && !IsNil(o.ImmediateReport) {
+	if o != nil && !isNil(o.ImmediateReport) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *SubscriptionData) SetImmediateReport(v bool) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *SubscriptionData) GetReport() SubscriptionDataSets {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		var ret SubscriptionDataSets
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *SubscriptionData) GetReport() SubscriptionDataSets {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionData) GetReportOk() (*SubscriptionDataSets, bool) {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -211,7 +211,7 @@ func (o *SubscriptionData) GetReportOk() (*SubscriptionDataSets, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *SubscriptionData) HasReport() bool {
-	if o != nil && !IsNil(o.Report) {
+	if o != nil && !isNil(o.Report) {
 		return true
 	}
 
@@ -236,13 +236,13 @@ func (o SubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize["nfInstanceId"] = o.NfInstanceId
 	toSerialize["callbackReference"] = o.CallbackReference
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !IsNil(o.Expires) {
+	if !isNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
-	if !IsNil(o.ImmediateReport) {
+	if !isNil(o.ImmediateReport) {
 		toSerialize["immediateReport"] = o.ImmediateReport
 	}
-	if !IsNil(o.Report) {
+	if !isNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
 	return toSerialize, nil

@@ -59,7 +59,7 @@ func NewPDUSessionChargingInformationWithDefaults() *PDUSessionChargingInformati
 // GetChargingId returns the ChargingId field value if set, zero value otherwise.
 // Deprecated
 func (o *PDUSessionChargingInformation) GetChargingId() int32 {
-	if o == nil || IsNil(o.ChargingId) {
+	if o == nil || isNil(o.ChargingId) {
 		var ret int32
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *PDUSessionChargingInformation) GetChargingId() int32 {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *PDUSessionChargingInformation) GetChargingIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ChargingId) {
+	if o == nil || isNil(o.ChargingId) {
 		return nil, false
 	}
 	return o.ChargingId, true
@@ -78,7 +78,7 @@ func (o *PDUSessionChargingInformation) GetChargingIdOk() (*int32, bool) {
 
 // HasChargingId returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasChargingId() bool {
-	if o != nil && !IsNil(o.ChargingId) {
+	if o != nil && !isNil(o.ChargingId) {
 		return true
 	}
 
@@ -93,7 +93,7 @@ func (o *PDUSessionChargingInformation) SetChargingId(v int32) {
 
 // GetSMFChargingId returns the SMFChargingId field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetSMFChargingId() string {
-	if o == nil || IsNil(o.SMFChargingId) {
+	if o == nil || isNil(o.SMFChargingId) {
 		var ret string
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *PDUSessionChargingInformation) GetSMFChargingId() string {
 // GetSMFChargingIdOk returns a tuple with the SMFChargingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetSMFChargingIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SMFChargingId) {
+	if o == nil || isNil(o.SMFChargingId) {
 		return nil, false
 	}
 	return o.SMFChargingId, true
@@ -111,7 +111,7 @@ func (o *PDUSessionChargingInformation) GetSMFChargingIdOk() (*string, bool) {
 
 // HasSMFChargingId returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasSMFChargingId() bool {
-	if o != nil && !IsNil(o.SMFChargingId) {
+	if o != nil && !isNil(o.SMFChargingId) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *PDUSessionChargingInformation) SetSMFChargingId(v string) {
 
 // GetUserInformation returns the UserInformation field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetUserInformation() UserInformation {
-	if o == nil || IsNil(o.UserInformation) {
+	if o == nil || isNil(o.UserInformation) {
 		var ret UserInformation
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *PDUSessionChargingInformation) GetUserInformation() UserInformation {
 // GetUserInformationOk returns a tuple with the UserInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetUserInformationOk() (*UserInformation, bool) {
-	if o == nil || IsNil(o.UserInformation) {
+	if o == nil || isNil(o.UserInformation) {
 		return nil, false
 	}
 	return o.UserInformation, true
@@ -143,7 +143,7 @@ func (o *PDUSessionChargingInformation) GetUserInformationOk() (*UserInformation
 
 // HasUserInformation returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasUserInformation() bool {
-	if o != nil && !IsNil(o.UserInformation) {
+	if o != nil && !isNil(o.UserInformation) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *PDUSessionChargingInformation) SetUserInformation(v UserInformation) {
 
 // GetUserLocationinfo returns the UserLocationinfo field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetUserLocationinfo() UserLocation {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *PDUSessionChargingInformation) GetUserLocationinfo() UserLocation {
 // GetUserLocationinfoOk returns a tuple with the UserLocationinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		return nil, false
 	}
 	return o.UserLocationinfo, true
@@ -175,7 +175,7 @@ func (o *PDUSessionChargingInformation) GetUserLocationinfoOk() (*UserLocation, 
 
 // HasUserLocationinfo returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasUserLocationinfo() bool {
-	if o != nil && !IsNil(o.UserLocationinfo) {
+	if o != nil && !isNil(o.UserLocationinfo) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *PDUSessionChargingInformation) SetUserLocationinfo(v UserLocation) {
 
 // GetMAPDUNon3GPPUserLocationInfo returns the MAPDUNon3GPPUserLocationInfo field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetMAPDUNon3GPPUserLocationInfo() UserLocation {
-	if o == nil || IsNil(o.MAPDUNon3GPPUserLocationInfo) {
+	if o == nil || isNil(o.MAPDUNon3GPPUserLocationInfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *PDUSessionChargingInformation) GetMAPDUNon3GPPUserLocationInfo() UserLo
 // GetMAPDUNon3GPPUserLocationInfoOk returns a tuple with the MAPDUNon3GPPUserLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetMAPDUNon3GPPUserLocationInfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.MAPDUNon3GPPUserLocationInfo) {
+	if o == nil || isNil(o.MAPDUNon3GPPUserLocationInfo) {
 		return nil, false
 	}
 	return o.MAPDUNon3GPPUserLocationInfo, true
@@ -207,7 +207,7 @@ func (o *PDUSessionChargingInformation) GetMAPDUNon3GPPUserLocationInfoOk() (*Us
 
 // HasMAPDUNon3GPPUserLocationInfo returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasMAPDUNon3GPPUserLocationInfo() bool {
-	if o != nil && !IsNil(o.MAPDUNon3GPPUserLocationInfo) {
+	if o != nil && !isNil(o.MAPDUNon3GPPUserLocationInfo) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *PDUSessionChargingInformation) SetMAPDUNon3GPPUserLocationInfo(v UserLo
 
 // GetUserLocationTime returns the UserLocationTime field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetUserLocationTime() time.Time {
-	if o == nil || IsNil(o.UserLocationTime) {
+	if o == nil || isNil(o.UserLocationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *PDUSessionChargingInformation) GetUserLocationTime() time.Time {
 // GetUserLocationTimeOk returns a tuple with the UserLocationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetUserLocationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.UserLocationTime) {
+	if o == nil || isNil(o.UserLocationTime) {
 		return nil, false
 	}
 	return o.UserLocationTime, true
@@ -239,7 +239,7 @@ func (o *PDUSessionChargingInformation) GetUserLocationTimeOk() (*time.Time, boo
 
 // HasUserLocationTime returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasUserLocationTime() bool {
-	if o != nil && !IsNil(o.UserLocationTime) {
+	if o != nil && !isNil(o.UserLocationTime) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *PDUSessionChargingInformation) SetUserLocationTime(v time.Time) {
 
 // GetPresenceReportingAreaInformation returns the PresenceReportingAreaInformation field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetPresenceReportingAreaInformation() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *PDUSessionChargingInformation) GetPresenceReportingAreaInformation() ma
 // GetPresenceReportingAreaInformationOk returns a tuple with the PresenceReportingAreaInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetPresenceReportingAreaInformationOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PresenceReportingAreaInformation) {
+	if o == nil || isNil(o.PresenceReportingAreaInformation) {
 		return nil, false
 	}
 	return o.PresenceReportingAreaInformation, true
@@ -271,7 +271,7 @@ func (o *PDUSessionChargingInformation) GetPresenceReportingAreaInformationOk() 
 
 // HasPresenceReportingAreaInformation returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasPresenceReportingAreaInformation() bool {
-	if o != nil && !IsNil(o.PresenceReportingAreaInformation) {
+	if o != nil && !isNil(o.PresenceReportingAreaInformation) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *PDUSessionChargingInformation) SetPresenceReportingAreaInformation(v ma
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *PDUSessionChargingInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -303,7 +303,7 @@ func (o *PDUSessionChargingInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *PDUSessionChargingInformation) SetPduSessionInformation(v PDUSessionInf
 
 // GetUnitCountInactivityTimer returns the UnitCountInactivityTimer field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetUnitCountInactivityTimer() int32 {
-	if o == nil || IsNil(o.UnitCountInactivityTimer) {
+	if o == nil || isNil(o.UnitCountInactivityTimer) {
 		var ret int32
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *PDUSessionChargingInformation) GetUnitCountInactivityTimer() int32 {
 // GetUnitCountInactivityTimerOk returns a tuple with the UnitCountInactivityTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetUnitCountInactivityTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.UnitCountInactivityTimer) {
+	if o == nil || isNil(o.UnitCountInactivityTimer) {
 		return nil, false
 	}
 	return o.UnitCountInactivityTimer, true
@@ -359,7 +359,7 @@ func (o *PDUSessionChargingInformation) GetUnitCountInactivityTimerOk() (*int32,
 
 // HasUnitCountInactivityTimer returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasUnitCountInactivityTimer() bool {
-	if o != nil && !IsNil(o.UnitCountInactivityTimer) {
+	if o != nil && !isNil(o.UnitCountInactivityTimer) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o *PDUSessionChargingInformation) SetUnitCountInactivityTimer(v int32) {
 
 // GetRANSecondaryRATUsageReport returns the RANSecondaryRATUsageReport field value if set, zero value otherwise.
 func (o *PDUSessionChargingInformation) GetRANSecondaryRATUsageReport() RANSecondaryRATUsageReport {
-	if o == nil || IsNil(o.RANSecondaryRATUsageReport) {
+	if o == nil || isNil(o.RANSecondaryRATUsageReport) {
 		var ret RANSecondaryRATUsageReport
 		return ret
 	}
@@ -383,7 +383,7 @@ func (o *PDUSessionChargingInformation) GetRANSecondaryRATUsageReport() RANSecon
 // GetRANSecondaryRATUsageReportOk returns a tuple with the RANSecondaryRATUsageReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PDUSessionChargingInformation) GetRANSecondaryRATUsageReportOk() (*RANSecondaryRATUsageReport, bool) {
-	if o == nil || IsNil(o.RANSecondaryRATUsageReport) {
+	if o == nil || isNil(o.RANSecondaryRATUsageReport) {
 		return nil, false
 	}
 	return o.RANSecondaryRATUsageReport, true
@@ -391,7 +391,7 @@ func (o *PDUSessionChargingInformation) GetRANSecondaryRATUsageReportOk() (*RANS
 
 // HasRANSecondaryRATUsageReport returns a boolean if a field has been set.
 func (o *PDUSessionChargingInformation) HasRANSecondaryRATUsageReport() bool {
-	if o != nil && !IsNil(o.RANSecondaryRATUsageReport) {
+	if o != nil && !isNil(o.RANSecondaryRATUsageReport) {
 		return true
 	}
 
@@ -413,35 +413,35 @@ func (o PDUSessionChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o PDUSessionChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ChargingId) {
+	if !isNil(o.ChargingId) {
 		toSerialize["chargingId"] = o.ChargingId
 	}
-	if !IsNil(o.SMFChargingId) {
+	if !isNil(o.SMFChargingId) {
 		toSerialize["sMFChargingId"] = o.SMFChargingId
 	}
-	if !IsNil(o.UserInformation) {
+	if !isNil(o.UserInformation) {
 		toSerialize["userInformation"] = o.UserInformation
 	}
-	if !IsNil(o.UserLocationinfo) {
+	if !isNil(o.UserLocationinfo) {
 		toSerialize["userLocationinfo"] = o.UserLocationinfo
 	}
-	if !IsNil(o.MAPDUNon3GPPUserLocationInfo) {
+	if !isNil(o.MAPDUNon3GPPUserLocationInfo) {
 		toSerialize["mAPDUNon3GPPUserLocationInfo"] = o.MAPDUNon3GPPUserLocationInfo
 	}
-	if !IsNil(o.UserLocationTime) {
+	if !isNil(o.UserLocationTime) {
 		toSerialize["userLocationTime"] = o.UserLocationTime
 	}
-	if !IsNil(o.PresenceReportingAreaInformation) {
+	if !isNil(o.PresenceReportingAreaInformation) {
 		toSerialize["presenceReportingAreaInformation"] = o.PresenceReportingAreaInformation
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
 	toSerialize["pduSessionInformation"] = o.PduSessionInformation
-	if !IsNil(o.UnitCountInactivityTimer) {
+	if !isNil(o.UnitCountInactivityTimer) {
 		toSerialize["unitCountInactivityTimer"] = o.UnitCountInactivityTimer
 	}
-	if !IsNil(o.RANSecondaryRATUsageReport) {
+	if !isNil(o.RANSecondaryRATUsageReport) {
 		toSerialize["rANSecondaryRATUsageReport"] = o.RANSecondaryRATUsageReport
 	}
 	return toSerialize, nil

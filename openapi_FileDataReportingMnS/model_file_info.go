@@ -48,7 +48,7 @@ func NewFileInfoWithDefaults() *FileInfo {
 
 // GetFileLocation returns the FileLocation field value if set, zero value otherwise.
 func (o *FileInfo) GetFileLocation() string {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *FileInfo) GetFileLocation() string {
 // GetFileLocationOk returns a tuple with the FileLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		return nil, false
 	}
 	return o.FileLocation, true
@@ -66,7 +66,7 @@ func (o *FileInfo) GetFileLocationOk() (*string, bool) {
 
 // HasFileLocation returns a boolean if a field has been set.
 func (o *FileInfo) HasFileLocation() bool {
-	if o != nil && !IsNil(o.FileLocation) {
+	if o != nil && !isNil(o.FileLocation) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *FileInfo) SetFileLocation(v string) {
 
 // GetFileSize returns the FileSize field value if set, zero value otherwise.
 func (o *FileInfo) GetFileSize() int32 {
-	if o == nil || IsNil(o.FileSize) {
+	if o == nil || isNil(o.FileSize) {
 		var ret int32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *FileInfo) GetFileSize() int32 {
 // GetFileSizeOk returns a tuple with the FileSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.FileSize) {
+	if o == nil || isNil(o.FileSize) {
 		return nil, false
 	}
 	return o.FileSize, true
@@ -98,7 +98,7 @@ func (o *FileInfo) GetFileSizeOk() (*int32, bool) {
 
 // HasFileSize returns a boolean if a field has been set.
 func (o *FileInfo) HasFileSize() bool {
-	if o != nil && !IsNil(o.FileSize) {
+	if o != nil && !isNil(o.FileSize) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *FileInfo) SetFileSize(v int32) {
 
 // GetFileReadyTime returns the FileReadyTime field value if set, zero value otherwise.
 func (o *FileInfo) GetFileReadyTime() time.Time {
-	if o == nil || IsNil(o.FileReadyTime) {
+	if o == nil || isNil(o.FileReadyTime) {
 		var ret time.Time
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *FileInfo) GetFileReadyTime() time.Time {
 // GetFileReadyTimeOk returns a tuple with the FileReadyTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileReadyTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.FileReadyTime) {
+	if o == nil || isNil(o.FileReadyTime) {
 		return nil, false
 	}
 	return o.FileReadyTime, true
@@ -130,7 +130,7 @@ func (o *FileInfo) GetFileReadyTimeOk() (*time.Time, bool) {
 
 // HasFileReadyTime returns a boolean if a field has been set.
 func (o *FileInfo) HasFileReadyTime() bool {
-	if o != nil && !IsNil(o.FileReadyTime) {
+	if o != nil && !isNil(o.FileReadyTime) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *FileInfo) SetFileReadyTime(v time.Time) {
 
 // GetFileExpirationTime returns the FileExpirationTime field value if set, zero value otherwise.
 func (o *FileInfo) GetFileExpirationTime() time.Time {
-	if o == nil || IsNil(o.FileExpirationTime) {
+	if o == nil || isNil(o.FileExpirationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *FileInfo) GetFileExpirationTime() time.Time {
 // GetFileExpirationTimeOk returns a tuple with the FileExpirationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileExpirationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.FileExpirationTime) {
+	if o == nil || isNil(o.FileExpirationTime) {
 		return nil, false
 	}
 	return o.FileExpirationTime, true
@@ -162,7 +162,7 @@ func (o *FileInfo) GetFileExpirationTimeOk() (*time.Time, bool) {
 
 // HasFileExpirationTime returns a boolean if a field has been set.
 func (o *FileInfo) HasFileExpirationTime() bool {
-	if o != nil && !IsNil(o.FileExpirationTime) {
+	if o != nil && !isNil(o.FileExpirationTime) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *FileInfo) SetFileExpirationTime(v time.Time) {
 
 // GetFileCompression returns the FileCompression field value if set, zero value otherwise.
 func (o *FileInfo) GetFileCompression() string {
-	if o == nil || IsNil(o.FileCompression) {
+	if o == nil || isNil(o.FileCompression) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *FileInfo) GetFileCompression() string {
 // GetFileCompressionOk returns a tuple with the FileCompression field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileCompressionOk() (*string, bool) {
-	if o == nil || IsNil(o.FileCompression) {
+	if o == nil || isNil(o.FileCompression) {
 		return nil, false
 	}
 	return o.FileCompression, true
@@ -194,7 +194,7 @@ func (o *FileInfo) GetFileCompressionOk() (*string, bool) {
 
 // HasFileCompression returns a boolean if a field has been set.
 func (o *FileInfo) HasFileCompression() bool {
-	if o != nil && !IsNil(o.FileCompression) {
+	if o != nil && !isNil(o.FileCompression) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *FileInfo) SetFileCompression(v string) {
 
 // GetFileFormat returns the FileFormat field value if set, zero value otherwise.
 func (o *FileInfo) GetFileFormat() string {
-	if o == nil || IsNil(o.FileFormat) {
+	if o == nil || isNil(o.FileFormat) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *FileInfo) GetFileFormat() string {
 // GetFileFormatOk returns a tuple with the FileFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.FileFormat) {
+	if o == nil || isNil(o.FileFormat) {
 		return nil, false
 	}
 	return o.FileFormat, true
@@ -226,7 +226,7 @@ func (o *FileInfo) GetFileFormatOk() (*string, bool) {
 
 // HasFileFormat returns a boolean if a field has been set.
 func (o *FileInfo) HasFileFormat() bool {
-	if o != nil && !IsNil(o.FileFormat) {
+	if o != nil && !isNil(o.FileFormat) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *FileInfo) SetFileFormat(v string) {
 
 // GetFileDataType returns the FileDataType field value if set, zero value otherwise.
 func (o *FileInfo) GetFileDataType() FileDataType {
-	if o == nil || IsNil(o.FileDataType) {
+	if o == nil || isNil(o.FileDataType) {
 		var ret FileDataType
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *FileInfo) GetFileDataType() FileDataType {
 // GetFileDataTypeOk returns a tuple with the FileDataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileInfo) GetFileDataTypeOk() (*FileDataType, bool) {
-	if o == nil || IsNil(o.FileDataType) {
+	if o == nil || isNil(o.FileDataType) {
 		return nil, false
 	}
 	return o.FileDataType, true
@@ -258,7 +258,7 @@ func (o *FileInfo) GetFileDataTypeOk() (*FileDataType, bool) {
 
 // HasFileDataType returns a boolean if a field has been set.
 func (o *FileInfo) HasFileDataType() bool {
-	if o != nil && !IsNil(o.FileDataType) {
+	if o != nil && !isNil(o.FileDataType) {
 		return true
 	}
 
@@ -280,25 +280,25 @@ func (o FileInfo) MarshalJSON() ([]byte, error) {
 
 func (o FileInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FileLocation) {
+	if !isNil(o.FileLocation) {
 		toSerialize["fileLocation"] = o.FileLocation
 	}
-	if !IsNil(o.FileSize) {
+	if !isNil(o.FileSize) {
 		toSerialize["fileSize"] = o.FileSize
 	}
-	if !IsNil(o.FileReadyTime) {
+	if !isNil(o.FileReadyTime) {
 		toSerialize["fileReadyTime"] = o.FileReadyTime
 	}
-	if !IsNil(o.FileExpirationTime) {
+	if !isNil(o.FileExpirationTime) {
 		toSerialize["fileExpirationTime"] = o.FileExpirationTime
 	}
-	if !IsNil(o.FileCompression) {
+	if !isNil(o.FileCompression) {
 		toSerialize["fileCompression"] = o.FileCompression
 	}
-	if !IsNil(o.FileFormat) {
+	if !isNil(o.FileFormat) {
 		toSerialize["fileFormat"] = o.FileFormat
 	}
-	if !IsNil(o.FileDataType) {
+	if !isNil(o.FileDataType) {
 		toSerialize["fileDataType"] = o.FileDataType
 	}
 	return toSerialize, nil

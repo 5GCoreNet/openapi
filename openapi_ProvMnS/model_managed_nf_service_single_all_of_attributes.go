@@ -48,7 +48,7 @@ func NewManagedNFServiceSingleAllOfAttributesWithDefaults() *ManagedNFServiceSin
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -66,7 +66,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetUserLabelOk() (*string, bool)
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
+	if o != nil && !isNil(o.UserLabel) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetUserLabel(v string) {
 
 // GetNFServiceType returns the NFServiceType field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetNFServiceType() NFServiceType {
-	if o == nil || IsNil(o.NFServiceType) {
+	if o == nil || isNil(o.NFServiceType) {
 		var ret NFServiceType
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetNFServiceType() NFServiceType
 // GetNFServiceTypeOk returns a tuple with the NFServiceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetNFServiceTypeOk() (*NFServiceType, bool) {
-	if o == nil || IsNil(o.NFServiceType) {
+	if o == nil || isNil(o.NFServiceType) {
 		return nil, false
 	}
 	return o.NFServiceType, true
@@ -98,7 +98,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetNFServiceTypeOk() (*NFService
 
 // HasNFServiceType returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasNFServiceType() bool {
-	if o != nil && !IsNil(o.NFServiceType) {
+	if o != nil && !isNil(o.NFServiceType) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetNFServiceType(v NFServiceType
 
 // GetSAP returns the SAP field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetSAP() SAP {
-	if o == nil || IsNil(o.SAP) {
+	if o == nil || isNil(o.SAP) {
 		var ret SAP
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetSAP() SAP {
 // GetSAPOk returns a tuple with the SAP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetSAPOk() (*SAP, bool) {
-	if o == nil || IsNil(o.SAP) {
+	if o == nil || isNil(o.SAP) {
 		return nil, false
 	}
 	return o.SAP, true
@@ -130,7 +130,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetSAPOk() (*SAP, bool) {
 
 // HasSAP returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasSAP() bool {
-	if o != nil && !IsNil(o.SAP) {
+	if o != nil && !isNil(o.SAP) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetSAP(v SAP) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetOperations() []Operation1 {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		var ret []Operation1
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetOperations() []Operation1 {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetOperationsOk() ([]Operation1, bool) {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -162,7 +162,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetOperationsOk() ([]Operation1,
 
 // HasOperations returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasOperations() bool {
-	if o != nil && !IsNil(o.Operations) {
+	if o != nil && !isNil(o.Operations) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetOperations(v []Operation1) {
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetAdministrativeState() AdministrativeState {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetAdministrativeState() Adminis
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -194,7 +194,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetAdministrativeStateOk() (*Adm
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasAdministrativeState() bool {
-	if o != nil && !IsNil(o.AdministrativeState) {
+	if o != nil && !isNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetAdministrativeState(v Adminis
 
 // GetOperationalState returns the OperationalState field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetOperationalState() OperationalState {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		var ret OperationalState
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetOperationalState() Operationa
 // GetOperationalStateOk returns a tuple with the OperationalState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetOperationalStateOk() (*OperationalState, bool) {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		return nil, false
 	}
 	return o.OperationalState, true
@@ -226,7 +226,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetOperationalStateOk() (*Operat
 
 // HasOperationalState returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasOperationalState() bool {
-	if o != nil && !IsNil(o.OperationalState) {
+	if o != nil && !isNil(o.OperationalState) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetOperationalState(v Operationa
 
 // GetUsageState returns the UsageState field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetUsageState() UsageState {
-	if o == nil || IsNil(o.UsageState) {
+	if o == nil || isNil(o.UsageState) {
 		var ret UsageState
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetUsageState() UsageState {
 // GetUsageStateOk returns a tuple with the UsageState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetUsageStateOk() (*UsageState, bool) {
-	if o == nil || IsNil(o.UsageState) {
+	if o == nil || isNil(o.UsageState) {
 		return nil, false
 	}
 	return o.UsageState, true
@@ -258,7 +258,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetUsageStateOk() (*UsageState, 
 
 // HasUsageState returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasUsageState() bool {
-	if o != nil && !IsNil(o.UsageState) {
+	if o != nil && !isNil(o.UsageState) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) SetUsageState(v UsageState) {
 
 // GetRegistrationState returns the RegistrationState field value if set, zero value otherwise.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetRegistrationState() RegistrationState {
-	if o == nil || IsNil(o.RegistrationState) {
+	if o == nil || isNil(o.RegistrationState) {
 		var ret RegistrationState
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetRegistrationState() Registrat
 // GetRegistrationStateOk returns a tuple with the RegistrationState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) GetRegistrationStateOk() (*RegistrationState, bool) {
-	if o == nil || IsNil(o.RegistrationState) {
+	if o == nil || isNil(o.RegistrationState) {
 		return nil, false
 	}
 	return o.RegistrationState, true
@@ -290,7 +290,7 @@ func (o *ManagedNFServiceSingleAllOfAttributes) GetRegistrationStateOk() (*Regis
 
 // HasRegistrationState returns a boolean if a field has been set.
 func (o *ManagedNFServiceSingleAllOfAttributes) HasRegistrationState() bool {
-	if o != nil && !IsNil(o.RegistrationState) {
+	if o != nil && !isNil(o.RegistrationState) {
 		return true
 	}
 
@@ -312,28 +312,28 @@ func (o ManagedNFServiceSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o ManagedNFServiceSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
+	if !isNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !IsNil(o.NFServiceType) {
+	if !isNil(o.NFServiceType) {
 		toSerialize["nFServiceType"] = o.NFServiceType
 	}
-	if !IsNil(o.SAP) {
+	if !isNil(o.SAP) {
 		toSerialize["sAP"] = o.SAP
 	}
-	if !IsNil(o.Operations) {
+	if !isNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
-	if !IsNil(o.AdministrativeState) {
+	if !isNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
-	if !IsNil(o.OperationalState) {
+	if !isNil(o.OperationalState) {
 		toSerialize["operationalState"] = o.OperationalState
 	}
-	if !IsNil(o.UsageState) {
+	if !isNil(o.UsageState) {
 		toSerialize["usageState"] = o.UsageState
 	}
-	if !IsNil(o.RegistrationState) {
+	if !isNil(o.RegistrationState) {
 		toSerialize["registrationState"] = o.RegistrationState
 	}
 	return toSerialize, nil

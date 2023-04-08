@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AmInfluEvent](docs/AmInfluEvent.md)
+ - [AmInfluEventAnyOf](docs/AmInfluEventAnyOf.md)
  - [AmInfluEventNotif](docs/AmInfluEventNotif.md)
  - [AmInfluSub](docs/AmInfluSub.md)
  - [AmInfluSubPatch](docs/AmInfluSubPatch.md)
@@ -125,6 +126,7 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [Snssai](docs/Snssai.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)

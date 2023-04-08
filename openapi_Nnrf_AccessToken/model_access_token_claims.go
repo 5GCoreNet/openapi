@@ -184,7 +184,7 @@ func (o *AccessTokenClaims) SetExp(v int32) {
 
 // GetConsumerPlmnId returns the ConsumerPlmnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetConsumerPlmnId() PlmnId {
-	if o == nil || IsNil(o.ConsumerPlmnId) {
+	if o == nil || isNil(o.ConsumerPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *AccessTokenClaims) GetConsumerPlmnId() PlmnId {
 // GetConsumerPlmnIdOk returns a tuple with the ConsumerPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetConsumerPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.ConsumerPlmnId) {
+	if o == nil || isNil(o.ConsumerPlmnId) {
 		return nil, false
 	}
 	return o.ConsumerPlmnId, true
@@ -202,7 +202,7 @@ func (o *AccessTokenClaims) GetConsumerPlmnIdOk() (*PlmnId, bool) {
 
 // HasConsumerPlmnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasConsumerPlmnId() bool {
-	if o != nil && !IsNil(o.ConsumerPlmnId) {
+	if o != nil && !isNil(o.ConsumerPlmnId) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *AccessTokenClaims) SetConsumerPlmnId(v PlmnId) {
 
 // GetConsumerSnpnId returns the ConsumerSnpnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetConsumerSnpnId() PlmnIdNid {
-	if o == nil || IsNil(o.ConsumerSnpnId) {
+	if o == nil || isNil(o.ConsumerSnpnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *AccessTokenClaims) GetConsumerSnpnId() PlmnIdNid {
 // GetConsumerSnpnIdOk returns a tuple with the ConsumerSnpnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetConsumerSnpnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ConsumerSnpnId) {
+	if o == nil || isNil(o.ConsumerSnpnId) {
 		return nil, false
 	}
 	return o.ConsumerSnpnId, true
@@ -234,7 +234,7 @@ func (o *AccessTokenClaims) GetConsumerSnpnIdOk() (*PlmnIdNid, bool) {
 
 // HasConsumerSnpnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasConsumerSnpnId() bool {
-	if o != nil && !IsNil(o.ConsumerSnpnId) {
+	if o != nil && !isNil(o.ConsumerSnpnId) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *AccessTokenClaims) SetConsumerSnpnId(v PlmnIdNid) {
 
 // GetProducerPlmnId returns the ProducerPlmnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerPlmnId() PlmnId {
-	if o == nil || IsNil(o.ProducerPlmnId) {
+	if o == nil || isNil(o.ProducerPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *AccessTokenClaims) GetProducerPlmnId() PlmnId {
 // GetProducerPlmnIdOk returns a tuple with the ProducerPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.ProducerPlmnId) {
+	if o == nil || isNil(o.ProducerPlmnId) {
 		return nil, false
 	}
 	return o.ProducerPlmnId, true
@@ -266,7 +266,7 @@ func (o *AccessTokenClaims) GetProducerPlmnIdOk() (*PlmnId, bool) {
 
 // HasProducerPlmnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerPlmnId() bool {
-	if o != nil && !IsNil(o.ProducerPlmnId) {
+	if o != nil && !isNil(o.ProducerPlmnId) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *AccessTokenClaims) SetProducerPlmnId(v PlmnId) {
 
 // GetProducerSnpnId returns the ProducerSnpnId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerSnpnId() PlmnIdNid {
-	if o == nil || IsNil(o.ProducerSnpnId) {
+	if o == nil || isNil(o.ProducerSnpnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *AccessTokenClaims) GetProducerSnpnId() PlmnIdNid {
 // GetProducerSnpnIdOk returns a tuple with the ProducerSnpnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerSnpnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ProducerSnpnId) {
+	if o == nil || isNil(o.ProducerSnpnId) {
 		return nil, false
 	}
 	return o.ProducerSnpnId, true
@@ -298,7 +298,7 @@ func (o *AccessTokenClaims) GetProducerSnpnIdOk() (*PlmnIdNid, bool) {
 
 // HasProducerSnpnId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerSnpnId() bool {
-	if o != nil && !IsNil(o.ProducerSnpnId) {
+	if o != nil && !isNil(o.ProducerSnpnId) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *AccessTokenClaims) SetProducerSnpnId(v PlmnIdNid) {
 
 // GetProducerSnssaiList returns the ProducerSnssaiList field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerSnssaiList() []Snssai {
-	if o == nil || IsNil(o.ProducerSnssaiList) {
+	if o == nil || isNil(o.ProducerSnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *AccessTokenClaims) GetProducerSnssaiList() []Snssai {
 // GetProducerSnssaiListOk returns a tuple with the ProducerSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.ProducerSnssaiList) {
+	if o == nil || isNil(o.ProducerSnssaiList) {
 		return nil, false
 	}
 	return o.ProducerSnssaiList, true
@@ -330,7 +330,7 @@ func (o *AccessTokenClaims) GetProducerSnssaiListOk() ([]Snssai, bool) {
 
 // HasProducerSnssaiList returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerSnssaiList() bool {
-	if o != nil && !IsNil(o.ProducerSnssaiList) {
+	if o != nil && !isNil(o.ProducerSnssaiList) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *AccessTokenClaims) SetProducerSnssaiList(v []Snssai) {
 
 // GetProducerNsiList returns the ProducerNsiList field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerNsiList() []string {
-	if o == nil || IsNil(o.ProducerNsiList) {
+	if o == nil || isNil(o.ProducerNsiList) {
 		var ret []string
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *AccessTokenClaims) GetProducerNsiList() []string {
 // GetProducerNsiListOk returns a tuple with the ProducerNsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerNsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ProducerNsiList) {
+	if o == nil || isNil(o.ProducerNsiList) {
 		return nil, false
 	}
 	return o.ProducerNsiList, true
@@ -362,7 +362,7 @@ func (o *AccessTokenClaims) GetProducerNsiListOk() ([]string, bool) {
 
 // HasProducerNsiList returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerNsiList() bool {
-	if o != nil && !IsNil(o.ProducerNsiList) {
+	if o != nil && !isNil(o.ProducerNsiList) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *AccessTokenClaims) SetProducerNsiList(v []string) {
 
 // GetProducerNfSetId returns the ProducerNfSetId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerNfSetId() string {
-	if o == nil || IsNil(o.ProducerNfSetId) {
+	if o == nil || isNil(o.ProducerNfSetId) {
 		var ret string
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *AccessTokenClaims) GetProducerNfSetId() string {
 // GetProducerNfSetIdOk returns a tuple with the ProducerNfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerNfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProducerNfSetId) {
+	if o == nil || isNil(o.ProducerNfSetId) {
 		return nil, false
 	}
 	return o.ProducerNfSetId, true
@@ -394,7 +394,7 @@ func (o *AccessTokenClaims) GetProducerNfSetIdOk() (*string, bool) {
 
 // HasProducerNfSetId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerNfSetId() bool {
-	if o != nil && !IsNil(o.ProducerNfSetId) {
+	if o != nil && !isNil(o.ProducerNfSetId) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *AccessTokenClaims) SetProducerNfSetId(v string) {
 
 // GetProducerNfServiceSetId returns the ProducerNfServiceSetId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetProducerNfServiceSetId() string {
-	if o == nil || IsNil(o.ProducerNfServiceSetId) {
+	if o == nil || isNil(o.ProducerNfServiceSetId) {
 		var ret string
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *AccessTokenClaims) GetProducerNfServiceSetId() string {
 // GetProducerNfServiceSetIdOk returns a tuple with the ProducerNfServiceSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetProducerNfServiceSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ProducerNfServiceSetId) {
+	if o == nil || isNil(o.ProducerNfServiceSetId) {
 		return nil, false
 	}
 	return o.ProducerNfServiceSetId, true
@@ -426,7 +426,7 @@ func (o *AccessTokenClaims) GetProducerNfServiceSetIdOk() (*string, bool) {
 
 // HasProducerNfServiceSetId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasProducerNfServiceSetId() bool {
-	if o != nil && !IsNil(o.ProducerNfServiceSetId) {
+	if o != nil && !isNil(o.ProducerNfServiceSetId) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *AccessTokenClaims) SetProducerNfServiceSetId(v string) {
 
 // GetSourceNfInstanceId returns the SourceNfInstanceId field value if set, zero value otherwise.
 func (o *AccessTokenClaims) GetSourceNfInstanceId() string {
-	if o == nil || IsNil(o.SourceNfInstanceId) {
+	if o == nil || isNil(o.SourceNfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *AccessTokenClaims) GetSourceNfInstanceId() string {
 // GetSourceNfInstanceIdOk returns a tuple with the SourceNfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessTokenClaims) GetSourceNfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceNfInstanceId) {
+	if o == nil || isNil(o.SourceNfInstanceId) {
 		return nil, false
 	}
 	return o.SourceNfInstanceId, true
@@ -458,7 +458,7 @@ func (o *AccessTokenClaims) GetSourceNfInstanceIdOk() (*string, bool) {
 
 // HasSourceNfInstanceId returns a boolean if a field has been set.
 func (o *AccessTokenClaims) HasSourceNfInstanceId() bool {
-	if o != nil && !IsNil(o.SourceNfInstanceId) {
+	if o != nil && !isNil(o.SourceNfInstanceId) {
 		return true
 	}
 
@@ -485,31 +485,31 @@ func (o AccessTokenClaims) ToMap() (map[string]interface{}, error) {
 	toSerialize["aud"] = o.Aud
 	toSerialize["scope"] = o.Scope
 	toSerialize["exp"] = o.Exp
-	if !IsNil(o.ConsumerPlmnId) {
+	if !isNil(o.ConsumerPlmnId) {
 		toSerialize["consumerPlmnId"] = o.ConsumerPlmnId
 	}
-	if !IsNil(o.ConsumerSnpnId) {
+	if !isNil(o.ConsumerSnpnId) {
 		toSerialize["consumerSnpnId"] = o.ConsumerSnpnId
 	}
-	if !IsNil(o.ProducerPlmnId) {
+	if !isNil(o.ProducerPlmnId) {
 		toSerialize["producerPlmnId"] = o.ProducerPlmnId
 	}
-	if !IsNil(o.ProducerSnpnId) {
+	if !isNil(o.ProducerSnpnId) {
 		toSerialize["producerSnpnId"] = o.ProducerSnpnId
 	}
-	if !IsNil(o.ProducerSnssaiList) {
+	if !isNil(o.ProducerSnssaiList) {
 		toSerialize["producerSnssaiList"] = o.ProducerSnssaiList
 	}
-	if !IsNil(o.ProducerNsiList) {
+	if !isNil(o.ProducerNsiList) {
 		toSerialize["producerNsiList"] = o.ProducerNsiList
 	}
-	if !IsNil(o.ProducerNfSetId) {
+	if !isNil(o.ProducerNfSetId) {
 		toSerialize["producerNfSetId"] = o.ProducerNfSetId
 	}
-	if !IsNil(o.ProducerNfServiceSetId) {
+	if !isNil(o.ProducerNfServiceSetId) {
 		toSerialize["producerNfServiceSetId"] = o.ProducerNfServiceSetId
 	}
-	if !IsNil(o.SourceNfInstanceId) {
+	if !isNil(o.SourceNfInstanceId) {
 		toSerialize["sourceNfInstanceId"] = o.SourceNfInstanceId
 	}
 	return toSerialize, nil

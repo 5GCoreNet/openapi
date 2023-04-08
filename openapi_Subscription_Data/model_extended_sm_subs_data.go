@@ -67,7 +67,7 @@ func (o *ExtendedSmSubsData) SetSharedSmSubsDataIds(v []string) {
 
 // GetIndividualSmSubsData returns the IndividualSmSubsData field value if set, zero value otherwise.
 func (o *ExtendedSmSubsData) GetIndividualSmSubsData() []SessionManagementSubscriptionData {
-	if o == nil || IsNil(o.IndividualSmSubsData) {
+	if o == nil || isNil(o.IndividualSmSubsData) {
 		var ret []SessionManagementSubscriptionData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ExtendedSmSubsData) GetIndividualSmSubsData() []SessionManagementSubscr
 // GetIndividualSmSubsDataOk returns a tuple with the IndividualSmSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedSmSubsData) GetIndividualSmSubsDataOk() ([]SessionManagementSubscriptionData, bool) {
-	if o == nil || IsNil(o.IndividualSmSubsData) {
+	if o == nil || isNil(o.IndividualSmSubsData) {
 		return nil, false
 	}
 	return o.IndividualSmSubsData, true
@@ -85,7 +85,7 @@ func (o *ExtendedSmSubsData) GetIndividualSmSubsDataOk() ([]SessionManagementSub
 
 // HasIndividualSmSubsData returns a boolean if a field has been set.
 func (o *ExtendedSmSubsData) HasIndividualSmSubsData() bool {
-	if o != nil && !IsNil(o.IndividualSmSubsData) {
+	if o != nil && !isNil(o.IndividualSmSubsData) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ExtendedSmSubsData) MarshalJSON() ([]byte, error) {
 func (o ExtendedSmSubsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sharedSmSubsDataIds"] = o.SharedSmSubsDataIds
-	if !IsNil(o.IndividualSmSubsData) {
+	if !isNil(o.IndividualSmSubsData) {
 		toSerialize["individualSmSubsData"] = o.IndividualSmSubsData
 	}
 	return toSerialize, nil

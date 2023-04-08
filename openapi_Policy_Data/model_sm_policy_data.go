@@ -74,7 +74,7 @@ func (o *SmPolicyData) SetSmPolicySnssaiData(v map[string]SmPolicySnssaiData) {
 
 // GetUmDataLimits returns the UmDataLimits field value if set, zero value otherwise.
 func (o *SmPolicyData) GetUmDataLimits() map[string]UsageMonDataLimit {
-	if o == nil || IsNil(o.UmDataLimits) {
+	if o == nil || isNil(o.UmDataLimits) {
 		var ret map[string]UsageMonDataLimit
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SmPolicyData) GetUmDataLimits() map[string]UsageMonDataLimit {
 // GetUmDataLimitsOk returns a tuple with the UmDataLimits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetUmDataLimitsOk() (*map[string]UsageMonDataLimit, bool) {
-	if o == nil || IsNil(o.UmDataLimits) {
+	if o == nil || isNil(o.UmDataLimits) {
 		return nil, false
 	}
 	return o.UmDataLimits, true
@@ -92,7 +92,7 @@ func (o *SmPolicyData) GetUmDataLimitsOk() (*map[string]UsageMonDataLimit, bool)
 
 // HasUmDataLimits returns a boolean if a field has been set.
 func (o *SmPolicyData) HasUmDataLimits() bool {
-	if o != nil && !IsNil(o.UmDataLimits) {
+	if o != nil && !isNil(o.UmDataLimits) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *SmPolicyData) SetUmDataLimits(v map[string]UsageMonDataLimit) {
 
 // GetUmData returns the UmData field value if set, zero value otherwise.
 func (o *SmPolicyData) GetUmData() map[string]UsageMonData {
-	if o == nil || IsNil(o.UmData) {
+	if o == nil || isNil(o.UmData) {
 		var ret map[string]UsageMonData
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *SmPolicyData) GetUmData() map[string]UsageMonData {
 // GetUmDataOk returns a tuple with the UmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetUmDataOk() (*map[string]UsageMonData, bool) {
-	if o == nil || IsNil(o.UmData) {
+	if o == nil || isNil(o.UmData) {
 		return nil, false
 	}
 	return o.UmData, true
@@ -124,7 +124,7 @@ func (o *SmPolicyData) GetUmDataOk() (*map[string]UsageMonData, bool) {
 
 // HasUmData returns a boolean if a field has been set.
 func (o *SmPolicyData) HasUmData() bool {
-	if o != nil && !IsNil(o.UmData) {
+	if o != nil && !isNil(o.UmData) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SmPolicyData) SetUmData(v map[string]UsageMonData) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SmPolicyData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *SmPolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -156,7 +156,7 @@ func (o *SmPolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SmPolicyData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *SmPolicyData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SmPolicyData) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *SmPolicyData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -188,7 +188,7 @@ func (o *SmPolicyData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SmPolicyData) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -211,16 +211,16 @@ func (o SmPolicyData) MarshalJSON() ([]byte, error) {
 func (o SmPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smPolicySnssaiData"] = o.SmPolicySnssaiData
-	if !IsNil(o.UmDataLimits) {
+	if !isNil(o.UmDataLimits) {
 		toSerialize["umDataLimits"] = o.UmDataLimits
 	}
-	if !IsNil(o.UmData) {
+	if !isNil(o.UmData) {
 		toSerialize["umData"] = o.UmData
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

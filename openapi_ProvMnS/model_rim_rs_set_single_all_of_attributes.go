@@ -43,7 +43,7 @@ func NewRimRSSetSingleAllOfAttributesWithDefaults() *RimRSSetSingleAllOfAttribut
 
 // GetSetId returns the SetId field value if set, zero value otherwise.
 func (o *RimRSSetSingleAllOfAttributes) GetSetId() int32 {
-	if o == nil || IsNil(o.SetId) {
+	if o == nil || isNil(o.SetId) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RimRSSetSingleAllOfAttributes) GetSetId() int32 {
 // GetSetIdOk returns a tuple with the SetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSSetSingleAllOfAttributes) GetSetIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.SetId) {
+	if o == nil || isNil(o.SetId) {
 		return nil, false
 	}
 	return o.SetId, true
@@ -61,7 +61,7 @@ func (o *RimRSSetSingleAllOfAttributes) GetSetIdOk() (*int32, bool) {
 
 // HasSetId returns a boolean if a field has been set.
 func (o *RimRSSetSingleAllOfAttributes) HasSetId() bool {
-	if o != nil && !IsNil(o.SetId) {
+	if o != nil && !isNil(o.SetId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RimRSSetSingleAllOfAttributes) SetSetId(v int32) {
 
 // GetSetType returns the SetType field value if set, zero value otherwise.
 func (o *RimRSSetSingleAllOfAttributes) GetSetType() RSSetType {
-	if o == nil || IsNil(o.SetType) {
+	if o == nil || isNil(o.SetType) {
 		var ret RSSetType
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RimRSSetSingleAllOfAttributes) GetSetType() RSSetType {
 // GetSetTypeOk returns a tuple with the SetType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSSetSingleAllOfAttributes) GetSetTypeOk() (*RSSetType, bool) {
-	if o == nil || IsNil(o.SetType) {
+	if o == nil || isNil(o.SetType) {
 		return nil, false
 	}
 	return o.SetType, true
@@ -93,7 +93,7 @@ func (o *RimRSSetSingleAllOfAttributes) GetSetTypeOk() (*RSSetType, bool) {
 
 // HasSetType returns a boolean if a field has been set.
 func (o *RimRSSetSingleAllOfAttributes) HasSetType() bool {
-	if o != nil && !IsNil(o.SetType) {
+	if o != nil && !isNil(o.SetType) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RimRSSetSingleAllOfAttributes) SetSetType(v RSSetType) {
 
 // GetNRCellDURefs returns the NRCellDURefs field value if set, zero value otherwise.
 func (o *RimRSSetSingleAllOfAttributes) GetNRCellDURefs() []string {
-	if o == nil || IsNil(o.NRCellDURefs) {
+	if o == nil || isNil(o.NRCellDURefs) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RimRSSetSingleAllOfAttributes) GetNRCellDURefs() []string {
 // GetNRCellDURefsOk returns a tuple with the NRCellDURefs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSSetSingleAllOfAttributes) GetNRCellDURefsOk() ([]string, bool) {
-	if o == nil || IsNil(o.NRCellDURefs) {
+	if o == nil || isNil(o.NRCellDURefs) {
 		return nil, false
 	}
 	return o.NRCellDURefs, true
@@ -125,7 +125,7 @@ func (o *RimRSSetSingleAllOfAttributes) GetNRCellDURefsOk() ([]string, bool) {
 
 // HasNRCellDURefs returns a boolean if a field has been set.
 func (o *RimRSSetSingleAllOfAttributes) HasNRCellDURefs() bool {
-	if o != nil && !IsNil(o.NRCellDURefs) {
+	if o != nil && !isNil(o.NRCellDURefs) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o RimRSSetSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o RimRSSetSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SetId) {
+	if !isNil(o.SetId) {
 		toSerialize["setId"] = o.SetId
 	}
-	if !IsNil(o.SetType) {
+	if !isNil(o.SetType) {
 		toSerialize["setType"] = o.SetType
 	}
-	if !IsNil(o.NRCellDURefs) {
+	if !isNil(o.NRCellDURefs) {
 		toSerialize["nRCellDURefs"] = o.NRCellDURefs
 	}
 	return toSerialize, nil

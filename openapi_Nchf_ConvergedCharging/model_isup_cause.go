@@ -45,7 +45,7 @@ func NewISUPCauseWithDefaults() *ISUPCause {
 
 // GetISUPCauseLocation returns the ISUPCauseLocation field value if set, zero value otherwise.
 func (o *ISUPCause) GetISUPCauseLocation() int32 {
-	if o == nil || IsNil(o.ISUPCauseLocation) {
+	if o == nil || isNil(o.ISUPCauseLocation) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ISUPCause) GetISUPCauseLocation() int32 {
 // GetISUPCauseLocationOk returns a tuple with the ISUPCauseLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ISUPCause) GetISUPCauseLocationOk() (*int32, bool) {
-	if o == nil || IsNil(o.ISUPCauseLocation) {
+	if o == nil || isNil(o.ISUPCauseLocation) {
 		return nil, false
 	}
 	return o.ISUPCauseLocation, true
@@ -63,7 +63,7 @@ func (o *ISUPCause) GetISUPCauseLocationOk() (*int32, bool) {
 
 // HasISUPCauseLocation returns a boolean if a field has been set.
 func (o *ISUPCause) HasISUPCauseLocation() bool {
-	if o != nil && !IsNil(o.ISUPCauseLocation) {
+	if o != nil && !isNil(o.ISUPCauseLocation) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ISUPCause) SetISUPCauseLocation(v int32) {
 
 // GetISUPCauseValue returns the ISUPCauseValue field value if set, zero value otherwise.
 func (o *ISUPCause) GetISUPCauseValue() int32 {
-	if o == nil || IsNil(o.ISUPCauseValue) {
+	if o == nil || isNil(o.ISUPCauseValue) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ISUPCause) GetISUPCauseValue() int32 {
 // GetISUPCauseValueOk returns a tuple with the ISUPCauseValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ISUPCause) GetISUPCauseValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.ISUPCauseValue) {
+	if o == nil || isNil(o.ISUPCauseValue) {
 		return nil, false
 	}
 	return o.ISUPCauseValue, true
@@ -95,7 +95,7 @@ func (o *ISUPCause) GetISUPCauseValueOk() (*int32, bool) {
 
 // HasISUPCauseValue returns a boolean if a field has been set.
 func (o *ISUPCause) HasISUPCauseValue() bool {
-	if o != nil && !IsNil(o.ISUPCauseValue) {
+	if o != nil && !isNil(o.ISUPCauseValue) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ISUPCause) SetISUPCauseValue(v int32) {
 
 // GetISUPCauseDiagnostics returns the ISUPCauseDiagnostics field value if set, zero value otherwise.
 func (o *ISUPCause) GetISUPCauseDiagnostics() string {
-	if o == nil || IsNil(o.ISUPCauseDiagnostics) {
+	if o == nil || isNil(o.ISUPCauseDiagnostics) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ISUPCause) GetISUPCauseDiagnostics() string {
 // GetISUPCauseDiagnosticsOk returns a tuple with the ISUPCauseDiagnostics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ISUPCause) GetISUPCauseDiagnosticsOk() (*string, bool) {
-	if o == nil || IsNil(o.ISUPCauseDiagnostics) {
+	if o == nil || isNil(o.ISUPCauseDiagnostics) {
 		return nil, false
 	}
 	return o.ISUPCauseDiagnostics, true
@@ -127,7 +127,7 @@ func (o *ISUPCause) GetISUPCauseDiagnosticsOk() (*string, bool) {
 
 // HasISUPCauseDiagnostics returns a boolean if a field has been set.
 func (o *ISUPCause) HasISUPCauseDiagnostics() bool {
-	if o != nil && !IsNil(o.ISUPCauseDiagnostics) {
+	if o != nil && !isNil(o.ISUPCauseDiagnostics) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o ISUPCause) MarshalJSON() ([]byte, error) {
 
 func (o ISUPCause) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ISUPCauseLocation) {
+	if !isNil(o.ISUPCauseLocation) {
 		toSerialize["iSUPCauseLocation"] = o.ISUPCauseLocation
 	}
-	if !IsNil(o.ISUPCauseValue) {
+	if !isNil(o.ISUPCauseValue) {
 		toSerialize["iSUPCauseValue"] = o.ISUPCauseValue
 	}
-	if !IsNil(o.ISUPCauseDiagnostics) {
+	if !isNil(o.ISUPCauseDiagnostics) {
 		toSerialize["iSUPCauseDiagnostics"] = o.ISUPCauseDiagnostics
 	}
 	return toSerialize, nil

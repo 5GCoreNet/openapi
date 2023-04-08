@@ -95,7 +95,7 @@ func (o *N1N2MsgTxfrFailureNotification) SetN1n2MsgDataUri(v string) {
 
 // GetRetryAfter returns the RetryAfter field value if set, zero value otherwise.
 func (o *N1N2MsgTxfrFailureNotification) GetRetryAfter() int32 {
-	if o == nil || IsNil(o.RetryAfter) {
+	if o == nil || isNil(o.RetryAfter) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *N1N2MsgTxfrFailureNotification) GetRetryAfter() int32 {
 // GetRetryAfterOk returns a tuple with the RetryAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MsgTxfrFailureNotification) GetRetryAfterOk() (*int32, bool) {
-	if o == nil || IsNil(o.RetryAfter) {
+	if o == nil || isNil(o.RetryAfter) {
 		return nil, false
 	}
 	return o.RetryAfter, true
@@ -113,7 +113,7 @@ func (o *N1N2MsgTxfrFailureNotification) GetRetryAfterOk() (*int32, bool) {
 
 // HasRetryAfter returns a boolean if a field has been set.
 func (o *N1N2MsgTxfrFailureNotification) HasRetryAfter() bool {
-	if o != nil && !IsNil(o.RetryAfter) {
+	if o != nil && !isNil(o.RetryAfter) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o N1N2MsgTxfrFailureNotification) ToMap() (map[string]interface{}, error) 
 	toSerialize := map[string]interface{}{}
 	toSerialize["cause"] = o.Cause
 	toSerialize["n1n2MsgDataUri"] = o.N1n2MsgDataUri
-	if !IsNil(o.RetryAfter) {
+	if !isNil(o.RetryAfter) {
 		toSerialize["retryAfter"] = o.RetryAfter
 	}
 	return toSerialize, nil

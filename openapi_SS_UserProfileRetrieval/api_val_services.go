@@ -13,7 +13,7 @@ package openapi_SS_UserProfileRetrieval
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -85,9 +85,9 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 	}
 
 	if r.valServiceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
+		parameterAddToQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
 	}
-	parameterAddToHeaderOrQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
+	parameterAddToQuery(localVarQueryParams, "val-tgt-ue", r.valTgtUe, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -115,9 +115,9 @@ func (a *VALServicesApiService) RetrieveValUserProfileExecute(r ApiRetrieveValUs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

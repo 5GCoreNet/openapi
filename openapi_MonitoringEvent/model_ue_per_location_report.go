@@ -73,7 +73,7 @@ func (o *UePerLocationReport) SetUeCount(v int32) {
 
 // GetExternalIds returns the ExternalIds field value if set, zero value otherwise.
 func (o *UePerLocationReport) GetExternalIds() []string {
-	if o == nil || IsNil(o.ExternalIds) {
+	if o == nil || isNil(o.ExternalIds) {
 		var ret []string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *UePerLocationReport) GetExternalIds() []string {
 // GetExternalIdsOk returns a tuple with the ExternalIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePerLocationReport) GetExternalIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExternalIds) {
+	if o == nil || isNil(o.ExternalIds) {
 		return nil, false
 	}
 	return o.ExternalIds, true
@@ -91,7 +91,7 @@ func (o *UePerLocationReport) GetExternalIdsOk() ([]string, bool) {
 
 // HasExternalIds returns a boolean if a field has been set.
 func (o *UePerLocationReport) HasExternalIds() bool {
-	if o != nil && !IsNil(o.ExternalIds) {
+	if o != nil && !isNil(o.ExternalIds) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *UePerLocationReport) SetExternalIds(v []string) {
 
 // GetMsisdns returns the Msisdns field value if set, zero value otherwise.
 func (o *UePerLocationReport) GetMsisdns() []string {
-	if o == nil || IsNil(o.Msisdns) {
+	if o == nil || isNil(o.Msisdns) {
 		var ret []string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *UePerLocationReport) GetMsisdns() []string {
 // GetMsisdnsOk returns a tuple with the Msisdns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePerLocationReport) GetMsisdnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Msisdns) {
+	if o == nil || isNil(o.Msisdns) {
 		return nil, false
 	}
 	return o.Msisdns, true
@@ -123,7 +123,7 @@ func (o *UePerLocationReport) GetMsisdnsOk() ([]string, bool) {
 
 // HasMsisdns returns a boolean if a field has been set.
 func (o *UePerLocationReport) HasMsisdns() bool {
-	if o != nil && !IsNil(o.Msisdns) {
+	if o != nil && !isNil(o.Msisdns) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *UePerLocationReport) SetMsisdns(v []string) {
 
 // GetServLevelDevIds returns the ServLevelDevIds field value if set, zero value otherwise.
 func (o *UePerLocationReport) GetServLevelDevIds() []string {
-	if o == nil || IsNil(o.ServLevelDevIds) {
+	if o == nil || isNil(o.ServLevelDevIds) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *UePerLocationReport) GetServLevelDevIds() []string {
 // GetServLevelDevIdsOk returns a tuple with the ServLevelDevIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePerLocationReport) GetServLevelDevIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServLevelDevIds) {
+	if o == nil || isNil(o.ServLevelDevIds) {
 		return nil, false
 	}
 	return o.ServLevelDevIds, true
@@ -155,7 +155,7 @@ func (o *UePerLocationReport) GetServLevelDevIdsOk() ([]string, bool) {
 
 // HasServLevelDevIds returns a boolean if a field has been set.
 func (o *UePerLocationReport) HasServLevelDevIds() bool {
-	if o != nil && !IsNil(o.ServLevelDevIds) {
+	if o != nil && !isNil(o.ServLevelDevIds) {
 		return true
 	}
 
@@ -178,13 +178,13 @@ func (o UePerLocationReport) MarshalJSON() ([]byte, error) {
 func (o UePerLocationReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueCount"] = o.UeCount
-	if !IsNil(o.ExternalIds) {
+	if !isNil(o.ExternalIds) {
 		toSerialize["externalIds"] = o.ExternalIds
 	}
-	if !IsNil(o.Msisdns) {
+	if !isNil(o.Msisdns) {
 		toSerialize["msisdns"] = o.Msisdns
 	}
-	if !IsNil(o.ServLevelDevIds) {
+	if !isNil(o.ServLevelDevIds) {
 		toSerialize["servLevelDevIds"] = o.ServLevelDevIds
 	}
 	return toSerialize, nil

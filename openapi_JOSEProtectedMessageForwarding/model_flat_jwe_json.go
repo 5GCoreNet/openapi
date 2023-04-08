@@ -49,7 +49,7 @@ func NewFlatJweJsonWithDefaults() *FlatJweJson {
 
 // GetProtected returns the Protected field value if set, zero value otherwise.
 func (o *FlatJweJson) GetProtected() string {
-	if o == nil || IsNil(o.Protected) {
+	if o == nil || isNil(o.Protected) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *FlatJweJson) GetProtected() string {
 // GetProtectedOk returns a tuple with the Protected field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetProtectedOk() (*string, bool) {
-	if o == nil || IsNil(o.Protected) {
+	if o == nil || isNil(o.Protected) {
 		return nil, false
 	}
 	return o.Protected, true
@@ -67,7 +67,7 @@ func (o *FlatJweJson) GetProtectedOk() (*string, bool) {
 
 // HasProtected returns a boolean if a field has been set.
 func (o *FlatJweJson) HasProtected() bool {
-	if o != nil && !IsNil(o.Protected) {
+	if o != nil && !isNil(o.Protected) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *FlatJweJson) SetProtected(v string) {
 
 // GetUnprotected returns the Unprotected field value if set, zero value otherwise.
 func (o *FlatJweJson) GetUnprotected() map[string]interface{} {
-	if o == nil || IsNil(o.Unprotected) {
+	if o == nil || isNil(o.Unprotected) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *FlatJweJson) GetUnprotected() map[string]interface{} {
 // GetUnprotectedOk returns a tuple with the Unprotected field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetUnprotectedOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Unprotected) {
+	if o == nil || isNil(o.Unprotected) {
 		return map[string]interface{}{}, false
 	}
 	return o.Unprotected, true
@@ -99,7 +99,7 @@ func (o *FlatJweJson) GetUnprotectedOk() (map[string]interface{}, bool) {
 
 // HasUnprotected returns a boolean if a field has been set.
 func (o *FlatJweJson) HasUnprotected() bool {
-	if o != nil && !IsNil(o.Unprotected) {
+	if o != nil && !isNil(o.Unprotected) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *FlatJweJson) SetUnprotected(v map[string]interface{}) {
 
 // GetHeader returns the Header field value if set, zero value otherwise.
 func (o *FlatJweJson) GetHeader() map[string]interface{} {
-	if o == nil || IsNil(o.Header) {
+	if o == nil || isNil(o.Header) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *FlatJweJson) GetHeader() map[string]interface{} {
 // GetHeaderOk returns a tuple with the Header field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetHeaderOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Header) {
+	if o == nil || isNil(o.Header) {
 		return map[string]interface{}{}, false
 	}
 	return o.Header, true
@@ -131,7 +131,7 @@ func (o *FlatJweJson) GetHeaderOk() (map[string]interface{}, bool) {
 
 // HasHeader returns a boolean if a field has been set.
 func (o *FlatJweJson) HasHeader() bool {
-	if o != nil && !IsNil(o.Header) {
+	if o != nil && !isNil(o.Header) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *FlatJweJson) SetHeader(v map[string]interface{}) {
 
 // GetEncryptedKey returns the EncryptedKey field value if set, zero value otherwise.
 func (o *FlatJweJson) GetEncryptedKey() string {
-	if o == nil || IsNil(o.EncryptedKey) {
+	if o == nil || isNil(o.EncryptedKey) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *FlatJweJson) GetEncryptedKey() string {
 // GetEncryptedKeyOk returns a tuple with the EncryptedKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetEncryptedKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.EncryptedKey) {
+	if o == nil || isNil(o.EncryptedKey) {
 		return nil, false
 	}
 	return o.EncryptedKey, true
@@ -163,7 +163,7 @@ func (o *FlatJweJson) GetEncryptedKeyOk() (*string, bool) {
 
 // HasEncryptedKey returns a boolean if a field has been set.
 func (o *FlatJweJson) HasEncryptedKey() bool {
-	if o != nil && !IsNil(o.EncryptedKey) {
+	if o != nil && !isNil(o.EncryptedKey) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *FlatJweJson) SetEncryptedKey(v string) {
 
 // GetAad returns the Aad field value if set, zero value otherwise.
 func (o *FlatJweJson) GetAad() string {
-	if o == nil || IsNil(o.Aad) {
+	if o == nil || isNil(o.Aad) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *FlatJweJson) GetAad() string {
 // GetAadOk returns a tuple with the Aad field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetAadOk() (*string, bool) {
-	if o == nil || IsNil(o.Aad) {
+	if o == nil || isNil(o.Aad) {
 		return nil, false
 	}
 	return o.Aad, true
@@ -195,7 +195,7 @@ func (o *FlatJweJson) GetAadOk() (*string, bool) {
 
 // HasAad returns a boolean if a field has been set.
 func (o *FlatJweJson) HasAad() bool {
-	if o != nil && !IsNil(o.Aad) {
+	if o != nil && !isNil(o.Aad) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *FlatJweJson) SetAad(v string) {
 
 // GetIv returns the Iv field value if set, zero value otherwise.
 func (o *FlatJweJson) GetIv() string {
-	if o == nil || IsNil(o.Iv) {
+	if o == nil || isNil(o.Iv) {
 		var ret string
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *FlatJweJson) GetIv() string {
 // GetIvOk returns a tuple with the Iv field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetIvOk() (*string, bool) {
-	if o == nil || IsNil(o.Iv) {
+	if o == nil || isNil(o.Iv) {
 		return nil, false
 	}
 	return o.Iv, true
@@ -227,7 +227,7 @@ func (o *FlatJweJson) GetIvOk() (*string, bool) {
 
 // HasIv returns a boolean if a field has been set.
 func (o *FlatJweJson) HasIv() bool {
-	if o != nil && !IsNil(o.Iv) {
+	if o != nil && !isNil(o.Iv) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *FlatJweJson) SetCiphertext(v string) {
 
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *FlatJweJson) GetTag() string {
-	if o == nil || IsNil(o.Tag) {
+	if o == nil || isNil(o.Tag) {
 		var ret string
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *FlatJweJson) GetTag() string {
 // GetTagOk returns a tuple with the Tag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJweJson) GetTagOk() (*string, bool) {
-	if o == nil || IsNil(o.Tag) {
+	if o == nil || isNil(o.Tag) {
 		return nil, false
 	}
 	return o.Tag, true
@@ -283,7 +283,7 @@ func (o *FlatJweJson) GetTagOk() (*string, bool) {
 
 // HasTag returns a boolean if a field has been set.
 func (o *FlatJweJson) HasTag() bool {
-	if o != nil && !IsNil(o.Tag) {
+	if o != nil && !isNil(o.Tag) {
 		return true
 	}
 
@@ -305,26 +305,26 @@ func (o FlatJweJson) MarshalJSON() ([]byte, error) {
 
 func (o FlatJweJson) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Protected) {
+	if !isNil(o.Protected) {
 		toSerialize["protected"] = o.Protected
 	}
-	if !IsNil(o.Unprotected) {
+	if !isNil(o.Unprotected) {
 		toSerialize["unprotected"] = o.Unprotected
 	}
-	if !IsNil(o.Header) {
+	if !isNil(o.Header) {
 		toSerialize["header"] = o.Header
 	}
-	if !IsNil(o.EncryptedKey) {
+	if !isNil(o.EncryptedKey) {
 		toSerialize["encrypted_key"] = o.EncryptedKey
 	}
-	if !IsNil(o.Aad) {
+	if !isNil(o.Aad) {
 		toSerialize["aad"] = o.Aad
 	}
-	if !IsNil(o.Iv) {
+	if !isNil(o.Iv) {
 		toSerialize["iv"] = o.Iv
 	}
 	toSerialize["ciphertext"] = o.Ciphertext
-	if !IsNil(o.Tag) {
+	if !isNil(o.Tag) {
 		toSerialize["tag"] = o.Tag
 	}
 	return toSerialize, nil

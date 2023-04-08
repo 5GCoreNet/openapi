@@ -13,7 +13,7 @@ package openapi_MonitoringEvent
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -37,7 +37,7 @@ func (r ApiCreateMonitoringEventSubscriptionRequest) MonitoringEventSubscription
 	return r
 }
 
-func (r ApiCreateMonitoringEventSubscriptionRequest) Execute() (*OneOfMonitoringEventReportMonitoringEventReports, *http.Response, error) {
+func (r ApiCreateMonitoringEventSubscriptionRequest) Execute() (*CreateMonitoringEventSubscription200Response, *http.Response, error) {
 	return r.ApiService.CreateMonitoringEventSubscriptionExecute(r)
 }
 
@@ -57,13 +57,13 @@ func (a *MonitoringEventSubscriptionsApiService) CreateMonitoringEventSubscripti
 }
 
 // Execute executes the request
-//  @return OneOfMonitoringEventReportMonitoringEventReports
-func (a *MonitoringEventSubscriptionsApiService) CreateMonitoringEventSubscriptionExecute(r ApiCreateMonitoringEventSubscriptionRequest) (*OneOfMonitoringEventReportMonitoringEventReports, *http.Response, error) {
+//  @return CreateMonitoringEventSubscription200Response
+func (a *MonitoringEventSubscriptionsApiService) CreateMonitoringEventSubscriptionExecute(r ApiCreateMonitoringEventSubscriptionRequest) (*CreateMonitoringEventSubscription200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *OneOfMonitoringEventReportMonitoringEventReports
+		localVarReturnValue  *CreateMonitoringEventSubscription200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MonitoringEventSubscriptionsApiService.CreateMonitoringEventSubscription")
@@ -110,9 +110,9 @@ func (a *MonitoringEventSubscriptionsApiService) CreateMonitoringEventSubscripti
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -316,20 +316,20 @@ func (a *MonitoringEventSubscriptionsApiService) FetchAllMonitoringEventSubscrip
 	localVarFormParams := url.Values{}
 
 	if r.ipAddrs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-addrs", r.ipAddrs, "csv")
+		parameterAddToQuery(localVarQueryParams, "ip-addrs", r.ipAddrs, "csv")
 	}
 	if r.ipDomain != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
+		parameterAddToQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
 	}
 	if r.macAddrs != nil {
 		t := *r.macAddrs
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "mac-addrs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -359,9 +359,9 @@ func (a *MonitoringEventSubscriptionsApiService) FetchAllMonitoringEventSubscrip
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

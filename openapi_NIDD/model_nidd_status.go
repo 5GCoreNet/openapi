@@ -17,23 +17,37 @@ import (
 
 // NiddStatus Possible values are - ACTIVE: The NIDD configuration is active. - TERMINATED_UE_NOT_AUTHORIZED: The NIDD configuration was terminated because the UE´s authorisation was revoked. - TERMINATED: The NIDD configuration was terminated. - RDS_PORT_UNKNOWN: The RDS port is unknown. 
 type NiddStatus struct {
-	string *string
+	NiddStatusAnyOf *NiddStatusAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NiddStatus) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NiddStatusAnyOf
+	err = json.Unmarshal(data, &dst.NiddStatusAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNiddStatusAnyOf, _ := json.Marshal(dst.NiddStatusAnyOf)
+		if string(jsonNiddStatusAnyOf) == "{}" { // empty struct
+			dst.NiddStatusAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NiddStatusAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NiddStatusAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NiddStatus)")
@@ -41,8 +55,12 @@ func (dst *NiddStatus) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NiddStatus) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NiddStatusAnyOf != nil {
+		return json.Marshal(&src.NiddStatusAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -153,7 +153,7 @@ func (o *SEALEventSubscription) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *SEALEventSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -171,7 +171,7 @@ func (o *SEALEventSubscription) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *SEALEventSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *SEALEventSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -203,7 +203,7 @@ func (o *SEALEventSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, 
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *SEALEventSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetEventDetails returns the EventDetails field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetEventDetails() []SEALEventDetail {
-	if o == nil || IsNil(o.EventDetails) {
+	if o == nil || isNil(o.EventDetails) {
 		var ret []SEALEventDetail
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *SEALEventSubscription) GetEventDetails() []SEALEventDetail {
 // GetEventDetailsOk returns a tuple with the EventDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetEventDetailsOk() ([]SEALEventDetail, bool) {
-	if o == nil || IsNil(o.EventDetails) {
+	if o == nil || isNil(o.EventDetails) {
 		return nil, false
 	}
 	return o.EventDetails, true
@@ -235,7 +235,7 @@ func (o *SEALEventSubscription) GetEventDetailsOk() ([]SEALEventDetail, bool) {
 
 // HasEventDetails returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasEventDetails() bool {
-	if o != nil && !IsNil(o.EventDetails) {
+	if o != nil && !isNil(o.EventDetails) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *SEALEventSubscription) SetEventDetails(v []SEALEventDetail) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SEALEventSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *SEALEventSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -267,7 +267,7 @@ func (o *SEALEventSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SEALEventSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -293,16 +293,16 @@ func (o SEALEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventSubs"] = o.EventSubs
 	toSerialize["eventReq"] = o.EventReq
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.EventDetails) {
+	if !isNil(o.EventDetails) {
 		toSerialize["eventDetails"] = o.EventDetails
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

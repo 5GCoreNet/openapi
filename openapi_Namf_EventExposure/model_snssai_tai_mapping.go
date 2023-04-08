@@ -68,7 +68,7 @@ func (o *SnssaiTaiMapping) SetReportingArea(v TargetArea) {
 
 // GetAccessTypeList returns the AccessTypeList field value if set, zero value otherwise.
 func (o *SnssaiTaiMapping) GetAccessTypeList() []AccessType {
-	if o == nil || IsNil(o.AccessTypeList) {
+	if o == nil || isNil(o.AccessTypeList) {
 		var ret []AccessType
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SnssaiTaiMapping) GetAccessTypeList() []AccessType {
 // GetAccessTypeListOk returns a tuple with the AccessTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiTaiMapping) GetAccessTypeListOk() ([]AccessType, bool) {
-	if o == nil || IsNil(o.AccessTypeList) {
+	if o == nil || isNil(o.AccessTypeList) {
 		return nil, false
 	}
 	return o.AccessTypeList, true
@@ -86,7 +86,7 @@ func (o *SnssaiTaiMapping) GetAccessTypeListOk() ([]AccessType, bool) {
 
 // HasAccessTypeList returns a boolean if a field has been set.
 func (o *SnssaiTaiMapping) HasAccessTypeList() bool {
-	if o != nil && !IsNil(o.AccessTypeList) {
+	if o != nil && !isNil(o.AccessTypeList) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SnssaiTaiMapping) SetAccessTypeList(v []AccessType) {
 
 // GetSupportedSnssaiList returns the SupportedSnssaiList field value if set, zero value otherwise.
 func (o *SnssaiTaiMapping) GetSupportedSnssaiList() []SupportedSnssai {
-	if o == nil || IsNil(o.SupportedSnssaiList) {
+	if o == nil || isNil(o.SupportedSnssaiList) {
 		var ret []SupportedSnssai
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SnssaiTaiMapping) GetSupportedSnssaiList() []SupportedSnssai {
 // GetSupportedSnssaiListOk returns a tuple with the SupportedSnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiTaiMapping) GetSupportedSnssaiListOk() ([]SupportedSnssai, bool) {
-	if o == nil || IsNil(o.SupportedSnssaiList) {
+	if o == nil || isNil(o.SupportedSnssaiList) {
 		return nil, false
 	}
 	return o.SupportedSnssaiList, true
@@ -118,7 +118,7 @@ func (o *SnssaiTaiMapping) GetSupportedSnssaiListOk() ([]SupportedSnssai, bool) 
 
 // HasSupportedSnssaiList returns a boolean if a field has been set.
 func (o *SnssaiTaiMapping) HasSupportedSnssaiList() bool {
-	if o != nil && !IsNil(o.SupportedSnssaiList) {
+	if o != nil && !isNil(o.SupportedSnssaiList) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o SnssaiTaiMapping) MarshalJSON() ([]byte, error) {
 func (o SnssaiTaiMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reportingArea"] = o.ReportingArea
-	if !IsNil(o.AccessTypeList) {
+	if !isNil(o.AccessTypeList) {
 		toSerialize["accessTypeList"] = o.AccessTypeList
 	}
-	if !IsNil(o.SupportedSnssaiList) {
+	if !isNil(o.SupportedSnssaiList) {
 		toSerialize["supportedSnssaiList"] = o.SupportedSnssaiList
 	}
 	return toSerialize, nil

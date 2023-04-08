@@ -78,7 +78,7 @@ func (o *MbsQoSReq) SetVar5qi(v int32) {
 
 // GetGuarBitRate returns the GuarBitRate field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetGuarBitRate() string {
-	if o == nil || IsNil(o.GuarBitRate) {
+	if o == nil || isNil(o.GuarBitRate) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MbsQoSReq) GetGuarBitRate() string {
 // GetGuarBitRateOk returns a tuple with the GuarBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetGuarBitRateOk() (*string, bool) {
-	if o == nil || IsNil(o.GuarBitRate) {
+	if o == nil || isNil(o.GuarBitRate) {
 		return nil, false
 	}
 	return o.GuarBitRate, true
@@ -96,7 +96,7 @@ func (o *MbsQoSReq) GetGuarBitRateOk() (*string, bool) {
 
 // HasGuarBitRate returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasGuarBitRate() bool {
-	if o != nil && !IsNil(o.GuarBitRate) {
+	if o != nil && !isNil(o.GuarBitRate) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MbsQoSReq) SetGuarBitRate(v string) {
 
 // GetMaxBitRate returns the MaxBitRate field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetMaxBitRate() string {
-	if o == nil || IsNil(o.MaxBitRate) {
+	if o == nil || isNil(o.MaxBitRate) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MbsQoSReq) GetMaxBitRate() string {
 // GetMaxBitRateOk returns a tuple with the MaxBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetMaxBitRateOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxBitRate) {
+	if o == nil || isNil(o.MaxBitRate) {
 		return nil, false
 	}
 	return o.MaxBitRate, true
@@ -128,7 +128,7 @@ func (o *MbsQoSReq) GetMaxBitRateOk() (*string, bool) {
 
 // HasMaxBitRate returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasMaxBitRate() bool {
-	if o != nil && !IsNil(o.MaxBitRate) {
+	if o != nil && !isNil(o.MaxBitRate) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MbsQoSReq) SetMaxBitRate(v string) {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetAverWindow() int32 {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MbsQoSReq) GetAverWindow() int32 {
 // GetAverWindowOk returns a tuple with the AverWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetAverWindowOk() (*int32, bool) {
-	if o == nil || IsNil(o.AverWindow) {
+	if o == nil || isNil(o.AverWindow) {
 		return nil, false
 	}
 	return o.AverWindow, true
@@ -160,7 +160,7 @@ func (o *MbsQoSReq) GetAverWindowOk() (*int32, bool) {
 
 // HasAverWindow returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasAverWindow() bool {
-	if o != nil && !IsNil(o.AverWindow) {
+	if o != nil && !isNil(o.AverWindow) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *MbsQoSReq) SetAverWindow(v int32) {
 
 // GetReqMbsArp returns the ReqMbsArp field value if set, zero value otherwise.
 func (o *MbsQoSReq) GetReqMbsArp() Arp {
-	if o == nil || IsNil(o.ReqMbsArp) {
+	if o == nil || isNil(o.ReqMbsArp) {
 		var ret Arp
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MbsQoSReq) GetReqMbsArp() Arp {
 // GetReqMbsArpOk returns a tuple with the ReqMbsArp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsQoSReq) GetReqMbsArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.ReqMbsArp) {
+	if o == nil || isNil(o.ReqMbsArp) {
 		return nil, false
 	}
 	return o.ReqMbsArp, true
@@ -192,7 +192,7 @@ func (o *MbsQoSReq) GetReqMbsArpOk() (*Arp, bool) {
 
 // HasReqMbsArp returns a boolean if a field has been set.
 func (o *MbsQoSReq) HasReqMbsArp() bool {
-	if o != nil && !IsNil(o.ReqMbsArp) {
+	if o != nil && !isNil(o.ReqMbsArp) {
 		return true
 	}
 
@@ -215,16 +215,16 @@ func (o MbsQoSReq) MarshalJSON() ([]byte, error) {
 func (o MbsQoSReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["5qi"] = o.Var5qi
-	if !IsNil(o.GuarBitRate) {
+	if !isNil(o.GuarBitRate) {
 		toSerialize["guarBitRate"] = o.GuarBitRate
 	}
-	if !IsNil(o.MaxBitRate) {
+	if !isNil(o.MaxBitRate) {
 		toSerialize["maxBitRate"] = o.MaxBitRate
 	}
-	if !IsNil(o.AverWindow) {
+	if !isNil(o.AverWindow) {
 		toSerialize["averWindow"] = o.AverWindow
 	}
-	if !IsNil(o.ReqMbsArp) {
+	if !isNil(o.ReqMbsArp) {
 		toSerialize["reqMbsArp"] = o.ReqMbsArp
 	}
 	return toSerialize, nil

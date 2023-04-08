@@ -17,23 +17,37 @@ import (
 
 // NotifyType Possible values are: - REAUTHENTICATE: The UAV needs to be reauthenticated. - REAUTHORIZE: Authorization data needs to be updated to UAV. - REVOKE: Revoke UAV authentication and authorization. 
 type NotifyType struct {
-	string *string
+	NotifyTypeAnyOf *NotifyTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotifyType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NotifyTypeAnyOf
+	err = json.Unmarshal(data, &dst.NotifyTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNotifyTypeAnyOf, _ := json.Marshal(dst.NotifyTypeAnyOf)
+		if string(jsonNotifyTypeAnyOf) == "{}" { // empty struct
+			dst.NotifyTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NotifyTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NotifyTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NotifyType)")
@@ -41,8 +55,12 @@ func (dst *NotifyType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotifyType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NotifyTypeAnyOf != nil {
+		return json.Marshal(&src.NotifyTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

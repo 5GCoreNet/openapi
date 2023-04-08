@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -14,6 +13,7 @@ docs/ACInfoSubscriptionPatch.md
 docs/ACInformation.md
 docs/ACProfile.md
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/ACServiceKPIs.md
 docs/ApplicationClientInformationSubscriptionsCollectionApi.md
 docs/CivicAddress.md
@@ -38,8 +38,11 @@ docs/LocationArea5G.md
 docs/Ncgi.md
 docs/NetworkAreaInfo.md
 docs/NotificationFlag.md
+docs/NotificationFlagAnyOf.md
 docs/NotificationMethod.md
+docs/NotificationMethodAnyOf.md
 docs/PartitioningCriteria.md
+docs/PartitioningCriteriaAnyOf.md
 docs/PlmnId.md
 docs/PlmnId1.md
 docs/Point.md
@@ -60,6 +63,7 @@ docs/ReportingInformation.md
 docs/ScheduledCommunicationTime.md
 docs/ServiceArea.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/TopologicalServiceArea.md
 docs/UncertaintyEllipse.md
@@ -76,6 +80,7 @@ model_ac_information.go
 model_ac_profile.go
 model_ac_service_kpis.go
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_civic_address.go
 model_eas_detail.go
 model_ecgi.go
@@ -97,8 +102,11 @@ model_location_area5_g.go
 model_ncgi.go
 model_network_area_info.go
 model_notification_flag.go
+model_notification_flag_any_of.go
 model_notification_method.go
+model_notification_method_any_of.go
 model_partitioning_criteria.go
+model_partitioning_criteria_any_of.go
 model_plmn_id.go
 model_plmn_id_1.go
 model_point.go
@@ -119,6 +127,7 @@ model_reporting_information.go
 model_scheduled_communication_time.go
 model_service_area.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_topological_service_area.go
 model_uncertainty_ellipse.go

@@ -69,7 +69,7 @@ func (o *NefEventFilter) SetTgtUe(v TargetUeIdentification) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *NefEventFilter) GetAppIds() []string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *NefEventFilter) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventFilter) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -87,7 +87,7 @@ func (o *NefEventFilter) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *NefEventFilter) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *NefEventFilter) SetAppIds(v []string) {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *NefEventFilter) GetLocArea() NetworkAreaInfo {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *NefEventFilter) GetLocArea() NetworkAreaInfo {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventFilter) GetLocAreaOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -119,7 +119,7 @@ func (o *NefEventFilter) GetLocAreaOk() (*NetworkAreaInfo, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *NefEventFilter) HasLocArea() bool {
-	if o != nil && !IsNil(o.LocArea) {
+	if o != nil && !isNil(o.LocArea) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *NefEventFilter) SetLocArea(v NetworkAreaInfo) {
 
 // GetCollAttrs returns the CollAttrs field value if set, zero value otherwise.
 func (o *NefEventFilter) GetCollAttrs() []CollectiveBehaviourFilter {
-	if o == nil || IsNil(o.CollAttrs) {
+	if o == nil || isNil(o.CollAttrs) {
 		var ret []CollectiveBehaviourFilter
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *NefEventFilter) GetCollAttrs() []CollectiveBehaviourFilter {
 // GetCollAttrsOk returns a tuple with the CollAttrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventFilter) GetCollAttrsOk() ([]CollectiveBehaviourFilter, bool) {
-	if o == nil || IsNil(o.CollAttrs) {
+	if o == nil || isNil(o.CollAttrs) {
 		return nil, false
 	}
 	return o.CollAttrs, true
@@ -151,7 +151,7 @@ func (o *NefEventFilter) GetCollAttrsOk() ([]CollectiveBehaviourFilter, bool) {
 
 // HasCollAttrs returns a boolean if a field has been set.
 func (o *NefEventFilter) HasCollAttrs() bool {
-	if o != nil && !IsNil(o.CollAttrs) {
+	if o != nil && !isNil(o.CollAttrs) {
 		return true
 	}
 
@@ -174,13 +174,13 @@ func (o NefEventFilter) MarshalJSON() ([]byte, error) {
 func (o NefEventFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tgtUe"] = o.TgtUe
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !IsNil(o.LocArea) {
+	if !isNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !IsNil(o.CollAttrs) {
+	if !isNil(o.CollAttrs) {
 		toSerialize["collAttrs"] = o.CollAttrs
 	}
 	return toSerialize, nil

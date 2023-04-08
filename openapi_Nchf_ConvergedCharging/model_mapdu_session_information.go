@@ -42,7 +42,7 @@ func NewMAPDUSessionInformationWithDefaults() *MAPDUSessionInformation {
 
 // GetMAPDUSessionIndicator returns the MAPDUSessionIndicator field value if set, zero value otherwise.
 func (o *MAPDUSessionInformation) GetMAPDUSessionIndicator() MaPduIndication {
-	if o == nil || IsNil(o.MAPDUSessionIndicator) {
+	if o == nil || isNil(o.MAPDUSessionIndicator) {
 		var ret MaPduIndication
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MAPDUSessionInformation) GetMAPDUSessionIndicator() MaPduIndication {
 // GetMAPDUSessionIndicatorOk returns a tuple with the MAPDUSessionIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MAPDUSessionInformation) GetMAPDUSessionIndicatorOk() (*MaPduIndication, bool) {
-	if o == nil || IsNil(o.MAPDUSessionIndicator) {
+	if o == nil || isNil(o.MAPDUSessionIndicator) {
 		return nil, false
 	}
 	return o.MAPDUSessionIndicator, true
@@ -60,7 +60,7 @@ func (o *MAPDUSessionInformation) GetMAPDUSessionIndicatorOk() (*MaPduIndication
 
 // HasMAPDUSessionIndicator returns a boolean if a field has been set.
 func (o *MAPDUSessionInformation) HasMAPDUSessionIndicator() bool {
-	if o != nil && !IsNil(o.MAPDUSessionIndicator) {
+	if o != nil && !isNil(o.MAPDUSessionIndicator) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MAPDUSessionInformation) SetMAPDUSessionIndicator(v MaPduIndication) {
 
 // GetATSSSCapability returns the ATSSSCapability field value if set, zero value otherwise.
 func (o *MAPDUSessionInformation) GetATSSSCapability() AtsssCapability {
-	if o == nil || IsNil(o.ATSSSCapability) {
+	if o == nil || isNil(o.ATSSSCapability) {
 		var ret AtsssCapability
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MAPDUSessionInformation) GetATSSSCapability() AtsssCapability {
 // GetATSSSCapabilityOk returns a tuple with the ATSSSCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MAPDUSessionInformation) GetATSSSCapabilityOk() (*AtsssCapability, bool) {
-	if o == nil || IsNil(o.ATSSSCapability) {
+	if o == nil || isNil(o.ATSSSCapability) {
 		return nil, false
 	}
 	return o.ATSSSCapability, true
@@ -92,7 +92,7 @@ func (o *MAPDUSessionInformation) GetATSSSCapabilityOk() (*AtsssCapability, bool
 
 // HasATSSSCapability returns a boolean if a field has been set.
 func (o *MAPDUSessionInformation) HasATSSSCapability() bool {
-	if o != nil && !IsNil(o.ATSSSCapability) {
+	if o != nil && !isNil(o.ATSSSCapability) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o MAPDUSessionInformation) MarshalJSON() ([]byte, error) {
 
 func (o MAPDUSessionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MAPDUSessionIndicator) {
+	if !isNil(o.MAPDUSessionIndicator) {
 		toSerialize["mAPDUSessionIndicator"] = o.MAPDUSessionIndicator
 	}
-	if !IsNil(o.ATSSSCapability) {
+	if !isNil(o.ATSSSCapability) {
 		toSerialize["aTSSSCapability"] = o.ATSSSCapability
 	}
 	return toSerialize, nil

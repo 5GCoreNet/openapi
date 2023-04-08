@@ -17,23 +17,37 @@ import (
 
 // ResultReason Possible values are: - ROAMING_NOT_ALLOWED: Identifies the configuration parameters are not allowed by roaming agreement. - OTHER_REASON: Identifies the configuration parameters are not configured due to other reason. 
 type ResultReason struct {
-	string *string
+	ResultReasonAnyOf *ResultReasonAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ResultReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ResultReasonAnyOf
+	err = json.Unmarshal(data, &dst.ResultReasonAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonResultReasonAnyOf, _ := json.Marshal(dst.ResultReasonAnyOf)
+		if string(jsonResultReasonAnyOf) == "{}" { // empty struct
+			dst.ResultReasonAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ResultReasonAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ResultReasonAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ResultReason)")
@@ -41,8 +55,12 @@ func (dst *ResultReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ResultReason) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ResultReasonAnyOf != nil {
+		return json.Marshal(&src.ResultReasonAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

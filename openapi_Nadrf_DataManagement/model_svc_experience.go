@@ -46,7 +46,7 @@ func NewSvcExperienceWithDefaults() *SvcExperience {
 
 // GetMos returns the Mos field value if set, zero value otherwise.
 func (o *SvcExperience) GetMos() float32 {
-	if o == nil || IsNil(o.Mos) {
+	if o == nil || isNil(o.Mos) {
 		var ret float32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SvcExperience) GetMos() float32 {
 // GetMosOk returns a tuple with the Mos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SvcExperience) GetMosOk() (*float32, bool) {
-	if o == nil || IsNil(o.Mos) {
+	if o == nil || isNil(o.Mos) {
 		return nil, false
 	}
 	return o.Mos, true
@@ -64,7 +64,7 @@ func (o *SvcExperience) GetMosOk() (*float32, bool) {
 
 // HasMos returns a boolean if a field has been set.
 func (o *SvcExperience) HasMos() bool {
-	if o != nil && !IsNil(o.Mos) {
+	if o != nil && !isNil(o.Mos) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SvcExperience) SetMos(v float32) {
 
 // GetUpperRange returns the UpperRange field value if set, zero value otherwise.
 func (o *SvcExperience) GetUpperRange() float32 {
-	if o == nil || IsNil(o.UpperRange) {
+	if o == nil || isNil(o.UpperRange) {
 		var ret float32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SvcExperience) GetUpperRange() float32 {
 // GetUpperRangeOk returns a tuple with the UpperRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SvcExperience) GetUpperRangeOk() (*float32, bool) {
-	if o == nil || IsNil(o.UpperRange) {
+	if o == nil || isNil(o.UpperRange) {
 		return nil, false
 	}
 	return o.UpperRange, true
@@ -96,7 +96,7 @@ func (o *SvcExperience) GetUpperRangeOk() (*float32, bool) {
 
 // HasUpperRange returns a boolean if a field has been set.
 func (o *SvcExperience) HasUpperRange() bool {
-	if o != nil && !IsNil(o.UpperRange) {
+	if o != nil && !isNil(o.UpperRange) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SvcExperience) SetUpperRange(v float32) {
 
 // GetLowerRange returns the LowerRange field value if set, zero value otherwise.
 func (o *SvcExperience) GetLowerRange() float32 {
-	if o == nil || IsNil(o.LowerRange) {
+	if o == nil || isNil(o.LowerRange) {
 		var ret float32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SvcExperience) GetLowerRange() float32 {
 // GetLowerRangeOk returns a tuple with the LowerRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SvcExperience) GetLowerRangeOk() (*float32, bool) {
-	if o == nil || IsNil(o.LowerRange) {
+	if o == nil || isNil(o.LowerRange) {
 		return nil, false
 	}
 	return o.LowerRange, true
@@ -128,7 +128,7 @@ func (o *SvcExperience) GetLowerRangeOk() (*float32, bool) {
 
 // HasLowerRange returns a boolean if a field has been set.
 func (o *SvcExperience) HasLowerRange() bool {
-	if o != nil && !IsNil(o.LowerRange) {
+	if o != nil && !isNil(o.LowerRange) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o SvcExperience) MarshalJSON() ([]byte, error) {
 
 func (o SvcExperience) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Mos) {
+	if !isNil(o.Mos) {
 		toSerialize["mos"] = o.Mos
 	}
-	if !IsNil(o.UpperRange) {
+	if !isNil(o.UpperRange) {
 		toSerialize["upperRange"] = o.UpperRange
 	}
-	if !IsNil(o.LowerRange) {
+	if !isNil(o.LowerRange) {
 		toSerialize["lowerRange"] = o.LowerRange
 	}
 	return toSerialize, nil

@@ -62,7 +62,7 @@ func NewMbsExtProblemDetailsWithDefaults() *MbsExtProblemDetails {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *MbsExtProblemDetails) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -80,7 +80,7 @@ func (o *MbsExtProblemDetails) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -94,7 +94,7 @@ func (o *MbsExtProblemDetails) SetType(v string) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *MbsExtProblemDetails) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -112,7 +112,7 @@ func (o *MbsExtProblemDetails) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasTitle() bool {
-	if o != nil && !IsNil(o.Title) {
+	if o != nil && !isNil(o.Title) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *MbsExtProblemDetails) SetTitle(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetStatus() int32 {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret int32
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *MbsExtProblemDetails) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetStatusOk() (*int32, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -144,7 +144,7 @@ func (o *MbsExtProblemDetails) GetStatusOk() (*int32, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *MbsExtProblemDetails) SetStatus(v int32) {
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetDetail() string {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		var ret string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *MbsExtProblemDetails) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetDetailOk() (*string, bool) {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		return nil, false
 	}
 	return o.Detail, true
@@ -176,7 +176,7 @@ func (o *MbsExtProblemDetails) GetDetailOk() (*string, bool) {
 
 // HasDetail returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasDetail() bool {
-	if o != nil && !IsNil(o.Detail) {
+	if o != nil && !isNil(o.Detail) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *MbsExtProblemDetails) SetDetail(v string) {
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetInstance() string {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *MbsExtProblemDetails) GetInstance() string {
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		return nil, false
 	}
 	return o.Instance, true
@@ -208,7 +208,7 @@ func (o *MbsExtProblemDetails) GetInstanceOk() (*string, bool) {
 
 // HasInstance returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && !isNil(o.Instance) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *MbsExtProblemDetails) SetInstance(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetCause() string {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -232,7 +232,7 @@ func (o *MbsExtProblemDetails) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -240,7 +240,7 @@ func (o *MbsExtProblemDetails) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -254,7 +254,7 @@ func (o *MbsExtProblemDetails) SetCause(v string) {
 
 // GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetInvalidParams() []InvalidParam {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *MbsExtProblemDetails) GetInvalidParams() []InvalidParam {
 // GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetInvalidParamsOk() ([]InvalidParam, bool) {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		return nil, false
 	}
 	return o.InvalidParams, true
@@ -272,7 +272,7 @@ func (o *MbsExtProblemDetails) GetInvalidParamsOk() ([]InvalidParam, bool) {
 
 // HasInvalidParams returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasInvalidParams() bool {
-	if o != nil && !IsNil(o.InvalidParams) {
+	if o != nil && !isNil(o.InvalidParams) {
 		return true
 	}
 
@@ -286,7 +286,7 @@ func (o *MbsExtProblemDetails) SetInvalidParams(v []InvalidParam) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -296,7 +296,7 @@ func (o *MbsExtProblemDetails) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -304,7 +304,7 @@ func (o *MbsExtProblemDetails) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -318,7 +318,7 @@ func (o *MbsExtProblemDetails) SetSupportedFeatures(v string) {
 
 // GetAccessTokenError returns the AccessTokenError field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetAccessTokenError() AccessTokenErr {
-	if o == nil || IsNil(o.AccessTokenError) {
+	if o == nil || isNil(o.AccessTokenError) {
 		var ret AccessTokenErr
 		return ret
 	}
@@ -328,7 +328,7 @@ func (o *MbsExtProblemDetails) GetAccessTokenError() AccessTokenErr {
 // GetAccessTokenErrorOk returns a tuple with the AccessTokenError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetAccessTokenErrorOk() (*AccessTokenErr, bool) {
-	if o == nil || IsNil(o.AccessTokenError) {
+	if o == nil || isNil(o.AccessTokenError) {
 		return nil, false
 	}
 	return o.AccessTokenError, true
@@ -336,7 +336,7 @@ func (o *MbsExtProblemDetails) GetAccessTokenErrorOk() (*AccessTokenErr, bool) {
 
 // HasAccessTokenError returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasAccessTokenError() bool {
-	if o != nil && !IsNil(o.AccessTokenError) {
+	if o != nil && !isNil(o.AccessTokenError) {
 		return true
 	}
 
@@ -350,7 +350,7 @@ func (o *MbsExtProblemDetails) SetAccessTokenError(v AccessTokenErr) {
 
 // GetAccessTokenRequest returns the AccessTokenRequest field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetAccessTokenRequest() AccessTokenReq {
-	if o == nil || IsNil(o.AccessTokenRequest) {
+	if o == nil || isNil(o.AccessTokenRequest) {
 		var ret AccessTokenReq
 		return ret
 	}
@@ -360,7 +360,7 @@ func (o *MbsExtProblemDetails) GetAccessTokenRequest() AccessTokenReq {
 // GetAccessTokenRequestOk returns a tuple with the AccessTokenRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetAccessTokenRequestOk() (*AccessTokenReq, bool) {
-	if o == nil || IsNil(o.AccessTokenRequest) {
+	if o == nil || isNil(o.AccessTokenRequest) {
 		return nil, false
 	}
 	return o.AccessTokenRequest, true
@@ -368,7 +368,7 @@ func (o *MbsExtProblemDetails) GetAccessTokenRequestOk() (*AccessTokenReq, bool)
 
 // HasAccessTokenRequest returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasAccessTokenRequest() bool {
-	if o != nil && !IsNil(o.AccessTokenRequest) {
+	if o != nil && !isNil(o.AccessTokenRequest) {
 		return true
 	}
 
@@ -382,7 +382,7 @@ func (o *MbsExtProblemDetails) SetAccessTokenRequest(v AccessTokenReq) {
 
 // GetNrfId returns the NrfId field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetNrfId() string {
-	if o == nil || IsNil(o.NrfId) {
+	if o == nil || isNil(o.NrfId) {
 		var ret string
 		return ret
 	}
@@ -392,7 +392,7 @@ func (o *MbsExtProblemDetails) GetNrfId() string {
 // GetNrfIdOk returns a tuple with the NrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetNrfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfId) {
+	if o == nil || isNil(o.NrfId) {
 		return nil, false
 	}
 	return o.NrfId, true
@@ -400,7 +400,7 @@ func (o *MbsExtProblemDetails) GetNrfIdOk() (*string, bool) {
 
 // HasNrfId returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasNrfId() bool {
-	if o != nil && !IsNil(o.NrfId) {
+	if o != nil && !isNil(o.NrfId) {
 		return true
 	}
 
@@ -414,7 +414,7 @@ func (o *MbsExtProblemDetails) SetNrfId(v string) {
 
 // GetSupportedApiVersions returns the SupportedApiVersions field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetSupportedApiVersions() []string {
-	if o == nil || IsNil(o.SupportedApiVersions) {
+	if o == nil || isNil(o.SupportedApiVersions) {
 		var ret []string
 		return ret
 	}
@@ -424,7 +424,7 @@ func (o *MbsExtProblemDetails) GetSupportedApiVersions() []string {
 // GetSupportedApiVersionsOk returns a tuple with the SupportedApiVersions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetSupportedApiVersionsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedApiVersions) {
+	if o == nil || isNil(o.SupportedApiVersions) {
 		return nil, false
 	}
 	return o.SupportedApiVersions, true
@@ -432,7 +432,7 @@ func (o *MbsExtProblemDetails) GetSupportedApiVersionsOk() ([]string, bool) {
 
 // HasSupportedApiVersions returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasSupportedApiVersions() bool {
-	if o != nil && !IsNil(o.SupportedApiVersions) {
+	if o != nil && !isNil(o.SupportedApiVersions) {
 		return true
 	}
 
@@ -446,7 +446,7 @@ func (o *MbsExtProblemDetails) SetSupportedApiVersions(v []string) {
 
 // GetPcfFqdn returns the PcfFqdn field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetPcfFqdn() string {
-	if o == nil || IsNil(o.PcfFqdn) {
+	if o == nil || isNil(o.PcfFqdn) {
 		var ret string
 		return ret
 	}
@@ -456,7 +456,7 @@ func (o *MbsExtProblemDetails) GetPcfFqdn() string {
 // GetPcfFqdnOk returns a tuple with the PcfFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetPcfFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfFqdn) {
+	if o == nil || isNil(o.PcfFqdn) {
 		return nil, false
 	}
 	return o.PcfFqdn, true
@@ -464,7 +464,7 @@ func (o *MbsExtProblemDetails) GetPcfFqdnOk() (*string, bool) {
 
 // HasPcfFqdn returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasPcfFqdn() bool {
-	if o != nil && !IsNil(o.PcfFqdn) {
+	if o != nil && !isNil(o.PcfFqdn) {
 		return true
 	}
 
@@ -478,7 +478,7 @@ func (o *MbsExtProblemDetails) SetPcfFqdn(v string) {
 
 // GetPcfIpEndPoints returns the PcfIpEndPoints field value if set, zero value otherwise.
 func (o *MbsExtProblemDetails) GetPcfIpEndPoints() []IpEndPoint {
-	if o == nil || IsNil(o.PcfIpEndPoints) {
+	if o == nil || isNil(o.PcfIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -488,7 +488,7 @@ func (o *MbsExtProblemDetails) GetPcfIpEndPoints() []IpEndPoint {
 // GetPcfIpEndPointsOk returns a tuple with the PcfIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsExtProblemDetails) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || IsNil(o.PcfIpEndPoints) {
+	if o == nil || isNil(o.PcfIpEndPoints) {
 		return nil, false
 	}
 	return o.PcfIpEndPoints, true
@@ -496,7 +496,7 @@ func (o *MbsExtProblemDetails) GetPcfIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasPcfIpEndPoints returns a boolean if a field has been set.
 func (o *MbsExtProblemDetails) HasPcfIpEndPoints() bool {
-	if o != nil && !IsNil(o.PcfIpEndPoints) {
+	if o != nil && !isNil(o.PcfIpEndPoints) {
 		return true
 	}
 
@@ -518,46 +518,46 @@ func (o MbsExtProblemDetails) MarshalJSON() ([]byte, error) {
 
 func (o MbsExtProblemDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Title) {
+	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Detail) {
+	if !isNil(o.Detail) {
 		toSerialize["detail"] = o.Detail
 	}
-	if !IsNil(o.Instance) {
+	if !isNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.InvalidParams) {
+	if !isNil(o.InvalidParams) {
 		toSerialize["invalidParams"] = o.InvalidParams
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.AccessTokenError) {
+	if !isNil(o.AccessTokenError) {
 		toSerialize["accessTokenError"] = o.AccessTokenError
 	}
-	if !IsNil(o.AccessTokenRequest) {
+	if !isNil(o.AccessTokenRequest) {
 		toSerialize["accessTokenRequest"] = o.AccessTokenRequest
 	}
-	if !IsNil(o.NrfId) {
+	if !isNil(o.NrfId) {
 		toSerialize["nrfId"] = o.NrfId
 	}
-	if !IsNil(o.SupportedApiVersions) {
+	if !isNil(o.SupportedApiVersions) {
 		toSerialize["supportedApiVersions"] = o.SupportedApiVersions
 	}
-	if !IsNil(o.PcfFqdn) {
+	if !isNil(o.PcfFqdn) {
 		toSerialize["pcfFqdn"] = o.PcfFqdn
 	}
-	if !IsNil(o.PcfIpEndPoints) {
+	if !isNil(o.PcfIpEndPoints) {
 		toSerialize["pcfIpEndPoints"] = o.PcfIpEndPoints
 	}
 	return toSerialize, nil

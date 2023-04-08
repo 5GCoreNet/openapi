@@ -17,23 +17,37 @@ import (
 
 // ExpectedAnalyticsType Possible values are: - MOBILITY: Mobility related abnormal behaviour analytics is expected by the consumer. - COMMUN: Communication related abnormal behaviour analytics is expected by the consumer. - MOBILITY_AND_COMMUN: Both mobility and communication related abnormal behaviour analytics is expected by the consumer. 
 type ExpectedAnalyticsType struct {
-	string *string
+	ExpectedAnalyticsTypeAnyOf *ExpectedAnalyticsTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ExpectedAnalyticsType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ExpectedAnalyticsTypeAnyOf
+	err = json.Unmarshal(data, &dst.ExpectedAnalyticsTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonExpectedAnalyticsTypeAnyOf, _ := json.Marshal(dst.ExpectedAnalyticsTypeAnyOf)
+		if string(jsonExpectedAnalyticsTypeAnyOf) == "{}" { // empty struct
+			dst.ExpectedAnalyticsTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ExpectedAnalyticsTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ExpectedAnalyticsTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ExpectedAnalyticsType)")
@@ -41,8 +55,12 @@ func (dst *ExpectedAnalyticsType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ExpectedAnalyticsType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ExpectedAnalyticsTypeAnyOf != nil {
+		return json.Marshal(&src.ExpectedAnalyticsTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

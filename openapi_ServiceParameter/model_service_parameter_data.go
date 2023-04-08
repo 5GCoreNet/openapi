@@ -84,7 +84,7 @@ func NewServiceParameterDataWithDefaults() *ServiceParameterData {
 
 // GetAfServiceId returns the AfServiceId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetAfServiceId() string {
-	if o == nil || IsNil(o.AfServiceId) {
+	if o == nil || isNil(o.AfServiceId) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ServiceParameterData) GetAfServiceId() string {
 // GetAfServiceIdOk returns a tuple with the AfServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetAfServiceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfServiceId) {
+	if o == nil || isNil(o.AfServiceId) {
 		return nil, false
 	}
 	return o.AfServiceId, true
@@ -102,7 +102,7 @@ func (o *ServiceParameterData) GetAfServiceIdOk() (*string, bool) {
 
 // HasAfServiceId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasAfServiceId() bool {
-	if o != nil && !IsNil(o.AfServiceId) {
+	if o != nil && !isNil(o.AfServiceId) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *ServiceParameterData) SetAfServiceId(v string) {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ServiceParameterData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -134,7 +134,7 @@ func (o *ServiceParameterData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *ServiceParameterData) SetAppId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ServiceParameterData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -166,7 +166,7 @@ func (o *ServiceParameterData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *ServiceParameterData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *ServiceParameterData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -198,7 +198,7 @@ func (o *ServiceParameterData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *ServiceParameterData) SetSnssai(v Snssai) {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetExternalGroupId() string {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *ServiceParameterData) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -230,7 +230,7 @@ func (o *ServiceParameterData) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasExternalGroupId() bool {
-	if o != nil && !IsNil(o.ExternalGroupId) {
+	if o != nil && !isNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *ServiceParameterData) SetExternalGroupId(v string) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetAnyUeInd() bool {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *ServiceParameterData) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -262,7 +262,7 @@ func (o *ServiceParameterData) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasAnyUeInd() bool {
-	if o != nil && !IsNil(o.AnyUeInd) {
+	if o != nil && !isNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *ServiceParameterData) SetAnyUeInd(v bool) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *ServiceParameterData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -294,7 +294,7 @@ func (o *ServiceParameterData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *ServiceParameterData) SetGpsi(v string) {
 
 // GetUeIpv4 returns the UeIpv4 field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUeIpv4() string {
-	if o == nil || IsNil(o.UeIpv4) {
+	if o == nil || isNil(o.UeIpv4) {
 		var ret string
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *ServiceParameterData) GetUeIpv4() string {
 // GetUeIpv4Ok returns a tuple with the UeIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUeIpv4Ok() (*string, bool) {
-	if o == nil || IsNil(o.UeIpv4) {
+	if o == nil || isNil(o.UeIpv4) {
 		return nil, false
 	}
 	return o.UeIpv4, true
@@ -326,7 +326,7 @@ func (o *ServiceParameterData) GetUeIpv4Ok() (*string, bool) {
 
 // HasUeIpv4 returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUeIpv4() bool {
-	if o != nil && !IsNil(o.UeIpv4) {
+	if o != nil && !isNil(o.UeIpv4) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *ServiceParameterData) SetUeIpv4(v string) {
 
 // GetUeIpv6 returns the UeIpv6 field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUeIpv6() Ipv6Addr {
-	if o == nil || IsNil(o.UeIpv6) {
+	if o == nil || isNil(o.UeIpv6) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *ServiceParameterData) GetUeIpv6() Ipv6Addr {
 // GetUeIpv6Ok returns a tuple with the UeIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUeIpv6Ok() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.UeIpv6) {
+	if o == nil || isNil(o.UeIpv6) {
 		return nil, false
 	}
 	return o.UeIpv6, true
@@ -358,7 +358,7 @@ func (o *ServiceParameterData) GetUeIpv6Ok() (*Ipv6Addr, bool) {
 
 // HasUeIpv6 returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUeIpv6() bool {
-	if o != nil && !IsNil(o.UeIpv6) {
+	if o != nil && !isNil(o.UeIpv6) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *ServiceParameterData) SetUeIpv6(v Ipv6Addr) {
 
 // GetUeMac returns the UeMac field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUeMac() string {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		var ret string
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *ServiceParameterData) GetUeMac() string {
 // GetUeMacOk returns a tuple with the UeMac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUeMacOk() (*string, bool) {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		return nil, false
 	}
 	return o.UeMac, true
@@ -390,7 +390,7 @@ func (o *ServiceParameterData) GetUeMacOk() (*string, bool) {
 
 // HasUeMac returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUeMac() bool {
-	if o != nil && !IsNil(o.UeMac) {
+	if o != nil && !isNil(o.UeMac) {
 		return true
 	}
 
@@ -404,7 +404,7 @@ func (o *ServiceParameterData) SetUeMac(v string) {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *ServiceParameterData) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -422,7 +422,7 @@ func (o *ServiceParameterData) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -436,7 +436,7 @@ func (o *ServiceParameterData) SetSelf(v string) {
 
 // GetSubNotifEvents returns the SubNotifEvents field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSubNotifEvents() []Event {
-	if o == nil || IsNil(o.SubNotifEvents) {
+	if o == nil || isNil(o.SubNotifEvents) {
 		var ret []Event
 		return ret
 	}
@@ -446,7 +446,7 @@ func (o *ServiceParameterData) GetSubNotifEvents() []Event {
 // GetSubNotifEventsOk returns a tuple with the SubNotifEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSubNotifEventsOk() ([]Event, bool) {
-	if o == nil || IsNil(o.SubNotifEvents) {
+	if o == nil || isNil(o.SubNotifEvents) {
 		return nil, false
 	}
 	return o.SubNotifEvents, true
@@ -454,7 +454,7 @@ func (o *ServiceParameterData) GetSubNotifEventsOk() ([]Event, bool) {
 
 // HasSubNotifEvents returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSubNotifEvents() bool {
-	if o != nil && !IsNil(o.SubNotifEvents) {
+	if o != nil && !isNil(o.SubNotifEvents) {
 		return true
 	}
 
@@ -468,7 +468,7 @@ func (o *ServiceParameterData) SetSubNotifEvents(v []Event) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -478,7 +478,7 @@ func (o *ServiceParameterData) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -486,7 +486,7 @@ func (o *ServiceParameterData) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -500,7 +500,7 @@ func (o *ServiceParameterData) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -510,7 +510,7 @@ func (o *ServiceParameterData) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -518,7 +518,7 @@ func (o *ServiceParameterData) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -532,7 +532,7 @@ func (o *ServiceParameterData) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -542,7 +542,7 @@ func (o *ServiceParameterData) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -550,7 +550,7 @@ func (o *ServiceParameterData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, b
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -564,7 +564,7 @@ func (o *ServiceParameterData) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetParamOverPc5 returns the ParamOverPc5 field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamOverPc5() string {
-	if o == nil || IsNil(o.ParamOverPc5) {
+	if o == nil || isNil(o.ParamOverPc5) {
 		var ret string
 		return ret
 	}
@@ -574,7 +574,7 @@ func (o *ServiceParameterData) GetParamOverPc5() string {
 // GetParamOverPc5Ok returns a tuple with the ParamOverPc5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamOverPc5Ok() (*string, bool) {
-	if o == nil || IsNil(o.ParamOverPc5) {
+	if o == nil || isNil(o.ParamOverPc5) {
 		return nil, false
 	}
 	return o.ParamOverPc5, true
@@ -582,7 +582,7 @@ func (o *ServiceParameterData) GetParamOverPc5Ok() (*string, bool) {
 
 // HasParamOverPc5 returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamOverPc5() bool {
-	if o != nil && !IsNil(o.ParamOverPc5) {
+	if o != nil && !isNil(o.ParamOverPc5) {
 		return true
 	}
 
@@ -596,7 +596,7 @@ func (o *ServiceParameterData) SetParamOverPc5(v string) {
 
 // GetParamOverUu returns the ParamOverUu field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamOverUu() string {
-	if o == nil || IsNil(o.ParamOverUu) {
+	if o == nil || isNil(o.ParamOverUu) {
 		var ret string
 		return ret
 	}
@@ -606,7 +606,7 @@ func (o *ServiceParameterData) GetParamOverUu() string {
 // GetParamOverUuOk returns a tuple with the ParamOverUu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamOverUuOk() (*string, bool) {
-	if o == nil || IsNil(o.ParamOverUu) {
+	if o == nil || isNil(o.ParamOverUu) {
 		return nil, false
 	}
 	return o.ParamOverUu, true
@@ -614,7 +614,7 @@ func (o *ServiceParameterData) GetParamOverUuOk() (*string, bool) {
 
 // HasParamOverUu returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamOverUu() bool {
-	if o != nil && !IsNil(o.ParamOverUu) {
+	if o != nil && !isNil(o.ParamOverUu) {
 		return true
 	}
 
@@ -628,7 +628,7 @@ func (o *ServiceParameterData) SetParamOverUu(v string) {
 
 // GetParamForProSeDd returns the ParamForProSeDd field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeDd() string {
-	if o == nil || IsNil(o.ParamForProSeDd) {
+	if o == nil || isNil(o.ParamForProSeDd) {
 		var ret string
 		return ret
 	}
@@ -638,7 +638,7 @@ func (o *ServiceParameterData) GetParamForProSeDd() string {
 // GetParamForProSeDdOk returns a tuple with the ParamForProSeDd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeDdOk() (*string, bool) {
-	if o == nil || IsNil(o.ParamForProSeDd) {
+	if o == nil || isNil(o.ParamForProSeDd) {
 		return nil, false
 	}
 	return o.ParamForProSeDd, true
@@ -646,7 +646,7 @@ func (o *ServiceParameterData) GetParamForProSeDdOk() (*string, bool) {
 
 // HasParamForProSeDd returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeDd() bool {
-	if o != nil && !IsNil(o.ParamForProSeDd) {
+	if o != nil && !isNil(o.ParamForProSeDd) {
 		return true
 	}
 
@@ -660,7 +660,7 @@ func (o *ServiceParameterData) SetParamForProSeDd(v string) {
 
 // GetParamForProSeDc returns the ParamForProSeDc field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeDc() string {
-	if o == nil || IsNil(o.ParamForProSeDc) {
+	if o == nil || isNil(o.ParamForProSeDc) {
 		var ret string
 		return ret
 	}
@@ -670,7 +670,7 @@ func (o *ServiceParameterData) GetParamForProSeDc() string {
 // GetParamForProSeDcOk returns a tuple with the ParamForProSeDc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeDcOk() (*string, bool) {
-	if o == nil || IsNil(o.ParamForProSeDc) {
+	if o == nil || isNil(o.ParamForProSeDc) {
 		return nil, false
 	}
 	return o.ParamForProSeDc, true
@@ -678,7 +678,7 @@ func (o *ServiceParameterData) GetParamForProSeDcOk() (*string, bool) {
 
 // HasParamForProSeDc returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeDc() bool {
-	if o != nil && !IsNil(o.ParamForProSeDc) {
+	if o != nil && !isNil(o.ParamForProSeDc) {
 		return true
 	}
 
@@ -692,7 +692,7 @@ func (o *ServiceParameterData) SetParamForProSeDc(v string) {
 
 // GetParamForProSeU2NRelUe returns the ParamForProSeU2NRelUe field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeU2NRelUe() string {
-	if o == nil || IsNil(o.ParamForProSeU2NRelUe) {
+	if o == nil || isNil(o.ParamForProSeU2NRelUe) {
 		var ret string
 		return ret
 	}
@@ -702,7 +702,7 @@ func (o *ServiceParameterData) GetParamForProSeU2NRelUe() string {
 // GetParamForProSeU2NRelUeOk returns a tuple with the ParamForProSeU2NRelUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeU2NRelUeOk() (*string, bool) {
-	if o == nil || IsNil(o.ParamForProSeU2NRelUe) {
+	if o == nil || isNil(o.ParamForProSeU2NRelUe) {
 		return nil, false
 	}
 	return o.ParamForProSeU2NRelUe, true
@@ -710,7 +710,7 @@ func (o *ServiceParameterData) GetParamForProSeU2NRelUeOk() (*string, bool) {
 
 // HasParamForProSeU2NRelUe returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeU2NRelUe() bool {
-	if o != nil && !IsNil(o.ParamForProSeU2NRelUe) {
+	if o != nil && !isNil(o.ParamForProSeU2NRelUe) {
 		return true
 	}
 
@@ -724,7 +724,7 @@ func (o *ServiceParameterData) SetParamForProSeU2NRelUe(v string) {
 
 // GetParamForProSeRemUe returns the ParamForProSeRemUe field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetParamForProSeRemUe() string {
-	if o == nil || IsNil(o.ParamForProSeRemUe) {
+	if o == nil || isNil(o.ParamForProSeRemUe) {
 		var ret string
 		return ret
 	}
@@ -734,7 +734,7 @@ func (o *ServiceParameterData) GetParamForProSeRemUe() string {
 // GetParamForProSeRemUeOk returns a tuple with the ParamForProSeRemUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetParamForProSeRemUeOk() (*string, bool) {
-	if o == nil || IsNil(o.ParamForProSeRemUe) {
+	if o == nil || isNil(o.ParamForProSeRemUe) {
 		return nil, false
 	}
 	return o.ParamForProSeRemUe, true
@@ -742,7 +742,7 @@ func (o *ServiceParameterData) GetParamForProSeRemUeOk() (*string, bool) {
 
 // HasParamForProSeRemUe returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasParamForProSeRemUe() bool {
-	if o != nil && !IsNil(o.ParamForProSeRemUe) {
+	if o != nil && !isNil(o.ParamForProSeRemUe) {
 		return true
 	}
 
@@ -756,7 +756,7 @@ func (o *ServiceParameterData) SetParamForProSeRemUe(v string) {
 
 // GetUrspGuidance returns the UrspGuidance field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetUrspGuidance() []UrspRuleRequest {
-	if o == nil || IsNil(o.UrspGuidance) {
+	if o == nil || isNil(o.UrspGuidance) {
 		var ret []UrspRuleRequest
 		return ret
 	}
@@ -766,7 +766,7 @@ func (o *ServiceParameterData) GetUrspGuidance() []UrspRuleRequest {
 // GetUrspGuidanceOk returns a tuple with the UrspGuidance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetUrspGuidanceOk() ([]UrspRuleRequest, bool) {
-	if o == nil || IsNil(o.UrspGuidance) {
+	if o == nil || isNil(o.UrspGuidance) {
 		return nil, false
 	}
 	return o.UrspGuidance, true
@@ -774,7 +774,7 @@ func (o *ServiceParameterData) GetUrspGuidanceOk() ([]UrspRuleRequest, bool) {
 
 // HasUrspGuidance returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasUrspGuidance() bool {
-	if o != nil && !IsNil(o.UrspGuidance) {
+	if o != nil && !isNil(o.UrspGuidance) {
 		return true
 	}
 
@@ -788,7 +788,7 @@ func (o *ServiceParameterData) SetUrspGuidance(v []UrspRuleRequest) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetMtcProviderId() string {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -798,7 +798,7 @@ func (o *ServiceParameterData) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -806,7 +806,7 @@ func (o *ServiceParameterData) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasMtcProviderId() bool {
-	if o != nil && !IsNil(o.MtcProviderId) {
+	if o != nil && !isNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -820,7 +820,7 @@ func (o *ServiceParameterData) SetMtcProviderId(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ServiceParameterData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -830,7 +830,7 @@ func (o *ServiceParameterData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -838,7 +838,7 @@ func (o *ServiceParameterData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ServiceParameterData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -860,76 +860,76 @@ func (o ServiceParameterData) MarshalJSON() ([]byte, error) {
 
 func (o ServiceParameterData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfServiceId) {
+	if !isNil(o.AfServiceId) {
 		toSerialize["afServiceId"] = o.AfServiceId
 	}
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.ExternalGroupId) {
+	if !isNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	if !IsNil(o.AnyUeInd) {
+	if !isNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.UeIpv4) {
+	if !isNil(o.UeIpv4) {
 		toSerialize["ueIpv4"] = o.UeIpv4
 	}
-	if !IsNil(o.UeIpv6) {
+	if !isNil(o.UeIpv6) {
 		toSerialize["ueIpv6"] = o.UeIpv6
 	}
-	if !IsNil(o.UeMac) {
+	if !isNil(o.UeMac) {
 		toSerialize["ueMac"] = o.UeMac
 	}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SubNotifEvents) {
+	if !isNil(o.SubNotifEvents) {
 		toSerialize["subNotifEvents"] = o.SubNotifEvents
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.ParamOverPc5) {
+	if !isNil(o.ParamOverPc5) {
 		toSerialize["paramOverPc5"] = o.ParamOverPc5
 	}
-	if !IsNil(o.ParamOverUu) {
+	if !isNil(o.ParamOverUu) {
 		toSerialize["paramOverUu"] = o.ParamOverUu
 	}
-	if !IsNil(o.ParamForProSeDd) {
+	if !isNil(o.ParamForProSeDd) {
 		toSerialize["paramForProSeDd"] = o.ParamForProSeDd
 	}
-	if !IsNil(o.ParamForProSeDc) {
+	if !isNil(o.ParamForProSeDc) {
 		toSerialize["paramForProSeDc"] = o.ParamForProSeDc
 	}
-	if !IsNil(o.ParamForProSeU2NRelUe) {
+	if !isNil(o.ParamForProSeU2NRelUe) {
 		toSerialize["paramForProSeU2NRelUe"] = o.ParamForProSeU2NRelUe
 	}
-	if !IsNil(o.ParamForProSeRemUe) {
+	if !isNil(o.ParamForProSeRemUe) {
 		toSerialize["paramForProSeRemUe"] = o.ParamForProSeRemUe
 	}
-	if !IsNil(o.UrspGuidance) {
+	if !isNil(o.UrspGuidance) {
 		toSerialize["urspGuidance"] = o.UrspGuidance
 	}
-	if !IsNil(o.MtcProviderId) {
+	if !isNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

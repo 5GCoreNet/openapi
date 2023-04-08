@@ -42,7 +42,7 @@ func NewSubNetworkSingleAllOf1WithDefaults() *SubNetworkSingleAllOf1 {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || IsNil(o.SubNetwork) {
+	if o == nil || isNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SubNetworkSingleAllOf1) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || IsNil(o.SubNetwork) {
+	if o == nil || isNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -60,7 +60,7 @@ func (o *SubNetworkSingleAllOf1) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasSubNetwork() bool {
-	if o != nil && !IsNil(o.SubNetwork) {
+	if o != nil && !isNil(o.SubNetwork) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SubNetworkSingleAllOf1) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetIntent returns the Intent field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetIntent() []IntentSingle {
-	if o == nil || IsNil(o.Intent) {
+	if o == nil || isNil(o.Intent) {
 		var ret []IntentSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SubNetworkSingleAllOf1) GetIntent() []IntentSingle {
 // GetIntentOk returns a tuple with the Intent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetIntentOk() ([]IntentSingle, bool) {
-	if o == nil || IsNil(o.Intent) {
+	if o == nil || isNil(o.Intent) {
 		return nil, false
 	}
 	return o.Intent, true
@@ -92,7 +92,7 @@ func (o *SubNetworkSingleAllOf1) GetIntentOk() ([]IntentSingle, bool) {
 
 // HasIntent returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasIntent() bool {
-	if o != nil && !IsNil(o.Intent) {
+	if o != nil && !isNil(o.Intent) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SubNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubNetwork) {
+	if !isNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !IsNil(o.Intent) {
+	if !isNil(o.Intent) {
 		toSerialize["Intent"] = o.Intent
 	}
 	return toSerialize, nil

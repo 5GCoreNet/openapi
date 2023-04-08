@@ -43,7 +43,7 @@ func NewRoamingInfoUpdateWithDefaults() *RoamingInfoUpdate {
 
 // GetRoaming returns the Roaming field value if set, zero value otherwise.
 func (o *RoamingInfoUpdate) GetRoaming() bool {
-	if o == nil || IsNil(o.Roaming) {
+	if o == nil || isNil(o.Roaming) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RoamingInfoUpdate) GetRoaming() bool {
 // GetRoamingOk returns a tuple with the Roaming field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RoamingInfoUpdate) GetRoamingOk() (*bool, bool) {
-	if o == nil || IsNil(o.Roaming) {
+	if o == nil || isNil(o.Roaming) {
 		return nil, false
 	}
 	return o.Roaming, true
@@ -61,7 +61,7 @@ func (o *RoamingInfoUpdate) GetRoamingOk() (*bool, bool) {
 
 // HasRoaming returns a boolean if a field has been set.
 func (o *RoamingInfoUpdate) HasRoaming() bool {
-	if o != nil && !IsNil(o.Roaming) {
+	if o != nil && !isNil(o.Roaming) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o RoamingInfoUpdate) MarshalJSON() ([]byte, error) {
 
 func (o RoamingInfoUpdate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Roaming) {
+	if !isNil(o.Roaming) {
 		toSerialize["roaming"] = o.Roaming
 	}
 	toSerialize["servingPlmn"] = o.ServingPlmn

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -14,11 +13,13 @@ docs/AuthConfirmationResponse.md
 docs/AuthContext.md
 docs/AuthInfo.md
 docs/AuthStatus.md
+docs/AuthStatusAnyOf.md
 docs/AuthenticationDocumentApi.md
 docs/AuthenticationsCollectionsApi.md
 docs/InvalidParam.md
 docs/Ipv6Addr.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -35,9 +36,11 @@ model_auth_confirmation_response.go
 model_auth_context.go
 model_auth_info.go
 model_auth_status.go
+model_auth_status_any_of.go
 model_invalid_param.go
 model_ipv6_addr.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

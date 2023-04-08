@@ -67,7 +67,7 @@ func (o *ProtectionPolicy) SetApiIeMappingList(v []ApiIeMapping) {
 
 // GetDataTypeEncPolicy returns the DataTypeEncPolicy field value if set, zero value otherwise.
 func (o *ProtectionPolicy) GetDataTypeEncPolicy() []IeType {
-	if o == nil || IsNil(o.DataTypeEncPolicy) {
+	if o == nil || isNil(o.DataTypeEncPolicy) {
 		var ret []IeType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ProtectionPolicy) GetDataTypeEncPolicy() []IeType {
 // GetDataTypeEncPolicyOk returns a tuple with the DataTypeEncPolicy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProtectionPolicy) GetDataTypeEncPolicyOk() ([]IeType, bool) {
-	if o == nil || IsNil(o.DataTypeEncPolicy) {
+	if o == nil || isNil(o.DataTypeEncPolicy) {
 		return nil, false
 	}
 	return o.DataTypeEncPolicy, true
@@ -85,7 +85,7 @@ func (o *ProtectionPolicy) GetDataTypeEncPolicyOk() ([]IeType, bool) {
 
 // HasDataTypeEncPolicy returns a boolean if a field has been set.
 func (o *ProtectionPolicy) HasDataTypeEncPolicy() bool {
-	if o != nil && !IsNil(o.DataTypeEncPolicy) {
+	if o != nil && !isNil(o.DataTypeEncPolicy) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ProtectionPolicy) MarshalJSON() ([]byte, error) {
 func (o ProtectionPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiIeMappingList"] = o.ApiIeMappingList
-	if !IsNil(o.DataTypeEncPolicy) {
+	if !isNil(o.DataTypeEncPolicy) {
 		toSerialize["dataTypeEncPolicy"] = o.DataTypeEncPolicy
 	}
 	return toSerialize, nil

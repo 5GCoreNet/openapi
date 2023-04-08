@@ -13,7 +13,7 @@ package openapi_Eees_SessionWithQoS
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -106,9 +106,9 @@ func (a *SessionsWithQoSCollectionApiService) CreateIndSessionWithQoSExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -298,7 +298,7 @@ func (a *SessionsWithQoSCollectionApiService) ReadAllSessionsWithQoSExecute(r Ap
 		return localVarReturnValue, nil, reportError("easId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "eas-id", r.easId, "")
+	parameterAddToQuery(localVarQueryParams, "eas-id", r.easId, "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -326,9 +326,9 @@ func (a *SessionsWithQoSCollectionApiService) ReadAllSessionsWithQoSExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

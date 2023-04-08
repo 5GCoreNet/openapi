@@ -42,7 +42,7 @@ func NewBdtPolicyWithDefaults() *BdtPolicy {
 
 // GetBdtPolData returns the BdtPolData field value if set, zero value otherwise.
 func (o *BdtPolicy) GetBdtPolData() BdtPolicyData {
-	if o == nil || IsNil(o.BdtPolData) {
+	if o == nil || isNil(o.BdtPolData) {
 		var ret BdtPolicyData
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *BdtPolicy) GetBdtPolData() BdtPolicyData {
 // GetBdtPolDataOk returns a tuple with the BdtPolData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicy) GetBdtPolDataOk() (*BdtPolicyData, bool) {
-	if o == nil || IsNil(o.BdtPolData) {
+	if o == nil || isNil(o.BdtPolData) {
 		return nil, false
 	}
 	return o.BdtPolData, true
@@ -60,7 +60,7 @@ func (o *BdtPolicy) GetBdtPolDataOk() (*BdtPolicyData, bool) {
 
 // HasBdtPolData returns a boolean if a field has been set.
 func (o *BdtPolicy) HasBdtPolData() bool {
-	if o != nil && !IsNil(o.BdtPolData) {
+	if o != nil && !isNil(o.BdtPolData) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *BdtPolicy) SetBdtPolData(v BdtPolicyData) {
 
 // GetBdtReqData returns the BdtReqData field value if set, zero value otherwise.
 func (o *BdtPolicy) GetBdtReqData() BdtReqData {
-	if o == nil || IsNil(o.BdtReqData) {
+	if o == nil || isNil(o.BdtReqData) {
 		var ret BdtReqData
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *BdtPolicy) GetBdtReqData() BdtReqData {
 // GetBdtReqDataOk returns a tuple with the BdtReqData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicy) GetBdtReqDataOk() (*BdtReqData, bool) {
-	if o == nil || IsNil(o.BdtReqData) {
+	if o == nil || isNil(o.BdtReqData) {
 		return nil, false
 	}
 	return o.BdtReqData, true
@@ -92,7 +92,7 @@ func (o *BdtPolicy) GetBdtReqDataOk() (*BdtReqData, bool) {
 
 // HasBdtReqData returns a boolean if a field has been set.
 func (o *BdtPolicy) HasBdtReqData() bool {
-	if o != nil && !IsNil(o.BdtReqData) {
+	if o != nil && !isNil(o.BdtReqData) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o BdtPolicy) MarshalJSON() ([]byte, error) {
 
 func (o BdtPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BdtPolData) {
+	if !isNil(o.BdtPolData) {
 		toSerialize["bdtPolData"] = o.BdtPolData
 	}
-	if !IsNil(o.BdtReqData) {
+	if !isNil(o.BdtReqData) {
 		toSerialize["bdtReqData"] = o.BdtReqData
 	}
 	return toSerialize, nil

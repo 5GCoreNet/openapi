@@ -41,7 +41,7 @@ func NewCSonPciListWithDefaults() *CSonPciList {
 
 // GetNRPci returns the NRPci field value if set, zero value otherwise.
 func (o *CSonPciList) GetNRPci() int32 {
-	if o == nil || IsNil(o.NRPci) {
+	if o == nil || isNil(o.NRPci) {
 		var ret int32
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CSonPciList) GetNRPci() int32 {
 // GetNRPciOk returns a tuple with the NRPci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CSonPciList) GetNRPciOk() (*int32, bool) {
-	if o == nil || IsNil(o.NRPci) {
+	if o == nil || isNil(o.NRPci) {
 		return nil, false
 	}
 	return o.NRPci, true
@@ -59,7 +59,7 @@ func (o *CSonPciList) GetNRPciOk() (*int32, bool) {
 
 // HasNRPci returns a boolean if a field has been set.
 func (o *CSonPciList) HasNRPci() bool {
-	if o != nil && !IsNil(o.NRPci) {
+	if o != nil && !isNil(o.NRPci) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o CSonPciList) MarshalJSON() ([]byte, error) {
 
 func (o CSonPciList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NRPci) {
+	if !isNil(o.NRPci) {
 		toSerialize["NRPci"] = o.NRPci
 	}
 	return toSerialize, nil

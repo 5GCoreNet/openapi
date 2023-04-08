@@ -62,7 +62,7 @@ func NewAcrMgntEventsSubscriptionWithDefaults() *AcrMgntEventsSubscription {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *AcrMgntEventsSubscription) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -80,7 +80,7 @@ func (o *AcrMgntEventsSubscription) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AcrMgntEventsSubscription) SetEventSubscs(v []AcrMgntEventSubsc) {
 
 // GetEvtReq returns the EvtReq field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetEvtReq() ReportingInformation {
-	if o == nil || IsNil(o.EvtReq) {
+	if o == nil || isNil(o.EvtReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AcrMgntEventsSubscription) GetEvtReq() ReportingInformation {
 // GetEvtReqOk returns a tuple with the EvtReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetEvtReqOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.EvtReq) {
+	if o == nil || isNil(o.EvtReq) {
 		return nil, false
 	}
 	return o.EvtReq, true
@@ -160,7 +160,7 @@ func (o *AcrMgntEventsSubscription) GetEvtReqOk() (*ReportingInformation, bool) 
 
 // HasEvtReq returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasEvtReq() bool {
-	if o != nil && !IsNil(o.EvtReq) {
+	if o != nil && !isNil(o.EvtReq) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *AcrMgntEventsSubscription) SetNotificationDestination(v string) {
 
 // GetEventReports returns the EventReports field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetEventReports() []AcrMgntEventReport {
-	if o == nil || IsNil(o.EventReports) {
+	if o == nil || isNil(o.EventReports) {
 		var ret []AcrMgntEventReport
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *AcrMgntEventsSubscription) GetEventReports() []AcrMgntEventReport {
 // GetEventReportsOk returns a tuple with the EventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetEventReportsOk() ([]AcrMgntEventReport, bool) {
-	if o == nil || IsNil(o.EventReports) {
+	if o == nil || isNil(o.EventReports) {
 		return nil, false
 	}
 	return o.EventReports, true
@@ -216,7 +216,7 @@ func (o *AcrMgntEventsSubscription) GetEventReportsOk() ([]AcrMgntEventReport, b
 
 // HasEventReports returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasEventReports() bool {
-	if o != nil && !IsNil(o.EventReports) {
+	if o != nil && !isNil(o.EventReports) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *AcrMgntEventsSubscription) SetEventReports(v []AcrMgntEventReport) {
 
 // GetAvailabilityInfo returns the AvailabilityInfo field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetAvailabilityInfo() AvailabilityNotif {
-	if o == nil || IsNil(o.AvailabilityInfo) {
+	if o == nil || isNil(o.AvailabilityInfo) {
 		var ret AvailabilityNotif
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *AcrMgntEventsSubscription) GetAvailabilityInfo() AvailabilityNotif {
 // GetAvailabilityInfoOk returns a tuple with the AvailabilityInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetAvailabilityInfoOk() (*AvailabilityNotif, bool) {
-	if o == nil || IsNil(o.AvailabilityInfo) {
+	if o == nil || isNil(o.AvailabilityInfo) {
 		return nil, false
 	}
 	return o.AvailabilityInfo, true
@@ -248,7 +248,7 @@ func (o *AcrMgntEventsSubscription) GetAvailabilityInfoOk() (*AvailabilityNotif,
 
 // HasAvailabilityInfo returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasAvailabilityInfo() bool {
-	if o != nil && !IsNil(o.AvailabilityInfo) {
+	if o != nil && !isNil(o.AvailabilityInfo) {
 		return true
 	}
 
@@ -262,7 +262,7 @@ func (o *AcrMgntEventsSubscription) SetAvailabilityInfo(v AvailabilityNotif) {
 
 // GetFailEventReports returns the FailEventReports field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetFailEventReports() []FailureAcrMgntEventInfo {
-	if o == nil || IsNil(o.FailEventReports) {
+	if o == nil || isNil(o.FailEventReports) {
 		var ret []FailureAcrMgntEventInfo
 		return ret
 	}
@@ -272,7 +272,7 @@ func (o *AcrMgntEventsSubscription) GetFailEventReports() []FailureAcrMgntEventI
 // GetFailEventReportsOk returns a tuple with the FailEventReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetFailEventReportsOk() ([]FailureAcrMgntEventInfo, bool) {
-	if o == nil || IsNil(o.FailEventReports) {
+	if o == nil || isNil(o.FailEventReports) {
 		return nil, false
 	}
 	return o.FailEventReports, true
@@ -280,7 +280,7 @@ func (o *AcrMgntEventsSubscription) GetFailEventReportsOk() ([]FailureAcrMgntEve
 
 // HasFailEventReports returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasFailEventReports() bool {
-	if o != nil && !IsNil(o.FailEventReports) {
+	if o != nil && !isNil(o.FailEventReports) {
 		return true
 	}
 
@@ -294,7 +294,7 @@ func (o *AcrMgntEventsSubscription) SetFailEventReports(v []FailureAcrMgntEventI
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -304,7 +304,7 @@ func (o *AcrMgntEventsSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -312,7 +312,7 @@ func (o *AcrMgntEventsSubscription) GetRequestTestNotificationOk() (*bool, bool)
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -326,7 +326,7 @@ func (o *AcrMgntEventsSubscription) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -336,7 +336,7 @@ func (o *AcrMgntEventsSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -344,7 +344,7 @@ func (o *AcrMgntEventsSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConf
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -358,7 +358,7 @@ func (o *AcrMgntEventsSubscription) SetWebsockNotifConfig(v WebsockNotifConfig) 
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AcrMgntEventsSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -368,7 +368,7 @@ func (o *AcrMgntEventsSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrMgntEventsSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -376,7 +376,7 @@ func (o *AcrMgntEventsSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AcrMgntEventsSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -398,31 +398,31 @@ func (o AcrMgntEventsSubscription) MarshalJSON() ([]byte, error) {
 
 func (o AcrMgntEventsSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["easId"] = o.EasId
 	toSerialize["eventSubscs"] = o.EventSubscs
-	if !IsNil(o.EvtReq) {
+	if !isNil(o.EvtReq) {
 		toSerialize["evtReq"] = o.EvtReq
 	}
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !IsNil(o.EventReports) {
+	if !isNil(o.EventReports) {
 		toSerialize["eventReports"] = o.EventReports
 	}
-	if !IsNil(o.AvailabilityInfo) {
+	if !isNil(o.AvailabilityInfo) {
 		toSerialize["availabilityInfo"] = o.AvailabilityInfo
 	}
-	if !IsNil(o.FailEventReports) {
+	if !isNil(o.FailEventReports) {
 		toSerialize["failEventReports"] = o.FailEventReports
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

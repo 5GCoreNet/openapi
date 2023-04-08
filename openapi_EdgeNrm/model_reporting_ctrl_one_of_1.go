@@ -42,7 +42,7 @@ func NewReportingCtrlOneOf1WithDefaults() *ReportingCtrlOneOf1 {
 
 // GetFileReportingPeriod returns the FileReportingPeriod field value if set, zero value otherwise.
 func (o *ReportingCtrlOneOf1) GetFileReportingPeriod() int32 {
-	if o == nil || IsNil(o.FileReportingPeriod) {
+	if o == nil || isNil(o.FileReportingPeriod) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ReportingCtrlOneOf1) GetFileReportingPeriod() int32 {
 // GetFileReportingPeriodOk returns a tuple with the FileReportingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCtrlOneOf1) GetFileReportingPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.FileReportingPeriod) {
+	if o == nil || isNil(o.FileReportingPeriod) {
 		return nil, false
 	}
 	return o.FileReportingPeriod, true
@@ -60,7 +60,7 @@ func (o *ReportingCtrlOneOf1) GetFileReportingPeriodOk() (*int32, bool) {
 
 // HasFileReportingPeriod returns a boolean if a field has been set.
 func (o *ReportingCtrlOneOf1) HasFileReportingPeriod() bool {
-	if o != nil && !IsNil(o.FileReportingPeriod) {
+	if o != nil && !isNil(o.FileReportingPeriod) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ReportingCtrlOneOf1) SetFileReportingPeriod(v int32) {
 
 // GetFileLocation returns the FileLocation field value if set, zero value otherwise.
 func (o *ReportingCtrlOneOf1) GetFileLocation() string {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ReportingCtrlOneOf1) GetFileLocation() string {
 // GetFileLocationOk returns a tuple with the FileLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCtrlOneOf1) GetFileLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.FileLocation) {
+	if o == nil || isNil(o.FileLocation) {
 		return nil, false
 	}
 	return o.FileLocation, true
@@ -92,7 +92,7 @@ func (o *ReportingCtrlOneOf1) GetFileLocationOk() (*string, bool) {
 
 // HasFileLocation returns a boolean if a field has been set.
 func (o *ReportingCtrlOneOf1) HasFileLocation() bool {
-	if o != nil && !IsNil(o.FileLocation) {
+	if o != nil && !isNil(o.FileLocation) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ReportingCtrlOneOf1) MarshalJSON() ([]byte, error) {
 
 func (o ReportingCtrlOneOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FileReportingPeriod) {
+	if !isNil(o.FileReportingPeriod) {
 		toSerialize["fileReportingPeriod"] = o.FileReportingPeriod
 	}
-	if !IsNil(o.FileLocation) {
+	if !isNil(o.FileLocation) {
 		toSerialize["fileLocation"] = o.FileLocation
 	}
 	return toSerialize, nil

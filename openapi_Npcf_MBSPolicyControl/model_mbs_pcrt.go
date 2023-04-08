@@ -17,23 +17,37 @@ import (
 
 // MbsPcrt Possible values are: - MBS_SESSION_UPDATE: Indicates the MBS Session Update policy control request trigger. 
 type MbsPcrt struct {
-	string *string
+	MbsPcrtAnyOf *MbsPcrtAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsPcrt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into MbsPcrtAnyOf
+	err = json.Unmarshal(data, &dst.MbsPcrtAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonMbsPcrtAnyOf, _ := json.Marshal(dst.MbsPcrtAnyOf)
+		if string(jsonMbsPcrtAnyOf) == "{}" { // empty struct
+			dst.MbsPcrtAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.MbsPcrtAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.MbsPcrtAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(MbsPcrt)")
@@ -41,8 +55,12 @@ func (dst *MbsPcrt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsPcrt) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.MbsPcrtAnyOf != nil {
+		return json.Marshal(&src.MbsPcrtAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

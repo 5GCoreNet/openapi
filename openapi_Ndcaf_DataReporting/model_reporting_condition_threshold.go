@@ -17,65 +17,65 @@ import (
 
 // ReportingConditionThreshold struct for ReportingConditionThreshold
 type ReportingConditionThreshold struct {
-	float32 *float32
-	float64 *float64
-	int32 *int32
-	int64 *int64
+	Float32 *float32
+	Float64 *float64
+	Int32 *int32
+	Int64 *int64
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingConditionThreshold) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into float32
-	err = json.Unmarshal(data, &dst.float32);
+	err = json.Unmarshal(data, &dst.Float32);
 	if err == nil {
-		jsonfloat32, _ := json.Marshal(dst.float32)
-		if string(jsonfloat32) == "{}" { // empty struct
-			dst.float32 = nil
+		jsonFloat32, _ := json.Marshal(dst.Float32)
+		if string(jsonFloat32) == "{}" { // empty struct
+			dst.Float32 = nil
 		} else {
-			return nil // data stored in dst.float32, return on the first match
+			return nil // data stored in dst.Float32, return on the first match
 		}
 	} else {
-		dst.float32 = nil
+		dst.Float32 = nil
 	}
 
 	// try to unmarshal JSON data into float64
-	err = json.Unmarshal(data, &dst.float64);
+	err = json.Unmarshal(data, &dst.Float64);
 	if err == nil {
-		jsonfloat64, _ := json.Marshal(dst.float64)
-		if string(jsonfloat64) == "{}" { // empty struct
-			dst.float64 = nil
+		jsonFloat64, _ := json.Marshal(dst.Float64)
+		if string(jsonFloat64) == "{}" { // empty struct
+			dst.Float64 = nil
 		} else {
-			return nil // data stored in dst.float64, return on the first match
+			return nil // data stored in dst.Float64, return on the first match
 		}
 	} else {
-		dst.float64 = nil
+		dst.Float64 = nil
 	}
 
 	// try to unmarshal JSON data into int32
-	err = json.Unmarshal(data, &dst.int32);
+	err = json.Unmarshal(data, &dst.Int32);
 	if err == nil {
-		jsonint32, _ := json.Marshal(dst.int32)
-		if string(jsonint32) == "{}" { // empty struct
-			dst.int32 = nil
+		jsonInt32, _ := json.Marshal(dst.Int32)
+		if string(jsonInt32) == "{}" { // empty struct
+			dst.Int32 = nil
 		} else {
-			return nil // data stored in dst.int32, return on the first match
+			return nil // data stored in dst.Int32, return on the first match
 		}
 	} else {
-		dst.int32 = nil
+		dst.Int32 = nil
 	}
 
 	// try to unmarshal JSON data into int64
-	err = json.Unmarshal(data, &dst.int64);
+	err = json.Unmarshal(data, &dst.Int64);
 	if err == nil {
-		jsonint64, _ := json.Marshal(dst.int64)
-		if string(jsonint64) == "{}" { // empty struct
-			dst.int64 = nil
+		jsonInt64, _ := json.Marshal(dst.Int64)
+		if string(jsonInt64) == "{}" { // empty struct
+			dst.Int64 = nil
 		} else {
-			return nil // data stored in dst.int64, return on the first match
+			return nil // data stored in dst.Int64, return on the first match
 		}
 	} else {
-		dst.int64 = nil
+		dst.Int64 = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ReportingConditionThreshold)")
@@ -83,20 +83,20 @@ func (dst *ReportingConditionThreshold) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportingConditionThreshold) MarshalJSON() ([]byte, error) {
-	if src.float32 != nil {
-		return json.Marshal(&src.float32)
+	if src.Float32 != nil {
+		return json.Marshal(&src.Float32)
 	}
 
-	if src.float64 != nil {
-		return json.Marshal(&src.float64)
+	if src.Float64 != nil {
+		return json.Marshal(&src.Float64)
 	}
 
-	if src.int32 != nil {
-		return json.Marshal(&src.int32)
+	if src.Int32 != nil {
+		return json.Marshal(&src.Int32)
 	}
 
-	if src.int64 != nil {
-		return json.Marshal(&src.int64)
+	if src.Int64 != nil {
+		return json.Marshal(&src.Int64)
 	}
 
 	return nil, nil // no data in anyOf schemas

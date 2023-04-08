@@ -154,7 +154,7 @@ func (o *AuthorizationInfo) SetAuthUpdateCallbackUri(v string) {
 
 // GetAfId returns the AfId field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetAfId() string {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *AuthorizationInfo) GetAfId() string {
 // GetAfIdOk returns a tuple with the AfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetAfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfId) {
+	if o == nil || isNil(o.AfId) {
 		return nil, false
 	}
 	return o.AfId, true
@@ -172,7 +172,7 @@ func (o *AuthorizationInfo) GetAfIdOk() (*string, bool) {
 
 // HasAfId returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasAfId() bool {
-	if o != nil && !IsNil(o.AfId) {
+	if o != nil && !isNil(o.AfId) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *AuthorizationInfo) SetAfId(v string) {
 
 // GetNefId returns the NefId field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetNefId() string {
-	if o == nil || IsNil(o.NefId) {
+	if o == nil || isNil(o.NefId) {
 		var ret string
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *AuthorizationInfo) GetNefId() string {
 // GetNefIdOk returns a tuple with the NefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetNefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NefId) {
+	if o == nil || isNil(o.NefId) {
 		return nil, false
 	}
 	return o.NefId, true
@@ -204,7 +204,7 @@ func (o *AuthorizationInfo) GetNefIdOk() (*string, bool) {
 
 // HasNefId returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasNefId() bool {
-	if o != nil && !IsNil(o.NefId) {
+	if o != nil && !isNil(o.NefId) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *AuthorizationInfo) SetNefId(v string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *AuthorizationInfo) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -236,7 +236,7 @@ func (o *AuthorizationInfo) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *AuthorizationInfo) SetValidityTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *AuthorizationInfo) GetContextInfo() ContextInfo {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *AuthorizationInfo) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationInfo) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -268,7 +268,7 @@ func (o *AuthorizationInfo) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *AuthorizationInfo) HasContextInfo() bool {
-	if o != nil && !IsNil(o.ContextInfo) {
+	if o != nil && !isNil(o.ContextInfo) {
 		return true
 	}
 
@@ -294,16 +294,16 @@ func (o AuthorizationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	toSerialize["authUpdateCallbackUri"] = o.AuthUpdateCallbackUri
-	if !IsNil(o.AfId) {
+	if !isNil(o.AfId) {
 		toSerialize["afId"] = o.AfId
 	}
-	if !IsNil(o.NefId) {
+	if !isNil(o.NefId) {
 		toSerialize["nefId"] = o.NefId
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.ContextInfo) {
+	if !isNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
 	return toSerialize, nil

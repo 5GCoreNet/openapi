@@ -42,7 +42,7 @@ func NewDANRManagementFunctionSingleAllOfAttributesWithDefaults() *DANRManagemen
 
 // GetIntrasystemANRManagementSwitch returns the IntrasystemANRManagementSwitch field value if set, zero value otherwise.
 func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntrasystemANRManagementSwitch() bool {
-	if o == nil || IsNil(o.IntrasystemANRManagementSwitch) {
+	if o == nil || isNil(o.IntrasystemANRManagementSwitch) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntrasystemANRManagemen
 // GetIntrasystemANRManagementSwitchOk returns a tuple with the IntrasystemANRManagementSwitch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntrasystemANRManagementSwitchOk() (*bool, bool) {
-	if o == nil || IsNil(o.IntrasystemANRManagementSwitch) {
+	if o == nil || isNil(o.IntrasystemANRManagementSwitch) {
 		return nil, false
 	}
 	return o.IntrasystemANRManagementSwitch, true
@@ -60,7 +60,7 @@ func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntrasystemANRManagemen
 
 // HasIntrasystemANRManagementSwitch returns a boolean if a field has been set.
 func (o *DANRManagementFunctionSingleAllOfAttributes) HasIntrasystemANRManagementSwitch() bool {
-	if o != nil && !IsNil(o.IntrasystemANRManagementSwitch) {
+	if o != nil && !isNil(o.IntrasystemANRManagementSwitch) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *DANRManagementFunctionSingleAllOfAttributes) SetIntrasystemANRManagemen
 
 // GetIntersystemANRManagementSwitch returns the IntersystemANRManagementSwitch field value if set, zero value otherwise.
 func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntersystemANRManagementSwitch() bool {
-	if o == nil || IsNil(o.IntersystemANRManagementSwitch) {
+	if o == nil || isNil(o.IntersystemANRManagementSwitch) {
 		var ret bool
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntersystemANRManagemen
 // GetIntersystemANRManagementSwitchOk returns a tuple with the IntersystemANRManagementSwitch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntersystemANRManagementSwitchOk() (*bool, bool) {
-	if o == nil || IsNil(o.IntersystemANRManagementSwitch) {
+	if o == nil || isNil(o.IntersystemANRManagementSwitch) {
 		return nil, false
 	}
 	return o.IntersystemANRManagementSwitch, true
@@ -92,7 +92,7 @@ func (o *DANRManagementFunctionSingleAllOfAttributes) GetIntersystemANRManagemen
 
 // HasIntersystemANRManagementSwitch returns a boolean if a field has been set.
 func (o *DANRManagementFunctionSingleAllOfAttributes) HasIntersystemANRManagementSwitch() bool {
-	if o != nil && !IsNil(o.IntersystemANRManagementSwitch) {
+	if o != nil && !isNil(o.IntersystemANRManagementSwitch) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o DANRManagementFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, erro
 
 func (o DANRManagementFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IntrasystemANRManagementSwitch) {
+	if !isNil(o.IntrasystemANRManagementSwitch) {
 		toSerialize["intrasystemANRManagementSwitch"] = o.IntrasystemANRManagementSwitch
 	}
-	if !IsNil(o.IntersystemANRManagementSwitch) {
+	if !isNil(o.IntersystemANRManagementSwitch) {
 		toSerialize["intersystemANRManagementSwitch"] = o.IntersystemANRManagementSwitch
 	}
 	return toSerialize, nil

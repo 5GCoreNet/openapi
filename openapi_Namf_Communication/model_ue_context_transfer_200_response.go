@@ -21,9 +21,9 @@ var _ MappedNullable = &UEContextTransfer200Response{}
 // UEContextTransfer200Response struct for UEContextTransfer200Response
 type UEContextTransfer200Response struct {
 	JsonData *UeContextTransferRspData `json:"jsonData,omitempty"`
-	BinaryDataN2Information **os.File `json:"binaryDataN2Information,omitempty"`
-	BinaryDataN2InformationExt1 **os.File `json:"binaryDataN2InformationExt1,omitempty"`
-	BinaryDataN2InformationExt2 **os.File `json:"binaryDataN2InformationExt2,omitempty"`
+	BinaryDataN2Information *os.File `json:"binaryDataN2Information,omitempty"`
+	BinaryDataN2InformationExt1 *os.File `json:"binaryDataN2InformationExt1,omitempty"`
+	BinaryDataN2InformationExt2 *os.File `json:"binaryDataN2InformationExt2,omitempty"`
 }
 
 // NewUEContextTransfer200Response instantiates a new UEContextTransfer200Response object
@@ -45,7 +45,7 @@ func NewUEContextTransfer200ResponseWithDefaults() *UEContextTransfer200Response
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *UEContextTransfer200Response) GetJsonData() UeContextTransferRspData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret UeContextTransferRspData
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UEContextTransfer200Response) GetJsonData() UeContextTransferRspData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEContextTransfer200Response) GetJsonDataOk() (*UeContextTransferRspData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -63,7 +63,7 @@ func (o *UEContextTransfer200Response) GetJsonDataOk() (*UeContextTransferRspDat
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *UEContextTransfer200Response) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -76,9 +76,9 @@ func (o *UEContextTransfer200Response) SetJsonData(v UeContextTransferRspData) {
 }
 
 // GetBinaryDataN2Information returns the BinaryDataN2Information field value if set, zero value otherwise.
-func (o *UEContextTransfer200Response) GetBinaryDataN2Information() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information) {
-		var ret *os.File
+func (o *UEContextTransfer200Response) GetBinaryDataN2Information() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information
@@ -86,8 +86,8 @@ func (o *UEContextTransfer200Response) GetBinaryDataN2Information() *os.File {
 
 // GetBinaryDataN2InformationOk returns a tuple with the BinaryDataN2Information field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UEContextTransfer200Response) GetBinaryDataN2InformationOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information) {
+func (o *UEContextTransfer200Response) GetBinaryDataN2InformationOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information, true
@@ -95,22 +95,22 @@ func (o *UEContextTransfer200Response) GetBinaryDataN2InformationOk() (**os.File
 
 // HasBinaryDataN2Information returns a boolean if a field has been set.
 func (o *UEContextTransfer200Response) HasBinaryDataN2Information() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information) {
+	if o != nil && !isNil(o.BinaryDataN2Information) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information gets a reference to the given *os.File and assigns it to the BinaryDataN2Information field.
-func (o *UEContextTransfer200Response) SetBinaryDataN2Information(v *os.File) {
+// SetBinaryDataN2Information gets a reference to the given os.File and assigns it to the BinaryDataN2Information field.
+func (o *UEContextTransfer200Response) SetBinaryDataN2Information(v os.File) {
 	o.BinaryDataN2Information = &v
 }
 
 // GetBinaryDataN2InformationExt1 returns the BinaryDataN2InformationExt1 field value if set, zero value otherwise.
-func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt1() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2InformationExt1) {
-		var ret *os.File
+func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt1() os.File {
+	if o == nil || isNil(o.BinaryDataN2InformationExt1) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2InformationExt1
@@ -118,8 +118,8 @@ func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt1() *os.File
 
 // GetBinaryDataN2InformationExt1Ok returns a tuple with the BinaryDataN2InformationExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt1Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2InformationExt1) {
+func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt1Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2InformationExt1) {
 		return nil, false
 	}
 	return o.BinaryDataN2InformationExt1, true
@@ -127,22 +127,22 @@ func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt1Ok() (**os.
 
 // HasBinaryDataN2InformationExt1 returns a boolean if a field has been set.
 func (o *UEContextTransfer200Response) HasBinaryDataN2InformationExt1() bool {
-	if o != nil && !IsNil(o.BinaryDataN2InformationExt1) {
+	if o != nil && !isNil(o.BinaryDataN2InformationExt1) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2InformationExt1 gets a reference to the given *os.File and assigns it to the BinaryDataN2InformationExt1 field.
-func (o *UEContextTransfer200Response) SetBinaryDataN2InformationExt1(v *os.File) {
+// SetBinaryDataN2InformationExt1 gets a reference to the given os.File and assigns it to the BinaryDataN2InformationExt1 field.
+func (o *UEContextTransfer200Response) SetBinaryDataN2InformationExt1(v os.File) {
 	o.BinaryDataN2InformationExt1 = &v
 }
 
 // GetBinaryDataN2InformationExt2 returns the BinaryDataN2InformationExt2 field value if set, zero value otherwise.
-func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt2() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2InformationExt2) {
-		var ret *os.File
+func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt2() os.File {
+	if o == nil || isNil(o.BinaryDataN2InformationExt2) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2InformationExt2
@@ -150,8 +150,8 @@ func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt2() *os.File
 
 // GetBinaryDataN2InformationExt2Ok returns a tuple with the BinaryDataN2InformationExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt2Ok() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2InformationExt2) {
+func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt2Ok() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2InformationExt2) {
 		return nil, false
 	}
 	return o.BinaryDataN2InformationExt2, true
@@ -159,15 +159,15 @@ func (o *UEContextTransfer200Response) GetBinaryDataN2InformationExt2Ok() (**os.
 
 // HasBinaryDataN2InformationExt2 returns a boolean if a field has been set.
 func (o *UEContextTransfer200Response) HasBinaryDataN2InformationExt2() bool {
-	if o != nil && !IsNil(o.BinaryDataN2InformationExt2) {
+	if o != nil && !isNil(o.BinaryDataN2InformationExt2) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2InformationExt2 gets a reference to the given *os.File and assigns it to the BinaryDataN2InformationExt2 field.
-func (o *UEContextTransfer200Response) SetBinaryDataN2InformationExt2(v *os.File) {
+// SetBinaryDataN2InformationExt2 gets a reference to the given os.File and assigns it to the BinaryDataN2InformationExt2 field.
+func (o *UEContextTransfer200Response) SetBinaryDataN2InformationExt2(v os.File) {
 	o.BinaryDataN2InformationExt2 = &v
 }
 
@@ -181,16 +181,16 @@ func (o UEContextTransfer200Response) MarshalJSON() ([]byte, error) {
 
 func (o UEContextTransfer200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataN2Information) {
+	if !isNil(o.BinaryDataN2Information) {
 		toSerialize["binaryDataN2Information"] = o.BinaryDataN2Information
 	}
-	if !IsNil(o.BinaryDataN2InformationExt1) {
+	if !isNil(o.BinaryDataN2InformationExt1) {
 		toSerialize["binaryDataN2InformationExt1"] = o.BinaryDataN2InformationExt1
 	}
-	if !IsNil(o.BinaryDataN2InformationExt2) {
+	if !isNil(o.BinaryDataN2InformationExt2) {
 		toSerialize["binaryDataN2InformationExt2"] = o.BinaryDataN2InformationExt2
 	}
 	return toSerialize, nil

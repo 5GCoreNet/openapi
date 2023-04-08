@@ -45,7 +45,7 @@ func NewPsaInformationWithDefaults() *PsaInformation {
 
 // GetPsaInd returns the PsaInd field value if set, zero value otherwise.
 func (o *PsaInformation) GetPsaInd() PsaIndication {
-	if o == nil || IsNil(o.PsaInd) {
+	if o == nil || isNil(o.PsaInd) {
 		var ret PsaIndication
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *PsaInformation) GetPsaInd() PsaIndication {
 // GetPsaIndOk returns a tuple with the PsaInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetPsaIndOk() (*PsaIndication, bool) {
-	if o == nil || IsNil(o.PsaInd) {
+	if o == nil || isNil(o.PsaInd) {
 		return nil, false
 	}
 	return o.PsaInd, true
@@ -63,7 +63,7 @@ func (o *PsaInformation) GetPsaIndOk() (*PsaIndication, bool) {
 
 // HasPsaInd returns a boolean if a field has been set.
 func (o *PsaInformation) HasPsaInd() bool {
-	if o != nil && !IsNil(o.PsaInd) {
+	if o != nil && !isNil(o.PsaInd) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *PsaInformation) SetPsaInd(v PsaIndication) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *PsaInformation) GetDnaiList() []string {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *PsaInformation) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetDnaiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -95,7 +95,7 @@ func (o *PsaInformation) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *PsaInformation) HasDnaiList() bool {
-	if o != nil && !IsNil(o.DnaiList) {
+	if o != nil && !isNil(o.DnaiList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *PsaInformation) SetDnaiList(v []string) {
 
 // GetUeIpv6Prefix returns the UeIpv6Prefix field value if set, zero value otherwise.
 func (o *PsaInformation) GetUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.UeIpv6Prefix) {
+	if o == nil || isNil(o.UeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *PsaInformation) GetUeIpv6Prefix() Ipv6Prefix {
 // GetUeIpv6PrefixOk returns a tuple with the UeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.UeIpv6Prefix) {
+	if o == nil || isNil(o.UeIpv6Prefix) {
 		return nil, false
 	}
 	return o.UeIpv6Prefix, true
@@ -127,7 +127,7 @@ func (o *PsaInformation) GetUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasUeIpv6Prefix returns a boolean if a field has been set.
 func (o *PsaInformation) HasUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.UeIpv6Prefix) {
+	if o != nil && !isNil(o.UeIpv6Prefix) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *PsaInformation) SetUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetPsaUpfId returns the PsaUpfId field value if set, zero value otherwise.
 func (o *PsaInformation) GetPsaUpfId() string {
-	if o == nil || IsNil(o.PsaUpfId) {
+	if o == nil || isNil(o.PsaUpfId) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *PsaInformation) GetPsaUpfId() string {
 // GetPsaUpfIdOk returns a tuple with the PsaUpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PsaInformation) GetPsaUpfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PsaUpfId) {
+	if o == nil || isNil(o.PsaUpfId) {
 		return nil, false
 	}
 	return o.PsaUpfId, true
@@ -159,7 +159,7 @@ func (o *PsaInformation) GetPsaUpfIdOk() (*string, bool) {
 
 // HasPsaUpfId returns a boolean if a field has been set.
 func (o *PsaInformation) HasPsaUpfId() bool {
-	if o != nil && !IsNil(o.PsaUpfId) {
+	if o != nil && !isNil(o.PsaUpfId) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o PsaInformation) MarshalJSON() ([]byte, error) {
 
 func (o PsaInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PsaInd) {
+	if !isNil(o.PsaInd) {
 		toSerialize["psaInd"] = o.PsaInd
 	}
-	if !IsNil(o.DnaiList) {
+	if !isNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
-	if !IsNil(o.UeIpv6Prefix) {
+	if !isNil(o.UeIpv6Prefix) {
 		toSerialize["ueIpv6Prefix"] = o.UeIpv6Prefix
 	}
-	if !IsNil(o.PsaUpfId) {
+	if !isNil(o.PsaUpfId) {
 		toSerialize["psaUpfId"] = o.PsaUpfId
 	}
 	return toSerialize, nil

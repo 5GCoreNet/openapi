@@ -45,7 +45,7 @@ func NewTimeRangeListWithDefaults() *TimeRangeList {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *TimeRangeList) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *TimeRangeList) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeRangeList) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -63,7 +63,7 @@ func (o *TimeRangeList) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *TimeRangeList) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *TimeRangeList) SetStartTime(v time.Time) {
 
 // GetStopTime returns the StopTime field value if set, zero value otherwise.
 func (o *TimeRangeList) GetStopTime() time.Time {
-	if o == nil || IsNil(o.StopTime) {
+	if o == nil || isNil(o.StopTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *TimeRangeList) GetStopTime() time.Time {
 // GetStopTimeOk returns a tuple with the StopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimeRangeList) GetStopTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StopTime) {
+	if o == nil || isNil(o.StopTime) {
 		return nil, false
 	}
 	return o.StopTime, true
@@ -95,7 +95,7 @@ func (o *TimeRangeList) GetStopTimeOk() (*time.Time, bool) {
 
 // HasStopTime returns a boolean if a field has been set.
 func (o *TimeRangeList) HasStopTime() bool {
-	if o != nil && !IsNil(o.StopTime) {
+	if o != nil && !isNil(o.StopTime) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o TimeRangeList) MarshalJSON() ([]byte, error) {
 
 func (o TimeRangeList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.StopTime) {
+	if !isNil(o.StopTime) {
 		toSerialize["stopTime"] = o.StopTime
 	}
 	return toSerialize, nil

@@ -52,7 +52,7 @@ func NewReportingOptionsWithDefaults() *ReportingOptions {
 
 // GetReportMode returns the ReportMode field value if set, zero value otherwise.
 func (o *ReportingOptions) GetReportMode() EventReportMode {
-	if o == nil || IsNil(o.ReportMode) {
+	if o == nil || isNil(o.ReportMode) {
 		var ret EventReportMode
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ReportingOptions) GetReportMode() EventReportMode {
 // GetReportModeOk returns a tuple with the ReportMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetReportModeOk() (*EventReportMode, bool) {
-	if o == nil || IsNil(o.ReportMode) {
+	if o == nil || isNil(o.ReportMode) {
 		return nil, false
 	}
 	return o.ReportMode, true
@@ -70,7 +70,7 @@ func (o *ReportingOptions) GetReportModeOk() (*EventReportMode, bool) {
 
 // HasReportMode returns a boolean if a field has been set.
 func (o *ReportingOptions) HasReportMode() bool {
-	if o != nil && !IsNil(o.ReportMode) {
+	if o != nil && !isNil(o.ReportMode) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *ReportingOptions) SetReportMode(v EventReportMode) {
 
 // GetMaxNumOfReports returns the MaxNumOfReports field value if set, zero value otherwise.
 func (o *ReportingOptions) GetMaxNumOfReports() int32 {
-	if o == nil || IsNil(o.MaxNumOfReports) {
+	if o == nil || isNil(o.MaxNumOfReports) {
 		var ret int32
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ReportingOptions) GetMaxNumOfReports() int32 {
 // GetMaxNumOfReportsOk returns a tuple with the MaxNumOfReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetMaxNumOfReportsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumOfReports) {
+	if o == nil || isNil(o.MaxNumOfReports) {
 		return nil, false
 	}
 	return o.MaxNumOfReports, true
@@ -102,7 +102,7 @@ func (o *ReportingOptions) GetMaxNumOfReportsOk() (*int32, bool) {
 
 // HasMaxNumOfReports returns a boolean if a field has been set.
 func (o *ReportingOptions) HasMaxNumOfReports() bool {
-	if o != nil && !IsNil(o.MaxNumOfReports) {
+	if o != nil && !isNil(o.MaxNumOfReports) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *ReportingOptions) SetMaxNumOfReports(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *ReportingOptions) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ReportingOptions) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -134,7 +134,7 @@ func (o *ReportingOptions) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *ReportingOptions) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *ReportingOptions) SetExpiry(v time.Time) {
 
 // GetSamplingRatio returns the SamplingRatio field value if set, zero value otherwise.
 func (o *ReportingOptions) GetSamplingRatio() int32 {
-	if o == nil || IsNil(o.SamplingRatio) {
+	if o == nil || isNil(o.SamplingRatio) {
 		var ret int32
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ReportingOptions) GetSamplingRatio() int32 {
 // GetSamplingRatioOk returns a tuple with the SamplingRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetSamplingRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.SamplingRatio) {
+	if o == nil || isNil(o.SamplingRatio) {
 		return nil, false
 	}
 	return o.SamplingRatio, true
@@ -166,7 +166,7 @@ func (o *ReportingOptions) GetSamplingRatioOk() (*int32, bool) {
 
 // HasSamplingRatio returns a boolean if a field has been set.
 func (o *ReportingOptions) HasSamplingRatio() bool {
-	if o != nil && !IsNil(o.SamplingRatio) {
+	if o != nil && !isNil(o.SamplingRatio) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *ReportingOptions) SetSamplingRatio(v int32) {
 
 // GetGuardTime returns the GuardTime field value if set, zero value otherwise.
 func (o *ReportingOptions) GetGuardTime() int32 {
-	if o == nil || IsNil(o.GuardTime) {
+	if o == nil || isNil(o.GuardTime) {
 		var ret int32
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *ReportingOptions) GetGuardTime() int32 {
 // GetGuardTimeOk returns a tuple with the GuardTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetGuardTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.GuardTime) {
+	if o == nil || isNil(o.GuardTime) {
 		return nil, false
 	}
 	return o.GuardTime, true
@@ -198,7 +198,7 @@ func (o *ReportingOptions) GetGuardTimeOk() (*int32, bool) {
 
 // HasGuardTime returns a boolean if a field has been set.
 func (o *ReportingOptions) HasGuardTime() bool {
-	if o != nil && !IsNil(o.GuardTime) {
+	if o != nil && !isNil(o.GuardTime) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *ReportingOptions) SetGuardTime(v int32) {
 
 // GetReportPeriod returns the ReportPeriod field value if set, zero value otherwise.
 func (o *ReportingOptions) GetReportPeriod() int32 {
-	if o == nil || IsNil(o.ReportPeriod) {
+	if o == nil || isNil(o.ReportPeriod) {
 		var ret int32
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *ReportingOptions) GetReportPeriod() int32 {
 // GetReportPeriodOk returns a tuple with the ReportPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetReportPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportPeriod) {
+	if o == nil || isNil(o.ReportPeriod) {
 		return nil, false
 	}
 	return o.ReportPeriod, true
@@ -230,7 +230,7 @@ func (o *ReportingOptions) GetReportPeriodOk() (*int32, bool) {
 
 // HasReportPeriod returns a boolean if a field has been set.
 func (o *ReportingOptions) HasReportPeriod() bool {
-	if o != nil && !IsNil(o.ReportPeriod) {
+	if o != nil && !isNil(o.ReportPeriod) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *ReportingOptions) SetReportPeriod(v int32) {
 
 // GetNotifFlag returns the NotifFlag field value if set, zero value otherwise.
 func (o *ReportingOptions) GetNotifFlag() NotificationFlag {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		var ret NotificationFlag
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *ReportingOptions) GetNotifFlag() NotificationFlag {
 // GetNotifFlagOk returns a tuple with the NotifFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingOptions) GetNotifFlagOk() (*NotificationFlag, bool) {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		return nil, false
 	}
 	return o.NotifFlag, true
@@ -262,7 +262,7 @@ func (o *ReportingOptions) GetNotifFlagOk() (*NotificationFlag, bool) {
 
 // HasNotifFlag returns a boolean if a field has been set.
 func (o *ReportingOptions) HasNotifFlag() bool {
-	if o != nil && !IsNil(o.NotifFlag) {
+	if o != nil && !isNil(o.NotifFlag) {
 		return true
 	}
 
@@ -284,25 +284,25 @@ func (o ReportingOptions) MarshalJSON() ([]byte, error) {
 
 func (o ReportingOptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReportMode) {
+	if !isNil(o.ReportMode) {
 		toSerialize["reportMode"] = o.ReportMode
 	}
-	if !IsNil(o.MaxNumOfReports) {
+	if !isNil(o.MaxNumOfReports) {
 		toSerialize["maxNumOfReports"] = o.MaxNumOfReports
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.SamplingRatio) {
+	if !isNil(o.SamplingRatio) {
 		toSerialize["samplingRatio"] = o.SamplingRatio
 	}
-	if !IsNil(o.GuardTime) {
+	if !isNil(o.GuardTime) {
 		toSerialize["guardTime"] = o.GuardTime
 	}
-	if !IsNil(o.ReportPeriod) {
+	if !isNil(o.ReportPeriod) {
 		toSerialize["reportPeriod"] = o.ReportPeriod
 	}
-	if !IsNil(o.NotifFlag) {
+	if !isNil(o.NotifFlag) {
 		toSerialize["notifFlag"] = o.NotifFlag
 	}
 	return toSerialize, nil

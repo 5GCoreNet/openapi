@@ -41,7 +41,7 @@ func NewReportingCtrlOneOf2WithDefaults() *ReportingCtrlOneOf2 {
 
 // GetStreamTarget returns the StreamTarget field value if set, zero value otherwise.
 func (o *ReportingCtrlOneOf2) GetStreamTarget() string {
-	if o == nil || IsNil(o.StreamTarget) {
+	if o == nil || isNil(o.StreamTarget) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ReportingCtrlOneOf2) GetStreamTarget() string {
 // GetStreamTargetOk returns a tuple with the StreamTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingCtrlOneOf2) GetStreamTargetOk() (*string, bool) {
-	if o == nil || IsNil(o.StreamTarget) {
+	if o == nil || isNil(o.StreamTarget) {
 		return nil, false
 	}
 	return o.StreamTarget, true
@@ -59,7 +59,7 @@ func (o *ReportingCtrlOneOf2) GetStreamTargetOk() (*string, bool) {
 
 // HasStreamTarget returns a boolean if a field has been set.
 func (o *ReportingCtrlOneOf2) HasStreamTarget() bool {
-	if o != nil && !IsNil(o.StreamTarget) {
+	if o != nil && !isNil(o.StreamTarget) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ReportingCtrlOneOf2) MarshalJSON() ([]byte, error) {
 
 func (o ReportingCtrlOneOf2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StreamTarget) {
+	if !isNil(o.StreamTarget) {
 		toSerialize["streamTarget"] = o.StreamTarget
 	}
 	return toSerialize, nil

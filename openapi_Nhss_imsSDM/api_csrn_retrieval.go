@@ -13,7 +13,7 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -99,16 +99,16 @@ func (a *CSRNRetrievalApiService) GetCsrnExecute(r ApiGetCsrnRequest) (*Csrn, *h
 	localVarFormParams := url.Values{}
 
 	if r.prePaging != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pre-paging", r.prePaging, "")
+		parameterAddToQuery(localVarQueryParams, "pre-paging", r.prePaging, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.privateIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "private-identity", r.privateIdentity, "")
 	}
 	if r.callReferenceInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "call-reference-info", r.callReferenceInfo, "")
+		parameterAddToQuery(localVarQueryParams, "call-reference-info", r.callReferenceInfo, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -137,9 +137,9 @@ func (a *CSRNRetrievalApiService) GetCsrnExecute(r ApiGetCsrnRequest) (*Csrn, *h
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

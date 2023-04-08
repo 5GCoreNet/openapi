@@ -69,7 +69,7 @@ func (o *MbsSessionCreateRsp) SetMbsSession(v MbsSession) {
 
 // GetEventList returns the EventList field value if set, zero value otherwise.
 func (o *MbsSessionCreateRsp) GetEventList() MbsSessionEventReportList {
-	if o == nil || IsNil(o.EventList) {
+	if o == nil || isNil(o.EventList) {
 		var ret MbsSessionEventReportList
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MbsSessionCreateRsp) GetEventList() MbsSessionEventReportList {
 // GetEventListOk returns a tuple with the EventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionCreateRsp) GetEventListOk() (*MbsSessionEventReportList, bool) {
-	if o == nil || IsNil(o.EventList) {
+	if o == nil || isNil(o.EventList) {
 		return nil, false
 	}
 	return o.EventList, true
@@ -87,7 +87,7 @@ func (o *MbsSessionCreateRsp) GetEventListOk() (*MbsSessionEventReportList, bool
 
 // HasEventList returns a boolean if a field has been set.
 func (o *MbsSessionCreateRsp) HasEventList() bool {
-	if o != nil && !IsNil(o.EventList) {
+	if o != nil && !isNil(o.EventList) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *MbsSessionCreateRsp) SetEventList(v MbsSessionEventReportList) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MbsSessionCreateRsp) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MbsSessionCreateRsp) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessionCreateRsp) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -119,7 +119,7 @@ func (o *MbsSessionCreateRsp) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MbsSessionCreateRsp) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o MbsSessionCreateRsp) MarshalJSON() ([]byte, error) {
 func (o MbsSessionCreateRsp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSession"] = o.MbsSession
-	if !IsNil(o.EventList) {
+	if !isNil(o.EventList) {
 		toSerialize["eventList"] = o.EventList
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

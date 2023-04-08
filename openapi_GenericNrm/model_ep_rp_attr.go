@@ -43,7 +43,7 @@ func NewEPRPAttrWithDefaults() *EPRPAttr {
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *EPRPAttr) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EPRPAttr) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPRPAttr) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -61,7 +61,7 @@ func (o *EPRPAttr) GetUserLabelOk() (*string, bool) {
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *EPRPAttr) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
+	if o != nil && !isNil(o.UserLabel) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EPRPAttr) SetUserLabel(v string) {
 
 // GetFarEndEntity returns the FarEndEntity field value if set, zero value otherwise.
 func (o *EPRPAttr) GetFarEndEntity() string {
-	if o == nil || IsNil(o.FarEndEntity) {
+	if o == nil || isNil(o.FarEndEntity) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EPRPAttr) GetFarEndEntity() string {
 // GetFarEndEntityOk returns a tuple with the FarEndEntity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPRPAttr) GetFarEndEntityOk() (*string, bool) {
-	if o == nil || IsNil(o.FarEndEntity) {
+	if o == nil || isNil(o.FarEndEntity) {
 		return nil, false
 	}
 	return o.FarEndEntity, true
@@ -93,7 +93,7 @@ func (o *EPRPAttr) GetFarEndEntityOk() (*string, bool) {
 
 // HasFarEndEntity returns a boolean if a field has been set.
 func (o *EPRPAttr) HasFarEndEntity() bool {
-	if o != nil && !IsNil(o.FarEndEntity) {
+	if o != nil && !isNil(o.FarEndEntity) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *EPRPAttr) SetFarEndEntity(v string) {
 
 // GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
 func (o *EPRPAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
+	if o == nil || isNil(o.SupportedPerfMetricGroups) {
 		var ret []SupportedPerfMetricGroup
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *EPRPAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
 // GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EPRPAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
+	if o == nil || isNil(o.SupportedPerfMetricGroups) {
 		return nil, false
 	}
 	return o.SupportedPerfMetricGroups, true
@@ -125,7 +125,7 @@ func (o *EPRPAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup,
 
 // HasSupportedPerfMetricGroups returns a boolean if a field has been set.
 func (o *EPRPAttr) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
+	if o != nil && !isNil(o.SupportedPerfMetricGroups) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o EPRPAttr) MarshalJSON() ([]byte, error) {
 
 func (o EPRPAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
+	if !isNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !IsNil(o.FarEndEntity) {
+	if !isNil(o.FarEndEntity) {
 		toSerialize["farEndEntity"] = o.FarEndEntity
 	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
+	if !isNil(o.SupportedPerfMetricGroups) {
 		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
 	}
 	return toSerialize, nil

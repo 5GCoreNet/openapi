@@ -58,7 +58,7 @@ func NewCancelLocDataWithDefaults() *CancelLocData {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *CancelLocData) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *CancelLocData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -76,7 +76,7 @@ func (o *CancelLocData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *CancelLocData) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *CancelLocData) SetGpsi(v string) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *CancelLocData) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *CancelLocData) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -108,7 +108,7 @@ func (o *CancelLocData) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *CancelLocData) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -122,7 +122,7 @@ func (o *CancelLocData) SetSupi(v string) {
 
 // GetExtGroupId returns the ExtGroupId field value if set, zero value otherwise.
 func (o *CancelLocData) GetExtGroupId() string {
-	if o == nil || IsNil(o.ExtGroupId) {
+	if o == nil || isNil(o.ExtGroupId) {
 		var ret string
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *CancelLocData) GetExtGroupId() string {
 // GetExtGroupIdOk returns a tuple with the ExtGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetExtGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExtGroupId) {
+	if o == nil || isNil(o.ExtGroupId) {
 		return nil, false
 	}
 	return o.ExtGroupId, true
@@ -140,7 +140,7 @@ func (o *CancelLocData) GetExtGroupIdOk() (*string, bool) {
 
 // HasExtGroupId returns a boolean if a field has been set.
 func (o *CancelLocData) HasExtGroupId() bool {
-	if o != nil && !IsNil(o.ExtGroupId) {
+	if o != nil && !isNil(o.ExtGroupId) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *CancelLocData) SetExtGroupId(v string) {
 
 // GetIntGroupId returns the IntGroupId field value if set, zero value otherwise.
 func (o *CancelLocData) GetIntGroupId() string {
-	if o == nil || IsNil(o.IntGroupId) {
+	if o == nil || isNil(o.IntGroupId) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *CancelLocData) GetIntGroupId() string {
 // GetIntGroupIdOk returns a tuple with the IntGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetIntGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.IntGroupId) {
+	if o == nil || isNil(o.IntGroupId) {
 		return nil, false
 	}
 	return o.IntGroupId, true
@@ -172,7 +172,7 @@ func (o *CancelLocData) GetIntGroupIdOk() (*string, bool) {
 
 // HasIntGroupId returns a boolean if a field has been set.
 func (o *CancelLocData) HasIntGroupId() bool {
-	if o != nil && !IsNil(o.IntGroupId) {
+	if o != nil && !isNil(o.IntGroupId) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *CancelLocData) SetLdrReference(v string) {
 
 // GetLmfIdentification returns the LmfIdentification field value if set, zero value otherwise.
 func (o *CancelLocData) GetLmfIdentification() string {
-	if o == nil || IsNil(o.LmfIdentification) {
+	if o == nil || isNil(o.LmfIdentification) {
 		var ret string
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *CancelLocData) GetLmfIdentification() string {
 // GetLmfIdentificationOk returns a tuple with the LmfIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetLmfIdentificationOk() (*string, bool) {
-	if o == nil || IsNil(o.LmfIdentification) {
+	if o == nil || isNil(o.LmfIdentification) {
 		return nil, false
 	}
 	return o.LmfIdentification, true
@@ -252,7 +252,7 @@ func (o *CancelLocData) GetLmfIdentificationOk() (*string, bool) {
 
 // HasLmfIdentification returns a boolean if a field has been set.
 func (o *CancelLocData) HasLmfIdentification() bool {
-	if o != nil && !IsNil(o.LmfIdentification) {
+	if o != nil && !isNil(o.LmfIdentification) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *CancelLocData) SetLmfIdentification(v string) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *CancelLocData) GetAmfId() string {
-	if o == nil || IsNil(o.AmfId) {
+	if o == nil || isNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *CancelLocData) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CancelLocData) GetAmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfId) {
+	if o == nil || isNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -284,7 +284,7 @@ func (o *CancelLocData) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *CancelLocData) HasAmfId() bool {
-	if o != nil && !IsNil(o.AmfId) {
+	if o != nil && !isNil(o.AmfId) {
 		return true
 	}
 
@@ -306,24 +306,24 @@ func (o CancelLocData) MarshalJSON() ([]byte, error) {
 
 func (o CancelLocData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.ExtGroupId) {
+	if !isNil(o.ExtGroupId) {
 		toSerialize["extGroupId"] = o.ExtGroupId
 	}
-	if !IsNil(o.IntGroupId) {
+	if !isNil(o.IntGroupId) {
 		toSerialize["intGroupId"] = o.IntGroupId
 	}
 	toSerialize["hgmlcCallBackUri"] = o.HgmlcCallBackUri
 	toSerialize["ldrReference"] = o.LdrReference
-	if !IsNil(o.LmfIdentification) {
+	if !isNil(o.LmfIdentification) {
 		toSerialize["lmfIdentification"] = o.LmfIdentification
 	}
-	if !IsNil(o.AmfId) {
+	if !isNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
 	return toSerialize, nil

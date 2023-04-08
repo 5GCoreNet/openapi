@@ -47,7 +47,7 @@ func NewASProfileWithDefaults() *ASProfile {
 
 // GetAppName returns the AppName field value if set, zero value otherwise.
 func (o *ASProfile) GetAppName() string {
-	if o == nil || IsNil(o.AppName) {
+	if o == nil || isNil(o.AppName) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *ASProfile) GetAppName() string {
 // GetAppNameOk returns a tuple with the AppName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASProfile) GetAppNameOk() (*string, bool) {
-	if o == nil || IsNil(o.AppName) {
+	if o == nil || isNil(o.AppName) {
 		return nil, false
 	}
 	return o.AppName, true
@@ -65,7 +65,7 @@ func (o *ASProfile) GetAppNameOk() (*string, bool) {
 
 // HasAppName returns a boolean if a field has been set.
 func (o *ASProfile) HasAppName() bool {
-	if o != nil && !IsNil(o.AppName) {
+	if o != nil && !isNil(o.AppName) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *ASProfile) SetAppName(v string) {
 
 // GetAppProviders returns the AppProviders field value if set, zero value otherwise.
 func (o *ASProfile) GetAppProviders() []string {
-	if o == nil || IsNil(o.AppProviders) {
+	if o == nil || isNil(o.AppProviders) {
 		var ret []string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *ASProfile) GetAppProviders() []string {
 // GetAppProvidersOk returns a tuple with the AppProviders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASProfile) GetAppProvidersOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppProviders) {
+	if o == nil || isNil(o.AppProviders) {
 		return nil, false
 	}
 	return o.AppProviders, true
@@ -97,7 +97,7 @@ func (o *ASProfile) GetAppProvidersOk() ([]string, bool) {
 
 // HasAppProviders returns a boolean if a field has been set.
 func (o *ASProfile) HasAppProviders() bool {
-	if o != nil && !IsNil(o.AppProviders) {
+	if o != nil && !isNil(o.AppProviders) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *ASProfile) SetAppProviders(v []string) {
 
 // GetAppSenarios returns the AppSenarios field value if set, zero value otherwise.
 func (o *ASProfile) GetAppSenarios() []string {
-	if o == nil || IsNil(o.AppSenarios) {
+	if o == nil || isNil(o.AppSenarios) {
 		var ret []string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *ASProfile) GetAppSenarios() []string {
 // GetAppSenariosOk returns a tuple with the AppSenarios field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASProfile) GetAppSenariosOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppSenarios) {
+	if o == nil || isNil(o.AppSenarios) {
 		return nil, false
 	}
 	return o.AppSenarios, true
@@ -129,7 +129,7 @@ func (o *ASProfile) GetAppSenariosOk() ([]string, bool) {
 
 // HasAppSenarios returns a boolean if a field has been set.
 func (o *ASProfile) HasAppSenarios() bool {
-	if o != nil && !IsNil(o.AppSenarios) {
+	if o != nil && !isNil(o.AppSenarios) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *ASProfile) SetAppSenarios(v []string) {
 
 // GetAppCategory returns the AppCategory field value if set, zero value otherwise.
 func (o *ASProfile) GetAppCategory() string {
-	if o == nil || IsNil(o.AppCategory) {
+	if o == nil || isNil(o.AppCategory) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *ASProfile) GetAppCategory() string {
 // GetAppCategoryOk returns a tuple with the AppCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASProfile) GetAppCategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.AppCategory) {
+	if o == nil || isNil(o.AppCategory) {
 		return nil, false
 	}
 	return o.AppCategory, true
@@ -161,7 +161,7 @@ func (o *ASProfile) GetAppCategoryOk() (*string, bool) {
 
 // HasAppCategory returns a boolean if a field has been set.
 func (o *ASProfile) HasAppCategory() bool {
-	if o != nil && !IsNil(o.AppCategory) {
+	if o != nil && !isNil(o.AppCategory) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *ASProfile) SetAppCategory(v string) {
 
 // GetAsStatus returns the AsStatus field value if set, zero value otherwise.
 func (o *ASProfile) GetAsStatus() string {
-	if o == nil || IsNil(o.AsStatus) {
+	if o == nil || isNil(o.AsStatus) {
 		var ret string
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *ASProfile) GetAsStatus() string {
 // GetAsStatusOk returns a tuple with the AsStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASProfile) GetAsStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.AsStatus) {
+	if o == nil || isNil(o.AsStatus) {
 		return nil, false
 	}
 	return o.AsStatus, true
@@ -193,7 +193,7 @@ func (o *ASProfile) GetAsStatusOk() (*string, bool) {
 
 // HasAsStatus returns a boolean if a field has been set.
 func (o *ASProfile) HasAsStatus() bool {
-	if o != nil && !IsNil(o.AsStatus) {
+	if o != nil && !isNil(o.AsStatus) {
 		return true
 	}
 
@@ -215,19 +215,19 @@ func (o ASProfile) MarshalJSON() ([]byte, error) {
 
 func (o ASProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppName) {
+	if !isNil(o.AppName) {
 		toSerialize["appName"] = o.AppName
 	}
-	if !IsNil(o.AppProviders) {
+	if !isNil(o.AppProviders) {
 		toSerialize["appProviders"] = o.AppProviders
 	}
-	if !IsNil(o.AppSenarios) {
+	if !isNil(o.AppSenarios) {
 		toSerialize["appSenarios"] = o.AppSenarios
 	}
-	if !IsNil(o.AppCategory) {
+	if !isNil(o.AppCategory) {
 		toSerialize["appCategory"] = o.AppCategory
 	}
-	if !IsNil(o.AsStatus) {
+	if !isNil(o.AsStatus) {
 		toSerialize["asStatus"] = o.AsStatus
 	}
 	return toSerialize, nil

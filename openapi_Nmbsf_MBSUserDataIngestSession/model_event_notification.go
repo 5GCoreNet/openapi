@@ -72,7 +72,7 @@ func (o *EventNotification) SetStatusEvent(v Event) {
 
 // GetMbsDisSessionId returns the MbsDisSessionId field value if set, zero value otherwise.
 func (o *EventNotification) GetMbsDisSessionId() string {
-	if o == nil || IsNil(o.MbsDisSessionId) {
+	if o == nil || isNil(o.MbsDisSessionId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *EventNotification) GetMbsDisSessionId() string {
 // GetMbsDisSessionIdOk returns a tuple with the MbsDisSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetMbsDisSessionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MbsDisSessionId) {
+	if o == nil || isNil(o.MbsDisSessionId) {
 		return nil, false
 	}
 	return o.MbsDisSessionId, true
@@ -90,7 +90,7 @@ func (o *EventNotification) GetMbsDisSessionIdOk() (*string, bool) {
 
 // HasMbsDisSessionId returns a boolean if a field has been set.
 func (o *EventNotification) HasMbsDisSessionId() bool {
-	if o != nil && !IsNil(o.MbsDisSessionId) {
+	if o != nil && !isNil(o.MbsDisSessionId) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *EventNotification) SetMbsDisSessionId(v string) {
 
 // GetStatusAddInfo returns the StatusAddInfo field value if set, zero value otherwise.
 func (o *EventNotification) GetStatusAddInfo() string {
-	if o == nil || IsNil(o.StatusAddInfo) {
+	if o == nil || isNil(o.StatusAddInfo) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *EventNotification) GetStatusAddInfo() string {
 // GetStatusAddInfoOk returns a tuple with the StatusAddInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotification) GetStatusAddInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.StatusAddInfo) {
+	if o == nil || isNil(o.StatusAddInfo) {
 		return nil, false
 	}
 	return o.StatusAddInfo, true
@@ -122,7 +122,7 @@ func (o *EventNotification) GetStatusAddInfoOk() (*string, bool) {
 
 // HasStatusAddInfo returns a boolean if a field has been set.
 func (o *EventNotification) HasStatusAddInfo() bool {
-	if o != nil && !IsNil(o.StatusAddInfo) {
+	if o != nil && !isNil(o.StatusAddInfo) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o EventNotification) MarshalJSON() ([]byte, error) {
 func (o EventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["statusEvent"] = o.StatusEvent
-	if !IsNil(o.MbsDisSessionId) {
+	if !isNil(o.MbsDisSessionId) {
 		toSerialize["mbsDisSessionId"] = o.MbsDisSessionId
 	}
-	if !IsNil(o.StatusAddInfo) {
+	if !isNil(o.StatusAddInfo) {
 		toSerialize["statusAddInfo"] = o.StatusAddInfo
 	}
 	toSerialize["timeStamp"] = o.TimeStamp

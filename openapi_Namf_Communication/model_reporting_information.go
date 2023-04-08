@@ -56,7 +56,7 @@ func NewReportingInformationWithDefaults() *ReportingInformation {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *ReportingInformation) GetImmRep() bool {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ReportingInformation) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetImmRepOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -74,7 +74,7 @@ func (o *ReportingInformation) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *ReportingInformation) HasImmRep() bool {
-	if o != nil && !IsNil(o.ImmRep) {
+	if o != nil && !isNil(o.ImmRep) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ReportingInformation) SetImmRep(v bool) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *ReportingInformation) GetNotifMethod() NotificationMethod1 {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		var ret NotificationMethod1
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ReportingInformation) GetNotifMethod() NotificationMethod1 {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetNotifMethodOk() (*NotificationMethod1, bool) {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -106,7 +106,7 @@ func (o *ReportingInformation) GetNotifMethodOk() (*NotificationMethod1, bool) {
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *ReportingInformation) HasNotifMethod() bool {
-	if o != nil && !IsNil(o.NotifMethod) {
+	if o != nil && !isNil(o.NotifMethod) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ReportingInformation) SetNotifMethod(v NotificationMethod1) {
 
 // GetMaxReportNbr returns the MaxReportNbr field value if set, zero value otherwise.
 func (o *ReportingInformation) GetMaxReportNbr() int32 {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ReportingInformation) GetMaxReportNbr() int32 {
 // GetMaxReportNbrOk returns a tuple with the MaxReportNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetMaxReportNbrOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		return nil, false
 	}
 	return o.MaxReportNbr, true
@@ -138,7 +138,7 @@ func (o *ReportingInformation) GetMaxReportNbrOk() (*int32, bool) {
 
 // HasMaxReportNbr returns a boolean if a field has been set.
 func (o *ReportingInformation) HasMaxReportNbr() bool {
-	if o != nil && !IsNil(o.MaxReportNbr) {
+	if o != nil && !isNil(o.MaxReportNbr) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ReportingInformation) SetMaxReportNbr(v int32) {
 
 // GetMonDur returns the MonDur field value if set, zero value otherwise.
 func (o *ReportingInformation) GetMonDur() time.Time {
-	if o == nil || IsNil(o.MonDur) {
+	if o == nil || isNil(o.MonDur) {
 		var ret time.Time
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ReportingInformation) GetMonDur() time.Time {
 // GetMonDurOk returns a tuple with the MonDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetMonDurOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MonDur) {
+	if o == nil || isNil(o.MonDur) {
 		return nil, false
 	}
 	return o.MonDur, true
@@ -170,7 +170,7 @@ func (o *ReportingInformation) GetMonDurOk() (*time.Time, bool) {
 
 // HasMonDur returns a boolean if a field has been set.
 func (o *ReportingInformation) HasMonDur() bool {
-	if o != nil && !IsNil(o.MonDur) {
+	if o != nil && !isNil(o.MonDur) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ReportingInformation) SetMonDur(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *ReportingInformation) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ReportingInformation) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -202,7 +202,7 @@ func (o *ReportingInformation) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *ReportingInformation) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ReportingInformation) SetRepPeriod(v int32) {
 
 // GetSampRatio returns the SampRatio field value if set, zero value otherwise.
 func (o *ReportingInformation) GetSampRatio() int32 {
-	if o == nil || IsNil(o.SampRatio) {
+	if o == nil || isNil(o.SampRatio) {
 		var ret int32
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ReportingInformation) GetSampRatio() int32 {
 // GetSampRatioOk returns a tuple with the SampRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetSampRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.SampRatio) {
+	if o == nil || isNil(o.SampRatio) {
 		return nil, false
 	}
 	return o.SampRatio, true
@@ -234,7 +234,7 @@ func (o *ReportingInformation) GetSampRatioOk() (*int32, bool) {
 
 // HasSampRatio returns a boolean if a field has been set.
 func (o *ReportingInformation) HasSampRatio() bool {
-	if o != nil && !IsNil(o.SampRatio) {
+	if o != nil && !isNil(o.SampRatio) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ReportingInformation) SetSampRatio(v int32) {
 
 // GetPartitionCriteria returns the PartitionCriteria field value if set, zero value otherwise.
 func (o *ReportingInformation) GetPartitionCriteria() []PartitioningCriteria {
-	if o == nil || IsNil(o.PartitionCriteria) {
+	if o == nil || isNil(o.PartitionCriteria) {
 		var ret []PartitioningCriteria
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ReportingInformation) GetPartitionCriteria() []PartitioningCriteria {
 // GetPartitionCriteriaOk returns a tuple with the PartitionCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetPartitionCriteriaOk() ([]PartitioningCriteria, bool) {
-	if o == nil || IsNil(o.PartitionCriteria) {
+	if o == nil || isNil(o.PartitionCriteria) {
 		return nil, false
 	}
 	return o.PartitionCriteria, true
@@ -266,7 +266,7 @@ func (o *ReportingInformation) GetPartitionCriteriaOk() ([]PartitioningCriteria,
 
 // HasPartitionCriteria returns a boolean if a field has been set.
 func (o *ReportingInformation) HasPartitionCriteria() bool {
-	if o != nil && !IsNil(o.PartitionCriteria) {
+	if o != nil && !isNil(o.PartitionCriteria) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ReportingInformation) SetPartitionCriteria(v []PartitioningCriteria) {
 
 // GetGrpRepTime returns the GrpRepTime field value if set, zero value otherwise.
 func (o *ReportingInformation) GetGrpRepTime() int32 {
-	if o == nil || IsNil(o.GrpRepTime) {
+	if o == nil || isNil(o.GrpRepTime) {
 		var ret int32
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ReportingInformation) GetGrpRepTime() int32 {
 // GetGrpRepTimeOk returns a tuple with the GrpRepTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetGrpRepTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.GrpRepTime) {
+	if o == nil || isNil(o.GrpRepTime) {
 		return nil, false
 	}
 	return o.GrpRepTime, true
@@ -298,7 +298,7 @@ func (o *ReportingInformation) GetGrpRepTimeOk() (*int32, bool) {
 
 // HasGrpRepTime returns a boolean if a field has been set.
 func (o *ReportingInformation) HasGrpRepTime() bool {
-	if o != nil && !IsNil(o.GrpRepTime) {
+	if o != nil && !isNil(o.GrpRepTime) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *ReportingInformation) SetGrpRepTime(v int32) {
 
 // GetNotifFlag returns the NotifFlag field value if set, zero value otherwise.
 func (o *ReportingInformation) GetNotifFlag() NotificationFlag {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		var ret NotificationFlag
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *ReportingInformation) GetNotifFlag() NotificationFlag {
 // GetNotifFlagOk returns a tuple with the NotifFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingInformation) GetNotifFlagOk() (*NotificationFlag, bool) {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		return nil, false
 	}
 	return o.NotifFlag, true
@@ -330,7 +330,7 @@ func (o *ReportingInformation) GetNotifFlagOk() (*NotificationFlag, bool) {
 
 // HasNotifFlag returns a boolean if a field has been set.
 func (o *ReportingInformation) HasNotifFlag() bool {
-	if o != nil && !IsNil(o.NotifFlag) {
+	if o != nil && !isNil(o.NotifFlag) {
 		return true
 	}
 
@@ -352,31 +352,31 @@ func (o ReportingInformation) MarshalJSON() ([]byte, error) {
 
 func (o ReportingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ImmRep) {
+	if !isNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !IsNil(o.NotifMethod) {
+	if !isNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !IsNil(o.MaxReportNbr) {
+	if !isNil(o.MaxReportNbr) {
 		toSerialize["maxReportNbr"] = o.MaxReportNbr
 	}
-	if !IsNil(o.MonDur) {
+	if !isNil(o.MonDur) {
 		toSerialize["monDur"] = o.MonDur
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !IsNil(o.SampRatio) {
+	if !isNil(o.SampRatio) {
 		toSerialize["sampRatio"] = o.SampRatio
 	}
-	if !IsNil(o.PartitionCriteria) {
+	if !isNil(o.PartitionCriteria) {
 		toSerialize["partitionCriteria"] = o.PartitionCriteria
 	}
-	if !IsNil(o.GrpRepTime) {
+	if !isNil(o.GrpRepTime) {
 		toSerialize["grpRepTime"] = o.GrpRepTime
 	}
-	if !IsNil(o.NotifFlag) {
+	if !isNil(o.NotifFlag) {
 		toSerialize["notifFlag"] = o.NotifFlag
 	}
 	return toSerialize, nil

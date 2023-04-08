@@ -52,7 +52,7 @@ func NewAmfFunctionSingleAllOf1WithDefaults() *AmfFunctionSingleAllOf1 {
 
 // GetEPN2 returns the EPN2 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN2() []EPN2Single {
-	if o == nil || IsNil(o.EPN2) {
+	if o == nil || isNil(o.EPN2) {
 		var ret []EPN2Single
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN2() []EPN2Single {
 // GetEPN2Ok returns a tuple with the EPN2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN2Ok() ([]EPN2Single, bool) {
-	if o == nil || IsNil(o.EPN2) {
+	if o == nil || isNil(o.EPN2) {
 		return nil, false
 	}
 	return o.EPN2, true
@@ -70,7 +70,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN2Ok() ([]EPN2Single, bool) {
 
 // HasEPN2 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN2() bool {
-	if o != nil && !IsNil(o.EPN2) {
+	if o != nil && !isNil(o.EPN2) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN2(v []EPN2Single) {
 
 // GetEPN8 returns the EPN8 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN8() []EPN8Single {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		var ret []EPN8Single
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN8() []EPN8Single {
 // GetEPN8Ok returns a tuple with the EPN8 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN8Ok() ([]EPN8Single, bool) {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		return nil, false
 	}
 	return o.EPN8, true
@@ -102,7 +102,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN8Ok() ([]EPN8Single, bool) {
 
 // HasEPN8 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN8() bool {
-	if o != nil && !IsNil(o.EPN8) {
+	if o != nil && !isNil(o.EPN8) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN8(v []EPN8Single) {
 
 // GetEPN11 returns the EPN11 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN11() []EPN11Single {
-	if o == nil || IsNil(o.EPN11) {
+	if o == nil || isNil(o.EPN11) {
 		var ret []EPN11Single
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN11() []EPN11Single {
 // GetEPN11Ok returns a tuple with the EPN11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN11Ok() ([]EPN11Single, bool) {
-	if o == nil || IsNil(o.EPN11) {
+	if o == nil || isNil(o.EPN11) {
 		return nil, false
 	}
 	return o.EPN11, true
@@ -134,7 +134,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN11Ok() ([]EPN11Single, bool) {
 
 // HasEPN11 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN11() bool {
-	if o != nil && !IsNil(o.EPN11) {
+	if o != nil && !isNil(o.EPN11) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN11(v []EPN11Single) {
 
 // GetEPN12 returns the EPN12 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN12() []EPN12Single {
-	if o == nil || IsNil(o.EPN12) {
+	if o == nil || isNil(o.EPN12) {
 		var ret []EPN12Single
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN12() []EPN12Single {
 // GetEPN12Ok returns a tuple with the EPN12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN12Ok() ([]EPN12Single, bool) {
-	if o == nil || IsNil(o.EPN12) {
+	if o == nil || isNil(o.EPN12) {
 		return nil, false
 	}
 	return o.EPN12, true
@@ -166,7 +166,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN12Ok() ([]EPN12Single, bool) {
 
 // HasEPN12 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN12() bool {
-	if o != nil && !IsNil(o.EPN12) {
+	if o != nil && !isNil(o.EPN12) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN12(v []EPN12Single) {
 
 // GetEPN14 returns the EPN14 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN14() []EPN14Single {
-	if o == nil || IsNil(o.EPN14) {
+	if o == nil || isNil(o.EPN14) {
 		var ret []EPN14Single
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN14() []EPN14Single {
 // GetEPN14Ok returns a tuple with the EPN14 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN14Ok() ([]EPN14Single, bool) {
-	if o == nil || IsNil(o.EPN14) {
+	if o == nil || isNil(o.EPN14) {
 		return nil, false
 	}
 	return o.EPN14, true
@@ -198,7 +198,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN14Ok() ([]EPN14Single, bool) {
 
 // HasEPN14 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN14() bool {
-	if o != nil && !IsNil(o.EPN14) {
+	if o != nil && !isNil(o.EPN14) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN14(v []EPN14Single) {
 
 // GetEPN15 returns the EPN15 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN15() []EPN15Single {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		var ret []EPN15Single
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN15() []EPN15Single {
 // GetEPN15Ok returns a tuple with the EPN15 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN15Ok() ([]EPN15Single, bool) {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		return nil, false
 	}
 	return o.EPN15, true
@@ -230,7 +230,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN15Ok() ([]EPN15Single, bool) {
 
 // HasEPN15 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN15() bool {
-	if o != nil && !IsNil(o.EPN15) {
+	if o != nil && !isNil(o.EPN15) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN15(v []EPN15Single) {
 
 // GetEPN17 returns the EPN17 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN17() []EPN17Single {
-	if o == nil || IsNil(o.EPN17) {
+	if o == nil || isNil(o.EPN17) {
 		var ret []EPN17Single
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN17() []EPN17Single {
 // GetEPN17Ok returns a tuple with the EPN17 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN17Ok() ([]EPN17Single, bool) {
-	if o == nil || IsNil(o.EPN17) {
+	if o == nil || isNil(o.EPN17) {
 		return nil, false
 	}
 	return o.EPN17, true
@@ -262,7 +262,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN17Ok() ([]EPN17Single, bool) {
 
 // HasEPN17 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN17() bool {
-	if o != nil && !IsNil(o.EPN17) {
+	if o != nil && !isNil(o.EPN17) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN17(v []EPN17Single) {
 
 // GetEPN20 returns the EPN20 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN20() []EPN20Single {
-	if o == nil || IsNil(o.EPN20) {
+	if o == nil || isNil(o.EPN20) {
 		var ret []EPN20Single
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN20() []EPN20Single {
 // GetEPN20Ok returns a tuple with the EPN20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN20Ok() ([]EPN20Single, bool) {
-	if o == nil || IsNil(o.EPN20) {
+	if o == nil || isNil(o.EPN20) {
 		return nil, false
 	}
 	return o.EPN20, true
@@ -294,7 +294,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN20Ok() ([]EPN20Single, bool) {
 
 // HasEPN20 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN20() bool {
-	if o != nil && !IsNil(o.EPN20) {
+	if o != nil && !isNil(o.EPN20) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN20(v []EPN20Single) {
 
 // GetEPN22 returns the EPN22 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN22() []EPN22Single {
-	if o == nil || IsNil(o.EPN22) {
+	if o == nil || isNil(o.EPN22) {
 		var ret []EPN22Single
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN22() []EPN22Single {
 // GetEPN22Ok returns a tuple with the EPN22 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN22Ok() ([]EPN22Single, bool) {
-	if o == nil || IsNil(o.EPN22) {
+	if o == nil || isNil(o.EPN22) {
 		return nil, false
 	}
 	return o.EPN22, true
@@ -326,7 +326,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN22Ok() ([]EPN22Single, bool) {
 
 // HasEPN22 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN22() bool {
-	if o != nil && !IsNil(o.EPN22) {
+	if o != nil && !isNil(o.EPN22) {
 		return true
 	}
 
@@ -340,7 +340,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN22(v []EPN22Single) {
 
 // GetEPN26 returns the EPN26 field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEPN26() []EPN26Single {
-	if o == nil || IsNil(o.EPN26) {
+	if o == nil || isNil(o.EPN26) {
 		var ret []EPN26Single
 		return ret
 	}
@@ -350,7 +350,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN26() []EPN26Single {
 // GetEPN26Ok returns a tuple with the EPN26 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEPN26Ok() ([]EPN26Single, bool) {
-	if o == nil || IsNil(o.EPN26) {
+	if o == nil || isNil(o.EPN26) {
 		return nil, false
 	}
 	return o.EPN26, true
@@ -358,7 +358,7 @@ func (o *AmfFunctionSingleAllOf1) GetEPN26Ok() ([]EPN26Single, bool) {
 
 // HasEPN26 returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEPN26() bool {
-	if o != nil && !IsNil(o.EPN26) {
+	if o != nil && !isNil(o.EPN26) {
 		return true
 	}
 
@@ -372,7 +372,7 @@ func (o *AmfFunctionSingleAllOf1) SetEPN26(v []EPN26Single) {
 
 // GetEP_NLS returns the EP_NLS field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEP_NLS() []EPNLSSingle {
-	if o == nil || IsNil(o.EP_NLS) {
+	if o == nil || isNil(o.EP_NLS) {
 		var ret []EPNLSSingle
 		return ret
 	}
@@ -382,7 +382,7 @@ func (o *AmfFunctionSingleAllOf1) GetEP_NLS() []EPNLSSingle {
 // GetEP_NLSOk returns a tuple with the EP_NLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEP_NLSOk() ([]EPNLSSingle, bool) {
-	if o == nil || IsNil(o.EP_NLS) {
+	if o == nil || isNil(o.EP_NLS) {
 		return nil, false
 	}
 	return o.EP_NLS, true
@@ -390,7 +390,7 @@ func (o *AmfFunctionSingleAllOf1) GetEP_NLSOk() ([]EPNLSSingle, bool) {
 
 // HasEP_NLS returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEP_NLS() bool {
-	if o != nil && !IsNil(o.EP_NLS) {
+	if o != nil && !isNil(o.EP_NLS) {
 		return true
 	}
 
@@ -404,7 +404,7 @@ func (o *AmfFunctionSingleAllOf1) SetEP_NLS(v []EPNLSSingle) {
 
 // GetEP_NLG returns the EP_NLG field value if set, zero value otherwise.
 func (o *AmfFunctionSingleAllOf1) GetEP_NLG() []EPNLGSingle {
-	if o == nil || IsNil(o.EP_NLG) {
+	if o == nil || isNil(o.EP_NLG) {
 		var ret []EPNLGSingle
 		return ret
 	}
@@ -414,7 +414,7 @@ func (o *AmfFunctionSingleAllOf1) GetEP_NLG() []EPNLGSingle {
 // GetEP_NLGOk returns a tuple with the EP_NLG field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingleAllOf1) GetEP_NLGOk() ([]EPNLGSingle, bool) {
-	if o == nil || IsNil(o.EP_NLG) {
+	if o == nil || isNil(o.EP_NLG) {
 		return nil, false
 	}
 	return o.EP_NLG, true
@@ -422,7 +422,7 @@ func (o *AmfFunctionSingleAllOf1) GetEP_NLGOk() ([]EPNLGSingle, bool) {
 
 // HasEP_NLG returns a boolean if a field has been set.
 func (o *AmfFunctionSingleAllOf1) HasEP_NLG() bool {
-	if o != nil && !IsNil(o.EP_NLG) {
+	if o != nil && !isNil(o.EP_NLG) {
 		return true
 	}
 
@@ -444,40 +444,40 @@ func (o AmfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o AmfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN2) {
+	if !isNil(o.EPN2) {
 		toSerialize["EP_N2"] = o.EPN2
 	}
-	if !IsNil(o.EPN8) {
+	if !isNil(o.EPN8) {
 		toSerialize["EP_N8"] = o.EPN8
 	}
-	if !IsNil(o.EPN11) {
+	if !isNil(o.EPN11) {
 		toSerialize["EP_N11"] = o.EPN11
 	}
-	if !IsNil(o.EPN12) {
+	if !isNil(o.EPN12) {
 		toSerialize["EP_N12"] = o.EPN12
 	}
-	if !IsNil(o.EPN14) {
+	if !isNil(o.EPN14) {
 		toSerialize["EP_N14"] = o.EPN14
 	}
-	if !IsNil(o.EPN15) {
+	if !isNil(o.EPN15) {
 		toSerialize["EP_N15"] = o.EPN15
 	}
-	if !IsNil(o.EPN17) {
+	if !isNil(o.EPN17) {
 		toSerialize["EP_N17"] = o.EPN17
 	}
-	if !IsNil(o.EPN20) {
+	if !isNil(o.EPN20) {
 		toSerialize["EP_N20"] = o.EPN20
 	}
-	if !IsNil(o.EPN22) {
+	if !isNil(o.EPN22) {
 		toSerialize["EP_N22"] = o.EPN22
 	}
-	if !IsNil(o.EPN26) {
+	if !isNil(o.EPN26) {
 		toSerialize["EP_N26"] = o.EPN26
 	}
-	if !IsNil(o.EP_NLS) {
+	if !isNil(o.EP_NLS) {
 		toSerialize["EP_NLS"] = o.EP_NLS
 	}
-	if !IsNil(o.EP_NLG) {
+	if !isNil(o.EP_NLG) {
 		toSerialize["EP_NLG"] = o.EP_NLG
 	}
 	return toSerialize, nil

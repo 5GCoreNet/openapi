@@ -19,7 +19,7 @@ var _ MappedNullable = &Configurable5QISetSingleAllOf{}
 
 // Configurable5QISetSingleAllOf struct for Configurable5QISetSingleAllOf
 type Configurable5QISetSingleAllOf struct {
-	Attributes *Configurable5QISetSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewConfigurable5QISetSingleAllOf instantiates a new Configurable5QISetSingleAllOf object
@@ -40,9 +40,9 @@ func NewConfigurable5QISetSingleAllOfWithDefaults() *Configurable5QISetSingleAll
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *Configurable5QISetSingleAllOf) GetAttributes() Configurable5QISetSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret Configurable5QISetSingleAllOfAttributes
+func (o *Configurable5QISetSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *Configurable5QISetSingleAllOf) GetAttributes() Configurable5QISetSingle
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Configurable5QISetSingleAllOf) GetAttributesOk() (*Configurable5QISetSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *Configurable5QISetSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *Configurable5QISetSingleAllOf) GetAttributesOk() (*Configurable5QISetSi
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *Configurable5QISetSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given Configurable5QISetSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *Configurable5QISetSingleAllOf) SetAttributes(v Configurable5QISetSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *Configurable5QISetSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o Configurable5QISetSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o Configurable5QISetSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

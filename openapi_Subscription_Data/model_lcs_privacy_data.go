@@ -43,7 +43,7 @@ func NewLcsPrivacyDataWithDefaults() *LcsPrivacyData {
 
 // GetLpi returns the Lpi field value if set, zero value otherwise.
 func (o *LcsPrivacyData) GetLpi() Lpi {
-	if o == nil || IsNil(o.Lpi) {
+	if o == nil || isNil(o.Lpi) {
 		var ret Lpi
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *LcsPrivacyData) GetLpi() Lpi {
 // GetLpiOk returns a tuple with the Lpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacyData) GetLpiOk() (*Lpi, bool) {
-	if o == nil || IsNil(o.Lpi) {
+	if o == nil || isNil(o.Lpi) {
 		return nil, false
 	}
 	return o.Lpi, true
@@ -61,7 +61,7 @@ func (o *LcsPrivacyData) GetLpiOk() (*Lpi, bool) {
 
 // HasLpi returns a boolean if a field has been set.
 func (o *LcsPrivacyData) HasLpi() bool {
-	if o != nil && !IsNil(o.Lpi) {
+	if o != nil && !isNil(o.Lpi) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *LcsPrivacyData) SetLpi(v Lpi) {
 
 // GetUnrelatedClass returns the UnrelatedClass field value if set, zero value otherwise.
 func (o *LcsPrivacyData) GetUnrelatedClass() UnrelatedClass {
-	if o == nil || IsNil(o.UnrelatedClass) {
+	if o == nil || isNil(o.UnrelatedClass) {
 		var ret UnrelatedClass
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LcsPrivacyData) GetUnrelatedClass() UnrelatedClass {
 // GetUnrelatedClassOk returns a tuple with the UnrelatedClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacyData) GetUnrelatedClassOk() (*UnrelatedClass, bool) {
-	if o == nil || IsNil(o.UnrelatedClass) {
+	if o == nil || isNil(o.UnrelatedClass) {
 		return nil, false
 	}
 	return o.UnrelatedClass, true
@@ -93,7 +93,7 @@ func (o *LcsPrivacyData) GetUnrelatedClassOk() (*UnrelatedClass, bool) {
 
 // HasUnrelatedClass returns a boolean if a field has been set.
 func (o *LcsPrivacyData) HasUnrelatedClass() bool {
-	if o != nil && !IsNil(o.UnrelatedClass) {
+	if o != nil && !isNil(o.UnrelatedClass) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *LcsPrivacyData) SetUnrelatedClass(v UnrelatedClass) {
 
 // GetPlmnOperatorClasses returns the PlmnOperatorClasses field value if set, zero value otherwise.
 func (o *LcsPrivacyData) GetPlmnOperatorClasses() []PlmnOperatorClass {
-	if o == nil || IsNil(o.PlmnOperatorClasses) {
+	if o == nil || isNil(o.PlmnOperatorClasses) {
 		var ret []PlmnOperatorClass
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *LcsPrivacyData) GetPlmnOperatorClasses() []PlmnOperatorClass {
 // GetPlmnOperatorClassesOk returns a tuple with the PlmnOperatorClasses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacyData) GetPlmnOperatorClassesOk() ([]PlmnOperatorClass, bool) {
-	if o == nil || IsNil(o.PlmnOperatorClasses) {
+	if o == nil || isNil(o.PlmnOperatorClasses) {
 		return nil, false
 	}
 	return o.PlmnOperatorClasses, true
@@ -125,7 +125,7 @@ func (o *LcsPrivacyData) GetPlmnOperatorClassesOk() ([]PlmnOperatorClass, bool) 
 
 // HasPlmnOperatorClasses returns a boolean if a field has been set.
 func (o *LcsPrivacyData) HasPlmnOperatorClasses() bool {
-	if o != nil && !IsNil(o.PlmnOperatorClasses) {
+	if o != nil && !isNil(o.PlmnOperatorClasses) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o LcsPrivacyData) MarshalJSON() ([]byte, error) {
 
 func (o LcsPrivacyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Lpi) {
+	if !isNil(o.Lpi) {
 		toSerialize["lpi"] = o.Lpi
 	}
-	if !IsNil(o.UnrelatedClass) {
+	if !isNil(o.UnrelatedClass) {
 		toSerialize["unrelatedClass"] = o.UnrelatedClass
 	}
-	if !IsNil(o.PlmnOperatorClasses) {
+	if !isNil(o.PlmnOperatorClasses) {
 		toSerialize["plmnOperatorClasses"] = o.PlmnOperatorClasses
 	}
 	return toSerialize, nil

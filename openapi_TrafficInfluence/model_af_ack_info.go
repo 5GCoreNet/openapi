@@ -45,7 +45,7 @@ func NewAfAckInfoWithDefaults() *AfAckInfo {
 
 // GetAfTransId returns the AfTransId field value if set, zero value otherwise.
 func (o *AfAckInfo) GetAfTransId() string {
-	if o == nil || IsNil(o.AfTransId) {
+	if o == nil || isNil(o.AfTransId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AfAckInfo) GetAfTransId() string {
 // GetAfTransIdOk returns a tuple with the AfTransId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfAckInfo) GetAfTransIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfTransId) {
+	if o == nil || isNil(o.AfTransId) {
 		return nil, false
 	}
 	return o.AfTransId, true
@@ -63,7 +63,7 @@ func (o *AfAckInfo) GetAfTransIdOk() (*string, bool) {
 
 // HasAfTransId returns a boolean if a field has been set.
 func (o *AfAckInfo) HasAfTransId() bool {
-	if o != nil && !IsNil(o.AfTransId) {
+	if o != nil && !isNil(o.AfTransId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AfAckInfo) SetAckResult(v AfResultInfo) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *AfAckInfo) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AfAckInfo) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfAckInfo) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -119,7 +119,7 @@ func (o *AfAckInfo) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *AfAckInfo) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -141,11 +141,11 @@ func (o AfAckInfo) MarshalJSON() ([]byte, error) {
 
 func (o AfAckInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfTransId) {
+	if !isNil(o.AfTransId) {
 		toSerialize["afTransId"] = o.AfTransId
 	}
 	toSerialize["ackResult"] = o.AckResult
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	return toSerialize, nil

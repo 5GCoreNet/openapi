@@ -17,23 +17,37 @@ import (
 
 // LocDevNotification Possible values are: - NOTIFY_MISMATCH_LOCATION: This value indicates that the location information of the VAL UE(s) from the SEAL LM client and the core network are not matching. - NOTIFY_ABSENCE: This value indicates that the current location information of the VAL UE(s)is deviating from the VAL server's area of interest. - NOTIFY_PRESENCE: This value indicates that the current location information of the VAL UE(s) is within the VAL server's area of interest. 
 type LocDevNotification struct {
-	string *string
+	LocDevNotificationAnyOf *LocDevNotificationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocDevNotification) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into LocDevNotificationAnyOf
+	err = json.Unmarshal(data, &dst.LocDevNotificationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonLocDevNotificationAnyOf, _ := json.Marshal(dst.LocDevNotificationAnyOf)
+		if string(jsonLocDevNotificationAnyOf) == "{}" { // empty struct
+			dst.LocDevNotificationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.LocDevNotificationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.LocDevNotificationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(LocDevNotification)")
@@ -41,8 +55,12 @@ func (dst *LocDevNotification) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocDevNotification) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.LocDevNotificationAnyOf != nil {
+		return json.Marshal(&src.LocDevNotificationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

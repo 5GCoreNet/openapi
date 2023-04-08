@@ -53,7 +53,7 @@ func NewSmPolicyDeleteDataWithDefaults() *SmPolicyDeleteData {
 
 // GetUserLocationInfo returns the UserLocationInfo field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetUserLocationInfo() UserLocation {
-	if o == nil || IsNil(o.UserLocationInfo) {
+	if o == nil || isNil(o.UserLocationInfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *SmPolicyDeleteData) GetUserLocationInfo() UserLocation {
 // GetUserLocationInfoOk returns a tuple with the UserLocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetUserLocationInfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationInfo) {
+	if o == nil || isNil(o.UserLocationInfo) {
 		return nil, false
 	}
 	return o.UserLocationInfo, true
@@ -71,7 +71,7 @@ func (o *SmPolicyDeleteData) GetUserLocationInfoOk() (*UserLocation, bool) {
 
 // HasUserLocationInfo returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasUserLocationInfo() bool {
-	if o != nil && !IsNil(o.UserLocationInfo) {
+	if o != nil && !isNil(o.UserLocationInfo) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *SmPolicyDeleteData) SetUserLocationInfo(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetUeTimeZone() string {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *SmPolicyDeleteData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -103,7 +103,7 @@ func (o *SmPolicyDeleteData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasUeTimeZone() bool {
-	if o != nil && !IsNil(o.UeTimeZone) {
+	if o != nil && !isNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *SmPolicyDeleteData) SetUeTimeZone(v string) {
 
 // GetServingNetwork returns the ServingNetwork field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetServingNetwork() PlmnIdNid {
-	if o == nil || IsNil(o.ServingNetwork) {
+	if o == nil || isNil(o.ServingNetwork) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *SmPolicyDeleteData) GetServingNetwork() PlmnIdNid {
 // GetServingNetworkOk returns a tuple with the ServingNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetServingNetworkOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.ServingNetwork) {
+	if o == nil || isNil(o.ServingNetwork) {
 		return nil, false
 	}
 	return o.ServingNetwork, true
@@ -135,7 +135,7 @@ func (o *SmPolicyDeleteData) GetServingNetworkOk() (*PlmnIdNid, bool) {
 
 // HasServingNetwork returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasServingNetwork() bool {
-	if o != nil && !IsNil(o.ServingNetwork) {
+	if o != nil && !isNil(o.ServingNetwork) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *SmPolicyDeleteData) SetServingNetwork(v PlmnIdNid) {
 
 // GetUserLocationInfoTime returns the UserLocationInfoTime field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetUserLocationInfoTime() time.Time {
-	if o == nil || IsNil(o.UserLocationInfoTime) {
+	if o == nil || isNil(o.UserLocationInfoTime) {
 		var ret time.Time
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *SmPolicyDeleteData) GetUserLocationInfoTime() time.Time {
 // GetUserLocationInfoTimeOk returns a tuple with the UserLocationInfoTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetUserLocationInfoTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.UserLocationInfoTime) {
+	if o == nil || isNil(o.UserLocationInfoTime) {
 		return nil, false
 	}
 	return o.UserLocationInfoTime, true
@@ -167,7 +167,7 @@ func (o *SmPolicyDeleteData) GetUserLocationInfoTimeOk() (*time.Time, bool) {
 
 // HasUserLocationInfoTime returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasUserLocationInfoTime() bool {
-	if o != nil && !IsNil(o.UserLocationInfoTime) {
+	if o != nil && !isNil(o.UserLocationInfoTime) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *SmPolicyDeleteData) SetUserLocationInfoTime(v time.Time) {
 
 // GetRanNasRelCauses returns the RanNasRelCauses field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetRanNasRelCauses() []RanNasRelCause {
-	if o == nil || IsNil(o.RanNasRelCauses) {
+	if o == nil || isNil(o.RanNasRelCauses) {
 		var ret []RanNasRelCause
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *SmPolicyDeleteData) GetRanNasRelCauses() []RanNasRelCause {
 // GetRanNasRelCausesOk returns a tuple with the RanNasRelCauses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetRanNasRelCausesOk() ([]RanNasRelCause, bool) {
-	if o == nil || IsNil(o.RanNasRelCauses) {
+	if o == nil || isNil(o.RanNasRelCauses) {
 		return nil, false
 	}
 	return o.RanNasRelCauses, true
@@ -199,7 +199,7 @@ func (o *SmPolicyDeleteData) GetRanNasRelCausesOk() ([]RanNasRelCause, bool) {
 
 // HasRanNasRelCauses returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasRanNasRelCauses() bool {
-	if o != nil && !IsNil(o.RanNasRelCauses) {
+	if o != nil && !isNil(o.RanNasRelCauses) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *SmPolicyDeleteData) SetRanNasRelCauses(v []RanNasRelCause) {
 
 // GetAccuUsageReports returns the AccuUsageReports field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetAccuUsageReports() []AccuUsageReport {
-	if o == nil || IsNil(o.AccuUsageReports) {
+	if o == nil || isNil(o.AccuUsageReports) {
 		var ret []AccuUsageReport
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *SmPolicyDeleteData) GetAccuUsageReports() []AccuUsageReport {
 // GetAccuUsageReportsOk returns a tuple with the AccuUsageReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetAccuUsageReportsOk() ([]AccuUsageReport, bool) {
-	if o == nil || IsNil(o.AccuUsageReports) {
+	if o == nil || isNil(o.AccuUsageReports) {
 		return nil, false
 	}
 	return o.AccuUsageReports, true
@@ -231,7 +231,7 @@ func (o *SmPolicyDeleteData) GetAccuUsageReportsOk() ([]AccuUsageReport, bool) {
 
 // HasAccuUsageReports returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasAccuUsageReports() bool {
-	if o != nil && !IsNil(o.AccuUsageReports) {
+	if o != nil && !isNil(o.AccuUsageReports) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *SmPolicyDeleteData) SetAccuUsageReports(v []AccuUsageReport) {
 
 // GetPduSessRelCause returns the PduSessRelCause field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetPduSessRelCause() PduSessionRelCause {
-	if o == nil || IsNil(o.PduSessRelCause) {
+	if o == nil || isNil(o.PduSessRelCause) {
 		var ret PduSessionRelCause
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *SmPolicyDeleteData) GetPduSessRelCause() PduSessionRelCause {
 // GetPduSessRelCauseOk returns a tuple with the PduSessRelCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetPduSessRelCauseOk() (*PduSessionRelCause, bool) {
-	if o == nil || IsNil(o.PduSessRelCause) {
+	if o == nil || isNil(o.PduSessRelCause) {
 		return nil, false
 	}
 	return o.PduSessRelCause, true
@@ -263,7 +263,7 @@ func (o *SmPolicyDeleteData) GetPduSessRelCauseOk() (*PduSessionRelCause, bool) 
 
 // HasPduSessRelCause returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasPduSessRelCause() bool {
-	if o != nil && !IsNil(o.PduSessRelCause) {
+	if o != nil && !isNil(o.PduSessRelCause) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *SmPolicyDeleteData) SetPduSessRelCause(v PduSessionRelCause) {
 
 // GetQosMonReports returns the QosMonReports field value if set, zero value otherwise.
 func (o *SmPolicyDeleteData) GetQosMonReports() []QosMonitoringReport {
-	if o == nil || IsNil(o.QosMonReports) {
+	if o == nil || isNil(o.QosMonReports) {
 		var ret []QosMonitoringReport
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *SmPolicyDeleteData) GetQosMonReports() []QosMonitoringReport {
 // GetQosMonReportsOk returns a tuple with the QosMonReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyDeleteData) GetQosMonReportsOk() ([]QosMonitoringReport, bool) {
-	if o == nil || IsNil(o.QosMonReports) {
+	if o == nil || isNil(o.QosMonReports) {
 		return nil, false
 	}
 	return o.QosMonReports, true
@@ -295,7 +295,7 @@ func (o *SmPolicyDeleteData) GetQosMonReportsOk() ([]QosMonitoringReport, bool) 
 
 // HasQosMonReports returns a boolean if a field has been set.
 func (o *SmPolicyDeleteData) HasQosMonReports() bool {
-	if o != nil && !IsNil(o.QosMonReports) {
+	if o != nil && !isNil(o.QosMonReports) {
 		return true
 	}
 
@@ -317,28 +317,28 @@ func (o SmPolicyDeleteData) MarshalJSON() ([]byte, error) {
 
 func (o SmPolicyDeleteData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLocationInfo) {
+	if !isNil(o.UserLocationInfo) {
 		toSerialize["userLocationInfo"] = o.UserLocationInfo
 	}
-	if !IsNil(o.UeTimeZone) {
+	if !isNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !IsNil(o.ServingNetwork) {
+	if !isNil(o.ServingNetwork) {
 		toSerialize["servingNetwork"] = o.ServingNetwork
 	}
-	if !IsNil(o.UserLocationInfoTime) {
+	if !isNil(o.UserLocationInfoTime) {
 		toSerialize["userLocationInfoTime"] = o.UserLocationInfoTime
 	}
-	if !IsNil(o.RanNasRelCauses) {
+	if !isNil(o.RanNasRelCauses) {
 		toSerialize["ranNasRelCauses"] = o.RanNasRelCauses
 	}
-	if !IsNil(o.AccuUsageReports) {
+	if !isNil(o.AccuUsageReports) {
 		toSerialize["accuUsageReports"] = o.AccuUsageReports
 	}
-	if !IsNil(o.PduSessRelCause) {
+	if !isNil(o.PduSessRelCause) {
 		toSerialize["pduSessRelCause"] = o.PduSessRelCause
 	}
-	if !IsNil(o.QosMonReports) {
+	if !isNil(o.QosMonReports) {
 		toSerialize["qosMonReports"] = o.QosMonReports
 	}
 	return toSerialize, nil

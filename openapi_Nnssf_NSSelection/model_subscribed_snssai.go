@@ -68,7 +68,7 @@ func (o *SubscribedSnssai) SetSubscribedSnssai(v Snssai) {
 
 // GetDefaultIndication returns the DefaultIndication field value if set, zero value otherwise.
 func (o *SubscribedSnssai) GetDefaultIndication() bool {
-	if o == nil || IsNil(o.DefaultIndication) {
+	if o == nil || isNil(o.DefaultIndication) {
 		var ret bool
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SubscribedSnssai) GetDefaultIndication() bool {
 // GetDefaultIndicationOk returns a tuple with the DefaultIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedSnssai) GetDefaultIndicationOk() (*bool, bool) {
-	if o == nil || IsNil(o.DefaultIndication) {
+	if o == nil || isNil(o.DefaultIndication) {
 		return nil, false
 	}
 	return o.DefaultIndication, true
@@ -86,7 +86,7 @@ func (o *SubscribedSnssai) GetDefaultIndicationOk() (*bool, bool) {
 
 // HasDefaultIndication returns a boolean if a field has been set.
 func (o *SubscribedSnssai) HasDefaultIndication() bool {
-	if o != nil && !IsNil(o.DefaultIndication) {
+	if o != nil && !isNil(o.DefaultIndication) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SubscribedSnssai) SetDefaultIndication(v bool) {
 
 // GetSubscribedNsSrgList returns the SubscribedNsSrgList field value if set, zero value otherwise.
 func (o *SubscribedSnssai) GetSubscribedNsSrgList() []string {
-	if o == nil || IsNil(o.SubscribedNsSrgList) {
+	if o == nil || isNil(o.SubscribedNsSrgList) {
 		var ret []string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SubscribedSnssai) GetSubscribedNsSrgList() []string {
 // GetSubscribedNsSrgListOk returns a tuple with the SubscribedNsSrgList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscribedSnssai) GetSubscribedNsSrgListOk() ([]string, bool) {
-	if o == nil || IsNil(o.SubscribedNsSrgList) {
+	if o == nil || isNil(o.SubscribedNsSrgList) {
 		return nil, false
 	}
 	return o.SubscribedNsSrgList, true
@@ -118,7 +118,7 @@ func (o *SubscribedSnssai) GetSubscribedNsSrgListOk() ([]string, bool) {
 
 // HasSubscribedNsSrgList returns a boolean if a field has been set.
 func (o *SubscribedSnssai) HasSubscribedNsSrgList() bool {
-	if o != nil && !IsNil(o.SubscribedNsSrgList) {
+	if o != nil && !isNil(o.SubscribedNsSrgList) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o SubscribedSnssai) MarshalJSON() ([]byte, error) {
 func (o SubscribedSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscribedSnssai"] = o.SubscribedSnssai
-	if !IsNil(o.DefaultIndication) {
+	if !isNil(o.DefaultIndication) {
 		toSerialize["defaultIndication"] = o.DefaultIndication
 	}
-	if !IsNil(o.SubscribedNsSrgList) {
+	if !isNil(o.SubscribedNsSrgList) {
 		toSerialize["subscribedNsSrgList"] = o.SubscribedNsSrgList
 	}
 	return toSerialize, nil

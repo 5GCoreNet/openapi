@@ -17,23 +17,37 @@ import (
 
 // MbsServiceType Indicates the MBS service type of an MBS session
 type MbsServiceType struct {
-	string *string
+	MbsServiceTypeAnyOf *MbsServiceTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MbsServiceType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into MbsServiceTypeAnyOf
+	err = json.Unmarshal(data, &dst.MbsServiceTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonMbsServiceTypeAnyOf, _ := json.Marshal(dst.MbsServiceTypeAnyOf)
+		if string(jsonMbsServiceTypeAnyOf) == "{}" { // empty struct
+			dst.MbsServiceTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.MbsServiceTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.MbsServiceTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(MbsServiceType)")
@@ -41,8 +55,12 @@ func (dst *MbsServiceType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MbsServiceType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.MbsServiceTypeAnyOf != nil {
+		return json.Marshal(&src.MbsServiceTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

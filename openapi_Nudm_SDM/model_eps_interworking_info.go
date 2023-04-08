@@ -42,7 +42,7 @@ func NewEpsInterworkingInfoWithDefaults() *EpsInterworkingInfo {
 
 // GetEpsIwkPgws returns the EpsIwkPgws field value if set, zero value otherwise.
 func (o *EpsInterworkingInfo) GetEpsIwkPgws() map[string]EpsIwkPgw {
-	if o == nil || IsNil(o.EpsIwkPgws) {
+	if o == nil || isNil(o.EpsIwkPgws) {
 		var ret map[string]EpsIwkPgw
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EpsInterworkingInfo) GetEpsIwkPgws() map[string]EpsIwkPgw {
 // GetEpsIwkPgwsOk returns a tuple with the EpsIwkPgws field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpsInterworkingInfo) GetEpsIwkPgwsOk() (*map[string]EpsIwkPgw, bool) {
-	if o == nil || IsNil(o.EpsIwkPgws) {
+	if o == nil || isNil(o.EpsIwkPgws) {
 		return nil, false
 	}
 	return o.EpsIwkPgws, true
@@ -60,7 +60,7 @@ func (o *EpsInterworkingInfo) GetEpsIwkPgwsOk() (*map[string]EpsIwkPgw, bool) {
 
 // HasEpsIwkPgws returns a boolean if a field has been set.
 func (o *EpsInterworkingInfo) HasEpsIwkPgws() bool {
-	if o != nil && !IsNil(o.EpsIwkPgws) {
+	if o != nil && !isNil(o.EpsIwkPgws) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o EpsInterworkingInfo) MarshalJSON() ([]byte, error) {
 
 func (o EpsInterworkingInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EpsIwkPgws) {
+	if !isNil(o.EpsIwkPgws) {
 		toSerialize["epsIwkPgws"] = o.EpsIwkPgws
 	}
 	return toSerialize, nil

@@ -76,7 +76,7 @@ func (o *EASRequirements) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *EASRequirements) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EASRequirements) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -94,7 +94,7 @@ func (o *EASRequirements) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *EASRequirements) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EASRequirements) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *EASRequirements) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EASRequirements) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -126,7 +126,7 @@ func (o *EASRequirements) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *EASRequirements) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EASRequirements) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *EASRequirements) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EASRequirements) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -158,7 +158,7 @@ func (o *EASRequirements) GetVsDataContainerOk() ([]VsDataContainerSingle, bool)
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *EASRequirements) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *EASRequirements) SetVsDataContainer(v []VsDataContainerSingle) {
 
 // GetRequiredEASservingLocation returns the RequiredEASservingLocation field value if set, zero value otherwise.
 func (o *EASRequirements) GetRequiredEASservingLocation() ServingLocation {
-	if o == nil || IsNil(o.RequiredEASservingLocation) {
+	if o == nil || isNil(o.RequiredEASservingLocation) {
 		var ret ServingLocation
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *EASRequirements) GetRequiredEASservingLocation() ServingLocation {
 // GetRequiredEASservingLocationOk returns a tuple with the RequiredEASservingLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetRequiredEASservingLocationOk() (*ServingLocation, bool) {
-	if o == nil || IsNil(o.RequiredEASservingLocation) {
+	if o == nil || isNil(o.RequiredEASservingLocation) {
 		return nil, false
 	}
 	return o.RequiredEASservingLocation, true
@@ -190,7 +190,7 @@ func (o *EASRequirements) GetRequiredEASservingLocationOk() (*ServingLocation, b
 
 // HasRequiredEASservingLocation returns a boolean if a field has been set.
 func (o *EASRequirements) HasRequiredEASservingLocation() bool {
-	if o != nil && !IsNil(o.RequiredEASservingLocation) {
+	if o != nil && !isNil(o.RequiredEASservingLocation) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *EASRequirements) SetRequiredEASservingLocation(v ServingLocation) {
 
 // GetAffinityAntiAffinity returns the AffinityAntiAffinity field value if set, zero value otherwise.
 func (o *EASRequirements) GetAffinityAntiAffinity() AffinityAntiAffinity {
-	if o == nil || IsNil(o.AffinityAntiAffinity) {
+	if o == nil || isNil(o.AffinityAntiAffinity) {
 		var ret AffinityAntiAffinity
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *EASRequirements) GetAffinityAntiAffinity() AffinityAntiAffinity {
 // GetAffinityAntiAffinityOk returns a tuple with the AffinityAntiAffinity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetAffinityAntiAffinityOk() (*AffinityAntiAffinity, bool) {
-	if o == nil || IsNil(o.AffinityAntiAffinity) {
+	if o == nil || isNil(o.AffinityAntiAffinity) {
 		return nil, false
 	}
 	return o.AffinityAntiAffinity, true
@@ -222,7 +222,7 @@ func (o *EASRequirements) GetAffinityAntiAffinityOk() (*AffinityAntiAffinity, bo
 
 // HasAffinityAntiAffinity returns a boolean if a field has been set.
 func (o *EASRequirements) HasAffinityAntiAffinity() bool {
-	if o != nil && !IsNil(o.AffinityAntiAffinity) {
+	if o != nil && !isNil(o.AffinityAntiAffinity) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *EASRequirements) SetAffinityAntiAffinity(v AffinityAntiAffinity) {
 
 // GetServiceContinuity returns the ServiceContinuity field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceContinuity() bool {
-	if o == nil || IsNil(o.ServiceContinuity) {
+	if o == nil || isNil(o.ServiceContinuity) {
 		var ret bool
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *EASRequirements) GetServiceContinuity() bool {
 // GetServiceContinuityOk returns a tuple with the ServiceContinuity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceContinuityOk() (*bool, bool) {
-	if o == nil || IsNil(o.ServiceContinuity) {
+	if o == nil || isNil(o.ServiceContinuity) {
 		return nil, false
 	}
 	return o.ServiceContinuity, true
@@ -254,7 +254,7 @@ func (o *EASRequirements) GetServiceContinuityOk() (*bool, bool) {
 
 // HasServiceContinuity returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceContinuity() bool {
-	if o != nil && !IsNil(o.ServiceContinuity) {
+	if o != nil && !isNil(o.ServiceContinuity) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *EASRequirements) SetServiceContinuity(v bool) {
 
 // GetVirtualResource returns the VirtualResource field value if set, zero value otherwise.
 func (o *EASRequirements) GetVirtualResource() VirtualResource {
-	if o == nil || IsNil(o.VirtualResource) {
+	if o == nil || isNil(o.VirtualResource) {
 		var ret VirtualResource
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *EASRequirements) GetVirtualResource() VirtualResource {
 // GetVirtualResourceOk returns a tuple with the VirtualResource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetVirtualResourceOk() (*VirtualResource, bool) {
-	if o == nil || IsNil(o.VirtualResource) {
+	if o == nil || isNil(o.VirtualResource) {
 		return nil, false
 	}
 	return o.VirtualResource, true
@@ -286,7 +286,7 @@ func (o *EASRequirements) GetVirtualResourceOk() (*VirtualResource, bool) {
 
 // HasVirtualResource returns a boolean if a field has been set.
 func (o *EASRequirements) HasVirtualResource() bool {
-	if o != nil && !IsNil(o.VirtualResource) {
+	if o != nil && !isNil(o.VirtualResource) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *EASRequirements) SetVirtualResource(v VirtualResource) {
 
 // GetSoftwareImageInfo returns the SoftwareImageInfo field value if set, zero value otherwise.
 func (o *EASRequirements) GetSoftwareImageInfo() SoftwareImageInfo {
-	if o == nil || IsNil(o.SoftwareImageInfo) {
+	if o == nil || isNil(o.SoftwareImageInfo) {
 		var ret SoftwareImageInfo
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *EASRequirements) GetSoftwareImageInfo() SoftwareImageInfo {
 // GetSoftwareImageInfoOk returns a tuple with the SoftwareImageInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetSoftwareImageInfoOk() (*SoftwareImageInfo, bool) {
-	if o == nil || IsNil(o.SoftwareImageInfo) {
+	if o == nil || isNil(o.SoftwareImageInfo) {
 		return nil, false
 	}
 	return o.SoftwareImageInfo, true
@@ -318,7 +318,7 @@ func (o *EASRequirements) GetSoftwareImageInfoOk() (*SoftwareImageInfo, bool) {
 
 // HasSoftwareImageInfo returns a boolean if a field has been set.
 func (o *EASRequirements) HasSoftwareImageInfo() bool {
-	if o != nil && !IsNil(o.SoftwareImageInfo) {
+	if o != nil && !isNil(o.SoftwareImageInfo) {
 		return true
 	}
 
@@ -341,28 +341,28 @@ func (o EASRequirements) MarshalJSON() ([]byte, error) {
 func (o EASRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.RequiredEASservingLocation) {
+	if !isNil(o.RequiredEASservingLocation) {
 		toSerialize["requiredEASservingLocation"] = o.RequiredEASservingLocation
 	}
-	if !IsNil(o.AffinityAntiAffinity) {
+	if !isNil(o.AffinityAntiAffinity) {
 		toSerialize["affinityAntiAffinity"] = o.AffinityAntiAffinity
 	}
-	if !IsNil(o.ServiceContinuity) {
+	if !isNil(o.ServiceContinuity) {
 		toSerialize["serviceContinuity"] = o.ServiceContinuity
 	}
-	if !IsNil(o.VirtualResource) {
+	if !isNil(o.VirtualResource) {
 		toSerialize["virtualResource"] = o.VirtualResource
 	}
-	if !IsNil(o.SoftwareImageInfo) {
+	if !isNil(o.SoftwareImageInfo) {
 		toSerialize["softwareImageInfo"] = o.SoftwareImageInfo
 	}
 	return toSerialize, nil

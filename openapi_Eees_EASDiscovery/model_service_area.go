@@ -42,7 +42,7 @@ func NewServiceAreaWithDefaults() *ServiceArea {
 
 // GetTopServAr returns the TopServAr field value if set, zero value otherwise.
 func (o *ServiceArea) GetTopServAr() TopologicalServiceArea {
-	if o == nil || IsNil(o.TopServAr) {
+	if o == nil || isNil(o.TopServAr) {
 		var ret TopologicalServiceArea
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ServiceArea) GetTopServAr() TopologicalServiceArea {
 // GetTopServArOk returns a tuple with the TopServAr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceArea) GetTopServArOk() (*TopologicalServiceArea, bool) {
-	if o == nil || IsNil(o.TopServAr) {
+	if o == nil || isNil(o.TopServAr) {
 		return nil, false
 	}
 	return o.TopServAr, true
@@ -60,7 +60,7 @@ func (o *ServiceArea) GetTopServArOk() (*TopologicalServiceArea, bool) {
 
 // HasTopServAr returns a boolean if a field has been set.
 func (o *ServiceArea) HasTopServAr() bool {
-	if o != nil && !IsNil(o.TopServAr) {
+	if o != nil && !isNil(o.TopServAr) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ServiceArea) SetTopServAr(v TopologicalServiceArea) {
 
 // GetGeoServAr returns the GeoServAr field value if set, zero value otherwise.
 func (o *ServiceArea) GetGeoServAr() GeographicalServiceArea {
-	if o == nil || IsNil(o.GeoServAr) {
+	if o == nil || isNil(o.GeoServAr) {
 		var ret GeographicalServiceArea
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ServiceArea) GetGeoServAr() GeographicalServiceArea {
 // GetGeoServArOk returns a tuple with the GeoServAr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceArea) GetGeoServArOk() (*GeographicalServiceArea, bool) {
-	if o == nil || IsNil(o.GeoServAr) {
+	if o == nil || isNil(o.GeoServAr) {
 		return nil, false
 	}
 	return o.GeoServAr, true
@@ -92,7 +92,7 @@ func (o *ServiceArea) GetGeoServArOk() (*GeographicalServiceArea, bool) {
 
 // HasGeoServAr returns a boolean if a field has been set.
 func (o *ServiceArea) HasGeoServAr() bool {
-	if o != nil && !IsNil(o.GeoServAr) {
+	if o != nil && !isNil(o.GeoServAr) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ServiceArea) MarshalJSON() ([]byte, error) {
 
 func (o ServiceArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TopServAr) {
+	if !isNil(o.TopServAr) {
 		toSerialize["topServAr"] = o.TopServAr
 	}
-	if !IsNil(o.GeoServAr) {
+	if !isNil(o.GeoServAr) {
 		toSerialize["geoServAr"] = o.GeoServAr
 	}
 	return toSerialize, nil

@@ -45,7 +45,7 @@ func NewAccessNetworkInfoChangeWithDefaults() *AccessNetworkInfoChange {
 
 // GetAccessNetworkInformation returns the AccessNetworkInformation field value if set, zero value otherwise.
 func (o *AccessNetworkInfoChange) GetAccessNetworkInformation() []string {
-	if o == nil || IsNil(o.AccessNetworkInformation) {
+	if o == nil || isNil(o.AccessNetworkInformation) {
 		var ret []string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AccessNetworkInfoChange) GetAccessNetworkInformation() []string {
 // GetAccessNetworkInformationOk returns a tuple with the AccessNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessNetworkInfoChange) GetAccessNetworkInformationOk() ([]string, bool) {
-	if o == nil || IsNil(o.AccessNetworkInformation) {
+	if o == nil || isNil(o.AccessNetworkInformation) {
 		return nil, false
 	}
 	return o.AccessNetworkInformation, true
@@ -63,7 +63,7 @@ func (o *AccessNetworkInfoChange) GetAccessNetworkInformationOk() ([]string, boo
 
 // HasAccessNetworkInformation returns a boolean if a field has been set.
 func (o *AccessNetworkInfoChange) HasAccessNetworkInformation() bool {
-	if o != nil && !IsNil(o.AccessNetworkInformation) {
+	if o != nil && !isNil(o.AccessNetworkInformation) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AccessNetworkInfoChange) SetAccessNetworkInformation(v []string) {
 
 // GetCellularNetworkInformation returns the CellularNetworkInformation field value if set, zero value otherwise.
 func (o *AccessNetworkInfoChange) GetCellularNetworkInformation() string {
-	if o == nil || IsNil(o.CellularNetworkInformation) {
+	if o == nil || isNil(o.CellularNetworkInformation) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AccessNetworkInfoChange) GetCellularNetworkInformation() string {
 // GetCellularNetworkInformationOk returns a tuple with the CellularNetworkInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessNetworkInfoChange) GetCellularNetworkInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.CellularNetworkInformation) {
+	if o == nil || isNil(o.CellularNetworkInformation) {
 		return nil, false
 	}
 	return o.CellularNetworkInformation, true
@@ -95,7 +95,7 @@ func (o *AccessNetworkInfoChange) GetCellularNetworkInformationOk() (*string, bo
 
 // HasCellularNetworkInformation returns a boolean if a field has been set.
 func (o *AccessNetworkInfoChange) HasCellularNetworkInformation() bool {
-	if o != nil && !IsNil(o.CellularNetworkInformation) {
+	if o != nil && !isNil(o.CellularNetworkInformation) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AccessNetworkInfoChange) SetCellularNetworkInformation(v string) {
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *AccessNetworkInfoChange) GetChangeTime() time.Time {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AccessNetworkInfoChange) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessNetworkInfoChange) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -127,7 +127,7 @@ func (o *AccessNetworkInfoChange) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *AccessNetworkInfoChange) HasChangeTime() bool {
-	if o != nil && !IsNil(o.ChangeTime) {
+	if o != nil && !isNil(o.ChangeTime) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o AccessNetworkInfoChange) MarshalJSON() ([]byte, error) {
 
 func (o AccessNetworkInfoChange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccessNetworkInformation) {
+	if !isNil(o.AccessNetworkInformation) {
 		toSerialize["accessNetworkInformation"] = o.AccessNetworkInformation
 	}
-	if !IsNil(o.CellularNetworkInformation) {
+	if !isNil(o.CellularNetworkInformation) {
 		toSerialize["cellularNetworkInformation"] = o.CellularNetworkInformation
 	}
-	if !IsNil(o.ChangeTime) {
+	if !isNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
 	return toSerialize, nil

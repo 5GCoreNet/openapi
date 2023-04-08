@@ -75,7 +75,7 @@ func (o *UpuInfo) SetUpuDataList(v []UpuData) {
 
 // GetUpuHeader returns the UpuHeader field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuHeader() string {
-	if o == nil || IsNil(o.UpuHeader) {
+	if o == nil || isNil(o.UpuHeader) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UpuInfo) GetUpuHeader() string {
 // GetUpuHeaderOk returns a tuple with the UpuHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuHeaderOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuHeader) {
+	if o == nil || isNil(o.UpuHeader) {
 		return nil, false
 	}
 	return o.UpuHeader, true
@@ -93,7 +93,7 @@ func (o *UpuInfo) GetUpuHeaderOk() (*string, bool) {
 
 // HasUpuHeader returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuHeader() bool {
-	if o != nil && !IsNil(o.UpuHeader) {
+	if o != nil && !isNil(o.UpuHeader) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *UpuInfo) SetUpuAckInd(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UpuInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *UpuInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -149,7 +149,7 @@ func (o *UpuInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UpuInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *UpuInfo) SetSupportedFeatures(v string) {
 
 // GetUpuTransparentInfo returns the UpuTransparentInfo field value if set, zero value otherwise.
 func (o *UpuInfo) GetUpuTransparentInfo() string {
-	if o == nil || IsNil(o.UpuTransparentInfo) {
+	if o == nil || isNil(o.UpuTransparentInfo) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *UpuInfo) GetUpuTransparentInfo() string {
 // GetUpuTransparentInfoOk returns a tuple with the UpuTransparentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuInfo) GetUpuTransparentInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuTransparentInfo) {
+	if o == nil || isNil(o.UpuTransparentInfo) {
 		return nil, false
 	}
 	return o.UpuTransparentInfo, true
@@ -181,7 +181,7 @@ func (o *UpuInfo) GetUpuTransparentInfoOk() (*string, bool) {
 
 // HasUpuTransparentInfo returns a boolean if a field has been set.
 func (o *UpuInfo) HasUpuTransparentInfo() bool {
-	if o != nil && !IsNil(o.UpuTransparentInfo) {
+	if o != nil && !isNil(o.UpuTransparentInfo) {
 		return true
 	}
 
@@ -204,14 +204,14 @@ func (o UpuInfo) MarshalJSON() ([]byte, error) {
 func (o UpuInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upuDataList"] = o.UpuDataList
-	if !IsNil(o.UpuHeader) {
+	if !isNil(o.UpuHeader) {
 		toSerialize["upuHeader"] = o.UpuHeader
 	}
 	toSerialize["upuAckInd"] = o.UpuAckInd
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.UpuTransparentInfo) {
+	if !isNil(o.UpuTransparentInfo) {
 		toSerialize["upuTransparentInfo"] = o.UpuTransparentInfo
 	}
 	return toSerialize, nil

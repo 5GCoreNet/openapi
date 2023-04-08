@@ -23,7 +23,7 @@ jobs:
       - name: Build and generate specs using Docker
         uses: addnab/docker-run-action@v3
         with:
-          image: openapitools/openapi-generator-cli:v6.4.0
+          image: openapitools/openapi-generator-cli:v6.5.0
           run: ./specs/generate.sh
           options: -v ${{ github.workspace }}:/specs
       - uses: actions/setup-go@v4

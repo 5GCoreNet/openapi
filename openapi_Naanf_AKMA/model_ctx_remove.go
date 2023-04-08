@@ -42,7 +42,7 @@ func NewCtxRemoveWithDefaults() *CtxRemove {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *CtxRemove) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *CtxRemove) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CtxRemove) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -60,7 +60,7 @@ func (o *CtxRemove) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *CtxRemove) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o CtxRemove) MarshalJSON() ([]byte, error) {
 
 func (o CtxRemove) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
 	return toSerialize, nil

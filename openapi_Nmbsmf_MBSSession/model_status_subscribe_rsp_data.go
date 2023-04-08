@@ -67,7 +67,7 @@ func (o *StatusSubscribeRspData) SetSubscription(v MbsSessionSubscription) {
 
 // GetEventList returns the EventList field value if set, zero value otherwise.
 func (o *StatusSubscribeRspData) GetEventList() MbsSessionEventReportList {
-	if o == nil || IsNil(o.EventList) {
+	if o == nil || isNil(o.EventList) {
 		var ret MbsSessionEventReportList
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *StatusSubscribeRspData) GetEventList() MbsSessionEventReportList {
 // GetEventListOk returns a tuple with the EventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StatusSubscribeRspData) GetEventListOk() (*MbsSessionEventReportList, bool) {
-	if o == nil || IsNil(o.EventList) {
+	if o == nil || isNil(o.EventList) {
 		return nil, false
 	}
 	return o.EventList, true
@@ -85,7 +85,7 @@ func (o *StatusSubscribeRspData) GetEventListOk() (*MbsSessionEventReportList, b
 
 // HasEventList returns a boolean if a field has been set.
 func (o *StatusSubscribeRspData) HasEventList() bool {
-	if o != nil && !IsNil(o.EventList) {
+	if o != nil && !isNil(o.EventList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o StatusSubscribeRspData) MarshalJSON() ([]byte, error) {
 func (o StatusSubscribeRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.EventList) {
+	if !isNil(o.EventList) {
 		toSerialize["eventList"] = o.EventList
 	}
 	return toSerialize, nil

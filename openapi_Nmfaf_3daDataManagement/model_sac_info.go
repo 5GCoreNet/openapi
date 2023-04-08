@@ -44,7 +44,7 @@ func NewSACInfoWithDefaults() *SACInfo {
 
 // GetNumericValNumUes returns the NumericValNumUes field value if set, zero value otherwise.
 func (o *SACInfo) GetNumericValNumUes() int32 {
-	if o == nil || IsNil(o.NumericValNumUes) {
+	if o == nil || isNil(o.NumericValNumUes) {
 		var ret int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SACInfo) GetNumericValNumUes() int32 {
 // GetNumericValNumUesOk returns a tuple with the NumericValNumUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACInfo) GetNumericValNumUesOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumericValNumUes) {
+	if o == nil || isNil(o.NumericValNumUes) {
 		return nil, false
 	}
 	return o.NumericValNumUes, true
@@ -62,7 +62,7 @@ func (o *SACInfo) GetNumericValNumUesOk() (*int32, bool) {
 
 // HasNumericValNumUes returns a boolean if a field has been set.
 func (o *SACInfo) HasNumericValNumUes() bool {
-	if o != nil && !IsNil(o.NumericValNumUes) {
+	if o != nil && !isNil(o.NumericValNumUes) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SACInfo) SetNumericValNumUes(v int32) {
 
 // GetNumericValNumPduSess returns the NumericValNumPduSess field value if set, zero value otherwise.
 func (o *SACInfo) GetNumericValNumPduSess() int32 {
-	if o == nil || IsNil(o.NumericValNumPduSess) {
+	if o == nil || isNil(o.NumericValNumPduSess) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SACInfo) GetNumericValNumPduSess() int32 {
 // GetNumericValNumPduSessOk returns a tuple with the NumericValNumPduSess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACInfo) GetNumericValNumPduSessOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumericValNumPduSess) {
+	if o == nil || isNil(o.NumericValNumPduSess) {
 		return nil, false
 	}
 	return o.NumericValNumPduSess, true
@@ -94,7 +94,7 @@ func (o *SACInfo) GetNumericValNumPduSessOk() (*int32, bool) {
 
 // HasNumericValNumPduSess returns a boolean if a field has been set.
 func (o *SACInfo) HasNumericValNumPduSess() bool {
-	if o != nil && !IsNil(o.NumericValNumPduSess) {
+	if o != nil && !isNil(o.NumericValNumPduSess) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SACInfo) SetNumericValNumPduSess(v int32) {
 
 // GetPercValueNumUes returns the PercValueNumUes field value if set, zero value otherwise.
 func (o *SACInfo) GetPercValueNumUes() int32 {
-	if o == nil || IsNil(o.PercValueNumUes) {
+	if o == nil || isNil(o.PercValueNumUes) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SACInfo) GetPercValueNumUes() int32 {
 // GetPercValueNumUesOk returns a tuple with the PercValueNumUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACInfo) GetPercValueNumUesOk() (*int32, bool) {
-	if o == nil || IsNil(o.PercValueNumUes) {
+	if o == nil || isNil(o.PercValueNumUes) {
 		return nil, false
 	}
 	return o.PercValueNumUes, true
@@ -126,7 +126,7 @@ func (o *SACInfo) GetPercValueNumUesOk() (*int32, bool) {
 
 // HasPercValueNumUes returns a boolean if a field has been set.
 func (o *SACInfo) HasPercValueNumUes() bool {
-	if o != nil && !IsNil(o.PercValueNumUes) {
+	if o != nil && !isNil(o.PercValueNumUes) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *SACInfo) SetPercValueNumUes(v int32) {
 
 // GetPercValueNumPduSess returns the PercValueNumPduSess field value if set, zero value otherwise.
 func (o *SACInfo) GetPercValueNumPduSess() int32 {
-	if o == nil || IsNil(o.PercValueNumPduSess) {
+	if o == nil || isNil(o.PercValueNumPduSess) {
 		var ret int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SACInfo) GetPercValueNumPduSess() int32 {
 // GetPercValueNumPduSessOk returns a tuple with the PercValueNumPduSess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACInfo) GetPercValueNumPduSessOk() (*int32, bool) {
-	if o == nil || IsNil(o.PercValueNumPduSess) {
+	if o == nil || isNil(o.PercValueNumPduSess) {
 		return nil, false
 	}
 	return o.PercValueNumPduSess, true
@@ -158,7 +158,7 @@ func (o *SACInfo) GetPercValueNumPduSessOk() (*int32, bool) {
 
 // HasPercValueNumPduSess returns a boolean if a field has been set.
 func (o *SACInfo) HasPercValueNumPduSess() bool {
-	if o != nil && !IsNil(o.PercValueNumPduSess) {
+	if o != nil && !isNil(o.PercValueNumPduSess) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o SACInfo) MarshalJSON() ([]byte, error) {
 
 func (o SACInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NumericValNumUes) {
+	if !isNil(o.NumericValNumUes) {
 		toSerialize["numericValNumUes"] = o.NumericValNumUes
 	}
-	if !IsNil(o.NumericValNumPduSess) {
+	if !isNil(o.NumericValNumPduSess) {
 		toSerialize["numericValNumPduSess"] = o.NumericValNumPduSess
 	}
-	if !IsNil(o.PercValueNumUes) {
+	if !isNil(o.PercValueNumUes) {
 		toSerialize["percValueNumUes"] = o.PercValueNumUes
 	}
-	if !IsNil(o.PercValueNumPduSess) {
+	if !isNil(o.PercValueNumPduSess) {
 		toSerialize["percValueNumPduSess"] = o.PercValueNumPduSess
 	}
 	return toSerialize, nil

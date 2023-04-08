@@ -67,7 +67,7 @@ func (o *ReachableUeInfo) SetUeList(v []string) {
 
 // GetUserLocation returns the UserLocation field value if set, zero value otherwise.
 func (o *ReachableUeInfo) GetUserLocation() UserLocation {
-	if o == nil || IsNil(o.UserLocation) {
+	if o == nil || isNil(o.UserLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ReachableUeInfo) GetUserLocation() UserLocation {
 // GetUserLocationOk returns a tuple with the UserLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachableUeInfo) GetUserLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocation) {
+	if o == nil || isNil(o.UserLocation) {
 		return nil, false
 	}
 	return o.UserLocation, true
@@ -85,7 +85,7 @@ func (o *ReachableUeInfo) GetUserLocationOk() (*UserLocation, bool) {
 
 // HasUserLocation returns a boolean if a field has been set.
 func (o *ReachableUeInfo) HasUserLocation() bool {
-	if o != nil && !IsNil(o.UserLocation) {
+	if o != nil && !isNil(o.UserLocation) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ReachableUeInfo) MarshalJSON() ([]byte, error) {
 func (o ReachableUeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueList"] = o.UeList
-	if !IsNil(o.UserLocation) {
+	if !isNil(o.UserLocation) {
 		toSerialize["userLocation"] = o.UserLocation
 	}
 	return toSerialize, nil

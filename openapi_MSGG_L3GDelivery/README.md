@@ -92,15 +92,18 @@ Class | Method | HTTP request | Description
  - [Address](docs/Address.md)
  - [Address1](docs/Address1.md)
  - [AddressType](docs/AddressType.md)
+ - [AddressTypeAnyOf](docs/AddressTypeAnyOf.md)
  - [DeliveryStatusReport](docs/DeliveryStatusReport.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [L3gMessageDelivery](docs/L3gMessageDelivery.md)
  - [MessageSegmentParameters](docs/MessageSegmentParameters.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [ReportDeliveryStatus](docs/ReportDeliveryStatus.md)
+ - [ReportDeliveryStatusAnyOf](docs/ReportDeliveryStatusAnyOf.md)
  - [Snssai](docs/Snssai.md)
 
 

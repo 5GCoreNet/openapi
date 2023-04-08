@@ -95,7 +95,7 @@ func (o *QosFlowNotifyItem) SetNotificationCause(v NotificationCause) {
 
 // GetCurrentQosProfileIndex returns the CurrentQosProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowNotifyItem) GetCurrentQosProfileIndex() int32 {
-	if o == nil || IsNil(o.CurrentQosProfileIndex) {
+	if o == nil || isNil(o.CurrentQosProfileIndex) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *QosFlowNotifyItem) GetCurrentQosProfileIndex() int32 {
 // GetCurrentQosProfileIndexOk returns a tuple with the CurrentQosProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowNotifyItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
-	if o == nil || IsNil(o.CurrentQosProfileIndex) {
+	if o == nil || isNil(o.CurrentQosProfileIndex) {
 		return nil, false
 	}
 	return o.CurrentQosProfileIndex, true
@@ -113,7 +113,7 @@ func (o *QosFlowNotifyItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
 
 // HasCurrentQosProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowNotifyItem) HasCurrentQosProfileIndex() bool {
-	if o != nil && !IsNil(o.CurrentQosProfileIndex) {
+	if o != nil && !isNil(o.CurrentQosProfileIndex) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *QosFlowNotifyItem) SetCurrentQosProfileIndex(v int32) {
 
 // GetNullQoSProfileIndex returns the NullQoSProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowNotifyItem) GetNullQoSProfileIndex() bool {
-	if o == nil || IsNil(o.NullQoSProfileIndex) {
+	if o == nil || isNil(o.NullQoSProfileIndex) {
 		var ret bool
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *QosFlowNotifyItem) GetNullQoSProfileIndex() bool {
 // GetNullQoSProfileIndexOk returns a tuple with the NullQoSProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowNotifyItem) GetNullQoSProfileIndexOk() (*bool, bool) {
-	if o == nil || IsNil(o.NullQoSProfileIndex) {
+	if o == nil || isNil(o.NullQoSProfileIndex) {
 		return nil, false
 	}
 	return o.NullQoSProfileIndex, true
@@ -145,7 +145,7 @@ func (o *QosFlowNotifyItem) GetNullQoSProfileIndexOk() (*bool, bool) {
 
 // HasNullQoSProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowNotifyItem) HasNullQoSProfileIndex() bool {
-	if o != nil && !IsNil(o.NullQoSProfileIndex) {
+	if o != nil && !isNil(o.NullQoSProfileIndex) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o QosFlowNotifyItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
 	toSerialize["notificationCause"] = o.NotificationCause
-	if !IsNil(o.CurrentQosProfileIndex) {
+	if !isNil(o.CurrentQosProfileIndex) {
 		toSerialize["currentQosProfileIndex"] = o.CurrentQosProfileIndex
 	}
-	if !IsNil(o.NullQoSProfileIndex) {
+	if !isNil(o.NullQoSProfileIndex) {
 		toSerialize["nullQoSProfileIndex"] = o.NullQoSProfileIndex
 	}
 	return toSerialize, nil

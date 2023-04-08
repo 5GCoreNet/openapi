@@ -44,7 +44,7 @@ func NewCachingConfigurationCachingDirectivesWithDefaults() *CachingConfiguratio
 
 // GetStatusCodeFilters returns the StatusCodeFilters field value if set, zero value otherwise.
 func (o *CachingConfigurationCachingDirectives) GetStatusCodeFilters() []int32 {
-	if o == nil || IsNil(o.StatusCodeFilters) {
+	if o == nil || isNil(o.StatusCodeFilters) {
 		var ret []int32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CachingConfigurationCachingDirectives) GetStatusCodeFilters() []int32 {
 // GetStatusCodeFiltersOk returns a tuple with the StatusCodeFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CachingConfigurationCachingDirectives) GetStatusCodeFiltersOk() ([]int32, bool) {
-	if o == nil || IsNil(o.StatusCodeFilters) {
+	if o == nil || isNil(o.StatusCodeFilters) {
 		return nil, false
 	}
 	return o.StatusCodeFilters, true
@@ -62,7 +62,7 @@ func (o *CachingConfigurationCachingDirectives) GetStatusCodeFiltersOk() ([]int3
 
 // HasStatusCodeFilters returns a boolean if a field has been set.
 func (o *CachingConfigurationCachingDirectives) HasStatusCodeFilters() bool {
-	if o != nil && !IsNil(o.StatusCodeFilters) {
+	if o != nil && !isNil(o.StatusCodeFilters) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *CachingConfigurationCachingDirectives) SetNoCache(v bool) {
 
 // GetMaxAge returns the MaxAge field value if set, zero value otherwise.
 func (o *CachingConfigurationCachingDirectives) GetMaxAge() int32 {
-	if o == nil || IsNil(o.MaxAge) {
+	if o == nil || isNil(o.MaxAge) {
 		var ret int32
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *CachingConfigurationCachingDirectives) GetMaxAge() int32 {
 // GetMaxAgeOk returns a tuple with the MaxAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CachingConfigurationCachingDirectives) GetMaxAgeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxAge) {
+	if o == nil || isNil(o.MaxAge) {
 		return nil, false
 	}
 	return o.MaxAge, true
@@ -118,7 +118,7 @@ func (o *CachingConfigurationCachingDirectives) GetMaxAgeOk() (*int32, bool) {
 
 // HasMaxAge returns a boolean if a field has been set.
 func (o *CachingConfigurationCachingDirectives) HasMaxAge() bool {
-	if o != nil && !IsNil(o.MaxAge) {
+	if o != nil && !isNil(o.MaxAge) {
 		return true
 	}
 
@@ -140,11 +140,11 @@ func (o CachingConfigurationCachingDirectives) MarshalJSON() ([]byte, error) {
 
 func (o CachingConfigurationCachingDirectives) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StatusCodeFilters) {
+	if !isNil(o.StatusCodeFilters) {
 		toSerialize["statusCodeFilters"] = o.StatusCodeFilters
 	}
 	toSerialize["noCache"] = o.NoCache
-	if !IsNil(o.MaxAge) {
+	if !isNil(o.MaxAge) {
 		toSerialize["maxAge"] = o.MaxAge
 	}
 	return toSerialize, nil

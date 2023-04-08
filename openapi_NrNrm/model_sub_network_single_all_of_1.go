@@ -57,7 +57,7 @@ func NewSubNetworkSingleAllOf1WithDefaults() *SubNetworkSingleAllOf1 {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || IsNil(o.SubNetwork) {
+	if o == nil || isNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *SubNetworkSingleAllOf1) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || IsNil(o.SubNetwork) {
+	if o == nil || isNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -75,7 +75,7 @@ func (o *SubNetworkSingleAllOf1) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasSubNetwork() bool {
-	if o != nil && !IsNil(o.SubNetwork) {
+	if o != nil && !isNil(o.SubNetwork) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *SubNetworkSingleAllOf1) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetManagedElement returns the ManagedElement field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetManagedElement() []ManagedElementSingle {
-	if o == nil || IsNil(o.ManagedElement) {
+	if o == nil || isNil(o.ManagedElement) {
 		var ret []ManagedElementSingle
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *SubNetworkSingleAllOf1) GetManagedElement() []ManagedElementSingle {
 // GetManagedElementOk returns a tuple with the ManagedElement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetManagedElementOk() ([]ManagedElementSingle, bool) {
-	if o == nil || IsNil(o.ManagedElement) {
+	if o == nil || isNil(o.ManagedElement) {
 		return nil, false
 	}
 	return o.ManagedElement, true
@@ -107,7 +107,7 @@ func (o *SubNetworkSingleAllOf1) GetManagedElementOk() ([]ManagedElementSingle, 
 
 // HasManagedElement returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasManagedElement() bool {
-	if o != nil && !IsNil(o.ManagedElement) {
+	if o != nil && !isNil(o.ManagedElement) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *SubNetworkSingleAllOf1) SetManagedElement(v []ManagedElementSingle) {
 
 // GetNRFrequency returns the NRFrequency field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetNRFrequency() []NRFrequencySingle {
-	if o == nil || IsNil(o.NRFrequency) {
+	if o == nil || isNil(o.NRFrequency) {
 		var ret []NRFrequencySingle
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *SubNetworkSingleAllOf1) GetNRFrequency() []NRFrequencySingle {
 // GetNRFrequencyOk returns a tuple with the NRFrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetNRFrequencyOk() ([]NRFrequencySingle, bool) {
-	if o == nil || IsNil(o.NRFrequency) {
+	if o == nil || isNil(o.NRFrequency) {
 		return nil, false
 	}
 	return o.NRFrequency, true
@@ -139,7 +139,7 @@ func (o *SubNetworkSingleAllOf1) GetNRFrequencyOk() ([]NRFrequencySingle, bool) 
 
 // HasNRFrequency returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasNRFrequency() bool {
-	if o != nil && !IsNil(o.NRFrequency) {
+	if o != nil && !isNil(o.NRFrequency) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *SubNetworkSingleAllOf1) SetNRFrequency(v []NRFrequencySingle) {
 
 // GetExternalGnbCuCpFunction returns the ExternalGnbCuCpFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetExternalGnbCuCpFunction() []ExternalGnbCuCpFunctionSingle {
-	if o == nil || IsNil(o.ExternalGnbCuCpFunction) {
+	if o == nil || isNil(o.ExternalGnbCuCpFunction) {
 		var ret []ExternalGnbCuCpFunctionSingle
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *SubNetworkSingleAllOf1) GetExternalGnbCuCpFunction() []ExternalGnbCuCpF
 // GetExternalGnbCuCpFunctionOk returns a tuple with the ExternalGnbCuCpFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetExternalGnbCuCpFunctionOk() ([]ExternalGnbCuCpFunctionSingle, bool) {
-	if o == nil || IsNil(o.ExternalGnbCuCpFunction) {
+	if o == nil || isNil(o.ExternalGnbCuCpFunction) {
 		return nil, false
 	}
 	return o.ExternalGnbCuCpFunction, true
@@ -171,7 +171,7 @@ func (o *SubNetworkSingleAllOf1) GetExternalGnbCuCpFunctionOk() ([]ExternalGnbCu
 
 // HasExternalGnbCuCpFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasExternalGnbCuCpFunction() bool {
-	if o != nil && !IsNil(o.ExternalGnbCuCpFunction) {
+	if o != nil && !isNil(o.ExternalGnbCuCpFunction) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *SubNetworkSingleAllOf1) SetExternalGnbCuCpFunction(v []ExternalGnbCuCpF
 
 // GetExternalENBFunction returns the ExternalENBFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetExternalENBFunction() []ExternalENBFunctionSingle {
-	if o == nil || IsNil(o.ExternalENBFunction) {
+	if o == nil || isNil(o.ExternalENBFunction) {
 		var ret []ExternalENBFunctionSingle
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *SubNetworkSingleAllOf1) GetExternalENBFunction() []ExternalENBFunctionS
 // GetExternalENBFunctionOk returns a tuple with the ExternalENBFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetExternalENBFunctionOk() ([]ExternalENBFunctionSingle, bool) {
-	if o == nil || IsNil(o.ExternalENBFunction) {
+	if o == nil || isNil(o.ExternalENBFunction) {
 		return nil, false
 	}
 	return o.ExternalENBFunction, true
@@ -203,7 +203,7 @@ func (o *SubNetworkSingleAllOf1) GetExternalENBFunctionOk() ([]ExternalENBFuncti
 
 // HasExternalENBFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasExternalENBFunction() bool {
-	if o != nil && !IsNil(o.ExternalENBFunction) {
+	if o != nil && !isNil(o.ExternalENBFunction) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *SubNetworkSingleAllOf1) SetExternalENBFunction(v []ExternalENBFunctionS
 
 // GetEUtranFrequency returns the EUtranFrequency field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetEUtranFrequency() []EUtranFrequencySingle {
-	if o == nil || IsNil(o.EUtranFrequency) {
+	if o == nil || isNil(o.EUtranFrequency) {
 		var ret []EUtranFrequencySingle
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *SubNetworkSingleAllOf1) GetEUtranFrequency() []EUtranFrequencySingle {
 // GetEUtranFrequencyOk returns a tuple with the EUtranFrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetEUtranFrequencyOk() ([]EUtranFrequencySingle, bool) {
-	if o == nil || IsNil(o.EUtranFrequency) {
+	if o == nil || isNil(o.EUtranFrequency) {
 		return nil, false
 	}
 	return o.EUtranFrequency, true
@@ -235,7 +235,7 @@ func (o *SubNetworkSingleAllOf1) GetEUtranFrequencyOk() ([]EUtranFrequencySingle
 
 // HasEUtranFrequency returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasEUtranFrequency() bool {
-	if o != nil && !IsNil(o.EUtranFrequency) {
+	if o != nil && !isNil(o.EUtranFrequency) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *SubNetworkSingleAllOf1) SetEUtranFrequency(v []EUtranFrequencySingle) {
 
 // GetDESManagementFunction returns the DESManagementFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetDESManagementFunction() DESManagementFunctionSingle {
-	if o == nil || IsNil(o.DESManagementFunction) {
+	if o == nil || isNil(o.DESManagementFunction) {
 		var ret DESManagementFunctionSingle
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *SubNetworkSingleAllOf1) GetDESManagementFunction() DESManagementFunctio
 // GetDESManagementFunctionOk returns a tuple with the DESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetDESManagementFunctionOk() (*DESManagementFunctionSingle, bool) {
-	if o == nil || IsNil(o.DESManagementFunction) {
+	if o == nil || isNil(o.DESManagementFunction) {
 		return nil, false
 	}
 	return o.DESManagementFunction, true
@@ -267,7 +267,7 @@ func (o *SubNetworkSingleAllOf1) GetDESManagementFunctionOk() (*DESManagementFun
 
 // HasDESManagementFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasDESManagementFunction() bool {
-	if o != nil && !IsNil(o.DESManagementFunction) {
+	if o != nil && !isNil(o.DESManagementFunction) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *SubNetworkSingleAllOf1) SetDESManagementFunction(v DESManagementFunctio
 
 // GetDRACHOptimizationFunction returns the DRACHOptimizationFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimizationFunctionSingle {
-	if o == nil || IsNil(o.DRACHOptimizationFunction) {
+	if o == nil || isNil(o.DRACHOptimizationFunction) {
 		var ret DRACHOptimizationFunctionSingle
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *SubNetworkSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimizatio
 // GetDRACHOptimizationFunctionOk returns a tuple with the DRACHOptimizationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOptimizationFunctionSingle, bool) {
-	if o == nil || IsNil(o.DRACHOptimizationFunction) {
+	if o == nil || isNil(o.DRACHOptimizationFunction) {
 		return nil, false
 	}
 	return o.DRACHOptimizationFunction, true
@@ -299,7 +299,7 @@ func (o *SubNetworkSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOptimiz
 
 // HasDRACHOptimizationFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasDRACHOptimizationFunction() bool {
-	if o != nil && !IsNil(o.DRACHOptimizationFunction) {
+	if o != nil && !isNil(o.DRACHOptimizationFunction) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *SubNetworkSingleAllOf1) SetDRACHOptimizationFunction(v DRACHOptimizatio
 
 // GetDMROFunction returns the DMROFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetDMROFunction() DMROFunctionSingle {
-	if o == nil || IsNil(o.DMROFunction) {
+	if o == nil || isNil(o.DMROFunction) {
 		var ret DMROFunctionSingle
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *SubNetworkSingleAllOf1) GetDMROFunction() DMROFunctionSingle {
 // GetDMROFunctionOk returns a tuple with the DMROFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetDMROFunctionOk() (*DMROFunctionSingle, bool) {
-	if o == nil || IsNil(o.DMROFunction) {
+	if o == nil || isNil(o.DMROFunction) {
 		return nil, false
 	}
 	return o.DMROFunction, true
@@ -331,7 +331,7 @@ func (o *SubNetworkSingleAllOf1) GetDMROFunctionOk() (*DMROFunctionSingle, bool)
 
 // HasDMROFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasDMROFunction() bool {
-	if o != nil && !IsNil(o.DMROFunction) {
+	if o != nil && !isNil(o.DMROFunction) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *SubNetworkSingleAllOf1) SetDMROFunction(v DMROFunctionSingle) {
 
 // GetDLBOFunction returns the DLBOFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetDLBOFunction() DLBOFunctionSingle {
-	if o == nil || IsNil(o.DLBOFunction) {
+	if o == nil || isNil(o.DLBOFunction) {
 		var ret DLBOFunctionSingle
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *SubNetworkSingleAllOf1) GetDLBOFunction() DLBOFunctionSingle {
 // GetDLBOFunctionOk returns a tuple with the DLBOFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetDLBOFunctionOk() (*DLBOFunctionSingle, bool) {
-	if o == nil || IsNil(o.DLBOFunction) {
+	if o == nil || isNil(o.DLBOFunction) {
 		return nil, false
 	}
 	return o.DLBOFunction, true
@@ -363,7 +363,7 @@ func (o *SubNetworkSingleAllOf1) GetDLBOFunctionOk() (*DLBOFunctionSingle, bool)
 
 // HasDLBOFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasDLBOFunction() bool {
-	if o != nil && !IsNil(o.DLBOFunction) {
+	if o != nil && !isNil(o.DLBOFunction) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *SubNetworkSingleAllOf1) SetDLBOFunction(v DLBOFunctionSingle) {
 
 // GetDPCIConfigurationFunction returns the DPCIConfigurationFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetDPCIConfigurationFunction() DPCIConfigurationFunctionSingle {
-	if o == nil || IsNil(o.DPCIConfigurationFunction) {
+	if o == nil || isNil(o.DPCIConfigurationFunction) {
 		var ret DPCIConfigurationFunctionSingle
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *SubNetworkSingleAllOf1) GetDPCIConfigurationFunction() DPCIConfiguratio
 // GetDPCIConfigurationFunctionOk returns a tuple with the DPCIConfigurationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetDPCIConfigurationFunctionOk() (*DPCIConfigurationFunctionSingle, bool) {
-	if o == nil || IsNil(o.DPCIConfigurationFunction) {
+	if o == nil || isNil(o.DPCIConfigurationFunction) {
 		return nil, false
 	}
 	return o.DPCIConfigurationFunction, true
@@ -395,7 +395,7 @@ func (o *SubNetworkSingleAllOf1) GetDPCIConfigurationFunctionOk() (*DPCIConfigur
 
 // HasDPCIConfigurationFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasDPCIConfigurationFunction() bool {
-	if o != nil && !IsNil(o.DPCIConfigurationFunction) {
+	if o != nil && !isNil(o.DPCIConfigurationFunction) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *SubNetworkSingleAllOf1) SetDPCIConfigurationFunction(v DPCIConfiguratio
 
 // GetCPCIConfigurationFunction returns the CPCIConfigurationFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetCPCIConfigurationFunction() CPCIConfigurationFunctionSingle {
-	if o == nil || IsNil(o.CPCIConfigurationFunction) {
+	if o == nil || isNil(o.CPCIConfigurationFunction) {
 		var ret CPCIConfigurationFunctionSingle
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *SubNetworkSingleAllOf1) GetCPCIConfigurationFunction() CPCIConfiguratio
 // GetCPCIConfigurationFunctionOk returns a tuple with the CPCIConfigurationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetCPCIConfigurationFunctionOk() (*CPCIConfigurationFunctionSingle, bool) {
-	if o == nil || IsNil(o.CPCIConfigurationFunction) {
+	if o == nil || isNil(o.CPCIConfigurationFunction) {
 		return nil, false
 	}
 	return o.CPCIConfigurationFunction, true
@@ -427,7 +427,7 @@ func (o *SubNetworkSingleAllOf1) GetCPCIConfigurationFunctionOk() (*CPCIConfigur
 
 // HasCPCIConfigurationFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasCPCIConfigurationFunction() bool {
-	if o != nil && !IsNil(o.CPCIConfigurationFunction) {
+	if o != nil && !isNil(o.CPCIConfigurationFunction) {
 		return true
 	}
 
@@ -441,7 +441,7 @@ func (o *SubNetworkSingleAllOf1) SetCPCIConfigurationFunction(v CPCIConfiguratio
 
 // GetCESManagementFunction returns the CESManagementFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetCESManagementFunction() CESManagementFunctionSingle {
-	if o == nil || IsNil(o.CESManagementFunction) {
+	if o == nil || isNil(o.CESManagementFunction) {
 		var ret CESManagementFunctionSingle
 		return ret
 	}
@@ -451,7 +451,7 @@ func (o *SubNetworkSingleAllOf1) GetCESManagementFunction() CESManagementFunctio
 // GetCESManagementFunctionOk returns a tuple with the CESManagementFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetCESManagementFunctionOk() (*CESManagementFunctionSingle, bool) {
-	if o == nil || IsNil(o.CESManagementFunction) {
+	if o == nil || isNil(o.CESManagementFunction) {
 		return nil, false
 	}
 	return o.CESManagementFunction, true
@@ -459,7 +459,7 @@ func (o *SubNetworkSingleAllOf1) GetCESManagementFunctionOk() (*CESManagementFun
 
 // HasCESManagementFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasCESManagementFunction() bool {
-	if o != nil && !IsNil(o.CESManagementFunction) {
+	if o != nil && !isNil(o.CESManagementFunction) {
 		return true
 	}
 
@@ -473,7 +473,7 @@ func (o *SubNetworkSingleAllOf1) SetCESManagementFunction(v CESManagementFunctio
 
 // GetConfigurable5QISet returns the Configurable5QISet field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetConfigurable5QISet() []Configurable5QISetSingle {
-	if o == nil || IsNil(o.Configurable5QISet) {
+	if o == nil || isNil(o.Configurable5QISet) {
 		var ret []Configurable5QISetSingle
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *SubNetworkSingleAllOf1) GetConfigurable5QISet() []Configurable5QISetSin
 // GetConfigurable5QISetOk returns a tuple with the Configurable5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetConfigurable5QISetOk() ([]Configurable5QISetSingle, bool) {
-	if o == nil || IsNil(o.Configurable5QISet) {
+	if o == nil || isNil(o.Configurable5QISet) {
 		return nil, false
 	}
 	return o.Configurable5QISet, true
@@ -491,7 +491,7 @@ func (o *SubNetworkSingleAllOf1) GetConfigurable5QISetOk() ([]Configurable5QISet
 
 // HasConfigurable5QISet returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasConfigurable5QISet() bool {
-	if o != nil && !IsNil(o.Configurable5QISet) {
+	if o != nil && !isNil(o.Configurable5QISet) {
 		return true
 	}
 
@@ -505,7 +505,7 @@ func (o *SubNetworkSingleAllOf1) SetConfigurable5QISet(v []Configurable5QISetSin
 
 // GetRimRSGlobal returns the RimRSGlobal field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetRimRSGlobal() RimRSGlobalSingle {
-	if o == nil || IsNil(o.RimRSGlobal) {
+	if o == nil || isNil(o.RimRSGlobal) {
 		var ret RimRSGlobalSingle
 		return ret
 	}
@@ -515,7 +515,7 @@ func (o *SubNetworkSingleAllOf1) GetRimRSGlobal() RimRSGlobalSingle {
 // GetRimRSGlobalOk returns a tuple with the RimRSGlobal field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetRimRSGlobalOk() (*RimRSGlobalSingle, bool) {
-	if o == nil || IsNil(o.RimRSGlobal) {
+	if o == nil || isNil(o.RimRSGlobal) {
 		return nil, false
 	}
 	return o.RimRSGlobal, true
@@ -523,7 +523,7 @@ func (o *SubNetworkSingleAllOf1) GetRimRSGlobalOk() (*RimRSGlobalSingle, bool) {
 
 // HasRimRSGlobal returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasRimRSGlobal() bool {
-	if o != nil && !IsNil(o.RimRSGlobal) {
+	if o != nil && !isNil(o.RimRSGlobal) {
 		return true
 	}
 
@@ -537,7 +537,7 @@ func (o *SubNetworkSingleAllOf1) SetRimRSGlobal(v RimRSGlobalSingle) {
 
 // GetDynamic5QISet returns the Dynamic5QISet field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
-	if o == nil || IsNil(o.Dynamic5QISet) {
+	if o == nil || isNil(o.Dynamic5QISet) {
 		var ret []Dynamic5QISetSingle
 		return ret
 	}
@@ -547,7 +547,7 @@ func (o *SubNetworkSingleAllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
 // GetDynamic5QISetOk returns a tuple with the Dynamic5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle, bool) {
-	if o == nil || IsNil(o.Dynamic5QISet) {
+	if o == nil || isNil(o.Dynamic5QISet) {
 		return nil, false
 	}
 	return o.Dynamic5QISet, true
@@ -555,7 +555,7 @@ func (o *SubNetworkSingleAllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle, bo
 
 // HasDynamic5QISet returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasDynamic5QISet() bool {
-	if o != nil && !IsNil(o.Dynamic5QISet) {
+	if o != nil && !isNil(o.Dynamic5QISet) {
 		return true
 	}
 
@@ -569,7 +569,7 @@ func (o *SubNetworkSingleAllOf1) SetDynamic5QISet(v []Dynamic5QISetSingle) {
 
 // GetCCOFunction returns the CCOFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetCCOFunction() CCOFunctionSingle {
-	if o == nil || IsNil(o.CCOFunction) {
+	if o == nil || isNil(o.CCOFunction) {
 		var ret CCOFunctionSingle
 		return ret
 	}
@@ -579,7 +579,7 @@ func (o *SubNetworkSingleAllOf1) GetCCOFunction() CCOFunctionSingle {
 // GetCCOFunctionOk returns a tuple with the CCOFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetCCOFunctionOk() (*CCOFunctionSingle, bool) {
-	if o == nil || IsNil(o.CCOFunction) {
+	if o == nil || isNil(o.CCOFunction) {
 		return nil, false
 	}
 	return o.CCOFunction, true
@@ -587,7 +587,7 @@ func (o *SubNetworkSingleAllOf1) GetCCOFunctionOk() (*CCOFunctionSingle, bool) {
 
 // HasCCOFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasCCOFunction() bool {
-	if o != nil && !IsNil(o.CCOFunction) {
+	if o != nil && !isNil(o.CCOFunction) {
 		return true
 	}
 
@@ -609,55 +609,55 @@ func (o SubNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubNetwork) {
+	if !isNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !IsNil(o.ManagedElement) {
+	if !isNil(o.ManagedElement) {
 		toSerialize["ManagedElement"] = o.ManagedElement
 	}
-	if !IsNil(o.NRFrequency) {
+	if !isNil(o.NRFrequency) {
 		toSerialize["NRFrequency"] = o.NRFrequency
 	}
-	if !IsNil(o.ExternalGnbCuCpFunction) {
+	if !isNil(o.ExternalGnbCuCpFunction) {
 		toSerialize["ExternalGnbCuCpFunction"] = o.ExternalGnbCuCpFunction
 	}
-	if !IsNil(o.ExternalENBFunction) {
+	if !isNil(o.ExternalENBFunction) {
 		toSerialize["ExternalENBFunction"] = o.ExternalENBFunction
 	}
-	if !IsNil(o.EUtranFrequency) {
+	if !isNil(o.EUtranFrequency) {
 		toSerialize["EUtranFrequency"] = o.EUtranFrequency
 	}
-	if !IsNil(o.DESManagementFunction) {
+	if !isNil(o.DESManagementFunction) {
 		toSerialize["DESManagementFunction"] = o.DESManagementFunction
 	}
-	if !IsNil(o.DRACHOptimizationFunction) {
+	if !isNil(o.DRACHOptimizationFunction) {
 		toSerialize["DRACHOptimizationFunction"] = o.DRACHOptimizationFunction
 	}
-	if !IsNil(o.DMROFunction) {
+	if !isNil(o.DMROFunction) {
 		toSerialize["DMROFunction"] = o.DMROFunction
 	}
-	if !IsNil(o.DLBOFunction) {
+	if !isNil(o.DLBOFunction) {
 		toSerialize["DLBOFunction"] = o.DLBOFunction
 	}
-	if !IsNil(o.DPCIConfigurationFunction) {
+	if !isNil(o.DPCIConfigurationFunction) {
 		toSerialize["DPCIConfigurationFunction"] = o.DPCIConfigurationFunction
 	}
-	if !IsNil(o.CPCIConfigurationFunction) {
+	if !isNil(o.CPCIConfigurationFunction) {
 		toSerialize["CPCIConfigurationFunction"] = o.CPCIConfigurationFunction
 	}
-	if !IsNil(o.CESManagementFunction) {
+	if !isNil(o.CESManagementFunction) {
 		toSerialize["CESManagementFunction"] = o.CESManagementFunction
 	}
-	if !IsNil(o.Configurable5QISet) {
+	if !isNil(o.Configurable5QISet) {
 		toSerialize["Configurable5QISet"] = o.Configurable5QISet
 	}
-	if !IsNil(o.RimRSGlobal) {
+	if !isNil(o.RimRSGlobal) {
 		toSerialize["RimRSGlobal"] = o.RimRSGlobal
 	}
-	if !IsNil(o.Dynamic5QISet) {
+	if !isNil(o.Dynamic5QISet) {
 		toSerialize["Dynamic5QISet"] = o.Dynamic5QISet
 	}
-	if !IsNil(o.CCOFunction) {
+	if !isNil(o.CCOFunction) {
 		toSerialize["CCOFunction"] = o.CCOFunction
 	}
 	return toSerialize, nil

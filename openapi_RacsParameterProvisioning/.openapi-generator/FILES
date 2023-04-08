@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -14,6 +13,7 @@ docs/RACSParameterProvisioningsApi.md
 docs/RacsConfiguration.md
 docs/RacsConfigurationRm.md
 docs/RacsFailureCode.md
+docs/RacsFailureCodeAnyOf.md
 docs/RacsFailureReport.md
 docs/RacsProvisioningData.md
 docs/RacsProvisioningDataPatch.md
@@ -25,6 +25,7 @@ model_problem_details.go
 model_racs_configuration.go
 model_racs_configuration_rm.go
 model_racs_failure_code.go
+model_racs_failure_code_any_of.go
 model_racs_failure_report.go
 model_racs_provisioning_data.go
 model_racs_provisioning_data_patch.go

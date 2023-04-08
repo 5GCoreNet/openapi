@@ -94,7 +94,7 @@ func (o *NrppaInformation) SetNrppaPdu(v N2InfoContent) {
 
 // GetServiceInstanceId returns the ServiceInstanceId field value if set, zero value otherwise.
 func (o *NrppaInformation) GetServiceInstanceId() string {
-	if o == nil || IsNil(o.ServiceInstanceId) {
+	if o == nil || isNil(o.ServiceInstanceId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *NrppaInformation) GetServiceInstanceId() string {
 // GetServiceInstanceIdOk returns a tuple with the ServiceInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrppaInformation) GetServiceInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceInstanceId) {
+	if o == nil || isNil(o.ServiceInstanceId) {
 		return nil, false
 	}
 	return o.ServiceInstanceId, true
@@ -112,7 +112,7 @@ func (o *NrppaInformation) GetServiceInstanceIdOk() (*string, bool) {
 
 // HasServiceInstanceId returns a boolean if a field has been set.
 func (o *NrppaInformation) HasServiceInstanceId() bool {
-	if o != nil && !IsNil(o.ServiceInstanceId) {
+	if o != nil && !isNil(o.ServiceInstanceId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o NrppaInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfId"] = o.NfId
 	toSerialize["nrppaPdu"] = o.NrppaPdu
-	if !IsNil(o.ServiceInstanceId) {
+	if !isNil(o.ServiceInstanceId) {
 		toSerialize["serviceInstanceId"] = o.ServiceInstanceId
 	}
 	return toSerialize, nil

@@ -19,7 +19,7 @@ var _ MappedNullable = &FiveQiDscpMappingSetSingleAllOf{}
 
 // FiveQiDscpMappingSetSingleAllOf struct for FiveQiDscpMappingSetSingleAllOf
 type FiveQiDscpMappingSetSingleAllOf struct {
-	Attributes *FiveQiDscpMappingSetSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewFiveQiDscpMappingSetSingleAllOf instantiates a new FiveQiDscpMappingSetSingleAllOf object
@@ -40,9 +40,9 @@ func NewFiveQiDscpMappingSetSingleAllOfWithDefaults() *FiveQiDscpMappingSetSingl
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *FiveQiDscpMappingSetSingleAllOf) GetAttributes() FiveQiDscpMappingSetSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret FiveQiDscpMappingSetSingleAllOfAttributes
+func (o *FiveQiDscpMappingSetSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *FiveQiDscpMappingSetSingleAllOf) GetAttributes() FiveQiDscpMappingSetSi
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FiveQiDscpMappingSetSingleAllOf) GetAttributesOk() (*FiveQiDscpMappingSetSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *FiveQiDscpMappingSetSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *FiveQiDscpMappingSetSingleAllOf) GetAttributesOk() (*FiveQiDscpMappingS
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *FiveQiDscpMappingSetSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given FiveQiDscpMappingSetSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *FiveQiDscpMappingSetSingleAllOf) SetAttributes(v FiveQiDscpMappingSetSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *FiveQiDscpMappingSetSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o FiveQiDscpMappingSetSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o FiveQiDscpMappingSetSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

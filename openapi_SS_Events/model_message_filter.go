@@ -74,7 +74,7 @@ func (o *MessageFilter) SetReqUe(v ValTargetUe) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *MessageFilter) GetTgtUe() []ValTargetUe {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MessageFilter) GetTgtUe() []ValTargetUe {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageFilter) GetTgtUeOk() ([]ValTargetUe, bool) {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -92,7 +92,7 @@ func (o *MessageFilter) GetTgtUeOk() ([]ValTargetUe, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *MessageFilter) HasTgtUe() bool {
-	if o != nil && !IsNil(o.TgtUe) {
+	if o != nil && !isNil(o.TgtUe) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *MessageFilter) SetTgtUe(v []ValTargetUe) {
 
 // GetMaxMsgs returns the MaxMsgs field value if set, zero value otherwise.
 func (o *MessageFilter) GetMaxMsgs() int32 {
-	if o == nil || IsNil(o.MaxMsgs) {
+	if o == nil || isNil(o.MaxMsgs) {
 		var ret int32
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *MessageFilter) GetMaxMsgs() int32 {
 // GetMaxMsgsOk returns a tuple with the MaxMsgs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageFilter) GetMaxMsgsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxMsgs) {
+	if o == nil || isNil(o.MaxMsgs) {
 		return nil, false
 	}
 	return o.MaxMsgs, true
@@ -124,7 +124,7 @@ func (o *MessageFilter) GetMaxMsgsOk() (*int32, bool) {
 
 // HasMaxMsgs returns a boolean if a field has been set.
 func (o *MessageFilter) HasMaxMsgs() bool {
-	if o != nil && !IsNil(o.MaxMsgs) {
+	if o != nil && !isNil(o.MaxMsgs) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *MessageFilter) SetMaxMsgs(v int32) {
 
 // GetScheds returns the Scheds field value if set, zero value otherwise.
 func (o *MessageFilter) GetScheds() []ScheduledCommunicationTime {
-	if o == nil || IsNil(o.Scheds) {
+	if o == nil || isNil(o.Scheds) {
 		var ret []ScheduledCommunicationTime
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *MessageFilter) GetScheds() []ScheduledCommunicationTime {
 // GetSchedsOk returns a tuple with the Scheds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageFilter) GetSchedsOk() ([]ScheduledCommunicationTime, bool) {
-	if o == nil || IsNil(o.Scheds) {
+	if o == nil || isNil(o.Scheds) {
 		return nil, false
 	}
 	return o.Scheds, true
@@ -156,7 +156,7 @@ func (o *MessageFilter) GetSchedsOk() ([]ScheduledCommunicationTime, bool) {
 
 // HasScheds returns a boolean if a field has been set.
 func (o *MessageFilter) HasScheds() bool {
-	if o != nil && !IsNil(o.Scheds) {
+	if o != nil && !isNil(o.Scheds) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *MessageFilter) SetScheds(v []ScheduledCommunicationTime) {
 
 // GetMsgTypes returns the MsgTypes field value if set, zero value otherwise.
 func (o *MessageFilter) GetMsgTypes() []string {
-	if o == nil || IsNil(o.MsgTypes) {
+	if o == nil || isNil(o.MsgTypes) {
 		var ret []string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *MessageFilter) GetMsgTypes() []string {
 // GetMsgTypesOk returns a tuple with the MsgTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageFilter) GetMsgTypesOk() ([]string, bool) {
-	if o == nil || IsNil(o.MsgTypes) {
+	if o == nil || isNil(o.MsgTypes) {
 		return nil, false
 	}
 	return o.MsgTypes, true
@@ -188,7 +188,7 @@ func (o *MessageFilter) GetMsgTypesOk() ([]string, bool) {
 
 // HasMsgTypes returns a boolean if a field has been set.
 func (o *MessageFilter) HasMsgTypes() bool {
-	if o != nil && !IsNil(o.MsgTypes) {
+	if o != nil && !isNil(o.MsgTypes) {
 		return true
 	}
 
@@ -211,16 +211,16 @@ func (o MessageFilter) MarshalJSON() ([]byte, error) {
 func (o MessageFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reqUe"] = o.ReqUe
-	if !IsNil(o.TgtUe) {
+	if !isNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
-	if !IsNil(o.MaxMsgs) {
+	if !isNil(o.MaxMsgs) {
 		toSerialize["maxMsgs"] = o.MaxMsgs
 	}
-	if !IsNil(o.Scheds) {
+	if !isNil(o.Scheds) {
 		toSerialize["scheds"] = o.Scheds
 	}
-	if !IsNil(o.MsgTypes) {
+	if !isNil(o.MsgTypes) {
 		toSerialize["msgTypes"] = o.MsgTypes
 	}
 	return toSerialize, nil

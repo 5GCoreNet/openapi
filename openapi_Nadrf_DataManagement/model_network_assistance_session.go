@@ -74,7 +74,7 @@ func (o *NetworkAssistanceSession) SetNaSessionId(v string) {
 
 // GetServiceDataFlowDescription returns the ServiceDataFlowDescription field value if set, zero value otherwise.
 func (o *NetworkAssistanceSession) GetServiceDataFlowDescription() []ServiceDataFlowDescription {
-	if o == nil || IsNil(o.ServiceDataFlowDescription) {
+	if o == nil || isNil(o.ServiceDataFlowDescription) {
 		var ret []ServiceDataFlowDescription
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NetworkAssistanceSession) GetServiceDataFlowDescription() []ServiceData
 // GetServiceDataFlowDescriptionOk returns a tuple with the ServiceDataFlowDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAssistanceSession) GetServiceDataFlowDescriptionOk() ([]ServiceDataFlowDescription, bool) {
-	if o == nil || IsNil(o.ServiceDataFlowDescription) {
+	if o == nil || isNil(o.ServiceDataFlowDescription) {
 		return nil, false
 	}
 	return o.ServiceDataFlowDescription, true
@@ -92,7 +92,7 @@ func (o *NetworkAssistanceSession) GetServiceDataFlowDescriptionOk() ([]ServiceD
 
 // HasServiceDataFlowDescription returns a boolean if a field has been set.
 func (o *NetworkAssistanceSession) HasServiceDataFlowDescription() bool {
-	if o != nil && !IsNil(o.ServiceDataFlowDescription) {
+	if o != nil && !isNil(o.ServiceDataFlowDescription) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *NetworkAssistanceSession) SetServiceDataFlowDescription(v []ServiceData
 
 // GetPolicyTemplateId returns the PolicyTemplateId field value if set, zero value otherwise.
 func (o *NetworkAssistanceSession) GetPolicyTemplateId() string {
-	if o == nil || IsNil(o.PolicyTemplateId) {
+	if o == nil || isNil(o.PolicyTemplateId) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *NetworkAssistanceSession) GetPolicyTemplateId() string {
 // GetPolicyTemplateIdOk returns a tuple with the PolicyTemplateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAssistanceSession) GetPolicyTemplateIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PolicyTemplateId) {
+	if o == nil || isNil(o.PolicyTemplateId) {
 		return nil, false
 	}
 	return o.PolicyTemplateId, true
@@ -124,7 +124,7 @@ func (o *NetworkAssistanceSession) GetPolicyTemplateIdOk() (*string, bool) {
 
 // HasPolicyTemplateId returns a boolean if a field has been set.
 func (o *NetworkAssistanceSession) HasPolicyTemplateId() bool {
-	if o != nil && !IsNil(o.PolicyTemplateId) {
+	if o != nil && !isNil(o.PolicyTemplateId) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *NetworkAssistanceSession) SetPolicyTemplateId(v string) {
 
 // GetRequestedQoS returns the RequestedQoS field value if set, zero value otherwise.
 func (o *NetworkAssistanceSession) GetRequestedQoS() M5QoSSpecification {
-	if o == nil || IsNil(o.RequestedQoS) {
+	if o == nil || isNil(o.RequestedQoS) {
 		var ret M5QoSSpecification
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *NetworkAssistanceSession) GetRequestedQoS() M5QoSSpecification {
 // GetRequestedQoSOk returns a tuple with the RequestedQoS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAssistanceSession) GetRequestedQoSOk() (*M5QoSSpecification, bool) {
-	if o == nil || IsNil(o.RequestedQoS) {
+	if o == nil || isNil(o.RequestedQoS) {
 		return nil, false
 	}
 	return o.RequestedQoS, true
@@ -156,7 +156,7 @@ func (o *NetworkAssistanceSession) GetRequestedQoSOk() (*M5QoSSpecification, boo
 
 // HasRequestedQoS returns a boolean if a field has been set.
 func (o *NetworkAssistanceSession) HasRequestedQoS() bool {
-	if o != nil && !IsNil(o.RequestedQoS) {
+	if o != nil && !isNil(o.RequestedQoS) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *NetworkAssistanceSession) SetRequestedQoS(v M5QoSSpecification) {
 
 // GetRecommendedQoS returns the RecommendedQoS field value if set, zero value otherwise.
 func (o *NetworkAssistanceSession) GetRecommendedQoS() M5QoSSpecification {
-	if o == nil || IsNil(o.RecommendedQoS) {
+	if o == nil || isNil(o.RecommendedQoS) {
 		var ret M5QoSSpecification
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *NetworkAssistanceSession) GetRecommendedQoS() M5QoSSpecification {
 // GetRecommendedQoSOk returns a tuple with the RecommendedQoS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAssistanceSession) GetRecommendedQoSOk() (*M5QoSSpecification, bool) {
-	if o == nil || IsNil(o.RecommendedQoS) {
+	if o == nil || isNil(o.RecommendedQoS) {
 		return nil, false
 	}
 	return o.RecommendedQoS, true
@@ -188,7 +188,7 @@ func (o *NetworkAssistanceSession) GetRecommendedQoSOk() (*M5QoSSpecification, b
 
 // HasRecommendedQoS returns a boolean if a field has been set.
 func (o *NetworkAssistanceSession) HasRecommendedQoS() bool {
-	if o != nil && !IsNil(o.RecommendedQoS) {
+	if o != nil && !isNil(o.RecommendedQoS) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *NetworkAssistanceSession) SetRecommendedQoS(v M5QoSSpecification) {
 
 // GetNotficationURL returns the NotficationURL field value if set, zero value otherwise.
 func (o *NetworkAssistanceSession) GetNotficationURL() string {
-	if o == nil || IsNil(o.NotficationURL) {
+	if o == nil || isNil(o.NotficationURL) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *NetworkAssistanceSession) GetNotficationURL() string {
 // GetNotficationURLOk returns a tuple with the NotficationURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkAssistanceSession) GetNotficationURLOk() (*string, bool) {
-	if o == nil || IsNil(o.NotficationURL) {
+	if o == nil || isNil(o.NotficationURL) {
 		return nil, false
 	}
 	return o.NotficationURL, true
@@ -220,7 +220,7 @@ func (o *NetworkAssistanceSession) GetNotficationURLOk() (*string, bool) {
 
 // HasNotficationURL returns a boolean if a field has been set.
 func (o *NetworkAssistanceSession) HasNotficationURL() bool {
-	if o != nil && !IsNil(o.NotficationURL) {
+	if o != nil && !isNil(o.NotficationURL) {
 		return true
 	}
 
@@ -243,19 +243,19 @@ func (o NetworkAssistanceSession) MarshalJSON() ([]byte, error) {
 func (o NetworkAssistanceSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["naSessionId"] = o.NaSessionId
-	if !IsNil(o.ServiceDataFlowDescription) {
+	if !isNil(o.ServiceDataFlowDescription) {
 		toSerialize["serviceDataFlowDescription"] = o.ServiceDataFlowDescription
 	}
-	if !IsNil(o.PolicyTemplateId) {
+	if !isNil(o.PolicyTemplateId) {
 		toSerialize["policyTemplateId"] = o.PolicyTemplateId
 	}
-	if !IsNil(o.RequestedQoS) {
+	if !isNil(o.RequestedQoS) {
 		toSerialize["requestedQoS"] = o.RequestedQoS
 	}
-	if !IsNil(o.RecommendedQoS) {
+	if !isNil(o.RecommendedQoS) {
 		toSerialize["recommendedQoS"] = o.RecommendedQoS
 	}
-	if !IsNil(o.NotficationURL) {
+	if !isNil(o.NotficationURL) {
 		toSerialize["notficationURL"] = o.NotficationURL
 	}
 	return toSerialize, nil

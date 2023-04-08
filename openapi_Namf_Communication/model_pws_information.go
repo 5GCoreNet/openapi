@@ -130,7 +130,7 @@ func (o *PwsInformation) SetPwsContainer(v N2InfoContent) {
 
 // GetBcEmptyAreaList returns the BcEmptyAreaList field value if set, zero value otherwise.
 func (o *PwsInformation) GetBcEmptyAreaList() []GlobalRanNodeId {
-	if o == nil || IsNil(o.BcEmptyAreaList) {
+	if o == nil || isNil(o.BcEmptyAreaList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *PwsInformation) GetBcEmptyAreaList() []GlobalRanNodeId {
 // GetBcEmptyAreaListOk returns a tuple with the BcEmptyAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PwsInformation) GetBcEmptyAreaListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.BcEmptyAreaList) {
+	if o == nil || isNil(o.BcEmptyAreaList) {
 		return nil, false
 	}
 	return o.BcEmptyAreaList, true
@@ -148,7 +148,7 @@ func (o *PwsInformation) GetBcEmptyAreaListOk() ([]GlobalRanNodeId, bool) {
 
 // HasBcEmptyAreaList returns a boolean if a field has been set.
 func (o *PwsInformation) HasBcEmptyAreaList() bool {
-	if o != nil && !IsNil(o.BcEmptyAreaList) {
+	if o != nil && !isNil(o.BcEmptyAreaList) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *PwsInformation) SetBcEmptyAreaList(v []GlobalRanNodeId) {
 
 // GetSendRanResponse returns the SendRanResponse field value if set, zero value otherwise.
 func (o *PwsInformation) GetSendRanResponse() bool {
-	if o == nil || IsNil(o.SendRanResponse) {
+	if o == nil || isNil(o.SendRanResponse) {
 		var ret bool
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *PwsInformation) GetSendRanResponse() bool {
 // GetSendRanResponseOk returns a tuple with the SendRanResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PwsInformation) GetSendRanResponseOk() (*bool, bool) {
-	if o == nil || IsNil(o.SendRanResponse) {
+	if o == nil || isNil(o.SendRanResponse) {
 		return nil, false
 	}
 	return o.SendRanResponse, true
@@ -180,7 +180,7 @@ func (o *PwsInformation) GetSendRanResponseOk() (*bool, bool) {
 
 // HasSendRanResponse returns a boolean if a field has been set.
 func (o *PwsInformation) HasSendRanResponse() bool {
-	if o != nil && !IsNil(o.SendRanResponse) {
+	if o != nil && !isNil(o.SendRanResponse) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *PwsInformation) SetSendRanResponse(v bool) {
 
 // GetOmcId returns the OmcId field value if set, zero value otherwise.
 func (o *PwsInformation) GetOmcId() string {
-	if o == nil || IsNil(o.OmcId) {
+	if o == nil || isNil(o.OmcId) {
 		var ret string
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *PwsInformation) GetOmcId() string {
 // GetOmcIdOk returns a tuple with the OmcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PwsInformation) GetOmcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.OmcId) {
+	if o == nil || isNil(o.OmcId) {
 		return nil, false
 	}
 	return o.OmcId, true
@@ -212,7 +212,7 @@ func (o *PwsInformation) GetOmcIdOk() (*string, bool) {
 
 // HasOmcId returns a boolean if a field has been set.
 func (o *PwsInformation) HasOmcId() bool {
-	if o != nil && !IsNil(o.OmcId) {
+	if o != nil && !isNil(o.OmcId) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *PwsInformation) SetOmcId(v string) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *PwsInformation) GetNfId() string {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *PwsInformation) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PwsInformation) GetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -244,7 +244,7 @@ func (o *PwsInformation) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *PwsInformation) HasNfId() bool {
-	if o != nil && !IsNil(o.NfId) {
+	if o != nil && !isNil(o.NfId) {
 		return true
 	}
 
@@ -269,16 +269,16 @@ func (o PwsInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize["messageIdentifier"] = o.MessageIdentifier
 	toSerialize["serialNumber"] = o.SerialNumber
 	toSerialize["pwsContainer"] = o.PwsContainer
-	if !IsNil(o.BcEmptyAreaList) {
+	if !isNil(o.BcEmptyAreaList) {
 		toSerialize["bcEmptyAreaList"] = o.BcEmptyAreaList
 	}
-	if !IsNil(o.SendRanResponse) {
+	if !isNil(o.SendRanResponse) {
 		toSerialize["sendRanResponse"] = o.SendRanResponse
 	}
-	if !IsNil(o.OmcId) {
+	if !isNil(o.OmcId) {
 		toSerialize["omcId"] = o.OmcId
 	}
-	if !IsNil(o.NfId) {
+	if !isNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
 	return toSerialize, nil

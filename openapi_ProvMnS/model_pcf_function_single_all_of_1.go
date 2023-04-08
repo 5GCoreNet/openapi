@@ -46,7 +46,7 @@ func NewPcfFunctionSingleAllOf1WithDefaults() *PcfFunctionSingleAllOf1 {
 
 // GetEPN5 returns the EPN5 field value if set, zero value otherwise.
 func (o *PcfFunctionSingleAllOf1) GetEPN5() []EPN5Single {
-	if o == nil || IsNil(o.EPN5) {
+	if o == nil || isNil(o.EPN5) {
 		var ret []EPN5Single
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN5() []EPN5Single {
 // GetEPN5Ok returns a tuple with the EPN5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingleAllOf1) GetEPN5Ok() ([]EPN5Single, bool) {
-	if o == nil || IsNil(o.EPN5) {
+	if o == nil || isNil(o.EPN5) {
 		return nil, false
 	}
 	return o.EPN5, true
@@ -64,7 +64,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN5Ok() ([]EPN5Single, bool) {
 
 // HasEPN5 returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf1) HasEPN5() bool {
-	if o != nil && !IsNil(o.EPN5) {
+	if o != nil && !isNil(o.EPN5) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *PcfFunctionSingleAllOf1) SetEPN5(v []EPN5Single) {
 
 // GetEPN7 returns the EPN7 field value if set, zero value otherwise.
 func (o *PcfFunctionSingleAllOf1) GetEPN7() []EPN7Single {
-	if o == nil || IsNil(o.EPN7) {
+	if o == nil || isNil(o.EPN7) {
 		var ret []EPN7Single
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN7() []EPN7Single {
 // GetEPN7Ok returns a tuple with the EPN7 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingleAllOf1) GetEPN7Ok() ([]EPN7Single, bool) {
-	if o == nil || IsNil(o.EPN7) {
+	if o == nil || isNil(o.EPN7) {
 		return nil, false
 	}
 	return o.EPN7, true
@@ -96,7 +96,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN7Ok() ([]EPN7Single, bool) {
 
 // HasEPN7 returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf1) HasEPN7() bool {
-	if o != nil && !IsNil(o.EPN7) {
+	if o != nil && !isNil(o.EPN7) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *PcfFunctionSingleAllOf1) SetEPN7(v []EPN7Single) {
 
 // GetEPN15 returns the EPN15 field value if set, zero value otherwise.
 func (o *PcfFunctionSingleAllOf1) GetEPN15() []EPN15Single {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		var ret []EPN15Single
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN15() []EPN15Single {
 // GetEPN15Ok returns a tuple with the EPN15 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingleAllOf1) GetEPN15Ok() ([]EPN15Single, bool) {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		return nil, false
 	}
 	return o.EPN15, true
@@ -128,7 +128,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN15Ok() ([]EPN15Single, bool) {
 
 // HasEPN15 returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf1) HasEPN15() bool {
-	if o != nil && !IsNil(o.EPN15) {
+	if o != nil && !isNil(o.EPN15) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *PcfFunctionSingleAllOf1) SetEPN15(v []EPN15Single) {
 
 // GetEPN16 returns the EPN16 field value if set, zero value otherwise.
 func (o *PcfFunctionSingleAllOf1) GetEPN16() []EPN16Single {
-	if o == nil || IsNil(o.EPN16) {
+	if o == nil || isNil(o.EPN16) {
 		var ret []EPN16Single
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN16() []EPN16Single {
 // GetEPN16Ok returns a tuple with the EPN16 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingleAllOf1) GetEPN16Ok() ([]EPN16Single, bool) {
-	if o == nil || IsNil(o.EPN16) {
+	if o == nil || isNil(o.EPN16) {
 		return nil, false
 	}
 	return o.EPN16, true
@@ -160,7 +160,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPN16Ok() ([]EPN16Single, bool) {
 
 // HasEPN16 returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf1) HasEPN16() bool {
-	if o != nil && !IsNil(o.EPN16) {
+	if o != nil && !isNil(o.EPN16) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *PcfFunctionSingleAllOf1) SetEPN16(v []EPN16Single) {
 
 // GetEPRx returns the EPRx field value if set, zero value otherwise.
 func (o *PcfFunctionSingleAllOf1) GetEPRx() []EPRxSingle {
-	if o == nil || IsNil(o.EPRx) {
+	if o == nil || isNil(o.EPRx) {
 		var ret []EPRxSingle
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPRx() []EPRxSingle {
 // GetEPRxOk returns a tuple with the EPRx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingleAllOf1) GetEPRxOk() ([]EPRxSingle, bool) {
-	if o == nil || IsNil(o.EPRx) {
+	if o == nil || isNil(o.EPRx) {
 		return nil, false
 	}
 	return o.EPRx, true
@@ -192,7 +192,7 @@ func (o *PcfFunctionSingleAllOf1) GetEPRxOk() ([]EPRxSingle, bool) {
 
 // HasEPRx returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf1) HasEPRx() bool {
-	if o != nil && !IsNil(o.EPRx) {
+	if o != nil && !isNil(o.EPRx) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *PcfFunctionSingleAllOf1) SetEPRx(v []EPRxSingle) {
 
 // GetPredefinedPccRuleSet returns the PredefinedPccRuleSet field value if set, zero value otherwise.
 func (o *PcfFunctionSingleAllOf1) GetPredefinedPccRuleSet() PredefinedPccRuleSetSingle {
-	if o == nil || IsNil(o.PredefinedPccRuleSet) {
+	if o == nil || isNil(o.PredefinedPccRuleSet) {
 		var ret PredefinedPccRuleSetSingle
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *PcfFunctionSingleAllOf1) GetPredefinedPccRuleSet() PredefinedPccRuleSet
 // GetPredefinedPccRuleSetOk returns a tuple with the PredefinedPccRuleSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingleAllOf1) GetPredefinedPccRuleSetOk() (*PredefinedPccRuleSetSingle, bool) {
-	if o == nil || IsNil(o.PredefinedPccRuleSet) {
+	if o == nil || isNil(o.PredefinedPccRuleSet) {
 		return nil, false
 	}
 	return o.PredefinedPccRuleSet, true
@@ -224,7 +224,7 @@ func (o *PcfFunctionSingleAllOf1) GetPredefinedPccRuleSetOk() (*PredefinedPccRul
 
 // HasPredefinedPccRuleSet returns a boolean if a field has been set.
 func (o *PcfFunctionSingleAllOf1) HasPredefinedPccRuleSet() bool {
-	if o != nil && !IsNil(o.PredefinedPccRuleSet) {
+	if o != nil && !isNil(o.PredefinedPccRuleSet) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o PcfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o PcfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN5) {
+	if !isNil(o.EPN5) {
 		toSerialize["EP_N5"] = o.EPN5
 	}
-	if !IsNil(o.EPN7) {
+	if !isNil(o.EPN7) {
 		toSerialize["EP_N7"] = o.EPN7
 	}
-	if !IsNil(o.EPN15) {
+	if !isNil(o.EPN15) {
 		toSerialize["EP_N15"] = o.EPN15
 	}
-	if !IsNil(o.EPN16) {
+	if !isNil(o.EPN16) {
 		toSerialize["EP_N16"] = o.EPN16
 	}
-	if !IsNil(o.EPRx) {
+	if !isNil(o.EPRx) {
 		toSerialize["EP_Rx"] = o.EPRx
 	}
-	if !IsNil(o.PredefinedPccRuleSet) {
+	if !isNil(o.PredefinedPccRuleSet) {
 		toSerialize["PredefinedPccRuleSet"] = o.PredefinedPccRuleSet
 	}
 	return toSerialize, nil

@@ -49,7 +49,7 @@ func NewFileDownloadJobProcessMonitorWithDefaults() *FileDownloadJobProcessMonit
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetJobId() string {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *FileDownloadJobProcessMonitor) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetJobIdOk() (*string, bool) {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -67,7 +67,7 @@ func (o *FileDownloadJobProcessMonitor) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
+	if o != nil && !isNil(o.JobId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *FileDownloadJobProcessMonitor) SetJobId(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *FileDownloadJobProcessMonitor) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -99,7 +99,7 @@ func (o *FileDownloadJobProcessMonitor) GetStatusOk() (*string, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *FileDownloadJobProcessMonitor) SetStatus(v string) {
 
 // GetProgressPercentage returns the ProgressPercentage field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetProgressPercentage() int32 {
-	if o == nil || IsNil(o.ProgressPercentage) {
+	if o == nil || isNil(o.ProgressPercentage) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *FileDownloadJobProcessMonitor) GetProgressPercentage() int32 {
 // GetProgressPercentageOk returns a tuple with the ProgressPercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetProgressPercentageOk() (*int32, bool) {
-	if o == nil || IsNil(o.ProgressPercentage) {
+	if o == nil || isNil(o.ProgressPercentage) {
 		return nil, false
 	}
 	return o.ProgressPercentage, true
@@ -131,7 +131,7 @@ func (o *FileDownloadJobProcessMonitor) GetProgressPercentageOk() (*int32, bool)
 
 // HasProgressPercentage returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasProgressPercentage() bool {
-	if o != nil && !IsNil(o.ProgressPercentage) {
+	if o != nil && !isNil(o.ProgressPercentage) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *FileDownloadJobProcessMonitor) SetProgressPercentage(v int32) {
 
 // GetProgressStateInfo returns the ProgressStateInfo field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetProgressStateInfo() string {
-	if o == nil || IsNil(o.ProgressStateInfo) {
+	if o == nil || isNil(o.ProgressStateInfo) {
 		var ret string
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *FileDownloadJobProcessMonitor) GetProgressStateInfo() string {
 // GetProgressStateInfoOk returns a tuple with the ProgressStateInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetProgressStateInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ProgressStateInfo) {
+	if o == nil || isNil(o.ProgressStateInfo) {
 		return nil, false
 	}
 	return o.ProgressStateInfo, true
@@ -163,7 +163,7 @@ func (o *FileDownloadJobProcessMonitor) GetProgressStateInfoOk() (*string, bool)
 
 // HasProgressStateInfo returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasProgressStateInfo() bool {
-	if o != nil && !IsNil(o.ProgressStateInfo) {
+	if o != nil && !isNil(o.ProgressStateInfo) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *FileDownloadJobProcessMonitor) SetProgressStateInfo(v string) {
 
 // GetResultStateInfo returns the ResultStateInfo field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetResultStateInfo() FileDownloadJobProcessMonitorResultStateInfo {
-	if o == nil || IsNil(o.ResultStateInfo) {
+	if o == nil || isNil(o.ResultStateInfo) {
 		var ret FileDownloadJobProcessMonitorResultStateInfo
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *FileDownloadJobProcessMonitor) GetResultStateInfo() FileDownloadJobProc
 // GetResultStateInfoOk returns a tuple with the ResultStateInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetResultStateInfoOk() (*FileDownloadJobProcessMonitorResultStateInfo, bool) {
-	if o == nil || IsNil(o.ResultStateInfo) {
+	if o == nil || isNil(o.ResultStateInfo) {
 		return nil, false
 	}
 	return o.ResultStateInfo, true
@@ -195,7 +195,7 @@ func (o *FileDownloadJobProcessMonitor) GetResultStateInfoOk() (*FileDownloadJob
 
 // HasResultStateInfo returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasResultStateInfo() bool {
-	if o != nil && !IsNil(o.ResultStateInfo) {
+	if o != nil && !isNil(o.ResultStateInfo) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *FileDownloadJobProcessMonitor) SetResultStateInfo(v FileDownloadJobProc
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *FileDownloadJobProcessMonitor) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -227,7 +227,7 @@ func (o *FileDownloadJobProcessMonitor) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *FileDownloadJobProcessMonitor) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetEndTime() time.Time {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *FileDownloadJobProcessMonitor) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -259,7 +259,7 @@ func (o *FileDownloadJobProcessMonitor) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
+	if o != nil && !isNil(o.EndTime) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *FileDownloadJobProcessMonitor) SetEndTime(v time.Time) {
 
 // GetTimer returns the Timer field value if set, zero value otherwise.
 func (o *FileDownloadJobProcessMonitor) GetTimer() int32 {
-	if o == nil || IsNil(o.Timer) {
+	if o == nil || isNil(o.Timer) {
 		var ret int32
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *FileDownloadJobProcessMonitor) GetTimer() int32 {
 // GetTimerOk returns a tuple with the Timer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDownloadJobProcessMonitor) GetTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.Timer) {
+	if o == nil || isNil(o.Timer) {
 		return nil, false
 	}
 	return o.Timer, true
@@ -291,7 +291,7 @@ func (o *FileDownloadJobProcessMonitor) GetTimerOk() (*int32, bool) {
 
 // HasTimer returns a boolean if a field has been set.
 func (o *FileDownloadJobProcessMonitor) HasTimer() bool {
-	if o != nil && !IsNil(o.Timer) {
+	if o != nil && !isNil(o.Timer) {
 		return true
 	}
 
@@ -313,28 +313,28 @@ func (o FileDownloadJobProcessMonitor) MarshalJSON() ([]byte, error) {
 
 func (o FileDownloadJobProcessMonitor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JobId) {
+	if !isNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.ProgressPercentage) {
+	if !isNil(o.ProgressPercentage) {
 		toSerialize["progressPercentage"] = o.ProgressPercentage
 	}
-	if !IsNil(o.ProgressStateInfo) {
+	if !isNil(o.ProgressStateInfo) {
 		toSerialize["progressStateInfo"] = o.ProgressStateInfo
 	}
-	if !IsNil(o.ResultStateInfo) {
+	if !isNil(o.ResultStateInfo) {
 		toSerialize["resultStateInfo"] = o.ResultStateInfo
 	}
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.EndTime) {
+	if !isNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
-	if !IsNil(o.Timer) {
+	if !isNil(o.Timer) {
 		toSerialize["timer"] = o.Timer
 	}
 	return toSerialize, nil

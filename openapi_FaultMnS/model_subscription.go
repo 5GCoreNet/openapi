@@ -44,7 +44,7 @@ func NewSubscriptionWithDefaults() *Subscription {
 
 // GetConsumerReference returns the ConsumerReference field value if set, zero value otherwise.
 func (o *Subscription) GetConsumerReference() string {
-	if o == nil || IsNil(o.ConsumerReference) {
+	if o == nil || isNil(o.ConsumerReference) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Subscription) GetConsumerReference() string {
 // GetConsumerReferenceOk returns a tuple with the ConsumerReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Subscription) GetConsumerReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.ConsumerReference) {
+	if o == nil || isNil(o.ConsumerReference) {
 		return nil, false
 	}
 	return o.ConsumerReference, true
@@ -62,7 +62,7 @@ func (o *Subscription) GetConsumerReferenceOk() (*string, bool) {
 
 // HasConsumerReference returns a boolean if a field has been set.
 func (o *Subscription) HasConsumerReference() bool {
-	if o != nil && !IsNil(o.ConsumerReference) {
+	if o != nil && !isNil(o.ConsumerReference) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Subscription) SetConsumerReference(v string) {
 
 // GetTimeTick returns the TimeTick field value if set, zero value otherwise.
 func (o *Subscription) GetTimeTick() int32 {
-	if o == nil || IsNil(o.TimeTick) {
+	if o == nil || isNil(o.TimeTick) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Subscription) GetTimeTick() int32 {
 // GetTimeTickOk returns a tuple with the TimeTick field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Subscription) GetTimeTickOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeTick) {
+	if o == nil || isNil(o.TimeTick) {
 		return nil, false
 	}
 	return o.TimeTick, true
@@ -94,7 +94,7 @@ func (o *Subscription) GetTimeTickOk() (*int32, bool) {
 
 // HasTimeTick returns a boolean if a field has been set.
 func (o *Subscription) HasTimeTick() bool {
-	if o != nil && !IsNil(o.TimeTick) {
+	if o != nil && !isNil(o.TimeTick) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *Subscription) SetTimeTick(v int32) {
 
 // GetFilter returns the Filter field value if set, zero value otherwise.
 func (o *Subscription) GetFilter() string {
-	if o == nil || IsNil(o.Filter) {
+	if o == nil || isNil(o.Filter) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *Subscription) GetFilter() string {
 // GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Subscription) GetFilterOk() (*string, bool) {
-	if o == nil || IsNil(o.Filter) {
+	if o == nil || isNil(o.Filter) {
 		return nil, false
 	}
 	return o.Filter, true
@@ -126,7 +126,7 @@ func (o *Subscription) GetFilterOk() (*string, bool) {
 
 // HasFilter returns a boolean if a field has been set.
 func (o *Subscription) HasFilter() bool {
-	if o != nil && !IsNil(o.Filter) {
+	if o != nil && !isNil(o.Filter) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o Subscription) MarshalJSON() ([]byte, error) {
 
 func (o Subscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ConsumerReference) {
+	if !isNil(o.ConsumerReference) {
 		toSerialize["consumerReference"] = o.ConsumerReference
 	}
-	if !IsNil(o.TimeTick) {
+	if !isNil(o.TimeTick) {
 		toSerialize["timeTick"] = o.TimeTick
 	}
-	if !IsNil(o.Filter) {
+	if !isNil(o.Filter) {
 		toSerialize["filter"] = o.Filter
 	}
 	return toSerialize, nil

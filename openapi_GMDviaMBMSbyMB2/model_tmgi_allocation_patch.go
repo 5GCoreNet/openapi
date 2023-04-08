@@ -43,7 +43,7 @@ func NewTMGIAllocationPatchWithDefaults() *TMGIAllocationPatch {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *TMGIAllocationPatch) GetExternalGroupId() string {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TMGIAllocationPatch) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocationPatch) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -61,7 +61,7 @@ func (o *TMGIAllocationPatch) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *TMGIAllocationPatch) HasExternalGroupId() bool {
-	if o != nil && !IsNil(o.ExternalGroupId) {
+	if o != nil && !isNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TMGIAllocationPatch) SetExternalGroupId(v string) {
 
 // GetMbmsLocArea returns the MbmsLocArea field value if set, zero value otherwise.
 func (o *TMGIAllocationPatch) GetMbmsLocArea() MbmsLocArea {
-	if o == nil || IsNil(o.MbmsLocArea) {
+	if o == nil || isNil(o.MbmsLocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TMGIAllocationPatch) GetMbmsLocArea() MbmsLocArea {
 // GetMbmsLocAreaOk returns a tuple with the MbmsLocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TMGIAllocationPatch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || IsNil(o.MbmsLocArea) {
+	if o == nil || isNil(o.MbmsLocArea) {
 		return nil, false
 	}
 	return o.MbmsLocArea, true
@@ -93,7 +93,7 @@ func (o *TMGIAllocationPatch) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasMbmsLocArea returns a boolean if a field has been set.
 func (o *TMGIAllocationPatch) HasMbmsLocArea() bool {
-	if o != nil && !IsNil(o.MbmsLocArea) {
+	if o != nil && !isNil(o.MbmsLocArea) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o TMGIAllocationPatch) MarshalJSON() ([]byte, error) {
 
 func (o TMGIAllocationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExternalGroupId) {
+	if !isNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	if !IsNil(o.MbmsLocArea) {
+	if !isNil(o.MbmsLocArea) {
 		toSerialize["mbmsLocArea"] = o.MbmsLocArea
 	}
 	return toSerialize, nil

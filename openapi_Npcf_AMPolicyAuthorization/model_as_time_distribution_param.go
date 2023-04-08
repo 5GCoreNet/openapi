@@ -43,7 +43,7 @@ func NewAsTimeDistributionParamWithDefaults() *AsTimeDistributionParam {
 
 // GetAsTimeDistInd returns the AsTimeDistInd field value if set, zero value otherwise.
 func (o *AsTimeDistributionParam) GetAsTimeDistInd() bool {
-	if o == nil || IsNil(o.AsTimeDistInd) {
+	if o == nil || isNil(o.AsTimeDistInd) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AsTimeDistributionParam) GetAsTimeDistInd() bool {
 // GetAsTimeDistIndOk returns a tuple with the AsTimeDistInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsTimeDistributionParam) GetAsTimeDistIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AsTimeDistInd) {
+	if o == nil || isNil(o.AsTimeDistInd) {
 		return nil, false
 	}
 	return o.AsTimeDistInd, true
@@ -61,7 +61,7 @@ func (o *AsTimeDistributionParam) GetAsTimeDistIndOk() (*bool, bool) {
 
 // HasAsTimeDistInd returns a boolean if a field has been set.
 func (o *AsTimeDistributionParam) HasAsTimeDistInd() bool {
-	if o != nil && !IsNil(o.AsTimeDistInd) {
+	if o != nil && !isNil(o.AsTimeDistInd) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AsTimeDistributionParam) SetAsTimeDistInd(v bool) {
 
 // GetUuErrorBudget returns the UuErrorBudget field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AsTimeDistributionParam) GetUuErrorBudget() int32 {
-	if o == nil || IsNil(o.UuErrorBudget.Get()) {
+	if o == nil || isNil(o.UuErrorBudget.Get()) {
 		var ret int32
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o AsTimeDistributionParam) MarshalJSON() ([]byte, error) {
 
 func (o AsTimeDistributionParam) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AsTimeDistInd) {
+	if !isNil(o.AsTimeDistInd) {
 		toSerialize["asTimeDistInd"] = o.AsTimeDistInd
 	}
 	if o.UuErrorBudget.IsSet() {

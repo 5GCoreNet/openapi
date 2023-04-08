@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
  - [AccessTokenReq](docs/AccessTokenReq.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [NpStatusInfo](docs/NpStatusInfo.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)

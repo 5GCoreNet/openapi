@@ -17,23 +17,37 @@ import (
 
 // UiccType Indicates whether GBA or GBA_U is to be used
 type UiccType struct {
-	string *string
+	UiccTypeAnyOf *UiccTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UiccType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into UiccTypeAnyOf
+	err = json.Unmarshal(data, &dst.UiccTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonUiccTypeAnyOf, _ := json.Marshal(dst.UiccTypeAnyOf)
+		if string(jsonUiccTypeAnyOf) == "{}" { // empty struct
+			dst.UiccTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.UiccTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.UiccTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(UiccType)")
@@ -41,8 +55,12 @@ func (dst *UiccType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UiccType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.UiccTypeAnyOf != nil {
+		return json.Marshal(&src.UiccTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

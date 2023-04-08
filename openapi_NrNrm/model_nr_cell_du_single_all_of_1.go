@@ -44,7 +44,7 @@ func NewNrCellDuSingleAllOf1WithDefaults() *NrCellDuSingleAllOf1 {
 
 // GetRRMPolicyRatio returns the RRMPolicyRatio field value if set, zero value otherwise.
 func (o *NrCellDuSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		var ret []RRMPolicyRatioSingle
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *NrCellDuSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
 // GetRRMPolicyRatioOk returns a tuple with the RRMPolicyRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellDuSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bool) {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		return nil, false
 	}
 	return o.RRMPolicyRatio, true
@@ -62,7 +62,7 @@ func (o *NrCellDuSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bo
 
 // HasRRMPolicyRatio returns a boolean if a field has been set.
 func (o *NrCellDuSingleAllOf1) HasRRMPolicyRatio() bool {
-	if o != nil && !IsNil(o.RRMPolicyRatio) {
+	if o != nil && !isNil(o.RRMPolicyRatio) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *NrCellDuSingleAllOf1) SetRRMPolicyRatio(v []RRMPolicyRatioSingle) {
 
 // GetCPCIConfigurationFunction returns the CPCIConfigurationFunction field value if set, zero value otherwise.
 func (o *NrCellDuSingleAllOf1) GetCPCIConfigurationFunction() CPCIConfigurationFunctionSingle {
-	if o == nil || IsNil(o.CPCIConfigurationFunction) {
+	if o == nil || isNil(o.CPCIConfigurationFunction) {
 		var ret CPCIConfigurationFunctionSingle
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NrCellDuSingleAllOf1) GetCPCIConfigurationFunction() CPCIConfigurationF
 // GetCPCIConfigurationFunctionOk returns a tuple with the CPCIConfigurationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellDuSingleAllOf1) GetCPCIConfigurationFunctionOk() (*CPCIConfigurationFunctionSingle, bool) {
-	if o == nil || IsNil(o.CPCIConfigurationFunction) {
+	if o == nil || isNil(o.CPCIConfigurationFunction) {
 		return nil, false
 	}
 	return o.CPCIConfigurationFunction, true
@@ -94,7 +94,7 @@ func (o *NrCellDuSingleAllOf1) GetCPCIConfigurationFunctionOk() (*CPCIConfigurat
 
 // HasCPCIConfigurationFunction returns a boolean if a field has been set.
 func (o *NrCellDuSingleAllOf1) HasCPCIConfigurationFunction() bool {
-	if o != nil && !IsNil(o.CPCIConfigurationFunction) {
+	if o != nil && !isNil(o.CPCIConfigurationFunction) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *NrCellDuSingleAllOf1) SetCPCIConfigurationFunction(v CPCIConfigurationF
 
 // GetDRACHOptimizationFunction returns the DRACHOptimizationFunction field value if set, zero value otherwise.
 func (o *NrCellDuSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimizationFunctionSingle {
-	if o == nil || IsNil(o.DRACHOptimizationFunction) {
+	if o == nil || isNil(o.DRACHOptimizationFunction) {
 		var ret DRACHOptimizationFunctionSingle
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *NrCellDuSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimizationF
 // GetDRACHOptimizationFunctionOk returns a tuple with the DRACHOptimizationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellDuSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOptimizationFunctionSingle, bool) {
-	if o == nil || IsNil(o.DRACHOptimizationFunction) {
+	if o == nil || isNil(o.DRACHOptimizationFunction) {
 		return nil, false
 	}
 	return o.DRACHOptimizationFunction, true
@@ -126,7 +126,7 @@ func (o *NrCellDuSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOptimizat
 
 // HasDRACHOptimizationFunction returns a boolean if a field has been set.
 func (o *NrCellDuSingleAllOf1) HasDRACHOptimizationFunction() bool {
-	if o != nil && !IsNil(o.DRACHOptimizationFunction) {
+	if o != nil && !isNil(o.DRACHOptimizationFunction) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *NrCellDuSingleAllOf1) SetDRACHOptimizationFunction(v DRACHOptimizationF
 
 // GetNrOperatorCellDu returns the NrOperatorCellDu field value if set, zero value otherwise.
 func (o *NrCellDuSingleAllOf1) GetNrOperatorCellDu() []NrOperatorCellDuSingle {
-	if o == nil || IsNil(o.NrOperatorCellDu) {
+	if o == nil || isNil(o.NrOperatorCellDu) {
 		var ret []NrOperatorCellDuSingle
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *NrCellDuSingleAllOf1) GetNrOperatorCellDu() []NrOperatorCellDuSingle {
 // GetNrOperatorCellDuOk returns a tuple with the NrOperatorCellDu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrCellDuSingleAllOf1) GetNrOperatorCellDuOk() ([]NrOperatorCellDuSingle, bool) {
-	if o == nil || IsNil(o.NrOperatorCellDu) {
+	if o == nil || isNil(o.NrOperatorCellDu) {
 		return nil, false
 	}
 	return o.NrOperatorCellDu, true
@@ -158,7 +158,7 @@ func (o *NrCellDuSingleAllOf1) GetNrOperatorCellDuOk() ([]NrOperatorCellDuSingle
 
 // HasNrOperatorCellDu returns a boolean if a field has been set.
 func (o *NrCellDuSingleAllOf1) HasNrOperatorCellDu() bool {
-	if o != nil && !IsNil(o.NrOperatorCellDu) {
+	if o != nil && !isNil(o.NrOperatorCellDu) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o NrCellDuSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NrCellDuSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RRMPolicyRatio) {
+	if !isNil(o.RRMPolicyRatio) {
 		toSerialize["RRMPolicyRatio"] = o.RRMPolicyRatio
 	}
-	if !IsNil(o.CPCIConfigurationFunction) {
+	if !isNil(o.CPCIConfigurationFunction) {
 		toSerialize["CPCIConfigurationFunction"] = o.CPCIConfigurationFunction
 	}
-	if !IsNil(o.DRACHOptimizationFunction) {
+	if !isNil(o.DRACHOptimizationFunction) {
 		toSerialize["DRACHOptimizationFunction"] = o.DRACHOptimizationFunction
 	}
-	if !IsNil(o.NrOperatorCellDu) {
+	if !isNil(o.NrOperatorCellDu) {
 		toSerialize["NrOperatorCellDu"] = o.NrOperatorCellDu
 	}
 	return toSerialize, nil

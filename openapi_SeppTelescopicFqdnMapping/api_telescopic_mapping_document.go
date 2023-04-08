@@ -13,7 +13,7 @@ package openapi_SeppTelescopicFqdnMapping
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -80,10 +80,10 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 	localVarFormParams := url.Values{}
 
 	if r.foreignFqdn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "foreign-fqdn", r.foreignFqdn, "")
+		parameterAddToQuery(localVarQueryParams, "foreign-fqdn", r.foreignFqdn, "")
 	}
 	if r.telescopicLabel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "telescopic-label", r.telescopicLabel, "")
+		parameterAddToQuery(localVarQueryParams, "telescopic-label", r.telescopicLabel, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -112,9 +112,9 @@ func (a *TelescopicMappingDocumentApiService) GetTelescopicMappingExecute(r ApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

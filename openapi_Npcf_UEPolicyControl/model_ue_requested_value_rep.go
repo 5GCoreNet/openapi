@@ -45,7 +45,7 @@ func NewUeRequestedValueRepWithDefaults() *UeRequestedValueRep {
 
 // GetUserLoc returns the UserLoc field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetUserLoc() UserLocation {
-	if o == nil || IsNil(o.UserLoc) {
+	if o == nil || isNil(o.UserLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UeRequestedValueRep) GetUserLoc() UserLocation {
 // GetUserLocOk returns a tuple with the UserLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetUserLocOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLoc) {
+	if o == nil || isNil(o.UserLoc) {
 		return nil, false
 	}
 	return o.UserLoc, true
@@ -63,7 +63,7 @@ func (o *UeRequestedValueRep) GetUserLocOk() (*UserLocation, bool) {
 
 // HasUserLoc returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasUserLoc() bool {
-	if o != nil && !IsNil(o.UserLoc) {
+	if o != nil && !isNil(o.UserLoc) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UeRequestedValueRep) SetUserLoc(v UserLocation) {
 
 // GetPraStatuses returns the PraStatuses field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetPraStatuses() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PraStatuses) {
+	if o == nil || isNil(o.PraStatuses) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UeRequestedValueRep) GetPraStatuses() map[string]PresenceInfo {
 // GetPraStatusesOk returns a tuple with the PraStatuses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetPraStatusesOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PraStatuses) {
+	if o == nil || isNil(o.PraStatuses) {
 		return nil, false
 	}
 	return o.PraStatuses, true
@@ -95,7 +95,7 @@ func (o *UeRequestedValueRep) GetPraStatusesOk() (*map[string]PresenceInfo, bool
 
 // HasPraStatuses returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasPraStatuses() bool {
-	if o != nil && !IsNil(o.PraStatuses) {
+	if o != nil && !isNil(o.PraStatuses) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UeRequestedValueRep) SetPraStatuses(v map[string]PresenceInfo) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetPlmnId() PlmnIdNid {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UeRequestedValueRep) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -127,7 +127,7 @@ func (o *UeRequestedValueRep) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *UeRequestedValueRep) SetPlmnId(v PlmnIdNid) {
 
 // GetConnectState returns the ConnectState field value if set, zero value otherwise.
 func (o *UeRequestedValueRep) GetConnectState() CmState {
-	if o == nil || IsNil(o.ConnectState) {
+	if o == nil || isNil(o.ConnectState) {
 		var ret CmState
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *UeRequestedValueRep) GetConnectState() CmState {
 // GetConnectStateOk returns a tuple with the ConnectState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeRequestedValueRep) GetConnectStateOk() (*CmState, bool) {
-	if o == nil || IsNil(o.ConnectState) {
+	if o == nil || isNil(o.ConnectState) {
 		return nil, false
 	}
 	return o.ConnectState, true
@@ -159,7 +159,7 @@ func (o *UeRequestedValueRep) GetConnectStateOk() (*CmState, bool) {
 
 // HasConnectState returns a boolean if a field has been set.
 func (o *UeRequestedValueRep) HasConnectState() bool {
-	if o != nil && !IsNil(o.ConnectState) {
+	if o != nil && !isNil(o.ConnectState) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o UeRequestedValueRep) MarshalJSON() ([]byte, error) {
 
 func (o UeRequestedValueRep) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLoc) {
+	if !isNil(o.UserLoc) {
 		toSerialize["userLoc"] = o.UserLoc
 	}
-	if !IsNil(o.PraStatuses) {
+	if !isNil(o.PraStatuses) {
 		toSerialize["praStatuses"] = o.PraStatuses
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.ConnectState) {
+	if !isNil(o.ConnectState) {
 		toSerialize["connectState"] = o.ConnectState
 	}
 	return toSerialize, nil

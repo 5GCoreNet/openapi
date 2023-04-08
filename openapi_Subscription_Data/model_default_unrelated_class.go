@@ -45,7 +45,7 @@ func NewDefaultUnrelatedClassWithDefaults() *DefaultUnrelatedClass {
 
 // GetAllowedGeographicArea returns the AllowedGeographicArea field value if set, zero value otherwise.
 func (o *DefaultUnrelatedClass) GetAllowedGeographicArea() []GeographicArea {
-	if o == nil || IsNil(o.AllowedGeographicArea) {
+	if o == nil || isNil(o.AllowedGeographicArea) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *DefaultUnrelatedClass) GetAllowedGeographicArea() []GeographicArea {
 // GetAllowedGeographicAreaOk returns a tuple with the AllowedGeographicArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultUnrelatedClass) GetAllowedGeographicAreaOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.AllowedGeographicArea) {
+	if o == nil || isNil(o.AllowedGeographicArea) {
 		return nil, false
 	}
 	return o.AllowedGeographicArea, true
@@ -63,7 +63,7 @@ func (o *DefaultUnrelatedClass) GetAllowedGeographicAreaOk() ([]GeographicArea, 
 
 // HasAllowedGeographicArea returns a boolean if a field has been set.
 func (o *DefaultUnrelatedClass) HasAllowedGeographicArea() bool {
-	if o != nil && !IsNil(o.AllowedGeographicArea) {
+	if o != nil && !isNil(o.AllowedGeographicArea) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *DefaultUnrelatedClass) SetAllowedGeographicArea(v []GeographicArea) {
 
 // GetPrivacyCheckRelatedAction returns the PrivacyCheckRelatedAction field value if set, zero value otherwise.
 func (o *DefaultUnrelatedClass) GetPrivacyCheckRelatedAction() PrivacyCheckRelatedAction {
-	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
 		var ret PrivacyCheckRelatedAction
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DefaultUnrelatedClass) GetPrivacyCheckRelatedAction() PrivacyCheckRelat
 // GetPrivacyCheckRelatedActionOk returns a tuple with the PrivacyCheckRelatedAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultUnrelatedClass) GetPrivacyCheckRelatedActionOk() (*PrivacyCheckRelatedAction, bool) {
-	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
 		return nil, false
 	}
 	return o.PrivacyCheckRelatedAction, true
@@ -95,7 +95,7 @@ func (o *DefaultUnrelatedClass) GetPrivacyCheckRelatedActionOk() (*PrivacyCheckR
 
 // HasPrivacyCheckRelatedAction returns a boolean if a field has been set.
 func (o *DefaultUnrelatedClass) HasPrivacyCheckRelatedAction() bool {
-	if o != nil && !IsNil(o.PrivacyCheckRelatedAction) {
+	if o != nil && !isNil(o.PrivacyCheckRelatedAction) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DefaultUnrelatedClass) SetPrivacyCheckRelatedAction(v PrivacyCheckRelat
 
 // GetCodeWordInd returns the CodeWordInd field value if set, zero value otherwise.
 func (o *DefaultUnrelatedClass) GetCodeWordInd() CodeWordInd {
-	if o == nil || IsNil(o.CodeWordInd) {
+	if o == nil || isNil(o.CodeWordInd) {
 		var ret CodeWordInd
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *DefaultUnrelatedClass) GetCodeWordInd() CodeWordInd {
 // GetCodeWordIndOk returns a tuple with the CodeWordInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultUnrelatedClass) GetCodeWordIndOk() (*CodeWordInd, bool) {
-	if o == nil || IsNil(o.CodeWordInd) {
+	if o == nil || isNil(o.CodeWordInd) {
 		return nil, false
 	}
 	return o.CodeWordInd, true
@@ -127,7 +127,7 @@ func (o *DefaultUnrelatedClass) GetCodeWordIndOk() (*CodeWordInd, bool) {
 
 // HasCodeWordInd returns a boolean if a field has been set.
 func (o *DefaultUnrelatedClass) HasCodeWordInd() bool {
-	if o != nil && !IsNil(o.CodeWordInd) {
+	if o != nil && !isNil(o.CodeWordInd) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *DefaultUnrelatedClass) SetCodeWordInd(v CodeWordInd) {
 
 // GetValidTimePeriod returns the ValidTimePeriod field value if set, zero value otherwise.
 func (o *DefaultUnrelatedClass) GetValidTimePeriod() ValidTimePeriod {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		var ret ValidTimePeriod
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DefaultUnrelatedClass) GetValidTimePeriod() ValidTimePeriod {
 // GetValidTimePeriodOk returns a tuple with the ValidTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultUnrelatedClass) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		return nil, false
 	}
 	return o.ValidTimePeriod, true
@@ -159,7 +159,7 @@ func (o *DefaultUnrelatedClass) GetValidTimePeriodOk() (*ValidTimePeriod, bool) 
 
 // HasValidTimePeriod returns a boolean if a field has been set.
 func (o *DefaultUnrelatedClass) HasValidTimePeriod() bool {
-	if o != nil && !IsNil(o.ValidTimePeriod) {
+	if o != nil && !isNil(o.ValidTimePeriod) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *DefaultUnrelatedClass) SetValidTimePeriod(v ValidTimePeriod) {
 
 // GetCodeWordList returns the CodeWordList field value if set, zero value otherwise.
 func (o *DefaultUnrelatedClass) GetCodeWordList() []string {
-	if o == nil || IsNil(o.CodeWordList) {
+	if o == nil || isNil(o.CodeWordList) {
 		var ret []string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *DefaultUnrelatedClass) GetCodeWordList() []string {
 // GetCodeWordListOk returns a tuple with the CodeWordList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DefaultUnrelatedClass) GetCodeWordListOk() ([]string, bool) {
-	if o == nil || IsNil(o.CodeWordList) {
+	if o == nil || isNil(o.CodeWordList) {
 		return nil, false
 	}
 	return o.CodeWordList, true
@@ -191,7 +191,7 @@ func (o *DefaultUnrelatedClass) GetCodeWordListOk() ([]string, bool) {
 
 // HasCodeWordList returns a boolean if a field has been set.
 func (o *DefaultUnrelatedClass) HasCodeWordList() bool {
-	if o != nil && !IsNil(o.CodeWordList) {
+	if o != nil && !isNil(o.CodeWordList) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o DefaultUnrelatedClass) MarshalJSON() ([]byte, error) {
 
 func (o DefaultUnrelatedClass) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AllowedGeographicArea) {
+	if !isNil(o.AllowedGeographicArea) {
 		toSerialize["allowedGeographicArea"] = o.AllowedGeographicArea
 	}
-	if !IsNil(o.PrivacyCheckRelatedAction) {
+	if !isNil(o.PrivacyCheckRelatedAction) {
 		toSerialize["privacyCheckRelatedAction"] = o.PrivacyCheckRelatedAction
 	}
-	if !IsNil(o.CodeWordInd) {
+	if !isNil(o.CodeWordInd) {
 		toSerialize["codeWordInd"] = o.CodeWordInd
 	}
-	if !IsNil(o.ValidTimePeriod) {
+	if !isNil(o.ValidTimePeriod) {
 		toSerialize["validTimePeriod"] = o.ValidTimePeriod
 	}
-	if !IsNil(o.CodeWordList) {
+	if !isNil(o.CodeWordList) {
 		toSerialize["codeWordList"] = o.CodeWordList
 	}
 	return toSerialize, nil

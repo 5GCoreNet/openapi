@@ -44,7 +44,7 @@ func NewMonitoringSubscriptionPatchWithDefaults() *MonitoringSubscriptionPatch {
 
 // GetMeasReqs returns the MeasReqs field value if set, zero value otherwise.
 func (o *MonitoringSubscriptionPatch) GetMeasReqs() MeasurementRequirements {
-	if o == nil || IsNil(o.MeasReqs) {
+	if o == nil || isNil(o.MeasReqs) {
 		var ret MeasurementRequirements
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MonitoringSubscriptionPatch) GetMeasReqs() MeasurementRequirements {
 // GetMeasReqsOk returns a tuple with the MeasReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringSubscriptionPatch) GetMeasReqsOk() (*MeasurementRequirements, bool) {
-	if o == nil || IsNil(o.MeasReqs) {
+	if o == nil || isNil(o.MeasReqs) {
 		return nil, false
 	}
 	return o.MeasReqs, true
@@ -62,7 +62,7 @@ func (o *MonitoringSubscriptionPatch) GetMeasReqsOk() (*MeasurementRequirements,
 
 // HasMeasReqs returns a boolean if a field has been set.
 func (o *MonitoringSubscriptionPatch) HasMeasReqs() bool {
-	if o != nil && !IsNil(o.MeasReqs) {
+	if o != nil && !isNil(o.MeasReqs) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MonitoringSubscriptionPatch) SetMeasReqs(v MeasurementRequirements) {
 
 // GetReportReqs returns the ReportReqs field value if set, zero value otherwise.
 func (o *MonitoringSubscriptionPatch) GetReportReqs() ReportingRequirements {
-	if o == nil || IsNil(o.ReportReqs) {
+	if o == nil || isNil(o.ReportReqs) {
 		var ret ReportingRequirements
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MonitoringSubscriptionPatch) GetReportReqs() ReportingRequirements {
 // GetReportReqsOk returns a tuple with the ReportReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringSubscriptionPatch) GetReportReqsOk() (*ReportingRequirements, bool) {
-	if o == nil || IsNil(o.ReportReqs) {
+	if o == nil || isNil(o.ReportReqs) {
 		return nil, false
 	}
 	return o.ReportReqs, true
@@ -94,7 +94,7 @@ func (o *MonitoringSubscriptionPatch) GetReportReqsOk() (*ReportingRequirements,
 
 // HasReportReqs returns a boolean if a field has been set.
 func (o *MonitoringSubscriptionPatch) HasReportReqs() bool {
-	if o != nil && !IsNil(o.ReportReqs) {
+	if o != nil && !isNil(o.ReportReqs) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *MonitoringSubscriptionPatch) SetReportReqs(v ReportingRequirements) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *MonitoringSubscriptionPatch) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *MonitoringSubscriptionPatch) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringSubscriptionPatch) GetNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -126,7 +126,7 @@ func (o *MonitoringSubscriptionPatch) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *MonitoringSubscriptionPatch) HasNotifUri() bool {
-	if o != nil && !IsNil(o.NotifUri) {
+	if o != nil && !isNil(o.NotifUri) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o MonitoringSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o MonitoringSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MeasReqs) {
+	if !isNil(o.MeasReqs) {
 		toSerialize["measReqs"] = o.MeasReqs
 	}
-	if !IsNil(o.ReportReqs) {
+	if !isNil(o.ReportReqs) {
 		toSerialize["reportReqs"] = o.ReportReqs
 	}
-	if !IsNil(o.NotifUri) {
+	if !isNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
 	return toSerialize, nil

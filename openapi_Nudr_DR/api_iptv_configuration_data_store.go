@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -101,19 +101,19 @@ func (a *IPTVConfigurationDataStoreApiService) ReadIPTVCongifurationDataExecute(
 	localVarFormParams := url.Values{}
 
 	if r.configIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "config-ids", r.configIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "config-ids", r.configIds, "csv")
 	}
 	if r.dnns != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", r.dnns, "csv")
+		parameterAddToQuery(localVarQueryParams, "dnns", r.dnns, "csv")
 	}
 	if r.snssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.supis != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supis", r.supis, "csv")
+		parameterAddToQuery(localVarQueryParams, "supis", r.supis, "csv")
 	}
 	if r.interGroupIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "inter-group-ids", r.interGroupIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "inter-group-ids", r.interGroupIds, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -142,9 +142,9 @@ func (a *IPTVConfigurationDataStoreApiService) ReadIPTVCongifurationDataExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

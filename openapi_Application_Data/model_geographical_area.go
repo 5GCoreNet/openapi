@@ -42,7 +42,7 @@ func NewGeographicalAreaWithDefaults() *GeographicalArea {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *GeographicalArea) GetCivicAddress() CivicAddress {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		var ret CivicAddress
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeographicalArea) GetCivicAddress() CivicAddress {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalArea) GetCivicAddressOk() (*CivicAddress, bool) {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -60,7 +60,7 @@ func (o *GeographicalArea) GetCivicAddressOk() (*CivicAddress, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *GeographicalArea) HasCivicAddress() bool {
-	if o != nil && !IsNil(o.CivicAddress) {
+	if o != nil && !isNil(o.CivicAddress) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeographicalArea) SetCivicAddress(v CivicAddress) {
 
 // GetShapes returns the Shapes field value if set, zero value otherwise.
 func (o *GeographicalArea) GetShapes() GeographicArea {
-	if o == nil || IsNil(o.Shapes) {
+	if o == nil || isNil(o.Shapes) {
 		var ret GeographicArea
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeographicalArea) GetShapes() GeographicArea {
 // GetShapesOk returns a tuple with the Shapes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalArea) GetShapesOk() (*GeographicArea, bool) {
-	if o == nil || IsNil(o.Shapes) {
+	if o == nil || isNil(o.Shapes) {
 		return nil, false
 	}
 	return o.Shapes, true
@@ -92,7 +92,7 @@ func (o *GeographicalArea) GetShapesOk() (*GeographicArea, bool) {
 
 // HasShapes returns a boolean if a field has been set.
 func (o *GeographicalArea) HasShapes() bool {
-	if o != nil && !IsNil(o.Shapes) {
+	if o != nil && !isNil(o.Shapes) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GeographicalArea) MarshalJSON() ([]byte, error) {
 
 func (o GeographicalArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CivicAddress) {
+	if !isNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
-	if !IsNil(o.Shapes) {
+	if !isNil(o.Shapes) {
 		toSerialize["shapes"] = o.Shapes
 	}
 	return toSerialize, nil

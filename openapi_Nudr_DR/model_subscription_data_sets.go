@@ -56,7 +56,7 @@ func NewSubscriptionDataSetsWithDefaults() *SubscriptionDataSets {
 
 // GetAmData returns the AmData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetAmData() AccessAndMobilitySubscriptionData {
-	if o == nil || IsNil(o.AmData) {
+	if o == nil || isNil(o.AmData) {
 		var ret AccessAndMobilitySubscriptionData
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *SubscriptionDataSets) GetAmData() AccessAndMobilitySubscriptionData {
 // GetAmDataOk returns a tuple with the AmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetAmDataOk() (*AccessAndMobilitySubscriptionData, bool) {
-	if o == nil || IsNil(o.AmData) {
+	if o == nil || isNil(o.AmData) {
 		return nil, false
 	}
 	return o.AmData, true
@@ -74,7 +74,7 @@ func (o *SubscriptionDataSets) GetAmDataOk() (*AccessAndMobilitySubscriptionData
 
 // HasAmData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasAmData() bool {
-	if o != nil && !IsNil(o.AmData) {
+	if o != nil && !isNil(o.AmData) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *SubscriptionDataSets) SetAmData(v AccessAndMobilitySubscriptionData) {
 
 // GetSmfSelData returns the SmfSelData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetSmfSelData() SmfSelectionSubscriptionData {
-	if o == nil || IsNil(o.SmfSelData) {
+	if o == nil || isNil(o.SmfSelData) {
 		var ret SmfSelectionSubscriptionData
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *SubscriptionDataSets) GetSmfSelData() SmfSelectionSubscriptionData {
 // GetSmfSelDataOk returns a tuple with the SmfSelData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetSmfSelDataOk() (*SmfSelectionSubscriptionData, bool) {
-	if o == nil || IsNil(o.SmfSelData) {
+	if o == nil || isNil(o.SmfSelData) {
 		return nil, false
 	}
 	return o.SmfSelData, true
@@ -106,7 +106,7 @@ func (o *SubscriptionDataSets) GetSmfSelDataOk() (*SmfSelectionSubscriptionData,
 
 // HasSmfSelData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasSmfSelData() bool {
-	if o != nil && !IsNil(o.SmfSelData) {
+	if o != nil && !isNil(o.SmfSelData) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *SubscriptionDataSets) SetSmfSelData(v SmfSelectionSubscriptionData) {
 
 // GetUecAmfData returns the UecAmfData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetUecAmfData() UeContextInAmfData {
-	if o == nil || IsNil(o.UecAmfData) {
+	if o == nil || isNil(o.UecAmfData) {
 		var ret UeContextInAmfData
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *SubscriptionDataSets) GetUecAmfData() UeContextInAmfData {
 // GetUecAmfDataOk returns a tuple with the UecAmfData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetUecAmfDataOk() (*UeContextInAmfData, bool) {
-	if o == nil || IsNil(o.UecAmfData) {
+	if o == nil || isNil(o.UecAmfData) {
 		return nil, false
 	}
 	return o.UecAmfData, true
@@ -138,7 +138,7 @@ func (o *SubscriptionDataSets) GetUecAmfDataOk() (*UeContextInAmfData, bool) {
 
 // HasUecAmfData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasUecAmfData() bool {
-	if o != nil && !IsNil(o.UecAmfData) {
+	if o != nil && !isNil(o.UecAmfData) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *SubscriptionDataSets) SetUecAmfData(v UeContextInAmfData) {
 
 // GetUecSmfData returns the UecSmfData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetUecSmfData() UeContextInSmfData {
-	if o == nil || IsNil(o.UecSmfData) {
+	if o == nil || isNil(o.UecSmfData) {
 		var ret UeContextInSmfData
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *SubscriptionDataSets) GetUecSmfData() UeContextInSmfData {
 // GetUecSmfDataOk returns a tuple with the UecSmfData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetUecSmfDataOk() (*UeContextInSmfData, bool) {
-	if o == nil || IsNil(o.UecSmfData) {
+	if o == nil || isNil(o.UecSmfData) {
 		return nil, false
 	}
 	return o.UecSmfData, true
@@ -170,7 +170,7 @@ func (o *SubscriptionDataSets) GetUecSmfDataOk() (*UeContextInSmfData, bool) {
 
 // HasUecSmfData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasUecSmfData() bool {
-	if o != nil && !IsNil(o.UecSmfData) {
+	if o != nil && !isNil(o.UecSmfData) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *SubscriptionDataSets) SetUecSmfData(v UeContextInSmfData) {
 
 // GetUecSmsfData returns the UecSmsfData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetUecSmsfData() UeContextInSmsfData {
-	if o == nil || IsNil(o.UecSmsfData) {
+	if o == nil || isNil(o.UecSmsfData) {
 		var ret UeContextInSmsfData
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *SubscriptionDataSets) GetUecSmsfData() UeContextInSmsfData {
 // GetUecSmsfDataOk returns a tuple with the UecSmsfData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetUecSmsfDataOk() (*UeContextInSmsfData, bool) {
-	if o == nil || IsNil(o.UecSmsfData) {
+	if o == nil || isNil(o.UecSmsfData) {
 		return nil, false
 	}
 	return o.UecSmsfData, true
@@ -202,7 +202,7 @@ func (o *SubscriptionDataSets) GetUecSmsfDataOk() (*UeContextInSmsfData, bool) {
 
 // HasUecSmsfData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasUecSmsfData() bool {
-	if o != nil && !IsNil(o.UecSmsfData) {
+	if o != nil && !isNil(o.UecSmsfData) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *SubscriptionDataSets) SetUecSmsfData(v UeContextInSmsfData) {
 
 // GetSmsSubsData returns the SmsSubsData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetSmsSubsData() SmsSubscriptionData {
-	if o == nil || IsNil(o.SmsSubsData) {
+	if o == nil || isNil(o.SmsSubsData) {
 		var ret SmsSubscriptionData
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *SubscriptionDataSets) GetSmsSubsData() SmsSubscriptionData {
 // GetSmsSubsDataOk returns a tuple with the SmsSubsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetSmsSubsDataOk() (*SmsSubscriptionData, bool) {
-	if o == nil || IsNil(o.SmsSubsData) {
+	if o == nil || isNil(o.SmsSubsData) {
 		return nil, false
 	}
 	return o.SmsSubsData, true
@@ -234,7 +234,7 @@ func (o *SubscriptionDataSets) GetSmsSubsDataOk() (*SmsSubscriptionData, bool) {
 
 // HasSmsSubsData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasSmsSubsData() bool {
-	if o != nil && !IsNil(o.SmsSubsData) {
+	if o != nil && !isNil(o.SmsSubsData) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *SubscriptionDataSets) SetSmsSubsData(v SmsSubscriptionData) {
 
 // GetSmData returns the SmData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetSmData() SmSubsData {
-	if o == nil || IsNil(o.SmData) {
+	if o == nil || isNil(o.SmData) {
 		var ret SmSubsData
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *SubscriptionDataSets) GetSmData() SmSubsData {
 // GetSmDataOk returns a tuple with the SmData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetSmDataOk() (*SmSubsData, bool) {
-	if o == nil || IsNil(o.SmData) {
+	if o == nil || isNil(o.SmData) {
 		return nil, false
 	}
 	return o.SmData, true
@@ -266,7 +266,7 @@ func (o *SubscriptionDataSets) GetSmDataOk() (*SmSubsData, bool) {
 
 // HasSmData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasSmData() bool {
-	if o != nil && !IsNil(o.SmData) {
+	if o != nil && !isNil(o.SmData) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *SubscriptionDataSets) SetSmData(v SmSubsData) {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SubscriptionDataSets) GetTraceData() TraceData1 {
-	if o == nil || IsNil(o.TraceData.Get()) {
+	if o == nil || isNil(o.TraceData.Get()) {
 		var ret TraceData1
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *SubscriptionDataSets) UnsetTraceData() {
 
 // GetSmsMngData returns the SmsMngData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetSmsMngData() SmsManagementSubscriptionData {
-	if o == nil || IsNil(o.SmsMngData) {
+	if o == nil || isNil(o.SmsMngData) {
 		var ret SmsManagementSubscriptionData
 		return ret
 	}
@@ -332,7 +332,7 @@ func (o *SubscriptionDataSets) GetSmsMngData() SmsManagementSubscriptionData {
 // GetSmsMngDataOk returns a tuple with the SmsMngData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetSmsMngDataOk() (*SmsManagementSubscriptionData, bool) {
-	if o == nil || IsNil(o.SmsMngData) {
+	if o == nil || isNil(o.SmsMngData) {
 		return nil, false
 	}
 	return o.SmsMngData, true
@@ -340,7 +340,7 @@ func (o *SubscriptionDataSets) GetSmsMngDataOk() (*SmsManagementSubscriptionData
 
 // HasSmsMngData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasSmsMngData() bool {
-	if o != nil && !IsNil(o.SmsMngData) {
+	if o != nil && !isNil(o.SmsMngData) {
 		return true
 	}
 
@@ -354,7 +354,7 @@ func (o *SubscriptionDataSets) SetSmsMngData(v SmsManagementSubscriptionData) {
 
 // GetLcsPrivacyData returns the LcsPrivacyData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetLcsPrivacyData() LcsPrivacyData {
-	if o == nil || IsNil(o.LcsPrivacyData) {
+	if o == nil || isNil(o.LcsPrivacyData) {
 		var ret LcsPrivacyData
 		return ret
 	}
@@ -364,7 +364,7 @@ func (o *SubscriptionDataSets) GetLcsPrivacyData() LcsPrivacyData {
 // GetLcsPrivacyDataOk returns a tuple with the LcsPrivacyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetLcsPrivacyDataOk() (*LcsPrivacyData, bool) {
-	if o == nil || IsNil(o.LcsPrivacyData) {
+	if o == nil || isNil(o.LcsPrivacyData) {
 		return nil, false
 	}
 	return o.LcsPrivacyData, true
@@ -372,7 +372,7 @@ func (o *SubscriptionDataSets) GetLcsPrivacyDataOk() (*LcsPrivacyData, bool) {
 
 // HasLcsPrivacyData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasLcsPrivacyData() bool {
-	if o != nil && !IsNil(o.LcsPrivacyData) {
+	if o != nil && !isNil(o.LcsPrivacyData) {
 		return true
 	}
 
@@ -386,7 +386,7 @@ func (o *SubscriptionDataSets) SetLcsPrivacyData(v LcsPrivacyData) {
 
 // GetLcsMoData returns the LcsMoData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetLcsMoData() LcsMoData {
-	if o == nil || IsNil(o.LcsMoData) {
+	if o == nil || isNil(o.LcsMoData) {
 		var ret LcsMoData
 		return ret
 	}
@@ -396,7 +396,7 @@ func (o *SubscriptionDataSets) GetLcsMoData() LcsMoData {
 // GetLcsMoDataOk returns a tuple with the LcsMoData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetLcsMoDataOk() (*LcsMoData, bool) {
-	if o == nil || IsNil(o.LcsMoData) {
+	if o == nil || isNil(o.LcsMoData) {
 		return nil, false
 	}
 	return o.LcsMoData, true
@@ -404,7 +404,7 @@ func (o *SubscriptionDataSets) GetLcsMoDataOk() (*LcsMoData, bool) {
 
 // HasLcsMoData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasLcsMoData() bool {
-	if o != nil && !IsNil(o.LcsMoData) {
+	if o != nil && !isNil(o.LcsMoData) {
 		return true
 	}
 
@@ -418,7 +418,7 @@ func (o *SubscriptionDataSets) SetLcsMoData(v LcsMoData) {
 
 // GetV2xData returns the V2xData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetV2xData() V2xSubscriptionData {
-	if o == nil || IsNil(o.V2xData) {
+	if o == nil || isNil(o.V2xData) {
 		var ret V2xSubscriptionData
 		return ret
 	}
@@ -428,7 +428,7 @@ func (o *SubscriptionDataSets) GetV2xData() V2xSubscriptionData {
 // GetV2xDataOk returns a tuple with the V2xData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetV2xDataOk() (*V2xSubscriptionData, bool) {
-	if o == nil || IsNil(o.V2xData) {
+	if o == nil || isNil(o.V2xData) {
 		return nil, false
 	}
 	return o.V2xData, true
@@ -436,7 +436,7 @@ func (o *SubscriptionDataSets) GetV2xDataOk() (*V2xSubscriptionData, bool) {
 
 // HasV2xData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasV2xData() bool {
-	if o != nil && !IsNil(o.V2xData) {
+	if o != nil && !isNil(o.V2xData) {
 		return true
 	}
 
@@ -450,7 +450,7 @@ func (o *SubscriptionDataSets) SetV2xData(v V2xSubscriptionData) {
 
 // GetLcsBroadcastAssistanceTypesData returns the LcsBroadcastAssistanceTypesData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetLcsBroadcastAssistanceTypesData() LcsBroadcastAssistanceTypesData {
-	if o == nil || IsNil(o.LcsBroadcastAssistanceTypesData) {
+	if o == nil || isNil(o.LcsBroadcastAssistanceTypesData) {
 		var ret LcsBroadcastAssistanceTypesData
 		return ret
 	}
@@ -460,7 +460,7 @@ func (o *SubscriptionDataSets) GetLcsBroadcastAssistanceTypesData() LcsBroadcast
 // GetLcsBroadcastAssistanceTypesDataOk returns a tuple with the LcsBroadcastAssistanceTypesData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetLcsBroadcastAssistanceTypesDataOk() (*LcsBroadcastAssistanceTypesData, bool) {
-	if o == nil || IsNil(o.LcsBroadcastAssistanceTypesData) {
+	if o == nil || isNil(o.LcsBroadcastAssistanceTypesData) {
 		return nil, false
 	}
 	return o.LcsBroadcastAssistanceTypesData, true
@@ -468,7 +468,7 @@ func (o *SubscriptionDataSets) GetLcsBroadcastAssistanceTypesDataOk() (*LcsBroad
 
 // HasLcsBroadcastAssistanceTypesData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasLcsBroadcastAssistanceTypesData() bool {
-	if o != nil && !IsNil(o.LcsBroadcastAssistanceTypesData) {
+	if o != nil && !isNil(o.LcsBroadcastAssistanceTypesData) {
 		return true
 	}
 
@@ -482,7 +482,7 @@ func (o *SubscriptionDataSets) SetLcsBroadcastAssistanceTypesData(v LcsBroadcast
 
 // GetProseData returns the ProseData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetProseData() ProseSubscriptionData {
-	if o == nil || IsNil(o.ProseData) {
+	if o == nil || isNil(o.ProseData) {
 		var ret ProseSubscriptionData
 		return ret
 	}
@@ -492,7 +492,7 @@ func (o *SubscriptionDataSets) GetProseData() ProseSubscriptionData {
 // GetProseDataOk returns a tuple with the ProseData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetProseDataOk() (*ProseSubscriptionData, bool) {
-	if o == nil || IsNil(o.ProseData) {
+	if o == nil || isNil(o.ProseData) {
 		return nil, false
 	}
 	return o.ProseData, true
@@ -500,7 +500,7 @@ func (o *SubscriptionDataSets) GetProseDataOk() (*ProseSubscriptionData, bool) {
 
 // HasProseData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasProseData() bool {
-	if o != nil && !IsNil(o.ProseData) {
+	if o != nil && !isNil(o.ProseData) {
 		return true
 	}
 
@@ -514,7 +514,7 @@ func (o *SubscriptionDataSets) SetProseData(v ProseSubscriptionData) {
 
 // GetMbsData returns the MbsData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetMbsData() MbsSubscriptionData {
-	if o == nil || IsNil(o.MbsData) {
+	if o == nil || isNil(o.MbsData) {
 		var ret MbsSubscriptionData
 		return ret
 	}
@@ -524,7 +524,7 @@ func (o *SubscriptionDataSets) GetMbsData() MbsSubscriptionData {
 // GetMbsDataOk returns a tuple with the MbsData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetMbsDataOk() (*MbsSubscriptionData, bool) {
-	if o == nil || IsNil(o.MbsData) {
+	if o == nil || isNil(o.MbsData) {
 		return nil, false
 	}
 	return o.MbsData, true
@@ -532,7 +532,7 @@ func (o *SubscriptionDataSets) GetMbsDataOk() (*MbsSubscriptionData, bool) {
 
 // HasMbsData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasMbsData() bool {
-	if o != nil && !IsNil(o.MbsData) {
+	if o != nil && !isNil(o.MbsData) {
 		return true
 	}
 
@@ -546,7 +546,7 @@ func (o *SubscriptionDataSets) SetMbsData(v MbsSubscriptionData) {
 
 // GetUcData returns the UcData field value if set, zero value otherwise.
 func (o *SubscriptionDataSets) GetUcData() UcSubscriptionData {
-	if o == nil || IsNil(o.UcData) {
+	if o == nil || isNil(o.UcData) {
 		var ret UcSubscriptionData
 		return ret
 	}
@@ -556,7 +556,7 @@ func (o *SubscriptionDataSets) GetUcData() UcSubscriptionData {
 // GetUcDataOk returns a tuple with the UcData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSets) GetUcDataOk() (*UcSubscriptionData, bool) {
-	if o == nil || IsNil(o.UcData) {
+	if o == nil || isNil(o.UcData) {
 		return nil, false
 	}
 	return o.UcData, true
@@ -564,7 +564,7 @@ func (o *SubscriptionDataSets) GetUcDataOk() (*UcSubscriptionData, bool) {
 
 // HasUcData returns a boolean if a field has been set.
 func (o *SubscriptionDataSets) HasUcData() bool {
-	if o != nil && !IsNil(o.UcData) {
+	if o != nil && !isNil(o.UcData) {
 		return true
 	}
 
@@ -586,52 +586,52 @@ func (o SubscriptionDataSets) MarshalJSON() ([]byte, error) {
 
 func (o SubscriptionDataSets) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AmData) {
+	if !isNil(o.AmData) {
 		toSerialize["amData"] = o.AmData
 	}
-	if !IsNil(o.SmfSelData) {
+	if !isNil(o.SmfSelData) {
 		toSerialize["smfSelData"] = o.SmfSelData
 	}
-	if !IsNil(o.UecAmfData) {
+	if !isNil(o.UecAmfData) {
 		toSerialize["uecAmfData"] = o.UecAmfData
 	}
-	if !IsNil(o.UecSmfData) {
+	if !isNil(o.UecSmfData) {
 		toSerialize["uecSmfData"] = o.UecSmfData
 	}
-	if !IsNil(o.UecSmsfData) {
+	if !isNil(o.UecSmsfData) {
 		toSerialize["uecSmsfData"] = o.UecSmsfData
 	}
-	if !IsNil(o.SmsSubsData) {
+	if !isNil(o.SmsSubsData) {
 		toSerialize["smsSubsData"] = o.SmsSubsData
 	}
-	if !IsNil(o.SmData) {
+	if !isNil(o.SmData) {
 		toSerialize["smData"] = o.SmData
 	}
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !IsNil(o.SmsMngData) {
+	if !isNil(o.SmsMngData) {
 		toSerialize["smsMngData"] = o.SmsMngData
 	}
-	if !IsNil(o.LcsPrivacyData) {
+	if !isNil(o.LcsPrivacyData) {
 		toSerialize["lcsPrivacyData"] = o.LcsPrivacyData
 	}
-	if !IsNil(o.LcsMoData) {
+	if !isNil(o.LcsMoData) {
 		toSerialize["lcsMoData"] = o.LcsMoData
 	}
-	if !IsNil(o.V2xData) {
+	if !isNil(o.V2xData) {
 		toSerialize["v2xData"] = o.V2xData
 	}
-	if !IsNil(o.LcsBroadcastAssistanceTypesData) {
+	if !isNil(o.LcsBroadcastAssistanceTypesData) {
 		toSerialize["lcsBroadcastAssistanceTypesData"] = o.LcsBroadcastAssistanceTypesData
 	}
-	if !IsNil(o.ProseData) {
+	if !isNil(o.ProseData) {
 		toSerialize["proseData"] = o.ProseData
 	}
-	if !IsNil(o.MbsData) {
+	if !isNil(o.MbsData) {
 		toSerialize["mbsData"] = o.MbsData
 	}
-	if !IsNil(o.UcData) {
+	if !isNil(o.UcData) {
 		toSerialize["ucData"] = o.UcData
 	}
 	return toSerialize, nil

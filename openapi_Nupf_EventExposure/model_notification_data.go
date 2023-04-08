@@ -67,7 +67,7 @@ func (o *NotificationData) SetNotificationItems(v []NotificationItem) {
 
 // GetCorrelationId returns the CorrelationId field value if set, zero value otherwise.
 func (o *NotificationData) GetCorrelationId() string {
-	if o == nil || IsNil(o.CorrelationId) {
+	if o == nil || isNil(o.CorrelationId) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NotificationData) GetCorrelationId() string {
 // GetCorrelationIdOk returns a tuple with the CorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CorrelationId) {
+	if o == nil || isNil(o.CorrelationId) {
 		return nil, false
 	}
 	return o.CorrelationId, true
@@ -85,7 +85,7 @@ func (o *NotificationData) GetCorrelationIdOk() (*string, bool) {
 
 // HasCorrelationId returns a boolean if a field has been set.
 func (o *NotificationData) HasCorrelationId() bool {
-	if o != nil && !IsNil(o.CorrelationId) {
+	if o != nil && !isNil(o.CorrelationId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o NotificationData) MarshalJSON() ([]byte, error) {
 func (o NotificationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationItems"] = o.NotificationItems
-	if !IsNil(o.CorrelationId) {
+	if !isNil(o.CorrelationId) {
 		toSerialize["correlationId"] = o.CorrelationId
 	}
 	return toSerialize, nil

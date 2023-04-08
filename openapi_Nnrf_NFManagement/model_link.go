@@ -42,7 +42,7 @@ func NewLinkWithDefaults() *Link {
 
 // GetHref returns the Href field value if set, zero value otherwise.
 func (o *Link) GetHref() string {
-	if o == nil || IsNil(o.Href) {
+	if o == nil || isNil(o.Href) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *Link) GetHref() string {
 // GetHrefOk returns a tuple with the Href field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Link) GetHrefOk() (*string, bool) {
-	if o == nil || IsNil(o.Href) {
+	if o == nil || isNil(o.Href) {
 		return nil, false
 	}
 	return o.Href, true
@@ -60,7 +60,7 @@ func (o *Link) GetHrefOk() (*string, bool) {
 
 // HasHref returns a boolean if a field has been set.
 func (o *Link) HasHref() bool {
-	if o != nil && !IsNil(o.Href) {
+	if o != nil && !isNil(o.Href) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o Link) MarshalJSON() ([]byte, error) {
 
 func (o Link) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Href) {
+	if !isNil(o.Href) {
 		toSerialize["href"] = o.Href
 	}
 	return toSerialize, nil

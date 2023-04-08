@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -23,6 +22,7 @@ docs/IndividualHdmapDynamicinfoSubscriptionDocumentApi.md
 docs/InvalidParam.md
 docs/Ipv6Addr.md
 docs/LineType.md
+docs/LineTypeAnyOf.md
 docs/LocationAreaId.md
 docs/N3gaLocation.md
 docs/Ncgi.md
@@ -35,6 +35,7 @@ docs/ServiceAreaId.md
 docs/Tai.md
 docs/TnapId.md
 docs/TransportProtocol.md
+docs/TransportProtocolAnyOf.md
 docs/TwapId.md
 docs/UserLocation.md
 docs/UtraLocation.md
@@ -54,6 +55,7 @@ model_hfc_node_id.go
 model_invalid_param.go
 model_ipv6_addr.go
 model_line_type.go
+model_line_type_any_of.go
 model_location_area_id.go
 model_n3ga_location.go
 model_ncgi.go
@@ -66,6 +68,7 @@ model_service_area_id.go
 model_tai.go
 model_tnap_id.go
 model_transport_protocol.go
+model_transport_protocol_any_of.go
 model_twap_id.go
 model_user_location.go
 model_utra_location.go

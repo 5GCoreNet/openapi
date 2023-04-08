@@ -63,7 +63,7 @@ func NewAuthorizedDefaultQosWithDefaults() *AuthorizedDefaultQos {
 
 // GetVar5qi returns the Var5qi field value if set, zero value otherwise.
 func (o *AuthorizedDefaultQos) GetVar5qi() int32 {
-	if o == nil || IsNil(o.Var5qi) {
+	if o == nil || isNil(o.Var5qi) {
 		var ret int32
 		return ret
 	}
@@ -73,7 +73,7 @@ func (o *AuthorizedDefaultQos) GetVar5qi() int32 {
 // GetVar5qiOk returns a tuple with the Var5qi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedDefaultQos) GetVar5qiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var5qi) {
+	if o == nil || isNil(o.Var5qi) {
 		return nil, false
 	}
 	return o.Var5qi, true
@@ -81,7 +81,7 @@ func (o *AuthorizedDefaultQos) GetVar5qiOk() (*int32, bool) {
 
 // HasVar5qi returns a boolean if a field has been set.
 func (o *AuthorizedDefaultQos) HasVar5qi() bool {
-	if o != nil && !IsNil(o.Var5qi) {
+	if o != nil && !isNil(o.Var5qi) {
 		return true
 	}
 
@@ -95,7 +95,7 @@ func (o *AuthorizedDefaultQos) SetVar5qi(v int32) {
 
 // GetArp returns the Arp field value if set, zero value otherwise.
 func (o *AuthorizedDefaultQos) GetArp() Arp {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		var ret Arp
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *AuthorizedDefaultQos) GetArp() Arp {
 // GetArpOk returns a tuple with the Arp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedDefaultQos) GetArpOk() (*Arp, bool) {
-	if o == nil || IsNil(o.Arp) {
+	if o == nil || isNil(o.Arp) {
 		return nil, false
 	}
 	return o.Arp, true
@@ -113,7 +113,7 @@ func (o *AuthorizedDefaultQos) GetArpOk() (*Arp, bool) {
 
 // HasArp returns a boolean if a field has been set.
 func (o *AuthorizedDefaultQos) HasArp() bool {
-	if o != nil && !IsNil(o.Arp) {
+	if o != nil && !isNil(o.Arp) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *AuthorizedDefaultQos) SetArp(v Arp) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetPriorityLevel() int32 {
-	if o == nil || IsNil(o.PriorityLevel.Get()) {
+	if o == nil || isNil(o.PriorityLevel.Get()) {
 		var ret int32
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *AuthorizedDefaultQos) UnsetPriorityLevel() {
 
 // GetAverWindow returns the AverWindow field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetAverWindow() int32 {
-	if o == nil || IsNil(o.AverWindow.Get()) {
+	if o == nil || isNil(o.AverWindow.Get()) {
 		var ret int32
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *AuthorizedDefaultQos) UnsetAverWindow() {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.MaxDataBurstVol.Get()) {
+	if o == nil || isNil(o.MaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *AuthorizedDefaultQos) UnsetMaxDataBurstVol() {
 
 // GetMaxbrUl returns the MaxbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetMaxbrUl() string {
-	if o == nil || IsNil(o.MaxbrUl.Get()) {
+	if o == nil || isNil(o.MaxbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *AuthorizedDefaultQos) UnsetMaxbrUl() {
 
 // GetMaxbrDl returns the MaxbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetMaxbrDl() string {
-	if o == nil || IsNil(o.MaxbrDl.Get()) {
+	if o == nil || isNil(o.MaxbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -337,7 +337,7 @@ func (o *AuthorizedDefaultQos) UnsetMaxbrDl() {
 
 // GetGbrUl returns the GbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetGbrUl() string {
-	if o == nil || IsNil(o.GbrUl.Get()) {
+	if o == nil || isNil(o.GbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -379,7 +379,7 @@ func (o *AuthorizedDefaultQos) UnsetGbrUl() {
 
 // GetGbrDl returns the GbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetGbrDl() string {
-	if o == nil || IsNil(o.GbrDl.Get()) {
+	if o == nil || isNil(o.GbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -421,7 +421,7 @@ func (o *AuthorizedDefaultQos) UnsetGbrDl() {
 
 // GetExtMaxDataBurstVol returns the ExtMaxDataBurstVol field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthorizedDefaultQos) GetExtMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.ExtMaxDataBurstVol.Get()) {
+	if o == nil || isNil(o.ExtMaxDataBurstVol.Get()) {
 		var ret int32
 		return ret
 	}
@@ -471,10 +471,10 @@ func (o AuthorizedDefaultQos) MarshalJSON() ([]byte, error) {
 
 func (o AuthorizedDefaultQos) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Var5qi) {
+	if !isNil(o.Var5qi) {
 		toSerialize["5qi"] = o.Var5qi
 	}
-	if !IsNil(o.Arp) {
+	if !isNil(o.Arp) {
 		toSerialize["arp"] = o.Arp
 	}
 	if o.PriorityLevel.IsSet() {

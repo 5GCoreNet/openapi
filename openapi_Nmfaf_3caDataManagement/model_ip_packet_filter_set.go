@@ -50,7 +50,7 @@ func NewIpPacketFilterSetWithDefaults() *IpPacketFilterSet {
 
 // GetSrcIp returns the SrcIp field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetSrcIp() string {
-	if o == nil || IsNil(o.SrcIp) {
+	if o == nil || isNil(o.SrcIp) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *IpPacketFilterSet) GetSrcIp() string {
 // GetSrcIpOk returns a tuple with the SrcIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetSrcIpOk() (*string, bool) {
-	if o == nil || IsNil(o.SrcIp) {
+	if o == nil || isNil(o.SrcIp) {
 		return nil, false
 	}
 	return o.SrcIp, true
@@ -68,7 +68,7 @@ func (o *IpPacketFilterSet) GetSrcIpOk() (*string, bool) {
 
 // HasSrcIp returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasSrcIp() bool {
-	if o != nil && !IsNil(o.SrcIp) {
+	if o != nil && !isNil(o.SrcIp) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *IpPacketFilterSet) SetSrcIp(v string) {
 
 // GetDstIp returns the DstIp field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetDstIp() string {
-	if o == nil || IsNil(o.DstIp) {
+	if o == nil || isNil(o.DstIp) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *IpPacketFilterSet) GetDstIp() string {
 // GetDstIpOk returns a tuple with the DstIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetDstIpOk() (*string, bool) {
-	if o == nil || IsNil(o.DstIp) {
+	if o == nil || isNil(o.DstIp) {
 		return nil, false
 	}
 	return o.DstIp, true
@@ -100,7 +100,7 @@ func (o *IpPacketFilterSet) GetDstIpOk() (*string, bool) {
 
 // HasDstIp returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasDstIp() bool {
-	if o != nil && !IsNil(o.DstIp) {
+	if o != nil && !isNil(o.DstIp) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *IpPacketFilterSet) SetDstIp(v string) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetProtocol() int32 {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || isNil(o.Protocol) {
 		var ret int32
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *IpPacketFilterSet) GetProtocol() int32 {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetProtocolOk() (*int32, bool) {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || isNil(o.Protocol) {
 		return nil, false
 	}
 	return o.Protocol, true
@@ -132,7 +132,7 @@ func (o *IpPacketFilterSet) GetProtocolOk() (*int32, bool) {
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
+	if o != nil && !isNil(o.Protocol) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *IpPacketFilterSet) SetProtocol(v int32) {
 
 // GetSrcPort returns the SrcPort field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetSrcPort() int32 {
-	if o == nil || IsNil(o.SrcPort) {
+	if o == nil || isNil(o.SrcPort) {
 		var ret int32
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *IpPacketFilterSet) GetSrcPort() int32 {
 // GetSrcPortOk returns a tuple with the SrcPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetSrcPortOk() (*int32, bool) {
-	if o == nil || IsNil(o.SrcPort) {
+	if o == nil || isNil(o.SrcPort) {
 		return nil, false
 	}
 	return o.SrcPort, true
@@ -164,7 +164,7 @@ func (o *IpPacketFilterSet) GetSrcPortOk() (*int32, bool) {
 
 // HasSrcPort returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasSrcPort() bool {
-	if o != nil && !IsNil(o.SrcPort) {
+	if o != nil && !isNil(o.SrcPort) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *IpPacketFilterSet) SetSrcPort(v int32) {
 
 // GetDstPort returns the DstPort field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetDstPort() int32 {
-	if o == nil || IsNil(o.DstPort) {
+	if o == nil || isNil(o.DstPort) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *IpPacketFilterSet) GetDstPort() int32 {
 // GetDstPortOk returns a tuple with the DstPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetDstPortOk() (*int32, bool) {
-	if o == nil || IsNil(o.DstPort) {
+	if o == nil || isNil(o.DstPort) {
 		return nil, false
 	}
 	return o.DstPort, true
@@ -196,7 +196,7 @@ func (o *IpPacketFilterSet) GetDstPortOk() (*int32, bool) {
 
 // HasDstPort returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasDstPort() bool {
-	if o != nil && !IsNil(o.DstPort) {
+	if o != nil && !isNil(o.DstPort) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *IpPacketFilterSet) SetDstPort(v int32) {
 
 // GetToSTc returns the ToSTc field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetToSTc() string {
-	if o == nil || IsNil(o.ToSTc) {
+	if o == nil || isNil(o.ToSTc) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *IpPacketFilterSet) GetToSTc() string {
 // GetToSTcOk returns a tuple with the ToSTc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetToSTcOk() (*string, bool) {
-	if o == nil || IsNil(o.ToSTc) {
+	if o == nil || isNil(o.ToSTc) {
 		return nil, false
 	}
 	return o.ToSTc, true
@@ -228,7 +228,7 @@ func (o *IpPacketFilterSet) GetToSTcOk() (*string, bool) {
 
 // HasToSTc returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasToSTc() bool {
-	if o != nil && !IsNil(o.ToSTc) {
+	if o != nil && !isNil(o.ToSTc) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *IpPacketFilterSet) SetToSTc(v string) {
 
 // GetFlowLabel returns the FlowLabel field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetFlowLabel() int32 {
-	if o == nil || IsNil(o.FlowLabel) {
+	if o == nil || isNil(o.FlowLabel) {
 		var ret int32
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *IpPacketFilterSet) GetFlowLabel() int32 {
 // GetFlowLabelOk returns a tuple with the FlowLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetFlowLabelOk() (*int32, bool) {
-	if o == nil || IsNil(o.FlowLabel) {
+	if o == nil || isNil(o.FlowLabel) {
 		return nil, false
 	}
 	return o.FlowLabel, true
@@ -260,7 +260,7 @@ func (o *IpPacketFilterSet) GetFlowLabelOk() (*int32, bool) {
 
 // HasFlowLabel returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasFlowLabel() bool {
-	if o != nil && !IsNil(o.FlowLabel) {
+	if o != nil && !isNil(o.FlowLabel) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *IpPacketFilterSet) SetFlowLabel(v int32) {
 
 // GetSpi returns the Spi field value if set, zero value otherwise.
 func (o *IpPacketFilterSet) GetSpi() int32 {
-	if o == nil || IsNil(o.Spi) {
+	if o == nil || isNil(o.Spi) {
 		var ret int32
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *IpPacketFilterSet) GetSpi() int32 {
 // GetSpiOk returns a tuple with the Spi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpPacketFilterSet) GetSpiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Spi) {
+	if o == nil || isNil(o.Spi) {
 		return nil, false
 	}
 	return o.Spi, true
@@ -292,7 +292,7 @@ func (o *IpPacketFilterSet) GetSpiOk() (*int32, bool) {
 
 // HasSpi returns a boolean if a field has been set.
 func (o *IpPacketFilterSet) HasSpi() bool {
-	if o != nil && !IsNil(o.Spi) {
+	if o != nil && !isNil(o.Spi) {
 		return true
 	}
 
@@ -338,28 +338,28 @@ func (o IpPacketFilterSet) MarshalJSON() ([]byte, error) {
 
 func (o IpPacketFilterSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SrcIp) {
+	if !isNil(o.SrcIp) {
 		toSerialize["srcIp"] = o.SrcIp
 	}
-	if !IsNil(o.DstIp) {
+	if !isNil(o.DstIp) {
 		toSerialize["dstIp"] = o.DstIp
 	}
-	if !IsNil(o.Protocol) {
+	if !isNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
-	if !IsNil(o.SrcPort) {
+	if !isNil(o.SrcPort) {
 		toSerialize["srcPort"] = o.SrcPort
 	}
-	if !IsNil(o.DstPort) {
+	if !isNil(o.DstPort) {
 		toSerialize["dstPort"] = o.DstPort
 	}
-	if !IsNil(o.ToSTc) {
+	if !isNil(o.ToSTc) {
 		toSerialize["toSTc"] = o.ToSTc
 	}
-	if !IsNil(o.FlowLabel) {
+	if !isNil(o.FlowLabel) {
 		toSerialize["flowLabel"] = o.FlowLabel
 	}
-	if !IsNil(o.Spi) {
+	if !isNil(o.Spi) {
 		toSerialize["spi"] = o.Spi
 	}
 	toSerialize["direction"] = o.Direction

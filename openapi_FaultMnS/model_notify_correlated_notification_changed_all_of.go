@@ -93,7 +93,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) SetCorrelatedNotifications(v 
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicator() bool {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicator() bool 
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -111,7 +111,7 @@ func (o *NotifyCorrelatedNotificationChangedAllOf) GetRootCauseIndicatorOk() (*b
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *NotifyCorrelatedNotificationChangedAllOf) HasRootCauseIndicator() bool {
-	if o != nil && !IsNil(o.RootCauseIndicator) {
+	if o != nil && !isNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o NotifyCorrelatedNotificationChangedAllOf) ToMap() (map[string]interface{
 	toSerialize := map[string]interface{}{}
 	toSerialize["alarmId"] = o.AlarmId
 	toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
-	if !IsNil(o.RootCauseIndicator) {
+	if !isNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
 	return toSerialize, nil

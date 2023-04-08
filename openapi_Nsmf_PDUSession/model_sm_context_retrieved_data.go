@@ -76,7 +76,7 @@ func (o *SmContextRetrievedData) SetUeEpsPdnConnection(v string) {
 
 // GetSmContext returns the SmContext field value if set, zero value otherwise.
 func (o *SmContextRetrievedData) GetSmContext() SmContext {
-	if o == nil || IsNil(o.SmContext) {
+	if o == nil || isNil(o.SmContext) {
 		var ret SmContext
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SmContextRetrievedData) GetSmContext() SmContext {
 // GetSmContextOk returns a tuple with the SmContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrievedData) GetSmContextOk() (*SmContext, bool) {
-	if o == nil || IsNil(o.SmContext) {
+	if o == nil || isNil(o.SmContext) {
 		return nil, false
 	}
 	return o.SmContext, true
@@ -94,7 +94,7 @@ func (o *SmContextRetrievedData) GetSmContextOk() (*SmContext, bool) {
 
 // HasSmContext returns a boolean if a field has been set.
 func (o *SmContextRetrievedData) HasSmContext() bool {
-	if o != nil && !IsNil(o.SmContext) {
+	if o != nil && !isNil(o.SmContext) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SmContextRetrievedData) SetSmContext(v SmContext) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextRetrievedData) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SmContextRetrievedData) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrievedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -126,7 +126,7 @@ func (o *SmContextRetrievedData) GetSmallDataRateStatusOk() (*SmallDataRateStatu
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextRetrievedData) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *SmContextRetrievedData) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextRetrievedData) GetApnRateStatus() ApnRateStatus {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SmContextRetrievedData) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrievedData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -158,7 +158,7 @@ func (o *SmContextRetrievedData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextRetrievedData) HasApnRateStatus() bool {
-	if o != nil && !IsNil(o.ApnRateStatus) {
+	if o != nil && !isNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *SmContextRetrievedData) SetApnRateStatus(v ApnRateStatus) {
 
 // GetDlDataWaitingInd returns the DlDataWaitingInd field value if set, zero value otherwise.
 func (o *SmContextRetrievedData) GetDlDataWaitingInd() bool {
-	if o == nil || IsNil(o.DlDataWaitingInd) {
+	if o == nil || isNil(o.DlDataWaitingInd) {
 		var ret bool
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *SmContextRetrievedData) GetDlDataWaitingInd() bool {
 // GetDlDataWaitingIndOk returns a tuple with the DlDataWaitingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrievedData) GetDlDataWaitingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DlDataWaitingInd) {
+	if o == nil || isNil(o.DlDataWaitingInd) {
 		return nil, false
 	}
 	return o.DlDataWaitingInd, true
@@ -190,7 +190,7 @@ func (o *SmContextRetrievedData) GetDlDataWaitingIndOk() (*bool, bool) {
 
 // HasDlDataWaitingInd returns a boolean if a field has been set.
 func (o *SmContextRetrievedData) HasDlDataWaitingInd() bool {
-	if o != nil && !IsNil(o.DlDataWaitingInd) {
+	if o != nil && !isNil(o.DlDataWaitingInd) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *SmContextRetrievedData) SetDlDataWaitingInd(v bool) {
 
 // GetAfCoordinationInfo returns the AfCoordinationInfo field value if set, zero value otherwise.
 func (o *SmContextRetrievedData) GetAfCoordinationInfo() AfCoordinationInfo {
-	if o == nil || IsNil(o.AfCoordinationInfo) {
+	if o == nil || isNil(o.AfCoordinationInfo) {
 		var ret AfCoordinationInfo
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *SmContextRetrievedData) GetAfCoordinationInfo() AfCoordinationInfo {
 // GetAfCoordinationInfoOk returns a tuple with the AfCoordinationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextRetrievedData) GetAfCoordinationInfoOk() (*AfCoordinationInfo, bool) {
-	if o == nil || IsNil(o.AfCoordinationInfo) {
+	if o == nil || isNil(o.AfCoordinationInfo) {
 		return nil, false
 	}
 	return o.AfCoordinationInfo, true
@@ -222,7 +222,7 @@ func (o *SmContextRetrievedData) GetAfCoordinationInfoOk() (*AfCoordinationInfo,
 
 // HasAfCoordinationInfo returns a boolean if a field has been set.
 func (o *SmContextRetrievedData) HasAfCoordinationInfo() bool {
-	if o != nil && !IsNil(o.AfCoordinationInfo) {
+	if o != nil && !isNil(o.AfCoordinationInfo) {
 		return true
 	}
 
@@ -245,19 +245,19 @@ func (o SmContextRetrievedData) MarshalJSON() ([]byte, error) {
 func (o SmContextRetrievedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueEpsPdnConnection"] = o.UeEpsPdnConnection
-	if !IsNil(o.SmContext) {
+	if !isNil(o.SmContext) {
 		toSerialize["smContext"] = o.SmContext
 	}
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !IsNil(o.ApnRateStatus) {
+	if !isNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
-	if !IsNil(o.DlDataWaitingInd) {
+	if !isNil(o.DlDataWaitingInd) {
 		toSerialize["dlDataWaitingInd"] = o.DlDataWaitingInd
 	}
-	if !IsNil(o.AfCoordinationInfo) {
+	if !isNil(o.AfCoordinationInfo) {
 		toSerialize["afCoordinationInfo"] = o.AfCoordinationInfo
 	}
 	return toSerialize, nil

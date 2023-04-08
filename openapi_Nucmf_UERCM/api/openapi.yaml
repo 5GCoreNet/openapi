@@ -1249,18 +1249,11 @@ components:
       type: integer
     EventType:
       anyOf:
-      - enum:
-        - CREATION_OF_DICTIONARY_ENTRY
-        - DELETION_OF_PLMN_ASSIGNED_IDS
-        - NEW_VERSION_ID_OF_PLMN_ASSIGNED_IDs
-        type: string
+      - $ref: '#/components/schemas/EventType_anyOf'
       - type: string
     RacFormat:
       anyOf:
-      - enum:
-        - 5GS
-        - EPS
-        type: string
+      - $ref: '#/components/schemas/RacFormat_anyOf'
       - type: string
     SupportedFeatures:
       description: |
@@ -1520,64 +1513,7 @@ components:
       type: object
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -1741,6 +1677,79 @@ components:
           format: binary
           type: string
       type: object
+    EventType_anyOf:
+      enum:
+      - CREATION_OF_DICTIONARY_ENTRY
+      - DELETION_OF_PLMN_ASSIGNED_IDS
+      - NEW_VERSION_ID_OF_PLMN_ASSIGNED_IDs
+      type: string
+      example: null
+    RacFormat_anyOf:
+      enum:
+      - 5GS
+      - EPS
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

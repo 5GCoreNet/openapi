@@ -13,7 +13,7 @@ package openapi_Nsmf_PDUSession
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -37,18 +37,18 @@ func (r ApiPostSmContextsRequest) JsonData(jsonData SmContextCreateData) ApiPost
 	return r
 }
 
-func (r ApiPostSmContextsRequest) BinaryDataN1SmMessage(binaryDataN1SmMessage *os.File) ApiPostSmContextsRequest {
-	r.binaryDataN1SmMessage = binaryDataN1SmMessage
+func (r ApiPostSmContextsRequest) BinaryDataN1SmMessage(binaryDataN1SmMessage os.File) ApiPostSmContextsRequest {
+	r.binaryDataN1SmMessage = &binaryDataN1SmMessage
 	return r
 }
 
-func (r ApiPostSmContextsRequest) BinaryDataN2SmInformation(binaryDataN2SmInformation *os.File) ApiPostSmContextsRequest {
-	r.binaryDataN2SmInformation = binaryDataN2SmInformation
+func (r ApiPostSmContextsRequest) BinaryDataN2SmInformation(binaryDataN2SmInformation os.File) ApiPostSmContextsRequest {
+	r.binaryDataN2SmInformation = &binaryDataN2SmInformation
 	return r
 }
 
-func (r ApiPostSmContextsRequest) BinaryDataN2SmInformationExt1(binaryDataN2SmInformationExt1 *os.File) ApiPostSmContextsRequest {
-	r.binaryDataN2SmInformationExt1 = binaryDataN2SmInformationExt1
+func (r ApiPostSmContextsRequest) BinaryDataN2SmInformationExt1(binaryDataN2SmInformationExt1 os.File) ApiPostSmContextsRequest {
+	r.binaryDataN2SmInformationExt1 = &binaryDataN2SmInformationExt1
 	return r
 }
 
@@ -120,51 +120,51 @@ func (a *SMContextsCollectionApiService) PostSmContextsExecute(r ApiPostSmContex
 
 	binaryDataN1SmMessageLocalVarFormFileName = "binaryDataN1SmMessage"
 
-
-	binaryDataN1SmMessageLocalVarFile := r.binaryDataN1SmMessage
-
+	var binaryDataN1SmMessageLocalVarFile *os.File
+	if r.binaryDataN1SmMessage != nil {
+		binaryDataN1SmMessageLocalVarFile = r.binaryDataN1SmMessage
+	}
 	if binaryDataN1SmMessageLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataN1SmMessageLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataN1SmMessageLocalVarFile)
 		binaryDataN1SmMessageLocalVarFileBytes = fbs
 		binaryDataN1SmMessageLocalVarFileName = binaryDataN1SmMessageLocalVarFile.Name()
 		binaryDataN1SmMessageLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataN1SmMessageLocalVarFileBytes, fileName: binaryDataN1SmMessageLocalVarFileName, formFileName: binaryDataN1SmMessageLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataN1SmMessageLocalVarFileBytes, fileName: binaryDataN1SmMessageLocalVarFileName, formFileName: binaryDataN1SmMessageLocalVarFormFileName})
 	var binaryDataN2SmInformationLocalVarFormFileName string
 	var binaryDataN2SmInformationLocalVarFileName     string
 	var binaryDataN2SmInformationLocalVarFileBytes    []byte
 
 	binaryDataN2SmInformationLocalVarFormFileName = "binaryDataN2SmInformation"
 
-
-	binaryDataN2SmInformationLocalVarFile := r.binaryDataN2SmInformation
-
+	var binaryDataN2SmInformationLocalVarFile *os.File
+	if r.binaryDataN2SmInformation != nil {
+		binaryDataN2SmInformationLocalVarFile = r.binaryDataN2SmInformation
+	}
 	if binaryDataN2SmInformationLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataN2SmInformationLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataN2SmInformationLocalVarFile)
 		binaryDataN2SmInformationLocalVarFileBytes = fbs
 		binaryDataN2SmInformationLocalVarFileName = binaryDataN2SmInformationLocalVarFile.Name()
 		binaryDataN2SmInformationLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2SmInformationLocalVarFileBytes, fileName: binaryDataN2SmInformationLocalVarFileName, formFileName: binaryDataN2SmInformationLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2SmInformationLocalVarFileBytes, fileName: binaryDataN2SmInformationLocalVarFileName, formFileName: binaryDataN2SmInformationLocalVarFormFileName})
 	var binaryDataN2SmInformationExt1LocalVarFormFileName string
 	var binaryDataN2SmInformationExt1LocalVarFileName     string
 	var binaryDataN2SmInformationExt1LocalVarFileBytes    []byte
 
 	binaryDataN2SmInformationExt1LocalVarFormFileName = "binaryDataN2SmInformationExt1"
 
-
-	binaryDataN2SmInformationExt1LocalVarFile := r.binaryDataN2SmInformationExt1
-
+	var binaryDataN2SmInformationExt1LocalVarFile *os.File
+	if r.binaryDataN2SmInformationExt1 != nil {
+		binaryDataN2SmInformationExt1LocalVarFile = r.binaryDataN2SmInformationExt1
+	}
 	if binaryDataN2SmInformationExt1LocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataN2SmInformationExt1LocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataN2SmInformationExt1LocalVarFile)
 		binaryDataN2SmInformationExt1LocalVarFileBytes = fbs
 		binaryDataN2SmInformationExt1LocalVarFileName = binaryDataN2SmInformationExt1LocalVarFile.Name()
 		binaryDataN2SmInformationExt1LocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataN2SmInformationExt1LocalVarFileBytes, fileName: binaryDataN2SmInformationExt1LocalVarFileName, formFileName: binaryDataN2SmInformationExt1LocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataN2SmInformationExt1LocalVarFileBytes, fileName: binaryDataN2SmInformationExt1LocalVarFileName, formFileName: binaryDataN2SmInformationExt1LocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -175,9 +175,9 @@ func (a *SMContextsCollectionApiService) PostSmContextsExecute(r ApiPostSmContex
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

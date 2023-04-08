@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,6 +10,7 @@ configuration.go
 docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/DeregistrationReason.md
+docs/DeregistrationReasonAnyOf.md
 docs/DeregistrationRequest.md
 docs/Guami.md
 docs/IMEIUpdateApi.md
@@ -19,6 +19,7 @@ docs/ImeiUpdateResponse.md
 docs/InvalidParam.md
 docs/MMESGSNDeregistrationApi.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -32,12 +33,14 @@ go.sum
 model_access_token_err.go
 model_access_token_req.go
 model_deregistration_reason.go
+model_deregistration_reason_any_of.go
 model_deregistration_request.go
 model_guami.go
 model_imei_update_info.go
 model_imei_update_response.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

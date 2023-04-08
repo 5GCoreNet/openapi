@@ -56,7 +56,7 @@ func NewProblemDetails1WithDefaults() *ProblemDetails1 {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *ProblemDetails1) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -74,7 +74,7 @@ func (o *ProblemDetails1) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *ProblemDetails1) SetType(v string) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *ProblemDetails1) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -106,7 +106,7 @@ func (o *ProblemDetails1) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasTitle() bool {
-	if o != nil && !IsNil(o.Title) {
+	if o != nil && !isNil(o.Title) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *ProblemDetails1) SetTitle(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetStatus() int32 {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *ProblemDetails1) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetStatusOk() (*int32, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -138,7 +138,7 @@ func (o *ProblemDetails1) GetStatusOk() (*int32, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *ProblemDetails1) SetStatus(v int32) {
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetDetail() string {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *ProblemDetails1) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetDetailOk() (*string, bool) {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		return nil, false
 	}
 	return o.Detail, true
@@ -170,7 +170,7 @@ func (o *ProblemDetails1) GetDetailOk() (*string, bool) {
 
 // HasDetail returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasDetail() bool {
-	if o != nil && !IsNil(o.Detail) {
+	if o != nil && !isNil(o.Detail) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *ProblemDetails1) SetDetail(v string) {
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetInstance() string {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *ProblemDetails1) GetInstance() string {
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		return nil, false
 	}
 	return o.Instance, true
@@ -202,7 +202,7 @@ func (o *ProblemDetails1) GetInstanceOk() (*string, bool) {
 
 // HasInstance returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && !isNil(o.Instance) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *ProblemDetails1) SetInstance(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetCause() string {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *ProblemDetails1) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -234,7 +234,7 @@ func (o *ProblemDetails1) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *ProblemDetails1) SetCause(v string) {
 
 // GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetInvalidParams() []InvalidParam1 {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		var ret []InvalidParam1
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *ProblemDetails1) GetInvalidParams() []InvalidParam1 {
 // GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetInvalidParamsOk() ([]InvalidParam1, bool) {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		return nil, false
 	}
 	return o.InvalidParams, true
@@ -266,7 +266,7 @@ func (o *ProblemDetails1) GetInvalidParamsOk() ([]InvalidParam1, bool) {
 
 // HasInvalidParams returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasInvalidParams() bool {
-	if o != nil && !IsNil(o.InvalidParams) {
+	if o != nil && !isNil(o.InvalidParams) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *ProblemDetails1) SetInvalidParams(v []InvalidParam1) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProblemDetails1) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *ProblemDetails1) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetails1) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -298,7 +298,7 @@ func (o *ProblemDetails1) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProblemDetails1) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -320,28 +320,28 @@ func (o ProblemDetails1) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetails1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Title) {
+	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Detail) {
+	if !isNil(o.Detail) {
 		toSerialize["detail"] = o.Detail
 	}
-	if !IsNil(o.Instance) {
+	if !isNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.InvalidParams) {
+	if !isNil(o.InvalidParams) {
 		toSerialize["invalidParams"] = o.InvalidParams
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

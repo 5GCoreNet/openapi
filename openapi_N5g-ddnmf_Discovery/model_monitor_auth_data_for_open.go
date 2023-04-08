@@ -47,7 +47,7 @@ func NewMonitorAuthDataForOpenWithDefaults() *MonitorAuthDataForOpen {
 
 // GetProseAppCodes returns the ProseAppCodes field value if set, zero value otherwise.
 func (o *MonitorAuthDataForOpen) GetProseAppCodes() []string {
-	if o == nil || IsNil(o.ProseAppCodes) {
+	if o == nil || isNil(o.ProseAppCodes) {
 		var ret []string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *MonitorAuthDataForOpen) GetProseAppCodes() []string {
 // GetProseAppCodesOk returns a tuple with the ProseAppCodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorAuthDataForOpen) GetProseAppCodesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ProseAppCodes) {
+	if o == nil || isNil(o.ProseAppCodes) {
 		return nil, false
 	}
 	return o.ProseAppCodes, true
@@ -65,7 +65,7 @@ func (o *MonitorAuthDataForOpen) GetProseAppCodesOk() ([]string, bool) {
 
 // HasProseAppCodes returns a boolean if a field has been set.
 func (o *MonitorAuthDataForOpen) HasProseAppCodes() bool {
-	if o != nil && !IsNil(o.ProseAppCodes) {
+	if o != nil && !isNil(o.ProseAppCodes) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *MonitorAuthDataForOpen) SetProseAppCodes(v []string) {
 
 // GetProseAppPrefix returns the ProseAppPrefix field value if set, zero value otherwise.
 func (o *MonitorAuthDataForOpen) GetProseAppPrefix() string {
-	if o == nil || IsNil(o.ProseAppPrefix) {
+	if o == nil || isNil(o.ProseAppPrefix) {
 		var ret string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *MonitorAuthDataForOpen) GetProseAppPrefix() string {
 // GetProseAppPrefixOk returns a tuple with the ProseAppPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorAuthDataForOpen) GetProseAppPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseAppPrefix) {
+	if o == nil || isNil(o.ProseAppPrefix) {
 		return nil, false
 	}
 	return o.ProseAppPrefix, true
@@ -97,7 +97,7 @@ func (o *MonitorAuthDataForOpen) GetProseAppPrefixOk() (*string, bool) {
 
 // HasProseAppPrefix returns a boolean if a field has been set.
 func (o *MonitorAuthDataForOpen) HasProseAppPrefix() bool {
-	if o != nil && !IsNil(o.ProseAppPrefix) {
+	if o != nil && !isNil(o.ProseAppPrefix) {
 		return true
 	}
 
@@ -167,10 +167,10 @@ func (o MonitorAuthDataForOpen) MarshalJSON() ([]byte, error) {
 
 func (o MonitorAuthDataForOpen) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProseAppCodes) {
+	if !isNil(o.ProseAppCodes) {
 		toSerialize["proseAppCodes"] = o.ProseAppCodes
 	}
-	if !IsNil(o.ProseAppPrefix) {
+	if !isNil(o.ProseAppPrefix) {
 		toSerialize["proseAppPrefix"] = o.ProseAppPrefix
 	}
 	toSerialize["proseAppMasks"] = o.ProseAppMasks

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -12,6 +11,7 @@ docs/AMPolicyEventsSubscriptionDocumentApi.md
 docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/AmEvent.md
+docs/AmEventAnyOf.md
 docs/AmEventData.md
 docs/AmEventNotification.md
 docs/AmEventsNotification.md
@@ -19,6 +19,7 @@ docs/AmEventsSubscData.md
 docs/AmEventsSubscDataRm.md
 docs/AmEventsSubscRespData.md
 docs/AmTerminationCause.md
+docs/AmTerminationCauseAnyOf.md
 docs/AmTerminationInfo.md
 docs/AppAmContextData.md
 docs/AppAmContextRespData.md
@@ -28,7 +29,9 @@ docs/AsTimeDistributionParam.md
 docs/IndividualApplicationAMContextDocumentApi.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/NotificationMethod.md
+docs/NotificationMethodAnyOf.md
 docs/PduidInformation.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
@@ -42,6 +45,7 @@ go.sum
 model_access_token_err.go
 model_access_token_req.go
 model_am_event.go
+model_am_event_any_of.go
 model_am_event_data.go
 model_am_event_notification.go
 model_am_events_notification.go
@@ -49,6 +53,7 @@ model_am_events_subsc_data.go
 model_am_events_subsc_data_rm.go
 model_am_events_subsc_resp_data.go
 model_am_termination_cause.go
+model_am_termination_cause_any_of.go
 model_am_termination_info.go
 model_app_am_context_data.go
 model_app_am_context_resp_data.go
@@ -56,7 +61,9 @@ model_app_am_context_update_data.go
 model_as_time_distribution_param.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_notification_method.go
+model_notification_method_any_of.go
 model_pduid_information.go
 model_plmn_id.go
 model_plmn_id_nid.go

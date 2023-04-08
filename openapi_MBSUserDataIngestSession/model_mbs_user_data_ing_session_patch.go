@@ -43,7 +43,7 @@ func NewMBSUserDataIngSessionPatchWithDefaults() *MBSUserDataIngSessionPatch {
 
 // GetMbsDisSessInfos returns the MbsDisSessInfos field value if set, zero value otherwise.
 func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfos() map[string]MBSDistributionSessionInfo {
-	if o == nil || IsNil(o.MbsDisSessInfos) {
+	if o == nil || isNil(o.MbsDisSessInfos) {
 		var ret map[string]MBSDistributionSessionInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfos() map[string]MBSDistribu
 // GetMbsDisSessInfosOk returns a tuple with the MbsDisSessInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfosOk() (*map[string]MBSDistributionSessionInfo, bool) {
-	if o == nil || IsNil(o.MbsDisSessInfos) {
+	if o == nil || isNil(o.MbsDisSessInfos) {
 		return nil, false
 	}
 	return o.MbsDisSessInfos, true
@@ -61,7 +61,7 @@ func (o *MBSUserDataIngSessionPatch) GetMbsDisSessInfosOk() (*map[string]MBSDist
 
 // HasMbsDisSessInfos returns a boolean if a field has been set.
 func (o *MBSUserDataIngSessionPatch) HasMbsDisSessInfos() bool {
-	if o != nil && !IsNil(o.MbsDisSessInfos) {
+	if o != nil && !isNil(o.MbsDisSessInfos) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MBSUserDataIngSessionPatch) SetMbsDisSessInfos(v map[string]MBSDistribu
 
 // GetActPeriods returns the ActPeriods field value if set, zero value otherwise.
 func (o *MBSUserDataIngSessionPatch) GetActPeriods() []TimeWindow {
-	if o == nil || IsNil(o.ActPeriods) {
+	if o == nil || isNil(o.ActPeriods) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MBSUserDataIngSessionPatch) GetActPeriods() []TimeWindow {
 // GetActPeriodsOk returns a tuple with the ActPeriods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSessionPatch) GetActPeriodsOk() ([]TimeWindow, bool) {
-	if o == nil || IsNil(o.ActPeriods) {
+	if o == nil || isNil(o.ActPeriods) {
 		return nil, false
 	}
 	return o.ActPeriods, true
@@ -93,7 +93,7 @@ func (o *MBSUserDataIngSessionPatch) GetActPeriodsOk() ([]TimeWindow, bool) {
 
 // HasActPeriods returns a boolean if a field has been set.
 func (o *MBSUserDataIngSessionPatch) HasActPeriods() bool {
-	if o != nil && !IsNil(o.ActPeriods) {
+	if o != nil && !isNil(o.ActPeriods) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o MBSUserDataIngSessionPatch) MarshalJSON() ([]byte, error) {
 
 func (o MBSUserDataIngSessionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsDisSessInfos) {
+	if !isNil(o.MbsDisSessInfos) {
 		toSerialize["mbsDisSessInfos"] = o.MbsDisSessInfos
 	}
-	if !IsNil(o.ActPeriods) {
+	if !isNil(o.ActPeriods) {
 		toSerialize["actPeriods"] = o.ActPeriods
 	}
 	return toSerialize, nil

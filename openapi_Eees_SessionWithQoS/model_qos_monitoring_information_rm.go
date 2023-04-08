@@ -52,7 +52,7 @@ func NewQosMonitoringInformationRmWithDefaults() *QosMonitoringInformationRm {
 
 // GetReqQosMonParams returns the ReqQosMonParams field value if set, zero value otherwise.
 func (o *QosMonitoringInformationRm) GetReqQosMonParams() []RequestedQosMonitoringParameter {
-	if o == nil || IsNil(o.ReqQosMonParams) {
+	if o == nil || isNil(o.ReqQosMonParams) {
 		var ret []RequestedQosMonitoringParameter
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *QosMonitoringInformationRm) GetReqQosMonParams() []RequestedQosMonitori
 // GetReqQosMonParamsOk returns a tuple with the ReqQosMonParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInformationRm) GetReqQosMonParamsOk() ([]RequestedQosMonitoringParameter, bool) {
-	if o == nil || IsNil(o.ReqQosMonParams) {
+	if o == nil || isNil(o.ReqQosMonParams) {
 		return nil, false
 	}
 	return o.ReqQosMonParams, true
@@ -70,7 +70,7 @@ func (o *QosMonitoringInformationRm) GetReqQosMonParamsOk() ([]RequestedQosMonit
 
 // HasReqQosMonParams returns a boolean if a field has been set.
 func (o *QosMonitoringInformationRm) HasReqQosMonParams() bool {
-	if o != nil && !IsNil(o.ReqQosMonParams) {
+	if o != nil && !isNil(o.ReqQosMonParams) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *QosMonitoringInformationRm) SetReqQosMonParams(v []RequestedQosMonitori
 
 // GetRepFreqs returns the RepFreqs field value if set, zero value otherwise.
 func (o *QosMonitoringInformationRm) GetRepFreqs() []ReportingFrequency {
-	if o == nil || IsNil(o.RepFreqs) {
+	if o == nil || isNil(o.RepFreqs) {
 		var ret []ReportingFrequency
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *QosMonitoringInformationRm) GetRepFreqs() []ReportingFrequency {
 // GetRepFreqsOk returns a tuple with the RepFreqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInformationRm) GetRepFreqsOk() ([]ReportingFrequency, bool) {
-	if o == nil || IsNil(o.RepFreqs) {
+	if o == nil || isNil(o.RepFreqs) {
 		return nil, false
 	}
 	return o.RepFreqs, true
@@ -102,7 +102,7 @@ func (o *QosMonitoringInformationRm) GetRepFreqsOk() ([]ReportingFrequency, bool
 
 // HasRepFreqs returns a boolean if a field has been set.
 func (o *QosMonitoringInformationRm) HasRepFreqs() bool {
-	if o != nil && !IsNil(o.RepFreqs) {
+	if o != nil && !isNil(o.RepFreqs) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *QosMonitoringInformationRm) SetRepFreqs(v []ReportingFrequency) {
 
 // GetRepThreshDl returns the RepThreshDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringInformationRm) GetRepThreshDl() int32 {
-	if o == nil || IsNil(o.RepThreshDl.Get()) {
+	if o == nil || isNil(o.RepThreshDl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *QosMonitoringInformationRm) UnsetRepThreshDl() {
 
 // GetRepThreshUl returns the RepThreshUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringInformationRm) GetRepThreshUl() int32 {
-	if o == nil || IsNil(o.RepThreshUl.Get()) {
+	if o == nil || isNil(o.RepThreshUl.Get()) {
 		var ret int32
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *QosMonitoringInformationRm) UnsetRepThreshUl() {
 
 // GetRepThreshRp returns the RepThreshRp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringInformationRm) GetRepThreshRp() int32 {
-	if o == nil || IsNil(o.RepThreshRp.Get()) {
+	if o == nil || isNil(o.RepThreshRp.Get()) {
 		var ret int32
 		return ret
 	}
@@ -242,7 +242,7 @@ func (o *QosMonitoringInformationRm) UnsetRepThreshRp() {
 
 // GetWaitTime returns the WaitTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringInformationRm) GetWaitTime() int32 {
-	if o == nil || IsNil(o.WaitTime.Get()) {
+	if o == nil || isNil(o.WaitTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *QosMonitoringInformationRm) UnsetWaitTime() {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *QosMonitoringInformationRm) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod.Get()) {
+	if o == nil || isNil(o.RepPeriod.Get()) {
 		var ret int32
 		return ret
 	}
@@ -334,10 +334,10 @@ func (o QosMonitoringInformationRm) MarshalJSON() ([]byte, error) {
 
 func (o QosMonitoringInformationRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReqQosMonParams) {
+	if !isNil(o.ReqQosMonParams) {
 		toSerialize["reqQosMonParams"] = o.ReqQosMonParams
 	}
-	if !IsNil(o.RepFreqs) {
+	if !isNil(o.RepFreqs) {
 		toSerialize["repFreqs"] = o.RepFreqs
 	}
 	if o.RepThreshDl.IsSet() {

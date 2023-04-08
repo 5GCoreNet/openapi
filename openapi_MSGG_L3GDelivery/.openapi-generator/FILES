@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -12,6 +11,7 @@ docs/AccessTokenReq.md
 docs/Address.md
 docs/Address1.md
 docs/AddressType.md
+docs/AddressTypeAnyOf.md
 docs/DeliveryStatusReport.md
 docs/InvalidParam.md
 docs/L3GMessageDeliveryApi.md
@@ -19,10 +19,12 @@ docs/L3GStatusReportDeliveryApi.md
 docs/L3gMessageDelivery.md
 docs/MessageSegmentParameters.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
 docs/ReportDeliveryStatus.md
+docs/ReportDeliveryStatusAnyOf.md
 docs/Snssai.md
 git_push.sh
 go.mod
@@ -32,15 +34,18 @@ model_access_token_req.go
 model_address.go
 model_address_1.go
 model_address_type.go
+model_address_type_any_of.go
 model_delivery_status_report.go
 model_invalid_param.go
 model_l3g_message_delivery.go
 model_message_segment_parameters.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
 model_report_delivery_status.go
+model_report_delivery_status_any_of.go
 model_snssai.go
 response.go
 test/api_l3_g_message_delivery_test.go

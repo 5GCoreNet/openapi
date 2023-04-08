@@ -17,23 +17,37 @@ import (
 
 // DetectingNode Represents the type of serving node that detected the reachability of the UE
 type DetectingNode struct {
-	string *string
+	DetectingNodeAnyOf *DetectingNodeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DetectingNode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DetectingNodeAnyOf
+	err = json.Unmarshal(data, &dst.DetectingNodeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDetectingNodeAnyOf, _ := json.Marshal(dst.DetectingNodeAnyOf)
+		if string(jsonDetectingNodeAnyOf) == "{}" { // empty struct
+			dst.DetectingNodeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DetectingNodeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DetectingNodeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DetectingNode)")
@@ -41,8 +55,12 @@ func (dst *DetectingNode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DetectingNode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DetectingNodeAnyOf != nil {
+		return json.Marshal(&src.DetectingNodeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

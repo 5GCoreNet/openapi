@@ -41,7 +41,7 @@ func NewGbaSubscriberDataWithDefaults() *GbaSubscriberData {
 
 // GetGuss returns the Guss field value if set, zero value otherwise.
 func (o *GbaSubscriberData) GetGuss() Guss {
-	if o == nil || IsNil(o.Guss) {
+	if o == nil || isNil(o.Guss) {
 		var ret Guss
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *GbaSubscriberData) GetGuss() Guss {
 // GetGussOk returns a tuple with the Guss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GbaSubscriberData) GetGussOk() (*Guss, bool) {
-	if o == nil || IsNil(o.Guss) {
+	if o == nil || isNil(o.Guss) {
 		return nil, false
 	}
 	return o.Guss, true
@@ -59,7 +59,7 @@ func (o *GbaSubscriberData) GetGussOk() (*Guss, bool) {
 
 // HasGuss returns a boolean if a field has been set.
 func (o *GbaSubscriberData) HasGuss() bool {
-	if o != nil && !IsNil(o.Guss) {
+	if o != nil && !isNil(o.Guss) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o GbaSubscriberData) MarshalJSON() ([]byte, error) {
 
 func (o GbaSubscriberData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Guss) {
+	if !isNil(o.Guss) {
 		toSerialize["guss"] = o.Guss
 	}
 	return toSerialize, nil

@@ -46,7 +46,7 @@ func NewAfCoordinationInfoWithDefaults() *AfCoordinationInfo {
 
 // GetSourceDnai returns the SourceDnai field value if set, zero value otherwise.
 func (o *AfCoordinationInfo) GetSourceDnai() string {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AfCoordinationInfo) GetSourceDnai() string {
 // GetSourceDnaiOk returns a tuple with the SourceDnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfCoordinationInfo) GetSourceDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceDnai) {
+	if o == nil || isNil(o.SourceDnai) {
 		return nil, false
 	}
 	return o.SourceDnai, true
@@ -64,7 +64,7 @@ func (o *AfCoordinationInfo) GetSourceDnaiOk() (*string, bool) {
 
 // HasSourceDnai returns a boolean if a field has been set.
 func (o *AfCoordinationInfo) HasSourceDnai() bool {
-	if o != nil && !IsNil(o.SourceDnai) {
+	if o != nil && !isNil(o.SourceDnai) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AfCoordinationInfo) SetSourceDnai(v string) {
 
 // GetSourceUeIpv4Addr returns the SourceUeIpv4Addr field value if set, zero value otherwise.
 func (o *AfCoordinationInfo) GetSourceUeIpv4Addr() string {
-	if o == nil || IsNil(o.SourceUeIpv4Addr) {
+	if o == nil || isNil(o.SourceUeIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AfCoordinationInfo) GetSourceUeIpv4Addr() string {
 // GetSourceUeIpv4AddrOk returns a tuple with the SourceUeIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfCoordinationInfo) GetSourceUeIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceUeIpv4Addr) {
+	if o == nil || isNil(o.SourceUeIpv4Addr) {
 		return nil, false
 	}
 	return o.SourceUeIpv4Addr, true
@@ -96,7 +96,7 @@ func (o *AfCoordinationInfo) GetSourceUeIpv4AddrOk() (*string, bool) {
 
 // HasSourceUeIpv4Addr returns a boolean if a field has been set.
 func (o *AfCoordinationInfo) HasSourceUeIpv4Addr() bool {
-	if o != nil && !IsNil(o.SourceUeIpv4Addr) {
+	if o != nil && !isNil(o.SourceUeIpv4Addr) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AfCoordinationInfo) SetSourceUeIpv4Addr(v string) {
 
 // GetSourceUeIpv6Prefix returns the SourceUeIpv6Prefix field value if set, zero value otherwise.
 func (o *AfCoordinationInfo) GetSourceUeIpv6Prefix() Ipv6Prefix {
-	if o == nil || IsNil(o.SourceUeIpv6Prefix) {
+	if o == nil || isNil(o.SourceUeIpv6Prefix) {
 		var ret Ipv6Prefix
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AfCoordinationInfo) GetSourceUeIpv6Prefix() Ipv6Prefix {
 // GetSourceUeIpv6PrefixOk returns a tuple with the SourceUeIpv6Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfCoordinationInfo) GetSourceUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.SourceUeIpv6Prefix) {
+	if o == nil || isNil(o.SourceUeIpv6Prefix) {
 		return nil, false
 	}
 	return o.SourceUeIpv6Prefix, true
@@ -128,7 +128,7 @@ func (o *AfCoordinationInfo) GetSourceUeIpv6PrefixOk() (*Ipv6Prefix, bool) {
 
 // HasSourceUeIpv6Prefix returns a boolean if a field has been set.
 func (o *AfCoordinationInfo) HasSourceUeIpv6Prefix() bool {
-	if o != nil && !IsNil(o.SourceUeIpv6Prefix) {
+	if o != nil && !isNil(o.SourceUeIpv6Prefix) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *AfCoordinationInfo) SetSourceUeIpv6Prefix(v Ipv6Prefix) {
 
 // GetNotificationInfoList returns the NotificationInfoList field value if set, zero value otherwise.
 func (o *AfCoordinationInfo) GetNotificationInfoList() []NotificationInfo {
-	if o == nil || IsNil(o.NotificationInfoList) {
+	if o == nil || isNil(o.NotificationInfoList) {
 		var ret []NotificationInfo
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *AfCoordinationInfo) GetNotificationInfoList() []NotificationInfo {
 // GetNotificationInfoListOk returns a tuple with the NotificationInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfCoordinationInfo) GetNotificationInfoListOk() ([]NotificationInfo, bool) {
-	if o == nil || IsNil(o.NotificationInfoList) {
+	if o == nil || isNil(o.NotificationInfoList) {
 		return nil, false
 	}
 	return o.NotificationInfoList, true
@@ -160,7 +160,7 @@ func (o *AfCoordinationInfo) GetNotificationInfoListOk() ([]NotificationInfo, bo
 
 // HasNotificationInfoList returns a boolean if a field has been set.
 func (o *AfCoordinationInfo) HasNotificationInfoList() bool {
-	if o != nil && !IsNil(o.NotificationInfoList) {
+	if o != nil && !isNil(o.NotificationInfoList) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o AfCoordinationInfo) MarshalJSON() ([]byte, error) {
 
 func (o AfCoordinationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SourceDnai) {
+	if !isNil(o.SourceDnai) {
 		toSerialize["sourceDnai"] = o.SourceDnai
 	}
-	if !IsNil(o.SourceUeIpv4Addr) {
+	if !isNil(o.SourceUeIpv4Addr) {
 		toSerialize["sourceUeIpv4Addr"] = o.SourceUeIpv4Addr
 	}
-	if !IsNil(o.SourceUeIpv6Prefix) {
+	if !isNil(o.SourceUeIpv6Prefix) {
 		toSerialize["sourceUeIpv6Prefix"] = o.SourceUeIpv6Prefix
 	}
-	if !IsNil(o.NotificationInfoList) {
+	if !isNil(o.NotificationInfoList) {
 		toSerialize["notificationInfoList"] = o.NotificationInfoList
 	}
 	return toSerialize, nil

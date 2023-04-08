@@ -42,7 +42,7 @@ func NewContextInfoWithDefaults() *ContextInfo {
 
 // GetOrigHeaders returns the OrigHeaders field value if set, zero value otherwise.
 func (o *ContextInfo) GetOrigHeaders() []string {
-	if o == nil || IsNil(o.OrigHeaders) {
+	if o == nil || isNil(o.OrigHeaders) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ContextInfo) GetOrigHeaders() []string {
 // GetOrigHeadersOk returns a tuple with the OrigHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextInfo) GetOrigHeadersOk() ([]string, bool) {
-	if o == nil || IsNil(o.OrigHeaders) {
+	if o == nil || isNil(o.OrigHeaders) {
 		return nil, false
 	}
 	return o.OrigHeaders, true
@@ -60,7 +60,7 @@ func (o *ContextInfo) GetOrigHeadersOk() ([]string, bool) {
 
 // HasOrigHeaders returns a boolean if a field has been set.
 func (o *ContextInfo) HasOrigHeaders() bool {
-	if o != nil && !IsNil(o.OrigHeaders) {
+	if o != nil && !isNil(o.OrigHeaders) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ContextInfo) SetOrigHeaders(v []string) {
 
 // GetRequestHeaders returns the RequestHeaders field value if set, zero value otherwise.
 func (o *ContextInfo) GetRequestHeaders() []string {
-	if o == nil || IsNil(o.RequestHeaders) {
+	if o == nil || isNil(o.RequestHeaders) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ContextInfo) GetRequestHeaders() []string {
 // GetRequestHeadersOk returns a tuple with the RequestHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextInfo) GetRequestHeadersOk() ([]string, bool) {
-	if o == nil || IsNil(o.RequestHeaders) {
+	if o == nil || isNil(o.RequestHeaders) {
 		return nil, false
 	}
 	return o.RequestHeaders, true
@@ -92,7 +92,7 @@ func (o *ContextInfo) GetRequestHeadersOk() ([]string, bool) {
 
 // HasRequestHeaders returns a boolean if a field has been set.
 func (o *ContextInfo) HasRequestHeaders() bool {
-	if o != nil && !IsNil(o.RequestHeaders) {
+	if o != nil && !isNil(o.RequestHeaders) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ContextInfo) MarshalJSON() ([]byte, error) {
 
 func (o ContextInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OrigHeaders) {
+	if !isNil(o.OrigHeaders) {
 		toSerialize["origHeaders"] = o.OrigHeaders
 	}
-	if !IsNil(o.RequestHeaders) {
+	if !isNil(o.RequestHeaders) {
 		toSerialize["requestHeaders"] = o.RequestHeaders
 	}
 	return toSerialize, nil

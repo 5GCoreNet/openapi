@@ -45,7 +45,7 @@ func NewVnGroupDataWithDefaults() *VnGroupData {
 
 // GetPduSessionTypes returns the PduSessionTypes field value if set, zero value otherwise.
 func (o *VnGroupData) GetPduSessionTypes() PduSessionTypes {
-	if o == nil || IsNil(o.PduSessionTypes) {
+	if o == nil || isNil(o.PduSessionTypes) {
 		var ret PduSessionTypes
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *VnGroupData) GetPduSessionTypes() PduSessionTypes {
 // GetPduSessionTypesOk returns a tuple with the PduSessionTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnGroupData) GetPduSessionTypesOk() (*PduSessionTypes, bool) {
-	if o == nil || IsNil(o.PduSessionTypes) {
+	if o == nil || isNil(o.PduSessionTypes) {
 		return nil, false
 	}
 	return o.PduSessionTypes, true
@@ -63,7 +63,7 @@ func (o *VnGroupData) GetPduSessionTypesOk() (*PduSessionTypes, bool) {
 
 // HasPduSessionTypes returns a boolean if a field has been set.
 func (o *VnGroupData) HasPduSessionTypes() bool {
-	if o != nil && !IsNil(o.PduSessionTypes) {
+	if o != nil && !isNil(o.PduSessionTypes) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *VnGroupData) SetPduSessionTypes(v PduSessionTypes) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *VnGroupData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *VnGroupData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnGroupData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -95,7 +95,7 @@ func (o *VnGroupData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *VnGroupData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *VnGroupData) SetDnn(v string) {
 
 // GetSingleNssai returns the SingleNssai field value if set, zero value otherwise.
 func (o *VnGroupData) GetSingleNssai() Snssai {
-	if o == nil || IsNil(o.SingleNssai) {
+	if o == nil || isNil(o.SingleNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *VnGroupData) GetSingleNssai() Snssai {
 // GetSingleNssaiOk returns a tuple with the SingleNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnGroupData) GetSingleNssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.SingleNssai) {
+	if o == nil || isNil(o.SingleNssai) {
 		return nil, false
 	}
 	return o.SingleNssai, true
@@ -127,7 +127,7 @@ func (o *VnGroupData) GetSingleNssaiOk() (*Snssai, bool) {
 
 // HasSingleNssai returns a boolean if a field has been set.
 func (o *VnGroupData) HasSingleNssai() bool {
-	if o != nil && !IsNil(o.SingleNssai) {
+	if o != nil && !isNil(o.SingleNssai) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *VnGroupData) SetSingleNssai(v Snssai) {
 
 // GetAppDescriptors returns the AppDescriptors field value if set, zero value otherwise.
 func (o *VnGroupData) GetAppDescriptors() []AppDescriptor {
-	if o == nil || IsNil(o.AppDescriptors) {
+	if o == nil || isNil(o.AppDescriptors) {
 		var ret []AppDescriptor
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *VnGroupData) GetAppDescriptors() []AppDescriptor {
 // GetAppDescriptorsOk returns a tuple with the AppDescriptors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VnGroupData) GetAppDescriptorsOk() ([]AppDescriptor, bool) {
-	if o == nil || IsNil(o.AppDescriptors) {
+	if o == nil || isNil(o.AppDescriptors) {
 		return nil, false
 	}
 	return o.AppDescriptors, true
@@ -159,7 +159,7 @@ func (o *VnGroupData) GetAppDescriptorsOk() ([]AppDescriptor, bool) {
 
 // HasAppDescriptors returns a boolean if a field has been set.
 func (o *VnGroupData) HasAppDescriptors() bool {
-	if o != nil && !IsNil(o.AppDescriptors) {
+	if o != nil && !isNil(o.AppDescriptors) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o VnGroupData) MarshalJSON() ([]byte, error) {
 
 func (o VnGroupData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PduSessionTypes) {
+	if !isNil(o.PduSessionTypes) {
 		toSerialize["pduSessionTypes"] = o.PduSessionTypes
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.SingleNssai) {
+	if !isNil(o.SingleNssai) {
 		toSerialize["singleNssai"] = o.SingleNssai
 	}
-	if !IsNil(o.AppDescriptors) {
+	if !isNil(o.AppDescriptors) {
 		toSerialize["appDescriptors"] = o.AppDescriptors
 	}
 	return toSerialize, nil

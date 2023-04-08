@@ -13,7 +13,7 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -103,9 +103,9 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) CreateIndividualInfluen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,16 +323,16 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 	localVarFormParams := url.Values{}
 
 	if r.dnn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.snssai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.internalGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-Group-Id", r.internalGroupId, "")
+		parameterAddToQuery(localVarQueryParams, "internal-Group-Id", r.internalGroupId, "")
 	}
 	if r.supi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supi", r.supi, "")
+		parameterAddToQuery(localVarQueryParams, "supi", r.supi, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -361,9 +361,9 @@ func (a *InfluenceDataSubscriptionsCollectionApiService) ReadInfluenceDataSubscr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

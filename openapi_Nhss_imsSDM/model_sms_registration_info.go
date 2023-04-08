@@ -69,7 +69,7 @@ func (o *SmsRegistrationInfo) SetIpSmGwNumber(v string) {
 
 // GetScAddress returns the ScAddress field value if set, zero value otherwise.
 func (o *SmsRegistrationInfo) GetScAddress() string {
-	if o == nil || IsNil(o.ScAddress) {
+	if o == nil || isNil(o.ScAddress) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *SmsRegistrationInfo) GetScAddress() string {
 // GetScAddressOk returns a tuple with the ScAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsRegistrationInfo) GetScAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.ScAddress) {
+	if o == nil || isNil(o.ScAddress) {
 		return nil, false
 	}
 	return o.ScAddress, true
@@ -87,7 +87,7 @@ func (o *SmsRegistrationInfo) GetScAddressOk() (*string, bool) {
 
 // HasScAddress returns a boolean if a field has been set.
 func (o *SmsRegistrationInfo) HasScAddress() bool {
-	if o != nil && !IsNil(o.ScAddress) {
+	if o != nil && !isNil(o.ScAddress) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o SmsRegistrationInfo) MarshalJSON() ([]byte, error) {
 func (o SmsRegistrationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ipSmGwNumber"] = o.IpSmGwNumber
-	if !IsNil(o.ScAddress) {
+	if !isNil(o.ScAddress) {
 		toSerialize["scAddress"] = o.ScAddress
 	}
 	return toSerialize, nil

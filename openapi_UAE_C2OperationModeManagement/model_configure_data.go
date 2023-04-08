@@ -204,7 +204,7 @@ func (o *ConfigureData) SetPrimaryC2CommMode(v C2CommMode) {
 
 // GetSecondaryC2CommMode returns the SecondaryC2CommMode field value if set, zero value otherwise.
 func (o *ConfigureData) GetSecondaryC2CommMode() C2CommMode {
-	if o == nil || IsNil(o.SecondaryC2CommMode) {
+	if o == nil || isNil(o.SecondaryC2CommMode) {
 		var ret C2CommMode
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *ConfigureData) GetSecondaryC2CommMode() C2CommMode {
 // GetSecondaryC2CommModeOk returns a tuple with the SecondaryC2CommMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigureData) GetSecondaryC2CommModeOk() (*C2CommMode, bool) {
-	if o == nil || IsNil(o.SecondaryC2CommMode) {
+	if o == nil || isNil(o.SecondaryC2CommMode) {
 		return nil, false
 	}
 	return o.SecondaryC2CommMode, true
@@ -222,7 +222,7 @@ func (o *ConfigureData) GetSecondaryC2CommModeOk() (*C2CommMode, bool) {
 
 // HasSecondaryC2CommMode returns a boolean if a field has been set.
 func (o *ConfigureData) HasSecondaryC2CommMode() bool {
-	if o != nil && !IsNil(o.SecondaryC2CommMode) {
+	if o != nil && !isNil(o.SecondaryC2CommMode) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *ConfigureData) SetC2SwitchPolicies(v C2SwitchPolicies) {
 
 // GetC2ServiceArea returns the C2ServiceArea field value if set, zero value otherwise.
 func (o *ConfigureData) GetC2ServiceArea() C2ServiceArea {
-	if o == nil || IsNil(o.C2ServiceArea) {
+	if o == nil || isNil(o.C2ServiceArea) {
 		var ret C2ServiceArea
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *ConfigureData) GetC2ServiceArea() C2ServiceArea {
 // GetC2ServiceAreaOk returns a tuple with the C2ServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigureData) GetC2ServiceAreaOk() (*C2ServiceArea, bool) {
-	if o == nil || IsNil(o.C2ServiceArea) {
+	if o == nil || isNil(o.C2ServiceArea) {
 		return nil, false
 	}
 	return o.C2ServiceArea, true
@@ -278,7 +278,7 @@ func (o *ConfigureData) GetC2ServiceAreaOk() (*C2ServiceArea, bool) {
 
 // HasC2ServiceArea returns a boolean if a field has been set.
 func (o *ConfigureData) HasC2ServiceArea() bool {
-	if o != nil && !IsNil(o.C2ServiceArea) {
+	if o != nil && !isNil(o.C2ServiceArea) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *ConfigureData) SetC2ServiceArea(v C2ServiceArea) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ConfigureData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *ConfigureData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigureData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -310,7 +310,7 @@ func (o *ConfigureData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ConfigureData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -338,14 +338,14 @@ func (o ConfigureData) ToMap() (map[string]interface{}, error) {
 	toSerialize["c2CommModeSwitchTypes"] = o.C2CommModeSwitchTypes
 	toSerialize["notificationUri"] = o.NotificationUri
 	toSerialize["primaryC2CommMode"] = o.PrimaryC2CommMode
-	if !IsNil(o.SecondaryC2CommMode) {
+	if !isNil(o.SecondaryC2CommMode) {
 		toSerialize["secondaryC2CommMode"] = o.SecondaryC2CommMode
 	}
 	toSerialize["c2SwitchPolicies"] = o.C2SwitchPolicies
-	if !IsNil(o.C2ServiceArea) {
+	if !isNil(o.C2ServiceArea) {
 		toSerialize["c2ServiceArea"] = o.C2ServiceArea
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

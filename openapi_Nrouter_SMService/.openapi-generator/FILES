@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -15,6 +14,7 @@ docs/CreationOfRoutingInfoApi.md
 docs/InvalidParam.md
 docs/Ipv6Addr.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -36,6 +36,7 @@ model_created_routing_data.go
 model_invalid_param.go
 model_ipv6_addr.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

@@ -13,7 +13,7 @@ package openapi_Nnrf_AccessToken
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -228,13 +228,13 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.contentEncoding != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Content-Encoding", r.contentEncoding, "")
+		parameterAddToQuery(localVarQueryParams, "Content-Encoding", r.contentEncoding, "")
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "grant_type", r.grantType, "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "nfInstanceId", r.nfInstanceId, "")
+	parameterAddToQuery(localVarFormParams, "grant_type", r.grantType, "")
+	parameterAddToQuery(localVarFormParams, "nfInstanceId", r.nfInstanceId, "")
 	if r.nfType != nil {
 		paramJson, err := parameterToJson(*r.nfType)
 		if err != nil {
@@ -249,9 +249,9 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		}
 		localVarFormParams.Add("targetNfType", paramJson)
 	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "scope", r.scope, "")
+	parameterAddToQuery(localVarFormParams, "scope", r.scope, "")
 	if r.targetNfInstanceId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "targetNfInstanceId", r.targetNfInstanceId, "")
+		parameterAddToQuery(localVarFormParams, "targetNfInstanceId", r.targetNfInstanceId, "")
 	}
 	if r.requesterPlmn != nil {
 		paramJson, err := parameterToJson(*r.requesterPlmn)
@@ -261,16 +261,16 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		localVarFormParams.Add("requesterPlmn", paramJson)
 	}
 	if r.requesterPlmnList != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "requesterPlmnList", r.requesterPlmnList, "multi")
+		parameterAddToQuery(localVarFormParams, "requesterPlmnList", r.requesterPlmnList, "multi")
 	}
 	if r.requesterSnssaiList != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "requesterSnssaiList", r.requesterSnssaiList, "multi")
+		parameterAddToQuery(localVarFormParams, "requesterSnssaiList", r.requesterSnssaiList, "multi")
 	}
 	if r.requesterFqdn != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "requesterFqdn", r.requesterFqdn, "")
+		parameterAddToQuery(localVarFormParams, "requesterFqdn", r.requesterFqdn, "")
 	}
 	if r.requesterSnpnList != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "requesterSnpnList", r.requesterSnpnList, "multi")
+		parameterAddToQuery(localVarFormParams, "requesterSnpnList", r.requesterSnpnList, "multi")
 	}
 	if r.targetPlmn != nil {
 		paramJson, err := parameterToJson(*r.targetPlmn)
@@ -287,22 +287,22 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		localVarFormParams.Add("targetSnpn", paramJson)
 	}
 	if r.targetSnssaiList != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "targetSnssaiList", r.targetSnssaiList, "multi")
+		parameterAddToQuery(localVarFormParams, "targetSnssaiList", r.targetSnssaiList, "multi")
 	}
 	if r.targetNsiList != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "targetNsiList", r.targetNsiList, "multi")
+		parameterAddToQuery(localVarFormParams, "targetNsiList", r.targetNsiList, "multi")
 	}
 	if r.targetNfSetId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "targetNfSetId", r.targetNfSetId, "")
+		parameterAddToQuery(localVarFormParams, "targetNfSetId", r.targetNfSetId, "")
 	}
 	if r.targetNfServiceSetId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "targetNfServiceSetId", r.targetNfServiceSetId, "")
+		parameterAddToQuery(localVarFormParams, "targetNfServiceSetId", r.targetNfServiceSetId, "")
 	}
 	if r.hnrfAccessTokenUri != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "hnrfAccessTokenUri", r.hnrfAccessTokenUri, "")
+		parameterAddToQuery(localVarFormParams, "hnrfAccessTokenUri", r.hnrfAccessTokenUri, "")
 	}
 	if r.sourceNfInstanceId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "sourceNfInstanceId", r.sourceNfInstanceId, "")
+		parameterAddToQuery(localVarFormParams, "sourceNfInstanceId", r.sourceNfInstanceId, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -314,9 +314,9 @@ func (a *AccessTokenRequestApiService) AccessTokenRequestExecute(r ApiAccessToke
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

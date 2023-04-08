@@ -67,7 +67,7 @@ func (o *LimitIdToMonitoringKey) SetLimitId(v string) {
 
 // GetMonkey returns the Monkey field value if set, zero value otherwise.
 func (o *LimitIdToMonitoringKey) GetMonkey() []string {
-	if o == nil || IsNil(o.Monkey) {
+	if o == nil || isNil(o.Monkey) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LimitIdToMonitoringKey) GetMonkey() []string {
 // GetMonkeyOk returns a tuple with the Monkey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LimitIdToMonitoringKey) GetMonkeyOk() ([]string, bool) {
-	if o == nil || IsNil(o.Monkey) {
+	if o == nil || isNil(o.Monkey) {
 		return nil, false
 	}
 	return o.Monkey, true
@@ -85,7 +85,7 @@ func (o *LimitIdToMonitoringKey) GetMonkeyOk() ([]string, bool) {
 
 // HasMonkey returns a boolean if a field has been set.
 func (o *LimitIdToMonitoringKey) HasMonkey() bool {
-	if o != nil && !IsNil(o.Monkey) {
+	if o != nil && !isNil(o.Monkey) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o LimitIdToMonitoringKey) MarshalJSON() ([]byte, error) {
 func (o LimitIdToMonitoringKey) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["limitId"] = o.LimitId
-	if !IsNil(o.Monkey) {
+	if !isNil(o.Monkey) {
 		toSerialize["monkey"] = o.Monkey
 	}
 	return toSerialize, nil

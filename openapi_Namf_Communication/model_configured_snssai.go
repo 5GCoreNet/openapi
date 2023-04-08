@@ -67,7 +67,7 @@ func (o *ConfiguredSnssai) SetConfiguredSnssai(v Snssai) {
 
 // GetMappedHomeSnssai returns the MappedHomeSnssai field value if set, zero value otherwise.
 func (o *ConfiguredSnssai) GetMappedHomeSnssai() Snssai {
-	if o == nil || IsNil(o.MappedHomeSnssai) {
+	if o == nil || isNil(o.MappedHomeSnssai) {
 		var ret Snssai
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ConfiguredSnssai) GetMappedHomeSnssai() Snssai {
 // GetMappedHomeSnssaiOk returns a tuple with the MappedHomeSnssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfiguredSnssai) GetMappedHomeSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.MappedHomeSnssai) {
+	if o == nil || isNil(o.MappedHomeSnssai) {
 		return nil, false
 	}
 	return o.MappedHomeSnssai, true
@@ -85,7 +85,7 @@ func (o *ConfiguredSnssai) GetMappedHomeSnssaiOk() (*Snssai, bool) {
 
 // HasMappedHomeSnssai returns a boolean if a field has been set.
 func (o *ConfiguredSnssai) HasMappedHomeSnssai() bool {
-	if o != nil && !IsNil(o.MappedHomeSnssai) {
+	if o != nil && !isNil(o.MappedHomeSnssai) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ConfiguredSnssai) MarshalJSON() ([]byte, error) {
 func (o ConfiguredSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["configuredSnssai"] = o.ConfiguredSnssai
-	if !IsNil(o.MappedHomeSnssai) {
+	if !isNil(o.MappedHomeSnssai) {
 		toSerialize["mappedHomeSnssai"] = o.MappedHomeSnssai
 	}
 	return toSerialize, nil

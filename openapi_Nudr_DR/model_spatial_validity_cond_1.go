@@ -43,7 +43,7 @@ func NewSpatialValidityCond1WithDefaults() *SpatialValidityCond1 {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *SpatialValidityCond1) GetTrackingAreaList() []Tai1 {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		var ret []Tai1
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SpatialValidityCond1) GetTrackingAreaList() []Tai1 {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond1) GetTrackingAreaListOk() ([]Tai1, bool) {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -61,7 +61,7 @@ func (o *SpatialValidityCond1) GetTrackingAreaListOk() ([]Tai1, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *SpatialValidityCond1) HasTrackingAreaList() bool {
-	if o != nil && !IsNil(o.TrackingAreaList) {
+	if o != nil && !isNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SpatialValidityCond1) SetTrackingAreaList(v []Tai1) {
 
 // GetCountries returns the Countries field value if set, zero value otherwise.
 func (o *SpatialValidityCond1) GetCountries() []string {
-	if o == nil || IsNil(o.Countries) {
+	if o == nil || isNil(o.Countries) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SpatialValidityCond1) GetCountries() []string {
 // GetCountriesOk returns a tuple with the Countries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond1) GetCountriesOk() ([]string, bool) {
-	if o == nil || IsNil(o.Countries) {
+	if o == nil || isNil(o.Countries) {
 		return nil, false
 	}
 	return o.Countries, true
@@ -93,7 +93,7 @@ func (o *SpatialValidityCond1) GetCountriesOk() ([]string, bool) {
 
 // HasCountries returns a boolean if a field has been set.
 func (o *SpatialValidityCond1) HasCountries() bool {
-	if o != nil && !IsNil(o.Countries) {
+	if o != nil && !isNil(o.Countries) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SpatialValidityCond1) SetCountries(v []string) {
 
 // GetGeographicalServiceArea returns the GeographicalServiceArea field value if set, zero value otherwise.
 func (o *SpatialValidityCond1) GetGeographicalServiceArea() GeoServiceArea1 {
-	if o == nil || IsNil(o.GeographicalServiceArea) {
+	if o == nil || isNil(o.GeographicalServiceArea) {
 		var ret GeoServiceArea1
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SpatialValidityCond1) GetGeographicalServiceArea() GeoServiceArea1 {
 // GetGeographicalServiceAreaOk returns a tuple with the GeographicalServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond1) GetGeographicalServiceAreaOk() (*GeoServiceArea1, bool) {
-	if o == nil || IsNil(o.GeographicalServiceArea) {
+	if o == nil || isNil(o.GeographicalServiceArea) {
 		return nil, false
 	}
 	return o.GeographicalServiceArea, true
@@ -125,7 +125,7 @@ func (o *SpatialValidityCond1) GetGeographicalServiceAreaOk() (*GeoServiceArea1,
 
 // HasGeographicalServiceArea returns a boolean if a field has been set.
 func (o *SpatialValidityCond1) HasGeographicalServiceArea() bool {
-	if o != nil && !IsNil(o.GeographicalServiceArea) {
+	if o != nil && !isNil(o.GeographicalServiceArea) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o SpatialValidityCond1) MarshalJSON() ([]byte, error) {
 
 func (o SpatialValidityCond1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TrackingAreaList) {
+	if !isNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
-	if !IsNil(o.Countries) {
+	if !isNil(o.Countries) {
 		toSerialize["countries"] = o.Countries
 	}
-	if !IsNil(o.GeographicalServiceArea) {
+	if !isNil(o.GeographicalServiceArea) {
 		toSerialize["geographicalServiceArea"] = o.GeographicalServiceArea
 	}
 	return toSerialize, nil

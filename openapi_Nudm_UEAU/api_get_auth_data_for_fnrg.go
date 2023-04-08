@@ -13,7 +13,7 @@ package openapi_Nudm_UEAU
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -108,12 +108,12 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 		return localVarReturnValue, nil, reportError("authenticatedInd is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "authenticated-ind", r.authenticatedInd, "")
+	parameterAddToQuery(localVarQueryParams, "authenticated-ind", r.authenticatedInd, "")
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.plmnId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+		parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -133,10 +133,10 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -148,9 +148,9 @@ func (a *GetAuthDataForFNRGApiService) GetRgAuthDataExecute(r ApiGetRgAuthDataRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -53,7 +53,7 @@ func (o *DownlinkDataNotificationControlRm) GetNotifCtrlInds() []NotificationCon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownlinkDataNotificationControlRm) GetNotifCtrlIndsOk() ([]NotificationControlIndication, bool) {
-	if o == nil || IsNil(o.NotifCtrlInds) {
+	if o == nil || isNil(o.NotifCtrlInds) {
 		return nil, false
 	}
 	return o.NotifCtrlInds, true
@@ -61,7 +61,7 @@ func (o *DownlinkDataNotificationControlRm) GetNotifCtrlIndsOk() ([]Notification
 
 // HasNotifCtrlInds returns a boolean if a field has been set.
 func (o *DownlinkDataNotificationControlRm) HasNotifCtrlInds() bool {
-	if o != nil && IsNil(o.NotifCtrlInds) {
+	if o != nil && isNil(o.NotifCtrlInds) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *DownlinkDataNotificationControlRm) GetTypesOfNotif() []DlDataDeliverySt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownlinkDataNotificationControlRm) GetTypesOfNotifOk() ([]DlDataDeliveryStatus, bool) {
-	if o == nil || IsNil(o.TypesOfNotif) {
+	if o == nil || isNil(o.TypesOfNotif) {
 		return nil, false
 	}
 	return o.TypesOfNotif, true
@@ -94,7 +94,7 @@ func (o *DownlinkDataNotificationControlRm) GetTypesOfNotifOk() ([]DlDataDeliver
 
 // HasTypesOfNotif returns a boolean if a field has been set.
 func (o *DownlinkDataNotificationControlRm) HasTypesOfNotif() bool {
-	if o != nil && IsNil(o.TypesOfNotif) {
+	if o != nil && isNil(o.TypesOfNotif) {
 		return true
 	}
 

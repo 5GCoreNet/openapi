@@ -77,7 +77,7 @@ func NewChargeablePartyWithDefaults() *ChargeableParty {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *ChargeableParty) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ChargeableParty) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -95,7 +95,7 @@ func (o *ChargeableParty) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *ChargeableParty) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ChargeableParty) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ChargeableParty) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ChargeableParty) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -127,7 +127,7 @@ func (o *ChargeableParty) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ChargeableParty) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ChargeableParty) SetSupportedFeatures(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *ChargeableParty) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ChargeableParty) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -159,7 +159,7 @@ func (o *ChargeableParty) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *ChargeableParty) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ChargeableParty) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *ChargeableParty) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ChargeableParty) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -191,7 +191,7 @@ func (o *ChargeableParty) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *ChargeableParty) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *ChargeableParty) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ChargeableParty) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *ChargeableParty) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -247,7 +247,7 @@ func (o *ChargeableParty) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ChargeableParty) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *ChargeableParty) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ChargeableParty) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *ChargeableParty) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -279,7 +279,7 @@ func (o *ChargeableParty) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) 
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ChargeableParty) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *ChargeableParty) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetExterAppId returns the ExterAppId field value if set, zero value otherwise.
 func (o *ChargeableParty) GetExterAppId() string {
-	if o == nil || IsNil(o.ExterAppId) {
+	if o == nil || isNil(o.ExterAppId) {
 		var ret string
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *ChargeableParty) GetExterAppId() string {
 // GetExterAppIdOk returns a tuple with the ExterAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetExterAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterAppId) {
+	if o == nil || isNil(o.ExterAppId) {
 		return nil, false
 	}
 	return o.ExterAppId, true
@@ -311,7 +311,7 @@ func (o *ChargeableParty) GetExterAppIdOk() (*string, bool) {
 
 // HasExterAppId returns a boolean if a field has been set.
 func (o *ChargeableParty) HasExterAppId() bool {
-	if o != nil && !IsNil(o.ExterAppId) {
+	if o != nil && !isNil(o.ExterAppId) {
 		return true
 	}
 
@@ -325,7 +325,7 @@ func (o *ChargeableParty) SetExterAppId(v string) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *ChargeableParty) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -335,7 +335,7 @@ func (o *ChargeableParty) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -343,7 +343,7 @@ func (o *ChargeableParty) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *ChargeableParty) HasIpv4Addr() bool {
-	if o != nil && !IsNil(o.Ipv4Addr) {
+	if o != nil && !isNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *ChargeableParty) SetIpv4Addr(v string) {
 
 // GetIpDomain returns the IpDomain field value if set, zero value otherwise.
 func (o *ChargeableParty) GetIpDomain() string {
-	if o == nil || IsNil(o.IpDomain) {
+	if o == nil || isNil(o.IpDomain) {
 		var ret string
 		return ret
 	}
@@ -367,7 +367,7 @@ func (o *ChargeableParty) GetIpDomain() string {
 // GetIpDomainOk returns a tuple with the IpDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetIpDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.IpDomain) {
+	if o == nil || isNil(o.IpDomain) {
 		return nil, false
 	}
 	return o.IpDomain, true
@@ -375,7 +375,7 @@ func (o *ChargeableParty) GetIpDomainOk() (*string, bool) {
 
 // HasIpDomain returns a boolean if a field has been set.
 func (o *ChargeableParty) HasIpDomain() bool {
-	if o != nil && !IsNil(o.IpDomain) {
+	if o != nil && !isNil(o.IpDomain) {
 		return true
 	}
 
@@ -389,7 +389,7 @@ func (o *ChargeableParty) SetIpDomain(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *ChargeableParty) GetIpv6Addr() string {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		var ret string
 		return ret
 	}
@@ -399,7 +399,7 @@ func (o *ChargeableParty) GetIpv6Addr() string {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetIpv6AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -407,7 +407,7 @@ func (o *ChargeableParty) GetIpv6AddrOk() (*string, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *ChargeableParty) HasIpv6Addr() bool {
-	if o != nil && !IsNil(o.Ipv6Addr) {
+	if o != nil && !isNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -421,7 +421,7 @@ func (o *ChargeableParty) SetIpv6Addr(v string) {
 
 // GetMacAddr returns the MacAddr field value if set, zero value otherwise.
 func (o *ChargeableParty) GetMacAddr() string {
-	if o == nil || IsNil(o.MacAddr) {
+	if o == nil || isNil(o.MacAddr) {
 		var ret string
 		return ret
 	}
@@ -431,7 +431,7 @@ func (o *ChargeableParty) GetMacAddr() string {
 // GetMacAddrOk returns a tuple with the MacAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetMacAddrOk() (*string, bool) {
-	if o == nil || IsNil(o.MacAddr) {
+	if o == nil || isNil(o.MacAddr) {
 		return nil, false
 	}
 	return o.MacAddr, true
@@ -439,7 +439,7 @@ func (o *ChargeableParty) GetMacAddrOk() (*string, bool) {
 
 // HasMacAddr returns a boolean if a field has been set.
 func (o *ChargeableParty) HasMacAddr() bool {
-	if o != nil && !IsNil(o.MacAddr) {
+	if o != nil && !isNil(o.MacAddr) {
 		return true
 	}
 
@@ -453,7 +453,7 @@ func (o *ChargeableParty) SetMacAddr(v string) {
 
 // GetFlowInfo returns the FlowInfo field value if set, zero value otherwise.
 func (o *ChargeableParty) GetFlowInfo() []FlowInfo {
-	if o == nil || IsNil(o.FlowInfo) {
+	if o == nil || isNil(o.FlowInfo) {
 		var ret []FlowInfo
 		return ret
 	}
@@ -463,7 +463,7 @@ func (o *ChargeableParty) GetFlowInfo() []FlowInfo {
 // GetFlowInfoOk returns a tuple with the FlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetFlowInfoOk() ([]FlowInfo, bool) {
-	if o == nil || IsNil(o.FlowInfo) {
+	if o == nil || isNil(o.FlowInfo) {
 		return nil, false
 	}
 	return o.FlowInfo, true
@@ -471,7 +471,7 @@ func (o *ChargeableParty) GetFlowInfoOk() ([]FlowInfo, bool) {
 
 // HasFlowInfo returns a boolean if a field has been set.
 func (o *ChargeableParty) HasFlowInfo() bool {
-	if o != nil && !IsNil(o.FlowInfo) {
+	if o != nil && !isNil(o.FlowInfo) {
 		return true
 	}
 
@@ -485,7 +485,7 @@ func (o *ChargeableParty) SetFlowInfo(v []FlowInfo) {
 
 // GetEthFlowInfo returns the EthFlowInfo field value if set, zero value otherwise.
 func (o *ChargeableParty) GetEthFlowInfo() []EthFlowDescription {
-	if o == nil || IsNil(o.EthFlowInfo) {
+	if o == nil || isNil(o.EthFlowInfo) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -495,7 +495,7 @@ func (o *ChargeableParty) GetEthFlowInfo() []EthFlowDescription {
 // GetEthFlowInfoOk returns a tuple with the EthFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetEthFlowInfoOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthFlowInfo) {
+	if o == nil || isNil(o.EthFlowInfo) {
 		return nil, false
 	}
 	return o.EthFlowInfo, true
@@ -503,7 +503,7 @@ func (o *ChargeableParty) GetEthFlowInfoOk() ([]EthFlowDescription, bool) {
 
 // HasEthFlowInfo returns a boolean if a field has been set.
 func (o *ChargeableParty) HasEthFlowInfo() bool {
-	if o != nil && !IsNil(o.EthFlowInfo) {
+	if o != nil && !isNil(o.EthFlowInfo) {
 		return true
 	}
 
@@ -565,7 +565,7 @@ func (o *ChargeableParty) SetSponsoringEnabled(v bool) {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *ChargeableParty) GetReferenceId() string {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		var ret string
 		return ret
 	}
@@ -575,7 +575,7 @@ func (o *ChargeableParty) GetReferenceId() string {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetReferenceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -583,7 +583,7 @@ func (o *ChargeableParty) GetReferenceIdOk() (*string, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *ChargeableParty) HasReferenceId() bool {
-	if o != nil && !IsNil(o.ReferenceId) {
+	if o != nil && !isNil(o.ReferenceId) {
 		return true
 	}
 
@@ -597,7 +597,7 @@ func (o *ChargeableParty) SetReferenceId(v string) {
 
 // GetServAuthInfo returns the ServAuthInfo field value if set, zero value otherwise.
 func (o *ChargeableParty) GetServAuthInfo() ServAuthInfo {
-	if o == nil || IsNil(o.ServAuthInfo) {
+	if o == nil || isNil(o.ServAuthInfo) {
 		var ret ServAuthInfo
 		return ret
 	}
@@ -607,7 +607,7 @@ func (o *ChargeableParty) GetServAuthInfo() ServAuthInfo {
 // GetServAuthInfoOk returns a tuple with the ServAuthInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetServAuthInfoOk() (*ServAuthInfo, bool) {
-	if o == nil || IsNil(o.ServAuthInfo) {
+	if o == nil || isNil(o.ServAuthInfo) {
 		return nil, false
 	}
 	return o.ServAuthInfo, true
@@ -615,7 +615,7 @@ func (o *ChargeableParty) GetServAuthInfoOk() (*ServAuthInfo, bool) {
 
 // HasServAuthInfo returns a boolean if a field has been set.
 func (o *ChargeableParty) HasServAuthInfo() bool {
-	if o != nil && !IsNil(o.ServAuthInfo) {
+	if o != nil && !isNil(o.ServAuthInfo) {
 		return true
 	}
 
@@ -629,7 +629,7 @@ func (o *ChargeableParty) SetServAuthInfo(v ServAuthInfo) {
 
 // GetUsageThreshold returns the UsageThreshold field value if set, zero value otherwise.
 func (o *ChargeableParty) GetUsageThreshold() UsageThreshold {
-	if o == nil || IsNil(o.UsageThreshold) {
+	if o == nil || isNil(o.UsageThreshold) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -639,7 +639,7 @@ func (o *ChargeableParty) GetUsageThreshold() UsageThreshold {
 // GetUsageThresholdOk returns a tuple with the UsageThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetUsageThresholdOk() (*UsageThreshold, bool) {
-	if o == nil || IsNil(o.UsageThreshold) {
+	if o == nil || isNil(o.UsageThreshold) {
 		return nil, false
 	}
 	return o.UsageThreshold, true
@@ -647,7 +647,7 @@ func (o *ChargeableParty) GetUsageThresholdOk() (*UsageThreshold, bool) {
 
 // HasUsageThreshold returns a boolean if a field has been set.
 func (o *ChargeableParty) HasUsageThreshold() bool {
-	if o != nil && !IsNil(o.UsageThreshold) {
+	if o != nil && !isNil(o.UsageThreshold) {
 		return true
 	}
 
@@ -661,7 +661,7 @@ func (o *ChargeableParty) SetUsageThreshold(v UsageThreshold) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *ChargeableParty) GetEvents() []Event {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		var ret []Event
 		return ret
 	}
@@ -671,7 +671,7 @@ func (o *ChargeableParty) GetEvents() []Event {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargeableParty) GetEventsOk() ([]Event, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -679,7 +679,7 @@ func (o *ChargeableParty) GetEventsOk() ([]Event, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *ChargeableParty) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && !isNil(o.Events) {
 		return true
 	}
 
@@ -701,58 +701,58 @@ func (o ChargeableParty) MarshalJSON() ([]byte, error) {
 
 func (o ChargeableParty) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.ExterAppId) {
+	if !isNil(o.ExterAppId) {
 		toSerialize["exterAppId"] = o.ExterAppId
 	}
-	if !IsNil(o.Ipv4Addr) {
+	if !isNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !IsNil(o.IpDomain) {
+	if !isNil(o.IpDomain) {
 		toSerialize["ipDomain"] = o.IpDomain
 	}
-	if !IsNil(o.Ipv6Addr) {
+	if !isNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
-	if !IsNil(o.MacAddr) {
+	if !isNil(o.MacAddr) {
 		toSerialize["macAddr"] = o.MacAddr
 	}
-	if !IsNil(o.FlowInfo) {
+	if !isNil(o.FlowInfo) {
 		toSerialize["flowInfo"] = o.FlowInfo
 	}
-	if !IsNil(o.EthFlowInfo) {
+	if !isNil(o.EthFlowInfo) {
 		toSerialize["ethFlowInfo"] = o.EthFlowInfo
 	}
 	toSerialize["sponsorInformation"] = o.SponsorInformation
 	toSerialize["sponsoringEnabled"] = o.SponsoringEnabled
-	if !IsNil(o.ReferenceId) {
+	if !isNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
-	if !IsNil(o.ServAuthInfo) {
+	if !isNil(o.ServAuthInfo) {
 		toSerialize["servAuthInfo"] = o.ServAuthInfo
 	}
-	if !IsNil(o.UsageThreshold) {
+	if !isNil(o.UsageThreshold) {
 		toSerialize["usageThreshold"] = o.UsageThreshold
 	}
-	if !IsNil(o.Events) {
+	if !isNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil

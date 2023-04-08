@@ -69,7 +69,7 @@ func (o *Modifications) SetIdentity(v string) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *Modifications) GetOperations() []PatchItem {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		var ret []PatchItem
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *Modifications) GetOperations() []PatchItem {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Modifications) GetOperationsOk() ([]PatchItem, bool) {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -87,7 +87,7 @@ func (o *Modifications) GetOperationsOk() ([]PatchItem, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *Modifications) HasOperations() bool {
-	if o != nil && !IsNil(o.Operations) {
+	if o != nil && !isNil(o.Operations) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *Modifications) SetOperations(v []PatchItem) {
 
 // GetTag returns the Tag field value if set, zero value otherwise.
 func (o *Modifications) GetTag() string {
-	if o == nil || IsNil(o.Tag) {
+	if o == nil || isNil(o.Tag) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *Modifications) GetTag() string {
 // GetTagOk returns a tuple with the Tag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Modifications) GetTagOk() (*string, bool) {
-	if o == nil || IsNil(o.Tag) {
+	if o == nil || isNil(o.Tag) {
 		return nil, false
 	}
 	return o.Tag, true
@@ -119,7 +119,7 @@ func (o *Modifications) GetTagOk() (*string, bool) {
 
 // HasTag returns a boolean if a field has been set.
 func (o *Modifications) HasTag() bool {
-	if o != nil && !IsNil(o.Tag) {
+	if o != nil && !isNil(o.Tag) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o Modifications) MarshalJSON() ([]byte, error) {
 func (o Modifications) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["identity"] = o.Identity
-	if !IsNil(o.Operations) {
+	if !isNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
-	if !IsNil(o.Tag) {
+	if !isNil(o.Tag) {
 		toSerialize["tag"] = o.Tag
 	}
 	return toSerialize, nil

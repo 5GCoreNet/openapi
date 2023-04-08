@@ -54,7 +54,7 @@ func NewDeviceTriggeringPatchWithDefaults() *DeviceTriggeringPatch {
 
 // GetValidityPeriod returns the ValidityPeriod field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetValidityPeriod() int32 {
-	if o == nil || IsNil(o.ValidityPeriod) {
+	if o == nil || isNil(o.ValidityPeriod) {
 		var ret int32
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *DeviceTriggeringPatch) GetValidityPeriod() int32 {
 // GetValidityPeriodOk returns a tuple with the ValidityPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetValidityPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.ValidityPeriod) {
+	if o == nil || isNil(o.ValidityPeriod) {
 		return nil, false
 	}
 	return o.ValidityPeriod, true
@@ -72,7 +72,7 @@ func (o *DeviceTriggeringPatch) GetValidityPeriodOk() (*int32, bool) {
 
 // HasValidityPeriod returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasValidityPeriod() bool {
-	if o != nil && !IsNil(o.ValidityPeriod) {
+	if o != nil && !isNil(o.ValidityPeriod) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *DeviceTriggeringPatch) SetValidityPeriod(v int32) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetPriority() Priority {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		var ret Priority
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *DeviceTriggeringPatch) GetPriority() Priority {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetPriorityOk() (*Priority, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -104,7 +104,7 @@ func (o *DeviceTriggeringPatch) GetPriorityOk() (*Priority, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && !isNil(o.Priority) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *DeviceTriggeringPatch) SetPriority(v Priority) {
 
 // GetApplicationPortId returns the ApplicationPortId field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetApplicationPortId() int32 {
-	if o == nil || IsNil(o.ApplicationPortId) {
+	if o == nil || isNil(o.ApplicationPortId) {
 		var ret int32
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *DeviceTriggeringPatch) GetApplicationPortId() int32 {
 // GetApplicationPortIdOk returns a tuple with the ApplicationPortId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetApplicationPortIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ApplicationPortId) {
+	if o == nil || isNil(o.ApplicationPortId) {
 		return nil, false
 	}
 	return o.ApplicationPortId, true
@@ -136,7 +136,7 @@ func (o *DeviceTriggeringPatch) GetApplicationPortIdOk() (*int32, bool) {
 
 // HasApplicationPortId returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasApplicationPortId() bool {
-	if o != nil && !IsNil(o.ApplicationPortId) {
+	if o != nil && !isNil(o.ApplicationPortId) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *DeviceTriggeringPatch) SetApplicationPortId(v int32) {
 
 // GetAppSrcPortId returns the AppSrcPortId field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetAppSrcPortId() int32 {
-	if o == nil || IsNil(o.AppSrcPortId) {
+	if o == nil || isNil(o.AppSrcPortId) {
 		var ret int32
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *DeviceTriggeringPatch) GetAppSrcPortId() int32 {
 // GetAppSrcPortIdOk returns a tuple with the AppSrcPortId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetAppSrcPortIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AppSrcPortId) {
+	if o == nil || isNil(o.AppSrcPortId) {
 		return nil, false
 	}
 	return o.AppSrcPortId, true
@@ -168,7 +168,7 @@ func (o *DeviceTriggeringPatch) GetAppSrcPortIdOk() (*int32, bool) {
 
 // HasAppSrcPortId returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasAppSrcPortId() bool {
-	if o != nil && !IsNil(o.AppSrcPortId) {
+	if o != nil && !isNil(o.AppSrcPortId) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *DeviceTriggeringPatch) SetAppSrcPortId(v int32) {
 
 // GetTriggerPayload returns the TriggerPayload field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetTriggerPayload() string {
-	if o == nil || IsNil(o.TriggerPayload) {
+	if o == nil || isNil(o.TriggerPayload) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *DeviceTriggeringPatch) GetTriggerPayload() string {
 // GetTriggerPayloadOk returns a tuple with the TriggerPayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetTriggerPayloadOk() (*string, bool) {
-	if o == nil || IsNil(o.TriggerPayload) {
+	if o == nil || isNil(o.TriggerPayload) {
 		return nil, false
 	}
 	return o.TriggerPayload, true
@@ -200,7 +200,7 @@ func (o *DeviceTriggeringPatch) GetTriggerPayloadOk() (*string, bool) {
 
 // HasTriggerPayload returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasTriggerPayload() bool {
-	if o != nil && !IsNil(o.TriggerPayload) {
+	if o != nil && !isNil(o.TriggerPayload) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *DeviceTriggeringPatch) SetTriggerPayload(v string) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *DeviceTriggeringPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -232,7 +232,7 @@ func (o *DeviceTriggeringPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *DeviceTriggeringPatch) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *DeviceTriggeringPatch) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -264,7 +264,7 @@ func (o *DeviceTriggeringPatch) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *DeviceTriggeringPatch) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *DeviceTriggeringPatch) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *DeviceTriggeringPatch) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceTriggeringPatch) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -296,7 +296,7 @@ func (o *DeviceTriggeringPatch) GetWebsockNotifConfigOk() (*WebsockNotifConfig, 
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *DeviceTriggeringPatch) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -318,28 +318,28 @@ func (o DeviceTriggeringPatch) MarshalJSON() ([]byte, error) {
 
 func (o DeviceTriggeringPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ValidityPeriod) {
+	if !isNil(o.ValidityPeriod) {
 		toSerialize["validityPeriod"] = o.ValidityPeriod
 	}
-	if !IsNil(o.Priority) {
+	if !isNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !IsNil(o.ApplicationPortId) {
+	if !isNil(o.ApplicationPortId) {
 		toSerialize["applicationPortId"] = o.ApplicationPortId
 	}
-	if !IsNil(o.AppSrcPortId) {
+	if !isNil(o.AppSrcPortId) {
 		toSerialize["appSrcPortId"] = o.AppSrcPortId
 	}
-	if !IsNil(o.TriggerPayload) {
+	if !isNil(o.TriggerPayload) {
 		toSerialize["triggerPayload"] = o.TriggerPayload
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
 	return toSerialize, nil

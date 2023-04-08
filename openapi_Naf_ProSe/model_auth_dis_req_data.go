@@ -77,7 +77,7 @@ func (o *AuthDisReqData) SetAuthRequestType(v AuthRequestType) {
 
 // GetProseAppId returns the ProseAppId field value if set, zero value otherwise.
 func (o *AuthDisReqData) GetProseAppId() []string {
-	if o == nil || IsNil(o.ProseAppId) {
+	if o == nil || isNil(o.ProseAppId) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AuthDisReqData) GetProseAppId() []string {
 // GetProseAppIdOk returns a tuple with the ProseAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisReqData) GetProseAppIdOk() ([]string, bool) {
-	if o == nil || IsNil(o.ProseAppId) {
+	if o == nil || isNil(o.ProseAppId) {
 		return nil, false
 	}
 	return o.ProseAppId, true
@@ -95,7 +95,7 @@ func (o *AuthDisReqData) GetProseAppIdOk() ([]string, bool) {
 
 // HasProseAppId returns a boolean if a field has been set.
 func (o *AuthDisReqData) HasProseAppId() bool {
-	if o != nil && !IsNil(o.ProseAppId) {
+	if o != nil && !isNil(o.ProseAppId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AuthDisReqData) SetProseAppId(v []string) {
 
 // GetAllowedSuffixNum returns the AllowedSuffixNum field value if set, zero value otherwise.
 func (o *AuthDisReqData) GetAllowedSuffixNum() int32 {
-	if o == nil || IsNil(o.AllowedSuffixNum) {
+	if o == nil || isNil(o.AllowedSuffixNum) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AuthDisReqData) GetAllowedSuffixNum() int32 {
 // GetAllowedSuffixNumOk returns a tuple with the AllowedSuffixNum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisReqData) GetAllowedSuffixNumOk() (*int32, bool) {
-	if o == nil || IsNil(o.AllowedSuffixNum) {
+	if o == nil || isNil(o.AllowedSuffixNum) {
 		return nil, false
 	}
 	return o.AllowedSuffixNum, true
@@ -127,7 +127,7 @@ func (o *AuthDisReqData) GetAllowedSuffixNumOk() (*int32, bool) {
 
 // HasAllowedSuffixNum returns a boolean if a field has been set.
 func (o *AuthDisReqData) HasAllowedSuffixNum() bool {
-	if o != nil && !IsNil(o.AllowedSuffixNum) {
+	if o != nil && !isNil(o.AllowedSuffixNum) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AuthDisReqData) SetAllowedSuffixNum(v int32) {
 
 // GetAppLevelContainer returns the AppLevelContainer field value if set, zero value otherwise.
 func (o *AuthDisReqData) GetAppLevelContainer() string {
-	if o == nil || IsNil(o.AppLevelContainer) {
+	if o == nil || isNil(o.AppLevelContainer) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *AuthDisReqData) GetAppLevelContainer() string {
 // GetAppLevelContainerOk returns a tuple with the AppLevelContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisReqData) GetAppLevelContainerOk() (*string, bool) {
-	if o == nil || IsNil(o.AppLevelContainer) {
+	if o == nil || isNil(o.AppLevelContainer) {
 		return nil, false
 	}
 	return o.AppLevelContainer, true
@@ -159,7 +159,7 @@ func (o *AuthDisReqData) GetAppLevelContainerOk() (*string, bool) {
 
 // HasAppLevelContainer returns a boolean if a field has been set.
 func (o *AuthDisReqData) HasAppLevelContainer() bool {
-	if o != nil && !IsNil(o.AppLevelContainer) {
+	if o != nil && !isNil(o.AppLevelContainer) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *AuthDisReqData) SetAppLevelContainer(v string) {
 
 // GetRpauid returns the Rpauid field value if set, zero value otherwise.
 func (o *AuthDisReqData) GetRpauid() string {
-	if o == nil || IsNil(o.Rpauid) {
+	if o == nil || isNil(o.Rpauid) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *AuthDisReqData) GetRpauid() string {
 // GetRpauidOk returns a tuple with the Rpauid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisReqData) GetRpauidOk() (*string, bool) {
-	if o == nil || IsNil(o.Rpauid) {
+	if o == nil || isNil(o.Rpauid) {
 		return nil, false
 	}
 	return o.Rpauid, true
@@ -191,7 +191,7 @@ func (o *AuthDisReqData) GetRpauidOk() (*string, bool) {
 
 // HasRpauid returns a boolean if a field has been set.
 func (o *AuthDisReqData) HasRpauid() bool {
-	if o != nil && !IsNil(o.Rpauid) {
+	if o != nil && !isNil(o.Rpauid) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *AuthDisReqData) SetRpauid(v string) {
 
 // GetTargetRpauid returns the TargetRpauid field value if set, zero value otherwise.
 func (o *AuthDisReqData) GetTargetRpauid() string {
-	if o == nil || IsNil(o.TargetRpauid) {
+	if o == nil || isNil(o.TargetRpauid) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *AuthDisReqData) GetTargetRpauid() string {
 // GetTargetRpauidOk returns a tuple with the TargetRpauid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisReqData) GetTargetRpauidOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetRpauid) {
+	if o == nil || isNil(o.TargetRpauid) {
 		return nil, false
 	}
 	return o.TargetRpauid, true
@@ -223,7 +223,7 @@ func (o *AuthDisReqData) GetTargetRpauidOk() (*string, bool) {
 
 // HasTargetRpauid returns a boolean if a field has been set.
 func (o *AuthDisReqData) HasTargetRpauid() bool {
-	if o != nil && !IsNil(o.TargetRpauid) {
+	if o != nil && !isNil(o.TargetRpauid) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *AuthDisReqData) SetTargetRpauid(v string) {
 
 // GetAuthUpdateCallbackUri returns the AuthUpdateCallbackUri field value if set, zero value otherwise.
 func (o *AuthDisReqData) GetAuthUpdateCallbackUri() string {
-	if o == nil || IsNil(o.AuthUpdateCallbackUri) {
+	if o == nil || isNil(o.AuthUpdateCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *AuthDisReqData) GetAuthUpdateCallbackUri() string {
 // GetAuthUpdateCallbackUriOk returns a tuple with the AuthUpdateCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthDisReqData) GetAuthUpdateCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthUpdateCallbackUri) {
+	if o == nil || isNil(o.AuthUpdateCallbackUri) {
 		return nil, false
 	}
 	return o.AuthUpdateCallbackUri, true
@@ -255,7 +255,7 @@ func (o *AuthDisReqData) GetAuthUpdateCallbackUriOk() (*string, bool) {
 
 // HasAuthUpdateCallbackUri returns a boolean if a field has been set.
 func (o *AuthDisReqData) HasAuthUpdateCallbackUri() bool {
-	if o != nil && !IsNil(o.AuthUpdateCallbackUri) {
+	if o != nil && !isNil(o.AuthUpdateCallbackUri) {
 		return true
 	}
 
@@ -278,22 +278,22 @@ func (o AuthDisReqData) MarshalJSON() ([]byte, error) {
 func (o AuthDisReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authRequestType"] = o.AuthRequestType
-	if !IsNil(o.ProseAppId) {
+	if !isNil(o.ProseAppId) {
 		toSerialize["proseAppId"] = o.ProseAppId
 	}
-	if !IsNil(o.AllowedSuffixNum) {
+	if !isNil(o.AllowedSuffixNum) {
 		toSerialize["allowedSuffixNum"] = o.AllowedSuffixNum
 	}
-	if !IsNil(o.AppLevelContainer) {
+	if !isNil(o.AppLevelContainer) {
 		toSerialize["appLevelContainer"] = o.AppLevelContainer
 	}
-	if !IsNil(o.Rpauid) {
+	if !isNil(o.Rpauid) {
 		toSerialize["rpauid"] = o.Rpauid
 	}
-	if !IsNil(o.TargetRpauid) {
+	if !isNil(o.TargetRpauid) {
 		toSerialize["targetRpauid"] = o.TargetRpauid
 	}
-	if !IsNil(o.AuthUpdateCallbackUri) {
+	if !isNil(o.AuthUpdateCallbackUri) {
 		toSerialize["authUpdateCallbackUri"] = o.AuthUpdateCallbackUri
 	}
 	return toSerialize, nil

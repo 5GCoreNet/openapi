@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AfEvent](docs/AfEvent.md)
+ - [AfEventAnyOf](docs/AfEventAnyOf.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [DataAccessProfile](docs/DataAccessProfile.md)
  - [DataAccessProfileLocationAccessRestrictions](docs/DataAccessProfileLocationAccessRestrictions.md)
@@ -97,10 +98,12 @@ Class | Method | HTTP request | Description
  - [DataAccessProfileUserAccessRestrictions](docs/DataAccessProfileUserAccessRestrictions.md)
  - [DataAccessProfileUserAccessRestrictionsUserIdsInner](docs/DataAccessProfileUserAccessRestrictionsUserIdsInner.md)
  - [DataAggregationFunctionType](docs/DataAggregationFunctionType.md)
+ - [DataAggregationFunctionTypeAnyOf](docs/DataAggregationFunctionTypeAnyOf.md)
  - [Ecgi](docs/Ecgi.md)
  - [EllipsoidArc](docs/EllipsoidArc.md)
  - [EllipsoidArcAllOf](docs/EllipsoidArcAllOf.md)
  - [EventConsumerType](docs/EventConsumerType.md)
+ - [EventConsumerTypeAnyOf](docs/EventConsumerTypeAnyOf.md)
  - [EventDataProcessingConfiguration](docs/EventDataProcessingConfiguration.md)
  - [GADShape](docs/GADShape.md)
  - [GNbId](docs/GNbId.md)
@@ -130,6 +133,7 @@ Class | Method | HTTP request | Description
  - [PolygonAllOf](docs/PolygonAllOf.md)
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)

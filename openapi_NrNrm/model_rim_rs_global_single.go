@@ -73,7 +73,7 @@ func (o *RimRSGlobalSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *RimRSGlobalSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *RimRSGlobalSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -91,7 +91,7 @@ func (o *RimRSGlobalSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *RimRSGlobalSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *RimRSGlobalSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *RimRSGlobalSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *RimRSGlobalSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -123,7 +123,7 @@ func (o *RimRSGlobalSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *RimRSGlobalSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *RimRSGlobalSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *RimRSGlobalSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *RimRSGlobalSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -155,7 +155,7 @@ func (o *RimRSGlobalSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, boo
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *RimRSGlobalSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *RimRSGlobalSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *RimRSGlobalSingle) GetAttributes() RimRSGlobalSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret RimRSGlobalSingleAllOfAttributes
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *RimRSGlobalSingle) GetAttributes() RimRSGlobalSingleAllOfAttributes {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingle) GetAttributesOk() (*RimRSGlobalSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -187,7 +187,7 @@ func (o *RimRSGlobalSingle) GetAttributesOk() (*RimRSGlobalSingleAllOfAttributes
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *RimRSGlobalSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *RimRSGlobalSingle) SetAttributes(v RimRSGlobalSingleAllOfAttributes) {
 
 // GetRimRSSet returns the RimRSSet field value if set, zero value otherwise.
 func (o *RimRSGlobalSingle) GetRimRSSet() []RimRSSetSingle {
-	if o == nil || IsNil(o.RimRSSet) {
+	if o == nil || isNil(o.RimRSSet) {
 		var ret []RimRSSetSingle
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *RimRSGlobalSingle) GetRimRSSet() []RimRSSetSingle {
 // GetRimRSSetOk returns a tuple with the RimRSSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSGlobalSingle) GetRimRSSetOk() ([]RimRSSetSingle, bool) {
-	if o == nil || IsNil(o.RimRSSet) {
+	if o == nil || isNil(o.RimRSSet) {
 		return nil, false
 	}
 	return o.RimRSSet, true
@@ -219,7 +219,7 @@ func (o *RimRSGlobalSingle) GetRimRSSetOk() ([]RimRSSetSingle, bool) {
 
 // HasRimRSSet returns a boolean if a field has been set.
 func (o *RimRSGlobalSingle) HasRimRSSet() bool {
-	if o != nil && !IsNil(o.RimRSSet) {
+	if o != nil && !isNil(o.RimRSSet) {
 		return true
 	}
 
@@ -242,19 +242,19 @@ func (o RimRSGlobalSingle) MarshalJSON() ([]byte, error) {
 func (o RimRSGlobalSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.RimRSSet) {
+	if !isNil(o.RimRSSet) {
 		toSerialize["RimRSSet"] = o.RimRSSet
 	}
 	return toSerialize, nil

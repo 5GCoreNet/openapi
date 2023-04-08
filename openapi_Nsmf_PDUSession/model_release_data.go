@@ -53,7 +53,7 @@ func NewReleaseDataWithDefaults() *ReleaseData {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *ReleaseData) GetCause() Cause {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *ReleaseData) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetCauseOk() (*Cause, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -71,7 +71,7 @@ func (o *ReleaseData) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *ReleaseData) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *ReleaseData) SetCause(v Cause) {
 
 // GetNgApCause returns the NgApCause field value if set, zero value otherwise.
 func (o *ReleaseData) GetNgApCause() NgApCause {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *ReleaseData) GetNgApCause() NgApCause {
 // GetNgApCauseOk returns a tuple with the NgApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetNgApCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		return nil, false
 	}
 	return o.NgApCause, true
@@ -103,7 +103,7 @@ func (o *ReleaseData) GetNgApCauseOk() (*NgApCause, bool) {
 
 // HasNgApCause returns a boolean if a field has been set.
 func (o *ReleaseData) HasNgApCause() bool {
-	if o != nil && !IsNil(o.NgApCause) {
+	if o != nil && !isNil(o.NgApCause) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *ReleaseData) SetNgApCause(v NgApCause) {
 
 // GetVar5gMmCauseValue returns the Var5gMmCauseValue field value if set, zero value otherwise.
 func (o *ReleaseData) GetVar5gMmCauseValue() int32 {
-	if o == nil || IsNil(o.Var5gMmCauseValue) {
+	if o == nil || isNil(o.Var5gMmCauseValue) {
 		var ret int32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *ReleaseData) GetVar5gMmCauseValue() int32 {
 // GetVar5gMmCauseValueOk returns a tuple with the Var5gMmCauseValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetVar5gMmCauseValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var5gMmCauseValue) {
+	if o == nil || isNil(o.Var5gMmCauseValue) {
 		return nil, false
 	}
 	return o.Var5gMmCauseValue, true
@@ -135,7 +135,7 @@ func (o *ReleaseData) GetVar5gMmCauseValueOk() (*int32, bool) {
 
 // HasVar5gMmCauseValue returns a boolean if a field has been set.
 func (o *ReleaseData) HasVar5gMmCauseValue() bool {
-	if o != nil && !IsNil(o.Var5gMmCauseValue) {
+	if o != nil && !isNil(o.Var5gMmCauseValue) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *ReleaseData) SetVar5gMmCauseValue(v int32) {
 
 // GetUeLocation returns the UeLocation field value if set, zero value otherwise.
 func (o *ReleaseData) GetUeLocation() UserLocation {
-	if o == nil || IsNil(o.UeLocation) {
+	if o == nil || isNil(o.UeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *ReleaseData) GetUeLocation() UserLocation {
 // GetUeLocationOk returns a tuple with the UeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetUeLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UeLocation) {
+	if o == nil || isNil(o.UeLocation) {
 		return nil, false
 	}
 	return o.UeLocation, true
@@ -167,7 +167,7 @@ func (o *ReleaseData) GetUeLocationOk() (*UserLocation, bool) {
 
 // HasUeLocation returns a boolean if a field has been set.
 func (o *ReleaseData) HasUeLocation() bool {
-	if o != nil && !IsNil(o.UeLocation) {
+	if o != nil && !isNil(o.UeLocation) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *ReleaseData) SetUeLocation(v UserLocation) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *ReleaseData) GetUeTimeZone() string {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *ReleaseData) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -199,7 +199,7 @@ func (o *ReleaseData) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *ReleaseData) HasUeTimeZone() bool {
-	if o != nil && !IsNil(o.UeTimeZone) {
+	if o != nil && !isNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *ReleaseData) SetUeTimeZone(v string) {
 
 // GetAddUeLocation returns the AddUeLocation field value if set, zero value otherwise.
 func (o *ReleaseData) GetAddUeLocation() UserLocation {
-	if o == nil || IsNil(o.AddUeLocation) {
+	if o == nil || isNil(o.AddUeLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *ReleaseData) GetAddUeLocation() UserLocation {
 // GetAddUeLocationOk returns a tuple with the AddUeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetAddUeLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.AddUeLocation) {
+	if o == nil || isNil(o.AddUeLocation) {
 		return nil, false
 	}
 	return o.AddUeLocation, true
@@ -231,7 +231,7 @@ func (o *ReleaseData) GetAddUeLocationOk() (*UserLocation, bool) {
 
 // HasAddUeLocation returns a boolean if a field has been set.
 func (o *ReleaseData) HasAddUeLocation() bool {
-	if o != nil && !IsNil(o.AddUeLocation) {
+	if o != nil && !isNil(o.AddUeLocation) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *ReleaseData) SetAddUeLocation(v UserLocation) {
 
 // GetSecondaryRatUsageReport returns the SecondaryRatUsageReport field value if set, zero value otherwise.
 func (o *ReleaseData) GetSecondaryRatUsageReport() []SecondaryRatUsageReport {
-	if o == nil || IsNil(o.SecondaryRatUsageReport) {
+	if o == nil || isNil(o.SecondaryRatUsageReport) {
 		var ret []SecondaryRatUsageReport
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *ReleaseData) GetSecondaryRatUsageReport() []SecondaryRatUsageReport {
 // GetSecondaryRatUsageReportOk returns a tuple with the SecondaryRatUsageReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetSecondaryRatUsageReportOk() ([]SecondaryRatUsageReport, bool) {
-	if o == nil || IsNil(o.SecondaryRatUsageReport) {
+	if o == nil || isNil(o.SecondaryRatUsageReport) {
 		return nil, false
 	}
 	return o.SecondaryRatUsageReport, true
@@ -263,7 +263,7 @@ func (o *ReleaseData) GetSecondaryRatUsageReportOk() ([]SecondaryRatUsageReport,
 
 // HasSecondaryRatUsageReport returns a boolean if a field has been set.
 func (o *ReleaseData) HasSecondaryRatUsageReport() bool {
-	if o != nil && !IsNil(o.SecondaryRatUsageReport) {
+	if o != nil && !isNil(o.SecondaryRatUsageReport) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *ReleaseData) SetSecondaryRatUsageReport(v []SecondaryRatUsageReport) {
 
 // GetSecondaryRatUsageInfo returns the SecondaryRatUsageInfo field value if set, zero value otherwise.
 func (o *ReleaseData) GetSecondaryRatUsageInfo() []SecondaryRatUsageInfo {
-	if o == nil || IsNil(o.SecondaryRatUsageInfo) {
+	if o == nil || isNil(o.SecondaryRatUsageInfo) {
 		var ret []SecondaryRatUsageInfo
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *ReleaseData) GetSecondaryRatUsageInfo() []SecondaryRatUsageInfo {
 // GetSecondaryRatUsageInfoOk returns a tuple with the SecondaryRatUsageInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetSecondaryRatUsageInfoOk() ([]SecondaryRatUsageInfo, bool) {
-	if o == nil || IsNil(o.SecondaryRatUsageInfo) {
+	if o == nil || isNil(o.SecondaryRatUsageInfo) {
 		return nil, false
 	}
 	return o.SecondaryRatUsageInfo, true
@@ -295,7 +295,7 @@ func (o *ReleaseData) GetSecondaryRatUsageInfoOk() ([]SecondaryRatUsageInfo, boo
 
 // HasSecondaryRatUsageInfo returns a boolean if a field has been set.
 func (o *ReleaseData) HasSecondaryRatUsageInfo() bool {
-	if o != nil && !IsNil(o.SecondaryRatUsageInfo) {
+	if o != nil && !isNil(o.SecondaryRatUsageInfo) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *ReleaseData) SetSecondaryRatUsageInfo(v []SecondaryRatUsageInfo) {
 
 // GetN4Info returns the N4Info field value if set, zero value otherwise.
 func (o *ReleaseData) GetN4Info() N4Information {
-	if o == nil || IsNil(o.N4Info) {
+	if o == nil || isNil(o.N4Info) {
 		var ret N4Information
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *ReleaseData) GetN4Info() N4Information {
 // GetN4InfoOk returns a tuple with the N4Info field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetN4InfoOk() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4Info) {
+	if o == nil || isNil(o.N4Info) {
 		return nil, false
 	}
 	return o.N4Info, true
@@ -327,7 +327,7 @@ func (o *ReleaseData) GetN4InfoOk() (*N4Information, bool) {
 
 // HasN4Info returns a boolean if a field has been set.
 func (o *ReleaseData) HasN4Info() bool {
-	if o != nil && !IsNil(o.N4Info) {
+	if o != nil && !isNil(o.N4Info) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *ReleaseData) SetN4Info(v N4Information) {
 
 // GetN4InfoExt1 returns the N4InfoExt1 field value if set, zero value otherwise.
 func (o *ReleaseData) GetN4InfoExt1() N4Information {
-	if o == nil || IsNil(o.N4InfoExt1) {
+	if o == nil || isNil(o.N4InfoExt1) {
 		var ret N4Information
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *ReleaseData) GetN4InfoExt1() N4Information {
 // GetN4InfoExt1Ok returns a tuple with the N4InfoExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetN4InfoExt1Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt1) {
+	if o == nil || isNil(o.N4InfoExt1) {
 		return nil, false
 	}
 	return o.N4InfoExt1, true
@@ -359,7 +359,7 @@ func (o *ReleaseData) GetN4InfoExt1Ok() (*N4Information, bool) {
 
 // HasN4InfoExt1 returns a boolean if a field has been set.
 func (o *ReleaseData) HasN4InfoExt1() bool {
-	if o != nil && !IsNil(o.N4InfoExt1) {
+	if o != nil && !isNil(o.N4InfoExt1) {
 		return true
 	}
 
@@ -373,7 +373,7 @@ func (o *ReleaseData) SetN4InfoExt1(v N4Information) {
 
 // GetN4InfoExt2 returns the N4InfoExt2 field value if set, zero value otherwise.
 func (o *ReleaseData) GetN4InfoExt2() N4Information {
-	if o == nil || IsNil(o.N4InfoExt2) {
+	if o == nil || isNil(o.N4InfoExt2) {
 		var ret N4Information
 		return ret
 	}
@@ -383,7 +383,7 @@ func (o *ReleaseData) GetN4InfoExt2() N4Information {
 // GetN4InfoExt2Ok returns a tuple with the N4InfoExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReleaseData) GetN4InfoExt2Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt2) {
+	if o == nil || isNil(o.N4InfoExt2) {
 		return nil, false
 	}
 	return o.N4InfoExt2, true
@@ -391,7 +391,7 @@ func (o *ReleaseData) GetN4InfoExt2Ok() (*N4Information, bool) {
 
 // HasN4InfoExt2 returns a boolean if a field has been set.
 func (o *ReleaseData) HasN4InfoExt2() bool {
-	if o != nil && !IsNil(o.N4InfoExt2) {
+	if o != nil && !isNil(o.N4InfoExt2) {
 		return true
 	}
 
@@ -413,37 +413,37 @@ func (o ReleaseData) MarshalJSON() ([]byte, error) {
 
 func (o ReleaseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.NgApCause) {
+	if !isNil(o.NgApCause) {
 		toSerialize["ngApCause"] = o.NgApCause
 	}
-	if !IsNil(o.Var5gMmCauseValue) {
+	if !isNil(o.Var5gMmCauseValue) {
 		toSerialize["5gMmCauseValue"] = o.Var5gMmCauseValue
 	}
-	if !IsNil(o.UeLocation) {
+	if !isNil(o.UeLocation) {
 		toSerialize["ueLocation"] = o.UeLocation
 	}
-	if !IsNil(o.UeTimeZone) {
+	if !isNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !IsNil(o.AddUeLocation) {
+	if !isNil(o.AddUeLocation) {
 		toSerialize["addUeLocation"] = o.AddUeLocation
 	}
-	if !IsNil(o.SecondaryRatUsageReport) {
+	if !isNil(o.SecondaryRatUsageReport) {
 		toSerialize["secondaryRatUsageReport"] = o.SecondaryRatUsageReport
 	}
-	if !IsNil(o.SecondaryRatUsageInfo) {
+	if !isNil(o.SecondaryRatUsageInfo) {
 		toSerialize["secondaryRatUsageInfo"] = o.SecondaryRatUsageInfo
 	}
-	if !IsNil(o.N4Info) {
+	if !isNil(o.N4Info) {
 		toSerialize["n4Info"] = o.N4Info
 	}
-	if !IsNil(o.N4InfoExt1) {
+	if !isNil(o.N4InfoExt1) {
 		toSerialize["n4InfoExt1"] = o.N4InfoExt1
 	}
-	if !IsNil(o.N4InfoExt2) {
+	if !isNil(o.N4InfoExt2) {
 		toSerialize["n4InfoExt2"] = o.N4InfoExt2
 	}
 	return toSerialize, nil

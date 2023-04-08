@@ -17,13 +17,13 @@ import (
 
 // GlobalRanNodeId1 - One of the six attributes n3IwfId, gNbIdm, ngeNbId, wagfId, tngfId, eNbId shall be present. 
 type GlobalRanNodeId1 struct {
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // interface{}AsGlobalRanNodeId1 is a convenience function that returns interface{} wrapped in GlobalRanNodeId1
-func Interface{}AsGlobalRanNodeId1(v *interface{}) GlobalRanNodeId1 {
+func InterfaceAsGlobalRanNodeId1(v *interface{}) GlobalRanNodeId1 {
 	return GlobalRanNodeId1{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -32,22 +32,22 @@ func Interface{}AsGlobalRanNodeId1(v *interface{}) GlobalRanNodeId1 {
 func (dst *GlobalRanNodeId1) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(GlobalRanNodeId1)")
 	} else if match == 1 {
@@ -59,8 +59,8 @@ func (dst *GlobalRanNodeId1) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src GlobalRanNodeId1) MarshalJSON() ([]byte, error) {
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -71,8 +71,8 @@ func (obj *GlobalRanNodeId1) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

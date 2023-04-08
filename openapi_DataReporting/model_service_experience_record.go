@@ -12,7 +12,6 @@ package openapi_DataReporting
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ServiceExperienceRecord type satisfies the MappedNullable interface at compile time

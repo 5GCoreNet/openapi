@@ -41,7 +41,7 @@ func NewN2InfoNotificationRspDataWithDefaults() *N2InfoNotificationRspData {
 
 // GetSecRatDataUsageList returns the SecRatDataUsageList field value if set, zero value otherwise.
 func (o *N2InfoNotificationRspData) GetSecRatDataUsageList() []N2SmInformation {
-	if o == nil || IsNil(o.SecRatDataUsageList) {
+	if o == nil || isNil(o.SecRatDataUsageList) {
 		var ret []N2SmInformation
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *N2InfoNotificationRspData) GetSecRatDataUsageList() []N2SmInformation {
 // GetSecRatDataUsageListOk returns a tuple with the SecRatDataUsageList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InfoNotificationRspData) GetSecRatDataUsageListOk() ([]N2SmInformation, bool) {
-	if o == nil || IsNil(o.SecRatDataUsageList) {
+	if o == nil || isNil(o.SecRatDataUsageList) {
 		return nil, false
 	}
 	return o.SecRatDataUsageList, true
@@ -59,7 +59,7 @@ func (o *N2InfoNotificationRspData) GetSecRatDataUsageListOk() ([]N2SmInformatio
 
 // HasSecRatDataUsageList returns a boolean if a field has been set.
 func (o *N2InfoNotificationRspData) HasSecRatDataUsageList() bool {
-	if o != nil && !IsNil(o.SecRatDataUsageList) {
+	if o != nil && !isNil(o.SecRatDataUsageList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o N2InfoNotificationRspData) MarshalJSON() ([]byte, error) {
 
 func (o N2InfoNotificationRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SecRatDataUsageList) {
+	if !isNil(o.SecRatDataUsageList) {
 		toSerialize["secRatDataUsageList"] = o.SecRatDataUsageList
 	}
 	return toSerialize, nil

@@ -78,7 +78,7 @@ func (o *PfdDataForApp) SetApplicationId(v string) {
 
 // GetPfds returns the Pfds field value if set, zero value otherwise.
 func (o *PfdDataForApp) GetPfds() []PfdContent {
-	if o == nil || IsNil(o.Pfds) {
+	if o == nil || isNil(o.Pfds) {
 		var ret []PfdContent
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *PfdDataForApp) GetPfds() []PfdContent {
 // GetPfdsOk returns a tuple with the Pfds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForApp) GetPfdsOk() ([]PfdContent, bool) {
-	if o == nil || IsNil(o.Pfds) {
+	if o == nil || isNil(o.Pfds) {
 		return nil, false
 	}
 	return o.Pfds, true
@@ -96,7 +96,7 @@ func (o *PfdDataForApp) GetPfdsOk() ([]PfdContent, bool) {
 
 // HasPfds returns a boolean if a field has been set.
 func (o *PfdDataForApp) HasPfds() bool {
-	if o != nil && !IsNil(o.Pfds) {
+	if o != nil && !isNil(o.Pfds) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *PfdDataForApp) SetPfds(v []PfdContent) {
 
 // GetCachingTime returns the CachingTime field value if set, zero value otherwise.
 func (o *PfdDataForApp) GetCachingTime() time.Time {
-	if o == nil || IsNil(o.CachingTime) {
+	if o == nil || isNil(o.CachingTime) {
 		var ret time.Time
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *PfdDataForApp) GetCachingTime() time.Time {
 // GetCachingTimeOk returns a tuple with the CachingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForApp) GetCachingTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.CachingTime) {
+	if o == nil || isNil(o.CachingTime) {
 		return nil, false
 	}
 	return o.CachingTime, true
@@ -128,7 +128,7 @@ func (o *PfdDataForApp) GetCachingTimeOk() (*time.Time, bool) {
 
 // HasCachingTime returns a boolean if a field has been set.
 func (o *PfdDataForApp) HasCachingTime() bool {
-	if o != nil && !IsNil(o.CachingTime) {
+	if o != nil && !isNil(o.CachingTime) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *PfdDataForApp) SetCachingTime(v time.Time) {
 
 // GetCachingTimer returns the CachingTimer field value if set, zero value otherwise.
 func (o *PfdDataForApp) GetCachingTimer() int32 {
-	if o == nil || IsNil(o.CachingTimer) {
+	if o == nil || isNil(o.CachingTimer) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *PfdDataForApp) GetCachingTimer() int32 {
 // GetCachingTimerOk returns a tuple with the CachingTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForApp) GetCachingTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.CachingTimer) {
+	if o == nil || isNil(o.CachingTimer) {
 		return nil, false
 	}
 	return o.CachingTimer, true
@@ -160,7 +160,7 @@ func (o *PfdDataForApp) GetCachingTimerOk() (*int32, bool) {
 
 // HasCachingTimer returns a boolean if a field has been set.
 func (o *PfdDataForApp) HasCachingTimer() bool {
-	if o != nil && !IsNil(o.CachingTimer) {
+	if o != nil && !isNil(o.CachingTimer) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *PfdDataForApp) SetCachingTimer(v int32) {
 
 // GetPfdTimestamp returns the PfdTimestamp field value if set, zero value otherwise.
 func (o *PfdDataForApp) GetPfdTimestamp() time.Time {
-	if o == nil || IsNil(o.PfdTimestamp) {
+	if o == nil || isNil(o.PfdTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *PfdDataForApp) GetPfdTimestamp() time.Time {
 // GetPfdTimestampOk returns a tuple with the PfdTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForApp) GetPfdTimestampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.PfdTimestamp) {
+	if o == nil || isNil(o.PfdTimestamp) {
 		return nil, false
 	}
 	return o.PfdTimestamp, true
@@ -192,7 +192,7 @@ func (o *PfdDataForApp) GetPfdTimestampOk() (*time.Time, bool) {
 
 // HasPfdTimestamp returns a boolean if a field has been set.
 func (o *PfdDataForApp) HasPfdTimestamp() bool {
-	if o != nil && !IsNil(o.PfdTimestamp) {
+	if o != nil && !isNil(o.PfdTimestamp) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *PfdDataForApp) SetPfdTimestamp(v time.Time) {
 
 // GetPartialFlag returns the PartialFlag field value if set, zero value otherwise.
 func (o *PfdDataForApp) GetPartialFlag() bool {
-	if o == nil || IsNil(o.PartialFlag) {
+	if o == nil || isNil(o.PartialFlag) {
 		var ret bool
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *PfdDataForApp) GetPartialFlag() bool {
 // GetPartialFlagOk returns a tuple with the PartialFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForApp) GetPartialFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.PartialFlag) {
+	if o == nil || isNil(o.PartialFlag) {
 		return nil, false
 	}
 	return o.PartialFlag, true
@@ -224,7 +224,7 @@ func (o *PfdDataForApp) GetPartialFlagOk() (*bool, bool) {
 
 // HasPartialFlag returns a boolean if a field has been set.
 func (o *PfdDataForApp) HasPartialFlag() bool {
-	if o != nil && !IsNil(o.PartialFlag) {
+	if o != nil && !isNil(o.PartialFlag) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *PfdDataForApp) SetPartialFlag(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PfdDataForApp) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *PfdDataForApp) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForApp) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -256,7 +256,7 @@ func (o *PfdDataForApp) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PfdDataForApp) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -279,22 +279,22 @@ func (o PfdDataForApp) MarshalJSON() ([]byte, error) {
 func (o PfdDataForApp) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applicationId"] = o.ApplicationId
-	if !IsNil(o.Pfds) {
+	if !isNil(o.Pfds) {
 		toSerialize["pfds"] = o.Pfds
 	}
-	if !IsNil(o.CachingTime) {
+	if !isNil(o.CachingTime) {
 		toSerialize["cachingTime"] = o.CachingTime
 	}
-	if !IsNil(o.CachingTimer) {
+	if !isNil(o.CachingTimer) {
 		toSerialize["cachingTimer"] = o.CachingTimer
 	}
-	if !IsNil(o.PfdTimestamp) {
+	if !isNil(o.PfdTimestamp) {
 		toSerialize["pfdTimestamp"] = o.PfdTimestamp
 	}
-	if !IsNil(o.PartialFlag) {
+	if !isNil(o.PartialFlag) {
 		toSerialize["partialFlag"] = o.PartialFlag
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

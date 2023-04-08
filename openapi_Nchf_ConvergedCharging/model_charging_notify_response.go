@@ -41,7 +41,7 @@ func NewChargingNotifyResponseWithDefaults() *ChargingNotifyResponse {
 
 // GetInvocationResult returns the InvocationResult field value if set, zero value otherwise.
 func (o *ChargingNotifyResponse) GetInvocationResult() InvocationResult {
-	if o == nil || IsNil(o.InvocationResult) {
+	if o == nil || isNil(o.InvocationResult) {
 		var ret InvocationResult
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ChargingNotifyResponse) GetInvocationResult() InvocationResult {
 // GetInvocationResultOk returns a tuple with the InvocationResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingNotifyResponse) GetInvocationResultOk() (*InvocationResult, bool) {
-	if o == nil || IsNil(o.InvocationResult) {
+	if o == nil || isNil(o.InvocationResult) {
 		return nil, false
 	}
 	return o.InvocationResult, true
@@ -59,7 +59,7 @@ func (o *ChargingNotifyResponse) GetInvocationResultOk() (*InvocationResult, boo
 
 // HasInvocationResult returns a boolean if a field has been set.
 func (o *ChargingNotifyResponse) HasInvocationResult() bool {
-	if o != nil && !IsNil(o.InvocationResult) {
+	if o != nil && !isNil(o.InvocationResult) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ChargingNotifyResponse) MarshalJSON() ([]byte, error) {
 
 func (o ChargingNotifyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.InvocationResult) {
+	if !isNil(o.InvocationResult) {
 		toSerialize["invocationResult"] = o.InvocationResult
 	}
 	return toSerialize, nil

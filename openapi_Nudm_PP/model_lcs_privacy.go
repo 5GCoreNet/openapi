@@ -45,7 +45,7 @@ func NewLcsPrivacyWithDefaults() *LcsPrivacy {
 
 // GetAfInstanceId returns the AfInstanceId field value if set, zero value otherwise.
 func (o *LcsPrivacy) GetAfInstanceId() string {
-	if o == nil || IsNil(o.AfInstanceId) {
+	if o == nil || isNil(o.AfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *LcsPrivacy) GetAfInstanceId() string {
 // GetAfInstanceIdOk returns a tuple with the AfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacy) GetAfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AfInstanceId) {
+	if o == nil || isNil(o.AfInstanceId) {
 		return nil, false
 	}
 	return o.AfInstanceId, true
@@ -63,7 +63,7 @@ func (o *LcsPrivacy) GetAfInstanceIdOk() (*string, bool) {
 
 // HasAfInstanceId returns a boolean if a field has been set.
 func (o *LcsPrivacy) HasAfInstanceId() bool {
-	if o != nil && !IsNil(o.AfInstanceId) {
+	if o != nil && !isNil(o.AfInstanceId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *LcsPrivacy) SetAfInstanceId(v string) {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *LcsPrivacy) GetReferenceId() int32 {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *LcsPrivacy) GetReferenceId() int32 {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacy) GetReferenceIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -95,7 +95,7 @@ func (o *LcsPrivacy) GetReferenceIdOk() (*int32, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *LcsPrivacy) HasReferenceId() bool {
-	if o != nil && !IsNil(o.ReferenceId) {
+	if o != nil && !isNil(o.ReferenceId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *LcsPrivacy) SetReferenceId(v int32) {
 
 // GetLpi returns the Lpi field value if set, zero value otherwise.
 func (o *LcsPrivacy) GetLpi() Lpi {
-	if o == nil || IsNil(o.Lpi) {
+	if o == nil || isNil(o.Lpi) {
 		var ret Lpi
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *LcsPrivacy) GetLpi() Lpi {
 // GetLpiOk returns a tuple with the Lpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacy) GetLpiOk() (*Lpi, bool) {
-	if o == nil || IsNil(o.Lpi) {
+	if o == nil || isNil(o.Lpi) {
 		return nil, false
 	}
 	return o.Lpi, true
@@ -127,7 +127,7 @@ func (o *LcsPrivacy) GetLpiOk() (*Lpi, bool) {
 
 // HasLpi returns a boolean if a field has been set.
 func (o *LcsPrivacy) HasLpi() bool {
-	if o != nil && !IsNil(o.Lpi) {
+	if o != nil && !isNil(o.Lpi) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *LcsPrivacy) SetLpi(v Lpi) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *LcsPrivacy) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *LcsPrivacy) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsPrivacy) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -159,7 +159,7 @@ func (o *LcsPrivacy) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *LcsPrivacy) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o LcsPrivacy) MarshalJSON() ([]byte, error) {
 
 func (o LcsPrivacy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AfInstanceId) {
+	if !isNil(o.AfInstanceId) {
 		toSerialize["afInstanceId"] = o.AfInstanceId
 	}
-	if !IsNil(o.ReferenceId) {
+	if !isNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
-	if !IsNil(o.Lpi) {
+	if !isNil(o.Lpi) {
 		toSerialize["lpi"] = o.Lpi
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil

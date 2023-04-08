@@ -41,7 +41,7 @@ func NewAppServiceDescriptionIdenticalContentsInnerWithDefaults() *AppServiceDes
 
 // GetUnicastAppService returns the UnicastAppService field value if set, zero value otherwise.
 func (o *AppServiceDescriptionIdenticalContentsInner) GetUnicastAppService() []ApplicationService {
-	if o == nil || IsNil(o.UnicastAppService) {
+	if o == nil || isNil(o.UnicastAppService) {
 		var ret []ApplicationService
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AppServiceDescriptionIdenticalContentsInner) GetUnicastAppService() []A
 // GetUnicastAppServiceOk returns a tuple with the UnicastAppService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppServiceDescriptionIdenticalContentsInner) GetUnicastAppServiceOk() ([]ApplicationService, bool) {
-	if o == nil || IsNil(o.UnicastAppService) {
+	if o == nil || isNil(o.UnicastAppService) {
 		return nil, false
 	}
 	return o.UnicastAppService, true
@@ -59,7 +59,7 @@ func (o *AppServiceDescriptionIdenticalContentsInner) GetUnicastAppServiceOk() (
 
 // HasUnicastAppService returns a boolean if a field has been set.
 func (o *AppServiceDescriptionIdenticalContentsInner) HasUnicastAppService() bool {
-	if o != nil && !IsNil(o.UnicastAppService) {
+	if o != nil && !isNil(o.UnicastAppService) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AppServiceDescriptionIdenticalContentsInner) MarshalJSON() ([]byte, erro
 
 func (o AppServiceDescriptionIdenticalContentsInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UnicastAppService) {
+	if !isNil(o.UnicastAppService) {
 		toSerialize["unicastAppService"] = o.UnicastAppService
 	}
 	return toSerialize, nil

@@ -67,7 +67,7 @@ func (o *ChargingNotifyRequest) SetNotificationType(v NotificationType) {
 
 // GetReauthorizationDetails returns the ReauthorizationDetails field value if set, zero value otherwise.
 func (o *ChargingNotifyRequest) GetReauthorizationDetails() []ReauthorizationDetails {
-	if o == nil || IsNil(o.ReauthorizationDetails) {
+	if o == nil || isNil(o.ReauthorizationDetails) {
 		var ret []ReauthorizationDetails
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ChargingNotifyRequest) GetReauthorizationDetails() []ReauthorizationDet
 // GetReauthorizationDetailsOk returns a tuple with the ReauthorizationDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ChargingNotifyRequest) GetReauthorizationDetailsOk() ([]ReauthorizationDetails, bool) {
-	if o == nil || IsNil(o.ReauthorizationDetails) {
+	if o == nil || isNil(o.ReauthorizationDetails) {
 		return nil, false
 	}
 	return o.ReauthorizationDetails, true
@@ -85,7 +85,7 @@ func (o *ChargingNotifyRequest) GetReauthorizationDetailsOk() ([]Reauthorization
 
 // HasReauthorizationDetails returns a boolean if a field has been set.
 func (o *ChargingNotifyRequest) HasReauthorizationDetails() bool {
-	if o != nil && !IsNil(o.ReauthorizationDetails) {
+	if o != nil && !isNil(o.ReauthorizationDetails) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ChargingNotifyRequest) MarshalJSON() ([]byte, error) {
 func (o ChargingNotifyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notificationType"] = o.NotificationType
-	if !IsNil(o.ReauthorizationDetails) {
+	if !isNil(o.ReauthorizationDetails) {
 		toSerialize["reauthorizationDetails"] = o.ReauthorizationDetails
 	}
 	return toSerialize, nil

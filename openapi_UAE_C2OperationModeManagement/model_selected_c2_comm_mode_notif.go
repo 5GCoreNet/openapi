@@ -93,7 +93,7 @@ func (o *SelectedC2CommModeNotif) SetSelPrimaryC2CommMode(v C2CommMode) {
 
 // GetSelSecondaryC2CommMode returns the SelSecondaryC2CommMode field value if set, zero value otherwise.
 func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommMode() C2CommMode {
-	if o == nil || IsNil(o.SelSecondaryC2CommMode) {
+	if o == nil || isNil(o.SelSecondaryC2CommMode) {
 		var ret C2CommMode
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommMode() C2CommMode {
 // GetSelSecondaryC2CommModeOk returns a tuple with the SelSecondaryC2CommMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommModeOk() (*C2CommMode, bool) {
-	if o == nil || IsNil(o.SelSecondaryC2CommMode) {
+	if o == nil || isNil(o.SelSecondaryC2CommMode) {
 		return nil, false
 	}
 	return o.SelSecondaryC2CommMode, true
@@ -111,7 +111,7 @@ func (o *SelectedC2CommModeNotif) GetSelSecondaryC2CommModeOk() (*C2CommMode, bo
 
 // HasSelSecondaryC2CommMode returns a boolean if a field has been set.
 func (o *SelectedC2CommModeNotif) HasSelSecondaryC2CommMode() bool {
-	if o != nil && !IsNil(o.SelSecondaryC2CommMode) {
+	if o != nil && !isNil(o.SelSecondaryC2CommMode) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o SelectedC2CommModeNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["uasId"] = o.UasId
 	toSerialize["selPrimaryC2CommMode"] = o.SelPrimaryC2CommMode
-	if !IsNil(o.SelSecondaryC2CommMode) {
+	if !isNil(o.SelSecondaryC2CommMode) {
 		toSerialize["selSecondaryC2CommMode"] = o.SelSecondaryC2CommMode
 	}
 	return toSerialize, nil

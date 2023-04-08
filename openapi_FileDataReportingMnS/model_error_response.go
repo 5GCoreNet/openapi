@@ -41,7 +41,7 @@ func NewErrorResponseWithDefaults() *ErrorResponse {
 
 // GetError returns the Error field value if set, zero value otherwise.
 func (o *ErrorResponse) GetError() ErrorResponseError {
-	if o == nil || IsNil(o.Error) {
+	if o == nil || isNil(o.Error) {
 		var ret ErrorResponseError
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ErrorResponse) GetError() ErrorResponseError {
 // GetErrorOk returns a tuple with the Error field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ErrorResponse) GetErrorOk() (*ErrorResponseError, bool) {
-	if o == nil || IsNil(o.Error) {
+	if o == nil || isNil(o.Error) {
 		return nil, false
 	}
 	return o.Error, true
@@ -59,7 +59,7 @@ func (o *ErrorResponse) GetErrorOk() (*ErrorResponseError, bool) {
 
 // HasError returns a boolean if a field has been set.
 func (o *ErrorResponse) HasError() bool {
-	if o != nil && !IsNil(o.Error) {
+	if o != nil && !isNil(o.Error) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ErrorResponse) MarshalJSON() ([]byte, error) {
 
 func (o ErrorResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Error) {
+	if !isNil(o.Error) {
 		toSerialize["error"] = o.Error
 	}
 	return toSerialize, nil

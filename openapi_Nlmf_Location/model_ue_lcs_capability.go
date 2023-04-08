@@ -50,7 +50,7 @@ func NewUeLcsCapabilityWithDefaults() *UeLcsCapability {
 
 // GetLppSupport returns the LppSupport field value if set, zero value otherwise.
 func (o *UeLcsCapability) GetLppSupport() bool {
-	if o == nil || IsNil(o.LppSupport) {
+	if o == nil || isNil(o.LppSupport) {
 		var ret bool
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *UeLcsCapability) GetLppSupport() bool {
 // GetLppSupportOk returns a tuple with the LppSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeLcsCapability) GetLppSupportOk() (*bool, bool) {
-	if o == nil || IsNil(o.LppSupport) {
+	if o == nil || isNil(o.LppSupport) {
 		return nil, false
 	}
 	return o.LppSupport, true
@@ -68,7 +68,7 @@ func (o *UeLcsCapability) GetLppSupportOk() (*bool, bool) {
 
 // HasLppSupport returns a boolean if a field has been set.
 func (o *UeLcsCapability) HasLppSupport() bool {
-	if o != nil && !IsNil(o.LppSupport) {
+	if o != nil && !isNil(o.LppSupport) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *UeLcsCapability) SetLppSupport(v bool) {
 
 // GetCiotOptimisation returns the CiotOptimisation field value if set, zero value otherwise.
 func (o *UeLcsCapability) GetCiotOptimisation() bool {
-	if o == nil || IsNil(o.CiotOptimisation) {
+	if o == nil || isNil(o.CiotOptimisation) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *UeLcsCapability) GetCiotOptimisation() bool {
 // GetCiotOptimisationOk returns a tuple with the CiotOptimisation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeLcsCapability) GetCiotOptimisationOk() (*bool, bool) {
-	if o == nil || IsNil(o.CiotOptimisation) {
+	if o == nil || isNil(o.CiotOptimisation) {
 		return nil, false
 	}
 	return o.CiotOptimisation, true
@@ -100,7 +100,7 @@ func (o *UeLcsCapability) GetCiotOptimisationOk() (*bool, bool) {
 
 // HasCiotOptimisation returns a boolean if a field has been set.
 func (o *UeLcsCapability) HasCiotOptimisation() bool {
-	if o != nil && !IsNil(o.CiotOptimisation) {
+	if o != nil && !isNil(o.CiotOptimisation) {
 		return true
 	}
 
@@ -122,10 +122,10 @@ func (o UeLcsCapability) MarshalJSON() ([]byte, error) {
 
 func (o UeLcsCapability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LppSupport) {
+	if !isNil(o.LppSupport) {
 		toSerialize["lppSupport"] = o.LppSupport
 	}
-	if !IsNil(o.CiotOptimisation) {
+	if !isNil(o.CiotOptimisation) {
 		toSerialize["ciotOptimisation"] = o.CiotOptimisation
 	}
 	return toSerialize, nil

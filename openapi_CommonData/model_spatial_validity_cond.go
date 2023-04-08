@@ -43,7 +43,7 @@ func NewSpatialValidityCondWithDefaults() *SpatialValidityCond {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *SpatialValidityCond) GetTrackingAreaList() []Tai {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		var ret []Tai
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SpatialValidityCond) GetTrackingAreaList() []Tai {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond) GetTrackingAreaListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -61,7 +61,7 @@ func (o *SpatialValidityCond) GetTrackingAreaListOk() ([]Tai, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *SpatialValidityCond) HasTrackingAreaList() bool {
-	if o != nil && !IsNil(o.TrackingAreaList) {
+	if o != nil && !isNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SpatialValidityCond) SetTrackingAreaList(v []Tai) {
 
 // GetCountries returns the Countries field value if set, zero value otherwise.
 func (o *SpatialValidityCond) GetCountries() []string {
-	if o == nil || IsNil(o.Countries) {
+	if o == nil || isNil(o.Countries) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SpatialValidityCond) GetCountries() []string {
 // GetCountriesOk returns a tuple with the Countries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond) GetCountriesOk() ([]string, bool) {
-	if o == nil || IsNil(o.Countries) {
+	if o == nil || isNil(o.Countries) {
 		return nil, false
 	}
 	return o.Countries, true
@@ -93,7 +93,7 @@ func (o *SpatialValidityCond) GetCountriesOk() ([]string, bool) {
 
 // HasCountries returns a boolean if a field has been set.
 func (o *SpatialValidityCond) HasCountries() bool {
-	if o != nil && !IsNil(o.Countries) {
+	if o != nil && !isNil(o.Countries) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SpatialValidityCond) SetCountries(v []string) {
 
 // GetGeographicalServiceArea returns the GeographicalServiceArea field value if set, zero value otherwise.
 func (o *SpatialValidityCond) GetGeographicalServiceArea() GeoServiceArea {
-	if o == nil || IsNil(o.GeographicalServiceArea) {
+	if o == nil || isNil(o.GeographicalServiceArea) {
 		var ret GeoServiceArea
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SpatialValidityCond) GetGeographicalServiceArea() GeoServiceArea {
 // GetGeographicalServiceAreaOk returns a tuple with the GeographicalServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SpatialValidityCond) GetGeographicalServiceAreaOk() (*GeoServiceArea, bool) {
-	if o == nil || IsNil(o.GeographicalServiceArea) {
+	if o == nil || isNil(o.GeographicalServiceArea) {
 		return nil, false
 	}
 	return o.GeographicalServiceArea, true
@@ -125,7 +125,7 @@ func (o *SpatialValidityCond) GetGeographicalServiceAreaOk() (*GeoServiceArea, b
 
 // HasGeographicalServiceArea returns a boolean if a field has been set.
 func (o *SpatialValidityCond) HasGeographicalServiceArea() bool {
-	if o != nil && !IsNil(o.GeographicalServiceArea) {
+	if o != nil && !isNil(o.GeographicalServiceArea) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o SpatialValidityCond) MarshalJSON() ([]byte, error) {
 
 func (o SpatialValidityCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TrackingAreaList) {
+	if !isNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
-	if !IsNil(o.Countries) {
+	if !isNil(o.Countries) {
 		toSerialize["countries"] = o.Countries
 	}
-	if !IsNil(o.GeographicalServiceArea) {
+	if !isNil(o.GeographicalServiceArea) {
 		toSerialize["geographicalServiceArea"] = o.GeographicalServiceArea
 	}
 	return toSerialize, nil

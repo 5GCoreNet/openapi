@@ -17,23 +17,37 @@ import (
 
 // ReportingEventTrigger The type of event that triggers reporting by a data collection client to the Data Collection AF.
 type ReportingEventTrigger struct {
-	string *string
+	ReportingEventTriggerAnyOf *ReportingEventTriggerAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ReportingEventTrigger) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ReportingEventTriggerAnyOf
+	err = json.Unmarshal(data, &dst.ReportingEventTriggerAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonReportingEventTriggerAnyOf, _ := json.Marshal(dst.ReportingEventTriggerAnyOf)
+		if string(jsonReportingEventTriggerAnyOf) == "{}" { // empty struct
+			dst.ReportingEventTriggerAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ReportingEventTriggerAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ReportingEventTriggerAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ReportingEventTrigger)")
@@ -41,8 +55,12 @@ func (dst *ReportingEventTrigger) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ReportingEventTrigger) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ReportingEventTriggerAnyOf != nil {
+		return json.Marshal(&src.ReportingEventTriggerAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

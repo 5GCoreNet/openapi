@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
  - [APIProviderEnrolmentDetailsPatch](docs/APIProviderEnrolmentDetailsPatch.md)
  - [APIProviderFunctionDetails](docs/APIProviderFunctionDetails.md)
  - [ApiProviderFuncRole](docs/ApiProviderFuncRole.md)
+ - [ApiProviderFuncRoleAnyOf](docs/ApiProviderFuncRoleAnyOf.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [RegistrationInformation](docs/RegistrationInformation.md)

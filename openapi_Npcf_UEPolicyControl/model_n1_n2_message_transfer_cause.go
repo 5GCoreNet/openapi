@@ -17,23 +17,37 @@ import (
 
 // N1N2MessageTransferCause Enumeration for N1N2Message Transfer Cause
 type N1N2MessageTransferCause struct {
-	string *string
+	N1N2MessageTransferCauseAnyOf *N1N2MessageTransferCauseAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N1N2MessageTransferCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into N1N2MessageTransferCauseAnyOf
+	err = json.Unmarshal(data, &dst.N1N2MessageTransferCauseAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonN1N2MessageTransferCauseAnyOf, _ := json.Marshal(dst.N1N2MessageTransferCauseAnyOf)
+		if string(jsonN1N2MessageTransferCauseAnyOf) == "{}" { // empty struct
+			dst.N1N2MessageTransferCauseAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.N1N2MessageTransferCauseAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.N1N2MessageTransferCauseAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(N1N2MessageTransferCause)")
@@ -41,8 +55,12 @@ func (dst *N1N2MessageTransferCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N1N2MessageTransferCause) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.N1N2MessageTransferCauseAnyOf != nil {
+		return json.Marshal(&src.N1N2MessageTransferCauseAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

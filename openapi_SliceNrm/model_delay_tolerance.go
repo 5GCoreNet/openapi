@@ -42,7 +42,7 @@ func NewDelayToleranceWithDefaults() *DelayTolerance {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *DelayTolerance) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DelayTolerance) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayTolerance) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *DelayTolerance) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *DelayTolerance) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *DelayTolerance) SetServAttrCom(v ServAttrCom) {
 
 // GetSupport returns the Support field value if set, zero value otherwise.
 func (o *DelayTolerance) GetSupport() Support {
-	if o == nil || IsNil(o.Support) {
+	if o == nil || isNil(o.Support) {
 		var ret Support
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DelayTolerance) GetSupport() Support {
 // GetSupportOk returns a tuple with the Support field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DelayTolerance) GetSupportOk() (*Support, bool) {
-	if o == nil || IsNil(o.Support) {
+	if o == nil || isNil(o.Support) {
 		return nil, false
 	}
 	return o.Support, true
@@ -92,7 +92,7 @@ func (o *DelayTolerance) GetSupportOk() (*Support, bool) {
 
 // HasSupport returns a boolean if a field has been set.
 func (o *DelayTolerance) HasSupport() bool {
-	if o != nil && !IsNil(o.Support) {
+	if o != nil && !isNil(o.Support) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o DelayTolerance) MarshalJSON() ([]byte, error) {
 
 func (o DelayTolerance) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.Support) {
+	if !isNil(o.Support) {
 		toSerialize["support"] = o.Support
 	}
 	return toSerialize, nil

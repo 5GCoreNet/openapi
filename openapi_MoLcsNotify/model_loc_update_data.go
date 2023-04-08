@@ -124,7 +124,7 @@ func (o *LocUpdateData) SetLcsQosClass(v LcsQosClass) {
 
 // GetSvcId returns the SvcId field value if set, zero value otherwise.
 func (o *LocUpdateData) GetSvcId() string {
-	if o == nil || IsNil(o.SvcId) {
+	if o == nil || isNil(o.SvcId) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *LocUpdateData) GetSvcId() string {
 // GetSvcIdOk returns a tuple with the SvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocUpdateData) GetSvcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SvcId) {
+	if o == nil || isNil(o.SvcId) {
 		return nil, false
 	}
 	return o.SvcId, true
@@ -142,7 +142,7 @@ func (o *LocUpdateData) GetSvcIdOk() (*string, bool) {
 
 // HasSvcId returns a boolean if a field has been set.
 func (o *LocUpdateData) HasSvcId() bool {
-	if o != nil && !IsNil(o.SvcId) {
+	if o != nil && !isNil(o.SvcId) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o LocUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["locInfo"] = o.LocInfo
 	toSerialize["lcsQosClass"] = o.LcsQosClass
-	if !IsNil(o.SvcId) {
+	if !isNil(o.SvcId) {
 		toSerialize["svcId"] = o.SvcId
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

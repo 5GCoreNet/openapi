@@ -13,7 +13,7 @@ package openapi_Nbsf_Management
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -103,9 +103,9 @@ func (a *PCFBindingsCollectionApiService) CreatePCFBindingExecute(r ApiCreatePCF
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -358,31 +358,31 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 	localVarFormParams := url.Values{}
 
 	if r.ipv4Addr != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv4Addr", r.ipv4Addr, "")
+		parameterAddToQuery(localVarQueryParams, "ipv4Addr", r.ipv4Addr, "")
 	}
 	if r.ipv6Prefix != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv6Prefix", r.ipv6Prefix, "")
+		parameterAddToQuery(localVarQueryParams, "ipv6Prefix", r.ipv6Prefix, "")
 	}
 	if r.macAddr48 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "macAddr48", r.macAddr48, "")
+		parameterAddToQuery(localVarQueryParams, "macAddr48", r.macAddr48, "")
 	}
 	if r.dnn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.supi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supi", r.supi, "")
+		parameterAddToQuery(localVarQueryParams, "supi", r.supi, "")
 	}
 	if r.gpsi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gpsi", r.gpsi, "")
+		parameterAddToQuery(localVarQueryParams, "gpsi", r.gpsi, "")
 	}
 	if r.snssai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.ipDomain != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipDomain", r.ipDomain, "")
+		parameterAddToQuery(localVarQueryParams, "ipDomain", r.ipDomain, "")
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -411,9 +411,9 @@ func (a *PCFBindingsCollectionApiService) GetPCFBindingsExecute(r ApiGetPCFBindi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

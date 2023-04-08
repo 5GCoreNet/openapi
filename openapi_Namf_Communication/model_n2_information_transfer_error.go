@@ -67,7 +67,7 @@ func (o *N2InformationTransferError) SetError(v ProblemDetails) {
 
 // GetPwsErrorInfo returns the PwsErrorInfo field value if set, zero value otherwise.
 func (o *N2InformationTransferError) GetPwsErrorInfo() PWSErrorData {
-	if o == nil || IsNil(o.PwsErrorInfo) {
+	if o == nil || isNil(o.PwsErrorInfo) {
 		var ret PWSErrorData
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *N2InformationTransferError) GetPwsErrorInfo() PWSErrorData {
 // GetPwsErrorInfoOk returns a tuple with the PwsErrorInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferError) GetPwsErrorInfoOk() (*PWSErrorData, bool) {
-	if o == nil || IsNil(o.PwsErrorInfo) {
+	if o == nil || isNil(o.PwsErrorInfo) {
 		return nil, false
 	}
 	return o.PwsErrorInfo, true
@@ -85,7 +85,7 @@ func (o *N2InformationTransferError) GetPwsErrorInfoOk() (*PWSErrorData, bool) {
 
 // HasPwsErrorInfo returns a boolean if a field has been set.
 func (o *N2InformationTransferError) HasPwsErrorInfo() bool {
-	if o != nil && !IsNil(o.PwsErrorInfo) {
+	if o != nil && !isNil(o.PwsErrorInfo) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o N2InformationTransferError) MarshalJSON() ([]byte, error) {
 func (o N2InformationTransferError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.PwsErrorInfo) {
+	if !isNil(o.PwsErrorInfo) {
 		toSerialize["pwsErrorInfo"] = o.PwsErrorInfo
 	}
 	return toSerialize, nil

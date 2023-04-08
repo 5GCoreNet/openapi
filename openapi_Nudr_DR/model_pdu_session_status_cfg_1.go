@@ -42,7 +42,7 @@ func NewPduSessionStatusCfg1WithDefaults() *PduSessionStatusCfg1 {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PduSessionStatusCfg1) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduSessionStatusCfg1) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionStatusCfg1) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -60,7 +60,7 @@ func (o *PduSessionStatusCfg1) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PduSessionStatusCfg1) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o PduSessionStatusCfg1) MarshalJSON() ([]byte, error) {
 
 func (o PduSessionStatusCfg1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
 	return toSerialize, nil

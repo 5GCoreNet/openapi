@@ -44,7 +44,7 @@ func NewSupportedPerfMetricGroupWithDefaults() *SupportedPerfMetricGroup {
 
 // GetPerformanceMetrics returns the PerformanceMetrics field value if set, zero value otherwise.
 func (o *SupportedPerfMetricGroup) GetPerformanceMetrics() []string {
-	if o == nil || IsNil(o.PerformanceMetrics) {
+	if o == nil || isNil(o.PerformanceMetrics) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SupportedPerfMetricGroup) GetPerformanceMetrics() []string {
 // GetPerformanceMetricsOk returns a tuple with the PerformanceMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedPerfMetricGroup) GetPerformanceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.PerformanceMetrics) {
+	if o == nil || isNil(o.PerformanceMetrics) {
 		return nil, false
 	}
 	return o.PerformanceMetrics, true
@@ -62,7 +62,7 @@ func (o *SupportedPerfMetricGroup) GetPerformanceMetricsOk() ([]string, bool) {
 
 // HasPerformanceMetrics returns a boolean if a field has been set.
 func (o *SupportedPerfMetricGroup) HasPerformanceMetrics() bool {
-	if o != nil && !IsNil(o.PerformanceMetrics) {
+	if o != nil && !isNil(o.PerformanceMetrics) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SupportedPerfMetricGroup) SetPerformanceMetrics(v []string) {
 
 // GetGranularityPeriods returns the GranularityPeriods field value if set, zero value otherwise.
 func (o *SupportedPerfMetricGroup) GetGranularityPeriods() []int32 {
-	if o == nil || IsNil(o.GranularityPeriods) {
+	if o == nil || isNil(o.GranularityPeriods) {
 		var ret []int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SupportedPerfMetricGroup) GetGranularityPeriods() []int32 {
 // GetGranularityPeriodsOk returns a tuple with the GranularityPeriods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedPerfMetricGroup) GetGranularityPeriodsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.GranularityPeriods) {
+	if o == nil || isNil(o.GranularityPeriods) {
 		return nil, false
 	}
 	return o.GranularityPeriods, true
@@ -94,7 +94,7 @@ func (o *SupportedPerfMetricGroup) GetGranularityPeriodsOk() ([]int32, bool) {
 
 // HasGranularityPeriods returns a boolean if a field has been set.
 func (o *SupportedPerfMetricGroup) HasGranularityPeriods() bool {
-	if o != nil && !IsNil(o.GranularityPeriods) {
+	if o != nil && !isNil(o.GranularityPeriods) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SupportedPerfMetricGroup) SetGranularityPeriods(v []int32) {
 
 // GetReportingMethods returns the ReportingMethods field value if set, zero value otherwise.
 func (o *SupportedPerfMetricGroup) GetReportingMethods() []string {
-	if o == nil || IsNil(o.ReportingMethods) {
+	if o == nil || isNil(o.ReportingMethods) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SupportedPerfMetricGroup) GetReportingMethods() []string {
 // GetReportingMethodsOk returns a tuple with the ReportingMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedPerfMetricGroup) GetReportingMethodsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ReportingMethods) {
+	if o == nil || isNil(o.ReportingMethods) {
 		return nil, false
 	}
 	return o.ReportingMethods, true
@@ -126,7 +126,7 @@ func (o *SupportedPerfMetricGroup) GetReportingMethodsOk() ([]string, bool) {
 
 // HasReportingMethods returns a boolean if a field has been set.
 func (o *SupportedPerfMetricGroup) HasReportingMethods() bool {
-	if o != nil && !IsNil(o.ReportingMethods) {
+	if o != nil && !isNil(o.ReportingMethods) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *SupportedPerfMetricGroup) SetReportingMethods(v []string) {
 
 // GetMonitorGranularityPeriods returns the MonitorGranularityPeriods field value if set, zero value otherwise.
 func (o *SupportedPerfMetricGroup) GetMonitorGranularityPeriods() []int32 {
-	if o == nil || IsNil(o.MonitorGranularityPeriods) {
+	if o == nil || isNil(o.MonitorGranularityPeriods) {
 		var ret []int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *SupportedPerfMetricGroup) GetMonitorGranularityPeriods() []int32 {
 // GetMonitorGranularityPeriodsOk returns a tuple with the MonitorGranularityPeriods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedPerfMetricGroup) GetMonitorGranularityPeriodsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.MonitorGranularityPeriods) {
+	if o == nil || isNil(o.MonitorGranularityPeriods) {
 		return nil, false
 	}
 	return o.MonitorGranularityPeriods, true
@@ -158,7 +158,7 @@ func (o *SupportedPerfMetricGroup) GetMonitorGranularityPeriodsOk() ([]int32, bo
 
 // HasMonitorGranularityPeriods returns a boolean if a field has been set.
 func (o *SupportedPerfMetricGroup) HasMonitorGranularityPeriods() bool {
-	if o != nil && !IsNil(o.MonitorGranularityPeriods) {
+	if o != nil && !isNil(o.MonitorGranularityPeriods) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o SupportedPerfMetricGroup) MarshalJSON() ([]byte, error) {
 
 func (o SupportedPerfMetricGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PerformanceMetrics) {
+	if !isNil(o.PerformanceMetrics) {
 		toSerialize["performanceMetrics"] = o.PerformanceMetrics
 	}
-	if !IsNil(o.GranularityPeriods) {
+	if !isNil(o.GranularityPeriods) {
 		toSerialize["granularityPeriods"] = o.GranularityPeriods
 	}
-	if !IsNil(o.ReportingMethods) {
+	if !isNil(o.ReportingMethods) {
 		toSerialize["reportingMethods"] = o.ReportingMethods
 	}
-	if !IsNil(o.MonitorGranularityPeriods) {
+	if !isNil(o.MonitorGranularityPeriods) {
 		toSerialize["monitorGranularityPeriods"] = o.MonitorGranularityPeriods
 	}
 	return toSerialize, nil

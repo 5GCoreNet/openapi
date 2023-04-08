@@ -73,7 +73,7 @@ func (o *DicEntryCreateData) SetTypeAllocationCode(v string) {
 
 // GetUeRadioCapability5GS returns the UeRadioCapability5GS field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCapability5GS() RefToBinaryData {
-	if o == nil || IsNil(o.UeRadioCapability5GS) {
+	if o == nil || isNil(o.UeRadioCapability5GS) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *DicEntryCreateData) GetUeRadioCapability5GS() RefToBinaryData {
 // GetUeRadioCapability5GSOk returns a tuple with the UeRadioCapability5GS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCapability5GSOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.UeRadioCapability5GS) {
+	if o == nil || isNil(o.UeRadioCapability5GS) {
 		return nil, false
 	}
 	return o.UeRadioCapability5GS, true
@@ -91,7 +91,7 @@ func (o *DicEntryCreateData) GetUeRadioCapability5GSOk() (*RefToBinaryData, bool
 
 // HasUeRadioCapability5GS returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCapability5GS() bool {
-	if o != nil && !IsNil(o.UeRadioCapability5GS) {
+	if o != nil && !isNil(o.UeRadioCapability5GS) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *DicEntryCreateData) SetUeRadioCapability5GS(v RefToBinaryData) {
 
 // GetUeRadioCapabilityEPS returns the UeRadioCapabilityEPS field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCapabilityEPS() RefToBinaryData {
-	if o == nil || IsNil(o.UeRadioCapabilityEPS) {
+	if o == nil || isNil(o.UeRadioCapabilityEPS) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *DicEntryCreateData) GetUeRadioCapabilityEPS() RefToBinaryData {
 // GetUeRadioCapabilityEPSOk returns a tuple with the UeRadioCapabilityEPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCapabilityEPSOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.UeRadioCapabilityEPS) {
+	if o == nil || isNil(o.UeRadioCapabilityEPS) {
 		return nil, false
 	}
 	return o.UeRadioCapabilityEPS, true
@@ -123,7 +123,7 @@ func (o *DicEntryCreateData) GetUeRadioCapabilityEPSOk() (*RefToBinaryData, bool
 
 // HasUeRadioCapabilityEPS returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCapabilityEPS() bool {
-	if o != nil && !IsNil(o.UeRadioCapabilityEPS) {
+	if o != nil && !isNil(o.UeRadioCapabilityEPS) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *DicEntryCreateData) SetUeRadioCapabilityEPS(v RefToBinaryData) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *DicEntryCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -155,7 +155,7 @@ func (o *DicEntryCreateData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *DicEntryCreateData) SetSupportedFeatures(v string) {
 
 // GetUeRadioCap5GSForPaging returns the UeRadioCap5GSForPaging field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCap5GSForPaging() RefToBinaryData {
-	if o == nil || IsNil(o.UeRadioCap5GSForPaging) {
+	if o == nil || isNil(o.UeRadioCap5GSForPaging) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *DicEntryCreateData) GetUeRadioCap5GSForPaging() RefToBinaryData {
 // GetUeRadioCap5GSForPagingOk returns a tuple with the UeRadioCap5GSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCap5GSForPagingOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.UeRadioCap5GSForPaging) {
+	if o == nil || isNil(o.UeRadioCap5GSForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCap5GSForPaging, true
@@ -187,7 +187,7 @@ func (o *DicEntryCreateData) GetUeRadioCap5GSForPagingOk() (*RefToBinaryData, bo
 
 // HasUeRadioCap5GSForPaging returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCap5GSForPaging() bool {
-	if o != nil && !IsNil(o.UeRadioCap5GSForPaging) {
+	if o != nil && !isNil(o.UeRadioCap5GSForPaging) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *DicEntryCreateData) SetUeRadioCap5GSForPaging(v RefToBinaryData) {
 
 // GetUeRadioCapEPSForPaging returns the UeRadioCapEPSForPaging field value if set, zero value otherwise.
 func (o *DicEntryCreateData) GetUeRadioCapEPSForPaging() RefToBinaryData {
-	if o == nil || IsNil(o.UeRadioCapEPSForPaging) {
+	if o == nil || isNil(o.UeRadioCapEPSForPaging) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *DicEntryCreateData) GetUeRadioCapEPSForPaging() RefToBinaryData {
 // GetUeRadioCapEPSForPagingOk returns a tuple with the UeRadioCapEPSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DicEntryCreateData) GetUeRadioCapEPSForPagingOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.UeRadioCapEPSForPaging) {
+	if o == nil || isNil(o.UeRadioCapEPSForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCapEPSForPaging, true
@@ -219,7 +219,7 @@ func (o *DicEntryCreateData) GetUeRadioCapEPSForPagingOk() (*RefToBinaryData, bo
 
 // HasUeRadioCapEPSForPaging returns a boolean if a field has been set.
 func (o *DicEntryCreateData) HasUeRadioCapEPSForPaging() bool {
-	if o != nil && !IsNil(o.UeRadioCapEPSForPaging) {
+	if o != nil && !isNil(o.UeRadioCapEPSForPaging) {
 		return true
 	}
 
@@ -242,19 +242,19 @@ func (o DicEntryCreateData) MarshalJSON() ([]byte, error) {
 func (o DicEntryCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["typeAllocationCode"] = o.TypeAllocationCode
-	if !IsNil(o.UeRadioCapability5GS) {
+	if !isNil(o.UeRadioCapability5GS) {
 		toSerialize["ueRadioCapability5GS"] = o.UeRadioCapability5GS
 	}
-	if !IsNil(o.UeRadioCapabilityEPS) {
+	if !isNil(o.UeRadioCapabilityEPS) {
 		toSerialize["ueRadioCapabilityEPS"] = o.UeRadioCapabilityEPS
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.UeRadioCap5GSForPaging) {
+	if !isNil(o.UeRadioCap5GSForPaging) {
 		toSerialize["ueRadioCap5GSForPaging"] = o.UeRadioCap5GSForPaging
 	}
-	if !IsNil(o.UeRadioCapEPSForPaging) {
+	if !isNil(o.UeRadioCapEPSForPaging) {
 		toSerialize["ueRadioCapEPSForPaging"] = o.UeRadioCapEPSForPaging
 	}
 	return toSerialize, nil

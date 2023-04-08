@@ -69,7 +69,7 @@ func (o *ShareableInformation) SetIsShareable(v bool) {
 
 // GetCapifProvDoms returns the CapifProvDoms field value if set, zero value otherwise.
 func (o *ShareableInformation) GetCapifProvDoms() []string {
-	if o == nil || IsNil(o.CapifProvDoms) {
+	if o == nil || isNil(o.CapifProvDoms) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ShareableInformation) GetCapifProvDoms() []string {
 // GetCapifProvDomsOk returns a tuple with the CapifProvDoms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShareableInformation) GetCapifProvDomsOk() ([]string, bool) {
-	if o == nil || IsNil(o.CapifProvDoms) {
+	if o == nil || isNil(o.CapifProvDoms) {
 		return nil, false
 	}
 	return o.CapifProvDoms, true
@@ -87,7 +87,7 @@ func (o *ShareableInformation) GetCapifProvDomsOk() ([]string, bool) {
 
 // HasCapifProvDoms returns a boolean if a field has been set.
 func (o *ShareableInformation) HasCapifProvDoms() bool {
-	if o != nil && !IsNil(o.CapifProvDoms) {
+	if o != nil && !isNil(o.CapifProvDoms) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o ShareableInformation) MarshalJSON() ([]byte, error) {
 func (o ShareableInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["isShareable"] = o.IsShareable
-	if !IsNil(o.CapifProvDoms) {
+	if !isNil(o.CapifProvDoms) {
 		toSerialize["capifProvDoms"] = o.CapifProvDoms
 	}
 	return toSerialize, nil

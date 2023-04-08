@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -17,8 +16,10 @@ configuration.go
 docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/BindingLevel.md
+docs/BindingLevelAnyOf.md
 docs/BindingResp.md
 docs/BsfEvent.md
+docs/BsfEventAnyOf.md
 docs/BsfEventNotification.md
 docs/BsfNotification.md
 docs/BsfSubscription.md
@@ -39,6 +40,7 @@ docs/MbsBindingResp.md
 docs/MbsExtProblemDetails.md
 docs/MbsSessionId.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PCFBindingsCollectionApi.md
 docs/PCFForAUEBindingsCollectionApi.md
 docs/PCFForAnMBSSessionBindingsCollectionApi.md
@@ -61,14 +63,17 @@ docs/Ssm.md
 docs/SubscriptionsCollectionApi.md
 docs/Tmgi.md
 docs/TransportProtocol.md
+docs/TransportProtocolAnyOf.md
 git_push.sh
 go.mod
 go.sum
 model_access_token_err.go
 model_access_token_req.go
 model_binding_level.go
+model_binding_level_any_of.go
 model_binding_resp.go
 model_bsf_event.go
+model_bsf_event_any_of.go
 model_bsf_event_notification.go
 model_bsf_notification.go
 model_bsf_subscription.go
@@ -84,6 +89,7 @@ model_mbs_binding_resp.go
 model_mbs_ext_problem_details.go
 model_mbs_session_id.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_parameter_combination.go
 model_pcf_binding.go
 model_pcf_binding_patch.go
@@ -102,6 +108,7 @@ model_snssai_dnn_pair.go
 model_ssm.go
 model_tmgi.go
 model_transport_protocol.go
+model_transport_protocol_any_of.go
 response.go
 test/api_individual_pcf_binding_document_test.go
 test/api_individual_pcf_for_an_mbs_session_binding_document_test.go

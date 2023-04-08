@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 
  - [ACProfile](docs/ACProfile.md)
  - [ACRScenario](docs/ACRScenario.md)
+ - [ACRScenarioAnyOf](docs/ACRScenarioAnyOf.md)
  - [ACServiceKPIs](docs/ACServiceKPIs.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [EECContext](docs/EECContext.md)
@@ -133,6 +134,7 @@ Class | Method | HTTP request | Description
  - [ScheduledCommunicationTime](docs/ScheduledCommunicationTime.md)
  - [SessionContexts](docs/SessionContexts.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)

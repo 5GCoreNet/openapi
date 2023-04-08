@@ -17,23 +17,37 @@ import (
 
 // AccessNetworkId struct for AccessNetworkId
 type AccessNetworkId struct {
-	string *string
+	AccessNetworkIdAnyOf *AccessNetworkIdAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessNetworkId) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AccessNetworkIdAnyOf
+	err = json.Unmarshal(data, &dst.AccessNetworkIdAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAccessNetworkIdAnyOf, _ := json.Marshal(dst.AccessNetworkIdAnyOf)
+		if string(jsonAccessNetworkIdAnyOf) == "{}" { // empty struct
+			dst.AccessNetworkIdAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AccessNetworkIdAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AccessNetworkIdAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AccessNetworkId)")
@@ -41,8 +55,12 @@ func (dst *AccessNetworkId) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessNetworkId) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AccessNetworkIdAnyOf != nil {
+		return json.Marshal(&src.AccessNetworkIdAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -73,7 +73,7 @@ func (o *TraceJobSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *TraceJobSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *TraceJobSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -91,7 +91,7 @@ func (o *TraceJobSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *TraceJobSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *TraceJobSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *TraceJobSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *TraceJobSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -123,7 +123,7 @@ func (o *TraceJobSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *TraceJobSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *TraceJobSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *TraceJobSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *TraceJobSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -155,7 +155,7 @@ func (o *TraceJobSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) 
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *TraceJobSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *TraceJobSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *TraceJobSingle) GetAttributes() TraceJobAttr {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret TraceJobAttr
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *TraceJobSingle) GetAttributes() TraceJobAttr {
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingle) GetAttributesOk() (*TraceJobAttr, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -187,7 +187,7 @@ func (o *TraceJobSingle) GetAttributesOk() (*TraceJobAttr, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *TraceJobSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *TraceJobSingle) SetAttributes(v TraceJobAttr) {
 
 // GetFiles returns the Files field value if set, zero value otherwise.
 func (o *TraceJobSingle) GetFiles() []FilesSingle {
-	if o == nil || IsNil(o.Files) {
+	if o == nil || isNil(o.Files) {
 		var ret []FilesSingle
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *TraceJobSingle) GetFiles() []FilesSingle {
 // GetFilesOk returns a tuple with the Files field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceJobSingle) GetFilesOk() ([]FilesSingle, bool) {
-	if o == nil || IsNil(o.Files) {
+	if o == nil || isNil(o.Files) {
 		return nil, false
 	}
 	return o.Files, true
@@ -219,7 +219,7 @@ func (o *TraceJobSingle) GetFilesOk() ([]FilesSingle, bool) {
 
 // HasFiles returns a boolean if a field has been set.
 func (o *TraceJobSingle) HasFiles() bool {
-	if o != nil && !IsNil(o.Files) {
+	if o != nil && !isNil(o.Files) {
 		return true
 	}
 
@@ -242,19 +242,19 @@ func (o TraceJobSingle) MarshalJSON() ([]byte, error) {
 func (o TraceJobSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.Files) {
+	if !isNil(o.Files) {
 		toSerialize["Files"] = o.Files
 	}
 	return toSerialize, nil

@@ -13,7 +13,7 @@ package openapi_FaultMnS
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -79,10 +79,10 @@ func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetR
 	localVarFormParams := url.Values{}
 
 	if r.alarmAckState != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
+		parameterAddToQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
 	}
 	if r.filter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -111,9 +111,9 @@ func (a *DefaultApiService) AlarmsAlarmCountGetExecute(r ApiAlarmsAlarmCountGetR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -233,9 +233,9 @@ func (a *DefaultApiService) AlarmsAlarmIdCommentsPostExecute(r ApiAlarmsAlarmIdC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -353,9 +353,9 @@ func (a *DefaultApiService) AlarmsAlarmIdPatchExecute(r ApiAlarmsAlarmIdPatchReq
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -443,13 +443,13 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 	localVarFormParams := url.Values{}
 
 	if r.alarmAckState != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
+		parameterAddToQuery(localVarQueryParams, "alarmAckState", r.alarmAckState, "")
 	}
 	if r.baseObjectInstance != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "baseObjectInstance", r.baseObjectInstance, "")
+		parameterAddToQuery(localVarQueryParams, "baseObjectInstance", r.baseObjectInstance, "")
 	}
 	if r.filter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filter", r.filter, "")
+		parameterAddToQuery(localVarQueryParams, "filter", r.filter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -478,9 +478,9 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -516,12 +516,12 @@ func (a *DefaultApiService) AlarmsGetExecute(r ApiAlarmsGetRequest) (*map[string
 type ApiAlarmsPatchRequest struct {
 	ctx context.Context
 	ApiService *DefaultApiService
-	alarmsPatchRequest *AlarmsPatchRequest
+	alarmsGetRequest *AlarmsGetRequest
 }
 
 // Patch documents for acknowledging and unacknowledging, or clearing multiple alarms. The keys in the map are the alarmIds to be patched.
-func (r ApiAlarmsPatchRequest) AlarmsPatchRequest(alarmsPatchRequest AlarmsPatchRequest) ApiAlarmsPatchRequest {
-	r.alarmsPatchRequest = &alarmsPatchRequest
+func (r ApiAlarmsPatchRequest) AlarmsGetRequest(alarmsGetRequest AlarmsGetRequest) ApiAlarmsPatchRequest {
+	r.alarmsGetRequest = &alarmsGetRequest
 	return r
 }
 
@@ -581,7 +581,7 @@ func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.R
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.alarmsPatchRequest
+	localVarPostBody = r.alarmsGetRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -592,9 +592,9 @@ func (a *DefaultApiService) AlarmsPatchExecute(r ApiAlarmsPatchRequest) (*http.R
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -701,9 +701,9 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -810,9 +810,9 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

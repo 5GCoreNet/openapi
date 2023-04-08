@@ -45,7 +45,7 @@ func NewReauthorizationDetailsWithDefaults() *ReauthorizationDetails {
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *ReauthorizationDetails) GetServiceId() int32 {
-	if o == nil || IsNil(o.ServiceId) {
+	if o == nil || isNil(o.ServiceId) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ReauthorizationDetails) GetServiceId() int32 {
 // GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthorizationDetails) GetServiceIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ServiceId) {
+	if o == nil || isNil(o.ServiceId) {
 		return nil, false
 	}
 	return o.ServiceId, true
@@ -63,7 +63,7 @@ func (o *ReauthorizationDetails) GetServiceIdOk() (*int32, bool) {
 
 // HasServiceId returns a boolean if a field has been set.
 func (o *ReauthorizationDetails) HasServiceId() bool {
-	if o != nil && !IsNil(o.ServiceId) {
+	if o != nil && !isNil(o.ServiceId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ReauthorizationDetails) SetServiceId(v int32) {
 
 // GetRatingGroup returns the RatingGroup field value if set, zero value otherwise.
 func (o *ReauthorizationDetails) GetRatingGroup() int32 {
-	if o == nil || IsNil(o.RatingGroup) {
+	if o == nil || isNil(o.RatingGroup) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ReauthorizationDetails) GetRatingGroup() int32 {
 // GetRatingGroupOk returns a tuple with the RatingGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthorizationDetails) GetRatingGroupOk() (*int32, bool) {
-	if o == nil || IsNil(o.RatingGroup) {
+	if o == nil || isNil(o.RatingGroup) {
 		return nil, false
 	}
 	return o.RatingGroup, true
@@ -95,7 +95,7 @@ func (o *ReauthorizationDetails) GetRatingGroupOk() (*int32, bool) {
 
 // HasRatingGroup returns a boolean if a field has been set.
 func (o *ReauthorizationDetails) HasRatingGroup() bool {
-	if o != nil && !IsNil(o.RatingGroup) {
+	if o != nil && !isNil(o.RatingGroup) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ReauthorizationDetails) SetRatingGroup(v int32) {
 
 // GetQuotaManagementIndicator returns the QuotaManagementIndicator field value if set, zero value otherwise.
 func (o *ReauthorizationDetails) GetQuotaManagementIndicator() QuotaManagementIndicator {
-	if o == nil || IsNil(o.QuotaManagementIndicator) {
+	if o == nil || isNil(o.QuotaManagementIndicator) {
 		var ret QuotaManagementIndicator
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ReauthorizationDetails) GetQuotaManagementIndicator() QuotaManagementIn
 // GetQuotaManagementIndicatorOk returns a tuple with the QuotaManagementIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReauthorizationDetails) GetQuotaManagementIndicatorOk() (*QuotaManagementIndicator, bool) {
-	if o == nil || IsNil(o.QuotaManagementIndicator) {
+	if o == nil || isNil(o.QuotaManagementIndicator) {
 		return nil, false
 	}
 	return o.QuotaManagementIndicator, true
@@ -127,7 +127,7 @@ func (o *ReauthorizationDetails) GetQuotaManagementIndicatorOk() (*QuotaManageme
 
 // HasQuotaManagementIndicator returns a boolean if a field has been set.
 func (o *ReauthorizationDetails) HasQuotaManagementIndicator() bool {
-	if o != nil && !IsNil(o.QuotaManagementIndicator) {
+	if o != nil && !isNil(o.QuotaManagementIndicator) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o ReauthorizationDetails) MarshalJSON() ([]byte, error) {
 
 func (o ReauthorizationDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceId) {
+	if !isNil(o.ServiceId) {
 		toSerialize["serviceId"] = o.ServiceId
 	}
-	if !IsNil(o.RatingGroup) {
+	if !isNil(o.RatingGroup) {
 		toSerialize["ratingGroup"] = o.RatingGroup
 	}
-	if !IsNil(o.QuotaManagementIndicator) {
+	if !isNil(o.QuotaManagementIndicator) {
 		toSerialize["quotaManagementIndicator"] = o.QuotaManagementIndicator
 	}
 	return toSerialize, nil

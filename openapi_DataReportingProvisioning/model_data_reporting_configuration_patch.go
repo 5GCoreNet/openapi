@@ -43,7 +43,7 @@ func NewDataReportingConfigurationPatchWithDefaults() *DataReportingConfiguratio
 
 // GetAuthorizationURL returns the AuthorizationURL field value if set, zero value otherwise.
 func (o *DataReportingConfigurationPatch) GetAuthorizationURL() string {
-	if o == nil || IsNil(o.AuthorizationURL) {
+	if o == nil || isNil(o.AuthorizationURL) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DataReportingConfigurationPatch) GetAuthorizationURL() string {
 // GetAuthorizationURLOk returns a tuple with the AuthorizationURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingConfigurationPatch) GetAuthorizationURLOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthorizationURL) {
+	if o == nil || isNil(o.AuthorizationURL) {
 		return nil, false
 	}
 	return o.AuthorizationURL, true
@@ -61,7 +61,7 @@ func (o *DataReportingConfigurationPatch) GetAuthorizationURLOk() (*string, bool
 
 // HasAuthorizationURL returns a boolean if a field has been set.
 func (o *DataReportingConfigurationPatch) HasAuthorizationURL() bool {
-	if o != nil && !IsNil(o.AuthorizationURL) {
+	if o != nil && !isNil(o.AuthorizationURL) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DataReportingConfigurationPatch) SetAuthorizationURL(v string) {
 
 // GetDataAccessProfiles returns the DataAccessProfiles field value if set, zero value otherwise.
 func (o *DataReportingConfigurationPatch) GetDataAccessProfiles() []DataAccessProfile {
-	if o == nil || IsNil(o.DataAccessProfiles) {
+	if o == nil || isNil(o.DataAccessProfiles) {
 		var ret []DataAccessProfile
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DataReportingConfigurationPatch) GetDataAccessProfiles() []DataAccessPr
 // GetDataAccessProfilesOk returns a tuple with the DataAccessProfiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DataReportingConfigurationPatch) GetDataAccessProfilesOk() ([]DataAccessProfile, bool) {
-	if o == nil || IsNil(o.DataAccessProfiles) {
+	if o == nil || isNil(o.DataAccessProfiles) {
 		return nil, false
 	}
 	return o.DataAccessProfiles, true
@@ -93,7 +93,7 @@ func (o *DataReportingConfigurationPatch) GetDataAccessProfilesOk() ([]DataAcces
 
 // HasDataAccessProfiles returns a boolean if a field has been set.
 func (o *DataReportingConfigurationPatch) HasDataAccessProfiles() bool {
-	if o != nil && !IsNil(o.DataAccessProfiles) {
+	if o != nil && !isNil(o.DataAccessProfiles) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o DataReportingConfigurationPatch) MarshalJSON() ([]byte, error) {
 
 func (o DataReportingConfigurationPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthorizationURL) {
+	if !isNil(o.AuthorizationURL) {
 		toSerialize["authorizationURL"] = o.AuthorizationURL
 	}
-	if !IsNil(o.DataAccessProfiles) {
+	if !isNil(o.DataAccessProfiles) {
 		toSerialize["dataAccessProfiles"] = o.DataAccessProfiles
 	}
 	return toSerialize, nil

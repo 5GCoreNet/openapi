@@ -42,7 +42,7 @@ func NewNtfSubscriptionControlSingleAllOfWithDefaults() *NtfSubscriptionControlS
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *NtfSubscriptionControlSingleAllOf) GetAttributes() NtfSubscriptionControlSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret NtfSubscriptionControlSingleAllOfAttributes
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NtfSubscriptionControlSingleAllOf) GetAttributes() NtfSubscriptionContr
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NtfSubscriptionControlSingleAllOf) GetAttributesOk() (*NtfSubscriptionControlSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *NtfSubscriptionControlSingleAllOf) GetAttributesOk() (*NtfSubscriptionC
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NtfSubscriptionControlSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NtfSubscriptionControlSingleAllOf) SetAttributes(v NtfSubscriptionContr
 
 // GetHeartbeatControl returns the HeartbeatControl field value if set, zero value otherwise.
 func (o *NtfSubscriptionControlSingleAllOf) GetHeartbeatControl() HeartbeatControlSingle {
-	if o == nil || IsNil(o.HeartbeatControl) {
+	if o == nil || isNil(o.HeartbeatControl) {
 		var ret HeartbeatControlSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NtfSubscriptionControlSingleAllOf) GetHeartbeatControl() HeartbeatContr
 // GetHeartbeatControlOk returns a tuple with the HeartbeatControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NtfSubscriptionControlSingleAllOf) GetHeartbeatControlOk() (*HeartbeatControlSingle, bool) {
-	if o == nil || IsNil(o.HeartbeatControl) {
+	if o == nil || isNil(o.HeartbeatControl) {
 		return nil, false
 	}
 	return o.HeartbeatControl, true
@@ -92,7 +92,7 @@ func (o *NtfSubscriptionControlSingleAllOf) GetHeartbeatControlOk() (*HeartbeatC
 
 // HasHeartbeatControl returns a boolean if a field has been set.
 func (o *NtfSubscriptionControlSingleAllOf) HasHeartbeatControl() bool {
-	if o != nil && !IsNil(o.HeartbeatControl) {
+	if o != nil && !isNil(o.HeartbeatControl) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o NtfSubscriptionControlSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NtfSubscriptionControlSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.HeartbeatControl) {
+	if !isNil(o.HeartbeatControl) {
 		toSerialize["HeartbeatControl"] = o.HeartbeatControl
 	}
 	return toSerialize, nil

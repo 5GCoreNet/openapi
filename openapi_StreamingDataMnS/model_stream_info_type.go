@@ -119,7 +119,7 @@ func (o *StreamInfoType) SetStreamId(v StreamInfoTypeStreamId) {
 
 // GetAdditionalInfo returns the AdditionalInfo field value if set, zero value otherwise.
 func (o *StreamInfoType) GetAdditionalInfo() StreamInfoTypeAdditionalInfo {
-	if o == nil || IsNil(o.AdditionalInfo) {
+	if o == nil || isNil(o.AdditionalInfo) {
 		var ret StreamInfoTypeAdditionalInfo
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *StreamInfoType) GetAdditionalInfo() StreamInfoTypeAdditionalInfo {
 // GetAdditionalInfoOk returns a tuple with the AdditionalInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StreamInfoType) GetAdditionalInfoOk() (*StreamInfoTypeAdditionalInfo, bool) {
-	if o == nil || IsNil(o.AdditionalInfo) {
+	if o == nil || isNil(o.AdditionalInfo) {
 		return nil, false
 	}
 	return o.AdditionalInfo, true
@@ -137,7 +137,7 @@ func (o *StreamInfoType) GetAdditionalInfoOk() (*StreamInfoTypeAdditionalInfo, b
 
 // HasAdditionalInfo returns a boolean if a field has been set.
 func (o *StreamInfoType) HasAdditionalInfo() bool {
-	if o != nil && !IsNil(o.AdditionalInfo) {
+	if o != nil && !isNil(o.AdditionalInfo) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o StreamInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize["streamType"] = o.StreamType
 	toSerialize["serializationFormat"] = o.SerializationFormat
 	toSerialize["streamId"] = o.StreamId
-	if !IsNil(o.AdditionalInfo) {
+	if !isNil(o.AdditionalInfo) {
 		toSerialize["additionalInfo"] = o.AdditionalInfo
 	}
 	return toSerialize, nil

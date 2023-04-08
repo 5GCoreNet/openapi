@@ -93,7 +93,7 @@ func (o *DeregistrationRequest) SetDeregReason(v DeregistrationReason) {
 
 // GetGuami returns the Guami field value if set, zero value otherwise.
 func (o *DeregistrationRequest) GetGuami() Guami {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		var ret Guami
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *DeregistrationRequest) GetGuami() Guami {
 // GetGuamiOk returns a tuple with the Guami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeregistrationRequest) GetGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.Guami) {
+	if o == nil || isNil(o.Guami) {
 		return nil, false
 	}
 	return o.Guami, true
@@ -111,7 +111,7 @@ func (o *DeregistrationRequest) GetGuamiOk() (*Guami, bool) {
 
 // HasGuami returns a boolean if a field has been set.
 func (o *DeregistrationRequest) HasGuami() bool {
-	if o != nil && !IsNil(o.Guami) {
+	if o != nil && !isNil(o.Guami) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o DeregistrationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["imsi"] = o.Imsi
 	toSerialize["deregReason"] = o.DeregReason
-	if !IsNil(o.Guami) {
+	if !isNil(o.Guami) {
 		toSerialize["guami"] = o.Guami
 	}
 	return toSerialize, nil

@@ -44,7 +44,7 @@ func NewAssuranceClosedControlLoopSingleAllOfAttributesWithDefaults() *Assurance
 
 // GetOperationalState returns the OperationalState field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetOperationalState() OperationalState {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		var ret OperationalState
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetOperationalState() 
 // GetOperationalStateOk returns a tuple with the OperationalState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetOperationalStateOk() (*OperationalState, bool) {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		return nil, false
 	}
 	return o.OperationalState, true
@@ -62,7 +62,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetOperationalStateOk(
 
 // HasOperationalState returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) HasOperationalState() bool {
-	if o != nil && !IsNil(o.OperationalState) {
+	if o != nil && !isNil(o.OperationalState) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) SetOperationalState(v 
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetAdministrativeState() AdministrativeState {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetAdministrativeState
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -94,7 +94,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetAdministrativeState
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) HasAdministrativeState() bool {
-	if o != nil && !IsNil(o.AdministrativeState) {
+	if o != nil && !isNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) SetAdministrativeState
 
 // GetControlLoopLifeCyclePhase returns the ControlLoopLifeCyclePhase field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetControlLoopLifeCyclePhase() ControlLoopLifeCyclePhase {
-	if o == nil || IsNil(o.ControlLoopLifeCyclePhase) {
+	if o == nil || isNil(o.ControlLoopLifeCyclePhase) {
 		var ret ControlLoopLifeCyclePhase
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetControlLoopLifeCycl
 // GetControlLoopLifeCyclePhaseOk returns a tuple with the ControlLoopLifeCyclePhase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetControlLoopLifeCyclePhaseOk() (*ControlLoopLifeCyclePhase, bool) {
-	if o == nil || IsNil(o.ControlLoopLifeCyclePhase) {
+	if o == nil || isNil(o.ControlLoopLifeCyclePhase) {
 		return nil, false
 	}
 	return o.ControlLoopLifeCyclePhase, true
@@ -126,7 +126,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetControlLoopLifeCycl
 
 // HasControlLoopLifeCyclePhase returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) HasControlLoopLifeCyclePhase() bool {
-	if o != nil && !IsNil(o.ControlLoopLifeCyclePhase) {
+	if o != nil && !isNil(o.ControlLoopLifeCyclePhase) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) SetControlLoopLifeCycl
 
 // GetACCLDisallowedList returns the ACCLDisallowedList field value if set, zero value otherwise.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetACCLDisallowedList() ACCLDisallowedAttributes {
-	if o == nil || IsNil(o.ACCLDisallowedList) {
+	if o == nil || isNil(o.ACCLDisallowedList) {
 		var ret ACCLDisallowedAttributes
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetACCLDisallowedList(
 // GetACCLDisallowedListOk returns a tuple with the ACCLDisallowedList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetACCLDisallowedListOk() (*ACCLDisallowedAttributes, bool) {
-	if o == nil || IsNil(o.ACCLDisallowedList) {
+	if o == nil || isNil(o.ACCLDisallowedList) {
 		return nil, false
 	}
 	return o.ACCLDisallowedList, true
@@ -158,7 +158,7 @@ func (o *AssuranceClosedControlLoopSingleAllOfAttributes) GetACCLDisallowedListO
 
 // HasACCLDisallowedList returns a boolean if a field has been set.
 func (o *AssuranceClosedControlLoopSingleAllOfAttributes) HasACCLDisallowedList() bool {
-	if o != nil && !IsNil(o.ACCLDisallowedList) {
+	if o != nil && !isNil(o.ACCLDisallowedList) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o AssuranceClosedControlLoopSingleAllOfAttributes) MarshalJSON() ([]byte, 
 
 func (o AssuranceClosedControlLoopSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OperationalState) {
+	if !isNil(o.OperationalState) {
 		toSerialize["operationalState"] = o.OperationalState
 	}
-	if !IsNil(o.AdministrativeState) {
+	if !isNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
-	if !IsNil(o.ControlLoopLifeCyclePhase) {
+	if !isNil(o.ControlLoopLifeCyclePhase) {
 		toSerialize["controlLoopLifeCyclePhase"] = o.ControlLoopLifeCyclePhase
 	}
-	if !IsNil(o.ACCLDisallowedList) {
+	if !isNil(o.ACCLDisallowedList) {
 		toSerialize["aCCLDisallowedList"] = o.ACCLDisallowedList
 	}
 	return toSerialize, nil

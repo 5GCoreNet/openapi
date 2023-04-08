@@ -68,7 +68,7 @@ func (o *MatchReportReqData) SetDiscType(v DiscoveryType) {
 
 // GetProseAppCodes returns the ProseAppCodes field value if set, zero value otherwise.
 func (o *MatchReportReqData) GetProseAppCodes() []string {
-	if o == nil || IsNil(o.ProseAppCodes) {
+	if o == nil || isNil(o.ProseAppCodes) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MatchReportReqData) GetProseAppCodes() []string {
 // GetProseAppCodesOk returns a tuple with the ProseAppCodes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchReportReqData) GetProseAppCodesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ProseAppCodes) {
+	if o == nil || isNil(o.ProseAppCodes) {
 		return nil, false
 	}
 	return o.ProseAppCodes, true
@@ -86,7 +86,7 @@ func (o *MatchReportReqData) GetProseAppCodesOk() ([]string, bool) {
 
 // HasProseAppCodes returns a boolean if a field has been set.
 func (o *MatchReportReqData) HasProseAppCodes() bool {
-	if o != nil && !IsNil(o.ProseAppCodes) {
+	if o != nil && !isNil(o.ProseAppCodes) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *MatchReportReqData) SetProseAppCodes(v []string) {
 
 // GetMoniteredPlmnId returns the MoniteredPlmnId field value if set, zero value otherwise.
 func (o *MatchReportReqData) GetMoniteredPlmnId() PlmnId {
-	if o == nil || IsNil(o.MoniteredPlmnId) {
+	if o == nil || isNil(o.MoniteredPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *MatchReportReqData) GetMoniteredPlmnId() PlmnId {
 // GetMoniteredPlmnIdOk returns a tuple with the MoniteredPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchReportReqData) GetMoniteredPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.MoniteredPlmnId) {
+	if o == nil || isNil(o.MoniteredPlmnId) {
 		return nil, false
 	}
 	return o.MoniteredPlmnId, true
@@ -118,7 +118,7 @@ func (o *MatchReportReqData) GetMoniteredPlmnIdOk() (*PlmnId, bool) {
 
 // HasMoniteredPlmnId returns a boolean if a field has been set.
 func (o *MatchReportReqData) HasMoniteredPlmnId() bool {
-	if o != nil && !IsNil(o.MoniteredPlmnId) {
+	if o != nil && !isNil(o.MoniteredPlmnId) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o MatchReportReqData) MarshalJSON() ([]byte, error) {
 func (o MatchReportReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
-	if !IsNil(o.ProseAppCodes) {
+	if !isNil(o.ProseAppCodes) {
 		toSerialize["proseAppCodes"] = o.ProseAppCodes
 	}
-	if !IsNil(o.MoniteredPlmnId) {
+	if !isNil(o.MoniteredPlmnId) {
 		toSerialize["moniteredPlmnId"] = o.MoniteredPlmnId
 	}
 	return toSerialize, nil

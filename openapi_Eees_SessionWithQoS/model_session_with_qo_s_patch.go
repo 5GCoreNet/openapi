@@ -57,7 +57,7 @@ func NewSessionWithQoSPatchWithDefaults() *SessionWithQoSPatch {
 
 // GetIpFlows returns the IpFlows field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetIpFlows() []string {
-	if o == nil || IsNil(o.IpFlows) {
+	if o == nil || isNil(o.IpFlows) {
 		var ret []string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *SessionWithQoSPatch) GetIpFlows() []string {
 // GetIpFlowsOk returns a tuple with the IpFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetIpFlowsOk() ([]string, bool) {
-	if o == nil || IsNil(o.IpFlows) {
+	if o == nil || isNil(o.IpFlows) {
 		return nil, false
 	}
 	return o.IpFlows, true
@@ -75,7 +75,7 @@ func (o *SessionWithQoSPatch) GetIpFlowsOk() ([]string, bool) {
 
 // HasIpFlows returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasIpFlows() bool {
-	if o != nil && !IsNil(o.IpFlows) {
+	if o != nil && !isNil(o.IpFlows) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *SessionWithQoSPatch) SetIpFlows(v []string) {
 
 // GetQosReference returns the QosReference field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetQosReference() string {
-	if o == nil || IsNil(o.QosReference) {
+	if o == nil || isNil(o.QosReference) {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *SessionWithQoSPatch) GetQosReference() string {
 // GetQosReferenceOk returns a tuple with the QosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetQosReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.QosReference) {
+	if o == nil || isNil(o.QosReference) {
 		return nil, false
 	}
 	return o.QosReference, true
@@ -107,7 +107,7 @@ func (o *SessionWithQoSPatch) GetQosReferenceOk() (*string, bool) {
 
 // HasQosReference returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasQosReference() bool {
-	if o != nil && !IsNil(o.QosReference) {
+	if o != nil && !isNil(o.QosReference) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *SessionWithQoSPatch) SetQosReference(v string) {
 
 // GetAltQosReference returns the AltQosReference field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetAltQosReference() []string {
-	if o == nil || IsNil(o.AltQosReference) {
+	if o == nil || isNil(o.AltQosReference) {
 		var ret []string
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *SessionWithQoSPatch) GetAltQosReference() []string {
 // GetAltQosReferenceOk returns a tuple with the AltQosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetAltQosReferenceOk() ([]string, bool) {
-	if o == nil || IsNil(o.AltQosReference) {
+	if o == nil || isNil(o.AltQosReference) {
 		return nil, false
 	}
 	return o.AltQosReference, true
@@ -139,7 +139,7 @@ func (o *SessionWithQoSPatch) GetAltQosReferenceOk() ([]string, bool) {
 
 // HasAltQosReference returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasAltQosReference() bool {
-	if o != nil && !IsNil(o.AltQosReference) {
+	if o != nil && !isNil(o.AltQosReference) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *SessionWithQoSPatch) SetAltQosReference(v []string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetEvents() []UserPlaneEvent {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		var ret []UserPlaneEvent
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *SessionWithQoSPatch) GetEvents() []UserPlaneEvent {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetEventsOk() ([]UserPlaneEvent, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -171,7 +171,7 @@ func (o *SessionWithQoSPatch) GetEventsOk() ([]UserPlaneEvent, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && !isNil(o.Events) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *SessionWithQoSPatch) SetEvents(v []UserPlaneEvent) {
 
 // GetSponsorInformation returns the SponsorInformation field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetSponsorInformation() SponsorInformation {
-	if o == nil || IsNil(o.SponsorInformation) {
+	if o == nil || isNil(o.SponsorInformation) {
 		var ret SponsorInformation
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *SessionWithQoSPatch) GetSponsorInformation() SponsorInformation {
 // GetSponsorInformationOk returns a tuple with the SponsorInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetSponsorInformationOk() (*SponsorInformation, bool) {
-	if o == nil || IsNil(o.SponsorInformation) {
+	if o == nil || isNil(o.SponsorInformation) {
 		return nil, false
 	}
 	return o.SponsorInformation, true
@@ -203,7 +203,7 @@ func (o *SessionWithQoSPatch) GetSponsorInformationOk() (*SponsorInformation, bo
 
 // HasSponsorInformation returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasSponsorInformation() bool {
-	if o != nil && !IsNil(o.SponsorInformation) {
+	if o != nil && !isNil(o.SponsorInformation) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *SessionWithQoSPatch) SetSponsorInformation(v SponsorInformation) {
 
 // GetQosMonInfo returns the QosMonInfo field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetQosMonInfo() QosMonitoringInformationRm {
-	if o == nil || IsNil(o.QosMonInfo) {
+	if o == nil || isNil(o.QosMonInfo) {
 		var ret QosMonitoringInformationRm
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *SessionWithQoSPatch) GetQosMonInfo() QosMonitoringInformationRm {
 // GetQosMonInfoOk returns a tuple with the QosMonInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetQosMonInfoOk() (*QosMonitoringInformationRm, bool) {
-	if o == nil || IsNil(o.QosMonInfo) {
+	if o == nil || isNil(o.QosMonInfo) {
 		return nil, false
 	}
 	return o.QosMonInfo, true
@@ -235,7 +235,7 @@ func (o *SessionWithQoSPatch) GetQosMonInfoOk() (*QosMonitoringInformationRm, bo
 
 // HasQosMonInfo returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasQosMonInfo() bool {
-	if o != nil && !IsNil(o.QosMonInfo) {
+	if o != nil && !isNil(o.QosMonInfo) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *SessionWithQoSPatch) SetQosMonInfo(v QosMonitoringInformationRm) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *SessionWithQoSPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -267,7 +267,7 @@ func (o *SessionWithQoSPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *SessionWithQoSPatch) SetNotificationDestination(v string) {
 
 // GetMaxbrUl returns the MaxbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionWithQoSPatch) GetMaxbrUl() string {
-	if o == nil || IsNil(o.MaxbrUl.Get()) {
+	if o == nil || isNil(o.MaxbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *SessionWithQoSPatch) UnsetMaxbrUl() {
 
 // GetMaxbrDl returns the MaxbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionWithQoSPatch) GetMaxbrDl() string {
-	if o == nil || IsNil(o.MaxbrDl.Get()) {
+	if o == nil || isNil(o.MaxbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -365,7 +365,7 @@ func (o *SessionWithQoSPatch) UnsetMaxbrDl() {
 
 // GetDisUeNotif returns the DisUeNotif field value if set, zero value otherwise.
 func (o *SessionWithQoSPatch) GetDisUeNotif() bool {
-	if o == nil || IsNil(o.DisUeNotif) {
+	if o == nil || isNil(o.DisUeNotif) {
 		var ret bool
 		return ret
 	}
@@ -375,7 +375,7 @@ func (o *SessionWithQoSPatch) GetDisUeNotif() bool {
 // GetDisUeNotifOk returns a tuple with the DisUeNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionWithQoSPatch) GetDisUeNotifOk() (*bool, bool) {
-	if o == nil || IsNil(o.DisUeNotif) {
+	if o == nil || isNil(o.DisUeNotif) {
 		return nil, false
 	}
 	return o.DisUeNotif, true
@@ -383,7 +383,7 @@ func (o *SessionWithQoSPatch) GetDisUeNotifOk() (*bool, bool) {
 
 // HasDisUeNotif returns a boolean if a field has been set.
 func (o *SessionWithQoSPatch) HasDisUeNotif() bool {
-	if o != nil && !IsNil(o.DisUeNotif) {
+	if o != nil && !isNil(o.DisUeNotif) {
 		return true
 	}
 
@@ -405,25 +405,25 @@ func (o SessionWithQoSPatch) MarshalJSON() ([]byte, error) {
 
 func (o SessionWithQoSPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IpFlows) {
+	if !isNil(o.IpFlows) {
 		toSerialize["ipFlows"] = o.IpFlows
 	}
-	if !IsNil(o.QosReference) {
+	if !isNil(o.QosReference) {
 		toSerialize["qosReference"] = o.QosReference
 	}
-	if !IsNil(o.AltQosReference) {
+	if !isNil(o.AltQosReference) {
 		toSerialize["altQosReference"] = o.AltQosReference
 	}
-	if !IsNil(o.Events) {
+	if !isNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
-	if !IsNil(o.SponsorInformation) {
+	if !isNil(o.SponsorInformation) {
 		toSerialize["sponsorInformation"] = o.SponsorInformation
 	}
-	if !IsNil(o.QosMonInfo) {
+	if !isNil(o.QosMonInfo) {
 		toSerialize["qosMonInfo"] = o.QosMonInfo
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	if o.MaxbrUl.IsSet() {
@@ -432,7 +432,7 @@ func (o SessionWithQoSPatch) ToMap() (map[string]interface{}, error) {
 	if o.MaxbrDl.IsSet() {
 		toSerialize["maxbrDl"] = o.MaxbrDl.Get()
 	}
-	if !IsNil(o.DisUeNotif) {
+	if !isNil(o.DisUeNotif) {
 		toSerialize["disUeNotif"] = o.DisUeNotif
 	}
 	return toSerialize, nil

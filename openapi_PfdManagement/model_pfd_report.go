@@ -96,7 +96,7 @@ func (o *PfdReport) SetFailureCode(v FailureCode) {
 
 // GetCachingTime returns the CachingTime field value if set, zero value otherwise.
 func (o *PfdReport) GetCachingTime() int32 {
-	if o == nil || IsNil(o.CachingTime) {
+	if o == nil || isNil(o.CachingTime) {
 		var ret int32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *PfdReport) GetCachingTime() int32 {
 // GetCachingTimeOk returns a tuple with the CachingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdReport) GetCachingTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.CachingTime) {
+	if o == nil || isNil(o.CachingTime) {
 		return nil, false
 	}
 	return o.CachingTime, true
@@ -114,7 +114,7 @@ func (o *PfdReport) GetCachingTimeOk() (*int32, bool) {
 
 // HasCachingTime returns a boolean if a field has been set.
 func (o *PfdReport) HasCachingTime() bool {
-	if o != nil && !IsNil(o.CachingTime) {
+	if o != nil && !isNil(o.CachingTime) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *PfdReport) SetCachingTime(v int32) {
 
 // GetLocationArea returns the LocationArea field value if set, zero value otherwise.
 func (o *PfdReport) GetLocationArea() UserPlaneLocationArea {
-	if o == nil || IsNil(o.LocationArea) {
+	if o == nil || isNil(o.LocationArea) {
 		var ret UserPlaneLocationArea
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *PfdReport) GetLocationArea() UserPlaneLocationArea {
 // GetLocationAreaOk returns a tuple with the LocationArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdReport) GetLocationAreaOk() (*UserPlaneLocationArea, bool) {
-	if o == nil || IsNil(o.LocationArea) {
+	if o == nil || isNil(o.LocationArea) {
 		return nil, false
 	}
 	return o.LocationArea, true
@@ -146,7 +146,7 @@ func (o *PfdReport) GetLocationAreaOk() (*UserPlaneLocationArea, bool) {
 
 // HasLocationArea returns a boolean if a field has been set.
 func (o *PfdReport) HasLocationArea() bool {
-	if o != nil && !IsNil(o.LocationArea) {
+	if o != nil && !isNil(o.LocationArea) {
 		return true
 	}
 
@@ -170,10 +170,10 @@ func (o PfdReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["externalAppIds"] = o.ExternalAppIds
 	toSerialize["failureCode"] = o.FailureCode
-	if !IsNil(o.CachingTime) {
+	if !isNil(o.CachingTime) {
 		toSerialize["cachingTime"] = o.CachingTime
 	}
-	if !IsNil(o.LocationArea) {
+	if !isNil(o.LocationArea) {
 		toSerialize["locationArea"] = o.LocationArea
 	}
 	return toSerialize, nil

@@ -119,7 +119,7 @@ func (o *AvGenerationRequest) SetServingNetworkName(v string) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *AvGenerationRequest) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *AvGenerationRequest) GetResynchronizationInfo() ResynchronizationInfo {
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvGenerationRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -137,7 +137,7 @@ func (o *AvGenerationRequest) GetResynchronizationInfoOk() (*ResynchronizationIn
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *AvGenerationRequest) HasResynchronizationInfo() bool {
-	if o != nil && !IsNil(o.ResynchronizationInfo) {
+	if o != nil && !isNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o AvGenerationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize["imsi"] = o.Imsi
 	toSerialize["authType"] = o.AuthType
 	toSerialize["servingNetworkName"] = o.ServingNetworkName
-	if !IsNil(o.ResynchronizationInfo) {
+	if !isNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
 	return toSerialize, nil

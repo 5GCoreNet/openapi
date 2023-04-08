@@ -42,7 +42,7 @@ func NewOperatorDuSingleAllOfWithDefaults() *OperatorDuSingleAllOf {
 
 // GetGnbId returns the GnbId field value if set, zero value otherwise.
 func (o *OperatorDuSingleAllOf) GetGnbId() string {
-	if o == nil || IsNil(o.GnbId) {
+	if o == nil || isNil(o.GnbId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *OperatorDuSingleAllOf) GetGnbId() string {
 // GetGnbIdOk returns a tuple with the GnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingleAllOf) GetGnbIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GnbId) {
+	if o == nil || isNil(o.GnbId) {
 		return nil, false
 	}
 	return o.GnbId, true
@@ -60,7 +60,7 @@ func (o *OperatorDuSingleAllOf) GetGnbIdOk() (*string, bool) {
 
 // HasGnbId returns a boolean if a field has been set.
 func (o *OperatorDuSingleAllOf) HasGnbId() bool {
-	if o != nil && !IsNil(o.GnbId) {
+	if o != nil && !isNil(o.GnbId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *OperatorDuSingleAllOf) SetGnbId(v string) {
 
 // GetGnbIdLength returns the GnbIdLength field value if set, zero value otherwise.
 func (o *OperatorDuSingleAllOf) GetGnbIdLength() int32 {
-	if o == nil || IsNil(o.GnbIdLength) {
+	if o == nil || isNil(o.GnbIdLength) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *OperatorDuSingleAllOf) GetGnbIdLength() int32 {
 // GetGnbIdLengthOk returns a tuple with the GnbIdLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingleAllOf) GetGnbIdLengthOk() (*int32, bool) {
-	if o == nil || IsNil(o.GnbIdLength) {
+	if o == nil || isNil(o.GnbIdLength) {
 		return nil, false
 	}
 	return o.GnbIdLength, true
@@ -92,7 +92,7 @@ func (o *OperatorDuSingleAllOf) GetGnbIdLengthOk() (*int32, bool) {
 
 // HasGnbIdLength returns a boolean if a field has been set.
 func (o *OperatorDuSingleAllOf) HasGnbIdLength() bool {
-	if o != nil && !IsNil(o.GnbIdLength) {
+	if o != nil && !isNil(o.GnbIdLength) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o OperatorDuSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o OperatorDuSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GnbId) {
+	if !isNil(o.GnbId) {
 		toSerialize["gnbId"] = o.GnbId
 	}
-	if !IsNil(o.GnbIdLength) {
+	if !isNil(o.GnbIdLength) {
 		toSerialize["gnbIdLength"] = o.GnbIdLength
 	}
 	return toSerialize, nil

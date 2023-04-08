@@ -43,7 +43,7 @@ func NewAmEventsSubscDataRmWithDefaults() *AmEventsSubscDataRm {
 
 // GetEventNotifUri returns the EventNotifUri field value if set, zero value otherwise.
 func (o *AmEventsSubscDataRm) GetEventNotifUri() string {
-	if o == nil || IsNil(o.EventNotifUri) {
+	if o == nil || isNil(o.EventNotifUri) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *AmEventsSubscDataRm) GetEventNotifUri() string {
 // GetEventNotifUriOk returns a tuple with the EventNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsSubscDataRm) GetEventNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.EventNotifUri) {
+	if o == nil || isNil(o.EventNotifUri) {
 		return nil, false
 	}
 	return o.EventNotifUri, true
@@ -61,7 +61,7 @@ func (o *AmEventsSubscDataRm) GetEventNotifUriOk() (*string, bool) {
 
 // HasEventNotifUri returns a boolean if a field has been set.
 func (o *AmEventsSubscDataRm) HasEventNotifUri() bool {
-	if o != nil && !IsNil(o.EventNotifUri) {
+	if o != nil && !isNil(o.EventNotifUri) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *AmEventsSubscDataRm) SetEventNotifUri(v string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *AmEventsSubscDataRm) GetEvents() []AmEventData {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		var ret []AmEventData
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AmEventsSubscDataRm) GetEvents() []AmEventData {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsSubscDataRm) GetEventsOk() ([]AmEventData, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -93,7 +93,7 @@ func (o *AmEventsSubscDataRm) GetEventsOk() ([]AmEventData, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *AmEventsSubscDataRm) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && !isNil(o.Events) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o AmEventsSubscDataRm) MarshalJSON() ([]byte, error) {
 
 func (o AmEventsSubscDataRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventNotifUri) {
+	if !isNil(o.EventNotifUri) {
 		toSerialize["eventNotifUri"] = o.EventNotifUri
 	}
-	if !IsNil(o.Events) {
+	if !isNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil

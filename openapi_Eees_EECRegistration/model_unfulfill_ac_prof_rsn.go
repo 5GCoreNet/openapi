@@ -17,23 +17,23 @@ import (
 
 // UnfulfillACProfRsn represents reason for unfulfilled AC profile requirements.
 type UnfulfillACProfRsn struct {
-	string *string
+	UnfulfillACProfRsnAnyOf *UnfulfillACProfRsnAnyOf
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UnfulfillACProfRsn) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into UnfulfillACProfRsnAnyOf
+	err = json.Unmarshal(data, &dst.UnfulfillACProfRsnAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonUnfulfillACProfRsnAnyOf, _ := json.Marshal(dst.UnfulfillACProfRsnAnyOf)
+		if string(jsonUnfulfillACProfRsnAnyOf) == "{}" { // empty struct
+			dst.UnfulfillACProfRsnAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.UnfulfillACProfRsnAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.UnfulfillACProfRsnAnyOf = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(UnfulfillACProfRsn)")
@@ -41,8 +41,8 @@ func (dst *UnfulfillACProfRsn) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UnfulfillACProfRsn) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.UnfulfillACProfRsnAnyOf != nil {
+		return json.Marshal(&src.UnfulfillACProfRsnAnyOf)
 	}
 
 	return nil, nil // no data in anyOf schemas

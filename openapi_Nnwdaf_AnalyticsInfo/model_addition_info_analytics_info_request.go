@@ -42,7 +42,7 @@ func NewAdditionInfoAnalyticsInfoRequestWithDefaults() *AdditionInfoAnalyticsInf
 
 // GetRvWaitTime returns the RvWaitTime field value if set, zero value otherwise.
 func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTime() int32 {
-	if o == nil || IsNil(o.RvWaitTime) {
+	if o == nil || isNil(o.RvWaitTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTime() int32 {
 // GetRvWaitTimeOk returns a tuple with the RvWaitTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.RvWaitTime) {
+	if o == nil || isNil(o.RvWaitTime) {
 		return nil, false
 	}
 	return o.RvWaitTime, true
@@ -60,7 +60,7 @@ func (o *AdditionInfoAnalyticsInfoRequest) GetRvWaitTimeOk() (*int32, bool) {
 
 // HasRvWaitTime returns a boolean if a field has been set.
 func (o *AdditionInfoAnalyticsInfoRequest) HasRvWaitTime() bool {
-	if o != nil && !IsNil(o.RvWaitTime) {
+	if o != nil && !isNil(o.RvWaitTime) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o AdditionInfoAnalyticsInfoRequest) MarshalJSON() ([]byte, error) {
 
 func (o AdditionInfoAnalyticsInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RvWaitTime) {
+	if !isNil(o.RvWaitTime) {
 		toSerialize["rvWaitTime"] = o.RvWaitTime
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -14,9 +13,11 @@ docs/AuthorizeTheNIDDConfigurationRequestApi.md
 docs/ContextInfo.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/NiddAuthUpdateInfo.md
 docs/NiddAuthUpdateNotification.md
 docs/NiddCause.md
+docs/NiddCauseAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -32,9 +33,11 @@ model_authorization_info.go
 model_context_info.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_nidd_auth_update_info.go
 model_nidd_auth_update_notification.go
 model_nidd_cause.go
+model_nidd_cause_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

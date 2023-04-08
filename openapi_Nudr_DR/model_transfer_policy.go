@@ -52,7 +52,7 @@ func NewTransferPolicyWithDefaults() *TransferPolicy {
 
 // GetMaxBitRateDl returns the MaxBitRateDl field value if set, zero value otherwise.
 func (o *TransferPolicy) GetMaxBitRateDl() string {
-	if o == nil || IsNil(o.MaxBitRateDl) {
+	if o == nil || isNil(o.MaxBitRateDl) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *TransferPolicy) GetMaxBitRateDl() string {
 // GetMaxBitRateDlOk returns a tuple with the MaxBitRateDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferPolicy) GetMaxBitRateDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxBitRateDl) {
+	if o == nil || isNil(o.MaxBitRateDl) {
 		return nil, false
 	}
 	return o.MaxBitRateDl, true
@@ -70,7 +70,7 @@ func (o *TransferPolicy) GetMaxBitRateDlOk() (*string, bool) {
 
 // HasMaxBitRateDl returns a boolean if a field has been set.
 func (o *TransferPolicy) HasMaxBitRateDl() bool {
-	if o != nil && !IsNil(o.MaxBitRateDl) {
+	if o != nil && !isNil(o.MaxBitRateDl) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *TransferPolicy) SetMaxBitRateDl(v string) {
 
 // GetMaxBitRateUl returns the MaxBitRateUl field value if set, zero value otherwise.
 func (o *TransferPolicy) GetMaxBitRateUl() string {
-	if o == nil || IsNil(o.MaxBitRateUl) {
+	if o == nil || isNil(o.MaxBitRateUl) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *TransferPolicy) GetMaxBitRateUl() string {
 // GetMaxBitRateUlOk returns a tuple with the MaxBitRateUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransferPolicy) GetMaxBitRateUlOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxBitRateUl) {
+	if o == nil || isNil(o.MaxBitRateUl) {
 		return nil, false
 	}
 	return o.MaxBitRateUl, true
@@ -102,7 +102,7 @@ func (o *TransferPolicy) GetMaxBitRateUlOk() (*string, bool) {
 
 // HasMaxBitRateUl returns a boolean if a field has been set.
 func (o *TransferPolicy) HasMaxBitRateUl() bool {
-	if o != nil && !IsNil(o.MaxBitRateUl) {
+	if o != nil && !isNil(o.MaxBitRateUl) {
 		return true
 	}
 
@@ -196,10 +196,10 @@ func (o TransferPolicy) MarshalJSON() ([]byte, error) {
 
 func (o TransferPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxBitRateDl) {
+	if !isNil(o.MaxBitRateDl) {
 		toSerialize["maxBitRateDl"] = o.MaxBitRateDl
 	}
-	if !IsNil(o.MaxBitRateUl) {
+	if !isNil(o.MaxBitRateUl) {
 		toSerialize["maxBitRateUl"] = o.MaxBitRateUl
 	}
 	toSerialize["ratingGroup"] = o.RatingGroup

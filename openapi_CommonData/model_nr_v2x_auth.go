@@ -42,7 +42,7 @@ func NewNrV2xAuthWithDefaults() *NrV2xAuth {
 
 // GetVehicleUeAuth returns the VehicleUeAuth field value if set, zero value otherwise.
 func (o *NrV2xAuth) GetVehicleUeAuth() UeAuth {
-	if o == nil || IsNil(o.VehicleUeAuth) {
+	if o == nil || isNil(o.VehicleUeAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NrV2xAuth) GetVehicleUeAuth() UeAuth {
 // GetVehicleUeAuthOk returns a tuple with the VehicleUeAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrV2xAuth) GetVehicleUeAuthOk() (*UeAuth, bool) {
-	if o == nil || IsNil(o.VehicleUeAuth) {
+	if o == nil || isNil(o.VehicleUeAuth) {
 		return nil, false
 	}
 	return o.VehicleUeAuth, true
@@ -60,7 +60,7 @@ func (o *NrV2xAuth) GetVehicleUeAuthOk() (*UeAuth, bool) {
 
 // HasVehicleUeAuth returns a boolean if a field has been set.
 func (o *NrV2xAuth) HasVehicleUeAuth() bool {
-	if o != nil && !IsNil(o.VehicleUeAuth) {
+	if o != nil && !isNil(o.VehicleUeAuth) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NrV2xAuth) SetVehicleUeAuth(v UeAuth) {
 
 // GetPedestrianUeAuth returns the PedestrianUeAuth field value if set, zero value otherwise.
 func (o *NrV2xAuth) GetPedestrianUeAuth() UeAuth {
-	if o == nil || IsNil(o.PedestrianUeAuth) {
+	if o == nil || isNil(o.PedestrianUeAuth) {
 		var ret UeAuth
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NrV2xAuth) GetPedestrianUeAuth() UeAuth {
 // GetPedestrianUeAuthOk returns a tuple with the PedestrianUeAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrV2xAuth) GetPedestrianUeAuthOk() (*UeAuth, bool) {
-	if o == nil || IsNil(o.PedestrianUeAuth) {
+	if o == nil || isNil(o.PedestrianUeAuth) {
 		return nil, false
 	}
 	return o.PedestrianUeAuth, true
@@ -92,7 +92,7 @@ func (o *NrV2xAuth) GetPedestrianUeAuthOk() (*UeAuth, bool) {
 
 // HasPedestrianUeAuth returns a boolean if a field has been set.
 func (o *NrV2xAuth) HasPedestrianUeAuth() bool {
-	if o != nil && !IsNil(o.PedestrianUeAuth) {
+	if o != nil && !isNil(o.PedestrianUeAuth) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o NrV2xAuth) MarshalJSON() ([]byte, error) {
 
 func (o NrV2xAuth) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.VehicleUeAuth) {
+	if !isNil(o.VehicleUeAuth) {
 		toSerialize["vehicleUeAuth"] = o.VehicleUeAuth
 	}
-	if !IsNil(o.PedestrianUeAuth) {
+	if !isNil(o.PedestrianUeAuth) {
 		toSerialize["pedestrianUeAuth"] = o.PedestrianUeAuth
 	}
 	return toSerialize, nil

@@ -60,7 +60,7 @@ func NewProblemDetailsEnableUeReachabilityWithDefaults() *ProblemDetailsEnableUe
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *ProblemDetailsEnableUeReachability) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -78,7 +78,7 @@ func (o *ProblemDetailsEnableUeReachability) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *ProblemDetailsEnableUeReachability) SetType(v string) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *ProblemDetailsEnableUeReachability) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -110,7 +110,7 @@ func (o *ProblemDetailsEnableUeReachability) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasTitle() bool {
-	if o != nil && !IsNil(o.Title) {
+	if o != nil && !isNil(o.Title) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *ProblemDetailsEnableUeReachability) SetTitle(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetStatus() int32 {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret int32
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *ProblemDetailsEnableUeReachability) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetStatusOk() (*int32, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -142,7 +142,7 @@ func (o *ProblemDetailsEnableUeReachability) GetStatusOk() (*int32, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *ProblemDetailsEnableUeReachability) SetStatus(v int32) {
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetDetail() string {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		var ret string
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *ProblemDetailsEnableUeReachability) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetDetailOk() (*string, bool) {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		return nil, false
 	}
 	return o.Detail, true
@@ -174,7 +174,7 @@ func (o *ProblemDetailsEnableUeReachability) GetDetailOk() (*string, bool) {
 
 // HasDetail returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasDetail() bool {
-	if o != nil && !IsNil(o.Detail) {
+	if o != nil && !isNil(o.Detail) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *ProblemDetailsEnableUeReachability) SetDetail(v string) {
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetInstance() string {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		var ret string
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *ProblemDetailsEnableUeReachability) GetInstance() string {
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		return nil, false
 	}
 	return o.Instance, true
@@ -206,7 +206,7 @@ func (o *ProblemDetailsEnableUeReachability) GetInstanceOk() (*string, bool) {
 
 // HasInstance returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && !isNil(o.Instance) {
 		return true
 	}
 
@@ -220,7 +220,7 @@ func (o *ProblemDetailsEnableUeReachability) SetInstance(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetCause() string {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -230,7 +230,7 @@ func (o *ProblemDetailsEnableUeReachability) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -238,7 +238,7 @@ func (o *ProblemDetailsEnableUeReachability) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -252,7 +252,7 @@ func (o *ProblemDetailsEnableUeReachability) SetCause(v string) {
 
 // GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetInvalidParams() []InvalidParam {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -262,7 +262,7 @@ func (o *ProblemDetailsEnableUeReachability) GetInvalidParams() []InvalidParam {
 // GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetInvalidParamsOk() ([]InvalidParam, bool) {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		return nil, false
 	}
 	return o.InvalidParams, true
@@ -270,7 +270,7 @@ func (o *ProblemDetailsEnableUeReachability) GetInvalidParamsOk() ([]InvalidPara
 
 // HasInvalidParams returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasInvalidParams() bool {
-	if o != nil && !IsNil(o.InvalidParams) {
+	if o != nil && !isNil(o.InvalidParams) {
 		return true
 	}
 
@@ -284,7 +284,7 @@ func (o *ProblemDetailsEnableUeReachability) SetInvalidParams(v []InvalidParam) 
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -294,7 +294,7 @@ func (o *ProblemDetailsEnableUeReachability) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -302,7 +302,7 @@ func (o *ProblemDetailsEnableUeReachability) GetSupportedFeaturesOk() (*string, 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -316,7 +316,7 @@ func (o *ProblemDetailsEnableUeReachability) SetSupportedFeatures(v string) {
 
 // GetAccessTokenError returns the AccessTokenError field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetAccessTokenError() AccessTokenErr {
-	if o == nil || IsNil(o.AccessTokenError) {
+	if o == nil || isNil(o.AccessTokenError) {
 		var ret AccessTokenErr
 		return ret
 	}
@@ -326,7 +326,7 @@ func (o *ProblemDetailsEnableUeReachability) GetAccessTokenError() AccessTokenEr
 // GetAccessTokenErrorOk returns a tuple with the AccessTokenError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetAccessTokenErrorOk() (*AccessTokenErr, bool) {
-	if o == nil || IsNil(o.AccessTokenError) {
+	if o == nil || isNil(o.AccessTokenError) {
 		return nil, false
 	}
 	return o.AccessTokenError, true
@@ -334,7 +334,7 @@ func (o *ProblemDetailsEnableUeReachability) GetAccessTokenErrorOk() (*AccessTok
 
 // HasAccessTokenError returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasAccessTokenError() bool {
-	if o != nil && !IsNil(o.AccessTokenError) {
+	if o != nil && !isNil(o.AccessTokenError) {
 		return true
 	}
 
@@ -348,7 +348,7 @@ func (o *ProblemDetailsEnableUeReachability) SetAccessTokenError(v AccessTokenEr
 
 // GetAccessTokenRequest returns the AccessTokenRequest field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetAccessTokenRequest() AccessTokenReq {
-	if o == nil || IsNil(o.AccessTokenRequest) {
+	if o == nil || isNil(o.AccessTokenRequest) {
 		var ret AccessTokenReq
 		return ret
 	}
@@ -358,7 +358,7 @@ func (o *ProblemDetailsEnableUeReachability) GetAccessTokenRequest() AccessToken
 // GetAccessTokenRequestOk returns a tuple with the AccessTokenRequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetAccessTokenRequestOk() (*AccessTokenReq, bool) {
-	if o == nil || IsNil(o.AccessTokenRequest) {
+	if o == nil || isNil(o.AccessTokenRequest) {
 		return nil, false
 	}
 	return o.AccessTokenRequest, true
@@ -366,7 +366,7 @@ func (o *ProblemDetailsEnableUeReachability) GetAccessTokenRequestOk() (*AccessT
 
 // HasAccessTokenRequest returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasAccessTokenRequest() bool {
-	if o != nil && !IsNil(o.AccessTokenRequest) {
+	if o != nil && !isNil(o.AccessTokenRequest) {
 		return true
 	}
 
@@ -380,7 +380,7 @@ func (o *ProblemDetailsEnableUeReachability) SetAccessTokenRequest(v AccessToken
 
 // GetNrfId returns the NrfId field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetNrfId() string {
-	if o == nil || IsNil(o.NrfId) {
+	if o == nil || isNil(o.NrfId) {
 		var ret string
 		return ret
 	}
@@ -390,7 +390,7 @@ func (o *ProblemDetailsEnableUeReachability) GetNrfId() string {
 // GetNrfIdOk returns a tuple with the NrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetNrfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfId) {
+	if o == nil || isNil(o.NrfId) {
 		return nil, false
 	}
 	return o.NrfId, true
@@ -398,7 +398,7 @@ func (o *ProblemDetailsEnableUeReachability) GetNrfIdOk() (*string, bool) {
 
 // HasNrfId returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasNrfId() bool {
-	if o != nil && !IsNil(o.NrfId) {
+	if o != nil && !isNil(o.NrfId) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *ProblemDetailsEnableUeReachability) SetNrfId(v string) {
 
 // GetSupportedApiVersions returns the SupportedApiVersions field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetSupportedApiVersions() []string {
-	if o == nil || IsNil(o.SupportedApiVersions) {
+	if o == nil || isNil(o.SupportedApiVersions) {
 		var ret []string
 		return ret
 	}
@@ -422,7 +422,7 @@ func (o *ProblemDetailsEnableUeReachability) GetSupportedApiVersions() []string 
 // GetSupportedApiVersionsOk returns a tuple with the SupportedApiVersions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetSupportedApiVersionsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedApiVersions) {
+	if o == nil || isNil(o.SupportedApiVersions) {
 		return nil, false
 	}
 	return o.SupportedApiVersions, true
@@ -430,7 +430,7 @@ func (o *ProblemDetailsEnableUeReachability) GetSupportedApiVersionsOk() ([]stri
 
 // HasSupportedApiVersions returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasSupportedApiVersions() bool {
-	if o != nil && !IsNil(o.SupportedApiVersions) {
+	if o != nil && !isNil(o.SupportedApiVersions) {
 		return true
 	}
 
@@ -444,7 +444,7 @@ func (o *ProblemDetailsEnableUeReachability) SetSupportedApiVersions(v []string)
 
 // GetMaxWaitingTime returns the MaxWaitingTime field value if set, zero value otherwise.
 func (o *ProblemDetailsEnableUeReachability) GetMaxWaitingTime() int32 {
-	if o == nil || IsNil(o.MaxWaitingTime) {
+	if o == nil || isNil(o.MaxWaitingTime) {
 		var ret int32
 		return ret
 	}
@@ -454,7 +454,7 @@ func (o *ProblemDetailsEnableUeReachability) GetMaxWaitingTime() int32 {
 // GetMaxWaitingTimeOk returns a tuple with the MaxWaitingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsEnableUeReachability) GetMaxWaitingTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxWaitingTime) {
+	if o == nil || isNil(o.MaxWaitingTime) {
 		return nil, false
 	}
 	return o.MaxWaitingTime, true
@@ -462,7 +462,7 @@ func (o *ProblemDetailsEnableUeReachability) GetMaxWaitingTimeOk() (*int32, bool
 
 // HasMaxWaitingTime returns a boolean if a field has been set.
 func (o *ProblemDetailsEnableUeReachability) HasMaxWaitingTime() bool {
-	if o != nil && !IsNil(o.MaxWaitingTime) {
+	if o != nil && !isNil(o.MaxWaitingTime) {
 		return true
 	}
 
@@ -484,43 +484,43 @@ func (o ProblemDetailsEnableUeReachability) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetailsEnableUeReachability) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Title) {
+	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Detail) {
+	if !isNil(o.Detail) {
 		toSerialize["detail"] = o.Detail
 	}
-	if !IsNil(o.Instance) {
+	if !isNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.InvalidParams) {
+	if !isNil(o.InvalidParams) {
 		toSerialize["invalidParams"] = o.InvalidParams
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.AccessTokenError) {
+	if !isNil(o.AccessTokenError) {
 		toSerialize["accessTokenError"] = o.AccessTokenError
 	}
-	if !IsNil(o.AccessTokenRequest) {
+	if !isNil(o.AccessTokenRequest) {
 		toSerialize["accessTokenRequest"] = o.AccessTokenRequest
 	}
-	if !IsNil(o.NrfId) {
+	if !isNil(o.NrfId) {
 		toSerialize["nrfId"] = o.NrfId
 	}
-	if !IsNil(o.SupportedApiVersions) {
+	if !isNil(o.SupportedApiVersions) {
 		toSerialize["supportedApiVersions"] = o.SupportedApiVersions
 	}
-	if !IsNil(o.MaxWaitingTime) {
+	if !isNil(o.MaxWaitingTime) {
 		toSerialize["maxWaitingTime"] = o.MaxWaitingTime
 	}
 	return toSerialize, nil

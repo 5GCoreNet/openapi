@@ -46,7 +46,7 @@ func NewCellIndividualOffsetWithDefaults() *CellIndividualOffset {
 
 // GetRsrpOffsetSSB returns the RsrpOffsetSSB field value if set, zero value otherwise.
 func (o *CellIndividualOffset) GetRsrpOffsetSSB() int32 {
-	if o == nil || IsNil(o.RsrpOffsetSSB) {
+	if o == nil || isNil(o.RsrpOffsetSSB) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *CellIndividualOffset) GetRsrpOffsetSSB() int32 {
 // GetRsrpOffsetSSBOk returns a tuple with the RsrpOffsetSSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CellIndividualOffset) GetRsrpOffsetSSBOk() (*int32, bool) {
-	if o == nil || IsNil(o.RsrpOffsetSSB) {
+	if o == nil || isNil(o.RsrpOffsetSSB) {
 		return nil, false
 	}
 	return o.RsrpOffsetSSB, true
@@ -64,7 +64,7 @@ func (o *CellIndividualOffset) GetRsrpOffsetSSBOk() (*int32, bool) {
 
 // HasRsrpOffsetSSB returns a boolean if a field has been set.
 func (o *CellIndividualOffset) HasRsrpOffsetSSB() bool {
-	if o != nil && !IsNil(o.RsrpOffsetSSB) {
+	if o != nil && !isNil(o.RsrpOffsetSSB) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *CellIndividualOffset) SetRsrpOffsetSSB(v int32) {
 
 // GetRsrqOffsetSSB returns the RsrqOffsetSSB field value if set, zero value otherwise.
 func (o *CellIndividualOffset) GetRsrqOffsetSSB() int32 {
-	if o == nil || IsNil(o.RsrqOffsetSSB) {
+	if o == nil || isNil(o.RsrqOffsetSSB) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *CellIndividualOffset) GetRsrqOffsetSSB() int32 {
 // GetRsrqOffsetSSBOk returns a tuple with the RsrqOffsetSSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CellIndividualOffset) GetRsrqOffsetSSBOk() (*int32, bool) {
-	if o == nil || IsNil(o.RsrqOffsetSSB) {
+	if o == nil || isNil(o.RsrqOffsetSSB) {
 		return nil, false
 	}
 	return o.RsrqOffsetSSB, true
@@ -96,7 +96,7 @@ func (o *CellIndividualOffset) GetRsrqOffsetSSBOk() (*int32, bool) {
 
 // HasRsrqOffsetSSB returns a boolean if a field has been set.
 func (o *CellIndividualOffset) HasRsrqOffsetSSB() bool {
-	if o != nil && !IsNil(o.RsrqOffsetSSB) {
+	if o != nil && !isNil(o.RsrqOffsetSSB) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *CellIndividualOffset) SetRsrqOffsetSSB(v int32) {
 
 // GetSinrOffsetSSB returns the SinrOffsetSSB field value if set, zero value otherwise.
 func (o *CellIndividualOffset) GetSinrOffsetSSB() int32 {
-	if o == nil || IsNil(o.SinrOffsetSSB) {
+	if o == nil || isNil(o.SinrOffsetSSB) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *CellIndividualOffset) GetSinrOffsetSSB() int32 {
 // GetSinrOffsetSSBOk returns a tuple with the SinrOffsetSSB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CellIndividualOffset) GetSinrOffsetSSBOk() (*int32, bool) {
-	if o == nil || IsNil(o.SinrOffsetSSB) {
+	if o == nil || isNil(o.SinrOffsetSSB) {
 		return nil, false
 	}
 	return o.SinrOffsetSSB, true
@@ -128,7 +128,7 @@ func (o *CellIndividualOffset) GetSinrOffsetSSBOk() (*int32, bool) {
 
 // HasSinrOffsetSSB returns a boolean if a field has been set.
 func (o *CellIndividualOffset) HasSinrOffsetSSB() bool {
-	if o != nil && !IsNil(o.SinrOffsetSSB) {
+	if o != nil && !isNil(o.SinrOffsetSSB) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *CellIndividualOffset) SetSinrOffsetSSB(v int32) {
 
 // GetRsrpOffsetCSIRS returns the RsrpOffsetCSIRS field value if set, zero value otherwise.
 func (o *CellIndividualOffset) GetRsrpOffsetCSIRS() int32 {
-	if o == nil || IsNil(o.RsrpOffsetCSIRS) {
+	if o == nil || isNil(o.RsrpOffsetCSIRS) {
 		var ret int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *CellIndividualOffset) GetRsrpOffsetCSIRS() int32 {
 // GetRsrpOffsetCSIRSOk returns a tuple with the RsrpOffsetCSIRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CellIndividualOffset) GetRsrpOffsetCSIRSOk() (*int32, bool) {
-	if o == nil || IsNil(o.RsrpOffsetCSIRS) {
+	if o == nil || isNil(o.RsrpOffsetCSIRS) {
 		return nil, false
 	}
 	return o.RsrpOffsetCSIRS, true
@@ -160,7 +160,7 @@ func (o *CellIndividualOffset) GetRsrpOffsetCSIRSOk() (*int32, bool) {
 
 // HasRsrpOffsetCSIRS returns a boolean if a field has been set.
 func (o *CellIndividualOffset) HasRsrpOffsetCSIRS() bool {
-	if o != nil && !IsNil(o.RsrpOffsetCSIRS) {
+	if o != nil && !isNil(o.RsrpOffsetCSIRS) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *CellIndividualOffset) SetRsrpOffsetCSIRS(v int32) {
 
 // GetRsrqOffsetCSIRS returns the RsrqOffsetCSIRS field value if set, zero value otherwise.
 func (o *CellIndividualOffset) GetRsrqOffsetCSIRS() int32 {
-	if o == nil || IsNil(o.RsrqOffsetCSIRS) {
+	if o == nil || isNil(o.RsrqOffsetCSIRS) {
 		var ret int32
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *CellIndividualOffset) GetRsrqOffsetCSIRS() int32 {
 // GetRsrqOffsetCSIRSOk returns a tuple with the RsrqOffsetCSIRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CellIndividualOffset) GetRsrqOffsetCSIRSOk() (*int32, bool) {
-	if o == nil || IsNil(o.RsrqOffsetCSIRS) {
+	if o == nil || isNil(o.RsrqOffsetCSIRS) {
 		return nil, false
 	}
 	return o.RsrqOffsetCSIRS, true
@@ -192,7 +192,7 @@ func (o *CellIndividualOffset) GetRsrqOffsetCSIRSOk() (*int32, bool) {
 
 // HasRsrqOffsetCSIRS returns a boolean if a field has been set.
 func (o *CellIndividualOffset) HasRsrqOffsetCSIRS() bool {
-	if o != nil && !IsNil(o.RsrqOffsetCSIRS) {
+	if o != nil && !isNil(o.RsrqOffsetCSIRS) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *CellIndividualOffset) SetRsrqOffsetCSIRS(v int32) {
 
 // GetSinrOffsetCSIRS returns the SinrOffsetCSIRS field value if set, zero value otherwise.
 func (o *CellIndividualOffset) GetSinrOffsetCSIRS() int32 {
-	if o == nil || IsNil(o.SinrOffsetCSIRS) {
+	if o == nil || isNil(o.SinrOffsetCSIRS) {
 		var ret int32
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *CellIndividualOffset) GetSinrOffsetCSIRS() int32 {
 // GetSinrOffsetCSIRSOk returns a tuple with the SinrOffsetCSIRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CellIndividualOffset) GetSinrOffsetCSIRSOk() (*int32, bool) {
-	if o == nil || IsNil(o.SinrOffsetCSIRS) {
+	if o == nil || isNil(o.SinrOffsetCSIRS) {
 		return nil, false
 	}
 	return o.SinrOffsetCSIRS, true
@@ -224,7 +224,7 @@ func (o *CellIndividualOffset) GetSinrOffsetCSIRSOk() (*int32, bool) {
 
 // HasSinrOffsetCSIRS returns a boolean if a field has been set.
 func (o *CellIndividualOffset) HasSinrOffsetCSIRS() bool {
-	if o != nil && !IsNil(o.SinrOffsetCSIRS) {
+	if o != nil && !isNil(o.SinrOffsetCSIRS) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o CellIndividualOffset) MarshalJSON() ([]byte, error) {
 
 func (o CellIndividualOffset) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RsrpOffsetSSB) {
+	if !isNil(o.RsrpOffsetSSB) {
 		toSerialize["rsrpOffsetSSB"] = o.RsrpOffsetSSB
 	}
-	if !IsNil(o.RsrqOffsetSSB) {
+	if !isNil(o.RsrqOffsetSSB) {
 		toSerialize["rsrqOffsetSSB"] = o.RsrqOffsetSSB
 	}
-	if !IsNil(o.SinrOffsetSSB) {
+	if !isNil(o.SinrOffsetSSB) {
 		toSerialize["sinrOffsetSSB"] = o.SinrOffsetSSB
 	}
-	if !IsNil(o.RsrpOffsetCSIRS) {
+	if !isNil(o.RsrpOffsetCSIRS) {
 		toSerialize["rsrpOffsetCSI-RS"] = o.RsrpOffsetCSIRS
 	}
-	if !IsNil(o.RsrqOffsetCSIRS) {
+	if !isNil(o.RsrqOffsetCSIRS) {
 		toSerialize["rsrqOffsetCSI-RS"] = o.RsrqOffsetCSIRS
 	}
-	if !IsNil(o.SinrOffsetCSIRS) {
+	if !isNil(o.SinrOffsetCSIRS) {
 		toSerialize["sinrOffsetCSI-RS"] = o.SinrOffsetCSIRS
 	}
 	return toSerialize, nil

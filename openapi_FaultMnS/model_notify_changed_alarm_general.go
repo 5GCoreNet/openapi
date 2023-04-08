@@ -12,7 +12,6 @@ package openapi_FaultMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyChangedAlarmGeneral type satisfies the MappedNullable interface at compile time
@@ -242,7 +241,7 @@ func (o *NotifyChangedAlarmGeneral) SetAlarmType(v AlarmType) {
 
 // GetProbableCause returns the ProbableCause field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetProbableCause() ProbableCause {
-	if o == nil || IsNil(o.ProbableCause) {
+	if o == nil || isNil(o.ProbableCause) {
 		var ret ProbableCause
 		return ret
 	}
@@ -252,7 +251,7 @@ func (o *NotifyChangedAlarmGeneral) GetProbableCause() ProbableCause {
 // GetProbableCauseOk returns a tuple with the ProbableCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetProbableCauseOk() (*ProbableCause, bool) {
-	if o == nil || IsNil(o.ProbableCause) {
+	if o == nil || isNil(o.ProbableCause) {
 		return nil, false
 	}
 	return o.ProbableCause, true
@@ -260,7 +259,7 @@ func (o *NotifyChangedAlarmGeneral) GetProbableCauseOk() (*ProbableCause, bool) 
 
 // HasProbableCause returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasProbableCause() bool {
-	if o != nil && !IsNil(o.ProbableCause) {
+	if o != nil && !isNil(o.ProbableCause) {
 		return true
 	}
 
@@ -274,7 +273,7 @@ func (o *NotifyChangedAlarmGeneral) SetProbableCause(v ProbableCause) {
 
 // GetSpecificProblem returns the SpecificProblem field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetSpecificProblem() SpecificProblem {
-	if o == nil || IsNil(o.SpecificProblem) {
+	if o == nil || isNil(o.SpecificProblem) {
 		var ret SpecificProblem
 		return ret
 	}
@@ -284,7 +283,7 @@ func (o *NotifyChangedAlarmGeneral) GetSpecificProblem() SpecificProblem {
 // GetSpecificProblemOk returns a tuple with the SpecificProblem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetSpecificProblemOk() (*SpecificProblem, bool) {
-	if o == nil || IsNil(o.SpecificProblem) {
+	if o == nil || isNil(o.SpecificProblem) {
 		return nil, false
 	}
 	return o.SpecificProblem, true
@@ -292,7 +291,7 @@ func (o *NotifyChangedAlarmGeneral) GetSpecificProblemOk() (*SpecificProblem, bo
 
 // HasSpecificProblem returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasSpecificProblem() bool {
-	if o != nil && !IsNil(o.SpecificProblem) {
+	if o != nil && !isNil(o.SpecificProblem) {
 		return true
 	}
 
@@ -306,7 +305,7 @@ func (o *NotifyChangedAlarmGeneral) SetSpecificProblem(v SpecificProblem) {
 
 // GetPerceivedSeverity returns the PerceivedSeverity field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetPerceivedSeverity() PerceivedSeverity {
-	if o == nil || IsNil(o.PerceivedSeverity) {
+	if o == nil || isNil(o.PerceivedSeverity) {
 		var ret PerceivedSeverity
 		return ret
 	}
@@ -316,7 +315,7 @@ func (o *NotifyChangedAlarmGeneral) GetPerceivedSeverity() PerceivedSeverity {
 // GetPerceivedSeverityOk returns a tuple with the PerceivedSeverity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetPerceivedSeverityOk() (*PerceivedSeverity, bool) {
-	if o == nil || IsNil(o.PerceivedSeverity) {
+	if o == nil || isNil(o.PerceivedSeverity) {
 		return nil, false
 	}
 	return o.PerceivedSeverity, true
@@ -324,7 +323,7 @@ func (o *NotifyChangedAlarmGeneral) GetPerceivedSeverityOk() (*PerceivedSeverity
 
 // HasPerceivedSeverity returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasPerceivedSeverity() bool {
-	if o != nil && !IsNil(o.PerceivedSeverity) {
+	if o != nil && !isNil(o.PerceivedSeverity) {
 		return true
 	}
 
@@ -338,7 +337,7 @@ func (o *NotifyChangedAlarmGeneral) SetPerceivedSeverity(v PerceivedSeverity) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -348,7 +347,7 @@ func (o *NotifyChangedAlarmGeneral) GetCorrelatedNotifications() []CorrelatedNot
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -356,7 +355,7 @@ func (o *NotifyChangedAlarmGeneral) GetCorrelatedNotificationsOk() ([]Correlated
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -370,7 +369,7 @@ func (o *NotifyChangedAlarmGeneral) SetCorrelatedNotifications(v []CorrelatedNot
 
 // GetBackedUpStatus returns the BackedUpStatus field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetBackedUpStatus() bool {
-	if o == nil || IsNil(o.BackedUpStatus) {
+	if o == nil || isNil(o.BackedUpStatus) {
 		var ret bool
 		return ret
 	}
@@ -380,7 +379,7 @@ func (o *NotifyChangedAlarmGeneral) GetBackedUpStatus() bool {
 // GetBackedUpStatusOk returns a tuple with the BackedUpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetBackedUpStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.BackedUpStatus) {
+	if o == nil || isNil(o.BackedUpStatus) {
 		return nil, false
 	}
 	return o.BackedUpStatus, true
@@ -388,7 +387,7 @@ func (o *NotifyChangedAlarmGeneral) GetBackedUpStatusOk() (*bool, bool) {
 
 // HasBackedUpStatus returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasBackedUpStatus() bool {
-	if o != nil && !IsNil(o.BackedUpStatus) {
+	if o != nil && !isNil(o.BackedUpStatus) {
 		return true
 	}
 
@@ -402,7 +401,7 @@ func (o *NotifyChangedAlarmGeneral) SetBackedUpStatus(v bool) {
 
 // GetBackUpObject returns the BackUpObject field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetBackUpObject() string {
-	if o == nil || IsNil(o.BackUpObject) {
+	if o == nil || isNil(o.BackUpObject) {
 		var ret string
 		return ret
 	}
@@ -412,7 +411,7 @@ func (o *NotifyChangedAlarmGeneral) GetBackUpObject() string {
 // GetBackUpObjectOk returns a tuple with the BackUpObject field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetBackUpObjectOk() (*string, bool) {
-	if o == nil || IsNil(o.BackUpObject) {
+	if o == nil || isNil(o.BackUpObject) {
 		return nil, false
 	}
 	return o.BackUpObject, true
@@ -420,7 +419,7 @@ func (o *NotifyChangedAlarmGeneral) GetBackUpObjectOk() (*string, bool) {
 
 // HasBackUpObject returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasBackUpObject() bool {
-	if o != nil && !IsNil(o.BackUpObject) {
+	if o != nil && !isNil(o.BackUpObject) {
 		return true
 	}
 
@@ -434,7 +433,7 @@ func (o *NotifyChangedAlarmGeneral) SetBackUpObject(v string) {
 
 // GetTrendIndication returns the TrendIndication field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetTrendIndication() TrendIndication {
-	if o == nil || IsNil(o.TrendIndication) {
+	if o == nil || isNil(o.TrendIndication) {
 		var ret TrendIndication
 		return ret
 	}
@@ -444,7 +443,7 @@ func (o *NotifyChangedAlarmGeneral) GetTrendIndication() TrendIndication {
 // GetTrendIndicationOk returns a tuple with the TrendIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetTrendIndicationOk() (*TrendIndication, bool) {
-	if o == nil || IsNil(o.TrendIndication) {
+	if o == nil || isNil(o.TrendIndication) {
 		return nil, false
 	}
 	return o.TrendIndication, true
@@ -452,7 +451,7 @@ func (o *NotifyChangedAlarmGeneral) GetTrendIndicationOk() (*TrendIndication, bo
 
 // HasTrendIndication returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasTrendIndication() bool {
-	if o != nil && !IsNil(o.TrendIndication) {
+	if o != nil && !isNil(o.TrendIndication) {
 		return true
 	}
 
@@ -466,7 +465,7 @@ func (o *NotifyChangedAlarmGeneral) SetTrendIndication(v TrendIndication) {
 
 // GetThresholdInfo returns the ThresholdInfo field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetThresholdInfo() ThresholdInfo {
-	if o == nil || IsNil(o.ThresholdInfo) {
+	if o == nil || isNil(o.ThresholdInfo) {
 		var ret ThresholdInfo
 		return ret
 	}
@@ -476,7 +475,7 @@ func (o *NotifyChangedAlarmGeneral) GetThresholdInfo() ThresholdInfo {
 // GetThresholdInfoOk returns a tuple with the ThresholdInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetThresholdInfoOk() (*ThresholdInfo, bool) {
-	if o == nil || IsNil(o.ThresholdInfo) {
+	if o == nil || isNil(o.ThresholdInfo) {
 		return nil, false
 	}
 	return o.ThresholdInfo, true
@@ -484,7 +483,7 @@ func (o *NotifyChangedAlarmGeneral) GetThresholdInfoOk() (*ThresholdInfo, bool) 
 
 // HasThresholdInfo returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasThresholdInfo() bool {
-	if o != nil && !IsNil(o.ThresholdInfo) {
+	if o != nil && !isNil(o.ThresholdInfo) {
 		return true
 	}
 
@@ -498,7 +497,7 @@ func (o *NotifyChangedAlarmGeneral) SetThresholdInfo(v ThresholdInfo) {
 
 // GetStateChangeDefinition returns the StateChangeDefinition field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetStateChangeDefinition() []map[string]interface{} {
-	if o == nil || IsNil(o.StateChangeDefinition) {
+	if o == nil || isNil(o.StateChangeDefinition) {
 		var ret []map[string]interface{}
 		return ret
 	}
@@ -508,7 +507,7 @@ func (o *NotifyChangedAlarmGeneral) GetStateChangeDefinition() []map[string]inte
 // GetStateChangeDefinitionOk returns a tuple with the StateChangeDefinition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetStateChangeDefinitionOk() ([]map[string]interface{}, bool) {
-	if o == nil || IsNil(o.StateChangeDefinition) {
+	if o == nil || isNil(o.StateChangeDefinition) {
 		return nil, false
 	}
 	return o.StateChangeDefinition, true
@@ -516,7 +515,7 @@ func (o *NotifyChangedAlarmGeneral) GetStateChangeDefinitionOk() ([]map[string]i
 
 // HasStateChangeDefinition returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasStateChangeDefinition() bool {
-	if o != nil && !IsNil(o.StateChangeDefinition) {
+	if o != nil && !isNil(o.StateChangeDefinition) {
 		return true
 	}
 
@@ -530,7 +529,7 @@ func (o *NotifyChangedAlarmGeneral) SetStateChangeDefinition(v []map[string]inte
 
 // GetMonitoredAttributes returns the MonitoredAttributes field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetMonitoredAttributes() map[string]interface{} {
-	if o == nil || IsNil(o.MonitoredAttributes) {
+	if o == nil || isNil(o.MonitoredAttributes) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -540,7 +539,7 @@ func (o *NotifyChangedAlarmGeneral) GetMonitoredAttributes() map[string]interfac
 // GetMonitoredAttributesOk returns a tuple with the MonitoredAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetMonitoredAttributesOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.MonitoredAttributes) {
+	if o == nil || isNil(o.MonitoredAttributes) {
 		return map[string]interface{}{}, false
 	}
 	return o.MonitoredAttributes, true
@@ -548,7 +547,7 @@ func (o *NotifyChangedAlarmGeneral) GetMonitoredAttributesOk() (map[string]inter
 
 // HasMonitoredAttributes returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasMonitoredAttributes() bool {
-	if o != nil && !IsNil(o.MonitoredAttributes) {
+	if o != nil && !isNil(o.MonitoredAttributes) {
 		return true
 	}
 
@@ -562,7 +561,7 @@ func (o *NotifyChangedAlarmGeneral) SetMonitoredAttributes(v map[string]interfac
 
 // GetProposedRepairActions returns the ProposedRepairActions field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetProposedRepairActions() string {
-	if o == nil || IsNil(o.ProposedRepairActions) {
+	if o == nil || isNil(o.ProposedRepairActions) {
 		var ret string
 		return ret
 	}
@@ -572,7 +571,7 @@ func (o *NotifyChangedAlarmGeneral) GetProposedRepairActions() string {
 // GetProposedRepairActionsOk returns a tuple with the ProposedRepairActions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetProposedRepairActionsOk() (*string, bool) {
-	if o == nil || IsNil(o.ProposedRepairActions) {
+	if o == nil || isNil(o.ProposedRepairActions) {
 		return nil, false
 	}
 	return o.ProposedRepairActions, true
@@ -580,7 +579,7 @@ func (o *NotifyChangedAlarmGeneral) GetProposedRepairActionsOk() (*string, bool)
 
 // HasProposedRepairActions returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasProposedRepairActions() bool {
-	if o != nil && !IsNil(o.ProposedRepairActions) {
+	if o != nil && !isNil(o.ProposedRepairActions) {
 		return true
 	}
 
@@ -594,7 +593,7 @@ func (o *NotifyChangedAlarmGeneral) SetProposedRepairActions(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -604,7 +603,7 @@ func (o *NotifyChangedAlarmGeneral) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -612,7 +611,7 @@ func (o *NotifyChangedAlarmGeneral) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -626,7 +625,7 @@ func (o *NotifyChangedAlarmGeneral) SetAdditionalText(v string) {
 
 // GetAdditionalInformation returns the AdditionalInformation field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetAdditionalInformation() map[string]interface{} {
-	if o == nil || IsNil(o.AdditionalInformation) {
+	if o == nil || isNil(o.AdditionalInformation) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -636,7 +635,7 @@ func (o *NotifyChangedAlarmGeneral) GetAdditionalInformation() map[string]interf
 // GetAdditionalInformationOk returns a tuple with the AdditionalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetAdditionalInformationOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AdditionalInformation) {
+	if o == nil || isNil(o.AdditionalInformation) {
 		return map[string]interface{}{}, false
 	}
 	return o.AdditionalInformation, true
@@ -644,7 +643,7 @@ func (o *NotifyChangedAlarmGeneral) GetAdditionalInformationOk() (map[string]int
 
 // HasAdditionalInformation returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasAdditionalInformation() bool {
-	if o != nil && !IsNil(o.AdditionalInformation) {
+	if o != nil && !isNil(o.AdditionalInformation) {
 		return true
 	}
 
@@ -658,7 +657,7 @@ func (o *NotifyChangedAlarmGeneral) SetAdditionalInformation(v map[string]interf
 
 // GetRootCauseIndicator returns the RootCauseIndicator field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetRootCauseIndicator() bool {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		var ret bool
 		return ret
 	}
@@ -668,7 +667,7 @@ func (o *NotifyChangedAlarmGeneral) GetRootCauseIndicator() bool {
 // GetRootCauseIndicatorOk returns a tuple with the RootCauseIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetRootCauseIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.RootCauseIndicator) {
+	if o == nil || isNil(o.RootCauseIndicator) {
 		return nil, false
 	}
 	return o.RootCauseIndicator, true
@@ -676,7 +675,7 @@ func (o *NotifyChangedAlarmGeneral) GetRootCauseIndicatorOk() (*bool, bool) {
 
 // HasRootCauseIndicator returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasRootCauseIndicator() bool {
-	if o != nil && !IsNil(o.RootCauseIndicator) {
+	if o != nil && !isNil(o.RootCauseIndicator) {
 		return true
 	}
 
@@ -690,7 +689,7 @@ func (o *NotifyChangedAlarmGeneral) SetRootCauseIndicator(v bool) {
 
 // GetChangedAlarmAttributes returns the ChangedAlarmAttributes field value if set, zero value otherwise.
 func (o *NotifyChangedAlarmGeneral) GetChangedAlarmAttributes() map[string]interface{} {
-	if o == nil || IsNil(o.ChangedAlarmAttributes) {
+	if o == nil || isNil(o.ChangedAlarmAttributes) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -700,7 +699,7 @@ func (o *NotifyChangedAlarmGeneral) GetChangedAlarmAttributes() map[string]inter
 // GetChangedAlarmAttributesOk returns a tuple with the ChangedAlarmAttributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyChangedAlarmGeneral) GetChangedAlarmAttributesOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ChangedAlarmAttributes) {
+	if o == nil || isNil(o.ChangedAlarmAttributes) {
 		return map[string]interface{}{}, false
 	}
 	return o.ChangedAlarmAttributes, true
@@ -708,7 +707,7 @@ func (o *NotifyChangedAlarmGeneral) GetChangedAlarmAttributesOk() (map[string]in
 
 // HasChangedAlarmAttributes returns a boolean if a field has been set.
 func (o *NotifyChangedAlarmGeneral) HasChangedAlarmAttributes() bool {
-	if o != nil && !IsNil(o.ChangedAlarmAttributes) {
+	if o != nil && !isNil(o.ChangedAlarmAttributes) {
 		return true
 	}
 
@@ -737,49 +736,49 @@ func (o NotifyChangedAlarmGeneral) ToMap() (map[string]interface{}, error) {
 	toSerialize["systemDN"] = o.SystemDN
 	toSerialize["alarmId"] = o.AlarmId
 	toSerialize["alarmType"] = o.AlarmType
-	if !IsNil(o.ProbableCause) {
+	if !isNil(o.ProbableCause) {
 		toSerialize["probableCause"] = o.ProbableCause
 	}
-	if !IsNil(o.SpecificProblem) {
+	if !isNil(o.SpecificProblem) {
 		toSerialize["specificProblem"] = o.SpecificProblem
 	}
-	if !IsNil(o.PerceivedSeverity) {
+	if !isNil(o.PerceivedSeverity) {
 		toSerialize["perceivedSeverity"] = o.PerceivedSeverity
 	}
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.BackedUpStatus) {
+	if !isNil(o.BackedUpStatus) {
 		toSerialize["backedUpStatus"] = o.BackedUpStatus
 	}
-	if !IsNil(o.BackUpObject) {
+	if !isNil(o.BackUpObject) {
 		toSerialize["backUpObject"] = o.BackUpObject
 	}
-	if !IsNil(o.TrendIndication) {
+	if !isNil(o.TrendIndication) {
 		toSerialize["trendIndication"] = o.TrendIndication
 	}
-	if !IsNil(o.ThresholdInfo) {
+	if !isNil(o.ThresholdInfo) {
 		toSerialize["thresholdInfo"] = o.ThresholdInfo
 	}
-	if !IsNil(o.StateChangeDefinition) {
+	if !isNil(o.StateChangeDefinition) {
 		toSerialize["stateChangeDefinition"] = o.StateChangeDefinition
 	}
-	if !IsNil(o.MonitoredAttributes) {
+	if !isNil(o.MonitoredAttributes) {
 		toSerialize["monitoredAttributes"] = o.MonitoredAttributes
 	}
-	if !IsNil(o.ProposedRepairActions) {
+	if !isNil(o.ProposedRepairActions) {
 		toSerialize["proposedRepairActions"] = o.ProposedRepairActions
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.AdditionalInformation) {
+	if !isNil(o.AdditionalInformation) {
 		toSerialize["additionalInformation"] = o.AdditionalInformation
 	}
-	if !IsNil(o.RootCauseIndicator) {
+	if !isNil(o.RootCauseIndicator) {
 		toSerialize["rootCauseIndicator"] = o.RootCauseIndicator
 	}
-	if !IsNil(o.ChangedAlarmAttributes) {
+	if !isNil(o.ChangedAlarmAttributes) {
 		toSerialize["changedAlarmAttributes"] = o.ChangedAlarmAttributes
 	}
 	return toSerialize, nil

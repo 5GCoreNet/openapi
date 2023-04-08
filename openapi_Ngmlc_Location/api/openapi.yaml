@@ -1890,64 +1890,32 @@ components:
       type: integer
     PseudonymIndicator:
       anyOf:
-      - enum:
-        - PSEUDONYM_REQUESTED
-        - PSEUDONYM_NOT_REQUESTED
-        type: string
+      - $ref: '#/components/schemas/PseudonymIndicator_anyOf'
       - type: string
       description: It defines if a pseudonym is requested
     LocationRequestType:
       anyOf:
-      - enum:
-        - NI_LR
-        - MT_LR
-        - MO_LR
-        type: string
+      - $ref: '#/components/schemas/LocationRequestType_anyOf'
       - type: string
       description: "NI-LR, MT-LR or MO-LR"
     LocationTypeRequested:
       anyOf:
-      - enum:
-        - CURRENT_LOCATION
-        - CURRENT_OR_LAST_KNOWN_LOCATION
-        - INITIAL_LOCATION
-        - NOTIFICATION_VERIFICATION_ONLY
-        type: string
+      - $ref: '#/components/schemas/LocationTypeRequested_anyOf'
       - type: string
       description: Contains the location type requested by the LCS client
     EventNotifyDataType:
       anyOf:
-      - enum:
-        - UE_AVAILABLE
-        - PERIODIC
-        - ENTERING_INTO_AREA
-        - LEAVING_FROM_AREA
-        - BEING_INSIDE_AREA
-        - MOTION
-        - MAXIMUM_INTERVAL_EXPIRATION_EVENT
-        - LOCATION_CANCELLATION_EVENT
-        - ACTIVATION_OF_DEFERRED_LOCATION
-        - UE_MOBILITY_FOR_DEFERRED_LOCATION
-        - 5GC_MT_LR
-        type: string
+      - $ref: '#/components/schemas/EventNotifyDataType_anyOf'
       - type: string
       description: Contains the type of event that triggers event notification
     FailureCause:
       anyOf:
-      - enum:
-        - POSITIONING_DENIED
-        - UNSUPPORTED_BY_UE
-        - NOT_REGISTED_UE
-        - UNSPECIFIED
-        type: string
+      - $ref: '#/components/schemas/FailureCause_anyOf'
       - type: string
       description: Positioning failure cause
     SuccessType:
       anyOf:
-      - enum:
-        - SUCCESS_COMPLETELY
-        - SUCCESS_PARTIALLY
-        type: string
+      - $ref: '#/components/schemas/SuccessType_anyOf'
       - type: string
       description: Success Type to indicate full or partial success
     RedirectResponse:
@@ -2077,16 +2045,7 @@ components:
       type: string
     ExternalClientType:
       anyOf:
-      - enum:
-        - EMERGENCY_SERVICES
-        - VALUE_ADDED_SERVICES
-        - PLMN_OPERATOR_SERVICES
-        - LAWFUL_INTERCEPT_SERVICES
-        - PLMN_OPERATOR_BROADCAST_SERVICES
-        - PLMN_OPERATOR_OM
-        - PLMN_OPERATOR_ANONYMOUS_STATISTICS
-        - PLMN_OPERATOR_TARGET_MS_SERVICE_SUPPORT
-        type: string
+      - $ref: '#/components/schemas/ExternalClientType_anyOf'
       - type: string
       description: Indicates types of External Clients.
     LocationQoS:
@@ -2133,11 +2092,7 @@ components:
       type: number
     ResponseTime:
       anyOf:
-      - enum:
-        - LOW_DELAY
-        - DELAY_TOLERANT
-        - NO_DELAY
-        type: string
+      - $ref: '#/components/schemas/ResponseTime_anyOf'
       - type: string
       description: Indicates acceptable delay of location request.
     MinorLocationQoS:
@@ -2159,38 +2114,17 @@ components:
       type: object
     LcsQosClass:
       anyOf:
-      - enum:
-        - BEST_EFFORT
-        - ASSURED
-        - MULTIPLE_QOS
-        type: string
+      - $ref: '#/components/schemas/LcsQosClass_anyOf'
       - type: string
       description: Specifies LCS QoS class.
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     LdrType:
       anyOf:
-      - enum:
-        - UE_AVAILABLE
-        - PERIODIC
-        - ENTERING_INTO_AREA
-        - LEAVING_FROM_AREA
-        - BEING_INSIDE_AREA
-        - MOTION
-        type: string
+      - $ref: '#/components/schemas/LdrType_anyOf'
       - type: string
       description: Indicates LDR types.
     PeriodicEventInfo:
@@ -2277,10 +2211,7 @@ components:
       type: integer
     OccurrenceInfo:
       anyOf:
-      - enum:
-        - ONE_TIME_EVENT
-        - MULTIPLE_TIME_EVENT
-        type: string
+      - $ref: '#/components/schemas/OccurrenceInfo_anyOf'
       - type: string
       description: Specifies occurrence of event reporting.
     MinimumInterval:
@@ -2316,18 +2247,12 @@ components:
       type: integer
     VelocityRequested:
       anyOf:
-      - enum:
-        - VELOCITY_IS_NOT_REQUESTED
-        - VELOCITY_IS_REQUESTED
-        type: string
+      - $ref: '#/components/schemas/VelocityRequested_anyOf'
       - type: string
       description: Indicates velocity requirement.
     LcsPriority:
       anyOf:
-      - enum:
-        - HIGHEST_PRIORITY
-        - NORMAL_PRIORITY
-        type: string
+      - $ref: '#/components/schemas/LcsPriority_anyOf'
       - type: string
       description: Indicates priority of the LCS client.
     AgeOfLocationEstimate:
@@ -2693,43 +2618,17 @@ components:
       type: object
     PositioningMethod:
       anyOf:
-      - enum:
-        - CELLID
-        - ECID
-        - OTDOA
-        - BAROMETRIC_PRESSURE
-        - WLAN
-        - BLUETOOTH
-        - MBS
-        - MOTION_SENSOR
-        - DL_TDOA
-        - DL_AOD
-        - MULTI-RTT
-        - NR_ECID
-        - UL_TDOA
-        - UL_AOA
-        - NETWORK_SPECIFIC
-        type: string
+      - $ref: '#/components/schemas/PositioningMethod_anyOf'
       - type: string
       description: Indicates supported positioning methods.
     PositioningMode:
       anyOf:
-      - enum:
-        - UE_BASED
-        - UE_ASSISTED
-        - CONVENTIONAL
-        type: string
+      - $ref: '#/components/schemas/PositioningMode_anyOf'
       - type: string
       description: Indicates supported modes used for positioning method.
     Usage:
       anyOf:
-      - enum:
-        - UNSUCCESS
-        - SUCCESS_RESULTS_NOT_USED
-        - SUCCESS_RESULTS_USED_TO_VERIFY_LOCATION
-        - SUCCESS_RESULTS_USED_TO_GENERATE_LOCATION
-        - SUCCESS_METHOD_NOT_DETERMINED
-        type: string
+      - $ref: '#/components/schemas/Usage_anyOf'
       - type: string
       description: Indicates usage made of the location measurement.
     GnssPositioningMethodAndUsage:
@@ -2753,24 +2652,12 @@ components:
       type: object
     GnssId:
       anyOf:
-      - enum:
-        - GPS
-        - GALILEO
-        - SBAS
-        - MODERNIZED_GPS
-        - QZSS
-        - GLONASS
-        - BDS
-        - NAVIC
-        type: string
+      - $ref: '#/components/schemas/GnssId_anyOf'
       - type: string
       description: Global Navigation Satellite System (GNSS) ID.
     AccuracyFulfilmentIndicator:
       anyOf:
-      - enum:
-        - REQUESTED_ACCURACY_FULFILLED
-        - REQUESTED_ACCURACY_NOT_FULFILLED
-        type: string
+      - $ref: '#/components/schemas/AccuracyFulfilmentIndicator_anyOf'
       - type: string
       description: Indicates fulfilment of requested accuracy.
     VelocityEstimate:
@@ -2922,20 +2809,12 @@ components:
       type: string
     LocationPrivacyVerResult:
       anyOf:
-      - enum:
-        - LOCATION_ALLOWED
-        - LOCATION_NOT_ALLOWED
-        - RESPONSE_TIME_OUT
-        type: string
+      - $ref: '#/components/schemas/LocationPrivacyVerResult_anyOf'
       - type: string
       description: The result of location privacy verification by UE
     TerminationCause:
       anyOf:
-      - enum:
-        - TERMINATION_BY_UE
-        - TERMINATION_BY_NETWORK
-        - NORMAL_TERMINATION
-        type: string
+      - $ref: '#/components/schemas/TerminationCause_anyOf'
       - type: string
       description: Specifies causes of event reporting termination.
     NfInstanceId:
@@ -2946,14 +2825,7 @@ components:
       type: string
     LcsServiceAuth:
       anyOf:
-      - enum:
-        - LOCATION_ALLOWED_WITH_NOTIFICATION
-        - LOCATION_ALLOWED_WITHOUT_NOTIFICATION
-        - LOCATION_ALLOWED_WITHOUT_RESPONSE
-        - LOCATION_RESTRICTED_WITHOUT_RESPONSE
-        - NOTIFICATION_ONLY
-        - NOTIFICATION_AND_VERIFICATION_ONLY
-        type: string
+      - $ref: '#/components/schemas/LcsServiceAuth_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -3021,12 +2893,7 @@ components:
       type: object
     ReportingAreaType:
       anyOf:
-      - enum:
-        - EPS_TRACKING_AREA_IDENTITY
-        - E-UTRAN_CELL_GLOBAL_IDENTIFICATION
-        - 5GS_TRACKING_AREA_IDENTITY
-        - NR_CELL_GLOBAL_IDENTITY
-        type: string
+      - $ref: '#/components/schemas/ReportingAreaType_anyOf'
       - type: string
       description: Indicates type of event reporting area.
     AccessTokenErr:
@@ -3303,64 +3170,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -3438,6 +3248,123 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    PseudonymIndicator_anyOf:
+      enum:
+      - PSEUDONYM_REQUESTED
+      - PSEUDONYM_NOT_REQUESTED
+      type: string
+      example: null
+    LocationRequestType_anyOf:
+      enum:
+      - NI_LR
+      - MT_LR
+      - MO_LR
+      type: string
+      example: null
+    LocationTypeRequested_anyOf:
+      enum:
+      - CURRENT_LOCATION
+      - CURRENT_OR_LAST_KNOWN_LOCATION
+      - INITIAL_LOCATION
+      - NOTIFICATION_VERIFICATION_ONLY
+      type: string
+      example: null
+    EventNotifyDataType_anyOf:
+      enum:
+      - UE_AVAILABLE
+      - PERIODIC
+      - ENTERING_INTO_AREA
+      - LEAVING_FROM_AREA
+      - BEING_INSIDE_AREA
+      - MOTION
+      - MAXIMUM_INTERVAL_EXPIRATION_EVENT
+      - LOCATION_CANCELLATION_EVENT
+      - ACTIVATION_OF_DEFERRED_LOCATION
+      - UE_MOBILITY_FOR_DEFERRED_LOCATION
+      - 5GC_MT_LR
+      type: string
+      example: null
+    FailureCause_anyOf:
+      enum:
+      - POSITIONING_DENIED
+      - UNSUPPORTED_BY_UE
+      - NOT_REGISTED_UE
+      - UNSPECIFIED
+      type: string
+      example: null
+    SuccessType_anyOf:
+      enum:
+      - SUCCESS_COMPLETELY
+      - SUCCESS_PARTIALLY
+      type: string
+      example: null
+    ExternalClientType_anyOf:
+      enum:
+      - EMERGENCY_SERVICES
+      - VALUE_ADDED_SERVICES
+      - PLMN_OPERATOR_SERVICES
+      - LAWFUL_INTERCEPT_SERVICES
+      - PLMN_OPERATOR_BROADCAST_SERVICES
+      - PLMN_OPERATOR_OM
+      - PLMN_OPERATOR_ANONYMOUS_STATISTICS
+      - PLMN_OPERATOR_TARGET_MS_SERVICE_SUPPORT
+      type: string
+      example: null
+    ResponseTime_anyOf:
+      enum:
+      - LOW_DELAY
+      - DELAY_TOLERANT
+      - NO_DELAY
+      type: string
+      example: null
+    LcsQosClass_anyOf:
+      enum:
+      - BEST_EFFORT
+      - ASSURED
+      - MULTIPLE_QOS
+      type: string
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
+      example: null
+    LdrType_anyOf:
+      enum:
+      - UE_AVAILABLE
+      - PERIODIC
+      - ENTERING_INTO_AREA
+      - LEAVING_FROM_AREA
+      - BEING_INSIDE_AREA
+      - MOTION
+      type: string
+      example: null
+    OccurrenceInfo_anyOf:
+      enum:
+      - ONE_TIME_EVENT
+      - MULTIPLE_TIME_EVENT
+      type: string
+      example: null
+    VelocityRequested_anyOf:
+      enum:
+      - VELOCITY_IS_NOT_REQUESTED
+      - VELOCITY_IS_REQUESTED
+      type: string
+      example: null
+    LcsPriority_anyOf:
+      enum:
+      - HIGHEST_PRIORITY
+      - NORMAL_PRIORITY
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -3613,6 +3540,151 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
+      example: null
+    PositioningMethod_anyOf:
+      enum:
+      - CELLID
+      - ECID
+      - OTDOA
+      - BAROMETRIC_PRESSURE
+      - WLAN
+      - BLUETOOTH
+      - MBS
+      - MOTION_SENSOR
+      - DL_TDOA
+      - DL_AOD
+      - MULTI-RTT
+      - NR_ECID
+      - UL_TDOA
+      - UL_AOA
+      - NETWORK_SPECIFIC
+      type: string
+      example: null
+    PositioningMode_anyOf:
+      enum:
+      - UE_BASED
+      - UE_ASSISTED
+      - CONVENTIONAL
+      type: string
+      example: null
+    Usage_anyOf:
+      enum:
+      - UNSUCCESS
+      - SUCCESS_RESULTS_NOT_USED
+      - SUCCESS_RESULTS_USED_TO_VERIFY_LOCATION
+      - SUCCESS_RESULTS_USED_TO_GENERATE_LOCATION
+      - SUCCESS_METHOD_NOT_DETERMINED
+      type: string
+      example: null
+    GnssId_anyOf:
+      enum:
+      - GPS
+      - GALILEO
+      - SBAS
+      - MODERNIZED_GPS
+      - QZSS
+      - GLONASS
+      - BDS
+      - NAVIC
+      type: string
+      example: null
+    AccuracyFulfilmentIndicator_anyOf:
+      enum:
+      - REQUESTED_ACCURACY_FULFILLED
+      - REQUESTED_ACCURACY_NOT_FULFILLED
+      type: string
+      example: null
+    LocationPrivacyVerResult_anyOf:
+      enum:
+      - LOCATION_ALLOWED
+      - LOCATION_NOT_ALLOWED
+      - RESPONSE_TIME_OUT
+      type: string
+      example: null
+    TerminationCause_anyOf:
+      enum:
+      - TERMINATION_BY_UE
+      - TERMINATION_BY_NETWORK
+      - NORMAL_TERMINATION
+      type: string
+      example: null
+    LcsServiceAuth_anyOf:
+      enum:
+      - LOCATION_ALLOWED_WITH_NOTIFICATION
+      - LOCATION_ALLOWED_WITHOUT_NOTIFICATION
+      - LOCATION_ALLOWED_WITHOUT_RESPONSE
+      - LOCATION_RESTRICTED_WITHOUT_RESPONSE
+      - NOTIFICATION_ONLY
+      - NOTIFICATION_AND_VERIFICATION_ONLY
+      type: string
+      example: null
+    ReportingAreaType_anyOf:
+      enum:
+      - EPS_TRACKING_AREA_IDENTITY
+      - E-UTRAN_CELL_GLOBAL_IDENTIFICATION
+      - 5GS_TRACKING_AREA_IDENTITY
+      - NR_CELL_GLOBAL_IDENTITY
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

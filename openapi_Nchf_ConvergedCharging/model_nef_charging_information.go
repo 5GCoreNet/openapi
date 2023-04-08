@@ -55,7 +55,7 @@ func NewNEFChargingInformationWithDefaults() *NEFChargingInformation {
 
 // GetExternalIndividualIdentifier returns the ExternalIndividualIdentifier field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetExternalIndividualIdentifier() string {
-	if o == nil || IsNil(o.ExternalIndividualIdentifier) {
+	if o == nil || isNil(o.ExternalIndividualIdentifier) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *NEFChargingInformation) GetExternalIndividualIdentifier() string {
 // GetExternalIndividualIdentifierOk returns a tuple with the ExternalIndividualIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetExternalIndividualIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalIndividualIdentifier) {
+	if o == nil || isNil(o.ExternalIndividualIdentifier) {
 		return nil, false
 	}
 	return o.ExternalIndividualIdentifier, true
@@ -73,7 +73,7 @@ func (o *NEFChargingInformation) GetExternalIndividualIdentifierOk() (*string, b
 
 // HasExternalIndividualIdentifier returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasExternalIndividualIdentifier() bool {
-	if o != nil && !IsNil(o.ExternalIndividualIdentifier) {
+	if o != nil && !isNil(o.ExternalIndividualIdentifier) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *NEFChargingInformation) SetExternalIndividualIdentifier(v string) {
 
 // GetExternalGroupIdentifier returns the ExternalGroupIdentifier field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetExternalGroupIdentifier() string {
-	if o == nil || IsNil(o.ExternalGroupIdentifier) {
+	if o == nil || isNil(o.ExternalGroupIdentifier) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *NEFChargingInformation) GetExternalGroupIdentifier() string {
 // GetExternalGroupIdentifierOk returns a tuple with the ExternalGroupIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetExternalGroupIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalGroupIdentifier) {
+	if o == nil || isNil(o.ExternalGroupIdentifier) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifier, true
@@ -105,7 +105,7 @@ func (o *NEFChargingInformation) GetExternalGroupIdentifierOk() (*string, bool) 
 
 // HasExternalGroupIdentifier returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasExternalGroupIdentifier() bool {
-	if o != nil && !IsNil(o.ExternalGroupIdentifier) {
+	if o != nil && !isNil(o.ExternalGroupIdentifier) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *NEFChargingInformation) SetExternalGroupIdentifier(v string) {
 
 // GetGroupIdentifier returns the GroupIdentifier field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetGroupIdentifier() string {
-	if o == nil || IsNil(o.GroupIdentifier) {
+	if o == nil || isNil(o.GroupIdentifier) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *NEFChargingInformation) GetGroupIdentifier() string {
 // GetGroupIdentifierOk returns a tuple with the GroupIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetGroupIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupIdentifier) {
+	if o == nil || isNil(o.GroupIdentifier) {
 		return nil, false
 	}
 	return o.GroupIdentifier, true
@@ -137,7 +137,7 @@ func (o *NEFChargingInformation) GetGroupIdentifierOk() (*string, bool) {
 
 // HasGroupIdentifier returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasGroupIdentifier() bool {
-	if o != nil && !IsNil(o.GroupIdentifier) {
+	if o != nil && !isNil(o.GroupIdentifier) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *NEFChargingInformation) SetGroupIdentifier(v string) {
 
 // GetAPIDirection returns the APIDirection field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetAPIDirection() APIDirection {
-	if o == nil || IsNil(o.APIDirection) {
+	if o == nil || isNil(o.APIDirection) {
 		var ret APIDirection
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *NEFChargingInformation) GetAPIDirection() APIDirection {
 // GetAPIDirectionOk returns a tuple with the APIDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetAPIDirectionOk() (*APIDirection, bool) {
-	if o == nil || IsNil(o.APIDirection) {
+	if o == nil || isNil(o.APIDirection) {
 		return nil, false
 	}
 	return o.APIDirection, true
@@ -169,7 +169,7 @@ func (o *NEFChargingInformation) GetAPIDirectionOk() (*APIDirection, bool) {
 
 // HasAPIDirection returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasAPIDirection() bool {
-	if o != nil && !IsNil(o.APIDirection) {
+	if o != nil && !isNil(o.APIDirection) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *NEFChargingInformation) SetAPIDirection(v APIDirection) {
 
 // GetAPITargetNetworkFunction returns the APITargetNetworkFunction field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetAPITargetNetworkFunction() NFIdentification {
-	if o == nil || IsNil(o.APITargetNetworkFunction) {
+	if o == nil || isNil(o.APITargetNetworkFunction) {
 		var ret NFIdentification
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *NEFChargingInformation) GetAPITargetNetworkFunction() NFIdentification 
 // GetAPITargetNetworkFunctionOk returns a tuple with the APITargetNetworkFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetAPITargetNetworkFunctionOk() (*NFIdentification, bool) {
-	if o == nil || IsNil(o.APITargetNetworkFunction) {
+	if o == nil || isNil(o.APITargetNetworkFunction) {
 		return nil, false
 	}
 	return o.APITargetNetworkFunction, true
@@ -201,7 +201,7 @@ func (o *NEFChargingInformation) GetAPITargetNetworkFunctionOk() (*NFIdentificat
 
 // HasAPITargetNetworkFunction returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasAPITargetNetworkFunction() bool {
-	if o != nil && !IsNil(o.APITargetNetworkFunction) {
+	if o != nil && !isNil(o.APITargetNetworkFunction) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *NEFChargingInformation) SetAPITargetNetworkFunction(v NFIdentification)
 
 // GetAPIResultCode returns the APIResultCode field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetAPIResultCode() int32 {
-	if o == nil || IsNil(o.APIResultCode) {
+	if o == nil || isNil(o.APIResultCode) {
 		var ret int32
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *NEFChargingInformation) GetAPIResultCode() int32 {
 // GetAPIResultCodeOk returns a tuple with the APIResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetAPIResultCodeOk() (*int32, bool) {
-	if o == nil || IsNil(o.APIResultCode) {
+	if o == nil || isNil(o.APIResultCode) {
 		return nil, false
 	}
 	return o.APIResultCode, true
@@ -233,7 +233,7 @@ func (o *NEFChargingInformation) GetAPIResultCodeOk() (*int32, bool) {
 
 // HasAPIResultCode returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasAPIResultCode() bool {
-	if o != nil && !IsNil(o.APIResultCode) {
+	if o != nil && !isNil(o.APIResultCode) {
 		return true
 	}
 
@@ -271,7 +271,7 @@ func (o *NEFChargingInformation) SetAPIName(v string) {
 
 // GetAPIReference returns the APIReference field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetAPIReference() string {
-	if o == nil || IsNil(o.APIReference) {
+	if o == nil || isNil(o.APIReference) {
 		var ret string
 		return ret
 	}
@@ -281,7 +281,7 @@ func (o *NEFChargingInformation) GetAPIReference() string {
 // GetAPIReferenceOk returns a tuple with the APIReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetAPIReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.APIReference) {
+	if o == nil || isNil(o.APIReference) {
 		return nil, false
 	}
 	return o.APIReference, true
@@ -289,7 +289,7 @@ func (o *NEFChargingInformation) GetAPIReferenceOk() (*string, bool) {
 
 // HasAPIReference returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasAPIReference() bool {
-	if o != nil && !IsNil(o.APIReference) {
+	if o != nil && !isNil(o.APIReference) {
 		return true
 	}
 
@@ -303,7 +303,7 @@ func (o *NEFChargingInformation) SetAPIReference(v string) {
 
 // GetAPIContent returns the APIContent field value if set, zero value otherwise.
 func (o *NEFChargingInformation) GetAPIContent() string {
-	if o == nil || IsNil(o.APIContent) {
+	if o == nil || isNil(o.APIContent) {
 		var ret string
 		return ret
 	}
@@ -313,7 +313,7 @@ func (o *NEFChargingInformation) GetAPIContent() string {
 // GetAPIContentOk returns a tuple with the APIContent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NEFChargingInformation) GetAPIContentOk() (*string, bool) {
-	if o == nil || IsNil(o.APIContent) {
+	if o == nil || isNil(o.APIContent) {
 		return nil, false
 	}
 	return o.APIContent, true
@@ -321,7 +321,7 @@ func (o *NEFChargingInformation) GetAPIContentOk() (*string, bool) {
 
 // HasAPIContent returns a boolean if a field has been set.
 func (o *NEFChargingInformation) HasAPIContent() bool {
-	if o != nil && !IsNil(o.APIContent) {
+	if o != nil && !isNil(o.APIContent) {
 		return true
 	}
 
@@ -343,29 +343,29 @@ func (o NEFChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o NEFChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExternalIndividualIdentifier) {
+	if !isNil(o.ExternalIndividualIdentifier) {
 		toSerialize["externalIndividualIdentifier"] = o.ExternalIndividualIdentifier
 	}
-	if !IsNil(o.ExternalGroupIdentifier) {
+	if !isNil(o.ExternalGroupIdentifier) {
 		toSerialize["externalGroupIdentifier"] = o.ExternalGroupIdentifier
 	}
-	if !IsNil(o.GroupIdentifier) {
+	if !isNil(o.GroupIdentifier) {
 		toSerialize["groupIdentifier"] = o.GroupIdentifier
 	}
-	if !IsNil(o.APIDirection) {
+	if !isNil(o.APIDirection) {
 		toSerialize["aPIDirection"] = o.APIDirection
 	}
-	if !IsNil(o.APITargetNetworkFunction) {
+	if !isNil(o.APITargetNetworkFunction) {
 		toSerialize["aPITargetNetworkFunction"] = o.APITargetNetworkFunction
 	}
-	if !IsNil(o.APIResultCode) {
+	if !isNil(o.APIResultCode) {
 		toSerialize["aPIResultCode"] = o.APIResultCode
 	}
 	toSerialize["aPIName"] = o.APIName
-	if !IsNil(o.APIReference) {
+	if !isNil(o.APIReference) {
 		toSerialize["aPIReference"] = o.APIReference
 	}
-	if !IsNil(o.APIContent) {
+	if !isNil(o.APIContent) {
 		toSerialize["aPIContent"] = o.APIContent
 	}
 	return toSerialize, nil

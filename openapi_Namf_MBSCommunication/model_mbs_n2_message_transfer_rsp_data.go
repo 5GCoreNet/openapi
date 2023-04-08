@@ -69,7 +69,7 @@ func (o *MbsN2MessageTransferRspData) SetResult(v N2InformationTransferResult) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferRspData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *MbsN2MessageTransferRspData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferRspData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -87,7 +87,7 @@ func (o *MbsN2MessageTransferRspData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferRspData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *MbsN2MessageTransferRspData) SetSupportedFeatures(v string) {
 
 // GetFailureList returns the FailureList field value if set, zero value otherwise.
 func (o *MbsN2MessageTransferRspData) GetFailureList() []RanFailure {
-	if o == nil || IsNil(o.FailureList) {
+	if o == nil || isNil(o.FailureList) {
 		var ret []RanFailure
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MbsN2MessageTransferRspData) GetFailureList() []RanFailure {
 // GetFailureListOk returns a tuple with the FailureList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsN2MessageTransferRspData) GetFailureListOk() ([]RanFailure, bool) {
-	if o == nil || IsNil(o.FailureList) {
+	if o == nil || isNil(o.FailureList) {
 		return nil, false
 	}
 	return o.FailureList, true
@@ -119,7 +119,7 @@ func (o *MbsN2MessageTransferRspData) GetFailureListOk() ([]RanFailure, bool) {
 
 // HasFailureList returns a boolean if a field has been set.
 func (o *MbsN2MessageTransferRspData) HasFailureList() bool {
-	if o != nil && !IsNil(o.FailureList) {
+	if o != nil && !isNil(o.FailureList) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o MbsN2MessageTransferRspData) MarshalJSON() ([]byte, error) {
 func (o MbsN2MessageTransferRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["result"] = o.Result
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.FailureList) {
+	if !isNil(o.FailureList) {
 		toSerialize["failureList"] = o.FailureList
 	}
 	return toSerialize, nil

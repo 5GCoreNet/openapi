@@ -42,7 +42,7 @@ func NewPatchBdtPolicyWithDefaults() *PatchBdtPolicy {
 
 // GetBdtPolData returns the BdtPolData field value if set, zero value otherwise.
 func (o *PatchBdtPolicy) GetBdtPolData() BdtPolicyDataPatch {
-	if o == nil || IsNil(o.BdtPolData) {
+	if o == nil || isNil(o.BdtPolData) {
 		var ret BdtPolicyDataPatch
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PatchBdtPolicy) GetBdtPolData() BdtPolicyDataPatch {
 // GetBdtPolDataOk returns a tuple with the BdtPolData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchBdtPolicy) GetBdtPolDataOk() (*BdtPolicyDataPatch, bool) {
-	if o == nil || IsNil(o.BdtPolData) {
+	if o == nil || isNil(o.BdtPolData) {
 		return nil, false
 	}
 	return o.BdtPolData, true
@@ -60,7 +60,7 @@ func (o *PatchBdtPolicy) GetBdtPolDataOk() (*BdtPolicyDataPatch, bool) {
 
 // HasBdtPolData returns a boolean if a field has been set.
 func (o *PatchBdtPolicy) HasBdtPolData() bool {
-	if o != nil && !IsNil(o.BdtPolData) {
+	if o != nil && !isNil(o.BdtPolData) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PatchBdtPolicy) SetBdtPolData(v BdtPolicyDataPatch) {
 
 // GetBdtReqData returns the BdtReqData field value if set, zero value otherwise.
 func (o *PatchBdtPolicy) GetBdtReqData() BdtReqDataPatch {
-	if o == nil || IsNil(o.BdtReqData) {
+	if o == nil || isNil(o.BdtReqData) {
 		var ret BdtReqDataPatch
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PatchBdtPolicy) GetBdtReqData() BdtReqDataPatch {
 // GetBdtReqDataOk returns a tuple with the BdtReqData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PatchBdtPolicy) GetBdtReqDataOk() (*BdtReqDataPatch, bool) {
-	if o == nil || IsNil(o.BdtReqData) {
+	if o == nil || isNil(o.BdtReqData) {
 		return nil, false
 	}
 	return o.BdtReqData, true
@@ -92,7 +92,7 @@ func (o *PatchBdtPolicy) GetBdtReqDataOk() (*BdtReqDataPatch, bool) {
 
 // HasBdtReqData returns a boolean if a field has been set.
 func (o *PatchBdtPolicy) HasBdtReqData() bool {
-	if o != nil && !IsNil(o.BdtReqData) {
+	if o != nil && !isNil(o.BdtReqData) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PatchBdtPolicy) MarshalJSON() ([]byte, error) {
 
 func (o PatchBdtPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BdtPolData) {
+	if !isNil(o.BdtPolData) {
 		toSerialize["bdtPolData"] = o.BdtPolData
 	}
-	if !IsNil(o.BdtReqData) {
+	if !isNil(o.BdtReqData) {
 		toSerialize["bdtReqData"] = o.BdtReqData
 	}
 	return toSerialize, nil

@@ -44,7 +44,7 @@ func NewPp5gVnGroupProfileDataWithDefaults() *Pp5gVnGroupProfileData {
 
 // GetAllowedMtcProviders returns the AllowedMtcProviders field value if set, zero value otherwise.
 func (o *Pp5gVnGroupProfileData) GetAllowedMtcProviders() map[string][]AllowedMtcProviderInfo {
-	if o == nil || IsNil(o.AllowedMtcProviders) {
+	if o == nil || isNil(o.AllowedMtcProviders) {
 		var ret map[string][]AllowedMtcProviderInfo
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Pp5gVnGroupProfileData) GetAllowedMtcProviders() map[string][]AllowedMt
 // GetAllowedMtcProvidersOk returns a tuple with the AllowedMtcProviders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pp5gVnGroupProfileData) GetAllowedMtcProvidersOk() (*map[string][]AllowedMtcProviderInfo, bool) {
-	if o == nil || IsNil(o.AllowedMtcProviders) {
+	if o == nil || isNil(o.AllowedMtcProviders) {
 		return nil, false
 	}
 	return o.AllowedMtcProviders, true
@@ -62,7 +62,7 @@ func (o *Pp5gVnGroupProfileData) GetAllowedMtcProvidersOk() (*map[string][]Allow
 
 // HasAllowedMtcProviders returns a boolean if a field has been set.
 func (o *Pp5gVnGroupProfileData) HasAllowedMtcProviders() bool {
-	if o != nil && !IsNil(o.AllowedMtcProviders) {
+	if o != nil && !isNil(o.AllowedMtcProviders) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Pp5gVnGroupProfileData) SetAllowedMtcProviders(v map[string][]AllowedMt
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *Pp5gVnGroupProfileData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Pp5gVnGroupProfileData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Pp5gVnGroupProfileData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -94,7 +94,7 @@ func (o *Pp5gVnGroupProfileData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *Pp5gVnGroupProfileData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o Pp5gVnGroupProfileData) MarshalJSON() ([]byte, error) {
 
 func (o Pp5gVnGroupProfileData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AllowedMtcProviders) {
+	if !isNil(o.AllowedMtcProviders) {
 		toSerialize["allowedMtcProviders"] = o.AllowedMtcProviders
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

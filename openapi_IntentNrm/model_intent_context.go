@@ -43,7 +43,7 @@ func NewIntentContextWithDefaults() *IntentContext {
 
 // GetContextAttribute returns the ContextAttribute field value if set, zero value otherwise.
 func (o *IntentContext) GetContextAttribute() string {
-	if o == nil || IsNil(o.ContextAttribute) {
+	if o == nil || isNil(o.ContextAttribute) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IntentContext) GetContextAttribute() string {
 // GetContextAttributeOk returns a tuple with the ContextAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentContext) GetContextAttributeOk() (*string, bool) {
-	if o == nil || IsNil(o.ContextAttribute) {
+	if o == nil || isNil(o.ContextAttribute) {
 		return nil, false
 	}
 	return o.ContextAttribute, true
@@ -61,7 +61,7 @@ func (o *IntentContext) GetContextAttributeOk() (*string, bool) {
 
 // HasContextAttribute returns a boolean if a field has been set.
 func (o *IntentContext) HasContextAttribute() bool {
-	if o != nil && !IsNil(o.ContextAttribute) {
+	if o != nil && !isNil(o.ContextAttribute) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IntentContext) SetContextAttribute(v string) {
 
 // GetContextCondition returns the ContextCondition field value if set, zero value otherwise.
 func (o *IntentContext) GetContextCondition() Condition {
-	if o == nil || IsNil(o.ContextCondition) {
+	if o == nil || isNil(o.ContextCondition) {
 		var ret Condition
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *IntentContext) GetContextCondition() Condition {
 // GetContextConditionOk returns a tuple with the ContextCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentContext) GetContextConditionOk() (*Condition, bool) {
-	if o == nil || IsNil(o.ContextCondition) {
+	if o == nil || isNil(o.ContextCondition) {
 		return nil, false
 	}
 	return o.ContextCondition, true
@@ -93,7 +93,7 @@ func (o *IntentContext) GetContextConditionOk() (*Condition, bool) {
 
 // HasContextCondition returns a boolean if a field has been set.
 func (o *IntentContext) HasContextCondition() bool {
-	if o != nil && !IsNil(o.ContextCondition) {
+	if o != nil && !isNil(o.ContextCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *IntentContext) SetContextCondition(v Condition) {
 
 // GetContextValueRange returns the ContextValueRange field value if set, zero value otherwise.
 func (o *IntentContext) GetContextValueRange() []float32 {
-	if o == nil || IsNil(o.ContextValueRange) {
+	if o == nil || isNil(o.ContextValueRange) {
 		var ret []float32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *IntentContext) GetContextValueRange() []float32 {
 // GetContextValueRangeOk returns a tuple with the ContextValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IntentContext) GetContextValueRangeOk() ([]float32, bool) {
-	if o == nil || IsNil(o.ContextValueRange) {
+	if o == nil || isNil(o.ContextValueRange) {
 		return nil, false
 	}
 	return o.ContextValueRange, true
@@ -125,7 +125,7 @@ func (o *IntentContext) GetContextValueRangeOk() ([]float32, bool) {
 
 // HasContextValueRange returns a boolean if a field has been set.
 func (o *IntentContext) HasContextValueRange() bool {
-	if o != nil && !IsNil(o.ContextValueRange) {
+	if o != nil && !isNil(o.ContextValueRange) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o IntentContext) MarshalJSON() ([]byte, error) {
 
 func (o IntentContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ContextAttribute) {
+	if !isNil(o.ContextAttribute) {
 		toSerialize["contextAttribute"] = o.ContextAttribute
 	}
-	if !IsNil(o.ContextCondition) {
+	if !isNil(o.ContextCondition) {
 		toSerialize["contextCondition"] = o.ContextCondition
 	}
-	if !IsNil(o.ContextValueRange) {
+	if !isNil(o.ContextValueRange) {
 		toSerialize["contextValueRange"] = o.ContextValueRange
 	}
 	return toSerialize, nil

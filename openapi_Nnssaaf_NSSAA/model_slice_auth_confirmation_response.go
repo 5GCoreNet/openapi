@@ -123,7 +123,7 @@ func (o *SliceAuthConfirmationResponse) SetEapMessage(v string) {
 
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 func (o *SliceAuthConfirmationResponse) GetAuthResult() AuthStatus {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		var ret AuthStatus
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *SliceAuthConfirmationResponse) GetAuthResult() AuthStatus {
 // GetAuthResultOk returns a tuple with the AuthResult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SliceAuthConfirmationResponse) GetAuthResultOk() (*AuthStatus, bool) {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -141,7 +141,7 @@ func (o *SliceAuthConfirmationResponse) GetAuthResultOk() (*AuthStatus, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *SliceAuthConfirmationResponse) HasAuthResult() bool {
-	if o != nil && !IsNil(o.AuthResult) {
+	if o != nil && !isNil(o.AuthResult) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o SliceAuthConfirmationResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["eapMessage"] = o.EapMessage.Get()
-	if !IsNil(o.AuthResult) {
+	if !isNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
 	return toSerialize, nil

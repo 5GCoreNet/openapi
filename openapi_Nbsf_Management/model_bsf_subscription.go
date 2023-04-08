@@ -155,7 +155,7 @@ func (o *BsfSubscription) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *BsfSubscription) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *BsfSubscription) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfSubscription) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -173,7 +173,7 @@ func (o *BsfSubscription) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *BsfSubscription) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *BsfSubscription) SetGpsi(v string) {
 
 // GetSnssaiDnnPairs returns the SnssaiDnnPairs field value if set, zero value otherwise.
 func (o *BsfSubscription) GetSnssaiDnnPairs() SnssaiDnnPair {
-	if o == nil || IsNil(o.SnssaiDnnPairs) {
+	if o == nil || isNil(o.SnssaiDnnPairs) {
 		var ret SnssaiDnnPair
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *BsfSubscription) GetSnssaiDnnPairs() SnssaiDnnPair {
 // GetSnssaiDnnPairsOk returns a tuple with the SnssaiDnnPairs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfSubscription) GetSnssaiDnnPairsOk() (*SnssaiDnnPair, bool) {
-	if o == nil || IsNil(o.SnssaiDnnPairs) {
+	if o == nil || isNil(o.SnssaiDnnPairs) {
 		return nil, false
 	}
 	return o.SnssaiDnnPairs, true
@@ -205,7 +205,7 @@ func (o *BsfSubscription) GetSnssaiDnnPairsOk() (*SnssaiDnnPair, bool) {
 
 // HasSnssaiDnnPairs returns a boolean if a field has been set.
 func (o *BsfSubscription) HasSnssaiDnnPairs() bool {
-	if o != nil && !IsNil(o.SnssaiDnnPairs) {
+	if o != nil && !isNil(o.SnssaiDnnPairs) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *BsfSubscription) SetSnssaiDnnPairs(v SnssaiDnnPair) {
 
 // GetAddSnssaiDnnPairs returns the AddSnssaiDnnPairs field value if set, zero value otherwise.
 func (o *BsfSubscription) GetAddSnssaiDnnPairs() []SnssaiDnnPair {
-	if o == nil || IsNil(o.AddSnssaiDnnPairs) {
+	if o == nil || isNil(o.AddSnssaiDnnPairs) {
 		var ret []SnssaiDnnPair
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *BsfSubscription) GetAddSnssaiDnnPairs() []SnssaiDnnPair {
 // GetAddSnssaiDnnPairsOk returns a tuple with the AddSnssaiDnnPairs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfSubscription) GetAddSnssaiDnnPairsOk() ([]SnssaiDnnPair, bool) {
-	if o == nil || IsNil(o.AddSnssaiDnnPairs) {
+	if o == nil || isNil(o.AddSnssaiDnnPairs) {
 		return nil, false
 	}
 	return o.AddSnssaiDnnPairs, true
@@ -237,7 +237,7 @@ func (o *BsfSubscription) GetAddSnssaiDnnPairsOk() ([]SnssaiDnnPair, bool) {
 
 // HasAddSnssaiDnnPairs returns a boolean if a field has been set.
 func (o *BsfSubscription) HasAddSnssaiDnnPairs() bool {
-	if o != nil && !IsNil(o.AddSnssaiDnnPairs) {
+	if o != nil && !isNil(o.AddSnssaiDnnPairs) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *BsfSubscription) SetAddSnssaiDnnPairs(v []SnssaiDnnPair) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BsfSubscription) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *BsfSubscription) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfSubscription) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -269,7 +269,7 @@ func (o *BsfSubscription) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BsfSubscription) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -295,16 +295,16 @@ func (o BsfSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["notifUri"] = o.NotifUri
 	toSerialize["notifCorreId"] = o.NotifCorreId
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.SnssaiDnnPairs) {
+	if !isNil(o.SnssaiDnnPairs) {
 		toSerialize["snssaiDnnPairs"] = o.SnssaiDnnPairs
 	}
-	if !IsNil(o.AddSnssaiDnnPairs) {
+	if !isNil(o.AddSnssaiDnnPairs) {
 		toSerialize["addSnssaiDnnPairs"] = o.AddSnssaiDnnPairs
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

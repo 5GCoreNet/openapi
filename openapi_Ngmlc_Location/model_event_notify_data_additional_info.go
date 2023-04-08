@@ -41,7 +41,7 @@ func NewEventNotifyDataAdditionalInfoWithDefaults() *EventNotifyDataAdditionalIn
 
 // GetAddEventDataList returns the AddEventDataList field value if set, zero value otherwise.
 func (o *EventNotifyDataAdditionalInfo) GetAddEventDataList() []EventNotifyData {
-	if o == nil || IsNil(o.AddEventDataList) {
+	if o == nil || isNil(o.AddEventDataList) {
 		var ret []EventNotifyData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *EventNotifyDataAdditionalInfo) GetAddEventDataList() []EventNotifyData 
 // GetAddEventDataListOk returns a tuple with the AddEventDataList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventNotifyDataAdditionalInfo) GetAddEventDataListOk() ([]EventNotifyData, bool) {
-	if o == nil || IsNil(o.AddEventDataList) {
+	if o == nil || isNil(o.AddEventDataList) {
 		return nil, false
 	}
 	return o.AddEventDataList, true
@@ -59,7 +59,7 @@ func (o *EventNotifyDataAdditionalInfo) GetAddEventDataListOk() ([]EventNotifyDa
 
 // HasAddEventDataList returns a boolean if a field has been set.
 func (o *EventNotifyDataAdditionalInfo) HasAddEventDataList() bool {
-	if o != nil && !IsNil(o.AddEventDataList) {
+	if o != nil && !isNil(o.AddEventDataList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o EventNotifyDataAdditionalInfo) MarshalJSON() ([]byte, error) {
 
 func (o EventNotifyDataAdditionalInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AddEventDataList) {
+	if !isNil(o.AddEventDataList) {
 		toSerialize["addEventDataList"] = o.AddEventDataList
 	}
 	return toSerialize, nil

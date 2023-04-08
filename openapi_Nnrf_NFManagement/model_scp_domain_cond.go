@@ -67,7 +67,7 @@ func (o *ScpDomainCond) SetScpDomains(v []string) {
 
 // GetNfTypeList returns the NfTypeList field value if set, zero value otherwise.
 func (o *ScpDomainCond) GetNfTypeList() []NFType {
-	if o == nil || IsNil(o.NfTypeList) {
+	if o == nil || isNil(o.NfTypeList) {
 		var ret []NFType
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ScpDomainCond) GetNfTypeList() []NFType {
 // GetNfTypeListOk returns a tuple with the NfTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainCond) GetNfTypeListOk() ([]NFType, bool) {
-	if o == nil || IsNil(o.NfTypeList) {
+	if o == nil || isNil(o.NfTypeList) {
 		return nil, false
 	}
 	return o.NfTypeList, true
@@ -85,7 +85,7 @@ func (o *ScpDomainCond) GetNfTypeListOk() ([]NFType, bool) {
 
 // HasNfTypeList returns a boolean if a field has been set.
 func (o *ScpDomainCond) HasNfTypeList() bool {
-	if o != nil && !IsNil(o.NfTypeList) {
+	if o != nil && !isNil(o.NfTypeList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ScpDomainCond) MarshalJSON() ([]byte, error) {
 func (o ScpDomainCond) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["scpDomains"] = o.ScpDomains
-	if !IsNil(o.NfTypeList) {
+	if !isNil(o.NfTypeList) {
 		toSerialize["nfTypeList"] = o.NfTypeList
 	}
 	return toSerialize, nil

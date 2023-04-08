@@ -17,23 +17,37 @@ import (
 
 // AerialUeIndication Indicates the Aerial service for the UE is allowed or not allowed, possible values are - AERIAL_UE_ALLOWED: Aerial service for the UE is allowed. - AERIAL_UE_NOT_ALLOWED: Aerial service for the UE is not allowed. 
 type AerialUeIndication struct {
-	string *string
+	AerialUeIndicationAnyOf *AerialUeIndicationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AerialUeIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AerialUeIndicationAnyOf
+	err = json.Unmarshal(data, &dst.AerialUeIndicationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAerialUeIndicationAnyOf, _ := json.Marshal(dst.AerialUeIndicationAnyOf)
+		if string(jsonAerialUeIndicationAnyOf) == "{}" { // empty struct
+			dst.AerialUeIndicationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AerialUeIndicationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AerialUeIndicationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AerialUeIndication)")
@@ -41,8 +55,12 @@ func (dst *AerialUeIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AerialUeIndication) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AerialUeIndicationAnyOf != nil {
+		return json.Marshal(&src.AerialUeIndicationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

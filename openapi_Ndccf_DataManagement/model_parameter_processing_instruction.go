@@ -126,7 +126,7 @@ func (o *ParameterProcessingInstruction) SetSumAttrs(v []SummarizationAttribute)
 
 // GetAggrLevel returns the AggrLevel field value if set, zero value otherwise.
 func (o *ParameterProcessingInstruction) GetAggrLevel() AggregationLevel {
-	if o == nil || IsNil(o.AggrLevel) {
+	if o == nil || isNil(o.AggrLevel) {
 		var ret AggregationLevel
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *ParameterProcessingInstruction) GetAggrLevel() AggregationLevel {
 // GetAggrLevelOk returns a tuple with the AggrLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterProcessingInstruction) GetAggrLevelOk() (*AggregationLevel, bool) {
-	if o == nil || IsNil(o.AggrLevel) {
+	if o == nil || isNil(o.AggrLevel) {
 		return nil, false
 	}
 	return o.AggrLevel, true
@@ -144,7 +144,7 @@ func (o *ParameterProcessingInstruction) GetAggrLevelOk() (*AggregationLevel, bo
 
 // HasAggrLevel returns a boolean if a field has been set.
 func (o *ParameterProcessingInstruction) HasAggrLevel() bool {
-	if o != nil && !IsNil(o.AggrLevel) {
+	if o != nil && !isNil(o.AggrLevel) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *ParameterProcessingInstruction) SetAggrLevel(v AggregationLevel) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *ParameterProcessingInstruction) GetSupis() []string {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *ParameterProcessingInstruction) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterProcessingInstruction) GetSupisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -176,7 +176,7 @@ func (o *ParameterProcessingInstruction) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *ParameterProcessingInstruction) HasSupis() bool {
-	if o != nil && !IsNil(o.Supis) {
+	if o != nil && !isNil(o.Supis) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *ParameterProcessingInstruction) SetSupis(v []string) {
 
 // GetAreas returns the Areas field value if set, zero value otherwise.
 func (o *ParameterProcessingInstruction) GetAreas() []NetworkAreaInfo {
-	if o == nil || IsNil(o.Areas) {
+	if o == nil || isNil(o.Areas) {
 		var ret []NetworkAreaInfo
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *ParameterProcessingInstruction) GetAreas() []NetworkAreaInfo {
 // GetAreasOk returns a tuple with the Areas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterProcessingInstruction) GetAreasOk() ([]NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.Areas) {
+	if o == nil || isNil(o.Areas) {
 		return nil, false
 	}
 	return o.Areas, true
@@ -208,7 +208,7 @@ func (o *ParameterProcessingInstruction) GetAreasOk() ([]NetworkAreaInfo, bool) 
 
 // HasAreas returns a boolean if a field has been set.
 func (o *ParameterProcessingInstruction) HasAreas() bool {
-	if o != nil && !IsNil(o.Areas) {
+	if o != nil && !isNil(o.Areas) {
 		return true
 	}
 
@@ -233,13 +233,13 @@ func (o ParameterProcessingInstruction) ToMap() (map[string]interface{}, error) 
 	toSerialize["name"] = o.Name
 	toSerialize["values"] = o.Values
 	toSerialize["sumAttrs"] = o.SumAttrs
-	if !IsNil(o.AggrLevel) {
+	if !isNil(o.AggrLevel) {
 		toSerialize["aggrLevel"] = o.AggrLevel
 	}
-	if !IsNil(o.Supis) {
+	if !isNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !IsNil(o.Areas) {
+	if !isNil(o.Areas) {
 		toSerialize["areas"] = o.Areas
 	}
 	return toSerialize, nil

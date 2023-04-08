@@ -42,7 +42,7 @@ func NewFreqInfoWithDefaults() *FreqInfo {
 
 // GetArfcn returns the Arfcn field value if set, zero value otherwise.
 func (o *FreqInfo) GetArfcn() int32 {
-	if o == nil || IsNil(o.Arfcn) {
+	if o == nil || isNil(o.Arfcn) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *FreqInfo) GetArfcn() int32 {
 // GetArfcnOk returns a tuple with the Arfcn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FreqInfo) GetArfcnOk() (*int32, bool) {
-	if o == nil || IsNil(o.Arfcn) {
+	if o == nil || isNil(o.Arfcn) {
 		return nil, false
 	}
 	return o.Arfcn, true
@@ -60,7 +60,7 @@ func (o *FreqInfo) GetArfcnOk() (*int32, bool) {
 
 // HasArfcn returns a boolean if a field has been set.
 func (o *FreqInfo) HasArfcn() bool {
-	if o != nil && !IsNil(o.Arfcn) {
+	if o != nil && !isNil(o.Arfcn) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *FreqInfo) SetArfcn(v int32) {
 
 // GetFreqBands returns the FreqBands field value if set, zero value otherwise.
 func (o *FreqInfo) GetFreqBands() []int32 {
-	if o == nil || IsNil(o.FreqBands) {
+	if o == nil || isNil(o.FreqBands) {
 		var ret []int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *FreqInfo) GetFreqBands() []int32 {
 // GetFreqBandsOk returns a tuple with the FreqBands field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FreqInfo) GetFreqBandsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.FreqBands) {
+	if o == nil || isNil(o.FreqBands) {
 		return nil, false
 	}
 	return o.FreqBands, true
@@ -92,7 +92,7 @@ func (o *FreqInfo) GetFreqBandsOk() ([]int32, bool) {
 
 // HasFreqBands returns a boolean if a field has been set.
 func (o *FreqInfo) HasFreqBands() bool {
-	if o != nil && !IsNil(o.FreqBands) {
+	if o != nil && !isNil(o.FreqBands) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o FreqInfo) MarshalJSON() ([]byte, error) {
 
 func (o FreqInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Arfcn) {
+	if !isNil(o.Arfcn) {
 		toSerialize["arfcn"] = o.Arfcn
 	}
-	if !IsNil(o.FreqBands) {
+	if !isNil(o.FreqBands) {
 		toSerialize["freqBands"] = o.FreqBands
 	}
 	return toSerialize, nil

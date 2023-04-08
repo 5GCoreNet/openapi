@@ -52,7 +52,7 @@ func NewPpDataEntryWithDefaults() *PpDataEntry {
 
 // GetCommunicationCharacteristics returns the CommunicationCharacteristics field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpDataEntry) GetCommunicationCharacteristics() CommunicationCharacteristicsAF {
-	if o == nil || IsNil(o.CommunicationCharacteristics.Get()) {
+	if o == nil || isNil(o.CommunicationCharacteristics.Get()) {
 		var ret CommunicationCharacteristicsAF
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *PpDataEntry) UnsetCommunicationCharacteristics() {
 
 // GetReferenceId returns the ReferenceId field value if set, zero value otherwise.
 func (o *PpDataEntry) GetReferenceId() int32 {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		var ret int32
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *PpDataEntry) GetReferenceId() int32 {
 // GetReferenceIdOk returns a tuple with the ReferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetReferenceIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReferenceId) {
+	if o == nil || isNil(o.ReferenceId) {
 		return nil, false
 	}
 	return o.ReferenceId, true
@@ -112,7 +112,7 @@ func (o *PpDataEntry) GetReferenceIdOk() (*int32, bool) {
 
 // HasReferenceId returns a boolean if a field has been set.
 func (o *PpDataEntry) HasReferenceId() bool {
-	if o != nil && !IsNil(o.ReferenceId) {
+	if o != nil && !isNil(o.ReferenceId) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *PpDataEntry) SetReferenceId(v int32) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *PpDataEntry) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *PpDataEntry) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -144,7 +144,7 @@ func (o *PpDataEntry) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *PpDataEntry) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -158,7 +158,7 @@ func (o *PpDataEntry) SetValidityTime(v time.Time) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *PpDataEntry) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -168,7 +168,7 @@ func (o *PpDataEntry) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -176,7 +176,7 @@ func (o *PpDataEntry) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *PpDataEntry) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -190,7 +190,7 @@ func (o *PpDataEntry) SetMtcProviderInformation(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *PpDataEntry) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -200,7 +200,7 @@ func (o *PpDataEntry) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -208,7 +208,7 @@ func (o *PpDataEntry) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *PpDataEntry) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -222,7 +222,7 @@ func (o *PpDataEntry) SetSupportedFeatures(v string) {
 
 // GetEcsAddrConfigInfo returns the EcsAddrConfigInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpDataEntry) GetEcsAddrConfigInfo() EcsAddrConfigInfo {
-	if o == nil || IsNil(o.EcsAddrConfigInfo.Get()) {
+	if o == nil || isNil(o.EcsAddrConfigInfo.Get()) {
 		var ret EcsAddrConfigInfo
 		return ret
 	}
@@ -264,7 +264,7 @@ func (o *PpDataEntry) UnsetEcsAddrConfigInfo() {
 
 // GetAdditionalEcsAddrConfigInfos returns the AdditionalEcsAddrConfigInfos field value if set, zero value otherwise.
 func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfos() []EcsAddrConfigInfo {
-	if o == nil || IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if o == nil || isNil(o.AdditionalEcsAddrConfigInfos) {
 		var ret []EcsAddrConfigInfo
 		return ret
 	}
@@ -274,7 +274,7 @@ func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfos() []EcsAddrConfigInfo {
 // GetAdditionalEcsAddrConfigInfosOk returns a tuple with the AdditionalEcsAddrConfigInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfosOk() ([]EcsAddrConfigInfo, bool) {
-	if o == nil || IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if o == nil || isNil(o.AdditionalEcsAddrConfigInfos) {
 		return nil, false
 	}
 	return o.AdditionalEcsAddrConfigInfos, true
@@ -282,7 +282,7 @@ func (o *PpDataEntry) GetAdditionalEcsAddrConfigInfosOk() ([]EcsAddrConfigInfo, 
 
 // HasAdditionalEcsAddrConfigInfos returns a boolean if a field has been set.
 func (o *PpDataEntry) HasAdditionalEcsAddrConfigInfos() bool {
-	if o != nil && !IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if o != nil && !isNil(o.AdditionalEcsAddrConfigInfos) {
 		return true
 	}
 
@@ -296,7 +296,7 @@ func (o *PpDataEntry) SetAdditionalEcsAddrConfigInfos(v []EcsAddrConfigInfo) {
 
 // GetEcRestriction returns the EcRestriction field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PpDataEntry) GetEcRestriction() EcRestriction {
-	if o == nil || IsNil(o.EcRestriction.Get()) {
+	if o == nil || isNil(o.EcRestriction.Get()) {
 		var ret EcRestriction
 		return ret
 	}
@@ -349,22 +349,22 @@ func (o PpDataEntry) ToMap() (map[string]interface{}, error) {
 	if o.CommunicationCharacteristics.IsSet() {
 		toSerialize["communicationCharacteristics"] = o.CommunicationCharacteristics.Get()
 	}
-	if !IsNil(o.ReferenceId) {
+	if !isNil(o.ReferenceId) {
 		toSerialize["referenceId"] = o.ReferenceId
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	if o.EcsAddrConfigInfo.IsSet() {
 		toSerialize["ecsAddrConfigInfo"] = o.EcsAddrConfigInfo.Get()
 	}
-	if !IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if !isNil(o.AdditionalEcsAddrConfigInfos) {
 		toSerialize["additionalEcsAddrConfigInfos"] = o.AdditionalEcsAddrConfigInfos
 	}
 	if o.EcRestriction.IsSet() {

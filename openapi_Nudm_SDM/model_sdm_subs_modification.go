@@ -44,7 +44,7 @@ func NewSdmSubsModificationWithDefaults() *SdmSubsModification {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *SdmSubsModification) GetExpires() time.Time {
-	if o == nil || IsNil(o.Expires) {
+	if o == nil || isNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SdmSubsModification) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubsModification) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expires) {
+	if o == nil || isNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -62,7 +62,7 @@ func (o *SdmSubsModification) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *SdmSubsModification) HasExpires() bool {
-	if o != nil && !IsNil(o.Expires) {
+	if o != nil && !isNil(o.Expires) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SdmSubsModification) SetExpires(v time.Time) {
 
 // GetMonitoredResourceUris returns the MonitoredResourceUris field value if set, zero value otherwise.
 func (o *SdmSubsModification) GetMonitoredResourceUris() []string {
-	if o == nil || IsNil(o.MonitoredResourceUris) {
+	if o == nil || isNil(o.MonitoredResourceUris) {
 		var ret []string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SdmSubsModification) GetMonitoredResourceUris() []string {
 // GetMonitoredResourceUrisOk returns a tuple with the MonitoredResourceUris field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SdmSubsModification) GetMonitoredResourceUrisOk() ([]string, bool) {
-	if o == nil || IsNil(o.MonitoredResourceUris) {
+	if o == nil || isNil(o.MonitoredResourceUris) {
 		return nil, false
 	}
 	return o.MonitoredResourceUris, true
@@ -94,7 +94,7 @@ func (o *SdmSubsModification) GetMonitoredResourceUrisOk() ([]string, bool) {
 
 // HasMonitoredResourceUris returns a boolean if a field has been set.
 func (o *SdmSubsModification) HasMonitoredResourceUris() bool {
-	if o != nil && !IsNil(o.MonitoredResourceUris) {
+	if o != nil && !isNil(o.MonitoredResourceUris) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o SdmSubsModification) MarshalJSON() ([]byte, error) {
 
 func (o SdmSubsModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Expires) {
+	if !isNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
-	if !IsNil(o.MonitoredResourceUris) {
+	if !isNil(o.MonitoredResourceUris) {
 		toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // Protocol Possible values are: - ETH: Indicates Ethernet as defined in IEEE Std 1588 [45] Annex E is supported. - IPV4: Indicates IPv4 as defined in IEEE Std 1588 [45] Annex C is supported. - IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported. 
 type Protocol struct {
-	string *string
+	ProtocolAnyOf *ProtocolAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Protocol) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ProtocolAnyOf
+	err = json.Unmarshal(data, &dst.ProtocolAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonProtocolAnyOf, _ := json.Marshal(dst.ProtocolAnyOf)
+		if string(jsonProtocolAnyOf) == "{}" { // empty struct
+			dst.ProtocolAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ProtocolAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ProtocolAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(Protocol)")
@@ -41,8 +55,12 @@ func (dst *Protocol) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Protocol) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ProtocolAnyOf != nil {
+		return json.Marshal(&src.ProtocolAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

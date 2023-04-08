@@ -54,7 +54,7 @@ func NewMbsContextInfoWithDefaults() *MbsContextInfo {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *MbsContextInfo) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *MbsContextInfo) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsContextInfo) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -72,7 +72,7 @@ func (o *MbsContextInfo) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *MbsContextInfo) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -86,7 +86,7 @@ func (o *MbsContextInfo) SetStartTime(v time.Time) {
 
 // GetAnyUeInd returns the AnyUeInd field value if set, zero value otherwise.
 func (o *MbsContextInfo) GetAnyUeInd() bool {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		var ret bool
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *MbsContextInfo) GetAnyUeInd() bool {
 // GetAnyUeIndOk returns a tuple with the AnyUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsContextInfo) GetAnyUeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUeInd) {
+	if o == nil || isNil(o.AnyUeInd) {
 		return nil, false
 	}
 	return o.AnyUeInd, true
@@ -104,7 +104,7 @@ func (o *MbsContextInfo) GetAnyUeIndOk() (*bool, bool) {
 
 // HasAnyUeInd returns a boolean if a field has been set.
 func (o *MbsContextInfo) HasAnyUeInd() bool {
-	if o != nil && !IsNil(o.AnyUeInd) {
+	if o != nil && !isNil(o.AnyUeInd) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *MbsContextInfo) SetAnyUeInd(v bool) {
 
 // GetLlSsm returns the LlSsm field value if set, zero value otherwise.
 func (o *MbsContextInfo) GetLlSsm() Ssm {
-	if o == nil || IsNil(o.LlSsm) {
+	if o == nil || isNil(o.LlSsm) {
 		var ret Ssm
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *MbsContextInfo) GetLlSsm() Ssm {
 // GetLlSsmOk returns a tuple with the LlSsm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsContextInfo) GetLlSsmOk() (*Ssm, bool) {
-	if o == nil || IsNil(o.LlSsm) {
+	if o == nil || isNil(o.LlSsm) {
 		return nil, false
 	}
 	return o.LlSsm, true
@@ -136,7 +136,7 @@ func (o *MbsContextInfo) GetLlSsmOk() (*Ssm, bool) {
 
 // HasLlSsm returns a boolean if a field has been set.
 func (o *MbsContextInfo) HasLlSsm() bool {
-	if o != nil && !IsNil(o.LlSsm) {
+	if o != nil && !isNil(o.LlSsm) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *MbsContextInfo) SetLlSsm(v Ssm) {
 
 // GetCTeid returns the CTeid field value if set, zero value otherwise.
 func (o *MbsContextInfo) GetCTeid() int32 {
-	if o == nil || IsNil(o.CTeid) {
+	if o == nil || isNil(o.CTeid) {
 		var ret int32
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *MbsContextInfo) GetCTeid() int32 {
 // GetCTeidOk returns a tuple with the CTeid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsContextInfo) GetCTeidOk() (*int32, bool) {
-	if o == nil || IsNil(o.CTeid) {
+	if o == nil || isNil(o.CTeid) {
 		return nil, false
 	}
 	return o.CTeid, true
@@ -168,7 +168,7 @@ func (o *MbsContextInfo) GetCTeidOk() (*int32, bool) {
 
 // HasCTeid returns a boolean if a field has been set.
 func (o *MbsContextInfo) HasCTeid() bool {
-	if o != nil && !IsNil(o.CTeid) {
+	if o != nil && !isNil(o.CTeid) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *MbsContextInfo) SetCTeid(v int32) {
 
 // GetMbsServiceArea returns the MbsServiceArea field value if set, zero value otherwise.
 func (o *MbsContextInfo) GetMbsServiceArea() MbsServiceArea {
-	if o == nil || IsNil(o.MbsServiceArea) {
+	if o == nil || isNil(o.MbsServiceArea) {
 		var ret MbsServiceArea
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *MbsContextInfo) GetMbsServiceArea() MbsServiceArea {
 // GetMbsServiceAreaOk returns a tuple with the MbsServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsContextInfo) GetMbsServiceAreaOk() (*MbsServiceArea, bool) {
-	if o == nil || IsNil(o.MbsServiceArea) {
+	if o == nil || isNil(o.MbsServiceArea) {
 		return nil, false
 	}
 	return o.MbsServiceArea, true
@@ -200,7 +200,7 @@ func (o *MbsContextInfo) GetMbsServiceAreaOk() (*MbsServiceArea, bool) {
 
 // HasMbsServiceArea returns a boolean if a field has been set.
 func (o *MbsContextInfo) HasMbsServiceArea() bool {
-	if o != nil && !IsNil(o.MbsServiceArea) {
+	if o != nil && !isNil(o.MbsServiceArea) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *MbsContextInfo) SetMbsServiceArea(v MbsServiceArea) {
 
 // GetMbsServiceAreaInfoList returns the MbsServiceAreaInfoList field value if set, zero value otherwise.
 func (o *MbsContextInfo) GetMbsServiceAreaInfoList() map[string]MbsServiceAreaInfo {
-	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
+	if o == nil || isNil(o.MbsServiceAreaInfoList) {
 		var ret map[string]MbsServiceAreaInfo
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *MbsContextInfo) GetMbsServiceAreaInfoList() map[string]MbsServiceAreaIn
 // GetMbsServiceAreaInfoListOk returns a tuple with the MbsServiceAreaInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsContextInfo) GetMbsServiceAreaInfoListOk() (*map[string]MbsServiceAreaInfo, bool) {
-	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
+	if o == nil || isNil(o.MbsServiceAreaInfoList) {
 		return nil, false
 	}
 	return o.MbsServiceAreaInfoList, true
@@ -232,7 +232,7 @@ func (o *MbsContextInfo) GetMbsServiceAreaInfoListOk() (*map[string]MbsServiceAr
 
 // HasMbsServiceAreaInfoList returns a boolean if a field has been set.
 func (o *MbsContextInfo) HasMbsServiceAreaInfoList() bool {
-	if o != nil && !IsNil(o.MbsServiceAreaInfoList) {
+	if o != nil && !isNil(o.MbsServiceAreaInfoList) {
 		return true
 	}
 
@@ -254,22 +254,22 @@ func (o MbsContextInfo) MarshalJSON() ([]byte, error) {
 
 func (o MbsContextInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.AnyUeInd) {
+	if !isNil(o.AnyUeInd) {
 		toSerialize["anyUeInd"] = o.AnyUeInd
 	}
-	if !IsNil(o.LlSsm) {
+	if !isNil(o.LlSsm) {
 		toSerialize["llSsm"] = o.LlSsm
 	}
-	if !IsNil(o.CTeid) {
+	if !isNil(o.CTeid) {
 		toSerialize["cTeid"] = o.CTeid
 	}
-	if !IsNil(o.MbsServiceArea) {
+	if !isNil(o.MbsServiceArea) {
 		toSerialize["mbsServiceArea"] = o.MbsServiceArea
 	}
-	if !IsNil(o.MbsServiceAreaInfoList) {
+	if !isNil(o.MbsServiceAreaInfoList) {
 		toSerialize["mbsServiceAreaInfoList"] = o.MbsServiceAreaInfoList
 	}
 	return toSerialize, nil

@@ -424,20 +424,14 @@ components:
       type: object
     DistributionNetworkType:
       anyOf:
-      - enum:
-        - NETWORK_EMBMS
-        type: string
+      - $ref: '#/components/schemas/DistributionNetworkType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
       description: Type of distribution network.
     DistributionMode:
       anyOf:
-      - enum:
-        - MODE_EXCLUSIVE
-        - MODE_HYBRID
-        - MODE_DYNAMIC
-        type: string
+      - $ref: '#/components/schemas/DistributionMode_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -549,3 +543,15 @@ components:
       - distributionMode
       - distributionNetworkType
       type: object
+    DistributionNetworkType_anyOf:
+      enum:
+      - NETWORK_EMBMS
+      type: string
+      example: null
+    DistributionMode_anyOf:
+      enum:
+      - MODE_EXCLUSIVE
+      - MODE_HYBRID
+      - MODE_DYNAMIC
+      type: string
+      example: null

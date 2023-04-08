@@ -82,7 +82,7 @@ func (o *ServiceAPIDescription) SetApiName(v string) {
 
 // GetApiId returns the ApiId field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetApiId() string {
-	if o == nil || IsNil(o.ApiId) {
+	if o == nil || isNil(o.ApiId) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *ServiceAPIDescription) GetApiId() string {
 // GetApiIdOk returns a tuple with the ApiId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetApiIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiId) {
+	if o == nil || isNil(o.ApiId) {
 		return nil, false
 	}
 	return o.ApiId, true
@@ -100,7 +100,7 @@ func (o *ServiceAPIDescription) GetApiIdOk() (*string, bool) {
 
 // HasApiId returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasApiId() bool {
-	if o != nil && !IsNil(o.ApiId) {
+	if o != nil && !isNil(o.ApiId) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *ServiceAPIDescription) SetApiId(v string) {
 
 // GetAefProfiles returns the AefProfiles field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetAefProfiles() []AefProfile {
-	if o == nil || IsNil(o.AefProfiles) {
+	if o == nil || isNil(o.AefProfiles) {
 		var ret []AefProfile
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *ServiceAPIDescription) GetAefProfiles() []AefProfile {
 // GetAefProfilesOk returns a tuple with the AefProfiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetAefProfilesOk() ([]AefProfile, bool) {
-	if o == nil || IsNil(o.AefProfiles) {
+	if o == nil || isNil(o.AefProfiles) {
 		return nil, false
 	}
 	return o.AefProfiles, true
@@ -132,7 +132,7 @@ func (o *ServiceAPIDescription) GetAefProfilesOk() ([]AefProfile, bool) {
 
 // HasAefProfiles returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasAefProfiles() bool {
-	if o != nil && !IsNil(o.AefProfiles) {
+	if o != nil && !isNil(o.AefProfiles) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *ServiceAPIDescription) SetAefProfiles(v []AefProfile) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || isNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *ServiceAPIDescription) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || isNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -164,7 +164,7 @@ func (o *ServiceAPIDescription) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && !isNil(o.Description) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *ServiceAPIDescription) SetDescription(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *ServiceAPIDescription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -196,7 +196,7 @@ func (o *ServiceAPIDescription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *ServiceAPIDescription) SetSupportedFeatures(v string) {
 
 // GetShareableInfo returns the ShareableInfo field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetShareableInfo() ShareableInformation {
-	if o == nil || IsNil(o.ShareableInfo) {
+	if o == nil || isNil(o.ShareableInfo) {
 		var ret ShareableInformation
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *ServiceAPIDescription) GetShareableInfo() ShareableInformation {
 // GetShareableInfoOk returns a tuple with the ShareableInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetShareableInfoOk() (*ShareableInformation, bool) {
-	if o == nil || IsNil(o.ShareableInfo) {
+	if o == nil || isNil(o.ShareableInfo) {
 		return nil, false
 	}
 	return o.ShareableInfo, true
@@ -228,7 +228,7 @@ func (o *ServiceAPIDescription) GetShareableInfoOk() (*ShareableInformation, boo
 
 // HasShareableInfo returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasShareableInfo() bool {
-	if o != nil && !IsNil(o.ShareableInfo) {
+	if o != nil && !isNil(o.ShareableInfo) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *ServiceAPIDescription) SetShareableInfo(v ShareableInformation) {
 
 // GetServiceAPICategory returns the ServiceAPICategory field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetServiceAPICategory() string {
-	if o == nil || IsNil(o.ServiceAPICategory) {
+	if o == nil || isNil(o.ServiceAPICategory) {
 		var ret string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *ServiceAPIDescription) GetServiceAPICategory() string {
 // GetServiceAPICategoryOk returns a tuple with the ServiceAPICategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetServiceAPICategoryOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceAPICategory) {
+	if o == nil || isNil(o.ServiceAPICategory) {
 		return nil, false
 	}
 	return o.ServiceAPICategory, true
@@ -260,7 +260,7 @@ func (o *ServiceAPIDescription) GetServiceAPICategoryOk() (*string, bool) {
 
 // HasServiceAPICategory returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasServiceAPICategory() bool {
-	if o != nil && !IsNil(o.ServiceAPICategory) {
+	if o != nil && !isNil(o.ServiceAPICategory) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *ServiceAPIDescription) SetServiceAPICategory(v string) {
 
 // GetApiSuppFeats returns the ApiSuppFeats field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetApiSuppFeats() string {
-	if o == nil || IsNil(o.ApiSuppFeats) {
+	if o == nil || isNil(o.ApiSuppFeats) {
 		var ret string
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *ServiceAPIDescription) GetApiSuppFeats() string {
 // GetApiSuppFeatsOk returns a tuple with the ApiSuppFeats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetApiSuppFeatsOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiSuppFeats) {
+	if o == nil || isNil(o.ApiSuppFeats) {
 		return nil, false
 	}
 	return o.ApiSuppFeats, true
@@ -292,7 +292,7 @@ func (o *ServiceAPIDescription) GetApiSuppFeatsOk() (*string, bool) {
 
 // HasApiSuppFeats returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasApiSuppFeats() bool {
-	if o != nil && !IsNil(o.ApiSuppFeats) {
+	if o != nil && !isNil(o.ApiSuppFeats) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *ServiceAPIDescription) SetApiSuppFeats(v string) {
 
 // GetPubApiPath returns the PubApiPath field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetPubApiPath() PublishedApiPath {
-	if o == nil || IsNil(o.PubApiPath) {
+	if o == nil || isNil(o.PubApiPath) {
 		var ret PublishedApiPath
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *ServiceAPIDescription) GetPubApiPath() PublishedApiPath {
 // GetPubApiPathOk returns a tuple with the PubApiPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetPubApiPathOk() (*PublishedApiPath, bool) {
-	if o == nil || IsNil(o.PubApiPath) {
+	if o == nil || isNil(o.PubApiPath) {
 		return nil, false
 	}
 	return o.PubApiPath, true
@@ -324,7 +324,7 @@ func (o *ServiceAPIDescription) GetPubApiPathOk() (*PublishedApiPath, bool) {
 
 // HasPubApiPath returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasPubApiPath() bool {
-	if o != nil && !IsNil(o.PubApiPath) {
+	if o != nil && !isNil(o.PubApiPath) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *ServiceAPIDescription) SetPubApiPath(v PublishedApiPath) {
 
 // GetCcfId returns the CcfId field value if set, zero value otherwise.
 func (o *ServiceAPIDescription) GetCcfId() string {
-	if o == nil || IsNil(o.CcfId) {
+	if o == nil || isNil(o.CcfId) {
 		var ret string
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *ServiceAPIDescription) GetCcfId() string {
 // GetCcfIdOk returns a tuple with the CcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAPIDescription) GetCcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CcfId) {
+	if o == nil || isNil(o.CcfId) {
 		return nil, false
 	}
 	return o.CcfId, true
@@ -356,7 +356,7 @@ func (o *ServiceAPIDescription) GetCcfIdOk() (*string, bool) {
 
 // HasCcfId returns a boolean if a field has been set.
 func (o *ServiceAPIDescription) HasCcfId() bool {
-	if o != nil && !IsNil(o.CcfId) {
+	if o != nil && !isNil(o.CcfId) {
 		return true
 	}
 
@@ -379,31 +379,31 @@ func (o ServiceAPIDescription) MarshalJSON() ([]byte, error) {
 func (o ServiceAPIDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiName"] = o.ApiName
-	if !IsNil(o.ApiId) {
+	if !isNil(o.ApiId) {
 		toSerialize["apiId"] = o.ApiId
 	}
-	if !IsNil(o.AefProfiles) {
+	if !isNil(o.AefProfiles) {
 		toSerialize["aefProfiles"] = o.AefProfiles
 	}
-	if !IsNil(o.Description) {
+	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ShareableInfo) {
+	if !isNil(o.ShareableInfo) {
 		toSerialize["shareableInfo"] = o.ShareableInfo
 	}
-	if !IsNil(o.ServiceAPICategory) {
+	if !isNil(o.ServiceAPICategory) {
 		toSerialize["serviceAPICategory"] = o.ServiceAPICategory
 	}
-	if !IsNil(o.ApiSuppFeats) {
+	if !isNil(o.ApiSuppFeats) {
 		toSerialize["apiSuppFeats"] = o.ApiSuppFeats
 	}
-	if !IsNil(o.PubApiPath) {
+	if !isNil(o.PubApiPath) {
 		toSerialize["pubApiPath"] = o.PubApiPath
 	}
-	if !IsNil(o.CcfId) {
+	if !isNil(o.CcfId) {
 		toSerialize["ccfId"] = o.CcfId
 	}
 	return toSerialize, nil

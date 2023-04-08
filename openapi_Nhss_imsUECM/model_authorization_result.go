@@ -17,23 +17,37 @@ import (
 
 // AuthorizationResult Represents the details of the granted authorization to the UE
 type AuthorizationResult struct {
-	string *string
+	AuthorizationResultAnyOf *AuthorizationResultAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AuthorizationResult) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AuthorizationResultAnyOf
+	err = json.Unmarshal(data, &dst.AuthorizationResultAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAuthorizationResultAnyOf, _ := json.Marshal(dst.AuthorizationResultAnyOf)
+		if string(jsonAuthorizationResultAnyOf) == "{}" { // empty struct
+			dst.AuthorizationResultAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AuthorizationResultAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AuthorizationResultAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AuthorizationResult)")
@@ -41,8 +55,12 @@ func (dst *AuthorizationResult) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AuthorizationResult) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AuthorizationResultAnyOf != nil {
+		return json.Marshal(&src.AuthorizationResultAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

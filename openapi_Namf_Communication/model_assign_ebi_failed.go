@@ -68,7 +68,7 @@ func (o *AssignEbiFailed) SetPduSessionId(v int32) {
 
 // GetFailedArpList returns the FailedArpList field value if set, zero value otherwise.
 func (o *AssignEbiFailed) GetFailedArpList() []Arp {
-	if o == nil || IsNil(o.FailedArpList) {
+	if o == nil || isNil(o.FailedArpList) {
 		var ret []Arp
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AssignEbiFailed) GetFailedArpList() []Arp {
 // GetFailedArpListOk returns a tuple with the FailedArpList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssignEbiFailed) GetFailedArpListOk() ([]Arp, bool) {
-	if o == nil || IsNil(o.FailedArpList) {
+	if o == nil || isNil(o.FailedArpList) {
 		return nil, false
 	}
 	return o.FailedArpList, true
@@ -86,7 +86,7 @@ func (o *AssignEbiFailed) GetFailedArpListOk() ([]Arp, bool) {
 
 // HasFailedArpList returns a boolean if a field has been set.
 func (o *AssignEbiFailed) HasFailedArpList() bool {
-	if o != nil && !IsNil(o.FailedArpList) {
+	if o != nil && !isNil(o.FailedArpList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o AssignEbiFailed) MarshalJSON() ([]byte, error) {
 func (o AssignEbiFailed) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduSessionId"] = o.PduSessionId
-	if !IsNil(o.FailedArpList) {
+	if !isNil(o.FailedArpList) {
 		toSerialize["failedArpList"] = o.FailedArpList
 	}
 	return toSerialize, nil

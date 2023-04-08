@@ -94,7 +94,7 @@ func (o *TaiRange) SetTacRangeList(v []TacRange) {
 
 // GetNid returns the Nid field value if set, zero value otherwise.
 func (o *TaiRange) GetNid() string {
-	if o == nil || IsNil(o.Nid) {
+	if o == nil || isNil(o.Nid) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *TaiRange) GetNid() string {
 // GetNidOk returns a tuple with the Nid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaiRange) GetNidOk() (*string, bool) {
-	if o == nil || IsNil(o.Nid) {
+	if o == nil || isNil(o.Nid) {
 		return nil, false
 	}
 	return o.Nid, true
@@ -112,7 +112,7 @@ func (o *TaiRange) GetNidOk() (*string, bool) {
 
 // HasNid returns a boolean if a field has been set.
 func (o *TaiRange) HasNid() bool {
-	if o != nil && !IsNil(o.Nid) {
+	if o != nil && !isNil(o.Nid) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o TaiRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
 	toSerialize["tacRangeList"] = o.TacRangeList
-	if !IsNil(o.Nid) {
+	if !isNil(o.Nid) {
 		toSerialize["nid"] = o.Nid
 	}
 	return toSerialize, nil

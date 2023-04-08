@@ -69,7 +69,7 @@ func (o *DiscoveredEas) SetEas(v EASProfile) {
 
 // GetLifeTime returns the LifeTime field value if set, zero value otherwise.
 func (o *DiscoveredEas) GetLifeTime() time.Time {
-	if o == nil || IsNil(o.LifeTime) {
+	if o == nil || isNil(o.LifeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *DiscoveredEas) GetLifeTime() time.Time {
 // GetLifeTimeOk returns a tuple with the LifeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiscoveredEas) GetLifeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LifeTime) {
+	if o == nil || isNil(o.LifeTime) {
 		return nil, false
 	}
 	return o.LifeTime, true
@@ -87,7 +87,7 @@ func (o *DiscoveredEas) GetLifeTimeOk() (*time.Time, bool) {
 
 // HasLifeTime returns a boolean if a field has been set.
 func (o *DiscoveredEas) HasLifeTime() bool {
-	if o != nil && !IsNil(o.LifeTime) {
+	if o != nil && !isNil(o.LifeTime) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o DiscoveredEas) MarshalJSON() ([]byte, error) {
 func (o DiscoveredEas) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eas"] = o.Eas
-	if !IsNil(o.LifeTime) {
+	if !isNil(o.LifeTime) {
 		toSerialize["lifeTime"] = o.LifeTime
 	}
 	return toSerialize, nil

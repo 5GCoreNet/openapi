@@ -91,8 +91,10 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [ACRScenario](docs/ACRScenario.md)
+ - [ACRScenarioAnyOf](docs/ACRScenarioAnyOf.md)
  - [CivicAddress](docs/CivicAddress.md)
  - [EASCategory](docs/EASCategory.md)
+ - [EASCategoryAnyOf](docs/EASCategoryAnyOf.md)
  - [EASProfile](docs/EASProfile.md)
  - [EASRegistration](docs/EASRegistration.md)
  - [EASRegistrationPatch](docs/EASRegistrationPatch.md)
@@ -114,6 +116,7 @@ Class | Method | HTTP request | Description
  - [LocalOrigin](docs/LocalOrigin.md)
  - [Ncgi](docs/Ncgi.md)
  - [PermissionLevel](docs/PermissionLevel.md)
+ - [PermissionLevelAnyOf](docs/PermissionLevelAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnId1](docs/PlmnId1.md)
  - [Point](docs/Point.md)
@@ -135,6 +138,7 @@ Class | Method | HTTP request | Description
  - [ScheduledCommunicationTime](docs/ScheduledCommunicationTime.md)
  - [ServiceArea](docs/ServiceArea.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [Tai](docs/Tai.md)
  - [TopologicalServiceArea](docs/TopologicalServiceArea.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)

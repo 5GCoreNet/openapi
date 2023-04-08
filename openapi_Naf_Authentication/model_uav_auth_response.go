@@ -53,7 +53,7 @@ func NewUAVAuthResponseWithDefaults() *UAVAuthResponse {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *UAVAuthResponse) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -71,7 +71,7 @@ func (o *UAVAuthResponse) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *UAVAuthResponse) SetGpsi(v string) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetAuthContainer() []AuthContainer {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *UAVAuthResponse) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -103,7 +103,7 @@ func (o *UAVAuthResponse) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthContainer() bool {
-	if o != nil && !IsNil(o.AuthContainer) {
+	if o != nil && !isNil(o.AuthContainer) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *UAVAuthResponse) SetAuthContainer(v []AuthContainer) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthMsg() string {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		var ret string
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *UAVAuthResponse) GetAuthMsg() string {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -137,7 +137,7 @@ func (o *UAVAuthResponse) GetAuthMsgOk() (*string, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthMsg() bool {
-	if o != nil && !IsNil(o.AuthMsg) {
+	if o != nil && !isNil(o.AuthMsg) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *UAVAuthResponse) SetAuthMsg(v string) {
 // GetAuthResult returns the AuthResult field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthResult() UAVAuthResponseAuthResult {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		var ret UAVAuthResponseAuthResult
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *UAVAuthResponse) GetAuthResult() UAVAuthResponseAuthResult {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthResponse) GetAuthResultOk() (*UAVAuthResponseAuthResult, bool) {
-	if o == nil || IsNil(o.AuthResult) {
+	if o == nil || isNil(o.AuthResult) {
 		return nil, false
 	}
 	return o.AuthResult, true
@@ -172,7 +172,7 @@ func (o *UAVAuthResponse) GetAuthResultOk() (*UAVAuthResponseAuthResult, bool) {
 
 // HasAuthResult returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthResult() bool {
-	if o != nil && !IsNil(o.AuthResult) {
+	if o != nil && !isNil(o.AuthResult) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *UAVAuthResponse) SetAuthResult(v UAVAuthResponseAuthResult) {
 
 // GetServiceLevelId returns the ServiceLevelId field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetServiceLevelId() string {
-	if o == nil || IsNil(o.ServiceLevelId) {
+	if o == nil || isNil(o.ServiceLevelId) {
 		var ret string
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *UAVAuthResponse) GetServiceLevelId() string {
 // GetServiceLevelIdOk returns a tuple with the ServiceLevelId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetServiceLevelIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceLevelId) {
+	if o == nil || isNil(o.ServiceLevelId) {
 		return nil, false
 	}
 	return o.ServiceLevelId, true
@@ -205,7 +205,7 @@ func (o *UAVAuthResponse) GetServiceLevelIdOk() (*string, bool) {
 
 // HasServiceLevelId returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasServiceLevelId() bool {
-	if o != nil && !IsNil(o.ServiceLevelId) {
+	if o != nil && !isNil(o.ServiceLevelId) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *UAVAuthResponse) SetServiceLevelId(v string) {
 
 // GetAuthSessAmbr returns the AuthSessAmbr field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetAuthSessAmbr() string {
-	if o == nil || IsNil(o.AuthSessAmbr) {
+	if o == nil || isNil(o.AuthSessAmbr) {
 		var ret string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *UAVAuthResponse) GetAuthSessAmbr() string {
 // GetAuthSessAmbrOk returns a tuple with the AuthSessAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetAuthSessAmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthSessAmbr) {
+	if o == nil || isNil(o.AuthSessAmbr) {
 		return nil, false
 	}
 	return o.AuthSessAmbr, true
@@ -237,7 +237,7 @@ func (o *UAVAuthResponse) GetAuthSessAmbrOk() (*string, bool) {
 
 // HasAuthSessAmbr returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthSessAmbr() bool {
-	if o != nil && !IsNil(o.AuthSessAmbr) {
+	if o != nil && !isNil(o.AuthSessAmbr) {
 		return true
 	}
 
@@ -251,7 +251,7 @@ func (o *UAVAuthResponse) SetAuthSessAmbr(v string) {
 
 // GetAuthProfIndex returns the AuthProfIndex field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetAuthProfIndex() string {
-	if o == nil || IsNil(o.AuthProfIndex) {
+	if o == nil || isNil(o.AuthProfIndex) {
 		var ret string
 		return ret
 	}
@@ -261,7 +261,7 @@ func (o *UAVAuthResponse) GetAuthProfIndex() string {
 // GetAuthProfIndexOk returns a tuple with the AuthProfIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetAuthProfIndexOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthProfIndex) {
+	if o == nil || isNil(o.AuthProfIndex) {
 		return nil, false
 	}
 	return o.AuthProfIndex, true
@@ -269,7 +269,7 @@ func (o *UAVAuthResponse) GetAuthProfIndexOk() (*string, bool) {
 
 // HasAuthProfIndex returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasAuthProfIndex() bool {
-	if o != nil && !IsNil(o.AuthProfIndex) {
+	if o != nil && !isNil(o.AuthProfIndex) {
 		return true
 	}
 
@@ -283,7 +283,7 @@ func (o *UAVAuthResponse) SetAuthProfIndex(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UAVAuthResponse) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -293,7 +293,7 @@ func (o *UAVAuthResponse) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthResponse) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -301,7 +301,7 @@ func (o *UAVAuthResponse) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UAVAuthResponse) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -323,28 +323,28 @@ func (o UAVAuthResponse) MarshalJSON() ([]byte, error) {
 
 func (o UAVAuthResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.AuthContainer) {
+	if !isNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
-	if !IsNil(o.AuthMsg) {
+	if !isNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !IsNil(o.AuthResult) {
+	if !isNil(o.AuthResult) {
 		toSerialize["authResult"] = o.AuthResult
 	}
-	if !IsNil(o.ServiceLevelId) {
+	if !isNil(o.ServiceLevelId) {
 		toSerialize["serviceLevelId"] = o.ServiceLevelId
 	}
-	if !IsNil(o.AuthSessAmbr) {
+	if !isNil(o.AuthSessAmbr) {
 		toSerialize["authSessAmbr"] = o.AuthSessAmbr
 	}
-	if !IsNil(o.AuthProfIndex) {
+	if !isNil(o.AuthProfIndex) {
 		toSerialize["authProfIndex"] = o.AuthProfIndex
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

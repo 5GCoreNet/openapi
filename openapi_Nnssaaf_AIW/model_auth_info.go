@@ -73,7 +73,7 @@ func (o *AuthInfo) SetSupi(v string) {
 
 // GetEapIdRsp returns the EapIdRsp field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthInfo) GetEapIdRsp() string {
-	if o == nil || IsNil(o.EapIdRsp.Get()) {
+	if o == nil || isNil(o.EapIdRsp.Get()) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *AuthInfo) UnsetEapIdRsp() {
 
 // GetTtlsInnerMethodContainer returns the TtlsInnerMethodContainer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AuthInfo) GetTtlsInnerMethodContainer() string {
-	if o == nil || IsNil(o.TtlsInnerMethodContainer.Get()) {
+	if o == nil || isNil(o.TtlsInnerMethodContainer.Get()) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *AuthInfo) UnsetTtlsInnerMethodContainer() {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *AuthInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -175,7 +175,7 @@ func (o *AuthInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o AuthInfo) ToMap() (map[string]interface{}, error) {
 	if o.TtlsInnerMethodContainer.IsSet() {
 		toSerialize["ttlsInnerMethodContainer"] = o.TtlsInnerMethodContainer.Get()
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

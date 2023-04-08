@@ -96,7 +96,7 @@ func (o *UeACRequestData) SetNfId(v string) {
 
 // GetNfType returns the NfType field value if set, zero value otherwise.
 func (o *UeACRequestData) GetNfType() NFType {
-	if o == nil || IsNil(o.NfType) {
+	if o == nil || isNil(o.NfType) {
 		var ret NFType
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UeACRequestData) GetNfType() NFType {
 // GetNfTypeOk returns a tuple with the NfType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACRequestData) GetNfTypeOk() (*NFType, bool) {
-	if o == nil || IsNil(o.NfType) {
+	if o == nil || isNil(o.NfType) {
 		return nil, false
 	}
 	return o.NfType, true
@@ -114,7 +114,7 @@ func (o *UeACRequestData) GetNfTypeOk() (*NFType, bool) {
 
 // HasNfType returns a boolean if a field has been set.
 func (o *UeACRequestData) HasNfType() bool {
-	if o != nil && !IsNil(o.NfType) {
+	if o != nil && !isNil(o.NfType) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *UeACRequestData) SetNfType(v NFType) {
 
 // GetEacNotificationUri returns the EacNotificationUri field value if set, zero value otherwise.
 func (o *UeACRequestData) GetEacNotificationUri() string {
-	if o == nil || IsNil(o.EacNotificationUri) {
+	if o == nil || isNil(o.EacNotificationUri) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *UeACRequestData) GetEacNotificationUri() string {
 // GetEacNotificationUriOk returns a tuple with the EacNotificationUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACRequestData) GetEacNotificationUriOk() (*string, bool) {
-	if o == nil || IsNil(o.EacNotificationUri) {
+	if o == nil || isNil(o.EacNotificationUri) {
 		return nil, false
 	}
 	return o.EacNotificationUri, true
@@ -146,7 +146,7 @@ func (o *UeACRequestData) GetEacNotificationUriOk() (*string, bool) {
 
 // HasEacNotificationUri returns a boolean if a field has been set.
 func (o *UeACRequestData) HasEacNotificationUri() bool {
-	if o != nil && !IsNil(o.EacNotificationUri) {
+	if o != nil && !isNil(o.EacNotificationUri) {
 		return true
 	}
 
@@ -170,10 +170,10 @@ func (o UeACRequestData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueACRequestInfo"] = o.UeACRequestInfo
 	toSerialize["nfId"] = o.NfId
-	if !IsNil(o.NfType) {
+	if !isNil(o.NfType) {
 		toSerialize["nfType"] = o.NfType
 	}
-	if !IsNil(o.EacNotificationUri) {
+	if !isNil(o.EacNotificationUri) {
 		toSerialize["eacNotificationUri"] = o.EacNotificationUri
 	}
 	return toSerialize, nil

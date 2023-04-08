@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -15,7 +14,9 @@ docs/DistributionConfigurationGeoFencing.md
 docs/DistributionConfigurationSupplementaryDistributionNetworksInner.md
 docs/DistributionConfigurationUrlSignature.md
 docs/DistributionMode.md
+docs/DistributionModeAnyOf.md
 docs/DistributionNetworkType.md
+docs/DistributionNetworkTypeAnyOf.md
 docs/IngestConfiguration.md
 docs/PathRewriteRule.md
 git_push.sh
@@ -29,7 +30,9 @@ model_distribution_configuration_geo_fencing.go
 model_distribution_configuration_supplementary_distribution_networks_inner.go
 model_distribution_configuration_url_signature.go
 model_distribution_mode.go
+model_distribution_mode_any_of.go
 model_distribution_network_type.go
+model_distribution_network_type_any_of.go
 model_ingest_configuration.go
 model_path_rewrite_rule.go
 response.go

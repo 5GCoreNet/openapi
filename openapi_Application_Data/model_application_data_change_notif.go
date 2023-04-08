@@ -48,7 +48,7 @@ func NewApplicationDataChangeNotifWithDefaults() *ApplicationDataChangeNotif {
 
 // GetIptvConfigData returns the IptvConfigData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetIptvConfigData() IptvConfigData {
-	if o == nil || IsNil(o.IptvConfigData) {
+	if o == nil || isNil(o.IptvConfigData) {
 		var ret IptvConfigData
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ApplicationDataChangeNotif) GetIptvConfigData() IptvConfigData {
 // GetIptvConfigDataOk returns a tuple with the IptvConfigData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetIptvConfigDataOk() (*IptvConfigData, bool) {
-	if o == nil || IsNil(o.IptvConfigData) {
+	if o == nil || isNil(o.IptvConfigData) {
 		return nil, false
 	}
 	return o.IptvConfigData, true
@@ -66,7 +66,7 @@ func (o *ApplicationDataChangeNotif) GetIptvConfigDataOk() (*IptvConfigData, boo
 
 // HasIptvConfigData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasIptvConfigData() bool {
-	if o != nil && !IsNil(o.IptvConfigData) {
+	if o != nil && !isNil(o.IptvConfigData) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ApplicationDataChangeNotif) SetIptvConfigData(v IptvConfigData) {
 
 // GetPfdData returns the PfdData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetPfdData() PfdChangeNotification {
-	if o == nil || IsNil(o.PfdData) {
+	if o == nil || isNil(o.PfdData) {
 		var ret PfdChangeNotification
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ApplicationDataChangeNotif) GetPfdData() PfdChangeNotification {
 // GetPfdDataOk returns a tuple with the PfdData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetPfdDataOk() (*PfdChangeNotification, bool) {
-	if o == nil || IsNil(o.PfdData) {
+	if o == nil || isNil(o.PfdData) {
 		return nil, false
 	}
 	return o.PfdData, true
@@ -98,7 +98,7 @@ func (o *ApplicationDataChangeNotif) GetPfdDataOk() (*PfdChangeNotification, boo
 
 // HasPfdData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasPfdData() bool {
-	if o != nil && !IsNil(o.PfdData) {
+	if o != nil && !isNil(o.PfdData) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ApplicationDataChangeNotif) SetPfdData(v PfdChangeNotification) {
 
 // GetBdtPolicyData returns the BdtPolicyData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetBdtPolicyData() BdtPolicyData {
-	if o == nil || IsNil(o.BdtPolicyData) {
+	if o == nil || isNil(o.BdtPolicyData) {
 		var ret BdtPolicyData
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ApplicationDataChangeNotif) GetBdtPolicyData() BdtPolicyData {
 // GetBdtPolicyDataOk returns a tuple with the BdtPolicyData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetBdtPolicyDataOk() (*BdtPolicyData, bool) {
-	if o == nil || IsNil(o.BdtPolicyData) {
+	if o == nil || isNil(o.BdtPolicyData) {
 		return nil, false
 	}
 	return o.BdtPolicyData, true
@@ -130,7 +130,7 @@ func (o *ApplicationDataChangeNotif) GetBdtPolicyDataOk() (*BdtPolicyData, bool)
 
 // HasBdtPolicyData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasBdtPolicyData() bool {
-	if o != nil && !IsNil(o.BdtPolicyData) {
+	if o != nil && !isNil(o.BdtPolicyData) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *ApplicationDataChangeNotif) SetResUri(v string) {
 
 // GetSerParamData returns the SerParamData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetSerParamData() ServiceParameterData {
-	if o == nil || IsNil(o.SerParamData) {
+	if o == nil || isNil(o.SerParamData) {
 		var ret ServiceParameterData
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *ApplicationDataChangeNotif) GetSerParamData() ServiceParameterData {
 // GetSerParamDataOk returns a tuple with the SerParamData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetSerParamDataOk() (*ServiceParameterData, bool) {
-	if o == nil || IsNil(o.SerParamData) {
+	if o == nil || isNil(o.SerParamData) {
 		return nil, false
 	}
 	return o.SerParamData, true
@@ -186,7 +186,7 @@ func (o *ApplicationDataChangeNotif) GetSerParamDataOk() (*ServiceParameterData,
 
 // HasSerParamData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasSerParamData() bool {
-	if o != nil && !IsNil(o.SerParamData) {
+	if o != nil && !isNil(o.SerParamData) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *ApplicationDataChangeNotif) SetSerParamData(v ServiceParameterData) {
 
 // GetAmInfluData returns the AmInfluData field value if set, zero value otherwise.
 func (o *ApplicationDataChangeNotif) GetAmInfluData() AmInfluData {
-	if o == nil || IsNil(o.AmInfluData) {
+	if o == nil || isNil(o.AmInfluData) {
 		var ret AmInfluData
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *ApplicationDataChangeNotif) GetAmInfluData() AmInfluData {
 // GetAmInfluDataOk returns a tuple with the AmInfluData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationDataChangeNotif) GetAmInfluDataOk() (*AmInfluData, bool) {
-	if o == nil || IsNil(o.AmInfluData) {
+	if o == nil || isNil(o.AmInfluData) {
 		return nil, false
 	}
 	return o.AmInfluData, true
@@ -218,7 +218,7 @@ func (o *ApplicationDataChangeNotif) GetAmInfluDataOk() (*AmInfluData, bool) {
 
 // HasAmInfluData returns a boolean if a field has been set.
 func (o *ApplicationDataChangeNotif) HasAmInfluData() bool {
-	if o != nil && !IsNil(o.AmInfluData) {
+	if o != nil && !isNil(o.AmInfluData) {
 		return true
 	}
 
@@ -240,20 +240,20 @@ func (o ApplicationDataChangeNotif) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationDataChangeNotif) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.IptvConfigData) {
+	if !isNil(o.IptvConfigData) {
 		toSerialize["iptvConfigData"] = o.IptvConfigData
 	}
-	if !IsNil(o.PfdData) {
+	if !isNil(o.PfdData) {
 		toSerialize["pfdData"] = o.PfdData
 	}
-	if !IsNil(o.BdtPolicyData) {
+	if !isNil(o.BdtPolicyData) {
 		toSerialize["bdtPolicyData"] = o.BdtPolicyData
 	}
 	toSerialize["resUri"] = o.ResUri
-	if !IsNil(o.SerParamData) {
+	if !isNil(o.SerParamData) {
 		toSerialize["serParamData"] = o.SerParamData
 	}
-	if !IsNil(o.AmInfluData) {
+	if !isNil(o.AmInfluData) {
 		toSerialize["amInfluData"] = o.AmInfluData
 	}
 	return toSerialize, nil

@@ -128,7 +128,7 @@ func (o *Resource) SetUri(v string) {
 
 // GetCustOpName returns the CustOpName field value if set, zero value otherwise.
 func (o *Resource) GetCustOpName() string {
-	if o == nil || IsNil(o.CustOpName) {
+	if o == nil || isNil(o.CustOpName) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *Resource) GetCustOpName() string {
 // GetCustOpNameOk returns a tuple with the CustOpName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetCustOpNameOk() (*string, bool) {
-	if o == nil || IsNil(o.CustOpName) {
+	if o == nil || isNil(o.CustOpName) {
 		return nil, false
 	}
 	return o.CustOpName, true
@@ -146,7 +146,7 @@ func (o *Resource) GetCustOpNameOk() (*string, bool) {
 
 // HasCustOpName returns a boolean if a field has been set.
 func (o *Resource) HasCustOpName() bool {
-	if o != nil && !IsNil(o.CustOpName) {
+	if o != nil && !isNil(o.CustOpName) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *Resource) SetCustOpName(v string) {
 
 // GetCustOperations returns the CustOperations field value if set, zero value otherwise.
 func (o *Resource) GetCustOperations() []CustomOperation {
-	if o == nil || IsNil(o.CustOperations) {
+	if o == nil || isNil(o.CustOperations) {
 		var ret []CustomOperation
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *Resource) GetCustOperations() []CustomOperation {
 // GetCustOperationsOk returns a tuple with the CustOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetCustOperationsOk() ([]CustomOperation, bool) {
-	if o == nil || IsNil(o.CustOperations) {
+	if o == nil || isNil(o.CustOperations) {
 		return nil, false
 	}
 	return o.CustOperations, true
@@ -178,7 +178,7 @@ func (o *Resource) GetCustOperationsOk() ([]CustomOperation, bool) {
 
 // HasCustOperations returns a boolean if a field has been set.
 func (o *Resource) HasCustOperations() bool {
-	if o != nil && !IsNil(o.CustOperations) {
+	if o != nil && !isNil(o.CustOperations) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *Resource) SetCustOperations(v []CustomOperation) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *Resource) GetOperations() []Operation {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		var ret []Operation
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *Resource) GetOperations() []Operation {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetOperationsOk() ([]Operation, bool) {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -210,7 +210,7 @@ func (o *Resource) GetOperationsOk() ([]Operation, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *Resource) HasOperations() bool {
-	if o != nil && !IsNil(o.Operations) {
+	if o != nil && !isNil(o.Operations) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *Resource) SetOperations(v []Operation) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *Resource) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || isNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *Resource) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Resource) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || isNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -242,7 +242,7 @@ func (o *Resource) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *Resource) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && !isNil(o.Description) {
 		return true
 	}
 
@@ -267,16 +267,16 @@ func (o Resource) ToMap() (map[string]interface{}, error) {
 	toSerialize["resourceName"] = o.ResourceName
 	toSerialize["commType"] = o.CommType
 	toSerialize["uri"] = o.Uri
-	if !IsNil(o.CustOpName) {
+	if !isNil(o.CustOpName) {
 		toSerialize["custOpName"] = o.CustOpName
 	}
-	if !IsNil(o.CustOperations) {
+	if !isNil(o.CustOperations) {
 		toSerialize["custOperations"] = o.CustOperations
 	}
-	if !IsNil(o.Operations) {
+	if !isNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
-	if !IsNil(o.Description) {
+	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	return toSerialize, nil

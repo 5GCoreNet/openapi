@@ -147,7 +147,7 @@ func (o *SACEventReportItem) SetEventFilter(v Snssai) {
 
 // GetSliceStautsInfo returns the SliceStautsInfo field value if set, zero value otherwise.
 func (o *SACEventReportItem) GetSliceStautsInfo() SACEventStatus {
-	if o == nil || IsNil(o.SliceStautsInfo) {
+	if o == nil || isNil(o.SliceStautsInfo) {
 		var ret SACEventStatus
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *SACEventReportItem) GetSliceStautsInfo() SACEventStatus {
 // GetSliceStautsInfoOk returns a tuple with the SliceStautsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventReportItem) GetSliceStautsInfoOk() (*SACEventStatus, bool) {
-	if o == nil || IsNil(o.SliceStautsInfo) {
+	if o == nil || isNil(o.SliceStautsInfo) {
 		return nil, false
 	}
 	return o.SliceStautsInfo, true
@@ -165,7 +165,7 @@ func (o *SACEventReportItem) GetSliceStautsInfoOk() (*SACEventStatus, bool) {
 
 // HasSliceStautsInfo returns a boolean if a field has been set.
 func (o *SACEventReportItem) HasSliceStautsInfo() bool {
-	if o != nil && !IsNil(o.SliceStautsInfo) {
+	if o != nil && !isNil(o.SliceStautsInfo) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o SACEventReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize["eventState"] = o.EventState
 	toSerialize["timeStamp"] = o.TimeStamp
 	toSerialize["eventFilter"] = o.EventFilter
-	if !IsNil(o.SliceStautsInfo) {
+	if !isNil(o.SliceStautsInfo) {
 		toSerialize["sliceStautsInfo"] = o.SliceStautsInfo
 	}
 	return toSerialize, nil

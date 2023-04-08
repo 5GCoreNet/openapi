@@ -71,7 +71,7 @@ func (o *ConfirmationDataResponse) SetAuthResult(v AuthResult) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *ConfirmationDataResponse) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ConfirmationDataResponse) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfirmationDataResponse) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -89,7 +89,7 @@ func (o *ConfirmationDataResponse) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *ConfirmationDataResponse) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ConfirmationDataResponse) SetSupi(v string) {
 
 // GetKseaf returns the Kseaf field value if set, zero value otherwise.
 func (o *ConfirmationDataResponse) GetKseaf() string {
-	if o == nil || IsNil(o.Kseaf) {
+	if o == nil || isNil(o.Kseaf) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ConfirmationDataResponse) GetKseaf() string {
 // GetKseafOk returns a tuple with the Kseaf field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfirmationDataResponse) GetKseafOk() (*string, bool) {
-	if o == nil || IsNil(o.Kseaf) {
+	if o == nil || isNil(o.Kseaf) {
 		return nil, false
 	}
 	return o.Kseaf, true
@@ -121,7 +121,7 @@ func (o *ConfirmationDataResponse) GetKseafOk() (*string, bool) {
 
 // HasKseaf returns a boolean if a field has been set.
 func (o *ConfirmationDataResponse) HasKseaf() bool {
-	if o != nil && !IsNil(o.Kseaf) {
+	if o != nil && !isNil(o.Kseaf) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ConfirmationDataResponse) SetKseaf(v string) {
 
 // GetPvsInfo returns the PvsInfo field value if set, zero value otherwise.
 func (o *ConfirmationDataResponse) GetPvsInfo() []ServerAddressingInfo {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		var ret []ServerAddressingInfo
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ConfirmationDataResponse) GetPvsInfo() []ServerAddressingInfo {
 // GetPvsInfoOk returns a tuple with the PvsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfirmationDataResponse) GetPvsInfoOk() ([]ServerAddressingInfo, bool) {
-	if o == nil || IsNil(o.PvsInfo) {
+	if o == nil || isNil(o.PvsInfo) {
 		return nil, false
 	}
 	return o.PvsInfo, true
@@ -153,7 +153,7 @@ func (o *ConfirmationDataResponse) GetPvsInfoOk() ([]ServerAddressingInfo, bool)
 
 // HasPvsInfo returns a boolean if a field has been set.
 func (o *ConfirmationDataResponse) HasPvsInfo() bool {
-	if o != nil && !IsNil(o.PvsInfo) {
+	if o != nil && !isNil(o.PvsInfo) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o ConfirmationDataResponse) MarshalJSON() ([]byte, error) {
 func (o ConfirmationDataResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authResult"] = o.AuthResult
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.Kseaf) {
+	if !isNil(o.Kseaf) {
 		toSerialize["kseaf"] = o.Kseaf
 	}
-	if !IsNil(o.PvsInfo) {
+	if !isNil(o.PvsInfo) {
 		toSerialize["pvsInfo"] = o.PvsInfo
 	}
 	return toSerialize, nil

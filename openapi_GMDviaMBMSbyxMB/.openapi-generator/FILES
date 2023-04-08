@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -44,9 +43,11 @@ docs/PolygonAllOf.md
 docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/ServiceAnnouncementMode.md
+docs/ServiceAnnouncementModeAnyOf.md
 docs/ServiceCreation.md
 docs/ServiceOperationApi.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
 docs/WebsockNotifConfig.md
@@ -85,8 +86,10 @@ model_polygon_all_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_service_announcement_mode.go
+model_service_announcement_mode_any_of.go
 model_service_creation.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go
 model_websock_notif_config.go

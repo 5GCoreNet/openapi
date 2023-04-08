@@ -96,7 +96,7 @@ func (o *RelativeCartesianLocation) SetY(v float32) {
 
 // GetZ returns the Z field value if set, zero value otherwise.
 func (o *RelativeCartesianLocation) GetZ() float32 {
-	if o == nil || IsNil(o.Z) {
+	if o == nil || isNil(o.Z) {
 		var ret float32
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *RelativeCartesianLocation) GetZ() float32 {
 // GetZOk returns a tuple with the Z field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RelativeCartesianLocation) GetZOk() (*float32, bool) {
-	if o == nil || IsNil(o.Z) {
+	if o == nil || isNil(o.Z) {
 		return nil, false
 	}
 	return o.Z, true
@@ -114,7 +114,7 @@ func (o *RelativeCartesianLocation) GetZOk() (*float32, bool) {
 
 // HasZ returns a boolean if a field has been set.
 func (o *RelativeCartesianLocation) HasZ() bool {
-	if o != nil && !IsNil(o.Z) {
+	if o != nil && !isNil(o.Z) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o RelativeCartesianLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["x"] = o.X
 	toSerialize["y"] = o.Y
-	if !IsNil(o.Z) {
+	if !isNil(o.Z) {
 		toSerialize["z"] = o.Z
 	}
 	return toSerialize, nil

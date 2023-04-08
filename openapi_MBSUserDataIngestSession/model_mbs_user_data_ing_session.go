@@ -97,7 +97,7 @@ func (o *MBSUserDataIngSession) SetMbsDisSessInfos(v map[string]MBSDistributionS
 
 // GetActPeriods returns the ActPeriods field value if set, zero value otherwise.
 func (o *MBSUserDataIngSession) GetActPeriods() []TimeWindow {
-	if o == nil || IsNil(o.ActPeriods) {
+	if o == nil || isNil(o.ActPeriods) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *MBSUserDataIngSession) GetActPeriods() []TimeWindow {
 // GetActPeriodsOk returns a tuple with the ActPeriods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSession) GetActPeriodsOk() ([]TimeWindow, bool) {
-	if o == nil || IsNil(o.ActPeriods) {
+	if o == nil || isNil(o.ActPeriods) {
 		return nil, false
 	}
 	return o.ActPeriods, true
@@ -115,7 +115,7 @@ func (o *MBSUserDataIngSession) GetActPeriodsOk() ([]TimeWindow, bool) {
 
 // HasActPeriods returns a boolean if a field has been set.
 func (o *MBSUserDataIngSession) HasActPeriods() bool {
-	if o != nil && !IsNil(o.ActPeriods) {
+	if o != nil && !isNil(o.ActPeriods) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *MBSUserDataIngSession) SetActPeriods(v []TimeWindow) {
 
 // GetMbsUserServAnmt returns the MbsUserServAnmt field value if set, zero value otherwise.
 func (o *MBSUserDataIngSession) GetMbsUserServAnmt() MBSUserServAnmt {
-	if o == nil || IsNil(o.MbsUserServAnmt) {
+	if o == nil || isNil(o.MbsUserServAnmt) {
 		var ret MBSUserServAnmt
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *MBSUserDataIngSession) GetMbsUserServAnmt() MBSUserServAnmt {
 // GetMbsUserServAnmtOk returns a tuple with the MbsUserServAnmt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSession) GetMbsUserServAnmtOk() (*MBSUserServAnmt, bool) {
-	if o == nil || IsNil(o.MbsUserServAnmt) {
+	if o == nil || isNil(o.MbsUserServAnmt) {
 		return nil, false
 	}
 	return o.MbsUserServAnmt, true
@@ -147,7 +147,7 @@ func (o *MBSUserDataIngSession) GetMbsUserServAnmtOk() (*MBSUserServAnmt, bool) 
 
 // HasMbsUserServAnmt returns a boolean if a field has been set.
 func (o *MBSUserDataIngSession) HasMbsUserServAnmt() bool {
-	if o != nil && !IsNil(o.MbsUserServAnmt) {
+	if o != nil && !isNil(o.MbsUserServAnmt) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *MBSUserDataIngSession) SetMbsUserServAnmt(v MBSUserServAnmt) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *MBSUserDataIngSession) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *MBSUserDataIngSession) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngSession) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -179,7 +179,7 @@ func (o *MBSUserDataIngSession) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *MBSUserDataIngSession) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -203,13 +203,13 @@ func (o MBSUserDataIngSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsUserServId"] = o.MbsUserServId
 	toSerialize["mbsDisSessInfos"] = o.MbsDisSessInfos
-	if !IsNil(o.ActPeriods) {
+	if !isNil(o.ActPeriods) {
 		toSerialize["actPeriods"] = o.ActPeriods
 	}
-	if !IsNil(o.MbsUserServAnmt) {
+	if !isNil(o.MbsUserServAnmt) {
 		toSerialize["mbsUserServAnmt"] = o.MbsUserServAnmt
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

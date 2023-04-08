@@ -90,7 +90,7 @@ func (o *UsageMonitoringData) SetUmId(v string) {
 
 // GetVolumeThreshold returns the VolumeThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetVolumeThreshold() int64 {
-	if o == nil || IsNil(o.VolumeThreshold.Get()) {
+	if o == nil || isNil(o.VolumeThreshold.Get()) {
 		var ret int64
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *UsageMonitoringData) UnsetVolumeThreshold() {
 
 // GetVolumeThresholdUplink returns the VolumeThresholdUplink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetVolumeThresholdUplink() int64 {
-	if o == nil || IsNil(o.VolumeThresholdUplink.Get()) {
+	if o == nil || isNil(o.VolumeThresholdUplink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -174,7 +174,7 @@ func (o *UsageMonitoringData) UnsetVolumeThresholdUplink() {
 
 // GetVolumeThresholdDownlink returns the VolumeThresholdDownlink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetVolumeThresholdDownlink() int64 {
-	if o == nil || IsNil(o.VolumeThresholdDownlink.Get()) {
+	if o == nil || isNil(o.VolumeThresholdDownlink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *UsageMonitoringData) UnsetVolumeThresholdDownlink() {
 
 // GetTimeThreshold returns the TimeThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetTimeThreshold() int32 {
-	if o == nil || IsNil(o.TimeThreshold.Get()) {
+	if o == nil || isNil(o.TimeThreshold.Get()) {
 		var ret int32
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *UsageMonitoringData) UnsetTimeThreshold() {
 
 // GetMonitoringTime returns the MonitoringTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetMonitoringTime() time.Time {
-	if o == nil || IsNil(o.MonitoringTime.Get()) {
+	if o == nil || isNil(o.MonitoringTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *UsageMonitoringData) UnsetMonitoringTime() {
 
 // GetNextVolThreshold returns the NextVolThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextVolThreshold() int64 {
-	if o == nil || IsNil(o.NextVolThreshold.Get()) {
+	if o == nil || isNil(o.NextVolThreshold.Get()) {
 		var ret int64
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *UsageMonitoringData) UnsetNextVolThreshold() {
 
 // GetNextVolThresholdUplink returns the NextVolThresholdUplink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextVolThresholdUplink() int64 {
-	if o == nil || IsNil(o.NextVolThresholdUplink.Get()) {
+	if o == nil || isNil(o.NextVolThresholdUplink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *UsageMonitoringData) UnsetNextVolThresholdUplink() {
 
 // GetNextVolThresholdDownlink returns the NextVolThresholdDownlink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextVolThresholdDownlink() int64 {
-	if o == nil || IsNil(o.NextVolThresholdDownlink.Get()) {
+	if o == nil || isNil(o.NextVolThresholdDownlink.Get()) {
 		var ret int64
 		return ret
 	}
@@ -426,7 +426,7 @@ func (o *UsageMonitoringData) UnsetNextVolThresholdDownlink() {
 
 // GetNextTimeThreshold returns the NextTimeThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetNextTimeThreshold() int32 {
-	if o == nil || IsNil(o.NextTimeThreshold.Get()) {
+	if o == nil || isNil(o.NextTimeThreshold.Get()) {
 		var ret int32
 		return ret
 	}
@@ -468,7 +468,7 @@ func (o *UsageMonitoringData) UnsetNextTimeThreshold() {
 
 // GetInactivityTime returns the InactivityTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UsageMonitoringData) GetInactivityTime() int32 {
-	if o == nil || IsNil(o.InactivityTime.Get()) {
+	if o == nil || isNil(o.InactivityTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -521,7 +521,7 @@ func (o *UsageMonitoringData) GetExUsagePccRuleIds() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UsageMonitoringData) GetExUsagePccRuleIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExUsagePccRuleIds) {
+	if o == nil || isNil(o.ExUsagePccRuleIds) {
 		return nil, false
 	}
 	return o.ExUsagePccRuleIds, true
@@ -529,7 +529,7 @@ func (o *UsageMonitoringData) GetExUsagePccRuleIdsOk() ([]string, bool) {
 
 // HasExUsagePccRuleIds returns a boolean if a field has been set.
 func (o *UsageMonitoringData) HasExUsagePccRuleIds() bool {
-	if o != nil && IsNil(o.ExUsagePccRuleIds) {
+	if o != nil && isNil(o.ExUsagePccRuleIds) {
 		return true
 	}
 

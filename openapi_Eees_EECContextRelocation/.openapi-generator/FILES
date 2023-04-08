@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -8,6 +7,7 @@ client.go
 configuration.go
 docs/ACProfile.md
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/ACServiceKPIs.md
 docs/CivicAddress.md
 docs/CollectionOfEECContextsCollectionApi.md
@@ -53,6 +53,7 @@ docs/RelativeCartesianLocation.md
 docs/ScheduledCommunicationTime.md
 docs/SessionContexts.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
@@ -62,6 +63,7 @@ go.sum
 model_ac_profile.go
 model_ac_service_kpis.go
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_civic_address.go
 model_eas_detail.go
 model_ecgi.go
@@ -105,6 +107,7 @@ model_relative_cartesian_location.go
 model_scheduled_communication_time.go
 model_session_contexts.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go

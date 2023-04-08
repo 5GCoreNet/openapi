@@ -68,7 +68,7 @@ func (o *M5EASRelocationRequirements) SetTolerance(v EASRelocationTolerance) {
 
 // GetMaxInterruptionDuration returns the MaxInterruptionDuration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *M5EASRelocationRequirements) GetMaxInterruptionDuration() int32 {
-	if o == nil || IsNil(o.MaxInterruptionDuration.Get()) {
+	if o == nil || isNil(o.MaxInterruptionDuration.Get()) {
 		var ret int32
 		return ret
 	}

@@ -98,7 +98,7 @@ func (o *BdtPolicyData) SetTransfPolicies(v []TransferPolicy) {
 
 // GetSelTransPolicyId returns the SelTransPolicyId field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetSelTransPolicyId() int32 {
-	if o == nil || IsNil(o.SelTransPolicyId) {
+	if o == nil || isNil(o.SelTransPolicyId) {
 		var ret int32
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *BdtPolicyData) GetSelTransPolicyId() int32 {
 // GetSelTransPolicyIdOk returns a tuple with the SelTransPolicyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetSelTransPolicyIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.SelTransPolicyId) {
+	if o == nil || isNil(o.SelTransPolicyId) {
 		return nil, false
 	}
 	return o.SelTransPolicyId, true
@@ -116,7 +116,7 @@ func (o *BdtPolicyData) GetSelTransPolicyIdOk() (*int32, bool) {
 
 // HasSelTransPolicyId returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasSelTransPolicyId() bool {
-	if o != nil && !IsNil(o.SelTransPolicyId) {
+	if o != nil && !isNil(o.SelTransPolicyId) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *BdtPolicyData) SetSelTransPolicyId(v int32) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BdtPolicyData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *BdtPolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -148,7 +148,7 @@ func (o *BdtPolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BdtPolicyData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -172,10 +172,10 @@ func (o BdtPolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["bdtRefId"] = o.BdtRefId
 	toSerialize["transfPolicies"] = o.TransfPolicies
-	if !IsNil(o.SelTransPolicyId) {
+	if !isNil(o.SelTransPolicyId) {
 		toSerialize["selTransPolicyId"] = o.SelTransPolicyId
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

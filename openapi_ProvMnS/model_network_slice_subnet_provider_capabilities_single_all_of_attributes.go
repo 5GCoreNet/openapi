@@ -45,7 +45,7 @@ func NewNetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributesWithDefaults(
 
 // GetDLlatency returns the DLlatency field value if set, zero value otherwise.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLlatency() int32 {
-	if o == nil || IsNil(o.DLlatency) {
+	if o == nil || isNil(o.DLlatency) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLlaten
 // GetDLlatencyOk returns a tuple with the DLlatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLlatencyOk() (*int32, bool) {
-	if o == nil || IsNil(o.DLlatency) {
+	if o == nil || isNil(o.DLlatency) {
 		return nil, false
 	}
 	return o.DLlatency, true
@@ -63,7 +63,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLlaten
 
 // HasDLlatency returns a boolean if a field has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) HasDLlatency() bool {
-	if o != nil && !IsNil(o.DLlatency) {
+	if o != nil && !isNil(o.DLlatency) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) SetDLlaten
 
 // GetULlatency returns the ULlatency field value if set, zero value otherwise.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULlatency() int32 {
-	if o == nil || IsNil(o.ULlatency) {
+	if o == nil || isNil(o.ULlatency) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULlaten
 // GetULlatencyOk returns a tuple with the ULlatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULlatencyOk() (*int32, bool) {
-	if o == nil || IsNil(o.ULlatency) {
+	if o == nil || isNil(o.ULlatency) {
 		return nil, false
 	}
 	return o.ULlatency, true
@@ -95,7 +95,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULlaten
 
 // HasULlatency returns a boolean if a field has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) HasULlatency() bool {
-	if o != nil && !IsNil(o.ULlatency) {
+	if o != nil && !isNil(o.ULlatency) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) SetULlaten
 
 // GetDLThptPerSliceSubnet returns the DLThptPerSliceSubnet field value if set, zero value otherwise.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLThptPerSliceSubnet() XLThpt {
-	if o == nil || IsNil(o.DLThptPerSliceSubnet) {
+	if o == nil || isNil(o.DLThptPerSliceSubnet) {
 		var ret XLThpt
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLThptP
 // GetDLThptPerSliceSubnetOk returns a tuple with the DLThptPerSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLThptPerSliceSubnetOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.DLThptPerSliceSubnet) {
+	if o == nil || isNil(o.DLThptPerSliceSubnet) {
 		return nil, false
 	}
 	return o.DLThptPerSliceSubnet, true
@@ -127,7 +127,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetDLThptP
 
 // HasDLThptPerSliceSubnet returns a boolean if a field has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) HasDLThptPerSliceSubnet() bool {
-	if o != nil && !IsNil(o.DLThptPerSliceSubnet) {
+	if o != nil && !isNil(o.DLThptPerSliceSubnet) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) SetDLThptP
 
 // GetULThptPerSliceSubnet returns the ULThptPerSliceSubnet field value if set, zero value otherwise.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULThptPerSliceSubnet() XLThpt {
-	if o == nil || IsNil(o.ULThptPerSliceSubnet) {
+	if o == nil || isNil(o.ULThptPerSliceSubnet) {
 		var ret XLThpt
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULThptP
 // GetULThptPerSliceSubnetOk returns a tuple with the ULThptPerSliceSubnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULThptPerSliceSubnetOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.ULThptPerSliceSubnet) {
+	if o == nil || isNil(o.ULThptPerSliceSubnet) {
 		return nil, false
 	}
 	return o.ULThptPerSliceSubnet, true
@@ -159,7 +159,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetULThptP
 
 // HasULThptPerSliceSubnet returns a boolean if a field has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) HasULThptPerSliceSubnet() bool {
-	if o != nil && !IsNil(o.ULThptPerSliceSubnet) {
+	if o != nil && !isNil(o.ULThptPerSliceSubnet) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) SetULThptP
 
 // GetCoverageAreaTAList returns the CoverageAreaTAList field value if set, zero value otherwise.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetCoverageAreaTAList() []int32 {
-	if o == nil || IsNil(o.CoverageAreaTAList) {
+	if o == nil || isNil(o.CoverageAreaTAList) {
 		var ret []int32
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetCoverag
 // GetCoverageAreaTAListOk returns a tuple with the CoverageAreaTAList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetCoverageAreaTAListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.CoverageAreaTAList) {
+	if o == nil || isNil(o.CoverageAreaTAList) {
 		return nil, false
 	}
 	return o.CoverageAreaTAList, true
@@ -191,7 +191,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) GetCoverag
 
 // HasCoverageAreaTAList returns a boolean if a field has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) HasCoverageAreaTAList() bool {
-	if o != nil && !IsNil(o.CoverageAreaTAList) {
+	if o != nil && !isNil(o.CoverageAreaTAList) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) MarshalJSON
 
 func (o NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DLlatency) {
+	if !isNil(o.DLlatency) {
 		toSerialize["dLlatency"] = o.DLlatency
 	}
-	if !IsNil(o.ULlatency) {
+	if !isNil(o.ULlatency) {
 		toSerialize["uLlatency"] = o.ULlatency
 	}
-	if !IsNil(o.DLThptPerSliceSubnet) {
+	if !isNil(o.DLThptPerSliceSubnet) {
 		toSerialize["dLThptPerSliceSubnet"] = o.DLThptPerSliceSubnet
 	}
-	if !IsNil(o.ULThptPerSliceSubnet) {
+	if !isNil(o.ULThptPerSliceSubnet) {
 		toSerialize["uLThptPerSliceSubnet"] = o.ULThptPerSliceSubnet
 	}
-	if !IsNil(o.CoverageAreaTAList) {
+	if !isNil(o.CoverageAreaTAList) {
 		toSerialize["coverageAreaTAList"] = o.CoverageAreaTAList
 	}
 	return toSerialize, nil

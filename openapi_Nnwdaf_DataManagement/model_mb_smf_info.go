@@ -48,7 +48,7 @@ func NewMbSmfInfoWithDefaults() *MbSmfInfo {
 
 // GetSNssaiInfoList returns the SNssaiInfoList field value if set, zero value otherwise.
 func (o *MbSmfInfo) GetSNssaiInfoList() map[string]SnssaiMbSmfInfoItem {
-	if o == nil || IsNil(o.SNssaiInfoList) {
+	if o == nil || isNil(o.SNssaiInfoList) {
 		var ret map[string]SnssaiMbSmfInfoItem
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *MbSmfInfo) GetSNssaiInfoList() map[string]SnssaiMbSmfInfoItem {
 // GetSNssaiInfoListOk returns a tuple with the SNssaiInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbSmfInfo) GetSNssaiInfoListOk() (*map[string]SnssaiMbSmfInfoItem, bool) {
-	if o == nil || IsNil(o.SNssaiInfoList) {
+	if o == nil || isNil(o.SNssaiInfoList) {
 		return nil, false
 	}
 	return o.SNssaiInfoList, true
@@ -66,7 +66,7 @@ func (o *MbSmfInfo) GetSNssaiInfoListOk() (*map[string]SnssaiMbSmfInfoItem, bool
 
 // HasSNssaiInfoList returns a boolean if a field has been set.
 func (o *MbSmfInfo) HasSNssaiInfoList() bool {
-	if o != nil && !IsNil(o.SNssaiInfoList) {
+	if o != nil && !isNil(o.SNssaiInfoList) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *MbSmfInfo) SetSNssaiInfoList(v map[string]SnssaiMbSmfInfoItem) {
 
 // GetTmgiRangeList returns the TmgiRangeList field value if set, zero value otherwise.
 func (o *MbSmfInfo) GetTmgiRangeList() map[string]TmgiRange {
-	if o == nil || IsNil(o.TmgiRangeList) {
+	if o == nil || isNil(o.TmgiRangeList) {
 		var ret map[string]TmgiRange
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *MbSmfInfo) GetTmgiRangeList() map[string]TmgiRange {
 // GetTmgiRangeListOk returns a tuple with the TmgiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbSmfInfo) GetTmgiRangeListOk() (*map[string]TmgiRange, bool) {
-	if o == nil || IsNil(o.TmgiRangeList) {
+	if o == nil || isNil(o.TmgiRangeList) {
 		return nil, false
 	}
 	return o.TmgiRangeList, true
@@ -98,7 +98,7 @@ func (o *MbSmfInfo) GetTmgiRangeListOk() (*map[string]TmgiRange, bool) {
 
 // HasTmgiRangeList returns a boolean if a field has been set.
 func (o *MbSmfInfo) HasTmgiRangeList() bool {
-	if o != nil && !IsNil(o.TmgiRangeList) {
+	if o != nil && !isNil(o.TmgiRangeList) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *MbSmfInfo) SetTmgiRangeList(v map[string]TmgiRange) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *MbSmfInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *MbSmfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbSmfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -130,7 +130,7 @@ func (o *MbSmfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *MbSmfInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *MbSmfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *MbSmfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *MbSmfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbSmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -162,7 +162,7 @@ func (o *MbSmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *MbSmfInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *MbSmfInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetMbsSessionList returns the MbsSessionList field value if set, zero value otherwise.
 func (o *MbSmfInfo) GetMbsSessionList() map[string]MbsSession {
-	if o == nil || IsNil(o.MbsSessionList) {
+	if o == nil || isNil(o.MbsSessionList) {
 		var ret map[string]MbsSession
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *MbSmfInfo) GetMbsSessionList() map[string]MbsSession {
 // GetMbsSessionListOk returns a tuple with the MbsSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbSmfInfo) GetMbsSessionListOk() (*map[string]MbsSession, bool) {
-	if o == nil || IsNil(o.MbsSessionList) {
+	if o == nil || isNil(o.MbsSessionList) {
 		return nil, false
 	}
 	return o.MbsSessionList, true
@@ -194,7 +194,7 @@ func (o *MbSmfInfo) GetMbsSessionListOk() (*map[string]MbsSession, bool) {
 
 // HasMbsSessionList returns a boolean if a field has been set.
 func (o *MbSmfInfo) HasMbsSessionList() bool {
-	if o != nil && !IsNil(o.MbsSessionList) {
+	if o != nil && !isNil(o.MbsSessionList) {
 		return true
 	}
 
@@ -216,19 +216,19 @@ func (o MbSmfInfo) MarshalJSON() ([]byte, error) {
 
 func (o MbSmfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SNssaiInfoList) {
+	if !isNil(o.SNssaiInfoList) {
 		toSerialize["sNssaiInfoList"] = o.SNssaiInfoList
 	}
-	if !IsNil(o.TmgiRangeList) {
+	if !isNil(o.TmgiRangeList) {
 		toSerialize["tmgiRangeList"] = o.TmgiRangeList
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.MbsSessionList) {
+	if !isNil(o.MbsSessionList) {
 		toSerialize["mbsSessionList"] = o.MbsSessionList
 	}
 	return toSerialize, nil

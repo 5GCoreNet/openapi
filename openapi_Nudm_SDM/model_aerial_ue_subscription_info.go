@@ -68,7 +68,7 @@ func (o *AerialUeSubscriptionInfo) SetAerialUeInd(v AerialUeIndication) {
 
 // GetVar3gppUavId returns the Var3gppUavId field value if set, zero value otherwise.
 func (o *AerialUeSubscriptionInfo) GetVar3gppUavId() string {
-	if o == nil || IsNil(o.Var3gppUavId) {
+	if o == nil || isNil(o.Var3gppUavId) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AerialUeSubscriptionInfo) GetVar3gppUavId() string {
 // GetVar3gppUavIdOk returns a tuple with the Var3gppUavId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AerialUeSubscriptionInfo) GetVar3gppUavIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Var3gppUavId) {
+	if o == nil || isNil(o.Var3gppUavId) {
 		return nil, false
 	}
 	return o.Var3gppUavId, true
@@ -86,7 +86,7 @@ func (o *AerialUeSubscriptionInfo) GetVar3gppUavIdOk() (*string, bool) {
 
 // HasVar3gppUavId returns a boolean if a field has been set.
 func (o *AerialUeSubscriptionInfo) HasVar3gppUavId() bool {
-	if o != nil && !IsNil(o.Var3gppUavId) {
+	if o != nil && !isNil(o.Var3gppUavId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o AerialUeSubscriptionInfo) MarshalJSON() ([]byte, error) {
 func (o AerialUeSubscriptionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aerialUeInd"] = o.AerialUeInd
-	if !IsNil(o.Var3gppUavId) {
+	if !isNil(o.Var3gppUavId) {
 		toSerialize["3gppUavId"] = o.Var3gppUavId
 	}
 	return toSerialize, nil

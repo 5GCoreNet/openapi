@@ -71,7 +71,7 @@ func (o *BdtPatch) SetSelectedPolicy(v int32) {
 
 // GetWarnNotifEnabled returns the WarnNotifEnabled field value if set, zero value otherwise.
 func (o *BdtPatch) GetWarnNotifEnabled() bool {
-	if o == nil || IsNil(o.WarnNotifEnabled) {
+	if o == nil || isNil(o.WarnNotifEnabled) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *BdtPatch) GetWarnNotifEnabled() bool {
 // GetWarnNotifEnabledOk returns a tuple with the WarnNotifEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPatch) GetWarnNotifEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.WarnNotifEnabled) {
+	if o == nil || isNil(o.WarnNotifEnabled) {
 		return nil, false
 	}
 	return o.WarnNotifEnabled, true
@@ -89,7 +89,7 @@ func (o *BdtPatch) GetWarnNotifEnabledOk() (*bool, bool) {
 
 // HasWarnNotifEnabled returns a boolean if a field has been set.
 func (o *BdtPatch) HasWarnNotifEnabled() bool {
-	if o != nil && !IsNil(o.WarnNotifEnabled) {
+	if o != nil && !isNil(o.WarnNotifEnabled) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *BdtPatch) SetWarnNotifEnabled(v bool) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *BdtPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *BdtPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -121,7 +121,7 @@ func (o *BdtPatch) GetNotificationDestinationOk() (*string, bool) {
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *BdtPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o BdtPatch) MarshalJSON() ([]byte, error) {
 func (o BdtPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["selectedPolicy"] = o.SelectedPolicy
-	if !IsNil(o.WarnNotifEnabled) {
+	if !isNil(o.WarnNotifEnabled) {
 		toSerialize["warnNotifEnabled"] = o.WarnNotifEnabled
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

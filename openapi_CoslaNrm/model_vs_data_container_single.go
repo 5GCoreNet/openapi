@@ -43,7 +43,7 @@ func NewVsDataContainerSingleWithDefaults() *VsDataContainerSingle {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *VsDataContainerSingle) GetId() string {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || isNil(o.Id) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *VsDataContainerSingle) GetId() string {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsDataContainerSingle) GetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || isNil(o.Id) {
 		return nil, false
 	}
 	return o.Id, true
@@ -61,7 +61,7 @@ func (o *VsDataContainerSingle) GetIdOk() (*string, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *VsDataContainerSingle) HasId() bool {
-	if o != nil && !IsNil(o.Id) {
+	if o != nil && !isNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *VsDataContainerSingle) SetId(v string) {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *VsDataContainerSingle) GetAttributes() VsDataContainerSingleAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret VsDataContainerSingleAttributes
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *VsDataContainerSingle) GetAttributes() VsDataContainerSingleAttributes 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsDataContainerSingle) GetAttributesOk() (*VsDataContainerSingleAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -93,7 +93,7 @@ func (o *VsDataContainerSingle) GetAttributesOk() (*VsDataContainerSingleAttribu
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *VsDataContainerSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *VsDataContainerSingle) SetAttributes(v VsDataContainerSingleAttributes)
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *VsDataContainerSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *VsDataContainerSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsDataContainerSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -125,7 +125,7 @@ func (o *VsDataContainerSingle) GetVsDataContainerOk() ([]VsDataContainerSingle,
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *VsDataContainerSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o VsDataContainerSingle) MarshalJSON() ([]byte, error) {
 
 func (o VsDataContainerSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Id) {
+	if !isNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
 	return toSerialize, nil

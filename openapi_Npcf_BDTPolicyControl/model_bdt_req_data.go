@@ -116,7 +116,7 @@ func (o *BdtReqData) SetDesTimeInt(v TimeWindow) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *BdtReqData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *BdtReqData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -134,7 +134,7 @@ func (o *BdtReqData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *BdtReqData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *BdtReqData) SetDnn(v string) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *BdtReqData) GetInterGroupId() string {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *BdtReqData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -166,7 +166,7 @@ func (o *BdtReqData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *BdtReqData) HasInterGroupId() bool {
-	if o != nil && !IsNil(o.InterGroupId) {
+	if o != nil && !isNil(o.InterGroupId) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *BdtReqData) SetInterGroupId(v string) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *BdtReqData) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *BdtReqData) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -198,7 +198,7 @@ func (o *BdtReqData) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *BdtReqData) HasNotifUri() bool {
-	if o != nil && !IsNil(o.NotifUri) {
+	if o != nil && !isNil(o.NotifUri) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *BdtReqData) SetNotifUri(v string) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *BdtReqData) GetNwAreaInfo() NetworkAreaInfo {
-	if o == nil || IsNil(o.NwAreaInfo) {
+	if o == nil || isNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *BdtReqData) GetNwAreaInfo() NetworkAreaInfo {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.NwAreaInfo) {
+	if o == nil || isNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -230,7 +230,7 @@ func (o *BdtReqData) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *BdtReqData) HasNwAreaInfo() bool {
-	if o != nil && !IsNil(o.NwAreaInfo) {
+	if o != nil && !isNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *BdtReqData) SetVolPerUe(v UsageThreshold) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *BdtReqData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *BdtReqData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -310,7 +310,7 @@ func (o *BdtReqData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *BdtReqData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -324,7 +324,7 @@ func (o *BdtReqData) SetSnssai(v Snssai) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BdtReqData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -334,7 +334,7 @@ func (o *BdtReqData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -342,7 +342,7 @@ func (o *BdtReqData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BdtReqData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -356,7 +356,7 @@ func (o *BdtReqData) SetSuppFeat(v string) {
 
 // GetTrafficDes returns the TrafficDes field value if set, zero value otherwise.
 func (o *BdtReqData) GetTrafficDes() string {
-	if o == nil || IsNil(o.TrafficDes) {
+	if o == nil || isNil(o.TrafficDes) {
 		var ret string
 		return ret
 	}
@@ -366,7 +366,7 @@ func (o *BdtReqData) GetTrafficDes() string {
 // GetTrafficDesOk returns a tuple with the TrafficDes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetTrafficDesOk() (*string, bool) {
-	if o == nil || IsNil(o.TrafficDes) {
+	if o == nil || isNil(o.TrafficDes) {
 		return nil, false
 	}
 	return o.TrafficDes, true
@@ -374,7 +374,7 @@ func (o *BdtReqData) GetTrafficDesOk() (*string, bool) {
 
 // HasTrafficDes returns a boolean if a field has been set.
 func (o *BdtReqData) HasTrafficDes() bool {
-	if o != nil && !IsNil(o.TrafficDes) {
+	if o != nil && !isNil(o.TrafficDes) {
 		return true
 	}
 
@@ -388,7 +388,7 @@ func (o *BdtReqData) SetTrafficDes(v string) {
 
 // GetWarnNotifReq returns the WarnNotifReq field value if set, zero value otherwise.
 func (o *BdtReqData) GetWarnNotifReq() bool {
-	if o == nil || IsNil(o.WarnNotifReq) {
+	if o == nil || isNil(o.WarnNotifReq) {
 		var ret bool
 		return ret
 	}
@@ -398,7 +398,7 @@ func (o *BdtReqData) GetWarnNotifReq() bool {
 // GetWarnNotifReqOk returns a tuple with the WarnNotifReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtReqData) GetWarnNotifReqOk() (*bool, bool) {
-	if o == nil || IsNil(o.WarnNotifReq) {
+	if o == nil || isNil(o.WarnNotifReq) {
 		return nil, false
 	}
 	return o.WarnNotifReq, true
@@ -406,7 +406,7 @@ func (o *BdtReqData) GetWarnNotifReqOk() (*bool, bool) {
 
 // HasWarnNotifReq returns a boolean if a field has been set.
 func (o *BdtReqData) HasWarnNotifReq() bool {
-	if o != nil && !IsNil(o.WarnNotifReq) {
+	if o != nil && !isNil(o.WarnNotifReq) {
 		return true
 	}
 
@@ -430,30 +430,30 @@ func (o BdtReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aspId"] = o.AspId
 	toSerialize["desTimeInt"] = o.DesTimeInt
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.InterGroupId) {
+	if !isNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
-	if !IsNil(o.NotifUri) {
+	if !isNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !IsNil(o.NwAreaInfo) {
+	if !isNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
 	toSerialize["numOfUes"] = o.NumOfUes
 	toSerialize["volPerUe"] = o.VolPerUe
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.TrafficDes) {
+	if !isNil(o.TrafficDes) {
 		toSerialize["trafficDes"] = o.TrafficDes
 	}
-	if !IsNil(o.WarnNotifReq) {
+	if !isNil(o.WarnNotifReq) {
 		toSerialize["warnNotifReq"] = o.WarnNotifReq
 	}
 	return toSerialize, nil

@@ -96,7 +96,7 @@ func (o *NotificationData) SetNfInstanceUri(v string) {
 
 // GetNfProfile returns the NfProfile field value if set, zero value otherwise.
 func (o *NotificationData) GetNfProfile() NFProfile {
-	if o == nil || IsNil(o.NfProfile) {
+	if o == nil || isNil(o.NfProfile) {
 		var ret NFProfile
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NotificationData) GetNfProfile() NFProfile {
 // GetNfProfileOk returns a tuple with the NfProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetNfProfileOk() (*NFProfile, bool) {
-	if o == nil || IsNil(o.NfProfile) {
+	if o == nil || isNil(o.NfProfile) {
 		return nil, false
 	}
 	return o.NfProfile, true
@@ -114,7 +114,7 @@ func (o *NotificationData) GetNfProfileOk() (*NFProfile, bool) {
 
 // HasNfProfile returns a boolean if a field has been set.
 func (o *NotificationData) HasNfProfile() bool {
-	if o != nil && !IsNil(o.NfProfile) {
+	if o != nil && !isNil(o.NfProfile) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *NotificationData) SetNfProfile(v NFProfile) {
 
 // GetProfileChanges returns the ProfileChanges field value if set, zero value otherwise.
 func (o *NotificationData) GetProfileChanges() []ChangeItem {
-	if o == nil || IsNil(o.ProfileChanges) {
+	if o == nil || isNil(o.ProfileChanges) {
 		var ret []ChangeItem
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *NotificationData) GetProfileChanges() []ChangeItem {
 // GetProfileChangesOk returns a tuple with the ProfileChanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetProfileChangesOk() ([]ChangeItem, bool) {
-	if o == nil || IsNil(o.ProfileChanges) {
+	if o == nil || isNil(o.ProfileChanges) {
 		return nil, false
 	}
 	return o.ProfileChanges, true
@@ -146,7 +146,7 @@ func (o *NotificationData) GetProfileChangesOk() ([]ChangeItem, bool) {
 
 // HasProfileChanges returns a boolean if a field has been set.
 func (o *NotificationData) HasProfileChanges() bool {
-	if o != nil && !IsNil(o.ProfileChanges) {
+	if o != nil && !isNil(o.ProfileChanges) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *NotificationData) SetProfileChanges(v []ChangeItem) {
 
 // GetConditionEvent returns the ConditionEvent field value if set, zero value otherwise.
 func (o *NotificationData) GetConditionEvent() ConditionEventType {
-	if o == nil || IsNil(o.ConditionEvent) {
+	if o == nil || isNil(o.ConditionEvent) {
 		var ret ConditionEventType
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *NotificationData) GetConditionEvent() ConditionEventType {
 // GetConditionEventOk returns a tuple with the ConditionEvent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetConditionEventOk() (*ConditionEventType, bool) {
-	if o == nil || IsNil(o.ConditionEvent) {
+	if o == nil || isNil(o.ConditionEvent) {
 		return nil, false
 	}
 	return o.ConditionEvent, true
@@ -178,7 +178,7 @@ func (o *NotificationData) GetConditionEventOk() (*ConditionEventType, bool) {
 
 // HasConditionEvent returns a boolean if a field has been set.
 func (o *NotificationData) HasConditionEvent() bool {
-	if o != nil && !IsNil(o.ConditionEvent) {
+	if o != nil && !isNil(o.ConditionEvent) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *NotificationData) SetConditionEvent(v ConditionEventType) {
 
 // GetSubscriptionContext returns the SubscriptionContext field value if set, zero value otherwise.
 func (o *NotificationData) GetSubscriptionContext() SubscriptionContext {
-	if o == nil || IsNil(o.SubscriptionContext) {
+	if o == nil || isNil(o.SubscriptionContext) {
 		var ret SubscriptionContext
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *NotificationData) GetSubscriptionContext() SubscriptionContext {
 // GetSubscriptionContextOk returns a tuple with the SubscriptionContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetSubscriptionContextOk() (*SubscriptionContext, bool) {
-	if o == nil || IsNil(o.SubscriptionContext) {
+	if o == nil || isNil(o.SubscriptionContext) {
 		return nil, false
 	}
 	return o.SubscriptionContext, true
@@ -210,7 +210,7 @@ func (o *NotificationData) GetSubscriptionContextOk() (*SubscriptionContext, boo
 
 // HasSubscriptionContext returns a boolean if a field has been set.
 func (o *NotificationData) HasSubscriptionContext() bool {
-	if o != nil && !IsNil(o.SubscriptionContext) {
+	if o != nil && !isNil(o.SubscriptionContext) {
 		return true
 	}
 
@@ -224,7 +224,7 @@ func (o *NotificationData) SetSubscriptionContext(v SubscriptionContext) {
 
 // GetCompleteNfProfile returns the CompleteNfProfile field value if set, zero value otherwise.
 func (o *NotificationData) GetCompleteNfProfile() NFProfile {
-	if o == nil || IsNil(o.CompleteNfProfile) {
+	if o == nil || isNil(o.CompleteNfProfile) {
 		var ret NFProfile
 		return ret
 	}
@@ -234,7 +234,7 @@ func (o *NotificationData) GetCompleteNfProfile() NFProfile {
 // GetCompleteNfProfileOk returns a tuple with the CompleteNfProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationData) GetCompleteNfProfileOk() (*NFProfile, bool) {
-	if o == nil || IsNil(o.CompleteNfProfile) {
+	if o == nil || isNil(o.CompleteNfProfile) {
 		return nil, false
 	}
 	return o.CompleteNfProfile, true
@@ -242,7 +242,7 @@ func (o *NotificationData) GetCompleteNfProfileOk() (*NFProfile, bool) {
 
 // HasCompleteNfProfile returns a boolean if a field has been set.
 func (o *NotificationData) HasCompleteNfProfile() bool {
-	if o != nil && !IsNil(o.CompleteNfProfile) {
+	if o != nil && !isNil(o.CompleteNfProfile) {
 		return true
 	}
 
@@ -266,19 +266,19 @@ func (o NotificationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
 	toSerialize["nfInstanceUri"] = o.NfInstanceUri
-	if !IsNil(o.NfProfile) {
+	if !isNil(o.NfProfile) {
 		toSerialize["nfProfile"] = o.NfProfile
 	}
-	if !IsNil(o.ProfileChanges) {
+	if !isNil(o.ProfileChanges) {
 		toSerialize["profileChanges"] = o.ProfileChanges
 	}
-	if !IsNil(o.ConditionEvent) {
+	if !isNil(o.ConditionEvent) {
 		toSerialize["conditionEvent"] = o.ConditionEvent
 	}
-	if !IsNil(o.SubscriptionContext) {
+	if !isNil(o.SubscriptionContext) {
 		toSerialize["subscriptionContext"] = o.SubscriptionContext
 	}
-	if !IsNil(o.CompleteNfProfile) {
+	if !isNil(o.CompleteNfProfile) {
 		toSerialize["completeNfProfile"] = o.CompleteNfProfile
 	}
 	return toSerialize, nil

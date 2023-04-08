@@ -96,7 +96,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) SetDeliveryStatus(v Deliver
 
 // GetRequestedRetransmissionTime returns the RequestedRetransmissionTime field value if set, zero value otherwise.
 func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionTime() time.Time {
-	if o == nil || IsNil(o.RequestedRetransmissionTime) {
+	if o == nil || isNil(o.RequestedRetransmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionT
 // GetRequestedRetransmissionTimeOk returns a tuple with the RequestedRetransmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RequestedRetransmissionTime) {
+	if o == nil || isNil(o.RequestedRetransmissionTime) {
 		return nil, false
 	}
 	return o.RequestedRetransmissionTime, true
@@ -114,7 +114,7 @@ func (o *NiddDownlinkDataDeliveryStatusNotification) GetRequestedRetransmissionT
 
 // HasRequestedRetransmissionTime returns a boolean if a field has been set.
 func (o *NiddDownlinkDataDeliveryStatusNotification) HasRequestedRetransmissionTime() bool {
-	if o != nil && !IsNil(o.RequestedRetransmissionTime) {
+	if o != nil && !isNil(o.RequestedRetransmissionTime) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o NiddDownlinkDataDeliveryStatusNotification) ToMap() (map[string]interfac
 	toSerialize := map[string]interface{}{}
 	toSerialize["niddDownlinkDataTransfer"] = o.NiddDownlinkDataTransfer
 	toSerialize["deliveryStatus"] = o.DeliveryStatus
-	if !IsNil(o.RequestedRetransmissionTime) {
+	if !isNil(o.RequestedRetransmissionTime) {
 		toSerialize["requestedRetransmissionTime"] = o.RequestedRetransmissionTime
 	}
 	return toSerialize, nil

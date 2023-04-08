@@ -49,7 +49,7 @@ func NewLmfInfoWithDefaults() *LmfInfo {
 
 // GetServingClientTypes returns the ServingClientTypes field value if set, zero value otherwise.
 func (o *LmfInfo) GetServingClientTypes() []ExternalClientType {
-	if o == nil || IsNil(o.ServingClientTypes) {
+	if o == nil || isNil(o.ServingClientTypes) {
 		var ret []ExternalClientType
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *LmfInfo) GetServingClientTypes() []ExternalClientType {
 // GetServingClientTypesOk returns a tuple with the ServingClientTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetServingClientTypesOk() ([]ExternalClientType, bool) {
-	if o == nil || IsNil(o.ServingClientTypes) {
+	if o == nil || isNil(o.ServingClientTypes) {
 		return nil, false
 	}
 	return o.ServingClientTypes, true
@@ -67,7 +67,7 @@ func (o *LmfInfo) GetServingClientTypesOk() ([]ExternalClientType, bool) {
 
 // HasServingClientTypes returns a boolean if a field has been set.
 func (o *LmfInfo) HasServingClientTypes() bool {
-	if o != nil && !IsNil(o.ServingClientTypes) {
+	if o != nil && !isNil(o.ServingClientTypes) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *LmfInfo) SetServingClientTypes(v []ExternalClientType) {
 
 // GetLmfId returns the LmfId field value if set, zero value otherwise.
 func (o *LmfInfo) GetLmfId() string {
-	if o == nil || IsNil(o.LmfId) {
+	if o == nil || isNil(o.LmfId) {
 		var ret string
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *LmfInfo) GetLmfId() string {
 // GetLmfIdOk returns a tuple with the LmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetLmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.LmfId) {
+	if o == nil || isNil(o.LmfId) {
 		return nil, false
 	}
 	return o.LmfId, true
@@ -99,7 +99,7 @@ func (o *LmfInfo) GetLmfIdOk() (*string, bool) {
 
 // HasLmfId returns a boolean if a field has been set.
 func (o *LmfInfo) HasLmfId() bool {
-	if o != nil && !IsNil(o.LmfId) {
+	if o != nil && !isNil(o.LmfId) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *LmfInfo) SetLmfId(v string) {
 
 // GetServingAccessTypes returns the ServingAccessTypes field value if set, zero value otherwise.
 func (o *LmfInfo) GetServingAccessTypes() []AccessType {
-	if o == nil || IsNil(o.ServingAccessTypes) {
+	if o == nil || isNil(o.ServingAccessTypes) {
 		var ret []AccessType
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *LmfInfo) GetServingAccessTypes() []AccessType {
 // GetServingAccessTypesOk returns a tuple with the ServingAccessTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetServingAccessTypesOk() ([]AccessType, bool) {
-	if o == nil || IsNil(o.ServingAccessTypes) {
+	if o == nil || isNil(o.ServingAccessTypes) {
 		return nil, false
 	}
 	return o.ServingAccessTypes, true
@@ -131,7 +131,7 @@ func (o *LmfInfo) GetServingAccessTypesOk() ([]AccessType, bool) {
 
 // HasServingAccessTypes returns a boolean if a field has been set.
 func (o *LmfInfo) HasServingAccessTypes() bool {
-	if o != nil && !IsNil(o.ServingAccessTypes) {
+	if o != nil && !isNil(o.ServingAccessTypes) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *LmfInfo) SetServingAccessTypes(v []AccessType) {
 
 // GetServingAnNodeTypes returns the ServingAnNodeTypes field value if set, zero value otherwise.
 func (o *LmfInfo) GetServingAnNodeTypes() []AnNodeType {
-	if o == nil || IsNil(o.ServingAnNodeTypes) {
+	if o == nil || isNil(o.ServingAnNodeTypes) {
 		var ret []AnNodeType
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *LmfInfo) GetServingAnNodeTypes() []AnNodeType {
 // GetServingAnNodeTypesOk returns a tuple with the ServingAnNodeTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetServingAnNodeTypesOk() ([]AnNodeType, bool) {
-	if o == nil || IsNil(o.ServingAnNodeTypes) {
+	if o == nil || isNil(o.ServingAnNodeTypes) {
 		return nil, false
 	}
 	return o.ServingAnNodeTypes, true
@@ -163,7 +163,7 @@ func (o *LmfInfo) GetServingAnNodeTypesOk() ([]AnNodeType, bool) {
 
 // HasServingAnNodeTypes returns a boolean if a field has been set.
 func (o *LmfInfo) HasServingAnNodeTypes() bool {
-	if o != nil && !IsNil(o.ServingAnNodeTypes) {
+	if o != nil && !isNil(o.ServingAnNodeTypes) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *LmfInfo) SetServingAnNodeTypes(v []AnNodeType) {
 
 // GetServingRatTypes returns the ServingRatTypes field value if set, zero value otherwise.
 func (o *LmfInfo) GetServingRatTypes() []RatType {
-	if o == nil || IsNil(o.ServingRatTypes) {
+	if o == nil || isNil(o.ServingRatTypes) {
 		var ret []RatType
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *LmfInfo) GetServingRatTypes() []RatType {
 // GetServingRatTypesOk returns a tuple with the ServingRatTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetServingRatTypesOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.ServingRatTypes) {
+	if o == nil || isNil(o.ServingRatTypes) {
 		return nil, false
 	}
 	return o.ServingRatTypes, true
@@ -195,7 +195,7 @@ func (o *LmfInfo) GetServingRatTypesOk() ([]RatType, bool) {
 
 // HasServingRatTypes returns a boolean if a field has been set.
 func (o *LmfInfo) HasServingRatTypes() bool {
-	if o != nil && !IsNil(o.ServingRatTypes) {
+	if o != nil && !isNil(o.ServingRatTypes) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *LmfInfo) SetServingRatTypes(v []RatType) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *LmfInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *LmfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -227,7 +227,7 @@ func (o *LmfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *LmfInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *LmfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *LmfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *LmfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -259,7 +259,7 @@ func (o *LmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *LmfInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *LmfInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetSupportedGADShapes returns the SupportedGADShapes field value if set, zero value otherwise.
 func (o *LmfInfo) GetSupportedGADShapes() []SupportedGADShapes {
-	if o == nil || IsNil(o.SupportedGADShapes) {
+	if o == nil || isNil(o.SupportedGADShapes) {
 		var ret []SupportedGADShapes
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *LmfInfo) GetSupportedGADShapes() []SupportedGADShapes {
 // GetSupportedGADShapesOk returns a tuple with the SupportedGADShapes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LmfInfo) GetSupportedGADShapesOk() ([]SupportedGADShapes, bool) {
-	if o == nil || IsNil(o.SupportedGADShapes) {
+	if o == nil || isNil(o.SupportedGADShapes) {
 		return nil, false
 	}
 	return o.SupportedGADShapes, true
@@ -291,7 +291,7 @@ func (o *LmfInfo) GetSupportedGADShapesOk() ([]SupportedGADShapes, bool) {
 
 // HasSupportedGADShapes returns a boolean if a field has been set.
 func (o *LmfInfo) HasSupportedGADShapes() bool {
-	if o != nil && !IsNil(o.SupportedGADShapes) {
+	if o != nil && !isNil(o.SupportedGADShapes) {
 		return true
 	}
 
@@ -313,28 +313,28 @@ func (o LmfInfo) MarshalJSON() ([]byte, error) {
 
 func (o LmfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServingClientTypes) {
+	if !isNil(o.ServingClientTypes) {
 		toSerialize["servingClientTypes"] = o.ServingClientTypes
 	}
-	if !IsNil(o.LmfId) {
+	if !isNil(o.LmfId) {
 		toSerialize["lmfId"] = o.LmfId
 	}
-	if !IsNil(o.ServingAccessTypes) {
+	if !isNil(o.ServingAccessTypes) {
 		toSerialize["servingAccessTypes"] = o.ServingAccessTypes
 	}
-	if !IsNil(o.ServingAnNodeTypes) {
+	if !isNil(o.ServingAnNodeTypes) {
 		toSerialize["servingAnNodeTypes"] = o.ServingAnNodeTypes
 	}
-	if !IsNil(o.ServingRatTypes) {
+	if !isNil(o.ServingRatTypes) {
 		toSerialize["servingRatTypes"] = o.ServingRatTypes
 	}
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.SupportedGADShapes) {
+	if !isNil(o.SupportedGADShapes) {
 		toSerialize["supportedGADShapes"] = o.SupportedGADShapes
 	}
 	return toSerialize, nil

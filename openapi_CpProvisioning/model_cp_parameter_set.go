@@ -86,7 +86,7 @@ func (o *CpParameterSet) SetSetId(v string) {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *CpParameterSet) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -96,7 +96,7 @@ func (o *CpParameterSet) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -104,7 +104,7 @@ func (o *CpParameterSet) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *CpParameterSet) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *CpParameterSet) SetSelf(v string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *CpParameterSet) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *CpParameterSet) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -136,7 +136,7 @@ func (o *CpParameterSet) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *CpParameterSet) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *CpParameterSet) SetValidityTime(v time.Time) {
 
 // GetPeriodicCommunicationIndicator returns the PeriodicCommunicationIndicator field value if set, zero value otherwise.
 func (o *CpParameterSet) GetPeriodicCommunicationIndicator() CommunicationIndicator {
-	if o == nil || IsNil(o.PeriodicCommunicationIndicator) {
+	if o == nil || isNil(o.PeriodicCommunicationIndicator) {
 		var ret CommunicationIndicator
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *CpParameterSet) GetPeriodicCommunicationIndicator() CommunicationIndica
 // GetPeriodicCommunicationIndicatorOk returns a tuple with the PeriodicCommunicationIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetPeriodicCommunicationIndicatorOk() (*CommunicationIndicator, bool) {
-	if o == nil || IsNil(o.PeriodicCommunicationIndicator) {
+	if o == nil || isNil(o.PeriodicCommunicationIndicator) {
 		return nil, false
 	}
 	return o.PeriodicCommunicationIndicator, true
@@ -168,7 +168,7 @@ func (o *CpParameterSet) GetPeriodicCommunicationIndicatorOk() (*CommunicationIn
 
 // HasPeriodicCommunicationIndicator returns a boolean if a field has been set.
 func (o *CpParameterSet) HasPeriodicCommunicationIndicator() bool {
-	if o != nil && !IsNil(o.PeriodicCommunicationIndicator) {
+	if o != nil && !isNil(o.PeriodicCommunicationIndicator) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *CpParameterSet) SetPeriodicCommunicationIndicator(v CommunicationIndica
 
 // GetCommunicationDurationTime returns the CommunicationDurationTime field value if set, zero value otherwise.
 func (o *CpParameterSet) GetCommunicationDurationTime() int32 {
-	if o == nil || IsNil(o.CommunicationDurationTime) {
+	if o == nil || isNil(o.CommunicationDurationTime) {
 		var ret int32
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *CpParameterSet) GetCommunicationDurationTime() int32 {
 // GetCommunicationDurationTimeOk returns a tuple with the CommunicationDurationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetCommunicationDurationTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.CommunicationDurationTime) {
+	if o == nil || isNil(o.CommunicationDurationTime) {
 		return nil, false
 	}
 	return o.CommunicationDurationTime, true
@@ -200,7 +200,7 @@ func (o *CpParameterSet) GetCommunicationDurationTimeOk() (*int32, bool) {
 
 // HasCommunicationDurationTime returns a boolean if a field has been set.
 func (o *CpParameterSet) HasCommunicationDurationTime() bool {
-	if o != nil && !IsNil(o.CommunicationDurationTime) {
+	if o != nil && !isNil(o.CommunicationDurationTime) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *CpParameterSet) SetCommunicationDurationTime(v int32) {
 
 // GetPeriodicTime returns the PeriodicTime field value if set, zero value otherwise.
 func (o *CpParameterSet) GetPeriodicTime() int32 {
-	if o == nil || IsNil(o.PeriodicTime) {
+	if o == nil || isNil(o.PeriodicTime) {
 		var ret int32
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *CpParameterSet) GetPeriodicTime() int32 {
 // GetPeriodicTimeOk returns a tuple with the PeriodicTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetPeriodicTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.PeriodicTime) {
+	if o == nil || isNil(o.PeriodicTime) {
 		return nil, false
 	}
 	return o.PeriodicTime, true
@@ -232,7 +232,7 @@ func (o *CpParameterSet) GetPeriodicTimeOk() (*int32, bool) {
 
 // HasPeriodicTime returns a boolean if a field has been set.
 func (o *CpParameterSet) HasPeriodicTime() bool {
-	if o != nil && !IsNil(o.PeriodicTime) {
+	if o != nil && !isNil(o.PeriodicTime) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *CpParameterSet) SetPeriodicTime(v int32) {
 
 // GetScheduledCommunicationTime returns the ScheduledCommunicationTime field value if set, zero value otherwise.
 func (o *CpParameterSet) GetScheduledCommunicationTime() ScheduledCommunicationTime {
-	if o == nil || IsNil(o.ScheduledCommunicationTime) {
+	if o == nil || isNil(o.ScheduledCommunicationTime) {
 		var ret ScheduledCommunicationTime
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *CpParameterSet) GetScheduledCommunicationTime() ScheduledCommunicationT
 // GetScheduledCommunicationTimeOk returns a tuple with the ScheduledCommunicationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetScheduledCommunicationTimeOk() (*ScheduledCommunicationTime, bool) {
-	if o == nil || IsNil(o.ScheduledCommunicationTime) {
+	if o == nil || isNil(o.ScheduledCommunicationTime) {
 		return nil, false
 	}
 	return o.ScheduledCommunicationTime, true
@@ -264,7 +264,7 @@ func (o *CpParameterSet) GetScheduledCommunicationTimeOk() (*ScheduledCommunicat
 
 // HasScheduledCommunicationTime returns a boolean if a field has been set.
 func (o *CpParameterSet) HasScheduledCommunicationTime() bool {
-	if o != nil && !IsNil(o.ScheduledCommunicationTime) {
+	if o != nil && !isNil(o.ScheduledCommunicationTime) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *CpParameterSet) SetScheduledCommunicationTime(v ScheduledCommunicationT
 
 // GetScheduledCommunicationType returns the ScheduledCommunicationType field value if set, zero value otherwise.
 func (o *CpParameterSet) GetScheduledCommunicationType() ScheduledCommunicationType {
-	if o == nil || IsNil(o.ScheduledCommunicationType) {
+	if o == nil || isNil(o.ScheduledCommunicationType) {
 		var ret ScheduledCommunicationType
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *CpParameterSet) GetScheduledCommunicationType() ScheduledCommunicationT
 // GetScheduledCommunicationTypeOk returns a tuple with the ScheduledCommunicationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetScheduledCommunicationTypeOk() (*ScheduledCommunicationType, bool) {
-	if o == nil || IsNil(o.ScheduledCommunicationType) {
+	if o == nil || isNil(o.ScheduledCommunicationType) {
 		return nil, false
 	}
 	return o.ScheduledCommunicationType, true
@@ -296,7 +296,7 @@ func (o *CpParameterSet) GetScheduledCommunicationTypeOk() (*ScheduledCommunicat
 
 // HasScheduledCommunicationType returns a boolean if a field has been set.
 func (o *CpParameterSet) HasScheduledCommunicationType() bool {
-	if o != nil && !IsNil(o.ScheduledCommunicationType) {
+	if o != nil && !isNil(o.ScheduledCommunicationType) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *CpParameterSet) SetScheduledCommunicationType(v ScheduledCommunicationT
 
 // GetStationaryIndication returns the StationaryIndication field value if set, zero value otherwise.
 func (o *CpParameterSet) GetStationaryIndication() StationaryIndication {
-	if o == nil || IsNil(o.StationaryIndication) {
+	if o == nil || isNil(o.StationaryIndication) {
 		var ret StationaryIndication
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *CpParameterSet) GetStationaryIndication() StationaryIndication {
 // GetStationaryIndicationOk returns a tuple with the StationaryIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetStationaryIndicationOk() (*StationaryIndication, bool) {
-	if o == nil || IsNil(o.StationaryIndication) {
+	if o == nil || isNil(o.StationaryIndication) {
 		return nil, false
 	}
 	return o.StationaryIndication, true
@@ -328,7 +328,7 @@ func (o *CpParameterSet) GetStationaryIndicationOk() (*StationaryIndication, boo
 
 // HasStationaryIndication returns a boolean if a field has been set.
 func (o *CpParameterSet) HasStationaryIndication() bool {
-	if o != nil && !IsNil(o.StationaryIndication) {
+	if o != nil && !isNil(o.StationaryIndication) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *CpParameterSet) SetStationaryIndication(v StationaryIndication) {
 
 // GetBatteryInds returns the BatteryInds field value if set, zero value otherwise.
 func (o *CpParameterSet) GetBatteryInds() []BatteryIndication {
-	if o == nil || IsNil(o.BatteryInds) {
+	if o == nil || isNil(o.BatteryInds) {
 		var ret []BatteryIndication
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *CpParameterSet) GetBatteryInds() []BatteryIndication {
 // GetBatteryIndsOk returns a tuple with the BatteryInds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetBatteryIndsOk() ([]BatteryIndication, bool) {
-	if o == nil || IsNil(o.BatteryInds) {
+	if o == nil || isNil(o.BatteryInds) {
 		return nil, false
 	}
 	return o.BatteryInds, true
@@ -360,7 +360,7 @@ func (o *CpParameterSet) GetBatteryIndsOk() ([]BatteryIndication, bool) {
 
 // HasBatteryInds returns a boolean if a field has been set.
 func (o *CpParameterSet) HasBatteryInds() bool {
-	if o != nil && !IsNil(o.BatteryInds) {
+	if o != nil && !isNil(o.BatteryInds) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *CpParameterSet) SetBatteryInds(v []BatteryIndication) {
 
 // GetTrafficProfile returns the TrafficProfile field value if set, zero value otherwise.
 func (o *CpParameterSet) GetTrafficProfile() TrafficProfile {
-	if o == nil || IsNil(o.TrafficProfile) {
+	if o == nil || isNil(o.TrafficProfile) {
 		var ret TrafficProfile
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *CpParameterSet) GetTrafficProfile() TrafficProfile {
 // GetTrafficProfileOk returns a tuple with the TrafficProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetTrafficProfileOk() (*TrafficProfile, bool) {
-	if o == nil || IsNil(o.TrafficProfile) {
+	if o == nil || isNil(o.TrafficProfile) {
 		return nil, false
 	}
 	return o.TrafficProfile, true
@@ -392,7 +392,7 @@ func (o *CpParameterSet) GetTrafficProfileOk() (*TrafficProfile, bool) {
 
 // HasTrafficProfile returns a boolean if a field has been set.
 func (o *CpParameterSet) HasTrafficProfile() bool {
-	if o != nil && !IsNil(o.TrafficProfile) {
+	if o != nil && !isNil(o.TrafficProfile) {
 		return true
 	}
 
@@ -406,7 +406,7 @@ func (o *CpParameterSet) SetTrafficProfile(v TrafficProfile) {
 
 // GetExpectedUmts returns the ExpectedUmts field value if set, zero value otherwise.
 func (o *CpParameterSet) GetExpectedUmts() []UmtLocationArea5G {
-	if o == nil || IsNil(o.ExpectedUmts) {
+	if o == nil || isNil(o.ExpectedUmts) {
 		var ret []UmtLocationArea5G
 		return ret
 	}
@@ -416,7 +416,7 @@ func (o *CpParameterSet) GetExpectedUmts() []UmtLocationArea5G {
 // GetExpectedUmtsOk returns a tuple with the ExpectedUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetExpectedUmtsOk() ([]UmtLocationArea5G, bool) {
-	if o == nil || IsNil(o.ExpectedUmts) {
+	if o == nil || isNil(o.ExpectedUmts) {
 		return nil, false
 	}
 	return o.ExpectedUmts, true
@@ -424,7 +424,7 @@ func (o *CpParameterSet) GetExpectedUmtsOk() ([]UmtLocationArea5G, bool) {
 
 // HasExpectedUmts returns a boolean if a field has been set.
 func (o *CpParameterSet) HasExpectedUmts() bool {
-	if o != nil && !IsNil(o.ExpectedUmts) {
+	if o != nil && !isNil(o.ExpectedUmts) {
 		return true
 	}
 
@@ -438,7 +438,7 @@ func (o *CpParameterSet) SetExpectedUmts(v []UmtLocationArea5G) {
 
 // GetExpectedUmtDays returns the ExpectedUmtDays field value if set, zero value otherwise.
 func (o *CpParameterSet) GetExpectedUmtDays() int32 {
-	if o == nil || IsNil(o.ExpectedUmtDays) {
+	if o == nil || isNil(o.ExpectedUmtDays) {
 		var ret int32
 		return ret
 	}
@@ -448,7 +448,7 @@ func (o *CpParameterSet) GetExpectedUmtDays() int32 {
 // GetExpectedUmtDaysOk returns a tuple with the ExpectedUmtDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpParameterSet) GetExpectedUmtDaysOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExpectedUmtDays) {
+	if o == nil || isNil(o.ExpectedUmtDays) {
 		return nil, false
 	}
 	return o.ExpectedUmtDays, true
@@ -456,7 +456,7 @@ func (o *CpParameterSet) GetExpectedUmtDaysOk() (*int32, bool) {
 
 // HasExpectedUmtDays returns a boolean if a field has been set.
 func (o *CpParameterSet) HasExpectedUmtDays() bool {
-	if o != nil && !IsNil(o.ExpectedUmtDays) {
+	if o != nil && !isNil(o.ExpectedUmtDays) {
 		return true
 	}
 
@@ -479,40 +479,40 @@ func (o CpParameterSet) MarshalJSON() ([]byte, error) {
 func (o CpParameterSet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["setId"] = o.SetId
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.PeriodicCommunicationIndicator) {
+	if !isNil(o.PeriodicCommunicationIndicator) {
 		toSerialize["periodicCommunicationIndicator"] = o.PeriodicCommunicationIndicator
 	}
-	if !IsNil(o.CommunicationDurationTime) {
+	if !isNil(o.CommunicationDurationTime) {
 		toSerialize["communicationDurationTime"] = o.CommunicationDurationTime
 	}
-	if !IsNil(o.PeriodicTime) {
+	if !isNil(o.PeriodicTime) {
 		toSerialize["periodicTime"] = o.PeriodicTime
 	}
-	if !IsNil(o.ScheduledCommunicationTime) {
+	if !isNil(o.ScheduledCommunicationTime) {
 		toSerialize["scheduledCommunicationTime"] = o.ScheduledCommunicationTime
 	}
-	if !IsNil(o.ScheduledCommunicationType) {
+	if !isNil(o.ScheduledCommunicationType) {
 		toSerialize["scheduledCommunicationType"] = o.ScheduledCommunicationType
 	}
-	if !IsNil(o.StationaryIndication) {
+	if !isNil(o.StationaryIndication) {
 		toSerialize["stationaryIndication"] = o.StationaryIndication
 	}
-	if !IsNil(o.BatteryInds) {
+	if !isNil(o.BatteryInds) {
 		toSerialize["batteryInds"] = o.BatteryInds
 	}
-	if !IsNil(o.TrafficProfile) {
+	if !isNil(o.TrafficProfile) {
 		toSerialize["trafficProfile"] = o.TrafficProfile
 	}
-	if !IsNil(o.ExpectedUmts) {
+	if !isNil(o.ExpectedUmts) {
 		toSerialize["expectedUmts"] = o.ExpectedUmts
 	}
-	if !IsNil(o.ExpectedUmtDays) {
+	if !isNil(o.ExpectedUmtDays) {
 		toSerialize["expectedUmtDays"] = o.ExpectedUmtDays
 	}
 	return toSerialize, nil

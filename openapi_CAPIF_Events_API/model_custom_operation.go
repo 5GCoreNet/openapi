@@ -97,7 +97,7 @@ func (o *CustomOperation) SetCustOpName(v string) {
 
 // GetOperations returns the Operations field value if set, zero value otherwise.
 func (o *CustomOperation) GetOperations() []Operation {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		var ret []Operation
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *CustomOperation) GetOperations() []Operation {
 // GetOperationsOk returns a tuple with the Operations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomOperation) GetOperationsOk() ([]Operation, bool) {
-	if o == nil || IsNil(o.Operations) {
+	if o == nil || isNil(o.Operations) {
 		return nil, false
 	}
 	return o.Operations, true
@@ -115,7 +115,7 @@ func (o *CustomOperation) GetOperationsOk() ([]Operation, bool) {
 
 // HasOperations returns a boolean if a field has been set.
 func (o *CustomOperation) HasOperations() bool {
-	if o != nil && !IsNil(o.Operations) {
+	if o != nil && !isNil(o.Operations) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *CustomOperation) SetOperations(v []Operation) {
 
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *CustomOperation) GetDescription() string {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || isNil(o.Description) {
 		var ret string
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *CustomOperation) GetDescription() string {
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomOperation) GetDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.Description) {
+	if o == nil || isNil(o.Description) {
 		return nil, false
 	}
 	return o.Description, true
@@ -147,7 +147,7 @@ func (o *CustomOperation) GetDescriptionOk() (*string, bool) {
 
 // HasDescription returns a boolean if a field has been set.
 func (o *CustomOperation) HasDescription() bool {
-	if o != nil && !IsNil(o.Description) {
+	if o != nil && !isNil(o.Description) {
 		return true
 	}
 
@@ -171,10 +171,10 @@ func (o CustomOperation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["commType"] = o.CommType
 	toSerialize["custOpName"] = o.CustOpName
-	if !IsNil(o.Operations) {
+	if !isNil(o.Operations) {
 		toSerialize["operations"] = o.Operations
 	}
-	if !IsNil(o.Description) {
+	if !isNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // GmCapable Possible values are: - GPTP: gPTP grandmaster is supported. - PTP: PTP grandmaste is supported. 
 type GmCapable struct {
-	string *string
+	GmCapableAnyOf *GmCapableAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GmCapable) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into GmCapableAnyOf
+	err = json.Unmarshal(data, &dst.GmCapableAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonGmCapableAnyOf, _ := json.Marshal(dst.GmCapableAnyOf)
+		if string(jsonGmCapableAnyOf) == "{}" { // empty struct
+			dst.GmCapableAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.GmCapableAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.GmCapableAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(GmCapable)")
@@ -41,8 +55,12 @@ func (dst *GmCapable) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *GmCapable) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.GmCapableAnyOf != nil {
+		return json.Marshal(&src.GmCapableAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

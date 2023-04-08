@@ -43,7 +43,7 @@ func NewFormattingInstructionWithDefaults() *FormattingInstruction {
 
 // GetConsTrigNotif returns the ConsTrigNotif field value if set, zero value otherwise.
 func (o *FormattingInstruction) GetConsTrigNotif() bool {
-	if o == nil || IsNil(o.ConsTrigNotif) {
+	if o == nil || isNil(o.ConsTrigNotif) {
 		var ret bool
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *FormattingInstruction) GetConsTrigNotif() bool {
 // GetConsTrigNotifOk returns a tuple with the ConsTrigNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FormattingInstruction) GetConsTrigNotifOk() (*bool, bool) {
-	if o == nil || IsNil(o.ConsTrigNotif) {
+	if o == nil || isNil(o.ConsTrigNotif) {
 		return nil, false
 	}
 	return o.ConsTrigNotif, true
@@ -61,7 +61,7 @@ func (o *FormattingInstruction) GetConsTrigNotifOk() (*bool, bool) {
 
 // HasConsTrigNotif returns a boolean if a field has been set.
 func (o *FormattingInstruction) HasConsTrigNotif() bool {
-	if o != nil && !IsNil(o.ConsTrigNotif) {
+	if o != nil && !isNil(o.ConsTrigNotif) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *FormattingInstruction) SetConsTrigNotif(v bool) {
 
 // GetReportingOptions returns the ReportingOptions field value if set, zero value otherwise.
 func (o *FormattingInstruction) GetReportingOptions() ReportingOptions {
-	if o == nil || IsNil(o.ReportingOptions) {
+	if o == nil || isNil(o.ReportingOptions) {
 		var ret ReportingOptions
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *FormattingInstruction) GetReportingOptions() ReportingOptions {
 // GetReportingOptionsOk returns a tuple with the ReportingOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FormattingInstruction) GetReportingOptionsOk() (*ReportingOptions, bool) {
-	if o == nil || IsNil(o.ReportingOptions) {
+	if o == nil || isNil(o.ReportingOptions) {
 		return nil, false
 	}
 	return o.ReportingOptions, true
@@ -93,7 +93,7 @@ func (o *FormattingInstruction) GetReportingOptionsOk() (*ReportingOptions, bool
 
 // HasReportingOptions returns a boolean if a field has been set.
 func (o *FormattingInstruction) HasReportingOptions() bool {
-	if o != nil && !IsNil(o.ReportingOptions) {
+	if o != nil && !isNil(o.ReportingOptions) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o FormattingInstruction) MarshalJSON() ([]byte, error) {
 
 func (o FormattingInstruction) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ConsTrigNotif) {
+	if !isNil(o.ConsTrigNotif) {
 		toSerialize["consTrigNotif"] = o.ConsTrigNotif
 	}
-	if !IsNil(o.ReportingOptions) {
+	if !isNil(o.ReportingOptions) {
 		toSerialize["reportingOptions"] = o.ReportingOptions
 	}
 	return toSerialize, nil

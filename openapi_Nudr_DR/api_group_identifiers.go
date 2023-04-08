@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -94,16 +94,16 @@ func (a *GroupIdentifiersApiService) GetGroupIdentifiersExecute(r ApiGetGroupIde
 	localVarFormParams := url.Values{}
 
 	if r.extGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ext-group-id", r.extGroupId, "")
+		parameterAddToQuery(localVarQueryParams, "ext-group-id", r.extGroupId, "")
 	}
 	if r.intGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "int-group-id", r.intGroupId, "")
+		parameterAddToQuery(localVarQueryParams, "int-group-id", r.intGroupId, "")
 	}
 	if r.ueIdInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id-ind", r.ueIdInd, "")
+		parameterAddToQuery(localVarQueryParams, "ue-id-ind", r.ueIdInd, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,9 +132,9 @@ func (a *GroupIdentifiersApiService) GetGroupIdentifiersExecute(r ApiGetGroupIde
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

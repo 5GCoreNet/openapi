@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,6 +6,7 @@ api_default.go
 client.go
 configuration.go
 docs/AfEvent.md
+docs/AfEventAnyOf.md
 docs/CivicAddress.md
 docs/DataAccessProfile.md
 docs/DataAccessProfileLocationAccessRestrictions.md
@@ -14,11 +14,13 @@ docs/DataAccessProfileTimeAccessRestrictions.md
 docs/DataAccessProfileUserAccessRestrictions.md
 docs/DataAccessProfileUserAccessRestrictionsUserIdsInner.md
 docs/DataAggregationFunctionType.md
+docs/DataAggregationFunctionTypeAnyOf.md
 docs/DefaultApi.md
 docs/Ecgi.md
 docs/EllipsoidArc.md
 docs/EllipsoidArcAllOf.md
 docs/EventConsumerType.md
+docs/EventConsumerTypeAnyOf.md
 docs/EventDataProcessingConfiguration.md
 docs/GADShape.md
 docs/GNbId.md
@@ -48,6 +50,7 @@ docs/Polygon.md
 docs/PolygonAllOf.md
 docs/RelativeCartesianLocation.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
@@ -55,6 +58,7 @@ git_push.sh
 go.mod
 go.sum
 model_af_event.go
+model_af_event_any_of.go
 model_civic_address.go
 model_data_access_profile.go
 model_data_access_profile_location_access_restrictions.go
@@ -62,10 +66,12 @@ model_data_access_profile_time_access_restrictions.go
 model_data_access_profile_user_access_restrictions.go
 model_data_access_profile_user_access_restrictions_user_ids_inner.go
 model_data_aggregation_function_type.go
+model_data_aggregation_function_type_any_of.go
 model_ecgi.go
 model_ellipsoid_arc.go
 model_ellipsoid_arc_all_of.go
 model_event_consumer_type.go
+model_event_consumer_type_any_of.go
 model_event_data_processing_configuration.go
 model_gad_shape.go
 model_geographic_area.go
@@ -95,6 +101,7 @@ model_polygon.go
 model_polygon_all_of.go
 model_relative_cartesian_location.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go

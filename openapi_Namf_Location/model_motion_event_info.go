@@ -81,7 +81,7 @@ func (o *MotionEventInfo) SetLinearDistance(v int32) {
 
 // GetOccurrenceInfo returns the OccurrenceInfo field value if set, zero value otherwise.
 func (o *MotionEventInfo) GetOccurrenceInfo() OccurrenceInfo {
-	if o == nil || IsNil(o.OccurrenceInfo) {
+	if o == nil || isNil(o.OccurrenceInfo) {
 		var ret OccurrenceInfo
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *MotionEventInfo) GetOccurrenceInfo() OccurrenceInfo {
 // GetOccurrenceInfoOk returns a tuple with the OccurrenceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MotionEventInfo) GetOccurrenceInfoOk() (*OccurrenceInfo, bool) {
-	if o == nil || IsNil(o.OccurrenceInfo) {
+	if o == nil || isNil(o.OccurrenceInfo) {
 		return nil, false
 	}
 	return o.OccurrenceInfo, true
@@ -99,7 +99,7 @@ func (o *MotionEventInfo) GetOccurrenceInfoOk() (*OccurrenceInfo, bool) {
 
 // HasOccurrenceInfo returns a boolean if a field has been set.
 func (o *MotionEventInfo) HasOccurrenceInfo() bool {
-	if o != nil && !IsNil(o.OccurrenceInfo) {
+	if o != nil && !isNil(o.OccurrenceInfo) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *MotionEventInfo) SetOccurrenceInfo(v OccurrenceInfo) {
 
 // GetMinimumInterval returns the MinimumInterval field value if set, zero value otherwise.
 func (o *MotionEventInfo) GetMinimumInterval() int32 {
-	if o == nil || IsNil(o.MinimumInterval) {
+	if o == nil || isNil(o.MinimumInterval) {
 		var ret int32
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *MotionEventInfo) GetMinimumInterval() int32 {
 // GetMinimumIntervalOk returns a tuple with the MinimumInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MotionEventInfo) GetMinimumIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinimumInterval) {
+	if o == nil || isNil(o.MinimumInterval) {
 		return nil, false
 	}
 	return o.MinimumInterval, true
@@ -131,7 +131,7 @@ func (o *MotionEventInfo) GetMinimumIntervalOk() (*int32, bool) {
 
 // HasMinimumInterval returns a boolean if a field has been set.
 func (o *MotionEventInfo) HasMinimumInterval() bool {
-	if o != nil && !IsNil(o.MinimumInterval) {
+	if o != nil && !isNil(o.MinimumInterval) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *MotionEventInfo) SetMinimumInterval(v int32) {
 
 // GetMaximumInterval returns the MaximumInterval field value if set, zero value otherwise.
 func (o *MotionEventInfo) GetMaximumInterval() int32 {
-	if o == nil || IsNil(o.MaximumInterval) {
+	if o == nil || isNil(o.MaximumInterval) {
 		var ret int32
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *MotionEventInfo) GetMaximumInterval() int32 {
 // GetMaximumIntervalOk returns a tuple with the MaximumInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MotionEventInfo) GetMaximumIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumInterval) {
+	if o == nil || isNil(o.MaximumInterval) {
 		return nil, false
 	}
 	return o.MaximumInterval, true
@@ -163,7 +163,7 @@ func (o *MotionEventInfo) GetMaximumIntervalOk() (*int32, bool) {
 
 // HasMaximumInterval returns a boolean if a field has been set.
 func (o *MotionEventInfo) HasMaximumInterval() bool {
-	if o != nil && !IsNil(o.MaximumInterval) {
+	if o != nil && !isNil(o.MaximumInterval) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *MotionEventInfo) SetMaximumInterval(v int32) {
 
 // GetSamplingInterval returns the SamplingInterval field value if set, zero value otherwise.
 func (o *MotionEventInfo) GetSamplingInterval() int32 {
-	if o == nil || IsNil(o.SamplingInterval) {
+	if o == nil || isNil(o.SamplingInterval) {
 		var ret int32
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *MotionEventInfo) GetSamplingInterval() int32 {
 // GetSamplingIntervalOk returns a tuple with the SamplingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MotionEventInfo) GetSamplingIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.SamplingInterval) {
+	if o == nil || isNil(o.SamplingInterval) {
 		return nil, false
 	}
 	return o.SamplingInterval, true
@@ -195,7 +195,7 @@ func (o *MotionEventInfo) GetSamplingIntervalOk() (*int32, bool) {
 
 // HasSamplingInterval returns a boolean if a field has been set.
 func (o *MotionEventInfo) HasSamplingInterval() bool {
-	if o != nil && !IsNil(o.SamplingInterval) {
+	if o != nil && !isNil(o.SamplingInterval) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *MotionEventInfo) SetSamplingInterval(v int32) {
 
 // GetReportingDuration returns the ReportingDuration field value if set, zero value otherwise.
 func (o *MotionEventInfo) GetReportingDuration() int32 {
-	if o == nil || IsNil(o.ReportingDuration) {
+	if o == nil || isNil(o.ReportingDuration) {
 		var ret int32
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *MotionEventInfo) GetReportingDuration() int32 {
 // GetReportingDurationOk returns a tuple with the ReportingDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MotionEventInfo) GetReportingDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingDuration) {
+	if o == nil || isNil(o.ReportingDuration) {
 		return nil, false
 	}
 	return o.ReportingDuration, true
@@ -227,7 +227,7 @@ func (o *MotionEventInfo) GetReportingDurationOk() (*int32, bool) {
 
 // HasReportingDuration returns a boolean if a field has been set.
 func (o *MotionEventInfo) HasReportingDuration() bool {
-	if o != nil && !IsNil(o.ReportingDuration) {
+	if o != nil && !isNil(o.ReportingDuration) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *MotionEventInfo) SetReportingDuration(v int32) {
 
 // GetReportingLocationReq returns the ReportingLocationReq field value if set, zero value otherwise.
 func (o *MotionEventInfo) GetReportingLocationReq() bool {
-	if o == nil || IsNil(o.ReportingLocationReq) {
+	if o == nil || isNil(o.ReportingLocationReq) {
 		var ret bool
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *MotionEventInfo) GetReportingLocationReq() bool {
 // GetReportingLocationReqOk returns a tuple with the ReportingLocationReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MotionEventInfo) GetReportingLocationReqOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReportingLocationReq) {
+	if o == nil || isNil(o.ReportingLocationReq) {
 		return nil, false
 	}
 	return o.ReportingLocationReq, true
@@ -259,7 +259,7 @@ func (o *MotionEventInfo) GetReportingLocationReqOk() (*bool, bool) {
 
 // HasReportingLocationReq returns a boolean if a field has been set.
 func (o *MotionEventInfo) HasReportingLocationReq() bool {
-	if o != nil && !IsNil(o.ReportingLocationReq) {
+	if o != nil && !isNil(o.ReportingLocationReq) {
 		return true
 	}
 
@@ -282,22 +282,22 @@ func (o MotionEventInfo) MarshalJSON() ([]byte, error) {
 func (o MotionEventInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["linearDistance"] = o.LinearDistance
-	if !IsNil(o.OccurrenceInfo) {
+	if !isNil(o.OccurrenceInfo) {
 		toSerialize["occurrenceInfo"] = o.OccurrenceInfo
 	}
-	if !IsNil(o.MinimumInterval) {
+	if !isNil(o.MinimumInterval) {
 		toSerialize["minimumInterval"] = o.MinimumInterval
 	}
-	if !IsNil(o.MaximumInterval) {
+	if !isNil(o.MaximumInterval) {
 		toSerialize["maximumInterval"] = o.MaximumInterval
 	}
-	if !IsNil(o.SamplingInterval) {
+	if !isNil(o.SamplingInterval) {
 		toSerialize["samplingInterval"] = o.SamplingInterval
 	}
-	if !IsNil(o.ReportingDuration) {
+	if !isNil(o.ReportingDuration) {
 		toSerialize["reportingDuration"] = o.ReportingDuration
 	}
-	if !IsNil(o.ReportingLocationReq) {
+	if !isNil(o.ReportingLocationReq) {
 		toSerialize["reportingLocationReq"] = o.ReportingLocationReq
 	}
 	return toSerialize, nil

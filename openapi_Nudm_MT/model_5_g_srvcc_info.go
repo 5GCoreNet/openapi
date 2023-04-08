@@ -70,7 +70,7 @@ func (o *Model5GSrvccInfo) SetUe5GSrvccCapability(v bool) {
 
 // GetStnSr returns the StnSr field value if set, zero value otherwise.
 func (o *Model5GSrvccInfo) GetStnSr() string {
-	if o == nil || IsNil(o.StnSr) {
+	if o == nil || isNil(o.StnSr) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *Model5GSrvccInfo) GetStnSr() string {
 // GetStnSrOk returns a tuple with the StnSr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GSrvccInfo) GetStnSrOk() (*string, bool) {
-	if o == nil || IsNil(o.StnSr) {
+	if o == nil || isNil(o.StnSr) {
 		return nil, false
 	}
 	return o.StnSr, true
@@ -88,7 +88,7 @@ func (o *Model5GSrvccInfo) GetStnSrOk() (*string, bool) {
 
 // HasStnSr returns a boolean if a field has been set.
 func (o *Model5GSrvccInfo) HasStnSr() bool {
-	if o != nil && !IsNil(o.StnSr) {
+	if o != nil && !isNil(o.StnSr) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *Model5GSrvccInfo) SetStnSr(v string) {
 
 // GetCMsisdn returns the CMsisdn field value if set, zero value otherwise.
 func (o *Model5GSrvccInfo) GetCMsisdn() string {
-	if o == nil || IsNil(o.CMsisdn) {
+	if o == nil || isNil(o.CMsisdn) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *Model5GSrvccInfo) GetCMsisdn() string {
 // GetCMsisdnOk returns a tuple with the CMsisdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GSrvccInfo) GetCMsisdnOk() (*string, bool) {
-	if o == nil || IsNil(o.CMsisdn) {
+	if o == nil || isNil(o.CMsisdn) {
 		return nil, false
 	}
 	return o.CMsisdn, true
@@ -120,7 +120,7 @@ func (o *Model5GSrvccInfo) GetCMsisdnOk() (*string, bool) {
 
 // HasCMsisdn returns a boolean if a field has been set.
 func (o *Model5GSrvccInfo) HasCMsisdn() bool {
-	if o != nil && !IsNil(o.CMsisdn) {
+	if o != nil && !isNil(o.CMsisdn) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o Model5GSrvccInfo) MarshalJSON() ([]byte, error) {
 func (o Model5GSrvccInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ue5GSrvccCapability"] = o.Ue5GSrvccCapability
-	if !IsNil(o.StnSr) {
+	if !isNil(o.StnSr) {
 		toSerialize["stnSr"] = o.StnSr
 	}
-	if !IsNil(o.CMsisdn) {
+	if !isNil(o.CMsisdn) {
 		toSerialize["cMsisdn"] = o.CMsisdn
 	}
 	return toSerialize, nil

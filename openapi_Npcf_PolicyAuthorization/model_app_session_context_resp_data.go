@@ -44,7 +44,7 @@ func NewAppSessionContextRespDataWithDefaults() *AppSessionContextRespData {
 
 // GetServAuthInfo returns the ServAuthInfo field value if set, zero value otherwise.
 func (o *AppSessionContextRespData) GetServAuthInfo() ServAuthInfo {
-	if o == nil || IsNil(o.ServAuthInfo) {
+	if o == nil || isNil(o.ServAuthInfo) {
 		var ret ServAuthInfo
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AppSessionContextRespData) GetServAuthInfo() ServAuthInfo {
 // GetServAuthInfoOk returns a tuple with the ServAuthInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextRespData) GetServAuthInfoOk() (*ServAuthInfo, bool) {
-	if o == nil || IsNil(o.ServAuthInfo) {
+	if o == nil || isNil(o.ServAuthInfo) {
 		return nil, false
 	}
 	return o.ServAuthInfo, true
@@ -62,7 +62,7 @@ func (o *AppSessionContextRespData) GetServAuthInfoOk() (*ServAuthInfo, bool) {
 
 // HasServAuthInfo returns a boolean if a field has been set.
 func (o *AppSessionContextRespData) HasServAuthInfo() bool {
-	if o != nil && !IsNil(o.ServAuthInfo) {
+	if o != nil && !isNil(o.ServAuthInfo) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AppSessionContextRespData) SetServAuthInfo(v ServAuthInfo) {
 
 // GetUeIds returns the UeIds field value if set, zero value otherwise.
 func (o *AppSessionContextRespData) GetUeIds() []UeIdentityInfo {
-	if o == nil || IsNil(o.UeIds) {
+	if o == nil || isNil(o.UeIds) {
 		var ret []UeIdentityInfo
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AppSessionContextRespData) GetUeIds() []UeIdentityInfo {
 // GetUeIdsOk returns a tuple with the UeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextRespData) GetUeIdsOk() ([]UeIdentityInfo, bool) {
-	if o == nil || IsNil(o.UeIds) {
+	if o == nil || isNil(o.UeIds) {
 		return nil, false
 	}
 	return o.UeIds, true
@@ -94,7 +94,7 @@ func (o *AppSessionContextRespData) GetUeIdsOk() ([]UeIdentityInfo, bool) {
 
 // HasUeIds returns a boolean if a field has been set.
 func (o *AppSessionContextRespData) HasUeIds() bool {
-	if o != nil && !IsNil(o.UeIds) {
+	if o != nil && !isNil(o.UeIds) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AppSessionContextRespData) SetUeIds(v []UeIdentityInfo) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AppSessionContextRespData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AppSessionContextRespData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextRespData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -126,7 +126,7 @@ func (o *AppSessionContextRespData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AppSessionContextRespData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o AppSessionContextRespData) MarshalJSON() ([]byte, error) {
 
 func (o AppSessionContextRespData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAuthInfo) {
+	if !isNil(o.ServAuthInfo) {
 		toSerialize["servAuthInfo"] = o.ServAuthInfo
 	}
-	if !IsNil(o.UeIds) {
+	if !isNil(o.UeIds) {
 		toSerialize["ueIds"] = o.UeIds
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

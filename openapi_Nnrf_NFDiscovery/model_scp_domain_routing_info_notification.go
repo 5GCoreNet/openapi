@@ -71,7 +71,7 @@ func (o *ScpDomainRoutingInfoNotification) SetRoutingInfo(v ScpDomainRoutingInfo
 
 // GetLocalInd returns the LocalInd field value if set, zero value otherwise.
 func (o *ScpDomainRoutingInfoNotification) GetLocalInd() bool {
-	if o == nil || IsNil(o.LocalInd) {
+	if o == nil || isNil(o.LocalInd) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ScpDomainRoutingInfoNotification) GetLocalInd() bool {
 // GetLocalIndOk returns a tuple with the LocalInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainRoutingInfoNotification) GetLocalIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.LocalInd) {
+	if o == nil || isNil(o.LocalInd) {
 		return nil, false
 	}
 	return o.LocalInd, true
@@ -89,7 +89,7 @@ func (o *ScpDomainRoutingInfoNotification) GetLocalIndOk() (*bool, bool) {
 
 // HasLocalInd returns a boolean if a field has been set.
 func (o *ScpDomainRoutingInfoNotification) HasLocalInd() bool {
-	if o != nil && !IsNil(o.LocalInd) {
+	if o != nil && !isNil(o.LocalInd) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o ScpDomainRoutingInfoNotification) MarshalJSON() ([]byte, error) {
 func (o ScpDomainRoutingInfoNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["routingInfo"] = o.RoutingInfo
-	if !IsNil(o.LocalInd) {
+	if !isNil(o.LocalInd) {
 		toSerialize["localInd"] = o.LocalInd
 	}
 	return toSerialize, nil

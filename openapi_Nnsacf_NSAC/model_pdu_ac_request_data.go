@@ -70,7 +70,7 @@ func (o *PduACRequestData) SetPduACRequestInfo(v []PduACRequestInfo) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *PduACRequestData) GetNfId() string {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *PduACRequestData) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduACRequestData) GetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -88,7 +88,7 @@ func (o *PduACRequestData) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *PduACRequestData) HasNfId() bool {
-	if o != nil && !IsNil(o.NfId) {
+	if o != nil && !isNil(o.NfId) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *PduACRequestData) SetNfId(v string) {
 
 // GetPgwFqdn returns the PgwFqdn field value if set, zero value otherwise.
 func (o *PduACRequestData) GetPgwFqdn() string {
-	if o == nil || IsNil(o.PgwFqdn) {
+	if o == nil || isNil(o.PgwFqdn) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *PduACRequestData) GetPgwFqdn() string {
 // GetPgwFqdnOk returns a tuple with the PgwFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduACRequestData) GetPgwFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.PgwFqdn) {
+	if o == nil || isNil(o.PgwFqdn) {
 		return nil, false
 	}
 	return o.PgwFqdn, true
@@ -120,7 +120,7 @@ func (o *PduACRequestData) GetPgwFqdnOk() (*string, bool) {
 
 // HasPgwFqdn returns a boolean if a field has been set.
 func (o *PduACRequestData) HasPgwFqdn() bool {
-	if o != nil && !IsNil(o.PgwFqdn) {
+	if o != nil && !isNil(o.PgwFqdn) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o PduACRequestData) MarshalJSON() ([]byte, error) {
 func (o PduACRequestData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduACRequestInfo"] = o.PduACRequestInfo
-	if !IsNil(o.NfId) {
+	if !isNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !IsNil(o.PgwFqdn) {
+	if !isNil(o.PgwFqdn) {
 		toSerialize["pgwFqdn"] = o.PgwFqdn
 	}
 	return toSerialize, nil

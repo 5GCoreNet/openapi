@@ -50,7 +50,7 @@ func NewHistoricalDataWithDefaults() *HistoricalData {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *HistoricalData) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *HistoricalData) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoricalData) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -68,7 +68,7 @@ func (o *HistoricalData) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *HistoricalData) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *HistoricalData) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *HistoricalData) GetEndTime() time.Time {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *HistoricalData) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoricalData) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -100,7 +100,7 @@ func (o *HistoricalData) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *HistoricalData) HasEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
+	if o != nil && !isNil(o.EndTime) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *HistoricalData) SetEndTime(v time.Time) {
 
 // GetSubsWithSources returns the SubsWithSources field value if set, zero value otherwise.
 func (o *HistoricalData) GetSubsWithSources() []SpecificDataSubscription {
-	if o == nil || IsNil(o.SubsWithSources) {
+	if o == nil || isNil(o.SubsWithSources) {
 		var ret []SpecificDataSubscription
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *HistoricalData) GetSubsWithSources() []SpecificDataSubscription {
 // GetSubsWithSourcesOk returns a tuple with the SubsWithSources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HistoricalData) GetSubsWithSourcesOk() ([]SpecificDataSubscription, bool) {
-	if o == nil || IsNil(o.SubsWithSources) {
+	if o == nil || isNil(o.SubsWithSources) {
 		return nil, false
 	}
 	return o.SubsWithSources, true
@@ -132,7 +132,7 @@ func (o *HistoricalData) GetSubsWithSourcesOk() ([]SpecificDataSubscription, boo
 
 // HasSubsWithSources returns a boolean if a field has been set.
 func (o *HistoricalData) HasSubsWithSources() bool {
-	if o != nil && !IsNil(o.SubsWithSources) {
+	if o != nil && !isNil(o.SubsWithSources) {
 		return true
 	}
 
@@ -178,13 +178,13 @@ func (o HistoricalData) MarshalJSON() ([]byte, error) {
 
 func (o HistoricalData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.EndTime) {
+	if !isNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
-	if !IsNil(o.SubsWithSources) {
+	if !isNil(o.SubsWithSources) {
 		toSerialize["subsWithSources"] = o.SubsWithSources
 	}
 	toSerialize["data"] = o.Data

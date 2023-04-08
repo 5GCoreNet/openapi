@@ -45,7 +45,7 @@ func NewConsumptionReportingConfigurationWithDefaults() *ConsumptionReportingCon
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetReportingInterval() int32 {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ConsumptionReportingConfiguration) GetReportingInterval() int32 {
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -63,7 +63,7 @@ func (o *ConsumptionReportingConfiguration) GetReportingIntervalOk() (*int32, bo
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasReportingInterval() bool {
-	if o != nil && !IsNil(o.ReportingInterval) {
+	if o != nil && !isNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ConsumptionReportingConfiguration) SetReportingInterval(v int32) {
 
 // GetSamplePercentage returns the SamplePercentage field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetSamplePercentage() float32 {
-	if o == nil || IsNil(o.SamplePercentage) {
+	if o == nil || isNil(o.SamplePercentage) {
 		var ret float32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ConsumptionReportingConfiguration) GetSamplePercentage() float32 {
 // GetSamplePercentageOk returns a tuple with the SamplePercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetSamplePercentageOk() (*float32, bool) {
-	if o == nil || IsNil(o.SamplePercentage) {
+	if o == nil || isNil(o.SamplePercentage) {
 		return nil, false
 	}
 	return o.SamplePercentage, true
@@ -95,7 +95,7 @@ func (o *ConsumptionReportingConfiguration) GetSamplePercentageOk() (*float32, b
 
 // HasSamplePercentage returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasSamplePercentage() bool {
-	if o != nil && !IsNil(o.SamplePercentage) {
+	if o != nil && !isNil(o.SamplePercentage) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ConsumptionReportingConfiguration) SetSamplePercentage(v float32) {
 
 // GetLocationReporting returns the LocationReporting field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetLocationReporting() bool {
-	if o == nil || IsNil(o.LocationReporting) {
+	if o == nil || isNil(o.LocationReporting) {
 		var ret bool
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ConsumptionReportingConfiguration) GetLocationReporting() bool {
 // GetLocationReportingOk returns a tuple with the LocationReporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetLocationReportingOk() (*bool, bool) {
-	if o == nil || IsNil(o.LocationReporting) {
+	if o == nil || isNil(o.LocationReporting) {
 		return nil, false
 	}
 	return o.LocationReporting, true
@@ -127,7 +127,7 @@ func (o *ConsumptionReportingConfiguration) GetLocationReportingOk() (*bool, boo
 
 // HasLocationReporting returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasLocationReporting() bool {
-	if o != nil && !IsNil(o.LocationReporting) {
+	if o != nil && !isNil(o.LocationReporting) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ConsumptionReportingConfiguration) SetLocationReporting(v bool) {
 
 // GetAccessReporting returns the AccessReporting field value if set, zero value otherwise.
 func (o *ConsumptionReportingConfiguration) GetAccessReporting() bool {
-	if o == nil || IsNil(o.AccessReporting) {
+	if o == nil || isNil(o.AccessReporting) {
 		var ret bool
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ConsumptionReportingConfiguration) GetAccessReporting() bool {
 // GetAccessReportingOk returns a tuple with the AccessReporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingConfiguration) GetAccessReportingOk() (*bool, bool) {
-	if o == nil || IsNil(o.AccessReporting) {
+	if o == nil || isNil(o.AccessReporting) {
 		return nil, false
 	}
 	return o.AccessReporting, true
@@ -159,7 +159,7 @@ func (o *ConsumptionReportingConfiguration) GetAccessReportingOk() (*bool, bool)
 
 // HasAccessReporting returns a boolean if a field has been set.
 func (o *ConsumptionReportingConfiguration) HasAccessReporting() bool {
-	if o != nil && !IsNil(o.AccessReporting) {
+	if o != nil && !isNil(o.AccessReporting) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o ConsumptionReportingConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o ConsumptionReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReportingInterval) {
+	if !isNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
-	if !IsNil(o.SamplePercentage) {
+	if !isNil(o.SamplePercentage) {
 		toSerialize["samplePercentage"] = o.SamplePercentage
 	}
-	if !IsNil(o.LocationReporting) {
+	if !isNil(o.LocationReporting) {
 		toSerialize["locationReporting"] = o.LocationReporting
 	}
-	if !IsNil(o.AccessReporting) {
+	if !isNil(o.AccessReporting) {
 		toSerialize["accessReporting"] = o.AccessReporting
 	}
 	return toSerialize, nil

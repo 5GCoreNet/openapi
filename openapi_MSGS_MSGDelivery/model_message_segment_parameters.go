@@ -44,7 +44,7 @@ func NewMessageSegmentParametersWithDefaults() *MessageSegmentParameters {
 
 // GetSegId returns the SegId field value if set, zero value otherwise.
 func (o *MessageSegmentParameters) GetSegId() string {
-	if o == nil || IsNil(o.SegId) {
+	if o == nil || isNil(o.SegId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MessageSegmentParameters) GetSegId() string {
 // GetSegIdOk returns a tuple with the SegId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageSegmentParameters) GetSegIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SegId) {
+	if o == nil || isNil(o.SegId) {
 		return nil, false
 	}
 	return o.SegId, true
@@ -62,7 +62,7 @@ func (o *MessageSegmentParameters) GetSegIdOk() (*string, bool) {
 
 // HasSegId returns a boolean if a field has been set.
 func (o *MessageSegmentParameters) HasSegId() bool {
-	if o != nil && !IsNil(o.SegId) {
+	if o != nil && !isNil(o.SegId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MessageSegmentParameters) SetSegId(v string) {
 
 // GetTotalSegCount returns the TotalSegCount field value if set, zero value otherwise.
 func (o *MessageSegmentParameters) GetTotalSegCount() int32 {
-	if o == nil || IsNil(o.TotalSegCount) {
+	if o == nil || isNil(o.TotalSegCount) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MessageSegmentParameters) GetTotalSegCount() int32 {
 // GetTotalSegCountOk returns a tuple with the TotalSegCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageSegmentParameters) GetTotalSegCountOk() (*int32, bool) {
-	if o == nil || IsNil(o.TotalSegCount) {
+	if o == nil || isNil(o.TotalSegCount) {
 		return nil, false
 	}
 	return o.TotalSegCount, true
@@ -94,7 +94,7 @@ func (o *MessageSegmentParameters) GetTotalSegCountOk() (*int32, bool) {
 
 // HasTotalSegCount returns a boolean if a field has been set.
 func (o *MessageSegmentParameters) HasTotalSegCount() bool {
-	if o != nil && !IsNil(o.TotalSegCount) {
+	if o != nil && !isNil(o.TotalSegCount) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *MessageSegmentParameters) SetTotalSegCount(v int32) {
 
 // GetSegNumb returns the SegNumb field value if set, zero value otherwise.
 func (o *MessageSegmentParameters) GetSegNumb() int32 {
-	if o == nil || IsNil(o.SegNumb) {
+	if o == nil || isNil(o.SegNumb) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *MessageSegmentParameters) GetSegNumb() int32 {
 // GetSegNumbOk returns a tuple with the SegNumb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageSegmentParameters) GetSegNumbOk() (*int32, bool) {
-	if o == nil || IsNil(o.SegNumb) {
+	if o == nil || isNil(o.SegNumb) {
 		return nil, false
 	}
 	return o.SegNumb, true
@@ -126,7 +126,7 @@ func (o *MessageSegmentParameters) GetSegNumbOk() (*int32, bool) {
 
 // HasSegNumb returns a boolean if a field has been set.
 func (o *MessageSegmentParameters) HasSegNumb() bool {
-	if o != nil && !IsNil(o.SegNumb) {
+	if o != nil && !isNil(o.SegNumb) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *MessageSegmentParameters) SetSegNumb(v int32) {
 
 // GetLastSegFlag returns the LastSegFlag field value if set, zero value otherwise.
 func (o *MessageSegmentParameters) GetLastSegFlag() bool {
-	if o == nil || IsNil(o.LastSegFlag) {
+	if o == nil || isNil(o.LastSegFlag) {
 		var ret bool
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *MessageSegmentParameters) GetLastSegFlag() bool {
 // GetLastSegFlagOk returns a tuple with the LastSegFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageSegmentParameters) GetLastSegFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.LastSegFlag) {
+	if o == nil || isNil(o.LastSegFlag) {
 		return nil, false
 	}
 	return o.LastSegFlag, true
@@ -158,7 +158,7 @@ func (o *MessageSegmentParameters) GetLastSegFlagOk() (*bool, bool) {
 
 // HasLastSegFlag returns a boolean if a field has been set.
 func (o *MessageSegmentParameters) HasLastSegFlag() bool {
-	if o != nil && !IsNil(o.LastSegFlag) {
+	if o != nil && !isNil(o.LastSegFlag) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o MessageSegmentParameters) MarshalJSON() ([]byte, error) {
 
 func (o MessageSegmentParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SegId) {
+	if !isNil(o.SegId) {
 		toSerialize["segId"] = o.SegId
 	}
-	if !IsNil(o.TotalSegCount) {
+	if !isNil(o.TotalSegCount) {
 		toSerialize["totalSegCount"] = o.TotalSegCount
 	}
-	if !IsNil(o.SegNumb) {
+	if !isNil(o.SegNumb) {
 		toSerialize["segNumb"] = o.SegNumb
 	}
-	if !IsNil(o.LastSegFlag) {
+	if !isNil(o.LastSegFlag) {
 		toSerialize["lastSegFlag"] = o.LastSegFlag
 	}
 	return toSerialize, nil

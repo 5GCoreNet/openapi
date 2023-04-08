@@ -17,23 +17,37 @@ import (
 
 // QuotaConsumptionIndicator struct for QuotaConsumptionIndicator
 type QuotaConsumptionIndicator struct {
-	string *string
+	QuotaConsumptionIndicatorAnyOf *QuotaConsumptionIndicatorAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *QuotaConsumptionIndicator) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into QuotaConsumptionIndicatorAnyOf
+	err = json.Unmarshal(data, &dst.QuotaConsumptionIndicatorAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonQuotaConsumptionIndicatorAnyOf, _ := json.Marshal(dst.QuotaConsumptionIndicatorAnyOf)
+		if string(jsonQuotaConsumptionIndicatorAnyOf) == "{}" { // empty struct
+			dst.QuotaConsumptionIndicatorAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.QuotaConsumptionIndicatorAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.QuotaConsumptionIndicatorAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(QuotaConsumptionIndicator)")
@@ -41,8 +55,12 @@ func (dst *QuotaConsumptionIndicator) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *QuotaConsumptionIndicator) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.QuotaConsumptionIndicatorAnyOf != nil {
+		return json.Marshal(&src.QuotaConsumptionIndicatorAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

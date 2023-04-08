@@ -103,7 +103,7 @@ func (o *NotificationSubscription) SetCallbackReference(v string) {
 
 // GetExpiryCallbackReference returns the ExpiryCallbackReference field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetExpiryCallbackReference() string {
-	if o == nil || IsNil(o.ExpiryCallbackReference) {
+	if o == nil || isNil(o.ExpiryCallbackReference) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *NotificationSubscription) GetExpiryCallbackReference() string {
 // GetExpiryCallbackReferenceOk returns a tuple with the ExpiryCallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetExpiryCallbackReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.ExpiryCallbackReference) {
+	if o == nil || isNil(o.ExpiryCallbackReference) {
 		return nil, false
 	}
 	return o.ExpiryCallbackReference, true
@@ -121,7 +121,7 @@ func (o *NotificationSubscription) GetExpiryCallbackReferenceOk() (*string, bool
 
 // HasExpiryCallbackReference returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasExpiryCallbackReference() bool {
-	if o != nil && !IsNil(o.ExpiryCallbackReference) {
+	if o != nil && !isNil(o.ExpiryCallbackReference) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *NotificationSubscription) SetExpiryCallbackReference(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *NotificationSubscription) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -153,7 +153,7 @@ func (o *NotificationSubscription) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *NotificationSubscription) SetExpiry(v time.Time) {
 
 // GetExpiryNotification returns the ExpiryNotification field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetExpiryNotification() int32 {
-	if o == nil || IsNil(o.ExpiryNotification) {
+	if o == nil || isNil(o.ExpiryNotification) {
 		var ret int32
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *NotificationSubscription) GetExpiryNotification() int32 {
 // GetExpiryNotificationOk returns a tuple with the ExpiryNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetExpiryNotificationOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExpiryNotification) {
+	if o == nil || isNil(o.ExpiryNotification) {
 		return nil, false
 	}
 	return o.ExpiryNotification, true
@@ -185,7 +185,7 @@ func (o *NotificationSubscription) GetExpiryNotificationOk() (*int32, bool) {
 
 // HasExpiryNotification returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasExpiryNotification() bool {
-	if o != nil && !IsNil(o.ExpiryNotification) {
+	if o != nil && !isNil(o.ExpiryNotification) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *NotificationSubscription) SetExpiryNotification(v int32) {
 
 // GetSubFilter returns the SubFilter field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetSubFilter() SubscriptionFilter {
-	if o == nil || IsNil(o.SubFilter) {
+	if o == nil || isNil(o.SubFilter) {
 		var ret SubscriptionFilter
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *NotificationSubscription) GetSubFilter() SubscriptionFilter {
 // GetSubFilterOk returns a tuple with the SubFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetSubFilterOk() (*SubscriptionFilter, bool) {
-	if o == nil || IsNil(o.SubFilter) {
+	if o == nil || isNil(o.SubFilter) {
 		return nil, false
 	}
 	return o.SubFilter, true
@@ -217,7 +217,7 @@ func (o *NotificationSubscription) GetSubFilterOk() (*SubscriptionFilter, bool) 
 
 // HasSubFilter returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasSubFilter() bool {
-	if o != nil && !IsNil(o.SubFilter) {
+	if o != nil && !isNil(o.SubFilter) {
 		return true
 	}
 
@@ -231,7 +231,7 @@ func (o *NotificationSubscription) SetSubFilter(v SubscriptionFilter) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NotificationSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -241,7 +241,7 @@ func (o *NotificationSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotificationSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -249,7 +249,7 @@ func (o *NotificationSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NotificationSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -273,19 +273,19 @@ func (o NotificationSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["clientId"] = o.ClientId
 	toSerialize["callbackReference"] = o.CallbackReference
-	if !IsNil(o.ExpiryCallbackReference) {
+	if !isNil(o.ExpiryCallbackReference) {
 		toSerialize["expiryCallbackReference"] = o.ExpiryCallbackReference
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.ExpiryNotification) {
+	if !isNil(o.ExpiryNotification) {
 		toSerialize["expiryNotification"] = o.ExpiryNotification
 	}
-	if !IsNil(o.SubFilter) {
+	if !isNil(o.SubFilter) {
 		toSerialize["subFilter"] = o.SubFilter
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

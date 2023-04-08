@@ -47,7 +47,7 @@ func NewAlarmListSingleAllOfAttributesWithDefaults() *AlarmListSingleAllOfAttrib
 
 // GetAdministrativeState returns the AdministrativeState field value if set, zero value otherwise.
 func (o *AlarmListSingleAllOfAttributes) GetAdministrativeState() AdministrativeState {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		var ret AdministrativeState
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *AlarmListSingleAllOfAttributes) GetAdministrativeState() Administrative
 // GetAdministrativeStateOk returns a tuple with the AdministrativeState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmListSingleAllOfAttributes) GetAdministrativeStateOk() (*AdministrativeState, bool) {
-	if o == nil || IsNil(o.AdministrativeState) {
+	if o == nil || isNil(o.AdministrativeState) {
 		return nil, false
 	}
 	return o.AdministrativeState, true
@@ -65,7 +65,7 @@ func (o *AlarmListSingleAllOfAttributes) GetAdministrativeStateOk() (*Administra
 
 // HasAdministrativeState returns a boolean if a field has been set.
 func (o *AlarmListSingleAllOfAttributes) HasAdministrativeState() bool {
-	if o != nil && !IsNil(o.AdministrativeState) {
+	if o != nil && !isNil(o.AdministrativeState) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *AlarmListSingleAllOfAttributes) SetAdministrativeState(v Administrative
 
 // GetOperationalState returns the OperationalState field value if set, zero value otherwise.
 func (o *AlarmListSingleAllOfAttributes) GetOperationalState() OperationalState {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		var ret OperationalState
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *AlarmListSingleAllOfAttributes) GetOperationalState() OperationalState 
 // GetOperationalStateOk returns a tuple with the OperationalState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmListSingleAllOfAttributes) GetOperationalStateOk() (*OperationalState, bool) {
-	if o == nil || IsNil(o.OperationalState) {
+	if o == nil || isNil(o.OperationalState) {
 		return nil, false
 	}
 	return o.OperationalState, true
@@ -97,7 +97,7 @@ func (o *AlarmListSingleAllOfAttributes) GetOperationalStateOk() (*OperationalSt
 
 // HasOperationalState returns a boolean if a field has been set.
 func (o *AlarmListSingleAllOfAttributes) HasOperationalState() bool {
-	if o != nil && !IsNil(o.OperationalState) {
+	if o != nil && !isNil(o.OperationalState) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *AlarmListSingleAllOfAttributes) SetOperationalState(v OperationalState)
 
 // GetNumOfAlarmRecords returns the NumOfAlarmRecords field value if set, zero value otherwise.
 func (o *AlarmListSingleAllOfAttributes) GetNumOfAlarmRecords() int32 {
-	if o == nil || IsNil(o.NumOfAlarmRecords) {
+	if o == nil || isNil(o.NumOfAlarmRecords) {
 		var ret int32
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *AlarmListSingleAllOfAttributes) GetNumOfAlarmRecords() int32 {
 // GetNumOfAlarmRecordsOk returns a tuple with the NumOfAlarmRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmListSingleAllOfAttributes) GetNumOfAlarmRecordsOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumOfAlarmRecords) {
+	if o == nil || isNil(o.NumOfAlarmRecords) {
 		return nil, false
 	}
 	return o.NumOfAlarmRecords, true
@@ -129,7 +129,7 @@ func (o *AlarmListSingleAllOfAttributes) GetNumOfAlarmRecordsOk() (*int32, bool)
 
 // HasNumOfAlarmRecords returns a boolean if a field has been set.
 func (o *AlarmListSingleAllOfAttributes) HasNumOfAlarmRecords() bool {
-	if o != nil && !IsNil(o.NumOfAlarmRecords) {
+	if o != nil && !isNil(o.NumOfAlarmRecords) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *AlarmListSingleAllOfAttributes) SetNumOfAlarmRecords(v int32) {
 
 // GetLastModification returns the LastModification field value if set, zero value otherwise.
 func (o *AlarmListSingleAllOfAttributes) GetLastModification() time.Time {
-	if o == nil || IsNil(o.LastModification) {
+	if o == nil || isNil(o.LastModification) {
 		var ret time.Time
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *AlarmListSingleAllOfAttributes) GetLastModification() time.Time {
 // GetLastModificationOk returns a tuple with the LastModification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmListSingleAllOfAttributes) GetLastModificationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastModification) {
+	if o == nil || isNil(o.LastModification) {
 		return nil, false
 	}
 	return o.LastModification, true
@@ -161,7 +161,7 @@ func (o *AlarmListSingleAllOfAttributes) GetLastModificationOk() (*time.Time, bo
 
 // HasLastModification returns a boolean if a field has been set.
 func (o *AlarmListSingleAllOfAttributes) HasLastModification() bool {
-	if o != nil && !IsNil(o.LastModification) {
+	if o != nil && !isNil(o.LastModification) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *AlarmListSingleAllOfAttributes) SetLastModification(v time.Time) {
 
 // GetAlarmRecords returns the AlarmRecords field value if set, zero value otherwise.
 func (o *AlarmListSingleAllOfAttributes) GetAlarmRecords() map[string]AlarmRecord {
-	if o == nil || IsNil(o.AlarmRecords) {
+	if o == nil || isNil(o.AlarmRecords) {
 		var ret map[string]AlarmRecord
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *AlarmListSingleAllOfAttributes) GetAlarmRecords() map[string]AlarmRecor
 // GetAlarmRecordsOk returns a tuple with the AlarmRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmListSingleAllOfAttributes) GetAlarmRecordsOk() (*map[string]AlarmRecord, bool) {
-	if o == nil || IsNil(o.AlarmRecords) {
+	if o == nil || isNil(o.AlarmRecords) {
 		return nil, false
 	}
 	return o.AlarmRecords, true
@@ -193,7 +193,7 @@ func (o *AlarmListSingleAllOfAttributes) GetAlarmRecordsOk() (*map[string]AlarmR
 
 // HasAlarmRecords returns a boolean if a field has been set.
 func (o *AlarmListSingleAllOfAttributes) HasAlarmRecords() bool {
-	if o != nil && !IsNil(o.AlarmRecords) {
+	if o != nil && !isNil(o.AlarmRecords) {
 		return true
 	}
 
@@ -215,19 +215,19 @@ func (o AlarmListSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o AlarmListSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AdministrativeState) {
+	if !isNil(o.AdministrativeState) {
 		toSerialize["administrativeState"] = o.AdministrativeState
 	}
-	if !IsNil(o.OperationalState) {
+	if !isNil(o.OperationalState) {
 		toSerialize["operationalState"] = o.OperationalState
 	}
-	if !IsNil(o.NumOfAlarmRecords) {
+	if !isNil(o.NumOfAlarmRecords) {
 		toSerialize["numOfAlarmRecords"] = o.NumOfAlarmRecords
 	}
-	if !IsNil(o.LastModification) {
+	if !isNil(o.LastModification) {
 		toSerialize["lastModification"] = o.LastModification
 	}
-	if !IsNil(o.AlarmRecords) {
+	if !isNil(o.AlarmRecords) {
 		toSerialize["alarmRecords"] = o.AlarmRecords
 	}
 	return toSerialize, nil

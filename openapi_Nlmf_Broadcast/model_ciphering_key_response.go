@@ -41,7 +41,7 @@ func NewCipheringKeyResponseWithDefaults() *CipheringKeyResponse {
 
 // GetCipheringDataReport returns the CipheringDataReport field value if set, zero value otherwise.
 func (o *CipheringKeyResponse) GetCipheringDataReport() []CipheringSetReport {
-	if o == nil || IsNil(o.CipheringDataReport) {
+	if o == nil || isNil(o.CipheringDataReport) {
 		var ret []CipheringSetReport
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *CipheringKeyResponse) GetCipheringDataReport() []CipheringSetReport {
 // GetCipheringDataReportOk returns a tuple with the CipheringDataReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipheringKeyResponse) GetCipheringDataReportOk() ([]CipheringSetReport, bool) {
-	if o == nil || IsNil(o.CipheringDataReport) {
+	if o == nil || isNil(o.CipheringDataReport) {
 		return nil, false
 	}
 	return o.CipheringDataReport, true
@@ -59,7 +59,7 @@ func (o *CipheringKeyResponse) GetCipheringDataReportOk() ([]CipheringSetReport,
 
 // HasCipheringDataReport returns a boolean if a field has been set.
 func (o *CipheringKeyResponse) HasCipheringDataReport() bool {
-	if o != nil && !IsNil(o.CipheringDataReport) {
+	if o != nil && !isNil(o.CipheringDataReport) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o CipheringKeyResponse) MarshalJSON() ([]byte, error) {
 
 func (o CipheringKeyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CipheringDataReport) {
+	if !isNil(o.CipheringDataReport) {
 		toSerialize["cipheringDataReport"] = o.CipheringDataReport
 	}
 	return toSerialize, nil

@@ -94,7 +94,7 @@ func (o *MessageDeliveryAck) SetMsgId(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *MessageDeliveryAck) GetStatus() DeliveryStatus {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret DeliveryStatus
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *MessageDeliveryAck) GetStatus() DeliveryStatus {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageDeliveryAck) GetStatusOk() (*DeliveryStatus, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -112,7 +112,7 @@ func (o *MessageDeliveryAck) GetStatusOk() (*DeliveryStatus, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *MessageDeliveryAck) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -126,7 +126,7 @@ func (o *MessageDeliveryAck) SetStatus(v DeliveryStatus) {
 
 // GetFailureCause returns the FailureCause field value if set, zero value otherwise.
 func (o *MessageDeliveryAck) GetFailureCause() string {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		var ret string
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *MessageDeliveryAck) GetFailureCause() string {
 // GetFailureCauseOk returns a tuple with the FailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageDeliveryAck) GetFailureCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.FailureCause) {
+	if o == nil || isNil(o.FailureCause) {
 		return nil, false
 	}
 	return o.FailureCause, true
@@ -144,7 +144,7 @@ func (o *MessageDeliveryAck) GetFailureCauseOk() (*string, bool) {
 
 // HasFailureCause returns a boolean if a field has been set.
 func (o *MessageDeliveryAck) HasFailureCause() bool {
-	if o != nil && !IsNil(o.FailureCause) {
+	if o != nil && !isNil(o.FailureCause) {
 		return true
 	}
 
@@ -168,10 +168,10 @@ func (o MessageDeliveryAck) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["oriAddr"] = o.OriAddr
 	toSerialize["msgId"] = o.MsgId
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.FailureCause) {
+	if !isNil(o.FailureCause) {
 		toSerialize["failureCause"] = o.FailureCause
 	}
 	return toSerialize, nil

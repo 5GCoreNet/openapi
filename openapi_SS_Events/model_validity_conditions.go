@@ -43,7 +43,7 @@ func NewValidityConditionsWithDefaults() *ValidityConditions {
 
 // GetLocArea returns the LocArea field value if set, zero value otherwise.
 func (o *ValidityConditions) GetLocArea() LocationArea5G {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ValidityConditions) GetLocArea() LocationArea5G {
 // GetLocAreaOk returns a tuple with the LocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidityConditions) GetLocAreaOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.LocArea) {
+	if o == nil || isNil(o.LocArea) {
 		return nil, false
 	}
 	return o.LocArea, true
@@ -61,7 +61,7 @@ func (o *ValidityConditions) GetLocAreaOk() (*LocationArea5G, bool) {
 
 // HasLocArea returns a boolean if a field has been set.
 func (o *ValidityConditions) HasLocArea() bool {
-	if o != nil && !IsNil(o.LocArea) {
+	if o != nil && !isNil(o.LocArea) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ValidityConditions) SetLocArea(v LocationArea5G) {
 
 // GetTmWdws returns the TmWdws field value if set, zero value otherwise.
 func (o *ValidityConditions) GetTmWdws() []TimeWindow {
-	if o == nil || IsNil(o.TmWdws) {
+	if o == nil || isNil(o.TmWdws) {
 		var ret []TimeWindow
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ValidityConditions) GetTmWdws() []TimeWindow {
 // GetTmWdwsOk returns a tuple with the TmWdws field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidityConditions) GetTmWdwsOk() ([]TimeWindow, bool) {
-	if o == nil || IsNil(o.TmWdws) {
+	if o == nil || isNil(o.TmWdws) {
 		return nil, false
 	}
 	return o.TmWdws, true
@@ -93,7 +93,7 @@ func (o *ValidityConditions) GetTmWdwsOk() ([]TimeWindow, bool) {
 
 // HasTmWdws returns a boolean if a field has been set.
 func (o *ValidityConditions) HasTmWdws() bool {
-	if o != nil && !IsNil(o.TmWdws) {
+	if o != nil && !isNil(o.TmWdws) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o ValidityConditions) MarshalJSON() ([]byte, error) {
 
 func (o ValidityConditions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LocArea) {
+	if !isNil(o.LocArea) {
 		toSerialize["locArea"] = o.LocArea
 	}
-	if !IsNil(o.TmWdws) {
+	if !isNil(o.TmWdws) {
 		toSerialize["tmWdws"] = o.TmWdws
 	}
 	return toSerialize, nil

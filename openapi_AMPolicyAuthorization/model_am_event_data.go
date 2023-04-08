@@ -75,7 +75,7 @@ func (o *AmEventData) SetEvent(v AmEvent) {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *AmEventData) GetImmRep() bool {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AmEventData) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventData) GetImmRepOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -93,7 +93,7 @@ func (o *AmEventData) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *AmEventData) HasImmRep() bool {
-	if o != nil && !IsNil(o.ImmRep) {
+	if o != nil && !isNil(o.ImmRep) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AmEventData) SetImmRep(v bool) {
 
 // GetNotifMethod returns the NotifMethod field value if set, zero value otherwise.
 func (o *AmEventData) GetNotifMethod() NotificationMethod {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		var ret NotificationMethod
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AmEventData) GetNotifMethod() NotificationMethod {
 // GetNotifMethodOk returns a tuple with the NotifMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventData) GetNotifMethodOk() (*NotificationMethod, bool) {
-	if o == nil || IsNil(o.NotifMethod) {
+	if o == nil || isNil(o.NotifMethod) {
 		return nil, false
 	}
 	return o.NotifMethod, true
@@ -125,7 +125,7 @@ func (o *AmEventData) GetNotifMethodOk() (*NotificationMethod, bool) {
 
 // HasNotifMethod returns a boolean if a field has been set.
 func (o *AmEventData) HasNotifMethod() bool {
-	if o != nil && !IsNil(o.NotifMethod) {
+	if o != nil && !isNil(o.NotifMethod) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *AmEventData) SetNotifMethod(v NotificationMethod) {
 
 // GetMaxReportNbr returns the MaxReportNbr field value if set, zero value otherwise.
 func (o *AmEventData) GetMaxReportNbr() int32 {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		var ret int32
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *AmEventData) GetMaxReportNbr() int32 {
 // GetMaxReportNbrOk returns a tuple with the MaxReportNbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventData) GetMaxReportNbrOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxReportNbr) {
+	if o == nil || isNil(o.MaxReportNbr) {
 		return nil, false
 	}
 	return o.MaxReportNbr, true
@@ -157,7 +157,7 @@ func (o *AmEventData) GetMaxReportNbrOk() (*int32, bool) {
 
 // HasMaxReportNbr returns a boolean if a field has been set.
 func (o *AmEventData) HasMaxReportNbr() bool {
-	if o != nil && !IsNil(o.MaxReportNbr) {
+	if o != nil && !isNil(o.MaxReportNbr) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *AmEventData) SetMaxReportNbr(v int32) {
 
 // GetMonDur returns the MonDur field value if set, zero value otherwise.
 func (o *AmEventData) GetMonDur() time.Time {
-	if o == nil || IsNil(o.MonDur) {
+	if o == nil || isNil(o.MonDur) {
 		var ret time.Time
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *AmEventData) GetMonDur() time.Time {
 // GetMonDurOk returns a tuple with the MonDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventData) GetMonDurOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MonDur) {
+	if o == nil || isNil(o.MonDur) {
 		return nil, false
 	}
 	return o.MonDur, true
@@ -189,7 +189,7 @@ func (o *AmEventData) GetMonDurOk() (*time.Time, bool) {
 
 // HasMonDur returns a boolean if a field has been set.
 func (o *AmEventData) HasMonDur() bool {
-	if o != nil && !IsNil(o.MonDur) {
+	if o != nil && !isNil(o.MonDur) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *AmEventData) SetMonDur(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *AmEventData) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *AmEventData) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventData) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -221,7 +221,7 @@ func (o *AmEventData) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *AmEventData) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -244,19 +244,19 @@ func (o AmEventData) MarshalJSON() ([]byte, error) {
 func (o AmEventData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.ImmRep) {
+	if !isNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !IsNil(o.NotifMethod) {
+	if !isNil(o.NotifMethod) {
 		toSerialize["notifMethod"] = o.NotifMethod
 	}
-	if !IsNil(o.MaxReportNbr) {
+	if !isNil(o.MaxReportNbr) {
 		toSerialize["maxReportNbr"] = o.MaxReportNbr
 	}
-	if !IsNil(o.MonDur) {
+	if !isNil(o.MonDur) {
 		toSerialize["monDur"] = o.MonDur
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
 	return toSerialize, nil

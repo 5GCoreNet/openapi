@@ -71,7 +71,7 @@ func (o *UeContextTransferRspData) SetUeContext(v UeContext) {
 
 // GetUeRadioCapability returns the UeRadioCapability field value if set, zero value otherwise.
 func (o *UeContextTransferRspData) GetUeRadioCapability() N2InfoContent {
-	if o == nil || IsNil(o.UeRadioCapability) {
+	if o == nil || isNil(o.UeRadioCapability) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *UeContextTransferRspData) GetUeRadioCapability() N2InfoContent {
 // GetUeRadioCapabilityOk returns a tuple with the UeRadioCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferRspData) GetUeRadioCapabilityOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.UeRadioCapability) {
+	if o == nil || isNil(o.UeRadioCapability) {
 		return nil, false
 	}
 	return o.UeRadioCapability, true
@@ -89,7 +89,7 @@ func (o *UeContextTransferRspData) GetUeRadioCapabilityOk() (*N2InfoContent, boo
 
 // HasUeRadioCapability returns a boolean if a field has been set.
 func (o *UeContextTransferRspData) HasUeRadioCapability() bool {
-	if o != nil && !IsNil(o.UeRadioCapability) {
+	if o != nil && !isNil(o.UeRadioCapability) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *UeContextTransferRspData) SetUeRadioCapability(v N2InfoContent) {
 
 // GetUeRadioCapabilityForPaging returns the UeRadioCapabilityForPaging field value if set, zero value otherwise.
 func (o *UeContextTransferRspData) GetUeRadioCapabilityForPaging() N2InfoContent {
-	if o == nil || IsNil(o.UeRadioCapabilityForPaging) {
+	if o == nil || isNil(o.UeRadioCapabilityForPaging) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *UeContextTransferRspData) GetUeRadioCapabilityForPaging() N2InfoContent
 // GetUeRadioCapabilityForPagingOk returns a tuple with the UeRadioCapabilityForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferRspData) GetUeRadioCapabilityForPagingOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.UeRadioCapabilityForPaging) {
+	if o == nil || isNil(o.UeRadioCapabilityForPaging) {
 		return nil, false
 	}
 	return o.UeRadioCapabilityForPaging, true
@@ -121,7 +121,7 @@ func (o *UeContextTransferRspData) GetUeRadioCapabilityForPagingOk() (*N2InfoCon
 
 // HasUeRadioCapabilityForPaging returns a boolean if a field has been set.
 func (o *UeContextTransferRspData) HasUeRadioCapabilityForPaging() bool {
-	if o != nil && !IsNil(o.UeRadioCapabilityForPaging) {
+	if o != nil && !isNil(o.UeRadioCapabilityForPaging) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *UeContextTransferRspData) SetUeRadioCapabilityForPaging(v N2InfoContent
 
 // GetUeNbiotRadioCapability returns the UeNbiotRadioCapability field value if set, zero value otherwise.
 func (o *UeContextTransferRspData) GetUeNbiotRadioCapability() N2InfoContent {
-	if o == nil || IsNil(o.UeNbiotRadioCapability) {
+	if o == nil || isNil(o.UeNbiotRadioCapability) {
 		var ret N2InfoContent
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *UeContextTransferRspData) GetUeNbiotRadioCapability() N2InfoContent {
 // GetUeNbiotRadioCapabilityOk returns a tuple with the UeNbiotRadioCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferRspData) GetUeNbiotRadioCapabilityOk() (*N2InfoContent, bool) {
-	if o == nil || IsNil(o.UeNbiotRadioCapability) {
+	if o == nil || isNil(o.UeNbiotRadioCapability) {
 		return nil, false
 	}
 	return o.UeNbiotRadioCapability, true
@@ -153,7 +153,7 @@ func (o *UeContextTransferRspData) GetUeNbiotRadioCapabilityOk() (*N2InfoContent
 
 // HasUeNbiotRadioCapability returns a boolean if a field has been set.
 func (o *UeContextTransferRspData) HasUeNbiotRadioCapability() bool {
-	if o != nil && !IsNil(o.UeNbiotRadioCapability) {
+	if o != nil && !isNil(o.UeNbiotRadioCapability) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *UeContextTransferRspData) SetUeNbiotRadioCapability(v N2InfoContent) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextTransferRspData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *UeContextTransferRspData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextTransferRspData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -185,7 +185,7 @@ func (o *UeContextTransferRspData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextTransferRspData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -208,16 +208,16 @@ func (o UeContextTransferRspData) MarshalJSON() ([]byte, error) {
 func (o UeContextTransferRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueContext"] = o.UeContext
-	if !IsNil(o.UeRadioCapability) {
+	if !isNil(o.UeRadioCapability) {
 		toSerialize["ueRadioCapability"] = o.UeRadioCapability
 	}
-	if !IsNil(o.UeRadioCapabilityForPaging) {
+	if !isNil(o.UeRadioCapabilityForPaging) {
 		toSerialize["ueRadioCapabilityForPaging"] = o.UeRadioCapabilityForPaging
 	}
-	if !IsNil(o.UeNbiotRadioCapability) {
+	if !isNil(o.UeNbiotRadioCapability) {
 		toSerialize["ueNbiotRadioCapability"] = o.UeNbiotRadioCapability
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

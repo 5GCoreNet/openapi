@@ -95,7 +95,7 @@ func (o *SorAckInfo) SetSorSendingTime(v time.Time) {
 
 // GetMeSupportOfSorCmci returns the MeSupportOfSorCmci field value if set, zero value otherwise.
 func (o *SorAckInfo) GetMeSupportOfSorCmci() bool {
-	if o == nil || IsNil(o.MeSupportOfSorCmci) {
+	if o == nil || isNil(o.MeSupportOfSorCmci) {
 		var ret bool
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SorAckInfo) GetMeSupportOfSorCmci() bool {
 // GetMeSupportOfSorCmciOk returns a tuple with the MeSupportOfSorCmci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorAckInfo) GetMeSupportOfSorCmciOk() (*bool, bool) {
-	if o == nil || IsNil(o.MeSupportOfSorCmci) {
+	if o == nil || isNil(o.MeSupportOfSorCmci) {
 		return nil, false
 	}
 	return o.MeSupportOfSorCmci, true
@@ -113,7 +113,7 @@ func (o *SorAckInfo) GetMeSupportOfSorCmciOk() (*bool, bool) {
 
 // HasMeSupportOfSorCmci returns a boolean if a field has been set.
 func (o *SorAckInfo) HasMeSupportOfSorCmci() bool {
-	if o != nil && !IsNil(o.MeSupportOfSorCmci) {
+	if o != nil && !isNil(o.MeSupportOfSorCmci) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o SorAckInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sorAckStatus"] = o.SorAckStatus
 	toSerialize["sorSendingTime"] = o.SorSendingTime
-	if !IsNil(o.MeSupportOfSorCmci) {
+	if !isNil(o.MeSupportOfSorCmci) {
 		toSerialize["meSupportOfSorCmci"] = o.MeSupportOfSorCmci
 	}
 	return toSerialize, nil

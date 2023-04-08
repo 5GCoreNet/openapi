@@ -47,7 +47,7 @@ func NewMatchReportRespDataWithDefaults() *MatchReportRespData {
 
 // GetProseAppIdNames returns the ProseAppIdNames field value if set, zero value otherwise.
 func (o *MatchReportRespData) GetProseAppIdNames() []string {
-	if o == nil || IsNil(o.ProseAppIdNames) {
+	if o == nil || isNil(o.ProseAppIdNames) {
 		var ret []string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *MatchReportRespData) GetProseAppIdNames() []string {
 // GetProseAppIdNamesOk returns a tuple with the ProseAppIdNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchReportRespData) GetProseAppIdNamesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ProseAppIdNames) {
+	if o == nil || isNil(o.ProseAppIdNames) {
 		return nil, false
 	}
 	return o.ProseAppIdNames, true
@@ -65,7 +65,7 @@ func (o *MatchReportRespData) GetProseAppIdNamesOk() ([]string, bool) {
 
 // HasProseAppIdNames returns a boolean if a field has been set.
 func (o *MatchReportRespData) HasProseAppIdNames() bool {
-	if o != nil && !IsNil(o.ProseAppIdNames) {
+	if o != nil && !isNil(o.ProseAppIdNames) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *MatchReportRespData) SetProseAppIdNames(v []string) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *MatchReportRespData) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *MatchReportRespData) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchReportRespData) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -97,7 +97,7 @@ func (o *MatchReportRespData) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *MatchReportRespData) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *MatchReportRespData) SetValidityTime(v time.Time) {
 
 // GetMetaData returns the MetaData field value if set, zero value otherwise.
 func (o *MatchReportRespData) GetMetaData() string {
-	if o == nil || IsNil(o.MetaData) {
+	if o == nil || isNil(o.MetaData) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *MatchReportRespData) GetMetaData() string {
 // GetMetaDataOk returns a tuple with the MetaData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchReportRespData) GetMetaDataOk() (*string, bool) {
-	if o == nil || IsNil(o.MetaData) {
+	if o == nil || isNil(o.MetaData) {
 		return nil, false
 	}
 	return o.MetaData, true
@@ -129,7 +129,7 @@ func (o *MatchReportRespData) GetMetaDataOk() (*string, bool) {
 
 // HasMetaData returns a boolean if a field has been set.
 func (o *MatchReportRespData) HasMetaData() bool {
-	if o != nil && !IsNil(o.MetaData) {
+	if o != nil && !isNil(o.MetaData) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *MatchReportRespData) SetMetaData(v string) {
 
 // GetMetaDataIndexMasks returns the MetaDataIndexMasks field value if set, zero value otherwise.
 func (o *MatchReportRespData) GetMetaDataIndexMasks() []string {
-	if o == nil || IsNil(o.MetaDataIndexMasks) {
+	if o == nil || isNil(o.MetaDataIndexMasks) {
 		var ret []string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *MatchReportRespData) GetMetaDataIndexMasks() []string {
 // GetMetaDataIndexMasksOk returns a tuple with the MetaDataIndexMasks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MatchReportRespData) GetMetaDataIndexMasksOk() ([]string, bool) {
-	if o == nil || IsNil(o.MetaDataIndexMasks) {
+	if o == nil || isNil(o.MetaDataIndexMasks) {
 		return nil, false
 	}
 	return o.MetaDataIndexMasks, true
@@ -161,7 +161,7 @@ func (o *MatchReportRespData) GetMetaDataIndexMasksOk() ([]string, bool) {
 
 // HasMetaDataIndexMasks returns a boolean if a field has been set.
 func (o *MatchReportRespData) HasMetaDataIndexMasks() bool {
-	if o != nil && !IsNil(o.MetaDataIndexMasks) {
+	if o != nil && !isNil(o.MetaDataIndexMasks) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o MatchReportRespData) MarshalJSON() ([]byte, error) {
 
 func (o MatchReportRespData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ProseAppIdNames) {
+	if !isNil(o.ProseAppIdNames) {
 		toSerialize["proseAppIdNames"] = o.ProseAppIdNames
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.MetaData) {
+	if !isNil(o.MetaData) {
 		toSerialize["metaData"] = o.MetaData
 	}
-	if !IsNil(o.MetaDataIndexMasks) {
+	if !isNil(o.MetaDataIndexMasks) {
 		toSerialize["metaDataIndexMasks"] = o.MetaDataIndexMasks
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // EpsNasCipheringAlgorithm Indicates the supported EPS NAS Ciphering Algorithm
 type EpsNasCipheringAlgorithm struct {
-	string *string
+	EpsNasCipheringAlgorithmAnyOf *EpsNasCipheringAlgorithmAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *EpsNasCipheringAlgorithm) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into EpsNasCipheringAlgorithmAnyOf
+	err = json.Unmarshal(data, &dst.EpsNasCipheringAlgorithmAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonEpsNasCipheringAlgorithmAnyOf, _ := json.Marshal(dst.EpsNasCipheringAlgorithmAnyOf)
+		if string(jsonEpsNasCipheringAlgorithmAnyOf) == "{}" { // empty struct
+			dst.EpsNasCipheringAlgorithmAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.EpsNasCipheringAlgorithmAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.EpsNasCipheringAlgorithmAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(EpsNasCipheringAlgorithm)")
@@ -41,8 +55,12 @@ func (dst *EpsNasCipheringAlgorithm) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *EpsNasCipheringAlgorithm) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.EpsNasCipheringAlgorithmAnyOf != nil {
+		return json.Marshal(&src.EpsNasCipheringAlgorithmAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

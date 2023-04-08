@@ -42,7 +42,7 @@ func NewMDAOutputPerMDATypeWithDefaults() *MDAOutputPerMDAType {
 
 // GetMDAType returns the MDAType field value if set, zero value otherwise.
 func (o *MDAOutputPerMDAType) GetMDAType() string {
-	if o == nil || IsNil(o.MDAType) {
+	if o == nil || isNil(o.MDAType) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MDAOutputPerMDAType) GetMDAType() string {
 // GetMDATypeOk returns a tuple with the MDAType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputPerMDAType) GetMDATypeOk() (*string, bool) {
-	if o == nil || IsNil(o.MDAType) {
+	if o == nil || isNil(o.MDAType) {
 		return nil, false
 	}
 	return o.MDAType, true
@@ -60,7 +60,7 @@ func (o *MDAOutputPerMDAType) GetMDATypeOk() (*string, bool) {
 
 // HasMDAType returns a boolean if a field has been set.
 func (o *MDAOutputPerMDAType) HasMDAType() bool {
-	if o != nil && !IsNil(o.MDAType) {
+	if o != nil && !isNil(o.MDAType) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MDAOutputPerMDAType) SetMDAType(v string) {
 
 // GetMDAOutputIEFilters returns the MDAOutputIEFilters field value if set, zero value otherwise.
 func (o *MDAOutputPerMDAType) GetMDAOutputIEFilters() []MDAOutputIEFilter {
-	if o == nil || IsNil(o.MDAOutputIEFilters) {
+	if o == nil || isNil(o.MDAOutputIEFilters) {
 		var ret []MDAOutputIEFilter
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MDAOutputPerMDAType) GetMDAOutputIEFilters() []MDAOutputIEFilter {
 // GetMDAOutputIEFiltersOk returns a tuple with the MDAOutputIEFilters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputPerMDAType) GetMDAOutputIEFiltersOk() ([]MDAOutputIEFilter, bool) {
-	if o == nil || IsNil(o.MDAOutputIEFilters) {
+	if o == nil || isNil(o.MDAOutputIEFilters) {
 		return nil, false
 	}
 	return o.MDAOutputIEFilters, true
@@ -92,7 +92,7 @@ func (o *MDAOutputPerMDAType) GetMDAOutputIEFiltersOk() ([]MDAOutputIEFilter, bo
 
 // HasMDAOutputIEFilters returns a boolean if a field has been set.
 func (o *MDAOutputPerMDAType) HasMDAOutputIEFilters() bool {
-	if o != nil && !IsNil(o.MDAOutputIEFilters) {
+	if o != nil && !isNil(o.MDAOutputIEFilters) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o MDAOutputPerMDAType) MarshalJSON() ([]byte, error) {
 
 func (o MDAOutputPerMDAType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MDAType) {
+	if !isNil(o.MDAType) {
 		toSerialize["mDAType"] = o.MDAType
 	}
-	if !IsNil(o.MDAOutputIEFilters) {
+	if !isNil(o.MDAOutputIEFilters) {
 		toSerialize["mDAOutputIEFilters"] = o.MDAOutputIEFilters
 	}
 	return toSerialize, nil

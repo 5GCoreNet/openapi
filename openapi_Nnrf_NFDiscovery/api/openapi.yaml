@@ -27677,85 +27677,17 @@ components:
       type: object
     NoProfileMatchReason:
       anyOf:
-      - enum:
-        - REQUESTER_PLMN_NOT_ALLOWED
-        - TARGET_NF_SUSPENDED
-        - TARGET_NF_UNDISCOVERABLE
-        - QUERY_PARAMS_COMBINATION_NO_MATCH
-        - UNSPECIFIED
-        type: string
+      - $ref: '#/components/schemas/NoProfileMatchReason_anyOf'
       - type: string
       description: No Profile Match Reason
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     CollocatedNfType:
       anyOf:
-      - enum:
-        - UPF
-        - SMF
-        - MB_UPF
-        - MB_SMF
-        type: string
+      - $ref: '#/components/schemas/CollocatedNfType_anyOf'
       - type: string
       description: NF types for a collocated NF
     NfInstanceId:
@@ -27766,127 +27698,7 @@ components:
       type: string
     ServiceName:
       anyOf:
-      - enum:
-        - nnrf-nfm
-        - nnrf-disc
-        - nnrf-oauth2
-        - nudm-sdm
-        - nudm-uecm
-        - nudm-ueau
-        - nudm-ee
-        - nudm-pp
-        - nudm-niddau
-        - nudm-mt
-        - nudm-ssau
-        - nudm-rsds
-        - namf-comm
-        - namf-evts
-        - namf-mt
-        - namf-loc
-        - namf-mbs-comm
-        - namf-mbs-bc
-        - nsmf-pdusession
-        - nsmf-event-exposure
-        - nsmf-nidd
-        - nausf-auth
-        - nausf-sorprotection
-        - nausf-upuprotection
-        - nnef-pfdmanagement
-        - nnef-smcontext
-        - nnef-eventexposure
-        - nnef-eas-deployment-info
-        - 3gpp-cp-parameter-provisioning
-        - 3gpp-device-triggering
-        - 3gpp-bdt
-        - 3gpp-traffic-influence
-        - 3gpp-chargeable-party
-        - 3gpp-as-session-with-qos
-        - 3gpp-msisdn-less-mo-sms
-        - 3gpp-service-parameter
-        - 3gpp-monitoring-event
-        - 3gpp-nidd-configuration-trigger
-        - 3gpp-nidd
-        - 3gpp-analyticsexposure
-        - 3gpp-racs-parameter-provisioning
-        - 3gpp-ecr-control
-        - 3gpp-applying-bdt-policy
-        - 3gpp-mo-lcs-notify
-        - 3gpp-time-sync
-        - 3gpp-am-influence
-        - 3gpp-am-policyauthorization
-        - 3gpp-akma
-        - 3gpp-eas-deployment
-        - 3gpp-iptvconfiguration
-        - 3gpp-mbs-tmgi
-        - 3gpp-mbs-session
-        - 3gpp-authentication
-        - 3gpp-asti
-        - npcf-am-policy-control
-        - npcf-smpolicycontrol
-        - npcf-policyauthorization
-        - npcf-bdtpolicycontrol
-        - npcf-eventexposure
-        - npcf-ue-policy-control
-        - npcf-am-policyauthorization
-        - nsmsf-sms
-        - nnssf-nsselection
-        - nnssf-nssaiavailability
-        - nudr-dr
-        - nudr-group-id-map
-        - nlmf-loc
-        - n5g-eir-eic
-        - nbsf-management
-        - nchf-spendinglimitcontrol
-        - nchf-convergedcharging
-        - nchf-offlineonlycharging
-        - nnwdaf-eventssubscription
-        - nnwdaf-analyticsinfo
-        - nnwdaf-datamanagement
-        - nnwdaf-mlmodelprovision
-        - ngmlc-loc
-        - nucmf-provisioning
-        - nucmf-uecapabilitymanagement
-        - nhss-sdm
-        - nhss-uecm
-        - nhss-ueau
-        - nhss-ee
-        - nhss-ims-sdm
-        - nhss-ims-uecm
-        - nhss-ims-ueau
-        - nhss-gba-sdm
-        - nhss-gba-ueau
-        - nsepp-telescopic
-        - nsoraf-sor
-        - nspaf-secured-packet
-        - nudsf-dr
-        - nudsf-timer
-        - nnssaaf-nssaa
-        - nnssaaf-aiw
-        - naanf-akma
-        - n5gddnmf-discovery
-        - nmfaf-3dadm
-        - nmfaf-3cadm
-        - neasdf-dnscontext
-        - neasdf-baselinednspattern
-        - ndccf-dm
-        - ndccf-cm
-        - nnsacf-nsac
-        - nnsacf-slice-ee
-        - nmbsmf-tmgi
-        - nmbsmf-mbssession
-        - nadrf-dm
-        - nbsp-gba
-        - ntsctsf-time-sync
-        - ntsctsf-qos-tscai
-        - ntsctsf-asti
-        - npkmf-keyreq
-        - nmnpf-npstatus
-        - niwmsc-smservice
-        - nmbsf-mbsuserserv
-        - nmbsf-mbsuserdataing
-        - nmbstf-distsession
-        - npanf-prosekey
-        type: string
+      - $ref: '#/components/schemas/ServiceName_anyOf'
       - type: string
       description: Service names known to NRF
     Fqdn:
@@ -28255,24 +28067,7 @@ components:
       type: object
     DataSetId:
       anyOf:
-      - enum:
-        - SUBSCRIPTION
-        - POLICY
-        - EXPOSURE
-        - APPLICATION
-        - A_PFD
-        - A_AFTI
-        - A_IPTV
-        - A_BDT
-        - A_SPD
-        - A_EASD
-        - A_AMI
-        - P_UE
-        - P_SCD
-        - P_BDT
-        - P_PLMNUE
-        - P_NSSCD
-        type: string
+      - $ref: '#/components/schemas/DataSetId_anyOf'
       - type: string
       description: Types of data sets and subsets stored in UDR
     NfGroupId:
@@ -28284,35 +28079,13 @@ components:
       type: string
     PduSessionType:
       anyOf:
-      - enum:
-        - IPV4
-        - IPV6
-        - IPV4V6
-        - UNSTRUCTURED
-        - ETHERNET
-        type: string
+      - $ref: '#/components/schemas/PduSessionType_anyOf'
       - type: string
       description: "PduSessionType indicates the type of a PDU session. It shall comply\
         \ with the provisions defined in table 5.4.3.3-1. \n"
     EventId:
       anyOf:
-      - enum:
-        - LOAD_LEVEL_INFORMATION
-        - NETWORK_PERFORMANCE
-        - NF_LOAD
-        - SERVICE_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMMUNICATION
-        - QOS_SUSTAINABILITY
-        - ABNORMAL_BEHAVIOUR
-        - USER_DATA_CONGESTION
-        - NSI_LOAD_LEVEL
-        - SM_CONGESTION
-        - DISPERSION
-        - RED_TRANS_EXP
-        - WLAN_PERFORMANCE
-        - DN_PERFORMANCE
-        type: string
+      - $ref: '#/components/schemas/EventId_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -28335,23 +28108,7 @@ components:
         - DN_PERFORMANCE: Represents the analytics of DN performance.
     NwdafEvent:
       anyOf:
-      - enum:
-        - SLICE_LOAD_LEVEL
-        - NETWORK_PERFORMANCE
-        - NF_LOAD
-        - SERVICE_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMMUNICATION
-        - QOS_SUSTAINABILITY
-        - ABNORMAL_BEHAVIOUR
-        - USER_DATA_CONGESTION
-        - NSI_LOAD_LEVEL
-        - DN_PERFORMANCE
-        - DISPERSION
-        - RED_TRANS_EXP
-        - WLAN_PERFORMANCE
-        - SM_CONGESTION
-        type: string
+      - $ref: '#/components/schemas/NwdafEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -28398,18 +28155,7 @@ components:
       type: object
     LocalityType:
       anyOf:
-      - enum:
-        - DATA_CENTER
-        - CITY
-        - COUNTY
-        - DISTRICT
-        - STATE
-        - CANTON
-        - REGION
-        - PROVINCE
-        - PREFECTURE
-        - COUNTRY
-        type: string
+      - $ref: '#/components/schemas/LocalityType_anyOf'
       - type: string
       description: "Type of locality description. An operator may define custom locality\
         \ type values other  than those listed in this enumeration. \n"
@@ -28523,16 +28269,7 @@ components:
       type: object
     ExternalClientType:
       anyOf:
-      - enum:
-        - EMERGENCY_SERVICES
-        - VALUE_ADDED_SERVICES
-        - PLMN_OPERATOR_SERVICES
-        - LAWFUL_INTERCEPT_SERVICES
-        - PLMN_OPERATOR_BROADCAST_SERVICES
-        - PLMN_OPERATOR_OM
-        - PLMN_OPERATOR_ANONYMOUS_STATISTICS
-        - PLMN_OPERATOR_TARGET_MS_SERVICE_SUPPORT
-        type: string
+      - $ref: '#/components/schemas/ExternalClientType_anyOf'
       - type: string
       description: Indicates types of External Clients.
     LMFIdentification:
@@ -28540,36 +28277,12 @@ components:
       type: string
     AnNodeType:
       anyOf:
-      - enum:
-        - GNB
-        - NG_ENB
-        type: string
+      - $ref: '#/components/schemas/AnNodeType_anyOf'
       - type: string
       description: "Access Network Node Type (gNB, ng-eNB...)"
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     AfEventExposureData:
@@ -28745,47 +28458,18 @@ components:
       type: string
     NotificationType:
       anyOf:
-      - enum:
-        - N1_MESSAGES
-        - N2_INFORMATION
-        - LOCATION_NOTIFICATION
-        - DATA_REMOVAL_NOTIFICATION
-        - DATA_CHANGE_NOTIFICATION
-        - LOCATION_UPDATE_NOTIFICATION
-        - NSSAA_REAUTH_NOTIFICATION
-        - NSSAA_REVOC_NOTIFICATION
-        - MATCH_INFO_NOTIFICATION
-        - DATA_RESTORATION_NOTIFICATION
-        - TSCTS_NOTIFICATION
-        - LCS_KEY_DELIVERY_NOTIFICATION
-        type: string
+      - $ref: '#/components/schemas/NotificationType_anyOf'
       - type: string
       description: |
         Types of notifications used in Default Notification URIs in the NF Profile of an NF Instance
     N1MessageClass:
       anyOf:
-      - enum:
-        - 5GMM
-        - SM
-        - LPP
-        - SMS
-        - UPDP
-        - LCS
-        type: string
+      - $ref: '#/components/schemas/N1MessageClass_anyOf'
       - type: string
       description: Enumeration for N1 Message Class
     N2InformationClass:
       anyOf:
-      - enum:
-        - SM
-        - NRPPa
-        - PWS
-        - PWS-BCAL
-        - PWS-RF
-        - RAN
-        - V2X
-        - PROSE
-        type: string
+      - $ref: '#/components/schemas/N2InformationClass_anyOf'
       - type: string
       description: Enumeration for N2 Information Class
     VendorSpecificFeature:
@@ -28995,18 +28679,7 @@ components:
       type: integer
     N32Purpose:
       anyOf:
-      - enum:
-        - ROAMING
-        - INTER_PLMN_MOBILITY
-        - SMS_INTERCONNECT
-        - ROAMING_TEST
-        - INTER_PLMN_MOBILITY_TEST
-        - SMS_INTERCONNECT_TEST
-        - SNPN_INTERCONNECT
-        - SNPN_INTERCONNECT_TEST
-        - DISASTER_ROAMING
-        - DISASTER_ROAMING_TEST
-        type: string
+      - $ref: '#/components/schemas/N32Purpose_anyOf'
       - type: string
       description: Usage purpose of establishing N32 connectivity
     RedirectResponse:
@@ -29092,11 +28765,7 @@ components:
       type: integer
     NFStatus:
       anyOf:
-      - enum:
-        - REGISTERED
-        - SUSPENDED
-        - UNDISCOVERABLE
-        type: string
+      - $ref: '#/components/schemas/NFStatus_anyOf'
       - type: string
       description: Status of a given NF Instance stored in NRF
     CollocatedNfInstance:
@@ -30320,16 +29989,7 @@ components:
       type: object
     UPInterfaceType:
       anyOf:
-      - enum:
-        - N3
-        - N6
-        - N9
-        - DATA_FORWARDING
-        - N3MB
-        - N6MB
-        - N19MB
-        - NMB9
-        type: string
+      - $ref: '#/components/schemas/UPInterfaceType_anyOf'
       - type: string
       description: Types of User-Plane interfaces of the UPF
     PcfInfo:
@@ -31552,26 +31212,18 @@ components:
       type: object
     TransportProtocol:
       anyOf:
-      - enum:
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - type: string
       description: Types of transport protocol used in a given IP endpoint of an NF
         Service Instance
     IpReachability:
       anyOf:
-      - enum:
-        - IPV4
-        - IPV6
-        - IPV4V6
-        type: string
+      - $ref: '#/components/schemas/IpReachability_anyOf'
       - type: string
       description: Indicates the type(s) of IP addresses reachable via an SCP
     ScpCapability:
       anyOf:
-      - enum:
-        - INDIRECT_COM_WITH_DELEG_DISC
-        type: string
+      - $ref: '#/components/schemas/ScpCapability_anyOf'
       - type: string
       description: Indicates the capabilities supported by an SCP
     SeppInfo:
@@ -32718,39 +32370,18 @@ components:
       type: object
     UriScheme:
       anyOf:
-      - enum:
-        - http
-        - https
-        type: string
+      - $ref: '#/components/schemas/UriScheme_anyOf'
       - type: string
       description: HTTP and HTTPS URI scheme.
     NFServiceStatus:
       anyOf:
-      - enum:
-        - REGISTERED
-        - SUSPENDED
-        - UNDISCOVERABLE
-        type: string
+      - $ref: '#/components/schemas/NFStatus_anyOf'
       - type: string
       description: Status of a given NF Service Instance of an NF Instance stored
         in NRF
     AfEvent:
       anyOf:
-      - enum:
-        - SVC_EXPERIENCE
-        - UE_MOBILITY
-        - UE_COMM
-        - EXCEPTIONS
-        - USER_DATA_CONGESTION
-        - PERF_DATA
-        - DISPERSION
-        - COLLECTIVE_BEHAVIOUR
-        - MS_QOE_METRICS
-        - MS_CONSUMPTION
-        - MS_NET_ASSIST_INVOCATION
-        - MS_DYN_POLICY_INVOCATION
-        - MS_ACCESS_ACTIVITY
-        type: string
+      - $ref: '#/components/schemas/AfEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -32915,17 +32546,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     MbsServiceAreaInfo:
@@ -33135,6 +32756,388 @@ components:
         \ Id shall appear last in the  string. \n"
       pattern: "^[A-Fa-f0-9]{9}$"
       type: string
+    NoProfileMatchReason_anyOf:
+      enum:
+      - REQUESTER_PLMN_NOT_ALLOWED
+      - TARGET_NF_SUSPENDED
+      - TARGET_NF_UNDISCOVERABLE
+      - QUERY_PARAMS_COMBINATION_NO_MATCH
+      - UNSPECIFIED
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
+    CollocatedNfType_anyOf:
+      enum:
+      - UPF
+      - SMF
+      - MB_UPF
+      - MB_SMF
+      type: string
+      example: null
+    ServiceName_anyOf:
+      enum:
+      - nnrf-nfm
+      - nnrf-disc
+      - nnrf-oauth2
+      - nudm-sdm
+      - nudm-uecm
+      - nudm-ueau
+      - nudm-ee
+      - nudm-pp
+      - nudm-niddau
+      - nudm-mt
+      - nudm-ssau
+      - nudm-rsds
+      - namf-comm
+      - namf-evts
+      - namf-mt
+      - namf-loc
+      - namf-mbs-comm
+      - namf-mbs-bc
+      - nsmf-pdusession
+      - nsmf-event-exposure
+      - nsmf-nidd
+      - nausf-auth
+      - nausf-sorprotection
+      - nausf-upuprotection
+      - nnef-pfdmanagement
+      - nnef-smcontext
+      - nnef-eventexposure
+      - nnef-eas-deployment-info
+      - 3gpp-cp-parameter-provisioning
+      - 3gpp-device-triggering
+      - 3gpp-bdt
+      - 3gpp-traffic-influence
+      - 3gpp-chargeable-party
+      - 3gpp-as-session-with-qos
+      - 3gpp-msisdn-less-mo-sms
+      - 3gpp-service-parameter
+      - 3gpp-monitoring-event
+      - 3gpp-nidd-configuration-trigger
+      - 3gpp-nidd
+      - 3gpp-analyticsexposure
+      - 3gpp-racs-parameter-provisioning
+      - 3gpp-ecr-control
+      - 3gpp-applying-bdt-policy
+      - 3gpp-mo-lcs-notify
+      - 3gpp-time-sync
+      - 3gpp-am-influence
+      - 3gpp-am-policyauthorization
+      - 3gpp-akma
+      - 3gpp-eas-deployment
+      - 3gpp-iptvconfiguration
+      - 3gpp-mbs-tmgi
+      - 3gpp-mbs-session
+      - 3gpp-authentication
+      - 3gpp-asti
+      - npcf-am-policy-control
+      - npcf-smpolicycontrol
+      - npcf-policyauthorization
+      - npcf-bdtpolicycontrol
+      - npcf-eventexposure
+      - npcf-ue-policy-control
+      - npcf-am-policyauthorization
+      - nsmsf-sms
+      - nnssf-nsselection
+      - nnssf-nssaiavailability
+      - nudr-dr
+      - nudr-group-id-map
+      - nlmf-loc
+      - n5g-eir-eic
+      - nbsf-management
+      - nchf-spendinglimitcontrol
+      - nchf-convergedcharging
+      - nchf-offlineonlycharging
+      - nnwdaf-eventssubscription
+      - nnwdaf-analyticsinfo
+      - nnwdaf-datamanagement
+      - nnwdaf-mlmodelprovision
+      - ngmlc-loc
+      - nucmf-provisioning
+      - nucmf-uecapabilitymanagement
+      - nhss-sdm
+      - nhss-uecm
+      - nhss-ueau
+      - nhss-ee
+      - nhss-ims-sdm
+      - nhss-ims-uecm
+      - nhss-ims-ueau
+      - nhss-gba-sdm
+      - nhss-gba-ueau
+      - nsepp-telescopic
+      - nsoraf-sor
+      - nspaf-secured-packet
+      - nudsf-dr
+      - nudsf-timer
+      - nnssaaf-nssaa
+      - nnssaaf-aiw
+      - naanf-akma
+      - n5gddnmf-discovery
+      - nmfaf-3dadm
+      - nmfaf-3cadm
+      - neasdf-dnscontext
+      - neasdf-baselinednspattern
+      - ndccf-dm
+      - ndccf-cm
+      - nnsacf-nsac
+      - nnsacf-slice-ee
+      - nmbsmf-tmgi
+      - nmbsmf-mbssession
+      - nadrf-dm
+      - nbsp-gba
+      - ntsctsf-time-sync
+      - ntsctsf-qos-tscai
+      - ntsctsf-asti
+      - npkmf-keyreq
+      - nmnpf-npstatus
+      - niwmsc-smservice
+      - nmbsf-mbsuserserv
+      - nmbsf-mbsuserdataing
+      - nmbstf-distsession
+      - npanf-prosekey
+      type: string
+      example: null
+    DataSetId_anyOf:
+      enum:
+      - SUBSCRIPTION
+      - POLICY
+      - EXPOSURE
+      - APPLICATION
+      - A_PFD
+      - A_AFTI
+      - A_IPTV
+      - A_BDT
+      - A_SPD
+      - A_EASD
+      - A_AMI
+      - P_UE
+      - P_SCD
+      - P_BDT
+      - P_PLMNUE
+      - P_NSSCD
+      type: string
+      example: null
+    PduSessionType_anyOf:
+      enum:
+      - IPV4
+      - IPV6
+      - IPV4V6
+      - UNSTRUCTURED
+      - ETHERNET
+      type: string
+      example: null
+    EventId_anyOf:
+      enum:
+      - LOAD_LEVEL_INFORMATION
+      - NETWORK_PERFORMANCE
+      - NF_LOAD
+      - SERVICE_EXPERIENCE
+      - UE_MOBILITY
+      - UE_COMMUNICATION
+      - QOS_SUSTAINABILITY
+      - ABNORMAL_BEHAVIOUR
+      - USER_DATA_CONGESTION
+      - NSI_LOAD_LEVEL
+      - SM_CONGESTION
+      - DISPERSION
+      - RED_TRANS_EXP
+      - WLAN_PERFORMANCE
+      - DN_PERFORMANCE
+      type: string
+      example: null
+    NwdafEvent_anyOf:
+      enum:
+      - SLICE_LOAD_LEVEL
+      - NETWORK_PERFORMANCE
+      - NF_LOAD
+      - SERVICE_EXPERIENCE
+      - UE_MOBILITY
+      - UE_COMMUNICATION
+      - QOS_SUSTAINABILITY
+      - ABNORMAL_BEHAVIOUR
+      - USER_DATA_CONGESTION
+      - NSI_LOAD_LEVEL
+      - DN_PERFORMANCE
+      - DISPERSION
+      - RED_TRANS_EXP
+      - WLAN_PERFORMANCE
+      - SM_CONGESTION
+      type: string
+      example: null
+    LocalityType_anyOf:
+      enum:
+      - DATA_CENTER
+      - CITY
+      - COUNTY
+      - DISTRICT
+      - STATE
+      - CANTON
+      - REGION
+      - PROVINCE
+      - PREFECTURE
+      - COUNTRY
+      type: string
+      example: null
+    ExternalClientType_anyOf:
+      enum:
+      - EMERGENCY_SERVICES
+      - VALUE_ADDED_SERVICES
+      - PLMN_OPERATOR_SERVICES
+      - LAWFUL_INTERCEPT_SERVICES
+      - PLMN_OPERATOR_BROADCAST_SERVICES
+      - PLMN_OPERATOR_OM
+      - PLMN_OPERATOR_ANONYMOUS_STATISTICS
+      - PLMN_OPERATOR_TARGET_MS_SERVICE_SUPPORT
+      type: string
+      example: null
+    AnNodeType_anyOf:
+      enum:
+      - GNB
+      - NG_ENB
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    NotificationType_anyOf:
+      enum:
+      - N1_MESSAGES
+      - N2_INFORMATION
+      - LOCATION_NOTIFICATION
+      - DATA_REMOVAL_NOTIFICATION
+      - DATA_CHANGE_NOTIFICATION
+      - LOCATION_UPDATE_NOTIFICATION
+      - NSSAA_REAUTH_NOTIFICATION
+      - NSSAA_REVOC_NOTIFICATION
+      - MATCH_INFO_NOTIFICATION
+      - DATA_RESTORATION_NOTIFICATION
+      - TSCTS_NOTIFICATION
+      - LCS_KEY_DELIVERY_NOTIFICATION
+      type: string
+      example: null
+    N1MessageClass_anyOf:
+      enum:
+      - 5GMM
+      - SM
+      - LPP
+      - SMS
+      - UPDP
+      - LCS
+      type: string
+      example: null
+    N2InformationClass_anyOf:
+      enum:
+      - SM
+      - NRPPa
+      - PWS
+      - PWS-BCAL
+      - PWS-RF
+      - RAN
+      - V2X
+      - PROSE
+      type: string
+      example: null
+    N32Purpose_anyOf:
+      enum:
+      - ROAMING
+      - INTER_PLMN_MOBILITY
+      - SMS_INTERCONNECT
+      - ROAMING_TEST
+      - INTER_PLMN_MOBILITY_TEST
+      - SMS_INTERCONNECT_TEST
+      - SNPN_INTERCONNECT
+      - SNPN_INTERCONNECT_TEST
+      - DISASTER_ROAMING
+      - DISASTER_ROAMING_TEST
+      type: string
+      example: null
+    NFStatus_anyOf:
+      enum:
+      - REGISTERED
+      - SUSPENDED
+      - UNDISCOVERABLE
+      type: string
+      example: null
     DnnSmfInfoItem_dnn:
       anyOf:
       - $ref: '#/components/schemas/Dnn'
@@ -33143,6 +33146,71 @@ components:
       anyOf:
       - $ref: '#/components/schemas/Dnai'
       - $ref: '#/components/schemas/WildcardDnai'
+    UPInterfaceType_anyOf:
+      enum:
+      - N3
+      - N6
+      - N9
+      - DATA_FORWARDING
+      - N3MB
+      - N6MB
+      - N19MB
+      - NMB9
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - TCP
+      type: string
+      example: null
+    IpReachability_anyOf:
+      enum:
+      - IPV4
+      - IPV6
+      - IPV4V6
+      type: string
+      example: null
+    ScpCapability_anyOf:
+      enum:
+      - INDIRECT_COM_WITH_DELEG_DISC
+      type: string
+      example: null
+    UriScheme_anyOf:
+      enum:
+      - http
+      - https
+      type: string
+      example: null
+    AfEvent_anyOf:
+      enum:
+      - SVC_EXPERIENCE
+      - UE_MOBILITY
+      - UE_COMM
+      - EXCEPTIONS
+      - USER_DATA_CONGESTION
+      - PERF_DATA
+      - DISPERSION
+      - COLLECTIVE_BEHAVIOUR
+      - MS_QOE_METRICS
+      - MS_CONSUMPTION
+      - MS_NET_ASSIST_INVOCATION
+      - MS_DYN_POLICY_INVOCATION
+      - MS_ACCESS_ACTIVITY
+      type: string
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

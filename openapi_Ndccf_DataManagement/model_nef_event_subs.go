@@ -67,7 +67,7 @@ func (o *NefEventSubs) SetEvent(v NefEvent) {
 
 // GetEventFilter returns the EventFilter field value if set, zero value otherwise.
 func (o *NefEventSubs) GetEventFilter() NefEventFilter {
-	if o == nil || IsNil(o.EventFilter) {
+	if o == nil || isNil(o.EventFilter) {
 		var ret NefEventFilter
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NefEventSubs) GetEventFilter() NefEventFilter {
 // GetEventFilterOk returns a tuple with the EventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NefEventSubs) GetEventFilterOk() (*NefEventFilter, bool) {
-	if o == nil || IsNil(o.EventFilter) {
+	if o == nil || isNil(o.EventFilter) {
 		return nil, false
 	}
 	return o.EventFilter, true
@@ -85,7 +85,7 @@ func (o *NefEventSubs) GetEventFilterOk() (*NefEventFilter, bool) {
 
 // HasEventFilter returns a boolean if a field has been set.
 func (o *NefEventSubs) HasEventFilter() bool {
-	if o != nil && !IsNil(o.EventFilter) {
+	if o != nil && !isNil(o.EventFilter) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o NefEventSubs) MarshalJSON() ([]byte, error) {
 func (o NefEventSubs) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.EventFilter) {
+	if !isNil(o.EventFilter) {
 		toSerialize["eventFilter"] = o.EventFilter
 	}
 	return toSerialize, nil

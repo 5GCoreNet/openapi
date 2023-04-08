@@ -130,7 +130,7 @@ func (o *AmfInfo) SetGuamiList(v []Guami) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *AmfInfo) GetTaiList() []Tai {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret []Tai
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *AmfInfo) GetTaiList() []Tai {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfInfo) GetTaiListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -148,7 +148,7 @@ func (o *AmfInfo) GetTaiListOk() ([]Tai, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *AmfInfo) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *AmfInfo) SetTaiList(v []Tai) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *AmfInfo) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *AmfInfo) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -180,7 +180,7 @@ func (o *AmfInfo) GetTaiRangeListOk() ([]TaiRange, bool) {
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *AmfInfo) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *AmfInfo) SetTaiRangeList(v []TaiRange) {
 
 // GetBackupInfoAmfFailure returns the BackupInfoAmfFailure field value if set, zero value otherwise.
 func (o *AmfInfo) GetBackupInfoAmfFailure() []Guami {
-	if o == nil || IsNil(o.BackupInfoAmfFailure) {
+	if o == nil || isNil(o.BackupInfoAmfFailure) {
 		var ret []Guami
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *AmfInfo) GetBackupInfoAmfFailure() []Guami {
 // GetBackupInfoAmfFailureOk returns a tuple with the BackupInfoAmfFailure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfInfo) GetBackupInfoAmfFailureOk() ([]Guami, bool) {
-	if o == nil || IsNil(o.BackupInfoAmfFailure) {
+	if o == nil || isNil(o.BackupInfoAmfFailure) {
 		return nil, false
 	}
 	return o.BackupInfoAmfFailure, true
@@ -212,7 +212,7 @@ func (o *AmfInfo) GetBackupInfoAmfFailureOk() ([]Guami, bool) {
 
 // HasBackupInfoAmfFailure returns a boolean if a field has been set.
 func (o *AmfInfo) HasBackupInfoAmfFailure() bool {
-	if o != nil && !IsNil(o.BackupInfoAmfFailure) {
+	if o != nil && !isNil(o.BackupInfoAmfFailure) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *AmfInfo) SetBackupInfoAmfFailure(v []Guami) {
 
 // GetBackupInfoAmfRemoval returns the BackupInfoAmfRemoval field value if set, zero value otherwise.
 func (o *AmfInfo) GetBackupInfoAmfRemoval() []Guami {
-	if o == nil || IsNil(o.BackupInfoAmfRemoval) {
+	if o == nil || isNil(o.BackupInfoAmfRemoval) {
 		var ret []Guami
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *AmfInfo) GetBackupInfoAmfRemoval() []Guami {
 // GetBackupInfoAmfRemovalOk returns a tuple with the BackupInfoAmfRemoval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfInfo) GetBackupInfoAmfRemovalOk() ([]Guami, bool) {
-	if o == nil || IsNil(o.BackupInfoAmfRemoval) {
+	if o == nil || isNil(o.BackupInfoAmfRemoval) {
 		return nil, false
 	}
 	return o.BackupInfoAmfRemoval, true
@@ -244,7 +244,7 @@ func (o *AmfInfo) GetBackupInfoAmfRemovalOk() ([]Guami, bool) {
 
 // HasBackupInfoAmfRemoval returns a boolean if a field has been set.
 func (o *AmfInfo) HasBackupInfoAmfRemoval() bool {
-	if o != nil && !IsNil(o.BackupInfoAmfRemoval) {
+	if o != nil && !isNil(o.BackupInfoAmfRemoval) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *AmfInfo) SetBackupInfoAmfRemoval(v []Guami) {
 
 // GetN2InterfaceAmfInfo returns the N2InterfaceAmfInfo field value if set, zero value otherwise.
 func (o *AmfInfo) GetN2InterfaceAmfInfo() N2InterfaceAmfInfo {
-	if o == nil || IsNil(o.N2InterfaceAmfInfo) {
+	if o == nil || isNil(o.N2InterfaceAmfInfo) {
 		var ret N2InterfaceAmfInfo
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *AmfInfo) GetN2InterfaceAmfInfo() N2InterfaceAmfInfo {
 // GetN2InterfaceAmfInfoOk returns a tuple with the N2InterfaceAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfInfo) GetN2InterfaceAmfInfoOk() (*N2InterfaceAmfInfo, bool) {
-	if o == nil || IsNil(o.N2InterfaceAmfInfo) {
+	if o == nil || isNil(o.N2InterfaceAmfInfo) {
 		return nil, false
 	}
 	return o.N2InterfaceAmfInfo, true
@@ -276,7 +276,7 @@ func (o *AmfInfo) GetN2InterfaceAmfInfoOk() (*N2InterfaceAmfInfo, bool) {
 
 // HasN2InterfaceAmfInfo returns a boolean if a field has been set.
 func (o *AmfInfo) HasN2InterfaceAmfInfo() bool {
-	if o != nil && !IsNil(o.N2InterfaceAmfInfo) {
+	if o != nil && !isNil(o.N2InterfaceAmfInfo) {
 		return true
 	}
 
@@ -290,7 +290,7 @@ func (o *AmfInfo) SetN2InterfaceAmfInfo(v N2InterfaceAmfInfo) {
 
 // GetAmfOnboardingCapability returns the AmfOnboardingCapability field value if set, zero value otherwise.
 func (o *AmfInfo) GetAmfOnboardingCapability() bool {
-	if o == nil || IsNil(o.AmfOnboardingCapability) {
+	if o == nil || isNil(o.AmfOnboardingCapability) {
 		var ret bool
 		return ret
 	}
@@ -300,7 +300,7 @@ func (o *AmfInfo) GetAmfOnboardingCapability() bool {
 // GetAmfOnboardingCapabilityOk returns a tuple with the AmfOnboardingCapability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfInfo) GetAmfOnboardingCapabilityOk() (*bool, bool) {
-	if o == nil || IsNil(o.AmfOnboardingCapability) {
+	if o == nil || isNil(o.AmfOnboardingCapability) {
 		return nil, false
 	}
 	return o.AmfOnboardingCapability, true
@@ -308,7 +308,7 @@ func (o *AmfInfo) GetAmfOnboardingCapabilityOk() (*bool, bool) {
 
 // HasAmfOnboardingCapability returns a boolean if a field has been set.
 func (o *AmfInfo) HasAmfOnboardingCapability() bool {
-	if o != nil && !IsNil(o.AmfOnboardingCapability) {
+	if o != nil && !isNil(o.AmfOnboardingCapability) {
 		return true
 	}
 
@@ -333,22 +333,22 @@ func (o AmfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["amfSetId"] = o.AmfSetId
 	toSerialize["amfRegionId"] = o.AmfRegionId
 	toSerialize["guamiList"] = o.GuamiList
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.BackupInfoAmfFailure) {
+	if !isNil(o.BackupInfoAmfFailure) {
 		toSerialize["backupInfoAmfFailure"] = o.BackupInfoAmfFailure
 	}
-	if !IsNil(o.BackupInfoAmfRemoval) {
+	if !isNil(o.BackupInfoAmfRemoval) {
 		toSerialize["backupInfoAmfRemoval"] = o.BackupInfoAmfRemoval
 	}
-	if !IsNil(o.N2InterfaceAmfInfo) {
+	if !isNil(o.N2InterfaceAmfInfo) {
 		toSerialize["n2InterfaceAmfInfo"] = o.N2InterfaceAmfInfo
 	}
-	if !IsNil(o.AmfOnboardingCapability) {
+	if !isNil(o.AmfOnboardingCapability) {
 		toSerialize["amfOnboardingCapability"] = o.AmfOnboardingCapability
 	}
 	return toSerialize, nil

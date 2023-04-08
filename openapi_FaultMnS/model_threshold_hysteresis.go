@@ -67,7 +67,7 @@ func (o *ThresholdHysteresis) SetHigh(v ThresholdHysteresisHigh) {
 
 // GetLow returns the Low field value if set, zero value otherwise.
 func (o *ThresholdHysteresis) GetLow() float32 {
-	if o == nil || IsNil(o.Low) {
+	if o == nil || isNil(o.Low) {
 		var ret float32
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ThresholdHysteresis) GetLow() float32 {
 // GetLowOk returns a tuple with the Low field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdHysteresis) GetLowOk() (*float32, bool) {
-	if o == nil || IsNil(o.Low) {
+	if o == nil || isNil(o.Low) {
 		return nil, false
 	}
 	return o.Low, true
@@ -85,7 +85,7 @@ func (o *ThresholdHysteresis) GetLowOk() (*float32, bool) {
 
 // HasLow returns a boolean if a field has been set.
 func (o *ThresholdHysteresis) HasLow() bool {
-	if o != nil && !IsNil(o.Low) {
+	if o != nil && !isNil(o.Low) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ThresholdHysteresis) MarshalJSON() ([]byte, error) {
 func (o ThresholdHysteresis) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["high"] = o.High
-	if !IsNil(o.Low) {
+	if !isNil(o.Low) {
 		toSerialize["low"] = o.Low
 	}
 	return toSerialize, nil

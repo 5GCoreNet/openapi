@@ -127,7 +127,7 @@ func (o *AnnounceDiscDataForRestricted) SetValidityTime(v time.Time) {
 
 // GetProseRestrictedCode returns the ProseRestrictedCode field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForRestricted) GetProseRestrictedCode() string {
-	if o == nil || IsNil(o.ProseRestrictedCode) {
+	if o == nil || isNil(o.ProseRestrictedCode) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *AnnounceDiscDataForRestricted) GetProseRestrictedCode() string {
 // GetProseRestrictedCodeOk returns a tuple with the ProseRestrictedCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForRestricted) GetProseRestrictedCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseRestrictedCode) {
+	if o == nil || isNil(o.ProseRestrictedCode) {
 		return nil, false
 	}
 	return o.ProseRestrictedCode, true
@@ -145,7 +145,7 @@ func (o *AnnounceDiscDataForRestricted) GetProseRestrictedCodeOk() (*string, boo
 
 // HasProseRestrictedCode returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForRestricted) HasProseRestrictedCode() bool {
-	if o != nil && !IsNil(o.ProseRestrictedCode) {
+	if o != nil && !isNil(o.ProseRestrictedCode) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *AnnounceDiscDataForRestricted) SetProseRestrictedCode(v string) {
 
 // GetProseRestrictedPrefix returns the ProseRestrictedPrefix field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForRestricted) GetProseRestrictedPrefix() string {
-	if o == nil || IsNil(o.ProseRestrictedPrefix) {
+	if o == nil || isNil(o.ProseRestrictedPrefix) {
 		var ret string
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *AnnounceDiscDataForRestricted) GetProseRestrictedPrefix() string {
 // GetProseRestrictedPrefixOk returns a tuple with the ProseRestrictedPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForRestricted) GetProseRestrictedPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseRestrictedPrefix) {
+	if o == nil || isNil(o.ProseRestrictedPrefix) {
 		return nil, false
 	}
 	return o.ProseRestrictedPrefix, true
@@ -177,7 +177,7 @@ func (o *AnnounceDiscDataForRestricted) GetProseRestrictedPrefixOk() (*string, b
 
 // HasProseRestrictedPrefix returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForRestricted) HasProseRestrictedPrefix() bool {
-	if o != nil && !IsNil(o.ProseRestrictedPrefix) {
+	if o != nil && !isNil(o.ProseRestrictedPrefix) {
 		return true
 	}
 
@@ -191,7 +191,7 @@ func (o *AnnounceDiscDataForRestricted) SetProseRestrictedPrefix(v string) {
 
 // GetCodeSuffixPool returns the CodeSuffixPool field value if set, zero value otherwise.
 func (o *AnnounceDiscDataForRestricted) GetCodeSuffixPool() RestrictedCodeSuffixPool {
-	if o == nil || IsNil(o.CodeSuffixPool) {
+	if o == nil || isNil(o.CodeSuffixPool) {
 		var ret RestrictedCodeSuffixPool
 		return ret
 	}
@@ -201,7 +201,7 @@ func (o *AnnounceDiscDataForRestricted) GetCodeSuffixPool() RestrictedCodeSuffix
 // GetCodeSuffixPoolOk returns a tuple with the CodeSuffixPool field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceDiscDataForRestricted) GetCodeSuffixPoolOk() (*RestrictedCodeSuffixPool, bool) {
-	if o == nil || IsNil(o.CodeSuffixPool) {
+	if o == nil || isNil(o.CodeSuffixPool) {
 		return nil, false
 	}
 	return o.CodeSuffixPool, true
@@ -209,7 +209,7 @@ func (o *AnnounceDiscDataForRestricted) GetCodeSuffixPoolOk() (*RestrictedCodeSu
 
 // HasCodeSuffixPool returns a boolean if a field has been set.
 func (o *AnnounceDiscDataForRestricted) HasCodeSuffixPool() bool {
-	if o != nil && !IsNil(o.CodeSuffixPool) {
+	if o != nil && !isNil(o.CodeSuffixPool) {
 		return true
 	}
 
@@ -234,13 +234,13 @@ func (o AnnounceDiscDataForRestricted) ToMap() (map[string]interface{}, error) {
 	toSerialize["rpauid"] = o.Rpauid
 	toSerialize["appId"] = o.AppId
 	toSerialize["validityTime"] = o.ValidityTime
-	if !IsNil(o.ProseRestrictedCode) {
+	if !isNil(o.ProseRestrictedCode) {
 		toSerialize["proseRestrictedCode"] = o.ProseRestrictedCode
 	}
-	if !IsNil(o.ProseRestrictedPrefix) {
+	if !isNil(o.ProseRestrictedPrefix) {
 		toSerialize["proseRestrictedPrefix"] = o.ProseRestrictedPrefix
 	}
-	if !IsNil(o.CodeSuffixPool) {
+	if !isNil(o.CodeSuffixPool) {
 		toSerialize["codeSuffixPool"] = o.CodeSuffixPool
 	}
 	return toSerialize, nil

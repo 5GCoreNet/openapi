@@ -23,7 +23,7 @@ type GtpUPathQoSMonitoringControlSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *GtpUPathQoSMonitoringControlSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewGtpUPathQoSMonitoringControlSingle instantiates a new GtpUPathQoSMonitoringControlSingle object
@@ -72,7 +72,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *GtpUPathQoSMonitoringControlSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -90,7 +90,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetObjectClassOk() (*string, bool) 
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *GtpUPathQoSMonitoringControlSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -122,7 +122,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetObjectInstanceOk() (*string, boo
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *GtpUPathQoSMonitoringControlSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetVsDataContainer() []VsDataContai
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -154,7 +154,7 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetVsDataContainerOk() ([]VsDataCon
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -167,9 +167,9 @@ func (o *GtpUPathQoSMonitoringControlSingle) SetVsDataContainer(v []VsDataContai
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *GtpUPathQoSMonitoringControlSingle) GetAttributes() GtpUPathQoSMonitoringControlSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret GtpUPathQoSMonitoringControlSingleAllOfAttributes
+func (o *GtpUPathQoSMonitoringControlSingle) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -177,8 +177,8 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetAttributes() GtpUPathQoSMonitori
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GtpUPathQoSMonitoringControlSingle) GetAttributesOk() (*GtpUPathQoSMonitoringControlSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *GtpUPathQoSMonitoringControlSingle) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,15 +186,15 @@ func (o *GtpUPathQoSMonitoringControlSingle) GetAttributesOk() (*GtpUPathQoSMoni
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *GtpUPathQoSMonitoringControlSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given GtpUPathQoSMonitoringControlSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *GtpUPathQoSMonitoringControlSingle) SetAttributes(v GtpUPathQoSMonitoringControlSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *GtpUPathQoSMonitoringControlSingle) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -209,16 +209,16 @@ func (o GtpUPathQoSMonitoringControlSingle) MarshalJSON() ([]byte, error) {
 func (o GtpUPathQoSMonitoringControlSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

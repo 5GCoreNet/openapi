@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -10,6 +9,7 @@ client.go
 configuration.go
 docs/AMPolicyEventsSubscriptionApi.md
 docs/AmEvent.md
+docs/AmEventAnyOf.md
 docs/AmEventData.md
 docs/AmEventNotification.md
 docs/AmEventsNotification.md
@@ -37,6 +37,7 @@ docs/Local3dPointUncertaintyEllipsoid.md
 docs/Local3dPointUncertaintyEllipsoidAllOf.md
 docs/LocalOrigin.md
 docs/NotificationMethod.md
+docs/NotificationMethodAnyOf.md
 docs/PduidInformation.md
 docs/PlmnIdNid.md
 docs/Point.md
@@ -55,6 +56,7 @@ docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/ServiceAreaCoverageInfo.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
 docs/WebsockNotifConfig.md
@@ -62,6 +64,7 @@ git_push.sh
 go.mod
 go.sum
 model_am_event.go
+model_am_event_any_of.go
 model_am_event_data.go
 model_am_event_notification.go
 model_am_events_notification.go
@@ -87,6 +90,7 @@ model_local3d_point_uncertainty_ellipsoid.go
 model_local3d_point_uncertainty_ellipsoid_all_of.go
 model_local_origin.go
 model_notification_method.go
+model_notification_method_any_of.go
 model_pduid_information.go
 model_plmn_id_nid.go
 model_point.go
@@ -105,6 +109,7 @@ model_problem_details.go
 model_relative_cartesian_location.go
 model_service_area_coverage_info.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go
 model_websock_notif_config.go

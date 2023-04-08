@@ -19,7 +19,7 @@ var _ MappedNullable = &MDAFunctionSingleAllOf{}
 
 // MDAFunctionSingleAllOf struct for MDAFunctionSingleAllOf
 type MDAFunctionSingleAllOf struct {
-	Attributes *MDAFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewMDAFunctionSingleAllOf instantiates a new MDAFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewMDAFunctionSingleAllOfWithDefaults() *MDAFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MDAFunctionSingleAllOf) GetAttributes() MDAFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret MDAFunctionSingleAllOfAttributes
+func (o *MDAFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *MDAFunctionSingleAllOf) GetAttributes() MDAFunctionSingleAllOfAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MDAFunctionSingleAllOf) GetAttributesOk() (*MDAFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *MDAFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *MDAFunctionSingleAllOf) GetAttributesOk() (*MDAFunctionSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MDAFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given MDAFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *MDAFunctionSingleAllOf) SetAttributes(v MDAFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *MDAFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o MDAFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MDAFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

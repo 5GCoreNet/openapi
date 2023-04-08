@@ -68,7 +68,7 @@ func (o *MbsSession) SetMbsSessionId(v MbsSessionId) {
 
 // GetMbsAreaSessions returns the MbsAreaSessions field value if set, zero value otherwise.
 func (o *MbsSession) GetMbsAreaSessions() map[string]MbsServiceAreaInfo {
-	if o == nil || IsNil(o.MbsAreaSessions) {
+	if o == nil || isNil(o.MbsAreaSessions) {
 		var ret map[string]MbsServiceAreaInfo
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *MbsSession) GetMbsAreaSessions() map[string]MbsServiceAreaInfo {
 // GetMbsAreaSessionsOk returns a tuple with the MbsAreaSessions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSession) GetMbsAreaSessionsOk() (*map[string]MbsServiceAreaInfo, bool) {
-	if o == nil || IsNil(o.MbsAreaSessions) {
+	if o == nil || isNil(o.MbsAreaSessions) {
 		return nil, false
 	}
 	return o.MbsAreaSessions, true
@@ -86,7 +86,7 @@ func (o *MbsSession) GetMbsAreaSessionsOk() (*map[string]MbsServiceAreaInfo, boo
 
 // HasMbsAreaSessions returns a boolean if a field has been set.
 func (o *MbsSession) HasMbsAreaSessions() bool {
-	if o != nil && !IsNil(o.MbsAreaSessions) {
+	if o != nil && !isNil(o.MbsAreaSessions) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o MbsSession) MarshalJSON() ([]byte, error) {
 func (o MbsSession) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !IsNil(o.MbsAreaSessions) {
+	if !isNil(o.MbsAreaSessions) {
 		toSerialize["mbsAreaSessions"] = o.MbsAreaSessions
 	}
 	return toSerialize, nil

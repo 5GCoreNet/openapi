@@ -71,7 +71,7 @@ func NewScscfRegistrationWithDefaults() *ScscfRegistration {
 
 // GetImpi returns the Impi field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetImpi() string {
-	if o == nil || IsNil(o.Impi) {
+	if o == nil || isNil(o.Impi) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ScscfRegistration) GetImpi() string {
 // GetImpiOk returns a tuple with the Impi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetImpiOk() (*string, bool) {
-	if o == nil || IsNil(o.Impi) {
+	if o == nil || isNil(o.Impi) {
 		return nil, false
 	}
 	return o.Impi, true
@@ -89,7 +89,7 @@ func (o *ScscfRegistration) GetImpiOk() (*string, bool) {
 
 // HasImpi returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasImpi() bool {
-	if o != nil && !IsNil(o.Impi) {
+	if o != nil && !isNil(o.Impi) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *ScscfRegistration) SetCscfServerName(v string) {
 
 // GetScscfInstanceId returns the ScscfInstanceId field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetScscfInstanceId() string {
-	if o == nil || IsNil(o.ScscfInstanceId) {
+	if o == nil || isNil(o.ScscfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *ScscfRegistration) GetScscfInstanceId() string {
 // GetScscfInstanceIdOk returns a tuple with the ScscfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetScscfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ScscfInstanceId) {
+	if o == nil || isNil(o.ScscfInstanceId) {
 		return nil, false
 	}
 	return o.ScscfInstanceId, true
@@ -169,7 +169,7 @@ func (o *ScscfRegistration) GetScscfInstanceIdOk() (*string, bool) {
 
 // HasScscfInstanceId returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasScscfInstanceId() bool {
-	if o != nil && !IsNil(o.ScscfInstanceId) {
+	if o != nil && !isNil(o.ScscfInstanceId) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *ScscfRegistration) SetScscfInstanceId(v string) {
 
 // GetDeregCallbackUri returns the DeregCallbackUri field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetDeregCallbackUri() string {
-	if o == nil || IsNil(o.DeregCallbackUri) {
+	if o == nil || isNil(o.DeregCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *ScscfRegistration) GetDeregCallbackUri() string {
 // GetDeregCallbackUriOk returns a tuple with the DeregCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetDeregCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.DeregCallbackUri) {
+	if o == nil || isNil(o.DeregCallbackUri) {
 		return nil, false
 	}
 	return o.DeregCallbackUri, true
@@ -201,7 +201,7 @@ func (o *ScscfRegistration) GetDeregCallbackUriOk() (*string, bool) {
 
 // HasDeregCallbackUri returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasDeregCallbackUri() bool {
-	if o != nil && !IsNil(o.DeregCallbackUri) {
+	if o != nil && !isNil(o.DeregCallbackUri) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *ScscfRegistration) SetDeregCallbackUri(v string) {
 
 // GetAssociatedImpis returns the AssociatedImpis field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetAssociatedImpis() []string {
-	if o == nil || IsNil(o.AssociatedImpis) {
+	if o == nil || isNil(o.AssociatedImpis) {
 		var ret []string
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *ScscfRegistration) GetAssociatedImpis() []string {
 // GetAssociatedImpisOk returns a tuple with the AssociatedImpis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetAssociatedImpisOk() ([]string, bool) {
-	if o == nil || IsNil(o.AssociatedImpis) {
+	if o == nil || isNil(o.AssociatedImpis) {
 		return nil, false
 	}
 	return o.AssociatedImpis, true
@@ -233,7 +233,7 @@ func (o *ScscfRegistration) GetAssociatedImpisOk() ([]string, bool) {
 
 // HasAssociatedImpis returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasAssociatedImpis() bool {
-	if o != nil && !IsNil(o.AssociatedImpis) {
+	if o != nil && !isNil(o.AssociatedImpis) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *ScscfRegistration) SetAssociatedImpis(v []string) {
 
 // GetAssociatedRegisteredImpis returns the AssociatedRegisteredImpis field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetAssociatedRegisteredImpis() []string {
-	if o == nil || IsNil(o.AssociatedRegisteredImpis) {
+	if o == nil || isNil(o.AssociatedRegisteredImpis) {
 		var ret []string
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *ScscfRegistration) GetAssociatedRegisteredImpis() []string {
 // GetAssociatedRegisteredImpisOk returns a tuple with the AssociatedRegisteredImpis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetAssociatedRegisteredImpisOk() ([]string, bool) {
-	if o == nil || IsNil(o.AssociatedRegisteredImpis) {
+	if o == nil || isNil(o.AssociatedRegisteredImpis) {
 		return nil, false
 	}
 	return o.AssociatedRegisteredImpis, true
@@ -265,7 +265,7 @@ func (o *ScscfRegistration) GetAssociatedRegisteredImpisOk() ([]string, bool) {
 
 // HasAssociatedRegisteredImpis returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasAssociatedRegisteredImpis() bool {
-	if o != nil && !IsNil(o.AssociatedRegisteredImpis) {
+	if o != nil && !isNil(o.AssociatedRegisteredImpis) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *ScscfRegistration) SetAssociatedRegisteredImpis(v []string) {
 
 // GetIrsImpus returns the IrsImpus field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetIrsImpus() []string {
-	if o == nil || IsNil(o.IrsImpus) {
+	if o == nil || isNil(o.IrsImpus) {
 		var ret []string
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *ScscfRegistration) GetIrsImpus() []string {
 // GetIrsImpusOk returns a tuple with the IrsImpus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetIrsImpusOk() ([]string, bool) {
-	if o == nil || IsNil(o.IrsImpus) {
+	if o == nil || isNil(o.IrsImpus) {
 		return nil, false
 	}
 	return o.IrsImpus, true
@@ -297,7 +297,7 @@ func (o *ScscfRegistration) GetIrsImpusOk() ([]string, bool) {
 
 // HasIrsImpus returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasIrsImpus() bool {
-	if o != nil && !IsNil(o.IrsImpus) {
+	if o != nil && !isNil(o.IrsImpus) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *ScscfRegistration) SetIrsImpus(v []string) {
 
 // GetWildcardedPui returns the WildcardedPui field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetWildcardedPui() string {
-	if o == nil || IsNil(o.WildcardedPui) {
+	if o == nil || isNil(o.WildcardedPui) {
 		var ret string
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *ScscfRegistration) GetWildcardedPui() string {
 // GetWildcardedPuiOk returns a tuple with the WildcardedPui field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetWildcardedPuiOk() (*string, bool) {
-	if o == nil || IsNil(o.WildcardedPui) {
+	if o == nil || isNil(o.WildcardedPui) {
 		return nil, false
 	}
 	return o.WildcardedPui, true
@@ -329,7 +329,7 @@ func (o *ScscfRegistration) GetWildcardedPuiOk() (*string, bool) {
 
 // HasWildcardedPui returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasWildcardedPui() bool {
-	if o != nil && !IsNil(o.WildcardedPui) {
+	if o != nil && !isNil(o.WildcardedPui) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *ScscfRegistration) SetWildcardedPui(v string) {
 
 // GetLooseRouteIndicator returns the LooseRouteIndicator field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetLooseRouteIndicator() LooseRouteIndication {
-	if o == nil || IsNil(o.LooseRouteIndicator) {
+	if o == nil || isNil(o.LooseRouteIndicator) {
 		var ret LooseRouteIndication
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *ScscfRegistration) GetLooseRouteIndicator() LooseRouteIndication {
 // GetLooseRouteIndicatorOk returns a tuple with the LooseRouteIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetLooseRouteIndicatorOk() (*LooseRouteIndication, bool) {
-	if o == nil || IsNil(o.LooseRouteIndicator) {
+	if o == nil || isNil(o.LooseRouteIndicator) {
 		return nil, false
 	}
 	return o.LooseRouteIndicator, true
@@ -361,7 +361,7 @@ func (o *ScscfRegistration) GetLooseRouteIndicatorOk() (*LooseRouteIndication, b
 
 // HasLooseRouteIndicator returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasLooseRouteIndicator() bool {
-	if o != nil && !IsNil(o.LooseRouteIndicator) {
+	if o != nil && !isNil(o.LooseRouteIndicator) {
 		return true
 	}
 
@@ -375,7 +375,7 @@ func (o *ScscfRegistration) SetLooseRouteIndicator(v LooseRouteIndication) {
 
 // GetWildcardedPsi returns the WildcardedPsi field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetWildcardedPsi() string {
-	if o == nil || IsNil(o.WildcardedPsi) {
+	if o == nil || isNil(o.WildcardedPsi) {
 		var ret string
 		return ret
 	}
@@ -385,7 +385,7 @@ func (o *ScscfRegistration) GetWildcardedPsi() string {
 // GetWildcardedPsiOk returns a tuple with the WildcardedPsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetWildcardedPsiOk() (*string, bool) {
-	if o == nil || IsNil(o.WildcardedPsi) {
+	if o == nil || isNil(o.WildcardedPsi) {
 		return nil, false
 	}
 	return o.WildcardedPsi, true
@@ -393,7 +393,7 @@ func (o *ScscfRegistration) GetWildcardedPsiOk() (*string, bool) {
 
 // HasWildcardedPsi returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasWildcardedPsi() bool {
-	if o != nil && !IsNil(o.WildcardedPsi) {
+	if o != nil && !isNil(o.WildcardedPsi) {
 		return true
 	}
 
@@ -407,7 +407,7 @@ func (o *ScscfRegistration) SetWildcardedPsi(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *ScscfRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -425,7 +425,7 @@ func (o *ScscfRegistration) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -439,7 +439,7 @@ func (o *ScscfRegistration) SetSupportedFeatures(v string) {
 
 // GetMultipleRegistrationIndicator returns the MultipleRegistrationIndicator field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetMultipleRegistrationIndicator() bool {
-	if o == nil || IsNil(o.MultipleRegistrationIndicator) {
+	if o == nil || isNil(o.MultipleRegistrationIndicator) {
 		var ret bool
 		return ret
 	}
@@ -449,7 +449,7 @@ func (o *ScscfRegistration) GetMultipleRegistrationIndicator() bool {
 // GetMultipleRegistrationIndicatorOk returns a tuple with the MultipleRegistrationIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetMultipleRegistrationIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.MultipleRegistrationIndicator) {
+	if o == nil || isNil(o.MultipleRegistrationIndicator) {
 		return nil, false
 	}
 	return o.MultipleRegistrationIndicator, true
@@ -457,7 +457,7 @@ func (o *ScscfRegistration) GetMultipleRegistrationIndicatorOk() (*bool, bool) {
 
 // HasMultipleRegistrationIndicator returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasMultipleRegistrationIndicator() bool {
-	if o != nil && !IsNil(o.MultipleRegistrationIndicator) {
+	if o != nil && !isNil(o.MultipleRegistrationIndicator) {
 		return true
 	}
 
@@ -471,7 +471,7 @@ func (o *ScscfRegistration) SetMultipleRegistrationIndicator(v bool) {
 
 // GetPcscfRestorationIndicator returns the PcscfRestorationIndicator field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetPcscfRestorationIndicator() bool {
-	if o == nil || IsNil(o.PcscfRestorationIndicator) {
+	if o == nil || isNil(o.PcscfRestorationIndicator) {
 		var ret bool
 		return ret
 	}
@@ -481,7 +481,7 @@ func (o *ScscfRegistration) GetPcscfRestorationIndicator() bool {
 // GetPcscfRestorationIndicatorOk returns a tuple with the PcscfRestorationIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetPcscfRestorationIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.PcscfRestorationIndicator) {
+	if o == nil || isNil(o.PcscfRestorationIndicator) {
 		return nil, false
 	}
 	return o.PcscfRestorationIndicator, true
@@ -489,7 +489,7 @@ func (o *ScscfRegistration) GetPcscfRestorationIndicatorOk() (*bool, bool) {
 
 // HasPcscfRestorationIndicator returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasPcscfRestorationIndicator() bool {
-	if o != nil && !IsNil(o.PcscfRestorationIndicator) {
+	if o != nil && !isNil(o.PcscfRestorationIndicator) {
 		return true
 	}
 
@@ -503,7 +503,7 @@ func (o *ScscfRegistration) SetPcscfRestorationIndicator(v bool) {
 
 // GetScscfReselectionIndicator returns the ScscfReselectionIndicator field value if set, zero value otherwise.
 func (o *ScscfRegistration) GetScscfReselectionIndicator() bool {
-	if o == nil || IsNil(o.ScscfReselectionIndicator) {
+	if o == nil || isNil(o.ScscfReselectionIndicator) {
 		var ret bool
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *ScscfRegistration) GetScscfReselectionIndicator() bool {
 // GetScscfReselectionIndicatorOk returns a tuple with the ScscfReselectionIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRegistration) GetScscfReselectionIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.ScscfReselectionIndicator) {
+	if o == nil || isNil(o.ScscfReselectionIndicator) {
 		return nil, false
 	}
 	return o.ScscfReselectionIndicator, true
@@ -521,7 +521,7 @@ func (o *ScscfRegistration) GetScscfReselectionIndicatorOk() (*bool, bool) {
 
 // HasScscfReselectionIndicator returns a boolean if a field has been set.
 func (o *ScscfRegistration) HasScscfReselectionIndicator() bool {
-	if o != nil && !IsNil(o.ScscfReselectionIndicator) {
+	if o != nil && !isNil(o.ScscfReselectionIndicator) {
 		return true
 	}
 
@@ -543,45 +543,45 @@ func (o ScscfRegistration) MarshalJSON() ([]byte, error) {
 
 func (o ScscfRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Impi) {
+	if !isNil(o.Impi) {
 		toSerialize["impi"] = o.Impi
 	}
 	toSerialize["imsRegistrationType"] = o.ImsRegistrationType
 	toSerialize["cscfServerName"] = o.CscfServerName
-	if !IsNil(o.ScscfInstanceId) {
+	if !isNil(o.ScscfInstanceId) {
 		toSerialize["scscfInstanceId"] = o.ScscfInstanceId
 	}
-	if !IsNil(o.DeregCallbackUri) {
+	if !isNil(o.DeregCallbackUri) {
 		toSerialize["deregCallbackUri"] = o.DeregCallbackUri
 	}
-	if !IsNil(o.AssociatedImpis) {
+	if !isNil(o.AssociatedImpis) {
 		toSerialize["associatedImpis"] = o.AssociatedImpis
 	}
-	if !IsNil(o.AssociatedRegisteredImpis) {
+	if !isNil(o.AssociatedRegisteredImpis) {
 		toSerialize["associatedRegisteredImpis"] = o.AssociatedRegisteredImpis
 	}
-	if !IsNil(o.IrsImpus) {
+	if !isNil(o.IrsImpus) {
 		toSerialize["irsImpus"] = o.IrsImpus
 	}
-	if !IsNil(o.WildcardedPui) {
+	if !isNil(o.WildcardedPui) {
 		toSerialize["wildcardedPui"] = o.WildcardedPui
 	}
-	if !IsNil(o.LooseRouteIndicator) {
+	if !isNil(o.LooseRouteIndicator) {
 		toSerialize["looseRouteIndicator"] = o.LooseRouteIndicator
 	}
-	if !IsNil(o.WildcardedPsi) {
+	if !isNil(o.WildcardedPsi) {
 		toSerialize["wildcardedPsi"] = o.WildcardedPsi
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.MultipleRegistrationIndicator) {
+	if !isNil(o.MultipleRegistrationIndicator) {
 		toSerialize["multipleRegistrationIndicator"] = o.MultipleRegistrationIndicator
 	}
-	if !IsNil(o.PcscfRestorationIndicator) {
+	if !isNil(o.PcscfRestorationIndicator) {
 		toSerialize["pcscfRestorationIndicator"] = o.PcscfRestorationIndicator
 	}
-	if !IsNil(o.ScscfReselectionIndicator) {
+	if !isNil(o.ScscfReselectionIndicator) {
 		toSerialize["scscfReselectionIndicator"] = o.ScscfReselectionIndicator
 	}
 	return toSerialize, nil

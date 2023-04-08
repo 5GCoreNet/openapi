@@ -57,7 +57,7 @@ func NewEUtranFreqRelationSingleAllOfAttributesWithDefaults() *EUtranFreqRelatio
 
 // GetCellIndividualOffset returns the CellIndividualOffset field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellIndividualOffset() CellIndividualOffset {
-	if o == nil || IsNil(o.CellIndividualOffset) {
+	if o == nil || isNil(o.CellIndividualOffset) {
 		var ret CellIndividualOffset
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellIndividualOffset() Cell
 // GetCellIndividualOffsetOk returns a tuple with the CellIndividualOffset field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellIndividualOffsetOk() (*CellIndividualOffset, bool) {
-	if o == nil || IsNil(o.CellIndividualOffset) {
+	if o == nil || isNil(o.CellIndividualOffset) {
 		return nil, false
 	}
 	return o.CellIndividualOffset, true
@@ -75,7 +75,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellIndividualOffsetOk() (*
 
 // HasCellIndividualOffset returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasCellIndividualOffset() bool {
-	if o != nil && !IsNil(o.CellIndividualOffset) {
+	if o != nil && !isNil(o.CellIndividualOffset) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetCellIndividualOffset(v Cell
 
 // GetBlackListEntry returns the BlackListEntry field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntry() []int32 {
-	if o == nil || IsNil(o.BlackListEntry) {
+	if o == nil || isNil(o.BlackListEntry) {
 		var ret []int32
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntry() []int32 {
 // GetBlackListEntryOk returns a tuple with the BlackListEntry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntryOk() ([]int32, bool) {
-	if o == nil || IsNil(o.BlackListEntry) {
+	if o == nil || isNil(o.BlackListEntry) {
 		return nil, false
 	}
 	return o.BlackListEntry, true
@@ -107,7 +107,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntryOk() ([]int32
 
 // HasBlackListEntry returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasBlackListEntry() bool {
-	if o != nil && !IsNil(o.BlackListEntry) {
+	if o != nil && !isNil(o.BlackListEntry) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetBlackListEntry(v []int32) {
 
 // GetBlackListEntryIdleMode returns the BlackListEntryIdleMode field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntryIdleMode() int32 {
-	if o == nil || IsNil(o.BlackListEntryIdleMode) {
+	if o == nil || isNil(o.BlackListEntryIdleMode) {
 		var ret int32
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntryIdleMode() in
 // GetBlackListEntryIdleModeOk returns a tuple with the BlackListEntryIdleMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntryIdleModeOk() (*int32, bool) {
-	if o == nil || IsNil(o.BlackListEntryIdleMode) {
+	if o == nil || isNil(o.BlackListEntryIdleMode) {
 		return nil, false
 	}
 	return o.BlackListEntryIdleMode, true
@@ -139,7 +139,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetBlackListEntryIdleModeOk() 
 
 // HasBlackListEntryIdleMode returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasBlackListEntryIdleMode() bool {
-	if o != nil && !IsNil(o.BlackListEntryIdleMode) {
+	if o != nil && !isNil(o.BlackListEntryIdleMode) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetBlackListEntryIdleMode(v in
 
 // GetCellReselectionPriority returns the CellReselectionPriority field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionPriority() int32 {
-	if o == nil || IsNil(o.CellReselectionPriority) {
+	if o == nil || isNil(o.CellReselectionPriority) {
 		var ret int32
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionPriority() i
 // GetCellReselectionPriorityOk returns a tuple with the CellReselectionPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionPriorityOk() (*int32, bool) {
-	if o == nil || IsNil(o.CellReselectionPriority) {
+	if o == nil || isNil(o.CellReselectionPriority) {
 		return nil, false
 	}
 	return o.CellReselectionPriority, true
@@ -171,7 +171,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionPriorityOk()
 
 // HasCellReselectionPriority returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasCellReselectionPriority() bool {
-	if o != nil && !IsNil(o.CellReselectionPriority) {
+	if o != nil && !isNil(o.CellReselectionPriority) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetCellReselectionPriority(v i
 
 // GetCellReselectionSubPriority returns the CellReselectionSubPriority field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriority() float32 {
-	if o == nil || IsNil(o.CellReselectionSubPriority) {
+	if o == nil || isNil(o.CellReselectionSubPriority) {
 		var ret float32
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriority(
 // GetCellReselectionSubPriorityOk returns a tuple with the CellReselectionSubPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriorityOk() (*float32, bool) {
-	if o == nil || IsNil(o.CellReselectionSubPriority) {
+	if o == nil || isNil(o.CellReselectionSubPriority) {
 		return nil, false
 	}
 	return o.CellReselectionSubPriority, true
@@ -203,7 +203,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetCellReselectionSubPriorityO
 
 // HasCellReselectionSubPriority returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasCellReselectionSubPriority() bool {
-	if o != nil && !IsNil(o.CellReselectionSubPriority) {
+	if o != nil && !isNil(o.CellReselectionSubPriority) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetCellReselectionSubPriority(
 
 // GetPMax returns the PMax field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetPMax() int32 {
-	if o == nil || IsNil(o.PMax) {
+	if o == nil || isNil(o.PMax) {
 		var ret int32
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetPMax() int32 {
 // GetPMaxOk returns a tuple with the PMax field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetPMaxOk() (*int32, bool) {
-	if o == nil || IsNil(o.PMax) {
+	if o == nil || isNil(o.PMax) {
 		return nil, false
 	}
 	return o.PMax, true
@@ -235,7 +235,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetPMaxOk() (*int32, bool) {
 
 // HasPMax returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasPMax() bool {
-	if o != nil && !IsNil(o.PMax) {
+	if o != nil && !isNil(o.PMax) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetPMax(v int32) {
 
 // GetQOffsetFreq returns the QOffsetFreq field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetQOffsetFreq() float32 {
-	if o == nil || IsNil(o.QOffsetFreq) {
+	if o == nil || isNil(o.QOffsetFreq) {
 		var ret float32
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetQOffsetFreq() float32 {
 // GetQOffsetFreqOk returns a tuple with the QOffsetFreq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetQOffsetFreqOk() (*float32, bool) {
-	if o == nil || IsNil(o.QOffsetFreq) {
+	if o == nil || isNil(o.QOffsetFreq) {
 		return nil, false
 	}
 	return o.QOffsetFreq, true
@@ -267,7 +267,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetQOffsetFreqOk() (*float32, 
 
 // HasQOffsetFreq returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasQOffsetFreq() bool {
-	if o != nil && !IsNil(o.QOffsetFreq) {
+	if o != nil && !isNil(o.QOffsetFreq) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetQOffsetFreq(v float32) {
 
 // GetQQualMin returns the QQualMin field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetQQualMin() float32 {
-	if o == nil || IsNil(o.QQualMin) {
+	if o == nil || isNil(o.QQualMin) {
 		var ret float32
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetQQualMin() float32 {
 // GetQQualMinOk returns a tuple with the QQualMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetQQualMinOk() (*float32, bool) {
-	if o == nil || IsNil(o.QQualMin) {
+	if o == nil || isNil(o.QQualMin) {
 		return nil, false
 	}
 	return o.QQualMin, true
@@ -299,7 +299,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetQQualMinOk() (*float32, boo
 
 // HasQQualMin returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasQQualMin() bool {
-	if o != nil && !IsNil(o.QQualMin) {
+	if o != nil && !isNil(o.QQualMin) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetQQualMin(v float32) {
 
 // GetQRxLevMin returns the QRxLevMin field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetQRxLevMin() int32 {
-	if o == nil || IsNil(o.QRxLevMin) {
+	if o == nil || isNil(o.QRxLevMin) {
 		var ret int32
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetQRxLevMin() int32 {
 // GetQRxLevMinOk returns a tuple with the QRxLevMin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetQRxLevMinOk() (*int32, bool) {
-	if o == nil || IsNil(o.QRxLevMin) {
+	if o == nil || isNil(o.QRxLevMin) {
 		return nil, false
 	}
 	return o.QRxLevMin, true
@@ -331,7 +331,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetQRxLevMinOk() (*int32, bool
 
 // HasQRxLevMin returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasQRxLevMin() bool {
-	if o != nil && !IsNil(o.QRxLevMin) {
+	if o != nil && !isNil(o.QRxLevMin) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetQRxLevMin(v int32) {
 
 // GetThreshXHighP returns the ThreshXHighP field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighP() int32 {
-	if o == nil || IsNil(o.ThreshXHighP) {
+	if o == nil || isNil(o.ThreshXHighP) {
 		var ret int32
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighP() int32 {
 // GetThreshXHighPOk returns a tuple with the ThreshXHighP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighPOk() (*int32, bool) {
-	if o == nil || IsNil(o.ThreshXHighP) {
+	if o == nil || isNil(o.ThreshXHighP) {
 		return nil, false
 	}
 	return o.ThreshXHighP, true
@@ -363,7 +363,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighPOk() (*int32, b
 
 // HasThreshXHighP returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasThreshXHighP() bool {
-	if o != nil && !IsNil(o.ThreshXHighP) {
+	if o != nil && !isNil(o.ThreshXHighP) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetThreshXHighP(v int32) {
 
 // GetThreshXHighQ returns the ThreshXHighQ field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighQ() int32 {
-	if o == nil || IsNil(o.ThreshXHighQ) {
+	if o == nil || isNil(o.ThreshXHighQ) {
 		var ret int32
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighQ() int32 {
 // GetThreshXHighQOk returns a tuple with the ThreshXHighQ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighQOk() (*int32, bool) {
-	if o == nil || IsNil(o.ThreshXHighQ) {
+	if o == nil || isNil(o.ThreshXHighQ) {
 		return nil, false
 	}
 	return o.ThreshXHighQ, true
@@ -395,7 +395,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXHighQOk() (*int32, b
 
 // HasThreshXHighQ returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasThreshXHighQ() bool {
-	if o != nil && !IsNil(o.ThreshXHighQ) {
+	if o != nil && !isNil(o.ThreshXHighQ) {
 		return true
 	}
 
@@ -409,7 +409,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetThreshXHighQ(v int32) {
 
 // GetThreshXLowP returns the ThreshXLowP field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowP() int32 {
-	if o == nil || IsNil(o.ThreshXLowP) {
+	if o == nil || isNil(o.ThreshXLowP) {
 		var ret int32
 		return ret
 	}
@@ -419,7 +419,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowP() int32 {
 // GetThreshXLowPOk returns a tuple with the ThreshXLowP field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowPOk() (*int32, bool) {
-	if o == nil || IsNil(o.ThreshXLowP) {
+	if o == nil || isNil(o.ThreshXLowP) {
 		return nil, false
 	}
 	return o.ThreshXLowP, true
@@ -427,7 +427,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowPOk() (*int32, bo
 
 // HasThreshXLowP returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasThreshXLowP() bool {
-	if o != nil && !IsNil(o.ThreshXLowP) {
+	if o != nil && !isNil(o.ThreshXLowP) {
 		return true
 	}
 
@@ -441,7 +441,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetThreshXLowP(v int32) {
 
 // GetThreshXLowQ returns the ThreshXLowQ field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowQ() int32 {
-	if o == nil || IsNil(o.ThreshXLowQ) {
+	if o == nil || isNil(o.ThreshXLowQ) {
 		var ret int32
 		return ret
 	}
@@ -451,7 +451,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowQ() int32 {
 // GetThreshXLowQOk returns a tuple with the ThreshXLowQ field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowQOk() (*int32, bool) {
-	if o == nil || IsNil(o.ThreshXLowQ) {
+	if o == nil || isNil(o.ThreshXLowQ) {
 		return nil, false
 	}
 	return o.ThreshXLowQ, true
@@ -459,7 +459,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetThreshXLowQOk() (*int32, bo
 
 // HasThreshXLowQ returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasThreshXLowQ() bool {
-	if o != nil && !IsNil(o.ThreshXLowQ) {
+	if o != nil && !isNil(o.ThreshXLowQ) {
 		return true
 	}
 
@@ -473,7 +473,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetThreshXLowQ(v int32) {
 
 // GetTReselectionEutran returns the TReselectionEutran field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionEutran() int32 {
-	if o == nil || IsNil(o.TReselectionEutran) {
+	if o == nil || isNil(o.TReselectionEutran) {
 		var ret int32
 		return ret
 	}
@@ -483,7 +483,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionEutran() int32 
 // GetTReselectionEutranOk returns a tuple with the TReselectionEutran field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionEutranOk() (*int32, bool) {
-	if o == nil || IsNil(o.TReselectionEutran) {
+	if o == nil || isNil(o.TReselectionEutran) {
 		return nil, false
 	}
 	return o.TReselectionEutran, true
@@ -491,7 +491,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionEutranOk() (*in
 
 // HasTReselectionEutran returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasTReselectionEutran() bool {
-	if o != nil && !IsNil(o.TReselectionEutran) {
+	if o != nil && !isNil(o.TReselectionEutran) {
 		return true
 	}
 
@@ -505,7 +505,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetTReselectionEutran(v int32)
 
 // GetTReselectionNRSfHigh returns the TReselectionNRSfHigh field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHigh() TReselectionNRSf {
-	if o == nil || IsNil(o.TReselectionNRSfHigh) {
+	if o == nil || isNil(o.TReselectionNRSfHigh) {
 		var ret TReselectionNRSf
 		return ret
 	}
@@ -515,7 +515,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHigh() TRes
 // GetTReselectionNRSfHighOk returns a tuple with the TReselectionNRSfHigh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHighOk() (*TReselectionNRSf, bool) {
-	if o == nil || IsNil(o.TReselectionNRSfHigh) {
+	if o == nil || isNil(o.TReselectionNRSfHigh) {
 		return nil, false
 	}
 	return o.TReselectionNRSfHigh, true
@@ -523,7 +523,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfHighOk() (*
 
 // HasTReselectionNRSfHigh returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasTReselectionNRSfHigh() bool {
-	if o != nil && !IsNil(o.TReselectionNRSfHigh) {
+	if o != nil && !isNil(o.TReselectionNRSfHigh) {
 		return true
 	}
 
@@ -537,7 +537,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetTReselectionNRSfHigh(v TRes
 
 // GetTReselectionNRSfMedium returns the TReselectionNRSfMedium field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMedium() TReselectionNRSf {
-	if o == nil || IsNil(o.TReselectionNRSfMedium) {
+	if o == nil || isNil(o.TReselectionNRSfMedium) {
 		var ret TReselectionNRSf
 		return ret
 	}
@@ -547,7 +547,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMedium() TR
 // GetTReselectionNRSfMediumOk returns a tuple with the TReselectionNRSfMedium field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMediumOk() (*TReselectionNRSf, bool) {
-	if o == nil || IsNil(o.TReselectionNRSfMedium) {
+	if o == nil || isNil(o.TReselectionNRSfMedium) {
 		return nil, false
 	}
 	return o.TReselectionNRSfMedium, true
@@ -555,7 +555,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetTReselectionNRSfMediumOk() 
 
 // HasTReselectionNRSfMedium returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasTReselectionNRSfMedium() bool {
-	if o != nil && !IsNil(o.TReselectionNRSfMedium) {
+	if o != nil && !isNil(o.TReselectionNRSfMedium) {
 		return true
 	}
 
@@ -569,7 +569,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) SetTReselectionNRSfMedium(v TR
 
 // GetEUTranFrequencyRef returns the EUTranFrequencyRef field value if set, zero value otherwise.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetEUTranFrequencyRef() string {
-	if o == nil || IsNil(o.EUTranFrequencyRef) {
+	if o == nil || isNil(o.EUTranFrequencyRef) {
 		var ret string
 		return ret
 	}
@@ -579,7 +579,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetEUTranFrequencyRef() string
 // GetEUTranFrequencyRefOk returns a tuple with the EUTranFrequencyRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) GetEUTranFrequencyRefOk() (*string, bool) {
-	if o == nil || IsNil(o.EUTranFrequencyRef) {
+	if o == nil || isNil(o.EUTranFrequencyRef) {
 		return nil, false
 	}
 	return o.EUTranFrequencyRef, true
@@ -587,7 +587,7 @@ func (o *EUtranFreqRelationSingleAllOfAttributes) GetEUTranFrequencyRefOk() (*st
 
 // HasEUTranFrequencyRef returns a boolean if a field has been set.
 func (o *EUtranFreqRelationSingleAllOfAttributes) HasEUTranFrequencyRef() bool {
-	if o != nil && !IsNil(o.EUTranFrequencyRef) {
+	if o != nil && !isNil(o.EUTranFrequencyRef) {
 		return true
 	}
 
@@ -609,55 +609,55 @@ func (o EUtranFreqRelationSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o EUtranFreqRelationSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CellIndividualOffset) {
+	if !isNil(o.CellIndividualOffset) {
 		toSerialize["cellIndividualOffset"] = o.CellIndividualOffset
 	}
-	if !IsNil(o.BlackListEntry) {
+	if !isNil(o.BlackListEntry) {
 		toSerialize["blackListEntry"] = o.BlackListEntry
 	}
-	if !IsNil(o.BlackListEntryIdleMode) {
+	if !isNil(o.BlackListEntryIdleMode) {
 		toSerialize["blackListEntryIdleMode"] = o.BlackListEntryIdleMode
 	}
-	if !IsNil(o.CellReselectionPriority) {
+	if !isNil(o.CellReselectionPriority) {
 		toSerialize["cellReselectionPriority"] = o.CellReselectionPriority
 	}
-	if !IsNil(o.CellReselectionSubPriority) {
+	if !isNil(o.CellReselectionSubPriority) {
 		toSerialize["cellReselectionSubPriority"] = o.CellReselectionSubPriority
 	}
-	if !IsNil(o.PMax) {
+	if !isNil(o.PMax) {
 		toSerialize["pMax"] = o.PMax
 	}
-	if !IsNil(o.QOffsetFreq) {
+	if !isNil(o.QOffsetFreq) {
 		toSerialize["qOffsetFreq"] = o.QOffsetFreq
 	}
-	if !IsNil(o.QQualMin) {
+	if !isNil(o.QQualMin) {
 		toSerialize["qQualMin"] = o.QQualMin
 	}
-	if !IsNil(o.QRxLevMin) {
+	if !isNil(o.QRxLevMin) {
 		toSerialize["qRxLevMin"] = o.QRxLevMin
 	}
-	if !IsNil(o.ThreshXHighP) {
+	if !isNil(o.ThreshXHighP) {
 		toSerialize["threshXHighP"] = o.ThreshXHighP
 	}
-	if !IsNil(o.ThreshXHighQ) {
+	if !isNil(o.ThreshXHighQ) {
 		toSerialize["threshXHighQ"] = o.ThreshXHighQ
 	}
-	if !IsNil(o.ThreshXLowP) {
+	if !isNil(o.ThreshXLowP) {
 		toSerialize["threshXLowP"] = o.ThreshXLowP
 	}
-	if !IsNil(o.ThreshXLowQ) {
+	if !isNil(o.ThreshXLowQ) {
 		toSerialize["threshXLowQ"] = o.ThreshXLowQ
 	}
-	if !IsNil(o.TReselectionEutran) {
+	if !isNil(o.TReselectionEutran) {
 		toSerialize["tReselectionEutran"] = o.TReselectionEutran
 	}
-	if !IsNil(o.TReselectionNRSfHigh) {
+	if !isNil(o.TReselectionNRSfHigh) {
 		toSerialize["tReselectionNRSfHigh"] = o.TReselectionNRSfHigh
 	}
-	if !IsNil(o.TReselectionNRSfMedium) {
+	if !isNil(o.TReselectionNRSfMedium) {
 		toSerialize["tReselectionNRSfMedium"] = o.TReselectionNRSfMedium
 	}
-	if !IsNil(o.EUTranFrequencyRef) {
+	if !isNil(o.EUTranFrequencyRef) {
 		toSerialize["eUTranFrequencyRef"] = o.EUTranFrequencyRef
 	}
 	return toSerialize, nil

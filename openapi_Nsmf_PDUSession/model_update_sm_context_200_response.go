@@ -21,8 +21,8 @@ var _ MappedNullable = &UpdateSmContext200Response{}
 // UpdateSmContext200Response struct for UpdateSmContext200Response
 type UpdateSmContext200Response struct {
 	JsonData *SmContextUpdatedData `json:"jsonData,omitempty"`
-	BinaryDataN1SmMessage **os.File `json:"binaryDataN1SmMessage,omitempty"`
-	BinaryDataN2SmInformation **os.File `json:"binaryDataN2SmInformation,omitempty"`
+	BinaryDataN1SmMessage *os.File `json:"binaryDataN1SmMessage,omitempty"`
+	BinaryDataN2SmInformation *os.File `json:"binaryDataN2SmInformation,omitempty"`
 }
 
 // NewUpdateSmContext200Response instantiates a new UpdateSmContext200Response object
@@ -44,7 +44,7 @@ func NewUpdateSmContext200ResponseWithDefaults() *UpdateSmContext200Response {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *UpdateSmContext200Response) GetJsonData() SmContextUpdatedData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret SmContextUpdatedData
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UpdateSmContext200Response) GetJsonData() SmContextUpdatedData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpdateSmContext200Response) GetJsonDataOk() (*SmContextUpdatedData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -62,7 +62,7 @@ func (o *UpdateSmContext200Response) GetJsonDataOk() (*SmContextUpdatedData, boo
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *UpdateSmContext200Response) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -75,9 +75,9 @@ func (o *UpdateSmContext200Response) SetJsonData(v SmContextUpdatedData) {
 }
 
 // GetBinaryDataN1SmMessage returns the BinaryDataN1SmMessage field value if set, zero value otherwise.
-func (o *UpdateSmContext200Response) GetBinaryDataN1SmMessage() *os.File {
-	if o == nil || IsNil(o.BinaryDataN1SmMessage) {
-		var ret *os.File
+func (o *UpdateSmContext200Response) GetBinaryDataN1SmMessage() os.File {
+	if o == nil || isNil(o.BinaryDataN1SmMessage) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN1SmMessage
@@ -85,8 +85,8 @@ func (o *UpdateSmContext200Response) GetBinaryDataN1SmMessage() *os.File {
 
 // GetBinaryDataN1SmMessageOk returns a tuple with the BinaryDataN1SmMessage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateSmContext200Response) GetBinaryDataN1SmMessageOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN1SmMessage) {
+func (o *UpdateSmContext200Response) GetBinaryDataN1SmMessageOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN1SmMessage) {
 		return nil, false
 	}
 	return o.BinaryDataN1SmMessage, true
@@ -94,22 +94,22 @@ func (o *UpdateSmContext200Response) GetBinaryDataN1SmMessageOk() (**os.File, bo
 
 // HasBinaryDataN1SmMessage returns a boolean if a field has been set.
 func (o *UpdateSmContext200Response) HasBinaryDataN1SmMessage() bool {
-	if o != nil && !IsNil(o.BinaryDataN1SmMessage) {
+	if o != nil && !isNil(o.BinaryDataN1SmMessage) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN1SmMessage gets a reference to the given *os.File and assigns it to the BinaryDataN1SmMessage field.
-func (o *UpdateSmContext200Response) SetBinaryDataN1SmMessage(v *os.File) {
+// SetBinaryDataN1SmMessage gets a reference to the given os.File and assigns it to the BinaryDataN1SmMessage field.
+func (o *UpdateSmContext200Response) SetBinaryDataN1SmMessage(v os.File) {
 	o.BinaryDataN1SmMessage = &v
 }
 
 // GetBinaryDataN2SmInformation returns the BinaryDataN2SmInformation field value if set, zero value otherwise.
-func (o *UpdateSmContext200Response) GetBinaryDataN2SmInformation() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2SmInformation) {
-		var ret *os.File
+func (o *UpdateSmContext200Response) GetBinaryDataN2SmInformation() os.File {
+	if o == nil || isNil(o.BinaryDataN2SmInformation) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2SmInformation
@@ -117,8 +117,8 @@ func (o *UpdateSmContext200Response) GetBinaryDataN2SmInformation() *os.File {
 
 // GetBinaryDataN2SmInformationOk returns a tuple with the BinaryDataN2SmInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UpdateSmContext200Response) GetBinaryDataN2SmInformationOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2SmInformation) {
+func (o *UpdateSmContext200Response) GetBinaryDataN2SmInformationOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2SmInformation) {
 		return nil, false
 	}
 	return o.BinaryDataN2SmInformation, true
@@ -126,15 +126,15 @@ func (o *UpdateSmContext200Response) GetBinaryDataN2SmInformationOk() (**os.File
 
 // HasBinaryDataN2SmInformation returns a boolean if a field has been set.
 func (o *UpdateSmContext200Response) HasBinaryDataN2SmInformation() bool {
-	if o != nil && !IsNil(o.BinaryDataN2SmInformation) {
+	if o != nil && !isNil(o.BinaryDataN2SmInformation) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2SmInformation gets a reference to the given *os.File and assigns it to the BinaryDataN2SmInformation field.
-func (o *UpdateSmContext200Response) SetBinaryDataN2SmInformation(v *os.File) {
+// SetBinaryDataN2SmInformation gets a reference to the given os.File and assigns it to the BinaryDataN2SmInformation field.
+func (o *UpdateSmContext200Response) SetBinaryDataN2SmInformation(v os.File) {
 	o.BinaryDataN2SmInformation = &v
 }
 
@@ -148,13 +148,13 @@ func (o UpdateSmContext200Response) MarshalJSON() ([]byte, error) {
 
 func (o UpdateSmContext200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataN1SmMessage) {
+	if !isNil(o.BinaryDataN1SmMessage) {
 		toSerialize["binaryDataN1SmMessage"] = o.BinaryDataN1SmMessage
 	}
-	if !IsNil(o.BinaryDataN2SmInformation) {
+	if !isNil(o.BinaryDataN2SmInformation) {
 		toSerialize["binaryDataN2SmInformation"] = o.BinaryDataN2SmInformation
 	}
 	return toSerialize, nil

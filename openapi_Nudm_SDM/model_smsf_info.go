@@ -95,7 +95,7 @@ func (o *SmsfInfo) SetPlmnId(v PlmnId) {
 
 // GetSmsfSetId returns the SmsfSetId field value if set, zero value otherwise.
 func (o *SmsfInfo) GetSmsfSetId() string {
-	if o == nil || IsNil(o.SmsfSetId) {
+	if o == nil || isNil(o.SmsfSetId) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *SmsfInfo) GetSmsfSetId() string {
 // GetSmsfSetIdOk returns a tuple with the SmsfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmsfInfo) GetSmsfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmsfSetId) {
+	if o == nil || isNil(o.SmsfSetId) {
 		return nil, false
 	}
 	return o.SmsfSetId, true
@@ -113,7 +113,7 @@ func (o *SmsfInfo) GetSmsfSetIdOk() (*string, bool) {
 
 // HasSmsfSetId returns a boolean if a field has been set.
 func (o *SmsfInfo) HasSmsfSetId() bool {
-	if o != nil && !IsNil(o.SmsfSetId) {
+	if o != nil && !isNil(o.SmsfSetId) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o SmsfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsfInstanceId"] = o.SmsfInstanceId
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.SmsfSetId) {
+	if !isNil(o.SmsfSetId) {
 		toSerialize["smsfSetId"] = o.SmsfSetId
 	}
 	return toSerialize, nil

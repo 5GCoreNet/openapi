@@ -96,7 +96,7 @@ func (o *AnnounceUpdateData) SetValidityTime(v time.Time) {
 
 // GetProseAppCode returns the ProseAppCode field value if set, zero value otherwise.
 func (o *AnnounceUpdateData) GetProseAppCode() string {
-	if o == nil || IsNil(o.ProseAppCode) {
+	if o == nil || isNil(o.ProseAppCode) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AnnounceUpdateData) GetProseAppCode() string {
 // GetProseAppCodeOk returns a tuple with the ProseAppCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnnounceUpdateData) GetProseAppCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.ProseAppCode) {
+	if o == nil || isNil(o.ProseAppCode) {
 		return nil, false
 	}
 	return o.ProseAppCode, true
@@ -114,7 +114,7 @@ func (o *AnnounceUpdateData) GetProseAppCodeOk() (*string, bool) {
 
 // HasProseAppCode returns a boolean if a field has been set.
 func (o *AnnounceUpdateData) HasProseAppCode() bool {
-	if o != nil && !IsNil(o.ProseAppCode) {
+	if o != nil && !isNil(o.ProseAppCode) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o AnnounceUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["discType"] = o.DiscType
 	toSerialize["validityTime"] = o.ValidityTime
-	if !IsNil(o.ProseAppCode) {
+	if !isNil(o.ProseAppCode) {
 		toSerialize["proseAppCode"] = o.ProseAppCode
 	}
 	return toSerialize, nil

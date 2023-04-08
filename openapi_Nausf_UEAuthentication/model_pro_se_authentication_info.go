@@ -52,7 +52,7 @@ func NewProSeAuthenticationInfoWithDefaults() *ProSeAuthenticationInfo {
 
 // GetSupiOrSuci returns the SupiOrSuci field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfo) GetSupiOrSuci() string {
-	if o == nil || IsNil(o.SupiOrSuci) {
+	if o == nil || isNil(o.SupiOrSuci) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ProSeAuthenticationInfo) GetSupiOrSuci() string {
 // GetSupiOrSuciOk returns a tuple with the SupiOrSuci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfo) GetSupiOrSuciOk() (*string, bool) {
-	if o == nil || IsNil(o.SupiOrSuci) {
+	if o == nil || isNil(o.SupiOrSuci) {
 		return nil, false
 	}
 	return o.SupiOrSuci, true
@@ -70,7 +70,7 @@ func (o *ProSeAuthenticationInfo) GetSupiOrSuciOk() (*string, bool) {
 
 // HasSupiOrSuci returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfo) HasSupiOrSuci() bool {
-	if o != nil && !IsNil(o.SupiOrSuci) {
+	if o != nil && !isNil(o.SupiOrSuci) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *ProSeAuthenticationInfo) SetSupiOrSuci(v string) {
 
 // GetVar5gPrukId returns the Var5gPrukId field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfo) GetVar5gPrukId() string {
-	if o == nil || IsNil(o.Var5gPrukId) {
+	if o == nil || isNil(o.Var5gPrukId) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ProSeAuthenticationInfo) GetVar5gPrukId() string {
 // GetVar5gPrukIdOk returns a tuple with the Var5gPrukId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfo) GetVar5gPrukIdOk() (*string, bool) {
-	if o == nil || IsNil(o.Var5gPrukId) {
+	if o == nil || isNil(o.Var5gPrukId) {
 		return nil, false
 	}
 	return o.Var5gPrukId, true
@@ -102,7 +102,7 @@ func (o *ProSeAuthenticationInfo) GetVar5gPrukIdOk() (*string, bool) {
 
 // HasVar5gPrukId returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfo) HasVar5gPrukId() bool {
-	if o != nil && !IsNil(o.Var5gPrukId) {
+	if o != nil && !isNil(o.Var5gPrukId) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *ProSeAuthenticationInfo) SetNonce1(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *ProSeAuthenticationInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -184,7 +184,7 @@ func (o *ProSeAuthenticationInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -206,15 +206,15 @@ func (o ProSeAuthenticationInfo) MarshalJSON() ([]byte, error) {
 
 func (o ProSeAuthenticationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupiOrSuci) {
+	if !isNil(o.SupiOrSuci) {
 		toSerialize["supiOrSuci"] = o.SupiOrSuci
 	}
-	if !IsNil(o.Var5gPrukId) {
+	if !isNil(o.Var5gPrukId) {
 		toSerialize["5gPrukId"] = o.Var5gPrukId
 	}
 	toSerialize["relayServiceCode"] = o.RelayServiceCode
 	toSerialize["nonce1"] = o.Nonce1.Get()
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

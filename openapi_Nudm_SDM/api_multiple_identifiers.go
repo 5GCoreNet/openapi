@@ -13,7 +13,7 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -86,9 +86,9 @@ func (a *MultipleIdentifiersApiService) GetMultipleIdentifiersExecute(r ApiGetMu
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
-	parameterAddToHeaderOrQuery(localVarQueryParams, "gpsi-list", r.gpsiList, "csv")
+	parameterAddToQuery(localVarQueryParams, "gpsi-list", r.gpsiList, "csv")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -116,9 +116,9 @@ func (a *MultipleIdentifiersApiService) GetMultipleIdentifiersExecute(r ApiGetMu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

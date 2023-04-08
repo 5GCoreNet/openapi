@@ -42,7 +42,7 @@ func NewTermDensityWithDefaults() *TermDensity {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *TermDensity) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *TermDensity) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermDensity) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -60,7 +60,7 @@ func (o *TermDensity) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *TermDensity) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *TermDensity) SetServAttrCom(v ServAttrCom) {
 
 // GetDensity returns the Density field value if set, zero value otherwise.
 func (o *TermDensity) GetDensity() int32 {
-	if o == nil || IsNil(o.Density) {
+	if o == nil || isNil(o.Density) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TermDensity) GetDensity() int32 {
 // GetDensityOk returns a tuple with the Density field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TermDensity) GetDensityOk() (*int32, bool) {
-	if o == nil || IsNil(o.Density) {
+	if o == nil || isNil(o.Density) {
 		return nil, false
 	}
 	return o.Density, true
@@ -92,7 +92,7 @@ func (o *TermDensity) GetDensityOk() (*int32, bool) {
 
 // HasDensity returns a boolean if a field has been set.
 func (o *TermDensity) HasDensity() bool {
-	if o != nil && !IsNil(o.Density) {
+	if o != nil && !isNil(o.Density) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o TermDensity) MarshalJSON() ([]byte, error) {
 
 func (o TermDensity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.Density) {
+	if !isNil(o.Density) {
 		toSerialize["density"] = o.Density
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewServAttrComWithDefaults() *ServAttrCom {
 
 // GetCategory returns the Category field value if set, zero value otherwise.
 func (o *ServAttrCom) GetCategory() Category {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || isNil(o.Category) {
 		var ret Category
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ServAttrCom) GetCategory() Category {
 // GetCategoryOk returns a tuple with the Category field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServAttrCom) GetCategoryOk() (*Category, bool) {
-	if o == nil || IsNil(o.Category) {
+	if o == nil || isNil(o.Category) {
 		return nil, false
 	}
 	return o.Category, true
@@ -61,7 +61,7 @@ func (o *ServAttrCom) GetCategoryOk() (*Category, bool) {
 
 // HasCategory returns a boolean if a field has been set.
 func (o *ServAttrCom) HasCategory() bool {
-	if o != nil && !IsNil(o.Category) {
+	if o != nil && !isNil(o.Category) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ServAttrCom) SetCategory(v Category) {
 
 // GetTagging returns the Tagging field value if set, zero value otherwise.
 func (o *ServAttrCom) GetTagging() []string {
-	if o == nil || IsNil(o.Tagging) {
+	if o == nil || isNil(o.Tagging) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ServAttrCom) GetTagging() []string {
 // GetTaggingOk returns a tuple with the Tagging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServAttrCom) GetTaggingOk() ([]string, bool) {
-	if o == nil || IsNil(o.Tagging) {
+	if o == nil || isNil(o.Tagging) {
 		return nil, false
 	}
 	return o.Tagging, true
@@ -93,7 +93,7 @@ func (o *ServAttrCom) GetTaggingOk() ([]string, bool) {
 
 // HasTagging returns a boolean if a field has been set.
 func (o *ServAttrCom) HasTagging() bool {
-	if o != nil && !IsNil(o.Tagging) {
+	if o != nil && !isNil(o.Tagging) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ServAttrCom) SetTagging(v []string) {
 
 // GetExposure returns the Exposure field value if set, zero value otherwise.
 func (o *ServAttrCom) GetExposure() Exposure {
-	if o == nil || IsNil(o.Exposure) {
+	if o == nil || isNil(o.Exposure) {
 		var ret Exposure
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ServAttrCom) GetExposure() Exposure {
 // GetExposureOk returns a tuple with the Exposure field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServAttrCom) GetExposureOk() (*Exposure, bool) {
-	if o == nil || IsNil(o.Exposure) {
+	if o == nil || isNil(o.Exposure) {
 		return nil, false
 	}
 	return o.Exposure, true
@@ -125,7 +125,7 @@ func (o *ServAttrCom) GetExposureOk() (*Exposure, bool) {
 
 // HasExposure returns a boolean if a field has been set.
 func (o *ServAttrCom) HasExposure() bool {
-	if o != nil && !IsNil(o.Exposure) {
+	if o != nil && !isNil(o.Exposure) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o ServAttrCom) MarshalJSON() ([]byte, error) {
 
 func (o ServAttrCom) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Category) {
+	if !isNil(o.Category) {
 		toSerialize["category"] = o.Category
 	}
-	if !IsNil(o.Tagging) {
+	if !isNil(o.Tagging) {
 		toSerialize["tagging"] = o.Tagging
 	}
-	if !IsNil(o.Exposure) {
+	if !isNil(o.Exposure) {
 		toSerialize["exposure"] = o.Exposure
 	}
 	return toSerialize, nil

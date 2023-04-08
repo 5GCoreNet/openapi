@@ -93,7 +93,7 @@ func (o *AnalyticsEventNotification) SetAnalyEventNotifs(v []AnalyticsEventNotif
 
 // GetTermCause returns the TermCause field value if set, zero value otherwise.
 func (o *AnalyticsEventNotification) GetTermCause() TermCause {
-	if o == nil || IsNil(o.TermCause) {
+	if o == nil || isNil(o.TermCause) {
 		var ret TermCause
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *AnalyticsEventNotification) GetTermCause() TermCause {
 // GetTermCauseOk returns a tuple with the TermCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsEventNotification) GetTermCauseOk() (*TermCause, bool) {
-	if o == nil || IsNil(o.TermCause) {
+	if o == nil || isNil(o.TermCause) {
 		return nil, false
 	}
 	return o.TermCause, true
@@ -111,7 +111,7 @@ func (o *AnalyticsEventNotification) GetTermCauseOk() (*TermCause, bool) {
 
 // HasTermCause returns a boolean if a field has been set.
 func (o *AnalyticsEventNotification) HasTermCause() bool {
-	if o != nil && !IsNil(o.TermCause) {
+	if o != nil && !isNil(o.TermCause) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o AnalyticsEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["analyEventNotifs"] = o.AnalyEventNotifs
-	if !IsNil(o.TermCause) {
+	if !isNil(o.TermCause) {
 		toSerialize["termCause"] = o.TermCause
 	}
 	return toSerialize, nil

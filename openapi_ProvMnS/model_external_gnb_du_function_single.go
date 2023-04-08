@@ -23,7 +23,7 @@ type ExternalGnbDuFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *ExternalGnbDuFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -78,7 +78,7 @@ func (o *ExternalGnbDuFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ExternalGnbDuFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -96,7 +96,7 @@ func (o *ExternalGnbDuFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ExternalGnbDuFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ExternalGnbDuFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -128,7 +128,7 @@ func (o *ExternalGnbDuFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ExternalGnbDuFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ExternalGnbDuFunctionSingle) GetVsDataContainer() []VsDataContainerSing
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -160,7 +160,7 @@ func (o *ExternalGnbDuFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerS
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -173,9 +173,9 @@ func (o *ExternalGnbDuFunctionSingle) SetVsDataContainer(v []VsDataContainerSing
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ExternalGnbDuFunctionSingle) GetAttributes() ExternalGnbDuFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret ExternalGnbDuFunctionSingleAllOfAttributes
+func (o *ExternalGnbDuFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -183,8 +183,8 @@ func (o *ExternalGnbDuFunctionSingle) GetAttributes() ExternalGnbDuFunctionSingl
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalGnbDuFunctionSingle) GetAttributesOk() (*ExternalGnbDuFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *ExternalGnbDuFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -192,21 +192,21 @@ func (o *ExternalGnbDuFunctionSingle) GetAttributesOk() (*ExternalGnbDuFunctionS
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ExternalGnbDuFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *ExternalGnbDuFunctionSingle) SetAttributes(v ExternalGnbDuFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *ExternalGnbDuFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *ExternalGnbDuFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -224,7 +224,7 @@ func (o *ExternalGnbDuFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingl
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *ExternalGnbDuFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) 
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *ExternalGnbDuFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSi
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -256,7 +256,7 @@ func (o *ExternalGnbDuFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonito
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *ExternalGnbDuFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSi
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *ExternalGnbDuFunctionSingle) GetManagedNFService() []ManagedNFServiceSi
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -288,7 +288,7 @@ func (o *ExternalGnbDuFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServic
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -302,7 +302,7 @@ func (o *ExternalGnbDuFunctionSingle) SetManagedNFService(v []ManagedNFServiceSi
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -312,7 +312,7 @@ func (o *ExternalGnbDuFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -320,7 +320,7 @@ func (o *ExternalGnbDuFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -334,7 +334,7 @@ func (o *ExternalGnbDuFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetEPF1C() []EPF1CSingle {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		var ret []EPF1CSingle
 		return ret
 	}
@@ -344,7 +344,7 @@ func (o *ExternalGnbDuFunctionSingle) GetEPF1C() []EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetEPF1COk() ([]EPF1CSingle, bool) {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -352,7 +352,7 @@ func (o *ExternalGnbDuFunctionSingle) GetEPF1COk() ([]EPF1CSingle, bool) {
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasEPF1C() bool {
-	if o != nil && !IsNil(o.EPF1C) {
+	if o != nil && !isNil(o.EPF1C) {
 		return true
 	}
 
@@ -366,7 +366,7 @@ func (o *ExternalGnbDuFunctionSingle) SetEPF1C(v []EPF1CSingle) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingle) GetEPF1U() []EPF1USingle {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -376,7 +376,7 @@ func (o *ExternalGnbDuFunctionSingle) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingle) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -384,7 +384,7 @@ func (o *ExternalGnbDuFunctionSingle) GetEPF1UOk() ([]EPF1USingle, bool) {
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingle) HasEPF1U() bool {
-	if o != nil && !IsNil(o.EPF1U) {
+	if o != nil && !isNil(o.EPF1U) {
 		return true
 	}
 
@@ -407,34 +407,34 @@ func (o ExternalGnbDuFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o ExternalGnbDuFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.EPF1C) {
+	if !isNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
-	if !IsNil(o.EPF1U) {
+	if !isNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
 	return toSerialize, nil

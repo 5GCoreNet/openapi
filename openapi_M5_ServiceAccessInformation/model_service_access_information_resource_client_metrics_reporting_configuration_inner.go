@@ -104,7 +104,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // GetDataNetworkName returns the DataNetworkName field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetDataNetworkName() string {
-	if o == nil || IsNil(o.DataNetworkName) {
+	if o == nil || isNil(o.DataNetworkName) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 // GetDataNetworkNameOk returns a tuple with the DataNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetDataNetworkNameOk() (*string, bool) {
-	if o == nil || IsNil(o.DataNetworkName) {
+	if o == nil || isNil(o.DataNetworkName) {
 		return nil, false
 	}
 	return o.DataNetworkName, true
@@ -122,7 +122,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // HasDataNetworkName returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) HasDataNetworkName() bool {
-	if o != nil && !IsNil(o.DataNetworkName) {
+	if o != nil && !isNil(o.DataNetworkName) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetReportingInterval() int32 {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -154,7 +154,7 @@ func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInne
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientMetricsReportingConfigurationInner) HasReportingInterval() bool {
-	if o != nil && !IsNil(o.ReportingInterval) {
+	if o != nil && !isNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -250,10 +250,10 @@ func (o ServiceAccessInformationResourceClientMetricsReportingConfigurationInner
 	toSerialize := map[string]interface{}{}
 	toSerialize["serverAddresses"] = o.ServerAddresses
 	toSerialize["scheme"] = o.Scheme
-	if !IsNil(o.DataNetworkName) {
+	if !isNil(o.DataNetworkName) {
 		toSerialize["dataNetworkName"] = o.DataNetworkName
 	}
-	if !IsNil(o.ReportingInterval) {
+	if !isNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
 	toSerialize["samplePercentage"] = o.SamplePercentage

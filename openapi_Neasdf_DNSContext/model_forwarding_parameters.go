@@ -42,7 +42,7 @@ func NewForwardingParametersWithDefaults() *ForwardingParameters {
 
 // GetEcsOptionInfo returns the EcsOptionInfo field value if set, zero value otherwise.
 func (o *ForwardingParameters) GetEcsOptionInfo() EcsOptionInfo {
-	if o == nil || IsNil(o.EcsOptionInfo) {
+	if o == nil || isNil(o.EcsOptionInfo) {
 		var ret EcsOptionInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ForwardingParameters) GetEcsOptionInfo() EcsOptionInfo {
 // GetEcsOptionInfoOk returns a tuple with the EcsOptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ForwardingParameters) GetEcsOptionInfoOk() (*EcsOptionInfo, bool) {
-	if o == nil || IsNil(o.EcsOptionInfo) {
+	if o == nil || isNil(o.EcsOptionInfo) {
 		return nil, false
 	}
 	return o.EcsOptionInfo, true
@@ -60,7 +60,7 @@ func (o *ForwardingParameters) GetEcsOptionInfoOk() (*EcsOptionInfo, bool) {
 
 // HasEcsOptionInfo returns a boolean if a field has been set.
 func (o *ForwardingParameters) HasEcsOptionInfo() bool {
-	if o != nil && !IsNil(o.EcsOptionInfo) {
+	if o != nil && !isNil(o.EcsOptionInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ForwardingParameters) SetEcsOptionInfo(v EcsOptionInfo) {
 
 // GetDnsServerAddressInfo returns the DnsServerAddressInfo field value if set, zero value otherwise.
 func (o *ForwardingParameters) GetDnsServerAddressInfo() DnsServerAddressInfo {
-	if o == nil || IsNil(o.DnsServerAddressInfo) {
+	if o == nil || isNil(o.DnsServerAddressInfo) {
 		var ret DnsServerAddressInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ForwardingParameters) GetDnsServerAddressInfo() DnsServerAddressInfo {
 // GetDnsServerAddressInfoOk returns a tuple with the DnsServerAddressInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ForwardingParameters) GetDnsServerAddressInfoOk() (*DnsServerAddressInfo, bool) {
-	if o == nil || IsNil(o.DnsServerAddressInfo) {
+	if o == nil || isNil(o.DnsServerAddressInfo) {
 		return nil, false
 	}
 	return o.DnsServerAddressInfo, true
@@ -92,7 +92,7 @@ func (o *ForwardingParameters) GetDnsServerAddressInfoOk() (*DnsServerAddressInf
 
 // HasDnsServerAddressInfo returns a boolean if a field has been set.
 func (o *ForwardingParameters) HasDnsServerAddressInfo() bool {
-	if o != nil && !IsNil(o.DnsServerAddressInfo) {
+	if o != nil && !isNil(o.DnsServerAddressInfo) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ForwardingParameters) MarshalJSON() ([]byte, error) {
 
 func (o ForwardingParameters) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EcsOptionInfo) {
+	if !isNil(o.EcsOptionInfo) {
 		toSerialize["ecsOptionInfo"] = o.EcsOptionInfo
 	}
-	if !IsNil(o.DnsServerAddressInfo) {
+	if !isNil(o.DnsServerAddressInfo) {
 		toSerialize["dnsServerAddressInfo"] = o.DnsServerAddressInfo
 	}
 	return toSerialize, nil

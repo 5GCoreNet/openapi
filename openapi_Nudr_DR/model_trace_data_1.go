@@ -152,7 +152,7 @@ func (o *TraceData1) SetEventList(v string) {
 
 // GetCollectionEntityIpv4Addr returns the CollectionEntityIpv4Addr field value if set, zero value otherwise.
 func (o *TraceData1) GetCollectionEntityIpv4Addr() string {
-	if o == nil || IsNil(o.CollectionEntityIpv4Addr) {
+	if o == nil || isNil(o.CollectionEntityIpv4Addr) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *TraceData1) GetCollectionEntityIpv4Addr() string {
 // GetCollectionEntityIpv4AddrOk returns a tuple with the CollectionEntityIpv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceData1) GetCollectionEntityIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.CollectionEntityIpv4Addr) {
+	if o == nil || isNil(o.CollectionEntityIpv4Addr) {
 		return nil, false
 	}
 	return o.CollectionEntityIpv4Addr, true
@@ -170,7 +170,7 @@ func (o *TraceData1) GetCollectionEntityIpv4AddrOk() (*string, bool) {
 
 // HasCollectionEntityIpv4Addr returns a boolean if a field has been set.
 func (o *TraceData1) HasCollectionEntityIpv4Addr() bool {
-	if o != nil && !IsNil(o.CollectionEntityIpv4Addr) {
+	if o != nil && !isNil(o.CollectionEntityIpv4Addr) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *TraceData1) SetCollectionEntityIpv4Addr(v string) {
 
 // GetCollectionEntityIpv6Addr returns the CollectionEntityIpv6Addr field value if set, zero value otherwise.
 func (o *TraceData1) GetCollectionEntityIpv6Addr() Ipv6Addr {
-	if o == nil || IsNil(o.CollectionEntityIpv6Addr) {
+	if o == nil || isNil(o.CollectionEntityIpv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *TraceData1) GetCollectionEntityIpv6Addr() Ipv6Addr {
 // GetCollectionEntityIpv6AddrOk returns a tuple with the CollectionEntityIpv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceData1) GetCollectionEntityIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.CollectionEntityIpv6Addr) {
+	if o == nil || isNil(o.CollectionEntityIpv6Addr) {
 		return nil, false
 	}
 	return o.CollectionEntityIpv6Addr, true
@@ -202,7 +202,7 @@ func (o *TraceData1) GetCollectionEntityIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasCollectionEntityIpv6Addr returns a boolean if a field has been set.
 func (o *TraceData1) HasCollectionEntityIpv6Addr() bool {
-	if o != nil && !IsNil(o.CollectionEntityIpv6Addr) {
+	if o != nil && !isNil(o.CollectionEntityIpv6Addr) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *TraceData1) SetCollectionEntityIpv6Addr(v Ipv6Addr) {
 
 // GetInterfaceList returns the InterfaceList field value if set, zero value otherwise.
 func (o *TraceData1) GetInterfaceList() string {
-	if o == nil || IsNil(o.InterfaceList) {
+	if o == nil || isNil(o.InterfaceList) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *TraceData1) GetInterfaceList() string {
 // GetInterfaceListOk returns a tuple with the InterfaceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceData1) GetInterfaceListOk() (*string, bool) {
-	if o == nil || IsNil(o.InterfaceList) {
+	if o == nil || isNil(o.InterfaceList) {
 		return nil, false
 	}
 	return o.InterfaceList, true
@@ -234,7 +234,7 @@ func (o *TraceData1) GetInterfaceListOk() (*string, bool) {
 
 // HasInterfaceList returns a boolean if a field has been set.
 func (o *TraceData1) HasInterfaceList() bool {
-	if o != nil && !IsNil(o.InterfaceList) {
+	if o != nil && !isNil(o.InterfaceList) {
 		return true
 	}
 
@@ -260,13 +260,13 @@ func (o TraceData1) ToMap() (map[string]interface{}, error) {
 	toSerialize["traceDepth"] = o.TraceDepth
 	toSerialize["neTypeList"] = o.NeTypeList
 	toSerialize["eventList"] = o.EventList
-	if !IsNil(o.CollectionEntityIpv4Addr) {
+	if !isNil(o.CollectionEntityIpv4Addr) {
 		toSerialize["collectionEntityIpv4Addr"] = o.CollectionEntityIpv4Addr
 	}
-	if !IsNil(o.CollectionEntityIpv6Addr) {
+	if !isNil(o.CollectionEntityIpv6Addr) {
 		toSerialize["collectionEntityIpv6Addr"] = o.CollectionEntityIpv6Addr
 	}
-	if !IsNil(o.InterfaceList) {
+	if !isNil(o.InterfaceList) {
 		toSerialize["interfaceList"] = o.InterfaceList
 	}
 	return toSerialize, nil

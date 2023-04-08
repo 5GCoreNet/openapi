@@ -43,7 +43,7 @@ func NewSubNetworkSingleAllOf1WithDefaults() *SubNetworkSingleAllOf1 {
 
 // GetSubnetwork returns the Subnetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetSubnetwork() []SubNetworkSingle {
-	if o == nil || IsNil(o.Subnetwork) {
+	if o == nil || isNil(o.Subnetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SubNetworkSingleAllOf1) GetSubnetwork() []SubNetworkSingle {
 // GetSubnetworkOk returns a tuple with the Subnetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetSubnetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || IsNil(o.Subnetwork) {
+	if o == nil || isNil(o.Subnetwork) {
 		return nil, false
 	}
 	return o.Subnetwork, true
@@ -61,7 +61,7 @@ func (o *SubNetworkSingleAllOf1) GetSubnetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubnetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasSubnetwork() bool {
-	if o != nil && !IsNil(o.Subnetwork) {
+	if o != nil && !isNil(o.Subnetwork) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SubNetworkSingleAllOf1) SetSubnetwork(v []SubNetworkSingle) {
 
 // GetECSFunction returns the ECSFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetECSFunction() []ECSFunctionSingle {
-	if o == nil || IsNil(o.ECSFunction) {
+	if o == nil || isNil(o.ECSFunction) {
 		var ret []ECSFunctionSingle
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SubNetworkSingleAllOf1) GetECSFunction() []ECSFunctionSingle {
 // GetECSFunctionOk returns a tuple with the ECSFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetECSFunctionOk() ([]ECSFunctionSingle, bool) {
-	if o == nil || IsNil(o.ECSFunction) {
+	if o == nil || isNil(o.ECSFunction) {
 		return nil, false
 	}
 	return o.ECSFunction, true
@@ -93,7 +93,7 @@ func (o *SubNetworkSingleAllOf1) GetECSFunctionOk() ([]ECSFunctionSingle, bool) 
 
 // HasECSFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasECSFunction() bool {
-	if o != nil && !IsNil(o.ECSFunction) {
+	if o != nil && !isNil(o.ECSFunction) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SubNetworkSingleAllOf1) SetECSFunction(v []ECSFunctionSingle) {
 
 // GetEdgeDataNetwork returns the EdgeDataNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingleAllOf1) GetEdgeDataNetwork() []EdgeDataNetworkSingle {
-	if o == nil || IsNil(o.EdgeDataNetwork) {
+	if o == nil || isNil(o.EdgeDataNetwork) {
 		var ret []EdgeDataNetworkSingle
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SubNetworkSingleAllOf1) GetEdgeDataNetwork() []EdgeDataNetworkSingle {
 // GetEdgeDataNetworkOk returns a tuple with the EdgeDataNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingleAllOf1) GetEdgeDataNetworkOk() ([]EdgeDataNetworkSingle, bool) {
-	if o == nil || IsNil(o.EdgeDataNetwork) {
+	if o == nil || isNil(o.EdgeDataNetwork) {
 		return nil, false
 	}
 	return o.EdgeDataNetwork, true
@@ -125,7 +125,7 @@ func (o *SubNetworkSingleAllOf1) GetEdgeDataNetworkOk() ([]EdgeDataNetworkSingle
 
 // HasEdgeDataNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingleAllOf1) HasEdgeDataNetwork() bool {
-	if o != nil && !IsNil(o.EdgeDataNetwork) {
+	if o != nil && !isNil(o.EdgeDataNetwork) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o SubNetworkSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Subnetwork) {
+	if !isNil(o.Subnetwork) {
 		toSerialize["Subnetwork"] = o.Subnetwork
 	}
-	if !IsNil(o.ECSFunction) {
+	if !isNil(o.ECSFunction) {
 		toSerialize["ECSFunction"] = o.ECSFunction
 	}
-	if !IsNil(o.EdgeDataNetwork) {
+	if !isNil(o.EdgeDataNetwork) {
 		toSerialize["EdgeDataNetwork"] = o.EdgeDataNetwork
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,11 +8,13 @@ configuration.go
 docs/DefaultApi.md
 docs/ProvisioningSession.md
 docs/ProvisioningSessionType.md
+docs/ProvisioningSessionTypeAnyOf.md
 git_push.sh
 go.mod
 go.sum
 model_provisioning_session.go
 model_provisioning_session_type.go
+model_provisioning_session_type_any_of.go
 response.go
 test/api_default_test.go
 utils.go

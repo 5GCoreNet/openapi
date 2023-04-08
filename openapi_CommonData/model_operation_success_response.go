@@ -67,7 +67,7 @@ func (o *OperationSuccessResponse) SetSuccess(v bool) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *OperationSuccessResponse) GetReason() string {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *OperationSuccessResponse) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperationSuccessResponse) GetReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -85,7 +85,7 @@ func (o *OperationSuccessResponse) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *OperationSuccessResponse) HasReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && !isNil(o.Reason) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o OperationSuccessResponse) MarshalJSON() ([]byte, error) {
 func (o OperationSuccessResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["success"] = o.Success
-	if !IsNil(o.Reason) {
+	if !isNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil

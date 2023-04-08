@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -106,15 +105,11 @@ docs/NSSAASupport.md
 docs/NetworkSliceSharingIndicator.md
 docs/NetworkSliceSingle.md
 docs/NetworkSliceSingleAllOf.md
-docs/NetworkSliceSingleAllOfAttributes.md
-docs/NetworkSliceSingleAllOfAttributesAllOf.md
 docs/NetworkSliceSubnetProviderCapabilitiesSingle.md
 docs/NetworkSliceSubnetProviderCapabilitiesSingleAllOf.md
 docs/NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes.md
 docs/NetworkSliceSubnetSingle.md
 docs/NetworkSliceSubnetSingleAllOf.md
-docs/NetworkSliceSubnetSingleAllOfAttributes.md
-docs/NetworkSliceSubnetSingleAllOfAttributesAllOf.md
 docs/NodeFilter.md
 docs/NotificationType.md
 docs/NsInfo.md
@@ -136,7 +131,6 @@ docs/PositioningMethodType.md
 docs/PositioningRANSubnet.md
 docs/Predictionfrequency.md
 docs/ProbableCause.md
-docs/ProbableCauseOneOf.md
 docs/ProcessMonitor.md
 docs/RANSliceSubnetProfile.md
 docs/RadioSpectrum.md
@@ -163,7 +157,6 @@ docs/SubNetworkNcO.md
 docs/SubNetworkSingle.md
 docs/SubNetworkSingleAllOf.md
 docs/SubNetworkSingleAllOf1.md
-docs/SubNetworkSingleAllOfAttributes.md
 docs/Support.md
 docs/SupportedPerfMetricGroup.md
 docs/SynAvailability.md
@@ -303,15 +296,11 @@ model_nbio_t.go
 model_network_slice_sharing_indicator.go
 model_network_slice_single.go
 model_network_slice_single_all_of.go
-model_network_slice_single_all_of_attributes.go
-model_network_slice_single_all_of_attributes_all_of.go
 model_network_slice_subnet_provider_capabilities_single.go
 model_network_slice_subnet_provider_capabilities_single_all_of.go
 model_network_slice_subnet_provider_capabilities_single_all_of_attributes.go
 model_network_slice_subnet_single.go
 model_network_slice_subnet_single_all_of.go
-model_network_slice_subnet_single_all_of_attributes.go
-model_network_slice_subnet_single_all_of_attributes_all_of.go
 model_node_filter.go
 model_notification_type.go
 model_ns_info.go
@@ -334,7 +323,6 @@ model_positioning_method_type.go
 model_positioning_ran_subnet.go
 model_predictionfrequency.go
 model_probable_cause.go
-model_probable_cause_one_of.go
 model_process_monitor.go
 model_radio_spectrum.go
 model_ran_slice_subnet_profile.go
@@ -361,7 +349,6 @@ model_sub_network_nc_o.go
 model_sub_network_single.go
 model_sub_network_single_all_of.go
 model_sub_network_single_all_of_1.go
-model_sub_network_single_all_of_attributes.go
 model_support.go
 model_supported_perf_metric_group.go
 model_syn_availability.go

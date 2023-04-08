@@ -303,10 +303,7 @@ components:
       type: object
     ACTResult:
       anyOf:
-      - enum:
-        - SUCCESSFUL
-        - FAILED
-        type: string
+      - $ref: '#/components/schemas/ACTResult_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -316,10 +313,7 @@ components:
         - FAILED: Indicates that the ACT failed.
     E3SubscsStatus:
       anyOf:
-      - enum:
-        - SUCCESSFUL
-        - FAILED
-        type: string
+      - $ref: '#/components/schemas/ACTResult_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -329,10 +323,7 @@ components:
         - FAILED: Indicates that the initialization of EDGE-3 subscriptions failed.
     ACTFailureCause:
       anyOf:
-      - enum:
-        - ACR_CANCELLATION
-        - OTHER
-        type: string
+      - $ref: '#/components/schemas/ACTFailureCause_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -467,6 +458,18 @@ components:
         4 in IETF RFC 5952. The mixed Ipv4 Ipv6 notation according to clause 5 of
         IETF RFC 5952 shall not be used.
       type: string
+    ACTResult_anyOf:
+      enum:
+      - SUCCESSFUL
+      - FAILED
+      type: string
+      example: null
+    ACTFailureCause_anyOf:
+      enum:
+      - ACR_CANCELLATION
+      - OTHER
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

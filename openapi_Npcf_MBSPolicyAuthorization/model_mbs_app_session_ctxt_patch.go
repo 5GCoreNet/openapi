@@ -41,7 +41,7 @@ func NewMbsAppSessionCtxtPatchWithDefaults() *MbsAppSessionCtxtPatch {
 
 // GetMbsServInfo returns the MbsServInfo field value if set, zero value otherwise.
 func (o *MbsAppSessionCtxtPatch) GetMbsServInfo() MbsServiceInfo {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		var ret MbsServiceInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MbsAppSessionCtxtPatch) GetMbsServInfo() MbsServiceInfo {
 // GetMbsServInfoOk returns a tuple with the MbsServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsAppSessionCtxtPatch) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		return nil, false
 	}
 	return o.MbsServInfo, true
@@ -59,7 +59,7 @@ func (o *MbsAppSessionCtxtPatch) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
 
 // HasMbsServInfo returns a boolean if a field has been set.
 func (o *MbsAppSessionCtxtPatch) HasMbsServInfo() bool {
-	if o != nil && !IsNil(o.MbsServInfo) {
+	if o != nil && !isNil(o.MbsServInfo) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MbsAppSessionCtxtPatch) MarshalJSON() ([]byte, error) {
 
 func (o MbsAppSessionCtxtPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsServInfo) {
+	if !isNil(o.MbsServInfo) {
 		toSerialize["mbsServInfo"] = o.MbsServInfo
 	}
 	return toSerialize, nil

@@ -77,7 +77,7 @@ func (o *Action) SetApplyAction(v ApplyAction) {
 
 // GetFwdParas returns the FwdParas field value if set, zero value otherwise.
 func (o *Action) GetFwdParas() ForwardingParameters {
-	if o == nil || IsNil(o.FwdParas) {
+	if o == nil || isNil(o.FwdParas) {
 		var ret ForwardingParameters
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *Action) GetFwdParas() ForwardingParameters {
 // GetFwdParasOk returns a tuple with the FwdParas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Action) GetFwdParasOk() (*ForwardingParameters, bool) {
-	if o == nil || IsNil(o.FwdParas) {
+	if o == nil || isNil(o.FwdParas) {
 		return nil, false
 	}
 	return o.FwdParas, true
@@ -95,7 +95,7 @@ func (o *Action) GetFwdParasOk() (*ForwardingParameters, bool) {
 
 // HasFwdParas returns a boolean if a field has been set.
 func (o *Action) HasFwdParas() bool {
-	if o != nil && !IsNil(o.FwdParas) {
+	if o != nil && !isNil(o.FwdParas) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *Action) SetFwdParas(v ForwardingParameters) {
 
 // GetReportingOnceInd returns the ReportingOnceInd field value if set, zero value otherwise.
 func (o *Action) GetReportingOnceInd() bool {
-	if o == nil || IsNil(o.ReportingOnceInd) {
+	if o == nil || isNil(o.ReportingOnceInd) {
 		var ret bool
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *Action) GetReportingOnceInd() bool {
 // GetReportingOnceIndOk returns a tuple with the ReportingOnceInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Action) GetReportingOnceIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReportingOnceInd) {
+	if o == nil || isNil(o.ReportingOnceInd) {
 		return nil, false
 	}
 	return o.ReportingOnceInd, true
@@ -127,7 +127,7 @@ func (o *Action) GetReportingOnceIndOk() (*bool, bool) {
 
 // HasReportingOnceInd returns a boolean if a field has been set.
 func (o *Action) HasReportingOnceInd() bool {
-	if o != nil && !IsNil(o.ReportingOnceInd) {
+	if o != nil && !isNil(o.ReportingOnceInd) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *Action) SetReportingOnceInd(v bool) {
 
 // GetResetReportingOnceInd returns the ResetReportingOnceInd field value if set, zero value otherwise.
 func (o *Action) GetResetReportingOnceInd() bool {
-	if o == nil || IsNil(o.ResetReportingOnceInd) {
+	if o == nil || isNil(o.ResetReportingOnceInd) {
 		var ret bool
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *Action) GetResetReportingOnceInd() bool {
 // GetResetReportingOnceIndOk returns a tuple with the ResetReportingOnceInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Action) GetResetReportingOnceIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ResetReportingOnceInd) {
+	if o == nil || isNil(o.ResetReportingOnceInd) {
 		return nil, false
 	}
 	return o.ResetReportingOnceInd, true
@@ -159,7 +159,7 @@ func (o *Action) GetResetReportingOnceIndOk() (*bool, bool) {
 
 // HasResetReportingOnceInd returns a boolean if a field has been set.
 func (o *Action) HasResetReportingOnceInd() bool {
-	if o != nil && !IsNil(o.ResetReportingOnceInd) {
+	if o != nil && !isNil(o.ResetReportingOnceInd) {
 		return true
 	}
 
@@ -182,13 +182,13 @@ func (o Action) MarshalJSON() ([]byte, error) {
 func (o Action) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applyAction"] = o.ApplyAction
-	if !IsNil(o.FwdParas) {
+	if !isNil(o.FwdParas) {
 		toSerialize["fwdParas"] = o.FwdParas
 	}
-	if !IsNil(o.ReportingOnceInd) {
+	if !isNil(o.ReportingOnceInd) {
 		toSerialize["reportingOnceInd"] = o.ReportingOnceInd
 	}
-	if !IsNil(o.ResetReportingOnceInd) {
+	if !isNil(o.ResetReportingOnceInd) {
 		toSerialize["resetReportingOnceInd"] = o.ResetReportingOnceInd
 	}
 	return toSerialize, nil

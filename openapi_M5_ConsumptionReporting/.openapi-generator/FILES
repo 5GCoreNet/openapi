@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,6 +6,7 @@ api_default.go
 client.go
 configuration.go
 docs/CellIdentifierType.md
+docs/CellIdentifierTypeAnyOf.md
 docs/ConsumptionReport.md
 docs/ConsumptionReportingUnit.md
 docs/DefaultApi.md
@@ -17,6 +17,7 @@ git_push.sh
 go.mod
 go.sum
 model_cell_identifier_type.go
+model_cell_identifier_type_any_of.go
 model_consumption_report.go
 model_consumption_reporting_unit.go
 model_endpoint_address.go

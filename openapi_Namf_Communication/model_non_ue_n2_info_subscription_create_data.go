@@ -51,7 +51,7 @@ func NewNonUeN2InfoSubscriptionCreateDataWithDefaults() *NonUeN2InfoSubscription
 
 // GetGlobalRanNodeList returns the GlobalRanNodeList field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeList() []GlobalRanNodeId {
-	if o == nil || IsNil(o.GlobalRanNodeList) {
+	if o == nil || isNil(o.GlobalRanNodeList) {
 		var ret []GlobalRanNodeId
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeList() []GlobalRanNo
 // GetGlobalRanNodeListOk returns a tuple with the GlobalRanNodeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeListOk() ([]GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.GlobalRanNodeList) {
+	if o == nil || isNil(o.GlobalRanNodeList) {
 		return nil, false
 	}
 	return o.GlobalRanNodeList, true
@@ -69,7 +69,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetGlobalRanNodeListOk() ([]GlobalRa
 
 // HasGlobalRanNodeList returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasGlobalRanNodeList() bool {
-	if o != nil && !IsNil(o.GlobalRanNodeList) {
+	if o != nil && !isNil(o.GlobalRanNodeList) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetGlobalRanNodeList(v []GlobalRanNo
 
 // GetAnTypeList returns the AnTypeList field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeList() []AccessType {
-	if o == nil || IsNil(o.AnTypeList) {
+	if o == nil || isNil(o.AnTypeList) {
 		var ret []AccessType
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeList() []AccessType {
 // GetAnTypeListOk returns a tuple with the AnTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeListOk() ([]AccessType, bool) {
-	if o == nil || IsNil(o.AnTypeList) {
+	if o == nil || isNil(o.AnTypeList) {
 		return nil, false
 	}
 	return o.AnTypeList, true
@@ -101,7 +101,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetAnTypeListOk() ([]AccessType, boo
 
 // HasAnTypeList returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasAnTypeList() bool {
-	if o != nil && !IsNil(o.AnTypeList) {
+	if o != nil && !isNil(o.AnTypeList) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetN2NotifyCallbackUri(v string) {
 
 // GetNfId returns the NfId field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetNfId() string {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		var ret string
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetNfId() string {
 // GetNfIdOk returns a tuple with the NfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetNfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfId) {
+	if o == nil || isNil(o.NfId) {
 		return nil, false
 	}
 	return o.NfId, true
@@ -181,7 +181,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetNfIdOk() (*string, bool) {
 
 // HasNfId returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasNfId() bool {
-	if o != nil && !IsNil(o.NfId) {
+	if o != nil && !isNil(o.NfId) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) SetNfId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -213,7 +213,7 @@ func (o *NonUeN2InfoSubscriptionCreateData) GetSupportedFeaturesOk() (*string, b
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NonUeN2InfoSubscriptionCreateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -235,18 +235,18 @@ func (o NonUeN2InfoSubscriptionCreateData) MarshalJSON() ([]byte, error) {
 
 func (o NonUeN2InfoSubscriptionCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GlobalRanNodeList) {
+	if !isNil(o.GlobalRanNodeList) {
 		toSerialize["globalRanNodeList"] = o.GlobalRanNodeList
 	}
-	if !IsNil(o.AnTypeList) {
+	if !isNil(o.AnTypeList) {
 		toSerialize["anTypeList"] = o.AnTypeList
 	}
 	toSerialize["n2InformationClass"] = o.N2InformationClass
 	toSerialize["n2NotifyCallbackUri"] = o.N2NotifyCallbackUri
-	if !IsNil(o.NfId) {
+	if !isNil(o.NfId) {
 		toSerialize["nfId"] = o.NfId
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

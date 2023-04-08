@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,7 +8,9 @@ api_request_eel_managed_acr.go
 client.go
 configuration.go
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/ACTResult.md
+docs/ACTResultAnyOf.md
 docs/ACTStatusNotif.md
 docs/ACTStatusSubsc.md
 docs/ACTStatusSubscriptionsCollectionApi.md
@@ -52,6 +53,7 @@ docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/RequestEELManagedACRApi.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/TimeWindow.md
 docs/UncertaintyEllipse.md
@@ -60,7 +62,9 @@ git_push.sh
 go.mod
 go.sum
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_act_result.go
+model_act_result_any_of.go
 model_act_status_notif.go
 model_act_status_subsc.go
 model_civic_address.go
@@ -100,6 +104,7 @@ model_polygon_all_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_time_window.go
 model_uncertainty_ellipse.go

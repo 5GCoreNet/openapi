@@ -55,7 +55,7 @@ func NewTrafficControlDataWithDefaults() *TrafficControlData {
 
 // GetTcId returns the TcId field value if set, zero value otherwise.
 func (o *TrafficControlData) GetTcId() string {
-	if o == nil || IsNil(o.TcId) {
+	if o == nil || isNil(o.TcId) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *TrafficControlData) GetTcId() string {
 // GetTcIdOk returns a tuple with the TcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetTcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.TcId) {
+	if o == nil || isNil(o.TcId) {
 		return nil, false
 	}
 	return o.TcId, true
@@ -73,7 +73,7 @@ func (o *TrafficControlData) GetTcIdOk() (*string, bool) {
 
 // HasTcId returns a boolean if a field has been set.
 func (o *TrafficControlData) HasTcId() bool {
-	if o != nil && !IsNil(o.TcId) {
+	if o != nil && !isNil(o.TcId) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *TrafficControlData) SetTcId(v string) {
 
 // GetFlowStatus returns the FlowStatus field value if set, zero value otherwise.
 func (o *TrafficControlData) GetFlowStatus() FlowStatus {
-	if o == nil || IsNil(o.FlowStatus) {
+	if o == nil || isNil(o.FlowStatus) {
 		var ret FlowStatus
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *TrafficControlData) GetFlowStatus() FlowStatus {
 // GetFlowStatusOk returns a tuple with the FlowStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetFlowStatusOk() (*FlowStatus, bool) {
-	if o == nil || IsNil(o.FlowStatus) {
+	if o == nil || isNil(o.FlowStatus) {
 		return nil, false
 	}
 	return o.FlowStatus, true
@@ -105,7 +105,7 @@ func (o *TrafficControlData) GetFlowStatusOk() (*FlowStatus, bool) {
 
 // HasFlowStatus returns a boolean if a field has been set.
 func (o *TrafficControlData) HasFlowStatus() bool {
-	if o != nil && !IsNil(o.FlowStatus) {
+	if o != nil && !isNil(o.FlowStatus) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *TrafficControlData) SetFlowStatus(v FlowStatus) {
 
 // GetRedirectInfo returns the RedirectInfo field value if set, zero value otherwise.
 func (o *TrafficControlData) GetRedirectInfo() RedirectInformation {
-	if o == nil || IsNil(o.RedirectInfo) {
+	if o == nil || isNil(o.RedirectInfo) {
 		var ret RedirectInformation
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *TrafficControlData) GetRedirectInfo() RedirectInformation {
 // GetRedirectInfoOk returns a tuple with the RedirectInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetRedirectInfoOk() (*RedirectInformation, bool) {
-	if o == nil || IsNil(o.RedirectInfo) {
+	if o == nil || isNil(o.RedirectInfo) {
 		return nil, false
 	}
 	return o.RedirectInfo, true
@@ -137,7 +137,7 @@ func (o *TrafficControlData) GetRedirectInfoOk() (*RedirectInformation, bool) {
 
 // HasRedirectInfo returns a boolean if a field has been set.
 func (o *TrafficControlData) HasRedirectInfo() bool {
-	if o != nil && !IsNil(o.RedirectInfo) {
+	if o != nil && !isNil(o.RedirectInfo) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *TrafficControlData) SetRedirectInfo(v RedirectInformation) {
 
 // GetAddRedirectInfo returns the AddRedirectInfo field value if set, zero value otherwise.
 func (o *TrafficControlData) GetAddRedirectInfo() []RedirectInformation {
-	if o == nil || IsNil(o.AddRedirectInfo) {
+	if o == nil || isNil(o.AddRedirectInfo) {
 		var ret []RedirectInformation
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *TrafficControlData) GetAddRedirectInfo() []RedirectInformation {
 // GetAddRedirectInfoOk returns a tuple with the AddRedirectInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetAddRedirectInfoOk() ([]RedirectInformation, bool) {
-	if o == nil || IsNil(o.AddRedirectInfo) {
+	if o == nil || isNil(o.AddRedirectInfo) {
 		return nil, false
 	}
 	return o.AddRedirectInfo, true
@@ -169,7 +169,7 @@ func (o *TrafficControlData) GetAddRedirectInfoOk() ([]RedirectInformation, bool
 
 // HasAddRedirectInfo returns a boolean if a field has been set.
 func (o *TrafficControlData) HasAddRedirectInfo() bool {
-	if o != nil && !IsNil(o.AddRedirectInfo) {
+	if o != nil && !isNil(o.AddRedirectInfo) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *TrafficControlData) SetAddRedirectInfo(v []RedirectInformation) {
 
 // GetMuteNotif returns the MuteNotif field value if set, zero value otherwise.
 func (o *TrafficControlData) GetMuteNotif() bool {
-	if o == nil || IsNil(o.MuteNotif) {
+	if o == nil || isNil(o.MuteNotif) {
 		var ret bool
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *TrafficControlData) GetMuteNotif() bool {
 // GetMuteNotifOk returns a tuple with the MuteNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetMuteNotifOk() (*bool, bool) {
-	if o == nil || IsNil(o.MuteNotif) {
+	if o == nil || isNil(o.MuteNotif) {
 		return nil, false
 	}
 	return o.MuteNotif, true
@@ -201,7 +201,7 @@ func (o *TrafficControlData) GetMuteNotifOk() (*bool, bool) {
 
 // HasMuteNotif returns a boolean if a field has been set.
 func (o *TrafficControlData) HasMuteNotif() bool {
-	if o != nil && !IsNil(o.MuteNotif) {
+	if o != nil && !isNil(o.MuteNotif) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *TrafficControlData) SetMuteNotif(v bool) {
 
 // GetTrafficSteeringPolIdDl returns the TrafficSteeringPolIdDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrafficControlData) GetTrafficSteeringPolIdDl() string {
-	if o == nil || IsNil(o.TrafficSteeringPolIdDl.Get()) {
+	if o == nil || isNil(o.TrafficSteeringPolIdDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *TrafficControlData) UnsetTrafficSteeringPolIdDl() {
 
 // GetTrafficSteeringPolIdUl returns the TrafficSteeringPolIdUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrafficControlData) GetTrafficSteeringPolIdUl() string {
-	if o == nil || IsNil(o.TrafficSteeringPolIdUl.Get()) {
+	if o == nil || isNil(o.TrafficSteeringPolIdUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *TrafficControlData) UnsetTrafficSteeringPolIdUl() {
 
 // GetRouteToLocs returns the RouteToLocs field value if set, zero value otherwise.
 func (o *TrafficControlData) GetRouteToLocs() []RouteToLocation {
-	if o == nil || IsNil(o.RouteToLocs) {
+	if o == nil || isNil(o.RouteToLocs) {
 		var ret []RouteToLocation
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *TrafficControlData) GetRouteToLocs() []RouteToLocation {
 // GetRouteToLocsOk returns a tuple with the RouteToLocs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetRouteToLocsOk() ([]RouteToLocation, bool) {
-	if o == nil || IsNil(o.RouteToLocs) {
+	if o == nil || isNil(o.RouteToLocs) {
 		return nil, false
 	}
 	return o.RouteToLocs, true
@@ -317,7 +317,7 @@ func (o *TrafficControlData) GetRouteToLocsOk() ([]RouteToLocation, bool) {
 
 // HasRouteToLocs returns a boolean if a field has been set.
 func (o *TrafficControlData) HasRouteToLocs() bool {
-	if o != nil && !IsNil(o.RouteToLocs) {
+	if o != nil && !isNil(o.RouteToLocs) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *TrafficControlData) SetRouteToLocs(v []RouteToLocation) {
 
 // GetTraffCorreInd returns the TraffCorreInd field value if set, zero value otherwise.
 func (o *TrafficControlData) GetTraffCorreInd() bool {
-	if o == nil || IsNil(o.TraffCorreInd) {
+	if o == nil || isNil(o.TraffCorreInd) {
 		var ret bool
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *TrafficControlData) GetTraffCorreInd() bool {
 // GetTraffCorreIndOk returns a tuple with the TraffCorreInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetTraffCorreIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.TraffCorreInd) {
+	if o == nil || isNil(o.TraffCorreInd) {
 		return nil, false
 	}
 	return o.TraffCorreInd, true
@@ -349,7 +349,7 @@ func (o *TrafficControlData) GetTraffCorreIndOk() (*bool, bool) {
 
 // HasTraffCorreInd returns a boolean if a field has been set.
 func (o *TrafficControlData) HasTraffCorreInd() bool {
-	if o != nil && !IsNil(o.TraffCorreInd) {
+	if o != nil && !isNil(o.TraffCorreInd) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *TrafficControlData) SetTraffCorreInd(v bool) {
 
 // GetUpPathChgEvent returns the UpPathChgEvent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TrafficControlData) GetUpPathChgEvent() UpPathChgEvent {
-	if o == nil || IsNil(o.UpPathChgEvent.Get()) {
+	if o == nil || isNil(o.UpPathChgEvent.Get()) {
 		var ret UpPathChgEvent
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *TrafficControlData) UnsetUpPathChgEvent() {
 
 // GetSteerFun returns the SteerFun field value if set, zero value otherwise.
 func (o *TrafficControlData) GetSteerFun() SteeringFunctionality {
-	if o == nil || IsNil(o.SteerFun) {
+	if o == nil || isNil(o.SteerFun) {
 		var ret SteeringFunctionality
 		return ret
 	}
@@ -415,7 +415,7 @@ func (o *TrafficControlData) GetSteerFun() SteeringFunctionality {
 // GetSteerFunOk returns a tuple with the SteerFun field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetSteerFunOk() (*SteeringFunctionality, bool) {
-	if o == nil || IsNil(o.SteerFun) {
+	if o == nil || isNil(o.SteerFun) {
 		return nil, false
 	}
 	return o.SteerFun, true
@@ -423,7 +423,7 @@ func (o *TrafficControlData) GetSteerFunOk() (*SteeringFunctionality, bool) {
 
 // HasSteerFun returns a boolean if a field has been set.
 func (o *TrafficControlData) HasSteerFun() bool {
-	if o != nil && !IsNil(o.SteerFun) {
+	if o != nil && !isNil(o.SteerFun) {
 		return true
 	}
 
@@ -437,7 +437,7 @@ func (o *TrafficControlData) SetSteerFun(v SteeringFunctionality) {
 
 // GetSteerModeDl returns the SteerModeDl field value if set, zero value otherwise.
 func (o *TrafficControlData) GetSteerModeDl() SteeringMode {
-	if o == nil || IsNil(o.SteerModeDl) {
+	if o == nil || isNil(o.SteerModeDl) {
 		var ret SteeringMode
 		return ret
 	}
@@ -447,7 +447,7 @@ func (o *TrafficControlData) GetSteerModeDl() SteeringMode {
 // GetSteerModeDlOk returns a tuple with the SteerModeDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetSteerModeDlOk() (*SteeringMode, bool) {
-	if o == nil || IsNil(o.SteerModeDl) {
+	if o == nil || isNil(o.SteerModeDl) {
 		return nil, false
 	}
 	return o.SteerModeDl, true
@@ -455,7 +455,7 @@ func (o *TrafficControlData) GetSteerModeDlOk() (*SteeringMode, bool) {
 
 // HasSteerModeDl returns a boolean if a field has been set.
 func (o *TrafficControlData) HasSteerModeDl() bool {
-	if o != nil && !IsNil(o.SteerModeDl) {
+	if o != nil && !isNil(o.SteerModeDl) {
 		return true
 	}
 
@@ -469,7 +469,7 @@ func (o *TrafficControlData) SetSteerModeDl(v SteeringMode) {
 
 // GetSteerModeUl returns the SteerModeUl field value if set, zero value otherwise.
 func (o *TrafficControlData) GetSteerModeUl() SteeringMode {
-	if o == nil || IsNil(o.SteerModeUl) {
+	if o == nil || isNil(o.SteerModeUl) {
 		var ret SteeringMode
 		return ret
 	}
@@ -479,7 +479,7 @@ func (o *TrafficControlData) GetSteerModeUl() SteeringMode {
 // GetSteerModeUlOk returns a tuple with the SteerModeUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetSteerModeUlOk() (*SteeringMode, bool) {
-	if o == nil || IsNil(o.SteerModeUl) {
+	if o == nil || isNil(o.SteerModeUl) {
 		return nil, false
 	}
 	return o.SteerModeUl, true
@@ -487,7 +487,7 @@ func (o *TrafficControlData) GetSteerModeUlOk() (*SteeringMode, bool) {
 
 // HasSteerModeUl returns a boolean if a field has been set.
 func (o *TrafficControlData) HasSteerModeUl() bool {
-	if o != nil && !IsNil(o.SteerModeUl) {
+	if o != nil && !isNil(o.SteerModeUl) {
 		return true
 	}
 
@@ -501,7 +501,7 @@ func (o *TrafficControlData) SetSteerModeUl(v SteeringMode) {
 
 // GetMulAccCtrl returns the MulAccCtrl field value if set, zero value otherwise.
 func (o *TrafficControlData) GetMulAccCtrl() MulticastAccessControl {
-	if o == nil || IsNil(o.MulAccCtrl) {
+	if o == nil || isNil(o.MulAccCtrl) {
 		var ret MulticastAccessControl
 		return ret
 	}
@@ -511,7 +511,7 @@ func (o *TrafficControlData) GetMulAccCtrl() MulticastAccessControl {
 // GetMulAccCtrlOk returns a tuple with the MulAccCtrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetMulAccCtrlOk() (*MulticastAccessControl, bool) {
-	if o == nil || IsNil(o.MulAccCtrl) {
+	if o == nil || isNil(o.MulAccCtrl) {
 		return nil, false
 	}
 	return o.MulAccCtrl, true
@@ -519,7 +519,7 @@ func (o *TrafficControlData) GetMulAccCtrlOk() (*MulticastAccessControl, bool) {
 
 // HasMulAccCtrl returns a boolean if a field has been set.
 func (o *TrafficControlData) HasMulAccCtrl() bool {
-	if o != nil && !IsNil(o.MulAccCtrl) {
+	if o != nil && !isNil(o.MulAccCtrl) {
 		return true
 	}
 
@@ -533,7 +533,7 @@ func (o *TrafficControlData) SetMulAccCtrl(v MulticastAccessControl) {
 
 // GetSnssaiList returns the SnssaiList field value if set, zero value otherwise.
 func (o *TrafficControlData) GetSnssaiList() []Snssai {
-	if o == nil || IsNil(o.SnssaiList) {
+	if o == nil || isNil(o.SnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -543,7 +543,7 @@ func (o *TrafficControlData) GetSnssaiList() []Snssai {
 // GetSnssaiListOk returns a tuple with the SnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrafficControlData) GetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.SnssaiList) {
+	if o == nil || isNil(o.SnssaiList) {
 		return nil, false
 	}
 	return o.SnssaiList, true
@@ -551,7 +551,7 @@ func (o *TrafficControlData) GetSnssaiListOk() ([]Snssai, bool) {
 
 // HasSnssaiList returns a boolean if a field has been set.
 func (o *TrafficControlData) HasSnssaiList() bool {
-	if o != nil && !IsNil(o.SnssaiList) {
+	if o != nil && !isNil(o.SnssaiList) {
 		return true
 	}
 
@@ -573,19 +573,19 @@ func (o TrafficControlData) MarshalJSON() ([]byte, error) {
 
 func (o TrafficControlData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TcId) {
+	if !isNil(o.TcId) {
 		toSerialize["tcId"] = o.TcId
 	}
-	if !IsNil(o.FlowStatus) {
+	if !isNil(o.FlowStatus) {
 		toSerialize["flowStatus"] = o.FlowStatus
 	}
-	if !IsNil(o.RedirectInfo) {
+	if !isNil(o.RedirectInfo) {
 		toSerialize["redirectInfo"] = o.RedirectInfo
 	}
-	if !IsNil(o.AddRedirectInfo) {
+	if !isNil(o.AddRedirectInfo) {
 		toSerialize["addRedirectInfo"] = o.AddRedirectInfo
 	}
-	if !IsNil(o.MuteNotif) {
+	if !isNil(o.MuteNotif) {
 		toSerialize["muteNotif"] = o.MuteNotif
 	}
 	if o.TrafficSteeringPolIdDl.IsSet() {
@@ -594,28 +594,28 @@ func (o TrafficControlData) ToMap() (map[string]interface{}, error) {
 	if o.TrafficSteeringPolIdUl.IsSet() {
 		toSerialize["trafficSteeringPolIdUl"] = o.TrafficSteeringPolIdUl.Get()
 	}
-	if !IsNil(o.RouteToLocs) {
+	if !isNil(o.RouteToLocs) {
 		toSerialize["routeToLocs"] = o.RouteToLocs
 	}
-	if !IsNil(o.TraffCorreInd) {
+	if !isNil(o.TraffCorreInd) {
 		toSerialize["traffCorreInd"] = o.TraffCorreInd
 	}
 	if o.UpPathChgEvent.IsSet() {
 		toSerialize["upPathChgEvent"] = o.UpPathChgEvent.Get()
 	}
-	if !IsNil(o.SteerFun) {
+	if !isNil(o.SteerFun) {
 		toSerialize["steerFun"] = o.SteerFun
 	}
-	if !IsNil(o.SteerModeDl) {
+	if !isNil(o.SteerModeDl) {
 		toSerialize["steerModeDl"] = o.SteerModeDl
 	}
-	if !IsNil(o.SteerModeUl) {
+	if !isNil(o.SteerModeUl) {
 		toSerialize["steerModeUl"] = o.SteerModeUl
 	}
-	if !IsNil(o.MulAccCtrl) {
+	if !isNil(o.MulAccCtrl) {
 		toSerialize["mulAccCtrl"] = o.MulAccCtrl
 	}
-	if !IsNil(o.SnssaiList) {
+	if !isNil(o.SnssaiList) {
 		toSerialize["snssaiList"] = o.SnssaiList
 	}
 	return toSerialize, nil

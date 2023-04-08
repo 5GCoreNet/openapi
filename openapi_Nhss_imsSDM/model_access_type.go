@@ -17,23 +17,37 @@ import (
 
 // AccessType Represents the type of access (3GPP or non-3GPP)
 type AccessType struct {
-	string *string
+	AccessTypeAnyOf *AccessTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AccessType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AccessTypeAnyOf
+	err = json.Unmarshal(data, &dst.AccessTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAccessTypeAnyOf, _ := json.Marshal(dst.AccessTypeAnyOf)
+		if string(jsonAccessTypeAnyOf) == "{}" { // empty struct
+			dst.AccessTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AccessTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AccessTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AccessType)")
@@ -41,8 +55,12 @@ func (dst *AccessType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AccessType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AccessTypeAnyOf != nil {
+		return json.Marshal(&src.AccessTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

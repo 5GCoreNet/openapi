@@ -45,7 +45,7 @@ func NewLowDLRANUEThptRatioTargetWithDefaults() *LowDLRANUEThptRatioTarget {
 
 // GetTargetName returns the TargetName field value if set, zero value otherwise.
 func (o *LowDLRANUEThptRatioTarget) GetTargetName() string {
-	if o == nil || IsNil(o.TargetName) {
+	if o == nil || isNil(o.TargetName) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetName() string {
 // GetTargetNameOk returns a tuple with the TargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowDLRANUEThptRatioTarget) GetTargetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetName) {
+	if o == nil || isNil(o.TargetName) {
 		return nil, false
 	}
 	return o.TargetName, true
@@ -63,7 +63,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetNameOk() (*string, bool) {
 
 // HasTargetName returns a boolean if a field has been set.
 func (o *LowDLRANUEThptRatioTarget) HasTargetName() bool {
-	if o != nil && !IsNil(o.TargetName) {
+	if o != nil && !isNil(o.TargetName) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *LowDLRANUEThptRatioTarget) SetTargetName(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *LowDLRANUEThptRatioTarget) GetTargetCondition() string {
-	if o == nil || IsNil(o.TargetCondition) {
+	if o == nil || isNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowDLRANUEThptRatioTarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetCondition) {
+	if o == nil || isNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -95,7 +95,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *LowDLRANUEThptRatioTarget) HasTargetCondition() bool {
-	if o != nil && !IsNil(o.TargetCondition) {
+	if o != nil && !isNil(o.TargetCondition) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *LowDLRANUEThptRatioTarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *LowDLRANUEThptRatioTarget) GetTargetValueRange() int32 {
-	if o == nil || IsNil(o.TargetValueRange) {
+	if o == nil || isNil(o.TargetValueRange) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetValueRange() int32 {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowDLRANUEThptRatioTarget) GetTargetValueRangeOk() (*int32, bool) {
-	if o == nil || IsNil(o.TargetValueRange) {
+	if o == nil || isNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -127,7 +127,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetValueRangeOk() (*int32, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *LowDLRANUEThptRatioTarget) HasTargetValueRange() bool {
-	if o != nil && !IsNil(o.TargetValueRange) {
+	if o != nil && !isNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *LowDLRANUEThptRatioTarget) SetTargetValueRange(v int32) {
 
 // GetTargetContexts returns the TargetContexts field value if set, zero value otherwise.
 func (o *LowDLRANUEThptRatioTarget) GetTargetContexts() LowDLRANUEThptContext {
-	if o == nil || IsNil(o.TargetContexts) {
+	if o == nil || isNil(o.TargetContexts) {
 		var ret LowDLRANUEThptContext
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetContexts() LowDLRANUEThptContext {
 // GetTargetContextsOk returns a tuple with the TargetContexts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowDLRANUEThptRatioTarget) GetTargetContextsOk() (*LowDLRANUEThptContext, bool) {
-	if o == nil || IsNil(o.TargetContexts) {
+	if o == nil || isNil(o.TargetContexts) {
 		return nil, false
 	}
 	return o.TargetContexts, true
@@ -159,7 +159,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetContextsOk() (*LowDLRANUEThptContex
 
 // HasTargetContexts returns a boolean if a field has been set.
 func (o *LowDLRANUEThptRatioTarget) HasTargetContexts() bool {
-	if o != nil && !IsNil(o.TargetContexts) {
+	if o != nil && !isNil(o.TargetContexts) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *LowDLRANUEThptRatioTarget) SetTargetContexts(v LowDLRANUEThptContext) {
 
 // GetTargetFulfilmentInfo returns the TargetFulfilmentInfo field value if set, zero value otherwise.
 func (o *LowDLRANUEThptRatioTarget) GetTargetFulfilmentInfo() FulfilmentInfo {
-	if o == nil || IsNil(o.TargetFulfilmentInfo) {
+	if o == nil || isNil(o.TargetFulfilmentInfo) {
 		var ret FulfilmentInfo
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetFulfilmentInfo() FulfilmentInfo {
 // GetTargetFulfilmentInfoOk returns a tuple with the TargetFulfilmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LowDLRANUEThptRatioTarget) GetTargetFulfilmentInfoOk() (*FulfilmentInfo, bool) {
-	if o == nil || IsNil(o.TargetFulfilmentInfo) {
+	if o == nil || isNil(o.TargetFulfilmentInfo) {
 		return nil, false
 	}
 	return o.TargetFulfilmentInfo, true
@@ -191,7 +191,7 @@ func (o *LowDLRANUEThptRatioTarget) GetTargetFulfilmentInfoOk() (*FulfilmentInfo
 
 // HasTargetFulfilmentInfo returns a boolean if a field has been set.
 func (o *LowDLRANUEThptRatioTarget) HasTargetFulfilmentInfo() bool {
-	if o != nil && !IsNil(o.TargetFulfilmentInfo) {
+	if o != nil && !isNil(o.TargetFulfilmentInfo) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o LowDLRANUEThptRatioTarget) MarshalJSON() ([]byte, error) {
 
 func (o LowDLRANUEThptRatioTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TargetName) {
+	if !isNil(o.TargetName) {
 		toSerialize["targetName"] = o.TargetName
 	}
-	if !IsNil(o.TargetCondition) {
+	if !isNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !IsNil(o.TargetValueRange) {
+	if !isNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
-	if !IsNil(o.TargetContexts) {
+	if !isNil(o.TargetContexts) {
 		toSerialize["targetContexts"] = o.TargetContexts
 	}
-	if !IsNil(o.TargetFulfilmentInfo) {
+	if !isNil(o.TargetFulfilmentInfo) {
 		toSerialize["targetFulfilmentInfo"] = o.TargetFulfilmentInfo
 	}
 	return toSerialize, nil

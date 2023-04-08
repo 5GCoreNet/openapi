@@ -41,7 +41,7 @@ func NewManagedElementSingleAllOf1WithDefaults() *ManagedElementSingleAllOf1 {
 
 // GetMDAFunction returns the MDAFunction field value if set, zero value otherwise.
 func (o *ManagedElementSingleAllOf1) GetMDAFunction() []MDAFunctionSingle {
-	if o == nil || IsNil(o.MDAFunction) {
+	if o == nil || isNil(o.MDAFunction) {
 		var ret []MDAFunctionSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ManagedElementSingleAllOf1) GetMDAFunction() []MDAFunctionSingle {
 // GetMDAFunctionOk returns a tuple with the MDAFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementSingleAllOf1) GetMDAFunctionOk() ([]MDAFunctionSingle, bool) {
-	if o == nil || IsNil(o.MDAFunction) {
+	if o == nil || isNil(o.MDAFunction) {
 		return nil, false
 	}
 	return o.MDAFunction, true
@@ -59,7 +59,7 @@ func (o *ManagedElementSingleAllOf1) GetMDAFunctionOk() ([]MDAFunctionSingle, bo
 
 // HasMDAFunction returns a boolean if a field has been set.
 func (o *ManagedElementSingleAllOf1) HasMDAFunction() bool {
-	if o != nil && !IsNil(o.MDAFunction) {
+	if o != nil && !isNil(o.MDAFunction) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ManagedElementSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MDAFunction) {
+	if !isNil(o.MDAFunction) {
 		toSerialize["MDAFunction"] = o.MDAFunction
 	}
 	return toSerialize, nil

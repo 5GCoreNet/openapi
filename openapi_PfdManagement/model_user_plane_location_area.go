@@ -44,7 +44,7 @@ func NewUserPlaneLocationAreaWithDefaults() *UserPlaneLocationArea {
 
 // GetLocationArea returns the LocationArea field value if set, zero value otherwise.
 func (o *UserPlaneLocationArea) GetLocationArea() LocationArea {
-	if o == nil || IsNil(o.LocationArea) {
+	if o == nil || isNil(o.LocationArea) {
 		var ret LocationArea
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UserPlaneLocationArea) GetLocationArea() LocationArea {
 // GetLocationAreaOk returns a tuple with the LocationArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneLocationArea) GetLocationAreaOk() (*LocationArea, bool) {
-	if o == nil || IsNil(o.LocationArea) {
+	if o == nil || isNil(o.LocationArea) {
 		return nil, false
 	}
 	return o.LocationArea, true
@@ -62,7 +62,7 @@ func (o *UserPlaneLocationArea) GetLocationAreaOk() (*LocationArea, bool) {
 
 // HasLocationArea returns a boolean if a field has been set.
 func (o *UserPlaneLocationArea) HasLocationArea() bool {
-	if o != nil && !IsNil(o.LocationArea) {
+	if o != nil && !isNil(o.LocationArea) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *UserPlaneLocationArea) SetLocationArea(v LocationArea) {
 
 // GetLocationArea5G returns the LocationArea5G field value if set, zero value otherwise.
 func (o *UserPlaneLocationArea) GetLocationArea5G() LocationArea5G {
-	if o == nil || IsNil(o.LocationArea5G) {
+	if o == nil || isNil(o.LocationArea5G) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UserPlaneLocationArea) GetLocationArea5G() LocationArea5G {
 // GetLocationArea5GOk returns a tuple with the LocationArea5G field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneLocationArea) GetLocationArea5GOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.LocationArea5G) {
+	if o == nil || isNil(o.LocationArea5G) {
 		return nil, false
 	}
 	return o.LocationArea5G, true
@@ -94,7 +94,7 @@ func (o *UserPlaneLocationArea) GetLocationArea5GOk() (*LocationArea5G, bool) {
 
 // HasLocationArea5G returns a boolean if a field has been set.
 func (o *UserPlaneLocationArea) HasLocationArea5G() bool {
-	if o != nil && !IsNil(o.LocationArea5G) {
+	if o != nil && !isNil(o.LocationArea5G) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *UserPlaneLocationArea) SetLocationArea5G(v LocationArea5G) {
 
 // GetDnais returns the Dnais field value if set, zero value otherwise.
 func (o *UserPlaneLocationArea) GetDnais() []string {
-	if o == nil || IsNil(o.Dnais) {
+	if o == nil || isNil(o.Dnais) {
 		var ret []string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *UserPlaneLocationArea) GetDnais() []string {
 // GetDnaisOk returns a tuple with the Dnais field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneLocationArea) GetDnaisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Dnais) {
+	if o == nil || isNil(o.Dnais) {
 		return nil, false
 	}
 	return o.Dnais, true
@@ -126,7 +126,7 @@ func (o *UserPlaneLocationArea) GetDnaisOk() ([]string, bool) {
 
 // HasDnais returns a boolean if a field has been set.
 func (o *UserPlaneLocationArea) HasDnais() bool {
-	if o != nil && !IsNil(o.Dnais) {
+	if o != nil && !isNil(o.Dnais) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o UserPlaneLocationArea) MarshalJSON() ([]byte, error) {
 
 func (o UserPlaneLocationArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LocationArea) {
+	if !isNil(o.LocationArea) {
 		toSerialize["locationArea"] = o.LocationArea
 	}
-	if !IsNil(o.LocationArea5G) {
+	if !isNil(o.LocationArea5G) {
 		toSerialize["locationArea5G"] = o.LocationArea5G
 	}
-	if !IsNil(o.Dnais) {
+	if !isNil(o.Dnais) {
 		toSerialize["dnais"] = o.Dnais
 	}
 	return toSerialize, nil

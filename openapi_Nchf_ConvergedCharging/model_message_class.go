@@ -42,7 +42,7 @@ func NewMessageClassWithDefaults() *MessageClass {
 
 // GetClassIdentifier returns the ClassIdentifier field value if set, zero value otherwise.
 func (o *MessageClass) GetClassIdentifier() ClassIdentifier {
-	if o == nil || IsNil(o.ClassIdentifier) {
+	if o == nil || isNil(o.ClassIdentifier) {
 		var ret ClassIdentifier
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MessageClass) GetClassIdentifier() ClassIdentifier {
 // GetClassIdentifierOk returns a tuple with the ClassIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageClass) GetClassIdentifierOk() (*ClassIdentifier, bool) {
-	if o == nil || IsNil(o.ClassIdentifier) {
+	if o == nil || isNil(o.ClassIdentifier) {
 		return nil, false
 	}
 	return o.ClassIdentifier, true
@@ -60,7 +60,7 @@ func (o *MessageClass) GetClassIdentifierOk() (*ClassIdentifier, bool) {
 
 // HasClassIdentifier returns a boolean if a field has been set.
 func (o *MessageClass) HasClassIdentifier() bool {
-	if o != nil && !IsNil(o.ClassIdentifier) {
+	if o != nil && !isNil(o.ClassIdentifier) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MessageClass) SetClassIdentifier(v ClassIdentifier) {
 
 // GetTokenText returns the TokenText field value if set, zero value otherwise.
 func (o *MessageClass) GetTokenText() string {
-	if o == nil || IsNil(o.TokenText) {
+	if o == nil || isNil(o.TokenText) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MessageClass) GetTokenText() string {
 // GetTokenTextOk returns a tuple with the TokenText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageClass) GetTokenTextOk() (*string, bool) {
-	if o == nil || IsNil(o.TokenText) {
+	if o == nil || isNil(o.TokenText) {
 		return nil, false
 	}
 	return o.TokenText, true
@@ -92,7 +92,7 @@ func (o *MessageClass) GetTokenTextOk() (*string, bool) {
 
 // HasTokenText returns a boolean if a field has been set.
 func (o *MessageClass) HasTokenText() bool {
-	if o != nil && !IsNil(o.TokenText) {
+	if o != nil && !isNil(o.TokenText) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o MessageClass) MarshalJSON() ([]byte, error) {
 
 func (o MessageClass) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ClassIdentifier) {
+	if !isNil(o.ClassIdentifier) {
 		toSerialize["classIdentifier"] = o.ClassIdentifier
 	}
-	if !IsNil(o.TokenText) {
+	if !isNil(o.TokenText) {
 		toSerialize["tokenText"] = o.TokenText
 	}
 	return toSerialize, nil

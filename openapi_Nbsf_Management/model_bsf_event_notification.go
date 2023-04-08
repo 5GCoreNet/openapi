@@ -71,7 +71,7 @@ func (o *BsfEventNotification) SetEvent(v BsfEvent) {
 
 // GetPcfForUeInfo returns the PcfForUeInfo field value if set, zero value otherwise.
 func (o *BsfEventNotification) GetPcfForUeInfo() PcfForUeInfo {
-	if o == nil || IsNil(o.PcfForUeInfo) {
+	if o == nil || isNil(o.PcfForUeInfo) {
 		var ret PcfForUeInfo
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *BsfEventNotification) GetPcfForUeInfo() PcfForUeInfo {
 // GetPcfForUeInfoOk returns a tuple with the PcfForUeInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfEventNotification) GetPcfForUeInfoOk() (*PcfForUeInfo, bool) {
-	if o == nil || IsNil(o.PcfForUeInfo) {
+	if o == nil || isNil(o.PcfForUeInfo) {
 		return nil, false
 	}
 	return o.PcfForUeInfo, true
@@ -89,7 +89,7 @@ func (o *BsfEventNotification) GetPcfForUeInfoOk() (*PcfForUeInfo, bool) {
 
 // HasPcfForUeInfo returns a boolean if a field has been set.
 func (o *BsfEventNotification) HasPcfForUeInfo() bool {
-	if o != nil && !IsNil(o.PcfForUeInfo) {
+	if o != nil && !isNil(o.PcfForUeInfo) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *BsfEventNotification) SetPcfForUeInfo(v PcfForUeInfo) {
 
 // GetPcfForPduSessInfos returns the PcfForPduSessInfos field value if set, zero value otherwise.
 func (o *BsfEventNotification) GetPcfForPduSessInfos() []PcfForPduSessionInfo {
-	if o == nil || IsNil(o.PcfForPduSessInfos) {
+	if o == nil || isNil(o.PcfForPduSessInfos) {
 		var ret []PcfForPduSessionInfo
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *BsfEventNotification) GetPcfForPduSessInfos() []PcfForPduSessionInfo {
 // GetPcfForPduSessInfosOk returns a tuple with the PcfForPduSessInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfEventNotification) GetPcfForPduSessInfosOk() ([]PcfForPduSessionInfo, bool) {
-	if o == nil || IsNil(o.PcfForPduSessInfos) {
+	if o == nil || isNil(o.PcfForPduSessInfos) {
 		return nil, false
 	}
 	return o.PcfForPduSessInfos, true
@@ -121,7 +121,7 @@ func (o *BsfEventNotification) GetPcfForPduSessInfosOk() ([]PcfForPduSessionInfo
 
 // HasPcfForPduSessInfos returns a boolean if a field has been set.
 func (o *BsfEventNotification) HasPcfForPduSessInfos() bool {
-	if o != nil && !IsNil(o.PcfForPduSessInfos) {
+	if o != nil && !isNil(o.PcfForPduSessInfos) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *BsfEventNotification) SetPcfForPduSessInfos(v []PcfForPduSessionInfo) {
 
 // GetMatchSnssaiDnns returns the MatchSnssaiDnns field value if set, zero value otherwise.
 func (o *BsfEventNotification) GetMatchSnssaiDnns() []SnssaiDnnPair {
-	if o == nil || IsNil(o.MatchSnssaiDnns) {
+	if o == nil || isNil(o.MatchSnssaiDnns) {
 		var ret []SnssaiDnnPair
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *BsfEventNotification) GetMatchSnssaiDnns() []SnssaiDnnPair {
 // GetMatchSnssaiDnnsOk returns a tuple with the MatchSnssaiDnns field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfEventNotification) GetMatchSnssaiDnnsOk() ([]SnssaiDnnPair, bool) {
-	if o == nil || IsNil(o.MatchSnssaiDnns) {
+	if o == nil || isNil(o.MatchSnssaiDnns) {
 		return nil, false
 	}
 	return o.MatchSnssaiDnns, true
@@ -153,7 +153,7 @@ func (o *BsfEventNotification) GetMatchSnssaiDnnsOk() ([]SnssaiDnnPair, bool) {
 
 // HasMatchSnssaiDnns returns a boolean if a field has been set.
 func (o *BsfEventNotification) HasMatchSnssaiDnns() bool {
-	if o != nil && !IsNil(o.MatchSnssaiDnns) {
+	if o != nil && !isNil(o.MatchSnssaiDnns) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o BsfEventNotification) MarshalJSON() ([]byte, error) {
 func (o BsfEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.PcfForUeInfo) {
+	if !isNil(o.PcfForUeInfo) {
 		toSerialize["pcfForUeInfo"] = o.PcfForUeInfo
 	}
-	if !IsNil(o.PcfForPduSessInfos) {
+	if !isNil(o.PcfForPduSessInfos) {
 		toSerialize["pcfForPduSessInfos"] = o.PcfForPduSessInfos
 	}
-	if !IsNil(o.MatchSnssaiDnns) {
+	if !isNil(o.MatchSnssaiDnns) {
 		toSerialize["matchSnssaiDnns"] = o.MatchSnssaiDnns
 	}
 	return toSerialize, nil

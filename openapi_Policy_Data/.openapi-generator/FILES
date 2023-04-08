@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -27,6 +26,7 @@ docs/BdtData.md
 docs/BdtDataPatch.md
 docs/BdtDataStoreApi.md
 docs/BdtPolicyStatus.md
+docs/BdtPolicyStatusAnyOf.md
 docs/ChargingInformation.md
 docs/DnnRouteSelectionDescriptor.md
 docs/Ecgi.md
@@ -44,6 +44,7 @@ docs/MbsSessPolCtrlData.md
 docs/MbsSessPolDataId.md
 docs/MbsSessionId.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/Ncgi.md
 docs/NetworkAreaInfo.md
 docs/NotificationItem.md
@@ -52,9 +53,12 @@ docs/OperatorSpecificDataContainerValue.md
 docs/OperatorSpecificDataDocumentApi.md
 docs/PatchItem.md
 docs/PatchOperation.md
+docs/PatchOperationAnyOf.md
 docs/PatchResult.md
 docs/PduSessionType.md
+docs/PduSessionTypeAnyOf.md
 docs/Periodicity.md
+docs/PeriodicityAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/PlmnRouteSelectionDescriptor.md
@@ -65,8 +69,10 @@ docs/PolicyDataForIndividualUeDocumentApi.md
 docs/PolicyDataSubscription.md
 docs/PolicyDataSubscriptionsCollectionApi.md
 docs/PolicyDataSubset.md
+docs/PolicyDataSubsetAnyOf.md
 docs/PresenceInfo.md
 docs/PresenceState.md
+docs/PresenceStateAnyOf.md
 docs/ProblemDetails.md
 docs/ReportItem.md
 docs/ResourceItem.md
@@ -86,6 +92,7 @@ docs/SnssaiRouteSelectionDescriptor.md
 docs/SponsorConnectivityData.md
 docs/SponsorConnectivityDataDocumentApi.md
 docs/SscMode.md
+docs/SscModeAnyOf.md
 docs/Ssm.md
 docs/Tai.md
 docs/TimePeriod.md
@@ -101,6 +108,7 @@ docs/UsageMonData.md
 docs/UsageMonDataLimit.md
 docs/UsageMonDataScope.md
 docs/UsageMonLevel.md
+docs/UsageMonLevelAnyOf.md
 docs/UsageMonitoringInformationDocumentApi.md
 docs/UsageThreshold.md
 git_push.sh
@@ -112,6 +120,7 @@ model_am_policy_data.go
 model_bdt_data.go
 model_bdt_data_patch.go
 model_bdt_policy_status.go
+model_bdt_policy_status_any_of.go
 model_charging_information.go
 model_dnn_route_selection_descriptor.go
 model_ecgi.go
@@ -128,14 +137,18 @@ model_mbs_session_id.go
 model_ncgi.go
 model_network_area_info.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_notification_item.go
 model_operator_specific_data_container.go
 model_operator_specific_data_container_value.go
 model_patch_item.go
 model_patch_operation.go
+model_patch_operation_any_of.go
 model_patch_result.go
 model_pdu_session_type.go
+model_pdu_session_type_any_of.go
 model_periodicity.go
+model_periodicity_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_plmn_route_selection_descriptor.go
@@ -143,8 +156,10 @@ model_policy_data_change_notification.go
 model_policy_data_for_individual_ue.go
 model_policy_data_subscription.go
 model_policy_data_subset.go
+model_policy_data_subset_any_of.go
 model_presence_info.go
 model_presence_state.go
+model_presence_state_any_of.go
 model_problem_details.go
 model_report_item.go
 model_resource_item.go
@@ -161,6 +176,7 @@ model_snssai.go
 model_snssai_route_selection_descriptor.go
 model_sponsor_connectivity_data.go
 model_ssc_mode.go
+model_ssc_mode_any_of.go
 model_ssm.go
 model_tai.go
 model_time_period.go
@@ -175,6 +191,7 @@ model_usage_mon_data.go
 model_usage_mon_data_limit.go
 model_usage_mon_data_scope.go
 model_usage_mon_level.go
+model_usage_mon_level_any_of.go
 model_usage_threshold.go
 response.go
 test/api_access_and_mobility_policy_data_document_test.go

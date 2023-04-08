@@ -70,7 +70,7 @@ func (o *ImplicitRegDetails) SetRegId(v string) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ImplicitRegDetails) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *ImplicitRegDetails) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImplicitRegDetails) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -88,7 +88,7 @@ func (o *ImplicitRegDetails) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ImplicitRegDetails) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o ImplicitRegDetails) MarshalJSON() ([]byte, error) {
 func (o ImplicitRegDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["regId"] = o.RegId
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
 	return toSerialize, nil

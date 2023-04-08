@@ -41,7 +41,7 @@ func NewExtendedProblemDetailsAllOfWithDefaults() *ExtendedProblemDetailsAllOf {
 
 // GetAcceptableServInfo returns the AcceptableServInfo field value if set, zero value otherwise.
 func (o *ExtendedProblemDetailsAllOf) GetAcceptableServInfo() AcceptableServiceInfo {
-	if o == nil || IsNil(o.AcceptableServInfo) {
+	if o == nil || isNil(o.AcceptableServInfo) {
 		var ret AcceptableServiceInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ExtendedProblemDetailsAllOf) GetAcceptableServInfo() AcceptableServiceI
 // GetAcceptableServInfoOk returns a tuple with the AcceptableServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtendedProblemDetailsAllOf) GetAcceptableServInfoOk() (*AcceptableServiceInfo, bool) {
-	if o == nil || IsNil(o.AcceptableServInfo) {
+	if o == nil || isNil(o.AcceptableServInfo) {
 		return nil, false
 	}
 	return o.AcceptableServInfo, true
@@ -59,7 +59,7 @@ func (o *ExtendedProblemDetailsAllOf) GetAcceptableServInfoOk() (*AcceptableServ
 
 // HasAcceptableServInfo returns a boolean if a field has been set.
 func (o *ExtendedProblemDetailsAllOf) HasAcceptableServInfo() bool {
-	if o != nil && !IsNil(o.AcceptableServInfo) {
+	if o != nil && !isNil(o.AcceptableServInfo) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ExtendedProblemDetailsAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ExtendedProblemDetailsAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcceptableServInfo) {
+	if !isNil(o.AcceptableServInfo) {
 		toSerialize["acceptableServInfo"] = o.AcceptableServInfo
 	}
 	return toSerialize, nil

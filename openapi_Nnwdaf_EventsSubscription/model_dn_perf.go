@@ -48,7 +48,7 @@ func NewDnPerfWithDefaults() *DnPerf {
 
 // GetAppServerInsAddr returns the AppServerInsAddr field value if set, zero value otherwise.
 func (o *DnPerf) GetAppServerInsAddr() AddrFqdn {
-	if o == nil || IsNil(o.AppServerInsAddr) {
+	if o == nil || isNil(o.AppServerInsAddr) {
 		var ret AddrFqdn
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *DnPerf) GetAppServerInsAddr() AddrFqdn {
 // GetAppServerInsAddrOk returns a tuple with the AppServerInsAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerf) GetAppServerInsAddrOk() (*AddrFqdn, bool) {
-	if o == nil || IsNil(o.AppServerInsAddr) {
+	if o == nil || isNil(o.AppServerInsAddr) {
 		return nil, false
 	}
 	return o.AppServerInsAddr, true
@@ -66,7 +66,7 @@ func (o *DnPerf) GetAppServerInsAddrOk() (*AddrFqdn, bool) {
 
 // HasAppServerInsAddr returns a boolean if a field has been set.
 func (o *DnPerf) HasAppServerInsAddr() bool {
-	if o != nil && !IsNil(o.AppServerInsAddr) {
+	if o != nil && !isNil(o.AppServerInsAddr) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *DnPerf) SetAppServerInsAddr(v AddrFqdn) {
 
 // GetUpfInfo returns the UpfInfo field value if set, zero value otherwise.
 func (o *DnPerf) GetUpfInfo() UpfInformation {
-	if o == nil || IsNil(o.UpfInfo) {
+	if o == nil || isNil(o.UpfInfo) {
 		var ret UpfInformation
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *DnPerf) GetUpfInfo() UpfInformation {
 // GetUpfInfoOk returns a tuple with the UpfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerf) GetUpfInfoOk() (*UpfInformation, bool) {
-	if o == nil || IsNil(o.UpfInfo) {
+	if o == nil || isNil(o.UpfInfo) {
 		return nil, false
 	}
 	return o.UpfInfo, true
@@ -98,7 +98,7 @@ func (o *DnPerf) GetUpfInfoOk() (*UpfInformation, bool) {
 
 // HasUpfInfo returns a boolean if a field has been set.
 func (o *DnPerf) HasUpfInfo() bool {
-	if o != nil && !IsNil(o.UpfInfo) {
+	if o != nil && !isNil(o.UpfInfo) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *DnPerf) SetUpfInfo(v UpfInformation) {
 
 // GetDnai returns the Dnai field value if set, zero value otherwise.
 func (o *DnPerf) GetDnai() string {
-	if o == nil || IsNil(o.Dnai) {
+	if o == nil || isNil(o.Dnai) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *DnPerf) GetDnai() string {
 // GetDnaiOk returns a tuple with the Dnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerf) GetDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnai) {
+	if o == nil || isNil(o.Dnai) {
 		return nil, false
 	}
 	return o.Dnai, true
@@ -130,7 +130,7 @@ func (o *DnPerf) GetDnaiOk() (*string, bool) {
 
 // HasDnai returns a boolean if a field has been set.
 func (o *DnPerf) HasDnai() bool {
-	if o != nil && !IsNil(o.Dnai) {
+	if o != nil && !isNil(o.Dnai) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *DnPerf) SetPerfData(v PerfData) {
 
 // GetSpatialValidCon returns the SpatialValidCon field value if set, zero value otherwise.
 func (o *DnPerf) GetSpatialValidCon() NetworkAreaInfo {
-	if o == nil || IsNil(o.SpatialValidCon) {
+	if o == nil || isNil(o.SpatialValidCon) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *DnPerf) GetSpatialValidCon() NetworkAreaInfo {
 // GetSpatialValidConOk returns a tuple with the SpatialValidCon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerf) GetSpatialValidConOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.SpatialValidCon) {
+	if o == nil || isNil(o.SpatialValidCon) {
 		return nil, false
 	}
 	return o.SpatialValidCon, true
@@ -186,7 +186,7 @@ func (o *DnPerf) GetSpatialValidConOk() (*NetworkAreaInfo, bool) {
 
 // HasSpatialValidCon returns a boolean if a field has been set.
 func (o *DnPerf) HasSpatialValidCon() bool {
-	if o != nil && !IsNil(o.SpatialValidCon) {
+	if o != nil && !isNil(o.SpatialValidCon) {
 		return true
 	}
 
@@ -200,7 +200,7 @@ func (o *DnPerf) SetSpatialValidCon(v NetworkAreaInfo) {
 
 // GetTemporalValidCon returns the TemporalValidCon field value if set, zero value otherwise.
 func (o *DnPerf) GetTemporalValidCon() TimeWindow {
-	if o == nil || IsNil(o.TemporalValidCon) {
+	if o == nil || isNil(o.TemporalValidCon) {
 		var ret TimeWindow
 		return ret
 	}
@@ -210,7 +210,7 @@ func (o *DnPerf) GetTemporalValidCon() TimeWindow {
 // GetTemporalValidConOk returns a tuple with the TemporalValidCon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnPerf) GetTemporalValidConOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.TemporalValidCon) {
+	if o == nil || isNil(o.TemporalValidCon) {
 		return nil, false
 	}
 	return o.TemporalValidCon, true
@@ -218,7 +218,7 @@ func (o *DnPerf) GetTemporalValidConOk() (*TimeWindow, bool) {
 
 // HasTemporalValidCon returns a boolean if a field has been set.
 func (o *DnPerf) HasTemporalValidCon() bool {
-	if o != nil && !IsNil(o.TemporalValidCon) {
+	if o != nil && !isNil(o.TemporalValidCon) {
 		return true
 	}
 
@@ -240,20 +240,20 @@ func (o DnPerf) MarshalJSON() ([]byte, error) {
 
 func (o DnPerf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppServerInsAddr) {
+	if !isNil(o.AppServerInsAddr) {
 		toSerialize["appServerInsAddr"] = o.AppServerInsAddr
 	}
-	if !IsNil(o.UpfInfo) {
+	if !isNil(o.UpfInfo) {
 		toSerialize["upfInfo"] = o.UpfInfo
 	}
-	if !IsNil(o.Dnai) {
+	if !isNil(o.Dnai) {
 		toSerialize["dnai"] = o.Dnai
 	}
 	toSerialize["perfData"] = o.PerfData
-	if !IsNil(o.SpatialValidCon) {
+	if !isNil(o.SpatialValidCon) {
 		toSerialize["spatialValidCon"] = o.SpatialValidCon
 	}
-	if !IsNil(o.TemporalValidCon) {
+	if !isNil(o.TemporalValidCon) {
 		toSerialize["temporalValidCon"] = o.TemporalValidCon
 	}
 	return toSerialize, nil

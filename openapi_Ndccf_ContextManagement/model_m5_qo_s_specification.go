@@ -106,7 +106,7 @@ func (o *M5QoSSpecification) SetMarBwUlBitRate(v string) {
 
 // GetMinDesBwDlBitRate returns the MinDesBwDlBitRate field value if set, zero value otherwise.
 func (o *M5QoSSpecification) GetMinDesBwDlBitRate() string {
-	if o == nil || IsNil(o.MinDesBwDlBitRate) {
+	if o == nil || isNil(o.MinDesBwDlBitRate) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *M5QoSSpecification) GetMinDesBwDlBitRate() string {
 // GetMinDesBwDlBitRateOk returns a tuple with the MinDesBwDlBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M5QoSSpecification) GetMinDesBwDlBitRateOk() (*string, bool) {
-	if o == nil || IsNil(o.MinDesBwDlBitRate) {
+	if o == nil || isNil(o.MinDesBwDlBitRate) {
 		return nil, false
 	}
 	return o.MinDesBwDlBitRate, true
@@ -124,7 +124,7 @@ func (o *M5QoSSpecification) GetMinDesBwDlBitRateOk() (*string, bool) {
 
 // HasMinDesBwDlBitRate returns a boolean if a field has been set.
 func (o *M5QoSSpecification) HasMinDesBwDlBitRate() bool {
-	if o != nil && !IsNil(o.MinDesBwDlBitRate) {
+	if o != nil && !isNil(o.MinDesBwDlBitRate) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *M5QoSSpecification) SetMinDesBwDlBitRate(v string) {
 
 // GetMinDesBwUlBitRate returns the MinDesBwUlBitRate field value if set, zero value otherwise.
 func (o *M5QoSSpecification) GetMinDesBwUlBitRate() string {
-	if o == nil || IsNil(o.MinDesBwUlBitRate) {
+	if o == nil || isNil(o.MinDesBwUlBitRate) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *M5QoSSpecification) GetMinDesBwUlBitRate() string {
 // GetMinDesBwUlBitRateOk returns a tuple with the MinDesBwUlBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M5QoSSpecification) GetMinDesBwUlBitRateOk() (*string, bool) {
-	if o == nil || IsNil(o.MinDesBwUlBitRate) {
+	if o == nil || isNil(o.MinDesBwUlBitRate) {
 		return nil, false
 	}
 	return o.MinDesBwUlBitRate, true
@@ -156,7 +156,7 @@ func (o *M5QoSSpecification) GetMinDesBwUlBitRateOk() (*string, bool) {
 
 // HasMinDesBwUlBitRate returns a boolean if a field has been set.
 func (o *M5QoSSpecification) HasMinDesBwUlBitRate() bool {
-	if o != nil && !IsNil(o.MinDesBwUlBitRate) {
+	if o != nil && !isNil(o.MinDesBwUlBitRate) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *M5QoSSpecification) SetMirBwUlBitRate(v string) {
 
 // GetDesLatency returns the DesLatency field value if set, zero value otherwise.
 func (o *M5QoSSpecification) GetDesLatency() int32 {
-	if o == nil || IsNil(o.DesLatency) {
+	if o == nil || isNil(o.DesLatency) {
 		var ret int32
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *M5QoSSpecification) GetDesLatency() int32 {
 // GetDesLatencyOk returns a tuple with the DesLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M5QoSSpecification) GetDesLatencyOk() (*int32, bool) {
-	if o == nil || IsNil(o.DesLatency) {
+	if o == nil || isNil(o.DesLatency) {
 		return nil, false
 	}
 	return o.DesLatency, true
@@ -236,7 +236,7 @@ func (o *M5QoSSpecification) GetDesLatencyOk() (*int32, bool) {
 
 // HasDesLatency returns a boolean if a field has been set.
 func (o *M5QoSSpecification) HasDesLatency() bool {
-	if o != nil && !IsNil(o.DesLatency) {
+	if o != nil && !isNil(o.DesLatency) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *M5QoSSpecification) SetDesLatency(v int32) {
 
 // GetDesLoss returns the DesLoss field value if set, zero value otherwise.
 func (o *M5QoSSpecification) GetDesLoss() int32 {
-	if o == nil || IsNil(o.DesLoss) {
+	if o == nil || isNil(o.DesLoss) {
 		var ret int32
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *M5QoSSpecification) GetDesLoss() int32 {
 // GetDesLossOk returns a tuple with the DesLoss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *M5QoSSpecification) GetDesLossOk() (*int32, bool) {
-	if o == nil || IsNil(o.DesLoss) {
+	if o == nil || isNil(o.DesLoss) {
 		return nil, false
 	}
 	return o.DesLoss, true
@@ -268,7 +268,7 @@ func (o *M5QoSSpecification) GetDesLossOk() (*int32, bool) {
 
 // HasDesLoss returns a boolean if a field has been set.
 func (o *M5QoSSpecification) HasDesLoss() bool {
-	if o != nil && !IsNil(o.DesLoss) {
+	if o != nil && !isNil(o.DesLoss) {
 		return true
 	}
 
@@ -292,18 +292,18 @@ func (o M5QoSSpecification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["marBwDlBitRate"] = o.MarBwDlBitRate
 	toSerialize["marBwUlBitRate"] = o.MarBwUlBitRate
-	if !IsNil(o.MinDesBwDlBitRate) {
+	if !isNil(o.MinDesBwDlBitRate) {
 		toSerialize["minDesBwDlBitRate"] = o.MinDesBwDlBitRate
 	}
-	if !IsNil(o.MinDesBwUlBitRate) {
+	if !isNil(o.MinDesBwUlBitRate) {
 		toSerialize["minDesBwUlBitRate"] = o.MinDesBwUlBitRate
 	}
 	toSerialize["mirBwDlBitRate"] = o.MirBwDlBitRate
 	toSerialize["mirBwUlBitRate"] = o.MirBwUlBitRate
-	if !IsNil(o.DesLatency) {
+	if !isNil(o.DesLatency) {
 		toSerialize["desLatency"] = o.DesLatency
 	}
-	if !IsNil(o.DesLoss) {
+	if !isNil(o.DesLoss) {
 		toSerialize["desLoss"] = o.DesLoss
 	}
 	return toSerialize, nil

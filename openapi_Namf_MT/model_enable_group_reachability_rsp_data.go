@@ -43,7 +43,7 @@ func NewEnableGroupReachabilityRspDataWithDefaults() *EnableGroupReachabilityRsp
 
 // GetUeConnectedList returns the UeConnectedList field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityRspData) GetUeConnectedList() []string {
-	if o == nil || IsNil(o.UeConnectedList) {
+	if o == nil || isNil(o.UeConnectedList) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EnableGroupReachabilityRspData) GetUeConnectedList() []string {
 // GetUeConnectedListOk returns a tuple with the UeConnectedList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityRspData) GetUeConnectedListOk() ([]string, bool) {
-	if o == nil || IsNil(o.UeConnectedList) {
+	if o == nil || isNil(o.UeConnectedList) {
 		return nil, false
 	}
 	return o.UeConnectedList, true
@@ -61,7 +61,7 @@ func (o *EnableGroupReachabilityRspData) GetUeConnectedListOk() ([]string, bool)
 
 // HasUeConnectedList returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityRspData) HasUeConnectedList() bool {
-	if o != nil && !IsNil(o.UeConnectedList) {
+	if o != nil && !isNil(o.UeConnectedList) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *EnableGroupReachabilityRspData) SetUeConnectedList(v []string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EnableGroupReachabilityRspData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *EnableGroupReachabilityRspData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EnableGroupReachabilityRspData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -93,7 +93,7 @@ func (o *EnableGroupReachabilityRspData) GetSupportedFeaturesOk() (*string, bool
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EnableGroupReachabilityRspData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o EnableGroupReachabilityRspData) MarshalJSON() ([]byte, error) {
 
 func (o EnableGroupReachabilityRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeConnectedList) {
+	if !isNil(o.UeConnectedList) {
 		toSerialize["ueConnectedList"] = o.UeConnectedList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

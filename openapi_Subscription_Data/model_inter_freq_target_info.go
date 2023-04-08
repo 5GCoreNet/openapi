@@ -69,7 +69,7 @@ func (o *InterFreqTargetInfo) SetDlCarrierFreq(v int32) {
 
 // GetCellIdList returns the CellIdList field value if set, zero value otherwise.
 func (o *InterFreqTargetInfo) GetCellIdList() []int32 {
-	if o == nil || IsNil(o.CellIdList) {
+	if o == nil || isNil(o.CellIdList) {
 		var ret []int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *InterFreqTargetInfo) GetCellIdList() []int32 {
 // GetCellIdListOk returns a tuple with the CellIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InterFreqTargetInfo) GetCellIdListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.CellIdList) {
+	if o == nil || isNil(o.CellIdList) {
 		return nil, false
 	}
 	return o.CellIdList, true
@@ -87,7 +87,7 @@ func (o *InterFreqTargetInfo) GetCellIdListOk() ([]int32, bool) {
 
 // HasCellIdList returns a boolean if a field has been set.
 func (o *InterFreqTargetInfo) HasCellIdList() bool {
-	if o != nil && !IsNil(o.CellIdList) {
+	if o != nil && !isNil(o.CellIdList) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o InterFreqTargetInfo) MarshalJSON() ([]byte, error) {
 func (o InterFreqTargetInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dlCarrierFreq"] = o.DlCarrierFreq
-	if !IsNil(o.CellIdList) {
+	if !isNil(o.CellIdList) {
 		toSerialize["cellIdList"] = o.CellIdList
 	}
 	return toSerialize, nil

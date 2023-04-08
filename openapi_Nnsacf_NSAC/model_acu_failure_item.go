@@ -70,7 +70,7 @@ func (o *AcuFailureItem) SetSnssai(v Snssai) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *AcuFailureItem) GetReason() AcuFailureReason {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		var ret AcuFailureReason
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *AcuFailureItem) GetReason() AcuFailureReason {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuFailureItem) GetReasonOk() (*AcuFailureReason, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -88,7 +88,7 @@ func (o *AcuFailureItem) GetReasonOk() (*AcuFailureReason, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *AcuFailureItem) HasReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && !isNil(o.Reason) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *AcuFailureItem) SetReason(v AcuFailureReason) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *AcuFailureItem) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *AcuFailureItem) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuFailureItem) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -120,7 +120,7 @@ func (o *AcuFailureItem) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *AcuFailureItem) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *AcuFailureItem) SetPlmnId(v PlmnId) {
 
 // GetPduSessionId returns the PduSessionId field value if set, zero value otherwise.
 func (o *AcuFailureItem) GetPduSessionId() int32 {
-	if o == nil || IsNil(o.PduSessionId) {
+	if o == nil || isNil(o.PduSessionId) {
 		var ret int32
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *AcuFailureItem) GetPduSessionId() int32 {
 // GetPduSessionIdOk returns a tuple with the PduSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuFailureItem) GetPduSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSessionId) {
+	if o == nil || isNil(o.PduSessionId) {
 		return nil, false
 	}
 	return o.PduSessionId, true
@@ -152,7 +152,7 @@ func (o *AcuFailureItem) GetPduSessionIdOk() (*int32, bool) {
 
 // HasPduSessionId returns a boolean if a field has been set.
 func (o *AcuFailureItem) HasPduSessionId() bool {
-	if o != nil && !IsNil(o.PduSessionId) {
+	if o != nil && !isNil(o.PduSessionId) {
 		return true
 	}
 
@@ -175,13 +175,13 @@ func (o AcuFailureItem) MarshalJSON() ([]byte, error) {
 func (o AcuFailureItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.Reason) {
+	if !isNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.PduSessionId) {
+	if !isNil(o.PduSessionId) {
 		toSerialize["pduSessionId"] = o.PduSessionId
 	}
 	return toSerialize, nil

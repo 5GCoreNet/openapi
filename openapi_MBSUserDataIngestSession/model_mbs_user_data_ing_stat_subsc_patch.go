@@ -43,7 +43,7 @@ func NewMBSUserDataIngStatSubscPatchWithDefaults() *MBSUserDataIngStatSubscPatch
 
 // GetEventSubscs returns the EventSubscs field value if set, zero value otherwise.
 func (o *MBSUserDataIngStatSubscPatch) GetEventSubscs() []SubscribedEvent {
-	if o == nil || IsNil(o.EventSubscs) {
+	if o == nil || isNil(o.EventSubscs) {
 		var ret []SubscribedEvent
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetEventSubscs() []SubscribedEvent {
 // GetEventSubscsOk returns a tuple with the EventSubscs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngStatSubscPatch) GetEventSubscsOk() ([]SubscribedEvent, bool) {
-	if o == nil || IsNil(o.EventSubscs) {
+	if o == nil || isNil(o.EventSubscs) {
 		return nil, false
 	}
 	return o.EventSubscs, true
@@ -61,7 +61,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetEventSubscsOk() ([]SubscribedEvent, bo
 
 // HasEventSubscs returns a boolean if a field has been set.
 func (o *MBSUserDataIngStatSubscPatch) HasEventSubscs() bool {
-	if o != nil && !IsNil(o.EventSubscs) {
+	if o != nil && !isNil(o.EventSubscs) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MBSUserDataIngStatSubscPatch) SetEventSubscs(v []SubscribedEvent) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *MBSUserDataIngStatSubscPatch) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserDataIngStatSubscPatch) GetNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -93,7 +93,7 @@ func (o *MBSUserDataIngStatSubscPatch) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *MBSUserDataIngStatSubscPatch) HasNotifUri() bool {
-	if o != nil && !IsNil(o.NotifUri) {
+	if o != nil && !isNil(o.NotifUri) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o MBSUserDataIngStatSubscPatch) MarshalJSON() ([]byte, error) {
 
 func (o MBSUserDataIngStatSubscPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventSubscs) {
+	if !isNil(o.EventSubscs) {
 		toSerialize["eventSubscs"] = o.EventSubscs
 	}
-	if !IsNil(o.NotifUri) {
+	if !isNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
 	return toSerialize, nil

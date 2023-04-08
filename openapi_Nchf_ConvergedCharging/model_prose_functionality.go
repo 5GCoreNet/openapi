@@ -17,23 +17,37 @@ import (
 
 // ProseFunctionality struct for ProseFunctionality
 type ProseFunctionality struct {
-	string *string
+	ProseFunctionalityAnyOf *ProseFunctionalityAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ProseFunctionality) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ProseFunctionalityAnyOf
+	err = json.Unmarshal(data, &dst.ProseFunctionalityAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonProseFunctionalityAnyOf, _ := json.Marshal(dst.ProseFunctionalityAnyOf)
+		if string(jsonProseFunctionalityAnyOf) == "{}" { // empty struct
+			dst.ProseFunctionalityAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ProseFunctionalityAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ProseFunctionalityAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ProseFunctionality)")
@@ -41,8 +55,12 @@ func (dst *ProseFunctionality) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ProseFunctionality) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ProseFunctionalityAnyOf != nil {
+		return json.Marshal(&src.ProseFunctionalityAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

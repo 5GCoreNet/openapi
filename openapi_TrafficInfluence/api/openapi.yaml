@@ -1606,9 +1606,7 @@ components:
       type: object
     SubscribedEvent:
       anyOf:
-      - enum:
-        - UP_PATH_CHANGE
-        type: string
+      - $ref: '#/components/schemas/SubscribedEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1617,12 +1615,7 @@ components:
         - UP_PATH_CHANGE: The AF requests to be notified when the UP path changes for the PDU session.
     AfResultStatus:
       anyOf:
-      - enum:
-        - SUCCESS
-        - TEMPORARY_CONGESTION
-        - RELOC_NO_ALLOWED
-        - OTHER
-        type: string
+      - $ref: '#/components/schemas/AfResultStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1745,11 +1738,7 @@ components:
       type: string
     DnaiChangeType:
       anyOf:
-      - enum:
-        - EARLY
-        - EARLY_LATE
-        - LATE
-        type: string
+      - $ref: '#/components/schemas/DnaiChangeType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode  content defined in the present\
           \ version of this API. \n"
@@ -2138,12 +2127,7 @@ components:
       type: integer
     FlowDirection:
       anyOf:
-      - enum:
-        - DOWNLINK
-        - UPLINK
-        - BIDIRECTIONAL
-        - UNSPECIFIED
-        type: string
+      - $ref: '#/components/schemas/FlowDirection_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2305,17 +2289,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -2495,11 +2469,7 @@ components:
       type: object
     NotificationMethod:
       anyOf:
-      - enum:
-        - PERIODIC
-        - ONE_TIME
-        - ON_EVENT_DETECTION
-        type: string
+      - $ref: '#/components/schemas/NotificationMethod_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2516,13 +2486,7 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - enum:
-        - TAC
-        - SUBPLMN
-        - GEOAREA
-        - SNSSAI
-        - DNN
-        type: string
+      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2535,11 +2499,7 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - enum:
-        - ACTIVATE
-        - DEACTIVATE
-        - RETRIEVAL
-        type: string
+      - $ref: '#/components/schemas/NotificationFlag_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -2553,6 +2513,34 @@ components:
       description: string with format 'float' as defined in OpenAPI.
       format: float
       type: number
+    SubscribedEvent_anyOf:
+      enum:
+      - UP_PATH_CHANGE
+      type: string
+      example: null
+    AfResultStatus_anyOf:
+      enum:
+      - SUCCESS
+      - TEMPORARY_CONGESTION
+      - RELOC_NO_ALLOWED
+      - OTHER
+      type: string
+      example: null
+    DnaiChangeType_anyOf:
+      enum:
+      - EARLY
+      - EARLY_LATE
+      - LATE
+      type: string
+      example: null
+    FlowDirection_anyOf:
+      enum:
+      - DOWNLINK
+      - UPLINK
+      - BIDIRECTIONAL
+      - UNSPECIFIED
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -2560,6 +2548,19 @@ components:
       required:
       - point
       type: object
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -2728,6 +2729,29 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
+      example: null
+    NotificationMethod_anyOf:
+      enum:
+      - PERIODIC
+      - ONE_TIME
+      - ON_EVENT_DETECTION
+      type: string
+      example: null
+    PartitioningCriteria_anyOf:
+      enum:
+      - TAC
+      - SUBPLMN
+      - GEOAREA
+      - SNSSAI
+      - DNN
+      type: string
+      example: null
+    NotificationFlag_anyOf:
+      enum:
+      - ACTIVATE
+      - DEACTIVATE
+      - RETRIEVAL
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

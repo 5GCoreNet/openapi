@@ -43,7 +43,7 @@ func NewRTUavStatusWithDefaults() *RTUavStatus {
 
 // GetUavId returns the UavId field value if set, zero value otherwise.
 func (o *RTUavStatus) GetUavId() UavId {
-	if o == nil || IsNil(o.UavId) {
+	if o == nil || isNil(o.UavId) {
 		var ret UavId
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RTUavStatus) GetUavId() UavId {
 // GetUavIdOk returns a tuple with the UavId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RTUavStatus) GetUavIdOk() (*UavId, bool) {
-	if o == nil || IsNil(o.UavId) {
+	if o == nil || isNil(o.UavId) {
 		return nil, false
 	}
 	return o.UavId, true
@@ -61,7 +61,7 @@ func (o *RTUavStatus) GetUavIdOk() (*UavId, bool) {
 
 // HasUavId returns a boolean if a field has been set.
 func (o *RTUavStatus) HasUavId() bool {
-	if o != nil && !IsNil(o.UavId) {
+	if o != nil && !isNil(o.UavId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RTUavStatus) SetUavId(v UavId) {
 
 // GetUavNetConnStatus returns the UavNetConnStatus field value if set, zero value otherwise.
 func (o *RTUavStatus) GetUavNetConnStatus() UavNetConnStatus {
-	if o == nil || IsNil(o.UavNetConnStatus) {
+	if o == nil || isNil(o.UavNetConnStatus) {
 		var ret UavNetConnStatus
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RTUavStatus) GetUavNetConnStatus() UavNetConnStatus {
 // GetUavNetConnStatusOk returns a tuple with the UavNetConnStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RTUavStatus) GetUavNetConnStatusOk() (*UavNetConnStatus, bool) {
-	if o == nil || IsNil(o.UavNetConnStatus) {
+	if o == nil || isNil(o.UavNetConnStatus) {
 		return nil, false
 	}
 	return o.UavNetConnStatus, true
@@ -93,7 +93,7 @@ func (o *RTUavStatus) GetUavNetConnStatusOk() (*UavNetConnStatus, bool) {
 
 // HasUavNetConnStatus returns a boolean if a field has been set.
 func (o *RTUavStatus) HasUavNetConnStatus() bool {
-	if o != nil && !IsNil(o.UavNetConnStatus) {
+	if o != nil && !isNil(o.UavNetConnStatus) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RTUavStatus) SetUavNetConnStatus(v UavNetConnStatus) {
 
 // GetUavLocInfo returns the UavLocInfo field value if set, zero value otherwise.
 func (o *RTUavStatus) GetUavLocInfo() LocationInfo {
-	if o == nil || IsNil(o.UavLocInfo) {
+	if o == nil || isNil(o.UavLocInfo) {
 		var ret LocationInfo
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RTUavStatus) GetUavLocInfo() LocationInfo {
 // GetUavLocInfoOk returns a tuple with the UavLocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RTUavStatus) GetUavLocInfoOk() (*LocationInfo, bool) {
-	if o == nil || IsNil(o.UavLocInfo) {
+	if o == nil || isNil(o.UavLocInfo) {
 		return nil, false
 	}
 	return o.UavLocInfo, true
@@ -125,7 +125,7 @@ func (o *RTUavStatus) GetUavLocInfoOk() (*LocationInfo, bool) {
 
 // HasUavLocInfo returns a boolean if a field has been set.
 func (o *RTUavStatus) HasUavLocInfo() bool {
-	if o != nil && !IsNil(o.UavLocInfo) {
+	if o != nil && !isNil(o.UavLocInfo) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o RTUavStatus) MarshalJSON() ([]byte, error) {
 
 func (o RTUavStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UavId) {
+	if !isNil(o.UavId) {
 		toSerialize["uavId"] = o.UavId
 	}
-	if !IsNil(o.UavNetConnStatus) {
+	if !isNil(o.UavNetConnStatus) {
 		toSerialize["uavNetConnStatus"] = o.UavNetConnStatus
 	}
-	if !IsNil(o.UavLocInfo) {
+	if !isNil(o.UavLocInfo) {
 		toSerialize["uavLocInfo"] = o.UavLocInfo
 	}
 	return toSerialize, nil

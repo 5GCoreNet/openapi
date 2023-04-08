@@ -4137,11 +4137,7 @@ components:
       type: object
     NotificationMethod:
       anyOf:
-      - enum:
-        - PERIODIC
-        - ONE_TIME
-        - ON_EVENT_DETECTION
-        type: string
+      - $ref: '#/components/schemas/NotificationMethod_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -4169,13 +4165,7 @@ components:
       type: integer
     PartitioningCriteria:
       anyOf:
-      - enum:
-        - TAC
-        - SUBPLMN
-        - GEOAREA
-        - SNSSAI
-        - DNN
-        type: string
+      - $ref: '#/components/schemas/PartitioningCriteria_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -4188,11 +4178,7 @@ components:
         - "DNN": DNN
     NotificationFlag:
       anyOf:
-      - enum:
-        - ACTIVATE
-        - DEACTIVATE
-        - RETRIEVAL
-        type: string
+      - $ref: '#/components/schemas/NotificationFlag_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -4428,17 +4414,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -4834,14 +4810,7 @@ components:
       type: object
     ACRScenario:
       anyOf:
-      - enum:
-        - EEC_INITIATED
-        - EEC_EXECUTED_VIA_SOURCE_EES
-        - EEC_EXECUTED_VIA_TARGET_EES
-        - SOURCE_EAS_DECIDED
-        - SOURCE_EES_EXECUTED
-        - EEL_MANAGED_ACR
-        type: string
+      - $ref: '#/components/schemas/ACRScenario_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -5020,6 +4989,29 @@ components:
         This represents the identifier of the eNB ID as specified in clause 9.2.1.37 of  3GPP TS 36.413. The string shall be formatted with the following pattern  '^('MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5} |HomeeNB-[A-Fa-f0-9]{7})$'. The value of the eNB ID shall be encoded in hexadecimal representation. Each character in the  string shall take a value of "0" to "9", "a" to "f" or "A" to "F" and shall represent 4 bits.  The padding 0 shall be added to make multiple nibbles, so the most significant character  representing the padding 0 if required together with the 4 most significant bits of the eNB ID  shall appear first in the string, and the character representing the 4 least significant bit  of the eNB ID (to form a nibble) shall appear last in the string.
       pattern: "^(MacroeNB-[A-Fa-f0-9]{5}|LMacroeNB-[A-Fa-f0-9]{6}|SMacroeNB-[A-Fa-f0-9]{5}|HomeeNB-[A-Fa-f0-9]{7})$"
       type: string
+    NotificationMethod_anyOf:
+      enum:
+      - PERIODIC
+      - ONE_TIME
+      - ON_EVENT_DETECTION
+      type: string
+      example: null
+    PartitioningCriteria_anyOf:
+      enum:
+      - TAC
+      - SUBPLMN
+      - GEOAREA
+      - SNSSAI
+      - DNN
+      type: string
+      example: null
+    NotificationFlag_anyOf:
+      enum:
+      - ACTIVATE
+      - DEACTIVATE
+      - RETRIEVAL
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -5027,6 +5019,19 @@ components:
       required:
       - point
       type: object
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -5195,6 +5200,16 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
+      example: null
+    ACRScenario_anyOf:
+      enum:
+      - EEC_INITIATED
+      - EEC_EXECUTED_VIA_SOURCE_EES
+      - EEC_EXECUTED_VIA_TARGET_EES
+      - SOURCE_EAS_DECIDED
+      - SOURCE_EES_EXECUTED
+      - EEL_MANAGED_ACR
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

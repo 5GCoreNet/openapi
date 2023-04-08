@@ -12,7 +12,6 @@ package openapi_ProvMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyMoiChanges type satisfies the MappedNullable interface at compile time

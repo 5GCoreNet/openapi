@@ -141,7 +141,7 @@ func (o *DnnConfiguration) SetSscModes(v SscModes) {
 
 // GetIwkEpsInd returns the IwkEpsInd field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetIwkEpsInd() bool {
-	if o == nil || IsNil(o.IwkEpsInd) {
+	if o == nil || isNil(o.IwkEpsInd) {
 		var ret bool
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DnnConfiguration) GetIwkEpsInd() bool {
 // GetIwkEpsIndOk returns a tuple with the IwkEpsInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetIwkEpsIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.IwkEpsInd) {
+	if o == nil || isNil(o.IwkEpsInd) {
 		return nil, false
 	}
 	return o.IwkEpsInd, true
@@ -159,7 +159,7 @@ func (o *DnnConfiguration) GetIwkEpsIndOk() (*bool, bool) {
 
 // HasIwkEpsInd returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasIwkEpsInd() bool {
-	if o != nil && !IsNil(o.IwkEpsInd) {
+	if o != nil && !isNil(o.IwkEpsInd) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *DnnConfiguration) SetIwkEpsInd(v bool) {
 
 // GetVar5gQosProfile returns the Var5gQosProfile field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetVar5gQosProfile() SubscribedDefaultQos {
-	if o == nil || IsNil(o.Var5gQosProfile) {
+	if o == nil || isNil(o.Var5gQosProfile) {
 		var ret SubscribedDefaultQos
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *DnnConfiguration) GetVar5gQosProfile() SubscribedDefaultQos {
 // GetVar5gQosProfileOk returns a tuple with the Var5gQosProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetVar5gQosProfileOk() (*SubscribedDefaultQos, bool) {
-	if o == nil || IsNil(o.Var5gQosProfile) {
+	if o == nil || isNil(o.Var5gQosProfile) {
 		return nil, false
 	}
 	return o.Var5gQosProfile, true
@@ -191,7 +191,7 @@ func (o *DnnConfiguration) GetVar5gQosProfileOk() (*SubscribedDefaultQos, bool) 
 
 // HasVar5gQosProfile returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasVar5gQosProfile() bool {
-	if o != nil && !IsNil(o.Var5gQosProfile) {
+	if o != nil && !isNil(o.Var5gQosProfile) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *DnnConfiguration) SetVar5gQosProfile(v SubscribedDefaultQos) {
 
 // GetSessionAmbr returns the SessionAmbr field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetSessionAmbr() Ambr {
-	if o == nil || IsNil(o.SessionAmbr) {
+	if o == nil || isNil(o.SessionAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *DnnConfiguration) GetSessionAmbr() Ambr {
 // GetSessionAmbrOk returns a tuple with the SessionAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetSessionAmbrOk() (*Ambr, bool) {
-	if o == nil || IsNil(o.SessionAmbr) {
+	if o == nil || isNil(o.SessionAmbr) {
 		return nil, false
 	}
 	return o.SessionAmbr, true
@@ -223,7 +223,7 @@ func (o *DnnConfiguration) GetSessionAmbrOk() (*Ambr, bool) {
 
 // HasSessionAmbr returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasSessionAmbr() bool {
-	if o != nil && !IsNil(o.SessionAmbr) {
+	if o != nil && !isNil(o.SessionAmbr) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *DnnConfiguration) SetSessionAmbr(v Ambr) {
 
 // GetVar3gppChargingCharacteristics returns the Var3gppChargingCharacteristics field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetVar3gppChargingCharacteristics() string {
-	if o == nil || IsNil(o.Var3gppChargingCharacteristics) {
+	if o == nil || isNil(o.Var3gppChargingCharacteristics) {
 		var ret string
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *DnnConfiguration) GetVar3gppChargingCharacteristics() string {
 // GetVar3gppChargingCharacteristicsOk returns a tuple with the Var3gppChargingCharacteristics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetVar3gppChargingCharacteristicsOk() (*string, bool) {
-	if o == nil || IsNil(o.Var3gppChargingCharacteristics) {
+	if o == nil || isNil(o.Var3gppChargingCharacteristics) {
 		return nil, false
 	}
 	return o.Var3gppChargingCharacteristics, true
@@ -255,7 +255,7 @@ func (o *DnnConfiguration) GetVar3gppChargingCharacteristicsOk() (*string, bool)
 
 // HasVar3gppChargingCharacteristics returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasVar3gppChargingCharacteristics() bool {
-	if o != nil && !IsNil(o.Var3gppChargingCharacteristics) {
+	if o != nil && !isNil(o.Var3gppChargingCharacteristics) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *DnnConfiguration) SetVar3gppChargingCharacteristics(v string) {
 
 // GetStaticIpAddress returns the StaticIpAddress field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetStaticIpAddress() []IpAddress {
-	if o == nil || IsNil(o.StaticIpAddress) {
+	if o == nil || isNil(o.StaticIpAddress) {
 		var ret []IpAddress
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *DnnConfiguration) GetStaticIpAddress() []IpAddress {
 // GetStaticIpAddressOk returns a tuple with the StaticIpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetStaticIpAddressOk() ([]IpAddress, bool) {
-	if o == nil || IsNil(o.StaticIpAddress) {
+	if o == nil || isNil(o.StaticIpAddress) {
 		return nil, false
 	}
 	return o.StaticIpAddress, true
@@ -287,7 +287,7 @@ func (o *DnnConfiguration) GetStaticIpAddressOk() ([]IpAddress, bool) {
 
 // HasStaticIpAddress returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasStaticIpAddress() bool {
-	if o != nil && !IsNil(o.StaticIpAddress) {
+	if o != nil && !isNil(o.StaticIpAddress) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *DnnConfiguration) SetStaticIpAddress(v []IpAddress) {
 
 // GetUpSecurity returns the UpSecurity field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetUpSecurity() UpSecurity {
-	if o == nil || IsNil(o.UpSecurity) {
+	if o == nil || isNil(o.UpSecurity) {
 		var ret UpSecurity
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *DnnConfiguration) GetUpSecurity() UpSecurity {
 // GetUpSecurityOk returns a tuple with the UpSecurity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetUpSecurityOk() (*UpSecurity, bool) {
-	if o == nil || IsNil(o.UpSecurity) {
+	if o == nil || isNil(o.UpSecurity) {
 		return nil, false
 	}
 	return o.UpSecurity, true
@@ -319,7 +319,7 @@ func (o *DnnConfiguration) GetUpSecurityOk() (*UpSecurity, bool) {
 
 // HasUpSecurity returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasUpSecurity() bool {
-	if o != nil && !IsNil(o.UpSecurity) {
+	if o != nil && !isNil(o.UpSecurity) {
 		return true
 	}
 
@@ -333,7 +333,7 @@ func (o *DnnConfiguration) SetUpSecurity(v UpSecurity) {
 
 // GetPduSessionContinuityInd returns the PduSessionContinuityInd field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetPduSessionContinuityInd() PduSessionContinuityInd {
-	if o == nil || IsNil(o.PduSessionContinuityInd) {
+	if o == nil || isNil(o.PduSessionContinuityInd) {
 		var ret PduSessionContinuityInd
 		return ret
 	}
@@ -343,7 +343,7 @@ func (o *DnnConfiguration) GetPduSessionContinuityInd() PduSessionContinuityInd 
 // GetPduSessionContinuityIndOk returns a tuple with the PduSessionContinuityInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetPduSessionContinuityIndOk() (*PduSessionContinuityInd, bool) {
-	if o == nil || IsNil(o.PduSessionContinuityInd) {
+	if o == nil || isNil(o.PduSessionContinuityInd) {
 		return nil, false
 	}
 	return o.PduSessionContinuityInd, true
@@ -351,7 +351,7 @@ func (o *DnnConfiguration) GetPduSessionContinuityIndOk() (*PduSessionContinuity
 
 // HasPduSessionContinuityInd returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasPduSessionContinuityInd() bool {
-	if o != nil && !IsNil(o.PduSessionContinuityInd) {
+	if o != nil && !isNil(o.PduSessionContinuityInd) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *DnnConfiguration) SetPduSessionContinuityInd(v PduSessionContinuityInd)
 
 // GetNiddNefId returns the NiddNefId field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetNiddNefId() string {
-	if o == nil || IsNil(o.NiddNefId) {
+	if o == nil || isNil(o.NiddNefId) {
 		var ret string
 		return ret
 	}
@@ -375,7 +375,7 @@ func (o *DnnConfiguration) GetNiddNefId() string {
 // GetNiddNefIdOk returns a tuple with the NiddNefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetNiddNefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NiddNefId) {
+	if o == nil || isNil(o.NiddNefId) {
 		return nil, false
 	}
 	return o.NiddNefId, true
@@ -383,7 +383,7 @@ func (o *DnnConfiguration) GetNiddNefIdOk() (*string, bool) {
 
 // HasNiddNefId returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasNiddNefId() bool {
-	if o != nil && !IsNil(o.NiddNefId) {
+	if o != nil && !isNil(o.NiddNefId) {
 		return true
 	}
 
@@ -397,7 +397,7 @@ func (o *DnnConfiguration) SetNiddNefId(v string) {
 
 // GetNiddInfo returns the NiddInfo field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetNiddInfo() NiddInformation {
-	if o == nil || IsNil(o.NiddInfo) {
+	if o == nil || isNil(o.NiddInfo) {
 		var ret NiddInformation
 		return ret
 	}
@@ -407,7 +407,7 @@ func (o *DnnConfiguration) GetNiddInfo() NiddInformation {
 // GetNiddInfoOk returns a tuple with the NiddInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetNiddInfoOk() (*NiddInformation, bool) {
-	if o == nil || IsNil(o.NiddInfo) {
+	if o == nil || isNil(o.NiddInfo) {
 		return nil, false
 	}
 	return o.NiddInfo, true
@@ -415,7 +415,7 @@ func (o *DnnConfiguration) GetNiddInfoOk() (*NiddInformation, bool) {
 
 // HasNiddInfo returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasNiddInfo() bool {
-	if o != nil && !IsNil(o.NiddInfo) {
+	if o != nil && !isNil(o.NiddInfo) {
 		return true
 	}
 
@@ -429,7 +429,7 @@ func (o *DnnConfiguration) SetNiddInfo(v NiddInformation) {
 
 // GetRedundantSessionAllowed returns the RedundantSessionAllowed field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetRedundantSessionAllowed() bool {
-	if o == nil || IsNil(o.RedundantSessionAllowed) {
+	if o == nil || isNil(o.RedundantSessionAllowed) {
 		var ret bool
 		return ret
 	}
@@ -439,7 +439,7 @@ func (o *DnnConfiguration) GetRedundantSessionAllowed() bool {
 // GetRedundantSessionAllowedOk returns a tuple with the RedundantSessionAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetRedundantSessionAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.RedundantSessionAllowed) {
+	if o == nil || isNil(o.RedundantSessionAllowed) {
 		return nil, false
 	}
 	return o.RedundantSessionAllowed, true
@@ -447,7 +447,7 @@ func (o *DnnConfiguration) GetRedundantSessionAllowedOk() (*bool, bool) {
 
 // HasRedundantSessionAllowed returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasRedundantSessionAllowed() bool {
-	if o != nil && !IsNil(o.RedundantSessionAllowed) {
+	if o != nil && !isNil(o.RedundantSessionAllowed) {
 		return true
 	}
 
@@ -461,7 +461,7 @@ func (o *DnnConfiguration) SetRedundantSessionAllowed(v bool) {
 
 // GetAcsInfo returns the AcsInfo field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetAcsInfo() AcsInfo {
-	if o == nil || IsNil(o.AcsInfo) {
+	if o == nil || isNil(o.AcsInfo) {
 		var ret AcsInfo
 		return ret
 	}
@@ -471,7 +471,7 @@ func (o *DnnConfiguration) GetAcsInfo() AcsInfo {
 // GetAcsInfoOk returns a tuple with the AcsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetAcsInfoOk() (*AcsInfo, bool) {
-	if o == nil || IsNil(o.AcsInfo) {
+	if o == nil || isNil(o.AcsInfo) {
 		return nil, false
 	}
 	return o.AcsInfo, true
@@ -479,7 +479,7 @@ func (o *DnnConfiguration) GetAcsInfoOk() (*AcsInfo, bool) {
 
 // HasAcsInfo returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasAcsInfo() bool {
-	if o != nil && !IsNil(o.AcsInfo) {
+	if o != nil && !isNil(o.AcsInfo) {
 		return true
 	}
 
@@ -493,7 +493,7 @@ func (o *DnnConfiguration) SetAcsInfo(v AcsInfo) {
 
 // GetIpv4FrameRouteList returns the Ipv4FrameRouteList field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetIpv4FrameRouteList() []FrameRouteInfo {
-	if o == nil || IsNil(o.Ipv4FrameRouteList) {
+	if o == nil || isNil(o.Ipv4FrameRouteList) {
 		var ret []FrameRouteInfo
 		return ret
 	}
@@ -503,7 +503,7 @@ func (o *DnnConfiguration) GetIpv4FrameRouteList() []FrameRouteInfo {
 // GetIpv4FrameRouteListOk returns a tuple with the Ipv4FrameRouteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetIpv4FrameRouteListOk() ([]FrameRouteInfo, bool) {
-	if o == nil || IsNil(o.Ipv4FrameRouteList) {
+	if o == nil || isNil(o.Ipv4FrameRouteList) {
 		return nil, false
 	}
 	return o.Ipv4FrameRouteList, true
@@ -511,7 +511,7 @@ func (o *DnnConfiguration) GetIpv4FrameRouteListOk() ([]FrameRouteInfo, bool) {
 
 // HasIpv4FrameRouteList returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasIpv4FrameRouteList() bool {
-	if o != nil && !IsNil(o.Ipv4FrameRouteList) {
+	if o != nil && !isNil(o.Ipv4FrameRouteList) {
 		return true
 	}
 
@@ -525,7 +525,7 @@ func (o *DnnConfiguration) SetIpv4FrameRouteList(v []FrameRouteInfo) {
 
 // GetIpv6FrameRouteList returns the Ipv6FrameRouteList field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetIpv6FrameRouteList() []FrameRouteInfo {
-	if o == nil || IsNil(o.Ipv6FrameRouteList) {
+	if o == nil || isNil(o.Ipv6FrameRouteList) {
 		var ret []FrameRouteInfo
 		return ret
 	}
@@ -535,7 +535,7 @@ func (o *DnnConfiguration) GetIpv6FrameRouteList() []FrameRouteInfo {
 // GetIpv6FrameRouteListOk returns a tuple with the Ipv6FrameRouteList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetIpv6FrameRouteListOk() ([]FrameRouteInfo, bool) {
-	if o == nil || IsNil(o.Ipv6FrameRouteList) {
+	if o == nil || isNil(o.Ipv6FrameRouteList) {
 		return nil, false
 	}
 	return o.Ipv6FrameRouteList, true
@@ -543,7 +543,7 @@ func (o *DnnConfiguration) GetIpv6FrameRouteListOk() ([]FrameRouteInfo, bool) {
 
 // HasIpv6FrameRouteList returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasIpv6FrameRouteList() bool {
-	if o != nil && !IsNil(o.Ipv6FrameRouteList) {
+	if o != nil && !isNil(o.Ipv6FrameRouteList) {
 		return true
 	}
 
@@ -557,7 +557,7 @@ func (o *DnnConfiguration) SetIpv6FrameRouteList(v []FrameRouteInfo) {
 
 // GetAtsssAllowed returns the AtsssAllowed field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetAtsssAllowed() bool {
-	if o == nil || IsNil(o.AtsssAllowed) {
+	if o == nil || isNil(o.AtsssAllowed) {
 		var ret bool
 		return ret
 	}
@@ -567,7 +567,7 @@ func (o *DnnConfiguration) GetAtsssAllowed() bool {
 // GetAtsssAllowedOk returns a tuple with the AtsssAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetAtsssAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.AtsssAllowed) {
+	if o == nil || isNil(o.AtsssAllowed) {
 		return nil, false
 	}
 	return o.AtsssAllowed, true
@@ -575,7 +575,7 @@ func (o *DnnConfiguration) GetAtsssAllowedOk() (*bool, bool) {
 
 // HasAtsssAllowed returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasAtsssAllowed() bool {
-	if o != nil && !IsNil(o.AtsssAllowed) {
+	if o != nil && !isNil(o.AtsssAllowed) {
 		return true
 	}
 
@@ -589,7 +589,7 @@ func (o *DnnConfiguration) SetAtsssAllowed(v bool) {
 
 // GetSecondaryAuth returns the SecondaryAuth field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetSecondaryAuth() bool {
-	if o == nil || IsNil(o.SecondaryAuth) {
+	if o == nil || isNil(o.SecondaryAuth) {
 		var ret bool
 		return ret
 	}
@@ -599,7 +599,7 @@ func (o *DnnConfiguration) GetSecondaryAuth() bool {
 // GetSecondaryAuthOk returns a tuple with the SecondaryAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetSecondaryAuthOk() (*bool, bool) {
-	if o == nil || IsNil(o.SecondaryAuth) {
+	if o == nil || isNil(o.SecondaryAuth) {
 		return nil, false
 	}
 	return o.SecondaryAuth, true
@@ -607,7 +607,7 @@ func (o *DnnConfiguration) GetSecondaryAuthOk() (*bool, bool) {
 
 // HasSecondaryAuth returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasSecondaryAuth() bool {
-	if o != nil && !IsNil(o.SecondaryAuth) {
+	if o != nil && !isNil(o.SecondaryAuth) {
 		return true
 	}
 
@@ -621,7 +621,7 @@ func (o *DnnConfiguration) SetSecondaryAuth(v bool) {
 
 // GetUavSecondaryAuth returns the UavSecondaryAuth field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetUavSecondaryAuth() bool {
-	if o == nil || IsNil(o.UavSecondaryAuth) {
+	if o == nil || isNil(o.UavSecondaryAuth) {
 		var ret bool
 		return ret
 	}
@@ -631,7 +631,7 @@ func (o *DnnConfiguration) GetUavSecondaryAuth() bool {
 // GetUavSecondaryAuthOk returns a tuple with the UavSecondaryAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetUavSecondaryAuthOk() (*bool, bool) {
-	if o == nil || IsNil(o.UavSecondaryAuth) {
+	if o == nil || isNil(o.UavSecondaryAuth) {
 		return nil, false
 	}
 	return o.UavSecondaryAuth, true
@@ -639,7 +639,7 @@ func (o *DnnConfiguration) GetUavSecondaryAuthOk() (*bool, bool) {
 
 // HasUavSecondaryAuth returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasUavSecondaryAuth() bool {
-	if o != nil && !IsNil(o.UavSecondaryAuth) {
+	if o != nil && !isNil(o.UavSecondaryAuth) {
 		return true
 	}
 
@@ -653,7 +653,7 @@ func (o *DnnConfiguration) SetUavSecondaryAuth(v bool) {
 
 // GetDnAaaIpAddressAllocation returns the DnAaaIpAddressAllocation field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetDnAaaIpAddressAllocation() bool {
-	if o == nil || IsNil(o.DnAaaIpAddressAllocation) {
+	if o == nil || isNil(o.DnAaaIpAddressAllocation) {
 		var ret bool
 		return ret
 	}
@@ -663,7 +663,7 @@ func (o *DnnConfiguration) GetDnAaaIpAddressAllocation() bool {
 // GetDnAaaIpAddressAllocationOk returns a tuple with the DnAaaIpAddressAllocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetDnAaaIpAddressAllocationOk() (*bool, bool) {
-	if o == nil || IsNil(o.DnAaaIpAddressAllocation) {
+	if o == nil || isNil(o.DnAaaIpAddressAllocation) {
 		return nil, false
 	}
 	return o.DnAaaIpAddressAllocation, true
@@ -671,7 +671,7 @@ func (o *DnnConfiguration) GetDnAaaIpAddressAllocationOk() (*bool, bool) {
 
 // HasDnAaaIpAddressAllocation returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasDnAaaIpAddressAllocation() bool {
-	if o != nil && !IsNil(o.DnAaaIpAddressAllocation) {
+	if o != nil && !isNil(o.DnAaaIpAddressAllocation) {
 		return true
 	}
 
@@ -685,7 +685,7 @@ func (o *DnnConfiguration) SetDnAaaIpAddressAllocation(v bool) {
 
 // GetDnAaaAddress returns the DnAaaAddress field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetDnAaaAddress() IpAddress {
-	if o == nil || IsNil(o.DnAaaAddress) {
+	if o == nil || isNil(o.DnAaaAddress) {
 		var ret IpAddress
 		return ret
 	}
@@ -695,7 +695,7 @@ func (o *DnnConfiguration) GetDnAaaAddress() IpAddress {
 // GetDnAaaAddressOk returns a tuple with the DnAaaAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetDnAaaAddressOk() (*IpAddress, bool) {
-	if o == nil || IsNil(o.DnAaaAddress) {
+	if o == nil || isNil(o.DnAaaAddress) {
 		return nil, false
 	}
 	return o.DnAaaAddress, true
@@ -703,7 +703,7 @@ func (o *DnnConfiguration) GetDnAaaAddressOk() (*IpAddress, bool) {
 
 // HasDnAaaAddress returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasDnAaaAddress() bool {
-	if o != nil && !IsNil(o.DnAaaAddress) {
+	if o != nil && !isNil(o.DnAaaAddress) {
 		return true
 	}
 
@@ -717,7 +717,7 @@ func (o *DnnConfiguration) SetDnAaaAddress(v IpAddress) {
 
 // GetAdditionalDnAaaAddresses returns the AdditionalDnAaaAddresses field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetAdditionalDnAaaAddresses() []IpAddress {
-	if o == nil || IsNil(o.AdditionalDnAaaAddresses) {
+	if o == nil || isNil(o.AdditionalDnAaaAddresses) {
 		var ret []IpAddress
 		return ret
 	}
@@ -727,7 +727,7 @@ func (o *DnnConfiguration) GetAdditionalDnAaaAddresses() []IpAddress {
 // GetAdditionalDnAaaAddressesOk returns a tuple with the AdditionalDnAaaAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetAdditionalDnAaaAddressesOk() ([]IpAddress, bool) {
-	if o == nil || IsNil(o.AdditionalDnAaaAddresses) {
+	if o == nil || isNil(o.AdditionalDnAaaAddresses) {
 		return nil, false
 	}
 	return o.AdditionalDnAaaAddresses, true
@@ -735,7 +735,7 @@ func (o *DnnConfiguration) GetAdditionalDnAaaAddressesOk() ([]IpAddress, bool) {
 
 // HasAdditionalDnAaaAddresses returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasAdditionalDnAaaAddresses() bool {
-	if o != nil && !IsNil(o.AdditionalDnAaaAddresses) {
+	if o != nil && !isNil(o.AdditionalDnAaaAddresses) {
 		return true
 	}
 
@@ -749,7 +749,7 @@ func (o *DnnConfiguration) SetAdditionalDnAaaAddresses(v []IpAddress) {
 
 // GetDnAaaFqdn returns the DnAaaFqdn field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetDnAaaFqdn() string {
-	if o == nil || IsNil(o.DnAaaFqdn) {
+	if o == nil || isNil(o.DnAaaFqdn) {
 		var ret string
 		return ret
 	}
@@ -759,7 +759,7 @@ func (o *DnnConfiguration) GetDnAaaFqdn() string {
 // GetDnAaaFqdnOk returns a tuple with the DnAaaFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetDnAaaFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.DnAaaFqdn) {
+	if o == nil || isNil(o.DnAaaFqdn) {
 		return nil, false
 	}
 	return o.DnAaaFqdn, true
@@ -767,7 +767,7 @@ func (o *DnnConfiguration) GetDnAaaFqdnOk() (*string, bool) {
 
 // HasDnAaaFqdn returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasDnAaaFqdn() bool {
-	if o != nil && !IsNil(o.DnAaaFqdn) {
+	if o != nil && !isNil(o.DnAaaFqdn) {
 		return true
 	}
 
@@ -781,7 +781,7 @@ func (o *DnnConfiguration) SetDnAaaFqdn(v string) {
 
 // GetIptvAccCtrlInfo returns the IptvAccCtrlInfo field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetIptvAccCtrlInfo() string {
-	if o == nil || IsNil(o.IptvAccCtrlInfo) {
+	if o == nil || isNil(o.IptvAccCtrlInfo) {
 		var ret string
 		return ret
 	}
@@ -791,7 +791,7 @@ func (o *DnnConfiguration) GetIptvAccCtrlInfo() string {
 // GetIptvAccCtrlInfoOk returns a tuple with the IptvAccCtrlInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetIptvAccCtrlInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.IptvAccCtrlInfo) {
+	if o == nil || isNil(o.IptvAccCtrlInfo) {
 		return nil, false
 	}
 	return o.IptvAccCtrlInfo, true
@@ -799,7 +799,7 @@ func (o *DnnConfiguration) GetIptvAccCtrlInfoOk() (*string, bool) {
 
 // HasIptvAccCtrlInfo returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasIptvAccCtrlInfo() bool {
-	if o != nil && !IsNil(o.IptvAccCtrlInfo) {
+	if o != nil && !isNil(o.IptvAccCtrlInfo) {
 		return true
 	}
 
@@ -813,7 +813,7 @@ func (o *DnnConfiguration) SetIptvAccCtrlInfo(v string) {
 
 // GetIpv4Index returns the Ipv4Index field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetIpv4Index() IpIndex {
-	if o == nil || IsNil(o.Ipv4Index) {
+	if o == nil || isNil(o.Ipv4Index) {
 		var ret IpIndex
 		return ret
 	}
@@ -823,7 +823,7 @@ func (o *DnnConfiguration) GetIpv4Index() IpIndex {
 // GetIpv4IndexOk returns a tuple with the Ipv4Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetIpv4IndexOk() (*IpIndex, bool) {
-	if o == nil || IsNil(o.Ipv4Index) {
+	if o == nil || isNil(o.Ipv4Index) {
 		return nil, false
 	}
 	return o.Ipv4Index, true
@@ -831,7 +831,7 @@ func (o *DnnConfiguration) GetIpv4IndexOk() (*IpIndex, bool) {
 
 // HasIpv4Index returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasIpv4Index() bool {
-	if o != nil && !IsNil(o.Ipv4Index) {
+	if o != nil && !isNil(o.Ipv4Index) {
 		return true
 	}
 
@@ -845,7 +845,7 @@ func (o *DnnConfiguration) SetIpv4Index(v IpIndex) {
 
 // GetIpv6Index returns the Ipv6Index field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetIpv6Index() IpIndex {
-	if o == nil || IsNil(o.Ipv6Index) {
+	if o == nil || isNil(o.Ipv6Index) {
 		var ret IpIndex
 		return ret
 	}
@@ -855,7 +855,7 @@ func (o *DnnConfiguration) GetIpv6Index() IpIndex {
 // GetIpv6IndexOk returns a tuple with the Ipv6Index field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetIpv6IndexOk() (*IpIndex, bool) {
-	if o == nil || IsNil(o.Ipv6Index) {
+	if o == nil || isNil(o.Ipv6Index) {
 		return nil, false
 	}
 	return o.Ipv6Index, true
@@ -863,7 +863,7 @@ func (o *DnnConfiguration) GetIpv6IndexOk() (*IpIndex, bool) {
 
 // HasIpv6Index returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasIpv6Index() bool {
-	if o != nil && !IsNil(o.Ipv6Index) {
+	if o != nil && !isNil(o.Ipv6Index) {
 		return true
 	}
 
@@ -877,7 +877,7 @@ func (o *DnnConfiguration) SetIpv6Index(v IpIndex) {
 
 // GetEcsAddrConfigInfo returns the EcsAddrConfigInfo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DnnConfiguration) GetEcsAddrConfigInfo() EcsAddrConfigInfo {
-	if o == nil || IsNil(o.EcsAddrConfigInfo.Get()) {
+	if o == nil || isNil(o.EcsAddrConfigInfo.Get()) {
 		var ret EcsAddrConfigInfo
 		return ret
 	}
@@ -919,7 +919,7 @@ func (o *DnnConfiguration) UnsetEcsAddrConfigInfo() {
 
 // GetAdditionalEcsAddrConfigInfos returns the AdditionalEcsAddrConfigInfos field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetAdditionalEcsAddrConfigInfos() []EcsAddrConfigInfo {
-	if o == nil || IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if o == nil || isNil(o.AdditionalEcsAddrConfigInfos) {
 		var ret []EcsAddrConfigInfo
 		return ret
 	}
@@ -929,7 +929,7 @@ func (o *DnnConfiguration) GetAdditionalEcsAddrConfigInfos() []EcsAddrConfigInfo
 // GetAdditionalEcsAddrConfigInfosOk returns a tuple with the AdditionalEcsAddrConfigInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetAdditionalEcsAddrConfigInfosOk() ([]EcsAddrConfigInfo, bool) {
-	if o == nil || IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if o == nil || isNil(o.AdditionalEcsAddrConfigInfos) {
 		return nil, false
 	}
 	return o.AdditionalEcsAddrConfigInfos, true
@@ -937,7 +937,7 @@ func (o *DnnConfiguration) GetAdditionalEcsAddrConfigInfosOk() ([]EcsAddrConfigI
 
 // HasAdditionalEcsAddrConfigInfos returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasAdditionalEcsAddrConfigInfos() bool {
-	if o != nil && !IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if o != nil && !isNil(o.AdditionalEcsAddrConfigInfos) {
 		return true
 	}
 
@@ -951,7 +951,7 @@ func (o *DnnConfiguration) SetAdditionalEcsAddrConfigInfos(v []EcsAddrConfigInfo
 
 // GetSharedEcsAddrConfigInfo returns the SharedEcsAddrConfigInfo field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetSharedEcsAddrConfigInfo() string {
-	if o == nil || IsNil(o.SharedEcsAddrConfigInfo) {
+	if o == nil || isNil(o.SharedEcsAddrConfigInfo) {
 		var ret string
 		return ret
 	}
@@ -961,7 +961,7 @@ func (o *DnnConfiguration) GetSharedEcsAddrConfigInfo() string {
 // GetSharedEcsAddrConfigInfoOk returns a tuple with the SharedEcsAddrConfigInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetSharedEcsAddrConfigInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.SharedEcsAddrConfigInfo) {
+	if o == nil || isNil(o.SharedEcsAddrConfigInfo) {
 		return nil, false
 	}
 	return o.SharedEcsAddrConfigInfo, true
@@ -969,7 +969,7 @@ func (o *DnnConfiguration) GetSharedEcsAddrConfigInfoOk() (*string, bool) {
 
 // HasSharedEcsAddrConfigInfo returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasSharedEcsAddrConfigInfo() bool {
-	if o != nil && !IsNil(o.SharedEcsAddrConfigInfo) {
+	if o != nil && !isNil(o.SharedEcsAddrConfigInfo) {
 		return true
 	}
 
@@ -983,7 +983,7 @@ func (o *DnnConfiguration) SetSharedEcsAddrConfigInfo(v string) {
 
 // GetAdditionalSharedEcsAddrConfigInfoIds returns the AdditionalSharedEcsAddrConfigInfoIds field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetAdditionalSharedEcsAddrConfigInfoIds() []string {
-	if o == nil || IsNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
+	if o == nil || isNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
 		var ret []string
 		return ret
 	}
@@ -993,7 +993,7 @@ func (o *DnnConfiguration) GetAdditionalSharedEcsAddrConfigInfoIds() []string {
 // GetAdditionalSharedEcsAddrConfigInfoIdsOk returns a tuple with the AdditionalSharedEcsAddrConfigInfoIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetAdditionalSharedEcsAddrConfigInfoIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
+	if o == nil || isNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
 		return nil, false
 	}
 	return o.AdditionalSharedEcsAddrConfigInfoIds, true
@@ -1001,7 +1001,7 @@ func (o *DnnConfiguration) GetAdditionalSharedEcsAddrConfigInfoIdsOk() ([]string
 
 // HasAdditionalSharedEcsAddrConfigInfoIds returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasAdditionalSharedEcsAddrConfigInfoIds() bool {
-	if o != nil && !IsNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
+	if o != nil && !isNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
 		return true
 	}
 
@@ -1015,7 +1015,7 @@ func (o *DnnConfiguration) SetAdditionalSharedEcsAddrConfigInfoIds(v []string) {
 
 // GetEasDiscoveryAuthorized returns the EasDiscoveryAuthorized field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetEasDiscoveryAuthorized() bool {
-	if o == nil || IsNil(o.EasDiscoveryAuthorized) {
+	if o == nil || isNil(o.EasDiscoveryAuthorized) {
 		var ret bool
 		return ret
 	}
@@ -1025,7 +1025,7 @@ func (o *DnnConfiguration) GetEasDiscoveryAuthorized() bool {
 // GetEasDiscoveryAuthorizedOk returns a tuple with the EasDiscoveryAuthorized field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetEasDiscoveryAuthorizedOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasDiscoveryAuthorized) {
+	if o == nil || isNil(o.EasDiscoveryAuthorized) {
 		return nil, false
 	}
 	return o.EasDiscoveryAuthorized, true
@@ -1033,7 +1033,7 @@ func (o *DnnConfiguration) GetEasDiscoveryAuthorizedOk() (*bool, bool) {
 
 // HasEasDiscoveryAuthorized returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasEasDiscoveryAuthorized() bool {
-	if o != nil && !IsNil(o.EasDiscoveryAuthorized) {
+	if o != nil && !isNil(o.EasDiscoveryAuthorized) {
 		return true
 	}
 
@@ -1047,7 +1047,7 @@ func (o *DnnConfiguration) SetEasDiscoveryAuthorized(v bool) {
 
 // GetOnboardingInd returns the OnboardingInd field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetOnboardingInd() bool {
-	if o == nil || IsNil(o.OnboardingInd) {
+	if o == nil || isNil(o.OnboardingInd) {
 		var ret bool
 		return ret
 	}
@@ -1057,7 +1057,7 @@ func (o *DnnConfiguration) GetOnboardingInd() bool {
 // GetOnboardingIndOk returns a tuple with the OnboardingInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetOnboardingIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.OnboardingInd) {
+	if o == nil || isNil(o.OnboardingInd) {
 		return nil, false
 	}
 	return o.OnboardingInd, true
@@ -1065,7 +1065,7 @@ func (o *DnnConfiguration) GetOnboardingIndOk() (*bool, bool) {
 
 // HasOnboardingInd returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasOnboardingInd() bool {
-	if o != nil && !IsNil(o.OnboardingInd) {
+	if o != nil && !isNil(o.OnboardingInd) {
 		return true
 	}
 
@@ -1079,7 +1079,7 @@ func (o *DnnConfiguration) SetOnboardingInd(v bool) {
 
 // GetAerialUeInd returns the AerialUeInd field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetAerialUeInd() AerialUeIndication {
-	if o == nil || IsNil(o.AerialUeInd) {
+	if o == nil || isNil(o.AerialUeInd) {
 		var ret AerialUeIndication
 		return ret
 	}
@@ -1089,7 +1089,7 @@ func (o *DnnConfiguration) GetAerialUeInd() AerialUeIndication {
 // GetAerialUeIndOk returns a tuple with the AerialUeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetAerialUeIndOk() (*AerialUeIndication, bool) {
-	if o == nil || IsNil(o.AerialUeInd) {
+	if o == nil || isNil(o.AerialUeInd) {
 		return nil, false
 	}
 	return o.AerialUeInd, true
@@ -1097,7 +1097,7 @@ func (o *DnnConfiguration) GetAerialUeIndOk() (*AerialUeIndication, bool) {
 
 // HasAerialUeInd returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasAerialUeInd() bool {
-	if o != nil && !IsNil(o.AerialUeInd) {
+	if o != nil && !isNil(o.AerialUeInd) {
 		return true
 	}
 
@@ -1111,7 +1111,7 @@ func (o *DnnConfiguration) SetAerialUeInd(v AerialUeIndication) {
 
 // GetSubscribedMaxIpv6PrefixSize returns the SubscribedMaxIpv6PrefixSize field value if set, zero value otherwise.
 func (o *DnnConfiguration) GetSubscribedMaxIpv6PrefixSize() int32 {
-	if o == nil || IsNil(o.SubscribedMaxIpv6PrefixSize) {
+	if o == nil || isNil(o.SubscribedMaxIpv6PrefixSize) {
 		var ret int32
 		return ret
 	}
@@ -1121,7 +1121,7 @@ func (o *DnnConfiguration) GetSubscribedMaxIpv6PrefixSize() int32 {
 // GetSubscribedMaxIpv6PrefixSizeOk returns a tuple with the SubscribedMaxIpv6PrefixSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnConfiguration) GetSubscribedMaxIpv6PrefixSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.SubscribedMaxIpv6PrefixSize) {
+	if o == nil || isNil(o.SubscribedMaxIpv6PrefixSize) {
 		return nil, false
 	}
 	return o.SubscribedMaxIpv6PrefixSize, true
@@ -1129,7 +1129,7 @@ func (o *DnnConfiguration) GetSubscribedMaxIpv6PrefixSizeOk() (*int32, bool) {
 
 // HasSubscribedMaxIpv6PrefixSize returns a boolean if a field has been set.
 func (o *DnnConfiguration) HasSubscribedMaxIpv6PrefixSize() bool {
-	if o != nil && !IsNil(o.SubscribedMaxIpv6PrefixSize) {
+	if o != nil && !isNil(o.SubscribedMaxIpv6PrefixSize) {
 		return true
 	}
 
@@ -1153,97 +1153,97 @@ func (o DnnConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pduSessionTypes"] = o.PduSessionTypes
 	toSerialize["sscModes"] = o.SscModes
-	if !IsNil(o.IwkEpsInd) {
+	if !isNil(o.IwkEpsInd) {
 		toSerialize["iwkEpsInd"] = o.IwkEpsInd
 	}
-	if !IsNil(o.Var5gQosProfile) {
+	if !isNil(o.Var5gQosProfile) {
 		toSerialize["5gQosProfile"] = o.Var5gQosProfile
 	}
-	if !IsNil(o.SessionAmbr) {
+	if !isNil(o.SessionAmbr) {
 		toSerialize["sessionAmbr"] = o.SessionAmbr
 	}
-	if !IsNil(o.Var3gppChargingCharacteristics) {
+	if !isNil(o.Var3gppChargingCharacteristics) {
 		toSerialize["3gppChargingCharacteristics"] = o.Var3gppChargingCharacteristics
 	}
-	if !IsNil(o.StaticIpAddress) {
+	if !isNil(o.StaticIpAddress) {
 		toSerialize["staticIpAddress"] = o.StaticIpAddress
 	}
-	if !IsNil(o.UpSecurity) {
+	if !isNil(o.UpSecurity) {
 		toSerialize["upSecurity"] = o.UpSecurity
 	}
-	if !IsNil(o.PduSessionContinuityInd) {
+	if !isNil(o.PduSessionContinuityInd) {
 		toSerialize["pduSessionContinuityInd"] = o.PduSessionContinuityInd
 	}
-	if !IsNil(o.NiddNefId) {
+	if !isNil(o.NiddNefId) {
 		toSerialize["niddNefId"] = o.NiddNefId
 	}
-	if !IsNil(o.NiddInfo) {
+	if !isNil(o.NiddInfo) {
 		toSerialize["niddInfo"] = o.NiddInfo
 	}
-	if !IsNil(o.RedundantSessionAllowed) {
+	if !isNil(o.RedundantSessionAllowed) {
 		toSerialize["redundantSessionAllowed"] = o.RedundantSessionAllowed
 	}
-	if !IsNil(o.AcsInfo) {
+	if !isNil(o.AcsInfo) {
 		toSerialize["acsInfo"] = o.AcsInfo
 	}
-	if !IsNil(o.Ipv4FrameRouteList) {
+	if !isNil(o.Ipv4FrameRouteList) {
 		toSerialize["ipv4FrameRouteList"] = o.Ipv4FrameRouteList
 	}
-	if !IsNil(o.Ipv6FrameRouteList) {
+	if !isNil(o.Ipv6FrameRouteList) {
 		toSerialize["ipv6FrameRouteList"] = o.Ipv6FrameRouteList
 	}
-	if !IsNil(o.AtsssAllowed) {
+	if !isNil(o.AtsssAllowed) {
 		toSerialize["atsssAllowed"] = o.AtsssAllowed
 	}
-	if !IsNil(o.SecondaryAuth) {
+	if !isNil(o.SecondaryAuth) {
 		toSerialize["secondaryAuth"] = o.SecondaryAuth
 	}
-	if !IsNil(o.UavSecondaryAuth) {
+	if !isNil(o.UavSecondaryAuth) {
 		toSerialize["uavSecondaryAuth"] = o.UavSecondaryAuth
 	}
-	if !IsNil(o.DnAaaIpAddressAllocation) {
+	if !isNil(o.DnAaaIpAddressAllocation) {
 		toSerialize["dnAaaIpAddressAllocation"] = o.DnAaaIpAddressAllocation
 	}
-	if !IsNil(o.DnAaaAddress) {
+	if !isNil(o.DnAaaAddress) {
 		toSerialize["dnAaaAddress"] = o.DnAaaAddress
 	}
-	if !IsNil(o.AdditionalDnAaaAddresses) {
+	if !isNil(o.AdditionalDnAaaAddresses) {
 		toSerialize["additionalDnAaaAddresses"] = o.AdditionalDnAaaAddresses
 	}
-	if !IsNil(o.DnAaaFqdn) {
+	if !isNil(o.DnAaaFqdn) {
 		toSerialize["dnAaaFqdn"] = o.DnAaaFqdn
 	}
-	if !IsNil(o.IptvAccCtrlInfo) {
+	if !isNil(o.IptvAccCtrlInfo) {
 		toSerialize["iptvAccCtrlInfo"] = o.IptvAccCtrlInfo
 	}
-	if !IsNil(o.Ipv4Index) {
+	if !isNil(o.Ipv4Index) {
 		toSerialize["ipv4Index"] = o.Ipv4Index
 	}
-	if !IsNil(o.Ipv6Index) {
+	if !isNil(o.Ipv6Index) {
 		toSerialize["ipv6Index"] = o.Ipv6Index
 	}
 	if o.EcsAddrConfigInfo.IsSet() {
 		toSerialize["ecsAddrConfigInfo"] = o.EcsAddrConfigInfo.Get()
 	}
-	if !IsNil(o.AdditionalEcsAddrConfigInfos) {
+	if !isNil(o.AdditionalEcsAddrConfigInfos) {
 		toSerialize["additionalEcsAddrConfigInfos"] = o.AdditionalEcsAddrConfigInfos
 	}
-	if !IsNil(o.SharedEcsAddrConfigInfo) {
+	if !isNil(o.SharedEcsAddrConfigInfo) {
 		toSerialize["sharedEcsAddrConfigInfo"] = o.SharedEcsAddrConfigInfo
 	}
-	if !IsNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
+	if !isNil(o.AdditionalSharedEcsAddrConfigInfoIds) {
 		toSerialize["additionalSharedEcsAddrConfigInfoIds"] = o.AdditionalSharedEcsAddrConfigInfoIds
 	}
-	if !IsNil(o.EasDiscoveryAuthorized) {
+	if !isNil(o.EasDiscoveryAuthorized) {
 		toSerialize["easDiscoveryAuthorized"] = o.EasDiscoveryAuthorized
 	}
-	if !IsNil(o.OnboardingInd) {
+	if !isNil(o.OnboardingInd) {
 		toSerialize["onboardingInd"] = o.OnboardingInd
 	}
-	if !IsNil(o.AerialUeInd) {
+	if !isNil(o.AerialUeInd) {
 		toSerialize["aerialUeInd"] = o.AerialUeInd
 	}
-	if !IsNil(o.SubscribedMaxIpv6PrefixSize) {
+	if !isNil(o.SubscribedMaxIpv6PrefixSize) {
 		toSerialize["subscribedMaxIpv6PrefixSize"] = o.SubscribedMaxIpv6PrefixSize
 	}
 	return toSerialize, nil

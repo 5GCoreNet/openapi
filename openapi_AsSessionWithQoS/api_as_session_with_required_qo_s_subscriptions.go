@@ -13,7 +13,7 @@ package openapi_AsSessionWithQoS
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -110,9 +110,9 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) CreateASSessionWithQoS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -316,20 +316,20 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 	localVarFormParams := url.Values{}
 
 	if r.ipAddrs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-addrs", r.ipAddrs, "csv")
+		parameterAddToQuery(localVarQueryParams, "ip-addrs", r.ipAddrs, "csv")
 	}
 	if r.ipDomain != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
+		parameterAddToQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
 	}
 	if r.macAddrs != nil {
 		t := *r.macAddrs
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "mac-addrs", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "mac-addrs", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "mac-addrs", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -359,9 +359,9 @@ func (a *ASSessionWithRequiredQoSSubscriptionsApiService) FetchAllASSessionWithQ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -42,7 +42,7 @@ func NewAlarmsGet200ResponseValueAllOf1WithDefaults() *AlarmsGet200ResponseValue
 
 // GetComments returns the Comments field value if set, zero value otherwise.
 func (o *AlarmsGet200ResponseValueAllOf1) GetComments() map[string]Comment {
-	if o == nil || IsNil(o.Comments) {
+	if o == nil || isNil(o.Comments) {
 		var ret map[string]Comment
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AlarmsGet200ResponseValueAllOf1) GetComments() map[string]Comment {
 // GetCommentsOk returns a tuple with the Comments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlarmsGet200ResponseValueAllOf1) GetCommentsOk() (*map[string]Comment, bool) {
-	if o == nil || IsNil(o.Comments) {
+	if o == nil || isNil(o.Comments) {
 		return nil, false
 	}
 	return o.Comments, true
@@ -60,7 +60,7 @@ func (o *AlarmsGet200ResponseValueAllOf1) GetCommentsOk() (*map[string]Comment, 
 
 // HasComments returns a boolean if a field has been set.
 func (o *AlarmsGet200ResponseValueAllOf1) HasComments() bool {
-	if o != nil && !IsNil(o.Comments) {
+	if o != nil && !isNil(o.Comments) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o AlarmsGet200ResponseValueAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o AlarmsGet200ResponseValueAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Comments) {
+	if !isNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
 	}
 	return toSerialize, nil

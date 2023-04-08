@@ -45,7 +45,7 @@ func NewAssuranceGoalStatusWithDefaults() *AssuranceGoalStatus {
 
 // GetAssuranceGoalStatusId returns the AssuranceGoalStatusId field value if set, zero value otherwise.
 func (o *AssuranceGoalStatus) GetAssuranceGoalStatusId() string {
-	if o == nil || IsNil(o.AssuranceGoalStatusId) {
+	if o == nil || isNil(o.AssuranceGoalStatusId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalStatusId() string {
 // GetAssuranceGoalStatusIdOk returns a tuple with the AssuranceGoalStatusId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceGoalStatus) GetAssuranceGoalStatusIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AssuranceGoalStatusId) {
+	if o == nil || isNil(o.AssuranceGoalStatusId) {
 		return nil, false
 	}
 	return o.AssuranceGoalStatusId, true
@@ -63,7 +63,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalStatusIdOk() (*string, bool) {
 
 // HasAssuranceGoalStatusId returns a boolean if a field has been set.
 func (o *AssuranceGoalStatus) HasAssuranceGoalStatusId() bool {
-	if o != nil && !IsNil(o.AssuranceGoalStatusId) {
+	if o != nil && !isNil(o.AssuranceGoalStatusId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AssuranceGoalStatus) SetAssuranceGoalStatusId(v string) {
 
 // GetAssuranceGoalId returns the AssuranceGoalId field value if set, zero value otherwise.
 func (o *AssuranceGoalStatus) GetAssuranceGoalId() string {
-	if o == nil || IsNil(o.AssuranceGoalId) {
+	if o == nil || isNil(o.AssuranceGoalId) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalId() string {
 // GetAssuranceGoalIdOk returns a tuple with the AssuranceGoalId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceGoalStatus) GetAssuranceGoalIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AssuranceGoalId) {
+	if o == nil || isNil(o.AssuranceGoalId) {
 		return nil, false
 	}
 	return o.AssuranceGoalId, true
@@ -95,7 +95,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalIdOk() (*string, bool) {
 
 // HasAssuranceGoalId returns a boolean if a field has been set.
 func (o *AssuranceGoalStatus) HasAssuranceGoalId() bool {
-	if o != nil && !IsNil(o.AssuranceGoalId) {
+	if o != nil && !isNil(o.AssuranceGoalId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AssuranceGoalStatus) SetAssuranceGoalId(v string) {
 
 // GetAssuranceGoalStatusObserved returns the AssuranceGoalStatusObserved field value if set, zero value otherwise.
 func (o *AssuranceGoalStatus) GetAssuranceGoalStatusObserved() AssuranceGoalStatusObserved {
-	if o == nil || IsNil(o.AssuranceGoalStatusObserved) {
+	if o == nil || isNil(o.AssuranceGoalStatusObserved) {
 		var ret AssuranceGoalStatusObserved
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalStatusObserved() AssuranceGoalStat
 // GetAssuranceGoalStatusObservedOk returns a tuple with the AssuranceGoalStatusObserved field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceGoalStatus) GetAssuranceGoalStatusObservedOk() (*AssuranceGoalStatusObserved, bool) {
-	if o == nil || IsNil(o.AssuranceGoalStatusObserved) {
+	if o == nil || isNil(o.AssuranceGoalStatusObserved) {
 		return nil, false
 	}
 	return o.AssuranceGoalStatusObserved, true
@@ -127,7 +127,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalStatusObservedOk() (*AssuranceGoal
 
 // HasAssuranceGoalStatusObserved returns a boolean if a field has been set.
 func (o *AssuranceGoalStatus) HasAssuranceGoalStatusObserved() bool {
-	if o != nil && !IsNil(o.AssuranceGoalStatusObserved) {
+	if o != nil && !isNil(o.AssuranceGoalStatusObserved) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AssuranceGoalStatus) SetAssuranceGoalStatusObserved(v AssuranceGoalStat
 
 // GetAssuranceGoalStatusPredicted returns the AssuranceGoalStatusPredicted field value if set, zero value otherwise.
 func (o *AssuranceGoalStatus) GetAssuranceGoalStatusPredicted() AssuranceGoalStatusPredicted {
-	if o == nil || IsNil(o.AssuranceGoalStatusPredicted) {
+	if o == nil || isNil(o.AssuranceGoalStatusPredicted) {
 		var ret AssuranceGoalStatusPredicted
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalStatusPredicted() AssuranceGoalSta
 // GetAssuranceGoalStatusPredictedOk returns a tuple with the AssuranceGoalStatusPredicted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceGoalStatus) GetAssuranceGoalStatusPredictedOk() (*AssuranceGoalStatusPredicted, bool) {
-	if o == nil || IsNil(o.AssuranceGoalStatusPredicted) {
+	if o == nil || isNil(o.AssuranceGoalStatusPredicted) {
 		return nil, false
 	}
 	return o.AssuranceGoalStatusPredicted, true
@@ -159,7 +159,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalStatusPredictedOk() (*AssuranceGoa
 
 // HasAssuranceGoalStatusPredicted returns a boolean if a field has been set.
 func (o *AssuranceGoalStatus) HasAssuranceGoalStatusPredicted() bool {
-	if o != nil && !IsNil(o.AssuranceGoalStatusPredicted) {
+	if o != nil && !isNil(o.AssuranceGoalStatusPredicted) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *AssuranceGoalStatus) SetAssuranceGoalStatusPredicted(v AssuranceGoalSta
 
 // GetAssuranceGoalRef returns the AssuranceGoalRef field value if set, zero value otherwise.
 func (o *AssuranceGoalStatus) GetAssuranceGoalRef() string {
-	if o == nil || IsNil(o.AssuranceGoalRef) {
+	if o == nil || isNil(o.AssuranceGoalRef) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalRef() string {
 // GetAssuranceGoalRefOk returns a tuple with the AssuranceGoalRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AssuranceGoalStatus) GetAssuranceGoalRefOk() (*string, bool) {
-	if o == nil || IsNil(o.AssuranceGoalRef) {
+	if o == nil || isNil(o.AssuranceGoalRef) {
 		return nil, false
 	}
 	return o.AssuranceGoalRef, true
@@ -191,7 +191,7 @@ func (o *AssuranceGoalStatus) GetAssuranceGoalRefOk() (*string, bool) {
 
 // HasAssuranceGoalRef returns a boolean if a field has been set.
 func (o *AssuranceGoalStatus) HasAssuranceGoalRef() bool {
-	if o != nil && !IsNil(o.AssuranceGoalRef) {
+	if o != nil && !isNil(o.AssuranceGoalRef) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o AssuranceGoalStatus) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceGoalStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AssuranceGoalStatusId) {
+	if !isNil(o.AssuranceGoalStatusId) {
 		toSerialize["assuranceGoalStatusId"] = o.AssuranceGoalStatusId
 	}
-	if !IsNil(o.AssuranceGoalId) {
+	if !isNil(o.AssuranceGoalId) {
 		toSerialize["assuranceGoalId"] = o.AssuranceGoalId
 	}
-	if !IsNil(o.AssuranceGoalStatusObserved) {
+	if !isNil(o.AssuranceGoalStatusObserved) {
 		toSerialize["assuranceGoalStatusObserved"] = o.AssuranceGoalStatusObserved
 	}
-	if !IsNil(o.AssuranceGoalStatusPredicted) {
+	if !isNil(o.AssuranceGoalStatusPredicted) {
 		toSerialize["assuranceGoalStatusPredicted"] = o.AssuranceGoalStatusPredicted
 	}
-	if !IsNil(o.AssuranceGoalRef) {
+	if !isNil(o.AssuranceGoalRef) {
 		toSerialize["assuranceGoalRef"] = o.AssuranceGoalRef
 	}
 	return toSerialize, nil

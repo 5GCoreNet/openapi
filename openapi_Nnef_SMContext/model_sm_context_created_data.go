@@ -189,7 +189,7 @@ func (o *SmContextCreatedData) SetNefId(v string) {
 
 // GetRdsSupport returns the RdsSupport field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetRdsSupport() bool {
-	if o == nil || IsNil(o.RdsSupport) {
+	if o == nil || isNil(o.RdsSupport) {
 		var ret bool
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *SmContextCreatedData) GetRdsSupport() bool {
 // GetRdsSupportOk returns a tuple with the RdsSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetRdsSupportOk() (*bool, bool) {
-	if o == nil || IsNil(o.RdsSupport) {
+	if o == nil || isNil(o.RdsSupport) {
 		return nil, false
 	}
 	return o.RdsSupport, true
@@ -207,7 +207,7 @@ func (o *SmContextCreatedData) GetRdsSupportOk() (*bool, bool) {
 
 // HasRdsSupport returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasRdsSupport() bool {
-	if o != nil && !IsNil(o.RdsSupport) {
+	if o != nil && !isNil(o.RdsSupport) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *SmContextCreatedData) SetRdsSupport(v bool) {
 
 // GetExtBufSupport returns the ExtBufSupport field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetExtBufSupport() bool {
-	if o == nil || IsNil(o.ExtBufSupport) {
+	if o == nil || isNil(o.ExtBufSupport) {
 		var ret bool
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *SmContextCreatedData) GetExtBufSupport() bool {
 // GetExtBufSupportOk returns a tuple with the ExtBufSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetExtBufSupportOk() (*bool, bool) {
-	if o == nil || IsNil(o.ExtBufSupport) {
+	if o == nil || isNil(o.ExtBufSupport) {
 		return nil, false
 	}
 	return o.ExtBufSupport, true
@@ -239,7 +239,7 @@ func (o *SmContextCreatedData) GetExtBufSupportOk() (*bool, bool) {
 
 // HasExtBufSupport returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasExtBufSupport() bool {
-	if o != nil && !IsNil(o.ExtBufSupport) {
+	if o != nil && !isNil(o.ExtBufSupport) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *SmContextCreatedData) SetExtBufSupport(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *SmContextCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -271,7 +271,7 @@ func (o *SmContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *SmContextCreatedData) SetSupportedFeatures(v string) {
 
 // GetMaxPacketSize returns the MaxPacketSize field value if set, zero value otherwise.
 func (o *SmContextCreatedData) GetMaxPacketSize() int32 {
-	if o == nil || IsNil(o.MaxPacketSize) {
+	if o == nil || isNil(o.MaxPacketSize) {
 		var ret int32
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *SmContextCreatedData) GetMaxPacketSize() int32 {
 // GetMaxPacketSizeOk returns a tuple with the MaxPacketSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextCreatedData) GetMaxPacketSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxPacketSize) {
+	if o == nil || isNil(o.MaxPacketSize) {
 		return nil, false
 	}
 	return o.MaxPacketSize, true
@@ -303,7 +303,7 @@ func (o *SmContextCreatedData) GetMaxPacketSizeOk() (*int32, bool) {
 
 // HasMaxPacketSize returns a boolean if a field has been set.
 func (o *SmContextCreatedData) HasMaxPacketSize() bool {
-	if o != nil && !IsNil(o.MaxPacketSize) {
+	if o != nil && !isNil(o.MaxPacketSize) {
 		return true
 	}
 
@@ -330,16 +330,16 @@ func (o SmContextCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["snssai"] = o.Snssai
 	toSerialize["nefId"] = o.NefId
-	if !IsNil(o.RdsSupport) {
+	if !isNil(o.RdsSupport) {
 		toSerialize["rdsSupport"] = o.RdsSupport
 	}
-	if !IsNil(o.ExtBufSupport) {
+	if !isNil(o.ExtBufSupport) {
 		toSerialize["extBufSupport"] = o.ExtBufSupport
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.MaxPacketSize) {
+	if !isNil(o.MaxPacketSize) {
 		toSerialize["maxPacketSize"] = o.MaxPacketSize
 	}
 	return toSerialize, nil

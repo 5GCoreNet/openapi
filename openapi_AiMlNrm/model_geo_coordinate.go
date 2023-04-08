@@ -42,7 +42,7 @@ func NewGeoCoordinateWithDefaults() *GeoCoordinate {
 
 // GetLatitude returns the Latitude field value if set, zero value otherwise.
 func (o *GeoCoordinate) GetLatitude() float32 {
-	if o == nil || IsNil(o.Latitude) {
+	if o == nil || isNil(o.Latitude) {
 		var ret float32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeoCoordinate) GetLatitude() float32 {
 // GetLatitudeOk returns a tuple with the Latitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoCoordinate) GetLatitudeOk() (*float32, bool) {
-	if o == nil || IsNil(o.Latitude) {
+	if o == nil || isNil(o.Latitude) {
 		return nil, false
 	}
 	return o.Latitude, true
@@ -60,7 +60,7 @@ func (o *GeoCoordinate) GetLatitudeOk() (*float32, bool) {
 
 // HasLatitude returns a boolean if a field has been set.
 func (o *GeoCoordinate) HasLatitude() bool {
-	if o != nil && !IsNil(o.Latitude) {
+	if o != nil && !isNil(o.Latitude) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeoCoordinate) SetLatitude(v float32) {
 
 // GetLongitude returns the Longitude field value if set, zero value otherwise.
 func (o *GeoCoordinate) GetLongitude() float32 {
-	if o == nil || IsNil(o.Longitude) {
+	if o == nil || isNil(o.Longitude) {
 		var ret float32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeoCoordinate) GetLongitude() float32 {
 // GetLongitudeOk returns a tuple with the Longitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoCoordinate) GetLongitudeOk() (*float32, bool) {
-	if o == nil || IsNil(o.Longitude) {
+	if o == nil || isNil(o.Longitude) {
 		return nil, false
 	}
 	return o.Longitude, true
@@ -92,7 +92,7 @@ func (o *GeoCoordinate) GetLongitudeOk() (*float32, bool) {
 
 // HasLongitude returns a boolean if a field has been set.
 func (o *GeoCoordinate) HasLongitude() bool {
-	if o != nil && !IsNil(o.Longitude) {
+	if o != nil && !isNil(o.Longitude) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GeoCoordinate) MarshalJSON() ([]byte, error) {
 
 func (o GeoCoordinate) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Latitude) {
+	if !isNil(o.Latitude) {
 		toSerialize["latitude"] = o.Latitude
 	}
-	if !IsNil(o.Longitude) {
+	if !isNil(o.Longitude) {
 		toSerialize["longitude"] = o.Longitude
 	}
 	return toSerialize, nil

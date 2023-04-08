@@ -6,7 +6,7 @@
 [![Release](https://img.shields.io/github/v/release/5GCoreNet/openapi)](https://github.com/5GCoreNet/openapi/releases/latest)
 
 > The code in this repository is generated automatically using a GitHub Action workflow. DO NOT EDIT THE CODE IN THIS REPOSITORY.
-
+> Note that for the moment the automatic code generation is not working, we will be able to provide it when [this PR](https://github.com/OpenAPITools/openapi-generator/pull/13472) will be merged. 
 This repository contains the Go code generated from the 5GC OpenAPI specifications provided [here](https://github.com/jdegre/5GC_APIs) used by the [5GCoreNetSDK](https://github.com/5GCoreNet/5GCoreNetSDK).
 
 We use the [OpenAPI Generator](https://openapi-generator.tech/) to generate the code from the OpenAPI specifications automatically using a GitHub Action workflow 

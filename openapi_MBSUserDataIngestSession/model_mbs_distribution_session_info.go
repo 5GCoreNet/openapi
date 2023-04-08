@@ -77,7 +77,7 @@ func NewMBSDistributionSessionInfoWithDefaults() *MBSDistributionSessionInfo {
 
 // GetMbsDistSessionId returns the MbsDistSessionId field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMbsDistSessionId() string {
-	if o == nil || IsNil(o.MbsDistSessionId) {
+	if o == nil || isNil(o.MbsDistSessionId) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *MBSDistributionSessionInfo) GetMbsDistSessionId() string {
 // GetMbsDistSessionIdOk returns a tuple with the MbsDistSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMbsDistSessionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MbsDistSessionId) {
+	if o == nil || isNil(o.MbsDistSessionId) {
 		return nil, false
 	}
 	return o.MbsDistSessionId, true
@@ -95,7 +95,7 @@ func (o *MBSDistributionSessionInfo) GetMbsDistSessionIdOk() (*string, bool) {
 
 // HasMbsDistSessionId returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMbsDistSessionId() bool {
-	if o != nil && !IsNil(o.MbsDistSessionId) {
+	if o != nil && !isNil(o.MbsDistSessionId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MBSDistributionSessionInfo) SetMbsDistSessionId(v string) {
 
 // GetMbsSessionId returns the MbsSessionId field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMbsSessionId() MbsSessionId {
-	if o == nil || IsNil(o.MbsSessionId) {
+	if o == nil || isNil(o.MbsSessionId) {
 		var ret MbsSessionId
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *MBSDistributionSessionInfo) GetMbsSessionId() MbsSessionId {
 // GetMbsSessionIdOk returns a tuple with the MbsSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMbsSessionIdOk() (*MbsSessionId, bool) {
-	if o == nil || IsNil(o.MbsSessionId) {
+	if o == nil || isNil(o.MbsSessionId) {
 		return nil, false
 	}
 	return o.MbsSessionId, true
@@ -127,7 +127,7 @@ func (o *MBSDistributionSessionInfo) GetMbsSessionIdOk() (*MbsSessionId, bool) {
 
 // HasMbsSessionId returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMbsSessionId() bool {
-	if o != nil && !IsNil(o.MbsSessionId) {
+	if o != nil && !isNil(o.MbsSessionId) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *MBSDistributionSessionInfo) SetMbsSessionId(v MbsSessionId) {
 
 // GetMbsServInfo returns the MbsServInfo field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMbsServInfo() MbsServiceInfo {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		var ret MbsServiceInfo
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *MBSDistributionSessionInfo) GetMbsServInfo() MbsServiceInfo {
 // GetMbsServInfoOk returns a tuple with the MbsServInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMbsServInfoOk() (*MbsServiceInfo, bool) {
-	if o == nil || IsNil(o.MbsServInfo) {
+	if o == nil || isNil(o.MbsServInfo) {
 		return nil, false
 	}
 	return o.MbsServInfo, true
@@ -159,7 +159,7 @@ func (o *MBSDistributionSessionInfo) GetMbsServInfoOk() (*MbsServiceInfo, bool) 
 
 // HasMbsServInfo returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMbsServInfo() bool {
-	if o != nil && !IsNil(o.MbsServInfo) {
+	if o != nil && !isNil(o.MbsServInfo) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *MBSDistributionSessionInfo) SetMaxContBitRate(v string) {
 
 // GetMaxContDelay returns the MaxContDelay field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMaxContDelay() int32 {
-	if o == nil || IsNil(o.MaxContDelay) {
+	if o == nil || isNil(o.MaxContDelay) {
 		var ret int32
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *MBSDistributionSessionInfo) GetMaxContDelay() int32 {
 // GetMaxContDelayOk returns a tuple with the MaxContDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMaxContDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxContDelay) {
+	if o == nil || isNil(o.MaxContDelay) {
 		return nil, false
 	}
 	return o.MaxContDelay, true
@@ -215,7 +215,7 @@ func (o *MBSDistributionSessionInfo) GetMaxContDelayOk() (*int32, bool) {
 
 // HasMaxContDelay returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMaxContDelay() bool {
-	if o != nil && !IsNil(o.MaxContDelay) {
+	if o != nil && !isNil(o.MaxContDelay) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *MBSDistributionSessionInfo) SetDistrMethod(v DistributionMethod) {
 
 // GetFecConfig returns the FecConfig field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetFecConfig() FECConfig {
-	if o == nil || IsNil(o.FecConfig) {
+	if o == nil || isNil(o.FecConfig) {
 		var ret FECConfig
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *MBSDistributionSessionInfo) GetFecConfig() FECConfig {
 // GetFecConfigOk returns a tuple with the FecConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetFecConfigOk() (*FECConfig, bool) {
-	if o == nil || IsNil(o.FecConfig) {
+	if o == nil || isNil(o.FecConfig) {
 		return nil, false
 	}
 	return o.FecConfig, true
@@ -271,7 +271,7 @@ func (o *MBSDistributionSessionInfo) GetFecConfigOk() (*FECConfig, bool) {
 
 // HasFecConfig returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasFecConfig() bool {
-	if o != nil && !IsNil(o.FecConfig) {
+	if o != nil && !isNil(o.FecConfig) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *MBSDistributionSessionInfo) SetFecConfig(v FECConfig) {
 
 // GetObjDistrInfo returns the ObjDistrInfo field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetObjDistrInfo() ObjectDistrMethInfo {
-	if o == nil || IsNil(o.ObjDistrInfo) {
+	if o == nil || isNil(o.ObjDistrInfo) {
 		var ret ObjectDistrMethInfo
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *MBSDistributionSessionInfo) GetObjDistrInfo() ObjectDistrMethInfo {
 // GetObjDistrInfoOk returns a tuple with the ObjDistrInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetObjDistrInfoOk() (*ObjectDistrMethInfo, bool) {
-	if o == nil || IsNil(o.ObjDistrInfo) {
+	if o == nil || isNil(o.ObjDistrInfo) {
 		return nil, false
 	}
 	return o.ObjDistrInfo, true
@@ -303,7 +303,7 @@ func (o *MBSDistributionSessionInfo) GetObjDistrInfoOk() (*ObjectDistrMethInfo, 
 
 // HasObjDistrInfo returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasObjDistrInfo() bool {
-	if o != nil && !IsNil(o.ObjDistrInfo) {
+	if o != nil && !isNil(o.ObjDistrInfo) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *MBSDistributionSessionInfo) SetObjDistrInfo(v ObjectDistrMethInfo) {
 
 // GetPckDistrInfo returns the PckDistrInfo field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetPckDistrInfo() PacketDistrMethInfo {
-	if o == nil || IsNil(o.PckDistrInfo) {
+	if o == nil || isNil(o.PckDistrInfo) {
 		var ret PacketDistrMethInfo
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *MBSDistributionSessionInfo) GetPckDistrInfo() PacketDistrMethInfo {
 // GetPckDistrInfoOk returns a tuple with the PckDistrInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetPckDistrInfoOk() (*PacketDistrMethInfo, bool) {
-	if o == nil || IsNil(o.PckDistrInfo) {
+	if o == nil || isNil(o.PckDistrInfo) {
 		return nil, false
 	}
 	return o.PckDistrInfo, true
@@ -335,7 +335,7 @@ func (o *MBSDistributionSessionInfo) GetPckDistrInfoOk() (*PacketDistrMethInfo, 
 
 // HasPckDistrInfo returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasPckDistrInfo() bool {
-	if o != nil && !IsNil(o.PckDistrInfo) {
+	if o != nil && !isNil(o.PckDistrInfo) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *MBSDistributionSessionInfo) SetPckDistrInfo(v PacketDistrMethInfo) {
 
 // GetTrafficMarkingInfo returns the TrafficMarkingInfo field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetTrafficMarkingInfo() string {
-	if o == nil || IsNil(o.TrafficMarkingInfo) {
+	if o == nil || isNil(o.TrafficMarkingInfo) {
 		var ret string
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *MBSDistributionSessionInfo) GetTrafficMarkingInfo() string {
 // GetTrafficMarkingInfoOk returns a tuple with the TrafficMarkingInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetTrafficMarkingInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.TrafficMarkingInfo) {
+	if o == nil || isNil(o.TrafficMarkingInfo) {
 		return nil, false
 	}
 	return o.TrafficMarkingInfo, true
@@ -367,7 +367,7 @@ func (o *MBSDistributionSessionInfo) GetTrafficMarkingInfoOk() (*string, bool) {
 
 // HasTrafficMarkingInfo returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasTrafficMarkingInfo() bool {
-	if o != nil && !IsNil(o.TrafficMarkingInfo) {
+	if o != nil && !isNil(o.TrafficMarkingInfo) {
 		return true
 	}
 
@@ -381,7 +381,7 @@ func (o *MBSDistributionSessionInfo) SetTrafficMarkingInfo(v string) {
 
 // GetMbsDistSessState returns the MbsDistSessState field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMbsDistSessState() DistSessionState {
-	if o == nil || IsNil(o.MbsDistSessState) {
+	if o == nil || isNil(o.MbsDistSessState) {
 		var ret DistSessionState
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *MBSDistributionSessionInfo) GetMbsDistSessState() DistSessionState {
 // GetMbsDistSessStateOk returns a tuple with the MbsDistSessState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMbsDistSessStateOk() (*DistSessionState, bool) {
-	if o == nil || IsNil(o.MbsDistSessState) {
+	if o == nil || isNil(o.MbsDistSessState) {
 		return nil, false
 	}
 	return o.MbsDistSessState, true
@@ -399,7 +399,7 @@ func (o *MBSDistributionSessionInfo) GetMbsDistSessStateOk() (*DistSessionState,
 
 // HasMbsDistSessState returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMbsDistSessState() bool {
-	if o != nil && !IsNil(o.MbsDistSessState) {
+	if o != nil && !isNil(o.MbsDistSessState) {
 		return true
 	}
 
@@ -413,7 +413,7 @@ func (o *MBSDistributionSessionInfo) SetMbsDistSessState(v DistSessionState) {
 
 // GetTgtServAreas returns the TgtServAreas field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetTgtServAreas() MbsServiceArea {
-	if o == nil || IsNil(o.TgtServAreas) {
+	if o == nil || isNil(o.TgtServAreas) {
 		var ret MbsServiceArea
 		return ret
 	}
@@ -423,7 +423,7 @@ func (o *MBSDistributionSessionInfo) GetTgtServAreas() MbsServiceArea {
 // GetTgtServAreasOk returns a tuple with the TgtServAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetTgtServAreasOk() (*MbsServiceArea, bool) {
-	if o == nil || IsNil(o.TgtServAreas) {
+	if o == nil || isNil(o.TgtServAreas) {
 		return nil, false
 	}
 	return o.TgtServAreas, true
@@ -431,7 +431,7 @@ func (o *MBSDistributionSessionInfo) GetTgtServAreasOk() (*MbsServiceArea, bool)
 
 // HasTgtServAreas returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasTgtServAreas() bool {
-	if o != nil && !IsNil(o.TgtServAreas) {
+	if o != nil && !isNil(o.TgtServAreas) {
 		return true
 	}
 
@@ -445,7 +445,7 @@ func (o *MBSDistributionSessionInfo) SetTgtServAreas(v MbsServiceArea) {
 
 // GetExtTgtServAreas returns the ExtTgtServAreas field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetExtTgtServAreas() ExternalMbsServiceArea {
-	if o == nil || IsNil(o.ExtTgtServAreas) {
+	if o == nil || isNil(o.ExtTgtServAreas) {
 		var ret ExternalMbsServiceArea
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *MBSDistributionSessionInfo) GetExtTgtServAreas() ExternalMbsServiceArea
 // GetExtTgtServAreasOk returns a tuple with the ExtTgtServAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetExtTgtServAreasOk() (*ExternalMbsServiceArea, bool) {
-	if o == nil || IsNil(o.ExtTgtServAreas) {
+	if o == nil || isNil(o.ExtTgtServAreas) {
 		return nil, false
 	}
 	return o.ExtTgtServAreas, true
@@ -463,7 +463,7 @@ func (o *MBSDistributionSessionInfo) GetExtTgtServAreasOk() (*ExternalMbsService
 
 // HasExtTgtServAreas returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasExtTgtServAreas() bool {
-	if o != nil && !IsNil(o.ExtTgtServAreas) {
+	if o != nil && !isNil(o.ExtTgtServAreas) {
 		return true
 	}
 
@@ -477,7 +477,7 @@ func (o *MBSDistributionSessionInfo) SetExtTgtServAreas(v ExternalMbsServiceArea
 
 // GetMbsFSAId returns the MbsFSAId field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMbsFSAId() string {
-	if o == nil || IsNil(o.MbsFSAId) {
+	if o == nil || isNil(o.MbsFSAId) {
 		var ret string
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *MBSDistributionSessionInfo) GetMbsFSAId() string {
 // GetMbsFSAIdOk returns a tuple with the MbsFSAId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMbsFSAIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MbsFSAId) {
+	if o == nil || isNil(o.MbsFSAId) {
 		return nil, false
 	}
 	return o.MbsFSAId, true
@@ -495,7 +495,7 @@ func (o *MBSDistributionSessionInfo) GetMbsFSAIdOk() (*string, bool) {
 
 // HasMbsFSAId returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMbsFSAId() bool {
-	if o != nil && !IsNil(o.MbsFSAId) {
+	if o != nil && !isNil(o.MbsFSAId) {
 		return true
 	}
 
@@ -509,7 +509,7 @@ func (o *MBSDistributionSessionInfo) SetMbsFSAId(v string) {
 
 // GetLocationDependent returns the LocationDependent field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetLocationDependent() bool {
-	if o == nil || IsNil(o.LocationDependent) {
+	if o == nil || isNil(o.LocationDependent) {
 		var ret bool
 		return ret
 	}
@@ -519,7 +519,7 @@ func (o *MBSDistributionSessionInfo) GetLocationDependent() bool {
 // GetLocationDependentOk returns a tuple with the LocationDependent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetLocationDependentOk() (*bool, bool) {
-	if o == nil || IsNil(o.LocationDependent) {
+	if o == nil || isNil(o.LocationDependent) {
 		return nil, false
 	}
 	return o.LocationDependent, true
@@ -527,7 +527,7 @@ func (o *MBSDistributionSessionInfo) GetLocationDependentOk() (*bool, bool) {
 
 // HasLocationDependent returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasLocationDependent() bool {
-	if o != nil && !IsNil(o.LocationDependent) {
+	if o != nil && !isNil(o.LocationDependent) {
 		return true
 	}
 
@@ -541,7 +541,7 @@ func (o *MBSDistributionSessionInfo) SetLocationDependent(v bool) {
 
 // GetMultiplexedServFlag returns the MultiplexedServFlag field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetMultiplexedServFlag() bool {
-	if o == nil || IsNil(o.MultiplexedServFlag) {
+	if o == nil || isNil(o.MultiplexedServFlag) {
 		var ret bool
 		return ret
 	}
@@ -551,7 +551,7 @@ func (o *MBSDistributionSessionInfo) GetMultiplexedServFlag() bool {
 // GetMultiplexedServFlagOk returns a tuple with the MultiplexedServFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetMultiplexedServFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.MultiplexedServFlag) {
+	if o == nil || isNil(o.MultiplexedServFlag) {
 		return nil, false
 	}
 	return o.MultiplexedServFlag, true
@@ -559,7 +559,7 @@ func (o *MBSDistributionSessionInfo) GetMultiplexedServFlagOk() (*bool, bool) {
 
 // HasMultiplexedServFlag returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasMultiplexedServFlag() bool {
-	if o != nil && !IsNil(o.MultiplexedServFlag) {
+	if o != nil && !isNil(o.MultiplexedServFlag) {
 		return true
 	}
 
@@ -573,7 +573,7 @@ func (o *MBSDistributionSessionInfo) SetMultiplexedServFlag(v bool) {
 
 // GetRestrictedFlag returns the RestrictedFlag field value if set, zero value otherwise.
 func (o *MBSDistributionSessionInfo) GetRestrictedFlag() bool {
-	if o == nil || IsNil(o.RestrictedFlag) {
+	if o == nil || isNil(o.RestrictedFlag) {
 		var ret bool
 		return ret
 	}
@@ -583,7 +583,7 @@ func (o *MBSDistributionSessionInfo) GetRestrictedFlag() bool {
 // GetRestrictedFlagOk returns a tuple with the RestrictedFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSDistributionSessionInfo) GetRestrictedFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.RestrictedFlag) {
+	if o == nil || isNil(o.RestrictedFlag) {
 		return nil, false
 	}
 	return o.RestrictedFlag, true
@@ -591,7 +591,7 @@ func (o *MBSDistributionSessionInfo) GetRestrictedFlagOk() (*bool, bool) {
 
 // HasRestrictedFlag returns a boolean if a field has been set.
 func (o *MBSDistributionSessionInfo) HasRestrictedFlag() bool {
-	if o != nil && !IsNil(o.RestrictedFlag) {
+	if o != nil && !isNil(o.RestrictedFlag) {
 		return true
 	}
 
@@ -613,51 +613,51 @@ func (o MBSDistributionSessionInfo) MarshalJSON() ([]byte, error) {
 
 func (o MBSDistributionSessionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbsDistSessionId) {
+	if !isNil(o.MbsDistSessionId) {
 		toSerialize["mbsDistSessionId"] = o.MbsDistSessionId
 	}
-	if !IsNil(o.MbsSessionId) {
+	if !isNil(o.MbsSessionId) {
 		toSerialize["mbsSessionId"] = o.MbsSessionId
 	}
-	if !IsNil(o.MbsServInfo) {
+	if !isNil(o.MbsServInfo) {
 		toSerialize["mbsServInfo"] = o.MbsServInfo
 	}
 	toSerialize["maxContBitRate"] = o.MaxContBitRate
-	if !IsNil(o.MaxContDelay) {
+	if !isNil(o.MaxContDelay) {
 		toSerialize["maxContDelay"] = o.MaxContDelay
 	}
 	toSerialize["distrMethod"] = o.DistrMethod
-	if !IsNil(o.FecConfig) {
+	if !isNil(o.FecConfig) {
 		toSerialize["fecConfig"] = o.FecConfig
 	}
-	if !IsNil(o.ObjDistrInfo) {
+	if !isNil(o.ObjDistrInfo) {
 		toSerialize["objDistrInfo"] = o.ObjDistrInfo
 	}
-	if !IsNil(o.PckDistrInfo) {
+	if !isNil(o.PckDistrInfo) {
 		toSerialize["pckDistrInfo"] = o.PckDistrInfo
 	}
-	if !IsNil(o.TrafficMarkingInfo) {
+	if !isNil(o.TrafficMarkingInfo) {
 		toSerialize["trafficMarkingInfo"] = o.TrafficMarkingInfo
 	}
-	if !IsNil(o.MbsDistSessState) {
+	if !isNil(o.MbsDistSessState) {
 		toSerialize["mbsDistSessState"] = o.MbsDistSessState
 	}
-	if !IsNil(o.TgtServAreas) {
+	if !isNil(o.TgtServAreas) {
 		toSerialize["tgtServAreas"] = o.TgtServAreas
 	}
-	if !IsNil(o.ExtTgtServAreas) {
+	if !isNil(o.ExtTgtServAreas) {
 		toSerialize["extTgtServAreas"] = o.ExtTgtServAreas
 	}
-	if !IsNil(o.MbsFSAId) {
+	if !isNil(o.MbsFSAId) {
 		toSerialize["mbsFSAId"] = o.MbsFSAId
 	}
-	if !IsNil(o.LocationDependent) {
+	if !isNil(o.LocationDependent) {
 		toSerialize["locationDependent"] = o.LocationDependent
 	}
-	if !IsNil(o.MultiplexedServFlag) {
+	if !isNil(o.MultiplexedServFlag) {
 		toSerialize["multiplexedServFlag"] = o.MultiplexedServFlag
 	}
-	if !IsNil(o.RestrictedFlag) {
+	if !isNil(o.RestrictedFlag) {
 		toSerialize["restrictedFlag"] = o.RestrictedFlag
 	}
 	return toSerialize, nil

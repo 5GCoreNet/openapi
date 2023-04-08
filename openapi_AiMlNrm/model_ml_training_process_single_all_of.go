@@ -19,7 +19,7 @@ var _ MappedNullable = &MLTrainingProcessSingleAllOf{}
 
 // MLTrainingProcessSingleAllOf struct for MLTrainingProcessSingleAllOf
 type MLTrainingProcessSingleAllOf struct {
-	Attributes *MLTrainingProcessSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewMLTrainingProcessSingleAllOf instantiates a new MLTrainingProcessSingleAllOf object
@@ -40,9 +40,9 @@ func NewMLTrainingProcessSingleAllOfWithDefaults() *MLTrainingProcessSingleAllOf
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MLTrainingProcessSingleAllOf) GetAttributes() MLTrainingProcessSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret MLTrainingProcessSingleAllOfAttributes
+func (o *MLTrainingProcessSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *MLTrainingProcessSingleAllOf) GetAttributes() MLTrainingProcessSingleAl
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MLTrainingProcessSingleAllOf) GetAttributesOk() (*MLTrainingProcessSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *MLTrainingProcessSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *MLTrainingProcessSingleAllOf) GetAttributesOk() (*MLTrainingProcessSing
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MLTrainingProcessSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given MLTrainingProcessSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *MLTrainingProcessSingleAllOf) SetAttributes(v MLTrainingProcessSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *MLTrainingProcessSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o MLTrainingProcessSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MLTrainingProcessSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

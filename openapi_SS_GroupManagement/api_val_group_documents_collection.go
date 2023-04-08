@@ -13,7 +13,7 @@ package openapi_SS_GroupManagement
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -105,9 +105,9 @@ func (a *VALGroupDocumentsCollectionApiService) CreateValGroupDocExecute(r ApiCr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -302,10 +302,10 @@ func (a *VALGroupDocumentsCollectionApiService) RetrieveValGroupDocsExecute(r Ap
 	localVarFormParams := url.Values{}
 
 	if r.valGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "val-group-id", r.valGroupId, "")
+		parameterAddToQuery(localVarQueryParams, "val-group-id", r.valGroupId, "")
 	}
 	if r.valServiceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
+		parameterAddToQuery(localVarQueryParams, "val-service-id", r.valServiceId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -334,9 +334,9 @@ func (a *VALGroupDocumentsCollectionApiService) RetrieveValGroupDocsExecute(r Ap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

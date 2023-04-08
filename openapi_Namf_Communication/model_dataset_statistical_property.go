@@ -17,23 +17,37 @@ import (
 
 // DatasetStatisticalProperty Possible values are: - UNIFORM_DIST_DATA: Indicates the use of data samples that are uniformly distributed according to the different aspects of the requested analytics. - NO_OUTLIERS: Indicates that the data samples shall disregard data samples that are at the extreme boundaries of the value range. 
 type DatasetStatisticalProperty struct {
-	string *string
+	DatasetStatisticalPropertyAnyOf *DatasetStatisticalPropertyAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DatasetStatisticalProperty) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DatasetStatisticalPropertyAnyOf
+	err = json.Unmarshal(data, &dst.DatasetStatisticalPropertyAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDatasetStatisticalPropertyAnyOf, _ := json.Marshal(dst.DatasetStatisticalPropertyAnyOf)
+		if string(jsonDatasetStatisticalPropertyAnyOf) == "{}" { // empty struct
+			dst.DatasetStatisticalPropertyAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DatasetStatisticalPropertyAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DatasetStatisticalPropertyAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DatasetStatisticalProperty)")
@@ -41,8 +55,12 @@ func (dst *DatasetStatisticalProperty) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DatasetStatisticalProperty) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DatasetStatisticalPropertyAnyOf != nil {
+		return json.Marshal(&src.DatasetStatisticalPropertyAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

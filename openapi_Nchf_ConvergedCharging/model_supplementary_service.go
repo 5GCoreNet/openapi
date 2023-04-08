@@ -53,7 +53,7 @@ func NewSupplementaryServiceWithDefaults() *SupplementaryService {
 
 // GetSupplementaryServiceType returns the SupplementaryServiceType field value if set, zero value otherwise.
 func (o *SupplementaryService) GetSupplementaryServiceType() SupplementaryServiceType {
-	if o == nil || IsNil(o.SupplementaryServiceType) {
+	if o == nil || isNil(o.SupplementaryServiceType) {
 		var ret SupplementaryServiceType
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *SupplementaryService) GetSupplementaryServiceType() SupplementaryServic
 // GetSupplementaryServiceTypeOk returns a tuple with the SupplementaryServiceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetSupplementaryServiceTypeOk() (*SupplementaryServiceType, bool) {
-	if o == nil || IsNil(o.SupplementaryServiceType) {
+	if o == nil || isNil(o.SupplementaryServiceType) {
 		return nil, false
 	}
 	return o.SupplementaryServiceType, true
@@ -71,7 +71,7 @@ func (o *SupplementaryService) GetSupplementaryServiceTypeOk() (*SupplementarySe
 
 // HasSupplementaryServiceType returns a boolean if a field has been set.
 func (o *SupplementaryService) HasSupplementaryServiceType() bool {
-	if o != nil && !IsNil(o.SupplementaryServiceType) {
+	if o != nil && !isNil(o.SupplementaryServiceType) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *SupplementaryService) SetSupplementaryServiceType(v SupplementaryServic
 
 // GetSupplementaryServiceMode returns the SupplementaryServiceMode field value if set, zero value otherwise.
 func (o *SupplementaryService) GetSupplementaryServiceMode() SupplementaryServiceMode {
-	if o == nil || IsNil(o.SupplementaryServiceMode) {
+	if o == nil || isNil(o.SupplementaryServiceMode) {
 		var ret SupplementaryServiceMode
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *SupplementaryService) GetSupplementaryServiceMode() SupplementaryServic
 // GetSupplementaryServiceModeOk returns a tuple with the SupplementaryServiceMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetSupplementaryServiceModeOk() (*SupplementaryServiceMode, bool) {
-	if o == nil || IsNil(o.SupplementaryServiceMode) {
+	if o == nil || isNil(o.SupplementaryServiceMode) {
 		return nil, false
 	}
 	return o.SupplementaryServiceMode, true
@@ -103,7 +103,7 @@ func (o *SupplementaryService) GetSupplementaryServiceModeOk() (*SupplementarySe
 
 // HasSupplementaryServiceMode returns a boolean if a field has been set.
 func (o *SupplementaryService) HasSupplementaryServiceMode() bool {
-	if o != nil && !IsNil(o.SupplementaryServiceMode) {
+	if o != nil && !isNil(o.SupplementaryServiceMode) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *SupplementaryService) SetSupplementaryServiceMode(v SupplementaryServic
 
 // GetNumberOfDiversions returns the NumberOfDiversions field value if set, zero value otherwise.
 func (o *SupplementaryService) GetNumberOfDiversions() int32 {
-	if o == nil || IsNil(o.NumberOfDiversions) {
+	if o == nil || isNil(o.NumberOfDiversions) {
 		var ret int32
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *SupplementaryService) GetNumberOfDiversions() int32 {
 // GetNumberOfDiversionsOk returns a tuple with the NumberOfDiversions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetNumberOfDiversionsOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumberOfDiversions) {
+	if o == nil || isNil(o.NumberOfDiversions) {
 		return nil, false
 	}
 	return o.NumberOfDiversions, true
@@ -135,7 +135,7 @@ func (o *SupplementaryService) GetNumberOfDiversionsOk() (*int32, bool) {
 
 // HasNumberOfDiversions returns a boolean if a field has been set.
 func (o *SupplementaryService) HasNumberOfDiversions() bool {
-	if o != nil && !IsNil(o.NumberOfDiversions) {
+	if o != nil && !isNil(o.NumberOfDiversions) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *SupplementaryService) SetNumberOfDiversions(v int32) {
 
 // GetAssociatedPartyAddress returns the AssociatedPartyAddress field value if set, zero value otherwise.
 func (o *SupplementaryService) GetAssociatedPartyAddress() string {
-	if o == nil || IsNil(o.AssociatedPartyAddress) {
+	if o == nil || isNil(o.AssociatedPartyAddress) {
 		var ret string
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *SupplementaryService) GetAssociatedPartyAddress() string {
 // GetAssociatedPartyAddressOk returns a tuple with the AssociatedPartyAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetAssociatedPartyAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.AssociatedPartyAddress) {
+	if o == nil || isNil(o.AssociatedPartyAddress) {
 		return nil, false
 	}
 	return o.AssociatedPartyAddress, true
@@ -167,7 +167,7 @@ func (o *SupplementaryService) GetAssociatedPartyAddressOk() (*string, bool) {
 
 // HasAssociatedPartyAddress returns a boolean if a field has been set.
 func (o *SupplementaryService) HasAssociatedPartyAddress() bool {
-	if o != nil && !IsNil(o.AssociatedPartyAddress) {
+	if o != nil && !isNil(o.AssociatedPartyAddress) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *SupplementaryService) SetAssociatedPartyAddress(v string) {
 
 // GetConferenceId returns the ConferenceId field value if set, zero value otherwise.
 func (o *SupplementaryService) GetConferenceId() string {
-	if o == nil || IsNil(o.ConferenceId) {
+	if o == nil || isNil(o.ConferenceId) {
 		var ret string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *SupplementaryService) GetConferenceId() string {
 // GetConferenceIdOk returns a tuple with the ConferenceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetConferenceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ConferenceId) {
+	if o == nil || isNil(o.ConferenceId) {
 		return nil, false
 	}
 	return o.ConferenceId, true
@@ -199,7 +199,7 @@ func (o *SupplementaryService) GetConferenceIdOk() (*string, bool) {
 
 // HasConferenceId returns a boolean if a field has been set.
 func (o *SupplementaryService) HasConferenceId() bool {
-	if o != nil && !IsNil(o.ConferenceId) {
+	if o != nil && !isNil(o.ConferenceId) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *SupplementaryService) SetConferenceId(v string) {
 
 // GetParticipantActionType returns the ParticipantActionType field value if set, zero value otherwise.
 func (o *SupplementaryService) GetParticipantActionType() ParticipantActionType {
-	if o == nil || IsNil(o.ParticipantActionType) {
+	if o == nil || isNil(o.ParticipantActionType) {
 		var ret ParticipantActionType
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *SupplementaryService) GetParticipantActionType() ParticipantActionType 
 // GetParticipantActionTypeOk returns a tuple with the ParticipantActionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetParticipantActionTypeOk() (*ParticipantActionType, bool) {
-	if o == nil || IsNil(o.ParticipantActionType) {
+	if o == nil || isNil(o.ParticipantActionType) {
 		return nil, false
 	}
 	return o.ParticipantActionType, true
@@ -231,7 +231,7 @@ func (o *SupplementaryService) GetParticipantActionTypeOk() (*ParticipantActionT
 
 // HasParticipantActionType returns a boolean if a field has been set.
 func (o *SupplementaryService) HasParticipantActionType() bool {
-	if o != nil && !IsNil(o.ParticipantActionType) {
+	if o != nil && !isNil(o.ParticipantActionType) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *SupplementaryService) SetParticipantActionType(v ParticipantActionType)
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *SupplementaryService) GetChangeTime() time.Time {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *SupplementaryService) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -263,7 +263,7 @@ func (o *SupplementaryService) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *SupplementaryService) HasChangeTime() bool {
-	if o != nil && !IsNil(o.ChangeTime) {
+	if o != nil && !isNil(o.ChangeTime) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *SupplementaryService) SetChangeTime(v time.Time) {
 
 // GetNumberOfParticipants returns the NumberOfParticipants field value if set, zero value otherwise.
 func (o *SupplementaryService) GetNumberOfParticipants() int32 {
-	if o == nil || IsNil(o.NumberOfParticipants) {
+	if o == nil || isNil(o.NumberOfParticipants) {
 		var ret int32
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *SupplementaryService) GetNumberOfParticipants() int32 {
 // GetNumberOfParticipantsOk returns a tuple with the NumberOfParticipants field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetNumberOfParticipantsOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumberOfParticipants) {
+	if o == nil || isNil(o.NumberOfParticipants) {
 		return nil, false
 	}
 	return o.NumberOfParticipants, true
@@ -295,7 +295,7 @@ func (o *SupplementaryService) GetNumberOfParticipantsOk() (*int32, bool) {
 
 // HasNumberOfParticipants returns a boolean if a field has been set.
 func (o *SupplementaryService) HasNumberOfParticipants() bool {
-	if o != nil && !IsNil(o.NumberOfParticipants) {
+	if o != nil && !isNil(o.NumberOfParticipants) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *SupplementaryService) SetNumberOfParticipants(v int32) {
 
 // GetCUGInformation returns the CUGInformation field value if set, zero value otherwise.
 func (o *SupplementaryService) GetCUGInformation() string {
-	if o == nil || IsNil(o.CUGInformation) {
+	if o == nil || isNil(o.CUGInformation) {
 		var ret string
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *SupplementaryService) GetCUGInformation() string {
 // GetCUGInformationOk returns a tuple with the CUGInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupplementaryService) GetCUGInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.CUGInformation) {
+	if o == nil || isNil(o.CUGInformation) {
 		return nil, false
 	}
 	return o.CUGInformation, true
@@ -327,7 +327,7 @@ func (o *SupplementaryService) GetCUGInformationOk() (*string, bool) {
 
 // HasCUGInformation returns a boolean if a field has been set.
 func (o *SupplementaryService) HasCUGInformation() bool {
-	if o != nil && !IsNil(o.CUGInformation) {
+	if o != nil && !isNil(o.CUGInformation) {
 		return true
 	}
 
@@ -349,31 +349,31 @@ func (o SupplementaryService) MarshalJSON() ([]byte, error) {
 
 func (o SupplementaryService) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupplementaryServiceType) {
+	if !isNil(o.SupplementaryServiceType) {
 		toSerialize["supplementaryServiceType"] = o.SupplementaryServiceType
 	}
-	if !IsNil(o.SupplementaryServiceMode) {
+	if !isNil(o.SupplementaryServiceMode) {
 		toSerialize["supplementaryServiceMode"] = o.SupplementaryServiceMode
 	}
-	if !IsNil(o.NumberOfDiversions) {
+	if !isNil(o.NumberOfDiversions) {
 		toSerialize["numberOfDiversions"] = o.NumberOfDiversions
 	}
-	if !IsNil(o.AssociatedPartyAddress) {
+	if !isNil(o.AssociatedPartyAddress) {
 		toSerialize["associatedPartyAddress"] = o.AssociatedPartyAddress
 	}
-	if !IsNil(o.ConferenceId) {
+	if !isNil(o.ConferenceId) {
 		toSerialize["conferenceId"] = o.ConferenceId
 	}
-	if !IsNil(o.ParticipantActionType) {
+	if !isNil(o.ParticipantActionType) {
 		toSerialize["participantActionType"] = o.ParticipantActionType
 	}
-	if !IsNil(o.ChangeTime) {
+	if !isNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
-	if !IsNil(o.NumberOfParticipants) {
+	if !isNil(o.NumberOfParticipants) {
 		toSerialize["numberOfParticipants"] = o.NumberOfParticipants
 	}
-	if !IsNil(o.CUGInformation) {
+	if !isNil(o.CUGInformation) {
 		toSerialize["cUGInformation"] = o.CUGInformation
 	}
 	return toSerialize, nil

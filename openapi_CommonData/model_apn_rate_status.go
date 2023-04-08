@@ -51,7 +51,7 @@ func NewApnRateStatusWithDefaults() *ApnRateStatus {
 
 // GetRemainPacketsUl returns the RemainPacketsUl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainPacketsUl() int32 {
-	if o == nil || IsNil(o.RemainPacketsUl) {
+	if o == nil || isNil(o.RemainPacketsUl) {
 		var ret int32
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *ApnRateStatus) GetRemainPacketsUl() int32 {
 // GetRemainPacketsUlOk returns a tuple with the RemainPacketsUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainPacketsUlOk() (*int32, bool) {
-	if o == nil || IsNil(o.RemainPacketsUl) {
+	if o == nil || isNil(o.RemainPacketsUl) {
 		return nil, false
 	}
 	return o.RemainPacketsUl, true
@@ -69,7 +69,7 @@ func (o *ApnRateStatus) GetRemainPacketsUlOk() (*int32, bool) {
 
 // HasRemainPacketsUl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainPacketsUl() bool {
-	if o != nil && !IsNil(o.RemainPacketsUl) {
+	if o != nil && !isNil(o.RemainPacketsUl) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *ApnRateStatus) SetRemainPacketsUl(v int32) {
 
 // GetRemainPacketsDl returns the RemainPacketsDl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainPacketsDl() int32 {
-	if o == nil || IsNil(o.RemainPacketsDl) {
+	if o == nil || isNil(o.RemainPacketsDl) {
 		var ret int32
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *ApnRateStatus) GetRemainPacketsDl() int32 {
 // GetRemainPacketsDlOk returns a tuple with the RemainPacketsDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainPacketsDlOk() (*int32, bool) {
-	if o == nil || IsNil(o.RemainPacketsDl) {
+	if o == nil || isNil(o.RemainPacketsDl) {
 		return nil, false
 	}
 	return o.RemainPacketsDl, true
@@ -101,7 +101,7 @@ func (o *ApnRateStatus) GetRemainPacketsDlOk() (*int32, bool) {
 
 // HasRemainPacketsDl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainPacketsDl() bool {
-	if o != nil && !IsNil(o.RemainPacketsDl) {
+	if o != nil && !isNil(o.RemainPacketsDl) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *ApnRateStatus) SetRemainPacketsDl(v int32) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *ApnRateStatus) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -133,7 +133,7 @@ func (o *ApnRateStatus) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *ApnRateStatus) SetValidityTime(v time.Time) {
 
 // GetRemainExReportsUl returns the RemainExReportsUl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainExReportsUl() int32 {
-	if o == nil || IsNil(o.RemainExReportsUl) {
+	if o == nil || isNil(o.RemainExReportsUl) {
 		var ret int32
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *ApnRateStatus) GetRemainExReportsUl() int32 {
 // GetRemainExReportsUlOk returns a tuple with the RemainExReportsUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainExReportsUlOk() (*int32, bool) {
-	if o == nil || IsNil(o.RemainExReportsUl) {
+	if o == nil || isNil(o.RemainExReportsUl) {
 		return nil, false
 	}
 	return o.RemainExReportsUl, true
@@ -165,7 +165,7 @@ func (o *ApnRateStatus) GetRemainExReportsUlOk() (*int32, bool) {
 
 // HasRemainExReportsUl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainExReportsUl() bool {
-	if o != nil && !IsNil(o.RemainExReportsUl) {
+	if o != nil && !isNil(o.RemainExReportsUl) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *ApnRateStatus) SetRemainExReportsUl(v int32) {
 
 // GetRemainExReportsDl returns the RemainExReportsDl field value if set, zero value otherwise.
 func (o *ApnRateStatus) GetRemainExReportsDl() int32 {
-	if o == nil || IsNil(o.RemainExReportsDl) {
+	if o == nil || isNil(o.RemainExReportsDl) {
 		var ret int32
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *ApnRateStatus) GetRemainExReportsDl() int32 {
 // GetRemainExReportsDlOk returns a tuple with the RemainExReportsDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApnRateStatus) GetRemainExReportsDlOk() (*int32, bool) {
-	if o == nil || IsNil(o.RemainExReportsDl) {
+	if o == nil || isNil(o.RemainExReportsDl) {
 		return nil, false
 	}
 	return o.RemainExReportsDl, true
@@ -197,7 +197,7 @@ func (o *ApnRateStatus) GetRemainExReportsDlOk() (*int32, bool) {
 
 // HasRemainExReportsDl returns a boolean if a field has been set.
 func (o *ApnRateStatus) HasRemainExReportsDl() bool {
-	if o != nil && !IsNil(o.RemainExReportsDl) {
+	if o != nil && !isNil(o.RemainExReportsDl) {
 		return true
 	}
 
@@ -219,19 +219,19 @@ func (o ApnRateStatus) MarshalJSON() ([]byte, error) {
 
 func (o ApnRateStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RemainPacketsUl) {
+	if !isNil(o.RemainPacketsUl) {
 		toSerialize["remainPacketsUl"] = o.RemainPacketsUl
 	}
-	if !IsNil(o.RemainPacketsDl) {
+	if !isNil(o.RemainPacketsDl) {
 		toSerialize["remainPacketsDl"] = o.RemainPacketsDl
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.RemainExReportsUl) {
+	if !isNil(o.RemainExReportsUl) {
 		toSerialize["remainExReportsUl"] = o.RemainExReportsUl
 	}
-	if !IsNil(o.RemainExReportsDl) {
+	if !isNil(o.RemainExReportsDl) {
 		toSerialize["remainExReportsDl"] = o.RemainExReportsDl
 	}
 	return toSerialize, nil

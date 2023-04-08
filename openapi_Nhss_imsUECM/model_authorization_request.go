@@ -48,7 +48,7 @@ func NewAuthorizationRequestWithDefaults() *AuthorizationRequest {
 
 // GetImpi returns the Impi field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetImpi() string {
-	if o == nil || IsNil(o.Impi) {
+	if o == nil || isNil(o.Impi) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *AuthorizationRequest) GetImpi() string {
 // GetImpiOk returns a tuple with the Impi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetImpiOk() (*string, bool) {
-	if o == nil || IsNil(o.Impi) {
+	if o == nil || isNil(o.Impi) {
 		return nil, false
 	}
 	return o.Impi, true
@@ -66,7 +66,7 @@ func (o *AuthorizationRequest) GetImpiOk() (*string, bool) {
 
 // HasImpi returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasImpi() bool {
-	if o != nil && !IsNil(o.Impi) {
+	if o != nil && !isNil(o.Impi) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AuthorizationRequest) SetAuthorizationType(v AuthorizationType) {
 
 // GetVisitedNetworkIdentifier returns the VisitedNetworkIdentifier field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetVisitedNetworkIdentifier() string {
-	if o == nil || IsNil(o.VisitedNetworkIdentifier) {
+	if o == nil || isNil(o.VisitedNetworkIdentifier) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AuthorizationRequest) GetVisitedNetworkIdentifier() string {
 // GetVisitedNetworkIdentifierOk returns a tuple with the VisitedNetworkIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetVisitedNetworkIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.VisitedNetworkIdentifier) {
+	if o == nil || isNil(o.VisitedNetworkIdentifier) {
 		return nil, false
 	}
 	return o.VisitedNetworkIdentifier, true
@@ -122,7 +122,7 @@ func (o *AuthorizationRequest) GetVisitedNetworkIdentifierOk() (*string, bool) {
 
 // HasVisitedNetworkIdentifier returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasVisitedNetworkIdentifier() bool {
-	if o != nil && !IsNil(o.VisitedNetworkIdentifier) {
+	if o != nil && !isNil(o.VisitedNetworkIdentifier) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AuthorizationRequest) SetVisitedNetworkIdentifier(v string) {
 
 // GetEmergencyIndicator returns the EmergencyIndicator field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetEmergencyIndicator() bool {
-	if o == nil || IsNil(o.EmergencyIndicator) {
+	if o == nil || isNil(o.EmergencyIndicator) {
 		var ret bool
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AuthorizationRequest) GetEmergencyIndicator() bool {
 // GetEmergencyIndicatorOk returns a tuple with the EmergencyIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetEmergencyIndicatorOk() (*bool, bool) {
-	if o == nil || IsNil(o.EmergencyIndicator) {
+	if o == nil || isNil(o.EmergencyIndicator) {
 		return nil, false
 	}
 	return o.EmergencyIndicator, true
@@ -154,7 +154,7 @@ func (o *AuthorizationRequest) GetEmergencyIndicatorOk() (*bool, bool) {
 
 // HasEmergencyIndicator returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasEmergencyIndicator() bool {
-	if o != nil && !IsNil(o.EmergencyIndicator) {
+	if o != nil && !isNil(o.EmergencyIndicator) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *AuthorizationRequest) SetEmergencyIndicator(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthorizationRequest) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *AuthorizationRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -186,7 +186,7 @@ func (o *AuthorizationRequest) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthorizationRequest) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -208,17 +208,17 @@ func (o AuthorizationRequest) MarshalJSON() ([]byte, error) {
 
 func (o AuthorizationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Impi) {
+	if !isNil(o.Impi) {
 		toSerialize["impi"] = o.Impi
 	}
 	toSerialize["authorizationType"] = o.AuthorizationType
-	if !IsNil(o.VisitedNetworkIdentifier) {
+	if !isNil(o.VisitedNetworkIdentifier) {
 		toSerialize["visitedNetworkIdentifier"] = o.VisitedNetworkIdentifier
 	}
-	if !IsNil(o.EmergencyIndicator) {
+	if !isNil(o.EmergencyIndicator) {
 		toSerialize["emergencyIndicator"] = o.EmergencyIndicator
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

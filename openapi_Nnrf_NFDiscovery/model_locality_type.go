@@ -17,23 +17,37 @@ import (
 
 // LocalityType Type of locality description. An operator may define custom locality type values other  than those listed in this enumeration.  
 type LocalityType struct {
-	string *string
+	LocalityTypeAnyOf *LocalityTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *LocalityType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into LocalityTypeAnyOf
+	err = json.Unmarshal(data, &dst.LocalityTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonLocalityTypeAnyOf, _ := json.Marshal(dst.LocalityTypeAnyOf)
+		if string(jsonLocalityTypeAnyOf) == "{}" { // empty struct
+			dst.LocalityTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.LocalityTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.LocalityTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(LocalityType)")
@@ -41,8 +55,12 @@ func (dst *LocalityType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *LocalityType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.LocalityTypeAnyOf != nil {
+		return json.Marshal(&src.LocalityTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

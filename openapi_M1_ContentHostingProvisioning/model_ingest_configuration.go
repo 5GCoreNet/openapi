@@ -45,7 +45,7 @@ func NewIngestConfigurationWithDefaults() *IngestConfiguration {
 
 // GetPull returns the Pull field value if set, zero value otherwise.
 func (o *IngestConfiguration) GetPull() bool {
-	if o == nil || IsNil(o.Pull) {
+	if o == nil || isNil(o.Pull) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *IngestConfiguration) GetPull() bool {
 // GetPullOk returns a tuple with the Pull field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IngestConfiguration) GetPullOk() (*bool, bool) {
-	if o == nil || IsNil(o.Pull) {
+	if o == nil || isNil(o.Pull) {
 		return nil, false
 	}
 	return o.Pull, true
@@ -63,7 +63,7 @@ func (o *IngestConfiguration) GetPullOk() (*bool, bool) {
 
 // HasPull returns a boolean if a field has been set.
 func (o *IngestConfiguration) HasPull() bool {
-	if o != nil && !IsNil(o.Pull) {
+	if o != nil && !isNil(o.Pull) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *IngestConfiguration) SetPull(v bool) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *IngestConfiguration) GetProtocol() string {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || isNil(o.Protocol) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *IngestConfiguration) GetProtocol() string {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IngestConfiguration) GetProtocolOk() (*string, bool) {
-	if o == nil || IsNil(o.Protocol) {
+	if o == nil || isNil(o.Protocol) {
 		return nil, false
 	}
 	return o.Protocol, true
@@ -95,7 +95,7 @@ func (o *IngestConfiguration) GetProtocolOk() (*string, bool) {
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *IngestConfiguration) HasProtocol() bool {
-	if o != nil && !IsNil(o.Protocol) {
+	if o != nil && !isNil(o.Protocol) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *IngestConfiguration) SetProtocol(v string) {
 
 // GetBaseURL returns the BaseURL field value if set, zero value otherwise.
 func (o *IngestConfiguration) GetBaseURL() string {
-	if o == nil || IsNil(o.BaseURL) {
+	if o == nil || isNil(o.BaseURL) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *IngestConfiguration) GetBaseURL() string {
 // GetBaseURLOk returns a tuple with the BaseURL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IngestConfiguration) GetBaseURLOk() (*string, bool) {
-	if o == nil || IsNil(o.BaseURL) {
+	if o == nil || isNil(o.BaseURL) {
 		return nil, false
 	}
 	return o.BaseURL, true
@@ -127,7 +127,7 @@ func (o *IngestConfiguration) GetBaseURLOk() (*string, bool) {
 
 // HasBaseURL returns a boolean if a field has been set.
 func (o *IngestConfiguration) HasBaseURL() bool {
-	if o != nil && !IsNil(o.BaseURL) {
+	if o != nil && !isNil(o.BaseURL) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o IngestConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o IngestConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Pull) {
+	if !isNil(o.Pull) {
 		toSerialize["pull"] = o.Pull
 	}
-	if !IsNil(o.Protocol) {
+	if !isNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
-	if !IsNil(o.BaseURL) {
+	if !isNil(o.BaseURL) {
 		toSerialize["baseURL"] = o.BaseURL
 	}
 	return toSerialize, nil

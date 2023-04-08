@@ -13,7 +13,7 @@ package openapi_N5g-eir_EquipmentIdentityCheck
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -96,15 +96,15 @@ func (a *EquipmentStatusDocumentApiService) GetEquipmentStatusExecute(r ApiGetEq
 		return localVarReturnValue, nil, reportError("pei is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "pei", r.pei, "")
+	parameterAddToQuery(localVarQueryParams, "pei", r.pei, "")
 	if r.supi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supi", r.supi, "")
+		parameterAddToQuery(localVarQueryParams, "supi", r.supi, "")
 	}
 	if r.gpsi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gpsi", r.gpsi, "")
+		parameterAddToQuery(localVarQueryParams, "gpsi", r.gpsi, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -133,9 +133,9 @@ func (a *EquipmentStatusDocumentApiService) GetEquipmentStatusExecute(r ApiGetEq
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

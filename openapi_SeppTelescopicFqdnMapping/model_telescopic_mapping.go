@@ -45,7 +45,7 @@ func NewTelescopicMappingWithDefaults() *TelescopicMapping {
 
 // GetTelescopicLabel returns the TelescopicLabel field value if set, zero value otherwise.
 func (o *TelescopicMapping) GetTelescopicLabel() string {
-	if o == nil || IsNil(o.TelescopicLabel) {
+	if o == nil || isNil(o.TelescopicLabel) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *TelescopicMapping) GetTelescopicLabel() string {
 // GetTelescopicLabelOk returns a tuple with the TelescopicLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TelescopicMapping) GetTelescopicLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.TelescopicLabel) {
+	if o == nil || isNil(o.TelescopicLabel) {
 		return nil, false
 	}
 	return o.TelescopicLabel, true
@@ -63,7 +63,7 @@ func (o *TelescopicMapping) GetTelescopicLabelOk() (*string, bool) {
 
 // HasTelescopicLabel returns a boolean if a field has been set.
 func (o *TelescopicMapping) HasTelescopicLabel() bool {
-	if o != nil && !IsNil(o.TelescopicLabel) {
+	if o != nil && !isNil(o.TelescopicLabel) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *TelescopicMapping) SetTelescopicLabel(v string) {
 
 // GetSeppDomain returns the SeppDomain field value if set, zero value otherwise.
 func (o *TelescopicMapping) GetSeppDomain() string {
-	if o == nil || IsNil(o.SeppDomain) {
+	if o == nil || isNil(o.SeppDomain) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *TelescopicMapping) GetSeppDomain() string {
 // GetSeppDomainOk returns a tuple with the SeppDomain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TelescopicMapping) GetSeppDomainOk() (*string, bool) {
-	if o == nil || IsNil(o.SeppDomain) {
+	if o == nil || isNil(o.SeppDomain) {
 		return nil, false
 	}
 	return o.SeppDomain, true
@@ -95,7 +95,7 @@ func (o *TelescopicMapping) GetSeppDomainOk() (*string, bool) {
 
 // HasSeppDomain returns a boolean if a field has been set.
 func (o *TelescopicMapping) HasSeppDomain() bool {
-	if o != nil && !IsNil(o.SeppDomain) {
+	if o != nil && !isNil(o.SeppDomain) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *TelescopicMapping) SetSeppDomain(v string) {
 
 // GetForeignFqdn returns the ForeignFqdn field value if set, zero value otherwise.
 func (o *TelescopicMapping) GetForeignFqdn() string {
-	if o == nil || IsNil(o.ForeignFqdn) {
+	if o == nil || isNil(o.ForeignFqdn) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *TelescopicMapping) GetForeignFqdn() string {
 // GetForeignFqdnOk returns a tuple with the ForeignFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TelescopicMapping) GetForeignFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.ForeignFqdn) {
+	if o == nil || isNil(o.ForeignFqdn) {
 		return nil, false
 	}
 	return o.ForeignFqdn, true
@@ -127,7 +127,7 @@ func (o *TelescopicMapping) GetForeignFqdnOk() (*string, bool) {
 
 // HasForeignFqdn returns a boolean if a field has been set.
 func (o *TelescopicMapping) HasForeignFqdn() bool {
-	if o != nil && !IsNil(o.ForeignFqdn) {
+	if o != nil && !isNil(o.ForeignFqdn) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o TelescopicMapping) MarshalJSON() ([]byte, error) {
 
 func (o TelescopicMapping) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TelescopicLabel) {
+	if !isNil(o.TelescopicLabel) {
 		toSerialize["telescopicLabel"] = o.TelescopicLabel
 	}
-	if !IsNil(o.SeppDomain) {
+	if !isNil(o.SeppDomain) {
 		toSerialize["seppDomain"] = o.SeppDomain
 	}
-	if !IsNil(o.ForeignFqdn) {
+	if !isNil(o.ForeignFqdn) {
 		toSerialize["foreignFqdn"] = o.ForeignFqdn
 	}
 	return toSerialize, nil

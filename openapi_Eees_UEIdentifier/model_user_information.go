@@ -73,7 +73,7 @@ func (o *UserInformation) SetEasId(v string) {
 
 // GetEasProviderId returns the EasProviderId field value if set, zero value otherwise.
 func (o *UserInformation) GetEasProviderId() string {
-	if o == nil || IsNil(o.EasProviderId) {
+	if o == nil || isNil(o.EasProviderId) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *UserInformation) GetEasProviderId() string {
 // GetEasProviderIdOk returns a tuple with the EasProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetEasProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EasProviderId) {
+	if o == nil || isNil(o.EasProviderId) {
 		return nil, false
 	}
 	return o.EasProviderId, true
@@ -91,7 +91,7 @@ func (o *UserInformation) GetEasProviderIdOk() (*string, bool) {
 
 // HasEasProviderId returns a boolean if a field has been set.
 func (o *UserInformation) HasEasProviderId() bool {
-	if o != nil && !IsNil(o.EasProviderId) {
+	if o != nil && !isNil(o.EasProviderId) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *UserInformation) SetIpAddr(v IpAddr) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UserInformation) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *UserInformation) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserInformation) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -147,7 +147,7 @@ func (o *UserInformation) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UserInformation) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -170,11 +170,11 @@ func (o UserInformation) MarshalJSON() ([]byte, error) {
 func (o UserInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["easId"] = o.EasId
-	if !IsNil(o.EasProviderId) {
+	if !isNil(o.EasProviderId) {
 		toSerialize["easProviderId"] = o.EasProviderId
 	}
 	toSerialize["ipAddr"] = o.IpAddr
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -67,8 +66,6 @@ docs/LoggingIntervalType.md
 docs/MDAFunctionSingle.md
 docs/MDAFunctionSingleAllOf.md
 docs/MDAFunctionSingleAllOf1.md
-docs/MDAFunctionSingleAllOfAttributes.md
-docs/MDAFunctionSingleAllOfAttributesAllOf.md
 docs/MDAOutputEntry.md
 docs/MDAOutputIEFilter.md
 docs/MDAOutputPerMDAType.md
@@ -76,12 +73,8 @@ docs/MDAOutputs1.md
 docs/MDAReport.md
 docs/MDAReportSingle.md
 docs/MDAReportSingleAllOf.md
-docs/MDAReportSingleAllOfAttributes.md
-docs/MDAReportSingleAllOfAttributesAllOf.md
 docs/MDARequestSingle.md
 docs/MDARequestSingleAllOf.md
-docs/MDARequestSingleAllOfAttributes.md
-docs/MDARequestSingleAllOfAttributesAllOf.md
 docs/ManagedElementAttr.md
 docs/ManagedElementNcO.md
 docs/ManagedElementSingle.md
@@ -131,7 +124,6 @@ docs/PlmnListTypeInner.md
 docs/PlmnTargetType.md
 docs/PositioningMethodType.md
 docs/ProbableCause.md
-docs/ProbableCauseOneOf.md
 docs/RegistrationState.md
 docs/ReportAmountType.md
 docs/ReportIntervalType.md
@@ -263,8 +255,6 @@ model_mbsfn_area.go
 model_mda_function_single.go
 model_mda_function_single_all_of.go
 model_mda_function_single_all_of_1.go
-model_mda_function_single_all_of_attributes.go
-model_mda_function_single_all_of_attributes_all_of.go
 model_mda_output_entry.go
 model_mda_output_ie_filter.go
 model_mda_output_per_mda_type.go
@@ -272,12 +262,8 @@ model_mda_outputs_1.go
 model_mda_report.go
 model_mda_report_single.go
 model_mda_report_single_all_of.go
-model_mda_report_single_all_of_attributes.go
-model_mda_report_single_all_of_attributes_all_of.go
 model_mda_request_single.go
 model_mda_request_single_all_of.go
-model_mda_request_single_all_of_attributes.go
-model_mda_request_single_all_of_attributes_all_of.go
 model_me_context_single.go
 model_me_context_single_all_of.go
 model_me_context_single_all_of_attributes.go
@@ -309,7 +295,6 @@ model_plmn_list_type_inner.go
 model_plmn_target_type.go
 model_positioning_method_type.go
 model_probable_cause.go
-model_probable_cause_one_of.go
 model_registration_state.go
 model_report_amount_type.go
 model_report_interval_type.go

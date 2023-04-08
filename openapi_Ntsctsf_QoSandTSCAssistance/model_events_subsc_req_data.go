@@ -97,7 +97,7 @@ func (o *EventsSubscReqData) SetNotifUri(v string) {
 
 // GetQosMon returns the QosMon field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetQosMon() QosMonitoringInformation {
-	if o == nil || IsNil(o.QosMon) {
+	if o == nil || isNil(o.QosMon) {
 		var ret QosMonitoringInformation
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *EventsSubscReqData) GetQosMon() QosMonitoringInformation {
 // GetQosMonOk returns a tuple with the QosMon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetQosMonOk() (*QosMonitoringInformation, bool) {
-	if o == nil || IsNil(o.QosMon) {
+	if o == nil || isNil(o.QosMon) {
 		return nil, false
 	}
 	return o.QosMon, true
@@ -115,7 +115,7 @@ func (o *EventsSubscReqData) GetQosMonOk() (*QosMonitoringInformation, bool) {
 
 // HasQosMon returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasQosMon() bool {
-	if o != nil && !IsNil(o.QosMon) {
+	if o != nil && !isNil(o.QosMon) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *EventsSubscReqData) SetQosMon(v QosMonitoringInformation) {
 
 // GetUsgThres returns the UsgThres field value if set, zero value otherwise.
 func (o *EventsSubscReqData) GetUsgThres() UsageThreshold {
-	if o == nil || IsNil(o.UsgThres) {
+	if o == nil || isNil(o.UsgThres) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *EventsSubscReqData) GetUsgThres() UsageThreshold {
 // GetUsgThresOk returns a tuple with the UsgThres field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqData) GetUsgThresOk() (*UsageThreshold, bool) {
-	if o == nil || IsNil(o.UsgThres) {
+	if o == nil || isNil(o.UsgThres) {
 		return nil, false
 	}
 	return o.UsgThres, true
@@ -147,7 +147,7 @@ func (o *EventsSubscReqData) GetUsgThresOk() (*UsageThreshold, bool) {
 
 // HasUsgThres returns a boolean if a field has been set.
 func (o *EventsSubscReqData) HasUsgThres() bool {
-	if o != nil && !IsNil(o.UsgThres) {
+	if o != nil && !isNil(o.UsgThres) {
 		return true
 	}
 
@@ -195,10 +195,10 @@ func (o EventsSubscReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["events"] = o.Events
 	toSerialize["notifUri"] = o.NotifUri
-	if !IsNil(o.QosMon) {
+	if !isNil(o.QosMon) {
 		toSerialize["qosMon"] = o.QosMon
 	}
-	if !IsNil(o.UsgThres) {
+	if !isNil(o.UsgThres) {
 		toSerialize["usgThres"] = o.UsgThres
 	}
 	toSerialize["notifCorreId"] = o.NotifCorreId

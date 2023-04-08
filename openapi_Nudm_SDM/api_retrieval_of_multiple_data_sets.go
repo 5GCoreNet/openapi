@@ -13,7 +13,7 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -118,15 +118,15 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 		return localVarReturnValue, nil, reportError("datasetNames must have at least 2 elements")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
+	parameterAddToQuery(localVarQueryParams, "dataset-names", r.datasetNames, "csv")
 	if r.plmnId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+		parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	}
 	if r.disasterRoamingInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
+		parameterAddToQuery(localVarQueryParams, "disaster-roaming-ind", r.disasterRoamingInd, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -146,10 +146,10 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -161,9 +161,9 @@ func (a *RetrievalOfMultipleDataSetsApiService) GetDataSetsExecute(r ApiGetDataS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

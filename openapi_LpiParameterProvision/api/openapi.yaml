@@ -863,10 +863,7 @@ components:
       type: object
     LocationPrivacyInd:
       anyOf:
-      - enum:
-        - LOCATION_DISALLOWED
-        - LOCATION_ALLOWED
-        type: string
+      - $ref: '#/components/schemas/LocationPrivacyInd_anyOf'
       - type: string
     ValidTimePeriod:
       example:
@@ -894,6 +891,12 @@ components:
       description: string with format 'date-time' as defined in OpenAPI.
       format: date-time
       type: string
+    LocationPrivacyInd_anyOf:
+      enum:
+      - LOCATION_DISALLOWED
+      - LOCATION_ALLOWED
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

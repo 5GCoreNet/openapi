@@ -120,7 +120,7 @@ func (o *EeSubscriptionExt) SetMonitoringConfigurations(v map[string]MonitoringC
 
 // GetReportingOptions returns the ReportingOptions field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetReportingOptions() ReportingOptions {
-	if o == nil || IsNil(o.ReportingOptions) {
+	if o == nil || isNil(o.ReportingOptions) {
 		var ret ReportingOptions
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *EeSubscriptionExt) GetReportingOptions() ReportingOptions {
 // GetReportingOptionsOk returns a tuple with the ReportingOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetReportingOptionsOk() (*ReportingOptions, bool) {
-	if o == nil || IsNil(o.ReportingOptions) {
+	if o == nil || isNil(o.ReportingOptions) {
 		return nil, false
 	}
 	return o.ReportingOptions, true
@@ -138,7 +138,7 @@ func (o *EeSubscriptionExt) GetReportingOptionsOk() (*ReportingOptions, bool) {
 
 // HasReportingOptions returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasReportingOptions() bool {
-	if o != nil && !IsNil(o.ReportingOptions) {
+	if o != nil && !isNil(o.ReportingOptions) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *EeSubscriptionExt) SetReportingOptions(v ReportingOptions) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *EeSubscriptionExt) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -170,7 +170,7 @@ func (o *EeSubscriptionExt) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -184,7 +184,7 @@ func (o *EeSubscriptionExt) SetSupportedFeatures(v string) {
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetSubscriptionId() string {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -194,7 +194,7 @@ func (o *EeSubscriptionExt) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -202,7 +202,7 @@ func (o *EeSubscriptionExt) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasSubscriptionId() bool {
-	if o != nil && !IsNil(o.SubscriptionId) {
+	if o != nil && !isNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -216,7 +216,7 @@ func (o *EeSubscriptionExt) SetSubscriptionId(v string) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetContextInfo() ContextInfo {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *EeSubscriptionExt) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -234,7 +234,7 @@ func (o *EeSubscriptionExt) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasContextInfo() bool {
-	if o != nil && !IsNil(o.ContextInfo) {
+	if o != nil && !isNil(o.ContextInfo) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *EeSubscriptionExt) SetContextInfo(v ContextInfo) {
 
 // GetEpcAppliedInd returns the EpcAppliedInd field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetEpcAppliedInd() bool {
-	if o == nil || IsNil(o.EpcAppliedInd) {
+	if o == nil || isNil(o.EpcAppliedInd) {
 		var ret bool
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *EeSubscriptionExt) GetEpcAppliedInd() bool {
 // GetEpcAppliedIndOk returns a tuple with the EpcAppliedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetEpcAppliedIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.EpcAppliedInd) {
+	if o == nil || isNil(o.EpcAppliedInd) {
 		return nil, false
 	}
 	return o.EpcAppliedInd, true
@@ -266,7 +266,7 @@ func (o *EeSubscriptionExt) GetEpcAppliedIndOk() (*bool, bool) {
 
 // HasEpcAppliedInd returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasEpcAppliedInd() bool {
-	if o != nil && !IsNil(o.EpcAppliedInd) {
+	if o != nil && !isNil(o.EpcAppliedInd) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *EeSubscriptionExt) SetEpcAppliedInd(v bool) {
 
 // GetScefDiamHost returns the ScefDiamHost field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetScefDiamHost() string {
-	if o == nil || IsNil(o.ScefDiamHost) {
+	if o == nil || isNil(o.ScefDiamHost) {
 		var ret string
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *EeSubscriptionExt) GetScefDiamHost() string {
 // GetScefDiamHostOk returns a tuple with the ScefDiamHost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetScefDiamHostOk() (*string, bool) {
-	if o == nil || IsNil(o.ScefDiamHost) {
+	if o == nil || isNil(o.ScefDiamHost) {
 		return nil, false
 	}
 	return o.ScefDiamHost, true
@@ -298,7 +298,7 @@ func (o *EeSubscriptionExt) GetScefDiamHostOk() (*string, bool) {
 
 // HasScefDiamHost returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasScefDiamHost() bool {
-	if o != nil && !IsNil(o.ScefDiamHost) {
+	if o != nil && !isNil(o.ScefDiamHost) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *EeSubscriptionExt) SetScefDiamHost(v string) {
 
 // GetScefDiamRealm returns the ScefDiamRealm field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetScefDiamRealm() string {
-	if o == nil || IsNil(o.ScefDiamRealm) {
+	if o == nil || isNil(o.ScefDiamRealm) {
 		var ret string
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *EeSubscriptionExt) GetScefDiamRealm() string {
 // GetScefDiamRealmOk returns a tuple with the ScefDiamRealm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetScefDiamRealmOk() (*string, bool) {
-	if o == nil || IsNil(o.ScefDiamRealm) {
+	if o == nil || isNil(o.ScefDiamRealm) {
 		return nil, false
 	}
 	return o.ScefDiamRealm, true
@@ -330,7 +330,7 @@ func (o *EeSubscriptionExt) GetScefDiamRealmOk() (*string, bool) {
 
 // HasScefDiamRealm returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasScefDiamRealm() bool {
-	if o != nil && !IsNil(o.ScefDiamRealm) {
+	if o != nil && !isNil(o.ScefDiamRealm) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *EeSubscriptionExt) SetScefDiamRealm(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *EeSubscriptionExt) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -362,7 +362,7 @@ func (o *EeSubscriptionExt) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *EeSubscriptionExt) SetNotifyCorrelationId(v string) {
 
 // GetSecondCallbackRef returns the SecondCallbackRef field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetSecondCallbackRef() string {
-	if o == nil || IsNil(o.SecondCallbackRef) {
+	if o == nil || isNil(o.SecondCallbackRef) {
 		var ret string
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *EeSubscriptionExt) GetSecondCallbackRef() string {
 // GetSecondCallbackRefOk returns a tuple with the SecondCallbackRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetSecondCallbackRefOk() (*string, bool) {
-	if o == nil || IsNil(o.SecondCallbackRef) {
+	if o == nil || isNil(o.SecondCallbackRef) {
 		return nil, false
 	}
 	return o.SecondCallbackRef, true
@@ -394,7 +394,7 @@ func (o *EeSubscriptionExt) GetSecondCallbackRefOk() (*string, bool) {
 
 // HasSecondCallbackRef returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasSecondCallbackRef() bool {
-	if o != nil && !IsNil(o.SecondCallbackRef) {
+	if o != nil && !isNil(o.SecondCallbackRef) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *EeSubscriptionExt) SetSecondCallbackRef(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *EeSubscriptionExt) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -426,7 +426,7 @@ func (o *EeSubscriptionExt) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *EeSubscriptionExt) SetGpsi(v string) {
 
 // GetExcludeGpsiList returns the ExcludeGpsiList field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetExcludeGpsiList() []string {
-	if o == nil || IsNil(o.ExcludeGpsiList) {
+	if o == nil || isNil(o.ExcludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *EeSubscriptionExt) GetExcludeGpsiList() []string {
 // GetExcludeGpsiListOk returns a tuple with the ExcludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetExcludeGpsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExcludeGpsiList) {
+	if o == nil || isNil(o.ExcludeGpsiList) {
 		return nil, false
 	}
 	return o.ExcludeGpsiList, true
@@ -458,7 +458,7 @@ func (o *EeSubscriptionExt) GetExcludeGpsiListOk() ([]string, bool) {
 
 // HasExcludeGpsiList returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasExcludeGpsiList() bool {
-	if o != nil && !IsNil(o.ExcludeGpsiList) {
+	if o != nil && !isNil(o.ExcludeGpsiList) {
 		return true
 	}
 
@@ -472,7 +472,7 @@ func (o *EeSubscriptionExt) SetExcludeGpsiList(v []string) {
 
 // GetIncludeGpsiList returns the IncludeGpsiList field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetIncludeGpsiList() []string {
-	if o == nil || IsNil(o.IncludeGpsiList) {
+	if o == nil || isNil(o.IncludeGpsiList) {
 		var ret []string
 		return ret
 	}
@@ -482,7 +482,7 @@ func (o *EeSubscriptionExt) GetIncludeGpsiList() []string {
 // GetIncludeGpsiListOk returns a tuple with the IncludeGpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetIncludeGpsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.IncludeGpsiList) {
+	if o == nil || isNil(o.IncludeGpsiList) {
 		return nil, false
 	}
 	return o.IncludeGpsiList, true
@@ -490,7 +490,7 @@ func (o *EeSubscriptionExt) GetIncludeGpsiListOk() ([]string, bool) {
 
 // HasIncludeGpsiList returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasIncludeGpsiList() bool {
-	if o != nil && !IsNil(o.IncludeGpsiList) {
+	if o != nil && !isNil(o.IncludeGpsiList) {
 		return true
 	}
 
@@ -504,7 +504,7 @@ func (o *EeSubscriptionExt) SetIncludeGpsiList(v []string) {
 
 // GetDataRestorationCallbackUri returns the DataRestorationCallbackUri field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetDataRestorationCallbackUri() string {
-	if o == nil || IsNil(o.DataRestorationCallbackUri) {
+	if o == nil || isNil(o.DataRestorationCallbackUri) {
 		var ret string
 		return ret
 	}
@@ -514,7 +514,7 @@ func (o *EeSubscriptionExt) GetDataRestorationCallbackUri() string {
 // GetDataRestorationCallbackUriOk returns a tuple with the DataRestorationCallbackUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetDataRestorationCallbackUriOk() (*string, bool) {
-	if o == nil || IsNil(o.DataRestorationCallbackUri) {
+	if o == nil || isNil(o.DataRestorationCallbackUri) {
 		return nil, false
 	}
 	return o.DataRestorationCallbackUri, true
@@ -522,7 +522,7 @@ func (o *EeSubscriptionExt) GetDataRestorationCallbackUriOk() (*string, bool) {
 
 // HasDataRestorationCallbackUri returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasDataRestorationCallbackUri() bool {
-	if o != nil && !IsNil(o.DataRestorationCallbackUri) {
+	if o != nil && !isNil(o.DataRestorationCallbackUri) {
 		return true
 	}
 
@@ -536,7 +536,7 @@ func (o *EeSubscriptionExt) SetDataRestorationCallbackUri(v string) {
 
 // GetAmfSubscriptionInfoList returns the AmfSubscriptionInfoList field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetAmfSubscriptionInfoList() []AmfSubscriptionInfo {
-	if o == nil || IsNil(o.AmfSubscriptionInfoList) {
+	if o == nil || isNil(o.AmfSubscriptionInfoList) {
 		var ret []AmfSubscriptionInfo
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *EeSubscriptionExt) GetAmfSubscriptionInfoList() []AmfSubscriptionInfo {
 // GetAmfSubscriptionInfoListOk returns a tuple with the AmfSubscriptionInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetAmfSubscriptionInfoListOk() ([]AmfSubscriptionInfo, bool) {
-	if o == nil || IsNil(o.AmfSubscriptionInfoList) {
+	if o == nil || isNil(o.AmfSubscriptionInfoList) {
 		return nil, false
 	}
 	return o.AmfSubscriptionInfoList, true
@@ -554,7 +554,7 @@ func (o *EeSubscriptionExt) GetAmfSubscriptionInfoListOk() ([]AmfSubscriptionInf
 
 // HasAmfSubscriptionInfoList returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasAmfSubscriptionInfoList() bool {
-	if o != nil && !IsNil(o.AmfSubscriptionInfoList) {
+	if o != nil && !isNil(o.AmfSubscriptionInfoList) {
 		return true
 	}
 
@@ -568,7 +568,7 @@ func (o *EeSubscriptionExt) SetAmfSubscriptionInfoList(v []AmfSubscriptionInfo) 
 
 // GetSmfSubscriptionInfo returns the SmfSubscriptionInfo field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetSmfSubscriptionInfo() SmfSubscriptionInfo {
-	if o == nil || IsNil(o.SmfSubscriptionInfo) {
+	if o == nil || isNil(o.SmfSubscriptionInfo) {
 		var ret SmfSubscriptionInfo
 		return ret
 	}
@@ -578,7 +578,7 @@ func (o *EeSubscriptionExt) GetSmfSubscriptionInfo() SmfSubscriptionInfo {
 // GetSmfSubscriptionInfoOk returns a tuple with the SmfSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetSmfSubscriptionInfoOk() (*SmfSubscriptionInfo, bool) {
-	if o == nil || IsNil(o.SmfSubscriptionInfo) {
+	if o == nil || isNil(o.SmfSubscriptionInfo) {
 		return nil, false
 	}
 	return o.SmfSubscriptionInfo, true
@@ -586,7 +586,7 @@ func (o *EeSubscriptionExt) GetSmfSubscriptionInfoOk() (*SmfSubscriptionInfo, bo
 
 // HasSmfSubscriptionInfo returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasSmfSubscriptionInfo() bool {
-	if o != nil && !IsNil(o.SmfSubscriptionInfo) {
+	if o != nil && !isNil(o.SmfSubscriptionInfo) {
 		return true
 	}
 
@@ -600,7 +600,7 @@ func (o *EeSubscriptionExt) SetSmfSubscriptionInfo(v SmfSubscriptionInfo) {
 
 // GetHssSubscriptionInfo returns the HssSubscriptionInfo field value if set, zero value otherwise.
 func (o *EeSubscriptionExt) GetHssSubscriptionInfo() HssSubscriptionInfo {
-	if o == nil || IsNil(o.HssSubscriptionInfo) {
+	if o == nil || isNil(o.HssSubscriptionInfo) {
 		var ret HssSubscriptionInfo
 		return ret
 	}
@@ -610,7 +610,7 @@ func (o *EeSubscriptionExt) GetHssSubscriptionInfo() HssSubscriptionInfo {
 // GetHssSubscriptionInfoOk returns a tuple with the HssSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeSubscriptionExt) GetHssSubscriptionInfoOk() (*HssSubscriptionInfo, bool) {
-	if o == nil || IsNil(o.HssSubscriptionInfo) {
+	if o == nil || isNil(o.HssSubscriptionInfo) {
 		return nil, false
 	}
 	return o.HssSubscriptionInfo, true
@@ -618,7 +618,7 @@ func (o *EeSubscriptionExt) GetHssSubscriptionInfoOk() (*HssSubscriptionInfo, bo
 
 // HasHssSubscriptionInfo returns a boolean if a field has been set.
 func (o *EeSubscriptionExt) HasHssSubscriptionInfo() bool {
-	if o != nil && !IsNil(o.HssSubscriptionInfo) {
+	if o != nil && !isNil(o.HssSubscriptionInfo) {
 		return true
 	}
 
@@ -642,52 +642,52 @@ func (o EeSubscriptionExt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["callbackReference"] = o.CallbackReference
 	toSerialize["monitoringConfigurations"] = o.MonitoringConfigurations
-	if !IsNil(o.ReportingOptions) {
+	if !isNil(o.ReportingOptions) {
 		toSerialize["reportingOptions"] = o.ReportingOptions
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.SubscriptionId) {
+	if !isNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !IsNil(o.ContextInfo) {
+	if !isNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !IsNil(o.EpcAppliedInd) {
+	if !isNil(o.EpcAppliedInd) {
 		toSerialize["epcAppliedInd"] = o.EpcAppliedInd
 	}
-	if !IsNil(o.ScefDiamHost) {
+	if !isNil(o.ScefDiamHost) {
 		toSerialize["scefDiamHost"] = o.ScefDiamHost
 	}
-	if !IsNil(o.ScefDiamRealm) {
+	if !isNil(o.ScefDiamRealm) {
 		toSerialize["scefDiamRealm"] = o.ScefDiamRealm
 	}
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !IsNil(o.SecondCallbackRef) {
+	if !isNil(o.SecondCallbackRef) {
 		toSerialize["secondCallbackRef"] = o.SecondCallbackRef
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.ExcludeGpsiList) {
+	if !isNil(o.ExcludeGpsiList) {
 		toSerialize["excludeGpsiList"] = o.ExcludeGpsiList
 	}
-	if !IsNil(o.IncludeGpsiList) {
+	if !isNil(o.IncludeGpsiList) {
 		toSerialize["includeGpsiList"] = o.IncludeGpsiList
 	}
-	if !IsNil(o.DataRestorationCallbackUri) {
+	if !isNil(o.DataRestorationCallbackUri) {
 		toSerialize["dataRestorationCallbackUri"] = o.DataRestorationCallbackUri
 	}
-	if !IsNil(o.AmfSubscriptionInfoList) {
+	if !isNil(o.AmfSubscriptionInfoList) {
 		toSerialize["amfSubscriptionInfoList"] = o.AmfSubscriptionInfoList
 	}
-	if !IsNil(o.SmfSubscriptionInfo) {
+	if !isNil(o.SmfSubscriptionInfo) {
 		toSerialize["smfSubscriptionInfo"] = o.SmfSubscriptionInfo
 	}
-	if !IsNil(o.HssSubscriptionInfo) {
+	if !isNil(o.HssSubscriptionInfo) {
 		toSerialize["hssSubscriptionInfo"] = o.HssSubscriptionInfo
 	}
 	return toSerialize, nil

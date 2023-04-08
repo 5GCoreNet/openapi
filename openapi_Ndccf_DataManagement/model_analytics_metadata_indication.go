@@ -44,7 +44,7 @@ func NewAnalyticsMetadataIndicationWithDefaults() *AnalyticsMetadataIndication {
 
 // GetDataWindow returns the DataWindow field value if set, zero value otherwise.
 func (o *AnalyticsMetadataIndication) GetDataWindow() TimeWindow {
-	if o == nil || IsNil(o.DataWindow) {
+	if o == nil || isNil(o.DataWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AnalyticsMetadataIndication) GetDataWindow() TimeWindow {
 // GetDataWindowOk returns a tuple with the DataWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataIndication) GetDataWindowOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.DataWindow) {
+	if o == nil || isNil(o.DataWindow) {
 		return nil, false
 	}
 	return o.DataWindow, true
@@ -62,7 +62,7 @@ func (o *AnalyticsMetadataIndication) GetDataWindowOk() (*TimeWindow, bool) {
 
 // HasDataWindow returns a boolean if a field has been set.
 func (o *AnalyticsMetadataIndication) HasDataWindow() bool {
-	if o != nil && !IsNil(o.DataWindow) {
+	if o != nil && !isNil(o.DataWindow) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AnalyticsMetadataIndication) SetDataWindow(v TimeWindow) {
 
 // GetDataStatProps returns the DataStatProps field value if set, zero value otherwise.
 func (o *AnalyticsMetadataIndication) GetDataStatProps() []DatasetStatisticalProperty {
-	if o == nil || IsNil(o.DataStatProps) {
+	if o == nil || isNil(o.DataStatProps) {
 		var ret []DatasetStatisticalProperty
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AnalyticsMetadataIndication) GetDataStatProps() []DatasetStatisticalPro
 // GetDataStatPropsOk returns a tuple with the DataStatProps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataIndication) GetDataStatPropsOk() ([]DatasetStatisticalProperty, bool) {
-	if o == nil || IsNil(o.DataStatProps) {
+	if o == nil || isNil(o.DataStatProps) {
 		return nil, false
 	}
 	return o.DataStatProps, true
@@ -94,7 +94,7 @@ func (o *AnalyticsMetadataIndication) GetDataStatPropsOk() ([]DatasetStatistical
 
 // HasDataStatProps returns a boolean if a field has been set.
 func (o *AnalyticsMetadataIndication) HasDataStatProps() bool {
-	if o != nil && !IsNil(o.DataStatProps) {
+	if o != nil && !isNil(o.DataStatProps) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AnalyticsMetadataIndication) SetDataStatProps(v []DatasetStatisticalPro
 
 // GetStrategy returns the Strategy field value if set, zero value otherwise.
 func (o *AnalyticsMetadataIndication) GetStrategy() OutputStrategy {
-	if o == nil || IsNil(o.Strategy) {
+	if o == nil || isNil(o.Strategy) {
 		var ret OutputStrategy
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AnalyticsMetadataIndication) GetStrategy() OutputStrategy {
 // GetStrategyOk returns a tuple with the Strategy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataIndication) GetStrategyOk() (*OutputStrategy, bool) {
-	if o == nil || IsNil(o.Strategy) {
+	if o == nil || isNil(o.Strategy) {
 		return nil, false
 	}
 	return o.Strategy, true
@@ -126,7 +126,7 @@ func (o *AnalyticsMetadataIndication) GetStrategyOk() (*OutputStrategy, bool) {
 
 // HasStrategy returns a boolean if a field has been set.
 func (o *AnalyticsMetadataIndication) HasStrategy() bool {
-	if o != nil && !IsNil(o.Strategy) {
+	if o != nil && !isNil(o.Strategy) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AnalyticsMetadataIndication) SetStrategy(v OutputStrategy) {
 
 // GetAggrNwdafIds returns the AggrNwdafIds field value if set, zero value otherwise.
 func (o *AnalyticsMetadataIndication) GetAggrNwdafIds() []string {
-	if o == nil || IsNil(o.AggrNwdafIds) {
+	if o == nil || isNil(o.AggrNwdafIds) {
 		var ret []string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AnalyticsMetadataIndication) GetAggrNwdafIds() []string {
 // GetAggrNwdafIdsOk returns a tuple with the AggrNwdafIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsMetadataIndication) GetAggrNwdafIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AggrNwdafIds) {
+	if o == nil || isNil(o.AggrNwdafIds) {
 		return nil, false
 	}
 	return o.AggrNwdafIds, true
@@ -158,7 +158,7 @@ func (o *AnalyticsMetadataIndication) GetAggrNwdafIdsOk() ([]string, bool) {
 
 // HasAggrNwdafIds returns a boolean if a field has been set.
 func (o *AnalyticsMetadataIndication) HasAggrNwdafIds() bool {
-	if o != nil && !IsNil(o.AggrNwdafIds) {
+	if o != nil && !isNil(o.AggrNwdafIds) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o AnalyticsMetadataIndication) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsMetadataIndication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DataWindow) {
+	if !isNil(o.DataWindow) {
 		toSerialize["dataWindow"] = o.DataWindow
 	}
-	if !IsNil(o.DataStatProps) {
+	if !isNil(o.DataStatProps) {
 		toSerialize["dataStatProps"] = o.DataStatProps
 	}
-	if !IsNil(o.Strategy) {
+	if !isNil(o.Strategy) {
 		toSerialize["strategy"] = o.Strategy
 	}
-	if !IsNil(o.AggrNwdafIds) {
+	if !isNil(o.AggrNwdafIds) {
 		toSerialize["aggrNwdafIds"] = o.AggrNwdafIds
 	}
 	return toSerialize, nil

@@ -93,7 +93,7 @@ func (o *AcuOperationItem) SetSnssai(v Snssai) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *AcuOperationItem) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *AcuOperationItem) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcuOperationItem) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -111,7 +111,7 @@ func (o *AcuOperationItem) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *AcuOperationItem) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o AcuOperationItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["updateFlag"] = o.UpdateFlag
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
 	return toSerialize, nil

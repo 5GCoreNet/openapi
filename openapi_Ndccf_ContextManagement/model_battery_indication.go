@@ -46,7 +46,7 @@ func NewBatteryIndicationWithDefaults() *BatteryIndication {
 
 // GetBatteryInd returns the BatteryInd field value if set, zero value otherwise.
 func (o *BatteryIndication) GetBatteryInd() bool {
-	if o == nil || IsNil(o.BatteryInd) {
+	if o == nil || isNil(o.BatteryInd) {
 		var ret bool
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *BatteryIndication) GetBatteryInd() bool {
 // GetBatteryIndOk returns a tuple with the BatteryInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BatteryIndication) GetBatteryIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.BatteryInd) {
+	if o == nil || isNil(o.BatteryInd) {
 		return nil, false
 	}
 	return o.BatteryInd, true
@@ -64,7 +64,7 @@ func (o *BatteryIndication) GetBatteryIndOk() (*bool, bool) {
 
 // HasBatteryInd returns a boolean if a field has been set.
 func (o *BatteryIndication) HasBatteryInd() bool {
-	if o != nil && !IsNil(o.BatteryInd) {
+	if o != nil && !isNil(o.BatteryInd) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *BatteryIndication) SetBatteryInd(v bool) {
 
 // GetReplaceableInd returns the ReplaceableInd field value if set, zero value otherwise.
 func (o *BatteryIndication) GetReplaceableInd() bool {
-	if o == nil || IsNil(o.ReplaceableInd) {
+	if o == nil || isNil(o.ReplaceableInd) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *BatteryIndication) GetReplaceableInd() bool {
 // GetReplaceableIndOk returns a tuple with the ReplaceableInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BatteryIndication) GetReplaceableIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReplaceableInd) {
+	if o == nil || isNil(o.ReplaceableInd) {
 		return nil, false
 	}
 	return o.ReplaceableInd, true
@@ -96,7 +96,7 @@ func (o *BatteryIndication) GetReplaceableIndOk() (*bool, bool) {
 
 // HasReplaceableInd returns a boolean if a field has been set.
 func (o *BatteryIndication) HasReplaceableInd() bool {
-	if o != nil && !IsNil(o.ReplaceableInd) {
+	if o != nil && !isNil(o.ReplaceableInd) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *BatteryIndication) SetReplaceableInd(v bool) {
 
 // GetRechargeableInd returns the RechargeableInd field value if set, zero value otherwise.
 func (o *BatteryIndication) GetRechargeableInd() bool {
-	if o == nil || IsNil(o.RechargeableInd) {
+	if o == nil || isNil(o.RechargeableInd) {
 		var ret bool
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *BatteryIndication) GetRechargeableInd() bool {
 // GetRechargeableIndOk returns a tuple with the RechargeableInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BatteryIndication) GetRechargeableIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.RechargeableInd) {
+	if o == nil || isNil(o.RechargeableInd) {
 		return nil, false
 	}
 	return o.RechargeableInd, true
@@ -128,7 +128,7 @@ func (o *BatteryIndication) GetRechargeableIndOk() (*bool, bool) {
 
 // HasRechargeableInd returns a boolean if a field has been set.
 func (o *BatteryIndication) HasRechargeableInd() bool {
-	if o != nil && !IsNil(o.RechargeableInd) {
+	if o != nil && !isNil(o.RechargeableInd) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o BatteryIndication) MarshalJSON() ([]byte, error) {
 
 func (o BatteryIndication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BatteryInd) {
+	if !isNil(o.BatteryInd) {
 		toSerialize["batteryInd"] = o.BatteryInd
 	}
-	if !IsNil(o.ReplaceableInd) {
+	if !isNil(o.ReplaceableInd) {
 		toSerialize["replaceableInd"] = o.ReplaceableInd
 	}
-	if !IsNil(o.RechargeableInd) {
+	if !isNil(o.RechargeableInd) {
 		toSerialize["rechargeableInd"] = o.RechargeableInd
 	}
 	return toSerialize, nil

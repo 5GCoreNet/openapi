@@ -46,7 +46,7 @@ func NewRouteInformationWithDefaults() *RouteInformation {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *RouteInformation) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *RouteInformation) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteInformation) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -64,7 +64,7 @@ func (o *RouteInformation) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *RouteInformation) HasIpv4Addr() bool {
-	if o != nil && !IsNil(o.Ipv4Addr) {
+	if o != nil && !isNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *RouteInformation) SetIpv4Addr(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *RouteInformation) GetIpv6Addr() Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *RouteInformation) GetIpv6Addr() Ipv6Addr {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RouteInformation) GetIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -96,7 +96,7 @@ func (o *RouteInformation) GetIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *RouteInformation) HasIpv6Addr() bool {
-	if o != nil && !IsNil(o.Ipv6Addr) {
+	if o != nil && !isNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o RouteInformation) MarshalJSON() ([]byte, error) {
 
 func (o RouteInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4Addr) {
+	if !isNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !IsNil(o.Ipv6Addr) {
+	if !isNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
 	toSerialize["portNumber"] = o.PortNumber

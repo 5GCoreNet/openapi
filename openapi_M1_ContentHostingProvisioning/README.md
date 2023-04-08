@@ -98,7 +98,9 @@ Class | Method | HTTP request | Description
  - [DistributionConfigurationSupplementaryDistributionNetworksInner](docs/DistributionConfigurationSupplementaryDistributionNetworksInner.md)
  - [DistributionConfigurationUrlSignature](docs/DistributionConfigurationUrlSignature.md)
  - [DistributionMode](docs/DistributionMode.md)
+ - [DistributionModeAnyOf](docs/DistributionModeAnyOf.md)
  - [DistributionNetworkType](docs/DistributionNetworkType.md)
+ - [DistributionNetworkTypeAnyOf](docs/DistributionNetworkTypeAnyOf.md)
  - [IngestConfiguration](docs/IngestConfiguration.md)
  - [PathRewriteRule](docs/PathRewriteRule.md)
 

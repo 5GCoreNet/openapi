@@ -95,7 +95,7 @@ func (o *MulticastTransportAddressChangeInfo) SetCTeid(v int32) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *MulticastTransportAddressChangeInfo) GetAreaSessionId() int32 {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *MulticastTransportAddressChangeInfo) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MulticastTransportAddressChangeInfo) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -113,7 +113,7 @@ func (o *MulticastTransportAddressChangeInfo) GetAreaSessionIdOk() (*int32, bool
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *MulticastTransportAddressChangeInfo) HasAreaSessionId() bool {
-	if o != nil && !IsNil(o.AreaSessionId) {
+	if o != nil && !isNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o MulticastTransportAddressChangeInfo) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	toSerialize["llSsm"] = o.LlSsm
 	toSerialize["cTeid"] = o.CTeid
-	if !IsNil(o.AreaSessionId) {
+	if !isNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
 	return toSerialize, nil

@@ -73,7 +73,7 @@ func (o *ECRData) SetSupportedFeatures(v string) {
 
 // GetVisitedPlmnId returns the VisitedPlmnId field value if set, zero value otherwise.
 func (o *ECRData) GetVisitedPlmnId() PlmnId {
-	if o == nil || IsNil(o.VisitedPlmnId) {
+	if o == nil || isNil(o.VisitedPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *ECRData) GetVisitedPlmnId() PlmnId {
 // GetVisitedPlmnIdOk returns a tuple with the VisitedPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetVisitedPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.VisitedPlmnId) {
+	if o == nil || isNil(o.VisitedPlmnId) {
 		return nil, false
 	}
 	return o.VisitedPlmnId, true
@@ -91,7 +91,7 @@ func (o *ECRData) GetVisitedPlmnIdOk() (*PlmnId, bool) {
 
 // HasVisitedPlmnId returns a boolean if a field has been set.
 func (o *ECRData) HasVisitedPlmnId() bool {
-	if o != nil && !IsNil(o.VisitedPlmnId) {
+	if o != nil && !isNil(o.VisitedPlmnId) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *ECRData) SetVisitedPlmnId(v PlmnId) {
 
 // GetEcrDataWbs returns the EcrDataWbs field value if set, zero value otherwise.
 func (o *ECRData) GetEcrDataWbs() []PlmnEcRestrictionDataWb {
-	if o == nil || IsNil(o.EcrDataWbs) {
+	if o == nil || isNil(o.EcrDataWbs) {
 		var ret []PlmnEcRestrictionDataWb
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *ECRData) GetEcrDataWbs() []PlmnEcRestrictionDataWb {
 // GetEcrDataWbsOk returns a tuple with the EcrDataWbs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetEcrDataWbsOk() ([]PlmnEcRestrictionDataWb, bool) {
-	if o == nil || IsNil(o.EcrDataWbs) {
+	if o == nil || isNil(o.EcrDataWbs) {
 		return nil, false
 	}
 	return o.EcrDataWbs, true
@@ -123,7 +123,7 @@ func (o *ECRData) GetEcrDataWbsOk() ([]PlmnEcRestrictionDataWb, bool) {
 
 // HasEcrDataWbs returns a boolean if a field has been set.
 func (o *ECRData) HasEcrDataWbs() bool {
-	if o != nil && !IsNil(o.EcrDataWbs) {
+	if o != nil && !isNil(o.EcrDataWbs) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *ECRData) SetEcrDataWbs(v []PlmnEcRestrictionDataWb) {
 
 // GetRestrictedPlmnIds returns the RestrictedPlmnIds field value if set, zero value otherwise.
 func (o *ECRData) GetRestrictedPlmnIds() []PlmnId {
-	if o == nil || IsNil(o.RestrictedPlmnIds) {
+	if o == nil || isNil(o.RestrictedPlmnIds) {
 		var ret []PlmnId
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *ECRData) GetRestrictedPlmnIds() []PlmnId {
 // GetRestrictedPlmnIdsOk returns a tuple with the RestrictedPlmnIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetRestrictedPlmnIdsOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.RestrictedPlmnIds) {
+	if o == nil || isNil(o.RestrictedPlmnIds) {
 		return nil, false
 	}
 	return o.RestrictedPlmnIds, true
@@ -155,7 +155,7 @@ func (o *ECRData) GetRestrictedPlmnIdsOk() ([]PlmnId, bool) {
 
 // HasRestrictedPlmnIds returns a boolean if a field has been set.
 func (o *ECRData) HasRestrictedPlmnIds() bool {
-	if o != nil && !IsNil(o.RestrictedPlmnIds) {
+	if o != nil && !isNil(o.RestrictedPlmnIds) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *ECRData) SetRestrictedPlmnIds(v []PlmnId) {
 
 // GetAllowedPlmnIds returns the AllowedPlmnIds field value if set, zero value otherwise.
 func (o *ECRData) GetAllowedPlmnIds() []PlmnId {
-	if o == nil || IsNil(o.AllowedPlmnIds) {
+	if o == nil || isNil(o.AllowedPlmnIds) {
 		var ret []PlmnId
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *ECRData) GetAllowedPlmnIds() []PlmnId {
 // GetAllowedPlmnIdsOk returns a tuple with the AllowedPlmnIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ECRData) GetAllowedPlmnIdsOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.AllowedPlmnIds) {
+	if o == nil || isNil(o.AllowedPlmnIds) {
 		return nil, false
 	}
 	return o.AllowedPlmnIds, true
@@ -187,7 +187,7 @@ func (o *ECRData) GetAllowedPlmnIdsOk() ([]PlmnId, bool) {
 
 // HasAllowedPlmnIds returns a boolean if a field has been set.
 func (o *ECRData) HasAllowedPlmnIds() bool {
-	if o != nil && !IsNil(o.AllowedPlmnIds) {
+	if o != nil && !isNil(o.AllowedPlmnIds) {
 		return true
 	}
 
@@ -210,16 +210,16 @@ func (o ECRData) MarshalJSON() ([]byte, error) {
 func (o ECRData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supportedFeatures"] = o.SupportedFeatures
-	if !IsNil(o.VisitedPlmnId) {
+	if !isNil(o.VisitedPlmnId) {
 		toSerialize["visitedPlmnId"] = o.VisitedPlmnId
 	}
-	if !IsNil(o.EcrDataWbs) {
+	if !isNil(o.EcrDataWbs) {
 		toSerialize["ecrDataWbs"] = o.EcrDataWbs
 	}
-	if !IsNil(o.RestrictedPlmnIds) {
+	if !isNil(o.RestrictedPlmnIds) {
 		toSerialize["restrictedPlmnIds"] = o.RestrictedPlmnIds
 	}
-	if !IsNil(o.AllowedPlmnIds) {
+	if !isNil(o.AllowedPlmnIds) {
 		toSerialize["allowedPlmnIds"] = o.AllowedPlmnIds
 	}
 	return toSerialize, nil

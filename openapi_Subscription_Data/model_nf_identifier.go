@@ -68,7 +68,7 @@ func (o *NfIdentifier) SetNfType(v NFType) {
 
 // GetNfInstanceId returns the NfInstanceId field value if set, zero value otherwise.
 func (o *NfIdentifier) GetNfInstanceId() string {
-	if o == nil || IsNil(o.NfInstanceId) {
+	if o == nil || isNil(o.NfInstanceId) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *NfIdentifier) GetNfInstanceId() string {
 // GetNfInstanceIdOk returns a tuple with the NfInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NfIdentifier) GetNfInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfInstanceId) {
+	if o == nil || isNil(o.NfInstanceId) {
 		return nil, false
 	}
 	return o.NfInstanceId, true
@@ -86,7 +86,7 @@ func (o *NfIdentifier) GetNfInstanceIdOk() (*string, bool) {
 
 // HasNfInstanceId returns a boolean if a field has been set.
 func (o *NfIdentifier) HasNfInstanceId() bool {
-	if o != nil && !IsNil(o.NfInstanceId) {
+	if o != nil && !isNil(o.NfInstanceId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o NfIdentifier) MarshalJSON() ([]byte, error) {
 func (o NfIdentifier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nfType"] = o.NfType
-	if !IsNil(o.NfInstanceId) {
+	if !isNil(o.NfInstanceId) {
 		toSerialize["nfInstanceId"] = o.NfInstanceId
 	}
 	return toSerialize, nil

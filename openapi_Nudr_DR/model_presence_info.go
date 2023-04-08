@@ -55,7 +55,7 @@ func NewPresenceInfoWithDefaults() *PresenceInfo {
 
 // GetPraId returns the PraId field value if set, zero value otherwise.
 func (o *PresenceInfo) GetPraId() string {
-	if o == nil || IsNil(o.PraId) {
+	if o == nil || isNil(o.PraId) {
 		var ret string
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *PresenceInfo) GetPraId() string {
 // GetPraIdOk returns a tuple with the PraId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetPraIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PraId) {
+	if o == nil || isNil(o.PraId) {
 		return nil, false
 	}
 	return o.PraId, true
@@ -73,7 +73,7 @@ func (o *PresenceInfo) GetPraIdOk() (*string, bool) {
 
 // HasPraId returns a boolean if a field has been set.
 func (o *PresenceInfo) HasPraId() bool {
-	if o != nil && !IsNil(o.PraId) {
+	if o != nil && !isNil(o.PraId) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *PresenceInfo) SetPraId(v string) {
 
 // GetAdditionalPraId returns the AdditionalPraId field value if set, zero value otherwise.
 func (o *PresenceInfo) GetAdditionalPraId() string {
-	if o == nil || IsNil(o.AdditionalPraId) {
+	if o == nil || isNil(o.AdditionalPraId) {
 		var ret string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *PresenceInfo) GetAdditionalPraId() string {
 // GetAdditionalPraIdOk returns a tuple with the AdditionalPraId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetAdditionalPraIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalPraId) {
+	if o == nil || isNil(o.AdditionalPraId) {
 		return nil, false
 	}
 	return o.AdditionalPraId, true
@@ -105,7 +105,7 @@ func (o *PresenceInfo) GetAdditionalPraIdOk() (*string, bool) {
 
 // HasAdditionalPraId returns a boolean if a field has been set.
 func (o *PresenceInfo) HasAdditionalPraId() bool {
-	if o != nil && !IsNil(o.AdditionalPraId) {
+	if o != nil && !isNil(o.AdditionalPraId) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *PresenceInfo) SetAdditionalPraId(v string) {
 
 // GetPresenceState returns the PresenceState field value if set, zero value otherwise.
 func (o *PresenceInfo) GetPresenceState() PresenceState {
-	if o == nil || IsNil(o.PresenceState) {
+	if o == nil || isNil(o.PresenceState) {
 		var ret PresenceState
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PresenceInfo) GetPresenceState() PresenceState {
 // GetPresenceStateOk returns a tuple with the PresenceState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetPresenceStateOk() (*PresenceState, bool) {
-	if o == nil || IsNil(o.PresenceState) {
+	if o == nil || isNil(o.PresenceState) {
 		return nil, false
 	}
 	return o.PresenceState, true
@@ -137,7 +137,7 @@ func (o *PresenceInfo) GetPresenceStateOk() (*PresenceState, bool) {
 
 // HasPresenceState returns a boolean if a field has been set.
 func (o *PresenceInfo) HasPresenceState() bool {
-	if o != nil && !IsNil(o.PresenceState) {
+	if o != nil && !isNil(o.PresenceState) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *PresenceInfo) SetPresenceState(v PresenceState) {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetTrackingAreaList() []Tai1 {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		var ret []Tai1
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *PresenceInfo) GetTrackingAreaList() []Tai1 {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetTrackingAreaListOk() ([]Tai1, bool) {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -169,7 +169,7 @@ func (o *PresenceInfo) GetTrackingAreaListOk() ([]Tai1, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasTrackingAreaList() bool {
-	if o != nil && !IsNil(o.TrackingAreaList) {
+	if o != nil && !isNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *PresenceInfo) SetTrackingAreaList(v []Tai1) {
 
 // GetEcgiList returns the EcgiList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetEcgiList() []Ecgi1 {
-	if o == nil || IsNil(o.EcgiList) {
+	if o == nil || isNil(o.EcgiList) {
 		var ret []Ecgi1
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *PresenceInfo) GetEcgiList() []Ecgi1 {
 // GetEcgiListOk returns a tuple with the EcgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetEcgiListOk() ([]Ecgi1, bool) {
-	if o == nil || IsNil(o.EcgiList) {
+	if o == nil || isNil(o.EcgiList) {
 		return nil, false
 	}
 	return o.EcgiList, true
@@ -201,7 +201,7 @@ func (o *PresenceInfo) GetEcgiListOk() ([]Ecgi1, bool) {
 
 // HasEcgiList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasEcgiList() bool {
-	if o != nil && !IsNil(o.EcgiList) {
+	if o != nil && !isNil(o.EcgiList) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *PresenceInfo) SetEcgiList(v []Ecgi1) {
 
 // GetNcgiList returns the NcgiList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetNcgiList() []Ncgi1 {
-	if o == nil || IsNil(o.NcgiList) {
+	if o == nil || isNil(o.NcgiList) {
 		var ret []Ncgi1
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *PresenceInfo) GetNcgiList() []Ncgi1 {
 // GetNcgiListOk returns a tuple with the NcgiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetNcgiListOk() ([]Ncgi1, bool) {
-	if o == nil || IsNil(o.NcgiList) {
+	if o == nil || isNil(o.NcgiList) {
 		return nil, false
 	}
 	return o.NcgiList, true
@@ -233,7 +233,7 @@ func (o *PresenceInfo) GetNcgiListOk() ([]Ncgi1, bool) {
 
 // HasNcgiList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasNcgiList() bool {
-	if o != nil && !IsNil(o.NcgiList) {
+	if o != nil && !isNil(o.NcgiList) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *PresenceInfo) SetNcgiList(v []Ncgi1) {
 
 // GetGlobalRanNodeIdList returns the GlobalRanNodeIdList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetGlobalRanNodeIdList() []GlobalRanNodeId1 {
-	if o == nil || IsNil(o.GlobalRanNodeIdList) {
+	if o == nil || isNil(o.GlobalRanNodeIdList) {
 		var ret []GlobalRanNodeId1
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *PresenceInfo) GetGlobalRanNodeIdList() []GlobalRanNodeId1 {
 // GetGlobalRanNodeIdListOk returns a tuple with the GlobalRanNodeIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetGlobalRanNodeIdListOk() ([]GlobalRanNodeId1, bool) {
-	if o == nil || IsNil(o.GlobalRanNodeIdList) {
+	if o == nil || isNil(o.GlobalRanNodeIdList) {
 		return nil, false
 	}
 	return o.GlobalRanNodeIdList, true
@@ -265,7 +265,7 @@ func (o *PresenceInfo) GetGlobalRanNodeIdListOk() ([]GlobalRanNodeId1, bool) {
 
 // HasGlobalRanNodeIdList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasGlobalRanNodeIdList() bool {
-	if o != nil && !IsNil(o.GlobalRanNodeIdList) {
+	if o != nil && !isNil(o.GlobalRanNodeIdList) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *PresenceInfo) SetGlobalRanNodeIdList(v []GlobalRanNodeId1) {
 
 // GetGlobaleNbIdList returns the GlobaleNbIdList field value if set, zero value otherwise.
 func (o *PresenceInfo) GetGlobaleNbIdList() []GlobalRanNodeId1 {
-	if o == nil || IsNil(o.GlobaleNbIdList) {
+	if o == nil || isNil(o.GlobaleNbIdList) {
 		var ret []GlobalRanNodeId1
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *PresenceInfo) GetGlobaleNbIdList() []GlobalRanNodeId1 {
 // GetGlobaleNbIdListOk returns a tuple with the GlobaleNbIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PresenceInfo) GetGlobaleNbIdListOk() ([]GlobalRanNodeId1, bool) {
-	if o == nil || IsNil(o.GlobaleNbIdList) {
+	if o == nil || isNil(o.GlobaleNbIdList) {
 		return nil, false
 	}
 	return o.GlobaleNbIdList, true
@@ -297,7 +297,7 @@ func (o *PresenceInfo) GetGlobaleNbIdListOk() ([]GlobalRanNodeId1, bool) {
 
 // HasGlobaleNbIdList returns a boolean if a field has been set.
 func (o *PresenceInfo) HasGlobaleNbIdList() bool {
-	if o != nil && !IsNil(o.GlobaleNbIdList) {
+	if o != nil && !isNil(o.GlobaleNbIdList) {
 		return true
 	}
 
@@ -319,28 +319,28 @@ func (o PresenceInfo) MarshalJSON() ([]byte, error) {
 
 func (o PresenceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PraId) {
+	if !isNil(o.PraId) {
 		toSerialize["praId"] = o.PraId
 	}
-	if !IsNil(o.AdditionalPraId) {
+	if !isNil(o.AdditionalPraId) {
 		toSerialize["additionalPraId"] = o.AdditionalPraId
 	}
-	if !IsNil(o.PresenceState) {
+	if !isNil(o.PresenceState) {
 		toSerialize["presenceState"] = o.PresenceState
 	}
-	if !IsNil(o.TrackingAreaList) {
+	if !isNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
-	if !IsNil(o.EcgiList) {
+	if !isNil(o.EcgiList) {
 		toSerialize["ecgiList"] = o.EcgiList
 	}
-	if !IsNil(o.NcgiList) {
+	if !isNil(o.NcgiList) {
 		toSerialize["ncgiList"] = o.NcgiList
 	}
-	if !IsNil(o.GlobalRanNodeIdList) {
+	if !isNil(o.GlobalRanNodeIdList) {
 		toSerialize["globalRanNodeIdList"] = o.GlobalRanNodeIdList
 	}
-	if !IsNil(o.GlobaleNbIdList) {
+	if !isNil(o.GlobaleNbIdList) {
 		toSerialize["globaleNbIdList"] = o.GlobaleNbIdList
 	}
 	return toSerialize, nil

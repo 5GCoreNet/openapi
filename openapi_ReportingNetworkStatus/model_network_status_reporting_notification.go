@@ -70,7 +70,7 @@ func (o *NetworkStatusReportingNotification) SetSubscription(v string) {
 
 // GetNsiValue returns the NsiValue field value if set, zero value otherwise.
 func (o *NetworkStatusReportingNotification) GetNsiValue() int32 {
-	if o == nil || IsNil(o.NsiValue) {
+	if o == nil || isNil(o.NsiValue) {
 		var ret int32
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *NetworkStatusReportingNotification) GetNsiValue() int32 {
 // GetNsiValueOk returns a tuple with the NsiValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingNotification) GetNsiValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.NsiValue) {
+	if o == nil || isNil(o.NsiValue) {
 		return nil, false
 	}
 	return o.NsiValue, true
@@ -88,7 +88,7 @@ func (o *NetworkStatusReportingNotification) GetNsiValueOk() (*int32, bool) {
 
 // HasNsiValue returns a boolean if a field has been set.
 func (o *NetworkStatusReportingNotification) HasNsiValue() bool {
-	if o != nil && !IsNil(o.NsiValue) {
+	if o != nil && !isNil(o.NsiValue) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *NetworkStatusReportingNotification) SetNsiValue(v int32) {
 
 // GetNsiType returns the NsiType field value if set, zero value otherwise.
 func (o *NetworkStatusReportingNotification) GetNsiType() CongestionType {
-	if o == nil || IsNil(o.NsiType) {
+	if o == nil || isNil(o.NsiType) {
 		var ret CongestionType
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NetworkStatusReportingNotification) GetNsiType() CongestionType {
 // GetNsiTypeOk returns a tuple with the NsiType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingNotification) GetNsiTypeOk() (*CongestionType, bool) {
-	if o == nil || IsNil(o.NsiType) {
+	if o == nil || isNil(o.NsiType) {
 		return nil, false
 	}
 	return o.NsiType, true
@@ -120,7 +120,7 @@ func (o *NetworkStatusReportingNotification) GetNsiTypeOk() (*CongestionType, bo
 
 // HasNsiType returns a boolean if a field has been set.
 func (o *NetworkStatusReportingNotification) HasNsiType() bool {
-	if o != nil && !IsNil(o.NsiType) {
+	if o != nil && !isNil(o.NsiType) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o NetworkStatusReportingNotification) MarshalJSON() ([]byte, error) {
 func (o NetworkStatusReportingNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.NsiValue) {
+	if !isNil(o.NsiValue) {
 		toSerialize["nsiValue"] = o.NsiValue
 	}
-	if !IsNil(o.NsiType) {
+	if !isNil(o.NsiType) {
 		toSerialize["nsiType"] = o.NsiType
 	}
 	return toSerialize, nil

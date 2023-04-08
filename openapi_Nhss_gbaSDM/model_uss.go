@@ -124,7 +124,7 @@ func (o *Uss) SetUeIds(v []UeIdsItem) {
 
 // GetNafGroup returns the NafGroup field value if set, zero value otherwise.
 func (o *Uss) GetNafGroup() string {
-	if o == nil || IsNil(o.NafGroup) {
+	if o == nil || isNil(o.NafGroup) {
 		var ret string
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *Uss) GetNafGroup() string {
 // GetNafGroupOk returns a tuple with the NafGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Uss) GetNafGroupOk() (*string, bool) {
-	if o == nil || IsNil(o.NafGroup) {
+	if o == nil || isNil(o.NafGroup) {
 		return nil, false
 	}
 	return o.NafGroup, true
@@ -142,7 +142,7 @@ func (o *Uss) GetNafGroupOk() (*string, bool) {
 
 // HasNafGroup returns a boolean if a field has been set.
 func (o *Uss) HasNafGroup() bool {
-	if o != nil && !IsNil(o.NafGroup) {
+	if o != nil && !isNil(o.NafGroup) {
 		return true
 	}
 
@@ -156,7 +156,7 @@ func (o *Uss) SetNafGroup(v string) {
 
 // GetFlags returns the Flags field value if set, zero value otherwise.
 func (o *Uss) GetFlags() []FlagsItem {
-	if o == nil || IsNil(o.Flags) {
+	if o == nil || isNil(o.Flags) {
 		var ret []FlagsItem
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *Uss) GetFlags() []FlagsItem {
 // GetFlagsOk returns a tuple with the Flags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Uss) GetFlagsOk() ([]FlagsItem, bool) {
-	if o == nil || IsNil(o.Flags) {
+	if o == nil || isNil(o.Flags) {
 		return nil, false
 	}
 	return o.Flags, true
@@ -174,7 +174,7 @@ func (o *Uss) GetFlagsOk() ([]FlagsItem, bool) {
 
 // HasFlags returns a boolean if a field has been set.
 func (o *Uss) HasFlags() bool {
-	if o != nil && !IsNil(o.Flags) {
+	if o != nil && !isNil(o.Flags) {
 		return true
 	}
 
@@ -188,7 +188,7 @@ func (o *Uss) SetFlags(v []FlagsItem) {
 
 // GetKeyChoice returns the KeyChoice field value if set, zero value otherwise.
 func (o *Uss) GetKeyChoice() KeyChoice {
-	if o == nil || IsNil(o.KeyChoice) {
+	if o == nil || isNil(o.KeyChoice) {
 		var ret KeyChoice
 		return ret
 	}
@@ -198,7 +198,7 @@ func (o *Uss) GetKeyChoice() KeyChoice {
 // GetKeyChoiceOk returns a tuple with the KeyChoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Uss) GetKeyChoiceOk() (*KeyChoice, bool) {
-	if o == nil || IsNil(o.KeyChoice) {
+	if o == nil || isNil(o.KeyChoice) {
 		return nil, false
 	}
 	return o.KeyChoice, true
@@ -206,7 +206,7 @@ func (o *Uss) GetKeyChoiceOk() (*KeyChoice, bool) {
 
 // HasKeyChoice returns a boolean if a field has been set.
 func (o *Uss) HasKeyChoice() bool {
-	if o != nil && !IsNil(o.KeyChoice) {
+	if o != nil && !isNil(o.KeyChoice) {
 		return true
 	}
 
@@ -231,13 +231,13 @@ func (o Uss) ToMap() (map[string]interface{}, error) {
 	toSerialize["gsId"] = o.GsId
 	toSerialize["gsType"] = o.GsType
 	toSerialize["ueIds"] = o.UeIds
-	if !IsNil(o.NafGroup) {
+	if !isNil(o.NafGroup) {
 		toSerialize["nafGroup"] = o.NafGroup
 	}
-	if !IsNil(o.Flags) {
+	if !isNil(o.Flags) {
 		toSerialize["flags"] = o.Flags
 	}
-	if !IsNil(o.KeyChoice) {
+	if !isNil(o.KeyChoice) {
 		toSerialize["keyChoice"] = o.KeyChoice
 	}
 	return toSerialize, nil

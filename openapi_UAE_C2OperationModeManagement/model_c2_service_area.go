@@ -18,7 +18,7 @@ import (
 // C2ServiceArea - Represents a C2 service area.
 type C2ServiceArea struct {
 	AnyOfAnyTypeAnyType *AnyOfAnyTypeAnyType
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // AnyOfAnyTypeAnyTypeAsC2ServiceArea is a convenience function that returns AnyOfAnyTypeAnyType wrapped in C2ServiceArea
@@ -29,9 +29,9 @@ func AnyOfAnyTypeAnyTypeAsC2ServiceArea(v *AnyOfAnyTypeAnyType) C2ServiceArea {
 }
 
 // interface{}AsC2ServiceArea is a convenience function that returns interface{} wrapped in C2ServiceArea
-func Interface{}AsC2ServiceArea(v *interface{}) C2ServiceArea {
+func InterfaceAsC2ServiceArea(v *interface{}) C2ServiceArea {
 	return C2ServiceArea{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -53,23 +53,23 @@ func (dst *C2ServiceArea) UnmarshalJSON(data []byte) error {
 		dst.AnyOfAnyTypeAnyType = nil
 	}
 
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AnyOfAnyTypeAnyType = nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(C2ServiceArea)")
 	} else if match == 1 {
@@ -85,8 +85,8 @@ func (src C2ServiceArea) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AnyOfAnyTypeAnyType)
 	}
 
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -101,8 +101,8 @@ func (obj *C2ServiceArea) GetActualInstance() (interface{}) {
 		return obj.AnyOfAnyTypeAnyType
 	}
 
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

@@ -69,7 +69,7 @@ func (o *N2InformationTransferRspData) SetResult(v N2InformationTransferResult) 
 
 // GetPwsRspData returns the PwsRspData field value if set, zero value otherwise.
 func (o *N2InformationTransferRspData) GetPwsRspData() PWSResponseData {
-	if o == nil || IsNil(o.PwsRspData) {
+	if o == nil || isNil(o.PwsRspData) {
 		var ret PWSResponseData
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *N2InformationTransferRspData) GetPwsRspData() PWSResponseData {
 // GetPwsRspDataOk returns a tuple with the PwsRspData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferRspData) GetPwsRspDataOk() (*PWSResponseData, bool) {
-	if o == nil || IsNil(o.PwsRspData) {
+	if o == nil || isNil(o.PwsRspData) {
 		return nil, false
 	}
 	return o.PwsRspData, true
@@ -87,7 +87,7 @@ func (o *N2InformationTransferRspData) GetPwsRspDataOk() (*PWSResponseData, bool
 
 // HasPwsRspData returns a boolean if a field has been set.
 func (o *N2InformationTransferRspData) HasPwsRspData() bool {
-	if o != nil && !IsNil(o.PwsRspData) {
+	if o != nil && !isNil(o.PwsRspData) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *N2InformationTransferRspData) SetPwsRspData(v PWSResponseData) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *N2InformationTransferRspData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *N2InformationTransferRspData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2InformationTransferRspData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -119,7 +119,7 @@ func (o *N2InformationTransferRspData) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *N2InformationTransferRspData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o N2InformationTransferRspData) MarshalJSON() ([]byte, error) {
 func (o N2InformationTransferRspData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["result"] = o.Result
-	if !IsNil(o.PwsRspData) {
+	if !isNil(o.PwsRspData) {
 		toSerialize["pwsRspData"] = o.PwsRspData
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

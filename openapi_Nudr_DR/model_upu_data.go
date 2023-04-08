@@ -98,7 +98,7 @@ func (o *UpuData) SetUeUpdateStatus(v UeUpdateStatus) {
 
 // GetUpuXmacIue returns the UpuXmacIue field value if set, zero value otherwise.
 func (o *UpuData) GetUpuXmacIue() string {
-	if o == nil || IsNil(o.UpuXmacIue) {
+	if o == nil || isNil(o.UpuXmacIue) {
 		var ret string
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *UpuData) GetUpuXmacIue() string {
 // GetUpuXmacIueOk returns a tuple with the UpuXmacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData) GetUpuXmacIueOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuXmacIue) {
+	if o == nil || isNil(o.UpuXmacIue) {
 		return nil, false
 	}
 	return o.UpuXmacIue, true
@@ -116,7 +116,7 @@ func (o *UpuData) GetUpuXmacIueOk() (*string, bool) {
 
 // HasUpuXmacIue returns a boolean if a field has been set.
 func (o *UpuData) HasUpuXmacIue() bool {
-	if o != nil && !IsNil(o.UpuXmacIue) {
+	if o != nil && !isNil(o.UpuXmacIue) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *UpuData) SetUpuXmacIue(v string) {
 
 // GetUpuMacIue returns the UpuMacIue field value if set, zero value otherwise.
 func (o *UpuData) GetUpuMacIue() string {
-	if o == nil || IsNil(o.UpuMacIue) {
+	if o == nil || isNil(o.UpuMacIue) {
 		var ret string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *UpuData) GetUpuMacIue() string {
 // GetUpuMacIueOk returns a tuple with the UpuMacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData) GetUpuMacIueOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuMacIue) {
+	if o == nil || isNil(o.UpuMacIue) {
 		return nil, false
 	}
 	return o.UpuMacIue, true
@@ -148,7 +148,7 @@ func (o *UpuData) GetUpuMacIueOk() (*string, bool) {
 
 // HasUpuMacIue returns a boolean if a field has been set.
 func (o *UpuData) HasUpuMacIue() bool {
-	if o != nil && !IsNil(o.UpuMacIue) {
+	if o != nil && !isNil(o.UpuMacIue) {
 		return true
 	}
 
@@ -172,10 +172,10 @@ func (o UpuData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["provisioningTime"] = o.ProvisioningTime
 	toSerialize["ueUpdateStatus"] = o.UeUpdateStatus
-	if !IsNil(o.UpuXmacIue) {
+	if !isNil(o.UpuXmacIue) {
 		toSerialize["upuXmacIue"] = o.UpuXmacIue
 	}
-	if !IsNil(o.UpuMacIue) {
+	if !isNil(o.UpuMacIue) {
 		toSerialize["upuMacIue"] = o.UpuMacIue
 	}
 	return toSerialize, nil

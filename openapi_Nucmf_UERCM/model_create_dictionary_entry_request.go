@@ -21,10 +21,10 @@ var _ MappedNullable = &CreateDictionaryEntryRequest{}
 // CreateDictionaryEntryRequest struct for CreateDictionaryEntryRequest
 type CreateDictionaryEntryRequest struct {
 	JsonData *DicEntryCreateData `json:"jsonData,omitempty"`
-	BinaryDataUeRadioCapability5GS **os.File `json:"binaryDataUeRadioCapability5GS,omitempty"`
-	BinaryDataUeRadioCapabilityEPS **os.File `json:"binaryDataUeRadioCapabilityEPS,omitempty"`
-	BinaryDataUeRadioCap5GSForPaging **os.File `json:"binaryDataUeRadioCap5GSForPaging,omitempty"`
-	BinaryDataUeRadioCapEPSForPaging **os.File `json:"binaryDataUeRadioCapEPSForPaging,omitempty"`
+	BinaryDataUeRadioCapability5GS *os.File `json:"binaryDataUeRadioCapability5GS,omitempty"`
+	BinaryDataUeRadioCapabilityEPS *os.File `json:"binaryDataUeRadioCapabilityEPS,omitempty"`
+	BinaryDataUeRadioCap5GSForPaging *os.File `json:"binaryDataUeRadioCap5GSForPaging,omitempty"`
+	BinaryDataUeRadioCapEPSForPaging *os.File `json:"binaryDataUeRadioCapEPSForPaging,omitempty"`
 }
 
 // NewCreateDictionaryEntryRequest instantiates a new CreateDictionaryEntryRequest object
@@ -46,7 +46,7 @@ func NewCreateDictionaryEntryRequestWithDefaults() *CreateDictionaryEntryRequest
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *CreateDictionaryEntryRequest) GetJsonData() DicEntryCreateData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret DicEntryCreateData
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *CreateDictionaryEntryRequest) GetJsonData() DicEntryCreateData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateDictionaryEntryRequest) GetJsonDataOk() (*DicEntryCreateData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -64,7 +64,7 @@ func (o *CreateDictionaryEntryRequest) GetJsonDataOk() (*DicEntryCreateData, boo
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *CreateDictionaryEntryRequest) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -77,9 +77,9 @@ func (o *CreateDictionaryEntryRequest) SetJsonData(v DicEntryCreateData) {
 }
 
 // GetBinaryDataUeRadioCapability5GS returns the BinaryDataUeRadioCapability5GS field value if set, zero value otherwise.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapability5GS() *os.File {
-	if o == nil || IsNil(o.BinaryDataUeRadioCapability5GS) {
-		var ret *os.File
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapability5GS() os.File {
+	if o == nil || isNil(o.BinaryDataUeRadioCapability5GS) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataUeRadioCapability5GS
@@ -87,8 +87,8 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapability5GS() *os.F
 
 // GetBinaryDataUeRadioCapability5GSOk returns a tuple with the BinaryDataUeRadioCapability5GS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapability5GSOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataUeRadioCapability5GS) {
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapability5GSOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataUeRadioCapability5GS) {
 		return nil, false
 	}
 	return o.BinaryDataUeRadioCapability5GS, true
@@ -96,22 +96,22 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapability5GSOk() (**
 
 // HasBinaryDataUeRadioCapability5GS returns a boolean if a field has been set.
 func (o *CreateDictionaryEntryRequest) HasBinaryDataUeRadioCapability5GS() bool {
-	if o != nil && !IsNil(o.BinaryDataUeRadioCapability5GS) {
+	if o != nil && !isNil(o.BinaryDataUeRadioCapability5GS) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataUeRadioCapability5GS gets a reference to the given *os.File and assigns it to the BinaryDataUeRadioCapability5GS field.
-func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCapability5GS(v *os.File) {
+// SetBinaryDataUeRadioCapability5GS gets a reference to the given os.File and assigns it to the BinaryDataUeRadioCapability5GS field.
+func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCapability5GS(v os.File) {
 	o.BinaryDataUeRadioCapability5GS = &v
 }
 
 // GetBinaryDataUeRadioCapabilityEPS returns the BinaryDataUeRadioCapabilityEPS field value if set, zero value otherwise.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapabilityEPS() *os.File {
-	if o == nil || IsNil(o.BinaryDataUeRadioCapabilityEPS) {
-		var ret *os.File
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapabilityEPS() os.File {
+	if o == nil || isNil(o.BinaryDataUeRadioCapabilityEPS) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataUeRadioCapabilityEPS
@@ -119,8 +119,8 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapabilityEPS() *os.F
 
 // GetBinaryDataUeRadioCapabilityEPSOk returns a tuple with the BinaryDataUeRadioCapabilityEPS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapabilityEPSOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataUeRadioCapabilityEPS) {
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapabilityEPSOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataUeRadioCapabilityEPS) {
 		return nil, false
 	}
 	return o.BinaryDataUeRadioCapabilityEPS, true
@@ -128,22 +128,22 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapabilityEPSOk() (**
 
 // HasBinaryDataUeRadioCapabilityEPS returns a boolean if a field has been set.
 func (o *CreateDictionaryEntryRequest) HasBinaryDataUeRadioCapabilityEPS() bool {
-	if o != nil && !IsNil(o.BinaryDataUeRadioCapabilityEPS) {
+	if o != nil && !isNil(o.BinaryDataUeRadioCapabilityEPS) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataUeRadioCapabilityEPS gets a reference to the given *os.File and assigns it to the BinaryDataUeRadioCapabilityEPS field.
-func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCapabilityEPS(v *os.File) {
+// SetBinaryDataUeRadioCapabilityEPS gets a reference to the given os.File and assigns it to the BinaryDataUeRadioCapabilityEPS field.
+func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCapabilityEPS(v os.File) {
 	o.BinaryDataUeRadioCapabilityEPS = &v
 }
 
 // GetBinaryDataUeRadioCap5GSForPaging returns the BinaryDataUeRadioCap5GSForPaging field value if set, zero value otherwise.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCap5GSForPaging() *os.File {
-	if o == nil || IsNil(o.BinaryDataUeRadioCap5GSForPaging) {
-		var ret *os.File
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCap5GSForPaging() os.File {
+	if o == nil || isNil(o.BinaryDataUeRadioCap5GSForPaging) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataUeRadioCap5GSForPaging
@@ -151,8 +151,8 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCap5GSForPaging() *os
 
 // GetBinaryDataUeRadioCap5GSForPagingOk returns a tuple with the BinaryDataUeRadioCap5GSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCap5GSForPagingOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataUeRadioCap5GSForPaging) {
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCap5GSForPagingOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataUeRadioCap5GSForPaging) {
 		return nil, false
 	}
 	return o.BinaryDataUeRadioCap5GSForPaging, true
@@ -160,22 +160,22 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCap5GSForPagingOk() (
 
 // HasBinaryDataUeRadioCap5GSForPaging returns a boolean if a field has been set.
 func (o *CreateDictionaryEntryRequest) HasBinaryDataUeRadioCap5GSForPaging() bool {
-	if o != nil && !IsNil(o.BinaryDataUeRadioCap5GSForPaging) {
+	if o != nil && !isNil(o.BinaryDataUeRadioCap5GSForPaging) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataUeRadioCap5GSForPaging gets a reference to the given *os.File and assigns it to the BinaryDataUeRadioCap5GSForPaging field.
-func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCap5GSForPaging(v *os.File) {
+// SetBinaryDataUeRadioCap5GSForPaging gets a reference to the given os.File and assigns it to the BinaryDataUeRadioCap5GSForPaging field.
+func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCap5GSForPaging(v os.File) {
 	o.BinaryDataUeRadioCap5GSForPaging = &v
 }
 
 // GetBinaryDataUeRadioCapEPSForPaging returns the BinaryDataUeRadioCapEPSForPaging field value if set, zero value otherwise.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapEPSForPaging() *os.File {
-	if o == nil || IsNil(o.BinaryDataUeRadioCapEPSForPaging) {
-		var ret *os.File
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapEPSForPaging() os.File {
+	if o == nil || isNil(o.BinaryDataUeRadioCapEPSForPaging) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataUeRadioCapEPSForPaging
@@ -183,8 +183,8 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapEPSForPaging() *os
 
 // GetBinaryDataUeRadioCapEPSForPagingOk returns a tuple with the BinaryDataUeRadioCapEPSForPaging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapEPSForPagingOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataUeRadioCapEPSForPaging) {
+func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapEPSForPagingOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataUeRadioCapEPSForPaging) {
 		return nil, false
 	}
 	return o.BinaryDataUeRadioCapEPSForPaging, true
@@ -192,15 +192,15 @@ func (o *CreateDictionaryEntryRequest) GetBinaryDataUeRadioCapEPSForPagingOk() (
 
 // HasBinaryDataUeRadioCapEPSForPaging returns a boolean if a field has been set.
 func (o *CreateDictionaryEntryRequest) HasBinaryDataUeRadioCapEPSForPaging() bool {
-	if o != nil && !IsNil(o.BinaryDataUeRadioCapEPSForPaging) {
+	if o != nil && !isNil(o.BinaryDataUeRadioCapEPSForPaging) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataUeRadioCapEPSForPaging gets a reference to the given *os.File and assigns it to the BinaryDataUeRadioCapEPSForPaging field.
-func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCapEPSForPaging(v *os.File) {
+// SetBinaryDataUeRadioCapEPSForPaging gets a reference to the given os.File and assigns it to the BinaryDataUeRadioCapEPSForPaging field.
+func (o *CreateDictionaryEntryRequest) SetBinaryDataUeRadioCapEPSForPaging(v os.File) {
 	o.BinaryDataUeRadioCapEPSForPaging = &v
 }
 
@@ -214,19 +214,19 @@ func (o CreateDictionaryEntryRequest) MarshalJSON() ([]byte, error) {
 
 func (o CreateDictionaryEntryRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataUeRadioCapability5GS) {
+	if !isNil(o.BinaryDataUeRadioCapability5GS) {
 		toSerialize["binaryDataUeRadioCapability5GS"] = o.BinaryDataUeRadioCapability5GS
 	}
-	if !IsNil(o.BinaryDataUeRadioCapabilityEPS) {
+	if !isNil(o.BinaryDataUeRadioCapabilityEPS) {
 		toSerialize["binaryDataUeRadioCapabilityEPS"] = o.BinaryDataUeRadioCapabilityEPS
 	}
-	if !IsNil(o.BinaryDataUeRadioCap5GSForPaging) {
+	if !isNil(o.BinaryDataUeRadioCap5GSForPaging) {
 		toSerialize["binaryDataUeRadioCap5GSForPaging"] = o.BinaryDataUeRadioCap5GSForPaging
 	}
-	if !IsNil(o.BinaryDataUeRadioCapEPSForPaging) {
+	if !isNil(o.BinaryDataUeRadioCapEPSForPaging) {
 		toSerialize["binaryDataUeRadioCapEPSForPaging"] = o.BinaryDataUeRadioCapEPSForPaging
 	}
 	return toSerialize, nil

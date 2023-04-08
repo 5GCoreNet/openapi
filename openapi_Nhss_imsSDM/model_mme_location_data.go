@@ -98,7 +98,7 @@ func (o *MmeLocationData) SetPlmnId(v PlmnId) {
 
 // GetMmeLocation returns the MmeLocation field value if set, zero value otherwise.
 func (o *MmeLocationData) GetMmeLocation() EutraLocation {
-	if o == nil || IsNil(o.MmeLocation) {
+	if o == nil || isNil(o.MmeLocation) {
 		var ret EutraLocation
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *MmeLocationData) GetMmeLocation() EutraLocation {
 // GetMmeLocationOk returns a tuple with the MmeLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetMmeLocationOk() (*EutraLocation, bool) {
-	if o == nil || IsNil(o.MmeLocation) {
+	if o == nil || isNil(o.MmeLocation) {
 		return nil, false
 	}
 	return o.MmeLocation, true
@@ -116,7 +116,7 @@ func (o *MmeLocationData) GetMmeLocationOk() (*EutraLocation, bool) {
 
 // HasMmeLocation returns a boolean if a field has been set.
 func (o *MmeLocationData) HasMmeLocation() bool {
-	if o != nil && !IsNil(o.MmeLocation) {
+	if o != nil && !isNil(o.MmeLocation) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *MmeLocationData) SetMmeLocation(v EutraLocation) {
 
 // GetCsgInformation returns the CsgInformation field value if set, zero value otherwise.
 func (o *MmeLocationData) GetCsgInformation() CsgInformation {
-	if o == nil || IsNil(o.CsgInformation) {
+	if o == nil || isNil(o.CsgInformation) {
 		var ret CsgInformation
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *MmeLocationData) GetCsgInformation() CsgInformation {
 // GetCsgInformationOk returns a tuple with the CsgInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
-	if o == nil || IsNil(o.CsgInformation) {
+	if o == nil || isNil(o.CsgInformation) {
 		return nil, false
 	}
 	return o.CsgInformation, true
@@ -148,7 +148,7 @@ func (o *MmeLocationData) GetCsgInformationOk() (*CsgInformation, bool) {
 
 // HasCsgInformation returns a boolean if a field has been set.
 func (o *MmeLocationData) HasCsgInformation() bool {
-	if o != nil && !IsNil(o.CsgInformation) {
+	if o != nil && !isNil(o.CsgInformation) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *MmeLocationData) SetCsgInformation(v CsgInformation) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *MmeLocationData) GetTimeZone() string {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *MmeLocationData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -180,7 +180,7 @@ func (o *MmeLocationData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *MmeLocationData) HasTimeZone() bool {
-	if o != nil && !IsNil(o.TimeZone) {
+	if o != nil && !isNil(o.TimeZone) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *MmeLocationData) SetTimeZone(v string) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *MmeLocationData) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *MmeLocationData) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmeLocationData) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -212,7 +212,7 @@ func (o *MmeLocationData) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *MmeLocationData) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -236,16 +236,16 @@ func (o MmeLocationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mmeAddress"] = o.MmeAddress
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.MmeLocation) {
+	if !isNil(o.MmeLocation) {
 		toSerialize["mmeLocation"] = o.MmeLocation
 	}
-	if !IsNil(o.CsgInformation) {
+	if !isNil(o.CsgInformation) {
 		toSerialize["csgInformation"] = o.CsgInformation
 	}
-	if !IsNil(o.TimeZone) {
+	if !isNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil

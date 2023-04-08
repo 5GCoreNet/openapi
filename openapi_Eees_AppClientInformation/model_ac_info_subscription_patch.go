@@ -48,7 +48,7 @@ func NewACInfoSubscriptionPatchWithDefaults() *ACInfoSubscriptionPatch {
 
 // GetAcFltrs returns the AcFltrs field value if set, zero value otherwise.
 func (o *ACInfoSubscriptionPatch) GetAcFltrs() []ACFilters {
-	if o == nil || IsNil(o.AcFltrs) {
+	if o == nil || isNil(o.AcFltrs) {
 		var ret []ACFilters
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *ACInfoSubscriptionPatch) GetAcFltrs() []ACFilters {
 // GetAcFltrsOk returns a tuple with the AcFltrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscriptionPatch) GetAcFltrsOk() ([]ACFilters, bool) {
-	if o == nil || IsNil(o.AcFltrs) {
+	if o == nil || isNil(o.AcFltrs) {
 		return nil, false
 	}
 	return o.AcFltrs, true
@@ -66,7 +66,7 @@ func (o *ACInfoSubscriptionPatch) GetAcFltrsOk() ([]ACFilters, bool) {
 
 // HasAcFltrs returns a boolean if a field has been set.
 func (o *ACInfoSubscriptionPatch) HasAcFltrs() bool {
-	if o != nil && !IsNil(o.AcFltrs) {
+	if o != nil && !isNil(o.AcFltrs) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *ACInfoSubscriptionPatch) SetAcFltrs(v []ACFilters) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *ACInfoSubscriptionPatch) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *ACInfoSubscriptionPatch) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -98,7 +98,7 @@ func (o *ACInfoSubscriptionPatch) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *ACInfoSubscriptionPatch) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *ACInfoSubscriptionPatch) SetExpTime(v time.Time) {
 
 // GetEventReq returns the EventReq field value if set, zero value otherwise.
 func (o *ACInfoSubscriptionPatch) GetEventReq() ReportingInformation {
-	if o == nil || IsNil(o.EventReq) {
+	if o == nil || isNil(o.EventReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *ACInfoSubscriptionPatch) GetEventReq() ReportingInformation {
 // GetEventReqOk returns a tuple with the EventReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscriptionPatch) GetEventReqOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.EventReq) {
+	if o == nil || isNil(o.EventReq) {
 		return nil, false
 	}
 	return o.EventReq, true
@@ -130,7 +130,7 @@ func (o *ACInfoSubscriptionPatch) GetEventReqOk() (*ReportingInformation, bool) 
 
 // HasEventReq returns a boolean if a field has been set.
 func (o *ACInfoSubscriptionPatch) HasEventReq() bool {
-	if o != nil && !IsNil(o.EventReq) {
+	if o != nil && !isNil(o.EventReq) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *ACInfoSubscriptionPatch) SetEventReq(v ReportingInformation) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ACInfoSubscriptionPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *ACInfoSubscriptionPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACInfoSubscriptionPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -162,7 +162,7 @@ func (o *ACInfoSubscriptionPatch) GetNotificationDestinationOk() (*string, bool)
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ACInfoSubscriptionPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -184,16 +184,16 @@ func (o ACInfoSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o ACInfoSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcFltrs) {
+	if !isNil(o.AcFltrs) {
 		toSerialize["acFltrs"] = o.AcFltrs
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !IsNil(o.EventReq) {
+	if !isNil(o.EventReq) {
 		toSerialize["eventReq"] = o.EventReq
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

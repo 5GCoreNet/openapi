@@ -68,7 +68,7 @@ func (o *SharedData) SetSharedDataId(v string) {
 
 // GetSharedImsIfcData returns the SharedImsIfcData field value if set, zero value otherwise.
 func (o *SharedData) GetSharedImsIfcData() Ifcs {
-	if o == nil || IsNil(o.SharedImsIfcData) {
+	if o == nil || isNil(o.SharedImsIfcData) {
 		var ret Ifcs
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SharedData) GetSharedImsIfcData() Ifcs {
 // GetSharedImsIfcDataOk returns a tuple with the SharedImsIfcData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedData) GetSharedImsIfcDataOk() (*Ifcs, bool) {
-	if o == nil || IsNil(o.SharedImsIfcData) {
+	if o == nil || isNil(o.SharedImsIfcData) {
 		return nil, false
 	}
 	return o.SharedImsIfcData, true
@@ -86,7 +86,7 @@ func (o *SharedData) GetSharedImsIfcDataOk() (*Ifcs, bool) {
 
 // HasSharedImsIfcData returns a boolean if a field has been set.
 func (o *SharedData) HasSharedImsIfcData() bool {
-	if o != nil && !IsNil(o.SharedImsIfcData) {
+	if o != nil && !isNil(o.SharedImsIfcData) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o SharedData) MarshalJSON() ([]byte, error) {
 func (o SharedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sharedDataId"] = o.SharedDataId
-	if !IsNil(o.SharedImsIfcData) {
+	if !isNil(o.SharedImsIfcData) {
 		toSerialize["sharedImsIfcData"] = o.SharedImsIfcData
 	}
 	return toSerialize, nil

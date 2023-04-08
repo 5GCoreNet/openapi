@@ -42,7 +42,7 @@ func NewBackhaulAddressWithDefaults() *BackhaulAddress {
 
 // GetGnbId returns the GnbId field value if set, zero value otherwise.
 func (o *BackhaulAddress) GetGnbId() string {
-	if o == nil || IsNil(o.GnbId) {
+	if o == nil || isNil(o.GnbId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *BackhaulAddress) GetGnbId() string {
 // GetGnbIdOk returns a tuple with the GnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackhaulAddress) GetGnbIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GnbId) {
+	if o == nil || isNil(o.GnbId) {
 		return nil, false
 	}
 	return o.GnbId, true
@@ -60,7 +60,7 @@ func (o *BackhaulAddress) GetGnbIdOk() (*string, bool) {
 
 // HasGnbId returns a boolean if a field has been set.
 func (o *BackhaulAddress) HasGnbId() bool {
-	if o != nil && !IsNil(o.GnbId) {
+	if o != nil && !isNil(o.GnbId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *BackhaulAddress) SetGnbId(v string) {
 
 // GetTai returns the Tai field value if set, zero value otherwise.
 func (o *BackhaulAddress) GetTai() Tai {
-	if o == nil || IsNil(o.Tai) {
+	if o == nil || isNil(o.Tai) {
 		var ret Tai
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *BackhaulAddress) GetTai() Tai {
 // GetTaiOk returns a tuple with the Tai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackhaulAddress) GetTaiOk() (*Tai, bool) {
-	if o == nil || IsNil(o.Tai) {
+	if o == nil || isNil(o.Tai) {
 		return nil, false
 	}
 	return o.Tai, true
@@ -92,7 +92,7 @@ func (o *BackhaulAddress) GetTaiOk() (*Tai, bool) {
 
 // HasTai returns a boolean if a field has been set.
 func (o *BackhaulAddress) HasTai() bool {
-	if o != nil && !IsNil(o.Tai) {
+	if o != nil && !isNil(o.Tai) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o BackhaulAddress) MarshalJSON() ([]byte, error) {
 
 func (o BackhaulAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GnbId) {
+	if !isNil(o.GnbId) {
 		toSerialize["gnbId"] = o.GnbId
 	}
-	if !IsNil(o.Tai) {
+	if !isNil(o.Tai) {
 		toSerialize["tai"] = o.Tai
 	}
 	return toSerialize, nil

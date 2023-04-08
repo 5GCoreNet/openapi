@@ -42,7 +42,7 @@ func NewNotifyFileReadyAllOfWithDefaults() *NotifyFileReadyAllOf {
 
 // GetFileInfoList returns the FileInfoList field value if set, zero value otherwise.
 func (o *NotifyFileReadyAllOf) GetFileInfoList() []FileInfo {
-	if o == nil || IsNil(o.FileInfoList) {
+	if o == nil || isNil(o.FileInfoList) {
 		var ret []FileInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NotifyFileReadyAllOf) GetFileInfoList() []FileInfo {
 // GetFileInfoListOk returns a tuple with the FileInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFileReadyAllOf) GetFileInfoListOk() ([]FileInfo, bool) {
-	if o == nil || IsNil(o.FileInfoList) {
+	if o == nil || isNil(o.FileInfoList) {
 		return nil, false
 	}
 	return o.FileInfoList, true
@@ -60,7 +60,7 @@ func (o *NotifyFileReadyAllOf) GetFileInfoListOk() ([]FileInfo, bool) {
 
 // HasFileInfoList returns a boolean if a field has been set.
 func (o *NotifyFileReadyAllOf) HasFileInfoList() bool {
-	if o != nil && !IsNil(o.FileInfoList) {
+	if o != nil && !isNil(o.FileInfoList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NotifyFileReadyAllOf) SetFileInfoList(v []FileInfo) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyFileReadyAllOf) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NotifyFileReadyAllOf) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFileReadyAllOf) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -92,7 +92,7 @@ func (o *NotifyFileReadyAllOf) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyFileReadyAllOf) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o NotifyFileReadyAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NotifyFileReadyAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.FileInfoList) {
+	if !isNil(o.FileInfoList) {
 		toSerialize["fileInfoList"] = o.FileInfoList
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil

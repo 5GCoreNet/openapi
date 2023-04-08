@@ -13,7 +13,7 @@ package openapi_Nnrf_NFDiscovery
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -1021,403 +1021,403 @@ func (a *NFInstancesStoreApiService) SearchNFInstancesExecute(r ApiSearchNFInsta
 		return localVarReturnValue, nil, reportError("requesterNfType is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "target-nf-type", r.targetNfType, "")
-	parameterAddToHeaderOrQuery(localVarQueryParams, "requester-nf-type", r.requesterNfType, "")
+	parameterAddToQuery(localVarQueryParams, "target-nf-type", r.targetNfType, "")
+	parameterAddToQuery(localVarQueryParams, "requester-nf-type", r.requesterNfType, "")
 	if r.preferredCollocatedNfTypes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-collocated-nf-types", r.preferredCollocatedNfTypes, "csv")
+		parameterAddToQuery(localVarQueryParams, "preferred-collocated-nf-types", r.preferredCollocatedNfTypes, "csv")
 	}
 	if r.requesterNfInstanceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-nf-instance-id", r.requesterNfInstanceId, "")
+		parameterAddToQuery(localVarQueryParams, "requester-nf-instance-id", r.requesterNfInstanceId, "")
 	}
 	if r.serviceNames != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "service-names", r.serviceNames, "csv")
+		parameterAddToQuery(localVarQueryParams, "service-names", r.serviceNames, "csv")
 	}
 	if r.requesterNfInstanceFqdn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-nf-instance-fqdn", r.requesterNfInstanceFqdn, "")
+		parameterAddToQuery(localVarQueryParams, "requester-nf-instance-fqdn", r.requesterNfInstanceFqdn, "")
 	}
 	if r.targetPlmnList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-plmn-list", r.targetPlmnList, "csv")
+		parameterAddToQuery(localVarQueryParams, "target-plmn-list", r.targetPlmnList, "csv")
 	}
 	if r.requesterPlmnList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-plmn-list", r.requesterPlmnList, "csv")
+		parameterAddToQuery(localVarQueryParams, "requester-plmn-list", r.requesterPlmnList, "csv")
 	}
 	if r.targetNfInstanceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-nf-instance-id", r.targetNfInstanceId, "")
+		parameterAddToQuery(localVarQueryParams, "target-nf-instance-id", r.targetNfInstanceId, "")
 	}
 	if r.targetNfFqdn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-nf-fqdn", r.targetNfFqdn, "")
+		parameterAddToQuery(localVarQueryParams, "target-nf-fqdn", r.targetNfFqdn, "")
 	}
 	if r.hnrfUri != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "hnrf-uri", r.hnrfUri, "")
+		parameterAddToQuery(localVarQueryParams, "hnrf-uri", r.hnrfUri, "")
 	}
 	if r.snssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.requesterSnssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-snssais", r.requesterSnssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "requester-snssais", r.requesterSnssais, "csv")
 	}
 	if r.plmnSpecificSnssaiList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-specific-snssai-list", r.plmnSpecificSnssaiList, "csv")
+		parameterAddToQuery(localVarQueryParams, "plmn-specific-snssai-list", r.plmnSpecificSnssaiList, "csv")
 	}
 	if r.requesterPlmnSpecificSnssaiList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-plmn-specific-snssai-list", r.requesterPlmnSpecificSnssaiList, "csv")
+		parameterAddToQuery(localVarQueryParams, "requester-plmn-specific-snssai-list", r.requesterPlmnSpecificSnssaiList, "csv")
 	}
 	if r.dnn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.ipv4Index != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv4-index", r.ipv4Index, "")
+		parameterAddToQuery(localVarQueryParams, "ipv4-index", r.ipv4Index, "")
 	}
 	if r.ipv6Index != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv6-index", r.ipv6Index, "")
+		parameterAddToQuery(localVarQueryParams, "ipv6-index", r.ipv6Index, "")
 	}
 	if r.nsiList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nsi-list", r.nsiList, "csv")
+		parameterAddToQuery(localVarQueryParams, "nsi-list", r.nsiList, "csv")
 	}
 	if r.smfServingArea != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "smf-serving-area", r.smfServingArea, "")
+		parameterAddToQuery(localVarQueryParams, "smf-serving-area", r.smfServingArea, "")
 	}
 	if r.mbsmfServingArea != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "mbsmf-serving-area", r.mbsmfServingArea, "")
+		parameterAddToQuery(localVarQueryParams, "mbsmf-serving-area", r.mbsmfServingArea, "")
 	}
 	if r.tai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tai", r.tai, "")
+		parameterAddToQuery(localVarQueryParams, "tai", r.tai, "")
 	}
 	if r.amfRegionId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "amf-region-id", r.amfRegionId, "")
+		parameterAddToQuery(localVarQueryParams, "amf-region-id", r.amfRegionId, "")
 	}
 	if r.amfSetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "amf-set-id", r.amfSetId, "")
+		parameterAddToQuery(localVarQueryParams, "amf-set-id", r.amfSetId, "")
 	}
 	if r.guami != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "guami", r.guami, "")
+		parameterAddToQuery(localVarQueryParams, "guami", r.guami, "")
 	}
 	if r.supi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supi", r.supi, "")
+		parameterAddToQuery(localVarQueryParams, "supi", r.supi, "")
 	}
 	if r.ueIpv4Address != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-ipv4-address", r.ueIpv4Address, "")
+		parameterAddToQuery(localVarQueryParams, "ue-ipv4-address", r.ueIpv4Address, "")
 	}
 	if r.ipDomain != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
+		parameterAddToQuery(localVarQueryParams, "ip-domain", r.ipDomain, "")
 	}
 	if r.ueIpv6Prefix != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ue-ipv6-prefix", r.ueIpv6Prefix, "")
+		parameterAddToQuery(localVarQueryParams, "ue-ipv6-prefix", r.ueIpv6Prefix, "")
 	}
 	if r.pgwInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pgw-ind", r.pgwInd, "")
+		parameterAddToQuery(localVarQueryParams, "pgw-ind", r.pgwInd, "")
 	}
 	if r.preferredPgwInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-pgw-ind", r.preferredPgwInd, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-pgw-ind", r.preferredPgwInd, "")
 	}
 	if r.pgw != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pgw", r.pgw, "")
+		parameterAddToQuery(localVarQueryParams, "pgw", r.pgw, "")
 	}
 	if r.pgwIp != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pgw-ip", r.pgwIp, "")
+		parameterAddToQuery(localVarQueryParams, "pgw-ip", r.pgwIp, "")
 	}
 	if r.gpsi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gpsi", r.gpsi, "")
+		parameterAddToQuery(localVarQueryParams, "gpsi", r.gpsi, "")
 	}
 	if r.externalGroupIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "external-group-identity", r.externalGroupIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "external-group-identity", r.externalGroupIdentity, "")
 	}
 	if r.internalGroupIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-identity", r.internalGroupIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "internal-group-identity", r.internalGroupIdentity, "")
 	}
 	if r.pfdData != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pfd-data", r.pfdData, "")
+		parameterAddToQuery(localVarQueryParams, "pfd-data", r.pfdData, "")
 	}
 	if r.dataSet != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data-set", r.dataSet, "")
+		parameterAddToQuery(localVarQueryParams, "data-set", r.dataSet, "")
 	}
 	if r.routingIndicator != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "routing-indicator", r.routingIndicator, "")
+		parameterAddToQuery(localVarQueryParams, "routing-indicator", r.routingIndicator, "")
 	}
 	if r.groupIdList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group-id-list", r.groupIdList, "csv")
+		parameterAddToQuery(localVarQueryParams, "group-id-list", r.groupIdList, "csv")
 	}
 	if r.dnaiList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnai-list", r.dnaiList, "csv")
+		parameterAddToQuery(localVarQueryParams, "dnai-list", r.dnaiList, "csv")
 	}
 	if r.pduSessionTypes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pdu-session-types", r.pduSessionTypes, "csv")
+		parameterAddToQuery(localVarQueryParams, "pdu-session-types", r.pduSessionTypes, "csv")
 	}
 	if r.eventIdList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "event-id-list", r.eventIdList, "csv")
+		parameterAddToQuery(localVarQueryParams, "event-id-list", r.eventIdList, "csv")
 	}
 	if r.nwdafEventList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nwdaf-event-list", r.nwdafEventList, "csv")
+		parameterAddToQuery(localVarQueryParams, "nwdaf-event-list", r.nwdafEventList, "csv")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.upfIwkEpsInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "upf-iwk-eps-ind", r.upfIwkEpsInd, "")
+		parameterAddToQuery(localVarQueryParams, "upf-iwk-eps-ind", r.upfIwkEpsInd, "")
 	}
 	if r.chfSupportedPlmn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "chf-supported-plmn", r.chfSupportedPlmn, "")
+		parameterAddToQuery(localVarQueryParams, "chf-supported-plmn", r.chfSupportedPlmn, "")
 	}
 	if r.preferredLocality != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-locality", r.preferredLocality, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-locality", r.preferredLocality, "")
 	}
 	if r.extPreferredLocality != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ext-preferred-locality", r.extPreferredLocality, "")
+		parameterAddToQuery(localVarQueryParams, "ext-preferred-locality", r.extPreferredLocality, "")
 	}
 	if r.accessType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "access-type", r.accessType, "")
+		parameterAddToQuery(localVarQueryParams, "access-type", r.accessType, "")
 	}
 	if r.limit != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "")
+		parameterAddToQuery(localVarQueryParams, "limit", r.limit, "")
 	}
 	if r.requiredFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "required-features", r.requiredFeatures, "csv")
+		parameterAddToQuery(localVarQueryParams, "required-features", r.requiredFeatures, "csv")
 	}
 	if r.complexQuery != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "complex-query", r.complexQuery, "")
+		parameterAddToQuery(localVarQueryParams, "complex-query", r.complexQuery, "")
 	}
 	if r.maxPayloadSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "max-payload-size", r.maxPayloadSize, "")
+		parameterAddToQuery(localVarQueryParams, "max-payload-size", r.maxPayloadSize, "")
 	}
 	if r.maxPayloadSizeExt != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "max-payload-size-ext", r.maxPayloadSizeExt, "")
+		parameterAddToQuery(localVarQueryParams, "max-payload-size-ext", r.maxPayloadSizeExt, "")
 	}
 	if r.atsssCapability != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "atsss-capability", r.atsssCapability, "")
+		parameterAddToQuery(localVarQueryParams, "atsss-capability", r.atsssCapability, "")
 	}
 	if r.upfUeIpAddrInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "upf-ue-ip-addr-ind", r.upfUeIpAddrInd, "")
+		parameterAddToQuery(localVarQueryParams, "upf-ue-ip-addr-ind", r.upfUeIpAddrInd, "")
 	}
 	if r.clientType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "client-type", r.clientType, "")
+		parameterAddToQuery(localVarQueryParams, "client-type", r.clientType, "")
 	}
 	if r.lmfId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "lmf-id", r.lmfId, "")
+		parameterAddToQuery(localVarQueryParams, "lmf-id", r.lmfId, "")
 	}
 	if r.anNodeType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "an-node-type", r.anNodeType, "")
+		parameterAddToQuery(localVarQueryParams, "an-node-type", r.anNodeType, "")
 	}
 	if r.ratType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rat-type", r.ratType, "")
+		parameterAddToQuery(localVarQueryParams, "rat-type", r.ratType, "")
 	}
 	if r.preferredTai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-tai", r.preferredTai, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-tai", r.preferredTai, "")
 	}
 	if r.preferredNfInstances != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-nf-instances", r.preferredNfInstances, "csv")
+		parameterAddToQuery(localVarQueryParams, "preferred-nf-instances", r.preferredNfInstances, "csv")
 	}
 	if r.targetSnpn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-snpn", r.targetSnpn, "")
+		parameterAddToQuery(localVarQueryParams, "target-snpn", r.targetSnpn, "")
 	}
 	if r.requesterSnpnList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-snpn-list", r.requesterSnpnList, "csv")
+		parameterAddToQuery(localVarQueryParams, "requester-snpn-list", r.requesterSnpnList, "csv")
 	}
 	if r.afEeData != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "af-ee-data", r.afEeData, "")
+		parameterAddToQuery(localVarQueryParams, "af-ee-data", r.afEeData, "")
 	}
 	if r.wAgfInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "w-agf-info", r.wAgfInfo, "")
+		parameterAddToQuery(localVarQueryParams, "w-agf-info", r.wAgfInfo, "")
 	}
 	if r.tngfInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tngf-info", r.tngfInfo, "")
+		parameterAddToQuery(localVarQueryParams, "tngf-info", r.tngfInfo, "")
 	}
 	if r.twifInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "twif-info", r.twifInfo, "")
+		parameterAddToQuery(localVarQueryParams, "twif-info", r.twifInfo, "")
 	}
 	if r.targetNfSetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-nf-set-id", r.targetNfSetId, "")
+		parameterAddToQuery(localVarQueryParams, "target-nf-set-id", r.targetNfSetId, "")
 	}
 	if r.targetNfServiceSetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-nf-service-set-id", r.targetNfServiceSetId, "")
+		parameterAddToQuery(localVarQueryParams, "target-nf-service-set-id", r.targetNfServiceSetId, "")
 	}
 	if r.nefId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nef-id", r.nefId, "")
+		parameterAddToQuery(localVarQueryParams, "nef-id", r.nefId, "")
 	}
 	if r.notificationType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "notification-type", r.notificationType, "")
+		parameterAddToQuery(localVarQueryParams, "notification-type", r.notificationType, "")
 	}
 	if r.n1MsgClass != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "n1-msg-class", r.n1MsgClass, "")
+		parameterAddToQuery(localVarQueryParams, "n1-msg-class", r.n1MsgClass, "")
 	}
 	if r.n2InfoClass != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "n2-info-class", r.n2InfoClass, "")
+		parameterAddToQuery(localVarQueryParams, "n2-info-class", r.n2InfoClass, "")
 	}
 	if r.servingScope != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serving-scope", r.servingScope, "csv")
+		parameterAddToQuery(localVarQueryParams, "serving-scope", r.servingScope, "csv")
 	}
 	if r.imsi != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "imsi", r.imsi, "")
+		parameterAddToQuery(localVarQueryParams, "imsi", r.imsi, "")
 	}
 	if r.imsPrivateIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ims-private-identity", r.imsPrivateIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "ims-private-identity", r.imsPrivateIdentity, "")
 	}
 	if r.imsPublicIdentity != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ims-public-identity", r.imsPublicIdentity, "")
+		parameterAddToQuery(localVarQueryParams, "ims-public-identity", r.imsPublicIdentity, "")
 	}
 	if r.msisdn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "msisdn", r.msisdn, "")
+		parameterAddToQuery(localVarQueryParams, "msisdn", r.msisdn, "")
 	}
 	if r.preferredApiVersions != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-api-versions", r.preferredApiVersions, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-api-versions", r.preferredApiVersions, "")
 	}
 	if r.v2xSupportInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "v2x-support-ind", r.v2xSupportInd, "")
+		parameterAddToQuery(localVarQueryParams, "v2x-support-ind", r.v2xSupportInd, "")
 	}
 	if r.redundantGtpu != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "redundant-gtpu", r.redundantGtpu, "")
+		parameterAddToQuery(localVarQueryParams, "redundant-gtpu", r.redundantGtpu, "")
 	}
 	if r.redundantTransport != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "redundant-transport", r.redundantTransport, "")
+		parameterAddToQuery(localVarQueryParams, "redundant-transport", r.redundantTransport, "")
 	}
 	if r.ipups != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipups", r.ipups, "")
+		parameterAddToQuery(localVarQueryParams, "ipups", r.ipups, "")
 	}
 	if r.sxaInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sxa-ind", r.sxaInd, "")
+		parameterAddToQuery(localVarQueryParams, "sxa-ind", r.sxaInd, "")
 	}
 	if r.scpDomainList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "scp-domain-list", r.scpDomainList, "csv")
+		parameterAddToQuery(localVarQueryParams, "scp-domain-list", r.scpDomainList, "csv")
 	}
 	if r.addressDomain != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "address-domain", r.addressDomain, "")
+		parameterAddToQuery(localVarQueryParams, "address-domain", r.addressDomain, "")
 	}
 	if r.ipv4Addr != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv4-addr", r.ipv4Addr, "")
+		parameterAddToQuery(localVarQueryParams, "ipv4-addr", r.ipv4Addr, "")
 	}
 	if r.ipv6Prefix != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ipv6-prefix", r.ipv6Prefix, "")
+		parameterAddToQuery(localVarQueryParams, "ipv6-prefix", r.ipv6Prefix, "")
 	}
 	if r.servedNfSetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "served-nf-set-id", r.servedNfSetId, "")
+		parameterAddToQuery(localVarQueryParams, "served-nf-set-id", r.servedNfSetId, "")
 	}
 	if r.remotePlmnId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "remote-plmn-id", r.remotePlmnId, "")
+		parameterAddToQuery(localVarQueryParams, "remote-plmn-id", r.remotePlmnId, "")
 	}
 	if r.remoteSnpnId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "remote-snpn-id", r.remoteSnpnId, "")
+		parameterAddToQuery(localVarQueryParams, "remote-snpn-id", r.remoteSnpnId, "")
 	}
 	if r.dataForwarding != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data-forwarding", r.dataForwarding, "")
+		parameterAddToQuery(localVarQueryParams, "data-forwarding", r.dataForwarding, "")
 	}
 	if r.preferredFullPlmn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-full-plmn", r.preferredFullPlmn, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-full-plmn", r.preferredFullPlmn, "")
 	}
 	if r.requesterFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "requester-features", r.requesterFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "requester-features", r.requesterFeatures, "")
 	}
 	if r.realmId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "realm-id", r.realmId, "")
+		parameterAddToQuery(localVarQueryParams, "realm-id", r.realmId, "")
 	}
 	if r.storageId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "storage-id", r.storageId, "")
+		parameterAddToQuery(localVarQueryParams, "storage-id", r.storageId, "")
 	}
 	if r.vsmfSupportInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "vsmf-support-ind", r.vsmfSupportInd, "")
+		parameterAddToQuery(localVarQueryParams, "vsmf-support-ind", r.vsmfSupportInd, "")
 	}
 	if r.ismfSupportInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ismf-support-ind", r.ismfSupportInd, "")
+		parameterAddToQuery(localVarQueryParams, "ismf-support-ind", r.ismfSupportInd, "")
 	}
 	if r.nrfDiscUri != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nrf-disc-uri", r.nrfDiscUri, "")
+		parameterAddToQuery(localVarQueryParams, "nrf-disc-uri", r.nrfDiscUri, "")
 	}
 	if r.preferredVendorSpecificFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-vendor-specific-features", r.preferredVendorSpecificFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-vendor-specific-features", r.preferredVendorSpecificFeatures, "")
 	}
 	if r.preferredVendorSpecificNfFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-vendor-specific-nf-features", r.preferredVendorSpecificNfFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-vendor-specific-nf-features", r.preferredVendorSpecificNfFeatures, "")
 	}
 	if r.requiredPfcpFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "required-pfcp-features", r.requiredPfcpFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "required-pfcp-features", r.requiredPfcpFeatures, "")
 	}
 	if r.homePubKeyId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "home-pub-key-id", r.homePubKeyId, "")
+		parameterAddToQuery(localVarQueryParams, "home-pub-key-id", r.homePubKeyId, "")
 	}
 	if r.proseSupportInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "prose-support-ind", r.proseSupportInd, "")
+		parameterAddToQuery(localVarQueryParams, "prose-support-ind", r.proseSupportInd, "")
 	}
 	if r.analyticsAggregationInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "analytics-aggregation-ind", r.analyticsAggregationInd, "")
+		parameterAddToQuery(localVarQueryParams, "analytics-aggregation-ind", r.analyticsAggregationInd, "")
 	}
 	if r.servingNfSetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serving-nf-set-id", r.servingNfSetId, "")
+		parameterAddToQuery(localVarQueryParams, "serving-nf-set-id", r.servingNfSetId, "")
 	}
 	if r.servingNfType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "serving-nf-type", r.servingNfType, "")
+		parameterAddToQuery(localVarQueryParams, "serving-nf-type", r.servingNfType, "")
 	}
 	if r.mlAnalyticsInfoList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ml-analytics-info-list", r.mlAnalyticsInfoList, "csv")
+		parameterAddToQuery(localVarQueryParams, "ml-analytics-info-list", r.mlAnalyticsInfoList, "csv")
 	}
 	if r.analyticsMetadataProvInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "analytics-metadata-prov-ind", r.analyticsMetadataProvInd, "")
+		parameterAddToQuery(localVarQueryParams, "analytics-metadata-prov-ind", r.analyticsMetadataProvInd, "")
 	}
 	if r.nsacfCapability != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nsacf-capability", r.nsacfCapability, "")
+		parameterAddToQuery(localVarQueryParams, "nsacf-capability", r.nsacfCapability, "")
 	}
 	if r.mbsSessionIdList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "mbs-session-id-list", r.mbsSessionIdList, "csv")
+		parameterAddToQuery(localVarQueryParams, "mbs-session-id-list", r.mbsSessionIdList, "csv")
 	}
 	if r.areaSessionId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "area-session-id", r.areaSessionId, "")
+		parameterAddToQuery(localVarQueryParams, "area-session-id", r.areaSessionId, "")
 	}
 	if r.gmlcNumber != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gmlc-number", r.gmlcNumber, "")
+		parameterAddToQuery(localVarQueryParams, "gmlc-number", r.gmlcNumber, "")
 	}
 	if r.upfN6Ip != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "upf-n6-ip", r.upfN6Ip, "")
+		parameterAddToQuery(localVarQueryParams, "upf-n6-ip", r.upfN6Ip, "")
 	}
 	if r.taiList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tai-list", r.taiList, "csv")
+		parameterAddToQuery(localVarQueryParams, "tai-list", r.taiList, "csv")
 	}
 	if r.preferencesPrecedence != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferences-precedence", r.preferencesPrecedence, "csv")
+		parameterAddToQuery(localVarQueryParams, "preferences-precedence", r.preferencesPrecedence, "csv")
 	}
 	if r.supportOnboardingCapability != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "support-onboarding-capability", r.supportOnboardingCapability, "")
+		parameterAddToQuery(localVarQueryParams, "support-onboarding-capability", r.supportOnboardingCapability, "")
 	}
 	if r.uasNfFunctionalityInd != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "uas-nf-functionality-ind", r.uasNfFunctionalityInd, "")
+		parameterAddToQuery(localVarQueryParams, "uas-nf-functionality-ind", r.uasNfFunctionalityInd, "")
 	}
 	if r.v2xCapability != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "v2x-capability", r.v2xCapability, "")
+		parameterAddToQuery(localVarQueryParams, "v2x-capability", r.v2xCapability, "")
 	}
 	if r.proseCapability != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "prose-capability", r.proseCapability, "")
+		parameterAddToQuery(localVarQueryParams, "prose-capability", r.proseCapability, "")
 	}
 	if r.sharedDataId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "shared-data-id", r.sharedDataId, "")
+		parameterAddToQuery(localVarQueryParams, "shared-data-id", r.sharedDataId, "")
 	}
 	if r.targetHni != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-hni", r.targetHni, "")
+		parameterAddToQuery(localVarQueryParams, "target-hni", r.targetHni, "")
 	}
 	if r.targetNwResolution != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "target-nw-resolution", r.targetNwResolution, "")
+		parameterAddToQuery(localVarQueryParams, "target-nw-resolution", r.targetNwResolution, "")
 	}
 	if r.excludeNfinstList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "exclude-nfinst-list", r.excludeNfinstList, "csv")
+		parameterAddToQuery(localVarQueryParams, "exclude-nfinst-list", r.excludeNfinstList, "csv")
 	}
 	if r.excludeNfservinstList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "exclude-nfservinst-list", r.excludeNfservinstList, "csv")
+		parameterAddToQuery(localVarQueryParams, "exclude-nfservinst-list", r.excludeNfservinstList, "csv")
 	}
 	if r.excludeNfservicesetList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "exclude-nfserviceset-list", r.excludeNfservicesetList, "csv")
+		parameterAddToQuery(localVarQueryParams, "exclude-nfserviceset-list", r.excludeNfservicesetList, "csv")
 	}
 	if r.excludeNfsetList != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "exclude-nfset-list", r.excludeNfsetList, "csv")
+		parameterAddToQuery(localVarQueryParams, "exclude-nfset-list", r.excludeNfsetList, "csv")
 	}
 	if r.preferredAnalyticsDelays != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-analytics-delays", r.preferredAnalyticsDelays, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-analytics-delays", r.preferredAnalyticsDelays, "")
 	}
 	if r.completeProfile != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "complete-profile", r.completeProfile, "")
+		parameterAddToQuery(localVarQueryParams, "complete-profile", r.completeProfile, "")
 	}
 	if r.n32Purposes != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "n32-purposes", r.n32Purposes, "csv")
+		parameterAddToQuery(localVarQueryParams, "n32-purposes", r.n32Purposes, "csv")
 	}
 	if r.preferredFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-features", r.preferredFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-features", r.preferredFeatures, "")
 	}
 	if r.remotePlmnIdRoaming != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "remote-plmn-id-roaming", r.remotePlmnIdRoaming, "")
+		parameterAddToQuery(localVarQueryParams, "remote-plmn-id-roaming", r.remotePlmnIdRoaming, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1437,10 +1437,10 @@ func (a *NFInstancesStoreApiService) SearchNFInstancesExecute(r ApiSearchNFInsta
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.acceptEncoding != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "Accept-Encoding", r.acceptEncoding, "")
+		parameterAddToQuery(localVarQueryParams, "Accept-Encoding", r.acceptEncoding, "")
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -1452,9 +1452,9 @@ func (a *NFInstancesStoreApiService) SearchNFInstancesExecute(r ApiSearchNFInsta
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

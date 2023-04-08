@@ -120,7 +120,7 @@ func (o *UeACRequestInfo) SetAcuOperationList(v []AcuOperationItem) {
 
 // GetAdditionalAnType returns the AdditionalAnType field value if set, zero value otherwise.
 func (o *UeACRequestInfo) GetAdditionalAnType() AccessType {
-	if o == nil || IsNil(o.AdditionalAnType) {
+	if o == nil || isNil(o.AdditionalAnType) {
 		var ret AccessType
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *UeACRequestInfo) GetAdditionalAnType() AccessType {
 // GetAdditionalAnTypeOk returns a tuple with the AdditionalAnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeACRequestInfo) GetAdditionalAnTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AdditionalAnType) {
+	if o == nil || isNil(o.AdditionalAnType) {
 		return nil, false
 	}
 	return o.AdditionalAnType, true
@@ -138,7 +138,7 @@ func (o *UeACRequestInfo) GetAdditionalAnTypeOk() (*AccessType, bool) {
 
 // HasAdditionalAnType returns a boolean if a field has been set.
 func (o *UeACRequestInfo) HasAdditionalAnType() bool {
-	if o != nil && !IsNil(o.AdditionalAnType) {
+	if o != nil && !isNil(o.AdditionalAnType) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o UeACRequestInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize["supi"] = o.Supi
 	toSerialize["anType"] = o.AnType
 	toSerialize["acuOperationList"] = o.AcuOperationList
-	if !IsNil(o.AdditionalAnType) {
+	if !isNil(o.AdditionalAnType) {
 		toSerialize["additionalAnType"] = o.AdditionalAnType
 	}
 	return toSerialize, nil

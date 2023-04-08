@@ -108,7 +108,7 @@ func (o *ExpectedUeBehaviour) SetReferenceId(v int32) {
 
 // GetStationaryIndication returns the StationaryIndication field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetStationaryIndication() StationaryIndicationRm {
-	if o == nil || IsNil(o.StationaryIndication) {
+	if o == nil || isNil(o.StationaryIndication) {
 		var ret StationaryIndicationRm
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *ExpectedUeBehaviour) GetStationaryIndication() StationaryIndicationRm {
 // GetStationaryIndicationOk returns a tuple with the StationaryIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetStationaryIndicationOk() (*StationaryIndicationRm, bool) {
-	if o == nil || IsNil(o.StationaryIndication) {
+	if o == nil || isNil(o.StationaryIndication) {
 		return nil, false
 	}
 	return o.StationaryIndication, true
@@ -126,7 +126,7 @@ func (o *ExpectedUeBehaviour) GetStationaryIndicationOk() (*StationaryIndication
 
 // HasStationaryIndication returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasStationaryIndication() bool {
-	if o != nil && !IsNil(o.StationaryIndication) {
+	if o != nil && !isNil(o.StationaryIndication) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *ExpectedUeBehaviour) SetStationaryIndication(v StationaryIndicationRm) 
 
 // GetCommunicationDurationTime returns the CommunicationDurationTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExpectedUeBehaviour) GetCommunicationDurationTime() int32 {
-	if o == nil || IsNil(o.CommunicationDurationTime.Get()) {
+	if o == nil || isNil(o.CommunicationDurationTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *ExpectedUeBehaviour) UnsetCommunicationDurationTime() {
 
 // GetScheduledCommunicationType returns the ScheduledCommunicationType field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetScheduledCommunicationType() ScheduledCommunicationTypeRm {
-	if o == nil || IsNil(o.ScheduledCommunicationType) {
+	if o == nil || isNil(o.ScheduledCommunicationType) {
 		var ret ScheduledCommunicationTypeRm
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *ExpectedUeBehaviour) GetScheduledCommunicationType() ScheduledCommunica
 // GetScheduledCommunicationTypeOk returns a tuple with the ScheduledCommunicationType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetScheduledCommunicationTypeOk() (*ScheduledCommunicationTypeRm, bool) {
-	if o == nil || IsNil(o.ScheduledCommunicationType) {
+	if o == nil || isNil(o.ScheduledCommunicationType) {
 		return nil, false
 	}
 	return o.ScheduledCommunicationType, true
@@ -200,7 +200,7 @@ func (o *ExpectedUeBehaviour) GetScheduledCommunicationTypeOk() (*ScheduledCommu
 
 // HasScheduledCommunicationType returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasScheduledCommunicationType() bool {
-	if o != nil && !IsNil(o.ScheduledCommunicationType) {
+	if o != nil && !isNil(o.ScheduledCommunicationType) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *ExpectedUeBehaviour) SetScheduledCommunicationType(v ScheduledCommunica
 
 // GetPeriodicTime returns the PeriodicTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExpectedUeBehaviour) GetPeriodicTime() int32 {
-	if o == nil || IsNil(o.PeriodicTime.Get()) {
+	if o == nil || isNil(o.PeriodicTime.Get()) {
 		var ret int32
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *ExpectedUeBehaviour) UnsetPeriodicTime() {
 
 // GetScheduledCommunicationTime returns the ScheduledCommunicationTime field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetScheduledCommunicationTime() ScheduledCommunicationTimeRm {
-	if o == nil || IsNil(o.ScheduledCommunicationTime) {
+	if o == nil || isNil(o.ScheduledCommunicationTime) {
 		var ret ScheduledCommunicationTimeRm
 		return ret
 	}
@@ -266,7 +266,7 @@ func (o *ExpectedUeBehaviour) GetScheduledCommunicationTime() ScheduledCommunica
 // GetScheduledCommunicationTimeOk returns a tuple with the ScheduledCommunicationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetScheduledCommunicationTimeOk() (*ScheduledCommunicationTimeRm, bool) {
-	if o == nil || IsNil(o.ScheduledCommunicationTime) {
+	if o == nil || isNil(o.ScheduledCommunicationTime) {
 		return nil, false
 	}
 	return o.ScheduledCommunicationTime, true
@@ -274,7 +274,7 @@ func (o *ExpectedUeBehaviour) GetScheduledCommunicationTimeOk() (*ScheduledCommu
 
 // HasScheduledCommunicationTime returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasScheduledCommunicationTime() bool {
-	if o != nil && !IsNil(o.ScheduledCommunicationTime) {
+	if o != nil && !isNil(o.ScheduledCommunicationTime) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *ExpectedUeBehaviour) GetExpectedUmts() []LocationArea {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExpectedUeBehaviour) GetExpectedUmtsOk() ([]LocationArea, bool) {
-	if o == nil || IsNil(o.ExpectedUmts) {
+	if o == nil || isNil(o.ExpectedUmts) {
 		return nil, false
 	}
 	return o.ExpectedUmts, true
@@ -307,7 +307,7 @@ func (o *ExpectedUeBehaviour) GetExpectedUmtsOk() ([]LocationArea, bool) {
 
 // HasExpectedUmts returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasExpectedUmts() bool {
-	if o != nil && IsNil(o.ExpectedUmts) {
+	if o != nil && isNil(o.ExpectedUmts) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *ExpectedUeBehaviour) SetExpectedUmts(v []LocationArea) {
 
 // GetTrafficProfile returns the TrafficProfile field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetTrafficProfile() TrafficProfileRm {
-	if o == nil || IsNil(o.TrafficProfile) {
+	if o == nil || isNil(o.TrafficProfile) {
 		var ret TrafficProfileRm
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *ExpectedUeBehaviour) GetTrafficProfile() TrafficProfileRm {
 // GetTrafficProfileOk returns a tuple with the TrafficProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetTrafficProfileOk() (*TrafficProfileRm, bool) {
-	if o == nil || IsNil(o.TrafficProfile) {
+	if o == nil || isNil(o.TrafficProfile) {
 		return nil, false
 	}
 	return o.TrafficProfile, true
@@ -339,7 +339,7 @@ func (o *ExpectedUeBehaviour) GetTrafficProfileOk() (*TrafficProfileRm, bool) {
 
 // HasTrafficProfile returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasTrafficProfile() bool {
-	if o != nil && !IsNil(o.TrafficProfile) {
+	if o != nil && !isNil(o.TrafficProfile) {
 		return true
 	}
 
@@ -353,7 +353,7 @@ func (o *ExpectedUeBehaviour) SetTrafficProfile(v TrafficProfileRm) {
 
 // GetBatteryIndication returns the BatteryIndication field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetBatteryIndication() BatteryIndicationRm {
-	if o == nil || IsNil(o.BatteryIndication) {
+	if o == nil || isNil(o.BatteryIndication) {
 		var ret BatteryIndicationRm
 		return ret
 	}
@@ -363,7 +363,7 @@ func (o *ExpectedUeBehaviour) GetBatteryIndication() BatteryIndicationRm {
 // GetBatteryIndicationOk returns a tuple with the BatteryIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetBatteryIndicationOk() (*BatteryIndicationRm, bool) {
-	if o == nil || IsNil(o.BatteryIndication) {
+	if o == nil || isNil(o.BatteryIndication) {
 		return nil, false
 	}
 	return o.BatteryIndication, true
@@ -371,7 +371,7 @@ func (o *ExpectedUeBehaviour) GetBatteryIndicationOk() (*BatteryIndicationRm, bo
 
 // HasBatteryIndication returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasBatteryIndication() bool {
-	if o != nil && !IsNil(o.BatteryIndication) {
+	if o != nil && !isNil(o.BatteryIndication) {
 		return true
 	}
 
@@ -385,7 +385,7 @@ func (o *ExpectedUeBehaviour) SetBatteryIndication(v BatteryIndicationRm) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetValidityTime() time.Time {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -395,7 +395,7 @@ func (o *ExpectedUeBehaviour) GetValidityTime() time.Time {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetValidityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -403,7 +403,7 @@ func (o *ExpectedUeBehaviour) GetValidityTimeOk() (*time.Time, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -417,7 +417,7 @@ func (o *ExpectedUeBehaviour) SetValidityTime(v time.Time) {
 
 // GetMtcProviderInformation returns the MtcProviderInformation field value if set, zero value otherwise.
 func (o *ExpectedUeBehaviour) GetMtcProviderInformation() string {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		var ret string
 		return ret
 	}
@@ -427,7 +427,7 @@ func (o *ExpectedUeBehaviour) GetMtcProviderInformation() string {
 // GetMtcProviderInformationOk returns a tuple with the MtcProviderInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExpectedUeBehaviour) GetMtcProviderInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderInformation) {
+	if o == nil || isNil(o.MtcProviderInformation) {
 		return nil, false
 	}
 	return o.MtcProviderInformation, true
@@ -435,7 +435,7 @@ func (o *ExpectedUeBehaviour) GetMtcProviderInformationOk() (*string, bool) {
 
 // HasMtcProviderInformation returns a boolean if a field has been set.
 func (o *ExpectedUeBehaviour) HasMtcProviderInformation() bool {
-	if o != nil && !IsNil(o.MtcProviderInformation) {
+	if o != nil && !isNil(o.MtcProviderInformation) {
 		return true
 	}
 
@@ -459,34 +459,34 @@ func (o ExpectedUeBehaviour) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afInstanceId"] = o.AfInstanceId
 	toSerialize["referenceId"] = o.ReferenceId
-	if !IsNil(o.StationaryIndication) {
+	if !isNil(o.StationaryIndication) {
 		toSerialize["stationaryIndication"] = o.StationaryIndication
 	}
 	if o.CommunicationDurationTime.IsSet() {
 		toSerialize["communicationDurationTime"] = o.CommunicationDurationTime.Get()
 	}
-	if !IsNil(o.ScheduledCommunicationType) {
+	if !isNil(o.ScheduledCommunicationType) {
 		toSerialize["scheduledCommunicationType"] = o.ScheduledCommunicationType
 	}
 	if o.PeriodicTime.IsSet() {
 		toSerialize["periodicTime"] = o.PeriodicTime.Get()
 	}
-	if !IsNil(o.ScheduledCommunicationTime) {
+	if !isNil(o.ScheduledCommunicationTime) {
 		toSerialize["scheduledCommunicationTime"] = o.ScheduledCommunicationTime
 	}
 	if o.ExpectedUmts != nil {
 		toSerialize["expectedUmts"] = o.ExpectedUmts
 	}
-	if !IsNil(o.TrafficProfile) {
+	if !isNil(o.TrafficProfile) {
 		toSerialize["trafficProfile"] = o.TrafficProfile
 	}
-	if !IsNil(o.BatteryIndication) {
+	if !isNil(o.BatteryIndication) {
 		toSerialize["batteryIndication"] = o.BatteryIndication
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.MtcProviderInformation) {
+	if !isNil(o.MtcProviderInformation) {
 		toSerialize["mtcProviderInformation"] = o.MtcProviderInformation
 	}
 	return toSerialize, nil

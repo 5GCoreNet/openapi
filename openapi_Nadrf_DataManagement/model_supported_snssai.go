@@ -71,7 +71,7 @@ func (o *SupportedSnssai) SetSNssai(v ExtSnssai) {
 
 // GetRestrictionInd returns the RestrictionInd field value if set, zero value otherwise.
 func (o *SupportedSnssai) GetRestrictionInd() bool {
-	if o == nil || IsNil(o.RestrictionInd) {
+	if o == nil || isNil(o.RestrictionInd) {
 		var ret bool
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *SupportedSnssai) GetRestrictionInd() bool {
 // GetRestrictionIndOk returns a tuple with the RestrictionInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SupportedSnssai) GetRestrictionIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.RestrictionInd) {
+	if o == nil || isNil(o.RestrictionInd) {
 		return nil, false
 	}
 	return o.RestrictionInd, true
@@ -89,7 +89,7 @@ func (o *SupportedSnssai) GetRestrictionIndOk() (*bool, bool) {
 
 // HasRestrictionInd returns a boolean if a field has been set.
 func (o *SupportedSnssai) HasRestrictionInd() bool {
-	if o != nil && !IsNil(o.RestrictionInd) {
+	if o != nil && !isNil(o.RestrictionInd) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o SupportedSnssai) MarshalJSON() ([]byte, error) {
 func (o SupportedSnssai) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sNssai"] = o.SNssai
-	if !IsNil(o.RestrictionInd) {
+	if !isNil(o.RestrictionInd) {
 		toSerialize["restrictionInd"] = o.RestrictionInd
 	}
 	return toSerialize, nil

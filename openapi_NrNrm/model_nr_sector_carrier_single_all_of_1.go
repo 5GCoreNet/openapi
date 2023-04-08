@@ -41,7 +41,7 @@ func NewNrSectorCarrierSingleAllOf1WithDefaults() *NrSectorCarrierSingleAllOf1 {
 
 // GetCommonBeamformingFunction returns the CommonBeamformingFunction field value if set, zero value otherwise.
 func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunction() CommonBeamformingFunctionSingle {
-	if o == nil || IsNil(o.CommonBeamformingFunction) {
+	if o == nil || isNil(o.CommonBeamformingFunction) {
 		var ret CommonBeamformingFunctionSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunction() CommonBeamf
 // GetCommonBeamformingFunctionOk returns a tuple with the CommonBeamformingFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunctionOk() (*CommonBeamformingFunctionSingle, bool) {
-	if o == nil || IsNil(o.CommonBeamformingFunction) {
+	if o == nil || isNil(o.CommonBeamformingFunction) {
 		return nil, false
 	}
 	return o.CommonBeamformingFunction, true
@@ -59,7 +59,7 @@ func (o *NrSectorCarrierSingleAllOf1) GetCommonBeamformingFunctionOk() (*CommonB
 
 // HasCommonBeamformingFunction returns a boolean if a field has been set.
 func (o *NrSectorCarrierSingleAllOf1) HasCommonBeamformingFunction() bool {
-	if o != nil && !IsNil(o.CommonBeamformingFunction) {
+	if o != nil && !isNil(o.CommonBeamformingFunction) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o NrSectorCarrierSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NrSectorCarrierSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CommonBeamformingFunction) {
+	if !isNil(o.CommonBeamformingFunction) {
 		toSerialize["CommonBeamformingFunction"] = o.CommonBeamformingFunction
 	}
 	return toSerialize, nil

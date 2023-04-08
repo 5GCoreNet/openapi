@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -13,6 +12,7 @@ docs/IndividualUERadioCapabilityProvisioningDocumentApi.md
 docs/InvalidParam.md
 docs/InvalidParam1.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -22,6 +22,7 @@ docs/RacsConfigurationRm.md
 docs/RacsData.md
 docs/RacsDataPatch.md
 docs/RacsFailureCode.md
+docs/RacsFailureCodeAnyOf.md
 docs/RacsFailureReport.md
 docs/Snssai.md
 docs/UERadioCapabilityProvisioningsCollectionApi.md
@@ -33,6 +34,7 @@ model_access_token_req.go
 model_invalid_param.go
 model_invalid_param_1.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
@@ -42,6 +44,7 @@ model_racs_configuration_rm.go
 model_racs_data.go
 model_racs_data_patch.go
 model_racs_failure_code.go
+model_racs_failure_code_any_of.go
 model_racs_failure_report.go
 model_snssai.go
 response.go

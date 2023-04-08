@@ -17,23 +17,37 @@ import (
 
 // UeType Describes the type of UEs
 type UeType struct {
-	string *string
+	UeTypeAnyOf *UeTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into UeTypeAnyOf
+	err = json.Unmarshal(data, &dst.UeTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonUeTypeAnyOf, _ := json.Marshal(dst.UeTypeAnyOf)
+		if string(jsonUeTypeAnyOf) == "{}" { // empty struct
+			dst.UeTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.UeTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.UeTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(UeType)")
@@ -41,8 +55,12 @@ func (dst *UeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UeType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.UeTypeAnyOf != nil {
+		return json.Marshal(&src.UeTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

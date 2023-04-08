@@ -50,7 +50,7 @@ func NewAkmaKeyInfoWithDefaults() *AkmaKeyInfo {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AkmaKeyInfo) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *AkmaKeyInfo) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AkmaKeyInfo) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -68,7 +68,7 @@ func (o *AkmaKeyInfo) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AkmaKeyInfo) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o AkmaKeyInfo) MarshalJSON() ([]byte, error) {
 
 func (o AkmaKeyInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	toSerialize["supi"] = o.Supi

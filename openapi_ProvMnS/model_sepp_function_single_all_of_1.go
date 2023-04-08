@@ -41,7 +41,7 @@ func NewSeppFunctionSingleAllOf1WithDefaults() *SeppFunctionSingleAllOf1 {
 
 // GetEPN32 returns the EPN32 field value if set, zero value otherwise.
 func (o *SeppFunctionSingleAllOf1) GetEPN32() []EPN32Single {
-	if o == nil || IsNil(o.EPN32) {
+	if o == nil || isNil(o.EPN32) {
 		var ret []EPN32Single
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *SeppFunctionSingleAllOf1) GetEPN32() []EPN32Single {
 // GetEPN32Ok returns a tuple with the EPN32 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeppFunctionSingleAllOf1) GetEPN32Ok() ([]EPN32Single, bool) {
-	if o == nil || IsNil(o.EPN32) {
+	if o == nil || isNil(o.EPN32) {
 		return nil, false
 	}
 	return o.EPN32, true
@@ -59,7 +59,7 @@ func (o *SeppFunctionSingleAllOf1) GetEPN32Ok() ([]EPN32Single, bool) {
 
 // HasEPN32 returns a boolean if a field has been set.
 func (o *SeppFunctionSingleAllOf1) HasEPN32() bool {
-	if o != nil && !IsNil(o.EPN32) {
+	if o != nil && !isNil(o.EPN32) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o SeppFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o SeppFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN32) {
+	if !isNil(o.EPN32) {
 		toSerialize["EP_N32"] = o.EPN32
 	}
 	return toSerialize, nil

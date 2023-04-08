@@ -1976,11 +1976,7 @@ components:
       type: object
     Protocol:
       anyOf:
-      - enum:
-        - ETH
-        - IPV4
-        - IPV6
-        type: string
+      - $ref: '#/components/schemas/Protocol_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1991,10 +1987,7 @@ components:
         - IPV6: Indicates IPv6 as defined in IEEE Std 1588 [45] Annex D is supported.
     GmCapable:
       anyOf:
-      - enum:
-        - GPTP
-        - PTP
-        type: string
+      - $ref: '#/components/schemas/GmCapable_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2004,12 +1997,7 @@ components:
         - PTP: PTP grandmaste is supported.
     InstanceType:
       anyOf:
-      - enum:
-        - BOUNDARY_CLOCK
-        - E2E_TRANS_CLOCK
-        - P2P_TRANS_CLOCK
-        - P2P_RELAY_INSTANCE
-        type: string
+      - $ref: '#/components/schemas/InstanceType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2021,9 +2009,7 @@ components:
         - P2P_RELAY_INSTANCE: Indicates PTP Relay instance as defined in IEEE Std 802.1AS.
     SubscribedEvent:
       anyOf:
-      - enum:
-        - AVAILABILITY_FOR_TIME_SYNC_SERVICE
-        type: string
+      - $ref: '#/components/schemas/SubscribedEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2032,17 +2018,7 @@ components:
         - AVAILABILITY_FOR_TIME_SYNC_SERVICE: The UE is availability for time synchronization service.
     AsTimeResource:
       anyOf:
-      - enum:
-        - ATOMIC_CLOCK
-        - GNSS
-        - TERRESTRIAL_RADIO
-        - SERIAL_TIME_CODE
-        - PTP
-        - NTP
-        - HAND_SET
-        - INTERNAL_OSCILLATOR
-        - OTHER
-        type: string
+      - $ref: '#/components/schemas/AsTimeResource_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2159,11 +2135,7 @@ components:
       type: string
     NotificationMethod:
       anyOf:
-      - enum:
-        - PERIODIC
-        - ONE_TIME
-        - ON_EVENT_DETECTION
-        type: string
+      - $ref: '#/components/schemas/NotificationMethod_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -2230,6 +2202,52 @@ components:
           format: date-time
           type: string
       type: object
+    Protocol_anyOf:
+      enum:
+      - ETH
+      - IPV4
+      - IPV6
+      type: string
+      example: null
+    GmCapable_anyOf:
+      enum:
+      - GPTP
+      - PTP
+      type: string
+      example: null
+    InstanceType_anyOf:
+      enum:
+      - BOUNDARY_CLOCK
+      - E2E_TRANS_CLOCK
+      - P2P_TRANS_CLOCK
+      - P2P_RELAY_INSTANCE
+      type: string
+      example: null
+    SubscribedEvent_anyOf:
+      enum:
+      - AVAILABILITY_FOR_TIME_SYNC_SERVICE
+      type: string
+      example: null
+    AsTimeResource_anyOf:
+      enum:
+      - ATOMIC_CLOCK
+      - GNSS
+      - TERRESTRIAL_RADIO
+      - SERIAL_TIME_CODE
+      - PTP
+      - NTP
+      - HAND_SET
+      - INTERNAL_OSCILLATOR
+      - OTHER
+      type: string
+      example: null
+    NotificationMethod_anyOf:
+      enum:
+      - PERIODIC
+      - ONE_TIME
+      - ON_EVENT_DETECTION
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

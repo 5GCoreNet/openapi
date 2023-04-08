@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -15,6 +14,7 @@ docs/AsSessionWithQoSSubscriptionPatch.md
 docs/EthFlowDescription.md
 docs/EthFlowInfo.md
 docs/FlowDirection.md
+docs/FlowDirectionAnyOf.md
 docs/FlowInfo.md
 docs/IndividualASSessionWithRequiredQoSSubscriptionApi.md
 docs/InvalidParam.md
@@ -27,8 +27,11 @@ docs/QosMonitoringInformation.md
 docs/QosMonitoringInformationRm.md
 docs/QosMonitoringReport.md
 docs/RatType.md
+docs/RatTypeAnyOf.md
 docs/ReportingFrequency.md
+docs/ReportingFrequencyAnyOf.md
 docs/RequestedQosMonitoringParameter.md
+docs/RequestedQosMonitoringParameterAnyOf.md
 docs/Snssai.md
 docs/SponsorInformation.md
 docs/TscQosRequirement.md
@@ -37,6 +40,7 @@ docs/TscaiInputContainer.md
 docs/UsageThreshold.md
 docs/UsageThresholdRm.md
 docs/UserPlaneEvent.md
+docs/UserPlaneEventAnyOf.md
 docs/UserPlaneEventReport.md
 docs/UserPlaneNotificationData.md
 docs/WebsockNotifConfig.md
@@ -50,6 +54,7 @@ model_as_session_with_qo_s_subscription_patch.go
 model_eth_flow_description.go
 model_eth_flow_info.go
 model_flow_direction.go
+model_flow_direction_any_of.go
 model_flow_info.go
 model_invalid_param.go
 model_ip_addr.go
@@ -61,8 +66,11 @@ model_qos_monitoring_information.go
 model_qos_monitoring_information_rm.go
 model_qos_monitoring_report.go
 model_rat_type.go
+model_rat_type_any_of.go
 model_reporting_frequency.go
+model_reporting_frequency_any_of.go
 model_requested_qos_monitoring_parameter.go
+model_requested_qos_monitoring_parameter_any_of.go
 model_snssai.go
 model_sponsor_information.go
 model_tsc_qos_requirement.go
@@ -71,6 +79,7 @@ model_tscai_input_container.go
 model_usage_threshold.go
 model_usage_threshold_rm.go
 model_user_plane_event.go
+model_user_plane_event_any_of.go
 model_user_plane_event_report.go
 model_user_plane_notification_data.go
 model_websock_notif_config.go

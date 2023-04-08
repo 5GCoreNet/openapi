@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -87,13 +87,13 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 	localVarFormParams := url.Values{}
 
 	if r.bdtPolicyIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "bdt-policy-ids", r.bdtPolicyIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "bdt-policy-ids", r.bdtPolicyIds, "csv")
 	}
 	if r.internalGroupIds != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
+		parameterAddToQuery(localVarQueryParams, "internal-group-ids", r.internalGroupIds, "csv")
 	}
 	if r.supis != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supis", r.supis, "csv")
+		parameterAddToQuery(localVarQueryParams, "supis", r.supis, "csv")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -122,9 +122,9 @@ func (a *BdtPolicyDataStoreApiService) ReadBdtPolicyDataExecute(r ApiReadBdtPoli
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -45,7 +45,7 @@ func NewFrequencyDomainParaWithDefaults() *FrequencyDomainPara {
 
 // GetRimRSSubcarrierSpacing returns the RimRSSubcarrierSpacing field value if set, zero value otherwise.
 func (o *FrequencyDomainPara) GetRimRSSubcarrierSpacing() int32 {
-	if o == nil || IsNil(o.RimRSSubcarrierSpacing) {
+	if o == nil || isNil(o.RimRSSubcarrierSpacing) {
 		var ret int32
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *FrequencyDomainPara) GetRimRSSubcarrierSpacing() int32 {
 // GetRimRSSubcarrierSpacingOk returns a tuple with the RimRSSubcarrierSpacing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrequencyDomainPara) GetRimRSSubcarrierSpacingOk() (*int32, bool) {
-	if o == nil || IsNil(o.RimRSSubcarrierSpacing) {
+	if o == nil || isNil(o.RimRSSubcarrierSpacing) {
 		return nil, false
 	}
 	return o.RimRSSubcarrierSpacing, true
@@ -63,7 +63,7 @@ func (o *FrequencyDomainPara) GetRimRSSubcarrierSpacingOk() (*int32, bool) {
 
 // HasRimRSSubcarrierSpacing returns a boolean if a field has been set.
 func (o *FrequencyDomainPara) HasRimRSSubcarrierSpacing() bool {
-	if o != nil && !IsNil(o.RimRSSubcarrierSpacing) {
+	if o != nil && !isNil(o.RimRSSubcarrierSpacing) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *FrequencyDomainPara) SetRimRSSubcarrierSpacing(v int32) {
 
 // GetRIMRSBandwidth returns the RIMRSBandwidth field value if set, zero value otherwise.
 func (o *FrequencyDomainPara) GetRIMRSBandwidth() int32 {
-	if o == nil || IsNil(o.RIMRSBandwidth) {
+	if o == nil || isNil(o.RIMRSBandwidth) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *FrequencyDomainPara) GetRIMRSBandwidth() int32 {
 // GetRIMRSBandwidthOk returns a tuple with the RIMRSBandwidth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrequencyDomainPara) GetRIMRSBandwidthOk() (*int32, bool) {
-	if o == nil || IsNil(o.RIMRSBandwidth) {
+	if o == nil || isNil(o.RIMRSBandwidth) {
 		return nil, false
 	}
 	return o.RIMRSBandwidth, true
@@ -95,7 +95,7 @@ func (o *FrequencyDomainPara) GetRIMRSBandwidthOk() (*int32, bool) {
 
 // HasRIMRSBandwidth returns a boolean if a field has been set.
 func (o *FrequencyDomainPara) HasRIMRSBandwidth() bool {
-	if o != nil && !IsNil(o.RIMRSBandwidth) {
+	if o != nil && !isNil(o.RIMRSBandwidth) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *FrequencyDomainPara) SetRIMRSBandwidth(v int32) {
 
 // GetNrofGlobalRIMRSFrequencyCandidates returns the NrofGlobalRIMRSFrequencyCandidates field value if set, zero value otherwise.
 func (o *FrequencyDomainPara) GetNrofGlobalRIMRSFrequencyCandidates() int32 {
-	if o == nil || IsNil(o.NrofGlobalRIMRSFrequencyCandidates) {
+	if o == nil || isNil(o.NrofGlobalRIMRSFrequencyCandidates) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *FrequencyDomainPara) GetNrofGlobalRIMRSFrequencyCandidates() int32 {
 // GetNrofGlobalRIMRSFrequencyCandidatesOk returns a tuple with the NrofGlobalRIMRSFrequencyCandidates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrequencyDomainPara) GetNrofGlobalRIMRSFrequencyCandidatesOk() (*int32, bool) {
-	if o == nil || IsNil(o.NrofGlobalRIMRSFrequencyCandidates) {
+	if o == nil || isNil(o.NrofGlobalRIMRSFrequencyCandidates) {
 		return nil, false
 	}
 	return o.NrofGlobalRIMRSFrequencyCandidates, true
@@ -127,7 +127,7 @@ func (o *FrequencyDomainPara) GetNrofGlobalRIMRSFrequencyCandidatesOk() (*int32,
 
 // HasNrofGlobalRIMRSFrequencyCandidates returns a boolean if a field has been set.
 func (o *FrequencyDomainPara) HasNrofGlobalRIMRSFrequencyCandidates() bool {
-	if o != nil && !IsNil(o.NrofGlobalRIMRSFrequencyCandidates) {
+	if o != nil && !isNil(o.NrofGlobalRIMRSFrequencyCandidates) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *FrequencyDomainPara) SetNrofGlobalRIMRSFrequencyCandidates(v int32) {
 
 // GetRimRSCommonCarrierReferencePoint returns the RimRSCommonCarrierReferencePoint field value if set, zero value otherwise.
 func (o *FrequencyDomainPara) GetRimRSCommonCarrierReferencePoint() int32 {
-	if o == nil || IsNil(o.RimRSCommonCarrierReferencePoint) {
+	if o == nil || isNil(o.RimRSCommonCarrierReferencePoint) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *FrequencyDomainPara) GetRimRSCommonCarrierReferencePoint() int32 {
 // GetRimRSCommonCarrierReferencePointOk returns a tuple with the RimRSCommonCarrierReferencePoint field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrequencyDomainPara) GetRimRSCommonCarrierReferencePointOk() (*int32, bool) {
-	if o == nil || IsNil(o.RimRSCommonCarrierReferencePoint) {
+	if o == nil || isNil(o.RimRSCommonCarrierReferencePoint) {
 		return nil, false
 	}
 	return o.RimRSCommonCarrierReferencePoint, true
@@ -159,7 +159,7 @@ func (o *FrequencyDomainPara) GetRimRSCommonCarrierReferencePointOk() (*int32, b
 
 // HasRimRSCommonCarrierReferencePoint returns a boolean if a field has been set.
 func (o *FrequencyDomainPara) HasRimRSCommonCarrierReferencePoint() bool {
-	if o != nil && !IsNil(o.RimRSCommonCarrierReferencePoint) {
+	if o != nil && !isNil(o.RimRSCommonCarrierReferencePoint) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *FrequencyDomainPara) SetRimRSCommonCarrierReferencePoint(v int32) {
 
 // GetRimRSStartingFrequencyOffsetIdList returns the RimRSStartingFrequencyOffsetIdList field value if set, zero value otherwise.
 func (o *FrequencyDomainPara) GetRimRSStartingFrequencyOffsetIdList() []int32 {
-	if o == nil || IsNil(o.RimRSStartingFrequencyOffsetIdList) {
+	if o == nil || isNil(o.RimRSStartingFrequencyOffsetIdList) {
 		var ret []int32
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *FrequencyDomainPara) GetRimRSStartingFrequencyOffsetIdList() []int32 {
 // GetRimRSStartingFrequencyOffsetIdListOk returns a tuple with the RimRSStartingFrequencyOffsetIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FrequencyDomainPara) GetRimRSStartingFrequencyOffsetIdListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.RimRSStartingFrequencyOffsetIdList) {
+	if o == nil || isNil(o.RimRSStartingFrequencyOffsetIdList) {
 		return nil, false
 	}
 	return o.RimRSStartingFrequencyOffsetIdList, true
@@ -191,7 +191,7 @@ func (o *FrequencyDomainPara) GetRimRSStartingFrequencyOffsetIdListOk() ([]int32
 
 // HasRimRSStartingFrequencyOffsetIdList returns a boolean if a field has been set.
 func (o *FrequencyDomainPara) HasRimRSStartingFrequencyOffsetIdList() bool {
-	if o != nil && !IsNil(o.RimRSStartingFrequencyOffsetIdList) {
+	if o != nil && !isNil(o.RimRSStartingFrequencyOffsetIdList) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o FrequencyDomainPara) MarshalJSON() ([]byte, error) {
 
 func (o FrequencyDomainPara) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RimRSSubcarrierSpacing) {
+	if !isNil(o.RimRSSubcarrierSpacing) {
 		toSerialize["rimRSSubcarrierSpacing"] = o.RimRSSubcarrierSpacing
 	}
-	if !IsNil(o.RIMRSBandwidth) {
+	if !isNil(o.RIMRSBandwidth) {
 		toSerialize["rIMRSBandwidth"] = o.RIMRSBandwidth
 	}
-	if !IsNil(o.NrofGlobalRIMRSFrequencyCandidates) {
+	if !isNil(o.NrofGlobalRIMRSFrequencyCandidates) {
 		toSerialize["nrofGlobalRIMRSFrequencyCandidates"] = o.NrofGlobalRIMRSFrequencyCandidates
 	}
-	if !IsNil(o.RimRSCommonCarrierReferencePoint) {
+	if !isNil(o.RimRSCommonCarrierReferencePoint) {
 		toSerialize["rimRSCommonCarrierReferencePoint"] = o.RimRSCommonCarrierReferencePoint
 	}
-	if !IsNil(o.RimRSStartingFrequencyOffsetIdList) {
+	if !isNil(o.RimRSStartingFrequencyOffsetIdList) {
 		toSerialize["rimRSStartingFrequencyOffsetIdList"] = o.RimRSStartingFrequencyOffsetIdList
 	}
 	return toSerialize, nil

@@ -57,7 +57,7 @@ func NewThresholdLevelWithDefaults() *ThresholdLevel {
 
 // GetCongLevel returns the CongLevel field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetCongLevel() int32 {
-	if o == nil || IsNil(o.CongLevel) {
+	if o == nil || isNil(o.CongLevel) {
 		var ret int32
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *ThresholdLevel) GetCongLevel() int32 {
 // GetCongLevelOk returns a tuple with the CongLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetCongLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.CongLevel) {
+	if o == nil || isNil(o.CongLevel) {
 		return nil, false
 	}
 	return o.CongLevel, true
@@ -75,7 +75,7 @@ func (o *ThresholdLevel) GetCongLevelOk() (*int32, bool) {
 
 // HasCongLevel returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasCongLevel() bool {
-	if o != nil && !IsNil(o.CongLevel) {
+	if o != nil && !isNil(o.CongLevel) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *ThresholdLevel) SetCongLevel(v int32) {
 
 // GetNfLoadLevel returns the NfLoadLevel field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetNfLoadLevel() int32 {
-	if o == nil || IsNil(o.NfLoadLevel) {
+	if o == nil || isNil(o.NfLoadLevel) {
 		var ret int32
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *ThresholdLevel) GetNfLoadLevel() int32 {
 // GetNfLoadLevelOk returns a tuple with the NfLoadLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetNfLoadLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.NfLoadLevel) {
+	if o == nil || isNil(o.NfLoadLevel) {
 		return nil, false
 	}
 	return o.NfLoadLevel, true
@@ -107,7 +107,7 @@ func (o *ThresholdLevel) GetNfLoadLevelOk() (*int32, bool) {
 
 // HasNfLoadLevel returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasNfLoadLevel() bool {
-	if o != nil && !IsNil(o.NfLoadLevel) {
+	if o != nil && !isNil(o.NfLoadLevel) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *ThresholdLevel) SetNfLoadLevel(v int32) {
 
 // GetNfCpuUsage returns the NfCpuUsage field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetNfCpuUsage() int32 {
-	if o == nil || IsNil(o.NfCpuUsage) {
+	if o == nil || isNil(o.NfCpuUsage) {
 		var ret int32
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *ThresholdLevel) GetNfCpuUsage() int32 {
 // GetNfCpuUsageOk returns a tuple with the NfCpuUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetNfCpuUsageOk() (*int32, bool) {
-	if o == nil || IsNil(o.NfCpuUsage) {
+	if o == nil || isNil(o.NfCpuUsage) {
 		return nil, false
 	}
 	return o.NfCpuUsage, true
@@ -139,7 +139,7 @@ func (o *ThresholdLevel) GetNfCpuUsageOk() (*int32, bool) {
 
 // HasNfCpuUsage returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasNfCpuUsage() bool {
-	if o != nil && !IsNil(o.NfCpuUsage) {
+	if o != nil && !isNil(o.NfCpuUsage) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *ThresholdLevel) SetNfCpuUsage(v int32) {
 
 // GetNfMemoryUsage returns the NfMemoryUsage field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetNfMemoryUsage() int32 {
-	if o == nil || IsNil(o.NfMemoryUsage) {
+	if o == nil || isNil(o.NfMemoryUsage) {
 		var ret int32
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *ThresholdLevel) GetNfMemoryUsage() int32 {
 // GetNfMemoryUsageOk returns a tuple with the NfMemoryUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetNfMemoryUsageOk() (*int32, bool) {
-	if o == nil || IsNil(o.NfMemoryUsage) {
+	if o == nil || isNil(o.NfMemoryUsage) {
 		return nil, false
 	}
 	return o.NfMemoryUsage, true
@@ -171,7 +171,7 @@ func (o *ThresholdLevel) GetNfMemoryUsageOk() (*int32, bool) {
 
 // HasNfMemoryUsage returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasNfMemoryUsage() bool {
-	if o != nil && !IsNil(o.NfMemoryUsage) {
+	if o != nil && !isNil(o.NfMemoryUsage) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *ThresholdLevel) SetNfMemoryUsage(v int32) {
 
 // GetNfStorageUsage returns the NfStorageUsage field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetNfStorageUsage() int32 {
-	if o == nil || IsNil(o.NfStorageUsage) {
+	if o == nil || isNil(o.NfStorageUsage) {
 		var ret int32
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *ThresholdLevel) GetNfStorageUsage() int32 {
 // GetNfStorageUsageOk returns a tuple with the NfStorageUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetNfStorageUsageOk() (*int32, bool) {
-	if o == nil || IsNil(o.NfStorageUsage) {
+	if o == nil || isNil(o.NfStorageUsage) {
 		return nil, false
 	}
 	return o.NfStorageUsage, true
@@ -203,7 +203,7 @@ func (o *ThresholdLevel) GetNfStorageUsageOk() (*int32, bool) {
 
 // HasNfStorageUsage returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasNfStorageUsage() bool {
-	if o != nil && !IsNil(o.NfStorageUsage) {
+	if o != nil && !isNil(o.NfStorageUsage) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *ThresholdLevel) SetNfStorageUsage(v int32) {
 
 // GetAvgTrafficRate returns the AvgTrafficRate field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetAvgTrafficRate() string {
-	if o == nil || IsNil(o.AvgTrafficRate) {
+	if o == nil || isNil(o.AvgTrafficRate) {
 		var ret string
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *ThresholdLevel) GetAvgTrafficRate() string {
 // GetAvgTrafficRateOk returns a tuple with the AvgTrafficRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetAvgTrafficRateOk() (*string, bool) {
-	if o == nil || IsNil(o.AvgTrafficRate) {
+	if o == nil || isNil(o.AvgTrafficRate) {
 		return nil, false
 	}
 	return o.AvgTrafficRate, true
@@ -235,7 +235,7 @@ func (o *ThresholdLevel) GetAvgTrafficRateOk() (*string, bool) {
 
 // HasAvgTrafficRate returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasAvgTrafficRate() bool {
-	if o != nil && !IsNil(o.AvgTrafficRate) {
+	if o != nil && !isNil(o.AvgTrafficRate) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *ThresholdLevel) SetAvgTrafficRate(v string) {
 
 // GetMaxTrafficRate returns the MaxTrafficRate field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetMaxTrafficRate() string {
-	if o == nil || IsNil(o.MaxTrafficRate) {
+	if o == nil || isNil(o.MaxTrafficRate) {
 		var ret string
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *ThresholdLevel) GetMaxTrafficRate() string {
 // GetMaxTrafficRateOk returns a tuple with the MaxTrafficRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetMaxTrafficRateOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxTrafficRate) {
+	if o == nil || isNil(o.MaxTrafficRate) {
 		return nil, false
 	}
 	return o.MaxTrafficRate, true
@@ -267,7 +267,7 @@ func (o *ThresholdLevel) GetMaxTrafficRateOk() (*string, bool) {
 
 // HasMaxTrafficRate returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasMaxTrafficRate() bool {
-	if o != nil && !IsNil(o.MaxTrafficRate) {
+	if o != nil && !isNil(o.MaxTrafficRate) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *ThresholdLevel) SetMaxTrafficRate(v string) {
 
 // GetAvgPacketDelay returns the AvgPacketDelay field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetAvgPacketDelay() int32 {
-	if o == nil || IsNil(o.AvgPacketDelay) {
+	if o == nil || isNil(o.AvgPacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *ThresholdLevel) GetAvgPacketDelay() int32 {
 // GetAvgPacketDelayOk returns a tuple with the AvgPacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetAvgPacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvgPacketDelay) {
+	if o == nil || isNil(o.AvgPacketDelay) {
 		return nil, false
 	}
 	return o.AvgPacketDelay, true
@@ -299,7 +299,7 @@ func (o *ThresholdLevel) GetAvgPacketDelayOk() (*int32, bool) {
 
 // HasAvgPacketDelay returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasAvgPacketDelay() bool {
-	if o != nil && !IsNil(o.AvgPacketDelay) {
+	if o != nil && !isNil(o.AvgPacketDelay) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *ThresholdLevel) SetAvgPacketDelay(v int32) {
 
 // GetMaxPacketDelay returns the MaxPacketDelay field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetMaxPacketDelay() int32 {
-	if o == nil || IsNil(o.MaxPacketDelay) {
+	if o == nil || isNil(o.MaxPacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *ThresholdLevel) GetMaxPacketDelay() int32 {
 // GetMaxPacketDelayOk returns a tuple with the MaxPacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetMaxPacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxPacketDelay) {
+	if o == nil || isNil(o.MaxPacketDelay) {
 		return nil, false
 	}
 	return o.MaxPacketDelay, true
@@ -331,7 +331,7 @@ func (o *ThresholdLevel) GetMaxPacketDelayOk() (*int32, bool) {
 
 // HasMaxPacketDelay returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasMaxPacketDelay() bool {
-	if o != nil && !IsNil(o.MaxPacketDelay) {
+	if o != nil && !isNil(o.MaxPacketDelay) {
 		return true
 	}
 
@@ -345,7 +345,7 @@ func (o *ThresholdLevel) SetMaxPacketDelay(v int32) {
 
 // GetAvgPacketLossRate returns the AvgPacketLossRate field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetAvgPacketLossRate() int32 {
-	if o == nil || IsNil(o.AvgPacketLossRate) {
+	if o == nil || isNil(o.AvgPacketLossRate) {
 		var ret int32
 		return ret
 	}
@@ -355,7 +355,7 @@ func (o *ThresholdLevel) GetAvgPacketLossRate() int32 {
 // GetAvgPacketLossRateOk returns a tuple with the AvgPacketLossRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetAvgPacketLossRateOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvgPacketLossRate) {
+	if o == nil || isNil(o.AvgPacketLossRate) {
 		return nil, false
 	}
 	return o.AvgPacketLossRate, true
@@ -363,7 +363,7 @@ func (o *ThresholdLevel) GetAvgPacketLossRateOk() (*int32, bool) {
 
 // HasAvgPacketLossRate returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasAvgPacketLossRate() bool {
-	if o != nil && !IsNil(o.AvgPacketLossRate) {
+	if o != nil && !isNil(o.AvgPacketLossRate) {
 		return true
 	}
 
@@ -377,7 +377,7 @@ func (o *ThresholdLevel) SetAvgPacketLossRate(v int32) {
 
 // GetSvcExpLevel returns the SvcExpLevel field value if set, zero value otherwise.
 func (o *ThresholdLevel) GetSvcExpLevel() float32 {
-	if o == nil || IsNil(o.SvcExpLevel) {
+	if o == nil || isNil(o.SvcExpLevel) {
 		var ret float32
 		return ret
 	}
@@ -387,7 +387,7 @@ func (o *ThresholdLevel) GetSvcExpLevel() float32 {
 // GetSvcExpLevelOk returns a tuple with the SvcExpLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdLevel) GetSvcExpLevelOk() (*float32, bool) {
-	if o == nil || IsNil(o.SvcExpLevel) {
+	if o == nil || isNil(o.SvcExpLevel) {
 		return nil, false
 	}
 	return o.SvcExpLevel, true
@@ -395,7 +395,7 @@ func (o *ThresholdLevel) GetSvcExpLevelOk() (*float32, bool) {
 
 // HasSvcExpLevel returns a boolean if a field has been set.
 func (o *ThresholdLevel) HasSvcExpLevel() bool {
-	if o != nil && !IsNil(o.SvcExpLevel) {
+	if o != nil && !isNil(o.SvcExpLevel) {
 		return true
 	}
 
@@ -417,37 +417,37 @@ func (o ThresholdLevel) MarshalJSON() ([]byte, error) {
 
 func (o ThresholdLevel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CongLevel) {
+	if !isNil(o.CongLevel) {
 		toSerialize["congLevel"] = o.CongLevel
 	}
-	if !IsNil(o.NfLoadLevel) {
+	if !isNil(o.NfLoadLevel) {
 		toSerialize["nfLoadLevel"] = o.NfLoadLevel
 	}
-	if !IsNil(o.NfCpuUsage) {
+	if !isNil(o.NfCpuUsage) {
 		toSerialize["nfCpuUsage"] = o.NfCpuUsage
 	}
-	if !IsNil(o.NfMemoryUsage) {
+	if !isNil(o.NfMemoryUsage) {
 		toSerialize["nfMemoryUsage"] = o.NfMemoryUsage
 	}
-	if !IsNil(o.NfStorageUsage) {
+	if !isNil(o.NfStorageUsage) {
 		toSerialize["nfStorageUsage"] = o.NfStorageUsage
 	}
-	if !IsNil(o.AvgTrafficRate) {
+	if !isNil(o.AvgTrafficRate) {
 		toSerialize["avgTrafficRate"] = o.AvgTrafficRate
 	}
-	if !IsNil(o.MaxTrafficRate) {
+	if !isNil(o.MaxTrafficRate) {
 		toSerialize["maxTrafficRate"] = o.MaxTrafficRate
 	}
-	if !IsNil(o.AvgPacketDelay) {
+	if !isNil(o.AvgPacketDelay) {
 		toSerialize["avgPacketDelay"] = o.AvgPacketDelay
 	}
-	if !IsNil(o.MaxPacketDelay) {
+	if !isNil(o.MaxPacketDelay) {
 		toSerialize["maxPacketDelay"] = o.MaxPacketDelay
 	}
-	if !IsNil(o.AvgPacketLossRate) {
+	if !isNil(o.AvgPacketLossRate) {
 		toSerialize["avgPacketLossRate"] = o.AvgPacketLossRate
 	}
-	if !IsNil(o.SvcExpLevel) {
+	if !isNil(o.SvcExpLevel) {
 		toSerialize["svcExpLevel"] = o.SvcExpLevel
 	}
 	return toSerialize, nil

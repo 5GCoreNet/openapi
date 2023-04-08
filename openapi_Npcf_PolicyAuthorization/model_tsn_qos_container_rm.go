@@ -46,7 +46,7 @@ func NewTsnQosContainerRmWithDefaults() *TsnQosContainerRm {
 
 // GetMaxTscBurstSize returns the MaxTscBurstSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TsnQosContainerRm) GetMaxTscBurstSize() int32 {
-	if o == nil || IsNil(o.MaxTscBurstSize.Get()) {
+	if o == nil || isNil(o.MaxTscBurstSize.Get()) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *TsnQosContainerRm) UnsetMaxTscBurstSize() {
 
 // GetTscPackDelay returns the TscPackDelay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TsnQosContainerRm) GetTscPackDelay() int32 {
-	if o == nil || IsNil(o.TscPackDelay.Get()) {
+	if o == nil || isNil(o.TscPackDelay.Get()) {
 		var ret int32
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *TsnQosContainerRm) UnsetTscPackDelay() {
 
 // GetTscPrioLevel returns the TscPrioLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TsnQosContainerRm) GetTscPrioLevel() int32 {
-	if o == nil || IsNil(o.TscPrioLevel.Get()) {
+	if o == nil || isNil(o.TscPrioLevel.Get()) {
 		var ret int32
 		return ret
 	}

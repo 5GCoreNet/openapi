@@ -42,7 +42,7 @@ func NewLossConnectivityCfg1WithDefaults() *LossConnectivityCfg1 {
 
 // GetMaxDetectionTime returns the MaxDetectionTime field value if set, zero value otherwise.
 func (o *LossConnectivityCfg1) GetMaxDetectionTime() int32 {
-	if o == nil || IsNil(o.MaxDetectionTime) {
+	if o == nil || isNil(o.MaxDetectionTime) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LossConnectivityCfg1) GetMaxDetectionTime() int32 {
 // GetMaxDetectionTimeOk returns a tuple with the MaxDetectionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LossConnectivityCfg1) GetMaxDetectionTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxDetectionTime) {
+	if o == nil || isNil(o.MaxDetectionTime) {
 		return nil, false
 	}
 	return o.MaxDetectionTime, true
@@ -60,7 +60,7 @@ func (o *LossConnectivityCfg1) GetMaxDetectionTimeOk() (*int32, bool) {
 
 // HasMaxDetectionTime returns a boolean if a field has been set.
 func (o *LossConnectivityCfg1) HasMaxDetectionTime() bool {
-	if o != nil && !IsNil(o.MaxDetectionTime) {
+	if o != nil && !isNil(o.MaxDetectionTime) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o LossConnectivityCfg1) MarshalJSON() ([]byte, error) {
 
 func (o LossConnectivityCfg1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxDetectionTime) {
+	if !isNil(o.MaxDetectionTime) {
 		toSerialize["maxDetectionTime"] = o.MaxDetectionTime
 	}
 	return toSerialize, nil

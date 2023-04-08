@@ -43,7 +43,7 @@ func NewDLThptPerUETargetWithDefaults() *DLThptPerUETarget {
 
 // GetTargetName returns the TargetName field value if set, zero value otherwise.
 func (o *DLThptPerUETarget) GetTargetName() string {
-	if o == nil || IsNil(o.TargetName) {
+	if o == nil || isNil(o.TargetName) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DLThptPerUETarget) GetTargetName() string {
 // GetTargetNameOk returns a tuple with the TargetName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLThptPerUETarget) GetTargetNameOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetName) {
+	if o == nil || isNil(o.TargetName) {
 		return nil, false
 	}
 	return o.TargetName, true
@@ -61,7 +61,7 @@ func (o *DLThptPerUETarget) GetTargetNameOk() (*string, bool) {
 
 // HasTargetName returns a boolean if a field has been set.
 func (o *DLThptPerUETarget) HasTargetName() bool {
-	if o != nil && !IsNil(o.TargetName) {
+	if o != nil && !isNil(o.TargetName) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DLThptPerUETarget) SetTargetName(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *DLThptPerUETarget) GetTargetCondition() string {
-	if o == nil || IsNil(o.TargetCondition) {
+	if o == nil || isNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DLThptPerUETarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLThptPerUETarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetCondition) {
+	if o == nil || isNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -93,7 +93,7 @@ func (o *DLThptPerUETarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *DLThptPerUETarget) HasTargetCondition() bool {
-	if o != nil && !IsNil(o.TargetCondition) {
+	if o != nil && !isNil(o.TargetCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DLThptPerUETarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *DLThptPerUETarget) GetTargetValueRange() XLThpt {
-	if o == nil || IsNil(o.TargetValueRange) {
+	if o == nil || isNil(o.TargetValueRange) {
 		var ret XLThpt
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DLThptPerUETarget) GetTargetValueRange() XLThpt {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DLThptPerUETarget) GetTargetValueRangeOk() (*XLThpt, bool) {
-	if o == nil || IsNil(o.TargetValueRange) {
+	if o == nil || isNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -125,7 +125,7 @@ func (o *DLThptPerUETarget) GetTargetValueRangeOk() (*XLThpt, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *DLThptPerUETarget) HasTargetValueRange() bool {
-	if o != nil && !IsNil(o.TargetValueRange) {
+	if o != nil && !isNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o DLThptPerUETarget) MarshalJSON() ([]byte, error) {
 
 func (o DLThptPerUETarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TargetName) {
+	if !isNil(o.TargetName) {
 		toSerialize["targetName"] = o.TargetName
 	}
-	if !IsNil(o.TargetCondition) {
+	if !isNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !IsNil(o.TargetValueRange) {
+	if !isNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
 	return toSerialize, nil

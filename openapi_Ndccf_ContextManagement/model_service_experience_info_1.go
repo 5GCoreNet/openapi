@@ -45,7 +45,7 @@ func NewServiceExperienceInfo1WithDefaults() *ServiceExperienceInfo1 {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo1) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ServiceExperienceInfo1) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo1) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -63,7 +63,7 @@ func (o *ServiceExperienceInfo1) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo1) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ServiceExperienceInfo1) SetAppId(v string) {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *ServiceExperienceInfo1) GetSupis() []string {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ServiceExperienceInfo1) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfo1) GetSupisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -95,7 +95,7 @@ func (o *ServiceExperienceInfo1) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *ServiceExperienceInfo1) HasSupis() bool {
-	if o != nil && !IsNil(o.Supis) {
+	if o != nil && !isNil(o.Supis) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o ServiceExperienceInfo1) MarshalJSON() ([]byte, error) {
 
 func (o ServiceExperienceInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.Supis) {
+	if !isNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
 	toSerialize["svcExpPerFlows"] = o.SvcExpPerFlows

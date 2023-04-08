@@ -60,7 +60,7 @@ func NewApplicationRequirementDataWithDefaults() *ApplicationRequirementData {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -70,7 +70,7 @@ func (o *ApplicationRequirementData) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -78,7 +78,7 @@ func (o *ApplicationRequirementData) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -92,7 +92,7 @@ func (o *ApplicationRequirementData) SetUeId(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -102,7 +102,7 @@ func (o *ApplicationRequirementData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -110,7 +110,7 @@ func (o *ApplicationRequirementData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -124,7 +124,7 @@ func (o *ApplicationRequirementData) SetGroupId(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetDuration() time.Time {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *ApplicationRequirementData) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetDurationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -142,7 +142,7 @@ func (o *ApplicationRequirementData) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && !isNil(o.Duration) {
 		return true
 	}
 
@@ -228,7 +228,7 @@ func (o *ApplicationRequirementData) SetNotifUri(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -238,7 +238,7 @@ func (o *ApplicationRequirementData) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -246,7 +246,7 @@ func (o *ApplicationRequirementData) GetRequestTestNotificationOk() (*bool, bool
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *ApplicationRequirementData) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -270,7 +270,7 @@ func (o *ApplicationRequirementData) GetWebsockNotifConfig() WebsockNotifConfig 
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -278,7 +278,7 @@ func (o *ApplicationRequirementData) GetWebsockNotifConfigOk() (*WebsockNotifCon
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -292,7 +292,7 @@ func (o *ApplicationRequirementData) SetWebsockNotifConfig(v WebsockNotifConfig)
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *ApplicationRequirementData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -302,7 +302,7 @@ func (o *ApplicationRequirementData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ApplicationRequirementData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -310,7 +310,7 @@ func (o *ApplicationRequirementData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *ApplicationRequirementData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -332,25 +332,25 @@ func (o ApplicationRequirementData) MarshalJSON() ([]byte, error) {
 
 func (o ApplicationRequirementData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.Duration) {
+	if !isNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
 	toSerialize["serviceId"] = o.ServiceId
 	toSerialize["appRequirement"] = o.AppRequirement
 	toSerialize["notifUri"] = o.NotifUri
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

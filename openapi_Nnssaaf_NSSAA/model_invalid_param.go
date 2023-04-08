@@ -69,7 +69,7 @@ func (o *InvalidParam) SetParam(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *InvalidParam) GetReason() string {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *InvalidParam) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InvalidParam) GetReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -87,7 +87,7 @@ func (o *InvalidParam) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *InvalidParam) HasReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && !isNil(o.Reason) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o InvalidParam) MarshalJSON() ([]byte, error) {
 func (o InvalidParam) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["param"] = o.Param
-	if !IsNil(o.Reason) {
+	if !isNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil

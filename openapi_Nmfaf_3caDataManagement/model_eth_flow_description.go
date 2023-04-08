@@ -54,7 +54,7 @@ func NewEthFlowDescriptionWithDefaults() *EthFlowDescription {
 
 // GetDestMacAddr returns the DestMacAddr field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetDestMacAddr() string {
-	if o == nil || IsNil(o.DestMacAddr) {
+	if o == nil || isNil(o.DestMacAddr) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *EthFlowDescription) GetDestMacAddr() string {
 // GetDestMacAddrOk returns a tuple with the DestMacAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetDestMacAddrOk() (*string, bool) {
-	if o == nil || IsNil(o.DestMacAddr) {
+	if o == nil || isNil(o.DestMacAddr) {
 		return nil, false
 	}
 	return o.DestMacAddr, true
@@ -72,7 +72,7 @@ func (o *EthFlowDescription) GetDestMacAddrOk() (*string, bool) {
 
 // HasDestMacAddr returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasDestMacAddr() bool {
-	if o != nil && !IsNil(o.DestMacAddr) {
+	if o != nil && !isNil(o.DestMacAddr) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *EthFlowDescription) SetEthType(v string) {
 
 // GetFDesc returns the FDesc field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetFDesc() string {
-	if o == nil || IsNil(o.FDesc) {
+	if o == nil || isNil(o.FDesc) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *EthFlowDescription) GetFDesc() string {
 // GetFDescOk returns a tuple with the FDesc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetFDescOk() (*string, bool) {
-	if o == nil || IsNil(o.FDesc) {
+	if o == nil || isNil(o.FDesc) {
 		return nil, false
 	}
 	return o.FDesc, true
@@ -128,7 +128,7 @@ func (o *EthFlowDescription) GetFDescOk() (*string, bool) {
 
 // HasFDesc returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasFDesc() bool {
-	if o != nil && !IsNil(o.FDesc) {
+	if o != nil && !isNil(o.FDesc) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *EthFlowDescription) SetFDesc(v string) {
 
 // GetFDir returns the FDir field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetFDir() FlowDirection {
-	if o == nil || IsNil(o.FDir) {
+	if o == nil || isNil(o.FDir) {
 		var ret FlowDirection
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *EthFlowDescription) GetFDir() FlowDirection {
 // GetFDirOk returns a tuple with the FDir field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetFDirOk() (*FlowDirection, bool) {
-	if o == nil || IsNil(o.FDir) {
+	if o == nil || isNil(o.FDir) {
 		return nil, false
 	}
 	return o.FDir, true
@@ -160,7 +160,7 @@ func (o *EthFlowDescription) GetFDirOk() (*FlowDirection, bool) {
 
 // HasFDir returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasFDir() bool {
-	if o != nil && !IsNil(o.FDir) {
+	if o != nil && !isNil(o.FDir) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *EthFlowDescription) SetFDir(v FlowDirection) {
 
 // GetSourceMacAddr returns the SourceMacAddr field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetSourceMacAddr() string {
-	if o == nil || IsNil(o.SourceMacAddr) {
+	if o == nil || isNil(o.SourceMacAddr) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *EthFlowDescription) GetSourceMacAddr() string {
 // GetSourceMacAddrOk returns a tuple with the SourceMacAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetSourceMacAddrOk() (*string, bool) {
-	if o == nil || IsNil(o.SourceMacAddr) {
+	if o == nil || isNil(o.SourceMacAddr) {
 		return nil, false
 	}
 	return o.SourceMacAddr, true
@@ -192,7 +192,7 @@ func (o *EthFlowDescription) GetSourceMacAddrOk() (*string, bool) {
 
 // HasSourceMacAddr returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasSourceMacAddr() bool {
-	if o != nil && !IsNil(o.SourceMacAddr) {
+	if o != nil && !isNil(o.SourceMacAddr) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *EthFlowDescription) SetSourceMacAddr(v string) {
 
 // GetVlanTags returns the VlanTags field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetVlanTags() []string {
-	if o == nil || IsNil(o.VlanTags) {
+	if o == nil || isNil(o.VlanTags) {
 		var ret []string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *EthFlowDescription) GetVlanTags() []string {
 // GetVlanTagsOk returns a tuple with the VlanTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetVlanTagsOk() ([]string, bool) {
-	if o == nil || IsNil(o.VlanTags) {
+	if o == nil || isNil(o.VlanTags) {
 		return nil, false
 	}
 	return o.VlanTags, true
@@ -224,7 +224,7 @@ func (o *EthFlowDescription) GetVlanTagsOk() ([]string, bool) {
 
 // HasVlanTags returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasVlanTags() bool {
-	if o != nil && !IsNil(o.VlanTags) {
+	if o != nil && !isNil(o.VlanTags) {
 		return true
 	}
 
@@ -238,7 +238,7 @@ func (o *EthFlowDescription) SetVlanTags(v []string) {
 
 // GetSrcMacAddrEnd returns the SrcMacAddrEnd field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetSrcMacAddrEnd() string {
-	if o == nil || IsNil(o.SrcMacAddrEnd) {
+	if o == nil || isNil(o.SrcMacAddrEnd) {
 		var ret string
 		return ret
 	}
@@ -248,7 +248,7 @@ func (o *EthFlowDescription) GetSrcMacAddrEnd() string {
 // GetSrcMacAddrEndOk returns a tuple with the SrcMacAddrEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetSrcMacAddrEndOk() (*string, bool) {
-	if o == nil || IsNil(o.SrcMacAddrEnd) {
+	if o == nil || isNil(o.SrcMacAddrEnd) {
 		return nil, false
 	}
 	return o.SrcMacAddrEnd, true
@@ -256,7 +256,7 @@ func (o *EthFlowDescription) GetSrcMacAddrEndOk() (*string, bool) {
 
 // HasSrcMacAddrEnd returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasSrcMacAddrEnd() bool {
-	if o != nil && !IsNil(o.SrcMacAddrEnd) {
+	if o != nil && !isNil(o.SrcMacAddrEnd) {
 		return true
 	}
 
@@ -270,7 +270,7 @@ func (o *EthFlowDescription) SetSrcMacAddrEnd(v string) {
 
 // GetDestMacAddrEnd returns the DestMacAddrEnd field value if set, zero value otherwise.
 func (o *EthFlowDescription) GetDestMacAddrEnd() string {
-	if o == nil || IsNil(o.DestMacAddrEnd) {
+	if o == nil || isNil(o.DestMacAddrEnd) {
 		var ret string
 		return ret
 	}
@@ -280,7 +280,7 @@ func (o *EthFlowDescription) GetDestMacAddrEnd() string {
 // GetDestMacAddrEndOk returns a tuple with the DestMacAddrEnd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthFlowDescription) GetDestMacAddrEndOk() (*string, bool) {
-	if o == nil || IsNil(o.DestMacAddrEnd) {
+	if o == nil || isNil(o.DestMacAddrEnd) {
 		return nil, false
 	}
 	return o.DestMacAddrEnd, true
@@ -288,7 +288,7 @@ func (o *EthFlowDescription) GetDestMacAddrEndOk() (*string, bool) {
 
 // HasDestMacAddrEnd returns a boolean if a field has been set.
 func (o *EthFlowDescription) HasDestMacAddrEnd() bool {
-	if o != nil && !IsNil(o.DestMacAddrEnd) {
+	if o != nil && !isNil(o.DestMacAddrEnd) {
 		return true
 	}
 
@@ -310,26 +310,26 @@ func (o EthFlowDescription) MarshalJSON() ([]byte, error) {
 
 func (o EthFlowDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DestMacAddr) {
+	if !isNil(o.DestMacAddr) {
 		toSerialize["destMacAddr"] = o.DestMacAddr
 	}
 	toSerialize["ethType"] = o.EthType
-	if !IsNil(o.FDesc) {
+	if !isNil(o.FDesc) {
 		toSerialize["fDesc"] = o.FDesc
 	}
-	if !IsNil(o.FDir) {
+	if !isNil(o.FDir) {
 		toSerialize["fDir"] = o.FDir
 	}
-	if !IsNil(o.SourceMacAddr) {
+	if !isNil(o.SourceMacAddr) {
 		toSerialize["sourceMacAddr"] = o.SourceMacAddr
 	}
-	if !IsNil(o.VlanTags) {
+	if !isNil(o.VlanTags) {
 		toSerialize["vlanTags"] = o.VlanTags
 	}
-	if !IsNil(o.SrcMacAddrEnd) {
+	if !isNil(o.SrcMacAddrEnd) {
 		toSerialize["srcMacAddrEnd"] = o.SrcMacAddrEnd
 	}
-	if !IsNil(o.DestMacAddrEnd) {
+	if !isNil(o.DestMacAddrEnd) {
 		toSerialize["destMacAddrEnd"] = o.DestMacAddrEnd
 	}
 	return toSerialize, nil

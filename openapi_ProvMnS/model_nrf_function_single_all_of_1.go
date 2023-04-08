@@ -41,7 +41,7 @@ func NewNrfFunctionSingleAllOf1WithDefaults() *NrfFunctionSingleAllOf1 {
 
 // GetEPN27 returns the EPN27 field value if set, zero value otherwise.
 func (o *NrfFunctionSingleAllOf1) GetEPN27() []EPN27Single {
-	if o == nil || IsNil(o.EPN27) {
+	if o == nil || isNil(o.EPN27) {
 		var ret []EPN27Single
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NrfFunctionSingleAllOf1) GetEPN27() []EPN27Single {
 // GetEPN27Ok returns a tuple with the EPN27 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfFunctionSingleAllOf1) GetEPN27Ok() ([]EPN27Single, bool) {
-	if o == nil || IsNil(o.EPN27) {
+	if o == nil || isNil(o.EPN27) {
 		return nil, false
 	}
 	return o.EPN27, true
@@ -59,7 +59,7 @@ func (o *NrfFunctionSingleAllOf1) GetEPN27Ok() ([]EPN27Single, bool) {
 
 // HasEPN27 returns a boolean if a field has been set.
 func (o *NrfFunctionSingleAllOf1) HasEPN27() bool {
-	if o != nil && !IsNil(o.EPN27) {
+	if o != nil && !isNil(o.EPN27) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o NrfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o NrfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN27) {
+	if !isNil(o.EPN27) {
 		toSerialize["EP_N27"] = o.EPN27
 	}
 	return toSerialize, nil

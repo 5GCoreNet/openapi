@@ -41,7 +41,7 @@ func NewAnalyticsInfoTypeWithDefaults() *AnalyticsInfoType {
 
 // GetActivityDetails returns the ActivityDetails field value if set, zero value otherwise.
 func (o *AnalyticsInfoType) GetActivityDetails() string {
-	if o == nil || IsNil(o.ActivityDetails) {
+	if o == nil || isNil(o.ActivityDetails) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnalyticsInfoType) GetActivityDetails() string {
 // GetActivityDetailsOk returns a tuple with the ActivityDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsInfoType) GetActivityDetailsOk() (*string, bool) {
-	if o == nil || IsNil(o.ActivityDetails) {
+	if o == nil || isNil(o.ActivityDetails) {
 		return nil, false
 	}
 	return o.ActivityDetails, true
@@ -59,7 +59,7 @@ func (o *AnalyticsInfoType) GetActivityDetailsOk() (*string, bool) {
 
 // HasActivityDetails returns a boolean if a field has been set.
 func (o *AnalyticsInfoType) HasActivityDetails() bool {
-	if o != nil && !IsNil(o.ActivityDetails) {
+	if o != nil && !isNil(o.ActivityDetails) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AnalyticsInfoType) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ActivityDetails) {
+	if !isNil(o.ActivityDetails) {
 		toSerialize["activityDetails"] = o.ActivityDetails
 	}
 	return toSerialize, nil

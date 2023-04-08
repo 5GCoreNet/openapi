@@ -42,7 +42,7 @@ func NewManagementNodeSingleAllOfWithDefaults() *ManagementNodeSingleAllOf {
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOf) GetAttributes() ManagementNodeSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret ManagementNodeSingleAllOfAttributes
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ManagementNodeSingleAllOf) GetAttributes() ManagementNodeSingleAllOfAtt
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOf) GetAttributesOk() (*ManagementNodeSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -60,7 +60,7 @@ func (o *ManagementNodeSingleAllOf) GetAttributesOk() (*ManagementNodeSingleAllO
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ManagementNodeSingleAllOf) SetAttributes(v ManagementNodeSingleAllOfAtt
 
 // GetMnsAgent returns the MnsAgent field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOf) GetMnsAgent() []MnsAgentSingle {
-	if o == nil || IsNil(o.MnsAgent) {
+	if o == nil || isNil(o.MnsAgent) {
 		var ret []MnsAgentSingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ManagementNodeSingleAllOf) GetMnsAgent() []MnsAgentSingle {
 // GetMnsAgentOk returns a tuple with the MnsAgent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOf) GetMnsAgentOk() ([]MnsAgentSingle, bool) {
-	if o == nil || IsNil(o.MnsAgent) {
+	if o == nil || isNil(o.MnsAgent) {
 		return nil, false
 	}
 	return o.MnsAgent, true
@@ -92,7 +92,7 @@ func (o *ManagementNodeSingleAllOf) GetMnsAgentOk() ([]MnsAgentSingle, bool) {
 
 // HasMnsAgent returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOf) HasMnsAgent() bool {
-	if o != nil && !IsNil(o.MnsAgent) {
+	if o != nil && !isNil(o.MnsAgent) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ManagementNodeSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ManagementNodeSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.MnsAgent) {
+	if !isNil(o.MnsAgent) {
 		toSerialize["MnsAgent"] = o.MnsAgent
 	}
 	return toSerialize, nil

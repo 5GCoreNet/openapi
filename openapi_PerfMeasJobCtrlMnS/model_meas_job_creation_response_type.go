@@ -41,7 +41,7 @@ func NewMeasJobCreationResponseTypeWithDefaults() *MeasJobCreationResponseType {
 
 // GetUnsupportedList returns the UnsupportedList field value if set, zero value otherwise.
 func (o *MeasJobCreationResponseType) GetUnsupportedList() []UnsupportedMeasType {
-	if o == nil || IsNil(o.UnsupportedList) {
+	if o == nil || isNil(o.UnsupportedList) {
 		var ret []UnsupportedMeasType
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MeasJobCreationResponseType) GetUnsupportedList() []UnsupportedMeasType
 // GetUnsupportedListOk returns a tuple with the UnsupportedList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MeasJobCreationResponseType) GetUnsupportedListOk() ([]UnsupportedMeasType, bool) {
-	if o == nil || IsNil(o.UnsupportedList) {
+	if o == nil || isNil(o.UnsupportedList) {
 		return nil, false
 	}
 	return o.UnsupportedList, true
@@ -59,7 +59,7 @@ func (o *MeasJobCreationResponseType) GetUnsupportedListOk() ([]UnsupportedMeasT
 
 // HasUnsupportedList returns a boolean if a field has been set.
 func (o *MeasJobCreationResponseType) HasUnsupportedList() bool {
-	if o != nil && !IsNil(o.UnsupportedList) {
+	if o != nil && !isNil(o.UnsupportedList) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MeasJobCreationResponseType) MarshalJSON() ([]byte, error) {
 
 func (o MeasJobCreationResponseType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UnsupportedList) {
+	if !isNil(o.UnsupportedList) {
 		toSerialize["unsupportedList"] = o.UnsupportedList
 	}
 	return toSerialize, nil

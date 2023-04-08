@@ -58,7 +58,7 @@ func NewProblemDetailsAuthenticateAuthorizeWithDefaults() *ProblemDetailsAuthent
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetType() string {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		var ret string
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetType() string {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || isNil(o.Type) {
 		return nil, false
 	}
 	return o.Type, true
@@ -76,7 +76,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetTypeOk() (*string, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasType() bool {
-	if o != nil && !IsNil(o.Type) {
+	if o != nil && !isNil(o.Type) {
 		return true
 	}
 
@@ -90,7 +90,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetType(v string) {
 
 // GetTitle returns the Title field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetTitle() string {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetTitleOk() (*string, bool) {
-	if o == nil || IsNil(o.Title) {
+	if o == nil || isNil(o.Title) {
 		return nil, false
 	}
 	return o.Title, true
@@ -108,7 +108,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetTitleOk() (*string, bool) {
 
 // HasTitle returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasTitle() bool {
-	if o != nil && !IsNil(o.Title) {
+	if o != nil && !isNil(o.Title) {
 		return true
 	}
 
@@ -122,7 +122,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetTitle(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetStatus() int32 {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret int32
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetStatus() int32 {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetStatusOk() (*int32, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -140,7 +140,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetStatusOk() (*int32, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -154,7 +154,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetStatus(v int32) {
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetDetail() string {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		var ret string
 		return ret
 	}
@@ -164,7 +164,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetDetailOk() (*string, bool) {
-	if o == nil || IsNil(o.Detail) {
+	if o == nil || isNil(o.Detail) {
 		return nil, false
 	}
 	return o.Detail, true
@@ -172,7 +172,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetDetailOk() (*string, bool) {
 
 // HasDetail returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasDetail() bool {
-	if o != nil && !IsNil(o.Detail) {
+	if o != nil && !isNil(o.Detail) {
 		return true
 	}
 
@@ -186,7 +186,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetDetail(v string) {
 
 // GetInstance returns the Instance field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetInstance() string {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		var ret string
 		return ret
 	}
@@ -196,7 +196,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetInstance() string {
 // GetInstanceOk returns a tuple with the Instance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.Instance) {
+	if o == nil || isNil(o.Instance) {
 		return nil, false
 	}
 	return o.Instance, true
@@ -204,7 +204,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetInstanceOk() (*string, bool) {
 
 // HasInstance returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasInstance() bool {
-	if o != nil && !IsNil(o.Instance) {
+	if o != nil && !isNil(o.Instance) {
 		return true
 	}
 
@@ -218,7 +218,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetInstance(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetCause() string {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret string
 		return ret
 	}
@@ -228,7 +228,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetCause() string {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -236,7 +236,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetCauseOk() (*string, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -250,7 +250,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetCause(v string) {
 
 // GetInvalidParams returns the InvalidParams field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetInvalidParams() []InvalidParam {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		var ret []InvalidParam
 		return ret
 	}
@@ -260,7 +260,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetInvalidParams() []InvalidParam 
 // GetInvalidParamsOk returns a tuple with the InvalidParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetInvalidParamsOk() ([]InvalidParam, bool) {
-	if o == nil || IsNil(o.InvalidParams) {
+	if o == nil || isNil(o.InvalidParams) {
 		return nil, false
 	}
 	return o.InvalidParams, true
@@ -268,7 +268,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetInvalidParamsOk() ([]InvalidPar
 
 // HasInvalidParams returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasInvalidParams() bool {
-	if o != nil && !IsNil(o.InvalidParams) {
+	if o != nil && !isNil(o.InvalidParams) {
 		return true
 	}
 
@@ -282,7 +282,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetInvalidParams(v []InvalidParam)
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -292,7 +292,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -300,7 +300,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetSupportedFeaturesOk() (*string,
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -314,7 +314,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) SetSupportedFeatures(v string) {
 
 // GetUasResRelInd returns the UasResRelInd field value if set, zero value otherwise.
 func (o *ProblemDetailsAuthenticateAuthorize) GetUasResRelInd() bool {
-	if o == nil || IsNil(o.UasResRelInd) {
+	if o == nil || isNil(o.UasResRelInd) {
 		var ret bool
 		return ret
 	}
@@ -324,7 +324,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetUasResRelInd() bool {
 // GetUasResRelIndOk returns a tuple with the UasResRelInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) GetUasResRelIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.UasResRelInd) {
+	if o == nil || isNil(o.UasResRelInd) {
 		return nil, false
 	}
 	return o.UasResRelInd, true
@@ -332,7 +332,7 @@ func (o *ProblemDetailsAuthenticateAuthorize) GetUasResRelIndOk() (*bool, bool) 
 
 // HasUasResRelInd returns a boolean if a field has been set.
 func (o *ProblemDetailsAuthenticateAuthorize) HasUasResRelInd() bool {
-	if o != nil && !IsNil(o.UasResRelInd) {
+	if o != nil && !isNil(o.UasResRelInd) {
 		return true
 	}
 
@@ -354,31 +354,31 @@ func (o ProblemDetailsAuthenticateAuthorize) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetailsAuthenticateAuthorize) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Type) {
+	if !isNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Title) {
+	if !isNil(o.Title) {
 		toSerialize["title"] = o.Title
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.Detail) {
+	if !isNil(o.Detail) {
 		toSerialize["detail"] = o.Detail
 	}
-	if !IsNil(o.Instance) {
+	if !isNil(o.Instance) {
 		toSerialize["instance"] = o.Instance
 	}
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.InvalidParams) {
+	if !isNil(o.InvalidParams) {
 		toSerialize["invalidParams"] = o.InvalidParams
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.UasResRelInd) {
+	if !isNil(o.UasResRelInd) {
 		toSerialize["uasResRelInd"] = o.UasResRelInd
 	}
 	return toSerialize, nil

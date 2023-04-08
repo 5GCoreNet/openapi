@@ -71,7 +71,7 @@ func (o *AppDetectionInfo) SetAppId(v string) {
 
 // GetInstanceId returns the InstanceId field value if set, zero value otherwise.
 func (o *AppDetectionInfo) GetInstanceId() string {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil || isNil(o.InstanceId) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *AppDetectionInfo) GetInstanceId() string {
 // GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDetectionInfo) GetInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InstanceId) {
+	if o == nil || isNil(o.InstanceId) {
 		return nil, false
 	}
 	return o.InstanceId, true
@@ -89,7 +89,7 @@ func (o *AppDetectionInfo) GetInstanceIdOk() (*string, bool) {
 
 // HasInstanceId returns a boolean if a field has been set.
 func (o *AppDetectionInfo) HasInstanceId() bool {
-	if o != nil && !IsNil(o.InstanceId) {
+	if o != nil && !isNil(o.InstanceId) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *AppDetectionInfo) SetInstanceId(v string) {
 
 // GetSdfDescriptions returns the SdfDescriptions field value if set, zero value otherwise.
 func (o *AppDetectionInfo) GetSdfDescriptions() []FlowInformation {
-	if o == nil || IsNil(o.SdfDescriptions) {
+	if o == nil || isNil(o.SdfDescriptions) {
 		var ret []FlowInformation
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *AppDetectionInfo) GetSdfDescriptions() []FlowInformation {
 // GetSdfDescriptionsOk returns a tuple with the SdfDescriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppDetectionInfo) GetSdfDescriptionsOk() ([]FlowInformation, bool) {
-	if o == nil || IsNil(o.SdfDescriptions) {
+	if o == nil || isNil(o.SdfDescriptions) {
 		return nil, false
 	}
 	return o.SdfDescriptions, true
@@ -121,7 +121,7 @@ func (o *AppDetectionInfo) GetSdfDescriptionsOk() ([]FlowInformation, bool) {
 
 // HasSdfDescriptions returns a boolean if a field has been set.
 func (o *AppDetectionInfo) HasSdfDescriptions() bool {
-	if o != nil && !IsNil(o.SdfDescriptions) {
+	if o != nil && !isNil(o.SdfDescriptions) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o AppDetectionInfo) MarshalJSON() ([]byte, error) {
 func (o AppDetectionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appId"] = o.AppId
-	if !IsNil(o.InstanceId) {
+	if !isNil(o.InstanceId) {
 		toSerialize["instanceId"] = o.InstanceId
 	}
-	if !IsNil(o.SdfDescriptions) {
+	if !isNil(o.SdfDescriptions) {
 		toSerialize["sdfDescriptions"] = o.SdfDescriptions
 	}
 	return toSerialize, nil

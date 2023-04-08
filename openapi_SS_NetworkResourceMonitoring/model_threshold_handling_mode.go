@@ -17,23 +17,37 @@ import (
 
 // ThresholdHandlingMode Possible values are: - ALL_REACHED: The decision criterion is met when all the provided thresholds are reached. - ANY_REACHED: The decision criterion is met when any of the provided threshold(s) is reached. 
 type ThresholdHandlingMode struct {
-	string *string
+	ThresholdHandlingModeAnyOf *ThresholdHandlingModeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *ThresholdHandlingMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into ThresholdHandlingModeAnyOf
+	err = json.Unmarshal(data, &dst.ThresholdHandlingModeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonThresholdHandlingModeAnyOf, _ := json.Marshal(dst.ThresholdHandlingModeAnyOf)
+		if string(jsonThresholdHandlingModeAnyOf) == "{}" { // empty struct
+			dst.ThresholdHandlingModeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.ThresholdHandlingModeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.ThresholdHandlingModeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(ThresholdHandlingMode)")
@@ -41,8 +55,12 @@ func (dst *ThresholdHandlingMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *ThresholdHandlingMode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.ThresholdHandlingModeAnyOf != nil {
+		return json.Marshal(&src.ThresholdHandlingModeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

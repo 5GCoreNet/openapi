@@ -59,7 +59,7 @@ func NewNetworkStatusReportingSubscriptionWithDefaults() *NetworkStatusReporting
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *NetworkStatusReportingSubscription) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -77,7 +77,7 @@ func (o *NetworkStatusReportingSubscription) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -91,7 +91,7 @@ func (o *NetworkStatusReportingSubscription) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *NetworkStatusReportingSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -109,7 +109,7 @@ func (o *NetworkStatusReportingSubscription) GetSupportedFeaturesOk() (*string, 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *NetworkStatusReportingSubscription) SetNotificationDestination(v string
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *NetworkStatusReportingSubscription) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -165,7 +165,7 @@ func (o *NetworkStatusReportingSubscription) GetRequestTestNotificationOk() (*bo
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *NetworkStatusReportingSubscription) SetRequestTestNotification(v bool) 
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *NetworkStatusReportingSubscription) GetWebsockNotifConfig() WebsockNoti
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -197,7 +197,7 @@ func (o *NetworkStatusReportingSubscription) GetWebsockNotifConfigOk() (*Websock
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *NetworkStatusReportingSubscription) SetLocationArea(v LocationArea) {
 
 // GetTimeDuration returns the TimeDuration field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetTimeDuration() time.Time {
-	if o == nil || IsNil(o.TimeDuration) {
+	if o == nil || isNil(o.TimeDuration) {
 		var ret time.Time
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *NetworkStatusReportingSubscription) GetTimeDuration() time.Time {
 // GetTimeDurationOk returns a tuple with the TimeDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetTimeDurationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeDuration) {
+	if o == nil || isNil(o.TimeDuration) {
 		return nil, false
 	}
 	return o.TimeDuration, true
@@ -253,7 +253,7 @@ func (o *NetworkStatusReportingSubscription) GetTimeDurationOk() (*time.Time, bo
 
 // HasTimeDuration returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasTimeDuration() bool {
-	if o != nil && !IsNil(o.TimeDuration) {
+	if o != nil && !isNil(o.TimeDuration) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *NetworkStatusReportingSubscription) SetTimeDuration(v time.Time) {
 
 // GetThresholdValues returns the ThresholdValues field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetThresholdValues() []int32 {
-	if o == nil || IsNil(o.ThresholdValues) {
+	if o == nil || isNil(o.ThresholdValues) {
 		var ret []int32
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *NetworkStatusReportingSubscription) GetThresholdValues() []int32 {
 // GetThresholdValuesOk returns a tuple with the ThresholdValues field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetThresholdValuesOk() ([]int32, bool) {
-	if o == nil || IsNil(o.ThresholdValues) {
+	if o == nil || isNil(o.ThresholdValues) {
 		return nil, false
 	}
 	return o.ThresholdValues, true
@@ -285,7 +285,7 @@ func (o *NetworkStatusReportingSubscription) GetThresholdValuesOk() ([]int32, bo
 
 // HasThresholdValues returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasThresholdValues() bool {
-	if o != nil && !IsNil(o.ThresholdValues) {
+	if o != nil && !isNil(o.ThresholdValues) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *NetworkStatusReportingSubscription) SetThresholdValues(v []int32) {
 
 // GetThresholdTypes returns the ThresholdTypes field value if set, zero value otherwise.
 func (o *NetworkStatusReportingSubscription) GetThresholdTypes() []CongestionType {
-	if o == nil || IsNil(o.ThresholdTypes) {
+	if o == nil || isNil(o.ThresholdTypes) {
 		var ret []CongestionType
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *NetworkStatusReportingSubscription) GetThresholdTypes() []CongestionTyp
 // GetThresholdTypesOk returns a tuple with the ThresholdTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkStatusReportingSubscription) GetThresholdTypesOk() ([]CongestionType, bool) {
-	if o == nil || IsNil(o.ThresholdTypes) {
+	if o == nil || isNil(o.ThresholdTypes) {
 		return nil, false
 	}
 	return o.ThresholdTypes, true
@@ -317,7 +317,7 @@ func (o *NetworkStatusReportingSubscription) GetThresholdTypesOk() ([]Congestion
 
 // HasThresholdTypes returns a boolean if a field has been set.
 func (o *NetworkStatusReportingSubscription) HasThresholdTypes() bool {
-	if o != nil && !IsNil(o.ThresholdTypes) {
+	if o != nil && !isNil(o.ThresholdTypes) {
 		return true
 	}
 
@@ -339,27 +339,27 @@ func (o NetworkStatusReportingSubscription) MarshalJSON() ([]byte, error) {
 
 func (o NetworkStatusReportingSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
 	toSerialize["locationArea"] = o.LocationArea
-	if !IsNil(o.TimeDuration) {
+	if !isNil(o.TimeDuration) {
 		toSerialize["timeDuration"] = o.TimeDuration
 	}
-	if !IsNil(o.ThresholdValues) {
+	if !isNil(o.ThresholdValues) {
 		toSerialize["thresholdValues"] = o.ThresholdValues
 	}
-	if !IsNil(o.ThresholdTypes) {
+	if !isNil(o.ThresholdTypes) {
 		toSerialize["thresholdTypes"] = o.ThresholdTypes
 	}
 	return toSerialize, nil

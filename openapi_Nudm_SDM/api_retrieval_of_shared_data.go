@@ -13,7 +13,7 @@ package openapi_Nudm_SDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -107,12 +107,12 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 		return localVarReturnValue, nil, reportError("sharedDataIds must have at least 1 elements")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "shared-data-ids", r.sharedDataIds, "csv")
+	parameterAddToQuery(localVarQueryParams, "shared-data-ids", r.sharedDataIds, "csv")
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supportedFeatures", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supportedFeatures", r.supportedFeatures, "")
 	}
 	if r.supportedFeatures2 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures2, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures2, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,10 +132,10 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.ifNoneMatch != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-None-Match", r.ifNoneMatch, "")
+		parameterAddToQuery(localVarQueryParams, "If-None-Match", r.ifNoneMatch, "")
 	}
 	if r.ifModifiedSince != nil {
-		parameterAddToHeaderOrQuery(localVarHeaderParams, "If-Modified-Since", r.ifModifiedSince, "")
+		parameterAddToQuery(localVarQueryParams, "If-Modified-Since", r.ifModifiedSince, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -147,9 +147,9 @@ func (a *RetrievalOfSharedDataApiService) GetSharedDataExecute(r ApiGetSharedDat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

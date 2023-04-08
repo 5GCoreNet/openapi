@@ -46,7 +46,7 @@ func NewNotifyMoiAttributeValueChangesAllOfWithDefaults() *NotifyMoiAttributeVal
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChangesAllOf) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) GetCorrelatedNotifications() []Cor
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChangesAllOf) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -64,7 +64,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) GetCorrelatedNotificationsOk() ([]
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChangesAllOf) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) SetCorrelatedNotifications(v []Cor
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChangesAllOf) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChangesAllOf) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -96,7 +96,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) GetAdditionalTextOk() (*string, bo
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChangesAllOf) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) SetAdditionalText(v string) {
 
 // GetSourceIndicator returns the SourceIndicator field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChangesAllOf) GetSourceIndicator() SourceIndicator {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		var ret SourceIndicator
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) GetSourceIndicator() SourceIndicat
 // GetSourceIndicatorOk returns a tuple with the SourceIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChangesAllOf) GetSourceIndicatorOk() (*SourceIndicator, bool) {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		return nil, false
 	}
 	return o.SourceIndicator, true
@@ -128,7 +128,7 @@ func (o *NotifyMoiAttributeValueChangesAllOf) GetSourceIndicatorOk() (*SourceInd
 
 // HasSourceIndicator returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChangesAllOf) HasSourceIndicator() bool {
-	if o != nil && !IsNil(o.SourceIndicator) {
+	if o != nil && !isNil(o.SourceIndicator) {
 		return true
 	}
 
@@ -174,13 +174,13 @@ func (o NotifyMoiAttributeValueChangesAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NotifyMoiAttributeValueChangesAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.SourceIndicator) {
+	if !isNil(o.SourceIndicator) {
 		toSerialize["sourceIndicator"] = o.SourceIndicator
 	}
 	toSerialize["attributeListValueChanges"] = o.AttributeListValueChanges

@@ -46,7 +46,7 @@ func NewLocationAreaWithDefaults() *LocationArea {
 
 // GetGeographicAreas returns the GeographicAreas field value if set, zero value otherwise.
 func (o *LocationArea) GetGeographicAreas() []GeographicArea {
-	if o == nil || IsNil(o.GeographicAreas) {
+	if o == nil || isNil(o.GeographicAreas) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *LocationArea) GetGeographicAreas() []GeographicArea {
 // GetGeographicAreasOk returns a tuple with the GeographicAreas field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetGeographicAreasOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.GeographicAreas) {
+	if o == nil || isNil(o.GeographicAreas) {
 		return nil, false
 	}
 	return o.GeographicAreas, true
@@ -64,7 +64,7 @@ func (o *LocationArea) GetGeographicAreasOk() ([]GeographicArea, bool) {
 
 // HasGeographicAreas returns a boolean if a field has been set.
 func (o *LocationArea) HasGeographicAreas() bool {
-	if o != nil && !IsNil(o.GeographicAreas) {
+	if o != nil && !isNil(o.GeographicAreas) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *LocationArea) SetGeographicAreas(v []GeographicArea) {
 
 // GetCivicAddresses returns the CivicAddresses field value if set, zero value otherwise.
 func (o *LocationArea) GetCivicAddresses() []CivicAddress {
-	if o == nil || IsNil(o.CivicAddresses) {
+	if o == nil || isNil(o.CivicAddresses) {
 		var ret []CivicAddress
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *LocationArea) GetCivicAddresses() []CivicAddress {
 // GetCivicAddressesOk returns a tuple with the CivicAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetCivicAddressesOk() ([]CivicAddress, bool) {
-	if o == nil || IsNil(o.CivicAddresses) {
+	if o == nil || isNil(o.CivicAddresses) {
 		return nil, false
 	}
 	return o.CivicAddresses, true
@@ -96,7 +96,7 @@ func (o *LocationArea) GetCivicAddressesOk() ([]CivicAddress, bool) {
 
 // HasCivicAddresses returns a boolean if a field has been set.
 func (o *LocationArea) HasCivicAddresses() bool {
-	if o != nil && !IsNil(o.CivicAddresses) {
+	if o != nil && !isNil(o.CivicAddresses) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *LocationArea) SetCivicAddresses(v []CivicAddress) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *LocationArea) GetNwAreaInfo() NetworkAreaInfo {
-	if o == nil || IsNil(o.NwAreaInfo) {
+	if o == nil || isNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *LocationArea) GetNwAreaInfo() NetworkAreaInfo {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.NwAreaInfo) {
+	if o == nil || isNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -128,7 +128,7 @@ func (o *LocationArea) GetNwAreaInfoOk() (*NetworkAreaInfo, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *LocationArea) HasNwAreaInfo() bool {
-	if o != nil && !IsNil(o.NwAreaInfo) {
+	if o != nil && !isNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *LocationArea) SetNwAreaInfo(v NetworkAreaInfo) {
 
 // GetUmtTime returns the UmtTime field value if set, zero value otherwise.
 func (o *LocationArea) GetUmtTime() UmtTime {
-	if o == nil || IsNil(o.UmtTime) {
+	if o == nil || isNil(o.UmtTime) {
 		var ret UmtTime
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *LocationArea) GetUmtTime() UmtTime {
 // GetUmtTimeOk returns a tuple with the UmtTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationArea) GetUmtTimeOk() (*UmtTime, bool) {
-	if o == nil || IsNil(o.UmtTime) {
+	if o == nil || isNil(o.UmtTime) {
 		return nil, false
 	}
 	return o.UmtTime, true
@@ -160,7 +160,7 @@ func (o *LocationArea) GetUmtTimeOk() (*UmtTime, bool) {
 
 // HasUmtTime returns a boolean if a field has been set.
 func (o *LocationArea) HasUmtTime() bool {
-	if o != nil && !IsNil(o.UmtTime) {
+	if o != nil && !isNil(o.UmtTime) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o LocationArea) MarshalJSON() ([]byte, error) {
 
 func (o LocationArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GeographicAreas) {
+	if !isNil(o.GeographicAreas) {
 		toSerialize["geographicAreas"] = o.GeographicAreas
 	}
-	if !IsNil(o.CivicAddresses) {
+	if !isNil(o.CivicAddresses) {
 		toSerialize["civicAddresses"] = o.CivicAddresses
 	}
-	if !IsNil(o.NwAreaInfo) {
+	if !isNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
-	if !IsNil(o.UmtTime) {
+	if !isNil(o.UmtTime) {
 		toSerialize["umtTime"] = o.UmtTime
 	}
 	return toSerialize, nil

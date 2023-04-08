@@ -13,7 +13,7 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -103,9 +103,9 @@ func (a *ApplicationDataSubscriptionsCollectionApiService) CreateIndividualAppli
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *ApplicationDataSubscriptionsCollectionApiService) ReadApplicationDataCh
 	localVarFormParams := url.Values{}
 
 	if r.dataFilter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data-filter", r.dataFilter, "")
+		parameterAddToQuery(localVarQueryParams, "data-filter", r.dataFilter, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -331,9 +331,9 @@ func (a *ApplicationDataSubscriptionsCollectionApiService) ReadApplicationDataCh
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

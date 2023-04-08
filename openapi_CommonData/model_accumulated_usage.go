@@ -48,7 +48,7 @@ func NewAccumulatedUsageWithDefaults() *AccumulatedUsage {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *AccumulatedUsage) GetDuration() int32 {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		var ret int32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *AccumulatedUsage) GetDuration() int32 {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccumulatedUsage) GetDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -66,7 +66,7 @@ func (o *AccumulatedUsage) GetDurationOk() (*int32, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *AccumulatedUsage) HasDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && !isNil(o.Duration) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *AccumulatedUsage) SetDuration(v int32) {
 
 // GetTotalVolume returns the TotalVolume field value if set, zero value otherwise.
 func (o *AccumulatedUsage) GetTotalVolume() int64 {
-	if o == nil || IsNil(o.TotalVolume) {
+	if o == nil || isNil(o.TotalVolume) {
 		var ret int64
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *AccumulatedUsage) GetTotalVolume() int64 {
 // GetTotalVolumeOk returns a tuple with the TotalVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccumulatedUsage) GetTotalVolumeOk() (*int64, bool) {
-	if o == nil || IsNil(o.TotalVolume) {
+	if o == nil || isNil(o.TotalVolume) {
 		return nil, false
 	}
 	return o.TotalVolume, true
@@ -98,7 +98,7 @@ func (o *AccumulatedUsage) GetTotalVolumeOk() (*int64, bool) {
 
 // HasTotalVolume returns a boolean if a field has been set.
 func (o *AccumulatedUsage) HasTotalVolume() bool {
-	if o != nil && !IsNil(o.TotalVolume) {
+	if o != nil && !isNil(o.TotalVolume) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *AccumulatedUsage) SetTotalVolume(v int64) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *AccumulatedUsage) GetDownlinkVolume() int64 {
-	if o == nil || IsNil(o.DownlinkVolume) {
+	if o == nil || isNil(o.DownlinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *AccumulatedUsage) GetDownlinkVolume() int64 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccumulatedUsage) GetDownlinkVolumeOk() (*int64, bool) {
-	if o == nil || IsNil(o.DownlinkVolume) {
+	if o == nil || isNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -130,7 +130,7 @@ func (o *AccumulatedUsage) GetDownlinkVolumeOk() (*int64, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *AccumulatedUsage) HasDownlinkVolume() bool {
-	if o != nil && !IsNil(o.DownlinkVolume) {
+	if o != nil && !isNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *AccumulatedUsage) SetDownlinkVolume(v int64) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *AccumulatedUsage) GetUplinkVolume() int64 {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *AccumulatedUsage) GetUplinkVolume() int64 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccumulatedUsage) GetUplinkVolumeOk() (*int64, bool) {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -162,7 +162,7 @@ func (o *AccumulatedUsage) GetUplinkVolumeOk() (*int64, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *AccumulatedUsage) HasUplinkVolume() bool {
-	if o != nil && !IsNil(o.UplinkVolume) {
+	if o != nil && !isNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -184,16 +184,16 @@ func (o AccumulatedUsage) MarshalJSON() ([]byte, error) {
 
 func (o AccumulatedUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Duration) {
+	if !isNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !IsNil(o.TotalVolume) {
+	if !isNil(o.TotalVolume) {
 		toSerialize["totalVolume"] = o.TotalVolume
 	}
-	if !IsNil(o.DownlinkVolume) {
+	if !isNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
-	if !IsNil(o.UplinkVolume) {
+	if !isNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
 	return toSerialize, nil

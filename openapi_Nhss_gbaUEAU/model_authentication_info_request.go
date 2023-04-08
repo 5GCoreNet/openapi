@@ -44,7 +44,7 @@ func NewAuthenticationInfoRequestWithDefaults() *AuthenticationInfoRequest {
 
 // GetAuthenticationScheme returns the AuthenticationScheme field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetAuthenticationScheme() AuthenticationScheme {
-	if o == nil || IsNil(o.AuthenticationScheme) {
+	if o == nil || isNil(o.AuthenticationScheme) {
 		var ret AuthenticationScheme
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *AuthenticationInfoRequest) GetAuthenticationScheme() AuthenticationSche
 // GetAuthenticationSchemeOk returns a tuple with the AuthenticationScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetAuthenticationSchemeOk() (*AuthenticationScheme, bool) {
-	if o == nil || IsNil(o.AuthenticationScheme) {
+	if o == nil || isNil(o.AuthenticationScheme) {
 		return nil, false
 	}
 	return o.AuthenticationScheme, true
@@ -62,7 +62,7 @@ func (o *AuthenticationInfoRequest) GetAuthenticationSchemeOk() (*Authentication
 
 // HasAuthenticationScheme returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasAuthenticationScheme() bool {
-	if o != nil && !IsNil(o.AuthenticationScheme) {
+	if o != nil && !isNil(o.AuthenticationScheme) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *AuthenticationInfoRequest) SetAuthenticationScheme(v AuthenticationSche
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AuthenticationInfoRequest) GetResynchronizationInfo() Resynchronization
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -94,7 +94,7 @@ func (o *AuthenticationInfoRequest) GetResynchronizationInfoOk() (*Resynchroniza
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasResynchronizationInfo() bool {
-	if o != nil && !IsNil(o.ResynchronizationInfo) {
+	if o != nil && !isNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AuthenticationInfoRequest) SetResynchronizationInfo(v Resynchronization
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthenticationInfoRequest) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AuthenticationInfoRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -126,7 +126,7 @@ func (o *AuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthenticationInfoRequest) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o AuthenticationInfoRequest) MarshalJSON() ([]byte, error) {
 
 func (o AuthenticationInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthenticationScheme) {
+	if !isNil(o.AuthenticationScheme) {
 		toSerialize["authenticationScheme"] = o.AuthenticationScheme
 	}
-	if !IsNil(o.ResynchronizationInfo) {
+	if !isNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

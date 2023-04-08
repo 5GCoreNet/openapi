@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -105,7 +104,6 @@ docs/PlmnListTypeInner.md
 docs/PlmnTargetType.md
 docs/PositioningMethodType.md
 docs/ProbableCause.md
-docs/ProbableCauseOneOf.md
 docs/ProcessMonitor.md
 docs/RegistrationState.md
 docs/ReportAmountType.md
@@ -146,6 +144,7 @@ docs/TraceReferenceType.md
 docs/TraceReportingFormatType.md
 docs/TraceTargetType.md
 docs/TransportProtocol.md
+docs/TransportProtocolAnyOf.md
 docs/TrendIndication.md
 docs/TriggeringEventsType.md
 docs/UsageState.md
@@ -255,7 +254,6 @@ model_plmn_list_type_inner.go
 model_plmn_target_type.go
 model_positioning_method_type.go
 model_probable_cause.go
-model_probable_cause_one_of.go
 model_process_monitor.go
 model_registration_state.go
 model_report_amount_type.go
@@ -296,6 +294,7 @@ model_trace_reference_type.go
 model_trace_reporting_format_type.go
 model_trace_target_type.go
 model_transport_protocol.go
+model_transport_protocol_any_of.go
 model_trend_indication.go
 model_triggering_events_type.go
 model_usage_state.go

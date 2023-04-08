@@ -42,7 +42,7 @@ func NewSmContextReleasedDataWithDefaults() *SmContextReleasedData {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextReleasedData) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SmContextReleasedData) GetSmallDataRateStatus() SmallDataRateStatus {
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleasedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -60,7 +60,7 @@ func (o *SmContextReleasedData) GetSmallDataRateStatusOk() (*SmallDataRateStatus
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextReleasedData) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SmContextReleasedData) SetSmallDataRateStatus(v SmallDataRateStatus) {
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextReleasedData) GetApnRateStatus() ApnRateStatus {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SmContextReleasedData) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextReleasedData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -92,7 +92,7 @@ func (o *SmContextReleasedData) GetApnRateStatusOk() (*ApnRateStatus, bool) {
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextReleasedData) HasApnRateStatus() bool {
-	if o != nil && !IsNil(o.ApnRateStatus) {
+	if o != nil && !isNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SmContextReleasedData) MarshalJSON() ([]byte, error) {
 
 func (o SmContextReleasedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !IsNil(o.ApnRateStatus) {
+	if !isNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
 	return toSerialize, nil

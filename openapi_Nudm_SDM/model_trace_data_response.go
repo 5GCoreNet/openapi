@@ -42,7 +42,7 @@ func NewTraceDataResponseWithDefaults() *TraceDataResponse {
 
 // GetTraceData returns the TraceData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TraceDataResponse) GetTraceData() TraceData {
-	if o == nil || IsNil(o.TraceData.Get()) {
+	if o == nil || isNil(o.TraceData.Get()) {
 		var ret TraceData
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *TraceDataResponse) UnsetTraceData() {
 
 // GetSharedTraceDataId returns the SharedTraceDataId field value if set, zero value otherwise.
 func (o *TraceDataResponse) GetSharedTraceDataId() string {
-	if o == nil || IsNil(o.SharedTraceDataId) {
+	if o == nil || isNil(o.SharedTraceDataId) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *TraceDataResponse) GetSharedTraceDataId() string {
 // GetSharedTraceDataIdOk returns a tuple with the SharedTraceDataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceDataResponse) GetSharedTraceDataIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SharedTraceDataId) {
+	if o == nil || isNil(o.SharedTraceDataId) {
 		return nil, false
 	}
 	return o.SharedTraceDataId, true
@@ -102,7 +102,7 @@ func (o *TraceDataResponse) GetSharedTraceDataIdOk() (*string, bool) {
 
 // HasSharedTraceDataId returns a boolean if a field has been set.
 func (o *TraceDataResponse) HasSharedTraceDataId() bool {
-	if o != nil && !IsNil(o.SharedTraceDataId) {
+	if o != nil && !isNil(o.SharedTraceDataId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o TraceDataResponse) ToMap() (map[string]interface{}, error) {
 	if o.TraceData.IsSet() {
 		toSerialize["traceData"] = o.TraceData.Get()
 	}
-	if !IsNil(o.SharedTraceDataId) {
+	if !isNil(o.SharedTraceDataId) {
 		toSerialize["sharedTraceDataId"] = o.SharedTraceDataId
 	}
 	return toSerialize, nil

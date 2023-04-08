@@ -44,7 +44,7 @@ func NewModel5GLanParametersPatchWithDefaults() *Model5GLanParametersPatch {
 
 // GetGpsis returns the Gpsis field value if set, zero value otherwise.
 func (o *Model5GLanParametersPatch) GetGpsis() map[string]string {
-	if o == nil || IsNil(o.Gpsis) {
+	if o == nil || isNil(o.Gpsis) {
 		var ret map[string]string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *Model5GLanParametersPatch) GetGpsis() map[string]string {
 // GetGpsisOk returns a tuple with the Gpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersPatch) GetGpsisOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.Gpsis) {
+	if o == nil || isNil(o.Gpsis) {
 		return nil, false
 	}
 	return o.Gpsis, true
@@ -62,7 +62,7 @@ func (o *Model5GLanParametersPatch) GetGpsisOk() (*map[string]string, bool) {
 
 // HasGpsis returns a boolean if a field has been set.
 func (o *Model5GLanParametersPatch) HasGpsis() bool {
-	if o != nil && !IsNil(o.Gpsis) {
+	if o != nil && !isNil(o.Gpsis) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *Model5GLanParametersPatch) SetGpsis(v map[string]string) {
 
 // GetAppDesps returns the AppDesps field value if set, zero value otherwise.
 func (o *Model5GLanParametersPatch) GetAppDesps() map[string]AppDescriptorRm {
-	if o == nil || IsNil(o.AppDesps) {
+	if o == nil || isNil(o.AppDesps) {
 		var ret map[string]AppDescriptorRm
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *Model5GLanParametersPatch) GetAppDesps() map[string]AppDescriptorRm {
 // GetAppDespsOk returns a tuple with the AppDesps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersPatch) GetAppDespsOk() (*map[string]AppDescriptorRm, bool) {
-	if o == nil || IsNil(o.AppDesps) {
+	if o == nil || isNil(o.AppDesps) {
 		return nil, false
 	}
 	return o.AppDesps, true
@@ -94,7 +94,7 @@ func (o *Model5GLanParametersPatch) GetAppDespsOk() (*map[string]AppDescriptorRm
 
 // HasAppDesps returns a boolean if a field has been set.
 func (o *Model5GLanParametersPatch) HasAppDesps() bool {
-	if o != nil && !IsNil(o.AppDesps) {
+	if o != nil && !isNil(o.AppDesps) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o Model5GLanParametersPatch) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLanParametersPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Gpsis) {
+	if !isNil(o.Gpsis) {
 		toSerialize["gpsis"] = o.Gpsis
 	}
-	if !IsNil(o.AppDesps) {
+	if !isNil(o.AppDesps) {
 		toSerialize["appDesps"] = o.AppDesps
 	}
 	return toSerialize, nil

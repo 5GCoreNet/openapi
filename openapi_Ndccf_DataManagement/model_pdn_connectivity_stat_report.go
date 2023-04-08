@@ -75,7 +75,7 @@ func (o *PdnConnectivityStatReport) SetPdnConnStat(v PdnConnectivityStatus) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PdnConnectivityStatReport) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *PdnConnectivityStatReport) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectivityStatReport) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -93,7 +93,7 @@ func (o *PdnConnectivityStatReport) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PdnConnectivityStatReport) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *PdnConnectivityStatReport) SetDnn(v string) {
 
 // GetPduSeId returns the PduSeId field value if set, zero value otherwise.
 func (o *PdnConnectivityStatReport) GetPduSeId() int32 {
-	if o == nil || IsNil(o.PduSeId) {
+	if o == nil || isNil(o.PduSeId) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *PdnConnectivityStatReport) GetPduSeId() int32 {
 // GetPduSeIdOk returns a tuple with the PduSeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectivityStatReport) GetPduSeIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSeId) {
+	if o == nil || isNil(o.PduSeId) {
 		return nil, false
 	}
 	return o.PduSeId, true
@@ -125,7 +125,7 @@ func (o *PdnConnectivityStatReport) GetPduSeIdOk() (*int32, bool) {
 
 // HasPduSeId returns a boolean if a field has been set.
 func (o *PdnConnectivityStatReport) HasPduSeId() bool {
-	if o != nil && !IsNil(o.PduSeId) {
+	if o != nil && !isNil(o.PduSeId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *PdnConnectivityStatReport) SetPduSeId(v int32) {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *PdnConnectivityStatReport) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *PdnConnectivityStatReport) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectivityStatReport) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -157,7 +157,7 @@ func (o *PdnConnectivityStatReport) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *PdnConnectivityStatReport) HasIpv4Addr() bool {
-	if o != nil && !IsNil(o.Ipv4Addr) {
+	if o != nil && !isNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *PdnConnectivityStatReport) SetIpv4Addr(v string) {
 
 // GetIpv6Prefixes returns the Ipv6Prefixes field value if set, zero value otherwise.
 func (o *PdnConnectivityStatReport) GetIpv6Prefixes() []Ipv6Prefix {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		var ret []Ipv6Prefix
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *PdnConnectivityStatReport) GetIpv6Prefixes() []Ipv6Prefix {
 // GetIpv6PrefixesOk returns a tuple with the Ipv6Prefixes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectivityStatReport) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
-	if o == nil || IsNil(o.Ipv6Prefixes) {
+	if o == nil || isNil(o.Ipv6Prefixes) {
 		return nil, false
 	}
 	return o.Ipv6Prefixes, true
@@ -189,7 +189,7 @@ func (o *PdnConnectivityStatReport) GetIpv6PrefixesOk() ([]Ipv6Prefix, bool) {
 
 // HasIpv6Prefixes returns a boolean if a field has been set.
 func (o *PdnConnectivityStatReport) HasIpv6Prefixes() bool {
-	if o != nil && !IsNil(o.Ipv6Prefixes) {
+	if o != nil && !isNil(o.Ipv6Prefixes) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *PdnConnectivityStatReport) SetIpv6Prefixes(v []Ipv6Prefix) {
 
 // GetIpv6Addrs returns the Ipv6Addrs field value if set, zero value otherwise.
 func (o *PdnConnectivityStatReport) GetIpv6Addrs() []Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Addrs) {
+	if o == nil || isNil(o.Ipv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *PdnConnectivityStatReport) GetIpv6Addrs() []Ipv6Addr {
 // GetIpv6AddrsOk returns a tuple with the Ipv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectivityStatReport) GetIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Addrs) {
+	if o == nil || isNil(o.Ipv6Addrs) {
 		return nil, false
 	}
 	return o.Ipv6Addrs, true
@@ -221,7 +221,7 @@ func (o *PdnConnectivityStatReport) GetIpv6AddrsOk() ([]Ipv6Addr, bool) {
 
 // HasIpv6Addrs returns a boolean if a field has been set.
 func (o *PdnConnectivityStatReport) HasIpv6Addrs() bool {
-	if o != nil && !IsNil(o.Ipv6Addrs) {
+	if o != nil && !isNil(o.Ipv6Addrs) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *PdnConnectivityStatReport) SetIpv6Addrs(v []Ipv6Addr) {
 
 // GetPduSessType returns the PduSessType field value if set, zero value otherwise.
 func (o *PdnConnectivityStatReport) GetPduSessType() PduSessionType {
-	if o == nil || IsNil(o.PduSessType) {
+	if o == nil || isNil(o.PduSessType) {
 		var ret PduSessionType
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *PdnConnectivityStatReport) GetPduSessType() PduSessionType {
 // GetPduSessTypeOk returns a tuple with the PduSessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PdnConnectivityStatReport) GetPduSessTypeOk() (*PduSessionType, bool) {
-	if o == nil || IsNil(o.PduSessType) {
+	if o == nil || isNil(o.PduSessType) {
 		return nil, false
 	}
 	return o.PduSessType, true
@@ -253,7 +253,7 @@ func (o *PdnConnectivityStatReport) GetPduSessTypeOk() (*PduSessionType, bool) {
 
 // HasPduSessType returns a boolean if a field has been set.
 func (o *PdnConnectivityStatReport) HasPduSessType() bool {
-	if o != nil && !IsNil(o.PduSessType) {
+	if o != nil && !isNil(o.PduSessType) {
 		return true
 	}
 
@@ -276,22 +276,22 @@ func (o PdnConnectivityStatReport) MarshalJSON() ([]byte, error) {
 func (o PdnConnectivityStatReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pdnConnStat"] = o.PdnConnStat
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.PduSeId) {
+	if !isNil(o.PduSeId) {
 		toSerialize["pduSeId"] = o.PduSeId
 	}
-	if !IsNil(o.Ipv4Addr) {
+	if !isNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !IsNil(o.Ipv6Prefixes) {
+	if !isNil(o.Ipv6Prefixes) {
 		toSerialize["ipv6Prefixes"] = o.Ipv6Prefixes
 	}
-	if !IsNil(o.Ipv6Addrs) {
+	if !isNil(o.Ipv6Addrs) {
 		toSerialize["ipv6Addrs"] = o.Ipv6Addrs
 	}
-	if !IsNil(o.PduSessType) {
+	if !isNil(o.PduSessType) {
 		toSerialize["pduSessType"] = o.PduSessType
 	}
 	return toSerialize, nil

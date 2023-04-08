@@ -58,7 +58,7 @@ func NewMultipleUnitInformationWithDefaults() *MultipleUnitInformation {
 
 // GetResultCode returns the ResultCode field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetResultCode() ResultCode {
-	if o == nil || IsNil(o.ResultCode) {
+	if o == nil || isNil(o.ResultCode) {
 		var ret ResultCode
 		return ret
 	}
@@ -68,7 +68,7 @@ func (o *MultipleUnitInformation) GetResultCode() ResultCode {
 // GetResultCodeOk returns a tuple with the ResultCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetResultCodeOk() (*ResultCode, bool) {
-	if o == nil || IsNil(o.ResultCode) {
+	if o == nil || isNil(o.ResultCode) {
 		return nil, false
 	}
 	return o.ResultCode, true
@@ -76,7 +76,7 @@ func (o *MultipleUnitInformation) GetResultCodeOk() (*ResultCode, bool) {
 
 // HasResultCode returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasResultCode() bool {
-	if o != nil && !IsNil(o.ResultCode) {
+	if o != nil && !isNil(o.ResultCode) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *MultipleUnitInformation) SetRatingGroup(v int32) {
 
 // GetGrantedUnit returns the GrantedUnit field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetGrantedUnit() GrantedUnit {
-	if o == nil || IsNil(o.GrantedUnit) {
+	if o == nil || isNil(o.GrantedUnit) {
 		var ret GrantedUnit
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *MultipleUnitInformation) GetGrantedUnit() GrantedUnit {
 // GetGrantedUnitOk returns a tuple with the GrantedUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetGrantedUnitOk() (*GrantedUnit, bool) {
-	if o == nil || IsNil(o.GrantedUnit) {
+	if o == nil || isNil(o.GrantedUnit) {
 		return nil, false
 	}
 	return o.GrantedUnit, true
@@ -132,7 +132,7 @@ func (o *MultipleUnitInformation) GetGrantedUnitOk() (*GrantedUnit, bool) {
 
 // HasGrantedUnit returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasGrantedUnit() bool {
-	if o != nil && !IsNil(o.GrantedUnit) {
+	if o != nil && !isNil(o.GrantedUnit) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *MultipleUnitInformation) SetGrantedUnit(v GrantedUnit) {
 
 // GetTriggers returns the Triggers field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetTriggers() []Trigger {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		var ret []Trigger
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *MultipleUnitInformation) GetTriggers() []Trigger {
 // GetTriggersOk returns a tuple with the Triggers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetTriggersOk() ([]Trigger, bool) {
-	if o == nil || IsNil(o.Triggers) {
+	if o == nil || isNil(o.Triggers) {
 		return nil, false
 	}
 	return o.Triggers, true
@@ -164,7 +164,7 @@ func (o *MultipleUnitInformation) GetTriggersOk() ([]Trigger, bool) {
 
 // HasTriggers returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasTriggers() bool {
-	if o != nil && !IsNil(o.Triggers) {
+	if o != nil && !isNil(o.Triggers) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *MultipleUnitInformation) SetTriggers(v []Trigger) {
 
 // GetValidityTime returns the ValidityTime field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetValidityTime() int32 {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *MultipleUnitInformation) GetValidityTime() int32 {
 // GetValidityTimeOk returns a tuple with the ValidityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetValidityTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.ValidityTime) {
+	if o == nil || isNil(o.ValidityTime) {
 		return nil, false
 	}
 	return o.ValidityTime, true
@@ -196,7 +196,7 @@ func (o *MultipleUnitInformation) GetValidityTimeOk() (*int32, bool) {
 
 // HasValidityTime returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasValidityTime() bool {
-	if o != nil && !IsNil(o.ValidityTime) {
+	if o != nil && !isNil(o.ValidityTime) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *MultipleUnitInformation) SetValidityTime(v int32) {
 
 // GetQuotaHoldingTime returns the QuotaHoldingTime field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetQuotaHoldingTime() int32 {
-	if o == nil || IsNil(o.QuotaHoldingTime) {
+	if o == nil || isNil(o.QuotaHoldingTime) {
 		var ret int32
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *MultipleUnitInformation) GetQuotaHoldingTime() int32 {
 // GetQuotaHoldingTimeOk returns a tuple with the QuotaHoldingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetQuotaHoldingTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.QuotaHoldingTime) {
+	if o == nil || isNil(o.QuotaHoldingTime) {
 		return nil, false
 	}
 	return o.QuotaHoldingTime, true
@@ -228,7 +228,7 @@ func (o *MultipleUnitInformation) GetQuotaHoldingTimeOk() (*int32, bool) {
 
 // HasQuotaHoldingTime returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasQuotaHoldingTime() bool {
-	if o != nil && !IsNil(o.QuotaHoldingTime) {
+	if o != nil && !isNil(o.QuotaHoldingTime) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *MultipleUnitInformation) SetQuotaHoldingTime(v int32) {
 
 // GetFinalUnitIndication returns the FinalUnitIndication field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetFinalUnitIndication() FinalUnitIndication {
-	if o == nil || IsNil(o.FinalUnitIndication) {
+	if o == nil || isNil(o.FinalUnitIndication) {
 		var ret FinalUnitIndication
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *MultipleUnitInformation) GetFinalUnitIndication() FinalUnitIndication {
 // GetFinalUnitIndicationOk returns a tuple with the FinalUnitIndication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetFinalUnitIndicationOk() (*FinalUnitIndication, bool) {
-	if o == nil || IsNil(o.FinalUnitIndication) {
+	if o == nil || isNil(o.FinalUnitIndication) {
 		return nil, false
 	}
 	return o.FinalUnitIndication, true
@@ -260,7 +260,7 @@ func (o *MultipleUnitInformation) GetFinalUnitIndicationOk() (*FinalUnitIndicati
 
 // HasFinalUnitIndication returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasFinalUnitIndication() bool {
-	if o != nil && !IsNil(o.FinalUnitIndication) {
+	if o != nil && !isNil(o.FinalUnitIndication) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *MultipleUnitInformation) SetFinalUnitIndication(v FinalUnitIndication) 
 
 // GetTimeQuotaThreshold returns the TimeQuotaThreshold field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetTimeQuotaThreshold() int32 {
-	if o == nil || IsNil(o.TimeQuotaThreshold) {
+	if o == nil || isNil(o.TimeQuotaThreshold) {
 		var ret int32
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *MultipleUnitInformation) GetTimeQuotaThreshold() int32 {
 // GetTimeQuotaThresholdOk returns a tuple with the TimeQuotaThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetTimeQuotaThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeQuotaThreshold) {
+	if o == nil || isNil(o.TimeQuotaThreshold) {
 		return nil, false
 	}
 	return o.TimeQuotaThreshold, true
@@ -292,7 +292,7 @@ func (o *MultipleUnitInformation) GetTimeQuotaThresholdOk() (*int32, bool) {
 
 // HasTimeQuotaThreshold returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasTimeQuotaThreshold() bool {
-	if o != nil && !IsNil(o.TimeQuotaThreshold) {
+	if o != nil && !isNil(o.TimeQuotaThreshold) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *MultipleUnitInformation) SetTimeQuotaThreshold(v int32) {
 
 // GetVolumeQuotaThreshold returns the VolumeQuotaThreshold field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetVolumeQuotaThreshold() int32 {
-	if o == nil || IsNil(o.VolumeQuotaThreshold) {
+	if o == nil || isNil(o.VolumeQuotaThreshold) {
 		var ret int32
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *MultipleUnitInformation) GetVolumeQuotaThreshold() int32 {
 // GetVolumeQuotaThresholdOk returns a tuple with the VolumeQuotaThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetVolumeQuotaThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.VolumeQuotaThreshold) {
+	if o == nil || isNil(o.VolumeQuotaThreshold) {
 		return nil, false
 	}
 	return o.VolumeQuotaThreshold, true
@@ -324,7 +324,7 @@ func (o *MultipleUnitInformation) GetVolumeQuotaThresholdOk() (*int32, bool) {
 
 // HasVolumeQuotaThreshold returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasVolumeQuotaThreshold() bool {
-	if o != nil && !IsNil(o.VolumeQuotaThreshold) {
+	if o != nil && !isNil(o.VolumeQuotaThreshold) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *MultipleUnitInformation) SetVolumeQuotaThreshold(v int32) {
 
 // GetUnitQuotaThreshold returns the UnitQuotaThreshold field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetUnitQuotaThreshold() int32 {
-	if o == nil || IsNil(o.UnitQuotaThreshold) {
+	if o == nil || isNil(o.UnitQuotaThreshold) {
 		var ret int32
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *MultipleUnitInformation) GetUnitQuotaThreshold() int32 {
 // GetUnitQuotaThresholdOk returns a tuple with the UnitQuotaThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetUnitQuotaThresholdOk() (*int32, bool) {
-	if o == nil || IsNil(o.UnitQuotaThreshold) {
+	if o == nil || isNil(o.UnitQuotaThreshold) {
 		return nil, false
 	}
 	return o.UnitQuotaThreshold, true
@@ -356,7 +356,7 @@ func (o *MultipleUnitInformation) GetUnitQuotaThresholdOk() (*int32, bool) {
 
 // HasUnitQuotaThreshold returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasUnitQuotaThreshold() bool {
-	if o != nil && !IsNil(o.UnitQuotaThreshold) {
+	if o != nil && !isNil(o.UnitQuotaThreshold) {
 		return true
 	}
 
@@ -370,7 +370,7 @@ func (o *MultipleUnitInformation) SetUnitQuotaThreshold(v int32) {
 
 // GetUPFID returns the UPFID field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetUPFID() string {
-	if o == nil || IsNil(o.UPFID) {
+	if o == nil || isNil(o.UPFID) {
 		var ret string
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *MultipleUnitInformation) GetUPFID() string {
 // GetUPFIDOk returns a tuple with the UPFID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetUPFIDOk() (*string, bool) {
-	if o == nil || IsNil(o.UPFID) {
+	if o == nil || isNil(o.UPFID) {
 		return nil, false
 	}
 	return o.UPFID, true
@@ -388,7 +388,7 @@ func (o *MultipleUnitInformation) GetUPFIDOk() (*string, bool) {
 
 // HasUPFID returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasUPFID() bool {
-	if o != nil && !IsNil(o.UPFID) {
+	if o != nil && !isNil(o.UPFID) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *MultipleUnitInformation) SetUPFID(v string) {
 
 // GetAnnouncementInformation returns the AnnouncementInformation field value if set, zero value otherwise.
 func (o *MultipleUnitInformation) GetAnnouncementInformation() AnnouncementInformation {
-	if o == nil || IsNil(o.AnnouncementInformation) {
+	if o == nil || isNil(o.AnnouncementInformation) {
 		var ret AnnouncementInformation
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *MultipleUnitInformation) GetAnnouncementInformation() AnnouncementInfor
 // GetAnnouncementInformationOk returns a tuple with the AnnouncementInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitInformation) GetAnnouncementInformationOk() (*AnnouncementInformation, bool) {
-	if o == nil || IsNil(o.AnnouncementInformation) {
+	if o == nil || isNil(o.AnnouncementInformation) {
 		return nil, false
 	}
 	return o.AnnouncementInformation, true
@@ -420,7 +420,7 @@ func (o *MultipleUnitInformation) GetAnnouncementInformationOk() (*AnnouncementI
 
 // HasAnnouncementInformation returns a boolean if a field has been set.
 func (o *MultipleUnitInformation) HasAnnouncementInformation() bool {
-	if o != nil && !IsNil(o.AnnouncementInformation) {
+	if o != nil && !isNil(o.AnnouncementInformation) {
 		return true
 	}
 
@@ -442,38 +442,38 @@ func (o MultipleUnitInformation) MarshalJSON() ([]byte, error) {
 
 func (o MultipleUnitInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ResultCode) {
+	if !isNil(o.ResultCode) {
 		toSerialize["resultCode"] = o.ResultCode
 	}
 	toSerialize["ratingGroup"] = o.RatingGroup
-	if !IsNil(o.GrantedUnit) {
+	if !isNil(o.GrantedUnit) {
 		toSerialize["grantedUnit"] = o.GrantedUnit
 	}
-	if !IsNil(o.Triggers) {
+	if !isNil(o.Triggers) {
 		toSerialize["triggers"] = o.Triggers
 	}
-	if !IsNil(o.ValidityTime) {
+	if !isNil(o.ValidityTime) {
 		toSerialize["validityTime"] = o.ValidityTime
 	}
-	if !IsNil(o.QuotaHoldingTime) {
+	if !isNil(o.QuotaHoldingTime) {
 		toSerialize["quotaHoldingTime"] = o.QuotaHoldingTime
 	}
-	if !IsNil(o.FinalUnitIndication) {
+	if !isNil(o.FinalUnitIndication) {
 		toSerialize["finalUnitIndication"] = o.FinalUnitIndication
 	}
-	if !IsNil(o.TimeQuotaThreshold) {
+	if !isNil(o.TimeQuotaThreshold) {
 		toSerialize["timeQuotaThreshold"] = o.TimeQuotaThreshold
 	}
-	if !IsNil(o.VolumeQuotaThreshold) {
+	if !isNil(o.VolumeQuotaThreshold) {
 		toSerialize["volumeQuotaThreshold"] = o.VolumeQuotaThreshold
 	}
-	if !IsNil(o.UnitQuotaThreshold) {
+	if !isNil(o.UnitQuotaThreshold) {
 		toSerialize["unitQuotaThreshold"] = o.UnitQuotaThreshold
 	}
-	if !IsNil(o.UPFID) {
+	if !isNil(o.UPFID) {
 		toSerialize["uPFID"] = o.UPFID
 	}
-	if !IsNil(o.AnnouncementInformation) {
+	if !isNil(o.AnnouncementInformation) {
 		toSerialize["announcementInformation"] = o.AnnouncementInformation
 	}
 	return toSerialize, nil

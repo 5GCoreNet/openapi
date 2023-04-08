@@ -17,23 +17,37 @@ import (
 
 // DataAggregationFunctionType The type of data aggregation function.
 type DataAggregationFunctionType struct {
-	string *string
+	DataAggregationFunctionTypeAnyOf *DataAggregationFunctionTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DataAggregationFunctionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DataAggregationFunctionTypeAnyOf
+	err = json.Unmarshal(data, &dst.DataAggregationFunctionTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDataAggregationFunctionTypeAnyOf, _ := json.Marshal(dst.DataAggregationFunctionTypeAnyOf)
+		if string(jsonDataAggregationFunctionTypeAnyOf) == "{}" { // empty struct
+			dst.DataAggregationFunctionTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DataAggregationFunctionTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DataAggregationFunctionTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DataAggregationFunctionType)")
@@ -41,8 +55,12 @@ func (dst *DataAggregationFunctionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DataAggregationFunctionType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DataAggregationFunctionTypeAnyOf != nil {
+		return json.Marshal(&src.DataAggregationFunctionTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

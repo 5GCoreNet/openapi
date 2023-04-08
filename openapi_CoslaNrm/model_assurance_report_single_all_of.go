@@ -19,7 +19,7 @@ var _ MappedNullable = &AssuranceReportSingleAllOf{}
 
 // AssuranceReportSingleAllOf struct for AssuranceReportSingleAllOf
 type AssuranceReportSingleAllOf struct {
-	Attributes *AssuranceReportSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewAssuranceReportSingleAllOf instantiates a new AssuranceReportSingleAllOf object
@@ -40,9 +40,9 @@ func NewAssuranceReportSingleAllOfWithDefaults() *AssuranceReportSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *AssuranceReportSingleAllOf) GetAttributes() AssuranceReportSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret AssuranceReportSingleAllOfAttributes
+func (o *AssuranceReportSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *AssuranceReportSingleAllOf) GetAttributes() AssuranceReportSingleAllOfA
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AssuranceReportSingleAllOf) GetAttributesOk() (*AssuranceReportSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *AssuranceReportSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *AssuranceReportSingleAllOf) GetAttributesOk() (*AssuranceReportSingleAl
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AssuranceReportSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given AssuranceReportSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *AssuranceReportSingleAllOf) SetAttributes(v AssuranceReportSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *AssuranceReportSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o AssuranceReportSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AssuranceReportSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

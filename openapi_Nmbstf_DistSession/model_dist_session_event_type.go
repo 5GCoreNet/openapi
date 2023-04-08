@@ -17,23 +17,37 @@ import (
 
 // DistSessionEventType Status Event Type
 type DistSessionEventType struct {
-	string *string
+	DistSessionEventTypeAnyOf *DistSessionEventTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DistSessionEventType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DistSessionEventTypeAnyOf
+	err = json.Unmarshal(data, &dst.DistSessionEventTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDistSessionEventTypeAnyOf, _ := json.Marshal(dst.DistSessionEventTypeAnyOf)
+		if string(jsonDistSessionEventTypeAnyOf) == "{}" { // empty struct
+			dst.DistSessionEventTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DistSessionEventTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DistSessionEventTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DistSessionEventType)")
@@ -41,8 +55,12 @@ func (dst *DistSessionEventType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DistSessionEventType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DistSessionEventTypeAnyOf != nil {
+		return json.Marshal(&src.DistSessionEventTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

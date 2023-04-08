@@ -75,7 +75,7 @@ func (o *AppListForUeComm) SetAppId(v string) {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *AppListForUeComm) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *AppListForUeComm) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppListForUeComm) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -93,7 +93,7 @@ func (o *AppListForUeComm) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *AppListForUeComm) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *AppListForUeComm) SetStartTime(v time.Time) {
 
 // GetAppDur returns the AppDur field value if set, zero value otherwise.
 func (o *AppListForUeComm) GetAppDur() int32 {
-	if o == nil || IsNil(o.AppDur) {
+	if o == nil || isNil(o.AppDur) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *AppListForUeComm) GetAppDur() int32 {
 // GetAppDurOk returns a tuple with the AppDur field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppListForUeComm) GetAppDurOk() (*int32, bool) {
-	if o == nil || IsNil(o.AppDur) {
+	if o == nil || isNil(o.AppDur) {
 		return nil, false
 	}
 	return o.AppDur, true
@@ -125,7 +125,7 @@ func (o *AppListForUeComm) GetAppDurOk() (*int32, bool) {
 
 // HasAppDur returns a boolean if a field has been set.
 func (o *AppListForUeComm) HasAppDur() bool {
-	if o != nil && !IsNil(o.AppDur) {
+	if o != nil && !isNil(o.AppDur) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *AppListForUeComm) SetAppDur(v int32) {
 
 // GetOccurRatio returns the OccurRatio field value if set, zero value otherwise.
 func (o *AppListForUeComm) GetOccurRatio() int32 {
-	if o == nil || IsNil(o.OccurRatio) {
+	if o == nil || isNil(o.OccurRatio) {
 		var ret int32
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *AppListForUeComm) GetOccurRatio() int32 {
 // GetOccurRatioOk returns a tuple with the OccurRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppListForUeComm) GetOccurRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.OccurRatio) {
+	if o == nil || isNil(o.OccurRatio) {
 		return nil, false
 	}
 	return o.OccurRatio, true
@@ -157,7 +157,7 @@ func (o *AppListForUeComm) GetOccurRatioOk() (*int32, bool) {
 
 // HasOccurRatio returns a boolean if a field has been set.
 func (o *AppListForUeComm) HasOccurRatio() bool {
-	if o != nil && !IsNil(o.OccurRatio) {
+	if o != nil && !isNil(o.OccurRatio) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *AppListForUeComm) SetOccurRatio(v int32) {
 
 // GetSpatialValidity returns the SpatialValidity field value if set, zero value otherwise.
 func (o *AppListForUeComm) GetSpatialValidity() NetworkAreaInfo {
-	if o == nil || IsNil(o.SpatialValidity) {
+	if o == nil || isNil(o.SpatialValidity) {
 		var ret NetworkAreaInfo
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *AppListForUeComm) GetSpatialValidity() NetworkAreaInfo {
 // GetSpatialValidityOk returns a tuple with the SpatialValidity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppListForUeComm) GetSpatialValidityOk() (*NetworkAreaInfo, bool) {
-	if o == nil || IsNil(o.SpatialValidity) {
+	if o == nil || isNil(o.SpatialValidity) {
 		return nil, false
 	}
 	return o.SpatialValidity, true
@@ -189,7 +189,7 @@ func (o *AppListForUeComm) GetSpatialValidityOk() (*NetworkAreaInfo, bool) {
 
 // HasSpatialValidity returns a boolean if a field has been set.
 func (o *AppListForUeComm) HasSpatialValidity() bool {
-	if o != nil && !IsNil(o.SpatialValidity) {
+	if o != nil && !isNil(o.SpatialValidity) {
 		return true
 	}
 
@@ -212,16 +212,16 @@ func (o AppListForUeComm) MarshalJSON() ([]byte, error) {
 func (o AppListForUeComm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appId"] = o.AppId
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.AppDur) {
+	if !isNil(o.AppDur) {
 		toSerialize["appDur"] = o.AppDur
 	}
-	if !IsNil(o.OccurRatio) {
+	if !isNil(o.OccurRatio) {
 		toSerialize["occurRatio"] = o.OccurRatio
 	}
-	if !IsNil(o.SpatialValidity) {
+	if !isNil(o.SpatialValidity) {
 		toSerialize["spatialValidity"] = o.SpatialValidity
 	}
 	return toSerialize, nil

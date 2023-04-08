@@ -13,7 +13,7 @@ package openapi_Nudm_PP
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -83,10 +83,10 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 	localVarFormParams := url.Values{}
 
 	if r.mtcProviderInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "mtc-provider-info", r.mtcProviderInfo, "")
+		parameterAddToQuery(localVarQueryParams, "mtc-provider-info", r.mtcProviderInfo, "")
 	}
 	if r.afId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "af-id", r.afId, "")
+		parameterAddToQuery(localVarQueryParams, "af-id", r.afId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -115,9 +115,9 @@ func (a *Class5GVNGroupDeletionApiService) Delete5GVNGroupExecute(r ApiDelete5GV
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

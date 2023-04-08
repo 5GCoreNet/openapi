@@ -49,7 +49,7 @@ func NewIdTranslationResultWithDefaults() *IdTranslationResult {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *IdTranslationResult) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *IdTranslationResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdTranslationResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -67,7 +67,7 @@ func (o *IdTranslationResult) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *IdTranslationResult) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *IdTranslationResult) SetSupi(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *IdTranslationResult) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *IdTranslationResult) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdTranslationResult) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -123,7 +123,7 @@ func (o *IdTranslationResult) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *IdTranslationResult) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *IdTranslationResult) SetGpsi(v string) {
 
 // GetAdditionalSupis returns the AdditionalSupis field value if set, zero value otherwise.
 func (o *IdTranslationResult) GetAdditionalSupis() []string {
-	if o == nil || IsNil(o.AdditionalSupis) {
+	if o == nil || isNil(o.AdditionalSupis) {
 		var ret []string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *IdTranslationResult) GetAdditionalSupis() []string {
 // GetAdditionalSupisOk returns a tuple with the AdditionalSupis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdTranslationResult) GetAdditionalSupisOk() ([]string, bool) {
-	if o == nil || IsNil(o.AdditionalSupis) {
+	if o == nil || isNil(o.AdditionalSupis) {
 		return nil, false
 	}
 	return o.AdditionalSupis, true
@@ -155,7 +155,7 @@ func (o *IdTranslationResult) GetAdditionalSupisOk() ([]string, bool) {
 
 // HasAdditionalSupis returns a boolean if a field has been set.
 func (o *IdTranslationResult) HasAdditionalSupis() bool {
-	if o != nil && !IsNil(o.AdditionalSupis) {
+	if o != nil && !isNil(o.AdditionalSupis) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *IdTranslationResult) SetAdditionalSupis(v []string) {
 
 // GetAdditionalGpsis returns the AdditionalGpsis field value if set, zero value otherwise.
 func (o *IdTranslationResult) GetAdditionalGpsis() []string {
-	if o == nil || IsNil(o.AdditionalGpsis) {
+	if o == nil || isNil(o.AdditionalGpsis) {
 		var ret []string
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *IdTranslationResult) GetAdditionalGpsis() []string {
 // GetAdditionalGpsisOk returns a tuple with the AdditionalGpsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IdTranslationResult) GetAdditionalGpsisOk() ([]string, bool) {
-	if o == nil || IsNil(o.AdditionalGpsis) {
+	if o == nil || isNil(o.AdditionalGpsis) {
 		return nil, false
 	}
 	return o.AdditionalGpsis, true
@@ -187,7 +187,7 @@ func (o *IdTranslationResult) GetAdditionalGpsisOk() ([]string, bool) {
 
 // HasAdditionalGpsis returns a boolean if a field has been set.
 func (o *IdTranslationResult) HasAdditionalGpsis() bool {
-	if o != nil && !IsNil(o.AdditionalGpsis) {
+	if o != nil && !isNil(o.AdditionalGpsis) {
 		return true
 	}
 
@@ -209,17 +209,17 @@ func (o IdTranslationResult) MarshalJSON() ([]byte, error) {
 
 func (o IdTranslationResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.AdditionalSupis) {
+	if !isNil(o.AdditionalSupis) {
 		toSerialize["additionalSupis"] = o.AdditionalSupis
 	}
-	if !IsNil(o.AdditionalGpsis) {
+	if !isNil(o.AdditionalGpsis) {
 		toSerialize["additionalGpsis"] = o.AdditionalGpsis
 	}
 	return toSerialize, nil

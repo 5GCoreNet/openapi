@@ -92,6 +92,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AmEvent](docs/AmEvent.md)
+ - [AmEventAnyOf](docs/AmEventAnyOf.md)
  - [AmEventData](docs/AmEventData.md)
  - [AmEventNotification](docs/AmEventNotification.md)
  - [AmEventsNotification](docs/AmEventsNotification.md)
@@ -117,6 +118,7 @@ Class | Method | HTTP request | Description
  - [Local3dPointUncertaintyEllipsoidAllOf](docs/Local3dPointUncertaintyEllipsoidAllOf.md)
  - [LocalOrigin](docs/LocalOrigin.md)
  - [NotificationMethod](docs/NotificationMethod.md)
+ - [NotificationMethodAnyOf](docs/NotificationMethodAnyOf.md)
  - [PduidInformation](docs/PduidInformation.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [Point](docs/Point.md)
@@ -135,6 +137,7 @@ Class | Method | HTTP request | Description
  - [RelativeCartesianLocation](docs/RelativeCartesianLocation.md)
  - [ServiceAreaCoverageInfo](docs/ServiceAreaCoverageInfo.md)
  - [SupportedGADShapes](docs/SupportedGADShapes.md)
+ - [SupportedGADShapesAnyOf](docs/SupportedGADShapesAnyOf.md)
  - [UncertaintyEllipse](docs/UncertaintyEllipse.md)
  - [UncertaintyEllipsoid](docs/UncertaintyEllipsoid.md)
  - [WebsockNotifConfig](docs/WebsockNotifConfig.md)

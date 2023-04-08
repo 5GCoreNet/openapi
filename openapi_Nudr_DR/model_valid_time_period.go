@@ -45,7 +45,7 @@ func NewValidTimePeriodWithDefaults() *ValidTimePeriod {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *ValidTimePeriod) GetStartTime() time.Time {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *ValidTimePeriod) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidTimePeriod) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.StartTime) {
+	if o == nil || isNil(o.StartTime) {
 		return nil, false
 	}
 	return o.StartTime, true
@@ -63,7 +63,7 @@ func (o *ValidTimePeriod) GetStartTimeOk() (*time.Time, bool) {
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *ValidTimePeriod) HasStartTime() bool {
-	if o != nil && !IsNil(o.StartTime) {
+	if o != nil && !isNil(o.StartTime) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *ValidTimePeriod) SetStartTime(v time.Time) {
 
 // GetEndTime returns the EndTime field value if set, zero value otherwise.
 func (o *ValidTimePeriod) GetEndTime() time.Time {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ValidTimePeriod) GetEndTime() time.Time {
 // GetEndTimeOk returns a tuple with the EndTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValidTimePeriod) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.EndTime) {
+	if o == nil || isNil(o.EndTime) {
 		return nil, false
 	}
 	return o.EndTime, true
@@ -95,7 +95,7 @@ func (o *ValidTimePeriod) GetEndTimeOk() (*time.Time, bool) {
 
 // HasEndTime returns a boolean if a field has been set.
 func (o *ValidTimePeriod) HasEndTime() bool {
-	if o != nil && !IsNil(o.EndTime) {
+	if o != nil && !isNil(o.EndTime) {
 		return true
 	}
 
@@ -117,10 +117,10 @@ func (o ValidTimePeriod) MarshalJSON() ([]byte, error) {
 
 func (o ValidTimePeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTime) {
+	if !isNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
-	if !IsNil(o.EndTime) {
+	if !isNil(o.EndTime) {
 		toSerialize["endTime"] = o.EndTime
 	}
 	return toSerialize, nil

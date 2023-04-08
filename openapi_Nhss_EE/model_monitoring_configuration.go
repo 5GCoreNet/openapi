@@ -76,7 +76,7 @@ func (o *MonitoringConfiguration) SetEventType(v EventType) {
 
 // GetImmediateFlag returns the ImmediateFlag field value if set, zero value otherwise.
 func (o *MonitoringConfiguration) GetImmediateFlag() bool {
-	if o == nil || IsNil(o.ImmediateFlag) {
+	if o == nil || isNil(o.ImmediateFlag) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MonitoringConfiguration) GetImmediateFlag() bool {
 // GetImmediateFlagOk returns a tuple with the ImmediateFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringConfiguration) GetImmediateFlagOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmediateFlag) {
+	if o == nil || isNil(o.ImmediateFlag) {
 		return nil, false
 	}
 	return o.ImmediateFlag, true
@@ -94,7 +94,7 @@ func (o *MonitoringConfiguration) GetImmediateFlagOk() (*bool, bool) {
 
 // HasImmediateFlag returns a boolean if a field has been set.
 func (o *MonitoringConfiguration) HasImmediateFlag() bool {
-	if o != nil && !IsNil(o.ImmediateFlag) {
+	if o != nil && !isNil(o.ImmediateFlag) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *MonitoringConfiguration) SetImmediateFlag(v bool) {
 
 // GetLocationReportingConfiguration returns the LocationReportingConfiguration field value if set, zero value otherwise.
 func (o *MonitoringConfiguration) GetLocationReportingConfiguration() LocationReportingConfiguration {
-	if o == nil || IsNil(o.LocationReportingConfiguration) {
+	if o == nil || isNil(o.LocationReportingConfiguration) {
 		var ret LocationReportingConfiguration
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *MonitoringConfiguration) GetLocationReportingConfiguration() LocationRe
 // GetLocationReportingConfigurationOk returns a tuple with the LocationReportingConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringConfiguration) GetLocationReportingConfigurationOk() (*LocationReportingConfiguration, bool) {
-	if o == nil || IsNil(o.LocationReportingConfiguration) {
+	if o == nil || isNil(o.LocationReportingConfiguration) {
 		return nil, false
 	}
 	return o.LocationReportingConfiguration, true
@@ -126,7 +126,7 @@ func (o *MonitoringConfiguration) GetLocationReportingConfigurationOk() (*Locati
 
 // HasLocationReportingConfiguration returns a boolean if a field has been set.
 func (o *MonitoringConfiguration) HasLocationReportingConfiguration() bool {
-	if o != nil && !IsNil(o.LocationReportingConfiguration) {
+	if o != nil && !isNil(o.LocationReportingConfiguration) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *MonitoringConfiguration) SetLocationReportingConfiguration(v LocationRe
 
 // GetLossConnectivityConfiguration returns the LossConnectivityConfiguration field value if set, zero value otherwise.
 func (o *MonitoringConfiguration) GetLossConnectivityConfiguration() LossConnectivityConfiguration {
-	if o == nil || IsNil(o.LossConnectivityConfiguration) {
+	if o == nil || isNil(o.LossConnectivityConfiguration) {
 		var ret LossConnectivityConfiguration
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *MonitoringConfiguration) GetLossConnectivityConfiguration() LossConnect
 // GetLossConnectivityConfigurationOk returns a tuple with the LossConnectivityConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringConfiguration) GetLossConnectivityConfigurationOk() (*LossConnectivityConfiguration, bool) {
-	if o == nil || IsNil(o.LossConnectivityConfiguration) {
+	if o == nil || isNil(o.LossConnectivityConfiguration) {
 		return nil, false
 	}
 	return o.LossConnectivityConfiguration, true
@@ -158,7 +158,7 @@ func (o *MonitoringConfiguration) GetLossConnectivityConfigurationOk() (*LossCon
 
 // HasLossConnectivityConfiguration returns a boolean if a field has been set.
 func (o *MonitoringConfiguration) HasLossConnectivityConfiguration() bool {
-	if o != nil && !IsNil(o.LossConnectivityConfiguration) {
+	if o != nil && !isNil(o.LossConnectivityConfiguration) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *MonitoringConfiguration) SetLossConnectivityConfiguration(v LossConnect
 
 // GetReachabilityForDataConfiguration returns the ReachabilityForDataConfiguration field value if set, zero value otherwise.
 func (o *MonitoringConfiguration) GetReachabilityForDataConfiguration() ReachabilityForDataConfiguration {
-	if o == nil || IsNil(o.ReachabilityForDataConfiguration) {
+	if o == nil || isNil(o.ReachabilityForDataConfiguration) {
 		var ret ReachabilityForDataConfiguration
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *MonitoringConfiguration) GetReachabilityForDataConfiguration() Reachabi
 // GetReachabilityForDataConfigurationOk returns a tuple with the ReachabilityForDataConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringConfiguration) GetReachabilityForDataConfigurationOk() (*ReachabilityForDataConfiguration, bool) {
-	if o == nil || IsNil(o.ReachabilityForDataConfiguration) {
+	if o == nil || isNil(o.ReachabilityForDataConfiguration) {
 		return nil, false
 	}
 	return o.ReachabilityForDataConfiguration, true
@@ -190,7 +190,7 @@ func (o *MonitoringConfiguration) GetReachabilityForDataConfigurationOk() (*Reac
 
 // HasReachabilityForDataConfiguration returns a boolean if a field has been set.
 func (o *MonitoringConfiguration) HasReachabilityForDataConfiguration() bool {
-	if o != nil && !IsNil(o.ReachabilityForDataConfiguration) {
+	if o != nil && !isNil(o.ReachabilityForDataConfiguration) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *MonitoringConfiguration) SetReachabilityForDataConfiguration(v Reachabi
 
 // GetPduSessionStatusCfg returns the PduSessionStatusCfg field value if set, zero value otherwise.
 func (o *MonitoringConfiguration) GetPduSessionStatusCfg() PduSessionStatusCfg {
-	if o == nil || IsNil(o.PduSessionStatusCfg) {
+	if o == nil || isNil(o.PduSessionStatusCfg) {
 		var ret PduSessionStatusCfg
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *MonitoringConfiguration) GetPduSessionStatusCfg() PduSessionStatusCfg {
 // GetPduSessionStatusCfgOk returns a tuple with the PduSessionStatusCfg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringConfiguration) GetPduSessionStatusCfgOk() (*PduSessionStatusCfg, bool) {
-	if o == nil || IsNil(o.PduSessionStatusCfg) {
+	if o == nil || isNil(o.PduSessionStatusCfg) {
 		return nil, false
 	}
 	return o.PduSessionStatusCfg, true
@@ -222,7 +222,7 @@ func (o *MonitoringConfiguration) GetPduSessionStatusCfgOk() (*PduSessionStatusC
 
 // HasPduSessionStatusCfg returns a boolean if a field has been set.
 func (o *MonitoringConfiguration) HasPduSessionStatusCfg() bool {
-	if o != nil && !IsNil(o.PduSessionStatusCfg) {
+	if o != nil && !isNil(o.PduSessionStatusCfg) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *MonitoringConfiguration) SetPduSessionStatusCfg(v PduSessionStatusCfg) 
 
 // GetIdleStatusInd returns the IdleStatusInd field value if set, zero value otherwise.
 func (o *MonitoringConfiguration) GetIdleStatusInd() bool {
-	if o == nil || IsNil(o.IdleStatusInd) {
+	if o == nil || isNil(o.IdleStatusInd) {
 		var ret bool
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *MonitoringConfiguration) GetIdleStatusInd() bool {
 // GetIdleStatusIndOk returns a tuple with the IdleStatusInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringConfiguration) GetIdleStatusIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.IdleStatusInd) {
+	if o == nil || isNil(o.IdleStatusInd) {
 		return nil, false
 	}
 	return o.IdleStatusInd, true
@@ -254,7 +254,7 @@ func (o *MonitoringConfiguration) GetIdleStatusIndOk() (*bool, bool) {
 
 // HasIdleStatusInd returns a boolean if a field has been set.
 func (o *MonitoringConfiguration) HasIdleStatusInd() bool {
-	if o != nil && !IsNil(o.IdleStatusInd) {
+	if o != nil && !isNil(o.IdleStatusInd) {
 		return true
 	}
 
@@ -277,22 +277,22 @@ func (o MonitoringConfiguration) MarshalJSON() ([]byte, error) {
 func (o MonitoringConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.ImmediateFlag) {
+	if !isNil(o.ImmediateFlag) {
 		toSerialize["immediateFlag"] = o.ImmediateFlag
 	}
-	if !IsNil(o.LocationReportingConfiguration) {
+	if !isNil(o.LocationReportingConfiguration) {
 		toSerialize["locationReportingConfiguration"] = o.LocationReportingConfiguration
 	}
-	if !IsNil(o.LossConnectivityConfiguration) {
+	if !isNil(o.LossConnectivityConfiguration) {
 		toSerialize["lossConnectivityConfiguration"] = o.LossConnectivityConfiguration
 	}
-	if !IsNil(o.ReachabilityForDataConfiguration) {
+	if !isNil(o.ReachabilityForDataConfiguration) {
 		toSerialize["reachabilityForDataConfiguration"] = o.ReachabilityForDataConfiguration
 	}
-	if !IsNil(o.PduSessionStatusCfg) {
+	if !isNil(o.PduSessionStatusCfg) {
 		toSerialize["pduSessionStatusCfg"] = o.PduSessionStatusCfg
 	}
-	if !IsNil(o.IdleStatusInd) {
+	if !isNil(o.IdleStatusInd) {
 		toSerialize["idleStatusInd"] = o.IdleStatusInd
 	}
 	return toSerialize, nil

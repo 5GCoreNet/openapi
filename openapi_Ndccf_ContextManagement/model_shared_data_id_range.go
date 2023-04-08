@@ -41,7 +41,7 @@ func NewSharedDataIdRangeWithDefaults() *SharedDataIdRange {
 
 // GetPattern returns the Pattern field value if set, zero value otherwise.
 func (o *SharedDataIdRange) GetPattern() string {
-	if o == nil || IsNil(o.Pattern) {
+	if o == nil || isNil(o.Pattern) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *SharedDataIdRange) GetPattern() string {
 // GetPatternOk returns a tuple with the Pattern field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SharedDataIdRange) GetPatternOk() (*string, bool) {
-	if o == nil || IsNil(o.Pattern) {
+	if o == nil || isNil(o.Pattern) {
 		return nil, false
 	}
 	return o.Pattern, true
@@ -59,7 +59,7 @@ func (o *SharedDataIdRange) GetPatternOk() (*string, bool) {
 
 // HasPattern returns a boolean if a field has been set.
 func (o *SharedDataIdRange) HasPattern() bool {
-	if o != nil && !IsNil(o.Pattern) {
+	if o != nil && !isNil(o.Pattern) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o SharedDataIdRange) MarshalJSON() ([]byte, error) {
 
 func (o SharedDataIdRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Pattern) {
+	if !isNil(o.Pattern) {
 		toSerialize["pattern"] = o.Pattern
 	}
 	return toSerialize, nil

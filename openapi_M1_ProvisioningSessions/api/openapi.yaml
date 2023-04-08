@@ -166,10 +166,7 @@ components:
       type: string
     ProvisioningSessionType:
       anyOf:
-      - enum:
-        - DOWNLINK
-        - UPLINK
-        type: string
+      - $ref: '#/components/schemas/ProvisioningSessionType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -179,3 +176,9 @@ components:
     ApplicationId:
       description: String providing an application identifier.
       type: string
+    ProvisioningSessionType_anyOf:
+      enum:
+      - DOWNLINK
+      - UPLINK
+      type: string
+      example: null

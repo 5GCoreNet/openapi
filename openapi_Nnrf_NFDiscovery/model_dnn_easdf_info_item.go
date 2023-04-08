@@ -67,7 +67,7 @@ func (o *DnnEasdfInfoItem) SetDnn(v DnnSmfInfoItemDnn) {
 
 // GetDnaiList returns the DnaiList field value if set, zero value otherwise.
 func (o *DnnEasdfInfoItem) GetDnaiList() []string {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *DnnEasdfInfoItem) GetDnaiList() []string {
 // GetDnaiListOk returns a tuple with the DnaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnnEasdfInfoItem) GetDnaiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.DnaiList) {
+	if o == nil || isNil(o.DnaiList) {
 		return nil, false
 	}
 	return o.DnaiList, true
@@ -85,7 +85,7 @@ func (o *DnnEasdfInfoItem) GetDnaiListOk() ([]string, bool) {
 
 // HasDnaiList returns a boolean if a field has been set.
 func (o *DnnEasdfInfoItem) HasDnaiList() bool {
-	if o != nil && !IsNil(o.DnaiList) {
+	if o != nil && !isNil(o.DnaiList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o DnnEasdfInfoItem) MarshalJSON() ([]byte, error) {
 func (o DnnEasdfInfoItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
-	if !IsNil(o.DnaiList) {
+	if !isNil(o.DnaiList) {
 		toSerialize["dnaiList"] = o.DnaiList
 	}
 	return toSerialize, nil

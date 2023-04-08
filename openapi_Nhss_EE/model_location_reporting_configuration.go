@@ -67,7 +67,7 @@ func (o *LocationReportingConfiguration) SetCurrentLocation(v bool) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *LocationReportingConfiguration) GetAccuracy() LocationAccuracy {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		var ret LocationAccuracy
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *LocationReportingConfiguration) GetAccuracy() LocationAccuracy {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationReportingConfiguration) GetAccuracyOk() (*LocationAccuracy, bool) {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -85,7 +85,7 @@ func (o *LocationReportingConfiguration) GetAccuracyOk() (*LocationAccuracy, boo
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *LocationReportingConfiguration) HasAccuracy() bool {
-	if o != nil && !IsNil(o.Accuracy) {
+	if o != nil && !isNil(o.Accuracy) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o LocationReportingConfiguration) MarshalJSON() ([]byte, error) {
 func (o LocationReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["currentLocation"] = o.CurrentLocation
-	if !IsNil(o.Accuracy) {
+	if !isNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil

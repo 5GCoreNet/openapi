@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -15,6 +14,7 @@ docs/FileDistributionData.md
 docs/FileDistributionsCollectionDocumentApi.md
 docs/FileList.md
 docs/FileStatus.md
+docs/FileStatusAnyOf.md
 docs/GADShape.md
 docs/GeographicArea.md
 docs/GeographicalCoordinates.md
@@ -30,6 +30,7 @@ docs/Local3dPointUncertaintyEllipsoidAllOf.md
 docs/LocalMbmsInfo.md
 docs/LocalOrigin.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/Point.md
@@ -49,6 +50,7 @@ docs/ProblemDetails1.md
 docs/RelativeCartesianLocation.md
 docs/Snssai.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
 git_push.sh
@@ -61,6 +63,7 @@ model_ellipsoid_arc_all_of.go
 model_file_distribution_data.go
 model_file_list.go
 model_file_status.go
+model_file_status_any_of.go
 model_gad_shape.go
 model_geographic_area.go
 model_geographical_coordinates.go
@@ -75,6 +78,7 @@ model_local3d_point_uncertainty_ellipsoid_all_of.go
 model_local_mbms_info.go
 model_local_origin.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_point.go
@@ -94,6 +98,7 @@ model_problem_details_1.go
 model_relative_cartesian_location.go
 model_snssai.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go
 response.go

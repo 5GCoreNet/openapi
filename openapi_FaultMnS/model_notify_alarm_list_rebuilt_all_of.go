@@ -67,7 +67,7 @@ func (o *NotifyAlarmListRebuiltAllOf) SetReason(v string) {
 
 // GetAlarmListAlignmentRequirement returns the AlarmListAlignmentRequirement field value if set, zero value otherwise.
 func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirement() AlarmListAlignmentRequirement {
-	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
 		var ret AlarmListAlignmentRequirement
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirement() AlarmLi
 // GetAlarmListAlignmentRequirementOk returns a tuple with the AlarmListAlignmentRequirement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirementOk() (*AlarmListAlignmentRequirement, bool) {
-	if o == nil || IsNil(o.AlarmListAlignmentRequirement) {
+	if o == nil || isNil(o.AlarmListAlignmentRequirement) {
 		return nil, false
 	}
 	return o.AlarmListAlignmentRequirement, true
@@ -85,7 +85,7 @@ func (o *NotifyAlarmListRebuiltAllOf) GetAlarmListAlignmentRequirementOk() (*Ala
 
 // HasAlarmListAlignmentRequirement returns a boolean if a field has been set.
 func (o *NotifyAlarmListRebuiltAllOf) HasAlarmListAlignmentRequirement() bool {
-	if o != nil && !IsNil(o.AlarmListAlignmentRequirement) {
+	if o != nil && !isNil(o.AlarmListAlignmentRequirement) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o NotifyAlarmListRebuiltAllOf) MarshalJSON() ([]byte, error) {
 func (o NotifyAlarmListRebuiltAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reason"] = o.Reason
-	if !IsNil(o.AlarmListAlignmentRequirement) {
+	if !isNil(o.AlarmListAlignmentRequirement) {
 		toSerialize["alarmListAlignmentRequirement"] = o.AlarmListAlignmentRequirement
 	}
 	return toSerialize, nil

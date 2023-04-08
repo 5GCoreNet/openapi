@@ -45,7 +45,7 @@ func NewAusfInfoWithDefaults() *AusfInfo {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *AusfInfo) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *AusfInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -63,7 +63,7 @@ func (o *AusfInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *AusfInfo) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *AusfInfo) SetGroupId(v string) {
 
 // GetSupiRanges returns the SupiRanges field value if set, zero value otherwise.
 func (o *AusfInfo) GetSupiRanges() []SupiRange {
-	if o == nil || IsNil(o.SupiRanges) {
+	if o == nil || isNil(o.SupiRanges) {
 		var ret []SupiRange
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *AusfInfo) GetSupiRanges() []SupiRange {
 // GetSupiRangesOk returns a tuple with the SupiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
-	if o == nil || IsNil(o.SupiRanges) {
+	if o == nil || isNil(o.SupiRanges) {
 		return nil, false
 	}
 	return o.SupiRanges, true
@@ -95,7 +95,7 @@ func (o *AusfInfo) GetSupiRangesOk() ([]SupiRange, bool) {
 
 // HasSupiRanges returns a boolean if a field has been set.
 func (o *AusfInfo) HasSupiRanges() bool {
-	if o != nil && !IsNil(o.SupiRanges) {
+	if o != nil && !isNil(o.SupiRanges) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *AusfInfo) SetSupiRanges(v []SupiRange) {
 
 // GetRoutingIndicators returns the RoutingIndicators field value if set, zero value otherwise.
 func (o *AusfInfo) GetRoutingIndicators() []string {
-	if o == nil || IsNil(o.RoutingIndicators) {
+	if o == nil || isNil(o.RoutingIndicators) {
 		var ret []string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *AusfInfo) GetRoutingIndicators() []string {
 // GetRoutingIndicatorsOk returns a tuple with the RoutingIndicators field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RoutingIndicators) {
+	if o == nil || isNil(o.RoutingIndicators) {
 		return nil, false
 	}
 	return o.RoutingIndicators, true
@@ -127,7 +127,7 @@ func (o *AusfInfo) GetRoutingIndicatorsOk() ([]string, bool) {
 
 // HasRoutingIndicators returns a boolean if a field has been set.
 func (o *AusfInfo) HasRoutingIndicators() bool {
-	if o != nil && !IsNil(o.RoutingIndicators) {
+	if o != nil && !isNil(o.RoutingIndicators) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *AusfInfo) SetRoutingIndicators(v []string) {
 
 // GetSuciInfos returns the SuciInfos field value if set, zero value otherwise.
 func (o *AusfInfo) GetSuciInfos() []SuciInfo {
-	if o == nil || IsNil(o.SuciInfos) {
+	if o == nil || isNil(o.SuciInfos) {
 		var ret []SuciInfo
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *AusfInfo) GetSuciInfos() []SuciInfo {
 // GetSuciInfosOk returns a tuple with the SuciInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AusfInfo) GetSuciInfosOk() ([]SuciInfo, bool) {
-	if o == nil || IsNil(o.SuciInfos) {
+	if o == nil || isNil(o.SuciInfos) {
 		return nil, false
 	}
 	return o.SuciInfos, true
@@ -159,7 +159,7 @@ func (o *AusfInfo) GetSuciInfosOk() ([]SuciInfo, bool) {
 
 // HasSuciInfos returns a boolean if a field has been set.
 func (o *AusfInfo) HasSuciInfos() bool {
-	if o != nil && !IsNil(o.SuciInfos) {
+	if o != nil && !isNil(o.SuciInfos) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o AusfInfo) MarshalJSON() ([]byte, error) {
 
 func (o AusfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.SupiRanges) {
+	if !isNil(o.SupiRanges) {
 		toSerialize["supiRanges"] = o.SupiRanges
 	}
-	if !IsNil(o.RoutingIndicators) {
+	if !isNil(o.RoutingIndicators) {
 		toSerialize["routingIndicators"] = o.RoutingIndicators
 	}
-	if !IsNil(o.SuciInfos) {
+	if !isNil(o.SuciInfos) {
 		toSerialize["suciInfos"] = o.SuciInfos
 	}
 	return toSerialize, nil

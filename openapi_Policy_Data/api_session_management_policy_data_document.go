@@ -13,7 +13,7 @@ package openapi_Policy_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -98,24 +98,24 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 	localVarFormParams := url.Values{}
 
 	if r.snssai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.dnn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.fields != nil {
 		t := *r.fields
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "fields", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "fields", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "fields", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "fields", t, "multi")
 		}
 	}
 	if r.suppFeat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
+		parameterAddToQuery(localVarQueryParams, "supp-feat", r.suppFeat, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -144,9 +144,9 @@ func (a *SessionManagementPolicyDataDocumentApiService) ReadSessionManagementPol
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -355,9 +355,9 @@ func (a *SessionManagementPolicyDataDocumentApiService) UpdateSessionManagementP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -150,7 +150,7 @@ func (o *DynamicPolicy) SetProvisioningSessionId(v string) {
 
 // GetQosSpecification returns the QosSpecification field value if set, zero value otherwise.
 func (o *DynamicPolicy) GetQosSpecification() M5QoSSpecification {
-	if o == nil || IsNil(o.QosSpecification) {
+	if o == nil || isNil(o.QosSpecification) {
 		var ret M5QoSSpecification
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *DynamicPolicy) GetQosSpecification() M5QoSSpecification {
 // GetQosSpecificationOk returns a tuple with the QosSpecification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicPolicy) GetQosSpecificationOk() (*M5QoSSpecification, bool) {
-	if o == nil || IsNil(o.QosSpecification) {
+	if o == nil || isNil(o.QosSpecification) {
 		return nil, false
 	}
 	return o.QosSpecification, true
@@ -168,7 +168,7 @@ func (o *DynamicPolicy) GetQosSpecificationOk() (*M5QoSSpecification, bool) {
 
 // HasQosSpecification returns a boolean if a field has been set.
 func (o *DynamicPolicy) HasQosSpecification() bool {
-	if o != nil && !IsNil(o.QosSpecification) {
+	if o != nil && !isNil(o.QosSpecification) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *DynamicPolicy) SetQosSpecification(v M5QoSSpecification) {
 
 // GetEnforcementMethod returns the EnforcementMethod field value if set, zero value otherwise.
 func (o *DynamicPolicy) GetEnforcementMethod() string {
-	if o == nil || IsNil(o.EnforcementMethod) {
+	if o == nil || isNil(o.EnforcementMethod) {
 		var ret string
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *DynamicPolicy) GetEnforcementMethod() string {
 // GetEnforcementMethodOk returns a tuple with the EnforcementMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicPolicy) GetEnforcementMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.EnforcementMethod) {
+	if o == nil || isNil(o.EnforcementMethod) {
 		return nil, false
 	}
 	return o.EnforcementMethod, true
@@ -200,7 +200,7 @@ func (o *DynamicPolicy) GetEnforcementMethodOk() (*string, bool) {
 
 // HasEnforcementMethod returns a boolean if a field has been set.
 func (o *DynamicPolicy) HasEnforcementMethod() bool {
-	if o != nil && !IsNil(o.EnforcementMethod) {
+	if o != nil && !isNil(o.EnforcementMethod) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *DynamicPolicy) SetEnforcementMethod(v string) {
 
 // GetEnforcementBitRate returns the EnforcementBitRate field value if set, zero value otherwise.
 func (o *DynamicPolicy) GetEnforcementBitRate() int32 {
-	if o == nil || IsNil(o.EnforcementBitRate) {
+	if o == nil || isNil(o.EnforcementBitRate) {
 		var ret int32
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *DynamicPolicy) GetEnforcementBitRate() int32 {
 // GetEnforcementBitRateOk returns a tuple with the EnforcementBitRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DynamicPolicy) GetEnforcementBitRateOk() (*int32, bool) {
-	if o == nil || IsNil(o.EnforcementBitRate) {
+	if o == nil || isNil(o.EnforcementBitRate) {
 		return nil, false
 	}
 	return o.EnforcementBitRate, true
@@ -232,7 +232,7 @@ func (o *DynamicPolicy) GetEnforcementBitRateOk() (*int32, bool) {
 
 // HasEnforcementBitRate returns a boolean if a field has been set.
 func (o *DynamicPolicy) HasEnforcementBitRate() bool {
-	if o != nil && !IsNil(o.EnforcementBitRate) {
+	if o != nil && !isNil(o.EnforcementBitRate) {
 		return true
 	}
 
@@ -258,13 +258,13 @@ func (o DynamicPolicy) ToMap() (map[string]interface{}, error) {
 	toSerialize["policyTemplateId"] = o.PolicyTemplateId
 	toSerialize["serviceDataFlowDescriptions"] = o.ServiceDataFlowDescriptions
 	toSerialize["provisioningSessionId"] = o.ProvisioningSessionId
-	if !IsNil(o.QosSpecification) {
+	if !isNil(o.QosSpecification) {
 		toSerialize["qosSpecification"] = o.QosSpecification
 	}
-	if !IsNil(o.EnforcementMethod) {
+	if !isNil(o.EnforcementMethod) {
 		toSerialize["enforcementMethod"] = o.EnforcementMethod
 	}
-	if !IsNil(o.EnforcementBitRate) {
+	if !isNil(o.EnforcementBitRate) {
 		toSerialize["enforcementBitRate"] = o.EnforcementBitRate
 	}
 	return toSerialize, nil

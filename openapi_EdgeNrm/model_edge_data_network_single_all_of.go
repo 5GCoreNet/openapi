@@ -42,7 +42,7 @@ func NewEdgeDataNetworkSingleAllOfWithDefaults() *EdgeDataNetworkSingleAllOf {
 
 // GetEdnIdentifier returns the EdnIdentifier field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingleAllOf) GetEdnIdentifier() string {
-	if o == nil || IsNil(o.EdnIdentifier) {
+	if o == nil || isNil(o.EdnIdentifier) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *EdgeDataNetworkSingleAllOf) GetEdnIdentifier() string {
 // GetEdnIdentifierOk returns a tuple with the EdnIdentifier field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingleAllOf) GetEdnIdentifierOk() (*string, bool) {
-	if o == nil || IsNil(o.EdnIdentifier) {
+	if o == nil || isNil(o.EdnIdentifier) {
 		return nil, false
 	}
 	return o.EdnIdentifier, true
@@ -60,7 +60,7 @@ func (o *EdgeDataNetworkSingleAllOf) GetEdnIdentifierOk() (*string, bool) {
 
 // HasEdnIdentifier returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingleAllOf) HasEdnIdentifier() bool {
-	if o != nil && !IsNil(o.EdnIdentifier) {
+	if o != nil && !isNil(o.EdnIdentifier) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *EdgeDataNetworkSingleAllOf) SetEdnIdentifier(v string) {
 
 // GetEDNConnectionInfo returns the EDNConnectionInfo field value if set, zero value otherwise.
 func (o *EdgeDataNetworkSingleAllOf) GetEDNConnectionInfo() EDNConnectionInfo {
-	if o == nil || IsNil(o.EDNConnectionInfo) {
+	if o == nil || isNil(o.EDNConnectionInfo) {
 		var ret EDNConnectionInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EdgeDataNetworkSingleAllOf) GetEDNConnectionInfo() EDNConnectionInfo {
 // GetEDNConnectionInfoOk returns a tuple with the EDNConnectionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EdgeDataNetworkSingleAllOf) GetEDNConnectionInfoOk() (*EDNConnectionInfo, bool) {
-	if o == nil || IsNil(o.EDNConnectionInfo) {
+	if o == nil || isNil(o.EDNConnectionInfo) {
 		return nil, false
 	}
 	return o.EDNConnectionInfo, true
@@ -92,7 +92,7 @@ func (o *EdgeDataNetworkSingleAllOf) GetEDNConnectionInfoOk() (*EDNConnectionInf
 
 // HasEDNConnectionInfo returns a boolean if a field has been set.
 func (o *EdgeDataNetworkSingleAllOf) HasEDNConnectionInfo() bool {
-	if o != nil && !IsNil(o.EDNConnectionInfo) {
+	if o != nil && !isNil(o.EDNConnectionInfo) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o EdgeDataNetworkSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o EdgeDataNetworkSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EdnIdentifier) {
+	if !isNil(o.EdnIdentifier) {
 		toSerialize["ednIdentifier"] = o.EdnIdentifier
 	}
-	if !IsNil(o.EDNConnectionInfo) {
+	if !isNil(o.EDNConnectionInfo) {
 		toSerialize["eDNConnectionInfo"] = o.EDNConnectionInfo
 	}
 	return toSerialize, nil

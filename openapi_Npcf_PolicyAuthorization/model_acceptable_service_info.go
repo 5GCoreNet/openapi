@@ -46,7 +46,7 @@ func NewAcceptableServiceInfoWithDefaults() *AcceptableServiceInfo {
 
 // GetAccBwMedComps returns the AccBwMedComps field value if set, zero value otherwise.
 func (o *AcceptableServiceInfo) GetAccBwMedComps() map[string]MediaComponent {
-	if o == nil || IsNil(o.AccBwMedComps) {
+	if o == nil || isNil(o.AccBwMedComps) {
 		var ret map[string]MediaComponent
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AcceptableServiceInfo) GetAccBwMedComps() map[string]MediaComponent {
 // GetAccBwMedCompsOk returns a tuple with the AccBwMedComps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcceptableServiceInfo) GetAccBwMedCompsOk() (*map[string]MediaComponent, bool) {
-	if o == nil || IsNil(o.AccBwMedComps) {
+	if o == nil || isNil(o.AccBwMedComps) {
 		return nil, false
 	}
 	return o.AccBwMedComps, true
@@ -64,7 +64,7 @@ func (o *AcceptableServiceInfo) GetAccBwMedCompsOk() (*map[string]MediaComponent
 
 // HasAccBwMedComps returns a boolean if a field has been set.
 func (o *AcceptableServiceInfo) HasAccBwMedComps() bool {
-	if o != nil && !IsNil(o.AccBwMedComps) {
+	if o != nil && !isNil(o.AccBwMedComps) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AcceptableServiceInfo) SetAccBwMedComps(v map[string]MediaComponent) {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise.
 func (o *AcceptableServiceInfo) GetMarBwUl() string {
-	if o == nil || IsNil(o.MarBwUl) {
+	if o == nil || isNil(o.MarBwUl) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AcceptableServiceInfo) GetMarBwUl() string {
 // GetMarBwUlOk returns a tuple with the MarBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcceptableServiceInfo) GetMarBwUlOk() (*string, bool) {
-	if o == nil || IsNil(o.MarBwUl) {
+	if o == nil || isNil(o.MarBwUl) {
 		return nil, false
 	}
 	return o.MarBwUl, true
@@ -96,7 +96,7 @@ func (o *AcceptableServiceInfo) GetMarBwUlOk() (*string, bool) {
 
 // HasMarBwUl returns a boolean if a field has been set.
 func (o *AcceptableServiceInfo) HasMarBwUl() bool {
-	if o != nil && !IsNil(o.MarBwUl) {
+	if o != nil && !isNil(o.MarBwUl) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *AcceptableServiceInfo) SetMarBwUl(v string) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise.
 func (o *AcceptableServiceInfo) GetMarBwDl() string {
-	if o == nil || IsNil(o.MarBwDl) {
+	if o == nil || isNil(o.MarBwDl) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *AcceptableServiceInfo) GetMarBwDl() string {
 // GetMarBwDlOk returns a tuple with the MarBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcceptableServiceInfo) GetMarBwDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MarBwDl) {
+	if o == nil || isNil(o.MarBwDl) {
 		return nil, false
 	}
 	return o.MarBwDl, true
@@ -128,7 +128,7 @@ func (o *AcceptableServiceInfo) GetMarBwDlOk() (*string, bool) {
 
 // HasMarBwDl returns a boolean if a field has been set.
 func (o *AcceptableServiceInfo) HasMarBwDl() bool {
-	if o != nil && !IsNil(o.MarBwDl) {
+	if o != nil && !isNil(o.MarBwDl) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o AcceptableServiceInfo) MarshalJSON() ([]byte, error) {
 
 func (o AcceptableServiceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AccBwMedComps) {
+	if !isNil(o.AccBwMedComps) {
 		toSerialize["accBwMedComps"] = o.AccBwMedComps
 	}
-	if !IsNil(o.MarBwUl) {
+	if !isNil(o.MarBwUl) {
 		toSerialize["marBwUl"] = o.MarBwUl
 	}
-	if !IsNil(o.MarBwDl) {
+	if !isNil(o.MarBwDl) {
 		toSerialize["marBwDl"] = o.MarBwDl
 	}
 	return toSerialize, nil

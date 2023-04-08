@@ -67,7 +67,7 @@ func (o *N32fReformattedReqMsg) SetReformattedData(v FlatJweJson) {
 
 // GetModificationsBlock returns the ModificationsBlock field value if set, zero value otherwise.
 func (o *N32fReformattedReqMsg) GetModificationsBlock() []FlatJwsJson {
-	if o == nil || IsNil(o.ModificationsBlock) {
+	if o == nil || isNil(o.ModificationsBlock) {
 		var ret []FlatJwsJson
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *N32fReformattedReqMsg) GetModificationsBlock() []FlatJwsJson {
 // GetModificationsBlockOk returns a tuple with the ModificationsBlock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fReformattedReqMsg) GetModificationsBlockOk() ([]FlatJwsJson, bool) {
-	if o == nil || IsNil(o.ModificationsBlock) {
+	if o == nil || isNil(o.ModificationsBlock) {
 		return nil, false
 	}
 	return o.ModificationsBlock, true
@@ -85,7 +85,7 @@ func (o *N32fReformattedReqMsg) GetModificationsBlockOk() ([]FlatJwsJson, bool) 
 
 // HasModificationsBlock returns a boolean if a field has been set.
 func (o *N32fReformattedReqMsg) HasModificationsBlock() bool {
-	if o != nil && !IsNil(o.ModificationsBlock) {
+	if o != nil && !isNil(o.ModificationsBlock) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o N32fReformattedReqMsg) MarshalJSON() ([]byte, error) {
 func (o N32fReformattedReqMsg) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reformattedData"] = o.ReformattedData
-	if !IsNil(o.ModificationsBlock) {
+	if !isNil(o.ModificationsBlock) {
 		toSerialize["modificationsBlock"] = o.ModificationsBlock
 	}
 	return toSerialize, nil

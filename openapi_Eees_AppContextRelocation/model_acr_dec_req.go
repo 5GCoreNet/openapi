@@ -72,7 +72,7 @@ func (o *AcrDecReq) SetUeId(v string) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *AcrDecReq) GetAcId() string {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AcrDecReq) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDecReq) GetAcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -90,7 +90,7 @@ func (o *AcrDecReq) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *AcrDecReq) HasAcId() bool {
-	if o != nil && !IsNil(o.AcId) {
+	if o != nil && !isNil(o.AcId) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o AcrDecReq) MarshalJSON() ([]byte, error) {
 func (o AcrDecReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueId"] = o.UeId
-	if !IsNil(o.AcId) {
+	if !isNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
 	toSerialize["tEasId"] = o.TEasId

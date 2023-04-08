@@ -49,7 +49,7 @@ func NewHssInfoWithDefaults() *HssInfo {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *HssInfo) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *HssInfo) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -67,7 +67,7 @@ func (o *HssInfo) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *HssInfo) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *HssInfo) SetGroupId(v string) {
 
 // GetImsiRanges returns the ImsiRanges field value if set, zero value otherwise.
 func (o *HssInfo) GetImsiRanges() []ImsiRange {
-	if o == nil || IsNil(o.ImsiRanges) {
+	if o == nil || isNil(o.ImsiRanges) {
 		var ret []ImsiRange
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *HssInfo) GetImsiRanges() []ImsiRange {
 // GetImsiRangesOk returns a tuple with the ImsiRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetImsiRangesOk() ([]ImsiRange, bool) {
-	if o == nil || IsNil(o.ImsiRanges) {
+	if o == nil || isNil(o.ImsiRanges) {
 		return nil, false
 	}
 	return o.ImsiRanges, true
@@ -99,7 +99,7 @@ func (o *HssInfo) GetImsiRangesOk() ([]ImsiRange, bool) {
 
 // HasImsiRanges returns a boolean if a field has been set.
 func (o *HssInfo) HasImsiRanges() bool {
-	if o != nil && !IsNil(o.ImsiRanges) {
+	if o != nil && !isNil(o.ImsiRanges) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *HssInfo) SetImsiRanges(v []ImsiRange) {
 
 // GetImsPrivateIdentityRanges returns the ImsPrivateIdentityRanges field value if set, zero value otherwise.
 func (o *HssInfo) GetImsPrivateIdentityRanges() []IdentityRange {
-	if o == nil || IsNil(o.ImsPrivateIdentityRanges) {
+	if o == nil || isNil(o.ImsPrivateIdentityRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *HssInfo) GetImsPrivateIdentityRanges() []IdentityRange {
 // GetImsPrivateIdentityRangesOk returns a tuple with the ImsPrivateIdentityRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetImsPrivateIdentityRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.ImsPrivateIdentityRanges) {
+	if o == nil || isNil(o.ImsPrivateIdentityRanges) {
 		return nil, false
 	}
 	return o.ImsPrivateIdentityRanges, true
@@ -131,7 +131,7 @@ func (o *HssInfo) GetImsPrivateIdentityRangesOk() ([]IdentityRange, bool) {
 
 // HasImsPrivateIdentityRanges returns a boolean if a field has been set.
 func (o *HssInfo) HasImsPrivateIdentityRanges() bool {
-	if o != nil && !IsNil(o.ImsPrivateIdentityRanges) {
+	if o != nil && !isNil(o.ImsPrivateIdentityRanges) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *HssInfo) SetImsPrivateIdentityRanges(v []IdentityRange) {
 
 // GetImsPublicIdentityRanges returns the ImsPublicIdentityRanges field value if set, zero value otherwise.
 func (o *HssInfo) GetImsPublicIdentityRanges() []IdentityRange {
-	if o == nil || IsNil(o.ImsPublicIdentityRanges) {
+	if o == nil || isNil(o.ImsPublicIdentityRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *HssInfo) GetImsPublicIdentityRanges() []IdentityRange {
 // GetImsPublicIdentityRangesOk returns a tuple with the ImsPublicIdentityRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetImsPublicIdentityRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.ImsPublicIdentityRanges) {
+	if o == nil || isNil(o.ImsPublicIdentityRanges) {
 		return nil, false
 	}
 	return o.ImsPublicIdentityRanges, true
@@ -163,7 +163,7 @@ func (o *HssInfo) GetImsPublicIdentityRangesOk() ([]IdentityRange, bool) {
 
 // HasImsPublicIdentityRanges returns a boolean if a field has been set.
 func (o *HssInfo) HasImsPublicIdentityRanges() bool {
-	if o != nil && !IsNil(o.ImsPublicIdentityRanges) {
+	if o != nil && !isNil(o.ImsPublicIdentityRanges) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *HssInfo) SetImsPublicIdentityRanges(v []IdentityRange) {
 
 // GetMsisdnRanges returns the MsisdnRanges field value if set, zero value otherwise.
 func (o *HssInfo) GetMsisdnRanges() []IdentityRange {
-	if o == nil || IsNil(o.MsisdnRanges) {
+	if o == nil || isNil(o.MsisdnRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *HssInfo) GetMsisdnRanges() []IdentityRange {
 // GetMsisdnRangesOk returns a tuple with the MsisdnRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetMsisdnRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.MsisdnRanges) {
+	if o == nil || isNil(o.MsisdnRanges) {
 		return nil, false
 	}
 	return o.MsisdnRanges, true
@@ -195,7 +195,7 @@ func (o *HssInfo) GetMsisdnRangesOk() ([]IdentityRange, bool) {
 
 // HasMsisdnRanges returns a boolean if a field has been set.
 func (o *HssInfo) HasMsisdnRanges() bool {
-	if o != nil && !IsNil(o.MsisdnRanges) {
+	if o != nil && !isNil(o.MsisdnRanges) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *HssInfo) SetMsisdnRanges(v []IdentityRange) {
 
 // GetExternalGroupIdentifiersRanges returns the ExternalGroupIdentifiersRanges field value if set, zero value otherwise.
 func (o *HssInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
-	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
 		var ret []IdentityRange
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *HssInfo) GetExternalGroupIdentifiersRanges() []IdentityRange {
 // GetExternalGroupIdentifiersRangesOk returns a tuple with the ExternalGroupIdentifiersRanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) {
-	if o == nil || IsNil(o.ExternalGroupIdentifiersRanges) {
+	if o == nil || isNil(o.ExternalGroupIdentifiersRanges) {
 		return nil, false
 	}
 	return o.ExternalGroupIdentifiersRanges, true
@@ -227,7 +227,7 @@ func (o *HssInfo) GetExternalGroupIdentifiersRangesOk() ([]IdentityRange, bool) 
 
 // HasExternalGroupIdentifiersRanges returns a boolean if a field has been set.
 func (o *HssInfo) HasExternalGroupIdentifiersRanges() bool {
-	if o != nil && !IsNil(o.ExternalGroupIdentifiersRanges) {
+	if o != nil && !isNil(o.ExternalGroupIdentifiersRanges) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *HssInfo) SetExternalGroupIdentifiersRanges(v []IdentityRange) {
 
 // GetHssDiameterAddress returns the HssDiameterAddress field value if set, zero value otherwise.
 func (o *HssInfo) GetHssDiameterAddress() NetworkNodeDiameterAddress {
-	if o == nil || IsNil(o.HssDiameterAddress) {
+	if o == nil || isNil(o.HssDiameterAddress) {
 		var ret NetworkNodeDiameterAddress
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *HssInfo) GetHssDiameterAddress() NetworkNodeDiameterAddress {
 // GetHssDiameterAddressOk returns a tuple with the HssDiameterAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetHssDiameterAddressOk() (*NetworkNodeDiameterAddress, bool) {
-	if o == nil || IsNil(o.HssDiameterAddress) {
+	if o == nil || isNil(o.HssDiameterAddress) {
 		return nil, false
 	}
 	return o.HssDiameterAddress, true
@@ -259,7 +259,7 @@ func (o *HssInfo) GetHssDiameterAddressOk() (*NetworkNodeDiameterAddress, bool) 
 
 // HasHssDiameterAddress returns a boolean if a field has been set.
 func (o *HssInfo) HasHssDiameterAddress() bool {
-	if o != nil && !IsNil(o.HssDiameterAddress) {
+	if o != nil && !isNil(o.HssDiameterAddress) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *HssInfo) SetHssDiameterAddress(v NetworkNodeDiameterAddress) {
 
 // GetAdditionalDiamAddresses returns the AdditionalDiamAddresses field value if set, zero value otherwise.
 func (o *HssInfo) GetAdditionalDiamAddresses() []NetworkNodeDiameterAddress {
-	if o == nil || IsNil(o.AdditionalDiamAddresses) {
+	if o == nil || isNil(o.AdditionalDiamAddresses) {
 		var ret []NetworkNodeDiameterAddress
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *HssInfo) GetAdditionalDiamAddresses() []NetworkNodeDiameterAddress {
 // GetAdditionalDiamAddressesOk returns a tuple with the AdditionalDiamAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssInfo) GetAdditionalDiamAddressesOk() ([]NetworkNodeDiameterAddress, bool) {
-	if o == nil || IsNil(o.AdditionalDiamAddresses) {
+	if o == nil || isNil(o.AdditionalDiamAddresses) {
 		return nil, false
 	}
 	return o.AdditionalDiamAddresses, true
@@ -291,7 +291,7 @@ func (o *HssInfo) GetAdditionalDiamAddressesOk() ([]NetworkNodeDiameterAddress, 
 
 // HasAdditionalDiamAddresses returns a boolean if a field has been set.
 func (o *HssInfo) HasAdditionalDiamAddresses() bool {
-	if o != nil && !IsNil(o.AdditionalDiamAddresses) {
+	if o != nil && !isNil(o.AdditionalDiamAddresses) {
 		return true
 	}
 
@@ -313,28 +313,28 @@ func (o HssInfo) MarshalJSON() ([]byte, error) {
 
 func (o HssInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.ImsiRanges) {
+	if !isNil(o.ImsiRanges) {
 		toSerialize["imsiRanges"] = o.ImsiRanges
 	}
-	if !IsNil(o.ImsPrivateIdentityRanges) {
+	if !isNil(o.ImsPrivateIdentityRanges) {
 		toSerialize["imsPrivateIdentityRanges"] = o.ImsPrivateIdentityRanges
 	}
-	if !IsNil(o.ImsPublicIdentityRanges) {
+	if !isNil(o.ImsPublicIdentityRanges) {
 		toSerialize["imsPublicIdentityRanges"] = o.ImsPublicIdentityRanges
 	}
-	if !IsNil(o.MsisdnRanges) {
+	if !isNil(o.MsisdnRanges) {
 		toSerialize["msisdnRanges"] = o.MsisdnRanges
 	}
-	if !IsNil(o.ExternalGroupIdentifiersRanges) {
+	if !isNil(o.ExternalGroupIdentifiersRanges) {
 		toSerialize["externalGroupIdentifiersRanges"] = o.ExternalGroupIdentifiersRanges
 	}
-	if !IsNil(o.HssDiameterAddress) {
+	if !isNil(o.HssDiameterAddress) {
 		toSerialize["hssDiameterAddress"] = o.HssDiameterAddress
 	}
-	if !IsNil(o.AdditionalDiamAddresses) {
+	if !isNil(o.AdditionalDiamAddresses) {
 		toSerialize["additionalDiamAddresses"] = o.AdditionalDiamAddresses
 	}
 	return toSerialize, nil

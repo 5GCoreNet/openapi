@@ -99,7 +99,7 @@ func (o *SorData) SetUeUpdateStatus(v UeUpdateStatus) {
 
 // GetSorXmacIue returns the SorXmacIue field value if set, zero value otherwise.
 func (o *SorData) GetSorXmacIue() string {
-	if o == nil || IsNil(o.SorXmacIue) {
+	if o == nil || isNil(o.SorXmacIue) {
 		var ret string
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *SorData) GetSorXmacIue() string {
 // GetSorXmacIueOk returns a tuple with the SorXmacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorData) GetSorXmacIueOk() (*string, bool) {
-	if o == nil || IsNil(o.SorXmacIue) {
+	if o == nil || isNil(o.SorXmacIue) {
 		return nil, false
 	}
 	return o.SorXmacIue, true
@@ -117,7 +117,7 @@ func (o *SorData) GetSorXmacIueOk() (*string, bool) {
 
 // HasSorXmacIue returns a boolean if a field has been set.
 func (o *SorData) HasSorXmacIue() bool {
-	if o != nil && !IsNil(o.SorXmacIue) {
+	if o != nil && !isNil(o.SorXmacIue) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *SorData) SetSorXmacIue(v string) {
 
 // GetSorMacIue returns the SorMacIue field value if set, zero value otherwise.
 func (o *SorData) GetSorMacIue() string {
-	if o == nil || IsNil(o.SorMacIue) {
+	if o == nil || isNil(o.SorMacIue) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *SorData) GetSorMacIue() string {
 // GetSorMacIueOk returns a tuple with the SorMacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorData) GetSorMacIueOk() (*string, bool) {
-	if o == nil || IsNil(o.SorMacIue) {
+	if o == nil || isNil(o.SorMacIue) {
 		return nil, false
 	}
 	return o.SorMacIue, true
@@ -149,7 +149,7 @@ func (o *SorData) GetSorMacIueOk() (*string, bool) {
 
 // HasSorMacIue returns a boolean if a field has been set.
 func (o *SorData) HasSorMacIue() bool {
-	if o != nil && !IsNil(o.SorMacIue) {
+	if o != nil && !isNil(o.SorMacIue) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *SorData) SetSorMacIue(v string) {
 
 // GetMeSupportOfSorCmci returns the MeSupportOfSorCmci field value if set, zero value otherwise.
 func (o *SorData) GetMeSupportOfSorCmci() bool {
-	if o == nil || IsNil(o.MeSupportOfSorCmci) {
+	if o == nil || isNil(o.MeSupportOfSorCmci) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *SorData) GetMeSupportOfSorCmci() bool {
 // GetMeSupportOfSorCmciOk returns a tuple with the MeSupportOfSorCmci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorData) GetMeSupportOfSorCmciOk() (*bool, bool) {
-	if o == nil || IsNil(o.MeSupportOfSorCmci) {
+	if o == nil || isNil(o.MeSupportOfSorCmci) {
 		return nil, false
 	}
 	return o.MeSupportOfSorCmci, true
@@ -181,7 +181,7 @@ func (o *SorData) GetMeSupportOfSorCmciOk() (*bool, bool) {
 
 // HasMeSupportOfSorCmci returns a boolean if a field has been set.
 func (o *SorData) HasMeSupportOfSorCmci() bool {
-	if o != nil && !IsNil(o.MeSupportOfSorCmci) {
+	if o != nil && !isNil(o.MeSupportOfSorCmci) {
 		return true
 	}
 
@@ -205,13 +205,13 @@ func (o SorData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["provisioningTime"] = o.ProvisioningTime
 	toSerialize["ueUpdateStatus"] = o.UeUpdateStatus
-	if !IsNil(o.SorXmacIue) {
+	if !isNil(o.SorXmacIue) {
 		toSerialize["sorXmacIue"] = o.SorXmacIue
 	}
-	if !IsNil(o.SorMacIue) {
+	if !isNil(o.SorMacIue) {
 		toSerialize["sorMacIue"] = o.SorMacIue
 	}
-	if !IsNil(o.MeSupportOfSorCmci) {
+	if !isNil(o.MeSupportOfSorCmci) {
 		toSerialize["meSupportOfSorCmci"] = o.MeSupportOfSorCmci
 	}
 	return toSerialize, nil

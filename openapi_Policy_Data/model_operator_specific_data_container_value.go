@@ -21,7 +21,7 @@ type OperatorSpecificDataContainerValue struct {
 	Bool *bool
 	Float32 *float32
 	Int32 *int32
-	MapmapOfStringinterface{} *map[string]interface{}
+	MapOfInterface *map[string]interface{}
 	String *string
 }
 
@@ -54,9 +54,9 @@ func Int32AsOperatorSpecificDataContainerValue(v *int32) OperatorSpecificDataCon
 }
 
 // map[string]interface{}AsOperatorSpecificDataContainerValue is a convenience function that returns map[string]interface{} wrapped in OperatorSpecificDataContainerValue
-func MapmapOfStringinterface{}AsOperatorSpecificDataContainerValue(v *map[string]interface{}) OperatorSpecificDataContainerValue {
+func MapOfInterfaceAsOperatorSpecificDataContainerValue(v *map[string]interface{}) OperatorSpecificDataContainerValue {
 	return OperatorSpecificDataContainerValue{
-		MapmapOfStringinterface{}: v,
+		MapOfInterface: v,
 	}
 }
 
@@ -124,17 +124,17 @@ func (dst *OperatorSpecificDataContainerValue) UnmarshalJSON(data []byte) error 
 		dst.Int32 = nil
 	}
 
-	// try to unmarshal data into MapmapOfStringinterface{}
-	err = newStrictDecoder(data).Decode(&dst.MapmapOfStringinterface{})
+	// try to unmarshal data into MapOfInterface
+	err = newStrictDecoder(data).Decode(&dst.MapOfInterface)
 	if err == nil {
-		jsonMapmapOfStringinterface{}, _ := json.Marshal(dst.MapmapOfStringinterface{})
-		if string(jsonMapmapOfStringinterface{}) == "{}" { // empty struct
-			dst.MapmapOfStringinterface{} = nil
+		jsonMapOfInterface, _ := json.Marshal(dst.MapOfInterface)
+		if string(jsonMapOfInterface) == "{}" { // empty struct
+			dst.MapOfInterface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.MapmapOfStringinterface{} = nil
+		dst.MapOfInterface = nil
 	}
 
 	// try to unmarshal data into String
@@ -156,7 +156,7 @@ func (dst *OperatorSpecificDataContainerValue) UnmarshalJSON(data []byte) error 
 		dst.Bool = nil
 		dst.Float32 = nil
 		dst.Int32 = nil
-		dst.MapmapOfStringinterface{} = nil
+		dst.MapOfInterface = nil
 		dst.String = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(OperatorSpecificDataContainerValue)")
@@ -185,8 +185,8 @@ func (src OperatorSpecificDataContainerValue) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.Int32)
 	}
 
-	if src.MapmapOfStringinterface{} != nil {
-		return json.Marshal(&src.MapmapOfStringinterface{})
+	if src.MapOfInterface != nil {
+		return json.Marshal(&src.MapOfInterface)
 	}
 
 	if src.String != nil {
@@ -217,8 +217,8 @@ func (obj *OperatorSpecificDataContainerValue) GetActualInstance() (interface{})
 		return obj.Int32
 	}
 
-	if obj.MapmapOfStringinterface{} != nil {
-		return obj.MapmapOfStringinterface{}
+	if obj.MapOfInterface != nil {
+		return obj.MapOfInterface
 	}
 
 	if obj.String != nil {

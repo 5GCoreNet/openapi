@@ -46,7 +46,7 @@ func NewAPIInvokerEnrolmentDetailsPatchWithDefaults() *APIInvokerEnrolmentDetail
 
 // GetOnboardingInformation returns the OnboardingInformation field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetailsPatch) GetOnboardingInformation() OnboardingInformation {
-	if o == nil || IsNil(o.OnboardingInformation) {
+	if o == nil || isNil(o.OnboardingInformation) {
 		var ret OnboardingInformation
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetOnboardingInformation() OnboardingI
 // GetOnboardingInformationOk returns a tuple with the OnboardingInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) GetOnboardingInformationOk() (*OnboardingInformation, bool) {
-	if o == nil || IsNil(o.OnboardingInformation) {
+	if o == nil || isNil(o.OnboardingInformation) {
 		return nil, false
 	}
 	return o.OnboardingInformation, true
@@ -64,7 +64,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetOnboardingInformationOk() (*Onboard
 
 // HasOnboardingInformation returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) HasOnboardingInformation() bool {
-	if o != nil && !IsNil(o.OnboardingInformation) {
+	if o != nil && !isNil(o.OnboardingInformation) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) SetOnboardingInformation(v OnboardingI
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetailsPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -96,7 +96,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetNotificationDestinationOk() (*strin
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) SetNotificationDestination(v string) {
 
 // GetApiList returns the ApiList field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetailsPatch) GetApiList() APIList {
-	if o == nil || IsNil(o.ApiList) {
+	if o == nil || isNil(o.ApiList) {
 		var ret APIList
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetApiList() APIList {
 // GetApiListOk returns a tuple with the ApiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) GetApiListOk() (*APIList, bool) {
-	if o == nil || IsNil(o.ApiList) {
+	if o == nil || isNil(o.ApiList) {
 		return nil, false
 	}
 	return o.ApiList, true
@@ -128,7 +128,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetApiListOk() (*APIList, bool) {
 
 // HasApiList returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) HasApiList() bool {
-	if o != nil && !IsNil(o.ApiList) {
+	if o != nil && !isNil(o.ApiList) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) SetApiList(v APIList) {
 
 // GetApiInvokerInformation returns the ApiInvokerInformation field value if set, zero value otherwise.
 func (o *APIInvokerEnrolmentDetailsPatch) GetApiInvokerInformation() string {
-	if o == nil || IsNil(o.ApiInvokerInformation) {
+	if o == nil || isNil(o.ApiInvokerInformation) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetApiInvokerInformation() string {
 // GetApiInvokerInformationOk returns a tuple with the ApiInvokerInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) GetApiInvokerInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiInvokerInformation) {
+	if o == nil || isNil(o.ApiInvokerInformation) {
 		return nil, false
 	}
 	return o.ApiInvokerInformation, true
@@ -160,7 +160,7 @@ func (o *APIInvokerEnrolmentDetailsPatch) GetApiInvokerInformationOk() (*string,
 
 // HasApiInvokerInformation returns a boolean if a field has been set.
 func (o *APIInvokerEnrolmentDetailsPatch) HasApiInvokerInformation() bool {
-	if o != nil && !IsNil(o.ApiInvokerInformation) {
+	if o != nil && !isNil(o.ApiInvokerInformation) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o APIInvokerEnrolmentDetailsPatch) MarshalJSON() ([]byte, error) {
 
 func (o APIInvokerEnrolmentDetailsPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OnboardingInformation) {
+	if !isNil(o.OnboardingInformation) {
 		toSerialize["onboardingInformation"] = o.OnboardingInformation
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.ApiList) {
+	if !isNil(o.ApiList) {
 		toSerialize["apiList"] = o.ApiList
 	}
-	if !IsNil(o.ApiInvokerInformation) {
+	if !isNil(o.ApiInvokerInformation) {
 		toSerialize["apiInvokerInformation"] = o.ApiInvokerInformation
 	}
 	return toSerialize, nil

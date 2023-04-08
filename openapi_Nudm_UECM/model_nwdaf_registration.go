@@ -102,7 +102,7 @@ func (o *NwdafRegistration) SetAnalyticsIds(v []EventId) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetNwdafSetId() string {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *NwdafRegistration) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -120,7 +120,7 @@ func (o *NwdafRegistration) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasNwdafSetId() bool {
-	if o != nil && !IsNil(o.NwdafSetId) {
+	if o != nil && !isNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *NwdafRegistration) SetNwdafSetId(v string) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetRegistrationTime() time.Time {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *NwdafRegistration) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -152,7 +152,7 @@ func (o *NwdafRegistration) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasRegistrationTime() bool {
-	if o != nil && !IsNil(o.RegistrationTime) {
+	if o != nil && !isNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *NwdafRegistration) SetRegistrationTime(v time.Time) {
 
 // GetContextInfo returns the ContextInfo field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetContextInfo() ContextInfo {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		var ret ContextInfo
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *NwdafRegistration) GetContextInfo() ContextInfo {
 // GetContextInfoOk returns a tuple with the ContextInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetContextInfoOk() (*ContextInfo, bool) {
-	if o == nil || IsNil(o.ContextInfo) {
+	if o == nil || isNil(o.ContextInfo) {
 		return nil, false
 	}
 	return o.ContextInfo, true
@@ -184,7 +184,7 @@ func (o *NwdafRegistration) GetContextInfoOk() (*ContextInfo, bool) {
 
 // HasContextInfo returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasContextInfo() bool {
-	if o != nil && !IsNil(o.ContextInfo) {
+	if o != nil && !isNil(o.ContextInfo) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *NwdafRegistration) SetContextInfo(v ContextInfo) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *NwdafRegistration) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -216,7 +216,7 @@ func (o *NwdafRegistration) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -230,7 +230,7 @@ func (o *NwdafRegistration) SetSupportedFeatures(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *NwdafRegistration) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -240,7 +240,7 @@ func (o *NwdafRegistration) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafRegistration) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -248,7 +248,7 @@ func (o *NwdafRegistration) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *NwdafRegistration) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -272,19 +272,19 @@ func (o NwdafRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["nwdafInstanceId"] = o.NwdafInstanceId
 	toSerialize["analyticsIds"] = o.AnalyticsIds
-	if !IsNil(o.NwdafSetId) {
+	if !isNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
-	if !IsNil(o.RegistrationTime) {
+	if !isNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
-	if !IsNil(o.ContextInfo) {
+	if !isNil(o.ContextInfo) {
 		toSerialize["contextInfo"] = o.ContextInfo
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

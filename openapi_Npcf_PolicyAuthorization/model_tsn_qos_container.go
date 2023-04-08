@@ -46,7 +46,7 @@ func NewTsnQosContainerWithDefaults() *TsnQosContainer {
 
 // GetMaxTscBurstSize returns the MaxTscBurstSize field value if set, zero value otherwise.
 func (o *TsnQosContainer) GetMaxTscBurstSize() int32 {
-	if o == nil || IsNil(o.MaxTscBurstSize) {
+	if o == nil || isNil(o.MaxTscBurstSize) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *TsnQosContainer) GetMaxTscBurstSize() int32 {
 // GetMaxTscBurstSizeOk returns a tuple with the MaxTscBurstSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnQosContainer) GetMaxTscBurstSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxTscBurstSize) {
+	if o == nil || isNil(o.MaxTscBurstSize) {
 		return nil, false
 	}
 	return o.MaxTscBurstSize, true
@@ -64,7 +64,7 @@ func (o *TsnQosContainer) GetMaxTscBurstSizeOk() (*int32, bool) {
 
 // HasMaxTscBurstSize returns a boolean if a field has been set.
 func (o *TsnQosContainer) HasMaxTscBurstSize() bool {
-	if o != nil && !IsNil(o.MaxTscBurstSize) {
+	if o != nil && !isNil(o.MaxTscBurstSize) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *TsnQosContainer) SetMaxTscBurstSize(v int32) {
 
 // GetTscPackDelay returns the TscPackDelay field value if set, zero value otherwise.
 func (o *TsnQosContainer) GetTscPackDelay() int32 {
-	if o == nil || IsNil(o.TscPackDelay) {
+	if o == nil || isNil(o.TscPackDelay) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *TsnQosContainer) GetTscPackDelay() int32 {
 // GetTscPackDelayOk returns a tuple with the TscPackDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnQosContainer) GetTscPackDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.TscPackDelay) {
+	if o == nil || isNil(o.TscPackDelay) {
 		return nil, false
 	}
 	return o.TscPackDelay, true
@@ -96,7 +96,7 @@ func (o *TsnQosContainer) GetTscPackDelayOk() (*int32, bool) {
 
 // HasTscPackDelay returns a boolean if a field has been set.
 func (o *TsnQosContainer) HasTscPackDelay() bool {
-	if o != nil && !IsNil(o.TscPackDelay) {
+	if o != nil && !isNil(o.TscPackDelay) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *TsnQosContainer) SetTscPackDelay(v int32) {
 
 // GetTscPrioLevel returns the TscPrioLevel field value if set, zero value otherwise.
 func (o *TsnQosContainer) GetTscPrioLevel() int32 {
-	if o == nil || IsNil(o.TscPrioLevel) {
+	if o == nil || isNil(o.TscPrioLevel) {
 		var ret int32
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *TsnQosContainer) GetTscPrioLevel() int32 {
 // GetTscPrioLevelOk returns a tuple with the TscPrioLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TsnQosContainer) GetTscPrioLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.TscPrioLevel) {
+	if o == nil || isNil(o.TscPrioLevel) {
 		return nil, false
 	}
 	return o.TscPrioLevel, true
@@ -128,7 +128,7 @@ func (o *TsnQosContainer) GetTscPrioLevelOk() (*int32, bool) {
 
 // HasTscPrioLevel returns a boolean if a field has been set.
 func (o *TsnQosContainer) HasTscPrioLevel() bool {
-	if o != nil && !IsNil(o.TscPrioLevel) {
+	if o != nil && !isNil(o.TscPrioLevel) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o TsnQosContainer) MarshalJSON() ([]byte, error) {
 
 func (o TsnQosContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxTscBurstSize) {
+	if !isNil(o.MaxTscBurstSize) {
 		toSerialize["maxTscBurstSize"] = o.MaxTscBurstSize
 	}
-	if !IsNil(o.TscPackDelay) {
+	if !isNil(o.TscPackDelay) {
 		toSerialize["tscPackDelay"] = o.TscPackDelay
 	}
-	if !IsNil(o.TscPrioLevel) {
+	if !isNil(o.TscPrioLevel) {
 		toSerialize["tscPrioLevel"] = o.TscPrioLevel
 	}
 	return toSerialize, nil

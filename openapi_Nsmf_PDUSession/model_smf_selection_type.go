@@ -17,23 +17,37 @@ import (
 
 // SmfSelectionType Smf Selection Type. Possible values are   - CURRENT_PDU_SESSION   - NEXT_PDU_SESSION 
 type SmfSelectionType struct {
-	string *string
+	SmfSelectionTypeAnyOf *SmfSelectionTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SmfSelectionType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SmfSelectionTypeAnyOf
+	err = json.Unmarshal(data, &dst.SmfSelectionTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSmfSelectionTypeAnyOf, _ := json.Marshal(dst.SmfSelectionTypeAnyOf)
+		if string(jsonSmfSelectionTypeAnyOf) == "{}" { // empty struct
+			dst.SmfSelectionTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SmfSelectionTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SmfSelectionTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SmfSelectionType)")
@@ -41,8 +55,12 @@ func (dst *SmfSelectionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SmfSelectionType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SmfSelectionTypeAnyOf != nil {
+		return json.Marshal(&src.SmfSelectionTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

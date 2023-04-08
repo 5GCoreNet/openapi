@@ -84,7 +84,7 @@ func (o *Atom) GetValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Atom) GetValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || isNil(o.Value) {
 		return nil, false
 	}
 	return &o.Value, true
@@ -97,7 +97,7 @@ func (o *Atom) SetValue(v interface{}) {
 
 // GetNegative returns the Negative field value if set, zero value otherwise.
 func (o *Atom) GetNegative() bool {
-	if o == nil || IsNil(o.Negative) {
+	if o == nil || isNil(o.Negative) {
 		var ret bool
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *Atom) GetNegative() bool {
 // GetNegativeOk returns a tuple with the Negative field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Atom) GetNegativeOk() (*bool, bool) {
-	if o == nil || IsNil(o.Negative) {
+	if o == nil || isNil(o.Negative) {
 		return nil, false
 	}
 	return o.Negative, true
@@ -115,7 +115,7 @@ func (o *Atom) GetNegativeOk() (*bool, bool) {
 
 // HasNegative returns a boolean if a field has been set.
 func (o *Atom) HasNegative() bool {
-	if o != nil && !IsNil(o.Negative) {
+	if o != nil && !isNil(o.Negative) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o Atom) ToMap() (map[string]interface{}, error) {
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
 	}
-	if !IsNil(o.Negative) {
+	if !isNil(o.Negative) {
 		toSerialize["negative"] = o.Negative
 	}
 	return toSerialize, nil

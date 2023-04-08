@@ -95,7 +95,7 @@ func (o *ThresholdInfo2) SetObservedValue(v float32) {
 
 // GetThresholdLevel returns the ThresholdLevel field value if set, zero value otherwise.
 func (o *ThresholdInfo2) GetThresholdLevel() ThresholdLevelInd {
-	if o == nil || IsNil(o.ThresholdLevel) {
+	if o == nil || isNil(o.ThresholdLevel) {
 		var ret ThresholdLevelInd
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ThresholdInfo2) GetThresholdLevel() ThresholdLevelInd {
 // GetThresholdLevelOk returns a tuple with the ThresholdLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo2) GetThresholdLevelOk() (*ThresholdLevelInd, bool) {
-	if o == nil || IsNil(o.ThresholdLevel) {
+	if o == nil || isNil(o.ThresholdLevel) {
 		return nil, false
 	}
 	return o.ThresholdLevel, true
@@ -113,7 +113,7 @@ func (o *ThresholdInfo2) GetThresholdLevelOk() (*ThresholdLevelInd, bool) {
 
 // HasThresholdLevel returns a boolean if a field has been set.
 func (o *ThresholdInfo2) HasThresholdLevel() bool {
-	if o != nil && !IsNil(o.ThresholdLevel) {
+	if o != nil && !isNil(o.ThresholdLevel) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *ThresholdInfo2) SetThresholdLevel(v ThresholdLevelInd) {
 
 // GetArmTime returns the ArmTime field value if set, zero value otherwise.
 func (o *ThresholdInfo2) GetArmTime() time.Time {
-	if o == nil || IsNil(o.ArmTime) {
+	if o == nil || isNil(o.ArmTime) {
 		var ret time.Time
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *ThresholdInfo2) GetArmTime() time.Time {
 // GetArmTimeOk returns a tuple with the ArmTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ThresholdInfo2) GetArmTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ArmTime) {
+	if o == nil || isNil(o.ArmTime) {
 		return nil, false
 	}
 	return o.ArmTime, true
@@ -145,7 +145,7 @@ func (o *ThresholdInfo2) GetArmTimeOk() (*time.Time, bool) {
 
 // HasArmTime returns a boolean if a field has been set.
 func (o *ThresholdInfo2) HasArmTime() bool {
-	if o != nil && !IsNil(o.ArmTime) {
+	if o != nil && !isNil(o.ArmTime) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o ThresholdInfo2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["observedMeasurement"] = o.ObservedMeasurement
 	toSerialize["observedValue"] = o.ObservedValue
-	if !IsNil(o.ThresholdLevel) {
+	if !isNil(o.ThresholdLevel) {
 		toSerialize["thresholdLevel"] = o.ThresholdLevel
 	}
-	if !IsNil(o.ArmTime) {
+	if !isNil(o.ArmTime) {
 		toSerialize["armTime"] = o.ArmTime
 	}
 	return toSerialize, nil

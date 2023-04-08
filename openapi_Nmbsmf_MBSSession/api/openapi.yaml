@@ -3599,40 +3599,22 @@ components:
       type: object
     ContextUpdateAction:
       anyOf:
-      - enum:
-        - START
-        - TERMINATE
-        type: string
+      - $ref: '#/components/schemas/ContextUpdateAction_anyOf'
       - type: string
       description: Start or Terminate MBS data reception
     ContextStatusEventType:
       anyOf:
-      - enum:
-        - QOS_INFO
-        - STATUS_INFO
-        - SERVICE_AREA_INFO
-        - SESSION_RELEASE
-        - MULT_TRANS_ADD_CHANGE
-        - SECURITY_INFO
-        type: string
+      - $ref: '#/components/schemas/ContextStatusEventType_anyOf'
       - type: string
       description: Context Status Event Type
     ReportingMode:
       anyOf:
-      - enum:
-        - CONTINUOUS
-        - ONE_TIME
-        type: string
+      - $ref: '#/components/schemas/ReportingMode_anyOf'
       - type: string
       description: Reporting Mode
     NgapIeType:
       anyOf:
-      - enum:
-        - MBS_DIS_SETUP_REQ
-        - MBS_DIS_SETUP_RSP
-        - MBS_DIS_SETUP_FAIL
-        - MBS_DIS_REL_REQ
-        type: string
+      - $ref: '#/components/schemas/NgapIeType_anyOf'
       - type: string
       description: NGAP Information Element Type
     RedirectResponse:
@@ -3750,14 +3732,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     MbsSessionSubscription:
@@ -4003,11 +3978,7 @@ components:
       type: object
     MbsSessionEventType:
       anyOf:
-      - enum:
-        - MBS_REL_TMGI_EXPIRY
-        - BROADCAST_DELIVERY_STATUS
-        - INGRESS_TUNNEL_ADD_CHANGE
-        type: string
+      - $ref: '#/components/schemas/MbsSessionEventType_anyOf'
       - type: string
       description: MBS Session Event Type
     DateTime:
@@ -4139,10 +4110,7 @@ components:
       type: integer
     BroadcastDeliveryStatus:
       anyOf:
-      - enum:
-        - STARTED
-        - TERMINATED
-        type: string
+      - $ref: '#/components/schemas/BroadcastDeliveryStatus_anyOf'
       - type: string
       description: Broadcast MBS Session's Delivery Status
     MbsSession:
@@ -4230,10 +4198,7 @@ components:
       type: object
     MbsServiceType:
       anyOf:
-      - enum:
-        - MULTICAST
-        - BROADCAST
-        type: string
+      - $ref: '#/components/schemas/MbsServiceType_anyOf'
       - type: string
       description: Indicates the MBS service type of an MBS session
     MbsServiceArea:
@@ -4623,19 +4588,13 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - enum:
-        - NOT_PREEMPT
-        - MAY_PREEMPT
-        type: string
+      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - enum:
-        - NOT_PREEMPTABLE
-        - PREEMPTABLE
-        type: string
+      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -4646,10 +4605,7 @@ components:
       type: string
     MbsSessionActivityStatus:
       anyOf:
-      - enum:
-        - ACTIVE
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/MbsSessionActivityStatus_anyOf'
       - type: string
       description: Indicates the MBS session's activity status
     MbsFsaId:
@@ -5123,11 +5079,7 @@ components:
       type: object
     QosResourceType:
       anyOf:
-      - enum:
-        - NON_GBR
-        - NON_CRITICAL_GBR
-        - CRITICAL_GBR
-        type: string
+      - $ref: '#/components/schemas/QosResourceType_anyOf'
       - type: string
       description: "The enumeration QosResourceType indicates whether a QoS Flow is\
         \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
@@ -5332,17 +5284,7 @@ components:
       type: object
     SupportedGADShapes:
       anyOf:
-      - enum:
-        - POINT
-        - POINT_UNCERTAINTY_CIRCLE
-        - POINT_UNCERTAINTY_ELLIPSE
-        - POLYGON
-        - POINT_ALTITUDE
-        - POINT_ALTITUDE_UNCERTAINTY
-        - ELLIPSOID_ARC
-        - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
-        - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
-        type: string
+      - $ref: '#/components/schemas/SupportedGADShapes_anyOf'
       - type: string
       description: Indicates supported GAD shapes.
     PointUncertaintyCircle:
@@ -5594,24 +5536,7 @@ components:
       type: object
     ReservPriority:
       anyOf:
-      - enum:
-        - PRIO_1
-        - PRIO_2
-        - PRIO_3
-        - PRIO_4
-        - PRIO_5
-        - PRIO_6
-        - PRIO_7
-        - PRIO_8
-        - PRIO_9
-        - PRIO_10
-        - PRIO_11
-        - PRIO_12
-        - PRIO_13
-        - PRIO_14
-        - PRIO_15
-        - PRIO_16
-        type: string
+      - $ref: '#/components/schemas/ReservPriority_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -5624,16 +5549,7 @@ components:
       type: string
     MediaType:
       anyOf:
-      - enum:
-        - AUDIO
-        - VIDEO
-        - DATA
-        - APPLICATION
-        - CONTROL
-        - TEXT
-        - MESSAGE
-        - OTHER
-        type: string
+      - $ref: '#/components/schemas/MediaType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -5643,64 +5559,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnIdNid:
@@ -5776,6 +5635,90 @@ components:
           format: binary
           type: string
       type: object
+    ContextUpdateAction_anyOf:
+      enum:
+      - START
+      - TERMINATE
+      type: string
+      example: null
+    ContextStatusEventType_anyOf:
+      enum:
+      - QOS_INFO
+      - STATUS_INFO
+      - SERVICE_AREA_INFO
+      - SESSION_RELEASE
+      - MULT_TRANS_ADD_CHANGE
+      - SECURITY_INFO
+      type: string
+      example: null
+    ReportingMode_anyOf:
+      enum:
+      - CONTINUOUS
+      - ONE_TIME
+      type: string
+      example: null
+    NgapIeType_anyOf:
+      enum:
+      - MBS_DIS_SETUP_REQ
+      - MBS_DIS_SETUP_RSP
+      - MBS_DIS_SETUP_FAIL
+      - MBS_DIS_REL_REQ
+      type: string
+      example: null
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    MbsSessionEventType_anyOf:
+      enum:
+      - MBS_REL_TMGI_EXPIRY
+      - BROADCAST_DELIVERY_STATUS
+      - INGRESS_TUNNEL_ADD_CHANGE
+      type: string
+      example: null
+    BroadcastDeliveryStatus_anyOf:
+      enum:
+      - STARTED
+      - TERMINATED
+      type: string
+      example: null
+    MbsServiceType_anyOf:
+      enum:
+      - MULTICAST
+      - BROADCAST
+      type: string
+      example: null
+    PreemptionCapability_anyOf:
+      enum:
+      - NOT_PREEMPT
+      - MAY_PREEMPT
+      type: string
+      example: null
+    PreemptionVulnerability_anyOf:
+      enum:
+      - NOT_PREEMPTABLE
+      - PREEMPTABLE
+      type: string
+      example: null
+    MbsSessionActivityStatus_anyOf:
+      enum:
+      - ACTIVE
+      - INACTIVE
+      type: string
+      example: null
+    QosResourceType_anyOf:
+      enum:
+      - NON_GBR
+      - NON_CRITICAL_GBR
+      - CRITICAL_GBR
+      type: string
+      example: null
     Point_allOf:
       properties:
         point:
@@ -5783,6 +5726,19 @@ components:
       required:
       - point
       type: object
+      example: null
+    SupportedGADShapes_anyOf:
+      enum:
+      - POINT
+      - POINT_UNCERTAINTY_CIRCLE
+      - POINT_UNCERTAINTY_ELLIPSE
+      - POLYGON
+      - POINT_ALTITUDE
+      - POINT_ALTITUDE_UNCERTAINTY
+      - ELLIPSOID_ARC
+      - LOCAL_2D_POINT_UNCERTAINTY_ELLIPSE
+      - LOCAL_3D_POINT_UNCERTAINTY_ELLIPSOID
+      type: string
       example: null
     PointUncertaintyCircle_allOf:
       properties:
@@ -5951,6 +5907,98 @@ components:
       - point
       - uncertaintyEllipsoid
       type: object
+      example: null
+    ReservPriority_anyOf:
+      enum:
+      - PRIO_1
+      - PRIO_2
+      - PRIO_3
+      - PRIO_4
+      - PRIO_5
+      - PRIO_6
+      - PRIO_7
+      - PRIO_8
+      - PRIO_9
+      - PRIO_10
+      - PRIO_11
+      - PRIO_12
+      - PRIO_13
+      - PRIO_14
+      - PRIO_15
+      - PRIO_16
+      type: string
+      example: null
+    MediaType_anyOf:
+      enum:
+      - AUDIO
+      - VIDEO
+      - DATA
+      - APPLICATION
+      - CONTROL
+      - TEXT
+      - MESSAGE
+      - OTHER
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

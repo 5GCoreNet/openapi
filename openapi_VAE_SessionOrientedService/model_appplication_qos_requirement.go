@@ -57,7 +57,7 @@ func NewAppplicationQosRequirementWithDefaults() *AppplicationQosRequirement {
 
 // GetPqi returns the Pqi field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetPqi() int32 {
-	if o == nil || IsNil(o.Pqi) {
+	if o == nil || isNil(o.Pqi) {
 		var ret int32
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *AppplicationQosRequirement) GetPqi() int32 {
 // GetPqiOk returns a tuple with the Pqi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetPqiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Pqi) {
+	if o == nil || isNil(o.Pqi) {
 		return nil, false
 	}
 	return o.Pqi, true
@@ -75,7 +75,7 @@ func (o *AppplicationQosRequirement) GetPqiOk() (*int32, bool) {
 
 // HasPqi returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasPqi() bool {
-	if o != nil && !IsNil(o.Pqi) {
+	if o != nil && !isNil(o.Pqi) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *AppplicationQosRequirement) SetPqi(v int32) {
 
 // GetResourceType returns the ResourceType field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetResourceType() QosResourceType {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil || isNil(o.ResourceType) {
 		var ret QosResourceType
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *AppplicationQosRequirement) GetResourceType() QosResourceType {
 // GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetResourceTypeOk() (*QosResourceType, bool) {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil || isNil(o.ResourceType) {
 		return nil, false
 	}
 	return o.ResourceType, true
@@ -107,7 +107,7 @@ func (o *AppplicationQosRequirement) GetResourceTypeOk() (*QosResourceType, bool
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasResourceType() bool {
-	if o != nil && !IsNil(o.ResourceType) {
+	if o != nil && !isNil(o.ResourceType) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *AppplicationQosRequirement) SetResourceType(v QosResourceType) {
 
 // GetPriorityLevel returns the PriorityLevel field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetPriorityLevel() int32 {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		var ret int32
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *AppplicationQosRequirement) GetPriorityLevel() int32 {
 // GetPriorityLevelOk returns a tuple with the PriorityLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetPriorityLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLevel) {
+	if o == nil || isNil(o.PriorityLevel) {
 		return nil, false
 	}
 	return o.PriorityLevel, true
@@ -139,7 +139,7 @@ func (o *AppplicationQosRequirement) GetPriorityLevelOk() (*int32, bool) {
 
 // HasPriorityLevel returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasPriorityLevel() bool {
-	if o != nil && !IsNil(o.PriorityLevel) {
+	if o != nil && !isNil(o.PriorityLevel) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *AppplicationQosRequirement) SetPriorityLevel(v int32) {
 
 // GetPacketDelayBudget returns the PacketDelayBudget field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetPacketDelayBudget() int32 {
-	if o == nil || IsNil(o.PacketDelayBudget) {
+	if o == nil || isNil(o.PacketDelayBudget) {
 		var ret int32
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *AppplicationQosRequirement) GetPacketDelayBudget() int32 {
 // GetPacketDelayBudgetOk returns a tuple with the PacketDelayBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetPacketDelayBudgetOk() (*int32, bool) {
-	if o == nil || IsNil(o.PacketDelayBudget) {
+	if o == nil || isNil(o.PacketDelayBudget) {
 		return nil, false
 	}
 	return o.PacketDelayBudget, true
@@ -171,7 +171,7 @@ func (o *AppplicationQosRequirement) GetPacketDelayBudgetOk() (*int32, bool) {
 
 // HasPacketDelayBudget returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasPacketDelayBudget() bool {
-	if o != nil && !IsNil(o.PacketDelayBudget) {
+	if o != nil && !isNil(o.PacketDelayBudget) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *AppplicationQosRequirement) SetPacketDelayBudget(v int32) {
 
 // GetPacketErrorRate returns the PacketErrorRate field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetPacketErrorRate() string {
-	if o == nil || IsNil(o.PacketErrorRate) {
+	if o == nil || isNil(o.PacketErrorRate) {
 		var ret string
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *AppplicationQosRequirement) GetPacketErrorRate() string {
 // GetPacketErrorRateOk returns a tuple with the PacketErrorRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetPacketErrorRateOk() (*string, bool) {
-	if o == nil || IsNil(o.PacketErrorRate) {
+	if o == nil || isNil(o.PacketErrorRate) {
 		return nil, false
 	}
 	return o.PacketErrorRate, true
@@ -203,7 +203,7 @@ func (o *AppplicationQosRequirement) GetPacketErrorRateOk() (*string, bool) {
 
 // HasPacketErrorRate returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasPacketErrorRate() bool {
-	if o != nil && !IsNil(o.PacketErrorRate) {
+	if o != nil && !isNil(o.PacketErrorRate) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *AppplicationQosRequirement) SetPacketErrorRate(v string) {
 
 // GetAveragingWindow returns the AveragingWindow field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetAveragingWindow() int32 {
-	if o == nil || IsNil(o.AveragingWindow) {
+	if o == nil || isNil(o.AveragingWindow) {
 		var ret int32
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *AppplicationQosRequirement) GetAveragingWindow() int32 {
 // GetAveragingWindowOk returns a tuple with the AveragingWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetAveragingWindowOk() (*int32, bool) {
-	if o == nil || IsNil(o.AveragingWindow) {
+	if o == nil || isNil(o.AveragingWindow) {
 		return nil, false
 	}
 	return o.AveragingWindow, true
@@ -235,7 +235,7 @@ func (o *AppplicationQosRequirement) GetAveragingWindowOk() (*int32, bool) {
 
 // HasAveragingWindow returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasAveragingWindow() bool {
-	if o != nil && !IsNil(o.AveragingWindow) {
+	if o != nil && !isNil(o.AveragingWindow) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *AppplicationQosRequirement) SetAveragingWindow(v int32) {
 
 // GetMaxDataBurstVol returns the MaxDataBurstVol field value if set, zero value otherwise.
 func (o *AppplicationQosRequirement) GetMaxDataBurstVol() int32 {
-	if o == nil || IsNil(o.MaxDataBurstVol) {
+	if o == nil || isNil(o.MaxDataBurstVol) {
 		var ret int32
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *AppplicationQosRequirement) GetMaxDataBurstVol() int32 {
 // GetMaxDataBurstVolOk returns a tuple with the MaxDataBurstVol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppplicationQosRequirement) GetMaxDataBurstVolOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxDataBurstVol) {
+	if o == nil || isNil(o.MaxDataBurstVol) {
 		return nil, false
 	}
 	return o.MaxDataBurstVol, true
@@ -267,7 +267,7 @@ func (o *AppplicationQosRequirement) GetMaxDataBurstVolOk() (*int32, bool) {
 
 // HasMaxDataBurstVol returns a boolean if a field has been set.
 func (o *AppplicationQosRequirement) HasMaxDataBurstVol() bool {
-	if o != nil && !IsNil(o.MaxDataBurstVol) {
+	if o != nil && !isNil(o.MaxDataBurstVol) {
 		return true
 	}
 
@@ -289,25 +289,25 @@ func (o AppplicationQosRequirement) MarshalJSON() ([]byte, error) {
 
 func (o AppplicationQosRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Pqi) {
+	if !isNil(o.Pqi) {
 		toSerialize["pqi"] = o.Pqi
 	}
-	if !IsNil(o.ResourceType) {
+	if !isNil(o.ResourceType) {
 		toSerialize["resourceType"] = o.ResourceType
 	}
-	if !IsNil(o.PriorityLevel) {
+	if !isNil(o.PriorityLevel) {
 		toSerialize["priorityLevel"] = o.PriorityLevel
 	}
-	if !IsNil(o.PacketDelayBudget) {
+	if !isNil(o.PacketDelayBudget) {
 		toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	}
-	if !IsNil(o.PacketErrorRate) {
+	if !isNil(o.PacketErrorRate) {
 		toSerialize["packetErrorRate"] = o.PacketErrorRate
 	}
-	if !IsNil(o.AveragingWindow) {
+	if !isNil(o.AveragingWindow) {
 		toSerialize["averagingWindow"] = o.AveragingWindow
 	}
-	if !IsNil(o.MaxDataBurstVol) {
+	if !isNil(o.MaxDataBurstVol) {
 		toSerialize["maxDataBurstVol"] = o.MaxDataBurstVol
 	}
 	return toSerialize, nil

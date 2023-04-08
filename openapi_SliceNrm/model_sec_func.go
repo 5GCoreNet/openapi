@@ -43,7 +43,7 @@ func NewSecFuncWithDefaults() *SecFunc {
 
 // GetSecFunId returns the SecFunId field value if set, zero value otherwise.
 func (o *SecFunc) GetSecFunId() string {
-	if o == nil || IsNil(o.SecFunId) {
+	if o == nil || isNil(o.SecFunId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SecFunc) GetSecFunId() string {
 // GetSecFunIdOk returns a tuple with the SecFunId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecFunc) GetSecFunIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SecFunId) {
+	if o == nil || isNil(o.SecFunId) {
 		return nil, false
 	}
 	return o.SecFunId, true
@@ -61,7 +61,7 @@ func (o *SecFunc) GetSecFunIdOk() (*string, bool) {
 
 // HasSecFunId returns a boolean if a field has been set.
 func (o *SecFunc) HasSecFunId() bool {
-	if o != nil && !IsNil(o.SecFunId) {
+	if o != nil && !isNil(o.SecFunId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SecFunc) SetSecFunId(v string) {
 
 // GetSecFunType returns the SecFunType field value if set, zero value otherwise.
 func (o *SecFunc) GetSecFunType() string {
-	if o == nil || IsNil(o.SecFunType) {
+	if o == nil || isNil(o.SecFunType) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SecFunc) GetSecFunType() string {
 // GetSecFunTypeOk returns a tuple with the SecFunType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecFunc) GetSecFunTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.SecFunType) {
+	if o == nil || isNil(o.SecFunType) {
 		return nil, false
 	}
 	return o.SecFunType, true
@@ -93,7 +93,7 @@ func (o *SecFunc) GetSecFunTypeOk() (*string, bool) {
 
 // HasSecFunType returns a boolean if a field has been set.
 func (o *SecFunc) HasSecFunType() bool {
-	if o != nil && !IsNil(o.SecFunType) {
+	if o != nil && !isNil(o.SecFunType) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *SecFunc) SetSecFunType(v string) {
 
 // GetSecRules returns the SecRules field value if set, zero value otherwise.
 func (o *SecFunc) GetSecRules() []string {
-	if o == nil || IsNil(o.SecRules) {
+	if o == nil || isNil(o.SecRules) {
 		var ret []string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *SecFunc) GetSecRules() []string {
 // GetSecRulesOk returns a tuple with the SecRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecFunc) GetSecRulesOk() ([]string, bool) {
-	if o == nil || IsNil(o.SecRules) {
+	if o == nil || isNil(o.SecRules) {
 		return nil, false
 	}
 	return o.SecRules, true
@@ -125,7 +125,7 @@ func (o *SecFunc) GetSecRulesOk() ([]string, bool) {
 
 // HasSecRules returns a boolean if a field has been set.
 func (o *SecFunc) HasSecRules() bool {
-	if o != nil && !IsNil(o.SecRules) {
+	if o != nil && !isNil(o.SecRules) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o SecFunc) MarshalJSON() ([]byte, error) {
 
 func (o SecFunc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SecFunId) {
+	if !isNil(o.SecFunId) {
 		toSerialize["secFunId"] = o.SecFunId
 	}
-	if !IsNil(o.SecFunType) {
+	if !isNil(o.SecFunType) {
 		toSerialize["secFunType"] = o.SecFunType
 	}
-	if !IsNil(o.SecRules) {
+	if !isNil(o.SecRules) {
 		toSerialize["secRules"] = o.SecRules
 	}
 	return toSerialize, nil

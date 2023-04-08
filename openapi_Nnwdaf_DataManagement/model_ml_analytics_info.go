@@ -43,7 +43,7 @@ func NewMlAnalyticsInfoWithDefaults() *MlAnalyticsInfo {
 
 // GetMlAnalyticsIds returns the MlAnalyticsIds field value if set, zero value otherwise.
 func (o *MlAnalyticsInfo) GetMlAnalyticsIds() []NwdafEvent {
-	if o == nil || IsNil(o.MlAnalyticsIds) {
+	if o == nil || isNil(o.MlAnalyticsIds) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *MlAnalyticsInfo) GetMlAnalyticsIds() []NwdafEvent {
 // GetMlAnalyticsIdsOk returns a tuple with the MlAnalyticsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MlAnalyticsInfo) GetMlAnalyticsIdsOk() ([]NwdafEvent, bool) {
-	if o == nil || IsNil(o.MlAnalyticsIds) {
+	if o == nil || isNil(o.MlAnalyticsIds) {
 		return nil, false
 	}
 	return o.MlAnalyticsIds, true
@@ -61,7 +61,7 @@ func (o *MlAnalyticsInfo) GetMlAnalyticsIdsOk() ([]NwdafEvent, bool) {
 
 // HasMlAnalyticsIds returns a boolean if a field has been set.
 func (o *MlAnalyticsInfo) HasMlAnalyticsIds() bool {
-	if o != nil && !IsNil(o.MlAnalyticsIds) {
+	if o != nil && !isNil(o.MlAnalyticsIds) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *MlAnalyticsInfo) SetMlAnalyticsIds(v []NwdafEvent) {
 
 // GetSnssaiList returns the SnssaiList field value if set, zero value otherwise.
 func (o *MlAnalyticsInfo) GetSnssaiList() []Snssai {
-	if o == nil || IsNil(o.SnssaiList) {
+	if o == nil || isNil(o.SnssaiList) {
 		var ret []Snssai
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *MlAnalyticsInfo) GetSnssaiList() []Snssai {
 // GetSnssaiListOk returns a tuple with the SnssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MlAnalyticsInfo) GetSnssaiListOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.SnssaiList) {
+	if o == nil || isNil(o.SnssaiList) {
 		return nil, false
 	}
 	return o.SnssaiList, true
@@ -93,7 +93,7 @@ func (o *MlAnalyticsInfo) GetSnssaiListOk() ([]Snssai, bool) {
 
 // HasSnssaiList returns a boolean if a field has been set.
 func (o *MlAnalyticsInfo) HasSnssaiList() bool {
-	if o != nil && !IsNil(o.SnssaiList) {
+	if o != nil && !isNil(o.SnssaiList) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *MlAnalyticsInfo) SetSnssaiList(v []Snssai) {
 
 // GetTrackingAreaList returns the TrackingAreaList field value if set, zero value otherwise.
 func (o *MlAnalyticsInfo) GetTrackingAreaList() []Tai {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		var ret []Tai
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *MlAnalyticsInfo) GetTrackingAreaList() []Tai {
 // GetTrackingAreaListOk returns a tuple with the TrackingAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MlAnalyticsInfo) GetTrackingAreaListOk() ([]Tai, bool) {
-	if o == nil || IsNil(o.TrackingAreaList) {
+	if o == nil || isNil(o.TrackingAreaList) {
 		return nil, false
 	}
 	return o.TrackingAreaList, true
@@ -125,7 +125,7 @@ func (o *MlAnalyticsInfo) GetTrackingAreaListOk() ([]Tai, bool) {
 
 // HasTrackingAreaList returns a boolean if a field has been set.
 func (o *MlAnalyticsInfo) HasTrackingAreaList() bool {
-	if o != nil && !IsNil(o.TrackingAreaList) {
+	if o != nil && !isNil(o.TrackingAreaList) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o MlAnalyticsInfo) MarshalJSON() ([]byte, error) {
 
 func (o MlAnalyticsInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MlAnalyticsIds) {
+	if !isNil(o.MlAnalyticsIds) {
 		toSerialize["mlAnalyticsIds"] = o.MlAnalyticsIds
 	}
-	if !IsNil(o.SnssaiList) {
+	if !isNil(o.SnssaiList) {
 		toSerialize["snssaiList"] = o.SnssaiList
 	}
-	if !IsNil(o.TrackingAreaList) {
+	if !isNil(o.TrackingAreaList) {
 		toSerialize["trackingAreaList"] = o.TrackingAreaList
 	}
 	return toSerialize, nil

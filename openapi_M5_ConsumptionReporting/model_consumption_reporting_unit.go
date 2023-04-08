@@ -75,7 +75,7 @@ func (o *ConsumptionReportingUnit) SetMediaConsumed(v string) {
 
 // GetMediaEndpointAddress returns the MediaEndpointAddress field value if set, zero value otherwise.
 func (o *ConsumptionReportingUnit) GetMediaEndpointAddress() EndpointAddress {
-	if o == nil || IsNil(o.MediaEndpointAddress) {
+	if o == nil || isNil(o.MediaEndpointAddress) {
 		var ret EndpointAddress
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ConsumptionReportingUnit) GetMediaEndpointAddress() EndpointAddress {
 // GetMediaEndpointAddressOk returns a tuple with the MediaEndpointAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingUnit) GetMediaEndpointAddressOk() (*EndpointAddress, bool) {
-	if o == nil || IsNil(o.MediaEndpointAddress) {
+	if o == nil || isNil(o.MediaEndpointAddress) {
 		return nil, false
 	}
 	return o.MediaEndpointAddress, true
@@ -93,7 +93,7 @@ func (o *ConsumptionReportingUnit) GetMediaEndpointAddressOk() (*EndpointAddress
 
 // HasMediaEndpointAddress returns a boolean if a field has been set.
 func (o *ConsumptionReportingUnit) HasMediaEndpointAddress() bool {
-	if o != nil && !IsNil(o.MediaEndpointAddress) {
+	if o != nil && !isNil(o.MediaEndpointAddress) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *ConsumptionReportingUnit) SetDuration(v int32) {
 
 // GetLocations returns the Locations field value if set, zero value otherwise.
 func (o *ConsumptionReportingUnit) GetLocations() []TypedLocation {
-	if o == nil || IsNil(o.Locations) {
+	if o == nil || isNil(o.Locations) {
 		var ret []TypedLocation
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *ConsumptionReportingUnit) GetLocations() []TypedLocation {
 // GetLocationsOk returns a tuple with the Locations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsumptionReportingUnit) GetLocationsOk() ([]TypedLocation, bool) {
-	if o == nil || IsNil(o.Locations) {
+	if o == nil || isNil(o.Locations) {
 		return nil, false
 	}
 	return o.Locations, true
@@ -173,7 +173,7 @@ func (o *ConsumptionReportingUnit) GetLocationsOk() ([]TypedLocation, bool) {
 
 // HasLocations returns a boolean if a field has been set.
 func (o *ConsumptionReportingUnit) HasLocations() bool {
-	if o != nil && !IsNil(o.Locations) {
+	if o != nil && !isNil(o.Locations) {
 		return true
 	}
 
@@ -196,12 +196,12 @@ func (o ConsumptionReportingUnit) MarshalJSON() ([]byte, error) {
 func (o ConsumptionReportingUnit) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mediaConsumed"] = o.MediaConsumed
-	if !IsNil(o.MediaEndpointAddress) {
+	if !isNil(o.MediaEndpointAddress) {
 		toSerialize["mediaEndpointAddress"] = o.MediaEndpointAddress
 	}
 	toSerialize["startTime"] = o.StartTime
 	toSerialize["duration"] = o.Duration
-	if !IsNil(o.Locations) {
+	if !isNil(o.Locations) {
 		toSerialize["locations"] = o.Locations
 	}
 	return toSerialize, nil

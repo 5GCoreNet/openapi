@@ -68,7 +68,7 @@ func (o *TimePeriod) SetPeriod(v Periodicity) {
 
 // GetMaxNumPeriod returns the MaxNumPeriod field value if set, zero value otherwise.
 func (o *TimePeriod) GetMaxNumPeriod() int32 {
-	if o == nil || IsNil(o.MaxNumPeriod) {
+	if o == nil || isNil(o.MaxNumPeriod) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *TimePeriod) GetMaxNumPeriod() int32 {
 // GetMaxNumPeriodOk returns a tuple with the MaxNumPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TimePeriod) GetMaxNumPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumPeriod) {
+	if o == nil || isNil(o.MaxNumPeriod) {
 		return nil, false
 	}
 	return o.MaxNumPeriod, true
@@ -86,7 +86,7 @@ func (o *TimePeriod) GetMaxNumPeriodOk() (*int32, bool) {
 
 // HasMaxNumPeriod returns a boolean if a field has been set.
 func (o *TimePeriod) HasMaxNumPeriod() bool {
-	if o != nil && !IsNil(o.MaxNumPeriod) {
+	if o != nil && !isNil(o.MaxNumPeriod) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o TimePeriod) MarshalJSON() ([]byte, error) {
 func (o TimePeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["period"] = o.Period
-	if !IsNil(o.MaxNumPeriod) {
+	if !isNil(o.MaxNumPeriod) {
 		toSerialize["maxNumPeriod"] = o.MaxNumPeriod
 	}
 	return toSerialize, nil

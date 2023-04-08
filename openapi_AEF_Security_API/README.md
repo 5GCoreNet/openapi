@@ -87,6 +87,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Cause](docs/Cause.md)
+ - [CauseAnyOf](docs/CauseAnyOf.md)
  - [CheckAuthenticationReq](docs/CheckAuthenticationReq.md)
  - [CheckAuthenticationRsp](docs/CheckAuthenticationRsp.md)
  - [InvalidParam](docs/InvalidParam.md)

@@ -67,7 +67,7 @@ func (o *N1N2MessageTransferError) SetError(v ProblemDetails) {
 
 // GetErrInfo returns the ErrInfo field value if set, zero value otherwise.
 func (o *N1N2MessageTransferError) GetErrInfo() N1N2MsgTxfrErrDetail {
-	if o == nil || IsNil(o.ErrInfo) {
+	if o == nil || isNil(o.ErrInfo) {
 		var ret N1N2MsgTxfrErrDetail
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *N1N2MessageTransferError) GetErrInfo() N1N2MsgTxfrErrDetail {
 // GetErrInfoOk returns a tuple with the ErrInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N1N2MessageTransferError) GetErrInfoOk() (*N1N2MsgTxfrErrDetail, bool) {
-	if o == nil || IsNil(o.ErrInfo) {
+	if o == nil || isNil(o.ErrInfo) {
 		return nil, false
 	}
 	return o.ErrInfo, true
@@ -85,7 +85,7 @@ func (o *N1N2MessageTransferError) GetErrInfoOk() (*N1N2MsgTxfrErrDetail, bool) 
 
 // HasErrInfo returns a boolean if a field has been set.
 func (o *N1N2MessageTransferError) HasErrInfo() bool {
-	if o != nil && !IsNil(o.ErrInfo) {
+	if o != nil && !isNil(o.ErrInfo) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o N1N2MessageTransferError) MarshalJSON() ([]byte, error) {
 func (o N1N2MessageTransferError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.ErrInfo) {
+	if !isNil(o.ErrInfo) {
 		toSerialize["errInfo"] = o.ErrInfo
 	}
 	return toSerialize, nil

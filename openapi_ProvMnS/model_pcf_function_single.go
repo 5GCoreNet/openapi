@@ -23,7 +23,7 @@ type PcfFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *PcfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -82,7 +82,7 @@ func (o *PcfFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *PcfFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -100,7 +100,7 @@ func (o *PcfFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *PcfFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *PcfFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -132,7 +132,7 @@ func (o *PcfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *PcfFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *PcfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -164,7 +164,7 @@ func (o *PcfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, boo
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -177,9 +177,9 @@ func (o *PcfFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PcfFunctionSingle) GetAttributes() PcfFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret PcfFunctionSingleAllOfAttributes
+func (o *PcfFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -187,8 +187,8 @@ func (o *PcfFunctionSingle) GetAttributes() PcfFunctionSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PcfFunctionSingle) GetAttributesOk() (*PcfFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *PcfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -196,21 +196,21 @@ func (o *PcfFunctionSingle) GetAttributesOk() (*PcfFunctionSingleAllOfAttributes
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given PcfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *PcfFunctionSingle) SetAttributes(v PcfFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *PcfFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *PcfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -228,7 +228,7 @@ func (o *PcfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *PcfFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *PcfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -260,7 +260,7 @@ func (o *PcfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, b
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *PcfFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *PcfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -292,7 +292,7 @@ func (o *PcfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, b
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *PcfFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *PcfFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -324,7 +324,7 @@ func (o *PcfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *PcfFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN5 returns the EPN5 field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetEPN5() []EPN5Single {
-	if o == nil || IsNil(o.EPN5) {
+	if o == nil || isNil(o.EPN5) {
 		var ret []EPN5Single
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *PcfFunctionSingle) GetEPN5() []EPN5Single {
 // GetEPN5Ok returns a tuple with the EPN5 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetEPN5Ok() ([]EPN5Single, bool) {
-	if o == nil || IsNil(o.EPN5) {
+	if o == nil || isNil(o.EPN5) {
 		return nil, false
 	}
 	return o.EPN5, true
@@ -356,7 +356,7 @@ func (o *PcfFunctionSingle) GetEPN5Ok() ([]EPN5Single, bool) {
 
 // HasEPN5 returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasEPN5() bool {
-	if o != nil && !IsNil(o.EPN5) {
+	if o != nil && !isNil(o.EPN5) {
 		return true
 	}
 
@@ -370,7 +370,7 @@ func (o *PcfFunctionSingle) SetEPN5(v []EPN5Single) {
 
 // GetEPN7 returns the EPN7 field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetEPN7() []EPN7Single {
-	if o == nil || IsNil(o.EPN7) {
+	if o == nil || isNil(o.EPN7) {
 		var ret []EPN7Single
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *PcfFunctionSingle) GetEPN7() []EPN7Single {
 // GetEPN7Ok returns a tuple with the EPN7 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetEPN7Ok() ([]EPN7Single, bool) {
-	if o == nil || IsNil(o.EPN7) {
+	if o == nil || isNil(o.EPN7) {
 		return nil, false
 	}
 	return o.EPN7, true
@@ -388,7 +388,7 @@ func (o *PcfFunctionSingle) GetEPN7Ok() ([]EPN7Single, bool) {
 
 // HasEPN7 returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasEPN7() bool {
-	if o != nil && !IsNil(o.EPN7) {
+	if o != nil && !isNil(o.EPN7) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *PcfFunctionSingle) SetEPN7(v []EPN7Single) {
 
 // GetEPN15 returns the EPN15 field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetEPN15() []EPN15Single {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		var ret []EPN15Single
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *PcfFunctionSingle) GetEPN15() []EPN15Single {
 // GetEPN15Ok returns a tuple with the EPN15 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetEPN15Ok() ([]EPN15Single, bool) {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		return nil, false
 	}
 	return o.EPN15, true
@@ -420,7 +420,7 @@ func (o *PcfFunctionSingle) GetEPN15Ok() ([]EPN15Single, bool) {
 
 // HasEPN15 returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasEPN15() bool {
-	if o != nil && !IsNil(o.EPN15) {
+	if o != nil && !isNil(o.EPN15) {
 		return true
 	}
 
@@ -434,7 +434,7 @@ func (o *PcfFunctionSingle) SetEPN15(v []EPN15Single) {
 
 // GetEPN16 returns the EPN16 field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetEPN16() []EPN16Single {
-	if o == nil || IsNil(o.EPN16) {
+	if o == nil || isNil(o.EPN16) {
 		var ret []EPN16Single
 		return ret
 	}
@@ -444,7 +444,7 @@ func (o *PcfFunctionSingle) GetEPN16() []EPN16Single {
 // GetEPN16Ok returns a tuple with the EPN16 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetEPN16Ok() ([]EPN16Single, bool) {
-	if o == nil || IsNil(o.EPN16) {
+	if o == nil || isNil(o.EPN16) {
 		return nil, false
 	}
 	return o.EPN16, true
@@ -452,7 +452,7 @@ func (o *PcfFunctionSingle) GetEPN16Ok() ([]EPN16Single, bool) {
 
 // HasEPN16 returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasEPN16() bool {
-	if o != nil && !IsNil(o.EPN16) {
+	if o != nil && !isNil(o.EPN16) {
 		return true
 	}
 
@@ -466,7 +466,7 @@ func (o *PcfFunctionSingle) SetEPN16(v []EPN16Single) {
 
 // GetEPRx returns the EPRx field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetEPRx() []EPRxSingle {
-	if o == nil || IsNil(o.EPRx) {
+	if o == nil || isNil(o.EPRx) {
 		var ret []EPRxSingle
 		return ret
 	}
@@ -476,7 +476,7 @@ func (o *PcfFunctionSingle) GetEPRx() []EPRxSingle {
 // GetEPRxOk returns a tuple with the EPRx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetEPRxOk() ([]EPRxSingle, bool) {
-	if o == nil || IsNil(o.EPRx) {
+	if o == nil || isNil(o.EPRx) {
 		return nil, false
 	}
 	return o.EPRx, true
@@ -484,7 +484,7 @@ func (o *PcfFunctionSingle) GetEPRxOk() ([]EPRxSingle, bool) {
 
 // HasEPRx returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasEPRx() bool {
-	if o != nil && !IsNil(o.EPRx) {
+	if o != nil && !isNil(o.EPRx) {
 		return true
 	}
 
@@ -498,7 +498,7 @@ func (o *PcfFunctionSingle) SetEPRx(v []EPRxSingle) {
 
 // GetPredefinedPccRuleSet returns the PredefinedPccRuleSet field value if set, zero value otherwise.
 func (o *PcfFunctionSingle) GetPredefinedPccRuleSet() PredefinedPccRuleSetSingle {
-	if o == nil || IsNil(o.PredefinedPccRuleSet) {
+	if o == nil || isNil(o.PredefinedPccRuleSet) {
 		var ret PredefinedPccRuleSetSingle
 		return ret
 	}
@@ -508,7 +508,7 @@ func (o *PcfFunctionSingle) GetPredefinedPccRuleSet() PredefinedPccRuleSetSingle
 // GetPredefinedPccRuleSetOk returns a tuple with the PredefinedPccRuleSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PcfFunctionSingle) GetPredefinedPccRuleSetOk() (*PredefinedPccRuleSetSingle, bool) {
-	if o == nil || IsNil(o.PredefinedPccRuleSet) {
+	if o == nil || isNil(o.PredefinedPccRuleSet) {
 		return nil, false
 	}
 	return o.PredefinedPccRuleSet, true
@@ -516,7 +516,7 @@ func (o *PcfFunctionSingle) GetPredefinedPccRuleSetOk() (*PredefinedPccRuleSetSi
 
 // HasPredefinedPccRuleSet returns a boolean if a field has been set.
 func (o *PcfFunctionSingle) HasPredefinedPccRuleSet() bool {
-	if o != nil && !IsNil(o.PredefinedPccRuleSet) {
+	if o != nil && !isNil(o.PredefinedPccRuleSet) {
 		return true
 	}
 
@@ -539,46 +539,46 @@ func (o PcfFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o PcfFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.EPN5) {
+	if !isNil(o.EPN5) {
 		toSerialize["EP_N5"] = o.EPN5
 	}
-	if !IsNil(o.EPN7) {
+	if !isNil(o.EPN7) {
 		toSerialize["EP_N7"] = o.EPN7
 	}
-	if !IsNil(o.EPN15) {
+	if !isNil(o.EPN15) {
 		toSerialize["EP_N15"] = o.EPN15
 	}
-	if !IsNil(o.EPN16) {
+	if !isNil(o.EPN16) {
 		toSerialize["EP_N16"] = o.EPN16
 	}
-	if !IsNil(o.EPRx) {
+	if !isNil(o.EPRx) {
 		toSerialize["EP_Rx"] = o.EPRx
 	}
-	if !IsNil(o.PredefinedPccRuleSet) {
+	if !isNil(o.PredefinedPccRuleSet) {
 		toSerialize["PredefinedPccRuleSet"] = o.PredefinedPccRuleSet
 	}
 	return toSerialize, nil

@@ -70,7 +70,7 @@ func (o *FlatJwsJson) SetPayload(v string) {
 
 // GetProtected returns the Protected field value if set, zero value otherwise.
 func (o *FlatJwsJson) GetProtected() string {
-	if o == nil || IsNil(o.Protected) {
+	if o == nil || isNil(o.Protected) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *FlatJwsJson) GetProtected() string {
 // GetProtectedOk returns a tuple with the Protected field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJwsJson) GetProtectedOk() (*string, bool) {
-	if o == nil || IsNil(o.Protected) {
+	if o == nil || isNil(o.Protected) {
 		return nil, false
 	}
 	return o.Protected, true
@@ -88,7 +88,7 @@ func (o *FlatJwsJson) GetProtectedOk() (*string, bool) {
 
 // HasProtected returns a boolean if a field has been set.
 func (o *FlatJwsJson) HasProtected() bool {
-	if o != nil && !IsNil(o.Protected) {
+	if o != nil && !isNil(o.Protected) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *FlatJwsJson) SetProtected(v string) {
 
 // GetHeader returns the Header field value if set, zero value otherwise.
 func (o *FlatJwsJson) GetHeader() map[string]interface{} {
-	if o == nil || IsNil(o.Header) {
+	if o == nil || isNil(o.Header) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *FlatJwsJson) GetHeader() map[string]interface{} {
 // GetHeaderOk returns a tuple with the Header field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FlatJwsJson) GetHeaderOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.Header) {
+	if o == nil || isNil(o.Header) {
 		return map[string]interface{}{}, false
 	}
 	return o.Header, true
@@ -120,7 +120,7 @@ func (o *FlatJwsJson) GetHeaderOk() (map[string]interface{}, bool) {
 
 // HasHeader returns a boolean if a field has been set.
 func (o *FlatJwsJson) HasHeader() bool {
-	if o != nil && !IsNil(o.Header) {
+	if o != nil && !isNil(o.Header) {
 		return true
 	}
 
@@ -167,10 +167,10 @@ func (o FlatJwsJson) MarshalJSON() ([]byte, error) {
 func (o FlatJwsJson) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["payload"] = o.Payload
-	if !IsNil(o.Protected) {
+	if !isNil(o.Protected) {
 		toSerialize["protected"] = o.Protected
 	}
-	if !IsNil(o.Header) {
+	if !isNil(o.Header) {
 		toSerialize["header"] = o.Header
 	}
 	toSerialize["signature"] = o.Signature

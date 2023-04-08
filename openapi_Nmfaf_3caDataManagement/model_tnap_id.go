@@ -46,7 +46,7 @@ func NewTnapIdWithDefaults() *TnapId {
 
 // GetSsId returns the SsId field value if set, zero value otherwise.
 func (o *TnapId) GetSsId() string {
-	if o == nil || IsNil(o.SsId) {
+	if o == nil || isNil(o.SsId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *TnapId) GetSsId() string {
 // GetSsIdOk returns a tuple with the SsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TnapId) GetSsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SsId) {
+	if o == nil || isNil(o.SsId) {
 		return nil, false
 	}
 	return o.SsId, true
@@ -64,7 +64,7 @@ func (o *TnapId) GetSsIdOk() (*string, bool) {
 
 // HasSsId returns a boolean if a field has been set.
 func (o *TnapId) HasSsId() bool {
-	if o != nil && !IsNil(o.SsId) {
+	if o != nil && !isNil(o.SsId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *TnapId) SetSsId(v string) {
 
 // GetBssId returns the BssId field value if set, zero value otherwise.
 func (o *TnapId) GetBssId() string {
-	if o == nil || IsNil(o.BssId) {
+	if o == nil || isNil(o.BssId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *TnapId) GetBssId() string {
 // GetBssIdOk returns a tuple with the BssId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TnapId) GetBssIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BssId) {
+	if o == nil || isNil(o.BssId) {
 		return nil, false
 	}
 	return o.BssId, true
@@ -96,7 +96,7 @@ func (o *TnapId) GetBssIdOk() (*string, bool) {
 
 // HasBssId returns a boolean if a field has been set.
 func (o *TnapId) HasBssId() bool {
-	if o != nil && !IsNil(o.BssId) {
+	if o != nil && !isNil(o.BssId) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *TnapId) SetBssId(v string) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *TnapId) GetCivicAddress() string {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *TnapId) GetCivicAddress() string {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TnapId) GetCivicAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -128,7 +128,7 @@ func (o *TnapId) GetCivicAddressOk() (*string, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *TnapId) HasCivicAddress() bool {
-	if o != nil && !IsNil(o.CivicAddress) {
+	if o != nil && !isNil(o.CivicAddress) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o TnapId) MarshalJSON() ([]byte, error) {
 
 func (o TnapId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SsId) {
+	if !isNil(o.SsId) {
 		toSerialize["ssId"] = o.SsId
 	}
-	if !IsNil(o.BssId) {
+	if !isNil(o.BssId) {
 		toSerialize["bssId"] = o.BssId
 	}
-	if !IsNil(o.CivicAddress) {
+	if !isNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	return toSerialize, nil

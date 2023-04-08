@@ -12,7 +12,6 @@ package openapi_DataReporting
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the CommunicationRecord type satisfies the MappedNullable interface at compile time
@@ -98,7 +97,7 @@ func (o *CommunicationRecord) SetTimeInterval(v TimeWindow) {
 
 // GetUplinkVolume returns the UplinkVolume field value if set, zero value otherwise.
 func (o *CommunicationRecord) GetUplinkVolume() int64 {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -108,7 +107,7 @@ func (o *CommunicationRecord) GetUplinkVolume() int64 {
 // GetUplinkVolumeOk returns a tuple with the UplinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationRecord) GetUplinkVolumeOk() (*int64, bool) {
-	if o == nil || IsNil(o.UplinkVolume) {
+	if o == nil || isNil(o.UplinkVolume) {
 		return nil, false
 	}
 	return o.UplinkVolume, true
@@ -116,7 +115,7 @@ func (o *CommunicationRecord) GetUplinkVolumeOk() (*int64, bool) {
 
 // HasUplinkVolume returns a boolean if a field has been set.
 func (o *CommunicationRecord) HasUplinkVolume() bool {
-	if o != nil && !IsNil(o.UplinkVolume) {
+	if o != nil && !isNil(o.UplinkVolume) {
 		return true
 	}
 
@@ -130,7 +129,7 @@ func (o *CommunicationRecord) SetUplinkVolume(v int64) {
 
 // GetDownlinkVolume returns the DownlinkVolume field value if set, zero value otherwise.
 func (o *CommunicationRecord) GetDownlinkVolume() int64 {
-	if o == nil || IsNil(o.DownlinkVolume) {
+	if o == nil || isNil(o.DownlinkVolume) {
 		var ret int64
 		return ret
 	}
@@ -140,7 +139,7 @@ func (o *CommunicationRecord) GetDownlinkVolume() int64 {
 // GetDownlinkVolumeOk returns a tuple with the DownlinkVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationRecord) GetDownlinkVolumeOk() (*int64, bool) {
-	if o == nil || IsNil(o.DownlinkVolume) {
+	if o == nil || isNil(o.DownlinkVolume) {
 		return nil, false
 	}
 	return o.DownlinkVolume, true
@@ -148,7 +147,7 @@ func (o *CommunicationRecord) GetDownlinkVolumeOk() (*int64, bool) {
 
 // HasDownlinkVolume returns a boolean if a field has been set.
 func (o *CommunicationRecord) HasDownlinkVolume() bool {
-	if o != nil && !IsNil(o.DownlinkVolume) {
+	if o != nil && !isNil(o.DownlinkVolume) {
 		return true
 	}
 
@@ -172,10 +171,10 @@ func (o CommunicationRecord) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["timestamp"] = o.Timestamp
 	toSerialize["timeInterval"] = o.TimeInterval
-	if !IsNil(o.UplinkVolume) {
+	if !isNil(o.UplinkVolume) {
 		toSerialize["uplinkVolume"] = o.UplinkVolume
 	}
-	if !IsNil(o.DownlinkVolume) {
+	if !isNil(o.DownlinkVolume) {
 		toSerialize["downlinkVolume"] = o.DownlinkVolume
 	}
 	return toSerialize, nil

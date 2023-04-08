@@ -19,7 +19,7 @@ var _ MappedNullable = &ExternalSeppFunctionSingleAllOf{}
 
 // ExternalSeppFunctionSingleAllOf struct for ExternalSeppFunctionSingleAllOf
 type ExternalSeppFunctionSingleAllOf struct {
-	Attributes *ExternalSeppFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewExternalSeppFunctionSingleAllOf instantiates a new ExternalSeppFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewExternalSeppFunctionSingleAllOfWithDefaults() *ExternalSeppFunctionSingl
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *ExternalSeppFunctionSingleAllOf) GetAttributes() ExternalSeppFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret ExternalSeppFunctionSingleAllOfAttributes
+func (o *ExternalSeppFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *ExternalSeppFunctionSingleAllOf) GetAttributes() ExternalSeppFunctionSi
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalSeppFunctionSingleAllOf) GetAttributesOk() (*ExternalSeppFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *ExternalSeppFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *ExternalSeppFunctionSingleAllOf) GetAttributesOk() (*ExternalSeppFuncti
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *ExternalSeppFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given ExternalSeppFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *ExternalSeppFunctionSingleAllOf) SetAttributes(v ExternalSeppFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *ExternalSeppFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o ExternalSeppFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o ExternalSeppFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

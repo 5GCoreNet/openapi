@@ -18,7 +18,7 @@ import (
 // PduSessionInformation - Represents PDU session identification information.
 type PduSessionInformation struct {
 	AnyOfAnyTypeAnyType *AnyOfAnyTypeAnyType
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // AnyOfAnyTypeAnyTypeAsPduSessionInformation is a convenience function that returns AnyOfAnyTypeAnyType wrapped in PduSessionInformation
@@ -29,9 +29,9 @@ func AnyOfAnyTypeAnyTypeAsPduSessionInformation(v *AnyOfAnyTypeAnyType) PduSessi
 }
 
 // interface{}AsPduSessionInformation is a convenience function that returns interface{} wrapped in PduSessionInformation
-func Interface{}AsPduSessionInformation(v *interface{}) PduSessionInformation {
+func InterfaceAsPduSessionInformation(v *interface{}) PduSessionInformation {
 	return PduSessionInformation{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -53,23 +53,23 @@ func (dst *PduSessionInformation) UnmarshalJSON(data []byte) error {
 		dst.AnyOfAnyTypeAnyType = nil
 	}
 
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
 		dst.AnyOfAnyTypeAnyType = nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(PduSessionInformation)")
 	} else if match == 1 {
@@ -85,8 +85,8 @@ func (src PduSessionInformation) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.AnyOfAnyTypeAnyType)
 	}
 
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -101,8 +101,8 @@ func (obj *PduSessionInformation) GetActualInstance() (interface{}) {
 		return obj.AnyOfAnyTypeAnyType
 	}
 
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

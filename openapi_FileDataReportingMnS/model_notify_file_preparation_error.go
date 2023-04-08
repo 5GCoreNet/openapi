@@ -12,7 +12,6 @@ package openapi_FileDataReportingMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyFilePreparationError type satisfies the MappedNullable interface at compile time
@@ -174,7 +173,7 @@ func (o *NotifyFilePreparationError) SetSystemDN(v string) {
 
 // GetFileInfoList returns the FileInfoList field value if set, zero value otherwise.
 func (o *NotifyFilePreparationError) GetFileInfoList() []FileInfo {
-	if o == nil || IsNil(o.FileInfoList) {
+	if o == nil || isNil(o.FileInfoList) {
 		var ret []FileInfo
 		return ret
 	}
@@ -184,7 +183,7 @@ func (o *NotifyFilePreparationError) GetFileInfoList() []FileInfo {
 // GetFileInfoListOk returns a tuple with the FileInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationError) GetFileInfoListOk() ([]FileInfo, bool) {
-	if o == nil || IsNil(o.FileInfoList) {
+	if o == nil || isNil(o.FileInfoList) {
 		return nil, false
 	}
 	return o.FileInfoList, true
@@ -192,7 +191,7 @@ func (o *NotifyFilePreparationError) GetFileInfoListOk() ([]FileInfo, bool) {
 
 // HasFileInfoList returns a boolean if a field has been set.
 func (o *NotifyFilePreparationError) HasFileInfoList() bool {
-	if o != nil && !IsNil(o.FileInfoList) {
+	if o != nil && !isNil(o.FileInfoList) {
 		return true
 	}
 
@@ -206,7 +205,7 @@ func (o *NotifyFilePreparationError) SetFileInfoList(v []FileInfo) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *NotifyFilePreparationError) GetReason() string {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		var ret string
 		return ret
 	}
@@ -216,7 +215,7 @@ func (o *NotifyFilePreparationError) GetReason() string {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationError) GetReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -224,7 +223,7 @@ func (o *NotifyFilePreparationError) GetReasonOk() (*string, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *NotifyFilePreparationError) HasReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && !isNil(o.Reason) {
 		return true
 	}
 
@@ -238,7 +237,7 @@ func (o *NotifyFilePreparationError) SetReason(v string) {
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyFilePreparationError) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -248,7 +247,7 @@ func (o *NotifyFilePreparationError) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyFilePreparationError) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -256,7 +255,7 @@ func (o *NotifyFilePreparationError) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyFilePreparationError) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -283,13 +282,13 @@ func (o NotifyFilePreparationError) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
-	if !IsNil(o.FileInfoList) {
+	if !isNil(o.FileInfoList) {
 		toSerialize["fileInfoList"] = o.FileInfoList
 	}
-	if !IsNil(o.Reason) {
+	if !isNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
 	return toSerialize, nil

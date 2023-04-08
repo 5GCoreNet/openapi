@@ -47,7 +47,7 @@ func NewFailureReportWithDefaults() *FailureReport {
 
 // GetValUeIds returns the ValUeIds field value if set, zero value otherwise.
 func (o *FailureReport) GetValUeIds() []ValTargetUe {
-	if o == nil || IsNil(o.ValUeIds) {
+	if o == nil || isNil(o.ValUeIds) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *FailureReport) GetValUeIds() []ValTargetUe {
 // GetValUeIdsOk returns a tuple with the ValUeIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureReport) GetValUeIdsOk() ([]ValTargetUe, bool) {
-	if o == nil || IsNil(o.ValUeIds) {
+	if o == nil || isNil(o.ValUeIds) {
 		return nil, false
 	}
 	return o.ValUeIds, true
@@ -65,7 +65,7 @@ func (o *FailureReport) GetValUeIdsOk() ([]ValTargetUe, bool) {
 
 // HasValUeIds returns a boolean if a field has been set.
 func (o *FailureReport) HasValUeIds() bool {
-	if o != nil && !IsNil(o.ValUeIds) {
+	if o != nil && !isNil(o.ValUeIds) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *FailureReport) SetValUeIds(v []ValTargetUe) {
 
 // GetValStreamIds returns the ValStreamIds field value if set, zero value otherwise.
 func (o *FailureReport) GetValStreamIds() []string {
-	if o == nil || IsNil(o.ValStreamIds) {
+	if o == nil || isNil(o.ValStreamIds) {
 		var ret []string
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *FailureReport) GetValStreamIds() []string {
 // GetValStreamIdsOk returns a tuple with the ValStreamIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureReport) GetValStreamIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ValStreamIds) {
+	if o == nil || isNil(o.ValStreamIds) {
 		return nil, false
 	}
 	return o.ValStreamIds, true
@@ -97,7 +97,7 @@ func (o *FailureReport) GetValStreamIdsOk() ([]string, bool) {
 
 // HasValStreamIds returns a boolean if a field has been set.
 func (o *FailureReport) HasValStreamIds() bool {
-	if o != nil && !IsNil(o.ValStreamIds) {
+	if o != nil && !isNil(o.ValStreamIds) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *FailureReport) SetValStreamIds(v []string) {
 
 // GetFailureReason returns the FailureReason field value if set, zero value otherwise.
 func (o *FailureReport) GetFailureReason() FailureReason {
-	if o == nil || IsNil(o.FailureReason) {
+	if o == nil || isNil(o.FailureReason) {
 		var ret FailureReason
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *FailureReport) GetFailureReason() FailureReason {
 // GetFailureReasonOk returns a tuple with the FailureReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailureReport) GetFailureReasonOk() (*FailureReason, bool) {
-	if o == nil || IsNil(o.FailureReason) {
+	if o == nil || isNil(o.FailureReason) {
 		return nil, false
 	}
 	return o.FailureReason, true
@@ -129,7 +129,7 @@ func (o *FailureReport) GetFailureReasonOk() (*FailureReason, bool) {
 
 // HasFailureReason returns a boolean if a field has been set.
 func (o *FailureReport) HasFailureReason() bool {
-	if o != nil && !IsNil(o.FailureReason) {
+	if o != nil && !isNil(o.FailureReason) {
 		return true
 	}
 
@@ -175,13 +175,13 @@ func (o FailureReport) MarshalJSON() ([]byte, error) {
 
 func (o FailureReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ValUeIds) {
+	if !isNil(o.ValUeIds) {
 		toSerialize["valUeIds"] = o.ValUeIds
 	}
-	if !IsNil(o.ValStreamIds) {
+	if !isNil(o.ValStreamIds) {
 		toSerialize["valStreamIds"] = o.ValStreamIds
 	}
-	if !IsNil(o.FailureReason) {
+	if !isNil(o.FailureReason) {
 		toSerialize["failureReason"] = o.FailureReason
 	}
 	toSerialize["measDataType"] = o.MeasDataType

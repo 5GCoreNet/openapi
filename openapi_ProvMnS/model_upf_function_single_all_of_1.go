@@ -45,7 +45,7 @@ func NewUpfFunctionSingleAllOf1WithDefaults() *UpfFunctionSingleAllOf1 {
 
 // GetEPN3 returns the EPN3 field value if set, zero value otherwise.
 func (o *UpfFunctionSingleAllOf1) GetEPN3() []EPN3Single {
-	if o == nil || IsNil(o.EPN3) {
+	if o == nil || isNil(o.EPN3) {
 		var ret []EPN3Single
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN3() []EPN3Single {
 // GetEPN3Ok returns a tuple with the EPN3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingleAllOf1) GetEPN3Ok() ([]EPN3Single, bool) {
-	if o == nil || IsNil(o.EPN3) {
+	if o == nil || isNil(o.EPN3) {
 		return nil, false
 	}
 	return o.EPN3, true
@@ -63,7 +63,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN3Ok() ([]EPN3Single, bool) {
 
 // HasEPN3 returns a boolean if a field has been set.
 func (o *UpfFunctionSingleAllOf1) HasEPN3() bool {
-	if o != nil && !IsNil(o.EPN3) {
+	if o != nil && !isNil(o.EPN3) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UpfFunctionSingleAllOf1) SetEPN3(v []EPN3Single) {
 
 // GetEPN4 returns the EPN4 field value if set, zero value otherwise.
 func (o *UpfFunctionSingleAllOf1) GetEPN4() []EPN4Single {
-	if o == nil || IsNil(o.EPN4) {
+	if o == nil || isNil(o.EPN4) {
 		var ret []EPN4Single
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN4() []EPN4Single {
 // GetEPN4Ok returns a tuple with the EPN4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingleAllOf1) GetEPN4Ok() ([]EPN4Single, bool) {
-	if o == nil || IsNil(o.EPN4) {
+	if o == nil || isNil(o.EPN4) {
 		return nil, false
 	}
 	return o.EPN4, true
@@ -95,7 +95,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN4Ok() ([]EPN4Single, bool) {
 
 // HasEPN4 returns a boolean if a field has been set.
 func (o *UpfFunctionSingleAllOf1) HasEPN4() bool {
-	if o != nil && !IsNil(o.EPN4) {
+	if o != nil && !isNil(o.EPN4) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UpfFunctionSingleAllOf1) SetEPN4(v []EPN4Single) {
 
 // GetEPN6 returns the EPN6 field value if set, zero value otherwise.
 func (o *UpfFunctionSingleAllOf1) GetEPN6() []EPN6Single {
-	if o == nil || IsNil(o.EPN6) {
+	if o == nil || isNil(o.EPN6) {
 		var ret []EPN6Single
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN6() []EPN6Single {
 // GetEPN6Ok returns a tuple with the EPN6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingleAllOf1) GetEPN6Ok() ([]EPN6Single, bool) {
-	if o == nil || IsNil(o.EPN6) {
+	if o == nil || isNil(o.EPN6) {
 		return nil, false
 	}
 	return o.EPN6, true
@@ -127,7 +127,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN6Ok() ([]EPN6Single, bool) {
 
 // HasEPN6 returns a boolean if a field has been set.
 func (o *UpfFunctionSingleAllOf1) HasEPN6() bool {
-	if o != nil && !IsNil(o.EPN6) {
+	if o != nil && !isNil(o.EPN6) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *UpfFunctionSingleAllOf1) SetEPN6(v []EPN6Single) {
 
 // GetEPN9 returns the EPN9 field value if set, zero value otherwise.
 func (o *UpfFunctionSingleAllOf1) GetEPN9() []EPN9Single {
-	if o == nil || IsNil(o.EPN9) {
+	if o == nil || isNil(o.EPN9) {
 		var ret []EPN9Single
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN9() []EPN9Single {
 // GetEPN9Ok returns a tuple with the EPN9 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingleAllOf1) GetEPN9Ok() ([]EPN9Single, bool) {
-	if o == nil || IsNil(o.EPN9) {
+	if o == nil || isNil(o.EPN9) {
 		return nil, false
 	}
 	return o.EPN9, true
@@ -159,7 +159,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPN9Ok() ([]EPN9Single, bool) {
 
 // HasEPN9 returns a boolean if a field has been set.
 func (o *UpfFunctionSingleAllOf1) HasEPN9() bool {
-	if o != nil && !IsNil(o.EPN9) {
+	if o != nil && !isNil(o.EPN9) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *UpfFunctionSingleAllOf1) SetEPN9(v []EPN9Single) {
 
 // GetEPS5U returns the EPS5U field value if set, zero value otherwise.
 func (o *UpfFunctionSingleAllOf1) GetEPS5U() []EPS5USingle {
-	if o == nil || IsNil(o.EPS5U) {
+	if o == nil || isNil(o.EPS5U) {
 		var ret []EPS5USingle
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPS5U() []EPS5USingle {
 // GetEPS5UOk returns a tuple with the EPS5U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpfFunctionSingleAllOf1) GetEPS5UOk() ([]EPS5USingle, bool) {
-	if o == nil || IsNil(o.EPS5U) {
+	if o == nil || isNil(o.EPS5U) {
 		return nil, false
 	}
 	return o.EPS5U, true
@@ -191,7 +191,7 @@ func (o *UpfFunctionSingleAllOf1) GetEPS5UOk() ([]EPS5USingle, bool) {
 
 // HasEPS5U returns a boolean if a field has been set.
 func (o *UpfFunctionSingleAllOf1) HasEPS5U() bool {
-	if o != nil && !IsNil(o.EPS5U) {
+	if o != nil && !isNil(o.EPS5U) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o UpfFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o UpfFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPN3) {
+	if !isNil(o.EPN3) {
 		toSerialize["EP_N3"] = o.EPN3
 	}
-	if !IsNil(o.EPN4) {
+	if !isNil(o.EPN4) {
 		toSerialize["EP_N4"] = o.EPN4
 	}
-	if !IsNil(o.EPN6) {
+	if !isNil(o.EPN6) {
 		toSerialize["EP_N6"] = o.EPN6
 	}
-	if !IsNil(o.EPN9) {
+	if !isNil(o.EPN9) {
 		toSerialize["EP_N9"] = o.EPN9
 	}
-	if !IsNil(o.EPS5U) {
+	if !isNil(o.EPS5U) {
 		toSerialize["EP_S5U"] = o.EPS5U
 	}
 	return toSerialize, nil

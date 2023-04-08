@@ -67,7 +67,7 @@ func (o *DdnFailureSubInfo) SetNotifyCorrelationId(v string) {
 
 // GetDddTrafficDescriptorList returns the DddTrafficDescriptorList field value if set, zero value otherwise.
 func (o *DdnFailureSubInfo) GetDddTrafficDescriptorList() []DddTrafficDescriptor {
-	if o == nil || IsNil(o.DddTrafficDescriptorList) {
+	if o == nil || isNil(o.DddTrafficDescriptorList) {
 		var ret []DddTrafficDescriptor
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *DdnFailureSubInfo) GetDddTrafficDescriptorList() []DddTrafficDescriptor
 // GetDddTrafficDescriptorListOk returns a tuple with the DddTrafficDescriptorList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DdnFailureSubInfo) GetDddTrafficDescriptorListOk() ([]DddTrafficDescriptor, bool) {
-	if o == nil || IsNil(o.DddTrafficDescriptorList) {
+	if o == nil || isNil(o.DddTrafficDescriptorList) {
 		return nil, false
 	}
 	return o.DddTrafficDescriptorList, true
@@ -85,7 +85,7 @@ func (o *DdnFailureSubInfo) GetDddTrafficDescriptorListOk() ([]DddTrafficDescrip
 
 // HasDddTrafficDescriptorList returns a boolean if a field has been set.
 func (o *DdnFailureSubInfo) HasDddTrafficDescriptorList() bool {
-	if o != nil && !IsNil(o.DddTrafficDescriptorList) {
+	if o != nil && !isNil(o.DddTrafficDescriptorList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o DdnFailureSubInfo) MarshalJSON() ([]byte, error) {
 func (o DdnFailureSubInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
-	if !IsNil(o.DddTrafficDescriptorList) {
+	if !isNil(o.DddTrafficDescriptorList) {
 		toSerialize["dddTrafficDescriptorList"] = o.DddTrafficDescriptorList
 	}
 	return toSerialize, nil

@@ -50,7 +50,7 @@ func NewPerfDataWithDefaults() *PerfData {
 
 // GetAvgTrafficRate returns the AvgTrafficRate field value if set, zero value otherwise.
 func (o *PerfData) GetAvgTrafficRate() string {
-	if o == nil || IsNil(o.AvgTrafficRate) {
+	if o == nil || isNil(o.AvgTrafficRate) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *PerfData) GetAvgTrafficRate() string {
 // GetAvgTrafficRateOk returns a tuple with the AvgTrafficRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfData) GetAvgTrafficRateOk() (*string, bool) {
-	if o == nil || IsNil(o.AvgTrafficRate) {
+	if o == nil || isNil(o.AvgTrafficRate) {
 		return nil, false
 	}
 	return o.AvgTrafficRate, true
@@ -68,7 +68,7 @@ func (o *PerfData) GetAvgTrafficRateOk() (*string, bool) {
 
 // HasAvgTrafficRate returns a boolean if a field has been set.
 func (o *PerfData) HasAvgTrafficRate() bool {
-	if o != nil && !IsNil(o.AvgTrafficRate) {
+	if o != nil && !isNil(o.AvgTrafficRate) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *PerfData) SetAvgTrafficRate(v string) {
 
 // GetMaxTrafficRate returns the MaxTrafficRate field value if set, zero value otherwise.
 func (o *PerfData) GetMaxTrafficRate() string {
-	if o == nil || IsNil(o.MaxTrafficRate) {
+	if o == nil || isNil(o.MaxTrafficRate) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *PerfData) GetMaxTrafficRate() string {
 // GetMaxTrafficRateOk returns a tuple with the MaxTrafficRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfData) GetMaxTrafficRateOk() (*string, bool) {
-	if o == nil || IsNil(o.MaxTrafficRate) {
+	if o == nil || isNil(o.MaxTrafficRate) {
 		return nil, false
 	}
 	return o.MaxTrafficRate, true
@@ -100,7 +100,7 @@ func (o *PerfData) GetMaxTrafficRateOk() (*string, bool) {
 
 // HasMaxTrafficRate returns a boolean if a field has been set.
 func (o *PerfData) HasMaxTrafficRate() bool {
-	if o != nil && !IsNil(o.MaxTrafficRate) {
+	if o != nil && !isNil(o.MaxTrafficRate) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *PerfData) SetMaxTrafficRate(v string) {
 
 // GetAvePacketDelay returns the AvePacketDelay field value if set, zero value otherwise.
 func (o *PerfData) GetAvePacketDelay() int32 {
-	if o == nil || IsNil(o.AvePacketDelay) {
+	if o == nil || isNil(o.AvePacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *PerfData) GetAvePacketDelay() int32 {
 // GetAvePacketDelayOk returns a tuple with the AvePacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfData) GetAvePacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvePacketDelay) {
+	if o == nil || isNil(o.AvePacketDelay) {
 		return nil, false
 	}
 	return o.AvePacketDelay, true
@@ -132,7 +132,7 @@ func (o *PerfData) GetAvePacketDelayOk() (*int32, bool) {
 
 // HasAvePacketDelay returns a boolean if a field has been set.
 func (o *PerfData) HasAvePacketDelay() bool {
-	if o != nil && !IsNil(o.AvePacketDelay) {
+	if o != nil && !isNil(o.AvePacketDelay) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *PerfData) SetAvePacketDelay(v int32) {
 
 // GetMaxPacketDelay returns the MaxPacketDelay field value if set, zero value otherwise.
 func (o *PerfData) GetMaxPacketDelay() int32 {
-	if o == nil || IsNil(o.MaxPacketDelay) {
+	if o == nil || isNil(o.MaxPacketDelay) {
 		var ret int32
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *PerfData) GetMaxPacketDelay() int32 {
 // GetMaxPacketDelayOk returns a tuple with the MaxPacketDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfData) GetMaxPacketDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxPacketDelay) {
+	if o == nil || isNil(o.MaxPacketDelay) {
 		return nil, false
 	}
 	return o.MaxPacketDelay, true
@@ -164,7 +164,7 @@ func (o *PerfData) GetMaxPacketDelayOk() (*int32, bool) {
 
 // HasMaxPacketDelay returns a boolean if a field has been set.
 func (o *PerfData) HasMaxPacketDelay() bool {
-	if o != nil && !IsNil(o.MaxPacketDelay) {
+	if o != nil && !isNil(o.MaxPacketDelay) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *PerfData) SetMaxPacketDelay(v int32) {
 
 // GetAvgPacketLossRate returns the AvgPacketLossRate field value if set, zero value otherwise.
 func (o *PerfData) GetAvgPacketLossRate() int32 {
-	if o == nil || IsNil(o.AvgPacketLossRate) {
+	if o == nil || isNil(o.AvgPacketLossRate) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *PerfData) GetAvgPacketLossRate() int32 {
 // GetAvgPacketLossRateOk returns a tuple with the AvgPacketLossRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerfData) GetAvgPacketLossRateOk() (*int32, bool) {
-	if o == nil || IsNil(o.AvgPacketLossRate) {
+	if o == nil || isNil(o.AvgPacketLossRate) {
 		return nil, false
 	}
 	return o.AvgPacketLossRate, true
@@ -196,7 +196,7 @@ func (o *PerfData) GetAvgPacketLossRateOk() (*int32, bool) {
 
 // HasAvgPacketLossRate returns a boolean if a field has been set.
 func (o *PerfData) HasAvgPacketLossRate() bool {
-	if o != nil && !IsNil(o.AvgPacketLossRate) {
+	if o != nil && !isNil(o.AvgPacketLossRate) {
 		return true
 	}
 
@@ -218,19 +218,19 @@ func (o PerfData) MarshalJSON() ([]byte, error) {
 
 func (o PerfData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AvgTrafficRate) {
+	if !isNil(o.AvgTrafficRate) {
 		toSerialize["avgTrafficRate"] = o.AvgTrafficRate
 	}
-	if !IsNil(o.MaxTrafficRate) {
+	if !isNil(o.MaxTrafficRate) {
 		toSerialize["maxTrafficRate"] = o.MaxTrafficRate
 	}
-	if !IsNil(o.AvePacketDelay) {
+	if !isNil(o.AvePacketDelay) {
 		toSerialize["avePacketDelay"] = o.AvePacketDelay
 	}
-	if !IsNil(o.MaxPacketDelay) {
+	if !isNil(o.MaxPacketDelay) {
 		toSerialize["maxPacketDelay"] = o.MaxPacketDelay
 	}
-	if !IsNil(o.AvgPacketLossRate) {
+	if !isNil(o.AvgPacketLossRate) {
 		toSerialize["avgPacketLossRate"] = o.AvgPacketLossRate
 	}
 	return toSerialize, nil

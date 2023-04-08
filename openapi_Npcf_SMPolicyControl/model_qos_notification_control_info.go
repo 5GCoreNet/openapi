@@ -99,7 +99,7 @@ func (o *QosNotificationControlInfo) SetNotifType(v QosNotifType) {
 
 // GetContVer returns the ContVer field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetContVer() int32 {
-	if o == nil || IsNil(o.ContVer) {
+	if o == nil || isNil(o.ContVer) {
 		var ret int32
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *QosNotificationControlInfo) GetContVer() int32 {
 // GetContVerOk returns a tuple with the ContVer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetContVerOk() (*int32, bool) {
-	if o == nil || IsNil(o.ContVer) {
+	if o == nil || isNil(o.ContVer) {
 		return nil, false
 	}
 	return o.ContVer, true
@@ -117,7 +117,7 @@ func (o *QosNotificationControlInfo) GetContVerOk() (*int32, bool) {
 
 // HasContVer returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasContVer() bool {
-	if o != nil && !IsNil(o.ContVer) {
+	if o != nil && !isNil(o.ContVer) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *QosNotificationControlInfo) SetContVer(v int32) {
 
 // GetAltQosParamId returns the AltQosParamId field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetAltQosParamId() string {
-	if o == nil || IsNil(o.AltQosParamId) {
+	if o == nil || isNil(o.AltQosParamId) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *QosNotificationControlInfo) GetAltQosParamId() string {
 // GetAltQosParamIdOk returns a tuple with the AltQosParamId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetAltQosParamIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AltQosParamId) {
+	if o == nil || isNil(o.AltQosParamId) {
 		return nil, false
 	}
 	return o.AltQosParamId, true
@@ -149,7 +149,7 @@ func (o *QosNotificationControlInfo) GetAltQosParamIdOk() (*string, bool) {
 
 // HasAltQosParamId returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasAltQosParamId() bool {
-	if o != nil && !IsNil(o.AltQosParamId) {
+	if o != nil && !isNil(o.AltQosParamId) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *QosNotificationControlInfo) SetAltQosParamId(v string) {
 
 // GetAltQosNotSuppInd returns the AltQosNotSuppInd field value if set, zero value otherwise.
 func (o *QosNotificationControlInfo) GetAltQosNotSuppInd() bool {
-	if o == nil || IsNil(o.AltQosNotSuppInd) {
+	if o == nil || isNil(o.AltQosNotSuppInd) {
 		var ret bool
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *QosNotificationControlInfo) GetAltQosNotSuppInd() bool {
 // GetAltQosNotSuppIndOk returns a tuple with the AltQosNotSuppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosNotificationControlInfo) GetAltQosNotSuppIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AltQosNotSuppInd) {
+	if o == nil || isNil(o.AltQosNotSuppInd) {
 		return nil, false
 	}
 	return o.AltQosNotSuppInd, true
@@ -181,7 +181,7 @@ func (o *QosNotificationControlInfo) GetAltQosNotSuppIndOk() (*bool, bool) {
 
 // HasAltQosNotSuppInd returns a boolean if a field has been set.
 func (o *QosNotificationControlInfo) HasAltQosNotSuppInd() bool {
-	if o != nil && !IsNil(o.AltQosNotSuppInd) {
+	if o != nil && !isNil(o.AltQosNotSuppInd) {
 		return true
 	}
 
@@ -205,13 +205,13 @@ func (o QosNotificationControlInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["refPccRuleIds"] = o.RefPccRuleIds
 	toSerialize["notifType"] = o.NotifType
-	if !IsNil(o.ContVer) {
+	if !isNil(o.ContVer) {
 		toSerialize["contVer"] = o.ContVer
 	}
-	if !IsNil(o.AltQosParamId) {
+	if !isNil(o.AltQosParamId) {
 		toSerialize["altQosParamId"] = o.AltQosParamId
 	}
-	if !IsNil(o.AltQosNotSuppInd) {
+	if !isNil(o.AltQosNotSuppInd) {
 		toSerialize["altQosNotSuppInd"] = o.AltQosNotSuppInd
 	}
 	return toSerialize, nil

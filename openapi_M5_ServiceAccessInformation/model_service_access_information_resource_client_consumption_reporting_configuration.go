@@ -50,7 +50,7 @@ func NewServiceAccessInformationResourceClientConsumptionReportingConfigurationW
 
 // GetReportingInterval returns the ReportingInterval field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetReportingInterval() int32 {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		var ret int32
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 // GetReportingIntervalOk returns a tuple with the ReportingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetReportingIntervalOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingInterval) {
+	if o == nil || isNil(o.ReportingInterval) {
 		return nil, false
 	}
 	return o.ReportingInterval, true
@@ -68,7 +68,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 
 // HasReportingInterval returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) HasReportingInterval() bool {
-	if o != nil && !IsNil(o.ReportingInterval) {
+	if o != nil && !isNil(o.ReportingInterval) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 
 // GetAccessReporting returns the AccessReporting field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetAccessReporting() bool {
-	if o == nil || IsNil(o.AccessReporting) {
+	if o == nil || isNil(o.AccessReporting) {
 		var ret bool
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 // GetAccessReportingOk returns a tuple with the AccessReporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) GetAccessReportingOk() (*bool, bool) {
-	if o == nil || IsNil(o.AccessReporting) {
+	if o == nil || isNil(o.AccessReporting) {
 		return nil, false
 	}
 	return o.AccessReporting, true
@@ -148,7 +148,7 @@ func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 
 // HasAccessReporting returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResourceClientConsumptionReportingConfiguration) HasAccessReporting() bool {
-	if o != nil && !IsNil(o.AccessReporting) {
+	if o != nil && !isNil(o.AccessReporting) {
 		return true
 	}
 
@@ -194,12 +194,12 @@ func (o ServiceAccessInformationResourceClientConsumptionReportingConfiguration)
 
 func (o ServiceAccessInformationResourceClientConsumptionReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReportingInterval) {
+	if !isNil(o.ReportingInterval) {
 		toSerialize["reportingInterval"] = o.ReportingInterval
 	}
 	toSerialize["serverAddresses"] = o.ServerAddresses
 	toSerialize["locationReporting"] = o.LocationReporting
-	if !IsNil(o.AccessReporting) {
+	if !isNil(o.AccessReporting) {
 		toSerialize["accessReporting"] = o.AccessReporting
 	}
 	toSerialize["samplePercentage"] = o.SamplePercentage

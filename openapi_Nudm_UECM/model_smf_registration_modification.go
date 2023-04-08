@@ -70,7 +70,7 @@ func (o *SmfRegistrationModification) SetSmfInstanceId(v string) {
 
 // GetSmfSetId returns the SmfSetId field value if set, zero value otherwise.
 func (o *SmfRegistrationModification) GetSmfSetId() string {
-	if o == nil || IsNil(o.SmfSetId) {
+	if o == nil || isNil(o.SmfSetId) {
 		var ret string
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *SmfRegistrationModification) GetSmfSetId() string {
 // GetSmfSetIdOk returns a tuple with the SmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistrationModification) GetSmfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SmfSetId) {
+	if o == nil || isNil(o.SmfSetId) {
 		return nil, false
 	}
 	return o.SmfSetId, true
@@ -88,7 +88,7 @@ func (o *SmfRegistrationModification) GetSmfSetIdOk() (*string, bool) {
 
 // HasSmfSetId returns a boolean if a field has been set.
 func (o *SmfRegistrationModification) HasSmfSetId() bool {
-	if o != nil && !IsNil(o.SmfSetId) {
+	if o != nil && !isNil(o.SmfSetId) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *SmfRegistrationModification) SetSmfSetId(v string) {
 
 // GetPgwFqdn returns the PgwFqdn field value if set, zero value otherwise.
 func (o *SmfRegistrationModification) GetPgwFqdn() FqdnRm {
-	if o == nil || IsNil(o.PgwFqdn) {
+	if o == nil || isNil(o.PgwFqdn) {
 		var ret FqdnRm
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *SmfRegistrationModification) GetPgwFqdn() FqdnRm {
 // GetPgwFqdnOk returns a tuple with the PgwFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmfRegistrationModification) GetPgwFqdnOk() (*FqdnRm, bool) {
-	if o == nil || IsNil(o.PgwFqdn) {
+	if o == nil || isNil(o.PgwFqdn) {
 		return nil, false
 	}
 	return o.PgwFqdn, true
@@ -120,7 +120,7 @@ func (o *SmfRegistrationModification) GetPgwFqdnOk() (*FqdnRm, bool) {
 
 // HasPgwFqdn returns a boolean if a field has been set.
 func (o *SmfRegistrationModification) HasPgwFqdn() bool {
-	if o != nil && !IsNil(o.PgwFqdn) {
+	if o != nil && !isNil(o.PgwFqdn) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o SmfRegistrationModification) MarshalJSON() ([]byte, error) {
 func (o SmfRegistrationModification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smfInstanceId"] = o.SmfInstanceId
-	if !IsNil(o.SmfSetId) {
+	if !isNil(o.SmfSetId) {
 		toSerialize["smfSetId"] = o.SmfSetId
 	}
-	if !IsNil(o.PgwFqdn) {
+	if !isNil(o.PgwFqdn) {
 		toSerialize["pgwFqdn"] = o.PgwFqdn
 	}
 	return toSerialize, nil

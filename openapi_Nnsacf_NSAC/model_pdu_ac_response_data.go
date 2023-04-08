@@ -42,7 +42,7 @@ func NewPduACResponseDataWithDefaults() *PduACResponseData {
 
 // GetAcuFailureList returns the AcuFailureList field value if set, zero value otherwise.
 func (o *PduACResponseData) GetAcuFailureList() map[string][]AcuFailureItem {
-	if o == nil || IsNil(o.AcuFailureList) {
+	if o == nil || isNil(o.AcuFailureList) {
 		var ret map[string][]AcuFailureItem
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PduACResponseData) GetAcuFailureList() map[string][]AcuFailureItem {
 // GetAcuFailureListOk returns a tuple with the AcuFailureList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduACResponseData) GetAcuFailureListOk() (*map[string][]AcuFailureItem, bool) {
-	if o == nil || IsNil(o.AcuFailureList) {
+	if o == nil || isNil(o.AcuFailureList) {
 		return nil, false
 	}
 	return o.AcuFailureList, true
@@ -60,7 +60,7 @@ func (o *PduACResponseData) GetAcuFailureListOk() (*map[string][]AcuFailureItem,
 
 // HasAcuFailureList returns a boolean if a field has been set.
 func (o *PduACResponseData) HasAcuFailureList() bool {
-	if o != nil && !IsNil(o.AcuFailureList) {
+	if o != nil && !isNil(o.AcuFailureList) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o PduACResponseData) MarshalJSON() ([]byte, error) {
 
 func (o PduACResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcuFailureList) {
+	if !isNil(o.AcuFailureList) {
 		toSerialize["acuFailureList"] = o.AcuFailureList
 	}
 	return toSerialize, nil

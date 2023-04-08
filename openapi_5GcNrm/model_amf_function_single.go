@@ -23,7 +23,7 @@ type AmfFunctionSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *AmfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 	PerfMetricJob []PerfMetricJobSingle `json:"PerfMetricJob,omitempty"`
 	ThresholdMonitor []ThresholdMonitorSingle `json:"ThresholdMonitor,omitempty"`
 	ManagedNFService []ManagedNFServiceSingle `json:"ManagedNFService,omitempty"`
@@ -88,7 +88,7 @@ func (o *AmfFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *AmfFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -106,7 +106,7 @@ func (o *AmfFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *AmfFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *AmfFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -138,7 +138,7 @@ func (o *AmfFunctionSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -152,7 +152,7 @@ func (o *AmfFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -162,7 +162,7 @@ func (o *AmfFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -170,7 +170,7 @@ func (o *AmfFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, boo
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -183,9 +183,9 @@ func (o *AmfFunctionSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *AmfFunctionSingle) GetAttributes() AmfFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret AmfFunctionSingleAllOfAttributes
+func (o *AmfFunctionSingle) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -193,8 +193,8 @@ func (o *AmfFunctionSingle) GetAttributes() AmfFunctionSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AmfFunctionSingle) GetAttributesOk() (*AmfFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *AmfFunctionSingle) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -202,21 +202,21 @@ func (o *AmfFunctionSingle) GetAttributesOk() (*AmfFunctionSingleAllOfAttributes
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given AmfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *AmfFunctionSingle) SetAttributes(v AmfFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *AmfFunctionSingle) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *AmfFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -234,7 +234,7 @@ func (o *AmfFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -248,7 +248,7 @@ func (o *AmfFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSingle) {
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -258,7 +258,7 @@ func (o *AmfFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -266,7 +266,7 @@ func (o *AmfFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, b
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -280,7 +280,7 @@ func (o *AmfFunctionSingle) SetThresholdMonitor(v []ThresholdMonitorSingle) {
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -290,7 +290,7 @@ func (o *AmfFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -298,7 +298,7 @@ func (o *AmfFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, b
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -312,7 +312,7 @@ func (o *AmfFunctionSingle) SetManagedNFService(v []ManagedNFServiceSingle) {
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -322,7 +322,7 @@ func (o *AmfFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -330,7 +330,7 @@ func (o *AmfFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -344,7 +344,7 @@ func (o *AmfFunctionSingle) SetTraceJob(v []TraceJobSingle) {
 
 // GetEPN2 returns the EPN2 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN2() []EPN2Single {
-	if o == nil || IsNil(o.EPN2) {
+	if o == nil || isNil(o.EPN2) {
 		var ret []EPN2Single
 		return ret
 	}
@@ -354,7 +354,7 @@ func (o *AmfFunctionSingle) GetEPN2() []EPN2Single {
 // GetEPN2Ok returns a tuple with the EPN2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN2Ok() ([]EPN2Single, bool) {
-	if o == nil || IsNil(o.EPN2) {
+	if o == nil || isNil(o.EPN2) {
 		return nil, false
 	}
 	return o.EPN2, true
@@ -362,7 +362,7 @@ func (o *AmfFunctionSingle) GetEPN2Ok() ([]EPN2Single, bool) {
 
 // HasEPN2 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN2() bool {
-	if o != nil && !IsNil(o.EPN2) {
+	if o != nil && !isNil(o.EPN2) {
 		return true
 	}
 
@@ -376,7 +376,7 @@ func (o *AmfFunctionSingle) SetEPN2(v []EPN2Single) {
 
 // GetEPN8 returns the EPN8 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN8() []EPN8Single {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		var ret []EPN8Single
 		return ret
 	}
@@ -386,7 +386,7 @@ func (o *AmfFunctionSingle) GetEPN8() []EPN8Single {
 // GetEPN8Ok returns a tuple with the EPN8 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN8Ok() ([]EPN8Single, bool) {
-	if o == nil || IsNil(o.EPN8) {
+	if o == nil || isNil(o.EPN8) {
 		return nil, false
 	}
 	return o.EPN8, true
@@ -394,7 +394,7 @@ func (o *AmfFunctionSingle) GetEPN8Ok() ([]EPN8Single, bool) {
 
 // HasEPN8 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN8() bool {
-	if o != nil && !IsNil(o.EPN8) {
+	if o != nil && !isNil(o.EPN8) {
 		return true
 	}
 
@@ -408,7 +408,7 @@ func (o *AmfFunctionSingle) SetEPN8(v []EPN8Single) {
 
 // GetEPN11 returns the EPN11 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN11() []EPN11Single {
-	if o == nil || IsNil(o.EPN11) {
+	if o == nil || isNil(o.EPN11) {
 		var ret []EPN11Single
 		return ret
 	}
@@ -418,7 +418,7 @@ func (o *AmfFunctionSingle) GetEPN11() []EPN11Single {
 // GetEPN11Ok returns a tuple with the EPN11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN11Ok() ([]EPN11Single, bool) {
-	if o == nil || IsNil(o.EPN11) {
+	if o == nil || isNil(o.EPN11) {
 		return nil, false
 	}
 	return o.EPN11, true
@@ -426,7 +426,7 @@ func (o *AmfFunctionSingle) GetEPN11Ok() ([]EPN11Single, bool) {
 
 // HasEPN11 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN11() bool {
-	if o != nil && !IsNil(o.EPN11) {
+	if o != nil && !isNil(o.EPN11) {
 		return true
 	}
 
@@ -440,7 +440,7 @@ func (o *AmfFunctionSingle) SetEPN11(v []EPN11Single) {
 
 // GetEPN12 returns the EPN12 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN12() []EPN12Single {
-	if o == nil || IsNil(o.EPN12) {
+	if o == nil || isNil(o.EPN12) {
 		var ret []EPN12Single
 		return ret
 	}
@@ -450,7 +450,7 @@ func (o *AmfFunctionSingle) GetEPN12() []EPN12Single {
 // GetEPN12Ok returns a tuple with the EPN12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN12Ok() ([]EPN12Single, bool) {
-	if o == nil || IsNil(o.EPN12) {
+	if o == nil || isNil(o.EPN12) {
 		return nil, false
 	}
 	return o.EPN12, true
@@ -458,7 +458,7 @@ func (o *AmfFunctionSingle) GetEPN12Ok() ([]EPN12Single, bool) {
 
 // HasEPN12 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN12() bool {
-	if o != nil && !IsNil(o.EPN12) {
+	if o != nil && !isNil(o.EPN12) {
 		return true
 	}
 
@@ -472,7 +472,7 @@ func (o *AmfFunctionSingle) SetEPN12(v []EPN12Single) {
 
 // GetEPN14 returns the EPN14 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN14() []EPN14Single {
-	if o == nil || IsNil(o.EPN14) {
+	if o == nil || isNil(o.EPN14) {
 		var ret []EPN14Single
 		return ret
 	}
@@ -482,7 +482,7 @@ func (o *AmfFunctionSingle) GetEPN14() []EPN14Single {
 // GetEPN14Ok returns a tuple with the EPN14 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN14Ok() ([]EPN14Single, bool) {
-	if o == nil || IsNil(o.EPN14) {
+	if o == nil || isNil(o.EPN14) {
 		return nil, false
 	}
 	return o.EPN14, true
@@ -490,7 +490,7 @@ func (o *AmfFunctionSingle) GetEPN14Ok() ([]EPN14Single, bool) {
 
 // HasEPN14 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN14() bool {
-	if o != nil && !IsNil(o.EPN14) {
+	if o != nil && !isNil(o.EPN14) {
 		return true
 	}
 
@@ -504,7 +504,7 @@ func (o *AmfFunctionSingle) SetEPN14(v []EPN14Single) {
 
 // GetEPN15 returns the EPN15 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN15() []EPN15Single {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		var ret []EPN15Single
 		return ret
 	}
@@ -514,7 +514,7 @@ func (o *AmfFunctionSingle) GetEPN15() []EPN15Single {
 // GetEPN15Ok returns a tuple with the EPN15 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN15Ok() ([]EPN15Single, bool) {
-	if o == nil || IsNil(o.EPN15) {
+	if o == nil || isNil(o.EPN15) {
 		return nil, false
 	}
 	return o.EPN15, true
@@ -522,7 +522,7 @@ func (o *AmfFunctionSingle) GetEPN15Ok() ([]EPN15Single, bool) {
 
 // HasEPN15 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN15() bool {
-	if o != nil && !IsNil(o.EPN15) {
+	if o != nil && !isNil(o.EPN15) {
 		return true
 	}
 
@@ -536,7 +536,7 @@ func (o *AmfFunctionSingle) SetEPN15(v []EPN15Single) {
 
 // GetEPN17 returns the EPN17 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN17() []EPN17Single {
-	if o == nil || IsNil(o.EPN17) {
+	if o == nil || isNil(o.EPN17) {
 		var ret []EPN17Single
 		return ret
 	}
@@ -546,7 +546,7 @@ func (o *AmfFunctionSingle) GetEPN17() []EPN17Single {
 // GetEPN17Ok returns a tuple with the EPN17 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN17Ok() ([]EPN17Single, bool) {
-	if o == nil || IsNil(o.EPN17) {
+	if o == nil || isNil(o.EPN17) {
 		return nil, false
 	}
 	return o.EPN17, true
@@ -554,7 +554,7 @@ func (o *AmfFunctionSingle) GetEPN17Ok() ([]EPN17Single, bool) {
 
 // HasEPN17 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN17() bool {
-	if o != nil && !IsNil(o.EPN17) {
+	if o != nil && !isNil(o.EPN17) {
 		return true
 	}
 
@@ -568,7 +568,7 @@ func (o *AmfFunctionSingle) SetEPN17(v []EPN17Single) {
 
 // GetEPN20 returns the EPN20 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN20() []EPN20Single {
-	if o == nil || IsNil(o.EPN20) {
+	if o == nil || isNil(o.EPN20) {
 		var ret []EPN20Single
 		return ret
 	}
@@ -578,7 +578,7 @@ func (o *AmfFunctionSingle) GetEPN20() []EPN20Single {
 // GetEPN20Ok returns a tuple with the EPN20 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN20Ok() ([]EPN20Single, bool) {
-	if o == nil || IsNil(o.EPN20) {
+	if o == nil || isNil(o.EPN20) {
 		return nil, false
 	}
 	return o.EPN20, true
@@ -586,7 +586,7 @@ func (o *AmfFunctionSingle) GetEPN20Ok() ([]EPN20Single, bool) {
 
 // HasEPN20 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN20() bool {
-	if o != nil && !IsNil(o.EPN20) {
+	if o != nil && !isNil(o.EPN20) {
 		return true
 	}
 
@@ -600,7 +600,7 @@ func (o *AmfFunctionSingle) SetEPN20(v []EPN20Single) {
 
 // GetEPN22 returns the EPN22 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN22() []EPN22Single {
-	if o == nil || IsNil(o.EPN22) {
+	if o == nil || isNil(o.EPN22) {
 		var ret []EPN22Single
 		return ret
 	}
@@ -610,7 +610,7 @@ func (o *AmfFunctionSingle) GetEPN22() []EPN22Single {
 // GetEPN22Ok returns a tuple with the EPN22 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN22Ok() ([]EPN22Single, bool) {
-	if o == nil || IsNil(o.EPN22) {
+	if o == nil || isNil(o.EPN22) {
 		return nil, false
 	}
 	return o.EPN22, true
@@ -618,7 +618,7 @@ func (o *AmfFunctionSingle) GetEPN22Ok() ([]EPN22Single, bool) {
 
 // HasEPN22 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN22() bool {
-	if o != nil && !IsNil(o.EPN22) {
+	if o != nil && !isNil(o.EPN22) {
 		return true
 	}
 
@@ -632,7 +632,7 @@ func (o *AmfFunctionSingle) SetEPN22(v []EPN22Single) {
 
 // GetEPN26 returns the EPN26 field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEPN26() []EPN26Single {
-	if o == nil || IsNil(o.EPN26) {
+	if o == nil || isNil(o.EPN26) {
 		var ret []EPN26Single
 		return ret
 	}
@@ -642,7 +642,7 @@ func (o *AmfFunctionSingle) GetEPN26() []EPN26Single {
 // GetEPN26Ok returns a tuple with the EPN26 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEPN26Ok() ([]EPN26Single, bool) {
-	if o == nil || IsNil(o.EPN26) {
+	if o == nil || isNil(o.EPN26) {
 		return nil, false
 	}
 	return o.EPN26, true
@@ -650,7 +650,7 @@ func (o *AmfFunctionSingle) GetEPN26Ok() ([]EPN26Single, bool) {
 
 // HasEPN26 returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEPN26() bool {
-	if o != nil && !IsNil(o.EPN26) {
+	if o != nil && !isNil(o.EPN26) {
 		return true
 	}
 
@@ -664,7 +664,7 @@ func (o *AmfFunctionSingle) SetEPN26(v []EPN26Single) {
 
 // GetEP_NLS returns the EP_NLS field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEP_NLS() []EPNLSSingle {
-	if o == nil || IsNil(o.EP_NLS) {
+	if o == nil || isNil(o.EP_NLS) {
 		var ret []EPNLSSingle
 		return ret
 	}
@@ -674,7 +674,7 @@ func (o *AmfFunctionSingle) GetEP_NLS() []EPNLSSingle {
 // GetEP_NLSOk returns a tuple with the EP_NLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEP_NLSOk() ([]EPNLSSingle, bool) {
-	if o == nil || IsNil(o.EP_NLS) {
+	if o == nil || isNil(o.EP_NLS) {
 		return nil, false
 	}
 	return o.EP_NLS, true
@@ -682,7 +682,7 @@ func (o *AmfFunctionSingle) GetEP_NLSOk() ([]EPNLSSingle, bool) {
 
 // HasEP_NLS returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEP_NLS() bool {
-	if o != nil && !IsNil(o.EP_NLS) {
+	if o != nil && !isNil(o.EP_NLS) {
 		return true
 	}
 
@@ -696,7 +696,7 @@ func (o *AmfFunctionSingle) SetEP_NLS(v []EPNLSSingle) {
 
 // GetEP_NLG returns the EP_NLG field value if set, zero value otherwise.
 func (o *AmfFunctionSingle) GetEP_NLG() []EPNLGSingle {
-	if o == nil || IsNil(o.EP_NLG) {
+	if o == nil || isNil(o.EP_NLG) {
 		var ret []EPNLGSingle
 		return ret
 	}
@@ -706,7 +706,7 @@ func (o *AmfFunctionSingle) GetEP_NLG() []EPNLGSingle {
 // GetEP_NLGOk returns a tuple with the EP_NLG field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfFunctionSingle) GetEP_NLGOk() ([]EPNLGSingle, bool) {
-	if o == nil || IsNil(o.EP_NLG) {
+	if o == nil || isNil(o.EP_NLG) {
 		return nil, false
 	}
 	return o.EP_NLG, true
@@ -714,7 +714,7 @@ func (o *AmfFunctionSingle) GetEP_NLGOk() ([]EPNLGSingle, bool) {
 
 // HasEP_NLG returns a boolean if a field has been set.
 func (o *AmfFunctionSingle) HasEP_NLG() bool {
-	if o != nil && !IsNil(o.EP_NLG) {
+	if o != nil && !isNil(o.EP_NLG) {
 		return true
 	}
 
@@ -737,64 +737,64 @@ func (o AmfFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o AmfFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
-	if !IsNil(o.EPN2) {
+	if !isNil(o.EPN2) {
 		toSerialize["EP_N2"] = o.EPN2
 	}
-	if !IsNil(o.EPN8) {
+	if !isNil(o.EPN8) {
 		toSerialize["EP_N8"] = o.EPN8
 	}
-	if !IsNil(o.EPN11) {
+	if !isNil(o.EPN11) {
 		toSerialize["EP_N11"] = o.EPN11
 	}
-	if !IsNil(o.EPN12) {
+	if !isNil(o.EPN12) {
 		toSerialize["EP_N12"] = o.EPN12
 	}
-	if !IsNil(o.EPN14) {
+	if !isNil(o.EPN14) {
 		toSerialize["EP_N14"] = o.EPN14
 	}
-	if !IsNil(o.EPN15) {
+	if !isNil(o.EPN15) {
 		toSerialize["EP_N15"] = o.EPN15
 	}
-	if !IsNil(o.EPN17) {
+	if !isNil(o.EPN17) {
 		toSerialize["EP_N17"] = o.EPN17
 	}
-	if !IsNil(o.EPN20) {
+	if !isNil(o.EPN20) {
 		toSerialize["EP_N20"] = o.EPN20
 	}
-	if !IsNil(o.EPN22) {
+	if !isNil(o.EPN22) {
 		toSerialize["EP_N22"] = o.EPN22
 	}
-	if !IsNil(o.EPN26) {
+	if !isNil(o.EPN26) {
 		toSerialize["EP_N26"] = o.EPN26
 	}
-	if !IsNil(o.EP_NLS) {
+	if !isNil(o.EP_NLS) {
 		toSerialize["EP_NLS"] = o.EP_NLS
 	}
-	if !IsNil(o.EP_NLG) {
+	if !isNil(o.EP_NLG) {
 		toSerialize["EP_NLG"] = o.EP_NLG
 	}
 	return toSerialize, nil

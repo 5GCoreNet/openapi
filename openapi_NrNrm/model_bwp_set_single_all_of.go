@@ -41,7 +41,7 @@ func NewBWPSetSingleAllOfWithDefaults() *BWPSetSingleAllOf {
 
 // GetBWPlist returns the BWPlist field value if set, zero value otherwise.
 func (o *BWPSetSingleAllOf) GetBWPlist() []string {
-	if o == nil || IsNil(o.BWPlist) {
+	if o == nil || isNil(o.BWPlist) {
 		var ret []string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *BWPSetSingleAllOf) GetBWPlist() []string {
 // GetBWPlistOk returns a tuple with the BWPlist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BWPSetSingleAllOf) GetBWPlistOk() ([]string, bool) {
-	if o == nil || IsNil(o.BWPlist) {
+	if o == nil || isNil(o.BWPlist) {
 		return nil, false
 	}
 	return o.BWPlist, true
@@ -59,7 +59,7 @@ func (o *BWPSetSingleAllOf) GetBWPlistOk() ([]string, bool) {
 
 // HasBWPlist returns a boolean if a field has been set.
 func (o *BWPSetSingleAllOf) HasBWPlist() bool {
-	if o != nil && !IsNil(o.BWPlist) {
+	if o != nil && !isNil(o.BWPlist) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o BWPSetSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o BWPSetSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.BWPlist) {
+	if !isNil(o.BWPlist) {
 		toSerialize["bWPlist"] = o.BWPlist
 	}
 	return toSerialize, nil

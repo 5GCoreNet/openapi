@@ -17,23 +17,23 @@ import (
 
 // DataAvailability Indicates availability of ciphering key data at an LMF.
 type DataAvailability struct {
-	string *string
+	DataAvailabilityAnyOf *DataAvailabilityAnyOf
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DataAvailability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DataAvailabilityAnyOf
+	err = json.Unmarshal(data, &dst.DataAvailabilityAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDataAvailabilityAnyOf, _ := json.Marshal(dst.DataAvailabilityAnyOf)
+		if string(jsonDataAvailabilityAnyOf) == "{}" { // empty struct
+			dst.DataAvailabilityAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DataAvailabilityAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DataAvailabilityAnyOf = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DataAvailability)")
@@ -41,8 +41,8 @@ func (dst *DataAvailability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DataAvailability) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DataAvailabilityAnyOf != nil {
+		return json.Marshal(&src.DataAvailabilityAnyOf)
 	}
 
 	return nil, nil // no data in anyOf schemas

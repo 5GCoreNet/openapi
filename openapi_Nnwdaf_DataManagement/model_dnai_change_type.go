@@ -17,23 +17,37 @@ import (
 
 // DnaiChangeType Possible values are: - EARLY: Early notification of UP path reconfiguration. - EARLY_LATE: Early and late notification of UP path reconfiguration. This value shall   only be present in the subscription to the DNAI change event. - LATE: Late notification of UP path reconfiguration.  
 type DnaiChangeType struct {
-	string *string
+	DnaiChangeTypeAnyOf *DnaiChangeTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DnaiChangeType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DnaiChangeTypeAnyOf
+	err = json.Unmarshal(data, &dst.DnaiChangeTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDnaiChangeTypeAnyOf, _ := json.Marshal(dst.DnaiChangeTypeAnyOf)
+		if string(jsonDnaiChangeTypeAnyOf) == "{}" { // empty struct
+			dst.DnaiChangeTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DnaiChangeTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DnaiChangeTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DnaiChangeType)")
@@ -41,8 +55,12 @@ func (dst *DnaiChangeType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DnaiChangeType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DnaiChangeTypeAnyOf != nil {
+		return json.Marshal(&src.DnaiChangeTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

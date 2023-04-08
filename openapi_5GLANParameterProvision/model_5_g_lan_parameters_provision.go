@@ -47,7 +47,7 @@ func NewModel5GLanParametersProvisionWithDefaults() *Model5GLanParametersProvisi
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *Model5GLanParametersProvision) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *Model5GLanParametersProvision) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersProvision) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -65,7 +65,7 @@ func (o *Model5GLanParametersProvision) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *Model5GLanParametersProvision) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o Model5GLanParametersProvision) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLanParametersProvision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["5gLanParams"] = o.Var5gLanParams

@@ -51,7 +51,7 @@ func NewSlicePolicyDataWithDefaults() *SlicePolicyData {
 
 // GetMbrUl returns the MbrUl field value if set, zero value otherwise.
 func (o *SlicePolicyData) GetMbrUl() string {
-	if o == nil || IsNil(o.MbrUl) {
+	if o == nil || isNil(o.MbrUl) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *SlicePolicyData) GetMbrUl() string {
 // GetMbrUlOk returns a tuple with the MbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SlicePolicyData) GetMbrUlOk() (*string, bool) {
-	if o == nil || IsNil(o.MbrUl) {
+	if o == nil || isNil(o.MbrUl) {
 		return nil, false
 	}
 	return o.MbrUl, true
@@ -69,7 +69,7 @@ func (o *SlicePolicyData) GetMbrUlOk() (*string, bool) {
 
 // HasMbrUl returns a boolean if a field has been set.
 func (o *SlicePolicyData) HasMbrUl() bool {
-	if o != nil && !IsNil(o.MbrUl) {
+	if o != nil && !isNil(o.MbrUl) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *SlicePolicyData) SetMbrUl(v string) {
 
 // GetMbrDl returns the MbrDl field value if set, zero value otherwise.
 func (o *SlicePolicyData) GetMbrDl() string {
-	if o == nil || IsNil(o.MbrDl) {
+	if o == nil || isNil(o.MbrDl) {
 		var ret string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *SlicePolicyData) GetMbrDl() string {
 // GetMbrDlOk returns a tuple with the MbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SlicePolicyData) GetMbrDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MbrDl) {
+	if o == nil || isNil(o.MbrDl) {
 		return nil, false
 	}
 	return o.MbrDl, true
@@ -101,7 +101,7 @@ func (o *SlicePolicyData) GetMbrDlOk() (*string, bool) {
 
 // HasMbrDl returns a boolean if a field has been set.
 func (o *SlicePolicyData) HasMbrDl() bool {
-	if o != nil && !IsNil(o.MbrDl) {
+	if o != nil && !isNil(o.MbrDl) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *SlicePolicyData) SetMbrDl(v string) {
 
 // GetRemainMbrUl returns the RemainMbrUl field value if set, zero value otherwise.
 func (o *SlicePolicyData) GetRemainMbrUl() string {
-	if o == nil || IsNil(o.RemainMbrUl) {
+	if o == nil || isNil(o.RemainMbrUl) {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *SlicePolicyData) GetRemainMbrUl() string {
 // GetRemainMbrUlOk returns a tuple with the RemainMbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SlicePolicyData) GetRemainMbrUlOk() (*string, bool) {
-	if o == nil || IsNil(o.RemainMbrUl) {
+	if o == nil || isNil(o.RemainMbrUl) {
 		return nil, false
 	}
 	return o.RemainMbrUl, true
@@ -133,7 +133,7 @@ func (o *SlicePolicyData) GetRemainMbrUlOk() (*string, bool) {
 
 // HasRemainMbrUl returns a boolean if a field has been set.
 func (o *SlicePolicyData) HasRemainMbrUl() bool {
-	if o != nil && !IsNil(o.RemainMbrUl) {
+	if o != nil && !isNil(o.RemainMbrUl) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *SlicePolicyData) SetRemainMbrUl(v string) {
 
 // GetRemainMbrDl returns the RemainMbrDl field value if set, zero value otherwise.
 func (o *SlicePolicyData) GetRemainMbrDl() string {
-	if o == nil || IsNil(o.RemainMbrDl) {
+	if o == nil || isNil(o.RemainMbrDl) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *SlicePolicyData) GetRemainMbrDl() string {
 // GetRemainMbrDlOk returns a tuple with the RemainMbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SlicePolicyData) GetRemainMbrDlOk() (*string, bool) {
-	if o == nil || IsNil(o.RemainMbrDl) {
+	if o == nil || isNil(o.RemainMbrDl) {
 		return nil, false
 	}
 	return o.RemainMbrDl, true
@@ -165,7 +165,7 @@ func (o *SlicePolicyData) GetRemainMbrDlOk() (*string, bool) {
 
 // HasRemainMbrDl returns a boolean if a field has been set.
 func (o *SlicePolicyData) HasRemainMbrDl() bool {
-	if o != nil && !IsNil(o.RemainMbrDl) {
+	if o != nil && !isNil(o.RemainMbrDl) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *SlicePolicyData) SetRemainMbrDl(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *SlicePolicyData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *SlicePolicyData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SlicePolicyData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -197,7 +197,7 @@ func (o *SlicePolicyData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *SlicePolicyData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *SlicePolicyData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *SlicePolicyData) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *SlicePolicyData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SlicePolicyData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -229,7 +229,7 @@ func (o *SlicePolicyData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *SlicePolicyData) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -251,22 +251,22 @@ func (o SlicePolicyData) MarshalJSON() ([]byte, error) {
 
 func (o SlicePolicyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MbrUl) {
+	if !isNil(o.MbrUl) {
 		toSerialize["mbrUl"] = o.MbrUl
 	}
-	if !IsNil(o.MbrDl) {
+	if !isNil(o.MbrDl) {
 		toSerialize["mbrDl"] = o.MbrDl
 	}
-	if !IsNil(o.RemainMbrUl) {
+	if !isNil(o.RemainMbrUl) {
 		toSerialize["remainMbrUl"] = o.RemainMbrUl
 	}
-	if !IsNil(o.RemainMbrDl) {
+	if !isNil(o.RemainMbrDl) {
 		toSerialize["remainMbrDl"] = o.RemainMbrDl
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

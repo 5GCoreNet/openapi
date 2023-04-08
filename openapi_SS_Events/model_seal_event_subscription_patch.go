@@ -45,7 +45,7 @@ func NewSEALEventSubscriptionPatchWithDefaults() *SEALEventSubscriptionPatch {
 
 // GetEventSubs returns the EventSubs field value if set, zero value otherwise.
 func (o *SEALEventSubscriptionPatch) GetEventSubs() []EventSubscription {
-	if o == nil || IsNil(o.EventSubs) {
+	if o == nil || isNil(o.EventSubs) {
 		var ret []EventSubscription
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *SEALEventSubscriptionPatch) GetEventSubs() []EventSubscription {
 // GetEventSubsOk returns a tuple with the EventSubs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscriptionPatch) GetEventSubsOk() ([]EventSubscription, bool) {
-	if o == nil || IsNil(o.EventSubs) {
+	if o == nil || isNil(o.EventSubs) {
 		return nil, false
 	}
 	return o.EventSubs, true
@@ -63,7 +63,7 @@ func (o *SEALEventSubscriptionPatch) GetEventSubsOk() ([]EventSubscription, bool
 
 // HasEventSubs returns a boolean if a field has been set.
 func (o *SEALEventSubscriptionPatch) HasEventSubs() bool {
-	if o != nil && !IsNil(o.EventSubs) {
+	if o != nil && !isNil(o.EventSubs) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SEALEventSubscriptionPatch) SetEventSubs(v []EventSubscription) {
 
 // GetEventReq returns the EventReq field value if set, zero value otherwise.
 func (o *SEALEventSubscriptionPatch) GetEventReq() ReportingInformation {
-	if o == nil || IsNil(o.EventReq) {
+	if o == nil || isNil(o.EventReq) {
 		var ret ReportingInformation
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SEALEventSubscriptionPatch) GetEventReq() ReportingInformation {
 // GetEventReqOk returns a tuple with the EventReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscriptionPatch) GetEventReqOk() (*ReportingInformation, bool) {
-	if o == nil || IsNil(o.EventReq) {
+	if o == nil || isNil(o.EventReq) {
 		return nil, false
 	}
 	return o.EventReq, true
@@ -95,7 +95,7 @@ func (o *SEALEventSubscriptionPatch) GetEventReqOk() (*ReportingInformation, boo
 
 // HasEventReq returns a boolean if a field has been set.
 func (o *SEALEventSubscriptionPatch) HasEventReq() bool {
-	if o != nil && !IsNil(o.EventReq) {
+	if o != nil && !isNil(o.EventReq) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *SEALEventSubscriptionPatch) SetEventReq(v ReportingInformation) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *SEALEventSubscriptionPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *SEALEventSubscriptionPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SEALEventSubscriptionPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -127,7 +127,7 @@ func (o *SEALEventSubscriptionPatch) GetNotificationDestinationOk() (*string, bo
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *SEALEventSubscriptionPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o SEALEventSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o SEALEventSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventSubs) {
+	if !isNil(o.EventSubs) {
 		toSerialize["eventSubs"] = o.EventSubs
 	}
-	if !IsNil(o.EventReq) {
+	if !isNil(o.EventReq) {
 		toSerialize["eventReq"] = o.EventReq
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

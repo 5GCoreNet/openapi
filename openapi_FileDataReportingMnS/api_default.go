@@ -13,7 +13,7 @@ package openapi_FileDataReportingMnS
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -93,12 +93,12 @@ func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *
 		return localVarReturnValue, nil, reportError("fileDataType is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "fileDataType", r.fileDataType, "")
+	parameterAddToQuery(localVarQueryParams, "fileDataType", r.fileDataType, "")
 	if r.beginTime != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "beginTime", r.beginTime, "")
+		parameterAddToQuery(localVarQueryParams, "beginTime", r.beginTime, "")
 	}
 	if r.endTime != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "endTime", r.endTime, "")
+		parameterAddToQuery(localVarQueryParams, "endTime", r.endTime, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -127,9 +127,9 @@ func (a *DefaultApiService) FilesGetExecute(r ApiFilesGetRequest) ([]FileInfo, *
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -245,9 +245,9 @@ func (a *DefaultApiService) SubscriptionsPostExecute(r ApiSubscriptionsPostReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -354,9 +354,9 @@ func (a *DefaultApiService) SubscriptionsSubscriptionIdDeleteExecute(r ApiSubscr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

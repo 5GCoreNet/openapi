@@ -45,7 +45,7 @@ func NewCommunicationCharacteristicsAFWithDefaults() *CommunicationCharacteristi
 
 // GetPpDlPacketCount returns the PpDlPacketCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CommunicationCharacteristicsAF) GetPpDlPacketCount() int32 {
-	if o == nil || IsNil(o.PpDlPacketCount.Get()) {
+	if o == nil || isNil(o.PpDlPacketCount.Get()) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *CommunicationCharacteristicsAF) UnsetPpDlPacketCount() {
 
 // GetMaximumResponseTime returns the MaximumResponseTime field value if set, zero value otherwise.
 func (o *CommunicationCharacteristicsAF) GetMaximumResponseTime() int32 {
-	if o == nil || IsNil(o.MaximumResponseTime) {
+	if o == nil || isNil(o.MaximumResponseTime) {
 		var ret int32
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumResponseTime() int32 {
 // GetMaximumResponseTimeOk returns a tuple with the MaximumResponseTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationCharacteristicsAF) GetMaximumResponseTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumResponseTime) {
+	if o == nil || isNil(o.MaximumResponseTime) {
 		return nil, false
 	}
 	return o.MaximumResponseTime, true
@@ -105,7 +105,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumResponseTimeOk() (*int32, boo
 
 // HasMaximumResponseTime returns a boolean if a field has been set.
 func (o *CommunicationCharacteristicsAF) HasMaximumResponseTime() bool {
-	if o != nil && !IsNil(o.MaximumResponseTime) {
+	if o != nil && !isNil(o.MaximumResponseTime) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *CommunicationCharacteristicsAF) SetMaximumResponseTime(v int32) {
 
 // GetMaximumLatency returns the MaximumLatency field value if set, zero value otherwise.
 func (o *CommunicationCharacteristicsAF) GetMaximumLatency() int32 {
-	if o == nil || IsNil(o.MaximumLatency) {
+	if o == nil || isNil(o.MaximumLatency) {
 		var ret int32
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumLatency() int32 {
 // GetMaximumLatencyOk returns a tuple with the MaximumLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationCharacteristicsAF) GetMaximumLatencyOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumLatency) {
+	if o == nil || isNil(o.MaximumLatency) {
 		return nil, false
 	}
 	return o.MaximumLatency, true
@@ -137,7 +137,7 @@ func (o *CommunicationCharacteristicsAF) GetMaximumLatencyOk() (*int32, bool) {
 
 // HasMaximumLatency returns a boolean if a field has been set.
 func (o *CommunicationCharacteristicsAF) HasMaximumLatency() bool {
-	if o != nil && !IsNil(o.MaximumLatency) {
+	if o != nil && !isNil(o.MaximumLatency) {
 		return true
 	}
 
@@ -162,10 +162,10 @@ func (o CommunicationCharacteristicsAF) ToMap() (map[string]interface{}, error) 
 	if o.PpDlPacketCount.IsSet() {
 		toSerialize["ppDlPacketCount"] = o.PpDlPacketCount.Get()
 	}
-	if !IsNil(o.MaximumResponseTime) {
+	if !isNil(o.MaximumResponseTime) {
 		toSerialize["maximumResponseTime"] = o.MaximumResponseTime
 	}
-	if !IsNil(o.MaximumLatency) {
+	if !isNil(o.MaximumLatency) {
 		toSerialize["maximumLatency"] = o.MaximumLatency
 	}
 	return toSerialize, nil

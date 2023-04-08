@@ -109,7 +109,7 @@ func (o *SecNegotiateReqData) SetSupportedSecCapabilityList(v []SecurityCapabili
 
 // GetVar3GppSbiTargetApiRootSupported returns the Var3GppSbiTargetApiRootSupported field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetVar3GppSbiTargetApiRootSupported() bool {
-	if o == nil || IsNil(o.Var3GppSbiTargetApiRootSupported) {
+	if o == nil || isNil(o.Var3GppSbiTargetApiRootSupported) {
 		var ret bool
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *SecNegotiateReqData) GetVar3GppSbiTargetApiRootSupported() bool {
 // GetVar3GppSbiTargetApiRootSupportedOk returns a tuple with the Var3GppSbiTargetApiRootSupported field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetVar3GppSbiTargetApiRootSupportedOk() (*bool, bool) {
-	if o == nil || IsNil(o.Var3GppSbiTargetApiRootSupported) {
+	if o == nil || isNil(o.Var3GppSbiTargetApiRootSupported) {
 		return nil, false
 	}
 	return o.Var3GppSbiTargetApiRootSupported, true
@@ -127,7 +127,7 @@ func (o *SecNegotiateReqData) GetVar3GppSbiTargetApiRootSupportedOk() (*bool, bo
 
 // HasVar3GppSbiTargetApiRootSupported returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasVar3GppSbiTargetApiRootSupported() bool {
-	if o != nil && !IsNil(o.Var3GppSbiTargetApiRootSupported) {
+	if o != nil && !isNil(o.Var3GppSbiTargetApiRootSupported) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *SecNegotiateReqData) SetVar3GppSbiTargetApiRootSupported(v bool) {
 
 // GetPlmnIdList returns the PlmnIdList field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetPlmnIdList() []PlmnId {
-	if o == nil || IsNil(o.PlmnIdList) {
+	if o == nil || isNil(o.PlmnIdList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *SecNegotiateReqData) GetPlmnIdList() []PlmnId {
 // GetPlmnIdListOk returns a tuple with the PlmnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetPlmnIdListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnIdList) {
+	if o == nil || isNil(o.PlmnIdList) {
 		return nil, false
 	}
 	return o.PlmnIdList, true
@@ -159,7 +159,7 @@ func (o *SecNegotiateReqData) GetPlmnIdListOk() ([]PlmnId, bool) {
 
 // HasPlmnIdList returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasPlmnIdList() bool {
-	if o != nil && !IsNil(o.PlmnIdList) {
+	if o != nil && !isNil(o.PlmnIdList) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *SecNegotiateReqData) SetPlmnIdList(v []PlmnId) {
 
 // GetSnpnIdList returns the SnpnIdList field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetSnpnIdList() []PlmnIdNid {
-	if o == nil || IsNil(o.SnpnIdList) {
+	if o == nil || isNil(o.SnpnIdList) {
 		var ret []PlmnIdNid
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *SecNegotiateReqData) GetSnpnIdList() []PlmnIdNid {
 // GetSnpnIdListOk returns a tuple with the SnpnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetSnpnIdListOk() ([]PlmnIdNid, bool) {
-	if o == nil || IsNil(o.SnpnIdList) {
+	if o == nil || isNil(o.SnpnIdList) {
 		return nil, false
 	}
 	return o.SnpnIdList, true
@@ -191,7 +191,7 @@ func (o *SecNegotiateReqData) GetSnpnIdListOk() ([]PlmnIdNid, bool) {
 
 // HasSnpnIdList returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasSnpnIdList() bool {
-	if o != nil && !IsNil(o.SnpnIdList) {
+	if o != nil && !isNil(o.SnpnIdList) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *SecNegotiateReqData) SetSnpnIdList(v []PlmnIdNid) {
 
 // GetTargetPlmnId returns the TargetPlmnId field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetTargetPlmnId() PlmnId {
-	if o == nil || IsNil(o.TargetPlmnId) {
+	if o == nil || isNil(o.TargetPlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *SecNegotiateReqData) GetTargetPlmnId() PlmnId {
 // GetTargetPlmnIdOk returns a tuple with the TargetPlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetTargetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.TargetPlmnId) {
+	if o == nil || isNil(o.TargetPlmnId) {
 		return nil, false
 	}
 	return o.TargetPlmnId, true
@@ -223,7 +223,7 @@ func (o *SecNegotiateReqData) GetTargetPlmnIdOk() (*PlmnId, bool) {
 
 // HasTargetPlmnId returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasTargetPlmnId() bool {
-	if o != nil && !IsNil(o.TargetPlmnId) {
+	if o != nil && !isNil(o.TargetPlmnId) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *SecNegotiateReqData) SetTargetPlmnId(v PlmnId) {
 
 // GetTargetSnpnId returns the TargetSnpnId field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetTargetSnpnId() PlmnIdNid {
-	if o == nil || IsNil(o.TargetSnpnId) {
+	if o == nil || isNil(o.TargetSnpnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *SecNegotiateReqData) GetTargetSnpnId() PlmnIdNid {
 // GetTargetSnpnIdOk returns a tuple with the TargetSnpnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetTargetSnpnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.TargetSnpnId) {
+	if o == nil || isNil(o.TargetSnpnId) {
 		return nil, false
 	}
 	return o.TargetSnpnId, true
@@ -255,7 +255,7 @@ func (o *SecNegotiateReqData) GetTargetSnpnIdOk() (*PlmnIdNid, bool) {
 
 // HasTargetSnpnId returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasTargetSnpnId() bool {
-	if o != nil && !IsNil(o.TargetSnpnId) {
+	if o != nil && !isNil(o.TargetSnpnId) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *SecNegotiateReqData) SetTargetSnpnId(v PlmnIdNid) {
 
 // GetIntendedUsagePurpose returns the IntendedUsagePurpose field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetIntendedUsagePurpose() []IntendedN32Purpose {
-	if o == nil || IsNil(o.IntendedUsagePurpose) {
+	if o == nil || isNil(o.IntendedUsagePurpose) {
 		var ret []IntendedN32Purpose
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *SecNegotiateReqData) GetIntendedUsagePurpose() []IntendedN32Purpose {
 // GetIntendedUsagePurposeOk returns a tuple with the IntendedUsagePurpose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetIntendedUsagePurposeOk() ([]IntendedN32Purpose, bool) {
-	if o == nil || IsNil(o.IntendedUsagePurpose) {
+	if o == nil || isNil(o.IntendedUsagePurpose) {
 		return nil, false
 	}
 	return o.IntendedUsagePurpose, true
@@ -287,7 +287,7 @@ func (o *SecNegotiateReqData) GetIntendedUsagePurposeOk() ([]IntendedN32Purpose,
 
 // HasIntendedUsagePurpose returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasIntendedUsagePurpose() bool {
-	if o != nil && !IsNil(o.IntendedUsagePurpose) {
+	if o != nil && !isNil(o.IntendedUsagePurpose) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *SecNegotiateReqData) SetIntendedUsagePurpose(v []IntendedN32Purpose) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *SecNegotiateReqData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -319,7 +319,7 @@ func (o *SecNegotiateReqData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -333,7 +333,7 @@ func (o *SecNegotiateReqData) SetSupportedFeatures(v string) {
 
 // GetSenderN32fFqdn returns the SenderN32fFqdn field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetSenderN32fFqdn() string {
-	if o == nil || IsNil(o.SenderN32fFqdn) {
+	if o == nil || isNil(o.SenderN32fFqdn) {
 		var ret string
 		return ret
 	}
@@ -343,7 +343,7 @@ func (o *SecNegotiateReqData) GetSenderN32fFqdn() string {
 // GetSenderN32fFqdnOk returns a tuple with the SenderN32fFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetSenderN32fFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.SenderN32fFqdn) {
+	if o == nil || isNil(o.SenderN32fFqdn) {
 		return nil, false
 	}
 	return o.SenderN32fFqdn, true
@@ -351,7 +351,7 @@ func (o *SecNegotiateReqData) GetSenderN32fFqdnOk() (*string, bool) {
 
 // HasSenderN32fFqdn returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasSenderN32fFqdn() bool {
-	if o != nil && !IsNil(o.SenderN32fFqdn) {
+	if o != nil && !isNil(o.SenderN32fFqdn) {
 		return true
 	}
 
@@ -365,7 +365,7 @@ func (o *SecNegotiateReqData) SetSenderN32fFqdn(v string) {
 
 // GetSenderN32fPort returns the SenderN32fPort field value if set, zero value otherwise.
 func (o *SecNegotiateReqData) GetSenderN32fPort() int32 {
-	if o == nil || IsNil(o.SenderN32fPort) {
+	if o == nil || isNil(o.SenderN32fPort) {
 		var ret int32
 		return ret
 	}
@@ -375,7 +375,7 @@ func (o *SecNegotiateReqData) GetSenderN32fPort() int32 {
 // GetSenderN32fPortOk returns a tuple with the SenderN32fPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecNegotiateReqData) GetSenderN32fPortOk() (*int32, bool) {
-	if o == nil || IsNil(o.SenderN32fPort) {
+	if o == nil || isNil(o.SenderN32fPort) {
 		return nil, false
 	}
 	return o.SenderN32fPort, true
@@ -383,7 +383,7 @@ func (o *SecNegotiateReqData) GetSenderN32fPortOk() (*int32, bool) {
 
 // HasSenderN32fPort returns a boolean if a field has been set.
 func (o *SecNegotiateReqData) HasSenderN32fPort() bool {
-	if o != nil && !IsNil(o.SenderN32fPort) {
+	if o != nil && !isNil(o.SenderN32fPort) {
 		return true
 	}
 
@@ -407,31 +407,31 @@ func (o SecNegotiateReqData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["sender"] = o.Sender
 	toSerialize["supportedSecCapabilityList"] = o.SupportedSecCapabilityList
-	if !IsNil(o.Var3GppSbiTargetApiRootSupported) {
+	if !isNil(o.Var3GppSbiTargetApiRootSupported) {
 		toSerialize["3GppSbiTargetApiRootSupported"] = o.Var3GppSbiTargetApiRootSupported
 	}
-	if !IsNil(o.PlmnIdList) {
+	if !isNil(o.PlmnIdList) {
 		toSerialize["plmnIdList"] = o.PlmnIdList
 	}
-	if !IsNil(o.SnpnIdList) {
+	if !isNil(o.SnpnIdList) {
 		toSerialize["snpnIdList"] = o.SnpnIdList
 	}
-	if !IsNil(o.TargetPlmnId) {
+	if !isNil(o.TargetPlmnId) {
 		toSerialize["targetPlmnId"] = o.TargetPlmnId
 	}
-	if !IsNil(o.TargetSnpnId) {
+	if !isNil(o.TargetSnpnId) {
 		toSerialize["targetSnpnId"] = o.TargetSnpnId
 	}
-	if !IsNil(o.IntendedUsagePurpose) {
+	if !isNil(o.IntendedUsagePurpose) {
 		toSerialize["intendedUsagePurpose"] = o.IntendedUsagePurpose
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.SenderN32fFqdn) {
+	if !isNil(o.SenderN32fFqdn) {
 		toSerialize["senderN32fFqdn"] = o.SenderN32fFqdn
 	}
-	if !IsNil(o.SenderN32fPort) {
+	if !isNil(o.SenderN32fPort) {
 		toSerialize["senderN32fPort"] = o.SenderN32fPort
 	}
 	return toSerialize, nil

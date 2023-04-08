@@ -47,7 +47,7 @@ func NewTunnelInfoWithDefaults() *TunnelInfo {
 
 // GetIpv4Addr returns the Ipv4Addr field value if set, zero value otherwise.
 func (o *TunnelInfo) GetIpv4Addr() string {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *TunnelInfo) GetIpv4Addr() string {
 // GetIpv4AddrOk returns a tuple with the Ipv4Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TunnelInfo) GetIpv4AddrOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4Addr) {
+	if o == nil || isNil(o.Ipv4Addr) {
 		return nil, false
 	}
 	return o.Ipv4Addr, true
@@ -65,7 +65,7 @@ func (o *TunnelInfo) GetIpv4AddrOk() (*string, bool) {
 
 // HasIpv4Addr returns a boolean if a field has been set.
 func (o *TunnelInfo) HasIpv4Addr() bool {
-	if o != nil && !IsNil(o.Ipv4Addr) {
+	if o != nil && !isNil(o.Ipv4Addr) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *TunnelInfo) SetIpv4Addr(v string) {
 
 // GetIpv6Addr returns the Ipv6Addr field value if set, zero value otherwise.
 func (o *TunnelInfo) GetIpv6Addr() Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *TunnelInfo) GetIpv6Addr() Ipv6Addr {
 // GetIpv6AddrOk returns a tuple with the Ipv6Addr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TunnelInfo) GetIpv6AddrOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Addr) {
+	if o == nil || isNil(o.Ipv6Addr) {
 		return nil, false
 	}
 	return o.Ipv6Addr, true
@@ -97,7 +97,7 @@ func (o *TunnelInfo) GetIpv6AddrOk() (*Ipv6Addr, bool) {
 
 // HasIpv6Addr returns a boolean if a field has been set.
 func (o *TunnelInfo) HasIpv6Addr() bool {
-	if o != nil && !IsNil(o.Ipv6Addr) {
+	if o != nil && !isNil(o.Ipv6Addr) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *TunnelInfo) SetGtpTeid(v string) {
 
 // GetAnType returns the AnType field value if set, zero value otherwise.
 func (o *TunnelInfo) GetAnType() AccessType {
-	if o == nil || IsNil(o.AnType) {
+	if o == nil || isNil(o.AnType) {
 		var ret AccessType
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *TunnelInfo) GetAnType() AccessType {
 // GetAnTypeOk returns a tuple with the AnType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TunnelInfo) GetAnTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AnType) {
+	if o == nil || isNil(o.AnType) {
 		return nil, false
 	}
 	return o.AnType, true
@@ -153,7 +153,7 @@ func (o *TunnelInfo) GetAnTypeOk() (*AccessType, bool) {
 
 // HasAnType returns a boolean if a field has been set.
 func (o *TunnelInfo) HasAnType() bool {
-	if o != nil && !IsNil(o.AnType) {
+	if o != nil && !isNil(o.AnType) {
 		return true
 	}
 
@@ -175,14 +175,14 @@ func (o TunnelInfo) MarshalJSON() ([]byte, error) {
 
 func (o TunnelInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4Addr) {
+	if !isNil(o.Ipv4Addr) {
 		toSerialize["ipv4Addr"] = o.Ipv4Addr
 	}
-	if !IsNil(o.Ipv6Addr) {
+	if !isNil(o.Ipv6Addr) {
 		toSerialize["ipv6Addr"] = o.Ipv6Addr
 	}
 	toSerialize["gtpTeid"] = o.GtpTeid
-	if !IsNil(o.AnType) {
+	if !isNil(o.AnType) {
 		toSerialize["anType"] = o.AnType
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -8,6 +7,7 @@ client.go
 configuration.go
 docs/AFLevelUELocationUpdateNotificationOperationApi.md
 docs/AccuracyFulfilmentIndicator.md
+docs/AccuracyFulfilmentIndicatorAnyOf.md
 docs/CivicAddress.md
 docs/EllipsoidArc.md
 docs/EllipsoidArcAllOf.md
@@ -20,7 +20,9 @@ docs/HorizontalWithVerticalVelocity.md
 docs/HorizontalWithVerticalVelocityAndUncertainty.md
 docs/InvalidParam.md
 docs/LcsQosClass.md
+docs/LcsQosClassAnyOf.md
 docs/LdrType.md
+docs/LdrTypeAnyOf.md
 docs/LocUpdateData.md
 docs/LocUpdateDataReply.md
 docs/Local2dPointUncertaintyEllipse.md
@@ -43,9 +45,11 @@ docs/PointUncertaintyEllipseAllOf.md
 docs/Polygon.md
 docs/PolygonAllOf.md
 docs/PositioningMethod.md
+docs/PositioningMethodAnyOf.md
 docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
 docs/VelocityEstimate.md
@@ -54,6 +58,7 @@ git_push.sh
 go.mod
 go.sum
 model_accuracy_fulfilment_indicator.go
+model_accuracy_fulfilment_indicator_any_of.go
 model_civic_address.go
 model_ellipsoid_arc.go
 model_ellipsoid_arc_all_of.go
@@ -66,7 +71,9 @@ model_horizontal_with_vertical_velocity.go
 model_horizontal_with_vertical_velocity_and_uncertainty.go
 model_invalid_param.go
 model_lcs_qos_class.go
+model_lcs_qos_class_any_of.go
 model_ldr_type.go
+model_ldr_type_any_of.go
 model_loc_update_data.go
 model_loc_update_data_reply.go
 model_local2d_point_uncertainty_ellipse.go
@@ -89,9 +96,11 @@ model_point_uncertainty_ellipse_all_of.go
 model_polygon.go
 model_polygon_all_of.go
 model_positioning_method.go
+model_positioning_method_any_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go
 model_velocity_estimate.go

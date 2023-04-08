@@ -56,7 +56,7 @@ func NewEasDeploySubDataWithDefaults() *EasDeploySubData {
 
 // GetAppId returns the AppId field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetAppId() string {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		var ret string
 		return ret
 	}
@@ -66,7 +66,7 @@ func (o *EasDeploySubData) GetAppId() string {
 // GetAppIdOk returns a tuple with the AppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AppId) {
+	if o == nil || isNil(o.AppId) {
 		return nil, false
 	}
 	return o.AppId, true
@@ -74,7 +74,7 @@ func (o *EasDeploySubData) GetAppIdOk() (*string, bool) {
 
 // HasAppId returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasAppId() bool {
-	if o != nil && !IsNil(o.AppId) {
+	if o != nil && !isNil(o.AppId) {
 		return true
 	}
 
@@ -88,7 +88,7 @@ func (o *EasDeploySubData) SetAppId(v string) {
 
 // GetDnnSnssaiInfos returns the DnnSnssaiInfos field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetDnnSnssaiInfos() []DnnSnssaiInformation {
-	if o == nil || IsNil(o.DnnSnssaiInfos) {
+	if o == nil || isNil(o.DnnSnssaiInfos) {
 		var ret []DnnSnssaiInformation
 		return ret
 	}
@@ -98,7 +98,7 @@ func (o *EasDeploySubData) GetDnnSnssaiInfos() []DnnSnssaiInformation {
 // GetDnnSnssaiInfosOk returns a tuple with the DnnSnssaiInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) {
-	if o == nil || IsNil(o.DnnSnssaiInfos) {
+	if o == nil || isNil(o.DnnSnssaiInfos) {
 		return nil, false
 	}
 	return o.DnnSnssaiInfos, true
@@ -106,7 +106,7 @@ func (o *EasDeploySubData) GetDnnSnssaiInfosOk() ([]DnnSnssaiInformation, bool) 
 
 // HasDnnSnssaiInfos returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasDnnSnssaiInfos() bool {
-	if o != nil && !IsNil(o.DnnSnssaiInfos) {
+	if o != nil && !isNil(o.DnnSnssaiInfos) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *EasDeploySubData) SetEventId(v EasEvent) {
 
 // GetEventsNotifs returns the EventsNotifs field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetEventsNotifs() []EasDeployInfoData {
-	if o == nil || IsNil(o.EventsNotifs) {
+	if o == nil || isNil(o.EventsNotifs) {
 		var ret []EasDeployInfoData
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *EasDeploySubData) GetEventsNotifs() []EasDeployInfoData {
 // GetEventsNotifsOk returns a tuple with the EventsNotifs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetEventsNotifsOk() ([]EasDeployInfoData, bool) {
-	if o == nil || IsNil(o.EventsNotifs) {
+	if o == nil || isNil(o.EventsNotifs) {
 		return nil, false
 	}
 	return o.EventsNotifs, true
@@ -162,7 +162,7 @@ func (o *EasDeploySubData) GetEventsNotifsOk() ([]EasDeployInfoData, bool) {
 
 // HasEventsNotifs returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasEventsNotifs() bool {
-	if o != nil && !IsNil(o.EventsNotifs) {
+	if o != nil && !isNil(o.EventsNotifs) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *EasDeploySubData) SetEventsNotifs(v []EasDeployInfoData) {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetImmRep() bool {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *EasDeploySubData) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetImmRepOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -194,7 +194,7 @@ func (o *EasDeploySubData) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasImmRep() bool {
-	if o != nil && !IsNil(o.ImmRep) {
+	if o != nil && !isNil(o.ImmRep) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *EasDeploySubData) SetImmRep(v bool) {
 
 // GetInterGroupId returns the InterGroupId field value if set, zero value otherwise.
 func (o *EasDeploySubData) GetInterGroupId() string {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *EasDeploySubData) GetInterGroupId() string {
 // GetInterGroupIdOk returns a tuple with the InterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDeploySubData) GetInterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.InterGroupId) {
+	if o == nil || isNil(o.InterGroupId) {
 		return nil, false
 	}
 	return o.InterGroupId, true
@@ -226,7 +226,7 @@ func (o *EasDeploySubData) GetInterGroupIdOk() (*string, bool) {
 
 // HasInterGroupId returns a boolean if a field has been set.
 func (o *EasDeploySubData) HasInterGroupId() bool {
-	if o != nil && !IsNil(o.InterGroupId) {
+	if o != nil && !isNil(o.InterGroupId) {
 		return true
 	}
 
@@ -296,20 +296,20 @@ func (o EasDeploySubData) MarshalJSON() ([]byte, error) {
 
 func (o EasDeploySubData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AppId) {
+	if !isNil(o.AppId) {
 		toSerialize["appId"] = o.AppId
 	}
-	if !IsNil(o.DnnSnssaiInfos) {
+	if !isNil(o.DnnSnssaiInfos) {
 		toSerialize["dnnSnssaiInfos"] = o.DnnSnssaiInfos
 	}
 	toSerialize["eventId"] = o.EventId
-	if !IsNil(o.EventsNotifs) {
+	if !isNil(o.EventsNotifs) {
 		toSerialize["eventsNotifs"] = o.EventsNotifs
 	}
-	if !IsNil(o.ImmRep) {
+	if !isNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !IsNil(o.InterGroupId) {
+	if !isNil(o.InterGroupId) {
 		toSerialize["interGroupId"] = o.InterGroupId
 	}
 	toSerialize["notifId"] = o.NotifId

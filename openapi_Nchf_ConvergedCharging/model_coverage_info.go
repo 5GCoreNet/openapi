@@ -45,7 +45,7 @@ func NewCoverageInfoWithDefaults() *CoverageInfo {
 
 // GetCoverageStatus returns the CoverageStatus field value if set, zero value otherwise.
 func (o *CoverageInfo) GetCoverageStatus() bool {
-	if o == nil || IsNil(o.CoverageStatus) {
+	if o == nil || isNil(o.CoverageStatus) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *CoverageInfo) GetCoverageStatus() bool {
 // GetCoverageStatusOk returns a tuple with the CoverageStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoverageInfo) GetCoverageStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.CoverageStatus) {
+	if o == nil || isNil(o.CoverageStatus) {
 		return nil, false
 	}
 	return o.CoverageStatus, true
@@ -63,7 +63,7 @@ func (o *CoverageInfo) GetCoverageStatusOk() (*bool, bool) {
 
 // HasCoverageStatus returns a boolean if a field has been set.
 func (o *CoverageInfo) HasCoverageStatus() bool {
-	if o != nil && !IsNil(o.CoverageStatus) {
+	if o != nil && !isNil(o.CoverageStatus) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *CoverageInfo) SetCoverageStatus(v bool) {
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *CoverageInfo) GetChangeTime() time.Time {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *CoverageInfo) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoverageInfo) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -95,7 +95,7 @@ func (o *CoverageInfo) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *CoverageInfo) HasChangeTime() bool {
-	if o != nil && !IsNil(o.ChangeTime) {
+	if o != nil && !isNil(o.ChangeTime) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *CoverageInfo) SetChangeTime(v time.Time) {
 
 // GetLocationInfo returns the LocationInfo field value if set, zero value otherwise.
 func (o *CoverageInfo) GetLocationInfo() []UserLocation {
-	if o == nil || IsNil(o.LocationInfo) {
+	if o == nil || isNil(o.LocationInfo) {
 		var ret []UserLocation
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *CoverageInfo) GetLocationInfo() []UserLocation {
 // GetLocationInfoOk returns a tuple with the LocationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CoverageInfo) GetLocationInfoOk() ([]UserLocation, bool) {
-	if o == nil || IsNil(o.LocationInfo) {
+	if o == nil || isNil(o.LocationInfo) {
 		return nil, false
 	}
 	return o.LocationInfo, true
@@ -127,7 +127,7 @@ func (o *CoverageInfo) GetLocationInfoOk() ([]UserLocation, bool) {
 
 // HasLocationInfo returns a boolean if a field has been set.
 func (o *CoverageInfo) HasLocationInfo() bool {
-	if o != nil && !IsNil(o.LocationInfo) {
+	if o != nil && !isNil(o.LocationInfo) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o CoverageInfo) MarshalJSON() ([]byte, error) {
 
 func (o CoverageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CoverageStatus) {
+	if !isNil(o.CoverageStatus) {
 		toSerialize["coverageStatus"] = o.CoverageStatus
 	}
-	if !IsNil(o.ChangeTime) {
+	if !isNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
-	if !IsNil(o.LocationInfo) {
+	if !isNil(o.LocationInfo) {
 		toSerialize["locationInfo"] = o.LocationInfo
 	}
 	return toSerialize, nil

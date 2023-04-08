@@ -134,7 +134,7 @@ func (o *CipheringDataSet) SetC0(v string) {
 
 // GetLtePosSibTypes returns the LtePosSibTypes field value if set, zero value otherwise.
 func (o *CipheringDataSet) GetLtePosSibTypes() string {
-	if o == nil || IsNil(o.LtePosSibTypes) {
+	if o == nil || isNil(o.LtePosSibTypes) {
 		var ret string
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *CipheringDataSet) GetLtePosSibTypes() string {
 // GetLtePosSibTypesOk returns a tuple with the LtePosSibTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipheringDataSet) GetLtePosSibTypesOk() (*string, bool) {
-	if o == nil || IsNil(o.LtePosSibTypes) {
+	if o == nil || isNil(o.LtePosSibTypes) {
 		return nil, false
 	}
 	return o.LtePosSibTypes, true
@@ -152,7 +152,7 @@ func (o *CipheringDataSet) GetLtePosSibTypesOk() (*string, bool) {
 
 // HasLtePosSibTypes returns a boolean if a field has been set.
 func (o *CipheringDataSet) HasLtePosSibTypes() bool {
-	if o != nil && !IsNil(o.LtePosSibTypes) {
+	if o != nil && !isNil(o.LtePosSibTypes) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *CipheringDataSet) SetLtePosSibTypes(v string) {
 
 // GetNrPosSibTypes returns the NrPosSibTypes field value if set, zero value otherwise.
 func (o *CipheringDataSet) GetNrPosSibTypes() string {
-	if o == nil || IsNil(o.NrPosSibTypes) {
+	if o == nil || isNil(o.NrPosSibTypes) {
 		var ret string
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *CipheringDataSet) GetNrPosSibTypes() string {
 // GetNrPosSibTypesOk returns a tuple with the NrPosSibTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipheringDataSet) GetNrPosSibTypesOk() (*string, bool) {
-	if o == nil || IsNil(o.NrPosSibTypes) {
+	if o == nil || isNil(o.NrPosSibTypes) {
 		return nil, false
 	}
 	return o.NrPosSibTypes, true
@@ -184,7 +184,7 @@ func (o *CipheringDataSet) GetNrPosSibTypesOk() (*string, bool) {
 
 // HasNrPosSibTypes returns a boolean if a field has been set.
 func (o *CipheringDataSet) HasNrPosSibTypes() bool {
-	if o != nil && !IsNil(o.NrPosSibTypes) {
+	if o != nil && !isNil(o.NrPosSibTypes) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *CipheringDataSet) SetValidityDuration(v int32) {
 
 // GetTaiList returns the TaiList field value if set, zero value otherwise.
 func (o *CipheringDataSet) GetTaiList() string {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		var ret string
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *CipheringDataSet) GetTaiList() string {
 // GetTaiListOk returns a tuple with the TaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CipheringDataSet) GetTaiListOk() (*string, bool) {
-	if o == nil || IsNil(o.TaiList) {
+	if o == nil || isNil(o.TaiList) {
 		return nil, false
 	}
 	return o.TaiList, true
@@ -264,7 +264,7 @@ func (o *CipheringDataSet) GetTaiListOk() (*string, bool) {
 
 // HasTaiList returns a boolean if a field has been set.
 func (o *CipheringDataSet) HasTaiList() bool {
-	if o != nil && !IsNil(o.TaiList) {
+	if o != nil && !isNil(o.TaiList) {
 		return true
 	}
 
@@ -289,15 +289,15 @@ func (o CipheringDataSet) ToMap() (map[string]interface{}, error) {
 	toSerialize["cipheringSetID"] = o.CipheringSetID
 	toSerialize["cipheringKey"] = o.CipheringKey
 	toSerialize["c0"] = o.C0
-	if !IsNil(o.LtePosSibTypes) {
+	if !isNil(o.LtePosSibTypes) {
 		toSerialize["ltePosSibTypes"] = o.LtePosSibTypes
 	}
-	if !IsNil(o.NrPosSibTypes) {
+	if !isNil(o.NrPosSibTypes) {
 		toSerialize["nrPosSibTypes"] = o.NrPosSibTypes
 	}
 	toSerialize["validityStartTime"] = o.ValidityStartTime
 	toSerialize["validityDuration"] = o.ValidityDuration
-	if !IsNil(o.TaiList) {
+	if !isNil(o.TaiList) {
 		toSerialize["taiList"] = o.TaiList
 	}
 	return toSerialize, nil

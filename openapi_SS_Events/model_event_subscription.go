@@ -76,7 +76,7 @@ func (o *EventSubscription) SetEventId(v SEALEvent) {
 
 // GetValGroups returns the ValGroups field value if set, zero value otherwise.
 func (o *EventSubscription) GetValGroups() []VALGroupFilter {
-	if o == nil || IsNil(o.ValGroups) {
+	if o == nil || isNil(o.ValGroups) {
 		var ret []VALGroupFilter
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EventSubscription) GetValGroups() []VALGroupFilter {
 // GetValGroupsOk returns a tuple with the ValGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetValGroupsOk() ([]VALGroupFilter, bool) {
-	if o == nil || IsNil(o.ValGroups) {
+	if o == nil || isNil(o.ValGroups) {
 		return nil, false
 	}
 	return o.ValGroups, true
@@ -94,7 +94,7 @@ func (o *EventSubscription) GetValGroupsOk() ([]VALGroupFilter, bool) {
 
 // HasValGroups returns a boolean if a field has been set.
 func (o *EventSubscription) HasValGroups() bool {
-	if o != nil && !IsNil(o.ValGroups) {
+	if o != nil && !isNil(o.ValGroups) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EventSubscription) SetValGroups(v []VALGroupFilter) {
 
 // GetIdentities returns the Identities field value if set, zero value otherwise.
 func (o *EventSubscription) GetIdentities() []IdentityFilter {
-	if o == nil || IsNil(o.Identities) {
+	if o == nil || isNil(o.Identities) {
 		var ret []IdentityFilter
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EventSubscription) GetIdentities() []IdentityFilter {
 // GetIdentitiesOk returns a tuple with the Identities field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetIdentitiesOk() ([]IdentityFilter, bool) {
-	if o == nil || IsNil(o.Identities) {
+	if o == nil || isNil(o.Identities) {
 		return nil, false
 	}
 	return o.Identities, true
@@ -126,7 +126,7 @@ func (o *EventSubscription) GetIdentitiesOk() ([]IdentityFilter, bool) {
 
 // HasIdentities returns a boolean if a field has been set.
 func (o *EventSubscription) HasIdentities() bool {
-	if o != nil && !IsNil(o.Identities) {
+	if o != nil && !isNil(o.Identities) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EventSubscription) SetIdentities(v []IdentityFilter) {
 
 // GetMonFltr returns the MonFltr field value if set, zero value otherwise.
 func (o *EventSubscription) GetMonFltr() []MonitorFilter {
-	if o == nil || IsNil(o.MonFltr) {
+	if o == nil || isNil(o.MonFltr) {
 		var ret []MonitorFilter
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EventSubscription) GetMonFltr() []MonitorFilter {
 // GetMonFltrOk returns a tuple with the MonFltr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetMonFltrOk() ([]MonitorFilter, bool) {
-	if o == nil || IsNil(o.MonFltr) {
+	if o == nil || isNil(o.MonFltr) {
 		return nil, false
 	}
 	return o.MonFltr, true
@@ -158,7 +158,7 @@ func (o *EventSubscription) GetMonFltrOk() ([]MonitorFilter, bool) {
 
 // HasMonFltr returns a boolean if a field has been set.
 func (o *EventSubscription) HasMonFltr() bool {
-	if o != nil && !IsNil(o.MonFltr) {
+	if o != nil && !isNil(o.MonFltr) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *EventSubscription) SetMonFltr(v []MonitorFilter) {
 
 // GetAreaInt returns the AreaInt field value if set, zero value otherwise.
 func (o *EventSubscription) GetAreaInt() []MonitorLocationInterestFilter {
-	if o == nil || IsNil(o.AreaInt) {
+	if o == nil || isNil(o.AreaInt) {
 		var ret []MonitorLocationInterestFilter
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *EventSubscription) GetAreaInt() []MonitorLocationInterestFilter {
 // GetAreaIntOk returns a tuple with the AreaInt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetAreaIntOk() ([]MonitorLocationInterestFilter, bool) {
-	if o == nil || IsNil(o.AreaInt) {
+	if o == nil || isNil(o.AreaInt) {
 		return nil, false
 	}
 	return o.AreaInt, true
@@ -190,7 +190,7 @@ func (o *EventSubscription) GetAreaIntOk() ([]MonitorLocationInterestFilter, boo
 
 // HasAreaInt returns a boolean if a field has been set.
 func (o *EventSubscription) HasAreaInt() bool {
-	if o != nil && !IsNil(o.AreaInt) {
+	if o != nil && !isNil(o.AreaInt) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *EventSubscription) SetAreaInt(v []MonitorLocationInterestFilter) {
 
 // GetLocAreaMon returns the LocAreaMon field value if set, zero value otherwise.
 func (o *EventSubscription) GetLocAreaMon() []MonLocAreaInterestFltr {
-	if o == nil || IsNil(o.LocAreaMon) {
+	if o == nil || isNil(o.LocAreaMon) {
 		var ret []MonLocAreaInterestFltr
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *EventSubscription) GetLocAreaMon() []MonLocAreaInterestFltr {
 // GetLocAreaMonOk returns a tuple with the LocAreaMon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventSubscription) GetLocAreaMonOk() ([]MonLocAreaInterestFltr, bool) {
-	if o == nil || IsNil(o.LocAreaMon) {
+	if o == nil || isNil(o.LocAreaMon) {
 		return nil, false
 	}
 	return o.LocAreaMon, true
@@ -222,7 +222,7 @@ func (o *EventSubscription) GetLocAreaMonOk() ([]MonLocAreaInterestFltr, bool) {
 
 // HasLocAreaMon returns a boolean if a field has been set.
 func (o *EventSubscription) HasLocAreaMon() bool {
-	if o != nil && !IsNil(o.LocAreaMon) {
+	if o != nil && !isNil(o.LocAreaMon) {
 		return true
 	}
 
@@ -245,19 +245,19 @@ func (o EventSubscription) MarshalJSON() ([]byte, error) {
 func (o EventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventId"] = o.EventId
-	if !IsNil(o.ValGroups) {
+	if !isNil(o.ValGroups) {
 		toSerialize["valGroups"] = o.ValGroups
 	}
-	if !IsNil(o.Identities) {
+	if !isNil(o.Identities) {
 		toSerialize["identities"] = o.Identities
 	}
-	if !IsNil(o.MonFltr) {
+	if !isNil(o.MonFltr) {
 		toSerialize["monFltr"] = o.MonFltr
 	}
-	if !IsNil(o.AreaInt) {
+	if !isNil(o.AreaInt) {
 		toSerialize["areaInt"] = o.AreaInt
 	}
-	if !IsNil(o.LocAreaMon) {
+	if !isNil(o.LocAreaMon) {
 		toSerialize["locAreaMon"] = o.LocAreaMon
 	}
 	return toSerialize, nil

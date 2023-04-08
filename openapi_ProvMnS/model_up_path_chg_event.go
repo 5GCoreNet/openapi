@@ -121,7 +121,7 @@ func (o *UpPathChgEvent) SetDnaiChgType(v DnaiChangeType) {
 
 // GetAfAckInd returns the AfAckInd field value if set, zero value otherwise.
 func (o *UpPathChgEvent) GetAfAckInd() bool {
-	if o == nil || IsNil(o.AfAckInd) {
+	if o == nil || isNil(o.AfAckInd) {
 		var ret bool
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *UpPathChgEvent) GetAfAckInd() bool {
 // GetAfAckIndOk returns a tuple with the AfAckInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpPathChgEvent) GetAfAckIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AfAckInd) {
+	if o == nil || isNil(o.AfAckInd) {
 		return nil, false
 	}
 	return o.AfAckInd, true
@@ -139,7 +139,7 @@ func (o *UpPathChgEvent) GetAfAckIndOk() (*bool, bool) {
 
 // HasAfAckInd returns a boolean if a field has been set.
 func (o *UpPathChgEvent) HasAfAckInd() bool {
-	if o != nil && !IsNil(o.AfAckInd) {
+	if o != nil && !isNil(o.AfAckInd) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o UpPathChgEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationUri"] = o.NotificationUri
 	toSerialize["notifCorreId"] = o.NotifCorreId
 	toSerialize["dnaiChgType"] = o.DnaiChgType
-	if !IsNil(o.AfAckInd) {
+	if !isNil(o.AfAckInd) {
 		toSerialize["afAckInd"] = o.AfAckInd
 	}
 	return toSerialize, nil

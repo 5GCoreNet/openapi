@@ -42,7 +42,7 @@ func NewMonitorAuthRespDataWithDefaults() *MonitorAuthRespData {
 
 // GetAuthDataOpen returns the AuthDataOpen field value if set, zero value otherwise.
 func (o *MonitorAuthRespData) GetAuthDataOpen() MonitorAuthDataForOpen {
-	if o == nil || IsNil(o.AuthDataOpen) {
+	if o == nil || isNil(o.AuthDataOpen) {
 		var ret MonitorAuthDataForOpen
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *MonitorAuthRespData) GetAuthDataOpen() MonitorAuthDataForOpen {
 // GetAuthDataOpenOk returns a tuple with the AuthDataOpen field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorAuthRespData) GetAuthDataOpenOk() (*MonitorAuthDataForOpen, bool) {
-	if o == nil || IsNil(o.AuthDataOpen) {
+	if o == nil || isNil(o.AuthDataOpen) {
 		return nil, false
 	}
 	return o.AuthDataOpen, true
@@ -60,7 +60,7 @@ func (o *MonitorAuthRespData) GetAuthDataOpenOk() (*MonitorAuthDataForOpen, bool
 
 // HasAuthDataOpen returns a boolean if a field has been set.
 func (o *MonitorAuthRespData) HasAuthDataOpen() bool {
-	if o != nil && !IsNil(o.AuthDataOpen) {
+	if o != nil && !isNil(o.AuthDataOpen) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *MonitorAuthRespData) SetAuthDataOpen(v MonitorAuthDataForOpen) {
 
 // GetAuthDataRestricted returns the AuthDataRestricted field value if set, zero value otherwise.
 func (o *MonitorAuthRespData) GetAuthDataRestricted() MonitorAuthDataForRestricted {
-	if o == nil || IsNil(o.AuthDataRestricted) {
+	if o == nil || isNil(o.AuthDataRestricted) {
 		var ret MonitorAuthDataForRestricted
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *MonitorAuthRespData) GetAuthDataRestricted() MonitorAuthDataForRestrict
 // GetAuthDataRestrictedOk returns a tuple with the AuthDataRestricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitorAuthRespData) GetAuthDataRestrictedOk() (*MonitorAuthDataForRestricted, bool) {
-	if o == nil || IsNil(o.AuthDataRestricted) {
+	if o == nil || isNil(o.AuthDataRestricted) {
 		return nil, false
 	}
 	return o.AuthDataRestricted, true
@@ -92,7 +92,7 @@ func (o *MonitorAuthRespData) GetAuthDataRestrictedOk() (*MonitorAuthDataForRest
 
 // HasAuthDataRestricted returns a boolean if a field has been set.
 func (o *MonitorAuthRespData) HasAuthDataRestricted() bool {
-	if o != nil && !IsNil(o.AuthDataRestricted) {
+	if o != nil && !isNil(o.AuthDataRestricted) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o MonitorAuthRespData) MarshalJSON() ([]byte, error) {
 
 func (o MonitorAuthRespData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthDataOpen) {
+	if !isNil(o.AuthDataOpen) {
 		toSerialize["authDataOpen"] = o.AuthDataOpen
 	}
-	if !IsNil(o.AuthDataRestricted) {
+	if !isNil(o.AuthDataRestricted) {
 		toSerialize["authDataRestricted"] = o.AuthDataRestricted
 	}
 	return toSerialize, nil

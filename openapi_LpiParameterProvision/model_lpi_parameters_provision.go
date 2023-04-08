@@ -53,7 +53,7 @@ func NewLpiParametersProvisionWithDefaults() *LpiParametersProvision {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *LpiParametersProvision) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *LpiParametersProvision) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvision) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -71,7 +71,7 @@ func (o *LpiParametersProvision) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *LpiParametersProvision) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *LpiParametersProvision) SetSelf(v string) {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *LpiParametersProvision) GetExterGroupId() string {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *LpiParametersProvision) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvision) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -103,7 +103,7 @@ func (o *LpiParametersProvision) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *LpiParametersProvision) HasExterGroupId() bool {
-	if o != nil && !IsNil(o.ExterGroupId) {
+	if o != nil && !isNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *LpiParametersProvision) SetExterGroupId(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *LpiParametersProvision) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *LpiParametersProvision) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvision) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -135,7 +135,7 @@ func (o *LpiParametersProvision) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *LpiParametersProvision) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *LpiParametersProvision) SetLpi(v Lpi) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *LpiParametersProvision) GetMtcProviderId() string {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *LpiParametersProvision) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvision) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -191,7 +191,7 @@ func (o *LpiParametersProvision) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *LpiParametersProvision) HasMtcProviderId() bool {
-	if o != nil && !IsNil(o.MtcProviderId) {
+	if o != nil && !isNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -237,17 +237,17 @@ func (o LpiParametersProvision) MarshalJSON() ([]byte, error) {
 
 func (o LpiParametersProvision) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.ExterGroupId) {
+	if !isNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["lpi"] = o.Lpi
-	if !IsNil(o.MtcProviderId) {
+	if !isNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

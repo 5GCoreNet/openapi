@@ -69,7 +69,7 @@ func (o *PktDistributionData) SetPktDistributionOperatingMode(v PktDistributionO
 
 // GetPktIngestMethod returns the PktIngestMethod field value if set, zero value otherwise.
 func (o *PktDistributionData) GetPktIngestMethod() PktIngestMethod {
-	if o == nil || IsNil(o.PktIngestMethod) {
+	if o == nil || isNil(o.PktIngestMethod) {
 		var ret PktIngestMethod
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *PktDistributionData) GetPktIngestMethod() PktIngestMethod {
 // GetPktIngestMethodOk returns a tuple with the PktIngestMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PktDistributionData) GetPktIngestMethodOk() (*PktIngestMethod, bool) {
-	if o == nil || IsNil(o.PktIngestMethod) {
+	if o == nil || isNil(o.PktIngestMethod) {
 		return nil, false
 	}
 	return o.PktIngestMethod, true
@@ -87,7 +87,7 @@ func (o *PktDistributionData) GetPktIngestMethodOk() (*PktIngestMethod, bool) {
 
 // HasPktIngestMethod returns a boolean if a field has been set.
 func (o *PktDistributionData) HasPktIngestMethod() bool {
-	if o != nil && !IsNil(o.PktIngestMethod) {
+	if o != nil && !isNil(o.PktIngestMethod) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o PktDistributionData) MarshalJSON() ([]byte, error) {
 func (o PktDistributionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pktDistributionOperatingMode"] = o.PktDistributionOperatingMode
-	if !IsNil(o.PktIngestMethod) {
+	if !isNil(o.PktIngestMethod) {
 		toSerialize["pktIngestMethod"] = o.PktIngestMethod
 	}
 	toSerialize["mbStfIngestAddr"] = o.MbStfIngestAddr

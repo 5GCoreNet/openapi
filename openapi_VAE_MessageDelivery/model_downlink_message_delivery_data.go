@@ -52,7 +52,7 @@ func NewDownlinkMessageDeliveryDataWithDefaults() *DownlinkMessageDeliveryData {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *DownlinkMessageDeliveryData) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *DownlinkMessageDeliveryData) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownlinkMessageDeliveryData) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -70,7 +70,7 @@ func (o *DownlinkMessageDeliveryData) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *DownlinkMessageDeliveryData) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *DownlinkMessageDeliveryData) SetUeId(v string) {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *DownlinkMessageDeliveryData) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *DownlinkMessageDeliveryData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownlinkMessageDeliveryData) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -102,7 +102,7 @@ func (o *DownlinkMessageDeliveryData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *DownlinkMessageDeliveryData) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *DownlinkMessageDeliveryData) SetGroupId(v string) {
 
 // GetDuration returns the Duration field value if set, zero value otherwise.
 func (o *DownlinkMessageDeliveryData) GetDuration() time.Time {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		var ret time.Time
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *DownlinkMessageDeliveryData) GetDuration() time.Time {
 // GetDurationOk returns a tuple with the Duration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownlinkMessageDeliveryData) GetDurationOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Duration) {
+	if o == nil || isNil(o.Duration) {
 		return nil, false
 	}
 	return o.Duration, true
@@ -134,7 +134,7 @@ func (o *DownlinkMessageDeliveryData) GetDurationOk() (*time.Time, bool) {
 
 // HasDuration returns a boolean if a field has been set.
 func (o *DownlinkMessageDeliveryData) HasDuration() bool {
-	if o != nil && !IsNil(o.Duration) {
+	if o != nil && !isNil(o.Duration) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *DownlinkMessageDeliveryData) SetDuration(v time.Time) {
 
 // GetGeoId returns the GeoId field value if set, zero value otherwise.
 func (o *DownlinkMessageDeliveryData) GetGeoId() string {
-	if o == nil || IsNil(o.GeoId) {
+	if o == nil || isNil(o.GeoId) {
 		var ret string
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *DownlinkMessageDeliveryData) GetGeoId() string {
 // GetGeoIdOk returns a tuple with the GeoId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownlinkMessageDeliveryData) GetGeoIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GeoId) {
+	if o == nil || isNil(o.GeoId) {
 		return nil, false
 	}
 	return o.GeoId, true
@@ -166,7 +166,7 @@ func (o *DownlinkMessageDeliveryData) GetGeoIdOk() (*string, bool) {
 
 // HasGeoId returns a boolean if a field has been set.
 func (o *DownlinkMessageDeliveryData) HasGeoId() bool {
-	if o != nil && !IsNil(o.GeoId) {
+	if o != nil && !isNil(o.GeoId) {
 		return true
 	}
 
@@ -212,16 +212,16 @@ func (o DownlinkMessageDeliveryData) MarshalJSON() ([]byte, error) {
 
 func (o DownlinkMessageDeliveryData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
-	if !IsNil(o.Duration) {
+	if !isNil(o.Duration) {
 		toSerialize["duration"] = o.Duration
 	}
-	if !IsNil(o.GeoId) {
+	if !isNil(o.GeoId) {
 		toSerialize["geoId"] = o.GeoId
 	}
 	toSerialize["payload"] = o.Payload

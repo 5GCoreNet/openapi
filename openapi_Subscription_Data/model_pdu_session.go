@@ -121,7 +121,7 @@ func (o *PduSession) SetPlmnId(v PlmnId) {
 
 // GetSingleNssai returns the SingleNssai field value if set, zero value otherwise.
 func (o *PduSession) GetSingleNssai() Snssai {
-	if o == nil || IsNil(o.SingleNssai) {
+	if o == nil || isNil(o.SingleNssai) {
 		var ret Snssai
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *PduSession) GetSingleNssai() Snssai {
 // GetSingleNssaiOk returns a tuple with the SingleNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSession) GetSingleNssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.SingleNssai) {
+	if o == nil || isNil(o.SingleNssai) {
 		return nil, false
 	}
 	return o.SingleNssai, true
@@ -139,7 +139,7 @@ func (o *PduSession) GetSingleNssaiOk() (*Snssai, bool) {
 
 // HasSingleNssai returns a boolean if a field has been set.
 func (o *PduSession) HasSingleNssai() bool {
-	if o != nil && !IsNil(o.SingleNssai) {
+	if o != nil && !isNil(o.SingleNssai) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o PduSession) ToMap() (map[string]interface{}, error) {
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["smfInstanceId"] = o.SmfInstanceId
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.SingleNssai) {
+	if !isNil(o.SingleNssai) {
 		toSerialize["singleNssai"] = o.SingleNssai
 	}
 	return toSerialize, nil

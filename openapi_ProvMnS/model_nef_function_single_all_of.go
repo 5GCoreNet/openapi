@@ -19,7 +19,7 @@ var _ MappedNullable = &NefFunctionSingleAllOf{}
 
 // NefFunctionSingleAllOf struct for NefFunctionSingleAllOf
 type NefFunctionSingleAllOf struct {
-	Attributes *NefFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewNefFunctionSingleAllOf instantiates a new NefFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewNefFunctionSingleAllOfWithDefaults() *NefFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NefFunctionSingleAllOf) GetAttributes() NefFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret NefFunctionSingleAllOfAttributes
+func (o *NefFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *NefFunctionSingleAllOf) GetAttributes() NefFunctionSingleAllOfAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NefFunctionSingleAllOf) GetAttributesOk() (*NefFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *NefFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *NefFunctionSingleAllOf) GetAttributesOk() (*NefFunctionSingleAllOfAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NefFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given NefFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *NefFunctionSingleAllOf) SetAttributes(v NefFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *NefFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o NefFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NefFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

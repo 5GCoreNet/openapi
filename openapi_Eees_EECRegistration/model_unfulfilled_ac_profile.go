@@ -43,7 +43,7 @@ func NewUnfulfilledAcProfileWithDefaults() *UnfulfilledAcProfile {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *UnfulfilledAcProfile) GetAcId() string {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UnfulfilledAcProfile) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnfulfilledAcProfile) GetAcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -61,7 +61,7 @@ func (o *UnfulfilledAcProfile) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *UnfulfilledAcProfile) HasAcId() bool {
-	if o != nil && !IsNil(o.AcId) {
+	if o != nil && !isNil(o.AcId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UnfulfilledAcProfile) SetAcId(v string) {
 
 // GetReason returns the Reason field value if set, zero value otherwise.
 func (o *UnfulfilledAcProfile) GetReason() UnfulfillACProfRsn {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		var ret UnfulfillACProfRsn
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UnfulfilledAcProfile) GetReason() UnfulfillACProfRsn {
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UnfulfilledAcProfile) GetReasonOk() (*UnfulfillACProfRsn, bool) {
-	if o == nil || IsNil(o.Reason) {
+	if o == nil || isNil(o.Reason) {
 		return nil, false
 	}
 	return o.Reason, true
@@ -93,7 +93,7 @@ func (o *UnfulfilledAcProfile) GetReasonOk() (*UnfulfillACProfRsn, bool) {
 
 // HasReason returns a boolean if a field has been set.
 func (o *UnfulfilledAcProfile) HasReason() bool {
-	if o != nil && !IsNil(o.Reason) {
+	if o != nil && !isNil(o.Reason) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o UnfulfilledAcProfile) MarshalJSON() ([]byte, error) {
 
 func (o UnfulfilledAcProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcId) {
+	if !isNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
-	if !IsNil(o.Reason) {
+	if !isNil(o.Reason) {
 		toSerialize["reason"] = o.Reason
 	}
 	return toSerialize, nil

@@ -125,7 +125,7 @@ func (o *EASRequirements) SetEasFeatures(v []string) {
 
 // GetServiceKpi returns the ServiceKpi field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceKpi() EASServiceKPI {
-	if o == nil || IsNil(o.ServiceKpi) {
+	if o == nil || isNil(o.ServiceKpi) {
 		var ret EASServiceKPI
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *EASRequirements) GetServiceKpi() EASServiceKPI {
 // GetServiceKpiOk returns a tuple with the ServiceKpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceKpiOk() (*EASServiceKPI, bool) {
-	if o == nil || IsNil(o.ServiceKpi) {
+	if o == nil || isNil(o.ServiceKpi) {
 		return nil, false
 	}
 	return o.ServiceKpi, true
@@ -143,7 +143,7 @@ func (o *EASRequirements) GetServiceKpiOk() (*EASServiceKPI, bool) {
 
 // HasServiceKpi returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceKpi() bool {
-	if o != nil && !IsNil(o.ServiceKpi) {
+	if o != nil && !isNil(o.ServiceKpi) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *EASRequirements) SetServiceKpi(v EASServiceKPI) {
 
 // GetServiceArea returns the ServiceArea field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceArea() GeographicalServiceArea {
-	if o == nil || IsNil(o.ServiceArea) {
+	if o == nil || isNil(o.ServiceArea) {
 		var ret GeographicalServiceArea
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *EASRequirements) GetServiceArea() GeographicalServiceArea {
 // GetServiceAreaOk returns a tuple with the ServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceAreaOk() (*GeographicalServiceArea, bool) {
-	if o == nil || IsNil(o.ServiceArea) {
+	if o == nil || isNil(o.ServiceArea) {
 		return nil, false
 	}
 	return o.ServiceArea, true
@@ -175,7 +175,7 @@ func (o *EASRequirements) GetServiceAreaOk() (*GeographicalServiceArea, bool) {
 
 // HasServiceArea returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceArea() bool {
-	if o != nil && !IsNil(o.ServiceArea) {
+	if o != nil && !isNil(o.ServiceArea) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *EASRequirements) SetServiceContinuityScenarios(v []ACRScenario) {
 
 // GetServiceContinuitySupport returns the ServiceContinuitySupport field value if set, zero value otherwise.
 func (o *EASRequirements) GetServiceContinuitySupport() []ACRScenario {
-	if o == nil || IsNil(o.ServiceContinuitySupport) {
+	if o == nil || isNil(o.ServiceContinuitySupport) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *EASRequirements) GetServiceContinuitySupport() []ACRScenario {
 // GetServiceContinuitySupportOk returns a tuple with the ServiceContinuitySupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EASRequirements) GetServiceContinuitySupportOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.ServiceContinuitySupport) {
+	if o == nil || isNil(o.ServiceContinuitySupport) {
 		return nil, false
 	}
 	return o.ServiceContinuitySupport, true
@@ -255,7 +255,7 @@ func (o *EASRequirements) GetServiceContinuitySupportOk() ([]ACRScenario, bool) 
 
 // HasServiceContinuitySupport returns a boolean if a field has been set.
 func (o *EASRequirements) HasServiceContinuitySupport() bool {
-	if o != nil && !IsNil(o.ServiceContinuitySupport) {
+	if o != nil && !isNil(o.ServiceContinuitySupport) {
 		return true
 	}
 
@@ -280,15 +280,15 @@ func (o EASRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize["easProviderIds"] = o.EasProviderIds
 	toSerialize["easType"] = o.EasType
 	toSerialize["easFeatures"] = o.EasFeatures
-	if !IsNil(o.ServiceKpi) {
+	if !isNil(o.ServiceKpi) {
 		toSerialize["serviceKpi"] = o.ServiceKpi
 	}
-	if !IsNil(o.ServiceArea) {
+	if !isNil(o.ServiceArea) {
 		toSerialize["serviceArea"] = o.ServiceArea
 	}
 	toSerialize["serviceAvailabilitySchedule"] = o.ServiceAvailabilitySchedule
 	toSerialize["serviceContinuityScenarios"] = o.ServiceContinuityScenarios
-	if !IsNil(o.ServiceContinuitySupport) {
+	if !isNil(o.ServiceContinuitySupport) {
 		toSerialize["serviceContinuitySupport"] = o.ServiceContinuitySupport
 	}
 	return toSerialize, nil

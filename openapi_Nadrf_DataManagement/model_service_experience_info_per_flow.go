@@ -46,7 +46,7 @@ func NewServiceExperienceInfoPerFlowWithDefaults() *ServiceExperienceInfoPerFlow
 
 // GetSvcExprc returns the SvcExprc field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerFlow) GetSvcExprc() SvcExperience {
-	if o == nil || IsNil(o.SvcExprc) {
+	if o == nil || isNil(o.SvcExprc) {
 		var ret SvcExperience
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ServiceExperienceInfoPerFlow) GetSvcExprc() SvcExperience {
 // GetSvcExprcOk returns a tuple with the SvcExprc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerFlow) GetSvcExprcOk() (*SvcExperience, bool) {
-	if o == nil || IsNil(o.SvcExprc) {
+	if o == nil || isNil(o.SvcExprc) {
 		return nil, false
 	}
 	return o.SvcExprc, true
@@ -64,7 +64,7 @@ func (o *ServiceExperienceInfoPerFlow) GetSvcExprcOk() (*SvcExperience, bool) {
 
 // HasSvcExprc returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerFlow) HasSvcExprc() bool {
-	if o != nil && !IsNil(o.SvcExprc) {
+	if o != nil && !isNil(o.SvcExprc) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ServiceExperienceInfoPerFlow) SetSvcExprc(v SvcExperience) {
 
 // GetTimeIntev returns the TimeIntev field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerFlow) GetTimeIntev() TimeWindow {
-	if o == nil || IsNil(o.TimeIntev) {
+	if o == nil || isNil(o.TimeIntev) {
 		var ret TimeWindow
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ServiceExperienceInfoPerFlow) GetTimeIntev() TimeWindow {
 // GetTimeIntevOk returns a tuple with the TimeIntev field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerFlow) GetTimeIntevOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.TimeIntev) {
+	if o == nil || isNil(o.TimeIntev) {
 		return nil, false
 	}
 	return o.TimeIntev, true
@@ -96,7 +96,7 @@ func (o *ServiceExperienceInfoPerFlow) GetTimeIntevOk() (*TimeWindow, bool) {
 
 // HasTimeIntev returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerFlow) HasTimeIntev() bool {
-	if o != nil && !IsNil(o.TimeIntev) {
+	if o != nil && !isNil(o.TimeIntev) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ServiceExperienceInfoPerFlow) SetTimeIntev(v TimeWindow) {
 
 // GetDnai returns the Dnai field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerFlow) GetDnai() string {
-	if o == nil || IsNil(o.Dnai) {
+	if o == nil || isNil(o.Dnai) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ServiceExperienceInfoPerFlow) GetDnai() string {
 // GetDnaiOk returns a tuple with the Dnai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerFlow) GetDnaiOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnai) {
+	if o == nil || isNil(o.Dnai) {
 		return nil, false
 	}
 	return o.Dnai, true
@@ -128,7 +128,7 @@ func (o *ServiceExperienceInfoPerFlow) GetDnaiOk() (*string, bool) {
 
 // HasDnai returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerFlow) HasDnai() bool {
-	if o != nil && !IsNil(o.Dnai) {
+	if o != nil && !isNil(o.Dnai) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ServiceExperienceInfoPerFlow) SetDnai(v string) {
 
 // GetIpTrafficFilter returns the IpTrafficFilter field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerFlow) GetIpTrafficFilter() FlowInfo {
-	if o == nil || IsNil(o.IpTrafficFilter) {
+	if o == nil || isNil(o.IpTrafficFilter) {
 		var ret FlowInfo
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ServiceExperienceInfoPerFlow) GetIpTrafficFilter() FlowInfo {
 // GetIpTrafficFilterOk returns a tuple with the IpTrafficFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerFlow) GetIpTrafficFilterOk() (*FlowInfo, bool) {
-	if o == nil || IsNil(o.IpTrafficFilter) {
+	if o == nil || isNil(o.IpTrafficFilter) {
 		return nil, false
 	}
 	return o.IpTrafficFilter, true
@@ -160,7 +160,7 @@ func (o *ServiceExperienceInfoPerFlow) GetIpTrafficFilterOk() (*FlowInfo, bool) 
 
 // HasIpTrafficFilter returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerFlow) HasIpTrafficFilter() bool {
-	if o != nil && !IsNil(o.IpTrafficFilter) {
+	if o != nil && !isNil(o.IpTrafficFilter) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ServiceExperienceInfoPerFlow) SetIpTrafficFilter(v FlowInfo) {
 
 // GetEthTrafficFilter returns the EthTrafficFilter field value if set, zero value otherwise.
 func (o *ServiceExperienceInfoPerFlow) GetEthTrafficFilter() EthFlowDescription {
-	if o == nil || IsNil(o.EthTrafficFilter) {
+	if o == nil || isNil(o.EthTrafficFilter) {
 		var ret EthFlowDescription
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ServiceExperienceInfoPerFlow) GetEthTrafficFilter() EthFlowDescription 
 // GetEthTrafficFilterOk returns a tuple with the EthTrafficFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceExperienceInfoPerFlow) GetEthTrafficFilterOk() (*EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthTrafficFilter) {
+	if o == nil || isNil(o.EthTrafficFilter) {
 		return nil, false
 	}
 	return o.EthTrafficFilter, true
@@ -192,7 +192,7 @@ func (o *ServiceExperienceInfoPerFlow) GetEthTrafficFilterOk() (*EthFlowDescript
 
 // HasEthTrafficFilter returns a boolean if a field has been set.
 func (o *ServiceExperienceInfoPerFlow) HasEthTrafficFilter() bool {
-	if o != nil && !IsNil(o.EthTrafficFilter) {
+	if o != nil && !isNil(o.EthTrafficFilter) {
 		return true
 	}
 
@@ -214,19 +214,19 @@ func (o ServiceExperienceInfoPerFlow) MarshalJSON() ([]byte, error) {
 
 func (o ServiceExperienceInfoPerFlow) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SvcExprc) {
+	if !isNil(o.SvcExprc) {
 		toSerialize["svcExprc"] = o.SvcExprc
 	}
-	if !IsNil(o.TimeIntev) {
+	if !isNil(o.TimeIntev) {
 		toSerialize["timeIntev"] = o.TimeIntev
 	}
-	if !IsNil(o.Dnai) {
+	if !isNil(o.Dnai) {
 		toSerialize["dnai"] = o.Dnai
 	}
-	if !IsNil(o.IpTrafficFilter) {
+	if !isNil(o.IpTrafficFilter) {
 		toSerialize["ipTrafficFilter"] = o.IpTrafficFilter
 	}
-	if !IsNil(o.EthTrafficFilter) {
+	if !isNil(o.EthTrafficFilter) {
 		toSerialize["ethTrafficFilter"] = o.EthTrafficFilter
 	}
 	return toSerialize, nil

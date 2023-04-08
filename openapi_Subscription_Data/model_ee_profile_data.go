@@ -53,7 +53,7 @@ func NewEeProfileDataWithDefaults() *EeProfileData {
 
 // GetRestrictedEventTypes returns the RestrictedEventTypes field value if set, zero value otherwise.
 func (o *EeProfileData) GetRestrictedEventTypes() []EventType {
-	if o == nil || IsNil(o.RestrictedEventTypes) {
+	if o == nil || isNil(o.RestrictedEventTypes) {
 		var ret []EventType
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *EeProfileData) GetRestrictedEventTypes() []EventType {
 // GetRestrictedEventTypesOk returns a tuple with the RestrictedEventTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeProfileData) GetRestrictedEventTypesOk() ([]EventType, bool) {
-	if o == nil || IsNil(o.RestrictedEventTypes) {
+	if o == nil || isNil(o.RestrictedEventTypes) {
 		return nil, false
 	}
 	return o.RestrictedEventTypes, true
@@ -71,7 +71,7 @@ func (o *EeProfileData) GetRestrictedEventTypesOk() ([]EventType, bool) {
 
 // HasRestrictedEventTypes returns a boolean if a field has been set.
 func (o *EeProfileData) HasRestrictedEventTypes() bool {
-	if o != nil && !IsNil(o.RestrictedEventTypes) {
+	if o != nil && !isNil(o.RestrictedEventTypes) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o *EeProfileData) SetRestrictedEventTypes(v []EventType) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *EeProfileData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *EeProfileData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeProfileData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -103,7 +103,7 @@ func (o *EeProfileData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *EeProfileData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *EeProfileData) SetSupportedFeatures(v string) {
 
 // GetAllowedMtcProvider returns the AllowedMtcProvider field value if set, zero value otherwise.
 func (o *EeProfileData) GetAllowedMtcProvider() map[string][]MtcProvider {
-	if o == nil || IsNil(o.AllowedMtcProvider) {
+	if o == nil || isNil(o.AllowedMtcProvider) {
 		var ret map[string][]MtcProvider
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *EeProfileData) GetAllowedMtcProvider() map[string][]MtcProvider {
 // GetAllowedMtcProviderOk returns a tuple with the AllowedMtcProvider field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeProfileData) GetAllowedMtcProviderOk() (*map[string][]MtcProvider, bool) {
-	if o == nil || IsNil(o.AllowedMtcProvider) {
+	if o == nil || isNil(o.AllowedMtcProvider) {
 		return nil, false
 	}
 	return o.AllowedMtcProvider, true
@@ -135,7 +135,7 @@ func (o *EeProfileData) GetAllowedMtcProviderOk() (*map[string][]MtcProvider, bo
 
 // HasAllowedMtcProvider returns a boolean if a field has been set.
 func (o *EeProfileData) HasAllowedMtcProvider() bool {
-	if o != nil && !IsNil(o.AllowedMtcProvider) {
+	if o != nil && !isNil(o.AllowedMtcProvider) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *EeProfileData) SetAllowedMtcProvider(v map[string][]MtcProvider) {
 
 // GetIwkEpcRestricted returns the IwkEpcRestricted field value if set, zero value otherwise.
 func (o *EeProfileData) GetIwkEpcRestricted() bool {
-	if o == nil || IsNil(o.IwkEpcRestricted) {
+	if o == nil || isNil(o.IwkEpcRestricted) {
 		var ret bool
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *EeProfileData) GetIwkEpcRestricted() bool {
 // GetIwkEpcRestrictedOk returns a tuple with the IwkEpcRestricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeProfileData) GetIwkEpcRestrictedOk() (*bool, bool) {
-	if o == nil || IsNil(o.IwkEpcRestricted) {
+	if o == nil || isNil(o.IwkEpcRestricted) {
 		return nil, false
 	}
 	return o.IwkEpcRestricted, true
@@ -167,7 +167,7 @@ func (o *EeProfileData) GetIwkEpcRestrictedOk() (*bool, bool) {
 
 // HasIwkEpcRestricted returns a boolean if a field has been set.
 func (o *EeProfileData) HasIwkEpcRestricted() bool {
-	if o != nil && !IsNil(o.IwkEpcRestricted) {
+	if o != nil && !isNil(o.IwkEpcRestricted) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *EeProfileData) SetIwkEpcRestricted(v bool) {
 
 // GetImsi returns the Imsi field value if set, zero value otherwise.
 func (o *EeProfileData) GetImsi() string {
-	if o == nil || IsNil(o.Imsi) {
+	if o == nil || isNil(o.Imsi) {
 		var ret string
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *EeProfileData) GetImsi() string {
 // GetImsiOk returns a tuple with the Imsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeProfileData) GetImsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Imsi) {
+	if o == nil || isNil(o.Imsi) {
 		return nil, false
 	}
 	return o.Imsi, true
@@ -199,7 +199,7 @@ func (o *EeProfileData) GetImsiOk() (*string, bool) {
 
 // HasImsi returns a boolean if a field has been set.
 func (o *EeProfileData) HasImsi() bool {
-	if o != nil && !IsNil(o.Imsi) {
+	if o != nil && !isNil(o.Imsi) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *EeProfileData) SetImsi(v string) {
 
 // GetHssGroupId returns the HssGroupId field value if set, zero value otherwise.
 func (o *EeProfileData) GetHssGroupId() string {
-	if o == nil || IsNil(o.HssGroupId) {
+	if o == nil || isNil(o.HssGroupId) {
 		var ret string
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *EeProfileData) GetHssGroupId() string {
 // GetHssGroupIdOk returns a tuple with the HssGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EeProfileData) GetHssGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.HssGroupId) {
+	if o == nil || isNil(o.HssGroupId) {
 		return nil, false
 	}
 	return o.HssGroupId, true
@@ -231,7 +231,7 @@ func (o *EeProfileData) GetHssGroupIdOk() (*string, bool) {
 
 // HasHssGroupId returns a boolean if a field has been set.
 func (o *EeProfileData) HasHssGroupId() bool {
-	if o != nil && !IsNil(o.HssGroupId) {
+	if o != nil && !isNil(o.HssGroupId) {
 		return true
 	}
 
@@ -253,22 +253,22 @@ func (o EeProfileData) MarshalJSON() ([]byte, error) {
 
 func (o EeProfileData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RestrictedEventTypes) {
+	if !isNil(o.RestrictedEventTypes) {
 		toSerialize["restrictedEventTypes"] = o.RestrictedEventTypes
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.AllowedMtcProvider) {
+	if !isNil(o.AllowedMtcProvider) {
 		toSerialize["allowedMtcProvider"] = o.AllowedMtcProvider
 	}
-	if !IsNil(o.IwkEpcRestricted) {
+	if !isNil(o.IwkEpcRestricted) {
 		toSerialize["iwkEpcRestricted"] = o.IwkEpcRestricted
 	}
-	if !IsNil(o.Imsi) {
+	if !isNil(o.Imsi) {
 		toSerialize["imsi"] = o.Imsi
 	}
-	if !IsNil(o.HssGroupId) {
+	if !isNil(o.HssGroupId) {
 		toSerialize["hssGroupId"] = o.HssGroupId
 	}
 	return toSerialize, nil

@@ -94,7 +94,7 @@ func (o *VariablePart) SetVariablePartValue(v []string) {
 
 // GetVariablePartOrder returns the VariablePartOrder field value if set, zero value otherwise.
 func (o *VariablePart) GetVariablePartOrder() int32 {
-	if o == nil || IsNil(o.VariablePartOrder) {
+	if o == nil || isNil(o.VariablePartOrder) {
 		var ret int32
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *VariablePart) GetVariablePartOrder() int32 {
 // GetVariablePartOrderOk returns a tuple with the VariablePartOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VariablePart) GetVariablePartOrderOk() (*int32, bool) {
-	if o == nil || IsNil(o.VariablePartOrder) {
+	if o == nil || isNil(o.VariablePartOrder) {
 		return nil, false
 	}
 	return o.VariablePartOrder, true
@@ -112,7 +112,7 @@ func (o *VariablePart) GetVariablePartOrderOk() (*int32, bool) {
 
 // HasVariablePartOrder returns a boolean if a field has been set.
 func (o *VariablePart) HasVariablePartOrder() bool {
-	if o != nil && !IsNil(o.VariablePartOrder) {
+	if o != nil && !isNil(o.VariablePartOrder) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o VariablePart) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["variablePartType"] = o.VariablePartType
 	toSerialize["variablePartValue"] = o.VariablePartValue
-	if !IsNil(o.VariablePartOrder) {
+	if !isNil(o.VariablePartOrder) {
 		toSerialize["variablePartOrder"] = o.VariablePartOrder
 	}
 	return toSerialize, nil

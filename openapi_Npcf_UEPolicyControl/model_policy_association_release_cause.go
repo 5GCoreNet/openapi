@@ -17,23 +17,37 @@ import (
 
 // PolicyAssociationReleaseCause Possible values are: - UNSPECIFIED: This value is used for unspecified reasons. - UE_SUBSCRIPTION: This value is used to indicate that the policy association needs to be   terminated because the subscription of UE has changed (e.g. was removed). - INSUFFICIENT_RES: This value is used to indicate that the server is overloaded and needs   to abort the policy association. 
 type PolicyAssociationReleaseCause struct {
-	string *string
+	PolicyAssociationReleaseCauseAnyOf *PolicyAssociationReleaseCauseAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PolicyAssociationReleaseCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PolicyAssociationReleaseCauseAnyOf
+	err = json.Unmarshal(data, &dst.PolicyAssociationReleaseCauseAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPolicyAssociationReleaseCauseAnyOf, _ := json.Marshal(dst.PolicyAssociationReleaseCauseAnyOf)
+		if string(jsonPolicyAssociationReleaseCauseAnyOf) == "{}" { // empty struct
+			dst.PolicyAssociationReleaseCauseAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PolicyAssociationReleaseCauseAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PolicyAssociationReleaseCauseAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PolicyAssociationReleaseCause)")
@@ -41,8 +55,12 @@ func (dst *PolicyAssociationReleaseCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PolicyAssociationReleaseCause) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PolicyAssociationReleaseCauseAnyOf != nil {
+		return json.Marshal(&src.PolicyAssociationReleaseCauseAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

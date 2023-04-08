@@ -46,7 +46,7 @@ func NewResourcesAllocationInfoWithDefaults() *ResourcesAllocationInfo {
 
 // GetMcResourcStatus returns the McResourcStatus field value if set, zero value otherwise.
 func (o *ResourcesAllocationInfo) GetMcResourcStatus() MediaComponentResourcesStatus {
-	if o == nil || IsNil(o.McResourcStatus) {
+	if o == nil || isNil(o.McResourcStatus) {
 		var ret MediaComponentResourcesStatus
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ResourcesAllocationInfo) GetMcResourcStatus() MediaComponentResourcesSt
 // GetMcResourcStatusOk returns a tuple with the McResourcStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcesAllocationInfo) GetMcResourcStatusOk() (*MediaComponentResourcesStatus, bool) {
-	if o == nil || IsNil(o.McResourcStatus) {
+	if o == nil || isNil(o.McResourcStatus) {
 		return nil, false
 	}
 	return o.McResourcStatus, true
@@ -64,7 +64,7 @@ func (o *ResourcesAllocationInfo) GetMcResourcStatusOk() (*MediaComponentResourc
 
 // HasMcResourcStatus returns a boolean if a field has been set.
 func (o *ResourcesAllocationInfo) HasMcResourcStatus() bool {
-	if o != nil && !IsNil(o.McResourcStatus) {
+	if o != nil && !isNil(o.McResourcStatus) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ResourcesAllocationInfo) SetMcResourcStatus(v MediaComponentResourcesSt
 
 // GetFlows returns the Flows field value if set, zero value otherwise.
 func (o *ResourcesAllocationInfo) GetFlows() []Flows {
-	if o == nil || IsNil(o.Flows) {
+	if o == nil || isNil(o.Flows) {
 		var ret []Flows
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ResourcesAllocationInfo) GetFlows() []Flows {
 // GetFlowsOk returns a tuple with the Flows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcesAllocationInfo) GetFlowsOk() ([]Flows, bool) {
-	if o == nil || IsNil(o.Flows) {
+	if o == nil || isNil(o.Flows) {
 		return nil, false
 	}
 	return o.Flows, true
@@ -96,7 +96,7 @@ func (o *ResourcesAllocationInfo) GetFlowsOk() ([]Flows, bool) {
 
 // HasFlows returns a boolean if a field has been set.
 func (o *ResourcesAllocationInfo) HasFlows() bool {
-	if o != nil && !IsNil(o.Flows) {
+	if o != nil && !isNil(o.Flows) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ResourcesAllocationInfo) SetFlows(v []Flows) {
 
 // GetAltSerReq returns the AltSerReq field value if set, zero value otherwise.
 func (o *ResourcesAllocationInfo) GetAltSerReq() string {
-	if o == nil || IsNil(o.AltSerReq) {
+	if o == nil || isNil(o.AltSerReq) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ResourcesAllocationInfo) GetAltSerReq() string {
 // GetAltSerReqOk returns a tuple with the AltSerReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcesAllocationInfo) GetAltSerReqOk() (*string, bool) {
-	if o == nil || IsNil(o.AltSerReq) {
+	if o == nil || isNil(o.AltSerReq) {
 		return nil, false
 	}
 	return o.AltSerReq, true
@@ -128,7 +128,7 @@ func (o *ResourcesAllocationInfo) GetAltSerReqOk() (*string, bool) {
 
 // HasAltSerReq returns a boolean if a field has been set.
 func (o *ResourcesAllocationInfo) HasAltSerReq() bool {
-	if o != nil && !IsNil(o.AltSerReq) {
+	if o != nil && !isNil(o.AltSerReq) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ResourcesAllocationInfo) SetAltSerReq(v string) {
 
 // GetAltSerReqNotSuppInd returns the AltSerReqNotSuppInd field value if set, zero value otherwise.
 func (o *ResourcesAllocationInfo) GetAltSerReqNotSuppInd() bool {
-	if o == nil || IsNil(o.AltSerReqNotSuppInd) {
+	if o == nil || isNil(o.AltSerReqNotSuppInd) {
 		var ret bool
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ResourcesAllocationInfo) GetAltSerReqNotSuppInd() bool {
 // GetAltSerReqNotSuppIndOk returns a tuple with the AltSerReqNotSuppInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ResourcesAllocationInfo) GetAltSerReqNotSuppIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AltSerReqNotSuppInd) {
+	if o == nil || isNil(o.AltSerReqNotSuppInd) {
 		return nil, false
 	}
 	return o.AltSerReqNotSuppInd, true
@@ -160,7 +160,7 @@ func (o *ResourcesAllocationInfo) GetAltSerReqNotSuppIndOk() (*bool, bool) {
 
 // HasAltSerReqNotSuppInd returns a boolean if a field has been set.
 func (o *ResourcesAllocationInfo) HasAltSerReqNotSuppInd() bool {
-	if o != nil && !IsNil(o.AltSerReqNotSuppInd) {
+	if o != nil && !isNil(o.AltSerReqNotSuppInd) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o ResourcesAllocationInfo) MarshalJSON() ([]byte, error) {
 
 func (o ResourcesAllocationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.McResourcStatus) {
+	if !isNil(o.McResourcStatus) {
 		toSerialize["mcResourcStatus"] = o.McResourcStatus
 	}
-	if !IsNil(o.Flows) {
+	if !isNil(o.Flows) {
 		toSerialize["flows"] = o.Flows
 	}
-	if !IsNil(o.AltSerReq) {
+	if !isNil(o.AltSerReq) {
 		toSerialize["altSerReq"] = o.AltSerReq
 	}
-	if !IsNil(o.AltSerReqNotSuppInd) {
+	if !isNil(o.AltSerReqNotSuppInd) {
 		toSerialize["altSerReqNotSuppInd"] = o.AltSerReqNotSuppInd
 	}
 	return toSerialize, nil

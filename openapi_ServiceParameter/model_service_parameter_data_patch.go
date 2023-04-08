@@ -57,7 +57,7 @@ func NewServiceParameterDataPatchWithDefaults() *ServiceParameterDataPatch {
 
 // GetParamOverPc5 returns the ParamOverPc5 field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceParameterDataPatch) GetParamOverPc5() string {
-	if o == nil || IsNil(o.ParamOverPc5.Get()) {
+	if o == nil || isNil(o.ParamOverPc5.Get()) {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *ServiceParameterDataPatch) UnsetParamOverPc5() {
 
 // GetParamOverUu returns the ParamOverUu field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceParameterDataPatch) GetParamOverUu() string {
-	if o == nil || IsNil(o.ParamOverUu.Get()) {
+	if o == nil || isNil(o.ParamOverUu.Get()) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *ServiceParameterDataPatch) UnsetParamOverUu() {
 
 // GetParamForProSeDd returns the ParamForProSeDd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceParameterDataPatch) GetParamForProSeDd() string {
-	if o == nil || IsNil(o.ParamForProSeDd.Get()) {
+	if o == nil || isNil(o.ParamForProSeDd.Get()) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ServiceParameterDataPatch) UnsetParamForProSeDd() {
 
 // GetParamForProSeDc returns the ParamForProSeDc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceParameterDataPatch) GetParamForProSeDc() string {
-	if o == nil || IsNil(o.ParamForProSeDc.Get()) {
+	if o == nil || isNil(o.ParamForProSeDc.Get()) {
 		var ret string
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *ServiceParameterDataPatch) UnsetParamForProSeDc() {
 
 // GetParamForProSeU2NRelUe returns the ParamForProSeU2NRelUe field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceParameterDataPatch) GetParamForProSeU2NRelUe() string {
-	if o == nil || IsNil(o.ParamForProSeU2NRelUe.Get()) {
+	if o == nil || isNil(o.ParamForProSeU2NRelUe.Get()) {
 		var ret string
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *ServiceParameterDataPatch) UnsetParamForProSeU2NRelUe() {
 
 // GetParamForProSeRemUe returns the ParamForProSeRemUe field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceParameterDataPatch) GetParamForProSeRemUe() string {
-	if o == nil || IsNil(o.ParamForProSeRemUe.Get()) {
+	if o == nil || isNil(o.ParamForProSeRemUe.Get()) {
 		var ret string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *ServiceParameterDataPatch) UnsetParamForProSeRemUe() {
 
 // GetUrspGuidance returns the UrspGuidance field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetUrspGuidance() []UrspRuleRequest {
-	if o == nil || IsNil(o.UrspGuidance) {
+	if o == nil || isNil(o.UrspGuidance) {
 		var ret []UrspRuleRequest
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *ServiceParameterDataPatch) GetUrspGuidance() []UrspRuleRequest {
 // GetUrspGuidanceOk returns a tuple with the UrspGuidance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetUrspGuidanceOk() ([]UrspRuleRequest, bool) {
-	if o == nil || IsNil(o.UrspGuidance) {
+	if o == nil || isNil(o.UrspGuidance) {
 		return nil, false
 	}
 	return o.UrspGuidance, true
@@ -327,7 +327,7 @@ func (o *ServiceParameterDataPatch) GetUrspGuidanceOk() ([]UrspRuleRequest, bool
 
 // HasUrspGuidance returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasUrspGuidance() bool {
-	if o != nil && !IsNil(o.UrspGuidance) {
+	if o != nil && !isNil(o.UrspGuidance) {
 		return true
 	}
 
@@ -352,7 +352,7 @@ func (o *ServiceParameterDataPatch) GetSubNotifEvents() []Event {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceParameterDataPatch) GetSubNotifEventsOk() ([]Event, bool) {
-	if o == nil || IsNil(o.SubNotifEvents) {
+	if o == nil || isNil(o.SubNotifEvents) {
 		return nil, false
 	}
 	return o.SubNotifEvents, true
@@ -360,7 +360,7 @@ func (o *ServiceParameterDataPatch) GetSubNotifEventsOk() ([]Event, bool) {
 
 // HasSubNotifEvents returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasSubNotifEvents() bool {
-	if o != nil && IsNil(o.SubNotifEvents) {
+	if o != nil && isNil(o.SubNotifEvents) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *ServiceParameterDataPatch) SetSubNotifEvents(v []Event) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *ServiceParameterDataPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *ServiceParameterDataPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceParameterDataPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -392,7 +392,7 @@ func (o *ServiceParameterDataPatch) GetNotificationDestinationOk() (*string, boo
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *ServiceParameterDataPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -432,13 +432,13 @@ func (o ServiceParameterDataPatch) ToMap() (map[string]interface{}, error) {
 	if o.ParamForProSeRemUe.IsSet() {
 		toSerialize["paramForProSeRemUe"] = o.ParamForProSeRemUe.Get()
 	}
-	if !IsNil(o.UrspGuidance) {
+	if !isNil(o.UrspGuidance) {
 		toSerialize["urspGuidance"] = o.UrspGuidance
 	}
 	if o.SubNotifEvents != nil {
 		toSerialize["subNotifEvents"] = o.SubNotifEvents
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

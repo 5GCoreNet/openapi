@@ -42,7 +42,7 @@ func NewStreamInfoWithReportersTypeWithDefaults() *StreamInfoWithReportersType {
 
 // GetStreamInfo returns the StreamInfo field value if set, zero value otherwise.
 func (o *StreamInfoWithReportersType) GetStreamInfo() StreamInfoType {
-	if o == nil || IsNil(o.StreamInfo) {
+	if o == nil || isNil(o.StreamInfo) {
 		var ret StreamInfoType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *StreamInfoWithReportersType) GetStreamInfo() StreamInfoType {
 // GetStreamInfoOk returns a tuple with the StreamInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StreamInfoWithReportersType) GetStreamInfoOk() (*StreamInfoType, bool) {
-	if o == nil || IsNil(o.StreamInfo) {
+	if o == nil || isNil(o.StreamInfo) {
 		return nil, false
 	}
 	return o.StreamInfo, true
@@ -60,7 +60,7 @@ func (o *StreamInfoWithReportersType) GetStreamInfoOk() (*StreamInfoType, bool) 
 
 // HasStreamInfo returns a boolean if a field has been set.
 func (o *StreamInfoWithReportersType) HasStreamInfo() bool {
-	if o != nil && !IsNil(o.StreamInfo) {
+	if o != nil && !isNil(o.StreamInfo) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *StreamInfoWithReportersType) SetStreamInfo(v StreamInfoType) {
 
 // GetReporters returns the Reporters field value if set, zero value otherwise.
 func (o *StreamInfoWithReportersType) GetReporters() []ProducerIdType {
-	if o == nil || IsNil(o.Reporters) {
+	if o == nil || isNil(o.Reporters) {
 		var ret []ProducerIdType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *StreamInfoWithReportersType) GetReporters() []ProducerIdType {
 // GetReportersOk returns a tuple with the Reporters field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StreamInfoWithReportersType) GetReportersOk() ([]ProducerIdType, bool) {
-	if o == nil || IsNil(o.Reporters) {
+	if o == nil || isNil(o.Reporters) {
 		return nil, false
 	}
 	return o.Reporters, true
@@ -92,7 +92,7 @@ func (o *StreamInfoWithReportersType) GetReportersOk() ([]ProducerIdType, bool) 
 
 // HasReporters returns a boolean if a field has been set.
 func (o *StreamInfoWithReportersType) HasReporters() bool {
-	if o != nil && !IsNil(o.Reporters) {
+	if o != nil && !isNil(o.Reporters) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o StreamInfoWithReportersType) MarshalJSON() ([]byte, error) {
 
 func (o StreamInfoWithReportersType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StreamInfo) {
+	if !isNil(o.StreamInfo) {
 		toSerialize["streamInfo"] = o.StreamInfo
 	}
-	if !IsNil(o.Reporters) {
+	if !isNil(o.Reporters) {
 		toSerialize["reporters"] = o.Reporters
 	}
 	return toSerialize, nil

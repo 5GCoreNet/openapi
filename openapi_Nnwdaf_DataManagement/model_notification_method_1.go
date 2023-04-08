@@ -17,23 +17,37 @@ import (
 
 // NotificationMethod1 Possible values are: - PERIODIC - ONE_TIME - ON_EVENT_DETECTION 
 type NotificationMethod1 struct {
-	string *string
+	NotificationMethod1AnyOf *NotificationMethod1AnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NotificationMethod1) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NotificationMethod1AnyOf
+	err = json.Unmarshal(data, &dst.NotificationMethod1AnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNotificationMethod1AnyOf, _ := json.Marshal(dst.NotificationMethod1AnyOf)
+		if string(jsonNotificationMethod1AnyOf) == "{}" { // empty struct
+			dst.NotificationMethod1AnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NotificationMethod1AnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NotificationMethod1AnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NotificationMethod1)")
@@ -41,8 +55,12 @@ func (dst *NotificationMethod1) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NotificationMethod1) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NotificationMethod1AnyOf != nil {
+		return json.Marshal(&src.NotificationMethod1AnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -46,7 +46,7 @@ func NewMDAOutputIEFilterWithDefaults() *MDAOutputIEFilter {
 
 // GetMDAOutputIEName returns the MDAOutputIEName field value if set, zero value otherwise.
 func (o *MDAOutputIEFilter) GetMDAOutputIEName() string {
-	if o == nil || IsNil(o.MDAOutputIEName) {
+	if o == nil || isNil(o.MDAOutputIEName) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MDAOutputIEFilter) GetMDAOutputIEName() string {
 // GetMDAOutputIENameOk returns a tuple with the MDAOutputIEName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputIEFilter) GetMDAOutputIENameOk() (*string, bool) {
-	if o == nil || IsNil(o.MDAOutputIEName) {
+	if o == nil || isNil(o.MDAOutputIEName) {
 		return nil, false
 	}
 	return o.MDAOutputIEName, true
@@ -64,7 +64,7 @@ func (o *MDAOutputIEFilter) GetMDAOutputIENameOk() (*string, bool) {
 
 // HasMDAOutputIEName returns a boolean if a field has been set.
 func (o *MDAOutputIEFilter) HasMDAOutputIEName() bool {
-	if o != nil && !IsNil(o.MDAOutputIEName) {
+	if o != nil && !isNil(o.MDAOutputIEName) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MDAOutputIEFilter) SetMDAOutputIEName(v string) {
 
 // GetFilterValue returns the FilterValue field value if set, zero value otherwise.
 func (o *MDAOutputIEFilter) GetFilterValue() string {
-	if o == nil || IsNil(o.FilterValue) {
+	if o == nil || isNil(o.FilterValue) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MDAOutputIEFilter) GetFilterValue() string {
 // GetFilterValueOk returns a tuple with the FilterValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputIEFilter) GetFilterValueOk() (*string, bool) {
-	if o == nil || IsNil(o.FilterValue) {
+	if o == nil || isNil(o.FilterValue) {
 		return nil, false
 	}
 	return o.FilterValue, true
@@ -96,7 +96,7 @@ func (o *MDAOutputIEFilter) GetFilterValueOk() (*string, bool) {
 
 // HasFilterValue returns a boolean if a field has been set.
 func (o *MDAOutputIEFilter) HasFilterValue() bool {
-	if o != nil && !IsNil(o.FilterValue) {
+	if o != nil && !isNil(o.FilterValue) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MDAOutputIEFilter) SetFilterValue(v string) {
 
 // GetThreshold returns the Threshold field value if set, zero value otherwise.
 func (o *MDAOutputIEFilter) GetThreshold() ThresholdInfo1 {
-	if o == nil || IsNil(o.Threshold) {
+	if o == nil || isNil(o.Threshold) {
 		var ret ThresholdInfo1
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MDAOutputIEFilter) GetThreshold() ThresholdInfo1 {
 // GetThresholdOk returns a tuple with the Threshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputIEFilter) GetThresholdOk() (*ThresholdInfo1, bool) {
-	if o == nil || IsNil(o.Threshold) {
+	if o == nil || isNil(o.Threshold) {
 		return nil, false
 	}
 	return o.Threshold, true
@@ -128,7 +128,7 @@ func (o *MDAOutputIEFilter) GetThresholdOk() (*ThresholdInfo1, bool) {
 
 // HasThreshold returns a boolean if a field has been set.
 func (o *MDAOutputIEFilter) HasThreshold() bool {
-	if o != nil && !IsNil(o.Threshold) {
+	if o != nil && !isNil(o.Threshold) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MDAOutputIEFilter) SetThreshold(v ThresholdInfo1) {
 
 // GetAnalyticsPeriod returns the AnalyticsPeriod field value if set, zero value otherwise.
 func (o *MDAOutputIEFilter) GetAnalyticsPeriod() AnalyticsSchedule {
-	if o == nil || IsNil(o.AnalyticsPeriod) {
+	if o == nil || isNil(o.AnalyticsPeriod) {
 		var ret AnalyticsSchedule
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MDAOutputIEFilter) GetAnalyticsPeriod() AnalyticsSchedule {
 // GetAnalyticsPeriodOk returns a tuple with the AnalyticsPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputIEFilter) GetAnalyticsPeriodOk() (*AnalyticsSchedule, bool) {
-	if o == nil || IsNil(o.AnalyticsPeriod) {
+	if o == nil || isNil(o.AnalyticsPeriod) {
 		return nil, false
 	}
 	return o.AnalyticsPeriod, true
@@ -160,7 +160,7 @@ func (o *MDAOutputIEFilter) GetAnalyticsPeriodOk() (*AnalyticsSchedule, bool) {
 
 // HasAnalyticsPeriod returns a boolean if a field has been set.
 func (o *MDAOutputIEFilter) HasAnalyticsPeriod() bool {
-	if o != nil && !IsNil(o.AnalyticsPeriod) {
+	if o != nil && !isNil(o.AnalyticsPeriod) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *MDAOutputIEFilter) SetAnalyticsPeriod(v AnalyticsSchedule) {
 
 // GetTimeOut returns the TimeOut field value if set, zero value otherwise.
 func (o *MDAOutputIEFilter) GetTimeOut() time.Time {
-	if o == nil || IsNil(o.TimeOut) {
+	if o == nil || isNil(o.TimeOut) {
 		var ret time.Time
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MDAOutputIEFilter) GetTimeOut() time.Time {
 // GetTimeOutOk returns a tuple with the TimeOut field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputIEFilter) GetTimeOutOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeOut) {
+	if o == nil || isNil(o.TimeOut) {
 		return nil, false
 	}
 	return o.TimeOut, true
@@ -192,7 +192,7 @@ func (o *MDAOutputIEFilter) GetTimeOutOk() (*time.Time, bool) {
 
 // HasTimeOut returns a boolean if a field has been set.
 func (o *MDAOutputIEFilter) HasTimeOut() bool {
-	if o != nil && !IsNil(o.TimeOut) {
+	if o != nil && !isNil(o.TimeOut) {
 		return true
 	}
 
@@ -214,19 +214,19 @@ func (o MDAOutputIEFilter) MarshalJSON() ([]byte, error) {
 
 func (o MDAOutputIEFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MDAOutputIEName) {
+	if !isNil(o.MDAOutputIEName) {
 		toSerialize["mDAOutputIEName"] = o.MDAOutputIEName
 	}
-	if !IsNil(o.FilterValue) {
+	if !isNil(o.FilterValue) {
 		toSerialize["filterValue"] = o.FilterValue
 	}
-	if !IsNil(o.Threshold) {
+	if !isNil(o.Threshold) {
 		toSerialize["threshold"] = o.Threshold
 	}
-	if !IsNil(o.AnalyticsPeriod) {
+	if !isNil(o.AnalyticsPeriod) {
 		toSerialize["analyticsPeriod"] = o.AnalyticsPeriod
 	}
-	if !IsNil(o.TimeOut) {
+	if !isNil(o.TimeOut) {
 		toSerialize["timeOut"] = o.TimeOut
 	}
 	return toSerialize, nil

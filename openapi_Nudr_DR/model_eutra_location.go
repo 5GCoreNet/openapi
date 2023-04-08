@@ -90,7 +90,7 @@ func (o *EutraLocation) SetTai(v Tai1) {
 
 // GetIgnoreTai returns the IgnoreTai field value if set, zero value otherwise.
 func (o *EutraLocation) GetIgnoreTai() bool {
-	if o == nil || IsNil(o.IgnoreTai) {
+	if o == nil || isNil(o.IgnoreTai) {
 		var ret bool
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *EutraLocation) GetIgnoreTai() bool {
 // GetIgnoreTaiOk returns a tuple with the IgnoreTai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetIgnoreTaiOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreTai) {
+	if o == nil || isNil(o.IgnoreTai) {
 		return nil, false
 	}
 	return o.IgnoreTai, true
@@ -108,7 +108,7 @@ func (o *EutraLocation) GetIgnoreTaiOk() (*bool, bool) {
 
 // HasIgnoreTai returns a boolean if a field has been set.
 func (o *EutraLocation) HasIgnoreTai() bool {
-	if o != nil && !IsNil(o.IgnoreTai) {
+	if o != nil && !isNil(o.IgnoreTai) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *EutraLocation) SetEcgi(v Ecgi1) {
 
 // GetIgnoreEcgi returns the IgnoreEcgi field value if set, zero value otherwise.
 func (o *EutraLocation) GetIgnoreEcgi() bool {
-	if o == nil || IsNil(o.IgnoreEcgi) {
+	if o == nil || isNil(o.IgnoreEcgi) {
 		var ret bool
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *EutraLocation) GetIgnoreEcgi() bool {
 // GetIgnoreEcgiOk returns a tuple with the IgnoreEcgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetIgnoreEcgiOk() (*bool, bool) {
-	if o == nil || IsNil(o.IgnoreEcgi) {
+	if o == nil || isNil(o.IgnoreEcgi) {
 		return nil, false
 	}
 	return o.IgnoreEcgi, true
@@ -164,7 +164,7 @@ func (o *EutraLocation) GetIgnoreEcgiOk() (*bool, bool) {
 
 // HasIgnoreEcgi returns a boolean if a field has been set.
 func (o *EutraLocation) HasIgnoreEcgi() bool {
-	if o != nil && !IsNil(o.IgnoreEcgi) {
+	if o != nil && !isNil(o.IgnoreEcgi) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *EutraLocation) SetIgnoreEcgi(v bool) {
 
 // GetAgeOfLocationInformation returns the AgeOfLocationInformation field value if set, zero value otherwise.
 func (o *EutraLocation) GetAgeOfLocationInformation() int32 {
-	if o == nil || IsNil(o.AgeOfLocationInformation) {
+	if o == nil || isNil(o.AgeOfLocationInformation) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *EutraLocation) GetAgeOfLocationInformation() int32 {
 // GetAgeOfLocationInformationOk returns a tuple with the AgeOfLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetAgeOfLocationInformationOk() (*int32, bool) {
-	if o == nil || IsNil(o.AgeOfLocationInformation) {
+	if o == nil || isNil(o.AgeOfLocationInformation) {
 		return nil, false
 	}
 	return o.AgeOfLocationInformation, true
@@ -196,7 +196,7 @@ func (o *EutraLocation) GetAgeOfLocationInformationOk() (*int32, bool) {
 
 // HasAgeOfLocationInformation returns a boolean if a field has been set.
 func (o *EutraLocation) HasAgeOfLocationInformation() bool {
-	if o != nil && !IsNil(o.AgeOfLocationInformation) {
+	if o != nil && !isNil(o.AgeOfLocationInformation) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *EutraLocation) SetAgeOfLocationInformation(v int32) {
 
 // GetUeLocationTimestamp returns the UeLocationTimestamp field value if set, zero value otherwise.
 func (o *EutraLocation) GetUeLocationTimestamp() time.Time {
-	if o == nil || IsNil(o.UeLocationTimestamp) {
+	if o == nil || isNil(o.UeLocationTimestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *EutraLocation) GetUeLocationTimestamp() time.Time {
 // GetUeLocationTimestampOk returns a tuple with the UeLocationTimestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetUeLocationTimestampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.UeLocationTimestamp) {
+	if o == nil || isNil(o.UeLocationTimestamp) {
 		return nil, false
 	}
 	return o.UeLocationTimestamp, true
@@ -228,7 +228,7 @@ func (o *EutraLocation) GetUeLocationTimestampOk() (*time.Time, bool) {
 
 // HasUeLocationTimestamp returns a boolean if a field has been set.
 func (o *EutraLocation) HasUeLocationTimestamp() bool {
-	if o != nil && !IsNil(o.UeLocationTimestamp) {
+	if o != nil && !isNil(o.UeLocationTimestamp) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *EutraLocation) SetUeLocationTimestamp(v time.Time) {
 
 // GetGeographicalInformation returns the GeographicalInformation field value if set, zero value otherwise.
 func (o *EutraLocation) GetGeographicalInformation() string {
-	if o == nil || IsNil(o.GeographicalInformation) {
+	if o == nil || isNil(o.GeographicalInformation) {
 		var ret string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *EutraLocation) GetGeographicalInformation() string {
 // GetGeographicalInformationOk returns a tuple with the GeographicalInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetGeographicalInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.GeographicalInformation) {
+	if o == nil || isNil(o.GeographicalInformation) {
 		return nil, false
 	}
 	return o.GeographicalInformation, true
@@ -260,7 +260,7 @@ func (o *EutraLocation) GetGeographicalInformationOk() (*string, bool) {
 
 // HasGeographicalInformation returns a boolean if a field has been set.
 func (o *EutraLocation) HasGeographicalInformation() bool {
-	if o != nil && !IsNil(o.GeographicalInformation) {
+	if o != nil && !isNil(o.GeographicalInformation) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *EutraLocation) SetGeographicalInformation(v string) {
 
 // GetGeodeticInformation returns the GeodeticInformation field value if set, zero value otherwise.
 func (o *EutraLocation) GetGeodeticInformation() string {
-	if o == nil || IsNil(o.GeodeticInformation) {
+	if o == nil || isNil(o.GeodeticInformation) {
 		var ret string
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *EutraLocation) GetGeodeticInformation() string {
 // GetGeodeticInformationOk returns a tuple with the GeodeticInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetGeodeticInformationOk() (*string, bool) {
-	if o == nil || IsNil(o.GeodeticInformation) {
+	if o == nil || isNil(o.GeodeticInformation) {
 		return nil, false
 	}
 	return o.GeodeticInformation, true
@@ -292,7 +292,7 @@ func (o *EutraLocation) GetGeodeticInformationOk() (*string, bool) {
 
 // HasGeodeticInformation returns a boolean if a field has been set.
 func (o *EutraLocation) HasGeodeticInformation() bool {
-	if o != nil && !IsNil(o.GeodeticInformation) {
+	if o != nil && !isNil(o.GeodeticInformation) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *EutraLocation) SetGeodeticInformation(v string) {
 
 // GetGlobalNgenbId returns the GlobalNgenbId field value if set, zero value otherwise.
 func (o *EutraLocation) GetGlobalNgenbId() GlobalRanNodeId1 {
-	if o == nil || IsNil(o.GlobalNgenbId) {
+	if o == nil || isNil(o.GlobalNgenbId) {
 		var ret GlobalRanNodeId1
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *EutraLocation) GetGlobalNgenbId() GlobalRanNodeId1 {
 // GetGlobalNgenbIdOk returns a tuple with the GlobalNgenbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetGlobalNgenbIdOk() (*GlobalRanNodeId1, bool) {
-	if o == nil || IsNil(o.GlobalNgenbId) {
+	if o == nil || isNil(o.GlobalNgenbId) {
 		return nil, false
 	}
 	return o.GlobalNgenbId, true
@@ -324,7 +324,7 @@ func (o *EutraLocation) GetGlobalNgenbIdOk() (*GlobalRanNodeId1, bool) {
 
 // HasGlobalNgenbId returns a boolean if a field has been set.
 func (o *EutraLocation) HasGlobalNgenbId() bool {
-	if o != nil && !IsNil(o.GlobalNgenbId) {
+	if o != nil && !isNil(o.GlobalNgenbId) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *EutraLocation) SetGlobalNgenbId(v GlobalRanNodeId1) {
 
 // GetGlobalENbId returns the GlobalENbId field value if set, zero value otherwise.
 func (o *EutraLocation) GetGlobalENbId() GlobalRanNodeId1 {
-	if o == nil || IsNil(o.GlobalENbId) {
+	if o == nil || isNil(o.GlobalENbId) {
 		var ret GlobalRanNodeId1
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *EutraLocation) GetGlobalENbId() GlobalRanNodeId1 {
 // GetGlobalENbIdOk returns a tuple with the GlobalENbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EutraLocation) GetGlobalENbIdOk() (*GlobalRanNodeId1, bool) {
-	if o == nil || IsNil(o.GlobalENbId) {
+	if o == nil || isNil(o.GlobalENbId) {
 		return nil, false
 	}
 	return o.GlobalENbId, true
@@ -356,7 +356,7 @@ func (o *EutraLocation) GetGlobalENbIdOk() (*GlobalRanNodeId1, bool) {
 
 // HasGlobalENbId returns a boolean if a field has been set.
 func (o *EutraLocation) HasGlobalENbId() bool {
-	if o != nil && !IsNil(o.GlobalENbId) {
+	if o != nil && !isNil(o.GlobalENbId) {
 		return true
 	}
 
@@ -379,29 +379,29 @@ func (o EutraLocation) MarshalJSON() ([]byte, error) {
 func (o EutraLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tai"] = o.Tai
-	if !IsNil(o.IgnoreTai) {
+	if !isNil(o.IgnoreTai) {
 		toSerialize["ignoreTai"] = o.IgnoreTai
 	}
 	toSerialize["ecgi"] = o.Ecgi
-	if !IsNil(o.IgnoreEcgi) {
+	if !isNil(o.IgnoreEcgi) {
 		toSerialize["ignoreEcgi"] = o.IgnoreEcgi
 	}
-	if !IsNil(o.AgeOfLocationInformation) {
+	if !isNil(o.AgeOfLocationInformation) {
 		toSerialize["ageOfLocationInformation"] = o.AgeOfLocationInformation
 	}
-	if !IsNil(o.UeLocationTimestamp) {
+	if !isNil(o.UeLocationTimestamp) {
 		toSerialize["ueLocationTimestamp"] = o.UeLocationTimestamp
 	}
-	if !IsNil(o.GeographicalInformation) {
+	if !isNil(o.GeographicalInformation) {
 		toSerialize["geographicalInformation"] = o.GeographicalInformation
 	}
-	if !IsNil(o.GeodeticInformation) {
+	if !isNil(o.GeodeticInformation) {
 		toSerialize["geodeticInformation"] = o.GeodeticInformation
 	}
-	if !IsNil(o.GlobalNgenbId) {
+	if !isNil(o.GlobalNgenbId) {
 		toSerialize["globalNgenbId"] = o.GlobalNgenbId
 	}
-	if !IsNil(o.GlobalENbId) {
+	if !isNil(o.GlobalENbId) {
 		toSerialize["globalENbId"] = o.GlobalENbId
 	}
 	return toSerialize, nil

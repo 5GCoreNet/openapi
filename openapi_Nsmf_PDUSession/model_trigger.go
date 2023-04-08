@@ -105,7 +105,7 @@ func (o *Trigger) SetTriggerCategory(v TriggerCategory) {
 
 // GetTimeLimit returns the TimeLimit field value if set, zero value otherwise.
 func (o *Trigger) GetTimeLimit() int32 {
-	if o == nil || IsNil(o.TimeLimit) {
+	if o == nil || isNil(o.TimeLimit) {
 		var ret int32
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *Trigger) GetTimeLimit() int32 {
 // GetTimeLimitOk returns a tuple with the TimeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Trigger) GetTimeLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.TimeLimit) {
+	if o == nil || isNil(o.TimeLimit) {
 		return nil, false
 	}
 	return o.TimeLimit, true
@@ -123,7 +123,7 @@ func (o *Trigger) GetTimeLimitOk() (*int32, bool) {
 
 // HasTimeLimit returns a boolean if a field has been set.
 func (o *Trigger) HasTimeLimit() bool {
-	if o != nil && !IsNil(o.TimeLimit) {
+	if o != nil && !isNil(o.TimeLimit) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *Trigger) SetTimeLimit(v int32) {
 
 // GetVolumeLimit returns the VolumeLimit field value if set, zero value otherwise.
 func (o *Trigger) GetVolumeLimit() int32 {
-	if o == nil || IsNil(o.VolumeLimit) {
+	if o == nil || isNil(o.VolumeLimit) {
 		var ret int32
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *Trigger) GetVolumeLimit() int32 {
 // GetVolumeLimitOk returns a tuple with the VolumeLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Trigger) GetVolumeLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.VolumeLimit) {
+	if o == nil || isNil(o.VolumeLimit) {
 		return nil, false
 	}
 	return o.VolumeLimit, true
@@ -155,7 +155,7 @@ func (o *Trigger) GetVolumeLimitOk() (*int32, bool) {
 
 // HasVolumeLimit returns a boolean if a field has been set.
 func (o *Trigger) HasVolumeLimit() bool {
-	if o != nil && !IsNil(o.VolumeLimit) {
+	if o != nil && !isNil(o.VolumeLimit) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *Trigger) SetVolumeLimit(v int32) {
 
 // GetVolumeLimit64 returns the VolumeLimit64 field value if set, zero value otherwise.
 func (o *Trigger) GetVolumeLimit64() int32 {
-	if o == nil || IsNil(o.VolumeLimit64) {
+	if o == nil || isNil(o.VolumeLimit64) {
 		var ret int32
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *Trigger) GetVolumeLimit64() int32 {
 // GetVolumeLimit64Ok returns a tuple with the VolumeLimit64 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Trigger) GetVolumeLimit64Ok() (*int32, bool) {
-	if o == nil || IsNil(o.VolumeLimit64) {
+	if o == nil || isNil(o.VolumeLimit64) {
 		return nil, false
 	}
 	return o.VolumeLimit64, true
@@ -187,7 +187,7 @@ func (o *Trigger) GetVolumeLimit64Ok() (*int32, bool) {
 
 // HasVolumeLimit64 returns a boolean if a field has been set.
 func (o *Trigger) HasVolumeLimit64() bool {
-	if o != nil && !IsNil(o.VolumeLimit64) {
+	if o != nil && !isNil(o.VolumeLimit64) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *Trigger) SetVolumeLimit64(v int32) {
 
 // GetEventLimit returns the EventLimit field value if set, zero value otherwise.
 func (o *Trigger) GetEventLimit() int32 {
-	if o == nil || IsNil(o.EventLimit) {
+	if o == nil || isNil(o.EventLimit) {
 		var ret int32
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *Trigger) GetEventLimit() int32 {
 // GetEventLimitOk returns a tuple with the EventLimit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Trigger) GetEventLimitOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventLimit) {
+	if o == nil || isNil(o.EventLimit) {
 		return nil, false
 	}
 	return o.EventLimit, true
@@ -219,7 +219,7 @@ func (o *Trigger) GetEventLimitOk() (*int32, bool) {
 
 // HasEventLimit returns a boolean if a field has been set.
 func (o *Trigger) HasEventLimit() bool {
-	if o != nil && !IsNil(o.EventLimit) {
+	if o != nil && !isNil(o.EventLimit) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *Trigger) SetEventLimit(v int32) {
 
 // GetMaxNumberOfccc returns the MaxNumberOfccc field value if set, zero value otherwise.
 func (o *Trigger) GetMaxNumberOfccc() int32 {
-	if o == nil || IsNil(o.MaxNumberOfccc) {
+	if o == nil || isNil(o.MaxNumberOfccc) {
 		var ret int32
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *Trigger) GetMaxNumberOfccc() int32 {
 // GetMaxNumberOfcccOk returns a tuple with the MaxNumberOfccc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Trigger) GetMaxNumberOfcccOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumberOfccc) {
+	if o == nil || isNil(o.MaxNumberOfccc) {
 		return nil, false
 	}
 	return o.MaxNumberOfccc, true
@@ -251,7 +251,7 @@ func (o *Trigger) GetMaxNumberOfcccOk() (*int32, bool) {
 
 // HasMaxNumberOfccc returns a boolean if a field has been set.
 func (o *Trigger) HasMaxNumberOfccc() bool {
-	if o != nil && !IsNil(o.MaxNumberOfccc) {
+	if o != nil && !isNil(o.MaxNumberOfccc) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *Trigger) SetMaxNumberOfccc(v int32) {
 
 // GetTariffTimeChange returns the TariffTimeChange field value if set, zero value otherwise.
 func (o *Trigger) GetTariffTimeChange() time.Time {
-	if o == nil || IsNil(o.TariffTimeChange) {
+	if o == nil || isNil(o.TariffTimeChange) {
 		var ret time.Time
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *Trigger) GetTariffTimeChange() time.Time {
 // GetTariffTimeChangeOk returns a tuple with the TariffTimeChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Trigger) GetTariffTimeChangeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TariffTimeChange) {
+	if o == nil || isNil(o.TariffTimeChange) {
 		return nil, false
 	}
 	return o.TariffTimeChange, true
@@ -283,7 +283,7 @@ func (o *Trigger) GetTariffTimeChangeOk() (*time.Time, bool) {
 
 // HasTariffTimeChange returns a boolean if a field has been set.
 func (o *Trigger) HasTariffTimeChange() bool {
-	if o != nil && !IsNil(o.TariffTimeChange) {
+	if o != nil && !isNil(o.TariffTimeChange) {
 		return true
 	}
 
@@ -307,22 +307,22 @@ func (o Trigger) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["triggerType"] = o.TriggerType
 	toSerialize["triggerCategory"] = o.TriggerCategory
-	if !IsNil(o.TimeLimit) {
+	if !isNil(o.TimeLimit) {
 		toSerialize["timeLimit"] = o.TimeLimit
 	}
-	if !IsNil(o.VolumeLimit) {
+	if !isNil(o.VolumeLimit) {
 		toSerialize["volumeLimit"] = o.VolumeLimit
 	}
-	if !IsNil(o.VolumeLimit64) {
+	if !isNil(o.VolumeLimit64) {
 		toSerialize["volumeLimit64"] = o.VolumeLimit64
 	}
-	if !IsNil(o.EventLimit) {
+	if !isNil(o.EventLimit) {
 		toSerialize["eventLimit"] = o.EventLimit
 	}
-	if !IsNil(o.MaxNumberOfccc) {
+	if !isNil(o.MaxNumberOfccc) {
 		toSerialize["maxNumberOfccc"] = o.MaxNumberOfccc
 	}
-	if !IsNil(o.TariffTimeChange) {
+	if !isNil(o.TariffTimeChange) {
 		toSerialize["tariffTimeChange"] = o.TariffTimeChange
 	}
 	return toSerialize, nil

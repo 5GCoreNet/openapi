@@ -18,7 +18,7 @@ import (
 // AccessTokenClaimsAud struct for AccessTokenClaimsAud
 type AccessTokenClaimsAud struct {
 	NFType *NFType
-	[]string *[]string
+	ArrayOfString *[]string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
@@ -38,16 +38,16 @@ func (dst *AccessTokenClaimsAud) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal JSON data into []string
-	err = json.Unmarshal(data, &dst.[]string);
+	err = json.Unmarshal(data, &dst.ArrayOfString);
 	if err == nil {
-		json[]string, _ := json.Marshal(dst.[]string)
-		if string(json[]string) == "{}" { // empty struct
-			dst.[]string = nil
+		jsonArrayOfString, _ := json.Marshal(dst.ArrayOfString)
+		if string(jsonArrayOfString) == "{}" { // empty struct
+			dst.ArrayOfString = nil
 		} else {
-			return nil // data stored in dst.[]string, return on the first match
+			return nil // data stored in dst.ArrayOfString, return on the first match
 		}
 	} else {
-		dst.[]string = nil
+		dst.ArrayOfString = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AccessTokenClaimsAud)")
@@ -59,8 +59,8 @@ func (src *AccessTokenClaimsAud) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&src.NFType)
 	}
 
-	if src.[]string != nil {
-		return json.Marshal(&src.[]string)
+	if src.ArrayOfString != nil {
+		return json.Marshal(&src.ArrayOfString)
 	}
 
 	return nil, nil // no data in anyOf schemas

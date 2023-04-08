@@ -45,7 +45,7 @@ func NewDMROFunctionSingleAllOfAttributesWithDefaults() *DMROFunctionSingleAllOf
 
 // GetDmroControl returns the DmroControl field value if set, zero value otherwise.
 func (o *DMROFunctionSingleAllOfAttributes) GetDmroControl() bool {
-	if o == nil || IsNil(o.DmroControl) {
+	if o == nil || isNil(o.DmroControl) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetDmroControl() bool {
 // GetDmroControlOk returns a tuple with the DmroControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DMROFunctionSingleAllOfAttributes) GetDmroControlOk() (*bool, bool) {
-	if o == nil || IsNil(o.DmroControl) {
+	if o == nil || isNil(o.DmroControl) {
 		return nil, false
 	}
 	return o.DmroControl, true
@@ -63,7 +63,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetDmroControlOk() (*bool, bool) {
 
 // HasDmroControl returns a boolean if a field has been set.
 func (o *DMROFunctionSingleAllOfAttributes) HasDmroControl() bool {
-	if o != nil && !IsNil(o.DmroControl) {
+	if o != nil && !isNil(o.DmroControl) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *DMROFunctionSingleAllOfAttributes) SetDmroControl(v bool) {
 
 // GetMaximumDeviationHoTriggerLow returns the MaximumDeviationHoTriggerLow field value if set, zero value otherwise.
 func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerLow() int32 {
-	if o == nil || IsNil(o.MaximumDeviationHoTriggerLow) {
+	if o == nil || isNil(o.MaximumDeviationHoTriggerLow) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerLow() in
 // GetMaximumDeviationHoTriggerLowOk returns a tuple with the MaximumDeviationHoTriggerLow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerLowOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumDeviationHoTriggerLow) {
+	if o == nil || isNil(o.MaximumDeviationHoTriggerLow) {
 		return nil, false
 	}
 	return o.MaximumDeviationHoTriggerLow, true
@@ -95,7 +95,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerLowOk() 
 
 // HasMaximumDeviationHoTriggerLow returns a boolean if a field has been set.
 func (o *DMROFunctionSingleAllOfAttributes) HasMaximumDeviationHoTriggerLow() bool {
-	if o != nil && !IsNil(o.MaximumDeviationHoTriggerLow) {
+	if o != nil && !isNil(o.MaximumDeviationHoTriggerLow) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DMROFunctionSingleAllOfAttributes) SetMaximumDeviationHoTriggerLow(v in
 
 // GetMaximumDeviationHoTriggerHigh returns the MaximumDeviationHoTriggerHigh field value if set, zero value otherwise.
 func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerHigh() int32 {
-	if o == nil || IsNil(o.MaximumDeviationHoTriggerHigh) {
+	if o == nil || isNil(o.MaximumDeviationHoTriggerHigh) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerHigh() i
 // GetMaximumDeviationHoTriggerHighOk returns a tuple with the MaximumDeviationHoTriggerHigh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerHighOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumDeviationHoTriggerHigh) {
+	if o == nil || isNil(o.MaximumDeviationHoTriggerHigh) {
 		return nil, false
 	}
 	return o.MaximumDeviationHoTriggerHigh, true
@@ -127,7 +127,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetMaximumDeviationHoTriggerHighOk()
 
 // HasMaximumDeviationHoTriggerHigh returns a boolean if a field has been set.
 func (o *DMROFunctionSingleAllOfAttributes) HasMaximumDeviationHoTriggerHigh() bool {
-	if o != nil && !IsNil(o.MaximumDeviationHoTriggerHigh) {
+	if o != nil && !isNil(o.MaximumDeviationHoTriggerHigh) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *DMROFunctionSingleAllOfAttributes) SetMaximumDeviationHoTriggerHigh(v i
 
 // GetMinimumTimeBetweenHoTriggerChange returns the MinimumTimeBetweenHoTriggerChange field value if set, zero value otherwise.
 func (o *DMROFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChange() int32 {
-	if o == nil || IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if o == nil || isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChange
 // GetMinimumTimeBetweenHoTriggerChangeOk returns a tuple with the MinimumTimeBetweenHoTriggerChange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DMROFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChangeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if o == nil || isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		return nil, false
 	}
 	return o.MinimumTimeBetweenHoTriggerChange, true
@@ -159,7 +159,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetMinimumTimeBetweenHoTriggerChange
 
 // HasMinimumTimeBetweenHoTriggerChange returns a boolean if a field has been set.
 func (o *DMROFunctionSingleAllOfAttributes) HasMinimumTimeBetweenHoTriggerChange() bool {
-	if o != nil && !IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if o != nil && !isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *DMROFunctionSingleAllOfAttributes) SetMinimumTimeBetweenHoTriggerChange
 
 // GetTstoreUEcntxt returns the TstoreUEcntxt field value if set, zero value otherwise.
 func (o *DMROFunctionSingleAllOfAttributes) GetTstoreUEcntxt() int32 {
-	if o == nil || IsNil(o.TstoreUEcntxt) {
+	if o == nil || isNil(o.TstoreUEcntxt) {
 		var ret int32
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetTstoreUEcntxt() int32 {
 // GetTstoreUEcntxtOk returns a tuple with the TstoreUEcntxt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DMROFunctionSingleAllOfAttributes) GetTstoreUEcntxtOk() (*int32, bool) {
-	if o == nil || IsNil(o.TstoreUEcntxt) {
+	if o == nil || isNil(o.TstoreUEcntxt) {
 		return nil, false
 	}
 	return o.TstoreUEcntxt, true
@@ -191,7 +191,7 @@ func (o *DMROFunctionSingleAllOfAttributes) GetTstoreUEcntxtOk() (*int32, bool) 
 
 // HasTstoreUEcntxt returns a boolean if a field has been set.
 func (o *DMROFunctionSingleAllOfAttributes) HasTstoreUEcntxt() bool {
-	if o != nil && !IsNil(o.TstoreUEcntxt) {
+	if o != nil && !isNil(o.TstoreUEcntxt) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o DMROFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o DMROFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DmroControl) {
+	if !isNil(o.DmroControl) {
 		toSerialize["dmroControl"] = o.DmroControl
 	}
-	if !IsNil(o.MaximumDeviationHoTriggerLow) {
+	if !isNil(o.MaximumDeviationHoTriggerLow) {
 		toSerialize["maximumDeviationHoTriggerLow"] = o.MaximumDeviationHoTriggerLow
 	}
-	if !IsNil(o.MaximumDeviationHoTriggerHigh) {
+	if !isNil(o.MaximumDeviationHoTriggerHigh) {
 		toSerialize["maximumDeviationHoTriggerHigh"] = o.MaximumDeviationHoTriggerHigh
 	}
-	if !IsNil(o.MinimumTimeBetweenHoTriggerChange) {
+	if !isNil(o.MinimumTimeBetweenHoTriggerChange) {
 		toSerialize["minimumTimeBetweenHoTriggerChange"] = o.MinimumTimeBetweenHoTriggerChange
 	}
-	if !IsNil(o.TstoreUEcntxt) {
+	if !isNil(o.TstoreUEcntxt) {
 		toSerialize["tstoreUEcntxt"] = o.TstoreUEcntxt
 	}
 	return toSerialize, nil

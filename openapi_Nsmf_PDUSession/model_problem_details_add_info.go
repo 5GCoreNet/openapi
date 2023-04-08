@@ -41,7 +41,7 @@ func NewProblemDetailsAddInfoWithDefaults() *ProblemDetailsAddInfo {
 
 // GetRemoteError returns the RemoteError field value if set, zero value otherwise.
 func (o *ProblemDetailsAddInfo) GetRemoteError() bool {
-	if o == nil || IsNil(o.RemoteError) {
+	if o == nil || isNil(o.RemoteError) {
 		var ret bool
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ProblemDetailsAddInfo) GetRemoteError() bool {
 // GetRemoteErrorOk returns a tuple with the RemoteError field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProblemDetailsAddInfo) GetRemoteErrorOk() (*bool, bool) {
-	if o == nil || IsNil(o.RemoteError) {
+	if o == nil || isNil(o.RemoteError) {
 		return nil, false
 	}
 	return o.RemoteError, true
@@ -59,7 +59,7 @@ func (o *ProblemDetailsAddInfo) GetRemoteErrorOk() (*bool, bool) {
 
 // HasRemoteError returns a boolean if a field has been set.
 func (o *ProblemDetailsAddInfo) HasRemoteError() bool {
-	if o != nil && !IsNil(o.RemoteError) {
+	if o != nil && !isNil(o.RemoteError) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ProblemDetailsAddInfo) MarshalJSON() ([]byte, error) {
 
 func (o ProblemDetailsAddInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RemoteError) {
+	if !isNil(o.RemoteError) {
 		toSerialize["remoteError"] = o.RemoteError
 	}
 	return toSerialize, nil

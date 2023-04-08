@@ -95,7 +95,7 @@ func (o *MessageBody) SetContentLength(v int32) {
 
 // GetContentDisposition returns the ContentDisposition field value if set, zero value otherwise.
 func (o *MessageBody) GetContentDisposition() string {
-	if o == nil || IsNil(o.ContentDisposition) {
+	if o == nil || isNil(o.ContentDisposition) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *MessageBody) GetContentDisposition() string {
 // GetContentDispositionOk returns a tuple with the ContentDisposition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageBody) GetContentDispositionOk() (*string, bool) {
-	if o == nil || IsNil(o.ContentDisposition) {
+	if o == nil || isNil(o.ContentDisposition) {
 		return nil, false
 	}
 	return o.ContentDisposition, true
@@ -113,7 +113,7 @@ func (o *MessageBody) GetContentDispositionOk() (*string, bool) {
 
 // HasContentDisposition returns a boolean if a field has been set.
 func (o *MessageBody) HasContentDisposition() bool {
-	if o != nil && !IsNil(o.ContentDisposition) {
+	if o != nil && !isNil(o.ContentDisposition) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *MessageBody) SetContentDisposition(v string) {
 
 // GetOriginator returns the Originator field value if set, zero value otherwise.
 func (o *MessageBody) GetOriginator() OriginatorPartyType {
-	if o == nil || IsNil(o.Originator) {
+	if o == nil || isNil(o.Originator) {
 		var ret OriginatorPartyType
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *MessageBody) GetOriginator() OriginatorPartyType {
 // GetOriginatorOk returns a tuple with the Originator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MessageBody) GetOriginatorOk() (*OriginatorPartyType, bool) {
-	if o == nil || IsNil(o.Originator) {
+	if o == nil || isNil(o.Originator) {
 		return nil, false
 	}
 	return o.Originator, true
@@ -145,7 +145,7 @@ func (o *MessageBody) GetOriginatorOk() (*OriginatorPartyType, bool) {
 
 // HasOriginator returns a boolean if a field has been set.
 func (o *MessageBody) HasOriginator() bool {
-	if o != nil && !IsNil(o.Originator) {
+	if o != nil && !isNil(o.Originator) {
 		return true
 	}
 
@@ -169,10 +169,10 @@ func (o MessageBody) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["contentType"] = o.ContentType
 	toSerialize["contentLength"] = o.ContentLength
-	if !IsNil(o.ContentDisposition) {
+	if !isNil(o.ContentDisposition) {
 		toSerialize["contentDisposition"] = o.ContentDisposition
 	}
-	if !IsNil(o.Originator) {
+	if !isNil(o.Originator) {
 		toSerialize["originator"] = o.Originator
 	}
 	return toSerialize, nil

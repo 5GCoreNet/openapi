@@ -69,7 +69,7 @@ func (o *OperationEvent) SetOpEventType(v OpEventType) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *OperationEvent) GetAmfId() string {
-	if o == nil || IsNil(o.AmfId) {
+	if o == nil || isNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *OperationEvent) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperationEvent) GetAmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfId) {
+	if o == nil || isNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -87,7 +87,7 @@ func (o *OperationEvent) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *OperationEvent) HasAmfId() bool {
-	if o != nil && !IsNil(o.AmfId) {
+	if o != nil && !isNil(o.AmfId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *OperationEvent) SetAmfId(v string) {
 
 // GetNgranFailureEventList returns the NgranFailureEventList field value if set, zero value otherwise.
 func (o *OperationEvent) GetNgranFailureEventList() []NgranFailureEvent {
-	if o == nil || IsNil(o.NgranFailureEventList) {
+	if o == nil || isNil(o.NgranFailureEventList) {
 		var ret []NgranFailureEvent
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *OperationEvent) GetNgranFailureEventList() []NgranFailureEvent {
 // GetNgranFailureEventListOk returns a tuple with the NgranFailureEventList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperationEvent) GetNgranFailureEventListOk() ([]NgranFailureEvent, bool) {
-	if o == nil || IsNil(o.NgranFailureEventList) {
+	if o == nil || isNil(o.NgranFailureEventList) {
 		return nil, false
 	}
 	return o.NgranFailureEventList, true
@@ -119,7 +119,7 @@ func (o *OperationEvent) GetNgranFailureEventListOk() ([]NgranFailureEvent, bool
 
 // HasNgranFailureEventList returns a boolean if a field has been set.
 func (o *OperationEvent) HasNgranFailureEventList() bool {
-	if o != nil && !IsNil(o.NgranFailureEventList) {
+	if o != nil && !isNil(o.NgranFailureEventList) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o OperationEvent) MarshalJSON() ([]byte, error) {
 func (o OperationEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["opEventType"] = o.OpEventType
-	if !IsNil(o.AmfId) {
+	if !isNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
-	if !IsNil(o.NgranFailureEventList) {
+	if !isNil(o.NgranFailureEventList) {
 		toSerialize["ngranFailureEventList"] = o.NgranFailureEventList
 	}
 	return toSerialize, nil

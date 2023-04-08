@@ -101,7 +101,7 @@ func (o *ContextStatusEventReport) SetTimeStamp(v time.Time) {
 
 // GetQosInfo returns the QosInfo field value if set, zero value otherwise.
 func (o *ContextStatusEventReport) GetQosInfo() QosInfo {
-	if o == nil || IsNil(o.QosInfo) {
+	if o == nil || isNil(o.QosInfo) {
 		var ret QosInfo
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ContextStatusEventReport) GetQosInfo() QosInfo {
 // GetQosInfoOk returns a tuple with the QosInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEventReport) GetQosInfoOk() (*QosInfo, bool) {
-	if o == nil || IsNil(o.QosInfo) {
+	if o == nil || isNil(o.QosInfo) {
 		return nil, false
 	}
 	return o.QosInfo, true
@@ -119,7 +119,7 @@ func (o *ContextStatusEventReport) GetQosInfoOk() (*QosInfo, bool) {
 
 // HasQosInfo returns a boolean if a field has been set.
 func (o *ContextStatusEventReport) HasQosInfo() bool {
-	if o != nil && !IsNil(o.QosInfo) {
+	if o != nil && !isNil(o.QosInfo) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ContextStatusEventReport) SetQosInfo(v QosInfo) {
 
 // GetStatusInfo returns the StatusInfo field value if set, zero value otherwise.
 func (o *ContextStatusEventReport) GetStatusInfo() MbsSessionActivityStatus {
-	if o == nil || IsNil(o.StatusInfo) {
+	if o == nil || isNil(o.StatusInfo) {
 		var ret MbsSessionActivityStatus
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ContextStatusEventReport) GetStatusInfo() MbsSessionActivityStatus {
 // GetStatusInfoOk returns a tuple with the StatusInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEventReport) GetStatusInfoOk() (*MbsSessionActivityStatus, bool) {
-	if o == nil || IsNil(o.StatusInfo) {
+	if o == nil || isNil(o.StatusInfo) {
 		return nil, false
 	}
 	return o.StatusInfo, true
@@ -151,7 +151,7 @@ func (o *ContextStatusEventReport) GetStatusInfoOk() (*MbsSessionActivityStatus,
 
 // HasStatusInfo returns a boolean if a field has been set.
 func (o *ContextStatusEventReport) HasStatusInfo() bool {
-	if o != nil && !IsNil(o.StatusInfo) {
+	if o != nil && !isNil(o.StatusInfo) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *ContextStatusEventReport) SetStatusInfo(v MbsSessionActivityStatus) {
 
 // GetMbsServiceArea returns the MbsServiceArea field value if set, zero value otherwise.
 func (o *ContextStatusEventReport) GetMbsServiceArea() MbsServiceArea {
-	if o == nil || IsNil(o.MbsServiceArea) {
+	if o == nil || isNil(o.MbsServiceArea) {
 		var ret MbsServiceArea
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *ContextStatusEventReport) GetMbsServiceArea() MbsServiceArea {
 // GetMbsServiceAreaOk returns a tuple with the MbsServiceArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEventReport) GetMbsServiceAreaOk() (*MbsServiceArea, bool) {
-	if o == nil || IsNil(o.MbsServiceArea) {
+	if o == nil || isNil(o.MbsServiceArea) {
 		return nil, false
 	}
 	return o.MbsServiceArea, true
@@ -183,7 +183,7 @@ func (o *ContextStatusEventReport) GetMbsServiceAreaOk() (*MbsServiceArea, bool)
 
 // HasMbsServiceArea returns a boolean if a field has been set.
 func (o *ContextStatusEventReport) HasMbsServiceArea() bool {
-	if o != nil && !IsNil(o.MbsServiceArea) {
+	if o != nil && !isNil(o.MbsServiceArea) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *ContextStatusEventReport) SetMbsServiceArea(v MbsServiceArea) {
 
 // GetMbsServiceAreaInfoList returns the MbsServiceAreaInfoList field value if set, zero value otherwise.
 func (o *ContextStatusEventReport) GetMbsServiceAreaInfoList() map[string]MbsServiceAreaInfo {
-	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
+	if o == nil || isNil(o.MbsServiceAreaInfoList) {
 		var ret map[string]MbsServiceAreaInfo
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *ContextStatusEventReport) GetMbsServiceAreaInfoList() map[string]MbsSer
 // GetMbsServiceAreaInfoListOk returns a tuple with the MbsServiceAreaInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEventReport) GetMbsServiceAreaInfoListOk() (*map[string]MbsServiceAreaInfo, bool) {
-	if o == nil || IsNil(o.MbsServiceAreaInfoList) {
+	if o == nil || isNil(o.MbsServiceAreaInfoList) {
 		return nil, false
 	}
 	return o.MbsServiceAreaInfoList, true
@@ -215,7 +215,7 @@ func (o *ContextStatusEventReport) GetMbsServiceAreaInfoListOk() (*map[string]Mb
 
 // HasMbsServiceAreaInfoList returns a boolean if a field has been set.
 func (o *ContextStatusEventReport) HasMbsServiceAreaInfoList() bool {
-	if o != nil && !IsNil(o.MbsServiceAreaInfoList) {
+	if o != nil && !isNil(o.MbsServiceAreaInfoList) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *ContextStatusEventReport) SetMbsServiceAreaInfoList(v map[string]MbsSer
 
 // GetMulticastTransAddInfo returns the MulticastTransAddInfo field value if set, zero value otherwise.
 func (o *ContextStatusEventReport) GetMulticastTransAddInfo() MulticastTransportAddressChangeInfo {
-	if o == nil || IsNil(o.MulticastTransAddInfo) {
+	if o == nil || isNil(o.MulticastTransAddInfo) {
 		var ret MulticastTransportAddressChangeInfo
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *ContextStatusEventReport) GetMulticastTransAddInfo() MulticastTransport
 // GetMulticastTransAddInfoOk returns a tuple with the MulticastTransAddInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEventReport) GetMulticastTransAddInfoOk() (*MulticastTransportAddressChangeInfo, bool) {
-	if o == nil || IsNil(o.MulticastTransAddInfo) {
+	if o == nil || isNil(o.MulticastTransAddInfo) {
 		return nil, false
 	}
 	return o.MulticastTransAddInfo, true
@@ -247,7 +247,7 @@ func (o *ContextStatusEventReport) GetMulticastTransAddInfoOk() (*MulticastTrans
 
 // HasMulticastTransAddInfo returns a boolean if a field has been set.
 func (o *ContextStatusEventReport) HasMulticastTransAddInfo() bool {
-	if o != nil && !IsNil(o.MulticastTransAddInfo) {
+	if o != nil && !isNil(o.MulticastTransAddInfo) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *ContextStatusEventReport) SetMulticastTransAddInfo(v MulticastTransport
 
 // GetMbsSecurityContext returns the MbsSecurityContext field value if set, zero value otherwise.
 func (o *ContextStatusEventReport) GetMbsSecurityContext() MbsSecurityContext {
-	if o == nil || IsNil(o.MbsSecurityContext) {
+	if o == nil || isNil(o.MbsSecurityContext) {
 		var ret MbsSecurityContext
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *ContextStatusEventReport) GetMbsSecurityContext() MbsSecurityContext {
 // GetMbsSecurityContextOk returns a tuple with the MbsSecurityContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextStatusEventReport) GetMbsSecurityContextOk() (*MbsSecurityContext, bool) {
-	if o == nil || IsNil(o.MbsSecurityContext) {
+	if o == nil || isNil(o.MbsSecurityContext) {
 		return nil, false
 	}
 	return o.MbsSecurityContext, true
@@ -279,7 +279,7 @@ func (o *ContextStatusEventReport) GetMbsSecurityContextOk() (*MbsSecurityContex
 
 // HasMbsSecurityContext returns a boolean if a field has been set.
 func (o *ContextStatusEventReport) HasMbsSecurityContext() bool {
-	if o != nil && !IsNil(o.MbsSecurityContext) {
+	if o != nil && !isNil(o.MbsSecurityContext) {
 		return true
 	}
 
@@ -303,22 +303,22 @@ func (o ContextStatusEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !IsNil(o.QosInfo) {
+	if !isNil(o.QosInfo) {
 		toSerialize["qosInfo"] = o.QosInfo
 	}
-	if !IsNil(o.StatusInfo) {
+	if !isNil(o.StatusInfo) {
 		toSerialize["statusInfo"] = o.StatusInfo
 	}
-	if !IsNil(o.MbsServiceArea) {
+	if !isNil(o.MbsServiceArea) {
 		toSerialize["mbsServiceArea"] = o.MbsServiceArea
 	}
-	if !IsNil(o.MbsServiceAreaInfoList) {
+	if !isNil(o.MbsServiceAreaInfoList) {
 		toSerialize["mbsServiceAreaInfoList"] = o.MbsServiceAreaInfoList
 	}
-	if !IsNil(o.MulticastTransAddInfo) {
+	if !isNil(o.MulticastTransAddInfo) {
 		toSerialize["multicastTransAddInfo"] = o.MulticastTransAddInfo
 	}
-	if !IsNil(o.MbsSecurityContext) {
+	if !isNil(o.MbsSecurityContext) {
 		toSerialize["mbsSecurityContext"] = o.MbsSecurityContext
 	}
 	return toSerialize, nil

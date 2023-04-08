@@ -94,7 +94,7 @@ func (o *SearchCondition) SetUnits(v []SearchExpression) {
 
 // GetSchemaId returns the SchemaId field value if set, zero value otherwise.
 func (o *SearchCondition) GetSchemaId() string {
-	if o == nil || IsNil(o.SchemaId) {
+	if o == nil || isNil(o.SchemaId) {
 		var ret string
 		return ret
 	}
@@ -104,7 +104,7 @@ func (o *SearchCondition) GetSchemaId() string {
 // GetSchemaIdOk returns a tuple with the SchemaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SearchCondition) GetSchemaIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SchemaId) {
+	if o == nil || isNil(o.SchemaId) {
 		return nil, false
 	}
 	return o.SchemaId, true
@@ -112,7 +112,7 @@ func (o *SearchCondition) GetSchemaIdOk() (*string, bool) {
 
 // HasSchemaId returns a boolean if a field has been set.
 func (o *SearchCondition) HasSchemaId() bool {
-	if o != nil && !IsNil(o.SchemaId) {
+	if o != nil && !isNil(o.SchemaId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o SearchCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["cond"] = o.Cond
 	toSerialize["units"] = o.Units
-	if !IsNil(o.SchemaId) {
+	if !isNil(o.SchemaId) {
 		toSerialize["schemaId"] = o.SchemaId
 	}
 	return toSerialize, nil

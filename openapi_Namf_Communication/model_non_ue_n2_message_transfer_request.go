@@ -21,7 +21,7 @@ var _ MappedNullable = &NonUeN2MessageTransferRequest{}
 // NonUeN2MessageTransferRequest struct for NonUeN2MessageTransferRequest
 type NonUeN2MessageTransferRequest struct {
 	JsonData *N2InformationTransferReqData `json:"jsonData,omitempty"`
-	BinaryDataN2Information **os.File `json:"binaryDataN2Information,omitempty"`
+	BinaryDataN2Information *os.File `json:"binaryDataN2Information,omitempty"`
 }
 
 // NewNonUeN2MessageTransferRequest instantiates a new NonUeN2MessageTransferRequest object
@@ -43,7 +43,7 @@ func NewNonUeN2MessageTransferRequestWithDefaults() *NonUeN2MessageTransferReque
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *NonUeN2MessageTransferRequest) GetJsonData() N2InformationTransferReqData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret N2InformationTransferReqData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *NonUeN2MessageTransferRequest) GetJsonData() N2InformationTransferReqDa
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NonUeN2MessageTransferRequest) GetJsonDataOk() (*N2InformationTransferReqData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *NonUeN2MessageTransferRequest) GetJsonDataOk() (*N2InformationTransferR
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *NonUeN2MessageTransferRequest) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *NonUeN2MessageTransferRequest) SetJsonData(v N2InformationTransferReqDa
 }
 
 // GetBinaryDataN2Information returns the BinaryDataN2Information field value if set, zero value otherwise.
-func (o *NonUeN2MessageTransferRequest) GetBinaryDataN2Information() *os.File {
-	if o == nil || IsNil(o.BinaryDataN2Information) {
-		var ret *os.File
+func (o *NonUeN2MessageTransferRequest) GetBinaryDataN2Information() os.File {
+	if o == nil || isNil(o.BinaryDataN2Information) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryDataN2Information
@@ -84,8 +84,8 @@ func (o *NonUeN2MessageTransferRequest) GetBinaryDataN2Information() *os.File {
 
 // GetBinaryDataN2InformationOk returns a tuple with the BinaryDataN2Information field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NonUeN2MessageTransferRequest) GetBinaryDataN2InformationOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryDataN2Information) {
+func (o *NonUeN2MessageTransferRequest) GetBinaryDataN2InformationOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryDataN2Information) {
 		return nil, false
 	}
 	return o.BinaryDataN2Information, true
@@ -93,15 +93,15 @@ func (o *NonUeN2MessageTransferRequest) GetBinaryDataN2InformationOk() (**os.Fil
 
 // HasBinaryDataN2Information returns a boolean if a field has been set.
 func (o *NonUeN2MessageTransferRequest) HasBinaryDataN2Information() bool {
-	if o != nil && !IsNil(o.BinaryDataN2Information) {
+	if o != nil && !isNil(o.BinaryDataN2Information) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryDataN2Information gets a reference to the given *os.File and assigns it to the BinaryDataN2Information field.
-func (o *NonUeN2MessageTransferRequest) SetBinaryDataN2Information(v *os.File) {
+// SetBinaryDataN2Information gets a reference to the given os.File and assigns it to the BinaryDataN2Information field.
+func (o *NonUeN2MessageTransferRequest) SetBinaryDataN2Information(v os.File) {
 	o.BinaryDataN2Information = &v
 }
 
@@ -115,10 +115,10 @@ func (o NonUeN2MessageTransferRequest) MarshalJSON() ([]byte, error) {
 
 func (o NonUeN2MessageTransferRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryDataN2Information) {
+	if !isNil(o.BinaryDataN2Information) {
 		toSerialize["binaryDataN2Information"] = o.BinaryDataN2Information
 	}
 	return toSerialize, nil

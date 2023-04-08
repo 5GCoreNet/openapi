@@ -81,7 +81,7 @@ func (o *N2ConnectionChargingInformation) SetN2ConnectionMessageType(v int32) {
 
 // GetUserInformation returns the UserInformation field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetUserInformation() UserInformation {
-	if o == nil || IsNil(o.UserInformation) {
+	if o == nil || isNil(o.UserInformation) {
 		var ret UserInformation
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *N2ConnectionChargingInformation) GetUserInformation() UserInformation {
 // GetUserInformationOk returns a tuple with the UserInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetUserInformationOk() (*UserInformation, bool) {
-	if o == nil || IsNil(o.UserInformation) {
+	if o == nil || isNil(o.UserInformation) {
 		return nil, false
 	}
 	return o.UserInformation, true
@@ -99,7 +99,7 @@ func (o *N2ConnectionChargingInformation) GetUserInformationOk() (*UserInformati
 
 // HasUserInformation returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasUserInformation() bool {
-	if o != nil && !IsNil(o.UserInformation) {
+	if o != nil && !isNil(o.UserInformation) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *N2ConnectionChargingInformation) SetUserInformation(v UserInformation) 
 
 // GetUserLocationinfo returns the UserLocationinfo field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetUserLocationinfo() UserLocation {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *N2ConnectionChargingInformation) GetUserLocationinfo() UserLocation {
 // GetUserLocationinfoOk returns a tuple with the UserLocationinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		return nil, false
 	}
 	return o.UserLocationinfo, true
@@ -131,7 +131,7 @@ func (o *N2ConnectionChargingInformation) GetUserLocationinfoOk() (*UserLocation
 
 // HasUserLocationinfo returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasUserLocationinfo() bool {
-	if o != nil && !IsNil(o.UserLocationinfo) {
+	if o != nil && !isNil(o.UserLocationinfo) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *N2ConnectionChargingInformation) SetUserLocationinfo(v UserLocation) {
 
 // GetPSCellInformation returns the PSCellInformation field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetPSCellInformation() PSCellInformation {
-	if o == nil || IsNil(o.PSCellInformation) {
+	if o == nil || isNil(o.PSCellInformation) {
 		var ret PSCellInformation
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *N2ConnectionChargingInformation) GetPSCellInformation() PSCellInformati
 // GetPSCellInformationOk returns a tuple with the PSCellInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetPSCellInformationOk() (*PSCellInformation, bool) {
-	if o == nil || IsNil(o.PSCellInformation) {
+	if o == nil || isNil(o.PSCellInformation) {
 		return nil, false
 	}
 	return o.PSCellInformation, true
@@ -163,7 +163,7 @@ func (o *N2ConnectionChargingInformation) GetPSCellInformationOk() (*PSCellInfor
 
 // HasPSCellInformation returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasPSCellInformation() bool {
-	if o != nil && !IsNil(o.PSCellInformation) {
+	if o != nil && !isNil(o.PSCellInformation) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *N2ConnectionChargingInformation) SetPSCellInformation(v PSCellInformati
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *N2ConnectionChargingInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -195,7 +195,7 @@ func (o *N2ConnectionChargingInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *N2ConnectionChargingInformation) SetUetimeZone(v string) {
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetRATType() RatType {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *N2ConnectionChargingInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -227,7 +227,7 @@ func (o *N2ConnectionChargingInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasRATType() bool {
-	if o != nil && !IsNil(o.RATType) {
+	if o != nil && !isNil(o.RATType) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *N2ConnectionChargingInformation) SetRATType(v RatType) {
 
 // GetAmfUeNgapId returns the AmfUeNgapId field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetAmfUeNgapId() int32 {
-	if o == nil || IsNil(o.AmfUeNgapId) {
+	if o == nil || isNil(o.AmfUeNgapId) {
 		var ret int32
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *N2ConnectionChargingInformation) GetAmfUeNgapId() int32 {
 // GetAmfUeNgapIdOk returns a tuple with the AmfUeNgapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetAmfUeNgapIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AmfUeNgapId) {
+	if o == nil || isNil(o.AmfUeNgapId) {
 		return nil, false
 	}
 	return o.AmfUeNgapId, true
@@ -259,7 +259,7 @@ func (o *N2ConnectionChargingInformation) GetAmfUeNgapIdOk() (*int32, bool) {
 
 // HasAmfUeNgapId returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasAmfUeNgapId() bool {
-	if o != nil && !IsNil(o.AmfUeNgapId) {
+	if o != nil && !isNil(o.AmfUeNgapId) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *N2ConnectionChargingInformation) SetAmfUeNgapId(v int32) {
 
 // GetRanUeNgapId returns the RanUeNgapId field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetRanUeNgapId() int32 {
-	if o == nil || IsNil(o.RanUeNgapId) {
+	if o == nil || isNil(o.RanUeNgapId) {
 		var ret int32
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *N2ConnectionChargingInformation) GetRanUeNgapId() int32 {
 // GetRanUeNgapIdOk returns a tuple with the RanUeNgapId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetRanUeNgapIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.RanUeNgapId) {
+	if o == nil || isNil(o.RanUeNgapId) {
 		return nil, false
 	}
 	return o.RanUeNgapId, true
@@ -291,7 +291,7 @@ func (o *N2ConnectionChargingInformation) GetRanUeNgapIdOk() (*int32, bool) {
 
 // HasRanUeNgapId returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasRanUeNgapId() bool {
-	if o != nil && !IsNil(o.RanUeNgapId) {
+	if o != nil && !isNil(o.RanUeNgapId) {
 		return true
 	}
 
@@ -305,7 +305,7 @@ func (o *N2ConnectionChargingInformation) SetRanUeNgapId(v int32) {
 
 // GetRanNodeId returns the RanNodeId field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetRanNodeId() GlobalRanNodeId {
-	if o == nil || IsNil(o.RanNodeId) {
+	if o == nil || isNil(o.RanNodeId) {
 		var ret GlobalRanNodeId
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *N2ConnectionChargingInformation) GetRanNodeId() GlobalRanNodeId {
 // GetRanNodeIdOk returns a tuple with the RanNodeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetRanNodeIdOk() (*GlobalRanNodeId, bool) {
-	if o == nil || IsNil(o.RanNodeId) {
+	if o == nil || isNil(o.RanNodeId) {
 		return nil, false
 	}
 	return o.RanNodeId, true
@@ -323,7 +323,7 @@ func (o *N2ConnectionChargingInformation) GetRanNodeIdOk() (*GlobalRanNodeId, bo
 
 // HasRanNodeId returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasRanNodeId() bool {
-	if o != nil && !IsNil(o.RanNodeId) {
+	if o != nil && !isNil(o.RanNodeId) {
 		return true
 	}
 
@@ -337,7 +337,7 @@ func (o *N2ConnectionChargingInformation) SetRanNodeId(v GlobalRanNodeId) {
 
 // GetRestrictedRatList returns the RestrictedRatList field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetRestrictedRatList() []RatType {
-	if o == nil || IsNil(o.RestrictedRatList) {
+	if o == nil || isNil(o.RestrictedRatList) {
 		var ret []RatType
 		return ret
 	}
@@ -347,7 +347,7 @@ func (o *N2ConnectionChargingInformation) GetRestrictedRatList() []RatType {
 // GetRestrictedRatListOk returns a tuple with the RestrictedRatList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetRestrictedRatListOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RestrictedRatList) {
+	if o == nil || isNil(o.RestrictedRatList) {
 		return nil, false
 	}
 	return o.RestrictedRatList, true
@@ -355,7 +355,7 @@ func (o *N2ConnectionChargingInformation) GetRestrictedRatListOk() ([]RatType, b
 
 // HasRestrictedRatList returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasRestrictedRatList() bool {
-	if o != nil && !IsNil(o.RestrictedRatList) {
+	if o != nil && !isNil(o.RestrictedRatList) {
 		return true
 	}
 
@@ -369,7 +369,7 @@ func (o *N2ConnectionChargingInformation) SetRestrictedRatList(v []RatType) {
 
 // GetForbiddenAreaList returns the ForbiddenAreaList field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetForbiddenAreaList() []Area {
-	if o == nil || IsNil(o.ForbiddenAreaList) {
+	if o == nil || isNil(o.ForbiddenAreaList) {
 		var ret []Area
 		return ret
 	}
@@ -379,7 +379,7 @@ func (o *N2ConnectionChargingInformation) GetForbiddenAreaList() []Area {
 // GetForbiddenAreaListOk returns a tuple with the ForbiddenAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetForbiddenAreaListOk() ([]Area, bool) {
-	if o == nil || IsNil(o.ForbiddenAreaList) {
+	if o == nil || isNil(o.ForbiddenAreaList) {
 		return nil, false
 	}
 	return o.ForbiddenAreaList, true
@@ -387,7 +387,7 @@ func (o *N2ConnectionChargingInformation) GetForbiddenAreaListOk() ([]Area, bool
 
 // HasForbiddenAreaList returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasForbiddenAreaList() bool {
-	if o != nil && !IsNil(o.ForbiddenAreaList) {
+	if o != nil && !isNil(o.ForbiddenAreaList) {
 		return true
 	}
 
@@ -401,7 +401,7 @@ func (o *N2ConnectionChargingInformation) SetForbiddenAreaList(v []Area) {
 
 // GetServiceAreaRestriction returns the ServiceAreaRestriction field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetServiceAreaRestriction() []ServiceAreaRestriction {
-	if o == nil || IsNil(o.ServiceAreaRestriction) {
+	if o == nil || isNil(o.ServiceAreaRestriction) {
 		var ret []ServiceAreaRestriction
 		return ret
 	}
@@ -411,7 +411,7 @@ func (o *N2ConnectionChargingInformation) GetServiceAreaRestriction() []ServiceA
 // GetServiceAreaRestrictionOk returns a tuple with the ServiceAreaRestriction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetServiceAreaRestrictionOk() ([]ServiceAreaRestriction, bool) {
-	if o == nil || IsNil(o.ServiceAreaRestriction) {
+	if o == nil || isNil(o.ServiceAreaRestriction) {
 		return nil, false
 	}
 	return o.ServiceAreaRestriction, true
@@ -419,7 +419,7 @@ func (o *N2ConnectionChargingInformation) GetServiceAreaRestrictionOk() ([]Servi
 
 // HasServiceAreaRestriction returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasServiceAreaRestriction() bool {
-	if o != nil && !IsNil(o.ServiceAreaRestriction) {
+	if o != nil && !isNil(o.ServiceAreaRestriction) {
 		return true
 	}
 
@@ -433,7 +433,7 @@ func (o *N2ConnectionChargingInformation) SetServiceAreaRestriction(v []ServiceA
 
 // GetRestrictedCnList returns the RestrictedCnList field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetRestrictedCnList() []CoreNetworkType {
-	if o == nil || IsNil(o.RestrictedCnList) {
+	if o == nil || isNil(o.RestrictedCnList) {
 		var ret []CoreNetworkType
 		return ret
 	}
@@ -443,7 +443,7 @@ func (o *N2ConnectionChargingInformation) GetRestrictedCnList() []CoreNetworkTyp
 // GetRestrictedCnListOk returns a tuple with the RestrictedCnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetRestrictedCnListOk() ([]CoreNetworkType, bool) {
-	if o == nil || IsNil(o.RestrictedCnList) {
+	if o == nil || isNil(o.RestrictedCnList) {
 		return nil, false
 	}
 	return o.RestrictedCnList, true
@@ -451,7 +451,7 @@ func (o *N2ConnectionChargingInformation) GetRestrictedCnListOk() ([]CoreNetwork
 
 // HasRestrictedCnList returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasRestrictedCnList() bool {
-	if o != nil && !IsNil(o.RestrictedCnList) {
+	if o != nil && !isNil(o.RestrictedCnList) {
 		return true
 	}
 
@@ -465,7 +465,7 @@ func (o *N2ConnectionChargingInformation) SetRestrictedCnList(v []CoreNetworkTyp
 
 // GetAllowedNSSAI returns the AllowedNSSAI field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetAllowedNSSAI() []Snssai {
-	if o == nil || IsNil(o.AllowedNSSAI) {
+	if o == nil || isNil(o.AllowedNSSAI) {
 		var ret []Snssai
 		return ret
 	}
@@ -475,7 +475,7 @@ func (o *N2ConnectionChargingInformation) GetAllowedNSSAI() []Snssai {
 // GetAllowedNSSAIOk returns a tuple with the AllowedNSSAI field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetAllowedNSSAIOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.AllowedNSSAI) {
+	if o == nil || isNil(o.AllowedNSSAI) {
 		return nil, false
 	}
 	return o.AllowedNSSAI, true
@@ -483,7 +483,7 @@ func (o *N2ConnectionChargingInformation) GetAllowedNSSAIOk() ([]Snssai, bool) {
 
 // HasAllowedNSSAI returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasAllowedNSSAI() bool {
-	if o != nil && !IsNil(o.AllowedNSSAI) {
+	if o != nil && !isNil(o.AllowedNSSAI) {
 		return true
 	}
 
@@ -497,7 +497,7 @@ func (o *N2ConnectionChargingInformation) SetAllowedNSSAI(v []Snssai) {
 
 // GetRrcEstCause returns the RrcEstCause field value if set, zero value otherwise.
 func (o *N2ConnectionChargingInformation) GetRrcEstCause() string {
-	if o == nil || IsNil(o.RrcEstCause) {
+	if o == nil || isNil(o.RrcEstCause) {
 		var ret string
 		return ret
 	}
@@ -507,7 +507,7 @@ func (o *N2ConnectionChargingInformation) GetRrcEstCause() string {
 // GetRrcEstCauseOk returns a tuple with the RrcEstCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N2ConnectionChargingInformation) GetRrcEstCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.RrcEstCause) {
+	if o == nil || isNil(o.RrcEstCause) {
 		return nil, false
 	}
 	return o.RrcEstCause, true
@@ -515,7 +515,7 @@ func (o *N2ConnectionChargingInformation) GetRrcEstCauseOk() (*string, bool) {
 
 // HasRrcEstCause returns a boolean if a field has been set.
 func (o *N2ConnectionChargingInformation) HasRrcEstCause() bool {
-	if o != nil && !IsNil(o.RrcEstCause) {
+	if o != nil && !isNil(o.RrcEstCause) {
 		return true
 	}
 
@@ -538,46 +538,46 @@ func (o N2ConnectionChargingInformation) MarshalJSON() ([]byte, error) {
 func (o N2ConnectionChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n2ConnectionMessageType"] = o.N2ConnectionMessageType
-	if !IsNil(o.UserInformation) {
+	if !isNil(o.UserInformation) {
 		toSerialize["userInformation"] = o.UserInformation
 	}
-	if !IsNil(o.UserLocationinfo) {
+	if !isNil(o.UserLocationinfo) {
 		toSerialize["userLocationinfo"] = o.UserLocationinfo
 	}
-	if !IsNil(o.PSCellInformation) {
+	if !isNil(o.PSCellInformation) {
 		toSerialize["pSCellInformation"] = o.PSCellInformation
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !IsNil(o.RATType) {
+	if !isNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !IsNil(o.AmfUeNgapId) {
+	if !isNil(o.AmfUeNgapId) {
 		toSerialize["amfUeNgapId"] = o.AmfUeNgapId
 	}
-	if !IsNil(o.RanUeNgapId) {
+	if !isNil(o.RanUeNgapId) {
 		toSerialize["ranUeNgapId"] = o.RanUeNgapId
 	}
-	if !IsNil(o.RanNodeId) {
+	if !isNil(o.RanNodeId) {
 		toSerialize["ranNodeId"] = o.RanNodeId
 	}
-	if !IsNil(o.RestrictedRatList) {
+	if !isNil(o.RestrictedRatList) {
 		toSerialize["restrictedRatList"] = o.RestrictedRatList
 	}
-	if !IsNil(o.ForbiddenAreaList) {
+	if !isNil(o.ForbiddenAreaList) {
 		toSerialize["forbiddenAreaList"] = o.ForbiddenAreaList
 	}
-	if !IsNil(o.ServiceAreaRestriction) {
+	if !isNil(o.ServiceAreaRestriction) {
 		toSerialize["serviceAreaRestriction"] = o.ServiceAreaRestriction
 	}
-	if !IsNil(o.RestrictedCnList) {
+	if !isNil(o.RestrictedCnList) {
 		toSerialize["restrictedCnList"] = o.RestrictedCnList
 	}
-	if !IsNil(o.AllowedNSSAI) {
+	if !isNil(o.AllowedNSSAI) {
 		toSerialize["allowedNSSAI"] = o.AllowedNSSAI
 	}
-	if !IsNil(o.RrcEstCause) {
+	if !isNil(o.RrcEstCause) {
 		toSerialize["rrcEstCause"] = o.RrcEstCause
 	}
 	return toSerialize, nil

@@ -17,7 +17,15 @@ import (
 
 // Failure - Possible values are: - UNSPECIFIED: Indicates the PCF received the UE sent UE policy delivery service cause #111   (Protocol error, unspecified). - UE_NOT_REACHABLE: Indicates the PCF received the notification from the AMF that the UE is   not reachable. - UNKNOWN: Indicates unknown reasons upon no response from the UE, e.g. UPDS message type is   not defined or not implemented by the UE, or not compatible with the UPDS state, in which   the UE shall ignore the UPDS message. - UE_TEMP_UNREACHABLE: Indicates the PCF received the notification from the AMF that the UE   is not reachable but the PCF will retry again. 
 type Failure struct {
+	FailureOneOf *FailureOneOf
 	String *string
+}
+
+// FailureOneOfAsFailure is a convenience function that returns FailureOneOf wrapped in Failure
+func FailureOneOfAsFailure(v *FailureOneOf) Failure {
+	return Failure{
+		FailureOneOf: v,
+	}
 }
 
 // stringAsFailure is a convenience function that returns string wrapped in Failure
@@ -32,6 +40,19 @@ func StringAsFailure(v *string) Failure {
 func (dst *Failure) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into FailureOneOf
+	err = newStrictDecoder(data).Decode(&dst.FailureOneOf)
+	if err == nil {
+		jsonFailureOneOf, _ := json.Marshal(dst.FailureOneOf)
+		if string(jsonFailureOneOf) == "{}" { // empty struct
+			dst.FailureOneOf = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.FailureOneOf = nil
+	}
+
 	// try to unmarshal data into String
 	err = newStrictDecoder(data).Decode(&dst.String)
 	if err == nil {
@@ -47,6 +68,7 @@ func (dst *Failure) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.FailureOneOf = nil
 		dst.String = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(Failure)")
@@ -59,6 +81,10 @@ func (dst *Failure) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src Failure) MarshalJSON() ([]byte, error) {
+	if src.FailureOneOf != nil {
+		return json.Marshal(&src.FailureOneOf)
+	}
+
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -71,6 +97,10 @@ func (obj *Failure) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
+	if obj.FailureOneOf != nil {
+		return obj.FailureOneOf
+	}
+
 	if obj.String != nil {
 		return obj.String
 	}

@@ -17,23 +17,37 @@ import (
 
 // AuthRequestType Possible values are: - OPEN_DISCOVERY_EXTENSION_ANNOUNCE: Indicates that the Authorization Request Type is open discovery with application-controlled extension/announce. - RESTRICTED_DISCOVERY_ANNOUNCE: Indicates that the Authorization Request Type is restricted discovery/announce. - RESTRICTED_DISCOVERY_EXTENSION_ANNOUNCE: Indicates that the Authorization Request Type is restricted discovery with application-controlled extension/announce. - OPEN_DISCOVERY_EXTENSION_MONITOR: Indicates that the Authorization Request Type is open discovery with application-controlled extension/monitor. - RESTRICTED_DISCOVERY_MONITOR: Indicates that the Authorization Request Type is restricted discovery/monitor. - RESTRICTED_DISCOVERY_EXTENSION_MONITOR: Indicates that the Authorization Request Type is restricted discovery with application-controlled extension/monitor. - RESTRICTED_DISCOVERY_PERMISSION: Indicates that the Authorization Request Type is restricted discovery/permission. - RESTRICTED_DISCOVERY_RESPONSE: Indicates that the Authorization Request Type is restricted discovery/response. - RESTRICTED_DISCOVERY_QUERY: Indicates that the Authorization Request Type is restricted discovery/query. - RESTRICTED_DISCOVERY_MATCH: Indicates that the Authorization Request Type is restricted discovery/match. 
 type AuthRequestType struct {
-	string *string
+	AuthRequestTypeAnyOf *AuthRequestTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AuthRequestType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AuthRequestTypeAnyOf
+	err = json.Unmarshal(data, &dst.AuthRequestTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAuthRequestTypeAnyOf, _ := json.Marshal(dst.AuthRequestTypeAnyOf)
+		if string(jsonAuthRequestTypeAnyOf) == "{}" { // empty struct
+			dst.AuthRequestTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AuthRequestTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AuthRequestTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AuthRequestType)")
@@ -41,8 +55,12 @@ func (dst *AuthRequestType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AuthRequestType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AuthRequestTypeAnyOf != nil {
+		return json.Marshal(&src.AuthRequestTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

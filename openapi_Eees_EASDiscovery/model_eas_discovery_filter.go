@@ -44,7 +44,7 @@ func NewEasDiscoveryFilterWithDefaults() *EasDiscoveryFilter {
 
 // GetAcChars returns the AcChars field value if set, zero value otherwise.
 func (o *EasDiscoveryFilter) GetAcChars() []ACCharacteristics {
-	if o == nil || IsNil(o.AcChars) {
+	if o == nil || isNil(o.AcChars) {
 		var ret []ACCharacteristics
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EasDiscoveryFilter) GetAcChars() []ACCharacteristics {
 // GetAcCharsOk returns a tuple with the AcChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryFilter) GetAcCharsOk() ([]ACCharacteristics, bool) {
-	if o == nil || IsNil(o.AcChars) {
+	if o == nil || isNil(o.AcChars) {
 		return nil, false
 	}
 	return o.AcChars, true
@@ -62,7 +62,7 @@ func (o *EasDiscoveryFilter) GetAcCharsOk() ([]ACCharacteristics, bool) {
 
 // HasAcChars returns a boolean if a field has been set.
 func (o *EasDiscoveryFilter) HasAcChars() bool {
-	if o != nil && !IsNil(o.AcChars) {
+	if o != nil && !isNil(o.AcChars) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EasDiscoveryFilter) SetAcChars(v []ACCharacteristics) {
 
 // GetEasChars returns the EasChars field value if set, zero value otherwise.
 func (o *EasDiscoveryFilter) GetEasChars() []EasCharacteristics {
-	if o == nil || IsNil(o.EasChars) {
+	if o == nil || isNil(o.EasChars) {
 		var ret []EasCharacteristics
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EasDiscoveryFilter) GetEasChars() []EasCharacteristics {
 // GetEasCharsOk returns a tuple with the EasChars field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDiscoveryFilter) GetEasCharsOk() ([]EasCharacteristics, bool) {
-	if o == nil || IsNil(o.EasChars) {
+	if o == nil || isNil(o.EasChars) {
 		return nil, false
 	}
 	return o.EasChars, true
@@ -94,7 +94,7 @@ func (o *EasDiscoveryFilter) GetEasCharsOk() ([]EasCharacteristics, bool) {
 
 // HasEasChars returns a boolean if a field has been set.
 func (o *EasDiscoveryFilter) HasEasChars() bool {
-	if o != nil && !IsNil(o.EasChars) {
+	if o != nil && !isNil(o.EasChars) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o EasDiscoveryFilter) MarshalJSON() ([]byte, error) {
 
 func (o EasDiscoveryFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AcChars) {
+	if !isNil(o.AcChars) {
 		toSerialize["acChars"] = o.AcChars
 	}
-	if !IsNil(o.EasChars) {
+	if !isNil(o.EasChars) {
 		toSerialize["easChars"] = o.EasChars
 	}
 	return toSerialize, nil

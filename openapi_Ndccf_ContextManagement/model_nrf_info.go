@@ -119,7 +119,7 @@ func NewNrfInfoWithDefaults() *NrfInfo {
 
 // GetServedUdrInfo returns the ServedUdrInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUdrInfo() map[string]NrfInfoServedUdrInfoValue {
-	if o == nil || IsNil(o.ServedUdrInfo) {
+	if o == nil || isNil(o.ServedUdrInfo) {
 		var ret map[string]NrfInfoServedUdrInfoValue
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *NrfInfo) GetServedUdrInfo() map[string]NrfInfoServedUdrInfoValue {
 // GetServedUdrInfoOk returns a tuple with the ServedUdrInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUdrInfoOk() (*map[string]NrfInfoServedUdrInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUdrInfo) {
+	if o == nil || isNil(o.ServedUdrInfo) {
 		return nil, false
 	}
 	return o.ServedUdrInfo, true
@@ -137,7 +137,7 @@ func (o *NrfInfo) GetServedUdrInfoOk() (*map[string]NrfInfoServedUdrInfoValue, b
 
 // HasServedUdrInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUdrInfo() bool {
-	if o != nil && !IsNil(o.ServedUdrInfo) {
+	if o != nil && !isNil(o.ServedUdrInfo) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *NrfInfo) SetServedUdrInfo(v map[string]NrfInfoServedUdrInfoValue) {
 
 // GetServedUdrInfoList returns the ServedUdrInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUdrInfoList() map[string]map[string]NrfInfoServedUdrInfoValue {
-	if o == nil || IsNil(o.ServedUdrInfoList) {
+	if o == nil || isNil(o.ServedUdrInfoList) {
 		var ret map[string]map[string]NrfInfoServedUdrInfoValue
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *NrfInfo) GetServedUdrInfoList() map[string]map[string]NrfInfoServedUdrI
 // GetServedUdrInfoListOk returns a tuple with the ServedUdrInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUdrInfoListOk() (*map[string]map[string]NrfInfoServedUdrInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUdrInfoList) {
+	if o == nil || isNil(o.ServedUdrInfoList) {
 		return nil, false
 	}
 	return o.ServedUdrInfoList, true
@@ -169,7 +169,7 @@ func (o *NrfInfo) GetServedUdrInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedUdrInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUdrInfoList() bool {
-	if o != nil && !IsNil(o.ServedUdrInfoList) {
+	if o != nil && !isNil(o.ServedUdrInfoList) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *NrfInfo) SetServedUdrInfoList(v map[string]map[string]NrfInfoServedUdrI
 
 // GetServedUdmInfo returns the ServedUdmInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUdmInfo() map[string]NrfInfoServedUdmInfoValue {
-	if o == nil || IsNil(o.ServedUdmInfo) {
+	if o == nil || isNil(o.ServedUdmInfo) {
 		var ret map[string]NrfInfoServedUdmInfoValue
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *NrfInfo) GetServedUdmInfo() map[string]NrfInfoServedUdmInfoValue {
 // GetServedUdmInfoOk returns a tuple with the ServedUdmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUdmInfoOk() (*map[string]NrfInfoServedUdmInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUdmInfo) {
+	if o == nil || isNil(o.ServedUdmInfo) {
 		return nil, false
 	}
 	return o.ServedUdmInfo, true
@@ -201,7 +201,7 @@ func (o *NrfInfo) GetServedUdmInfoOk() (*map[string]NrfInfoServedUdmInfoValue, b
 
 // HasServedUdmInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUdmInfo() bool {
-	if o != nil && !IsNil(o.ServedUdmInfo) {
+	if o != nil && !isNil(o.ServedUdmInfo) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *NrfInfo) SetServedUdmInfo(v map[string]NrfInfoServedUdmInfoValue) {
 
 // GetServedUdmInfoList returns the ServedUdmInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUdmInfoList() map[string]map[string]NrfInfoServedUdmInfoValue {
-	if o == nil || IsNil(o.ServedUdmInfoList) {
+	if o == nil || isNil(o.ServedUdmInfoList) {
 		var ret map[string]map[string]NrfInfoServedUdmInfoValue
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *NrfInfo) GetServedUdmInfoList() map[string]map[string]NrfInfoServedUdmI
 // GetServedUdmInfoListOk returns a tuple with the ServedUdmInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUdmInfoListOk() (*map[string]map[string]NrfInfoServedUdmInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUdmInfoList) {
+	if o == nil || isNil(o.ServedUdmInfoList) {
 		return nil, false
 	}
 	return o.ServedUdmInfoList, true
@@ -233,7 +233,7 @@ func (o *NrfInfo) GetServedUdmInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedUdmInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUdmInfoList() bool {
-	if o != nil && !IsNil(o.ServedUdmInfoList) {
+	if o != nil && !isNil(o.ServedUdmInfoList) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *NrfInfo) SetServedUdmInfoList(v map[string]map[string]NrfInfoServedUdmI
 
 // GetServedAusfInfo returns the ServedAusfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedAusfInfo() map[string]NrfInfoServedAusfInfoValue {
-	if o == nil || IsNil(o.ServedAusfInfo) {
+	if o == nil || isNil(o.ServedAusfInfo) {
 		var ret map[string]NrfInfoServedAusfInfoValue
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *NrfInfo) GetServedAusfInfo() map[string]NrfInfoServedAusfInfoValue {
 // GetServedAusfInfoOk returns a tuple with the ServedAusfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedAusfInfoOk() (*map[string]NrfInfoServedAusfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedAusfInfo) {
+	if o == nil || isNil(o.ServedAusfInfo) {
 		return nil, false
 	}
 	return o.ServedAusfInfo, true
@@ -265,7 +265,7 @@ func (o *NrfInfo) GetServedAusfInfoOk() (*map[string]NrfInfoServedAusfInfoValue,
 
 // HasServedAusfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedAusfInfo() bool {
-	if o != nil && !IsNil(o.ServedAusfInfo) {
+	if o != nil && !isNil(o.ServedAusfInfo) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *NrfInfo) SetServedAusfInfo(v map[string]NrfInfoServedAusfInfoValue) {
 
 // GetServedAusfInfoList returns the ServedAusfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedAusfInfoList() map[string]map[string]NrfInfoServedAusfInfoValue {
-	if o == nil || IsNil(o.ServedAusfInfoList) {
+	if o == nil || isNil(o.ServedAusfInfoList) {
 		var ret map[string]map[string]NrfInfoServedAusfInfoValue
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *NrfInfo) GetServedAusfInfoList() map[string]map[string]NrfInfoServedAus
 // GetServedAusfInfoListOk returns a tuple with the ServedAusfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedAusfInfoListOk() (*map[string]map[string]NrfInfoServedAusfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedAusfInfoList) {
+	if o == nil || isNil(o.ServedAusfInfoList) {
 		return nil, false
 	}
 	return o.ServedAusfInfoList, true
@@ -297,7 +297,7 @@ func (o *NrfInfo) GetServedAusfInfoListOk() (*map[string]map[string]NrfInfoServe
 
 // HasServedAusfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedAusfInfoList() bool {
-	if o != nil && !IsNil(o.ServedAusfInfoList) {
+	if o != nil && !isNil(o.ServedAusfInfoList) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *NrfInfo) SetServedAusfInfoList(v map[string]map[string]NrfInfoServedAus
 
 // GetServedAmfInfo returns the ServedAmfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedAmfInfo() map[string]NrfInfoServedAmfInfoValue {
-	if o == nil || IsNil(o.ServedAmfInfo) {
+	if o == nil || isNil(o.ServedAmfInfo) {
 		var ret map[string]NrfInfoServedAmfInfoValue
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *NrfInfo) GetServedAmfInfo() map[string]NrfInfoServedAmfInfoValue {
 // GetServedAmfInfoOk returns a tuple with the ServedAmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedAmfInfoOk() (*map[string]NrfInfoServedAmfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedAmfInfo) {
+	if o == nil || isNil(o.ServedAmfInfo) {
 		return nil, false
 	}
 	return o.ServedAmfInfo, true
@@ -329,7 +329,7 @@ func (o *NrfInfo) GetServedAmfInfoOk() (*map[string]NrfInfoServedAmfInfoValue, b
 
 // HasServedAmfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedAmfInfo() bool {
-	if o != nil && !IsNil(o.ServedAmfInfo) {
+	if o != nil && !isNil(o.ServedAmfInfo) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *NrfInfo) SetServedAmfInfo(v map[string]NrfInfoServedAmfInfoValue) {
 
 // GetServedAmfInfoList returns the ServedAmfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedAmfInfoList() map[string]map[string]NrfInfoServedAmfInfoValue {
-	if o == nil || IsNil(o.ServedAmfInfoList) {
+	if o == nil || isNil(o.ServedAmfInfoList) {
 		var ret map[string]map[string]NrfInfoServedAmfInfoValue
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *NrfInfo) GetServedAmfInfoList() map[string]map[string]NrfInfoServedAmfI
 // GetServedAmfInfoListOk returns a tuple with the ServedAmfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedAmfInfoListOk() (*map[string]map[string]NrfInfoServedAmfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedAmfInfoList) {
+	if o == nil || isNil(o.ServedAmfInfoList) {
 		return nil, false
 	}
 	return o.ServedAmfInfoList, true
@@ -361,7 +361,7 @@ func (o *NrfInfo) GetServedAmfInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedAmfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedAmfInfoList() bool {
-	if o != nil && !IsNil(o.ServedAmfInfoList) {
+	if o != nil && !isNil(o.ServedAmfInfoList) {
 		return true
 	}
 
@@ -375,7 +375,7 @@ func (o *NrfInfo) SetServedAmfInfoList(v map[string]map[string]NrfInfoServedAmfI
 
 // GetServedSmfInfo returns the ServedSmfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedSmfInfo() map[string]NrfInfoServedSmfInfoValue {
-	if o == nil || IsNil(o.ServedSmfInfo) {
+	if o == nil || isNil(o.ServedSmfInfo) {
 		var ret map[string]NrfInfoServedSmfInfoValue
 		return ret
 	}
@@ -385,7 +385,7 @@ func (o *NrfInfo) GetServedSmfInfo() map[string]NrfInfoServedSmfInfoValue {
 // GetServedSmfInfoOk returns a tuple with the ServedSmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedSmfInfoOk() (*map[string]NrfInfoServedSmfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedSmfInfo) {
+	if o == nil || isNil(o.ServedSmfInfo) {
 		return nil, false
 	}
 	return o.ServedSmfInfo, true
@@ -393,7 +393,7 @@ func (o *NrfInfo) GetServedSmfInfoOk() (*map[string]NrfInfoServedSmfInfoValue, b
 
 // HasServedSmfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedSmfInfo() bool {
-	if o != nil && !IsNil(o.ServedSmfInfo) {
+	if o != nil && !isNil(o.ServedSmfInfo) {
 		return true
 	}
 
@@ -407,7 +407,7 @@ func (o *NrfInfo) SetServedSmfInfo(v map[string]NrfInfoServedSmfInfoValue) {
 
 // GetServedSmfInfoList returns the ServedSmfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedSmfInfoList() map[string]map[string]NrfInfoServedSmfInfoValue {
-	if o == nil || IsNil(o.ServedSmfInfoList) {
+	if o == nil || isNil(o.ServedSmfInfoList) {
 		var ret map[string]map[string]NrfInfoServedSmfInfoValue
 		return ret
 	}
@@ -417,7 +417,7 @@ func (o *NrfInfo) GetServedSmfInfoList() map[string]map[string]NrfInfoServedSmfI
 // GetServedSmfInfoListOk returns a tuple with the ServedSmfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedSmfInfoListOk() (*map[string]map[string]NrfInfoServedSmfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedSmfInfoList) {
+	if o == nil || isNil(o.ServedSmfInfoList) {
 		return nil, false
 	}
 	return o.ServedSmfInfoList, true
@@ -425,7 +425,7 @@ func (o *NrfInfo) GetServedSmfInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedSmfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedSmfInfoList() bool {
-	if o != nil && !IsNil(o.ServedSmfInfoList) {
+	if o != nil && !isNil(o.ServedSmfInfoList) {
 		return true
 	}
 
@@ -439,7 +439,7 @@ func (o *NrfInfo) SetServedSmfInfoList(v map[string]map[string]NrfInfoServedSmfI
 
 // GetServedUpfInfo returns the ServedUpfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUpfInfo() map[string]NrfInfoServedUpfInfoValue {
-	if o == nil || IsNil(o.ServedUpfInfo) {
+	if o == nil || isNil(o.ServedUpfInfo) {
 		var ret map[string]NrfInfoServedUpfInfoValue
 		return ret
 	}
@@ -449,7 +449,7 @@ func (o *NrfInfo) GetServedUpfInfo() map[string]NrfInfoServedUpfInfoValue {
 // GetServedUpfInfoOk returns a tuple with the ServedUpfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUpfInfoOk() (*map[string]NrfInfoServedUpfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUpfInfo) {
+	if o == nil || isNil(o.ServedUpfInfo) {
 		return nil, false
 	}
 	return o.ServedUpfInfo, true
@@ -457,7 +457,7 @@ func (o *NrfInfo) GetServedUpfInfoOk() (*map[string]NrfInfoServedUpfInfoValue, b
 
 // HasServedUpfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUpfInfo() bool {
-	if o != nil && !IsNil(o.ServedUpfInfo) {
+	if o != nil && !isNil(o.ServedUpfInfo) {
 		return true
 	}
 
@@ -471,7 +471,7 @@ func (o *NrfInfo) SetServedUpfInfo(v map[string]NrfInfoServedUpfInfoValue) {
 
 // GetServedUpfInfoList returns the ServedUpfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUpfInfoList() map[string]map[string]NrfInfoServedUpfInfoValue {
-	if o == nil || IsNil(o.ServedUpfInfoList) {
+	if o == nil || isNil(o.ServedUpfInfoList) {
 		var ret map[string]map[string]NrfInfoServedUpfInfoValue
 		return ret
 	}
@@ -481,7 +481,7 @@ func (o *NrfInfo) GetServedUpfInfoList() map[string]map[string]NrfInfoServedUpfI
 // GetServedUpfInfoListOk returns a tuple with the ServedUpfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUpfInfoListOk() (*map[string]map[string]NrfInfoServedUpfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUpfInfoList) {
+	if o == nil || isNil(o.ServedUpfInfoList) {
 		return nil, false
 	}
 	return o.ServedUpfInfoList, true
@@ -489,7 +489,7 @@ func (o *NrfInfo) GetServedUpfInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedUpfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUpfInfoList() bool {
-	if o != nil && !IsNil(o.ServedUpfInfoList) {
+	if o != nil && !isNil(o.ServedUpfInfoList) {
 		return true
 	}
 
@@ -503,7 +503,7 @@ func (o *NrfInfo) SetServedUpfInfoList(v map[string]map[string]NrfInfoServedUpfI
 
 // GetServedPcfInfo returns the ServedPcfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedPcfInfo() map[string]NrfInfoServedPcfInfoValue {
-	if o == nil || IsNil(o.ServedPcfInfo) {
+	if o == nil || isNil(o.ServedPcfInfo) {
 		var ret map[string]NrfInfoServedPcfInfoValue
 		return ret
 	}
@@ -513,7 +513,7 @@ func (o *NrfInfo) GetServedPcfInfo() map[string]NrfInfoServedPcfInfoValue {
 // GetServedPcfInfoOk returns a tuple with the ServedPcfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedPcfInfoOk() (*map[string]NrfInfoServedPcfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedPcfInfo) {
+	if o == nil || isNil(o.ServedPcfInfo) {
 		return nil, false
 	}
 	return o.ServedPcfInfo, true
@@ -521,7 +521,7 @@ func (o *NrfInfo) GetServedPcfInfoOk() (*map[string]NrfInfoServedPcfInfoValue, b
 
 // HasServedPcfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedPcfInfo() bool {
-	if o != nil && !IsNil(o.ServedPcfInfo) {
+	if o != nil && !isNil(o.ServedPcfInfo) {
 		return true
 	}
 
@@ -535,7 +535,7 @@ func (o *NrfInfo) SetServedPcfInfo(v map[string]NrfInfoServedPcfInfoValue) {
 
 // GetServedPcfInfoList returns the ServedPcfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedPcfInfoList() map[string]map[string]NrfInfoServedPcfInfoValue {
-	if o == nil || IsNil(o.ServedPcfInfoList) {
+	if o == nil || isNil(o.ServedPcfInfoList) {
 		var ret map[string]map[string]NrfInfoServedPcfInfoValue
 		return ret
 	}
@@ -545,7 +545,7 @@ func (o *NrfInfo) GetServedPcfInfoList() map[string]map[string]NrfInfoServedPcfI
 // GetServedPcfInfoListOk returns a tuple with the ServedPcfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedPcfInfoListOk() (*map[string]map[string]NrfInfoServedPcfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedPcfInfoList) {
+	if o == nil || isNil(o.ServedPcfInfoList) {
 		return nil, false
 	}
 	return o.ServedPcfInfoList, true
@@ -553,7 +553,7 @@ func (o *NrfInfo) GetServedPcfInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedPcfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedPcfInfoList() bool {
-	if o != nil && !IsNil(o.ServedPcfInfoList) {
+	if o != nil && !isNil(o.ServedPcfInfoList) {
 		return true
 	}
 
@@ -567,7 +567,7 @@ func (o *NrfInfo) SetServedPcfInfoList(v map[string]map[string]NrfInfoServedPcfI
 
 // GetServedBsfInfo returns the ServedBsfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedBsfInfo() map[string]NrfInfoServedBsfInfoValue {
-	if o == nil || IsNil(o.ServedBsfInfo) {
+	if o == nil || isNil(o.ServedBsfInfo) {
 		var ret map[string]NrfInfoServedBsfInfoValue
 		return ret
 	}
@@ -577,7 +577,7 @@ func (o *NrfInfo) GetServedBsfInfo() map[string]NrfInfoServedBsfInfoValue {
 // GetServedBsfInfoOk returns a tuple with the ServedBsfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedBsfInfoOk() (*map[string]NrfInfoServedBsfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedBsfInfo) {
+	if o == nil || isNil(o.ServedBsfInfo) {
 		return nil, false
 	}
 	return o.ServedBsfInfo, true
@@ -585,7 +585,7 @@ func (o *NrfInfo) GetServedBsfInfoOk() (*map[string]NrfInfoServedBsfInfoValue, b
 
 // HasServedBsfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedBsfInfo() bool {
-	if o != nil && !IsNil(o.ServedBsfInfo) {
+	if o != nil && !isNil(o.ServedBsfInfo) {
 		return true
 	}
 
@@ -599,7 +599,7 @@ func (o *NrfInfo) SetServedBsfInfo(v map[string]NrfInfoServedBsfInfoValue) {
 
 // GetServedBsfInfoList returns the ServedBsfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedBsfInfoList() map[string]map[string]NrfInfoServedBsfInfoValue {
-	if o == nil || IsNil(o.ServedBsfInfoList) {
+	if o == nil || isNil(o.ServedBsfInfoList) {
 		var ret map[string]map[string]NrfInfoServedBsfInfoValue
 		return ret
 	}
@@ -609,7 +609,7 @@ func (o *NrfInfo) GetServedBsfInfoList() map[string]map[string]NrfInfoServedBsfI
 // GetServedBsfInfoListOk returns a tuple with the ServedBsfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedBsfInfoListOk() (*map[string]map[string]NrfInfoServedBsfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedBsfInfoList) {
+	if o == nil || isNil(o.ServedBsfInfoList) {
 		return nil, false
 	}
 	return o.ServedBsfInfoList, true
@@ -617,7 +617,7 @@ func (o *NrfInfo) GetServedBsfInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedBsfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedBsfInfoList() bool {
-	if o != nil && !IsNil(o.ServedBsfInfoList) {
+	if o != nil && !isNil(o.ServedBsfInfoList) {
 		return true
 	}
 
@@ -631,7 +631,7 @@ func (o *NrfInfo) SetServedBsfInfoList(v map[string]map[string]NrfInfoServedBsfI
 
 // GetServedChfInfo returns the ServedChfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedChfInfo() map[string]NrfInfoServedChfInfoValue {
-	if o == nil || IsNil(o.ServedChfInfo) {
+	if o == nil || isNil(o.ServedChfInfo) {
 		var ret map[string]NrfInfoServedChfInfoValue
 		return ret
 	}
@@ -641,7 +641,7 @@ func (o *NrfInfo) GetServedChfInfo() map[string]NrfInfoServedChfInfoValue {
 // GetServedChfInfoOk returns a tuple with the ServedChfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedChfInfoOk() (*map[string]NrfInfoServedChfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedChfInfo) {
+	if o == nil || isNil(o.ServedChfInfo) {
 		return nil, false
 	}
 	return o.ServedChfInfo, true
@@ -649,7 +649,7 @@ func (o *NrfInfo) GetServedChfInfoOk() (*map[string]NrfInfoServedChfInfoValue, b
 
 // HasServedChfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedChfInfo() bool {
-	if o != nil && !IsNil(o.ServedChfInfo) {
+	if o != nil && !isNil(o.ServedChfInfo) {
 		return true
 	}
 
@@ -663,7 +663,7 @@ func (o *NrfInfo) SetServedChfInfo(v map[string]NrfInfoServedChfInfoValue) {
 
 // GetServedChfInfoList returns the ServedChfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedChfInfoList() map[string]map[string]NrfInfoServedChfInfoValue {
-	if o == nil || IsNil(o.ServedChfInfoList) {
+	if o == nil || isNil(o.ServedChfInfoList) {
 		var ret map[string]map[string]NrfInfoServedChfInfoValue
 		return ret
 	}
@@ -673,7 +673,7 @@ func (o *NrfInfo) GetServedChfInfoList() map[string]map[string]NrfInfoServedChfI
 // GetServedChfInfoListOk returns a tuple with the ServedChfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedChfInfoListOk() (*map[string]map[string]NrfInfoServedChfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedChfInfoList) {
+	if o == nil || isNil(o.ServedChfInfoList) {
 		return nil, false
 	}
 	return o.ServedChfInfoList, true
@@ -681,7 +681,7 @@ func (o *NrfInfo) GetServedChfInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedChfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedChfInfoList() bool {
-	if o != nil && !IsNil(o.ServedChfInfoList) {
+	if o != nil && !isNil(o.ServedChfInfoList) {
 		return true
 	}
 
@@ -695,7 +695,7 @@ func (o *NrfInfo) SetServedChfInfoList(v map[string]map[string]NrfInfoServedChfI
 
 // GetServedNefInfo returns the ServedNefInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedNefInfo() map[string]NrfInfoServedNefInfoValue {
-	if o == nil || IsNil(o.ServedNefInfo) {
+	if o == nil || isNil(o.ServedNefInfo) {
 		var ret map[string]NrfInfoServedNefInfoValue
 		return ret
 	}
@@ -705,7 +705,7 @@ func (o *NrfInfo) GetServedNefInfo() map[string]NrfInfoServedNefInfoValue {
 // GetServedNefInfoOk returns a tuple with the ServedNefInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedNefInfoOk() (*map[string]NrfInfoServedNefInfoValue, bool) {
-	if o == nil || IsNil(o.ServedNefInfo) {
+	if o == nil || isNil(o.ServedNefInfo) {
 		return nil, false
 	}
 	return o.ServedNefInfo, true
@@ -713,7 +713,7 @@ func (o *NrfInfo) GetServedNefInfoOk() (*map[string]NrfInfoServedNefInfoValue, b
 
 // HasServedNefInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedNefInfo() bool {
-	if o != nil && !IsNil(o.ServedNefInfo) {
+	if o != nil && !isNil(o.ServedNefInfo) {
 		return true
 	}
 
@@ -727,7 +727,7 @@ func (o *NrfInfo) SetServedNefInfo(v map[string]NrfInfoServedNefInfoValue) {
 
 // GetServedNwdafInfo returns the ServedNwdafInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedNwdafInfo() map[string]NrfInfoServedNwdafInfoValue {
-	if o == nil || IsNil(o.ServedNwdafInfo) {
+	if o == nil || isNil(o.ServedNwdafInfo) {
 		var ret map[string]NrfInfoServedNwdafInfoValue
 		return ret
 	}
@@ -737,7 +737,7 @@ func (o *NrfInfo) GetServedNwdafInfo() map[string]NrfInfoServedNwdafInfoValue {
 // GetServedNwdafInfoOk returns a tuple with the ServedNwdafInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedNwdafInfoOk() (*map[string]NrfInfoServedNwdafInfoValue, bool) {
-	if o == nil || IsNil(o.ServedNwdafInfo) {
+	if o == nil || isNil(o.ServedNwdafInfo) {
 		return nil, false
 	}
 	return o.ServedNwdafInfo, true
@@ -745,7 +745,7 @@ func (o *NrfInfo) GetServedNwdafInfoOk() (*map[string]NrfInfoServedNwdafInfoValu
 
 // HasServedNwdafInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedNwdafInfo() bool {
-	if o != nil && !IsNil(o.ServedNwdafInfo) {
+	if o != nil && !isNil(o.ServedNwdafInfo) {
 		return true
 	}
 
@@ -759,7 +759,7 @@ func (o *NrfInfo) SetServedNwdafInfo(v map[string]NrfInfoServedNwdafInfoValue) {
 
 // GetServedNwdafInfoList returns the ServedNwdafInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedNwdafInfoList() map[string]map[string]NwdafInfo {
-	if o == nil || IsNil(o.ServedNwdafInfoList) {
+	if o == nil || isNil(o.ServedNwdafInfoList) {
 		var ret map[string]map[string]NwdafInfo
 		return ret
 	}
@@ -769,7 +769,7 @@ func (o *NrfInfo) GetServedNwdafInfoList() map[string]map[string]NwdafInfo {
 // GetServedNwdafInfoListOk returns a tuple with the ServedNwdafInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedNwdafInfoListOk() (*map[string]map[string]NwdafInfo, bool) {
-	if o == nil || IsNil(o.ServedNwdafInfoList) {
+	if o == nil || isNil(o.ServedNwdafInfoList) {
 		return nil, false
 	}
 	return o.ServedNwdafInfoList, true
@@ -777,7 +777,7 @@ func (o *NrfInfo) GetServedNwdafInfoListOk() (*map[string]map[string]NwdafInfo, 
 
 // HasServedNwdafInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedNwdafInfoList() bool {
-	if o != nil && !IsNil(o.ServedNwdafInfoList) {
+	if o != nil && !isNil(o.ServedNwdafInfoList) {
 		return true
 	}
 
@@ -791,7 +791,7 @@ func (o *NrfInfo) SetServedNwdafInfoList(v map[string]map[string]NwdafInfo) {
 
 // GetServedPcscfInfoList returns the ServedPcscfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedPcscfInfoList() map[string]map[string]NrfInfoServedPcscfInfoListValueValue {
-	if o == nil || IsNil(o.ServedPcscfInfoList) {
+	if o == nil || isNil(o.ServedPcscfInfoList) {
 		var ret map[string]map[string]NrfInfoServedPcscfInfoListValueValue
 		return ret
 	}
@@ -801,7 +801,7 @@ func (o *NrfInfo) GetServedPcscfInfoList() map[string]map[string]NrfInfoServedPc
 // GetServedPcscfInfoListOk returns a tuple with the ServedPcscfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedPcscfInfoListOk() (*map[string]map[string]NrfInfoServedPcscfInfoListValueValue, bool) {
-	if o == nil || IsNil(o.ServedPcscfInfoList) {
+	if o == nil || isNil(o.ServedPcscfInfoList) {
 		return nil, false
 	}
 	return o.ServedPcscfInfoList, true
@@ -809,7 +809,7 @@ func (o *NrfInfo) GetServedPcscfInfoListOk() (*map[string]map[string]NrfInfoServ
 
 // HasServedPcscfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedPcscfInfoList() bool {
-	if o != nil && !IsNil(o.ServedPcscfInfoList) {
+	if o != nil && !isNil(o.ServedPcscfInfoList) {
 		return true
 	}
 
@@ -823,7 +823,7 @@ func (o *NrfInfo) SetServedPcscfInfoList(v map[string]map[string]NrfInfoServedPc
 
 // GetServedGmlcInfo returns the ServedGmlcInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedGmlcInfo() map[string]NrfInfoServedGmlcInfoValue {
-	if o == nil || IsNil(o.ServedGmlcInfo) {
+	if o == nil || isNil(o.ServedGmlcInfo) {
 		var ret map[string]NrfInfoServedGmlcInfoValue
 		return ret
 	}
@@ -833,7 +833,7 @@ func (o *NrfInfo) GetServedGmlcInfo() map[string]NrfInfoServedGmlcInfoValue {
 // GetServedGmlcInfoOk returns a tuple with the ServedGmlcInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedGmlcInfoOk() (*map[string]NrfInfoServedGmlcInfoValue, bool) {
-	if o == nil || IsNil(o.ServedGmlcInfo) {
+	if o == nil || isNil(o.ServedGmlcInfo) {
 		return nil, false
 	}
 	return o.ServedGmlcInfo, true
@@ -841,7 +841,7 @@ func (o *NrfInfo) GetServedGmlcInfoOk() (*map[string]NrfInfoServedGmlcInfoValue,
 
 // HasServedGmlcInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedGmlcInfo() bool {
-	if o != nil && !IsNil(o.ServedGmlcInfo) {
+	if o != nil && !isNil(o.ServedGmlcInfo) {
 		return true
 	}
 
@@ -855,7 +855,7 @@ func (o *NrfInfo) SetServedGmlcInfo(v map[string]NrfInfoServedGmlcInfoValue) {
 
 // GetServedLmfInfo returns the ServedLmfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedLmfInfo() map[string]NrfInfoServedLmfInfoValue {
-	if o == nil || IsNil(o.ServedLmfInfo) {
+	if o == nil || isNil(o.ServedLmfInfo) {
 		var ret map[string]NrfInfoServedLmfInfoValue
 		return ret
 	}
@@ -865,7 +865,7 @@ func (o *NrfInfo) GetServedLmfInfo() map[string]NrfInfoServedLmfInfoValue {
 // GetServedLmfInfoOk returns a tuple with the ServedLmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedLmfInfoOk() (*map[string]NrfInfoServedLmfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedLmfInfo) {
+	if o == nil || isNil(o.ServedLmfInfo) {
 		return nil, false
 	}
 	return o.ServedLmfInfo, true
@@ -873,7 +873,7 @@ func (o *NrfInfo) GetServedLmfInfoOk() (*map[string]NrfInfoServedLmfInfoValue, b
 
 // HasServedLmfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedLmfInfo() bool {
-	if o != nil && !IsNil(o.ServedLmfInfo) {
+	if o != nil && !isNil(o.ServedLmfInfo) {
 		return true
 	}
 
@@ -887,7 +887,7 @@ func (o *NrfInfo) SetServedLmfInfo(v map[string]NrfInfoServedLmfInfoValue) {
 
 // GetServedNfInfo returns the ServedNfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedNfInfo() map[string]NfInfo {
-	if o == nil || IsNil(o.ServedNfInfo) {
+	if o == nil || isNil(o.ServedNfInfo) {
 		var ret map[string]NfInfo
 		return ret
 	}
@@ -897,7 +897,7 @@ func (o *NrfInfo) GetServedNfInfo() map[string]NfInfo {
 // GetServedNfInfoOk returns a tuple with the ServedNfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedNfInfoOk() (*map[string]NfInfo, bool) {
-	if o == nil || IsNil(o.ServedNfInfo) {
+	if o == nil || isNil(o.ServedNfInfo) {
 		return nil, false
 	}
 	return o.ServedNfInfo, true
@@ -905,7 +905,7 @@ func (o *NrfInfo) GetServedNfInfoOk() (*map[string]NfInfo, bool) {
 
 // HasServedNfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedNfInfo() bool {
-	if o != nil && !IsNil(o.ServedNfInfo) {
+	if o != nil && !isNil(o.ServedNfInfo) {
 		return true
 	}
 
@@ -919,7 +919,7 @@ func (o *NrfInfo) SetServedNfInfo(v map[string]NfInfo) {
 
 // GetServedHssInfoList returns the ServedHssInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedHssInfoList() map[string]map[string]NrfInfoServedHssInfoListValueValue {
-	if o == nil || IsNil(o.ServedHssInfoList) {
+	if o == nil || isNil(o.ServedHssInfoList) {
 		var ret map[string]map[string]NrfInfoServedHssInfoListValueValue
 		return ret
 	}
@@ -929,7 +929,7 @@ func (o *NrfInfo) GetServedHssInfoList() map[string]map[string]NrfInfoServedHssI
 // GetServedHssInfoListOk returns a tuple with the ServedHssInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedHssInfoListOk() (*map[string]map[string]NrfInfoServedHssInfoListValueValue, bool) {
-	if o == nil || IsNil(o.ServedHssInfoList) {
+	if o == nil || isNil(o.ServedHssInfoList) {
 		return nil, false
 	}
 	return o.ServedHssInfoList, true
@@ -937,7 +937,7 @@ func (o *NrfInfo) GetServedHssInfoListOk() (*map[string]map[string]NrfInfoServed
 
 // HasServedHssInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedHssInfoList() bool {
-	if o != nil && !IsNil(o.ServedHssInfoList) {
+	if o != nil && !isNil(o.ServedHssInfoList) {
 		return true
 	}
 
@@ -951,7 +951,7 @@ func (o *NrfInfo) SetServedHssInfoList(v map[string]map[string]NrfInfoServedHssI
 
 // GetServedUdsfInfo returns the ServedUdsfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUdsfInfo() map[string]NrfInfoServedUdsfInfoValue {
-	if o == nil || IsNil(o.ServedUdsfInfo) {
+	if o == nil || isNil(o.ServedUdsfInfo) {
 		var ret map[string]NrfInfoServedUdsfInfoValue
 		return ret
 	}
@@ -961,7 +961,7 @@ func (o *NrfInfo) GetServedUdsfInfo() map[string]NrfInfoServedUdsfInfoValue {
 // GetServedUdsfInfoOk returns a tuple with the ServedUdsfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUdsfInfoOk() (*map[string]NrfInfoServedUdsfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUdsfInfo) {
+	if o == nil || isNil(o.ServedUdsfInfo) {
 		return nil, false
 	}
 	return o.ServedUdsfInfo, true
@@ -969,7 +969,7 @@ func (o *NrfInfo) GetServedUdsfInfoOk() (*map[string]NrfInfoServedUdsfInfoValue,
 
 // HasServedUdsfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUdsfInfo() bool {
-	if o != nil && !IsNil(o.ServedUdsfInfo) {
+	if o != nil && !isNil(o.ServedUdsfInfo) {
 		return true
 	}
 
@@ -983,7 +983,7 @@ func (o *NrfInfo) SetServedUdsfInfo(v map[string]NrfInfoServedUdsfInfoValue) {
 
 // GetServedUdsfInfoList returns the ServedUdsfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedUdsfInfoList() map[string]map[string]NrfInfoServedUdsfInfoValue {
-	if o == nil || IsNil(o.ServedUdsfInfoList) {
+	if o == nil || isNil(o.ServedUdsfInfoList) {
 		var ret map[string]map[string]NrfInfoServedUdsfInfoValue
 		return ret
 	}
@@ -993,7 +993,7 @@ func (o *NrfInfo) GetServedUdsfInfoList() map[string]map[string]NrfInfoServedUds
 // GetServedUdsfInfoListOk returns a tuple with the ServedUdsfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedUdsfInfoListOk() (*map[string]map[string]NrfInfoServedUdsfInfoValue, bool) {
-	if o == nil || IsNil(o.ServedUdsfInfoList) {
+	if o == nil || isNil(o.ServedUdsfInfoList) {
 		return nil, false
 	}
 	return o.ServedUdsfInfoList, true
@@ -1001,7 +1001,7 @@ func (o *NrfInfo) GetServedUdsfInfoListOk() (*map[string]map[string]NrfInfoServe
 
 // HasServedUdsfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedUdsfInfoList() bool {
-	if o != nil && !IsNil(o.ServedUdsfInfoList) {
+	if o != nil && !isNil(o.ServedUdsfInfoList) {
 		return true
 	}
 
@@ -1015,7 +1015,7 @@ func (o *NrfInfo) SetServedUdsfInfoList(v map[string]map[string]NrfInfoServedUds
 
 // GetServedScpInfoList returns the ServedScpInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedScpInfoList() map[string]NrfInfoServedScpInfoListValue {
-	if o == nil || IsNil(o.ServedScpInfoList) {
+	if o == nil || isNil(o.ServedScpInfoList) {
 		var ret map[string]NrfInfoServedScpInfoListValue
 		return ret
 	}
@@ -1025,7 +1025,7 @@ func (o *NrfInfo) GetServedScpInfoList() map[string]NrfInfoServedScpInfoListValu
 // GetServedScpInfoListOk returns a tuple with the ServedScpInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedScpInfoListOk() (*map[string]NrfInfoServedScpInfoListValue, bool) {
-	if o == nil || IsNil(o.ServedScpInfoList) {
+	if o == nil || isNil(o.ServedScpInfoList) {
 		return nil, false
 	}
 	return o.ServedScpInfoList, true
@@ -1033,7 +1033,7 @@ func (o *NrfInfo) GetServedScpInfoListOk() (*map[string]NrfInfoServedScpInfoList
 
 // HasServedScpInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedScpInfoList() bool {
-	if o != nil && !IsNil(o.ServedScpInfoList) {
+	if o != nil && !isNil(o.ServedScpInfoList) {
 		return true
 	}
 
@@ -1047,7 +1047,7 @@ func (o *NrfInfo) SetServedScpInfoList(v map[string]NrfInfoServedScpInfoListValu
 
 // GetServedSeppInfoList returns the ServedSeppInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedSeppInfoList() map[string]NrfInfoServedSeppInfoListValue {
-	if o == nil || IsNil(o.ServedSeppInfoList) {
+	if o == nil || isNil(o.ServedSeppInfoList) {
 		var ret map[string]NrfInfoServedSeppInfoListValue
 		return ret
 	}
@@ -1057,7 +1057,7 @@ func (o *NrfInfo) GetServedSeppInfoList() map[string]NrfInfoServedSeppInfoListVa
 // GetServedSeppInfoListOk returns a tuple with the ServedSeppInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedSeppInfoListOk() (*map[string]NrfInfoServedSeppInfoListValue, bool) {
-	if o == nil || IsNil(o.ServedSeppInfoList) {
+	if o == nil || isNil(o.ServedSeppInfoList) {
 		return nil, false
 	}
 	return o.ServedSeppInfoList, true
@@ -1065,7 +1065,7 @@ func (o *NrfInfo) GetServedSeppInfoListOk() (*map[string]NrfInfoServedSeppInfoLi
 
 // HasServedSeppInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedSeppInfoList() bool {
-	if o != nil && !IsNil(o.ServedSeppInfoList) {
+	if o != nil && !isNil(o.ServedSeppInfoList) {
 		return true
 	}
 
@@ -1079,7 +1079,7 @@ func (o *NrfInfo) SetServedSeppInfoList(v map[string]NrfInfoServedSeppInfoListVa
 
 // GetServedAanfInfoList returns the ServedAanfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedAanfInfoList() map[string]map[string]NrfInfoServedAanfInfoListValueValue {
-	if o == nil || IsNil(o.ServedAanfInfoList) {
+	if o == nil || isNil(o.ServedAanfInfoList) {
 		var ret map[string]map[string]NrfInfoServedAanfInfoListValueValue
 		return ret
 	}
@@ -1089,7 +1089,7 @@ func (o *NrfInfo) GetServedAanfInfoList() map[string]map[string]NrfInfoServedAan
 // GetServedAanfInfoListOk returns a tuple with the ServedAanfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedAanfInfoListOk() (*map[string]map[string]NrfInfoServedAanfInfoListValueValue, bool) {
-	if o == nil || IsNil(o.ServedAanfInfoList) {
+	if o == nil || isNil(o.ServedAanfInfoList) {
 		return nil, false
 	}
 	return o.ServedAanfInfoList, true
@@ -1097,7 +1097,7 @@ func (o *NrfInfo) GetServedAanfInfoListOk() (*map[string]map[string]NrfInfoServe
 
 // HasServedAanfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedAanfInfoList() bool {
-	if o != nil && !IsNil(o.ServedAanfInfoList) {
+	if o != nil && !isNil(o.ServedAanfInfoList) {
 		return true
 	}
 
@@ -1111,7 +1111,7 @@ func (o *NrfInfo) SetServedAanfInfoList(v map[string]map[string]NrfInfoServedAan
 
 // GetServed5gDdnmfInfo returns the Served5gDdnmfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServed5gDdnmfInfo() map[string]Model5GDdnmfInfo {
-	if o == nil || IsNil(o.Served5gDdnmfInfo) {
+	if o == nil || isNil(o.Served5gDdnmfInfo) {
 		var ret map[string]Model5GDdnmfInfo
 		return ret
 	}
@@ -1121,7 +1121,7 @@ func (o *NrfInfo) GetServed5gDdnmfInfo() map[string]Model5GDdnmfInfo {
 // GetServed5gDdnmfInfoOk returns a tuple with the Served5gDdnmfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServed5gDdnmfInfoOk() (*map[string]Model5GDdnmfInfo, bool) {
-	if o == nil || IsNil(o.Served5gDdnmfInfo) {
+	if o == nil || isNil(o.Served5gDdnmfInfo) {
 		return nil, false
 	}
 	return o.Served5gDdnmfInfo, true
@@ -1129,7 +1129,7 @@ func (o *NrfInfo) GetServed5gDdnmfInfoOk() (*map[string]Model5GDdnmfInfo, bool) 
 
 // HasServed5gDdnmfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServed5gDdnmfInfo() bool {
-	if o != nil && !IsNil(o.Served5gDdnmfInfo) {
+	if o != nil && !isNil(o.Served5gDdnmfInfo) {
 		return true
 	}
 
@@ -1143,7 +1143,7 @@ func (o *NrfInfo) SetServed5gDdnmfInfo(v map[string]Model5GDdnmfInfo) {
 
 // GetServedMfafInfoList returns the ServedMfafInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedMfafInfoList() map[string]MfafInfo {
-	if o == nil || IsNil(o.ServedMfafInfoList) {
+	if o == nil || isNil(o.ServedMfafInfoList) {
 		var ret map[string]MfafInfo
 		return ret
 	}
@@ -1153,7 +1153,7 @@ func (o *NrfInfo) GetServedMfafInfoList() map[string]MfafInfo {
 // GetServedMfafInfoListOk returns a tuple with the ServedMfafInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedMfafInfoListOk() (*map[string]MfafInfo, bool) {
-	if o == nil || IsNil(o.ServedMfafInfoList) {
+	if o == nil || isNil(o.ServedMfafInfoList) {
 		return nil, false
 	}
 	return o.ServedMfafInfoList, true
@@ -1161,7 +1161,7 @@ func (o *NrfInfo) GetServedMfafInfoListOk() (*map[string]MfafInfo, bool) {
 
 // HasServedMfafInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedMfafInfoList() bool {
-	if o != nil && !IsNil(o.ServedMfafInfoList) {
+	if o != nil && !isNil(o.ServedMfafInfoList) {
 		return true
 	}
 
@@ -1175,7 +1175,7 @@ func (o *NrfInfo) SetServedMfafInfoList(v map[string]MfafInfo) {
 
 // GetServedEasdfInfoList returns the ServedEasdfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedEasdfInfoList() map[string]map[string]EasdfInfo {
-	if o == nil || IsNil(o.ServedEasdfInfoList) {
+	if o == nil || isNil(o.ServedEasdfInfoList) {
 		var ret map[string]map[string]EasdfInfo
 		return ret
 	}
@@ -1185,7 +1185,7 @@ func (o *NrfInfo) GetServedEasdfInfoList() map[string]map[string]EasdfInfo {
 // GetServedEasdfInfoListOk returns a tuple with the ServedEasdfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedEasdfInfoListOk() (*map[string]map[string]EasdfInfo, bool) {
-	if o == nil || IsNil(o.ServedEasdfInfoList) {
+	if o == nil || isNil(o.ServedEasdfInfoList) {
 		return nil, false
 	}
 	return o.ServedEasdfInfoList, true
@@ -1193,7 +1193,7 @@ func (o *NrfInfo) GetServedEasdfInfoListOk() (*map[string]map[string]EasdfInfo, 
 
 // HasServedEasdfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedEasdfInfoList() bool {
-	if o != nil && !IsNil(o.ServedEasdfInfoList) {
+	if o != nil && !isNil(o.ServedEasdfInfoList) {
 		return true
 	}
 
@@ -1207,7 +1207,7 @@ func (o *NrfInfo) SetServedEasdfInfoList(v map[string]map[string]EasdfInfo) {
 
 // GetServedDccfInfoList returns the ServedDccfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedDccfInfoList() map[string]DccfInfo {
-	if o == nil || IsNil(o.ServedDccfInfoList) {
+	if o == nil || isNil(o.ServedDccfInfoList) {
 		var ret map[string]DccfInfo
 		return ret
 	}
@@ -1217,7 +1217,7 @@ func (o *NrfInfo) GetServedDccfInfoList() map[string]DccfInfo {
 // GetServedDccfInfoListOk returns a tuple with the ServedDccfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedDccfInfoListOk() (*map[string]DccfInfo, bool) {
-	if o == nil || IsNil(o.ServedDccfInfoList) {
+	if o == nil || isNil(o.ServedDccfInfoList) {
 		return nil, false
 	}
 	return o.ServedDccfInfoList, true
@@ -1225,7 +1225,7 @@ func (o *NrfInfo) GetServedDccfInfoListOk() (*map[string]DccfInfo, bool) {
 
 // HasServedDccfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedDccfInfoList() bool {
-	if o != nil && !IsNil(o.ServedDccfInfoList) {
+	if o != nil && !isNil(o.ServedDccfInfoList) {
 		return true
 	}
 
@@ -1239,7 +1239,7 @@ func (o *NrfInfo) SetServedDccfInfoList(v map[string]DccfInfo) {
 
 // GetServedMbSmfInfoList returns the ServedMbSmfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedMbSmfInfoList() map[string]map[string]NrfInfoServedMbSmfInfoListValueValue {
-	if o == nil || IsNil(o.ServedMbSmfInfoList) {
+	if o == nil || isNil(o.ServedMbSmfInfoList) {
 		var ret map[string]map[string]NrfInfoServedMbSmfInfoListValueValue
 		return ret
 	}
@@ -1249,7 +1249,7 @@ func (o *NrfInfo) GetServedMbSmfInfoList() map[string]map[string]NrfInfoServedMb
 // GetServedMbSmfInfoListOk returns a tuple with the ServedMbSmfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedMbSmfInfoListOk() (*map[string]map[string]NrfInfoServedMbSmfInfoListValueValue, bool) {
-	if o == nil || IsNil(o.ServedMbSmfInfoList) {
+	if o == nil || isNil(o.ServedMbSmfInfoList) {
 		return nil, false
 	}
 	return o.ServedMbSmfInfoList, true
@@ -1257,7 +1257,7 @@ func (o *NrfInfo) GetServedMbSmfInfoListOk() (*map[string]map[string]NrfInfoServ
 
 // HasServedMbSmfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedMbSmfInfoList() bool {
-	if o != nil && !IsNil(o.ServedMbSmfInfoList) {
+	if o != nil && !isNil(o.ServedMbSmfInfoList) {
 		return true
 	}
 
@@ -1271,7 +1271,7 @@ func (o *NrfInfo) SetServedMbSmfInfoList(v map[string]map[string]NrfInfoServedMb
 
 // GetServedTsctsfInfoList returns the ServedTsctsfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedTsctsfInfoList() map[string]map[string]TsctsfInfo {
-	if o == nil || IsNil(o.ServedTsctsfInfoList) {
+	if o == nil || isNil(o.ServedTsctsfInfoList) {
 		var ret map[string]map[string]TsctsfInfo
 		return ret
 	}
@@ -1281,7 +1281,7 @@ func (o *NrfInfo) GetServedTsctsfInfoList() map[string]map[string]TsctsfInfo {
 // GetServedTsctsfInfoListOk returns a tuple with the ServedTsctsfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedTsctsfInfoListOk() (*map[string]map[string]TsctsfInfo, bool) {
-	if o == nil || IsNil(o.ServedTsctsfInfoList) {
+	if o == nil || isNil(o.ServedTsctsfInfoList) {
 		return nil, false
 	}
 	return o.ServedTsctsfInfoList, true
@@ -1289,7 +1289,7 @@ func (o *NrfInfo) GetServedTsctsfInfoListOk() (*map[string]map[string]TsctsfInfo
 
 // HasServedTsctsfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedTsctsfInfoList() bool {
-	if o != nil && !IsNil(o.ServedTsctsfInfoList) {
+	if o != nil && !isNil(o.ServedTsctsfInfoList) {
 		return true
 	}
 
@@ -1303,7 +1303,7 @@ func (o *NrfInfo) SetServedTsctsfInfoList(v map[string]map[string]TsctsfInfo) {
 
 // GetServedMbUpfInfoList returns the ServedMbUpfInfoList field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedMbUpfInfoList() map[string]map[string]MbUpfInfo {
-	if o == nil || IsNil(o.ServedMbUpfInfoList) {
+	if o == nil || isNil(o.ServedMbUpfInfoList) {
 		var ret map[string]map[string]MbUpfInfo
 		return ret
 	}
@@ -1313,7 +1313,7 @@ func (o *NrfInfo) GetServedMbUpfInfoList() map[string]map[string]MbUpfInfo {
 // GetServedMbUpfInfoListOk returns a tuple with the ServedMbUpfInfoList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedMbUpfInfoListOk() (*map[string]map[string]MbUpfInfo, bool) {
-	if o == nil || IsNil(o.ServedMbUpfInfoList) {
+	if o == nil || isNil(o.ServedMbUpfInfoList) {
 		return nil, false
 	}
 	return o.ServedMbUpfInfoList, true
@@ -1321,7 +1321,7 @@ func (o *NrfInfo) GetServedMbUpfInfoListOk() (*map[string]map[string]MbUpfInfo, 
 
 // HasServedMbUpfInfoList returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedMbUpfInfoList() bool {
-	if o != nil && !IsNil(o.ServedMbUpfInfoList) {
+	if o != nil && !isNil(o.ServedMbUpfInfoList) {
 		return true
 	}
 
@@ -1335,7 +1335,7 @@ func (o *NrfInfo) SetServedMbUpfInfoList(v map[string]map[string]MbUpfInfo) {
 
 // GetServedTrustAfInfo returns the ServedTrustAfInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedTrustAfInfo() map[string]TrustAfInfo {
-	if o == nil || IsNil(o.ServedTrustAfInfo) {
+	if o == nil || isNil(o.ServedTrustAfInfo) {
 		var ret map[string]TrustAfInfo
 		return ret
 	}
@@ -1345,7 +1345,7 @@ func (o *NrfInfo) GetServedTrustAfInfo() map[string]TrustAfInfo {
 // GetServedTrustAfInfoOk returns a tuple with the ServedTrustAfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedTrustAfInfoOk() (*map[string]TrustAfInfo, bool) {
-	if o == nil || IsNil(o.ServedTrustAfInfo) {
+	if o == nil || isNil(o.ServedTrustAfInfo) {
 		return nil, false
 	}
 	return o.ServedTrustAfInfo, true
@@ -1353,7 +1353,7 @@ func (o *NrfInfo) GetServedTrustAfInfoOk() (*map[string]TrustAfInfo, bool) {
 
 // HasServedTrustAfInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedTrustAfInfo() bool {
-	if o != nil && !IsNil(o.ServedTrustAfInfo) {
+	if o != nil && !isNil(o.ServedTrustAfInfo) {
 		return true
 	}
 
@@ -1367,7 +1367,7 @@ func (o *NrfInfo) SetServedTrustAfInfo(v map[string]TrustAfInfo) {
 
 // GetServedNssaafInfo returns the ServedNssaafInfo field value if set, zero value otherwise.
 func (o *NrfInfo) GetServedNssaafInfo() map[string]NssaafInfo {
-	if o == nil || IsNil(o.ServedNssaafInfo) {
+	if o == nil || isNil(o.ServedNssaafInfo) {
 		var ret map[string]NssaafInfo
 		return ret
 	}
@@ -1377,7 +1377,7 @@ func (o *NrfInfo) GetServedNssaafInfo() map[string]NssaafInfo {
 // GetServedNssaafInfoOk returns a tuple with the ServedNssaafInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NrfInfo) GetServedNssaafInfoOk() (*map[string]NssaafInfo, bool) {
-	if o == nil || IsNil(o.ServedNssaafInfo) {
+	if o == nil || isNil(o.ServedNssaafInfo) {
 		return nil, false
 	}
 	return o.ServedNssaafInfo, true
@@ -1385,7 +1385,7 @@ func (o *NrfInfo) GetServedNssaafInfoOk() (*map[string]NssaafInfo, bool) {
 
 // HasServedNssaafInfo returns a boolean if a field has been set.
 func (o *NrfInfo) HasServedNssaafInfo() bool {
-	if o != nil && !IsNil(o.ServedNssaafInfo) {
+	if o != nil && !isNil(o.ServedNssaafInfo) {
 		return true
 	}
 
@@ -1407,124 +1407,124 @@ func (o NrfInfo) MarshalJSON() ([]byte, error) {
 
 func (o NrfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServedUdrInfo) {
+	if !isNil(o.ServedUdrInfo) {
 		toSerialize["servedUdrInfo"] = o.ServedUdrInfo
 	}
-	if !IsNil(o.ServedUdrInfoList) {
+	if !isNil(o.ServedUdrInfoList) {
 		toSerialize["servedUdrInfoList"] = o.ServedUdrInfoList
 	}
-	if !IsNil(o.ServedUdmInfo) {
+	if !isNil(o.ServedUdmInfo) {
 		toSerialize["servedUdmInfo"] = o.ServedUdmInfo
 	}
-	if !IsNil(o.ServedUdmInfoList) {
+	if !isNil(o.ServedUdmInfoList) {
 		toSerialize["servedUdmInfoList"] = o.ServedUdmInfoList
 	}
-	if !IsNil(o.ServedAusfInfo) {
+	if !isNil(o.ServedAusfInfo) {
 		toSerialize["servedAusfInfo"] = o.ServedAusfInfo
 	}
-	if !IsNil(o.ServedAusfInfoList) {
+	if !isNil(o.ServedAusfInfoList) {
 		toSerialize["servedAusfInfoList"] = o.ServedAusfInfoList
 	}
-	if !IsNil(o.ServedAmfInfo) {
+	if !isNil(o.ServedAmfInfo) {
 		toSerialize["servedAmfInfo"] = o.ServedAmfInfo
 	}
-	if !IsNil(o.ServedAmfInfoList) {
+	if !isNil(o.ServedAmfInfoList) {
 		toSerialize["servedAmfInfoList"] = o.ServedAmfInfoList
 	}
-	if !IsNil(o.ServedSmfInfo) {
+	if !isNil(o.ServedSmfInfo) {
 		toSerialize["servedSmfInfo"] = o.ServedSmfInfo
 	}
-	if !IsNil(o.ServedSmfInfoList) {
+	if !isNil(o.ServedSmfInfoList) {
 		toSerialize["servedSmfInfoList"] = o.ServedSmfInfoList
 	}
-	if !IsNil(o.ServedUpfInfo) {
+	if !isNil(o.ServedUpfInfo) {
 		toSerialize["servedUpfInfo"] = o.ServedUpfInfo
 	}
-	if !IsNil(o.ServedUpfInfoList) {
+	if !isNil(o.ServedUpfInfoList) {
 		toSerialize["servedUpfInfoList"] = o.ServedUpfInfoList
 	}
-	if !IsNil(o.ServedPcfInfo) {
+	if !isNil(o.ServedPcfInfo) {
 		toSerialize["servedPcfInfo"] = o.ServedPcfInfo
 	}
-	if !IsNil(o.ServedPcfInfoList) {
+	if !isNil(o.ServedPcfInfoList) {
 		toSerialize["servedPcfInfoList"] = o.ServedPcfInfoList
 	}
-	if !IsNil(o.ServedBsfInfo) {
+	if !isNil(o.ServedBsfInfo) {
 		toSerialize["servedBsfInfo"] = o.ServedBsfInfo
 	}
-	if !IsNil(o.ServedBsfInfoList) {
+	if !isNil(o.ServedBsfInfoList) {
 		toSerialize["servedBsfInfoList"] = o.ServedBsfInfoList
 	}
-	if !IsNil(o.ServedChfInfo) {
+	if !isNil(o.ServedChfInfo) {
 		toSerialize["servedChfInfo"] = o.ServedChfInfo
 	}
-	if !IsNil(o.ServedChfInfoList) {
+	if !isNil(o.ServedChfInfoList) {
 		toSerialize["servedChfInfoList"] = o.ServedChfInfoList
 	}
-	if !IsNil(o.ServedNefInfo) {
+	if !isNil(o.ServedNefInfo) {
 		toSerialize["servedNefInfo"] = o.ServedNefInfo
 	}
-	if !IsNil(o.ServedNwdafInfo) {
+	if !isNil(o.ServedNwdafInfo) {
 		toSerialize["servedNwdafInfo"] = o.ServedNwdafInfo
 	}
-	if !IsNil(o.ServedNwdafInfoList) {
+	if !isNil(o.ServedNwdafInfoList) {
 		toSerialize["servedNwdafInfoList"] = o.ServedNwdafInfoList
 	}
-	if !IsNil(o.ServedPcscfInfoList) {
+	if !isNil(o.ServedPcscfInfoList) {
 		toSerialize["servedPcscfInfoList"] = o.ServedPcscfInfoList
 	}
-	if !IsNil(o.ServedGmlcInfo) {
+	if !isNil(o.ServedGmlcInfo) {
 		toSerialize["servedGmlcInfo"] = o.ServedGmlcInfo
 	}
-	if !IsNil(o.ServedLmfInfo) {
+	if !isNil(o.ServedLmfInfo) {
 		toSerialize["servedLmfInfo"] = o.ServedLmfInfo
 	}
-	if !IsNil(o.ServedNfInfo) {
+	if !isNil(o.ServedNfInfo) {
 		toSerialize["servedNfInfo"] = o.ServedNfInfo
 	}
-	if !IsNil(o.ServedHssInfoList) {
+	if !isNil(o.ServedHssInfoList) {
 		toSerialize["servedHssInfoList"] = o.ServedHssInfoList
 	}
-	if !IsNil(o.ServedUdsfInfo) {
+	if !isNil(o.ServedUdsfInfo) {
 		toSerialize["servedUdsfInfo"] = o.ServedUdsfInfo
 	}
-	if !IsNil(o.ServedUdsfInfoList) {
+	if !isNil(o.ServedUdsfInfoList) {
 		toSerialize["servedUdsfInfoList"] = o.ServedUdsfInfoList
 	}
-	if !IsNil(o.ServedScpInfoList) {
+	if !isNil(o.ServedScpInfoList) {
 		toSerialize["servedScpInfoList"] = o.ServedScpInfoList
 	}
-	if !IsNil(o.ServedSeppInfoList) {
+	if !isNil(o.ServedSeppInfoList) {
 		toSerialize["servedSeppInfoList"] = o.ServedSeppInfoList
 	}
-	if !IsNil(o.ServedAanfInfoList) {
+	if !isNil(o.ServedAanfInfoList) {
 		toSerialize["servedAanfInfoList"] = o.ServedAanfInfoList
 	}
-	if !IsNil(o.Served5gDdnmfInfo) {
+	if !isNil(o.Served5gDdnmfInfo) {
 		toSerialize["served5gDdnmfInfo"] = o.Served5gDdnmfInfo
 	}
-	if !IsNil(o.ServedMfafInfoList) {
+	if !isNil(o.ServedMfafInfoList) {
 		toSerialize["servedMfafInfoList"] = o.ServedMfafInfoList
 	}
-	if !IsNil(o.ServedEasdfInfoList) {
+	if !isNil(o.ServedEasdfInfoList) {
 		toSerialize["servedEasdfInfoList"] = o.ServedEasdfInfoList
 	}
-	if !IsNil(o.ServedDccfInfoList) {
+	if !isNil(o.ServedDccfInfoList) {
 		toSerialize["servedDccfInfoList"] = o.ServedDccfInfoList
 	}
-	if !IsNil(o.ServedMbSmfInfoList) {
+	if !isNil(o.ServedMbSmfInfoList) {
 		toSerialize["servedMbSmfInfoList"] = o.ServedMbSmfInfoList
 	}
-	if !IsNil(o.ServedTsctsfInfoList) {
+	if !isNil(o.ServedTsctsfInfoList) {
 		toSerialize["servedTsctsfInfoList"] = o.ServedTsctsfInfoList
 	}
-	if !IsNil(o.ServedMbUpfInfoList) {
+	if !isNil(o.ServedMbUpfInfoList) {
 		toSerialize["servedMbUpfInfoList"] = o.ServedMbUpfInfoList
 	}
-	if !IsNil(o.ServedTrustAfInfo) {
+	if !isNil(o.ServedTrustAfInfo) {
 		toSerialize["servedTrustAfInfo"] = o.ServedTrustAfInfo
 	}
-	if !IsNil(o.ServedNssaafInfo) {
+	if !isNil(o.ServedNssaafInfo) {
 		toSerialize["servedNssaafInfo"] = o.ServedNssaafInfo
 	}
 	return toSerialize, nil

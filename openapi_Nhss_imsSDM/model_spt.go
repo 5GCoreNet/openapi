@@ -98,7 +98,7 @@ func (o *Spt) SetSptGroup(v []int32) {
 
 // GetRegType returns the RegType field value if set, zero value otherwise.
 func (o *Spt) GetRegType() []RegistrationType {
-	if o == nil || IsNil(o.RegType) {
+	if o == nil || isNil(o.RegType) {
 		var ret []RegistrationType
 		return ret
 	}
@@ -108,7 +108,7 @@ func (o *Spt) GetRegType() []RegistrationType {
 // GetRegTypeOk returns a tuple with the RegType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Spt) GetRegTypeOk() ([]RegistrationType, bool) {
-	if o == nil || IsNil(o.RegType) {
+	if o == nil || isNil(o.RegType) {
 		return nil, false
 	}
 	return o.RegType, true
@@ -116,7 +116,7 @@ func (o *Spt) GetRegTypeOk() ([]RegistrationType, bool) {
 
 // HasRegType returns a boolean if a field has been set.
 func (o *Spt) HasRegType() bool {
-	if o != nil && !IsNil(o.RegType) {
+	if o != nil && !isNil(o.RegType) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *Spt) SetRegType(v []RegistrationType) {
 
 // GetRequestUri returns the RequestUri field value if set, zero value otherwise.
 func (o *Spt) GetRequestUri() string {
-	if o == nil || IsNil(o.RequestUri) {
+	if o == nil || isNil(o.RequestUri) {
 		var ret string
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *Spt) GetRequestUri() string {
 // GetRequestUriOk returns a tuple with the RequestUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Spt) GetRequestUriOk() (*string, bool) {
-	if o == nil || IsNil(o.RequestUri) {
+	if o == nil || isNil(o.RequestUri) {
 		return nil, false
 	}
 	return o.RequestUri, true
@@ -148,7 +148,7 @@ func (o *Spt) GetRequestUriOk() (*string, bool) {
 
 // HasRequestUri returns a boolean if a field has been set.
 func (o *Spt) HasRequestUri() bool {
-	if o != nil && !IsNil(o.RequestUri) {
+	if o != nil && !isNil(o.RequestUri) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *Spt) SetRequestUri(v string) {
 
 // GetSipMethod returns the SipMethod field value if set, zero value otherwise.
 func (o *Spt) GetSipMethod() string {
-	if o == nil || IsNil(o.SipMethod) {
+	if o == nil || isNil(o.SipMethod) {
 		var ret string
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *Spt) GetSipMethod() string {
 // GetSipMethodOk returns a tuple with the SipMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Spt) GetSipMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.SipMethod) {
+	if o == nil || isNil(o.SipMethod) {
 		return nil, false
 	}
 	return o.SipMethod, true
@@ -180,7 +180,7 @@ func (o *Spt) GetSipMethodOk() (*string, bool) {
 
 // HasSipMethod returns a boolean if a field has been set.
 func (o *Spt) HasSipMethod() bool {
-	if o != nil && !IsNil(o.SipMethod) {
+	if o != nil && !isNil(o.SipMethod) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *Spt) SetSipMethod(v string) {
 
 // GetSipHeader returns the SipHeader field value if set, zero value otherwise.
 func (o *Spt) GetSipHeader() HeaderSipRequest {
-	if o == nil || IsNil(o.SipHeader) {
+	if o == nil || isNil(o.SipHeader) {
 		var ret HeaderSipRequest
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *Spt) GetSipHeader() HeaderSipRequest {
 // GetSipHeaderOk returns a tuple with the SipHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Spt) GetSipHeaderOk() (*HeaderSipRequest, bool) {
-	if o == nil || IsNil(o.SipHeader) {
+	if o == nil || isNil(o.SipHeader) {
 		return nil, false
 	}
 	return o.SipHeader, true
@@ -212,7 +212,7 @@ func (o *Spt) GetSipHeaderOk() (*HeaderSipRequest, bool) {
 
 // HasSipHeader returns a boolean if a field has been set.
 func (o *Spt) HasSipHeader() bool {
-	if o != nil && !IsNil(o.SipHeader) {
+	if o != nil && !isNil(o.SipHeader) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *Spt) SetSipHeader(v HeaderSipRequest) {
 
 // GetSessionCase returns the SessionCase field value if set, zero value otherwise.
 func (o *Spt) GetSessionCase() RequestDirection {
-	if o == nil || IsNil(o.SessionCase) {
+	if o == nil || isNil(o.SessionCase) {
 		var ret RequestDirection
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *Spt) GetSessionCase() RequestDirection {
 // GetSessionCaseOk returns a tuple with the SessionCase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Spt) GetSessionCaseOk() (*RequestDirection, bool) {
-	if o == nil || IsNil(o.SessionCase) {
+	if o == nil || isNil(o.SessionCase) {
 		return nil, false
 	}
 	return o.SessionCase, true
@@ -244,7 +244,7 @@ func (o *Spt) GetSessionCaseOk() (*RequestDirection, bool) {
 
 // HasSessionCase returns a boolean if a field has been set.
 func (o *Spt) HasSessionCase() bool {
-	if o != nil && !IsNil(o.SessionCase) {
+	if o != nil && !isNil(o.SessionCase) {
 		return true
 	}
 
@@ -258,7 +258,7 @@ func (o *Spt) SetSessionCase(v RequestDirection) {
 
 // GetSessionDescription returns the SessionDescription field value if set, zero value otherwise.
 func (o *Spt) GetSessionDescription() SdpDescription {
-	if o == nil || IsNil(o.SessionDescription) {
+	if o == nil || isNil(o.SessionDescription) {
 		var ret SdpDescription
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *Spt) GetSessionDescription() SdpDescription {
 // GetSessionDescriptionOk returns a tuple with the SessionDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Spt) GetSessionDescriptionOk() (*SdpDescription, bool) {
-	if o == nil || IsNil(o.SessionDescription) {
+	if o == nil || isNil(o.SessionDescription) {
 		return nil, false
 	}
 	return o.SessionDescription, true
@@ -276,7 +276,7 @@ func (o *Spt) GetSessionDescriptionOk() (*SdpDescription, bool) {
 
 // HasSessionDescription returns a boolean if a field has been set.
 func (o *Spt) HasSessionDescription() bool {
-	if o != nil && !IsNil(o.SessionDescription) {
+	if o != nil && !isNil(o.SessionDescription) {
 		return true
 	}
 
@@ -300,22 +300,22 @@ func (o Spt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["conditionNegated"] = o.ConditionNegated
 	toSerialize["sptGroup"] = o.SptGroup
-	if !IsNil(o.RegType) {
+	if !isNil(o.RegType) {
 		toSerialize["regType"] = o.RegType
 	}
-	if !IsNil(o.RequestUri) {
+	if !isNil(o.RequestUri) {
 		toSerialize["requestUri"] = o.RequestUri
 	}
-	if !IsNil(o.SipMethod) {
+	if !isNil(o.SipMethod) {
 		toSerialize["sipMethod"] = o.SipMethod
 	}
-	if !IsNil(o.SipHeader) {
+	if !isNil(o.SipHeader) {
 		toSerialize["sipHeader"] = o.SipHeader
 	}
-	if !IsNil(o.SessionCase) {
+	if !isNil(o.SessionCase) {
 		toSerialize["sessionCase"] = o.SessionCase
 	}
-	if !IsNil(o.SessionDescription) {
+	if !isNil(o.SessionDescription) {
 		toSerialize["sessionDescription"] = o.SessionDescription
 	}
 	return toSerialize, nil

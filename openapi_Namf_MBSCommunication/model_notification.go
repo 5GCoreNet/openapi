@@ -71,7 +71,7 @@ func (o *Notification) SetMbsSessionId(v MbsSessionId) {
 
 // GetAreaSessionId returns the AreaSessionId field value if set, zero value otherwise.
 func (o *Notification) GetAreaSessionId() int32 {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		var ret int32
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *Notification) GetAreaSessionId() int32 {
 // GetAreaSessionIdOk returns a tuple with the AreaSessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetAreaSessionIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.AreaSessionId) {
+	if o == nil || isNil(o.AreaSessionId) {
 		return nil, false
 	}
 	return o.AreaSessionId, true
@@ -89,7 +89,7 @@ func (o *Notification) GetAreaSessionIdOk() (*int32, bool) {
 
 // HasAreaSessionId returns a boolean if a field has been set.
 func (o *Notification) HasAreaSessionId() bool {
-	if o != nil && !IsNil(o.AreaSessionId) {
+	if o != nil && !isNil(o.AreaSessionId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *Notification) SetFailureList(v []RanFailure) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *Notification) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *Notification) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Notification) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -145,7 +145,7 @@ func (o *Notification) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *Notification) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -168,11 +168,11 @@ func (o Notification) MarshalJSON() ([]byte, error) {
 func (o Notification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["mbsSessionId"] = o.MbsSessionId
-	if !IsNil(o.AreaSessionId) {
+	if !isNil(o.AreaSessionId) {
 		toSerialize["areaSessionId"] = o.AreaSessionId
 	}
 	toSerialize["failureList"] = o.FailureList
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
 	return toSerialize, nil

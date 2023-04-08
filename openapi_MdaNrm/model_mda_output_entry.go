@@ -44,7 +44,7 @@ func NewMDAOutputEntryWithDefaults() *MDAOutputEntry {
 
 // GetMDAOutputIEName returns the MDAOutputIEName field value if set, zero value otherwise.
 func (o *MDAOutputEntry) GetMDAOutputIEName() string {
-	if o == nil || IsNil(o.MDAOutputIEName) {
+	if o == nil || isNil(o.MDAOutputIEName) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MDAOutputEntry) GetMDAOutputIEName() string {
 // GetMDAOutputIENameOk returns a tuple with the MDAOutputIEName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputEntry) GetMDAOutputIENameOk() (*string, bool) {
-	if o == nil || IsNil(o.MDAOutputIEName) {
+	if o == nil || isNil(o.MDAOutputIEName) {
 		return nil, false
 	}
 	return o.MDAOutputIEName, true
@@ -62,7 +62,7 @@ func (o *MDAOutputEntry) GetMDAOutputIENameOk() (*string, bool) {
 
 // HasMDAOutputIEName returns a boolean if a field has been set.
 func (o *MDAOutputEntry) HasMDAOutputIEName() bool {
-	if o != nil && !IsNil(o.MDAOutputIEName) {
+	if o != nil && !isNil(o.MDAOutputIEName) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *MDAOutputEntry) GetMdaOutputIEValue() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MDAOutputEntry) GetMdaOutputIEValueOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.MdaOutputIEValue) {
+	if o == nil || isNil(o.MdaOutputIEValue) {
 		return nil, false
 	}
 	return &o.MdaOutputIEValue, true
@@ -95,7 +95,7 @@ func (o *MDAOutputEntry) GetMdaOutputIEValueOk() (*interface{}, bool) {
 
 // HasMdaOutputIEValue returns a boolean if a field has been set.
 func (o *MDAOutputEntry) HasMdaOutputIEValue() bool {
-	if o != nil && IsNil(o.MdaOutputIEValue) {
+	if o != nil && isNil(o.MdaOutputIEValue) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *MDAOutputEntry) SetMdaOutputIEValue(v interface{}) {
 
 // GetAnalyticsWindow returns the AnalyticsWindow field value if set, zero value otherwise.
 func (o *MDAOutputEntry) GetAnalyticsWindow() TimeWindow {
-	if o == nil || IsNil(o.AnalyticsWindow) {
+	if o == nil || isNil(o.AnalyticsWindow) {
 		var ret TimeWindow
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *MDAOutputEntry) GetAnalyticsWindow() TimeWindow {
 // GetAnalyticsWindowOk returns a tuple with the AnalyticsWindow field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputEntry) GetAnalyticsWindowOk() (*TimeWindow, bool) {
-	if o == nil || IsNil(o.AnalyticsWindow) {
+	if o == nil || isNil(o.AnalyticsWindow) {
 		return nil, false
 	}
 	return o.AnalyticsWindow, true
@@ -127,7 +127,7 @@ func (o *MDAOutputEntry) GetAnalyticsWindowOk() (*TimeWindow, bool) {
 
 // HasAnalyticsWindow returns a boolean if a field has been set.
 func (o *MDAOutputEntry) HasAnalyticsWindow() bool {
-	if o != nil && !IsNil(o.AnalyticsWindow) {
+	if o != nil && !isNil(o.AnalyticsWindow) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *MDAOutputEntry) SetAnalyticsWindow(v TimeWindow) {
 
 // GetConfidenceDegree returns the ConfidenceDegree field value if set, zero value otherwise.
 func (o *MDAOutputEntry) GetConfidenceDegree() float32 {
-	if o == nil || IsNil(o.ConfidenceDegree) {
+	if o == nil || isNil(o.ConfidenceDegree) {
 		var ret float32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *MDAOutputEntry) GetConfidenceDegree() float32 {
 // GetConfidenceDegreeOk returns a tuple with the ConfidenceDegree field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAOutputEntry) GetConfidenceDegreeOk() (*float32, bool) {
-	if o == nil || IsNil(o.ConfidenceDegree) {
+	if o == nil || isNil(o.ConfidenceDegree) {
 		return nil, false
 	}
 	return o.ConfidenceDegree, true
@@ -159,7 +159,7 @@ func (o *MDAOutputEntry) GetConfidenceDegreeOk() (*float32, bool) {
 
 // HasConfidenceDegree returns a boolean if a field has been set.
 func (o *MDAOutputEntry) HasConfidenceDegree() bool {
-	if o != nil && !IsNil(o.ConfidenceDegree) {
+	if o != nil && !isNil(o.ConfidenceDegree) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o MDAOutputEntry) MarshalJSON() ([]byte, error) {
 
 func (o MDAOutputEntry) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MDAOutputIEName) {
+	if !isNil(o.MDAOutputIEName) {
 		toSerialize["mDAOutputIEName"] = o.MDAOutputIEName
 	}
 	if o.MdaOutputIEValue != nil {
 		toSerialize["mdaOutputIEValue"] = o.MdaOutputIEValue
 	}
-	if !IsNil(o.AnalyticsWindow) {
+	if !isNil(o.AnalyticsWindow) {
 		toSerialize["analyticsWindow"] = o.AnalyticsWindow
 	}
-	if !IsNil(o.ConfidenceDegree) {
+	if !isNil(o.ConfidenceDegree) {
 		toSerialize["confidenceDegree"] = o.ConfidenceDegree
 	}
 	return toSerialize, nil

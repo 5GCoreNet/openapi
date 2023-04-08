@@ -64,7 +64,7 @@ func NewSubscriptionDataSubscriptionsWithDefaults() *SubscriptionDataSubscriptio
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -74,7 +74,7 @@ func (o *SubscriptionDataSubscriptions) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -82,7 +82,7 @@ func (o *SubscriptionDataSubscriptions) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -120,7 +120,7 @@ func (o *SubscriptionDataSubscriptions) SetCallbackReference(v string) {
 
 // GetOriginalCallbackReference returns the OriginalCallbackReference field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetOriginalCallbackReference() string {
-	if o == nil || IsNil(o.OriginalCallbackReference) {
+	if o == nil || isNil(o.OriginalCallbackReference) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *SubscriptionDataSubscriptions) GetOriginalCallbackReference() string {
 // GetOriginalCallbackReferenceOk returns a tuple with the OriginalCallbackReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetOriginalCallbackReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.OriginalCallbackReference) {
+	if o == nil || isNil(o.OriginalCallbackReference) {
 		return nil, false
 	}
 	return o.OriginalCallbackReference, true
@@ -138,7 +138,7 @@ func (o *SubscriptionDataSubscriptions) GetOriginalCallbackReferenceOk() (*strin
 
 // HasOriginalCallbackReference returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasOriginalCallbackReference() bool {
-	if o != nil && !IsNil(o.OriginalCallbackReference) {
+	if o != nil && !isNil(o.OriginalCallbackReference) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *SubscriptionDataSubscriptions) SetMonitoredResourceUris(v []string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *SubscriptionDataSubscriptions) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -194,7 +194,7 @@ func (o *SubscriptionDataSubscriptions) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *SubscriptionDataSubscriptions) SetExpiry(v time.Time) {
 
 // GetSdmSubscription returns the SdmSubscription field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetSdmSubscription() SdmSubscription1 {
-	if o == nil || IsNil(o.SdmSubscription) {
+	if o == nil || isNil(o.SdmSubscription) {
 		var ret SdmSubscription1
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *SubscriptionDataSubscriptions) GetSdmSubscription() SdmSubscription1 {
 // GetSdmSubscriptionOk returns a tuple with the SdmSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetSdmSubscriptionOk() (*SdmSubscription1, bool) {
-	if o == nil || IsNil(o.SdmSubscription) {
+	if o == nil || isNil(o.SdmSubscription) {
 		return nil, false
 	}
 	return o.SdmSubscription, true
@@ -226,7 +226,7 @@ func (o *SubscriptionDataSubscriptions) GetSdmSubscriptionOk() (*SdmSubscription
 
 // HasSdmSubscription returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasSdmSubscription() bool {
-	if o != nil && !IsNil(o.SdmSubscription) {
+	if o != nil && !isNil(o.SdmSubscription) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *SubscriptionDataSubscriptions) SetSdmSubscription(v SdmSubscription1) {
 
 // GetHssSubscriptionInfo returns the HssSubscriptionInfo field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetHssSubscriptionInfo() HssSubscriptionInfo {
-	if o == nil || IsNil(o.HssSubscriptionInfo) {
+	if o == nil || isNil(o.HssSubscriptionInfo) {
 		var ret HssSubscriptionInfo
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *SubscriptionDataSubscriptions) GetHssSubscriptionInfo() HssSubscription
 // GetHssSubscriptionInfoOk returns a tuple with the HssSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetHssSubscriptionInfoOk() (*HssSubscriptionInfo, bool) {
-	if o == nil || IsNil(o.HssSubscriptionInfo) {
+	if o == nil || isNil(o.HssSubscriptionInfo) {
 		return nil, false
 	}
 	return o.HssSubscriptionInfo, true
@@ -258,7 +258,7 @@ func (o *SubscriptionDataSubscriptions) GetHssSubscriptionInfoOk() (*HssSubscrip
 
 // HasHssSubscriptionInfo returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasHssSubscriptionInfo() bool {
-	if o != nil && !IsNil(o.HssSubscriptionInfo) {
+	if o != nil && !isNil(o.HssSubscriptionInfo) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *SubscriptionDataSubscriptions) SetHssSubscriptionInfo(v HssSubscription
 
 // GetSubscriptionId returns the SubscriptionId field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetSubscriptionId() string {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *SubscriptionDataSubscriptions) GetSubscriptionId() string {
 // GetSubscriptionIdOk returns a tuple with the SubscriptionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetSubscriptionIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SubscriptionId) {
+	if o == nil || isNil(o.SubscriptionId) {
 		return nil, false
 	}
 	return o.SubscriptionId, true
@@ -290,7 +290,7 @@ func (o *SubscriptionDataSubscriptions) GetSubscriptionIdOk() (*string, bool) {
 
 // HasSubscriptionId returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasSubscriptionId() bool {
-	if o != nil && !IsNil(o.SubscriptionId) {
+	if o != nil && !isNil(o.SubscriptionId) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *SubscriptionDataSubscriptions) SetSubscriptionId(v string) {
 
 // GetUniqueSubscription returns the UniqueSubscription field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetUniqueSubscription() bool {
-	if o == nil || IsNil(o.UniqueSubscription) {
+	if o == nil || isNil(o.UniqueSubscription) {
 		var ret bool
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *SubscriptionDataSubscriptions) GetUniqueSubscription() bool {
 // GetUniqueSubscriptionOk returns a tuple with the UniqueSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetUniqueSubscriptionOk() (*bool, bool) {
-	if o == nil || IsNil(o.UniqueSubscription) {
+	if o == nil || isNil(o.UniqueSubscription) {
 		return nil, false
 	}
 	return o.UniqueSubscription, true
@@ -322,7 +322,7 @@ func (o *SubscriptionDataSubscriptions) GetUniqueSubscriptionOk() (*bool, bool) 
 
 // HasUniqueSubscription returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasUniqueSubscription() bool {
-	if o != nil && !IsNil(o.UniqueSubscription) {
+	if o != nil && !isNil(o.UniqueSubscription) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *SubscriptionDataSubscriptions) SetUniqueSubscription(v bool) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -346,7 +346,7 @@ func (o *SubscriptionDataSubscriptions) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -354,7 +354,7 @@ func (o *SubscriptionDataSubscriptions) GetSupportedFeaturesOk() (*string, bool)
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -368,7 +368,7 @@ func (o *SubscriptionDataSubscriptions) SetSupportedFeatures(v string) {
 
 // GetImmediateReport returns the ImmediateReport field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetImmediateReport() bool {
-	if o == nil || IsNil(o.ImmediateReport) {
+	if o == nil || isNil(o.ImmediateReport) {
 		var ret bool
 		return ret
 	}
@@ -378,7 +378,7 @@ func (o *SubscriptionDataSubscriptions) GetImmediateReport() bool {
 // GetImmediateReportOk returns a tuple with the ImmediateReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetImmediateReportOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmediateReport) {
+	if o == nil || isNil(o.ImmediateReport) {
 		return nil, false
 	}
 	return o.ImmediateReport, true
@@ -386,7 +386,7 @@ func (o *SubscriptionDataSubscriptions) GetImmediateReportOk() (*bool, bool) {
 
 // HasImmediateReport returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasImmediateReport() bool {
-	if o != nil && !IsNil(o.ImmediateReport) {
+	if o != nil && !isNil(o.ImmediateReport) {
 		return true
 	}
 
@@ -400,7 +400,7 @@ func (o *SubscriptionDataSubscriptions) SetImmediateReport(v bool) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *SubscriptionDataSubscriptions) GetReport() ImmediateReport1 {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		var ret ImmediateReport1
 		return ret
 	}
@@ -410,7 +410,7 @@ func (o *SubscriptionDataSubscriptions) GetReport() ImmediateReport1 {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionDataSubscriptions) GetReportOk() (*ImmediateReport1, bool) {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -418,7 +418,7 @@ func (o *SubscriptionDataSubscriptions) GetReportOk() (*ImmediateReport1, bool) 
 
 // HasReport returns a boolean if a field has been set.
 func (o *SubscriptionDataSubscriptions) HasReport() bool {
-	if o != nil && !IsNil(o.Report) {
+	if o != nil && !isNil(o.Report) {
 		return true
 	}
 
@@ -440,36 +440,36 @@ func (o SubscriptionDataSubscriptions) MarshalJSON() ([]byte, error) {
 
 func (o SubscriptionDataSubscriptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
 	toSerialize["callbackReference"] = o.CallbackReference
-	if !IsNil(o.OriginalCallbackReference) {
+	if !isNil(o.OriginalCallbackReference) {
 		toSerialize["originalCallbackReference"] = o.OriginalCallbackReference
 	}
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.SdmSubscription) {
+	if !isNil(o.SdmSubscription) {
 		toSerialize["sdmSubscription"] = o.SdmSubscription
 	}
-	if !IsNil(o.HssSubscriptionInfo) {
+	if !isNil(o.HssSubscriptionInfo) {
 		toSerialize["hssSubscriptionInfo"] = o.HssSubscriptionInfo
 	}
-	if !IsNil(o.SubscriptionId) {
+	if !isNil(o.SubscriptionId) {
 		toSerialize["subscriptionId"] = o.SubscriptionId
 	}
-	if !IsNil(o.UniqueSubscription) {
+	if !isNil(o.UniqueSubscription) {
 		toSerialize["uniqueSubscription"] = o.UniqueSubscription
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ImmediateReport) {
+	if !isNil(o.ImmediateReport) {
 		toSerialize["immediateReport"] = o.ImmediateReport
 	}
-	if !IsNil(o.Report) {
+	if !isNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
 	return toSerialize, nil

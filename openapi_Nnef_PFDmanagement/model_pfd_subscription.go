@@ -47,7 +47,7 @@ func NewPfdSubscriptionWithDefaults() *PfdSubscription {
 
 // GetApplicationIds returns the ApplicationIds field value if set, zero value otherwise.
 func (o *PfdSubscription) GetApplicationIds() []string {
-	if o == nil || IsNil(o.ApplicationIds) {
+	if o == nil || isNil(o.ApplicationIds) {
 		var ret []string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *PfdSubscription) GetApplicationIds() []string {
 // GetApplicationIdsOk returns a tuple with the ApplicationIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdSubscription) GetApplicationIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ApplicationIds) {
+	if o == nil || isNil(o.ApplicationIds) {
 		return nil, false
 	}
 	return o.ApplicationIds, true
@@ -65,7 +65,7 @@ func (o *PfdSubscription) GetApplicationIdsOk() ([]string, bool) {
 
 // HasApplicationIds returns a boolean if a field has been set.
 func (o *PfdSubscription) HasApplicationIds() bool {
-	if o != nil && !IsNil(o.ApplicationIds) {
+	if o != nil && !isNil(o.ApplicationIds) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o PfdSubscription) MarshalJSON() ([]byte, error) {
 
 func (o PfdSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApplicationIds) {
+	if !isNil(o.ApplicationIds) {
 		toSerialize["applicationIds"] = o.ApplicationIds
 	}
 	toSerialize["notifyUri"] = o.NotifyUri

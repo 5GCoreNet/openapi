@@ -43,7 +43,7 @@ func NewSynchronicityWithDefaults() *Synchronicity {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *Synchronicity) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *Synchronicity) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Synchronicity) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -61,7 +61,7 @@ func (o *Synchronicity) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *Synchronicity) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *Synchronicity) SetServAttrCom(v ServAttrCom) {
 
 // GetAvailability returns the Availability field value if set, zero value otherwise.
 func (o *Synchronicity) GetAvailability() SynAvailability {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil || isNil(o.Availability) {
 		var ret SynAvailability
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *Synchronicity) GetAvailability() SynAvailability {
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Synchronicity) GetAvailabilityOk() (*SynAvailability, bool) {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil || isNil(o.Availability) {
 		return nil, false
 	}
 	return o.Availability, true
@@ -93,7 +93,7 @@ func (o *Synchronicity) GetAvailabilityOk() (*SynAvailability, bool) {
 
 // HasAvailability returns a boolean if a field has been set.
 func (o *Synchronicity) HasAvailability() bool {
-	if o != nil && !IsNil(o.Availability) {
+	if o != nil && !isNil(o.Availability) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *Synchronicity) SetAvailability(v SynAvailability) {
 
 // GetAccuracy returns the Accuracy field value if set, zero value otherwise.
 func (o *Synchronicity) GetAccuracy() float32 {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		var ret float32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *Synchronicity) GetAccuracy() float32 {
 // GetAccuracyOk returns a tuple with the Accuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Synchronicity) GetAccuracyOk() (*float32, bool) {
-	if o == nil || IsNil(o.Accuracy) {
+	if o == nil || isNil(o.Accuracy) {
 		return nil, false
 	}
 	return o.Accuracy, true
@@ -125,7 +125,7 @@ func (o *Synchronicity) GetAccuracyOk() (*float32, bool) {
 
 // HasAccuracy returns a boolean if a field has been set.
 func (o *Synchronicity) HasAccuracy() bool {
-	if o != nil && !IsNil(o.Accuracy) {
+	if o != nil && !isNil(o.Accuracy) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o Synchronicity) MarshalJSON() ([]byte, error) {
 
 func (o Synchronicity) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.Availability) {
+	if !isNil(o.Availability) {
 		toSerialize["availability"] = o.Availability
 	}
-	if !IsNil(o.Accuracy) {
+	if !isNil(o.Accuracy) {
 		toSerialize["accuracy"] = o.Accuracy
 	}
 	return toSerialize, nil

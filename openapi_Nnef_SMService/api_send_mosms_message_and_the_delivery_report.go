@@ -13,7 +13,7 @@ package openapi_Nnef_SMService
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -37,8 +37,8 @@ func (r ApiSendSMSRequest) JsonData(jsonData SmsData) ApiSendSMSRequest {
 	return r
 }
 
-func (r ApiSendSMSRequest) BinaryPayload(binaryPayload *os.File) ApiSendSMSRequest {
-	r.binaryPayload = binaryPayload
+func (r ApiSendSMSRequest) BinaryPayload(binaryPayload os.File) ApiSendSMSRequest {
+	r.binaryPayload = &binaryPayload
 	return r
 }
 
@@ -113,17 +113,17 @@ func (a *SendMOSMSMessageAndTheDeliveryReportApiService) SendSMSExecute(r ApiSen
 
 	binaryPayloadLocalVarFormFileName = "binaryPayload"
 
-
-	binaryPayloadLocalVarFile := r.binaryPayload
-
+	var binaryPayloadLocalVarFile *os.File
+	if r.binaryPayload != nil {
+		binaryPayloadLocalVarFile = r.binaryPayload
+	}
 	if binaryPayloadLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryPayloadLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryPayloadLocalVarFile)
 		binaryPayloadLocalVarFileBytes = fbs
 		binaryPayloadLocalVarFileName = binaryPayloadLocalVarFile.Name()
 		binaryPayloadLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryPayloadLocalVarFileBytes, fileName: binaryPayloadLocalVarFileName, formFileName: binaryPayloadLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryPayloadLocalVarFileBytes, fileName: binaryPayloadLocalVarFileName, formFileName: binaryPayloadLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -134,9 +134,9 @@ func (a *SendMOSMSMessageAndTheDeliveryReportApiService) SendSMSExecute(r ApiSen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

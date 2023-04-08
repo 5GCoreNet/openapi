@@ -1165,16 +1165,7 @@ components:
       type: object
     MeasurementDataType:
       anyOf:
-      - enum:
-        - DL_DELAY
-        - UL_DELAY
-        - RT_DELAY
-        - AVG_PLR
-        - AVG_DATA_RATE
-        - MAX_DATA_RATE
-        - AVG_DL_TRAFFIC_VOLUME
-        - AVG_UL_TRAFFIC_VOLUME
-        type: string
+      - $ref: '#/components/schemas/MeasurementDataType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1190,12 +1181,7 @@ components:
         - AVG_UL_TRAFFIC_VOLUME: Average uplink traffic volume.
     TerminationMode:
       anyOf:
-      - enum:
-        - TIME_TRIGGERED
-        - EVENT_TRIGGERED_NUM_REPORTS_REACHED
-        - EVENT_TRIGGERED_MEAS_THR_REACHED
-        - USER_TRIGGERED
-        type: string
+      - $ref: '#/components/schemas/TerminationMode_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1207,12 +1193,7 @@ components:
         - USER_TRIGGERED: User-triggered termination mode.
     FailureReason:
       anyOf:
-      - enum:
-        - USER_NOT_FOUND
-        - STREAM_NOT_FOUND
-        - DATA_NOT_AVAILABLE
-        - OTHER_REASON
-        type: string
+      - $ref: '#/components/schemas/FailureReason_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1224,10 +1205,7 @@ components:
         - OTHER_REASON: Other reason (unspecified).
     ThresholdHandlingMode:
       anyOf:
-      - enum:
-        - ALL_REACHED
-        - ANY_REACHED
-        type: string
+      - $ref: '#/components/schemas/ThresholdHandlingMode_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1333,11 +1311,7 @@ components:
       type: integer
     NotificationMethod:
       anyOf:
-      - enum:
-        - PERIODIC
-        - ONE_TIME
-        - ON_EVENT_DETECTION
-        type: string
+      - $ref: '#/components/schemas/NotificationMethod_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -1383,11 +1357,7 @@ components:
       type: string
     MatchingDirection:
       anyOf:
-      - enum:
-        - ASCENDING
-        - DESCENDING
-        - CROSSED
-        type: string
+      - $ref: '#/components/schemas/MatchingDirection_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -1396,6 +1366,54 @@ components:
         - ASCENDING: Threshold is crossed in ascending direction.
         - DESCENDING: Threshold is crossed in descending direction.
         - CROSSED: Threshold is crossed either in ascending or descending direction.
+    MeasurementDataType_anyOf:
+      enum:
+      - DL_DELAY
+      - UL_DELAY
+      - RT_DELAY
+      - AVG_PLR
+      - AVG_DATA_RATE
+      - MAX_DATA_RATE
+      - AVG_DL_TRAFFIC_VOLUME
+      - AVG_UL_TRAFFIC_VOLUME
+      type: string
+      example: null
+    TerminationMode_anyOf:
+      enum:
+      - TIME_TRIGGERED
+      - EVENT_TRIGGERED_NUM_REPORTS_REACHED
+      - EVENT_TRIGGERED_MEAS_THR_REACHED
+      - USER_TRIGGERED
+      type: string
+      example: null
+    FailureReason_anyOf:
+      enum:
+      - USER_NOT_FOUND
+      - STREAM_NOT_FOUND
+      - DATA_NOT_AVAILABLE
+      - OTHER_REASON
+      type: string
+      example: null
+    ThresholdHandlingMode_anyOf:
+      enum:
+      - ALL_REACHED
+      - ANY_REACHED
+      type: string
+      example: null
+    NotificationMethod_anyOf:
+      enum:
+      - PERIODIC
+      - ONE_TIME
+      - ON_EVENT_DETECTION
+      type: string
+      example: null
+    MatchingDirection_anyOf:
+      enum:
+      - ASCENDING
+      - DESCENDING
+      - CROSSED
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

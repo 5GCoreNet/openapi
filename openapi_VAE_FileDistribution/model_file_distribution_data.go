@@ -57,7 +57,7 @@ func NewFileDistributionDataWithDefaults() *FileDistributionData {
 
 // GetGroupId returns the GroupId field value if set, zero value otherwise.
 func (o *FileDistributionData) GetGroupId() string {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *FileDistributionData) GetGroupId() string {
 // GetGroupIdOk returns a tuple with the GroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupId) {
+	if o == nil || isNil(o.GroupId) {
 		return nil, false
 	}
 	return o.GroupId, true
@@ -75,7 +75,7 @@ func (o *FileDistributionData) GetGroupIdOk() (*string, bool) {
 
 // HasGroupId returns a boolean if a field has been set.
 func (o *FileDistributionData) HasGroupId() bool {
-	if o != nil && !IsNil(o.GroupId) {
+	if o != nil && !isNil(o.GroupId) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *FileDistributionData) SetFileLists(v []FileList) {
 
 // GetServiceClass returns the ServiceClass field value if set, zero value otherwise.
 func (o *FileDistributionData) GetServiceClass() string {
-	if o == nil || IsNil(o.ServiceClass) {
+	if o == nil || isNil(o.ServiceClass) {
 		var ret string
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *FileDistributionData) GetServiceClass() string {
 // GetServiceClassOk returns a tuple with the ServiceClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetServiceClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceClass) {
+	if o == nil || isNil(o.ServiceClass) {
 		return nil, false
 	}
 	return o.ServiceClass, true
@@ -131,7 +131,7 @@ func (o *FileDistributionData) GetServiceClassOk() (*string, bool) {
 
 // HasServiceClass returns a boolean if a field has been set.
 func (o *FileDistributionData) HasServiceClass() bool {
-	if o != nil && !IsNil(o.ServiceClass) {
+	if o != nil && !isNil(o.ServiceClass) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *FileDistributionData) SetMaxDelay(v int32) {
 
 // GetLocalMbmsInfo returns the LocalMbmsInfo field value if set, zero value otherwise.
 func (o *FileDistributionData) GetLocalMbmsInfo() LocalMbmsInfo {
-	if o == nil || IsNil(o.LocalMbmsInfo) {
+	if o == nil || isNil(o.LocalMbmsInfo) {
 		var ret LocalMbmsInfo
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *FileDistributionData) GetLocalMbmsInfo() LocalMbmsInfo {
 // GetLocalMbmsInfoOk returns a tuple with the LocalMbmsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetLocalMbmsInfoOk() (*LocalMbmsInfo, bool) {
-	if o == nil || IsNil(o.LocalMbmsInfo) {
+	if o == nil || isNil(o.LocalMbmsInfo) {
 		return nil, false
 	}
 	return o.LocalMbmsInfo, true
@@ -235,7 +235,7 @@ func (o *FileDistributionData) GetLocalMbmsInfoOk() (*LocalMbmsInfo, bool) {
 
 // HasLocalMbmsInfo returns a boolean if a field has been set.
 func (o *FileDistributionData) HasLocalMbmsInfo() bool {
-	if o != nil && !IsNil(o.LocalMbmsInfo) {
+	if o != nil && !isNil(o.LocalMbmsInfo) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *FileDistributionData) SetLocalMbmsInfo(v LocalMbmsInfo) {
 
 // GetLocalMbmsActInd returns the LocalMbmsActInd field value if set, zero value otherwise.
 func (o *FileDistributionData) GetLocalMbmsActInd() bool {
-	if o == nil || IsNil(o.LocalMbmsActInd) {
+	if o == nil || isNil(o.LocalMbmsActInd) {
 		var ret bool
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *FileDistributionData) GetLocalMbmsActInd() bool {
 // GetLocalMbmsActIndOk returns a tuple with the LocalMbmsActInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetLocalMbmsActIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.LocalMbmsActInd) {
+	if o == nil || isNil(o.LocalMbmsActInd) {
 		return nil, false
 	}
 	return o.LocalMbmsActInd, true
@@ -267,7 +267,7 @@ func (o *FileDistributionData) GetLocalMbmsActIndOk() (*bool, bool) {
 
 // HasLocalMbmsActInd returns a boolean if a field has been set.
 func (o *FileDistributionData) HasLocalMbmsActInd() bool {
-	if o != nil && !IsNil(o.LocalMbmsActInd) {
+	if o != nil && !isNil(o.LocalMbmsActInd) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *FileDistributionData) SetLocalMbmsActInd(v bool) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *FileDistributionData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *FileDistributionData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FileDistributionData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -299,7 +299,7 @@ func (o *FileDistributionData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *FileDistributionData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -321,23 +321,23 @@ func (o FileDistributionData) MarshalJSON() ([]byte, error) {
 
 func (o FileDistributionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GroupId) {
+	if !isNil(o.GroupId) {
 		toSerialize["groupId"] = o.GroupId
 	}
 	toSerialize["fileLists"] = o.FileLists
-	if !IsNil(o.ServiceClass) {
+	if !isNil(o.ServiceClass) {
 		toSerialize["serviceClass"] = o.ServiceClass
 	}
 	toSerialize["geoArea"] = o.GeoArea
 	toSerialize["maxBitrate"] = o.MaxBitrate
 	toSerialize["maxDelay"] = o.MaxDelay
-	if !IsNil(o.LocalMbmsInfo) {
+	if !isNil(o.LocalMbmsInfo) {
 		toSerialize["localMbmsInfo"] = o.LocalMbmsInfo
 	}
-	if !IsNil(o.LocalMbmsActInd) {
+	if !isNil(o.LocalMbmsActInd) {
 		toSerialize["localMbmsActInd"] = o.LocalMbmsActInd
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

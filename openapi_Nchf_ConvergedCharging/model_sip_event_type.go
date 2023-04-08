@@ -44,7 +44,7 @@ func NewSIPEventTypeWithDefaults() *SIPEventType {
 
 // GetSIPMethod returns the SIPMethod field value if set, zero value otherwise.
 func (o *SIPEventType) GetSIPMethod() string {
-	if o == nil || IsNil(o.SIPMethod) {
+	if o == nil || isNil(o.SIPMethod) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *SIPEventType) GetSIPMethod() string {
 // GetSIPMethodOk returns a tuple with the SIPMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SIPEventType) GetSIPMethodOk() (*string, bool) {
-	if o == nil || IsNil(o.SIPMethod) {
+	if o == nil || isNil(o.SIPMethod) {
 		return nil, false
 	}
 	return o.SIPMethod, true
@@ -62,7 +62,7 @@ func (o *SIPEventType) GetSIPMethodOk() (*string, bool) {
 
 // HasSIPMethod returns a boolean if a field has been set.
 func (o *SIPEventType) HasSIPMethod() bool {
-	if o != nil && !IsNil(o.SIPMethod) {
+	if o != nil && !isNil(o.SIPMethod) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *SIPEventType) SetSIPMethod(v string) {
 
 // GetEventHeader returns the EventHeader field value if set, zero value otherwise.
 func (o *SIPEventType) GetEventHeader() string {
-	if o == nil || IsNil(o.EventHeader) {
+	if o == nil || isNil(o.EventHeader) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *SIPEventType) GetEventHeader() string {
 // GetEventHeaderOk returns a tuple with the EventHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SIPEventType) GetEventHeaderOk() (*string, bool) {
-	if o == nil || IsNil(o.EventHeader) {
+	if o == nil || isNil(o.EventHeader) {
 		return nil, false
 	}
 	return o.EventHeader, true
@@ -94,7 +94,7 @@ func (o *SIPEventType) GetEventHeaderOk() (*string, bool) {
 
 // HasEventHeader returns a boolean if a field has been set.
 func (o *SIPEventType) HasEventHeader() bool {
-	if o != nil && !IsNil(o.EventHeader) {
+	if o != nil && !isNil(o.EventHeader) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *SIPEventType) SetEventHeader(v string) {
 
 // GetExpiresHeader returns the ExpiresHeader field value if set, zero value otherwise.
 func (o *SIPEventType) GetExpiresHeader() int32 {
-	if o == nil || IsNil(o.ExpiresHeader) {
+	if o == nil || isNil(o.ExpiresHeader) {
 		var ret int32
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *SIPEventType) GetExpiresHeader() int32 {
 // GetExpiresHeaderOk returns a tuple with the ExpiresHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SIPEventType) GetExpiresHeaderOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExpiresHeader) {
+	if o == nil || isNil(o.ExpiresHeader) {
 		return nil, false
 	}
 	return o.ExpiresHeader, true
@@ -126,7 +126,7 @@ func (o *SIPEventType) GetExpiresHeaderOk() (*int32, bool) {
 
 // HasExpiresHeader returns a boolean if a field has been set.
 func (o *SIPEventType) HasExpiresHeader() bool {
-	if o != nil && !IsNil(o.ExpiresHeader) {
+	if o != nil && !isNil(o.ExpiresHeader) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o SIPEventType) MarshalJSON() ([]byte, error) {
 
 func (o SIPEventType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SIPMethod) {
+	if !isNil(o.SIPMethod) {
 		toSerialize["sIPMethod"] = o.SIPMethod
 	}
-	if !IsNil(o.EventHeader) {
+	if !isNil(o.EventHeader) {
 		toSerialize["eventHeader"] = o.EventHeader
 	}
-	if !IsNil(o.ExpiresHeader) {
+	if !isNil(o.ExpiresHeader) {
 		toSerialize["expiresHeader"] = o.ExpiresHeader
 	}
 	return toSerialize, nil

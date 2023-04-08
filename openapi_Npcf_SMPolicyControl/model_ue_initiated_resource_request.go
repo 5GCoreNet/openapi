@@ -47,7 +47,7 @@ func NewUeInitiatedResourceRequestWithDefaults() *UeInitiatedResourceRequest {
 
 // GetPccRuleId returns the PccRuleId field value if set, zero value otherwise.
 func (o *UeInitiatedResourceRequest) GetPccRuleId() string {
-	if o == nil || IsNil(o.PccRuleId) {
+	if o == nil || isNil(o.PccRuleId) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *UeInitiatedResourceRequest) GetPccRuleId() string {
 // GetPccRuleIdOk returns a tuple with the PccRuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInitiatedResourceRequest) GetPccRuleIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PccRuleId) {
+	if o == nil || isNil(o.PccRuleId) {
 		return nil, false
 	}
 	return o.PccRuleId, true
@@ -65,7 +65,7 @@ func (o *UeInitiatedResourceRequest) GetPccRuleIdOk() (*string, bool) {
 
 // HasPccRuleId returns a boolean if a field has been set.
 func (o *UeInitiatedResourceRequest) HasPccRuleId() bool {
-	if o != nil && !IsNil(o.PccRuleId) {
+	if o != nil && !isNil(o.PccRuleId) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *UeInitiatedResourceRequest) SetRuleOp(v RuleOperation) {
 
 // GetPrecedence returns the Precedence field value if set, zero value otherwise.
 func (o *UeInitiatedResourceRequest) GetPrecedence() int32 {
-	if o == nil || IsNil(o.Precedence) {
+	if o == nil || isNil(o.Precedence) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *UeInitiatedResourceRequest) GetPrecedence() int32 {
 // GetPrecedenceOk returns a tuple with the Precedence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInitiatedResourceRequest) GetPrecedenceOk() (*int32, bool) {
-	if o == nil || IsNil(o.Precedence) {
+	if o == nil || isNil(o.Precedence) {
 		return nil, false
 	}
 	return o.Precedence, true
@@ -121,7 +121,7 @@ func (o *UeInitiatedResourceRequest) GetPrecedenceOk() (*int32, bool) {
 
 // HasPrecedence returns a boolean if a field has been set.
 func (o *UeInitiatedResourceRequest) HasPrecedence() bool {
-	if o != nil && !IsNil(o.Precedence) {
+	if o != nil && !isNil(o.Precedence) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *UeInitiatedResourceRequest) SetPackFiltInfo(v []PacketFilterInfo) {
 
 // GetReqQos returns the ReqQos field value if set, zero value otherwise.
 func (o *UeInitiatedResourceRequest) GetReqQos() RequestedQos {
-	if o == nil || IsNil(o.ReqQos) {
+	if o == nil || isNil(o.ReqQos) {
 		var ret RequestedQos
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *UeInitiatedResourceRequest) GetReqQos() RequestedQos {
 // GetReqQosOk returns a tuple with the ReqQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInitiatedResourceRequest) GetReqQosOk() (*RequestedQos, bool) {
-	if o == nil || IsNil(o.ReqQos) {
+	if o == nil || isNil(o.ReqQos) {
 		return nil, false
 	}
 	return o.ReqQos, true
@@ -177,7 +177,7 @@ func (o *UeInitiatedResourceRequest) GetReqQosOk() (*RequestedQos, bool) {
 
 // HasReqQos returns a boolean if a field has been set.
 func (o *UeInitiatedResourceRequest) HasReqQos() bool {
-	if o != nil && !IsNil(o.ReqQos) {
+	if o != nil && !isNil(o.ReqQos) {
 		return true
 	}
 
@@ -199,15 +199,15 @@ func (o UeInitiatedResourceRequest) MarshalJSON() ([]byte, error) {
 
 func (o UeInitiatedResourceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PccRuleId) {
+	if !isNil(o.PccRuleId) {
 		toSerialize["pccRuleId"] = o.PccRuleId
 	}
 	toSerialize["ruleOp"] = o.RuleOp
-	if !IsNil(o.Precedence) {
+	if !isNil(o.Precedence) {
 		toSerialize["precedence"] = o.Precedence
 	}
 	toSerialize["packFiltInfo"] = o.PackFiltInfo
-	if !IsNil(o.ReqQos) {
+	if !isNil(o.ReqQos) {
 		toSerialize["reqQos"] = o.ReqQos
 	}
 	return toSerialize, nil

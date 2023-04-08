@@ -105,7 +105,7 @@ func (o *UAVAuthInfo) SetServiceLevelId(v string) {
 
 // GetNotifyUri returns the NotifyUri field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetNotifyUri() string {
-	if o == nil || IsNil(o.NotifyUri) {
+	if o == nil || isNil(o.NotifyUri) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *UAVAuthInfo) GetNotifyUri() string {
 // GetNotifyUriOk returns a tuple with the NotifyUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetNotifyUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyUri) {
+	if o == nil || isNil(o.NotifyUri) {
 		return nil, false
 	}
 	return o.NotifyUri, true
@@ -123,7 +123,7 @@ func (o *UAVAuthInfo) GetNotifyUriOk() (*string, bool) {
 
 // HasNotifyUri returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasNotifyUri() bool {
-	if o != nil && !IsNil(o.NotifyUri) {
+	if o != nil && !isNil(o.NotifyUri) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *UAVAuthInfo) SetNotifyUri(v string) {
 
 // GetNotifyCorrId returns the NotifyCorrId field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetNotifyCorrId() string {
-	if o == nil || IsNil(o.NotifyCorrId) {
+	if o == nil || isNil(o.NotifyCorrId) {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *UAVAuthInfo) GetNotifyCorrId() string {
 // GetNotifyCorrIdOk returns a tuple with the NotifyCorrId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetNotifyCorrIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrId) {
+	if o == nil || isNil(o.NotifyCorrId) {
 		return nil, false
 	}
 	return o.NotifyCorrId, true
@@ -155,7 +155,7 @@ func (o *UAVAuthInfo) GetNotifyCorrIdOk() (*string, bool) {
 
 // HasNotifyCorrId returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasNotifyCorrId() bool {
-	if o != nil && !IsNil(o.NotifyCorrId) {
+	if o != nil && !isNil(o.NotifyCorrId) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *UAVAuthInfo) SetNotifyCorrId(v string) {
 
 // GetIpAddr returns the IpAddr field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetIpAddr() IpAddr {
-	if o == nil || IsNil(o.IpAddr) {
+	if o == nil || isNil(o.IpAddr) {
 		var ret IpAddr
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *UAVAuthInfo) GetIpAddr() IpAddr {
 // GetIpAddrOk returns a tuple with the IpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetIpAddrOk() (*IpAddr, bool) {
-	if o == nil || IsNil(o.IpAddr) {
+	if o == nil || isNil(o.IpAddr) {
 		return nil, false
 	}
 	return o.IpAddr, true
@@ -187,7 +187,7 @@ func (o *UAVAuthInfo) GetIpAddrOk() (*IpAddr, bool) {
 
 // HasIpAddr returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasIpAddr() bool {
-	if o != nil && !IsNil(o.IpAddr) {
+	if o != nil && !isNil(o.IpAddr) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *UAVAuthInfo) SetIpAddr(v IpAddr) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *UAVAuthInfo) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -219,7 +219,7 @@ func (o *UAVAuthInfo) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *UAVAuthInfo) SetPei(v string) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *UAVAuthInfo) GetAuthMsg() string {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *UAVAuthInfo) GetAuthMsg() string {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *UAVAuthInfo) GetAuthMsgOk() (*string, bool) {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -253,7 +253,7 @@ func (o *UAVAuthInfo) GetAuthMsgOk() (*string, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthMsg() bool {
-	if o != nil && !IsNil(o.AuthMsg) {
+	if o != nil && !isNil(o.AuthMsg) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *UAVAuthInfo) SetAuthMsg(v string) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetAuthContainer() []AuthContainer {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *UAVAuthInfo) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -286,7 +286,7 @@ func (o *UAVAuthInfo) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasAuthContainer() bool {
-	if o != nil && !IsNil(o.AuthContainer) {
+	if o != nil && !isNil(o.AuthContainer) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *UAVAuthInfo) SetAuthContainer(v []AuthContainer) {
 
 // GetUavLocInfo returns the UavLocInfo field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetUavLocInfo() LocationArea5G {
-	if o == nil || IsNil(o.UavLocInfo) {
+	if o == nil || isNil(o.UavLocInfo) {
 		var ret LocationArea5G
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *UAVAuthInfo) GetUavLocInfo() LocationArea5G {
 // GetUavLocInfoOk returns a tuple with the UavLocInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetUavLocInfoOk() (*LocationArea5G, bool) {
-	if o == nil || IsNil(o.UavLocInfo) {
+	if o == nil || isNil(o.UavLocInfo) {
 		return nil, false
 	}
 	return o.UavLocInfo, true
@@ -318,7 +318,7 @@ func (o *UAVAuthInfo) GetUavLocInfoOk() (*LocationArea5G, bool) {
 
 // HasUavLocInfo returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasUavLocInfo() bool {
-	if o != nil && !IsNil(o.UavLocInfo) {
+	if o != nil && !isNil(o.UavLocInfo) {
 		return true
 	}
 
@@ -332,7 +332,7 @@ func (o *UAVAuthInfo) SetUavLocInfo(v LocationArea5G) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UAVAuthInfo) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -342,7 +342,7 @@ func (o *UAVAuthInfo) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UAVAuthInfo) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -350,7 +350,7 @@ func (o *UAVAuthInfo) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UAVAuthInfo) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -374,28 +374,28 @@ func (o UAVAuthInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["serviceLevelId"] = o.ServiceLevelId
-	if !IsNil(o.NotifyUri) {
+	if !isNil(o.NotifyUri) {
 		toSerialize["notifyUri"] = o.NotifyUri
 	}
-	if !IsNil(o.NotifyCorrId) {
+	if !isNil(o.NotifyCorrId) {
 		toSerialize["notifyCorrId"] = o.NotifyCorrId
 	}
-	if !IsNil(o.IpAddr) {
+	if !isNil(o.IpAddr) {
 		toSerialize["ipAddr"] = o.IpAddr
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.AuthMsg) {
+	if !isNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !IsNil(o.AuthContainer) {
+	if !isNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
-	if !IsNil(o.UavLocInfo) {
+	if !isNil(o.UavLocInfo) {
 		toSerialize["uavLocInfo"] = o.UavLocInfo
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

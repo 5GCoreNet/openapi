@@ -42,7 +42,7 @@ func NewAddressListWithDefaults() *AddressList {
 
 // GetIpv4Addrs returns the Ipv4Addrs field value if set, zero value otherwise.
 func (o *AddressList) GetIpv4Addrs() []string {
-	if o == nil || IsNil(o.Ipv4Addrs) {
+	if o == nil || isNil(o.Ipv4Addrs) {
 		var ret []string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *AddressList) GetIpv4Addrs() []string {
 // GetIpv4AddrsOk returns a tuple with the Ipv4Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressList) GetIpv4AddrsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Ipv4Addrs) {
+	if o == nil || isNil(o.Ipv4Addrs) {
 		return nil, false
 	}
 	return o.Ipv4Addrs, true
@@ -60,7 +60,7 @@ func (o *AddressList) GetIpv4AddrsOk() ([]string, bool) {
 
 // HasIpv4Addrs returns a boolean if a field has been set.
 func (o *AddressList) HasIpv4Addrs() bool {
-	if o != nil && !IsNil(o.Ipv4Addrs) {
+	if o != nil && !isNil(o.Ipv4Addrs) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *AddressList) SetIpv4Addrs(v []string) {
 
 // GetIpv6Addrs returns the Ipv6Addrs field value if set, zero value otherwise.
 func (o *AddressList) GetIpv6Addrs() []Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6Addrs) {
+	if o == nil || isNil(o.Ipv6Addrs) {
 		var ret []Ipv6Addr
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AddressList) GetIpv6Addrs() []Ipv6Addr {
 // GetIpv6AddrsOk returns a tuple with the Ipv6Addrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressList) GetIpv6AddrsOk() ([]Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6Addrs) {
+	if o == nil || isNil(o.Ipv6Addrs) {
 		return nil, false
 	}
 	return o.Ipv6Addrs, true
@@ -92,7 +92,7 @@ func (o *AddressList) GetIpv6AddrsOk() ([]Ipv6Addr, bool) {
 
 // HasIpv6Addrs returns a boolean if a field has been set.
 func (o *AddressList) HasIpv6Addrs() bool {
-	if o != nil && !IsNil(o.Ipv6Addrs) {
+	if o != nil && !isNil(o.Ipv6Addrs) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o AddressList) MarshalJSON() ([]byte, error) {
 
 func (o AddressList) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4Addrs) {
+	if !isNil(o.Ipv4Addrs) {
 		toSerialize["ipv4Addrs"] = o.Ipv4Addrs
 	}
-	if !IsNil(o.Ipv6Addrs) {
+	if !isNil(o.Ipv6Addrs) {
 		toSerialize["ipv6Addrs"] = o.Ipv6Addrs
 	}
 	return toSerialize, nil

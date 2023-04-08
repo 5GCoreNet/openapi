@@ -42,7 +42,7 @@ func NewSACEventStatusWithDefaults() *SACEventStatus {
 
 // GetReachedNumUes returns the ReachedNumUes field value if set, zero value otherwise.
 func (o *SACEventStatus) GetReachedNumUes() SACInfo {
-	if o == nil || IsNil(o.ReachedNumUes) {
+	if o == nil || isNil(o.ReachedNumUes) {
 		var ret SACInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *SACEventStatus) GetReachedNumUes() SACInfo {
 // GetReachedNumUesOk returns a tuple with the ReachedNumUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventStatus) GetReachedNumUesOk() (*SACInfo, bool) {
-	if o == nil || IsNil(o.ReachedNumUes) {
+	if o == nil || isNil(o.ReachedNumUes) {
 		return nil, false
 	}
 	return o.ReachedNumUes, true
@@ -60,7 +60,7 @@ func (o *SACEventStatus) GetReachedNumUesOk() (*SACInfo, bool) {
 
 // HasReachedNumUes returns a boolean if a field has been set.
 func (o *SACEventStatus) HasReachedNumUes() bool {
-	if o != nil && !IsNil(o.ReachedNumUes) {
+	if o != nil && !isNil(o.ReachedNumUes) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *SACEventStatus) SetReachedNumUes(v SACInfo) {
 
 // GetReachedNumPduSess returns the ReachedNumPduSess field value if set, zero value otherwise.
 func (o *SACEventStatus) GetReachedNumPduSess() SACInfo {
-	if o == nil || IsNil(o.ReachedNumPduSess) {
+	if o == nil || isNil(o.ReachedNumPduSess) {
 		var ret SACInfo
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *SACEventStatus) GetReachedNumPduSess() SACInfo {
 // GetReachedNumPduSessOk returns a tuple with the ReachedNumPduSess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SACEventStatus) GetReachedNumPduSessOk() (*SACInfo, bool) {
-	if o == nil || IsNil(o.ReachedNumPduSess) {
+	if o == nil || isNil(o.ReachedNumPduSess) {
 		return nil, false
 	}
 	return o.ReachedNumPduSess, true
@@ -92,7 +92,7 @@ func (o *SACEventStatus) GetReachedNumPduSessOk() (*SACInfo, bool) {
 
 // HasReachedNumPduSess returns a boolean if a field has been set.
 func (o *SACEventStatus) HasReachedNumPduSess() bool {
-	if o != nil && !IsNil(o.ReachedNumPduSess) {
+	if o != nil && !isNil(o.ReachedNumPduSess) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o SACEventStatus) MarshalJSON() ([]byte, error) {
 
 func (o SACEventStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReachedNumUes) {
+	if !isNil(o.ReachedNumUes) {
 		toSerialize["reachedNumUes"] = o.ReachedNumUes
 	}
-	if !IsNil(o.ReachedNumPduSess) {
+	if !isNil(o.ReachedNumPduSess) {
 		toSerialize["reachedNumPduSess"] = o.ReachedNumPduSess
 	}
 	return toSerialize, nil

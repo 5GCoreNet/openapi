@@ -95,7 +95,7 @@ func (o *NFServiceVersion) SetApiFullVersion(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NFServiceVersion) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *NFServiceVersion) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NFServiceVersion) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -113,7 +113,7 @@ func (o *NFServiceVersion) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NFServiceVersion) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o NFServiceVersion) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiVersionInUri"] = o.ApiVersionInUri
 	toSerialize["apiFullVersion"] = o.ApiFullVersion
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
 	return toSerialize, nil

@@ -48,7 +48,7 @@ func NewPerformanceDataWithDefaults() *PerformanceData {
 
 // GetPdb returns the Pdb field value if set, zero value otherwise.
 func (o *PerformanceData) GetPdb() int32 {
-	if o == nil || IsNil(o.Pdb) {
+	if o == nil || isNil(o.Pdb) {
 		var ret int32
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PerformanceData) GetPdb() int32 {
 // GetPdbOk returns a tuple with the Pdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetPdbOk() (*int32, bool) {
-	if o == nil || IsNil(o.Pdb) {
+	if o == nil || isNil(o.Pdb) {
 		return nil, false
 	}
 	return o.Pdb, true
@@ -66,7 +66,7 @@ func (o *PerformanceData) GetPdbOk() (*int32, bool) {
 
 // HasPdb returns a boolean if a field has been set.
 func (o *PerformanceData) HasPdb() bool {
-	if o != nil && !IsNil(o.Pdb) {
+	if o != nil && !isNil(o.Pdb) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *PerformanceData) SetPdb(v int32) {
 
 // GetPlr returns the Plr field value if set, zero value otherwise.
 func (o *PerformanceData) GetPlr() int32 {
-	if o == nil || IsNil(o.Plr) {
+	if o == nil || isNil(o.Plr) {
 		var ret int32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *PerformanceData) GetPlr() int32 {
 // GetPlrOk returns a tuple with the Plr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetPlrOk() (*int32, bool) {
-	if o == nil || IsNil(o.Plr) {
+	if o == nil || isNil(o.Plr) {
 		return nil, false
 	}
 	return o.Plr, true
@@ -98,7 +98,7 @@ func (o *PerformanceData) GetPlrOk() (*int32, bool) {
 
 // HasPlr returns a boolean if a field has been set.
 func (o *PerformanceData) HasPlr() bool {
-	if o != nil && !IsNil(o.Plr) {
+	if o != nil && !isNil(o.Plr) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *PerformanceData) SetPlr(v int32) {
 
 // GetThrputUl returns the ThrputUl field value if set, zero value otherwise.
 func (o *PerformanceData) GetThrputUl() string {
-	if o == nil || IsNil(o.ThrputUl) {
+	if o == nil || isNil(o.ThrputUl) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PerformanceData) GetThrputUl() string {
 // GetThrputUlOk returns a tuple with the ThrputUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetThrputUlOk() (*string, bool) {
-	if o == nil || IsNil(o.ThrputUl) {
+	if o == nil || isNil(o.ThrputUl) {
 		return nil, false
 	}
 	return o.ThrputUl, true
@@ -130,7 +130,7 @@ func (o *PerformanceData) GetThrputUlOk() (*string, bool) {
 
 // HasThrputUl returns a boolean if a field has been set.
 func (o *PerformanceData) HasThrputUl() bool {
-	if o != nil && !IsNil(o.ThrputUl) {
+	if o != nil && !isNil(o.ThrputUl) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *PerformanceData) SetThrputUl(v string) {
 
 // GetThrputDl returns the ThrputDl field value if set, zero value otherwise.
 func (o *PerformanceData) GetThrputDl() string {
-	if o == nil || IsNil(o.ThrputDl) {
+	if o == nil || isNil(o.ThrputDl) {
 		var ret string
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *PerformanceData) GetThrputDl() string {
 // GetThrputDlOk returns a tuple with the ThrputDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PerformanceData) GetThrputDlOk() (*string, bool) {
-	if o == nil || IsNil(o.ThrputDl) {
+	if o == nil || isNil(o.ThrputDl) {
 		return nil, false
 	}
 	return o.ThrputDl, true
@@ -162,7 +162,7 @@ func (o *PerformanceData) GetThrputDlOk() (*string, bool) {
 
 // HasThrputDl returns a boolean if a field has been set.
 func (o *PerformanceData) HasThrputDl() bool {
-	if o != nil && !IsNil(o.ThrputDl) {
+	if o != nil && !isNil(o.ThrputDl) {
 		return true
 	}
 
@@ -184,16 +184,16 @@ func (o PerformanceData) MarshalJSON() ([]byte, error) {
 
 func (o PerformanceData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Pdb) {
+	if !isNil(o.Pdb) {
 		toSerialize["pdb"] = o.Pdb
 	}
-	if !IsNil(o.Plr) {
+	if !isNil(o.Plr) {
 		toSerialize["plr"] = o.Plr
 	}
-	if !IsNil(o.ThrputUl) {
+	if !isNil(o.ThrputUl) {
 		toSerialize["thrputUl"] = o.ThrputUl
 	}
-	if !IsNil(o.ThrputDl) {
+	if !isNil(o.ThrputDl) {
 		toSerialize["thrputDl"] = o.ThrputDl
 	}
 	return toSerialize, nil

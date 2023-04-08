@@ -43,7 +43,7 @@ func NewActivityFactorTargetWithDefaults() *ActivityFactorTarget {
 
 // GetTargetAttribute returns the TargetAttribute field value if set, zero value otherwise.
 func (o *ActivityFactorTarget) GetTargetAttribute() string {
-	if o == nil || IsNil(o.TargetAttribute) {
+	if o == nil || isNil(o.TargetAttribute) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *ActivityFactorTarget) GetTargetAttribute() string {
 // GetTargetAttributeOk returns a tuple with the TargetAttribute field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActivityFactorTarget) GetTargetAttributeOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetAttribute) {
+	if o == nil || isNil(o.TargetAttribute) {
 		return nil, false
 	}
 	return o.TargetAttribute, true
@@ -61,7 +61,7 @@ func (o *ActivityFactorTarget) GetTargetAttributeOk() (*string, bool) {
 
 // HasTargetAttribute returns a boolean if a field has been set.
 func (o *ActivityFactorTarget) HasTargetAttribute() bool {
-	if o != nil && !IsNil(o.TargetAttribute) {
+	if o != nil && !isNil(o.TargetAttribute) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *ActivityFactorTarget) SetTargetAttribute(v string) {
 
 // GetTargetCondition returns the TargetCondition field value if set, zero value otherwise.
 func (o *ActivityFactorTarget) GetTargetCondition() string {
-	if o == nil || IsNil(o.TargetCondition) {
+	if o == nil || isNil(o.TargetCondition) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *ActivityFactorTarget) GetTargetCondition() string {
 // GetTargetConditionOk returns a tuple with the TargetCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActivityFactorTarget) GetTargetConditionOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetCondition) {
+	if o == nil || isNil(o.TargetCondition) {
 		return nil, false
 	}
 	return o.TargetCondition, true
@@ -93,7 +93,7 @@ func (o *ActivityFactorTarget) GetTargetConditionOk() (*string, bool) {
 
 // HasTargetCondition returns a boolean if a field has been set.
 func (o *ActivityFactorTarget) HasTargetCondition() bool {
-	if o != nil && !IsNil(o.TargetCondition) {
+	if o != nil && !isNil(o.TargetCondition) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *ActivityFactorTarget) SetTargetCondition(v string) {
 
 // GetTargetValueRange returns the TargetValueRange field value if set, zero value otherwise.
 func (o *ActivityFactorTarget) GetTargetValueRange() int32 {
-	if o == nil || IsNil(o.TargetValueRange) {
+	if o == nil || isNil(o.TargetValueRange) {
 		var ret int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *ActivityFactorTarget) GetTargetValueRange() int32 {
 // GetTargetValueRangeOk returns a tuple with the TargetValueRange field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ActivityFactorTarget) GetTargetValueRangeOk() (*int32, bool) {
-	if o == nil || IsNil(o.TargetValueRange) {
+	if o == nil || isNil(o.TargetValueRange) {
 		return nil, false
 	}
 	return o.TargetValueRange, true
@@ -125,7 +125,7 @@ func (o *ActivityFactorTarget) GetTargetValueRangeOk() (*int32, bool) {
 
 // HasTargetValueRange returns a boolean if a field has been set.
 func (o *ActivityFactorTarget) HasTargetValueRange() bool {
-	if o != nil && !IsNil(o.TargetValueRange) {
+	if o != nil && !isNil(o.TargetValueRange) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o ActivityFactorTarget) MarshalJSON() ([]byte, error) {
 
 func (o ActivityFactorTarget) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TargetAttribute) {
+	if !isNil(o.TargetAttribute) {
 		toSerialize["targetAttribute"] = o.TargetAttribute
 	}
-	if !IsNil(o.TargetCondition) {
+	if !isNil(o.TargetCondition) {
 		toSerialize["targetCondition"] = o.TargetCondition
 	}
-	if !IsNil(o.TargetValueRange) {
+	if !isNil(o.TargetValueRange) {
 		toSerialize["targetValueRange"] = o.TargetValueRange
 	}
 	return toSerialize, nil

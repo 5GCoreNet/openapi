@@ -17,23 +17,37 @@ import (
 
 // AnalyticsEvent Possible values are: - UE_MOBILITY: The AF requests to be notified about analytics information of UE mobility. - UE_COMM: The AF requests to be notified about analytics information of UE communication. - ABNORMAL_BEHAVIOR: The AF requests to be notified about analytics information of UE's abnormal behavior. - CONGESTION: The AF requests to be notified about analytics information of user data congestion information.  - NETWORK_PERFORMANCE: The AF requests to be notified about analytics information of network performance.  - QOS_SUSTAINABILITY: The AF requests to be notified about analytics information of QoS sustainability. - DISPERSION: The AF requests to be notified about analytics information of Dispersion analytics. - DN_PERFORMANCE: The AF requests to be notified about analytics information of DN performance. - SERVICE_EXPERIENCE: The AF requests to be notified about analytics information of service experience. 
 type AnalyticsEvent struct {
-	string *string
+	AnalyticsEventAnyOf *AnalyticsEventAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *AnalyticsEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into AnalyticsEventAnyOf
+	err = json.Unmarshal(data, &dst.AnalyticsEventAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonAnalyticsEventAnyOf, _ := json.Marshal(dst.AnalyticsEventAnyOf)
+		if string(jsonAnalyticsEventAnyOf) == "{}" { // empty struct
+			dst.AnalyticsEventAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.AnalyticsEventAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.AnalyticsEventAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(AnalyticsEvent)")
@@ -41,8 +55,12 @@ func (dst *AnalyticsEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *AnalyticsEvent) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.AnalyticsEventAnyOf != nil {
+		return json.Marshal(&src.AnalyticsEventAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

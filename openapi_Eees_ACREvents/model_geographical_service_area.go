@@ -44,7 +44,7 @@ func NewGeographicalServiceAreaWithDefaults() *GeographicalServiceArea {
 
 // GetGeoArs returns the GeoArs field value if set, zero value otherwise.
 func (o *GeographicalServiceArea) GetGeoArs() []GeographicArea {
-	if o == nil || IsNil(o.GeoArs) {
+	if o == nil || isNil(o.GeoArs) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *GeographicalServiceArea) GetGeoArs() []GeographicArea {
 // GetGeoArsOk returns a tuple with the GeoArs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalServiceArea) GetGeoArsOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.GeoArs) {
+	if o == nil || isNil(o.GeoArs) {
 		return nil, false
 	}
 	return o.GeoArs, true
@@ -62,7 +62,7 @@ func (o *GeographicalServiceArea) GetGeoArsOk() ([]GeographicArea, bool) {
 
 // HasGeoArs returns a boolean if a field has been set.
 func (o *GeographicalServiceArea) HasGeoArs() bool {
-	if o != nil && !IsNil(o.GeoArs) {
+	if o != nil && !isNil(o.GeoArs) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *GeographicalServiceArea) SetGeoArs(v []GeographicArea) {
 
 // GetCivicAddrs returns the CivicAddrs field value if set, zero value otherwise.
 func (o *GeographicalServiceArea) GetCivicAddrs() []CivicAddress {
-	if o == nil || IsNil(o.CivicAddrs) {
+	if o == nil || isNil(o.CivicAddrs) {
 		var ret []CivicAddress
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *GeographicalServiceArea) GetCivicAddrs() []CivicAddress {
 // GetCivicAddrsOk returns a tuple with the CivicAddrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeographicalServiceArea) GetCivicAddrsOk() ([]CivicAddress, bool) {
-	if o == nil || IsNil(o.CivicAddrs) {
+	if o == nil || isNil(o.CivicAddrs) {
 		return nil, false
 	}
 	return o.CivicAddrs, true
@@ -94,7 +94,7 @@ func (o *GeographicalServiceArea) GetCivicAddrsOk() ([]CivicAddress, bool) {
 
 // HasCivicAddrs returns a boolean if a field has been set.
 func (o *GeographicalServiceArea) HasCivicAddrs() bool {
-	if o != nil && !IsNil(o.CivicAddrs) {
+	if o != nil && !isNil(o.CivicAddrs) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o GeographicalServiceArea) MarshalJSON() ([]byte, error) {
 
 func (o GeographicalServiceArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GeoArs) {
+	if !isNil(o.GeoArs) {
 		toSerialize["geoArs"] = o.GeoArs
 	}
-	if !IsNil(o.CivicAddrs) {
+	if !isNil(o.CivicAddrs) {
 		toSerialize["civicAddrs"] = o.CivicAddrs
 	}
 	return toSerialize, nil

@@ -50,7 +50,7 @@ func NewNiddDownlinkDataTransferPatchWithDefaults() *NiddDownlinkDataTransferPat
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *NiddDownlinkDataTransferPatch) GetData() string {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || isNil(o.Data) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NiddDownlinkDataTransferPatch) GetData() string {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataTransferPatch) GetDataOk() (*string, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || isNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -68,7 +68,7 @@ func (o *NiddDownlinkDataTransferPatch) GetDataOk() (*string, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *NiddDownlinkDataTransferPatch) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && !isNil(o.Data) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *NiddDownlinkDataTransferPatch) SetData(v string) {
 
 // GetReliableDataService returns the ReliableDataService field value if set, zero value otherwise.
 func (o *NiddDownlinkDataTransferPatch) GetReliableDataService() bool {
-	if o == nil || IsNil(o.ReliableDataService) {
+	if o == nil || isNil(o.ReliableDataService) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NiddDownlinkDataTransferPatch) GetReliableDataService() bool {
 // GetReliableDataServiceOk returns a tuple with the ReliableDataService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataTransferPatch) GetReliableDataServiceOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReliableDataService) {
+	if o == nil || isNil(o.ReliableDataService) {
 		return nil, false
 	}
 	return o.ReliableDataService, true
@@ -100,7 +100,7 @@ func (o *NiddDownlinkDataTransferPatch) GetReliableDataServiceOk() (*bool, bool)
 
 // HasReliableDataService returns a boolean if a field has been set.
 func (o *NiddDownlinkDataTransferPatch) HasReliableDataService() bool {
-	if o != nil && !IsNil(o.ReliableDataService) {
+	if o != nil && !isNil(o.ReliableDataService) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *NiddDownlinkDataTransferPatch) SetReliableDataService(v bool) {
 
 // GetRdsPort returns the RdsPort field value if set, zero value otherwise.
 func (o *NiddDownlinkDataTransferPatch) GetRdsPort() RdsPort {
-	if o == nil || IsNil(o.RdsPort) {
+	if o == nil || isNil(o.RdsPort) {
 		var ret RdsPort
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *NiddDownlinkDataTransferPatch) GetRdsPort() RdsPort {
 // GetRdsPortOk returns a tuple with the RdsPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataTransferPatch) GetRdsPortOk() (*RdsPort, bool) {
-	if o == nil || IsNil(o.RdsPort) {
+	if o == nil || isNil(o.RdsPort) {
 		return nil, false
 	}
 	return o.RdsPort, true
@@ -132,7 +132,7 @@ func (o *NiddDownlinkDataTransferPatch) GetRdsPortOk() (*RdsPort, bool) {
 
 // HasRdsPort returns a boolean if a field has been set.
 func (o *NiddDownlinkDataTransferPatch) HasRdsPort() bool {
-	if o != nil && !IsNil(o.RdsPort) {
+	if o != nil && !isNil(o.RdsPort) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *NiddDownlinkDataTransferPatch) SetRdsPort(v RdsPort) {
 
 // GetMaximumLatency returns the MaximumLatency field value if set, zero value otherwise.
 func (o *NiddDownlinkDataTransferPatch) GetMaximumLatency() int32 {
-	if o == nil || IsNil(o.MaximumLatency) {
+	if o == nil || isNil(o.MaximumLatency) {
 		var ret int32
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *NiddDownlinkDataTransferPatch) GetMaximumLatency() int32 {
 // GetMaximumLatencyOk returns a tuple with the MaximumLatency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataTransferPatch) GetMaximumLatencyOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaximumLatency) {
+	if o == nil || isNil(o.MaximumLatency) {
 		return nil, false
 	}
 	return o.MaximumLatency, true
@@ -164,7 +164,7 @@ func (o *NiddDownlinkDataTransferPatch) GetMaximumLatencyOk() (*int32, bool) {
 
 // HasMaximumLatency returns a boolean if a field has been set.
 func (o *NiddDownlinkDataTransferPatch) HasMaximumLatency() bool {
-	if o != nil && !IsNil(o.MaximumLatency) {
+	if o != nil && !isNil(o.MaximumLatency) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *NiddDownlinkDataTransferPatch) SetMaximumLatency(v int32) {
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
 func (o *NiddDownlinkDataTransferPatch) GetPriority() int32 {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		var ret int32
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *NiddDownlinkDataTransferPatch) GetPriority() int32 {
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataTransferPatch) GetPriorityOk() (*int32, bool) {
-	if o == nil || IsNil(o.Priority) {
+	if o == nil || isNil(o.Priority) {
 		return nil, false
 	}
 	return o.Priority, true
@@ -196,7 +196,7 @@ func (o *NiddDownlinkDataTransferPatch) GetPriorityOk() (*int32, bool) {
 
 // HasPriority returns a boolean if a field has been set.
 func (o *NiddDownlinkDataTransferPatch) HasPriority() bool {
-	if o != nil && !IsNil(o.Priority) {
+	if o != nil && !isNil(o.Priority) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *NiddDownlinkDataTransferPatch) SetPriority(v int32) {
 
 // GetPdnEstablishmentOption returns the PdnEstablishmentOption field value if set, zero value otherwise.
 func (o *NiddDownlinkDataTransferPatch) GetPdnEstablishmentOption() PdnEstablishmentOptions {
-	if o == nil || IsNil(o.PdnEstablishmentOption) {
+	if o == nil || isNil(o.PdnEstablishmentOption) {
 		var ret PdnEstablishmentOptions
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *NiddDownlinkDataTransferPatch) GetPdnEstablishmentOption() PdnEstablish
 // GetPdnEstablishmentOptionOk returns a tuple with the PdnEstablishmentOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddDownlinkDataTransferPatch) GetPdnEstablishmentOptionOk() (*PdnEstablishmentOptions, bool) {
-	if o == nil || IsNil(o.PdnEstablishmentOption) {
+	if o == nil || isNil(o.PdnEstablishmentOption) {
 		return nil, false
 	}
 	return o.PdnEstablishmentOption, true
@@ -228,7 +228,7 @@ func (o *NiddDownlinkDataTransferPatch) GetPdnEstablishmentOptionOk() (*PdnEstab
 
 // HasPdnEstablishmentOption returns a boolean if a field has been set.
 func (o *NiddDownlinkDataTransferPatch) HasPdnEstablishmentOption() bool {
-	if o != nil && !IsNil(o.PdnEstablishmentOption) {
+	if o != nil && !isNil(o.PdnEstablishmentOption) {
 		return true
 	}
 
@@ -250,22 +250,22 @@ func (o NiddDownlinkDataTransferPatch) MarshalJSON() ([]byte, error) {
 
 func (o NiddDownlinkDataTransferPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if !isNil(o.Data) {
 		toSerialize["data"] = o.Data
 	}
-	if !IsNil(o.ReliableDataService) {
+	if !isNil(o.ReliableDataService) {
 		toSerialize["reliableDataService"] = o.ReliableDataService
 	}
-	if !IsNil(o.RdsPort) {
+	if !isNil(o.RdsPort) {
 		toSerialize["rdsPort"] = o.RdsPort
 	}
-	if !IsNil(o.MaximumLatency) {
+	if !isNil(o.MaximumLatency) {
 		toSerialize["maximumLatency"] = o.MaximumLatency
 	}
-	if !IsNil(o.Priority) {
+	if !isNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
 	}
-	if !IsNil(o.PdnEstablishmentOption) {
+	if !isNil(o.PdnEstablishmentOption) {
 		toSerialize["pdnEstablishmentOption"] = o.PdnEstablishmentOption
 	}
 	return toSerialize, nil

@@ -45,7 +45,7 @@ func NewQosMonitoringInfoWithDefaults() *QosMonitoringInfo {
 
 // GetQosMonitoringInd returns the QosMonitoringInd field value if set, zero value otherwise.
 func (o *QosMonitoringInfo) GetQosMonitoringInd() bool {
-	if o == nil || IsNil(o.QosMonitoringInd) {
+	if o == nil || isNil(o.QosMonitoringInd) {
 		var ret bool
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *QosMonitoringInfo) GetQosMonitoringInd() bool {
 // GetQosMonitoringIndOk returns a tuple with the QosMonitoringInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringInfo) GetQosMonitoringIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.QosMonitoringInd) {
+	if o == nil || isNil(o.QosMonitoringInd) {
 		return nil, false
 	}
 	return o.QosMonitoringInd, true
@@ -63,7 +63,7 @@ func (o *QosMonitoringInfo) GetQosMonitoringIndOk() (*bool, bool) {
 
 // HasQosMonitoringInd returns a boolean if a field has been set.
 func (o *QosMonitoringInfo) HasQosMonitoringInd() bool {
-	if o != nil && !IsNil(o.QosMonitoringInd) {
+	if o != nil && !isNil(o.QosMonitoringInd) {
 		return true
 	}
 
@@ -85,7 +85,7 @@ func (o QosMonitoringInfo) MarshalJSON() ([]byte, error) {
 
 func (o QosMonitoringInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.QosMonitoringInd) {
+	if !isNil(o.QosMonitoringInd) {
 		toSerialize["qosMonitoringInd"] = o.QosMonitoringInd
 	}
 	return toSerialize, nil

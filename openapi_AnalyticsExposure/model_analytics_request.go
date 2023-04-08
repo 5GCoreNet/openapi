@@ -72,7 +72,7 @@ func (o *AnalyticsRequest) SetAnalyEvent(v AnalyticsEvent) {
 
 // GetAnalyEventFilter returns the AnalyEventFilter field value if set, zero value otherwise.
 func (o *AnalyticsRequest) GetAnalyEventFilter() AnalyticsEventFilter {
-	if o == nil || IsNil(o.AnalyEventFilter) {
+	if o == nil || isNil(o.AnalyEventFilter) {
 		var ret AnalyticsEventFilter
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AnalyticsRequest) GetAnalyEventFilter() AnalyticsEventFilter {
 // GetAnalyEventFilterOk returns a tuple with the AnalyEventFilter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsRequest) GetAnalyEventFilterOk() (*AnalyticsEventFilter, bool) {
-	if o == nil || IsNil(o.AnalyEventFilter) {
+	if o == nil || isNil(o.AnalyEventFilter) {
 		return nil, false
 	}
 	return o.AnalyEventFilter, true
@@ -90,7 +90,7 @@ func (o *AnalyticsRequest) GetAnalyEventFilterOk() (*AnalyticsEventFilter, bool)
 
 // HasAnalyEventFilter returns a boolean if a field has been set.
 func (o *AnalyticsRequest) HasAnalyEventFilter() bool {
-	if o != nil && !IsNil(o.AnalyEventFilter) {
+	if o != nil && !isNil(o.AnalyEventFilter) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AnalyticsRequest) SetAnalyEventFilter(v AnalyticsEventFilter) {
 
 // GetAnalyRep returns the AnalyRep field value if set, zero value otherwise.
 func (o *AnalyticsRequest) GetAnalyRep() EventReportingRequirement {
-	if o == nil || IsNil(o.AnalyRep) {
+	if o == nil || isNil(o.AnalyRep) {
 		var ret EventReportingRequirement
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AnalyticsRequest) GetAnalyRep() EventReportingRequirement {
 // GetAnalyRepOk returns a tuple with the AnalyRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsRequest) GetAnalyRepOk() (*EventReportingRequirement, bool) {
-	if o == nil || IsNil(o.AnalyRep) {
+	if o == nil || isNil(o.AnalyRep) {
 		return nil, false
 	}
 	return o.AnalyRep, true
@@ -122,7 +122,7 @@ func (o *AnalyticsRequest) GetAnalyRepOk() (*EventReportingRequirement, bool) {
 
 // HasAnalyRep returns a boolean if a field has been set.
 func (o *AnalyticsRequest) HasAnalyRep() bool {
-	if o != nil && !IsNil(o.AnalyRep) {
+	if o != nil && !isNil(o.AnalyRep) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AnalyticsRequest) SetAnalyRep(v EventReportingRequirement) {
 
 // GetTgtUe returns the TgtUe field value if set, zero value otherwise.
 func (o *AnalyticsRequest) GetTgtUe() TargetUeId {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		var ret TargetUeId
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AnalyticsRequest) GetTgtUe() TargetUeId {
 // GetTgtUeOk returns a tuple with the TgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsRequest) GetTgtUeOk() (*TargetUeId, bool) {
-	if o == nil || IsNil(o.TgtUe) {
+	if o == nil || isNil(o.TgtUe) {
 		return nil, false
 	}
 	return o.TgtUe, true
@@ -154,7 +154,7 @@ func (o *AnalyticsRequest) GetTgtUeOk() (*TargetUeId, bool) {
 
 // HasTgtUe returns a boolean if a field has been set.
 func (o *AnalyticsRequest) HasTgtUe() bool {
-	if o != nil && !IsNil(o.TgtUe) {
+	if o != nil && !isNil(o.TgtUe) {
 		return true
 	}
 
@@ -201,13 +201,13 @@ func (o AnalyticsRequest) MarshalJSON() ([]byte, error) {
 func (o AnalyticsRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["analyEvent"] = o.AnalyEvent
-	if !IsNil(o.AnalyEventFilter) {
+	if !isNil(o.AnalyEventFilter) {
 		toSerialize["analyEventFilter"] = o.AnalyEventFilter
 	}
-	if !IsNil(o.AnalyRep) {
+	if !isNil(o.AnalyRep) {
 		toSerialize["analyRep"] = o.AnalyRep
 	}
-	if !IsNil(o.TgtUe) {
+	if !isNil(o.TgtUe) {
 		toSerialize["tgtUe"] = o.TgtUe
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

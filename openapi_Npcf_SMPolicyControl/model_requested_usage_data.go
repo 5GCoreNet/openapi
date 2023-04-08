@@ -44,7 +44,7 @@ func NewRequestedUsageDataWithDefaults() *RequestedUsageData {
 
 // GetRefUmIds returns the RefUmIds field value if set, zero value otherwise.
 func (o *RequestedUsageData) GetRefUmIds() []string {
-	if o == nil || IsNil(o.RefUmIds) {
+	if o == nil || isNil(o.RefUmIds) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *RequestedUsageData) GetRefUmIds() []string {
 // GetRefUmIdsOk returns a tuple with the RefUmIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUsageData) GetRefUmIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RefUmIds) {
+	if o == nil || isNil(o.RefUmIds) {
 		return nil, false
 	}
 	return o.RefUmIds, true
@@ -62,7 +62,7 @@ func (o *RequestedUsageData) GetRefUmIdsOk() ([]string, bool) {
 
 // HasRefUmIds returns a boolean if a field has been set.
 func (o *RequestedUsageData) HasRefUmIds() bool {
-	if o != nil && !IsNil(o.RefUmIds) {
+	if o != nil && !isNil(o.RefUmIds) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *RequestedUsageData) SetRefUmIds(v []string) {
 
 // GetAllUmIds returns the AllUmIds field value if set, zero value otherwise.
 func (o *RequestedUsageData) GetAllUmIds() bool {
-	if o == nil || IsNil(o.AllUmIds) {
+	if o == nil || isNil(o.AllUmIds) {
 		var ret bool
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *RequestedUsageData) GetAllUmIds() bool {
 // GetAllUmIdsOk returns a tuple with the AllUmIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RequestedUsageData) GetAllUmIdsOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllUmIds) {
+	if o == nil || isNil(o.AllUmIds) {
 		return nil, false
 	}
 	return o.AllUmIds, true
@@ -94,7 +94,7 @@ func (o *RequestedUsageData) GetAllUmIdsOk() (*bool, bool) {
 
 // HasAllUmIds returns a boolean if a field has been set.
 func (o *RequestedUsageData) HasAllUmIds() bool {
-	if o != nil && !IsNil(o.AllUmIds) {
+	if o != nil && !isNil(o.AllUmIds) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o RequestedUsageData) MarshalJSON() ([]byte, error) {
 
 func (o RequestedUsageData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RefUmIds) {
+	if !isNil(o.RefUmIds) {
 		toSerialize["refUmIds"] = o.RefUmIds
 	}
-	if !IsNil(o.AllUmIds) {
+	if !isNil(o.AllUmIds) {
 		toSerialize["allUmIds"] = o.AllUmIds
 	}
 	return toSerialize, nil

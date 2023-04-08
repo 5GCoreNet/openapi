@@ -44,7 +44,7 @@ func NewUmtLocationArea5GAllOfWithDefaults() *UmtLocationArea5GAllOf {
 
 // GetUmtTime returns the UmtTime field value if set, zero value otherwise.
 func (o *UmtLocationArea5GAllOf) GetUmtTime() string {
-	if o == nil || IsNil(o.UmtTime) {
+	if o == nil || isNil(o.UmtTime) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtTime() string {
 // GetUmtTimeOk returns a tuple with the UmtTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UmtLocationArea5GAllOf) GetUmtTimeOk() (*string, bool) {
-	if o == nil || IsNil(o.UmtTime) {
+	if o == nil || isNil(o.UmtTime) {
 		return nil, false
 	}
 	return o.UmtTime, true
@@ -62,7 +62,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtTimeOk() (*string, bool) {
 
 // HasUmtTime returns a boolean if a field has been set.
 func (o *UmtLocationArea5GAllOf) HasUmtTime() bool {
-	if o != nil && !IsNil(o.UmtTime) {
+	if o != nil && !isNil(o.UmtTime) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *UmtLocationArea5GAllOf) SetUmtTime(v string) {
 
 // GetUmtDuration returns the UmtDuration field value if set, zero value otherwise.
 func (o *UmtLocationArea5GAllOf) GetUmtDuration() int32 {
-	if o == nil || IsNil(o.UmtDuration) {
+	if o == nil || isNil(o.UmtDuration) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtDuration() int32 {
 // GetUmtDurationOk returns a tuple with the UmtDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UmtLocationArea5GAllOf) GetUmtDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.UmtDuration) {
+	if o == nil || isNil(o.UmtDuration) {
 		return nil, false
 	}
 	return o.UmtDuration, true
@@ -94,7 +94,7 @@ func (o *UmtLocationArea5GAllOf) GetUmtDurationOk() (*int32, bool) {
 
 // HasUmtDuration returns a boolean if a field has been set.
 func (o *UmtLocationArea5GAllOf) HasUmtDuration() bool {
-	if o != nil && !IsNil(o.UmtDuration) {
+	if o != nil && !isNil(o.UmtDuration) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o UmtLocationArea5GAllOf) MarshalJSON() ([]byte, error) {
 
 func (o UmtLocationArea5GAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UmtTime) {
+	if !isNil(o.UmtTime) {
 		toSerialize["umtTime"] = o.UmtTime
 	}
-	if !IsNil(o.UmtDuration) {
+	if !isNil(o.UmtDuration) {
 		toSerialize["umtDuration"] = o.UmtDuration
 	}
 	return toSerialize, nil

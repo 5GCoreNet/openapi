@@ -20,15 +20,12 @@ var _ MappedNullable = &DistSessionSubscription{}
 
 // DistSessionSubscription Data within the Status Subscription
 type DistSessionSubscription struct {
-	// String uniquely identifying a NF instance. The format of the NF Instance ID shall be a  Universally Unique Identifier (UUID) version 4, as described in IETF RFC 4122.  
 	NfcInstanceId *string `json:"nfcInstanceId,omitempty"`
 	EventList []DistSessionEventType `json:"eventList"`
-	// String providing an URI formatted according to RFC 3986.
 	NotifyUri string `json:"notifyUri"`
 	NotifyCorrelationId *string `json:"notifyCorrelationId,omitempty"`
 	// string with format 'date-time' as defined in OpenAPI.
 	ExpiryTime *time.Time `json:"expiryTime,omitempty"`
-	// String providing an URI formatted according to RFC 3986.
 	DistSessionSubscUri *string `json:"distSessionSubscUri,omitempty"`
 }
 
@@ -53,7 +50,7 @@ func NewDistSessionSubscriptionWithDefaults() *DistSessionSubscription {
 
 // GetNfcInstanceId returns the NfcInstanceId field value if set, zero value otherwise.
 func (o *DistSessionSubscription) GetNfcInstanceId() string {
-	if o == nil || IsNil(o.NfcInstanceId) {
+	if o == nil || isNil(o.NfcInstanceId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +60,7 @@ func (o *DistSessionSubscription) GetNfcInstanceId() string {
 // GetNfcInstanceIdOk returns a tuple with the NfcInstanceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionSubscription) GetNfcInstanceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfcInstanceId) {
+	if o == nil || isNil(o.NfcInstanceId) {
 		return nil, false
 	}
 	return o.NfcInstanceId, true
@@ -71,7 +68,7 @@ func (o *DistSessionSubscription) GetNfcInstanceIdOk() (*string, bool) {
 
 // HasNfcInstanceId returns a boolean if a field has been set.
 func (o *DistSessionSubscription) HasNfcInstanceId() bool {
-	if o != nil && !IsNil(o.NfcInstanceId) {
+	if o != nil && !isNil(o.NfcInstanceId) {
 		return true
 	}
 
@@ -133,7 +130,7 @@ func (o *DistSessionSubscription) SetNotifyUri(v string) {
 
 // GetNotifyCorrelationId returns the NotifyCorrelationId field value if set, zero value otherwise.
 func (o *DistSessionSubscription) GetNotifyCorrelationId() string {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		var ret string
 		return ret
 	}
@@ -143,7 +140,7 @@ func (o *DistSessionSubscription) GetNotifyCorrelationId() string {
 // GetNotifyCorrelationIdOk returns a tuple with the NotifyCorrelationId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifyCorrelationId) {
+	if o == nil || isNil(o.NotifyCorrelationId) {
 		return nil, false
 	}
 	return o.NotifyCorrelationId, true
@@ -151,7 +148,7 @@ func (o *DistSessionSubscription) GetNotifyCorrelationIdOk() (*string, bool) {
 
 // HasNotifyCorrelationId returns a boolean if a field has been set.
 func (o *DistSessionSubscription) HasNotifyCorrelationId() bool {
-	if o != nil && !IsNil(o.NotifyCorrelationId) {
+	if o != nil && !isNil(o.NotifyCorrelationId) {
 		return true
 	}
 
@@ -165,7 +162,7 @@ func (o *DistSessionSubscription) SetNotifyCorrelationId(v string) {
 
 // GetExpiryTime returns the ExpiryTime field value if set, zero value otherwise.
 func (o *DistSessionSubscription) GetExpiryTime() time.Time {
-	if o == nil || IsNil(o.ExpiryTime) {
+	if o == nil || isNil(o.ExpiryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -175,7 +172,7 @@ func (o *DistSessionSubscription) GetExpiryTime() time.Time {
 // GetExpiryTimeOk returns a tuple with the ExpiryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionSubscription) GetExpiryTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpiryTime) {
+	if o == nil || isNil(o.ExpiryTime) {
 		return nil, false
 	}
 	return o.ExpiryTime, true
@@ -183,7 +180,7 @@ func (o *DistSessionSubscription) GetExpiryTimeOk() (*time.Time, bool) {
 
 // HasExpiryTime returns a boolean if a field has been set.
 func (o *DistSessionSubscription) HasExpiryTime() bool {
-	if o != nil && !IsNil(o.ExpiryTime) {
+	if o != nil && !isNil(o.ExpiryTime) {
 		return true
 	}
 
@@ -197,7 +194,7 @@ func (o *DistSessionSubscription) SetExpiryTime(v time.Time) {
 
 // GetDistSessionSubscUri returns the DistSessionSubscUri field value if set, zero value otherwise.
 func (o *DistSessionSubscription) GetDistSessionSubscUri() string {
-	if o == nil || IsNil(o.DistSessionSubscUri) {
+	if o == nil || isNil(o.DistSessionSubscUri) {
 		var ret string
 		return ret
 	}
@@ -207,7 +204,7 @@ func (o *DistSessionSubscription) GetDistSessionSubscUri() string {
 // GetDistSessionSubscUriOk returns a tuple with the DistSessionSubscUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionSubscription) GetDistSessionSubscUriOk() (*string, bool) {
-	if o == nil || IsNil(o.DistSessionSubscUri) {
+	if o == nil || isNil(o.DistSessionSubscUri) {
 		return nil, false
 	}
 	return o.DistSessionSubscUri, true
@@ -215,7 +212,7 @@ func (o *DistSessionSubscription) GetDistSessionSubscUriOk() (*string, bool) {
 
 // HasDistSessionSubscUri returns a boolean if a field has been set.
 func (o *DistSessionSubscription) HasDistSessionSubscUri() bool {
-	if o != nil && !IsNil(o.DistSessionSubscUri) {
+	if o != nil && !isNil(o.DistSessionSubscUri) {
 		return true
 	}
 
@@ -237,18 +234,20 @@ func (o DistSessionSubscription) MarshalJSON() ([]byte, error) {
 
 func (o DistSessionSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NfcInstanceId) {
+	if !isNil(o.NfcInstanceId) {
 		toSerialize["nfcInstanceId"] = o.NfcInstanceId
 	}
 	toSerialize["eventList"] = o.EventList
 	toSerialize["notifyUri"] = o.NotifyUri
-	if !IsNil(o.NotifyCorrelationId) {
+	if !isNil(o.NotifyCorrelationId) {
 		toSerialize["notifyCorrelationId"] = o.NotifyCorrelationId
 	}
-	if !IsNil(o.ExpiryTime) {
+	if !isNil(o.ExpiryTime) {
 		toSerialize["expiryTime"] = o.ExpiryTime
 	}
-	// skip: distSessionSubscUri is readOnly
+	if !isNil(o.DistSessionSubscUri) {
+		toSerialize["distSessionSubscUri"] = o.DistSessionSubscUri
+	}
 	return toSerialize, nil
 }
 

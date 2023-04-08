@@ -50,7 +50,7 @@ func NewHssAuthenticationInfoRequestWithDefaults() *HssAuthenticationInfoRequest
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *HssAuthenticationInfoRequest) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *HssAuthenticationInfoRequest) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssAuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -68,7 +68,7 @@ func (o *HssAuthenticationInfoRequest) GetSupportedFeaturesOk() (*string, bool) 
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *HssAuthenticationInfoRequest) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -130,7 +130,7 @@ func (o *HssAuthenticationInfoRequest) SetNumOfRequestedVectors(v int32) {
 
 // GetRequestingNodeType returns the RequestingNodeType field value if set, zero value otherwise.
 func (o *HssAuthenticationInfoRequest) GetRequestingNodeType() NodeType {
-	if o == nil || IsNil(o.RequestingNodeType) {
+	if o == nil || isNil(o.RequestingNodeType) {
 		var ret NodeType
 		return ret
 	}
@@ -140,7 +140,7 @@ func (o *HssAuthenticationInfoRequest) GetRequestingNodeType() NodeType {
 // GetRequestingNodeTypeOk returns a tuple with the RequestingNodeType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssAuthenticationInfoRequest) GetRequestingNodeTypeOk() (*NodeType, bool) {
-	if o == nil || IsNil(o.RequestingNodeType) {
+	if o == nil || isNil(o.RequestingNodeType) {
 		return nil, false
 	}
 	return o.RequestingNodeType, true
@@ -148,7 +148,7 @@ func (o *HssAuthenticationInfoRequest) GetRequestingNodeTypeOk() (*NodeType, boo
 
 // HasRequestingNodeType returns a boolean if a field has been set.
 func (o *HssAuthenticationInfoRequest) HasRequestingNodeType() bool {
-	if o != nil && !IsNil(o.RequestingNodeType) {
+	if o != nil && !isNil(o.RequestingNodeType) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o *HssAuthenticationInfoRequest) SetRequestingNodeType(v NodeType) {
 
 // GetServingNetworkId returns the ServingNetworkId field value if set, zero value otherwise.
 func (o *HssAuthenticationInfoRequest) GetServingNetworkId() PlmnId {
-	if o == nil || IsNil(o.ServingNetworkId) {
+	if o == nil || isNil(o.ServingNetworkId) {
 		var ret PlmnId
 		return ret
 	}
@@ -172,7 +172,7 @@ func (o *HssAuthenticationInfoRequest) GetServingNetworkId() PlmnId {
 // GetServingNetworkIdOk returns a tuple with the ServingNetworkId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssAuthenticationInfoRequest) GetServingNetworkIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.ServingNetworkId) {
+	if o == nil || isNil(o.ServingNetworkId) {
 		return nil, false
 	}
 	return o.ServingNetworkId, true
@@ -180,7 +180,7 @@ func (o *HssAuthenticationInfoRequest) GetServingNetworkIdOk() (*PlmnId, bool) {
 
 // HasServingNetworkId returns a boolean if a field has been set.
 func (o *HssAuthenticationInfoRequest) HasServingNetworkId() bool {
-	if o != nil && !IsNil(o.ServingNetworkId) {
+	if o != nil && !isNil(o.ServingNetworkId) {
 		return true
 	}
 
@@ -194,7 +194,7 @@ func (o *HssAuthenticationInfoRequest) SetServingNetworkId(v PlmnId) {
 
 // GetResynchronizationInfo returns the ResynchronizationInfo field value if set, zero value otherwise.
 func (o *HssAuthenticationInfoRequest) GetResynchronizationInfo() ResynchronizationInfo {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		var ret ResynchronizationInfo
 		return ret
 	}
@@ -204,7 +204,7 @@ func (o *HssAuthenticationInfoRequest) GetResynchronizationInfo() Resynchronizat
 // GetResynchronizationInfoOk returns a tuple with the ResynchronizationInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssAuthenticationInfoRequest) GetResynchronizationInfoOk() (*ResynchronizationInfo, bool) {
-	if o == nil || IsNil(o.ResynchronizationInfo) {
+	if o == nil || isNil(o.ResynchronizationInfo) {
 		return nil, false
 	}
 	return o.ResynchronizationInfo, true
@@ -212,7 +212,7 @@ func (o *HssAuthenticationInfoRequest) GetResynchronizationInfoOk() (*Resynchron
 
 // HasResynchronizationInfo returns a boolean if a field has been set.
 func (o *HssAuthenticationInfoRequest) HasResynchronizationInfo() bool {
-	if o != nil && !IsNil(o.ResynchronizationInfo) {
+	if o != nil && !isNil(o.ResynchronizationInfo) {
 		return true
 	}
 
@@ -226,7 +226,7 @@ func (o *HssAuthenticationInfoRequest) SetResynchronizationInfo(v Resynchronizat
 
 // GetAnId returns the AnId field value if set, zero value otherwise.
 func (o *HssAuthenticationInfoRequest) GetAnId() AccessNetworkId {
-	if o == nil || IsNil(o.AnId) {
+	if o == nil || isNil(o.AnId) {
 		var ret AccessNetworkId
 		return ret
 	}
@@ -236,7 +236,7 @@ func (o *HssAuthenticationInfoRequest) GetAnId() AccessNetworkId {
 // GetAnIdOk returns a tuple with the AnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *HssAuthenticationInfoRequest) GetAnIdOk() (*AccessNetworkId, bool) {
-	if o == nil || IsNil(o.AnId) {
+	if o == nil || isNil(o.AnId) {
 		return nil, false
 	}
 	return o.AnId, true
@@ -244,7 +244,7 @@ func (o *HssAuthenticationInfoRequest) GetAnIdOk() (*AccessNetworkId, bool) {
 
 // HasAnId returns a boolean if a field has been set.
 func (o *HssAuthenticationInfoRequest) HasAnId() bool {
-	if o != nil && !IsNil(o.AnId) {
+	if o != nil && !isNil(o.AnId) {
 		return true
 	}
 
@@ -266,21 +266,21 @@ func (o HssAuthenticationInfoRequest) MarshalJSON() ([]byte, error) {
 
 func (o HssAuthenticationInfoRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	toSerialize["hssAuthType"] = o.HssAuthType
 	toSerialize["numOfRequestedVectors"] = o.NumOfRequestedVectors
-	if !IsNil(o.RequestingNodeType) {
+	if !isNil(o.RequestingNodeType) {
 		toSerialize["requestingNodeType"] = o.RequestingNodeType
 	}
-	if !IsNil(o.ServingNetworkId) {
+	if !isNil(o.ServingNetworkId) {
 		toSerialize["servingNetworkId"] = o.ServingNetworkId
 	}
-	if !IsNil(o.ResynchronizationInfo) {
+	if !isNil(o.ResynchronizationInfo) {
 		toSerialize["resynchronizationInfo"] = o.ResynchronizationInfo
 	}
-	if !IsNil(o.AnId) {
+	if !isNil(o.AnId) {
 		toSerialize["anId"] = o.AnId
 	}
 	return toSerialize, nil

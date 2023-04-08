@@ -122,7 +122,7 @@ func (o *MonitoringReport) SetTimeStamp(v time.Time) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReport() Report {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		var ret Report
 		return ret
 	}
@@ -132,7 +132,7 @@ func (o *MonitoringReport) GetReport() Report {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReportOk() (*Report, bool) {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -140,7 +140,7 @@ func (o *MonitoringReport) GetReportOk() (*Report, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReport() bool {
-	if o != nil && !IsNil(o.Report) {
+	if o != nil && !isNil(o.Report) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o MonitoringReport) ToMap() (map[string]interface{}, error) {
 	toSerialize["referenceId"] = o.ReferenceId
 	toSerialize["eventType"] = o.EventType
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !IsNil(o.Report) {
+	if !isNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
 	return toSerialize, nil

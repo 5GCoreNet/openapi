@@ -42,7 +42,7 @@ func NewUlclBpInformationWithDefaults() *UlclBpInformation {
 
 // GetUlclBpUpfId returns the UlclBpUpfId field value if set, zero value otherwise.
 func (o *UlclBpInformation) GetUlclBpUpfId() string {
-	if o == nil || IsNil(o.UlclBpUpfId) {
+	if o == nil || isNil(o.UlclBpUpfId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UlclBpInformation) GetUlclBpUpfId() string {
 // GetUlclBpUpfIdOk returns a tuple with the UlclBpUpfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UlclBpInformation) GetUlclBpUpfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UlclBpUpfId) {
+	if o == nil || isNil(o.UlclBpUpfId) {
 		return nil, false
 	}
 	return o.UlclBpUpfId, true
@@ -60,7 +60,7 @@ func (o *UlclBpInformation) GetUlclBpUpfIdOk() (*string, bool) {
 
 // HasUlclBpUpfId returns a boolean if a field has been set.
 func (o *UlclBpInformation) HasUlclBpUpfId() bool {
-	if o != nil && !IsNil(o.UlclBpUpfId) {
+	if o != nil && !isNil(o.UlclBpUpfId) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o UlclBpInformation) MarshalJSON() ([]byte, error) {
 
 func (o UlclBpInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UlclBpUpfId) {
+	if !isNil(o.UlclBpUpfId) {
 		toSerialize["ulclBpUpfId"] = o.UlclBpUpfId
 	}
 	return toSerialize, nil

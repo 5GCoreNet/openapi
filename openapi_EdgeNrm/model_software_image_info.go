@@ -46,7 +46,7 @@ func NewSoftwareImageInfoWithDefaults() *SoftwareImageInfo {
 
 // GetMinimumDisk returns the MinimumDisk field value if set, zero value otherwise.
 func (o *SoftwareImageInfo) GetMinimumDisk() int32 {
-	if o == nil || IsNil(o.MinimumDisk) {
+	if o == nil || isNil(o.MinimumDisk) {
 		var ret int32
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *SoftwareImageInfo) GetMinimumDisk() int32 {
 // GetMinimumDiskOk returns a tuple with the MinimumDisk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SoftwareImageInfo) GetMinimumDiskOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinimumDisk) {
+	if o == nil || isNil(o.MinimumDisk) {
 		return nil, false
 	}
 	return o.MinimumDisk, true
@@ -64,7 +64,7 @@ func (o *SoftwareImageInfo) GetMinimumDiskOk() (*int32, bool) {
 
 // HasMinimumDisk returns a boolean if a field has been set.
 func (o *SoftwareImageInfo) HasMinimumDisk() bool {
-	if o != nil && !IsNil(o.MinimumDisk) {
+	if o != nil && !isNil(o.MinimumDisk) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *SoftwareImageInfo) SetMinimumDisk(v int32) {
 
 // GetMinimumRAM returns the MinimumRAM field value if set, zero value otherwise.
 func (o *SoftwareImageInfo) GetMinimumRAM() int32 {
-	if o == nil || IsNil(o.MinimumRAM) {
+	if o == nil || isNil(o.MinimumRAM) {
 		var ret int32
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *SoftwareImageInfo) GetMinimumRAM() int32 {
 // GetMinimumRAMOk returns a tuple with the MinimumRAM field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SoftwareImageInfo) GetMinimumRAMOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinimumRAM) {
+	if o == nil || isNil(o.MinimumRAM) {
 		return nil, false
 	}
 	return o.MinimumRAM, true
@@ -96,7 +96,7 @@ func (o *SoftwareImageInfo) GetMinimumRAMOk() (*int32, bool) {
 
 // HasMinimumRAM returns a boolean if a field has been set.
 func (o *SoftwareImageInfo) HasMinimumRAM() bool {
-	if o != nil && !IsNil(o.MinimumRAM) {
+	if o != nil && !isNil(o.MinimumRAM) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *SoftwareImageInfo) SetMinimumRAM(v int32) {
 
 // GetDiscFormat returns the DiscFormat field value if set, zero value otherwise.
 func (o *SoftwareImageInfo) GetDiscFormat() string {
-	if o == nil || IsNil(o.DiscFormat) {
+	if o == nil || isNil(o.DiscFormat) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *SoftwareImageInfo) GetDiscFormat() string {
 // GetDiscFormatOk returns a tuple with the DiscFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SoftwareImageInfo) GetDiscFormatOk() (*string, bool) {
-	if o == nil || IsNil(o.DiscFormat) {
+	if o == nil || isNil(o.DiscFormat) {
 		return nil, false
 	}
 	return o.DiscFormat, true
@@ -128,7 +128,7 @@ func (o *SoftwareImageInfo) GetDiscFormatOk() (*string, bool) {
 
 // HasDiscFormat returns a boolean if a field has been set.
 func (o *SoftwareImageInfo) HasDiscFormat() bool {
-	if o != nil && !IsNil(o.DiscFormat) {
+	if o != nil && !isNil(o.DiscFormat) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *SoftwareImageInfo) SetDiscFormat(v string) {
 
 // GetOperatingSystem returns the OperatingSystem field value if set, zero value otherwise.
 func (o *SoftwareImageInfo) GetOperatingSystem() string {
-	if o == nil || IsNil(o.OperatingSystem) {
+	if o == nil || isNil(o.OperatingSystem) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *SoftwareImageInfo) GetOperatingSystem() string {
 // GetOperatingSystemOk returns a tuple with the OperatingSystem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SoftwareImageInfo) GetOperatingSystemOk() (*string, bool) {
-	if o == nil || IsNil(o.OperatingSystem) {
+	if o == nil || isNil(o.OperatingSystem) {
 		return nil, false
 	}
 	return o.OperatingSystem, true
@@ -160,7 +160,7 @@ func (o *SoftwareImageInfo) GetOperatingSystemOk() (*string, bool) {
 
 // HasOperatingSystem returns a boolean if a field has been set.
 func (o *SoftwareImageInfo) HasOperatingSystem() bool {
-	if o != nil && !IsNil(o.OperatingSystem) {
+	if o != nil && !isNil(o.OperatingSystem) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *SoftwareImageInfo) SetOperatingSystem(v string) {
 
 // GetSwImageRef returns the SwImageRef field value if set, zero value otherwise.
 func (o *SoftwareImageInfo) GetSwImageRef() string {
-	if o == nil || IsNil(o.SwImageRef) {
+	if o == nil || isNil(o.SwImageRef) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *SoftwareImageInfo) GetSwImageRef() string {
 // GetSwImageRefOk returns a tuple with the SwImageRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SoftwareImageInfo) GetSwImageRefOk() (*string, bool) {
-	if o == nil || IsNil(o.SwImageRef) {
+	if o == nil || isNil(o.SwImageRef) {
 		return nil, false
 	}
 	return o.SwImageRef, true
@@ -192,7 +192,7 @@ func (o *SoftwareImageInfo) GetSwImageRefOk() (*string, bool) {
 
 // HasSwImageRef returns a boolean if a field has been set.
 func (o *SoftwareImageInfo) HasSwImageRef() bool {
-	if o != nil && !IsNil(o.SwImageRef) {
+	if o != nil && !isNil(o.SwImageRef) {
 		return true
 	}
 
@@ -214,19 +214,19 @@ func (o SoftwareImageInfo) MarshalJSON() ([]byte, error) {
 
 func (o SoftwareImageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MinimumDisk) {
+	if !isNil(o.MinimumDisk) {
 		toSerialize["minimumDisk"] = o.MinimumDisk
 	}
-	if !IsNil(o.MinimumRAM) {
+	if !isNil(o.MinimumRAM) {
 		toSerialize["minimumRAM"] = o.MinimumRAM
 	}
-	if !IsNil(o.DiscFormat) {
+	if !isNil(o.DiscFormat) {
 		toSerialize["discFormat"] = o.DiscFormat
 	}
-	if !IsNil(o.OperatingSystem) {
+	if !isNil(o.OperatingSystem) {
 		toSerialize["operatingSystem"] = o.OperatingSystem
 	}
-	if !IsNil(o.SwImageRef) {
+	if !isNil(o.SwImageRef) {
 		toSerialize["swImageRef"] = o.SwImageRef
 	}
 	return toSerialize, nil

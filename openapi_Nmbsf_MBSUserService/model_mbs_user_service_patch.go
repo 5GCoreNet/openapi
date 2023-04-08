@@ -46,7 +46,7 @@ func NewMBSUserServicePatchWithDefaults() *MBSUserServicePatch {
 
 // GetExtServiceIds returns the ExtServiceIds field value if set, zero value otherwise.
 func (o *MBSUserServicePatch) GetExtServiceIds() []string {
-	if o == nil || IsNil(o.ExtServiceIds) {
+	if o == nil || isNil(o.ExtServiceIds) {
 		var ret []string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *MBSUserServicePatch) GetExtServiceIds() []string {
 // GetExtServiceIdsOk returns a tuple with the ExtServiceIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServicePatch) GetExtServiceIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ExtServiceIds) {
+	if o == nil || isNil(o.ExtServiceIds) {
 		return nil, false
 	}
 	return o.ExtServiceIds, true
@@ -64,7 +64,7 @@ func (o *MBSUserServicePatch) GetExtServiceIdsOk() ([]string, bool) {
 
 // HasExtServiceIds returns a boolean if a field has been set.
 func (o *MBSUserServicePatch) HasExtServiceIds() bool {
-	if o != nil && !IsNil(o.ExtServiceIds) {
+	if o != nil && !isNil(o.ExtServiceIds) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *MBSUserServicePatch) SetExtServiceIds(v []string) {
 
 // GetServClass returns the ServClass field value if set, zero value otherwise.
 func (o *MBSUserServicePatch) GetServClass() string {
-	if o == nil || IsNil(o.ServClass) {
+	if o == nil || isNil(o.ServClass) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *MBSUserServicePatch) GetServClass() string {
 // GetServClassOk returns a tuple with the ServClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServicePatch) GetServClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ServClass) {
+	if o == nil || isNil(o.ServClass) {
 		return nil, false
 	}
 	return o.ServClass, true
@@ -96,7 +96,7 @@ func (o *MBSUserServicePatch) GetServClassOk() (*string, bool) {
 
 // HasServClass returns a boolean if a field has been set.
 func (o *MBSUserServicePatch) HasServClass() bool {
-	if o != nil && !IsNil(o.ServClass) {
+	if o != nil && !isNil(o.ServClass) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *MBSUserServicePatch) SetServClass(v string) {
 
 // GetServAnnModes returns the ServAnnModes field value if set, zero value otherwise.
 func (o *MBSUserServicePatch) GetServAnnModes() []ServiceAnnouncementMode {
-	if o == nil || IsNil(o.ServAnnModes) {
+	if o == nil || isNil(o.ServAnnModes) {
 		var ret []ServiceAnnouncementMode
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *MBSUserServicePatch) GetServAnnModes() []ServiceAnnouncementMode {
 // GetServAnnModesOk returns a tuple with the ServAnnModes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServicePatch) GetServAnnModesOk() ([]ServiceAnnouncementMode, bool) {
-	if o == nil || IsNil(o.ServAnnModes) {
+	if o == nil || isNil(o.ServAnnModes) {
 		return nil, false
 	}
 	return o.ServAnnModes, true
@@ -128,7 +128,7 @@ func (o *MBSUserServicePatch) GetServAnnModesOk() ([]ServiceAnnouncementMode, bo
 
 // HasServAnnModes returns a boolean if a field has been set.
 func (o *MBSUserServicePatch) HasServAnnModes() bool {
-	if o != nil && !IsNil(o.ServAnnModes) {
+	if o != nil && !isNil(o.ServAnnModes) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *MBSUserServicePatch) SetServAnnModes(v []ServiceAnnouncementMode) {
 
 // GetServNameDescs returns the ServNameDescs field value if set, zero value otherwise.
 func (o *MBSUserServicePatch) GetServNameDescs() []ServiceNameDescription {
-	if o == nil || IsNil(o.ServNameDescs) {
+	if o == nil || isNil(o.ServNameDescs) {
 		var ret []ServiceNameDescription
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *MBSUserServicePatch) GetServNameDescs() []ServiceNameDescription {
 // GetServNameDescsOk returns a tuple with the ServNameDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServicePatch) GetServNameDescsOk() ([]ServiceNameDescription, bool) {
-	if o == nil || IsNil(o.ServNameDescs) {
+	if o == nil || isNil(o.ServNameDescs) {
 		return nil, false
 	}
 	return o.ServNameDescs, true
@@ -160,7 +160,7 @@ func (o *MBSUserServicePatch) GetServNameDescsOk() ([]ServiceNameDescription, bo
 
 // HasServNameDescs returns a boolean if a field has been set.
 func (o *MBSUserServicePatch) HasServNameDescs() bool {
-	if o != nil && !IsNil(o.ServNameDescs) {
+	if o != nil && !isNil(o.ServNameDescs) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *MBSUserServicePatch) SetServNameDescs(v []ServiceNameDescription) {
 
 // GetMainServLang returns the MainServLang field value if set, zero value otherwise.
 func (o *MBSUserServicePatch) GetMainServLang() string {
-	if o == nil || IsNil(o.MainServLang) {
+	if o == nil || isNil(o.MainServLang) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *MBSUserServicePatch) GetMainServLang() string {
 // GetMainServLangOk returns a tuple with the MainServLang field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MBSUserServicePatch) GetMainServLangOk() (*string, bool) {
-	if o == nil || IsNil(o.MainServLang) {
+	if o == nil || isNil(o.MainServLang) {
 		return nil, false
 	}
 	return o.MainServLang, true
@@ -192,7 +192,7 @@ func (o *MBSUserServicePatch) GetMainServLangOk() (*string, bool) {
 
 // HasMainServLang returns a boolean if a field has been set.
 func (o *MBSUserServicePatch) HasMainServLang() bool {
-	if o != nil && !IsNil(o.MainServLang) {
+	if o != nil && !isNil(o.MainServLang) {
 		return true
 	}
 
@@ -214,19 +214,19 @@ func (o MBSUserServicePatch) MarshalJSON() ([]byte, error) {
 
 func (o MBSUserServicePatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExtServiceIds) {
+	if !isNil(o.ExtServiceIds) {
 		toSerialize["extServiceIds"] = o.ExtServiceIds
 	}
-	if !IsNil(o.ServClass) {
+	if !isNil(o.ServClass) {
 		toSerialize["servClass"] = o.ServClass
 	}
-	if !IsNil(o.ServAnnModes) {
+	if !isNil(o.ServAnnModes) {
 		toSerialize["servAnnModes"] = o.ServAnnModes
 	}
-	if !IsNil(o.ServNameDescs) {
+	if !isNil(o.ServNameDescs) {
 		toSerialize["servNameDescs"] = o.ServNameDescs
 	}
-	if !IsNil(o.MainServLang) {
+	if !isNil(o.MainServLang) {
 		toSerialize["mainServLang"] = o.MainServLang
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // NrmEvent Possible values are: - UP_DELIVERY_MODE: User Plane delivery mode. 
 type NrmEvent struct {
-	string *string
+	NrmEventAnyOf *NrmEventAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *NrmEvent) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into NrmEventAnyOf
+	err = json.Unmarshal(data, &dst.NrmEventAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonNrmEventAnyOf, _ := json.Marshal(dst.NrmEventAnyOf)
+		if string(jsonNrmEventAnyOf) == "{}" { // empty struct
+			dst.NrmEventAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.NrmEventAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.NrmEventAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(NrmEvent)")
@@ -41,8 +55,12 @@ func (dst *NrmEvent) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *NrmEvent) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.NrmEventAnyOf != nil {
+		return json.Marshal(&src.NrmEventAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

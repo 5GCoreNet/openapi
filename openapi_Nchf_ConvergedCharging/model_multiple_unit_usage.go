@@ -72,7 +72,7 @@ func (o *MultipleUnitUsage) SetRatingGroup(v int32) {
 
 // GetRequestedUnit returns the RequestedUnit field value if set, zero value otherwise.
 func (o *MultipleUnitUsage) GetRequestedUnit() RequestedUnit {
-	if o == nil || IsNil(o.RequestedUnit) {
+	if o == nil || isNil(o.RequestedUnit) {
 		var ret RequestedUnit
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *MultipleUnitUsage) GetRequestedUnit() RequestedUnit {
 // GetRequestedUnitOk returns a tuple with the RequestedUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitUsage) GetRequestedUnitOk() (*RequestedUnit, bool) {
-	if o == nil || IsNil(o.RequestedUnit) {
+	if o == nil || isNil(o.RequestedUnit) {
 		return nil, false
 	}
 	return o.RequestedUnit, true
@@ -90,7 +90,7 @@ func (o *MultipleUnitUsage) GetRequestedUnitOk() (*RequestedUnit, bool) {
 
 // HasRequestedUnit returns a boolean if a field has been set.
 func (o *MultipleUnitUsage) HasRequestedUnit() bool {
-	if o != nil && !IsNil(o.RequestedUnit) {
+	if o != nil && !isNil(o.RequestedUnit) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *MultipleUnitUsage) SetRequestedUnit(v RequestedUnit) {
 
 // GetUsedUnitContainer returns the UsedUnitContainer field value if set, zero value otherwise.
 func (o *MultipleUnitUsage) GetUsedUnitContainer() []UsedUnitContainer {
-	if o == nil || IsNil(o.UsedUnitContainer) {
+	if o == nil || isNil(o.UsedUnitContainer) {
 		var ret []UsedUnitContainer
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *MultipleUnitUsage) GetUsedUnitContainer() []UsedUnitContainer {
 // GetUsedUnitContainerOk returns a tuple with the UsedUnitContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitUsage) GetUsedUnitContainerOk() ([]UsedUnitContainer, bool) {
-	if o == nil || IsNil(o.UsedUnitContainer) {
+	if o == nil || isNil(o.UsedUnitContainer) {
 		return nil, false
 	}
 	return o.UsedUnitContainer, true
@@ -122,7 +122,7 @@ func (o *MultipleUnitUsage) GetUsedUnitContainerOk() ([]UsedUnitContainer, bool)
 
 // HasUsedUnitContainer returns a boolean if a field has been set.
 func (o *MultipleUnitUsage) HasUsedUnitContainer() bool {
-	if o != nil && !IsNil(o.UsedUnitContainer) {
+	if o != nil && !isNil(o.UsedUnitContainer) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *MultipleUnitUsage) SetUsedUnitContainer(v []UsedUnitContainer) {
 
 // GetUPFID returns the UPFID field value if set, zero value otherwise.
 func (o *MultipleUnitUsage) GetUPFID() string {
-	if o == nil || IsNil(o.UPFID) {
+	if o == nil || isNil(o.UPFID) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *MultipleUnitUsage) GetUPFID() string {
 // GetUPFIDOk returns a tuple with the UPFID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitUsage) GetUPFIDOk() (*string, bool) {
-	if o == nil || IsNil(o.UPFID) {
+	if o == nil || isNil(o.UPFID) {
 		return nil, false
 	}
 	return o.UPFID, true
@@ -154,7 +154,7 @@ func (o *MultipleUnitUsage) GetUPFIDOk() (*string, bool) {
 
 // HasUPFID returns a boolean if a field has been set.
 func (o *MultipleUnitUsage) HasUPFID() bool {
-	if o != nil && !IsNil(o.UPFID) {
+	if o != nil && !isNil(o.UPFID) {
 		return true
 	}
 
@@ -168,7 +168,7 @@ func (o *MultipleUnitUsage) SetUPFID(v string) {
 
 // GetMultihomedPDUAddress returns the MultihomedPDUAddress field value if set, zero value otherwise.
 func (o *MultipleUnitUsage) GetMultihomedPDUAddress() PDUAddress {
-	if o == nil || IsNil(o.MultihomedPDUAddress) {
+	if o == nil || isNil(o.MultihomedPDUAddress) {
 		var ret PDUAddress
 		return ret
 	}
@@ -178,7 +178,7 @@ func (o *MultipleUnitUsage) GetMultihomedPDUAddress() PDUAddress {
 // GetMultihomedPDUAddressOk returns a tuple with the MultihomedPDUAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MultipleUnitUsage) GetMultihomedPDUAddressOk() (*PDUAddress, bool) {
-	if o == nil || IsNil(o.MultihomedPDUAddress) {
+	if o == nil || isNil(o.MultihomedPDUAddress) {
 		return nil, false
 	}
 	return o.MultihomedPDUAddress, true
@@ -186,7 +186,7 @@ func (o *MultipleUnitUsage) GetMultihomedPDUAddressOk() (*PDUAddress, bool) {
 
 // HasMultihomedPDUAddress returns a boolean if a field has been set.
 func (o *MultipleUnitUsage) HasMultihomedPDUAddress() bool {
-	if o != nil && !IsNil(o.MultihomedPDUAddress) {
+	if o != nil && !isNil(o.MultihomedPDUAddress) {
 		return true
 	}
 
@@ -209,16 +209,16 @@ func (o MultipleUnitUsage) MarshalJSON() ([]byte, error) {
 func (o MultipleUnitUsage) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ratingGroup"] = o.RatingGroup
-	if !IsNil(o.RequestedUnit) {
+	if !isNil(o.RequestedUnit) {
 		toSerialize["requestedUnit"] = o.RequestedUnit
 	}
-	if !IsNil(o.UsedUnitContainer) {
+	if !isNil(o.UsedUnitContainer) {
 		toSerialize["usedUnitContainer"] = o.UsedUnitContainer
 	}
-	if !IsNil(o.UPFID) {
+	if !isNil(o.UPFID) {
 		toSerialize["uPFID"] = o.UPFID
 	}
-	if !IsNil(o.MultihomedPDUAddress) {
+	if !isNil(o.MultihomedPDUAddress) {
 		toSerialize["multihomedPDUAddress"] = o.MultihomedPDUAddress
 	}
 	return toSerialize, nil

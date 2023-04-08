@@ -41,7 +41,7 @@ func NewServiceLevelTraceInformationWithDefaults() *ServiceLevelTraceInformation
 
 // GetServiceLevelTraceInfo returns the ServiceLevelTraceInfo field value if set, zero value otherwise.
 func (o *ServiceLevelTraceInformation) GetServiceLevelTraceInfo() string {
-	if o == nil || IsNil(o.ServiceLevelTraceInfo) {
+	if o == nil || isNil(o.ServiceLevelTraceInfo) {
 		var ret string
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ServiceLevelTraceInformation) GetServiceLevelTraceInfo() string {
 // GetServiceLevelTraceInfoOk returns a tuple with the ServiceLevelTraceInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceLevelTraceInformation) GetServiceLevelTraceInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceLevelTraceInfo) {
+	if o == nil || isNil(o.ServiceLevelTraceInfo) {
 		return nil, false
 	}
 	return o.ServiceLevelTraceInfo, true
@@ -59,7 +59,7 @@ func (o *ServiceLevelTraceInformation) GetServiceLevelTraceInfoOk() (*string, bo
 
 // HasServiceLevelTraceInfo returns a boolean if a field has been set.
 func (o *ServiceLevelTraceInformation) HasServiceLevelTraceInfo() bool {
-	if o != nil && !IsNil(o.ServiceLevelTraceInfo) {
+	if o != nil && !isNil(o.ServiceLevelTraceInfo) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ServiceLevelTraceInformation) MarshalJSON() ([]byte, error) {
 
 func (o ServiceLevelTraceInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServiceLevelTraceInfo) {
+	if !isNil(o.ServiceLevelTraceInfo) {
 		toSerialize["serviceLevelTraceInfo"] = o.ServiceLevelTraceInfo
 	}
 	return toSerialize, nil

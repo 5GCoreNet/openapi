@@ -48,7 +48,7 @@ func NewAPIProviderFunctionDetailsWithDefaults() *APIProviderFunctionDetails {
 
 // GetApiProvFuncId returns the ApiProvFuncId field value if set, zero value otherwise.
 func (o *APIProviderFunctionDetails) GetApiProvFuncId() string {
-	if o == nil || IsNil(o.ApiProvFuncId) {
+	if o == nil || isNil(o.ApiProvFuncId) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncId() string {
 // GetApiProvFuncIdOk returns a tuple with the ApiProvFuncId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderFunctionDetails) GetApiProvFuncIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiProvFuncId) {
+	if o == nil || isNil(o.ApiProvFuncId) {
 		return nil, false
 	}
 	return o.ApiProvFuncId, true
@@ -66,7 +66,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncIdOk() (*string, bool) {
 
 // HasApiProvFuncId returns a boolean if a field has been set.
 func (o *APIProviderFunctionDetails) HasApiProvFuncId() bool {
-	if o != nil && !IsNil(o.ApiProvFuncId) {
+	if o != nil && !isNil(o.ApiProvFuncId) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *APIProviderFunctionDetails) SetApiProvFuncRole(v ApiProviderFuncRole) {
 
 // GetApiProvFuncInfo returns the ApiProvFuncInfo field value if set, zero value otherwise.
 func (o *APIProviderFunctionDetails) GetApiProvFuncInfo() string {
-	if o == nil || IsNil(o.ApiProvFuncInfo) {
+	if o == nil || isNil(o.ApiProvFuncInfo) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncInfo() string {
 // GetApiProvFuncInfoOk returns a tuple with the ApiProvFuncInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderFunctionDetails) GetApiProvFuncInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiProvFuncInfo) {
+	if o == nil || isNil(o.ApiProvFuncInfo) {
 		return nil, false
 	}
 	return o.ApiProvFuncInfo, true
@@ -146,7 +146,7 @@ func (o *APIProviderFunctionDetails) GetApiProvFuncInfoOk() (*string, bool) {
 
 // HasApiProvFuncInfo returns a boolean if a field has been set.
 func (o *APIProviderFunctionDetails) HasApiProvFuncInfo() bool {
-	if o != nil && !IsNil(o.ApiProvFuncInfo) {
+	if o != nil && !isNil(o.ApiProvFuncInfo) {
 		return true
 	}
 
@@ -168,12 +168,12 @@ func (o APIProviderFunctionDetails) MarshalJSON() ([]byte, error) {
 
 func (o APIProviderFunctionDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiProvFuncId) {
+	if !isNil(o.ApiProvFuncId) {
 		toSerialize["apiProvFuncId"] = o.ApiProvFuncId
 	}
 	toSerialize["regInfo"] = o.RegInfo
 	toSerialize["apiProvFuncRole"] = o.ApiProvFuncRole
-	if !IsNil(o.ApiProvFuncInfo) {
+	if !isNil(o.ApiProvFuncInfo) {
 		toSerialize["apiProvFuncInfo"] = o.ApiProvFuncInfo
 	}
 	return toSerialize, nil

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,6 +8,7 @@ client.go
 configuration.go
 docs/AMInfluenceSubscriptionApi.md
 docs/AmInfluEvent.md
+docs/AmInfluEventAnyOf.md
 docs/AmInfluEventNotif.md
 docs/AmInfluSub.md
 docs/AmInfluSubPatch.md
@@ -43,6 +43,7 @@ docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/Snssai.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/UncertaintyEllipse.md
 docs/UncertaintyEllipsoid.md
 docs/WebsockNotifConfig.md
@@ -50,6 +51,7 @@ git_push.sh
 go.mod
 go.sum
 model_am_influ_event.go
+model_am_influ_event_any_of.go
 model_am_influ_event_notif.go
 model_am_influ_sub.go
 model_am_influ_sub_patch.go
@@ -83,6 +85,7 @@ model_problem_details.go
 model_relative_cartesian_location.go
 model_snssai.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_uncertainty_ellipse.go
 model_uncertainty_ellipsoid.go
 model_websock_notif_config.go

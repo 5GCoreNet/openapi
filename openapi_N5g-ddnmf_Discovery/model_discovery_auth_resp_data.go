@@ -41,7 +41,7 @@ func NewDiscoveryAuthRespDataWithDefaults() *DiscoveryAuthRespData {
 
 // GetAuthDataRestricted returns the AuthDataRestricted field value if set, zero value otherwise.
 func (o *DiscoveryAuthRespData) GetAuthDataRestricted() AuthDataForRestricted {
-	if o == nil || IsNil(o.AuthDataRestricted) {
+	if o == nil || isNil(o.AuthDataRestricted) {
 		var ret AuthDataForRestricted
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *DiscoveryAuthRespData) GetAuthDataRestricted() AuthDataForRestricted {
 // GetAuthDataRestrictedOk returns a tuple with the AuthDataRestricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DiscoveryAuthRespData) GetAuthDataRestrictedOk() (*AuthDataForRestricted, bool) {
-	if o == nil || IsNil(o.AuthDataRestricted) {
+	if o == nil || isNil(o.AuthDataRestricted) {
 		return nil, false
 	}
 	return o.AuthDataRestricted, true
@@ -59,7 +59,7 @@ func (o *DiscoveryAuthRespData) GetAuthDataRestrictedOk() (*AuthDataForRestricte
 
 // HasAuthDataRestricted returns a boolean if a field has been set.
 func (o *DiscoveryAuthRespData) HasAuthDataRestricted() bool {
-	if o != nil && !IsNil(o.AuthDataRestricted) {
+	if o != nil && !isNil(o.AuthDataRestricted) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o DiscoveryAuthRespData) MarshalJSON() ([]byte, error) {
 
 func (o DiscoveryAuthRespData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthDataRestricted) {
+	if !isNil(o.AuthDataRestricted) {
 		toSerialize["authDataRestricted"] = o.AuthDataRestricted
 	}
 	return toSerialize, nil

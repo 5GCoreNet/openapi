@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,12 +10,16 @@ configuration.go
 docs/ACCharacteristics.md
 docs/ACProfile.md
 docs/ACRScenario.md
+docs/ACRScenarioAnyOf.md
 docs/ACServiceKPIs.md
 docs/AccuracyFulfilmentIndicator.md
+docs/AccuracyFulfilmentIndicatorAnyOf.md
 docs/CivicAddress.md
 docs/DiscoveredEas.md
 docs/EASCategory.md
+docs/EASCategoryAnyOf.md
 docs/EASDiscEventIDs.md
+docs/EASDiscEventIDsAnyOf.md
 docs/EASDiscoverySubscriptionsApi.md
 docs/EASProfile.md
 docs/EASProfilesApi.md
@@ -49,6 +52,7 @@ docs/IndividualEASDiscoverySubscriptionApi.md
 docs/InvalidParam.md
 docs/Ipv6Addr.md
 docs/LdrType.md
+docs/LdrTypeAnyOf.md
 docs/Local2dPointUncertaintyEllipse.md
 docs/Local2dPointUncertaintyEllipseAllOf.md
 docs/Local3dPointUncertaintyEllipsoid.md
@@ -60,6 +64,7 @@ docs/MinorLocationQoS.md
 docs/Ncgi.md
 docs/NetworkAreaInfo.md
 docs/PermissionLevel.md
+docs/PermissionLevelAnyOf.md
 docs/PlmnId.md
 docs/PlmnId1.md
 docs/Point.md
@@ -75,6 +80,7 @@ docs/PointUncertaintyEllipseAllOf.md
 docs/Polygon.md
 docs/PolygonAllOf.md
 docs/PositioningMethod.md
+docs/PositioningMethodAnyOf.md
 docs/ProblemDetails.md
 docs/RelativeCartesianLocation.md
 docs/RequestorId.md
@@ -83,6 +89,7 @@ docs/RouteToLocation.md
 docs/ScheduledCommunicationTime.md
 docs/ServiceArea.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/TimeWindow.md
 docs/TopologicalServiceArea.md
@@ -98,13 +105,17 @@ model_ac_characteristics.go
 model_ac_profile.go
 model_ac_service_kpis.go
 model_accuracy_fulfilment_indicator.go
+model_accuracy_fulfilment_indicator_any_of.go
 model_acr_scenario.go
+model_acr_scenario_any_of.go
 model_civic_address.go
 model_discovered_eas.go
 model_eas_category.go
+model_eas_category_any_of.go
 model_eas_characteristics.go
 model_eas_detail.go
 model_eas_disc_event_ids.go
+model_eas_disc_event_ids_any_of.go
 model_eas_discovery_filter.go
 model_eas_discovery_notification.go
 model_eas_discovery_req.go
@@ -132,6 +143,7 @@ model_horizontal_with_vertical_velocity_and_uncertainty.go
 model_invalid_param.go
 model_ipv6_addr.go
 model_ldr_type.go
+model_ldr_type_any_of.go
 model_local2d_point_uncertainty_ellipse.go
 model_local2d_point_uncertainty_ellipse_all_of.go
 model_local3d_point_uncertainty_ellipsoid.go
@@ -143,6 +155,7 @@ model_minor_location_qo_s.go
 model_ncgi.go
 model_network_area_info.go
 model_permission_level.go
+model_permission_level_any_of.go
 model_plmn_id.go
 model_plmn_id_1.go
 model_point.go
@@ -158,6 +171,7 @@ model_point_uncertainty_ellipse_all_of.go
 model_polygon.go
 model_polygon_all_of.go
 model_positioning_method.go
+model_positioning_method_any_of.go
 model_problem_details.go
 model_relative_cartesian_location.go
 model_requestor_id.go
@@ -166,6 +180,7 @@ model_route_to_location.go
 model_scheduled_communication_time.go
 model_service_area.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_time_window.go
 model_topological_service_area.go

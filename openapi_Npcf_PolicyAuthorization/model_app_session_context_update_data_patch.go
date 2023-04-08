@@ -41,7 +41,7 @@ func NewAppSessionContextUpdateDataPatchWithDefaults() *AppSessionContextUpdateD
 
 // GetAscReqData returns the AscReqData field value if set, zero value otherwise.
 func (o *AppSessionContextUpdateDataPatch) GetAscReqData() AppSessionContextUpdateData {
-	if o == nil || IsNil(o.AscReqData) {
+	if o == nil || isNil(o.AscReqData) {
 		var ret AppSessionContextUpdateData
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AppSessionContextUpdateDataPatch) GetAscReqData() AppSessionContextUpda
 // GetAscReqDataOk returns a tuple with the AscReqData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppSessionContextUpdateDataPatch) GetAscReqDataOk() (*AppSessionContextUpdateData, bool) {
-	if o == nil || IsNil(o.AscReqData) {
+	if o == nil || isNil(o.AscReqData) {
 		return nil, false
 	}
 	return o.AscReqData, true
@@ -59,7 +59,7 @@ func (o *AppSessionContextUpdateDataPatch) GetAscReqDataOk() (*AppSessionContext
 
 // HasAscReqData returns a boolean if a field has been set.
 func (o *AppSessionContextUpdateDataPatch) HasAscReqData() bool {
-	if o != nil && !IsNil(o.AscReqData) {
+	if o != nil && !isNil(o.AscReqData) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AppSessionContextUpdateDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o AppSessionContextUpdateDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AscReqData) {
+	if !isNil(o.AscReqData) {
 		toSerialize["ascReqData"] = o.AscReqData
 	}
 	return toSerialize, nil

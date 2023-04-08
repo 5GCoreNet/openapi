@@ -95,7 +95,7 @@ func (o *ACRCompleteEventInfo) SetTEasEndpoint(v EndPoint) {
 
 // GetFailReason returns the FailReason field value if set, zero value otherwise.
 func (o *ACRCompleteEventInfo) GetFailReason() string {
-	if o == nil || IsNil(o.FailReason) {
+	if o == nil || isNil(o.FailReason) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ACRCompleteEventInfo) GetFailReason() string {
 // GetFailReasonOk returns a tuple with the FailReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRCompleteEventInfo) GetFailReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.FailReason) {
+	if o == nil || isNil(o.FailReason) {
 		return nil, false
 	}
 	return o.FailReason, true
@@ -113,7 +113,7 @@ func (o *ACRCompleteEventInfo) GetFailReasonOk() (*string, bool) {
 
 // HasFailReason returns a boolean if a field has been set.
 func (o *ACRCompleteEventInfo) HasFailReason() bool {
-	if o != nil && !IsNil(o.FailReason) {
+	if o != nil && !isNil(o.FailReason) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o ACRCompleteEventInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["acrRes"] = o.AcrRes
 	toSerialize["tEasEndpoint"] = o.TEasEndpoint
-	if !IsNil(o.FailReason) {
+	if !isNil(o.FailReason) {
 		toSerialize["failReason"] = o.FailReason
 	}
 	return toSerialize, nil

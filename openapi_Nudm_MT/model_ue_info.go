@@ -43,7 +43,7 @@ func NewUeInfoWithDefaults() *UeInfo {
 
 // GetTadsInfo returns the TadsInfo field value if set, zero value otherwise.
 func (o *UeInfo) GetTadsInfo() UeContextInfo {
-	if o == nil || IsNil(o.TadsInfo) {
+	if o == nil || isNil(o.TadsInfo) {
 		var ret UeContextInfo
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *UeInfo) GetTadsInfo() UeContextInfo {
 // GetTadsInfoOk returns a tuple with the TadsInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInfo) GetTadsInfoOk() (*UeContextInfo, bool) {
-	if o == nil || IsNil(o.TadsInfo) {
+	if o == nil || isNil(o.TadsInfo) {
 		return nil, false
 	}
 	return o.TadsInfo, true
@@ -61,7 +61,7 @@ func (o *UeInfo) GetTadsInfoOk() (*UeContextInfo, bool) {
 
 // HasTadsInfo returns a boolean if a field has been set.
 func (o *UeInfo) HasTadsInfo() bool {
-	if o != nil && !IsNil(o.TadsInfo) {
+	if o != nil && !isNil(o.TadsInfo) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *UeInfo) SetTadsInfo(v UeContextInfo) {
 
 // GetUserState returns the UserState field value if set, zero value otherwise.
 func (o *UeInfo) GetUserState() Model5GsUserState {
-	if o == nil || IsNil(o.UserState) {
+	if o == nil || isNil(o.UserState) {
 		var ret Model5GsUserState
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UeInfo) GetUserState() Model5GsUserState {
 // GetUserStateOk returns a tuple with the UserState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInfo) GetUserStateOk() (*Model5GsUserState, bool) {
-	if o == nil || IsNil(o.UserState) {
+	if o == nil || isNil(o.UserState) {
 		return nil, false
 	}
 	return o.UserState, true
@@ -93,7 +93,7 @@ func (o *UeInfo) GetUserStateOk() (*Model5GsUserState, bool) {
 
 // HasUserState returns a boolean if a field has been set.
 func (o *UeInfo) HasUserState() bool {
-	if o != nil && !IsNil(o.UserState) {
+	if o != nil && !isNil(o.UserState) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *UeInfo) SetUserState(v Model5GsUserState) {
 
 // GetVar5gSrvccInfo returns the Var5gSrvccInfo field value if set, zero value otherwise.
 func (o *UeInfo) GetVar5gSrvccInfo() Model5GSrvccInfo {
-	if o == nil || IsNil(o.Var5gSrvccInfo) {
+	if o == nil || isNil(o.Var5gSrvccInfo) {
 		var ret Model5GSrvccInfo
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *UeInfo) GetVar5gSrvccInfo() Model5GSrvccInfo {
 // GetVar5gSrvccInfoOk returns a tuple with the Var5gSrvccInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeInfo) GetVar5gSrvccInfoOk() (*Model5GSrvccInfo, bool) {
-	if o == nil || IsNil(o.Var5gSrvccInfo) {
+	if o == nil || isNil(o.Var5gSrvccInfo) {
 		return nil, false
 	}
 	return o.Var5gSrvccInfo, true
@@ -125,7 +125,7 @@ func (o *UeInfo) GetVar5gSrvccInfoOk() (*Model5GSrvccInfo, bool) {
 
 // HasVar5gSrvccInfo returns a boolean if a field has been set.
 func (o *UeInfo) HasVar5gSrvccInfo() bool {
-	if o != nil && !IsNil(o.Var5gSrvccInfo) {
+	if o != nil && !isNil(o.Var5gSrvccInfo) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o UeInfo) MarshalJSON() ([]byte, error) {
 
 func (o UeInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TadsInfo) {
+	if !isNil(o.TadsInfo) {
 		toSerialize["tadsInfo"] = o.TadsInfo
 	}
-	if !IsNil(o.UserState) {
+	if !isNil(o.UserState) {
 		toSerialize["userState"] = o.UserState
 	}
-	if !IsNil(o.Var5gSrvccInfo) {
+	if !isNil(o.Var5gSrvccInfo) {
 		toSerialize["5gSrvccInfo"] = o.Var5gSrvccInfo
 	}
 	return toSerialize, nil

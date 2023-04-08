@@ -106,7 +106,7 @@ func (o *PgwInfo) SetPgwFqdn(v string) {
 
 // GetPgwIpAddr returns the PgwIpAddr field value if set, zero value otherwise.
 func (o *PgwInfo) GetPgwIpAddr() IpAddress {
-	if o == nil || IsNil(o.PgwIpAddr) {
+	if o == nil || isNil(o.PgwIpAddr) {
 		var ret IpAddress
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *PgwInfo) GetPgwIpAddr() IpAddress {
 // GetPgwIpAddrOk returns a tuple with the PgwIpAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetPgwIpAddrOk() (*IpAddress, bool) {
-	if o == nil || IsNil(o.PgwIpAddr) {
+	if o == nil || isNil(o.PgwIpAddr) {
 		return nil, false
 	}
 	return o.PgwIpAddr, true
@@ -124,7 +124,7 @@ func (o *PgwInfo) GetPgwIpAddrOk() (*IpAddress, bool) {
 
 // HasPgwIpAddr returns a boolean if a field has been set.
 func (o *PgwInfo) HasPgwIpAddr() bool {
-	if o != nil && !IsNil(o.PgwIpAddr) {
+	if o != nil && !isNil(o.PgwIpAddr) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *PgwInfo) SetPgwIpAddr(v IpAddress) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *PgwInfo) GetPlmnId() PlmnId {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnId
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *PgwInfo) GetPlmnId() PlmnId {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetPlmnIdOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -156,7 +156,7 @@ func (o *PgwInfo) GetPlmnIdOk() (*PlmnId, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *PgwInfo) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *PgwInfo) SetPlmnId(v PlmnId) {
 
 // GetEpdgInd returns the EpdgInd field value if set, zero value otherwise.
 func (o *PgwInfo) GetEpdgInd() bool {
-	if o == nil || IsNil(o.EpdgInd) {
+	if o == nil || isNil(o.EpdgInd) {
 		var ret bool
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *PgwInfo) GetEpdgInd() bool {
 // GetEpdgIndOk returns a tuple with the EpdgInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetEpdgIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.EpdgInd) {
+	if o == nil || isNil(o.EpdgInd) {
 		return nil, false
 	}
 	return o.EpdgInd, true
@@ -188,7 +188,7 @@ func (o *PgwInfo) GetEpdgIndOk() (*bool, bool) {
 
 // HasEpdgInd returns a boolean if a field has been set.
 func (o *PgwInfo) HasEpdgInd() bool {
-	if o != nil && !IsNil(o.EpdgInd) {
+	if o != nil && !isNil(o.EpdgInd) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *PgwInfo) SetEpdgInd(v bool) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *PgwInfo) GetPcfId() string {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *PgwInfo) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetPcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -220,7 +220,7 @@ func (o *PgwInfo) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *PgwInfo) HasPcfId() bool {
-	if o != nil && !IsNil(o.PcfId) {
+	if o != nil && !isNil(o.PcfId) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *PgwInfo) SetPcfId(v string) {
 
 // GetRegistrationTime returns the RegistrationTime field value if set, zero value otherwise.
 func (o *PgwInfo) GetRegistrationTime() time.Time {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		var ret time.Time
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *PgwInfo) GetRegistrationTime() time.Time {
 // GetRegistrationTimeOk returns a tuple with the RegistrationTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PgwInfo) GetRegistrationTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RegistrationTime) {
+	if o == nil || isNil(o.RegistrationTime) {
 		return nil, false
 	}
 	return o.RegistrationTime, true
@@ -252,7 +252,7 @@ func (o *PgwInfo) GetRegistrationTimeOk() (*time.Time, bool) {
 
 // HasRegistrationTime returns a boolean if a field has been set.
 func (o *PgwInfo) HasRegistrationTime() bool {
-	if o != nil && !IsNil(o.RegistrationTime) {
+	if o != nil && !isNil(o.RegistrationTime) {
 		return true
 	}
 
@@ -276,19 +276,19 @@ func (o PgwInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["dnn"] = o.Dnn
 	toSerialize["pgwFqdn"] = o.PgwFqdn
-	if !IsNil(o.PgwIpAddr) {
+	if !isNil(o.PgwIpAddr) {
 		toSerialize["pgwIpAddr"] = o.PgwIpAddr
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.EpdgInd) {
+	if !isNil(o.EpdgInd) {
 		toSerialize["epdgInd"] = o.EpdgInd
 	}
-	if !IsNil(o.PcfId) {
+	if !isNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !IsNil(o.RegistrationTime) {
+	if !isNil(o.RegistrationTime) {
 		toSerialize["registrationTime"] = o.RegistrationTime
 	}
 	return toSerialize, nil

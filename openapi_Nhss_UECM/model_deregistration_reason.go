@@ -17,23 +17,37 @@ import (
 
 // DeregistrationReason The reason that triggers that the serving node needs to be deregistered by HSS
 type DeregistrationReason struct {
-	string *string
+	DeregistrationReasonAnyOf *DeregistrationReasonAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *DeregistrationReason) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into DeregistrationReasonAnyOf
+	err = json.Unmarshal(data, &dst.DeregistrationReasonAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonDeregistrationReasonAnyOf, _ := json.Marshal(dst.DeregistrationReasonAnyOf)
+		if string(jsonDeregistrationReasonAnyOf) == "{}" { // empty struct
+			dst.DeregistrationReasonAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.DeregistrationReasonAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.DeregistrationReasonAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(DeregistrationReason)")
@@ -41,8 +55,12 @@ func (dst *DeregistrationReason) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *DeregistrationReason) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.DeregistrationReasonAnyOf != nil {
+		return json.Marshal(&src.DeregistrationReasonAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

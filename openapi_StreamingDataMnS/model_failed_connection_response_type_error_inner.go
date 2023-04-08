@@ -43,7 +43,7 @@ func NewFailedConnectionResponseTypeErrorInnerWithDefaults() *FailedConnectionRe
 
 // GetStreamId returns the StreamId field value if set, zero value otherwise.
 func (o *FailedConnectionResponseTypeErrorInner) GetStreamId() string {
-	if o == nil || IsNil(o.StreamId) {
+	if o == nil || isNil(o.StreamId) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *FailedConnectionResponseTypeErrorInner) GetStreamId() string {
 // GetStreamIdOk returns a tuple with the StreamId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailedConnectionResponseTypeErrorInner) GetStreamIdOk() (*string, bool) {
-	if o == nil || IsNil(o.StreamId) {
+	if o == nil || isNil(o.StreamId) {
 		return nil, false
 	}
 	return o.StreamId, true
@@ -61,7 +61,7 @@ func (o *FailedConnectionResponseTypeErrorInner) GetStreamIdOk() (*string, bool)
 
 // HasStreamId returns a boolean if a field has been set.
 func (o *FailedConnectionResponseTypeErrorInner) HasStreamId() bool {
-	if o != nil && !IsNil(o.StreamId) {
+	if o != nil && !isNil(o.StreamId) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *FailedConnectionResponseTypeErrorInner) SetStreamId(v string) {
 
 // GetErrorReason returns the ErrorReason field value if set, zero value otherwise.
 func (o *FailedConnectionResponseTypeErrorInner) GetErrorReason() string {
-	if o == nil || IsNil(o.ErrorReason) {
+	if o == nil || isNil(o.ErrorReason) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *FailedConnectionResponseTypeErrorInner) GetErrorReason() string {
 // GetErrorReasonOk returns a tuple with the ErrorReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FailedConnectionResponseTypeErrorInner) GetErrorReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.ErrorReason) {
+	if o == nil || isNil(o.ErrorReason) {
 		return nil, false
 	}
 	return o.ErrorReason, true
@@ -93,7 +93,7 @@ func (o *FailedConnectionResponseTypeErrorInner) GetErrorReasonOk() (*string, bo
 
 // HasErrorReason returns a boolean if a field has been set.
 func (o *FailedConnectionResponseTypeErrorInner) HasErrorReason() bool {
-	if o != nil && !IsNil(o.ErrorReason) {
+	if o != nil && !isNil(o.ErrorReason) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o FailedConnectionResponseTypeErrorInner) MarshalJSON() ([]byte, error) {
 
 func (o FailedConnectionResponseTypeErrorInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StreamId) {
+	if !isNil(o.StreamId) {
 		toSerialize["streamId"] = o.StreamId
 	}
-	if !IsNil(o.ErrorReason) {
+	if !isNil(o.ErrorReason) {
 		toSerialize["errorReason"] = o.ErrorReason
 	}
 	return toSerialize, nil

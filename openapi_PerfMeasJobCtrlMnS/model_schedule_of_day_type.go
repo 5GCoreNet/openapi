@@ -42,7 +42,7 @@ func NewScheduleOfDayTypeWithDefaults() *ScheduleOfDayType {
 
 // GetDayOfWeek returns the DayOfWeek field value if set, zero value otherwise.
 func (o *ScheduleOfDayType) GetDayOfWeek() DayOfWeekType {
-	if o == nil || IsNil(o.DayOfWeek) {
+	if o == nil || isNil(o.DayOfWeek) {
 		var ret DayOfWeekType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ScheduleOfDayType) GetDayOfWeek() DayOfWeekType {
 // GetDayOfWeekOk returns a tuple with the DayOfWeek field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduleOfDayType) GetDayOfWeekOk() (*DayOfWeekType, bool) {
-	if o == nil || IsNil(o.DayOfWeek) {
+	if o == nil || isNil(o.DayOfWeek) {
 		return nil, false
 	}
 	return o.DayOfWeek, true
@@ -60,7 +60,7 @@ func (o *ScheduleOfDayType) GetDayOfWeekOk() (*DayOfWeekType, bool) {
 
 // HasDayOfWeek returns a boolean if a field has been set.
 func (o *ScheduleOfDayType) HasDayOfWeek() bool {
-	if o != nil && !IsNil(o.DayOfWeek) {
+	if o != nil && !isNil(o.DayOfWeek) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ScheduleOfDayType) SetDayOfWeek(v DayOfWeekType) {
 
 // GetIntervalsOfDay returns the IntervalsOfDay field value if set, zero value otherwise.
 func (o *ScheduleOfDayType) GetIntervalsOfDay() []TimeIntervalType {
-	if o == nil || IsNil(o.IntervalsOfDay) {
+	if o == nil || isNil(o.IntervalsOfDay) {
 		var ret []TimeIntervalType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ScheduleOfDayType) GetIntervalsOfDay() []TimeIntervalType {
 // GetIntervalsOfDayOk returns a tuple with the IntervalsOfDay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScheduleOfDayType) GetIntervalsOfDayOk() ([]TimeIntervalType, bool) {
-	if o == nil || IsNil(o.IntervalsOfDay) {
+	if o == nil || isNil(o.IntervalsOfDay) {
 		return nil, false
 	}
 	return o.IntervalsOfDay, true
@@ -92,7 +92,7 @@ func (o *ScheduleOfDayType) GetIntervalsOfDayOk() ([]TimeIntervalType, bool) {
 
 // HasIntervalsOfDay returns a boolean if a field has been set.
 func (o *ScheduleOfDayType) HasIntervalsOfDay() bool {
-	if o != nil && !IsNil(o.IntervalsOfDay) {
+	if o != nil && !isNil(o.IntervalsOfDay) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ScheduleOfDayType) MarshalJSON() ([]byte, error) {
 
 func (o ScheduleOfDayType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DayOfWeek) {
+	if !isNil(o.DayOfWeek) {
 		toSerialize["dayOfWeek"] = o.DayOfWeek
 	}
-	if !IsNil(o.IntervalsOfDay) {
+	if !isNil(o.IntervalsOfDay) {
 		toSerialize["intervalsOfDay"] = o.IntervalsOfDay
 	}
 	return toSerialize, nil

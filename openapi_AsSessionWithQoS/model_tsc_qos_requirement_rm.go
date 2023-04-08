@@ -58,7 +58,7 @@ func NewTscQosRequirementRmWithDefaults() *TscQosRequirementRm {
 
 // GetReqGbrDl returns the ReqGbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqGbrDl() string {
-	if o == nil || IsNil(o.ReqGbrDl.Get()) {
+	if o == nil || isNil(o.ReqGbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -100,7 +100,7 @@ func (o *TscQosRequirementRm) UnsetReqGbrDl() {
 
 // GetReqGbrUl returns the ReqGbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqGbrUl() string {
-	if o == nil || IsNil(o.ReqGbrUl.Get()) {
+	if o == nil || isNil(o.ReqGbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *TscQosRequirementRm) UnsetReqGbrUl() {
 
 // GetReqMbrDl returns the ReqMbrDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqMbrDl() string {
-	if o == nil || IsNil(o.ReqMbrDl.Get()) {
+	if o == nil || isNil(o.ReqMbrDl.Get()) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *TscQosRequirementRm) UnsetReqMbrDl() {
 
 // GetReqMbrUl returns the ReqMbrUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReqMbrUl() string {
-	if o == nil || IsNil(o.ReqMbrUl.Get()) {
+	if o == nil || isNil(o.ReqMbrUl.Get()) {
 		var ret string
 		return ret
 	}
@@ -226,7 +226,7 @@ func (o *TscQosRequirementRm) UnsetReqMbrUl() {
 
 // GetMaxTscBurstSize returns the MaxTscBurstSize field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetMaxTscBurstSize() int32 {
-	if o == nil || IsNil(o.MaxTscBurstSize.Get()) {
+	if o == nil || isNil(o.MaxTscBurstSize.Get()) {
 		var ret int32
 		return ret
 	}
@@ -268,7 +268,7 @@ func (o *TscQosRequirementRm) UnsetMaxTscBurstSize() {
 
 // GetReq5Gsdelay returns the Req5Gsdelay field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetReq5Gsdelay() int32 {
-	if o == nil || IsNil(o.Req5Gsdelay.Get()) {
+	if o == nil || isNil(o.Req5Gsdelay.Get()) {
 		var ret int32
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *TscQosRequirementRm) UnsetReq5Gsdelay() {
 
 // GetPriority returns the Priority field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetPriority() int32 {
-	if o == nil || IsNil(o.Priority.Get()) {
+	if o == nil || isNil(o.Priority.Get()) {
 		var ret int32
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *TscQosRequirementRm) UnsetPriority() {
 
 // GetTscaiTimeDom returns the TscaiTimeDom field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetTscaiTimeDom() int32 {
-	if o == nil || IsNil(o.TscaiTimeDom.Get()) {
+	if o == nil || isNil(o.TscaiTimeDom.Get()) {
 		var ret int32
 		return ret
 	}
@@ -394,7 +394,7 @@ func (o *TscQosRequirementRm) UnsetTscaiTimeDom() {
 
 // GetTscaiInputDl returns the TscaiInputDl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetTscaiInputDl() TscaiInputContainer {
-	if o == nil || IsNil(o.TscaiInputDl.Get()) {
+	if o == nil || isNil(o.TscaiInputDl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}
@@ -436,7 +436,7 @@ func (o *TscQosRequirementRm) UnsetTscaiInputDl() {
 
 // GetTscaiInputUl returns the TscaiInputUl field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TscQosRequirementRm) GetTscaiInputUl() TscaiInputContainer {
-	if o == nil || IsNil(o.TscaiInputUl.Get()) {
+	if o == nil || isNil(o.TscaiInputUl.Get()) {
 		var ret TscaiInputContainer
 		return ret
 	}

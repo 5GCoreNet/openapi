@@ -68,7 +68,7 @@ func (o *ImsServiceProfile) SetPublicIdentifierList(v []PublicIdentifier) {
 
 // GetIfcs returns the Ifcs field value if set, zero value otherwise.
 func (o *ImsServiceProfile) GetIfcs() Ifcs {
-	if o == nil || IsNil(o.Ifcs) {
+	if o == nil || isNil(o.Ifcs) {
 		var ret Ifcs
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *ImsServiceProfile) GetIfcs() Ifcs {
 // GetIfcsOk returns a tuple with the Ifcs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsServiceProfile) GetIfcsOk() (*Ifcs, bool) {
-	if o == nil || IsNil(o.Ifcs) {
+	if o == nil || isNil(o.Ifcs) {
 		return nil, false
 	}
 	return o.Ifcs, true
@@ -86,7 +86,7 @@ func (o *ImsServiceProfile) GetIfcsOk() (*Ifcs, bool) {
 
 // HasIfcs returns a boolean if a field has been set.
 func (o *ImsServiceProfile) HasIfcs() bool {
-	if o != nil && !IsNil(o.Ifcs) {
+	if o != nil && !isNil(o.Ifcs) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *ImsServiceProfile) SetIfcs(v Ifcs) {
 
 // GetCnServiceAuthorization returns the CnServiceAuthorization field value if set, zero value otherwise.
 func (o *ImsServiceProfile) GetCnServiceAuthorization() CoreNetworkServiceAuthorization {
-	if o == nil || IsNil(o.CnServiceAuthorization) {
+	if o == nil || isNil(o.CnServiceAuthorization) {
 		var ret CoreNetworkServiceAuthorization
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *ImsServiceProfile) GetCnServiceAuthorization() CoreNetworkServiceAuthor
 // GetCnServiceAuthorizationOk returns a tuple with the CnServiceAuthorization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsServiceProfile) GetCnServiceAuthorizationOk() (*CoreNetworkServiceAuthorization, bool) {
-	if o == nil || IsNil(o.CnServiceAuthorization) {
+	if o == nil || isNil(o.CnServiceAuthorization) {
 		return nil, false
 	}
 	return o.CnServiceAuthorization, true
@@ -118,7 +118,7 @@ func (o *ImsServiceProfile) GetCnServiceAuthorizationOk() (*CoreNetworkServiceAu
 
 // HasCnServiceAuthorization returns a boolean if a field has been set.
 func (o *ImsServiceProfile) HasCnServiceAuthorization() bool {
-	if o != nil && !IsNil(o.CnServiceAuthorization) {
+	if o != nil && !isNil(o.CnServiceAuthorization) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o ImsServiceProfile) MarshalJSON() ([]byte, error) {
 func (o ImsServiceProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["publicIdentifierList"] = o.PublicIdentifierList
-	if !IsNil(o.Ifcs) {
+	if !isNil(o.Ifcs) {
 		toSerialize["ifcs"] = o.Ifcs
 	}
-	if !IsNil(o.CnServiceAuthorization) {
+	if !isNil(o.CnServiceAuthorization) {
 		toSerialize["cnServiceAuthorization"] = o.CnServiceAuthorization
 	}
 	return toSerialize, nil

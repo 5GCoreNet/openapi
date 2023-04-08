@@ -72,7 +72,7 @@ func (o *ACTResultInfo) SetActResult(v ACTResult) {
 
 // GetActFailureCause returns the ActFailureCause field value if set, zero value otherwise.
 func (o *ACTResultInfo) GetActFailureCause() ACTFailureCause {
-	if o == nil || IsNil(o.ActFailureCause) {
+	if o == nil || isNil(o.ActFailureCause) {
 		var ret ACTFailureCause
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ACTResultInfo) GetActFailureCause() ACTFailureCause {
 // GetActFailureCauseOk returns a tuple with the ActFailureCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACTResultInfo) GetActFailureCauseOk() (*ACTFailureCause, bool) {
-	if o == nil || IsNil(o.ActFailureCause) {
+	if o == nil || isNil(o.ActFailureCause) {
 		return nil, false
 	}
 	return o.ActFailureCause, true
@@ -90,7 +90,7 @@ func (o *ACTResultInfo) GetActFailureCauseOk() (*ACTFailureCause, bool) {
 
 // HasActFailureCause returns a boolean if a field has been set.
 func (o *ACTResultInfo) HasActFailureCause() bool {
-	if o != nil && !IsNil(o.ActFailureCause) {
+	if o != nil && !isNil(o.ActFailureCause) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o ACTResultInfo) MarshalJSON() ([]byte, error) {
 func (o ACTResultInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["actResult"] = o.ActResult
-	if !IsNil(o.ActFailureCause) {
+	if !isNil(o.ActFailureCause) {
 		toSerialize["actFailureCause"] = o.ActFailureCause
 	}
 	toSerialize["ueId"] = o.UeId

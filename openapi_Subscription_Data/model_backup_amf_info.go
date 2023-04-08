@@ -69,7 +69,7 @@ func (o *BackupAmfInfo) SetBackupAmf(v string) {
 
 // GetGuamiList returns the GuamiList field value if set, zero value otherwise.
 func (o *BackupAmfInfo) GetGuamiList() []Guami {
-	if o == nil || IsNil(o.GuamiList) {
+	if o == nil || isNil(o.GuamiList) {
 		var ret []Guami
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *BackupAmfInfo) GetGuamiList() []Guami {
 // GetGuamiListOk returns a tuple with the GuamiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BackupAmfInfo) GetGuamiListOk() ([]Guami, bool) {
-	if o == nil || IsNil(o.GuamiList) {
+	if o == nil || isNil(o.GuamiList) {
 		return nil, false
 	}
 	return o.GuamiList, true
@@ -87,7 +87,7 @@ func (o *BackupAmfInfo) GetGuamiListOk() ([]Guami, bool) {
 
 // HasGuamiList returns a boolean if a field has been set.
 func (o *BackupAmfInfo) HasGuamiList() bool {
-	if o != nil && !IsNil(o.GuamiList) {
+	if o != nil && !isNil(o.GuamiList) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o BackupAmfInfo) MarshalJSON() ([]byte, error) {
 func (o BackupAmfInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["backupAmf"] = o.BackupAmf
-	if !IsNil(o.GuamiList) {
+	if !isNil(o.GuamiList) {
 		toSerialize["guamiList"] = o.GuamiList
 	}
 	return toSerialize, nil

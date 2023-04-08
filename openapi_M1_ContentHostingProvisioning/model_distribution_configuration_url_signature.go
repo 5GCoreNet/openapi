@@ -197,7 +197,7 @@ func (o *DistributionConfigurationUrlSignature) SetUseIPAddress(v bool) {
 
 // GetIpAddressName returns the IpAddressName field value if set, zero value otherwise.
 func (o *DistributionConfigurationUrlSignature) GetIpAddressName() string {
-	if o == nil || IsNil(o.IpAddressName) {
+	if o == nil || isNil(o.IpAddressName) {
 		var ret string
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *DistributionConfigurationUrlSignature) GetIpAddressName() string {
 // GetIpAddressNameOk returns a tuple with the IpAddressName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistributionConfigurationUrlSignature) GetIpAddressNameOk() (*string, bool) {
-	if o == nil || IsNil(o.IpAddressName) {
+	if o == nil || isNil(o.IpAddressName) {
 		return nil, false
 	}
 	return o.IpAddressName, true
@@ -215,7 +215,7 @@ func (o *DistributionConfigurationUrlSignature) GetIpAddressNameOk() (*string, b
 
 // HasIpAddressName returns a boolean if a field has been set.
 func (o *DistributionConfigurationUrlSignature) HasIpAddressName() bool {
-	if o != nil && !IsNil(o.IpAddressName) {
+	if o != nil && !isNil(o.IpAddressName) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o DistributionConfigurationUrlSignature) ToMap() (map[string]interface{}, 
 	toSerialize["passphrase"] = o.Passphrase
 	toSerialize["tokenExpiryName"] = o.TokenExpiryName
 	toSerialize["useIPAddress"] = o.UseIPAddress
-	if !IsNil(o.IpAddressName) {
+	if !isNil(o.IpAddressName) {
 		toSerialize["ipAddressName"] = o.IpAddressName
 	}
 	return toSerialize, nil

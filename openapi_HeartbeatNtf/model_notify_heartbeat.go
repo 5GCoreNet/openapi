@@ -12,7 +12,6 @@ package openapi_HeartbeatNtf
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyHeartbeat type satisfies the MappedNullable interface at compile time
@@ -172,7 +171,7 @@ func (o *NotifyHeartbeat) SetSystemDN(v string) {
 
 // GetHeartbeatNtfPeriod returns the HeartbeatNtfPeriod field value if set, zero value otherwise.
 func (o *NotifyHeartbeat) GetHeartbeatNtfPeriod() int32 {
-	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
+	if o == nil || isNil(o.HeartbeatNtfPeriod) {
 		var ret int32
 		return ret
 	}
@@ -182,7 +181,7 @@ func (o *NotifyHeartbeat) GetHeartbeatNtfPeriod() int32 {
 // GetHeartbeatNtfPeriodOk returns a tuple with the HeartbeatNtfPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyHeartbeat) GetHeartbeatNtfPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.HeartbeatNtfPeriod) {
+	if o == nil || isNil(o.HeartbeatNtfPeriod) {
 		return nil, false
 	}
 	return o.HeartbeatNtfPeriod, true
@@ -190,7 +189,7 @@ func (o *NotifyHeartbeat) GetHeartbeatNtfPeriodOk() (*int32, bool) {
 
 // HasHeartbeatNtfPeriod returns a boolean if a field has been set.
 func (o *NotifyHeartbeat) HasHeartbeatNtfPeriod() bool {
-	if o != nil && !IsNil(o.HeartbeatNtfPeriod) {
+	if o != nil && !isNil(o.HeartbeatNtfPeriod) {
 		return true
 	}
 
@@ -217,7 +216,7 @@ func (o NotifyHeartbeat) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
-	if !IsNil(o.HeartbeatNtfPeriod) {
+	if !isNil(o.HeartbeatNtfPeriod) {
 		toSerialize["heartbeatNtfPeriod"] = o.HeartbeatNtfPeriod
 	}
 	return toSerialize, nil

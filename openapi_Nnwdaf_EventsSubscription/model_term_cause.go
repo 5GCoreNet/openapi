@@ -17,23 +17,37 @@ import (
 
 // TermCause Possible values are:     - USER_CONSENT_REVOKED: The user consent has been revoked.   - NWDAF_OVERLOAD: The NWDAF is overloaded.   - UE_LEFT_AREA: The UE has moved out of the NWDAF serving area. 
 type TermCause struct {
-	string *string
+	TermCauseAnyOf *TermCauseAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TermCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into TermCauseAnyOf
+	err = json.Unmarshal(data, &dst.TermCauseAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonTermCauseAnyOf, _ := json.Marshal(dst.TermCauseAnyOf)
+		if string(jsonTermCauseAnyOf) == "{}" { // empty struct
+			dst.TermCauseAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.TermCauseAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.TermCauseAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(TermCause)")
@@ -41,8 +55,12 @@ func (dst *TermCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TermCause) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.TermCauseAnyOf != nil {
+		return json.Marshal(&src.TermCauseAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -44,7 +44,7 @@ func NewCpReportWithDefaults() *CpReport {
 
 // GetSetIds returns the SetIds field value if set, zero value otherwise.
 func (o *CpReport) GetSetIds() []string {
-	if o == nil || IsNil(o.SetIds) {
+	if o == nil || isNil(o.SetIds) {
 		var ret []string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *CpReport) GetSetIds() []string {
 // GetSetIdsOk returns a tuple with the SetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CpReport) GetSetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SetIds) {
+	if o == nil || isNil(o.SetIds) {
 		return nil, false
 	}
 	return o.SetIds, true
@@ -62,7 +62,7 @@ func (o *CpReport) GetSetIdsOk() ([]string, bool) {
 
 // HasSetIds returns a boolean if a field has been set.
 func (o *CpReport) HasSetIds() bool {
-	if o != nil && !IsNil(o.SetIds) {
+	if o != nil && !isNil(o.SetIds) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o CpReport) MarshalJSON() ([]byte, error) {
 
 func (o CpReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SetIds) {
+	if !isNil(o.SetIds) {
 		toSerialize["setIds"] = o.SetIds
 	}
 	toSerialize["failureCode"] = o.FailureCode

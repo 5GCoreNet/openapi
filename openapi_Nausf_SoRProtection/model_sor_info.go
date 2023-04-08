@@ -50,7 +50,7 @@ func NewSorInfoWithDefaults() *SorInfo {
 
 // GetSteeringContainer returns the SteeringContainer field value if set, zero value otherwise.
 func (o *SorInfo) GetSteeringContainer() SteeringContainer {
-	if o == nil || IsNil(o.SteeringContainer) {
+	if o == nil || isNil(o.SteeringContainer) {
 		var ret SteeringContainer
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *SorInfo) GetSteeringContainer() SteeringContainer {
 // GetSteeringContainerOk returns a tuple with the SteeringContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSteeringContainerOk() (*SteeringContainer, bool) {
-	if o == nil || IsNil(o.SteeringContainer) {
+	if o == nil || isNil(o.SteeringContainer) {
 		return nil, false
 	}
 	return o.SteeringContainer, true
@@ -68,7 +68,7 @@ func (o *SorInfo) GetSteeringContainerOk() (*SteeringContainer, bool) {
 
 // HasSteeringContainer returns a boolean if a field has been set.
 func (o *SorInfo) HasSteeringContainer() bool {
-	if o != nil && !IsNil(o.SteeringContainer) {
+	if o != nil && !isNil(o.SteeringContainer) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *SorInfo) SetAckInd(v bool) {
 
 // GetSorHeader returns the SorHeader field value if set, zero value otherwise.
 func (o *SorInfo) GetSorHeader() string {
-	if o == nil || IsNil(o.SorHeader) {
+	if o == nil || isNil(o.SorHeader) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *SorInfo) GetSorHeader() string {
 // GetSorHeaderOk returns a tuple with the SorHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorHeaderOk() (*string, bool) {
-	if o == nil || IsNil(o.SorHeader) {
+	if o == nil || isNil(o.SorHeader) {
 		return nil, false
 	}
 	return o.SorHeader, true
@@ -124,7 +124,7 @@ func (o *SorInfo) GetSorHeaderOk() (*string, bool) {
 
 // HasSorHeader returns a boolean if a field has been set.
 func (o *SorInfo) HasSorHeader() bool {
-	if o != nil && !IsNil(o.SorHeader) {
+	if o != nil && !isNil(o.SorHeader) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *SorInfo) SetSorHeader(v string) {
 
 // GetSorTransparentInfo returns the SorTransparentInfo field value if set, zero value otherwise.
 func (o *SorInfo) GetSorTransparentInfo() string {
-	if o == nil || IsNil(o.SorTransparentInfo) {
+	if o == nil || isNil(o.SorTransparentInfo) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *SorInfo) GetSorTransparentInfo() string {
 // GetSorTransparentInfoOk returns a tuple with the SorTransparentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSorTransparentInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.SorTransparentInfo) {
+	if o == nil || isNil(o.SorTransparentInfo) {
 		return nil, false
 	}
 	return o.SorTransparentInfo, true
@@ -156,7 +156,7 @@ func (o *SorInfo) GetSorTransparentInfoOk() (*string, bool) {
 
 // HasSorTransparentInfo returns a boolean if a field has been set.
 func (o *SorInfo) HasSorTransparentInfo() bool {
-	if o != nil && !IsNil(o.SorTransparentInfo) {
+	if o != nil && !isNil(o.SorTransparentInfo) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *SorInfo) SetSorTransparentInfo(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *SorInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *SorInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SorInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -188,7 +188,7 @@ func (o *SorInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *SorInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -210,17 +210,17 @@ func (o SorInfo) MarshalJSON() ([]byte, error) {
 
 func (o SorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SteeringContainer) {
+	if !isNil(o.SteeringContainer) {
 		toSerialize["steeringContainer"] = o.SteeringContainer
 	}
 	toSerialize["ackInd"] = o.AckInd
-	if !IsNil(o.SorHeader) {
+	if !isNil(o.SorHeader) {
 		toSerialize["sorHeader"] = o.SorHeader
 	}
-	if !IsNil(o.SorTransparentInfo) {
+	if !isNil(o.SorTransparentInfo) {
 		toSerialize["sorTransparentInfo"] = o.SorTransparentInfo
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // IdentityType Represents the type of IMS Public Identity
 type IdentityType struct {
-	string *string
+	IdentityTypeAnyOf *IdentityTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *IdentityType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into IdentityTypeAnyOf
+	err = json.Unmarshal(data, &dst.IdentityTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonIdentityTypeAnyOf, _ := json.Marshal(dst.IdentityTypeAnyOf)
+		if string(jsonIdentityTypeAnyOf) == "{}" { // empty struct
+			dst.IdentityTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.IdentityTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.IdentityTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(IdentityType)")
@@ -41,8 +55,12 @@ func (dst *IdentityType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *IdentityType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.IdentityTypeAnyOf != nil {
+		return json.Marshal(&src.IdentityTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

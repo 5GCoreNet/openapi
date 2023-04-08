@@ -99,7 +99,7 @@ func (o *RestorationInfo) SetContact(v string) {
 
 // GetInitialCSeqSequenceNumber returns the InitialCSeqSequenceNumber field value if set, zero value otherwise.
 func (o *RestorationInfo) GetInitialCSeqSequenceNumber() int32 {
-	if o == nil || IsNil(o.InitialCSeqSequenceNumber) {
+	if o == nil || isNil(o.InitialCSeqSequenceNumber) {
 		var ret int32
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *RestorationInfo) GetInitialCSeqSequenceNumber() int32 {
 // GetInitialCSeqSequenceNumberOk returns a tuple with the InitialCSeqSequenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetInitialCSeqSequenceNumberOk() (*int32, bool) {
-	if o == nil || IsNil(o.InitialCSeqSequenceNumber) {
+	if o == nil || isNil(o.InitialCSeqSequenceNumber) {
 		return nil, false
 	}
 	return o.InitialCSeqSequenceNumber, true
@@ -117,7 +117,7 @@ func (o *RestorationInfo) GetInitialCSeqSequenceNumberOk() (*int32, bool) {
 
 // HasInitialCSeqSequenceNumber returns a boolean if a field has been set.
 func (o *RestorationInfo) HasInitialCSeqSequenceNumber() bool {
-	if o != nil && !IsNil(o.InitialCSeqSequenceNumber) {
+	if o != nil && !isNil(o.InitialCSeqSequenceNumber) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *RestorationInfo) SetInitialCSeqSequenceNumber(v int32) {
 
 // GetCallIdSipHeader returns the CallIdSipHeader field value if set, zero value otherwise.
 func (o *RestorationInfo) GetCallIdSipHeader() string {
-	if o == nil || IsNil(o.CallIdSipHeader) {
+	if o == nil || isNil(o.CallIdSipHeader) {
 		var ret string
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *RestorationInfo) GetCallIdSipHeader() string {
 // GetCallIdSipHeaderOk returns a tuple with the CallIdSipHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetCallIdSipHeaderOk() (*string, bool) {
-	if o == nil || IsNil(o.CallIdSipHeader) {
+	if o == nil || isNil(o.CallIdSipHeader) {
 		return nil, false
 	}
 	return o.CallIdSipHeader, true
@@ -149,7 +149,7 @@ func (o *RestorationInfo) GetCallIdSipHeaderOk() (*string, bool) {
 
 // HasCallIdSipHeader returns a boolean if a field has been set.
 func (o *RestorationInfo) HasCallIdSipHeader() bool {
-	if o != nil && !IsNil(o.CallIdSipHeader) {
+	if o != nil && !isNil(o.CallIdSipHeader) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *RestorationInfo) SetCallIdSipHeader(v string) {
 
 // GetUesubscriptionInfo returns the UesubscriptionInfo field value if set, zero value otherwise.
 func (o *RestorationInfo) GetUesubscriptionInfo() UeSubscriptionInfo {
-	if o == nil || IsNil(o.UesubscriptionInfo) {
+	if o == nil || isNil(o.UesubscriptionInfo) {
 		var ret UeSubscriptionInfo
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *RestorationInfo) GetUesubscriptionInfo() UeSubscriptionInfo {
 // GetUesubscriptionInfoOk returns a tuple with the UesubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetUesubscriptionInfoOk() (*UeSubscriptionInfo, bool) {
-	if o == nil || IsNil(o.UesubscriptionInfo) {
+	if o == nil || isNil(o.UesubscriptionInfo) {
 		return nil, false
 	}
 	return o.UesubscriptionInfo, true
@@ -181,7 +181,7 @@ func (o *RestorationInfo) GetUesubscriptionInfoOk() (*UeSubscriptionInfo, bool) 
 
 // HasUesubscriptionInfo returns a boolean if a field has been set.
 func (o *RestorationInfo) HasUesubscriptionInfo() bool {
-	if o != nil && !IsNil(o.UesubscriptionInfo) {
+	if o != nil && !isNil(o.UesubscriptionInfo) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *RestorationInfo) SetUesubscriptionInfo(v UeSubscriptionInfo) {
 
 // GetPcscfSubscriptionInfo returns the PcscfSubscriptionInfo field value if set, zero value otherwise.
 func (o *RestorationInfo) GetPcscfSubscriptionInfo() PcscfSubscriptionInfo {
-	if o == nil || IsNil(o.PcscfSubscriptionInfo) {
+	if o == nil || isNil(o.PcscfSubscriptionInfo) {
 		var ret PcscfSubscriptionInfo
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *RestorationInfo) GetPcscfSubscriptionInfo() PcscfSubscriptionInfo {
 // GetPcscfSubscriptionInfoOk returns a tuple with the PcscfSubscriptionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetPcscfSubscriptionInfoOk() (*PcscfSubscriptionInfo, bool) {
-	if o == nil || IsNil(o.PcscfSubscriptionInfo) {
+	if o == nil || isNil(o.PcscfSubscriptionInfo) {
 		return nil, false
 	}
 	return o.PcscfSubscriptionInfo, true
@@ -213,7 +213,7 @@ func (o *RestorationInfo) GetPcscfSubscriptionInfoOk() (*PcscfSubscriptionInfo, 
 
 // HasPcscfSubscriptionInfo returns a boolean if a field has been set.
 func (o *RestorationInfo) HasPcscfSubscriptionInfo() bool {
-	if o != nil && !IsNil(o.PcscfSubscriptionInfo) {
+	if o != nil && !isNil(o.PcscfSubscriptionInfo) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *RestorationInfo) SetPcscfSubscriptionInfo(v PcscfSubscriptionInfo) {
 
 // GetImsSdmSubscriptions returns the ImsSdmSubscriptions field value if set, zero value otherwise.
 func (o *RestorationInfo) GetImsSdmSubscriptions() map[string]ImsSdmSubscription {
-	if o == nil || IsNil(o.ImsSdmSubscriptions) {
+	if o == nil || isNil(o.ImsSdmSubscriptions) {
 		var ret map[string]ImsSdmSubscription
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *RestorationInfo) GetImsSdmSubscriptions() map[string]ImsSdmSubscription
 // GetImsSdmSubscriptionsOk returns a tuple with the ImsSdmSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RestorationInfo) GetImsSdmSubscriptionsOk() (*map[string]ImsSdmSubscription, bool) {
-	if o == nil || IsNil(o.ImsSdmSubscriptions) {
+	if o == nil || isNil(o.ImsSdmSubscriptions) {
 		return nil, false
 	}
 	return o.ImsSdmSubscriptions, true
@@ -245,7 +245,7 @@ func (o *RestorationInfo) GetImsSdmSubscriptionsOk() (*map[string]ImsSdmSubscrip
 
 // HasImsSdmSubscriptions returns a boolean if a field has been set.
 func (o *RestorationInfo) HasImsSdmSubscriptions() bool {
-	if o != nil && !IsNil(o.ImsSdmSubscriptions) {
+	if o != nil && !isNil(o.ImsSdmSubscriptions) {
 		return true
 	}
 
@@ -269,19 +269,19 @@ func (o RestorationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["path"] = o.Path
 	toSerialize["contact"] = o.Contact
-	if !IsNil(o.InitialCSeqSequenceNumber) {
+	if !isNil(o.InitialCSeqSequenceNumber) {
 		toSerialize["initialCSeqSequenceNumber"] = o.InitialCSeqSequenceNumber
 	}
-	if !IsNil(o.CallIdSipHeader) {
+	if !isNil(o.CallIdSipHeader) {
 		toSerialize["callIdSipHeader"] = o.CallIdSipHeader
 	}
-	if !IsNil(o.UesubscriptionInfo) {
+	if !isNil(o.UesubscriptionInfo) {
 		toSerialize["uesubscriptionInfo"] = o.UesubscriptionInfo
 	}
-	if !IsNil(o.PcscfSubscriptionInfo) {
+	if !isNil(o.PcscfSubscriptionInfo) {
 		toSerialize["pcscfSubscriptionInfo"] = o.PcscfSubscriptionInfo
 	}
-	if !IsNil(o.ImsSdmSubscriptions) {
+	if !isNil(o.ImsSdmSubscriptions) {
 		toSerialize["imsSdmSubscriptions"] = o.ImsSdmSubscriptions
 	}
 	return toSerialize, nil

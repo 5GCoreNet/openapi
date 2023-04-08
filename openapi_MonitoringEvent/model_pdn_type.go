@@ -17,23 +17,37 @@ import (
 
 // PdnType Possible values are - IPV4: PDN connection of IPv4 type. - IPV6: PDN connection of IPv6 type. - IPV4V6: PDN connection of IPv4v6 type. - NON_IP: PDN connection of non-IP type. - ETHERNET: PDN connection of Ethernet type. 
 type PdnType struct {
-	string *string
+	PdnTypeAnyOf *PdnTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *PdnType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PdnTypeAnyOf
+	err = json.Unmarshal(data, &dst.PdnTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPdnTypeAnyOf, _ := json.Marshal(dst.PdnTypeAnyOf)
+		if string(jsonPdnTypeAnyOf) == "{}" { // empty struct
+			dst.PdnTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PdnTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PdnTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(PdnType)")
@@ -41,8 +55,12 @@ func (dst *PdnType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *PdnType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PdnTypeAnyOf != nil {
+		return json.Marshal(&src.PdnTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

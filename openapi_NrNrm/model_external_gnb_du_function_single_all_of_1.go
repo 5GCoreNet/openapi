@@ -42,7 +42,7 @@ func NewExternalGnbDuFunctionSingleAllOf1WithDefaults() *ExternalGnbDuFunctionSi
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1C() []EPF1CSingle {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		var ret []EPF1CSingle
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1C() []EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1COk() ([]EPF1CSingle, bool) {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -60,7 +60,7 @@ func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1COk() ([]EPF1CSingle, bool) {
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingleAllOf1) HasEPF1C() bool {
-	if o != nil && !IsNil(o.EPF1C) {
+	if o != nil && !isNil(o.EPF1C) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ExternalGnbDuFunctionSingleAllOf1) SetEPF1C(v []EPF1CSingle) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1U() []EPF1USingle {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -92,7 +92,7 @@ func (o *ExternalGnbDuFunctionSingleAllOf1) GetEPF1UOk() ([]EPF1USingle, bool) {
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *ExternalGnbDuFunctionSingleAllOf1) HasEPF1U() bool {
-	if o != nil && !IsNil(o.EPF1U) {
+	if o != nil && !isNil(o.EPF1U) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ExternalGnbDuFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o ExternalGnbDuFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EPF1C) {
+	if !isNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
-	if !IsNil(o.EPF1U) {
+	if !isNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
 	return toSerialize, nil

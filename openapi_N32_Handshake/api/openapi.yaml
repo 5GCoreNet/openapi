@@ -446,11 +446,7 @@ components:
   schemas:
     SecurityCapability:
       anyOf:
-      - enum:
-        - TLS
-        - PRINS
-        - NONE
-        type: string
+      - $ref: '#/components/schemas/SecurityCapability_anyOf'
       - type: string
       description: Enumeration of security capabilities
     ApiSignature:
@@ -460,41 +456,18 @@ components:
       - $ref: '#/components/schemas/CallbackName'
     HttpMethod:
       anyOf:
-      - enum:
-        - GET
-        - PUT
-        - POST
-        - DELETE
-        - PATCH
-        - HEAD
-        - OPTIONS
-        - CONNECT
-        - TRACE
-        type: string
+      - $ref: '#/components/schemas/HttpMethod_anyOf'
       - type: string
       description: Enumeration of HTTP methods
     IeType:
       anyOf:
-      - enum:
-        - UEID
-        - LOCATION
-        - KEY_MATERIAL
-        - AUTHENTICATION_MATERIAL
-        - AUTHORIZATION_TOKEN
-        - OTHER
-        - NONSENSITIVE
-        type: string
+      - $ref: '#/components/schemas/IeType_anyOf'
       - type: string
       description: Enumeration of types of IEs (i.e kind of IE) to specify the protection
         policy
     IeLocation:
       anyOf:
-      - enum:
-        - URI_PARAM
-        - HEADER
-        - BODY
-        - MULTIPART_BINARY
-        type: string
+      - $ref: '#/components/schemas/IeLocation_anyOf'
       - type: string
       description: Location of the IE in a HTTP message
     IeInfo:
@@ -1122,42 +1095,17 @@ components:
       type: object
     N32fErrorType:
       anyOf:
-      - enum:
-        - INTEGRITY_CHECK_FAILED
-        - INTEGRITY_CHECK_ON_MODIFICATIONS_FAILED
-        - MODIFICATIONS_INSTRUCTIONS_FAILED
-        - DECIPHERING_FAILED
-        - MESSAGE_RECONSTRUCTION_FAILED
-        - CONTEXT_NOT_FOUND
-        - INTEGRITY_KEY_EXPIRED
-        - ENCRYPTION_KEY_EXPIRED
-        - POLICY_MISMATCH
-        type: string
+      - $ref: '#/components/schemas/N32fErrorType_anyOf'
       - type: string
       description: Type of error while processing N32-f message
     FailureReason:
       anyOf:
-      - enum:
-        - INVALID_JSON_POINTER
-        - INVALID_INDEX_TO_ENCRYPTED_BLOCK
-        - INVALID_HTTP_HEADER
-        type: string
+      - $ref: '#/components/schemas/FailureReason_anyOf'
       - type: string
       description: Reason for failure to reconstruct a HTTP/2 message from N32-f message
     N32Purpose:
       anyOf:
-      - enum:
-        - ROAMING
-        - INTER_PLMN_MOBILITY
-        - SMS_INTERCONNECT
-        - ROAMING_TEST
-        - INTER_PLMN_MOBILITY_TEST
-        - SMS_INTERCONNECT_TEST
-        - SNPN_INTERCONNECT
-        - SNPN_INTERCONNECT_TEST
-        - DISASTER_ROAMING
-        - DISASTER_ROAMING_TEST
-        type: string
+      - $ref: '#/components/schemas/N32Purpose_anyOf'
       - type: string
       description: Usage purpose of establishing N32 connectivity
     ProblemDetails:
@@ -1440,64 +1388,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     Snssai:
@@ -1551,3 +1442,136 @@ components:
         \ a-z), digits (0-9) and/or the hyphen (-) and that shall end \n  with either\
         \ an alphabetic character or a digit.\n"
       type: string
+    SecurityCapability_anyOf:
+      enum:
+      - TLS
+      - PRINS
+      - NONE
+      type: string
+      example: null
+    HttpMethod_anyOf:
+      enum:
+      - GET
+      - PUT
+      - POST
+      - DELETE
+      - PATCH
+      - HEAD
+      - OPTIONS
+      - CONNECT
+      - TRACE
+      type: string
+      example: null
+    IeType_anyOf:
+      enum:
+      - UEID
+      - LOCATION
+      - KEY_MATERIAL
+      - AUTHENTICATION_MATERIAL
+      - AUTHORIZATION_TOKEN
+      - OTHER
+      - NONSENSITIVE
+      type: string
+      example: null
+    IeLocation_anyOf:
+      enum:
+      - URI_PARAM
+      - HEADER
+      - BODY
+      - MULTIPART_BINARY
+      type: string
+      example: null
+    N32fErrorType_anyOf:
+      enum:
+      - INTEGRITY_CHECK_FAILED
+      - INTEGRITY_CHECK_ON_MODIFICATIONS_FAILED
+      - MODIFICATIONS_INSTRUCTIONS_FAILED
+      - DECIPHERING_FAILED
+      - MESSAGE_RECONSTRUCTION_FAILED
+      - CONTEXT_NOT_FOUND
+      - INTEGRITY_KEY_EXPIRED
+      - ENCRYPTION_KEY_EXPIRED
+      - POLICY_MISMATCH
+      type: string
+      example: null
+    FailureReason_anyOf:
+      enum:
+      - INVALID_JSON_POINTER
+      - INVALID_INDEX_TO_ENCRYPTED_BLOCK
+      - INVALID_HTTP_HEADER
+      type: string
+      example: null
+    N32Purpose_anyOf:
+      enum:
+      - ROAMING
+      - INTER_PLMN_MOBILITY
+      - SMS_INTERCONNECT
+      - ROAMING_TEST
+      - INTER_PLMN_MOBILITY_TEST
+      - SMS_INTERCONNECT_TEST
+      - SNPN_INTERCONNECT
+      - SNPN_INTERCONNECT_TEST
+      - DISASTER_ROAMING
+      - DISASTER_ROAMING_TEST
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null

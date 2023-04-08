@@ -19,7 +19,7 @@ var _ MappedNullable = &NgeirFunctionSingleAllOf{}
 
 // NgeirFunctionSingleAllOf struct for NgeirFunctionSingleAllOf
 type NgeirFunctionSingleAllOf struct {
-	Attributes *NgeirFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewNgeirFunctionSingleAllOf instantiates a new NgeirFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewNgeirFunctionSingleAllOfWithDefaults() *NgeirFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *NgeirFunctionSingleAllOf) GetAttributes() NgeirFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret NgeirFunctionSingleAllOfAttributes
+func (o *NgeirFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *NgeirFunctionSingleAllOf) GetAttributes() NgeirFunctionSingleAllOfAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NgeirFunctionSingleAllOf) GetAttributesOk() (*NgeirFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *NgeirFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *NgeirFunctionSingleAllOf) GetAttributesOk() (*NgeirFunctionSingleAllOfA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NgeirFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given NgeirFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *NgeirFunctionSingleAllOf) SetAttributes(v NgeirFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *NgeirFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o NgeirFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o NgeirFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

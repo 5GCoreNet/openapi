@@ -45,7 +45,7 @@ func NewUpuData1WithDefaults() *UpuData1 {
 
 // GetSecPacket returns the SecPacket field value if set, zero value otherwise.
 func (o *UpuData1) GetSecPacket() string {
-	if o == nil || IsNil(o.SecPacket) {
+	if o == nil || isNil(o.SecPacket) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *UpuData1) GetSecPacket() string {
 // GetSecPacketOk returns a tuple with the SecPacket field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData1) GetSecPacketOk() (*string, bool) {
-	if o == nil || IsNil(o.SecPacket) {
+	if o == nil || isNil(o.SecPacket) {
 		return nil, false
 	}
 	return o.SecPacket, true
@@ -63,7 +63,7 @@ func (o *UpuData1) GetSecPacketOk() (*string, bool) {
 
 // HasSecPacket returns a boolean if a field has been set.
 func (o *UpuData1) HasSecPacket() bool {
-	if o != nil && !IsNil(o.SecPacket) {
+	if o != nil && !isNil(o.SecPacket) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *UpuData1) SetSecPacket(v string) {
 
 // GetDefaultConfNssai returns the DefaultConfNssai field value if set, zero value otherwise.
 func (o *UpuData1) GetDefaultConfNssai() []Snssai {
-	if o == nil || IsNil(o.DefaultConfNssai) {
+	if o == nil || isNil(o.DefaultConfNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *UpuData1) GetDefaultConfNssai() []Snssai {
 // GetDefaultConfNssaiOk returns a tuple with the DefaultConfNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData1) GetDefaultConfNssaiOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.DefaultConfNssai) {
+	if o == nil || isNil(o.DefaultConfNssai) {
 		return nil, false
 	}
 	return o.DefaultConfNssai, true
@@ -95,7 +95,7 @@ func (o *UpuData1) GetDefaultConfNssaiOk() ([]Snssai, bool) {
 
 // HasDefaultConfNssai returns a boolean if a field has been set.
 func (o *UpuData1) HasDefaultConfNssai() bool {
-	if o != nil && !IsNil(o.DefaultConfNssai) {
+	if o != nil && !isNil(o.DefaultConfNssai) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *UpuData1) SetDefaultConfNssai(v []Snssai) {
 
 // GetRoutingId returns the RoutingId field value if set, zero value otherwise.
 func (o *UpuData1) GetRoutingId() string {
-	if o == nil || IsNil(o.RoutingId) {
+	if o == nil || isNil(o.RoutingId) {
 		var ret string
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *UpuData1) GetRoutingId() string {
 // GetRoutingIdOk returns a tuple with the RoutingId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuData1) GetRoutingIdOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingId) {
+	if o == nil || isNil(o.RoutingId) {
 		return nil, false
 	}
 	return o.RoutingId, true
@@ -127,7 +127,7 @@ func (o *UpuData1) GetRoutingIdOk() (*string, bool) {
 
 // HasRoutingId returns a boolean if a field has been set.
 func (o *UpuData1) HasRoutingId() bool {
-	if o != nil && !IsNil(o.RoutingId) {
+	if o != nil && !isNil(o.RoutingId) {
 		return true
 	}
 
@@ -149,13 +149,13 @@ func (o UpuData1) MarshalJSON() ([]byte, error) {
 
 func (o UpuData1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SecPacket) {
+	if !isNil(o.SecPacket) {
 		toSerialize["secPacket"] = o.SecPacket
 	}
-	if !IsNil(o.DefaultConfNssai) {
+	if !isNil(o.DefaultConfNssai) {
 		toSerialize["defaultConfNssai"] = o.DefaultConfNssai
 	}
-	if !IsNil(o.RoutingId) {
+	if !isNil(o.RoutingId) {
 		toSerialize["routingId"] = o.RoutingId
 	}
 	return toSerialize, nil

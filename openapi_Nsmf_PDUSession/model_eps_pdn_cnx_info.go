@@ -73,7 +73,7 @@ func (o *EpsPdnCnxInfo) SetPgwS8cFteid(v string) {
 
 // GetPgwNodeName returns the PgwNodeName field value if set, zero value otherwise.
 func (o *EpsPdnCnxInfo) GetPgwNodeName() string {
-	if o == nil || IsNil(o.PgwNodeName) {
+	if o == nil || isNil(o.PgwNodeName) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *EpsPdnCnxInfo) GetPgwNodeName() string {
 // GetPgwNodeNameOk returns a tuple with the PgwNodeName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpsPdnCnxInfo) GetPgwNodeNameOk() (*string, bool) {
-	if o == nil || IsNil(o.PgwNodeName) {
+	if o == nil || isNil(o.PgwNodeName) {
 		return nil, false
 	}
 	return o.PgwNodeName, true
@@ -91,7 +91,7 @@ func (o *EpsPdnCnxInfo) GetPgwNodeNameOk() (*string, bool) {
 
 // HasPgwNodeName returns a boolean if a field has been set.
 func (o *EpsPdnCnxInfo) HasPgwNodeName() bool {
-	if o != nil && !IsNil(o.PgwNodeName) {
+	if o != nil && !isNil(o.PgwNodeName) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *EpsPdnCnxInfo) SetPgwNodeName(v string) {
 
 // GetPgwChangeInfo returns the PgwChangeInfo field value if set, zero value otherwise.
 func (o *EpsPdnCnxInfo) GetPgwChangeInfo() string {
-	if o == nil || IsNil(o.PgwChangeInfo) {
+	if o == nil || isNil(o.PgwChangeInfo) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *EpsPdnCnxInfo) GetPgwChangeInfo() string {
 // GetPgwChangeInfoOk returns a tuple with the PgwChangeInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpsPdnCnxInfo) GetPgwChangeInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.PgwChangeInfo) {
+	if o == nil || isNil(o.PgwChangeInfo) {
 		return nil, false
 	}
 	return o.PgwChangeInfo, true
@@ -123,7 +123,7 @@ func (o *EpsPdnCnxInfo) GetPgwChangeInfoOk() (*string, bool) {
 
 // HasPgwChangeInfo returns a boolean if a field has been set.
 func (o *EpsPdnCnxInfo) HasPgwChangeInfo() bool {
-	if o != nil && !IsNil(o.PgwChangeInfo) {
+	if o != nil && !isNil(o.PgwChangeInfo) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *EpsPdnCnxInfo) SetPgwChangeInfo(v string) {
 
 // GetLinkedBearerId returns the LinkedBearerId field value if set, zero value otherwise.
 func (o *EpsPdnCnxInfo) GetLinkedBearerId() int32 {
-	if o == nil || IsNil(o.LinkedBearerId) {
+	if o == nil || isNil(o.LinkedBearerId) {
 		var ret int32
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *EpsPdnCnxInfo) GetLinkedBearerId() int32 {
 // GetLinkedBearerIdOk returns a tuple with the LinkedBearerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EpsPdnCnxInfo) GetLinkedBearerIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.LinkedBearerId) {
+	if o == nil || isNil(o.LinkedBearerId) {
 		return nil, false
 	}
 	return o.LinkedBearerId, true
@@ -155,7 +155,7 @@ func (o *EpsPdnCnxInfo) GetLinkedBearerIdOk() (*int32, bool) {
 
 // HasLinkedBearerId returns a boolean if a field has been set.
 func (o *EpsPdnCnxInfo) HasLinkedBearerId() bool {
-	if o != nil && !IsNil(o.LinkedBearerId) {
+	if o != nil && !isNil(o.LinkedBearerId) {
 		return true
 	}
 
@@ -178,13 +178,13 @@ func (o EpsPdnCnxInfo) MarshalJSON() ([]byte, error) {
 func (o EpsPdnCnxInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["pgwS8cFteid"] = o.PgwS8cFteid
-	if !IsNil(o.PgwNodeName) {
+	if !isNil(o.PgwNodeName) {
 		toSerialize["pgwNodeName"] = o.PgwNodeName
 	}
-	if !IsNil(o.PgwChangeInfo) {
+	if !isNil(o.PgwChangeInfo) {
 		toSerialize["pgwChangeInfo"] = o.PgwChangeInfo
 	}
-	if !IsNil(o.LinkedBearerId) {
+	if !isNil(o.LinkedBearerId) {
 		toSerialize["linkedBearerId"] = o.LinkedBearerId
 	}
 	return toSerialize, nil

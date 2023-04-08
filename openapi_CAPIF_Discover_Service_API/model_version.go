@@ -74,7 +74,7 @@ func (o *Version) SetApiVersion(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *Version) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *Version) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Version) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -92,7 +92,7 @@ func (o *Version) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *Version) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *Version) SetExpiry(v time.Time) {
 
 // GetResources returns the Resources field value if set, zero value otherwise.
 func (o *Version) GetResources() []Resource {
-	if o == nil || IsNil(o.Resources) {
+	if o == nil || isNil(o.Resources) {
 		var ret []Resource
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *Version) GetResources() []Resource {
 // GetResourcesOk returns a tuple with the Resources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Version) GetResourcesOk() ([]Resource, bool) {
-	if o == nil || IsNil(o.Resources) {
+	if o == nil || isNil(o.Resources) {
 		return nil, false
 	}
 	return o.Resources, true
@@ -124,7 +124,7 @@ func (o *Version) GetResourcesOk() ([]Resource, bool) {
 
 // HasResources returns a boolean if a field has been set.
 func (o *Version) HasResources() bool {
-	if o != nil && !IsNil(o.Resources) {
+	if o != nil && !isNil(o.Resources) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *Version) SetResources(v []Resource) {
 
 // GetCustOperations returns the CustOperations field value if set, zero value otherwise.
 func (o *Version) GetCustOperations() []CustomOperation {
-	if o == nil || IsNil(o.CustOperations) {
+	if o == nil || isNil(o.CustOperations) {
 		var ret []CustomOperation
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *Version) GetCustOperations() []CustomOperation {
 // GetCustOperationsOk returns a tuple with the CustOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Version) GetCustOperationsOk() ([]CustomOperation, bool) {
-	if o == nil || IsNil(o.CustOperations) {
+	if o == nil || isNil(o.CustOperations) {
 		return nil, false
 	}
 	return o.CustOperations, true
@@ -156,7 +156,7 @@ func (o *Version) GetCustOperationsOk() ([]CustomOperation, bool) {
 
 // HasCustOperations returns a boolean if a field has been set.
 func (o *Version) HasCustOperations() bool {
-	if o != nil && !IsNil(o.CustOperations) {
+	if o != nil && !isNil(o.CustOperations) {
 		return true
 	}
 
@@ -179,13 +179,13 @@ func (o Version) MarshalJSON() ([]byte, error) {
 func (o Version) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiVersion"] = o.ApiVersion
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.Resources) {
+	if !isNil(o.Resources) {
 		toSerialize["resources"] = o.Resources
 	}
-	if !IsNil(o.CustOperations) {
+	if !isNil(o.CustOperations) {
 		toSerialize["custOperations"] = o.CustOperations
 	}
 	return toSerialize, nil

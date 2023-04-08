@@ -21,7 +21,7 @@ var _ MappedNullable = &SendMtSMSRequest{}
 // SendMtSMSRequest struct for SendMtSMSRequest
 type SendMtSMSRequest struct {
 	JsonData *SmsData `json:"jsonData,omitempty"`
-	BinaryPayload **os.File `json:"binaryPayload,omitempty"`
+	BinaryPayload *os.File `json:"binaryPayload,omitempty"`
 }
 
 // NewSendMtSMSRequest instantiates a new SendMtSMSRequest object
@@ -43,7 +43,7 @@ func NewSendMtSMSRequestWithDefaults() *SendMtSMSRequest {
 
 // GetJsonData returns the JsonData field value if set, zero value otherwise.
 func (o *SendMtSMSRequest) GetJsonData() SmsData {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		var ret SmsData
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SendMtSMSRequest) GetJsonData() SmsData {
 // GetJsonDataOk returns a tuple with the JsonData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SendMtSMSRequest) GetJsonDataOk() (*SmsData, bool) {
-	if o == nil || IsNil(o.JsonData) {
+	if o == nil || isNil(o.JsonData) {
 		return nil, false
 	}
 	return o.JsonData, true
@@ -61,7 +61,7 @@ func (o *SendMtSMSRequest) GetJsonDataOk() (*SmsData, bool) {
 
 // HasJsonData returns a boolean if a field has been set.
 func (o *SendMtSMSRequest) HasJsonData() bool {
-	if o != nil && !IsNil(o.JsonData) {
+	if o != nil && !isNil(o.JsonData) {
 		return true
 	}
 
@@ -74,9 +74,9 @@ func (o *SendMtSMSRequest) SetJsonData(v SmsData) {
 }
 
 // GetBinaryPayload returns the BinaryPayload field value if set, zero value otherwise.
-func (o *SendMtSMSRequest) GetBinaryPayload() *os.File {
-	if o == nil || IsNil(o.BinaryPayload) {
-		var ret *os.File
+func (o *SendMtSMSRequest) GetBinaryPayload() os.File {
+	if o == nil || isNil(o.BinaryPayload) {
+		var ret os.File
 		return ret
 	}
 	return *o.BinaryPayload
@@ -84,8 +84,8 @@ func (o *SendMtSMSRequest) GetBinaryPayload() *os.File {
 
 // GetBinaryPayloadOk returns a tuple with the BinaryPayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SendMtSMSRequest) GetBinaryPayloadOk() (**os.File, bool) {
-	if o == nil || IsNil(o.BinaryPayload) {
+func (o *SendMtSMSRequest) GetBinaryPayloadOk() (*os.File, bool) {
+	if o == nil || isNil(o.BinaryPayload) {
 		return nil, false
 	}
 	return o.BinaryPayload, true
@@ -93,15 +93,15 @@ func (o *SendMtSMSRequest) GetBinaryPayloadOk() (**os.File, bool) {
 
 // HasBinaryPayload returns a boolean if a field has been set.
 func (o *SendMtSMSRequest) HasBinaryPayload() bool {
-	if o != nil && !IsNil(o.BinaryPayload) {
+	if o != nil && !isNil(o.BinaryPayload) {
 		return true
 	}
 
 	return false
 }
 
-// SetBinaryPayload gets a reference to the given *os.File and assigns it to the BinaryPayload field.
-func (o *SendMtSMSRequest) SetBinaryPayload(v *os.File) {
+// SetBinaryPayload gets a reference to the given os.File and assigns it to the BinaryPayload field.
+func (o *SendMtSMSRequest) SetBinaryPayload(v os.File) {
 	o.BinaryPayload = &v
 }
 
@@ -115,10 +115,10 @@ func (o SendMtSMSRequest) MarshalJSON() ([]byte, error) {
 
 func (o SendMtSMSRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JsonData) {
+	if !isNil(o.JsonData) {
 		toSerialize["jsonData"] = o.JsonData
 	}
-	if !IsNil(o.BinaryPayload) {
+	if !isNil(o.BinaryPayload) {
 		toSerialize["binaryPayload"] = o.BinaryPayload
 	}
 	return toSerialize, nil

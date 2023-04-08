@@ -13,7 +13,7 @@ package openapi_Nsmf_NIDD
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -37,8 +37,8 @@ func (r ApiDeliverRequest) JsonData(jsonData DeliverReqData) ApiDeliverRequest {
 	return r
 }
 
-func (r ApiDeliverRequest) BinaryMtData(binaryMtData *os.File) ApiDeliverRequest {
-	r.binaryMtData = binaryMtData
+func (r ApiDeliverRequest) BinaryMtData(binaryMtData os.File) ApiDeliverRequest {
+	r.binaryMtData = &binaryMtData
 	return r
 }
 
@@ -111,17 +111,17 @@ func (a *IndividualPDUSessionApiService) DeliverExecute(r ApiDeliverRequest) (*h
 
 	binaryMtDataLocalVarFormFileName = "binaryMtData"
 
-
-	binaryMtDataLocalVarFile := r.binaryMtData
-
+	var binaryMtDataLocalVarFile *os.File
+	if r.binaryMtData != nil {
+		binaryMtDataLocalVarFile = r.binaryMtData
+	}
 	if binaryMtDataLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryMtDataLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryMtDataLocalVarFile)
 		binaryMtDataLocalVarFileBytes = fbs
 		binaryMtDataLocalVarFileName = binaryMtDataLocalVarFile.Name()
 		binaryMtDataLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryMtDataLocalVarFileBytes, fileName: binaryMtDataLocalVarFileName, formFileName: binaryMtDataLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryMtDataLocalVarFileBytes, fileName: binaryMtDataLocalVarFileName, formFileName: binaryMtDataLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err
@@ -132,9 +132,9 @@ func (a *IndividualPDUSessionApiService) DeliverExecute(r ApiDeliverRequest) (*h
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

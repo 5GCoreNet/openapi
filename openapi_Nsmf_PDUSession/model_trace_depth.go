@@ -17,23 +17,37 @@ import (
 
 // TraceDepth The enumeration TraceDepth defines how detailed information should be recorded in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.1-1 
 type TraceDepth struct {
-	string *string
+	TraceDepthAnyOf *TraceDepthAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *TraceDepth) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into TraceDepthAnyOf
+	err = json.Unmarshal(data, &dst.TraceDepthAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonTraceDepthAnyOf, _ := json.Marshal(dst.TraceDepthAnyOf)
+		if string(jsonTraceDepthAnyOf) == "{}" { // empty struct
+			dst.TraceDepthAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.TraceDepthAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.TraceDepthAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(TraceDepth)")
@@ -41,8 +55,12 @@ func (dst *TraceDepth) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *TraceDepth) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.TraceDepthAnyOf != nil {
+		return json.Marshal(&src.TraceDepthAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

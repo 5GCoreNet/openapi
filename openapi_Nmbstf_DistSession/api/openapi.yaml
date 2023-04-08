@@ -1648,55 +1648,32 @@ components:
       type: object
     DistSessionState:
       anyOf:
-      - enum:
-        - INACTIVE
-        - ESTABLISHED
-        - ACTIVE
-        - DEACTIVATING
-        type: string
+      - $ref: '#/components/schemas/DistSessionState_anyOf'
       - type: string
       description: Current State of MBS distribution session
     ObjDistributionOperatingMode:
       anyOf:
-      - enum:
-        - SINGLE
-        - COLLECTION
-        - CAROUSEL
-        - STREAMING
-        type: string
+      - $ref: '#/components/schemas/ObjDistributionOperatingMode_anyOf'
       - type: string
       description: Mode of data ingestion for Object distribution method
     ObjAcquisitionMethod:
       anyOf:
-      - enum:
-        - PULL
-        - PUSH
-        type: string
+      - $ref: '#/components/schemas/ObjAcquisitionMethod_anyOf'
       - type: string
       description: Object Acquisition Method
     PktDistributionOperatingMode:
       anyOf:
-      - enum:
-        - PACKET_PROXY
-        - PACKET_FORWARD_ONLY
-        type: string
+      - $ref: '#/components/schemas/PktDistributionOperatingMode_anyOf'
       - type: string
       description: Mode of data ingestion for Packet distribution method
     DistSessionEventType:
       anyOf:
-      - enum:
-        - DATA_INGEST_FAILURE
-        - SESSION_DEACTIVATED
-        - SESSION_ACTIVATED
-        type: string
+      - $ref: '#/components/schemas/DistSessionEventType_anyOf'
       - type: string
       description: Status Event Type
     PktIngestMethod:
       anyOf:
-      - enum:
-        - MULTICAST
-        - UNICAST
-        type: string
+      - $ref: '#/components/schemas/PktIngestMethod_anyOf'
       - type: string
       description: Packet Ingest Method
     RedirectResponse:
@@ -1814,14 +1791,7 @@ components:
       type: object
     PatchOperation:
       anyOf:
-      - enum:
-        - add
-        - copy
-        - move
-        - remove
-        - replace
-        - test
-        type: string
+      - $ref: '#/components/schemas/PatchOperation_anyOf'
       - type: string
       description: Operations as defined in IETF RFC 6902.
     TunnelAddress:
@@ -2158,64 +2128,7 @@ components:
       type: object
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     PlmnId:
@@ -2335,6 +2248,117 @@ components:
       allOf:
       - $ref: '#/components/schemas/ExtSsm'
       writeOnly: true
+    DistSessionState_anyOf:
+      enum:
+      - INACTIVE
+      - ESTABLISHED
+      - ACTIVE
+      - DEACTIVATING
+      type: string
+      example: null
+    ObjDistributionOperatingMode_anyOf:
+      enum:
+      - SINGLE
+      - COLLECTION
+      - CAROUSEL
+      - STREAMING
+      type: string
+      example: null
+    ObjAcquisitionMethod_anyOf:
+      enum:
+      - PULL
+      - PUSH
+      type: string
+      example: null
+    PktDistributionOperatingMode_anyOf:
+      enum:
+      - PACKET_PROXY
+      - PACKET_FORWARD_ONLY
+      type: string
+      example: null
+    DistSessionEventType_anyOf:
+      enum:
+      - DATA_INGEST_FAILURE
+      - SESSION_DEACTIVATED
+      - SESSION_ACTIVATED
+      type: string
+      example: null
+    PktIngestMethod_anyOf:
+      enum:
+      - MULTICAST
+      - UNICAST
+      type: string
+      example: null
+    PatchOperation_anyOf:
+      enum:
+      - add
+      - copy
+      - move
+      - remove
+      - replace
+      - test
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

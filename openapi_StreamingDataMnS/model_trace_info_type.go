@@ -97,7 +97,7 @@ func NewTraceInfoTypeWithDefaults() *TraceInfoType {
 
 // GetJobType returns the JobType field value if set, zero value otherwise.
 func (o *TraceInfoType) GetJobType() JobTypeType {
-	if o == nil || IsNil(o.JobType) {
+	if o == nil || isNil(o.JobType) {
 		var ret JobTypeType
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *TraceInfoType) GetJobType() JobTypeType {
 // GetJobTypeOk returns a tuple with the JobType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetJobTypeOk() (*JobTypeType, bool) {
-	if o == nil || IsNil(o.JobType) {
+	if o == nil || isNil(o.JobType) {
 		return nil, false
 	}
 	return o.JobType, true
@@ -115,7 +115,7 @@ func (o *TraceInfoType) GetJobTypeOk() (*JobTypeType, bool) {
 
 // HasJobType returns a boolean if a field has been set.
 func (o *TraceInfoType) HasJobType() bool {
-	if o != nil && !IsNil(o.JobType) {
+	if o != nil && !isNil(o.JobType) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *TraceInfoType) SetJobType(v JobTypeType) {
 
 // GetListOfInterfaces returns the ListOfInterfaces field value if set, zero value otherwise.
 func (o *TraceInfoType) GetListOfInterfaces() ListOfInterfacesType {
-	if o == nil || IsNil(o.ListOfInterfaces) {
+	if o == nil || isNil(o.ListOfInterfaces) {
 		var ret ListOfInterfacesType
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *TraceInfoType) GetListOfInterfaces() ListOfInterfacesType {
 // GetListOfInterfacesOk returns a tuple with the ListOfInterfaces field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetListOfInterfacesOk() (*ListOfInterfacesType, bool) {
-	if o == nil || IsNil(o.ListOfInterfaces) {
+	if o == nil || isNil(o.ListOfInterfaces) {
 		return nil, false
 	}
 	return o.ListOfInterfaces, true
@@ -147,7 +147,7 @@ func (o *TraceInfoType) GetListOfInterfacesOk() (*ListOfInterfacesType, bool) {
 
 // HasListOfInterfaces returns a boolean if a field has been set.
 func (o *TraceInfoType) HasListOfInterfaces() bool {
-	if o != nil && !IsNil(o.ListOfInterfaces) {
+	if o != nil && !isNil(o.ListOfInterfaces) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *TraceInfoType) SetListOfInterfaces(v ListOfInterfacesType) {
 
 // GetListOfNeTypes returns the ListOfNeTypes field value if set, zero value otherwise.
 func (o *TraceInfoType) GetListOfNeTypes() []string {
-	if o == nil || IsNil(o.ListOfNeTypes) {
+	if o == nil || isNil(o.ListOfNeTypes) {
 		var ret []string
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *TraceInfoType) GetListOfNeTypes() []string {
 // GetListOfNeTypesOk returns a tuple with the ListOfNeTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetListOfNeTypesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ListOfNeTypes) {
+	if o == nil || isNil(o.ListOfNeTypes) {
 		return nil, false
 	}
 	return o.ListOfNeTypes, true
@@ -179,7 +179,7 @@ func (o *TraceInfoType) GetListOfNeTypesOk() ([]string, bool) {
 
 // HasListOfNeTypes returns a boolean if a field has been set.
 func (o *TraceInfoType) HasListOfNeTypes() bool {
-	if o != nil && !IsNil(o.ListOfNeTypes) {
+	if o != nil && !isNil(o.ListOfNeTypes) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *TraceInfoType) SetListOfNeTypes(v []string) {
 
 // GetPlmnTarget returns the PlmnTarget field value if set, zero value otherwise.
 func (o *TraceInfoType) GetPlmnTarget() PlmnTargetType {
-	if o == nil || IsNil(o.PlmnTarget) {
+	if o == nil || isNil(o.PlmnTarget) {
 		var ret PlmnTargetType
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *TraceInfoType) GetPlmnTarget() PlmnTargetType {
 // GetPlmnTargetOk returns a tuple with the PlmnTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetPlmnTargetOk() (*PlmnTargetType, bool) {
-	if o == nil || IsNil(o.PlmnTarget) {
+	if o == nil || isNil(o.PlmnTarget) {
 		return nil, false
 	}
 	return o.PlmnTarget, true
@@ -211,7 +211,7 @@ func (o *TraceInfoType) GetPlmnTargetOk() (*PlmnTargetType, bool) {
 
 // HasPlmnTarget returns a boolean if a field has been set.
 func (o *TraceInfoType) HasPlmnTarget() bool {
-	if o != nil && !IsNil(o.PlmnTarget) {
+	if o != nil && !isNil(o.PlmnTarget) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *TraceInfoType) SetPlmnTarget(v PlmnTargetType) {
 
 // GetTraceReportingConsumerUri returns the TraceReportingConsumerUri field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceReportingConsumerUri() string {
-	if o == nil || IsNil(o.TraceReportingConsumerUri) {
+	if o == nil || isNil(o.TraceReportingConsumerUri) {
 		var ret string
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *TraceInfoType) GetTraceReportingConsumerUri() string {
 // GetTraceReportingConsumerUriOk returns a tuple with the TraceReportingConsumerUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceReportingConsumerUriOk() (*string, bool) {
-	if o == nil || IsNil(o.TraceReportingConsumerUri) {
+	if o == nil || isNil(o.TraceReportingConsumerUri) {
 		return nil, false
 	}
 	return o.TraceReportingConsumerUri, true
@@ -243,7 +243,7 @@ func (o *TraceInfoType) GetTraceReportingConsumerUriOk() (*string, bool) {
 
 // HasTraceReportingConsumerUri returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceReportingConsumerUri() bool {
-	if o != nil && !IsNil(o.TraceReportingConsumerUri) {
+	if o != nil && !isNil(o.TraceReportingConsumerUri) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *TraceInfoType) SetTraceReportingConsumerUri(v string) {
 
 // GetTraceCollectionEntityIpAddress returns the TraceCollectionEntityIpAddress field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceCollectionEntityIpAddress() IpAddr {
-	if o == nil || IsNil(o.TraceCollectionEntityIpAddress) {
+	if o == nil || isNil(o.TraceCollectionEntityIpAddress) {
 		var ret IpAddr
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *TraceInfoType) GetTraceCollectionEntityIpAddress() IpAddr {
 // GetTraceCollectionEntityIpAddressOk returns a tuple with the TraceCollectionEntityIpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceCollectionEntityIpAddressOk() (*IpAddr, bool) {
-	if o == nil || IsNil(o.TraceCollectionEntityIpAddress) {
+	if o == nil || isNil(o.TraceCollectionEntityIpAddress) {
 		return nil, false
 	}
 	return o.TraceCollectionEntityIpAddress, true
@@ -275,7 +275,7 @@ func (o *TraceInfoType) GetTraceCollectionEntityIpAddressOk() (*IpAddr, bool) {
 
 // HasTraceCollectionEntityIpAddress returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceCollectionEntityIpAddress() bool {
-	if o != nil && !IsNil(o.TraceCollectionEntityIpAddress) {
+	if o != nil && !isNil(o.TraceCollectionEntityIpAddress) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *TraceInfoType) SetTraceCollectionEntityIpAddress(v IpAddr) {
 
 // GetTraceDepth returns the TraceDepth field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceDepth() TraceDepthType {
-	if o == nil || IsNil(o.TraceDepth) {
+	if o == nil || isNil(o.TraceDepth) {
 		var ret TraceDepthType
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *TraceInfoType) GetTraceDepth() TraceDepthType {
 // GetTraceDepthOk returns a tuple with the TraceDepth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceDepthOk() (*TraceDepthType, bool) {
-	if o == nil || IsNil(o.TraceDepth) {
+	if o == nil || isNil(o.TraceDepth) {
 		return nil, false
 	}
 	return o.TraceDepth, true
@@ -307,7 +307,7 @@ func (o *TraceInfoType) GetTraceDepthOk() (*TraceDepthType, bool) {
 
 // HasTraceDepth returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceDepth() bool {
-	if o != nil && !IsNil(o.TraceDepth) {
+	if o != nil && !isNil(o.TraceDepth) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *TraceInfoType) SetTraceDepth(v TraceDepthType) {
 
 // GetTraceReference returns the TraceReference field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceReference() TraceReferenceType1 {
-	if o == nil || IsNil(o.TraceReference) {
+	if o == nil || isNil(o.TraceReference) {
 		var ret TraceReferenceType1
 		return ret
 	}
@@ -331,7 +331,7 @@ func (o *TraceInfoType) GetTraceReference() TraceReferenceType1 {
 // GetTraceReferenceOk returns a tuple with the TraceReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceReferenceOk() (*TraceReferenceType1, bool) {
-	if o == nil || IsNil(o.TraceReference) {
+	if o == nil || isNil(o.TraceReference) {
 		return nil, false
 	}
 	return o.TraceReference, true
@@ -339,7 +339,7 @@ func (o *TraceInfoType) GetTraceReferenceOk() (*TraceReferenceType1, bool) {
 
 // HasTraceReference returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceReference() bool {
-	if o != nil && !IsNil(o.TraceReference) {
+	if o != nil && !isNil(o.TraceReference) {
 		return true
 	}
 
@@ -353,7 +353,7 @@ func (o *TraceInfoType) SetTraceReference(v TraceReferenceType1) {
 
 // GetTraceRecordingSessionReference returns the TraceRecordingSessionReference field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceRecordingSessionReference() string {
-	if o == nil || IsNil(o.TraceRecordingSessionReference) {
+	if o == nil || isNil(o.TraceRecordingSessionReference) {
 		var ret string
 		return ret
 	}
@@ -363,7 +363,7 @@ func (o *TraceInfoType) GetTraceRecordingSessionReference() string {
 // GetTraceRecordingSessionReferenceOk returns a tuple with the TraceRecordingSessionReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceRecordingSessionReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.TraceRecordingSessionReference) {
+	if o == nil || isNil(o.TraceRecordingSessionReference) {
 		return nil, false
 	}
 	return o.TraceRecordingSessionReference, true
@@ -371,7 +371,7 @@ func (o *TraceInfoType) GetTraceRecordingSessionReferenceOk() (*string, bool) {
 
 // HasTraceRecordingSessionReference returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceRecordingSessionReference() bool {
-	if o != nil && !IsNil(o.TraceRecordingSessionReference) {
+	if o != nil && !isNil(o.TraceRecordingSessionReference) {
 		return true
 	}
 
@@ -385,7 +385,7 @@ func (o *TraceInfoType) SetTraceRecordingSessionReference(v string) {
 
 // GetJobId returns the JobId field value if set, zero value otherwise.
 func (o *TraceInfoType) GetJobId() string {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		var ret string
 		return ret
 	}
@@ -395,7 +395,7 @@ func (o *TraceInfoType) GetJobId() string {
 // GetJobIdOk returns a tuple with the JobId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetJobIdOk() (*string, bool) {
-	if o == nil || IsNil(o.JobId) {
+	if o == nil || isNil(o.JobId) {
 		return nil, false
 	}
 	return o.JobId, true
@@ -403,7 +403,7 @@ func (o *TraceInfoType) GetJobIdOk() (*string, bool) {
 
 // HasJobId returns a boolean if a field has been set.
 func (o *TraceInfoType) HasJobId() bool {
-	if o != nil && !IsNil(o.JobId) {
+	if o != nil && !isNil(o.JobId) {
 		return true
 	}
 
@@ -417,7 +417,7 @@ func (o *TraceInfoType) SetJobId(v string) {
 
 // GetTraceReportingFormat returns the TraceReportingFormat field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceReportingFormat() TraceReportingFormatType {
-	if o == nil || IsNil(o.TraceReportingFormat) {
+	if o == nil || isNil(o.TraceReportingFormat) {
 		var ret TraceReportingFormatType
 		return ret
 	}
@@ -427,7 +427,7 @@ func (o *TraceInfoType) GetTraceReportingFormat() TraceReportingFormatType {
 // GetTraceReportingFormatOk returns a tuple with the TraceReportingFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceReportingFormatOk() (*TraceReportingFormatType, bool) {
-	if o == nil || IsNil(o.TraceReportingFormat) {
+	if o == nil || isNil(o.TraceReportingFormat) {
 		return nil, false
 	}
 	return o.TraceReportingFormat, true
@@ -435,7 +435,7 @@ func (o *TraceInfoType) GetTraceReportingFormatOk() (*TraceReportingFormatType, 
 
 // HasTraceReportingFormat returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceReportingFormat() bool {
-	if o != nil && !IsNil(o.TraceReportingFormat) {
+	if o != nil && !isNil(o.TraceReportingFormat) {
 		return true
 	}
 
@@ -449,7 +449,7 @@ func (o *TraceInfoType) SetTraceReportingFormat(v TraceReportingFormatType) {
 
 // GetTraceTarget returns the TraceTarget field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceTarget() TraceTargetType {
-	if o == nil || IsNil(o.TraceTarget) {
+	if o == nil || isNil(o.TraceTarget) {
 		var ret TraceTargetType
 		return ret
 	}
@@ -459,7 +459,7 @@ func (o *TraceInfoType) GetTraceTarget() TraceTargetType {
 // GetTraceTargetOk returns a tuple with the TraceTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceTargetOk() (*TraceTargetType, bool) {
-	if o == nil || IsNil(o.TraceTarget) {
+	if o == nil || isNil(o.TraceTarget) {
 		return nil, false
 	}
 	return o.TraceTarget, true
@@ -467,7 +467,7 @@ func (o *TraceInfoType) GetTraceTargetOk() (*TraceTargetType, bool) {
 
 // HasTraceTarget returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceTarget() bool {
-	if o != nil && !IsNil(o.TraceTarget) {
+	if o != nil && !isNil(o.TraceTarget) {
 		return true
 	}
 
@@ -481,7 +481,7 @@ func (o *TraceInfoType) SetTraceTarget(v TraceTargetType) {
 
 // GetTriggeringEvents returns the TriggeringEvents field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTriggeringEvents() TriggeringEventsType {
-	if o == nil || IsNil(o.TriggeringEvents) {
+	if o == nil || isNil(o.TriggeringEvents) {
 		var ret TriggeringEventsType
 		return ret
 	}
@@ -491,7 +491,7 @@ func (o *TraceInfoType) GetTriggeringEvents() TriggeringEventsType {
 // GetTriggeringEventsOk returns a tuple with the TriggeringEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTriggeringEventsOk() (*TriggeringEventsType, bool) {
-	if o == nil || IsNil(o.TriggeringEvents) {
+	if o == nil || isNil(o.TriggeringEvents) {
 		return nil, false
 	}
 	return o.TriggeringEvents, true
@@ -499,7 +499,7 @@ func (o *TraceInfoType) GetTriggeringEventsOk() (*TriggeringEventsType, bool) {
 
 // HasTriggeringEvents returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTriggeringEvents() bool {
-	if o != nil && !IsNil(o.TriggeringEvents) {
+	if o != nil && !isNil(o.TriggeringEvents) {
 		return true
 	}
 
@@ -513,7 +513,7 @@ func (o *TraceInfoType) SetTriggeringEvents(v TriggeringEventsType) {
 
 // GetAnonymizationOfMdtData returns the AnonymizationOfMdtData field value if set, zero value otherwise.
 func (o *TraceInfoType) GetAnonymizationOfMdtData() AnonymizationOfMdtDataType {
-	if o == nil || IsNil(o.AnonymizationOfMdtData) {
+	if o == nil || isNil(o.AnonymizationOfMdtData) {
 		var ret AnonymizationOfMdtDataType
 		return ret
 	}
@@ -523,7 +523,7 @@ func (o *TraceInfoType) GetAnonymizationOfMdtData() AnonymizationOfMdtDataType {
 // GetAnonymizationOfMdtDataOk returns a tuple with the AnonymizationOfMdtData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetAnonymizationOfMdtDataOk() (*AnonymizationOfMdtDataType, bool) {
-	if o == nil || IsNil(o.AnonymizationOfMdtData) {
+	if o == nil || isNil(o.AnonymizationOfMdtData) {
 		return nil, false
 	}
 	return o.AnonymizationOfMdtData, true
@@ -531,7 +531,7 @@ func (o *TraceInfoType) GetAnonymizationOfMdtDataOk() (*AnonymizationOfMdtDataTy
 
 // HasAnonymizationOfMdtData returns a boolean if a field has been set.
 func (o *TraceInfoType) HasAnonymizationOfMdtData() bool {
-	if o != nil && !IsNil(o.AnonymizationOfMdtData) {
+	if o != nil && !isNil(o.AnonymizationOfMdtData) {
 		return true
 	}
 
@@ -545,7 +545,7 @@ func (o *TraceInfoType) SetAnonymizationOfMdtData(v AnonymizationOfMdtDataType) 
 
 // GetAreaConfigurationForNeighCell returns the AreaConfigurationForNeighCell field value if set, zero value otherwise.
 func (o *TraceInfoType) GetAreaConfigurationForNeighCell() AreaConfig {
-	if o == nil || IsNil(o.AreaConfigurationForNeighCell) {
+	if o == nil || isNil(o.AreaConfigurationForNeighCell) {
 		var ret AreaConfig
 		return ret
 	}
@@ -555,7 +555,7 @@ func (o *TraceInfoType) GetAreaConfigurationForNeighCell() AreaConfig {
 // GetAreaConfigurationForNeighCellOk returns a tuple with the AreaConfigurationForNeighCell field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetAreaConfigurationForNeighCellOk() (*AreaConfig, bool) {
-	if o == nil || IsNil(o.AreaConfigurationForNeighCell) {
+	if o == nil || isNil(o.AreaConfigurationForNeighCell) {
 		return nil, false
 	}
 	return o.AreaConfigurationForNeighCell, true
@@ -563,7 +563,7 @@ func (o *TraceInfoType) GetAreaConfigurationForNeighCellOk() (*AreaConfig, bool)
 
 // HasAreaConfigurationForNeighCell returns a boolean if a field has been set.
 func (o *TraceInfoType) HasAreaConfigurationForNeighCell() bool {
-	if o != nil && !IsNil(o.AreaConfigurationForNeighCell) {
+	if o != nil && !isNil(o.AreaConfigurationForNeighCell) {
 		return true
 	}
 
@@ -577,7 +577,7 @@ func (o *TraceInfoType) SetAreaConfigurationForNeighCell(v AreaConfig) {
 
 // GetAreaScope returns the AreaScope field value if set, zero value otherwise.
 func (o *TraceInfoType) GetAreaScope() []AreaScope {
-	if o == nil || IsNil(o.AreaScope) {
+	if o == nil || isNil(o.AreaScope) {
 		var ret []AreaScope
 		return ret
 	}
@@ -587,7 +587,7 @@ func (o *TraceInfoType) GetAreaScope() []AreaScope {
 // GetAreaScopeOk returns a tuple with the AreaScope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetAreaScopeOk() ([]AreaScope, bool) {
-	if o == nil || IsNil(o.AreaScope) {
+	if o == nil || isNil(o.AreaScope) {
 		return nil, false
 	}
 	return o.AreaScope, true
@@ -595,7 +595,7 @@ func (o *TraceInfoType) GetAreaScopeOk() ([]AreaScope, bool) {
 
 // HasAreaScope returns a boolean if a field has been set.
 func (o *TraceInfoType) HasAreaScope() bool {
-	if o != nil && !IsNil(o.AreaScope) {
+	if o != nil && !isNil(o.AreaScope) {
 		return true
 	}
 
@@ -609,7 +609,7 @@ func (o *TraceInfoType) SetAreaScope(v []AreaScope) {
 
 // GetBeamLevelMeasurement returns the BeamLevelMeasurement field value if set, zero value otherwise.
 func (o *TraceInfoType) GetBeamLevelMeasurement() bool {
-	if o == nil || IsNil(o.BeamLevelMeasurement) {
+	if o == nil || isNil(o.BeamLevelMeasurement) {
 		var ret bool
 		return ret
 	}
@@ -619,7 +619,7 @@ func (o *TraceInfoType) GetBeamLevelMeasurement() bool {
 // GetBeamLevelMeasurementOk returns a tuple with the BeamLevelMeasurement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetBeamLevelMeasurementOk() (*bool, bool) {
-	if o == nil || IsNil(o.BeamLevelMeasurement) {
+	if o == nil || isNil(o.BeamLevelMeasurement) {
 		return nil, false
 	}
 	return o.BeamLevelMeasurement, true
@@ -627,7 +627,7 @@ func (o *TraceInfoType) GetBeamLevelMeasurementOk() (*bool, bool) {
 
 // HasBeamLevelMeasurement returns a boolean if a field has been set.
 func (o *TraceInfoType) HasBeamLevelMeasurement() bool {
-	if o != nil && !IsNil(o.BeamLevelMeasurement) {
+	if o != nil && !isNil(o.BeamLevelMeasurement) {
 		return true
 	}
 
@@ -641,7 +641,7 @@ func (o *TraceInfoType) SetBeamLevelMeasurement(v bool) {
 
 // GetCollectionPeriodRrmLte returns the CollectionPeriodRrmLte field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodRrmLte() CollectionPeriodRrmLteType {
-	if o == nil || IsNil(o.CollectionPeriodRrmLte) {
+	if o == nil || isNil(o.CollectionPeriodRrmLte) {
 		var ret CollectionPeriodRrmLteType
 		return ret
 	}
@@ -651,7 +651,7 @@ func (o *TraceInfoType) GetCollectionPeriodRrmLte() CollectionPeriodRrmLteType {
 // GetCollectionPeriodRrmLteOk returns a tuple with the CollectionPeriodRrmLte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodRrmLteOk() (*CollectionPeriodRrmLteType, bool) {
-	if o == nil || IsNil(o.CollectionPeriodRrmLte) {
+	if o == nil || isNil(o.CollectionPeriodRrmLte) {
 		return nil, false
 	}
 	return o.CollectionPeriodRrmLte, true
@@ -659,7 +659,7 @@ func (o *TraceInfoType) GetCollectionPeriodRrmLteOk() (*CollectionPeriodRrmLteTy
 
 // HasCollectionPeriodRrmLte returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodRrmLte() bool {
-	if o != nil && !IsNil(o.CollectionPeriodRrmLte) {
+	if o != nil && !isNil(o.CollectionPeriodRrmLte) {
 		return true
 	}
 
@@ -673,7 +673,7 @@ func (o *TraceInfoType) SetCollectionPeriodRrmLte(v CollectionPeriodRrmLteType) 
 
 // GetCollectionPeriodM6Lte returns the CollectionPeriodM6Lte field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodM6Lte() CollectionPeriodM6LteType {
-	if o == nil || IsNil(o.CollectionPeriodM6Lte) {
+	if o == nil || isNil(o.CollectionPeriodM6Lte) {
 		var ret CollectionPeriodM6LteType
 		return ret
 	}
@@ -683,7 +683,7 @@ func (o *TraceInfoType) GetCollectionPeriodM6Lte() CollectionPeriodM6LteType {
 // GetCollectionPeriodM6LteOk returns a tuple with the CollectionPeriodM6Lte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodM6LteOk() (*CollectionPeriodM6LteType, bool) {
-	if o == nil || IsNil(o.CollectionPeriodM6Lte) {
+	if o == nil || isNil(o.CollectionPeriodM6Lte) {
 		return nil, false
 	}
 	return o.CollectionPeriodM6Lte, true
@@ -691,7 +691,7 @@ func (o *TraceInfoType) GetCollectionPeriodM6LteOk() (*CollectionPeriodM6LteType
 
 // HasCollectionPeriodM6Lte returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodM6Lte() bool {
-	if o != nil && !IsNil(o.CollectionPeriodM6Lte) {
+	if o != nil && !isNil(o.CollectionPeriodM6Lte) {
 		return true
 	}
 
@@ -705,7 +705,7 @@ func (o *TraceInfoType) SetCollectionPeriodM6Lte(v CollectionPeriodM6LteType) {
 
 // GetCollectionPeriodM7Lte returns the CollectionPeriodM7Lte field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodM7Lte() int32 {
-	if o == nil || IsNil(o.CollectionPeriodM7Lte) {
+	if o == nil || isNil(o.CollectionPeriodM7Lte) {
 		var ret int32
 		return ret
 	}
@@ -715,7 +715,7 @@ func (o *TraceInfoType) GetCollectionPeriodM7Lte() int32 {
 // GetCollectionPeriodM7LteOk returns a tuple with the CollectionPeriodM7Lte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodM7LteOk() (*int32, bool) {
-	if o == nil || IsNil(o.CollectionPeriodM7Lte) {
+	if o == nil || isNil(o.CollectionPeriodM7Lte) {
 		return nil, false
 	}
 	return o.CollectionPeriodM7Lte, true
@@ -723,7 +723,7 @@ func (o *TraceInfoType) GetCollectionPeriodM7LteOk() (*int32, bool) {
 
 // HasCollectionPeriodM7Lte returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodM7Lte() bool {
-	if o != nil && !IsNil(o.CollectionPeriodM7Lte) {
+	if o != nil && !isNil(o.CollectionPeriodM7Lte) {
 		return true
 	}
 
@@ -737,7 +737,7 @@ func (o *TraceInfoType) SetCollectionPeriodM7Lte(v int32) {
 
 // GetCollectionPeriodRrmUmts returns the CollectionPeriodRrmUmts field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodRrmUmts() CollectionPeriodRrmUmtsType {
-	if o == nil || IsNil(o.CollectionPeriodRrmUmts) {
+	if o == nil || isNil(o.CollectionPeriodRrmUmts) {
 		var ret CollectionPeriodRrmUmtsType
 		return ret
 	}
@@ -747,7 +747,7 @@ func (o *TraceInfoType) GetCollectionPeriodRrmUmts() CollectionPeriodRrmUmtsType
 // GetCollectionPeriodRrmUmtsOk returns a tuple with the CollectionPeriodRrmUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodRrmUmtsOk() (*CollectionPeriodRrmUmtsType, bool) {
-	if o == nil || IsNil(o.CollectionPeriodRrmUmts) {
+	if o == nil || isNil(o.CollectionPeriodRrmUmts) {
 		return nil, false
 	}
 	return o.CollectionPeriodRrmUmts, true
@@ -755,7 +755,7 @@ func (o *TraceInfoType) GetCollectionPeriodRrmUmtsOk() (*CollectionPeriodRrmUmts
 
 // HasCollectionPeriodRrmUmts returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodRrmUmts() bool {
-	if o != nil && !IsNil(o.CollectionPeriodRrmUmts) {
+	if o != nil && !isNil(o.CollectionPeriodRrmUmts) {
 		return true
 	}
 
@@ -769,7 +769,7 @@ func (o *TraceInfoType) SetCollectionPeriodRrmUmts(v CollectionPeriodRrmUmtsType
 
 // GetCollectionPeriodRrmNr returns the CollectionPeriodRrmNr field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodRrmNr() CollectionPeriodRrmNrType {
-	if o == nil || IsNil(o.CollectionPeriodRrmNr) {
+	if o == nil || isNil(o.CollectionPeriodRrmNr) {
 		var ret CollectionPeriodRrmNrType
 		return ret
 	}
@@ -779,7 +779,7 @@ func (o *TraceInfoType) GetCollectionPeriodRrmNr() CollectionPeriodRrmNrType {
 // GetCollectionPeriodRrmNrOk returns a tuple with the CollectionPeriodRrmNr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodRrmNrOk() (*CollectionPeriodRrmNrType, bool) {
-	if o == nil || IsNil(o.CollectionPeriodRrmNr) {
+	if o == nil || isNil(o.CollectionPeriodRrmNr) {
 		return nil, false
 	}
 	return o.CollectionPeriodRrmNr, true
@@ -787,7 +787,7 @@ func (o *TraceInfoType) GetCollectionPeriodRrmNrOk() (*CollectionPeriodRrmNrType
 
 // HasCollectionPeriodRrmNr returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodRrmNr() bool {
-	if o != nil && !IsNil(o.CollectionPeriodRrmNr) {
+	if o != nil && !isNil(o.CollectionPeriodRrmNr) {
 		return true
 	}
 
@@ -801,7 +801,7 @@ func (o *TraceInfoType) SetCollectionPeriodRrmNr(v CollectionPeriodRrmNrType) {
 
 // GetCollectionPeriodM6Nr returns the CollectionPeriodM6Nr field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodM6Nr() CollectionPeriodM6NrType {
-	if o == nil || IsNil(o.CollectionPeriodM6Nr) {
+	if o == nil || isNil(o.CollectionPeriodM6Nr) {
 		var ret CollectionPeriodM6NrType
 		return ret
 	}
@@ -811,7 +811,7 @@ func (o *TraceInfoType) GetCollectionPeriodM6Nr() CollectionPeriodM6NrType {
 // GetCollectionPeriodM6NrOk returns a tuple with the CollectionPeriodM6Nr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodM6NrOk() (*CollectionPeriodM6NrType, bool) {
-	if o == nil || IsNil(o.CollectionPeriodM6Nr) {
+	if o == nil || isNil(o.CollectionPeriodM6Nr) {
 		return nil, false
 	}
 	return o.CollectionPeriodM6Nr, true
@@ -819,7 +819,7 @@ func (o *TraceInfoType) GetCollectionPeriodM6NrOk() (*CollectionPeriodM6NrType, 
 
 // HasCollectionPeriodM6Nr returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodM6Nr() bool {
-	if o != nil && !IsNil(o.CollectionPeriodM6Nr) {
+	if o != nil && !isNil(o.CollectionPeriodM6Nr) {
 		return true
 	}
 
@@ -833,7 +833,7 @@ func (o *TraceInfoType) SetCollectionPeriodM6Nr(v CollectionPeriodM6NrType) {
 
 // GetCollectionPeriodM7Nr returns the CollectionPeriodM7Nr field value if set, zero value otherwise.
 func (o *TraceInfoType) GetCollectionPeriodM7Nr() int32 {
-	if o == nil || IsNil(o.CollectionPeriodM7Nr) {
+	if o == nil || isNil(o.CollectionPeriodM7Nr) {
 		var ret int32
 		return ret
 	}
@@ -843,7 +843,7 @@ func (o *TraceInfoType) GetCollectionPeriodM7Nr() int32 {
 // GetCollectionPeriodM7NrOk returns a tuple with the CollectionPeriodM7Nr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetCollectionPeriodM7NrOk() (*int32, bool) {
-	if o == nil || IsNil(o.CollectionPeriodM7Nr) {
+	if o == nil || isNil(o.CollectionPeriodM7Nr) {
 		return nil, false
 	}
 	return o.CollectionPeriodM7Nr, true
@@ -851,7 +851,7 @@ func (o *TraceInfoType) GetCollectionPeriodM7NrOk() (*int32, bool) {
 
 // HasCollectionPeriodM7Nr returns a boolean if a field has been set.
 func (o *TraceInfoType) HasCollectionPeriodM7Nr() bool {
-	if o != nil && !IsNil(o.CollectionPeriodM7Nr) {
+	if o != nil && !isNil(o.CollectionPeriodM7Nr) {
 		return true
 	}
 
@@ -865,7 +865,7 @@ func (o *TraceInfoType) SetCollectionPeriodM7Nr(v int32) {
 
 // GetEventListForEventTriggeredMeasurement returns the EventListForEventTriggeredMeasurement field value if set, zero value otherwise.
 func (o *TraceInfoType) GetEventListForEventTriggeredMeasurement() EventListForEventTriggeredMeasurementType {
-	if o == nil || IsNil(o.EventListForEventTriggeredMeasurement) {
+	if o == nil || isNil(o.EventListForEventTriggeredMeasurement) {
 		var ret EventListForEventTriggeredMeasurementType
 		return ret
 	}
@@ -875,7 +875,7 @@ func (o *TraceInfoType) GetEventListForEventTriggeredMeasurement() EventListForE
 // GetEventListForEventTriggeredMeasurementOk returns a tuple with the EventListForEventTriggeredMeasurement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetEventListForEventTriggeredMeasurementOk() (*EventListForEventTriggeredMeasurementType, bool) {
-	if o == nil || IsNil(o.EventListForEventTriggeredMeasurement) {
+	if o == nil || isNil(o.EventListForEventTriggeredMeasurement) {
 		return nil, false
 	}
 	return o.EventListForEventTriggeredMeasurement, true
@@ -883,7 +883,7 @@ func (o *TraceInfoType) GetEventListForEventTriggeredMeasurementOk() (*EventList
 
 // HasEventListForEventTriggeredMeasurement returns a boolean if a field has been set.
 func (o *TraceInfoType) HasEventListForEventTriggeredMeasurement() bool {
-	if o != nil && !IsNil(o.EventListForEventTriggeredMeasurement) {
+	if o != nil && !isNil(o.EventListForEventTriggeredMeasurement) {
 		return true
 	}
 
@@ -897,7 +897,7 @@ func (o *TraceInfoType) SetEventListForEventTriggeredMeasurement(v EventListForE
 
 // GetEventThreshold returns the EventThreshold field value if set, zero value otherwise.
 func (o *TraceInfoType) GetEventThreshold() EventThresholdType {
-	if o == nil || IsNil(o.EventThreshold) {
+	if o == nil || isNil(o.EventThreshold) {
 		var ret EventThresholdType
 		return ret
 	}
@@ -907,7 +907,7 @@ func (o *TraceInfoType) GetEventThreshold() EventThresholdType {
 // GetEventThresholdOk returns a tuple with the EventThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetEventThresholdOk() (*EventThresholdType, bool) {
-	if o == nil || IsNil(o.EventThreshold) {
+	if o == nil || isNil(o.EventThreshold) {
 		return nil, false
 	}
 	return o.EventThreshold, true
@@ -915,7 +915,7 @@ func (o *TraceInfoType) GetEventThresholdOk() (*EventThresholdType, bool) {
 
 // HasEventThreshold returns a boolean if a field has been set.
 func (o *TraceInfoType) HasEventThreshold() bool {
-	if o != nil && !IsNil(o.EventThreshold) {
+	if o != nil && !isNil(o.EventThreshold) {
 		return true
 	}
 
@@ -929,7 +929,7 @@ func (o *TraceInfoType) SetEventThreshold(v EventThresholdType) {
 
 // GetListOfMeasurements returns the ListOfMeasurements field value if set, zero value otherwise.
 func (o *TraceInfoType) GetListOfMeasurements() ListOfMeasurementsType {
-	if o == nil || IsNil(o.ListOfMeasurements) {
+	if o == nil || isNil(o.ListOfMeasurements) {
 		var ret ListOfMeasurementsType
 		return ret
 	}
@@ -939,7 +939,7 @@ func (o *TraceInfoType) GetListOfMeasurements() ListOfMeasurementsType {
 // GetListOfMeasurementsOk returns a tuple with the ListOfMeasurements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetListOfMeasurementsOk() (*ListOfMeasurementsType, bool) {
-	if o == nil || IsNil(o.ListOfMeasurements) {
+	if o == nil || isNil(o.ListOfMeasurements) {
 		return nil, false
 	}
 	return o.ListOfMeasurements, true
@@ -947,7 +947,7 @@ func (o *TraceInfoType) GetListOfMeasurementsOk() (*ListOfMeasurementsType, bool
 
 // HasListOfMeasurements returns a boolean if a field has been set.
 func (o *TraceInfoType) HasListOfMeasurements() bool {
-	if o != nil && !IsNil(o.ListOfMeasurements) {
+	if o != nil && !isNil(o.ListOfMeasurements) {
 		return true
 	}
 
@@ -961,7 +961,7 @@ func (o *TraceInfoType) SetListOfMeasurements(v ListOfMeasurementsType) {
 
 // GetLoggingDuration returns the LoggingDuration field value if set, zero value otherwise.
 func (o *TraceInfoType) GetLoggingDuration() LoggingDurationType {
-	if o == nil || IsNil(o.LoggingDuration) {
+	if o == nil || isNil(o.LoggingDuration) {
 		var ret LoggingDurationType
 		return ret
 	}
@@ -971,7 +971,7 @@ func (o *TraceInfoType) GetLoggingDuration() LoggingDurationType {
 // GetLoggingDurationOk returns a tuple with the LoggingDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetLoggingDurationOk() (*LoggingDurationType, bool) {
-	if o == nil || IsNil(o.LoggingDuration) {
+	if o == nil || isNil(o.LoggingDuration) {
 		return nil, false
 	}
 	return o.LoggingDuration, true
@@ -979,7 +979,7 @@ func (o *TraceInfoType) GetLoggingDurationOk() (*LoggingDurationType, bool) {
 
 // HasLoggingDuration returns a boolean if a field has been set.
 func (o *TraceInfoType) HasLoggingDuration() bool {
-	if o != nil && !IsNil(o.LoggingDuration) {
+	if o != nil && !isNil(o.LoggingDuration) {
 		return true
 	}
 
@@ -993,7 +993,7 @@ func (o *TraceInfoType) SetLoggingDuration(v LoggingDurationType) {
 
 // GetLoggingInterval returns the LoggingInterval field value if set, zero value otherwise.
 func (o *TraceInfoType) GetLoggingInterval() LoggingIntervalType {
-	if o == nil || IsNil(o.LoggingInterval) {
+	if o == nil || isNil(o.LoggingInterval) {
 		var ret LoggingIntervalType
 		return ret
 	}
@@ -1003,7 +1003,7 @@ func (o *TraceInfoType) GetLoggingInterval() LoggingIntervalType {
 // GetLoggingIntervalOk returns a tuple with the LoggingInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetLoggingIntervalOk() (*LoggingIntervalType, bool) {
-	if o == nil || IsNil(o.LoggingInterval) {
+	if o == nil || isNil(o.LoggingInterval) {
 		return nil, false
 	}
 	return o.LoggingInterval, true
@@ -1011,7 +1011,7 @@ func (o *TraceInfoType) GetLoggingIntervalOk() (*LoggingIntervalType, bool) {
 
 // HasLoggingInterval returns a boolean if a field has been set.
 func (o *TraceInfoType) HasLoggingInterval() bool {
-	if o != nil && !IsNil(o.LoggingInterval) {
+	if o != nil && !isNil(o.LoggingInterval) {
 		return true
 	}
 
@@ -1025,7 +1025,7 @@ func (o *TraceInfoType) SetLoggingInterval(v LoggingIntervalType) {
 
 // GetEventThresholdL1 returns the EventThresholdL1 field value if set, zero value otherwise.
 func (o *TraceInfoType) GetEventThresholdL1() EventThresholdL1Type {
-	if o == nil || IsNil(o.EventThresholdL1) {
+	if o == nil || isNil(o.EventThresholdL1) {
 		var ret EventThresholdL1Type
 		return ret
 	}
@@ -1035,7 +1035,7 @@ func (o *TraceInfoType) GetEventThresholdL1() EventThresholdL1Type {
 // GetEventThresholdL1Ok returns a tuple with the EventThresholdL1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetEventThresholdL1Ok() (*EventThresholdL1Type, bool) {
-	if o == nil || IsNil(o.EventThresholdL1) {
+	if o == nil || isNil(o.EventThresholdL1) {
 		return nil, false
 	}
 	return o.EventThresholdL1, true
@@ -1043,7 +1043,7 @@ func (o *TraceInfoType) GetEventThresholdL1Ok() (*EventThresholdL1Type, bool) {
 
 // HasEventThresholdL1 returns a boolean if a field has been set.
 func (o *TraceInfoType) HasEventThresholdL1() bool {
-	if o != nil && !IsNil(o.EventThresholdL1) {
+	if o != nil && !isNil(o.EventThresholdL1) {
 		return true
 	}
 
@@ -1057,7 +1057,7 @@ func (o *TraceInfoType) SetEventThresholdL1(v EventThresholdL1Type) {
 
 // GetHysteresisL1 returns the HysteresisL1 field value if set, zero value otherwise.
 func (o *TraceInfoType) GetHysteresisL1() int32 {
-	if o == nil || IsNil(o.HysteresisL1) {
+	if o == nil || isNil(o.HysteresisL1) {
 		var ret int32
 		return ret
 	}
@@ -1067,7 +1067,7 @@ func (o *TraceInfoType) GetHysteresisL1() int32 {
 // GetHysteresisL1Ok returns a tuple with the HysteresisL1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetHysteresisL1Ok() (*int32, bool) {
-	if o == nil || IsNil(o.HysteresisL1) {
+	if o == nil || isNil(o.HysteresisL1) {
 		return nil, false
 	}
 	return o.HysteresisL1, true
@@ -1075,7 +1075,7 @@ func (o *TraceInfoType) GetHysteresisL1Ok() (*int32, bool) {
 
 // HasHysteresisL1 returns a boolean if a field has been set.
 func (o *TraceInfoType) HasHysteresisL1() bool {
-	if o != nil && !IsNil(o.HysteresisL1) {
+	if o != nil && !isNil(o.HysteresisL1) {
 		return true
 	}
 
@@ -1089,7 +1089,7 @@ func (o *TraceInfoType) SetHysteresisL1(v int32) {
 
 // GetTimeToTriggerL1 returns the TimeToTriggerL1 field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTimeToTriggerL1() TimeToTriggerL1Type {
-	if o == nil || IsNil(o.TimeToTriggerL1) {
+	if o == nil || isNil(o.TimeToTriggerL1) {
 		var ret TimeToTriggerL1Type
 		return ret
 	}
@@ -1099,7 +1099,7 @@ func (o *TraceInfoType) GetTimeToTriggerL1() TimeToTriggerL1Type {
 // GetTimeToTriggerL1Ok returns a tuple with the TimeToTriggerL1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTimeToTriggerL1Ok() (*TimeToTriggerL1Type, bool) {
-	if o == nil || IsNil(o.TimeToTriggerL1) {
+	if o == nil || isNil(o.TimeToTriggerL1) {
 		return nil, false
 	}
 	return o.TimeToTriggerL1, true
@@ -1107,7 +1107,7 @@ func (o *TraceInfoType) GetTimeToTriggerL1Ok() (*TimeToTriggerL1Type, bool) {
 
 // HasTimeToTriggerL1 returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTimeToTriggerL1() bool {
-	if o != nil && !IsNil(o.TimeToTriggerL1) {
+	if o != nil && !isNil(o.TimeToTriggerL1) {
 		return true
 	}
 
@@ -1121,7 +1121,7 @@ func (o *TraceInfoType) SetTimeToTriggerL1(v TimeToTriggerL1Type) {
 
 // GetMbsfnAreaList returns the MbsfnAreaList field value if set, zero value otherwise.
 func (o *TraceInfoType) GetMbsfnAreaList() []MbsfnArea {
-	if o == nil || IsNil(o.MbsfnAreaList) {
+	if o == nil || isNil(o.MbsfnAreaList) {
 		var ret []MbsfnArea
 		return ret
 	}
@@ -1131,7 +1131,7 @@ func (o *TraceInfoType) GetMbsfnAreaList() []MbsfnArea {
 // GetMbsfnAreaListOk returns a tuple with the MbsfnAreaList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetMbsfnAreaListOk() ([]MbsfnArea, bool) {
-	if o == nil || IsNil(o.MbsfnAreaList) {
+	if o == nil || isNil(o.MbsfnAreaList) {
 		return nil, false
 	}
 	return o.MbsfnAreaList, true
@@ -1139,7 +1139,7 @@ func (o *TraceInfoType) GetMbsfnAreaListOk() ([]MbsfnArea, bool) {
 
 // HasMbsfnAreaList returns a boolean if a field has been set.
 func (o *TraceInfoType) HasMbsfnAreaList() bool {
-	if o != nil && !IsNil(o.MbsfnAreaList) {
+	if o != nil && !isNil(o.MbsfnAreaList) {
 		return true
 	}
 
@@ -1153,7 +1153,7 @@ func (o *TraceInfoType) SetMbsfnAreaList(v []MbsfnArea) {
 
 // GetMeasurementPeriodLte returns the MeasurementPeriodLte field value if set, zero value otherwise.
 func (o *TraceInfoType) GetMeasurementPeriodLte() MeasurementPeriodLteType {
-	if o == nil || IsNil(o.MeasurementPeriodLte) {
+	if o == nil || isNil(o.MeasurementPeriodLte) {
 		var ret MeasurementPeriodLteType
 		return ret
 	}
@@ -1163,7 +1163,7 @@ func (o *TraceInfoType) GetMeasurementPeriodLte() MeasurementPeriodLteType {
 // GetMeasurementPeriodLteOk returns a tuple with the MeasurementPeriodLte field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetMeasurementPeriodLteOk() (*MeasurementPeriodLteType, bool) {
-	if o == nil || IsNil(o.MeasurementPeriodLte) {
+	if o == nil || isNil(o.MeasurementPeriodLte) {
 		return nil, false
 	}
 	return o.MeasurementPeriodLte, true
@@ -1171,7 +1171,7 @@ func (o *TraceInfoType) GetMeasurementPeriodLteOk() (*MeasurementPeriodLteType, 
 
 // HasMeasurementPeriodLte returns a boolean if a field has been set.
 func (o *TraceInfoType) HasMeasurementPeriodLte() bool {
-	if o != nil && !IsNil(o.MeasurementPeriodLte) {
+	if o != nil && !isNil(o.MeasurementPeriodLte) {
 		return true
 	}
 
@@ -1185,7 +1185,7 @@ func (o *TraceInfoType) SetMeasurementPeriodLte(v MeasurementPeriodLteType) {
 
 // GetMeasurementPeriodUmts returns the MeasurementPeriodUmts field value if set, zero value otherwise.
 func (o *TraceInfoType) GetMeasurementPeriodUmts() MeasurementPeriodUmtsType {
-	if o == nil || IsNil(o.MeasurementPeriodUmts) {
+	if o == nil || isNil(o.MeasurementPeriodUmts) {
 		var ret MeasurementPeriodUmtsType
 		return ret
 	}
@@ -1195,7 +1195,7 @@ func (o *TraceInfoType) GetMeasurementPeriodUmts() MeasurementPeriodUmtsType {
 // GetMeasurementPeriodUmtsOk returns a tuple with the MeasurementPeriodUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetMeasurementPeriodUmtsOk() (*MeasurementPeriodUmtsType, bool) {
-	if o == nil || IsNil(o.MeasurementPeriodUmts) {
+	if o == nil || isNil(o.MeasurementPeriodUmts) {
 		return nil, false
 	}
 	return o.MeasurementPeriodUmts, true
@@ -1203,7 +1203,7 @@ func (o *TraceInfoType) GetMeasurementPeriodUmtsOk() (*MeasurementPeriodUmtsType
 
 // HasMeasurementPeriodUmts returns a boolean if a field has been set.
 func (o *TraceInfoType) HasMeasurementPeriodUmts() bool {
-	if o != nil && !IsNil(o.MeasurementPeriodUmts) {
+	if o != nil && !isNil(o.MeasurementPeriodUmts) {
 		return true
 	}
 
@@ -1217,7 +1217,7 @@ func (o *TraceInfoType) SetMeasurementPeriodUmts(v MeasurementPeriodUmtsType) {
 
 // GetMeasurementQuantity returns the MeasurementQuantity field value if set, zero value otherwise.
 func (o *TraceInfoType) GetMeasurementQuantity() MeasurementQuantityType {
-	if o == nil || IsNil(o.MeasurementQuantity) {
+	if o == nil || isNil(o.MeasurementQuantity) {
 		var ret MeasurementQuantityType
 		return ret
 	}
@@ -1227,7 +1227,7 @@ func (o *TraceInfoType) GetMeasurementQuantity() MeasurementQuantityType {
 // GetMeasurementQuantityOk returns a tuple with the MeasurementQuantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetMeasurementQuantityOk() (*MeasurementQuantityType, bool) {
-	if o == nil || IsNil(o.MeasurementQuantity) {
+	if o == nil || isNil(o.MeasurementQuantity) {
 		return nil, false
 	}
 	return o.MeasurementQuantity, true
@@ -1235,7 +1235,7 @@ func (o *TraceInfoType) GetMeasurementQuantityOk() (*MeasurementQuantityType, bo
 
 // HasMeasurementQuantity returns a boolean if a field has been set.
 func (o *TraceInfoType) HasMeasurementQuantity() bool {
-	if o != nil && !IsNil(o.MeasurementQuantity) {
+	if o != nil && !isNil(o.MeasurementQuantity) {
 		return true
 	}
 
@@ -1249,7 +1249,7 @@ func (o *TraceInfoType) SetMeasurementQuantity(v MeasurementQuantityType) {
 
 // GetEventThresholdUphUmts returns the EventThresholdUphUmts field value if set, zero value otherwise.
 func (o *TraceInfoType) GetEventThresholdUphUmts() int32 {
-	if o == nil || IsNil(o.EventThresholdUphUmts) {
+	if o == nil || isNil(o.EventThresholdUphUmts) {
 		var ret int32
 		return ret
 	}
@@ -1259,7 +1259,7 @@ func (o *TraceInfoType) GetEventThresholdUphUmts() int32 {
 // GetEventThresholdUphUmtsOk returns a tuple with the EventThresholdUphUmts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetEventThresholdUphUmtsOk() (*int32, bool) {
-	if o == nil || IsNil(o.EventThresholdUphUmts) {
+	if o == nil || isNil(o.EventThresholdUphUmts) {
 		return nil, false
 	}
 	return o.EventThresholdUphUmts, true
@@ -1267,7 +1267,7 @@ func (o *TraceInfoType) GetEventThresholdUphUmtsOk() (*int32, bool) {
 
 // HasEventThresholdUphUmts returns a boolean if a field has been set.
 func (o *TraceInfoType) HasEventThresholdUphUmts() bool {
-	if o != nil && !IsNil(o.EventThresholdUphUmts) {
+	if o != nil && !isNil(o.EventThresholdUphUmts) {
 		return true
 	}
 
@@ -1281,7 +1281,7 @@ func (o *TraceInfoType) SetEventThresholdUphUmts(v int32) {
 
 // GetPlmnList returns the PlmnList field value if set, zero value otherwise.
 func (o *TraceInfoType) GetPlmnList() []PlmnListTypeInner {
-	if o == nil || IsNil(o.PlmnList) {
+	if o == nil || isNil(o.PlmnList) {
 		var ret []PlmnListTypeInner
 		return ret
 	}
@@ -1291,7 +1291,7 @@ func (o *TraceInfoType) GetPlmnList() []PlmnListTypeInner {
 // GetPlmnListOk returns a tuple with the PlmnList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetPlmnListOk() ([]PlmnListTypeInner, bool) {
-	if o == nil || IsNil(o.PlmnList) {
+	if o == nil || isNil(o.PlmnList) {
 		return nil, false
 	}
 	return o.PlmnList, true
@@ -1299,7 +1299,7 @@ func (o *TraceInfoType) GetPlmnListOk() ([]PlmnListTypeInner, bool) {
 
 // HasPlmnList returns a boolean if a field has been set.
 func (o *TraceInfoType) HasPlmnList() bool {
-	if o != nil && !IsNil(o.PlmnList) {
+	if o != nil && !isNil(o.PlmnList) {
 		return true
 	}
 
@@ -1313,7 +1313,7 @@ func (o *TraceInfoType) SetPlmnList(v []PlmnListTypeInner) {
 
 // GetPositioningMethod returns the PositioningMethod field value if set, zero value otherwise.
 func (o *TraceInfoType) GetPositioningMethod() PositioningMethodType {
-	if o == nil || IsNil(o.PositioningMethod) {
+	if o == nil || isNil(o.PositioningMethod) {
 		var ret PositioningMethodType
 		return ret
 	}
@@ -1323,7 +1323,7 @@ func (o *TraceInfoType) GetPositioningMethod() PositioningMethodType {
 // GetPositioningMethodOk returns a tuple with the PositioningMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetPositioningMethodOk() (*PositioningMethodType, bool) {
-	if o == nil || IsNil(o.PositioningMethod) {
+	if o == nil || isNil(o.PositioningMethod) {
 		return nil, false
 	}
 	return o.PositioningMethod, true
@@ -1331,7 +1331,7 @@ func (o *TraceInfoType) GetPositioningMethodOk() (*PositioningMethodType, bool) 
 
 // HasPositioningMethod returns a boolean if a field has been set.
 func (o *TraceInfoType) HasPositioningMethod() bool {
-	if o != nil && !IsNil(o.PositioningMethod) {
+	if o != nil && !isNil(o.PositioningMethod) {
 		return true
 	}
 
@@ -1345,7 +1345,7 @@ func (o *TraceInfoType) SetPositioningMethod(v PositioningMethodType) {
 
 // GetReportAmount returns the ReportAmount field value if set, zero value otherwise.
 func (o *TraceInfoType) GetReportAmount() ReportAmountType {
-	if o == nil || IsNil(o.ReportAmount) {
+	if o == nil || isNil(o.ReportAmount) {
 		var ret ReportAmountType
 		return ret
 	}
@@ -1355,7 +1355,7 @@ func (o *TraceInfoType) GetReportAmount() ReportAmountType {
 // GetReportAmountOk returns a tuple with the ReportAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetReportAmountOk() (*ReportAmountType, bool) {
-	if o == nil || IsNil(o.ReportAmount) {
+	if o == nil || isNil(o.ReportAmount) {
 		return nil, false
 	}
 	return o.ReportAmount, true
@@ -1363,7 +1363,7 @@ func (o *TraceInfoType) GetReportAmountOk() (*ReportAmountType, bool) {
 
 // HasReportAmount returns a boolean if a field has been set.
 func (o *TraceInfoType) HasReportAmount() bool {
-	if o != nil && !IsNil(o.ReportAmount) {
+	if o != nil && !isNil(o.ReportAmount) {
 		return true
 	}
 
@@ -1377,7 +1377,7 @@ func (o *TraceInfoType) SetReportAmount(v ReportAmountType) {
 
 // GetReportingTrigger returns the ReportingTrigger field value if set, zero value otherwise.
 func (o *TraceInfoType) GetReportingTrigger() []string {
-	if o == nil || IsNil(o.ReportingTrigger) {
+	if o == nil || isNil(o.ReportingTrigger) {
 		var ret []string
 		return ret
 	}
@@ -1387,7 +1387,7 @@ func (o *TraceInfoType) GetReportingTrigger() []string {
 // GetReportingTriggerOk returns a tuple with the ReportingTrigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetReportingTriggerOk() ([]string, bool) {
-	if o == nil || IsNil(o.ReportingTrigger) {
+	if o == nil || isNil(o.ReportingTrigger) {
 		return nil, false
 	}
 	return o.ReportingTrigger, true
@@ -1395,7 +1395,7 @@ func (o *TraceInfoType) GetReportingTriggerOk() ([]string, bool) {
 
 // HasReportingTrigger returns a boolean if a field has been set.
 func (o *TraceInfoType) HasReportingTrigger() bool {
-	if o != nil && !IsNil(o.ReportingTrigger) {
+	if o != nil && !isNil(o.ReportingTrigger) {
 		return true
 	}
 
@@ -1409,7 +1409,7 @@ func (o *TraceInfoType) SetReportingTrigger(v []string) {
 
 // GetReportInterval returns the ReportInterval field value if set, zero value otherwise.
 func (o *TraceInfoType) GetReportInterval() ReportIntervalType {
-	if o == nil || IsNil(o.ReportInterval) {
+	if o == nil || isNil(o.ReportInterval) {
 		var ret ReportIntervalType
 		return ret
 	}
@@ -1419,7 +1419,7 @@ func (o *TraceInfoType) GetReportInterval() ReportIntervalType {
 // GetReportIntervalOk returns a tuple with the ReportInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetReportIntervalOk() (*ReportIntervalType, bool) {
-	if o == nil || IsNil(o.ReportInterval) {
+	if o == nil || isNil(o.ReportInterval) {
 		return nil, false
 	}
 	return o.ReportInterval, true
@@ -1427,7 +1427,7 @@ func (o *TraceInfoType) GetReportIntervalOk() (*ReportIntervalType, bool) {
 
 // HasReportInterval returns a boolean if a field has been set.
 func (o *TraceInfoType) HasReportInterval() bool {
-	if o != nil && !IsNil(o.ReportInterval) {
+	if o != nil && !isNil(o.ReportInterval) {
 		return true
 	}
 
@@ -1441,7 +1441,7 @@ func (o *TraceInfoType) SetReportInterval(v ReportIntervalType) {
 
 // GetReportType returns the ReportType field value if set, zero value otherwise.
 func (o *TraceInfoType) GetReportType() ReportTypeType {
-	if o == nil || IsNil(o.ReportType) {
+	if o == nil || isNil(o.ReportType) {
 		var ret ReportTypeType
 		return ret
 	}
@@ -1451,7 +1451,7 @@ func (o *TraceInfoType) GetReportType() ReportTypeType {
 // GetReportTypeOk returns a tuple with the ReportType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetReportTypeOk() (*ReportTypeType, bool) {
-	if o == nil || IsNil(o.ReportType) {
+	if o == nil || isNil(o.ReportType) {
 		return nil, false
 	}
 	return o.ReportType, true
@@ -1459,7 +1459,7 @@ func (o *TraceInfoType) GetReportTypeOk() (*ReportTypeType, bool) {
 
 // HasReportType returns a boolean if a field has been set.
 func (o *TraceInfoType) HasReportType() bool {
-	if o != nil && !IsNil(o.ReportType) {
+	if o != nil && !isNil(o.ReportType) {
 		return true
 	}
 
@@ -1473,7 +1473,7 @@ func (o *TraceInfoType) SetReportType(v ReportTypeType) {
 
 // GetSensorInformation returns the SensorInformation field value if set, zero value otherwise.
 func (o *TraceInfoType) GetSensorInformation() []string {
-	if o == nil || IsNil(o.SensorInformation) {
+	if o == nil || isNil(o.SensorInformation) {
 		var ret []string
 		return ret
 	}
@@ -1483,7 +1483,7 @@ func (o *TraceInfoType) GetSensorInformation() []string {
 // GetSensorInformationOk returns a tuple with the SensorInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetSensorInformationOk() ([]string, bool) {
-	if o == nil || IsNil(o.SensorInformation) {
+	if o == nil || isNil(o.SensorInformation) {
 		return nil, false
 	}
 	return o.SensorInformation, true
@@ -1491,7 +1491,7 @@ func (o *TraceInfoType) GetSensorInformationOk() ([]string, bool) {
 
 // HasSensorInformation returns a boolean if a field has been set.
 func (o *TraceInfoType) HasSensorInformation() bool {
-	if o != nil && !IsNil(o.SensorInformation) {
+	if o != nil && !isNil(o.SensorInformation) {
 		return true
 	}
 
@@ -1505,7 +1505,7 @@ func (o *TraceInfoType) SetSensorInformation(v []string) {
 
 // GetTraceCollectionEntityId returns the TraceCollectionEntityId field value if set, zero value otherwise.
 func (o *TraceInfoType) GetTraceCollectionEntityId() int32 {
-	if o == nil || IsNil(o.TraceCollectionEntityId) {
+	if o == nil || isNil(o.TraceCollectionEntityId) {
 		var ret int32
 		return ret
 	}
@@ -1515,7 +1515,7 @@ func (o *TraceInfoType) GetTraceCollectionEntityId() int32 {
 // GetTraceCollectionEntityIdOk returns a tuple with the TraceCollectionEntityId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetTraceCollectionEntityIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.TraceCollectionEntityId) {
+	if o == nil || isNil(o.TraceCollectionEntityId) {
 		return nil, false
 	}
 	return o.TraceCollectionEntityId, true
@@ -1523,7 +1523,7 @@ func (o *TraceInfoType) GetTraceCollectionEntityIdOk() (*int32, bool) {
 
 // HasTraceCollectionEntityId returns a boolean if a field has been set.
 func (o *TraceInfoType) HasTraceCollectionEntityId() bool {
-	if o != nil && !IsNil(o.TraceCollectionEntityId) {
+	if o != nil && !isNil(o.TraceCollectionEntityId) {
 		return true
 	}
 
@@ -1537,7 +1537,7 @@ func (o *TraceInfoType) SetTraceCollectionEntityId(v int32) {
 
 // GetExcessPacketDelayThresholds returns the ExcessPacketDelayThresholds field value if set, zero value otherwise.
 func (o *TraceInfoType) GetExcessPacketDelayThresholds() map[string]interface{} {
-	if o == nil || IsNil(o.ExcessPacketDelayThresholds) {
+	if o == nil || isNil(o.ExcessPacketDelayThresholds) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -1547,7 +1547,7 @@ func (o *TraceInfoType) GetExcessPacketDelayThresholds() map[string]interface{} 
 // GetExcessPacketDelayThresholdsOk returns a tuple with the ExcessPacketDelayThresholds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TraceInfoType) GetExcessPacketDelayThresholdsOk() (*map[string]interface{}, bool) {
-	if o == nil || IsNil(o.ExcessPacketDelayThresholds) {
+	if o == nil || isNil(o.ExcessPacketDelayThresholds) {
 		return nil, false
 	}
 	return o.ExcessPacketDelayThresholds, true
@@ -1555,7 +1555,7 @@ func (o *TraceInfoType) GetExcessPacketDelayThresholdsOk() (*map[string]interfac
 
 // HasExcessPacketDelayThresholds returns a boolean if a field has been set.
 func (o *TraceInfoType) HasExcessPacketDelayThresholds() bool {
-	if o != nil && !IsNil(o.ExcessPacketDelayThresholds) {
+	if o != nil && !isNil(o.ExcessPacketDelayThresholds) {
 		return true
 	}
 
@@ -1577,142 +1577,142 @@ func (o TraceInfoType) MarshalJSON() ([]byte, error) {
 
 func (o TraceInfoType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.JobType) {
+	if !isNil(o.JobType) {
 		toSerialize["jobType"] = o.JobType
 	}
-	if !IsNil(o.ListOfInterfaces) {
+	if !isNil(o.ListOfInterfaces) {
 		toSerialize["listOfInterfaces"] = o.ListOfInterfaces
 	}
-	if !IsNil(o.ListOfNeTypes) {
+	if !isNil(o.ListOfNeTypes) {
 		toSerialize["listOfNeTypes"] = o.ListOfNeTypes
 	}
-	if !IsNil(o.PlmnTarget) {
+	if !isNil(o.PlmnTarget) {
 		toSerialize["plmnTarget"] = o.PlmnTarget
 	}
-	if !IsNil(o.TraceReportingConsumerUri) {
+	if !isNil(o.TraceReportingConsumerUri) {
 		toSerialize["traceReportingConsumerUri"] = o.TraceReportingConsumerUri
 	}
-	if !IsNil(o.TraceCollectionEntityIpAddress) {
+	if !isNil(o.TraceCollectionEntityIpAddress) {
 		toSerialize["traceCollectionEntityIpAddress"] = o.TraceCollectionEntityIpAddress
 	}
-	if !IsNil(o.TraceDepth) {
+	if !isNil(o.TraceDepth) {
 		toSerialize["traceDepth"] = o.TraceDepth
 	}
-	if !IsNil(o.TraceReference) {
+	if !isNil(o.TraceReference) {
 		toSerialize["traceReference"] = o.TraceReference
 	}
-	if !IsNil(o.TraceRecordingSessionReference) {
+	if !isNil(o.TraceRecordingSessionReference) {
 		toSerialize["traceRecordingSessionReference"] = o.TraceRecordingSessionReference
 	}
-	if !IsNil(o.JobId) {
+	if !isNil(o.JobId) {
 		toSerialize["jobId"] = o.JobId
 	}
-	if !IsNil(o.TraceReportingFormat) {
+	if !isNil(o.TraceReportingFormat) {
 		toSerialize["traceReportingFormat"] = o.TraceReportingFormat
 	}
-	if !IsNil(o.TraceTarget) {
+	if !isNil(o.TraceTarget) {
 		toSerialize["traceTarget"] = o.TraceTarget
 	}
-	if !IsNil(o.TriggeringEvents) {
+	if !isNil(o.TriggeringEvents) {
 		toSerialize["triggeringEvents"] = o.TriggeringEvents
 	}
-	if !IsNil(o.AnonymizationOfMdtData) {
+	if !isNil(o.AnonymizationOfMdtData) {
 		toSerialize["anonymizationOfMdtData"] = o.AnonymizationOfMdtData
 	}
-	if !IsNil(o.AreaConfigurationForNeighCell) {
+	if !isNil(o.AreaConfigurationForNeighCell) {
 		toSerialize["areaConfigurationForNeighCell"] = o.AreaConfigurationForNeighCell
 	}
-	if !IsNil(o.AreaScope) {
+	if !isNil(o.AreaScope) {
 		toSerialize["areaScope"] = o.AreaScope
 	}
-	if !IsNil(o.BeamLevelMeasurement) {
+	if !isNil(o.BeamLevelMeasurement) {
 		toSerialize["beamLevelMeasurement"] = o.BeamLevelMeasurement
 	}
-	if !IsNil(o.CollectionPeriodRrmLte) {
+	if !isNil(o.CollectionPeriodRrmLte) {
 		toSerialize["collectionPeriodRrmLte"] = o.CollectionPeriodRrmLte
 	}
-	if !IsNil(o.CollectionPeriodM6Lte) {
+	if !isNil(o.CollectionPeriodM6Lte) {
 		toSerialize["collectionPeriodM6Lte"] = o.CollectionPeriodM6Lte
 	}
-	if !IsNil(o.CollectionPeriodM7Lte) {
+	if !isNil(o.CollectionPeriodM7Lte) {
 		toSerialize["collectionPeriodM7Lte"] = o.CollectionPeriodM7Lte
 	}
-	if !IsNil(o.CollectionPeriodRrmUmts) {
+	if !isNil(o.CollectionPeriodRrmUmts) {
 		toSerialize["collectionPeriodRrmUmts"] = o.CollectionPeriodRrmUmts
 	}
-	if !IsNil(o.CollectionPeriodRrmNr) {
+	if !isNil(o.CollectionPeriodRrmNr) {
 		toSerialize["collectionPeriodRrmNr"] = o.CollectionPeriodRrmNr
 	}
-	if !IsNil(o.CollectionPeriodM6Nr) {
+	if !isNil(o.CollectionPeriodM6Nr) {
 		toSerialize["collectionPeriodM6Nr"] = o.CollectionPeriodM6Nr
 	}
-	if !IsNil(o.CollectionPeriodM7Nr) {
+	if !isNil(o.CollectionPeriodM7Nr) {
 		toSerialize["collectionPeriodM7Nr"] = o.CollectionPeriodM7Nr
 	}
-	if !IsNil(o.EventListForEventTriggeredMeasurement) {
+	if !isNil(o.EventListForEventTriggeredMeasurement) {
 		toSerialize["eventListForEventTriggeredMeasurement"] = o.EventListForEventTriggeredMeasurement
 	}
-	if !IsNil(o.EventThreshold) {
+	if !isNil(o.EventThreshold) {
 		toSerialize["eventThreshold"] = o.EventThreshold
 	}
-	if !IsNil(o.ListOfMeasurements) {
+	if !isNil(o.ListOfMeasurements) {
 		toSerialize["listOfMeasurements"] = o.ListOfMeasurements
 	}
-	if !IsNil(o.LoggingDuration) {
+	if !isNil(o.LoggingDuration) {
 		toSerialize["loggingDuration"] = o.LoggingDuration
 	}
-	if !IsNil(o.LoggingInterval) {
+	if !isNil(o.LoggingInterval) {
 		toSerialize["loggingInterval"] = o.LoggingInterval
 	}
-	if !IsNil(o.EventThresholdL1) {
+	if !isNil(o.EventThresholdL1) {
 		toSerialize["eventThresholdL1"] = o.EventThresholdL1
 	}
-	if !IsNil(o.HysteresisL1) {
+	if !isNil(o.HysteresisL1) {
 		toSerialize["hysteresisL1"] = o.HysteresisL1
 	}
-	if !IsNil(o.TimeToTriggerL1) {
+	if !isNil(o.TimeToTriggerL1) {
 		toSerialize["timeToTriggerL1"] = o.TimeToTriggerL1
 	}
-	if !IsNil(o.MbsfnAreaList) {
+	if !isNil(o.MbsfnAreaList) {
 		toSerialize["mbsfnAreaList"] = o.MbsfnAreaList
 	}
-	if !IsNil(o.MeasurementPeriodLte) {
+	if !isNil(o.MeasurementPeriodLte) {
 		toSerialize["measurementPeriodLte"] = o.MeasurementPeriodLte
 	}
-	if !IsNil(o.MeasurementPeriodUmts) {
+	if !isNil(o.MeasurementPeriodUmts) {
 		toSerialize["measurementPeriodUmts"] = o.MeasurementPeriodUmts
 	}
-	if !IsNil(o.MeasurementQuantity) {
+	if !isNil(o.MeasurementQuantity) {
 		toSerialize["measurementQuantity"] = o.MeasurementQuantity
 	}
-	if !IsNil(o.EventThresholdUphUmts) {
+	if !isNil(o.EventThresholdUphUmts) {
 		toSerialize["eventThresholdUphUmts"] = o.EventThresholdUphUmts
 	}
-	if !IsNil(o.PlmnList) {
+	if !isNil(o.PlmnList) {
 		toSerialize["plmnList"] = o.PlmnList
 	}
-	if !IsNil(o.PositioningMethod) {
+	if !isNil(o.PositioningMethod) {
 		toSerialize["positioningMethod"] = o.PositioningMethod
 	}
-	if !IsNil(o.ReportAmount) {
+	if !isNil(o.ReportAmount) {
 		toSerialize["reportAmount"] = o.ReportAmount
 	}
-	if !IsNil(o.ReportingTrigger) {
+	if !isNil(o.ReportingTrigger) {
 		toSerialize["reportingTrigger"] = o.ReportingTrigger
 	}
-	if !IsNil(o.ReportInterval) {
+	if !isNil(o.ReportInterval) {
 		toSerialize["reportInterval"] = o.ReportInterval
 	}
-	if !IsNil(o.ReportType) {
+	if !isNil(o.ReportType) {
 		toSerialize["reportType"] = o.ReportType
 	}
-	if !IsNil(o.SensorInformation) {
+	if !isNil(o.SensorInformation) {
 		toSerialize["sensorInformation"] = o.SensorInformation
 	}
-	if !IsNil(o.TraceCollectionEntityId) {
+	if !isNil(o.TraceCollectionEntityId) {
 		toSerialize["traceCollectionEntityId"] = o.TraceCollectionEntityId
 	}
-	if !IsNil(o.ExcessPacketDelayThresholds) {
+	if !isNil(o.ExcessPacketDelayThresholds) {
 		toSerialize["excessPacketDelayThresholds"] = o.ExcessPacketDelayThresholds
 	}
 	return toSerialize, nil

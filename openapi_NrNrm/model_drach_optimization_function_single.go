@@ -76,7 +76,7 @@ func (o *DRACHOptimizationFunctionSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *DRACHOptimizationFunctionSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -94,7 +94,7 @@ func (o *DRACHOptimizationFunctionSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *DRACHOptimizationFunctionSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *DRACHOptimizationFunctionSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -126,7 +126,7 @@ func (o *DRACHOptimizationFunctionSingle) GetObjectInstanceOk() (*string, bool) 
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *DRACHOptimizationFunctionSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *DRACHOptimizationFunctionSingle) GetVsDataContainer() []VsDataContainer
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -158,7 +158,7 @@ func (o *DRACHOptimizationFunctionSingle) GetVsDataContainerOk() ([]VsDataContai
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *DRACHOptimizationFunctionSingle) SetVsDataContainer(v []VsDataContainer
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetAttributes() DRACHOptimizationFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret DRACHOptimizationFunctionSingleAllOfAttributes
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *DRACHOptimizationFunctionSingle) GetAttributes() DRACHOptimizationFunct
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetAttributesOk() (*DRACHOptimizationFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -190,7 +190,7 @@ func (o *DRACHOptimizationFunctionSingle) GetAttributesOk() (*DRACHOptimizationF
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *DRACHOptimizationFunctionSingle) SetAttributes(v DRACHOptimizationFunct
 
 // GetPerfMetricJob returns the PerfMetricJob field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetPerfMetricJob() []PerfMetricJobSingle {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		var ret []PerfMetricJobSingle
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *DRACHOptimizationFunctionSingle) GetPerfMetricJob() []PerfMetricJobSing
 // GetPerfMetricJobOk returns a tuple with the PerfMetricJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobSingle, bool) {
-	if o == nil || IsNil(o.PerfMetricJob) {
+	if o == nil || isNil(o.PerfMetricJob) {
 		return nil, false
 	}
 	return o.PerfMetricJob, true
@@ -222,7 +222,7 @@ func (o *DRACHOptimizationFunctionSingle) GetPerfMetricJobOk() ([]PerfMetricJobS
 
 // HasPerfMetricJob returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasPerfMetricJob() bool {
-	if o != nil && !IsNil(o.PerfMetricJob) {
+	if o != nil && !isNil(o.PerfMetricJob) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *DRACHOptimizationFunctionSingle) SetPerfMetricJob(v []PerfMetricJobSing
 
 // GetThresholdMonitor returns the ThresholdMonitor field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetThresholdMonitor() []ThresholdMonitorSingle {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		var ret []ThresholdMonitorSingle
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *DRACHOptimizationFunctionSingle) GetThresholdMonitor() []ThresholdMonit
 // GetThresholdMonitorOk returns a tuple with the ThresholdMonitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMonitorSingle, bool) {
-	if o == nil || IsNil(o.ThresholdMonitor) {
+	if o == nil || isNil(o.ThresholdMonitor) {
 		return nil, false
 	}
 	return o.ThresholdMonitor, true
@@ -254,7 +254,7 @@ func (o *DRACHOptimizationFunctionSingle) GetThresholdMonitorOk() ([]ThresholdMo
 
 // HasThresholdMonitor returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasThresholdMonitor() bool {
-	if o != nil && !IsNil(o.ThresholdMonitor) {
+	if o != nil && !isNil(o.ThresholdMonitor) {
 		return true
 	}
 
@@ -268,7 +268,7 @@ func (o *DRACHOptimizationFunctionSingle) SetThresholdMonitor(v []ThresholdMonit
 
 // GetManagedNFService returns the ManagedNFService field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetManagedNFService() []ManagedNFServiceSingle {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		var ret []ManagedNFServiceSingle
 		return ret
 	}
@@ -278,7 +278,7 @@ func (o *DRACHOptimizationFunctionSingle) GetManagedNFService() []ManagedNFServi
 // GetManagedNFServiceOk returns a tuple with the ManagedNFService field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFServiceSingle, bool) {
-	if o == nil || IsNil(o.ManagedNFService) {
+	if o == nil || isNil(o.ManagedNFService) {
 		return nil, false
 	}
 	return o.ManagedNFService, true
@@ -286,7 +286,7 @@ func (o *DRACHOptimizationFunctionSingle) GetManagedNFServiceOk() ([]ManagedNFSe
 
 // HasManagedNFService returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasManagedNFService() bool {
-	if o != nil && !IsNil(o.ManagedNFService) {
+	if o != nil && !isNil(o.ManagedNFService) {
 		return true
 	}
 
@@ -300,7 +300,7 @@ func (o *DRACHOptimizationFunctionSingle) SetManagedNFService(v []ManagedNFServi
 
 // GetTraceJob returns the TraceJob field value if set, zero value otherwise.
 func (o *DRACHOptimizationFunctionSingle) GetTraceJob() []TraceJobSingle {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		var ret []TraceJobSingle
 		return ret
 	}
@@ -310,7 +310,7 @@ func (o *DRACHOptimizationFunctionSingle) GetTraceJob() []TraceJobSingle {
 // GetTraceJobOk returns a tuple with the TraceJob field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DRACHOptimizationFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, bool) {
-	if o == nil || IsNil(o.TraceJob) {
+	if o == nil || isNil(o.TraceJob) {
 		return nil, false
 	}
 	return o.TraceJob, true
@@ -318,7 +318,7 @@ func (o *DRACHOptimizationFunctionSingle) GetTraceJobOk() ([]TraceJobSingle, boo
 
 // HasTraceJob returns a boolean if a field has been set.
 func (o *DRACHOptimizationFunctionSingle) HasTraceJob() bool {
-	if o != nil && !IsNil(o.TraceJob) {
+	if o != nil && !isNil(o.TraceJob) {
 		return true
 	}
 
@@ -341,28 +341,28 @@ func (o DRACHOptimizationFunctionSingle) MarshalJSON() ([]byte, error) {
 func (o DRACHOptimizationFunctionSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.PerfMetricJob) {
+	if !isNil(o.PerfMetricJob) {
 		toSerialize["PerfMetricJob"] = o.PerfMetricJob
 	}
-	if !IsNil(o.ThresholdMonitor) {
+	if !isNil(o.ThresholdMonitor) {
 		toSerialize["ThresholdMonitor"] = o.ThresholdMonitor
 	}
-	if !IsNil(o.ManagedNFService) {
+	if !isNil(o.ManagedNFService) {
 		toSerialize["ManagedNFService"] = o.ManagedNFService
 	}
-	if !IsNil(o.TraceJob) {
+	if !isNil(o.TraceJob) {
 		toSerialize["TraceJob"] = o.TraceJob
 	}
 	return toSerialize, nil

@@ -62,7 +62,7 @@ func NewGMDViaMBMSByxMBWithDefaults() *GMDViaMBMSByxMB {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -72,7 +72,7 @@ func (o *GMDViaMBMSByxMB) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -80,7 +80,7 @@ func (o *GMDViaMBMSByxMB) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -118,7 +118,7 @@ func (o *GMDViaMBMSByxMB) SetNotificationDestination(v string) {
 
 // GetRequestTestNotification returns the RequestTestNotification field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetRequestTestNotification() bool {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		var ret bool
 		return ret
 	}
@@ -128,7 +128,7 @@ func (o *GMDViaMBMSByxMB) GetRequestTestNotification() bool {
 // GetRequestTestNotificationOk returns a tuple with the RequestTestNotification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetRequestTestNotificationOk() (*bool, bool) {
-	if o == nil || IsNil(o.RequestTestNotification) {
+	if o == nil || isNil(o.RequestTestNotification) {
 		return nil, false
 	}
 	return o.RequestTestNotification, true
@@ -136,7 +136,7 @@ func (o *GMDViaMBMSByxMB) GetRequestTestNotificationOk() (*bool, bool) {
 
 // HasRequestTestNotification returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasRequestTestNotification() bool {
-	if o != nil && !IsNil(o.RequestTestNotification) {
+	if o != nil && !isNil(o.RequestTestNotification) {
 		return true
 	}
 
@@ -150,7 +150,7 @@ func (o *GMDViaMBMSByxMB) SetRequestTestNotification(v bool) {
 
 // GetWebsockNotifConfig returns the WebsockNotifConfig field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetWebsockNotifConfig() WebsockNotifConfig {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		var ret WebsockNotifConfig
 		return ret
 	}
@@ -160,7 +160,7 @@ func (o *GMDViaMBMSByxMB) GetWebsockNotifConfig() WebsockNotifConfig {
 // GetWebsockNotifConfigOk returns a tuple with the WebsockNotifConfig field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) {
-	if o == nil || IsNil(o.WebsockNotifConfig) {
+	if o == nil || isNil(o.WebsockNotifConfig) {
 		return nil, false
 	}
 	return o.WebsockNotifConfig, true
@@ -168,7 +168,7 @@ func (o *GMDViaMBMSByxMB) GetWebsockNotifConfigOk() (*WebsockNotifConfig, bool) 
 
 // HasWebsockNotifConfig returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasWebsockNotifConfig() bool {
-	if o != nil && !IsNil(o.WebsockNotifConfig) {
+	if o != nil && !isNil(o.WebsockNotifConfig) {
 		return true
 	}
 
@@ -182,7 +182,7 @@ func (o *GMDViaMBMSByxMB) SetWebsockNotifConfig(v WebsockNotifConfig) {
 
 // GetMbmsLocArea returns the MbmsLocArea field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetMbmsLocArea() MbmsLocArea {
-	if o == nil || IsNil(o.MbmsLocArea) {
+	if o == nil || isNil(o.MbmsLocArea) {
 		var ret MbmsLocArea
 		return ret
 	}
@@ -192,7 +192,7 @@ func (o *GMDViaMBMSByxMB) GetMbmsLocArea() MbmsLocArea {
 // GetMbmsLocAreaOk returns a tuple with the MbmsLocArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
-	if o == nil || IsNil(o.MbmsLocArea) {
+	if o == nil || isNil(o.MbmsLocArea) {
 		return nil, false
 	}
 	return o.MbmsLocArea, true
@@ -200,7 +200,7 @@ func (o *GMDViaMBMSByxMB) GetMbmsLocAreaOk() (*MbmsLocArea, bool) {
 
 // HasMbmsLocArea returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasMbmsLocArea() bool {
-	if o != nil && !IsNil(o.MbmsLocArea) {
+	if o != nil && !isNil(o.MbmsLocArea) {
 		return true
 	}
 
@@ -214,7 +214,7 @@ func (o *GMDViaMBMSByxMB) SetMbmsLocArea(v MbmsLocArea) {
 
 // GetMessageDeliveryStartTime returns the MessageDeliveryStartTime field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetMessageDeliveryStartTime() time.Time {
-	if o == nil || IsNil(o.MessageDeliveryStartTime) {
+	if o == nil || isNil(o.MessageDeliveryStartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -224,7 +224,7 @@ func (o *GMDViaMBMSByxMB) GetMessageDeliveryStartTime() time.Time {
 // GetMessageDeliveryStartTimeOk returns a tuple with the MessageDeliveryStartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetMessageDeliveryStartTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MessageDeliveryStartTime) {
+	if o == nil || isNil(o.MessageDeliveryStartTime) {
 		return nil, false
 	}
 	return o.MessageDeliveryStartTime, true
@@ -232,7 +232,7 @@ func (o *GMDViaMBMSByxMB) GetMessageDeliveryStartTimeOk() (*time.Time, bool) {
 
 // HasMessageDeliveryStartTime returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasMessageDeliveryStartTime() bool {
-	if o != nil && !IsNil(o.MessageDeliveryStartTime) {
+	if o != nil && !isNil(o.MessageDeliveryStartTime) {
 		return true
 	}
 
@@ -246,7 +246,7 @@ func (o *GMDViaMBMSByxMB) SetMessageDeliveryStartTime(v time.Time) {
 
 // GetMessageDeliveryStopTime returns the MessageDeliveryStopTime field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetMessageDeliveryStopTime() time.Time {
-	if o == nil || IsNil(o.MessageDeliveryStopTime) {
+	if o == nil || isNil(o.MessageDeliveryStopTime) {
 		var ret time.Time
 		return ret
 	}
@@ -256,7 +256,7 @@ func (o *GMDViaMBMSByxMB) GetMessageDeliveryStopTime() time.Time {
 // GetMessageDeliveryStopTimeOk returns a tuple with the MessageDeliveryStopTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetMessageDeliveryStopTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MessageDeliveryStopTime) {
+	if o == nil || isNil(o.MessageDeliveryStopTime) {
 		return nil, false
 	}
 	return o.MessageDeliveryStopTime, true
@@ -264,7 +264,7 @@ func (o *GMDViaMBMSByxMB) GetMessageDeliveryStopTimeOk() (*time.Time, bool) {
 
 // HasMessageDeliveryStopTime returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasMessageDeliveryStopTime() bool {
-	if o != nil && !IsNil(o.MessageDeliveryStopTime) {
+	if o != nil && !isNil(o.MessageDeliveryStopTime) {
 		return true
 	}
 
@@ -278,7 +278,7 @@ func (o *GMDViaMBMSByxMB) SetMessageDeliveryStopTime(v time.Time) {
 
 // GetGroupMessagePayload returns the GroupMessagePayload field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetGroupMessagePayload() string {
-	if o == nil || IsNil(o.GroupMessagePayload) {
+	if o == nil || isNil(o.GroupMessagePayload) {
 		var ret string
 		return ret
 	}
@@ -288,7 +288,7 @@ func (o *GMDViaMBMSByxMB) GetGroupMessagePayload() string {
 // GetGroupMessagePayloadOk returns a tuple with the GroupMessagePayload field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetGroupMessagePayloadOk() (*string, bool) {
-	if o == nil || IsNil(o.GroupMessagePayload) {
+	if o == nil || isNil(o.GroupMessagePayload) {
 		return nil, false
 	}
 	return o.GroupMessagePayload, true
@@ -296,7 +296,7 @@ func (o *GMDViaMBMSByxMB) GetGroupMessagePayloadOk() (*string, bool) {
 
 // HasGroupMessagePayload returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasGroupMessagePayload() bool {
-	if o != nil && !IsNil(o.GroupMessagePayload) {
+	if o != nil && !isNil(o.GroupMessagePayload) {
 		return true
 	}
 
@@ -310,7 +310,7 @@ func (o *GMDViaMBMSByxMB) SetGroupMessagePayload(v string) {
 
 // GetScefMessageDeliveryIPv4 returns the ScefMessageDeliveryIPv4 field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv4() string {
-	if o == nil || IsNil(o.ScefMessageDeliveryIPv4) {
+	if o == nil || isNil(o.ScefMessageDeliveryIPv4) {
 		var ret string
 		return ret
 	}
@@ -320,7 +320,7 @@ func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv4() string {
 // GetScefMessageDeliveryIPv4Ok returns a tuple with the ScefMessageDeliveryIPv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv4Ok() (*string, bool) {
-	if o == nil || IsNil(o.ScefMessageDeliveryIPv4) {
+	if o == nil || isNil(o.ScefMessageDeliveryIPv4) {
 		return nil, false
 	}
 	return o.ScefMessageDeliveryIPv4, true
@@ -328,7 +328,7 @@ func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv4Ok() (*string, bool) {
 
 // HasScefMessageDeliveryIPv4 returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasScefMessageDeliveryIPv4() bool {
-	if o != nil && !IsNil(o.ScefMessageDeliveryIPv4) {
+	if o != nil && !isNil(o.ScefMessageDeliveryIPv4) {
 		return true
 	}
 
@@ -342,7 +342,7 @@ func (o *GMDViaMBMSByxMB) SetScefMessageDeliveryIPv4(v string) {
 
 // GetScefMessageDeliveryIPv6 returns the ScefMessageDeliveryIPv6 field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv6() string {
-	if o == nil || IsNil(o.ScefMessageDeliveryIPv6) {
+	if o == nil || isNil(o.ScefMessageDeliveryIPv6) {
 		var ret string
 		return ret
 	}
@@ -352,7 +352,7 @@ func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv6() string {
 // GetScefMessageDeliveryIPv6Ok returns a tuple with the ScefMessageDeliveryIPv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv6Ok() (*string, bool) {
-	if o == nil || IsNil(o.ScefMessageDeliveryIPv6) {
+	if o == nil || isNil(o.ScefMessageDeliveryIPv6) {
 		return nil, false
 	}
 	return o.ScefMessageDeliveryIPv6, true
@@ -360,7 +360,7 @@ func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryIPv6Ok() (*string, bool) {
 
 // HasScefMessageDeliveryIPv6 returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasScefMessageDeliveryIPv6() bool {
-	if o != nil && !IsNil(o.ScefMessageDeliveryIPv6) {
+	if o != nil && !isNil(o.ScefMessageDeliveryIPv6) {
 		return true
 	}
 
@@ -374,7 +374,7 @@ func (o *GMDViaMBMSByxMB) SetScefMessageDeliveryIPv6(v string) {
 
 // GetScefMessageDeliveryPort returns the ScefMessageDeliveryPort field value if set, zero value otherwise.
 func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryPort() int32 {
-	if o == nil || IsNil(o.ScefMessageDeliveryPort) {
+	if o == nil || isNil(o.ScefMessageDeliveryPort) {
 		var ret int32
 		return ret
 	}
@@ -384,7 +384,7 @@ func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryPort() int32 {
 // GetScefMessageDeliveryPortOk returns a tuple with the ScefMessageDeliveryPort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryPortOk() (*int32, bool) {
-	if o == nil || IsNil(o.ScefMessageDeliveryPort) {
+	if o == nil || isNil(o.ScefMessageDeliveryPort) {
 		return nil, false
 	}
 	return o.ScefMessageDeliveryPort, true
@@ -392,7 +392,7 @@ func (o *GMDViaMBMSByxMB) GetScefMessageDeliveryPortOk() (*int32, bool) {
 
 // HasScefMessageDeliveryPort returns a boolean if a field has been set.
 func (o *GMDViaMBMSByxMB) HasScefMessageDeliveryPort() bool {
-	if o != nil && !IsNil(o.ScefMessageDeliveryPort) {
+	if o != nil && !isNil(o.ScefMessageDeliveryPort) {
 		return true
 	}
 
@@ -414,31 +414,37 @@ func (o GMDViaMBMSByxMB) MarshalJSON() ([]byte, error) {
 
 func (o GMDViaMBMSByxMB) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
 	toSerialize["notificationDestination"] = o.NotificationDestination
-	if !IsNil(o.RequestTestNotification) {
+	if !isNil(o.RequestTestNotification) {
 		toSerialize["requestTestNotification"] = o.RequestTestNotification
 	}
-	if !IsNil(o.WebsockNotifConfig) {
+	if !isNil(o.WebsockNotifConfig) {
 		toSerialize["websockNotifConfig"] = o.WebsockNotifConfig
 	}
-	if !IsNil(o.MbmsLocArea) {
+	if !isNil(o.MbmsLocArea) {
 		toSerialize["mbmsLocArea"] = o.MbmsLocArea
 	}
-	if !IsNil(o.MessageDeliveryStartTime) {
+	if !isNil(o.MessageDeliveryStartTime) {
 		toSerialize["messageDeliveryStartTime"] = o.MessageDeliveryStartTime
 	}
-	if !IsNil(o.MessageDeliveryStopTime) {
+	if !isNil(o.MessageDeliveryStopTime) {
 		toSerialize["messageDeliveryStopTime"] = o.MessageDeliveryStopTime
 	}
-	if !IsNil(o.GroupMessagePayload) {
+	if !isNil(o.GroupMessagePayload) {
 		toSerialize["groupMessagePayload"] = o.GroupMessagePayload
 	}
-	// skip: scefMessageDeliveryIPv4 is readOnly
-	// skip: scefMessageDeliveryIPv6 is readOnly
-	// skip: scefMessageDeliveryPort is readOnly
+	if !isNil(o.ScefMessageDeliveryIPv4) {
+		toSerialize["scefMessageDeliveryIPv4"] = o.ScefMessageDeliveryIPv4
+	}
+	if !isNil(o.ScefMessageDeliveryIPv6) {
+		toSerialize["scefMessageDeliveryIPv6"] = o.ScefMessageDeliveryIPv6
+	}
+	if !isNil(o.ScefMessageDeliveryPort) {
+		toSerialize["scefMessageDeliveryPort"] = o.ScefMessageDeliveryPort
+	}
 	return toSerialize, nil
 }
 

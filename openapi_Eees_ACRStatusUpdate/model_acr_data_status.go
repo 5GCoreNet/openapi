@@ -67,7 +67,7 @@ func (o *ACRDataStatus) SetE3SubscsStatus(v E3SubscsStatus) {
 
 // GetE3SubscIds returns the E3SubscIds field value if set, zero value otherwise.
 func (o *ACRDataStatus) GetE3SubscIds() []string {
-	if o == nil || IsNil(o.E3SubscIds) {
+	if o == nil || isNil(o.E3SubscIds) {
 		var ret []string
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *ACRDataStatus) GetE3SubscIds() []string {
 // GetE3SubscIdsOk returns a tuple with the E3SubscIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ACRDataStatus) GetE3SubscIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.E3SubscIds) {
+	if o == nil || isNil(o.E3SubscIds) {
 		return nil, false
 	}
 	return o.E3SubscIds, true
@@ -85,7 +85,7 @@ func (o *ACRDataStatus) GetE3SubscIdsOk() ([]string, bool) {
 
 // HasE3SubscIds returns a boolean if a field has been set.
 func (o *ACRDataStatus) HasE3SubscIds() bool {
-	if o != nil && !IsNil(o.E3SubscIds) {
+	if o != nil && !isNil(o.E3SubscIds) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o ACRDataStatus) MarshalJSON() ([]byte, error) {
 func (o ACRDataStatus) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["e3SubscsStatus"] = o.E3SubscsStatus
-	if !IsNil(o.E3SubscIds) {
+	if !isNil(o.E3SubscIds) {
 		toSerialize["e3SubscIds"] = o.E3SubscIds
 	}
 	return toSerialize, nil

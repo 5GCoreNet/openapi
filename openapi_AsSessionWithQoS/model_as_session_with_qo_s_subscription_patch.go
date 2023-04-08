@@ -65,7 +65,7 @@ func NewAsSessionWithQoSSubscriptionPatchWithDefaults() *AsSessionWithQoSSubscri
 
 // GetExterAppId returns the ExterAppId field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetExterAppId() string {
-	if o == nil || IsNil(o.ExterAppId) {
+	if o == nil || isNil(o.ExterAppId) {
 		var ret string
 		return ret
 	}
@@ -75,7 +75,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetExterAppId() string {
 // GetExterAppIdOk returns a tuple with the ExterAppId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetExterAppIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterAppId) {
+	if o == nil || isNil(o.ExterAppId) {
 		return nil, false
 	}
 	return o.ExterAppId, true
@@ -83,7 +83,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetExterAppIdOk() (*string, bool) {
 
 // HasExterAppId returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasExterAppId() bool {
-	if o != nil && !IsNil(o.ExterAppId) {
+	if o != nil && !isNil(o.ExterAppId) {
 		return true
 	}
 
@@ -97,7 +97,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetExterAppId(v string) {
 
 // GetFlowInfo returns the FlowInfo field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetFlowInfo() []FlowInfo {
-	if o == nil || IsNil(o.FlowInfo) {
+	if o == nil || isNil(o.FlowInfo) {
 		var ret []FlowInfo
 		return ret
 	}
@@ -107,7 +107,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetFlowInfo() []FlowInfo {
 // GetFlowInfoOk returns a tuple with the FlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetFlowInfoOk() ([]FlowInfo, bool) {
-	if o == nil || IsNil(o.FlowInfo) {
+	if o == nil || isNil(o.FlowInfo) {
 		return nil, false
 	}
 	return o.FlowInfo, true
@@ -115,7 +115,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetFlowInfoOk() ([]FlowInfo, bool) {
 
 // HasFlowInfo returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasFlowInfo() bool {
-	if o != nil && !IsNil(o.FlowInfo) {
+	if o != nil && !isNil(o.FlowInfo) {
 		return true
 	}
 
@@ -129,7 +129,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetFlowInfo(v []FlowInfo) {
 
 // GetEthFlowInfo returns the EthFlowInfo field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetEthFlowInfo() []EthFlowDescription {
-	if o == nil || IsNil(o.EthFlowInfo) {
+	if o == nil || isNil(o.EthFlowInfo) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -139,7 +139,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetEthFlowInfo() []EthFlowDescriptio
 // GetEthFlowInfoOk returns a tuple with the EthFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetEthFlowInfoOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthFlowInfo) {
+	if o == nil || isNil(o.EthFlowInfo) {
 		return nil, false
 	}
 	return o.EthFlowInfo, true
@@ -147,7 +147,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetEthFlowInfoOk() ([]EthFlowDescrip
 
 // HasEthFlowInfo returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasEthFlowInfo() bool {
-	if o != nil && !IsNil(o.EthFlowInfo) {
+	if o != nil && !isNil(o.EthFlowInfo) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetEthFlowInfo(v []EthFlowDescriptio
 
 // GetEnEthFlowInfo returns the EnEthFlowInfo field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetEnEthFlowInfo() []EthFlowInfo {
-	if o == nil || IsNil(o.EnEthFlowInfo) {
+	if o == nil || isNil(o.EnEthFlowInfo) {
 		var ret []EthFlowInfo
 		return ret
 	}
@@ -171,7 +171,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetEnEthFlowInfo() []EthFlowInfo {
 // GetEnEthFlowInfoOk returns a tuple with the EnEthFlowInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetEnEthFlowInfoOk() ([]EthFlowInfo, bool) {
-	if o == nil || IsNil(o.EnEthFlowInfo) {
+	if o == nil || isNil(o.EnEthFlowInfo) {
 		return nil, false
 	}
 	return o.EnEthFlowInfo, true
@@ -179,7 +179,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetEnEthFlowInfoOk() ([]EthFlowInfo,
 
 // HasEnEthFlowInfo returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasEnEthFlowInfo() bool {
-	if o != nil && !IsNil(o.EnEthFlowInfo) {
+	if o != nil && !isNil(o.EnEthFlowInfo) {
 		return true
 	}
 
@@ -193,7 +193,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetEnEthFlowInfo(v []EthFlowInfo) {
 
 // GetQosReference returns the QosReference field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetQosReference() string {
-	if o == nil || IsNil(o.QosReference) {
+	if o == nil || isNil(o.QosReference) {
 		var ret string
 		return ret
 	}
@@ -203,7 +203,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetQosReference() string {
 // GetQosReferenceOk returns a tuple with the QosReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetQosReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.QosReference) {
+	if o == nil || isNil(o.QosReference) {
 		return nil, false
 	}
 	return o.QosReference, true
@@ -211,7 +211,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetQosReferenceOk() (*string, bool) 
 
 // HasQosReference returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasQosReference() bool {
-	if o != nil && !IsNil(o.QosReference) {
+	if o != nil && !isNil(o.QosReference) {
 		return true
 	}
 
@@ -225,7 +225,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetQosReference(v string) {
 
 // GetAltQoSReferences returns the AltQoSReferences field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetAltQoSReferences() []string {
-	if o == nil || IsNil(o.AltQoSReferences) {
+	if o == nil || isNil(o.AltQoSReferences) {
 		var ret []string
 		return ret
 	}
@@ -235,7 +235,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetAltQoSReferences() []string {
 // GetAltQoSReferencesOk returns a tuple with the AltQoSReferences field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetAltQoSReferencesOk() ([]string, bool) {
-	if o == nil || IsNil(o.AltQoSReferences) {
+	if o == nil || isNil(o.AltQoSReferences) {
 		return nil, false
 	}
 	return o.AltQoSReferences, true
@@ -243,7 +243,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetAltQoSReferencesOk() ([]string, b
 
 // HasAltQoSReferences returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasAltQoSReferences() bool {
-	if o != nil && !IsNil(o.AltQoSReferences) {
+	if o != nil && !isNil(o.AltQoSReferences) {
 		return true
 	}
 
@@ -257,7 +257,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetAltQoSReferences(v []string) {
 
 // GetAltQosReqs returns the AltQosReqs field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetAltQosReqs() []AlternativeServiceRequirementsData {
-	if o == nil || IsNil(o.AltQosReqs) {
+	if o == nil || isNil(o.AltQosReqs) {
 		var ret []AlternativeServiceRequirementsData
 		return ret
 	}
@@ -267,7 +267,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetAltQosReqs() []AlternativeService
 // GetAltQosReqsOk returns a tuple with the AltQosReqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetAltQosReqsOk() ([]AlternativeServiceRequirementsData, bool) {
-	if o == nil || IsNil(o.AltQosReqs) {
+	if o == nil || isNil(o.AltQosReqs) {
 		return nil, false
 	}
 	return o.AltQosReqs, true
@@ -275,7 +275,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetAltQosReqsOk() ([]AlternativeServ
 
 // HasAltQosReqs returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasAltQosReqs() bool {
-	if o != nil && !IsNil(o.AltQosReqs) {
+	if o != nil && !isNil(o.AltQosReqs) {
 		return true
 	}
 
@@ -289,7 +289,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetAltQosReqs(v []AlternativeService
 
 // GetDisUeNotif returns the DisUeNotif field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetDisUeNotif() bool {
-	if o == nil || IsNil(o.DisUeNotif) {
+	if o == nil || isNil(o.DisUeNotif) {
 		var ret bool
 		return ret
 	}
@@ -299,7 +299,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetDisUeNotif() bool {
 // GetDisUeNotifOk returns a tuple with the DisUeNotif field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetDisUeNotifOk() (*bool, bool) {
-	if o == nil || IsNil(o.DisUeNotif) {
+	if o == nil || isNil(o.DisUeNotif) {
 		return nil, false
 	}
 	return o.DisUeNotif, true
@@ -307,7 +307,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetDisUeNotifOk() (*bool, bool) {
 
 // HasDisUeNotif returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasDisUeNotif() bool {
-	if o != nil && !IsNil(o.DisUeNotif) {
+	if o != nil && !isNil(o.DisUeNotif) {
 		return true
 	}
 
@@ -321,7 +321,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetDisUeNotif(v bool) {
 
 // GetUsageThreshold returns the UsageThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AsSessionWithQoSSubscriptionPatch) GetUsageThreshold() UsageThresholdRm {
-	if o == nil || IsNil(o.UsageThreshold.Get()) {
+	if o == nil || isNil(o.UsageThreshold.Get()) {
 		var ret UsageThresholdRm
 		return ret
 	}
@@ -363,7 +363,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) UnsetUsageThreshold() {
 
 // GetQosMonInfo returns the QosMonInfo field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetQosMonInfo() QosMonitoringInformationRm {
-	if o == nil || IsNil(o.QosMonInfo) {
+	if o == nil || isNil(o.QosMonInfo) {
 		var ret QosMonitoringInformationRm
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetQosMonInfo() QosMonitoringInforma
 // GetQosMonInfoOk returns a tuple with the QosMonInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetQosMonInfoOk() (*QosMonitoringInformationRm, bool) {
-	if o == nil || IsNil(o.QosMonInfo) {
+	if o == nil || isNil(o.QosMonInfo) {
 		return nil, false
 	}
 	return o.QosMonInfo, true
@@ -381,7 +381,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetQosMonInfoOk() (*QosMonitoringInf
 
 // HasQosMonInfo returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasQosMonInfo() bool {
-	if o != nil && !IsNil(o.QosMonInfo) {
+	if o != nil && !isNil(o.QosMonInfo) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetQosMonInfo(v QosMonitoringInforma
 
 // GetDirectNotifInd returns the DirectNotifInd field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetDirectNotifInd() bool {
-	if o == nil || IsNil(o.DirectNotifInd) {
+	if o == nil || isNil(o.DirectNotifInd) {
 		var ret bool
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetDirectNotifInd() bool {
 // GetDirectNotifIndOk returns a tuple with the DirectNotifInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetDirectNotifIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.DirectNotifInd) {
+	if o == nil || isNil(o.DirectNotifInd) {
 		return nil, false
 	}
 	return o.DirectNotifInd, true
@@ -413,7 +413,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetDirectNotifIndOk() (*bool, bool) 
 
 // HasDirectNotifInd returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasDirectNotifInd() bool {
-	if o != nil && !IsNil(o.DirectNotifInd) {
+	if o != nil && !isNil(o.DirectNotifInd) {
 		return true
 	}
 
@@ -427,7 +427,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetDirectNotifInd(v bool) {
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -437,7 +437,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetNotificationDestination() string 
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -445,7 +445,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetNotificationDestinationOk() (*str
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -459,7 +459,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetNotificationDestination(v string)
 
 // GetTscQosReq returns the TscQosReq field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetTscQosReq() TscQosRequirementRm {
-	if o == nil || IsNil(o.TscQosReq) {
+	if o == nil || isNil(o.TscQosReq) {
 		var ret TscQosRequirementRm
 		return ret
 	}
@@ -469,7 +469,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetTscQosReq() TscQosRequirementRm {
 // GetTscQosReqOk returns a tuple with the TscQosReq field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetTscQosReqOk() (*TscQosRequirementRm, bool) {
-	if o == nil || IsNil(o.TscQosReq) {
+	if o == nil || isNil(o.TscQosReq) {
 		return nil, false
 	}
 	return o.TscQosReq, true
@@ -477,7 +477,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetTscQosReqOk() (*TscQosRequirement
 
 // HasTscQosReq returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasTscQosReq() bool {
-	if o != nil && !IsNil(o.TscQosReq) {
+	if o != nil && !isNil(o.TscQosReq) {
 		return true
 	}
 
@@ -491,7 +491,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) SetTscQosReq(v TscQosRequirementRm) 
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *AsSessionWithQoSSubscriptionPatch) GetEvents() []UserPlaneEvent {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		var ret []UserPlaneEvent
 		return ret
 	}
@@ -501,7 +501,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetEvents() []UserPlaneEvent {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) GetEventsOk() ([]UserPlaneEvent, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -509,7 +509,7 @@ func (o *AsSessionWithQoSSubscriptionPatch) GetEventsOk() ([]UserPlaneEvent, boo
 
 // HasEvents returns a boolean if a field has been set.
 func (o *AsSessionWithQoSSubscriptionPatch) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && !isNil(o.Events) {
 		return true
 	}
 
@@ -531,46 +531,46 @@ func (o AsSessionWithQoSSubscriptionPatch) MarshalJSON() ([]byte, error) {
 
 func (o AsSessionWithQoSSubscriptionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ExterAppId) {
+	if !isNil(o.ExterAppId) {
 		toSerialize["exterAppId"] = o.ExterAppId
 	}
-	if !IsNil(o.FlowInfo) {
+	if !isNil(o.FlowInfo) {
 		toSerialize["flowInfo"] = o.FlowInfo
 	}
-	if !IsNil(o.EthFlowInfo) {
+	if !isNil(o.EthFlowInfo) {
 		toSerialize["ethFlowInfo"] = o.EthFlowInfo
 	}
-	if !IsNil(o.EnEthFlowInfo) {
+	if !isNil(o.EnEthFlowInfo) {
 		toSerialize["enEthFlowInfo"] = o.EnEthFlowInfo
 	}
-	if !IsNil(o.QosReference) {
+	if !isNil(o.QosReference) {
 		toSerialize["qosReference"] = o.QosReference
 	}
-	if !IsNil(o.AltQoSReferences) {
+	if !isNil(o.AltQoSReferences) {
 		toSerialize["altQoSReferences"] = o.AltQoSReferences
 	}
-	if !IsNil(o.AltQosReqs) {
+	if !isNil(o.AltQosReqs) {
 		toSerialize["altQosReqs"] = o.AltQosReqs
 	}
-	if !IsNil(o.DisUeNotif) {
+	if !isNil(o.DisUeNotif) {
 		toSerialize["disUeNotif"] = o.DisUeNotif
 	}
 	if o.UsageThreshold.IsSet() {
 		toSerialize["usageThreshold"] = o.UsageThreshold.Get()
 	}
-	if !IsNil(o.QosMonInfo) {
+	if !isNil(o.QosMonInfo) {
 		toSerialize["qosMonInfo"] = o.QosMonInfo
 	}
-	if !IsNil(o.DirectNotifInd) {
+	if !isNil(o.DirectNotifInd) {
 		toSerialize["directNotifInd"] = o.DirectNotifInd
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
-	if !IsNil(o.TscQosReq) {
+	if !isNil(o.TscQosReq) {
 		toSerialize["tscQosReq"] = o.TscQosReq
 	}
-	if !IsNil(o.Events) {
+	if !isNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil

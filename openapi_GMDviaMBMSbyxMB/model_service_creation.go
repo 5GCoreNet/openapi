@@ -57,7 +57,7 @@ func NewServiceCreationWithDefaults() *ServiceCreation {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *ServiceCreation) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -67,7 +67,7 @@ func (o *ServiceCreation) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -75,7 +75,7 @@ func (o *ServiceCreation) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *ServiceCreation) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -89,7 +89,7 @@ func (o *ServiceCreation) SetSelf(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ServiceCreation) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -99,7 +99,7 @@ func (o *ServiceCreation) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -107,7 +107,7 @@ func (o *ServiceCreation) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ServiceCreation) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -121,7 +121,7 @@ func (o *ServiceCreation) SetSupportedFeatures(v string) {
 
 // GetExternalGroupId returns the ExternalGroupId field value if set, zero value otherwise.
 func (o *ServiceCreation) GetExternalGroupId() string {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		var ret string
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *ServiceCreation) GetExternalGroupId() string {
 // GetExternalGroupIdOk returns a tuple with the ExternalGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetExternalGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExternalGroupId) {
+	if o == nil || isNil(o.ExternalGroupId) {
 		return nil, false
 	}
 	return o.ExternalGroupId, true
@@ -139,7 +139,7 @@ func (o *ServiceCreation) GetExternalGroupIdOk() (*string, bool) {
 
 // HasExternalGroupId returns a boolean if a field has been set.
 func (o *ServiceCreation) HasExternalGroupId() bool {
-	if o != nil && !IsNil(o.ExternalGroupId) {
+	if o != nil && !isNil(o.ExternalGroupId) {
 		return true
 	}
 
@@ -153,7 +153,7 @@ func (o *ServiceCreation) SetExternalGroupId(v string) {
 
 // GetUserServiceId returns the UserServiceId field value if set, zero value otherwise.
 func (o *ServiceCreation) GetUserServiceId() string {
-	if o == nil || IsNil(o.UserServiceId) {
+	if o == nil || isNil(o.UserServiceId) {
 		var ret string
 		return ret
 	}
@@ -163,7 +163,7 @@ func (o *ServiceCreation) GetUserServiceId() string {
 // GetUserServiceIdOk returns a tuple with the UserServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetUserServiceIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UserServiceId) {
+	if o == nil || isNil(o.UserServiceId) {
 		return nil, false
 	}
 	return o.UserServiceId, true
@@ -171,7 +171,7 @@ func (o *ServiceCreation) GetUserServiceIdOk() (*string, bool) {
 
 // HasUserServiceId returns a boolean if a field has been set.
 func (o *ServiceCreation) HasUserServiceId() bool {
-	if o != nil && !IsNil(o.UserServiceId) {
+	if o != nil && !isNil(o.UserServiceId) {
 		return true
 	}
 
@@ -185,7 +185,7 @@ func (o *ServiceCreation) SetUserServiceId(v string) {
 
 // GetServiceClass returns the ServiceClass field value if set, zero value otherwise.
 func (o *ServiceCreation) GetServiceClass() string {
-	if o == nil || IsNil(o.ServiceClass) {
+	if o == nil || isNil(o.ServiceClass) {
 		var ret string
 		return ret
 	}
@@ -195,7 +195,7 @@ func (o *ServiceCreation) GetServiceClass() string {
 // GetServiceClassOk returns a tuple with the ServiceClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetServiceClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ServiceClass) {
+	if o == nil || isNil(o.ServiceClass) {
 		return nil, false
 	}
 	return o.ServiceClass, true
@@ -203,7 +203,7 @@ func (o *ServiceCreation) GetServiceClassOk() (*string, bool) {
 
 // HasServiceClass returns a boolean if a field has been set.
 func (o *ServiceCreation) HasServiceClass() bool {
-	if o != nil && !IsNil(o.ServiceClass) {
+	if o != nil && !isNil(o.ServiceClass) {
 		return true
 	}
 
@@ -217,7 +217,7 @@ func (o *ServiceCreation) SetServiceClass(v string) {
 
 // GetServiceLanguages returns the ServiceLanguages field value if set, zero value otherwise.
 func (o *ServiceCreation) GetServiceLanguages() []string {
-	if o == nil || IsNil(o.ServiceLanguages) {
+	if o == nil || isNil(o.ServiceLanguages) {
 		var ret []string
 		return ret
 	}
@@ -227,7 +227,7 @@ func (o *ServiceCreation) GetServiceLanguages() []string {
 // GetServiceLanguagesOk returns a tuple with the ServiceLanguages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetServiceLanguagesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServiceLanguages) {
+	if o == nil || isNil(o.ServiceLanguages) {
 		return nil, false
 	}
 	return o.ServiceLanguages, true
@@ -235,7 +235,7 @@ func (o *ServiceCreation) GetServiceLanguagesOk() ([]string, bool) {
 
 // HasServiceLanguages returns a boolean if a field has been set.
 func (o *ServiceCreation) HasServiceLanguages() bool {
-	if o != nil && !IsNil(o.ServiceLanguages) {
+	if o != nil && !isNil(o.ServiceLanguages) {
 		return true
 	}
 
@@ -249,7 +249,7 @@ func (o *ServiceCreation) SetServiceLanguages(v []string) {
 
 // GetServiceNames returns the ServiceNames field value if set, zero value otherwise.
 func (o *ServiceCreation) GetServiceNames() []string {
-	if o == nil || IsNil(o.ServiceNames) {
+	if o == nil || isNil(o.ServiceNames) {
 		var ret []string
 		return ret
 	}
@@ -259,7 +259,7 @@ func (o *ServiceCreation) GetServiceNames() []string {
 // GetServiceNamesOk returns a tuple with the ServiceNames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetServiceNamesOk() ([]string, bool) {
-	if o == nil || IsNil(o.ServiceNames) {
+	if o == nil || isNil(o.ServiceNames) {
 		return nil, false
 	}
 	return o.ServiceNames, true
@@ -267,7 +267,7 @@ func (o *ServiceCreation) GetServiceNamesOk() ([]string, bool) {
 
 // HasServiceNames returns a boolean if a field has been set.
 func (o *ServiceCreation) HasServiceNames() bool {
-	if o != nil && !IsNil(o.ServiceNames) {
+	if o != nil && !isNil(o.ServiceNames) {
 		return true
 	}
 
@@ -281,7 +281,7 @@ func (o *ServiceCreation) SetServiceNames(v []string) {
 
 // GetReceiveOnlyMode returns the ReceiveOnlyMode field value if set, zero value otherwise.
 func (o *ServiceCreation) GetReceiveOnlyMode() bool {
-	if o == nil || IsNil(o.ReceiveOnlyMode) {
+	if o == nil || isNil(o.ReceiveOnlyMode) {
 		var ret bool
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o *ServiceCreation) GetReceiveOnlyMode() bool {
 // GetReceiveOnlyModeOk returns a tuple with the ReceiveOnlyMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetReceiveOnlyModeOk() (*bool, bool) {
-	if o == nil || IsNil(o.ReceiveOnlyMode) {
+	if o == nil || isNil(o.ReceiveOnlyMode) {
 		return nil, false
 	}
 	return o.ReceiveOnlyMode, true
@@ -299,7 +299,7 @@ func (o *ServiceCreation) GetReceiveOnlyModeOk() (*bool, bool) {
 
 // HasReceiveOnlyMode returns a boolean if a field has been set.
 func (o *ServiceCreation) HasReceiveOnlyMode() bool {
-	if o != nil && !IsNil(o.ReceiveOnlyMode) {
+	if o != nil && !isNil(o.ReceiveOnlyMode) {
 		return true
 	}
 
@@ -313,7 +313,7 @@ func (o *ServiceCreation) SetReceiveOnlyMode(v bool) {
 
 // GetServiceAnnouncementMode returns the ServiceAnnouncementMode field value if set, zero value otherwise.
 func (o *ServiceCreation) GetServiceAnnouncementMode() ServiceAnnouncementMode {
-	if o == nil || IsNil(o.ServiceAnnouncementMode) {
+	if o == nil || isNil(o.ServiceAnnouncementMode) {
 		var ret ServiceAnnouncementMode
 		return ret
 	}
@@ -323,7 +323,7 @@ func (o *ServiceCreation) GetServiceAnnouncementMode() ServiceAnnouncementMode {
 // GetServiceAnnouncementModeOk returns a tuple with the ServiceAnnouncementMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceCreation) GetServiceAnnouncementModeOk() (*ServiceAnnouncementMode, bool) {
-	if o == nil || IsNil(o.ServiceAnnouncementMode) {
+	if o == nil || isNil(o.ServiceAnnouncementMode) {
 		return nil, false
 	}
 	return o.ServiceAnnouncementMode, true
@@ -331,7 +331,7 @@ func (o *ServiceCreation) GetServiceAnnouncementModeOk() (*ServiceAnnouncementMo
 
 // HasServiceAnnouncementMode returns a boolean if a field has been set.
 func (o *ServiceCreation) HasServiceAnnouncementMode() bool {
-	if o != nil && !IsNil(o.ServiceAnnouncementMode) {
+	if o != nil && !isNil(o.ServiceAnnouncementMode) {
 		return true
 	}
 
@@ -353,21 +353,31 @@ func (o ServiceCreation) MarshalJSON() ([]byte, error) {
 
 func (o ServiceCreation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.ExternalGroupId) {
+	if !isNil(o.ExternalGroupId) {
 		toSerialize["externalGroupId"] = o.ExternalGroupId
 	}
-	// skip: userServiceId is readOnly
-	// skip: serviceClass is readOnly
-	// skip: serviceLanguages is readOnly
-	// skip: serviceNames is readOnly
-	// skip: receiveOnlyMode is readOnly
-	if !IsNil(o.ServiceAnnouncementMode) {
+	if !isNil(o.UserServiceId) {
+		toSerialize["userServiceId"] = o.UserServiceId
+	}
+	if !isNil(o.ServiceClass) {
+		toSerialize["serviceClass"] = o.ServiceClass
+	}
+	if !isNil(o.ServiceLanguages) {
+		toSerialize["serviceLanguages"] = o.ServiceLanguages
+	}
+	if !isNil(o.ServiceNames) {
+		toSerialize["serviceNames"] = o.ServiceNames
+	}
+	if !isNil(o.ReceiveOnlyMode) {
+		toSerialize["receiveOnlyMode"] = o.ReceiveOnlyMode
+	}
+	if !isNil(o.ServiceAnnouncementMode) {
 		toSerialize["serviceAnnouncementMode"] = o.ServiceAnnouncementMode
 	}
 	return toSerialize, nil

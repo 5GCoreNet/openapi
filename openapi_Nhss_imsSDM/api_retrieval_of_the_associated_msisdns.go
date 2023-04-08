@@ -13,7 +13,7 @@ package openapi_Nhss_imsSDM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -78,7 +78,7 @@ func (a *RetrievalOfTheAssociatedMsisdnsApiService) GetMsisdnsExecute(r ApiGetMs
 	localVarFormParams := url.Values{}
 
 	if r.privateId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "private-id", r.privateId, "")
+		parameterAddToQuery(localVarQueryParams, "private-id", r.privateId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -107,9 +107,9 @@ func (a *RetrievalOfTheAssociatedMsisdnsApiService) GetMsisdnsExecute(r ApiGetMs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

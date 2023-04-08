@@ -46,7 +46,7 @@ func NewManagementNodeSingleAllOfAttributesWithDefaults() *ManagementNodeSingleA
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOfAttributes) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -64,7 +64,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetUserLabelOk() (*string, bool) {
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOfAttributes) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
+	if o != nil && !isNil(o.UserLabel) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ManagementNodeSingleAllOfAttributes) SetUserLabel(v string) {
 
 // GetManagedElements returns the ManagedElements field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOfAttributes) GetManagedElements() []string {
-	if o == nil || IsNil(o.ManagedElements) {
+	if o == nil || isNil(o.ManagedElements) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetManagedElements() []string {
 // GetManagedElementsOk returns a tuple with the ManagedElements field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOfAttributes) GetManagedElementsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ManagedElements) {
+	if o == nil || isNil(o.ManagedElements) {
 		return nil, false
 	}
 	return o.ManagedElements, true
@@ -96,7 +96,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetManagedElementsOk() ([]string, 
 
 // HasManagedElements returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOfAttributes) HasManagedElements() bool {
-	if o != nil && !IsNil(o.ManagedElements) {
+	if o != nil && !isNil(o.ManagedElements) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ManagementNodeSingleAllOfAttributes) SetManagedElements(v []string) {
 
 // GetVendorName returns the VendorName field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOfAttributes) GetVendorName() string {
-	if o == nil || IsNil(o.VendorName) {
+	if o == nil || isNil(o.VendorName) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetVendorName() string {
 // GetVendorNameOk returns a tuple with the VendorName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOfAttributes) GetVendorNameOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorName) {
+	if o == nil || isNil(o.VendorName) {
 		return nil, false
 	}
 	return o.VendorName, true
@@ -128,7 +128,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetVendorNameOk() (*string, bool) 
 
 // HasVendorName returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOfAttributes) HasVendorName() bool {
-	if o != nil && !IsNil(o.VendorName) {
+	if o != nil && !isNil(o.VendorName) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ManagementNodeSingleAllOfAttributes) SetVendorName(v string) {
 
 // GetUserDefinedState returns the UserDefinedState field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOfAttributes) GetUserDefinedState() string {
-	if o == nil || IsNil(o.UserDefinedState) {
+	if o == nil || isNil(o.UserDefinedState) {
 		var ret string
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetUserDefinedState() string {
 // GetUserDefinedStateOk returns a tuple with the UserDefinedState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOfAttributes) GetUserDefinedStateOk() (*string, bool) {
-	if o == nil || IsNil(o.UserDefinedState) {
+	if o == nil || isNil(o.UserDefinedState) {
 		return nil, false
 	}
 	return o.UserDefinedState, true
@@ -160,7 +160,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetUserDefinedStateOk() (*string, 
 
 // HasUserDefinedState returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOfAttributes) HasUserDefinedState() bool {
-	if o != nil && !IsNil(o.UserDefinedState) {
+	if o != nil && !isNil(o.UserDefinedState) {
 		return true
 	}
 
@@ -174,7 +174,7 @@ func (o *ManagementNodeSingleAllOfAttributes) SetUserDefinedState(v string) {
 
 // GetLocationName returns the LocationName field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOfAttributes) GetLocationName() string {
-	if o == nil || IsNil(o.LocationName) {
+	if o == nil || isNil(o.LocationName) {
 		var ret string
 		return ret
 	}
@@ -184,7 +184,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetLocationName() string {
 // GetLocationNameOk returns a tuple with the LocationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOfAttributes) GetLocationNameOk() (*string, bool) {
-	if o == nil || IsNil(o.LocationName) {
+	if o == nil || isNil(o.LocationName) {
 		return nil, false
 	}
 	return o.LocationName, true
@@ -192,7 +192,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetLocationNameOk() (*string, bool
 
 // HasLocationName returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOfAttributes) HasLocationName() bool {
-	if o != nil && !IsNil(o.LocationName) {
+	if o != nil && !isNil(o.LocationName) {
 		return true
 	}
 
@@ -206,7 +206,7 @@ func (o *ManagementNodeSingleAllOfAttributes) SetLocationName(v string) {
 
 // GetSwVersion returns the SwVersion field value if set, zero value otherwise.
 func (o *ManagementNodeSingleAllOfAttributes) GetSwVersion() string {
-	if o == nil || IsNil(o.SwVersion) {
+	if o == nil || isNil(o.SwVersion) {
 		var ret string
 		return ret
 	}
@@ -216,7 +216,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetSwVersion() string {
 // GetSwVersionOk returns a tuple with the SwVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagementNodeSingleAllOfAttributes) GetSwVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SwVersion) {
+	if o == nil || isNil(o.SwVersion) {
 		return nil, false
 	}
 	return o.SwVersion, true
@@ -224,7 +224,7 @@ func (o *ManagementNodeSingleAllOfAttributes) GetSwVersionOk() (*string, bool) {
 
 // HasSwVersion returns a boolean if a field has been set.
 func (o *ManagementNodeSingleAllOfAttributes) HasSwVersion() bool {
-	if o != nil && !IsNil(o.SwVersion) {
+	if o != nil && !isNil(o.SwVersion) {
 		return true
 	}
 
@@ -246,22 +246,22 @@ func (o ManagementNodeSingleAllOfAttributes) MarshalJSON() ([]byte, error) {
 
 func (o ManagementNodeSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserLabel) {
+	if !isNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !IsNil(o.ManagedElements) {
+	if !isNil(o.ManagedElements) {
 		toSerialize["managedElements"] = o.ManagedElements
 	}
-	if !IsNil(o.VendorName) {
+	if !isNil(o.VendorName) {
 		toSerialize["vendorName"] = o.VendorName
 	}
-	if !IsNil(o.UserDefinedState) {
+	if !isNil(o.UserDefinedState) {
 		toSerialize["userDefinedState"] = o.UserDefinedState
 	}
-	if !IsNil(o.LocationName) {
+	if !isNil(o.LocationName) {
 		toSerialize["locationName"] = o.LocationName
 	}
-	if !IsNil(o.SwVersion) {
+	if !isNil(o.SwVersion) {
 		toSerialize["swVersion"] = o.SwVersion
 	}
 	return toSerialize, nil

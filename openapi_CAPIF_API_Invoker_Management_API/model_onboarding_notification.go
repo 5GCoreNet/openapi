@@ -71,7 +71,7 @@ func (o *OnboardingNotification) SetResult(v bool) {
 
 // GetResourceLocation returns the ResourceLocation field value if set, zero value otherwise.
 func (o *OnboardingNotification) GetResourceLocation() string {
-	if o == nil || IsNil(o.ResourceLocation) {
+	if o == nil || isNil(o.ResourceLocation) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *OnboardingNotification) GetResourceLocation() string {
 // GetResourceLocationOk returns a tuple with the ResourceLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OnboardingNotification) GetResourceLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceLocation) {
+	if o == nil || isNil(o.ResourceLocation) {
 		return nil, false
 	}
 	return o.ResourceLocation, true
@@ -89,7 +89,7 @@ func (o *OnboardingNotification) GetResourceLocationOk() (*string, bool) {
 
 // HasResourceLocation returns a boolean if a field has been set.
 func (o *OnboardingNotification) HasResourceLocation() bool {
-	if o != nil && !IsNil(o.ResourceLocation) {
+	if o != nil && !isNil(o.ResourceLocation) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *OnboardingNotification) SetResourceLocation(v string) {
 
 // GetApiInvokerEnrolmentDetails returns the ApiInvokerEnrolmentDetails field value if set, zero value otherwise.
 func (o *OnboardingNotification) GetApiInvokerEnrolmentDetails() APIInvokerEnrolmentDetails {
-	if o == nil || IsNil(o.ApiInvokerEnrolmentDetails) {
+	if o == nil || isNil(o.ApiInvokerEnrolmentDetails) {
 		var ret APIInvokerEnrolmentDetails
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *OnboardingNotification) GetApiInvokerEnrolmentDetails() APIInvokerEnrol
 // GetApiInvokerEnrolmentDetailsOk returns a tuple with the ApiInvokerEnrolmentDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OnboardingNotification) GetApiInvokerEnrolmentDetailsOk() (*APIInvokerEnrolmentDetails, bool) {
-	if o == nil || IsNil(o.ApiInvokerEnrolmentDetails) {
+	if o == nil || isNil(o.ApiInvokerEnrolmentDetails) {
 		return nil, false
 	}
 	return o.ApiInvokerEnrolmentDetails, true
@@ -121,7 +121,7 @@ func (o *OnboardingNotification) GetApiInvokerEnrolmentDetailsOk() (*APIInvokerE
 
 // HasApiInvokerEnrolmentDetails returns a boolean if a field has been set.
 func (o *OnboardingNotification) HasApiInvokerEnrolmentDetails() bool {
-	if o != nil && !IsNil(o.ApiInvokerEnrolmentDetails) {
+	if o != nil && !isNil(o.ApiInvokerEnrolmentDetails) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *OnboardingNotification) SetApiInvokerEnrolmentDetails(v APIInvokerEnrol
 
 // GetApiList returns the ApiList field value if set, zero value otherwise.
 func (o *OnboardingNotification) GetApiList() APIList {
-	if o == nil || IsNil(o.ApiList) {
+	if o == nil || isNil(o.ApiList) {
 		var ret APIList
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *OnboardingNotification) GetApiList() APIList {
 // GetApiListOk returns a tuple with the ApiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OnboardingNotification) GetApiListOk() (*APIList, bool) {
-	if o == nil || IsNil(o.ApiList) {
+	if o == nil || isNil(o.ApiList) {
 		return nil, false
 	}
 	return o.ApiList, true
@@ -153,7 +153,7 @@ func (o *OnboardingNotification) GetApiListOk() (*APIList, bool) {
 
 // HasApiList returns a boolean if a field has been set.
 func (o *OnboardingNotification) HasApiList() bool {
-	if o != nil && !IsNil(o.ApiList) {
+	if o != nil && !isNil(o.ApiList) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o OnboardingNotification) MarshalJSON() ([]byte, error) {
 func (o OnboardingNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["result"] = o.Result
-	if !IsNil(o.ResourceLocation) {
+	if !isNil(o.ResourceLocation) {
 		toSerialize["resourceLocation"] = o.ResourceLocation
 	}
-	if !IsNil(o.ApiInvokerEnrolmentDetails) {
+	if !isNil(o.ApiInvokerEnrolmentDetails) {
 		toSerialize["apiInvokerEnrolmentDetails"] = o.ApiInvokerEnrolmentDetails
 	}
-	if !IsNil(o.ApiList) {
+	if !isNil(o.ApiList) {
 		toSerialize["apiList"] = o.ApiList
 	}
 	return toSerialize, nil

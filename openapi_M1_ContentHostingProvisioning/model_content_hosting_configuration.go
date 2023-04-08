@@ -72,7 +72,7 @@ func (o *ContentHostingConfiguration) SetName(v string) {
 
 // GetEntryPointPath returns the EntryPointPath field value if set, zero value otherwise.
 func (o *ContentHostingConfiguration) GetEntryPointPath() string {
-	if o == nil || IsNil(o.EntryPointPath) {
+	if o == nil || isNil(o.EntryPointPath) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *ContentHostingConfiguration) GetEntryPointPath() string {
 // GetEntryPointPathOk returns a tuple with the EntryPointPath field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContentHostingConfiguration) GetEntryPointPathOk() (*string, bool) {
-	if o == nil || IsNil(o.EntryPointPath) {
+	if o == nil || isNil(o.EntryPointPath) {
 		return nil, false
 	}
 	return o.EntryPointPath, true
@@ -90,7 +90,7 @@ func (o *ContentHostingConfiguration) GetEntryPointPathOk() (*string, bool) {
 
 // HasEntryPointPath returns a boolean if a field has been set.
 func (o *ContentHostingConfiguration) HasEntryPointPath() bool {
-	if o != nil && !IsNil(o.EntryPointPath) {
+	if o != nil && !isNil(o.EntryPointPath) {
 		return true
 	}
 
@@ -161,7 +161,7 @@ func (o ContentHostingConfiguration) MarshalJSON() ([]byte, error) {
 func (o ContentHostingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.EntryPointPath) {
+	if !isNil(o.EntryPointPath) {
 		toSerialize["entryPointPath"] = o.EntryPointPath
 	}
 	toSerialize["ingestConfiguration"] = o.IngestConfiguration

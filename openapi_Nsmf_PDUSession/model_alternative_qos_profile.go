@@ -74,7 +74,7 @@ func (o *AlternativeQosProfile) SetIndex(v int32) {
 
 // GetGuaFbrDl returns the GuaFbrDl field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetGuaFbrDl() string {
-	if o == nil || IsNil(o.GuaFbrDl) {
+	if o == nil || isNil(o.GuaFbrDl) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AlternativeQosProfile) GetGuaFbrDl() string {
 // GetGuaFbrDlOk returns a tuple with the GuaFbrDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetGuaFbrDlOk() (*string, bool) {
-	if o == nil || IsNil(o.GuaFbrDl) {
+	if o == nil || isNil(o.GuaFbrDl) {
 		return nil, false
 	}
 	return o.GuaFbrDl, true
@@ -92,7 +92,7 @@ func (o *AlternativeQosProfile) GetGuaFbrDlOk() (*string, bool) {
 
 // HasGuaFbrDl returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasGuaFbrDl() bool {
-	if o != nil && !IsNil(o.GuaFbrDl) {
+	if o != nil && !isNil(o.GuaFbrDl) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AlternativeQosProfile) SetGuaFbrDl(v string) {
 
 // GetGuaFbrUl returns the GuaFbrUl field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetGuaFbrUl() string {
-	if o == nil || IsNil(o.GuaFbrUl) {
+	if o == nil || isNil(o.GuaFbrUl) {
 		var ret string
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *AlternativeQosProfile) GetGuaFbrUl() string {
 // GetGuaFbrUlOk returns a tuple with the GuaFbrUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetGuaFbrUlOk() (*string, bool) {
-	if o == nil || IsNil(o.GuaFbrUl) {
+	if o == nil || isNil(o.GuaFbrUl) {
 		return nil, false
 	}
 	return o.GuaFbrUl, true
@@ -124,7 +124,7 @@ func (o *AlternativeQosProfile) GetGuaFbrUlOk() (*string, bool) {
 
 // HasGuaFbrUl returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasGuaFbrUl() bool {
-	if o != nil && !IsNil(o.GuaFbrUl) {
+	if o != nil && !isNil(o.GuaFbrUl) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AlternativeQosProfile) SetGuaFbrUl(v string) {
 
 // GetPacketDelayBudget returns the PacketDelayBudget field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetPacketDelayBudget() int32 {
-	if o == nil || IsNil(o.PacketDelayBudget) {
+	if o == nil || isNil(o.PacketDelayBudget) {
 		var ret int32
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *AlternativeQosProfile) GetPacketDelayBudget() int32 {
 // GetPacketDelayBudgetOk returns a tuple with the PacketDelayBudget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetPacketDelayBudgetOk() (*int32, bool) {
-	if o == nil || IsNil(o.PacketDelayBudget) {
+	if o == nil || isNil(o.PacketDelayBudget) {
 		return nil, false
 	}
 	return o.PacketDelayBudget, true
@@ -156,7 +156,7 @@ func (o *AlternativeQosProfile) GetPacketDelayBudgetOk() (*int32, bool) {
 
 // HasPacketDelayBudget returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasPacketDelayBudget() bool {
-	if o != nil && !IsNil(o.PacketDelayBudget) {
+	if o != nil && !isNil(o.PacketDelayBudget) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *AlternativeQosProfile) SetPacketDelayBudget(v int32) {
 
 // GetPacketErrRate returns the PacketErrRate field value if set, zero value otherwise.
 func (o *AlternativeQosProfile) GetPacketErrRate() string {
-	if o == nil || IsNil(o.PacketErrRate) {
+	if o == nil || isNil(o.PacketErrRate) {
 		var ret string
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *AlternativeQosProfile) GetPacketErrRate() string {
 // GetPacketErrRateOk returns a tuple with the PacketErrRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeQosProfile) GetPacketErrRateOk() (*string, bool) {
-	if o == nil || IsNil(o.PacketErrRate) {
+	if o == nil || isNil(o.PacketErrRate) {
 		return nil, false
 	}
 	return o.PacketErrRate, true
@@ -188,7 +188,7 @@ func (o *AlternativeQosProfile) GetPacketErrRateOk() (*string, bool) {
 
 // HasPacketErrRate returns a boolean if a field has been set.
 func (o *AlternativeQosProfile) HasPacketErrRate() bool {
-	if o != nil && !IsNil(o.PacketErrRate) {
+	if o != nil && !isNil(o.PacketErrRate) {
 		return true
 	}
 
@@ -211,16 +211,16 @@ func (o AlternativeQosProfile) MarshalJSON() ([]byte, error) {
 func (o AlternativeQosProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["index"] = o.Index
-	if !IsNil(o.GuaFbrDl) {
+	if !isNil(o.GuaFbrDl) {
 		toSerialize["guaFbrDl"] = o.GuaFbrDl
 	}
-	if !IsNil(o.GuaFbrUl) {
+	if !isNil(o.GuaFbrUl) {
 		toSerialize["guaFbrUl"] = o.GuaFbrUl
 	}
-	if !IsNil(o.PacketDelayBudget) {
+	if !isNil(o.PacketDelayBudget) {
 		toSerialize["packetDelayBudget"] = o.PacketDelayBudget
 	}
-	if !IsNil(o.PacketErrRate) {
+	if !isNil(o.PacketErrRate) {
 		toSerialize["packetErrRate"] = o.PacketErrRate
 	}
 	return toSerialize, nil

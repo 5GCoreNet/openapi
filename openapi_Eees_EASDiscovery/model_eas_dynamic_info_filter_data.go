@@ -85,7 +85,7 @@ func (o *EasDynamicInfoFilterData) SetEecId(v string) {
 
 // GetEasStatus returns the EasStatus field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetEasStatus() bool {
-	if o == nil || IsNil(o.EasStatus) {
+	if o == nil || isNil(o.EasStatus) {
 		var ret bool
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *EasDynamicInfoFilterData) GetEasStatus() bool {
 // GetEasStatusOk returns a tuple with the EasStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetEasStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasStatus) {
+	if o == nil || isNil(o.EasStatus) {
 		return nil, false
 	}
 	return o.EasStatus, true
@@ -103,7 +103,7 @@ func (o *EasDynamicInfoFilterData) GetEasStatusOk() (*bool, bool) {
 
 // HasEasStatus returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasEasStatus() bool {
-	if o != nil && !IsNil(o.EasStatus) {
+	if o != nil && !isNil(o.EasStatus) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *EasDynamicInfoFilterData) SetEasStatus(v bool) {
 
 // GetEasAcIds returns the EasAcIds field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetEasAcIds() bool {
-	if o == nil || IsNil(o.EasAcIds) {
+	if o == nil || isNil(o.EasAcIds) {
 		var ret bool
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *EasDynamicInfoFilterData) GetEasAcIds() bool {
 // GetEasAcIdsOk returns a tuple with the EasAcIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetEasAcIdsOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasAcIds) {
+	if o == nil || isNil(o.EasAcIds) {
 		return nil, false
 	}
 	return o.EasAcIds, true
@@ -135,7 +135,7 @@ func (o *EasDynamicInfoFilterData) GetEasAcIdsOk() (*bool, bool) {
 
 // HasEasAcIds returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasEasAcIds() bool {
-	if o != nil && !IsNil(o.EasAcIds) {
+	if o != nil && !isNil(o.EasAcIds) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *EasDynamicInfoFilterData) SetEasAcIds(v bool) {
 
 // GetEasDesc returns the EasDesc field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetEasDesc() bool {
-	if o == nil || IsNil(o.EasDesc) {
+	if o == nil || isNil(o.EasDesc) {
 		var ret bool
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *EasDynamicInfoFilterData) GetEasDesc() bool {
 // GetEasDescOk returns a tuple with the EasDesc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetEasDescOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasDesc) {
+	if o == nil || isNil(o.EasDesc) {
 		return nil, false
 	}
 	return o.EasDesc, true
@@ -167,7 +167,7 @@ func (o *EasDynamicInfoFilterData) GetEasDescOk() (*bool, bool) {
 
 // HasEasDesc returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasEasDesc() bool {
-	if o != nil && !IsNil(o.EasDesc) {
+	if o != nil && !isNil(o.EasDesc) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *EasDynamicInfoFilterData) SetEasDesc(v bool) {
 
 // GetEasPt returns the EasPt field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetEasPt() bool {
-	if o == nil || IsNil(o.EasPt) {
+	if o == nil || isNil(o.EasPt) {
 		var ret bool
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *EasDynamicInfoFilterData) GetEasPt() bool {
 // GetEasPtOk returns a tuple with the EasPt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetEasPtOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasPt) {
+	if o == nil || isNil(o.EasPt) {
 		return nil, false
 	}
 	return o.EasPt, true
@@ -199,7 +199,7 @@ func (o *EasDynamicInfoFilterData) GetEasPtOk() (*bool, bool) {
 
 // HasEasPt returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasEasPt() bool {
-	if o != nil && !IsNil(o.EasPt) {
+	if o != nil && !isNil(o.EasPt) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *EasDynamicInfoFilterData) SetEasPt(v bool) {
 
 // GetEasFeature returns the EasFeature field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetEasFeature() bool {
-	if o == nil || IsNil(o.EasFeature) {
+	if o == nil || isNil(o.EasFeature) {
 		var ret bool
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *EasDynamicInfoFilterData) GetEasFeature() bool {
 // GetEasFeatureOk returns a tuple with the EasFeature field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetEasFeatureOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasFeature) {
+	if o == nil || isNil(o.EasFeature) {
 		return nil, false
 	}
 	return o.EasFeature, true
@@ -231,7 +231,7 @@ func (o *EasDynamicInfoFilterData) GetEasFeatureOk() (*bool, bool) {
 
 // HasEasFeature returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasEasFeature() bool {
-	if o != nil && !IsNil(o.EasFeature) {
+	if o != nil && !isNil(o.EasFeature) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *EasDynamicInfoFilterData) SetEasFeature(v bool) {
 
 // GetEasSchedule returns the EasSchedule field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetEasSchedule() bool {
-	if o == nil || IsNil(o.EasSchedule) {
+	if o == nil || isNil(o.EasSchedule) {
 		var ret bool
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *EasDynamicInfoFilterData) GetEasSchedule() bool {
 // GetEasScheduleOk returns a tuple with the EasSchedule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetEasScheduleOk() (*bool, bool) {
-	if o == nil || IsNil(o.EasSchedule) {
+	if o == nil || isNil(o.EasSchedule) {
 		return nil, false
 	}
 	return o.EasSchedule, true
@@ -263,7 +263,7 @@ func (o *EasDynamicInfoFilterData) GetEasScheduleOk() (*bool, bool) {
 
 // HasEasSchedule returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasEasSchedule() bool {
-	if o != nil && !IsNil(o.EasSchedule) {
+	if o != nil && !isNil(o.EasSchedule) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *EasDynamicInfoFilterData) SetEasSchedule(v bool) {
 
 // GetSvcArea returns the SvcArea field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetSvcArea() bool {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		var ret bool
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *EasDynamicInfoFilterData) GetSvcArea() bool {
 // GetSvcAreaOk returns a tuple with the SvcArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetSvcAreaOk() (*bool, bool) {
-	if o == nil || IsNil(o.SvcArea) {
+	if o == nil || isNil(o.SvcArea) {
 		return nil, false
 	}
 	return o.SvcArea, true
@@ -295,7 +295,7 @@ func (o *EasDynamicInfoFilterData) GetSvcAreaOk() (*bool, bool) {
 
 // HasSvcArea returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasSvcArea() bool {
-	if o != nil && !IsNil(o.SvcArea) {
+	if o != nil && !isNil(o.SvcArea) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *EasDynamicInfoFilterData) SetSvcArea(v bool) {
 
 // GetSvcKpi returns the SvcKpi field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetSvcKpi() bool {
-	if o == nil || IsNil(o.SvcKpi) {
+	if o == nil || isNil(o.SvcKpi) {
 		var ret bool
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *EasDynamicInfoFilterData) GetSvcKpi() bool {
 // GetSvcKpiOk returns a tuple with the SvcKpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetSvcKpiOk() (*bool, bool) {
-	if o == nil || IsNil(o.SvcKpi) {
+	if o == nil || isNil(o.SvcKpi) {
 		return nil, false
 	}
 	return o.SvcKpi, true
@@ -327,7 +327,7 @@ func (o *EasDynamicInfoFilterData) GetSvcKpiOk() (*bool, bool) {
 
 // HasSvcKpi returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasSvcKpi() bool {
-	if o != nil && !IsNil(o.SvcKpi) {
+	if o != nil && !isNil(o.SvcKpi) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *EasDynamicInfoFilterData) SetSvcKpi(v bool) {
 
 // GetSvcCont returns the SvcCont field value if set, zero value otherwise.
 func (o *EasDynamicInfoFilterData) GetSvcCont() bool {
-	if o == nil || IsNil(o.SvcCont) {
+	if o == nil || isNil(o.SvcCont) {
 		var ret bool
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *EasDynamicInfoFilterData) GetSvcCont() bool {
 // GetSvcContOk returns a tuple with the SvcCont field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EasDynamicInfoFilterData) GetSvcContOk() (*bool, bool) {
-	if o == nil || IsNil(o.SvcCont) {
+	if o == nil || isNil(o.SvcCont) {
 		return nil, false
 	}
 	return o.SvcCont, true
@@ -359,7 +359,7 @@ func (o *EasDynamicInfoFilterData) GetSvcContOk() (*bool, bool) {
 
 // HasSvcCont returns a boolean if a field has been set.
 func (o *EasDynamicInfoFilterData) HasSvcCont() bool {
-	if o != nil && !IsNil(o.SvcCont) {
+	if o != nil && !isNil(o.SvcCont) {
 		return true
 	}
 
@@ -382,31 +382,31 @@ func (o EasDynamicInfoFilterData) MarshalJSON() ([]byte, error) {
 func (o EasDynamicInfoFilterData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
-	if !IsNil(o.EasStatus) {
+	if !isNil(o.EasStatus) {
 		toSerialize["easStatus"] = o.EasStatus
 	}
-	if !IsNil(o.EasAcIds) {
+	if !isNil(o.EasAcIds) {
 		toSerialize["easAcIds"] = o.EasAcIds
 	}
-	if !IsNil(o.EasDesc) {
+	if !isNil(o.EasDesc) {
 		toSerialize["easDesc"] = o.EasDesc
 	}
-	if !IsNil(o.EasPt) {
+	if !isNil(o.EasPt) {
 		toSerialize["easPt"] = o.EasPt
 	}
-	if !IsNil(o.EasFeature) {
+	if !isNil(o.EasFeature) {
 		toSerialize["easFeature"] = o.EasFeature
 	}
-	if !IsNil(o.EasSchedule) {
+	if !isNil(o.EasSchedule) {
 		toSerialize["easSchedule"] = o.EasSchedule
 	}
-	if !IsNil(o.SvcArea) {
+	if !isNil(o.SvcArea) {
 		toSerialize["svcArea"] = o.SvcArea
 	}
-	if !IsNil(o.SvcKpi) {
+	if !isNil(o.SvcKpi) {
 		toSerialize["svcKpi"] = o.SvcKpi
 	}
-	if !IsNil(o.SvcCont) {
+	if !isNil(o.SvcCont) {
 		toSerialize["svcCont"] = o.SvcCont
 	}
 	return toSerialize, nil

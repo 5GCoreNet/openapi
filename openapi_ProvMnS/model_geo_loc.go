@@ -42,7 +42,7 @@ func NewGeoLocWithDefaults() *GeoLoc {
 
 // GetGeographicalCoordinates returns the GeographicalCoordinates field value if set, zero value otherwise.
 func (o *GeoLoc) GetGeographicalCoordinates() GeographicalCoordinates {
-	if o == nil || IsNil(o.GeographicalCoordinates) {
+	if o == nil || isNil(o.GeographicalCoordinates) {
 		var ret GeographicalCoordinates
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *GeoLoc) GetGeographicalCoordinates() GeographicalCoordinates {
 // GetGeographicalCoordinatesOk returns a tuple with the GeographicalCoordinates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoLoc) GetGeographicalCoordinatesOk() (*GeographicalCoordinates, bool) {
-	if o == nil || IsNil(o.GeographicalCoordinates) {
+	if o == nil || isNil(o.GeographicalCoordinates) {
 		return nil, false
 	}
 	return o.GeographicalCoordinates, true
@@ -60,7 +60,7 @@ func (o *GeoLoc) GetGeographicalCoordinatesOk() (*GeographicalCoordinates, bool)
 
 // HasGeographicalCoordinates returns a boolean if a field has been set.
 func (o *GeoLoc) HasGeographicalCoordinates() bool {
-	if o != nil && !IsNil(o.GeographicalCoordinates) {
+	if o != nil && !isNil(o.GeographicalCoordinates) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *GeoLoc) SetGeographicalCoordinates(v GeographicalCoordinates) {
 
 // GetCivicLocation returns the CivicLocation field value if set, zero value otherwise.
 func (o *GeoLoc) GetCivicLocation() string {
-	if o == nil || IsNil(o.CivicLocation) {
+	if o == nil || isNil(o.CivicLocation) {
 		var ret string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *GeoLoc) GetCivicLocation() string {
 // GetCivicLocationOk returns a tuple with the CivicLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeoLoc) GetCivicLocationOk() (*string, bool) {
-	if o == nil || IsNil(o.CivicLocation) {
+	if o == nil || isNil(o.CivicLocation) {
 		return nil, false
 	}
 	return o.CivicLocation, true
@@ -92,7 +92,7 @@ func (o *GeoLoc) GetCivicLocationOk() (*string, bool) {
 
 // HasCivicLocation returns a boolean if a field has been set.
 func (o *GeoLoc) HasCivicLocation() bool {
-	if o != nil && !IsNil(o.CivicLocation) {
+	if o != nil && !isNil(o.CivicLocation) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o GeoLoc) MarshalJSON() ([]byte, error) {
 
 func (o GeoLoc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.GeographicalCoordinates) {
+	if !isNil(o.GeographicalCoordinates) {
 		toSerialize["geographicalCoordinates"] = o.GeographicalCoordinates
 	}
-	if !IsNil(o.CivicLocation) {
+	if !isNil(o.CivicLocation) {
 		toSerialize["civicLocation"] = o.CivicLocation
 	}
 	return toSerialize, nil

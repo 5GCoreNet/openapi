@@ -42,7 +42,7 @@ func NewPlmnOauth2WithDefaults() *PlmnOauth2 {
 
 // GetOauth2RequiredPlmnIdList returns the Oauth2RequiredPlmnIdList field value if set, zero value otherwise.
 func (o *PlmnOauth2) GetOauth2RequiredPlmnIdList() []PlmnId {
-	if o == nil || IsNil(o.Oauth2RequiredPlmnIdList) {
+	if o == nil || isNil(o.Oauth2RequiredPlmnIdList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *PlmnOauth2) GetOauth2RequiredPlmnIdList() []PlmnId {
 // GetOauth2RequiredPlmnIdListOk returns a tuple with the Oauth2RequiredPlmnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnOauth2) GetOauth2RequiredPlmnIdListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.Oauth2RequiredPlmnIdList) {
+	if o == nil || isNil(o.Oauth2RequiredPlmnIdList) {
 		return nil, false
 	}
 	return o.Oauth2RequiredPlmnIdList, true
@@ -60,7 +60,7 @@ func (o *PlmnOauth2) GetOauth2RequiredPlmnIdListOk() ([]PlmnId, bool) {
 
 // HasOauth2RequiredPlmnIdList returns a boolean if a field has been set.
 func (o *PlmnOauth2) HasOauth2RequiredPlmnIdList() bool {
-	if o != nil && !IsNil(o.Oauth2RequiredPlmnIdList) {
+	if o != nil && !isNil(o.Oauth2RequiredPlmnIdList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *PlmnOauth2) SetOauth2RequiredPlmnIdList(v []PlmnId) {
 
 // GetOauth2NotRequiredPlmnIdList returns the Oauth2NotRequiredPlmnIdList field value if set, zero value otherwise.
 func (o *PlmnOauth2) GetOauth2NotRequiredPlmnIdList() []PlmnId {
-	if o == nil || IsNil(o.Oauth2NotRequiredPlmnIdList) {
+	if o == nil || isNil(o.Oauth2NotRequiredPlmnIdList) {
 		var ret []PlmnId
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *PlmnOauth2) GetOauth2NotRequiredPlmnIdList() []PlmnId {
 // GetOauth2NotRequiredPlmnIdListOk returns a tuple with the Oauth2NotRequiredPlmnIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnOauth2) GetOauth2NotRequiredPlmnIdListOk() ([]PlmnId, bool) {
-	if o == nil || IsNil(o.Oauth2NotRequiredPlmnIdList) {
+	if o == nil || isNil(o.Oauth2NotRequiredPlmnIdList) {
 		return nil, false
 	}
 	return o.Oauth2NotRequiredPlmnIdList, true
@@ -92,7 +92,7 @@ func (o *PlmnOauth2) GetOauth2NotRequiredPlmnIdListOk() ([]PlmnId, bool) {
 
 // HasOauth2NotRequiredPlmnIdList returns a boolean if a field has been set.
 func (o *PlmnOauth2) HasOauth2NotRequiredPlmnIdList() bool {
-	if o != nil && !IsNil(o.Oauth2NotRequiredPlmnIdList) {
+	if o != nil && !isNil(o.Oauth2NotRequiredPlmnIdList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o PlmnOauth2) MarshalJSON() ([]byte, error) {
 
 func (o PlmnOauth2) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Oauth2RequiredPlmnIdList) {
+	if !isNil(o.Oauth2RequiredPlmnIdList) {
 		toSerialize["oauth2RequiredPlmnIdList"] = o.Oauth2RequiredPlmnIdList
 	}
-	if !IsNil(o.Oauth2NotRequiredPlmnIdList) {
+	if !isNil(o.Oauth2NotRequiredPlmnIdList) {
 		toSerialize["oauth2NotRequiredPlmnIdList"] = o.Oauth2NotRequiredPlmnIdList
 	}
 	return toSerialize, nil

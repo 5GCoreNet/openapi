@@ -45,7 +45,7 @@ func NewSequenceNumberWithDefaults() *SequenceNumber {
 
 // GetSqnScheme returns the SqnScheme field value if set, zero value otherwise.
 func (o *SequenceNumber) GetSqnScheme() SqnScheme {
-	if o == nil || IsNil(o.SqnScheme) {
+	if o == nil || isNil(o.SqnScheme) {
 		var ret SqnScheme
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *SequenceNumber) GetSqnScheme() SqnScheme {
 // GetSqnSchemeOk returns a tuple with the SqnScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceNumber) GetSqnSchemeOk() (*SqnScheme, bool) {
-	if o == nil || IsNil(o.SqnScheme) {
+	if o == nil || isNil(o.SqnScheme) {
 		return nil, false
 	}
 	return o.SqnScheme, true
@@ -63,7 +63,7 @@ func (o *SequenceNumber) GetSqnSchemeOk() (*SqnScheme, bool) {
 
 // HasSqnScheme returns a boolean if a field has been set.
 func (o *SequenceNumber) HasSqnScheme() bool {
-	if o != nil && !IsNil(o.SqnScheme) {
+	if o != nil && !isNil(o.SqnScheme) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *SequenceNumber) SetSqnScheme(v SqnScheme) {
 
 // GetSqn returns the Sqn field value if set, zero value otherwise.
 func (o *SequenceNumber) GetSqn() string {
-	if o == nil || IsNil(o.Sqn) {
+	if o == nil || isNil(o.Sqn) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *SequenceNumber) GetSqn() string {
 // GetSqnOk returns a tuple with the Sqn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceNumber) GetSqnOk() (*string, bool) {
-	if o == nil || IsNil(o.Sqn) {
+	if o == nil || isNil(o.Sqn) {
 		return nil, false
 	}
 	return o.Sqn, true
@@ -95,7 +95,7 @@ func (o *SequenceNumber) GetSqnOk() (*string, bool) {
 
 // HasSqn returns a boolean if a field has been set.
 func (o *SequenceNumber) HasSqn() bool {
-	if o != nil && !IsNil(o.Sqn) {
+	if o != nil && !isNil(o.Sqn) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *SequenceNumber) SetSqn(v string) {
 
 // GetLastIndexes returns the LastIndexes field value if set, zero value otherwise.
 func (o *SequenceNumber) GetLastIndexes() map[string]int32 {
-	if o == nil || IsNil(o.LastIndexes) {
+	if o == nil || isNil(o.LastIndexes) {
 		var ret map[string]int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *SequenceNumber) GetLastIndexes() map[string]int32 {
 // GetLastIndexesOk returns a tuple with the LastIndexes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceNumber) GetLastIndexesOk() (*map[string]int32, bool) {
-	if o == nil || IsNil(o.LastIndexes) {
+	if o == nil || isNil(o.LastIndexes) {
 		return nil, false
 	}
 	return o.LastIndexes, true
@@ -127,7 +127,7 @@ func (o *SequenceNumber) GetLastIndexesOk() (*map[string]int32, bool) {
 
 // HasLastIndexes returns a boolean if a field has been set.
 func (o *SequenceNumber) HasLastIndexes() bool {
-	if o != nil && !IsNil(o.LastIndexes) {
+	if o != nil && !isNil(o.LastIndexes) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *SequenceNumber) SetLastIndexes(v map[string]int32) {
 
 // GetIndLength returns the IndLength field value if set, zero value otherwise.
 func (o *SequenceNumber) GetIndLength() int32 {
-	if o == nil || IsNil(o.IndLength) {
+	if o == nil || isNil(o.IndLength) {
 		var ret int32
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *SequenceNumber) GetIndLength() int32 {
 // GetIndLengthOk returns a tuple with the IndLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceNumber) GetIndLengthOk() (*int32, bool) {
-	if o == nil || IsNil(o.IndLength) {
+	if o == nil || isNil(o.IndLength) {
 		return nil, false
 	}
 	return o.IndLength, true
@@ -159,7 +159,7 @@ func (o *SequenceNumber) GetIndLengthOk() (*int32, bool) {
 
 // HasIndLength returns a boolean if a field has been set.
 func (o *SequenceNumber) HasIndLength() bool {
-	if o != nil && !IsNil(o.IndLength) {
+	if o != nil && !isNil(o.IndLength) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *SequenceNumber) SetIndLength(v int32) {
 
 // GetDifSign returns the DifSign field value if set, zero value otherwise.
 func (o *SequenceNumber) GetDifSign() Sign {
-	if o == nil || IsNil(o.DifSign) {
+	if o == nil || isNil(o.DifSign) {
 		var ret Sign
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *SequenceNumber) GetDifSign() Sign {
 // GetDifSignOk returns a tuple with the DifSign field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SequenceNumber) GetDifSignOk() (*Sign, bool) {
-	if o == nil || IsNil(o.DifSign) {
+	if o == nil || isNil(o.DifSign) {
 		return nil, false
 	}
 	return o.DifSign, true
@@ -191,7 +191,7 @@ func (o *SequenceNumber) GetDifSignOk() (*Sign, bool) {
 
 // HasDifSign returns a boolean if a field has been set.
 func (o *SequenceNumber) HasDifSign() bool {
-	if o != nil && !IsNil(o.DifSign) {
+	if o != nil && !isNil(o.DifSign) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o SequenceNumber) MarshalJSON() ([]byte, error) {
 
 func (o SequenceNumber) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SqnScheme) {
+	if !isNil(o.SqnScheme) {
 		toSerialize["sqnScheme"] = o.SqnScheme
 	}
-	if !IsNil(o.Sqn) {
+	if !isNil(o.Sqn) {
 		toSerialize["sqn"] = o.Sqn
 	}
-	if !IsNil(o.LastIndexes) {
+	if !isNil(o.LastIndexes) {
 		toSerialize["lastIndexes"] = o.LastIndexes
 	}
-	if !IsNil(o.IndLength) {
+	if !isNil(o.IndLength) {
 		toSerialize["indLength"] = o.IndLength
 	}
-	if !IsNil(o.DifSign) {
+	if !isNil(o.DifSign) {
 		toSerialize["difSign"] = o.DifSign
 	}
 	return toSerialize, nil

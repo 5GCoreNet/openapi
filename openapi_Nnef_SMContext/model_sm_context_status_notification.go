@@ -96,7 +96,7 @@ func (o *SmContextStatusNotification) SetSmContextId(v string) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetCause() ReleaseCause {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret ReleaseCause
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SmContextStatusNotification) GetCause() ReleaseCause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetCauseOk() (*ReleaseCause, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -114,7 +114,7 @@ func (o *SmContextStatusNotification) GetCauseOk() (*ReleaseCause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *SmContextStatusNotification) SetCause(v ReleaseCause) {
 
 // GetSmallDataRateStatus returns the SmallDataRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStatus {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		var ret SmallDataRateStatus
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatus() SmallDataRateStat
 // GetSmallDataRateStatusOk returns a tuple with the SmallDataRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRateStatus, bool) {
-	if o == nil || IsNil(o.SmallDataRateStatus) {
+	if o == nil || isNil(o.SmallDataRateStatus) {
 		return nil, false
 	}
 	return o.SmallDataRateStatus, true
@@ -146,7 +146,7 @@ func (o *SmContextStatusNotification) GetSmallDataRateStatusOk() (*SmallDataRate
 
 // HasSmallDataRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasSmallDataRateStatus() bool {
-	if o != nil && !IsNil(o.SmallDataRateStatus) {
+	if o != nil && !isNil(o.SmallDataRateStatus) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *SmContextStatusNotification) SetSmallDataRateStatus(v SmallDataRateStat
 
 // GetApnRateStatus returns the ApnRateStatus field value if set, zero value otherwise.
 func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		var ret ApnRateStatus
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *SmContextStatusNotification) GetApnRateStatus() ApnRateStatus {
 // GetApnRateStatusOk returns a tuple with the ApnRateStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool) {
-	if o == nil || IsNil(o.ApnRateStatus) {
+	if o == nil || isNil(o.ApnRateStatus) {
 		return nil, false
 	}
 	return o.ApnRateStatus, true
@@ -178,7 +178,7 @@ func (o *SmContextStatusNotification) GetApnRateStatusOk() (*ApnRateStatus, bool
 
 // HasApnRateStatus returns a boolean if a field has been set.
 func (o *SmContextStatusNotification) HasApnRateStatus() bool {
-	if o != nil && !IsNil(o.ApnRateStatus) {
+	if o != nil && !isNil(o.ApnRateStatus) {
 		return true
 	}
 
@@ -202,13 +202,13 @@ func (o SmContextStatusNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["status"] = o.Status
 	toSerialize["smContextId"] = o.SmContextId
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.SmallDataRateStatus) {
+	if !isNil(o.SmallDataRateStatus) {
 		toSerialize["smallDataRateStatus"] = o.SmallDataRateStatus
 	}
-	if !IsNil(o.ApnRateStatus) {
+	if !isNil(o.ApnRateStatus) {
 		toSerialize["apnRateStatus"] = o.ApnRateStatus
 	}
 	return toSerialize, nil

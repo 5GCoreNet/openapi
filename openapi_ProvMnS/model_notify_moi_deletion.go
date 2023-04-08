@@ -12,7 +12,6 @@ package openapi_ProvMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyMoiDeletion type satisfies the MappedNullable interface at compile time
@@ -176,7 +175,7 @@ func (o *NotifyMoiDeletion) SetSystemDN(v string) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyMoiDeletion) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -186,7 +185,7 @@ func (o *NotifyMoiDeletion) GetCorrelatedNotifications() []CorrelatedNotificatio
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiDeletion) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -194,7 +193,7 @@ func (o *NotifyMoiDeletion) GetCorrelatedNotificationsOk() ([]CorrelatedNotifica
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyMoiDeletion) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -208,7 +207,7 @@ func (o *NotifyMoiDeletion) SetCorrelatedNotifications(v []CorrelatedNotificatio
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyMoiDeletion) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -218,7 +217,7 @@ func (o *NotifyMoiDeletion) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiDeletion) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -226,7 +225,7 @@ func (o *NotifyMoiDeletion) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyMoiDeletion) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -240,7 +239,7 @@ func (o *NotifyMoiDeletion) SetAdditionalText(v string) {
 
 // GetSourceIndicator returns the SourceIndicator field value if set, zero value otherwise.
 func (o *NotifyMoiDeletion) GetSourceIndicator() SourceIndicator {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		var ret SourceIndicator
 		return ret
 	}
@@ -250,7 +249,7 @@ func (o *NotifyMoiDeletion) GetSourceIndicator() SourceIndicator {
 // GetSourceIndicatorOk returns a tuple with the SourceIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiDeletion) GetSourceIndicatorOk() (*SourceIndicator, bool) {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		return nil, false
 	}
 	return o.SourceIndicator, true
@@ -258,7 +257,7 @@ func (o *NotifyMoiDeletion) GetSourceIndicatorOk() (*SourceIndicator, bool) {
 
 // HasSourceIndicator returns a boolean if a field has been set.
 func (o *NotifyMoiDeletion) HasSourceIndicator() bool {
-	if o != nil && !IsNil(o.SourceIndicator) {
+	if o != nil && !isNil(o.SourceIndicator) {
 		return true
 	}
 
@@ -272,7 +271,7 @@ func (o *NotifyMoiDeletion) SetSourceIndicator(v SourceIndicator) {
 
 // GetAttributeList returns the AttributeList field value if set, zero value otherwise.
 func (o *NotifyMoiDeletion) GetAttributeList() map[string]interface{} {
-	if o == nil || IsNil(o.AttributeList) {
+	if o == nil || isNil(o.AttributeList) {
 		var ret map[string]interface{}
 		return ret
 	}
@@ -282,7 +281,7 @@ func (o *NotifyMoiDeletion) GetAttributeList() map[string]interface{} {
 // GetAttributeListOk returns a tuple with the AttributeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiDeletion) GetAttributeListOk() (map[string]interface{}, bool) {
-	if o == nil || IsNil(o.AttributeList) {
+	if o == nil || isNil(o.AttributeList) {
 		return map[string]interface{}{}, false
 	}
 	return o.AttributeList, true
@@ -290,7 +289,7 @@ func (o *NotifyMoiDeletion) GetAttributeListOk() (map[string]interface{}, bool) 
 
 // HasAttributeList returns a boolean if a field has been set.
 func (o *NotifyMoiDeletion) HasAttributeList() bool {
-	if o != nil && !IsNil(o.AttributeList) {
+	if o != nil && !isNil(o.AttributeList) {
 		return true
 	}
 
@@ -317,16 +316,16 @@ func (o NotifyMoiDeletion) ToMap() (map[string]interface{}, error) {
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.SourceIndicator) {
+	if !isNil(o.SourceIndicator) {
 		toSerialize["sourceIndicator"] = o.SourceIndicator
 	}
-	if !IsNil(o.AttributeList) {
+	if !isNil(o.AttributeList) {
 		toSerialize["attributeList"] = o.AttributeList
 	}
 	return toSerialize, nil

@@ -101,7 +101,7 @@ func (o *MonitoringReport) SetEventType(v EventType) {
 
 // GetReport returns the Report field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReport() Report {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		var ret Report
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *MonitoringReport) GetReport() Report {
 // GetReportOk returns a tuple with the Report field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReportOk() (*Report, bool) {
-	if o == nil || IsNil(o.Report) {
+	if o == nil || isNil(o.Report) {
 		return nil, false
 	}
 	return o.Report, true
@@ -119,7 +119,7 @@ func (o *MonitoringReport) GetReportOk() (*Report, bool) {
 
 // HasReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReport() bool {
-	if o != nil && !IsNil(o.Report) {
+	if o != nil && !isNil(o.Report) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *MonitoringReport) SetReport(v Report) {
 
 // GetReachabilityForSmsReport returns the ReachabilityForSmsReport field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReachabilityForSmsReport() ReachabilityForSmsReport {
-	if o == nil || IsNil(o.ReachabilityForSmsReport) {
+	if o == nil || isNil(o.ReachabilityForSmsReport) {
 		var ret ReachabilityForSmsReport
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *MonitoringReport) GetReachabilityForSmsReport() ReachabilityForSmsRepor
 // GetReachabilityForSmsReportOk returns a tuple with the ReachabilityForSmsReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReachabilityForSmsReportOk() (*ReachabilityForSmsReport, bool) {
-	if o == nil || IsNil(o.ReachabilityForSmsReport) {
+	if o == nil || isNil(o.ReachabilityForSmsReport) {
 		return nil, false
 	}
 	return o.ReachabilityForSmsReport, true
@@ -151,7 +151,7 @@ func (o *MonitoringReport) GetReachabilityForSmsReportOk() (*ReachabilityForSmsR
 
 // HasReachabilityForSmsReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReachabilityForSmsReport() bool {
-	if o != nil && !IsNil(o.ReachabilityForSmsReport) {
+	if o != nil && !isNil(o.ReachabilityForSmsReport) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *MonitoringReport) SetReachabilityForSmsReport(v ReachabilityForSmsRepor
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *MonitoringReport) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *MonitoringReport) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -183,7 +183,7 @@ func (o *MonitoringReport) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *MonitoringReport) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *MonitoringReport) SetTimeStamp(v time.Time) {
 
 // GetReachabilityReport returns the ReachabilityReport field value if set, zero value otherwise.
 func (o *MonitoringReport) GetReachabilityReport() ReachabilityReport {
-	if o == nil || IsNil(o.ReachabilityReport) {
+	if o == nil || isNil(o.ReachabilityReport) {
 		var ret ReachabilityReport
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *MonitoringReport) GetReachabilityReport() ReachabilityReport {
 // GetReachabilityReportOk returns a tuple with the ReachabilityReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringReport) GetReachabilityReportOk() (*ReachabilityReport, bool) {
-	if o == nil || IsNil(o.ReachabilityReport) {
+	if o == nil || isNil(o.ReachabilityReport) {
 		return nil, false
 	}
 	return o.ReachabilityReport, true
@@ -239,7 +239,7 @@ func (o *MonitoringReport) GetReachabilityReportOk() (*ReachabilityReport, bool)
 
 // HasReachabilityReport returns a boolean if a field has been set.
 func (o *MonitoringReport) HasReachabilityReport() bool {
-	if o != nil && !IsNil(o.ReachabilityReport) {
+	if o != nil && !isNil(o.ReachabilityReport) {
 		return true
 	}
 
@@ -263,17 +263,17 @@ func (o MonitoringReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["referenceId"] = o.ReferenceId
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.Report) {
+	if !isNil(o.Report) {
 		toSerialize["report"] = o.Report
 	}
-	if !IsNil(o.ReachabilityForSmsReport) {
+	if !isNil(o.ReachabilityForSmsReport) {
 		toSerialize["reachabilityForSmsReport"] = o.ReachabilityForSmsReport
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	toSerialize["timeStamp"] = o.TimeStamp
-	if !IsNil(o.ReachabilityReport) {
+	if !isNil(o.ReachabilityReport) {
 		toSerialize["reachabilityReport"] = o.ReachabilityReport
 	}
 	return toSerialize, nil

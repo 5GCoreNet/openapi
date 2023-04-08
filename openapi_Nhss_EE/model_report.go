@@ -45,7 +45,7 @@ func NewReportWithDefaults() *Report {
 
 // GetReachabilityForSmsReport returns the ReachabilityForSmsReport field value if set, zero value otherwise.
 func (o *Report) GetReachabilityForSmsReport() ReachabilityForSmsReport {
-	if o == nil || IsNil(o.ReachabilityForSmsReport) {
+	if o == nil || isNil(o.ReachabilityForSmsReport) {
 		var ret ReachabilityForSmsReport
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *Report) GetReachabilityForSmsReport() ReachabilityForSmsReport {
 // GetReachabilityForSmsReportOk returns a tuple with the ReachabilityForSmsReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Report) GetReachabilityForSmsReportOk() (*ReachabilityForSmsReport, bool) {
-	if o == nil || IsNil(o.ReachabilityForSmsReport) {
+	if o == nil || isNil(o.ReachabilityForSmsReport) {
 		return nil, false
 	}
 	return o.ReachabilityForSmsReport, true
@@ -63,7 +63,7 @@ func (o *Report) GetReachabilityForSmsReportOk() (*ReachabilityForSmsReport, boo
 
 // HasReachabilityForSmsReport returns a boolean if a field has been set.
 func (o *Report) HasReachabilityForSmsReport() bool {
-	if o != nil && !IsNil(o.ReachabilityForSmsReport) {
+	if o != nil && !isNil(o.ReachabilityForSmsReport) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *Report) SetReachabilityForSmsReport(v ReachabilityForSmsReport) {
 
 // GetReachabilityForDataReport returns the ReachabilityForDataReport field value if set, zero value otherwise.
 func (o *Report) GetReachabilityForDataReport() ReachabilityForDataReport {
-	if o == nil || IsNil(o.ReachabilityForDataReport) {
+	if o == nil || isNil(o.ReachabilityForDataReport) {
 		var ret ReachabilityForDataReport
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *Report) GetReachabilityForDataReport() ReachabilityForDataReport {
 // GetReachabilityForDataReportOk returns a tuple with the ReachabilityForDataReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Report) GetReachabilityForDataReportOk() (*ReachabilityForDataReport, bool) {
-	if o == nil || IsNil(o.ReachabilityForDataReport) {
+	if o == nil || isNil(o.ReachabilityForDataReport) {
 		return nil, false
 	}
 	return o.ReachabilityForDataReport, true
@@ -95,7 +95,7 @@ func (o *Report) GetReachabilityForDataReportOk() (*ReachabilityForDataReport, b
 
 // HasReachabilityForDataReport returns a boolean if a field has been set.
 func (o *Report) HasReachabilityForDataReport() bool {
-	if o != nil && !IsNil(o.ReachabilityForDataReport) {
+	if o != nil && !isNil(o.ReachabilityForDataReport) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *Report) SetReachabilityForDataReport(v ReachabilityForDataReport) {
 
 // GetLossConnectivityReport returns the LossConnectivityReport field value if set, zero value otherwise.
 func (o *Report) GetLossConnectivityReport() LossConnectivityReport {
-	if o == nil || IsNil(o.LossConnectivityReport) {
+	if o == nil || isNil(o.LossConnectivityReport) {
 		var ret LossConnectivityReport
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *Report) GetLossConnectivityReport() LossConnectivityReport {
 // GetLossConnectivityReportOk returns a tuple with the LossConnectivityReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Report) GetLossConnectivityReportOk() (*LossConnectivityReport, bool) {
-	if o == nil || IsNil(o.LossConnectivityReport) {
+	if o == nil || isNil(o.LossConnectivityReport) {
 		return nil, false
 	}
 	return o.LossConnectivityReport, true
@@ -127,7 +127,7 @@ func (o *Report) GetLossConnectivityReportOk() (*LossConnectivityReport, bool) {
 
 // HasLossConnectivityReport returns a boolean if a field has been set.
 func (o *Report) HasLossConnectivityReport() bool {
-	if o != nil && !IsNil(o.LossConnectivityReport) {
+	if o != nil && !isNil(o.LossConnectivityReport) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *Report) SetLossConnectivityReport(v LossConnectivityReport) {
 
 // GetLocationReport returns the LocationReport field value if set, zero value otherwise.
 func (o *Report) GetLocationReport() LocationReport {
-	if o == nil || IsNil(o.LocationReport) {
+	if o == nil || isNil(o.LocationReport) {
 		var ret LocationReport
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *Report) GetLocationReport() LocationReport {
 // GetLocationReportOk returns a tuple with the LocationReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Report) GetLocationReportOk() (*LocationReport, bool) {
-	if o == nil || IsNil(o.LocationReport) {
+	if o == nil || isNil(o.LocationReport) {
 		return nil, false
 	}
 	return o.LocationReport, true
@@ -159,7 +159,7 @@ func (o *Report) GetLocationReportOk() (*LocationReport, bool) {
 
 // HasLocationReport returns a boolean if a field has been set.
 func (o *Report) HasLocationReport() bool {
-	if o != nil && !IsNil(o.LocationReport) {
+	if o != nil && !isNil(o.LocationReport) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *Report) SetLocationReport(v LocationReport) {
 
 // GetPdnConnectivityStatReport returns the PdnConnectivityStatReport field value if set, zero value otherwise.
 func (o *Report) GetPdnConnectivityStatReport() PdnConnectivityStatReport {
-	if o == nil || IsNil(o.PdnConnectivityStatReport) {
+	if o == nil || isNil(o.PdnConnectivityStatReport) {
 		var ret PdnConnectivityStatReport
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *Report) GetPdnConnectivityStatReport() PdnConnectivityStatReport {
 // GetPdnConnectivityStatReportOk returns a tuple with the PdnConnectivityStatReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Report) GetPdnConnectivityStatReportOk() (*PdnConnectivityStatReport, bool) {
-	if o == nil || IsNil(o.PdnConnectivityStatReport) {
+	if o == nil || isNil(o.PdnConnectivityStatReport) {
 		return nil, false
 	}
 	return o.PdnConnectivityStatReport, true
@@ -191,7 +191,7 @@ func (o *Report) GetPdnConnectivityStatReportOk() (*PdnConnectivityStatReport, b
 
 // HasPdnConnectivityStatReport returns a boolean if a field has been set.
 func (o *Report) HasPdnConnectivityStatReport() bool {
-	if o != nil && !IsNil(o.PdnConnectivityStatReport) {
+	if o != nil && !isNil(o.PdnConnectivityStatReport) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o Report) MarshalJSON() ([]byte, error) {
 
 func (o Report) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReachabilityForSmsReport) {
+	if !isNil(o.ReachabilityForSmsReport) {
 		toSerialize["reachabilityForSmsReport"] = o.ReachabilityForSmsReport
 	}
-	if !IsNil(o.ReachabilityForDataReport) {
+	if !isNil(o.ReachabilityForDataReport) {
 		toSerialize["reachabilityForDataReport"] = o.ReachabilityForDataReport
 	}
-	if !IsNil(o.LossConnectivityReport) {
+	if !isNil(o.LossConnectivityReport) {
 		toSerialize["lossConnectivityReport"] = o.LossConnectivityReport
 	}
-	if !IsNil(o.LocationReport) {
+	if !isNil(o.LocationReport) {
 		toSerialize["locationReport"] = o.LocationReport
 	}
-	if !IsNil(o.PdnConnectivityStatReport) {
+	if !isNil(o.PdnConnectivityStatReport) {
 		toSerialize["pdnConnectivityStatReport"] = o.PdnConnectivityStatReport
 	}
 	return toSerialize, nil

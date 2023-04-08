@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
  - [Ipv6Prefix](docs/Ipv6Prefix.md)
  - [Model3GAkaAv](docs/Model3GAkaAv.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
  - [ProblemDetails](docs/ProblemDetails.md)
@@ -103,8 +104,11 @@ Class | Method | HTTP request | Description
  - [SipAuthenticationInfoRequest](docs/SipAuthenticationInfoRequest.md)
  - [SipAuthenticationInfoResult](docs/SipAuthenticationInfoResult.md)
  - [SipAuthenticationScheme](docs/SipAuthenticationScheme.md)
+ - [SipAuthenticationSchemeAnyOf](docs/SipAuthenticationSchemeAnyOf.md)
  - [SipDigestAlgorithm](docs/SipDigestAlgorithm.md)
+ - [SipDigestAlgorithmAnyOf](docs/SipDigestAlgorithmAnyOf.md)
  - [SipDigestQop](docs/SipDigestQop.md)
+ - [SipDigestQopAnyOf](docs/SipDigestQopAnyOf.md)
  - [Snssai](docs/Snssai.md)
 
 

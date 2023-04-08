@@ -68,7 +68,7 @@ func (o *AfEventExposureData) SetAfEvents(v []AfEvent) {
 
 // GetAfIds returns the AfIds field value if set, zero value otherwise.
 func (o *AfEventExposureData) GetAfIds() []string {
-	if o == nil || IsNil(o.AfIds) {
+	if o == nil || isNil(o.AfIds) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AfEventExposureData) GetAfIds() []string {
 // GetAfIdsOk returns a tuple with the AfIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureData) GetAfIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AfIds) {
+	if o == nil || isNil(o.AfIds) {
 		return nil, false
 	}
 	return o.AfIds, true
@@ -86,7 +86,7 @@ func (o *AfEventExposureData) GetAfIdsOk() ([]string, bool) {
 
 // HasAfIds returns a boolean if a field has been set.
 func (o *AfEventExposureData) HasAfIds() bool {
-	if o != nil && !IsNil(o.AfIds) {
+	if o != nil && !isNil(o.AfIds) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *AfEventExposureData) SetAfIds(v []string) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *AfEventExposureData) GetAppIds() []string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *AfEventExposureData) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AfEventExposureData) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -118,7 +118,7 @@ func (o *AfEventExposureData) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *AfEventExposureData) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o AfEventExposureData) MarshalJSON() ([]byte, error) {
 func (o AfEventExposureData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["afEvents"] = o.AfEvents
-	if !IsNil(o.AfIds) {
+	if !isNil(o.AfIds) {
 		toSerialize["afIds"] = o.AfIds
 	}
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
 	return toSerialize, nil

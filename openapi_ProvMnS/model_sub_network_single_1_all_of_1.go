@@ -50,7 +50,7 @@ func NewSubNetworkSingle1AllOf1WithDefaults() *SubNetworkSingle1AllOf1 {
 
 // GetSubNetwork returns the SubNetwork field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetSubNetwork() []SubNetworkSingle {
-	if o == nil || IsNil(o.SubNetwork) {
+	if o == nil || isNil(o.SubNetwork) {
 		var ret []SubNetworkSingle
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *SubNetworkSingle1AllOf1) GetSubNetwork() []SubNetworkSingle {
 // GetSubNetworkOk returns a tuple with the SubNetwork field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
-	if o == nil || IsNil(o.SubNetwork) {
+	if o == nil || isNil(o.SubNetwork) {
 		return nil, false
 	}
 	return o.SubNetwork, true
@@ -68,7 +68,7 @@ func (o *SubNetworkSingle1AllOf1) GetSubNetworkOk() ([]SubNetworkSingle, bool) {
 
 // HasSubNetwork returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasSubNetwork() bool {
-	if o != nil && !IsNil(o.SubNetwork) {
+	if o != nil && !isNil(o.SubNetwork) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *SubNetworkSingle1AllOf1) SetSubNetwork(v []SubNetworkSingle) {
 
 // GetManagedElement returns the ManagedElement field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetManagedElement() []ManagedElementSingle {
-	if o == nil || IsNil(o.ManagedElement) {
+	if o == nil || isNil(o.ManagedElement) {
 		var ret []ManagedElementSingle
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *SubNetworkSingle1AllOf1) GetManagedElement() []ManagedElementSingle {
 // GetManagedElementOk returns a tuple with the ManagedElement field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetManagedElementOk() ([]ManagedElementSingle, bool) {
-	if o == nil || IsNil(o.ManagedElement) {
+	if o == nil || isNil(o.ManagedElement) {
 		return nil, false
 	}
 	return o.ManagedElement, true
@@ -100,7 +100,7 @@ func (o *SubNetworkSingle1AllOf1) GetManagedElementOk() ([]ManagedElementSingle,
 
 // HasManagedElement returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasManagedElement() bool {
-	if o != nil && !IsNil(o.ManagedElement) {
+	if o != nil && !isNil(o.ManagedElement) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *SubNetworkSingle1AllOf1) SetManagedElement(v []ManagedElementSingle) {
 
 // GetExternalAmfFunction returns the ExternalAmfFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetExternalAmfFunction() []ExternalAmfFunctionSingle {
-	if o == nil || IsNil(o.ExternalAmfFunction) {
+	if o == nil || isNil(o.ExternalAmfFunction) {
 		var ret []ExternalAmfFunctionSingle
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *SubNetworkSingle1AllOf1) GetExternalAmfFunction() []ExternalAmfFunction
 // GetExternalAmfFunctionOk returns a tuple with the ExternalAmfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetExternalAmfFunctionOk() ([]ExternalAmfFunctionSingle, bool) {
-	if o == nil || IsNil(o.ExternalAmfFunction) {
+	if o == nil || isNil(o.ExternalAmfFunction) {
 		return nil, false
 	}
 	return o.ExternalAmfFunction, true
@@ -132,7 +132,7 @@ func (o *SubNetworkSingle1AllOf1) GetExternalAmfFunctionOk() ([]ExternalAmfFunct
 
 // HasExternalAmfFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasExternalAmfFunction() bool {
-	if o != nil && !IsNil(o.ExternalAmfFunction) {
+	if o != nil && !isNil(o.ExternalAmfFunction) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *SubNetworkSingle1AllOf1) SetExternalAmfFunction(v []ExternalAmfFunction
 
 // GetExternalNrfFunction returns the ExternalNrfFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetExternalNrfFunction() []ExternalNrfFunctionSingle {
-	if o == nil || IsNil(o.ExternalNrfFunction) {
+	if o == nil || isNil(o.ExternalNrfFunction) {
 		var ret []ExternalNrfFunctionSingle
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *SubNetworkSingle1AllOf1) GetExternalNrfFunction() []ExternalNrfFunction
 // GetExternalNrfFunctionOk returns a tuple with the ExternalNrfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetExternalNrfFunctionOk() ([]ExternalNrfFunctionSingle, bool) {
-	if o == nil || IsNil(o.ExternalNrfFunction) {
+	if o == nil || isNil(o.ExternalNrfFunction) {
 		return nil, false
 	}
 	return o.ExternalNrfFunction, true
@@ -164,7 +164,7 @@ func (o *SubNetworkSingle1AllOf1) GetExternalNrfFunctionOk() ([]ExternalNrfFunct
 
 // HasExternalNrfFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasExternalNrfFunction() bool {
-	if o != nil && !IsNil(o.ExternalNrfFunction) {
+	if o != nil && !isNil(o.ExternalNrfFunction) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *SubNetworkSingle1AllOf1) SetExternalNrfFunction(v []ExternalNrfFunction
 
 // GetExternalNssfFunction returns the ExternalNssfFunction field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetExternalNssfFunction() []ExternalNssfFunctionSingle {
-	if o == nil || IsNil(o.ExternalNssfFunction) {
+	if o == nil || isNil(o.ExternalNssfFunction) {
 		var ret []ExternalNssfFunctionSingle
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *SubNetworkSingle1AllOf1) GetExternalNssfFunction() []ExternalNssfFuncti
 // GetExternalNssfFunctionOk returns a tuple with the ExternalNssfFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetExternalNssfFunctionOk() ([]ExternalNssfFunctionSingle, bool) {
-	if o == nil || IsNil(o.ExternalNssfFunction) {
+	if o == nil || isNil(o.ExternalNssfFunction) {
 		return nil, false
 	}
 	return o.ExternalNssfFunction, true
@@ -196,7 +196,7 @@ func (o *SubNetworkSingle1AllOf1) GetExternalNssfFunctionOk() ([]ExternalNssfFun
 
 // HasExternalNssfFunction returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasExternalNssfFunction() bool {
-	if o != nil && !IsNil(o.ExternalNssfFunction) {
+	if o != nil && !isNil(o.ExternalNssfFunction) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *SubNetworkSingle1AllOf1) SetExternalNssfFunction(v []ExternalNssfFuncti
 
 // GetAmfSet returns the AmfSet field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetAmfSet() []AmfSetSingle {
-	if o == nil || IsNil(o.AmfSet) {
+	if o == nil || isNil(o.AmfSet) {
 		var ret []AmfSetSingle
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *SubNetworkSingle1AllOf1) GetAmfSet() []AmfSetSingle {
 // GetAmfSetOk returns a tuple with the AmfSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetAmfSetOk() ([]AmfSetSingle, bool) {
-	if o == nil || IsNil(o.AmfSet) {
+	if o == nil || isNil(o.AmfSet) {
 		return nil, false
 	}
 	return o.AmfSet, true
@@ -228,7 +228,7 @@ func (o *SubNetworkSingle1AllOf1) GetAmfSetOk() ([]AmfSetSingle, bool) {
 
 // HasAmfSet returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasAmfSet() bool {
-	if o != nil && !IsNil(o.AmfSet) {
+	if o != nil && !isNil(o.AmfSet) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *SubNetworkSingle1AllOf1) SetAmfSet(v []AmfSetSingle) {
 
 // GetAmfRegion returns the AmfRegion field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetAmfRegion() []AmfRegionSingle {
-	if o == nil || IsNil(o.AmfRegion) {
+	if o == nil || isNil(o.AmfRegion) {
 		var ret []AmfRegionSingle
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *SubNetworkSingle1AllOf1) GetAmfRegion() []AmfRegionSingle {
 // GetAmfRegionOk returns a tuple with the AmfRegion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetAmfRegionOk() ([]AmfRegionSingle, bool) {
-	if o == nil || IsNil(o.AmfRegion) {
+	if o == nil || isNil(o.AmfRegion) {
 		return nil, false
 	}
 	return o.AmfRegion, true
@@ -260,7 +260,7 @@ func (o *SubNetworkSingle1AllOf1) GetAmfRegionOk() ([]AmfRegionSingle, bool) {
 
 // HasAmfRegion returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasAmfRegion() bool {
-	if o != nil && !IsNil(o.AmfRegion) {
+	if o != nil && !isNil(o.AmfRegion) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *SubNetworkSingle1AllOf1) SetAmfRegion(v []AmfRegionSingle) {
 
 // GetConfigurable5QISet returns the Configurable5QISet field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetConfigurable5QISet() []Configurable5QISetSingle {
-	if o == nil || IsNil(o.Configurable5QISet) {
+	if o == nil || isNil(o.Configurable5QISet) {
 		var ret []Configurable5QISetSingle
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *SubNetworkSingle1AllOf1) GetConfigurable5QISet() []Configurable5QISetSi
 // GetConfigurable5QISetOk returns a tuple with the Configurable5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetConfigurable5QISetOk() ([]Configurable5QISetSingle, bool) {
-	if o == nil || IsNil(o.Configurable5QISet) {
+	if o == nil || isNil(o.Configurable5QISet) {
 		return nil, false
 	}
 	return o.Configurable5QISet, true
@@ -292,7 +292,7 @@ func (o *SubNetworkSingle1AllOf1) GetConfigurable5QISetOk() ([]Configurable5QISe
 
 // HasConfigurable5QISet returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasConfigurable5QISet() bool {
-	if o != nil && !IsNil(o.Configurable5QISet) {
+	if o != nil && !isNil(o.Configurable5QISet) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *SubNetworkSingle1AllOf1) SetConfigurable5QISet(v []Configurable5QISetSi
 
 // GetDynamic5QISet returns the Dynamic5QISet field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
-	if o == nil || IsNil(o.Dynamic5QISet) {
+	if o == nil || isNil(o.Dynamic5QISet) {
 		var ret []Dynamic5QISetSingle
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *SubNetworkSingle1AllOf1) GetDynamic5QISet() []Dynamic5QISetSingle {
 // GetDynamic5QISetOk returns a tuple with the Dynamic5QISet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle, bool) {
-	if o == nil || IsNil(o.Dynamic5QISet) {
+	if o == nil || isNil(o.Dynamic5QISet) {
 		return nil, false
 	}
 	return o.Dynamic5QISet, true
@@ -324,7 +324,7 @@ func (o *SubNetworkSingle1AllOf1) GetDynamic5QISetOk() ([]Dynamic5QISetSingle, b
 
 // HasDynamic5QISet returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasDynamic5QISet() bool {
-	if o != nil && !IsNil(o.Dynamic5QISet) {
+	if o != nil && !isNil(o.Dynamic5QISet) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *SubNetworkSingle1AllOf1) SetDynamic5QISet(v []Dynamic5QISetSingle) {
 
 // GetEcmConnectionInfo returns the EcmConnectionInfo field value if set, zero value otherwise.
 func (o *SubNetworkSingle1AllOf1) GetEcmConnectionInfo() []EcmConnectionInfoSingle {
-	if o == nil || IsNil(o.EcmConnectionInfo) {
+	if o == nil || isNil(o.EcmConnectionInfo) {
 		var ret []EcmConnectionInfoSingle
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *SubNetworkSingle1AllOf1) GetEcmConnectionInfo() []EcmConnectionInfoSing
 // GetEcmConnectionInfoOk returns a tuple with the EcmConnectionInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubNetworkSingle1AllOf1) GetEcmConnectionInfoOk() ([]EcmConnectionInfoSingle, bool) {
-	if o == nil || IsNil(o.EcmConnectionInfo) {
+	if o == nil || isNil(o.EcmConnectionInfo) {
 		return nil, false
 	}
 	return o.EcmConnectionInfo, true
@@ -356,7 +356,7 @@ func (o *SubNetworkSingle1AllOf1) GetEcmConnectionInfoOk() ([]EcmConnectionInfoS
 
 // HasEcmConnectionInfo returns a boolean if a field has been set.
 func (o *SubNetworkSingle1AllOf1) HasEcmConnectionInfo() bool {
-	if o != nil && !IsNil(o.EcmConnectionInfo) {
+	if o != nil && !isNil(o.EcmConnectionInfo) {
 		return true
 	}
 
@@ -378,34 +378,34 @@ func (o SubNetworkSingle1AllOf1) MarshalJSON() ([]byte, error) {
 
 func (o SubNetworkSingle1AllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SubNetwork) {
+	if !isNil(o.SubNetwork) {
 		toSerialize["SubNetwork"] = o.SubNetwork
 	}
-	if !IsNil(o.ManagedElement) {
+	if !isNil(o.ManagedElement) {
 		toSerialize["ManagedElement"] = o.ManagedElement
 	}
-	if !IsNil(o.ExternalAmfFunction) {
+	if !isNil(o.ExternalAmfFunction) {
 		toSerialize["ExternalAmfFunction"] = o.ExternalAmfFunction
 	}
-	if !IsNil(o.ExternalNrfFunction) {
+	if !isNil(o.ExternalNrfFunction) {
 		toSerialize["ExternalNrfFunction"] = o.ExternalNrfFunction
 	}
-	if !IsNil(o.ExternalNssfFunction) {
+	if !isNil(o.ExternalNssfFunction) {
 		toSerialize["ExternalNssfFunction"] = o.ExternalNssfFunction
 	}
-	if !IsNil(o.AmfSet) {
+	if !isNil(o.AmfSet) {
 		toSerialize["AmfSet"] = o.AmfSet
 	}
-	if !IsNil(o.AmfRegion) {
+	if !isNil(o.AmfRegion) {
 		toSerialize["AmfRegion"] = o.AmfRegion
 	}
-	if !IsNil(o.Configurable5QISet) {
+	if !isNil(o.Configurable5QISet) {
 		toSerialize["Configurable5QISet"] = o.Configurable5QISet
 	}
-	if !IsNil(o.Dynamic5QISet) {
+	if !isNil(o.Dynamic5QISet) {
 		toSerialize["Dynamic5QISet"] = o.Dynamic5QISet
 	}
-	if !IsNil(o.EcmConnectionInfo) {
+	if !isNil(o.EcmConnectionInfo) {
 		toSerialize["EcmConnectionInfo"] = o.EcmConnectionInfo
 	}
 	return toSerialize, nil

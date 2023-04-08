@@ -93,7 +93,7 @@ func (o *LocalityDescription) SetLocalityValue(v string) {
 
 // GetAddlLocDescrItems returns the AddlLocDescrItems field value if set, zero value otherwise.
 func (o *LocalityDescription) GetAddlLocDescrItems() []LocalityDescriptionItem {
-	if o == nil || IsNil(o.AddlLocDescrItems) {
+	if o == nil || isNil(o.AddlLocDescrItems) {
 		var ret []LocalityDescriptionItem
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *LocalityDescription) GetAddlLocDescrItems() []LocalityDescriptionItem {
 // GetAddlLocDescrItemsOk returns a tuple with the AddlLocDescrItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalityDescription) GetAddlLocDescrItemsOk() ([]LocalityDescriptionItem, bool) {
-	if o == nil || IsNil(o.AddlLocDescrItems) {
+	if o == nil || isNil(o.AddlLocDescrItems) {
 		return nil, false
 	}
 	return o.AddlLocDescrItems, true
@@ -111,7 +111,7 @@ func (o *LocalityDescription) GetAddlLocDescrItemsOk() ([]LocalityDescriptionIte
 
 // HasAddlLocDescrItems returns a boolean if a field has been set.
 func (o *LocalityDescription) HasAddlLocDescrItems() bool {
-	if o != nil && !IsNil(o.AddlLocDescrItems) {
+	if o != nil && !isNil(o.AddlLocDescrItems) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o LocalityDescription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["localityType"] = o.LocalityType
 	toSerialize["localityValue"] = o.LocalityValue
-	if !IsNil(o.AddlLocDescrItems) {
+	if !isNil(o.AddlLocDescrItems) {
 		toSerialize["addlLocDescrItems"] = o.AddlLocDescrItems
 	}
 	return toSerialize, nil

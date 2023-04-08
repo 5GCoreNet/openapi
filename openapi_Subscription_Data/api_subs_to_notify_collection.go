@@ -13,7 +13,7 @@ package openapi_Subscription_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -82,9 +82,9 @@ func (a *SubsToNotifyCollectionApiService) QuerySubsToNotifyExecute(r ApiQuerySu
 		return localVarReturnValue, nil, reportError("ueId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id", r.ueId, "")
+	parameterAddToQuery(localVarQueryParams, "ue-id", r.ueId, "")
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -113,9 +113,9 @@ func (a *SubsToNotifyCollectionApiService) QuerySubsToNotifyExecute(r ApiQuerySu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -212,15 +212,15 @@ func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscri
 		return nil, reportError("ueId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "ue-id", r.ueId, "")
+	parameterAddToQuery(localVarQueryParams, "ue-id", r.ueId, "")
 	if r.nfInstanceId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nf-instance-id", r.nfInstanceId, "")
+		parameterAddToQuery(localVarQueryParams, "nf-instance-id", r.nfInstanceId, "")
 	}
 	if r.deleteAllNfs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "delete-all-nfs", r.deleteAllNfs, "")
+		parameterAddToQuery(localVarQueryParams, "delete-all-nfs", r.deleteAllNfs, "")
 	}
 	if r.implicitUnsubscribeIndication != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "implicit-unsubscribe-indication", r.implicitUnsubscribeIndication, "")
+		parameterAddToQuery(localVarQueryParams, "implicit-unsubscribe-indication", r.implicitUnsubscribeIndication, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -249,9 +249,9 @@ func (a *SubsToNotifyCollectionApiService) RemoveMultipleSubscriptionDataSubscri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -348,9 +348,9 @@ func (a *SubsToNotifyCollectionApiService) SubscriptionDataSubscriptionsExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

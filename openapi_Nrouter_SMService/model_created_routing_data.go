@@ -47,7 +47,7 @@ func NewCreatedRoutingDataWithDefaults() *CreatedRoutingData {
 
 // GetRouterIpv4 returns the RouterIpv4 field value if set, zero value otherwise.
 func (o *CreatedRoutingData) GetRouterIpv4() string {
-	if o == nil || IsNil(o.RouterIpv4) {
+	if o == nil || isNil(o.RouterIpv4) {
 		var ret string
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *CreatedRoutingData) GetRouterIpv4() string {
 // GetRouterIpv4Ok returns a tuple with the RouterIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedRoutingData) GetRouterIpv4Ok() (*string, bool) {
-	if o == nil || IsNil(o.RouterIpv4) {
+	if o == nil || isNil(o.RouterIpv4) {
 		return nil, false
 	}
 	return o.RouterIpv4, true
@@ -65,7 +65,7 @@ func (o *CreatedRoutingData) GetRouterIpv4Ok() (*string, bool) {
 
 // HasRouterIpv4 returns a boolean if a field has been set.
 func (o *CreatedRoutingData) HasRouterIpv4() bool {
-	if o != nil && !IsNil(o.RouterIpv4) {
+	if o != nil && !isNil(o.RouterIpv4) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *CreatedRoutingData) SetRouterIpv4(v string) {
 
 // GetRouterIpv6 returns the RouterIpv6 field value if set, zero value otherwise.
 func (o *CreatedRoutingData) GetRouterIpv6() Ipv6Addr {
-	if o == nil || IsNil(o.RouterIpv6) {
+	if o == nil || isNil(o.RouterIpv6) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *CreatedRoutingData) GetRouterIpv6() Ipv6Addr {
 // GetRouterIpv6Ok returns a tuple with the RouterIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedRoutingData) GetRouterIpv6Ok() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.RouterIpv6) {
+	if o == nil || isNil(o.RouterIpv6) {
 		return nil, false
 	}
 	return o.RouterIpv6, true
@@ -97,7 +97,7 @@ func (o *CreatedRoutingData) GetRouterIpv6Ok() (*Ipv6Addr, bool) {
 
 // HasRouterIpv6 returns a boolean if a field has been set.
 func (o *CreatedRoutingData) HasRouterIpv6() bool {
-	if o != nil && !IsNil(o.RouterIpv6) {
+	if o != nil && !isNil(o.RouterIpv6) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *CreatedRoutingData) SetRouterIpv6(v Ipv6Addr) {
 
 // GetRouterFqdn returns the RouterFqdn field value if set, zero value otherwise.
 func (o *CreatedRoutingData) GetRouterFqdn() string {
-	if o == nil || IsNil(o.RouterFqdn) {
+	if o == nil || isNil(o.RouterFqdn) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *CreatedRoutingData) GetRouterFqdn() string {
 // GetRouterFqdnOk returns a tuple with the RouterFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedRoutingData) GetRouterFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.RouterFqdn) {
+	if o == nil || isNil(o.RouterFqdn) {
 		return nil, false
 	}
 	return o.RouterFqdn, true
@@ -129,7 +129,7 @@ func (o *CreatedRoutingData) GetRouterFqdnOk() (*string, bool) {
 
 // HasRouterFqdn returns a boolean if a field has been set.
 func (o *CreatedRoutingData) HasRouterFqdn() bool {
-	if o != nil && !IsNil(o.RouterFqdn) {
+	if o != nil && !isNil(o.RouterFqdn) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *CreatedRoutingData) SetRouterFqdn(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *CreatedRoutingData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *CreatedRoutingData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreatedRoutingData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -161,7 +161,7 @@ func (o *CreatedRoutingData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *CreatedRoutingData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -183,16 +183,16 @@ func (o CreatedRoutingData) MarshalJSON() ([]byte, error) {
 
 func (o CreatedRoutingData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RouterIpv4) {
+	if !isNil(o.RouterIpv4) {
 		toSerialize["routerIpv4"] = o.RouterIpv4
 	}
-	if !IsNil(o.RouterIpv6) {
+	if !isNil(o.RouterIpv6) {
 		toSerialize["routerIpv6"] = o.RouterIpv6
 	}
-	if !IsNil(o.RouterFqdn) {
+	if !isNil(o.RouterFqdn) {
 		toSerialize["routerFqdn"] = o.RouterFqdn
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

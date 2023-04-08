@@ -43,7 +43,7 @@ func NewSmPolicyNotificationWithDefaults() *SmPolicyNotification {
 
 // GetResourceUri returns the ResourceUri field value if set, zero value otherwise.
 func (o *SmPolicyNotification) GetResourceUri() string {
-	if o == nil || IsNil(o.ResourceUri) {
+	if o == nil || isNil(o.ResourceUri) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *SmPolicyNotification) GetResourceUri() string {
 // GetResourceUriOk returns a tuple with the ResourceUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyNotification) GetResourceUriOk() (*string, bool) {
-	if o == nil || IsNil(o.ResourceUri) {
+	if o == nil || isNil(o.ResourceUri) {
 		return nil, false
 	}
 	return o.ResourceUri, true
@@ -61,7 +61,7 @@ func (o *SmPolicyNotification) GetResourceUriOk() (*string, bool) {
 
 // HasResourceUri returns a boolean if a field has been set.
 func (o *SmPolicyNotification) HasResourceUri() bool {
-	if o != nil && !IsNil(o.ResourceUri) {
+	if o != nil && !isNil(o.ResourceUri) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *SmPolicyNotification) SetResourceUri(v string) {
 
 // GetSmPolicyDecision returns the SmPolicyDecision field value if set, zero value otherwise.
 func (o *SmPolicyNotification) GetSmPolicyDecision() SmPolicyDecision {
-	if o == nil || IsNil(o.SmPolicyDecision) {
+	if o == nil || isNil(o.SmPolicyDecision) {
 		var ret SmPolicyDecision
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *SmPolicyNotification) GetSmPolicyDecision() SmPolicyDecision {
 // GetSmPolicyDecisionOk returns a tuple with the SmPolicyDecision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SmPolicyNotification) GetSmPolicyDecisionOk() (*SmPolicyDecision, bool) {
-	if o == nil || IsNil(o.SmPolicyDecision) {
+	if o == nil || isNil(o.SmPolicyDecision) {
 		return nil, false
 	}
 	return o.SmPolicyDecision, true
@@ -93,7 +93,7 @@ func (o *SmPolicyNotification) GetSmPolicyDecisionOk() (*SmPolicyDecision, bool)
 
 // HasSmPolicyDecision returns a boolean if a field has been set.
 func (o *SmPolicyNotification) HasSmPolicyDecision() bool {
-	if o != nil && !IsNil(o.SmPolicyDecision) {
+	if o != nil && !isNil(o.SmPolicyDecision) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o SmPolicyNotification) MarshalJSON() ([]byte, error) {
 
 func (o SmPolicyNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ResourceUri) {
+	if !isNil(o.ResourceUri) {
 		toSerialize["resourceUri"] = o.ResourceUri
 	}
-	if !IsNil(o.SmPolicyDecision) {
+	if !isNil(o.SmPolicyDecision) {
 		toSerialize["smPolicyDecision"] = o.SmPolicyDecision
 	}
 	return toSerialize, nil

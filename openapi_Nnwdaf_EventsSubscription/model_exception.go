@@ -68,7 +68,7 @@ func (o *Exception) SetExcepId(v ExceptionId) {
 
 // GetExcepLevel returns the ExcepLevel field value if set, zero value otherwise.
 func (o *Exception) GetExcepLevel() int32 {
-	if o == nil || IsNil(o.ExcepLevel) {
+	if o == nil || isNil(o.ExcepLevel) {
 		var ret int32
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *Exception) GetExcepLevel() int32 {
 // GetExcepLevelOk returns a tuple with the ExcepLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Exception) GetExcepLevelOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExcepLevel) {
+	if o == nil || isNil(o.ExcepLevel) {
 		return nil, false
 	}
 	return o.ExcepLevel, true
@@ -86,7 +86,7 @@ func (o *Exception) GetExcepLevelOk() (*int32, bool) {
 
 // HasExcepLevel returns a boolean if a field has been set.
 func (o *Exception) HasExcepLevel() bool {
-	if o != nil && !IsNil(o.ExcepLevel) {
+	if o != nil && !isNil(o.ExcepLevel) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *Exception) SetExcepLevel(v int32) {
 
 // GetExcepTrend returns the ExcepTrend field value if set, zero value otherwise.
 func (o *Exception) GetExcepTrend() ExceptionTrend {
-	if o == nil || IsNil(o.ExcepTrend) {
+	if o == nil || isNil(o.ExcepTrend) {
 		var ret ExceptionTrend
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *Exception) GetExcepTrend() ExceptionTrend {
 // GetExcepTrendOk returns a tuple with the ExcepTrend field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Exception) GetExcepTrendOk() (*ExceptionTrend, bool) {
-	if o == nil || IsNil(o.ExcepTrend) {
+	if o == nil || isNil(o.ExcepTrend) {
 		return nil, false
 	}
 	return o.ExcepTrend, true
@@ -118,7 +118,7 @@ func (o *Exception) GetExcepTrendOk() (*ExceptionTrend, bool) {
 
 // HasExcepTrend returns a boolean if a field has been set.
 func (o *Exception) HasExcepTrend() bool {
-	if o != nil && !IsNil(o.ExcepTrend) {
+	if o != nil && !isNil(o.ExcepTrend) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o Exception) MarshalJSON() ([]byte, error) {
 func (o Exception) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["excepId"] = o.ExcepId
-	if !IsNil(o.ExcepLevel) {
+	if !isNil(o.ExcepLevel) {
 		toSerialize["excepLevel"] = o.ExcepLevel
 	}
-	if !IsNil(o.ExcepTrend) {
+	if !isNil(o.ExcepTrend) {
 		toSerialize["excepTrend"] = o.ExcepTrend
 	}
 	return toSerialize, nil

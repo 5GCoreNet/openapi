@@ -49,7 +49,7 @@ func NewGnbDuFunctionSingleAllOf1WithDefaults() *GnbDuFunctionSingleAllOf1 {
 
 // GetRRMPolicyRatio returns the RRMPolicyRatio field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		var ret []RRMPolicyRatioSingle
 		return ret
 	}
@@ -59,7 +59,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetRRMPolicyRatio() []RRMPolicyRatioSingle {
 // GetRRMPolicyRatioOk returns a tuple with the RRMPolicyRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingle, bool) {
-	if o == nil || IsNil(o.RRMPolicyRatio) {
+	if o == nil || isNil(o.RRMPolicyRatio) {
 		return nil, false
 	}
 	return o.RRMPolicyRatio, true
@@ -67,7 +67,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetRRMPolicyRatioOk() ([]RRMPolicyRatioSingl
 
 // HasRRMPolicyRatio returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasRRMPolicyRatio() bool {
-	if o != nil && !IsNil(o.RRMPolicyRatio) {
+	if o != nil && !isNil(o.RRMPolicyRatio) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetRRMPolicyRatio(v []RRMPolicyRatioSingle) 
 
 // GetNrCellDu returns the NrCellDu field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetNrCellDu() []NrCellDuSingle {
-	if o == nil || IsNil(o.NrCellDu) {
+	if o == nil || isNil(o.NrCellDu) {
 		var ret []NrCellDuSingle
 		return ret
 	}
@@ -91,7 +91,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetNrCellDu() []NrCellDuSingle {
 // GetNrCellDuOk returns a tuple with the NrCellDu field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetNrCellDuOk() ([]NrCellDuSingle, bool) {
-	if o == nil || IsNil(o.NrCellDu) {
+	if o == nil || isNil(o.NrCellDu) {
 		return nil, false
 	}
 	return o.NrCellDu, true
@@ -99,7 +99,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetNrCellDuOk() ([]NrCellDuSingle, bool) {
 
 // HasNrCellDu returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasNrCellDu() bool {
-	if o != nil && !IsNil(o.NrCellDu) {
+	if o != nil && !isNil(o.NrCellDu) {
 		return true
 	}
 
@@ -113,7 +113,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetNrCellDu(v []NrCellDuSingle) {
 
 // GetBwpMultiple returns the BwpMultiple field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetBwpMultiple() []BwpSingle {
-	if o == nil || IsNil(o.BwpMultiple) {
+	if o == nil || isNil(o.BwpMultiple) {
 		var ret []BwpSingle
 		return ret
 	}
@@ -123,7 +123,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetBwpMultiple() []BwpSingle {
 // GetBwpMultipleOk returns a tuple with the BwpMultiple field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetBwpMultipleOk() ([]BwpSingle, bool) {
-	if o == nil || IsNil(o.BwpMultiple) {
+	if o == nil || isNil(o.BwpMultiple) {
 		return nil, false
 	}
 	return o.BwpMultiple, true
@@ -131,7 +131,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetBwpMultipleOk() ([]BwpSingle, bool) {
 
 // HasBwpMultiple returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasBwpMultiple() bool {
-	if o != nil && !IsNil(o.BwpMultiple) {
+	if o != nil && !isNil(o.BwpMultiple) {
 		return true
 	}
 
@@ -145,7 +145,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetBwpMultiple(v []BwpSingle) {
 
 // GetNrSectorCarrierMultiple returns the NrSectorCarrierMultiple field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetNrSectorCarrierMultiple() []NrSectorCarrierSingle {
-	if o == nil || IsNil(o.NrSectorCarrierMultiple) {
+	if o == nil || isNil(o.NrSectorCarrierMultiple) {
 		var ret []NrSectorCarrierSingle
 		return ret
 	}
@@ -155,7 +155,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetNrSectorCarrierMultiple() []NrSectorCarri
 // GetNrSectorCarrierMultipleOk returns a tuple with the NrSectorCarrierMultiple field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetNrSectorCarrierMultipleOk() ([]NrSectorCarrierSingle, bool) {
-	if o == nil || IsNil(o.NrSectorCarrierMultiple) {
+	if o == nil || isNil(o.NrSectorCarrierMultiple) {
 		return nil, false
 	}
 	return o.NrSectorCarrierMultiple, true
@@ -163,7 +163,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetNrSectorCarrierMultipleOk() ([]NrSectorCa
 
 // HasNrSectorCarrierMultiple returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasNrSectorCarrierMultiple() bool {
-	if o != nil && !IsNil(o.NrSectorCarrierMultiple) {
+	if o != nil && !isNil(o.NrSectorCarrierMultiple) {
 		return true
 	}
 
@@ -177,7 +177,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetNrSectorCarrierMultiple(v []NrSectorCarri
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetEPF1C() EPF1CSingle {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		var ret EPF1CSingle
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetEPF1C() EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetEPF1COk() (*EPF1CSingle, bool) {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -195,7 +195,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetEPF1COk() (*EPF1CSingle, bool) {
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasEPF1C() bool {
-	if o != nil && !IsNil(o.EPF1C) {
+	if o != nil && !isNil(o.EPF1C) {
 		return true
 	}
 
@@ -209,7 +209,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetEPF1C(v EPF1CSingle) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetEPF1U() []EPF1USingle {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -227,7 +227,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetEPF1UOk() ([]EPF1USingle, bool) {
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasEPF1U() bool {
-	if o != nil && !IsNil(o.EPF1U) {
+	if o != nil && !isNil(o.EPF1U) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetEPF1U(v []EPF1USingle) {
 
 // GetDRACHOptimizationFunction returns the DRACHOptimizationFunction field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimizationFunctionSingle {
-	if o == nil || IsNil(o.DRACHOptimizationFunction) {
+	if o == nil || isNil(o.DRACHOptimizationFunction) {
 		var ret DRACHOptimizationFunctionSingle
 		return ret
 	}
@@ -251,7 +251,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetDRACHOptimizationFunction() DRACHOptimiza
 // GetDRACHOptimizationFunctionOk returns a tuple with the DRACHOptimizationFunction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOptimizationFunctionSingle, bool) {
-	if o == nil || IsNil(o.DRACHOptimizationFunction) {
+	if o == nil || isNil(o.DRACHOptimizationFunction) {
 		return nil, false
 	}
 	return o.DRACHOptimizationFunction, true
@@ -259,7 +259,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetDRACHOptimizationFunctionOk() (*DRACHOpti
 
 // HasDRACHOptimizationFunction returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasDRACHOptimizationFunction() bool {
-	if o != nil && !IsNil(o.DRACHOptimizationFunction) {
+	if o != nil && !isNil(o.DRACHOptimizationFunction) {
 		return true
 	}
 
@@ -273,7 +273,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetDRACHOptimizationFunction(v DRACHOptimiza
 
 // GetOperatorDU returns the OperatorDU field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetOperatorDU() []OperatorDuSingle {
-	if o == nil || IsNil(o.OperatorDU) {
+	if o == nil || isNil(o.OperatorDU) {
 		var ret []OperatorDuSingle
 		return ret
 	}
@@ -283,7 +283,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetOperatorDU() []OperatorDuSingle {
 // GetOperatorDUOk returns a tuple with the OperatorDU field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetOperatorDUOk() ([]OperatorDuSingle, bool) {
-	if o == nil || IsNil(o.OperatorDU) {
+	if o == nil || isNil(o.OperatorDU) {
 		return nil, false
 	}
 	return o.OperatorDU, true
@@ -291,7 +291,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetOperatorDUOk() ([]OperatorDuSingle, bool)
 
 // HasOperatorDU returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasOperatorDU() bool {
-	if o != nil && !IsNil(o.OperatorDU) {
+	if o != nil && !isNil(o.OperatorDU) {
 		return true
 	}
 
@@ -305,7 +305,7 @@ func (o *GnbDuFunctionSingleAllOf1) SetOperatorDU(v []OperatorDuSingle) {
 
 // GetBWPSet returns the BWPSet field value if set, zero value otherwise.
 func (o *GnbDuFunctionSingleAllOf1) GetBWPSet() []BWPSetSingle {
-	if o == nil || IsNil(o.BWPSet) {
+	if o == nil || isNil(o.BWPSet) {
 		var ret []BWPSetSingle
 		return ret
 	}
@@ -315,7 +315,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetBWPSet() []BWPSetSingle {
 // GetBWPSetOk returns a tuple with the BWPSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GnbDuFunctionSingleAllOf1) GetBWPSetOk() ([]BWPSetSingle, bool) {
-	if o == nil || IsNil(o.BWPSet) {
+	if o == nil || isNil(o.BWPSet) {
 		return nil, false
 	}
 	return o.BWPSet, true
@@ -323,7 +323,7 @@ func (o *GnbDuFunctionSingleAllOf1) GetBWPSetOk() ([]BWPSetSingle, bool) {
 
 // HasBWPSet returns a boolean if a field has been set.
 func (o *GnbDuFunctionSingleAllOf1) HasBWPSet() bool {
-	if o != nil && !IsNil(o.BWPSet) {
+	if o != nil && !isNil(o.BWPSet) {
 		return true
 	}
 
@@ -345,31 +345,31 @@ func (o GnbDuFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o GnbDuFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RRMPolicyRatio) {
+	if !isNil(o.RRMPolicyRatio) {
 		toSerialize["RRMPolicyRatio"] = o.RRMPolicyRatio
 	}
-	if !IsNil(o.NrCellDu) {
+	if !isNil(o.NrCellDu) {
 		toSerialize["NrCellDu"] = o.NrCellDu
 	}
-	if !IsNil(o.BwpMultiple) {
+	if !isNil(o.BwpMultiple) {
 		toSerialize["Bwp-Multiple"] = o.BwpMultiple
 	}
-	if !IsNil(o.NrSectorCarrierMultiple) {
+	if !isNil(o.NrSectorCarrierMultiple) {
 		toSerialize["NrSectorCarrier-Multiple"] = o.NrSectorCarrierMultiple
 	}
-	if !IsNil(o.EPF1C) {
+	if !isNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
-	if !IsNil(o.EPF1U) {
+	if !isNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
-	if !IsNil(o.DRACHOptimizationFunction) {
+	if !isNil(o.DRACHOptimizationFunction) {
 		toSerialize["DRACHOptimizationFunction"] = o.DRACHOptimizationFunction
 	}
-	if !IsNil(o.OperatorDU) {
+	if !isNil(o.OperatorDU) {
 		toSerialize["OperatorDU"] = o.OperatorDU
 	}
-	if !IsNil(o.BWPSet) {
+	if !isNil(o.BWPSet) {
 		toSerialize["BWPSet"] = o.BWPSet
 	}
 	return toSerialize, nil

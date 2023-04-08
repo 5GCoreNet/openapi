@@ -70,7 +70,7 @@ func (o *DistSessionEventReport) SetEventType(v DistSessionEventType) {
 
 // GetTimeStamp returns the TimeStamp field value if set, zero value otherwise.
 func (o *DistSessionEventReport) GetTimeStamp() time.Time {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		var ret time.Time
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *DistSessionEventReport) GetTimeStamp() time.Time {
 // GetTimeStampOk returns a tuple with the TimeStamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionEventReport) GetTimeStampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeStamp) {
+	if o == nil || isNil(o.TimeStamp) {
 		return nil, false
 	}
 	return o.TimeStamp, true
@@ -88,7 +88,7 @@ func (o *DistSessionEventReport) GetTimeStampOk() (*time.Time, bool) {
 
 // HasTimeStamp returns a boolean if a field has been set.
 func (o *DistSessionEventReport) HasTimeStamp() bool {
-	if o != nil && !IsNil(o.TimeStamp) {
+	if o != nil && !isNil(o.TimeStamp) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *DistSessionEventReport) SetTimeStamp(v time.Time) {
 
 // GetMbsSecurityContext returns the MbsSecurityContext field value if set, zero value otherwise.
 func (o *DistSessionEventReport) GetMbsSecurityContext() MbsSecurityContext {
-	if o == nil || IsNil(o.MbsSecurityContext) {
+	if o == nil || isNil(o.MbsSecurityContext) {
 		var ret MbsSecurityContext
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *DistSessionEventReport) GetMbsSecurityContext() MbsSecurityContext {
 // GetMbsSecurityContextOk returns a tuple with the MbsSecurityContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DistSessionEventReport) GetMbsSecurityContextOk() (*MbsSecurityContext, bool) {
-	if o == nil || IsNil(o.MbsSecurityContext) {
+	if o == nil || isNil(o.MbsSecurityContext) {
 		return nil, false
 	}
 	return o.MbsSecurityContext, true
@@ -120,7 +120,7 @@ func (o *DistSessionEventReport) GetMbsSecurityContextOk() (*MbsSecurityContext,
 
 // HasMbsSecurityContext returns a boolean if a field has been set.
 func (o *DistSessionEventReport) HasMbsSecurityContext() bool {
-	if o != nil && !IsNil(o.MbsSecurityContext) {
+	if o != nil && !isNil(o.MbsSecurityContext) {
 		return true
 	}
 
@@ -143,10 +143,10 @@ func (o DistSessionEventReport) MarshalJSON() ([]byte, error) {
 func (o DistSessionEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.TimeStamp) {
+	if !isNil(o.TimeStamp) {
 		toSerialize["timeStamp"] = o.TimeStamp
 	}
-	if !IsNil(o.MbsSecurityContext) {
+	if !isNil(o.MbsSecurityContext) {
 		toSerialize["mbsSecurityContext"] = o.MbsSecurityContext
 	}
 	return toSerialize, nil

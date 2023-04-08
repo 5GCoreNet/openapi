@@ -125,7 +125,7 @@ func (o *AuthNotification) SetNotifyCorrId(v string) {
 // GetAuthMsg returns the AuthMsg field value if set, zero value otherwise.
 // Deprecated
 func (o *AuthNotification) GetAuthMsg() UAVAuthInfoAuthMsg {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		var ret UAVAuthInfoAuthMsg
 		return ret
 	}
@@ -136,7 +136,7 @@ func (o *AuthNotification) GetAuthMsg() UAVAuthInfoAuthMsg {
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *AuthNotification) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
-	if o == nil || IsNil(o.AuthMsg) {
+	if o == nil || isNil(o.AuthMsg) {
 		return nil, false
 	}
 	return o.AuthMsg, true
@@ -144,7 +144,7 @@ func (o *AuthNotification) GetAuthMsgOk() (*UAVAuthInfoAuthMsg, bool) {
 
 // HasAuthMsg returns a boolean if a field has been set.
 func (o *AuthNotification) HasAuthMsg() bool {
-	if o != nil && !IsNil(o.AuthMsg) {
+	if o != nil && !isNil(o.AuthMsg) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *AuthNotification) SetAuthMsg(v UAVAuthInfoAuthMsg) {
 
 // GetAuthContainer returns the AuthContainer field value if set, zero value otherwise.
 func (o *AuthNotification) GetAuthContainer() []AuthContainer {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		var ret []AuthContainer
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *AuthNotification) GetAuthContainer() []AuthContainer {
 // GetAuthContainerOk returns a tuple with the AuthContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthNotification) GetAuthContainerOk() ([]AuthContainer, bool) {
-	if o == nil || IsNil(o.AuthContainer) {
+	if o == nil || isNil(o.AuthContainer) {
 		return nil, false
 	}
 	return o.AuthContainer, true
@@ -177,7 +177,7 @@ func (o *AuthNotification) GetAuthContainerOk() ([]AuthContainer, bool) {
 
 // HasAuthContainer returns a boolean if a field has been set.
 func (o *AuthNotification) HasAuthContainer() bool {
-	if o != nil && !IsNil(o.AuthContainer) {
+	if o != nil && !isNil(o.AuthContainer) {
 		return true
 	}
 
@@ -226,10 +226,10 @@ func (o AuthNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize["gpsi"] = o.Gpsi
 	toSerialize["serviceLevelId"] = o.ServiceLevelId
 	toSerialize["notifyCorrId"] = o.NotifyCorrId
-	if !IsNil(o.AuthMsg) {
+	if !isNil(o.AuthMsg) {
 		toSerialize["authMsg"] = o.AuthMsg
 	}
-	if !IsNil(o.AuthContainer) {
+	if !isNil(o.AuthContainer) {
 		toSerialize["authContainer"] = o.AuthContainer
 	}
 	toSerialize["notifType"] = o.NotifType

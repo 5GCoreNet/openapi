@@ -67,7 +67,7 @@ func (o *UeConnectivityState) SetAccessType(v AccessType) {
 
 // GetConnectivitystate returns the Connectivitystate field value if set, zero value otherwise.
 func (o *UeConnectivityState) GetConnectivitystate() CmState {
-	if o == nil || IsNil(o.Connectivitystate) {
+	if o == nil || isNil(o.Connectivitystate) {
 		var ret CmState
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *UeConnectivityState) GetConnectivitystate() CmState {
 // GetConnectivitystateOk returns a tuple with the Connectivitystate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeConnectivityState) GetConnectivitystateOk() (*CmState, bool) {
-	if o == nil || IsNil(o.Connectivitystate) {
+	if o == nil || isNil(o.Connectivitystate) {
 		return nil, false
 	}
 	return o.Connectivitystate, true
@@ -85,7 +85,7 @@ func (o *UeConnectivityState) GetConnectivitystateOk() (*CmState, bool) {
 
 // HasConnectivitystate returns a boolean if a field has been set.
 func (o *UeConnectivityState) HasConnectivitystate() bool {
-	if o != nil && !IsNil(o.Connectivitystate) {
+	if o != nil && !isNil(o.Connectivitystate) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o UeConnectivityState) MarshalJSON() ([]byte, error) {
 func (o UeConnectivityState) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["accessType"] = o.AccessType
-	if !IsNil(o.Connectivitystate) {
+	if !isNil(o.Connectivitystate) {
 		toSerialize["connectivitystate"] = o.Connectivitystate
 	}
 	return toSerialize, nil

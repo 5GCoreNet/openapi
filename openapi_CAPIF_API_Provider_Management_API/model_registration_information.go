@@ -69,7 +69,7 @@ func (o *RegistrationInformation) SetApiProvPubKey(v string) {
 
 // GetApiProvCert returns the ApiProvCert field value if set, zero value otherwise.
 func (o *RegistrationInformation) GetApiProvCert() string {
-	if o == nil || IsNil(o.ApiProvCert) {
+	if o == nil || isNil(o.ApiProvCert) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *RegistrationInformation) GetApiProvCert() string {
 // GetApiProvCertOk returns a tuple with the ApiProvCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RegistrationInformation) GetApiProvCertOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiProvCert) {
+	if o == nil || isNil(o.ApiProvCert) {
 		return nil, false
 	}
 	return o.ApiProvCert, true
@@ -87,7 +87,7 @@ func (o *RegistrationInformation) GetApiProvCertOk() (*string, bool) {
 
 // HasApiProvCert returns a boolean if a field has been set.
 func (o *RegistrationInformation) HasApiProvCert() bool {
-	if o != nil && !IsNil(o.ApiProvCert) {
+	if o != nil && !isNil(o.ApiProvCert) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o RegistrationInformation) MarshalJSON() ([]byte, error) {
 func (o RegistrationInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["apiProvPubKey"] = o.ApiProvPubKey
-	if !IsNil(o.ApiProvCert) {
+	if !isNil(o.ApiProvCert) {
 		toSerialize["apiProvCert"] = o.ApiProvCert
 	}
 	return toSerialize, nil

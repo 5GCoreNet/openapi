@@ -181,7 +181,7 @@ func (o *AuthEvent) SetServingNetworkName(v string) {
 
 // GetAuthRemovalInd returns the AuthRemovalInd field value if set, zero value otherwise.
 func (o *AuthEvent) GetAuthRemovalInd() bool {
-	if o == nil || IsNil(o.AuthRemovalInd) {
+	if o == nil || isNil(o.AuthRemovalInd) {
 		var ret bool
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *AuthEvent) GetAuthRemovalInd() bool {
 // GetAuthRemovalIndOk returns a tuple with the AuthRemovalInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthEvent) GetAuthRemovalIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AuthRemovalInd) {
+	if o == nil || isNil(o.AuthRemovalInd) {
 		return nil, false
 	}
 	return o.AuthRemovalInd, true
@@ -199,7 +199,7 @@ func (o *AuthEvent) GetAuthRemovalIndOk() (*bool, bool) {
 
 // HasAuthRemovalInd returns a boolean if a field has been set.
 func (o *AuthEvent) HasAuthRemovalInd() bool {
-	if o != nil && !IsNil(o.AuthRemovalInd) {
+	if o != nil && !isNil(o.AuthRemovalInd) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *AuthEvent) SetAuthRemovalInd(v bool) {
 
 // GetNfSetId returns the NfSetId field value if set, zero value otherwise.
 func (o *AuthEvent) GetNfSetId() string {
-	if o == nil || IsNil(o.NfSetId) {
+	if o == nil || isNil(o.NfSetId) {
 		var ret string
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *AuthEvent) GetNfSetId() string {
 // GetNfSetIdOk returns a tuple with the NfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthEvent) GetNfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NfSetId) {
+	if o == nil || isNil(o.NfSetId) {
 		return nil, false
 	}
 	return o.NfSetId, true
@@ -231,7 +231,7 @@ func (o *AuthEvent) GetNfSetIdOk() (*string, bool) {
 
 // HasNfSetId returns a boolean if a field has been set.
 func (o *AuthEvent) HasNfSetId() bool {
-	if o != nil && !IsNil(o.NfSetId) {
+	if o != nil && !isNil(o.NfSetId) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *AuthEvent) SetNfSetId(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *AuthEvent) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *AuthEvent) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthEvent) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -263,7 +263,7 @@ func (o *AuthEvent) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *AuthEvent) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -290,13 +290,13 @@ func (o AuthEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize["timeStamp"] = o.TimeStamp
 	toSerialize["authType"] = o.AuthType
 	toSerialize["servingNetworkName"] = o.ServingNetworkName
-	if !IsNil(o.AuthRemovalInd) {
+	if !isNil(o.AuthRemovalInd) {
 		toSerialize["authRemovalInd"] = o.AuthRemovalInd
 	}
-	if !IsNil(o.NfSetId) {
+	if !isNil(o.NfSetId) {
 		toSerialize["nfSetId"] = o.NfSetId
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

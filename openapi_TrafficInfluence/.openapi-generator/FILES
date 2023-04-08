@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -10,8 +9,10 @@ configuration.go
 docs/AfAckInfo.md
 docs/AfResultInfo.md
 docs/AfResultStatus.md
+docs/AfResultStatusAnyOf.md
 docs/CivicAddress.md
 docs/DnaiChangeType.md
+docs/DnaiChangeTypeAnyOf.md
 docs/EasIpReplacementInfo.md
 docs/EasServerAddress.md
 docs/EllipsoidArc.md
@@ -19,6 +20,7 @@ docs/EllipsoidArcAllOf.md
 docs/EthFlowDescription.md
 docs/EventNotification.md
 docs/FlowDirection.md
+docs/FlowDirectionAnyOf.md
 docs/FlowInfo.md
 docs/GADShape.md
 docs/GeographicArea.md
@@ -35,8 +37,11 @@ docs/Local3dPointUncertaintyEllipsoid.md
 docs/Local3dPointUncertaintyEllipsoidAllOf.md
 docs/LocalOrigin.md
 docs/NotificationFlag.md
+docs/NotificationFlagAnyOf.md
 docs/NotificationMethod.md
+docs/NotificationMethodAnyOf.md
 docs/PartitioningCriteria.md
+docs/PartitioningCriteriaAnyOf.md
 docs/Point.md
 docs/PointAllOf.md
 docs/PointAltitude.md
@@ -56,7 +61,9 @@ docs/RouteInformation.md
 docs/RouteToLocation.md
 docs/Snssai.md
 docs/SubscribedEvent.md
+docs/SubscribedEventAnyOf.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/TemporalValidity.md
 docs/TrafficInfluSub.md
 docs/TrafficInfluSubPatch.md
@@ -70,8 +77,10 @@ go.sum
 model_af_ack_info.go
 model_af_result_info.go
 model_af_result_status.go
+model_af_result_status_any_of.go
 model_civic_address.go
 model_dnai_change_type.go
+model_dnai_change_type_any_of.go
 model_eas_ip_replacement_info.go
 model_eas_server_address.go
 model_ellipsoid_arc.go
@@ -79,6 +88,7 @@ model_ellipsoid_arc_all_of.go
 model_eth_flow_description.go
 model_event_notification.go
 model_flow_direction.go
+model_flow_direction_any_of.go
 model_flow_info.go
 model_gad_shape.go
 model_geographic_area.go
@@ -94,8 +104,11 @@ model_local3d_point_uncertainty_ellipsoid.go
 model_local3d_point_uncertainty_ellipsoid_all_of.go
 model_local_origin.go
 model_notification_flag.go
+model_notification_flag_any_of.go
 model_notification_method.go
+model_notification_method_any_of.go
 model_partitioning_criteria.go
+model_partitioning_criteria_any_of.go
 model_point.go
 model_point_all_of.go
 model_point_altitude.go
@@ -115,7 +128,9 @@ model_route_information.go
 model_route_to_location.go
 model_snssai.go
 model_subscribed_event.go
+model_subscribed_event_any_of.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_temporal_validity.go
 model_traffic_influ_sub.go
 model_traffic_influ_sub_patch.go

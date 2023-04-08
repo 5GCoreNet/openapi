@@ -75,7 +75,7 @@ func (o *UserPlaneEventReport) SetEvent(v UserPlaneEvent) {
 
 // GetAccumulatedUsage returns the AccumulatedUsage field value if set, zero value otherwise.
 func (o *UserPlaneEventReport) GetAccumulatedUsage() AccumulatedUsage {
-	if o == nil || IsNil(o.AccumulatedUsage) {
+	if o == nil || isNil(o.AccumulatedUsage) {
 		var ret AccumulatedUsage
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *UserPlaneEventReport) GetAccumulatedUsage() AccumulatedUsage {
 // GetAccumulatedUsageOk returns a tuple with the AccumulatedUsage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneEventReport) GetAccumulatedUsageOk() (*AccumulatedUsage, bool) {
-	if o == nil || IsNil(o.AccumulatedUsage) {
+	if o == nil || isNil(o.AccumulatedUsage) {
 		return nil, false
 	}
 	return o.AccumulatedUsage, true
@@ -93,7 +93,7 @@ func (o *UserPlaneEventReport) GetAccumulatedUsageOk() (*AccumulatedUsage, bool)
 
 // HasAccumulatedUsage returns a boolean if a field has been set.
 func (o *UserPlaneEventReport) HasAccumulatedUsage() bool {
-	if o != nil && !IsNil(o.AccumulatedUsage) {
+	if o != nil && !isNil(o.AccumulatedUsage) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *UserPlaneEventReport) SetAccumulatedUsage(v AccumulatedUsage) {
 
 // GetFlowIds returns the FlowIds field value if set, zero value otherwise.
 func (o *UserPlaneEventReport) GetFlowIds() []int32 {
-	if o == nil || IsNil(o.FlowIds) {
+	if o == nil || isNil(o.FlowIds) {
 		var ret []int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *UserPlaneEventReport) GetFlowIds() []int32 {
 // GetFlowIdsOk returns a tuple with the FlowIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneEventReport) GetFlowIdsOk() ([]int32, bool) {
-	if o == nil || IsNil(o.FlowIds) {
+	if o == nil || isNil(o.FlowIds) {
 		return nil, false
 	}
 	return o.FlowIds, true
@@ -125,7 +125,7 @@ func (o *UserPlaneEventReport) GetFlowIdsOk() ([]int32, bool) {
 
 // HasFlowIds returns a boolean if a field has been set.
 func (o *UserPlaneEventReport) HasFlowIds() bool {
-	if o != nil && !IsNil(o.FlowIds) {
+	if o != nil && !isNil(o.FlowIds) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *UserPlaneEventReport) SetFlowIds(v []int32) {
 
 // GetAppliedQosRef returns the AppliedQosRef field value if set, zero value otherwise.
 func (o *UserPlaneEventReport) GetAppliedQosRef() string {
-	if o == nil || IsNil(o.AppliedQosRef) {
+	if o == nil || isNil(o.AppliedQosRef) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *UserPlaneEventReport) GetAppliedQosRef() string {
 // GetAppliedQosRefOk returns a tuple with the AppliedQosRef field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneEventReport) GetAppliedQosRefOk() (*string, bool) {
-	if o == nil || IsNil(o.AppliedQosRef) {
+	if o == nil || isNil(o.AppliedQosRef) {
 		return nil, false
 	}
 	return o.AppliedQosRef, true
@@ -157,7 +157,7 @@ func (o *UserPlaneEventReport) GetAppliedQosRefOk() (*string, bool) {
 
 // HasAppliedQosRef returns a boolean if a field has been set.
 func (o *UserPlaneEventReport) HasAppliedQosRef() bool {
-	if o != nil && !IsNil(o.AppliedQosRef) {
+	if o != nil && !isNil(o.AppliedQosRef) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *UserPlaneEventReport) SetAppliedQosRef(v string) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *UserPlaneEventReport) GetPlmnId() PlmnIdNid {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *UserPlaneEventReport) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneEventReport) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -189,7 +189,7 @@ func (o *UserPlaneEventReport) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *UserPlaneEventReport) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *UserPlaneEventReport) SetPlmnId(v PlmnIdNid) {
 
 // GetQosMonReports returns the QosMonReports field value if set, zero value otherwise.
 func (o *UserPlaneEventReport) GetQosMonReports() []QosMonitoringReport {
-	if o == nil || IsNil(o.QosMonReports) {
+	if o == nil || isNil(o.QosMonReports) {
 		var ret []QosMonitoringReport
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *UserPlaneEventReport) GetQosMonReports() []QosMonitoringReport {
 // GetQosMonReportsOk returns a tuple with the QosMonReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneEventReport) GetQosMonReportsOk() ([]QosMonitoringReport, bool) {
-	if o == nil || IsNil(o.QosMonReports) {
+	if o == nil || isNil(o.QosMonReports) {
 		return nil, false
 	}
 	return o.QosMonReports, true
@@ -221,7 +221,7 @@ func (o *UserPlaneEventReport) GetQosMonReportsOk() ([]QosMonitoringReport, bool
 
 // HasQosMonReports returns a boolean if a field has been set.
 func (o *UserPlaneEventReport) HasQosMonReports() bool {
-	if o != nil && !IsNil(o.QosMonReports) {
+	if o != nil && !isNil(o.QosMonReports) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *UserPlaneEventReport) SetQosMonReports(v []QosMonitoringReport) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *UserPlaneEventReport) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *UserPlaneEventReport) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UserPlaneEventReport) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -253,7 +253,7 @@ func (o *UserPlaneEventReport) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *UserPlaneEventReport) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -276,22 +276,22 @@ func (o UserPlaneEventReport) MarshalJSON() ([]byte, error) {
 func (o UserPlaneEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["event"] = o.Event
-	if !IsNil(o.AccumulatedUsage) {
+	if !isNil(o.AccumulatedUsage) {
 		toSerialize["accumulatedUsage"] = o.AccumulatedUsage
 	}
-	if !IsNil(o.FlowIds) {
+	if !isNil(o.FlowIds) {
 		toSerialize["flowIds"] = o.FlowIds
 	}
-	if !IsNil(o.AppliedQosRef) {
+	if !isNil(o.AppliedQosRef) {
 		toSerialize["appliedQosRef"] = o.AppliedQosRef
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.QosMonReports) {
+	if !isNil(o.QosMonReports) {
 		toSerialize["qosMonReports"] = o.QosMonReports
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
 	return toSerialize, nil

@@ -75,7 +75,7 @@ func (o *OperatorDuSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *OperatorDuSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -93,7 +93,7 @@ func (o *OperatorDuSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *OperatorDuSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *OperatorDuSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -125,7 +125,7 @@ func (o *OperatorDuSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *OperatorDuSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *OperatorDuSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -157,7 +157,7 @@ func (o *OperatorDuSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *OperatorDuSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 
 // GetGnbId returns the GnbId field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetGnbId() string {
-	if o == nil || IsNil(o.GnbId) {
+	if o == nil || isNil(o.GnbId) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *OperatorDuSingle) GetGnbId() string {
 // GetGnbIdOk returns a tuple with the GnbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetGnbIdOk() (*string, bool) {
-	if o == nil || IsNil(o.GnbId) {
+	if o == nil || isNil(o.GnbId) {
 		return nil, false
 	}
 	return o.GnbId, true
@@ -189,7 +189,7 @@ func (o *OperatorDuSingle) GetGnbIdOk() (*string, bool) {
 
 // HasGnbId returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasGnbId() bool {
-	if o != nil && !IsNil(o.GnbId) {
+	if o != nil && !isNil(o.GnbId) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *OperatorDuSingle) SetGnbId(v string) {
 
 // GetGnbIdLength returns the GnbIdLength field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetGnbIdLength() int32 {
-	if o == nil || IsNil(o.GnbIdLength) {
+	if o == nil || isNil(o.GnbIdLength) {
 		var ret int32
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *OperatorDuSingle) GetGnbIdLength() int32 {
 // GetGnbIdLengthOk returns a tuple with the GnbIdLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetGnbIdLengthOk() (*int32, bool) {
-	if o == nil || IsNil(o.GnbIdLength) {
+	if o == nil || isNil(o.GnbIdLength) {
 		return nil, false
 	}
 	return o.GnbIdLength, true
@@ -221,7 +221,7 @@ func (o *OperatorDuSingle) GetGnbIdLengthOk() (*int32, bool) {
 
 // HasGnbIdLength returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasGnbIdLength() bool {
-	if o != nil && !IsNil(o.GnbIdLength) {
+	if o != nil && !isNil(o.GnbIdLength) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *OperatorDuSingle) SetGnbIdLength(v int32) {
 
 // GetEPF1C returns the EPF1C field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetEPF1C() EPF1CSingle {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		var ret EPF1CSingle
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *OperatorDuSingle) GetEPF1C() EPF1CSingle {
 // GetEPF1COk returns a tuple with the EPF1C field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetEPF1COk() (*EPF1CSingle, bool) {
-	if o == nil || IsNil(o.EPF1C) {
+	if o == nil || isNil(o.EPF1C) {
 		return nil, false
 	}
 	return o.EPF1C, true
@@ -253,7 +253,7 @@ func (o *OperatorDuSingle) GetEPF1COk() (*EPF1CSingle, bool) {
 
 // HasEPF1C returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasEPF1C() bool {
-	if o != nil && !IsNil(o.EPF1C) {
+	if o != nil && !isNil(o.EPF1C) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *OperatorDuSingle) SetEPF1C(v EPF1CSingle) {
 
 // GetEPF1U returns the EPF1U field value if set, zero value otherwise.
 func (o *OperatorDuSingle) GetEPF1U() []EPF1USingle {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		var ret []EPF1USingle
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *OperatorDuSingle) GetEPF1U() []EPF1USingle {
 // GetEPF1UOk returns a tuple with the EPF1U field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OperatorDuSingle) GetEPF1UOk() ([]EPF1USingle, bool) {
-	if o == nil || IsNil(o.EPF1U) {
+	if o == nil || isNil(o.EPF1U) {
 		return nil, false
 	}
 	return o.EPF1U, true
@@ -285,7 +285,7 @@ func (o *OperatorDuSingle) GetEPF1UOk() ([]EPF1USingle, bool) {
 
 // HasEPF1U returns a boolean if a field has been set.
 func (o *OperatorDuSingle) HasEPF1U() bool {
-	if o != nil && !IsNil(o.EPF1U) {
+	if o != nil && !isNil(o.EPF1U) {
 		return true
 	}
 
@@ -308,25 +308,25 @@ func (o OperatorDuSingle) MarshalJSON() ([]byte, error) {
 func (o OperatorDuSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.GnbId) {
+	if !isNil(o.GnbId) {
 		toSerialize["gnbId"] = o.GnbId
 	}
-	if !IsNil(o.GnbIdLength) {
+	if !isNil(o.GnbIdLength) {
 		toSerialize["gnbIdLength"] = o.GnbIdLength
 	}
-	if !IsNil(o.EPF1C) {
+	if !isNil(o.EPF1C) {
 		toSerialize["EP_F1C"] = o.EPF1C
 	}
-	if !IsNil(o.EPF1U) {
+	if !isNil(o.EPF1U) {
 		toSerialize["EP_F1U"] = o.EPF1U
 	}
 	return toSerialize, nil

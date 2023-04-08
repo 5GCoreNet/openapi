@@ -75,7 +75,7 @@ func (o *BwRequirement) SetAppId(v string) {
 
 // GetMarBwDl returns the MarBwDl field value if set, zero value otherwise.
 func (o *BwRequirement) GetMarBwDl() string {
-	if o == nil || IsNil(o.MarBwDl) {
+	if o == nil || isNil(o.MarBwDl) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *BwRequirement) GetMarBwDl() string {
 // GetMarBwDlOk returns a tuple with the MarBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BwRequirement) GetMarBwDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MarBwDl) {
+	if o == nil || isNil(o.MarBwDl) {
 		return nil, false
 	}
 	return o.MarBwDl, true
@@ -93,7 +93,7 @@ func (o *BwRequirement) GetMarBwDlOk() (*string, bool) {
 
 // HasMarBwDl returns a boolean if a field has been set.
 func (o *BwRequirement) HasMarBwDl() bool {
-	if o != nil && !IsNil(o.MarBwDl) {
+	if o != nil && !isNil(o.MarBwDl) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *BwRequirement) SetMarBwDl(v string) {
 
 // GetMarBwUl returns the MarBwUl field value if set, zero value otherwise.
 func (o *BwRequirement) GetMarBwUl() string {
-	if o == nil || IsNil(o.MarBwUl) {
+	if o == nil || isNil(o.MarBwUl) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *BwRequirement) GetMarBwUl() string {
 // GetMarBwUlOk returns a tuple with the MarBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BwRequirement) GetMarBwUlOk() (*string, bool) {
-	if o == nil || IsNil(o.MarBwUl) {
+	if o == nil || isNil(o.MarBwUl) {
 		return nil, false
 	}
 	return o.MarBwUl, true
@@ -125,7 +125,7 @@ func (o *BwRequirement) GetMarBwUlOk() (*string, bool) {
 
 // HasMarBwUl returns a boolean if a field has been set.
 func (o *BwRequirement) HasMarBwUl() bool {
-	if o != nil && !IsNil(o.MarBwUl) {
+	if o != nil && !isNil(o.MarBwUl) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *BwRequirement) SetMarBwUl(v string) {
 
 // GetMirBwDl returns the MirBwDl field value if set, zero value otherwise.
 func (o *BwRequirement) GetMirBwDl() string {
-	if o == nil || IsNil(o.MirBwDl) {
+	if o == nil || isNil(o.MirBwDl) {
 		var ret string
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *BwRequirement) GetMirBwDl() string {
 // GetMirBwDlOk returns a tuple with the MirBwDl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BwRequirement) GetMirBwDlOk() (*string, bool) {
-	if o == nil || IsNil(o.MirBwDl) {
+	if o == nil || isNil(o.MirBwDl) {
 		return nil, false
 	}
 	return o.MirBwDl, true
@@ -157,7 +157,7 @@ func (o *BwRequirement) GetMirBwDlOk() (*string, bool) {
 
 // HasMirBwDl returns a boolean if a field has been set.
 func (o *BwRequirement) HasMirBwDl() bool {
-	if o != nil && !IsNil(o.MirBwDl) {
+	if o != nil && !isNil(o.MirBwDl) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *BwRequirement) SetMirBwDl(v string) {
 
 // GetMirBwUl returns the MirBwUl field value if set, zero value otherwise.
 func (o *BwRequirement) GetMirBwUl() string {
-	if o == nil || IsNil(o.MirBwUl) {
+	if o == nil || isNil(o.MirBwUl) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *BwRequirement) GetMirBwUl() string {
 // GetMirBwUlOk returns a tuple with the MirBwUl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BwRequirement) GetMirBwUlOk() (*string, bool) {
-	if o == nil || IsNil(o.MirBwUl) {
+	if o == nil || isNil(o.MirBwUl) {
 		return nil, false
 	}
 	return o.MirBwUl, true
@@ -189,7 +189,7 @@ func (o *BwRequirement) GetMirBwUlOk() (*string, bool) {
 
 // HasMirBwUl returns a boolean if a field has been set.
 func (o *BwRequirement) HasMirBwUl() bool {
-	if o != nil && !IsNil(o.MirBwUl) {
+	if o != nil && !isNil(o.MirBwUl) {
 		return true
 	}
 
@@ -212,16 +212,16 @@ func (o BwRequirement) MarshalJSON() ([]byte, error) {
 func (o BwRequirement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["appId"] = o.AppId
-	if !IsNil(o.MarBwDl) {
+	if !isNil(o.MarBwDl) {
 		toSerialize["marBwDl"] = o.MarBwDl
 	}
-	if !IsNil(o.MarBwUl) {
+	if !isNil(o.MarBwUl) {
 		toSerialize["marBwUl"] = o.MarBwUl
 	}
-	if !IsNil(o.MirBwDl) {
+	if !isNil(o.MirBwDl) {
 		toSerialize["mirBwDl"] = o.MirBwDl
 	}
-	if !IsNil(o.MirBwUl) {
+	if !isNil(o.MirBwUl) {
 		toSerialize["mirBwUl"] = o.MirBwUl
 	}
 	return toSerialize, nil

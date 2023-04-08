@@ -13,7 +13,7 @@ package openapi_Nudr_DR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -83,7 +83,7 @@ func (a *ContextDataDocumentApiService) QueryContextDataExecute(r ApiQueryContex
 		return localVarReturnValue, nil, reportError("contextDatasetNames must have at least 2 elements")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "context-dataset-names", r.contextDatasetNames, "csv")
+	parameterAddToQuery(localVarQueryParams, "context-dataset-names", r.contextDatasetNames, "csv")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -111,9 +111,9 @@ func (a *ContextDataDocumentApiService) QueryContextDataExecute(r ApiQueryContex
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

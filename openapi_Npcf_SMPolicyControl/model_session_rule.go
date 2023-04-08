@@ -51,7 +51,7 @@ func NewSessionRuleWithDefaults() *SessionRule {
 
 // GetAuthSessAmbr returns the AuthSessAmbr field value if set, zero value otherwise.
 func (o *SessionRule) GetAuthSessAmbr() Ambr {
-	if o == nil || IsNil(o.AuthSessAmbr) {
+	if o == nil || isNil(o.AuthSessAmbr) {
 		var ret Ambr
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *SessionRule) GetAuthSessAmbr() Ambr {
 // GetAuthSessAmbrOk returns a tuple with the AuthSessAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionRule) GetAuthSessAmbrOk() (*Ambr, bool) {
-	if o == nil || IsNil(o.AuthSessAmbr) {
+	if o == nil || isNil(o.AuthSessAmbr) {
 		return nil, false
 	}
 	return o.AuthSessAmbr, true
@@ -69,7 +69,7 @@ func (o *SessionRule) GetAuthSessAmbrOk() (*Ambr, bool) {
 
 // HasAuthSessAmbr returns a boolean if a field has been set.
 func (o *SessionRule) HasAuthSessAmbr() bool {
-	if o != nil && !IsNil(o.AuthSessAmbr) {
+	if o != nil && !isNil(o.AuthSessAmbr) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *SessionRule) SetAuthSessAmbr(v Ambr) {
 
 // GetAuthDefQos returns the AuthDefQos field value if set, zero value otherwise.
 func (o *SessionRule) GetAuthDefQos() AuthorizedDefaultQos {
-	if o == nil || IsNil(o.AuthDefQos) {
+	if o == nil || isNil(o.AuthDefQos) {
 		var ret AuthorizedDefaultQos
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *SessionRule) GetAuthDefQos() AuthorizedDefaultQos {
 // GetAuthDefQosOk returns a tuple with the AuthDefQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SessionRule) GetAuthDefQosOk() (*AuthorizedDefaultQos, bool) {
-	if o == nil || IsNil(o.AuthDefQos) {
+	if o == nil || isNil(o.AuthDefQos) {
 		return nil, false
 	}
 	return o.AuthDefQos, true
@@ -101,7 +101,7 @@ func (o *SessionRule) GetAuthDefQosOk() (*AuthorizedDefaultQos, bool) {
 
 // HasAuthDefQos returns a boolean if a field has been set.
 func (o *SessionRule) HasAuthDefQos() bool {
-	if o != nil && !IsNil(o.AuthDefQos) {
+	if o != nil && !isNil(o.AuthDefQos) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *SessionRule) SetSessRuleId(v string) {
 
 // GetRefUmData returns the RefUmData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionRule) GetRefUmData() string {
-	if o == nil || IsNil(o.RefUmData.Get()) {
+	if o == nil || isNil(o.RefUmData.Get()) {
 		var ret string
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *SessionRule) UnsetRefUmData() {
 
 // GetRefUmN3gData returns the RefUmN3gData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionRule) GetRefUmN3gData() string {
-	if o == nil || IsNil(o.RefUmN3gData.Get()) {
+	if o == nil || isNil(o.RefUmN3gData.Get()) {
 		var ret string
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *SessionRule) UnsetRefUmN3gData() {
 
 // GetRefCondData returns the RefCondData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SessionRule) GetRefCondData() string {
-	if o == nil || IsNil(o.RefCondData.Get()) {
+	if o == nil || isNil(o.RefCondData.Get()) {
 		var ret string
 		return ret
 	}
@@ -273,10 +273,10 @@ func (o SessionRule) MarshalJSON() ([]byte, error) {
 
 func (o SessionRule) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AuthSessAmbr) {
+	if !isNil(o.AuthSessAmbr) {
 		toSerialize["authSessAmbr"] = o.AuthSessAmbr
 	}
-	if !IsNil(o.AuthDefQos) {
+	if !isNil(o.AuthDefQos) {
 		toSerialize["authDefQos"] = o.AuthDefQos
 	}
 	toSerialize["sessRuleId"] = o.SessRuleId

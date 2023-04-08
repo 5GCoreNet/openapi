@@ -17,23 +17,37 @@ import (
 
 // SteeringFunctionality Possible values are   - MPTCP: Indicates that PCF authorizes the MPTCP functionality to support traffic    steering, switching and splitting.   - ATSSS_LL: Indicates that PCF authorizes the ATSSS-LL functionality to support traffic    steering, switching and splitting. 
 type SteeringFunctionality struct {
-	string *string
+	SteeringFunctionalityAnyOf *SteeringFunctionalityAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SteeringFunctionality) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SteeringFunctionalityAnyOf
+	err = json.Unmarshal(data, &dst.SteeringFunctionalityAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSteeringFunctionalityAnyOf, _ := json.Marshal(dst.SteeringFunctionalityAnyOf)
+		if string(jsonSteeringFunctionalityAnyOf) == "{}" { // empty struct
+			dst.SteeringFunctionalityAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SteeringFunctionalityAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SteeringFunctionalityAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SteeringFunctionality)")
@@ -41,8 +55,12 @@ func (dst *SteeringFunctionality) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SteeringFunctionality) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SteeringFunctionalityAnyOf != nil {
+		return json.Marshal(&src.SteeringFunctionalityAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

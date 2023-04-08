@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -11,6 +10,7 @@ docs/IndividualLPIParametersProvisioningApi.md
 docs/InvalidParam.md
 docs/LPIParametersProvisioningsApi.md
 docs/LocationPrivacyInd.md
+docs/LocationPrivacyIndAnyOf.md
 docs/Lpi.md
 docs/LpiParametersProvision.md
 docs/LpiParametersProvisionPatch.md
@@ -21,6 +21,7 @@ go.mod
 go.sum
 model_invalid_param.go
 model_location_privacy_ind.go
+model_location_privacy_ind_any_of.go
 model_lpi.go
 model_lpi_parameters_provision.go
 model_lpi_parameters_provision_patch.go

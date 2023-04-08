@@ -96,7 +96,7 @@ func (o *EDNConfigInfo) SetEess(v []EESInfo) {
 
 // GetLifeTime returns the LifeTime field value if set, zero value otherwise.
 func (o *EDNConfigInfo) GetLifeTime() time.Time {
-	if o == nil || IsNil(o.LifeTime) {
+	if o == nil || isNil(o.LifeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *EDNConfigInfo) GetLifeTime() time.Time {
 // GetLifeTimeOk returns a tuple with the LifeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EDNConfigInfo) GetLifeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LifeTime) {
+	if o == nil || isNil(o.LifeTime) {
 		return nil, false
 	}
 	return o.LifeTime, true
@@ -114,7 +114,7 @@ func (o *EDNConfigInfo) GetLifeTimeOk() (*time.Time, bool) {
 
 // HasLifeTime returns a boolean if a field has been set.
 func (o *EDNConfigInfo) HasLifeTime() bool {
-	if o != nil && !IsNil(o.LifeTime) {
+	if o != nil && !isNil(o.LifeTime) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o EDNConfigInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ednConInfo"] = o.EdnConInfo
 	toSerialize["eess"] = o.Eess
-	if !IsNil(o.LifeTime) {
+	if !isNil(o.LifeTime) {
 		toSerialize["lifeTime"] = o.LifeTime
 	}
 	return toSerialize, nil

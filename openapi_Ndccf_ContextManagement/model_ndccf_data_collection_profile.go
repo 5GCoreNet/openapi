@@ -50,7 +50,7 @@ func NewNdccfDataCollectionProfileWithDefaults() *NdccfDataCollectionProfile {
 
 // GetAnaSub returns the AnaSub field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetAnaSub() NnwdafEventsSubscription {
-	if o == nil || IsNil(o.AnaSub) {
+	if o == nil || isNil(o.AnaSub) {
 		var ret NnwdafEventsSubscription
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *NdccfDataCollectionProfile) GetAnaSub() NnwdafEventsSubscription {
 // GetAnaSubOk returns a tuple with the AnaSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetAnaSubOk() (*NnwdafEventsSubscription, bool) {
-	if o == nil || IsNil(o.AnaSub) {
+	if o == nil || isNil(o.AnaSub) {
 		return nil, false
 	}
 	return o.AnaSub, true
@@ -68,7 +68,7 @@ func (o *NdccfDataCollectionProfile) GetAnaSubOk() (*NnwdafEventsSubscription, b
 
 // HasAnaSub returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasAnaSub() bool {
-	if o != nil && !IsNil(o.AnaSub) {
+	if o != nil && !isNil(o.AnaSub) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *NdccfDataCollectionProfile) SetAnaSub(v NnwdafEventsSubscription) {
 
 // GetDataSub returns the DataSub field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetDataSub() DataNotification {
-	if o == nil || IsNil(o.DataSub) {
+	if o == nil || isNil(o.DataSub) {
 		var ret DataNotification
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NdccfDataCollectionProfile) GetDataSub() DataNotification {
 // GetDataSubOk returns a tuple with the DataSub field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetDataSubOk() (*DataNotification, bool) {
-	if o == nil || IsNil(o.DataSub) {
+	if o == nil || isNil(o.DataSub) {
 		return nil, false
 	}
 	return o.DataSub, true
@@ -100,7 +100,7 @@ func (o *NdccfDataCollectionProfile) GetDataSubOk() (*DataNotification, bool) {
 
 // HasDataSub returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasDataSub() bool {
-	if o != nil && !IsNil(o.DataSub) {
+	if o != nil && !isNil(o.DataSub) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *NdccfDataCollectionProfile) SetDataSub(v DataNotification) {
 
 // GetNwdafId returns the NwdafId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetNwdafId() string {
-	if o == nil || IsNil(o.NwdafId) {
+	if o == nil || isNil(o.NwdafId) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafId() string {
 // GetNwdafIdOk returns a tuple with the NwdafId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetNwdafIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NwdafId) {
+	if o == nil || isNil(o.NwdafId) {
 		return nil, false
 	}
 	return o.NwdafId, true
@@ -132,7 +132,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafIdOk() (*string, bool) {
 
 // HasNwdafId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasNwdafId() bool {
-	if o != nil && !IsNil(o.NwdafId) {
+	if o != nil && !isNil(o.NwdafId) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *NdccfDataCollectionProfile) SetNwdafId(v string) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetNwdafSetId() string {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -164,7 +164,7 @@ func (o *NdccfDataCollectionProfile) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasNwdafSetId() bool {
-	if o != nil && !IsNil(o.NwdafSetId) {
+	if o != nil && !isNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *NdccfDataCollectionProfile) SetNwdafSetId(v string) {
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetAdrfId() string {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetAdrfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -196,7 +196,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasAdrfId() bool {
-	if o != nil && !IsNil(o.AdrfId) {
+	if o != nil && !isNil(o.AdrfId) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *NdccfDataCollectionProfile) SetAdrfId(v string) {
 
 // GetAdrfSetId returns the AdrfSetId field value if set, zero value otherwise.
 func (o *NdccfDataCollectionProfile) GetAdrfSetId() string {
-	if o == nil || IsNil(o.AdrfSetId) {
+	if o == nil || isNil(o.AdrfSetId) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfSetId() string {
 // GetAdrfSetIdOk returns a tuple with the AdrfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NdccfDataCollectionProfile) GetAdrfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdrfSetId) {
+	if o == nil || isNil(o.AdrfSetId) {
 		return nil, false
 	}
 	return o.AdrfSetId, true
@@ -228,7 +228,7 @@ func (o *NdccfDataCollectionProfile) GetAdrfSetIdOk() (*string, bool) {
 
 // HasAdrfSetId returns a boolean if a field has been set.
 func (o *NdccfDataCollectionProfile) HasAdrfSetId() bool {
-	if o != nil && !IsNil(o.AdrfSetId) {
+	if o != nil && !isNil(o.AdrfSetId) {
 		return true
 	}
 
@@ -250,22 +250,22 @@ func (o NdccfDataCollectionProfile) MarshalJSON() ([]byte, error) {
 
 func (o NdccfDataCollectionProfile) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AnaSub) {
+	if !isNil(o.AnaSub) {
 		toSerialize["anaSub"] = o.AnaSub
 	}
-	if !IsNil(o.DataSub) {
+	if !isNil(o.DataSub) {
 		toSerialize["dataSub"] = o.DataSub
 	}
-	if !IsNil(o.NwdafId) {
+	if !isNil(o.NwdafId) {
 		toSerialize["nwdafId"] = o.NwdafId
 	}
-	if !IsNil(o.NwdafSetId) {
+	if !isNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
-	if !IsNil(o.AdrfId) {
+	if !isNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !IsNil(o.AdrfSetId) {
+	if !isNil(o.AdrfSetId) {
 		toSerialize["adrfSetId"] = o.AdrfSetId
 	}
 	return toSerialize, nil

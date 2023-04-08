@@ -123,7 +123,7 @@ func (o *ImsSdmSubscription) SetMonitoredResourceUris(v []string) {
 
 // GetExpires returns the Expires field value if set, zero value otherwise.
 func (o *ImsSdmSubscription) GetExpires() time.Time {
-	if o == nil || IsNil(o.Expires) {
+	if o == nil || isNil(o.Expires) {
 		var ret time.Time
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *ImsSdmSubscription) GetExpires() time.Time {
 // GetExpiresOk returns a tuple with the Expires field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImsSdmSubscription) GetExpiresOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expires) {
+	if o == nil || isNil(o.Expires) {
 		return nil, false
 	}
 	return o.Expires, true
@@ -141,7 +141,7 @@ func (o *ImsSdmSubscription) GetExpiresOk() (*time.Time, bool) {
 
 // HasExpires returns a boolean if a field has been set.
 func (o *ImsSdmSubscription) HasExpires() bool {
-	if o != nil && !IsNil(o.Expires) {
+	if o != nil && !isNil(o.Expires) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o ImsSdmSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize["nfInstanceId"] = o.NfInstanceId
 	toSerialize["callbackReference"] = o.CallbackReference
 	toSerialize["monitoredResourceUris"] = o.MonitoredResourceUris
-	if !IsNil(o.Expires) {
+	if !isNil(o.Expires) {
 		toSerialize["expires"] = o.Expires
 	}
 	return toSerialize, nil

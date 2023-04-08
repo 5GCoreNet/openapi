@@ -19,7 +19,7 @@ var _ MappedNullable = &AmfRegionSingleAllOf{}
 
 // AmfRegionSingleAllOf struct for AmfRegionSingleAllOf
 type AmfRegionSingleAllOf struct {
-	Attributes *AmfRegionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewAmfRegionSingleAllOf instantiates a new AmfRegionSingleAllOf object
@@ -40,9 +40,9 @@ func NewAmfRegionSingleAllOfWithDefaults() *AmfRegionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *AmfRegionSingleAllOf) GetAttributes() AmfRegionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret AmfRegionSingleAllOfAttributes
+func (o *AmfRegionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *AmfRegionSingleAllOf) GetAttributes() AmfRegionSingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AmfRegionSingleAllOf) GetAttributesOk() (*AmfRegionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *AmfRegionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *AmfRegionSingleAllOf) GetAttributesOk() (*AmfRegionSingleAllOfAttribute
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *AmfRegionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given AmfRegionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *AmfRegionSingleAllOf) SetAttributes(v AmfRegionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *AmfRegionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o AmfRegionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o AmfRegionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

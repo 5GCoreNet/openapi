@@ -682,10 +682,7 @@ components:
       type: object
     Action:
       anyOf:
-      - enum:
-        - ESTABLISHMENT
-        - UPDATE
-        type: string
+      - $ref: '#/components/schemas/Action_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -784,10 +781,7 @@ components:
       type: string
     Result:
       anyOf:
-      - enum:
-        - SUCCESS
-        - FAIL
-        type: string
+      - $ref: '#/components/schemas/Result_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -800,11 +794,7 @@ components:
       type: integer
     QosResourceType:
       anyOf:
-      - enum:
-        - NON_GBR
-        - NON_CRITICAL_GBR
-        - CRITICAL_GBR
-        type: string
+      - $ref: '#/components/schemas/QosResourceType_anyOf'
       - type: string
       description: "The enumeration QosResourceType indicates whether a QoS Flow is\
         \ non-GBR, delay critical GBR, or non-delay critical GBR (see clauses 5.7.3.4\
@@ -837,6 +827,25 @@ components:
       maximum: 2000000
       minimum: 4096
       type: integer
+    Action_anyOf:
+      enum:
+      - ESTABLISHMENT
+      - UPDATE
+      type: string
+      example: null
+    Result_anyOf:
+      enum:
+      - SUCCESS
+      - FAIL
+      type: string
+      example: null
+    QosResourceType_anyOf:
+      enum:
+      - NON_GBR
+      - NON_CRITICAL_GBR
+      - CRITICAL_GBR
+      type: string
+      example: null
   securitySchemes:
     oAuth2ClientCredentials:
       flows:

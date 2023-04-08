@@ -69,7 +69,7 @@ func (o *IpxProviderSecInfo) SetIpxProviderId(v string) {
 
 // GetRawPublicKeyList returns the RawPublicKeyList field value if set, zero value otherwise.
 func (o *IpxProviderSecInfo) GetRawPublicKeyList() []string {
-	if o == nil || IsNil(o.RawPublicKeyList) {
+	if o == nil || isNil(o.RawPublicKeyList) {
 		var ret []string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *IpxProviderSecInfo) GetRawPublicKeyList() []string {
 // GetRawPublicKeyListOk returns a tuple with the RawPublicKeyList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpxProviderSecInfo) GetRawPublicKeyListOk() ([]string, bool) {
-	if o == nil || IsNil(o.RawPublicKeyList) {
+	if o == nil || isNil(o.RawPublicKeyList) {
 		return nil, false
 	}
 	return o.RawPublicKeyList, true
@@ -87,7 +87,7 @@ func (o *IpxProviderSecInfo) GetRawPublicKeyListOk() ([]string, bool) {
 
 // HasRawPublicKeyList returns a boolean if a field has been set.
 func (o *IpxProviderSecInfo) HasRawPublicKeyList() bool {
-	if o != nil && !IsNil(o.RawPublicKeyList) {
+	if o != nil && !isNil(o.RawPublicKeyList) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *IpxProviderSecInfo) SetRawPublicKeyList(v []string) {
 
 // GetCertificateList returns the CertificateList field value if set, zero value otherwise.
 func (o *IpxProviderSecInfo) GetCertificateList() []string {
-	if o == nil || IsNil(o.CertificateList) {
+	if o == nil || isNil(o.CertificateList) {
 		var ret []string
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *IpxProviderSecInfo) GetCertificateList() []string {
 // GetCertificateListOk returns a tuple with the CertificateList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpxProviderSecInfo) GetCertificateListOk() ([]string, bool) {
-	if o == nil || IsNil(o.CertificateList) {
+	if o == nil || isNil(o.CertificateList) {
 		return nil, false
 	}
 	return o.CertificateList, true
@@ -119,7 +119,7 @@ func (o *IpxProviderSecInfo) GetCertificateListOk() ([]string, bool) {
 
 // HasCertificateList returns a boolean if a field has been set.
 func (o *IpxProviderSecInfo) HasCertificateList() bool {
-	if o != nil && !IsNil(o.CertificateList) {
+	if o != nil && !isNil(o.CertificateList) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o IpxProviderSecInfo) MarshalJSON() ([]byte, error) {
 func (o IpxProviderSecInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ipxProviderId"] = o.IpxProviderId
-	if !IsNil(o.RawPublicKeyList) {
+	if !isNil(o.RawPublicKeyList) {
 		toSerialize["rawPublicKeyList"] = o.RawPublicKeyList
 	}
-	if !IsNil(o.CertificateList) {
+	if !isNil(o.CertificateList) {
 		toSerialize["certificateList"] = o.CertificateList
 	}
 	return toSerialize, nil

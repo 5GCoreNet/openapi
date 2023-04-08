@@ -119,7 +119,7 @@ func (o *PtpInstance) SetPtpProfile(v string) {
 
 // GetPortConfigs returns the PortConfigs field value if set, zero value otherwise.
 func (o *PtpInstance) GetPortConfigs() []ConfigForPort {
-	if o == nil || IsNil(o.PortConfigs) {
+	if o == nil || isNil(o.PortConfigs) {
 		var ret []ConfigForPort
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *PtpInstance) GetPortConfigs() []ConfigForPort {
 // GetPortConfigsOk returns a tuple with the PortConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PtpInstance) GetPortConfigsOk() ([]ConfigForPort, bool) {
-	if o == nil || IsNil(o.PortConfigs) {
+	if o == nil || isNil(o.PortConfigs) {
 		return nil, false
 	}
 	return o.PortConfigs, true
@@ -137,7 +137,7 @@ func (o *PtpInstance) GetPortConfigsOk() ([]ConfigForPort, bool) {
 
 // HasPortConfigs returns a boolean if a field has been set.
 func (o *PtpInstance) HasPortConfigs() bool {
-	if o != nil && !IsNil(o.PortConfigs) {
+	if o != nil && !isNil(o.PortConfigs) {
 		return true
 	}
 
@@ -162,7 +162,7 @@ func (o PtpInstance) ToMap() (map[string]interface{}, error) {
 	toSerialize["instanceType"] = o.InstanceType
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["ptpProfile"] = o.PtpProfile
-	if !IsNil(o.PortConfigs) {
+	if !isNil(o.PortConfigs) {
 		toSerialize["portConfigs"] = o.PortConfigs
 	}
 	return toSerialize, nil

@@ -68,7 +68,7 @@ func (o *TmgiAllocResponse) SetTmgiInfo(v TmgiAllocated) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *TmgiAllocResponse) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *TmgiAllocResponse) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TmgiAllocResponse) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -86,7 +86,7 @@ func (o *TmgiAllocResponse) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *TmgiAllocResponse) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o TmgiAllocResponse) MarshalJSON() ([]byte, error) {
 func (o TmgiAllocResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["tmgiInfo"] = o.TmgiInfo
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewLocalOriginWithDefaults() *LocalOrigin {
 
 // GetCoordinateId returns the CoordinateId field value if set, zero value otherwise.
 func (o *LocalOrigin) GetCoordinateId() string {
-	if o == nil || IsNil(o.CoordinateId) {
+	if o == nil || isNil(o.CoordinateId) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *LocalOrigin) GetCoordinateId() string {
 // GetCoordinateIdOk returns a tuple with the CoordinateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalOrigin) GetCoordinateIdOk() (*string, bool) {
-	if o == nil || IsNil(o.CoordinateId) {
+	if o == nil || isNil(o.CoordinateId) {
 		return nil, false
 	}
 	return o.CoordinateId, true
@@ -60,7 +60,7 @@ func (o *LocalOrigin) GetCoordinateIdOk() (*string, bool) {
 
 // HasCoordinateId returns a boolean if a field has been set.
 func (o *LocalOrigin) HasCoordinateId() bool {
-	if o != nil && !IsNil(o.CoordinateId) {
+	if o != nil && !isNil(o.CoordinateId) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *LocalOrigin) SetCoordinateId(v string) {
 
 // GetPoint returns the Point field value if set, zero value otherwise.
 func (o *LocalOrigin) GetPoint() GeographicalCoordinates {
-	if o == nil || IsNil(o.Point) {
+	if o == nil || isNil(o.Point) {
 		var ret GeographicalCoordinates
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *LocalOrigin) GetPoint() GeographicalCoordinates {
 // GetPointOk returns a tuple with the Point field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocalOrigin) GetPointOk() (*GeographicalCoordinates, bool) {
-	if o == nil || IsNil(o.Point) {
+	if o == nil || isNil(o.Point) {
 		return nil, false
 	}
 	return o.Point, true
@@ -92,7 +92,7 @@ func (o *LocalOrigin) GetPointOk() (*GeographicalCoordinates, bool) {
 
 // HasPoint returns a boolean if a field has been set.
 func (o *LocalOrigin) HasPoint() bool {
-	if o != nil && !IsNil(o.Point) {
+	if o != nil && !isNil(o.Point) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o LocalOrigin) MarshalJSON() ([]byte, error) {
 
 func (o LocalOrigin) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CoordinateId) {
+	if !isNil(o.CoordinateId) {
 		toSerialize["coordinateId"] = o.CoordinateId
 	}
-	if !IsNil(o.Point) {
+	if !isNil(o.Point) {
 		toSerialize["point"] = o.Point
 	}
 	return toSerialize, nil

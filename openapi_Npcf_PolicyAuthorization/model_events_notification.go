@@ -74,7 +74,7 @@ func NewEventsNotificationWithDefaults() *EventsNotification {
 
 // GetAdReports returns the AdReports field value if set, zero value otherwise.
 func (o *EventsNotification) GetAdReports() []AppDetectionReport {
-	if o == nil || IsNil(o.AdReports) {
+	if o == nil || isNil(o.AdReports) {
 		var ret []AppDetectionReport
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *EventsNotification) GetAdReports() []AppDetectionReport {
 // GetAdReportsOk returns a tuple with the AdReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetAdReportsOk() ([]AppDetectionReport, bool) {
-	if o == nil || IsNil(o.AdReports) {
+	if o == nil || isNil(o.AdReports) {
 		return nil, false
 	}
 	return o.AdReports, true
@@ -92,7 +92,7 @@ func (o *EventsNotification) GetAdReportsOk() ([]AppDetectionReport, bool) {
 
 // HasAdReports returns a boolean if a field has been set.
 func (o *EventsNotification) HasAdReports() bool {
-	if o != nil && !IsNil(o.AdReports) {
+	if o != nil && !isNil(o.AdReports) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *EventsNotification) SetAdReports(v []AppDetectionReport) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *EventsNotification) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *EventsNotification) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -124,7 +124,7 @@ func (o *EventsNotification) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *EventsNotification) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *EventsNotification) SetAccessType(v AccessType) {
 
 // GetAddAccessInfo returns the AddAccessInfo field value if set, zero value otherwise.
 func (o *EventsNotification) GetAddAccessInfo() AdditionalAccessInfo {
-	if o == nil || IsNil(o.AddAccessInfo) {
+	if o == nil || isNil(o.AddAccessInfo) {
 		var ret AdditionalAccessInfo
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *EventsNotification) GetAddAccessInfo() AdditionalAccessInfo {
 // GetAddAccessInfoOk returns a tuple with the AddAccessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetAddAccessInfoOk() (*AdditionalAccessInfo, bool) {
-	if o == nil || IsNil(o.AddAccessInfo) {
+	if o == nil || isNil(o.AddAccessInfo) {
 		return nil, false
 	}
 	return o.AddAccessInfo, true
@@ -156,7 +156,7 @@ func (o *EventsNotification) GetAddAccessInfoOk() (*AdditionalAccessInfo, bool) 
 
 // HasAddAccessInfo returns a boolean if a field has been set.
 func (o *EventsNotification) HasAddAccessInfo() bool {
-	if o != nil && !IsNil(o.AddAccessInfo) {
+	if o != nil && !isNil(o.AddAccessInfo) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *EventsNotification) SetAddAccessInfo(v AdditionalAccessInfo) {
 
 // GetRelAccessInfo returns the RelAccessInfo field value if set, zero value otherwise.
 func (o *EventsNotification) GetRelAccessInfo() AdditionalAccessInfo {
-	if o == nil || IsNil(o.RelAccessInfo) {
+	if o == nil || isNil(o.RelAccessInfo) {
 		var ret AdditionalAccessInfo
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *EventsNotification) GetRelAccessInfo() AdditionalAccessInfo {
 // GetRelAccessInfoOk returns a tuple with the RelAccessInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetRelAccessInfoOk() (*AdditionalAccessInfo, bool) {
-	if o == nil || IsNil(o.RelAccessInfo) {
+	if o == nil || isNil(o.RelAccessInfo) {
 		return nil, false
 	}
 	return o.RelAccessInfo, true
@@ -188,7 +188,7 @@ func (o *EventsNotification) GetRelAccessInfoOk() (*AdditionalAccessInfo, bool) 
 
 // HasRelAccessInfo returns a boolean if a field has been set.
 func (o *EventsNotification) HasRelAccessInfo() bool {
-	if o != nil && !IsNil(o.RelAccessInfo) {
+	if o != nil && !isNil(o.RelAccessInfo) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *EventsNotification) SetRelAccessInfo(v AdditionalAccessInfo) {
 
 // GetAnChargAddr returns the AnChargAddr field value if set, zero value otherwise.
 func (o *EventsNotification) GetAnChargAddr() AccNetChargingAddress {
-	if o == nil || IsNil(o.AnChargAddr) {
+	if o == nil || isNil(o.AnChargAddr) {
 		var ret AccNetChargingAddress
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *EventsNotification) GetAnChargAddr() AccNetChargingAddress {
 // GetAnChargAddrOk returns a tuple with the AnChargAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetAnChargAddrOk() (*AccNetChargingAddress, bool) {
-	if o == nil || IsNil(o.AnChargAddr) {
+	if o == nil || isNil(o.AnChargAddr) {
 		return nil, false
 	}
 	return o.AnChargAddr, true
@@ -220,7 +220,7 @@ func (o *EventsNotification) GetAnChargAddrOk() (*AccNetChargingAddress, bool) {
 
 // HasAnChargAddr returns a boolean if a field has been set.
 func (o *EventsNotification) HasAnChargAddr() bool {
-	if o != nil && !IsNil(o.AnChargAddr) {
+	if o != nil && !isNil(o.AnChargAddr) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *EventsNotification) SetAnChargAddr(v AccNetChargingAddress) {
 
 // GetAnChargIds returns the AnChargIds field value if set, zero value otherwise.
 func (o *EventsNotification) GetAnChargIds() []AccessNetChargingIdentifier {
-	if o == nil || IsNil(o.AnChargIds) {
+	if o == nil || isNil(o.AnChargIds) {
 		var ret []AccessNetChargingIdentifier
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *EventsNotification) GetAnChargIds() []AccessNetChargingIdentifier {
 // GetAnChargIdsOk returns a tuple with the AnChargIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetAnChargIdsOk() ([]AccessNetChargingIdentifier, bool) {
-	if o == nil || IsNil(o.AnChargIds) {
+	if o == nil || isNil(o.AnChargIds) {
 		return nil, false
 	}
 	return o.AnChargIds, true
@@ -252,7 +252,7 @@ func (o *EventsNotification) GetAnChargIdsOk() ([]AccessNetChargingIdentifier, b
 
 // HasAnChargIds returns a boolean if a field has been set.
 func (o *EventsNotification) HasAnChargIds() bool {
-	if o != nil && !IsNil(o.AnChargIds) {
+	if o != nil && !isNil(o.AnChargIds) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *EventsNotification) SetAnChargIds(v []AccessNetChargingIdentifier) {
 
 // GetAnGwAddr returns the AnGwAddr field value if set, zero value otherwise.
 func (o *EventsNotification) GetAnGwAddr() AnGwAddress {
-	if o == nil || IsNil(o.AnGwAddr) {
+	if o == nil || isNil(o.AnGwAddr) {
 		var ret AnGwAddress
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *EventsNotification) GetAnGwAddr() AnGwAddress {
 // GetAnGwAddrOk returns a tuple with the AnGwAddr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetAnGwAddrOk() (*AnGwAddress, bool) {
-	if o == nil || IsNil(o.AnGwAddr) {
+	if o == nil || isNil(o.AnGwAddr) {
 		return nil, false
 	}
 	return o.AnGwAddr, true
@@ -284,7 +284,7 @@ func (o *EventsNotification) GetAnGwAddrOk() (*AnGwAddress, bool) {
 
 // HasAnGwAddr returns a boolean if a field has been set.
 func (o *EventsNotification) HasAnGwAddr() bool {
-	if o != nil && !IsNil(o.AnGwAddr) {
+	if o != nil && !isNil(o.AnGwAddr) {
 		return true
 	}
 
@@ -346,7 +346,7 @@ func (o *EventsNotification) SetEvNotifs(v []AfEventNotification) {
 
 // GetFailedResourcAllocReports returns the FailedResourcAllocReports field value if set, zero value otherwise.
 func (o *EventsNotification) GetFailedResourcAllocReports() []ResourcesAllocationInfo {
-	if o == nil || IsNil(o.FailedResourcAllocReports) {
+	if o == nil || isNil(o.FailedResourcAllocReports) {
 		var ret []ResourcesAllocationInfo
 		return ret
 	}
@@ -356,7 +356,7 @@ func (o *EventsNotification) GetFailedResourcAllocReports() []ResourcesAllocatio
 // GetFailedResourcAllocReportsOk returns a tuple with the FailedResourcAllocReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetFailedResourcAllocReportsOk() ([]ResourcesAllocationInfo, bool) {
-	if o == nil || IsNil(o.FailedResourcAllocReports) {
+	if o == nil || isNil(o.FailedResourcAllocReports) {
 		return nil, false
 	}
 	return o.FailedResourcAllocReports, true
@@ -364,7 +364,7 @@ func (o *EventsNotification) GetFailedResourcAllocReportsOk() ([]ResourcesAlloca
 
 // HasFailedResourcAllocReports returns a boolean if a field has been set.
 func (o *EventsNotification) HasFailedResourcAllocReports() bool {
-	if o != nil && !IsNil(o.FailedResourcAllocReports) {
+	if o != nil && !isNil(o.FailedResourcAllocReports) {
 		return true
 	}
 
@@ -378,7 +378,7 @@ func (o *EventsNotification) SetFailedResourcAllocReports(v []ResourcesAllocatio
 
 // GetSuccResourcAllocReports returns the SuccResourcAllocReports field value if set, zero value otherwise.
 func (o *EventsNotification) GetSuccResourcAllocReports() []ResourcesAllocationInfo {
-	if o == nil || IsNil(o.SuccResourcAllocReports) {
+	if o == nil || isNil(o.SuccResourcAllocReports) {
 		var ret []ResourcesAllocationInfo
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *EventsNotification) GetSuccResourcAllocReports() []ResourcesAllocationI
 // GetSuccResourcAllocReportsOk returns a tuple with the SuccResourcAllocReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetSuccResourcAllocReportsOk() ([]ResourcesAllocationInfo, bool) {
-	if o == nil || IsNil(o.SuccResourcAllocReports) {
+	if o == nil || isNil(o.SuccResourcAllocReports) {
 		return nil, false
 	}
 	return o.SuccResourcAllocReports, true
@@ -396,7 +396,7 @@ func (o *EventsNotification) GetSuccResourcAllocReportsOk() ([]ResourcesAllocati
 
 // HasSuccResourcAllocReports returns a boolean if a field has been set.
 func (o *EventsNotification) HasSuccResourcAllocReports() bool {
-	if o != nil && !IsNil(o.SuccResourcAllocReports) {
+	if o != nil && !isNil(o.SuccResourcAllocReports) {
 		return true
 	}
 
@@ -410,7 +410,7 @@ func (o *EventsNotification) SetSuccResourcAllocReports(v []ResourcesAllocationI
 
 // GetNoNetLocSupp returns the NoNetLocSupp field value if set, zero value otherwise.
 func (o *EventsNotification) GetNoNetLocSupp() NetLocAccessSupport {
-	if o == nil || IsNil(o.NoNetLocSupp) {
+	if o == nil || isNil(o.NoNetLocSupp) {
 		var ret NetLocAccessSupport
 		return ret
 	}
@@ -420,7 +420,7 @@ func (o *EventsNotification) GetNoNetLocSupp() NetLocAccessSupport {
 // GetNoNetLocSuppOk returns a tuple with the NoNetLocSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetNoNetLocSuppOk() (*NetLocAccessSupport, bool) {
-	if o == nil || IsNil(o.NoNetLocSupp) {
+	if o == nil || isNil(o.NoNetLocSupp) {
 		return nil, false
 	}
 	return o.NoNetLocSupp, true
@@ -428,7 +428,7 @@ func (o *EventsNotification) GetNoNetLocSuppOk() (*NetLocAccessSupport, bool) {
 
 // HasNoNetLocSupp returns a boolean if a field has been set.
 func (o *EventsNotification) HasNoNetLocSupp() bool {
-	if o != nil && !IsNil(o.NoNetLocSupp) {
+	if o != nil && !isNil(o.NoNetLocSupp) {
 		return true
 	}
 
@@ -442,7 +442,7 @@ func (o *EventsNotification) SetNoNetLocSupp(v NetLocAccessSupport) {
 
 // GetOutOfCredReports returns the OutOfCredReports field value if set, zero value otherwise.
 func (o *EventsNotification) GetOutOfCredReports() []OutOfCreditInformation {
-	if o == nil || IsNil(o.OutOfCredReports) {
+	if o == nil || isNil(o.OutOfCredReports) {
 		var ret []OutOfCreditInformation
 		return ret
 	}
@@ -452,7 +452,7 @@ func (o *EventsNotification) GetOutOfCredReports() []OutOfCreditInformation {
 // GetOutOfCredReportsOk returns a tuple with the OutOfCredReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetOutOfCredReportsOk() ([]OutOfCreditInformation, bool) {
-	if o == nil || IsNil(o.OutOfCredReports) {
+	if o == nil || isNil(o.OutOfCredReports) {
 		return nil, false
 	}
 	return o.OutOfCredReports, true
@@ -460,7 +460,7 @@ func (o *EventsNotification) GetOutOfCredReportsOk() ([]OutOfCreditInformation, 
 
 // HasOutOfCredReports returns a boolean if a field has been set.
 func (o *EventsNotification) HasOutOfCredReports() bool {
-	if o != nil && !IsNil(o.OutOfCredReports) {
+	if o != nil && !isNil(o.OutOfCredReports) {
 		return true
 	}
 
@@ -474,7 +474,7 @@ func (o *EventsNotification) SetOutOfCredReports(v []OutOfCreditInformation) {
 
 // GetPlmnId returns the PlmnId field value if set, zero value otherwise.
 func (o *EventsNotification) GetPlmnId() PlmnIdNid {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		var ret PlmnIdNid
 		return ret
 	}
@@ -484,7 +484,7 @@ func (o *EventsNotification) GetPlmnId() PlmnIdNid {
 // GetPlmnIdOk returns a tuple with the PlmnId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetPlmnIdOk() (*PlmnIdNid, bool) {
-	if o == nil || IsNil(o.PlmnId) {
+	if o == nil || isNil(o.PlmnId) {
 		return nil, false
 	}
 	return o.PlmnId, true
@@ -492,7 +492,7 @@ func (o *EventsNotification) GetPlmnIdOk() (*PlmnIdNid, bool) {
 
 // HasPlmnId returns a boolean if a field has been set.
 func (o *EventsNotification) HasPlmnId() bool {
-	if o != nil && !IsNil(o.PlmnId) {
+	if o != nil && !isNil(o.PlmnId) {
 		return true
 	}
 
@@ -506,7 +506,7 @@ func (o *EventsNotification) SetPlmnId(v PlmnIdNid) {
 
 // GetQncReports returns the QncReports field value if set, zero value otherwise.
 func (o *EventsNotification) GetQncReports() []QosNotificationControlInfo {
-	if o == nil || IsNil(o.QncReports) {
+	if o == nil || isNil(o.QncReports) {
 		var ret []QosNotificationControlInfo
 		return ret
 	}
@@ -516,7 +516,7 @@ func (o *EventsNotification) GetQncReports() []QosNotificationControlInfo {
 // GetQncReportsOk returns a tuple with the QncReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetQncReportsOk() ([]QosNotificationControlInfo, bool) {
-	if o == nil || IsNil(o.QncReports) {
+	if o == nil || isNil(o.QncReports) {
 		return nil, false
 	}
 	return o.QncReports, true
@@ -524,7 +524,7 @@ func (o *EventsNotification) GetQncReportsOk() ([]QosNotificationControlInfo, bo
 
 // HasQncReports returns a boolean if a field has been set.
 func (o *EventsNotification) HasQncReports() bool {
-	if o != nil && !IsNil(o.QncReports) {
+	if o != nil && !isNil(o.QncReports) {
 		return true
 	}
 
@@ -538,7 +538,7 @@ func (o *EventsNotification) SetQncReports(v []QosNotificationControlInfo) {
 
 // GetQosMonReports returns the QosMonReports field value if set, zero value otherwise.
 func (o *EventsNotification) GetQosMonReports() []QosMonitoringReport {
-	if o == nil || IsNil(o.QosMonReports) {
+	if o == nil || isNil(o.QosMonReports) {
 		var ret []QosMonitoringReport
 		return ret
 	}
@@ -548,7 +548,7 @@ func (o *EventsNotification) GetQosMonReports() []QosMonitoringReport {
 // GetQosMonReportsOk returns a tuple with the QosMonReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetQosMonReportsOk() ([]QosMonitoringReport, bool) {
-	if o == nil || IsNil(o.QosMonReports) {
+	if o == nil || isNil(o.QosMonReports) {
 		return nil, false
 	}
 	return o.QosMonReports, true
@@ -556,7 +556,7 @@ func (o *EventsNotification) GetQosMonReportsOk() ([]QosMonitoringReport, bool) 
 
 // HasQosMonReports returns a boolean if a field has been set.
 func (o *EventsNotification) HasQosMonReports() bool {
-	if o != nil && !IsNil(o.QosMonReports) {
+	if o != nil && !isNil(o.QosMonReports) {
 		return true
 	}
 
@@ -570,7 +570,7 @@ func (o *EventsNotification) SetQosMonReports(v []QosMonitoringReport) {
 
 // GetRanNasRelCauses returns the RanNasRelCauses field value if set, zero value otherwise.
 func (o *EventsNotification) GetRanNasRelCauses() []RanNasRelCause {
-	if o == nil || IsNil(o.RanNasRelCauses) {
+	if o == nil || isNil(o.RanNasRelCauses) {
 		var ret []RanNasRelCause
 		return ret
 	}
@@ -580,7 +580,7 @@ func (o *EventsNotification) GetRanNasRelCauses() []RanNasRelCause {
 // GetRanNasRelCausesOk returns a tuple with the RanNasRelCauses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetRanNasRelCausesOk() ([]RanNasRelCause, bool) {
-	if o == nil || IsNil(o.RanNasRelCauses) {
+	if o == nil || isNil(o.RanNasRelCauses) {
 		return nil, false
 	}
 	return o.RanNasRelCauses, true
@@ -588,7 +588,7 @@ func (o *EventsNotification) GetRanNasRelCausesOk() ([]RanNasRelCause, bool) {
 
 // HasRanNasRelCauses returns a boolean if a field has been set.
 func (o *EventsNotification) HasRanNasRelCauses() bool {
-	if o != nil && !IsNil(o.RanNasRelCauses) {
+	if o != nil && !isNil(o.RanNasRelCauses) {
 		return true
 	}
 
@@ -602,7 +602,7 @@ func (o *EventsNotification) SetRanNasRelCauses(v []RanNasRelCause) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *EventsNotification) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -612,7 +612,7 @@ func (o *EventsNotification) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -620,7 +620,7 @@ func (o *EventsNotification) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *EventsNotification) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -634,7 +634,7 @@ func (o *EventsNotification) SetRatType(v RatType) {
 
 // GetSatBackhaulCategory returns the SatBackhaulCategory field value if set, zero value otherwise.
 func (o *EventsNotification) GetSatBackhaulCategory() SatelliteBackhaulCategory {
-	if o == nil || IsNil(o.SatBackhaulCategory) {
+	if o == nil || isNil(o.SatBackhaulCategory) {
 		var ret SatelliteBackhaulCategory
 		return ret
 	}
@@ -644,7 +644,7 @@ func (o *EventsNotification) GetSatBackhaulCategory() SatelliteBackhaulCategory 
 // GetSatBackhaulCategoryOk returns a tuple with the SatBackhaulCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCategory, bool) {
-	if o == nil || IsNil(o.SatBackhaulCategory) {
+	if o == nil || isNil(o.SatBackhaulCategory) {
 		return nil, false
 	}
 	return o.SatBackhaulCategory, true
@@ -652,7 +652,7 @@ func (o *EventsNotification) GetSatBackhaulCategoryOk() (*SatelliteBackhaulCateg
 
 // HasSatBackhaulCategory returns a boolean if a field has been set.
 func (o *EventsNotification) HasSatBackhaulCategory() bool {
-	if o != nil && !IsNil(o.SatBackhaulCategory) {
+	if o != nil && !isNil(o.SatBackhaulCategory) {
 		return true
 	}
 
@@ -666,7 +666,7 @@ func (o *EventsNotification) SetSatBackhaulCategory(v SatelliteBackhaulCategory)
 
 // GetUeLoc returns the UeLoc field value if set, zero value otherwise.
 func (o *EventsNotification) GetUeLoc() UserLocation {
-	if o == nil || IsNil(o.UeLoc) {
+	if o == nil || isNil(o.UeLoc) {
 		var ret UserLocation
 		return ret
 	}
@@ -676,7 +676,7 @@ func (o *EventsNotification) GetUeLoc() UserLocation {
 // GetUeLocOk returns a tuple with the UeLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetUeLocOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UeLoc) {
+	if o == nil || isNil(o.UeLoc) {
 		return nil, false
 	}
 	return o.UeLoc, true
@@ -684,7 +684,7 @@ func (o *EventsNotification) GetUeLocOk() (*UserLocation, bool) {
 
 // HasUeLoc returns a boolean if a field has been set.
 func (o *EventsNotification) HasUeLoc() bool {
-	if o != nil && !IsNil(o.UeLoc) {
+	if o != nil && !isNil(o.UeLoc) {
 		return true
 	}
 
@@ -698,7 +698,7 @@ func (o *EventsNotification) SetUeLoc(v UserLocation) {
 
 // GetUeLocTime returns the UeLocTime field value if set, zero value otherwise.
 func (o *EventsNotification) GetUeLocTime() time.Time {
-	if o == nil || IsNil(o.UeLocTime) {
+	if o == nil || isNil(o.UeLocTime) {
 		var ret time.Time
 		return ret
 	}
@@ -708,7 +708,7 @@ func (o *EventsNotification) GetUeLocTime() time.Time {
 // GetUeLocTimeOk returns a tuple with the UeLocTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetUeLocTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.UeLocTime) {
+	if o == nil || isNil(o.UeLocTime) {
 		return nil, false
 	}
 	return o.UeLocTime, true
@@ -716,7 +716,7 @@ func (o *EventsNotification) GetUeLocTimeOk() (*time.Time, bool) {
 
 // HasUeLocTime returns a boolean if a field has been set.
 func (o *EventsNotification) HasUeLocTime() bool {
-	if o != nil && !IsNil(o.UeLocTime) {
+	if o != nil && !isNil(o.UeLocTime) {
 		return true
 	}
 
@@ -730,7 +730,7 @@ func (o *EventsNotification) SetUeLocTime(v time.Time) {
 
 // GetUeTimeZone returns the UeTimeZone field value if set, zero value otherwise.
 func (o *EventsNotification) GetUeTimeZone() string {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		var ret string
 		return ret
 	}
@@ -740,7 +740,7 @@ func (o *EventsNotification) GetUeTimeZone() string {
 // GetUeTimeZoneOk returns a tuple with the UeTimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetUeTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UeTimeZone) {
+	if o == nil || isNil(o.UeTimeZone) {
 		return nil, false
 	}
 	return o.UeTimeZone, true
@@ -748,7 +748,7 @@ func (o *EventsNotification) GetUeTimeZoneOk() (*string, bool) {
 
 // HasUeTimeZone returns a boolean if a field has been set.
 func (o *EventsNotification) HasUeTimeZone() bool {
-	if o != nil && !IsNil(o.UeTimeZone) {
+	if o != nil && !isNil(o.UeTimeZone) {
 		return true
 	}
 
@@ -762,7 +762,7 @@ func (o *EventsNotification) SetUeTimeZone(v string) {
 
 // GetUsgRep returns the UsgRep field value if set, zero value otherwise.
 func (o *EventsNotification) GetUsgRep() AccumulatedUsage {
-	if o == nil || IsNil(o.UsgRep) {
+	if o == nil || isNil(o.UsgRep) {
 		var ret AccumulatedUsage
 		return ret
 	}
@@ -772,7 +772,7 @@ func (o *EventsNotification) GetUsgRep() AccumulatedUsage {
 // GetUsgRepOk returns a tuple with the UsgRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetUsgRepOk() (*AccumulatedUsage, bool) {
-	if o == nil || IsNil(o.UsgRep) {
+	if o == nil || isNil(o.UsgRep) {
 		return nil, false
 	}
 	return o.UsgRep, true
@@ -780,7 +780,7 @@ func (o *EventsNotification) GetUsgRepOk() (*AccumulatedUsage, bool) {
 
 // HasUsgRep returns a boolean if a field has been set.
 func (o *EventsNotification) HasUsgRep() bool {
-	if o != nil && !IsNil(o.UsgRep) {
+	if o != nil && !isNil(o.UsgRep) {
 		return true
 	}
 
@@ -794,7 +794,7 @@ func (o *EventsNotification) SetUsgRep(v AccumulatedUsage) {
 
 // GetTsnBridgeManCont returns the TsnBridgeManCont field value if set, zero value otherwise.
 func (o *EventsNotification) GetTsnBridgeManCont() BridgeManagementContainer {
-	if o == nil || IsNil(o.TsnBridgeManCont) {
+	if o == nil || isNil(o.TsnBridgeManCont) {
 		var ret BridgeManagementContainer
 		return ret
 	}
@@ -804,7 +804,7 @@ func (o *EventsNotification) GetTsnBridgeManCont() BridgeManagementContainer {
 // GetTsnBridgeManContOk returns a tuple with the TsnBridgeManCont field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetTsnBridgeManContOk() (*BridgeManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnBridgeManCont) {
+	if o == nil || isNil(o.TsnBridgeManCont) {
 		return nil, false
 	}
 	return o.TsnBridgeManCont, true
@@ -812,7 +812,7 @@ func (o *EventsNotification) GetTsnBridgeManContOk() (*BridgeManagementContainer
 
 // HasTsnBridgeManCont returns a boolean if a field has been set.
 func (o *EventsNotification) HasTsnBridgeManCont() bool {
-	if o != nil && !IsNil(o.TsnBridgeManCont) {
+	if o != nil && !isNil(o.TsnBridgeManCont) {
 		return true
 	}
 
@@ -826,7 +826,7 @@ func (o *EventsNotification) SetTsnBridgeManCont(v BridgeManagementContainer) {
 
 // GetTsnPortManContDstt returns the TsnPortManContDstt field value if set, zero value otherwise.
 func (o *EventsNotification) GetTsnPortManContDstt() PortManagementContainer {
-	if o == nil || IsNil(o.TsnPortManContDstt) {
+	if o == nil || isNil(o.TsnPortManContDstt) {
 		var ret PortManagementContainer
 		return ret
 	}
@@ -836,7 +836,7 @@ func (o *EventsNotification) GetTsnPortManContDstt() PortManagementContainer {
 // GetTsnPortManContDsttOk returns a tuple with the TsnPortManContDstt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetTsnPortManContDsttOk() (*PortManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnPortManContDstt) {
+	if o == nil || isNil(o.TsnPortManContDstt) {
 		return nil, false
 	}
 	return o.TsnPortManContDstt, true
@@ -844,7 +844,7 @@ func (o *EventsNotification) GetTsnPortManContDsttOk() (*PortManagementContainer
 
 // HasTsnPortManContDstt returns a boolean if a field has been set.
 func (o *EventsNotification) HasTsnPortManContDstt() bool {
-	if o != nil && !IsNil(o.TsnPortManContDstt) {
+	if o != nil && !isNil(o.TsnPortManContDstt) {
 		return true
 	}
 
@@ -858,7 +858,7 @@ func (o *EventsNotification) SetTsnPortManContDstt(v PortManagementContainer) {
 
 // GetTsnPortManContNwtts returns the TsnPortManContNwtts field value if set, zero value otherwise.
 func (o *EventsNotification) GetTsnPortManContNwtts() []PortManagementContainer {
-	if o == nil || IsNil(o.TsnPortManContNwtts) {
+	if o == nil || isNil(o.TsnPortManContNwtts) {
 		var ret []PortManagementContainer
 		return ret
 	}
@@ -868,7 +868,7 @@ func (o *EventsNotification) GetTsnPortManContNwtts() []PortManagementContainer 
 // GetTsnPortManContNwttsOk returns a tuple with the TsnPortManContNwtts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsNotification) GetTsnPortManContNwttsOk() ([]PortManagementContainer, bool) {
-	if o == nil || IsNil(o.TsnPortManContNwtts) {
+	if o == nil || isNil(o.TsnPortManContNwtts) {
 		return nil, false
 	}
 	return o.TsnPortManContNwtts, true
@@ -876,7 +876,7 @@ func (o *EventsNotification) GetTsnPortManContNwttsOk() ([]PortManagementContain
 
 // HasTsnPortManContNwtts returns a boolean if a field has been set.
 func (o *EventsNotification) HasTsnPortManContNwtts() bool {
-	if o != nil && !IsNil(o.TsnPortManContNwtts) {
+	if o != nil && !isNil(o.TsnPortManContNwtts) {
 		return true
 	}
 
@@ -898,78 +898,78 @@ func (o EventsNotification) MarshalJSON() ([]byte, error) {
 
 func (o EventsNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AdReports) {
+	if !isNil(o.AdReports) {
 		toSerialize["adReports"] = o.AdReports
 	}
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.AddAccessInfo) {
+	if !isNil(o.AddAccessInfo) {
 		toSerialize["addAccessInfo"] = o.AddAccessInfo
 	}
-	if !IsNil(o.RelAccessInfo) {
+	if !isNil(o.RelAccessInfo) {
 		toSerialize["relAccessInfo"] = o.RelAccessInfo
 	}
-	if !IsNil(o.AnChargAddr) {
+	if !isNil(o.AnChargAddr) {
 		toSerialize["anChargAddr"] = o.AnChargAddr
 	}
-	if !IsNil(o.AnChargIds) {
+	if !isNil(o.AnChargIds) {
 		toSerialize["anChargIds"] = o.AnChargIds
 	}
-	if !IsNil(o.AnGwAddr) {
+	if !isNil(o.AnGwAddr) {
 		toSerialize["anGwAddr"] = o.AnGwAddr
 	}
 	toSerialize["evSubsUri"] = o.EvSubsUri
 	toSerialize["evNotifs"] = o.EvNotifs
-	if !IsNil(o.FailedResourcAllocReports) {
+	if !isNil(o.FailedResourcAllocReports) {
 		toSerialize["failedResourcAllocReports"] = o.FailedResourcAllocReports
 	}
-	if !IsNil(o.SuccResourcAllocReports) {
+	if !isNil(o.SuccResourcAllocReports) {
 		toSerialize["succResourcAllocReports"] = o.SuccResourcAllocReports
 	}
-	if !IsNil(o.NoNetLocSupp) {
+	if !isNil(o.NoNetLocSupp) {
 		toSerialize["noNetLocSupp"] = o.NoNetLocSupp
 	}
-	if !IsNil(o.OutOfCredReports) {
+	if !isNil(o.OutOfCredReports) {
 		toSerialize["outOfCredReports"] = o.OutOfCredReports
 	}
-	if !IsNil(o.PlmnId) {
+	if !isNil(o.PlmnId) {
 		toSerialize["plmnId"] = o.PlmnId
 	}
-	if !IsNil(o.QncReports) {
+	if !isNil(o.QncReports) {
 		toSerialize["qncReports"] = o.QncReports
 	}
-	if !IsNil(o.QosMonReports) {
+	if !isNil(o.QosMonReports) {
 		toSerialize["qosMonReports"] = o.QosMonReports
 	}
-	if !IsNil(o.RanNasRelCauses) {
+	if !isNil(o.RanNasRelCauses) {
 		toSerialize["ranNasRelCauses"] = o.RanNasRelCauses
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.SatBackhaulCategory) {
+	if !isNil(o.SatBackhaulCategory) {
 		toSerialize["satBackhaulCategory"] = o.SatBackhaulCategory
 	}
-	if !IsNil(o.UeLoc) {
+	if !isNil(o.UeLoc) {
 		toSerialize["ueLoc"] = o.UeLoc
 	}
-	if !IsNil(o.UeLocTime) {
+	if !isNil(o.UeLocTime) {
 		toSerialize["ueLocTime"] = o.UeLocTime
 	}
-	if !IsNil(o.UeTimeZone) {
+	if !isNil(o.UeTimeZone) {
 		toSerialize["ueTimeZone"] = o.UeTimeZone
 	}
-	if !IsNil(o.UsgRep) {
+	if !isNil(o.UsgRep) {
 		toSerialize["usgRep"] = o.UsgRep
 	}
-	if !IsNil(o.TsnBridgeManCont) {
+	if !isNil(o.TsnBridgeManCont) {
 		toSerialize["tsnBridgeManCont"] = o.TsnBridgeManCont
 	}
-	if !IsNil(o.TsnPortManContDstt) {
+	if !isNil(o.TsnPortManContDstt) {
 		toSerialize["tsnPortManContDstt"] = o.TsnPortManContDstt
 	}
-	if !IsNil(o.TsnPortManContNwtts) {
+	if !isNil(o.TsnPortManContNwtts) {
 		toSerialize["tsnPortManContNwtts"] = o.TsnPortManContNwtts
 	}
 	return toSerialize, nil

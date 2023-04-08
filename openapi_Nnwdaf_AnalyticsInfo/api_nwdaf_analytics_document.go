@@ -13,7 +13,7 @@ package openapi_Nnwdaf_AnalyticsInfo
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -103,18 +103,18 @@ func (a *NWDAFAnalyticsDocumentApiService) GetNWDAFAnalyticsExecute(r ApiGetNWDA
 		return localVarReturnValue, nil, reportError("eventId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "event-id", r.eventId, "")
+	parameterAddToQuery(localVarQueryParams, "event-id", r.eventId, "")
 	if r.anaReq != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "ana-req", r.anaReq, "")
+		parameterAddToQuery(localVarQueryParams, "ana-req", r.anaReq, "")
 	}
 	if r.eventFilter != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "event-filter", r.eventFilter, "")
+		parameterAddToQuery(localVarQueryParams, "event-filter", r.eventFilter, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.tgtUe != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tgt-ue", r.tgtUe, "")
+		parameterAddToQuery(localVarQueryParams, "tgt-ue", r.tgtUe, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -143,9 +143,9 @@ func (a *NWDAFAnalyticsDocumentApiService) GetNWDAFAnalyticsExecute(r ApiGetNWDA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -42,7 +42,7 @@ func NewNwdafInfoWithDefaults() *NwdafInfo {
 
 // GetEventIds returns the EventIds field value if set, zero value otherwise.
 func (o *NwdafInfo) GetEventIds() []EventId {
-	if o == nil || IsNil(o.EventIds) {
+	if o == nil || isNil(o.EventIds) {
 		var ret []EventId
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *NwdafInfo) GetEventIds() []EventId {
 // GetEventIdsOk returns a tuple with the EventIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetEventIdsOk() ([]EventId, bool) {
-	if o == nil || IsNil(o.EventIds) {
+	if o == nil || isNil(o.EventIds) {
 		return nil, false
 	}
 	return o.EventIds, true
@@ -60,7 +60,7 @@ func (o *NwdafInfo) GetEventIdsOk() ([]EventId, bool) {
 
 // HasEventIds returns a boolean if a field has been set.
 func (o *NwdafInfo) HasEventIds() bool {
-	if o != nil && !IsNil(o.EventIds) {
+	if o != nil && !isNil(o.EventIds) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *NwdafInfo) SetEventIds(v []EventId) {
 
 // GetNwdafEvents returns the NwdafEvents field value if set, zero value otherwise.
 func (o *NwdafInfo) GetNwdafEvents() []NwdafEvent {
-	if o == nil || IsNil(o.NwdafEvents) {
+	if o == nil || isNil(o.NwdafEvents) {
 		var ret []NwdafEvent
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *NwdafInfo) GetNwdafEvents() []NwdafEvent {
 // GetNwdafEventsOk returns a tuple with the NwdafEvents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NwdafInfo) GetNwdafEventsOk() ([]NwdafEvent, bool) {
-	if o == nil || IsNil(o.NwdafEvents) {
+	if o == nil || isNil(o.NwdafEvents) {
 		return nil, false
 	}
 	return o.NwdafEvents, true
@@ -92,7 +92,7 @@ func (o *NwdafInfo) GetNwdafEventsOk() ([]NwdafEvent, bool) {
 
 // HasNwdafEvents returns a boolean if a field has been set.
 func (o *NwdafInfo) HasNwdafEvents() bool {
-	if o != nil && !IsNil(o.NwdafEvents) {
+	if o != nil && !isNil(o.NwdafEvents) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o NwdafInfo) MarshalJSON() ([]byte, error) {
 
 func (o NwdafInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EventIds) {
+	if !isNil(o.EventIds) {
 		toSerialize["eventIds"] = o.EventIds
 	}
-	if !IsNil(o.NwdafEvents) {
+	if !isNil(o.NwdafEvents) {
 		toSerialize["nwdafEvents"] = o.NwdafEvents
 	}
 	return toSerialize, nil

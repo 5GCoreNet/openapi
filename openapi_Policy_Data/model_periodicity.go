@@ -17,23 +17,37 @@ import (
 
 // Periodicity Represents the time period.
 type Periodicity struct {
-	string *string
+	PeriodicityAnyOf *PeriodicityAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Periodicity) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into PeriodicityAnyOf
+	err = json.Unmarshal(data, &dst.PeriodicityAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPeriodicityAnyOf, _ := json.Marshal(dst.PeriodicityAnyOf)
+		if string(jsonPeriodicityAnyOf) == "{}" { // empty struct
+			dst.PeriodicityAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.PeriodicityAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.PeriodicityAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(Periodicity)")
@@ -41,8 +55,12 @@ func (dst *Periodicity) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Periodicity) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.PeriodicityAnyOf != nil {
+		return json.Marshal(&src.PeriodicityAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

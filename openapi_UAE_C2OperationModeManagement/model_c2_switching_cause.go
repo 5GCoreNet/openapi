@@ -17,23 +17,37 @@ import (
 
 // C2SwitchingCause Possible values are: - DIRECT_LINK_QUALITY_DEGRADATION: Indicates that the C2 Communication Mode switching was triggered due to a degradation in the direct radio link quality. - DIRECT_LINK_AVAILABLE: Indicates that the C2 Communication Mode switching was triggered due to the availability of a direct link, i.e. direct radio link quality enables its usage. - MOVING_BVLOS: Indicates that the C2 Communication Mode switching was triggered due to the UAV moving BVLOS. - LOCATION_CHANGE: Indicates that the C2 Communication Mode switching was triggered due to an actual or expected location/mobility of the UAV (e.g. which impacts the UAV-to-UAV-C location). - TRAFFIC_CONTROL_NEEDED: Indicates that the C2 Communication Mode switching was triggered due to the necessity to have air traffic control. - SECURITY_REASONS: Indicates that the C2 Communication Mode switching was triggered due to security reasons. - OTHER_REASONS: Indicates that the C2 Communication Mode switching was triggered due to other reasons (e.g. unpredictable event, unknown reason, weather conditions, topography, etc.). 
 type C2SwitchingCause struct {
-	string *string
+	C2SwitchingCauseAnyOf *C2SwitchingCauseAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *C2SwitchingCause) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into C2SwitchingCauseAnyOf
+	err = json.Unmarshal(data, &dst.C2SwitchingCauseAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonC2SwitchingCauseAnyOf, _ := json.Marshal(dst.C2SwitchingCauseAnyOf)
+		if string(jsonC2SwitchingCauseAnyOf) == "{}" { // empty struct
+			dst.C2SwitchingCauseAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.C2SwitchingCauseAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.C2SwitchingCauseAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(C2SwitchingCause)")
@@ -41,8 +55,12 @@ func (dst *C2SwitchingCause) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *C2SwitchingCause) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.C2SwitchingCauseAnyOf != nil {
+		return json.Marshal(&src.C2SwitchingCauseAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

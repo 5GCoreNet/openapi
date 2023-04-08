@@ -73,7 +73,7 @@ func NewSMSChargingInformationWithDefaults() *SMSChargingInformation {
 
 // GetOriginatorInfo returns the OriginatorInfo field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetOriginatorInfo() OriginatorInfo {
-	if o == nil || IsNil(o.OriginatorInfo) {
+	if o == nil || isNil(o.OriginatorInfo) {
 		var ret OriginatorInfo
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *SMSChargingInformation) GetOriginatorInfo() OriginatorInfo {
 // GetOriginatorInfoOk returns a tuple with the OriginatorInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetOriginatorInfoOk() (*OriginatorInfo, bool) {
-	if o == nil || IsNil(o.OriginatorInfo) {
+	if o == nil || isNil(o.OriginatorInfo) {
 		return nil, false
 	}
 	return o.OriginatorInfo, true
@@ -91,7 +91,7 @@ func (o *SMSChargingInformation) GetOriginatorInfoOk() (*OriginatorInfo, bool) {
 
 // HasOriginatorInfo returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasOriginatorInfo() bool {
-	if o != nil && !IsNil(o.OriginatorInfo) {
+	if o != nil && !isNil(o.OriginatorInfo) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SMSChargingInformation) SetOriginatorInfo(v OriginatorInfo) {
 
 // GetRecipientInfo returns the RecipientInfo field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetRecipientInfo() []RecipientInfo {
-	if o == nil || IsNil(o.RecipientInfo) {
+	if o == nil || isNil(o.RecipientInfo) {
 		var ret []RecipientInfo
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *SMSChargingInformation) GetRecipientInfo() []RecipientInfo {
 // GetRecipientInfoOk returns a tuple with the RecipientInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetRecipientInfoOk() ([]RecipientInfo, bool) {
-	if o == nil || IsNil(o.RecipientInfo) {
+	if o == nil || isNil(o.RecipientInfo) {
 		return nil, false
 	}
 	return o.RecipientInfo, true
@@ -123,7 +123,7 @@ func (o *SMSChargingInformation) GetRecipientInfoOk() ([]RecipientInfo, bool) {
 
 // HasRecipientInfo returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasRecipientInfo() bool {
-	if o != nil && !IsNil(o.RecipientInfo) {
+	if o != nil && !isNil(o.RecipientInfo) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *SMSChargingInformation) SetRecipientInfo(v []RecipientInfo) {
 
 // GetUserEquipmentInfo returns the UserEquipmentInfo field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetUserEquipmentInfo() string {
-	if o == nil || IsNil(o.UserEquipmentInfo) {
+	if o == nil || isNil(o.UserEquipmentInfo) {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *SMSChargingInformation) GetUserEquipmentInfo() string {
 // GetUserEquipmentInfoOk returns a tuple with the UserEquipmentInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetUserEquipmentInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.UserEquipmentInfo) {
+	if o == nil || isNil(o.UserEquipmentInfo) {
 		return nil, false
 	}
 	return o.UserEquipmentInfo, true
@@ -155,7 +155,7 @@ func (o *SMSChargingInformation) GetUserEquipmentInfoOk() (*string, bool) {
 
 // HasUserEquipmentInfo returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasUserEquipmentInfo() bool {
-	if o != nil && !IsNil(o.UserEquipmentInfo) {
+	if o != nil && !isNil(o.UserEquipmentInfo) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *SMSChargingInformation) SetUserEquipmentInfo(v string) {
 
 // GetRoamerInOut returns the RoamerInOut field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetRoamerInOut() RoamerInOut {
-	if o == nil || IsNil(o.RoamerInOut) {
+	if o == nil || isNil(o.RoamerInOut) {
 		var ret RoamerInOut
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *SMSChargingInformation) GetRoamerInOut() RoamerInOut {
 // GetRoamerInOutOk returns a tuple with the RoamerInOut field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetRoamerInOutOk() (*RoamerInOut, bool) {
-	if o == nil || IsNil(o.RoamerInOut) {
+	if o == nil || isNil(o.RoamerInOut) {
 		return nil, false
 	}
 	return o.RoamerInOut, true
@@ -187,7 +187,7 @@ func (o *SMSChargingInformation) GetRoamerInOutOk() (*RoamerInOut, bool) {
 
 // HasRoamerInOut returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasRoamerInOut() bool {
-	if o != nil && !IsNil(o.RoamerInOut) {
+	if o != nil && !isNil(o.RoamerInOut) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *SMSChargingInformation) SetRoamerInOut(v RoamerInOut) {
 
 // GetUserLocationinfo returns the UserLocationinfo field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetUserLocationinfo() UserLocation {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		var ret UserLocation
 		return ret
 	}
@@ -211,7 +211,7 @@ func (o *SMSChargingInformation) GetUserLocationinfo() UserLocation {
 // GetUserLocationinfoOk returns a tuple with the UserLocationinfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationinfo) {
+	if o == nil || isNil(o.UserLocationinfo) {
 		return nil, false
 	}
 	return o.UserLocationinfo, true
@@ -219,7 +219,7 @@ func (o *SMSChargingInformation) GetUserLocationinfoOk() (*UserLocation, bool) {
 
 // HasUserLocationinfo returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasUserLocationinfo() bool {
-	if o != nil && !IsNil(o.UserLocationinfo) {
+	if o != nil && !isNil(o.UserLocationinfo) {
 		return true
 	}
 
@@ -233,7 +233,7 @@ func (o *SMSChargingInformation) SetUserLocationinfo(v UserLocation) {
 
 // GetUetimeZone returns the UetimeZone field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetUetimeZone() string {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		var ret string
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *SMSChargingInformation) GetUetimeZone() string {
 // GetUetimeZoneOk returns a tuple with the UetimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetUetimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.UetimeZone) {
+	if o == nil || isNil(o.UetimeZone) {
 		return nil, false
 	}
 	return o.UetimeZone, true
@@ -251,7 +251,7 @@ func (o *SMSChargingInformation) GetUetimeZoneOk() (*string, bool) {
 
 // HasUetimeZone returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasUetimeZone() bool {
-	if o != nil && !IsNil(o.UetimeZone) {
+	if o != nil && !isNil(o.UetimeZone) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *SMSChargingInformation) SetUetimeZone(v string) {
 
 // GetRATType returns the RATType field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetRATType() RatType {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		var ret RatType
 		return ret
 	}
@@ -275,7 +275,7 @@ func (o *SMSChargingInformation) GetRATType() RatType {
 // GetRATTypeOk returns a tuple with the RATType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetRATTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RATType) {
+	if o == nil || isNil(o.RATType) {
 		return nil, false
 	}
 	return o.RATType, true
@@ -283,7 +283,7 @@ func (o *SMSChargingInformation) GetRATTypeOk() (*RatType, bool) {
 
 // HasRATType returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasRATType() bool {
-	if o != nil && !IsNil(o.RATType) {
+	if o != nil && !isNil(o.RATType) {
 		return true
 	}
 
@@ -297,7 +297,7 @@ func (o *SMSChargingInformation) SetRATType(v RatType) {
 
 // GetSMSCAddress returns the SMSCAddress field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMSCAddress() string {
-	if o == nil || IsNil(o.SMSCAddress) {
+	if o == nil || isNil(o.SMSCAddress) {
 		var ret string
 		return ret
 	}
@@ -307,7 +307,7 @@ func (o *SMSChargingInformation) GetSMSCAddress() string {
 // GetSMSCAddressOk returns a tuple with the SMSCAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMSCAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.SMSCAddress) {
+	if o == nil || isNil(o.SMSCAddress) {
 		return nil, false
 	}
 	return o.SMSCAddress, true
@@ -315,7 +315,7 @@ func (o *SMSChargingInformation) GetSMSCAddressOk() (*string, bool) {
 
 // HasSMSCAddress returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMSCAddress() bool {
-	if o != nil && !IsNil(o.SMSCAddress) {
+	if o != nil && !isNil(o.SMSCAddress) {
 		return true
 	}
 
@@ -329,7 +329,7 @@ func (o *SMSChargingInformation) SetSMSCAddress(v string) {
 
 // GetSMDataCodingScheme returns the SMDataCodingScheme field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMDataCodingScheme() int32 {
-	if o == nil || IsNil(o.SMDataCodingScheme) {
+	if o == nil || isNil(o.SMDataCodingScheme) {
 		var ret int32
 		return ret
 	}
@@ -339,7 +339,7 @@ func (o *SMSChargingInformation) GetSMDataCodingScheme() int32 {
 // GetSMDataCodingSchemeOk returns a tuple with the SMDataCodingScheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMDataCodingSchemeOk() (*int32, bool) {
-	if o == nil || IsNil(o.SMDataCodingScheme) {
+	if o == nil || isNil(o.SMDataCodingScheme) {
 		return nil, false
 	}
 	return o.SMDataCodingScheme, true
@@ -347,7 +347,7 @@ func (o *SMSChargingInformation) GetSMDataCodingSchemeOk() (*int32, bool) {
 
 // HasSMDataCodingScheme returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMDataCodingScheme() bool {
-	if o != nil && !IsNil(o.SMDataCodingScheme) {
+	if o != nil && !isNil(o.SMDataCodingScheme) {
 		return true
 	}
 
@@ -361,7 +361,7 @@ func (o *SMSChargingInformation) SetSMDataCodingScheme(v int32) {
 
 // GetSMMessageType returns the SMMessageType field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMMessageType() SMMessageType {
-	if o == nil || IsNil(o.SMMessageType) {
+	if o == nil || isNil(o.SMMessageType) {
 		var ret SMMessageType
 		return ret
 	}
@@ -371,7 +371,7 @@ func (o *SMSChargingInformation) GetSMMessageType() SMMessageType {
 // GetSMMessageTypeOk returns a tuple with the SMMessageType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMMessageTypeOk() (*SMMessageType, bool) {
-	if o == nil || IsNil(o.SMMessageType) {
+	if o == nil || isNil(o.SMMessageType) {
 		return nil, false
 	}
 	return o.SMMessageType, true
@@ -379,7 +379,7 @@ func (o *SMSChargingInformation) GetSMMessageTypeOk() (*SMMessageType, bool) {
 
 // HasSMMessageType returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMMessageType() bool {
-	if o != nil && !IsNil(o.SMMessageType) {
+	if o != nil && !isNil(o.SMMessageType) {
 		return true
 	}
 
@@ -393,7 +393,7 @@ func (o *SMSChargingInformation) SetSMMessageType(v SMMessageType) {
 
 // GetSMReplyPathRequested returns the SMReplyPathRequested field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMReplyPathRequested() ReplyPathRequested {
-	if o == nil || IsNil(o.SMReplyPathRequested) {
+	if o == nil || isNil(o.SMReplyPathRequested) {
 		var ret ReplyPathRequested
 		return ret
 	}
@@ -403,7 +403,7 @@ func (o *SMSChargingInformation) GetSMReplyPathRequested() ReplyPathRequested {
 // GetSMReplyPathRequestedOk returns a tuple with the SMReplyPathRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMReplyPathRequestedOk() (*ReplyPathRequested, bool) {
-	if o == nil || IsNil(o.SMReplyPathRequested) {
+	if o == nil || isNil(o.SMReplyPathRequested) {
 		return nil, false
 	}
 	return o.SMReplyPathRequested, true
@@ -411,7 +411,7 @@ func (o *SMSChargingInformation) GetSMReplyPathRequestedOk() (*ReplyPathRequeste
 
 // HasSMReplyPathRequested returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMReplyPathRequested() bool {
-	if o != nil && !IsNil(o.SMReplyPathRequested) {
+	if o != nil && !isNil(o.SMReplyPathRequested) {
 		return true
 	}
 
@@ -425,7 +425,7 @@ func (o *SMSChargingInformation) SetSMReplyPathRequested(v ReplyPathRequested) {
 
 // GetSMUserDataHeader returns the SMUserDataHeader field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMUserDataHeader() string {
-	if o == nil || IsNil(o.SMUserDataHeader) {
+	if o == nil || isNil(o.SMUserDataHeader) {
 		var ret string
 		return ret
 	}
@@ -435,7 +435,7 @@ func (o *SMSChargingInformation) GetSMUserDataHeader() string {
 // GetSMUserDataHeaderOk returns a tuple with the SMUserDataHeader field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMUserDataHeaderOk() (*string, bool) {
-	if o == nil || IsNil(o.SMUserDataHeader) {
+	if o == nil || isNil(o.SMUserDataHeader) {
 		return nil, false
 	}
 	return o.SMUserDataHeader, true
@@ -443,7 +443,7 @@ func (o *SMSChargingInformation) GetSMUserDataHeaderOk() (*string, bool) {
 
 // HasSMUserDataHeader returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMUserDataHeader() bool {
-	if o != nil && !IsNil(o.SMUserDataHeader) {
+	if o != nil && !isNil(o.SMUserDataHeader) {
 		return true
 	}
 
@@ -457,7 +457,7 @@ func (o *SMSChargingInformation) SetSMUserDataHeader(v string) {
 
 // GetSMStatus returns the SMStatus field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMStatus() string {
-	if o == nil || IsNil(o.SMStatus) {
+	if o == nil || isNil(o.SMStatus) {
 		var ret string
 		return ret
 	}
@@ -467,7 +467,7 @@ func (o *SMSChargingInformation) GetSMStatus() string {
 // GetSMStatusOk returns a tuple with the SMStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.SMStatus) {
+	if o == nil || isNil(o.SMStatus) {
 		return nil, false
 	}
 	return o.SMStatus, true
@@ -475,7 +475,7 @@ func (o *SMSChargingInformation) GetSMStatusOk() (*string, bool) {
 
 // HasSMStatus returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMStatus() bool {
-	if o != nil && !IsNil(o.SMStatus) {
+	if o != nil && !isNil(o.SMStatus) {
 		return true
 	}
 
@@ -489,7 +489,7 @@ func (o *SMSChargingInformation) SetSMStatus(v string) {
 
 // GetSMDischargeTime returns the SMDischargeTime field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMDischargeTime() time.Time {
-	if o == nil || IsNil(o.SMDischargeTime) {
+	if o == nil || isNil(o.SMDischargeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -499,7 +499,7 @@ func (o *SMSChargingInformation) GetSMDischargeTime() time.Time {
 // GetSMDischargeTimeOk returns a tuple with the SMDischargeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMDischargeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SMDischargeTime) {
+	if o == nil || isNil(o.SMDischargeTime) {
 		return nil, false
 	}
 	return o.SMDischargeTime, true
@@ -507,7 +507,7 @@ func (o *SMSChargingInformation) GetSMDischargeTimeOk() (*time.Time, bool) {
 
 // HasSMDischargeTime returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMDischargeTime() bool {
-	if o != nil && !IsNil(o.SMDischargeTime) {
+	if o != nil && !isNil(o.SMDischargeTime) {
 		return true
 	}
 
@@ -521,7 +521,7 @@ func (o *SMSChargingInformation) SetSMDischargeTime(v time.Time) {
 
 // GetNumberofMessagesSent returns the NumberofMessagesSent field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetNumberofMessagesSent() int32 {
-	if o == nil || IsNil(o.NumberofMessagesSent) {
+	if o == nil || isNil(o.NumberofMessagesSent) {
 		var ret int32
 		return ret
 	}
@@ -531,7 +531,7 @@ func (o *SMSChargingInformation) GetNumberofMessagesSent() int32 {
 // GetNumberofMessagesSentOk returns a tuple with the NumberofMessagesSent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetNumberofMessagesSentOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumberofMessagesSent) {
+	if o == nil || isNil(o.NumberofMessagesSent) {
 		return nil, false
 	}
 	return o.NumberofMessagesSent, true
@@ -539,7 +539,7 @@ func (o *SMSChargingInformation) GetNumberofMessagesSentOk() (*int32, bool) {
 
 // HasNumberofMessagesSent returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasNumberofMessagesSent() bool {
-	if o != nil && !IsNil(o.NumberofMessagesSent) {
+	if o != nil && !isNil(o.NumberofMessagesSent) {
 		return true
 	}
 
@@ -553,7 +553,7 @@ func (o *SMSChargingInformation) SetNumberofMessagesSent(v int32) {
 
 // GetSMServiceType returns the SMServiceType field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMServiceType() SMServiceType {
-	if o == nil || IsNil(o.SMServiceType) {
+	if o == nil || isNil(o.SMServiceType) {
 		var ret SMServiceType
 		return ret
 	}
@@ -563,7 +563,7 @@ func (o *SMSChargingInformation) GetSMServiceType() SMServiceType {
 // GetSMServiceTypeOk returns a tuple with the SMServiceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMServiceTypeOk() (*SMServiceType, bool) {
-	if o == nil || IsNil(o.SMServiceType) {
+	if o == nil || isNil(o.SMServiceType) {
 		return nil, false
 	}
 	return o.SMServiceType, true
@@ -571,7 +571,7 @@ func (o *SMSChargingInformation) GetSMServiceTypeOk() (*SMServiceType, bool) {
 
 // HasSMServiceType returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMServiceType() bool {
-	if o != nil && !IsNil(o.SMServiceType) {
+	if o != nil && !isNil(o.SMServiceType) {
 		return true
 	}
 
@@ -585,7 +585,7 @@ func (o *SMSChargingInformation) SetSMServiceType(v SMServiceType) {
 
 // GetSMSequenceNumber returns the SMSequenceNumber field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMSequenceNumber() int32 {
-	if o == nil || IsNil(o.SMSequenceNumber) {
+	if o == nil || isNil(o.SMSequenceNumber) {
 		var ret int32
 		return ret
 	}
@@ -595,7 +595,7 @@ func (o *SMSChargingInformation) GetSMSequenceNumber() int32 {
 // GetSMSequenceNumberOk returns a tuple with the SMSequenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMSequenceNumberOk() (*int32, bool) {
-	if o == nil || IsNil(o.SMSequenceNumber) {
+	if o == nil || isNil(o.SMSequenceNumber) {
 		return nil, false
 	}
 	return o.SMSequenceNumber, true
@@ -603,7 +603,7 @@ func (o *SMSChargingInformation) GetSMSequenceNumberOk() (*int32, bool) {
 
 // HasSMSequenceNumber returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMSequenceNumber() bool {
-	if o != nil && !IsNil(o.SMSequenceNumber) {
+	if o != nil && !isNil(o.SMSequenceNumber) {
 		return true
 	}
 
@@ -617,7 +617,7 @@ func (o *SMSChargingInformation) SetSMSequenceNumber(v int32) {
 
 // GetSMSresult returns the SMSresult field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMSresult() int32 {
-	if o == nil || IsNil(o.SMSresult) {
+	if o == nil || isNil(o.SMSresult) {
 		var ret int32
 		return ret
 	}
@@ -627,7 +627,7 @@ func (o *SMSChargingInformation) GetSMSresult() int32 {
 // GetSMSresultOk returns a tuple with the SMSresult field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMSresultOk() (*int32, bool) {
-	if o == nil || IsNil(o.SMSresult) {
+	if o == nil || isNil(o.SMSresult) {
 		return nil, false
 	}
 	return o.SMSresult, true
@@ -635,7 +635,7 @@ func (o *SMSChargingInformation) GetSMSresultOk() (*int32, bool) {
 
 // HasSMSresult returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMSresult() bool {
-	if o != nil && !IsNil(o.SMSresult) {
+	if o != nil && !isNil(o.SMSresult) {
 		return true
 	}
 
@@ -649,7 +649,7 @@ func (o *SMSChargingInformation) SetSMSresult(v int32) {
 
 // GetSubmissionTime returns the SubmissionTime field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSubmissionTime() time.Time {
-	if o == nil || IsNil(o.SubmissionTime) {
+	if o == nil || isNil(o.SubmissionTime) {
 		var ret time.Time
 		return ret
 	}
@@ -659,7 +659,7 @@ func (o *SMSChargingInformation) GetSubmissionTime() time.Time {
 // GetSubmissionTimeOk returns a tuple with the SubmissionTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSubmissionTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SubmissionTime) {
+	if o == nil || isNil(o.SubmissionTime) {
 		return nil, false
 	}
 	return o.SubmissionTime, true
@@ -667,7 +667,7 @@ func (o *SMSChargingInformation) GetSubmissionTimeOk() (*time.Time, bool) {
 
 // HasSubmissionTime returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSubmissionTime() bool {
-	if o != nil && !IsNil(o.SubmissionTime) {
+	if o != nil && !isNil(o.SubmissionTime) {
 		return true
 	}
 
@@ -681,7 +681,7 @@ func (o *SMSChargingInformation) SetSubmissionTime(v time.Time) {
 
 // GetSMPriority returns the SMPriority field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetSMPriority() SMPriority {
-	if o == nil || IsNil(o.SMPriority) {
+	if o == nil || isNil(o.SMPriority) {
 		var ret SMPriority
 		return ret
 	}
@@ -691,7 +691,7 @@ func (o *SMSChargingInformation) GetSMPriority() SMPriority {
 // GetSMPriorityOk returns a tuple with the SMPriority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetSMPriorityOk() (*SMPriority, bool) {
-	if o == nil || IsNil(o.SMPriority) {
+	if o == nil || isNil(o.SMPriority) {
 		return nil, false
 	}
 	return o.SMPriority, true
@@ -699,7 +699,7 @@ func (o *SMSChargingInformation) GetSMPriorityOk() (*SMPriority, bool) {
 
 // HasSMPriority returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasSMPriority() bool {
-	if o != nil && !IsNil(o.SMPriority) {
+	if o != nil && !isNil(o.SMPriority) {
 		return true
 	}
 
@@ -713,7 +713,7 @@ func (o *SMSChargingInformation) SetSMPriority(v SMPriority) {
 
 // GetMessageReference returns the MessageReference field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetMessageReference() string {
-	if o == nil || IsNil(o.MessageReference) {
+	if o == nil || isNil(o.MessageReference) {
 		var ret string
 		return ret
 	}
@@ -723,7 +723,7 @@ func (o *SMSChargingInformation) GetMessageReference() string {
 // GetMessageReferenceOk returns a tuple with the MessageReference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetMessageReferenceOk() (*string, bool) {
-	if o == nil || IsNil(o.MessageReference) {
+	if o == nil || isNil(o.MessageReference) {
 		return nil, false
 	}
 	return o.MessageReference, true
@@ -731,7 +731,7 @@ func (o *SMSChargingInformation) GetMessageReferenceOk() (*string, bool) {
 
 // HasMessageReference returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasMessageReference() bool {
-	if o != nil && !IsNil(o.MessageReference) {
+	if o != nil && !isNil(o.MessageReference) {
 		return true
 	}
 
@@ -745,7 +745,7 @@ func (o *SMSChargingInformation) SetMessageReference(v string) {
 
 // GetMessageSize returns the MessageSize field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetMessageSize() int32 {
-	if o == nil || IsNil(o.MessageSize) {
+	if o == nil || isNil(o.MessageSize) {
 		var ret int32
 		return ret
 	}
@@ -755,7 +755,7 @@ func (o *SMSChargingInformation) GetMessageSize() int32 {
 // GetMessageSizeOk returns a tuple with the MessageSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetMessageSizeOk() (*int32, bool) {
-	if o == nil || IsNil(o.MessageSize) {
+	if o == nil || isNil(o.MessageSize) {
 		return nil, false
 	}
 	return o.MessageSize, true
@@ -763,7 +763,7 @@ func (o *SMSChargingInformation) GetMessageSizeOk() (*int32, bool) {
 
 // HasMessageSize returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasMessageSize() bool {
-	if o != nil && !IsNil(o.MessageSize) {
+	if o != nil && !isNil(o.MessageSize) {
 		return true
 	}
 
@@ -777,7 +777,7 @@ func (o *SMSChargingInformation) SetMessageSize(v int32) {
 
 // GetMessageClass returns the MessageClass field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetMessageClass() MessageClass {
-	if o == nil || IsNil(o.MessageClass) {
+	if o == nil || isNil(o.MessageClass) {
 		var ret MessageClass
 		return ret
 	}
@@ -787,7 +787,7 @@ func (o *SMSChargingInformation) GetMessageClass() MessageClass {
 // GetMessageClassOk returns a tuple with the MessageClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetMessageClassOk() (*MessageClass, bool) {
-	if o == nil || IsNil(o.MessageClass) {
+	if o == nil || isNil(o.MessageClass) {
 		return nil, false
 	}
 	return o.MessageClass, true
@@ -795,7 +795,7 @@ func (o *SMSChargingInformation) GetMessageClassOk() (*MessageClass, bool) {
 
 // HasMessageClass returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasMessageClass() bool {
-	if o != nil && !IsNil(o.MessageClass) {
+	if o != nil && !isNil(o.MessageClass) {
 		return true
 	}
 
@@ -809,7 +809,7 @@ func (o *SMSChargingInformation) SetMessageClass(v MessageClass) {
 
 // GetDeliveryReportRequested returns the DeliveryReportRequested field value if set, zero value otherwise.
 func (o *SMSChargingInformation) GetDeliveryReportRequested() DeliveryReportRequested {
-	if o == nil || IsNil(o.DeliveryReportRequested) {
+	if o == nil || isNil(o.DeliveryReportRequested) {
 		var ret DeliveryReportRequested
 		return ret
 	}
@@ -819,7 +819,7 @@ func (o *SMSChargingInformation) GetDeliveryReportRequested() DeliveryReportRequ
 // GetDeliveryReportRequestedOk returns a tuple with the DeliveryReportRequested field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SMSChargingInformation) GetDeliveryReportRequestedOk() (*DeliveryReportRequested, bool) {
-	if o == nil || IsNil(o.DeliveryReportRequested) {
+	if o == nil || isNil(o.DeliveryReportRequested) {
 		return nil, false
 	}
 	return o.DeliveryReportRequested, true
@@ -827,7 +827,7 @@ func (o *SMSChargingInformation) GetDeliveryReportRequestedOk() (*DeliveryReport
 
 // HasDeliveryReportRequested returns a boolean if a field has been set.
 func (o *SMSChargingInformation) HasDeliveryReportRequested() bool {
-	if o != nil && !IsNil(o.DeliveryReportRequested) {
+	if o != nil && !isNil(o.DeliveryReportRequested) {
 		return true
 	}
 
@@ -849,76 +849,76 @@ func (o SMSChargingInformation) MarshalJSON() ([]byte, error) {
 
 func (o SMSChargingInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.OriginatorInfo) {
+	if !isNil(o.OriginatorInfo) {
 		toSerialize["originatorInfo"] = o.OriginatorInfo
 	}
-	if !IsNil(o.RecipientInfo) {
+	if !isNil(o.RecipientInfo) {
 		toSerialize["recipientInfo"] = o.RecipientInfo
 	}
-	if !IsNil(o.UserEquipmentInfo) {
+	if !isNil(o.UserEquipmentInfo) {
 		toSerialize["userEquipmentInfo"] = o.UserEquipmentInfo
 	}
-	if !IsNil(o.RoamerInOut) {
+	if !isNil(o.RoamerInOut) {
 		toSerialize["roamerInOut"] = o.RoamerInOut
 	}
-	if !IsNil(o.UserLocationinfo) {
+	if !isNil(o.UserLocationinfo) {
 		toSerialize["userLocationinfo"] = o.UserLocationinfo
 	}
-	if !IsNil(o.UetimeZone) {
+	if !isNil(o.UetimeZone) {
 		toSerialize["uetimeZone"] = o.UetimeZone
 	}
-	if !IsNil(o.RATType) {
+	if !isNil(o.RATType) {
 		toSerialize["rATType"] = o.RATType
 	}
-	if !IsNil(o.SMSCAddress) {
+	if !isNil(o.SMSCAddress) {
 		toSerialize["sMSCAddress"] = o.SMSCAddress
 	}
-	if !IsNil(o.SMDataCodingScheme) {
+	if !isNil(o.SMDataCodingScheme) {
 		toSerialize["sMDataCodingScheme"] = o.SMDataCodingScheme
 	}
-	if !IsNil(o.SMMessageType) {
+	if !isNil(o.SMMessageType) {
 		toSerialize["sMMessageType"] = o.SMMessageType
 	}
-	if !IsNil(o.SMReplyPathRequested) {
+	if !isNil(o.SMReplyPathRequested) {
 		toSerialize["sMReplyPathRequested"] = o.SMReplyPathRequested
 	}
-	if !IsNil(o.SMUserDataHeader) {
+	if !isNil(o.SMUserDataHeader) {
 		toSerialize["sMUserDataHeader"] = o.SMUserDataHeader
 	}
-	if !IsNil(o.SMStatus) {
+	if !isNil(o.SMStatus) {
 		toSerialize["sMStatus"] = o.SMStatus
 	}
-	if !IsNil(o.SMDischargeTime) {
+	if !isNil(o.SMDischargeTime) {
 		toSerialize["sMDischargeTime"] = o.SMDischargeTime
 	}
-	if !IsNil(o.NumberofMessagesSent) {
+	if !isNil(o.NumberofMessagesSent) {
 		toSerialize["numberofMessagesSent"] = o.NumberofMessagesSent
 	}
-	if !IsNil(o.SMServiceType) {
+	if !isNil(o.SMServiceType) {
 		toSerialize["sMServiceType"] = o.SMServiceType
 	}
-	if !IsNil(o.SMSequenceNumber) {
+	if !isNil(o.SMSequenceNumber) {
 		toSerialize["sMSequenceNumber"] = o.SMSequenceNumber
 	}
-	if !IsNil(o.SMSresult) {
+	if !isNil(o.SMSresult) {
 		toSerialize["sMSresult"] = o.SMSresult
 	}
-	if !IsNil(o.SubmissionTime) {
+	if !isNil(o.SubmissionTime) {
 		toSerialize["submissionTime"] = o.SubmissionTime
 	}
-	if !IsNil(o.SMPriority) {
+	if !isNil(o.SMPriority) {
 		toSerialize["sMPriority"] = o.SMPriority
 	}
-	if !IsNil(o.MessageReference) {
+	if !isNil(o.MessageReference) {
 		toSerialize["messageReference"] = o.MessageReference
 	}
-	if !IsNil(o.MessageSize) {
+	if !isNil(o.MessageSize) {
 		toSerialize["messageSize"] = o.MessageSize
 	}
-	if !IsNil(o.MessageClass) {
+	if !isNil(o.MessageClass) {
 		toSerialize["messageClass"] = o.MessageClass
 	}
-	if !IsNil(o.DeliveryReportRequested) {
+	if !isNil(o.DeliveryReportRequested) {
 		toSerialize["deliveryReportRequested"] = o.DeliveryReportRequested
 	}
 	return toSerialize, nil

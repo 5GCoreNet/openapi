@@ -44,7 +44,7 @@ func NewLocationAreaMonReportWithDefaults() *LocationAreaMonReport {
 
 // GetCurPreUEs returns the CurPreUEs field value if set, zero value otherwise.
 func (o *LocationAreaMonReport) GetCurPreUEs() []ValTargetUe {
-	if o == nil || IsNil(o.CurPreUEs) {
+	if o == nil || isNil(o.CurPreUEs) {
 		var ret []ValTargetUe
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *LocationAreaMonReport) GetCurPreUEs() []ValTargetUe {
 // GetCurPreUEsOk returns a tuple with the CurPreUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationAreaMonReport) GetCurPreUEsOk() ([]ValTargetUe, bool) {
-	if o == nil || IsNil(o.CurPreUEs) {
+	if o == nil || isNil(o.CurPreUEs) {
 		return nil, false
 	}
 	return o.CurPreUEs, true
@@ -62,7 +62,7 @@ func (o *LocationAreaMonReport) GetCurPreUEsOk() ([]ValTargetUe, bool) {
 
 // HasCurPreUEs returns a boolean if a field has been set.
 func (o *LocationAreaMonReport) HasCurPreUEs() bool {
-	if o != nil && !IsNil(o.CurPreUEs) {
+	if o != nil && !isNil(o.CurPreUEs) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *LocationAreaMonReport) SetCurPreUEs(v []ValTargetUe) {
 
 // GetMoveInOutUEs returns the MoveInOutUEs field value if set, zero value otherwise.
 func (o *LocationAreaMonReport) GetMoveInOutUEs() MoveInOutUEDetails {
-	if o == nil || IsNil(o.MoveInOutUEs) {
+	if o == nil || isNil(o.MoveInOutUEs) {
 		var ret MoveInOutUEDetails
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *LocationAreaMonReport) GetMoveInOutUEs() MoveInOutUEDetails {
 // GetMoveInOutUEsOk returns a tuple with the MoveInOutUEs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationAreaMonReport) GetMoveInOutUEsOk() (*MoveInOutUEDetails, bool) {
-	if o == nil || IsNil(o.MoveInOutUEs) {
+	if o == nil || isNil(o.MoveInOutUEs) {
 		return nil, false
 	}
 	return o.MoveInOutUEs, true
@@ -94,7 +94,7 @@ func (o *LocationAreaMonReport) GetMoveInOutUEsOk() (*MoveInOutUEDetails, bool) 
 
 // HasMoveInOutUEs returns a boolean if a field has been set.
 func (o *LocationAreaMonReport) HasMoveInOutUEs() bool {
-	if o != nil && !IsNil(o.MoveInOutUEs) {
+	if o != nil && !isNil(o.MoveInOutUEs) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *LocationAreaMonReport) SetMoveInOutUEs(v MoveInOutUEDetails) {
 
 // GetTrigEvnt returns the TrigEvnt field value if set, zero value otherwise.
 func (o *LocationAreaMonReport) GetTrigEvnt() MonLocTriggerEvent {
-	if o == nil || IsNil(o.TrigEvnt) {
+	if o == nil || isNil(o.TrigEvnt) {
 		var ret MonLocTriggerEvent
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *LocationAreaMonReport) GetTrigEvnt() MonLocTriggerEvent {
 // GetTrigEvntOk returns a tuple with the TrigEvnt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationAreaMonReport) GetTrigEvntOk() (*MonLocTriggerEvent, bool) {
-	if o == nil || IsNil(o.TrigEvnt) {
+	if o == nil || isNil(o.TrigEvnt) {
 		return nil, false
 	}
 	return o.TrigEvnt, true
@@ -126,7 +126,7 @@ func (o *LocationAreaMonReport) GetTrigEvntOk() (*MonLocTriggerEvent, bool) {
 
 // HasTrigEvnt returns a boolean if a field has been set.
 func (o *LocationAreaMonReport) HasTrigEvnt() bool {
-	if o != nil && !IsNil(o.TrigEvnt) {
+	if o != nil && !isNil(o.TrigEvnt) {
 		return true
 	}
 
@@ -148,13 +148,13 @@ func (o LocationAreaMonReport) MarshalJSON() ([]byte, error) {
 
 func (o LocationAreaMonReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CurPreUEs) {
+	if !isNil(o.CurPreUEs) {
 		toSerialize["curPreUEs"] = o.CurPreUEs
 	}
-	if !IsNil(o.MoveInOutUEs) {
+	if !isNil(o.MoveInOutUEs) {
 		toSerialize["moveInOutUEs"] = o.MoveInOutUEs
 	}
-	if !IsNil(o.TrigEvnt) {
+	if !isNil(o.TrigEvnt) {
 		toSerialize["trigEvnt"] = o.TrigEvnt
 	}
 	return toSerialize, nil

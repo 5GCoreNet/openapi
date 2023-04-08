@@ -71,7 +71,7 @@ func (o *ProSeAuthenticationInfoResult) SetAuthType(v AuthType) {
 
 // GetProseAuthenticationVectors returns the ProseAuthenticationVectors field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectors() ProSeAuthenticationVectors {
-	if o == nil || IsNil(o.ProseAuthenticationVectors) {
+	if o == nil || isNil(o.ProseAuthenticationVectors) {
 		var ret ProSeAuthenticationVectors
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectors() ProSeAut
 // GetProseAuthenticationVectorsOk returns a tuple with the ProseAuthenticationVectors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectorsOk() (*ProSeAuthenticationVectors, bool) {
-	if o == nil || IsNil(o.ProseAuthenticationVectors) {
+	if o == nil || isNil(o.ProseAuthenticationVectors) {
 		return nil, false
 	}
 	return o.ProseAuthenticationVectors, true
@@ -89,7 +89,7 @@ func (o *ProSeAuthenticationInfoResult) GetProseAuthenticationVectorsOk() (*ProS
 
 // HasProseAuthenticationVectors returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfoResult) HasProseAuthenticationVectors() bool {
-	if o != nil && !IsNil(o.ProseAuthenticationVectors) {
+	if o != nil && !isNil(o.ProseAuthenticationVectors) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *ProSeAuthenticationInfoResult) SetProseAuthenticationVectors(v ProSeAut
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfoResult) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfoResult) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -121,7 +121,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfoResult) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *ProSeAuthenticationInfoResult) SetSupi(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProSeAuthenticationInfoResult) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProSeAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -153,7 +153,7 @@ func (o *ProSeAuthenticationInfoResult) GetSupportedFeaturesOk() (*string, bool)
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProSeAuthenticationInfoResult) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o ProSeAuthenticationInfoResult) MarshalJSON() ([]byte, error) {
 func (o ProSeAuthenticationInfoResult) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["authType"] = o.AuthType
-	if !IsNil(o.ProseAuthenticationVectors) {
+	if !isNil(o.ProseAuthenticationVectors) {
 		toSerialize["proseAuthenticationVectors"] = o.ProseAuthenticationVectors
 	}
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

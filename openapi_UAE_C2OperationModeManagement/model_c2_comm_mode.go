@@ -17,23 +17,37 @@ import (
 
 // C2CommMode Possible values are: - DIRECT_C2_COMMUNICATION: Indicates Direct C2 Communication mode. - NETWORK_ASSISTED_C2_COMMUNICATION: Indicates Network-Assisted C2 Communication mode. - UTM_NAVIGATED_C2_COMMUNICATION: Indicates UTM-Navigated C2 communication mode. 
 type C2CommMode struct {
-	string *string
+	C2CommModeAnyOf *C2CommModeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *C2CommMode) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into C2CommModeAnyOf
+	err = json.Unmarshal(data, &dst.C2CommModeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonC2CommModeAnyOf, _ := json.Marshal(dst.C2CommModeAnyOf)
+		if string(jsonC2CommModeAnyOf) == "{}" { // empty struct
+			dst.C2CommModeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.C2CommModeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.C2CommModeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(C2CommMode)")
@@ -41,8 +55,12 @@ func (dst *C2CommMode) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *C2CommMode) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.C2CommModeAnyOf != nil {
+		return json.Marshal(&src.C2CommModeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

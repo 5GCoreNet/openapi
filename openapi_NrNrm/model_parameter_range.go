@@ -42,7 +42,7 @@ func NewParameterRangeWithDefaults() *ParameterRange {
 
 // GetMaxValue returns the MaxValue field value if set, zero value otherwise.
 func (o *ParameterRange) GetMaxValue() int32 {
-	if o == nil || IsNil(o.MaxValue) {
+	if o == nil || isNil(o.MaxValue) {
 		var ret int32
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ParameterRange) GetMaxValue() int32 {
 // GetMaxValueOk returns a tuple with the MaxValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterRange) GetMaxValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxValue) {
+	if o == nil || isNil(o.MaxValue) {
 		return nil, false
 	}
 	return o.MaxValue, true
@@ -60,7 +60,7 @@ func (o *ParameterRange) GetMaxValueOk() (*int32, bool) {
 
 // HasMaxValue returns a boolean if a field has been set.
 func (o *ParameterRange) HasMaxValue() bool {
-	if o != nil && !IsNil(o.MaxValue) {
+	if o != nil && !isNil(o.MaxValue) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ParameterRange) SetMaxValue(v int32) {
 
 // GetMinValue returns the MinValue field value if set, zero value otherwise.
 func (o *ParameterRange) GetMinValue() int32 {
-	if o == nil || IsNil(o.MinValue) {
+	if o == nil || isNil(o.MinValue) {
 		var ret int32
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ParameterRange) GetMinValue() int32 {
 // GetMinValueOk returns a tuple with the MinValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParameterRange) GetMinValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.MinValue) {
+	if o == nil || isNil(o.MinValue) {
 		return nil, false
 	}
 	return o.MinValue, true
@@ -92,7 +92,7 @@ func (o *ParameterRange) GetMinValueOk() (*int32, bool) {
 
 // HasMinValue returns a boolean if a field has been set.
 func (o *ParameterRange) HasMinValue() bool {
-	if o != nil && !IsNil(o.MinValue) {
+	if o != nil && !isNil(o.MinValue) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ParameterRange) MarshalJSON() ([]byte, error) {
 
 func (o ParameterRange) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MaxValue) {
+	if !isNil(o.MaxValue) {
 		toSerialize["maxValue"] = o.MaxValue
 	}
-	if !IsNil(o.MinValue) {
+	if !isNil(o.MinValue) {
 		toSerialize["minValue"] = o.MinValue
 	}
 	return toSerialize, nil

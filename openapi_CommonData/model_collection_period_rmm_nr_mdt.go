@@ -17,23 +17,37 @@ import (
 
 // CollectionPeriodRmmNrMdt The enumeration CollectionPeriodRmmNrMdt defines Collection period for RRM measurements NR for MDT in the trace. See 3GPP TS 32.422 for further description of the values. It shall comply with the provisions defined in table 5.6.3.19-1 
 type CollectionPeriodRmmNrMdt struct {
-	string *string
+	CollectionPeriodRmmNrMdtAnyOf *CollectionPeriodRmmNrMdtAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *CollectionPeriodRmmNrMdt) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into CollectionPeriodRmmNrMdtAnyOf
+	err = json.Unmarshal(data, &dst.CollectionPeriodRmmNrMdtAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonCollectionPeriodRmmNrMdtAnyOf, _ := json.Marshal(dst.CollectionPeriodRmmNrMdtAnyOf)
+		if string(jsonCollectionPeriodRmmNrMdtAnyOf) == "{}" { // empty struct
+			dst.CollectionPeriodRmmNrMdtAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.CollectionPeriodRmmNrMdtAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.CollectionPeriodRmmNrMdtAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(CollectionPeriodRmmNrMdt)")
@@ -41,8 +55,12 @@ func (dst *CollectionPeriodRmmNrMdt) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *CollectionPeriodRmmNrMdt) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.CollectionPeriodRmmNrMdtAnyOf != nil {
+		return json.Marshal(&src.CollectionPeriodRmmNrMdtAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

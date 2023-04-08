@@ -13,7 +13,7 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -94,16 +94,16 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 	localVarFormParams := url.Values{}
 
 	if r.dnn != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "dnn", r.dnn, "")
+		parameterAddToQuery(localVarQueryParams, "dnn", r.dnn, "")
 	}
 	if r.snssai != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssai", r.snssai, "")
+		parameterAddToQuery(localVarQueryParams, "snssai", r.snssai, "")
 	}
 	if r.internalGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "internal-group-id", r.internalGroupId, "")
+		parameterAddToQuery(localVarQueryParams, "internal-group-id", r.internalGroupId, "")
 	}
 	if r.appId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "appId", r.appId, "")
+		parameterAddToQuery(localVarQueryParams, "appId", r.appId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -132,9 +132,9 @@ func (a *EASDeploymentDataStoreApiService) ReadEasDeployDataExecute(r ApiReadEas
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

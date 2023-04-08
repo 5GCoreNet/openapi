@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -73,7 +72,6 @@ docs/IntentContext.md
 docs/IntentExpectation.md
 docs/IntentSingle.md
 docs/IntentSingleAllOf.md
-docs/IntentSingleAllOfIntentExpectationsInner.md
 docs/IpAddr.md
 docs/Ipv6Addr.md
 docs/JobTypeType.md
@@ -128,7 +126,6 @@ docs/PlmnListTypeInner.md
 docs/PlmnTargetType.md
 docs/PositioningMethodType.md
 docs/ProbableCause.md
-docs/ProbableCauseOneOf.md
 docs/RATContext.md
 docs/RadioNetworkExpectation.md
 docs/RadioNetworkExpectationExpectationTargetsInner.md
@@ -264,7 +261,6 @@ model_intent_context.go
 model_intent_expectation.go
 model_intent_single.go
 model_intent_single_all_of.go
-model_intent_single_all_of_intent_expectations_inner.go
 model_ip_addr.go
 model_ipv6_addr.go
 model_job_type_type.go
@@ -319,7 +315,6 @@ model_plmn_list_type_inner.go
 model_plmn_target_type.go
 model_positioning_method_type.go
 model_probable_cause.go
-model_probable_cause_one_of.go
 model_radio_network_expectation.go
 model_radio_network_expectation_expectation_targets_inner.go
 model_radio_network_expectation_object.go

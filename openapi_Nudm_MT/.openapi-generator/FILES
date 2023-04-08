@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -7,6 +6,7 @@ api_provide_ue_location.go
 api_query_ue_info.go
 client.go
 configuration.go
+docs/5GsUserStateAnyOf.md
 docs/AccessTokenErr.md
 docs/AccessTokenReq.md
 docs/AccessType.md
@@ -27,6 +27,7 @@ docs/LocationInfoResult.md
 docs/Model5GSrvccInfo.md
 docs/Model5GsUserState.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/Ncgi.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
@@ -46,9 +47,11 @@ docs/ProblemDetails.md
 docs/ProvideUELocationApi.md
 docs/QueryUEInfoApi.md
 docs/RatType.md
+docs/RatTypeAnyOf.md
 docs/RelativeCartesianLocation.md
 docs/Snssai.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/UeContextInfo.md
 docs/UeInfo.md
@@ -59,6 +62,7 @@ go.mod
 go.sum
 model_5_g_srvcc_info.go
 model_5_gs_user_state.go
+model__5_gs_user_state_any_of.go
 model_access_token_err.go
 model_access_token_req.go
 model_access_type.go
@@ -78,6 +82,7 @@ model_location_info_request.go
 model_location_info_result.go
 model_ncgi.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_point.go
@@ -94,9 +99,11 @@ model_polygon.go
 model_polygon_all_of.go
 model_problem_details.go
 model_rat_type.go
+model_rat_type_any_of.go
 model_relative_cartesian_location.go
 model_snssai.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_ue_context_info.go
 model_ue_info.go

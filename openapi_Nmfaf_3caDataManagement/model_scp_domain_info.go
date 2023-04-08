@@ -46,7 +46,7 @@ func NewScpDomainInfoWithDefaults() *ScpDomainInfo {
 
 // GetScpFqdn returns the ScpFqdn field value if set, zero value otherwise.
 func (o *ScpDomainInfo) GetScpFqdn() string {
-	if o == nil || IsNil(o.ScpFqdn) {
+	if o == nil || isNil(o.ScpFqdn) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *ScpDomainInfo) GetScpFqdn() string {
 // GetScpFqdnOk returns a tuple with the ScpFqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainInfo) GetScpFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.ScpFqdn) {
+	if o == nil || isNil(o.ScpFqdn) {
 		return nil, false
 	}
 	return o.ScpFqdn, true
@@ -64,7 +64,7 @@ func (o *ScpDomainInfo) GetScpFqdnOk() (*string, bool) {
 
 // HasScpFqdn returns a boolean if a field has been set.
 func (o *ScpDomainInfo) HasScpFqdn() bool {
-	if o != nil && !IsNil(o.ScpFqdn) {
+	if o != nil && !isNil(o.ScpFqdn) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *ScpDomainInfo) SetScpFqdn(v string) {
 
 // GetScpIpEndPoints returns the ScpIpEndPoints field value if set, zero value otherwise.
 func (o *ScpDomainInfo) GetScpIpEndPoints() []IpEndPoint {
-	if o == nil || IsNil(o.ScpIpEndPoints) {
+	if o == nil || isNil(o.ScpIpEndPoints) {
 		var ret []IpEndPoint
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *ScpDomainInfo) GetScpIpEndPoints() []IpEndPoint {
 // GetScpIpEndPointsOk returns a tuple with the ScpIpEndPoints field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainInfo) GetScpIpEndPointsOk() ([]IpEndPoint, bool) {
-	if o == nil || IsNil(o.ScpIpEndPoints) {
+	if o == nil || isNil(o.ScpIpEndPoints) {
 		return nil, false
 	}
 	return o.ScpIpEndPoints, true
@@ -96,7 +96,7 @@ func (o *ScpDomainInfo) GetScpIpEndPointsOk() ([]IpEndPoint, bool) {
 
 // HasScpIpEndPoints returns a boolean if a field has been set.
 func (o *ScpDomainInfo) HasScpIpEndPoints() bool {
-	if o != nil && !IsNil(o.ScpIpEndPoints) {
+	if o != nil && !isNil(o.ScpIpEndPoints) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *ScpDomainInfo) SetScpIpEndPoints(v []IpEndPoint) {
 
 // GetScpPrefix returns the ScpPrefix field value if set, zero value otherwise.
 func (o *ScpDomainInfo) GetScpPrefix() string {
-	if o == nil || IsNil(o.ScpPrefix) {
+	if o == nil || isNil(o.ScpPrefix) {
 		var ret string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *ScpDomainInfo) GetScpPrefix() string {
 // GetScpPrefixOk returns a tuple with the ScpPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainInfo) GetScpPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.ScpPrefix) {
+	if o == nil || isNil(o.ScpPrefix) {
 		return nil, false
 	}
 	return o.ScpPrefix, true
@@ -128,7 +128,7 @@ func (o *ScpDomainInfo) GetScpPrefixOk() (*string, bool) {
 
 // HasScpPrefix returns a boolean if a field has been set.
 func (o *ScpDomainInfo) HasScpPrefix() bool {
-	if o != nil && !IsNil(o.ScpPrefix) {
+	if o != nil && !isNil(o.ScpPrefix) {
 		return true
 	}
 
@@ -142,7 +142,7 @@ func (o *ScpDomainInfo) SetScpPrefix(v string) {
 
 // GetScpPorts returns the ScpPorts field value if set, zero value otherwise.
 func (o *ScpDomainInfo) GetScpPorts() map[string]int32 {
-	if o == nil || IsNil(o.ScpPorts) {
+	if o == nil || isNil(o.ScpPorts) {
 		var ret map[string]int32
 		return ret
 	}
@@ -152,7 +152,7 @@ func (o *ScpDomainInfo) GetScpPorts() map[string]int32 {
 // GetScpPortsOk returns a tuple with the ScpPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScpDomainInfo) GetScpPortsOk() (*map[string]int32, bool) {
-	if o == nil || IsNil(o.ScpPorts) {
+	if o == nil || isNil(o.ScpPorts) {
 		return nil, false
 	}
 	return o.ScpPorts, true
@@ -160,7 +160,7 @@ func (o *ScpDomainInfo) GetScpPortsOk() (*map[string]int32, bool) {
 
 // HasScpPorts returns a boolean if a field has been set.
 func (o *ScpDomainInfo) HasScpPorts() bool {
-	if o != nil && !IsNil(o.ScpPorts) {
+	if o != nil && !isNil(o.ScpPorts) {
 		return true
 	}
 
@@ -182,16 +182,16 @@ func (o ScpDomainInfo) MarshalJSON() ([]byte, error) {
 
 func (o ScpDomainInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ScpFqdn) {
+	if !isNil(o.ScpFqdn) {
 		toSerialize["scpFqdn"] = o.ScpFqdn
 	}
-	if !IsNil(o.ScpIpEndPoints) {
+	if !isNil(o.ScpIpEndPoints) {
 		toSerialize["scpIpEndPoints"] = o.ScpIpEndPoints
 	}
-	if !IsNil(o.ScpPrefix) {
+	if !isNil(o.ScpPrefix) {
 		toSerialize["scpPrefix"] = o.ScpPrefix
 	}
-	if !IsNil(o.ScpPorts) {
+	if !isNil(o.ScpPorts) {
 		toSerialize["scpPorts"] = o.ScpPorts
 	}
 	return toSerialize, nil

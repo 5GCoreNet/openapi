@@ -54,7 +54,7 @@ func NewAkmaAfKeyRequestWithDefaults() *AkmaAfKeyRequest {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AkmaAfKeyRequest) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -64,7 +64,7 @@ func (o *AkmaAfKeyRequest) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AkmaAfKeyRequest) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -72,7 +72,7 @@ func (o *AkmaAfKeyRequest) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AkmaAfKeyRequest) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *AkmaAfKeyRequest) SetAKId(v string) {
 
 // GetAnonInd returns the AnonInd field value if set, zero value otherwise.
 func (o *AkmaAfKeyRequest) GetAnonInd() bool {
-	if o == nil || IsNil(o.AnonInd) {
+	if o == nil || isNil(o.AnonInd) {
 		var ret bool
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *AkmaAfKeyRequest) GetAnonInd() bool {
 // GetAnonIndOk returns a tuple with the AnonInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AkmaAfKeyRequest) GetAnonIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnonInd) {
+	if o == nil || isNil(o.AnonInd) {
 		return nil, false
 	}
 	return o.AnonInd, true
@@ -152,7 +152,7 @@ func (o *AkmaAfKeyRequest) GetAnonIndOk() (*bool, bool) {
 
 // HasAnonInd returns a boolean if a field has been set.
 func (o *AkmaAfKeyRequest) HasAnonInd() bool {
-	if o != nil && !IsNil(o.AnonInd) {
+	if o != nil && !isNil(o.AnonInd) {
 		return true
 	}
 
@@ -174,12 +174,12 @@ func (o AkmaAfKeyRequest) MarshalJSON() ([]byte, error) {
 
 func (o AkmaAfKeyRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	toSerialize["afId"] = o.AfId
 	toSerialize["aKId"] = o.AKId
-	if !IsNil(o.AnonInd) {
+	if !isNil(o.AnonInd) {
 		toSerialize["anonInd"] = o.AnonInd
 	}
 	return toSerialize, nil

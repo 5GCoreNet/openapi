@@ -72,7 +72,7 @@ func (o *PlmnEcInfo1) SetPlmnId(v PlmnId1) {
 
 // GetEcRestrictionDataWb returns the EcRestrictionDataWb field value if set, zero value otherwise.
 func (o *PlmnEcInfo1) GetEcRestrictionDataWb() EcRestrictionDataWb {
-	if o == nil || IsNil(o.EcRestrictionDataWb) {
+	if o == nil || isNil(o.EcRestrictionDataWb) {
 		var ret EcRestrictionDataWb
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataWb() EcRestrictionDataWb {
 // GetEcRestrictionDataWbOk returns a tuple with the EcRestrictionDataWb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcInfo1) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
-	if o == nil || IsNil(o.EcRestrictionDataWb) {
+	if o == nil || isNil(o.EcRestrictionDataWb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataWb, true
@@ -90,7 +90,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataWbOk() (*EcRestrictionDataWb, bool) {
 
 // HasEcRestrictionDataWb returns a boolean if a field has been set.
 func (o *PlmnEcInfo1) HasEcRestrictionDataWb() bool {
-	if o != nil && !IsNil(o.EcRestrictionDataWb) {
+	if o != nil && !isNil(o.EcRestrictionDataWb) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *PlmnEcInfo1) SetEcRestrictionDataWb(v EcRestrictionDataWb) {
 
 // GetEcRestrictionDataNb returns the EcRestrictionDataNb field value if set, zero value otherwise.
 func (o *PlmnEcInfo1) GetEcRestrictionDataNb() bool {
-	if o == nil || IsNil(o.EcRestrictionDataNb) {
+	if o == nil || isNil(o.EcRestrictionDataNb) {
 		var ret bool
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataNb() bool {
 // GetEcRestrictionDataNbOk returns a tuple with the EcRestrictionDataNb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PlmnEcInfo1) GetEcRestrictionDataNbOk() (*bool, bool) {
-	if o == nil || IsNil(o.EcRestrictionDataNb) {
+	if o == nil || isNil(o.EcRestrictionDataNb) {
 		return nil, false
 	}
 	return o.EcRestrictionDataNb, true
@@ -122,7 +122,7 @@ func (o *PlmnEcInfo1) GetEcRestrictionDataNbOk() (*bool, bool) {
 
 // HasEcRestrictionDataNb returns a boolean if a field has been set.
 func (o *PlmnEcInfo1) HasEcRestrictionDataNb() bool {
-	if o != nil && !IsNil(o.EcRestrictionDataNb) {
+	if o != nil && !isNil(o.EcRestrictionDataNb) {
 		return true
 	}
 
@@ -145,10 +145,10 @@ func (o PlmnEcInfo1) MarshalJSON() ([]byte, error) {
 func (o PlmnEcInfo1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["plmnId"] = o.PlmnId
-	if !IsNil(o.EcRestrictionDataWb) {
+	if !isNil(o.EcRestrictionDataWb) {
 		toSerialize["ecRestrictionDataWb"] = o.EcRestrictionDataWb
 	}
-	if !IsNil(o.EcRestrictionDataNb) {
+	if !isNil(o.EcRestrictionDataNb) {
 		toSerialize["ecRestrictionDataNb"] = o.EcRestrictionDataNb
 	}
 	return toSerialize, nil

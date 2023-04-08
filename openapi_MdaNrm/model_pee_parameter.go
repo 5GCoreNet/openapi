@@ -48,7 +48,7 @@ func NewPeeParameterWithDefaults() *PeeParameter {
 
 // GetSiteIdentification returns the SiteIdentification field value if set, zero value otherwise.
 func (o *PeeParameter) GetSiteIdentification() string {
-	if o == nil || IsNil(o.SiteIdentification) {
+	if o == nil || isNil(o.SiteIdentification) {
 		var ret string
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *PeeParameter) GetSiteIdentification() string {
 // GetSiteIdentificationOk returns a tuple with the SiteIdentification field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetSiteIdentificationOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteIdentification) {
+	if o == nil || isNil(o.SiteIdentification) {
 		return nil, false
 	}
 	return o.SiteIdentification, true
@@ -66,7 +66,7 @@ func (o *PeeParameter) GetSiteIdentificationOk() (*string, bool) {
 
 // HasSiteIdentification returns a boolean if a field has been set.
 func (o *PeeParameter) HasSiteIdentification() bool {
-	if o != nil && !IsNil(o.SiteIdentification) {
+	if o != nil && !isNil(o.SiteIdentification) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *PeeParameter) SetSiteIdentification(v string) {
 
 // GetSiteDescription returns the SiteDescription field value if set, zero value otherwise.
 func (o *PeeParameter) GetSiteDescription() string {
-	if o == nil || IsNil(o.SiteDescription) {
+	if o == nil || isNil(o.SiteDescription) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *PeeParameter) GetSiteDescription() string {
 // GetSiteDescriptionOk returns a tuple with the SiteDescription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetSiteDescriptionOk() (*string, bool) {
-	if o == nil || IsNil(o.SiteDescription) {
+	if o == nil || isNil(o.SiteDescription) {
 		return nil, false
 	}
 	return o.SiteDescription, true
@@ -98,7 +98,7 @@ func (o *PeeParameter) GetSiteDescriptionOk() (*string, bool) {
 
 // HasSiteDescription returns a boolean if a field has been set.
 func (o *PeeParameter) HasSiteDescription() bool {
-	if o != nil && !IsNil(o.SiteDescription) {
+	if o != nil && !isNil(o.SiteDescription) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *PeeParameter) SetSiteDescription(v string) {
 
 // GetSiteLatitude returns the SiteLatitude field value if set, zero value otherwise.
 func (o *PeeParameter) GetSiteLatitude() float32 {
-	if o == nil || IsNil(o.SiteLatitude) {
+	if o == nil || isNil(o.SiteLatitude) {
 		var ret float32
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PeeParameter) GetSiteLatitude() float32 {
 // GetSiteLatitudeOk returns a tuple with the SiteLatitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetSiteLatitudeOk() (*float32, bool) {
-	if o == nil || IsNil(o.SiteLatitude) {
+	if o == nil || isNil(o.SiteLatitude) {
 		return nil, false
 	}
 	return o.SiteLatitude, true
@@ -130,7 +130,7 @@ func (o *PeeParameter) GetSiteLatitudeOk() (*float32, bool) {
 
 // HasSiteLatitude returns a boolean if a field has been set.
 func (o *PeeParameter) HasSiteLatitude() bool {
-	if o != nil && !IsNil(o.SiteLatitude) {
+	if o != nil && !isNil(o.SiteLatitude) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *PeeParameter) SetSiteLatitude(v float32) {
 
 // GetSiteLongitude returns the SiteLongitude field value if set, zero value otherwise.
 func (o *PeeParameter) GetSiteLongitude() float32 {
-	if o == nil || IsNil(o.SiteLongitude) {
+	if o == nil || isNil(o.SiteLongitude) {
 		var ret float32
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *PeeParameter) GetSiteLongitude() float32 {
 // GetSiteLongitudeOk returns a tuple with the SiteLongitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetSiteLongitudeOk() (*float32, bool) {
-	if o == nil || IsNil(o.SiteLongitude) {
+	if o == nil || isNil(o.SiteLongitude) {
 		return nil, false
 	}
 	return o.SiteLongitude, true
@@ -162,7 +162,7 @@ func (o *PeeParameter) GetSiteLongitudeOk() (*float32, bool) {
 
 // HasSiteLongitude returns a boolean if a field has been set.
 func (o *PeeParameter) HasSiteLongitude() bool {
-	if o != nil && !IsNil(o.SiteLongitude) {
+	if o != nil && !isNil(o.SiteLongitude) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *PeeParameter) SetSiteLongitude(v float32) {
 
 // GetSiteAltitude returns the SiteAltitude field value if set, zero value otherwise.
 func (o *PeeParameter) GetSiteAltitude() float32 {
-	if o == nil || IsNil(o.SiteAltitude) {
+	if o == nil || isNil(o.SiteAltitude) {
 		var ret float32
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *PeeParameter) GetSiteAltitude() float32 {
 // GetSiteAltitudeOk returns a tuple with the SiteAltitude field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetSiteAltitudeOk() (*float32, bool) {
-	if o == nil || IsNil(o.SiteAltitude) {
+	if o == nil || isNil(o.SiteAltitude) {
 		return nil, false
 	}
 	return o.SiteAltitude, true
@@ -194,7 +194,7 @@ func (o *PeeParameter) GetSiteAltitudeOk() (*float32, bool) {
 
 // HasSiteAltitude returns a boolean if a field has been set.
 func (o *PeeParameter) HasSiteAltitude() bool {
-	if o != nil && !IsNil(o.SiteAltitude) {
+	if o != nil && !isNil(o.SiteAltitude) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *PeeParameter) SetSiteAltitude(v float32) {
 
 // GetEquipmentType returns the EquipmentType field value if set, zero value otherwise.
 func (o *PeeParameter) GetEquipmentType() string {
-	if o == nil || IsNil(o.EquipmentType) {
+	if o == nil || isNil(o.EquipmentType) {
 		var ret string
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *PeeParameter) GetEquipmentType() string {
 // GetEquipmentTypeOk returns a tuple with the EquipmentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetEquipmentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.EquipmentType) {
+	if o == nil || isNil(o.EquipmentType) {
 		return nil, false
 	}
 	return o.EquipmentType, true
@@ -226,7 +226,7 @@ func (o *PeeParameter) GetEquipmentTypeOk() (*string, bool) {
 
 // HasEquipmentType returns a boolean if a field has been set.
 func (o *PeeParameter) HasEquipmentType() bool {
-	if o != nil && !IsNil(o.EquipmentType) {
+	if o != nil && !isNil(o.EquipmentType) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *PeeParameter) SetEquipmentType(v string) {
 
 // GetEnvironmentType returns the EnvironmentType field value if set, zero value otherwise.
 func (o *PeeParameter) GetEnvironmentType() string {
-	if o == nil || IsNil(o.EnvironmentType) {
+	if o == nil || isNil(o.EnvironmentType) {
 		var ret string
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *PeeParameter) GetEnvironmentType() string {
 // GetEnvironmentTypeOk returns a tuple with the EnvironmentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetEnvironmentTypeOk() (*string, bool) {
-	if o == nil || IsNil(o.EnvironmentType) {
+	if o == nil || isNil(o.EnvironmentType) {
 		return nil, false
 	}
 	return o.EnvironmentType, true
@@ -258,7 +258,7 @@ func (o *PeeParameter) GetEnvironmentTypeOk() (*string, bool) {
 
 // HasEnvironmentType returns a boolean if a field has been set.
 func (o *PeeParameter) HasEnvironmentType() bool {
-	if o != nil && !IsNil(o.EnvironmentType) {
+	if o != nil && !isNil(o.EnvironmentType) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *PeeParameter) SetEnvironmentType(v string) {
 
 // GetPowerInterface returns the PowerInterface field value if set, zero value otherwise.
 func (o *PeeParameter) GetPowerInterface() string {
-	if o == nil || IsNil(o.PowerInterface) {
+	if o == nil || isNil(o.PowerInterface) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *PeeParameter) GetPowerInterface() string {
 // GetPowerInterfaceOk returns a tuple with the PowerInterface field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PeeParameter) GetPowerInterfaceOk() (*string, bool) {
-	if o == nil || IsNil(o.PowerInterface) {
+	if o == nil || isNil(o.PowerInterface) {
 		return nil, false
 	}
 	return o.PowerInterface, true
@@ -290,7 +290,7 @@ func (o *PeeParameter) GetPowerInterfaceOk() (*string, bool) {
 
 // HasPowerInterface returns a boolean if a field has been set.
 func (o *PeeParameter) HasPowerInterface() bool {
-	if o != nil && !IsNil(o.PowerInterface) {
+	if o != nil && !isNil(o.PowerInterface) {
 		return true
 	}
 
@@ -312,28 +312,28 @@ func (o PeeParameter) MarshalJSON() ([]byte, error) {
 
 func (o PeeParameter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SiteIdentification) {
+	if !isNil(o.SiteIdentification) {
 		toSerialize["siteIdentification"] = o.SiteIdentification
 	}
-	if !IsNil(o.SiteDescription) {
+	if !isNil(o.SiteDescription) {
 		toSerialize["siteDescription"] = o.SiteDescription
 	}
-	if !IsNil(o.SiteLatitude) {
+	if !isNil(o.SiteLatitude) {
 		toSerialize["siteLatitude"] = o.SiteLatitude
 	}
-	if !IsNil(o.SiteLongitude) {
+	if !isNil(o.SiteLongitude) {
 		toSerialize["siteLongitude"] = o.SiteLongitude
 	}
-	if !IsNil(o.SiteAltitude) {
+	if !isNil(o.SiteAltitude) {
 		toSerialize["siteAltitude"] = o.SiteAltitude
 	}
-	if !IsNil(o.EquipmentType) {
+	if !isNil(o.EquipmentType) {
 		toSerialize["equipmentType"] = o.EquipmentType
 	}
-	if !IsNil(o.EnvironmentType) {
+	if !isNil(o.EnvironmentType) {
 		toSerialize["environmentType"] = o.EnvironmentType
 	}
-	if !IsNil(o.PowerInterface) {
+	if !isNil(o.PowerInterface) {
 		toSerialize["powerInterface"] = o.PowerInterface
 	}
 	return toSerialize, nil

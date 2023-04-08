@@ -69,7 +69,7 @@ func (o *Ifc) SetPriority(v int32) {
 
 // GetTrigger returns the Trigger field value if set, zero value otherwise.
 func (o *Ifc) GetTrigger() TriggerPoint {
-	if o == nil || IsNil(o.Trigger) {
+	if o == nil || isNil(o.Trigger) {
 		var ret TriggerPoint
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *Ifc) GetTrigger() TriggerPoint {
 // GetTriggerOk returns a tuple with the Trigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ifc) GetTriggerOk() (*TriggerPoint, bool) {
-	if o == nil || IsNil(o.Trigger) {
+	if o == nil || isNil(o.Trigger) {
 		return nil, false
 	}
 	return o.Trigger, true
@@ -87,7 +87,7 @@ func (o *Ifc) GetTriggerOk() (*TriggerPoint, bool) {
 
 // HasTrigger returns a boolean if a field has been set.
 func (o *Ifc) HasTrigger() bool {
-	if o != nil && !IsNil(o.Trigger) {
+	if o != nil && !isNil(o.Trigger) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o Ifc) MarshalJSON() ([]byte, error) {
 func (o Ifc) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["priority"] = o.Priority
-	if !IsNil(o.Trigger) {
+	if !isNil(o.Trigger) {
 		toSerialize["trigger"] = o.Trigger
 	}
 	toSerialize["appServer"] = o.AppServer

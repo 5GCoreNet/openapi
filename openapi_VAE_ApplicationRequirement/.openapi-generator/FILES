@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -16,11 +15,14 @@ docs/ApplicationRequirementsCollectionDocumentApi.md
 docs/IndividualApplicationRequirementDocumentApi.md
 docs/InvalidParam.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
 docs/ReservationResult.md
+docs/ReservationResultAnyOf.md
 docs/ServiceLevel.md
+docs/ServiceLevelAnyOf.md
 docs/Snssai.md
 docs/WebsockNotifConfig.md
 git_push.sh
@@ -33,11 +35,14 @@ model_application_requirement.go
 model_application_requirement_data.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
 model_reservation_result.go
+model_reservation_result_any_of.go
 model_service_level.go
+model_service_level_any_of.go
 model_snssai.go
 model_websock_notif_config.go
 response.go

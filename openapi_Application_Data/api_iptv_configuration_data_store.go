@@ -13,7 +13,7 @@ package openapi_Application_Data
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"reflect"
@@ -106,10 +106,10 @@ func (a *IPTVConfigurationDataStoreApiService) ReadIPTVCongifurationDataExecute(
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "config-ids", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "config-ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "config-ids", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "config-ids", t, "multi")
 		}
 	}
 	if r.dnns != nil {
@@ -117,24 +117,24 @@ func (a *IPTVConfigurationDataStoreApiService) ReadIPTVCongifurationDataExecute(
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "dnns", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "dnns", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "dnns", t, "multi")
 		}
 	}
 	if r.snssais != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "snssais", r.snssais, "csv")
+		parameterAddToQuery(localVarQueryParams, "snssais", r.snssais, "csv")
 	}
 	if r.supis != nil {
 		t := *r.supis
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "supis", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "supis", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "supis", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "supis", t, "multi")
 		}
 	}
 	if r.interGroupIds != nil {
@@ -142,10 +142,10 @@ func (a *IPTVConfigurationDataStoreApiService) ReadIPTVCongifurationDataExecute(
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "inter-group-ids", s.Index(i), "multi")
+				parameterAddToQuery(localVarQueryParams, "inter-group-ids", s.Index(i), "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "inter-group-ids", t, "multi")
+			parameterAddToQuery(localVarQueryParams, "inter-group-ids", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -175,9 +175,9 @@ func (a *IPTVConfigurationDataStoreApiService) ReadIPTVCongifurationDataExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -71,7 +71,7 @@ func (o *EventsSubscReqDataRm) SetEvents(v []TscEvent) {
 
 // GetNotifUri returns the NotifUri field value if set, zero value otherwise.
 func (o *EventsSubscReqDataRm) GetNotifUri() string {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *EventsSubscReqDataRm) GetNotifUri() string {
 // GetNotifUriOk returns a tuple with the NotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqDataRm) GetNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifUri) {
+	if o == nil || isNil(o.NotifUri) {
 		return nil, false
 	}
 	return o.NotifUri, true
@@ -89,7 +89,7 @@ func (o *EventsSubscReqDataRm) GetNotifUriOk() (*string, bool) {
 
 // HasNotifUri returns a boolean if a field has been set.
 func (o *EventsSubscReqDataRm) HasNotifUri() bool {
-	if o != nil && !IsNil(o.NotifUri) {
+	if o != nil && !isNil(o.NotifUri) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *EventsSubscReqDataRm) SetNotifUri(v string) {
 
 // GetQosMon returns the QosMon field value if set, zero value otherwise.
 func (o *EventsSubscReqDataRm) GetQosMon() QosMonitoringInformationRm {
-	if o == nil || IsNil(o.QosMon) {
+	if o == nil || isNil(o.QosMon) {
 		var ret QosMonitoringInformationRm
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *EventsSubscReqDataRm) GetQosMon() QosMonitoringInformationRm {
 // GetQosMonOk returns a tuple with the QosMon field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqDataRm) GetQosMonOk() (*QosMonitoringInformationRm, bool) {
-	if o == nil || IsNil(o.QosMon) {
+	if o == nil || isNil(o.QosMon) {
 		return nil, false
 	}
 	return o.QosMon, true
@@ -121,7 +121,7 @@ func (o *EventsSubscReqDataRm) GetQosMonOk() (*QosMonitoringInformationRm, bool)
 
 // HasQosMon returns a boolean if a field has been set.
 func (o *EventsSubscReqDataRm) HasQosMon() bool {
-	if o != nil && !IsNil(o.QosMon) {
+	if o != nil && !isNil(o.QosMon) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *EventsSubscReqDataRm) SetQosMon(v QosMonitoringInformationRm) {
 
 // GetUsgThres returns the UsgThres field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *EventsSubscReqDataRm) GetUsgThres() UsageThresholdRm {
-	if o == nil || IsNil(o.UsgThres.Get()) {
+	if o == nil || isNil(o.UsgThres.Get()) {
 		var ret UsageThresholdRm
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *EventsSubscReqDataRm) UnsetUsgThres() {
 
 // GetNotifCorreId returns the NotifCorreId field value if set, zero value otherwise.
 func (o *EventsSubscReqDataRm) GetNotifCorreId() string {
-	if o == nil || IsNil(o.NotifCorreId) {
+	if o == nil || isNil(o.NotifCorreId) {
 		var ret string
 		return ret
 	}
@@ -187,7 +187,7 @@ func (o *EventsSubscReqDataRm) GetNotifCorreId() string {
 // GetNotifCorreIdOk returns a tuple with the NotifCorreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventsSubscReqDataRm) GetNotifCorreIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifCorreId) {
+	if o == nil || isNil(o.NotifCorreId) {
 		return nil, false
 	}
 	return o.NotifCorreId, true
@@ -195,7 +195,7 @@ func (o *EventsSubscReqDataRm) GetNotifCorreIdOk() (*string, bool) {
 
 // HasNotifCorreId returns a boolean if a field has been set.
 func (o *EventsSubscReqDataRm) HasNotifCorreId() bool {
-	if o != nil && !IsNil(o.NotifCorreId) {
+	if o != nil && !isNil(o.NotifCorreId) {
 		return true
 	}
 
@@ -218,16 +218,16 @@ func (o EventsSubscReqDataRm) MarshalJSON() ([]byte, error) {
 func (o EventsSubscReqDataRm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["events"] = o.Events
-	if !IsNil(o.NotifUri) {
+	if !isNil(o.NotifUri) {
 		toSerialize["notifUri"] = o.NotifUri
 	}
-	if !IsNil(o.QosMon) {
+	if !isNil(o.QosMon) {
 		toSerialize["qosMon"] = o.QosMon
 	}
 	if o.UsgThres.IsSet() {
 		toSerialize["usgThres"] = o.UsgThres.Get()
 	}
-	if !IsNil(o.NotifCorreId) {
+	if !isNil(o.NotifCorreId) {
 		toSerialize["notifCorreId"] = o.NotifCorreId
 	}
 	return toSerialize, nil

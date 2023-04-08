@@ -41,7 +41,7 @@ func NewMDAFunctionSingleAllOf1WithDefaults() *MDAFunctionSingleAllOf1 {
 
 // GetMDARequest returns the MDARequest field value if set, zero value otherwise.
 func (o *MDAFunctionSingleAllOf1) GetMDARequest() []MDARequestSingle {
-	if o == nil || IsNil(o.MDARequest) {
+	if o == nil || isNil(o.MDARequest) {
 		var ret []MDARequestSingle
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *MDAFunctionSingleAllOf1) GetMDARequest() []MDARequestSingle {
 // GetMDARequestOk returns a tuple with the MDARequest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MDAFunctionSingleAllOf1) GetMDARequestOk() ([]MDARequestSingle, bool) {
-	if o == nil || IsNil(o.MDARequest) {
+	if o == nil || isNil(o.MDARequest) {
 		return nil, false
 	}
 	return o.MDARequest, true
@@ -59,7 +59,7 @@ func (o *MDAFunctionSingleAllOf1) GetMDARequestOk() ([]MDARequestSingle, bool) {
 
 // HasMDARequest returns a boolean if a field has been set.
 func (o *MDAFunctionSingleAllOf1) HasMDARequest() bool {
-	if o != nil && !IsNil(o.MDARequest) {
+	if o != nil && !isNil(o.MDARequest) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o MDAFunctionSingleAllOf1) MarshalJSON() ([]byte, error) {
 
 func (o MDAFunctionSingleAllOf1) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MDARequest) {
+	if !isNil(o.MDARequest) {
 		toSerialize["MDARequest"] = o.MDARequest
 	}
 	return toSerialize, nil

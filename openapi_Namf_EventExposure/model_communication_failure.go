@@ -42,7 +42,7 @@ func NewCommunicationFailureWithDefaults() *CommunicationFailure {
 
 // GetNasReleaseCode returns the NasReleaseCode field value if set, zero value otherwise.
 func (o *CommunicationFailure) GetNasReleaseCode() string {
-	if o == nil || IsNil(o.NasReleaseCode) {
+	if o == nil || isNil(o.NasReleaseCode) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *CommunicationFailure) GetNasReleaseCode() string {
 // GetNasReleaseCodeOk returns a tuple with the NasReleaseCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationFailure) GetNasReleaseCodeOk() (*string, bool) {
-	if o == nil || IsNil(o.NasReleaseCode) {
+	if o == nil || isNil(o.NasReleaseCode) {
 		return nil, false
 	}
 	return o.NasReleaseCode, true
@@ -60,7 +60,7 @@ func (o *CommunicationFailure) GetNasReleaseCodeOk() (*string, bool) {
 
 // HasNasReleaseCode returns a boolean if a field has been set.
 func (o *CommunicationFailure) HasNasReleaseCode() bool {
-	if o != nil && !IsNil(o.NasReleaseCode) {
+	if o != nil && !isNil(o.NasReleaseCode) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *CommunicationFailure) SetNasReleaseCode(v string) {
 
 // GetRanReleaseCode returns the RanReleaseCode field value if set, zero value otherwise.
 func (o *CommunicationFailure) GetRanReleaseCode() NgApCause {
-	if o == nil || IsNil(o.RanReleaseCode) {
+	if o == nil || isNil(o.RanReleaseCode) {
 		var ret NgApCause
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *CommunicationFailure) GetRanReleaseCode() NgApCause {
 // GetRanReleaseCodeOk returns a tuple with the RanReleaseCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CommunicationFailure) GetRanReleaseCodeOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.RanReleaseCode) {
+	if o == nil || isNil(o.RanReleaseCode) {
 		return nil, false
 	}
 	return o.RanReleaseCode, true
@@ -92,7 +92,7 @@ func (o *CommunicationFailure) GetRanReleaseCodeOk() (*NgApCause, bool) {
 
 // HasRanReleaseCode returns a boolean if a field has been set.
 func (o *CommunicationFailure) HasRanReleaseCode() bool {
-	if o != nil && !IsNil(o.RanReleaseCode) {
+	if o != nil && !isNil(o.RanReleaseCode) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o CommunicationFailure) MarshalJSON() ([]byte, error) {
 
 func (o CommunicationFailure) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NasReleaseCode) {
+	if !isNil(o.NasReleaseCode) {
 		toSerialize["nasReleaseCode"] = o.NasReleaseCode
 	}
-	if !IsNil(o.RanReleaseCode) {
+	if !isNil(o.RanReleaseCode) {
 		toSerialize["ranReleaseCode"] = o.RanReleaseCode
 	}
 	return toSerialize, nil

@@ -107,7 +107,7 @@ func (o *BdtData) SetTransPolicy(v TransferPolicy) {
 
 // GetBdtRefId returns the BdtRefId field value if set, zero value otherwise.
 func (o *BdtData) GetBdtRefId() string {
-	if o == nil || IsNil(o.BdtRefId) {
+	if o == nil || isNil(o.BdtRefId) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *BdtData) GetBdtRefId() string {
 // GetBdtRefIdOk returns a tuple with the BdtRefId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetBdtRefIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BdtRefId) {
+	if o == nil || isNil(o.BdtRefId) {
 		return nil, false
 	}
 	return o.BdtRefId, true
@@ -125,7 +125,7 @@ func (o *BdtData) GetBdtRefIdOk() (*string, bool) {
 
 // HasBdtRefId returns a boolean if a field has been set.
 func (o *BdtData) HasBdtRefId() bool {
-	if o != nil && !IsNil(o.BdtRefId) {
+	if o != nil && !isNil(o.BdtRefId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *BdtData) SetBdtRefId(v string) {
 
 // GetNwAreaInfo returns the NwAreaInfo field value if set, zero value otherwise.
 func (o *BdtData) GetNwAreaInfo() NetworkAreaInfo2 {
-	if o == nil || IsNil(o.NwAreaInfo) {
+	if o == nil || isNil(o.NwAreaInfo) {
 		var ret NetworkAreaInfo2
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *BdtData) GetNwAreaInfo() NetworkAreaInfo2 {
 // GetNwAreaInfoOk returns a tuple with the NwAreaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetNwAreaInfoOk() (*NetworkAreaInfo2, bool) {
-	if o == nil || IsNil(o.NwAreaInfo) {
+	if o == nil || isNil(o.NwAreaInfo) {
 		return nil, false
 	}
 	return o.NwAreaInfo, true
@@ -157,7 +157,7 @@ func (o *BdtData) GetNwAreaInfoOk() (*NetworkAreaInfo2, bool) {
 
 // HasNwAreaInfo returns a boolean if a field has been set.
 func (o *BdtData) HasNwAreaInfo() bool {
-	if o != nil && !IsNil(o.NwAreaInfo) {
+	if o != nil && !isNil(o.NwAreaInfo) {
 		return true
 	}
 
@@ -171,7 +171,7 @@ func (o *BdtData) SetNwAreaInfo(v NetworkAreaInfo2) {
 
 // GetNumOfUes returns the NumOfUes field value if set, zero value otherwise.
 func (o *BdtData) GetNumOfUes() int32 {
-	if o == nil || IsNil(o.NumOfUes) {
+	if o == nil || isNil(o.NumOfUes) {
 		var ret int32
 		return ret
 	}
@@ -181,7 +181,7 @@ func (o *BdtData) GetNumOfUes() int32 {
 // GetNumOfUesOk returns a tuple with the NumOfUes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetNumOfUesOk() (*int32, bool) {
-	if o == nil || IsNil(o.NumOfUes) {
+	if o == nil || isNil(o.NumOfUes) {
 		return nil, false
 	}
 	return o.NumOfUes, true
@@ -189,7 +189,7 @@ func (o *BdtData) GetNumOfUesOk() (*int32, bool) {
 
 // HasNumOfUes returns a boolean if a field has been set.
 func (o *BdtData) HasNumOfUes() bool {
-	if o != nil && !IsNil(o.NumOfUes) {
+	if o != nil && !isNil(o.NumOfUes) {
 		return true
 	}
 
@@ -203,7 +203,7 @@ func (o *BdtData) SetNumOfUes(v int32) {
 
 // GetVolPerUe returns the VolPerUe field value if set, zero value otherwise.
 func (o *BdtData) GetVolPerUe() UsageThreshold {
-	if o == nil || IsNil(o.VolPerUe) {
+	if o == nil || isNil(o.VolPerUe) {
 		var ret UsageThreshold
 		return ret
 	}
@@ -213,7 +213,7 @@ func (o *BdtData) GetVolPerUe() UsageThreshold {
 // GetVolPerUeOk returns a tuple with the VolPerUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetVolPerUeOk() (*UsageThreshold, bool) {
-	if o == nil || IsNil(o.VolPerUe) {
+	if o == nil || isNil(o.VolPerUe) {
 		return nil, false
 	}
 	return o.VolPerUe, true
@@ -221,7 +221,7 @@ func (o *BdtData) GetVolPerUeOk() (*UsageThreshold, bool) {
 
 // HasVolPerUe returns a boolean if a field has been set.
 func (o *BdtData) HasVolPerUe() bool {
-	if o != nil && !IsNil(o.VolPerUe) {
+	if o != nil && !isNil(o.VolPerUe) {
 		return true
 	}
 
@@ -235,7 +235,7 @@ func (o *BdtData) SetVolPerUe(v UsageThreshold) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *BdtData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -245,7 +245,7 @@ func (o *BdtData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -253,7 +253,7 @@ func (o *BdtData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *BdtData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *BdtData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *BdtData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *BdtData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -285,7 +285,7 @@ func (o *BdtData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *BdtData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -299,7 +299,7 @@ func (o *BdtData) SetSnssai(v Snssai) {
 
 // GetTrafficDes returns the TrafficDes field value if set, zero value otherwise.
 func (o *BdtData) GetTrafficDes() string {
-	if o == nil || IsNil(o.TrafficDes) {
+	if o == nil || isNil(o.TrafficDes) {
 		var ret string
 		return ret
 	}
@@ -309,7 +309,7 @@ func (o *BdtData) GetTrafficDes() string {
 // GetTrafficDesOk returns a tuple with the TrafficDes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetTrafficDesOk() (*string, bool) {
-	if o == nil || IsNil(o.TrafficDes) {
+	if o == nil || isNil(o.TrafficDes) {
 		return nil, false
 	}
 	return o.TrafficDes, true
@@ -317,7 +317,7 @@ func (o *BdtData) GetTrafficDesOk() (*string, bool) {
 
 // HasTrafficDes returns a boolean if a field has been set.
 func (o *BdtData) HasTrafficDes() bool {
-	if o != nil && !IsNil(o.TrafficDes) {
+	if o != nil && !isNil(o.TrafficDes) {
 		return true
 	}
 
@@ -331,7 +331,7 @@ func (o *BdtData) SetTrafficDes(v string) {
 
 // GetBdtpStatus returns the BdtpStatus field value if set, zero value otherwise.
 func (o *BdtData) GetBdtpStatus() BdtPolicyStatus {
-	if o == nil || IsNil(o.BdtpStatus) {
+	if o == nil || isNil(o.BdtpStatus) {
 		var ret BdtPolicyStatus
 		return ret
 	}
@@ -341,7 +341,7 @@ func (o *BdtData) GetBdtpStatus() BdtPolicyStatus {
 // GetBdtpStatusOk returns a tuple with the BdtpStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
-	if o == nil || IsNil(o.BdtpStatus) {
+	if o == nil || isNil(o.BdtpStatus) {
 		return nil, false
 	}
 	return o.BdtpStatus, true
@@ -349,7 +349,7 @@ func (o *BdtData) GetBdtpStatusOk() (*BdtPolicyStatus, bool) {
 
 // HasBdtpStatus returns a boolean if a field has been set.
 func (o *BdtData) HasBdtpStatus() bool {
-	if o != nil && !IsNil(o.BdtpStatus) {
+	if o != nil && !isNil(o.BdtpStatus) {
 		return true
 	}
 
@@ -363,7 +363,7 @@ func (o *BdtData) SetBdtpStatus(v BdtPolicyStatus) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *BdtData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -373,7 +373,7 @@ func (o *BdtData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -381,7 +381,7 @@ func (o *BdtData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *BdtData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -395,7 +395,7 @@ func (o *BdtData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *BdtData) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -405,7 +405,7 @@ func (o *BdtData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BdtData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -413,7 +413,7 @@ func (o *BdtData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *BdtData) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -437,34 +437,34 @@ func (o BdtData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["aspId"] = o.AspId
 	toSerialize["transPolicy"] = o.TransPolicy
-	if !IsNil(o.BdtRefId) {
+	if !isNil(o.BdtRefId) {
 		toSerialize["bdtRefId"] = o.BdtRefId
 	}
-	if !IsNil(o.NwAreaInfo) {
+	if !isNil(o.NwAreaInfo) {
 		toSerialize["nwAreaInfo"] = o.NwAreaInfo
 	}
-	if !IsNil(o.NumOfUes) {
+	if !isNil(o.NumOfUes) {
 		toSerialize["numOfUes"] = o.NumOfUes
 	}
-	if !IsNil(o.VolPerUe) {
+	if !isNil(o.VolPerUe) {
 		toSerialize["volPerUe"] = o.VolPerUe
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.TrafficDes) {
+	if !isNil(o.TrafficDes) {
 		toSerialize["trafficDes"] = o.TrafficDes
 	}
-	if !IsNil(o.BdtpStatus) {
+	if !isNil(o.BdtpStatus) {
 		toSerialize["bdtpStatus"] = o.BdtpStatus
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

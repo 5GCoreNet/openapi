@@ -46,7 +46,7 @@ func NewAnalyticsSubscriptionWithDefaults() *AnalyticsSubscription {
 
 // GetNwdafId returns the NwdafId field value if set, zero value otherwise.
 func (o *AnalyticsSubscription) GetNwdafId() string {
-	if o == nil || IsNil(o.NwdafId) {
+	if o == nil || isNil(o.NwdafId) {
 		var ret string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *AnalyticsSubscription) GetNwdafId() string {
 // GetNwdafIdOk returns a tuple with the NwdafId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsSubscription) GetNwdafIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NwdafId) {
+	if o == nil || isNil(o.NwdafId) {
 		return nil, false
 	}
 	return o.NwdafId, true
@@ -64,7 +64,7 @@ func (o *AnalyticsSubscription) GetNwdafIdOk() (*string, bool) {
 
 // HasNwdafId returns a boolean if a field has been set.
 func (o *AnalyticsSubscription) HasNwdafId() bool {
-	if o != nil && !IsNil(o.NwdafId) {
+	if o != nil && !isNil(o.NwdafId) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *AnalyticsSubscription) SetNwdafId(v string) {
 
 // GetNwdafSetId returns the NwdafSetId field value if set, zero value otherwise.
 func (o *AnalyticsSubscription) GetNwdafSetId() string {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		var ret string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *AnalyticsSubscription) GetNwdafSetId() string {
 // GetNwdafSetIdOk returns a tuple with the NwdafSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnalyticsSubscription) GetNwdafSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NwdafSetId) {
+	if o == nil || isNil(o.NwdafSetId) {
 		return nil, false
 	}
 	return o.NwdafSetId, true
@@ -96,7 +96,7 @@ func (o *AnalyticsSubscription) GetNwdafSetIdOk() (*string, bool) {
 
 // HasNwdafSetId returns a boolean if a field has been set.
 func (o *AnalyticsSubscription) HasNwdafSetId() bool {
-	if o != nil && !IsNil(o.NwdafSetId) {
+	if o != nil && !isNil(o.NwdafSetId) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o AnalyticsSubscription) MarshalJSON() ([]byte, error) {
 
 func (o AnalyticsSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NwdafId) {
+	if !isNil(o.NwdafId) {
 		toSerialize["nwdafId"] = o.NwdafId
 	}
-	if !IsNil(o.NwdafSetId) {
+	if !isNil(o.NwdafSetId) {
 		toSerialize["nwdafSetId"] = o.NwdafSetId
 	}
 	toSerialize["nwdafSubscriptionList"] = o.NwdafSubscriptionList

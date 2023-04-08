@@ -45,7 +45,7 @@ func NewVALGroupFilterWithDefaults() *VALGroupFilter {
 
 // GetValSvcId returns the ValSvcId field value if set, zero value otherwise.
 func (o *VALGroupFilter) GetValSvcId() string {
-	if o == nil || IsNil(o.ValSvcId) {
+	if o == nil || isNil(o.ValSvcId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *VALGroupFilter) GetValSvcId() string {
 // GetValSvcIdOk returns a tuple with the ValSvcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VALGroupFilter) GetValSvcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ValSvcId) {
+	if o == nil || isNil(o.ValSvcId) {
 		return nil, false
 	}
 	return o.ValSvcId, true
@@ -63,7 +63,7 @@ func (o *VALGroupFilter) GetValSvcIdOk() (*string, bool) {
 
 // HasValSvcId returns a boolean if a field has been set.
 func (o *VALGroupFilter) HasValSvcId() bool {
-	if o != nil && !IsNil(o.ValSvcId) {
+	if o != nil && !isNil(o.ValSvcId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o VALGroupFilter) MarshalJSON() ([]byte, error) {
 
 func (o VALGroupFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ValSvcId) {
+	if !isNil(o.ValSvcId) {
 		toSerialize["valSvcId"] = o.ValSvcId
 	}
 	toSerialize["valGrpIds"] = o.ValGrpIds

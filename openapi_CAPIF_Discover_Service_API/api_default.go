@@ -13,7 +13,7 @@ package openapi_CAPIF_Discover_Service_API
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 )
@@ -148,36 +148,36 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 		return localVarReturnValue, nil, reportError("apiInvokerId is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
+	parameterAddToQuery(localVarQueryParams, "api-invoker-id", r.apiInvokerId, "")
 	if r.apiName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-name", r.apiName, "")
+		parameterAddToQuery(localVarQueryParams, "api-name", r.apiName, "")
 	}
 	if r.apiVersion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-version", r.apiVersion, "")
+		parameterAddToQuery(localVarQueryParams, "api-version", r.apiVersion, "")
 	}
 	if r.commType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "comm-type", r.commType, "")
+		parameterAddToQuery(localVarQueryParams, "comm-type", r.commType, "")
 	}
 	if r.protocol != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", r.protocol, "")
+		parameterAddToQuery(localVarQueryParams, "protocol", r.protocol, "")
 	}
 	if r.aefId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "aef-id", r.aefId, "")
+		parameterAddToQuery(localVarQueryParams, "aef-id", r.aefId, "")
 	}
 	if r.dataFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "data-format", r.dataFormat, "")
+		parameterAddToQuery(localVarQueryParams, "data-format", r.dataFormat, "")
 	}
 	if r.apiCat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-cat", r.apiCat, "")
+		parameterAddToQuery(localVarQueryParams, "api-cat", r.apiCat, "")
 	}
 	if r.preferredAefLoc != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "preferred-aef-loc", r.preferredAefLoc, "")
+		parameterAddToQuery(localVarQueryParams, "preferred-aef-loc", r.preferredAefLoc, "")
 	}
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
 	if r.apiSupportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "api-supported-features", r.apiSupportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "api-supported-features", r.apiSupportedFeatures, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -206,9 +206,9 @@ func (a *DefaultApiService) AllServiceAPIsGetExecute(r ApiAllServiceAPIsGetReque
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

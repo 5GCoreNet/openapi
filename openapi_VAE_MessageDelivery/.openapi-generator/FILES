@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -21,10 +20,12 @@ docs/MessageDeliveriesCollectionCollectionApi.md
 docs/MessageDeliveryDataSubscriptionsCollectionApi.md
 docs/MessageDeliverySubscriptionData.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
 docs/Result.md
+docs/ResultAnyOf.md
 docs/Snssai.md
 docs/UplinkMessageDeliveryData.md
 docs/WebsockNotifConfig.md
@@ -37,10 +38,12 @@ model_downlink_message_delivery_data.go
 model_invalid_param.go
 model_message_delivery_subscription_data.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go
 model_result.go
+model_result_any_of.go
 model_snssai.go
 model_uplink_message_delivery_data.go
 model_websock_notif_config.go

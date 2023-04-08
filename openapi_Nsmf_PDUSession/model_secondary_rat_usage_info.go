@@ -68,7 +68,7 @@ func (o *SecondaryRatUsageInfo) SetSecondaryRatType(v RatType) {
 
 // GetQosFlowsUsageData returns the QosFlowsUsageData field value if set, zero value otherwise.
 func (o *SecondaryRatUsageInfo) GetQosFlowsUsageData() []QosFlowUsageReport {
-	if o == nil || IsNil(o.QosFlowsUsageData) {
+	if o == nil || isNil(o.QosFlowsUsageData) {
 		var ret []QosFlowUsageReport
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *SecondaryRatUsageInfo) GetQosFlowsUsageData() []QosFlowUsageReport {
 // GetQosFlowsUsageDataOk returns a tuple with the QosFlowsUsageData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecondaryRatUsageInfo) GetQosFlowsUsageDataOk() ([]QosFlowUsageReport, bool) {
-	if o == nil || IsNil(o.QosFlowsUsageData) {
+	if o == nil || isNil(o.QosFlowsUsageData) {
 		return nil, false
 	}
 	return o.QosFlowsUsageData, true
@@ -86,7 +86,7 @@ func (o *SecondaryRatUsageInfo) GetQosFlowsUsageDataOk() ([]QosFlowUsageReport, 
 
 // HasQosFlowsUsageData returns a boolean if a field has been set.
 func (o *SecondaryRatUsageInfo) HasQosFlowsUsageData() bool {
-	if o != nil && !IsNil(o.QosFlowsUsageData) {
+	if o != nil && !isNil(o.QosFlowsUsageData) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *SecondaryRatUsageInfo) SetQosFlowsUsageData(v []QosFlowUsageReport) {
 
 // GetPduSessionUsageData returns the PduSessionUsageData field value if set, zero value otherwise.
 func (o *SecondaryRatUsageInfo) GetPduSessionUsageData() []VolumeTimedReport {
-	if o == nil || IsNil(o.PduSessionUsageData) {
+	if o == nil || isNil(o.PduSessionUsageData) {
 		var ret []VolumeTimedReport
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *SecondaryRatUsageInfo) GetPduSessionUsageData() []VolumeTimedReport {
 // GetPduSessionUsageDataOk returns a tuple with the PduSessionUsageData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SecondaryRatUsageInfo) GetPduSessionUsageDataOk() ([]VolumeTimedReport, bool) {
-	if o == nil || IsNil(o.PduSessionUsageData) {
+	if o == nil || isNil(o.PduSessionUsageData) {
 		return nil, false
 	}
 	return o.PduSessionUsageData, true
@@ -118,7 +118,7 @@ func (o *SecondaryRatUsageInfo) GetPduSessionUsageDataOk() ([]VolumeTimedReport,
 
 // HasPduSessionUsageData returns a boolean if a field has been set.
 func (o *SecondaryRatUsageInfo) HasPduSessionUsageData() bool {
-	if o != nil && !IsNil(o.PduSessionUsageData) {
+	if o != nil && !isNil(o.PduSessionUsageData) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o SecondaryRatUsageInfo) MarshalJSON() ([]byte, error) {
 func (o SecondaryRatUsageInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["secondaryRatType"] = o.SecondaryRatType
-	if !IsNil(o.QosFlowsUsageData) {
+	if !isNil(o.QosFlowsUsageData) {
 		toSerialize["qosFlowsUsageData"] = o.QosFlowsUsageData
 	}
-	if !IsNil(o.PduSessionUsageData) {
+	if !isNil(o.PduSessionUsageData) {
 		toSerialize["pduSessionUsageData"] = o.PduSessionUsageData
 	}
 	return toSerialize, nil

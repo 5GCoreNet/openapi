@@ -50,7 +50,7 @@ func NewNiddConfigurationPatchWithDefaults() *NiddConfigurationPatch {
 
 // GetDuration returns the Duration field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiddConfigurationPatch) GetDuration() time.Time {
-	if o == nil || IsNil(o.Duration.Get()) {
+	if o == nil || isNil(o.Duration.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *NiddConfigurationPatch) UnsetDuration() {
 
 // GetReliableDataService returns the ReliableDataService field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *NiddConfigurationPatch) GetReliableDataService() bool {
-	if o == nil || IsNil(o.ReliableDataService.Get()) {
+	if o == nil || isNil(o.ReliableDataService.Get()) {
 		var ret bool
 		return ret
 	}
@@ -134,7 +134,7 @@ func (o *NiddConfigurationPatch) UnsetReliableDataService() {
 
 // GetRdsPorts returns the RdsPorts field value if set, zero value otherwise.
 func (o *NiddConfigurationPatch) GetRdsPorts() []RdsPort {
-	if o == nil || IsNil(o.RdsPorts) {
+	if o == nil || isNil(o.RdsPorts) {
 		var ret []RdsPort
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *NiddConfigurationPatch) GetRdsPorts() []RdsPort {
 // GetRdsPortsOk returns a tuple with the RdsPorts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddConfigurationPatch) GetRdsPortsOk() ([]RdsPort, bool) {
-	if o == nil || IsNil(o.RdsPorts) {
+	if o == nil || isNil(o.RdsPorts) {
 		return nil, false
 	}
 	return o.RdsPorts, true
@@ -152,7 +152,7 @@ func (o *NiddConfigurationPatch) GetRdsPortsOk() ([]RdsPort, bool) {
 
 // HasRdsPorts returns a boolean if a field has been set.
 func (o *NiddConfigurationPatch) HasRdsPorts() bool {
-	if o != nil && !IsNil(o.RdsPorts) {
+	if o != nil && !isNil(o.RdsPorts) {
 		return true
 	}
 
@@ -166,7 +166,7 @@ func (o *NiddConfigurationPatch) SetRdsPorts(v []RdsPort) {
 
 // GetPdnEstablishmentOption returns the PdnEstablishmentOption field value if set, zero value otherwise.
 func (o *NiddConfigurationPatch) GetPdnEstablishmentOption() PdnEstablishmentOptionsRm {
-	if o == nil || IsNil(o.PdnEstablishmentOption) {
+	if o == nil || isNil(o.PdnEstablishmentOption) {
 		var ret PdnEstablishmentOptionsRm
 		return ret
 	}
@@ -176,7 +176,7 @@ func (o *NiddConfigurationPatch) GetPdnEstablishmentOption() PdnEstablishmentOpt
 // GetPdnEstablishmentOptionOk returns a tuple with the PdnEstablishmentOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddConfigurationPatch) GetPdnEstablishmentOptionOk() (*PdnEstablishmentOptionsRm, bool) {
-	if o == nil || IsNil(o.PdnEstablishmentOption) {
+	if o == nil || isNil(o.PdnEstablishmentOption) {
 		return nil, false
 	}
 	return o.PdnEstablishmentOption, true
@@ -184,7 +184,7 @@ func (o *NiddConfigurationPatch) GetPdnEstablishmentOptionOk() (*PdnEstablishmen
 
 // HasPdnEstablishmentOption returns a boolean if a field has been set.
 func (o *NiddConfigurationPatch) HasPdnEstablishmentOption() bool {
-	if o != nil && !IsNil(o.PdnEstablishmentOption) {
+	if o != nil && !isNil(o.PdnEstablishmentOption) {
 		return true
 	}
 
@@ -198,7 +198,7 @@ func (o *NiddConfigurationPatch) SetPdnEstablishmentOption(v PdnEstablishmentOpt
 
 // GetNotificationDestination returns the NotificationDestination field value if set, zero value otherwise.
 func (o *NiddConfigurationPatch) GetNotificationDestination() string {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		var ret string
 		return ret
 	}
@@ -208,7 +208,7 @@ func (o *NiddConfigurationPatch) GetNotificationDestination() string {
 // GetNotificationDestinationOk returns a tuple with the NotificationDestination field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NiddConfigurationPatch) GetNotificationDestinationOk() (*string, bool) {
-	if o == nil || IsNil(o.NotificationDestination) {
+	if o == nil || isNil(o.NotificationDestination) {
 		return nil, false
 	}
 	return o.NotificationDestination, true
@@ -216,7 +216,7 @@ func (o *NiddConfigurationPatch) GetNotificationDestinationOk() (*string, bool) 
 
 // HasNotificationDestination returns a boolean if a field has been set.
 func (o *NiddConfigurationPatch) HasNotificationDestination() bool {
-	if o != nil && !IsNil(o.NotificationDestination) {
+	if o != nil && !isNil(o.NotificationDestination) {
 		return true
 	}
 
@@ -244,13 +244,13 @@ func (o NiddConfigurationPatch) ToMap() (map[string]interface{}, error) {
 	if o.ReliableDataService.IsSet() {
 		toSerialize["reliableDataService"] = o.ReliableDataService.Get()
 	}
-	if !IsNil(o.RdsPorts) {
+	if !isNil(o.RdsPorts) {
 		toSerialize["rdsPorts"] = o.RdsPorts
 	}
-	if !IsNil(o.PdnEstablishmentOption) {
+	if !isNil(o.PdnEstablishmentOption) {
 		toSerialize["pdnEstablishmentOption"] = o.PdnEstablishmentOption
 	}
-	if !IsNil(o.NotificationDestination) {
+	if !isNil(o.NotificationDestination) {
 		toSerialize["notificationDestination"] = o.NotificationDestination
 	}
 	return toSerialize, nil

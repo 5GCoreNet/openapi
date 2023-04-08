@@ -71,7 +71,7 @@ func (o *MbsSessAuthData) SetExtGroupId(v string) {
 
 // GetGpsisList returns the GpsisList field value if set, zero value otherwise.
 func (o *MbsSessAuthData) GetGpsisList() map[string]string {
-	if o == nil || IsNil(o.GpsisList) {
+	if o == nil || isNil(o.GpsisList) {
 		var ret map[string]string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *MbsSessAuthData) GetGpsisList() map[string]string {
 // GetGpsisListOk returns a tuple with the GpsisList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MbsSessAuthData) GetGpsisListOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.GpsisList) {
+	if o == nil || isNil(o.GpsisList) {
 		return nil, false
 	}
 	return o.GpsisList, true
@@ -89,7 +89,7 @@ func (o *MbsSessAuthData) GetGpsisListOk() (*map[string]string, bool) {
 
 // HasGpsisList returns a boolean if a field has been set.
 func (o *MbsSessAuthData) HasGpsisList() bool {
-	if o != nil && !IsNil(o.GpsisList) {
+	if o != nil && !isNil(o.GpsisList) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o MbsSessAuthData) MarshalJSON() ([]byte, error) {
 func (o MbsSessAuthData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["extGroupId"] = o.ExtGroupId
-	if !IsNil(o.GpsisList) {
+	if !isNil(o.GpsisList) {
 		toSerialize["gpsisList"] = o.GpsisList
 	}
 	toSerialize["mbsSessionIdList"] = o.MbsSessionIdList.Get()

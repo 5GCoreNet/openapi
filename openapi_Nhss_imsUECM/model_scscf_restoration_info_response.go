@@ -41,7 +41,7 @@ func NewScscfRestorationInfoResponseWithDefaults() *ScscfRestorationInfoResponse
 
 // GetScscfRestorationInfoResponse returns the ScscfRestorationInfoResponse field value if set, zero value otherwise.
 func (o *ScscfRestorationInfoResponse) GetScscfRestorationInfoResponse() []ScscfRestorationInfo {
-	if o == nil || IsNil(o.ScscfRestorationInfoResponse) {
+	if o == nil || isNil(o.ScscfRestorationInfoResponse) {
 		var ret []ScscfRestorationInfo
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *ScscfRestorationInfoResponse) GetScscfRestorationInfoResponse() []Scscf
 // GetScscfRestorationInfoResponseOk returns a tuple with the ScscfRestorationInfoResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ScscfRestorationInfoResponse) GetScscfRestorationInfoResponseOk() ([]ScscfRestorationInfo, bool) {
-	if o == nil || IsNil(o.ScscfRestorationInfoResponse) {
+	if o == nil || isNil(o.ScscfRestorationInfoResponse) {
 		return nil, false
 	}
 	return o.ScscfRestorationInfoResponse, true
@@ -59,7 +59,7 @@ func (o *ScscfRestorationInfoResponse) GetScscfRestorationInfoResponseOk() ([]Sc
 
 // HasScscfRestorationInfoResponse returns a boolean if a field has been set.
 func (o *ScscfRestorationInfoResponse) HasScscfRestorationInfoResponse() bool {
-	if o != nil && !IsNil(o.ScscfRestorationInfoResponse) {
+	if o != nil && !isNil(o.ScscfRestorationInfoResponse) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o ScscfRestorationInfoResponse) MarshalJSON() ([]byte, error) {
 
 func (o ScscfRestorationInfoResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ScscfRestorationInfoResponse) {
+	if !isNil(o.ScscfRestorationInfoResponse) {
 		toSerialize["scscfRestorationInfoResponse"] = o.ScscfRestorationInfoResponse
 	}
 	return toSerialize, nil

@@ -68,7 +68,7 @@ func (o *QosFlowAddModifyRequestItem) SetQfi(v int32) {
 
 // GetQosFlowProfile returns the QosFlowProfile field value if set, zero value otherwise.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowProfile() QosFlowProfile {
-	if o == nil || IsNil(o.QosFlowProfile) {
+	if o == nil || isNil(o.QosFlowProfile) {
 		var ret QosFlowProfile
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowProfile() QosFlowProfile {
 // GetQosFlowProfileOk returns a tuple with the QosFlowProfile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowAddModifyRequestItem) GetQosFlowProfileOk() (*QosFlowProfile, bool) {
-	if o == nil || IsNil(o.QosFlowProfile) {
+	if o == nil || isNil(o.QosFlowProfile) {
 		return nil, false
 	}
 	return o.QosFlowProfile, true
@@ -86,7 +86,7 @@ func (o *QosFlowAddModifyRequestItem) GetQosFlowProfileOk() (*QosFlowProfile, bo
 
 // HasQosFlowProfile returns a boolean if a field has been set.
 func (o *QosFlowAddModifyRequestItem) HasQosFlowProfile() bool {
-	if o != nil && !IsNil(o.QosFlowProfile) {
+	if o != nil && !isNil(o.QosFlowProfile) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o QosFlowAddModifyRequestItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowAddModifyRequestItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !IsNil(o.QosFlowProfile) {
+	if !isNil(o.QosFlowProfile) {
 		toSerialize["qosFlowProfile"] = o.QosFlowProfile
 	}
 	return toSerialize, nil

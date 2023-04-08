@@ -17,23 +17,37 @@ import (
 
 // RegistrationType Represents the type of registration associated to the REGISTER request
 type RegistrationType struct {
-	string *string
+	RegistrationTypeAnyOf *RegistrationTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *RegistrationType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into RegistrationTypeAnyOf
+	err = json.Unmarshal(data, &dst.RegistrationTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonRegistrationTypeAnyOf, _ := json.Marshal(dst.RegistrationTypeAnyOf)
+		if string(jsonRegistrationTypeAnyOf) == "{}" { // empty struct
+			dst.RegistrationTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.RegistrationTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.RegistrationTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RegistrationType)")
@@ -41,8 +55,12 @@ func (dst *RegistrationType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *RegistrationType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.RegistrationTypeAnyOf != nil {
+		return json.Marshal(&src.RegistrationTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

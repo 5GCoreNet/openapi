@@ -123,7 +123,7 @@ func (o *UeContextCreatedData) SetPduSessionList(v []N2SmInformation) {
 
 // GetFailedSessionList returns the FailedSessionList field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetFailedSessionList() []N2SmInformation {
-	if o == nil || IsNil(o.FailedSessionList) {
+	if o == nil || isNil(o.FailedSessionList) {
 		var ret []N2SmInformation
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *UeContextCreatedData) GetFailedSessionList() []N2SmInformation {
 // GetFailedSessionListOk returns a tuple with the FailedSessionList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetFailedSessionListOk() ([]N2SmInformation, bool) {
-	if o == nil || IsNil(o.FailedSessionList) {
+	if o == nil || isNil(o.FailedSessionList) {
 		return nil, false
 	}
 	return o.FailedSessionList, true
@@ -141,7 +141,7 @@ func (o *UeContextCreatedData) GetFailedSessionListOk() ([]N2SmInformation, bool
 
 // HasFailedSessionList returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasFailedSessionList() bool {
-	if o != nil && !IsNil(o.FailedSessionList) {
+	if o != nil && !isNil(o.FailedSessionList) {
 		return true
 	}
 
@@ -155,7 +155,7 @@ func (o *UeContextCreatedData) SetFailedSessionList(v []N2SmInformation) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -165,7 +165,7 @@ func (o *UeContextCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -173,7 +173,7 @@ func (o *UeContextCreatedData) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -187,7 +187,7 @@ func (o *UeContextCreatedData) SetSupportedFeatures(v string) {
 
 // GetPcfReselectedInd returns the PcfReselectedInd field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetPcfReselectedInd() bool {
-	if o == nil || IsNil(o.PcfReselectedInd) {
+	if o == nil || isNil(o.PcfReselectedInd) {
 		var ret bool
 		return ret
 	}
@@ -197,7 +197,7 @@ func (o *UeContextCreatedData) GetPcfReselectedInd() bool {
 // GetPcfReselectedIndOk returns a tuple with the PcfReselectedInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetPcfReselectedIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.PcfReselectedInd) {
+	if o == nil || isNil(o.PcfReselectedInd) {
 		return nil, false
 	}
 	return o.PcfReselectedInd, true
@@ -205,7 +205,7 @@ func (o *UeContextCreatedData) GetPcfReselectedIndOk() (*bool, bool) {
 
 // HasPcfReselectedInd returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasPcfReselectedInd() bool {
-	if o != nil && !IsNil(o.PcfReselectedInd) {
+	if o != nil && !isNil(o.PcfReselectedInd) {
 		return true
 	}
 
@@ -219,7 +219,7 @@ func (o *UeContextCreatedData) SetPcfReselectedInd(v bool) {
 
 // GetAnalyticsNotUsedList returns the AnalyticsNotUsedList field value if set, zero value otherwise.
 func (o *UeContextCreatedData) GetAnalyticsNotUsedList() []string {
-	if o == nil || IsNil(o.AnalyticsNotUsedList) {
+	if o == nil || isNil(o.AnalyticsNotUsedList) {
 		var ret []string
 		return ret
 	}
@@ -229,7 +229,7 @@ func (o *UeContextCreatedData) GetAnalyticsNotUsedList() []string {
 // GetAnalyticsNotUsedListOk returns a tuple with the AnalyticsNotUsedList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeContextCreatedData) GetAnalyticsNotUsedListOk() ([]string, bool) {
-	if o == nil || IsNil(o.AnalyticsNotUsedList) {
+	if o == nil || isNil(o.AnalyticsNotUsedList) {
 		return nil, false
 	}
 	return o.AnalyticsNotUsedList, true
@@ -237,7 +237,7 @@ func (o *UeContextCreatedData) GetAnalyticsNotUsedListOk() ([]string, bool) {
 
 // HasAnalyticsNotUsedList returns a boolean if a field has been set.
 func (o *UeContextCreatedData) HasAnalyticsNotUsedList() bool {
-	if o != nil && !IsNil(o.AnalyticsNotUsedList) {
+	if o != nil && !isNil(o.AnalyticsNotUsedList) {
 		return true
 	}
 
@@ -262,16 +262,16 @@ func (o UeContextCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize["ueContext"] = o.UeContext
 	toSerialize["targetToSourceData"] = o.TargetToSourceData
 	toSerialize["pduSessionList"] = o.PduSessionList
-	if !IsNil(o.FailedSessionList) {
+	if !isNil(o.FailedSessionList) {
 		toSerialize["failedSessionList"] = o.FailedSessionList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.PcfReselectedInd) {
+	if !isNil(o.PcfReselectedInd) {
 		toSerialize["pcfReselectedInd"] = o.PcfReselectedInd
 	}
-	if !IsNil(o.AnalyticsNotUsedList) {
+	if !isNil(o.AnalyticsNotUsedList) {
 		toSerialize["analyticsNotUsedList"] = o.AnalyticsNotUsedList
 	}
 	return toSerialize, nil

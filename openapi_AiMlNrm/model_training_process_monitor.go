@@ -45,7 +45,7 @@ func NewTrainingProcessMonitorWithDefaults() *TrainingProcessMonitor {
 
 // GetMLTrainingProcessId returns the MLTrainingProcessId field value if set, zero value otherwise.
 func (o *TrainingProcessMonitor) GetMLTrainingProcessId() string {
-	if o == nil || IsNil(o.MLTrainingProcessId) {
+	if o == nil || isNil(o.MLTrainingProcessId) {
 		var ret string
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *TrainingProcessMonitor) GetMLTrainingProcessId() string {
 // GetMLTrainingProcessIdOk returns a tuple with the MLTrainingProcessId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrainingProcessMonitor) GetMLTrainingProcessIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MLTrainingProcessId) {
+	if o == nil || isNil(o.MLTrainingProcessId) {
 		return nil, false
 	}
 	return o.MLTrainingProcessId, true
@@ -63,7 +63,7 @@ func (o *TrainingProcessMonitor) GetMLTrainingProcessIdOk() (*string, bool) {
 
 // HasMLTrainingProcessId returns a boolean if a field has been set.
 func (o *TrainingProcessMonitor) HasMLTrainingProcessId() bool {
-	if o != nil && !IsNil(o.MLTrainingProcessId) {
+	if o != nil && !isNil(o.MLTrainingProcessId) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *TrainingProcessMonitor) SetMLTrainingProcessId(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *TrainingProcessMonitor) GetStatus() string {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *TrainingProcessMonitor) GetStatus() string {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrainingProcessMonitor) GetStatusOk() (*string, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -95,7 +95,7 @@ func (o *TrainingProcessMonitor) GetStatusOk() (*string, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *TrainingProcessMonitor) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *TrainingProcessMonitor) SetStatus(v string) {
 
 // GetProgressPercentage returns the ProgressPercentage field value if set, zero value otherwise.
 func (o *TrainingProcessMonitor) GetProgressPercentage() int32 {
-	if o == nil || IsNil(o.ProgressPercentage) {
+	if o == nil || isNil(o.ProgressPercentage) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *TrainingProcessMonitor) GetProgressPercentage() int32 {
 // GetProgressPercentageOk returns a tuple with the ProgressPercentage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrainingProcessMonitor) GetProgressPercentageOk() (*int32, bool) {
-	if o == nil || IsNil(o.ProgressPercentage) {
+	if o == nil || isNil(o.ProgressPercentage) {
 		return nil, false
 	}
 	return o.ProgressPercentage, true
@@ -127,7 +127,7 @@ func (o *TrainingProcessMonitor) GetProgressPercentageOk() (*int32, bool) {
 
 // HasProgressPercentage returns a boolean if a field has been set.
 func (o *TrainingProcessMonitor) HasProgressPercentage() bool {
-	if o != nil && !IsNil(o.ProgressPercentage) {
+	if o != nil && !isNil(o.ProgressPercentage) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *TrainingProcessMonitor) SetProgressPercentage(v int32) {
 
 // GetProgressStateInfo returns the ProgressStateInfo field value if set, zero value otherwise.
 func (o *TrainingProcessMonitor) GetProgressStateInfo() string {
-	if o == nil || IsNil(o.ProgressStateInfo) {
+	if o == nil || isNil(o.ProgressStateInfo) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *TrainingProcessMonitor) GetProgressStateInfo() string {
 // GetProgressStateInfoOk returns a tuple with the ProgressStateInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrainingProcessMonitor) GetProgressStateInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ProgressStateInfo) {
+	if o == nil || isNil(o.ProgressStateInfo) {
 		return nil, false
 	}
 	return o.ProgressStateInfo, true
@@ -159,7 +159,7 @@ func (o *TrainingProcessMonitor) GetProgressStateInfoOk() (*string, bool) {
 
 // HasProgressStateInfo returns a boolean if a field has been set.
 func (o *TrainingProcessMonitor) HasProgressStateInfo() bool {
-	if o != nil && !IsNil(o.ProgressStateInfo) {
+	if o != nil && !isNil(o.ProgressStateInfo) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *TrainingProcessMonitor) SetProgressStateInfo(v string) {
 
 // GetResultStateInfo returns the ResultStateInfo field value if set, zero value otherwise.
 func (o *TrainingProcessMonitor) GetResultStateInfo() string {
-	if o == nil || IsNil(o.ResultStateInfo) {
+	if o == nil || isNil(o.ResultStateInfo) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *TrainingProcessMonitor) GetResultStateInfo() string {
 // GetResultStateInfoOk returns a tuple with the ResultStateInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TrainingProcessMonitor) GetResultStateInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ResultStateInfo) {
+	if o == nil || isNil(o.ResultStateInfo) {
 		return nil, false
 	}
 	return o.ResultStateInfo, true
@@ -191,7 +191,7 @@ func (o *TrainingProcessMonitor) GetResultStateInfoOk() (*string, bool) {
 
 // HasResultStateInfo returns a boolean if a field has been set.
 func (o *TrainingProcessMonitor) HasResultStateInfo() bool {
-	if o != nil && !IsNil(o.ResultStateInfo) {
+	if o != nil && !isNil(o.ResultStateInfo) {
 		return true
 	}
 
@@ -213,19 +213,19 @@ func (o TrainingProcessMonitor) MarshalJSON() ([]byte, error) {
 
 func (o TrainingProcessMonitor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MLTrainingProcessId) {
+	if !isNil(o.MLTrainingProcessId) {
 		toSerialize["mLTrainingProcessId"] = o.MLTrainingProcessId
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.ProgressPercentage) {
+	if !isNil(o.ProgressPercentage) {
 		toSerialize["progressPercentage"] = o.ProgressPercentage
 	}
-	if !IsNil(o.ProgressStateInfo) {
+	if !isNil(o.ProgressStateInfo) {
 		toSerialize["progressStateInfo"] = o.ProgressStateInfo
 	}
-	if !IsNil(o.ResultStateInfo) {
+	if !isNil(o.ResultStateInfo) {
 		toSerialize["resultStateInfo"] = o.ResultStateInfo
 	}
 	return toSerialize, nil

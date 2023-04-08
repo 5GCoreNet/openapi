@@ -80,7 +80,7 @@ func (o *PduSessionEventNotification) SetEvNotif(v AfEventNotification) {
 
 // GetSupi returns the Supi field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetSupi() string {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		var ret string
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *PduSessionEventNotification) GetSupi() string {
 // GetSupiOk returns a tuple with the Supi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetSupiOk() (*string, bool) {
-	if o == nil || IsNil(o.Supi) {
+	if o == nil || isNil(o.Supi) {
 		return nil, false
 	}
 	return o.Supi, true
@@ -98,7 +98,7 @@ func (o *PduSessionEventNotification) GetSupiOk() (*string, bool) {
 
 // HasSupi returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasSupi() bool {
-	if o != nil && !IsNil(o.Supi) {
+	if o != nil && !isNil(o.Supi) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *PduSessionEventNotification) SetSupi(v string) {
 
 // GetUeIpv4 returns the UeIpv4 field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetUeIpv4() string {
-	if o == nil || IsNil(o.UeIpv4) {
+	if o == nil || isNil(o.UeIpv4) {
 		var ret string
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *PduSessionEventNotification) GetUeIpv4() string {
 // GetUeIpv4Ok returns a tuple with the UeIpv4 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetUeIpv4Ok() (*string, bool) {
-	if o == nil || IsNil(o.UeIpv4) {
+	if o == nil || isNil(o.UeIpv4) {
 		return nil, false
 	}
 	return o.UeIpv4, true
@@ -130,7 +130,7 @@ func (o *PduSessionEventNotification) GetUeIpv4Ok() (*string, bool) {
 
 // HasUeIpv4 returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasUeIpv4() bool {
-	if o != nil && !IsNil(o.UeIpv4) {
+	if o != nil && !isNil(o.UeIpv4) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *PduSessionEventNotification) SetUeIpv4(v string) {
 
 // GetUeIpv6 returns the UeIpv6 field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetUeIpv6() Ipv6Addr {
-	if o == nil || IsNil(o.UeIpv6) {
+	if o == nil || isNil(o.UeIpv6) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *PduSessionEventNotification) GetUeIpv6() Ipv6Addr {
 // GetUeIpv6Ok returns a tuple with the UeIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetUeIpv6Ok() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.UeIpv6) {
+	if o == nil || isNil(o.UeIpv6) {
 		return nil, false
 	}
 	return o.UeIpv6, true
@@ -162,7 +162,7 @@ func (o *PduSessionEventNotification) GetUeIpv6Ok() (*Ipv6Addr, bool) {
 
 // HasUeIpv6 returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasUeIpv6() bool {
-	if o != nil && !IsNil(o.UeIpv6) {
+	if o != nil && !isNil(o.UeIpv6) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *PduSessionEventNotification) SetUeIpv6(v Ipv6Addr) {
 
 // GetUeMac returns the UeMac field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetUeMac() string {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *PduSessionEventNotification) GetUeMac() string {
 // GetUeMacOk returns a tuple with the UeMac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetUeMacOk() (*string, bool) {
-	if o == nil || IsNil(o.UeMac) {
+	if o == nil || isNil(o.UeMac) {
 		return nil, false
 	}
 	return o.UeMac, true
@@ -194,7 +194,7 @@ func (o *PduSessionEventNotification) GetUeMacOk() (*string, bool) {
 
 // HasUeMac returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasUeMac() bool {
-	if o != nil && !IsNil(o.UeMac) {
+	if o != nil && !isNil(o.UeMac) {
 		return true
 	}
 
@@ -208,7 +208,7 @@ func (o *PduSessionEventNotification) SetUeMac(v string) {
 
 // GetStatus returns the Status field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetStatus() PduSessionStatus {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		var ret PduSessionStatus
 		return ret
 	}
@@ -218,7 +218,7 @@ func (o *PduSessionEventNotification) GetStatus() PduSessionStatus {
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetStatusOk() (*PduSessionStatus, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || isNil(o.Status) {
 		return nil, false
 	}
 	return o.Status, true
@@ -226,7 +226,7 @@ func (o *PduSessionEventNotification) GetStatusOk() (*PduSessionStatus, bool) {
 
 // HasStatus returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
+	if o != nil && !isNil(o.Status) {
 		return true
 	}
 
@@ -240,7 +240,7 @@ func (o *PduSessionEventNotification) SetStatus(v PduSessionStatus) {
 
 // GetPcfInfo returns the PcfInfo field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetPcfInfo() PcfAddressingInfo {
-	if o == nil || IsNil(o.PcfInfo) {
+	if o == nil || isNil(o.PcfInfo) {
 		var ret PcfAddressingInfo
 		return ret
 	}
@@ -250,7 +250,7 @@ func (o *PduSessionEventNotification) GetPcfInfo() PcfAddressingInfo {
 // GetPcfInfoOk returns a tuple with the PcfInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetPcfInfoOk() (*PcfAddressingInfo, bool) {
-	if o == nil || IsNil(o.PcfInfo) {
+	if o == nil || isNil(o.PcfInfo) {
 		return nil, false
 	}
 	return o.PcfInfo, true
@@ -258,7 +258,7 @@ func (o *PduSessionEventNotification) GetPcfInfoOk() (*PcfAddressingInfo, bool) 
 
 // HasPcfInfo returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasPcfInfo() bool {
-	if o != nil && !IsNil(o.PcfInfo) {
+	if o != nil && !isNil(o.PcfInfo) {
 		return true
 	}
 
@@ -272,7 +272,7 @@ func (o *PduSessionEventNotification) SetPcfInfo(v PcfAddressingInfo) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -282,7 +282,7 @@ func (o *PduSessionEventNotification) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -290,7 +290,7 @@ func (o *PduSessionEventNotification) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -304,7 +304,7 @@ func (o *PduSessionEventNotification) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -314,7 +314,7 @@ func (o *PduSessionEventNotification) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -322,7 +322,7 @@ func (o *PduSessionEventNotification) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -336,7 +336,7 @@ func (o *PduSessionEventNotification) SetSnssai(v Snssai) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *PduSessionEventNotification) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -346,7 +346,7 @@ func (o *PduSessionEventNotification) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionEventNotification) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -354,7 +354,7 @@ func (o *PduSessionEventNotification) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *PduSessionEventNotification) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -377,31 +377,31 @@ func (o PduSessionEventNotification) MarshalJSON() ([]byte, error) {
 func (o PduSessionEventNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["evNotif"] = o.EvNotif
-	if !IsNil(o.Supi) {
+	if !isNil(o.Supi) {
 		toSerialize["supi"] = o.Supi
 	}
-	if !IsNil(o.UeIpv4) {
+	if !isNil(o.UeIpv4) {
 		toSerialize["ueIpv4"] = o.UeIpv4
 	}
-	if !IsNil(o.UeIpv6) {
+	if !isNil(o.UeIpv6) {
 		toSerialize["ueIpv6"] = o.UeIpv6
 	}
-	if !IsNil(o.UeMac) {
+	if !isNil(o.UeMac) {
 		toSerialize["ueMac"] = o.UeMac
 	}
-	if !IsNil(o.Status) {
+	if !isNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
-	if !IsNil(o.PcfInfo) {
+	if !isNil(o.PcfInfo) {
 		toSerialize["pcfInfo"] = o.PcfInfo
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
 	return toSerialize, nil

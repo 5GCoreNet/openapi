@@ -42,7 +42,7 @@ func NewConnectionRequestTypeWithDefaults() *ConnectionRequestType {
 
 // GetProducer returns the Producer field value if set, zero value otherwise.
 func (o *ConnectionRequestType) GetProducer() ProducerIdType {
-	if o == nil || IsNil(o.Producer) {
+	if o == nil || isNil(o.Producer) {
 		var ret ProducerIdType
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ConnectionRequestType) GetProducer() ProducerIdType {
 // GetProducerOk returns a tuple with the Producer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionRequestType) GetProducerOk() (*ProducerIdType, bool) {
-	if o == nil || IsNil(o.Producer) {
+	if o == nil || isNil(o.Producer) {
 		return nil, false
 	}
 	return o.Producer, true
@@ -60,7 +60,7 @@ func (o *ConnectionRequestType) GetProducerOk() (*ProducerIdType, bool) {
 
 // HasProducer returns a boolean if a field has been set.
 func (o *ConnectionRequestType) HasProducer() bool {
-	if o != nil && !IsNil(o.Producer) {
+	if o != nil && !isNil(o.Producer) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ConnectionRequestType) SetProducer(v ProducerIdType) {
 
 // GetStreams returns the Streams field value if set, zero value otherwise.
 func (o *ConnectionRequestType) GetStreams() []StreamInfoType {
-	if o == nil || IsNil(o.Streams) {
+	if o == nil || isNil(o.Streams) {
 		var ret []StreamInfoType
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ConnectionRequestType) GetStreams() []StreamInfoType {
 // GetStreamsOk returns a tuple with the Streams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConnectionRequestType) GetStreamsOk() ([]StreamInfoType, bool) {
-	if o == nil || IsNil(o.Streams) {
+	if o == nil || isNil(o.Streams) {
 		return nil, false
 	}
 	return o.Streams, true
@@ -92,7 +92,7 @@ func (o *ConnectionRequestType) GetStreamsOk() ([]StreamInfoType, bool) {
 
 // HasStreams returns a boolean if a field has been set.
 func (o *ConnectionRequestType) HasStreams() bool {
-	if o != nil && !IsNil(o.Streams) {
+	if o != nil && !isNil(o.Streams) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ConnectionRequestType) MarshalJSON() ([]byte, error) {
 
 func (o ConnectionRequestType) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Producer) {
+	if !isNil(o.Producer) {
 		toSerialize["producer"] = o.Producer
 	}
-	if !IsNil(o.Streams) {
+	if !isNil(o.Streams) {
 		toSerialize["streams"] = o.Streams
 	}
 	return toSerialize, nil

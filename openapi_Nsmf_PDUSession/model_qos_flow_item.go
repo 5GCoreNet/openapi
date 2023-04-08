@@ -71,7 +71,7 @@ func (o *QosFlowItem) SetQfi(v int32) {
 
 // GetCause returns the Cause field value if set, zero value otherwise.
 func (o *QosFlowItem) GetCause() Cause {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		var ret Cause
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *QosFlowItem) GetCause() Cause {
 // GetCauseOk returns a tuple with the Cause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetCauseOk() (*Cause, bool) {
-	if o == nil || IsNil(o.Cause) {
+	if o == nil || isNil(o.Cause) {
 		return nil, false
 	}
 	return o.Cause, true
@@ -89,7 +89,7 @@ func (o *QosFlowItem) GetCauseOk() (*Cause, bool) {
 
 // HasCause returns a boolean if a field has been set.
 func (o *QosFlowItem) HasCause() bool {
-	if o != nil && !IsNil(o.Cause) {
+	if o != nil && !isNil(o.Cause) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *QosFlowItem) SetCause(v Cause) {
 
 // GetCurrentQosProfileIndex returns the CurrentQosProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowItem) GetCurrentQosProfileIndex() int32 {
-	if o == nil || IsNil(o.CurrentQosProfileIndex) {
+	if o == nil || isNil(o.CurrentQosProfileIndex) {
 		var ret int32
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *QosFlowItem) GetCurrentQosProfileIndex() int32 {
 // GetCurrentQosProfileIndexOk returns a tuple with the CurrentQosProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
-	if o == nil || IsNil(o.CurrentQosProfileIndex) {
+	if o == nil || isNil(o.CurrentQosProfileIndex) {
 		return nil, false
 	}
 	return o.CurrentQosProfileIndex, true
@@ -121,7 +121,7 @@ func (o *QosFlowItem) GetCurrentQosProfileIndexOk() (*int32, bool) {
 
 // HasCurrentQosProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowItem) HasCurrentQosProfileIndex() bool {
-	if o != nil && !IsNil(o.CurrentQosProfileIndex) {
+	if o != nil && !isNil(o.CurrentQosProfileIndex) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *QosFlowItem) SetCurrentQosProfileIndex(v int32) {
 
 // GetNullQoSProfileIndex returns the NullQoSProfileIndex field value if set, zero value otherwise.
 func (o *QosFlowItem) GetNullQoSProfileIndex() bool {
-	if o == nil || IsNil(o.NullQoSProfileIndex) {
+	if o == nil || isNil(o.NullQoSProfileIndex) {
 		var ret bool
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *QosFlowItem) GetNullQoSProfileIndex() bool {
 // GetNullQoSProfileIndexOk returns a tuple with the NullQoSProfileIndex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetNullQoSProfileIndexOk() (*bool, bool) {
-	if o == nil || IsNil(o.NullQoSProfileIndex) {
+	if o == nil || isNil(o.NullQoSProfileIndex) {
 		return nil, false
 	}
 	return o.NullQoSProfileIndex, true
@@ -153,7 +153,7 @@ func (o *QosFlowItem) GetNullQoSProfileIndexOk() (*bool, bool) {
 
 // HasNullQoSProfileIndex returns a boolean if a field has been set.
 func (o *QosFlowItem) HasNullQoSProfileIndex() bool {
-	if o != nil && !IsNil(o.NullQoSProfileIndex) {
+	if o != nil && !isNil(o.NullQoSProfileIndex) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *QosFlowItem) SetNullQoSProfileIndex(v bool) {
 
 // GetNgApCause returns the NgApCause field value if set, zero value otherwise.
 func (o *QosFlowItem) GetNgApCause() NgApCause {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *QosFlowItem) GetNgApCause() NgApCause {
 // GetNgApCauseOk returns a tuple with the NgApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosFlowItem) GetNgApCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		return nil, false
 	}
 	return o.NgApCause, true
@@ -185,7 +185,7 @@ func (o *QosFlowItem) GetNgApCauseOk() (*NgApCause, bool) {
 
 // HasNgApCause returns a boolean if a field has been set.
 func (o *QosFlowItem) HasNgApCause() bool {
-	if o != nil && !IsNil(o.NgApCause) {
+	if o != nil && !isNil(o.NgApCause) {
 		return true
 	}
 
@@ -208,16 +208,16 @@ func (o QosFlowItem) MarshalJSON() ([]byte, error) {
 func (o QosFlowItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["qfi"] = o.Qfi
-	if !IsNil(o.Cause) {
+	if !isNil(o.Cause) {
 		toSerialize["cause"] = o.Cause
 	}
-	if !IsNil(o.CurrentQosProfileIndex) {
+	if !isNil(o.CurrentQosProfileIndex) {
 		toSerialize["currentQosProfileIndex"] = o.CurrentQosProfileIndex
 	}
-	if !IsNil(o.NullQoSProfileIndex) {
+	if !isNil(o.NullQoSProfileIndex) {
 		toSerialize["nullQoSProfileIndex"] = o.NullQoSProfileIndex
 	}
-	if !IsNil(o.NgApCause) {
+	if !isNil(o.NgApCause) {
 		toSerialize["ngApCause"] = o.NgApCause
 	}
 	return toSerialize, nil

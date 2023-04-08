@@ -119,7 +119,7 @@ paths:
                 content:
                   application/json:
                     schema:
-                      $ref: '#/components/schemas/__scsAsId__configurations_post_request'
+                      $ref: '#/components/schemas/__scsAsId__configurations_get_request'
                 description: "Notification for NIDD configuration status, MO NIDD,\
                   \ MT NIDD delivery report."
                 required: true
@@ -2344,11 +2344,7 @@ components:
       type: object
     PdnEstablishmentOptions:
       anyOf:
-      - enum:
-        - WAIT_FOR_UE
-        - INDICATE_ERROR
-        - SEND_TRIGGER
-        type: string
+      - $ref: '#/components/schemas/PdnEstablishmentOptions_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2362,22 +2358,7 @@ components:
         data type with the difference that it allows also the null value.
     DeliveryStatus:
       anyOf:
-      - enum:
-        - SUCCESS
-        - SUCCESS_NEXT_HOP_ACKNOWLEDGED
-        - SUCCESS_NEXT_HOP_UNACKNOWLEDGED
-        - SUCCESS_ACKNOWLEDGED
-        - SUCCESS_UNACKNOWLEDGED
-        - TRIGGERED
-        - BUFFERING
-        - BUFFERING_TEMPORARILY_NOT_REACHABLE
-        - SENDING
-        - FAILURE
-        - FAILURE_RDS_DISABLED
-        - FAILURE_NEXT_HOP
-        - FAILURE_TIMEOUT
-        - FAILURE_TEMPORARILY_NOT_REACHABLE
-        type: string
+      - $ref: '#/components/schemas/DeliveryStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2386,12 +2367,7 @@ components:
       readOnly: true
     NiddStatus:
       anyOf:
-      - enum:
-        - ACTIVE
-        - TERMINATED_UE_NOT_AUTHORIZED
-        - TERMINATED
-        - RDS_PORT_UNKNOWN
-        type: string
+      - $ref: '#/components/schemas/NiddStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2400,10 +2376,7 @@ components:
       readOnly: true
     ManageEntity:
       anyOf:
-      - enum:
-        - UE
-        - AS
-        type: string
+      - $ref: '#/components/schemas/ManageEntity_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2412,11 +2385,7 @@ components:
       readOnly: true
     SerializationFormat:
       anyOf:
-      - enum:
-        - CBOR
-        - JSON
-        - XML
-        type: string
+      - $ref: '#/components/schemas/SerializationFormat_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration but is not used to encode content defined in the present version of this API.
         type: string
@@ -2586,7 +2555,7 @@ components:
       format: date-time
       nullable: true
       type: string
-    __scsAsId__configurations_post_request:
+    __scsAsId__configurations_get_request:
       oneOf:
       - $ref: '#/components/schemas/NiddConfigurationStatusNotification'
       - $ref: '#/components/schemas/NiddUplinkDataNotification'
@@ -2607,6 +2576,52 @@ components:
           minItems: 1
           type: array
       type: object
+      example: null
+    PdnEstablishmentOptions_anyOf:
+      enum:
+      - WAIT_FOR_UE
+      - INDICATE_ERROR
+      - SEND_TRIGGER
+      type: string
+      example: null
+    DeliveryStatus_anyOf:
+      enum:
+      - SUCCESS
+      - SUCCESS_NEXT_HOP_ACKNOWLEDGED
+      - SUCCESS_NEXT_HOP_UNACKNOWLEDGED
+      - SUCCESS_ACKNOWLEDGED
+      - SUCCESS_UNACKNOWLEDGED
+      - TRIGGERED
+      - BUFFERING
+      - BUFFERING_TEMPORARILY_NOT_REACHABLE
+      - SENDING
+      - FAILURE
+      - FAILURE_RDS_DISABLED
+      - FAILURE_NEXT_HOP
+      - FAILURE_TIMEOUT
+      - FAILURE_TEMPORARILY_NOT_REACHABLE
+      type: string
+      example: null
+    NiddStatus_anyOf:
+      enum:
+      - ACTIVE
+      - TERMINATED_UE_NOT_AUTHORIZED
+      - TERMINATED
+      - RDS_PORT_UNKNOWN
+      type: string
+      example: null
+    ManageEntity_anyOf:
+      enum:
+      - UE
+      - AS
+      type: string
+      example: null
+    SerializationFormat_anyOf:
+      enum:
+      - CBOR
+      - JSON
+      - XML
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

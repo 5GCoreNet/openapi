@@ -85,7 +85,7 @@ func (o *ContextElement) SetContextId(v AnalyticsContextIdentifier) {
 
 // GetPendAnalytics returns the PendAnalytics field value if set, zero value otherwise.
 func (o *ContextElement) GetPendAnalytics() []EventNotification {
-	if o == nil || IsNil(o.PendAnalytics) {
+	if o == nil || isNil(o.PendAnalytics) {
 		var ret []EventNotification
 		return ret
 	}
@@ -95,7 +95,7 @@ func (o *ContextElement) GetPendAnalytics() []EventNotification {
 // GetPendAnalyticsOk returns a tuple with the PendAnalytics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetPendAnalyticsOk() ([]EventNotification, bool) {
-	if o == nil || IsNil(o.PendAnalytics) {
+	if o == nil || isNil(o.PendAnalytics) {
 		return nil, false
 	}
 	return o.PendAnalytics, true
@@ -103,7 +103,7 @@ func (o *ContextElement) GetPendAnalyticsOk() ([]EventNotification, bool) {
 
 // HasPendAnalytics returns a boolean if a field has been set.
 func (o *ContextElement) HasPendAnalytics() bool {
-	if o != nil && !IsNil(o.PendAnalytics) {
+	if o != nil && !isNil(o.PendAnalytics) {
 		return true
 	}
 
@@ -117,7 +117,7 @@ func (o *ContextElement) SetPendAnalytics(v []EventNotification) {
 
 // GetHistAnalytics returns the HistAnalytics field value if set, zero value otherwise.
 func (o *ContextElement) GetHistAnalytics() []EventNotification {
-	if o == nil || IsNil(o.HistAnalytics) {
+	if o == nil || isNil(o.HistAnalytics) {
 		var ret []EventNotification
 		return ret
 	}
@@ -127,7 +127,7 @@ func (o *ContextElement) GetHistAnalytics() []EventNotification {
 // GetHistAnalyticsOk returns a tuple with the HistAnalytics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetHistAnalyticsOk() ([]EventNotification, bool) {
-	if o == nil || IsNil(o.HistAnalytics) {
+	if o == nil || isNil(o.HistAnalytics) {
 		return nil, false
 	}
 	return o.HistAnalytics, true
@@ -135,7 +135,7 @@ func (o *ContextElement) GetHistAnalyticsOk() ([]EventNotification, bool) {
 
 // HasHistAnalytics returns a boolean if a field has been set.
 func (o *ContextElement) HasHistAnalytics() bool {
-	if o != nil && !IsNil(o.HistAnalytics) {
+	if o != nil && !isNil(o.HistAnalytics) {
 		return true
 	}
 
@@ -149,7 +149,7 @@ func (o *ContextElement) SetHistAnalytics(v []EventNotification) {
 
 // GetLastOutputTime returns the LastOutputTime field value if set, zero value otherwise.
 func (o *ContextElement) GetLastOutputTime() time.Time {
-	if o == nil || IsNil(o.LastOutputTime) {
+	if o == nil || isNil(o.LastOutputTime) {
 		var ret time.Time
 		return ret
 	}
@@ -159,7 +159,7 @@ func (o *ContextElement) GetLastOutputTime() time.Time {
 // GetLastOutputTimeOk returns a tuple with the LastOutputTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetLastOutputTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LastOutputTime) {
+	if o == nil || isNil(o.LastOutputTime) {
 		return nil, false
 	}
 	return o.LastOutputTime, true
@@ -167,7 +167,7 @@ func (o *ContextElement) GetLastOutputTimeOk() (*time.Time, bool) {
 
 // HasLastOutputTime returns a boolean if a field has been set.
 func (o *ContextElement) HasLastOutputTime() bool {
-	if o != nil && !IsNil(o.LastOutputTime) {
+	if o != nil && !isNil(o.LastOutputTime) {
 		return true
 	}
 
@@ -181,7 +181,7 @@ func (o *ContextElement) SetLastOutputTime(v time.Time) {
 
 // GetAggrSubs returns the AggrSubs field value if set, zero value otherwise.
 func (o *ContextElement) GetAggrSubs() []SpecificAnalyticsSubscription {
-	if o == nil || IsNil(o.AggrSubs) {
+	if o == nil || isNil(o.AggrSubs) {
 		var ret []SpecificAnalyticsSubscription
 		return ret
 	}
@@ -191,7 +191,7 @@ func (o *ContextElement) GetAggrSubs() []SpecificAnalyticsSubscription {
 // GetAggrSubsOk returns a tuple with the AggrSubs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetAggrSubsOk() ([]SpecificAnalyticsSubscription, bool) {
-	if o == nil || IsNil(o.AggrSubs) {
+	if o == nil || isNil(o.AggrSubs) {
 		return nil, false
 	}
 	return o.AggrSubs, true
@@ -199,7 +199,7 @@ func (o *ContextElement) GetAggrSubsOk() ([]SpecificAnalyticsSubscription, bool)
 
 // HasAggrSubs returns a boolean if a field has been set.
 func (o *ContextElement) HasAggrSubs() bool {
-	if o != nil && !IsNil(o.AggrSubs) {
+	if o != nil && !isNil(o.AggrSubs) {
 		return true
 	}
 
@@ -213,7 +213,7 @@ func (o *ContextElement) SetAggrSubs(v []SpecificAnalyticsSubscription) {
 
 // GetHistData returns the HistData field value if set, zero value otherwise.
 func (o *ContextElement) GetHistData() []HistoricalData {
-	if o == nil || IsNil(o.HistData) {
+	if o == nil || isNil(o.HistData) {
 		var ret []HistoricalData
 		return ret
 	}
@@ -223,7 +223,7 @@ func (o *ContextElement) GetHistData() []HistoricalData {
 // GetHistDataOk returns a tuple with the HistData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetHistDataOk() ([]HistoricalData, bool) {
-	if o == nil || IsNil(o.HistData) {
+	if o == nil || isNil(o.HistData) {
 		return nil, false
 	}
 	return o.HistData, true
@@ -231,7 +231,7 @@ func (o *ContextElement) GetHistDataOk() ([]HistoricalData, bool) {
 
 // HasHistData returns a boolean if a field has been set.
 func (o *ContextElement) HasHistData() bool {
-	if o != nil && !IsNil(o.HistData) {
+	if o != nil && !isNil(o.HistData) {
 		return true
 	}
 
@@ -245,7 +245,7 @@ func (o *ContextElement) SetHistData(v []HistoricalData) {
 
 // GetAdrfId returns the AdrfId field value if set, zero value otherwise.
 func (o *ContextElement) GetAdrfId() string {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		var ret string
 		return ret
 	}
@@ -255,7 +255,7 @@ func (o *ContextElement) GetAdrfId() string {
 // GetAdrfIdOk returns a tuple with the AdrfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetAdrfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AdrfId) {
+	if o == nil || isNil(o.AdrfId) {
 		return nil, false
 	}
 	return o.AdrfId, true
@@ -263,7 +263,7 @@ func (o *ContextElement) GetAdrfIdOk() (*string, bool) {
 
 // HasAdrfId returns a boolean if a field has been set.
 func (o *ContextElement) HasAdrfId() bool {
-	if o != nil && !IsNil(o.AdrfId) {
+	if o != nil && !isNil(o.AdrfId) {
 		return true
 	}
 
@@ -277,7 +277,7 @@ func (o *ContextElement) SetAdrfId(v string) {
 
 // GetAdrfDataTypes returns the AdrfDataTypes field value if set, zero value otherwise.
 func (o *ContextElement) GetAdrfDataTypes() []AdrfDataType {
-	if o == nil || IsNil(o.AdrfDataTypes) {
+	if o == nil || isNil(o.AdrfDataTypes) {
 		var ret []AdrfDataType
 		return ret
 	}
@@ -287,7 +287,7 @@ func (o *ContextElement) GetAdrfDataTypes() []AdrfDataType {
 // GetAdrfDataTypesOk returns a tuple with the AdrfDataTypes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetAdrfDataTypesOk() ([]AdrfDataType, bool) {
-	if o == nil || IsNil(o.AdrfDataTypes) {
+	if o == nil || isNil(o.AdrfDataTypes) {
 		return nil, false
 	}
 	return o.AdrfDataTypes, true
@@ -295,7 +295,7 @@ func (o *ContextElement) GetAdrfDataTypesOk() ([]AdrfDataType, bool) {
 
 // HasAdrfDataTypes returns a boolean if a field has been set.
 func (o *ContextElement) HasAdrfDataTypes() bool {
-	if o != nil && !IsNil(o.AdrfDataTypes) {
+	if o != nil && !isNil(o.AdrfDataTypes) {
 		return true
 	}
 
@@ -309,7 +309,7 @@ func (o *ContextElement) SetAdrfDataTypes(v []AdrfDataType) {
 
 // GetAggrNwdafIds returns the AggrNwdafIds field value if set, zero value otherwise.
 func (o *ContextElement) GetAggrNwdafIds() []string {
-	if o == nil || IsNil(o.AggrNwdafIds) {
+	if o == nil || isNil(o.AggrNwdafIds) {
 		var ret []string
 		return ret
 	}
@@ -319,7 +319,7 @@ func (o *ContextElement) GetAggrNwdafIds() []string {
 // GetAggrNwdafIdsOk returns a tuple with the AggrNwdafIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetAggrNwdafIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AggrNwdafIds) {
+	if o == nil || isNil(o.AggrNwdafIds) {
 		return nil, false
 	}
 	return o.AggrNwdafIds, true
@@ -327,7 +327,7 @@ func (o *ContextElement) GetAggrNwdafIdsOk() ([]string, bool) {
 
 // HasAggrNwdafIds returns a boolean if a field has been set.
 func (o *ContextElement) HasAggrNwdafIds() bool {
-	if o != nil && !IsNil(o.AggrNwdafIds) {
+	if o != nil && !isNil(o.AggrNwdafIds) {
 		return true
 	}
 
@@ -341,7 +341,7 @@ func (o *ContextElement) SetAggrNwdafIds(v []string) {
 
 // GetModelInfo returns the ModelInfo field value if set, zero value otherwise.
 func (o *ContextElement) GetModelInfo() []ModelInfo {
-	if o == nil || IsNil(o.ModelInfo) {
+	if o == nil || isNil(o.ModelInfo) {
 		var ret []ModelInfo
 		return ret
 	}
@@ -351,7 +351,7 @@ func (o *ContextElement) GetModelInfo() []ModelInfo {
 // GetModelInfoOk returns a tuple with the ModelInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContextElement) GetModelInfoOk() ([]ModelInfo, bool) {
-	if o == nil || IsNil(o.ModelInfo) {
+	if o == nil || isNil(o.ModelInfo) {
 		return nil, false
 	}
 	return o.ModelInfo, true
@@ -359,7 +359,7 @@ func (o *ContextElement) GetModelInfoOk() ([]ModelInfo, bool) {
 
 // HasModelInfo returns a boolean if a field has been set.
 func (o *ContextElement) HasModelInfo() bool {
-	if o != nil && !IsNil(o.ModelInfo) {
+	if o != nil && !isNil(o.ModelInfo) {
 		return true
 	}
 
@@ -382,31 +382,31 @@ func (o ContextElement) MarshalJSON() ([]byte, error) {
 func (o ContextElement) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["contextId"] = o.ContextId
-	if !IsNil(o.PendAnalytics) {
+	if !isNil(o.PendAnalytics) {
 		toSerialize["pendAnalytics"] = o.PendAnalytics
 	}
-	if !IsNil(o.HistAnalytics) {
+	if !isNil(o.HistAnalytics) {
 		toSerialize["histAnalytics"] = o.HistAnalytics
 	}
-	if !IsNil(o.LastOutputTime) {
+	if !isNil(o.LastOutputTime) {
 		toSerialize["lastOutputTime"] = o.LastOutputTime
 	}
-	if !IsNil(o.AggrSubs) {
+	if !isNil(o.AggrSubs) {
 		toSerialize["aggrSubs"] = o.AggrSubs
 	}
-	if !IsNil(o.HistData) {
+	if !isNil(o.HistData) {
 		toSerialize["histData"] = o.HistData
 	}
-	if !IsNil(o.AdrfId) {
+	if !isNil(o.AdrfId) {
 		toSerialize["adrfId"] = o.AdrfId
 	}
-	if !IsNil(o.AdrfDataTypes) {
+	if !isNil(o.AdrfDataTypes) {
 		toSerialize["adrfDataTypes"] = o.AdrfDataTypes
 	}
-	if !IsNil(o.AggrNwdafIds) {
+	if !isNil(o.AggrNwdafIds) {
 		toSerialize["aggrNwdafIds"] = o.AggrNwdafIds
 	}
-	if !IsNil(o.ModelInfo) {
+	if !isNil(o.ModelInfo) {
 		toSerialize["modelInfo"] = o.ModelInfo
 	}
 	return toSerialize, nil

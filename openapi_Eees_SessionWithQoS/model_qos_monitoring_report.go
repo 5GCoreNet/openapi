@@ -43,7 +43,7 @@ func NewQosMonitoringReportWithDefaults() *QosMonitoringReport {
 
 // GetUlDelays returns the UlDelays field value if set, zero value otherwise.
 func (o *QosMonitoringReport) GetUlDelays() []int32 {
-	if o == nil || IsNil(o.UlDelays) {
+	if o == nil || isNil(o.UlDelays) {
 		var ret []int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *QosMonitoringReport) GetUlDelays() []int32 {
 // GetUlDelaysOk returns a tuple with the UlDelays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringReport) GetUlDelaysOk() ([]int32, bool) {
-	if o == nil || IsNil(o.UlDelays) {
+	if o == nil || isNil(o.UlDelays) {
 		return nil, false
 	}
 	return o.UlDelays, true
@@ -61,7 +61,7 @@ func (o *QosMonitoringReport) GetUlDelaysOk() ([]int32, bool) {
 
 // HasUlDelays returns a boolean if a field has been set.
 func (o *QosMonitoringReport) HasUlDelays() bool {
-	if o != nil && !IsNil(o.UlDelays) {
+	if o != nil && !isNil(o.UlDelays) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *QosMonitoringReport) SetUlDelays(v []int32) {
 
 // GetDlDelays returns the DlDelays field value if set, zero value otherwise.
 func (o *QosMonitoringReport) GetDlDelays() []int32 {
-	if o == nil || IsNil(o.DlDelays) {
+	if o == nil || isNil(o.DlDelays) {
 		var ret []int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *QosMonitoringReport) GetDlDelays() []int32 {
 // GetDlDelaysOk returns a tuple with the DlDelays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringReport) GetDlDelaysOk() ([]int32, bool) {
-	if o == nil || IsNil(o.DlDelays) {
+	if o == nil || isNil(o.DlDelays) {
 		return nil, false
 	}
 	return o.DlDelays, true
@@ -93,7 +93,7 @@ func (o *QosMonitoringReport) GetDlDelaysOk() ([]int32, bool) {
 
 // HasDlDelays returns a boolean if a field has been set.
 func (o *QosMonitoringReport) HasDlDelays() bool {
-	if o != nil && !IsNil(o.DlDelays) {
+	if o != nil && !isNil(o.DlDelays) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *QosMonitoringReport) SetDlDelays(v []int32) {
 
 // GetRtDelays returns the RtDelays field value if set, zero value otherwise.
 func (o *QosMonitoringReport) GetRtDelays() []int32 {
-	if o == nil || IsNil(o.RtDelays) {
+	if o == nil || isNil(o.RtDelays) {
 		var ret []int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *QosMonitoringReport) GetRtDelays() []int32 {
 // GetRtDelaysOk returns a tuple with the RtDelays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *QosMonitoringReport) GetRtDelaysOk() ([]int32, bool) {
-	if o == nil || IsNil(o.RtDelays) {
+	if o == nil || isNil(o.RtDelays) {
 		return nil, false
 	}
 	return o.RtDelays, true
@@ -125,7 +125,7 @@ func (o *QosMonitoringReport) GetRtDelaysOk() ([]int32, bool) {
 
 // HasRtDelays returns a boolean if a field has been set.
 func (o *QosMonitoringReport) HasRtDelays() bool {
-	if o != nil && !IsNil(o.RtDelays) {
+	if o != nil && !isNil(o.RtDelays) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o QosMonitoringReport) MarshalJSON() ([]byte, error) {
 
 func (o QosMonitoringReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UlDelays) {
+	if !isNil(o.UlDelays) {
 		toSerialize["ulDelays"] = o.UlDelays
 	}
-	if !IsNil(o.DlDelays) {
+	if !isNil(o.DlDelays) {
 		toSerialize["dlDelays"] = o.DlDelays
 	}
-	if !IsNil(o.RtDelays) {
+	if !isNil(o.RtDelays) {
 		toSerialize["rtDelays"] = o.RtDelays
 	}
 	return toSerialize, nil

@@ -72,7 +72,7 @@ func (o *AcrDetermReq) SetRequestorId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *AcrDetermReq) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *AcrDetermReq) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDetermReq) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -90,7 +90,7 @@ func (o *AcrDetermReq) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *AcrDetermReq) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *AcrDetermReq) SetUeId(v string) {
 
 // GetAcId returns the AcId field value if set, zero value otherwise.
 func (o *AcrDetermReq) GetAcId() string {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *AcrDetermReq) GetAcId() string {
 // GetAcIdOk returns a tuple with the AcId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDetermReq) GetAcIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AcId) {
+	if o == nil || isNil(o.AcId) {
 		return nil, false
 	}
 	return o.AcId, true
@@ -122,7 +122,7 @@ func (o *AcrDetermReq) GetAcIdOk() (*string, bool) {
 
 // HasAcId returns a boolean if a field has been set.
 func (o *AcrDetermReq) HasAcId() bool {
-	if o != nil && !IsNil(o.AcId) {
+	if o != nil && !isNil(o.AcId) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *AcrDetermReq) SetAcId(v string) {
 
 // GetEasId returns the EasId field value if set, zero value otherwise.
 func (o *AcrDetermReq) GetEasId() string {
-	if o == nil || IsNil(o.EasId) {
+	if o == nil || isNil(o.EasId) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *AcrDetermReq) GetEasId() string {
 // GetEasIdOk returns a tuple with the EasId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AcrDetermReq) GetEasIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EasId) {
+	if o == nil || isNil(o.EasId) {
 		return nil, false
 	}
 	return o.EasId, true
@@ -154,7 +154,7 @@ func (o *AcrDetermReq) GetEasIdOk() (*string, bool) {
 
 // HasEasId returns a boolean if a field has been set.
 func (o *AcrDetermReq) HasEasId() bool {
-	if o != nil && !IsNil(o.EasId) {
+	if o != nil && !isNil(o.EasId) {
 		return true
 	}
 
@@ -201,13 +201,13 @@ func (o AcrDetermReq) MarshalJSON() ([]byte, error) {
 func (o AcrDetermReq) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["requestorId"] = o.RequestorId
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.AcId) {
+	if !isNil(o.AcId) {
 		toSerialize["acId"] = o.AcId
 	}
-	if !IsNil(o.EasId) {
+	if !isNil(o.EasId) {
 		toSerialize["easId"] = o.EasId
 	}
 	toSerialize["sEasEndpoint"] = o.SEasEndpoint

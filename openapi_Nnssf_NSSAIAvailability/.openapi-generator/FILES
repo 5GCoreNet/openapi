@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -17,6 +16,7 @@ docs/ExtSnssai.md
 docs/InvalidParam.md
 docs/NFInstanceIDDocumentApi.md
 docs/NFType.md
+docs/NFTypeAnyOf.md
 docs/NSSAIAvailabilityStoreApi.md
 docs/NsagInfo.md
 docs/NssaiAvailabilityInfo.md
@@ -24,8 +24,10 @@ docs/NssfEventNotification.md
 docs/NssfEventSubscriptionCreateData.md
 docs/NssfEventSubscriptionCreatedData.md
 docs/NssfEventType.md
+docs/NssfEventTypeAnyOf.md
 docs/PatchItem.md
 docs/PatchOperation.md
+docs/PatchOperationAnyOf.md
 docs/PlmnId.md
 docs/PlmnIdNid.md
 docs/ProblemDetails.md
@@ -50,14 +52,17 @@ model_authorized_nssai_availability_info.go
 model_ext_snssai.go
 model_invalid_param.go
 model_nf_type.go
+model_nf_type_any_of.go
 model_nsag_info.go
 model_nssai_availability_info.go
 model_nssf_event_notification.go
 model_nssf_event_subscription_create_data.go
 model_nssf_event_subscription_created_data.go
 model_nssf_event_type.go
+model_nssf_event_type_any_of.go
 model_patch_item.go
 model_patch_operation.go
+model_patch_operation_any_of.go
 model_plmn_id.go
 model_plmn_id_nid.go
 model_problem_details.go

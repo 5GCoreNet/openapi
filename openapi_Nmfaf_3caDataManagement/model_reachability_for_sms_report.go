@@ -69,7 +69,7 @@ func (o *ReachabilityForSmsReport) SetSmsfAccessType(v AccessType) {
 
 // GetMaxAvailabilityTime returns the MaxAvailabilityTime field value if set, zero value otherwise.
 func (o *ReachabilityForSmsReport) GetMaxAvailabilityTime() time.Time {
-	if o == nil || IsNil(o.MaxAvailabilityTime) {
+	if o == nil || isNil(o.MaxAvailabilityTime) {
 		var ret time.Time
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReachabilityForSmsReport) GetMaxAvailabilityTime() time.Time {
 // GetMaxAvailabilityTimeOk returns a tuple with the MaxAvailabilityTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityForSmsReport) GetMaxAvailabilityTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.MaxAvailabilityTime) {
+	if o == nil || isNil(o.MaxAvailabilityTime) {
 		return nil, false
 	}
 	return o.MaxAvailabilityTime, true
@@ -87,7 +87,7 @@ func (o *ReachabilityForSmsReport) GetMaxAvailabilityTimeOk() (*time.Time, bool)
 
 // HasMaxAvailabilityTime returns a boolean if a field has been set.
 func (o *ReachabilityForSmsReport) HasMaxAvailabilityTime() bool {
-	if o != nil && !IsNil(o.MaxAvailabilityTime) {
+	if o != nil && !isNil(o.MaxAvailabilityTime) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o ReachabilityForSmsReport) MarshalJSON() ([]byte, error) {
 func (o ReachabilityForSmsReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["smsfAccessType"] = o.SmsfAccessType
-	if !IsNil(o.MaxAvailabilityTime) {
+	if !isNil(o.MaxAvailabilityTime) {
 		toSerialize["maxAvailabilityTime"] = o.MaxAvailabilityTime
 	}
 	return toSerialize, nil

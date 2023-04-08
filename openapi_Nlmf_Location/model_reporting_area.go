@@ -69,7 +69,7 @@ func (o *ReportingArea) SetAreaType(v ReportingAreaType) {
 
 // GetTai returns the Tai field value if set, zero value otherwise.
 func (o *ReportingArea) GetTai() Tai {
-	if o == nil || IsNil(o.Tai) {
+	if o == nil || isNil(o.Tai) {
 		var ret Tai
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *ReportingArea) GetTai() Tai {
 // GetTaiOk returns a tuple with the Tai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingArea) GetTaiOk() (*Tai, bool) {
-	if o == nil || IsNil(o.Tai) {
+	if o == nil || isNil(o.Tai) {
 		return nil, false
 	}
 	return o.Tai, true
@@ -87,7 +87,7 @@ func (o *ReportingArea) GetTaiOk() (*Tai, bool) {
 
 // HasTai returns a boolean if a field has been set.
 func (o *ReportingArea) HasTai() bool {
-	if o != nil && !IsNil(o.Tai) {
+	if o != nil && !isNil(o.Tai) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *ReportingArea) SetTai(v Tai) {
 
 // GetEcgi returns the Ecgi field value if set, zero value otherwise.
 func (o *ReportingArea) GetEcgi() Ecgi {
-	if o == nil || IsNil(o.Ecgi) {
+	if o == nil || isNil(o.Ecgi) {
 		var ret Ecgi
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *ReportingArea) GetEcgi() Ecgi {
 // GetEcgiOk returns a tuple with the Ecgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingArea) GetEcgiOk() (*Ecgi, bool) {
-	if o == nil || IsNil(o.Ecgi) {
+	if o == nil || isNil(o.Ecgi) {
 		return nil, false
 	}
 	return o.Ecgi, true
@@ -119,7 +119,7 @@ func (o *ReportingArea) GetEcgiOk() (*Ecgi, bool) {
 
 // HasEcgi returns a boolean if a field has been set.
 func (o *ReportingArea) HasEcgi() bool {
-	if o != nil && !IsNil(o.Ecgi) {
+	if o != nil && !isNil(o.Ecgi) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *ReportingArea) SetEcgi(v Ecgi) {
 
 // GetNcgi returns the Ncgi field value if set, zero value otherwise.
 func (o *ReportingArea) GetNcgi() Ncgi {
-	if o == nil || IsNil(o.Ncgi) {
+	if o == nil || isNil(o.Ncgi) {
 		var ret Ncgi
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *ReportingArea) GetNcgi() Ncgi {
 // GetNcgiOk returns a tuple with the Ncgi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingArea) GetNcgiOk() (*Ncgi, bool) {
-	if o == nil || IsNil(o.Ncgi) {
+	if o == nil || isNil(o.Ncgi) {
 		return nil, false
 	}
 	return o.Ncgi, true
@@ -151,7 +151,7 @@ func (o *ReportingArea) GetNcgiOk() (*Ncgi, bool) {
 
 // HasNcgi returns a boolean if a field has been set.
 func (o *ReportingArea) HasNcgi() bool {
-	if o != nil && !IsNil(o.Ncgi) {
+	if o != nil && !isNil(o.Ncgi) {
 		return true
 	}
 
@@ -174,13 +174,13 @@ func (o ReportingArea) MarshalJSON() ([]byte, error) {
 func (o ReportingArea) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["areaType"] = o.AreaType
-	if !IsNil(o.Tai) {
+	if !isNil(o.Tai) {
 		toSerialize["tai"] = o.Tai
 	}
-	if !IsNil(o.Ecgi) {
+	if !isNil(o.Ecgi) {
 		toSerialize["ecgi"] = o.Ecgi
 	}
-	if !IsNil(o.Ncgi) {
+	if !isNil(o.Ncgi) {
 		toSerialize["ncgi"] = o.Ncgi
 	}
 	return toSerialize, nil

@@ -19,7 +19,7 @@ var _ MappedNullable = &MDARequestSingleAllOf{}
 
 // MDARequestSingleAllOf struct for MDARequestSingleAllOf
 type MDARequestSingleAllOf struct {
-	Attributes *MDARequestSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *interface{} `json:"attributes,omitempty"`
 }
 
 // NewMDARequestSingleAllOf instantiates a new MDARequestSingleAllOf object
@@ -40,9 +40,9 @@ func NewMDARequestSingleAllOfWithDefaults() *MDARequestSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *MDARequestSingleAllOf) GetAttributes() MDARequestSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret MDARequestSingleAllOfAttributes
+func (o *MDARequestSingleAllOf) GetAttributes() interface{} {
+	if o == nil || isNil(o.Attributes) {
+		var ret interface{}
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *MDARequestSingleAllOf) GetAttributes() MDARequestSingleAllOfAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MDARequestSingleAllOf) GetAttributesOk() (*MDARequestSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *MDARequestSingleAllOf) GetAttributesOk() (*interface{}, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *MDARequestSingleAllOf) GetAttributesOk() (*MDARequestSingleAllOfAttribu
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *MDARequestSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given MDARequestSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *MDARequestSingleAllOf) SetAttributes(v MDARequestSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given interface{} and assigns it to the Attributes field.
+func (o *MDARequestSingleAllOf) SetAttributes(v interface{}) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o MDARequestSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o MDARequestSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // Pc5Capability Possible values are: - LTE_PC5: This value is used to indicate that UE supports PC5 LTE RAT for V2X communications   over the PC5 reference point. - NR_PC5: This value is used to indicate that UE supports PC5 NR RAT for V2X communications   over the PC5 reference point. - LTE_NR_PC5: This value is used to indicate that UE supports both PC5 LTE and NR RAT for   V2X communications over the PC5 reference point.  
 type Pc5Capability struct {
-	string *string
+	Pc5CapabilityAnyOf *Pc5CapabilityAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *Pc5Capability) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into Pc5CapabilityAnyOf
+	err = json.Unmarshal(data, &dst.Pc5CapabilityAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonPc5CapabilityAnyOf, _ := json.Marshal(dst.Pc5CapabilityAnyOf)
+		if string(jsonPc5CapabilityAnyOf) == "{}" { // empty struct
+			dst.Pc5CapabilityAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.Pc5CapabilityAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.Pc5CapabilityAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(Pc5Capability)")
@@ -41,8 +55,12 @@ func (dst *Pc5Capability) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *Pc5Capability) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.Pc5CapabilityAnyOf != nil {
+		return json.Marshal(&src.Pc5CapabilityAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

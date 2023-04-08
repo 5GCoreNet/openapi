@@ -133,7 +133,7 @@ func (o *NssfEventSubscriptionCreateData) SetEvent(v NssfEventType) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *NssfEventSubscriptionCreateData) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -151,7 +151,7 @@ func (o *NssfEventSubscriptionCreateData) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *NssfEventSubscriptionCreateData) SetExpiry(v time.Time) {
 
 // GetAmfSetId returns the AmfSetId field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetAmfSetId() string {
-	if o == nil || IsNil(o.AmfSetId) {
+	if o == nil || isNil(o.AmfSetId) {
 		var ret string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfSetId() string {
 // GetAmfSetIdOk returns a tuple with the AmfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetAmfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfSetId) {
+	if o == nil || isNil(o.AmfSetId) {
 		return nil, false
 	}
 	return o.AmfSetId, true
@@ -183,7 +183,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfSetIdOk() (*string, bool) {
 
 // HasAmfSetId returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasAmfSetId() bool {
-	if o != nil && !IsNil(o.AmfSetId) {
+	if o != nil && !isNil(o.AmfSetId) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *NssfEventSubscriptionCreateData) SetAmfSetId(v string) {
 
 // GetTaiRangeList returns the TaiRangeList field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetTaiRangeList() []TaiRange {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		var ret []TaiRange
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *NssfEventSubscriptionCreateData) GetTaiRangeList() []TaiRange {
 // GetTaiRangeListOk returns a tuple with the TaiRangeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetTaiRangeListOk() ([]TaiRange, bool) {
-	if o == nil || IsNil(o.TaiRangeList) {
+	if o == nil || isNil(o.TaiRangeList) {
 		return nil, false
 	}
 	return o.TaiRangeList, true
@@ -215,7 +215,7 @@ func (o *NssfEventSubscriptionCreateData) GetTaiRangeListOk() ([]TaiRange, bool)
 
 // HasTaiRangeList returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasTaiRangeList() bool {
-	if o != nil && !IsNil(o.TaiRangeList) {
+	if o != nil && !isNil(o.TaiRangeList) {
 		return true
 	}
 
@@ -229,7 +229,7 @@ func (o *NssfEventSubscriptionCreateData) SetTaiRangeList(v []TaiRange) {
 
 // GetAmfId returns the AmfId field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetAmfId() string {
-	if o == nil || IsNil(o.AmfId) {
+	if o == nil || isNil(o.AmfId) {
 		var ret string
 		return ret
 	}
@@ -239,7 +239,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfId() string {
 // GetAmfIdOk returns a tuple with the AmfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetAmfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.AmfId) {
+	if o == nil || isNil(o.AmfId) {
 		return nil, false
 	}
 	return o.AmfId, true
@@ -247,7 +247,7 @@ func (o *NssfEventSubscriptionCreateData) GetAmfIdOk() (*string, bool) {
 
 // HasAmfId returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasAmfId() bool {
-	if o != nil && !IsNil(o.AmfId) {
+	if o != nil && !isNil(o.AmfId) {
 		return true
 	}
 
@@ -261,7 +261,7 @@ func (o *NssfEventSubscriptionCreateData) SetAmfId(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -271,7 +271,7 @@ func (o *NssfEventSubscriptionCreateData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -279,7 +279,7 @@ func (o *NssfEventSubscriptionCreateData) GetSupportedFeaturesOk() (*string, boo
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -293,7 +293,7 @@ func (o *NssfEventSubscriptionCreateData) SetSupportedFeatures(v string) {
 
 // GetAllAmfSetTaiInd returns the AllAmfSetTaiInd field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiInd() bool {
-	if o == nil || IsNil(o.AllAmfSetTaiInd) {
+	if o == nil || isNil(o.AllAmfSetTaiInd) {
 		var ret bool
 		return ret
 	}
@@ -303,7 +303,7 @@ func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiInd() bool {
 // GetAllAmfSetTaiIndOk returns a tuple with the AllAmfSetTaiInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AllAmfSetTaiInd) {
+	if o == nil || isNil(o.AllAmfSetTaiInd) {
 		return nil, false
 	}
 	return o.AllAmfSetTaiInd, true
@@ -311,7 +311,7 @@ func (o *NssfEventSubscriptionCreateData) GetAllAmfSetTaiIndOk() (*bool, bool) {
 
 // HasAllAmfSetTaiInd returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreateData) HasAllAmfSetTaiInd() bool {
-	if o != nil && !IsNil(o.AllAmfSetTaiInd) {
+	if o != nil && !isNil(o.AllAmfSetTaiInd) {
 		return true
 	}
 
@@ -336,22 +336,22 @@ func (o NssfEventSubscriptionCreateData) ToMap() (map[string]interface{}, error)
 	toSerialize["nfNssaiAvailabilityUri"] = o.NfNssaiAvailabilityUri
 	toSerialize["taiList"] = o.TaiList
 	toSerialize["event"] = o.Event
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.AmfSetId) {
+	if !isNil(o.AmfSetId) {
 		toSerialize["amfSetId"] = o.AmfSetId
 	}
-	if !IsNil(o.TaiRangeList) {
+	if !isNil(o.TaiRangeList) {
 		toSerialize["taiRangeList"] = o.TaiRangeList
 	}
-	if !IsNil(o.AmfId) {
+	if !isNil(o.AmfId) {
 		toSerialize["amfId"] = o.AmfId
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.AllAmfSetTaiInd) {
+	if !isNil(o.AllAmfSetTaiInd) {
 		toSerialize["allAmfSetTaiInd"] = o.AllAmfSetTaiInd
 	}
 	return toSerialize, nil

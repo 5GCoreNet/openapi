@@ -17,23 +17,37 @@ import (
 
 // N1MessageClass Enumeration for N1 Message Class
 type N1MessageClass struct {
-	string *string
+	N1MessageClassAnyOf *N1MessageClassAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *N1MessageClass) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into N1MessageClassAnyOf
+	err = json.Unmarshal(data, &dst.N1MessageClassAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonN1MessageClassAnyOf, _ := json.Marshal(dst.N1MessageClassAnyOf)
+		if string(jsonN1MessageClassAnyOf) == "{}" { // empty struct
+			dst.N1MessageClassAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.N1MessageClassAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.N1MessageClassAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(N1MessageClass)")
@@ -41,8 +55,12 @@ func (dst *N1MessageClass) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *N1MessageClass) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.N1MessageClassAnyOf != nil {
+		return json.Marshal(&src.N1MessageClassAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -76,7 +76,7 @@ func (o *ValKeyInfo) SetUserUri(v string) {
 
 // GetSkmsId returns the SkmsId field value if set, zero value otherwise.
 func (o *ValKeyInfo) GetSkmsId() string {
-	if o == nil || IsNil(o.SkmsId) {
+	if o == nil || isNil(o.SkmsId) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *ValKeyInfo) GetSkmsId() string {
 // GetSkmsIdOk returns a tuple with the SkmsId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValKeyInfo) GetSkmsIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SkmsId) {
+	if o == nil || isNil(o.SkmsId) {
 		return nil, false
 	}
 	return o.SkmsId, true
@@ -94,7 +94,7 @@ func (o *ValKeyInfo) GetSkmsIdOk() (*string, bool) {
 
 // HasSkmsId returns a boolean if a field has been set.
 func (o *ValKeyInfo) HasSkmsId() bool {
-	if o != nil && !IsNil(o.SkmsId) {
+	if o != nil && !isNil(o.SkmsId) {
 		return true
 	}
 
@@ -132,7 +132,7 @@ func (o *ValKeyInfo) SetValService(v string) {
 
 // GetValTgtUe returns the ValTgtUe field value if set, zero value otherwise.
 func (o *ValKeyInfo) GetValTgtUe() ValTargetUe {
-	if o == nil || IsNil(o.ValTgtUe) {
+	if o == nil || isNil(o.ValTgtUe) {
 		var ret ValTargetUe
 		return ret
 	}
@@ -142,7 +142,7 @@ func (o *ValKeyInfo) GetValTgtUe() ValTargetUe {
 // GetValTgtUeOk returns a tuple with the ValTgtUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ValKeyInfo) GetValTgtUeOk() (*ValTargetUe, bool) {
-	if o == nil || IsNil(o.ValTgtUe) {
+	if o == nil || isNil(o.ValTgtUe) {
 		return nil, false
 	}
 	return o.ValTgtUe, true
@@ -150,7 +150,7 @@ func (o *ValKeyInfo) GetValTgtUeOk() (*ValTargetUe, bool) {
 
 // HasValTgtUe returns a boolean if a field has been set.
 func (o *ValKeyInfo) HasValTgtUe() bool {
-	if o != nil && !IsNil(o.ValTgtUe) {
+	if o != nil && !isNil(o.ValTgtUe) {
 		return true
 	}
 
@@ -197,11 +197,11 @@ func (o ValKeyInfo) MarshalJSON() ([]byte, error) {
 func (o ValKeyInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["userUri"] = o.UserUri
-	if !IsNil(o.SkmsId) {
+	if !isNil(o.SkmsId) {
 		toSerialize["skmsId"] = o.SkmsId
 	}
 	toSerialize["valService"] = o.ValService
-	if !IsNil(o.ValTgtUe) {
+	if !isNil(o.ValTgtUe) {
 		toSerialize["valTgtUe"] = o.ValTgtUe
 	}
 	toSerialize["keyInfo"] = o.KeyInfo

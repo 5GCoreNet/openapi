@@ -19,7 +19,7 @@ var _ MappedNullable = &EPN2SingleAllOf{}
 
 // EPN2SingleAllOf struct for EPN2SingleAllOf
 type EPN2SingleAllOf struct {
-	Attributes *EPN2SingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *EPRPAttr `json:"attributes,omitempty"`
 }
 
 // NewEPN2SingleAllOf instantiates a new EPN2SingleAllOf object
@@ -40,9 +40,9 @@ func NewEPN2SingleAllOfWithDefaults() *EPN2SingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *EPN2SingleAllOf) GetAttributes() EPN2SingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret EPN2SingleAllOfAttributes
+func (o *EPN2SingleAllOf) GetAttributes() EPRPAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret EPRPAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *EPN2SingleAllOf) GetAttributes() EPN2SingleAllOfAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EPN2SingleAllOf) GetAttributesOk() (*EPN2SingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *EPN2SingleAllOf) GetAttributesOk() (*EPRPAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *EPN2SingleAllOf) GetAttributesOk() (*EPN2SingleAllOfAttributes, bool) {
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EPN2SingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given EPN2SingleAllOfAttributes and assigns it to the Attributes field.
-func (o *EPN2SingleAllOf) SetAttributes(v EPN2SingleAllOfAttributes) {
+// SetAttributes gets a reference to the given EPRPAttr and assigns it to the Attributes field.
+func (o *EPN2SingleAllOf) SetAttributes(v EPRPAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o EPN2SingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o EPN2SingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

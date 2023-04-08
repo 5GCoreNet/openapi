@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
  - [DiscoveryAuthReqData](docs/DiscoveryAuthReqData.md)
  - [DiscoveryAuthRespData](docs/DiscoveryAuthRespData.md)
  - [DiscoveryType](docs/DiscoveryType.md)
+ - [DiscoveryTypeAnyOf](docs/DiscoveryTypeAnyOf.md)
  - [InvalidParam](docs/InvalidParam.md)
  - [MatchInfoForOpen](docs/MatchInfoForOpen.md)
  - [MatchInfoForRestricted](docs/MatchInfoForRestricted.md)
@@ -119,6 +120,7 @@ Class | Method | HTTP request | Description
  - [MonitorUpdateDataForRestricted](docs/MonitorUpdateDataForRestricted.md)
  - [MonitorUpdateResult](docs/MonitorUpdateResult.md)
  - [NFType](docs/NFType.md)
+ - [NFTypeAnyOf](docs/NFTypeAnyOf.md)
  - [PatchResult](docs/PatchResult.md)
  - [PlmnId](docs/PlmnId.md)
  - [PlmnIdNid](docs/PlmnIdNid.md)
@@ -130,6 +132,7 @@ Class | Method | HTTP request | Description
  - [RestrictedCodeSuffixPool](docs/RestrictedCodeSuffixPool.md)
  - [RestrictedCodeSuffixRange](docs/RestrictedCodeSuffixRange.md)
  - [RevocationResult](docs/RevocationResult.md)
+ - [RevocationResultAnyOf](docs/RevocationResultAnyOf.md)
  - [Snssai](docs/Snssai.md)
 
 

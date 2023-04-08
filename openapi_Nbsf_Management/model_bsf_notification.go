@@ -75,7 +75,7 @@ func (o *BsfNotification) SetNotifCorreId(v string) {
 
 // GetPcfId returns the PcfId field value if set, zero value otherwise.
 func (o *BsfNotification) GetPcfId() string {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *BsfNotification) GetPcfId() string {
 // GetPcfIdOk returns a tuple with the PcfId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfNotification) GetPcfIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfId) {
+	if o == nil || isNil(o.PcfId) {
 		return nil, false
 	}
 	return o.PcfId, true
@@ -93,7 +93,7 @@ func (o *BsfNotification) GetPcfIdOk() (*string, bool) {
 
 // HasPcfId returns a boolean if a field has been set.
 func (o *BsfNotification) HasPcfId() bool {
-	if o != nil && !IsNil(o.PcfId) {
+	if o != nil && !isNil(o.PcfId) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *BsfNotification) SetPcfId(v string) {
 
 // GetPcfSetId returns the PcfSetId field value if set, zero value otherwise.
 func (o *BsfNotification) GetPcfSetId() string {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *BsfNotification) GetPcfSetId() string {
 // GetPcfSetIdOk returns a tuple with the PcfSetId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfNotification) GetPcfSetIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PcfSetId) {
+	if o == nil || isNil(o.PcfSetId) {
 		return nil, false
 	}
 	return o.PcfSetId, true
@@ -125,7 +125,7 @@ func (o *BsfNotification) GetPcfSetIdOk() (*string, bool) {
 
 // HasPcfSetId returns a boolean if a field has been set.
 func (o *BsfNotification) HasPcfSetId() bool {
-	if o != nil && !IsNil(o.PcfSetId) {
+	if o != nil && !isNil(o.PcfSetId) {
 		return true
 	}
 
@@ -139,7 +139,7 @@ func (o *BsfNotification) SetPcfSetId(v string) {
 
 // GetBindLevel returns the BindLevel field value if set, zero value otherwise.
 func (o *BsfNotification) GetBindLevel() BindingLevel {
-	if o == nil || IsNil(o.BindLevel) {
+	if o == nil || isNil(o.BindLevel) {
 		var ret BindingLevel
 		return ret
 	}
@@ -149,7 +149,7 @@ func (o *BsfNotification) GetBindLevel() BindingLevel {
 // GetBindLevelOk returns a tuple with the BindLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BsfNotification) GetBindLevelOk() (*BindingLevel, bool) {
-	if o == nil || IsNil(o.BindLevel) {
+	if o == nil || isNil(o.BindLevel) {
 		return nil, false
 	}
 	return o.BindLevel, true
@@ -157,7 +157,7 @@ func (o *BsfNotification) GetBindLevelOk() (*BindingLevel, bool) {
 
 // HasBindLevel returns a boolean if a field has been set.
 func (o *BsfNotification) HasBindLevel() bool {
-	if o != nil && !IsNil(o.BindLevel) {
+	if o != nil && !isNil(o.BindLevel) {
 		return true
 	}
 
@@ -204,13 +204,13 @@ func (o BsfNotification) MarshalJSON() ([]byte, error) {
 func (o BsfNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifCorreId"] = o.NotifCorreId
-	if !IsNil(o.PcfId) {
+	if !isNil(o.PcfId) {
 		toSerialize["pcfId"] = o.PcfId
 	}
-	if !IsNil(o.PcfSetId) {
+	if !isNil(o.PcfSetId) {
 		toSerialize["pcfSetId"] = o.PcfSetId
 	}
-	if !IsNil(o.BindLevel) {
+	if !isNil(o.BindLevel) {
 		toSerialize["bindLevel"] = o.BindLevel
 	}
 	toSerialize["eventNotifs"] = o.EventNotifs

@@ -55,7 +55,7 @@ func NewUePolicySetWithDefaults() *UePolicySet {
 
 // GetPraInfos returns the PraInfos field value if set, zero value otherwise.
 func (o *UePolicySet) GetPraInfos() map[string]PresenceInfo {
-	if o == nil || IsNil(o.PraInfos) {
+	if o == nil || isNil(o.PraInfos) {
 		var ret map[string]PresenceInfo
 		return ret
 	}
@@ -65,7 +65,7 @@ func (o *UePolicySet) GetPraInfos() map[string]PresenceInfo {
 // GetPraInfosOk returns a tuple with the PraInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
-	if o == nil || IsNil(o.PraInfos) {
+	if o == nil || isNil(o.PraInfos) {
 		return nil, false
 	}
 	return o.PraInfos, true
@@ -73,7 +73,7 @@ func (o *UePolicySet) GetPraInfosOk() (*map[string]PresenceInfo, bool) {
 
 // HasPraInfos returns a boolean if a field has been set.
 func (o *UePolicySet) HasPraInfos() bool {
-	if o != nil && !IsNil(o.PraInfos) {
+	if o != nil && !isNil(o.PraInfos) {
 		return true
 	}
 
@@ -87,7 +87,7 @@ func (o *UePolicySet) SetPraInfos(v map[string]PresenceInfo) {
 
 // GetSubscCats returns the SubscCats field value if set, zero value otherwise.
 func (o *UePolicySet) GetSubscCats() []string {
-	if o == nil || IsNil(o.SubscCats) {
+	if o == nil || isNil(o.SubscCats) {
 		var ret []string
 		return ret
 	}
@@ -97,7 +97,7 @@ func (o *UePolicySet) GetSubscCats() []string {
 // GetSubscCatsOk returns a tuple with the SubscCats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetSubscCatsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SubscCats) {
+	if o == nil || isNil(o.SubscCats) {
 		return nil, false
 	}
 	return o.SubscCats, true
@@ -105,7 +105,7 @@ func (o *UePolicySet) GetSubscCatsOk() ([]string, bool) {
 
 // HasSubscCats returns a boolean if a field has been set.
 func (o *UePolicySet) HasSubscCats() bool {
-	if o != nil && !IsNil(o.SubscCats) {
+	if o != nil && !isNil(o.SubscCats) {
 		return true
 	}
 
@@ -119,7 +119,7 @@ func (o *UePolicySet) SetSubscCats(v []string) {
 
 // GetUePolicySections returns the UePolicySections field value if set, zero value otherwise.
 func (o *UePolicySet) GetUePolicySections() map[string]UePolicySection {
-	if o == nil || IsNil(o.UePolicySections) {
+	if o == nil || isNil(o.UePolicySections) {
 		var ret map[string]UePolicySection
 		return ret
 	}
@@ -129,7 +129,7 @@ func (o *UePolicySet) GetUePolicySections() map[string]UePolicySection {
 // GetUePolicySectionsOk returns a tuple with the UePolicySections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetUePolicySectionsOk() (*map[string]UePolicySection, bool) {
-	if o == nil || IsNil(o.UePolicySections) {
+	if o == nil || isNil(o.UePolicySections) {
 		return nil, false
 	}
 	return o.UePolicySections, true
@@ -137,7 +137,7 @@ func (o *UePolicySet) GetUePolicySectionsOk() (*map[string]UePolicySection, bool
 
 // HasUePolicySections returns a boolean if a field has been set.
 func (o *UePolicySet) HasUePolicySections() bool {
-	if o != nil && !IsNil(o.UePolicySections) {
+	if o != nil && !isNil(o.UePolicySections) {
 		return true
 	}
 
@@ -151,7 +151,7 @@ func (o *UePolicySet) SetUePolicySections(v map[string]UePolicySection) {
 
 // GetUpsis returns the Upsis field value if set, zero value otherwise.
 func (o *UePolicySet) GetUpsis() []string {
-	if o == nil || IsNil(o.Upsis) {
+	if o == nil || isNil(o.Upsis) {
 		var ret []string
 		return ret
 	}
@@ -161,7 +161,7 @@ func (o *UePolicySet) GetUpsis() []string {
 // GetUpsisOk returns a tuple with the Upsis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetUpsisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Upsis) {
+	if o == nil || isNil(o.Upsis) {
 		return nil, false
 	}
 	return o.Upsis, true
@@ -169,7 +169,7 @@ func (o *UePolicySet) GetUpsisOk() ([]string, bool) {
 
 // HasUpsis returns a boolean if a field has been set.
 func (o *UePolicySet) HasUpsis() bool {
-	if o != nil && !IsNil(o.Upsis) {
+	if o != nil && !isNil(o.Upsis) {
 		return true
 	}
 
@@ -183,7 +183,7 @@ func (o *UePolicySet) SetUpsis(v []string) {
 
 // GetAllowedRouteSelDescs returns the AllowedRouteSelDescs field value if set, zero value otherwise.
 func (o *UePolicySet) GetAllowedRouteSelDescs() map[string]PlmnRouteSelectionDescriptor {
-	if o == nil || IsNil(o.AllowedRouteSelDescs) {
+	if o == nil || isNil(o.AllowedRouteSelDescs) {
 		var ret map[string]PlmnRouteSelectionDescriptor
 		return ret
 	}
@@ -193,7 +193,7 @@ func (o *UePolicySet) GetAllowedRouteSelDescs() map[string]PlmnRouteSelectionDes
 // GetAllowedRouteSelDescsOk returns a tuple with the AllowedRouteSelDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetAllowedRouteSelDescsOk() (*map[string]PlmnRouteSelectionDescriptor, bool) {
-	if o == nil || IsNil(o.AllowedRouteSelDescs) {
+	if o == nil || isNil(o.AllowedRouteSelDescs) {
 		return nil, false
 	}
 	return o.AllowedRouteSelDescs, true
@@ -201,7 +201,7 @@ func (o *UePolicySet) GetAllowedRouteSelDescsOk() (*map[string]PlmnRouteSelectio
 
 // HasAllowedRouteSelDescs returns a boolean if a field has been set.
 func (o *UePolicySet) HasAllowedRouteSelDescs() bool {
-	if o != nil && !IsNil(o.AllowedRouteSelDescs) {
+	if o != nil && !isNil(o.AllowedRouteSelDescs) {
 		return true
 	}
 
@@ -215,7 +215,7 @@ func (o *UePolicySet) SetAllowedRouteSelDescs(v map[string]PlmnRouteSelectionDes
 
 // GetAndspInd returns the AndspInd field value if set, zero value otherwise.
 func (o *UePolicySet) GetAndspInd() bool {
-	if o == nil || IsNil(o.AndspInd) {
+	if o == nil || isNil(o.AndspInd) {
 		var ret bool
 		return ret
 	}
@@ -225,7 +225,7 @@ func (o *UePolicySet) GetAndspInd() bool {
 // GetAndspIndOk returns a tuple with the AndspInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetAndspIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.AndspInd) {
+	if o == nil || isNil(o.AndspInd) {
 		return nil, false
 	}
 	return o.AndspInd, true
@@ -233,7 +233,7 @@ func (o *UePolicySet) GetAndspIndOk() (*bool, bool) {
 
 // HasAndspInd returns a boolean if a field has been set.
 func (o *UePolicySet) HasAndspInd() bool {
-	if o != nil && !IsNil(o.AndspInd) {
+	if o != nil && !isNil(o.AndspInd) {
 		return true
 	}
 
@@ -247,7 +247,7 @@ func (o *UePolicySet) SetAndspInd(v bool) {
 
 // GetPei returns the Pei field value if set, zero value otherwise.
 func (o *UePolicySet) GetPei() string {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		var ret string
 		return ret
 	}
@@ -257,7 +257,7 @@ func (o *UePolicySet) GetPei() string {
 // GetPeiOk returns a tuple with the Pei field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetPeiOk() (*string, bool) {
-	if o == nil || IsNil(o.Pei) {
+	if o == nil || isNil(o.Pei) {
 		return nil, false
 	}
 	return o.Pei, true
@@ -265,7 +265,7 @@ func (o *UePolicySet) GetPeiOk() (*string, bool) {
 
 // HasPei returns a boolean if a field has been set.
 func (o *UePolicySet) HasPei() bool {
-	if o != nil && !IsNil(o.Pei) {
+	if o != nil && !isNil(o.Pei) {
 		return true
 	}
 
@@ -279,7 +279,7 @@ func (o *UePolicySet) SetPei(v string) {
 
 // GetOsIds returns the OsIds field value if set, zero value otherwise.
 func (o *UePolicySet) GetOsIds() []string {
-	if o == nil || IsNil(o.OsIds) {
+	if o == nil || isNil(o.OsIds) {
 		var ret []string
 		return ret
 	}
@@ -289,7 +289,7 @@ func (o *UePolicySet) GetOsIds() []string {
 // GetOsIdsOk returns a tuple with the OsIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetOsIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.OsIds) {
+	if o == nil || isNil(o.OsIds) {
 		return nil, false
 	}
 	return o.OsIds, true
@@ -297,7 +297,7 @@ func (o *UePolicySet) GetOsIdsOk() ([]string, bool) {
 
 // HasOsIds returns a boolean if a field has been set.
 func (o *UePolicySet) HasOsIds() bool {
-	if o != nil && !IsNil(o.OsIds) {
+	if o != nil && !isNil(o.OsIds) {
 		return true
 	}
 
@@ -311,7 +311,7 @@ func (o *UePolicySet) SetOsIds(v []string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *UePolicySet) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -321,7 +321,7 @@ func (o *UePolicySet) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -329,7 +329,7 @@ func (o *UePolicySet) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *UePolicySet) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -343,7 +343,7 @@ func (o *UePolicySet) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *UePolicySet) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -353,7 +353,7 @@ func (o *UePolicySet) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UePolicySet) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -361,7 +361,7 @@ func (o *UePolicySet) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *UePolicySet) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -383,34 +383,34 @@ func (o UePolicySet) MarshalJSON() ([]byte, error) {
 
 func (o UePolicySet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PraInfos) {
+	if !isNil(o.PraInfos) {
 		toSerialize["praInfos"] = o.PraInfos
 	}
-	if !IsNil(o.SubscCats) {
+	if !isNil(o.SubscCats) {
 		toSerialize["subscCats"] = o.SubscCats
 	}
-	if !IsNil(o.UePolicySections) {
+	if !isNil(o.UePolicySections) {
 		toSerialize["uePolicySections"] = o.UePolicySections
 	}
-	if !IsNil(o.Upsis) {
+	if !isNil(o.Upsis) {
 		toSerialize["upsis"] = o.Upsis
 	}
-	if !IsNil(o.AllowedRouteSelDescs) {
+	if !isNil(o.AllowedRouteSelDescs) {
 		toSerialize["allowedRouteSelDescs"] = o.AllowedRouteSelDescs
 	}
-	if !IsNil(o.AndspInd) {
+	if !isNil(o.AndspInd) {
 		toSerialize["andspInd"] = o.AndspInd
 	}
-	if !IsNil(o.Pei) {
+	if !isNil(o.Pei) {
 		toSerialize["pei"] = o.Pei
 	}
-	if !IsNil(o.OsIds) {
+	if !isNil(o.OsIds) {
 		toSerialize["osIds"] = o.OsIds
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

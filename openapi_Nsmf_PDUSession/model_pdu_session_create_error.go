@@ -73,7 +73,7 @@ func (o *PduSessionCreateError) SetError(v ProblemDetails) {
 
 // GetN1smCause returns the N1smCause field value if set, zero value otherwise.
 func (o *PduSessionCreateError) GetN1smCause() string {
-	if o == nil || IsNil(o.N1smCause) {
+	if o == nil || isNil(o.N1smCause) {
 		var ret string
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *PduSessionCreateError) GetN1smCause() string {
 // GetN1smCauseOk returns a tuple with the N1smCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionCreateError) GetN1smCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.N1smCause) {
+	if o == nil || isNil(o.N1smCause) {
 		return nil, false
 	}
 	return o.N1smCause, true
@@ -91,7 +91,7 @@ func (o *PduSessionCreateError) GetN1smCauseOk() (*string, bool) {
 
 // HasN1smCause returns a boolean if a field has been set.
 func (o *PduSessionCreateError) HasN1smCause() bool {
-	if o != nil && !IsNil(o.N1smCause) {
+	if o != nil && !isNil(o.N1smCause) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *PduSessionCreateError) SetN1smCause(v string) {
 
 // GetN1SmInfoToUe returns the N1SmInfoToUe field value if set, zero value otherwise.
 func (o *PduSessionCreateError) GetN1SmInfoToUe() RefToBinaryData {
-	if o == nil || IsNil(o.N1SmInfoToUe) {
+	if o == nil || isNil(o.N1SmInfoToUe) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *PduSessionCreateError) GetN1SmInfoToUe() RefToBinaryData {
 // GetN1SmInfoToUeOk returns a tuple with the N1SmInfoToUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionCreateError) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.N1SmInfoToUe) {
+	if o == nil || isNil(o.N1SmInfoToUe) {
 		return nil, false
 	}
 	return o.N1SmInfoToUe, true
@@ -123,7 +123,7 @@ func (o *PduSessionCreateError) GetN1SmInfoToUeOk() (*RefToBinaryData, bool) {
 
 // HasN1SmInfoToUe returns a boolean if a field has been set.
 func (o *PduSessionCreateError) HasN1SmInfoToUe() bool {
-	if o != nil && !IsNil(o.N1SmInfoToUe) {
+	if o != nil && !isNil(o.N1SmInfoToUe) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *PduSessionCreateError) SetN1SmInfoToUe(v RefToBinaryData) {
 
 // GetBackOffTimer returns the BackOffTimer field value if set, zero value otherwise.
 func (o *PduSessionCreateError) GetBackOffTimer() int32 {
-	if o == nil || IsNil(o.BackOffTimer) {
+	if o == nil || isNil(o.BackOffTimer) {
 		var ret int32
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *PduSessionCreateError) GetBackOffTimer() int32 {
 // GetBackOffTimerOk returns a tuple with the BackOffTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionCreateError) GetBackOffTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.BackOffTimer) {
+	if o == nil || isNil(o.BackOffTimer) {
 		return nil, false
 	}
 	return o.BackOffTimer, true
@@ -155,7 +155,7 @@ func (o *PduSessionCreateError) GetBackOffTimerOk() (*int32, bool) {
 
 // HasBackOffTimer returns a boolean if a field has been set.
 func (o *PduSessionCreateError) HasBackOffTimer() bool {
-	if o != nil && !IsNil(o.BackOffTimer) {
+	if o != nil && !isNil(o.BackOffTimer) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *PduSessionCreateError) SetBackOffTimer(v int32) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *PduSessionCreateError) GetRecoveryTime() time.Time {
-	if o == nil || IsNil(o.RecoveryTime) {
+	if o == nil || isNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *PduSessionCreateError) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PduSessionCreateError) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RecoveryTime) {
+	if o == nil || isNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -187,7 +187,7 @@ func (o *PduSessionCreateError) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *PduSessionCreateError) HasRecoveryTime() bool {
-	if o != nil && !IsNil(o.RecoveryTime) {
+	if o != nil && !isNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -210,16 +210,16 @@ func (o PduSessionCreateError) MarshalJSON() ([]byte, error) {
 func (o PduSessionCreateError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.N1smCause) {
+	if !isNil(o.N1smCause) {
 		toSerialize["n1smCause"] = o.N1smCause
 	}
-	if !IsNil(o.N1SmInfoToUe) {
+	if !isNil(o.N1SmInfoToUe) {
 		toSerialize["n1SmInfoToUe"] = o.N1SmInfoToUe
 	}
-	if !IsNil(o.BackOffTimer) {
+	if !isNil(o.BackOffTimer) {
 		toSerialize["backOffTimer"] = o.BackOffTimer
 	}
-	if !IsNil(o.RecoveryTime) {
+	if !isNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
 	return toSerialize, nil

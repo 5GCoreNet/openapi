@@ -43,7 +43,7 @@ func NewLpiParametersProvisionPatchWithDefaults() *LpiParametersProvisionPatch {
 
 // GetLpi returns the Lpi field value if set, zero value otherwise.
 func (o *LpiParametersProvisionPatch) GetLpi() Lpi {
-	if o == nil || IsNil(o.Lpi) {
+	if o == nil || isNil(o.Lpi) {
 		var ret Lpi
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *LpiParametersProvisionPatch) GetLpi() Lpi {
 // GetLpiOk returns a tuple with the Lpi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvisionPatch) GetLpiOk() (*Lpi, bool) {
-	if o == nil || IsNil(o.Lpi) {
+	if o == nil || isNil(o.Lpi) {
 		return nil, false
 	}
 	return o.Lpi, true
@@ -61,7 +61,7 @@ func (o *LpiParametersProvisionPatch) GetLpiOk() (*Lpi, bool) {
 
 // HasLpi returns a boolean if a field has been set.
 func (o *LpiParametersProvisionPatch) HasLpi() bool {
-	if o != nil && !IsNil(o.Lpi) {
+	if o != nil && !isNil(o.Lpi) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *LpiParametersProvisionPatch) SetLpi(v Lpi) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *LpiParametersProvisionPatch) GetMtcProviderId() string {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *LpiParametersProvisionPatch) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LpiParametersProvisionPatch) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -93,7 +93,7 @@ func (o *LpiParametersProvisionPatch) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *LpiParametersProvisionPatch) HasMtcProviderId() bool {
-	if o != nil && !IsNil(o.MtcProviderId) {
+	if o != nil && !isNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -115,10 +115,10 @@ func (o LpiParametersProvisionPatch) MarshalJSON() ([]byte, error) {
 
 func (o LpiParametersProvisionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Lpi) {
+	if !isNil(o.Lpi) {
 		toSerialize["lpi"] = o.Lpi
 	}
-	if !IsNil(o.MtcProviderId) {
+	if !isNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	return toSerialize, nil

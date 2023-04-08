@@ -95,7 +95,7 @@ func (o *N32fErrorInfo) SetN32fErrorType(v N32fErrorType) {
 
 // GetN32fContextId returns the N32fContextId field value if set, zero value otherwise.
 func (o *N32fErrorInfo) GetN32fContextId() string {
-	if o == nil || IsNil(o.N32fContextId) {
+	if o == nil || isNil(o.N32fContextId) {
 		var ret string
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *N32fErrorInfo) GetN32fContextId() string {
 // GetN32fContextIdOk returns a tuple with the N32fContextId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fErrorInfo) GetN32fContextIdOk() (*string, bool) {
-	if o == nil || IsNil(o.N32fContextId) {
+	if o == nil || isNil(o.N32fContextId) {
 		return nil, false
 	}
 	return o.N32fContextId, true
@@ -113,7 +113,7 @@ func (o *N32fErrorInfo) GetN32fContextIdOk() (*string, bool) {
 
 // HasN32fContextId returns a boolean if a field has been set.
 func (o *N32fErrorInfo) HasN32fContextId() bool {
-	if o != nil && !IsNil(o.N32fContextId) {
+	if o != nil && !isNil(o.N32fContextId) {
 		return true
 	}
 
@@ -127,7 +127,7 @@ func (o *N32fErrorInfo) SetN32fContextId(v string) {
 
 // GetFailedModificationList returns the FailedModificationList field value if set, zero value otherwise.
 func (o *N32fErrorInfo) GetFailedModificationList() []FailedModificationInfo {
-	if o == nil || IsNil(o.FailedModificationList) {
+	if o == nil || isNil(o.FailedModificationList) {
 		var ret []FailedModificationInfo
 		return ret
 	}
@@ -137,7 +137,7 @@ func (o *N32fErrorInfo) GetFailedModificationList() []FailedModificationInfo {
 // GetFailedModificationListOk returns a tuple with the FailedModificationList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fErrorInfo) GetFailedModificationListOk() ([]FailedModificationInfo, bool) {
-	if o == nil || IsNil(o.FailedModificationList) {
+	if o == nil || isNil(o.FailedModificationList) {
 		return nil, false
 	}
 	return o.FailedModificationList, true
@@ -145,7 +145,7 @@ func (o *N32fErrorInfo) GetFailedModificationListOk() ([]FailedModificationInfo,
 
 // HasFailedModificationList returns a boolean if a field has been set.
 func (o *N32fErrorInfo) HasFailedModificationList() bool {
-	if o != nil && !IsNil(o.FailedModificationList) {
+	if o != nil && !isNil(o.FailedModificationList) {
 		return true
 	}
 
@@ -159,7 +159,7 @@ func (o *N32fErrorInfo) SetFailedModificationList(v []FailedModificationInfo) {
 
 // GetErrorDetailsList returns the ErrorDetailsList field value if set, zero value otherwise.
 func (o *N32fErrorInfo) GetErrorDetailsList() []N32fErrorDetail {
-	if o == nil || IsNil(o.ErrorDetailsList) {
+	if o == nil || isNil(o.ErrorDetailsList) {
 		var ret []N32fErrorDetail
 		return ret
 	}
@@ -169,7 +169,7 @@ func (o *N32fErrorInfo) GetErrorDetailsList() []N32fErrorDetail {
 // GetErrorDetailsListOk returns a tuple with the ErrorDetailsList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *N32fErrorInfo) GetErrorDetailsListOk() ([]N32fErrorDetail, bool) {
-	if o == nil || IsNil(o.ErrorDetailsList) {
+	if o == nil || isNil(o.ErrorDetailsList) {
 		return nil, false
 	}
 	return o.ErrorDetailsList, true
@@ -177,7 +177,7 @@ func (o *N32fErrorInfo) GetErrorDetailsListOk() ([]N32fErrorDetail, bool) {
 
 // HasErrorDetailsList returns a boolean if a field has been set.
 func (o *N32fErrorInfo) HasErrorDetailsList() bool {
-	if o != nil && !IsNil(o.ErrorDetailsList) {
+	if o != nil && !isNil(o.ErrorDetailsList) {
 		return true
 	}
 
@@ -201,13 +201,13 @@ func (o N32fErrorInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["n32fMessageId"] = o.N32fMessageId
 	toSerialize["n32fErrorType"] = o.N32fErrorType
-	if !IsNil(o.N32fContextId) {
+	if !isNil(o.N32fContextId) {
 		toSerialize["n32fContextId"] = o.N32fContextId
 	}
-	if !IsNil(o.FailedModificationList) {
+	if !isNil(o.FailedModificationList) {
 		toSerialize["failedModificationList"] = o.FailedModificationList
 	}
-	if !IsNil(o.ErrorDetailsList) {
+	if !isNil(o.ErrorDetailsList) {
 		toSerialize["errorDetailsList"] = o.ErrorDetailsList
 	}
 	return toSerialize, nil

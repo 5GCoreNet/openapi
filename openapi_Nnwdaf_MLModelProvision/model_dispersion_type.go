@@ -17,7 +17,15 @@ import (
 
 // DispersionType - Possible values are:   - DVDA: Data Volume Dispersion Analytics.   - TDA: Transactions Dispersion Analytics.   - DVDA_AND_TDA: Data Volume Dispersion Analytics and Transactions Dispersion Analytics. 
 type DispersionType struct {
+	DispersionTypeOneOf *DispersionTypeOneOf
 	String *string
+}
+
+// DispersionTypeOneOfAsDispersionType is a convenience function that returns DispersionTypeOneOf wrapped in DispersionType
+func DispersionTypeOneOfAsDispersionType(v *DispersionTypeOneOf) DispersionType {
+	return DispersionType{
+		DispersionTypeOneOf: v,
+	}
 }
 
 // stringAsDispersionType is a convenience function that returns string wrapped in DispersionType
@@ -32,6 +40,19 @@ func StringAsDispersionType(v *string) DispersionType {
 func (dst *DispersionType) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
+	// try to unmarshal data into DispersionTypeOneOf
+	err = newStrictDecoder(data).Decode(&dst.DispersionTypeOneOf)
+	if err == nil {
+		jsonDispersionTypeOneOf, _ := json.Marshal(dst.DispersionTypeOneOf)
+		if string(jsonDispersionTypeOneOf) == "{}" { // empty struct
+			dst.DispersionTypeOneOf = nil
+		} else {
+			match++
+		}
+	} else {
+		dst.DispersionTypeOneOf = nil
+	}
+
 	// try to unmarshal data into String
 	err = newStrictDecoder(data).Decode(&dst.String)
 	if err == nil {
@@ -47,6 +68,7 @@ func (dst *DispersionType) UnmarshalJSON(data []byte) error {
 
 	if match > 1 { // more than 1 match
 		// reset to nil
+		dst.DispersionTypeOneOf = nil
 		dst.String = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(DispersionType)")
@@ -59,6 +81,10 @@ func (dst *DispersionType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src DispersionType) MarshalJSON() ([]byte, error) {
+	if src.DispersionTypeOneOf != nil {
+		return json.Marshal(&src.DispersionTypeOneOf)
+	}
+
 	if src.String != nil {
 		return json.Marshal(&src.String)
 	}
@@ -71,6 +97,10 @@ func (obj *DispersionType) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
+	if obj.DispersionTypeOneOf != nil {
+		return obj.DispersionTypeOneOf
+	}
+
 	if obj.String != nil {
 		return obj.String
 	}

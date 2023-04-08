@@ -17,23 +17,37 @@ import (
 
 // UpCnxState User Plane Connection State. Possible values are - ACTIVATED - DEACTIVATED - ACTIVATING - SUSPENDED 
 type UpCnxState struct {
-	string *string
+	UpCnxStateAnyOf *UpCnxStateAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UpCnxState) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into UpCnxStateAnyOf
+	err = json.Unmarshal(data, &dst.UpCnxStateAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonUpCnxStateAnyOf, _ := json.Marshal(dst.UpCnxStateAnyOf)
+		if string(jsonUpCnxStateAnyOf) == "{}" { // empty struct
+			dst.UpCnxStateAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.UpCnxStateAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.UpCnxStateAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(UpCnxState)")
@@ -41,8 +55,12 @@ func (dst *UpCnxState) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UpCnxState) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.UpCnxStateAnyOf != nil {
+		return json.Marshal(&src.UpCnxStateAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

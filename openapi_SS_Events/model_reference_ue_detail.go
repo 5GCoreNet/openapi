@@ -95,7 +95,7 @@ func (o *ReferenceUEDetail) SetProxRange(v int32) {
 
 // GetProxRangeFrac returns the ProxRangeFrac field value if set, zero value otherwise.
 func (o *ReferenceUEDetail) GetProxRangeFrac() float32 {
-	if o == nil || IsNil(o.ProxRangeFrac) {
+	if o == nil || isNil(o.ProxRangeFrac) {
 		var ret float32
 		return ret
 	}
@@ -105,7 +105,7 @@ func (o *ReferenceUEDetail) GetProxRangeFrac() float32 {
 // GetProxRangeFracOk returns a tuple with the ProxRangeFrac field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReferenceUEDetail) GetProxRangeFracOk() (*float32, bool) {
-	if o == nil || IsNil(o.ProxRangeFrac) {
+	if o == nil || isNil(o.ProxRangeFrac) {
 		return nil, false
 	}
 	return o.ProxRangeFrac, true
@@ -113,7 +113,7 @@ func (o *ReferenceUEDetail) GetProxRangeFracOk() (*float32, bool) {
 
 // HasProxRangeFrac returns a boolean if a field has been set.
 func (o *ReferenceUEDetail) HasProxRangeFrac() bool {
-	if o != nil && !IsNil(o.ProxRangeFrac) {
+	if o != nil && !isNil(o.ProxRangeFrac) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o ReferenceUEDetail) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["valTgtUe"] = o.ValTgtUe
 	toSerialize["proxRange"] = o.ProxRange
-	if !IsNil(o.ProxRangeFrac) {
+	if !isNil(o.ProxRangeFrac) {
 		toSerialize["proxRangeFrac"] = o.ProxRangeFrac
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewDeterministicCommWithDefaults() *DeterministicComm {
 
 // GetServAttrCom returns the ServAttrCom field value if set, zero value otherwise.
 func (o *DeterministicComm) GetServAttrCom() ServAttrCom {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		var ret ServAttrCom
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *DeterministicComm) GetServAttrCom() ServAttrCom {
 // GetServAttrComOk returns a tuple with the ServAttrCom field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeterministicComm) GetServAttrComOk() (*ServAttrCom, bool) {
-	if o == nil || IsNil(o.ServAttrCom) {
+	if o == nil || isNil(o.ServAttrCom) {
 		return nil, false
 	}
 	return o.ServAttrCom, true
@@ -61,7 +61,7 @@ func (o *DeterministicComm) GetServAttrComOk() (*ServAttrCom, bool) {
 
 // HasServAttrCom returns a boolean if a field has been set.
 func (o *DeterministicComm) HasServAttrCom() bool {
-	if o != nil && !IsNil(o.ServAttrCom) {
+	if o != nil && !isNil(o.ServAttrCom) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *DeterministicComm) SetServAttrCom(v ServAttrCom) {
 
 // GetAvailability returns the Availability field value if set, zero value otherwise.
 func (o *DeterministicComm) GetAvailability() Support {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil || isNil(o.Availability) {
 		var ret Support
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *DeterministicComm) GetAvailability() Support {
 // GetAvailabilityOk returns a tuple with the Availability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeterministicComm) GetAvailabilityOk() (*Support, bool) {
-	if o == nil || IsNil(o.Availability) {
+	if o == nil || isNil(o.Availability) {
 		return nil, false
 	}
 	return o.Availability, true
@@ -93,7 +93,7 @@ func (o *DeterministicComm) GetAvailabilityOk() (*Support, bool) {
 
 // HasAvailability returns a boolean if a field has been set.
 func (o *DeterministicComm) HasAvailability() bool {
-	if o != nil && !IsNil(o.Availability) {
+	if o != nil && !isNil(o.Availability) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *DeterministicComm) SetAvailability(v Support) {
 
 // GetPeriodicityList returns the PeriodicityList field value if set, zero value otherwise.
 func (o *DeterministicComm) GetPeriodicityList() []int32 {
-	if o == nil || IsNil(o.PeriodicityList) {
+	if o == nil || isNil(o.PeriodicityList) {
 		var ret []int32
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *DeterministicComm) GetPeriodicityList() []int32 {
 // GetPeriodicityListOk returns a tuple with the PeriodicityList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeterministicComm) GetPeriodicityListOk() ([]int32, bool) {
-	if o == nil || IsNil(o.PeriodicityList) {
+	if o == nil || isNil(o.PeriodicityList) {
 		return nil, false
 	}
 	return o.PeriodicityList, true
@@ -125,7 +125,7 @@ func (o *DeterministicComm) GetPeriodicityListOk() ([]int32, bool) {
 
 // HasPeriodicityList returns a boolean if a field has been set.
 func (o *DeterministicComm) HasPeriodicityList() bool {
-	if o != nil && !IsNil(o.PeriodicityList) {
+	if o != nil && !isNil(o.PeriodicityList) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o DeterministicComm) MarshalJSON() ([]byte, error) {
 
 func (o DeterministicComm) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ServAttrCom) {
+	if !isNil(o.ServAttrCom) {
 		toSerialize["servAttrCom"] = o.ServAttrCom
 	}
-	if !IsNil(o.Availability) {
+	if !isNil(o.Availability) {
 		toSerialize["availability"] = o.Availability
 	}
-	if !IsNil(o.PeriodicityList) {
+	if !isNil(o.PeriodicityList) {
 		toSerialize["periodicityList"] = o.PeriodicityList
 	}
 	return toSerialize, nil

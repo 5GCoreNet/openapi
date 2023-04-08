@@ -23,7 +23,7 @@ type RRMPolicyRatioSingle struct {
 	ObjectClass *string `json:"objectClass,omitempty"`
 	ObjectInstance *string `json:"objectInstance,omitempty"`
 	VsDataContainer []VsDataContainerSingle `json:"VsDataContainer,omitempty"`
-	Attributes *RRMPolicyRatioSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *RrmPolicyAttr `json:"attributes,omitempty"`
 }
 
 // NewRRMPolicyRatioSingle instantiates a new RRMPolicyRatioSingle object
@@ -72,7 +72,7 @@ func (o *RRMPolicyRatioSingle) SetId(v string) {
 
 // GetObjectClass returns the ObjectClass field value if set, zero value otherwise.
 func (o *RRMPolicyRatioSingle) GetObjectClass() string {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		var ret string
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *RRMPolicyRatioSingle) GetObjectClass() string {
 // GetObjectClassOk returns a tuple with the ObjectClass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RRMPolicyRatioSingle) GetObjectClassOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectClass) {
+	if o == nil || isNil(o.ObjectClass) {
 		return nil, false
 	}
 	return o.ObjectClass, true
@@ -90,7 +90,7 @@ func (o *RRMPolicyRatioSingle) GetObjectClassOk() (*string, bool) {
 
 // HasObjectClass returns a boolean if a field has been set.
 func (o *RRMPolicyRatioSingle) HasObjectClass() bool {
-	if o != nil && !IsNil(o.ObjectClass) {
+	if o != nil && !isNil(o.ObjectClass) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *RRMPolicyRatioSingle) SetObjectClass(v string) {
 
 // GetObjectInstance returns the ObjectInstance field value if set, zero value otherwise.
 func (o *RRMPolicyRatioSingle) GetObjectInstance() string {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		var ret string
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *RRMPolicyRatioSingle) GetObjectInstance() string {
 // GetObjectInstanceOk returns a tuple with the ObjectInstance field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RRMPolicyRatioSingle) GetObjectInstanceOk() (*string, bool) {
-	if o == nil || IsNil(o.ObjectInstance) {
+	if o == nil || isNil(o.ObjectInstance) {
 		return nil, false
 	}
 	return o.ObjectInstance, true
@@ -122,7 +122,7 @@ func (o *RRMPolicyRatioSingle) GetObjectInstanceOk() (*string, bool) {
 
 // HasObjectInstance returns a boolean if a field has been set.
 func (o *RRMPolicyRatioSingle) HasObjectInstance() bool {
-	if o != nil && !IsNil(o.ObjectInstance) {
+	if o != nil && !isNil(o.ObjectInstance) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *RRMPolicyRatioSingle) SetObjectInstance(v string) {
 
 // GetVsDataContainer returns the VsDataContainer field value if set, zero value otherwise.
 func (o *RRMPolicyRatioSingle) GetVsDataContainer() []VsDataContainerSingle {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		var ret []VsDataContainerSingle
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *RRMPolicyRatioSingle) GetVsDataContainer() []VsDataContainerSingle {
 // GetVsDataContainerOk returns a tuple with the VsDataContainer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RRMPolicyRatioSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, bool) {
-	if o == nil || IsNil(o.VsDataContainer) {
+	if o == nil || isNil(o.VsDataContainer) {
 		return nil, false
 	}
 	return o.VsDataContainer, true
@@ -154,7 +154,7 @@ func (o *RRMPolicyRatioSingle) GetVsDataContainerOk() ([]VsDataContainerSingle, 
 
 // HasVsDataContainer returns a boolean if a field has been set.
 func (o *RRMPolicyRatioSingle) HasVsDataContainer() bool {
-	if o != nil && !IsNil(o.VsDataContainer) {
+	if o != nil && !isNil(o.VsDataContainer) {
 		return true
 	}
 
@@ -167,9 +167,9 @@ func (o *RRMPolicyRatioSingle) SetVsDataContainer(v []VsDataContainerSingle) {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *RRMPolicyRatioSingle) GetAttributes() RRMPolicyRatioSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret RRMPolicyRatioSingleAllOfAttributes
+func (o *RRMPolicyRatioSingle) GetAttributes() RrmPolicyAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret RrmPolicyAttr
 		return ret
 	}
 	return *o.Attributes
@@ -177,8 +177,8 @@ func (o *RRMPolicyRatioSingle) GetAttributes() RRMPolicyRatioSingleAllOfAttribut
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RRMPolicyRatioSingle) GetAttributesOk() (*RRMPolicyRatioSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *RRMPolicyRatioSingle) GetAttributesOk() (*RrmPolicyAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -186,15 +186,15 @@ func (o *RRMPolicyRatioSingle) GetAttributesOk() (*RRMPolicyRatioSingleAllOfAttr
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *RRMPolicyRatioSingle) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given RRMPolicyRatioSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *RRMPolicyRatioSingle) SetAttributes(v RRMPolicyRatioSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given RrmPolicyAttr and assigns it to the Attributes field.
+func (o *RRMPolicyRatioSingle) SetAttributes(v RrmPolicyAttr) {
 	o.Attributes = &v
 }
 
@@ -209,16 +209,16 @@ func (o RRMPolicyRatioSingle) MarshalJSON() ([]byte, error) {
 func (o RRMPolicyRatioSingle) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id.Get()
-	if !IsNil(o.ObjectClass) {
+	if !isNil(o.ObjectClass) {
 		toSerialize["objectClass"] = o.ObjectClass
 	}
-	if !IsNil(o.ObjectInstance) {
+	if !isNil(o.ObjectInstance) {
 		toSerialize["objectInstance"] = o.ObjectInstance
 	}
-	if !IsNil(o.VsDataContainer) {
+	if !isNil(o.VsDataContainer) {
 		toSerialize["VsDataContainer"] = o.VsDataContainer
 	}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

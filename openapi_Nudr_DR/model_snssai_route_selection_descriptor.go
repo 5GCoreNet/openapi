@@ -67,7 +67,7 @@ func (o *SnssaiRouteSelectionDescriptor) SetSnssai(v Snssai) {
 
 // GetDnnRouteSelDescs returns the DnnRouteSelDescs field value if set, zero value otherwise.
 func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescs() []DnnRouteSelectionDescriptor {
-	if o == nil || IsNil(o.DnnRouteSelDescs) {
+	if o == nil || isNil(o.DnnRouteSelDescs) {
 		var ret []DnnRouteSelectionDescriptor
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescs() []DnnRouteSelecti
 // GetDnnRouteSelDescsOk returns a tuple with the DnnRouteSelDescs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescsOk() ([]DnnRouteSelectionDescriptor, bool) {
-	if o == nil || IsNil(o.DnnRouteSelDescs) {
+	if o == nil || isNil(o.DnnRouteSelDescs) {
 		return nil, false
 	}
 	return o.DnnRouteSelDescs, true
@@ -85,7 +85,7 @@ func (o *SnssaiRouteSelectionDescriptor) GetDnnRouteSelDescsOk() ([]DnnRouteSele
 
 // HasDnnRouteSelDescs returns a boolean if a field has been set.
 func (o *SnssaiRouteSelectionDescriptor) HasDnnRouteSelDescs() bool {
-	if o != nil && !IsNil(o.DnnRouteSelDescs) {
+	if o != nil && !isNil(o.DnnRouteSelDescs) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o SnssaiRouteSelectionDescriptor) MarshalJSON() ([]byte, error) {
 func (o SnssaiRouteSelectionDescriptor) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["snssai"] = o.Snssai
-	if !IsNil(o.DnnRouteSelDescs) {
+	if !isNil(o.DnnRouteSelDescs) {
 		toSerialize["dnnRouteSelDescs"] = o.DnnRouteSelDescs
 	}
 	return toSerialize, nil

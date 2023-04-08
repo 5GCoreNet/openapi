@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -9,7 +8,9 @@ configuration.go
 docs/AdditionInfoAuthenticateAuthorize.md
 docs/AuthContainer.md
 docs/AuthMsgType.md
+docs/AuthMsgTypeAnyOf.md
 docs/AuthResult.md
+docs/AuthResultAnyOf.md
 docs/CivicAddress.md
 docs/Ecgi.md
 docs/EllipsoidArc.md
@@ -32,6 +33,7 @@ docs/LocationArea5G.md
 docs/Ncgi.md
 docs/NetworkAreaInfo.md
 docs/NotifyType.md
+docs/NotifyTypeAnyOf.md
 docs/PlmnId.md
 docs/Point.md
 docs/PointAllOf.md
@@ -51,6 +53,7 @@ docs/ReauthRevokeNotify.md
 docs/RefToBinaryData.md
 docs/RelativeCartesianLocation.md
 docs/SupportedGADShapes.md
+docs/SupportedGADShapesAnyOf.md
 docs/Tai.md
 docs/UAVAuthInfo.md
 docs/UAVAuthResponse.md
@@ -64,7 +67,9 @@ go.sum
 model_addition_info_authenticate_authorize.go
 model_auth_container.go
 model_auth_msg_type.go
+model_auth_msg_type_any_of.go
 model_auth_result.go
+model_auth_result_any_of.go
 model_civic_address.go
 model_ecgi.go
 model_ellipsoid_arc.go
@@ -87,6 +92,7 @@ model_location_area5_g.go
 model_ncgi.go
 model_network_area_info.go
 model_notify_type.go
+model_notify_type_any_of.go
 model_plmn_id.go
 model_point.go
 model_point_all_of.go
@@ -106,6 +112,7 @@ model_reauth_revoke_notify.go
 model_ref_to_binary_data.go
 model_relative_cartesian_location.go
 model_supported_gad_shapes.go
+model_supported_gad_shapes_any_of.go
 model_tai.go
 model_uav_auth_info.go
 model_uav_auth_response.go

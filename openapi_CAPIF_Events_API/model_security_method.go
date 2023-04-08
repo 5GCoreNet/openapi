@@ -17,23 +17,37 @@ import (
 
 // SecurityMethod Possible values are: - PSK: Security method 1 (Using TLS-PSK) as described in 3GPP TS 33.122 - PKI: Security method 2 (Using PKI) as described in 3GPP TS 33.122 - OAUTH: Security method 3 (TLS with OAuth token) as described in 3GPP TS 33.122 
 type SecurityMethod struct {
-	string *string
+	SecurityMethodAnyOf *SecurityMethodAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *SecurityMethod) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into SecurityMethodAnyOf
+	err = json.Unmarshal(data, &dst.SecurityMethodAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonSecurityMethodAnyOf, _ := json.Marshal(dst.SecurityMethodAnyOf)
+		if string(jsonSecurityMethodAnyOf) == "{}" { // empty struct
+			dst.SecurityMethodAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.SecurityMethodAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.SecurityMethodAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(SecurityMethod)")
@@ -41,8 +55,12 @@ func (dst *SecurityMethod) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *SecurityMethod) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.SecurityMethodAnyOf != nil {
+		return json.Marshal(&src.SecurityMethodAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -68,7 +68,7 @@ func (o *AmEventsSubscData) SetEventNotifUri(v string) {
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *AmEventsSubscData) GetEvents() []AmEventData {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		var ret []AmEventData
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *AmEventsSubscData) GetEvents() []AmEventData {
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmEventsSubscData) GetEventsOk() ([]AmEventData, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || isNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -86,7 +86,7 @@ func (o *AmEventsSubscData) GetEventsOk() ([]AmEventData, bool) {
 
 // HasEvents returns a boolean if a field has been set.
 func (o *AmEventsSubscData) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && !isNil(o.Events) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o AmEventsSubscData) MarshalJSON() ([]byte, error) {
 func (o AmEventsSubscData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventNotifUri"] = o.EventNotifUri
-	if !IsNil(o.Events) {
+	if !isNil(o.Events) {
 		toSerialize["events"] = o.Events
 	}
 	return toSerialize, nil

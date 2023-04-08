@@ -50,7 +50,7 @@ func NewAppAmContextUpdateDataWithDefaults() *AppAmContextUpdateData {
 
 // GetTermNotifUri returns the TermNotifUri field value if set, zero value otherwise.
 func (o *AppAmContextUpdateData) GetTermNotifUri() string {
-	if o == nil || IsNil(o.TermNotifUri) {
+	if o == nil || isNil(o.TermNotifUri) {
 		var ret string
 		return ret
 	}
@@ -60,7 +60,7 @@ func (o *AppAmContextUpdateData) GetTermNotifUri() string {
 // GetTermNotifUriOk returns a tuple with the TermNotifUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AppAmContextUpdateData) GetTermNotifUriOk() (*string, bool) {
-	if o == nil || IsNil(o.TermNotifUri) {
+	if o == nil || isNil(o.TermNotifUri) {
 		return nil, false
 	}
 	return o.TermNotifUri, true
@@ -68,7 +68,7 @@ func (o *AppAmContextUpdateData) GetTermNotifUriOk() (*string, bool) {
 
 // HasTermNotifUri returns a boolean if a field has been set.
 func (o *AppAmContextUpdateData) HasTermNotifUri() bool {
-	if o != nil && !IsNil(o.TermNotifUri) {
+	if o != nil && !isNil(o.TermNotifUri) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o *AppAmContextUpdateData) SetTermNotifUri(v string) {
 
 // GetEvSubsc returns the EvSubsc field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetEvSubsc() AmEventsSubscDataRm {
-	if o == nil || IsNil(o.EvSubsc.Get()) {
+	if o == nil || isNil(o.EvSubsc.Get()) {
 		var ret AmEventsSubscDataRm
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *AppAmContextUpdateData) UnsetEvSubsc() {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetExpiry() int32 {
-	if o == nil || IsNil(o.Expiry.Get()) {
+	if o == nil || isNil(o.Expiry.Get()) {
 		var ret int32
 		return ret
 	}
@@ -166,7 +166,7 @@ func (o *AppAmContextUpdateData) UnsetExpiry() {
 
 // GetHighThruInd returns the HighThruInd field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetHighThruInd() bool {
-	if o == nil || IsNil(o.HighThruInd.Get()) {
+	if o == nil || isNil(o.HighThruInd.Get()) {
 		var ret bool
 		return ret
 	}
@@ -219,7 +219,7 @@ func (o *AppAmContextUpdateData) GetCovReq() []ServiceAreaCoverageInfo {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AppAmContextUpdateData) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool) {
-	if o == nil || IsNil(o.CovReq) {
+	if o == nil || isNil(o.CovReq) {
 		return nil, false
 	}
 	return o.CovReq, true
@@ -227,7 +227,7 @@ func (o *AppAmContextUpdateData) GetCovReqOk() ([]ServiceAreaCoverageInfo, bool)
 
 // HasCovReq returns a boolean if a field has been set.
 func (o *AppAmContextUpdateData) HasCovReq() bool {
-	if o != nil && IsNil(o.CovReq) {
+	if o != nil && isNil(o.CovReq) {
 		return true
 	}
 
@@ -241,7 +241,7 @@ func (o *AppAmContextUpdateData) SetCovReq(v []ServiceAreaCoverageInfo) {
 
 // GetAsTimeDisParam returns the AsTimeDisParam field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AppAmContextUpdateData) GetAsTimeDisParam() AsTimeDistributionParam {
-	if o == nil || IsNil(o.AsTimeDisParam.Get()) {
+	if o == nil || isNil(o.AsTimeDisParam.Get()) {
 		var ret AsTimeDistributionParam
 		return ret
 	}
@@ -291,7 +291,7 @@ func (o AppAmContextUpdateData) MarshalJSON() ([]byte, error) {
 
 func (o AppAmContextUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.TermNotifUri) {
+	if !isNil(o.TermNotifUri) {
 		toSerialize["termNotifUri"] = o.TermNotifUri
 	}
 	if o.EvSubsc.IsSet() {

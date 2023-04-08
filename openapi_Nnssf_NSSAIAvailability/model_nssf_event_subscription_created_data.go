@@ -72,7 +72,7 @@ func (o *NssfEventSubscriptionCreatedData) SetSubscriptionId(v string) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreatedData) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -82,7 +82,7 @@ func (o *NssfEventSubscriptionCreatedData) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreatedData) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -90,7 +90,7 @@ func (o *NssfEventSubscriptionCreatedData) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreatedData) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -104,7 +104,7 @@ func (o *NssfEventSubscriptionCreatedData) SetExpiry(v time.Time) {
 
 // GetAuthorizedNssaiAvailabilityData returns the AuthorizedNssaiAvailabilityData field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreatedData) GetAuthorizedNssaiAvailabilityData() []AuthorizedNssaiAvailabilityData {
-	if o == nil || IsNil(o.AuthorizedNssaiAvailabilityData) {
+	if o == nil || isNil(o.AuthorizedNssaiAvailabilityData) {
 		var ret []AuthorizedNssaiAvailabilityData
 		return ret
 	}
@@ -114,7 +114,7 @@ func (o *NssfEventSubscriptionCreatedData) GetAuthorizedNssaiAvailabilityData() 
 // GetAuthorizedNssaiAvailabilityDataOk returns a tuple with the AuthorizedNssaiAvailabilityData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreatedData) GetAuthorizedNssaiAvailabilityDataOk() ([]AuthorizedNssaiAvailabilityData, bool) {
-	if o == nil || IsNil(o.AuthorizedNssaiAvailabilityData) {
+	if o == nil || isNil(o.AuthorizedNssaiAvailabilityData) {
 		return nil, false
 	}
 	return o.AuthorizedNssaiAvailabilityData, true
@@ -122,7 +122,7 @@ func (o *NssfEventSubscriptionCreatedData) GetAuthorizedNssaiAvailabilityDataOk(
 
 // HasAuthorizedNssaiAvailabilityData returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreatedData) HasAuthorizedNssaiAvailabilityData() bool {
-	if o != nil && !IsNil(o.AuthorizedNssaiAvailabilityData) {
+	if o != nil && !isNil(o.AuthorizedNssaiAvailabilityData) {
 		return true
 	}
 
@@ -136,7 +136,7 @@ func (o *NssfEventSubscriptionCreatedData) SetAuthorizedNssaiAvailabilityData(v 
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *NssfEventSubscriptionCreatedData) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -146,7 +146,7 @@ func (o *NssfEventSubscriptionCreatedData) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NssfEventSubscriptionCreatedData) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -154,7 +154,7 @@ func (o *NssfEventSubscriptionCreatedData) GetSupportedFeaturesOk() (*string, bo
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *NssfEventSubscriptionCreatedData) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -177,13 +177,13 @@ func (o NssfEventSubscriptionCreatedData) MarshalJSON() ([]byte, error) {
 func (o NssfEventSubscriptionCreatedData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.AuthorizedNssaiAvailabilityData) {
+	if !isNil(o.AuthorizedNssaiAvailabilityData) {
 		toSerialize["authorizedNssaiAvailabilityData"] = o.AuthorizedNssaiAvailabilityData
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

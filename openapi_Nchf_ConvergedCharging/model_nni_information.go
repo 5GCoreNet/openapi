@@ -44,7 +44,7 @@ func NewNNIInformationWithDefaults() *NNIInformation {
 
 // GetSessionDirection returns the SessionDirection field value if set, zero value otherwise.
 func (o *NNIInformation) GetSessionDirection() NNISessionDirection {
-	if o == nil || IsNil(o.SessionDirection) {
+	if o == nil || isNil(o.SessionDirection) {
 		var ret NNISessionDirection
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *NNIInformation) GetSessionDirection() NNISessionDirection {
 // GetSessionDirectionOk returns a tuple with the SessionDirection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NNIInformation) GetSessionDirectionOk() (*NNISessionDirection, bool) {
-	if o == nil || IsNil(o.SessionDirection) {
+	if o == nil || isNil(o.SessionDirection) {
 		return nil, false
 	}
 	return o.SessionDirection, true
@@ -62,7 +62,7 @@ func (o *NNIInformation) GetSessionDirectionOk() (*NNISessionDirection, bool) {
 
 // HasSessionDirection returns a boolean if a field has been set.
 func (o *NNIInformation) HasSessionDirection() bool {
-	if o != nil && !IsNil(o.SessionDirection) {
+	if o != nil && !isNil(o.SessionDirection) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *NNIInformation) SetSessionDirection(v NNISessionDirection) {
 
 // GetNNIType returns the NNIType field value if set, zero value otherwise.
 func (o *NNIInformation) GetNNIType() NNIType {
-	if o == nil || IsNil(o.NNIType) {
+	if o == nil || isNil(o.NNIType) {
 		var ret NNIType
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *NNIInformation) GetNNIType() NNIType {
 // GetNNITypeOk returns a tuple with the NNIType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NNIInformation) GetNNITypeOk() (*NNIType, bool) {
-	if o == nil || IsNil(o.NNIType) {
+	if o == nil || isNil(o.NNIType) {
 		return nil, false
 	}
 	return o.NNIType, true
@@ -94,7 +94,7 @@ func (o *NNIInformation) GetNNITypeOk() (*NNIType, bool) {
 
 // HasNNIType returns a boolean if a field has been set.
 func (o *NNIInformation) HasNNIType() bool {
-	if o != nil && !IsNil(o.NNIType) {
+	if o != nil && !isNil(o.NNIType) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *NNIInformation) SetNNIType(v NNIType) {
 
 // GetRelationshipMode returns the RelationshipMode field value if set, zero value otherwise.
 func (o *NNIInformation) GetRelationshipMode() NNIRelationshipMode {
-	if o == nil || IsNil(o.RelationshipMode) {
+	if o == nil || isNil(o.RelationshipMode) {
 		var ret NNIRelationshipMode
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *NNIInformation) GetRelationshipMode() NNIRelationshipMode {
 // GetRelationshipModeOk returns a tuple with the RelationshipMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NNIInformation) GetRelationshipModeOk() (*NNIRelationshipMode, bool) {
-	if o == nil || IsNil(o.RelationshipMode) {
+	if o == nil || isNil(o.RelationshipMode) {
 		return nil, false
 	}
 	return o.RelationshipMode, true
@@ -126,7 +126,7 @@ func (o *NNIInformation) GetRelationshipModeOk() (*NNIRelationshipMode, bool) {
 
 // HasRelationshipMode returns a boolean if a field has been set.
 func (o *NNIInformation) HasRelationshipMode() bool {
-	if o != nil && !IsNil(o.RelationshipMode) {
+	if o != nil && !isNil(o.RelationshipMode) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *NNIInformation) SetRelationshipMode(v NNIRelationshipMode) {
 
 // GetNeighbourNodeAddress returns the NeighbourNodeAddress field value if set, zero value otherwise.
 func (o *NNIInformation) GetNeighbourNodeAddress() IMSAddress {
-	if o == nil || IsNil(o.NeighbourNodeAddress) {
+	if o == nil || isNil(o.NeighbourNodeAddress) {
 		var ret IMSAddress
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *NNIInformation) GetNeighbourNodeAddress() IMSAddress {
 // GetNeighbourNodeAddressOk returns a tuple with the NeighbourNodeAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NNIInformation) GetNeighbourNodeAddressOk() (*IMSAddress, bool) {
-	if o == nil || IsNil(o.NeighbourNodeAddress) {
+	if o == nil || isNil(o.NeighbourNodeAddress) {
 		return nil, false
 	}
 	return o.NeighbourNodeAddress, true
@@ -158,7 +158,7 @@ func (o *NNIInformation) GetNeighbourNodeAddressOk() (*IMSAddress, bool) {
 
 // HasNeighbourNodeAddress returns a boolean if a field has been set.
 func (o *NNIInformation) HasNeighbourNodeAddress() bool {
-	if o != nil && !IsNil(o.NeighbourNodeAddress) {
+	if o != nil && !isNil(o.NeighbourNodeAddress) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o NNIInformation) MarshalJSON() ([]byte, error) {
 
 func (o NNIInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SessionDirection) {
+	if !isNil(o.SessionDirection) {
 		toSerialize["sessionDirection"] = o.SessionDirection
 	}
-	if !IsNil(o.NNIType) {
+	if !isNil(o.NNIType) {
 		toSerialize["nNIType"] = o.NNIType
 	}
-	if !IsNil(o.RelationshipMode) {
+	if !isNil(o.RelationshipMode) {
 		toSerialize["relationshipMode"] = o.RelationshipMode
 	}
-	if !IsNil(o.NeighbourNodeAddress) {
+	if !isNil(o.NeighbourNodeAddress) {
 		toSerialize["neighbourNodeAddress"] = o.NeighbourNodeAddress
 	}
 	return toSerialize, nil

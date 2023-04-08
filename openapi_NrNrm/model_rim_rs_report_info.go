@@ -43,7 +43,7 @@ func NewRimRSReportInfoWithDefaults() *RimRSReportInfo {
 
 // GetDetectedSetID returns the DetectedSetID field value if set, zero value otherwise.
 func (o *RimRSReportInfo) GetDetectedSetID() int32 {
-	if o == nil || IsNil(o.DetectedSetID) {
+	if o == nil || isNil(o.DetectedSetID) {
 		var ret int32
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *RimRSReportInfo) GetDetectedSetID() int32 {
 // GetDetectedSetIDOk returns a tuple with the DetectedSetID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportInfo) GetDetectedSetIDOk() (*int32, bool) {
-	if o == nil || IsNil(o.DetectedSetID) {
+	if o == nil || isNil(o.DetectedSetID) {
 		return nil, false
 	}
 	return o.DetectedSetID, true
@@ -61,7 +61,7 @@ func (o *RimRSReportInfo) GetDetectedSetIDOk() (*int32, bool) {
 
 // HasDetectedSetID returns a boolean if a field has been set.
 func (o *RimRSReportInfo) HasDetectedSetID() bool {
-	if o != nil && !IsNil(o.DetectedSetID) {
+	if o != nil && !isNil(o.DetectedSetID) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *RimRSReportInfo) SetDetectedSetID(v int32) {
 
 // GetPropagationDelay returns the PropagationDelay field value if set, zero value otherwise.
 func (o *RimRSReportInfo) GetPropagationDelay() int32 {
-	if o == nil || IsNil(o.PropagationDelay) {
+	if o == nil || isNil(o.PropagationDelay) {
 		var ret int32
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *RimRSReportInfo) GetPropagationDelay() int32 {
 // GetPropagationDelayOk returns a tuple with the PropagationDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportInfo) GetPropagationDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.PropagationDelay) {
+	if o == nil || isNil(o.PropagationDelay) {
 		return nil, false
 	}
 	return o.PropagationDelay, true
@@ -93,7 +93,7 @@ func (o *RimRSReportInfo) GetPropagationDelayOk() (*int32, bool) {
 
 // HasPropagationDelay returns a boolean if a field has been set.
 func (o *RimRSReportInfo) HasPropagationDelay() bool {
-	if o != nil && !IsNil(o.PropagationDelay) {
+	if o != nil && !isNil(o.PropagationDelay) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *RimRSReportInfo) SetPropagationDelay(v int32) {
 
 // GetFunctionalityOfRIMRS returns the FunctionalityOfRIMRS field value if set, zero value otherwise.
 func (o *RimRSReportInfo) GetFunctionalityOfRIMRS() string {
-	if o == nil || IsNil(o.FunctionalityOfRIMRS) {
+	if o == nil || isNil(o.FunctionalityOfRIMRS) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *RimRSReportInfo) GetFunctionalityOfRIMRS() string {
 // GetFunctionalityOfRIMRSOk returns a tuple with the FunctionalityOfRIMRS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RimRSReportInfo) GetFunctionalityOfRIMRSOk() (*string, bool) {
-	if o == nil || IsNil(o.FunctionalityOfRIMRS) {
+	if o == nil || isNil(o.FunctionalityOfRIMRS) {
 		return nil, false
 	}
 	return o.FunctionalityOfRIMRS, true
@@ -125,7 +125,7 @@ func (o *RimRSReportInfo) GetFunctionalityOfRIMRSOk() (*string, bool) {
 
 // HasFunctionalityOfRIMRS returns a boolean if a field has been set.
 func (o *RimRSReportInfo) HasFunctionalityOfRIMRS() bool {
-	if o != nil && !IsNil(o.FunctionalityOfRIMRS) {
+	if o != nil && !isNil(o.FunctionalityOfRIMRS) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o RimRSReportInfo) MarshalJSON() ([]byte, error) {
 
 func (o RimRSReportInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DetectedSetID) {
+	if !isNil(o.DetectedSetID) {
 		toSerialize["detectedSetID"] = o.DetectedSetID
 	}
-	if !IsNil(o.PropagationDelay) {
+	if !isNil(o.PropagationDelay) {
 		toSerialize["propagationDelay"] = o.PropagationDelay
 	}
-	if !IsNil(o.FunctionalityOfRIMRS) {
+	if !isNil(o.FunctionalityOfRIMRS) {
 		toSerialize["functionalityOfRIMRS"] = o.FunctionalityOfRIMRS
 	}
 	return toSerialize, nil

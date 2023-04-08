@@ -19,7 +19,7 @@ var _ MappedNullable = &UdsfFunctionSingleAllOf{}
 
 // UdsfFunctionSingleAllOf struct for UdsfFunctionSingleAllOf
 type UdsfFunctionSingleAllOf struct {
-	Attributes *UdsfFunctionSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewUdsfFunctionSingleAllOf instantiates a new UdsfFunctionSingleAllOf object
@@ -40,9 +40,9 @@ func NewUdsfFunctionSingleAllOfWithDefaults() *UdsfFunctionSingleAllOf {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *UdsfFunctionSingleAllOf) GetAttributes() UdsfFunctionSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret UdsfFunctionSingleAllOfAttributes
+func (o *UdsfFunctionSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *UdsfFunctionSingleAllOf) GetAttributes() UdsfFunctionSingleAllOfAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UdsfFunctionSingleAllOf) GetAttributesOk() (*UdsfFunctionSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *UdsfFunctionSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *UdsfFunctionSingleAllOf) GetAttributesOk() (*UdsfFunctionSingleAllOfAtt
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *UdsfFunctionSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given UdsfFunctionSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *UdsfFunctionSingleAllOf) SetAttributes(v UdsfFunctionSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *UdsfFunctionSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o UdsfFunctionSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o UdsfFunctionSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

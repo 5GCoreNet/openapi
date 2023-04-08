@@ -41,7 +41,7 @@ func NewAnchorSmfFeaturesWithDefaults() *AnchorSmfFeatures {
 
 // GetPsetrSupportInd returns the PsetrSupportInd field value if set, zero value otherwise.
 func (o *AnchorSmfFeatures) GetPsetrSupportInd() bool {
-	if o == nil || IsNil(o.PsetrSupportInd) {
+	if o == nil || isNil(o.PsetrSupportInd) {
 		var ret bool
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *AnchorSmfFeatures) GetPsetrSupportInd() bool {
 // GetPsetrSupportIndOk returns a tuple with the PsetrSupportInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AnchorSmfFeatures) GetPsetrSupportIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.PsetrSupportInd) {
+	if o == nil || isNil(o.PsetrSupportInd) {
 		return nil, false
 	}
 	return o.PsetrSupportInd, true
@@ -59,7 +59,7 @@ func (o *AnchorSmfFeatures) GetPsetrSupportIndOk() (*bool, bool) {
 
 // HasPsetrSupportInd returns a boolean if a field has been set.
 func (o *AnchorSmfFeatures) HasPsetrSupportInd() bool {
-	if o != nil && !IsNil(o.PsetrSupportInd) {
+	if o != nil && !isNil(o.PsetrSupportInd) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o AnchorSmfFeatures) MarshalJSON() ([]byte, error) {
 
 func (o AnchorSmfFeatures) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PsetrSupportInd) {
+	if !isNil(o.PsetrSupportInd) {
 		toSerialize["psetrSupportInd"] = o.PsetrSupportInd
 	}
 	return toSerialize, nil

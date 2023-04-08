@@ -73,7 +73,7 @@ func (o *Property) SetName(v string) {
 
 // GetRequired returns the Required field value if set, zero value otherwise.
 func (o *Property) GetRequired() bool {
-	if o == nil || IsNil(o.Required) {
+	if o == nil || isNil(o.Required) {
 		var ret bool
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *Property) GetRequired() bool {
 // GetRequiredOk returns a tuple with the Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Property) GetRequiredOk() (*bool, bool) {
-	if o == nil || IsNil(o.Required) {
+	if o == nil || isNil(o.Required) {
 		return nil, false
 	}
 	return o.Required, true
@@ -91,7 +91,7 @@ func (o *Property) GetRequiredOk() (*bool, bool) {
 
 // HasRequired returns a boolean if a field has been set.
 func (o *Property) HasRequired() bool {
-	if o != nil && !IsNil(o.Required) {
+	if o != nil && !isNil(o.Required) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *Property) SetRequired(v bool) {
 
 // GetRegex returns the Regex field value if set, zero value otherwise.
 func (o *Property) GetRegex() string {
-	if o == nil || IsNil(o.Regex) {
+	if o == nil || isNil(o.Regex) {
 		var ret string
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *Property) GetRegex() string {
 // GetRegexOk returns a tuple with the Regex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Property) GetRegexOk() (*string, bool) {
-	if o == nil || IsNil(o.Regex) {
+	if o == nil || isNil(o.Regex) {
 		return nil, false
 	}
 	return o.Regex, true
@@ -123,7 +123,7 @@ func (o *Property) GetRegexOk() (*string, bool) {
 
 // HasRegex returns a boolean if a field has been set.
 func (o *Property) HasRegex() bool {
-	if o != nil && !IsNil(o.Regex) {
+	if o != nil && !isNil(o.Regex) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *Property) SetRegex(v string) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *Property) GetValue() string {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || isNil(o.Value) {
 		var ret string
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *Property) GetValue() string {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Property) GetValueOk() (*string, bool) {
-	if o == nil || IsNil(o.Value) {
+	if o == nil || isNil(o.Value) {
 		return nil, false
 	}
 	return o.Value, true
@@ -155,7 +155,7 @@ func (o *Property) GetValueOk() (*string, bool) {
 
 // HasValue returns a boolean if a field has been set.
 func (o *Property) HasValue() bool {
-	if o != nil && !IsNil(o.Value) {
+	if o != nil && !isNil(o.Value) {
 		return true
 	}
 
@@ -178,13 +178,13 @@ func (o Property) MarshalJSON() ([]byte, error) {
 func (o Property) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["name"] = o.Name
-	if !IsNil(o.Required) {
+	if !isNil(o.Required) {
 		toSerialize["required"] = o.Required
 	}
-	if !IsNil(o.Regex) {
+	if !isNil(o.Regex) {
 		toSerialize["regex"] = o.Regex
 	}
-	if !IsNil(o.Value) {
+	if !isNil(o.Value) {
 		toSerialize["value"] = o.Value
 	}
 	return toSerialize, nil

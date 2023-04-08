@@ -43,7 +43,7 @@ func NewStringMatchingConditionWithDefaults() *StringMatchingCondition {
 
 // GetMatchingString returns the MatchingString field value if set, zero value otherwise.
 func (o *StringMatchingCondition) GetMatchingString() string {
-	if o == nil || IsNil(o.MatchingString) {
+	if o == nil || isNil(o.MatchingString) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *StringMatchingCondition) GetMatchingString() string {
 // GetMatchingStringOk returns a tuple with the MatchingString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StringMatchingCondition) GetMatchingStringOk() (*string, bool) {
-	if o == nil || IsNil(o.MatchingString) {
+	if o == nil || isNil(o.MatchingString) {
 		return nil, false
 	}
 	return o.MatchingString, true
@@ -61,7 +61,7 @@ func (o *StringMatchingCondition) GetMatchingStringOk() (*string, bool) {
 
 // HasMatchingString returns a boolean if a field has been set.
 func (o *StringMatchingCondition) HasMatchingString() bool {
-	if o != nil && !IsNil(o.MatchingString) {
+	if o != nil && !isNil(o.MatchingString) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o StringMatchingCondition) MarshalJSON() ([]byte, error) {
 
 func (o StringMatchingCondition) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.MatchingString) {
+	if !isNil(o.MatchingString) {
 		toSerialize["matchingString"] = o.MatchingString
 	}
 	toSerialize["matchingOperator"] = o.MatchingOperator

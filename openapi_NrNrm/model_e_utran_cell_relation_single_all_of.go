@@ -19,7 +19,7 @@ var _ MappedNullable = &EUtranCellRelationSingleAllOf{}
 
 // EUtranCellRelationSingleAllOf struct for EUtranCellRelationSingleAllOf
 type EUtranCellRelationSingleAllOf struct {
-	Attributes *EUtranCellRelationSingleAllOfAttributes `json:"attributes,omitempty"`
+	Attributes *ManagedFunctionAttr `json:"attributes,omitempty"`
 }
 
 // NewEUtranCellRelationSingleAllOf instantiates a new EUtranCellRelationSingleAllOf object
@@ -40,9 +40,9 @@ func NewEUtranCellRelationSingleAllOfWithDefaults() *EUtranCellRelationSingleAll
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *EUtranCellRelationSingleAllOf) GetAttributes() EUtranCellRelationSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret EUtranCellRelationSingleAllOfAttributes
+func (o *EUtranCellRelationSingleAllOf) GetAttributes() ManagedFunctionAttr {
+	if o == nil || isNil(o.Attributes) {
+		var ret ManagedFunctionAttr
 		return ret
 	}
 	return *o.Attributes
@@ -50,8 +50,8 @@ func (o *EUtranCellRelationSingleAllOf) GetAttributes() EUtranCellRelationSingle
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EUtranCellRelationSingleAllOf) GetAttributesOk() (*EUtranCellRelationSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *EUtranCellRelationSingleAllOf) GetAttributesOk() (*ManagedFunctionAttr, bool) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,15 +59,15 @@ func (o *EUtranCellRelationSingleAllOf) GetAttributesOk() (*EUtranCellRelationSi
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *EUtranCellRelationSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given EUtranCellRelationSingleAllOfAttributes and assigns it to the Attributes field.
-func (o *EUtranCellRelationSingleAllOf) SetAttributes(v EUtranCellRelationSingleAllOfAttributes) {
+// SetAttributes gets a reference to the given ManagedFunctionAttr and assigns it to the Attributes field.
+func (o *EUtranCellRelationSingleAllOf) SetAttributes(v ManagedFunctionAttr) {
 	o.Attributes = &v
 }
 
@@ -81,7 +81,7 @@ func (o EUtranCellRelationSingleAllOf) MarshalJSON() ([]byte, error) {
 
 func (o EUtranCellRelationSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

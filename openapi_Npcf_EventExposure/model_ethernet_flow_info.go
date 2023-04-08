@@ -43,7 +43,7 @@ func NewEthernetFlowInfoWithDefaults() *EthernetFlowInfo {
 
 // GetEthFlows returns the EthFlows field value if set, zero value otherwise.
 func (o *EthernetFlowInfo) GetEthFlows() []EthFlowDescription {
-	if o == nil || IsNil(o.EthFlows) {
+	if o == nil || isNil(o.EthFlows) {
 		var ret []EthFlowDescription
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *EthernetFlowInfo) GetEthFlows() []EthFlowDescription {
 // GetEthFlowsOk returns a tuple with the EthFlows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EthernetFlowInfo) GetEthFlowsOk() ([]EthFlowDescription, bool) {
-	if o == nil || IsNil(o.EthFlows) {
+	if o == nil || isNil(o.EthFlows) {
 		return nil, false
 	}
 	return o.EthFlows, true
@@ -61,7 +61,7 @@ func (o *EthernetFlowInfo) GetEthFlowsOk() ([]EthFlowDescription, bool) {
 
 // HasEthFlows returns a boolean if a field has been set.
 func (o *EthernetFlowInfo) HasEthFlows() bool {
-	if o != nil && !IsNil(o.EthFlows) {
+	if o != nil && !isNil(o.EthFlows) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o EthernetFlowInfo) MarshalJSON() ([]byte, error) {
 
 func (o EthernetFlowInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EthFlows) {
+	if !isNil(o.EthFlows) {
 		toSerialize["ethFlows"] = o.EthFlows
 	}
 	toSerialize["flowNumber"] = o.FlowNumber

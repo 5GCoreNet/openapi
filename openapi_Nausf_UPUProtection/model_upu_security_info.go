@@ -96,7 +96,7 @@ func (o *UpuSecurityInfo) SetCounterUpu(v string) {
 
 // GetUpuXmacIue returns the UpuXmacIue field value if set, zero value otherwise.
 func (o *UpuSecurityInfo) GetUpuXmacIue() string {
-	if o == nil || IsNil(o.UpuXmacIue) {
+	if o == nil || isNil(o.UpuXmacIue) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *UpuSecurityInfo) GetUpuXmacIue() string {
 // GetUpuXmacIueOk returns a tuple with the UpuXmacIue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UpuSecurityInfo) GetUpuXmacIueOk() (*string, bool) {
-	if o == nil || IsNil(o.UpuXmacIue) {
+	if o == nil || isNil(o.UpuXmacIue) {
 		return nil, false
 	}
 	return o.UpuXmacIue, true
@@ -114,7 +114,7 @@ func (o *UpuSecurityInfo) GetUpuXmacIueOk() (*string, bool) {
 
 // HasUpuXmacIue returns a boolean if a field has been set.
 func (o *UpuSecurityInfo) HasUpuXmacIue() bool {
-	if o != nil && !IsNil(o.UpuXmacIue) {
+	if o != nil && !isNil(o.UpuXmacIue) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o UpuSecurityInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["upuMacIausf"] = o.UpuMacIausf
 	toSerialize["counterUpu"] = o.CounterUpu
-	if !IsNil(o.UpuXmacIue) {
+	if !isNil(o.UpuXmacIue) {
 		toSerialize["upuXmacIue"] = o.UpuXmacIue
 	}
 	return toSerialize, nil

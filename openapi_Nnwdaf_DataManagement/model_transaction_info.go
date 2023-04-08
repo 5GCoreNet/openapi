@@ -70,7 +70,7 @@ func (o *TransactionInfo) SetTransaction(v int32) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *TransactionInfo) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -80,7 +80,7 @@ func (o *TransactionInfo) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionInfo) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -88,7 +88,7 @@ func (o *TransactionInfo) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *TransactionInfo) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -102,7 +102,7 @@ func (o *TransactionInfo) SetSnssai(v Snssai) {
 
 // GetAppIds returns the AppIds field value if set, zero value otherwise.
 func (o *TransactionInfo) GetAppIds() []string {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		var ret []string
 		return ret
 	}
@@ -112,7 +112,7 @@ func (o *TransactionInfo) GetAppIds() []string {
 // GetAppIdsOk returns a tuple with the AppIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionInfo) GetAppIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AppIds) {
+	if o == nil || isNil(o.AppIds) {
 		return nil, false
 	}
 	return o.AppIds, true
@@ -120,7 +120,7 @@ func (o *TransactionInfo) GetAppIdsOk() ([]string, bool) {
 
 // HasAppIds returns a boolean if a field has been set.
 func (o *TransactionInfo) HasAppIds() bool {
-	if o != nil && !IsNil(o.AppIds) {
+	if o != nil && !isNil(o.AppIds) {
 		return true
 	}
 
@@ -134,7 +134,7 @@ func (o *TransactionInfo) SetAppIds(v []string) {
 
 // GetTransacMetrics returns the TransacMetrics field value if set, zero value otherwise.
 func (o *TransactionInfo) GetTransacMetrics() []TransactionMetric {
-	if o == nil || IsNil(o.TransacMetrics) {
+	if o == nil || isNil(o.TransacMetrics) {
 		var ret []TransactionMetric
 		return ret
 	}
@@ -144,7 +144,7 @@ func (o *TransactionInfo) GetTransacMetrics() []TransactionMetric {
 // GetTransacMetricsOk returns a tuple with the TransacMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionInfo) GetTransacMetricsOk() ([]TransactionMetric, bool) {
-	if o == nil || IsNil(o.TransacMetrics) {
+	if o == nil || isNil(o.TransacMetrics) {
 		return nil, false
 	}
 	return o.TransacMetrics, true
@@ -152,7 +152,7 @@ func (o *TransactionInfo) GetTransacMetricsOk() ([]TransactionMetric, bool) {
 
 // HasTransacMetrics returns a boolean if a field has been set.
 func (o *TransactionInfo) HasTransacMetrics() bool {
-	if o != nil && !IsNil(o.TransacMetrics) {
+	if o != nil && !isNil(o.TransacMetrics) {
 		return true
 	}
 
@@ -175,13 +175,13 @@ func (o TransactionInfo) MarshalJSON() ([]byte, error) {
 func (o TransactionInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["transaction"] = o.Transaction
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
-	if !IsNil(o.AppIds) {
+	if !isNil(o.AppIds) {
 		toSerialize["appIds"] = o.AppIds
 	}
-	if !IsNil(o.TransacMetrics) {
+	if !isNil(o.TransacMetrics) {
 		toSerialize["transacMetrics"] = o.TransacMetrics
 	}
 	return toSerialize, nil

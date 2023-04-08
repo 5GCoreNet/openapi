@@ -53,7 +53,7 @@ func NewAPIProviderEnrolmentDetailsWithDefaults() *APIProviderEnrolmentDetails {
 
 // GetApiProvDomId returns the ApiProvDomId field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomId() string {
-	if o == nil || IsNil(o.ApiProvDomId) {
+	if o == nil || isNil(o.ApiProvDomId) {
 		var ret string
 		return ret
 	}
@@ -63,7 +63,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomId() string {
 // GetApiProvDomIdOk returns a tuple with the ApiProvDomId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiProvDomId) {
+	if o == nil || isNil(o.ApiProvDomId) {
 		return nil, false
 	}
 	return o.ApiProvDomId, true
@@ -71,7 +71,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomIdOk() (*string, bool) {
 
 // HasApiProvDomId returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasApiProvDomId() bool {
-	if o != nil && !IsNil(o.ApiProvDomId) {
+	if o != nil && !isNil(o.ApiProvDomId) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *APIProviderEnrolmentDetails) SetRegSec(v string) {
 
 // GetApiProvFuncs returns the ApiProvFuncs field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetApiProvFuncs() []APIProviderFunctionDetails {
-	if o == nil || IsNil(o.ApiProvFuncs) {
+	if o == nil || isNil(o.ApiProvFuncs) {
 		var ret []APIProviderFunctionDetails
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvFuncs() []APIProviderFunctionDet
 // GetApiProvFuncsOk returns a tuple with the ApiProvFuncs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetApiProvFuncsOk() ([]APIProviderFunctionDetails, bool) {
-	if o == nil || IsNil(o.ApiProvFuncs) {
+	if o == nil || isNil(o.ApiProvFuncs) {
 		return nil, false
 	}
 	return o.ApiProvFuncs, true
@@ -127,7 +127,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvFuncsOk() ([]APIProviderFunction
 
 // HasApiProvFuncs returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasApiProvFuncs() bool {
-	if o != nil && !IsNil(o.ApiProvFuncs) {
+	if o != nil && !isNil(o.ApiProvFuncs) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *APIProviderEnrolmentDetails) SetApiProvFuncs(v []APIProviderFunctionDet
 
 // GetApiProvDomInfo returns the ApiProvDomInfo field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomInfo() string {
-	if o == nil || IsNil(o.ApiProvDomInfo) {
+	if o == nil || isNil(o.ApiProvDomInfo) {
 		var ret string
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomInfo() string {
 // GetApiProvDomInfoOk returns a tuple with the ApiProvDomInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetApiProvDomInfoOk() (*string, bool) {
-	if o == nil || IsNil(o.ApiProvDomInfo) {
+	if o == nil || isNil(o.ApiProvDomInfo) {
 		return nil, false
 	}
 	return o.ApiProvDomInfo, true
@@ -159,7 +159,7 @@ func (o *APIProviderEnrolmentDetails) GetApiProvDomInfoOk() (*string, bool) {
 
 // HasApiProvDomInfo returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasApiProvDomInfo() bool {
-	if o != nil && !IsNil(o.ApiProvDomInfo) {
+	if o != nil && !isNil(o.ApiProvDomInfo) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *APIProviderEnrolmentDetails) SetApiProvDomInfo(v string) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *APIProviderEnrolmentDetails) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -191,7 +191,7 @@ func (o *APIProviderEnrolmentDetails) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *APIProviderEnrolmentDetails) SetSuppFeat(v string) {
 
 // GetFailReason returns the FailReason field value if set, zero value otherwise.
 func (o *APIProviderEnrolmentDetails) GetFailReason() string {
-	if o == nil || IsNil(o.FailReason) {
+	if o == nil || isNil(o.FailReason) {
 		var ret string
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *APIProviderEnrolmentDetails) GetFailReason() string {
 // GetFailReasonOk returns a tuple with the FailReason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *APIProviderEnrolmentDetails) GetFailReasonOk() (*string, bool) {
-	if o == nil || IsNil(o.FailReason) {
+	if o == nil || isNil(o.FailReason) {
 		return nil, false
 	}
 	return o.FailReason, true
@@ -223,7 +223,7 @@ func (o *APIProviderEnrolmentDetails) GetFailReasonOk() (*string, bool) {
 
 // HasFailReason returns a boolean if a field has been set.
 func (o *APIProviderEnrolmentDetails) HasFailReason() bool {
-	if o != nil && !IsNil(o.FailReason) {
+	if o != nil && !isNil(o.FailReason) {
 		return true
 	}
 
@@ -245,18 +245,20 @@ func (o APIProviderEnrolmentDetails) MarshalJSON() ([]byte, error) {
 
 func (o APIProviderEnrolmentDetails) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	// skip: apiProvDomId is readOnly
+	if !isNil(o.ApiProvDomId) {
+		toSerialize["apiProvDomId"] = o.ApiProvDomId
+	}
 	toSerialize["regSec"] = o.RegSec
-	if !IsNil(o.ApiProvFuncs) {
+	if !isNil(o.ApiProvFuncs) {
 		toSerialize["apiProvFuncs"] = o.ApiProvFuncs
 	}
-	if !IsNil(o.ApiProvDomInfo) {
+	if !isNil(o.ApiProvDomInfo) {
 		toSerialize["apiProvDomInfo"] = o.ApiProvDomInfo
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.FailReason) {
+	if !isNil(o.FailReason) {
 		toSerialize["failReason"] = o.FailReason
 	}
 	return toSerialize, nil

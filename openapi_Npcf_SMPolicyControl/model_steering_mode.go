@@ -73,7 +73,7 @@ func (o *SteeringMode) SetSteerModeValue(v SteerModeValue) {
 
 // GetActive returns the Active field value if set, zero value otherwise.
 func (o *SteeringMode) GetActive() AccessType {
-	if o == nil || IsNil(o.Active) {
+	if o == nil || isNil(o.Active) {
 		var ret AccessType
 		return ret
 	}
@@ -83,7 +83,7 @@ func (o *SteeringMode) GetActive() AccessType {
 // GetActiveOk returns a tuple with the Active field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetActiveOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.Active) {
+	if o == nil || isNil(o.Active) {
 		return nil, false
 	}
 	return o.Active, true
@@ -91,7 +91,7 @@ func (o *SteeringMode) GetActiveOk() (*AccessType, bool) {
 
 // HasActive returns a boolean if a field has been set.
 func (o *SteeringMode) HasActive() bool {
-	if o != nil && !IsNil(o.Active) {
+	if o != nil && !isNil(o.Active) {
 		return true
 	}
 
@@ -105,7 +105,7 @@ func (o *SteeringMode) SetActive(v AccessType) {
 
 // GetStandby returns the Standby field value if set, zero value otherwise.
 func (o *SteeringMode) GetStandby() AccessTypeRm {
-	if o == nil || IsNil(o.Standby) {
+	if o == nil || isNil(o.Standby) {
 		var ret AccessTypeRm
 		return ret
 	}
@@ -115,7 +115,7 @@ func (o *SteeringMode) GetStandby() AccessTypeRm {
 // GetStandbyOk returns a tuple with the Standby field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetStandbyOk() (*AccessTypeRm, bool) {
-	if o == nil || IsNil(o.Standby) {
+	if o == nil || isNil(o.Standby) {
 		return nil, false
 	}
 	return o.Standby, true
@@ -123,7 +123,7 @@ func (o *SteeringMode) GetStandbyOk() (*AccessTypeRm, bool) {
 
 // HasStandby returns a boolean if a field has been set.
 func (o *SteeringMode) HasStandby() bool {
-	if o != nil && !IsNil(o.Standby) {
+	if o != nil && !isNil(o.Standby) {
 		return true
 	}
 
@@ -137,7 +137,7 @@ func (o *SteeringMode) SetStandby(v AccessTypeRm) {
 
 // GetVar3gLoad returns the Var3gLoad field value if set, zero value otherwise.
 func (o *SteeringMode) GetVar3gLoad() int32 {
-	if o == nil || IsNil(o.Var3gLoad) {
+	if o == nil || isNil(o.Var3gLoad) {
 		var ret int32
 		return ret
 	}
@@ -147,7 +147,7 @@ func (o *SteeringMode) GetVar3gLoad() int32 {
 // GetVar3gLoadOk returns a tuple with the Var3gLoad field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetVar3gLoadOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var3gLoad) {
+	if o == nil || isNil(o.Var3gLoad) {
 		return nil, false
 	}
 	return o.Var3gLoad, true
@@ -155,7 +155,7 @@ func (o *SteeringMode) GetVar3gLoadOk() (*int32, bool) {
 
 // HasVar3gLoad returns a boolean if a field has been set.
 func (o *SteeringMode) HasVar3gLoad() bool {
-	if o != nil && !IsNil(o.Var3gLoad) {
+	if o != nil && !isNil(o.Var3gLoad) {
 		return true
 	}
 
@@ -169,7 +169,7 @@ func (o *SteeringMode) SetVar3gLoad(v int32) {
 
 // GetPrioAcc returns the PrioAcc field value if set, zero value otherwise.
 func (o *SteeringMode) GetPrioAcc() AccessType {
-	if o == nil || IsNil(o.PrioAcc) {
+	if o == nil || isNil(o.PrioAcc) {
 		var ret AccessType
 		return ret
 	}
@@ -179,7 +179,7 @@ func (o *SteeringMode) GetPrioAcc() AccessType {
 // GetPrioAccOk returns a tuple with the PrioAcc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetPrioAccOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.PrioAcc) {
+	if o == nil || isNil(o.PrioAcc) {
 		return nil, false
 	}
 	return o.PrioAcc, true
@@ -187,7 +187,7 @@ func (o *SteeringMode) GetPrioAccOk() (*AccessType, bool) {
 
 // HasPrioAcc returns a boolean if a field has been set.
 func (o *SteeringMode) HasPrioAcc() bool {
-	if o != nil && !IsNil(o.PrioAcc) {
+	if o != nil && !isNil(o.PrioAcc) {
 		return true
 	}
 
@@ -201,7 +201,7 @@ func (o *SteeringMode) SetPrioAcc(v AccessType) {
 
 // GetThresValue returns the ThresValue field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SteeringMode) GetThresValue() ThresholdValue {
-	if o == nil || IsNil(o.ThresValue.Get()) {
+	if o == nil || isNil(o.ThresValue.Get()) {
 		var ret ThresholdValue
 		return ret
 	}
@@ -243,7 +243,7 @@ func (o *SteeringMode) UnsetThresValue() {
 
 // GetSteerModeInd returns the SteerModeInd field value if set, zero value otherwise.
 func (o *SteeringMode) GetSteerModeInd() SteerModeIndicator {
-	if o == nil || IsNil(o.SteerModeInd) {
+	if o == nil || isNil(o.SteerModeInd) {
 		var ret SteerModeIndicator
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *SteeringMode) GetSteerModeInd() SteerModeIndicator {
 // GetSteerModeIndOk returns a tuple with the SteerModeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SteeringMode) GetSteerModeIndOk() (*SteerModeIndicator, bool) {
-	if o == nil || IsNil(o.SteerModeInd) {
+	if o == nil || isNil(o.SteerModeInd) {
 		return nil, false
 	}
 	return o.SteerModeInd, true
@@ -261,7 +261,7 @@ func (o *SteeringMode) GetSteerModeIndOk() (*SteerModeIndicator, bool) {
 
 // HasSteerModeInd returns a boolean if a field has been set.
 func (o *SteeringMode) HasSteerModeInd() bool {
-	if o != nil && !IsNil(o.SteerModeInd) {
+	if o != nil && !isNil(o.SteerModeInd) {
 		return true
 	}
 
@@ -284,22 +284,22 @@ func (o SteeringMode) MarshalJSON() ([]byte, error) {
 func (o SteeringMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["steerModeValue"] = o.SteerModeValue
-	if !IsNil(o.Active) {
+	if !isNil(o.Active) {
 		toSerialize["active"] = o.Active
 	}
-	if !IsNil(o.Standby) {
+	if !isNil(o.Standby) {
 		toSerialize["standby"] = o.Standby
 	}
-	if !IsNil(o.Var3gLoad) {
+	if !isNil(o.Var3gLoad) {
 		toSerialize["3gLoad"] = o.Var3gLoad
 	}
-	if !IsNil(o.PrioAcc) {
+	if !isNil(o.PrioAcc) {
 		toSerialize["prioAcc"] = o.PrioAcc
 	}
 	if o.ThresValue.IsSet() {
 		toSerialize["thresValue"] = o.ThresValue.Get()
 	}
-	if !IsNil(o.SteerModeInd) {
+	if !isNil(o.SteerModeInd) {
 		toSerialize["steerModeInd"] = o.SteerModeInd
 	}
 	return toSerialize, nil

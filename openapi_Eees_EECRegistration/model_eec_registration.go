@@ -82,7 +82,7 @@ func (o *EECRegistration) SetEecId(v string) {
 
 // GetUeId returns the UeId field value if set, zero value otherwise.
 func (o *EECRegistration) GetUeId() string {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		var ret string
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *EECRegistration) GetUeId() string {
 // GetUeIdOk returns a tuple with the UeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetUeIdOk() (*string, bool) {
-	if o == nil || IsNil(o.UeId) {
+	if o == nil || isNil(o.UeId) {
 		return nil, false
 	}
 	return o.UeId, true
@@ -100,7 +100,7 @@ func (o *EECRegistration) GetUeIdOk() (*string, bool) {
 
 // HasUeId returns a boolean if a field has been set.
 func (o *EECRegistration) HasUeId() bool {
-	if o != nil && !IsNil(o.UeId) {
+	if o != nil && !isNil(o.UeId) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *EECRegistration) SetUeId(v string) {
 
 // GetAcProfs returns the AcProfs field value if set, zero value otherwise.
 func (o *EECRegistration) GetAcProfs() []ACProfile {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		var ret []ACProfile
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *EECRegistration) GetAcProfs() []ACProfile {
 // GetAcProfsOk returns a tuple with the AcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetAcProfsOk() ([]ACProfile, bool) {
-	if o == nil || IsNil(o.AcProfs) {
+	if o == nil || isNil(o.AcProfs) {
 		return nil, false
 	}
 	return o.AcProfs, true
@@ -132,7 +132,7 @@ func (o *EECRegistration) GetAcProfsOk() ([]ACProfile, bool) {
 
 // HasAcProfs returns a boolean if a field has been set.
 func (o *EECRegistration) HasAcProfs() bool {
-	if o != nil && !IsNil(o.AcProfs) {
+	if o != nil && !isNil(o.AcProfs) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *EECRegistration) SetAcProfs(v []ACProfile) {
 
 // GetExpTime returns the ExpTime field value if set, zero value otherwise.
 func (o *EECRegistration) GetExpTime() time.Time {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		var ret time.Time
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *EECRegistration) GetExpTime() time.Time {
 // GetExpTimeOk returns a tuple with the ExpTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetExpTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ExpTime) {
+	if o == nil || isNil(o.ExpTime) {
 		return nil, false
 	}
 	return o.ExpTime, true
@@ -164,7 +164,7 @@ func (o *EECRegistration) GetExpTimeOk() (*time.Time, bool) {
 
 // HasExpTime returns a boolean if a field has been set.
 func (o *EECRegistration) HasExpTime() bool {
-	if o != nil && !IsNil(o.ExpTime) {
+	if o != nil && !isNil(o.ExpTime) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *EECRegistration) SetExpTime(v time.Time) {
 
 // GetEecSvcContSupp returns the EecSvcContSupp field value if set, zero value otherwise.
 func (o *EECRegistration) GetEecSvcContSupp() []ACRScenario {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		var ret []ACRScenario
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *EECRegistration) GetEecSvcContSupp() []ACRScenario {
 // GetEecSvcContSuppOk returns a tuple with the EecSvcContSupp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
-	if o == nil || IsNil(o.EecSvcContSupp) {
+	if o == nil || isNil(o.EecSvcContSupp) {
 		return nil, false
 	}
 	return o.EecSvcContSupp, true
@@ -196,7 +196,7 @@ func (o *EECRegistration) GetEecSvcContSuppOk() ([]ACRScenario, bool) {
 
 // HasEecSvcContSupp returns a boolean if a field has been set.
 func (o *EECRegistration) HasEecSvcContSupp() bool {
-	if o != nil && !IsNil(o.EecSvcContSupp) {
+	if o != nil && !isNil(o.EecSvcContSupp) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *EECRegistration) SetEecSvcContSupp(v []ACRScenario) {
 
 // GetEecCntxId returns the EecCntxId field value if set, zero value otherwise.
 func (o *EECRegistration) GetEecCntxId() string {
-	if o == nil || IsNil(o.EecCntxId) {
+	if o == nil || isNil(o.EecCntxId) {
 		var ret string
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *EECRegistration) GetEecCntxId() string {
 // GetEecCntxIdOk returns a tuple with the EecCntxId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetEecCntxIdOk() (*string, bool) {
-	if o == nil || IsNil(o.EecCntxId) {
+	if o == nil || isNil(o.EecCntxId) {
 		return nil, false
 	}
 	return o.EecCntxId, true
@@ -228,7 +228,7 @@ func (o *EECRegistration) GetEecCntxIdOk() (*string, bool) {
 
 // HasEecCntxId returns a boolean if a field has been set.
 func (o *EECRegistration) HasEecCntxId() bool {
-	if o != nil && !IsNil(o.EecCntxId) {
+	if o != nil && !isNil(o.EecCntxId) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *EECRegistration) SetEecCntxId(v string) {
 
 // GetSrcEesId returns the SrcEesId field value if set, zero value otherwise.
 func (o *EECRegistration) GetSrcEesId() string {
-	if o == nil || IsNil(o.SrcEesId) {
+	if o == nil || isNil(o.SrcEesId) {
 		var ret string
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *EECRegistration) GetSrcEesId() string {
 // GetSrcEesIdOk returns a tuple with the SrcEesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetSrcEesIdOk() (*string, bool) {
-	if o == nil || IsNil(o.SrcEesId) {
+	if o == nil || isNil(o.SrcEesId) {
 		return nil, false
 	}
 	return o.SrcEesId, true
@@ -260,7 +260,7 @@ func (o *EECRegistration) GetSrcEesIdOk() (*string, bool) {
 
 // HasSrcEesId returns a boolean if a field has been set.
 func (o *EECRegistration) HasSrcEesId() bool {
-	if o != nil && !IsNil(o.SrcEesId) {
+	if o != nil && !isNil(o.SrcEesId) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *EECRegistration) SetSrcEesId(v string) {
 
 // GetEndPt returns the EndPt field value if set, zero value otherwise.
 func (o *EECRegistration) GetEndPt() EndPoint {
-	if o == nil || IsNil(o.EndPt) {
+	if o == nil || isNil(o.EndPt) {
 		var ret EndPoint
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *EECRegistration) GetEndPt() EndPoint {
 // GetEndPtOk returns a tuple with the EndPt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetEndPtOk() (*EndPoint, bool) {
-	if o == nil || IsNil(o.EndPt) {
+	if o == nil || isNil(o.EndPt) {
 		return nil, false
 	}
 	return o.EndPt, true
@@ -292,7 +292,7 @@ func (o *EECRegistration) GetEndPtOk() (*EndPoint, bool) {
 
 // HasEndPt returns a boolean if a field has been set.
 func (o *EECRegistration) HasEndPt() bool {
-	if o != nil && !IsNil(o.EndPt) {
+	if o != nil && !isNil(o.EndPt) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *EECRegistration) SetEndPt(v EndPoint) {
 
 // GetUnfulfilledAcProfs returns the UnfulfilledAcProfs field value if set, zero value otherwise.
 func (o *EECRegistration) GetUnfulfilledAcProfs() UnfulfilledAcProfile {
-	if o == nil || IsNil(o.UnfulfilledAcProfs) {
+	if o == nil || isNil(o.UnfulfilledAcProfs) {
 		var ret UnfulfilledAcProfile
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *EECRegistration) GetUnfulfilledAcProfs() UnfulfilledAcProfile {
 // GetUnfulfilledAcProfsOk returns a tuple with the UnfulfilledAcProfs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EECRegistration) GetUnfulfilledAcProfsOk() (*UnfulfilledAcProfile, bool) {
-	if o == nil || IsNil(o.UnfulfilledAcProfs) {
+	if o == nil || isNil(o.UnfulfilledAcProfs) {
 		return nil, false
 	}
 	return o.UnfulfilledAcProfs, true
@@ -324,7 +324,7 @@ func (o *EECRegistration) GetUnfulfilledAcProfsOk() (*UnfulfilledAcProfile, bool
 
 // HasUnfulfilledAcProfs returns a boolean if a field has been set.
 func (o *EECRegistration) HasUnfulfilledAcProfs() bool {
-	if o != nil && !IsNil(o.UnfulfilledAcProfs) {
+	if o != nil && !isNil(o.UnfulfilledAcProfs) {
 		return true
 	}
 
@@ -347,28 +347,28 @@ func (o EECRegistration) MarshalJSON() ([]byte, error) {
 func (o EECRegistration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eecId"] = o.EecId
-	if !IsNil(o.UeId) {
+	if !isNil(o.UeId) {
 		toSerialize["ueId"] = o.UeId
 	}
-	if !IsNil(o.AcProfs) {
+	if !isNil(o.AcProfs) {
 		toSerialize["acProfs"] = o.AcProfs
 	}
-	if !IsNil(o.ExpTime) {
+	if !isNil(o.ExpTime) {
 		toSerialize["expTime"] = o.ExpTime
 	}
-	if !IsNil(o.EecSvcContSupp) {
+	if !isNil(o.EecSvcContSupp) {
 		toSerialize["eecSvcContSupp"] = o.EecSvcContSupp
 	}
-	if !IsNil(o.EecCntxId) {
+	if !isNil(o.EecCntxId) {
 		toSerialize["eecCntxId"] = o.EecCntxId
 	}
-	if !IsNil(o.SrcEesId) {
+	if !isNil(o.SrcEesId) {
 		toSerialize["srcEesId"] = o.SrcEesId
 	}
-	if !IsNil(o.EndPt) {
+	if !isNil(o.EndPt) {
 		toSerialize["endPt"] = o.EndPt
 	}
-	if !IsNil(o.UnfulfilledAcProfs) {
+	if !isNil(o.UnfulfilledAcProfs) {
 		toSerialize["unfulfilledAcProfs"] = o.UnfulfilledAcProfs
 	}
 	return toSerialize, nil

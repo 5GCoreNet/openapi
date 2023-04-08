@@ -96,7 +96,7 @@ func (o *NsmfEventExposureNotification) SetEventNotifs(v []EventNotification) {
 
 // GetAckUri returns the AckUri field value if set, zero value otherwise.
 func (o *NsmfEventExposureNotification) GetAckUri() string {
-	if o == nil || IsNil(o.AckUri) {
+	if o == nil || isNil(o.AckUri) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *NsmfEventExposureNotification) GetAckUri() string {
 // GetAckUriOk returns a tuple with the AckUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NsmfEventExposureNotification) GetAckUriOk() (*string, bool) {
-	if o == nil || IsNil(o.AckUri) {
+	if o == nil || isNil(o.AckUri) {
 		return nil, false
 	}
 	return o.AckUri, true
@@ -114,7 +114,7 @@ func (o *NsmfEventExposureNotification) GetAckUriOk() (*string, bool) {
 
 // HasAckUri returns a boolean if a field has been set.
 func (o *NsmfEventExposureNotification) HasAckUri() bool {
-	if o != nil && !IsNil(o.AckUri) {
+	if o != nil && !isNil(o.AckUri) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o NsmfEventExposureNotification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["notifId"] = o.NotifId
 	toSerialize["eventNotifs"] = o.EventNotifs
-	if !IsNil(o.AckUri) {
+	if !isNil(o.AckUri) {
 		toSerialize["ackUri"] = o.AckUri
 	}
 	return toSerialize, nil

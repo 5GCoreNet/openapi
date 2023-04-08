@@ -74,7 +74,7 @@ func NewAccessAndMobilityDataWithDefaults() *AccessAndMobilityData {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetLocation() UserLocation {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || isNil(o.Location) {
 		var ret UserLocation
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *AccessAndMobilityData) GetLocation() UserLocation {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || isNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -92,7 +92,7 @@ func (o *AccessAndMobilityData) GetLocationOk() (*UserLocation, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasLocation() bool {
-	if o != nil && !IsNil(o.Location) {
+	if o != nil && !isNil(o.Location) {
 		return true
 	}
 
@@ -106,7 +106,7 @@ func (o *AccessAndMobilityData) SetLocation(v UserLocation) {
 
 // GetLocationTs returns the LocationTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetLocationTs() time.Time {
-	if o == nil || IsNil(o.LocationTs) {
+	if o == nil || isNil(o.LocationTs) {
 		var ret time.Time
 		return ret
 	}
@@ -116,7 +116,7 @@ func (o *AccessAndMobilityData) GetLocationTs() time.Time {
 // GetLocationTsOk returns a tuple with the LocationTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetLocationTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.LocationTs) {
+	if o == nil || isNil(o.LocationTs) {
 		return nil, false
 	}
 	return o.LocationTs, true
@@ -124,7 +124,7 @@ func (o *AccessAndMobilityData) GetLocationTsOk() (*time.Time, bool) {
 
 // HasLocationTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasLocationTs() bool {
-	if o != nil && !IsNil(o.LocationTs) {
+	if o != nil && !isNil(o.LocationTs) {
 		return true
 	}
 
@@ -138,7 +138,7 @@ func (o *AccessAndMobilityData) SetLocationTs(v time.Time) {
 
 // GetTimeZone returns the TimeZone field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetTimeZone() string {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		var ret string
 		return ret
 	}
@@ -148,7 +148,7 @@ func (o *AccessAndMobilityData) GetTimeZone() string {
 // GetTimeZoneOk returns a tuple with the TimeZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetTimeZoneOk() (*string, bool) {
-	if o == nil || IsNil(o.TimeZone) {
+	if o == nil || isNil(o.TimeZone) {
 		return nil, false
 	}
 	return o.TimeZone, true
@@ -156,7 +156,7 @@ func (o *AccessAndMobilityData) GetTimeZoneOk() (*string, bool) {
 
 // HasTimeZone returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasTimeZone() bool {
-	if o != nil && !IsNil(o.TimeZone) {
+	if o != nil && !isNil(o.TimeZone) {
 		return true
 	}
 
@@ -170,7 +170,7 @@ func (o *AccessAndMobilityData) SetTimeZone(v string) {
 
 // GetTimeZoneTs returns the TimeZoneTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetTimeZoneTs() time.Time {
-	if o == nil || IsNil(o.TimeZoneTs) {
+	if o == nil || isNil(o.TimeZoneTs) {
 		var ret time.Time
 		return ret
 	}
@@ -180,7 +180,7 @@ func (o *AccessAndMobilityData) GetTimeZoneTs() time.Time {
 // GetTimeZoneTsOk returns a tuple with the TimeZoneTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetTimeZoneTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.TimeZoneTs) {
+	if o == nil || isNil(o.TimeZoneTs) {
 		return nil, false
 	}
 	return o.TimeZoneTs, true
@@ -188,7 +188,7 @@ func (o *AccessAndMobilityData) GetTimeZoneTsOk() (*time.Time, bool) {
 
 // HasTimeZoneTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasTimeZoneTs() bool {
-	if o != nil && !IsNil(o.TimeZoneTs) {
+	if o != nil && !isNil(o.TimeZoneTs) {
 		return true
 	}
 
@@ -202,7 +202,7 @@ func (o *AccessAndMobilityData) SetTimeZoneTs(v time.Time) {
 
 // GetAccessType returns the AccessType field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetAccessType() AccessType {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		var ret AccessType
 		return ret
 	}
@@ -212,7 +212,7 @@ func (o *AccessAndMobilityData) GetAccessType() AccessType {
 // GetAccessTypeOk returns a tuple with the AccessType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetAccessTypeOk() (*AccessType, bool) {
-	if o == nil || IsNil(o.AccessType) {
+	if o == nil || isNil(o.AccessType) {
 		return nil, false
 	}
 	return o.AccessType, true
@@ -220,7 +220,7 @@ func (o *AccessAndMobilityData) GetAccessTypeOk() (*AccessType, bool) {
 
 // HasAccessType returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasAccessType() bool {
-	if o != nil && !IsNil(o.AccessType) {
+	if o != nil && !isNil(o.AccessType) {
 		return true
 	}
 
@@ -234,7 +234,7 @@ func (o *AccessAndMobilityData) SetAccessType(v AccessType) {
 
 // GetRegStates returns the RegStates field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetRegStates() []RmInfo {
-	if o == nil || IsNil(o.RegStates) {
+	if o == nil || isNil(o.RegStates) {
 		var ret []RmInfo
 		return ret
 	}
@@ -244,7 +244,7 @@ func (o *AccessAndMobilityData) GetRegStates() []RmInfo {
 // GetRegStatesOk returns a tuple with the RegStates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetRegStatesOk() ([]RmInfo, bool) {
-	if o == nil || IsNil(o.RegStates) {
+	if o == nil || isNil(o.RegStates) {
 		return nil, false
 	}
 	return o.RegStates, true
@@ -252,7 +252,7 @@ func (o *AccessAndMobilityData) GetRegStatesOk() ([]RmInfo, bool) {
 
 // HasRegStates returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasRegStates() bool {
-	if o != nil && !IsNil(o.RegStates) {
+	if o != nil && !isNil(o.RegStates) {
 		return true
 	}
 
@@ -266,7 +266,7 @@ func (o *AccessAndMobilityData) SetRegStates(v []RmInfo) {
 
 // GetRegStatesTs returns the RegStatesTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetRegStatesTs() time.Time {
-	if o == nil || IsNil(o.RegStatesTs) {
+	if o == nil || isNil(o.RegStatesTs) {
 		var ret time.Time
 		return ret
 	}
@@ -276,7 +276,7 @@ func (o *AccessAndMobilityData) GetRegStatesTs() time.Time {
 // GetRegStatesTsOk returns a tuple with the RegStatesTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetRegStatesTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RegStatesTs) {
+	if o == nil || isNil(o.RegStatesTs) {
 		return nil, false
 	}
 	return o.RegStatesTs, true
@@ -284,7 +284,7 @@ func (o *AccessAndMobilityData) GetRegStatesTsOk() (*time.Time, bool) {
 
 // HasRegStatesTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasRegStatesTs() bool {
-	if o != nil && !IsNil(o.RegStatesTs) {
+	if o != nil && !isNil(o.RegStatesTs) {
 		return true
 	}
 
@@ -298,7 +298,7 @@ func (o *AccessAndMobilityData) SetRegStatesTs(v time.Time) {
 
 // GetConnStates returns the ConnStates field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetConnStates() []CmInfo {
-	if o == nil || IsNil(o.ConnStates) {
+	if o == nil || isNil(o.ConnStates) {
 		var ret []CmInfo
 		return ret
 	}
@@ -308,7 +308,7 @@ func (o *AccessAndMobilityData) GetConnStates() []CmInfo {
 // GetConnStatesOk returns a tuple with the ConnStates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetConnStatesOk() ([]CmInfo, bool) {
-	if o == nil || IsNil(o.ConnStates) {
+	if o == nil || isNil(o.ConnStates) {
 		return nil, false
 	}
 	return o.ConnStates, true
@@ -316,7 +316,7 @@ func (o *AccessAndMobilityData) GetConnStatesOk() ([]CmInfo, bool) {
 
 // HasConnStates returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasConnStates() bool {
-	if o != nil && !IsNil(o.ConnStates) {
+	if o != nil && !isNil(o.ConnStates) {
 		return true
 	}
 
@@ -330,7 +330,7 @@ func (o *AccessAndMobilityData) SetConnStates(v []CmInfo) {
 
 // GetConnStatesTs returns the ConnStatesTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetConnStatesTs() time.Time {
-	if o == nil || IsNil(o.ConnStatesTs) {
+	if o == nil || isNil(o.ConnStatesTs) {
 		var ret time.Time
 		return ret
 	}
@@ -340,7 +340,7 @@ func (o *AccessAndMobilityData) GetConnStatesTs() time.Time {
 // GetConnStatesTsOk returns a tuple with the ConnStatesTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetConnStatesTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ConnStatesTs) {
+	if o == nil || isNil(o.ConnStatesTs) {
 		return nil, false
 	}
 	return o.ConnStatesTs, true
@@ -348,7 +348,7 @@ func (o *AccessAndMobilityData) GetConnStatesTsOk() (*time.Time, bool) {
 
 // HasConnStatesTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasConnStatesTs() bool {
-	if o != nil && !IsNil(o.ConnStatesTs) {
+	if o != nil && !isNil(o.ConnStatesTs) {
 		return true
 	}
 
@@ -362,7 +362,7 @@ func (o *AccessAndMobilityData) SetConnStatesTs(v time.Time) {
 
 // GetReachabilityStatus returns the ReachabilityStatus field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetReachabilityStatus() UeReachability {
-	if o == nil || IsNil(o.ReachabilityStatus) {
+	if o == nil || isNil(o.ReachabilityStatus) {
 		var ret UeReachability
 		return ret
 	}
@@ -372,7 +372,7 @@ func (o *AccessAndMobilityData) GetReachabilityStatus() UeReachability {
 // GetReachabilityStatusOk returns a tuple with the ReachabilityStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetReachabilityStatusOk() (*UeReachability, bool) {
-	if o == nil || IsNil(o.ReachabilityStatus) {
+	if o == nil || isNil(o.ReachabilityStatus) {
 		return nil, false
 	}
 	return o.ReachabilityStatus, true
@@ -380,7 +380,7 @@ func (o *AccessAndMobilityData) GetReachabilityStatusOk() (*UeReachability, bool
 
 // HasReachabilityStatus returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasReachabilityStatus() bool {
-	if o != nil && !IsNil(o.ReachabilityStatus) {
+	if o != nil && !isNil(o.ReachabilityStatus) {
 		return true
 	}
 
@@ -394,7 +394,7 @@ func (o *AccessAndMobilityData) SetReachabilityStatus(v UeReachability) {
 
 // GetReachabilityStatusTs returns the ReachabilityStatusTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetReachabilityStatusTs() time.Time {
-	if o == nil || IsNil(o.ReachabilityStatusTs) {
+	if o == nil || isNil(o.ReachabilityStatusTs) {
 		var ret time.Time
 		return ret
 	}
@@ -404,7 +404,7 @@ func (o *AccessAndMobilityData) GetReachabilityStatusTs() time.Time {
 // GetReachabilityStatusTsOk returns a tuple with the ReachabilityStatusTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetReachabilityStatusTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ReachabilityStatusTs) {
+	if o == nil || isNil(o.ReachabilityStatusTs) {
 		return nil, false
 	}
 	return o.ReachabilityStatusTs, true
@@ -412,7 +412,7 @@ func (o *AccessAndMobilityData) GetReachabilityStatusTsOk() (*time.Time, bool) {
 
 // HasReachabilityStatusTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasReachabilityStatusTs() bool {
-	if o != nil && !IsNil(o.ReachabilityStatusTs) {
+	if o != nil && !isNil(o.ReachabilityStatusTs) {
 		return true
 	}
 
@@ -426,7 +426,7 @@ func (o *AccessAndMobilityData) SetReachabilityStatusTs(v time.Time) {
 
 // GetSmsOverNasStatus returns the SmsOverNasStatus field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetSmsOverNasStatus() SmsSupport {
-	if o == nil || IsNil(o.SmsOverNasStatus) {
+	if o == nil || isNil(o.SmsOverNasStatus) {
 		var ret SmsSupport
 		return ret
 	}
@@ -436,7 +436,7 @@ func (o *AccessAndMobilityData) GetSmsOverNasStatus() SmsSupport {
 // GetSmsOverNasStatusOk returns a tuple with the SmsOverNasStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetSmsOverNasStatusOk() (*SmsSupport, bool) {
-	if o == nil || IsNil(o.SmsOverNasStatus) {
+	if o == nil || isNil(o.SmsOverNasStatus) {
 		return nil, false
 	}
 	return o.SmsOverNasStatus, true
@@ -444,7 +444,7 @@ func (o *AccessAndMobilityData) GetSmsOverNasStatusOk() (*SmsSupport, bool) {
 
 // HasSmsOverNasStatus returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasSmsOverNasStatus() bool {
-	if o != nil && !IsNil(o.SmsOverNasStatus) {
+	if o != nil && !isNil(o.SmsOverNasStatus) {
 		return true
 	}
 
@@ -458,7 +458,7 @@ func (o *AccessAndMobilityData) SetSmsOverNasStatus(v SmsSupport) {
 
 // GetSmsOverNasStatusTs returns the SmsOverNasStatusTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetSmsOverNasStatusTs() time.Time {
-	if o == nil || IsNil(o.SmsOverNasStatusTs) {
+	if o == nil || isNil(o.SmsOverNasStatusTs) {
 		var ret time.Time
 		return ret
 	}
@@ -468,7 +468,7 @@ func (o *AccessAndMobilityData) GetSmsOverNasStatusTs() time.Time {
 // GetSmsOverNasStatusTsOk returns a tuple with the SmsOverNasStatusTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetSmsOverNasStatusTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.SmsOverNasStatusTs) {
+	if o == nil || isNil(o.SmsOverNasStatusTs) {
 		return nil, false
 	}
 	return o.SmsOverNasStatusTs, true
@@ -476,7 +476,7 @@ func (o *AccessAndMobilityData) GetSmsOverNasStatusTsOk() (*time.Time, bool) {
 
 // HasSmsOverNasStatusTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasSmsOverNasStatusTs() bool {
-	if o != nil && !IsNil(o.SmsOverNasStatusTs) {
+	if o != nil && !isNil(o.SmsOverNasStatusTs) {
 		return true
 	}
 
@@ -490,7 +490,7 @@ func (o *AccessAndMobilityData) SetSmsOverNasStatusTs(v time.Time) {
 
 // GetRoamingStatus returns the RoamingStatus field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetRoamingStatus() bool {
-	if o == nil || IsNil(o.RoamingStatus) {
+	if o == nil || isNil(o.RoamingStatus) {
 		var ret bool
 		return ret
 	}
@@ -500,7 +500,7 @@ func (o *AccessAndMobilityData) GetRoamingStatus() bool {
 // GetRoamingStatusOk returns a tuple with the RoamingStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetRoamingStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.RoamingStatus) {
+	if o == nil || isNil(o.RoamingStatus) {
 		return nil, false
 	}
 	return o.RoamingStatus, true
@@ -508,7 +508,7 @@ func (o *AccessAndMobilityData) GetRoamingStatusOk() (*bool, bool) {
 
 // HasRoamingStatus returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasRoamingStatus() bool {
-	if o != nil && !IsNil(o.RoamingStatus) {
+	if o != nil && !isNil(o.RoamingStatus) {
 		return true
 	}
 
@@ -522,7 +522,7 @@ func (o *AccessAndMobilityData) SetRoamingStatus(v bool) {
 
 // GetRoamingStatusTs returns the RoamingStatusTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetRoamingStatusTs() time.Time {
-	if o == nil || IsNil(o.RoamingStatusTs) {
+	if o == nil || isNil(o.RoamingStatusTs) {
 		var ret time.Time
 		return ret
 	}
@@ -532,7 +532,7 @@ func (o *AccessAndMobilityData) GetRoamingStatusTs() time.Time {
 // GetRoamingStatusTsOk returns a tuple with the RoamingStatusTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetRoamingStatusTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RoamingStatusTs) {
+	if o == nil || isNil(o.RoamingStatusTs) {
 		return nil, false
 	}
 	return o.RoamingStatusTs, true
@@ -540,7 +540,7 @@ func (o *AccessAndMobilityData) GetRoamingStatusTsOk() (*time.Time, bool) {
 
 // HasRoamingStatusTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasRoamingStatusTs() bool {
-	if o != nil && !IsNil(o.RoamingStatusTs) {
+	if o != nil && !isNil(o.RoamingStatusTs) {
 		return true
 	}
 
@@ -554,7 +554,7 @@ func (o *AccessAndMobilityData) SetRoamingStatusTs(v time.Time) {
 
 // GetCurrentPlmn returns the CurrentPlmn field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetCurrentPlmn() PlmnId {
-	if o == nil || IsNil(o.CurrentPlmn) {
+	if o == nil || isNil(o.CurrentPlmn) {
 		var ret PlmnId
 		return ret
 	}
@@ -564,7 +564,7 @@ func (o *AccessAndMobilityData) GetCurrentPlmn() PlmnId {
 // GetCurrentPlmnOk returns a tuple with the CurrentPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetCurrentPlmnOk() (*PlmnId, bool) {
-	if o == nil || IsNil(o.CurrentPlmn) {
+	if o == nil || isNil(o.CurrentPlmn) {
 		return nil, false
 	}
 	return o.CurrentPlmn, true
@@ -572,7 +572,7 @@ func (o *AccessAndMobilityData) GetCurrentPlmnOk() (*PlmnId, bool) {
 
 // HasCurrentPlmn returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasCurrentPlmn() bool {
-	if o != nil && !IsNil(o.CurrentPlmn) {
+	if o != nil && !isNil(o.CurrentPlmn) {
 		return true
 	}
 
@@ -586,7 +586,7 @@ func (o *AccessAndMobilityData) SetCurrentPlmn(v PlmnId) {
 
 // GetCurrentPlmnTs returns the CurrentPlmnTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetCurrentPlmnTs() time.Time {
-	if o == nil || IsNil(o.CurrentPlmnTs) {
+	if o == nil || isNil(o.CurrentPlmnTs) {
 		var ret time.Time
 		return ret
 	}
@@ -596,7 +596,7 @@ func (o *AccessAndMobilityData) GetCurrentPlmnTs() time.Time {
 // GetCurrentPlmnTsOk returns a tuple with the CurrentPlmnTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetCurrentPlmnTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.CurrentPlmnTs) {
+	if o == nil || isNil(o.CurrentPlmnTs) {
 		return nil, false
 	}
 	return o.CurrentPlmnTs, true
@@ -604,7 +604,7 @@ func (o *AccessAndMobilityData) GetCurrentPlmnTsOk() (*time.Time, bool) {
 
 // HasCurrentPlmnTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasCurrentPlmnTs() bool {
-	if o != nil && !IsNil(o.CurrentPlmnTs) {
+	if o != nil && !isNil(o.CurrentPlmnTs) {
 		return true
 	}
 
@@ -618,7 +618,7 @@ func (o *AccessAndMobilityData) SetCurrentPlmnTs(v time.Time) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetRatType() []RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret []RatType
 		return ret
 	}
@@ -628,7 +628,7 @@ func (o *AccessAndMobilityData) GetRatType() []RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetRatTypeOk() ([]RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -636,7 +636,7 @@ func (o *AccessAndMobilityData) GetRatTypeOk() ([]RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -650,7 +650,7 @@ func (o *AccessAndMobilityData) SetRatType(v []RatType) {
 
 // GetRatTypesTs returns the RatTypesTs field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetRatTypesTs() time.Time {
-	if o == nil || IsNil(o.RatTypesTs) {
+	if o == nil || isNil(o.RatTypesTs) {
 		var ret time.Time
 		return ret
 	}
@@ -660,7 +660,7 @@ func (o *AccessAndMobilityData) GetRatTypesTs() time.Time {
 // GetRatTypesTsOk returns a tuple with the RatTypesTs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetRatTypesTsOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RatTypesTs) {
+	if o == nil || isNil(o.RatTypesTs) {
 		return nil, false
 	}
 	return o.RatTypesTs, true
@@ -668,7 +668,7 @@ func (o *AccessAndMobilityData) GetRatTypesTsOk() (*time.Time, bool) {
 
 // HasRatTypesTs returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasRatTypesTs() bool {
-	if o != nil && !IsNil(o.RatTypesTs) {
+	if o != nil && !isNil(o.RatTypesTs) {
 		return true
 	}
 
@@ -682,7 +682,7 @@ func (o *AccessAndMobilityData) SetRatTypesTs(v time.Time) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -692,7 +692,7 @@ func (o *AccessAndMobilityData) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -700,7 +700,7 @@ func (o *AccessAndMobilityData) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -714,7 +714,7 @@ func (o *AccessAndMobilityData) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *AccessAndMobilityData) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -724,7 +724,7 @@ func (o *AccessAndMobilityData) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AccessAndMobilityData) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -732,7 +732,7 @@ func (o *AccessAndMobilityData) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *AccessAndMobilityData) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -754,67 +754,67 @@ func (o AccessAndMobilityData) MarshalJSON() ([]byte, error) {
 
 func (o AccessAndMobilityData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Location) {
+	if !isNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
-	if !IsNil(o.LocationTs) {
+	if !isNil(o.LocationTs) {
 		toSerialize["locationTs"] = o.LocationTs
 	}
-	if !IsNil(o.TimeZone) {
+	if !isNil(o.TimeZone) {
 		toSerialize["timeZone"] = o.TimeZone
 	}
-	if !IsNil(o.TimeZoneTs) {
+	if !isNil(o.TimeZoneTs) {
 		toSerialize["timeZoneTs"] = o.TimeZoneTs
 	}
-	if !IsNil(o.AccessType) {
+	if !isNil(o.AccessType) {
 		toSerialize["accessType"] = o.AccessType
 	}
-	if !IsNil(o.RegStates) {
+	if !isNil(o.RegStates) {
 		toSerialize["regStates"] = o.RegStates
 	}
-	if !IsNil(o.RegStatesTs) {
+	if !isNil(o.RegStatesTs) {
 		toSerialize["regStatesTs"] = o.RegStatesTs
 	}
-	if !IsNil(o.ConnStates) {
+	if !isNil(o.ConnStates) {
 		toSerialize["connStates"] = o.ConnStates
 	}
-	if !IsNil(o.ConnStatesTs) {
+	if !isNil(o.ConnStatesTs) {
 		toSerialize["connStatesTs"] = o.ConnStatesTs
 	}
-	if !IsNil(o.ReachabilityStatus) {
+	if !isNil(o.ReachabilityStatus) {
 		toSerialize["reachabilityStatus"] = o.ReachabilityStatus
 	}
-	if !IsNil(o.ReachabilityStatusTs) {
+	if !isNil(o.ReachabilityStatusTs) {
 		toSerialize["reachabilityStatusTs"] = o.ReachabilityStatusTs
 	}
-	if !IsNil(o.SmsOverNasStatus) {
+	if !isNil(o.SmsOverNasStatus) {
 		toSerialize["smsOverNasStatus"] = o.SmsOverNasStatus
 	}
-	if !IsNil(o.SmsOverNasStatusTs) {
+	if !isNil(o.SmsOverNasStatusTs) {
 		toSerialize["smsOverNasStatusTs"] = o.SmsOverNasStatusTs
 	}
-	if !IsNil(o.RoamingStatus) {
+	if !isNil(o.RoamingStatus) {
 		toSerialize["roamingStatus"] = o.RoamingStatus
 	}
-	if !IsNil(o.RoamingStatusTs) {
+	if !isNil(o.RoamingStatusTs) {
 		toSerialize["roamingStatusTs"] = o.RoamingStatusTs
 	}
-	if !IsNil(o.CurrentPlmn) {
+	if !isNil(o.CurrentPlmn) {
 		toSerialize["currentPlmn"] = o.CurrentPlmn
 	}
-	if !IsNil(o.CurrentPlmnTs) {
+	if !isNil(o.CurrentPlmnTs) {
 		toSerialize["currentPlmnTs"] = o.CurrentPlmnTs
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.RatTypesTs) {
+	if !isNil(o.RatTypesTs) {
 		toSerialize["ratTypesTs"] = o.RatTypesTs
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
 	return toSerialize, nil

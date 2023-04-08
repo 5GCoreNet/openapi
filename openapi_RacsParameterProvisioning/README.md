@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
  - [RacsConfiguration](docs/RacsConfiguration.md)
  - [RacsConfigurationRm](docs/RacsConfigurationRm.md)
  - [RacsFailureCode](docs/RacsFailureCode.md)
+ - [RacsFailureCodeAnyOf](docs/RacsFailureCodeAnyOf.md)
  - [RacsFailureReport](docs/RacsFailureReport.md)
  - [RacsProvisioningData](docs/RacsProvisioningData.md)
  - [RacsProvisioningDataPatch](docs/RacsProvisioningDataPatch.md)

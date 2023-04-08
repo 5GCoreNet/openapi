@@ -61,7 +61,7 @@ func NewAuthorizedNetworkSliceInfoWithDefaults() *AuthorizedNetworkSliceInfo {
 
 // GetAllowedNssaiList returns the AllowedNssaiList field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetAllowedNssaiList() []AllowedNssai {
-	if o == nil || IsNil(o.AllowedNssaiList) {
+	if o == nil || isNil(o.AllowedNssaiList) {
 		var ret []AllowedNssai
 		return ret
 	}
@@ -71,7 +71,7 @@ func (o *AuthorizedNetworkSliceInfo) GetAllowedNssaiList() []AllowedNssai {
 // GetAllowedNssaiListOk returns a tuple with the AllowedNssaiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetAllowedNssaiListOk() ([]AllowedNssai, bool) {
-	if o == nil || IsNil(o.AllowedNssaiList) {
+	if o == nil || isNil(o.AllowedNssaiList) {
 		return nil, false
 	}
 	return o.AllowedNssaiList, true
@@ -79,7 +79,7 @@ func (o *AuthorizedNetworkSliceInfo) GetAllowedNssaiListOk() ([]AllowedNssai, bo
 
 // HasAllowedNssaiList returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasAllowedNssaiList() bool {
-	if o != nil && !IsNil(o.AllowedNssaiList) {
+	if o != nil && !isNil(o.AllowedNssaiList) {
 		return true
 	}
 
@@ -93,7 +93,7 @@ func (o *AuthorizedNetworkSliceInfo) SetAllowedNssaiList(v []AllowedNssai) {
 
 // GetConfiguredNssai returns the ConfiguredNssai field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetConfiguredNssai() []ConfiguredSnssai {
-	if o == nil || IsNil(o.ConfiguredNssai) {
+	if o == nil || isNil(o.ConfiguredNssai) {
 		var ret []ConfiguredSnssai
 		return ret
 	}
@@ -103,7 +103,7 @@ func (o *AuthorizedNetworkSliceInfo) GetConfiguredNssai() []ConfiguredSnssai {
 // GetConfiguredNssaiOk returns a tuple with the ConfiguredNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetConfiguredNssaiOk() ([]ConfiguredSnssai, bool) {
-	if o == nil || IsNil(o.ConfiguredNssai) {
+	if o == nil || isNil(o.ConfiguredNssai) {
 		return nil, false
 	}
 	return o.ConfiguredNssai, true
@@ -111,7 +111,7 @@ func (o *AuthorizedNetworkSliceInfo) GetConfiguredNssaiOk() ([]ConfiguredSnssai,
 
 // HasConfiguredNssai returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasConfiguredNssai() bool {
-	if o != nil && !IsNil(o.ConfiguredNssai) {
+	if o != nil && !isNil(o.ConfiguredNssai) {
 		return true
 	}
 
@@ -125,7 +125,7 @@ func (o *AuthorizedNetworkSliceInfo) SetConfiguredNssai(v []ConfiguredSnssai) {
 
 // GetTargetAmfSet returns the TargetAmfSet field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetTargetAmfSet() string {
-	if o == nil || IsNil(o.TargetAmfSet) {
+	if o == nil || isNil(o.TargetAmfSet) {
 		var ret string
 		return ret
 	}
@@ -135,7 +135,7 @@ func (o *AuthorizedNetworkSliceInfo) GetTargetAmfSet() string {
 // GetTargetAmfSetOk returns a tuple with the TargetAmfSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetTargetAmfSetOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetAmfSet) {
+	if o == nil || isNil(o.TargetAmfSet) {
 		return nil, false
 	}
 	return o.TargetAmfSet, true
@@ -143,7 +143,7 @@ func (o *AuthorizedNetworkSliceInfo) GetTargetAmfSetOk() (*string, bool) {
 
 // HasTargetAmfSet returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasTargetAmfSet() bool {
-	if o != nil && !IsNil(o.TargetAmfSet) {
+	if o != nil && !isNil(o.TargetAmfSet) {
 		return true
 	}
 
@@ -157,7 +157,7 @@ func (o *AuthorizedNetworkSliceInfo) SetTargetAmfSet(v string) {
 
 // GetCandidateAmfList returns the CandidateAmfList field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetCandidateAmfList() []string {
-	if o == nil || IsNil(o.CandidateAmfList) {
+	if o == nil || isNil(o.CandidateAmfList) {
 		var ret []string
 		return ret
 	}
@@ -167,7 +167,7 @@ func (o *AuthorizedNetworkSliceInfo) GetCandidateAmfList() []string {
 // GetCandidateAmfListOk returns a tuple with the CandidateAmfList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetCandidateAmfListOk() ([]string, bool) {
-	if o == nil || IsNil(o.CandidateAmfList) {
+	if o == nil || isNil(o.CandidateAmfList) {
 		return nil, false
 	}
 	return o.CandidateAmfList, true
@@ -175,7 +175,7 @@ func (o *AuthorizedNetworkSliceInfo) GetCandidateAmfListOk() ([]string, bool) {
 
 // HasCandidateAmfList returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasCandidateAmfList() bool {
-	if o != nil && !IsNil(o.CandidateAmfList) {
+	if o != nil && !isNil(o.CandidateAmfList) {
 		return true
 	}
 
@@ -189,7 +189,7 @@ func (o *AuthorizedNetworkSliceInfo) SetCandidateAmfList(v []string) {
 
 // GetRejectedNssaiInPlmn returns the RejectedNssaiInPlmn field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInPlmn() []Snssai {
-	if o == nil || IsNil(o.RejectedNssaiInPlmn) {
+	if o == nil || isNil(o.RejectedNssaiInPlmn) {
 		var ret []Snssai
 		return ret
 	}
@@ -199,7 +199,7 @@ func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInPlmn() []Snssai {
 // GetRejectedNssaiInPlmnOk returns a tuple with the RejectedNssaiInPlmn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInPlmnOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.RejectedNssaiInPlmn) {
+	if o == nil || isNil(o.RejectedNssaiInPlmn) {
 		return nil, false
 	}
 	return o.RejectedNssaiInPlmn, true
@@ -207,7 +207,7 @@ func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInPlmnOk() ([]Snssai, bool)
 
 // HasRejectedNssaiInPlmn returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasRejectedNssaiInPlmn() bool {
-	if o != nil && !IsNil(o.RejectedNssaiInPlmn) {
+	if o != nil && !isNil(o.RejectedNssaiInPlmn) {
 		return true
 	}
 
@@ -221,7 +221,7 @@ func (o *AuthorizedNetworkSliceInfo) SetRejectedNssaiInPlmn(v []Snssai) {
 
 // GetRejectedNssaiInTa returns the RejectedNssaiInTa field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInTa() []Snssai {
-	if o == nil || IsNil(o.RejectedNssaiInTa) {
+	if o == nil || isNil(o.RejectedNssaiInTa) {
 		var ret []Snssai
 		return ret
 	}
@@ -231,7 +231,7 @@ func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInTa() []Snssai {
 // GetRejectedNssaiInTaOk returns a tuple with the RejectedNssaiInTa field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInTaOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.RejectedNssaiInTa) {
+	if o == nil || isNil(o.RejectedNssaiInTa) {
 		return nil, false
 	}
 	return o.RejectedNssaiInTa, true
@@ -239,7 +239,7 @@ func (o *AuthorizedNetworkSliceInfo) GetRejectedNssaiInTaOk() ([]Snssai, bool) {
 
 // HasRejectedNssaiInTa returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasRejectedNssaiInTa() bool {
-	if o != nil && !IsNil(o.RejectedNssaiInTa) {
+	if o != nil && !isNil(o.RejectedNssaiInTa) {
 		return true
 	}
 
@@ -253,7 +253,7 @@ func (o *AuthorizedNetworkSliceInfo) SetRejectedNssaiInTa(v []Snssai) {
 
 // GetNsiInformation returns the NsiInformation field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetNsiInformation() NsiInformation {
-	if o == nil || IsNil(o.NsiInformation) {
+	if o == nil || isNil(o.NsiInformation) {
 		var ret NsiInformation
 		return ret
 	}
@@ -263,7 +263,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNsiInformation() NsiInformation {
 // GetNsiInformationOk returns a tuple with the NsiInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetNsiInformationOk() (*NsiInformation, bool) {
-	if o == nil || IsNil(o.NsiInformation) {
+	if o == nil || isNil(o.NsiInformation) {
 		return nil, false
 	}
 	return o.NsiInformation, true
@@ -271,7 +271,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNsiInformationOk() (*NsiInformation, boo
 
 // HasNsiInformation returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasNsiInformation() bool {
-	if o != nil && !IsNil(o.NsiInformation) {
+	if o != nil && !isNil(o.NsiInformation) {
 		return true
 	}
 
@@ -285,7 +285,7 @@ func (o *AuthorizedNetworkSliceInfo) SetNsiInformation(v NsiInformation) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -295,7 +295,7 @@ func (o *AuthorizedNetworkSliceInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -303,7 +303,7 @@ func (o *AuthorizedNetworkSliceInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -317,7 +317,7 @@ func (o *AuthorizedNetworkSliceInfo) SetSupportedFeatures(v string) {
 
 // GetNrfAmfSet returns the NrfAmfSet field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSet() string {
-	if o == nil || IsNil(o.NrfAmfSet) {
+	if o == nil || isNil(o.NrfAmfSet) {
 		var ret string
 		return ret
 	}
@@ -327,7 +327,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSet() string {
 // GetNrfAmfSetOk returns a tuple with the NrfAmfSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfAmfSet) {
+	if o == nil || isNil(o.NrfAmfSet) {
 		return nil, false
 	}
 	return o.NrfAmfSet, true
@@ -335,7 +335,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetOk() (*string, bool) {
 
 // HasNrfAmfSet returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasNrfAmfSet() bool {
-	if o != nil && !IsNil(o.NrfAmfSet) {
+	if o != nil && !isNil(o.NrfAmfSet) {
 		return true
 	}
 
@@ -349,7 +349,7 @@ func (o *AuthorizedNetworkSliceInfo) SetNrfAmfSet(v string) {
 
 // GetNrfAmfSetNfMgtUri returns the NrfAmfSetNfMgtUri field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetNfMgtUri() string {
-	if o == nil || IsNil(o.NrfAmfSetNfMgtUri) {
+	if o == nil || isNil(o.NrfAmfSetNfMgtUri) {
 		var ret string
 		return ret
 	}
@@ -359,7 +359,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetNfMgtUri() string {
 // GetNrfAmfSetNfMgtUriOk returns a tuple with the NrfAmfSetNfMgtUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetNfMgtUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfAmfSetNfMgtUri) {
+	if o == nil || isNil(o.NrfAmfSetNfMgtUri) {
 		return nil, false
 	}
 	return o.NrfAmfSetNfMgtUri, true
@@ -367,7 +367,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetNfMgtUriOk() (*string, bool) {
 
 // HasNrfAmfSetNfMgtUri returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasNrfAmfSetNfMgtUri() bool {
-	if o != nil && !IsNil(o.NrfAmfSetNfMgtUri) {
+	if o != nil && !isNil(o.NrfAmfSetNfMgtUri) {
 		return true
 	}
 
@@ -381,7 +381,7 @@ func (o *AuthorizedNetworkSliceInfo) SetNrfAmfSetNfMgtUri(v string) {
 
 // GetNrfAmfSetAccessTokenUri returns the NrfAmfSetAccessTokenUri field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetAccessTokenUri() string {
-	if o == nil || IsNil(o.NrfAmfSetAccessTokenUri) {
+	if o == nil || isNil(o.NrfAmfSetAccessTokenUri) {
 		var ret string
 		return ret
 	}
@@ -391,7 +391,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetAccessTokenUri() string {
 // GetNrfAmfSetAccessTokenUriOk returns a tuple with the NrfAmfSetAccessTokenUri field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetAccessTokenUriOk() (*string, bool) {
-	if o == nil || IsNil(o.NrfAmfSetAccessTokenUri) {
+	if o == nil || isNil(o.NrfAmfSetAccessTokenUri) {
 		return nil, false
 	}
 	return o.NrfAmfSetAccessTokenUri, true
@@ -399,7 +399,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfAmfSetAccessTokenUriOk() (*string, bo
 
 // HasNrfAmfSetAccessTokenUri returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasNrfAmfSetAccessTokenUri() bool {
-	if o != nil && !IsNil(o.NrfAmfSetAccessTokenUri) {
+	if o != nil && !isNil(o.NrfAmfSetAccessTokenUri) {
 		return true
 	}
 
@@ -413,7 +413,7 @@ func (o *AuthorizedNetworkSliceInfo) SetNrfAmfSetAccessTokenUri(v string) {
 
 // GetNrfOauth2Required returns the NrfOauth2Required field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetNrfOauth2Required() map[string]bool {
-	if o == nil || IsNil(o.NrfOauth2Required) {
+	if o == nil || isNil(o.NrfOauth2Required) {
 		var ret map[string]bool
 		return ret
 	}
@@ -423,7 +423,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfOauth2Required() map[string]bool {
 // GetNrfOauth2RequiredOk returns a tuple with the NrfOauth2Required field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetNrfOauth2RequiredOk() (*map[string]bool, bool) {
-	if o == nil || IsNil(o.NrfOauth2Required) {
+	if o == nil || isNil(o.NrfOauth2Required) {
 		return nil, false
 	}
 	return o.NrfOauth2Required, true
@@ -431,7 +431,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNrfOauth2RequiredOk() (*map[string]bool,
 
 // HasNrfOauth2Required returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasNrfOauth2Required() bool {
-	if o != nil && !IsNil(o.NrfOauth2Required) {
+	if o != nil && !isNil(o.NrfOauth2Required) {
 		return true
 	}
 
@@ -445,7 +445,7 @@ func (o *AuthorizedNetworkSliceInfo) SetNrfOauth2Required(v map[string]bool) {
 
 // GetTargetAmfServiceSet returns the TargetAmfServiceSet field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetTargetAmfServiceSet() string {
-	if o == nil || IsNil(o.TargetAmfServiceSet) {
+	if o == nil || isNil(o.TargetAmfServiceSet) {
 		var ret string
 		return ret
 	}
@@ -455,7 +455,7 @@ func (o *AuthorizedNetworkSliceInfo) GetTargetAmfServiceSet() string {
 // GetTargetAmfServiceSetOk returns a tuple with the TargetAmfServiceSet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetTargetAmfServiceSetOk() (*string, bool) {
-	if o == nil || IsNil(o.TargetAmfServiceSet) {
+	if o == nil || isNil(o.TargetAmfServiceSet) {
 		return nil, false
 	}
 	return o.TargetAmfServiceSet, true
@@ -463,7 +463,7 @@ func (o *AuthorizedNetworkSliceInfo) GetTargetAmfServiceSetOk() (*string, bool) 
 
 // HasTargetAmfServiceSet returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasTargetAmfServiceSet() bool {
-	if o != nil && !IsNil(o.TargetAmfServiceSet) {
+	if o != nil && !isNil(o.TargetAmfServiceSet) {
 		return true
 	}
 
@@ -477,7 +477,7 @@ func (o *AuthorizedNetworkSliceInfo) SetTargetAmfServiceSet(v string) {
 
 // GetTargetNssai returns the TargetNssai field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetTargetNssai() []Snssai {
-	if o == nil || IsNil(o.TargetNssai) {
+	if o == nil || isNil(o.TargetNssai) {
 		var ret []Snssai
 		return ret
 	}
@@ -487,7 +487,7 @@ func (o *AuthorizedNetworkSliceInfo) GetTargetNssai() []Snssai {
 // GetTargetNssaiOk returns a tuple with the TargetNssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetTargetNssaiOk() ([]Snssai, bool) {
-	if o == nil || IsNil(o.TargetNssai) {
+	if o == nil || isNil(o.TargetNssai) {
 		return nil, false
 	}
 	return o.TargetNssai, true
@@ -495,7 +495,7 @@ func (o *AuthorizedNetworkSliceInfo) GetTargetNssaiOk() ([]Snssai, bool) {
 
 // HasTargetNssai returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasTargetNssai() bool {
-	if o != nil && !IsNil(o.TargetNssai) {
+	if o != nil && !isNil(o.TargetNssai) {
 		return true
 	}
 
@@ -509,7 +509,7 @@ func (o *AuthorizedNetworkSliceInfo) SetTargetNssai(v []Snssai) {
 
 // GetNsagInfos returns the NsagInfos field value if set, zero value otherwise.
 func (o *AuthorizedNetworkSliceInfo) GetNsagInfos() []NsagInfo {
-	if o == nil || IsNil(o.NsagInfos) {
+	if o == nil || isNil(o.NsagInfos) {
 		var ret []NsagInfo
 		return ret
 	}
@@ -519,7 +519,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNsagInfos() []NsagInfo {
 // GetNsagInfosOk returns a tuple with the NsagInfos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizedNetworkSliceInfo) GetNsagInfosOk() ([]NsagInfo, bool) {
-	if o == nil || IsNil(o.NsagInfos) {
+	if o == nil || isNil(o.NsagInfos) {
 		return nil, false
 	}
 	return o.NsagInfos, true
@@ -527,7 +527,7 @@ func (o *AuthorizedNetworkSliceInfo) GetNsagInfosOk() ([]NsagInfo, bool) {
 
 // HasNsagInfos returns a boolean if a field has been set.
 func (o *AuthorizedNetworkSliceInfo) HasNsagInfos() bool {
-	if o != nil && !IsNil(o.NsagInfos) {
+	if o != nil && !isNil(o.NsagInfos) {
 		return true
 	}
 
@@ -549,49 +549,49 @@ func (o AuthorizedNetworkSliceInfo) MarshalJSON() ([]byte, error) {
 
 func (o AuthorizedNetworkSliceInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.AllowedNssaiList) {
+	if !isNil(o.AllowedNssaiList) {
 		toSerialize["allowedNssaiList"] = o.AllowedNssaiList
 	}
-	if !IsNil(o.ConfiguredNssai) {
+	if !isNil(o.ConfiguredNssai) {
 		toSerialize["configuredNssai"] = o.ConfiguredNssai
 	}
-	if !IsNil(o.TargetAmfSet) {
+	if !isNil(o.TargetAmfSet) {
 		toSerialize["targetAmfSet"] = o.TargetAmfSet
 	}
-	if !IsNil(o.CandidateAmfList) {
+	if !isNil(o.CandidateAmfList) {
 		toSerialize["candidateAmfList"] = o.CandidateAmfList
 	}
-	if !IsNil(o.RejectedNssaiInPlmn) {
+	if !isNil(o.RejectedNssaiInPlmn) {
 		toSerialize["rejectedNssaiInPlmn"] = o.RejectedNssaiInPlmn
 	}
-	if !IsNil(o.RejectedNssaiInTa) {
+	if !isNil(o.RejectedNssaiInTa) {
 		toSerialize["rejectedNssaiInTa"] = o.RejectedNssaiInTa
 	}
-	if !IsNil(o.NsiInformation) {
+	if !isNil(o.NsiInformation) {
 		toSerialize["nsiInformation"] = o.NsiInformation
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.NrfAmfSet) {
+	if !isNil(o.NrfAmfSet) {
 		toSerialize["nrfAmfSet"] = o.NrfAmfSet
 	}
-	if !IsNil(o.NrfAmfSetNfMgtUri) {
+	if !isNil(o.NrfAmfSetNfMgtUri) {
 		toSerialize["nrfAmfSetNfMgtUri"] = o.NrfAmfSetNfMgtUri
 	}
-	if !IsNil(o.NrfAmfSetAccessTokenUri) {
+	if !isNil(o.NrfAmfSetAccessTokenUri) {
 		toSerialize["nrfAmfSetAccessTokenUri"] = o.NrfAmfSetAccessTokenUri
 	}
-	if !IsNil(o.NrfOauth2Required) {
+	if !isNil(o.NrfOauth2Required) {
 		toSerialize["nrfOauth2Required"] = o.NrfOauth2Required
 	}
-	if !IsNil(o.TargetAmfServiceSet) {
+	if !isNil(o.TargetAmfServiceSet) {
 		toSerialize["targetAmfServiceSet"] = o.TargetAmfServiceSet
 	}
-	if !IsNil(o.TargetNssai) {
+	if !isNil(o.TargetNssai) {
 		toSerialize["targetNssai"] = o.TargetNssai
 	}
-	if !IsNil(o.NsagInfos) {
+	if !isNil(o.NsagInfos) {
 		toSerialize["nsagInfos"] = o.NsagInfos
 	}
 	return toSerialize, nil

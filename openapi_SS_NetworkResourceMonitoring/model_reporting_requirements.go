@@ -77,7 +77,7 @@ func (o *ReportingRequirements) SetReportingMode(v NotificationMethod) {
 
 // GetReportingPeriod returns the ReportingPeriod field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetReportingPeriod() int32 {
-	if o == nil || IsNil(o.ReportingPeriod) {
+	if o == nil || isNil(o.ReportingPeriod) {
 		var ret int32
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *ReportingRequirements) GetReportingPeriod() int32 {
 // GetReportingPeriodOk returns a tuple with the ReportingPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetReportingPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.ReportingPeriod) {
+	if o == nil || isNil(o.ReportingPeriod) {
 		return nil, false
 	}
 	return o.ReportingPeriod, true
@@ -95,7 +95,7 @@ func (o *ReportingRequirements) GetReportingPeriodOk() (*int32, bool) {
 
 // HasReportingPeriod returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasReportingPeriod() bool {
-	if o != nil && !IsNil(o.ReportingPeriod) {
+	if o != nil && !isNil(o.ReportingPeriod) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *ReportingRequirements) SetReportingPeriod(v int32) {
 
 // GetReportingThrs returns the ReportingThrs field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetReportingThrs() []ReportingThreshold {
-	if o == nil || IsNil(o.ReportingThrs) {
+	if o == nil || isNil(o.ReportingThrs) {
 		var ret []ReportingThreshold
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *ReportingRequirements) GetReportingThrs() []ReportingThreshold {
 // GetReportingThrsOk returns a tuple with the ReportingThrs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetReportingThrsOk() ([]ReportingThreshold, bool) {
-	if o == nil || IsNil(o.ReportingThrs) {
+	if o == nil || isNil(o.ReportingThrs) {
 		return nil, false
 	}
 	return o.ReportingThrs, true
@@ -127,7 +127,7 @@ func (o *ReportingRequirements) GetReportingThrsOk() ([]ReportingThreshold, bool
 
 // HasReportingThrs returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasReportingThrs() bool {
-	if o != nil && !IsNil(o.ReportingThrs) {
+	if o != nil && !isNil(o.ReportingThrs) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *ReportingRequirements) SetReportingThrs(v []ReportingThreshold) {
 
 // GetImmRep returns the ImmRep field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetImmRep() bool {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		var ret bool
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *ReportingRequirements) GetImmRep() bool {
 // GetImmRepOk returns a tuple with the ImmRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetImmRepOk() (*bool, bool) {
-	if o == nil || IsNil(o.ImmRep) {
+	if o == nil || isNil(o.ImmRep) {
 		return nil, false
 	}
 	return o.ImmRep, true
@@ -159,7 +159,7 @@ func (o *ReportingRequirements) GetImmRepOk() (*bool, bool) {
 
 // HasImmRep returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasImmRep() bool {
-	if o != nil && !IsNil(o.ImmRep) {
+	if o != nil && !isNil(o.ImmRep) {
 		return true
 	}
 
@@ -173,7 +173,7 @@ func (o *ReportingRequirements) SetImmRep(v bool) {
 
 // GetRepTerminMode returns the RepTerminMode field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetRepTerminMode() TerminationMode {
-	if o == nil || IsNil(o.RepTerminMode) {
+	if o == nil || isNil(o.RepTerminMode) {
 		var ret TerminationMode
 		return ret
 	}
@@ -183,7 +183,7 @@ func (o *ReportingRequirements) GetRepTerminMode() TerminationMode {
 // GetRepTerminModeOk returns a tuple with the RepTerminMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetRepTerminModeOk() (*TerminationMode, bool) {
-	if o == nil || IsNil(o.RepTerminMode) {
+	if o == nil || isNil(o.RepTerminMode) {
 		return nil, false
 	}
 	return o.RepTerminMode, true
@@ -191,7 +191,7 @@ func (o *ReportingRequirements) GetRepTerminModeOk() (*TerminationMode, bool) {
 
 // HasRepTerminMode returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasRepTerminMode() bool {
-	if o != nil && !IsNil(o.RepTerminMode) {
+	if o != nil && !isNil(o.RepTerminMode) {
 		return true
 	}
 
@@ -205,7 +205,7 @@ func (o *ReportingRequirements) SetRepTerminMode(v TerminationMode) {
 
 // GetExpirationTimer returns the ExpirationTimer field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetExpirationTimer() int32 {
-	if o == nil || IsNil(o.ExpirationTimer) {
+	if o == nil || isNil(o.ExpirationTimer) {
 		var ret int32
 		return ret
 	}
@@ -215,7 +215,7 @@ func (o *ReportingRequirements) GetExpirationTimer() int32 {
 // GetExpirationTimerOk returns a tuple with the ExpirationTimer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetExpirationTimerOk() (*int32, bool) {
-	if o == nil || IsNil(o.ExpirationTimer) {
+	if o == nil || isNil(o.ExpirationTimer) {
 		return nil, false
 	}
 	return o.ExpirationTimer, true
@@ -223,7 +223,7 @@ func (o *ReportingRequirements) GetExpirationTimerOk() (*int32, bool) {
 
 // HasExpirationTimer returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasExpirationTimer() bool {
-	if o != nil && !IsNil(o.ExpirationTimer) {
+	if o != nil && !isNil(o.ExpirationTimer) {
 		return true
 	}
 
@@ -237,7 +237,7 @@ func (o *ReportingRequirements) SetExpirationTimer(v int32) {
 
 // GetMaxNumRep returns the MaxNumRep field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetMaxNumRep() int32 {
-	if o == nil || IsNil(o.MaxNumRep) {
+	if o == nil || isNil(o.MaxNumRep) {
 		var ret int32
 		return ret
 	}
@@ -247,7 +247,7 @@ func (o *ReportingRequirements) GetMaxNumRep() int32 {
 // GetMaxNumRepOk returns a tuple with the MaxNumRep field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetMaxNumRepOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxNumRep) {
+	if o == nil || isNil(o.MaxNumRep) {
 		return nil, false
 	}
 	return o.MaxNumRep, true
@@ -255,7 +255,7 @@ func (o *ReportingRequirements) GetMaxNumRepOk() (*int32, bool) {
 
 // HasMaxNumRep returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasMaxNumRep() bool {
-	if o != nil && !IsNil(o.MaxNumRep) {
+	if o != nil && !isNil(o.MaxNumRep) {
 		return true
 	}
 
@@ -269,7 +269,7 @@ func (o *ReportingRequirements) SetMaxNumRep(v int32) {
 
 // GetTermThr returns the TermThr field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetTermThr() MeasurementData {
-	if o == nil || IsNil(o.TermThr) {
+	if o == nil || isNil(o.TermThr) {
 		var ret MeasurementData
 		return ret
 	}
@@ -279,7 +279,7 @@ func (o *ReportingRequirements) GetTermThr() MeasurementData {
 // GetTermThrOk returns a tuple with the TermThr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetTermThrOk() (*MeasurementData, bool) {
-	if o == nil || IsNil(o.TermThr) {
+	if o == nil || isNil(o.TermThr) {
 		return nil, false
 	}
 	return o.TermThr, true
@@ -287,7 +287,7 @@ func (o *ReportingRequirements) GetTermThrOk() (*MeasurementData, bool) {
 
 // HasTermThr returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasTermThr() bool {
-	if o != nil && !IsNil(o.TermThr) {
+	if o != nil && !isNil(o.TermThr) {
 		return true
 	}
 
@@ -301,7 +301,7 @@ func (o *ReportingRequirements) SetTermThr(v MeasurementData) {
 
 // GetTermThrMode returns the TermThrMode field value if set, zero value otherwise.
 func (o *ReportingRequirements) GetTermThrMode() ThresholdHandlingMode {
-	if o == nil || IsNil(o.TermThrMode) {
+	if o == nil || isNil(o.TermThrMode) {
 		var ret ThresholdHandlingMode
 		return ret
 	}
@@ -311,7 +311,7 @@ func (o *ReportingRequirements) GetTermThrMode() ThresholdHandlingMode {
 // GetTermThrModeOk returns a tuple with the TermThrMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReportingRequirements) GetTermThrModeOk() (*ThresholdHandlingMode, bool) {
-	if o == nil || IsNil(o.TermThrMode) {
+	if o == nil || isNil(o.TermThrMode) {
 		return nil, false
 	}
 	return o.TermThrMode, true
@@ -319,7 +319,7 @@ func (o *ReportingRequirements) GetTermThrModeOk() (*ThresholdHandlingMode, bool
 
 // HasTermThrMode returns a boolean if a field has been set.
 func (o *ReportingRequirements) HasTermThrMode() bool {
-	if o != nil && !IsNil(o.TermThrMode) {
+	if o != nil && !isNil(o.TermThrMode) {
 		return true
 	}
 
@@ -342,28 +342,28 @@ func (o ReportingRequirements) MarshalJSON() ([]byte, error) {
 func (o ReportingRequirements) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["reportingMode"] = o.ReportingMode
-	if !IsNil(o.ReportingPeriod) {
+	if !isNil(o.ReportingPeriod) {
 		toSerialize["reportingPeriod"] = o.ReportingPeriod
 	}
-	if !IsNil(o.ReportingThrs) {
+	if !isNil(o.ReportingThrs) {
 		toSerialize["reportingThrs"] = o.ReportingThrs
 	}
-	if !IsNil(o.ImmRep) {
+	if !isNil(o.ImmRep) {
 		toSerialize["immRep"] = o.ImmRep
 	}
-	if !IsNil(o.RepTerminMode) {
+	if !isNil(o.RepTerminMode) {
 		toSerialize["repTerminMode"] = o.RepTerminMode
 	}
-	if !IsNil(o.ExpirationTimer) {
+	if !isNil(o.ExpirationTimer) {
 		toSerialize["expirationTimer"] = o.ExpirationTimer
 	}
-	if !IsNil(o.MaxNumRep) {
+	if !isNil(o.MaxNumRep) {
 		toSerialize["maxNumRep"] = o.MaxNumRep
 	}
-	if !IsNil(o.TermThr) {
+	if !isNil(o.TermThr) {
 		toSerialize["termThr"] = o.TermThr
 	}
-	if !IsNil(o.TermThrMode) {
+	if !isNil(o.TermThrMode) {
 		toSerialize["termThrMode"] = o.TermThrMode
 	}
 	return toSerialize, nil

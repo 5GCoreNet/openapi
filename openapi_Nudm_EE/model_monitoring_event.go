@@ -67,7 +67,7 @@ func (o *MonitoringEvent) SetEventType(v EventType) {
 
 // GetRevokedCause returns the RevokedCause field value if set, zero value otherwise.
 func (o *MonitoringEvent) GetRevokedCause() RevokedCause {
-	if o == nil || IsNil(o.RevokedCause) {
+	if o == nil || isNil(o.RevokedCause) {
 		var ret RevokedCause
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *MonitoringEvent) GetRevokedCause() RevokedCause {
 // GetRevokedCauseOk returns a tuple with the RevokedCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MonitoringEvent) GetRevokedCauseOk() (*RevokedCause, bool) {
-	if o == nil || IsNil(o.RevokedCause) {
+	if o == nil || isNil(o.RevokedCause) {
 		return nil, false
 	}
 	return o.RevokedCause, true
@@ -85,7 +85,7 @@ func (o *MonitoringEvent) GetRevokedCauseOk() (*RevokedCause, bool) {
 
 // HasRevokedCause returns a boolean if a field has been set.
 func (o *MonitoringEvent) HasRevokedCause() bool {
-	if o != nil && !IsNil(o.RevokedCause) {
+	if o != nil && !isNil(o.RevokedCause) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o MonitoringEvent) MarshalJSON() ([]byte, error) {
 func (o MonitoringEvent) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["eventType"] = o.EventType
-	if !IsNil(o.RevokedCause) {
+	if !isNil(o.RevokedCause) {
 		toSerialize["revokedCause"] = o.RevokedCause
 	}
 	return toSerialize, nil

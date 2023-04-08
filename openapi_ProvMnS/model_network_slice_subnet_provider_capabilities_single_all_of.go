@@ -41,7 +41,7 @@ func NewNetworkSliceSubnetProviderCapabilitiesSingleAllOfWithDefaults() *Network
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOf) GetAttributes() NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		var ret NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOf) GetAttributes() Netw
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOf) GetAttributesOk() (*NetworkSliceSubnetProviderCapabilitiesSingleAllOfAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+	if o == nil || isNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -59,7 +59,7 @@ func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOf) GetAttributesOk() (*
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *NetworkSliceSubnetProviderCapabilitiesSingleAllOf) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && !isNil(o.Attributes) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o NetworkSliceSubnetProviderCapabilitiesSingleAllOf) MarshalJSON() ([]byte
 
 func (o NetworkSliceSubnetProviderCapabilitiesSingleAllOf) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Attributes) {
+	if !isNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	return toSerialize, nil

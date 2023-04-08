@@ -52,7 +52,7 @@ func NewProvideLocInfoWithDefaults() *ProvideLocInfo {
 
 // GetCurrentLoc returns the CurrentLoc field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetCurrentLoc() bool {
-	if o == nil || IsNil(o.CurrentLoc) {
+	if o == nil || isNil(o.CurrentLoc) {
 		var ret bool
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *ProvideLocInfo) GetCurrentLoc() bool {
 // GetCurrentLocOk returns a tuple with the CurrentLoc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetCurrentLocOk() (*bool, bool) {
-	if o == nil || IsNil(o.CurrentLoc) {
+	if o == nil || isNil(o.CurrentLoc) {
 		return nil, false
 	}
 	return o.CurrentLoc, true
@@ -70,7 +70,7 @@ func (o *ProvideLocInfo) GetCurrentLocOk() (*bool, bool) {
 
 // HasCurrentLoc returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasCurrentLoc() bool {
-	if o != nil && !IsNil(o.CurrentLoc) {
+	if o != nil && !isNil(o.CurrentLoc) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *ProvideLocInfo) SetCurrentLoc(v bool) {
 
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetLocation() UserLocation {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || isNil(o.Location) {
 		var ret UserLocation
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *ProvideLocInfo) GetLocation() UserLocation {
 // GetLocationOk returns a tuple with the Location field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.Location) {
+	if o == nil || isNil(o.Location) {
 		return nil, false
 	}
 	return o.Location, true
@@ -102,7 +102,7 @@ func (o *ProvideLocInfo) GetLocationOk() (*UserLocation, bool) {
 
 // HasLocation returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasLocation() bool {
-	if o != nil && !IsNil(o.Location) {
+	if o != nil && !isNil(o.Location) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *ProvideLocInfo) SetLocation(v UserLocation) {
 
 // GetAdditionalLocation returns the AdditionalLocation field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetAdditionalLocation() UserLocation {
-	if o == nil || IsNil(o.AdditionalLocation) {
+	if o == nil || isNil(o.AdditionalLocation) {
 		var ret UserLocation
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *ProvideLocInfo) GetAdditionalLocation() UserLocation {
 // GetAdditionalLocationOk returns a tuple with the AdditionalLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetAdditionalLocationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.AdditionalLocation) {
+	if o == nil || isNil(o.AdditionalLocation) {
 		return nil, false
 	}
 	return o.AdditionalLocation, true
@@ -134,7 +134,7 @@ func (o *ProvideLocInfo) GetAdditionalLocationOk() (*UserLocation, bool) {
 
 // HasAdditionalLocation returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasAdditionalLocation() bool {
-	if o != nil && !IsNil(o.AdditionalLocation) {
+	if o != nil && !isNil(o.AdditionalLocation) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *ProvideLocInfo) SetAdditionalLocation(v UserLocation) {
 
 // GetGeoInfo returns the GeoInfo field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetGeoInfo() GeographicArea {
-	if o == nil || IsNil(o.GeoInfo) {
+	if o == nil || isNil(o.GeoInfo) {
 		var ret GeographicArea
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *ProvideLocInfo) GetGeoInfo() GeographicArea {
 // GetGeoInfoOk returns a tuple with the GeoInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetGeoInfoOk() (*GeographicArea, bool) {
-	if o == nil || IsNil(o.GeoInfo) {
+	if o == nil || isNil(o.GeoInfo) {
 		return nil, false
 	}
 	return o.GeoInfo, true
@@ -166,7 +166,7 @@ func (o *ProvideLocInfo) GetGeoInfoOk() (*GeographicArea, bool) {
 
 // HasGeoInfo returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasGeoInfo() bool {
-	if o != nil && !IsNil(o.GeoInfo) {
+	if o != nil && !isNil(o.GeoInfo) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *ProvideLocInfo) SetGeoInfo(v GeographicArea) {
 
 // GetLocationAge returns the LocationAge field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetLocationAge() int32 {
-	if o == nil || IsNil(o.LocationAge) {
+	if o == nil || isNil(o.LocationAge) {
 		var ret int32
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *ProvideLocInfo) GetLocationAge() int32 {
 // GetLocationAgeOk returns a tuple with the LocationAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetLocationAgeOk() (*int32, bool) {
-	if o == nil || IsNil(o.LocationAge) {
+	if o == nil || isNil(o.LocationAge) {
 		return nil, false
 	}
 	return o.LocationAge, true
@@ -198,7 +198,7 @@ func (o *ProvideLocInfo) GetLocationAgeOk() (*int32, bool) {
 
 // HasLocationAge returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasLocationAge() bool {
-	if o != nil && !IsNil(o.LocationAge) {
+	if o != nil && !isNil(o.LocationAge) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *ProvideLocInfo) SetLocationAge(v int32) {
 
 // GetRatType returns the RatType field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetRatType() RatType {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		var ret RatType
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *ProvideLocInfo) GetRatType() RatType {
 // GetRatTypeOk returns a tuple with the RatType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetRatTypeOk() (*RatType, bool) {
-	if o == nil || IsNil(o.RatType) {
+	if o == nil || isNil(o.RatType) {
 		return nil, false
 	}
 	return o.RatType, true
@@ -230,7 +230,7 @@ func (o *ProvideLocInfo) GetRatTypeOk() (*RatType, bool) {
 
 // HasRatType returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasRatType() bool {
-	if o != nil && !IsNil(o.RatType) {
+	if o != nil && !isNil(o.RatType) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *ProvideLocInfo) SetRatType(v RatType) {
 
 // GetTimezone returns the Timezone field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetTimezone() string {
-	if o == nil || IsNil(o.Timezone) {
+	if o == nil || isNil(o.Timezone) {
 		var ret string
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *ProvideLocInfo) GetTimezone() string {
 // GetTimezoneOk returns a tuple with the Timezone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetTimezoneOk() (*string, bool) {
-	if o == nil || IsNil(o.Timezone) {
+	if o == nil || isNil(o.Timezone) {
 		return nil, false
 	}
 	return o.Timezone, true
@@ -262,7 +262,7 @@ func (o *ProvideLocInfo) GetTimezoneOk() (*string, bool) {
 
 // HasTimezone returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasTimezone() bool {
-	if o != nil && !IsNil(o.Timezone) {
+	if o != nil && !isNil(o.Timezone) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *ProvideLocInfo) SetTimezone(v string) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *ProvideLocInfo) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -294,7 +294,7 @@ func (o *ProvideLocInfo) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *ProvideLocInfo) SetSupportedFeatures(v string) {
 
 // GetOldGuami returns the OldGuami field value if set, zero value otherwise.
 func (o *ProvideLocInfo) GetOldGuami() Guami {
-	if o == nil || IsNil(o.OldGuami) {
+	if o == nil || isNil(o.OldGuami) {
 		var ret Guami
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *ProvideLocInfo) GetOldGuami() Guami {
 // GetOldGuamiOk returns a tuple with the OldGuami field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProvideLocInfo) GetOldGuamiOk() (*Guami, bool) {
-	if o == nil || IsNil(o.OldGuami) {
+	if o == nil || isNil(o.OldGuami) {
 		return nil, false
 	}
 	return o.OldGuami, true
@@ -326,7 +326,7 @@ func (o *ProvideLocInfo) GetOldGuamiOk() (*Guami, bool) {
 
 // HasOldGuami returns a boolean if a field has been set.
 func (o *ProvideLocInfo) HasOldGuami() bool {
-	if o != nil && !IsNil(o.OldGuami) {
+	if o != nil && !isNil(o.OldGuami) {
 		return true
 	}
 
@@ -348,31 +348,31 @@ func (o ProvideLocInfo) MarshalJSON() ([]byte, error) {
 
 func (o ProvideLocInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CurrentLoc) {
+	if !isNil(o.CurrentLoc) {
 		toSerialize["currentLoc"] = o.CurrentLoc
 	}
-	if !IsNil(o.Location) {
+	if !isNil(o.Location) {
 		toSerialize["location"] = o.Location
 	}
-	if !IsNil(o.AdditionalLocation) {
+	if !isNil(o.AdditionalLocation) {
 		toSerialize["additionalLocation"] = o.AdditionalLocation
 	}
-	if !IsNil(o.GeoInfo) {
+	if !isNil(o.GeoInfo) {
 		toSerialize["geoInfo"] = o.GeoInfo
 	}
-	if !IsNil(o.LocationAge) {
+	if !isNil(o.LocationAge) {
 		toSerialize["locationAge"] = o.LocationAge
 	}
-	if !IsNil(o.RatType) {
+	if !isNil(o.RatType) {
 		toSerialize["ratType"] = o.RatType
 	}
-	if !IsNil(o.Timezone) {
+	if !isNil(o.Timezone) {
 		toSerialize["timezone"] = o.Timezone
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
-	if !IsNil(o.OldGuami) {
+	if !isNil(o.OldGuami) {
 		toSerialize["oldGuami"] = o.OldGuami
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewDPCIConfigurationFunctionSingleAllOfAttributesWithDefaults() *DPCIConfig
 
 // GetDPciConfigurationControl returns the DPciConfigurationControl field value if set, zero value otherwise.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationControl() bool {
-	if o == nil || IsNil(o.DPciConfigurationControl) {
+	if o == nil || isNil(o.DPciConfigurationControl) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationCon
 // GetDPciConfigurationControlOk returns a tuple with the DPciConfigurationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationControlOk() (*bool, bool) {
-	if o == nil || IsNil(o.DPciConfigurationControl) {
+	if o == nil || isNil(o.DPciConfigurationControl) {
 		return nil, false
 	}
 	return o.DPciConfigurationControl, true
@@ -60,7 +60,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetDPciConfigurationCon
 
 // HasDPciConfigurationControl returns a boolean if a field has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) HasDPciConfigurationControl() bool {
-	if o != nil && !IsNil(o.DPciConfigurationControl) {
+	if o != nil && !isNil(o.DPciConfigurationControl) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) SetDPciConfigurationCon
 
 // GetNRPciList returns the NRPciList field value if set, zero value otherwise.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciList() NRPciList {
-	if o == nil || IsNil(o.NRPciList) {
+	if o == nil || isNil(o.NRPciList) {
 		var ret NRPciList
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciList() NRPciLis
 // GetNRPciListOk returns a tuple with the NRPciList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciListOk() (*NRPciList, bool) {
-	if o == nil || IsNil(o.NRPciList) {
+	if o == nil || isNil(o.NRPciList) {
 		return nil, false
 	}
 	return o.NRPciList, true
@@ -92,7 +92,7 @@ func (o *DPCIConfigurationFunctionSingleAllOfAttributes) GetNRPciListOk() (*NRPc
 
 // HasNRPciList returns a boolean if a field has been set.
 func (o *DPCIConfigurationFunctionSingleAllOfAttributes) HasNRPciList() bool {
-	if o != nil && !IsNil(o.NRPciList) {
+	if o != nil && !isNil(o.NRPciList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o DPCIConfigurationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, e
 
 func (o DPCIConfigurationFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DPciConfigurationControl) {
+	if !isNil(o.DPciConfigurationControl) {
 		toSerialize["dPciConfigurationControl"] = o.DPciConfigurationControl
 	}
-	if !IsNil(o.NRPciList) {
+	if !isNil(o.NRPciList) {
 		toSerialize["nRPciList"] = o.NRPciList
 	}
 	return toSerialize, nil

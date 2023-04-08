@@ -6000,27 +6000,14 @@ components:
       type: integer
     MediaType:
       anyOf:
-      - enum:
-        - AUDIO
-        - VIDEO
-        - DATA
-        - APPLICATION
-        - CONTROL
-        - TEXT
-        - MESSAGE
-        - OTHER
-        type: string
+      - $ref: '#/components/schemas/MediaType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the media type of a media component.
     MpsAction:
       anyOf:
-      - enum:
-        - DISABLE_MPS_FOR_DTS
-        - ENABLE_MPS_FOR_DTS
-        - AUTHORIZE_AND_ENABLE_MPS_FOR_DTS
-        type: string
+      - $ref: '#/components/schemas/MpsAction_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6028,36 +6015,14 @@ components:
         Indicates whether it is an invocation, a revocation or an invocation with authorization of the MPS for DTS service.
     ReservPriority:
       anyOf:
-      - enum:
-        - PRIO_1
-        - PRIO_2
-        - PRIO_3
-        - PRIO_4
-        - PRIO_5
-        - PRIO_6
-        - PRIO_7
-        - PRIO_8
-        - PRIO_9
-        - PRIO_10
-        - PRIO_11
-        - PRIO_12
-        - PRIO_13
-        - PRIO_14
-        - PRIO_15
-        - PRIO_16
-        type: string
+      - $ref: '#/components/schemas/ReservPriority_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the reservation priority.
     ServAuthInfo:
       anyOf:
-      - enum:
-        - TP_NOT_KNOWN
-        - TP_EXPIRED
-        - TP_NOT_YET_OCURRED
-        - ROUT_REQ_NOT_AUTHORIZED
-        type: string
+      - $ref: '#/components/schemas/ServAuthInfo_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6065,10 +6030,7 @@ components:
         from the AF.
     SponsoringStatus:
       anyOf:
-      - enum:
-        - SPONSOR_DISABLED
-        - SPONSOR_ENABLED
-        type: string
+      - $ref: '#/components/schemas/SponsoringStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6076,41 +6038,14 @@ components:
         enabled.
     AfEvent:
       anyOf:
-      - enum:
-        - ACCESS_TYPE_CHANGE
-        - ANI_REPORT
-        - APP_DETECTION
-        - CHARGING_CORRELATION
-        - EPS_FALLBACK
-        - FAILED_QOS_UPDATE
-        - FAILED_RESOURCES_ALLOCATION
-        - OUT_OF_CREDIT
-        - PDU_SESSION_STATUS
-        - PLMN_CHG
-        - QOS_MONITORING
-        - QOS_NOTIF
-        - RAN_NAS_CAUSE
-        - REALLOCATION_OF_CREDIT
-        - SAT_CATEGORY_CHG
-        - SUCCESSFUL_QOS_UPDATE
-        - SUCCESSFUL_RESOURCES_ALLOCATION
-        - TSN_BRIDGE_INFO
-        - UP_PATH_CHG_FAILURE
-        - USAGE_REPORT
-        - UE_TEMPORARILY_UNAVAILABLE
-        type: string
+      - $ref: '#/components/schemas/AfEvent_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Represents an event to notify to the AF.
     AfNotifMethod:
       anyOf:
-      - enum:
-        - EVENT_DETECTION
-        - ONE_TIME
-        - PERIODIC
-        - PDU_SESSION_RELEASE
-        type: string
+      - $ref: '#/components/schemas/AfNotifMethod_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6118,24 +6053,14 @@ components:
         an event.
     QosNotifType:
       anyOf:
-      - enum:
-        - GUARANTEED
-        - NOT_GUARANTEED
-        type: string
+      - $ref: '#/components/schemas/QosNotifType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the notification type for QoS Notification Control.
     TerminationCause:
       anyOf:
-      - enum:
-        - ALL_SDF_DEACTIVATION
-        - PDU_SESSION_TERMINATION
-        - PS_TO_CS_HO
-        - INSUFFICIENT_SERVER_RESOURCES
-        - INSUFFICIENT_QOS_FLOW_RESOURCES
-        - SPONSORED_DATA_CONNECTIVITY_DISALLOWED
-        type: string
+      - $ref: '#/components/schemas/TerminationCause_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6143,54 +6068,35 @@ components:
         Indicates the cause behind requesting the deletion of the Individual Application Session Context resource.
     MediaComponentResourcesStatus:
       anyOf:
-      - enum:
-        - ACTIVE
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/MediaComponentResourcesStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates whether the media component is active or inactive.
     FlowUsage:
       anyOf:
-      - enum:
-        - NO_INFO
-        - RTCP
-        - AF_SIGNALLING
-        type: string
+      - $ref: '#/components/schemas/FlowUsage_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Describes the flow usage of the flows described by a media subcomponent.
     FlowStatus:
       anyOf:
-      - enum:
-        - ENABLED-UPLINK
-        - ENABLED-DOWNLINK
-        - ENABLED
-        - DISABLED
-        - REMOVED
-        type: string
+      - $ref: '#/components/schemas/FlowStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Describes whether the IP flow(s) are enabled or disabled.
     RequiredAccessInfo:
       anyOf:
-      - enum:
-        - USER_LOCATION
-        - UE_TIME_ZONE
-        type: string
+      - $ref: '#/components/schemas/RequiredAccessInfo_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the access network information required for an AF session.
     SipForkingIndication:
       anyOf:
-      - enum:
-        - SINGLE_DIALOGUE
-        - SEVERAL_DIALOGUES
-        type: string
+      - $ref: '#/components/schemas/SipForkingIndication_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6198,40 +6104,28 @@ components:
         Indicates whether several SIP dialogues are related to an "Individual Application Session Context" resource.
     AfRequestedData:
       anyOf:
-      - enum:
-        - UE_IDENTITY
-        type: string
+      - $ref: '#/components/schemas/AfRequestedData_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Represents the information that the AF requested to be exposed.
     ServiceInfoStatus:
       anyOf:
-      - enum:
-        - FINAL
-        - PRELIMINARY
-        type: string
+      - $ref: '#/components/schemas/ServiceInfoStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Represents the preliminary or final service information status.
     PreemptionControlInformation:
       anyOf:
-      - enum:
-        - MOST_RECENT
-        - LEAST_RECENT
-        - HIGHEST_BW
-        type: string
+      - $ref: '#/components/schemas/PreemptionControlInformation_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Represents Pre-emption control information.
     PrioritySharingIndicator:
       anyOf:
-      - enum:
-        - ENABLED
-        - DISABLED
-        type: string
+      - $ref: '#/components/schemas/PrioritySharingIndicator_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6244,20 +6138,14 @@ components:
         This data type is defined in the same way as the PreemptionControlInformation data type, but with the OpenAPI nullable property set to true.
     AppDetectionNotifType:
       anyOf:
-      - enum:
-        - APP_START
-        - APP_STOP
-        type: string
+      - $ref: '#/components/schemas/AppDetectionNotifType_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
       description: Indicates the notification type for Application Detection Control.
     PduSessionStatus:
       anyOf:
-      - enum:
-        - ESTABLISHED
-        - TERMINATED
-        type: string
+      - $ref: '#/components/schemas/PduSessionStatus_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6470,11 +6358,7 @@ components:
       type: integer
     RequestedQosMonitoringParameter:
       anyOf:
-      - enum:
-        - DOWNLINK
-        - UPLINK
-        - ROUND_TRIP
-        type: string
+      - $ref: '#/components/schemas/RequestedQosMonitoringParameter_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6580,19 +6464,13 @@ components:
       type: integer
     PreemptionCapability:
       anyOf:
-      - enum:
-        - NOT_PREEMPT
-        - MAY_PREEMPT
-        type: string
+      - $ref: '#/components/schemas/PreemptionCapability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionCapability indicates the pre-emption capability of a request on other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.1-1.
     PreemptionVulnerability:
       anyOf:
-      - enum:
-        - NOT_PREEMPTABLE
-        - PREEMPTABLE
-        type: string
+      - $ref: '#/components/schemas/PreemptionVulnerability_anyOf'
       - type: string
       description: |
         The enumeration PreemptionVulnerability indicates the pre-emption vulnerability of the QoS flow to pre-emption from other QoS flows. See clause 5.7.2.2 of 3GPP TS 23.501. It shall comply with the provisions defined in table 5.5.3.2-1
@@ -6641,10 +6519,7 @@ components:
       type: integer
     AfSigProtocol:
       anyOf:
-      - enum:
-        - NO_INFORMATION
-        - SIP
-        type: string
+      - $ref: '#/components/schemas/AfSigProtocol_anyOf'
       - $ref: '#/components/schemas/NullValue'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
@@ -6695,11 +6570,7 @@ components:
       type: object
     NetLocAccessSupport:
       anyOf:
-      - enum:
-        - ANR_NOT_SUPPORTED
-        - TZR_NOT_SUPPORTED
-        - LOC_NOT_SUPPORTED
-        type: string
+      - $ref: '#/components/schemas/NetLocAccessSupport_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -6785,39 +6656,12 @@ components:
       type: string
     RatType:
       anyOf:
-      - enum:
-        - NR
-        - EUTRA
-        - WLAN
-        - VIRTUAL
-        - NBIOT
-        - WIRELINE
-        - WIRELINE_CABLE
-        - WIRELINE_BBF
-        - LTE-M
-        - NR_U
-        - EUTRA_U
-        - TRUSTED_N3GA
-        - TRUSTED_WLAN
-        - UTRA
-        - GERA
-        - NR_LEO
-        - NR_MEO
-        - NR_GEO
-        - NR_OTHER_SAT
-        - NR_REDCAP
-        type: string
+      - $ref: '#/components/schemas/RatType_anyOf'
       - type: string
       description: Indicates the radio access used.
     SatelliteBackhaulCategory:
       anyOf:
-      - enum:
-        - GEO
-        - MEO
-        - LEO
-        - OTHER_SAT
-        - NON_SATELLITE
-        type: string
+      - $ref: '#/components/schemas/SatelliteBackhaulCategory_anyOf'
       - type: string
       description: Indicates the satellite backhaul used.
     UserLocation:
@@ -7539,10 +7383,7 @@ components:
       type: object
     TransportProtocol:
       anyOf:
-      - enum:
-        - UDP
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -7623,10 +7464,7 @@ components:
       $ref: '#/components/schemas/Bytes'
     LineType:
       anyOf:
-      - enum:
-        - DSL
-        - PON
-        type: string
+      - $ref: '#/components/schemas/LineType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode content defined in the present\
           \ version of this API. \n"
@@ -8234,12 +8072,7 @@ components:
       type: object
     PresenceState:
       anyOf:
-      - enum:
-        - IN_AREA
-        - OUT_OF_AREA
-        - UNKNOWN
-        - INACTIVE
-        type: string
+      - $ref: '#/components/schemas/PresenceState_anyOf'
       - type: string
       description: "Possible values are:\n-IN_AREA: Indicates that the UE is inside\
         \ or enters the presence reporting area.\n-OUT_OF_AREA: Indicates that the\
@@ -8260,12 +8093,7 @@ components:
       type: integer
     FlowDirection:
       anyOf:
-      - enum:
-        - DOWNLINK
-        - UPLINK
-        - BIDIRECTIONAL
-        - UNSPECIFIED
-        type: string
+      - $ref: '#/components/schemas/FlowDirection_anyOf'
       - description: |
           This string provides forward-compatibility with future extensions to the enumeration and is not used to encode content defined in the present version of this API.
         type: string
@@ -8298,11 +8126,7 @@ components:
       type: integer
     FinalUnitAction:
       anyOf:
-      - enum:
-        - TERMINATE
-        - REDIRECT
-        - RESTRICT_ACCESS
-        type: string
+      - $ref: '#/components/schemas/FinalUnitAction_anyOf'
       - type: string
     TsnBridgeInfo:
       description: Contains parameters that describe and identify the TSC user plane
@@ -8389,9 +8213,7 @@ components:
       type: object
     TransportProtocol_1:
       anyOf:
-      - enum:
-        - TCP
-        type: string
+      - $ref: '#/components/schemas/TransportProtocol_1_anyOf'
       - type: string
       description: Types of transport protocol used in a given IP endpoint of an NF
         Service Instance
@@ -8545,11 +8367,7 @@ components:
       $ref: '#/components/schemas/Uinteger'
     DnaiChangeType:
       anyOf:
-      - enum:
-        - EARLY
-        - EARLY_LATE
-        - LATE
-        type: string
+      - $ref: '#/components/schemas/DnaiChangeType_anyOf'
       - description: "This string provides forward-compatibility with future extensions\
           \ to the enumeration but is not used to encode  content defined in the present\
           \ version of this API. \n"
@@ -8572,64 +8390,7 @@ components:
       type: string
     NFType:
       anyOf:
-      - enum:
-        - NRF
-        - UDM
-        - AMF
-        - SMF
-        - AUSF
-        - NEF
-        - PCF
-        - SMSF
-        - NSSF
-        - UDR
-        - LMF
-        - GMLC
-        - 5G_EIR
-        - SEPP
-        - UPF
-        - N3IWF
-        - AF
-        - UDSF
-        - BSF
-        - CHF
-        - NWDAF
-        - PCSCF
-        - CBCF
-        - HSS
-        - UCMF
-        - SOR_AF
-        - SPAF
-        - MME
-        - SCSAS
-        - SCEF
-        - SCP
-        - NSSAAF
-        - ICSCF
-        - SCSCF
-        - DRA
-        - IMS_AS
-        - AANF
-        - 5G_DDNMF
-        - NSACF
-        - MFAF
-        - EASDF
-        - DCCF
-        - MB_SMF
-        - TSCTSF
-        - ADRF
-        - GBA_BSF
-        - CEF
-        - MB_UPF
-        - NSWOF
-        - PKMF
-        - MNPF
-        - SMS_GMSC
-        - SMS_IWMSC
-        - MBSF
-        - MBSTF
-        - PANF
-        type: string
+      - $ref: '#/components/schemas/NFType_anyOf'
       - type: string
       description: NF types known to NRF
     NfSetId:
@@ -8666,6 +8427,350 @@ components:
         acceptableServInfo:
           $ref: '#/components/schemas/AcceptableServiceInfo'
       type: object
+      example: null
+    MediaType_anyOf:
+      enum:
+      - AUDIO
+      - VIDEO
+      - DATA
+      - APPLICATION
+      - CONTROL
+      - TEXT
+      - MESSAGE
+      - OTHER
+      type: string
+      example: null
+    MpsAction_anyOf:
+      enum:
+      - DISABLE_MPS_FOR_DTS
+      - ENABLE_MPS_FOR_DTS
+      - AUTHORIZE_AND_ENABLE_MPS_FOR_DTS
+      type: string
+      example: null
+    ReservPriority_anyOf:
+      enum:
+      - PRIO_1
+      - PRIO_2
+      - PRIO_3
+      - PRIO_4
+      - PRIO_5
+      - PRIO_6
+      - PRIO_7
+      - PRIO_8
+      - PRIO_9
+      - PRIO_10
+      - PRIO_11
+      - PRIO_12
+      - PRIO_13
+      - PRIO_14
+      - PRIO_15
+      - PRIO_16
+      type: string
+      example: null
+    ServAuthInfo_anyOf:
+      enum:
+      - TP_NOT_KNOWN
+      - TP_EXPIRED
+      - TP_NOT_YET_OCURRED
+      - ROUT_REQ_NOT_AUTHORIZED
+      type: string
+      example: null
+    SponsoringStatus_anyOf:
+      enum:
+      - SPONSOR_DISABLED
+      - SPONSOR_ENABLED
+      type: string
+      example: null
+    AfEvent_anyOf:
+      enum:
+      - ACCESS_TYPE_CHANGE
+      - ANI_REPORT
+      - APP_DETECTION
+      - CHARGING_CORRELATION
+      - EPS_FALLBACK
+      - FAILED_QOS_UPDATE
+      - FAILED_RESOURCES_ALLOCATION
+      - OUT_OF_CREDIT
+      - PDU_SESSION_STATUS
+      - PLMN_CHG
+      - QOS_MONITORING
+      - QOS_NOTIF
+      - RAN_NAS_CAUSE
+      - REALLOCATION_OF_CREDIT
+      - SAT_CATEGORY_CHG
+      - SUCCESSFUL_QOS_UPDATE
+      - SUCCESSFUL_RESOURCES_ALLOCATION
+      - TSN_BRIDGE_INFO
+      - UP_PATH_CHG_FAILURE
+      - USAGE_REPORT
+      - UE_TEMPORARILY_UNAVAILABLE
+      type: string
+      example: null
+    AfNotifMethod_anyOf:
+      enum:
+      - EVENT_DETECTION
+      - ONE_TIME
+      - PERIODIC
+      - PDU_SESSION_RELEASE
+      type: string
+      example: null
+    QosNotifType_anyOf:
+      enum:
+      - GUARANTEED
+      - NOT_GUARANTEED
+      type: string
+      example: null
+    TerminationCause_anyOf:
+      enum:
+      - ALL_SDF_DEACTIVATION
+      - PDU_SESSION_TERMINATION
+      - PS_TO_CS_HO
+      - INSUFFICIENT_SERVER_RESOURCES
+      - INSUFFICIENT_QOS_FLOW_RESOURCES
+      - SPONSORED_DATA_CONNECTIVITY_DISALLOWED
+      type: string
+      example: null
+    MediaComponentResourcesStatus_anyOf:
+      enum:
+      - ACTIVE
+      - INACTIVE
+      type: string
+      example: null
+    FlowUsage_anyOf:
+      enum:
+      - NO_INFO
+      - RTCP
+      - AF_SIGNALLING
+      type: string
+      example: null
+    FlowStatus_anyOf:
+      enum:
+      - ENABLED-UPLINK
+      - ENABLED-DOWNLINK
+      - ENABLED
+      - DISABLED
+      - REMOVED
+      type: string
+      example: null
+    RequiredAccessInfo_anyOf:
+      enum:
+      - USER_LOCATION
+      - UE_TIME_ZONE
+      type: string
+      example: null
+    SipForkingIndication_anyOf:
+      enum:
+      - SINGLE_DIALOGUE
+      - SEVERAL_DIALOGUES
+      type: string
+      example: null
+    AfRequestedData_anyOf:
+      enum:
+      - UE_IDENTITY
+      type: string
+      example: null
+    ServiceInfoStatus_anyOf:
+      enum:
+      - FINAL
+      - PRELIMINARY
+      type: string
+      example: null
+    PreemptionControlInformation_anyOf:
+      enum:
+      - MOST_RECENT
+      - LEAST_RECENT
+      - HIGHEST_BW
+      type: string
+      example: null
+    PrioritySharingIndicator_anyOf:
+      enum:
+      - ENABLED
+      - DISABLED
+      type: string
+      example: null
+    AppDetectionNotifType_anyOf:
+      enum:
+      - APP_START
+      - APP_STOP
+      type: string
+      example: null
+    PduSessionStatus_anyOf:
+      enum:
+      - ESTABLISHED
+      - TERMINATED
+      type: string
+      example: null
+    RequestedQosMonitoringParameter_anyOf:
+      enum:
+      - DOWNLINK
+      - UPLINK
+      - ROUND_TRIP
+      type: string
+      example: null
+    PreemptionCapability_anyOf:
+      enum:
+      - NOT_PREEMPT
+      - MAY_PREEMPT
+      type: string
+      example: null
+    PreemptionVulnerability_anyOf:
+      enum:
+      - NOT_PREEMPTABLE
+      - PREEMPTABLE
+      type: string
+      example: null
+    AfSigProtocol_anyOf:
+      enum:
+      - NO_INFORMATION
+      - SIP
+      type: string
+      example: null
+    NetLocAccessSupport_anyOf:
+      enum:
+      - ANR_NOT_SUPPORTED
+      - TZR_NOT_SUPPORTED
+      - LOC_NOT_SUPPORTED
+      type: string
+      example: null
+    RatType_anyOf:
+      enum:
+      - NR
+      - EUTRA
+      - WLAN
+      - VIRTUAL
+      - NBIOT
+      - WIRELINE
+      - WIRELINE_CABLE
+      - WIRELINE_BBF
+      - LTE-M
+      - NR_U
+      - EUTRA_U
+      - TRUSTED_N3GA
+      - TRUSTED_WLAN
+      - UTRA
+      - GERA
+      - NR_LEO
+      - NR_MEO
+      - NR_GEO
+      - NR_OTHER_SAT
+      - NR_REDCAP
+      type: string
+      example: null
+    SatelliteBackhaulCategory_anyOf:
+      enum:
+      - GEO
+      - MEO
+      - LEO
+      - OTHER_SAT
+      - NON_SATELLITE
+      type: string
+      example: null
+    TransportProtocol_anyOf:
+      enum:
+      - UDP
+      - TCP
+      type: string
+      example: null
+    LineType_anyOf:
+      enum:
+      - DSL
+      - PON
+      type: string
+      example: null
+    PresenceState_anyOf:
+      enum:
+      - IN_AREA
+      - OUT_OF_AREA
+      - UNKNOWN
+      - INACTIVE
+      type: string
+      example: null
+    FlowDirection_anyOf:
+      enum:
+      - DOWNLINK
+      - UPLINK
+      - BIDIRECTIONAL
+      - UNSPECIFIED
+      type: string
+      example: null
+    FinalUnitAction_anyOf:
+      enum:
+      - TERMINATE
+      - REDIRECT
+      - RESTRICT_ACCESS
+      type: string
+      example: null
+    TransportProtocol_1_anyOf:
+      enum:
+      - TCP
+      type: string
+      example: null
+    DnaiChangeType_anyOf:
+      enum:
+      - EARLY
+      - EARLY_LATE
+      - LATE
+      type: string
+      example: null
+    NFType_anyOf:
+      enum:
+      - NRF
+      - UDM
+      - AMF
+      - SMF
+      - AUSF
+      - NEF
+      - PCF
+      - SMSF
+      - NSSF
+      - UDR
+      - LMF
+      - GMLC
+      - 5G_EIR
+      - SEPP
+      - UPF
+      - N3IWF
+      - AF
+      - UDSF
+      - BSF
+      - CHF
+      - NWDAF
+      - PCSCF
+      - CBCF
+      - HSS
+      - UCMF
+      - SOR_AF
+      - SPAF
+      - MME
+      - SCSAS
+      - SCEF
+      - SCP
+      - NSSAAF
+      - ICSCF
+      - SCSCF
+      - DRA
+      - IMS_AS
+      - AANF
+      - 5G_DDNMF
+      - NSACF
+      - MFAF
+      - EASDF
+      - DCCF
+      - MB_SMF
+      - TSCTSF
+      - ADRF
+      - GBA_BSF
+      - CEF
+      - MB_UPF
+      - NSWOF
+      - PKMF
+      - MNPF
+      - SMS_GMSC
+      - SMS_IWMSC
+      - MBSF
+      - MBSTF
+      - PANF
+      type: string
       example: null
   securitySchemes:
     oAuth2ClientCredentials:

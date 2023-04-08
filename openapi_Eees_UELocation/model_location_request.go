@@ -71,7 +71,7 @@ func (o *LocationRequest) SetUeId(v string) {
 
 // GetGran returns the Gran field value if set, zero value otherwise.
 func (o *LocationRequest) GetGran() Accuracy {
-	if o == nil || IsNil(o.Gran) {
+	if o == nil || isNil(o.Gran) {
 		var ret Accuracy
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *LocationRequest) GetGran() Accuracy {
 // GetGranOk returns a tuple with the Gran field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationRequest) GetGranOk() (*Accuracy, bool) {
-	if o == nil || IsNil(o.Gran) {
+	if o == nil || isNil(o.Gran) {
 		return nil, false
 	}
 	return o.Gran, true
@@ -89,7 +89,7 @@ func (o *LocationRequest) GetGranOk() (*Accuracy, bool) {
 
 // HasGran returns a boolean if a field has been set.
 func (o *LocationRequest) HasGran() bool {
-	if o != nil && !IsNil(o.Gran) {
+	if o != nil && !isNil(o.Gran) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *LocationRequest) SetGran(v Accuracy) {
 
 // GetLocQos returns the LocQos field value if set, zero value otherwise.
 func (o *LocationRequest) GetLocQos() LocationQoS {
-	if o == nil || IsNil(o.LocQos) {
+	if o == nil || isNil(o.LocQos) {
 		var ret LocationQoS
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *LocationRequest) GetLocQos() LocationQoS {
 // GetLocQosOk returns a tuple with the LocQos field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationRequest) GetLocQosOk() (*LocationQoS, bool) {
-	if o == nil || IsNil(o.LocQos) {
+	if o == nil || isNil(o.LocQos) {
 		return nil, false
 	}
 	return o.LocQos, true
@@ -121,7 +121,7 @@ func (o *LocationRequest) GetLocQosOk() (*LocationQoS, bool) {
 
 // HasLocQos returns a boolean if a field has been set.
 func (o *LocationRequest) HasLocQos() bool {
-	if o != nil && !IsNil(o.LocQos) {
+	if o != nil && !isNil(o.LocQos) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *LocationRequest) SetLocQos(v LocationQoS) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *LocationRequest) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *LocationRequest) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationRequest) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -153,7 +153,7 @@ func (o *LocationRequest) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *LocationRequest) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -176,13 +176,13 @@ func (o LocationRequest) MarshalJSON() ([]byte, error) {
 func (o LocationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ueId"] = o.UeId
-	if !IsNil(o.Gran) {
+	if !isNil(o.Gran) {
 		toSerialize["gran"] = o.Gran
 	}
-	if !IsNil(o.LocQos) {
+	if !isNil(o.LocQos) {
 		toSerialize["locQos"] = o.LocQos
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
 	return toSerialize, nil

@@ -46,7 +46,7 @@ func NewCAPIFEventFilterWithDefaults() *CAPIFEventFilter {
 
 // GetApiIds returns the ApiIds field value if set, zero value otherwise.
 func (o *CAPIFEventFilter) GetApiIds() []string {
-	if o == nil || IsNil(o.ApiIds) {
+	if o == nil || isNil(o.ApiIds) {
 		var ret []string
 		return ret
 	}
@@ -56,7 +56,7 @@ func (o *CAPIFEventFilter) GetApiIds() []string {
 // GetApiIdsOk returns a tuple with the ApiIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventFilter) GetApiIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ApiIds) {
+	if o == nil || isNil(o.ApiIds) {
 		return nil, false
 	}
 	return o.ApiIds, true
@@ -64,7 +64,7 @@ func (o *CAPIFEventFilter) GetApiIdsOk() ([]string, bool) {
 
 // HasApiIds returns a boolean if a field has been set.
 func (o *CAPIFEventFilter) HasApiIds() bool {
-	if o != nil && !IsNil(o.ApiIds) {
+	if o != nil && !isNil(o.ApiIds) {
 		return true
 	}
 
@@ -78,7 +78,7 @@ func (o *CAPIFEventFilter) SetApiIds(v []string) {
 
 // GetApiInvokerIds returns the ApiInvokerIds field value if set, zero value otherwise.
 func (o *CAPIFEventFilter) GetApiInvokerIds() []string {
-	if o == nil || IsNil(o.ApiInvokerIds) {
+	if o == nil || isNil(o.ApiInvokerIds) {
 		var ret []string
 		return ret
 	}
@@ -88,7 +88,7 @@ func (o *CAPIFEventFilter) GetApiInvokerIds() []string {
 // GetApiInvokerIdsOk returns a tuple with the ApiInvokerIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventFilter) GetApiInvokerIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ApiInvokerIds) {
+	if o == nil || isNil(o.ApiInvokerIds) {
 		return nil, false
 	}
 	return o.ApiInvokerIds, true
@@ -96,7 +96,7 @@ func (o *CAPIFEventFilter) GetApiInvokerIdsOk() ([]string, bool) {
 
 // HasApiInvokerIds returns a boolean if a field has been set.
 func (o *CAPIFEventFilter) HasApiInvokerIds() bool {
-	if o != nil && !IsNil(o.ApiInvokerIds) {
+	if o != nil && !isNil(o.ApiInvokerIds) {
 		return true
 	}
 
@@ -110,7 +110,7 @@ func (o *CAPIFEventFilter) SetApiInvokerIds(v []string) {
 
 // GetAefIds returns the AefIds field value if set, zero value otherwise.
 func (o *CAPIFEventFilter) GetAefIds() []string {
-	if o == nil || IsNil(o.AefIds) {
+	if o == nil || isNil(o.AefIds) {
 		var ret []string
 		return ret
 	}
@@ -120,7 +120,7 @@ func (o *CAPIFEventFilter) GetAefIds() []string {
 // GetAefIdsOk returns a tuple with the AefIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CAPIFEventFilter) GetAefIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.AefIds) {
+	if o == nil || isNil(o.AefIds) {
 		return nil, false
 	}
 	return o.AefIds, true
@@ -128,7 +128,7 @@ func (o *CAPIFEventFilter) GetAefIdsOk() ([]string, bool) {
 
 // HasAefIds returns a boolean if a field has been set.
 func (o *CAPIFEventFilter) HasAefIds() bool {
-	if o != nil && !IsNil(o.AefIds) {
+	if o != nil && !isNil(o.AefIds) {
 		return true
 	}
 
@@ -150,13 +150,13 @@ func (o CAPIFEventFilter) MarshalJSON() ([]byte, error) {
 
 func (o CAPIFEventFilter) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ApiIds) {
+	if !isNil(o.ApiIds) {
 		toSerialize["apiIds"] = o.ApiIds
 	}
-	if !IsNil(o.ApiInvokerIds) {
+	if !isNil(o.ApiInvokerIds) {
 		toSerialize["apiInvokerIds"] = o.ApiInvokerIds
 	}
-	if !IsNil(o.AefIds) {
+	if !isNil(o.AefIds) {
 		toSerialize["aefIds"] = o.AefIds
 	}
 	return toSerialize, nil

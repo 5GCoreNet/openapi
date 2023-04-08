@@ -43,7 +43,7 @@ func NewIpInterfaceWithDefaults() *IpInterface {
 
 // GetIpv4EndpointAddresses returns the Ipv4EndpointAddresses field value if set, zero value otherwise.
 func (o *IpInterface) GetIpv4EndpointAddresses() string {
-	if o == nil || IsNil(o.Ipv4EndpointAddresses) {
+	if o == nil || isNil(o.Ipv4EndpointAddresses) {
 		var ret string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *IpInterface) GetIpv4EndpointAddresses() string {
 // GetIpv4EndpointAddressesOk returns a tuple with the Ipv4EndpointAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpInterface) GetIpv4EndpointAddressesOk() (*string, bool) {
-	if o == nil || IsNil(o.Ipv4EndpointAddresses) {
+	if o == nil || isNil(o.Ipv4EndpointAddresses) {
 		return nil, false
 	}
 	return o.Ipv4EndpointAddresses, true
@@ -61,7 +61,7 @@ func (o *IpInterface) GetIpv4EndpointAddressesOk() (*string, bool) {
 
 // HasIpv4EndpointAddresses returns a boolean if a field has been set.
 func (o *IpInterface) HasIpv4EndpointAddresses() bool {
-	if o != nil && !IsNil(o.Ipv4EndpointAddresses) {
+	if o != nil && !isNil(o.Ipv4EndpointAddresses) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *IpInterface) SetIpv4EndpointAddresses(v string) {
 
 // GetIpv6EndpointAddresses returns the Ipv6EndpointAddresses field value if set, zero value otherwise.
 func (o *IpInterface) GetIpv6EndpointAddresses() Ipv6Addr {
-	if o == nil || IsNil(o.Ipv6EndpointAddresses) {
+	if o == nil || isNil(o.Ipv6EndpointAddresses) {
 		var ret Ipv6Addr
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *IpInterface) GetIpv6EndpointAddresses() Ipv6Addr {
 // GetIpv6EndpointAddressesOk returns a tuple with the Ipv6EndpointAddresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpInterface) GetIpv6EndpointAddressesOk() (*Ipv6Addr, bool) {
-	if o == nil || IsNil(o.Ipv6EndpointAddresses) {
+	if o == nil || isNil(o.Ipv6EndpointAddresses) {
 		return nil, false
 	}
 	return o.Ipv6EndpointAddresses, true
@@ -93,7 +93,7 @@ func (o *IpInterface) GetIpv6EndpointAddressesOk() (*Ipv6Addr, bool) {
 
 // HasIpv6EndpointAddresses returns a boolean if a field has been set.
 func (o *IpInterface) HasIpv6EndpointAddresses() bool {
-	if o != nil && !IsNil(o.Ipv6EndpointAddresses) {
+	if o != nil && !isNil(o.Ipv6EndpointAddresses) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *IpInterface) SetIpv6EndpointAddresses(v Ipv6Addr) {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *IpInterface) GetFqdn() string {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *IpInterface) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IpInterface) GetFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -125,7 +125,7 @@ func (o *IpInterface) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *IpInterface) HasFqdn() bool {
-	if o != nil && !IsNil(o.Fqdn) {
+	if o != nil && !isNil(o.Fqdn) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o IpInterface) MarshalJSON() ([]byte, error) {
 
 func (o IpInterface) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Ipv4EndpointAddresses) {
+	if !isNil(o.Ipv4EndpointAddresses) {
 		toSerialize["ipv4EndpointAddresses"] = o.Ipv4EndpointAddresses
 	}
-	if !IsNil(o.Ipv6EndpointAddresses) {
+	if !isNil(o.Ipv6EndpointAddresses) {
 		toSerialize["ipv6EndpointAddresses"] = o.Ipv6EndpointAddresses
 	}
-	if !IsNil(o.Fqdn) {
+	if !isNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
 	return toSerialize, nil

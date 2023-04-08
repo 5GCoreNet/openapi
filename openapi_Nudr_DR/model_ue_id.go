@@ -68,7 +68,7 @@ func (o *UeId) SetSupi(v string) {
 
 // GetGpsiList returns the GpsiList field value if set, zero value otherwise.
 func (o *UeId) GetGpsiList() []string {
-	if o == nil || IsNil(o.GpsiList) {
+	if o == nil || isNil(o.GpsiList) {
 		var ret []string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *UeId) GetGpsiList() []string {
 // GetGpsiListOk returns a tuple with the GpsiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UeId) GetGpsiListOk() ([]string, bool) {
-	if o == nil || IsNil(o.GpsiList) {
+	if o == nil || isNil(o.GpsiList) {
 		return nil, false
 	}
 	return o.GpsiList, true
@@ -86,7 +86,7 @@ func (o *UeId) GetGpsiListOk() ([]string, bool) {
 
 // HasGpsiList returns a boolean if a field has been set.
 func (o *UeId) HasGpsiList() bool {
-	if o != nil && !IsNil(o.GpsiList) {
+	if o != nil && !isNil(o.GpsiList) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o UeId) MarshalJSON() ([]byte, error) {
 func (o UeId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.GpsiList) {
+	if !isNil(o.GpsiList) {
 		toSerialize["gpsiList"] = o.GpsiList
 	}
 	return toSerialize, nil

@@ -47,7 +47,7 @@ func NewEcRestrictionDataWbWithDefaults() *EcRestrictionDataWb {
 
 // GetEcModeARestricted returns the EcModeARestricted field value if set, zero value otherwise.
 func (o *EcRestrictionDataWb) GetEcModeARestricted() bool {
-	if o == nil || IsNil(o.EcModeARestricted) {
+	if o == nil || isNil(o.EcModeARestricted) {
 		var ret bool
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *EcRestrictionDataWb) GetEcModeARestricted() bool {
 // GetEcModeARestrictedOk returns a tuple with the EcModeARestricted field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EcRestrictionDataWb) GetEcModeARestrictedOk() (*bool, bool) {
-	if o == nil || IsNil(o.EcModeARestricted) {
+	if o == nil || isNil(o.EcModeARestricted) {
 		return nil, false
 	}
 	return o.EcModeARestricted, true
@@ -65,7 +65,7 @@ func (o *EcRestrictionDataWb) GetEcModeARestrictedOk() (*bool, bool) {
 
 // HasEcModeARestricted returns a boolean if a field has been set.
 func (o *EcRestrictionDataWb) HasEcModeARestricted() bool {
-	if o != nil && !IsNil(o.EcModeARestricted) {
+	if o != nil && !isNil(o.EcModeARestricted) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o EcRestrictionDataWb) MarshalJSON() ([]byte, error) {
 
 func (o EcRestrictionDataWb) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.EcModeARestricted) {
+	if !isNil(o.EcModeARestricted) {
 		toSerialize["ecModeARestricted"] = o.EcModeARestricted
 	}
 	toSerialize["ecModeBRestricted"] = o.EcModeBRestricted

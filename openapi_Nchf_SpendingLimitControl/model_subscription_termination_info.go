@@ -69,7 +69,7 @@ func (o *SubscriptionTerminationInfo) SetSupi(v string) {
 
 // GetNotifId returns the NotifId field value if set, zero value otherwise.
 func (o *SubscriptionTerminationInfo) GetNotifId() string {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		var ret string
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *SubscriptionTerminationInfo) GetNotifId() string {
 // GetNotifIdOk returns a tuple with the NotifId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTerminationInfo) GetNotifIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NotifId) {
+	if o == nil || isNil(o.NotifId) {
 		return nil, false
 	}
 	return o.NotifId, true
@@ -87,7 +87,7 @@ func (o *SubscriptionTerminationInfo) GetNotifIdOk() (*string, bool) {
 
 // HasNotifId returns a boolean if a field has been set.
 func (o *SubscriptionTerminationInfo) HasNotifId() bool {
-	if o != nil && !IsNil(o.NotifId) {
+	if o != nil && !isNil(o.NotifId) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *SubscriptionTerminationInfo) SetNotifId(v string) {
 
 // GetTermCause returns the TermCause field value if set, zero value otherwise.
 func (o *SubscriptionTerminationInfo) GetTermCause() TerminationCause {
-	if o == nil || IsNil(o.TermCause) {
+	if o == nil || isNil(o.TermCause) {
 		var ret TerminationCause
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *SubscriptionTerminationInfo) GetTermCause() TerminationCause {
 // GetTermCauseOk returns a tuple with the TermCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionTerminationInfo) GetTermCauseOk() (*TerminationCause, bool) {
-	if o == nil || IsNil(o.TermCause) {
+	if o == nil || isNil(o.TermCause) {
 		return nil, false
 	}
 	return o.TermCause, true
@@ -119,7 +119,7 @@ func (o *SubscriptionTerminationInfo) GetTermCauseOk() (*TerminationCause, bool)
 
 // HasTermCause returns a boolean if a field has been set.
 func (o *SubscriptionTerminationInfo) HasTermCause() bool {
-	if o != nil && !IsNil(o.TermCause) {
+	if o != nil && !isNil(o.TermCause) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o SubscriptionTerminationInfo) MarshalJSON() ([]byte, error) {
 func (o SubscriptionTerminationInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["supi"] = o.Supi
-	if !IsNil(o.NotifId) {
+	if !isNil(o.NotifId) {
 		toSerialize["notifId"] = o.NotifId
 	}
-	if !IsNil(o.TermCause) {
+	if !isNil(o.TermCause) {
 		toSerialize["termCause"] = o.TermCause
 	}
 	return toSerialize, nil

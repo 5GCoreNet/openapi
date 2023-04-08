@@ -76,7 +76,7 @@ func (o *AmfEventMode) SetTrigger(v AmfEventTrigger) {
 
 // GetMaxReports returns the MaxReports field value if set, zero value otherwise.
 func (o *AmfEventMode) GetMaxReports() int32 {
-	if o == nil || IsNil(o.MaxReports) {
+	if o == nil || isNil(o.MaxReports) {
 		var ret int32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *AmfEventMode) GetMaxReports() int32 {
 // GetMaxReportsOk returns a tuple with the MaxReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventMode) GetMaxReportsOk() (*int32, bool) {
-	if o == nil || IsNil(o.MaxReports) {
+	if o == nil || isNil(o.MaxReports) {
 		return nil, false
 	}
 	return o.MaxReports, true
@@ -94,7 +94,7 @@ func (o *AmfEventMode) GetMaxReportsOk() (*int32, bool) {
 
 // HasMaxReports returns a boolean if a field has been set.
 func (o *AmfEventMode) HasMaxReports() bool {
-	if o != nil && !IsNil(o.MaxReports) {
+	if o != nil && !isNil(o.MaxReports) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *AmfEventMode) SetMaxReports(v int32) {
 
 // GetExpiry returns the Expiry field value if set, zero value otherwise.
 func (o *AmfEventMode) GetExpiry() time.Time {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		var ret time.Time
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *AmfEventMode) GetExpiry() time.Time {
 // GetExpiryOk returns a tuple with the Expiry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventMode) GetExpiryOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Expiry) {
+	if o == nil || isNil(o.Expiry) {
 		return nil, false
 	}
 	return o.Expiry, true
@@ -126,7 +126,7 @@ func (o *AmfEventMode) GetExpiryOk() (*time.Time, bool) {
 
 // HasExpiry returns a boolean if a field has been set.
 func (o *AmfEventMode) HasExpiry() bool {
-	if o != nil && !IsNil(o.Expiry) {
+	if o != nil && !isNil(o.Expiry) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *AmfEventMode) SetExpiry(v time.Time) {
 
 // GetRepPeriod returns the RepPeriod field value if set, zero value otherwise.
 func (o *AmfEventMode) GetRepPeriod() int32 {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		var ret int32
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *AmfEventMode) GetRepPeriod() int32 {
 // GetRepPeriodOk returns a tuple with the RepPeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventMode) GetRepPeriodOk() (*int32, bool) {
-	if o == nil || IsNil(o.RepPeriod) {
+	if o == nil || isNil(o.RepPeriod) {
 		return nil, false
 	}
 	return o.RepPeriod, true
@@ -158,7 +158,7 @@ func (o *AmfEventMode) GetRepPeriodOk() (*int32, bool) {
 
 // HasRepPeriod returns a boolean if a field has been set.
 func (o *AmfEventMode) HasRepPeriod() bool {
-	if o != nil && !IsNil(o.RepPeriod) {
+	if o != nil && !isNil(o.RepPeriod) {
 		return true
 	}
 
@@ -172,7 +172,7 @@ func (o *AmfEventMode) SetRepPeriod(v int32) {
 
 // GetSampRatio returns the SampRatio field value if set, zero value otherwise.
 func (o *AmfEventMode) GetSampRatio() int32 {
-	if o == nil || IsNil(o.SampRatio) {
+	if o == nil || isNil(o.SampRatio) {
 		var ret int32
 		return ret
 	}
@@ -182,7 +182,7 @@ func (o *AmfEventMode) GetSampRatio() int32 {
 // GetSampRatioOk returns a tuple with the SampRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventMode) GetSampRatioOk() (*int32, bool) {
-	if o == nil || IsNil(o.SampRatio) {
+	if o == nil || isNil(o.SampRatio) {
 		return nil, false
 	}
 	return o.SampRatio, true
@@ -190,7 +190,7 @@ func (o *AmfEventMode) GetSampRatioOk() (*int32, bool) {
 
 // HasSampRatio returns a boolean if a field has been set.
 func (o *AmfEventMode) HasSampRatio() bool {
-	if o != nil && !IsNil(o.SampRatio) {
+	if o != nil && !isNil(o.SampRatio) {
 		return true
 	}
 
@@ -204,7 +204,7 @@ func (o *AmfEventMode) SetSampRatio(v int32) {
 
 // GetPartitioningCriteria returns the PartitioningCriteria field value if set, zero value otherwise.
 func (o *AmfEventMode) GetPartitioningCriteria() []PartitioningCriteria {
-	if o == nil || IsNil(o.PartitioningCriteria) {
+	if o == nil || isNil(o.PartitioningCriteria) {
 		var ret []PartitioningCriteria
 		return ret
 	}
@@ -214,7 +214,7 @@ func (o *AmfEventMode) GetPartitioningCriteria() []PartitioningCriteria {
 // GetPartitioningCriteriaOk returns a tuple with the PartitioningCriteria field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventMode) GetPartitioningCriteriaOk() ([]PartitioningCriteria, bool) {
-	if o == nil || IsNil(o.PartitioningCriteria) {
+	if o == nil || isNil(o.PartitioningCriteria) {
 		return nil, false
 	}
 	return o.PartitioningCriteria, true
@@ -222,7 +222,7 @@ func (o *AmfEventMode) GetPartitioningCriteriaOk() ([]PartitioningCriteria, bool
 
 // HasPartitioningCriteria returns a boolean if a field has been set.
 func (o *AmfEventMode) HasPartitioningCriteria() bool {
-	if o != nil && !IsNil(o.PartitioningCriteria) {
+	if o != nil && !isNil(o.PartitioningCriteria) {
 		return true
 	}
 
@@ -236,7 +236,7 @@ func (o *AmfEventMode) SetPartitioningCriteria(v []PartitioningCriteria) {
 
 // GetNotifFlag returns the NotifFlag field value if set, zero value otherwise.
 func (o *AmfEventMode) GetNotifFlag() NotificationFlag {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		var ret NotificationFlag
 		return ret
 	}
@@ -246,7 +246,7 @@ func (o *AmfEventMode) GetNotifFlag() NotificationFlag {
 // GetNotifFlagOk returns a tuple with the NotifFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventMode) GetNotifFlagOk() (*NotificationFlag, bool) {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		return nil, false
 	}
 	return o.NotifFlag, true
@@ -254,7 +254,7 @@ func (o *AmfEventMode) GetNotifFlagOk() (*NotificationFlag, bool) {
 
 // HasNotifFlag returns a boolean if a field has been set.
 func (o *AmfEventMode) HasNotifFlag() bool {
-	if o != nil && !IsNil(o.NotifFlag) {
+	if o != nil && !isNil(o.NotifFlag) {
 		return true
 	}
 
@@ -277,22 +277,22 @@ func (o AmfEventMode) MarshalJSON() ([]byte, error) {
 func (o AmfEventMode) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["trigger"] = o.Trigger
-	if !IsNil(o.MaxReports) {
+	if !isNil(o.MaxReports) {
 		toSerialize["maxReports"] = o.MaxReports
 	}
-	if !IsNil(o.Expiry) {
+	if !isNil(o.Expiry) {
 		toSerialize["expiry"] = o.Expiry
 	}
-	if !IsNil(o.RepPeriod) {
+	if !isNil(o.RepPeriod) {
 		toSerialize["repPeriod"] = o.RepPeriod
 	}
-	if !IsNil(o.SampRatio) {
+	if !isNil(o.SampRatio) {
 		toSerialize["sampRatio"] = o.SampRatio
 	}
-	if !IsNil(o.PartitioningCriteria) {
+	if !isNil(o.PartitioningCriteria) {
 		toSerialize["partitioningCriteria"] = o.PartitioningCriteria
 	}
-	if !IsNil(o.NotifFlag) {
+	if !isNil(o.NotifFlag) {
 		toSerialize["notifFlag"] = o.NotifFlag
 	}
 	return toSerialize, nil

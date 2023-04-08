@@ -42,7 +42,7 @@ func NewReachabilityNotificationDataWithDefaults() *ReachabilityNotificationData
 
 // GetReachableUeList returns the ReachableUeList field value if set, zero value otherwise.
 func (o *ReachabilityNotificationData) GetReachableUeList() []ReachableUeInfo {
-	if o == nil || IsNil(o.ReachableUeList) {
+	if o == nil || isNil(o.ReachableUeList) {
 		var ret []ReachableUeInfo
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *ReachabilityNotificationData) GetReachableUeList() []ReachableUeInfo {
 // GetReachableUeListOk returns a tuple with the ReachableUeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityNotificationData) GetReachableUeListOk() ([]ReachableUeInfo, bool) {
-	if o == nil || IsNil(o.ReachableUeList) {
+	if o == nil || isNil(o.ReachableUeList) {
 		return nil, false
 	}
 	return o.ReachableUeList, true
@@ -60,7 +60,7 @@ func (o *ReachabilityNotificationData) GetReachableUeListOk() ([]ReachableUeInfo
 
 // HasReachableUeList returns a boolean if a field has been set.
 func (o *ReachabilityNotificationData) HasReachableUeList() bool {
-	if o != nil && !IsNil(o.ReachableUeList) {
+	if o != nil && !isNil(o.ReachableUeList) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *ReachabilityNotificationData) SetReachableUeList(v []ReachableUeInfo) {
 
 // GetUnreachableUeList returns the UnreachableUeList field value if set, zero value otherwise.
 func (o *ReachabilityNotificationData) GetUnreachableUeList() []string {
-	if o == nil || IsNil(o.UnreachableUeList) {
+	if o == nil || isNil(o.UnreachableUeList) {
 		var ret []string
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *ReachabilityNotificationData) GetUnreachableUeList() []string {
 // GetUnreachableUeListOk returns a tuple with the UnreachableUeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReachabilityNotificationData) GetUnreachableUeListOk() ([]string, bool) {
-	if o == nil || IsNil(o.UnreachableUeList) {
+	if o == nil || isNil(o.UnreachableUeList) {
 		return nil, false
 	}
 	return o.UnreachableUeList, true
@@ -92,7 +92,7 @@ func (o *ReachabilityNotificationData) GetUnreachableUeListOk() ([]string, bool)
 
 // HasUnreachableUeList returns a boolean if a field has been set.
 func (o *ReachabilityNotificationData) HasUnreachableUeList() bool {
-	if o != nil && !IsNil(o.UnreachableUeList) {
+	if o != nil && !isNil(o.UnreachableUeList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o ReachabilityNotificationData) MarshalJSON() ([]byte, error) {
 
 func (o ReachabilityNotificationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ReachableUeList) {
+	if !isNil(o.ReachableUeList) {
 		toSerialize["reachableUeList"] = o.ReachableUeList
 	}
-	if !IsNil(o.UnreachableUeList) {
+	if !isNil(o.UnreachableUeList) {
 		toSerialize["unreachableUeList"] = o.UnreachableUeList
 	}
 	return toSerialize, nil

@@ -78,7 +78,7 @@ func (o *CandidateForReplacement) GetDnns() []string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CandidateForReplacement) GetDnnsOk() ([]string, bool) {
-	if o == nil || IsNil(o.Dnns) {
+	if o == nil || isNil(o.Dnns) {
 		return nil, false
 	}
 	return o.Dnns, true
@@ -86,7 +86,7 @@ func (o *CandidateForReplacement) GetDnnsOk() ([]string, bool) {
 
 // HasDnns returns a boolean if a field has been set.
 func (o *CandidateForReplacement) HasDnns() bool {
-	if o != nil && IsNil(o.Dnns) {
+	if o != nil && isNil(o.Dnns) {
 		return true
 	}
 

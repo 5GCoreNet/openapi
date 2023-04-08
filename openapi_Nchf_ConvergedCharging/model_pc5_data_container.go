@@ -52,7 +52,7 @@ func NewPC5DataContainerWithDefaults() *PC5DataContainer {
 
 // GetLocalSequenceNumber returns the LocalSequenceNumber field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetLocalSequenceNumber() string {
-	if o == nil || IsNil(o.LocalSequenceNumber) {
+	if o == nil || isNil(o.LocalSequenceNumber) {
 		var ret string
 		return ret
 	}
@@ -62,7 +62,7 @@ func (o *PC5DataContainer) GetLocalSequenceNumber() string {
 // GetLocalSequenceNumberOk returns a tuple with the LocalSequenceNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetLocalSequenceNumberOk() (*string, bool) {
-	if o == nil || IsNil(o.LocalSequenceNumber) {
+	if o == nil || isNil(o.LocalSequenceNumber) {
 		return nil, false
 	}
 	return o.LocalSequenceNumber, true
@@ -70,7 +70,7 @@ func (o *PC5DataContainer) GetLocalSequenceNumberOk() (*string, bool) {
 
 // HasLocalSequenceNumber returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasLocalSequenceNumber() bool {
-	if o != nil && !IsNil(o.LocalSequenceNumber) {
+	if o != nil && !isNil(o.LocalSequenceNumber) {
 		return true
 	}
 
@@ -84,7 +84,7 @@ func (o *PC5DataContainer) SetLocalSequenceNumber(v string) {
 
 // GetChangeTime returns the ChangeTime field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetChangeTime() time.Time {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		var ret time.Time
 		return ret
 	}
@@ -94,7 +94,7 @@ func (o *PC5DataContainer) GetChangeTime() time.Time {
 // GetChangeTimeOk returns a tuple with the ChangeTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetChangeTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.ChangeTime) {
+	if o == nil || isNil(o.ChangeTime) {
 		return nil, false
 	}
 	return o.ChangeTime, true
@@ -102,7 +102,7 @@ func (o *PC5DataContainer) GetChangeTimeOk() (*time.Time, bool) {
 
 // HasChangeTime returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasChangeTime() bool {
-	if o != nil && !IsNil(o.ChangeTime) {
+	if o != nil && !isNil(o.ChangeTime) {
 		return true
 	}
 
@@ -116,7 +116,7 @@ func (o *PC5DataContainer) SetChangeTime(v time.Time) {
 
 // GetCoverageStatus returns the CoverageStatus field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetCoverageStatus() bool {
-	if o == nil || IsNil(o.CoverageStatus) {
+	if o == nil || isNil(o.CoverageStatus) {
 		var ret bool
 		return ret
 	}
@@ -126,7 +126,7 @@ func (o *PC5DataContainer) GetCoverageStatus() bool {
 // GetCoverageStatusOk returns a tuple with the CoverageStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetCoverageStatusOk() (*bool, bool) {
-	if o == nil || IsNil(o.CoverageStatus) {
+	if o == nil || isNil(o.CoverageStatus) {
 		return nil, false
 	}
 	return o.CoverageStatus, true
@@ -134,7 +134,7 @@ func (o *PC5DataContainer) GetCoverageStatusOk() (*bool, bool) {
 
 // HasCoverageStatus returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasCoverageStatus() bool {
-	if o != nil && !IsNil(o.CoverageStatus) {
+	if o != nil && !isNil(o.CoverageStatus) {
 		return true
 	}
 
@@ -148,7 +148,7 @@ func (o *PC5DataContainer) SetCoverageStatus(v bool) {
 
 // GetUserLocationInformation returns the UserLocationInformation field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetUserLocationInformation() UserLocation {
-	if o == nil || IsNil(o.UserLocationInformation) {
+	if o == nil || isNil(o.UserLocationInformation) {
 		var ret UserLocation
 		return ret
 	}
@@ -158,7 +158,7 @@ func (o *PC5DataContainer) GetUserLocationInformation() UserLocation {
 // GetUserLocationInformationOk returns a tuple with the UserLocationInformation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetUserLocationInformationOk() (*UserLocation, bool) {
-	if o == nil || IsNil(o.UserLocationInformation) {
+	if o == nil || isNil(o.UserLocationInformation) {
 		return nil, false
 	}
 	return o.UserLocationInformation, true
@@ -166,7 +166,7 @@ func (o *PC5DataContainer) GetUserLocationInformationOk() (*UserLocation, bool) 
 
 // HasUserLocationInformation returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasUserLocationInformation() bool {
-	if o != nil && !IsNil(o.UserLocationInformation) {
+	if o != nil && !isNil(o.UserLocationInformation) {
 		return true
 	}
 
@@ -180,7 +180,7 @@ func (o *PC5DataContainer) SetUserLocationInformation(v UserLocation) {
 
 // GetDataVolume returns the DataVolume field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetDataVolume() int32 {
-	if o == nil || IsNil(o.DataVolume) {
+	if o == nil || isNil(o.DataVolume) {
 		var ret int32
 		return ret
 	}
@@ -190,7 +190,7 @@ func (o *PC5DataContainer) GetDataVolume() int32 {
 // GetDataVolumeOk returns a tuple with the DataVolume field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetDataVolumeOk() (*int32, bool) {
-	if o == nil || IsNil(o.DataVolume) {
+	if o == nil || isNil(o.DataVolume) {
 		return nil, false
 	}
 	return o.DataVolume, true
@@ -198,7 +198,7 @@ func (o *PC5DataContainer) GetDataVolumeOk() (*int32, bool) {
 
 // HasDataVolume returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasDataVolume() bool {
-	if o != nil && !IsNil(o.DataVolume) {
+	if o != nil && !isNil(o.DataVolume) {
 		return true
 	}
 
@@ -212,7 +212,7 @@ func (o *PC5DataContainer) SetDataVolume(v int32) {
 
 // GetChangeCondition returns the ChangeCondition field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetChangeCondition() string {
-	if o == nil || IsNil(o.ChangeCondition) {
+	if o == nil || isNil(o.ChangeCondition) {
 		var ret string
 		return ret
 	}
@@ -222,7 +222,7 @@ func (o *PC5DataContainer) GetChangeCondition() string {
 // GetChangeConditionOk returns a tuple with the ChangeCondition field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetChangeConditionOk() (*string, bool) {
-	if o == nil || IsNil(o.ChangeCondition) {
+	if o == nil || isNil(o.ChangeCondition) {
 		return nil, false
 	}
 	return o.ChangeCondition, true
@@ -230,7 +230,7 @@ func (o *PC5DataContainer) GetChangeConditionOk() (*string, bool) {
 
 // HasChangeCondition returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasChangeCondition() bool {
-	if o != nil && !IsNil(o.ChangeCondition) {
+	if o != nil && !isNil(o.ChangeCondition) {
 		return true
 	}
 
@@ -244,7 +244,7 @@ func (o *PC5DataContainer) SetChangeCondition(v string) {
 
 // GetRadioResourcesId returns the RadioResourcesId field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetRadioResourcesId() RadioResourcesId {
-	if o == nil || IsNil(o.RadioResourcesId) {
+	if o == nil || isNil(o.RadioResourcesId) {
 		var ret RadioResourcesId
 		return ret
 	}
@@ -254,7 +254,7 @@ func (o *PC5DataContainer) GetRadioResourcesId() RadioResourcesId {
 // GetRadioResourcesIdOk returns a tuple with the RadioResourcesId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetRadioResourcesIdOk() (*RadioResourcesId, bool) {
-	if o == nil || IsNil(o.RadioResourcesId) {
+	if o == nil || isNil(o.RadioResourcesId) {
 		return nil, false
 	}
 	return o.RadioResourcesId, true
@@ -262,7 +262,7 @@ func (o *PC5DataContainer) GetRadioResourcesIdOk() (*RadioResourcesId, bool) {
 
 // HasRadioResourcesId returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasRadioResourcesId() bool {
-	if o != nil && !IsNil(o.RadioResourcesId) {
+	if o != nil && !isNil(o.RadioResourcesId) {
 		return true
 	}
 
@@ -276,7 +276,7 @@ func (o *PC5DataContainer) SetRadioResourcesId(v RadioResourcesId) {
 
 // GetRadioFrequency returns the RadioFrequency field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetRadioFrequency() string {
-	if o == nil || IsNil(o.RadioFrequency) {
+	if o == nil || isNil(o.RadioFrequency) {
 		var ret string
 		return ret
 	}
@@ -286,7 +286,7 @@ func (o *PC5DataContainer) GetRadioFrequency() string {
 // GetRadioFrequencyOk returns a tuple with the RadioFrequency field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetRadioFrequencyOk() (*string, bool) {
-	if o == nil || IsNil(o.RadioFrequency) {
+	if o == nil || isNil(o.RadioFrequency) {
 		return nil, false
 	}
 	return o.RadioFrequency, true
@@ -294,7 +294,7 @@ func (o *PC5DataContainer) GetRadioFrequencyOk() (*string, bool) {
 
 // HasRadioFrequency returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasRadioFrequency() bool {
-	if o != nil && !IsNil(o.RadioFrequency) {
+	if o != nil && !isNil(o.RadioFrequency) {
 		return true
 	}
 
@@ -308,7 +308,7 @@ func (o *PC5DataContainer) SetRadioFrequency(v string) {
 
 // GetPC5RadioTechnology returns the PC5RadioTechnology field value if set, zero value otherwise.
 func (o *PC5DataContainer) GetPC5RadioTechnology() string {
-	if o == nil || IsNil(o.PC5RadioTechnology) {
+	if o == nil || isNil(o.PC5RadioTechnology) {
 		var ret string
 		return ret
 	}
@@ -318,7 +318,7 @@ func (o *PC5DataContainer) GetPC5RadioTechnology() string {
 // GetPC5RadioTechnologyOk returns a tuple with the PC5RadioTechnology field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PC5DataContainer) GetPC5RadioTechnologyOk() (*string, bool) {
-	if o == nil || IsNil(o.PC5RadioTechnology) {
+	if o == nil || isNil(o.PC5RadioTechnology) {
 		return nil, false
 	}
 	return o.PC5RadioTechnology, true
@@ -326,7 +326,7 @@ func (o *PC5DataContainer) GetPC5RadioTechnologyOk() (*string, bool) {
 
 // HasPC5RadioTechnology returns a boolean if a field has been set.
 func (o *PC5DataContainer) HasPC5RadioTechnology() bool {
-	if o != nil && !IsNil(o.PC5RadioTechnology) {
+	if o != nil && !isNil(o.PC5RadioTechnology) {
 		return true
 	}
 
@@ -348,31 +348,31 @@ func (o PC5DataContainer) MarshalJSON() ([]byte, error) {
 
 func (o PC5DataContainer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LocalSequenceNumber) {
+	if !isNil(o.LocalSequenceNumber) {
 		toSerialize["localSequenceNumber"] = o.LocalSequenceNumber
 	}
-	if !IsNil(o.ChangeTime) {
+	if !isNil(o.ChangeTime) {
 		toSerialize["changeTime"] = o.ChangeTime
 	}
-	if !IsNil(o.CoverageStatus) {
+	if !isNil(o.CoverageStatus) {
 		toSerialize["coverageStatus"] = o.CoverageStatus
 	}
-	if !IsNil(o.UserLocationInformation) {
+	if !isNil(o.UserLocationInformation) {
 		toSerialize["userLocationInformation"] = o.UserLocationInformation
 	}
-	if !IsNil(o.DataVolume) {
+	if !isNil(o.DataVolume) {
 		toSerialize["dataVolume"] = o.DataVolume
 	}
-	if !IsNil(o.ChangeCondition) {
+	if !isNil(o.ChangeCondition) {
 		toSerialize["changeCondition"] = o.ChangeCondition
 	}
-	if !IsNil(o.RadioResourcesId) {
+	if !isNil(o.RadioResourcesId) {
 		toSerialize["radioResourcesId"] = o.RadioResourcesId
 	}
-	if !IsNil(o.RadioFrequency) {
+	if !isNil(o.RadioFrequency) {
 		toSerialize["radioFrequency"] = o.RadioFrequency
 	}
-	if !IsNil(o.PC5RadioTechnology) {
+	if !isNil(o.PC5RadioTechnology) {
 		toSerialize["pC5RadioTechnology"] = o.PC5RadioTechnology
 	}
 	return toSerialize, nil

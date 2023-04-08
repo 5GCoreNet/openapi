@@ -67,7 +67,7 @@ func (o *AmfUpdatedEventSubscription) SetSubscription(v AmfEventSubscription) {
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *AmfUpdatedEventSubscription) GetReportList() []AmfEventReport {
-	if o == nil || IsNil(o.ReportList) {
+	if o == nil || isNil(o.ReportList) {
 		var ret []AmfEventReport
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *AmfUpdatedEventSubscription) GetReportList() []AmfEventReport {
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool) {
-	if o == nil || IsNil(o.ReportList) {
+	if o == nil || isNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -85,7 +85,7 @@ func (o *AmfUpdatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool)
 
 // HasReportList returns a boolean if a field has been set.
 func (o *AmfUpdatedEventSubscription) HasReportList() bool {
-	if o != nil && !IsNil(o.ReportList) {
+	if o != nil && !isNil(o.ReportList) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o AmfUpdatedEventSubscription) MarshalJSON() ([]byte, error) {
 func (o AmfUpdatedEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
-	if !IsNil(o.ReportList) {
+	if !isNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
 	return toSerialize, nil

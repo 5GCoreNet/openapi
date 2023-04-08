@@ -13,7 +13,7 @@ package openapi_CAPIF_Security_API
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -117,13 +117,13 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	parameterAddToHeaderOrQuery(localVarFormParams, "grant_type", r.grantType, "")
-	parameterAddToHeaderOrQuery(localVarFormParams, "client_id", r.clientId, "")
+	parameterAddToQuery(localVarFormParams, "grant_type", r.grantType, "")
+	parameterAddToQuery(localVarFormParams, "client_id", r.clientId, "")
 	if r.clientSecret != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "client_secret", r.clientSecret, "")
+		parameterAddToQuery(localVarFormParams, "client_secret", r.clientSecret, "")
 	}
 	if r.scope != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "scope", r.scope, "")
+		parameterAddToQuery(localVarFormParams, "scope", r.scope, "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -135,9 +135,9 @@ func (a *DefaultApiService) SecuritiesSecurityIdTokenPostExecute(r ApiSecurities
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -344,9 +344,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeleteExecute(r ApiTruste
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -523,9 +523,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdDeletePostExecute(r ApiTr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -713,10 +713,10 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 	localVarFormParams := url.Values{}
 
 	if r.authenticationInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authenticationInfo", r.authenticationInfo, "")
+		parameterAddToQuery(localVarQueryParams, "authenticationInfo", r.authenticationInfo, "")
 	}
 	if r.authorizationInfo != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "authorizationInfo", r.authorizationInfo, "")
+		parameterAddToQuery(localVarQueryParams, "authorizationInfo", r.authorizationInfo, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -745,9 +745,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdGetExecute(r ApiTrustedIn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -957,9 +957,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdPutExecute(r ApiTrustedIn
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1180,9 +1180,9 @@ func (a *DefaultApiService) TrustedInvokersApiInvokerIdUpdatePostExecute(r ApiTr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

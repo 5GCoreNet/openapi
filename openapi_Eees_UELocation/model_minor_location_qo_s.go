@@ -44,7 +44,7 @@ func NewMinorLocationQoSWithDefaults() *MinorLocationQoS {
 
 // GetHAccuracy returns the HAccuracy field value if set, zero value otherwise.
 func (o *MinorLocationQoS) GetHAccuracy() float32 {
-	if o == nil || IsNil(o.HAccuracy) {
+	if o == nil || isNil(o.HAccuracy) {
 		var ret float32
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *MinorLocationQoS) GetHAccuracy() float32 {
 // GetHAccuracyOk returns a tuple with the HAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MinorLocationQoS) GetHAccuracyOk() (*float32, bool) {
-	if o == nil || IsNil(o.HAccuracy) {
+	if o == nil || isNil(o.HAccuracy) {
 		return nil, false
 	}
 	return o.HAccuracy, true
@@ -62,7 +62,7 @@ func (o *MinorLocationQoS) GetHAccuracyOk() (*float32, bool) {
 
 // HasHAccuracy returns a boolean if a field has been set.
 func (o *MinorLocationQoS) HasHAccuracy() bool {
-	if o != nil && !IsNil(o.HAccuracy) {
+	if o != nil && !isNil(o.HAccuracy) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *MinorLocationQoS) SetHAccuracy(v float32) {
 
 // GetVAccuracy returns the VAccuracy field value if set, zero value otherwise.
 func (o *MinorLocationQoS) GetVAccuracy() float32 {
-	if o == nil || IsNil(o.VAccuracy) {
+	if o == nil || isNil(o.VAccuracy) {
 		var ret float32
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *MinorLocationQoS) GetVAccuracy() float32 {
 // GetVAccuracyOk returns a tuple with the VAccuracy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MinorLocationQoS) GetVAccuracyOk() (*float32, bool) {
-	if o == nil || IsNil(o.VAccuracy) {
+	if o == nil || isNil(o.VAccuracy) {
 		return nil, false
 	}
 	return o.VAccuracy, true
@@ -94,7 +94,7 @@ func (o *MinorLocationQoS) GetVAccuracyOk() (*float32, bool) {
 
 // HasVAccuracy returns a boolean if a field has been set.
 func (o *MinorLocationQoS) HasVAccuracy() bool {
-	if o != nil && !IsNil(o.VAccuracy) {
+	if o != nil && !isNil(o.VAccuracy) {
 		return true
 	}
 
@@ -116,10 +116,10 @@ func (o MinorLocationQoS) MarshalJSON() ([]byte, error) {
 
 func (o MinorLocationQoS) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.HAccuracy) {
+	if !isNil(o.HAccuracy) {
 		toSerialize["hAccuracy"] = o.HAccuracy
 	}
-	if !IsNil(o.VAccuracy) {
+	if !isNil(o.VAccuracy) {
 		toSerialize["vAccuracy"] = o.VAccuracy
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewRacsProvisioningDataPatchWithDefaults() *RacsProvisioningDataPatch {
 
 // GetRacsConfigs returns the RacsConfigs field value if set, zero value otherwise.
 func (o *RacsProvisioningDataPatch) GetRacsConfigs() map[string]RacsConfigurationRm {
-	if o == nil || IsNil(o.RacsConfigs) {
+	if o == nil || isNil(o.RacsConfigs) {
 		var ret map[string]RacsConfigurationRm
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *RacsProvisioningDataPatch) GetRacsConfigs() map[string]RacsConfiguratio
 // GetRacsConfigsOk returns a tuple with the RacsConfigs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RacsProvisioningDataPatch) GetRacsConfigsOk() (*map[string]RacsConfigurationRm, bool) {
-	if o == nil || IsNil(o.RacsConfigs) {
+	if o == nil || isNil(o.RacsConfigs) {
 		return nil, false
 	}
 	return o.RacsConfigs, true
@@ -60,7 +60,7 @@ func (o *RacsProvisioningDataPatch) GetRacsConfigsOk() (*map[string]RacsConfigur
 
 // HasRacsConfigs returns a boolean if a field has been set.
 func (o *RacsProvisioningDataPatch) HasRacsConfigs() bool {
-	if o != nil && !IsNil(o.RacsConfigs) {
+	if o != nil && !isNil(o.RacsConfigs) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o RacsProvisioningDataPatch) MarshalJSON() ([]byte, error) {
 
 func (o RacsProvisioningDataPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.RacsConfigs) {
+	if !isNil(o.RacsConfigs) {
 		toSerialize["racsConfigs"] = o.RacsConfigs
 	}
 	return toSerialize, nil

@@ -82,7 +82,7 @@ func (o *ApplicationSpecificRecordAllOf) GetRecordContainer() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationSpecificRecordAllOf) GetRecordContainerOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.RecordContainer) {
+	if o == nil || isNil(o.RecordContainer) {
 		return nil, false
 	}
 	return &o.RecordContainer, true

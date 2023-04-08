@@ -45,7 +45,7 @@ func NewDatalinkReportingConfigurationWithDefaults() *DatalinkReportingConfigura
 
 // GetDddTrafficDes returns the DddTrafficDes field value if set, zero value otherwise.
 func (o *DatalinkReportingConfiguration) GetDddTrafficDes() []DddTrafficDescriptor {
-	if o == nil || IsNil(o.DddTrafficDes) {
+	if o == nil || isNil(o.DddTrafficDes) {
 		var ret []DddTrafficDescriptor
 		return ret
 	}
@@ -55,7 +55,7 @@ func (o *DatalinkReportingConfiguration) GetDddTrafficDes() []DddTrafficDescript
 // GetDddTrafficDesOk returns a tuple with the DddTrafficDes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DatalinkReportingConfiguration) GetDddTrafficDesOk() ([]DddTrafficDescriptor, bool) {
-	if o == nil || IsNil(o.DddTrafficDes) {
+	if o == nil || isNil(o.DddTrafficDes) {
 		return nil, false
 	}
 	return o.DddTrafficDes, true
@@ -63,7 +63,7 @@ func (o *DatalinkReportingConfiguration) GetDddTrafficDesOk() ([]DddTrafficDescr
 
 // HasDddTrafficDes returns a boolean if a field has been set.
 func (o *DatalinkReportingConfiguration) HasDddTrafficDes() bool {
-	if o != nil && !IsNil(o.DddTrafficDes) {
+	if o != nil && !isNil(o.DddTrafficDes) {
 		return true
 	}
 
@@ -77,7 +77,7 @@ func (o *DatalinkReportingConfiguration) SetDddTrafficDes(v []DddTrafficDescript
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *DatalinkReportingConfiguration) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -87,7 +87,7 @@ func (o *DatalinkReportingConfiguration) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DatalinkReportingConfiguration) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -95,7 +95,7 @@ func (o *DatalinkReportingConfiguration) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *DatalinkReportingConfiguration) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -109,7 +109,7 @@ func (o *DatalinkReportingConfiguration) SetDnn(v string) {
 
 // GetSlice returns the Slice field value if set, zero value otherwise.
 func (o *DatalinkReportingConfiguration) GetSlice() Snssai {
-	if o == nil || IsNil(o.Slice) {
+	if o == nil || isNil(o.Slice) {
 		var ret Snssai
 		return ret
 	}
@@ -119,7 +119,7 @@ func (o *DatalinkReportingConfiguration) GetSlice() Snssai {
 // GetSliceOk returns a tuple with the Slice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DatalinkReportingConfiguration) GetSliceOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Slice) {
+	if o == nil || isNil(o.Slice) {
 		return nil, false
 	}
 	return o.Slice, true
@@ -127,7 +127,7 @@ func (o *DatalinkReportingConfiguration) GetSliceOk() (*Snssai, bool) {
 
 // HasSlice returns a boolean if a field has been set.
 func (o *DatalinkReportingConfiguration) HasSlice() bool {
-	if o != nil && !IsNil(o.Slice) {
+	if o != nil && !isNil(o.Slice) {
 		return true
 	}
 
@@ -141,7 +141,7 @@ func (o *DatalinkReportingConfiguration) SetSlice(v Snssai) {
 
 // GetDddStatusList returns the DddStatusList field value if set, zero value otherwise.
 func (o *DatalinkReportingConfiguration) GetDddStatusList() []DlDataDeliveryStatus {
-	if o == nil || IsNil(o.DddStatusList) {
+	if o == nil || isNil(o.DddStatusList) {
 		var ret []DlDataDeliveryStatus
 		return ret
 	}
@@ -151,7 +151,7 @@ func (o *DatalinkReportingConfiguration) GetDddStatusList() []DlDataDeliveryStat
 // GetDddStatusListOk returns a tuple with the DddStatusList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DatalinkReportingConfiguration) GetDddStatusListOk() ([]DlDataDeliveryStatus, bool) {
-	if o == nil || IsNil(o.DddStatusList) {
+	if o == nil || isNil(o.DddStatusList) {
 		return nil, false
 	}
 	return o.DddStatusList, true
@@ -159,7 +159,7 @@ func (o *DatalinkReportingConfiguration) GetDddStatusListOk() ([]DlDataDeliveryS
 
 // HasDddStatusList returns a boolean if a field has been set.
 func (o *DatalinkReportingConfiguration) HasDddStatusList() bool {
-	if o != nil && !IsNil(o.DddStatusList) {
+	if o != nil && !isNil(o.DddStatusList) {
 		return true
 	}
 
@@ -181,16 +181,16 @@ func (o DatalinkReportingConfiguration) MarshalJSON() ([]byte, error) {
 
 func (o DatalinkReportingConfiguration) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DddTrafficDes) {
+	if !isNil(o.DddTrafficDes) {
 		toSerialize["dddTrafficDes"] = o.DddTrafficDes
 	}
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Slice) {
+	if !isNil(o.Slice) {
 		toSerialize["slice"] = o.Slice
 	}
-	if !IsNil(o.DddStatusList) {
+	if !isNil(o.DddStatusList) {
 		toSerialize["dddStatusList"] = o.DddStatusList
 	}
 	return toSerialize, nil

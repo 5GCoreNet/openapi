@@ -44,7 +44,7 @@ func NewLcsClientGroupExternalWithDefaults() *LcsClientGroupExternal {
 
 // GetLcsClientGroupId returns the LcsClientGroupId field value if set, zero value otherwise.
 func (o *LcsClientGroupExternal) GetLcsClientGroupId() string {
-	if o == nil || IsNil(o.LcsClientGroupId) {
+	if o == nil || isNil(o.LcsClientGroupId) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *LcsClientGroupExternal) GetLcsClientGroupId() string {
 // GetLcsClientGroupIdOk returns a tuple with the LcsClientGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsClientGroupExternal) GetLcsClientGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.LcsClientGroupId) {
+	if o == nil || isNil(o.LcsClientGroupId) {
 		return nil, false
 	}
 	return o.LcsClientGroupId, true
@@ -62,7 +62,7 @@ func (o *LcsClientGroupExternal) GetLcsClientGroupIdOk() (*string, bool) {
 
 // HasLcsClientGroupId returns a boolean if a field has been set.
 func (o *LcsClientGroupExternal) HasLcsClientGroupId() bool {
-	if o != nil && !IsNil(o.LcsClientGroupId) {
+	if o != nil && !isNil(o.LcsClientGroupId) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *LcsClientGroupExternal) SetLcsClientGroupId(v string) {
 
 // GetAllowedGeographicArea returns the AllowedGeographicArea field value if set, zero value otherwise.
 func (o *LcsClientGroupExternal) GetAllowedGeographicArea() []GeographicArea {
-	if o == nil || IsNil(o.AllowedGeographicArea) {
+	if o == nil || isNil(o.AllowedGeographicArea) {
 		var ret []GeographicArea
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *LcsClientGroupExternal) GetAllowedGeographicArea() []GeographicArea {
 // GetAllowedGeographicAreaOk returns a tuple with the AllowedGeographicArea field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsClientGroupExternal) GetAllowedGeographicAreaOk() ([]GeographicArea, bool) {
-	if o == nil || IsNil(o.AllowedGeographicArea) {
+	if o == nil || isNil(o.AllowedGeographicArea) {
 		return nil, false
 	}
 	return o.AllowedGeographicArea, true
@@ -94,7 +94,7 @@ func (o *LcsClientGroupExternal) GetAllowedGeographicAreaOk() ([]GeographicArea,
 
 // HasAllowedGeographicArea returns a boolean if a field has been set.
 func (o *LcsClientGroupExternal) HasAllowedGeographicArea() bool {
-	if o != nil && !IsNil(o.AllowedGeographicArea) {
+	if o != nil && !isNil(o.AllowedGeographicArea) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *LcsClientGroupExternal) SetAllowedGeographicArea(v []GeographicArea) {
 
 // GetPrivacyCheckRelatedAction returns the PrivacyCheckRelatedAction field value if set, zero value otherwise.
 func (o *LcsClientGroupExternal) GetPrivacyCheckRelatedAction() PrivacyCheckRelatedAction {
-	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
 		var ret PrivacyCheckRelatedAction
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *LcsClientGroupExternal) GetPrivacyCheckRelatedAction() PrivacyCheckRela
 // GetPrivacyCheckRelatedActionOk returns a tuple with the PrivacyCheckRelatedAction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsClientGroupExternal) GetPrivacyCheckRelatedActionOk() (*PrivacyCheckRelatedAction, bool) {
-	if o == nil || IsNil(o.PrivacyCheckRelatedAction) {
+	if o == nil || isNil(o.PrivacyCheckRelatedAction) {
 		return nil, false
 	}
 	return o.PrivacyCheckRelatedAction, true
@@ -126,7 +126,7 @@ func (o *LcsClientGroupExternal) GetPrivacyCheckRelatedActionOk() (*PrivacyCheck
 
 // HasPrivacyCheckRelatedAction returns a boolean if a field has been set.
 func (o *LcsClientGroupExternal) HasPrivacyCheckRelatedAction() bool {
-	if o != nil && !IsNil(o.PrivacyCheckRelatedAction) {
+	if o != nil && !isNil(o.PrivacyCheckRelatedAction) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *LcsClientGroupExternal) SetPrivacyCheckRelatedAction(v PrivacyCheckRela
 
 // GetValidTimePeriod returns the ValidTimePeriod field value if set, zero value otherwise.
 func (o *LcsClientGroupExternal) GetValidTimePeriod() ValidTimePeriod {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		var ret ValidTimePeriod
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *LcsClientGroupExternal) GetValidTimePeriod() ValidTimePeriod {
 // GetValidTimePeriodOk returns a tuple with the ValidTimePeriod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LcsClientGroupExternal) GetValidTimePeriodOk() (*ValidTimePeriod, bool) {
-	if o == nil || IsNil(o.ValidTimePeriod) {
+	if o == nil || isNil(o.ValidTimePeriod) {
 		return nil, false
 	}
 	return o.ValidTimePeriod, true
@@ -158,7 +158,7 @@ func (o *LcsClientGroupExternal) GetValidTimePeriodOk() (*ValidTimePeriod, bool)
 
 // HasValidTimePeriod returns a boolean if a field has been set.
 func (o *LcsClientGroupExternal) HasValidTimePeriod() bool {
-	if o != nil && !IsNil(o.ValidTimePeriod) {
+	if o != nil && !isNil(o.ValidTimePeriod) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o LcsClientGroupExternal) MarshalJSON() ([]byte, error) {
 
 func (o LcsClientGroupExternal) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.LcsClientGroupId) {
+	if !isNil(o.LcsClientGroupId) {
 		toSerialize["lcsClientGroupId"] = o.LcsClientGroupId
 	}
-	if !IsNil(o.AllowedGeographicArea) {
+	if !isNil(o.AllowedGeographicArea) {
 		toSerialize["allowedGeographicArea"] = o.AllowedGeographicArea
 	}
-	if !IsNil(o.PrivacyCheckRelatedAction) {
+	if !isNil(o.PrivacyCheckRelatedAction) {
 		toSerialize["privacyCheckRelatedAction"] = o.PrivacyCheckRelatedAction
 	}
-	if !IsNil(o.ValidTimePeriod) {
+	if !isNil(o.ValidTimePeriod) {
 		toSerialize["validTimePeriod"] = o.ValidTimePeriod
 	}
 	return toSerialize, nil

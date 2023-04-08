@@ -17,13 +17,13 @@ import (
 
 // AvGenerationResponse - It represents the response body in the AV response sent by HSS to UDM, containing the 5G-AKA or EAP-AKA-prime authentication vector
 type AvGenerationResponse struct {
-	Interface{} *interface{}
+	Interface *interface{}
 }
 
 // interface{}AsAvGenerationResponse is a convenience function that returns interface{} wrapped in AvGenerationResponse
-func Interface{}AsAvGenerationResponse(v *interface{}) AvGenerationResponse {
+func InterfaceAsAvGenerationResponse(v *interface{}) AvGenerationResponse {
 	return AvGenerationResponse{
-		Interface{}: v,
+		Interface: v,
 	}
 }
 
@@ -32,22 +32,22 @@ func Interface{}AsAvGenerationResponse(v *interface{}) AvGenerationResponse {
 func (dst *AvGenerationResponse) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
-	// try to unmarshal data into Interface{}
-	err = newStrictDecoder(data).Decode(&dst.Interface{})
+	// try to unmarshal data into Interface
+	err = newStrictDecoder(data).Decode(&dst.Interface)
 	if err == nil {
-		jsonInterface{}, _ := json.Marshal(dst.Interface{})
-		if string(jsonInterface{}) == "{}" { // empty struct
-			dst.Interface{} = nil
+		jsonInterface, _ := json.Marshal(dst.Interface)
+		if string(jsonInterface) == "{}" { // empty struct
+			dst.Interface = nil
 		} else {
 			match++
 		}
 	} else {
-		dst.Interface{} = nil
+		dst.Interface = nil
 	}
 
 	if match > 1 { // more than 1 match
 		// reset to nil
-		dst.Interface{} = nil
+		dst.Interface = nil
 
 		return fmt.Errorf("data matches more than one schema in oneOf(AvGenerationResponse)")
 	} else if match == 1 {
@@ -59,8 +59,8 @@ func (dst *AvGenerationResponse) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src AvGenerationResponse) MarshalJSON() ([]byte, error) {
-	if src.Interface{} != nil {
-		return json.Marshal(&src.Interface{})
+	if src.Interface != nil {
+		return json.Marshal(&src.Interface)
 	}
 
 	return nil, nil // no data in oneOf schemas
@@ -71,8 +71,8 @@ func (obj *AvGenerationResponse) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
-	if obj.Interface{} != nil {
-		return obj.Interface{}
+	if obj.Interface != nil {
+		return obj.Interface
 	}
 
 	// all schemas are nil

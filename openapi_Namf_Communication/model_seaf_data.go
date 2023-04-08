@@ -96,7 +96,7 @@ func (o *SeafData) SetKeyAmf(v KeyAmf) {
 
 // GetNh returns the Nh field value if set, zero value otherwise.
 func (o *SeafData) GetNh() string {
-	if o == nil || IsNil(o.Nh) {
+	if o == nil || isNil(o.Nh) {
 		var ret string
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *SeafData) GetNh() string {
 // GetNhOk returns a tuple with the Nh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetNhOk() (*string, bool) {
-	if o == nil || IsNil(o.Nh) {
+	if o == nil || isNil(o.Nh) {
 		return nil, false
 	}
 	return o.Nh, true
@@ -114,7 +114,7 @@ func (o *SeafData) GetNhOk() (*string, bool) {
 
 // HasNh returns a boolean if a field has been set.
 func (o *SeafData) HasNh() bool {
-	if o != nil && !IsNil(o.Nh) {
+	if o != nil && !isNil(o.Nh) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *SeafData) SetNh(v string) {
 
 // GetNcc returns the Ncc field value if set, zero value otherwise.
 func (o *SeafData) GetNcc() int32 {
-	if o == nil || IsNil(o.Ncc) {
+	if o == nil || isNil(o.Ncc) {
 		var ret int32
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *SeafData) GetNcc() int32 {
 // GetNccOk returns a tuple with the Ncc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetNccOk() (*int32, bool) {
-	if o == nil || IsNil(o.Ncc) {
+	if o == nil || isNil(o.Ncc) {
 		return nil, false
 	}
 	return o.Ncc, true
@@ -146,7 +146,7 @@ func (o *SeafData) GetNccOk() (*int32, bool) {
 
 // HasNcc returns a boolean if a field has been set.
 func (o *SeafData) HasNcc() bool {
-	if o != nil && !IsNil(o.Ncc) {
+	if o != nil && !isNil(o.Ncc) {
 		return true
 	}
 
@@ -160,7 +160,7 @@ func (o *SeafData) SetNcc(v int32) {
 
 // GetKeyAmfChangeInd returns the KeyAmfChangeInd field value if set, zero value otherwise.
 func (o *SeafData) GetKeyAmfChangeInd() bool {
-	if o == nil || IsNil(o.KeyAmfChangeInd) {
+	if o == nil || isNil(o.KeyAmfChangeInd) {
 		var ret bool
 		return ret
 	}
@@ -170,7 +170,7 @@ func (o *SeafData) GetKeyAmfChangeInd() bool {
 // GetKeyAmfChangeIndOk returns a tuple with the KeyAmfChangeInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetKeyAmfChangeIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.KeyAmfChangeInd) {
+	if o == nil || isNil(o.KeyAmfChangeInd) {
 		return nil, false
 	}
 	return o.KeyAmfChangeInd, true
@@ -178,7 +178,7 @@ func (o *SeafData) GetKeyAmfChangeIndOk() (*bool, bool) {
 
 // HasKeyAmfChangeInd returns a boolean if a field has been set.
 func (o *SeafData) HasKeyAmfChangeInd() bool {
-	if o != nil && !IsNil(o.KeyAmfChangeInd) {
+	if o != nil && !isNil(o.KeyAmfChangeInd) {
 		return true
 	}
 
@@ -192,7 +192,7 @@ func (o *SeafData) SetKeyAmfChangeInd(v bool) {
 
 // GetKeyAmfHDerivationInd returns the KeyAmfHDerivationInd field value if set, zero value otherwise.
 func (o *SeafData) GetKeyAmfHDerivationInd() bool {
-	if o == nil || IsNil(o.KeyAmfHDerivationInd) {
+	if o == nil || isNil(o.KeyAmfHDerivationInd) {
 		var ret bool
 		return ret
 	}
@@ -202,7 +202,7 @@ func (o *SeafData) GetKeyAmfHDerivationInd() bool {
 // GetKeyAmfHDerivationIndOk returns a tuple with the KeyAmfHDerivationInd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SeafData) GetKeyAmfHDerivationIndOk() (*bool, bool) {
-	if o == nil || IsNil(o.KeyAmfHDerivationInd) {
+	if o == nil || isNil(o.KeyAmfHDerivationInd) {
 		return nil, false
 	}
 	return o.KeyAmfHDerivationInd, true
@@ -210,7 +210,7 @@ func (o *SeafData) GetKeyAmfHDerivationIndOk() (*bool, bool) {
 
 // HasKeyAmfHDerivationInd returns a boolean if a field has been set.
 func (o *SeafData) HasKeyAmfHDerivationInd() bool {
-	if o != nil && !IsNil(o.KeyAmfHDerivationInd) {
+	if o != nil && !isNil(o.KeyAmfHDerivationInd) {
 		return true
 	}
 
@@ -234,16 +234,16 @@ func (o SeafData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ngKsi"] = o.NgKsi
 	toSerialize["keyAmf"] = o.KeyAmf
-	if !IsNil(o.Nh) {
+	if !isNil(o.Nh) {
 		toSerialize["nh"] = o.Nh
 	}
-	if !IsNil(o.Ncc) {
+	if !isNil(o.Ncc) {
 		toSerialize["ncc"] = o.Ncc
 	}
-	if !IsNil(o.KeyAmfChangeInd) {
+	if !isNil(o.KeyAmfChangeInd) {
 		toSerialize["keyAmfChangeInd"] = o.KeyAmfChangeInd
 	}
-	if !IsNil(o.KeyAmfHDerivationInd) {
+	if !isNil(o.KeyAmfHDerivationInd) {
 		toSerialize["keyAmfHDerivationInd"] = o.KeyAmfHDerivationInd
 	}
 	return toSerialize, nil

@@ -17,23 +17,37 @@ import (
 
 // UserStateCs Represents the user state in CS domain
 type UserStateCs struct {
-	string *string
+	UserStateCsAnyOf *UserStateCsAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *UserStateCs) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into UserStateCsAnyOf
+	err = json.Unmarshal(data, &dst.UserStateCsAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonUserStateCsAnyOf, _ := json.Marshal(dst.UserStateCsAnyOf)
+		if string(jsonUserStateCsAnyOf) == "{}" { // empty struct
+			dst.UserStateCsAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.UserStateCsAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.UserStateCsAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(UserStateCs)")
@@ -41,8 +55,12 @@ func (dst *UserStateCs) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *UserStateCs) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.UserStateCsAnyOf != nil {
+		return json.Marshal(&src.UserStateCsAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

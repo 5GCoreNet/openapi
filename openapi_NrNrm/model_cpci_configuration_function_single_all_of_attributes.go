@@ -42,7 +42,7 @@ func NewCPCIConfigurationFunctionSingleAllOfAttributesWithDefaults() *CPCIConfig
 
 // GetCPciConfigurationControl returns the CPciConfigurationControl field value if set, zero value otherwise.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationControl() bool {
-	if o == nil || IsNil(o.CPciConfigurationControl) {
+	if o == nil || isNil(o.CPciConfigurationControl) {
 		var ret bool
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationCon
 // GetCPciConfigurationControlOk returns a tuple with the CPciConfigurationControl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationControlOk() (*bool, bool) {
-	if o == nil || IsNil(o.CPciConfigurationControl) {
+	if o == nil || isNil(o.CPciConfigurationControl) {
 		return nil, false
 	}
 	return o.CPciConfigurationControl, true
@@ -60,7 +60,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCPciConfigurationCon
 
 // HasCPciConfigurationControl returns a boolean if a field has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) HasCPciConfigurationControl() bool {
-	if o != nil && !IsNil(o.CPciConfigurationControl) {
+	if o != nil && !isNil(o.CPciConfigurationControl) {
 		return true
 	}
 
@@ -74,7 +74,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) SetCPciConfigurationCon
 
 // GetCSonPciList returns the CSonPciList field value if set, zero value otherwise.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciList() CSonPciList {
-	if o == nil || IsNil(o.CSonPciList) {
+	if o == nil || isNil(o.CSonPciList) {
 		var ret CSonPciList
 		return ret
 	}
@@ -84,7 +84,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciList() CSonPc
 // GetCSonPciListOk returns a tuple with the CSonPciList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciListOk() (*CSonPciList, bool) {
-	if o == nil || IsNil(o.CSonPciList) {
+	if o == nil || isNil(o.CSonPciList) {
 		return nil, false
 	}
 	return o.CSonPciList, true
@@ -92,7 +92,7 @@ func (o *CPCIConfigurationFunctionSingleAllOfAttributes) GetCSonPciListOk() (*CS
 
 // HasCSonPciList returns a boolean if a field has been set.
 func (o *CPCIConfigurationFunctionSingleAllOfAttributes) HasCSonPciList() bool {
-	if o != nil && !IsNil(o.CSonPciList) {
+	if o != nil && !isNil(o.CSonPciList) {
 		return true
 	}
 
@@ -114,10 +114,10 @@ func (o CPCIConfigurationFunctionSingleAllOfAttributes) MarshalJSON() ([]byte, e
 
 func (o CPCIConfigurationFunctionSingleAllOfAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.CPciConfigurationControl) {
+	if !isNil(o.CPciConfigurationControl) {
 		toSerialize["cPciConfigurationControl"] = o.CPciConfigurationControl
 	}
-	if !IsNil(o.CSonPciList) {
+	if !isNil(o.CSonPciList) {
 		toSerialize["cSonPciList"] = o.CSonPciList
 	}
 	return toSerialize, nil

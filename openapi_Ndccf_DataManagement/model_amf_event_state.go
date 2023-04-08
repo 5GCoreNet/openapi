@@ -69,7 +69,7 @@ func (o *AmfEventState) SetActive(v bool) {
 
 // GetRemainReports returns the RemainReports field value if set, zero value otherwise.
 func (o *AmfEventState) GetRemainReports() int32 {
-	if o == nil || IsNil(o.RemainReports) {
+	if o == nil || isNil(o.RemainReports) {
 		var ret int32
 		return ret
 	}
@@ -79,7 +79,7 @@ func (o *AmfEventState) GetRemainReports() int32 {
 // GetRemainReportsOk returns a tuple with the RemainReports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventState) GetRemainReportsOk() (*int32, bool) {
-	if o == nil || IsNil(o.RemainReports) {
+	if o == nil || isNil(o.RemainReports) {
 		return nil, false
 	}
 	return o.RemainReports, true
@@ -87,7 +87,7 @@ func (o *AmfEventState) GetRemainReportsOk() (*int32, bool) {
 
 // HasRemainReports returns a boolean if a field has been set.
 func (o *AmfEventState) HasRemainReports() bool {
-	if o != nil && !IsNil(o.RemainReports) {
+	if o != nil && !isNil(o.RemainReports) {
 		return true
 	}
 
@@ -101,7 +101,7 @@ func (o *AmfEventState) SetRemainReports(v int32) {
 
 // GetRemainDuration returns the RemainDuration field value if set, zero value otherwise.
 func (o *AmfEventState) GetRemainDuration() int32 {
-	if o == nil || IsNil(o.RemainDuration) {
+	if o == nil || isNil(o.RemainDuration) {
 		var ret int32
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *AmfEventState) GetRemainDuration() int32 {
 // GetRemainDurationOk returns a tuple with the RemainDuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfEventState) GetRemainDurationOk() (*int32, bool) {
-	if o == nil || IsNil(o.RemainDuration) {
+	if o == nil || isNil(o.RemainDuration) {
 		return nil, false
 	}
 	return o.RemainDuration, true
@@ -119,7 +119,7 @@ func (o *AmfEventState) GetRemainDurationOk() (*int32, bool) {
 
 // HasRemainDuration returns a boolean if a field has been set.
 func (o *AmfEventState) HasRemainDuration() bool {
-	if o != nil && !IsNil(o.RemainDuration) {
+	if o != nil && !isNil(o.RemainDuration) {
 		return true
 	}
 
@@ -142,10 +142,10 @@ func (o AmfEventState) MarshalJSON() ([]byte, error) {
 func (o AmfEventState) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["active"] = o.Active
-	if !IsNil(o.RemainReports) {
+	if !isNil(o.RemainReports) {
 		toSerialize["remainReports"] = o.RemainReports
 	}
-	if !IsNil(o.RemainDuration) {
+	if !isNil(o.RemainDuration) {
 		toSerialize["remainDuration"] = o.RemainDuration
 	}
 	return toSerialize, nil

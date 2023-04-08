@@ -99,7 +99,7 @@ func (o *ServiceAccessInformationResource) SetProvisioningSessionType(v Provisio
 
 // GetStreamingAccess returns the StreamingAccess field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResource) GetStreamingAccess() ServiceAccessInformationResourceStreamingAccess {
-	if o == nil || IsNil(o.StreamingAccess) {
+	if o == nil || isNil(o.StreamingAccess) {
 		var ret ServiceAccessInformationResourceStreamingAccess
 		return ret
 	}
@@ -109,7 +109,7 @@ func (o *ServiceAccessInformationResource) GetStreamingAccess() ServiceAccessInf
 // GetStreamingAccessOk returns a tuple with the StreamingAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResource) GetStreamingAccessOk() (*ServiceAccessInformationResourceStreamingAccess, bool) {
-	if o == nil || IsNil(o.StreamingAccess) {
+	if o == nil || isNil(o.StreamingAccess) {
 		return nil, false
 	}
 	return o.StreamingAccess, true
@@ -117,7 +117,7 @@ func (o *ServiceAccessInformationResource) GetStreamingAccessOk() (*ServiceAcces
 
 // HasStreamingAccess returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResource) HasStreamingAccess() bool {
-	if o != nil && !IsNil(o.StreamingAccess) {
+	if o != nil && !isNil(o.StreamingAccess) {
 		return true
 	}
 
@@ -131,7 +131,7 @@ func (o *ServiceAccessInformationResource) SetStreamingAccess(v ServiceAccessInf
 
 // GetClientConsumptionReportingConfiguration returns the ClientConsumptionReportingConfiguration field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResource) GetClientConsumptionReportingConfiguration() ServiceAccessInformationResourceClientConsumptionReportingConfiguration {
-	if o == nil || IsNil(o.ClientConsumptionReportingConfiguration) {
+	if o == nil || isNil(o.ClientConsumptionReportingConfiguration) {
 		var ret ServiceAccessInformationResourceClientConsumptionReportingConfiguration
 		return ret
 	}
@@ -141,7 +141,7 @@ func (o *ServiceAccessInformationResource) GetClientConsumptionReportingConfigur
 // GetClientConsumptionReportingConfigurationOk returns a tuple with the ClientConsumptionReportingConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResource) GetClientConsumptionReportingConfigurationOk() (*ServiceAccessInformationResourceClientConsumptionReportingConfiguration, bool) {
-	if o == nil || IsNil(o.ClientConsumptionReportingConfiguration) {
+	if o == nil || isNil(o.ClientConsumptionReportingConfiguration) {
 		return nil, false
 	}
 	return o.ClientConsumptionReportingConfiguration, true
@@ -149,7 +149,7 @@ func (o *ServiceAccessInformationResource) GetClientConsumptionReportingConfigur
 
 // HasClientConsumptionReportingConfiguration returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResource) HasClientConsumptionReportingConfiguration() bool {
-	if o != nil && !IsNil(o.ClientConsumptionReportingConfiguration) {
+	if o != nil && !isNil(o.ClientConsumptionReportingConfiguration) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o *ServiceAccessInformationResource) SetClientConsumptionReportingConfigur
 
 // GetDynamicPolicyInvocationConfiguration returns the DynamicPolicyInvocationConfiguration field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResource) GetDynamicPolicyInvocationConfiguration() ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration {
-	if o == nil || IsNil(o.DynamicPolicyInvocationConfiguration) {
+	if o == nil || isNil(o.DynamicPolicyInvocationConfiguration) {
 		var ret ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration
 		return ret
 	}
@@ -173,7 +173,7 @@ func (o *ServiceAccessInformationResource) GetDynamicPolicyInvocationConfigurati
 // GetDynamicPolicyInvocationConfigurationOk returns a tuple with the DynamicPolicyInvocationConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResource) GetDynamicPolicyInvocationConfigurationOk() (*ServiceAccessInformationResourceDynamicPolicyInvocationConfiguration, bool) {
-	if o == nil || IsNil(o.DynamicPolicyInvocationConfiguration) {
+	if o == nil || isNil(o.DynamicPolicyInvocationConfiguration) {
 		return nil, false
 	}
 	return o.DynamicPolicyInvocationConfiguration, true
@@ -181,7 +181,7 @@ func (o *ServiceAccessInformationResource) GetDynamicPolicyInvocationConfigurati
 
 // HasDynamicPolicyInvocationConfiguration returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResource) HasDynamicPolicyInvocationConfiguration() bool {
-	if o != nil && !IsNil(o.DynamicPolicyInvocationConfiguration) {
+	if o != nil && !isNil(o.DynamicPolicyInvocationConfiguration) {
 		return true
 	}
 
@@ -195,7 +195,7 @@ func (o *ServiceAccessInformationResource) SetDynamicPolicyInvocationConfigurati
 
 // GetClientMetricsReportingConfiguration returns the ClientMetricsReportingConfiguration field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResource) GetClientMetricsReportingConfiguration() []ServiceAccessInformationResourceClientMetricsReportingConfigurationInner {
-	if o == nil || IsNil(o.ClientMetricsReportingConfiguration) {
+	if o == nil || isNil(o.ClientMetricsReportingConfiguration) {
 		var ret []ServiceAccessInformationResourceClientMetricsReportingConfigurationInner
 		return ret
 	}
@@ -205,7 +205,7 @@ func (o *ServiceAccessInformationResource) GetClientMetricsReportingConfiguratio
 // GetClientMetricsReportingConfigurationOk returns a tuple with the ClientMetricsReportingConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResource) GetClientMetricsReportingConfigurationOk() ([]ServiceAccessInformationResourceClientMetricsReportingConfigurationInner, bool) {
-	if o == nil || IsNil(o.ClientMetricsReportingConfiguration) {
+	if o == nil || isNil(o.ClientMetricsReportingConfiguration) {
 		return nil, false
 	}
 	return o.ClientMetricsReportingConfiguration, true
@@ -213,7 +213,7 @@ func (o *ServiceAccessInformationResource) GetClientMetricsReportingConfiguratio
 
 // HasClientMetricsReportingConfiguration returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResource) HasClientMetricsReportingConfiguration() bool {
-	if o != nil && !IsNil(o.ClientMetricsReportingConfiguration) {
+	if o != nil && !isNil(o.ClientMetricsReportingConfiguration) {
 		return true
 	}
 
@@ -227,7 +227,7 @@ func (o *ServiceAccessInformationResource) SetClientMetricsReportingConfiguratio
 
 // GetNetworkAssistanceConfiguration returns the NetworkAssistanceConfiguration field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResource) GetNetworkAssistanceConfiguration() ServiceAccessInformationResourceNetworkAssistanceConfiguration {
-	if o == nil || IsNil(o.NetworkAssistanceConfiguration) {
+	if o == nil || isNil(o.NetworkAssistanceConfiguration) {
 		var ret ServiceAccessInformationResourceNetworkAssistanceConfiguration
 		return ret
 	}
@@ -237,7 +237,7 @@ func (o *ServiceAccessInformationResource) GetNetworkAssistanceConfiguration() S
 // GetNetworkAssistanceConfigurationOk returns a tuple with the NetworkAssistanceConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResource) GetNetworkAssistanceConfigurationOk() (*ServiceAccessInformationResourceNetworkAssistanceConfiguration, bool) {
-	if o == nil || IsNil(o.NetworkAssistanceConfiguration) {
+	if o == nil || isNil(o.NetworkAssistanceConfiguration) {
 		return nil, false
 	}
 	return o.NetworkAssistanceConfiguration, true
@@ -245,7 +245,7 @@ func (o *ServiceAccessInformationResource) GetNetworkAssistanceConfigurationOk()
 
 // HasNetworkAssistanceConfiguration returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResource) HasNetworkAssistanceConfiguration() bool {
-	if o != nil && !IsNil(o.NetworkAssistanceConfiguration) {
+	if o != nil && !isNil(o.NetworkAssistanceConfiguration) {
 		return true
 	}
 
@@ -259,7 +259,7 @@ func (o *ServiceAccessInformationResource) SetNetworkAssistanceConfiguration(v S
 
 // GetClientEdgeResourcesConfiguration returns the ClientEdgeResourcesConfiguration field value if set, zero value otherwise.
 func (o *ServiceAccessInformationResource) GetClientEdgeResourcesConfiguration() ServiceAccessInformationResourceClientEdgeResourcesConfiguration {
-	if o == nil || IsNil(o.ClientEdgeResourcesConfiguration) {
+	if o == nil || isNil(o.ClientEdgeResourcesConfiguration) {
 		var ret ServiceAccessInformationResourceClientEdgeResourcesConfiguration
 		return ret
 	}
@@ -269,7 +269,7 @@ func (o *ServiceAccessInformationResource) GetClientEdgeResourcesConfiguration()
 // GetClientEdgeResourcesConfigurationOk returns a tuple with the ClientEdgeResourcesConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ServiceAccessInformationResource) GetClientEdgeResourcesConfigurationOk() (*ServiceAccessInformationResourceClientEdgeResourcesConfiguration, bool) {
-	if o == nil || IsNil(o.ClientEdgeResourcesConfiguration) {
+	if o == nil || isNil(o.ClientEdgeResourcesConfiguration) {
 		return nil, false
 	}
 	return o.ClientEdgeResourcesConfiguration, true
@@ -277,7 +277,7 @@ func (o *ServiceAccessInformationResource) GetClientEdgeResourcesConfigurationOk
 
 // HasClientEdgeResourcesConfiguration returns a boolean if a field has been set.
 func (o *ServiceAccessInformationResource) HasClientEdgeResourcesConfiguration() bool {
-	if o != nil && !IsNil(o.ClientEdgeResourcesConfiguration) {
+	if o != nil && !isNil(o.ClientEdgeResourcesConfiguration) {
 		return true
 	}
 
@@ -301,22 +301,22 @@ func (o ServiceAccessInformationResource) ToMap() (map[string]interface{}, error
 	toSerialize := map[string]interface{}{}
 	toSerialize["provisioningSessionId"] = o.ProvisioningSessionId
 	toSerialize["provisioningSessionType"] = o.ProvisioningSessionType
-	if !IsNil(o.StreamingAccess) {
+	if !isNil(o.StreamingAccess) {
 		toSerialize["streamingAccess"] = o.StreamingAccess
 	}
-	if !IsNil(o.ClientConsumptionReportingConfiguration) {
+	if !isNil(o.ClientConsumptionReportingConfiguration) {
 		toSerialize["clientConsumptionReportingConfiguration"] = o.ClientConsumptionReportingConfiguration
 	}
-	if !IsNil(o.DynamicPolicyInvocationConfiguration) {
+	if !isNil(o.DynamicPolicyInvocationConfiguration) {
 		toSerialize["dynamicPolicyInvocationConfiguration"] = o.DynamicPolicyInvocationConfiguration
 	}
-	if !IsNil(o.ClientMetricsReportingConfiguration) {
+	if !isNil(o.ClientMetricsReportingConfiguration) {
 		toSerialize["clientMetricsReportingConfiguration"] = o.ClientMetricsReportingConfiguration
 	}
-	if !IsNil(o.NetworkAssistanceConfiguration) {
+	if !isNil(o.NetworkAssistanceConfiguration) {
 		toSerialize["networkAssistanceConfiguration"] = o.NetworkAssistanceConfiguration
 	}
-	if !IsNil(o.ClientEdgeResourcesConfiguration) {
+	if !isNil(o.ClientEdgeResourcesConfiguration) {
 		toSerialize["clientEdgeResourcesConfiguration"] = o.ClientEdgeResourcesConfiguration
 	}
 	return toSerialize, nil

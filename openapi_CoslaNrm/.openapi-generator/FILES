@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -23,15 +22,11 @@ docs/AssuranceClosedControlLoopSingleAllOf.md
 docs/AssuranceClosedControlLoopSingleAllOfAttributes.md
 docs/AssuranceGoalSingle.md
 docs/AssuranceGoalSingleAllOf.md
-docs/AssuranceGoalSingleAllOfAttributes.md
-docs/AssuranceGoalSingleAllOfAttributesAllOf.md
 docs/AssuranceGoalStatus.md
 docs/AssuranceGoalStatusObserved.md
 docs/AssuranceGoalStatusPredicted.md
 docs/AssuranceReportSingle.md
 docs/AssuranceReportSingleAllOf.md
-docs/AssuranceReportSingleAllOfAttributes.md
-docs/AssuranceReportSingleAllOfAttributesAllOf.md
 docs/AssuranceScope.md
 docs/AssuranceTarget.md
 docs/AssuranceTargetStatus.md
@@ -82,7 +77,6 @@ docs/ManagedElementAttr.md
 docs/ManagedElementNcO.md
 docs/ManagedElementSingle.md
 docs/ManagedElementSingleAllOf.md
-docs/ManagedElementSingleAllOfAttributes.md
 docs/ManagementData.md
 docs/ManagementDataCollectionSingle.md
 docs/ManagementDataCollectionSingleAllOf.md
@@ -121,7 +115,6 @@ docs/PlmnListTypeInner.md
 docs/PlmnTargetType.md
 docs/PositioningMethodType.md
 docs/ProbableCause.md
-docs/ProbableCauseOneOf.md
 docs/ReportAmountType.md
 docs/ReportIntervalType.md
 docs/ReportTypeType.md
@@ -137,7 +130,6 @@ docs/SubNetworkNcO.md
 docs/SubNetworkSingle.md
 docs/SubNetworkSingleAllOf.md
 docs/SubNetworkSingleAllOf1.md
-docs/SubNetworkSingleAllOfAttributes.md
 docs/SupportedPerfMetricGroup.md
 docs/Tai.md
 docs/Tai1.md
@@ -186,15 +178,11 @@ model_assurance_closed_control_loop_single_all_of.go
 model_assurance_closed_control_loop_single_all_of_attributes.go
 model_assurance_goal_single.go
 model_assurance_goal_single_all_of.go
-model_assurance_goal_single_all_of_attributes.go
-model_assurance_goal_single_all_of_attributes_all_of.go
 model_assurance_goal_status.go
 model_assurance_goal_status_observed.go
 model_assurance_goal_status_predicted.go
 model_assurance_report_single.go
 model_assurance_report_single_all_of.go
-model_assurance_report_single_all_of_attributes.go
-model_assurance_report_single_all_of_attributes_all_of.go
 model_assurance_scope.go
 model_assurance_target.go
 model_assurance_target_status.go
@@ -245,7 +233,6 @@ model_managed_element_attr.go
 model_managed_element_nc_o.go
 model_managed_element_single.go
 model_managed_element_single_all_of.go
-model_managed_element_single_all_of_attributes.go
 model_management_data.go
 model_management_data_collection_single.go
 model_management_data_collection_single_all_of.go
@@ -284,7 +271,6 @@ model_plmn_list_type_inner.go
 model_plmn_target_type.go
 model_positioning_method_type.go
 model_probable_cause.go
-model_probable_cause_one_of.go
 model_report_amount_type.go
 model_report_interval_type.go
 model_report_type_type.go
@@ -300,7 +286,6 @@ model_sub_network_nc_o.go
 model_sub_network_single.go
 model_sub_network_single_all_of.go
 model_sub_network_single_all_of_1.go
-model_sub_network_single_all_of_attributes.go
 model_supported_perf_metric_group.go
 model_tai.go
 model_tai_1.go

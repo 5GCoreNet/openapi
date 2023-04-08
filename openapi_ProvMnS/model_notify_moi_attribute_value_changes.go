@@ -12,7 +12,6 @@ package openapi_ProvMnS
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the NotifyMoiAttributeValueChanges type satisfies the MappedNullable interface at compile time
@@ -177,7 +176,7 @@ func (o *NotifyMoiAttributeValueChanges) SetSystemDN(v string) {
 
 // GetCorrelatedNotifications returns the CorrelatedNotifications field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotifications() []CorrelatedNotification {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		var ret []CorrelatedNotification
 		return ret
 	}
@@ -187,7 +186,7 @@ func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotifications() []Correlat
 // GetCorrelatedNotificationsOk returns a tuple with the CorrelatedNotifications field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotificationsOk() ([]CorrelatedNotification, bool) {
-	if o == nil || IsNil(o.CorrelatedNotifications) {
+	if o == nil || isNil(o.CorrelatedNotifications) {
 		return nil, false
 	}
 	return o.CorrelatedNotifications, true
@@ -195,7 +194,7 @@ func (o *NotifyMoiAttributeValueChanges) GetCorrelatedNotificationsOk() ([]Corre
 
 // HasCorrelatedNotifications returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChanges) HasCorrelatedNotifications() bool {
-	if o != nil && !IsNil(o.CorrelatedNotifications) {
+	if o != nil && !isNil(o.CorrelatedNotifications) {
 		return true
 	}
 
@@ -209,7 +208,7 @@ func (o *NotifyMoiAttributeValueChanges) SetCorrelatedNotifications(v []Correlat
 
 // GetAdditionalText returns the AdditionalText field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChanges) GetAdditionalText() string {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		var ret string
 		return ret
 	}
@@ -219,7 +218,7 @@ func (o *NotifyMoiAttributeValueChanges) GetAdditionalText() string {
 // GetAdditionalTextOk returns a tuple with the AdditionalText field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChanges) GetAdditionalTextOk() (*string, bool) {
-	if o == nil || IsNil(o.AdditionalText) {
+	if o == nil || isNil(o.AdditionalText) {
 		return nil, false
 	}
 	return o.AdditionalText, true
@@ -227,7 +226,7 @@ func (o *NotifyMoiAttributeValueChanges) GetAdditionalTextOk() (*string, bool) {
 
 // HasAdditionalText returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChanges) HasAdditionalText() bool {
-	if o != nil && !IsNil(o.AdditionalText) {
+	if o != nil && !isNil(o.AdditionalText) {
 		return true
 	}
 
@@ -241,7 +240,7 @@ func (o *NotifyMoiAttributeValueChanges) SetAdditionalText(v string) {
 
 // GetSourceIndicator returns the SourceIndicator field value if set, zero value otherwise.
 func (o *NotifyMoiAttributeValueChanges) GetSourceIndicator() SourceIndicator {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		var ret SourceIndicator
 		return ret
 	}
@@ -251,7 +250,7 @@ func (o *NotifyMoiAttributeValueChanges) GetSourceIndicator() SourceIndicator {
 // GetSourceIndicatorOk returns a tuple with the SourceIndicator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NotifyMoiAttributeValueChanges) GetSourceIndicatorOk() (*SourceIndicator, bool) {
-	if o == nil || IsNil(o.SourceIndicator) {
+	if o == nil || isNil(o.SourceIndicator) {
 		return nil, false
 	}
 	return o.SourceIndicator, true
@@ -259,7 +258,7 @@ func (o *NotifyMoiAttributeValueChanges) GetSourceIndicatorOk() (*SourceIndicato
 
 // HasSourceIndicator returns a boolean if a field has been set.
 func (o *NotifyMoiAttributeValueChanges) HasSourceIndicator() bool {
-	if o != nil && !IsNil(o.SourceIndicator) {
+	if o != nil && !isNil(o.SourceIndicator) {
 		return true
 	}
 
@@ -310,13 +309,13 @@ func (o NotifyMoiAttributeValueChanges) ToMap() (map[string]interface{}, error) 
 	toSerialize["notificationType"] = o.NotificationType
 	toSerialize["eventTime"] = o.EventTime
 	toSerialize["systemDN"] = o.SystemDN
-	if !IsNil(o.CorrelatedNotifications) {
+	if !isNil(o.CorrelatedNotifications) {
 		toSerialize["correlatedNotifications"] = o.CorrelatedNotifications
 	}
-	if !IsNil(o.AdditionalText) {
+	if !isNil(o.AdditionalText) {
 		toSerialize["additionalText"] = o.AdditionalText
 	}
-	if !IsNil(o.SourceIndicator) {
+	if !isNil(o.SourceIndicator) {
 		toSerialize["sourceIndicator"] = o.SourceIndicator
 	}
 	toSerialize["attributeListValueChanges"] = o.AttributeListValueChanges

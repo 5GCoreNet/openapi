@@ -47,7 +47,7 @@ func NewV2xContextWithDefaults() *V2xContext {
 
 // GetNrV2xServicesAuth returns the NrV2xServicesAuth field value if set, zero value otherwise.
 func (o *V2xContext) GetNrV2xServicesAuth() NrV2xAuth {
-	if o == nil || IsNil(o.NrV2xServicesAuth) {
+	if o == nil || isNil(o.NrV2xServicesAuth) {
 		var ret NrV2xAuth
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *V2xContext) GetNrV2xServicesAuth() NrV2xAuth {
 // GetNrV2xServicesAuthOk returns a tuple with the NrV2xServicesAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xContext) GetNrV2xServicesAuthOk() (*NrV2xAuth, bool) {
-	if o == nil || IsNil(o.NrV2xServicesAuth) {
+	if o == nil || isNil(o.NrV2xServicesAuth) {
 		return nil, false
 	}
 	return o.NrV2xServicesAuth, true
@@ -65,7 +65,7 @@ func (o *V2xContext) GetNrV2xServicesAuthOk() (*NrV2xAuth, bool) {
 
 // HasNrV2xServicesAuth returns a boolean if a field has been set.
 func (o *V2xContext) HasNrV2xServicesAuth() bool {
-	if o != nil && !IsNil(o.NrV2xServicesAuth) {
+	if o != nil && !isNil(o.NrV2xServicesAuth) {
 		return true
 	}
 
@@ -79,7 +79,7 @@ func (o *V2xContext) SetNrV2xServicesAuth(v NrV2xAuth) {
 
 // GetLteV2xServicesAuth returns the LteV2xServicesAuth field value if set, zero value otherwise.
 func (o *V2xContext) GetLteV2xServicesAuth() LteV2xAuth {
-	if o == nil || IsNil(o.LteV2xServicesAuth) {
+	if o == nil || isNil(o.LteV2xServicesAuth) {
 		var ret LteV2xAuth
 		return ret
 	}
@@ -89,7 +89,7 @@ func (o *V2xContext) GetLteV2xServicesAuth() LteV2xAuth {
 // GetLteV2xServicesAuthOk returns a tuple with the LteV2xServicesAuth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xContext) GetLteV2xServicesAuthOk() (*LteV2xAuth, bool) {
-	if o == nil || IsNil(o.LteV2xServicesAuth) {
+	if o == nil || isNil(o.LteV2xServicesAuth) {
 		return nil, false
 	}
 	return o.LteV2xServicesAuth, true
@@ -97,7 +97,7 @@ func (o *V2xContext) GetLteV2xServicesAuthOk() (*LteV2xAuth, bool) {
 
 // HasLteV2xServicesAuth returns a boolean if a field has been set.
 func (o *V2xContext) HasLteV2xServicesAuth() bool {
-	if o != nil && !IsNil(o.LteV2xServicesAuth) {
+	if o != nil && !isNil(o.LteV2xServicesAuth) {
 		return true
 	}
 
@@ -111,7 +111,7 @@ func (o *V2xContext) SetLteV2xServicesAuth(v LteV2xAuth) {
 
 // GetNrUeSidelinkAmbr returns the NrUeSidelinkAmbr field value if set, zero value otherwise.
 func (o *V2xContext) GetNrUeSidelinkAmbr() string {
-	if o == nil || IsNil(o.NrUeSidelinkAmbr) {
+	if o == nil || isNil(o.NrUeSidelinkAmbr) {
 		var ret string
 		return ret
 	}
@@ -121,7 +121,7 @@ func (o *V2xContext) GetNrUeSidelinkAmbr() string {
 // GetNrUeSidelinkAmbrOk returns a tuple with the NrUeSidelinkAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xContext) GetNrUeSidelinkAmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.NrUeSidelinkAmbr) {
+	if o == nil || isNil(o.NrUeSidelinkAmbr) {
 		return nil, false
 	}
 	return o.NrUeSidelinkAmbr, true
@@ -129,7 +129,7 @@ func (o *V2xContext) GetNrUeSidelinkAmbrOk() (*string, bool) {
 
 // HasNrUeSidelinkAmbr returns a boolean if a field has been set.
 func (o *V2xContext) HasNrUeSidelinkAmbr() bool {
-	if o != nil && !IsNil(o.NrUeSidelinkAmbr) {
+	if o != nil && !isNil(o.NrUeSidelinkAmbr) {
 		return true
 	}
 
@@ -143,7 +143,7 @@ func (o *V2xContext) SetNrUeSidelinkAmbr(v string) {
 
 // GetLteUeSidelinkAmbr returns the LteUeSidelinkAmbr field value if set, zero value otherwise.
 func (o *V2xContext) GetLteUeSidelinkAmbr() string {
-	if o == nil || IsNil(o.LteUeSidelinkAmbr) {
+	if o == nil || isNil(o.LteUeSidelinkAmbr) {
 		var ret string
 		return ret
 	}
@@ -153,7 +153,7 @@ func (o *V2xContext) GetLteUeSidelinkAmbr() string {
 // GetLteUeSidelinkAmbrOk returns a tuple with the LteUeSidelinkAmbr field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xContext) GetLteUeSidelinkAmbrOk() (*string, bool) {
-	if o == nil || IsNil(o.LteUeSidelinkAmbr) {
+	if o == nil || isNil(o.LteUeSidelinkAmbr) {
 		return nil, false
 	}
 	return o.LteUeSidelinkAmbr, true
@@ -161,7 +161,7 @@ func (o *V2xContext) GetLteUeSidelinkAmbrOk() (*string, bool) {
 
 // HasLteUeSidelinkAmbr returns a boolean if a field has been set.
 func (o *V2xContext) HasLteUeSidelinkAmbr() bool {
-	if o != nil && !IsNil(o.LteUeSidelinkAmbr) {
+	if o != nil && !isNil(o.LteUeSidelinkAmbr) {
 		return true
 	}
 
@@ -175,7 +175,7 @@ func (o *V2xContext) SetLteUeSidelinkAmbr(v string) {
 
 // GetPc5QoSPara returns the Pc5QoSPara field value if set, zero value otherwise.
 func (o *V2xContext) GetPc5QoSPara() Pc5QoSPara {
-	if o == nil || IsNil(o.Pc5QoSPara) {
+	if o == nil || isNil(o.Pc5QoSPara) {
 		var ret Pc5QoSPara
 		return ret
 	}
@@ -185,7 +185,7 @@ func (o *V2xContext) GetPc5QoSPara() Pc5QoSPara {
 // GetPc5QoSParaOk returns a tuple with the Pc5QoSPara field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *V2xContext) GetPc5QoSParaOk() (*Pc5QoSPara, bool) {
-	if o == nil || IsNil(o.Pc5QoSPara) {
+	if o == nil || isNil(o.Pc5QoSPara) {
 		return nil, false
 	}
 	return o.Pc5QoSPara, true
@@ -193,7 +193,7 @@ func (o *V2xContext) GetPc5QoSParaOk() (*Pc5QoSPara, bool) {
 
 // HasPc5QoSPara returns a boolean if a field has been set.
 func (o *V2xContext) HasPc5QoSPara() bool {
-	if o != nil && !IsNil(o.Pc5QoSPara) {
+	if o != nil && !isNil(o.Pc5QoSPara) {
 		return true
 	}
 
@@ -215,19 +215,19 @@ func (o V2xContext) MarshalJSON() ([]byte, error) {
 
 func (o V2xContext) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.NrV2xServicesAuth) {
+	if !isNil(o.NrV2xServicesAuth) {
 		toSerialize["nrV2xServicesAuth"] = o.NrV2xServicesAuth
 	}
-	if !IsNil(o.LteV2xServicesAuth) {
+	if !isNil(o.LteV2xServicesAuth) {
 		toSerialize["lteV2xServicesAuth"] = o.LteV2xServicesAuth
 	}
-	if !IsNil(o.NrUeSidelinkAmbr) {
+	if !isNil(o.NrUeSidelinkAmbr) {
 		toSerialize["nrUeSidelinkAmbr"] = o.NrUeSidelinkAmbr
 	}
-	if !IsNil(o.LteUeSidelinkAmbr) {
+	if !isNil(o.LteUeSidelinkAmbr) {
 		toSerialize["lteUeSidelinkAmbr"] = o.LteUeSidelinkAmbr
 	}
-	if !IsNil(o.Pc5QoSPara) {
+	if !isNil(o.Pc5QoSPara) {
 		toSerialize["pc5QoSPara"] = o.Pc5QoSPara
 	}
 	return toSerialize, nil

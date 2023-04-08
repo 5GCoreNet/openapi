@@ -44,7 +44,7 @@ func NewEsNotAllowedTimePeriodWithDefaults() *EsNotAllowedTimePeriod {
 
 // GetStartTimeandendTime returns the StartTimeandendTime field value if set, zero value otherwise.
 func (o *EsNotAllowedTimePeriod) GetStartTimeandendTime() string {
-	if o == nil || IsNil(o.StartTimeandendTime) {
+	if o == nil || isNil(o.StartTimeandendTime) {
 		var ret string
 		return ret
 	}
@@ -54,7 +54,7 @@ func (o *EsNotAllowedTimePeriod) GetStartTimeandendTime() string {
 // GetStartTimeandendTimeOk returns a tuple with the StartTimeandendTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EsNotAllowedTimePeriod) GetStartTimeandendTimeOk() (*string, bool) {
-	if o == nil || IsNil(o.StartTimeandendTime) {
+	if o == nil || isNil(o.StartTimeandendTime) {
 		return nil, false
 	}
 	return o.StartTimeandendTime, true
@@ -62,7 +62,7 @@ func (o *EsNotAllowedTimePeriod) GetStartTimeandendTimeOk() (*string, bool) {
 
 // HasStartTimeandendTime returns a boolean if a field has been set.
 func (o *EsNotAllowedTimePeriod) HasStartTimeandendTime() bool {
-	if o != nil && !IsNil(o.StartTimeandendTime) {
+	if o != nil && !isNil(o.StartTimeandendTime) {
 		return true
 	}
 
@@ -76,7 +76,7 @@ func (o *EsNotAllowedTimePeriod) SetStartTimeandendTime(v string) {
 
 // GetPeriodOfDay returns the PeriodOfDay field value if set, zero value otherwise.
 func (o *EsNotAllowedTimePeriod) GetPeriodOfDay() string {
-	if o == nil || IsNil(o.PeriodOfDay) {
+	if o == nil || isNil(o.PeriodOfDay) {
 		var ret string
 		return ret
 	}
@@ -86,7 +86,7 @@ func (o *EsNotAllowedTimePeriod) GetPeriodOfDay() string {
 // GetPeriodOfDayOk returns a tuple with the PeriodOfDay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EsNotAllowedTimePeriod) GetPeriodOfDayOk() (*string, bool) {
-	if o == nil || IsNil(o.PeriodOfDay) {
+	if o == nil || isNil(o.PeriodOfDay) {
 		return nil, false
 	}
 	return o.PeriodOfDay, true
@@ -94,7 +94,7 @@ func (o *EsNotAllowedTimePeriod) GetPeriodOfDayOk() (*string, bool) {
 
 // HasPeriodOfDay returns a boolean if a field has been set.
 func (o *EsNotAllowedTimePeriod) HasPeriodOfDay() bool {
-	if o != nil && !IsNil(o.PeriodOfDay) {
+	if o != nil && !isNil(o.PeriodOfDay) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o *EsNotAllowedTimePeriod) SetPeriodOfDay(v string) {
 
 // GetDaysOfWeekList returns the DaysOfWeekList field value if set, zero value otherwise.
 func (o *EsNotAllowedTimePeriod) GetDaysOfWeekList() string {
-	if o == nil || IsNil(o.DaysOfWeekList) {
+	if o == nil || isNil(o.DaysOfWeekList) {
 		var ret string
 		return ret
 	}
@@ -118,7 +118,7 @@ func (o *EsNotAllowedTimePeriod) GetDaysOfWeekList() string {
 // GetDaysOfWeekListOk returns a tuple with the DaysOfWeekList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EsNotAllowedTimePeriod) GetDaysOfWeekListOk() (*string, bool) {
-	if o == nil || IsNil(o.DaysOfWeekList) {
+	if o == nil || isNil(o.DaysOfWeekList) {
 		return nil, false
 	}
 	return o.DaysOfWeekList, true
@@ -126,7 +126,7 @@ func (o *EsNotAllowedTimePeriod) GetDaysOfWeekListOk() (*string, bool) {
 
 // HasDaysOfWeekList returns a boolean if a field has been set.
 func (o *EsNotAllowedTimePeriod) HasDaysOfWeekList() bool {
-	if o != nil && !IsNil(o.DaysOfWeekList) {
+	if o != nil && !isNil(o.DaysOfWeekList) {
 		return true
 	}
 
@@ -140,7 +140,7 @@ func (o *EsNotAllowedTimePeriod) SetDaysOfWeekList(v string) {
 
 // GetListoftimeperiods returns the Listoftimeperiods field value if set, zero value otherwise.
 func (o *EsNotAllowedTimePeriod) GetListoftimeperiods() string {
-	if o == nil || IsNil(o.Listoftimeperiods) {
+	if o == nil || isNil(o.Listoftimeperiods) {
 		var ret string
 		return ret
 	}
@@ -150,7 +150,7 @@ func (o *EsNotAllowedTimePeriod) GetListoftimeperiods() string {
 // GetListoftimeperiodsOk returns a tuple with the Listoftimeperiods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EsNotAllowedTimePeriod) GetListoftimeperiodsOk() (*string, bool) {
-	if o == nil || IsNil(o.Listoftimeperiods) {
+	if o == nil || isNil(o.Listoftimeperiods) {
 		return nil, false
 	}
 	return o.Listoftimeperiods, true
@@ -158,7 +158,7 @@ func (o *EsNotAllowedTimePeriod) GetListoftimeperiodsOk() (*string, bool) {
 
 // HasListoftimeperiods returns a boolean if a field has been set.
 func (o *EsNotAllowedTimePeriod) HasListoftimeperiods() bool {
-	if o != nil && !IsNil(o.Listoftimeperiods) {
+	if o != nil && !isNil(o.Listoftimeperiods) {
 		return true
 	}
 
@@ -180,16 +180,16 @@ func (o EsNotAllowedTimePeriod) MarshalJSON() ([]byte, error) {
 
 func (o EsNotAllowedTimePeriod) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.StartTimeandendTime) {
+	if !isNil(o.StartTimeandendTime) {
 		toSerialize["startTimeandendTime"] = o.StartTimeandendTime
 	}
-	if !IsNil(o.PeriodOfDay) {
+	if !isNil(o.PeriodOfDay) {
 		toSerialize["periodOfDay"] = o.PeriodOfDay
 	}
-	if !IsNil(o.DaysOfWeekList) {
+	if !isNil(o.DaysOfWeekList) {
 		toSerialize["daysOfWeekList"] = o.DaysOfWeekList
 	}
-	if !IsNil(o.Listoftimeperiods) {
+	if !isNil(o.Listoftimeperiods) {
 		toSerialize["listoftimeperiods"] = o.Listoftimeperiods
 	}
 	return toSerialize, nil

@@ -43,7 +43,7 @@ func NewTargetUeIdentificationWithDefaults() *TargetUeIdentification {
 
 // GetSupis returns the Supis field value if set, zero value otherwise.
 func (o *TargetUeIdentification) GetSupis() []string {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		var ret []string
 		return ret
 	}
@@ -53,7 +53,7 @@ func (o *TargetUeIdentification) GetSupis() []string {
 // GetSupisOk returns a tuple with the Supis field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeIdentification) GetSupisOk() ([]string, bool) {
-	if o == nil || IsNil(o.Supis) {
+	if o == nil || isNil(o.Supis) {
 		return nil, false
 	}
 	return o.Supis, true
@@ -61,7 +61,7 @@ func (o *TargetUeIdentification) GetSupisOk() ([]string, bool) {
 
 // HasSupis returns a boolean if a field has been set.
 func (o *TargetUeIdentification) HasSupis() bool {
-	if o != nil && !IsNil(o.Supis) {
+	if o != nil && !isNil(o.Supis) {
 		return true
 	}
 
@@ -75,7 +75,7 @@ func (o *TargetUeIdentification) SetSupis(v []string) {
 
 // GetInterGroupIds returns the InterGroupIds field value if set, zero value otherwise.
 func (o *TargetUeIdentification) GetInterGroupIds() []string {
-	if o == nil || IsNil(o.InterGroupIds) {
+	if o == nil || isNil(o.InterGroupIds) {
 		var ret []string
 		return ret
 	}
@@ -85,7 +85,7 @@ func (o *TargetUeIdentification) GetInterGroupIds() []string {
 // GetInterGroupIdsOk returns a tuple with the InterGroupIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeIdentification) GetInterGroupIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.InterGroupIds) {
+	if o == nil || isNil(o.InterGroupIds) {
 		return nil, false
 	}
 	return o.InterGroupIds, true
@@ -93,7 +93,7 @@ func (o *TargetUeIdentification) GetInterGroupIdsOk() ([]string, bool) {
 
 // HasInterGroupIds returns a boolean if a field has been set.
 func (o *TargetUeIdentification) HasInterGroupIds() bool {
-	if o != nil && !IsNil(o.InterGroupIds) {
+	if o != nil && !isNil(o.InterGroupIds) {
 		return true
 	}
 
@@ -107,7 +107,7 @@ func (o *TargetUeIdentification) SetInterGroupIds(v []string) {
 
 // GetAnyUeId returns the AnyUeId field value if set, zero value otherwise.
 func (o *TargetUeIdentification) GetAnyUeId() bool {
-	if o == nil || IsNil(o.AnyUeId) {
+	if o == nil || isNil(o.AnyUeId) {
 		var ret bool
 		return ret
 	}
@@ -117,7 +117,7 @@ func (o *TargetUeIdentification) GetAnyUeId() bool {
 // GetAnyUeIdOk returns a tuple with the AnyUeId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TargetUeIdentification) GetAnyUeIdOk() (*bool, bool) {
-	if o == nil || IsNil(o.AnyUeId) {
+	if o == nil || isNil(o.AnyUeId) {
 		return nil, false
 	}
 	return o.AnyUeId, true
@@ -125,7 +125,7 @@ func (o *TargetUeIdentification) GetAnyUeIdOk() (*bool, bool) {
 
 // HasAnyUeId returns a boolean if a field has been set.
 func (o *TargetUeIdentification) HasAnyUeId() bool {
-	if o != nil && !IsNil(o.AnyUeId) {
+	if o != nil && !isNil(o.AnyUeId) {
 		return true
 	}
 
@@ -147,13 +147,13 @@ func (o TargetUeIdentification) MarshalJSON() ([]byte, error) {
 
 func (o TargetUeIdentification) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Supis) {
+	if !isNil(o.Supis) {
 		toSerialize["supis"] = o.Supis
 	}
-	if !IsNil(o.InterGroupIds) {
+	if !isNil(o.InterGroupIds) {
 		toSerialize["interGroupIds"] = o.InterGroupIds
 	}
-	if !IsNil(o.AnyUeId) {
+	if !isNil(o.AnyUeId) {
 		toSerialize["anyUeId"] = o.AnyUeId
 	}
 	return toSerialize, nil

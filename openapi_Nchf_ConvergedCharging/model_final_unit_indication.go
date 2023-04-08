@@ -71,7 +71,7 @@ func (o *FinalUnitIndication) SetFinalUnitAction(v FinalUnitAction) {
 
 // GetRestrictionFilterRule returns the RestrictionFilterRule field value if set, zero value otherwise.
 func (o *FinalUnitIndication) GetRestrictionFilterRule() string {
-	if o == nil || IsNil(o.RestrictionFilterRule) {
+	if o == nil || isNil(o.RestrictionFilterRule) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *FinalUnitIndication) GetRestrictionFilterRule() string {
 // GetRestrictionFilterRuleOk returns a tuple with the RestrictionFilterRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FinalUnitIndication) GetRestrictionFilterRuleOk() (*string, bool) {
-	if o == nil || IsNil(o.RestrictionFilterRule) {
+	if o == nil || isNil(o.RestrictionFilterRule) {
 		return nil, false
 	}
 	return o.RestrictionFilterRule, true
@@ -89,7 +89,7 @@ func (o *FinalUnitIndication) GetRestrictionFilterRuleOk() (*string, bool) {
 
 // HasRestrictionFilterRule returns a boolean if a field has been set.
 func (o *FinalUnitIndication) HasRestrictionFilterRule() bool {
-	if o != nil && !IsNil(o.RestrictionFilterRule) {
+	if o != nil && !isNil(o.RestrictionFilterRule) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *FinalUnitIndication) SetRestrictionFilterRule(v string) {
 
 // GetRestrictionFilterRuleList returns the RestrictionFilterRuleList field value if set, zero value otherwise.
 func (o *FinalUnitIndication) GetRestrictionFilterRuleList() []string {
-	if o == nil || IsNil(o.RestrictionFilterRuleList) {
+	if o == nil || isNil(o.RestrictionFilterRuleList) {
 		var ret []string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *FinalUnitIndication) GetRestrictionFilterRuleList() []string {
 // GetRestrictionFilterRuleListOk returns a tuple with the RestrictionFilterRuleList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FinalUnitIndication) GetRestrictionFilterRuleListOk() ([]string, bool) {
-	if o == nil || IsNil(o.RestrictionFilterRuleList) {
+	if o == nil || isNil(o.RestrictionFilterRuleList) {
 		return nil, false
 	}
 	return o.RestrictionFilterRuleList, true
@@ -121,7 +121,7 @@ func (o *FinalUnitIndication) GetRestrictionFilterRuleListOk() ([]string, bool) 
 
 // HasRestrictionFilterRuleList returns a boolean if a field has been set.
 func (o *FinalUnitIndication) HasRestrictionFilterRuleList() bool {
-	if o != nil && !IsNil(o.RestrictionFilterRuleList) {
+	if o != nil && !isNil(o.RestrictionFilterRuleList) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o *FinalUnitIndication) SetRestrictionFilterRuleList(v []string) {
 
 // GetFilterId returns the FilterId field value if set, zero value otherwise.
 func (o *FinalUnitIndication) GetFilterId() string {
-	if o == nil || IsNil(o.FilterId) {
+	if o == nil || isNil(o.FilterId) {
 		var ret string
 		return ret
 	}
@@ -145,7 +145,7 @@ func (o *FinalUnitIndication) GetFilterId() string {
 // GetFilterIdOk returns a tuple with the FilterId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FinalUnitIndication) GetFilterIdOk() (*string, bool) {
-	if o == nil || IsNil(o.FilterId) {
+	if o == nil || isNil(o.FilterId) {
 		return nil, false
 	}
 	return o.FilterId, true
@@ -153,7 +153,7 @@ func (o *FinalUnitIndication) GetFilterIdOk() (*string, bool) {
 
 // HasFilterId returns a boolean if a field has been set.
 func (o *FinalUnitIndication) HasFilterId() bool {
-	if o != nil && !IsNil(o.FilterId) {
+	if o != nil && !isNil(o.FilterId) {
 		return true
 	}
 
@@ -167,7 +167,7 @@ func (o *FinalUnitIndication) SetFilterId(v string) {
 
 // GetFilterIdList returns the FilterIdList field value if set, zero value otherwise.
 func (o *FinalUnitIndication) GetFilterIdList() []string {
-	if o == nil || IsNil(o.FilterIdList) {
+	if o == nil || isNil(o.FilterIdList) {
 		var ret []string
 		return ret
 	}
@@ -177,7 +177,7 @@ func (o *FinalUnitIndication) GetFilterIdList() []string {
 // GetFilterIdListOk returns a tuple with the FilterIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FinalUnitIndication) GetFilterIdListOk() ([]string, bool) {
-	if o == nil || IsNil(o.FilterIdList) {
+	if o == nil || isNil(o.FilterIdList) {
 		return nil, false
 	}
 	return o.FilterIdList, true
@@ -185,7 +185,7 @@ func (o *FinalUnitIndication) GetFilterIdListOk() ([]string, bool) {
 
 // HasFilterIdList returns a boolean if a field has been set.
 func (o *FinalUnitIndication) HasFilterIdList() bool {
-	if o != nil && !IsNil(o.FilterIdList) {
+	if o != nil && !isNil(o.FilterIdList) {
 		return true
 	}
 
@@ -199,7 +199,7 @@ func (o *FinalUnitIndication) SetFilterIdList(v []string) {
 
 // GetRedirectServer returns the RedirectServer field value if set, zero value otherwise.
 func (o *FinalUnitIndication) GetRedirectServer() RedirectServer {
-	if o == nil || IsNil(o.RedirectServer) {
+	if o == nil || isNil(o.RedirectServer) {
 		var ret RedirectServer
 		return ret
 	}
@@ -209,7 +209,7 @@ func (o *FinalUnitIndication) GetRedirectServer() RedirectServer {
 // GetRedirectServerOk returns a tuple with the RedirectServer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FinalUnitIndication) GetRedirectServerOk() (*RedirectServer, bool) {
-	if o == nil || IsNil(o.RedirectServer) {
+	if o == nil || isNil(o.RedirectServer) {
 		return nil, false
 	}
 	return o.RedirectServer, true
@@ -217,7 +217,7 @@ func (o *FinalUnitIndication) GetRedirectServerOk() (*RedirectServer, bool) {
 
 // HasRedirectServer returns a boolean if a field has been set.
 func (o *FinalUnitIndication) HasRedirectServer() bool {
-	if o != nil && !IsNil(o.RedirectServer) {
+	if o != nil && !isNil(o.RedirectServer) {
 		return true
 	}
 
@@ -240,19 +240,19 @@ func (o FinalUnitIndication) MarshalJSON() ([]byte, error) {
 func (o FinalUnitIndication) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["finalUnitAction"] = o.FinalUnitAction
-	if !IsNil(o.RestrictionFilterRule) {
+	if !isNil(o.RestrictionFilterRule) {
 		toSerialize["restrictionFilterRule"] = o.RestrictionFilterRule
 	}
-	if !IsNil(o.RestrictionFilterRuleList) {
+	if !isNil(o.RestrictionFilterRuleList) {
 		toSerialize["restrictionFilterRuleList"] = o.RestrictionFilterRuleList
 	}
-	if !IsNil(o.FilterId) {
+	if !isNil(o.FilterId) {
 		toSerialize["filterId"] = o.FilterId
 	}
-	if !IsNil(o.FilterIdList) {
+	if !isNil(o.FilterIdList) {
 		toSerialize["filterIdList"] = o.FilterIdList
 	}
-	if !IsNil(o.RedirectServer) {
+	if !isNil(o.RedirectServer) {
 		toSerialize["redirectServer"] = o.RedirectServer
 	}
 	return toSerialize, nil

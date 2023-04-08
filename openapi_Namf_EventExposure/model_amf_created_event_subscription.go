@@ -96,7 +96,7 @@ func (o *AmfCreatedEventSubscription) SetSubscriptionId(v string) {
 
 // GetReportList returns the ReportList field value if set, zero value otherwise.
 func (o *AmfCreatedEventSubscription) GetReportList() []AmfEventReport {
-	if o == nil || IsNil(o.ReportList) {
+	if o == nil || isNil(o.ReportList) {
 		var ret []AmfEventReport
 		return ret
 	}
@@ -106,7 +106,7 @@ func (o *AmfCreatedEventSubscription) GetReportList() []AmfEventReport {
 // GetReportListOk returns a tuple with the ReportList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool) {
-	if o == nil || IsNil(o.ReportList) {
+	if o == nil || isNil(o.ReportList) {
 		return nil, false
 	}
 	return o.ReportList, true
@@ -114,7 +114,7 @@ func (o *AmfCreatedEventSubscription) GetReportListOk() ([]AmfEventReport, bool)
 
 // HasReportList returns a boolean if a field has been set.
 func (o *AmfCreatedEventSubscription) HasReportList() bool {
-	if o != nil && !IsNil(o.ReportList) {
+	if o != nil && !isNil(o.ReportList) {
 		return true
 	}
 
@@ -128,7 +128,7 @@ func (o *AmfCreatedEventSubscription) SetReportList(v []AmfEventReport) {
 
 // GetSupportedFeatures returns the SupportedFeatures field value if set, zero value otherwise.
 func (o *AmfCreatedEventSubscription) GetSupportedFeatures() string {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		var ret string
 		return ret
 	}
@@ -138,7 +138,7 @@ func (o *AmfCreatedEventSubscription) GetSupportedFeatures() string {
 // GetSupportedFeaturesOk returns a tuple with the SupportedFeatures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfCreatedEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
-	if o == nil || IsNil(o.SupportedFeatures) {
+	if o == nil || isNil(o.SupportedFeatures) {
 		return nil, false
 	}
 	return o.SupportedFeatures, true
@@ -146,7 +146,7 @@ func (o *AmfCreatedEventSubscription) GetSupportedFeaturesOk() (*string, bool) {
 
 // HasSupportedFeatures returns a boolean if a field has been set.
 func (o *AmfCreatedEventSubscription) HasSupportedFeatures() bool {
-	if o != nil && !IsNil(o.SupportedFeatures) {
+	if o != nil && !isNil(o.SupportedFeatures) {
 		return true
 	}
 
@@ -170,10 +170,10 @@ func (o AmfCreatedEventSubscription) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["subscription"] = o.Subscription
 	toSerialize["subscriptionId"] = o.SubscriptionId
-	if !IsNil(o.ReportList) {
+	if !isNil(o.ReportList) {
 		toSerialize["reportList"] = o.ReportList
 	}
-	if !IsNil(o.SupportedFeatures) {
+	if !isNil(o.SupportedFeatures) {
 		toSerialize["supportedFeatures"] = o.SupportedFeatures
 	}
 	return toSerialize, nil

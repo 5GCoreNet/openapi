@@ -121,7 +121,7 @@ func (o *AmfUpdateEventOptionItem) SetValue(v time.Time) {
 
 // GetNotifFlag returns the NotifFlag field value if set, zero value otherwise.
 func (o *AmfUpdateEventOptionItem) GetNotifFlag() NotificationFlag {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		var ret NotificationFlag
 		return ret
 	}
@@ -131,7 +131,7 @@ func (o *AmfUpdateEventOptionItem) GetNotifFlag() NotificationFlag {
 // GetNotifFlagOk returns a tuple with the NotifFlag field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AmfUpdateEventOptionItem) GetNotifFlagOk() (*NotificationFlag, bool) {
-	if o == nil || IsNil(o.NotifFlag) {
+	if o == nil || isNil(o.NotifFlag) {
 		return nil, false
 	}
 	return o.NotifFlag, true
@@ -139,7 +139,7 @@ func (o *AmfUpdateEventOptionItem) GetNotifFlagOk() (*NotificationFlag, bool) {
 
 // HasNotifFlag returns a boolean if a field has been set.
 func (o *AmfUpdateEventOptionItem) HasNotifFlag() bool {
-	if o != nil && !IsNil(o.NotifFlag) {
+	if o != nil && !isNil(o.NotifFlag) {
 		return true
 	}
 
@@ -164,7 +164,7 @@ func (o AmfUpdateEventOptionItem) ToMap() (map[string]interface{}, error) {
 	toSerialize["op"] = o.Op
 	toSerialize["path"] = o.Path
 	toSerialize["value"] = o.Value
-	if !IsNil(o.NotifFlag) {
+	if !isNil(o.NotifFlag) {
 		toSerialize["notifFlag"] = o.NotifFlag
 	}
 	return toSerialize, nil

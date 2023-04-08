@@ -68,7 +68,7 @@ func (o *CsgInformation) SetCsgId(v string) {
 
 // GetAccessMode returns the AccessMode field value if set, zero value otherwise.
 func (o *CsgInformation) GetAccessMode() string {
-	if o == nil || IsNil(o.AccessMode) {
+	if o == nil || isNil(o.AccessMode) {
 		var ret string
 		return ret
 	}
@@ -78,7 +78,7 @@ func (o *CsgInformation) GetAccessMode() string {
 // GetAccessModeOk returns a tuple with the AccessMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsgInformation) GetAccessModeOk() (*string, bool) {
-	if o == nil || IsNil(o.AccessMode) {
+	if o == nil || isNil(o.AccessMode) {
 		return nil, false
 	}
 	return o.AccessMode, true
@@ -86,7 +86,7 @@ func (o *CsgInformation) GetAccessModeOk() (*string, bool) {
 
 // HasAccessMode returns a boolean if a field has been set.
 func (o *CsgInformation) HasAccessMode() bool {
-	if o != nil && !IsNil(o.AccessMode) {
+	if o != nil && !isNil(o.AccessMode) {
 		return true
 	}
 
@@ -100,7 +100,7 @@ func (o *CsgInformation) SetAccessMode(v string) {
 
 // GetCMi returns the CMi field value if set, zero value otherwise.
 func (o *CsgInformation) GetCMi() bool {
-	if o == nil || IsNil(o.CMi) {
+	if o == nil || isNil(o.CMi) {
 		var ret bool
 		return ret
 	}
@@ -110,7 +110,7 @@ func (o *CsgInformation) GetCMi() bool {
 // GetCMiOk returns a tuple with the CMi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CsgInformation) GetCMiOk() (*bool, bool) {
-	if o == nil || IsNil(o.CMi) {
+	if o == nil || isNil(o.CMi) {
 		return nil, false
 	}
 	return o.CMi, true
@@ -118,7 +118,7 @@ func (o *CsgInformation) GetCMiOk() (*bool, bool) {
 
 // HasCMi returns a boolean if a field has been set.
 func (o *CsgInformation) HasCMi() bool {
-	if o != nil && !IsNil(o.CMi) {
+	if o != nil && !isNil(o.CMi) {
 		return true
 	}
 
@@ -141,10 +141,10 @@ func (o CsgInformation) MarshalJSON() ([]byte, error) {
 func (o CsgInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["csgId"] = o.CsgId
-	if !IsNil(o.AccessMode) {
+	if !isNil(o.AccessMode) {
 		toSerialize["accessMode"] = o.AccessMode
 	}
-	if !IsNil(o.CMi) {
+	if !isNil(o.CMi) {
 		toSerialize["cMi"] = o.CMi
 	}
 	return toSerialize, nil

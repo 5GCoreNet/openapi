@@ -82,7 +82,7 @@ func (o *VsmfUpdateError) SetError(v ExtProblemDetails) {
 
 // GetPti returns the Pti field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetPti() int32 {
-	if o == nil || IsNil(o.Pti) {
+	if o == nil || isNil(o.Pti) {
 		var ret int32
 		return ret
 	}
@@ -92,7 +92,7 @@ func (o *VsmfUpdateError) GetPti() int32 {
 // GetPtiOk returns a tuple with the Pti field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetPtiOk() (*int32, bool) {
-	if o == nil || IsNil(o.Pti) {
+	if o == nil || isNil(o.Pti) {
 		return nil, false
 	}
 	return o.Pti, true
@@ -100,7 +100,7 @@ func (o *VsmfUpdateError) GetPtiOk() (*int32, bool) {
 
 // HasPti returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasPti() bool {
-	if o != nil && !IsNil(o.Pti) {
+	if o != nil && !isNil(o.Pti) {
 		return true
 	}
 
@@ -114,7 +114,7 @@ func (o *VsmfUpdateError) SetPti(v int32) {
 
 // GetN1smCause returns the N1smCause field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetN1smCause() string {
-	if o == nil || IsNil(o.N1smCause) {
+	if o == nil || isNil(o.N1smCause) {
 		var ret string
 		return ret
 	}
@@ -124,7 +124,7 @@ func (o *VsmfUpdateError) GetN1smCause() string {
 // GetN1smCauseOk returns a tuple with the N1smCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetN1smCauseOk() (*string, bool) {
-	if o == nil || IsNil(o.N1smCause) {
+	if o == nil || isNil(o.N1smCause) {
 		return nil, false
 	}
 	return o.N1smCause, true
@@ -132,7 +132,7 @@ func (o *VsmfUpdateError) GetN1smCauseOk() (*string, bool) {
 
 // HasN1smCause returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasN1smCause() bool {
-	if o != nil && !IsNil(o.N1smCause) {
+	if o != nil && !isNil(o.N1smCause) {
 		return true
 	}
 
@@ -146,7 +146,7 @@ func (o *VsmfUpdateError) SetN1smCause(v string) {
 
 // GetN1SmInfoFromUe returns the N1SmInfoFromUe field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetN1SmInfoFromUe() RefToBinaryData {
-	if o == nil || IsNil(o.N1SmInfoFromUe) {
+	if o == nil || isNil(o.N1SmInfoFromUe) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -156,7 +156,7 @@ func (o *VsmfUpdateError) GetN1SmInfoFromUe() RefToBinaryData {
 // GetN1SmInfoFromUeOk returns a tuple with the N1SmInfoFromUe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetN1SmInfoFromUeOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.N1SmInfoFromUe) {
+	if o == nil || isNil(o.N1SmInfoFromUe) {
 		return nil, false
 	}
 	return o.N1SmInfoFromUe, true
@@ -164,7 +164,7 @@ func (o *VsmfUpdateError) GetN1SmInfoFromUeOk() (*RefToBinaryData, bool) {
 
 // HasN1SmInfoFromUe returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasN1SmInfoFromUe() bool {
-	if o != nil && !IsNil(o.N1SmInfoFromUe) {
+	if o != nil && !isNil(o.N1SmInfoFromUe) {
 		return true
 	}
 
@@ -178,7 +178,7 @@ func (o *VsmfUpdateError) SetN1SmInfoFromUe(v RefToBinaryData) {
 
 // GetUnknownN1SmInfo returns the UnknownN1SmInfo field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetUnknownN1SmInfo() RefToBinaryData {
-	if o == nil || IsNil(o.UnknownN1SmInfo) {
+	if o == nil || isNil(o.UnknownN1SmInfo) {
 		var ret RefToBinaryData
 		return ret
 	}
@@ -188,7 +188,7 @@ func (o *VsmfUpdateError) GetUnknownN1SmInfo() RefToBinaryData {
 // GetUnknownN1SmInfoOk returns a tuple with the UnknownN1SmInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetUnknownN1SmInfoOk() (*RefToBinaryData, bool) {
-	if o == nil || IsNil(o.UnknownN1SmInfo) {
+	if o == nil || isNil(o.UnknownN1SmInfo) {
 		return nil, false
 	}
 	return o.UnknownN1SmInfo, true
@@ -196,7 +196,7 @@ func (o *VsmfUpdateError) GetUnknownN1SmInfoOk() (*RefToBinaryData, bool) {
 
 // HasUnknownN1SmInfo returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasUnknownN1SmInfo() bool {
-	if o != nil && !IsNil(o.UnknownN1SmInfo) {
+	if o != nil && !isNil(o.UnknownN1SmInfo) {
 		return true
 	}
 
@@ -210,7 +210,7 @@ func (o *VsmfUpdateError) SetUnknownN1SmInfo(v RefToBinaryData) {
 
 // GetFailedToAssignEbiList returns the FailedToAssignEbiList field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetFailedToAssignEbiList() []Arp {
-	if o == nil || IsNil(o.FailedToAssignEbiList) {
+	if o == nil || isNil(o.FailedToAssignEbiList) {
 		var ret []Arp
 		return ret
 	}
@@ -220,7 +220,7 @@ func (o *VsmfUpdateError) GetFailedToAssignEbiList() []Arp {
 // GetFailedToAssignEbiListOk returns a tuple with the FailedToAssignEbiList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetFailedToAssignEbiListOk() ([]Arp, bool) {
-	if o == nil || IsNil(o.FailedToAssignEbiList) {
+	if o == nil || isNil(o.FailedToAssignEbiList) {
 		return nil, false
 	}
 	return o.FailedToAssignEbiList, true
@@ -228,7 +228,7 @@ func (o *VsmfUpdateError) GetFailedToAssignEbiListOk() ([]Arp, bool) {
 
 // HasFailedToAssignEbiList returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasFailedToAssignEbiList() bool {
-	if o != nil && !IsNil(o.FailedToAssignEbiList) {
+	if o != nil && !isNil(o.FailedToAssignEbiList) {
 		return true
 	}
 
@@ -242,7 +242,7 @@ func (o *VsmfUpdateError) SetFailedToAssignEbiList(v []Arp) {
 
 // GetNgApCause returns the NgApCause field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetNgApCause() NgApCause {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		var ret NgApCause
 		return ret
 	}
@@ -252,7 +252,7 @@ func (o *VsmfUpdateError) GetNgApCause() NgApCause {
 // GetNgApCauseOk returns a tuple with the NgApCause field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetNgApCauseOk() (*NgApCause, bool) {
-	if o == nil || IsNil(o.NgApCause) {
+	if o == nil || isNil(o.NgApCause) {
 		return nil, false
 	}
 	return o.NgApCause, true
@@ -260,7 +260,7 @@ func (o *VsmfUpdateError) GetNgApCauseOk() (*NgApCause, bool) {
 
 // HasNgApCause returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasNgApCause() bool {
-	if o != nil && !IsNil(o.NgApCause) {
+	if o != nil && !isNil(o.NgApCause) {
 		return true
 	}
 
@@ -274,7 +274,7 @@ func (o *VsmfUpdateError) SetNgApCause(v NgApCause) {
 
 // GetVar5gMmCauseValue returns the Var5gMmCauseValue field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetVar5gMmCauseValue() int32 {
-	if o == nil || IsNil(o.Var5gMmCauseValue) {
+	if o == nil || isNil(o.Var5gMmCauseValue) {
 		var ret int32
 		return ret
 	}
@@ -284,7 +284,7 @@ func (o *VsmfUpdateError) GetVar5gMmCauseValue() int32 {
 // GetVar5gMmCauseValueOk returns a tuple with the Var5gMmCauseValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetVar5gMmCauseValueOk() (*int32, bool) {
-	if o == nil || IsNil(o.Var5gMmCauseValue) {
+	if o == nil || isNil(o.Var5gMmCauseValue) {
 		return nil, false
 	}
 	return o.Var5gMmCauseValue, true
@@ -292,7 +292,7 @@ func (o *VsmfUpdateError) GetVar5gMmCauseValueOk() (*int32, bool) {
 
 // HasVar5gMmCauseValue returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasVar5gMmCauseValue() bool {
-	if o != nil && !IsNil(o.Var5gMmCauseValue) {
+	if o != nil && !isNil(o.Var5gMmCauseValue) {
 		return true
 	}
 
@@ -306,7 +306,7 @@ func (o *VsmfUpdateError) SetVar5gMmCauseValue(v int32) {
 
 // GetRecoveryTime returns the RecoveryTime field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetRecoveryTime() time.Time {
-	if o == nil || IsNil(o.RecoveryTime) {
+	if o == nil || isNil(o.RecoveryTime) {
 		var ret time.Time
 		return ret
 	}
@@ -316,7 +316,7 @@ func (o *VsmfUpdateError) GetRecoveryTime() time.Time {
 // GetRecoveryTimeOk returns a tuple with the RecoveryTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetRecoveryTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.RecoveryTime) {
+	if o == nil || isNil(o.RecoveryTime) {
 		return nil, false
 	}
 	return o.RecoveryTime, true
@@ -324,7 +324,7 @@ func (o *VsmfUpdateError) GetRecoveryTimeOk() (*time.Time, bool) {
 
 // HasRecoveryTime returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasRecoveryTime() bool {
-	if o != nil && !IsNil(o.RecoveryTime) {
+	if o != nil && !isNil(o.RecoveryTime) {
 		return true
 	}
 
@@ -338,7 +338,7 @@ func (o *VsmfUpdateError) SetRecoveryTime(v time.Time) {
 
 // GetN4Info returns the N4Info field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetN4Info() N4Information {
-	if o == nil || IsNil(o.N4Info) {
+	if o == nil || isNil(o.N4Info) {
 		var ret N4Information
 		return ret
 	}
@@ -348,7 +348,7 @@ func (o *VsmfUpdateError) GetN4Info() N4Information {
 // GetN4InfoOk returns a tuple with the N4Info field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetN4InfoOk() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4Info) {
+	if o == nil || isNil(o.N4Info) {
 		return nil, false
 	}
 	return o.N4Info, true
@@ -356,7 +356,7 @@ func (o *VsmfUpdateError) GetN4InfoOk() (*N4Information, bool) {
 
 // HasN4Info returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasN4Info() bool {
-	if o != nil && !IsNil(o.N4Info) {
+	if o != nil && !isNil(o.N4Info) {
 		return true
 	}
 
@@ -370,7 +370,7 @@ func (o *VsmfUpdateError) SetN4Info(v N4Information) {
 
 // GetN4InfoExt1 returns the N4InfoExt1 field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetN4InfoExt1() N4Information {
-	if o == nil || IsNil(o.N4InfoExt1) {
+	if o == nil || isNil(o.N4InfoExt1) {
 		var ret N4Information
 		return ret
 	}
@@ -380,7 +380,7 @@ func (o *VsmfUpdateError) GetN4InfoExt1() N4Information {
 // GetN4InfoExt1Ok returns a tuple with the N4InfoExt1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetN4InfoExt1Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt1) {
+	if o == nil || isNil(o.N4InfoExt1) {
 		return nil, false
 	}
 	return o.N4InfoExt1, true
@@ -388,7 +388,7 @@ func (o *VsmfUpdateError) GetN4InfoExt1Ok() (*N4Information, bool) {
 
 // HasN4InfoExt1 returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasN4InfoExt1() bool {
-	if o != nil && !IsNil(o.N4InfoExt1) {
+	if o != nil && !isNil(o.N4InfoExt1) {
 		return true
 	}
 
@@ -402,7 +402,7 @@ func (o *VsmfUpdateError) SetN4InfoExt1(v N4Information) {
 
 // GetN4InfoExt2 returns the N4InfoExt2 field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetN4InfoExt2() N4Information {
-	if o == nil || IsNil(o.N4InfoExt2) {
+	if o == nil || isNil(o.N4InfoExt2) {
 		var ret N4Information
 		return ret
 	}
@@ -412,7 +412,7 @@ func (o *VsmfUpdateError) GetN4InfoExt2() N4Information {
 // GetN4InfoExt2Ok returns a tuple with the N4InfoExt2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetN4InfoExt2Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt2) {
+	if o == nil || isNil(o.N4InfoExt2) {
 		return nil, false
 	}
 	return o.N4InfoExt2, true
@@ -420,7 +420,7 @@ func (o *VsmfUpdateError) GetN4InfoExt2Ok() (*N4Information, bool) {
 
 // HasN4InfoExt2 returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasN4InfoExt2() bool {
-	if o != nil && !IsNil(o.N4InfoExt2) {
+	if o != nil && !isNil(o.N4InfoExt2) {
 		return true
 	}
 
@@ -434,7 +434,7 @@ func (o *VsmfUpdateError) SetN4InfoExt2(v N4Information) {
 
 // GetN4InfoExt3 returns the N4InfoExt3 field value if set, zero value otherwise.
 func (o *VsmfUpdateError) GetN4InfoExt3() N4Information {
-	if o == nil || IsNil(o.N4InfoExt3) {
+	if o == nil || isNil(o.N4InfoExt3) {
 		var ret N4Information
 		return ret
 	}
@@ -444,7 +444,7 @@ func (o *VsmfUpdateError) GetN4InfoExt3() N4Information {
 // GetN4InfoExt3Ok returns a tuple with the N4InfoExt3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VsmfUpdateError) GetN4InfoExt3Ok() (*N4Information, bool) {
-	if o == nil || IsNil(o.N4InfoExt3) {
+	if o == nil || isNil(o.N4InfoExt3) {
 		return nil, false
 	}
 	return o.N4InfoExt3, true
@@ -452,7 +452,7 @@ func (o *VsmfUpdateError) GetN4InfoExt3Ok() (*N4Information, bool) {
 
 // HasN4InfoExt3 returns a boolean if a field has been set.
 func (o *VsmfUpdateError) HasN4InfoExt3() bool {
-	if o != nil && !IsNil(o.N4InfoExt3) {
+	if o != nil && !isNil(o.N4InfoExt3) {
 		return true
 	}
 
@@ -475,40 +475,40 @@ func (o VsmfUpdateError) MarshalJSON() ([]byte, error) {
 func (o VsmfUpdateError) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["error"] = o.Error
-	if !IsNil(o.Pti) {
+	if !isNil(o.Pti) {
 		toSerialize["pti"] = o.Pti
 	}
-	if !IsNil(o.N1smCause) {
+	if !isNil(o.N1smCause) {
 		toSerialize["n1smCause"] = o.N1smCause
 	}
-	if !IsNil(o.N1SmInfoFromUe) {
+	if !isNil(o.N1SmInfoFromUe) {
 		toSerialize["n1SmInfoFromUe"] = o.N1SmInfoFromUe
 	}
-	if !IsNil(o.UnknownN1SmInfo) {
+	if !isNil(o.UnknownN1SmInfo) {
 		toSerialize["unknownN1SmInfo"] = o.UnknownN1SmInfo
 	}
-	if !IsNil(o.FailedToAssignEbiList) {
+	if !isNil(o.FailedToAssignEbiList) {
 		toSerialize["failedToAssignEbiList"] = o.FailedToAssignEbiList
 	}
-	if !IsNil(o.NgApCause) {
+	if !isNil(o.NgApCause) {
 		toSerialize["ngApCause"] = o.NgApCause
 	}
-	if !IsNil(o.Var5gMmCauseValue) {
+	if !isNil(o.Var5gMmCauseValue) {
 		toSerialize["5gMmCauseValue"] = o.Var5gMmCauseValue
 	}
-	if !IsNil(o.RecoveryTime) {
+	if !isNil(o.RecoveryTime) {
 		toSerialize["recoveryTime"] = o.RecoveryTime
 	}
-	if !IsNil(o.N4Info) {
+	if !isNil(o.N4Info) {
 		toSerialize["n4Info"] = o.N4Info
 	}
-	if !IsNil(o.N4InfoExt1) {
+	if !isNil(o.N4InfoExt1) {
 		toSerialize["n4InfoExt1"] = o.N4InfoExt1
 	}
-	if !IsNil(o.N4InfoExt2) {
+	if !isNil(o.N4InfoExt2) {
 		toSerialize["n4InfoExt2"] = o.N4InfoExt2
 	}
-	if !IsNil(o.N4InfoExt3) {
+	if !isNil(o.N4InfoExt3) {
 		toSerialize["n4InfoExt3"] = o.N4InfoExt3
 	}
 	return toSerialize, nil

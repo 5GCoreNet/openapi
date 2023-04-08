@@ -42,7 +42,7 @@ func NewDnsQueryReportWithDefaults() *DnsQueryReport {
 
 // GetFqdn returns the Fqdn field value if set, zero value otherwise.
 func (o *DnsQueryReport) GetFqdn() string {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		var ret string
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *DnsQueryReport) GetFqdn() string {
 // GetFqdnOk returns a tuple with the Fqdn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsQueryReport) GetFqdnOk() (*string, bool) {
-	if o == nil || IsNil(o.Fqdn) {
+	if o == nil || isNil(o.Fqdn) {
 		return nil, false
 	}
 	return o.Fqdn, true
@@ -60,7 +60,7 @@ func (o *DnsQueryReport) GetFqdnOk() (*string, bool) {
 
 // HasFqdn returns a boolean if a field has been set.
 func (o *DnsQueryReport) HasFqdn() bool {
-	if o != nil && !IsNil(o.Fqdn) {
+	if o != nil && !isNil(o.Fqdn) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o DnsQueryReport) MarshalJSON() ([]byte, error) {
 
 func (o DnsQueryReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Fqdn) {
+	if !isNil(o.Fqdn) {
 		toSerialize["fqdn"] = o.Fqdn
 	}
 	return toSerialize, nil

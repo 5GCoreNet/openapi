@@ -48,7 +48,7 @@ func NewDnsContextEventReportWithDefaults() *DnsContextEventReport {
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
 func (o *DnsContextEventReport) GetTimestamp() time.Time {
-	if o == nil || IsNil(o.Timestamp) {
+	if o == nil || isNil(o.Timestamp) {
 		var ret time.Time
 		return ret
 	}
@@ -58,7 +58,7 @@ func (o *DnsContextEventReport) GetTimestamp() time.Time {
 // GetTimestampOk returns a tuple with the Timestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextEventReport) GetTimestampOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.Timestamp) {
+	if o == nil || isNil(o.Timestamp) {
 		return nil, false
 	}
 	return o.Timestamp, true
@@ -66,7 +66,7 @@ func (o *DnsContextEventReport) GetTimestampOk() (*time.Time, bool) {
 
 // HasTimestamp returns a boolean if a field has been set.
 func (o *DnsContextEventReport) HasTimestamp() bool {
-	if o != nil && !IsNil(o.Timestamp) {
+	if o != nil && !isNil(o.Timestamp) {
 		return true
 	}
 
@@ -80,7 +80,7 @@ func (o *DnsContextEventReport) SetTimestamp(v time.Time) {
 
 // GetDnsRuleId returns the DnsRuleId field value if set, zero value otherwise.
 func (o *DnsContextEventReport) GetDnsRuleId() int32 {
-	if o == nil || IsNil(o.DnsRuleId) {
+	if o == nil || isNil(o.DnsRuleId) {
 		var ret int32
 		return ret
 	}
@@ -90,7 +90,7 @@ func (o *DnsContextEventReport) GetDnsRuleId() int32 {
 // GetDnsRuleIdOk returns a tuple with the DnsRuleId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextEventReport) GetDnsRuleIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.DnsRuleId) {
+	if o == nil || isNil(o.DnsRuleId) {
 		return nil, false
 	}
 	return o.DnsRuleId, true
@@ -98,7 +98,7 @@ func (o *DnsContextEventReport) GetDnsRuleIdOk() (*int32, bool) {
 
 // HasDnsRuleId returns a boolean if a field has been set.
 func (o *DnsContextEventReport) HasDnsRuleId() bool {
-	if o != nil && !IsNil(o.DnsRuleId) {
+	if o != nil && !isNil(o.DnsRuleId) {
 		return true
 	}
 
@@ -112,7 +112,7 @@ func (o *DnsContextEventReport) SetDnsRuleId(v int32) {
 
 // GetDnsQueryReport returns the DnsQueryReport field value if set, zero value otherwise.
 func (o *DnsContextEventReport) GetDnsQueryReport() DnsQueryReport {
-	if o == nil || IsNil(o.DnsQueryReport) {
+	if o == nil || isNil(o.DnsQueryReport) {
 		var ret DnsQueryReport
 		return ret
 	}
@@ -122,7 +122,7 @@ func (o *DnsContextEventReport) GetDnsQueryReport() DnsQueryReport {
 // GetDnsQueryReportOk returns a tuple with the DnsQueryReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextEventReport) GetDnsQueryReportOk() (*DnsQueryReport, bool) {
-	if o == nil || IsNil(o.DnsQueryReport) {
+	if o == nil || isNil(o.DnsQueryReport) {
 		return nil, false
 	}
 	return o.DnsQueryReport, true
@@ -130,7 +130,7 @@ func (o *DnsContextEventReport) GetDnsQueryReportOk() (*DnsQueryReport, bool) {
 
 // HasDnsQueryReport returns a boolean if a field has been set.
 func (o *DnsContextEventReport) HasDnsQueryReport() bool {
-	if o != nil && !IsNil(o.DnsQueryReport) {
+	if o != nil && !isNil(o.DnsQueryReport) {
 		return true
 	}
 
@@ -144,7 +144,7 @@ func (o *DnsContextEventReport) SetDnsQueryReport(v DnsQueryReport) {
 
 // GetDnsRspReport returns the DnsRspReport field value if set, zero value otherwise.
 func (o *DnsContextEventReport) GetDnsRspReport() DnsRspReport {
-	if o == nil || IsNil(o.DnsRspReport) {
+	if o == nil || isNil(o.DnsRspReport) {
 		var ret DnsRspReport
 		return ret
 	}
@@ -154,7 +154,7 @@ func (o *DnsContextEventReport) GetDnsRspReport() DnsRspReport {
 // GetDnsRspReportOk returns a tuple with the DnsRspReport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextEventReport) GetDnsRspReportOk() (*DnsRspReport, bool) {
-	if o == nil || IsNil(o.DnsRspReport) {
+	if o == nil || isNil(o.DnsRspReport) {
 		return nil, false
 	}
 	return o.DnsRspReport, true
@@ -162,7 +162,7 @@ func (o *DnsContextEventReport) GetDnsRspReportOk() (*DnsRspReport, bool) {
 
 // HasDnsRspReport returns a boolean if a field has been set.
 func (o *DnsContextEventReport) HasDnsRspReport() bool {
-	if o != nil && !IsNil(o.DnsRspReport) {
+	if o != nil && !isNil(o.DnsRspReport) {
 		return true
 	}
 
@@ -176,7 +176,7 @@ func (o *DnsContextEventReport) SetDnsRspReport(v DnsRspReport) {
 
 // GetDnsMsgId returns the DnsMsgId field value if set, zero value otherwise.
 func (o *DnsContextEventReport) GetDnsMsgId() string {
-	if o == nil || IsNil(o.DnsMsgId) {
+	if o == nil || isNil(o.DnsMsgId) {
 		var ret string
 		return ret
 	}
@@ -186,7 +186,7 @@ func (o *DnsContextEventReport) GetDnsMsgId() string {
 // GetDnsMsgIdOk returns a tuple with the DnsMsgId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DnsContextEventReport) GetDnsMsgIdOk() (*string, bool) {
-	if o == nil || IsNil(o.DnsMsgId) {
+	if o == nil || isNil(o.DnsMsgId) {
 		return nil, false
 	}
 	return o.DnsMsgId, true
@@ -194,7 +194,7 @@ func (o *DnsContextEventReport) GetDnsMsgIdOk() (*string, bool) {
 
 // HasDnsMsgId returns a boolean if a field has been set.
 func (o *DnsContextEventReport) HasDnsMsgId() bool {
-	if o != nil && !IsNil(o.DnsMsgId) {
+	if o != nil && !isNil(o.DnsMsgId) {
 		return true
 	}
 
@@ -216,19 +216,19 @@ func (o DnsContextEventReport) MarshalJSON() ([]byte, error) {
 
 func (o DnsContextEventReport) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Timestamp) {
+	if !isNil(o.Timestamp) {
 		toSerialize["timestamp"] = o.Timestamp
 	}
-	if !IsNil(o.DnsRuleId) {
+	if !isNil(o.DnsRuleId) {
 		toSerialize["dnsRuleId"] = o.DnsRuleId
 	}
-	if !IsNil(o.DnsQueryReport) {
+	if !isNil(o.DnsQueryReport) {
 		toSerialize["dnsQueryReport"] = o.DnsQueryReport
 	}
-	if !IsNil(o.DnsRspReport) {
+	if !isNil(o.DnsRspReport) {
 		toSerialize["dnsRspReport"] = o.DnsRspReport
 	}
-	if !IsNil(o.DnsMsgId) {
+	if !isNil(o.DnsMsgId) {
 		toSerialize["dnsMsgId"] = o.DnsMsgId
 	}
 	return toSerialize, nil

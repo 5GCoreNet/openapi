@@ -67,7 +67,7 @@ func (o *RedundantPduSessionInformation) SetRsn(v Rsn) {
 
 // GetPduSessionPairId returns the PduSessionPairId field value if set, zero value otherwise.
 func (o *RedundantPduSessionInformation) GetPduSessionPairId() int32 {
-	if o == nil || IsNil(o.PduSessionPairId) {
+	if o == nil || isNil(o.PduSessionPairId) {
 		var ret int32
 		return ret
 	}
@@ -77,7 +77,7 @@ func (o *RedundantPduSessionInformation) GetPduSessionPairId() int32 {
 // GetPduSessionPairIdOk returns a tuple with the PduSessionPairId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RedundantPduSessionInformation) GetPduSessionPairIdOk() (*int32, bool) {
-	if o == nil || IsNil(o.PduSessionPairId) {
+	if o == nil || isNil(o.PduSessionPairId) {
 		return nil, false
 	}
 	return o.PduSessionPairId, true
@@ -85,7 +85,7 @@ func (o *RedundantPduSessionInformation) GetPduSessionPairIdOk() (*int32, bool) 
 
 // HasPduSessionPairId returns a boolean if a field has been set.
 func (o *RedundantPduSessionInformation) HasPduSessionPairId() bool {
-	if o != nil && !IsNil(o.PduSessionPairId) {
+	if o != nil && !isNil(o.PduSessionPairId) {
 		return true
 	}
 
@@ -108,7 +108,7 @@ func (o RedundantPduSessionInformation) MarshalJSON() ([]byte, error) {
 func (o RedundantPduSessionInformation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["rsn"] = o.Rsn
-	if !IsNil(o.PduSessionPairId) {
+	if !isNil(o.PduSessionPairId) {
 		toSerialize["pduSessionPairId"] = o.PduSessionPairId
 	}
 	return toSerialize, nil

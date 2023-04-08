@@ -71,7 +71,7 @@ func (o *TwapId) SetSsId(v string) {
 
 // GetBssId returns the BssId field value if set, zero value otherwise.
 func (o *TwapId) GetBssId() string {
-	if o == nil || IsNil(o.BssId) {
+	if o == nil || isNil(o.BssId) {
 		var ret string
 		return ret
 	}
@@ -81,7 +81,7 @@ func (o *TwapId) GetBssId() string {
 // GetBssIdOk returns a tuple with the BssId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwapId) GetBssIdOk() (*string, bool) {
-	if o == nil || IsNil(o.BssId) {
+	if o == nil || isNil(o.BssId) {
 		return nil, false
 	}
 	return o.BssId, true
@@ -89,7 +89,7 @@ func (o *TwapId) GetBssIdOk() (*string, bool) {
 
 // HasBssId returns a boolean if a field has been set.
 func (o *TwapId) HasBssId() bool {
-	if o != nil && !IsNil(o.BssId) {
+	if o != nil && !isNil(o.BssId) {
 		return true
 	}
 
@@ -103,7 +103,7 @@ func (o *TwapId) SetBssId(v string) {
 
 // GetCivicAddress returns the CivicAddress field value if set, zero value otherwise.
 func (o *TwapId) GetCivicAddress() string {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		var ret string
 		return ret
 	}
@@ -113,7 +113,7 @@ func (o *TwapId) GetCivicAddress() string {
 // GetCivicAddressOk returns a tuple with the CivicAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TwapId) GetCivicAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.CivicAddress) {
+	if o == nil || isNil(o.CivicAddress) {
 		return nil, false
 	}
 	return o.CivicAddress, true
@@ -121,7 +121,7 @@ func (o *TwapId) GetCivicAddressOk() (*string, bool) {
 
 // HasCivicAddress returns a boolean if a field has been set.
 func (o *TwapId) HasCivicAddress() bool {
-	if o != nil && !IsNil(o.CivicAddress) {
+	if o != nil && !isNil(o.CivicAddress) {
 		return true
 	}
 
@@ -144,10 +144,10 @@ func (o TwapId) MarshalJSON() ([]byte, error) {
 func (o TwapId) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["ssId"] = o.SsId
-	if !IsNil(o.BssId) {
+	if !isNil(o.BssId) {
 		toSerialize["bssId"] = o.BssId
 	}
-	if !IsNil(o.CivicAddress) {
+	if !isNil(o.CivicAddress) {
 		toSerialize["civicAddress"] = o.CivicAddress
 	}
 	return toSerialize, nil

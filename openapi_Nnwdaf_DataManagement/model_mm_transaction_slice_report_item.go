@@ -47,7 +47,7 @@ func NewMmTransactionSliceReportItemWithDefaults() *MmTransactionSliceReportItem
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *MmTransactionSliceReportItem) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -57,7 +57,7 @@ func (o *MmTransactionSliceReportItem) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MmTransactionSliceReportItem) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -65,7 +65,7 @@ func (o *MmTransactionSliceReportItem) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *MmTransactionSliceReportItem) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -135,7 +135,7 @@ func (o MmTransactionSliceReportItem) MarshalJSON() ([]byte, error) {
 
 func (o MmTransactionSliceReportItem) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["timestamp"] = o.Timestamp

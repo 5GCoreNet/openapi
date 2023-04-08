@@ -41,7 +41,7 @@ func NewModel5GLanParametersProvisionPatchWithDefaults() *Model5GLanParametersPr
 
 // GetVar5gLanParamsPatch returns the Var5gLanParamsPatch field value if set, zero value otherwise.
 func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatch() Model5GLanParametersPatch {
-	if o == nil || IsNil(o.Var5gLanParamsPatch) {
+	if o == nil || isNil(o.Var5gLanParamsPatch) {
 		var ret Model5GLanParametersPatch
 		return ret
 	}
@@ -51,7 +51,7 @@ func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatch() Model5GLan
 // GetVar5gLanParamsPatchOk returns a tuple with the Var5gLanParamsPatch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatchOk() (*Model5GLanParametersPatch, bool) {
-	if o == nil || IsNil(o.Var5gLanParamsPatch) {
+	if o == nil || isNil(o.Var5gLanParamsPatch) {
 		return nil, false
 	}
 	return o.Var5gLanParamsPatch, true
@@ -59,7 +59,7 @@ func (o *Model5GLanParametersProvisionPatch) GetVar5gLanParamsPatchOk() (*Model5
 
 // HasVar5gLanParamsPatch returns a boolean if a field has been set.
 func (o *Model5GLanParametersProvisionPatch) HasVar5gLanParamsPatch() bool {
-	if o != nil && !IsNil(o.Var5gLanParamsPatch) {
+	if o != nil && !isNil(o.Var5gLanParamsPatch) {
 		return true
 	}
 
@@ -81,7 +81,7 @@ func (o Model5GLanParametersProvisionPatch) MarshalJSON() ([]byte, error) {
 
 func (o Model5GLanParametersProvisionPatch) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Var5gLanParamsPatch) {
+	if !isNil(o.Var5gLanParamsPatch) {
 		toSerialize["5gLanParamsPatch"] = o.Var5gLanParamsPatch
 	}
 	return toSerialize, nil

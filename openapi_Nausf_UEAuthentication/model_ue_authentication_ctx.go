@@ -120,7 +120,7 @@ func (o *UEAuthenticationCtx) SetLinks(v map[string]LinksValueSchema) {
 
 // GetServingNetworkName returns the ServingNetworkName field value if set, zero value otherwise.
 func (o *UEAuthenticationCtx) GetServingNetworkName() string {
-	if o == nil || IsNil(o.ServingNetworkName) {
+	if o == nil || isNil(o.ServingNetworkName) {
 		var ret string
 		return ret
 	}
@@ -130,7 +130,7 @@ func (o *UEAuthenticationCtx) GetServingNetworkName() string {
 // GetServingNetworkNameOk returns a tuple with the ServingNetworkName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UEAuthenticationCtx) GetServingNetworkNameOk() (*string, bool) {
-	if o == nil || IsNil(o.ServingNetworkName) {
+	if o == nil || isNil(o.ServingNetworkName) {
 		return nil, false
 	}
 	return o.ServingNetworkName, true
@@ -138,7 +138,7 @@ func (o *UEAuthenticationCtx) GetServingNetworkNameOk() (*string, bool) {
 
 // HasServingNetworkName returns a boolean if a field has been set.
 func (o *UEAuthenticationCtx) HasServingNetworkName() bool {
-	if o != nil && !IsNil(o.ServingNetworkName) {
+	if o != nil && !isNil(o.ServingNetworkName) {
 		return true
 	}
 
@@ -163,7 +163,7 @@ func (o UEAuthenticationCtx) ToMap() (map[string]interface{}, error) {
 	toSerialize["authType"] = o.AuthType
 	toSerialize["5gAuthData"] = o.Var5gAuthData
 	toSerialize["_links"] = o.Links
-	if !IsNil(o.ServingNetworkName) {
+	if !isNil(o.ServingNetworkName) {
 		toSerialize["servingNetworkName"] = o.ServingNetworkName
 	}
 	return toSerialize, nil

@@ -42,7 +42,7 @@ func NewUcSubscriptionDataWithDefaults() *UcSubscriptionData {
 
 // GetUserConsentPerPurposeList returns the UserConsentPerPurposeList field value if set, zero value otherwise.
 func (o *UcSubscriptionData) GetUserConsentPerPurposeList() map[string]UserConsent {
-	if o == nil || IsNil(o.UserConsentPerPurposeList) {
+	if o == nil || isNil(o.UserConsentPerPurposeList) {
 		var ret map[string]UserConsent
 		return ret
 	}
@@ -52,7 +52,7 @@ func (o *UcSubscriptionData) GetUserConsentPerPurposeList() map[string]UserConse
 // GetUserConsentPerPurposeListOk returns a tuple with the UserConsentPerPurposeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UcSubscriptionData) GetUserConsentPerPurposeListOk() (*map[string]UserConsent, bool) {
-	if o == nil || IsNil(o.UserConsentPerPurposeList) {
+	if o == nil || isNil(o.UserConsentPerPurposeList) {
 		return nil, false
 	}
 	return o.UserConsentPerPurposeList, true
@@ -60,7 +60,7 @@ func (o *UcSubscriptionData) GetUserConsentPerPurposeListOk() (*map[string]UserC
 
 // HasUserConsentPerPurposeList returns a boolean if a field has been set.
 func (o *UcSubscriptionData) HasUserConsentPerPurposeList() bool {
-	if o != nil && !IsNil(o.UserConsentPerPurposeList) {
+	if o != nil && !isNil(o.UserConsentPerPurposeList) {
 		return true
 	}
 
@@ -82,7 +82,7 @@ func (o UcSubscriptionData) MarshalJSON() ([]byte, error) {
 
 func (o UcSubscriptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.UserConsentPerPurposeList) {
+	if !isNil(o.UserConsentPerPurposeList) {
 		toSerialize["userConsentPerPurposeList"] = o.UserConsentPerPurposeList
 	}
 	return toSerialize, nil

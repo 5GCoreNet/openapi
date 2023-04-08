@@ -59,7 +59,7 @@ func NewIptvConfigDataWithDefaults() *IptvConfigData {
 
 // GetSelf returns the Self field value if set, zero value otherwise.
 func (o *IptvConfigData) GetSelf() string {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		var ret string
 		return ret
 	}
@@ -69,7 +69,7 @@ func (o *IptvConfigData) GetSelf() string {
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetSelfOk() (*string, bool) {
-	if o == nil || IsNil(o.Self) {
+	if o == nil || isNil(o.Self) {
 		return nil, false
 	}
 	return o.Self, true
@@ -77,7 +77,7 @@ func (o *IptvConfigData) GetSelfOk() (*string, bool) {
 
 // HasSelf returns a boolean if a field has been set.
 func (o *IptvConfigData) HasSelf() bool {
-	if o != nil && !IsNil(o.Self) {
+	if o != nil && !isNil(o.Self) {
 		return true
 	}
 
@@ -91,7 +91,7 @@ func (o *IptvConfigData) SetSelf(v string) {
 
 // GetGpsi returns the Gpsi field value if set, zero value otherwise.
 func (o *IptvConfigData) GetGpsi() string {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		var ret string
 		return ret
 	}
@@ -101,7 +101,7 @@ func (o *IptvConfigData) GetGpsi() string {
 // GetGpsiOk returns a tuple with the Gpsi field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetGpsiOk() (*string, bool) {
-	if o == nil || IsNil(o.Gpsi) {
+	if o == nil || isNil(o.Gpsi) {
 		return nil, false
 	}
 	return o.Gpsi, true
@@ -109,7 +109,7 @@ func (o *IptvConfigData) GetGpsiOk() (*string, bool) {
 
 // HasGpsi returns a boolean if a field has been set.
 func (o *IptvConfigData) HasGpsi() bool {
-	if o != nil && !IsNil(o.Gpsi) {
+	if o != nil && !isNil(o.Gpsi) {
 		return true
 	}
 
@@ -123,7 +123,7 @@ func (o *IptvConfigData) SetGpsi(v string) {
 
 // GetExterGroupId returns the ExterGroupId field value if set, zero value otherwise.
 func (o *IptvConfigData) GetExterGroupId() string {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		var ret string
 		return ret
 	}
@@ -133,7 +133,7 @@ func (o *IptvConfigData) GetExterGroupId() string {
 // GetExterGroupIdOk returns a tuple with the ExterGroupId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetExterGroupIdOk() (*string, bool) {
-	if o == nil || IsNil(o.ExterGroupId) {
+	if o == nil || isNil(o.ExterGroupId) {
 		return nil, false
 	}
 	return o.ExterGroupId, true
@@ -141,7 +141,7 @@ func (o *IptvConfigData) GetExterGroupIdOk() (*string, bool) {
 
 // HasExterGroupId returns a boolean if a field has been set.
 func (o *IptvConfigData) HasExterGroupId() bool {
-	if o != nil && !IsNil(o.ExterGroupId) {
+	if o != nil && !isNil(o.ExterGroupId) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *IptvConfigData) SetAfAppId(v string) {
 
 // GetDnn returns the Dnn field value if set, zero value otherwise.
 func (o *IptvConfigData) GetDnn() string {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		var ret string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *IptvConfigData) GetDnn() string {
 // GetDnnOk returns a tuple with the Dnn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetDnnOk() (*string, bool) {
-	if o == nil || IsNil(o.Dnn) {
+	if o == nil || isNil(o.Dnn) {
 		return nil, false
 	}
 	return o.Dnn, true
@@ -197,7 +197,7 @@ func (o *IptvConfigData) GetDnnOk() (*string, bool) {
 
 // HasDnn returns a boolean if a field has been set.
 func (o *IptvConfigData) HasDnn() bool {
-	if o != nil && !IsNil(o.Dnn) {
+	if o != nil && !isNil(o.Dnn) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *IptvConfigData) SetDnn(v string) {
 
 // GetSnssai returns the Snssai field value if set, zero value otherwise.
 func (o *IptvConfigData) GetSnssai() Snssai {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		var ret Snssai
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *IptvConfigData) GetSnssai() Snssai {
 // GetSnssaiOk returns a tuple with the Snssai field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetSnssaiOk() (*Snssai, bool) {
-	if o == nil || IsNil(o.Snssai) {
+	if o == nil || isNil(o.Snssai) {
 		return nil, false
 	}
 	return o.Snssai, true
@@ -229,7 +229,7 @@ func (o *IptvConfigData) GetSnssaiOk() (*Snssai, bool) {
 
 // HasSnssai returns a boolean if a field has been set.
 func (o *IptvConfigData) HasSnssai() bool {
-	if o != nil && !IsNil(o.Snssai) {
+	if o != nil && !isNil(o.Snssai) {
 		return true
 	}
 
@@ -267,7 +267,7 @@ func (o *IptvConfigData) SetMultiAccCtrls(v map[string]MulticastAccessControl) {
 
 // GetMtcProviderId returns the MtcProviderId field value if set, zero value otherwise.
 func (o *IptvConfigData) GetMtcProviderId() string {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		var ret string
 		return ret
 	}
@@ -277,7 +277,7 @@ func (o *IptvConfigData) GetMtcProviderId() string {
 // GetMtcProviderIdOk returns a tuple with the MtcProviderId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IptvConfigData) GetMtcProviderIdOk() (*string, bool) {
-	if o == nil || IsNil(o.MtcProviderId) {
+	if o == nil || isNil(o.MtcProviderId) {
 		return nil, false
 	}
 	return o.MtcProviderId, true
@@ -285,7 +285,7 @@ func (o *IptvConfigData) GetMtcProviderIdOk() (*string, bool) {
 
 // HasMtcProviderId returns a boolean if a field has been set.
 func (o *IptvConfigData) HasMtcProviderId() bool {
-	if o != nil && !IsNil(o.MtcProviderId) {
+	if o != nil && !isNil(o.MtcProviderId) {
 		return true
 	}
 
@@ -331,24 +331,24 @@ func (o IptvConfigData) MarshalJSON() ([]byte, error) {
 
 func (o IptvConfigData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Self) {
+	if !isNil(o.Self) {
 		toSerialize["self"] = o.Self
 	}
-	if !IsNil(o.Gpsi) {
+	if !isNil(o.Gpsi) {
 		toSerialize["gpsi"] = o.Gpsi
 	}
-	if !IsNil(o.ExterGroupId) {
+	if !isNil(o.ExterGroupId) {
 		toSerialize["exterGroupId"] = o.ExterGroupId
 	}
 	toSerialize["afAppId"] = o.AfAppId
-	if !IsNil(o.Dnn) {
+	if !isNil(o.Dnn) {
 		toSerialize["dnn"] = o.Dnn
 	}
-	if !IsNil(o.Snssai) {
+	if !isNil(o.Snssai) {
 		toSerialize["snssai"] = o.Snssai
 	}
 	toSerialize["multiAccCtrls"] = o.MultiAccCtrls
-	if !IsNil(o.MtcProviderId) {
+	if !isNil(o.MtcProviderId) {
 		toSerialize["mtcProviderId"] = o.MtcProviderId
 	}
 	toSerialize["suppFeat"] = o.SuppFeat

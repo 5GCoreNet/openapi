@@ -17,23 +17,37 @@ import (
 
 // GbaType Authentication type used by the UE for GBA
 type GbaType struct {
-	string *string
+	GbaTypeAnyOf *GbaTypeAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *GbaType) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into GbaTypeAnyOf
+	err = json.Unmarshal(data, &dst.GbaTypeAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonGbaTypeAnyOf, _ := json.Marshal(dst.GbaTypeAnyOf)
+		if string(jsonGbaTypeAnyOf) == "{}" { // empty struct
+			dst.GbaTypeAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.GbaTypeAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.GbaTypeAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(GbaType)")
@@ -41,8 +55,12 @@ func (dst *GbaType) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *GbaType) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.GbaTypeAnyOf != nil {
+		return json.Marshal(&src.GbaTypeAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

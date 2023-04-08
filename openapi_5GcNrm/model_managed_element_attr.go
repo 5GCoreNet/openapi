@@ -51,7 +51,7 @@ func NewManagedElementAttrWithDefaults() *ManagedElementAttr {
 
 // GetDnPrefix returns the DnPrefix field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetDnPrefix() string {
-	if o == nil || IsNil(o.DnPrefix) {
+	if o == nil || isNil(o.DnPrefix) {
 		var ret string
 		return ret
 	}
@@ -61,7 +61,7 @@ func (o *ManagedElementAttr) GetDnPrefix() string {
 // GetDnPrefixOk returns a tuple with the DnPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetDnPrefixOk() (*string, bool) {
-	if o == nil || IsNil(o.DnPrefix) {
+	if o == nil || isNil(o.DnPrefix) {
 		return nil, false
 	}
 	return o.DnPrefix, true
@@ -69,7 +69,7 @@ func (o *ManagedElementAttr) GetDnPrefixOk() (*string, bool) {
 
 // HasDnPrefix returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasDnPrefix() bool {
-	if o != nil && !IsNil(o.DnPrefix) {
+	if o != nil && !isNil(o.DnPrefix) {
 		return true
 	}
 
@@ -83,7 +83,7 @@ func (o *ManagedElementAttr) SetDnPrefix(v string) {
 
 // GetManagedElementTypeList returns the ManagedElementTypeList field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetManagedElementTypeList() []string {
-	if o == nil || IsNil(o.ManagedElementTypeList) {
+	if o == nil || isNil(o.ManagedElementTypeList) {
 		var ret []string
 		return ret
 	}
@@ -93,7 +93,7 @@ func (o *ManagedElementAttr) GetManagedElementTypeList() []string {
 // GetManagedElementTypeListOk returns a tuple with the ManagedElementTypeList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetManagedElementTypeListOk() ([]string, bool) {
-	if o == nil || IsNil(o.ManagedElementTypeList) {
+	if o == nil || isNil(o.ManagedElementTypeList) {
 		return nil, false
 	}
 	return o.ManagedElementTypeList, true
@@ -101,7 +101,7 @@ func (o *ManagedElementAttr) GetManagedElementTypeListOk() ([]string, bool) {
 
 // HasManagedElementTypeList returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasManagedElementTypeList() bool {
-	if o != nil && !IsNil(o.ManagedElementTypeList) {
+	if o != nil && !isNil(o.ManagedElementTypeList) {
 		return true
 	}
 
@@ -115,7 +115,7 @@ func (o *ManagedElementAttr) SetManagedElementTypeList(v []string) {
 
 // GetUserLabel returns the UserLabel field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetUserLabel() string {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		var ret string
 		return ret
 	}
@@ -125,7 +125,7 @@ func (o *ManagedElementAttr) GetUserLabel() string {
 // GetUserLabelOk returns a tuple with the UserLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetUserLabelOk() (*string, bool) {
-	if o == nil || IsNil(o.UserLabel) {
+	if o == nil || isNil(o.UserLabel) {
 		return nil, false
 	}
 	return o.UserLabel, true
@@ -133,7 +133,7 @@ func (o *ManagedElementAttr) GetUserLabelOk() (*string, bool) {
 
 // HasUserLabel returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasUserLabel() bool {
-	if o != nil && !IsNil(o.UserLabel) {
+	if o != nil && !isNil(o.UserLabel) {
 		return true
 	}
 
@@ -147,7 +147,7 @@ func (o *ManagedElementAttr) SetUserLabel(v string) {
 
 // GetLocationName returns the LocationName field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetLocationName() string {
-	if o == nil || IsNil(o.LocationName) {
+	if o == nil || isNil(o.LocationName) {
 		var ret string
 		return ret
 	}
@@ -157,7 +157,7 @@ func (o *ManagedElementAttr) GetLocationName() string {
 // GetLocationNameOk returns a tuple with the LocationName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetLocationNameOk() (*string, bool) {
-	if o == nil || IsNil(o.LocationName) {
+	if o == nil || isNil(o.LocationName) {
 		return nil, false
 	}
 	return o.LocationName, true
@@ -165,7 +165,7 @@ func (o *ManagedElementAttr) GetLocationNameOk() (*string, bool) {
 
 // HasLocationName returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasLocationName() bool {
-	if o != nil && !IsNil(o.LocationName) {
+	if o != nil && !isNil(o.LocationName) {
 		return true
 	}
 
@@ -179,7 +179,7 @@ func (o *ManagedElementAttr) SetLocationName(v string) {
 
 // GetManagedBy returns the ManagedBy field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetManagedBy() []string {
-	if o == nil || IsNil(o.ManagedBy) {
+	if o == nil || isNil(o.ManagedBy) {
 		var ret []string
 		return ret
 	}
@@ -189,7 +189,7 @@ func (o *ManagedElementAttr) GetManagedBy() []string {
 // GetManagedByOk returns a tuple with the ManagedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetManagedByOk() ([]string, bool) {
-	if o == nil || IsNil(o.ManagedBy) {
+	if o == nil || isNil(o.ManagedBy) {
 		return nil, false
 	}
 	return o.ManagedBy, true
@@ -197,7 +197,7 @@ func (o *ManagedElementAttr) GetManagedByOk() ([]string, bool) {
 
 // HasManagedBy returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasManagedBy() bool {
-	if o != nil && !IsNil(o.ManagedBy) {
+	if o != nil && !isNil(o.ManagedBy) {
 		return true
 	}
 
@@ -211,7 +211,7 @@ func (o *ManagedElementAttr) SetManagedBy(v []string) {
 
 // GetVendorName returns the VendorName field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetVendorName() string {
-	if o == nil || IsNil(o.VendorName) {
+	if o == nil || isNil(o.VendorName) {
 		var ret string
 		return ret
 	}
@@ -221,7 +221,7 @@ func (o *ManagedElementAttr) GetVendorName() string {
 // GetVendorNameOk returns a tuple with the VendorName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetVendorNameOk() (*string, bool) {
-	if o == nil || IsNil(o.VendorName) {
+	if o == nil || isNil(o.VendorName) {
 		return nil, false
 	}
 	return o.VendorName, true
@@ -229,7 +229,7 @@ func (o *ManagedElementAttr) GetVendorNameOk() (*string, bool) {
 
 // HasVendorName returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasVendorName() bool {
-	if o != nil && !IsNil(o.VendorName) {
+	if o != nil && !isNil(o.VendorName) {
 		return true
 	}
 
@@ -243,7 +243,7 @@ func (o *ManagedElementAttr) SetVendorName(v string) {
 
 // GetUserDefinedState returns the UserDefinedState field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetUserDefinedState() string {
-	if o == nil || IsNil(o.UserDefinedState) {
+	if o == nil || isNil(o.UserDefinedState) {
 		var ret string
 		return ret
 	}
@@ -253,7 +253,7 @@ func (o *ManagedElementAttr) GetUserDefinedState() string {
 // GetUserDefinedStateOk returns a tuple with the UserDefinedState field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetUserDefinedStateOk() (*string, bool) {
-	if o == nil || IsNil(o.UserDefinedState) {
+	if o == nil || isNil(o.UserDefinedState) {
 		return nil, false
 	}
 	return o.UserDefinedState, true
@@ -261,7 +261,7 @@ func (o *ManagedElementAttr) GetUserDefinedStateOk() (*string, bool) {
 
 // HasUserDefinedState returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasUserDefinedState() bool {
-	if o != nil && !IsNil(o.UserDefinedState) {
+	if o != nil && !isNil(o.UserDefinedState) {
 		return true
 	}
 
@@ -275,7 +275,7 @@ func (o *ManagedElementAttr) SetUserDefinedState(v string) {
 
 // GetSwVersion returns the SwVersion field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetSwVersion() string {
-	if o == nil || IsNil(o.SwVersion) {
+	if o == nil || isNil(o.SwVersion) {
 		var ret string
 		return ret
 	}
@@ -285,7 +285,7 @@ func (o *ManagedElementAttr) GetSwVersion() string {
 // GetSwVersionOk returns a tuple with the SwVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetSwVersionOk() (*string, bool) {
-	if o == nil || IsNil(o.SwVersion) {
+	if o == nil || isNil(o.SwVersion) {
 		return nil, false
 	}
 	return o.SwVersion, true
@@ -293,7 +293,7 @@ func (o *ManagedElementAttr) GetSwVersionOk() (*string, bool) {
 
 // HasSwVersion returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasSwVersion() bool {
-	if o != nil && !IsNil(o.SwVersion) {
+	if o != nil && !isNil(o.SwVersion) {
 		return true
 	}
 
@@ -307,7 +307,7 @@ func (o *ManagedElementAttr) SetSwVersion(v string) {
 
 // GetPriorityLabel returns the PriorityLabel field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetPriorityLabel() int32 {
-	if o == nil || IsNil(o.PriorityLabel) {
+	if o == nil || isNil(o.PriorityLabel) {
 		var ret int32
 		return ret
 	}
@@ -317,7 +317,7 @@ func (o *ManagedElementAttr) GetPriorityLabel() int32 {
 // GetPriorityLabelOk returns a tuple with the PriorityLabel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetPriorityLabelOk() (*int32, bool) {
-	if o == nil || IsNil(o.PriorityLabel) {
+	if o == nil || isNil(o.PriorityLabel) {
 		return nil, false
 	}
 	return o.PriorityLabel, true
@@ -325,7 +325,7 @@ func (o *ManagedElementAttr) GetPriorityLabelOk() (*int32, bool) {
 
 // HasPriorityLabel returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasPriorityLabel() bool {
-	if o != nil && !IsNil(o.PriorityLabel) {
+	if o != nil && !isNil(o.PriorityLabel) {
 		return true
 	}
 
@@ -339,7 +339,7 @@ func (o *ManagedElementAttr) SetPriorityLabel(v int32) {
 
 // GetSupportedPerfMetricGroups returns the SupportedPerfMetricGroups field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetricGroup {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
+	if o == nil || isNil(o.SupportedPerfMetricGroups) {
 		var ret []SupportedPerfMetricGroup
 		return ret
 	}
@@ -349,7 +349,7 @@ func (o *ManagedElementAttr) GetSupportedPerfMetricGroups() []SupportedPerfMetri
 // GetSupportedPerfMetricGroupsOk returns a tuple with the SupportedPerfMetricGroups field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMetricGroup, bool) {
-	if o == nil || IsNil(o.SupportedPerfMetricGroups) {
+	if o == nil || isNil(o.SupportedPerfMetricGroups) {
 		return nil, false
 	}
 	return o.SupportedPerfMetricGroups, true
@@ -357,7 +357,7 @@ func (o *ManagedElementAttr) GetSupportedPerfMetricGroupsOk() ([]SupportedPerfMe
 
 // HasSupportedPerfMetricGroups returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasSupportedPerfMetricGroups() bool {
-	if o != nil && !IsNil(o.SupportedPerfMetricGroups) {
+	if o != nil && !isNil(o.SupportedPerfMetricGroups) {
 		return true
 	}
 
@@ -371,7 +371,7 @@ func (o *ManagedElementAttr) SetSupportedPerfMetricGroups(v []SupportedPerfMetri
 
 // GetSupportedTraceMetrics returns the SupportedTraceMetrics field value if set, zero value otherwise.
 func (o *ManagedElementAttr) GetSupportedTraceMetrics() []string {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
+	if o == nil || isNil(o.SupportedTraceMetrics) {
 		var ret []string
 		return ret
 	}
@@ -381,7 +381,7 @@ func (o *ManagedElementAttr) GetSupportedTraceMetrics() []string {
 // GetSupportedTraceMetricsOk returns a tuple with the SupportedTraceMetrics field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManagedElementAttr) GetSupportedTraceMetricsOk() ([]string, bool) {
-	if o == nil || IsNil(o.SupportedTraceMetrics) {
+	if o == nil || isNil(o.SupportedTraceMetrics) {
 		return nil, false
 	}
 	return o.SupportedTraceMetrics, true
@@ -389,7 +389,7 @@ func (o *ManagedElementAttr) GetSupportedTraceMetricsOk() ([]string, bool) {
 
 // HasSupportedTraceMetrics returns a boolean if a field has been set.
 func (o *ManagedElementAttr) HasSupportedTraceMetrics() bool {
-	if o != nil && !IsNil(o.SupportedTraceMetrics) {
+	if o != nil && !isNil(o.SupportedTraceMetrics) {
 		return true
 	}
 
@@ -411,37 +411,37 @@ func (o ManagedElementAttr) MarshalJSON() ([]byte, error) {
 
 func (o ManagedElementAttr) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.DnPrefix) {
+	if !isNil(o.DnPrefix) {
 		toSerialize["dnPrefix"] = o.DnPrefix
 	}
-	if !IsNil(o.ManagedElementTypeList) {
+	if !isNil(o.ManagedElementTypeList) {
 		toSerialize["managedElementTypeList"] = o.ManagedElementTypeList
 	}
-	if !IsNil(o.UserLabel) {
+	if !isNil(o.UserLabel) {
 		toSerialize["userLabel"] = o.UserLabel
 	}
-	if !IsNil(o.LocationName) {
+	if !isNil(o.LocationName) {
 		toSerialize["locationName"] = o.LocationName
 	}
-	if !IsNil(o.ManagedBy) {
+	if !isNil(o.ManagedBy) {
 		toSerialize["managedBy"] = o.ManagedBy
 	}
-	if !IsNil(o.VendorName) {
+	if !isNil(o.VendorName) {
 		toSerialize["vendorName"] = o.VendorName
 	}
-	if !IsNil(o.UserDefinedState) {
+	if !isNil(o.UserDefinedState) {
 		toSerialize["userDefinedState"] = o.UserDefinedState
 	}
-	if !IsNil(o.SwVersion) {
+	if !isNil(o.SwVersion) {
 		toSerialize["swVersion"] = o.SwVersion
 	}
-	if !IsNil(o.PriorityLabel) {
+	if !isNil(o.PriorityLabel) {
 		toSerialize["priorityLabel"] = o.PriorityLabel
 	}
-	if !IsNil(o.SupportedPerfMetricGroups) {
+	if !isNil(o.SupportedPerfMetricGroups) {
 		toSerialize["supportedPerfMetricGroups"] = o.SupportedPerfMetricGroups
 	}
-	if !IsNil(o.SupportedTraceMetrics) {
+	if !isNil(o.SupportedTraceMetrics) {
 		toSerialize["supportedTraceMetrics"] = o.SupportedTraceMetrics
 	}
 	return toSerialize, nil

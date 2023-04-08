@@ -17,23 +17,37 @@ import (
 
 // MaReleaseIndication Multi-Access PDU session release Indication. Possible values are   - REL_MAPDU_OVER_3GPP   - REL_MAPDU_OVER_N3GPP 
 type MaReleaseIndication struct {
-	string *string
+	MaReleaseIndicationAnyOf *MaReleaseIndicationAnyOf
+	String *string
 }
 
 // Unmarshal JSON data into any of the pointers in the struct
 func (dst *MaReleaseIndication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into string
-	err = json.Unmarshal(data, &dst.string);
+	// try to unmarshal JSON data into MaReleaseIndicationAnyOf
+	err = json.Unmarshal(data, &dst.MaReleaseIndicationAnyOf);
 	if err == nil {
-		jsonstring, _ := json.Marshal(dst.string)
-		if string(jsonstring) == "{}" { // empty struct
-			dst.string = nil
+		jsonMaReleaseIndicationAnyOf, _ := json.Marshal(dst.MaReleaseIndicationAnyOf)
+		if string(jsonMaReleaseIndicationAnyOf) == "{}" { // empty struct
+			dst.MaReleaseIndicationAnyOf = nil
 		} else {
-			return nil // data stored in dst.string, return on the first match
+			return nil // data stored in dst.MaReleaseIndicationAnyOf, return on the first match
 		}
 	} else {
-		dst.string = nil
+		dst.MaReleaseIndicationAnyOf = nil
+	}
+
+	// try to unmarshal JSON data into string
+	err = json.Unmarshal(data, &dst.String);
+	if err == nil {
+		jsonString, _ := json.Marshal(dst.String)
+		if string(jsonString) == "{}" { // empty struct
+			dst.String = nil
+		} else {
+			return nil // data stored in dst.String, return on the first match
+		}
+	} else {
+		dst.String = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(MaReleaseIndication)")
@@ -41,8 +55,12 @@ func (dst *MaReleaseIndication) UnmarshalJSON(data []byte) error {
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src *MaReleaseIndication) MarshalJSON() ([]byte, error) {
-	if src.string != nil {
-		return json.Marshal(&src.string)
+	if src.MaReleaseIndicationAnyOf != nil {
+		return json.Marshal(&src.MaReleaseIndicationAnyOf)
+	}
+
+	if src.String != nil {
+		return json.Marshal(&src.String)
 	}
 
 	return nil, nil // no data in anyOf schemas

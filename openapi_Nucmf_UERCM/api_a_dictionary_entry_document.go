@@ -13,7 +13,7 @@ package openapi_Nucmf_UERCM
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
@@ -38,23 +38,23 @@ func (r ApiCreateDictionaryEntryRequest) JsonData(jsonData DicEntryCreateData) A
 	return r
 }
 
-func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCapability5GS(binaryDataUeRadioCapability5GS *os.File) ApiCreateDictionaryEntryRequest {
-	r.binaryDataUeRadioCapability5GS = binaryDataUeRadioCapability5GS
+func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCapability5GS(binaryDataUeRadioCapability5GS os.File) ApiCreateDictionaryEntryRequest {
+	r.binaryDataUeRadioCapability5GS = &binaryDataUeRadioCapability5GS
 	return r
 }
 
-func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCapabilityEPS(binaryDataUeRadioCapabilityEPS *os.File) ApiCreateDictionaryEntryRequest {
-	r.binaryDataUeRadioCapabilityEPS = binaryDataUeRadioCapabilityEPS
+func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCapabilityEPS(binaryDataUeRadioCapabilityEPS os.File) ApiCreateDictionaryEntryRequest {
+	r.binaryDataUeRadioCapabilityEPS = &binaryDataUeRadioCapabilityEPS
 	return r
 }
 
-func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCap5GSForPaging(binaryDataUeRadioCap5GSForPaging *os.File) ApiCreateDictionaryEntryRequest {
-	r.binaryDataUeRadioCap5GSForPaging = binaryDataUeRadioCap5GSForPaging
+func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCap5GSForPaging(binaryDataUeRadioCap5GSForPaging os.File) ApiCreateDictionaryEntryRequest {
+	r.binaryDataUeRadioCap5GSForPaging = &binaryDataUeRadioCap5GSForPaging
 	return r
 }
 
-func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCapEPSForPaging(binaryDataUeRadioCapEPSForPaging *os.File) ApiCreateDictionaryEntryRequest {
-	r.binaryDataUeRadioCapEPSForPaging = binaryDataUeRadioCapEPSForPaging
+func (r ApiCreateDictionaryEntryRequest) BinaryDataUeRadioCapEPSForPaging(binaryDataUeRadioCapEPSForPaging os.File) ApiCreateDictionaryEntryRequest {
+	r.binaryDataUeRadioCapEPSForPaging = &binaryDataUeRadioCapEPSForPaging
 	return r
 }
 
@@ -126,68 +126,68 @@ func (a *ADictionaryEntryDocumentApiService) CreateDictionaryEntryExecute(r ApiC
 
 	binaryDataUeRadioCapability5GSLocalVarFormFileName = "binaryDataUeRadioCapability5GS"
 
-
-	binaryDataUeRadioCapability5GSLocalVarFile := r.binaryDataUeRadioCapability5GS
-
+	var binaryDataUeRadioCapability5GSLocalVarFile *os.File
+	if r.binaryDataUeRadioCapability5GS != nil {
+		binaryDataUeRadioCapability5GSLocalVarFile = r.binaryDataUeRadioCapability5GS
+	}
 	if binaryDataUeRadioCapability5GSLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataUeRadioCapability5GSLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataUeRadioCapability5GSLocalVarFile)
 		binaryDataUeRadioCapability5GSLocalVarFileBytes = fbs
 		binaryDataUeRadioCapability5GSLocalVarFileName = binaryDataUeRadioCapability5GSLocalVarFile.Name()
 		binaryDataUeRadioCapability5GSLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCapability5GSLocalVarFileBytes, fileName: binaryDataUeRadioCapability5GSLocalVarFileName, formFileName: binaryDataUeRadioCapability5GSLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCapability5GSLocalVarFileBytes, fileName: binaryDataUeRadioCapability5GSLocalVarFileName, formFileName: binaryDataUeRadioCapability5GSLocalVarFormFileName})
 	var binaryDataUeRadioCapabilityEPSLocalVarFormFileName string
 	var binaryDataUeRadioCapabilityEPSLocalVarFileName     string
 	var binaryDataUeRadioCapabilityEPSLocalVarFileBytes    []byte
 
 	binaryDataUeRadioCapabilityEPSLocalVarFormFileName = "binaryDataUeRadioCapabilityEPS"
 
-
-	binaryDataUeRadioCapabilityEPSLocalVarFile := r.binaryDataUeRadioCapabilityEPS
-
+	var binaryDataUeRadioCapabilityEPSLocalVarFile *os.File
+	if r.binaryDataUeRadioCapabilityEPS != nil {
+		binaryDataUeRadioCapabilityEPSLocalVarFile = r.binaryDataUeRadioCapabilityEPS
+	}
 	if binaryDataUeRadioCapabilityEPSLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataUeRadioCapabilityEPSLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataUeRadioCapabilityEPSLocalVarFile)
 		binaryDataUeRadioCapabilityEPSLocalVarFileBytes = fbs
 		binaryDataUeRadioCapabilityEPSLocalVarFileName = binaryDataUeRadioCapabilityEPSLocalVarFile.Name()
 		binaryDataUeRadioCapabilityEPSLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCapabilityEPSLocalVarFileBytes, fileName: binaryDataUeRadioCapabilityEPSLocalVarFileName, formFileName: binaryDataUeRadioCapabilityEPSLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCapabilityEPSLocalVarFileBytes, fileName: binaryDataUeRadioCapabilityEPSLocalVarFileName, formFileName: binaryDataUeRadioCapabilityEPSLocalVarFormFileName})
 	var binaryDataUeRadioCap5GSForPagingLocalVarFormFileName string
 	var binaryDataUeRadioCap5GSForPagingLocalVarFileName     string
 	var binaryDataUeRadioCap5GSForPagingLocalVarFileBytes    []byte
 
 	binaryDataUeRadioCap5GSForPagingLocalVarFormFileName = "binaryDataUeRadioCap5GSForPaging"
 
-
-	binaryDataUeRadioCap5GSForPagingLocalVarFile := r.binaryDataUeRadioCap5GSForPaging
-
+	var binaryDataUeRadioCap5GSForPagingLocalVarFile *os.File
+	if r.binaryDataUeRadioCap5GSForPaging != nil {
+		binaryDataUeRadioCap5GSForPagingLocalVarFile = r.binaryDataUeRadioCap5GSForPaging
+	}
 	if binaryDataUeRadioCap5GSForPagingLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataUeRadioCap5GSForPagingLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataUeRadioCap5GSForPagingLocalVarFile)
 		binaryDataUeRadioCap5GSForPagingLocalVarFileBytes = fbs
 		binaryDataUeRadioCap5GSForPagingLocalVarFileName = binaryDataUeRadioCap5GSForPagingLocalVarFile.Name()
 		binaryDataUeRadioCap5GSForPagingLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCap5GSForPagingLocalVarFileBytes, fileName: binaryDataUeRadioCap5GSForPagingLocalVarFileName, formFileName: binaryDataUeRadioCap5GSForPagingLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCap5GSForPagingLocalVarFileBytes, fileName: binaryDataUeRadioCap5GSForPagingLocalVarFileName, formFileName: binaryDataUeRadioCap5GSForPagingLocalVarFormFileName})
 	var binaryDataUeRadioCapEPSForPagingLocalVarFormFileName string
 	var binaryDataUeRadioCapEPSForPagingLocalVarFileName     string
 	var binaryDataUeRadioCapEPSForPagingLocalVarFileBytes    []byte
 
 	binaryDataUeRadioCapEPSForPagingLocalVarFormFileName = "binaryDataUeRadioCapEPSForPaging"
 
-
-	binaryDataUeRadioCapEPSForPagingLocalVarFile := r.binaryDataUeRadioCapEPSForPaging
-
+	var binaryDataUeRadioCapEPSForPagingLocalVarFile *os.File
+	if r.binaryDataUeRadioCapEPSForPaging != nil {
+		binaryDataUeRadioCapEPSForPagingLocalVarFile = r.binaryDataUeRadioCapEPSForPaging
+	}
 	if binaryDataUeRadioCapEPSForPagingLocalVarFile != nil {
-		fbs, _ := io.ReadAll(binaryDataUeRadioCapEPSForPagingLocalVarFile)
-
+		fbs, _ := ioutil.ReadAll(binaryDataUeRadioCapEPSForPagingLocalVarFile)
 		binaryDataUeRadioCapEPSForPagingLocalVarFileBytes = fbs
 		binaryDataUeRadioCapEPSForPagingLocalVarFileName = binaryDataUeRadioCapEPSForPagingLocalVarFile.Name()
 		binaryDataUeRadioCapEPSForPagingLocalVarFile.Close()
-		formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCapEPSForPagingLocalVarFileBytes, fileName: binaryDataUeRadioCapEPSForPagingLocalVarFileName, formFileName: binaryDataUeRadioCapEPSForPagingLocalVarFormFileName})
 	}
+	formFiles = append(formFiles, formFile{fileBytes: binaryDataUeRadioCapEPSForPagingLocalVarFileBytes, fileName: binaryDataUeRadioCapEPSForPagingLocalVarFileName, formFileName: binaryDataUeRadioCapEPSForPagingLocalVarFormFileName})
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -198,9 +198,9 @@ func (a *ADictionaryEntryDocumentApiService) CreateDictionaryEntryExecute(r ApiC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

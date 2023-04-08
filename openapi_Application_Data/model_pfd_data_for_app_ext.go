@@ -101,7 +101,7 @@ func (o *PfdDataForAppExt) SetPfds(v []PfdContent) {
 
 // GetCachingTime returns the CachingTime field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetCachingTime() time.Time {
-	if o == nil || IsNil(o.CachingTime) {
+	if o == nil || isNil(o.CachingTime) {
 		var ret time.Time
 		return ret
 	}
@@ -111,7 +111,7 @@ func (o *PfdDataForAppExt) GetCachingTime() time.Time {
 // GetCachingTimeOk returns a tuple with the CachingTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetCachingTimeOk() (*time.Time, bool) {
-	if o == nil || IsNil(o.CachingTime) {
+	if o == nil || isNil(o.CachingTime) {
 		return nil, false
 	}
 	return o.CachingTime, true
@@ -119,7 +119,7 @@ func (o *PfdDataForAppExt) GetCachingTimeOk() (*time.Time, bool) {
 
 // HasCachingTime returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasCachingTime() bool {
-	if o != nil && !IsNil(o.CachingTime) {
+	if o != nil && !isNil(o.CachingTime) {
 		return true
 	}
 
@@ -133,7 +133,7 @@ func (o *PfdDataForAppExt) SetCachingTime(v time.Time) {
 
 // GetSuppFeat returns the SuppFeat field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetSuppFeat() string {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		var ret string
 		return ret
 	}
@@ -143,7 +143,7 @@ func (o *PfdDataForAppExt) GetSuppFeat() string {
 // GetSuppFeatOk returns a tuple with the SuppFeat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetSuppFeatOk() (*string, bool) {
-	if o == nil || IsNil(o.SuppFeat) {
+	if o == nil || isNil(o.SuppFeat) {
 		return nil, false
 	}
 	return o.SuppFeat, true
@@ -151,7 +151,7 @@ func (o *PfdDataForAppExt) GetSuppFeatOk() (*string, bool) {
 
 // HasSuppFeat returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasSuppFeat() bool {
-	if o != nil && !IsNil(o.SuppFeat) {
+	if o != nil && !isNil(o.SuppFeat) {
 		return true
 	}
 
@@ -165,7 +165,7 @@ func (o *PfdDataForAppExt) SetSuppFeat(v string) {
 
 // GetResetIds returns the ResetIds field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetResetIds() []string {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		var ret []string
 		return ret
 	}
@@ -175,7 +175,7 @@ func (o *PfdDataForAppExt) GetResetIds() []string {
 // GetResetIdsOk returns a tuple with the ResetIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetResetIdsOk() ([]string, bool) {
-	if o == nil || IsNil(o.ResetIds) {
+	if o == nil || isNil(o.ResetIds) {
 		return nil, false
 	}
 	return o.ResetIds, true
@@ -183,7 +183,7 @@ func (o *PfdDataForAppExt) GetResetIdsOk() ([]string, bool) {
 
 // HasResetIds returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasResetIds() bool {
-	if o != nil && !IsNil(o.ResetIds) {
+	if o != nil && !isNil(o.ResetIds) {
 		return true
 	}
 
@@ -197,7 +197,7 @@ func (o *PfdDataForAppExt) SetResetIds(v []string) {
 
 // GetAllowedDelay returns the AllowedDelay field value if set, zero value otherwise.
 func (o *PfdDataForAppExt) GetAllowedDelay() int32 {
-	if o == nil || IsNil(o.AllowedDelay) {
+	if o == nil || isNil(o.AllowedDelay) {
 		var ret int32
 		return ret
 	}
@@ -207,7 +207,7 @@ func (o *PfdDataForAppExt) GetAllowedDelay() int32 {
 // GetAllowedDelayOk returns a tuple with the AllowedDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PfdDataForAppExt) GetAllowedDelayOk() (*int32, bool) {
-	if o == nil || IsNil(o.AllowedDelay) {
+	if o == nil || isNil(o.AllowedDelay) {
 		return nil, false
 	}
 	return o.AllowedDelay, true
@@ -215,7 +215,7 @@ func (o *PfdDataForAppExt) GetAllowedDelayOk() (*int32, bool) {
 
 // HasAllowedDelay returns a boolean if a field has been set.
 func (o *PfdDataForAppExt) HasAllowedDelay() bool {
-	if o != nil && !IsNil(o.AllowedDelay) {
+	if o != nil && !isNil(o.AllowedDelay) {
 		return true
 	}
 
@@ -239,16 +239,16 @@ func (o PfdDataForAppExt) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["applicationId"] = o.ApplicationId
 	toSerialize["pfds"] = o.Pfds
-	if !IsNil(o.CachingTime) {
+	if !isNil(o.CachingTime) {
 		toSerialize["cachingTime"] = o.CachingTime
 	}
-	if !IsNil(o.SuppFeat) {
+	if !isNil(o.SuppFeat) {
 		toSerialize["suppFeat"] = o.SuppFeat
 	}
-	if !IsNil(o.ResetIds) {
+	if !isNil(o.ResetIds) {
 		toSerialize["resetIds"] = o.ResetIds
 	}
-	if !IsNil(o.AllowedDelay) {
+	if !isNil(o.AllowedDelay) {
 		toSerialize["allowedDelay"] = o.AllowedDelay
 	}
 	return toSerialize, nil

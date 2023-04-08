@@ -13,7 +13,7 @@ package openapi_Nsoraf_SOR
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -95,11 +95,11 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 	}
 
 	if r.supportedFeatures != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
+		parameterAddToQuery(localVarQueryParams, "supported-features", r.supportedFeatures, "")
 	}
-	parameterAddToHeaderOrQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
+	parameterAddToQuery(localVarQueryParams, "plmn-id", r.plmnId, "")
 	if r.accessType != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "access-type", r.accessType, "")
+		parameterAddToQuery(localVarQueryParams, "access-type", r.accessType, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -128,9 +128,9 @@ func (a *SoRInformationRetrievalApiService) GetSorInformationExecute(r ApiGetSor
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
